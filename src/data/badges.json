@@ -21,8 +21,8 @@
     ],
     "forumLinks": [
       {
-        "url": "https://forums2.battleon.com/f/tt.asp?forumid=256",
-        "title": "DF Encyclopedia - Badges",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=22384991",
+        "title": "DF Encyclopedia: Oaklore Quests",
         "isPrimary": true
       }
     ],
@@ -33,7 +33,7 @@
     "id": "locksmith",
     "name": "Locksmith",
     "slug": "locksmith",
-    "description": "A secret badge earned by those sharp enough to notice — and attempt — a very peculiar locked door inside Oaklore Keep.",
+    "description": "A secret badge earned by those sharp enough to notice and attempt a very peculiar door inside Oaklore Keep.",
     "category": "secret",
     "howToObtain": [
       {
@@ -46,24 +46,24 @@
       },
       {
         "order": 3,
-        "instruction": "Attempt to lockpick the door — successfully picking it awards the badge"
+        "instruction": "Attempt to lockpick the door. Successfully picking it awards the badge"
       }
     ],
     "forumLinks": [
       {
-        "url": "https://forums2.battleon.com/f/tt.asp?forumid=256",
-        "title": "DF Encyclopedia - Badges",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=22384991",
+        "title": "DF Encyclopedia: Oaklore Quests",
         "isPrimary": true
       }
     ],
     "wikiLink": "https://dragonfable.fandom.com/wiki/Locksmith",
-    "tags": ["oaklore", "secret", "hidden", "lockpick", "easter-egg"]
+    "tags": ["oaklore", "secret", "hidden", "easter-egg"]
   },
   {
     "id": "baby-dragon",
     "name": "Baby Dragon",
     "slug": "baby-dragon",
-    "description": "Awarded for witnessing the hatching of your very own dragon companion — a pivotal moment in every hero's journey.",
+    "description": "Awarded for witnessing the hatching of your very own dragon companion, a pivotal moment in every hero's journey.",
     "category": "quest-completion",
     "howToObtain": [
       {
@@ -81,8 +81,8 @@
     ],
     "forumLinks": [
       {
-        "url": "https://forums2.battleon.com/f/tt.asp?forumid=256",
-        "title": "DF Encyclopedia - Badges",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=22364270",
+        "title": "DF Encyclopedia: Falconreach Quests",
         "isPrimary": true
       }
     ],
@@ -93,7 +93,7 @@
     "id": "idle-heroes",
     "name": "Idle Heroes",
     "slug": "idle-heroes",
-    "description": "Earned by enjoying a theatrical diversion — because even heroes need a night off.",
+    "description": "Earned by enjoying a theatrical diversion. Because even heroes need a night off.",
     "category": "quest-completion",
     "howToObtain": [
       {
@@ -115,8 +115,8 @@
     ],
     "forumLinks": [
       {
-        "url": "https://forums2.battleon.com/f/tt.asp?forumid=256",
-        "title": "DF Encyclopedia - Badges",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=22364270",
+        "title": "DF Encyclopedia: Falconreach Quests",
         "isPrimary": true
       }
     ],
@@ -127,7 +127,7 @@
     "id": "undead-slayer",
     "name": "Undead Slayer",
     "slug": "undead-slayer",
-    "description": "Proof that you've fought alongside Artix in the battle against the undead. Used to unlock Paladin, Necromancer, and DeathKnight class skills.",
+    "description": "Proof that you've fought alongside Artix in the battle against the undead. Used to progress Paladin, Necromancer, and DeathKnight class skills.",
     "category": "combat",
     "howToObtain": [
       {
@@ -144,13 +144,13 @@
       },
       {
         "order": 4,
-        "instruction": "A total of 15 badges are needed to fully unlock Paladin skills; 31 total to also unlock DeathKnight"
+        "instruction": "A total of 15 badges are needed to fully train Paladin skills; 31 total to also train DeathKnight"
       }
     ],
     "forumLinks": [
       {
-        "url": "https://forums2.battleon.com/f/tt.asp?forumid=256",
-        "title": "DF Encyclopedia - Badges",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=22376498",
+        "title": "DF Encyclopedia: Necropolis & Undead Quests",
         "isPrimary": true
       }
     ],
@@ -161,7 +161,7 @@
     "id": "secrets-of-bacon",
     "name": "Secrets of Bacon!",
     "slug": "secrets-of-bacon",
-    "description": "The universe's greatest mysteries revealed — specifically the ones involving bacon. Valencia holds all the answers.",
+    "description": "The universe's greatest mysteries revealed, specifically the ones involving bacon. Valencia holds all the answers.",
     "category": "secret",
     "howToObtain": [
       {
@@ -179,8 +179,8 @@
     ],
     "forumLinks": [
       {
-        "url": "https://forums2.battleon.com/f/tt.asp?forumid=256",
-        "title": "DF Encyclopedia - Badges",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=22364270",
+        "title": "DF Encyclopedia: Falconreach Area Quests",
         "isPrimary": true
       }
     ],
@@ -209,8 +209,8 @@
     ],
     "forumLinks": [
       {
-        "url": "https://forums2.battleon.com/f/tt.asp?forumid=256",
-        "title": "DF Encyclopedia - Badges",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=22395498",
+        "title": "DF Encyclopedia: Dragonsgrasp Quests",
         "isPrimary": true
       }
     ],
@@ -221,7 +221,7 @@
     "id": "amaze-n",
     "name": "A'maze'n",
     "slug": "amaze-n",
-    "description": "For those who've conquered the depths of the Lymcrest Labyrinth — all twenty grueling levels of it.",
+    "description": "For those who've conquered the depths of the Lymcrest Labyrinth, all twenty grueling levels of it.",
     "category": "exploration",
     "howToObtain": [
       {
@@ -243,13 +243,13 @@
     ],
     "forumLinks": [
       {
-        "url": "https://forums2.battleon.com/f/tt.asp?forumid=256",
-        "title": "DF Encyclopedia - Badges",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=22385577",
+        "title": "DF Encyclopedia: Lymcrest Quests",
         "isPrimary": true
       }
     ],
     "wikiLink": "https://dragonfable.fandom.com/wiki/A'maze'n",
-    "tags": ["lymcrest", "labyrinth", "doug-digg", "book1", "book2", "exploration"]
+    "tags": ["lymcrest", "labyrinth", "doug-digg", "book1", "book2", "maze"]
   },
   {
     "id": "party-on-olaf",
@@ -273,8 +273,8 @@
     ],
     "forumLinks": [
       {
-        "url": "https://forums2.battleon.com/f/tt.asp?forumid=256",
-        "title": "DF Encyclopedia - Badges",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=22393901",
+        "title": "DF Encyclopedia: Dragesvard Quests",
         "isPrimary": true
       }
     ],
@@ -285,7 +285,7 @@
     "id": "pet-training-mastery",
     "name": "Pet Training Mastery",
     "slug": "pet-training-mastery",
-    "description": "Awarded for completing every pet training quest in the Pet Shop — a testament to patience and dedication. Note: 4 of the 7 quests require a Dragon Amulet.",
+    "description": "Awarded for completing every pet training quest in the Pet Shop. A testament to patience and dedication. Note: 4 of the 7 quests require a Dragon Amulet.",
     "category": "collection",
     "howToObtain": [
       {
@@ -298,26 +298,26 @@
       },
       {
         "order": 3,
-        "instruction": "You must roll high enough values in each quest to unlock the pet"
+        "instruction": "You must roll high enough values in each quest to get the pet"
       },
       {
         "order": 4,
-        "instruction": "Note: 4 of the 7 quests are Dragon Amulet (DA) locked"
+        "instruction": "Note: 4 of the 7 quests are Dragon Amulet (DA) required"
       },
       {
         "order": 5,
-        "instruction": "Badge is awarded after all 7 pets have been unlocked"
+        "instruction": "Badge is awarded after all 7 pets have been obtained"
       }
     ],
     "forumLinks": [
       {
-        "url": "https://forums2.battleon.com/f/tt.asp?forumid=256",
-        "title": "DF Encyclopedia - Badges",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=22364270",
+        "title": "DF Encyclopedia: Falconreach Shops & Activities",
         "isPrimary": true
       }
     ],
     "wikiLink": "https://dragonfable.fandom.com/wiki/Pet_Training_Mastery",
-    "tags": ["pet-shop", "pets", "collection", "dragon-amulet", "falconreach", "skill-badge"]
+    "tags": ["pet-shop", "pets", "collection", "dragon-amulet", "falconreach"]
   },
   {
     "id": "golem-breaker",
@@ -345,8 +345,8 @@
     ],
     "forumLinks": [
       {
-        "url": "https://forums2.battleon.com/f/tt.asp?forumid=256",
-        "title": "DF Encyclopedia - Badges",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=22407961",
+        "title": "DF Encyclopedia: Frostval Event Quests",
         "isPrimary": true
       }
     ],
