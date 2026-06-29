@@ -154,7 +154,7 @@
     "tags": [
       "challenges-badges"
     ],
-    "notes": "The count displayed on the badge is the number of Timewarped Trophies owned by the player; Timewarped Trophies stack to a maximum of 15 as of  October 1st, 2021. • Timewarped Trophies previously stacked up to 10.Timewarped Trophies may be stored in the bank and the player's correct count will still be displayed.",
+    "notes": "The count displayed on the badge is the number of Timewarped Trophies owned by the player; Timewarped Trophies stack to a maximum of 15 as of October 1st, 2021. • Timewarped Trophies previously stacked up to 10. • Timewarped Trophies may be stored in the bank and the player's correct count will still be displayed.",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/AARGHMastery.png"
   },
   {
@@ -3435,7 +3435,7 @@
     "tags": [
       "classes-badges"
     ],
-    "notes": "Badge's art was changed since its inception. • Old Appearance • Older Appearance",
+    "notes": "Badge's art has changed since its inception.",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/Paladin.png"
   },
   {
@@ -4832,7 +4832,7 @@
     "tags": [
       "quests-badges"
     ],
-    "notes": "Badge's art was updated on  July 19th, 2024, replacing its  old appearance. • DemonicDarkwraith for image and other information. • Legendary Ash for requirement correction.",
+    "notes": "Badge's art was updated on July 19th, 2024, replacing its old appearance.",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/WalkThroughFire.png"
   },
   {
@@ -4895,7 +4895,7 @@
     "tags": [
       "quests-badges"
     ],
-    "notes": "Badge's art was updated on  July 27th, 2024, replacing its  old appearance. • DemonicDarkwraith for image and other information. • Niki for correction.",
+    "notes": "Badge's art was updated on July 27th, 2024, replacing its old appearance.",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/WaterYouDoing.png"
   },
   {

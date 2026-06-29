@@ -8,12 +8,9 @@ interface BadgeCardProps {
 
 const CATEGORY_COLORS: Record<string, string> = {
   'quest-completion': 'bg-blue-500/20 text-blue-400',
-  exploration: 'bg-green-500/20 text-green-400',
   combat: 'bg-red-500/20 text-red-400',
   collection: 'bg-purple-500/20 text-purple-400',
   seasonal: 'bg-cyan-500/20 text-cyan-400',
-  secret: 'bg-yellow-500/20 text-yellow-400',
-  community: 'bg-pink-500/20 text-pink-400',
   misc: 'bg-slate-500/20 text-slate-400',
 }
 

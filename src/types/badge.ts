@@ -1,11 +1,8 @@
 export type BadgeCategory =
   | 'quest-completion'
-  | 'exploration'
   | 'combat'
   | 'collection'
   | 'seasonal'
-  | 'secret'
-  | 'community'
   | 'misc'
 
 export interface ForumLink {

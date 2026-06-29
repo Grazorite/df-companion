@@ -1,50 +1,32 @@
 [
   {
     "id": "quest-completion",
-    "displayName": "Quest Completion",
-    "description": "Earned by completing specific quests or quest chains",
+    "displayName": "Quests",
+    "description": "Earned by completing quests and storylines",
     "icon": "scroll"
   },
   {
-    "id": "exploration",
-    "displayName": "Exploration",
-    "description": "Earned by discovering hidden areas or secrets",
-    "icon": "map"
+    "id": "collection",
+    "displayName": "Classes",
+    "description": "Earned by training or obtaining class armors",
+    "icon": "shield"
   },
   {
     "id": "combat",
-    "displayName": "Combat",
-    "description": "Earned through combat achievements and challenges",
+    "displayName": "Challenges",
+    "description": "Earned through combat challenges and PvP",
     "icon": "swords"
-  },
-  {
-    "id": "collection",
-    "displayName": "Collection",
-    "description": "Earned by collecting items or complete sets",
-    "icon": "package"
   },
   {
     "id": "seasonal",
     "displayName": "Seasonal",
-    "description": "Earned during limited-time seasonal events",
+    "description": "Earned during seasonal events like Frostval and Mogloween",
     "icon": "calendar"
   },
   {
-    "id": "secret",
-    "displayName": "Secret",
-    "description": "Hidden badges with obscure or unmarked requirements",
-    "icon": "eye-off"
-  },
-  {
-    "id": "community",
-    "displayName": "Community",
-    "description": "Earned through community participation and events",
-    "icon": "users"
-  },
-  {
     "id": "misc",
-    "displayName": "Miscellaneous",
-    "description": "Badges that don't fit neatly into other categories",
+    "displayName": "Other",
+    "description": "Miscellaneous badges that don't fit other categories",
     "icon": "star"
   }
 ]
