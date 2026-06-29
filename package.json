@@ -5,10 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "node scripts/validate-badges.mjs && tsc -b && vite build",
     "lint": "oxlint",
     "format": "prettier --write src/",
     "preview": "vite preview",
+    "validate": "node scripts/validate-badges.mjs",
     "scrape:badges": "tsx scripts/scrape-badges.ts"
   },
   "dependencies": {
