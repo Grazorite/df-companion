@@ -6,21 +6,10 @@
  *
  * USAGE:
  * 1. Open the badges forum in your browser: https://forums2.battleon.com/f/tt.asp?forumid=412
- * 2. Open DevTools → Application → Cookies → forums2.battleon.com
- * 3. Copy the full cookie string (or just the session cookie value)
+ * 2. Open DevTools → Network tab → click the first request → Headers tab
+ * 3. Copy the Cookie value from Request Headers
  * 4. Create a .env file in the project root with: FORUM_COOKIE="your_cookie_string_here"
- * 5. Run: npx tsx scripts/scrape-badges.ts
- *
- * The script will:
- * - Fetch the badge forum topic listing (all pages)
- * - Extract each badge thread link and name
- * - Fetch each individual badge thread
- * - Parse the badge data (name, description, requirements, category, DA status, notes)
- * - Write the result to src/data/badges.json
- *
- * RATE LIMITING:
- * - 2 second delay between requests to be respectful to the forum server
- * - If a request fails, it retries once after 5 seconds
+ * 5. Run: npm run scrape:badges
  */
 
 import * as fs from 'node:fs'
@@ -30,8 +19,7 @@ import * as path from 'node:path'
 
 const FORUM_BASE = 'https://forums2.battleon.com/f'
 const BADGES_FORUM_ID = 412
-const DELAY_MS = 2000 // 2 seconds between requests
-const RETRY_DELAY_MS = 5000
+const DELAY_MS = 2000
 const OUTPUT_PATH = path.resolve(import.meta.dirname, '../src/data/badges.json')
 
 // ─── Load cookie from .env ───────────────────────────────────────────────────
@@ -40,12 +28,11 @@ function loadCookie(): string {
   const envPath = path.resolve(import.meta.dirname, '../.env')
   if (!fs.existsSync(envPath)) {
     console.error('❌ Missing .env file. Create one with FORUM_COOKIE="your_cookie_here"')
-    console.error('   See instructions at the top of this script.')
     process.exit(1)
   }
 
   const envContent = fs.readFileSync(envPath, 'utf-8')
-  const match = envContent.match(/FORUM_COOKIE=["']?(.+?)["']?\s*$/)
+  const match = envContent.match(/FORUM_COOKIE=["'](.+?)["']\s*$/)
   if (!match) {
     console.error('❌ FORUM_COOKIE not found in .env file')
     process.exit(1)
@@ -85,69 +72,17 @@ function slugify(name: string): string {
     .slice(0, 120)
 }
 
-// ─── Step 1: Get all badge topic links from the forum listing ────────────────
-
-interface TopicLink {
-  name: string
-  url: string
-  messageId: string
+function decodeHTMLEntities(str: string): string {
+  return str
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&#(\d+);/g, (_, num) => String.fromCharCode(Number(num)))
 }
 
-async function getTopicLinks(cookie: string): Promise<TopicLink[]> {
-  const topics: TopicLink[] = []
-  let page = 1
-  let hasMore = true
-
-  while (hasMore) {
-    // Forum uses p=X for pagination, tmode=10 shows all topics, smode=1 sorts by name
-    const url =
-      page === 1
-        ? `${FORUM_BASE}/tt.asp?forumid=${BADGES_FORUM_ID}`
-        : `${FORUM_BASE}/tt.asp?forumid=${BADGES_FORUM_ID}&p=${page}&tmode=10&smode=1`
-
-    console.log(`📄 Fetching topic list page ${page}...`)
-
-    const html = await fetchPage(url, cookie)
-
-    // Extract topic links: pattern like <a href="tm.asp?m=XXXXX">Topic Name</a>
-    const linkRegex = /<a[^>]*href=["']tm\.asp\?m=(\d+)["'][^>]*>([^<]+)<\/a>/gi
-    let match: RegExpExecArray | null
-    let foundOnPage = 0
-
-    while ((match = linkRegex.exec(html)) !== null) {
-      const messageId = match[1]
-      const name = match[2].trim()
-
-      // Skip "A-Z Badges" (the index thread) and navigation links
-      if (name === 'A-Z Badges' || name === 'Older Topic' || name === 'Newer Topic') continue
-      // Skip if already have this topic (dedup across pages)
-      if (topics.some((t) => t.messageId === messageId)) continue
-
-      topics.push({
-        name: decodeHTMLEntities(name),
-        url: `${FORUM_BASE}/tm.asp?m=${messageId}`,
-        messageId,
-      })
-      foundOnPage++
-    }
-
-    console.log(`   Found ${foundOnPage} badge topics on page ${page}`)
-
-    // Check if there's a next page link (look for p=N+1 in the HTML)
-    const nextPagePattern = new RegExp(`p=${page + 1}`)
-    if (nextPagePattern.test(html) && foundOnPage > 0) {
-      page++
-      await sleep(DELAY_MS)
-    } else {
-      hasMore = false
-    }
-  }
-
-  console.log(`\n✅ Found ${topics.length} total badge topics across ${page} pages\n`)
-  return topics
-}
-
-// ─── Step 2: Parse individual badge pages ────────────────────────────────────
+// ─── Badge parsing from topic list title attribute ───────────────────────────
 
 interface BadgeData {
   id: string
@@ -159,160 +94,122 @@ interface BadgeData {
   daRequired: boolean
   howToObtain: { order: number; instruction: string }[]
   forumLinks: { url: string; title: string; isPrimary: boolean }[]
-  wikiLink?: string
   tags: string[]
   notes?: string
 }
 
-async function parseBadgePage(topic: TopicLink, cookie: string): Promise<BadgeData | null> {
-  try {
-    const html = await fetchPage(topic.url, cookie)
+function parseBadgeFromTitle(name: string, titleAttr: string, messageId: string): BadgeData | null {
+  // The title attribute contains the badge info separated by <br>
+  // Format: [optional image tags] BadgeName <br> Description <br> (DA status) <br> <br> Requirements: ... <br> Category: ...
+  const parts = titleAttr
+    .split(/<br\s*\/?>|\n/)
+    .map((p) => decodeHTMLEntities(p.trim()))
+    .filter((p) => p.length > 0)
 
-    // Check if the page has actual content
-    if (html.includes('This message has been deleted or moved')) {
-      console.warn(`   ⚠️  Skipping "${topic.name}" — message deleted/moved`)
-      return null
-    }
+  // Remove image URLs from parts
+  const cleanParts = parts.filter(
+    (p) => !p.startsWith('http://') && !p.startsWith('https://') && p.length > 0
+  )
 
-    // Extract the message body content
-    // The forum uses a table structure. The message content is typically in a <td> after the user info.
-    // We'll look for the post content between common markers.
-
-    // Try to extract the main post body
-    const bodyMatch = html.match(
-      /<td[^>]*class=["']post-body["'][^>]*>([\s\S]*?)<\/td>/i
-    ) ?? html.match(
-      /<td[^>]*valign=["']top["'][^>]*width=["']100%["'][^>]*>([\s\S]*?)<\/td>/i
-    )
-
-    const body = bodyMatch ? bodyMatch[1] : html
-
-    // Parse fields from the body text
-    const textContent = stripHtml(body)
-
-    // Extract description (usually italic text after the badge name)
-    const descMatch = textContent.match(/(?:^|\n)\s*(.+?)(?:\n|$)/) 
-    const description = extractDescription(textContent, topic.name)
-
-    // Extract DA requirement
-    const daRequired = /\bDA Required\b/i.test(textContent) || /\bDragon Amulet Required\b/i.test(textContent)
-    const noDA = /\bNo DA Required\b/i.test(textContent) || /\bNo Dragon Amulet\b/i.test(textContent)
-
-    // Extract requirements line
-    const reqMatch = textContent.match(/Requirements?:\s*(.+?)(?:\n|$)/i)
-    const requirements = reqMatch ? reqMatch[1].trim() : ''
-
-    // Extract category
-    const catMatch = textContent.match(/Category:\s*(.+?)(?:\n|$)/i)
-    const categoryRaw = catMatch ? catMatch[1].trim() : ''
-    const category = mapCategory(categoryRaw)
-
-    // Extract "Other information" / notes
-    const notesMatch = textContent.match(/Other information[:\s]*\n?([\s\S]*?)(?:\n\n|Thanks to|$)/i)
-    const notes = notesMatch ? notesMatch[1].replace(/^[•\-\s]+/gm, '').trim() : undefined
-
-    // Generate tags from name and requirements
-    const tags = generateTags(topic.name, requirements, category)
-
-    const badge: BadgeData = {
-      id: slugify(topic.name),
-      name: topic.name,
-      slug: slugify(topic.name),
-      description: description || `Badge: ${topic.name}`,
-      category,
-      requirements,
-      daRequired: daRequired && !noDA,
-      howToObtain: requirements
-        ? [{ order: 1, instruction: requirements }]
-        : [{ order: 1, instruction: `See forum link for details` }],
-      forumLinks: [
-        {
-          url: topic.url,
-          title: `DF Encyclopedia: ${topic.name}`,
-          isPrimary: true,
-        },
-      ],
-      tags,
-      ...(notes && notes.length > 0 ? { notes } : {}),
-    }
-
-    return badge
-  } catch (error) {
-    console.error(`   ❌ Error parsing "${topic.name}": ${error}`)
+  if (cleanParts.length < 2) {
     return null
   }
-}
 
-// ─── Utility functions ───────────────────────────────────────────────────────
+  // Find description — usually the first line after the badge name that isn't metadata
+  let description = ''
+  let daRequired = false
+  let requirements = ''
+  let category = 'misc'
+  const noteLines: string[] = []
 
-function decodeHTMLEntities(str: string): string {
-  return str
-    .replace(/&amp;/g, '&')
-    .replace(/&lt;/g, '<')
-    .replace(/&gt;/g, '>')
-    .replace(/&quot;/g, '"')
-    .replace(/&#39;/g, "'")
-    .replace(/&#(\d+);/g, (_, num) => String.fromCharCode(Number(num)))
-}
+  let foundReqs = false
 
-function stripHtml(html: string): string {
-  return html
-    .replace(/<br\s*\/?>/gi, '\n')
-    .replace(/<\/p>/gi, '\n')
-    .replace(/<[^>]+>/g, '')
-    .replace(/&nbsp;/g, ' ')
-    .replace(/\n{3,}/g, '\n\n')
-    .trim()
-}
+  for (const part of cleanParts) {
+    // Skip the badge name line itself
+    if (part === name || part === `The ${name}` || part.replace(/^The /, '') === name) continue
 
-function extractDescription(text: string, badgeName: string): string {
-  // Description is usually the italic line right after the badge name
-  // Format: "BadgeName\nThe italic description\n(No DA Required)"
-  const lines = text.split('\n').map((l) => l.trim()).filter(Boolean)
+    // DA status
+    if (/^\(.*DA.*\)$/i.test(part)) {
+      daRequired = /DA Required/i.test(part) && !/No DA/i.test(part)
+      continue
+    }
 
-  // Find the line after the badge name that looks like a description
-  const nameIdx = lines.findIndex((l) => l.includes(badgeName))
-  if (nameIdx >= 0 && nameIdx + 1 < lines.length) {
-    const nextLine = lines[nameIdx + 1]
-    // Skip if it's a metadata line
-    if (
-      !nextLine.startsWith('(') &&
-      !nextLine.startsWith('Requirements') &&
-      !nextLine.startsWith('Category') &&
-      nextLine.length > 5
-    ) {
-      return nextLine
+    // Requirements line
+    if (/^Requirements?:/i.test(part)) {
+      requirements = part.replace(/^Requirements?:\s*/i, '').trim()
+      foundReqs = true
+      continue
+    }
+
+    // Category line
+    if (/^Category:/i.test(part)) {
+      category = mapCategory(part.replace(/^Category:\s*/i, '').trim())
+      continue
+    }
+
+    // Other information header
+    if (/^Other information/i.test(part)) continue
+
+    // "Thanks to" attribution line - skip
+    if (/^Thanks to/i.test(part)) continue
+
+    // If we haven't found requirements yet and no description yet, it's the description
+    if (!foundReqs && !description && part.length > 3) {
+      description = part
+      continue
+    }
+
+    // Everything after requirements/category is notes
+    if (foundReqs && part.length > 3 && !/^Category:/i.test(part)) {
+      noteLines.push(part)
     }
   }
 
-  // Fallback: look for first non-metadata line
-  for (const line of lines) {
-    if (
-      line !== badgeName &&
-      !line.startsWith('(') &&
-      !line.startsWith('Requirements') &&
-      !line.startsWith('Category') &&
-      !line.startsWith('Other') &&
-      !line.startsWith('Thanks') &&
-      !line.startsWith('Badge') &&
-      line.length > 10 &&
-      line.length < 200
-    ) {
-      return line
-    }
-  }
+  // Clean up the display name (forum uses "Name, The" format)
+  const displayName = name.includes(', The')
+    ? `The ${name.replace(', The', '')}`
+    : name.includes(', A')
+      ? `A ${name.replace(', A', '')}`
+      : name
 
-  return ''
+  const slug = slugify(displayName)
+  const notes = noteLines.length > 0 ? noteLines.join('. ') : undefined
+
+  // Generate obtaining steps from requirements
+  const howToObtain = requirements
+    ? [{ order: 1, instruction: requirements }]
+    : [{ order: 1, instruction: 'See forum link for details' }]
+
+  return {
+    id: slug,
+    name: displayName,
+    slug,
+    description: description || `Badge: ${displayName}`,
+    category,
+    requirements,
+    daRequired,
+    howToObtain,
+    forumLinks: [
+      {
+        url: `${FORUM_BASE}/tm.asp?m=${messageId}`,
+        title: `DF Encyclopedia: ${displayName}`,
+        isPrimary: true,
+      },
+    ],
+    tags: generateTags(displayName, requirements, category),
+    ...(notes ? { notes } : {}),
+  }
 }
 
 function mapCategory(raw: string): string {
   const lower = raw.toLowerCase()
   if (lower.includes('quest')) return 'quest-completion'
   if (lower.includes('holiday') || lower.includes('seasonal')) return 'seasonal'
-  if (lower.includes('pvp') || lower.includes('combat')) return 'combat'
-  if (lower.includes('skill')) return 'collection'
-  if (lower.includes('armor')) return 'collection'
-  if (lower.includes('random') || lower.includes('misc')) return 'misc'
+  if (lower.includes('pvp')) return 'combat'
+  if (lower.includes('challenge')) return 'combat'
+  if (lower.includes('skill') || lower.includes('class') || lower.includes('armor'))
+    return 'collection'
+  if (lower.includes('random')) return 'misc'
   if (lower.includes('exploration')) return 'exploration'
   if (lower.includes('secret')) return 'secret'
   if (lower.includes('community')) return 'community'
@@ -320,10 +217,9 @@ function mapCategory(raw: string): string {
 }
 
 function generateTags(name: string, requirements: string, category: string): string[] {
-  const tags: string[] = []
+  const tags: string[] = [category]
   const combined = `${name} ${requirements}`.toLowerCase()
 
-  // Location-based tags
   if (combined.includes('oaklore')) tags.push('oaklore')
   if (combined.includes('falconreach')) tags.push('falconreach')
   if (combined.includes('amityvale')) tags.push('amityvale')
@@ -331,17 +227,16 @@ function generateTags(name: string, requirements: string, category: string): str
   if (combined.includes('necropolis')) tags.push('necropolis')
   if (combined.includes('lymcrest')) tags.push('lymcrest')
   if (combined.includes('dragonsgrasp')) tags.push('dragonsgrasp')
-  if (combined.includes('sulen')) tags.push("swordhaven")
   if (combined.includes('frostval')) tags.push('frostval')
   if (combined.includes('mogloween')) tags.push('mogloween')
-
-  // Category tag
-  tags.push(category)
+  if (combined.includes('inn at the edge')) tags.push('inn-challenges')
+  if (combined.includes('book of lore')) tags.push('book-of-lore')
+  if (combined.includes('hero\'s heart')) tags.push('heros-heart-day')
 
   return [...new Set(tags)]
 }
 
-// ─── Main ────────────────────────────────────────────────────────────────────
+// ─── Main: crawl all pages of badge forum ────────────────────────────────────
 
 async function main() {
   console.log('🐉 DragonFable Badge Scraper')
@@ -350,53 +245,67 @@ async function main() {
   const cookie = loadCookie()
   console.log('✅ Cookie loaded from .env\n')
 
-  // Step 1: Get all topic links
-  const topics = await getTopicLinks(cookie)
-
-  if (topics.length === 0) {
-    console.error('❌ No badge topics found. Check your cookie — you may need to refresh it.')
-    process.exit(1)
-  }
-
-  // Step 2: Fetch and parse each badge
   const badges: BadgeData[] = []
-  let success = 0
-  let failed = 0
+  let page = 1
+  let hasMore = true
+  let skipped = 0
 
-  for (let i = 0; i < topics.length; i++) {
-    const topic = topics[i]
-    console.log(`[${i + 1}/${topics.length}] Fetching: ${topic.name}`)
+  while (hasMore) {
+    const url =
+      page === 1
+        ? `${FORUM_BASE}/tt.asp?forumid=${BADGES_FORUM_ID}`
+        : `${FORUM_BASE}/tt.asp?forumid=${BADGES_FORUM_ID}&p=${page}&tmode=10&smode=1`
 
-    let badge = await parseBadgePage(topic, cookie)
+    console.log(`📄 Fetching page ${page}...`)
 
-    // Retry once on failure
-    if (!badge) {
-      console.log(`   Retrying after ${RETRY_DELAY_MS / 1000}s...`)
-      await sleep(RETRY_DELAY_MS)
-      badge = await parseBadgePage(topic, cookie)
+    const html = await fetchPage(url, cookie)
+
+    // Extract all topic links with their title attributes
+    // Pattern: <a href="tm.asp?m=XXXXX" title="badge preview...">  Badge Name  </a>
+    const linkRegex = /<a\s+href="tm\.asp\?m=(\d+)"\s+title="([^"]*)">\s*(.+?)\s*<\/a>/gi
+    let match: RegExpExecArray | null
+    let foundOnPage = 0
+
+    while ((match = linkRegex.exec(html)) !== null) {
+      const messageId = match[1]
+      const titleAttr = match[2]
+      const topicName = match[3].trim()
+
+      // Skip the A-Z index thread
+      if (topicName === 'A-Z Badges') continue
+      // Skip if already processed (dedup)
+      if (badges.some((b) => b.forumLinks[0]?.url.includes(messageId))) continue
+
+      const badge = parseBadgeFromTitle(topicName, titleAttr, messageId)
+      if (badge) {
+        badges.push(badge)
+        foundOnPage++
+      } else {
+        skipped++
+        console.log(`   ⚠️  Could not parse: ${topicName}`)
+      }
     }
 
-    if (badge) {
-      badges.push(badge)
-      success++
-    } else {
-      failed++
-    }
+    console.log(`   Parsed ${foundOnPage} badges from page ${page}`)
 
-    // Rate limit
-    if (i < topics.length - 1) {
+    // Check for next page
+    const nextPagePattern = new RegExp(`p=${page + 1}`)
+    if (nextPagePattern.test(html) && foundOnPage > 0) {
+      page++
       await sleep(DELAY_MS)
+    } else {
+      hasMore = false
     }
   }
 
-  // Step 3: Write output
-  console.log('\n' + '─'.repeat(50))
-  console.log(`✅ Successfully parsed: ${success}`)
-  console.log(`❌ Failed: ${failed}`)
-  console.log(`📁 Writing to: ${OUTPUT_PATH}`)
-
-  // Sort alphabetically by name
+  // Sort alphabetically
   badges.sort((a, b) => a.name.localeCompare(b.name))
+
+  // Write output
+  console.log('\n' + '─'.repeat(50))
+  console.log(`✅ Total badges parsed: ${badges.length}`)
+  console.log(`⚠️  Skipped: ${skipped}`)
+  console.log(`📁 Writing to: ${OUTPUT_PATH}`)
 
   fs.writeFileSync(OUTPUT_PATH, JSON.stringify(badges, null, 2) + '\n', 'utf-8')
 
