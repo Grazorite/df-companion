@@ -29,9 +29,16 @@ export default function Navigation() {
         aria-label="Main navigation"
       >
         {/* App title */}
-        <div className="mb-6 px-2">
-          <span className="text-gold font-bold text-lg tracking-tight">DF Companion</span>
-          <p className="text-text-muted text-xs mt-0.5">DragonFable Reference</p>
+        <div className="mb-6 px-2 flex items-center gap-2.5">
+          <img
+            src="https://media.artix.com/encyc/df/tags/DA.png"
+            alt="DragonFable logo"
+            className="w-8 h-8 object-contain flex-shrink-0"
+          />
+          <div>
+            <span className="text-gold font-bold text-lg tracking-tight">DF Companion</span>
+            <p className="text-text-muted text-xs mt-0.5">A DragonFable Reference</p>
+          </div>
         </div>
 
         <ul className="space-y-0.5 flex-1" role="list">

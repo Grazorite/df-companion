@@ -23,6 +23,11 @@ export default function HomePage() {
     <main className="px-4 sm:px-6 py-8 max-w-2xl mx-auto">
       {/* Hero */}
       <div className="mb-8 text-center">
+        <img
+          src="https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/tags_banners/Header-DFLogo.png"
+          alt="DragonFable"
+          className="h-16 mx-auto mb-4 object-contain"
+        />
         <h1 className="text-3xl font-bold text-gold mb-3">DragonFable Companion</h1>
         <p className="text-text-secondary text-base leading-relaxed max-w-xl mx-auto">
           A searchable reference for DragonFable game content. Sourced from the{' '}
