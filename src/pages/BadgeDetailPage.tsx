@@ -1,20 +1,35 @@
-import { useParams, useNavigate, Link } from 'react-router-dom'
+import { useParams, useLocation, Link } from 'react-router-dom'
 import { ArrowLeft, ExternalLink, Shield } from 'lucide-react'
 import { useBadgeBySlug, useBadgesByCategory } from '../hooks/useBadges'
 import BadgeCard from '../components/badges/BadgeCard'
 
 export default function BadgeDetailPage() {
   const { slug } = useParams<{ slug: string }>()
-  const navigate = useNavigate()
+  const location = useLocation()
   const badge = useBadgeBySlug(slug ?? '')
   const relatedBadges = useBadgesByCategory(badge?.category ?? '', badge?.slug, badge?.subcategory)
+
+  // The URL to return to when pressing "Back to Badges"
+  // - If we arrived from the badge list (or via a related badge), the `from` param tracks the original list URL
+  // - Falls back to /badges if no `from` is present
+  const searchParams = new URLSearchParams(location.search)
+  const backUrl = searchParams.get('from') ?? '/badges'
+
+  // When navigating to a related badge, we REPLACE the current history entry
+  // so clicking back always goes to the badge list, not the previous badge.
+  // We also carry the `from` param forward so it persists through the chain.
+  function relatedBadgeUrl(relatedSlug: string) {
+    const params = new URLSearchParams()
+    params.set('from', backUrl)
+    return `/badges/${relatedSlug}?${params.toString()}`
+  }
 
   if (!badge) {
     return (
       <main className="px-4 py-8 max-w-3xl mx-auto text-center">
         <p className="text-text-secondary text-lg mb-4">Badge not found.</p>
         <Link
-          to="/badges"
+          to={backUrl}
           className="text-gold underline underline-offset-2 text-sm hover:text-gold-bright transition-colors"
         >
           ← Back to Badges
@@ -33,15 +48,15 @@ export default function BadgeDetailPage() {
 
   return (
     <main className="px-4 sm:px-6 py-6 max-w-3xl mx-auto">
-      {/* Back button */}
-      <button
-        onClick={() => navigate(-1)}
+      {/* Back button — always returns to the badge list, not the previous badge */}
+      <Link
+        to={backUrl}
         className="flex items-center gap-1.5 text-text-secondary hover:text-text-primary text-sm mb-6 transition-colors duration-150 min-h-[44px] -ml-1 px-1"
-        aria-label="Go back to badge list"
+        aria-label="Back to badge list"
       >
         <ArrowLeft className="w-4 h-4" aria-hidden="true" />
         Back to Badges
-      </button>
+      </Link>
 
       {/* Badge header */}
       <div className="mb-6">
@@ -197,7 +212,7 @@ export default function BadgeDetailPage() {
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2" aria-label="Related badges">
             {relatedBadges.map((related) => (
               <li key={related.id}>
-                <BadgeCard badge={related} />
+                <BadgeCard badge={related} toUrl={relatedBadgeUrl(related.slug)} replace />
               </li>
             ))}
           </ul>

@@ -4,6 +4,10 @@ import type { Badge } from '../../types/badge'
 
 interface BadgeCardProps {
   badge: Badge
+  /** Override the navigation target (e.g. to carry `?from=` param). Defaults to /badges/:slug */
+  toUrl?: string
+  /** Use replace instead of push so clicking related badges doesn't pollute history */
+  replace?: boolean
 }
 
 const CATEGORY_COLORS: Record<string, string> = {
@@ -14,10 +18,11 @@ const CATEGORY_COLORS: Record<string, string> = {
   misc: 'bg-bg-overlay text-text-muted',
 }
 
-export default function BadgeCard({ badge }: BadgeCardProps) {
+export default function BadgeCard({ badge, toUrl, replace }: BadgeCardProps) {
   return (
     <Link
-      to={`/badges/${badge.slug}`}
+      to={toUrl ?? `/badges/${badge.slug}`}
+      replace={replace}
       className="group flex items-start gap-3 bg-bg-surface border border-border-default rounded-lg p-4 min-h-[80px] transition-all duration-200 ease-out hover:bg-bg-elevated hover:border-border-hover hover:-translate-y-0.5 hover:shadow-medium focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 focus:ring-offset-bg-base"
     >
       <div className="flex-1 min-w-0">
