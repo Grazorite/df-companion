@@ -3,26 +3,18 @@
     "id": "oaklore-navigation",
     "name": "Oaklore Navigation",
     "slug": "oaklore-navigation",
-    "description": "Awarded for successfully navigating the dangers around Oaklore Keep. One of the first badges a hero can earn on their adventure.",
+    "description": "Awarded for successfully navigating the dangers around Oaklore Keep. One of the first badges a hero can earn.",
     "category": "quest-completion",
+    "requirements": "Completion of 'Ambush in the Bushes' in Oaklore",
+    "daRequired": false,
     "howToObtain": [
-      {
-        "order": 1,
-        "instruction": "Travel to Oaklore (accessible from the Book of Lore or the main map)"
-      },
-      {
-        "order": 2,
-        "instruction": "Complete the quest 'Ambush in the Bushes' from Captain Rolith"
-      },
-      {
-        "order": 3,
-        "instruction": "The badge is awarded automatically upon quest completion"
-      }
+      { "order": 1, "instruction": "Travel to Oaklore (from the Book of Lore or main map)" },
+      { "order": 2, "instruction": "Complete the quest 'Ambush in the Bushes' from Captain Rolith" }
     ],
     "forumLinks": [
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=22384991",
-        "title": "DF Encyclopedia: Oaklore Quests",
+        "url": "https://dragonfable.fandom.com/wiki/Oaklore_Navigation",
+        "title": "Wiki: Oaklore Navigation Badge",
         "isPrimary": true
       }
     ],
@@ -35,24 +27,17 @@
     "slug": "locksmith",
     "description": "A secret badge earned by those sharp enough to notice and attempt a very peculiar door inside Oaklore Keep.",
     "category": "secret",
+    "requirements": "Successfully lockpick the 'Level 999' door in Oaklore Keep",
+    "daRequired": false,
     "howToObtain": [
-      {
-        "order": 1,
-        "instruction": "Enter Oaklore Keep"
-      },
-      {
-        "order": 2,
-        "instruction": "Find the door with the 'Level 999' note on it"
-      },
-      {
-        "order": 3,
-        "instruction": "Attempt to lockpick the door. Successfully picking it awards the badge"
-      }
+      { "order": 1, "instruction": "Enter Oaklore Keep" },
+      { "order": 2, "instruction": "Find the door with the 'Level 999' note on it" },
+      { "order": 3, "instruction": "Attempt to lockpick the door — success awards the badge" }
     ],
     "forumLinks": [
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=22384991",
-        "title": "DF Encyclopedia: Oaklore Quests",
+        "url": "https://dragonfable.fandom.com/wiki/Locksmith",
+        "title": "Wiki: Locksmith Badge",
         "isPrimary": true
       }
     ],
@@ -65,24 +50,17 @@
     "slug": "baby-dragon",
     "description": "Awarded for witnessing the hatching of your very own dragon companion, a pivotal moment in every hero's journey.",
     "category": "quest-completion",
+    "requirements": "Completion of 'The Hatching' from Twilly in Falconreach",
+    "daRequired": false,
     "howToObtain": [
-      {
-        "order": 1,
-        "instruction": "Travel to Falconreach and speak with Twilly"
-      },
-      {
-        "order": 2,
-        "instruction": "Complete the quest 'The Hatching' (available in Book 1 and Book 2)"
-      },
-      {
-        "order": 3,
-        "instruction": "Watch your dragon egg hatch to receive the badge"
-      }
+      { "order": 1, "instruction": "Travel to Falconreach and speak with Twilly" },
+      { "order": 2, "instruction": "Complete the quest 'The Hatching' (Book 1 or Book 2)" },
+      { "order": 3, "instruction": "Watch your dragon egg hatch to receive the badge" }
     ],
     "forumLinks": [
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=22364270",
-        "title": "DF Encyclopedia: Falconreach Quests",
+        "url": "https://dragonfable.fandom.com/wiki/Baby_Dragon_(Badge)",
+        "title": "Wiki: Baby Dragon Badge",
         "isPrimary": true
       }
     ],
@@ -95,28 +73,17 @@
     "slug": "idle-heroes",
     "description": "Earned by enjoying a theatrical diversion. Because even heroes need a night off.",
     "category": "quest-completion",
+    "requirements": "Complete 'Falconreach Idle!' and 'We now return to your show!' from Zevox",
+    "daRequired": false,
     "howToObtain": [
-      {
-        "order": 1,
-        "instruction": "Travel to Book 1 Falconreach and find Zevox at the Theatre"
-      },
-      {
-        "order": 2,
-        "instruction": "Complete the quest 'Falconreach Idle!'"
-      },
-      {
-        "order": 3,
-        "instruction": "Complete the follow-up quest 'We now return to your show!'"
-      },
-      {
-        "order": 4,
-        "instruction": "The badge is awarded after completing both quests"
-      }
+      { "order": 1, "instruction": "Travel to Book 1 Falconreach and find Zevox at the Theatre" },
+      { "order": 2, "instruction": "Complete the quest 'Falconreach Idle!'" },
+      { "order": 3, "instruction": "Complete the follow-up quest 'We now return to your show!'" }
     ],
     "forumLinks": [
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=22364270",
-        "title": "DF Encyclopedia: Falconreach Quests",
+        "url": "https://dragonfable.fandom.com/wiki/Idle_Heroes",
+        "title": "Wiki: Idle Heroes Badge",
         "isPrimary": true
       }
     ],
@@ -127,35 +94,26 @@
     "id": "undead-slayer",
     "name": "Undead Slayer",
     "slug": "undead-slayer",
-    "description": "Proof that you've fought alongside Artix in the battle against the undead. Used to progress Paladin, Necromancer, and DeathKnight class skills.",
+    "description": "Proof that you've fought alongside Artix in the battle against the undead. Collect badges to move the story forward and redeem for Paladin class skills.",
     "category": "combat",
+    "requirements": "Complete any of Artix's random quests at the Necropolis",
+    "daRequired": false,
     "howToObtain": [
-      {
-        "order": 1,
-        "instruction": "Travel to the Necropolis and speak with Artix"
-      },
-      {
-        "order": 2,
-        "instruction": "Complete any of Artix's random quests: Battle for Moonridge!, Artix Vs. The Undead, The TA's Challenge, The Outcast, Too Many Cooks, The Body Shop, Noxus Fumes, or Moonridge: Saved!"
-      },
-      {
-        "order": 3,
-        "instruction": "Each quest completion rewards one Undead Slayer Badge"
-      },
-      {
-        "order": 4,
-        "instruction": "A total of 15 badges are needed to fully train Paladin skills; 31 total to also train DeathKnight"
-      }
+      { "order": 1, "instruction": "Travel to the Necropolis and speak with Artix" },
+      { "order": 2, "instruction": "Complete any of Artix's random quests (Battle for Moonridge!, Artix Vs. The Undead, The TA's Challenge, The Outcast, Too Many Cooks, The Body Shop, Noxus Fumes, Moonridge: Saved!)" },
+      { "order": 3, "instruction": "Each quest completion rewards one Undead Slayer Badge" },
+      { "order": 4, "instruction": "15 badges needed for Paladin skills; 31 total for DeathKnight" }
     ],
     "forumLinks": [
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=22376498",
-        "title": "DF Encyclopedia: Necropolis & Undead Quests",
+        "url": "https://dragonfable.fandom.com/wiki/Undead_Slayer_Badge",
+        "title": "Wiki: Undead Slayer Badge",
         "isPrimary": true
       }
     ],
     "wikiLink": "https://dragonfable.fandom.com/wiki/Undead_Slayer_Badge",
-    "tags": ["artix", "necropolis", "paladin", "necromancer", "deathknight", "moonridge", "repeatable"]
+    "tags": ["artix", "necropolis", "paladin", "necromancer", "deathknight", "moonridge", "repeatable"],
+    "notes": "This badge is repeatable. You can farm multiple Undead Slayer Badges to progress Paladin and DeathKnight class training."
   },
   {
     "id": "secrets-of-bacon",
@@ -163,24 +121,16 @@
     "slug": "secrets-of-bacon",
     "description": "The universe's greatest mysteries revealed, specifically the ones involving bacon. Valencia holds all the answers.",
     "category": "secret",
+    "requirements": "Completion of 'The Secret Revealed' from Valencia at That A'Way",
+    "daRequired": false,
     "howToObtain": [
-      {
-        "order": 1,
-        "instruction": "Travel to 'That A'Way' and find Valencia"
-      },
-      {
-        "order": 2,
-        "instruction": "Complete the quest 'The Secret Revealed' from Valencia"
-      },
-      {
-        "order": 3,
-        "instruction": "The badge is awarded upon completing the quest"
-      }
+      { "order": 1, "instruction": "Travel to 'That A'Way' and find Valencia" },
+      { "order": 2, "instruction": "Complete the quest 'The Secret Revealed'" }
     ],
     "forumLinks": [
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=22364270",
-        "title": "DF Encyclopedia: Falconreach Area Quests",
+        "url": "https://dragonfable.fandom.com/wiki/Secrets_of_Bacon!",
+        "title": "Wiki: Secrets of Bacon! Badge",
         "isPrimary": true
       }
     ],
@@ -193,24 +143,17 @@
     "slug": "the-mystery-is-afoot",
     "description": "Awarded to those who unravel a sinister betrayal in Dragonsgrasp, following Inspector Doyle's trail of clues.",
     "category": "quest-completion",
+    "requirements": "Completion of 'Betrayal' from Inspector Doyle at Dragonsgrasp",
+    "daRequired": false,
     "howToObtain": [
-      {
-        "order": 1,
-        "instruction": "Travel to Dragonsgrasp"
-      },
-      {
-        "order": 2,
-        "instruction": "Find Inspector Doyle and begin his quest chain"
-      },
-      {
-        "order": 3,
-        "instruction": "Complete the quest 'Betrayal' to earn the badge"
-      }
+      { "order": 1, "instruction": "Travel to Dragonsgrasp" },
+      { "order": 2, "instruction": "Find Inspector Doyle and begin his quest chain" },
+      { "order": 3, "instruction": "Complete the quest 'Betrayal' to earn the badge" }
     ],
     "forumLinks": [
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=22395498",
-        "title": "DF Encyclopedia: Dragonsgrasp Quests",
+        "url": "https://dragonfable.fandom.com/wiki/The_Mystery_is_Afoot!",
+        "title": "Wiki: The Mystery is Afoot! Badge",
         "isPrimary": true
       }
     ],
@@ -223,28 +166,17 @@
     "slug": "amaze-n",
     "description": "For those who've conquered the depths of the Lymcrest Labyrinth, all twenty grueling levels of it.",
     "category": "exploration",
+    "requirements": "Complete Levels 16-20 of The Lymcrest Labyrinth",
+    "daRequired": false,
     "howToObtain": [
-      {
-        "order": 1,
-        "instruction": "Travel to Book 1 or Book 2 Lymcrest"
-      },
-      {
-        "order": 2,
-        "instruction": "Find Doug Digg and enter The Lymcrest Labyrinth"
-      },
-      {
-        "order": 3,
-        "instruction": "Complete Levels 16 through 20 of the Labyrinth"
-      },
-      {
-        "order": 4,
-        "instruction": "The badge is awarded upon completing Level 20"
-      }
+      { "order": 1, "instruction": "Travel to Book 1 or Book 2 Lymcrest" },
+      { "order": 2, "instruction": "Find Doug Digg and enter The Lymcrest Labyrinth" },
+      { "order": 3, "instruction": "Complete Levels 16 through 20 of the Labyrinth" }
     ],
     "forumLinks": [
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=22385577",
-        "title": "DF Encyclopedia: Lymcrest Quests",
+        "url": "https://dragonfable.fandom.com/wiki/A'maze'n",
+        "title": "Wiki: A'maze'n Badge",
         "isPrimary": true
       }
     ],
@@ -257,24 +189,17 @@
     "slug": "party-on-olaf",
     "description": "Celebrating the one and only Olaf's legendary party in the frozen north. Galanoth sends his regards.",
     "category": "quest-completion",
+    "requirements": "Completion of 'Olaf's Party' from Galanoth at Dragesvard",
+    "daRequired": false,
     "howToObtain": [
-      {
-        "order": 1,
-        "instruction": "Travel to Dragesvard in the frozen north"
-      },
-      {
-        "order": 2,
-        "instruction": "Find Galanoth and accept 'Olaf's Party' quest"
-      },
-      {
-        "order": 3,
-        "instruction": "Complete the quest to earn the badge"
-      }
+      { "order": 1, "instruction": "Travel to Dragesvard in the frozen north" },
+      { "order": 2, "instruction": "Find Galanoth and accept 'Olaf's Party' quest" },
+      { "order": 3, "instruction": "Complete the quest to earn the badge" }
     ],
     "forumLinks": [
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=22393901",
-        "title": "DF Encyclopedia: Dragesvard Quests",
+        "url": "https://dragonfable.fandom.com/wiki/Party_On,_Olaf!",
+        "title": "Wiki: Party On, Olaf! Badge",
         "isPrimary": true
       }
     ],
@@ -285,39 +210,26 @@
     "id": "pet-training-mastery",
     "name": "Pet Training Mastery",
     "slug": "pet-training-mastery",
-    "description": "Awarded for completing every pet training quest in the Pet Shop. A testament to patience and dedication. Note: 4 of the 7 quests require a Dragon Amulet.",
+    "description": "Awarded for completing every pet training quest in the Pet Shop. A testament to patience and dedication.",
     "category": "collection",
+    "requirements": "Complete all 7 Pet Training Quests at the Pet Shop",
+    "daRequired": true,
     "howToObtain": [
-      {
-        "order": 1,
-        "instruction": "Travel to the Pet Shop (accessible from Falconreach)"
-      },
-      {
-        "order": 2,
-        "instruction": "Complete all 7 Pet Training Quests"
-      },
-      {
-        "order": 3,
-        "instruction": "You must roll high enough values in each quest to get the pet"
-      },
-      {
-        "order": 4,
-        "instruction": "Note: 4 of the 7 quests are Dragon Amulet (DA) required"
-      },
-      {
-        "order": 5,
-        "instruction": "Badge is awarded after all 7 pets have been obtained"
-      }
+      { "order": 1, "instruction": "Travel to the Pet Shop (accessible from Falconreach)" },
+      { "order": 2, "instruction": "Complete all 7 Pet Training Quests" },
+      { "order": 3, "instruction": "You must roll high enough values in each quest to get the pet" },
+      { "order": 4, "instruction": "4 of the 7 quests require a Dragon Amulet" }
     ],
     "forumLinks": [
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=22364270",
-        "title": "DF Encyclopedia: Falconreach Shops & Activities",
+        "url": "https://dragonfable.fandom.com/wiki/Pet_Training_Mastery",
+        "title": "Wiki: Pet Training Mastery Badge",
         "isPrimary": true
       }
     ],
     "wikiLink": "https://dragonfable.fandom.com/wiki/Pet_Training_Mastery",
-    "tags": ["pet-shop", "pets", "collection", "dragon-amulet", "falconreach"]
+    "tags": ["pet-shop", "pets", "collection", "dragon-amulet", "falconreach"],
+    "notes": "4 of the 7 quests are Dragon Amulet (DA) locked, making this badge effectively DA-only."
   },
   {
     "id": "golem-breaker",
@@ -325,32 +237,42 @@
     "slug": "golem-breaker",
     "description": "For the hero who fought through Chapter 4 of the Frostval Storybook and helped deal with a very large, very cold golem problem.",
     "category": "seasonal",
+    "requirements": "Completion of 'We're Gonna Need More Fire...' from Frostval Storybook Ch.4",
+    "daRequired": false,
     "howToObtain": [
-      {
-        "order": 1,
-        "instruction": "Access the Frostval Storybook (available during the Frostval seasonal event)"
-      },
-      {
-        "order": 2,
-        "instruction": "Progress through the Frostval story to Chapter 4"
-      },
-      {
-        "order": 3,
-        "instruction": "Complete the quest 'We're Gonna Need More Fire...' in Chapter 4"
-      },
-      {
-        "order": 4,
-        "instruction": "Badge is awarded upon completing the quest"
-      }
+      { "order": 1, "instruction": "Access the Frostval Storybook (available during Frostval event)" },
+      { "order": 2, "instruction": "Progress through the Frostval story to Chapter 4" },
+      { "order": 3, "instruction": "Complete the quest 'We're Gonna Need More Fire...'" }
     ],
     "forumLinks": [
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=22407961",
-        "title": "DF Encyclopedia: Frostval Event Quests",
+        "url": "https://dragonfable.fandom.com/wiki/Golem_Breaker",
+        "title": "Wiki: Golem Breaker Badge",
         "isPrimary": true
       }
     ],
     "wikiLink": "https://dragonfable.fandom.com/wiki/Golem_Breaker",
     "tags": ["frostval", "seasonal", "holiday", "storybook", "chapter-4"]
+  },
+  {
+    "id": "a-hero-is-thawed",
+    "name": "A Hero is Thawed",
+    "slug": "a-hero-is-thawed",
+    "description": "The journey begins, anew.",
+    "category": "quest-completion",
+    "requirements": "Completion of A Hero is Thawed",
+    "daRequired": false,
+    "howToObtain": [
+      { "order": 1, "instruction": "Complete the quest 'A Hero is Thawed'" }
+    ],
+    "forumLinks": [
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=22417384",
+        "title": "DF Encyclopedia: A Hero is Thawed Badge",
+        "isPrimary": true
+      }
+    ],
+    "tags": ["book3", "story", "main-quest"],
+    "notes": "Badge art was added on July 27th, 2024."
   }
 ]

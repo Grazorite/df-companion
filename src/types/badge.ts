@@ -24,13 +24,16 @@ export interface Badge {
   id: string
   name: string
   slug: string
-  description: string
+  description: string // Flavour text (e.g. "The journey begins, anew.")
   category: BadgeCategory
   howToObtain: ObtainStep[]
+  requirements: string // Short requirement summary (e.g. "Completion of A Hero is Thawed")
+  daRequired: boolean // Whether a Dragon Amulet is needed
   forumLinks: ForumLink[]
   wikiLink?: string
   tags: string[]
-  imageUrl?: string
+  imageUrl?: string // Badge art (local path or URL)
+  notes?: string // Additional information / trivia
 }
 
 export interface CategoryMeta {

@@ -48,13 +48,26 @@ export default function BadgeDetailPage() {
 
       {/* Badge header */}
       <div className="mb-6">
-        <span
-          className={`inline-block text-xs font-medium px-2.5 py-1 rounded-full mb-3 capitalize ${CATEGORY_COLORS[badge.category] ?? CATEGORY_COLORS.misc}`}
-        >
-          {badge.category.replace(/-/g, ' ')}
-        </span>
-        <h1 className="text-2xl font-bold text-white mb-3">{badge.name}</h1>
-        <p className="text-slate-300 leading-relaxed text-sm">{badge.description}</p>
+        <div className="flex items-center gap-2 flex-wrap mb-3">
+          <span
+            className={`inline-block text-xs font-medium px-2.5 py-1 rounded-full capitalize ${CATEGORY_COLORS[badge.category] ?? CATEGORY_COLORS.misc}`}
+          >
+            {badge.category.replace(/-/g, ' ')}
+          </span>
+          {badge.daRequired && (
+            <span className="inline-block text-xs font-medium px-2.5 py-1 rounded-full bg-orange-500/20 text-orange-400">
+              DA Required
+            </span>
+          )}
+        </div>
+        <h1 className="text-2xl font-bold text-white mb-2">{badge.name}</h1>
+        <p className="text-slate-300 leading-relaxed text-sm italic mb-3">{badge.description}</p>
+        {badge.requirements && (
+          <p className="text-slate-400 text-sm">
+            <span className="text-slate-500 font-medium">Requirement: </span>
+            {badge.requirements}
+          </p>
+        )}
       </div>
 
       {/* How to obtain */}
@@ -120,7 +133,7 @@ export default function BadgeDetailPage() {
 
       {/* Tags */}
       {badge.tags.length > 0 && (
-        <div className="flex flex-wrap gap-1.5 mb-8" aria-label="Tags">
+        <div className="flex flex-wrap gap-1.5 mb-5" aria-label="Tags">
           {badge.tags.map((tag) => (
             <span
               key={tag}
@@ -130,6 +143,16 @@ export default function BadgeDetailPage() {
             </span>
           ))}
         </div>
+      )}
+
+      {/* Notes */}
+      {badge.notes && (
+        <section className="bg-slate-800/50 border border-slate-700 rounded-xl p-4 mb-8">
+          <h2 className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">
+            Notes
+          </h2>
+          <p className="text-slate-300 text-sm leading-relaxed">{badge.notes}</p>
+        </section>
       )}
 
       {/* Related badges */}
