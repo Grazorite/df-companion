@@ -2,7 +2,7 @@ import json, re, sys
 from pathlib import Path
 
 BADGES_PATH = Path(__file__).parent.parent / 'src/data/badges.json'
-DF_PEDIA_BASE = 'https://github.com/DF-Pedia/DF-Pedia/raw/master/badges'
+DF_PEDIA_BASE = 'https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges'
 
 IMAGE_MAP = {
     '#1 Threat: Bears': '#1-Threat-Bears.jpg',

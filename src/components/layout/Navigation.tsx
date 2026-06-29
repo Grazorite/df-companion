@@ -1,14 +1,15 @@
 import { NavLink } from 'react-router-dom'
-import { Trophy, Scroll, Map, Skull, Package, Home } from 'lucide-react'
+import { Trophy, Map, Skull, Home, Sword, Users, Swords } from 'lucide-react'
 import { useTotalBadgeCount } from '../../hooks/useBadges'
 
 const NAV_ITEMS = [
   { to: '/', icon: Home, label: 'Home', exact: true, available: true },
   { to: '/badges', icon: Trophy, label: 'Badges', exact: false, available: true },
-  { to: '/quests', icon: Scroll, label: 'Quests', exact: false, available: false },
-  { to: '/locations', icon: Map, label: 'Locations', exact: false, available: false },
+  { to: '/locations', icon: Map, label: 'Locations & Quests', exact: false, available: false },
+  { to: '/classes', icon: Swords, label: 'Classes', exact: false, available: false },
   { to: '/monsters', icon: Skull, label: 'Monsters', exact: false, available: false },
-  { to: '/items', icon: Package, label: 'Items', exact: false, available: false },
+  { to: '/items', icon: Sword, label: 'Weapons & Items', exact: false, available: false },
+  { to: '/npcs', icon: Users, label: 'NPCs & Pets', exact: false, available: false },
 ]
 
 export default function Navigation() {
