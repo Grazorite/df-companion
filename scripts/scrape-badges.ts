@@ -99,7 +99,12 @@ async function getTopicLinks(cookie: string): Promise<TopicLink[]> {
   let hasMore = true
 
   while (hasMore) {
-    const url = `${FORUM_BASE}/tt.asp?forumid=${BADGES_FORUM_ID}&page=${page}`
+    // Forum uses p=X for pagination, tmode=10 shows all topics, smode=1 sorts by name
+    const url =
+      page === 1
+        ? `${FORUM_BASE}/tt.asp?forumid=${BADGES_FORUM_ID}`
+        : `${FORUM_BASE}/tt.asp?forumid=${BADGES_FORUM_ID}&p=${page}&tmode=10&smode=1`
+
     console.log(`📄 Fetching topic list page ${page}...`)
 
     const html = await fetchPage(url, cookie)
@@ -115,7 +120,7 @@ async function getTopicLinks(cookie: string): Promise<TopicLink[]> {
 
       // Skip "A-Z Badges" (the index thread) and navigation links
       if (name === 'A-Z Badges' || name === 'Older Topic' || name === 'Newer Topic') continue
-      // Skip if already have this topic
+      // Skip if already have this topic (dedup across pages)
       if (topics.some((t) => t.messageId === messageId)) continue
 
       topics.push({
@@ -128,8 +133,9 @@ async function getTopicLinks(cookie: string): Promise<TopicLink[]> {
 
     console.log(`   Found ${foundOnPage} badge topics on page ${page}`)
 
-    // Check if there's a "next page" link
-    if (html.includes(`page=${page + 1}`) && foundOnPage > 0) {
+    // Check if there's a next page link (look for p=N+1 in the HTML)
+    const nextPagePattern = new RegExp(`p=${page + 1}`)
+    if (nextPagePattern.test(html) && foundOnPage > 0) {
       page++
       await sleep(DELAY_MS)
     } else {
@@ -137,7 +143,7 @@ async function getTopicLinks(cookie: string): Promise<TopicLink[]> {
     }
   }
 
-  console.log(`\n✅ Found ${topics.length} total badge topics\n`)
+  console.log(`\n✅ Found ${topics.length} total badge topics across ${page} pages\n`)
   return topics
 }
 
