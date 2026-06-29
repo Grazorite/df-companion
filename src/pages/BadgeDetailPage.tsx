@@ -66,6 +66,7 @@ export default function BadgeDetailPage() {
           )}
         </div>
         <div className="flex items-start gap-4 mb-3">
+          {/* Badge image */}
           {badge.imageUrl && !badge.imageVariants && (
             <img
               src={badge.imageUrl}
@@ -88,28 +89,35 @@ export default function BadgeDetailPage() {
         </div>
       </div>
 
-      {/* How to obtain */}
+      {/* How to obtain — no step number since all badges have exactly one requirement */}
       <section aria-labelledby="how-to-obtain-heading" className="bg-slate-800 rounded-xl p-5 mb-5">
         <h2
           id="how-to-obtain-heading"
-          className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-4"
+          className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3"
         >
           How to Obtain
         </h2>
-        <ol className="space-y-3" aria-label="Steps to obtain this badge">
-          {badge.howToObtain.map((step) => (
-            <li key={step.order} className="flex gap-3">
-              <span
-                className="flex-shrink-0 bg-amber-500/20 text-amber-400 text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center mt-0.5"
-                aria-label={`Step ${step.order}`}
-              >
-                {step.order}
-              </span>
-              <p className="text-slate-300 text-sm leading-relaxed">{step.instruction}</p>
-            </li>
-          ))}
-        </ol>
+        <p className="text-slate-300 text-sm leading-relaxed">
+          {badge.howToObtain[0]?.instruction ?? 'See forum link for details.'}
+        </p>
       </section>
+
+      {/* Other information */}
+      {badge.notes && (
+        <section className="bg-slate-800/50 border border-slate-700 rounded-xl p-4 mb-5">
+          <h2 className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">
+            Other Information
+          </h2>
+          <ul className="space-y-2">
+            {badge.notes.split(' • ').filter((n) => n.trim().length > 0).map((note, i) => (
+              <li key={i} className="flex gap-2 text-sm text-slate-300 leading-relaxed">
+                <span className="text-slate-500 mt-0.5 flex-shrink-0">•</span>
+                <span>{note.trim()}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       {/* Forum sources */}
       <section aria-labelledby="sources-heading" className="mb-5">
@@ -140,10 +148,7 @@ export default function BadgeDetailPage() {
                 )}
                 <span className="text-white text-sm font-medium truncate block">{link.title}</span>
               </div>
-              <ExternalLink
-                className="w-4 h-4 text-slate-400 flex-shrink-0 ml-3"
-                aria-hidden="true"
-              />
+              <ExternalLink className="w-4 h-4 text-slate-400 flex-shrink-0 ml-3" aria-hidden="true" />
             </a>
           ))}
         </div>
@@ -151,33 +156,13 @@ export default function BadgeDetailPage() {
 
       {/* Tags */}
       {badge.tags.length > 0 && (
-        <div className="flex flex-wrap gap-1.5 mb-5" aria-label="Tags">
+        <div className="flex flex-wrap gap-1.5 mb-8" aria-label="Tags">
           {badge.tags.map((tag) => (
-            <span
-              key={tag}
-              className="bg-slate-700 text-slate-400 text-xs px-2.5 py-1 rounded-full"
-            >
+            <span key={tag} className="bg-slate-700 text-slate-400 text-xs px-2.5 py-1 rounded-full">
               {tag}
             </span>
           ))}
         </div>
-      )}
-
-      {/* Notes */}
-      {badge.notes && (
-        <section className="bg-slate-800/50 border border-slate-700 rounded-xl p-4 mb-8">
-          <h2 className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">
-            Other Information
-          </h2>
-          <ul className="space-y-2">
-            {badge.notes.split(' • ').filter(n => n.trim().length > 0).map((note, i) => (
-              <li key={i} className="flex gap-2 text-sm text-slate-300 leading-relaxed">
-                <span className="text-slate-500 mt-0.5 flex-shrink-0">•</span>
-                <span>{note.trim()}</span>
-              </li>
-            ))}
-          </ul>
-        </section>
       )}
 
       {/* Related badges */}
