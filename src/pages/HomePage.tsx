@@ -20,7 +20,7 @@ export default function HomePage() {
   const badgeCount = useTotalBadgeCount()
 
   return (
-    <main className="px-4 sm:px-6 py-8 max-w-3xl mx-auto">
+    <main className="px-4 sm:px-6 py-8 max-w-2xl mx-auto">
       {/* Hero */}
       <div className="mb-8 text-center">
         <h1 className="text-3xl font-bold text-gold mb-3">DragonFable Companion</h1>
@@ -38,8 +38,8 @@ export default function HomePage() {
         </p>
       </div>
 
-      {/* Section grid — uniform cards, Accessories then Badges then the rest */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+      {/* Section grid — single column, full width */}
+      <div className="grid grid-cols-1 gap-3">
         {SECTIONS.map(({ to, icon: Icon, label, desc, available }) =>
           available ? (
             <Link
