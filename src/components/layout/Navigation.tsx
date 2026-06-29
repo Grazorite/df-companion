@@ -6,8 +6,8 @@ import { useTotalBadgeCount } from '../../hooks/useBadges'
 // https://forums2.battleon.com/f/tt.asp?forumid=256
 const NAV_ITEMS = [
   { to: '/', icon: Home, label: 'Home', exact: true, available: true },
-  { to: '/badges', icon: Trophy, label: 'Badges', exact: false, available: true },
   { to: '/accessories', icon: Shirt, label: 'Accessories', exact: false, available: false },
+  { to: '/badges', icon: Trophy, label: 'Badges', exact: false, available: true },
   { to: '/classes', icon: Sword, label: 'Classes / Abilities', exact: false, available: false },
   { to: '/housing', icon: House, label: 'Housing', exact: false, available: false },
   { to: '/locations', icon: Map, label: 'Locations / Quests', exact: false, available: false },
