@@ -6,17 +6,18 @@ export default function HomePage() {
   const badgeCount = useTotalBadgeCount()
 
   return (
-    <main className="px-4 py-8 max-w-3xl mx-auto">
+    <main className="px-4 sm:px-6 py-8 max-w-3xl mx-auto">
+      {/* Hero */}
       <div className="mb-8 text-center">
-        <h1 className="text-3xl font-bold text-amber-400 mb-2">DragonFable Companion</h1>
-        <p className="text-slate-300 text-base leading-relaxed max-w-xl mx-auto">
-          A searchable reference for DragonFable game content — quests, badges, locations, and
-          more. All information sourced from the{' '}
+        <h1 className="text-3xl font-bold text-gold mb-3">DragonFable Companion</h1>
+        <p className="text-text-secondary text-base leading-relaxed max-w-xl mx-auto">
+          A searchable reference for DragonFable game content — badges, quests, locations, and
+          more. Sourced from the{' '}
           <a
             href="https://forums2.battleon.com/f/tt.asp?forumid=256"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-amber-400 underline underline-offset-2"
+            className="text-gold hover:text-gold-bright underline underline-offset-2 transition-colors"
           >
             official DragonFable forums
           </a>
@@ -24,21 +25,21 @@ export default function HomePage() {
         </p>
       </div>
 
-      {/* Available section */}
+      {/* Badges — available section */}
       <Link
         to="/badges"
-        className="flex items-center justify-between bg-slate-800 border border-amber-500/40 rounded-xl p-5 mb-4 hover:bg-slate-700 hover:border-amber-400 transition-colors group"
+        className="flex items-center justify-between bg-bg-surface border border-gold/30 rounded-lg p-5 mb-4 hover:bg-bg-elevated hover:border-gold/60 transition-all duration-200 group shadow-subtle hover:shadow-medium"
       >
         <div className="flex items-center gap-4">
-          <div className="bg-amber-500/20 rounded-lg p-3">
-            <Trophy className="w-6 h-6 text-amber-400" />
+          <div className="bg-gold/15 rounded-lg p-3 group-hover:bg-gold/25 transition-colors duration-200">
+            <Trophy className="w-6 h-6 text-gold" />
           </div>
           <div>
-            <div className="font-semibold text-white text-lg">Badges</div>
-            <div className="text-slate-400 text-sm">{badgeCount} badges • Hidden achievements and how to earn them</div>
+            <div className="font-semibold text-text-primary text-lg">{badgeCount} Badges</div>
+            <div className="text-text-secondary text-sm">Hidden achievements and how to earn them</div>
           </div>
         </div>
-        <ArrowRight className="w-5 h-5 text-slate-400 group-hover:text-amber-400 transition-colors" />
+        <ArrowRight className="w-5 h-5 text-text-muted group-hover:text-gold transition-colors duration-150" />
       </Link>
 
       {/* Coming soon sections */}
@@ -51,15 +52,15 @@ export default function HomePage() {
         ].map(({ icon: Icon, label, desc }) => (
           <div
             key={label}
-            className="flex items-center gap-3 bg-slate-800/50 border border-slate-700 rounded-xl p-4 opacity-60"
+            className="flex items-center gap-3 bg-bg-surface/40 border border-border-subtle rounded-lg p-4 opacity-50 cursor-not-allowed"
           >
-            <div className="bg-slate-700 rounded-lg p-2">
-              <Icon className="w-5 h-5 text-slate-400" />
+            <div className="bg-bg-overlay rounded-lg p-2 flex-shrink-0">
+              <Icon className="w-5 h-5 text-text-muted" />
             </div>
-            <div>
-              <div className="font-medium text-slate-300 text-sm">{label}</div>
-              <div className="text-slate-500 text-xs">{desc}</div>
-              <div className="text-slate-600 text-xs mt-0.5">Coming soon</div>
+            <div className="min-w-0">
+              <div className="font-medium text-text-secondary text-sm">{label}</div>
+              <div className="text-text-muted text-xs truncate">{desc}</div>
+              <div className="text-text-muted text-xs mt-0.5 opacity-70">Coming soon</div>
             </div>
           </div>
         ))}

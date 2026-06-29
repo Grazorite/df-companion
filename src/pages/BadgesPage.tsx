@@ -16,7 +16,6 @@ export default function BadgesPage() {
   const categories = useCategories()
   const subcategories = useSubcategories(activeCategory ?? '')
 
-  // Sync to URL
   useEffect(() => {
     const params: Record<string, string> = {}
     if (debouncedQuery) params.q = debouncedQuery
@@ -35,7 +34,6 @@ export default function BadgesPage() {
     const params: Record<string, string> = {}
     if (debouncedQuery) params.q = debouncedQuery
     if (id) params.category = id
-    // Clear subcategory when switching category
     setSearchParams(params, { replace: true })
   }
 
@@ -43,17 +41,16 @@ export default function BadgesPage() {
     const params: Record<string, string> = {}
     if (debouncedQuery) params.q = debouncedQuery
     if (activeCategory) params.category = activeCategory
-    // Toggle off if already active
     if (sub !== activeSubcategory) params.sub = sub
     setSearchParams(params, { replace: true })
   }
 
   return (
-    <main className="px-4 py-6 max-w-5xl mx-auto">
+    <main className="px-4 sm:px-6 py-6 max-w-5xl mx-auto">
       {/* Page header */}
       <div className="mb-5">
-        <h1 className="text-2xl font-bold text-amber-400 mb-1">Badges</h1>
-        <p className="text-slate-400 text-sm">
+        <h1 className="text-2xl font-bold text-gold mb-1">Badges</h1>
+        <p className="text-text-secondary text-sm">
           Hidden achievements earned through quests, exploration, and more.
         </p>
       </div>
@@ -72,10 +69,10 @@ export default function BadgesPage() {
       <div className="flex gap-2 flex-wrap mb-2" role="group" aria-label="Filter by category">
         <button
           onClick={() => selectCategory(undefined)}
-          className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors min-h-[32px] ${
+          className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors duration-150 min-h-[36px] ${
             !activeCategory
-              ? 'bg-amber-500 text-slate-900'
-              : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
+              ? 'bg-gold-bright text-bg-base font-semibold'
+              : 'bg-bg-overlay text-text-secondary hover:bg-border-hover hover:text-text-primary'
           }`}
           aria-pressed={!activeCategory}
         >
@@ -85,10 +82,10 @@ export default function BadgesPage() {
           <button
             key={cat.id}
             onClick={() => selectCategory(cat.id)}
-            className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors min-h-[32px] ${
+            className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors duration-150 min-h-[36px] ${
               activeCategory === cat.id
-                ? 'bg-amber-500 text-slate-900'
-                : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
+                ? 'bg-gold-bright text-bg-base font-semibold'
+                : 'bg-bg-overlay text-text-secondary hover:bg-border-hover hover:text-text-primary'
             }`}
             aria-pressed={activeCategory === cat.id}
           >
@@ -97,10 +94,10 @@ export default function BadgesPage() {
         ))}
       </div>
 
-      {/* Subcategory filters — only shown when a category is selected */}
+      {/* Subcategory filters */}
       {activeCategory && subcategories.length > 0 && (
         <div
-          className="flex gap-1.5 flex-wrap mb-4 pl-1 border-l-2 border-slate-700"
+          className="flex gap-1.5 flex-wrap mb-4 ml-1 pl-3 border-l-2 border-border-default"
           role="group"
           aria-label="Filter by subcategory"
         >
@@ -108,10 +105,10 @@ export default function BadgesPage() {
             <button
               key={sub}
               onClick={() => selectSubcategory(sub)}
-              className={`px-2.5 py-1 rounded-full text-xs transition-colors min-h-[28px] ${
+              className={`px-2.5 py-1 rounded-full text-xs transition-all duration-150 min-h-[30px] border ${
                 activeSubcategory === sub
-                  ? 'bg-amber-500/30 text-amber-300 border border-amber-500/50'
-                  : 'bg-slate-800 text-slate-400 hover:text-slate-200 border border-slate-700 hover:border-slate-500'
+                  ? 'bg-gold/20 text-gold border-gold/50'
+                  : 'bg-bg-surface text-text-muted border-border-default hover:text-text-primary hover:border-border-hover'
               }`}
               aria-pressed={activeSubcategory === sub}
             >
@@ -122,12 +119,12 @@ export default function BadgesPage() {
       )}
 
       {/* Results count */}
-      <p className="text-slate-500 text-xs mb-4" aria-live="polite" aria-atomic="true">
+      <p className="text-text-muted text-xs mb-4" aria-live="polite" aria-atomic="true">
         {total} {total === 1 ? 'badge' : 'badges'} found
         {activeSubcategory ? (
-          <span className="text-slate-400"> in {activeSubcategory}</span>
+          <span className="text-text-secondary"> in {activeSubcategory}</span>
         ) : activeCategory ? (
-          <span className="text-slate-400"> in {categories.find(c => c.id === activeCategory)?.displayName ?? activeCategory}</span>
+          <span className="text-text-secondary"> in {categories.find(c => c.id === activeCategory)?.displayName ?? activeCategory}</span>
         ) : null}
       </p>
 

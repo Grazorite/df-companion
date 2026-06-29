@@ -7,10 +7,13 @@ interface LayoutProps {
 
 export default function Layout({ children }: LayoutProps) {
   return (
-    <div className="min-h-screen bg-slate-900 text-white flex flex-col lg:flex-row">
+    <div className="min-h-screen bg-bg-base text-text-primary flex flex-col lg:flex-row">
       <Navigation />
-      {/* bottom nav padding on mobile, none on desktop */}
-      <div className="flex-1 pb-16 lg:pb-0 min-w-0">
+      {/* Account for mobile bottom nav (56px) + iOS safe area inset */}
+      <div
+        className="flex-1 lg:pb-0 min-w-0"
+        style={{ paddingBottom: 'calc(56px + env(safe-area-inset-bottom, 0px))' }}
+      >
         {children}
       </div>
     </div>

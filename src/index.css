@@ -1,17 +1,64 @@
 @import "tailwindcss";
 
-/* Page transition animation */
+@theme {
+  /* ── Backgrounds ── */
+  --color-bg-base: #111315;
+  --color-bg-surface: #1a1a1a;
+  --color-bg-elevated: #212529;
+  --color-bg-overlay: #343a40;
+
+  /* ── Borders ── */
+  --color-border-default: #343a40;
+  --color-border-subtle: #2a2e33;
+  --color-border-hover: #495057;
+
+  /* ── Gold Accents (DragonFable brand) ── */
+  --color-gold: #f69a07;
+  --color-gold-bright: #ffc107;
+  --color-gold-dim: #deaa0c;
+
+  /* ── Brand Red ── */
+  --color-red-brand: #db1b00;
+  --color-red-dark: #8b0000;
+
+  /* ── Text ── */
+  --color-text-primary: #f8f9fa;
+  --color-text-secondary: #9ca3af;
+  --color-text-muted: #6c757d;
+
+  /* ── Shadows ── */
+  --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.5);
+  --shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.6);
+  --shadow-prominent: 0 8px 32px rgba(0, 0, 0, 0.7);
+
+  /* ── Radii ── */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+}
+
+/* Page transition */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(4px); }
-  to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 main {
-  animation: fadeIn 0.2s ease-out;
+  animation: fadeIn 200ms ease-out;
 }
 
+/* Image fade-in utility */
+.img-fade {
+  animation: fadeIn 250ms ease-out;
+}
+
+/* Prefers-reduced-motion: disable all animations */
 @media (prefers-reduced-motion: reduce) {
-  main {
-    animation: none;
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0ms !important;
+    transition-duration: 0ms !important;
   }
 }

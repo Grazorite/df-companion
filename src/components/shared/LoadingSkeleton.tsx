@@ -1,14 +1,15 @@
 /** Animated placeholder shown while badge data is loading */
 export function BadgeCardSkeleton() {
   return (
-    <div className="bg-slate-800 border border-slate-700 rounded-xl p-4 min-h-[80px] animate-pulse">
-      <div className="flex items-start justify-between gap-2 mb-2">
-        <div className="h-4 bg-slate-700 rounded w-2/3" />
-        <div className="h-4 bg-slate-700 rounded-full w-16 flex-shrink-0" />
-      </div>
+    <div className="bg-bg-surface border border-border-default rounded-lg p-4 min-h-[80px] animate-pulse">
+      {/* Category chip */}
+      <div className="h-4 bg-bg-overlay rounded-full w-20 mb-3" />
+      {/* Title */}
+      <div className="h-4 bg-bg-overlay rounded w-3/5 mb-2" />
+      {/* Description lines */}
       <div className="space-y-1.5">
-        <div className="h-3 bg-slate-700 rounded w-full" />
-        <div className="h-3 bg-slate-700 rounded w-4/5" />
+        <div className="h-3 bg-bg-overlay rounded w-full" />
+        <div className="h-3 bg-bg-overlay rounded w-4/5" />
       </div>
     </div>
   )

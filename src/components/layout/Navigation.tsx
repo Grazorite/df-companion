@@ -18,12 +18,13 @@ export default function Navigation() {
     <>
       {/* ── Desktop sidebar ── */}
       <nav
-        className="hidden lg:flex flex-col w-60 flex-shrink-0 bg-slate-950 border-r border-slate-800 min-h-screen sticky top-0 p-4"
+        className="hidden lg:flex flex-col w-60 flex-shrink-0 bg-bg-elevated border-r border-border-default min-h-screen sticky top-0 p-4"
         aria-label="Main navigation"
       >
+        {/* App title */}
         <div className="mb-6 px-2">
-          <span className="text-amber-400 font-bold text-lg tracking-tight">DF Companion</span>
-          <p className="text-slate-600 text-xs mt-0.5">DragonFable Reference</p>
+          <span className="text-gold font-bold text-lg tracking-tight">DF Companion</span>
+          <p className="text-text-muted text-xs mt-0.5">DragonFable Reference</p>
         </div>
 
         <ul className="space-y-0.5 flex-1" role="list">
@@ -34,27 +35,27 @@ export default function Navigation() {
                   to={to}
                   end={exact}
                   className={({ isActive }) =>
-                    `flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-colors ${
+                    `flex items-center gap-3 pl-2 pr-3 py-2.5 rounded-lg text-sm transition-all duration-150 ${
                       isActive
-                        ? 'bg-amber-500/20 text-amber-400 font-medium'
-                        : 'text-slate-400 hover:text-white hover:bg-slate-800'
+                        ? 'border-l-[3px] border-gold bg-gold/10 text-gold font-medium pl-[5px]'
+                        : 'border-l-[3px] border-transparent text-text-secondary hover:text-text-primary hover:bg-bg-overlay/60 pl-[5px]'
                     }`
                   }
                 >
                   <Icon className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
                   <span className="flex-1">{label}</span>
                   {to === '/badges' && (
-                    <span className="text-xs text-slate-500 tabular-nums">{badgeCount}</span>
+                    <span className="text-xs text-text-muted tabular-nums">{badgeCount}</span>
                   )}
                 </NavLink>
               ) : (
                 <div
-                  className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-slate-600 cursor-not-allowed select-none"
+                  className="flex items-center gap-3 pl-[5px] pr-3 py-2.5 rounded-lg text-sm text-text-muted opacity-40 cursor-not-allowed select-none border-l-[3px] border-transparent"
                   title="Coming soon"
                 >
                   <Icon className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
                   <span className="flex-1">{label}</span>
-                  <span className="text-xs text-slate-700 bg-slate-800 px-1.5 py-0.5 rounded">
+                  <span className="text-xs text-text-muted bg-bg-overlay px-1.5 py-0.5 rounded">
                     Soon
                   </span>
                 </div>
@@ -63,14 +64,15 @@ export default function Navigation() {
           ))}
         </ul>
 
-        <div className="mt-auto pt-4 border-t border-slate-800 px-2">
-          <p className="text-slate-700 text-xs">
-            Data sourced from{' '}
+        {/* Forum attribution */}
+        <div className="mt-auto pt-4 border-t border-border-default px-2">
+          <p className="text-text-muted text-xs">
+            Data from{' '}
             <a
               href="https://forums2.battleon.com/f/tt.asp?forumid=256"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-slate-600 hover:text-slate-400 underline underline-offset-2 transition-colors"
+              className="text-text-secondary hover:text-text-primary underline underline-offset-2 transition-colors"
             >
               DF Forums
             </a>
@@ -80,7 +82,8 @@ export default function Navigation() {
 
       {/* ── Mobile bottom tab bar ── */}
       <nav
-        className="lg:hidden fixed bottom-0 inset-x-0 bg-slate-950 border-t border-slate-800 z-50 safe-area-pb"
+        className="lg:hidden fixed bottom-0 inset-x-0 bg-bg-elevated border-t border-border-default z-50"
+        style={{ paddingBottom: 'env(safe-area-inset-bottom, 0px)' }}
         aria-label="Main navigation"
       >
         <ul className="flex h-14" role="list">
@@ -91,16 +94,24 @@ export default function Navigation() {
                   to={to}
                   end={exact}
                   className={({ isActive }) =>
-                    `flex flex-col items-center justify-center h-full gap-0.5 transition-colors ${
-                      isActive ? 'text-amber-400' : 'text-slate-500 active:text-slate-300'
+                    `relative flex flex-col items-center justify-center h-full gap-0.5 transition-colors duration-150 ${
+                      isActive ? 'text-gold' : 'text-text-muted active:text-text-secondary'
                     }`
                   }
                 >
-                  <Icon className="w-5 h-5" aria-hidden="true" />
-                  <span className="text-[10px] leading-none">{label}</span>
+                  {({ isActive }) => (
+                    <>
+                      {/* Gold top indicator for active item */}
+                      {isActive && (
+                        <span className="absolute top-0 inset-x-2 h-0.5 bg-gold rounded-b-full" />
+                      )}
+                      <Icon className="w-5 h-5" aria-hidden="true" />
+                      <span className="text-[10px] leading-none">{label}</span>
+                    </>
+                  )}
                 </NavLink>
               ) : (
-                <div className="flex flex-col items-center justify-center h-full gap-0.5 text-slate-700 cursor-not-allowed">
+                <div className="flex flex-col items-center justify-center h-full gap-0.5 text-text-muted opacity-40 cursor-not-allowed">
                   <Icon className="w-5 h-5" aria-hidden="true" />
                   <span className="text-[10px] leading-none">{label}</span>
                 </div>
