@@ -31,7 +31,8 @@ export interface Badge {
   forumLinks: ForumLink[]
   wikiLink?: string
   tags: string[]
-  imageUrl?: string    // Badge art URL from DF-Pedia GitHub
+  imageUrl?: string    // Badge art URL (DF-Pedia GitHub, or forum-hosted fallback)
+  forumImageUrl?: string // Raw image URL scraped from the forum post (used as fallback)
   imageVariants?: string[] // For badges with multiple visual variants (e.g. Tog Nightmare)
   notes?: string       // Additional information / trivia (bullet-separated with " • ")
 }

@@ -49,6 +49,7 @@ interface BadgeData extends BadgeStub {
   daRequired: boolean
   howToObtain: { order: number; instruction: string }[]
   forumLinks: { url: string; title: string; isPrimary: boolean }[]
+  forumImageUrl?: string  // image URL extracted from forum post (imgur, upfiles, etc.)
   tags: string[]
   notes?: string
 }
@@ -216,24 +217,20 @@ async function fetchBadgeDetails(
     for (const line of lines) {
       if (line === stub.name || line === `The ${stub.name}`) continue
 
-      // DA status
       if (/^\(.*\)$/.test(line)) {
         if (/No DA/i.test(line)) daRequired = false
         else if (/DA Required/i.test(line)) daRequired = true
         continue
       }
 
-      // Requirements
       if (/^Requirements?:/i.test(line)) {
         requirements = line.replace(/^Requirements?:\s*/i, '').trim()
         continue
       }
 
-      // Category — parse from thread and map to our category system
       if (/^Category:/i.test(line)) {
         const rawCat = line.replace(/^Category:\s*/i, '').trim()
         subcategory = rawCat
-        // Use the raw forum category string directly for mapping
         category = mapForumCategory(rawCat)
         continue
       }
@@ -251,12 +248,47 @@ async function fetchBadgeDetails(
       }
     }
 
+    // Extract image URL from the forum post HTML
+    // Forum posts may have images from imgur, battleon upfiles, or DF-Pedia GitHub
+    // Skip UI/avatar images (board icons, user avatars, tag banners, tracker pixels)
+    let forumImageUrl: string | undefined
+    const imgRegex = /<img[^>]+src=["']([^"']+)["'][^>]*>/gi
+    let imgMatch: RegExpExecArray | null
+    while ((imgMatch = imgRegex.exec(rawBody)) !== null) {
+      const src = imgMatch[1]
+      // Skip known non-badge images
+      if (
+        src.includes('/f/image/') ||          // forum UI images
+        src.includes('forumheader') ||         // header banner
+        src.includes('quantserve') ||          // tracker pixel
+        src.includes('artix.com/shared') ||    // nav icons
+        src.includes('ArtixGameLauncher') ||   // launcher image
+        src.includes('tags/') ||               // category tag banners (DA.png, Seasonal.jpg etc.)
+        src.includes('upfiles/') && src.includes('/f/upfiles/') && src.length < 60 // tiny avatars
+      ) continue
+
+      // Accept badge images from known sources
+      if (
+        src.includes('imgur.com') ||
+        src.includes('i.imgur.com') ||
+        src.includes('DF-Pedia') ||
+        src.includes('DF-Pedia'.toLowerCase()) ||
+        src.includes('battleon.com/encyc') ||
+        src.includes('artix.com/encyc') ||
+        (src.includes('/f/upfiles/') && src.length > 60)  // longer upfile URLs are actual badge images
+      ) {
+        forumImageUrl = src
+        break
+      }
+    }
+
     return {
       description: description || `Badge: ${stub.name}`,
       daRequired,
       requirements,
       category,
       subcategory,
+      forumImageUrl,
       notes: noteLines.length > 0 ? noteLines.join(' • ') : undefined,
     }
   } catch (err) {
@@ -362,6 +394,9 @@ async function main() {
         },
       ],
       tags: generateTags(stub.name, details.requirements ?? '', details.subcategory ?? stub.subcategory),
+      // imageUrl: DF-Pedia adds this in a post-processing step (add_images.py)
+      // forumImageUrl is stored for badges where DF-Pedia has no image
+      ...(details.forumImageUrl ? { forumImageUrl: details.forumImageUrl } : {}),
       ...(details.notes ? { notes: details.notes } : {}),
     }
 

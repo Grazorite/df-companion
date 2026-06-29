@@ -32,11 +32,18 @@ export function useSubcategories(category: string): string[] {
   }, [category])
 }
 
-export function useBadgesByCategory(category: string, excludeSlug?: string) {
-  return useMemo(
-    () => badges.filter((b) => b.category === category && b.slug !== excludeSlug).slice(0, 5),
-    [category, excludeSlug]
-  )
+export function useBadgesByCategory(category: string, excludeSlug?: string, subcategory?: string) {
+  return useMemo(() => {
+    const pool = badges.filter((b) => b.category === category && b.slug !== excludeSlug)
+    const sameSubcat = subcategory ? pool.filter((b) => b.subcategory === subcategory) : []
+    const others = pool.filter((b) => !subcategory || b.subcategory !== subcategory)
+    // Prefer same subcategory, shuffled — then fill from rest of category, also shuffled
+    const shuffled = [
+      ...sameSubcat.sort(() => Math.random() - 0.5),
+      ...others.sort(() => Math.random() - 0.5),
+    ]
+    return shuffled.slice(0, 5)
+  }, [category, excludeSlug, subcategory])
 }
 
 export function useTotalBadgeCount() {

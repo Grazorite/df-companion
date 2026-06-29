@@ -185,6 +185,11 @@ for b in badges:
     if fn:
         b['imageUrl'] = f'{DF_PEDIA_BASE}/{fn}'
         added += 1
+    elif b.get('forumImageUrl'):
+        # Use forum-scraped image (imgur, upfiles, etc.) as fallback
+        b['imageUrl'] = b['forumImageUrl']
+        added += 1
+        print(f'  Forum image fallback: {b["name"]} → {b["forumImageUrl"][:60]}')
     else:
         print(f'  NO IMAGE: {b["name"]}')
         missing += 1

@@ -7,7 +7,7 @@ export default function BadgeDetailPage() {
   const { slug } = useParams<{ slug: string }>()
   const navigate = useNavigate()
   const badge = useBadgeBySlug(slug ?? '')
-  const relatedBadges = useBadgesByCategory(badge?.category ?? '', badge?.slug)
+  const relatedBadges = useBadgesByCategory(badge?.category ?? '', badge?.slug, badge?.subcategory)
 
   if (!badge) {
     return (
