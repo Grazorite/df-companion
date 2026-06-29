@@ -4630,13 +4630,20 @@
         "url": "https://forums2.battleon.com/f/tm.asp?m=22325307",
         "title": "DF Encyclopedia: Tog Nightmare",
         "isPrimary": true
+      },
+      {
+        "url": "https://imgur.com/a/PXOQANy",
+        "title": "All 32 Badge Variants (Imgur)",
+        "isPrimary": false
       }
     ],
     "tags": [
       "challenges-badges"
     ],
-    "notes": "The appearance of the badge changes each time you view it, with a total of 32 different possibilities. • Tog Images",
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/TimetornVeteran.png"
+    "notes": "The appearance of the badge changes each time you view it, with a total of 32 different possibilities.",
+    "imageVariants": [
+      "https://i.imgur.com/PXOQANy"
+    ]
   },
   {
     "name": "TogSlayer",

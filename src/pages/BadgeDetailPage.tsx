@@ -66,12 +66,20 @@ export default function BadgeDetailPage() {
           )}
         </div>
         <div className="flex items-start gap-4 mb-3">
-          {badge.imageUrl && (
+          {badge.imageUrl && !badge.imageVariants && (
             <img
               src={badge.imageUrl}
               alt={`${badge.name} badge icon`}
               className="w-20 h-20 rounded-lg object-contain flex-shrink-0 bg-slate-800 p-1"
             />
+          )}
+          {badge.imageVariants && (
+            <div className="flex-shrink-0">
+              <div className="w-20 h-20 rounded-lg bg-slate-800 border border-slate-600 flex flex-col items-center justify-center gap-1 text-center p-2">
+                <span className="text-amber-400 text-xs font-bold">32</span>
+                <span className="text-slate-400 text-[10px] leading-tight">variants</span>
+              </div>
+            </div>
           )}
           <div>
             <h1 className="text-2xl font-bold text-white mb-2">{badge.name}</h1>

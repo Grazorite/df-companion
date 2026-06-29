@@ -35,6 +35,7 @@ export interface Badge {
   wikiLink?: string
   tags: string[]
   imageUrl?: string    // Badge art URL from DF-Pedia GitHub
+  imageVariants?: string[] // For badges with multiple visual variants (e.g. Tog Nightmare)
   notes?: string       // Additional information / trivia (bullet-separated with " • ")
 }
 
