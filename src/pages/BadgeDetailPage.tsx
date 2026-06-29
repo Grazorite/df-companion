@@ -1,5 +1,5 @@
 import { useParams, useNavigate, Link } from 'react-router-dom'
-import { ArrowLeft, ExternalLink } from 'lucide-react'
+import { ArrowLeft, ExternalLink, Shield } from 'lucide-react'
 import { useBadgeBySlug, useBadgesByCategory } from '../hooks/useBadges'
 import BadgeCard from '../components/badges/BadgeCard'
 
@@ -64,19 +64,23 @@ export default function BadgeDetailPage() {
         </div>
 
         <div className="flex items-start gap-4 mb-3">
-          {badge.imageUrl && !badge.imageVariants && (
-            <img
-              src={badge.imageUrl}
-              alt={`${badge.name} badge icon`}
-              className="w-20 h-20 rounded-lg object-contain flex-shrink-0 bg-bg-elevated border border-border-default p-1.5 shadow-subtle img-fade"
-            />
-          )}
-          {badge.imageVariants && (
+          {/* Badge image — show placeholder if no image */}
+          {badge.imageVariants ? (
             <div className="flex-shrink-0">
               <div className="w-20 h-20 rounded-lg bg-bg-elevated border border-border-default flex flex-col items-center justify-center gap-1 text-center p-2">
                 <span className="text-gold text-xs font-bold">32</span>
                 <span className="text-text-muted text-[10px] leading-tight">variants</span>
               </div>
+            </div>
+          ) : badge.imageUrl ? (
+            <img
+              src={badge.imageUrl}
+              alt={`${badge.name} badge icon`}
+              className="w-20 h-20 rounded-lg object-contain flex-shrink-0 bg-bg-elevated border border-border-default p-1.5 shadow-subtle img-fade"
+            />
+          ) : (
+            <div className="w-20 h-20 rounded-lg flex-shrink-0 bg-bg-elevated border border-border-default flex items-center justify-center shadow-subtle">
+              <Shield className="w-8 h-8 text-border-hover" aria-hidden="true" />
             </div>
           )}
           <div>

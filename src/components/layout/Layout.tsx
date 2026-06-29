@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react'
 import Navigation from './Navigation'
+import BackToTop from '../shared/BackToTop'
 
 interface LayoutProps {
   children: ReactNode
@@ -16,6 +17,7 @@ export default function Layout({ children }: LayoutProps) {
       >
         {children}
       </div>
+      <BackToTop />
     </div>
   )
 }

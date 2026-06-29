@@ -18,7 +18,7 @@ export default function Navigation() {
     <>
       {/* ── Desktop sidebar ── */}
       <nav
-        className="hidden lg:flex flex-col w-60 flex-shrink-0 bg-bg-elevated border-r border-border-default min-h-screen sticky top-0 p-4"
+        className="hidden lg:flex flex-col w-60 flex-shrink-0 bg-bg-elevated border-r border-border-default h-screen sticky top-0 overflow-y-auto p-4"
         aria-label="Main navigation"
       >
         {/* App title */}
