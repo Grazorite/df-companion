@@ -1,0 +1,50 @@
+[
+  {
+    "id": "quest-completion",
+    "displayName": "Quest Completion",
+    "description": "Earned by completing specific quests or quest chains",
+    "icon": "scroll"
+  },
+  {
+    "id": "exploration",
+    "displayName": "Exploration",
+    "description": "Earned by discovering hidden areas or secrets",
+    "icon": "map"
+  },
+  {
+    "id": "combat",
+    "displayName": "Combat",
+    "description": "Earned through combat achievements and challenges",
+    "icon": "swords"
+  },
+  {
+    "id": "collection",
+    "displayName": "Collection",
+    "description": "Earned by collecting items or complete sets",
+    "icon": "package"
+  },
+  {
+    "id": "seasonal",
+    "displayName": "Seasonal",
+    "description": "Earned during limited-time seasonal events",
+    "icon": "calendar"
+  },
+  {
+    "id": "secret",
+    "displayName": "Secret",
+    "description": "Hidden badges with obscure or unmarked requirements",
+    "icon": "eye-off"
+  },
+  {
+    "id": "community",
+    "displayName": "Community",
+    "description": "Earned through community participation and events",
+    "icon": "users"
+  },
+  {
+    "id": "misc",
+    "displayName": "Miscellaneous",
+    "description": "Badges that don't fit neatly into other categories",
+    "icon": "star"
+  }
+]
