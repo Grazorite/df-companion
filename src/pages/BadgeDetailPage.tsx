@@ -59,15 +59,25 @@ export default function BadgeDetailPage() {
               DA Required
             </span>
           )}
+          {badge.retired && (
+            <span className="inline-block text-xs font-medium px-2.5 py-1 rounded-full bg-slate-500/20 text-slate-400">
+              Retired
+            </span>
+          )}
         </div>
-        <h1 className="text-2xl font-bold text-white mb-2">{badge.name}</h1>
-        <p className="text-slate-300 leading-relaxed text-sm italic mb-3">{badge.description}</p>
-        {badge.requirements && (
-          <p className="text-slate-400 text-sm">
-            <span className="text-slate-500 font-medium">Requirement: </span>
-            {badge.requirements}
-          </p>
-        )}
+        <div className="flex items-start gap-4 mb-3">
+          {badge.imageUrl && (
+            <img
+              src={badge.imageUrl}
+              alt={`${badge.name} badge icon`}
+              className="w-20 h-20 rounded-lg object-contain flex-shrink-0 bg-slate-800 p-1"
+            />
+          )}
+          <div>
+            <h1 className="text-2xl font-bold text-white mb-2">{badge.name}</h1>
+            <p className="text-slate-300 leading-relaxed text-sm italic">{badge.description}</p>
+          </div>
+        </div>
       </div>
 
       {/* How to obtain */}
@@ -148,10 +158,17 @@ export default function BadgeDetailPage() {
       {/* Notes */}
       {badge.notes && (
         <section className="bg-slate-800/50 border border-slate-700 rounded-xl p-4 mb-8">
-          <h2 className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">
-            Notes
+          <h2 className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">
+            Other Information
           </h2>
-          <p className="text-slate-300 text-sm leading-relaxed">{badge.notes}</p>
+          <ul className="space-y-2">
+            {badge.notes.split(' • ').filter(n => n.trim().length > 0).map((note, i) => (
+              <li key={i} className="flex gap-2 text-sm text-slate-300 leading-relaxed">
+                <span className="text-slate-500 mt-0.5 flex-shrink-0">•</span>
+                <span>{note.trim()}</span>
+              </li>
+            ))}
+          </ul>
         </section>
       )}
 

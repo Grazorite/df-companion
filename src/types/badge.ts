@@ -26,14 +26,16 @@ export interface Badge {
   slug: string
   description: string // Flavour text (e.g. "The journey begins, anew.")
   category: BadgeCategory
+  subcategory?: string  // Forum subcategory (e.g. "Book 3", "Side Quests")
   howToObtain: ObtainStep[]
   requirements: string // Short requirement summary (e.g. "Completion of A Hero is Thawed")
-  daRequired: boolean // Whether a Dragon Amulet is needed
+  daRequired: boolean  // Whether a Dragon Amulet is needed
+  retired: boolean     // Whether the badge is no longer obtainable
   forumLinks: ForumLink[]
   wikiLink?: string
   tags: string[]
-  imageUrl?: string // Badge art (local path or URL)
-  notes?: string // Additional information / trivia
+  imageUrl?: string    // Badge art URL from DF-Pedia GitHub
+  notes?: string       // Additional information / trivia (bullet-separated with " • ")
 }
 
 export interface CategoryMeta {
