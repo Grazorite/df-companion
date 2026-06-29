@@ -1,16 +1,21 @@
 [
   {
-    "id": "1-threat-bears",
     "name": "#1 Threat: Bears",
     "slug": "1-threat-bears",
+    "messageId": "20716396",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20716396",
+    "category": "seasonal",
+    "subcategory": "Other Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "1-threat-bears",
     "description": "Help Sir Stephan find the secret cabal of bears out to ruin Hero's Heart Day!",
-    "category": "misc",
-    "requirements": "",
+    "requirements": "Completion of  The Boss Bear",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "See forum link for details"
+        "instruction": "Completion of  The Boss Bear"
       }
     ],
     "forumLinks": [
@@ -21,21 +26,27 @@
       }
     ],
     "tags": [
-      "misc"
-    ]
+      "other-badges"
+    ],
+    "notes": "If you choose to reset Hero's Heart Day 2012 clues, your badge will be gone until after the boss fight. • DemonicDarkwraith -- 7/21/2024 22:52:38  >"
   },
   {
-    "id": "1-pyronomicon",
     "name": "+1 Pyronomicon",
     "slug": "1-pyronomicon",
-    "description": "Gain the Pyronomicon from Xan with Warlic!",
+    "messageId": "20703103",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20703103",
     "category": "quest-completion",
-    "requirements": "Completion of Xan's Volcano Fortress",
+    "subcategory": "Quests Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "1-pyronomicon",
+    "description": "Gain the Pyronomicon from Xan with Warlic!",
+    "requirements": "Completion of  Xan's Volcano Fortress",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of Xan's Volcano Fortress"
+        "instruction": "Completion of  Xan's Volcano Fortress"
       }
     ],
     "forumLinks": [
@@ -46,21 +57,26 @@
       }
     ],
     "tags": [
-      "quest-completion"
+      "quests-badges"
     ]
   },
   {
-    "id": "48-weeks-later",
     "name": "48 Weeks Later",
     "slug": "48-weeks-later",
+    "messageId": "20716405",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20716405",
+    "category": "seasonal",
+    "subcategory": "Other Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "48-weeks-later",
     "description": "Complete 48 Weeks Later in the Mogloween Holiday Storybook!",
-    "category": "misc",
-    "requirements": "",
+    "requirements": "Completion of  ZardbiBubble",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "See forum link for details"
+        "instruction": "Completion of  ZardbiBubble"
       }
     ],
     "forumLinks": [
@@ -71,21 +87,26 @@
       }
     ],
     "tags": [
-      "misc"
+      "other-badges"
     ]
   },
   {
-    "id": "a-hero-is-thawed",
     "name": "A Hero is Thawed",
     "slug": "a-hero-is-thawed",
-    "description": "A Hero is Thawed",
+    "messageId": "22417384",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22417384",
     "category": "quest-completion",
-    "requirements": "Completion of A Hero is Thawed",
+    "subcategory": "Quests Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "a-hero-is-thawed",
+    "description": "The journey begins, anew.",
+    "requirements": "Completion of  A Hero is Thawed",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of A Hero is Thawed"
+        "instruction": "Completion of  A Hero is Thawed"
       }
     ],
     "forumLinks": [
@@ -96,47 +117,27 @@
       }
     ],
     "tags": [
-      "quest-completion"
+      "quests-badges"
     ],
-    "notes": "B..."
+    "notes": "Badge's art was added on  July 27th, 2024. • DemonicDarkwraith -- 7/30/2024 17:33:44  >"
   },
   {
-    "id": "a-uneasy-alliancen",
-    "name": "A Uneasy Alliancen",
-    "slug": "a-uneasy-alliancen",
-    "description": "An Uneasy Alliance",
-    "category": "quest-completion",
-    "requirements": "Completion of Sunfall: Part 2",
-    "daRequired": false,
-    "howToObtain": [
-      {
-        "order": 1,
-        "instruction": "Completion of Sunfall: Part 2"
-      }
-    ],
-    "forumLinks": [
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=22417390",
-        "title": "DF Encyclopedia: A Uneasy Alliancen",
-        "isPrimary": true
-      }
-    ],
-    "tags": [
-      "quest-completion"
-    ]
-  },
-  {
-    "id": "a-a-r-g-h-mastery",
     "name": "A.A.R.G.H. Mastery",
     "slug": "a-a-r-g-h-mastery",
+    "messageId": "22387907",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22387907",
+    "category": "combat",
+    "subcategory": "Challenges Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "a-a-r-g-h-mastery",
     "description": "Purchase Timewarped Trophies from the A.A.R.G.H. reward shop!",
-    "category": "misc",
-    "requirements": "",
+    "requirements": "Own at least 1  Timewarped Trophy",
     "daRequired": true,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "See forum link for details"
+        "instruction": "Own at least 1  Timewarped Trophy"
       }
     ],
     "forumLinks": [
@@ -147,21 +148,27 @@
       }
     ],
     "tags": [
-      "misc"
-    ]
+      "challenges-badges"
+    ],
+    "notes": "The count displayed on the badge is the number of Timewarped Trophies owned by the player; Timewarped Trophies stack to a maximum of 15 as of  October 1st, 2021. • Timewarped Trophies previously stacked up to 10.Timewarped Trophies may be stored in the bank and the player's correct count will still be displayed. • DemonicDarkwraith -- 7/21/2024 22:43:05  >"
   },
   {
-    "id": "a-maze-n",
     "name": "A'maze'n",
     "slug": "a-maze-n",
+    "messageId": "20702380",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20702380",
+    "category": "quest-completion",
+    "subcategory": "Quests Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "a-maze-n",
     "description": "Explore all the levels of the Lymcrest Labyrinth!",
-    "category": "misc",
-    "requirements": "Completion of The Lymcrest Labyrinth (All Versions)",
+    "requirements": "Completion of  The Lymcrest Labyrinth (All Versions)",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of The Lymcrest Labyrinth (All Versions)"
+        "instruction": "Completion of  The Lymcrest Labyrinth (All Versions)"
       }
     ],
     "forumLinks": [
@@ -172,23 +179,27 @@
       }
     ],
     "tags": [
-      "misc",
+      "quests-badges",
       "lymcrest"
-    ],
-    "notes": "Categor..."
+    ]
   },
   {
-    "id": "adept",
     "name": "Adept",
     "slug": "adept",
-    "description": "Own the Kathool Adept Armor!",
+    "messageId": "20702883",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20702883",
     "category": "collection",
-    "requirements": "Own Kathool Adept Armor",
+    "subcategory": "Classes Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "adept",
+    "description": "Own the Kathool Adept Armor!",
+    "requirements": "Own  Kathool Adept Armor",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Own Kathool Adept Armor"
+        "instruction": "Own  Kathool Adept Armor"
       }
     ],
     "forumLinks": [
@@ -199,21 +210,26 @@
       }
     ],
     "tags": [
-      "collection"
+      "classes-badges"
     ]
   },
   {
-    "id": "amityvale-defender",
     "name": "Amityvale Defender",
     "slug": "amityvale-defender",
+    "messageId": "22417415",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22417415",
+    "category": "quest-completion",
+    "subcategory": "Quests Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "amityvale-defender",
     "description": "Discover the cause of the strange events in Amityvale!",
-    "category": "misc",
-    "requirements": "Completion of The Vampire Tower",
+    "requirements": "Completion of  The Vampire Tower",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of The Vampire Tower"
+        "instruction": "Completion of  The Vampire Tower"
       }
     ],
     "forumLinks": [
@@ -224,47 +240,88 @@
       }
     ],
     "tags": [
-      "misc",
+      "quests-badges",
       "amityvale"
-    ]
+    ],
+    "notes": "Badge's name was previously called 'Thursdays'. • Badge's art was added on  July 27th, 2024. • DemonicDarkwraith -- 7/30/2024 17:44:44  >"
   },
   {
-    "id": "arachnalchemy-mastery",
-    "name": "Arachnalchemy Mastery",
-    "slug": "arachnalchemy-mastery",
-    "description": "Max out your Arachnalchemy training with Riadne!",
-    "category": "misc",
-    "requirements": "Complet...",
-    "daRequired": true,
-    "howToObtain": [
-      {
-        "order": 1,
-        "instruction": "Complet..."
-      }
-    ],
-    "forumLinks": [
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=22421146",
-        "title": "DF Encyclopedia: Arachnalchemy Mastery",
-        "isPrimary": true
-      }
-    ],
-    "tags": [
-      "misc"
-    ]
-  },
-  {
-    "id": "arr-captain-s-orders",
-    "name": "Arr' Captain's Orders",
-    "slug": "arr-captain-s-orders",
-    "description": "See if you can help the Pirates find the Wind Orb!",
-    "category": "misc",
-    "requirements": "Completion of Red Betty's Spell",
+    "name": "An Uneasy Alliance",
+    "slug": "an-uneasy-alliance",
+    "messageId": "22417390",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22417390",
+    "category": "quest-completion",
+    "subcategory": "Quests Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "an-uneasy-alliance",
+    "description": "Close the Swordhaven Rift in The Greenguard Alliance.",
+    "requirements": "Completion of  Sunfall: Part 2",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of Red Betty's Spell"
+        "instruction": "Completion of  Sunfall: Part 2"
+      }
+    ],
+    "forumLinks": [
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=22417390",
+        "title": "DF Encyclopedia: An Uneasy Alliance",
+        "isPrimary": true
+      }
+    ],
+    "tags": [
+      "quests-badges"
+    ],
+    "notes": "Badge's art was added on  July 27th, 2024. • DemonicDarkwraith -- 7/30/2024 17:37:47  >"
+  },
+  {
+    "name": "Arachnalchemy Mastery",
+    "slug": "arachnalchemy-mastery",
+    "messageId": "22421140",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22421140",
+    "category": "misc",
+    "subcategory": "General",
+    "retired": false,
+    "unreleased": false,
+    "id": "arachnalchemy-mastery",
+    "description": "Arachnalchemy Training (Dire Wolf Spider)",
+    "requirements": "Dragon Amulet, Completion of  Just Chillin'",
+    "daRequired": false,
+    "howToObtain": [
+      {
+        "order": 1,
+        "instruction": "Dragon Amulet, Completion of  Just Chillin'"
+      }
+    ],
+    "forumLinks": [
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=22421140",
+        "title": "DF Encyclopedia: Arachnalchemy Mastery",
+        "isPrimary": true
+      }
+    ],
+    "tags": [],
+    "notes": "Completion of this quest unlocks the  Arachnalchemy Lab shop and the  Arachnalchemy interface. • DemonicDarkwraith -- 3/17/2025 22:07:21  >"
+  },
+  {
+    "name": "Arr' Captain's Orders",
+    "slug": "arr-captain-s-orders",
+    "messageId": "20749703",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20749703",
+    "category": "quest-completion",
+    "subcategory": "Quests Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "arr-captain-s-orders",
+    "description": "See if you can help the Pirates find the Wind Orb!",
+    "requirements": "Completion of  Red Betty's Spell",
+    "daRequired": false,
+    "howToObtain": [
+      {
+        "order": 1,
+        "instruction": "Completion of  Red Betty's Spell"
       }
     ],
     "forumLinks": [
@@ -275,21 +332,27 @@
       }
     ],
     "tags": [
-      "misc"
-    ]
+      "quests-badges"
+    ],
+    "notes": "Badge's art was updated on  July 27th, 2024, replacing its  old appearance. • DemonicDarkwraith -- 7/30/2024 17:07:10  >"
   },
   {
-    "id": "asander-s-freedom",
     "name": "Asander's Freedom",
     "slug": "asander-s-freedom",
+    "messageId": "20703146",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20703146",
+    "category": "quest-completion",
+    "subcategory": "Quest Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "asander-s-freedom",
     "description": "Free Asander's ghost in Blackwyn Tomb!",
-    "category": "misc",
-    "requirements": "Enter Black...",
+    "requirements": "Enter  Blackwyn Tomb, find Asander and talk to him",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Enter Black..."
+        "instruction": "Enter  Blackwyn Tomb, find Asander and talk to him"
       }
     ],
     "forumLinks": [
@@ -300,21 +363,27 @@
       }
     ],
     "tags": [
-      "misc"
-    ]
+      "quest-badges"
+    ],
+    "notes": "Badge was retired on  July 19th, 2024. • DemonicDarkwraith -- 7/20/2024 23:01:19  >"
   },
   {
-    "id": "ascended-chickencow",
     "name": "Ascended ChickenCow",
     "slug": "ascended-chickencow",
+    "messageId": "21983412",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21983412",
+    "category": "collection",
+    "subcategory": "Classes Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "ascended-chickencow",
     "description": "Own the Ascended ChickenCowLord Armor!",
-    "category": "misc",
-    "requirements": "Own Ascended Chick...",
-    "daRequired": true,
+    "requirements": "Own  Ascended ChickenCow Armor (D-Coins)",
+    "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Own Ascended Chick..."
+        "instruction": "Own  Ascended ChickenCow Armor (D-Coins)"
       }
     ],
     "forumLinks": [
@@ -325,21 +394,26 @@
       }
     ],
     "tags": [
-      "misc"
+      "classes-badges"
     ]
   },
   {
-    "id": "ascension",
     "name": "Ascension",
     "slug": "ascension",
-    "description": "Complete The Apex of the Exaltia Tower!",
+    "messageId": "22372086",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22372086",
     "category": "combat",
-    "requirements": "Completion of The Exaltia Tower: The Apex",
+    "subcategory": "Challenges Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "ascension",
+    "description": "Complete The Apex of the Exaltia Tower!",
+    "requirements": "Completion of  The Exaltia Tower: The Apex",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of The Exaltia Tower: The Apex"
+        "instruction": "Completion of  The Exaltia Tower: The Apex"
       }
     ],
     "forumLinks": [
@@ -350,46 +424,57 @@
       }
     ],
     "tags": [
-      "combat"
+      "challenges-badges"
     ]
   },
   {
-    "id": "asychronized",
-    "name": "Asychronized",
-    "slug": "asychronized",
-    "description": "Defeat Jaania at the height of her power.",
-    "category": "misc",
-    "requirements": "",
-    "daRequired": false,
+    "name": "Asynchronized",
+    "slug": "asynchronized",
+    "messageId": "22417430",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22417430",
+    "category": "combat",
+    "subcategory": "Challenges Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "asynchronized",
+    "description": "Asychronized",
+    "requirements": "Own  Helm of Aegis",
+    "daRequired": true,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "See forum link for details"
+        "instruction": "Own  Helm of Aegis"
       }
     ],
     "forumLinks": [
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=22417430",
-        "title": "DF Encyclopedia: Asychronized",
+        "title": "DF Encyclopedia: Asynchronized",
         "isPrimary": true
       }
     ],
     "tags": [
-      "misc"
-    ]
+      "challenges-badges"
+    ],
+    "notes": "Badge's art was added on  July 27th, 2024. • DemonicDarkwraith -- 2/23/2025 23:32:23  >"
   },
   {
-    "id": "avatar-ender",
     "name": "Avatar Ender",
     "slug": "avatar-ender",
+    "messageId": "20747195",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20747195",
+    "category": "quest-completion",
+    "subcategory": "Quests Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "avatar-ender",
     "description": "Defeat the Rising Fire war boss; the possessed Avatar, Fiamme!",
-    "category": "misc",
-    "requirements": "Completion of The Harbinger",
+    "requirements": "Completion of  The Harbinger",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of The Harbinger"
+        "instruction": "Completion of  The Harbinger"
       }
     ],
     "forumLinks": [
@@ -400,21 +485,27 @@
       }
     ],
     "tags": [
-      "misc"
-    ]
+      "quests-badges"
+    ],
+    "notes": "Badge's art was updated on  July 19th, 2024, replacing its  old appearance. • Quest initially required completion of  Wargoth Approaches before being replaced by  The Harbinger on  April 8th, 2025. • DemonicDarkwraith -- 4/8/2025 18:00:33  >"
   },
   {
-    "id": "baby-dragon",
     "name": "Baby Dragon",
     "slug": "baby-dragon",
+    "messageId": "20697498",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20697498",
+    "category": "quest-completion",
+    "subcategory": "Quests Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "baby-dragon",
     "description": "You've hatched your baby dragon? Awww, isn't it cute?",
-    "category": "misc",
-    "requirements": "Completion of The Hatching / Dragon Hatching",
+    "requirements": "Completion of  The Hatching /  Dragon Hatching",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of The Hatching / Dragon Hatching"
+        "instruction": "Completion of  The Hatching /  Dragon Hatching"
       }
     ],
     "forumLinks": [
@@ -425,22 +516,26 @@
       }
     ],
     "tags": [
-      "misc"
-    ],
-    "notes": "Cate..."
+      "quests-badges"
+    ]
   },
   {
-    "id": "bachelor-par-tay",
     "name": "Bachelor PAR-TAY!",
     "slug": "bachelor-par-tay",
+    "messageId": "21238161",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21238161",
+    "category": "seasonal",
+    "subcategory": "Other Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "bachelor-par-tay",
     "description": "Artix is throwing Rolith's Bachelor Party for Hero's Heart Day '13!",
-    "category": "misc",
-    "requirements": "",
+    "requirements": "Completion of  Bachelor Party",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "See forum link for details"
+        "instruction": "Completion of  Bachelor Party"
       }
     ],
     "forumLinks": [
@@ -451,21 +546,26 @@
       }
     ],
     "tags": [
-      "misc"
+      "other-badges"
     ]
   },
   {
-    "id": "bad-toys",
     "name": "Bad Toys",
     "slug": "bad-toys",
+    "messageId": "20716329",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20716329",
+    "category": "seasonal",
+    "subcategory": "Other Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "bad-toys",
     "description": "Complete Chapter Five of the Frostval Holiday Storybook!",
-    "category": "misc",
-    "requirements": "Co...",
+    "requirements": "Completion of  Plushie Fury",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Co..."
+        "instruction": "Completion of  Plushie Fury"
       }
     ],
     "forumLinks": [
@@ -476,21 +576,26 @@
       }
     ],
     "tags": [
-      "misc"
+      "other-badges"
     ]
   },
   {
-    "id": "base-armor",
     "name": "Base Armor",
     "slug": "base-armor",
+    "messageId": "20702712",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20702712",
+    "category": "collection",
+    "subcategory": "Classes Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "base-armor",
     "description": "Fully trained Base Armor!",
-    "category": "misc",
-    "requirements": "Fully trained either Warrior, Mage, or [link=http://forums2.battleon.com/f/tm.a...",
+    "requirements": "Fully trained either  Warrior,  Mage, or  Rogue.",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Fully trained either Warrior, Mage, or [link=http://forums2.battleon.com/f/tm.a..."
+        "instruction": "Fully trained either  Warrior,  Mage, or  Rogue."
       }
     ],
     "forumLinks": [
@@ -501,21 +606,26 @@
       }
     ],
     "tags": [
-      "misc"
+      "classes-badges"
     ]
   },
   {
-    "id": "battle-hewn-warmonger",
     "name": "Battle Hewn Warmonger",
     "slug": "battle-hewn-warmonger",
-    "description": "Have at least 7500 Defender's Medals in your inventory or bank.",
+    "messageId": "22421255",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22421255",
     "category": "misc",
-    "requirements": "",
+    "subcategory": "Other Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "battle-hewn-warmonger",
+    "description": "Have at least 7500 Defender's Medals in your inventory or bank.",
+    "requirements": "Own at least 7,500  Defender's Medal",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "See forum link for details"
+        "instruction": "Own at least 7,500  Defender's Medal"
       }
     ],
     "forumLinks": [
@@ -526,21 +636,27 @@
       }
     ],
     "tags": [
-      "misc"
-    ]
+      "other-badges"
+    ],
+    "notes": "Badge was initially conceptualized as defeating 10,000 waves since  September 16th, 2012. • Badge was made functional based on how many  Defender's Medal are owned by the player on  February 28th, 2025. • DemonicDarkwraith -- 3/31/2025 22:11:43  >"
   },
   {
-    "id": "blacksmith-mastery",
     "name": "Blacksmith Mastery",
     "slug": "blacksmith-mastery",
-    "description": "Attain Blacksmithing Rank 35!",
+    "messageId": "20712483",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20712483",
     "category": "combat",
-    "requirements": "Reach Rank 35 in Blacksmithing at Yulgar's Forge",
+    "subcategory": "Challenges Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "blacksmith-mastery",
+    "description": "Attain Blacksmithing Rank 35!",
+    "requirements": "Reach Rank 35 in Blacksmithing at  Yulgar's Forge",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Reach Rank 35 in Blacksmithing at Yulgar's Forge"
+        "instruction": "Reach Rank 35 in Blacksmithing at  Yulgar's Forge"
       }
     ],
     "forumLinks": [
@@ -551,21 +667,26 @@
       }
     ],
     "tags": [
-      "combat"
+      "challenges-badges"
     ]
   },
   {
-    "id": "blood-roses",
     "name": "Blood & Roses",
     "slug": "blood-roses",
-    "description": "Confront Lord Frydae at the Vampire Tower.",
+    "messageId": "22417416",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22417416",
     "category": "quest-completion",
-    "requirements": "Completion of Blood Feud",
+    "subcategory": "Quests Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "blood-roses",
+    "description": "Confront Lord Frydae at the Vampire Tower.",
+    "requirements": "Completion of  Blood Feud",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of Blood Feud"
+        "instruction": "Completion of  Blood Feud"
       }
     ],
     "forumLinks": [
@@ -576,22 +697,27 @@
       }
     ],
     "tags": [
-      "quest-completion"
+      "quests-badges"
     ],
-    "notes": "Other infor..."
+    "notes": "Badge's art was added on  July 27th, 2024. • DemonicDarkwraith -- 7/30/2024 17:45:59  >"
   },
   {
-    "id": "breaking-awe",
     "name": "Breaking Awe",
     "slug": "breaking-awe",
+    "messageId": "20703227",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20703227",
+    "category": "quest-completion",
+    "subcategory": "Quest Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "breaking-awe",
     "description": "Help Valencia hide the Blade of Awe!",
-    "category": "misc",
-    "requirements": "Completion of Hidd...",
+    "requirements": "Completion of  Hidden Blades's Introduction cutscene and  Entropic Earth Boss",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of Hidd..."
+        "instruction": "Completion of  Hidden Blades's Introduction cutscene and  Entropic Earth Boss"
       }
     ],
     "forumLinks": [
@@ -602,21 +728,27 @@
       }
     ],
     "tags": [
-      "misc"
-    ]
+      "quest-badges"
+    ],
+    "notes": "Players must completed these in order:  Hidden Blades's Introduction cutscene and  Entropic Earth Boss. • Badge was retired on  July 19th, 2024. • DemonicDarkwraith -- 7/20/2024 23:03:09  >"
   },
   {
-    "id": "burning-revenge",
     "name": "Burning Revenge",
     "slug": "burning-revenge",
-    "description": "Search for the Fire Orb!",
+    "messageId": "20706497",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20706497",
     "category": "quest-completion",
-    "requirements": "Completion of Epilogue",
+    "subcategory": "Quests Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "burning-revenge",
+    "description": "Search for the Fire Orb!",
+    "requirements": "Completion of  Epilogue",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of Epilogue"
+        "instruction": "Completion of  Epilogue"
       }
     ],
     "forumLinks": [
@@ -627,22 +759,27 @@
       }
     ],
     "tags": [
-      "quest-completion"
+      "quests-badges"
     ],
-    "notes": "Badge's ar..."
+    "notes": "Badge's art was updated on  July 19th, 2024, replacing its  old appearance. • DemonicDarkwraith -- 7/30/2024 17:18:36  >"
   },
   {
-    "id": "calamity",
     "name": "Calamity",
     "slug": "calamity",
-    "description": "Save Lore from a devasting Calamity.",
+    "messageId": "22417422",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22417422",
     "category": "quest-completion",
-    "requirements": "Completion of Calamity",
+    "subcategory": "Quests Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "calamity",
+    "description": "Save Lore from a devasting Calamity.",
+    "requirements": "Completion of  Calamity",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of Calamity"
+        "instruction": "Completion of  Calamity"
       }
     ],
     "forumLinks": [
@@ -653,22 +790,27 @@
       }
     ],
     "tags": [
-      "quest-completion"
+      "quests-badges"
     ],
-    "notes": "Badge'..."
+    "notes": "Badge's art was added on  July 27th, 2024. • DemonicDarkwraith -- 7/30/2024 17:47:23  >"
   },
   {
-    "id": "carnax",
     "name": "CARNAX",
     "slug": "carnax",
-    "description": "Completed the Carnax (Extreme) challenge.",
+    "messageId": "22409758",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22409758",
     "category": "combat",
-    "requirements": "Completion of Carnax (Extreme)",
+    "subcategory": "Challenges Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "carnax",
+    "description": "Completed the Carnax (Extreme) challenge.",
+    "requirements": "Completion of  Carnax (Extreme)",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of Carnax (Extreme)"
+        "instruction": "Completion of  Carnax (Extreme)"
       }
     ],
     "forumLinks": [
@@ -679,21 +821,26 @@
       }
     ],
     "tags": [
-      "combat"
+      "challenges-badges"
     ]
   },
   {
-    "id": "catastrophic-candy",
     "name": "Catastrophic Candy",
     "slug": "catastrophic-candy",
+    "messageId": "20828166",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20828166",
+    "category": "seasonal",
+    "subcategory": "Other Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "catastrophic-candy",
     "description": "Complete Catastrophic Candy in the Mogloween Holiday Storybook!",
-    "category": "misc",
-    "requirements": "",
+    "requirements": "Completion of  Catastrophic Candy",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "See forum link for details"
+        "instruction": "Completion of  Catastrophic Candy"
       }
     ],
     "forumLinks": [
@@ -704,21 +851,26 @@
       }
     ],
     "tags": [
-      "misc"
+      "other-badges"
     ]
   },
   {
-    "id": "chaos-slayer",
     "name": "Chaos Slayer",
     "slug": "chaos-slayer",
+    "messageId": "22417429",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22417429",
+    "category": "combat",
+    "subcategory": "Challenges Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "chaos-slayer",
     "description": "Defeat the 13th Lord of Chaos.",
-    "category": "misc",
-    "requirements": "Own Parallel Chaos Amulet",
+    "requirements": "Own  Parallel Chaos Amulet",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Own Parallel Chaos Amulet"
+        "instruction": "Own  Parallel Chaos Amulet"
       }
     ],
     "forumLinks": [
@@ -729,22 +881,27 @@
       }
     ],
     "tags": [
-      "misc"
+      "challenges-badges"
     ],
-    "notes": "Cate..."
+    "notes": "Badge's art was added on  July 27th, 2024. • DemonicDarkwraith -- 7/30/2024 17:49:19  >"
   },
   {
-    "id": "chaosweaver",
     "name": "ChaosWeaver",
     "slug": "chaosweaver",
+    "messageId": "22417424",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22417424",
+    "category": "collection",
+    "subcategory": "Classes Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "chaosweaver",
     "description": "Own the ChaosWeaver Armor!",
-    "category": "misc",
-    "requirements": "Own Chaosweaver Armor",
+    "requirements": "Own  Chaosweaver Armor",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Own Chaosweaver Armor"
+        "instruction": "Own  Chaosweaver Armor"
       }
     ],
     "forumLinks": [
@@ -755,21 +912,27 @@
       }
     ],
     "tags": [
-      "misc"
-    ]
+      "classes-badges"
+    ],
+    "notes": "Badge's art was added on  July 27th, 2024. • DemonicDarkwraith -- 7/30/2024 17:30:50  >"
   },
   {
-    "id": "cold-as-ice",
     "name": "Cold as Ice",
     "slug": "cold-as-ice",
-    "description": "Quest for the Ice Orb!",
+    "messageId": "20702329",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20702329",
     "category": "quest-completion",
-    "requirements": "Completion of Ice Queen",
+    "subcategory": "Quests Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "cold-as-ice",
+    "description": "Quest for the Ice Orb!",
+    "requirements": "Completion of  Ice Queen",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of Ice Queen"
+        "instruction": "Completion of  Ice Queen"
       }
     ],
     "forumLinks": [
@@ -780,22 +943,27 @@
       }
     ],
     "tags": [
-      "quest-completion"
+      "quests-badges"
     ],
-    "notes": "Badge's art was..."
+    "notes": "Badge's art was updated on  July 27th, 2024, replacing its  old appearance. • DemonicDarkwraith -- 7/30/2024 17:16:37  >"
   },
   {
-    "id": "confront-sek-duat",
     "name": "Confront Sek-Duat",
     "slug": "confront-sek-duat",
-    "description": "Search for the Light Orb!",
+    "messageId": "20706468",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20706468",
     "category": "quest-completion",
-    "requirements": "Completion of Sek-Duat Lives Again",
+    "subcategory": "Quests Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "confront-sek-duat",
+    "description": "Search for the Light Orb!",
+    "requirements": "Completion of  Sek-Duat Lives Again",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of Sek-Duat Lives Again"
+        "instruction": "Completion of  Sek-Duat Lives Again"
       }
     ],
     "forumLinks": [
@@ -806,22 +974,27 @@
       }
     ],
     "tags": [
-      "quest-completion"
+      "quests-badges"
     ],
-    "notes": "Other informat..."
+    "notes": "Badge's art was updated on  July 19th, 2024, replacing its  old appearance. • DemonicDarkwraith -- 7/30/2024 17:15:22  >"
   },
   {
-    "id": "convergence",
     "name": "Convergence",
     "slug": "convergence",
-    "description": "The convergence of many paths...",
+    "messageId": "22417394",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22417394",
     "category": "quest-completion",
-    "requirements": "Completion of Convergence (Part 2)",
+    "subcategory": "Quests Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "convergence",
+    "description": "The convergence of many paths...",
+    "requirements": "Completion of  Convergence (Part 2)",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of Convergence (Part 2)"
+        "instruction": "Completion of  Convergence (Part 2)"
       }
     ],
     "forumLinks": [
@@ -832,22 +1005,57 @@
       }
     ],
     "tags": [
-      "quest-completion"
+      "quests-badges"
     ],
-    "notes": "Other informa..."
+    "notes": "Badge's art was added on  July 27th, 2024. • DemonicDarkwraith -- 7/30/2024 17:38:47  >"
   },
   {
-    "id": "crystal-breaker",
-    "name": "Crystal Breaker",
-    "slug": "crystal-breaker",
-    "description": "Join forces with unlikely allies...",
-    "category": "quest-completion",
-    "requirements": "Completion of Breaking Crystal",
+    "name": "Cookie Song!",
+    "slug": "cookie-song",
+    "messageId": "22424523",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22424523",
+    "category": "misc",
+    "subcategory": "Other Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "cookie-song",
+    "description": "Own the Musical Cookie Box from the holiday Cookie Song event from HeroMart.",
+    "requirements": "Own  Musical Cookie Box",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of Breaking Crystal"
+        "instruction": "Own  Musical Cookie Box"
+      }
+    ],
+    "forumLinks": [
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=22424523",
+        "title": "DF Encyclopedia: Cookie Song!",
+        "isPrimary": true
+      }
+    ],
+    "tags": [
+      "other-badges"
+    ]
+  },
+  {
+    "name": "Crystal Breaker",
+    "slug": "crystal-breaker",
+    "messageId": "20705424",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20705424",
+    "category": "quest-completion",
+    "subcategory": "Quests Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "crystal-breaker",
+    "description": "Join forces with unlikely allies...",
+    "requirements": "Completion of  Breaking Crystal",
+    "daRequired": false,
+    "howToObtain": [
+      {
+        "order": 1,
+        "instruction": "Completion of  Breaking Crystal"
       }
     ],
     "forumLinks": [
@@ -858,22 +1066,27 @@
       }
     ],
     "tags": [
-      "quest-completion"
+      "quests-badges"
     ],
-    "notes": "Other info..."
+    "notes": "Badge previously have the text: Break Jaania free from her icy prison! • DemonicDarkwraith -- 7/20/2024 22:55:58  >"
   },
   {
-    "id": "cutest-legion-ever",
     "name": "Cutest Legion EVER",
     "slug": "cutest-legion-ever",
+    "messageId": "20706539",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20706539",
+    "category": "quest-completion",
+    "subcategory": "Quests Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "cutest-legion-ever",
     "description": "Zorbak tries to take over Amityvale with baby dracoliches!",
-    "category": "misc",
-    "requirements": "...",
+    "requirements": "Completion of  Tiny Terrors In Town!",
     "daRequired": true,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "..."
+        "instruction": "Completion of  Tiny Terrors In Town!"
       }
     ],
     "forumLinks": [
@@ -884,21 +1097,26 @@
       }
     ],
     "tags": [
-      "misc"
+      "quests-badges"
     ]
   },
   {
-    "id": "death-of-a-knight",
     "name": "Death of a Knight",
     "slug": "death-of-a-knight",
+    "messageId": "20702830",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20702830",
+    "category": "quest-completion",
+    "subcategory": "Quests Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "death-of-a-knight",
     "description": "Defeat the Deathknight!",
-    "category": "misc",
-    "requirements": "Must have finished the story of DeathKnight by completing the quest 11 times...",
+    "requirements": "Must have finished the story of  DeathKnight by completing the quest 11 times.",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Must have finished the story of DeathKnight by completing the quest 11 times..."
+        "instruction": "Must have finished the story of  DeathKnight by completing the quest 11 times."
       }
     ],
     "forumLinks": [
@@ -909,21 +1127,26 @@
       }
     ],
     "tags": [
-      "misc"
+      "quests-badges"
     ]
   },
   {
-    "id": "deathknight",
     "name": "DeathKnight",
     "slug": "deathknight",
+    "messageId": "20707684",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20707684",
+    "category": "collection",
+    "subcategory": "Classes Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "deathknight",
     "description": "Fully trained DeathKnight Armor from Malifact in the Necropolis!",
-    "category": "misc",
-    "requirements": "A fully trained DeathKnight",
+    "requirements": "A fully trained  DeathKnight",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "A fully trained DeathKnight"
+        "instruction": "A fully trained  DeathKnight"
       }
     ],
     "forumLinks": [
@@ -934,21 +1157,26 @@
       }
     ],
     "tags": [
-      "misc"
+      "classes-badges"
     ]
   },
   {
-    "id": "doomknight",
     "name": "DoomKnight",
     "slug": "doomknight",
+    "messageId": "20716155",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20716155",
+    "category": "collection",
+    "subcategory": "Classes Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "doomknight",
     "description": "Own the DoomKnight Armor!",
-    "category": "misc",
-    "requirements": "",
+    "requirements": "Own  DoomKnight Armor or  DoomKnight Variant One",
     "daRequired": true,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "See forum link for details"
+        "instruction": "Own  DoomKnight Armor or  DoomKnight Variant One"
       }
     ],
     "forumLinks": [
@@ -959,21 +1187,26 @@
       }
     ],
     "tags": [
-      "misc"
+      "classes-badges"
     ]
   },
   {
-    "id": "doomwood-fishing",
     "name": "DoomWood Fishing",
     "slug": "doomwood-fishing",
+    "messageId": "20717273",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20717273",
+    "category": "combat",
+    "subcategory": "Challenges Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "doomwood-fishing",
     "description": "Collect all the fish in your Aquarium in Doomwood!",
-    "category": "misc",
-    "requirements": "Catch all...",
+    "requirements": "Catch all 40 fish at  Doomwood Dock",
     "daRequired": true,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Catch all..."
+        "instruction": "Catch all 40 fish at  Doomwood Dock"
       }
     ],
     "forumLinks": [
@@ -984,21 +1217,26 @@
       }
     ],
     "tags": [
-      "misc"
+      "challenges-badges"
     ]
   },
   {
-    "id": "dracolich-fishing",
     "name": "Dracolich Fishing",
     "slug": "dracolich-fishing",
+    "messageId": "22421251",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22421251",
+    "category": "combat",
+    "subcategory": "Challenges Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "dracolich-fishing",
     "description": "Catch all of the fish that live near the Dracolich in Book 1 and Book 3!",
-    "category": "misc",
-    "requirements": "",
+    "requirements": "Catch all 20 fish at  Dracolich Fishing (Books 1 and 2) and  Dracolich Fishing (Book 3)",
     "daRequired": true,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "See forum link for details"
+        "instruction": "Catch all 20 fish at  Dracolich Fishing (Books 1 and 2) and  Dracolich Fishing (Book 3)"
       }
     ],
     "forumLinks": [
@@ -1009,21 +1247,28 @@
       }
     ],
     "tags": [
-      "misc"
-    ]
+      "challenges-badges",
+      "book-3"
+    ],
+    "notes": "Badge replaced the unreleased Deep Water Fishing badge. • Badge was initially made, but nonfunctional on  July 19th, 2024 before being made functional on  February 28th, 2025."
   },
   {
-    "id": "dragon-school",
     "name": "Dragon School",
     "slug": "dragon-school",
+    "messageId": "20726398",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20726398",
+    "category": "quest-completion",
+    "subcategory": "Quests Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "dragon-school",
     "description": "Do Lady Celestia's baby dragon training quests!",
-    "category": "misc",
-    "requirements": "Completion of Ba...",
+    "requirements": "Completion of  Baby Steps",
     "daRequired": true,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of Ba..."
+        "instruction": "Completion of  Baby Steps"
       }
     ],
     "forumLinks": [
@@ -1034,21 +1279,26 @@
       }
     ],
     "tags": [
-      "misc"
+      "quests-badges"
     ]
   },
   {
-    "id": "dragonlord",
     "name": "DragonLord",
     "slug": "dragonlord",
+    "messageId": "20707688",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20707688",
+    "category": "collection",
+    "subcategory": "Classes Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "dragonlord",
     "description": "Fully trained DragonLord Armor in Sunbreeze Grove!",
-    "category": "misc",
-    "requirements": "A fully trained...",
+    "requirements": "A fully trained  DragonLord",
     "daRequired": true,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "A fully trained..."
+        "instruction": "A fully trained  DragonLord"
       }
     ],
     "forumLinks": [
@@ -1059,21 +1309,26 @@
       }
     ],
     "tags": [
-      "misc"
+      "classes-badges"
     ]
   },
   {
-    "id": "dragonrider",
     "name": "DragonRider",
     "slug": "dragonrider",
+    "messageId": "20702717",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20702717",
+    "category": "collection",
+    "subcategory": "Classes Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "dragonrider",
     "description": "Fully trained DragonRider Armor in Sunbreeze Grove!",
-    "category": "misc",
-    "requirements": "A fully traine...",
+    "requirements": "A fully trained  DragonRider",
     "daRequired": true,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "A fully traine..."
+        "instruction": "A fully trained  DragonRider"
       }
     ],
     "forumLinks": [
@@ -1084,21 +1339,26 @@
       }
     ],
     "tags": [
-      "misc"
+      "classes-badges"
     ]
   },
   {
-    "id": "dragonslayer",
     "name": "DragonSlayer",
     "slug": "dragonslayer",
+    "messageId": "20712465",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20712465",
+    "category": "collection",
+    "subcategory": "Classes Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "dragonslayer",
     "description": "Fully trained DragonSlayer Armor from Galanoth in Dragesvard!",
-    "category": "misc",
-    "requirements": "A fully trained DragonSlayer",
+    "requirements": "A fully trained  DragonSlayer",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "A fully trained DragonSlayer"
+        "instruction": "A fully trained  DragonSlayer"
       }
     ],
     "forumLinks": [
@@ -1109,21 +1369,26 @@
       }
     ],
     "tags": [
-      "misc"
+      "classes-badges"
     ]
   },
   {
-    "id": "egg-cellent",
     "name": "Egg-cellent!",
     "slug": "egg-cellent",
+    "messageId": "20697496",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20697496",
+    "category": "quest-completion",
+    "subcategory": "Quests Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "egg-cellent",
     "description": "You've gained +1 dragon egg!",
-    "category": "misc",
-    "requirements": "Select 'YES!!!!' option from Warlic in Warlic's Zone / Completion of [lin...",
+    "requirements": "Select 'YES!!!!' option from  Warlic in  Warlic's Zone / Completion of  Dragon Hatching",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Select 'YES!!!!' option from Warlic in Warlic's Zone / Completion of [lin..."
+        "instruction": "Select 'YES!!!!' option from  Warlic in  Warlic's Zone / Completion of  Dragon Hatching"
       }
     ],
     "forumLinks": [
@@ -1134,21 +1399,26 @@
       }
     ],
     "tags": [
-      "misc"
+      "quests-badges"
     ]
   },
   {
-    "id": "egg-stir-min-ate",
     "name": "EGG-STIR-MIN-ATE",
     "slug": "egg-stir-min-ate",
+    "messageId": "20741782",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20741782",
+    "category": "quest-completion",
+    "subcategory": "Quest Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "egg-stir-min-ate",
     "description": "Defeat the infamous Doctor When!",
-    "category": "misc",
-    "requirements": "Completion of When...",
+    "requirements": "Completion of  When",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of When..."
+        "instruction": "Completion of  When"
       }
     ],
     "forumLinks": [
@@ -1159,21 +1429,27 @@
       }
     ],
     "tags": [
-      "misc"
-    ]
+      "quest-badges"
+    ],
+    "notes": "Badge was retired on  July 19th, 2024. • DemonicDarkwraith -- 7/20/2024 23:00:46  >"
   },
   {
-    "id": "elemental-chaos",
     "name": "Elemental Chaos",
     "slug": "elemental-chaos",
-    "description": "Nythera causes trouble!",
+    "messageId": "20749726",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20749726",
     "category": "quest-completion",
-    "requirements": "Completion of The Final Showdown",
+    "subcategory": "Quests Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "elemental-chaos",
+    "description": "Nythera causes trouble!",
+    "requirements": "Completion of  The Final Showdown",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of The Final Showdown"
+        "instruction": "Completion of  The Final Showdown"
       }
     ],
     "forumLinks": [
@@ -1184,21 +1460,26 @@
       }
     ],
     "tags": [
-      "quest-completion"
+      "quests-badges"
     ]
   },
   {
-    "id": "entropic",
     "name": "EnTropic!",
     "slug": "entropic",
+    "messageId": "21325052",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21325052",
+    "category": "quest-completion",
+    "subcategory": "Quests Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "entropic",
     "description": "Quest for the Earth Orb!",
-    "category": "misc",
-    "requirements": "Completion of Hidden Blades's Introduction cutscene and Entropic Earth Boss",
+    "requirements": "Completion of  Hidden Blades's Introduction cutscene and  Entropic Earth Boss",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of Hidden Blades's Introduction cutscene and Entropic Earth Boss"
+        "instruction": "Completion of  Hidden Blades's Introduction cutscene and  Entropic Earth Boss"
       }
     ],
     "forumLinks": [
@@ -1209,22 +1490,27 @@
       }
     ],
     "tags": [
-      "misc"
+      "quests-badges"
     ],
-    "notes": "Categ..."
+    "notes": "Players must complete these in order:  Hidden Blades's Introduction cutscene and  Entropic Earth Boss. • DemonicDarkwraith -- 7/20/2024 23:02:06  >"
   },
   {
-    "id": "entropy",
     "name": "enTropy",
     "slug": "entropy",
-    "description": "Own the enTropy Armor!",
+    "messageId": "20716191",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20716191",
     "category": "collection",
-    "requirements": "Own enTropy Armor",
+    "subcategory": "Classes Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "entropy",
+    "description": "Own the enTropy Armor!",
+    "requirements": "Own  enTropy Armor",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Own enTropy Armor"
+        "instruction": "Own  enTropy Armor"
       }
     ],
     "forumLinks": [
@@ -1235,21 +1521,26 @@
       }
     ],
     "tags": [
-      "collection"
+      "classes-badges"
     ]
   },
   {
-    "id": "evolved-chickencow",
     "name": "Evolved ChickenCow",
     "slug": "evolved-chickencow",
+    "messageId": "20701246",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20701246",
+    "category": "collection",
+    "subcategory": "Classes Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "evolved-chickencow",
     "description": "Own the Evolved ChickenCowLord Armor!",
-    "category": "misc",
-    "requirements": "Own Evolved ChickenC...",
-    "daRequired": true,
+    "requirements": "Own  Evolved ChickenCow Armor (D-Coins) or  Ascended ChickenCow Armor (D-Coins)",
+    "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Own Evolved ChickenC..."
+        "instruction": "Own  Evolved ChickenCow Armor (D-Coins) or  Ascended ChickenCow Armor (D-Coins)"
       }
     ],
     "forumLinks": [
@@ -1260,21 +1551,57 @@
       }
     ],
     "tags": [
-      "misc"
+      "classes-badges"
     ]
   },
   {
-    "id": "evolved-pumpkinlord",
+    "name": "Evolved DragonLord",
+    "slug": "evolved-dragonlord",
+    "messageId": "20707694",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20707694",
+    "category": "collection",
+    "subcategory": "Armor Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "evolved-dragonlord",
+    "description": "Fully trained Evolved DragonLord Armor in Sunbreeze Grove!",
+    "requirements": "Upgrade  DragonLord to Evolved from  Lady Celestia /  Elysia in  Sunbreeze Grove",
+    "daRequired": true,
+    "howToObtain": [
+      {
+        "order": 1,
+        "instruction": "Upgrade  DragonLord to Evolved from  Lady Celestia /  Elysia in  Sunbreeze Grove"
+      }
+    ],
+    "forumLinks": [
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20707694",
+        "title": "DF Encyclopedia: Evolved DragonLord",
+        "isPrimary": true
+      }
+    ],
+    "tags": [
+      "armor-badges"
+    ],
+    "notes": "Badge was retired on  July 19th, 2024. • DemonicDarkwraith -- 7/20/2024 23:08:12  >"
+  },
+  {
     "name": "Evolved PumpkinLord",
     "slug": "evolved-pumpkinlord",
-    "description": "Fully trained Evolved PumpkinLord Armor from the Cauldron Sisters during Moglow...",
-    "category": "misc",
-    "requirements": "",
+    "messageId": "20707709",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20707709",
+    "category": "collection",
+    "subcategory": "Classes Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "evolved-pumpkinlord",
+    "description": "Fully trained Evolved PumpkinLord Armor from the Cauldron Sisters during Mogloween!",
+    "requirements": "A fully trained  Evolved PumpkinLord",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "See forum link for details"
+        "instruction": "A fully trained  Evolved PumpkinLord"
       }
     ],
     "forumLinks": [
@@ -1285,21 +1612,26 @@
       }
     ],
     "tags": [
-      "misc"
+      "classes-badges"
     ]
   },
   {
-    "id": "face-off",
     "name": "Face-Off!",
     "slug": "face-off",
-    "description": "Science or Magic, you choose!",
+    "messageId": "20703056",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20703056",
     "category": "quest-completion",
-    "requirements": "Completion of CyseRedux",
+    "subcategory": "Quests Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "face-off",
+    "description": "Science or Magic, you choose!",
+    "requirements": "Completion of  CyseRedux",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of CyseRedux"
+        "instruction": "Completion of  CyseRedux"
       }
     ],
     "forumLinks": [
@@ -1310,21 +1642,26 @@
       }
     ],
     "tags": [
-      "quest-completion"
+      "quests-badges"
     ]
   },
   {
-    "id": "fallen-general",
     "name": "Fallen General",
     "slug": "fallen-general",
+    "messageId": "20706221",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20706221",
+    "category": "quest-completion",
+    "subcategory": "Quests Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "fallen-general",
     "description": "Fight in the Rift War and watch the opening cutscene for the Rising Fire War.",
-    "category": "misc",
-    "requirements": "Completion of Rising Fire...",
+    "requirements": "Completion of  Rising Fire (Intro)",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of Rising Fire..."
+        "instruction": "Completion of  Rising Fire (Intro)"
       }
     ],
     "forumLinks": [
@@ -1335,21 +1672,27 @@
       }
     ],
     "tags": [
-      "misc"
-    ]
+      "quests-badges"
+    ],
+    "notes": "Badge initially required completion of  Rising Fire (Intro) before being reimagined on  March 28th, 2025. • DemonicDarkwraith -- 4/8/2025 18:03:26  >"
   },
   {
-    "id": "fear-engine",
     "name": "Fear Engine",
     "slug": "fear-engine",
+    "messageId": "22421250",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22421250",
+    "category": "combat",
+    "subcategory": "Challenges Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "fear-engine",
     "description": "Join Sirius in discovering the secrets of the Fear Engine.",
-    "category": "misc",
-    "requirements": "Completion of Epilogue: Overcome",
+    "requirements": "Completion of  Epilogue: Overcome",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of Epilogue: Overcome"
+        "instruction": "Completion of  Epilogue: Overcome"
       }
     ],
     "forumLinks": [
@@ -1360,21 +1703,27 @@
       }
     ],
     "tags": [
-      "misc"
-    ]
+      "challenges-badges"
+    ],
+    "notes": "Badge was initially made and nonfunctional on  July 19th, 2024 before being made unlockable on  February 28th, 2025."
   },
   {
-    "id": "fierce-warmonger",
     "name": "Fierce Warmonger",
     "slug": "fierce-warmonger",
-    "description": "Have at least 3000 Defender's Medals in your inventory or bank.",
+    "messageId": "22421254",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22421254",
     "category": "misc",
-    "requirements": "",
+    "subcategory": "Other Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "fierce-warmonger",
+    "description": "Have at least 3000 Defender's Medals in your inventory or bank.",
+    "requirements": "Own at least 3,000  Defender's Medal",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "See forum link for details"
+        "instruction": "Own at least 3,000  Defender's Medal"
       }
     ],
     "forumLinks": [
@@ -1385,21 +1734,27 @@
       }
     ],
     "tags": [
-      "misc"
-    ]
+      "other-badges"
+    ],
+    "notes": "Badge was initially conceptualized as defeating 5,000 waves since  September 16th, 2012. • Badge was made functional based on how many  Defender's Medal are owned by the player on  February 28th, 2025."
   },
   {
-    "id": "final-13th",
     "name": "Final 13th!",
     "slug": "final-13th",
-    "description": "Complete the Book One Finale",
+    "messageId": "20705416",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20705416",
     "category": "quest-completion",
-    "requirements": "Completion of Book One Epilogue",
+    "subcategory": "Quests Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "final-13th",
+    "description": "Complete the Book One Finale",
+    "requirements": "Completion of  Book One Epilogue",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of Book One Epilogue"
+        "instruction": "Completion of  Book One Epilogue"
       }
     ],
     "forumLinks": [
@@ -1410,21 +1765,26 @@
       }
     ],
     "tags": [
-      "quest-completion"
+      "quests-badges"
     ]
   },
   {
-    "id": "fire-fighter",
     "name": "Fire Fighter",
     "slug": "fire-fighter",
-    "description": "Defeat the Titan threat in the Book 2 Finale.",
+    "messageId": "21438027",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21438027",
     "category": "quest-completion",
-    "requirements": "Completion of The Merge",
+    "subcategory": "Quests Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "fire-fighter",
+    "description": "Defeat the Titan threat in the Book 2 Finale.",
+    "requirements": "Completion of  The Merge",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of The Merge"
+        "instruction": "Completion of  The Merge"
       }
     ],
     "forumLinks": [
@@ -1435,22 +1795,27 @@
       }
     ],
     "tags": [
-      "quest-completion"
+      "quests-badges"
     ],
-    "notes": "Other info..."
+    "notes": "Badge previously have the text: Defeat Titan Wargoth in theChapter 2 Finale. • DemonicDarkwraith -- 7/20/2024 22:56:45  >"
   },
   {
-    "id": "first-weaver",
     "name": "First Weaver",
     "slug": "first-weaver",
-    "description": "Discover the secret of The First Weaver.",
+    "messageId": "22417417",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22417417",
     "category": "quest-completion",
-    "requirements": "Completion of The End of the Beginning",
+    "subcategory": "Quests Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "first-weaver",
+    "description": "Discover the secret of The First Weaver.",
+    "requirements": "Completion of  The End of the Beginning",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of The End of the Beginning"
+        "instruction": "Completion of  The End of the Beginning"
       }
     ],
     "forumLinks": [
@@ -1461,21 +1826,27 @@
       }
     ],
     "tags": [
-      "quest-completion"
-    ]
+      "quests-badges"
+    ],
+    "notes": "Badge's art was added on  July 27th, 2024. • DemonicDarkwraith -- 7/30/2024 17:46:22  >"
   },
   {
-    "id": "fishing-mastery",
     "name": "Fishing Mastery",
     "slug": "fishing-mastery",
+    "messageId": "20716582",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20716582",
+    "category": "combat",
+    "subcategory": "Challenges Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "fishing-mastery",
     "description": "Collect all the Falconreach fish in your aquarium!",
-    "category": "misc",
-    "requirements": "Catch all 20 fish at Falconreach Dock",
+    "requirements": "Catch all 20 fish at  Falconreach Dock",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Catch all 20 fish at Falconreach Dock"
+        "instruction": "Catch all 20 fish at  Falconreach Dock"
       }
     ],
     "forumLinks": [
@@ -1486,22 +1857,27 @@
       }
     ],
     "tags": [
-      "misc",
+      "challenges-badges",
       "falconreach"
     ]
   },
   {
-    "id": "for-science",
     "name": "For SCIENCE!",
     "slug": "for-science",
-    "description": "Meet Lim, Falconreach's newest Weaponsmith!",
+    "messageId": "20703042",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20703042",
     "category": "quest-completion",
-    "requirements": "Completion of Circuit City",
+    "subcategory": "Quests Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "for-science",
+    "description": "Meet Lim, Falconreach's newest Weaponsmith!",
+    "requirements": "Completion of  Circuit City",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of Circuit City"
+        "instruction": "Completion of  Circuit City"
       }
     ],
     "forumLinks": [
@@ -1512,21 +1888,26 @@
       }
     ],
     "tags": [
-      "quest-completion"
+      "quests-badges"
     ]
   },
   {
-    "id": "fresh-warmonger",
     "name": "Fresh Warmonger",
     "slug": "fresh-warmonger",
-    "description": "Have at least 1000 Defender's Medals in your inventory or bank.",
+    "messageId": "22421253",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22421253",
     "category": "misc",
-    "requirements": "",
+    "subcategory": "Other Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "fresh-warmonger",
+    "description": "Have at least 1000 Defender's Medals in your inventory or bank.",
+    "requirements": "Own at least 1,000  Defender's Medal",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "See forum link for details"
+        "instruction": "Own at least 1,000  Defender's Medal"
       }
     ],
     "forumLinks": [
@@ -1537,21 +1918,27 @@
       }
     ],
     "tags": [
-      "misc"
-    ]
+      "other-badges"
+    ],
+    "notes": "Badge was initially conceptualized as defeating 1,000 waves since  September 16th, 2012. • Badge was made functional based on how many  Defender's Medal are owned by the player on  February 28th, 2025."
   },
   {
-    "id": "frost-moglin",
     "name": "Frost Moglin",
     "slug": "frost-moglin",
+    "messageId": "20707712",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20707712",
+    "category": "collection",
+    "subcategory": "Classes Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "frost-moglin",
     "description": "Fully trained Frost Moglin Armor during Frostval!",
-    "category": "misc",
-    "requirements": "A ful...",
+    "requirements": "A fully trained  Frost Moglin",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "A ful..."
+        "instruction": "A fully trained  Frost Moglin"
       }
     ],
     "forumLinks": [
@@ -1562,21 +1949,26 @@
       }
     ],
     "tags": [
-      "misc"
+      "classes-badges"
     ]
   },
   {
-    "id": "frostvayle",
     "name": "Frostvayle",
     "slug": "frostvayle",
+    "messageId": "21009836",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21009836",
+    "category": "seasonal",
+    "subcategory": "Other Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "frostvayle",
     "description": "Complete Chapter Seven of the Frostval Storybook!",
-    "category": "misc",
-    "requirements": "Complet...",
+    "requirements": "Completion of  Wicked Queen",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Complet..."
+        "instruction": "Completion of  Wicked Queen"
       }
     ],
     "forumLinks": [
@@ -1587,21 +1979,26 @@
       }
     ],
     "tags": [
-      "misc"
+      "other-badges"
     ]
   },
   {
-    "id": "fungus-among-us",
     "name": "Fungus Among Us",
     "slug": "fungus-among-us",
-    "description": "Close the Dragesvard Rift in The Awakened Depths.",
+    "messageId": "22417393",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22417393",
     "category": "quest-completion",
-    "requirements": "Completion of Twin Tides",
+    "subcategory": "Quests Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "fungus-among-us",
+    "description": "Close the Dragesvard Rift in The Awakened Depths.",
+    "requirements": "Completion of  Twin Tides",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of Twin Tides"
+        "instruction": "Completion of  Twin Tides"
       }
     ],
     "forumLinks": [
@@ -1612,22 +2009,27 @@
       }
     ],
     "tags": [
-      "quest-completion"
+      "quests-badges"
     ],
-    "notes": "Ot..."
+    "notes": "Badge's art was added on  July 27th, 2024. • DemonicDarkwraith -- 7/30/2024 17:38:34  >"
   },
   {
-    "id": "gathering-shadows",
     "name": "Gathering Shadows",
     "slug": "gathering-shadows",
-    "description": "Confront Valtrith in Serenity Before the Storm.",
+    "messageId": "22417421",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22417421",
     "category": "quest-completion",
-    "requirements": "Completion of Caitiff",
+    "subcategory": "Quests Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "gathering-shadows",
+    "description": "Confront Valtrith in Serenity Before the Storm.",
+    "requirements": "Completion of  Caitiff",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of Caitiff"
+        "instruction": "Completion of  Caitiff"
       }
     ],
     "forumLinks": [
@@ -1638,22 +2040,27 @@
       }
     ],
     "tags": [
-      "quest-completion"
+      "quests-badges"
     ],
-    "notes": "Other..."
+    "notes": "Badge's art was added on  July 27th, 2024. • DemonicDarkwraith -- 7/30/2024 17:47:10  >"
   },
   {
-    "id": "golem-breaker",
     "name": "Golem Breaker",
     "slug": "golem-breaker",
+    "messageId": "20716324",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20716324",
+    "category": "seasonal",
+    "subcategory": "Other Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "golem-breaker",
     "description": "Complete Chapter Four of the Frostval Holiday Storybook!",
-    "category": "misc",
-    "requirements": "",
+    "requirements": "Completion of  We're Gonna Need More Fire...",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "See forum link for details"
+        "instruction": "Completion of  We're Gonna Need More Fire..."
       }
     ],
     "forumLinks": [
@@ -1664,21 +2071,26 @@
       }
     ],
     "tags": [
-      "misc"
+      "other-badges"
     ]
   },
   {
-    "id": "gourmet",
     "name": "Gourmet",
     "slug": "gourmet",
-    "description": "Learn how to cook with cooking Yaga!",
+    "messageId": "20717259",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20717259",
     "category": "combat",
-    "requirements": "Reach rank 6 in Cooking",
+    "subcategory": "Challenges Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "gourmet",
+    "description": "Learn how to cook with cooking Yaga!",
+    "requirements": "Reach rank 6 in  Cooking",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Reach rank 6 in Cooking"
+        "instruction": "Reach rank 6 in  Cooking"
       }
     ],
     "forumLinks": [
@@ -1689,22 +2101,27 @@
       }
     ],
     "tags": [
-      "combat"
+      "challenges-badges"
     ],
-    "notes": "As..."
+    "notes": "As of  July 19th, 2024, this badge is nonfunctional. • DemonicDarkwraith -- 3/1/2025 15:39:08  >"
   },
   {
-    "id": "gps",
     "name": "GPS",
     "slug": "gps",
+    "messageId": "20716200",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20716200",
+    "category": "collection",
+    "subcategory": "Classes Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "gps",
     "description": "Own the Gnomish Personal Steamtank Armor!",
-    "category": "misc",
-    "requirements": "Own GPS (2.0) Armor",
+    "requirements": "Own  GPS (2.0) Armor",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Own GPS (2.0) Armor"
+        "instruction": "Own  GPS (2.0) Armor"
       }
     ],
     "forumLinks": [
@@ -1715,22 +2132,57 @@
       }
     ],
     "tags": [
-      "misc"
-    ],
-    "notes": "Category..."
+      "classes-badges"
+    ]
   },
   {
-    "id": "guardian",
-    "name": "Guardian",
-    "slug": "guardian",
-    "description": "Fully trained Guardian Armor from the Falconreach Tower!",
-    "category": "misc",
-    "requirements": "",
+    "name": "Grrrberus!",
+    "slug": "grrrberus",
+    "messageId": "20702374",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20702374",
+    "category": "quest-completion",
+    "subcategory": "Quest Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "grrrberus",
+    "description": "Fight Grrrberus to keep Spots the two-headed puppy!",
+    "requirements": "Completion of  Grrberus' Revenge",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "See forum link for details"
+        "instruction": "Completion of  Grrberus' Revenge"
+      }
+    ],
+    "forumLinks": [
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20702374",
+        "title": "DF Encyclopedia: Grrrberus!",
+        "isPrimary": true
+      }
+    ],
+    "tags": [
+      "quest-badges"
+    ],
+    "notes": "Badge was retired on  July 19th, 2024. • DemonicDarkwraith -- 7/20/2024 23:00:31  >"
+  },
+  {
+    "name": "Guardian",
+    "slug": "guardian",
+    "messageId": "20707652",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20707652",
+    "category": "collection",
+    "subcategory": "Classes Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "guardian",
+    "description": "Fully trained Guardian Armor from the Falconreach Tower!",
+    "requirements": "A fully trained  Guardian",
+    "daRequired": false,
+    "howToObtain": [
+      {
+        "order": 1,
+        "instruction": "A fully trained  Guardian"
       }
     ],
     "forumLinks": [
@@ -1741,21 +2193,26 @@
       }
     ],
     "tags": [
-      "misc"
+      "classes-badges"
     ]
   },
   {
-    "id": "health-potion-mastery",
     "name": "Health Potion Mastery",
     "slug": "health-potion-mastery",
+    "messageId": "20716154",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20716154",
+    "category": "combat",
+    "subcategory": "Challenges Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "health-potion-mastery",
     "description": "Max out your Health Alchemy training with Reens!",
-    "category": "misc",
-    "requirements": "Reach Skill Level 40 in Health Alchemy at Reens...",
+    "requirements": "Reach Skill Level 40 in Health Alchemy at  Reens' Health Potion Shop",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Reach Skill Level 40 in Health Alchemy at Reens..."
+        "instruction": "Reach Skill Level 40 in Health Alchemy at  Reens' Health Potion Shop"
       }
     ],
     "forumLinks": [
@@ -1766,21 +2223,26 @@
       }
     ],
     "tags": [
-      "misc"
+      "challenges-badges"
     ]
   },
   {
-    "id": "heart-of-darkness",
     "name": "Heart of Darkness",
     "slug": "heart-of-darkness",
-    "description": "Find your way through the deepest jungle!",
+    "messageId": "20701193",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20701193",
     "category": "quest-completion",
-    "requirements": "Completion of Deepest Neverglades",
+    "subcategory": "Quests Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "heart-of-darkness",
+    "description": "Find your way through the deepest jungle!",
+    "requirements": "Completion of  Deepest Neverglades",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of Deepest Neverglades"
+        "instruction": "Completion of  Deepest Neverglades"
       }
     ],
     "forumLinks": [
@@ -1791,21 +2253,27 @@
       }
     ],
     "tags": [
-      "quest-completion"
-    ]
+      "quests-badges"
+    ],
+    "notes": "Quest previously required completion of  Deepest Neverglades. • DemonicDarkwraith -- 11/29/2025 19:21:08  >"
   },
   {
-    "id": "home-owner",
     "name": "Home Owner",
     "slug": "home-owner",
-    "description": "Home is where the hearth is... and the weapons... toys... skulls....",
+    "messageId": "20717319",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20717319",
     "category": "misc",
-    "requirements": "",
+    "subcategory": "Other Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "home-owner",
+    "description": "Home is where the hearth is... and the weapons... toys... skulls....",
+    "requirements": "Own a house. There's a list of all the houses in the game  here.",
     "daRequired": true,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "See forum link for details"
+        "instruction": "Own a house. There's a list of all the houses in the game  here."
       }
     ],
     "forumLinks": [
@@ -1816,21 +2284,26 @@
       }
     ],
     "tags": [
-      "misc"
+      "other-badges"
     ]
   },
   {
-    "id": "honk",
     "name": "HONK!",
     "slug": "honk",
-    "description": "HONK!!!",
+    "messageId": "22397683",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22397683",
     "category": "combat",
-    "requirements": "Completion of Goose Dragon, the Untitled",
+    "subcategory": "Challenges Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "honk",
+    "description": "HONK!!!",
+    "requirements": "Completion of  Goose Dragon, the Untitled",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of Goose Dragon, the Untitled"
+        "instruction": "Completion of  Goose Dragon, the Untitled"
       }
     ],
     "forumLinks": [
@@ -1841,21 +2314,26 @@
       }
     ],
     "tags": [
-      "combat"
+      "challenges-badges"
     ]
   },
   {
-    "id": "hope",
     "name": "Hope",
     "slug": "hope",
+    "messageId": "22375705",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22375705",
+    "category": "combat",
+    "subcategory": "Challenges Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "hope",
     "description": "Conquer the Pandora Extreme challenge!",
-    "category": "misc",
-    "requirements": "Completion of the 'Pandora (Extreme)' option in Pandora's Gauntlet",
+    "requirements": "Completion of the 'Pandora (Extreme)' option in  Pandora's Gauntlet",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of the 'Pandora (Extreme)' option in Pandora's Gauntlet"
+        "instruction": "Completion of the 'Pandora (Extreme)' option in  Pandora's Gauntlet"
       }
     ],
     "forumLinks": [
@@ -1866,22 +2344,27 @@
       }
     ],
     "tags": [
-      "misc"
+      "challenges-badges"
     ],
-    "notes": "Categor..."
+    "notes": "This badge was also awarded to players who completed the previous no-heal challenge during Pandora's Gauntlet prior to the badge's release. • DemonicDarkwraith -- 7/21/2024 22:42:53  >"
   },
   {
-    "id": "hopeless",
     "name": "Hopeless",
     "slug": "hopeless",
-    "description": "Confront General Akanthus in Severed Hope.",
+    "messageId": "22417387",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22417387",
     "category": "quest-completion",
-    "requirements": "Completion of Severed Hope",
+    "subcategory": "Quests Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "hopeless",
+    "description": "Confront General Akanthus in Severed Hope.",
+    "requirements": "Completion of  Severed Hope",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of Severed Hope"
+        "instruction": "Completion of  Severed Hope"
       }
     ],
     "forumLinks": [
@@ -1892,47 +2375,57 @@
       }
     ],
     "tags": [
-      "quest-completion"
+      "quests-badges"
     ],
-    "notes": "Other informat..."
+    "notes": "Badge's art was added on  July 27th, 2024. • DemonicDarkwraith -- 7/30/2024 17:34:27  >"
   },
   {
-    "id": "hugs-for-doomkittens",
-    "name": "Hugs for DoomKittens!",
+    "name": "Hugs for DoomKittens",
     "slug": "hugs-for-doomkittens",
-    "description": "Defeat the DoomKitten!",
+    "messageId": "20697500",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20697500",
     "category": "quest-completion",
-    "requirements": "Completion of Summoning Help",
+    "subcategory": "Quests Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "hugs-for-doomkittens",
+    "description": "Hugs for DoomKittens!",
+    "requirements": "Completion of  Summoning Help",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of Summoning Help"
+        "instruction": "Completion of  Summoning Help"
       }
     ],
     "forumLinks": [
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=20697500",
-        "title": "DF Encyclopedia: Hugs for DoomKittens!",
+        "title": "DF Encyclopedia: Hugs for DoomKittens",
         "isPrimary": true
       }
     ],
     "tags": [
-      "quest-completion"
+      "quests-badges"
     ]
   },
   {
-    "id": "hydra-slayer",
     "name": "Hydra Slayer",
     "slug": "hydra-slayer",
+    "messageId": "20697501",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20697501",
+    "category": "quest-completion",
+    "subcategory": "Quests Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "hydra-slayer",
     "description": "You've successfully made it through Oaklore Forest!",
-    "category": "misc",
-    "requirements": "Completion of Hydra Boss (Books 1 and 2)",
+    "requirements": "Completion of  Hydra Boss (Books 1 and 2)",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of Hydra Boss (Books 1 and 2)"
+        "instruction": "Completion of  Hydra Boss (Books 1 and 2)"
       }
     ],
     "forumLinks": [
@@ -1943,21 +2436,27 @@
       }
     ],
     "tags": [
-      "misc"
-    ]
+      "quests-badges"
+    ],
+    "notes": "Badge was previously called 'Oaklore Navigation' and initially required the completion of  Ambush in the Bushes; this was modified on  July 24th, 2024. • Badge's art was updated on  July 27th, 2024, replacing its  old appearance. • Old Appearance • DemonicDarkwraith for image and other information. • pjc for Oaklore Navigation image. • DemonicDarkwraith -- 7/30/2024 17:04:35  >"
   },
   {
-    "id": "i-spy",
     "name": "I Spy",
     "slug": "i-spy",
+    "messageId": "20703068",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20703068",
+    "category": "quest-completion",
+    "subcategory": "Quest Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "i-spy",
     "description": "Discover the Falconreach Spy!",
-    "category": "misc",
-    "requirements": "Completion of Mission: Improbabl...",
+    "requirements": "Completion of  Mission: Improbable",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of Mission: Improbabl..."
+        "instruction": "Completion of  Mission: Improbable"
       }
     ],
     "forumLinks": [
@@ -1968,21 +2467,27 @@
       }
     ],
     "tags": [
-      "misc"
-    ]
+      "quest-badges"
+    ],
+    "notes": "Badge was retired on  July 19th, 2024. • DemonicDarkwraith -- 7/20/2024 23:01:34  >"
   },
   {
-    "id": "icebound-revenant",
     "name": "Icebound Revenant",
     "slug": "icebound-revenant",
+    "messageId": "21782672",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21782672",
+    "category": "collection",
+    "subcategory": "Classes Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "icebound-revenant",
     "description": "Own the Icebound Revenant Armor!",
-    "category": "misc",
-    "requirements": "Own Icebound Revenant A...",
+    "requirements": "Own  Icebound Revenant Armor",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Own Icebound Revenant A..."
+        "instruction": "Own  Icebound Revenant Armor"
       }
     ],
     "forumLinks": [
@@ -1993,21 +2498,26 @@
       }
     ],
     "tags": [
-      "misc"
+      "classes-badges"
     ]
   },
   {
-    "id": "icemaster",
     "name": "Icemaster",
     "slug": "icemaster",
+    "messageId": "20716312",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20716312",
+    "category": "seasonal",
+    "subcategory": "Other Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "icemaster",
     "description": "Complete Chapter One of the Frostval Holiday Storybook!",
-    "category": "misc",
-    "requirements": "Co...",
+    "requirements": "Completion of  Icemaster Yeti's cave",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Co..."
+        "instruction": "Completion of  Icemaster Yeti's cave"
       }
     ],
     "forumLinks": [
@@ -2018,21 +2528,26 @@
       }
     ],
     "tags": [
-      "misc"
+      "other-badges"
     ]
   },
   {
-    "id": "idle-heroes",
     "name": "Idle Heroes",
     "slug": "idle-heroes",
+    "messageId": "20703217",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20703217",
+    "category": "quest-completion",
+    "subcategory": "Quest Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "idle-heroes",
     "description": "Sing your way through Falconreach Idle!",
-    "category": "misc",
-    "requirements": "Completion of Fa...",
+    "requirements": "Completion of  Falconreach Idle! and  We now return to your show!",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of Fa..."
+        "instruction": "Completion of  Falconreach Idle! and  We now return to your show!"
       }
     ],
     "forumLinks": [
@@ -2043,21 +2558,28 @@
       }
     ],
     "tags": [
-      "misc"
-    ]
+      "quest-badges",
+      "falconreach"
+    ],
+    "notes": "Badge was retired on  July 19th, 2024. • DemonicDarkwraith -- 7/20/2024 23:07:11  >"
   },
   {
-    "id": "information-on-sepulchure",
     "name": "Information on Sepulchure",
     "slug": "information-on-sepulchure",
+    "messageId": "20702858",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20702858",
+    "category": "quest-completion",
+    "subcategory": "Quest Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "information-on-sepulchure",
     "description": "Discover information about Sepulchure!",
-    "category": "misc",
-    "requirements": "Com...",
+    "requirements": "Completion of The  Temple Of The Four Winds",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Com..."
+        "instruction": "Completion of The  Temple Of The Four Winds"
       }
     ],
     "forumLinks": [
@@ -2068,21 +2590,27 @@
       }
     ],
     "tags": [
-      "misc"
-    ]
+      "quest-badges"
+    ],
+    "notes": "Badge was retired on  July 19th, 2024. • DemonicDarkwraith -- 7/20/2024 22:59:58  >"
   },
   {
-    "id": "list-completion",
     "name": "List Completion",
     "slug": "list-completion",
+    "messageId": "21887489",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21887489",
+    "category": "seasonal",
+    "subcategory": "Other Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "list-completion",
     "description": "You collected ALL of the items on the Cauldron Sisters List!",
-    "category": "misc",
-    "requirements": "",
+    "requirements": "Turn in all 11 ingredients in  The List Turn In",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "See forum link for details"
+        "instruction": "Turn in all 11 ingredients in  The List Turn In"
       }
     ],
     "forumLinks": [
@@ -2093,21 +2621,26 @@
       }
     ],
     "tags": [
-      "misc"
+      "other-badges"
     ]
   },
   {
-    "id": "locksmith",
     "name": "Locksmith",
     "slug": "locksmith",
+    "messageId": "20739835",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20739835",
+    "category": "quest-completion",
+    "subcategory": "Quests Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "locksmith",
     "description": "Hours of Lockpicking and all you got was this lousy badge?!",
-    "category": "misc",
-    "requirements": "Completion of the 999 Closet Locked Door in Oakl...",
+    "requirements": "Completion of the 999 Closet Locked Door in  Oaklore Keep",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of the 999 Closet Locked Door in Oakl..."
+        "instruction": "Completion of the 999 Closet Locked Door in  Oaklore Keep"
       }
     ],
     "forumLinks": [
@@ -2118,21 +2651,27 @@
       }
     ],
     "tags": [
-      "misc"
+      "quests-badges",
+      "oaklore"
     ]
   },
   {
-    "id": "maleurous",
     "name": "Maleurous",
     "slug": "maleurous",
-    "description": "Defeat the seven Maleurous.",
+    "messageId": "22417423",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22417423",
     "category": "quest-completion",
-    "requirements": "Completion of Rebirth",
+    "subcategory": "Quests Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "maleurous",
+    "description": "Defeat the seven Maleurous.",
+    "requirements": "Completion of  Rebirth",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of Rebirth"
+        "instruction": "Completion of  Rebirth"
       }
     ],
     "forumLinks": [
@@ -2143,22 +2682,27 @@
       }
     ],
     "tags": [
-      "quest-completion"
+      "quests-badges"
     ],
-    "notes": "Badge's art was..."
+    "notes": "Badge's art was added on  July 27th, 2024. • DemonicDarkwraith -- 7/30/2024 17:47:37  >"
   },
   {
-    "id": "mana-potion-mastery",
     "name": "Mana Potion Mastery",
     "slug": "mana-potion-mastery",
+    "messageId": "20716141",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20716141",
+    "category": "combat",
+    "subcategory": "Challenges Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "mana-potion-mastery",
     "description": "Max out your Mana Alchemy training with Alina!",
-    "category": "misc",
-    "requirements": "Reach Skill Level 40 in Mana Alchemy at Alina's Man...",
+    "requirements": "Reach Skill Level 40 in Mana Alchemy at  Alina's Mana Potion Shop",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Reach Skill Level 40 in Mana Alchemy at Alina's Man..."
+        "instruction": "Reach Skill Level 40 in Mana Alchemy at  Alina's Mana Potion Shop"
       }
     ],
     "forumLinks": [
@@ -2169,21 +2713,26 @@
       }
     ],
     "tags": [
-      "misc"
+      "challenges-badges"
     ]
   },
   {
-    "id": "merry-togsmas",
     "name": "Merry Togsmas!",
     "slug": "merry-togsmas",
+    "messageId": "20716391",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20716391",
+    "category": "seasonal",
+    "subcategory": "Other Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "merry-togsmas",
     "description": "Complete Chapter Six of the Frostval Holiday Storybook!",
-    "category": "misc",
-    "requirements": "",
+    "requirements": "Completion of  Captain Rolith's Revenge",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "See forum link for details"
+        "instruction": "Completion of  Captain Rolith's Revenge"
       }
     ],
     "forumLinks": [
@@ -2194,21 +2743,26 @@
       }
     ],
     "tags": [
-      "misc"
+      "other-badges"
     ]
   },
   {
-    "id": "mogloween-07-masks",
     "name": "Mogloween '07 Masks",
     "slug": "mogloween-07-masks",
+    "messageId": "20724455",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20724455",
+    "category": "seasonal",
+    "subcategory": "Other Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "mogloween-07-masks",
     "description": "Collect all the '07 masks in the Mogloween Holiday Storybook!",
-    "category": "misc",
-    "requirements": "",
+    "requirements": "Unlock all masks in  Mogloween Masks! (Chapter 1)",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "See forum link for details"
+        "instruction": "Unlock all masks in  Mogloween Masks! (Chapter 1)"
       }
     ],
     "forumLinks": [
@@ -2219,22 +2773,27 @@
       }
     ],
     "tags": [
-      "misc",
+      "other-badges",
       "mogloween"
     ]
   },
   {
-    "id": "mogloween-08-masks",
     "name": "Mogloween '08 Masks",
     "slug": "mogloween-08-masks",
+    "messageId": "20724456",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20724456",
+    "category": "seasonal",
+    "subcategory": "Other Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "mogloween-08-masks",
     "description": "Collect all the '08 masks in the Mogloween Holiday Storybook!",
-    "category": "misc",
-    "requirements": "",
+    "requirements": "Unlock all masks in  Mogloween Masks! (Chapter 3)",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "See forum link for details"
+        "instruction": "Unlock all masks in  Mogloween Masks! (Chapter 3)"
       }
     ],
     "forumLinks": [
@@ -2245,22 +2804,27 @@
       }
     ],
     "tags": [
-      "misc",
+      "other-badges",
       "mogloween"
     ]
   },
   {
-    "id": "mogloween-09-masks",
     "name": "Mogloween '09 Masks",
     "slug": "mogloween-09-masks",
+    "messageId": "20828185",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20828185",
+    "category": "seasonal",
+    "subcategory": "Other Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "mogloween-09-masks",
     "description": "Collect all the '09 masks in the Mogloween Holiday Storybook!",
-    "category": "misc",
-    "requirements": "",
+    "requirements": "Unlock all masks in  Mogloween Masks! (Chapter 4)",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "See forum link for details"
+        "instruction": "Unlock all masks in  Mogloween Masks! (Chapter 4)"
       }
     ],
     "forumLinks": [
@@ -2271,22 +2835,27 @@
       }
     ],
     "tags": [
-      "misc",
+      "other-badges",
       "mogloween"
     ]
   },
   {
-    "id": "mogloween-10-masks",
     "name": "Mogloween '10 Masks",
     "slug": "mogloween-10-masks",
+    "messageId": "20736150",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20736150",
+    "category": "seasonal",
+    "subcategory": "Other Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "mogloween-10-masks",
     "description": "Collect all the '10 masks in the Mogloween Holiday Storybook!",
-    "category": "misc",
-    "requirements": "",
+    "requirements": "Unlock all masks in  Mogloween Masks! (Chapter 5)",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "See forum link for details"
+        "instruction": "Unlock all masks in  Mogloween Masks! (Chapter 5)"
       }
     ],
     "forumLinks": [
@@ -2297,22 +2866,27 @@
       }
     ],
     "tags": [
-      "misc",
+      "other-badges",
       "mogloween"
     ]
   },
   {
-    "id": "mogloween-11-masks",
     "name": "Mogloween '11 Masks",
     "slug": "mogloween-11-masks",
+    "messageId": "20736151",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20736151",
+    "category": "seasonal",
+    "subcategory": "Other Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "mogloween-11-masks",
     "description": "Collect all the '11 masks in the Mogloween Holiday Storybook!",
-    "category": "misc",
-    "requirements": "",
+    "requirements": "Unlock all masks in  Mogloween Masks! (Chapter 6)",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "See forum link for details"
+        "instruction": "Unlock all masks in  Mogloween Masks! (Chapter 6)"
       }
     ],
     "forumLinks": [
@@ -2323,22 +2897,27 @@
       }
     ],
     "tags": [
-      "misc",
+      "other-badges",
       "mogloween"
     ]
   },
   {
-    "id": "mogloween-12-masks",
     "name": "Mogloween '12 Masks",
     "slug": "mogloween-12-masks",
+    "messageId": "20828178",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20828178",
+    "category": "seasonal",
+    "subcategory": "Other Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "mogloween-12-masks",
     "description": "Collect all the '12 masks in the Mogloween Holiday Storybook!",
-    "category": "misc",
-    "requirements": "",
+    "requirements": "Unlock all masks in  Mogloween Masks! (Chapter 7)",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "See forum link for details"
+        "instruction": "Unlock all masks in  Mogloween Masks! (Chapter 7)"
       }
     ],
     "forumLinks": [
@@ -2349,22 +2928,27 @@
       }
     ],
     "tags": [
-      "misc",
+      "other-badges",
       "mogloween"
     ]
   },
   {
-    "id": "mogloween-13-masks",
     "name": "Mogloween '13 Masks",
     "slug": "mogloween-13-masks",
+    "messageId": "21502340",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21502340",
+    "category": "seasonal",
+    "subcategory": "Other Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "mogloween-13-masks",
     "description": "Collect all the '13 Masks in the Mogloween Storybook!",
-    "category": "misc",
-    "requirements": "",
+    "requirements": "Unlock all masks in  Mogloween Masks! (Chapter 8)",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "See forum link for details"
+        "instruction": "Unlock all masks in  Mogloween Masks! (Chapter 8)"
       }
     ],
     "forumLinks": [
@@ -2375,22 +2959,27 @@
       }
     ],
     "tags": [
-      "misc",
+      "other-badges",
       "mogloween"
     ]
   },
   {
-    "id": "mogloween-14-masks",
     "name": "Mogloween '14 Masks",
     "slug": "mogloween-14-masks",
+    "messageId": "21851595",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21851595",
+    "category": "seasonal",
+    "subcategory": "Other Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "mogloween-14-masks",
     "description": "Collect all the '14 Masks in the Mogloween Storybook!",
-    "category": "misc",
-    "requirements": "",
+    "requirements": "Unlock all masks in  Mogloween Masks! (Chapter 9)",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "See forum link for details"
+        "instruction": "Unlock all masks in  Mogloween Masks! (Chapter 9)"
       }
     ],
     "forumLinks": [
@@ -2401,22 +2990,27 @@
       }
     ],
     "tags": [
-      "misc",
+      "other-badges",
       "mogloween"
     ]
   },
   {
-    "id": "mogloween-15-masks",
     "name": "Mogloween '15 Masks",
     "slug": "mogloween-15-masks",
+    "messageId": "22053311",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22053311",
+    "category": "seasonal",
+    "subcategory": "Other Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "mogloween-15-masks",
     "description": "Collect all the '15 Masks in the Mogloween Holiday Storybook!",
-    "category": "misc",
-    "requirements": "",
+    "requirements": "Unlock all masks in  Mogloween Masks! (Chapter 10)",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "See forum link for details"
+        "instruction": "Unlock all masks in  Mogloween Masks! (Chapter 10)"
       }
     ],
     "forumLinks": [
@@ -2427,22 +3021,27 @@
       }
     ],
     "tags": [
-      "misc",
+      "other-badges",
       "mogloween"
     ]
   },
   {
-    "id": "mollo-destruction",
     "name": "Mollo Destruction",
     "slug": "mollo-destruction",
-    "description": "Help Sir Vey restore the balance in Oaklore Forest!",
+    "messageId": "20702314",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20702314",
     "category": "quest-completion",
-    "requirements": "Completion of Burn It All!",
+    "subcategory": "Quests Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "mollo-destruction",
+    "description": "Help Sir Vey restore the balance in Oaklore Forest!",
+    "requirements": "Completion of  Burn It All!",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of Burn It All!"
+        "instruction": "Completion of  Burn It All!"
       }
     ],
     "forumLinks": [
@@ -2453,21 +3052,26 @@
       }
     ],
     "tags": [
-      "quest-completion"
+      "quests-badges"
     ]
   },
   {
-    "id": "monkee-business",
     "name": "Monkee Business",
     "slug": "monkee-business",
+    "messageId": "20706754",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20706754",
+    "category": "quest-completion",
+    "subcategory": "Quests Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "monkee-business",
     "description": "The innkeepers in Osprey Cove and Shadow of the Wind Village are up to no good!",
-    "category": "misc",
-    "requirements": "Completion of Bad Bana...",
+    "requirements": "Completion of  Bad Bananas",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of Bad Bana..."
+        "instruction": "Completion of  Bad Bananas"
       }
     ],
     "forumLinks": [
@@ -2478,21 +3082,26 @@
       }
     ],
     "tags": [
-      "misc"
+      "quests-badges"
     ]
   },
   {
-    "id": "more-boxes",
     "name": "More Boxes!",
     "slug": "more-boxes",
-    "description": "Sneevils like boxes AND badges!",
+    "messageId": "20739708",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20739708",
     "category": "quest-completion",
-    "requirements": "Completion of Sneevil Boxopolis",
+    "subcategory": "Quests Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "more-boxes",
+    "description": "Sneevils like boxes AND badges!",
+    "requirements": "Completion of  Sneevil Boxopolis",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of Sneevil Boxopolis"
+        "instruction": "Completion of  Sneevil Boxopolis"
       }
     ],
     "forumLinks": [
@@ -2503,21 +3112,26 @@
       }
     ],
     "tags": [
-      "quest-completion"
+      "quests-badges"
     ]
   },
   {
-    "id": "naughty-list",
     "name": "Naughty List",
     "slug": "naughty-list",
+    "messageId": "20716321",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20716321",
+    "category": "seasonal",
+    "subcategory": "Other Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "naughty-list",
     "description": "Complete Chapter Three of the Frostval Holiday Storybook!",
-    "category": "misc",
-    "requirements": "",
+    "requirements": "Completion of  You Never Asked",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "See forum link for details"
+        "instruction": "Completion of  You Never Asked"
       }
     ],
     "forumLinks": [
@@ -2528,21 +3142,26 @@
       }
     ],
     "tags": [
-      "misc"
+      "other-badges"
     ]
   },
   {
-    "id": "necromancer",
     "name": "Necromancer",
     "slug": "necromancer",
-    "description": "Fully trained Necromancer Armor from Zorbak at The Necropolis!",
+    "messageId": "20707718",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20707718",
     "category": "collection",
-    "requirements": "A fully trained Necromancer",
+    "subcategory": "Classes Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "necromancer",
+    "description": "Fully trained Necromancer Armor from Zorbak at The Necropolis!",
+    "requirements": "A fully trained  Necromancer",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "A fully trained Necromancer"
+        "instruction": "A fully trained  Necromancer"
       }
     ],
     "forumLinks": [
@@ -2553,21 +3172,26 @@
       }
     ],
     "tags": [
-      "collection"
+      "classes-badges"
     ]
   },
   {
-    "id": "nest-defended",
     "name": "Nest Defended",
     "slug": "nest-defended",
-    "description": "Defend the Nest from Siofra!",
+    "messageId": "22417419",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22417419",
     "category": "quest-completion",
-    "requirements": "Completion of Leaving the Nest",
+    "subcategory": "Quests Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "nest-defended",
+    "description": "Defend the Nest from Siofra!",
+    "requirements": "Completion of  Leaving the Nest",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of Leaving the Nest"
+        "instruction": "Completion of  Leaving the Nest"
       }
     ],
     "forumLinks": [
@@ -2578,22 +3202,27 @@
       }
     ],
     "tags": [
-      "quest-completion"
+      "quests-badges"
     ],
-    "notes": "B..."
+    "notes": "Badge's art was added on  July 27th, 2024. • DemonicDarkwraith -- 7/30/2024 17:46:38  >"
   },
   {
-    "id": "ninja",
     "name": "Ninja",
     "slug": "ninja",
-    "description": "Fully trained Ninja Armor from Thyton in Shadow of the Wind Village!",
+    "messageId": "20707700",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20707700",
     "category": "collection",
-    "requirements": "A fully trained Ninja",
+    "subcategory": "Classes Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "ninja",
+    "description": "Fully trained Ninja Armor from Thyton in Shadow of the Wind Village!",
+    "requirements": "A fully trained  Ninja",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "A fully trained Ninja"
+        "instruction": "A fully trained  Ninja"
       }
     ],
     "forumLinks": [
@@ -2604,21 +3233,26 @@
       }
     ],
     "tags": [
-      "collection"
+      "classes-badges"
     ]
   },
   {
-    "id": "nose-for-trouble",
     "name": "Nose for Trouble",
     "slug": "nose-for-trouble",
-    "description": "Help Sir Ano learn to be a hero!",
+    "messageId": "22417413",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22417413",
     "category": "quest-completion",
-    "requirements": "Completion of Victoria's Secret",
+    "subcategory": "Quests Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "nose-for-trouble",
+    "description": "Help Sir Ano learn to be a hero!",
+    "requirements": "Completion of  Victoria's Secret",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of Victoria's Secret"
+        "instruction": "Completion of  Victoria's Secret"
       }
     ],
     "forumLinks": [
@@ -2629,22 +3263,27 @@
       }
     ],
     "tags": [
-      "quest-completion"
+      "quests-badges"
     ],
-    "notes": "Other infor..."
+    "notes": "Badge's art was added on  July 27th, 2024. • DemonicDarkwraith -- 7/30/2024 17:42:48  >"
   },
   {
-    "id": "orb-extractor",
     "name": "Orb Extractor",
     "slug": "orb-extractor",
-    "description": "Recover the Darkness Orb!",
+    "messageId": "21246503",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21246503",
     "category": "quest-completion",
-    "requirements": "Completion of Memory-Demons",
+    "subcategory": "Quests Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "orb-extractor",
+    "description": "Recover the Darkness Orb!",
+    "requirements": "Completion of  Memory-Demons",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of Memory-Demons"
+        "instruction": "Completion of  Memory-Demons"
       }
     ],
     "forumLinks": [
@@ -2655,22 +3294,27 @@
       }
     ],
     "tags": [
-      "quest-completion"
+      "quests-badges"
     ],
-    "notes": "Badge's..."
+    "notes": "Badge's art was updated on  July 27th, 2024, replacing its  old appearance. • DemonicDarkwraith -- 7/30/2024 17:12:29  >"
   },
   {
-    "id": "paladin",
     "name": "Paladin",
     "slug": "paladin",
-    "description": "Fully trained Paladin Armor from Artix at The Necropolis!",
+    "messageId": "20707730",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20707730",
     "category": "collection",
-    "requirements": "A fully trained Paladin",
+    "subcategory": "Classes Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "paladin",
+    "description": "Fully trained Paladin Armor from Artix at The Necropolis!",
+    "requirements": "A fully trained  Paladin",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "A fully trained Paladin"
+        "instruction": "A fully trained  Paladin"
       }
     ],
     "forumLinks": [
@@ -2681,22 +3325,27 @@
       }
     ],
     "tags": [
-      "collection"
+      "classes-badges"
     ],
-    "notes": "Ot..."
+    "notes": "Badge's art was changed since its inception. • Old Appearance • Older Appearance • DemonicDarkwraith -- 7/30/2024 17:27:19  >"
   },
   {
-    "id": "party-on-olaf",
     "name": "Party On, Olaf!",
     "slug": "party-on-olaf",
+    "messageId": "20702348",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20702348",
+    "category": "quest-completion",
+    "subcategory": "Quest Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "party-on-olaf",
     "description": "DragonLords party with Olaf!",
-    "category": "misc",
-    "requirements": "",
-    "daRequired": false,
+    "requirements": "Completion of  Olaf's Party",
+    "daRequired": true,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "See forum link for details"
+        "instruction": "Completion of  Olaf's Party"
       }
     ],
     "forumLinks": [
@@ -2707,21 +3356,27 @@
       }
     ],
     "tags": [
-      "misc"
-    ]
+      "quest-badges"
+    ],
+    "notes": "Badge was retired on  July 19th, 2024. • DemonicDarkwraith -- 7/20/2024 23:00:18  >"
   },
   {
-    "id": "pet-training-mastery",
     "name": "Pet Training Mastery",
     "slug": "pet-training-mastery",
+    "messageId": "20702351",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20702351",
+    "category": "combat",
+    "subcategory": "Challenges Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "pet-training-mastery",
     "description": "Train all the pets at Gram's Pet Shop!",
-    "category": "misc",
-    "requirements": "Completion of The...",
+    "requirements": "Completion of  The Grinder's Paw",
     "daRequired": true,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of The..."
+        "instruction": "Completion of  The Grinder's Paw"
       }
     ],
     "forumLinks": [
@@ -2732,21 +3387,26 @@
       }
     ],
     "tags": [
-      "misc"
+      "challenges-badges"
     ]
   },
   {
-    "id": "pirate",
     "name": "Pirate",
     "slug": "pirate",
-    "description": "Fully trained Pirate Armor from Rhubarb in Osprey Cove!",
+    "messageId": "20707697",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20707697",
     "category": "collection",
-    "requirements": "A fully trained Pirate",
+    "subcategory": "Classes Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "pirate",
+    "description": "Fully trained Pirate Armor from Rhubarb in Osprey Cove!",
+    "requirements": "A fully trained  Pirate",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "A fully trained Pirate"
+        "instruction": "A fully trained  Pirate"
       }
     ],
     "forumLinks": [
@@ -2757,22 +3417,26 @@
       }
     ],
     "tags": [
-      "collection"
-    ],
-    "notes": "https:..."
+      "classes-badges"
+    ]
   },
   {
-    "id": "primalized",
     "name": "Primalized",
     "slug": "primalized",
+    "messageId": "20707751",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20707751",
+    "category": "collection",
+    "subcategory": "Classes Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "primalized",
     "description": "Learn how to Primalize your dragon from Elysia in Sunbreeze Grove!",
-    "category": "misc",
-    "requirements": "...",
+    "requirements": "Completion of  Primal Dragon Training",
     "daRequired": true,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "..."
+        "instruction": "Completion of  Primal Dragon Training"
       }
     ],
     "forumLinks": [
@@ -2783,21 +3447,26 @@
       }
     ],
     "tags": [
-      "misc"
+      "classes-badges"
     ]
   },
   {
-    "id": "primordial-witness",
     "name": "Primordial Witness",
     "slug": "primordial-witness",
+    "messageId": "22317238",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22317238",
+    "category": "combat",
+    "subcategory": "Challenges Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "primordial-witness",
     "description": "Defeat the Primordials in the Arena at the Edge of Time.",
-    "category": "misc",
-    "requirements": "Completion of The Primordials",
+    "requirements": "Completion of  The Primordials",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of The Primordials"
+        "instruction": "Completion of  The Primordials"
       }
     ],
     "forumLinks": [
@@ -2808,21 +3477,26 @@
       }
     ],
     "tags": [
-      "misc"
+      "challenges-badges"
     ]
   },
   {
-    "id": "pumpkinlord",
     "name": "PumpkinLord",
     "slug": "pumpkinlord",
+    "messageId": "20707706",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20707706",
+    "category": "collection",
+    "subcategory": "Classes Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "pumpkinlord",
     "description": "Fully trained PumpkinLord Armor from the Cauldron Sisters during Mogloween!",
-    "category": "misc",
-    "requirements": "",
+    "requirements": "A fully trained  PumpkinLord",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "See forum link for details"
+        "instruction": "A fully trained  PumpkinLord"
       }
     ],
     "forumLinks": [
@@ -2833,21 +3507,26 @@
       }
     ],
     "tags": [
-      "misc"
+      "classes-badges"
     ]
   },
   {
-    "id": "pvp-arena-fighter",
     "name": "PvP Arena Fighter",
     "slug": "pvp-arena-fighter",
+    "messageId": "20705535",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20705535",
+    "category": "combat",
+    "subcategory": "Other Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "pvp-arena-fighter",
     "description": "Aeris PVP Rank 10 badge!",
-    "category": "misc",
-    "requirements": "Get to PvP Rank 10 in Aeris Battlespire",
+    "requirements": "Get to PvP Rank 10 in  Aeris Battlespire",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Get to PvP Rank 10 in Aeris Battlespire"
+        "instruction": "Get to PvP Rank 10 in  Aeris Battlespire"
       }
     ],
     "forumLinks": [
@@ -2858,22 +3537,27 @@
       }
     ],
     "tags": [
-      "misc"
+      "other-badges"
     ],
-    "notes": "Other infor..."
+    "notes": "Badge was moved from Challenges Badges to Other Badges on  February 28th, 2025. • DemonicDarkwraith -- 3/1/2025 15:37:26  >"
   },
   {
-    "id": "pvp-brawler",
     "name": "PvP Brawler",
     "slug": "pvp-brawler",
+    "messageId": "20705532",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20705532",
+    "category": "combat",
+    "subcategory": "Other Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "pvp-brawler",
     "description": "Aeris PVP Rank 5 badge!",
-    "category": "misc",
-    "requirements": "Get to PvP Rank 5 in Aeris Battlespire",
+    "requirements": "Get to PvP Rank 5 in  Aeris Battlespire",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Get to PvP Rank 5 in Aeris Battlespire"
+        "instruction": "Get to PvP Rank 5 in  Aeris Battlespire"
       }
     ],
     "forumLinks": [
@@ -2884,22 +3568,27 @@
       }
     ],
     "tags": [
-      "misc"
+      "other-badges"
     ],
-    "notes": "B..."
+    "notes": "Badge was moved from Challenges Badges to Other Badges on  February 28th, 2025. • DemonicDarkwraith -- 3/1/2025 15:36:36  >"
   },
   {
-    "id": "pvp-grandmaster",
     "name": "PvP Grandmaster",
     "slug": "pvp-grandmaster",
+    "messageId": "20797154",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20797154",
+    "category": "combat",
+    "subcategory": "Other Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "pvp-grandmaster",
     "description": "Aeris PVP Rank 20 badge!",
-    "category": "misc",
-    "requirements": "Get to PvP Rank 20 in Aeris Battlespire",
+    "requirements": "Get to PvP Rank 20 in  Aeris Battlespire",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Get to PvP Rank 20 in Aeris Battlespire"
+        "instruction": "Get to PvP Rank 20 in  Aeris Battlespire"
       }
     ],
     "forumLinks": [
@@ -2910,22 +3599,27 @@
       }
     ],
     "tags": [
-      "misc"
+      "other-badges"
     ],
-    "notes": "Other informa..."
+    "notes": "Badge was moved from Challenges Badges to Other Badges on  February 28th, 2025. • DemonicDarkwraith -- 3/1/2025 15:37:46  >"
   },
   {
-    "id": "pvp-prize-fighter",
     "name": "PvP Prize Fighter",
     "slug": "pvp-prize-fighter",
+    "messageId": "20797152",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20797152",
+    "category": "combat",
+    "subcategory": "Other Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "pvp-prize-fighter",
     "description": "Aeris PVP Rank 15 badge!",
-    "category": "misc",
-    "requirements": "Get to PvP Rank 15 in Aeris Battlespire",
+    "requirements": "Get to PvP Rank 15 in  Aeris Battlespire",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Get to PvP Rank 15 in Aeris Battlespire"
+        "instruction": "Get to PvP Rank 15 in  Aeris Battlespire"
       }
     ],
     "forumLinks": [
@@ -2936,22 +3630,27 @@
       }
     ],
     "tags": [
-      "misc"
+      "other-badges"
     ],
-    "notes": "Other infor..."
+    "notes": "Badge was moved from Challenges Badges to Other Badges on  February 28th, 2025. • DemonicDarkwraith -- 3/1/2025 15:37:36  >"
   },
   {
-    "id": "pyromancer",
     "name": "Pyromancer",
     "slug": "pyromancer",
-    "description": "Own the Pyromancer Armor!",
+    "messageId": "20857622",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20857622",
     "category": "collection",
-    "requirements": "Own Pyromancer Armor",
+    "subcategory": "Classes Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "pyromancer",
+    "description": "Own the Pyromancer Armor!",
+    "requirements": "Own  Pyromancer Armor",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Own Pyromancer Armor"
+        "instruction": "Own  Pyromancer Armor"
       }
     ],
     "forumLinks": [
@@ -2962,21 +3661,26 @@
       }
     ],
     "tags": [
-      "collection"
+      "classes-badges"
     ]
   },
   {
-    "id": "quadforce",
     "name": "Quadforce",
     "slug": "quadforce",
-    "description": "Collect the Quadforce and defeat the evil Gananana!",
+    "messageId": "22417414",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22417414",
     "category": "quest-completion",
-    "requirements": "Completion of Defeat Gananana!",
+    "subcategory": "Quests Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "quadforce",
+    "description": "Collect the Quadforce and defeat the evil Gananana!",
+    "requirements": "Completion of  Defeat Gananana!",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of Defeat Gananana!"
+        "instruction": "Completion of  Defeat Gananana!"
       }
     ],
     "forumLinks": [
@@ -2987,21 +3691,27 @@
       }
     ],
     "tags": [
-      "quest-completion"
-    ]
+      "quests-badges"
+    ],
+    "notes": "Badge's art was added on  July 27th, 2024. • DemonicDarkwraith -- 7/30/2024 17:43:01  >"
   },
   {
-    "id": "quick-buy",
     "name": "Quick Buy!",
     "slug": "quick-buy",
-    "description": "Own any of the Limited Quantity Shop items!",
+    "messageId": "20728042",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20728042",
     "category": "misc",
-    "requirements": "",
+    "subcategory": "Other Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "quick-buy",
+    "description": "Own any of the Limited Quantity Shop items!",
+    "requirements": "Own any  LQS weapon",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "See forum link for details"
+        "instruction": "Own any  LQS weapon"
       }
     ],
     "forumLinks": [
@@ -3012,21 +3722,27 @@
       }
     ],
     "tags": [
-      "misc"
-    ]
+      "other-badges"
+    ],
+    "notes": "Badge was retired on  February 28th, 2025. • DemonicDarkwraith -- 3/1/2025 15:29:43  >"
   },
   {
-    "id": "ranger",
     "name": "Ranger",
     "slug": "ranger",
-    "description": "Fully trained Ranger Armor from Zhoom in The Sandsea!",
+    "messageId": "20707701",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20707701",
     "category": "collection",
-    "requirements": "A fully trained Ranger",
+    "subcategory": "Classes Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "ranger",
+    "description": "Fully trained Ranger Armor from Zhoom in The Sandsea!",
+    "requirements": "A fully trained  Ranger",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "A fully trained Ranger"
+        "instruction": "A fully trained  Ranger"
       }
     ],
     "forumLinks": [
@@ -3037,22 +3753,27 @@
       }
     ],
     "tags": [
-      "collection"
+      "classes-badges"
     ],
-    "notes": "Other in..."
+    "notes": "Badge's art was updated on  July 19th, 2024, replacing its  old appearance. • DemonicDarkwraith -- 7/30/2024 17:28:40  >"
   },
   {
-    "id": "resident-sneevil",
     "name": "Resident: Sneevil",
     "slug": "resident-sneevil",
+    "messageId": "20716400",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20716400",
+    "category": "seasonal",
+    "subcategory": "Other Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "resident-sneevil",
     "description": "Complete Resident: Sneevil in the Mogloween Holiday Storybook!",
-    "category": "misc",
-    "requirements": "",
+    "requirements": "Completion of  Resident Sneevil: Zemesis",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "See forum link for details"
+        "instruction": "Completion of  Resident Sneevil: Zemesis"
       }
     ],
     "forumLinks": [
@@ -3063,21 +3784,26 @@
       }
     ],
     "tags": [
-      "misc"
+      "other-badges"
     ]
   },
   {
-    "id": "sailor-of-the-seas",
     "name": "Sailor of the Seas",
     "slug": "sailor-of-the-seas",
-    "description": "Sail across the sea to Nieboheim.",
+    "messageId": "22417389",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22417389",
     "category": "quest-completion",
-    "requirements": "Completion of The Obsidian Tomb",
+    "subcategory": "Quests Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "sailor-of-the-seas",
+    "description": "Sail across the sea to Nieboheim.",
+    "requirements": "Completion of  The Obsidian Tomb",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of The Obsidian Tomb"
+        "instruction": "Completion of  The Obsidian Tomb"
       }
     ],
     "forumLinks": [
@@ -3088,22 +3814,27 @@
       }
     ],
     "tags": [
-      "quest-completion"
+      "quests-badges"
     ],
-    "notes": "Other in..."
+    "notes": "Badge's art was added on  July 27th, 2024. • DemonicDarkwraith -- 7/30/2024 17:36:43  >"
   },
   {
-    "id": "sands-of-eternity",
     "name": "Sands of Eternity",
     "slug": "sands-of-eternity",
-    "description": "Help Cinquefoil unravel the secrets of the Rosewood.",
+    "messageId": "22417385",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22417385",
     "category": "quest-completion",
-    "requirements": "Completion of Sands of Eternity",
+    "subcategory": "Quests Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "sands-of-eternity",
+    "description": "Help Cinquefoil unravel the secrets of the Rosewood.",
+    "requirements": "Completion of  Sands of Eternity",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of Sands of Eternity"
+        "instruction": "Completion of  Sands of Eternity"
       }
     ],
     "forumLinks": [
@@ -3114,21 +3845,27 @@
       }
     ],
     "tags": [
-      "quest-completion"
-    ]
+      "quests-badges"
+    ],
+    "notes": "Badge's art was added on  July 27th, 2024. • DemonicDarkwraith -- 7/30/2024 17:34:00  >"
   },
   {
-    "id": "secrets-of-bacon",
     "name": "Secrets of Bacon!",
     "slug": "secrets-of-bacon",
-    "description": "Learn where Element Bacon comes from!",
+    "messageId": "20702365",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20702365",
     "category": "quest-completion",
-    "requirements": "Completion of The Secret Revealed",
+    "subcategory": "Quests Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "secrets-of-bacon",
+    "description": "Learn where Element Bacon comes from!",
+    "requirements": "Completion of  The Secret Revealed",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of The Secret Revealed"
+        "instruction": "Completion of  The Secret Revealed"
       }
     ],
     "forumLinks": [
@@ -3139,22 +3876,26 @@
       }
     ],
     "tags": [
-      "quest-completion"
-    ],
-    "notes": "htt..."
+      "quests-badges"
+    ]
   },
   {
-    "id": "shadow-hunter",
     "name": "Shadow Hunter",
     "slug": "shadow-hunter",
+    "messageId": "21827291",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21827291",
+    "category": "collection",
+    "subcategory": "Classes Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "shadow-hunter",
     "description": "Fully trained Shadow Hunter Armor from Symone during Mogloween!",
-    "category": "misc",
-    "requirements": "A fully trained ShadowHunter",
+    "requirements": "A fully trained  ShadowHunter",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "A fully trained ShadowHunter"
+        "instruction": "A fully trained  ShadowHunter"
       }
     ],
     "forumLinks": [
@@ -3165,21 +3906,27 @@
       }
     ],
     "tags": [
-      "misc"
-    ]
+      "classes-badges"
+    ],
+    "notes": "Badge's art was updated on  February 28th, 2025, replacing its  old appearance. • DemonicDarkwraith -- 3/1/2025 15:11:00  >"
   },
   {
-    "id": "shocking",
     "name": "Shocking!",
     "slug": "shocking",
-    "description": "Battle to save the Energy Orb!",
+    "messageId": "20728068",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20728068",
     "category": "quest-completion",
-    "requirements": "Completion of Ex Machina",
+    "subcategory": "Quests Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "shocking",
+    "description": "Battle to save the Energy Orb!",
+    "requirements": "Completion of  Ex Machina",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of Ex Machina"
+        "instruction": "Completion of  Ex Machina"
       }
     ],
     "forumLinks": [
@@ -3190,22 +3937,27 @@
       }
     ],
     "tags": [
-      "quest-completion"
+      "quests-badges"
     ],
-    "notes": "Badge's a..."
+    "notes": "Badge's art was updated on  July 27th, 2024, replacing its  old appearance. • DemonicDarkwraith -- 7/30/2024 17:17:35  >"
   },
   {
-    "id": "siege-of-haven",
     "name": "Siege of Haven",
     "slug": "siege-of-haven",
-    "description": "Defend the Haven from the Rose!",
+    "messageId": "22417386",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22417386",
     "category": "quest-completion",
-    "requirements": "Completion of A Decisive Blow",
+    "subcategory": "Quests Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "siege-of-haven",
+    "description": "Defend the Haven from the Rose!",
+    "requirements": "Completion of  A Decisive Blow",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of A Decisive Blow"
+        "instruction": "Completion of  A Decisive Blow"
       }
     ],
     "forumLinks": [
@@ -3216,22 +3968,27 @@
       }
     ],
     "tags": [
-      "quest-completion"
+      "quests-badges"
     ],
-    "notes": "Other informatio..."
+    "notes": "Badge's art was added on  July 27th, 2024. • DemonicDarkwraith -- 7/30/2024 17:34:14  >"
   },
   {
-    "id": "soulweaver",
     "name": "SoulWeaver",
     "slug": "soulweaver",
-    "description": "Fully trained SoulWeaver Armor from Tomix in Ravenloss!",
+    "messageId": "20707758",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20707758",
     "category": "collection",
-    "requirements": "A fully trained SoulWeaver",
+    "subcategory": "Classes Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "soulweaver",
+    "description": "Fully trained SoulWeaver Armor from Tomix in Ravenloss!",
+    "requirements": "A fully trained  SoulWeaver",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "A fully trained SoulWeaver"
+        "instruction": "A fully trained  SoulWeaver"
       }
     ],
     "forumLinks": [
@@ -3242,21 +3999,26 @@
       }
     ],
     "tags": [
-      "collection"
+      "classes-badges"
     ]
   },
   {
-    "id": "special-delivery",
     "name": "Special Delivery",
     "slug": "special-delivery",
-    "description": "Deliver all of Zapp's letters from Popsprocket!",
+    "messageId": "20703287",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20703287",
     "category": "quest-completion",
-    "requirements": "Completion of Gnomenapped?!",
+    "subcategory": "Quests Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "special-delivery",
+    "description": "Deliver all of Zapp's letters from Popsprocket!",
+    "requirements": "Completion of  Gnomenapped?!",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of Gnomenapped?!"
+        "instruction": "Completion of  Gnomenapped?!"
       }
     ],
     "forumLinks": [
@@ -3267,21 +4029,26 @@
       }
     ],
     "tags": [
-      "quest-completion"
+      "quests-badges"
     ]
   },
   {
-    "id": "star-s-descendant",
     "name": "Star's Descendant",
     "slug": "star-s-descendant",
+    "messageId": "22417391",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22417391",
+    "category": "quest-completion",
+    "subcategory": "Quests Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "star-s-descendant",
     "description": "Prevent the Magesterium from destroying the Sandsea!",
-    "category": "misc",
-    "requirements": "Completion of Song in Our Hearts",
+    "requirements": "Completion of  Song in Our Hearts",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of Song in Our Hearts"
+        "instruction": "Completion of  Song in Our Hearts"
       }
     ],
     "forumLinks": [
@@ -3292,21 +4059,27 @@
       }
     ],
     "tags": [
-      "misc"
-    ]
+      "quests-badges"
+    ],
+    "notes": "Badge's art was added on  July 27th, 2024. • DemonicDarkwraith -- 7/30/2024 17:38:05  >"
   },
   {
-    "id": "starting-out",
     "name": "Starting Out",
     "slug": "starting-out",
-    "description": "The journey begins.",
+    "messageId": "22417380",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22417380",
     "category": "quest-completion",
-    "requirements": "Completion of A Hero is Bored",
+    "subcategory": "Quests Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "starting-out",
+    "description": "The journey begins.",
+    "requirements": "Completion of  A Hero is Bored",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of A Hero is Bored"
+        "instruction": "Completion of  A Hero is Bored"
       }
     ],
     "forumLinks": [
@@ -3317,22 +4090,27 @@
       }
     ],
     "tags": [
-      "quest-completion"
+      "quests-badges"
     ],
-    "notes": "Badge's art..."
+    "notes": "Badge's art was added on  July 27th, 2024. • DemonicDarkwraith -- 7/30/2024 17:02:46  >"
   },
   {
-    "id": "storm-in-the-night",
     "name": "Storm in the Night",
     "slug": "storm-in-the-night",
-    "description": "Close the Doomwood Rift in The Royal Resistance.",
+    "messageId": "22417392",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22417392",
     "category": "quest-completion",
-    "requirements": "Completion of Of Duty and Dragons",
+    "subcategory": "Quests Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "storm-in-the-night",
+    "description": "Close the Doomwood Rift in The Royal Resistance.",
+    "requirements": "Completion of  Of Duty and Dragons",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of Of Duty and Dragons"
+        "instruction": "Completion of  Of Duty and Dragons"
       }
     ],
     "forumLinks": [
@@ -3343,21 +4121,27 @@
       }
     ],
     "tags": [
-      "quest-completion"
-    ]
+      "quests-badges"
+    ],
+    "notes": "Badge's art was added on  July 27th, 2024. • DemonicDarkwraith -- 7/30/2024 17:38:21  >"
   },
   {
-    "id": "sugary-nightmare",
     "name": "Sugary Nightmare",
     "slug": "sugary-nightmare",
+    "messageId": "21571464",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21571464",
+    "category": "seasonal",
+    "subcategory": "Other Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "sugary-nightmare",
     "description": "Complete Chapter Eight of the Frostval Storybook!",
-    "category": "misc",
-    "requirements": "C...",
+    "requirements": "Completion of  Chilly and the Candy Factory",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "C..."
+        "instruction": "Completion of  Chilly and the Candy Factory"
       }
     ],
     "forumLinks": [
@@ -3368,21 +4152,26 @@
       }
     ],
     "tags": [
-      "misc"
+      "other-badges"
     ]
   },
   {
-    "id": "technomancer",
     "name": "Technomancer",
     "slug": "technomancer",
-    "description": "Fully trained Technomancer Armor from Yix in Popsprocket!",
+    "messageId": "20707765",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20707765",
     "category": "collection",
-    "requirements": "A fully trained Technomancer",
+    "subcategory": "Classes Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "technomancer",
+    "description": "Fully trained Technomancer Armor from Yix in Popsprocket!",
+    "requirements": "A fully trained  Technomancer",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "A fully trained Technomancer"
+        "instruction": "A fully trained  Technomancer"
       }
     ],
     "forumLinks": [
@@ -3393,21 +4182,26 @@
       }
     ],
     "tags": [
-      "collection"
+      "classes-badges"
     ]
   },
   {
-    "id": "the-archknight",
     "name": "The ArchKnight",
     "slug": "the-archknight",
-    "description": "The ArchKnight",
-    "category": "misc",
-    "requirements": "Completion of Killer Dragonman",
+    "messageId": "20712044",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20712044",
+    "category": "quest-completion",
+    "subcategory": "Quests Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "the-archknight",
+    "description": "Help Batoro clean up the mean streets of nighttime Falconreach!",
+    "requirements": "Completion of  Killer Dragonman",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of Killer Dragonman"
+        "instruction": "Completion of  Killer Dragonman"
       }
     ],
     "forumLinks": [
@@ -3418,22 +4212,26 @@
       }
     ],
     "tags": [
-      "misc"
-    ],
-    "notes": "Category..."
+      "quests-badges"
+    ]
   },
   {
-    "id": "the-balance",
     "name": "The Balance",
     "slug": "the-balance",
-    "description": "The Balance",
+    "messageId": "22417428",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22417428",
     "category": "combat",
-    "requirements": "Completion of Inevitable Equilibrium",
+    "subcategory": "Challenges Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "the-balance",
+    "description": "Complete the Inevitable Equilibrium challenge.",
+    "requirements": "Completion of  Inevitable Equilibrium",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of Inevitable Equilibrium"
+        "instruction": "Completion of  Inevitable Equilibrium"
       }
     ],
     "forumLinks": [
@@ -3444,21 +4242,27 @@
       }
     ],
     "tags": [
-      "combat"
-    ]
+      "challenges-badges"
+    ],
+    "notes": "Badge's art was added on  July 27th, 2024. • DemonicDarkwraith -- 7/30/2024 17:48:54  >"
   },
   {
-    "id": "the-end-of-magic",
     "name": "The End of Magic",
     "slug": "the-end-of-magic",
-    "description": "The End of Magic",
+    "messageId": "22417395",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22417395",
     "category": "quest-completion",
-    "requirements": "Completion of The End of Magic (Part 2)",
+    "subcategory": "Quests Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "the-end-of-magic",
+    "description": "Complete the Book 3 finale.",
+    "requirements": "Completion of  The End of Magic (Part 2)",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of The End of Magic (Part 2)"
+        "instruction": "Completion of  The End of Magic (Part 2)"
       }
     ],
     "forumLinks": [
@@ -3469,22 +4273,27 @@
       }
     ],
     "tags": [
-      "quest-completion"
+      "quests-badges"
     ],
-    "notes": "Other in..."
+    "notes": "Badge's art was added on  July 27th, 2024. • DemonicDarkwraith -- 7/30/2024 17:40:09  >"
   },
   {
-    "id": "the-magnum-opus",
     "name": "The Magnum Opus",
     "slug": "the-magnum-opus",
-    "description": "The Magnum Opus",
+    "messageId": "22403874",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22403874",
     "category": "combat",
-    "requirements": "Completion of Swan Song (Extreme)",
+    "subcategory": "Challenges Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "the-magnum-opus",
+    "description": "Completed the Swan Song (Extreme) challenge.",
+    "requirements": "Completion of  Swan Song (Extreme)",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of Swan Song (Extreme)"
+        "instruction": "Completion of  Swan Song (Extreme)"
       }
     ],
     "forumLinks": [
@@ -3495,21 +4304,26 @@
       }
     ],
     "tags": [
-      "combat"
+      "challenges-badges"
     ]
   },
   {
-    "id": "the-mystery-is-afoot",
     "name": "The Mystery is Afoot!",
     "slug": "the-mystery-is-afoot",
+    "messageId": "20702304",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20702304",
+    "category": "quest-completion",
+    "subcategory": "Quests Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "the-mystery-is-afoot",
     "description": "See what DragonsGrasp holds!",
-    "category": "misc",
-    "requirements": "Completion of Betrayal",
+    "requirements": "Completion of  Betrayal",
     "daRequired": true,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of Betrayal"
+        "instruction": "Completion of  Betrayal"
       }
     ],
     "forumLinks": [
@@ -3520,22 +4334,26 @@
       }
     ],
     "tags": [
-      "misc"
-    ],
-    "notes": "Cate..."
+      "quests-badges"
+    ]
   },
   {
-    "id": "the-priestess",
     "name": "The Priestess",
     "slug": "the-priestess",
-    "description": "The Priestess",
+    "messageId": "22417381",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22417381",
     "category": "quest-completion",
-    "requirements": "Completion of The Black Dragon Box",
+    "subcategory": "Quests Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "the-priestess",
+    "description": "Save the Priestess from the Bandits!",
+    "requirements": "Completion of  The Black Dragon Box",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of The Black Dragon Box"
+        "instruction": "Completion of  The Black Dragon Box"
       }
     ],
     "forumLinks": [
@@ -3546,22 +4364,27 @@
       }
     ],
     "tags": [
-      "quest-completion"
+      "quests-badges"
     ],
-    "notes": "Other i..."
+    "notes": "Badge's art was added on  July 27th, 2024. • DemonicDarkwraith -- 7/30/2024 17:03:31  >"
   },
   {
-    "id": "thorns",
     "name": "Thorns",
     "slug": "thorns",
-    "description": "Put an end to the Thorns.",
+    "messageId": "22417420",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22417420",
     "category": "quest-completion",
-    "requirements": "Completion of Loose Ends",
+    "subcategory": "Quests Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "thorns",
+    "description": "Put an end to the Thorns.",
+    "requirements": "Completion of  Loose Ends",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of Loose Ends"
+        "instruction": "Completion of  Loose Ends"
       }
     ],
     "forumLinks": [
@@ -3572,22 +4395,27 @@
       }
     ],
     "tags": [
-      "quest-completion"
+      "quests-badges"
     ],
-    "notes": "Badge's art was a..."
+    "notes": "Badge's art was added on  July 27th, 2024. • DemonicDarkwraith -- 7/30/2024 17:46:52  >"
   },
   {
-    "id": "time-walker",
     "name": "Time Walker",
     "slug": "time-walker",
+    "messageId": "20702956",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20702956",
+    "category": "collection",
+    "subcategory": "Classes Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "time-walker",
     "description": "Own any of the Calendar Armors!",
-    "category": "misc",
-    "requirements": "",
+    "requirements": "Own  Chronomancer Armor,  Chronocorruptor,  TimeKiller,  ChronoZ,  Avatar of Time,  Archivist,  ShadowWalker of Time, or  Epoch Armor",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "See forum link for details"
+        "instruction": "Own  Chronomancer Armor,  Chronocorruptor,  TimeKiller,  ChronoZ,  Avatar of Time,  Archivist,  ShadowWalker of Time, or  Epoch Armor"
       }
     ],
     "forumLinks": [
@@ -3598,21 +4426,27 @@
       }
     ],
     "tags": [
-      "misc"
-    ]
+      "classes-badges"
+    ],
+    "notes": "This badge was previously named Time Killer. • DemonicDarkwraith -- 7/21/2024 22:26:58  >"
   },
   {
-    "id": "timetorn-veteran",
     "name": "Timetorn Veteran!",
     "slug": "timetorn-veteran",
-    "description": "Conquer the huge 1000 room Timetorn Matrix!",
+    "messageId": "22300645",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22300645",
     "category": "combat",
-    "requirements": "Completion of Timetorn Matrix III",
+    "subcategory": "Challenges Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "timetorn-veteran",
+    "description": "Conquer the huge 1000 room Timetorn Matrix!",
+    "requirements": "Completion of  Timetorn Matrix III",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of Timetorn Matrix III"
+        "instruction": "Completion of  Timetorn Matrix III"
       }
     ],
     "forumLinks": [
@@ -3623,21 +4457,26 @@
       }
     ],
     "tags": [
-      "combat"
+      "challenges-badges"
     ]
   },
   {
-    "id": "tog-nightmare",
     "name": "Tog Nightmare",
     "slug": "tog-nightmare",
+    "messageId": "22325307",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22325307",
+    "category": "combat",
+    "subcategory": "Challenges Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "tog-nightmare",
     "description": "Become the nightmare of the Endless Invasion, taking down 1000 of its members.",
-    "category": "misc",
-    "requirements": "Defeat 1,000 waves of tog...",
+    "requirements": "Defeat 1,000 waves of tog invaders in  The Endless Invasion",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Defeat 1,000 waves of tog..."
+        "instruction": "Defeat 1,000 waves of tog invaders in  The Endless Invasion"
       }
     ],
     "forumLinks": [
@@ -3648,21 +4487,27 @@
       }
     ],
     "tags": [
-      "misc"
-    ]
+      "challenges-badges"
+    ],
+    "notes": "The appearance of the badge changes each time you view it, with a total of 32 different possibilities. • Tog Images • DemonicDarkwraith -- 7/21/2024 22:35:04  >"
   },
   {
-    "id": "togslayer",
     "name": "TogSlayer",
     "slug": "togslayer",
+    "messageId": "20707768",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20707768",
+    "category": "collection",
+    "subcategory": "Classes Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "togslayer",
     "description": "Fully trained TogSlayer Armor during Frostval!",
-    "category": "misc",
-    "requirements": "A fully tra...",
+    "requirements": "A fully trained  Togslayer",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "A fully tra..."
+        "instruction": "A fully trained  Togslayer"
       }
     ],
     "forumLinks": [
@@ -3673,21 +4518,26 @@
       }
     ],
     "tags": [
-      "misc"
+      "classes-badges"
     ]
   },
   {
-    "id": "tournament-champion",
     "name": "Tournament Champion",
     "slug": "tournament-champion",
+    "messageId": "22417388",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22417388",
+    "category": "quest-completion",
+    "subcategory": "Quests Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "tournament-champion",
     "description": "Achieve victory in the Tournament of Champions!",
-    "category": "misc",
-    "requirements": "Completion of Tournament of Champions Part 2",
+    "requirements": "Completion of  Tournament of Champions Part 2",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of Tournament of Champions Part 2"
+        "instruction": "Completion of  Tournament of Champions Part 2"
       }
     ],
     "forumLinks": [
@@ -3698,22 +4548,27 @@
       }
     ],
     "tags": [
-      "misc"
+      "quests-badges"
     ],
-    "notes": "Categ..."
+    "notes": "Badge's art was added on  July 27th, 2024. • DemonicDarkwraith -- 7/30/2024 17:34:47  >"
   },
   {
-    "id": "ultimate-destiny",
     "name": "Ultimate Destiny",
     "slug": "ultimate-destiny",
+    "messageId": "22417425",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22417425",
+    "category": "combat",
+    "subcategory": "Challenges Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "ultimate-destiny",
     "description": "Forge an Ultimate Destiny Weapon.",
-    "category": "misc",
-    "requirements": "",
-    "daRequired": false,
+    "requirements": "Own  Ultimate Blinding Light of Destiny,  Ultimate DragonStaff of Destiny, or  Ultimate Twin Blades of Destiny",
+    "daRequired": true,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "See forum link for details"
+        "instruction": "Own  Ultimate Blinding Light of Destiny,  Ultimate DragonStaff of Destiny, or  Ultimate Twin Blades of Destiny"
       }
     ],
     "forumLinks": [
@@ -3724,21 +4579,27 @@
       }
     ],
     "tags": [
-      "misc"
-    ]
+      "challenges-badges"
+    ],
+    "notes": "Badge's art was added on  July 27th, 2024. • DemonicDarkwraith -- 7/30/2024 17:48:11  >"
   },
   {
-    "id": "unreal-doom",
     "name": "Unreal Doom",
     "slug": "unreal-doom",
+    "messageId": "22417426",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22417426",
+    "category": "combat",
+    "subcategory": "Challenges Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "unreal-doom",
     "description": "Forge an Unreal Doom Weapon.",
-    "category": "misc",
-    "requirements": "",
+    "requirements": "Own  Unreal ShadowReaper of Doom,  Unreal Skullstaff of Doom, or  Unreal Twin Blades of Doom",
     "daRequired": true,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "See forum link for details"
+        "instruction": "Own  Unreal ShadowReaper of Doom,  Unreal Skullstaff of Doom, or  Unreal Twin Blades of Doom"
       }
     ],
     "forumLinks": [
@@ -3749,21 +4610,27 @@
       }
     ],
     "tags": [
-      "misc"
-    ]
+      "challenges-badges"
+    ],
+    "notes": "Badge's art was added on  July 27th, 2024. • DemonicDarkwraith -- 7/30/2024 17:48:32  >"
   },
   {
-    "id": "void-magic",
     "name": "Void Magic",
     "slug": "void-magic",
-    "description": "Watch as Nythera grows into her powers!",
+    "messageId": "20706578",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20706578",
     "category": "quest-completion",
-    "requirements": "Completion of Embrace Your Destiny",
+    "subcategory": "Quests Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "void-magic",
+    "description": "Watch as Nythera grows into her powers!",
+    "requirements": "Completion of  Embrace Your Destiny",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of Embrace Your Destiny"
+        "instruction": "Completion of  Embrace Your Destiny"
       }
     ],
     "forumLinks": [
@@ -3774,22 +4641,26 @@
       }
     ],
     "tags": [
-      "quest-completion"
-    ],
-    "notes": "https:..."
+      "quests-badges"
+    ]
   },
   {
-    "id": "walk-through-fire",
     "name": "Walk Through Fire",
     "slug": "walk-through-fire",
+    "messageId": "20797933",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20797933",
+    "category": "quest-completion",
+    "subcategory": "Quests Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "walk-through-fire",
     "description": "See if you can help the Ninjas find the Jewel of the Four Winds!",
-    "category": "misc",
-    "requirements": "Completion of Walk Through Fire",
+    "requirements": "Completion of  Walk Through Fire",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of Walk Through Fire"
+        "instruction": "Completion of  Walk Through Fire"
       }
     ],
     "forumLinks": [
@@ -3800,22 +4671,27 @@
       }
     ],
     "tags": [
-      "misc"
+      "quests-badges"
     ],
-    "notes": "Cat..."
+    "notes": "Badge's art was updated on  July 19th, 2024, replacing its  old appearance. • DemonicDarkwraith for image and other information. • Legendary Ash for requirement correction. • DemonicDarkwraith -- 7/30/2024 17:23:47  >"
   },
   {
-    "id": "wanderer",
     "name": "Wanderer",
     "slug": "wanderer",
-    "description": "Find Aria in Wanderland!",
+    "messageId": "20703176",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20703176",
     "category": "quest-completion",
-    "requirements": "Completion of Queen of Tarts",
+    "subcategory": "Quests Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "wanderer",
+    "description": "Find Aria in Wanderland!",
+    "requirements": "Completion of  Queen of Tarts",
     "daRequired": true,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of Queen of Tarts"
+        "instruction": "Completion of  Queen of Tarts"
       }
     ],
     "forumLinks": [
@@ -3826,21 +4702,26 @@
       }
     ],
     "tags": [
-      "quest-completion"
+      "quests-badges"
     ]
   },
   {
-    "id": "water-you-doing",
     "name": "Water You Doing?",
     "slug": "water-you-doing",
-    "description": "Quest for the Water Orb!",
+    "messageId": "21440422",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21440422",
     "category": "quest-completion",
-    "requirements": "Completion of Descent",
+    "subcategory": "Quests Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "water-you-doing",
+    "description": "Quest for the Water Orb!",
+    "requirements": "Completion of  Descent",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of Descent"
+        "instruction": "Completion of  Descent"
       }
     ],
     "forumLinks": [
@@ -3851,22 +4732,27 @@
       }
     ],
     "tags": [
-      "quest-completion"
+      "quests-badges"
     ],
-    "notes": "Badge's..."
+    "notes": "Badge's art was updated on  July 27th, 2024, replacing its  old appearance. • DemonicDarkwraith for image and other information. • Niki for correction. • DemonicDarkwraith -- 7/30/2024 17:20:00  >"
   },
   {
-    "id": "weave-with-me",
     "name": "Weave With Me!",
     "slug": "weave-with-me",
-    "description": "See what lies behind the Equilibrium Gate with Tomix!",
+    "messageId": "20796140",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20796140",
     "category": "quest-completion",
-    "requirements": "Completion of The End?",
+    "subcategory": "Quests Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "weave-with-me",
+    "description": "See what lies behind the Equilibrium Gate with Tomix!",
+    "requirements": "Completion of  The End?",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of The End?"
+        "instruction": "Completion of  The End?"
       }
     ],
     "forumLinks": [
@@ -3877,22 +4763,26 @@
       }
     ],
     "tags": [
-      "quest-completion"
-    ],
-    "notes": "h..."
+      "quests-badges"
+    ]
   },
   {
-    "id": "weave-without-me",
     "name": "Weave Without Me!",
     "slug": "weave-without-me",
+    "messageId": "21862454",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21862454",
+    "category": "quest-completion",
+    "subcategory": "Quests Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "weave-without-me",
     "description": "Help Tomix track down the last of the corrupted spirits!",
-    "category": "misc",
-    "requirements": "Completion of Tomix's Saga Epilogue",
+    "requirements": "Completion of  Tomix's Saga Epilogue",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of Tomix's Saga Epilogue"
+        "instruction": "Completion of  Tomix's Saga Epilogue"
       }
     ],
     "forumLinks": [
@@ -3903,22 +4793,26 @@
       }
     ],
     "tags": [
-      "misc"
-    ],
-    "notes": "Categor..."
+      "quests-badges"
+    ]
   },
   {
-    "id": "wild-fighter",
     "name": "Wild Fighter",
     "slug": "wild-fighter",
+    "messageId": "20703126",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20703126",
+    "category": "quest-completion",
+    "subcategory": "Quest Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "wild-fighter",
     "description": "Defeat Wolf and Bear at the Forest Gate!",
-    "category": "misc",
-    "requirements": "Completion of...",
+    "requirements": "Completion of  Wolf and Bear",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of..."
+        "instruction": "Completion of  Wolf and Bear"
       }
     ],
     "forumLinks": [
@@ -3929,21 +4823,27 @@
       }
     ],
     "tags": [
-      "misc"
-    ]
+      "quest-badges"
+    ],
+    "notes": "Badge was retired on  July 19th, 2024. • DemonicDarkwraith -- 7/20/2024 23:01:02  >"
   },
   {
-    "id": "worthy",
     "name": "Worthy",
     "slug": "worthy",
+    "messageId": "21063536",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21063536",
+    "category": "collection",
+    "subcategory": "Classes Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "worthy",
     "description": "Unlock the Atealan Armors!",
-    "category": "misc",
-    "requirements": "Unlock any of the Atealan Armors by completi...",
+    "requirements": "Unlock any of the Atealan Armors by completing  Milkgrass Arena,  Cosmos or  Mind Chamber.",
     "daRequired": true,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Unlock any of the Atealan Armors by completi..."
+        "instruction": "Unlock any of the Atealan Armors by completing  Milkgrass Arena,  Cosmos or  Mind Chamber."
       }
     ],
     "forumLinks": [
@@ -3954,21 +4854,26 @@
       }
     ],
     "tags": [
-      "misc"
+      "classes-badges"
     ]
   },
   {
-    "id": "wrestling-champion",
     "name": "Wrestling Champion!",
     "slug": "wrestling-champion",
-    "description": "Beat all the wrestling challengers to become the UDE Wrestling Champion during H...",
-    "category": "misc",
-    "requirements": "",
+    "messageId": "21238166",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21238166",
+    "category": "seasonal",
+    "subcategory": "Other Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "wrestling-champion",
+    "description": "Beat all the wrestling challengers to become the UDE Wrestling Champion during Hero's Heart Day '13!",
+    "requirements": "Completion of  The Happy Couple",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "See forum link for details"
+        "instruction": "Completion of  The Happy Couple"
       }
     ],
     "forumLinks": [
@@ -3979,21 +4884,26 @@
       }
     ],
     "tags": [
-      "misc"
+      "other-badges"
     ]
   },
   {
-    "id": "x-val",
     "name": "X-val!",
     "slug": "x-val",
+    "messageId": "20716316",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20716316",
+    "category": "seasonal",
+    "subcategory": "Other Badges",
+    "retired": false,
+    "unreleased": false,
+    "id": "x-val",
     "description": "Complete Chapter Two of the Frostval Holiday Storybook!",
-    "category": "misc",
-    "requirements": "Compl...",
+    "requirements": "Completion of  Return to the Yeti Cave!",
     "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Compl..."
+        "instruction": "Completion of  Return to the Yeti Cave!"
       }
     ],
     "forumLinks": [
@@ -4004,7 +4914,7 @@
       }
     ],
     "tags": [
-      "misc"
+      "other-badges"
     ]
   }
 ]

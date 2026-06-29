@@ -1,67 +1,74 @@
 /**
- * Badge Scraper for DragonFable Forums
+ * Badge Scraper - A-Z Page Strategy
  *
- * This script crawls the DF Encyclopedia Badges forum section and builds
- * a complete badges.json file from the forum data.
+ * Parses the A-Z Badges master post which contains:
+ * - All badge names with forum links
+ * - Category and subcategory classification
+ * - Retired / unreleased status
+ *
+ * Then fetches each individual badge thread for full details:
+ * - Flavour text / description
+ * - DA Required status
+ * - Requirements
+ * - Notes / Other information
  *
  * USAGE:
- * 1. Open the badges forum in your browser: https://forums2.battleon.com/f/tt.asp?forumid=412
- * 2. Open DevTools → Network tab → click the first request → Headers tab
- * 3. Copy the Cookie value from Request Headers
- * 4. Create a .env file in the project root with: FORUM_COOKIE="your_cookie_string_here"
- * 5. Run: npm run scrape:badges
+ * 1. Get your session cookie from DevTools → Network → Headers → Cookie
+ * 2. Add to .env: FORUM_COOKIE="your_cookie_string"
+ * 3. Run: npm run scrape:badges
+ *
+ * The A-Z master post URL:
+ * https://forums2.battleon.com/f/tm.asp?m=22304590&mpage=1&key=
  */
 
 import * as fs from 'node:fs'
 import * as path from 'node:path'
 
-// ─── Configuration ───────────────────────────────────────────────────────────
-
 const FORUM_BASE = 'https://forums2.battleon.com/f'
-const BADGES_FORUM_ID = 412
-const DELAY_MS = 2000
+const AZ_PAGE_URL = `${FORUM_BASE}/tm.asp?m=22304590&mpage=1&key=`
+const DELAY_MS = 800
 const OUTPUT_PATH = path.resolve(import.meta.dirname, '../src/data/badges.json')
 
-// ─── Load cookie from .env ───────────────────────────────────────────────────
+// ─── Types ───────────────────────────────────────────────────────────────────
 
-function loadCookie(): string {
-  const envPath = path.resolve(import.meta.dirname, '../.env')
-  if (!fs.existsSync(envPath)) {
-    console.error('❌ Missing .env file. Create one with FORUM_COOKIE="your_cookie_here"')
-    process.exit(1)
-  }
+interface BadgeStub {
+  name: string
+  slug: string
+  messageId: string
+  forumUrl: string
+  category: string      // top-level: quest-completion, classes, challenges, other
+  subcategory: string   // e.g. "Early Days", "Book 3", "Side Quests", "Frostval"
+  retired: boolean
+  unreleased: boolean
+}
 
-  const envContent = fs.readFileSync(envPath, 'utf-8')
-  const match = envContent.match(/FORUM_COOKIE=["'](.+?)["']\s*$/)
-  if (!match) {
-    console.error('❌ FORUM_COOKIE not found in .env file')
-    process.exit(1)
-  }
-
-  return match[1]
+interface BadgeData extends BadgeStub {
+  id: string
+  description: string
+  requirements: string
+  daRequired: boolean
+  howToObtain: { order: number; instruction: string }[]
+  forumLinks: { url: string; title: string; isPrimary: boolean }[]
+  tags: string[]
+  notes?: string
 }
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
 
 function sleep(ms: number): Promise<void> {
-  return new Promise((resolve) => setTimeout(resolve, ms))
+  return new Promise((r) => setTimeout(r, ms))
 }
 
 async function fetchPage(url: string, cookie: string): Promise<string> {
-  const response = await fetch(url, {
+  const res = await fetch(url, {
     headers: {
       Cookie: cookie,
-      'User-Agent':
-        'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-      Accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+      'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) Chrome/120.0.0.0 Safari/537.36',
+      Accept: 'text/html,application/xhtml+xml',
     },
   })
-
-  if (!response.ok) {
-    throw new Error(`HTTP ${response.status}: ${response.statusText}`)
-  }
-
-  return response.text()
+  if (!res.ok) throw new Error(`HTTP ${res.status}: ${url}`)
+  return res.text()
 }
 
 function slugify(name: string): string {
@@ -72,154 +79,210 @@ function slugify(name: string): string {
     .slice(0, 120)
 }
 
-function decodeHTMLEntities(str: string): string {
+function decodeHTML(str: string): string {
   return str
     .replace(/&amp;/g, '&')
     .replace(/&lt;/g, '<')
     .replace(/&gt;/g, '>')
     .replace(/&quot;/g, '"')
     .replace(/&#39;/g, "'")
-    .replace(/&#(\d+);/g, (_, num) => String.fromCharCode(Number(num)))
+    .replace(/&#(\d+);/g, (_, n) => String.fromCharCode(Number(n)))
+    .replace(/&nbsp;/g, ' ')
 }
 
-// ─── Badge parsing from topic list title attribute ───────────────────────────
-
-interface BadgeData {
-  id: string
-  name: string
-  slug: string
-  description: string
-  category: string
-  requirements: string
-  daRequired: boolean
-  howToObtain: { order: number; instruction: string }[]
-  forumLinks: { url: string; title: string; isPrimary: boolean }[]
-  tags: string[]
-  notes?: string
+function stripHtml(html: string): string {
+  return html
+    .replace(/<br\s*\/?>/gi, '\n')
+    .replace(/<\/p>/gi, '\n')
+    .replace(/<[^>]+>/g, '')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim()
 }
 
-function parseBadgeFromTitle(name: string, titleAttr: string, messageId: string): BadgeData | null {
-  // The title attribute contains the badge info separated by <br>
-  // Format: [optional image tags] BadgeName <br> Description <br> (DA status) <br> <br> Requirements: ... <br> Category: ...
-  const parts = titleAttr
-    .split(/<br\s*\/?>|\n/)
-    .map((p) => decodeHTMLEntities(p.trim()))
-    .filter((p) => p.length > 0)
-
-  // Remove image URLs from parts
-  const cleanParts = parts.filter(
-    (p) => !p.startsWith('http://') && !p.startsWith('https://') && p.length > 0
-  )
-
-  if (cleanParts.length < 2) {
-    return null
+function loadCookie(): string {
+  const envPath = path.resolve(import.meta.dirname, '../.env')
+  if (!fs.existsSync(envPath)) {
+    console.error('❌ Missing .env file. Add FORUM_COOKIE="..." to it.')
+    process.exit(1)
   }
-
-  // Find description — usually the first line after the badge name that isn't metadata
-  let description = ''
-  let daRequired = false
-  let requirements = ''
-  let category = 'misc'
-  const noteLines: string[] = []
-
-  let foundReqs = false
-
-  for (const part of cleanParts) {
-    // Skip the badge name line itself
-    if (part === name || part === `The ${name}` || part.replace(/^The /, '') === name) continue
-
-    // DA status
-    if (/^\(.*DA.*\)$/i.test(part)) {
-      daRequired = /DA Required/i.test(part) && !/No DA/i.test(part)
-      continue
-    }
-
-    // Requirements line
-    if (/^Requirements?:/i.test(part)) {
-      requirements = part.replace(/^Requirements?:\s*/i, '').trim()
-      foundReqs = true
-      continue
-    }
-
-    // Category line
-    if (/^Category:/i.test(part)) {
-      category = mapCategory(part.replace(/^Category:\s*/i, '').trim())
-      continue
-    }
-
-    // Other information header
-    if (/^Other information/i.test(part)) continue
-
-    // "Thanks to" attribution line - skip
-    if (/^Thanks to/i.test(part)) continue
-
-    // If we haven't found requirements yet and no description yet, it's the description
-    if (!foundReqs && !description && part.length > 3) {
-      description = part
-      continue
-    }
-
-    // Everything after requirements/category is notes
-    if (foundReqs && part.length > 3 && !/^Category:/i.test(part)) {
-      noteLines.push(part)
-    }
+  const content = fs.readFileSync(envPath, 'utf-8')
+  const match = content.match(/FORUM_COOKIE=["'](.+?)["']\s*$/)
+  if (!match) {
+    console.error('❌ FORUM_COOKIE not found in .env')
+    process.exit(1)
   }
-
-  // Clean up the display name (forum uses "Name, The" format)
-  const displayName = name.includes(', The')
-    ? `The ${name.replace(', The', '')}`
-    : name.includes(', A')
-      ? `A ${name.replace(', A', '')}`
-      : name
-
-  const slug = slugify(displayName)
-  const notes = noteLines.length > 0 ? noteLines.join('. ') : undefined
-
-  // Generate obtaining steps from requirements
-  const howToObtain = requirements
-    ? [{ order: 1, instruction: requirements }]
-    : [{ order: 1, instruction: 'See forum link for details' }]
-
-  return {
-    id: slug,
-    name: displayName,
-    slug,
-    description: description || `Badge: ${displayName}`,
-    category,
-    requirements,
-    daRequired,
-    howToObtain,
-    forumLinks: [
-      {
-        url: `${FORUM_BASE}/tm.asp?m=${messageId}`,
-        title: `DF Encyclopedia: ${displayName}`,
-        isPrimary: true,
-      },
-    ],
-    tags: generateTags(displayName, requirements, category),
-    ...(notes ? { notes } : {}),
-  }
+  return match[1]
 }
 
-function mapCategory(raw: string): string {
-  const lower = raw.toLowerCase()
-  if (lower.includes('quest')) return 'quest-completion'
-  if (lower.includes('holiday') || lower.includes('seasonal')) return 'seasonal'
-  if (lower.includes('pvp')) return 'combat'
-  if (lower.includes('challenge')) return 'combat'
-  if (lower.includes('skill') || lower.includes('class') || lower.includes('armor'))
-    return 'collection'
-  if (lower.includes('random')) return 'misc'
-  if (lower.includes('exploration')) return 'exploration'
-  if (lower.includes('secret')) return 'secret'
-  if (lower.includes('community')) return 'community'
+// ─── Step 1: Parse A-Z master page ───────────────────────────────────────────
+
+function mapForumCategory(raw: string): string {
+  const s = raw.toLowerCase()
+  // Forum category strings from the badge threads:
+  // "Quests Badges", "Classes Badges", "Challenges Badges", "Other Badges"
+  // "Holiday Badge", "PvP Badges", "Skill Badges", "Armor Badges"
+  // "Random Badges"
+  if (s.includes('quest')) return 'quest-completion'
+  if (s.includes('holiday') || s.includes('seasonal')) return 'seasonal'
+  if (s.includes('class') || s.includes('armor') || s.includes('skill') || s.includes('random')) return 'collection'
+  if (s.includes('challenge') || s.includes('pvp') || s.includes('combat')) return 'combat'
   return 'misc'
 }
 
-function generateTags(name: string, requirements: string, category: string): string[] {
-  const tags: string[] = [category]
-  const combined = `${name} ${requirements}`.toLowerCase()
+function mapSubcategoryToSeasonal(subcategory: string): boolean {
+  // Some badges are in "Other Badges" category but their subcategory reveals they're seasonal
+  const s = subcategory.toLowerCase()
+  return s.includes('frostval') || s.includes('mogloween') || s.includes('hhd') ||
+    s.includes('holiday') || s.includes('hero\'s heart')
+}
 
+function parseAZPage(html: string): BadgeStub[] {
+  const stubs: BadgeStub[] = []
+  const seen = new Set<string>()
+
+  // The A-Z page alphabetical listing has all badge links with names.
+  // We extract every tm.asp?m=XXXXX link and the badge name next to it.
+  // The retired section links the same badges again — we use the first occurrence
+  // (alphabetical section = active badges, later = retired).
+
+  // Track retired section
+  const chunks = html.split(/<br\s*\/?>/)
+  let inRetired = false
+  let inUnreleased = false
+
+  for (const chunk of chunks) {
+    const text = stripHtml(decodeHTML(chunk)).trim()
+
+    // Detect retired / unreleased sections by their headings
+    if (/Retired Badges Sorted by Category/i.test(text)) { inRetired = true; inUnreleased = false; continue }
+    if (/Unreleased Badges Sorted by Category/i.test(text)) { inUnreleased = true; inRetired = false; continue }
+    // The alphabetical listing heading resets state
+    if (/^Alphabetical Badge Listing$/i.test(text)) { inRetired = false; inUnreleased = false; continue }
+
+    const linkMatch = /href="https?:\/\/forums2\.battleon\.com\/f\/tm\.asp\?m=(\d+)"[^>]*>\s*([^<]+?)\s*<\/a>/i.exec(chunk)
+    if (!linkMatch) continue
+
+    const msgId = linkMatch[1]
+    const name = decodeHTML(linkMatch[2].trim())
+    if (!name || name.length < 2) continue
+
+    // Skip the A-Z Badges index thread itself
+    if (name === 'A-Z Badges') continue
+
+    if (seen.has(msgId)) continue // dedup — first occurrence wins (alphabetical section)
+    seen.add(msgId)
+
+    stubs.push({
+      name,
+      slug: slugify(name),
+      messageId: msgId,
+      forumUrl: `${FORUM_BASE}/tm.asp?m=${msgId}`,
+      category: 'misc',
+      subcategory: 'General',
+      retired: inRetired,
+      unreleased: inUnreleased,
+    })
+  }
+
+  return stubs
+}
+
+// ─── Step 2: Fetch individual badge thread for full details ──────────────────
+
+async function fetchBadgeDetails(
+  stub: BadgeStub,
+  cookie: string
+): Promise<Partial<BadgeData>> {
+  try {
+    const html = await fetchPage(stub.forumUrl, cookie)
+
+    if (html.includes('This message has been deleted or moved')) {
+      return {}
+    }
+
+    const bodyMatch = html.match(/<td[^>]*valign=["']?top["']?[^>]*width=["']?100%["']?[^>]*>([\s\S]*?)<\/td>/i)
+    const rawBody = bodyMatch ? bodyMatch[1] : html
+    const text = stripHtml(decodeHTML(rawBody))
+    const lines = text.split('\n').map(l => l.trim()).filter(Boolean)
+
+    let description = ''
+    let daRequired = false
+    let requirements = ''
+    let category = stub.category
+    let subcategory = stub.subcategory
+    const noteLines: string[] = []
+    let inNotes = false
+
+    for (const line of lines) {
+      if (line === stub.name || line === `The ${stub.name}`) continue
+
+      // DA status
+      if (/^\(.*\)$/.test(line)) {
+        if (/No DA/i.test(line)) daRequired = false
+        else if (/DA Required/i.test(line)) daRequired = true
+        continue
+      }
+
+      // Requirements
+      if (/^Requirements?:/i.test(line)) {
+        requirements = line.replace(/^Requirements?:\s*/i, '').trim()
+        continue
+      }
+
+      // Category — parse from thread and map to our category system
+      if (/^Category:/i.test(line)) {
+        const rawCat = line.replace(/^Category:\s*/i, '').trim()
+        subcategory = rawCat
+        // Use the raw forum category string directly for mapping
+        category = mapForumCategory(rawCat)
+        continue
+      }
+
+      if (/^Other information/i.test(line)) { inNotes = true; continue }
+      if (/^Thanks to/i.test(line)) continue
+
+      if (!description && !inNotes && line.length > 5) {
+        description = line
+        continue
+      }
+
+      if (inNotes && line.length > 3) {
+        noteLines.push(line.replace(/^[•\-\*]\s*/, ''))
+      }
+    }
+
+    return {
+      description: description || `Badge: ${stub.name}`,
+      daRequired,
+      requirements,
+      category,
+      subcategory,
+      notes: noteLines.length > 0 ? noteLines.join(' • ') : undefined,
+    }
+  } catch (err) {
+    console.warn(`   ⚠️  Could not fetch details for "${stub.name}": ${err}`)
+    return {}
+  }
+}
+
+// ─── Tag generation ──────────────────────────────────────────────────────────
+
+function generateTags(name: string, requirements: string, subcategory: string): string[] {
+  const tags: string[] = []
+  const combined = `${name} ${requirements} ${subcategory}`.toLowerCase()
+
+  // Subcategory as tag
+  if (subcategory && subcategory !== 'General') {
+    tags.push(subcategory.toLowerCase().replace(/[^a-z0-9]+/g, '-'))
+  }
+
+  // Story book tags
+  if (combined.includes('book 1') || combined.includes('book1')) tags.push('book-1')
+  if (combined.includes('book 2') || combined.includes('book2')) tags.push('book-2')
+  if (combined.includes('book 3') || combined.includes('book3')) tags.push('book-3')
+  if (combined.includes('early days')) tags.push('early-game')
+
+  // Location tags
   if (combined.includes('oaklore')) tags.push('oaklore')
   if (combined.includes('falconreach')) tags.push('falconreach')
   if (combined.includes('amityvale')) tags.push('amityvale')
@@ -229,90 +292,95 @@ function generateTags(name: string, requirements: string, category: string): str
   if (combined.includes('dragonsgrasp')) tags.push('dragonsgrasp')
   if (combined.includes('frostval')) tags.push('frostval')
   if (combined.includes('mogloween')) tags.push('mogloween')
-  if (combined.includes('inn at the edge')) tags.push('inn-challenges')
-  if (combined.includes('book of lore')) tags.push('book-of-lore')
-  if (combined.includes('hero\'s heart')) tags.push('heros-heart-day')
+  if (combined.includes('inn at the edge') || combined.includes('iate')) tags.push('inn-challenges')
 
   return [...new Set(tags)]
 }
 
-// ─── Main: crawl all pages of badge forum ────────────────────────────────────
+// ─── Main ────────────────────────────────────────────────────────────────────
 
 async function main() {
-  console.log('🐉 DragonFable Badge Scraper')
+  console.log('🐉 DragonFable Badge Scraper (A-Z Strategy)')
   console.log('─'.repeat(50))
 
   const cookie = loadCookie()
-  console.log('✅ Cookie loaded from .env\n')
+  console.log('✅ Cookie loaded\n')
 
+  // Step 1: Parse A-Z master page
+  console.log('📄 Fetching A-Z Badges master page...')
+  const azHtml = await fetchPage(AZ_PAGE_URL, cookie)
+  const stubs = parseAZPage(azHtml)
+  console.log(`✅ Found ${stubs.length} badges in A-Z page\n`)
+
+  if (stubs.length === 0) {
+    console.error('❌ No badges found — cookie may have expired. Refresh and retry.')
+    process.exit(1)
+  }
+
+  // Step 2: Fetch details for each badge
   const badges: BadgeData[] = []
-  let page = 1
-  let hasMore = true
-  let skipped = 0
+  let enriched = 0
+  let fallback = 0
 
-  while (hasMore) {
-    const url =
-      page === 1
-        ? `${FORUM_BASE}/tt.asp?forumid=${BADGES_FORUM_ID}`
-        : `${FORUM_BASE}/tt.asp?forumid=${BADGES_FORUM_ID}&p=${page}&tmode=10&smode=1`
+  for (let i = 0; i < stubs.length; i++) {
+    const stub = stubs[i]
+    process.stdout.write(`[${i + 1}/${stubs.length}] ${stub.name}...`)
 
-    console.log(`📄 Fetching page ${page}...`)
+    const details = await fetchBadgeDetails(stub, cookie)
+    const hasDetails = !!details.description && !details.description?.startsWith('Badge:')
 
-    const html = await fetchPage(url, cookie)
+    if (hasDetails) enriched++
+    else fallback++
 
-    // Extract all topic links with their title attributes
-    // Pattern: <a href="tm.asp?m=XXXXX" title="badge preview...">  Badge Name  </a>
-    const linkRegex = /<a\s+href="tm\.asp\?m=(\d+)"\s+title="([^"]*)">\s*(.+?)\s*<\/a>/gi
-    let match: RegExpExecArray | null
-    let foundOnPage = 0
-
-    while ((match = linkRegex.exec(html)) !== null) {
-      const messageId = match[1]
-      const titleAttr = match[2]
-      const topicName = match[3].trim()
-
-      // Skip the A-Z index thread
-      if (topicName === 'A-Z Badges') continue
-      // Skip if already processed (dedup)
-      if (badges.some((b) => b.forumLinks[0]?.url.includes(messageId))) continue
-
-      const badge = parseBadgeFromTitle(topicName, titleAttr, messageId)
-      if (badge) {
-        badges.push(badge)
-        foundOnPage++
-      } else {
-        skipped++
-        console.log(`   ⚠️  Could not parse: ${topicName}`)
-      }
+    const badge: BadgeData = {
+      ...stub,
+      id: stub.slug,
+      description: details.description ?? `Badge: ${stub.name}`,
+      requirements: details.requirements ?? '',
+      daRequired: details.daRequired ?? false,
+      category: (() => {
+        const cat = details.category ?? stub.category
+        const sub = details.subcategory ?? stub.subcategory
+        const name = stub.name.toLowerCase()
+        // Seasonal detection: subcategory hint OR name patterns
+        if (cat === 'misc') {
+          if (mapSubcategoryToSeasonal(sub)) return 'seasonal'
+          if (/mogloween|frostval|frost moglin|golem breaker|naughty list|bad toys|x-val|icemaster|merry togsmas|sugary nightmare|frostvayle|list completion|resident: sneevil|pumpkinlord|evolved pumpkinlord|togslayer|#1 threat|bachelor|wrestling champion|catastrophic candy|48 weeks/i.test(name)) return 'seasonal'
+          if (/pvp/i.test(name)) return 'combat'
+        }
+        return cat
+      })(),
+      subcategory: details.subcategory ?? stub.subcategory,
+      howToObtain: details.requirements
+        ? [{ order: 1, instruction: details.requirements }]
+        : [{ order: 1, instruction: 'See forum link for details.' }],
+      forumLinks: [
+        {
+          url: stub.forumUrl,
+          title: `DF Encyclopedia: ${stub.name}`,
+          isPrimary: true,
+        },
+      ],
+      tags: generateTags(stub.name, details.requirements ?? '', details.subcategory ?? stub.subcategory),
+      ...(details.notes ? { notes: details.notes } : {}),
     }
 
-    console.log(`   Parsed ${foundOnPage} badges from page ${page}`)
+    badges.push(badge)
+    console.log(hasDetails ? ' ✓' : ' (no details)')
 
-    // Check for next page
-    const nextPagePattern = new RegExp(`p=${page + 1}`)
-    if (nextPagePattern.test(html) && foundOnPage > 0) {
-      page++
-      await sleep(DELAY_MS)
-    } else {
-      hasMore = false
-    }
+    if (i < stubs.length - 1) await sleep(DELAY_MS)
   }
 
   // Sort alphabetically
   badges.sort((a, b) => a.name.localeCompare(b.name))
 
-  // Write output
   console.log('\n' + '─'.repeat(50))
-  console.log(`✅ Total badges parsed: ${badges.length}`)
-  console.log(`⚠️  Skipped: ${skipped}`)
-  console.log(`📁 Writing to: ${OUTPUT_PATH}`)
+  console.log(`✅ Enriched with full details: ${enriched}`)
+  console.log(`⚠️  Name + forum link only:    ${fallback}`)
+  console.log(`📁 Writing ${badges.length} badges to ${OUTPUT_PATH}`)
 
   fs.writeFileSync(OUTPUT_PATH, JSON.stringify(badges, null, 2) + '\n', 'utf-8')
-
-  console.log(`\n🎉 Done! ${badges.length} badges written to badges.json`)
+  console.log('\n🎉 Done!')
 }
 
-main().catch((err) => {
-  console.error('Fatal error:', err)
-  process.exit(1)
-})
+main().catch(err => { console.error('Fatal:', err); process.exit(1) })
