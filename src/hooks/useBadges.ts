@@ -11,7 +11,6 @@ export function useBadges(filters: BadgeFilters = {}) {
   const results = useMemo(() => searchBadges(badges, filters), [filters])
   return { badges: results, total: results.length }
 }
-
 export function useBadgeBySlug(slug: string) {
   return useMemo(() => badges.find((b) => b.slug === slug) ?? null, [slug])
 }

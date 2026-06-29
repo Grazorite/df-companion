@@ -15,6 +15,8 @@ export function searchBadges(badges: Badge[], filters: BadgeFilters): Badge[] {
       if (filters.category && badge.category !== filters.category) return false
       // Subcategory filter
       if (filters.subcategory && badge.subcategory !== filters.subcategory) return false
+      // DA Required filter
+      if (filters.daRequired === true && !badge.daRequired) return false
 
       // Text search — minimum 2 characters
       if (queryWords.length > 0) {

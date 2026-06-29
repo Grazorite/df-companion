@@ -183,7 +183,9 @@ added = missing = cleaned = 0
 for b in badges:
     fn = IMAGE_MAP.get(b['name'])
     if fn:
-        b['imageUrl'] = f'{DF_PEDIA_BASE}/{fn}'
+        # Encode special chars that break URLs in browser contexts
+        safe_fn = fn.replace('#','%23').replace('!','%21').replace('&','%26').replace("'",'%27')
+        b['imageUrl'] = f'{DF_PEDIA_BASE}/{safe_fn}'
         added += 1
     elif b.get('forumImageUrl'):
         # No DF-Pedia image known — use forum-scraped image (imgur, upfiles, etc.)

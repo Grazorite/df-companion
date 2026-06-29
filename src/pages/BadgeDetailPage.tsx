@@ -46,16 +46,25 @@ export default function BadgeDetailPage() {
       {/* Badge header */}
       <div className="mb-6">
         <div className="flex items-center gap-2 flex-wrap mb-3">
-          <span
-            className={`inline-block text-xs font-medium px-2.5 py-1 rounded-full capitalize ${CATEGORY_COLORS[badge.category] ?? CATEGORY_COLORS.misc}`}
+          {/* Category pill — clickable, links to badge list filtered by category */}
+          <Link
+            to={`/badges?category=${badge.category}`}
+            className={`inline-block text-xs font-medium px-2.5 py-1 rounded-full capitalize transition-colors hover:opacity-80 ${CATEGORY_COLORS[badge.category] ?? CATEGORY_COLORS.misc}`}
+            title={`Browse all ${badge.category.replace(/-/g, ' ')} badges`}
           >
             {badge.category.replace(/-/g, ' ')}
-          </span>
+          </Link>
+          {/* DA Required pill — clickable, links to DA Required filter */}
           {badge.daRequired && (
-            <span className="inline-block text-xs font-medium px-2.5 py-1 rounded-full bg-orange-500/20 text-orange-400">
+            <Link
+              to="/badges?da=true"
+              className="inline-block text-xs font-medium px-2.5 py-1 rounded-full bg-orange-500/20 text-orange-400 transition-colors hover:bg-orange-500/30"
+              title="Browse all DA Required badges"
+            >
               DA Required
-            </span>
+            </Link>
           )}
+          {/* Retired — not a filter, just informational */}
           {badge.retired && (
             <span className="inline-block text-xs font-medium px-2.5 py-1 rounded-full bg-bg-overlay text-text-muted">
               Retired
@@ -158,14 +167,17 @@ export default function BadgeDetailPage() {
         </div>
       </section>
 
-      {/* Tags */}
+      {/* Tags — internal search keywords, not clickable filters */}
       {badge.tags.length > 0 && (
-        <div className="flex flex-wrap gap-1.5 mb-8" aria-label="Tags">
-          {badge.tags.map((tag) => (
-            <span key={tag} className="bg-bg-overlay text-text-muted text-xs px-2.5 py-1 rounded-full border border-border-subtle">
-              {tag}
-            </span>
-          ))}
+        <div className="mb-8">
+          <p className="text-xs font-semibold text-text-muted uppercase tracking-wider mb-2">Tags</p>
+          <div className="flex flex-wrap gap-1.5" aria-label="Search tags">
+            {badge.tags.map((tag) => (
+              <span key={tag} className="bg-bg-overlay text-text-muted text-xs px-2.5 py-1 rounded-full border border-border-subtle">
+                {tag}
+              </span>
+            ))}
+          </div>
         </div>
       )}
 

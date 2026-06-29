@@ -12,6 +12,7 @@ export default function BadgesPage() {
   const debouncedQuery = useDebounce(inputValue, 300)
   const activeCategory = (searchParams.get('category') as BadgeCategory) ?? undefined
   const activeSubcategory = searchParams.get('sub') ?? undefined
+  const activeDaRequired = searchParams.get('da') === 'true'
 
   const categories = useCategories()
   const subcategories = useSubcategories(activeCategory ?? '')
@@ -21,19 +22,22 @@ export default function BadgesPage() {
     if (debouncedQuery) params.q = debouncedQuery
     if (activeCategory) params.category = activeCategory
     if (activeSubcategory) params.sub = activeSubcategory
+    if (activeDaRequired) params.da = 'true'
     setSearchParams(params, { replace: true })
-  }, [debouncedQuery, activeCategory, activeSubcategory, setSearchParams])
+  }, [debouncedQuery, activeCategory, activeSubcategory, activeDaRequired, setSearchParams])
 
   const { badges, total } = useBadges({
     query: debouncedQuery,
     category: activeCategory,
     subcategory: activeSubcategory,
+    daRequired: activeDaRequired || undefined,
   })
 
   function selectCategory(id: BadgeCategory | undefined) {
     const params: Record<string, string> = {}
     if (debouncedQuery) params.q = debouncedQuery
     if (id) params.category = id
+    if (activeDaRequired) params.da = 'true'
     setSearchParams(params, { replace: true })
   }
 
@@ -42,6 +46,16 @@ export default function BadgesPage() {
     if (debouncedQuery) params.q = debouncedQuery
     if (activeCategory) params.category = activeCategory
     if (sub !== activeSubcategory) params.sub = sub
+    if (activeDaRequired) params.da = 'true'
+    setSearchParams(params, { replace: true })
+  }
+
+  function toggleDaRequired() {
+    const params: Record<string, string> = {}
+    if (debouncedQuery) params.q = debouncedQuery
+    if (activeCategory) params.category = activeCategory
+    if (activeSubcategory) params.sub = activeSubcategory
+    if (!activeDaRequired) params.da = 'true'
     setSearchParams(params, { replace: true })
   }
 
@@ -92,6 +106,18 @@ export default function BadgesPage() {
             {cat.displayName}
           </button>
         ))}
+        {/* DA Required toggle */}
+        <button
+          onClick={toggleDaRequired}
+          className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors duration-150 min-h-[36px] ${
+            activeDaRequired
+              ? 'bg-orange-500/80 text-white font-semibold'
+              : 'bg-bg-overlay text-text-secondary hover:bg-border-hover hover:text-text-primary'
+          }`}
+          aria-pressed={activeDaRequired}
+        >
+          DA Required
+        </button>
       </div>
 
       {/* Subcategory filters */}
@@ -126,6 +152,7 @@ export default function BadgesPage() {
         ) : activeCategory ? (
           <span className="text-text-secondary"> in {categories.find(c => c.id === activeCategory)?.displayName ?? activeCategory}</span>
         ) : null}
+        {activeDaRequired && <span className="text-orange-400"> · DA Required</span>}
       </p>
 
       {/* Badge grid */}

@@ -56,4 +56,5 @@ export interface BadgeFilters {
   category?: BadgeCategory
   subcategory?: string
   query?: string
+  daRequired?: boolean
 }
