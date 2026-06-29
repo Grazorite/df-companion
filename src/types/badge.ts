@@ -53,5 +53,6 @@ export interface ContentSection {
 
 export interface BadgeFilters {
   category?: BadgeCategory
+  subcategory?: string
   query?: string
 }

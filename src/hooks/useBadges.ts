@@ -9,7 +9,6 @@ const categories = categoriesData as CategoryMeta[]
 
 export function useBadges(filters: BadgeFilters = {}) {
   const results = useMemo(() => searchBadges(badges, filters), [filters])
-
   return { badges: results, total: results.length }
 }
 
@@ -19,6 +18,18 @@ export function useBadgeBySlug(slug: string) {
 
 export function useCategories() {
   return categories
+}
+
+/** Returns all subcategories for a given top-level category, sorted as they appear in the forum */
+export function useSubcategories(category: string): string[] {
+  return useMemo(() => {
+    if (!category) return []
+    const subs = badges
+      .filter((b) => b.category === category && b.subcategory)
+      .map((b) => b.subcategory as string)
+    // Preserve forum order by using insertion-order dedup
+    return [...new Set(subs)]
+  }, [category])
 }
 
 export function useBadgesByCategory(category: string, excludeSlug?: string) {
