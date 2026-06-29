@@ -27,11 +27,15 @@ export default function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/badges" element={<BadgesPage />} />
             <Route path="/badges/:slug" element={<BadgeDetailPage />} />
-            <Route path="/locations" element={<ComingSoonPage />} />
+            <Route path="/accessories" element={<ComingSoonPage />} />
             <Route path="/classes" element={<ComingSoonPage />} />
+            <Route path="/housing" element={<ComingSoonPage />} />
+            <Route path="/locations" element={<ComingSoonPage />} />
             <Route path="/monsters" element={<ComingSoonPage />} />
-            <Route path="/items" element={<ComingSoonPage />} />
             <Route path="/npcs" element={<ComingSoonPage />} />
+            <Route path="/pets" element={<ComingSoonPage />} />
+            <Route path="/items" element={<ComingSoonPage />} />
+            <Route path="/weapons" element={<ComingSoonPage />} />
             <Route path="*" element={<ComingSoonPage />} />
           </Routes>
         </Suspense>

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Trophy, Map, Skull, Sword, Users, Swords, ArrowRight } from 'lucide-react'
+import { Trophy, Map, Skull, Sword, Users, Shirt, House, Package, PawPrint, ArrowRight } from 'lucide-react'
 import { useTotalBadgeCount } from '../hooks/useBadges'
 
 export default function HomePage() {
@@ -35,32 +35,35 @@ export default function HomePage() {
           </div>
           <div>
             <div className="font-semibold text-text-primary text-lg">{badgeCount} Badges</div>
-            <div className="text-text-secondary text-sm">Hidden achievements and how to earn them</div>
+            <div className="text-text-secondary text-sm">The where, what and how of Badges</div>
           </div>
         </div>
         <ArrowRight className="w-5 h-5 text-text-muted group-hover:text-gold transition-colors duration-150" />
       </Link>
 
-      {/* Coming soon — forum structure */}
-      <div className="grid grid-cols-2 gap-3">
+      {/* Coming soon — exact forum structure */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
         {[
-          { icon: Map, label: 'Locations & Quests', desc: 'Areas, shops, events & quests' },
-          { icon: Swords, label: 'Classes', desc: 'Skills, stats & abilities' },
-          { icon: Skull, label: 'Monsters', desc: 'Enemies, stats & drops' },
-          { icon: Sword, label: 'Weapons & Items', desc: 'Equipment & stackables' },
-          { icon: Users, label: 'NPCs & Pets', desc: 'Characters & companions' },
+          { icon: Shirt, label: 'Accessories', desc: 'Belts, necklaces, rings, brooches, wings and capes' },
+          { icon: Sword, label: 'Classes / Abilities', desc: 'Stats and abilities for all classes' },
+          { icon: House, label: 'Housing & House Items', desc: 'Home is where the monsters are' },
+          { icon: Map, label: 'Locations / Quests / Events', desc: 'Areas, shops, battlezones and special events' },
+          { icon: Skull, label: 'Monsters', desc: 'All the creepy, crawly, cute or scary monsters' },
+          { icon: Users, label: 'NPCs', desc: 'All those people who talk to you in the game' },
+          { icon: PawPrint, label: 'Pets / Guests', desc: 'Your battle companions' },
+          { icon: Package, label: 'Stackable / Non-Equippable Items', desc: 'Resources and non-equippable items' },
+          { icon: Sword, label: 'Weapons', desc: 'Swords, daggers, staves and more' },
         ].map(({ icon: Icon, label, desc }) => (
           <div
             key={label}
-            className="flex items-center gap-3 bg-bg-surface/40 border border-border-subtle rounded-lg p-4 opacity-50 cursor-not-allowed"
+            className="flex items-center gap-3 bg-bg-surface/40 border border-border-subtle rounded-lg p-3.5 opacity-50 cursor-not-allowed"
           >
             <div className="bg-bg-overlay rounded-lg p-2 flex-shrink-0">
-              <Icon className="w-5 h-5 text-text-muted" />
+              <Icon className="w-4 h-4 text-text-muted" />
             </div>
             <div className="min-w-0">
               <div className="font-medium text-text-secondary text-sm leading-tight">{label}</div>
-              <div className="text-text-muted text-xs truncate mt-0.5">{desc}</div>
-              <div className="text-text-muted text-xs mt-0.5 opacity-70">Coming soon</div>
+              <div className="text-text-muted text-xs mt-0.5 line-clamp-1">{desc}</div>
             </div>
           </div>
         ))}

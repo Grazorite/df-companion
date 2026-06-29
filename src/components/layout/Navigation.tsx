@@ -1,15 +1,21 @@
 import { NavLink } from 'react-router-dom'
-import { Trophy, Map, Skull, Home, Sword, Users, Swords } from 'lucide-react'
+import { Trophy, Map, Skull, Home, Sword, Users, Shirt, House, Package, PawPrint } from 'lucide-react'
 import { useTotalBadgeCount } from '../../hooks/useBadges'
 
+// Mirrors the DF Encyclopedia forum structure exactly:
+// https://forums2.battleon.com/f/tt.asp?forumid=256
 const NAV_ITEMS = [
   { to: '/', icon: Home, label: 'Home', exact: true, available: true },
   { to: '/badges', icon: Trophy, label: 'Badges', exact: false, available: true },
-  { to: '/locations', icon: Map, label: 'Locations & Quests', exact: false, available: false },
-  { to: '/classes', icon: Swords, label: 'Classes', exact: false, available: false },
+  { to: '/accessories', icon: Shirt, label: 'Accessories', exact: false, available: false },
+  { to: '/classes', icon: Sword, label: 'Classes / Abilities', exact: false, available: false },
+  { to: '/housing', icon: House, label: 'Housing', exact: false, available: false },
+  { to: '/locations', icon: Map, label: 'Locations / Quests', exact: false, available: false },
   { to: '/monsters', icon: Skull, label: 'Monsters', exact: false, available: false },
-  { to: '/items', icon: Sword, label: 'Weapons & Items', exact: false, available: false },
-  { to: '/npcs', icon: Users, label: 'NPCs & Pets', exact: false, available: false },
+  { to: '/npcs', icon: Users, label: 'NPCs', exact: false, available: false },
+  { to: '/pets', icon: PawPrint, label: 'Pets / Guests', exact: false, available: false },
+  { to: '/items', icon: Package, label: 'Stackable Items', exact: false, available: false },
+  { to: '/weapons', icon: Sword, label: 'Weapons', exact: false, available: false },
 ]
 
 export default function Navigation() {
@@ -19,7 +25,7 @@ export default function Navigation() {
     <>
       {/* ── Desktop sidebar ── */}
       <nav
-        className="hidden lg:flex flex-col w-60 flex-shrink-0 bg-bg-elevated border-r border-border-default h-screen sticky top-0 overflow-y-auto p-4"
+        className="hidden lg:flex flex-col w-64 flex-shrink-0 bg-bg-elevated border-r border-border-default h-screen sticky top-0 overflow-y-auto p-4"
         aria-label="Main navigation"
       >
         {/* App title */}
@@ -81,14 +87,14 @@ export default function Navigation() {
         </div>
       </nav>
 
-      {/* ── Mobile bottom tab bar ── */}
+      {/* ── Mobile bottom tab bar — shows Home + Badges + key sections ── */}
       <nav
         className="lg:hidden fixed bottom-0 inset-x-0 bg-bg-elevated border-t border-border-default z-50"
         style={{ paddingBottom: 'env(safe-area-inset-bottom, 0px)' }}
         aria-label="Main navigation"
       >
         <ul className="flex h-14" role="list">
-          {NAV_ITEMS.map(({ to, icon: Icon, label, exact, available }) => (
+          {NAV_ITEMS.filter(item => item.to === '/' || item.to === '/badges' || item.to === '/locations' || item.to === '/monsters' || item.to === '/weapons').map(({ to, icon: Icon, label, exact, available }) => (
             <li key={to} className="flex-1">
               {available ? (
                 <NavLink
@@ -102,19 +108,18 @@ export default function Navigation() {
                 >
                   {({ isActive }) => (
                     <>
-                      {/* Gold top indicator for active item */}
                       {isActive && (
                         <span className="absolute top-0 inset-x-2 h-0.5 bg-gold rounded-b-full" />
                       )}
                       <Icon className="w-5 h-5" aria-hidden="true" />
-                      <span className="text-[10px] leading-none">{label}</span>
+                      <span className="text-[10px] leading-none truncate px-1">{label.split(' /')[0]}</span>
                     </>
                   )}
                 </NavLink>
               ) : (
                 <div className="flex flex-col items-center justify-center h-full gap-0.5 text-text-muted opacity-40 cursor-not-allowed">
                   <Icon className="w-5 h-5" aria-hidden="true" />
-                  <span className="text-[10px] leading-none">{label}</span>
+                  <span className="text-[10px] leading-none truncate px-1">{label.split(' /')[0]}</span>
                 </div>
               )}
             </li>
