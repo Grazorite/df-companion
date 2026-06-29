@@ -28,8 +28,9 @@
     "tags": [
       "other-badges"
     ],
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/%231-Threat-Bears.jpg",
     "notes": "If you choose to reset Hero's Heart Day 2012 clues, your badge will be gone until after the boss fight.",
-    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/%231-Threat-Bears.jpg"
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/#1-Threat-Bears.jpg"
   },
   {
     "name": "+1 Pyronomicon",
@@ -60,6 +61,7 @@
     "tags": [
       "quests-badges"
     ],
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/1-Pyronomicon.png",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/1-Pyronomicon.png"
   },
   {
@@ -91,6 +93,7 @@
     "tags": [
       "other-badges"
     ],
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/48WeeksLater.jpg",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/48WeeksLater.jpg"
   },
   {
@@ -122,6 +125,7 @@
     "tags": [
       "quests-badges"
     ],
+    "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/AHeroisThawed.png",
     "notes": "Badge's art was added on  July 27th, 2024.",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/AHeroisThawed.png"
   },
@@ -154,7 +158,8 @@
     "tags": [
       "challenges-badges"
     ],
-    "notes": "The count displayed on the badge is the number of Timewarped Trophies owned by the player; Timewarped Trophies stack to a maximum of 15 as of October 1st, 2021. • Timewarped Trophies previously stacked up to 10. • Timewarped Trophies may be stored in the bank and the player's correct count will still be displayed.",
+    "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/AARGHMastery.png",
+    "notes": "The count displayed on the badge is the number of Timewarped Trophies owned by the player; Timewarped Trophies stack to a maximum of 15 as of  October 1st, 2021. • Timewarped Trophies previously stacked up to 10.Timewarped Trophies may be stored in the bank and the player's correct count will still be displayed.",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/AARGHMastery.png"
   },
   {
@@ -187,6 +192,7 @@
       "quests-badges",
       "lymcrest"
     ],
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/A-maze-n.png",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/A-maze-n.png"
   },
   {
@@ -218,6 +224,7 @@
     "tags": [
       "classes-badges"
     ],
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Adept.png",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Adept.png"
   },
   {
@@ -250,6 +257,7 @@
       "quests-badges",
       "amityvale"
     ],
+    "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/AmityvaleDefender.png",
     "notes": "Badge's name was previously called 'Thursdays'. • Badge's art was added on  July 27th, 2024.",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/AmityvaleDefender.png"
   },
@@ -282,6 +290,7 @@
     "tags": [
       "quests-badges"
     ],
+    "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/AnUneasyAlliance.png",
     "notes": "Badge's art was added on  July 27th, 2024.",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/AnUneasyAlliance.png"
   },
@@ -312,6 +321,7 @@
       }
     ],
     "tags": [],
+    "forumImageUrl": "https://media.artix.com/encyc/df/banners/Ravenloss.jpg",
     "notes": "Completion of this quest unlocks the  Arachnalchemy Lab shop and the  Arachnalchemy interface.",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/ArachnalchemyMastery.png"
   },
@@ -344,8 +354,9 @@
     "tags": [
       "quests-badges"
     ],
+    "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/Arr",
     "notes": "Badge's art was updated on  July 27th, 2024, replacing its  old appearance.",
-    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Arr%27Captain%27sOrders.png"
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Arr'Captain'sOrders.png"
   },
   {
     "name": "Asander's Freedom",
@@ -376,6 +387,7 @@
     "tags": [
       "quest-badges"
     ],
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/AsandersFreedom.png",
     "notes": "Badge was retired on  July 19th, 2024.",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/AsandersFreedom.png"
   },
@@ -408,6 +420,7 @@
     "tags": [
       "classes-badges"
     ],
+    "forumImageUrl": "https://i.imgur.com/7scNAzM.png",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/AscendedChickenCow.png"
   },
   {
@@ -439,6 +452,7 @@
     "tags": [
       "challenges-badges"
     ],
+    "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/Ascension.png",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Ascension.png"
   },
   {
@@ -470,6 +484,7 @@
     "tags": [
       "challenges-badges"
     ],
+    "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/Asynchronized.png",
     "notes": "Badge's art was added on  July 27th, 2024.",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Asynchronized.png"
   },
@@ -502,6 +517,7 @@
     "tags": [
       "quests-badges"
     ],
+    "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/AvatarEnder.png",
     "notes": "Badge's art was updated on  July 19th, 2024, replacing its  old appearance. • Quest initially required completion of  Wargoth Approaches before being replaced by  The Harbinger on  April 8th, 2025.",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/AvatarEnder.png"
   },
@@ -534,6 +550,7 @@
     "tags": [
       "quests-badges"
     ],
+    "forumImageUrl": "http://i.imgur.com/1OynO.png",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/BabyDragon.png"
   },
   {
@@ -565,6 +582,7 @@
     "tags": [
       "other-badges"
     ],
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/BachelorPAR-TAY.png",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/BachelorPAR-TAY.png"
   },
   {
@@ -596,6 +614,7 @@
     "tags": [
       "other-badges"
     ],
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/BadToys.jpg",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/BadToys.jpg"
   },
   {
@@ -627,6 +646,7 @@
     "tags": [
       "classes-badges"
     ],
+    "forumImageUrl": "http://i.imgur.com/KtzcN.png",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/BaseArmor.png"
   },
   {
@@ -658,6 +678,7 @@
     "tags": [
       "other-badges"
     ],
+    "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/BattleHewnWarmonger.png",
     "notes": "Badge was initially conceptualized as defeating 10,000 waves since  September 16th, 2012. • Badge was made functional based on how many  Defender's Medal are owned by the player on  February 28th, 2025.",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/BattleHewnWarmonger.png"
   },
@@ -690,6 +711,7 @@
     "tags": [
       "challenges-badges"
     ],
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/BlacksmithMastery.png",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/BlacksmithMastery.png"
   },
   {
@@ -721,6 +743,7 @@
     "tags": [
       "quests-badges"
     ],
+    "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/Blood&Roses.png",
     "notes": "Badge's art was added on  July 27th, 2024.",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Blood%26Roses.png"
   },
@@ -753,6 +776,7 @@
     "tags": [
       "quest-badges"
     ],
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/BreakingAwe.png",
     "notes": "Players must completed these in order:  Hidden Blades's Introduction cutscene and  Entropic Earth Boss. • Badge was retired on  July 19th, 2024.",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/BreakingAwe.png"
   },
@@ -785,6 +809,7 @@
     "tags": [
       "quests-badges"
     ],
+    "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/BurningRevenge.png",
     "notes": "Badge's art was updated on  July 19th, 2024, replacing its  old appearance.",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/BurningRevenge.png"
   },
@@ -817,6 +842,7 @@
     "tags": [
       "quests-badges"
     ],
+    "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/Calamity.png",
     "notes": "Badge's art was added on  July 27th, 2024.",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Calamity.png"
   },
@@ -849,6 +875,7 @@
     "tags": [
       "challenges-badges"
     ],
+    "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/CARNAX.png",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/CARNAX.png"
   },
   {
@@ -880,6 +907,7 @@
     "tags": [
       "other-badges"
     ],
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/CatastrophicCandy.jpg",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/CatastrophicCandy.jpg"
   },
   {
@@ -911,6 +939,7 @@
     "tags": [
       "challenges-badges"
     ],
+    "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/ChaosSlayer.png",
     "notes": "Badge's art was added on  July 27th, 2024.",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/ChaosSlayer.png"
   },
@@ -943,6 +972,7 @@
     "tags": [
       "classes-badges"
     ],
+    "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/ChaosWeaver.png",
     "notes": "Badge's art was added on  July 27th, 2024.",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/ChaosWeaver.png"
   },
@@ -975,6 +1005,7 @@
     "tags": [
       "quests-badges"
     ],
+    "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/ColdasIce.png",
     "notes": "Badge's art was updated on  July 27th, 2024, replacing its  old appearance.",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/ColdasIce.png"
   },
@@ -1007,6 +1038,7 @@
     "tags": [
       "quests-badges"
     ],
+    "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/ConfrontSek-Duat.png",
     "notes": "Badge's art was updated on  July 19th, 2024, replacing its  old appearance.",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/ConfrontSek-Duat.png"
   },
@@ -1039,6 +1071,7 @@
     "tags": [
       "quests-badges"
     ],
+    "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/Convergence.png",
     "notes": "Badge's art was added on  July 27th, 2024.",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Convergence.png"
   },
@@ -1071,6 +1104,7 @@
     "tags": [
       "other-badges"
     ],
+    "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/CookieSong!.png",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/CookieSong%21.png"
   },
   {
@@ -1102,6 +1136,7 @@
     "tags": [
       "quests-badges"
     ],
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/CrystalBreaker.png",
     "notes": "Badge previously have the text: Break Jaania free from her icy prison!",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/CrystalBreaker.png"
   },
@@ -1134,6 +1169,7 @@
     "tags": [
       "quests-badges"
     ],
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/CutestLegionEVER.jpg",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/CutestLegionEVER.jpg"
   },
   {
@@ -1165,6 +1201,7 @@
     "tags": [
       "quests-badges"
     ],
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/DeathofaKnight.png",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/DeathofaKnight.png"
   },
   {
@@ -1196,6 +1233,7 @@
     "tags": [
       "classes-badges"
     ],
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/DeathKnight.png",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/DeathKnight.png"
   },
   {
@@ -1227,6 +1265,7 @@
     "tags": [
       "classes-badges"
     ],
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/DoomKnight.jpg",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/DoomKnight.jpg"
   },
   {
@@ -1258,6 +1297,7 @@
     "tags": [
       "challenges-badges"
     ],
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/DoomWoodFishing.png",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/DoomWoodFishing.png"
   },
   {
@@ -1290,6 +1330,7 @@
       "challenges-badges",
       "book-3"
     ],
+    "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/DracolichFishing.png",
     "notes": "Badge replaced the unreleased Deep Water Fishing badge. • Badge was initially made, but nonfunctional on  July 19th, 2024 before being made functional on  February 28th, 2025.",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/DracolichFishing.png"
   },
@@ -1322,6 +1363,7 @@
     "tags": [
       "quests-badges"
     ],
+    "forumImageUrl": "http://i.imgur.com/drfpv.png",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/DragonSchool.png"
   },
   {
@@ -1353,6 +1395,7 @@
     "tags": [
       "classes-badges"
     ],
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/DragonLord.png",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/DragonLord.png"
   },
   {
@@ -1384,6 +1427,7 @@
     "tags": [
       "classes-badges"
     ],
+    "forumImageUrl": "http://i.imgur.com/pqhg8.png",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/DragonRider.png"
   },
   {
@@ -1415,6 +1459,7 @@
     "tags": [
       "classes-badges"
     ],
+    "forumImageUrl": "https://i.imgur.com/Dake9wd.png",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/DragonSlayer.png"
   },
   {
@@ -1446,6 +1491,7 @@
     "tags": [
       "quests-badges"
     ],
+    "forumImageUrl": "https://i.imgur.com/IYkIT3U.png",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Egg-cellent.png"
   },
   {
@@ -1477,6 +1523,7 @@
     "tags": [
       "quest-badges"
     ],
+    "forumImageUrl": "https://i.imgur.com/A53SsST.jpg",
     "notes": "Badge was retired on  July 19th, 2024.",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/EGG-STIR-MIN-ATE.jpg"
   },
@@ -1509,6 +1556,7 @@
     "tags": [
       "quests-badges"
     ],
+    "forumImageUrl": "http://i.imgur.com/4fbAHcS.png",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/ElementalChaos.png"
   },
   {
@@ -1540,6 +1588,7 @@
     "tags": [
       "quests-badges"
     ],
+    "forumImageUrl": "http://i.imgur.com/Wb2KWvB.png",
     "notes": "Players must complete these in order:  Hidden Blades's Introduction cutscene and  Entropic Earth Boss.",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/EnTropic.png"
   },
@@ -1572,6 +1621,7 @@
     "tags": [
       "classes-badges"
     ],
+    "forumImageUrl": "https://i.imgur.com/eqyDbn3.jpg",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/enTropy.jpg"
   },
   {
@@ -1603,6 +1653,7 @@
     "tags": [
       "classes-badges"
     ],
+    "forumImageUrl": "https://i.imgur.com/k3XY39O.png",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/EvolvedChickenCow.png"
   },
   {
@@ -1634,6 +1685,7 @@
     "tags": [
       "armor-badges"
     ],
+    "forumImageUrl": "https://i.imgur.com/N8FNdA5.png",
     "notes": "Badge was retired on  July 19th, 2024.",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/EvolvedDragonLord.png"
   },
@@ -1666,6 +1718,7 @@
     "tags": [
       "classes-badges"
     ],
+    "forumImageUrl": "https://i.imgur.com/8AaVvov.png",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/EvolvedPumpkinLord.png"
   },
   {
@@ -1697,6 +1750,7 @@
     "tags": [
       "quests-badges"
     ],
+    "forumImageUrl": "https://i.imgur.com/wCLLkTx.png",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Face-Off.png"
   },
   {
@@ -1728,6 +1782,7 @@
     "tags": [
       "quests-badges"
     ],
+    "forumImageUrl": "https://i.imgur.com/AoIwK3S.jpg",
     "notes": "Badge initially required completion of  Rising Fire (Intro) before being reimagined on  March 28th, 2025.",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/FallenGeneral.jpg"
   },
@@ -1760,6 +1815,7 @@
     "tags": [
       "challenges-badges"
     ],
+    "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/FearEngine.png",
     "notes": "Badge was initially made and nonfunctional on  July 19th, 2024 before being made unlockable on  February 28th, 2025.",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/FearEngine.png"
   },
@@ -1792,6 +1848,7 @@
     "tags": [
       "other-badges"
     ],
+    "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/FierceWarmonger.png",
     "notes": "Badge was initially conceptualized as defeating 5,000 waves since  September 16th, 2012. • Badge was made functional based on how many  Defender's Medal are owned by the player on  February 28th, 2025.",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/FierceWarmonger.png"
   },
@@ -1824,6 +1881,7 @@
     "tags": [
       "quests-badges"
     ],
+    "forumImageUrl": "https://i.imgur.com/WUrM9wr.png",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Final13th.png"
   },
   {
@@ -1855,6 +1913,7 @@
     "tags": [
       "quests-badges"
     ],
+    "forumImageUrl": "https://i.imgur.com/SYy5hha.png",
     "notes": "Badge previously have the text: Defeat Titan Wargoth in theChapter 2 Finale.",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/FireFighter.png"
   },
@@ -1887,6 +1946,7 @@
     "tags": [
       "quests-badges"
     ],
+    "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/FirstWeaver.png",
     "notes": "Badge's art was added on  July 27th, 2024.",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/FirstWeaver.png"
   },
@@ -1920,6 +1980,7 @@
       "challenges-badges",
       "falconreach"
     ],
+    "forumImageUrl": "https://i.imgur.com/56XlFHu.png",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/FishingMastery.png"
   },
   {
@@ -1951,6 +2012,7 @@
     "tags": [
       "quests-badges"
     ],
+    "forumImageUrl": "https://i.imgur.com/k5reS78.png",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/ForSCIENCE.png"
   },
   {
@@ -1982,6 +2044,7 @@
     "tags": [
       "other-badges"
     ],
+    "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/FreshWarmonger.png",
     "notes": "Badge was initially conceptualized as defeating 1,000 waves since  September 16th, 2012. • Badge was made functional based on how many  Defender's Medal are owned by the player on  February 28th, 2025.",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/FreshWarmonger.png"
   },
@@ -2014,6 +2077,7 @@
     "tags": [
       "classes-badges"
     ],
+    "forumImageUrl": "https://i.imgur.com/jvgb4bU.jpg",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/FrostMoglin.png"
   },
   {
@@ -2045,6 +2109,7 @@
     "tags": [
       "other-badges"
     ],
+    "forumImageUrl": "https://i.imgur.com/jo59QYP.jpg",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Frostvayle.png"
   },
   {
@@ -2076,6 +2141,7 @@
     "tags": [
       "quests-badges"
     ],
+    "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/FungusAmongUs.png",
     "notes": "Badge's art was added on  July 27th, 2024.",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/FungusAmongUs.png"
   },
@@ -2108,6 +2174,7 @@
     "tags": [
       "quests-badges"
     ],
+    "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/GatheringShadows.png",
     "notes": "Badge's art was added on  July 27th, 2024.",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/GatheringShadows.png"
   },
@@ -2140,6 +2207,7 @@
     "tags": [
       "other-badges"
     ],
+    "forumImageUrl": "https://i.imgur.com/ltKptRY.jpg",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/GolemBreaker.jpg"
   },
   {
@@ -2171,6 +2239,7 @@
     "tags": [
       "challenges-badges"
     ],
+    "forumImageUrl": "https://i.imgur.com/FPSIScw.png",
     "notes": "As of  July 19th, 2024, this badge is nonfunctional.",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Gourmet.png"
   },
@@ -2203,6 +2272,7 @@
     "tags": [
       "classes-badges"
     ],
+    "forumImageUrl": "https://i.imgur.com/7laK2Kz.jpg",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/GPS.jpg"
   },
   {
@@ -2234,6 +2304,7 @@
     "tags": [
       "quest-badges"
     ],
+    "forumImageUrl": "https://i.imgur.com/u5dvuxp.png",
     "notes": "Badge was retired on  July 19th, 2024.",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Grrrberus.png"
   },
@@ -2266,6 +2337,7 @@
     "tags": [
       "classes-badges"
     ],
+    "forumImageUrl": "https://i.imgur.com/sM7RbT7.png",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Guardian.png"
   },
   {
@@ -2297,6 +2369,7 @@
     "tags": [
       "challenges-badges"
     ],
+    "forumImageUrl": "https://i.imgur.com/pxosrFi.png",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/HealthPotionMastery.png"
   },
   {
@@ -2328,6 +2401,7 @@
     "tags": [
       "quests-badges"
     ],
+    "forumImageUrl": "https://i.imgur.com/9DRs2Yp.png",
     "notes": "Quest previously required completion of  Deepest Neverglades.",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/HeartofDarkness.png"
   },
@@ -2360,6 +2434,7 @@
     "tags": [
       "other-badges"
     ],
+    "forumImageUrl": "https://i.imgur.com/o8sxUQD.png",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/HomeOwner.png"
   },
   {
@@ -2391,6 +2466,7 @@
     "tags": [
       "challenges-badges"
     ],
+    "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/HONK!.png",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/HONK%21.png"
   },
   {
@@ -2422,6 +2498,7 @@
     "tags": [
       "challenges-badges"
     ],
+    "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/Hope.png",
     "notes": "This badge was also awarded to players who completed the previous no-heal challenge during Pandora's Gauntlet prior to the badge's release.",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Hope.png"
   },
@@ -2454,6 +2531,7 @@
     "tags": [
       "quests-badges"
     ],
+    "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/Hopeless.png",
     "notes": "Badge's art was added on  July 27th, 2024.",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Hopeless.png"
   },
@@ -2486,6 +2564,7 @@
     "tags": [
       "quests-badges"
     ],
+    "forumImageUrl": "https://i.imgur.com/EqgEfdG.png",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/HugsforDoomKittens.png"
   },
   {
@@ -2517,6 +2596,7 @@
     "tags": [
       "quests-badges"
     ],
+    "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/HydraSlayer.png",
     "notes": "Badge was previously called 'Oaklore Navigation' and initially required the completion of  Ambush in the Bushes; this was modified on  July 24th, 2024. • Badge's art was updated on  July 27th, 2024, replacing its  old appearance. • Old Appearance • DemonicDarkwraith for image and other information. • pjc for Oaklore Navigation image.",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/HydraSlayer.png"
   },
@@ -2549,6 +2629,7 @@
     "tags": [
       "quest-badges"
     ],
+    "forumImageUrl": "https://i.imgur.com/pTZ1GfM.png",
     "notes": "Badge was retired on  July 19th, 2024.",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/ISpy.png"
   },
@@ -2581,6 +2662,7 @@
     "tags": [
       "classes-badges"
     ],
+    "forumImageUrl": "https://i.imgur.com/kMm5oq9.png",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/IceboundRevenant.png"
   },
   {
@@ -2612,6 +2694,7 @@
     "tags": [
       "other-badges"
     ],
+    "forumImageUrl": "https://i.imgur.com/nwHFcU1.jpg",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Icemaster.jpg"
   },
   {
@@ -2644,6 +2727,7 @@
       "quest-badges",
       "falconreach"
     ],
+    "forumImageUrl": "https://i.imgur.com/N7tjICh.png",
     "notes": "Badge was retired on  July 19th, 2024.",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/IdleHeroes.png"
   },
@@ -2676,6 +2760,7 @@
     "tags": [
       "quest-badges"
     ],
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/InformationonSepulchure.png",
     "notes": "Badge was retired on  July 19th, 2024.",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/InformationonSepulchure.png"
   },
@@ -2708,6 +2793,7 @@
     "tags": [
       "other-badges"
     ],
+    "forumImageUrl": "http://i.imgur.com/MNATHBf.png",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/ListCompletion.png"
   },
   {
@@ -2740,6 +2826,7 @@
       "quests-badges",
       "oaklore"
     ],
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Locksmith.jpg",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Locksmith.jpg"
   },
   {
@@ -2771,6 +2858,7 @@
     "tags": [
       "quests-badges"
     ],
+    "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/Maleurous.png",
     "notes": "Badge's art was added on  July 27th, 2024.",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Maleurous.png"
   },
@@ -2803,6 +2891,7 @@
     "tags": [
       "challenges-badges"
     ],
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/ManaPotionMastery.png",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/ManaPotionMastery.png"
   },
   {
@@ -2834,6 +2923,7 @@
     "tags": [
       "other-badges"
     ],
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/MerryTogsmas.jpg",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/MerryTogsmas.jpg"
   },
   {
@@ -2866,6 +2956,7 @@
       "other-badges",
       "mogloween"
     ],
+    "forumImageUrl": "http://i.imgur.com/ruFKa.png",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Mogloween07Masks.png"
   },
   {
@@ -2898,6 +2989,7 @@
       "other-badges",
       "mogloween"
     ],
+    "forumImageUrl": "http://i.imgur.com/8clbV.png",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Mogloween08Masks.png"
   },
   {
@@ -2930,6 +3022,7 @@
       "other-badges",
       "mogloween"
     ],
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Mogloween09Masks.jpg",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Mogloween09Masks.jpg"
   },
   {
@@ -2962,6 +3055,7 @@
       "other-badges",
       "mogloween"
     ],
+    "forumImageUrl": "http://i.imgur.com/SWnP0.png",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Mogloween10Masks.png"
   },
   {
@@ -2994,6 +3088,7 @@
       "other-badges",
       "mogloween"
     ],
+    "forumImageUrl": "http://i.imgur.com/9Ixkf.png",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Mogloween11Masks.png"
   },
   {
@@ -3026,6 +3121,7 @@
       "other-badges",
       "mogloween"
     ],
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Mogloween12Masks.jpg",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Mogloween12Masks.jpg"
   },
   {
@@ -3058,6 +3154,7 @@
       "other-badges",
       "mogloween"
     ],
+    "forumImageUrl": "http://i.imgur.com/USSx93y.png",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Mogloween13Masks.png"
   },
   {
@@ -3090,6 +3187,7 @@
       "other-badges",
       "mogloween"
     ],
+    "forumImageUrl": "http://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Mogloween14Masks.png",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Mogloween14Masks.png"
   },
   {
@@ -3122,6 +3220,7 @@
       "other-badges",
       "mogloween"
     ],
+    "forumImageUrl": "http://i.imgur.com/0SQCOPq.png",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Mogloween15Masks.png"
   },
   {
@@ -3153,6 +3252,7 @@
     "tags": [
       "quests-badges"
     ],
+    "forumImageUrl": "http://i.imgur.com/Oj0jZ.png",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/MolloDestruction.png"
   },
   {
@@ -3184,6 +3284,7 @@
     "tags": [
       "quests-badges"
     ],
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/MonkeeBusiness.jpg",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/MonkeeBusiness.jpg"
   },
   {
@@ -3215,6 +3316,7 @@
     "tags": [
       "quests-badges"
     ],
+    "forumImageUrl": "http://i.imgur.com/IoOJ7.png",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/MoreBoxes.png"
   },
   {
@@ -3246,6 +3348,7 @@
     "tags": [
       "other-badges"
     ],
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/NaughtyList.jpg",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/NaughtyList.jpg"
   },
   {
@@ -3277,6 +3380,7 @@
     "tags": [
       "classes-badges"
     ],
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Necromancer.png",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Necromancer.png"
   },
   {
@@ -3308,6 +3412,7 @@
     "tags": [
       "quests-badges"
     ],
+    "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/NestDefended.png",
     "notes": "Badge's art was added on  July 27th, 2024.",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/NestDefended.png"
   },
@@ -3340,6 +3445,7 @@
     "tags": [
       "classes-badges"
     ],
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Ninja.png",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Ninja.png"
   },
   {
@@ -3371,6 +3477,7 @@
     "tags": [
       "quests-badges"
     ],
+    "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/NoseforTrouble.png",
     "notes": "Badge's art was added on  July 27th, 2024.",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/NoseforTrouble.png"
   },
@@ -3403,6 +3510,7 @@
     "tags": [
       "quests-badges"
     ],
+    "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/OrbExtractor.png",
     "notes": "Badge's art was updated on  July 27th, 2024, replacing its  old appearance.",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/OrbExtractor.png"
   },
@@ -3435,7 +3543,8 @@
     "tags": [
       "classes-badges"
     ],
-    "notes": "Badge's art has changed since its inception.",
+    "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/Paladin.png",
+    "notes": "Badge's art was changed since its inception. • Old Appearance • Older Appearance",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Paladin.png"
   },
   {
@@ -3467,6 +3576,7 @@
     "tags": [
       "quest-badges"
     ],
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/PartyOnOlaf.png",
     "notes": "Badge was retired on  July 19th, 2024.",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/PartyOnOlaf.png"
   },
@@ -3499,6 +3609,7 @@
     "tags": [
       "challenges-badges"
     ],
+    "forumImageUrl": "http://i.imgur.com/q1RPm.png",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/PetTrainingMastery.png"
   },
   {
@@ -3530,6 +3641,7 @@
     "tags": [
       "classes-badges"
     ],
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Pirate.png",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Pirate.png"
   },
   {
@@ -3561,6 +3673,7 @@
     "tags": [
       "classes-badges"
     ],
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Primalized.png",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Primalized.png"
   },
   {
@@ -3592,6 +3705,7 @@
     "tags": [
       "challenges-badges"
     ],
+    "forumImageUrl": "https://i.imgur.com/C3GtzHi.png",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/PrimordialWitness.png"
   },
   {
@@ -3623,6 +3737,7 @@
     "tags": [
       "classes-badges"
     ],
+    "forumImageUrl": "https://i.imgur.com/fqtkrPs.png",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/PumpkinLord.png"
   },
   {
@@ -3654,6 +3769,7 @@
     "tags": [
       "other-badges"
     ],
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/PvPArenaFighter.png",
     "notes": "Badge was moved from Challenges Badges to Other Badges on  February 28th, 2025.",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/PvPArenaFighter.png"
   },
@@ -3686,6 +3802,7 @@
     "tags": [
       "other-badges"
     ],
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/PvPBrawler.png",
     "notes": "Badge was moved from Challenges Badges to Other Badges on  February 28th, 2025.",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/PvPBrawler.png"
   },
@@ -3718,6 +3835,7 @@
     "tags": [
       "other-badges"
     ],
+    "forumImageUrl": "http://i.imgur.com/McAiaEa.png",
     "notes": "Badge was moved from Challenges Badges to Other Badges on  February 28th, 2025.",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/PvPGrandmaster.png"
   },
@@ -3750,6 +3868,7 @@
     "tags": [
       "other-badges"
     ],
+    "forumImageUrl": "http://i.imgur.com/yYzhUKz.png",
     "notes": "Badge was moved from Challenges Badges to Other Badges on  February 28th, 2025.",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/PvPPrizeFighter.png"
   },
@@ -3782,6 +3901,7 @@
     "tags": [
       "classes-badges"
     ],
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Pyromancer.png",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Pyromancer.png"
   },
   {
@@ -3813,6 +3933,7 @@
     "tags": [
       "quests-badges"
     ],
+    "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/Quadforce.png",
     "notes": "Badge's art was added on  July 27th, 2024.",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Quadforce.png"
   },
@@ -3845,6 +3966,7 @@
     "tags": [
       "other-badges"
     ],
+    "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/QuickBuy.png",
     "notes": "Badge was retired on  February 28th, 2025.",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/QuickBuy.png"
   },
@@ -3877,6 +3999,7 @@
     "tags": [
       "classes-badges"
     ],
+    "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/Ranger.png",
     "notes": "Badge's art was updated on  July 19th, 2024, replacing its  old appearance.",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Ranger.png"
   },
@@ -3909,6 +4032,7 @@
     "tags": [
       "other-badges"
     ],
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/ResidentSneevil.jpg",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/ResidentSneevil.jpg"
   },
   {
@@ -3940,6 +4064,7 @@
     "tags": [
       "quests-badges"
     ],
+    "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/SailoroftheSeas.png",
     "notes": "Badge's art was added on  July 27th, 2024.",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/SailoroftheSeas.png"
   },
@@ -3972,6 +4097,7 @@
     "tags": [
       "quests-badges"
     ],
+    "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/SandsofEternity.png",
     "notes": "Badge's art was added on  July 27th, 2024.",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/SandsofEternity.png"
   },
@@ -4004,6 +4130,7 @@
     "tags": [
       "quests-badges"
     ],
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/SecretsofBacon.png",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/SecretsofBacon.png"
   },
   {
@@ -4035,6 +4162,7 @@
     "tags": [
       "classes-badges"
     ],
+    "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/ShadowHunter.png",
     "notes": "Badge's art was updated on  February 28th, 2025, replacing its  old appearance.",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/ShadowHunter.png"
   },
@@ -4067,6 +4195,7 @@
     "tags": [
       "quests-badges"
     ],
+    "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/Shocking!.png",
     "notes": "Badge's art was updated on  July 27th, 2024, replacing its  old appearance.",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Shocking%21.png"
   },
@@ -4099,6 +4228,7 @@
     "tags": [
       "quests-badges"
     ],
+    "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/SiegeofHaven.png",
     "notes": "Badge's art was added on  July 27th, 2024.",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/SiegeofHaven.png"
   },
@@ -4131,6 +4261,7 @@
     "tags": [
       "classes-badges"
     ],
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/SoulWeaver.png",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/SoulWeaver.png"
   },
   {
@@ -4162,6 +4293,7 @@
     "tags": [
       "quests-badges"
     ],
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/SpecialDelivery.png",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/SpecialDelivery.png"
   },
   {
@@ -4193,6 +4325,7 @@
     "tags": [
       "quests-badges"
     ],
+    "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/Star",
     "notes": "Badge's art was added on  July 27th, 2024.",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Star%27sDescendant.png"
   },
@@ -4225,6 +4358,7 @@
     "tags": [
       "quests-badges"
     ],
+    "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/StartingOut.png",
     "notes": "Badge's art was added on  July 27th, 2024.",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/StartingOut.png"
   },
@@ -4257,6 +4391,7 @@
     "tags": [
       "quests-badges"
     ],
+    "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/StormintheNight.png",
     "notes": "Badge's art was added on  July 27th, 2024.",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/StormintheNight.png"
   },
@@ -4289,6 +4424,7 @@
     "tags": [
       "other-badges"
     ],
+    "forumImageUrl": "http://i.imgur.com/PagYiyj.png",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/SugaryNightmare.png"
   },
   {
@@ -4320,6 +4456,7 @@
     "tags": [
       "classes-badges"
     ],
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Technomancer.png",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Technomancer.png"
   },
   {
@@ -4351,6 +4488,7 @@
     "tags": [
       "quests-badges"
     ],
+    "forumImageUrl": "http://i.imgur.com/EGuAt.png",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/ArchKnight-The.png"
   },
   {
@@ -4382,6 +4520,7 @@
     "tags": [
       "challenges-badges"
     ],
+    "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/TheBalance.png",
     "notes": "Badge's art was added on  July 27th, 2024.",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/TheBalance.png"
   },
@@ -4414,6 +4553,7 @@
     "tags": [
       "quests-badges"
     ],
+    "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/TheEndofMagic.png",
     "notes": "Badge's art was added on  July 27th, 2024.",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/TheEndofMagic.png"
   },
@@ -4446,6 +4586,7 @@
     "tags": [
       "challenges-badges"
     ],
+    "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/TheMagnumOpus.png",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/TheMagnumOpus.png"
   },
   {
@@ -4477,6 +4618,7 @@
     "tags": [
       "quests-badges"
     ],
+    "forumImageUrl": "http://i.imgur.com/gSQQa.png",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/MysteryisAfoot-The.png"
   },
   {
@@ -4508,6 +4650,7 @@
     "tags": [
       "quests-badges"
     ],
+    "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/ThePriestess.png",
     "notes": "Badge's art was added on  July 27th, 2024.",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/ThePriestess.png"
   },
@@ -4540,6 +4683,7 @@
     "tags": [
       "quests-badges"
     ],
+    "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/Thorns.png",
     "notes": "Badge's art was added on  July 27th, 2024.",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Thorns.png"
   },
@@ -4572,6 +4716,7 @@
     "tags": [
       "classes-badges"
     ],
+    "forumImageUrl": "https://i.imgur.com/KF0iY0U.png",
     "notes": "This badge was previously named Time Killer.",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/TimeWalker.png"
   },
@@ -4604,7 +4749,8 @@
     "tags": [
       "challenges-badges"
     ],
-    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/TimetornVeteran.png"
+    "forumImageUrl": "https://i.imgur.com/sGkK32n.png",
+    "imageUrl": "https://i.imgur.com/sGkK32n.png"
   },
   {
     "name": "Tog Nightmare",
@@ -4630,20 +4776,12 @@
         "url": "https://forums2.battleon.com/f/tm.asp?m=22325307",
         "title": "DF Encyclopedia: Tog Nightmare",
         "isPrimary": true
-      },
-      {
-        "url": "https://imgur.com/a/PXOQANy",
-        "title": "All 32 Badge Variants (Imgur)",
-        "isPrimary": false
       }
     ],
     "tags": [
       "challenges-badges"
     ],
-    "notes": "The appearance of the badge changes each time you view it, with a total of 32 different possibilities.",
-    "imageVariants": [
-      "https://i.imgur.com/PXOQANy"
-    ]
+    "notes": "The appearance of the badge changes each time you view it, with a total of 32 different possibilities. • Tog Images"
   },
   {
     "name": "TogSlayer",
@@ -4674,6 +4812,7 @@
     "tags": [
       "classes-badges"
     ],
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/TogSlayer.png",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/TogSlayer.png"
   },
   {
@@ -4705,6 +4844,7 @@
     "tags": [
       "quests-badges"
     ],
+    "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/TournamentChampion.png",
     "notes": "Badge's art was added on  July 27th, 2024.",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/TournamentChampion.png"
   },
@@ -4737,6 +4877,7 @@
     "tags": [
       "challenges-badges"
     ],
+    "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/UltimateDestiny.png",
     "notes": "Badge's art was added on  July 27th, 2024.",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/UltimateDestiny.png"
   },
@@ -4769,6 +4910,7 @@
     "tags": [
       "challenges-badges"
     ],
+    "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/UnrealDoom.png",
     "notes": "Badge's art was added on  July 27th, 2024.",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/UnrealDoom.png"
   },
@@ -4801,6 +4943,7 @@
     "tags": [
       "quests-badges"
     ],
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/VoidMagicpic.jpg",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/VoidMagicpic.jpg"
   },
   {
@@ -4832,7 +4975,8 @@
     "tags": [
       "quests-badges"
     ],
-    "notes": "Badge's art was updated on July 19th, 2024, replacing its old appearance.",
+    "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/WalkThroughFire.png",
+    "notes": "Badge's art was updated on  July 19th, 2024, replacing its  old appearance. • DemonicDarkwraith for image and other information. • Legendary Ash for requirement correction.",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/WalkThroughFire.png"
   },
   {
@@ -4864,6 +5008,7 @@
     "tags": [
       "quests-badges"
     ],
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Wanderer.png",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Wanderer.png"
   },
   {
@@ -4895,7 +5040,8 @@
     "tags": [
       "quests-badges"
     ],
-    "notes": "Badge's art was updated on July 27th, 2024, replacing its old appearance.",
+    "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/WaterYouDoing.png",
+    "notes": "Badge's art was updated on  July 27th, 2024, replacing its  old appearance. • DemonicDarkwraith for image and other information. • Niki for correction.",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/WaterYouDoing.png"
   },
   {
@@ -4927,6 +5073,7 @@
     "tags": [
       "quests-badges"
     ],
+    "forumImageUrl": "http://i.imgur.com/gifhP.png",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/WeaveWithMe.png"
   },
   {
@@ -4958,6 +5105,7 @@
     "tags": [
       "quests-badges"
     ],
+    "forumImageUrl": "http://i.imgur.com/kSwMrB8.png",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/WeaveWithoutMe.png"
   },
   {
@@ -4989,6 +5137,7 @@
     "tags": [
       "quest-badges"
     ],
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/WildFighter.png",
     "notes": "Badge was retired on  July 19th, 2024.",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/WildFighter.png"
   },
@@ -5021,6 +5170,7 @@
     "tags": [
       "classes-badges"
     ],
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Worthy.jpg",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Worthy.jpg"
   },
   {
@@ -5052,6 +5202,7 @@
     "tags": [
       "other-badges"
     ],
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/WrestlingChampion.png",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/WrestlingChampion.png"
   },
   {
@@ -5083,6 +5234,7 @@
     "tags": [
       "other-badges"
     ],
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/X-valpic.jpg",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/X-val.jpg"
   }
 ]
