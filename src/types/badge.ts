@@ -57,4 +57,5 @@ export interface BadgeFilters {
   subcategory?: string
   query?: string
   daRequired?: boolean
+  retired?: boolean
 }

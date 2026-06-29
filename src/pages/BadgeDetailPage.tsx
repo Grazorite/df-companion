@@ -64,11 +64,15 @@ export default function BadgeDetailPage() {
               DA Required
             </Link>
           )}
-          {/* Retired — not a filter, just informational */}
+          {/* Retired — clickable filter like DA Required */}
           {badge.retired && (
-            <span className="inline-block text-xs font-medium px-2.5 py-1 rounded-full bg-bg-overlay text-text-muted">
+            <Link
+              to="/badges?retired=true"
+              className="inline-block text-xs font-medium px-2.5 py-1 rounded-full bg-bg-overlay text-text-secondary border border-border-default transition-colors hover:border-border-hover hover:text-text-primary"
+              title="Browse all retired badges"
+            >
               Retired
-            </span>
+            </Link>
           )}
         </div>
 

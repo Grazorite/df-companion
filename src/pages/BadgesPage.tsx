@@ -13,6 +13,7 @@ export default function BadgesPage() {
   const activeCategory = (searchParams.get('category') as BadgeCategory) ?? undefined
   const activeSubcategory = searchParams.get('sub') ?? undefined
   const activeDaRequired = searchParams.get('da') === 'true'
+  const activeRetired = searchParams.get('retired') === 'true'
 
   const categories = useCategories()
   const subcategories = useSubcategories(activeCategory ?? '')
@@ -23,14 +24,16 @@ export default function BadgesPage() {
     if (activeCategory) params.category = activeCategory
     if (activeSubcategory) params.sub = activeSubcategory
     if (activeDaRequired) params.da = 'true'
+    if (activeRetired) params.retired = 'true'
     setSearchParams(params, { replace: true })
-  }, [debouncedQuery, activeCategory, activeSubcategory, activeDaRequired, setSearchParams])
+  }, [debouncedQuery, activeCategory, activeSubcategory, activeDaRequired, activeRetired, setSearchParams])
 
   const { badges, total } = useBadges({
     query: debouncedQuery,
     category: activeCategory,
     subcategory: activeSubcategory,
     daRequired: activeDaRequired || undefined,
+    retired: activeRetired || undefined,
   })
 
   function selectCategory(id: BadgeCategory | undefined) {
@@ -38,6 +41,7 @@ export default function BadgesPage() {
     if (debouncedQuery) params.q = debouncedQuery
     if (id) params.category = id
     if (activeDaRequired) params.da = 'true'
+    if (activeRetired) params.retired = 'true'
     setSearchParams(params, { replace: true })
   }
 
@@ -47,6 +51,7 @@ export default function BadgesPage() {
     if (activeCategory) params.category = activeCategory
     if (sub !== activeSubcategory) params.sub = sub
     if (activeDaRequired) params.da = 'true'
+    if (activeRetired) params.retired = 'true'
     setSearchParams(params, { replace: true })
   }
 
@@ -56,6 +61,17 @@ export default function BadgesPage() {
     if (activeCategory) params.category = activeCategory
     if (activeSubcategory) params.sub = activeSubcategory
     if (!activeDaRequired) params.da = 'true'
+    if (activeRetired) params.retired = 'true'
+    setSearchParams(params, { replace: true })
+  }
+
+  function toggleRetired() {
+    const params: Record<string, string> = {}
+    if (debouncedQuery) params.q = debouncedQuery
+    if (activeCategory) params.category = activeCategory
+    if (activeSubcategory) params.sub = activeSubcategory
+    if (activeDaRequired) params.da = 'true'
+    if (!activeRetired) params.retired = 'true'
     setSearchParams(params, { replace: true })
   }
 
@@ -118,6 +134,18 @@ export default function BadgesPage() {
         >
           DA Required
         </button>
+        {/* Retired toggle */}
+        <button
+          onClick={toggleRetired}
+          className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors duration-150 min-h-[36px] ${
+            activeRetired
+              ? 'bg-bg-overlay text-text-primary font-semibold border border-border-hover'
+              : 'bg-bg-overlay text-text-secondary hover:bg-border-hover hover:text-text-primary'
+          }`}
+          aria-pressed={activeRetired}
+        >
+          Retired
+        </button>
       </div>
 
       {/* Subcategory filters */}
@@ -153,6 +181,7 @@ export default function BadgesPage() {
           <span className="text-text-secondary"> in {categories.find(c => c.id === activeCategory)?.displayName ?? activeCategory}</span>
         ) : null}
         {activeDaRequired && <span className="text-orange-400"> · DA Required</span>}
+        {activeRetired && <span className="text-text-muted"> · Retired</span>}
       </p>
 
       {/* Badge grid */}

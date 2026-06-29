@@ -17,6 +17,9 @@ export function searchBadges(badges: Badge[], filters: BadgeFilters): Badge[] {
       if (filters.subcategory && badge.subcategory !== filters.subcategory) return false
       // DA Required filter
       if (filters.daRequired === true && !badge.daRequired) return false
+      // Retired filter — when not explicitly filtering for retired, hide them by default
+      if (filters.retired === true && !badge.retired) return false
+      if (filters.retired !== true && badge.retired) return false
 
       // Text search — minimum 2 characters
       if (queryWords.length > 0) {

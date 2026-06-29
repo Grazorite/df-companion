@@ -178,18 +178,18 @@ SUBCATEGORY_MAP = {
     'Battle Hewn Warmonger': 'Warmonger',
     'Home Owner':            'Misc',
     'Cookie Song!':          'Misc',
-    # Retired quest badges
-    'Information on Sepulchure': 'Retired',
-    'Party On, Olaf!':       'Retired',
-    'Grrrberus!':            'Retired',
-    'EGG-STIR-MIN-ATE':      'Retired',
-    'Wild Fighter':          'Retired',
-    "Asander's Freedom":     'Retired',
-    'I Spy':                 'Retired',
-    'Breaking Awe':          'Retired',
-    'Idle Heroes':           'Retired',
-    'Evolved DragonLord':    'Retired',
-    'Quick Buy!':            'Retired',
+    # Retired quest badges — retired=True flag, not a subcategory
+    'Information on Sepulchure': 'Misc',
+    'Party On, Olaf!':       'Misc',
+    'Grrrberus!':            'Misc',
+    'EGG-STIR-MIN-ATE':      'Misc',
+    'Wild Fighter':          'Misc',
+    "Asander's Freedom":     'Misc',
+    'I Spy':                 'Misc',
+    'Breaking Awe':          'Misc',
+    'Idle Heroes':           'Misc',
+    'Evolved DragonLord':    'Misc',
+    'Quick Buy!':            'Misc',
 }
 
 updated = 0
