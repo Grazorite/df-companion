@@ -25,6 +25,11 @@ import * as path from 'node:path'
 import type { Pet, ObtainMethod, Attack, Evolution, AlsoSeeRef, EntryType } from '../src/types/pet.ts'
 
 const FORUM_BASE = 'https://forums2.battleon.com/f'
+// The A-Z Pets & Guests main thread — Pets listing is in the first post reply
+// Main thread: m=22349620, the Pets A-Z post is m=22349621 (may have moved)
+// Use the full thread with mpage=1 to get all content
+const AZ_PETS_THREAD_URL = `${FORUM_BASE}/tm.asp?m=22349620&mpage=1&key=`
+// Fallback: direct post URL
 const AZ_PETS_URL = `${FORUM_BASE}/tm.asp?m=22349621`
 const CHRONOLOGY_URL = `${FORUM_BASE}/tm.asp?m=10738071`
 const DELAY_MS = 800
@@ -36,16 +41,23 @@ function sleep(ms: number): Promise<void> {
   return new Promise((r) => setTimeout(r, ms))
 }
 
-async function fetchPage(url: string, cookie: string): Promise<string> {
-  const res = await fetch(url, {
-    headers: {
-      Cookie: cookie,
-      'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) Chrome/120.0.0.0 Safari/537.36',
-      Accept: 'text/html,application/xhtml+xml',
-    },
-  })
-  if (!res.ok) throw new Error(`HTTP ${res.status}: ${url}`)
-  return res.text()
+async function fetchPage(url: string, cookie: string, timeoutMs = 30000): Promise<string> {
+  const controller = new AbortController()
+  const timer = setTimeout(() => controller.abort(), timeoutMs)
+  try {
+    const res = await fetch(url, {
+      signal: controller.signal,
+      headers: {
+        Cookie: cookie,
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) Chrome/120.0.0.0 Safari/537.36',
+        Accept: 'text/html,application/xhtml+xml',
+      },
+    })
+    if (!res.ok) throw new Error(`HTTP ${res.status}: ${url}`)
+    return res.text()
+  } finally {
+    clearTimeout(timer)
+  }
 }
 
 function slugify(name: string): string {
@@ -143,7 +155,9 @@ function parseAZPage(html: string, type: EntryType): PetStub[] {
   const chunks = html.split(/<br\s*\/?>/)
 
   for (const chunk of chunks) {
-    const linkMatch = /href="https?:\/\/forums2\.battleon\.com\/f\/tm\.asp\?m=(\d+)"[^>]*>\s*([^<]+?)\s*<\/a>/i.exec(chunk)
+    // Match relative (tm.asp?m=X) OR absolute (https://forums2...tm.asp?m=X) URLs
+    // Also handle both single and double quotes
+    const linkMatch = /href=["']?(?:https?:\/\/forums2\.battleon\.com\/f\/)?tm\.asp\?m=(\d+)[^"'\s>]*["']?[^>]*>\s*([^<]+?)\s*<\/a>/i.exec(chunk)
     if (!linkMatch) continue
 
     const msgId = linkMatch[1]
@@ -440,13 +454,31 @@ async function main() {
 
   // ── PASS 1: Collect all stubs from A-Z Pets listing ──────────────────────
 
+  // Try the direct post first, fall back to full thread
   console.log('📄 Fetching A-Z Pets listing...')
-  const azHtml = await fetchPage(AZ_PETS_URL, cookie)
+  let azHtml = ''
+  try {
+    azHtml = await fetchPage(AZ_PETS_URL, cookie)
+    if (azHtml.includes('This message has been deleted or moved')) {
+      console.log('   Post moved — trying full thread...')
+      await sleep(DELAY_MS)
+      azHtml = await fetchPage(AZ_PETS_THREAD_URL, cookie)
+    }
+  } catch {
+    console.log('   Direct post failed — trying full thread...')
+    await sleep(DELAY_MS)
+    azHtml = await fetchPage(AZ_PETS_THREAD_URL, cookie)
+  }
+
   const stubs = parseAZPage(azHtml, 'pet')
   console.log(`✅ Found ${stubs.length} pet stubs\n`)
 
   if (stubs.length === 0) {
-    console.error('❌ No pets found — cookie may have expired.')
+    console.error('❌ No pets found — cookie may have expired, or page structure has changed.')
+    console.error('   Page size was:', azHtml.length, 'bytes')
+    // Show a snippet to help debug
+    const snippet = azHtml.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').slice(0, 300)
+    console.error('   Page snippet:', snippet)
     process.exit(1)
   }
 
