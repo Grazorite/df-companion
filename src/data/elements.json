@@ -1,0 +1,33 @@
+{
+  "elements": [
+    { "code": "???", "name": "??? (Void) Element", "shortName": "Void",     "colour": "bg-gray-500/20 text-gray-300" },
+    { "code": "BAC", "name": "Bacon Element",      "shortName": "Bacon",    "colour": "bg-pink-700/20 text-pink-300" },
+    { "code": "CUR", "name": "Curse Element",      "shortName": "Curse",    "colour": "bg-violet-800/20 text-violet-300" },
+    { "code": "DAR", "name": "Darkness Element",   "shortName": "Darkness", "colour": "bg-slate-700/30 text-slate-300" },
+    { "code": "DIS", "name": "Disease Element",    "shortName": "Disease",  "colour": "bg-lime-800/20 text-lime-400" },
+    { "code": "EBI", "name": "Ebil Element",       "shortName": "Ebil",     "colour": "bg-rose-800/20 text-rose-300" },
+    { "code": "ENE", "name": "Energy Element",     "shortName": "Energy",   "colour": "bg-yellow-400/20 text-yellow-300" },
+    { "code": "EVI", "name": "Evil Element",       "shortName": "Evil",     "colour": "bg-red-900/20 text-red-400" },
+    { "code": "FEA", "name": "Fear Element",       "shortName": "Fear",     "colour": "bg-purple-900/20 text-purple-300" },
+    { "code": "FIR", "name": "Fire Element",       "shortName": "Fire",     "colour": "bg-red-500/20 text-red-400" },
+    { "code": "GOO", "name": "Good Element",       "shortName": "Good",     "colour": "bg-amber-400/20 text-amber-300" },
+    { "code": "ICE", "name": "Ice Element",        "shortName": "Ice",      "colour": "bg-sky-500/20 text-sky-300" },
+    { "code": "LIG", "name": "Light Element",      "shortName": "Light",    "colour": "bg-yellow-200/20 text-yellow-100" },
+    { "code": "MET", "name": "Metal Element",      "shortName": "Metal",    "colour": "bg-zinc-500/20 text-zinc-300" },
+    { "code": "NAT", "name": "Nature Element",     "shortName": "Nature",   "colour": "bg-green-600/20 text-green-400" },
+    { "code": "NON", "name": "None Element",       "shortName": "None",     "colour": "bg-bg-overlay text-text-muted" },
+    { "code": "POI", "name": "Poison Element",     "shortName": "Poison",   "colour": "bg-green-800/20 text-green-300" },
+    { "code": "SIL", "name": "Silver Element",     "shortName": "Silver",   "colour": "bg-slate-400/20 text-slate-200" },
+    { "code": "STO", "name": "Stone Element",      "shortName": "Stone",    "colour": "bg-stone-600/20 text-stone-300" },
+    { "code": "WAT", "name": "Water Element",      "shortName": "Water",    "colour": "bg-blue-500/20 text-blue-400" },
+    { "code": "WIN", "name": "Wind Element",       "shortName": "Wind",     "colour": "bg-teal-400/20 text-teal-300" },
+    { "code": "WOO", "name": "Wood Element",       "shortName": "Wood",     "colour": "bg-emerald-700/20 text-emerald-400" }
+  ],
+  "markers": [
+    { "code": "A/C", "name": "As Character",    "colour": "bg-indigo-500/20 text-indigo-300" },
+    { "code": "ALA", "name": "As Last Attack",  "colour": "bg-orange-500/20 text-orange-300" },
+    { "code": "N/A", "name": "No Attack",       "colour": "bg-bg-overlay text-text-muted" },
+    { "code": "SHR", "name": "Shrinks",         "colour": "bg-purple-500/20 text-purple-300" },
+    { "code": "W/S", "name": "Weakness Seeks", "colour": "bg-cyan-500/20 text-cyan-300" }
+  ]
+}
