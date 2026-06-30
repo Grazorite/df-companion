@@ -1,0 +1,51 @@
+import { useState } from 'react'
+import { ChevronDown, ChevronUp } from 'lucide-react'
+import elementsData from '../../data/elements.json'
+import type { ElementsData } from '../../types/element'
+
+const { elements, markers } = elementsData as ElementsData
+
+export default function ElementLegend() {
+  const [open, setOpen] = useState(false)
+
+  return (
+    <div className="mb-4">
+      <button
+        onClick={() => setOpen(o => !o)}
+        className="flex items-center gap-1.5 text-text-muted hover:text-text-secondary text-xs transition-colors"
+        aria-expanded={open}
+      >
+        {open ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
+        Element Legend
+      </button>
+
+      {open && (
+        <div className="mt-3 bg-bg-surface border border-border-default rounded-lg p-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 mb-3">
+            {elements.map(e => (
+              <div key={e.code} className="flex items-center gap-2">
+                <span className={`text-xs font-medium px-1.5 py-0.5 rounded-full ${e.colour}`}>
+                  [{e.code}]
+                </span>
+                <span className="text-text-secondary text-xs">{e.shortName}</span>
+              </div>
+            ))}
+          </div>
+          <div className="border-t border-border-default pt-3">
+            <p className="text-text-muted text-xs mb-2 font-medium uppercase tracking-wider">Special Markers</p>
+            <div className="flex flex-wrap gap-2">
+              {markers.map(m => (
+                <div key={m.code} className="flex items-center gap-1.5">
+                  <span className={`text-xs font-medium px-1.5 py-0.5 rounded-full ${m.colour}`}>
+                    [{m.code}]
+                  </span>
+                  <span className="text-text-secondary text-xs">{m.name}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  )
+}
