@@ -25,3 +25,7 @@ dist-ssr
 
 # Environment variables (contains session cookies)
 .env
+
+# Scraper progress files (intermediate, not needed in repo)
+src/data/pets-progress.json
+src/data/guests-progress.json
