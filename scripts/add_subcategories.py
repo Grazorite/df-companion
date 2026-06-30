@@ -5,7 +5,7 @@ Data sourced from: https://forums2.battleon.com/f/tm.asp?m=22304590 (Badges Sort
 import json
 from pathlib import Path
 
-path = Path('src/data/badges.json')
+path = Path(__file__).resolve().parent.parent / 'src/data/badges.json'
 badges = json.loads(path.read_text())
 
 # Subcategory assignments from the forum's "Badges Sorted by Category" post

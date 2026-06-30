@@ -151,7 +151,7 @@ export default function PetsPage() {
                 <span className={`inline-flex items-center text-xs font-medium px-1.5 py-0.5 rounded-full ${
                   [...elements, ...traits].find(e => e.code === code)?.colour ?? 'bg-bg-overlay text-text-muted'
                 }`}>
-                  {[...elements, ...traits].find(e => e.code === code)?.shortName ?? code}
+                  {[...elements, ...traits].find(e => e.code === code)?.name ?? code}
                 </span>
               </span>
             </button>

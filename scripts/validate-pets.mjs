@@ -20,7 +20,11 @@ let validMarkerCodes = new Set()
 try {
   const elemData = JSON.parse(readFileSync(ELEMENTS_PATH, 'utf-8'))
   validElementCodes = new Set(elemData.elements.map(e => e.code))
-  validMarkerCodes = new Set(elemData.markers.map(m => m.code))
+  const markerList = Array.isArray(elemData.markers) ? elemData.markers : elemData.traits
+  if (!Array.isArray(markerList)) {
+    throw new Error('elements.json must include a "traits" or "markers" array')
+  }
+  validMarkerCodes = new Set(markerList.map(m => m.code))
 } catch (e) {
   console.error('❌ Failed to parse elements.json:', e.message)
   process.exit(1)
@@ -41,6 +45,7 @@ if (!Array.isArray(pets)) {
   process.exit(1)
 }
 
+const markerField = pets.some(p => Array.isArray(p.specialMarkers)) ? 'specialMarkers' : 'traits'
 const errors = []
 const slugs = new Set()
 const allSlugs = new Set(pets.map(p => p.slug))
@@ -89,10 +94,10 @@ for (let i = 0; i < pets.length; i++) {
   }
 
   // Special markers array
-  if (!Array.isArray(p.specialMarkers)) {
-    errors.push(`${prefix}: "specialMarkers" must be an array`)
+  if (!Array.isArray(p[markerField])) {
+    errors.push(`${prefix}: "${markerField}" must be an array`)
   } else {
-    for (const code of p.specialMarkers) {
+    for (const code of p[markerField]) {
       if (!validMarkerCodes.has(code)) {
         errors.push(`${prefix}: unknown marker code "${code}"`)
       }

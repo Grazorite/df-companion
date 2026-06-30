@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
 import { ExternalLink, Shield, ImageOff } from 'lucide-react'
 import type { Pet } from '../../types/pet'
 import ElementPill from '../shared/ElementPill'

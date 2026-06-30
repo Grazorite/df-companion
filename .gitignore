@@ -13,8 +13,8 @@ dist-ssr
 *.local
 
 # Editor directories and files
-.vscode/*
-!.vscode/extensions.json
+.vscode/
+.kiro/
 .idea
 .DS_Store
 *.suo
@@ -25,6 +25,7 @@ dist-ssr
 
 # Environment variables (contains session cookies)
 .env
+AGENTS.md
 
 # Scraper progress files (intermediate, not needed in repo)
 src/data/pets-progress.json
