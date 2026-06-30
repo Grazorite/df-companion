@@ -142,12 +142,15 @@ function parseAZPage(html: string): PetStub[] {
     if (seen.has(msgId)) continue
     seen.add(msgId)
 
-    // Extract anchor text (pet name with bracket codes)
-    const anchorText = decodeHTML((chunk.match(/>([^<]+)<\/a>/)?.[1] ?? '').trim())
+    // Elements/markers appear BEFORE the <a> tag in the line
+    // e.g: [BAC][DAR][WIN] <a href="...">Pet Name</a>
+    const { elements, markers } = parseBracketCodes(chunk)
+
+    // Extract anchor text (pet name — may also contain brackets if inside the <a>)
+    const anchorText = decodeHTML((chunk.match(/<a[^>]+>([^<]+)<\/a>/i)?.[1] ?? '').trim())
     if (!anchorText || anchorText.length < 2) continue
 
-    const { elements, markers } = parseBracketCodes(anchorText)
-    // Name is the anchor text with brackets stripped
+    // Name is anchor text with any remaining bracket codes stripped
     const name = anchorText.replace(/\[[A-Z?/]+\]/g, '').trim()
     if (!name) continue
 
@@ -266,7 +269,11 @@ function parsePetThread(html: string, name: string): {
     if (/^Thanks\s+to/i.test(line)) continue
 
     if (!description && !inNotes && !currentAttack && line.length > 5) { description = line; continue }
-    if (inNotes && line.length > 3) noteLines.push(line.replace(/^[•\-\*]\s*/, ''))
+    if (inNotes && line.length > 3) {
+      // Skip edit timestamps: "Username -- M/D/YYYY HH:MM:SS >"
+      if (/\w+\s+--\s+\d+\/\d+\/\d+\s+\d+:\d+:\d+/.test(line)) continue
+      noteLines.push(line.replace(/^[•\-\*]\s*/, ''))
+    }
   }
 
   saveObtain()
@@ -305,21 +312,38 @@ function parseChronology(html: string): Map<string, string> {
   const dates = new Map<string, string>()
   const text = stripHtml(decodeHTML(html))
   const lines = text.split('\n').map(l => l.trim()).filter(Boolean)
-  const datePattern = /^(January|February|March|April|May|June|July|August|September|October|November|December)\s+\d+\w*,?\s+\d{4}/i
+
+  // Format:
+  //   "November 10th, 2006"   ← date heading (bold line)
+  //   "[P] King Linus (Normal; D-Coins)"
+  //   "[G] Ash (1)"
+  //   "[P] Battle Piggy"
+  //
+  // Date headings look like: "Month Nth, YYYY"
+  const datePattern = /^(January|February|March|April|May|June|July|August|September|October|November|December)\s+\d+\w+,?\s+\d{4}$/i
+  const entryPattern = /^\[([PG])\]\s+(.+)$/
+
+  let currentDate = ''
 
   for (const line of lines) {
-    const sep = line.includes(' - ') ? ' - ' : line.includes(': ') ? ': ' : null
-    if (!sep) continue
-    const idx = line.indexOf(sep)
-    const left = line.slice(0, idx).trim()
-    const right = line.slice(idx + sep.length).trim()
+    if (datePattern.test(line)) {
+      currentDate = line
+      continue
+    }
 
-    if (datePattern.test(left)) {
-      right.split(',').forEach(n => { const name = n.trim(); if (name.length > 1) dates.set(name.toLowerCase(), left) })
-    } else if (datePattern.test(right)) {
-      left.split(',').forEach(n => { const name = n.trim(); if (name.length > 1) dates.set(name.toLowerCase(), right) })
+    const entryMatch = entryPattern.exec(line)
+    if (entryMatch && currentDate) {
+      // Extract name — strip trailing parenthetical (D-Coins), (Normal; D-Coins), (Seasonal) etc.
+      const rawName = entryMatch[2].trim()
+      const name = rawName.replace(/\s*\([^)]*\)\s*$/, '').trim()
+      if (name.length > 0) {
+        dates.set(name.toLowerCase(), currentDate)
+        // Also store with parenthetical in case entry names include them (e.g. "King Linus (Normal)")
+        if (rawName !== name) dates.set(rawName.toLowerCase(), currentDate)
+      }
     }
   }
+
   return dates
 }
 
