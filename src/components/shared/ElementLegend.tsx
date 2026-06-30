@@ -3,7 +3,7 @@ import { ChevronDown, ChevronUp } from 'lucide-react'
 import elementsData from '../../data/elements.json'
 import type { ElementsData } from '../../types/element'
 
-const { elements, markers } = elementsData as ElementsData
+const { elements, traits } = elementsData as ElementsData
 
 export default function ElementLegend() {
   const [open, setOpen] = useState(false)
@@ -16,7 +16,7 @@ export default function ElementLegend() {
         aria-expanded={open}
       >
         {open ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
-        Element Legend
+        Legend
       </button>
 
       {open && (
@@ -32,14 +32,14 @@ export default function ElementLegend() {
             ))}
           </div>
           <div className="border-t border-border-default pt-3">
-            <p className="text-text-muted text-xs mb-2 font-medium uppercase tracking-wider">Special Markers</p>
+            <p className="text-text-muted text-xs mb-2 font-medium uppercase tracking-wider">Traits</p>
             <div className="flex flex-wrap gap-2">
-              {markers.map(m => (
-                <div key={m.code} className="flex items-center gap-1.5">
-                  <span className={`text-xs font-medium px-1.5 py-0.5 rounded-full ${m.colour}`}>
-                    [{m.code}]
+              {traits.map(t => (
+                <div key={t.code} className="flex items-center gap-1.5">
+                  <span className={`text-xs font-medium px-1.5 py-0.5 rounded-full ${t.colour}`}>
+                    [{t.code}]
                   </span>
-                  <span className="text-text-secondary text-xs">{m.name}</span>
+                  <span className="text-text-secondary text-xs">{t.name}</span>
                 </div>
               ))}
             </div>

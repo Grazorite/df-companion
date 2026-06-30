@@ -12,7 +12,7 @@ interface PetCardProps {
 const MAX_PILLS = 2
 
 export default function PetCard({ pet, toUrl, replace }: PetCardProps) {
-  const allCodes = [...pet.elements, ...pet.specialMarkers]
+  const allCodes = [...pet.elements, ...pet.traits]
   const visibleCodes = allCodes.slice(0, MAX_PILLS)
   const overflow = allCodes.length - MAX_PILLS
 

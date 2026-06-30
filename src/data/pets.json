@@ -18,9 +18,6 @@
       "WAT",
       "WIN"
     ],
-    "specialMarkers": [
-      "W/S"
-    ],
     "level": "As player",
     "damage": "ScaledMin: ([Level*0.85]-[Level/9])*1.5",
     "stats": "None",
@@ -52,6 +49,9 @@
       "wat",
       "win",
       "w-s"
+    ],
+    "traits": [
+      "W/S"
     ]
   },
   {
@@ -73,7 +73,6 @@
       "WAT",
       "WIN"
     ],
-    "specialMarkers": [],
     "level": "As player",
     "damage": "ScaledMin: ([Level*0.85]-[Level/9])*1.1, rounded up",
     "stats": "Crit +10, Magic Def +5, Pierce Def +5, Melee Def +5, Bonus +[20 + Level/2]",
@@ -188,7 +187,8 @@
       "sto",
       "wat",
       "win"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-10-lb-butterbomb",
@@ -200,7 +200,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "10",
     "damage": "6-11",
     "stats": "None",
@@ -317,7 +316,8 @@
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-15-lb-butterbomb",
@@ -329,7 +329,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "15",
     "damage": "5-16",
     "stats": "None",
@@ -446,7 +445,8 @@
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-2-star-general-butterbomb",
@@ -458,7 +458,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "50",
     "damage": "16-22",
     "stats": "None",
@@ -575,7 +574,8 @@
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-20-watt-brightbulb",
@@ -587,7 +587,6 @@
     "elements": [
       "LIG"
     ],
-    "specialMarkers": [],
     "level": "20",
     "damage": "10-16",
     "stats": "Crit +1, Bonus +1",
@@ -625,7 +624,7 @@
     "evolutions": [],
     "releaseDate": "April 7th, 2008",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17243862",
-    "notes": "Pet was previously erroneously named '20- Watt Brightbulb'; this was fixed on  September 27th, 2019. • Jay for image, attack type images, and other information. • Stephen Nix for DA requirement and corrections. • Jumpsmm7 for price information. • arpan30 for sellback information. • SuperDaria for Attack Type 2.1 effect information. • Peachii for corrections.",
+    "notes": "Pet was previously erroneously named '20- Watt Brightbulb'; this was fixed on  September 27th, 2019.",
     "alsoSee": [
       {
         "name": "30-Watt Brightbulb",
@@ -636,7 +635,8 @@
     "tags": [
       "pet",
       "lig"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-3-star-general-butterbomb",
@@ -648,7 +648,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "55",
     "damage": "16-24",
     "stats": "None",
@@ -765,7 +764,8 @@
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-30-watt-brightbulb",
@@ -777,7 +777,6 @@
     "elements": [
       "LIG"
     ],
-    "specialMarkers": [],
     "level": "30",
     "damage": "13-19",
     "stats": "Crit +2, Bonus +2",
@@ -815,7 +814,7 @@
     "evolutions": [],
     "releaseDate": "April 7th, 2008",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19270106",
-    "notes": "Despite requiring a DC-item to merge, this pet is not DC-tagged, and thus is ineligible for free storage at the bank. • Burn for original entry. • Karika for DC requirement. • Jumpsmm7 for price information. • arpan30 for sellback information. • SuperDaria for Attack Type 2.1 effect information. • Peachii and Stephen Nix for corrections.",
+    "notes": "Despite requiring a DC-item to merge, this pet is not DC-tagged, and thus is ineligible for free storage at the bank. • Burn for original entry. • Karika for DC requirement. • Jumpsmm7 for price information. • arpan30 for sellback information.",
     "alsoSee": [
       {
         "name": "20-Watt Brightbulb",
@@ -826,7 +825,8 @@
     "tags": [
       "pet",
       "lig"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-4-star-general-butterbomb",
@@ -838,7 +838,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "60",
     "damage": "17-25",
     "stats": "None",
@@ -955,7 +954,8 @@
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-5-lb-butterbomb",
@@ -967,7 +967,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "5",
     "damage": "2-7",
     "stats": "None",
@@ -1084,7 +1083,8 @@
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-5-star-general-butterbomb",
@@ -1096,7 +1096,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "65",
     "damage": "17-27",
     "stats": "None",
@@ -1128,7 +1127,7 @@
     "evolutions": [],
     "releaseDate": "November 24th, 2011",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20110441",
-    "notes": "Description is erroneously identical to  4 Star General Butterbomb. • Silver for image and rate information. • Jay for attack type images and corrections. • Niki for original entry. • DragonBlade and ILmaster13 for entry reformat. • Omega2064 for updated name information. • Karika for non-DA requirement information. • SalvationXI for rarity information. • .*. .*. .*., DK or DD, glaisaurus_x, Links, MeAndMyCreek, PaperClip OF DOOM, Peachii, Stephen Nix, and whimsical magic for information.",
+    "notes": "Description is erroneously identical to  4 Star General Butterbomb.",
     "alsoSee": [
       {
         "name": "5 lb Butterbomb",
@@ -1214,7 +1213,8 @@
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-6-star-general-butterbomb",
@@ -1226,7 +1226,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "70",
     "damage": "19-27",
     "stats": "None",
@@ -1258,7 +1257,7 @@
     "evolutions": [],
     "releaseDate": "November 24th, 2011",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20110442",
-    "notes": "Description is erroneously identical to  4 Star General Butterbomb. • Silver for image and rate information. • Jay for attack type images and corrections. • Baron Dante for original entry. • DragonBlade and ILmaster13 for entry reformat. • Omega2064 for updated name information. • Karika for non-DA requirement information. • SalvationXI for rarity information. • .*. .*. .*., DK or DD, glaisaurus_x, Links, MeAndMyCreek, PaperClip OF DOOM, Peachii, Stephen Nix, and whimsical magic for information.",
+    "notes": "Description is erroneously identical to  4 Star General Butterbomb.",
     "alsoSee": [
       {
         "name": "5 lb Butterbomb",
@@ -1344,7 +1343,8 @@
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-7-star-general-butterbomb",
@@ -1356,7 +1356,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "75",
     "damage": "20-29",
     "stats": "None",
@@ -1473,7 +1472,8 @@
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-8-star-general-butterbomb",
@@ -1485,7 +1485,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "80",
     "damage": "21-30",
     "stats": "None",
@@ -1602,7 +1601,8 @@
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-adorable-baby-dracolich-pet-all-versions",
@@ -1614,7 +1614,6 @@
     "elements": [
       "DAR"
     ],
-    "specialMarkers": [],
     "level": "20",
     "damage": "14-18",
     "stats": "None",
@@ -1649,7 +1648,8 @@
     "tags": [
       "pet",
       "dar"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-aegis-1",
@@ -1661,7 +1661,6 @@
     "elements": [
       "ICE"
     ],
-    "specialMarkers": [],
     "level": "As player",
     "damage": "Scaled",
     "stats": "None",
@@ -1685,7 +1684,8 @@
     "tags": [
       "pet",
       "ice"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-alteon",
@@ -1698,7 +1698,6 @@
       "ENE",
       "FIR"
     ],
-    "specialMarkers": [],
     "level": "As player",
     "damage": "Scaled",
     "stats": "None",
@@ -1722,7 +1721,8 @@
       "pet",
       "ene",
       "fir"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-alz-ein-etaos",
@@ -1734,7 +1734,6 @@
     "elements": [
       "???"
     ],
-    "specialMarkers": [],
     "level": "As player",
     "damage": "Scaled",
     "stats": "None",
@@ -1756,7 +1755,8 @@
     "tags": [
       "pet",
       "???"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-alz-ein-isiri-1",
@@ -1768,7 +1768,6 @@
     "elements": [
       "DAR"
     ],
-    "specialMarkers": [],
     "level": "As player",
     "damage": "Scaled",
     "stats": "None",
@@ -1791,7 +1790,8 @@
     "tags": [
       "pet",
       "dar"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-alz-ein-nirios",
@@ -1803,7 +1803,6 @@
     "elements": [
       "???"
     ],
-    "specialMarkers": [],
     "level": "As player",
     "damage": "Scaled",
     "stats": "None",
@@ -1826,7 +1825,8 @@
     "tags": [
       "pet",
       "???"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-amadeus",
@@ -1837,9 +1837,6 @@
     "daRequired": false,
     "elements": [
       "DAR"
-    ],
-    "specialMarkers": [
-      "W/S"
     ],
     "level": "As player",
     "damage": "Scaled",
@@ -1864,6 +1861,9 @@
       "pet",
       "dar",
       "w-s"
+    ],
+    "traits": [
+      "W/S"
     ]
   },
   {
@@ -1876,7 +1876,6 @@
     "elements": [
       "BAC"
     ],
-    "specialMarkers": [],
     "level": "15",
     "damage": "4-14",
     "stats": "None",
@@ -1911,7 +1910,8 @@
     "tags": [
       "pet",
       "bac"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-ancestral-snake-spirit",
@@ -1923,7 +1923,6 @@
     "elements": [
       "WIN"
     ],
-    "specialMarkers": [],
     "level": "5",
     "damage": "2-7",
     "stats": "None",
@@ -1958,7 +1957,8 @@
     "tags": [
       "pet",
       "win"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-ancient-ninja-terrapin",
@@ -1970,7 +1970,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "35",
     "damage": "15-22",
     "stats": "None",
@@ -2033,7 +2032,8 @@
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-aquella-1",
@@ -2045,7 +2045,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "2",
     "damage": "8-12",
     "stats": "None",
@@ -2068,7 +2067,8 @@
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-aria-1",
@@ -2080,7 +2080,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "2",
     "damage": "8-12",
     "stats": "None",
@@ -2099,12 +2098,13 @@
     "releaseDate": "August 4th, 2006",
     "imageUrl": "https://i.imgur.com/MWb3liE.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=10837661",
-    "notes": "Aria will remain as a guest if you exit before quest completion. • Stephen Nix for image, entry rewrite and corrections. • Jay for skill buttons and corrections. • Karika for correction.",
+    "notes": "Aria will remain as a guest if you exit before quest completion.",
     "alsoSee": [],
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-armored-chickcalf-i-vii",
@@ -2116,7 +2116,6 @@
     "elements": [
       "BAC"
     ],
-    "specialMarkers": [],
     "level": "10",
     "damage": "5-13",
     "stats": "Crit +1, Bonus +1",
@@ -2151,7 +2150,8 @@
     "tags": [
       "pet",
       "bac"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-artix-1",
@@ -2164,7 +2164,6 @@
       "LIG",
       "MET"
     ],
-    "specialMarkers": [],
     "level": "3",
     "damage": "5-30",
     "stats": "None",
@@ -2188,7 +2187,8 @@
       "pet",
       "lig",
       "met"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-ash-1",
@@ -2200,7 +2200,6 @@
     "elements": [
       "MET"
     ],
-    "specialMarkers": [],
     "level": "1",
     "damage": "5-10",
     "stats": "None",
@@ -2229,7 +2228,8 @@
     "tags": [
       "pet",
       "met"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-atgasedd-doll",
@@ -2241,7 +2241,6 @@
     "elements": [
       "FEA"
     ],
-    "specialMarkers": [],
     "level": "1",
     "damage": "0-0",
     "stats": "None",
@@ -2291,12 +2290,13 @@
     "evolutions": [],
     "releaseDate": "March 9th, 2018",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22317421",
-    "notes": "X is equal to [5 + (Player's CHA)/40], rounded up. • Atgasedd Doll's damage is affected by the global CHA damage buff, increasing its damage by [(Player's CHA)/10], rounded down. • Atgasedd Doll's attack rotation always follows and repeats the above cycle; re-equipping Atgasedd Doll will not reset its rotation. • Silver for image. • Jay for attack type images and corrections. • BluuHorseOfficial for original entry and other information. • Baron Dante and LouisCyphere for CHA formula information. • AstralCodex and Solanaceae for corrections.",
+    "notes": "X is equal to [5 + (Player's CHA)/40], rounded up. • Atgasedd Doll's damage is affected by the global CHA damage buff, increasing its damage by [(Player's CHA)/10], rounded down. • Atgasedd Doll's attack rotation always follows and repeats the above cycle; re-equipping Atgasedd Doll will not reset its rotation.",
     "alsoSee": [],
     "tags": [
       "pet",
       "fea"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-babmuu",
@@ -2309,7 +2309,6 @@
       "FIR",
       "STO"
     ],
-    "specialMarkers": [],
     "level": "17",
     "damage": "10-15",
     "stats": "None",
@@ -2345,7 +2344,8 @@
       "pet",
       "fir",
       "sto"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-baby-chimera",
@@ -2358,7 +2358,6 @@
       "FIR",
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "1",
     "damage": "Scaled, rounded upMin: [(Player's level)*2/5 - 10], bounded below 1",
     "stats": "None",
@@ -2402,13 +2401,14 @@
     "evolutions": [],
     "releaseDate": "March 2nd, 2018",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22316511",
-    "notes": "Pet is animated; its head and front paw move slightly, while its snake tail writhes and hisses continuously. • Silver for image and rate information. • Shiny Underpants for additional damage information. • Verlyrus for updated defense buff formula information. • Cryoam, Firefly, and LouisCyphere for original defense buff formula information. • BluuHorseOfficial for information.",
+    "notes": "Pet is animated; its head and front paw move slightly, while its snake tail writhes and hisses continuously.",
     "alsoSee": [],
     "tags": [
       "pet",
       "fir",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-baby-dracolich-pet-all-versions",
@@ -2420,7 +2420,6 @@
     "elements": [
       "DAR"
     ],
-    "specialMarkers": [],
     "level": "10",
     "damage": "8-15",
     "stats": "Block +2, Crit +2",
@@ -2449,7 +2448,8 @@
     "tags": [
       "pet",
       "dar"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-baby-kraken-i-vi",
@@ -2461,7 +2461,6 @@
     "elements": [
       "WAT"
     ],
-    "specialMarkers": [],
     "level": "10",
     "damage": "4-14",
     "stats": "Crit +1, Bonus +1",
@@ -2490,7 +2489,8 @@
     "tags": [
       "pet",
       "wat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-baby-splashy",
@@ -2502,7 +2502,6 @@
     "elements": [
       "WAT"
     ],
-    "specialMarkers": [],
     "level": "5",
     "damage": "5-14",
     "stats": "None",
@@ -2537,7 +2536,8 @@
     "tags": [
       "pet",
       "wat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-babyweaver-i-vi",
@@ -2549,7 +2549,6 @@
     "elements": [
       "DAR"
     ],
-    "specialMarkers": [],
     "level": "10",
     "damage": "4-14",
     "stats": "Crit +1, Bonus +1",
@@ -2584,7 +2583,8 @@
     "tags": [
       "pet",
       "dar"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-balloon-chickencow-pet-all-versions",
@@ -2596,7 +2596,6 @@
     "elements": [
       "WIN"
     ],
-    "specialMarkers": [],
     "level": "1",
     "damage": "3-9",
     "stats": "None",
@@ -2625,7 +2624,8 @@
     "tags": [
       "pet",
       "win"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-baron-kitten-cat",
@@ -2637,7 +2637,6 @@
     "elements": [
       "LIG"
     ],
-    "specialMarkers": [],
     "level": "15",
     "damage": "6-16",
     "stats": "None",
@@ -2672,7 +2671,8 @@
     "tags": [
       "pet",
       "lig"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-batoro",
@@ -2684,7 +2684,6 @@
     "elements": [
       "DAR"
     ],
-    "specialMarkers": [],
     "level": "As player",
     "damage": "Scaled",
     "stats": "None",
@@ -2703,12 +2702,13 @@
     "releaseDate": "September 21st, 2012",
     "imageUrl": "https://i.imgur.com/OrjlrpG.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20722177",
-    "notes": "Batoro's stun duration was lowered from 2 turns to 1 turn on February 28th, 2020; more information can be found in the  February 28th, 2020 Design Notes. • Jay for image, skill buttons, and corrections. • Rubioalto for updated stun duration.",
+    "notes": "Batoro's stun duration was lowered from 2 turns to 1 turn on February 28th, 2020; more information can be found in the  February 28th, 2020 Design Notes.",
     "alsoSee": [],
     "tags": [
       "pet",
       "dar"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-battle-piggy",
@@ -2720,7 +2720,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "3",
     "damage": "1-5",
     "stats": "None",
@@ -2749,7 +2748,8 @@
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-belle",
@@ -2761,7 +2761,6 @@
     "elements": [
       "FEA"
     ],
-    "specialMarkers": [],
     "level": "As player",
     "damage": "Scaled",
     "stats": "None",
@@ -2784,7 +2783,8 @@
     "tags": [
       "pet",
       "fea"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-bitty-squishie",
@@ -2796,7 +2796,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "30",
     "damage": "9-15",
     "stats": "None",
@@ -2861,7 +2860,8 @@
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-black-ice-pwny",
@@ -2873,7 +2873,6 @@
     "elements": [
       "ICE"
     ],
-    "specialMarkers": [],
     "level": "1",
     "damage": "3-13",
     "stats": "Crit +1",
@@ -2898,12 +2897,13 @@
     "evolutions": [],
     "releaseDate": "January 1st, 2007",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=7579805",
-    "notes": "Transformed from  Large Dragon Gift Box on  January 1st, 2007. • Alternative Image • someoneguy577 for alternative image. • Karika for attack info. • Stephen Nix for main and attack images, corrections. • Slayer Zach for correction. • NyxAbend for new image.",
+    "notes": "Transformed from  Large Dragon Gift Box on  January 1st, 2007. • Alternative Image • someoneguy577 for alternative image.",
     "alsoSee": [],
     "tags": [
       "pet",
       "ice"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-blueberry-ghost-tog",
@@ -2916,7 +2916,6 @@
       "CUR",
       "FIR"
     ],
-    "specialMarkers": [],
     "level": "45",
     "damage": "17-20",
     "stats": "END +5, CHA +5, LUK +5",
@@ -2952,7 +2951,8 @@
       "pet",
       "cur",
       "fir"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-bonehead",
@@ -2964,7 +2964,6 @@
     "elements": [
       "DAR"
     ],
-    "specialMarkers": [],
     "level": "20",
     "damage": "15-15",
     "stats": "Crit +1, Bonus +1",
@@ -3001,7 +3000,7 @@
     "evolutions": [],
     "releaseDate": "November 22nd, 2017",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22302288",
-    "notes": "Pet is animated; it moves its tail, wings, head, and other parts of its body periodically. • Silver for image and rate information. • Jay for attack type images and information, other information, also see links, and corrections. • Andlu and Baron Dante for attack type information. • fxmybrute13 for information and correction. • LouisCyphere for information.",
+    "notes": "Pet is animated; it moves its tail, wings, head, and other parts of its body periodically.",
     "alsoSee": [
       {
         "name": "Adorable Baby Dracolich Pet (All Versions)",
@@ -3022,7 +3021,8 @@
     "tags": [
       "pet",
       "dar"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-boo-boo-bear-cub",
@@ -3034,7 +3034,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "50",
     "damage": "12-18",
     "stats": "None",
@@ -3105,7 +3104,8 @@
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-boxzar",
@@ -3117,7 +3117,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "60",
     "damage": "18-24",
     "stats": "None",
@@ -3147,7 +3146,8 @@
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-bravesirrobin-kitten-cat",
@@ -3159,7 +3159,6 @@
     "elements": [
       "SIL"
     ],
-    "specialMarkers": [],
     "level": "15",
     "damage": "6-16",
     "stats": "None",
@@ -3194,7 +3193,8 @@
     "tags": [
       "pet",
       "sil"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-braydenball-all-versions",
@@ -3206,7 +3206,6 @@
     "elements": [
       "???"
     ],
-    "specialMarkers": [],
     "level": "8",
     "damage": "3-20",
     "stats": "None",
@@ -3247,7 +3246,8 @@
     "tags": [
       "pet",
       "???"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-brigadier-general-butterbomb",
@@ -3259,7 +3259,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "30",
     "damage": "14-18",
     "stats": "None",
@@ -3376,7 +3375,8 @@
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-bright-fireflies",
@@ -3388,7 +3388,6 @@
     "elements": [
       "LIG"
     ],
-    "specialMarkers": [],
     "level": "30",
     "damage": "14-18",
     "stats": "None",
@@ -3439,7 +3438,8 @@
     "tags": [
       "pet",
       "lig"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-brightwing",
@@ -3451,7 +3451,6 @@
     "elements": [
       "LIG"
     ],
-    "specialMarkers": [],
     "level": "10",
     "damage": "5-13",
     "stats": "Crit +2",
@@ -3493,7 +3492,8 @@
     "tags": [
       "pet",
       "lig"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-bubble",
@@ -3505,7 +3505,6 @@
     "elements": [
       "LIG"
     ],
-    "specialMarkers": [],
     "level": "As player",
     "damage": "Scaled",
     "stats": "None",
@@ -3529,7 +3528,8 @@
     "tags": [
       "pet",
       "lig"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-bug-kid",
@@ -3541,7 +3541,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "2",
     "damage": "8-12",
     "stats": "None",
@@ -3563,7 +3562,8 @@
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-candemini-all-versions",
@@ -3575,7 +3575,6 @@
     "elements": [
       "POI"
     ],
-    "specialMarkers": [],
     "level": "10",
     "damage": "7-8",
     "stats": "Crit +1",
@@ -3610,7 +3609,8 @@
     "tags": [
       "pet",
       "poi"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-cannon",
@@ -3622,7 +3622,6 @@
     "elements": [
       "FIR"
     ],
-    "specialMarkers": [],
     "level": "20",
     "damage": "6-15",
     "stats": "None",
@@ -3651,7 +3650,8 @@
     "tags": [
       "pet",
       "fir"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-captain-lestrad",
@@ -3663,7 +3663,6 @@
     "elements": [
       "MET"
     ],
-    "specialMarkers": [],
     "level": "As player",
     "damage": "Scaled",
     "stats": "None",
@@ -3686,7 +3685,8 @@
     "tags": [
       "pet",
       "met"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-captured-sneegion-minion-all-versions",
@@ -3698,7 +3698,6 @@
     "elements": [
       "EVI"
     ],
-    "specialMarkers": [],
     "level": "10",
     "damage": "5-11",
     "stats": "None",
@@ -3727,7 +3726,8 @@
     "tags": [
       "pet",
       "evi"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-caran",
@@ -3740,7 +3740,6 @@
       "DAR",
       "EVI"
     ],
-    "specialMarkers": [],
     "level": "As player",
     "damage": "Scaled",
     "stats": "None",
@@ -3771,7 +3770,8 @@
       "pet",
       "dar",
       "evi"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-caravaner",
@@ -3783,7 +3783,6 @@
     "elements": [
       "EVI"
     ],
-    "specialMarkers": [],
     "level": "As player",
     "damage": "Scaled",
     "stats": "None",
@@ -3807,7 +3806,8 @@
     "tags": [
       "pet",
       "evi"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-charged-rummage",
@@ -3820,7 +3820,6 @@
       "ENE",
       "MET"
     ],
-    "specialMarkers": [],
     "level": "30",
     "damage": "14-18",
     "stats": "Crit +1",
@@ -3851,7 +3850,7 @@
     "evolutions": [],
     "releaseDate": "August 14th, 2009",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19412186",
-    "notes": "If Attack Type 2 was used again prior to 'Blind' expiring, it will be reapplied to target for 2 turns. • Ash for original entry. • pjc for information. • TheChosen1, Jay, Barong the DemiGod, and Baltheon for corrections. • DemonicDarkwraith for other information and corrections.",
+    "notes": "If Attack Type 2 was used again prior to 'Blind' expiring, it will be reapplied to target for 2 turns. • Ash for original entry.",
     "alsoSee": [
       {
         "name": "Rummage",
@@ -3873,7 +3872,8 @@
       "pet",
       "ene",
       "met"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-charko",
@@ -3885,7 +3885,6 @@
     "elements": [
       "WAT"
     ],
-    "specialMarkers": [],
     "level": "10",
     "damage": "5-10",
     "stats": "None",
@@ -3920,7 +3919,8 @@
     "tags": [
       "pet",
       "wat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-cheese-seller",
@@ -3932,7 +3932,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "15",
     "damage": "Scaled",
     "stats": "None",
@@ -3955,7 +3954,8 @@
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-cherry-ghost-tog",
@@ -3968,7 +3968,6 @@
       "CUR",
       "FIR"
     ],
-    "specialMarkers": [],
     "level": "30",
     "damage": "13-19",
     "stats": "END +5, CHA +5, LUK +5",
@@ -4004,7 +4003,8 @@
       "pet",
       "cur",
       "fir"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-cheshire-twilly-i-iv",
@@ -4016,7 +4016,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "20",
     "damage": "8-19",
     "stats": "Crit +1, Bonus +1",
@@ -4051,7 +4050,8 @@
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-chickcalf",
@@ -4063,7 +4063,6 @@
     "elements": [
       "BAC"
     ],
-    "specialMarkers": [],
     "level": "20",
     "damage": "10-16",
     "stats": "None",
@@ -4094,7 +4093,7 @@
     "evolutions": [],
     "releaseDate": "April 17th, 2009",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15865269",
-    "notes": "Pet is animated; it blinks, looks upwards, preens, and pecks at the ground sporadically. • Silver for image. • Jay for attack type image, also see links, and corrections. • Cellblock for other information. • srinivas for information. • Peachii for correction.",
+    "notes": "Pet is animated; it blinks, looks upwards, preens, and pecks at the ground sporadically.",
     "alsoSee": [
       {
         "name": "Armored Chickcalf (I-VII)",
@@ -4120,7 +4119,8 @@
     "tags": [
       "pet",
       "bac"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-chillwing",
@@ -4132,7 +4132,6 @@
     "elements": [
       "ICE"
     ],
-    "specialMarkers": [],
     "level": "60",
     "damage": "18-25",
     "stats": "Crit +5, WIS +5, END +5",
@@ -4174,7 +4173,8 @@
     "tags": [
       "pet",
       "ice"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-chocolate-bunny-all-versions",
@@ -4186,7 +4186,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "1",
     "damage": "1-4",
     "stats": "None",
@@ -4221,7 +4220,8 @@
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-chompers-the-piranha-all-versions",
@@ -4233,7 +4233,6 @@
     "elements": [
       "WAT"
     ],
-    "specialMarkers": [],
     "level": "20",
     "damage": "8-19",
     "stats": "None",
@@ -4262,7 +4261,8 @@
     "tags": [
       "pet",
       "wat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-chronology-of-pets-guests",
@@ -4272,7 +4272,6 @@
     "description": "Currently owned by:  Stephen Nix",
     "daRequired": false,
     "elements": [],
-    "specialMarkers": [],
     "level": "Unknown",
     "damage": "Unknown",
     "stats": "None",
@@ -4286,7 +4285,8 @@
     "alsoSee": [],
     "tags": [
       "pet"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-cinder",
@@ -4298,7 +4298,6 @@
     "elements": [
       "FIR"
     ],
-    "specialMarkers": [],
     "level": "1",
     "damage": "1-3",
     "stats": "None",
@@ -4324,12 +4323,13 @@
     "evolutions": [],
     "releaseDate": "August 30th, 2006",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=6205964",
-    "notes": "Pet is animated; Cinder's body's flames burn continuously. • Jay for images, other information, and corrections. • The 13th for initial entry reformat. • LightningIsMyName, Lord_asparagus, and Slizer for information.",
+    "notes": "Pet is animated; Cinder's body's flames burn continuously.",
     "alsoSee": [],
     "tags": [
       "pet",
       "fir"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-clockwork-tog",
@@ -4341,7 +4341,6 @@
     "elements": [
       "MET"
     ],
-    "specialMarkers": [],
     "level": "10",
     "damage": "4-13",
     "stats": "Crit +1",
@@ -4367,7 +4366,7 @@
     "evolutions": [],
     "releaseDate": "September 21st, 2006",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=6482534",
-    "notes": "Pet is animated; its drill bit tongue rapidly rotates continuously. • Jay for image, attack type image, and other information. • ILmaster 13 for entry reformat. • bezima, Denzera, QueenBowie, and Stephen Nix for information. • Peachii for corrections.",
+    "notes": "Pet is animated; its drill bit tongue rapidly rotates continuously.",
     "alsoSee": [
       {
         "name": "Rare Clockwork Tog",
@@ -4388,7 +4387,8 @@
     "tags": [
       "pet",
       "met"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-clyde-the-carrier-turtle-all-versions",
@@ -4400,7 +4400,6 @@
     "elements": [
       "STO"
     ],
-    "specialMarkers": [],
     "level": "33",
     "damage": "9-15",
     "stats": "None",
@@ -4429,7 +4428,8 @@
     "tags": [
       "pet",
       "sto"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-coaleptimini",
@@ -4441,7 +4441,6 @@
     "elements": [
       "STO"
     ],
-    "specialMarkers": [],
     "level": "1",
     "damage": "Scaled, rounded upMin: [Level*2/5 - 10], bounded below 1",
     "stats": "None",
@@ -4478,12 +4477,13 @@
     "evolutions": [],
     "releaseDate": "January 4th, 2021",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22387543",
-    "notes": "Pet is animated; it sways back and forth in place. • Silver for image and correction. • Jay for attack type images and other information. • Solanaceae for scaling information.",
+    "notes": "Pet is animated; it sways back and forth in place.",
     "alsoSee": [],
     "tags": [
       "pet",
       "sto"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-coggy-all-versions",
@@ -4495,7 +4495,6 @@
     "elements": [
       "ENE"
     ],
-    "specialMarkers": [],
     "level": "10",
     "damage": "5-11",
     "stats": "None",
@@ -4530,7 +4529,8 @@
     "tags": [
       "pet",
       "ene"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-colonel-butterbomb",
@@ -4542,7 +4542,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "25",
     "damage": "12-17",
     "stats": "None",
@@ -4659,7 +4658,8 @@
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-cordemi-battledrone",
@@ -4671,7 +4671,6 @@
     "elements": [
       "ENE"
     ],
-    "specialMarkers": [],
     "level": "7",
     "damage": "7-17",
     "stats": "None",
@@ -4700,7 +4699,8 @@
     "tags": [
       "pet",
       "ene"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-cordial-all-versions",
@@ -4712,7 +4712,6 @@
     "elements": [
       "ICE"
     ],
-    "specialMarkers": [],
     "level": "10",
     "damage": "5-9",
     "stats": "None",
@@ -4748,7 +4747,8 @@
     "tags": [
       "pet",
       "ice"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-corporal-butterbomb",
@@ -4760,7 +4760,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "20",
     "damage": "10-13",
     "stats": "None",
@@ -4877,7 +4876,8 @@
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-crabastian-i-ii-iii",
@@ -4889,7 +4889,6 @@
     "elements": [
       "WAT"
     ],
-    "specialMarkers": [],
     "level": "10",
     "damage": "6-12",
     "stats": "Crit +3",
@@ -4918,7 +4917,8 @@
     "tags": [
       "pet",
       "wat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-cranix",
@@ -4928,9 +4928,6 @@
     "description": "As character",
     "daRequired": false,
     "elements": [],
-    "specialMarkers": [
-      "A/C"
-    ],
     "level": "As character",
     "damage": "As character",
     "stats": "None",
@@ -4953,6 +4950,9 @@
     "tags": [
       "pet",
       "a-c"
+    ],
+    "traits": [
+      "A/C"
     ]
   },
   {
@@ -4965,7 +4965,6 @@
     "elements": [
       "DAR"
     ],
-    "specialMarkers": [],
     "level": "30",
     "damage": "9-15",
     "stats": "None",
@@ -5000,7 +4999,8 @@
     "tags": [
       "pet",
       "dar"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-cuddly-bear-cub",
@@ -5012,7 +5012,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "70",
     "damage": "17-25",
     "stats": "None",
@@ -5083,7 +5082,8 @@
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-cuddly-dracolich-all-versions",
@@ -5095,7 +5095,6 @@
     "elements": [
       "DAR"
     ],
-    "specialMarkers": [],
     "level": "30",
     "damage": "9-15",
     "stats": "Crit +2, Bonus +2",
@@ -5130,7 +5129,8 @@
     "tags": [
       "pet",
       "dar"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-cysero-s-agitated-orb-all-versions",
@@ -5143,7 +5143,6 @@
       "ENE",
       "FIR"
     ],
-    "specialMarkers": [],
     "level": "35",
     "damage": "16-20",
     "stats": "None",
@@ -5179,7 +5178,8 @@
       "pet",
       "ene",
       "fir"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-daimyo",
@@ -5191,7 +5191,6 @@
     "elements": [
       "LIG"
     ],
-    "specialMarkers": [],
     "level": "As player",
     "damage": "Scaled",
     "stats": "None",
@@ -5214,7 +5213,8 @@
     "tags": [
       "pet",
       "lig"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-dain-lorilann",
@@ -5224,9 +5224,6 @@
     "description": "As character",
     "daRequired": false,
     "elements": [],
-    "specialMarkers": [
-      "A/C"
-    ],
     "level": "As character",
     "damage": "As character",
     "stats": "None",
@@ -5249,6 +5246,9 @@
     "tags": [
       "pet",
       "a-c"
+    ],
+    "traits": [
+      "A/C"
     ]
   },
   {
@@ -5261,7 +5261,6 @@
     "elements": [
       "MET"
     ],
-    "specialMarkers": [],
     "level": "As player",
     "damage": "Scaled",
     "stats": "None",
@@ -5290,7 +5289,8 @@
     "tags": [
       "pet",
       "met"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-dandytiger",
@@ -5302,7 +5302,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "1",
     "damage": "1-4",
     "stats": "None",
@@ -5337,7 +5336,8 @@
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-deatharrows-kitten-cat",
@@ -5349,7 +5349,6 @@
     "elements": [
       "DAR"
     ],
-    "specialMarkers": [],
     "level": "15",
     "damage": "6-16",
     "stats": "None",
@@ -5384,7 +5383,8 @@
     "tags": [
       "pet",
       "dar"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-decadere-youngling-all-versions",
@@ -5396,7 +5396,6 @@
     "elements": [
       "???"
     ],
-    "specialMarkers": [],
     "level": "10",
     "damage": "8-12",
     "stats": "Crit +1",
@@ -5425,7 +5424,8 @@
     "tags": [
       "pet",
       "???"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-dementon",
@@ -5437,7 +5437,6 @@
     "elements": [
       "DAR"
     ],
-    "specialMarkers": [],
     "level": "3",
     "damage": "1-5",
     "stats": "None",
@@ -5463,12 +5462,13 @@
     "evolutions": [],
     "releaseDate": "August 30th, 2006",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=6206204",
-    "notes": "Pet is animated; the Dementon bounces with energy continuously. • Jay for images and corrections. • The 13th for initial entry reformat. • Karika and Peachii for corrections.",
+    "notes": "Pet is animated; the Dementon bounces with energy continuously.",
     "alsoSee": [],
     "tags": [
       "pet",
       "dar"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-derpfish-all-versions",
@@ -5480,7 +5480,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "1",
     "damage": "1-4",
     "stats": "CHA +1, LUK +1",
@@ -5509,7 +5508,8 @@
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-diawe",
@@ -5522,7 +5522,6 @@
       "DAR",
       "EVI"
     ],
-    "specialMarkers": [],
     "level": "As player",
     "damage": "Scaled",
     "stats": "None",
@@ -5553,7 +5552,8 @@
       "pet",
       "dar",
       "evi"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-donovan",
@@ -5565,7 +5565,6 @@
     "elements": [
       "MET"
     ],
-    "specialMarkers": [],
     "level": "As player",
     "damage": "Scaled",
     "stats": "None",
@@ -5588,7 +5587,8 @@
     "tags": [
       "pet",
       "met"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-doom-dirt",
@@ -5598,9 +5598,6 @@
     "description": "The dirtiest pet you'll ever get! A souvenir from meeting the Artix Entertainment team at Dragon*Con 2009! It was great to meet you!",
     "daRequired": false,
     "elements": [],
-    "specialMarkers": [
-      "N/A"
-    ],
     "level": "1",
     "damage": "1-30",
     "stats": "Magic Def -5, Pierce Def -5, Melee Def -5, INT +5, DEX +5, STR +5, Bonus +5",
@@ -5625,11 +5622,14 @@
     "evolutions": [],
     "releaseDate": "September 14th, 2009",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17411866",
-    "notes": "Pet has a 10% chance to display one of the following message pop-ups during its turn, at random: • quote: • Cysero paints with dirty spoons. How? You don't want to know. • Dirt on. wipe off. • Do you feel lucky? Well-do ya? • Don't look now but the monster is winning! • Don't tread on me! • DOOOOOOOOOOOOM! • Everyone underestimates the Doom Dirt! • It's a dirty job but someone's got to do it. • Nythera puts dirt in Warlic's coffee. • Only a mother could love Noxus' face. • Vayle and Artix sitting in a tree! • Yes I'm talking. Wanna make something of it? • Your shoe's untied.Pet is animated; it sparkles continuously. • Jay for image, attack type images, and updated entry information. • Peachii for correction.",
+    "notes": "Pet has a 10% chance to display one of the following message pop-ups during its turn, at random: • quote: • Cysero paints with dirty spoons. How? You don't want to know. • Dirt on. wipe off. • Do you feel lucky? Well-do ya? • Don't look now but the monster is winning! • Don't tread on me! • DOOOOOOOOOOOOM! • Everyone underestimates the Doom Dirt! • It's a dirty job but someone's got to do it. • Nythera puts dirt in Warlic's coffee. • Only a mother could love Noxus' face. • Vayle and Artix sitting in a tree! • Yes I'm talking. Wanna make something of it? • Your shoe's untied.Pet is animated; it sparkles continuously.",
     "alsoSee": [],
     "tags": [
       "pet",
       "n-a"
+    ],
+    "traits": [
+      "N/A"
     ]
   },
   {
@@ -5642,7 +5642,6 @@
     "elements": [
       "DAR"
     ],
-    "specialMarkers": [],
     "level": "30",
     "damage": "14-18",
     "stats": "None",
@@ -5671,7 +5670,8 @@
     "tags": [
       "pet",
       "dar"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-doom-figmini",
@@ -5683,7 +5683,6 @@
     "elements": [
       "EVI"
     ],
-    "specialMarkers": [],
     "level": "1",
     "damage": "Scaled, rounded upMin: [(Player's level)*2/5 - 10], bounded below 1",
     "stats": "Crit +5, Bonus +5",
@@ -5721,12 +5720,13 @@
     "evolutions": [],
     "releaseDate": "November 2nd, 2018",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22345707",
-    "notes": "Doom Figmini originally attacked with Fear element (original  Attack Type 1 and  Attack Type 2 appearances), however this was changed to Evil element on the day following its release. • Pet is animated; evil doom energy flares and swirls around it continuously. • Silver for image and damage scaling information. • Alm Nullamors for correction.",
+    "notes": "Doom Figmini originally attacked with Fear element (original  Attack Type 1 and  Attack Type 2 appearances), however this was changed to Evil element on the day following its release. • Pet is animated; evil doom energy flares and swirls around it continuously.",
     "alsoSee": [],
     "tags": [
       "pet",
       "evi"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-dracabbit-i-viii",
@@ -5738,7 +5738,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "1",
     "damage": "1-5",
     "stats": "Crit +1",
@@ -5767,7 +5766,8 @@
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-drellie-all-versions",
@@ -5779,7 +5779,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "1",
     "damage": "5-13",
     "stats": "None",
@@ -5814,7 +5813,8 @@
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-ebil-love-i-vii",
@@ -5826,7 +5826,6 @@
     "elements": [
       "DAR"
     ],
-    "specialMarkers": [],
     "level": "10",
     "damage": "5-13",
     "stats": "None",
@@ -5855,7 +5854,8 @@
     "tags": [
       "pet",
       "dar"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-eirn",
@@ -5867,7 +5867,6 @@
     "elements": [
       "ENE"
     ],
-    "specialMarkers": [],
     "level": "As player",
     "damage": "Scaled",
     "stats": "None",
@@ -5895,7 +5894,8 @@
     "tags": [
       "pet",
       "ene"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-elgert",
@@ -5905,9 +5905,6 @@
     "description": "As character",
     "daRequired": false,
     "elements": [],
-    "specialMarkers": [
-      "A/C"
-    ],
     "level": "As character",
     "damage": "As character",
     "stats": "None",
@@ -5930,6 +5927,9 @@
     "tags": [
       "pet",
       "a-c"
+    ],
+    "traits": [
+      "A/C"
     ]
   },
   {
@@ -5941,9 +5941,6 @@
     "daRequired": false,
     "elements": [
       "ICE"
-    ],
-    "specialMarkers": [
-      "SHR"
     ],
     "level": "29",
     "damage": "5-20",
@@ -5989,7 +5986,7 @@
     "evolutions": [],
     "releaseDate": "November 10th, 2006",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18762272",
-    "notes": "If the target's Shrink Resist (inclusive of All Resist) is greater than an unknown second roll value, it will resist the shrinking effect. (Pop-up: Linus tries... but  resists!)Attack Type 2 previously renamed targets 'Shrunken '; due to its potential to break battle mechanics, this was removed on  July 3rd, 2020. • Despite requiring a DC item to obtain, the Platinum Penguin Shrink Ray merge version of this pet is not DC tagged, thus ineligible for free storage. • Pet is animated; it sways back and forth continuously. • Silver for image. • Jay for attack type images and information, combine information, other information, and corrections. • Cheese for original entry. • Stephen Nix and The 13th for entry formatting. • ILmaster13 and zeke50100 for description information. • Andy8, Keldorn2198, senomi15, and Zystral for information. • AstralCodex and Peachii for corrections.",
+    "notes": "If the target's Shrink Resist (inclusive of All Resist) is greater than an unknown second roll value, it will resist the shrinking effect. (Pop-up: Linus tries... but  resists!)Attack Type 2 previously renamed targets 'Shrunken '; due to its potential to break battle mechanics, this was removed on  July 3rd, 2020. • Despite requiring a DC item to obtain, the Platinum Penguin Shrink Ray merge version of this pet is not DC tagged, thus ineligible for free storage. • Pet is animated; it sways back and forth continuously.",
     "alsoSee": [
       {
         "name": "Linus",
@@ -6011,6 +6008,9 @@
       "pet",
       "ice",
       "shr"
+    ],
+    "traits": [
+      "SHR"
     ]
   },
   {
@@ -6023,7 +6023,6 @@
     "elements": [
       "???"
     ],
-    "specialMarkers": [],
     "level": "As player",
     "damage": "Scaled",
     "stats": "None",
@@ -6046,7 +6045,8 @@
     "tags": [
       "pet",
       "???"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-extra-fluffy-tog-extreme",
@@ -6058,7 +6058,6 @@
     "elements": [
       "EBI"
     ],
-    "specialMarkers": [],
     "level": "90",
     "damage": "27-32",
     "stats": "CHA +200, Bonus +20",
@@ -6114,12 +6113,13 @@
     "evolutions": [],
     "releaseDate": "January 8th, 2022",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22399734",
-    "notes": "Attack Types 1 and 2 will only be used while the player has greater than 90% of their maximum HP remaining. (Rate: 50% each) • Attack Types 3 and 4 will only be used while the player has less than or equal to 90% of their maximum HP remaining. (Rate: {[100 - (Player's CHA)/4]/2}% each) • Silver for image. • Jay for rate information and corrections.",
+    "notes": "Attack Types 1 and 2 will only be used while the player has greater than 90% of their maximum HP remaining. (Rate: 50% each) • Attack Types 3 and 4 will only be used while the player has less than or equal to 90% of their maximum HP remaining. (Rate: {[100 - (Player's CHA)/4]/2}% each)",
     "alsoSee": [],
     "tags": [
       "pet",
       "ebi"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-extra-fluffy-tog-i-ii-iii",
@@ -6131,7 +6131,6 @@
     "elements": [
       "EBI"
     ],
-    "specialMarkers": [],
     "level": "30",
     "damage": "15-20",
     "stats": "CHA +200, Bonus +20",
@@ -6185,7 +6184,8 @@
     "tags": [
       "pet",
       "ebi"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-fat-werepup-all-versions",
@@ -6197,7 +6197,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "10",
     "damage": "5-10",
     "stats": "None",
@@ -6232,7 +6231,8 @@
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-faust",
@@ -6244,7 +6244,6 @@
     "elements": [
       "NON"
     ],
-    "specialMarkers": [],
     "level": "As player",
     "damage": "Unknown",
     "stats": "None",
@@ -6266,7 +6265,8 @@
     "tags": [
       "pet",
       "non"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-fiend",
@@ -6278,7 +6278,6 @@
     "elements": [
       "DAR"
     ],
-    "specialMarkers": [],
     "level": "20",
     "damage": "8-19",
     "stats": "None",
@@ -6313,7 +6312,8 @@
     "tags": [
       "pet",
       "dar"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-fierce-baron-cat",
@@ -6325,7 +6325,6 @@
     "elements": [
       "LIG"
     ],
-    "specialMarkers": [],
     "level": "70",
     "damage": "19-27",
     "stats": "None",
@@ -6366,7 +6365,8 @@
     "tags": [
       "pet",
       "lig"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-fierce-bravesirrobin-cat",
@@ -6378,7 +6378,6 @@
     "elements": [
       "SIL"
     ],
-    "specialMarkers": [],
     "level": "70",
     "damage": "19-27",
     "stats": "None",
@@ -6419,7 +6418,8 @@
     "tags": [
       "pet",
       "sil"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-fierce-deatharrows-cat",
@@ -6431,7 +6431,6 @@
     "elements": [
       "DAR"
     ],
-    "specialMarkers": [],
     "level": "70",
     "damage": "19-27",
     "stats": "None",
@@ -6472,7 +6471,8 @@
     "tags": [
       "pet",
       "dar"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-fierce-josh-cat",
@@ -6484,7 +6484,6 @@
     "elements": [
       "WAT"
     ],
-    "specialMarkers": [],
     "level": "70",
     "damage": "19-27",
     "stats": "None",
@@ -6525,7 +6524,8 @@
     "tags": [
       "pet",
       "wat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-fierce-lfal-cat",
@@ -6537,7 +6537,6 @@
     "elements": [
       "STO"
     ],
-    "specialMarkers": [],
     "level": "70",
     "damage": "19-27",
     "stats": "None",
@@ -6578,7 +6577,8 @@
     "tags": [
       "pet",
       "sto"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-fierce-prius-cat",
@@ -6590,7 +6590,6 @@
     "elements": [
       "ICE"
     ],
-    "specialMarkers": [],
     "level": "70",
     "damage": "19-27",
     "stats": "None",
@@ -6631,7 +6630,8 @@
     "tags": [
       "pet",
       "ice"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-fire-imp-all-versions",
@@ -6643,7 +6643,6 @@
     "elements": [
       "FIR"
     ],
-    "specialMarkers": [],
     "level": "25",
     "damage": "10-16",
     "stats": "Crit +1",
@@ -6678,7 +6677,8 @@
     "tags": [
       "pet",
       "fir"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-firehead-daisy",
@@ -6690,7 +6690,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "40",
     "damage": "13-19",
     "stats": "Crit +4, END +3",
@@ -6731,7 +6730,8 @@
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-fishberry-all-versions",
@@ -6743,7 +6743,6 @@
     "elements": [
       "ICE"
     ],
-    "specialMarkers": [],
     "level": "10",
     "damage": "5-9",
     "stats": "None",
@@ -6779,7 +6778,8 @@
     "tags": [
       "pet",
       "ice"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-fishmaster-icy",
@@ -6791,7 +6791,6 @@
     "elements": [
       "ICE"
     ],
-    "specialMarkers": [],
     "level": "10",
     "damage": "6-8",
     "stats": "None",
@@ -6873,7 +6872,8 @@
     "tags": [
       "pet",
       "ice"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-flare-imp-all-versions",
@@ -6885,7 +6885,6 @@
     "elements": [
       "FIR"
     ],
-    "specialMarkers": [],
     "level": "25",
     "damage": "10-16",
     "stats": "Crit +1",
@@ -6920,7 +6919,8 @@
     "tags": [
       "pet",
       "fir"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-flatasaurus",
@@ -6932,7 +6932,6 @@
     "elements": [
       "STO"
     ],
-    "specialMarkers": [],
     "level": "30",
     "damage": "12-20",
     "stats": "None",
@@ -6967,7 +6966,8 @@
     "tags": [
       "pet",
       "sto"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-flying-mogkee",
@@ -6979,7 +6979,6 @@
     "elements": [
       "DAR"
     ],
-    "specialMarkers": [],
     "level": "70",
     "damage": "19-23",
     "stats": "None",
@@ -7019,7 +7018,8 @@
     "tags": [
       "pet",
       "dar"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-fool-s-gold-tog",
@@ -7031,7 +7031,6 @@
     "elements": [
       "STO"
     ],
-    "specialMarkers": [],
     "level": "10",
     "damage": "5-10",
     "stats": "None",
@@ -7081,7 +7080,8 @@
     "tags": [
       "pet",
       "sto"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-frank",
@@ -7093,7 +7093,6 @@
     "elements": [
       "ICE"
     ],
-    "specialMarkers": [],
     "level": "80",
     "damage": "19-27",
     "stats": "None",
@@ -7175,7 +7174,8 @@
     "tags": [
       "pet",
       "ice"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-frogidile-all-versions",
@@ -7188,7 +7188,6 @@
       "FIR",
       "POI"
     ],
-    "specialMarkers": [],
     "level": "30",
     "damage": "13-19",
     "stats": "None",
@@ -7224,7 +7223,8 @@
       "pet",
       "fir",
       "poi"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-frost-pwny",
@@ -7236,7 +7236,6 @@
     "elements": [
       "ICE"
     ],
-    "specialMarkers": [],
     "level": "1",
     "damage": "3-10",
     "stats": "None",
@@ -7261,12 +7260,13 @@
     "evolutions": [],
     "releaseDate": "January 1st, 2007",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=7579680",
-    "notes": "Transformed from  Large Gift Box on  January 1st, 2007. • Alternative Image 1 • daisukeXdark, SeppukeKatanaHarata, and Karika. • gmill711 for the alternative image. • Stephen Nix for main and attack images, corrections. • Peachii for corrections. • Slayer Zach for correction.",
+    "notes": "Transformed from  Large Gift Box on  January 1st, 2007. • Alternative Image 1 • daisukeXdark, SeppukeKatanaHarata, and Karika. • gmill711 for the alternative image. • Stephen Nix for main and attack images, corrections.",
     "alsoSee": [],
     "tags": [
       "pet",
       "ice"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-frosty-fishguy",
@@ -7278,7 +7278,6 @@
     "elements": [
       "ICE"
     ],
-    "specialMarkers": [],
     "level": "20",
     "damage": "7-12",
     "stats": "None",
@@ -7360,7 +7359,8 @@
     "tags": [
       "pet",
       "ice"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-frosty-the-snowghoul-all-versions",
@@ -7372,7 +7372,6 @@
     "elements": [
       "ICE"
     ],
-    "specialMarkers": [],
     "level": "10",
     "damage": "5-13",
     "stats": "None",
@@ -7407,7 +7406,8 @@
     "tags": [
       "pet",
       "ice"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-fuzzy-bear-cub",
@@ -7419,7 +7419,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "60",
     "damage": "17-23",
     "stats": "None",
@@ -7490,7 +7489,8 @@
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-g-joob",
@@ -7502,7 +7502,6 @@
     "elements": [
       "MET"
     ],
-    "specialMarkers": [],
     "level": "20",
     "damage": "5-30",
     "stats": "None",
@@ -7521,12 +7520,13 @@
     "releaseDate": "November 14th, 2008",
     "imageUrl": "https://i.imgur.com/Oxdf5dZ.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15063185",
-    "notes": "G'joob will remain as a guest if you exit before quest completion. • 'Fish Slap' skill is currently bugged, causing his turn to stick. • Jay for image, skill buttons, and corrections. • golden1231 for entry rewrite. • Stephen Nix for corrections.",
+    "notes": "G'joob will remain as a guest if you exit before quest completion. • 'Fish Slap' skill is currently bugged, causing his turn to stick.",
     "alsoSee": [],
     "tags": [
       "pet",
       "met"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-galanoth-2",
@@ -7538,7 +7538,6 @@
     "elements": [
       "MET"
     ],
-    "specialMarkers": [],
     "level": "As player",
     "damage": "Scaled",
     "stats": "None",
@@ -7567,7 +7566,8 @@
     "tags": [
       "pet",
       "met"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-general-butterbomb",
@@ -7579,7 +7579,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "45",
     "damage": "16-21",
     "stats": "None",
@@ -7696,7 +7695,8 @@
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-geo",
@@ -7706,9 +7706,6 @@
     "description": "Bonuses: None",
     "daRequired": false,
     "elements": [],
-    "specialMarkers": [
-      "N/A"
-    ],
     "level": "1",
     "damage": "0-0",
     "stats": "None",
@@ -7737,6 +7734,9 @@
     "tags": [
       "pet",
       "n-a"
+    ],
+    "traits": [
+      "N/A"
     ]
   },
   {
@@ -7750,7 +7750,6 @@
       "DAR",
       "FIR"
     ],
-    "specialMarkers": [],
     "level": "1",
     "damage": "13-18",
     "stats": "None",
@@ -7786,7 +7785,8 @@
       "pet",
       "dar",
       "fir"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-gift-box",
@@ -7798,7 +7798,6 @@
     "elements": [
       "FIR"
     ],
-    "specialMarkers": [],
     "level": "1",
     "damage": "4-10",
     "stats": "None",
@@ -7830,7 +7829,7 @@
     "releaseDate": "December 25th, 2009",
     "imageUrl": "https://i.imgur.com/kXU9wNf.jpg",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17123181",
-    "notes": "Transformed from  Green Present (1) on  December 25th, 2009. • Alternative Image • Baron Dante for a correction. • Peachii for location. • Stephen Nix for attack descriptions. • Slayer Zach for correction. • NyxAbend and Occavatra for image.",
+    "notes": "Transformed from  Green Present (1) on  December 25th, 2009. • Alternative Image • Baron Dante for a correction. • Peachii for location.",
     "alsoSee": [
       {
         "name": "Magic Gift Box",
@@ -7851,7 +7850,8 @@
     "tags": [
       "pet",
       "fir"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-gilded-tog",
@@ -7863,7 +7863,6 @@
     "elements": [
       "STO"
     ],
-    "specialMarkers": [],
     "level": "30",
     "damage": "13-19",
     "stats": "None",
@@ -7913,7 +7912,8 @@
     "tags": [
       "pet",
       "sto"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-gingerbwead-all-versions",
@@ -7925,7 +7925,6 @@
     "elements": [
       "ICE"
     ],
-    "specialMarkers": [],
     "level": "10",
     "damage": "5-9",
     "stats": "None",
@@ -7961,7 +7960,8 @@
     "tags": [
       "pet",
       "ice"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-glowing-fireflies",
@@ -7973,7 +7973,6 @@
     "elements": [
       "LIG"
     ],
-    "specialMarkers": [],
     "level": "45",
     "damage": "17-20",
     "stats": "None",
@@ -8024,7 +8023,8 @@
     "tags": [
       "pet",
       "lig"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-gold-foil-tog",
@@ -8036,7 +8036,6 @@
     "elements": [
       "STO"
     ],
-    "specialMarkers": [],
     "level": "20",
     "damage": "10-13",
     "stats": "None",
@@ -8086,7 +8085,8 @@
     "tags": [
       "pet",
       "sto"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-gold-plated-tog",
@@ -8098,7 +8098,6 @@
     "elements": [
       "STO"
     ],
-    "specialMarkers": [],
     "level": "40",
     "damage": "16-20",
     "stats": "None",
@@ -8148,7 +8147,8 @@
     "tags": [
       "pet",
       "sto"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-golden-chickcalf-i-vii",
@@ -8160,7 +8160,6 @@
     "elements": [
       "BAC"
     ],
-    "specialMarkers": [],
     "level": "10",
     "damage": "5-13",
     "stats": "Crit +1, Bonus +1",
@@ -8195,7 +8194,8 @@
     "tags": [
       "pet",
       "bac"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-golden-egg-the",
@@ -8207,7 +8207,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "10",
     "damage": "8-12",
     "stats": "Crit +5, Bonus +12",
@@ -8248,7 +8247,8 @@
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-goldfish",
@@ -8260,7 +8260,6 @@
     "elements": [
       "WAT"
     ],
-    "specialMarkers": [],
     "level": "1",
     "damage": "1-3",
     "stats": "None",
@@ -8286,7 +8285,7 @@
     "evolutions": [],
     "releaseDate": "August 30th, 2006",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=6205933",
-    "notes": "Pet is animated; it hovers up and down in place. • Silver for image. • Jay for attack type images, other information, also see link, and corrections. • The 13th for initial entry reformat. • Peachii for corrections.",
+    "notes": "Pet is animated; it hovers up and down in place.",
     "alsoSee": [
       {
         "name": "Goldfish Knight (I-VII)",
@@ -8297,7 +8296,8 @@
     "tags": [
       "pet",
       "wat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-goldfish-knight-i-vii",
@@ -8309,7 +8309,6 @@
     "elements": [
       "WAT"
     ],
-    "specialMarkers": [],
     "level": "30",
     "damage": "11-11",
     "stats": "Crit +3, Bonus +2",
@@ -8350,7 +8349,8 @@
     "tags": [
       "pet",
       "wat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-gourdon-the-gourd-o-lantern-all-versions",
@@ -8363,7 +8363,6 @@
       "FIR",
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "5",
     "damage": "6-12",
     "stats": "None",
@@ -8405,7 +8404,8 @@
       "pet",
       "fir",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-great-white-charko",
@@ -8417,7 +8417,6 @@
     "elements": [
       "WAT"
     ],
-    "specialMarkers": [],
     "level": "10",
     "damage": "6-12",
     "stats": "None",
@@ -8452,7 +8451,8 @@
     "tags": [
       "pet",
       "wat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-greedling-pet-all-versions",
@@ -8464,7 +8464,6 @@
     "elements": [
       "DAR"
     ],
-    "specialMarkers": [],
     "level": "20",
     "damage": "10-17",
     "stats": "None",
@@ -8493,7 +8492,8 @@
     "tags": [
       "pet",
       "dar"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-greg",
@@ -8505,7 +8505,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "1",
     "damage": "9-17",
     "stats": "None",
@@ -8546,7 +8545,8 @@
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-grenwog-jr",
@@ -8558,7 +8558,6 @@
     "elements": [
       "BAC"
     ],
-    "specialMarkers": [],
     "level": "1",
     "damage": "Scaled, rounded downMin: 3.5*[SQRT(Player's level)]",
     "stats": "Crit +5, Bonus +5",
@@ -8595,12 +8594,13 @@
     "evolutions": [],
     "releaseDate": "March 23rd, 2018",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22318720",
-    "notes": "Pet is animated; it wiggles one of its paws continuously. • Silver for image, damage scaling information, other information, and corrections. • Jay for attack type images and other information. • BluuHorseOfficial and LouisCyphere for CHA formula information. • Greldracion and Greyor_42 for information.",
+    "notes": "Pet is animated; it wiggles one of its paws continuously.",
     "alsoSee": [],
     "tags": [
       "pet",
       "bac"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-grrol",
@@ -8612,7 +8612,6 @@
     "elements": [
       "MET"
     ],
-    "specialMarkers": [],
     "level": "20",
     "damage": "5-30",
     "stats": "None",
@@ -8631,12 +8630,13 @@
     "releaseDate": "November 14th, 2008",
     "imageUrl": "https://i.imgur.com/OKR66X0.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15062918",
-    "notes": "Grrol will remain as a guest if you exit before quest completion. • Jay for image, skill buttons, and corrections. • golden1231 for entry rewrite. • Stephen Nix for corrections.",
+    "notes": "Grrol will remain as a guest if you exit before quest completion.",
     "alsoSee": [],
     "tags": [
       "pet",
       "met"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-hacked-magi-drone",
@@ -8648,7 +8648,6 @@
     "elements": [
       "FEA"
     ],
-    "specialMarkers": [],
     "level": "1",
     "damage": "Scaled, rounded upMin: [(Player's level)*6/5 - 5], bounded below 1, capped at 100",
     "stats": "Crit +5, Bonus +5",
@@ -8680,12 +8679,13 @@
     "evolutions": [],
     "releaseDate": "December 7th, 2018",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22348973",
-    "notes": "Pet is animated; it hovers up and down in place, while its components twitch and blue energy flares from inside it continuously. • Silver for image, damage scaling information, and rate information. • Dratomos for entry information. • Solanaceae for Health Resist formula information.",
+    "notes": "Pet is animated; it hovers up and down in place, while its components twitch and blue energy flares from inside it continuously.",
     "alsoSee": [],
     "tags": [
       "pet",
       "fea"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-hawkarrot-all-versions",
@@ -8697,7 +8697,6 @@
     "elements": [
       "WIN"
     ],
-    "specialMarkers": [],
     "level": "40",
     "damage": "16-20",
     "stats": "None",
@@ -8726,7 +8725,8 @@
     "tags": [
       "pet",
       "win"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-heart-attack-bat",
@@ -8739,7 +8739,6 @@
       "ENE",
       "MET"
     ],
-    "specialMarkers": [],
     "level": "22",
     "damage": "10-16",
     "stats": "Crit +2, INT +3, STR +5",
@@ -8776,7 +8775,8 @@
       "pet",
       "ene",
       "met"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-hugrantula-all-versions",
@@ -8788,7 +8788,6 @@
     "elements": [
       "FIR"
     ],
-    "specialMarkers": [],
     "level": "12",
     "damage": "6-13",
     "stats": "Crit +2",
@@ -8825,7 +8824,8 @@
     "tags": [
       "pet",
       "fir"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-icecreammaster-fishi",
@@ -8837,7 +8837,6 @@
     "elements": [
       "ICE"
     ],
-    "specialMarkers": [],
     "level": "60",
     "damage": "15-21",
     "stats": "None",
@@ -8919,7 +8918,8 @@
     "tags": [
       "pet",
       "ice"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-icefish-sprinkleguy",
@@ -8931,7 +8931,6 @@
     "elements": [
       "ICE"
     ],
-    "specialMarkers": [],
     "level": "0",
     "damage": "1-1",
     "stats": "None",
@@ -9013,7 +9012,8 @@
     "tags": [
       "pet",
       "ice"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-icemaster-tasti",
@@ -9025,7 +9025,6 @@
     "elements": [
       "ICE"
     ],
-    "specialMarkers": [],
     "level": "1",
     "damage": "3-6",
     "stats": "None",
@@ -9107,7 +9106,8 @@
     "tags": [
       "pet",
       "ice"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-icemaster-yeti",
@@ -9119,7 +9119,6 @@
     "elements": [
       "ICE"
     ],
-    "specialMarkers": [],
     "level": "Scaled",
     "damage": "Scaled",
     "stats": "None",
@@ -9142,7 +9141,8 @@
     "tags": [
       "pet",
       "ice"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-icemaster-yummi",
@@ -9154,7 +9154,6 @@
     "elements": [
       "ICE"
     ],
-    "specialMarkers": [],
     "level": "30",
     "damage": "9-15",
     "stats": "None",
@@ -9236,7 +9235,8 @@
     "tags": [
       "pet",
       "ice"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-imaru",
@@ -9246,9 +9246,6 @@
     "description": "Human Pirate",
     "daRequired": false,
     "elements": [],
-    "specialMarkers": [
-      "ALA"
-    ],
     "level": "Scaled",
     "damage": "Scaled",
     "stats": "None",
@@ -9270,6 +9267,9 @@
     "tags": [
       "pet",
       "ala"
+    ],
+    "traits": [
+      "ALA"
     ]
   },
   {
@@ -9282,7 +9282,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "As player",
     "damage": "Scaled",
     "stats": "None",
@@ -9305,7 +9304,8 @@
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-itty-squishie",
@@ -9317,7 +9317,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "73",
     "damage": "17-25",
     "stats": "None",
@@ -9382,7 +9381,8 @@
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-jacksparrow",
@@ -9394,7 +9394,6 @@
     "elements": [
       "SIL"
     ],
-    "specialMarkers": [],
     "level": "30",
     "damage": "14-21",
     "stats": "None",
@@ -9429,7 +9428,8 @@
     "tags": [
       "pet",
       "sil"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-jimmy-the-eye-i-ii",
@@ -9442,7 +9442,6 @@
       "ENE",
       "WIN"
     ],
-    "specialMarkers": [],
     "level": "8",
     "damage": "6-11",
     "stats": "Crit +1, CHA +2",
@@ -9479,7 +9478,8 @@
       "pet",
       "ene",
       "win"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-josh-kitten-cat",
@@ -9491,7 +9491,6 @@
     "elements": [
       "WAT"
     ],
-    "specialMarkers": [],
     "level": "15",
     "damage": "6-16",
     "stats": "None",
@@ -9526,7 +9525,8 @@
     "tags": [
       "pet",
       "wat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-kara-sulema",
@@ -9538,7 +9538,6 @@
     "elements": [
       "WIN"
     ],
-    "specialMarkers": [],
     "level": "As player",
     "damage": "Scaled",
     "stats": "None",
@@ -9568,12 +9567,13 @@
     "evolutions": [],
     "releaseDate": "May 24th, 2013",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21290875",
-    "notes": "Kara SuLema was previously attainable from the following retired access point:  Facing Z -> Add Kara • Kara has a series of unconventional stats in the quests  Fate's Flow (Part 1) and  Fallen Facade; INT: 0, CHA: 0, LUK: 0, Crit: 5 • Kara SuLema's stun duration was lowered from 2 turns to 1 turn on  February 28th, 2020. • Fate's Flow (Part 1) Appearance • Jay for image, skill buttons, skill appearances, and corrections. • Rubioalto for updated stun duration. • DemonicDarkwraith for Fate's Flow (Part 1) image and other information. • Caststarter for corrections.",
+    "notes": "Kara SuLema was previously attainable from the following retired access point:  Facing Z -> Add Kara • Kara has a series of unconventional stats in the quests  Fate's Flow (Part 1) and  Fallen Facade; INT: 0, CHA: 0, LUK: 0, Crit: 5 • Kara SuLema's stun duration was lowered from 2 turns to 1 turn on  February 28th, 2020. • Fate's Flow (Part 1) Appearance",
     "alsoSee": [],
     "tags": [
       "pet",
       "win"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-kassandra",
@@ -9584,9 +9584,6 @@
     "daRequired": false,
     "elements": [
       "FEA"
-    ],
-    "specialMarkers": [
-      "W/S"
     ],
     "level": "As player",
     "damage": "Scaled",
@@ -9617,6 +9614,9 @@
       "pet",
       "fea",
       "w-s"
+    ],
+    "traits": [
+      "W/S"
     ]
   },
   {
@@ -9629,7 +9629,6 @@
     "elements": [
       "MET"
     ],
-    "specialMarkers": [],
     "level": "Scaled",
     "damage": "Scaled",
     "stats": "None",
@@ -9652,7 +9651,8 @@
     "tags": [
       "pet",
       "met"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-king-linus",
@@ -9663,9 +9663,6 @@
     "daRequired": false,
     "elements": [
       "ICE"
-    ],
-    "specialMarkers": [
-      "SHR"
     ],
     "level": "19",
     "damage": "2-16",
@@ -9724,7 +9721,7 @@
     ],
     "releaseDate": "November 14th, 2008",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18762263",
-    "notes": "If the target's Shrink Resist (inclusive of All Resist) is greater than an unknown second roll value, it will resist the shrinking effect. (Pop-up: Linus tries... but  resists!)Attack Type 2 previously renamed targets 'Shrunken '; due to its potential to break battle mechanics, this was removed on  July 3rd, 2020. • Despite requiring a DC item to obtain, the Platinum Penguin Shrink Ray merge version of this pet is not DC tagged, thus ineligible for free storage. • Pet is animated; it sways back and forth continuously. • Silver for image. • Jay for attack type images and information, combine information, other information, and corrections. • Cheese for original entry. • Stephen Nix and The 13th for entry formatting. • ILmaster13 and zeke50100 for description information. • Andy8, Keldorn2198, senomi15, and Zystral for information. • AstralCodex and Peachii for corrections.",
+    "notes": "If the target's Shrink Resist (inclusive of All Resist) is greater than an unknown second roll value, it will resist the shrinking effect. (Pop-up: Linus tries... but  resists!)Attack Type 2 previously renamed targets 'Shrunken '; due to its potential to break battle mechanics, this was removed on  July 3rd, 2020. • Despite requiring a DC item to obtain, the Platinum Penguin Shrink Ray merge version of this pet is not DC tagged, thus ineligible for free storage. • Pet is animated; it sways back and forth continuously.",
     "alsoSee": [
       {
         "name": "Linus",
@@ -9746,6 +9743,9 @@
       "pet",
       "ice",
       "shr"
+    ],
+    "traits": [
+      "SHR"
     ]
   },
   {
@@ -9759,7 +9759,6 @@
       "FIR",
       "MET"
     ],
-    "specialMarkers": [],
     "level": "As player",
     "damage": "Scaled",
     "stats": "None",
@@ -9777,13 +9776,14 @@
     "evolutions": [],
     "releaseDate": "June 22nd, 2012",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20422674",
-    "notes": "Skill button was updated on  May 15th, 2026, replacing  its old appearance. • Appearance • Attack • 3 hits x 100%  damage (300%) • Requirements: None • Effect: 3 hits of 100% damage, amounting to 300% damage. • Mana Cost: 0 • Cooldown: 0 • Damage Type: Melee • Appearance • #In the quest  The Merge, Konnan's Pierce Avoidance stat will instead be 0. • Konnan, named as Apprentice, was previously attainable from the following access points:  Dreamscape,  Nightmares, and  Forging. • In the quest  The Merge, his name will instead be Apprentice. • Konnan's appearance was updated on  February 20th, 2026. • 'Controlled Flames' skill was added on  May 15th, 2026. • Old Appearance • DemonicDarkwraith for images, skill buttons, skill appearance images, and corrections. • Jay for old Jab skill button and corrections. • Azan for correction.",
+    "notes": "Skill button was updated on  May 15th, 2026, replacing  its old appearance. • Appearance • Attack • 3 hits x 100%  damage (300%) • Requirements: None • Effect: 3 hits of 100% damage, amounting to 300% damage. • Mana Cost: 0 • Cooldown: 0 • Damage Type: Melee • Appearance • #In the quest  The Merge, Konnan's Pierce Avoidance stat will instead be 0. • Konnan, named as Apprentice, was previously attainable from the following access points:  Dreamscape,  Nightmares, and  Forging. • In the quest  The Merge, his name will instead be Apprentice. • Konnan's appearance was updated on  February 20th, 2026. • 'Controlled Flames' skill was added on  May 15th, 2026. • Old Appearance",
     "alsoSee": [],
     "tags": [
       "pet",
       "fir",
       "met"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-krampy",
@@ -9795,7 +9795,6 @@
     "elements": [
       "DAR"
     ],
-    "specialMarkers": [],
     "level": "1",
     "damage": "Scaled, rounded downMin: 6*[SQRT(Player's level)]",
     "stats": "None",
@@ -9831,7 +9830,8 @@
     "tags": [
       "pet",
       "dar"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-left-sock-pet",
@@ -9843,7 +9843,6 @@
     "elements": [
       "BAC"
     ],
-    "specialMarkers": [],
     "level": "1",
     "damage": "8-15",
     "stats": "None",
@@ -9868,12 +9867,13 @@
     "evolutions": [],
     "releaseDate": "September 2nd, 2008",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=14699122",
-    "notes": "Pet has Logic flavor resistance. • Pet is animated; it bounces up and down in place while standing. • Jay for image, resists information, other information, and corrections. • Rubioalto for attack type image. • geopetal for sellback information and rarity information. • Karika, nightslayer321, Sasuke Uchiha, and Stephen Nix for information. • Peachii for corrections.",
+    "notes": "Pet has Logic flavor resistance. • Pet is animated; it bounces up and down in place while standing.",
     "alsoSee": [],
     "tags": [
       "pet",
       "bac"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-lfal-kitten-cat",
@@ -9885,7 +9885,6 @@
     "elements": [
       "STO"
     ],
-    "specialMarkers": [],
     "level": "15",
     "damage": "6-16",
     "stats": "None",
@@ -9920,7 +9919,8 @@
     "tags": [
       "pet",
       "sto"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-li-l-inferno-i-v",
@@ -9932,7 +9932,6 @@
     "elements": [
       "FIR"
     ],
-    "specialMarkers": [],
     "level": "20",
     "damage": "10-16",
     "stats": "None",
@@ -9969,7 +9968,8 @@
     "tags": [
       "pet",
       "fir"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-li-l-squall-i-v",
@@ -9981,7 +9981,6 @@
     "elements": [
       "WIN"
     ],
-    "specialMarkers": [],
     "level": "20",
     "damage": "10-16",
     "stats": "None",
@@ -10010,7 +10009,8 @@
     "tags": [
       "pet",
       "win"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-li-l-typhoon-i-v",
@@ -10022,7 +10022,6 @@
     "elements": [
       "WAT"
     ],
-    "specialMarkers": [],
     "level": "20",
     "damage": "10-16",
     "stats": "None",
@@ -10051,7 +10050,8 @@
     "tags": [
       "pet",
       "wat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-lieutenant-general-butterbomb",
@@ -10063,7 +10063,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "40",
     "damage": "16-20",
     "stats": "None",
@@ -10180,7 +10179,8 @@
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-lieutenant-general-butterbomb-jr",
@@ -10192,7 +10192,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "40",
     "damage": "14-18",
     "stats": "None",
@@ -10224,7 +10223,7 @@
     "evolutions": [],
     "releaseDate": "November 20th, 2009",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20110369",
-    "notes": "Description erroneously claims this pet requires a Dragon Amulet. • Silver for image and rate information. • Jay for attack type images and corrections. • Brilliancy for original entry. • DragonBlade and ILmaster13 for entry reformat. • Omega2064 for updated name information. • Karika for non-DA requirement information. • SalvationXI for rarity information. • .*. .*. .*., DK or DD, glaisaurus_x, Links, MeAndMyCreek, PaperClip OF DOOM, Peachii, Stephen Nix, and whimsical magic for information.",
+    "notes": "Description erroneously claims this pet requires a Dragon Amulet.",
     "alsoSee": [
       {
         "name": "5 lb Butterbomb",
@@ -10315,7 +10314,8 @@
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-lil-squishie",
@@ -10327,7 +10327,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "1",
     "damage": "1-5",
     "stats": "None",
@@ -10392,7 +10391,8 @@
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-linus",
@@ -10404,7 +10404,6 @@
     "elements": [
       "ICE"
     ],
-    "specialMarkers": [],
     "level": "3",
     "damage": "1-5",
     "stats": "None",
@@ -10442,7 +10441,7 @@
     ],
     "releaseDate": "August 25th, 2006",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=6129973",
-    "notes": "Pet is animated; it sways back and forth continuously. • Silver for image. • Jay for attack type image, combine information, and other information. • Stephen Nix for entry reformat. • Peachii for correction.",
+    "notes": "Pet is animated; it sways back and forth continuously.",
     "alsoSee": [
       {
         "name": "Prince Linus",
@@ -10463,7 +10462,8 @@
     "tags": [
       "pet",
       "ice"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-little-mogkee",
@@ -10475,7 +10475,6 @@
     "elements": [
       "DAR"
     ],
-    "specialMarkers": [],
     "level": "15",
     "damage": "6-14",
     "stats": "None",
@@ -10515,7 +10514,8 @@
     "tags": [
       "pet",
       "dar"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-live-turducken-all-versions",
@@ -10527,7 +10527,6 @@
     "elements": [
       "POI"
     ],
-    "specialMarkers": [],
     "level": "5",
     "damage": "7-11",
     "stats": "CHA -5, INT +5",
@@ -10563,7 +10562,8 @@
     "tags": [
       "pet",
       "poi"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-lucky-wererabbit-all-versions",
@@ -10575,7 +10575,6 @@
     "elements": [
       "LIG"
     ],
-    "specialMarkers": [],
     "level": "2",
     "damage": "5-14",
     "stats": "Crit +2",
@@ -10610,7 +10609,8 @@
     "tags": [
       "pet",
       "lig"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-lucky-wyvern-i-viii",
@@ -10622,7 +10622,6 @@
     "elements": [
       "LIG"
     ],
-    "specialMarkers": [],
     "level": "1",
     "damage": "3-9",
     "stats": "Crit +1",
@@ -10651,7 +10650,8 @@
     "tags": [
       "pet",
       "lig"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-magic-gift-box",
@@ -10663,7 +10663,6 @@
     "elements": [
       "FIR"
     ],
-    "specialMarkers": [],
     "level": "25",
     "damage": "12-17",
     "stats": "Bonus +4",
@@ -10695,7 +10694,7 @@
     "releaseDate": "December 25th, 2009",
     "imageUrl": "https://i.imgur.com/kXU9wNf.jpg",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19409904",
-    "notes": "Transformed from  Green Present (25) on  December 25th, 2009. • Alternative Image • Baron Dante for a correction. • ILmaster13 for original entry. • Stephen Nix for attack descriptions. • Slayer Zach for correction. • NyxAbend and Occavatra for image.",
+    "notes": "Transformed from  Green Present (25) on  December 25th, 2009. • Alternative Image • Baron Dante for a correction. • ILmaster13 for original entry.",
     "alsoSee": [
       {
         "name": "Gift Box",
@@ -10716,7 +10715,8 @@
     "tags": [
       "pet",
       "fir"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-magus-hansa-2",
@@ -10728,7 +10728,6 @@
     "elements": [
       "ENE"
     ],
-    "specialMarkers": [],
     "level": "Unknown",
     "damage": "Unknown",
     "stats": "None",
@@ -10758,7 +10757,8 @@
     "tags": [
       "pet",
       "ene"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-major-butterbomb",
@@ -10770,7 +10770,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "20",
     "damage": "10-16",
     "stats": "None",
@@ -10887,7 +10886,8 @@
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-major-butterbomb-jr",
@@ -10899,7 +10899,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "25",
     "damage": "10-16",
     "stats": "None",
@@ -11021,7 +11020,8 @@
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-major-general-butterbomb",
@@ -11033,7 +11033,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "35",
     "damage": "15-20",
     "stats": "None",
@@ -11150,7 +11149,8 @@
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-major-general-butterbomb-jr",
@@ -11162,7 +11162,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "35",
     "damage": "12-17",
     "stats": "None",
@@ -11194,7 +11193,7 @@
     "evolutions": [],
     "releaseDate": "November 20th, 2009",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20110364",
-    "notes": "Description erroneously claims this pet requires a Dragon Amulet. • Silver for image and rate information. • Jay for attack type images and corrections. • BlueRage, Halborg, and zeke50100 for original entry. • DragonBlade and ILmaster13 for entry reformat. • Omega2064 for updated name information. • Karika for non-DA requirement information. • SalvationXI for rarity information. • .*. .*. .*., DK or DD, glaisaurus_x, Links, MeAndMyCreek, PaperClip OF DOOM, Peachii, Stephen Nix, and whimsical magic for information.",
+    "notes": "Description erroneously claims this pet requires a Dragon Amulet.",
     "alsoSee": [
       {
         "name": "5 lb Butterbomb",
@@ -11285,7 +11284,8 @@
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-marshmallow-pip-all-versions",
@@ -11297,7 +11297,6 @@
     "elements": [
       "FIR"
     ],
-    "specialMarkers": [],
     "level": "30",
     "damage": "12-16",
     "stats": "None",
@@ -11326,7 +11325,8 @@
     "tags": [
       "pet",
       "fir"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-mazurek-2",
@@ -11339,7 +11339,6 @@
       "DIS",
       "MET"
     ],
-    "specialMarkers": [],
     "level": "As player",
     "damage": "Scaled",
     "stats": "None",
@@ -11382,7 +11381,8 @@
       "pet",
       "dis",
       "met"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-mennace",
@@ -11392,9 +11392,6 @@
     "description": "As character",
     "daRequired": false,
     "elements": [],
-    "specialMarkers": [
-      "A/C"
-    ],
     "level": "As character",
     "damage": "As character",
     "stats": "None",
@@ -11417,6 +11414,9 @@
     "tags": [
       "pet",
       "a-c"
+    ],
+    "traits": [
+      "A/C"
     ]
   },
   {
@@ -11429,7 +11429,6 @@
     "elements": [
       "FEA"
     ],
-    "specialMarkers": [],
     "level": "10",
     "damage": "5-10",
     "stats": "Crit +1",
@@ -11470,7 +11469,8 @@
     "tags": [
       "pet",
       "fea"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-mini-squishie",
@@ -11482,7 +11482,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "76",
     "damage": "17-27",
     "stats": "None",
@@ -11547,7 +11546,8 @@
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-miniphage-all-versions",
@@ -11559,7 +11559,6 @@
     "elements": [
       "FEA"
     ],
-    "specialMarkers": [],
     "level": "10",
     "damage": "5-10",
     "stats": "Crit +1",
@@ -11600,7 +11599,8 @@
     "tags": [
       "pet",
       "fea"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-minivolt-i-vii",
@@ -11612,7 +11612,6 @@
     "elements": [
       "ENE"
     ],
-    "specialMarkers": [],
     "level": "1",
     "damage": "5-13",
     "stats": "Crit +1, Bonus +1",
@@ -11647,7 +11646,8 @@
     "tags": [
       "pet",
       "ene"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-mogkee",
@@ -11659,7 +11659,6 @@
     "elements": [
       "DAR"
     ],
-    "specialMarkers": [],
     "level": "30",
     "damage": "13-17",
     "stats": "None",
@@ -11699,7 +11698,8 @@
     "tags": [
       "pet",
       "dar"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-monkakazi-all-versions",
@@ -11711,7 +11711,6 @@
     "elements": [
       "ENE"
     ],
-    "specialMarkers": [],
     "level": "10",
     "damage": "5-11",
     "stats": "None",
@@ -11746,7 +11745,8 @@
     "tags": [
       "pet",
       "ene"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-mr-mangles-all-versions",
@@ -11758,7 +11758,6 @@
     "elements": [
       "DAR"
     ],
-    "specialMarkers": [],
     "level": "10",
     "damage": "10-16",
     "stats": "STR +5",
@@ -11799,7 +11798,8 @@
     "tags": [
       "pet",
       "dar"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-mr-poofles-all-versions",
@@ -11811,7 +11811,6 @@
     "elements": [
       "WAT"
     ],
-    "specialMarkers": [],
     "level": "15",
     "damage": "5-16",
     "stats": "None",
@@ -11846,7 +11845,8 @@
     "tags": [
       "pet",
       "wat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-mritha-1",
@@ -11858,7 +11858,6 @@
     "elements": [
       "MET"
     ],
-    "specialMarkers": [],
     "level": "As player",
     "damage": "Scaled",
     "stats": "None",
@@ -11887,7 +11886,8 @@
     "tags": [
       "pet",
       "met"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-my-little-pegasus",
@@ -11900,7 +11900,6 @@
       "WAT",
       "WIN"
     ],
-    "specialMarkers": [],
     "level": "30",
     "damage": "14-18",
     "stats": "None",
@@ -11936,7 +11935,8 @@
       "pet",
       "wat",
       "win"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-my-tiny-avenging-angel-pwny-i-v",
@@ -11948,7 +11948,6 @@
     "elements": [
       "LIG"
     ],
-    "specialMarkers": [],
     "level": "5",
     "damage": "7-11",
     "stats": "Crit +1",
@@ -11985,7 +11984,8 @@
     "tags": [
       "pet",
       "lig"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-my-tiny-derp-pwny-i-v",
@@ -11997,7 +11997,6 @@
     "elements": [
       "BAC"
     ],
-    "specialMarkers": [],
     "level": "10",
     "damage": "4-14",
     "stats": "Crit +1, Bonus +1",
@@ -12027,7 +12026,8 @@
     "tags": [
       "pet",
       "bac"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-my-tiny-doom-pwny-i-vi",
@@ -12039,7 +12039,6 @@
     "elements": [
       "DAR"
     ],
-    "specialMarkers": [],
     "level": "15",
     "damage": "5-16",
     "stats": "None",
@@ -12074,7 +12073,8 @@
     "tags": [
       "pet",
       "dar"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-my-tiny-green-pwntern-i-v",
@@ -12086,7 +12086,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "5",
     "damage": "7-11",
     "stats": "None",
@@ -12115,7 +12114,8 @@
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-my-tiny-void-pwny-i-iv",
@@ -12127,7 +12127,6 @@
     "elements": [
       "???"
     ],
-    "specialMarkers": [],
     "level": "20",
     "damage": "9-17",
     "stats": "Crit +2, Bonus +2",
@@ -12157,7 +12156,8 @@
     "tags": [
       "pet",
       "???"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-myalos",
@@ -12169,7 +12169,6 @@
     "elements": [
       "MET"
     ],
-    "specialMarkers": [],
     "level": "As player",
     "damage": "Scaled",
     "stats": "None",
@@ -12192,7 +12191,8 @@
     "tags": [
       "pet",
       "met"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-mystic-gift-box",
@@ -12204,7 +12204,6 @@
     "elements": [
       "FIR"
     ],
-    "specialMarkers": [],
     "level": "51",
     "damage": "19-21",
     "stats": "Bonus +4",
@@ -12236,7 +12235,7 @@
     "releaseDate": "December 25th, 2009",
     "imageUrl": "https://i.imgur.com/kXU9wNf.jpg",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19409899",
-    "notes": "Transformed from  Green Present (51) on  December 25th, 2009. • Alternative Image • Baron Dante for a correction. • ILmaster13 for original entry. • Stephen Nix for attack descriptions. • Slayer Zach for correction. • NyxAbend and Occavatra for image.",
+    "notes": "Transformed from  Green Present (51) on  December 25th, 2009. • Alternative Image • Baron Dante for a correction. • ILmaster13 for original entry.",
     "alsoSee": [
       {
         "name": "Gift Box",
@@ -12257,7 +12256,8 @@
     "tags": [
       "pet",
       "fir"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-necsnowmancer-all-versions-the",
@@ -12269,7 +12269,6 @@
     "elements": [
       "ICE"
     ],
-    "specialMarkers": [],
     "level": "10",
     "damage": "4-11",
     "stats": "None",
@@ -12305,7 +12304,8 @@
     "tags": [
       "pet",
       "ice"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-nightlocke-animated-axe-all-versions",
@@ -12317,7 +12317,6 @@
     "elements": [
       "???"
     ],
-    "specialMarkers": [],
     "level": "20",
     "damage": "9-12",
     "stats": "None",
@@ -12352,7 +12351,8 @@
     "tags": [
       "pet",
       "???"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-niki-1",
@@ -12364,7 +12364,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "As player",
     "damage": "Scaled",
     "stats": "None",
@@ -12393,7 +12392,8 @@
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-number-two-all-versions",
@@ -12405,7 +12405,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "1",
     "damage": "1-5",
     "stats": "Crit +1",
@@ -12434,7 +12433,8 @@
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-nythera",
@@ -12450,7 +12450,6 @@
       "NAT",
       "WIN"
     ],
-    "specialMarkers": [],
     "level": "As player",
     "damage": "Scaled",
     "stats": "None",
@@ -12474,7 +12473,7 @@
     "evolutions": [],
     "releaseDate": "January 6th, 2017",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22217923",
-    "notes": "Scaled Mana Cost for this guest is equal to [0.3008*(Level+5)+1.0025]. Each Mana Cost is rounded down to the nearest whole number. • DemonicDarkwraith for entry reformat, skill appearances, and corrections. • Karika for guest and attack stats. • Stephen Nix for corrections.",
+    "notes": "Scaled Mana Cost for this guest is equal to [0.3008*(Level+5)+1.0025]. Each Mana Cost is rounded down to the nearest whole number.",
     "alsoSee": [],
     "tags": [
       "pet",
@@ -12483,7 +12482,8 @@
       "lig",
       "nat",
       "win"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-obsidian-tog",
@@ -12495,7 +12495,6 @@
     "elements": [
       "STO"
     ],
-    "specialMarkers": [],
     "level": "55",
     "damage": "18-22",
     "stats": "END +5, CHA +5, LUK +5",
@@ -12520,12 +12519,13 @@
     "evolutions": [],
     "releaseDate": "November 24th, 2010",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18365683",
-    "notes": "Pet has a low drop rate. • DemonicDarkwraith for image, attack image, and other information. • Stephen Nix for correction.",
+    "notes": "Pet has a low drop rate.",
     "alsoSee": [],
     "tags": [
       "pet",
       "sto"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-orange-ghost-tog",
@@ -12538,7 +12538,6 @@
       "CUR",
       "FIR"
     ],
-    "specialMarkers": [],
     "level": "15",
     "damage": "8-14",
     "stats": "END +5, CHA +5, LUK +5",
@@ -12574,7 +12573,8 @@
       "pet",
       "cur",
       "fir"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-ostara-s-dracobunny",
@@ -12586,7 +12586,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "1",
     "damage": "Scaled, rounded upMin: [(Player's level)*2/5 - 10], bounded below 1",
     "stats": "None",
@@ -12618,7 +12617,7 @@
     "evolutions": [],
     "releaseDate": "April 19th, 2019",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22359985",
-    "notes": "Pet is animated; it moves its tail, wings, head, and other parts of its body periodically. • Jay for image, attack type images, other information, also see links, and corrections. • Silver for damage scaling information and rate information.",
+    "notes": "Pet is animated; it moves its tail, wings, head, and other parts of its body periodically.",
     "alsoSee": [
       {
         "name": "Dracabbit (I-VIII)",
@@ -12634,7 +12633,8 @@
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-overclocked-rummage",
@@ -12647,7 +12647,6 @@
       "ENE",
       "MET"
     ],
-    "specialMarkers": [],
     "level": "40",
     "damage": "16-20",
     "stats": "None",
@@ -12678,7 +12677,7 @@
     "evolutions": [],
     "releaseDate": "August 14th, 2009",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19412214",
-    "notes": "If Attack Type 2 was used again prior to 'Blind' expiring, it will be reapplied to target for 2 turns. • Ash for original entry. • pjc for information. • TheChosen1, Jay, Barong the DemiGod, and Baltheon for corrections. • DemonicDarkwraith for other information and corrections.",
+    "notes": "If Attack Type 2 was used again prior to 'Blind' expiring, it will be reapplied to target for 2 turns. • Ash for original entry.",
     "alsoSee": [
       {
         "name": "Rummage",
@@ -12700,7 +12699,8 @@
       "pet",
       "ene",
       "met"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-palachilly-all-versions",
@@ -12712,7 +12712,6 @@
     "elements": [
       "LIG"
     ],
-    "specialMarkers": [],
     "level": "10",
     "damage": "4-11",
     "stats": "None",
@@ -12748,7 +12747,8 @@
     "tags": [
       "pet",
       "lig"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-parrrrrotical-pete-the-parrot-all-versions",
@@ -12760,7 +12760,6 @@
     "elements": [
       "WIN"
     ],
-    "specialMarkers": [],
     "level": "10",
     "damage": "8-12",
     "stats": "Crit +1",
@@ -12795,7 +12794,8 @@
     "tags": [
       "pet",
       "win"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-party-tog",
@@ -12807,7 +12807,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "1",
     "damage": "Scaled, rounded downMin: SQRT(Player's level)",
     "stats": "CHA +200",
@@ -12843,7 +12842,8 @@
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-pathstalker",
@@ -12855,7 +12855,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "3",
     "damage": "1-5",
     "stats": "None",
@@ -12885,7 +12884,8 @@
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-pepper-merchant",
@@ -12897,7 +12897,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "15",
     "damage": "Scaled",
     "stats": "None",
@@ -12916,12 +12915,13 @@
     "releaseDate": "September 15th, 2018",
     "imageUrl": "http://i.imgur.com/MTcDrk1.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22348084",
-    "notes": "Pepper Merchant was previously attainable from the following retired access point:  An Elegy of Ice and Fire. • DemonicDarkwraith for entry reformat, other information, and corrections. • RaimeNadalia for images.",
+    "notes": "Pepper Merchant was previously attainable from the following retired access point:  An Elegy of Ice and Fire.",
     "alsoSee": [],
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-personal-feargeist",
@@ -12933,7 +12933,6 @@
     "elements": [
       "FEA"
     ],
-    "specialMarkers": [],
     "level": "1",
     "damage": "Scaled, rounded upMin: 5*[SQRT(Player's level)]",
     "stats": "None",
@@ -12969,7 +12968,8 @@
     "tags": [
       "pet",
       "fea"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-pet-slime",
@@ -12981,7 +12981,6 @@
     "elements": [
       "POI"
     ],
-    "specialMarkers": [],
     "level": "1",
     "damage": "3-9",
     "stats": "Block +5, Dodge +5, Parry +5, Crit +5, Magic Def +5, Pierce Def +5, Melee Def +5",
@@ -13016,7 +13015,8 @@
     "tags": [
       "pet",
       "poi"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-pet-tog",
@@ -13028,7 +13028,6 @@
     "elements": [
       "STO"
     ],
-    "specialMarkers": [],
     "level": "10",
     "damage": "6-11",
     "stats": "Block +5, Dodge +5, Parry +5, Crit +5, Magic Def +5, Pierce Def +5",
@@ -13063,7 +13062,8 @@
     "tags": [
       "pet",
       "sto"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-pet-wyvern",
@@ -13075,7 +13075,6 @@
     "elements": [
       "WIN"
     ],
-    "specialMarkers": [],
     "level": "20",
     "damage": "9-15",
     "stats": "Block +5, Dodge +5, Parry +5, Crit +5, Magic Def +5, Pierce Def +5, Melee Def +5",
@@ -13100,7 +13099,7 @@
     "evolutions": [],
     "releaseDate": "July 21st, 2006",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=5628214",
-    "notes": "Pet is animated; it hovers up and down in place, while flapping its wings continuously. • Jay for image, other information, and entry reformat. • Rubioalto for attack type image. • darksaber300, M.X, nightslayer321, and Stephen Nix for information.",
+    "notes": "Pet is animated; it hovers up and down in place, while flapping its wings continuously.",
     "alsoSee": [
       {
         "name": "Rare Pet Wyvern",
@@ -13111,7 +13110,8 @@
     "tags": [
       "pet",
       "win"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-petite-squishie",
@@ -13123,7 +13123,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "50",
     "damage": "12-18",
     "stats": "None",
@@ -13188,7 +13187,8 @@
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-pigasus",
@@ -13200,7 +13200,6 @@
     "elements": [
       "BAC"
     ],
-    "specialMarkers": [],
     "level": "25",
     "damage": "12-15",
     "stats": "Crit +2, DEX +5, Bonus +2",
@@ -13235,7 +13234,8 @@
     "tags": [
       "pet",
       "bac"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-pirate-monkey-all-versions",
@@ -13247,7 +13247,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "10",
     "damage": "8-12",
     "stats": "None",
@@ -13288,7 +13287,8 @@
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-pit-grinder",
@@ -13300,7 +13300,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "5",
     "damage": "1-10",
     "stats": "None",
@@ -13330,7 +13329,8 @@
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-plushie-artix-all-versions",
@@ -13342,7 +13342,6 @@
     "elements": [
       "LIG"
     ],
-    "specialMarkers": [],
     "level": "59",
     "damage": "18-24",
     "stats": "Bonus +5",
@@ -13378,7 +13377,8 @@
     "tags": [
       "pet",
       "lig"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-plushie-cupcake",
@@ -13390,7 +13390,6 @@
     "elements": [
       "GOO"
     ],
-    "specialMarkers": [],
     "level": "1",
     "damage": "5-10 / Scaled",
     "stats": "None",
@@ -13487,7 +13486,8 @@
     "tags": [
       "pet",
       "goo"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-plushie-cysero-all-versions",
@@ -13499,7 +13499,6 @@
     "elements": [
       "BAC"
     ],
-    "specialMarkers": [],
     "level": "45",
     "damage": "12-22",
     "stats": "Bonus +5",
@@ -13535,7 +13534,8 @@
     "tags": [
       "pet",
       "bac"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-plushie-escherion",
@@ -13547,7 +13547,6 @@
     "elements": [
       "???"
     ],
-    "specialMarkers": [],
     "level": "40",
     "damage": "13-23",
     "stats": "Crit +5, Bonus +5",
@@ -13583,7 +13582,8 @@
     "tags": [
       "pet",
       "???"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-plushie-frostscythe",
@@ -13595,7 +13595,6 @@
     "elements": [
       "ICE"
     ],
-    "specialMarkers": [],
     "level": "30",
     "damage": "13-17",
     "stats": "None",
@@ -13630,7 +13629,8 @@
     "tags": [
       "pet",
       "ice"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-plushie-ghost",
@@ -13642,7 +13642,6 @@
     "elements": [
       "DAR"
     ],
-    "specialMarkers": [],
     "level": "30",
     "damage": "12-16",
     "stats": "Bonus +5",
@@ -13678,7 +13677,8 @@
     "tags": [
       "pet",
       "dar"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-plushie-kickbacker",
@@ -13690,7 +13690,6 @@
     "elements": [
       "SIL"
     ],
-    "specialMarkers": [],
     "level": "1",
     "damage": "5-10 / Scaled",
     "stats": "None",
@@ -13787,7 +13786,8 @@
     "tags": [
       "pet",
       "sil"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-plushie-memet",
@@ -13799,7 +13799,6 @@
     "elements": [
       "???"
     ],
-    "specialMarkers": [],
     "level": "1",
     "damage": "5-10 / Scaled",
     "stats": "None",
@@ -13896,7 +13895,8 @@
     "tags": [
       "pet",
       "???"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-plushie-mort",
@@ -13908,7 +13908,6 @@
     "elements": [
       "POI"
     ],
-    "specialMarkers": [],
     "level": "1",
     "damage": "5-10 / Scaled",
     "stats": "None",
@@ -14005,7 +14004,8 @@
     "tags": [
       "pet",
       "poi"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-plushie-noxus",
@@ -14017,7 +14017,6 @@
     "elements": [
       "DIS"
     ],
-    "specialMarkers": [],
     "level": "45",
     "damage": "14-24",
     "stats": "None",
@@ -14052,7 +14051,8 @@
     "tags": [
       "pet",
       "dis"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-plushie-nugget",
@@ -14064,7 +14064,6 @@
     "elements": [
       "ENE"
     ],
-    "specialMarkers": [],
     "level": "1",
     "damage": "5-10 / Scaled",
     "stats": "None",
@@ -14161,7 +14160,8 @@
     "tags": [
       "pet",
       "ene"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-plushie-nythera",
@@ -14173,7 +14173,6 @@
     "elements": [
       "???"
     ],
-    "specialMarkers": [],
     "level": "40",
     "damage": "13-23",
     "stats": "None",
@@ -14208,7 +14207,8 @@
     "tags": [
       "pet",
       "???"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-plushie-quibble",
@@ -14220,7 +14220,6 @@
     "elements": [
       "STO"
     ],
-    "specialMarkers": [],
     "level": "1",
     "damage": "5-10 / Scaled",
     "stats": "None",
@@ -14317,7 +14316,8 @@
     "tags": [
       "pet",
       "sto"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-plushie-rez",
@@ -14329,7 +14329,6 @@
     "elements": [
       "LIG"
     ],
-    "specialMarkers": [],
     "level": "1",
     "damage": "5-10 / Scaled",
     "stats": "None",
@@ -14426,7 +14425,8 @@
     "tags": [
       "pet",
       "lig"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-plushie-rolith-all-versions",
@@ -14438,7 +14438,6 @@
     "elements": [
       "SIL"
     ],
-    "specialMarkers": [],
     "level": "40",
     "damage": "11-21",
     "stats": "Bonus +5",
@@ -14474,7 +14473,8 @@
     "tags": [
       "pet",
       "sil"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-plushie-scourge",
@@ -14486,7 +14486,6 @@
     "elements": [
       "EVI"
     ],
-    "specialMarkers": [],
     "level": "1",
     "damage": "5-10 / Scaled",
     "stats": "None",
@@ -14583,7 +14582,8 @@
     "tags": [
       "pet",
       "evi"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-plushie-scurvy",
@@ -14595,7 +14595,6 @@
     "elements": [
       "WAT"
     ],
-    "specialMarkers": [],
     "level": "1",
     "damage": "5-10 / Scaled",
     "stats": "None",
@@ -14692,7 +14691,8 @@
     "tags": [
       "pet",
       "wat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-plushie-seppy",
@@ -14704,7 +14704,6 @@
     "elements": [
       "EVI"
     ],
-    "specialMarkers": [],
     "level": "60",
     "damage": "18-26",
     "stats": "None",
@@ -14739,7 +14738,8 @@
     "tags": [
       "pet",
       "evi"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-plushie-thyton-all-versions",
@@ -14751,7 +14751,6 @@
     "elements": [
       "WIN"
     ],
-    "specialMarkers": [],
     "level": "35",
     "damage": "12-18",
     "stats": "Bonus +5",
@@ -14787,7 +14786,8 @@
     "tags": [
       "pet",
       "win"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-plushie-tomix-all-versions",
@@ -14799,7 +14799,6 @@
     "elements": [
       "ENE"
     ],
-    "specialMarkers": [],
     "level": "59",
     "damage": "17-23",
     "stats": "Bonus +5",
@@ -14835,7 +14834,8 @@
     "tags": [
       "pet",
       "ene"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-plushie-true-mortal",
@@ -14848,7 +14848,6 @@
       "DAR",
       "ICE"
     ],
-    "specialMarkers": [],
     "level": "35",
     "damage": "13-19",
     "stats": "None",
@@ -14884,7 +14883,8 @@
       "pet",
       "dar",
       "ice"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-plushie-twig",
@@ -14896,7 +14896,6 @@
     "elements": [
       "ICE"
     ],
-    "specialMarkers": [],
     "level": "1",
     "damage": "5-10 / Scaled",
     "stats": "None",
@@ -14993,7 +14992,8 @@
     "tags": [
       "pet",
       "ice"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-plushie-twilly",
@@ -15005,7 +15005,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "1",
     "damage": "5-10 / Scaled",
     "stats": "None",
@@ -15102,7 +15101,8 @@
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-plushie-xan",
@@ -15114,7 +15114,6 @@
     "elements": [
       "FIR"
     ],
-    "specialMarkers": [],
     "level": "59",
     "damage": "17-25",
     "stats": "None",
@@ -15149,7 +15148,8 @@
     "tags": [
       "pet",
       "fir"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-plushie-zilla",
@@ -15161,7 +15161,6 @@
     "elements": [
       "FIR"
     ],
-    "specialMarkers": [],
     "level": "1",
     "damage": "5-10 / Scaled",
     "stats": "None",
@@ -15258,7 +15257,8 @@
     "tags": [
       "pet",
       "fir"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-plushie-zorbak",
@@ -15270,7 +15270,6 @@
     "elements": [
       "DAR"
     ],
-    "specialMarkers": [],
     "level": "1",
     "damage": "5-10 / Scaled",
     "stats": "None",
@@ -15367,7 +15366,8 @@
     "tags": [
       "pet",
       "dar"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-poelala-all-versions",
@@ -15377,9 +15377,6 @@
     "description": "PoeLala",
     "daRequired": false,
     "elements": [],
-    "specialMarkers": [
-      "N/A"
-    ],
     "level": "1",
     "damage": "0-0",
     "stats": "None",
@@ -15408,6 +15405,9 @@
     "tags": [
       "pet",
       "n-a"
+    ],
+    "traits": [
+      "N/A"
     ]
   },
   {
@@ -15418,9 +15418,6 @@
     "description": "PoeLala",
     "daRequired": false,
     "elements": [],
-    "specialMarkers": [
-      "N/A"
-    ],
     "level": "1",
     "damage": "0-0",
     "stats": "None",
@@ -15449,6 +15446,9 @@
     "tags": [
       "pet",
       "n-a"
+    ],
+    "traits": [
+      "N/A"
     ]
   },
   {
@@ -15461,7 +15461,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "15",
     "damage": "7-15",
     "stats": "None",
@@ -15524,7 +15523,8 @@
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-powertog",
@@ -15537,7 +15537,6 @@
       "FIR",
       "MET"
     ],
-    "specialMarkers": [],
     "level": "20",
     "damage": "8-16",
     "stats": "Crit +2",
@@ -15569,7 +15568,7 @@
     "evolutions": [],
     "releaseDate": "September 21st, 2006",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=6480755",
-    "notes": "Despite requiring a DC-item to merge, this pet is not DC-tagged, and thus is ineligible for free storage at the bank. • Pet is animated; its drill bit tongue rapidly rotates continuously. • Jay for image, attack type images, and other information. • Stephen Nix for entry reformat. • Karika for non-DA requirement. • Sir Plus for required items. • Cysero for level requirement. • Kazix for damage information. • Armakuny and Sasuke Uchiha for corrections.",
+    "notes": "Despite requiring a DC-item to merge, this pet is not DC-tagged, and thus is ineligible for free storage at the bank. • Pet is animated; its drill bit tongue rapidly rotates continuously.",
     "alsoSee": [
       {
         "name": "Steam Tog",
@@ -15591,7 +15590,8 @@
       "pet",
       "fir",
       "met"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-pridelord",
@@ -15603,7 +15603,6 @@
     "elements": [
       "FIR"
     ],
-    "specialMarkers": [],
     "level": "8",
     "damage": "1-16",
     "stats": "None",
@@ -15638,7 +15637,8 @@
     "tags": [
       "pet",
       "fir"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-pridemaster",
@@ -15650,7 +15650,6 @@
     "elements": [
       "FIR"
     ],
-    "specialMarkers": [],
     "level": "8",
     "damage": "1-16",
     "stats": "None",
@@ -15685,7 +15684,8 @@
     "tags": [
       "pet",
       "fir"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-prince-eulin-facsimile",
@@ -15695,9 +15695,6 @@
     "description": "A startlingly accurate facsimile of the Lagohm prince: Eulin Verriton IV, one of many commissioned by Raven. Just like the actual prince, however, this magical recreation doesn't do much in combat besides looking cute.",
     "daRequired": true,
     "elements": [],
-    "specialMarkers": [
-      "N/A"
-    ],
     "level": "1",
     "damage": "0-0",
     "stats": "Crit +10, CHA +200",
@@ -15738,6 +15735,9 @@
     "tags": [
       "pet",
       "n-a"
+    ],
+    "traits": [
+      "N/A"
     ]
   },
   {
@@ -15749,9 +15749,6 @@
     "daRequired": false,
     "elements": [
       "ICE"
-    ],
-    "specialMarkers": [
-      "SHR"
     ],
     "level": "9",
     "damage": "1-10",
@@ -15810,7 +15807,7 @@
     ],
     "releaseDate": "November 10th, 2006",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18762257",
-    "notes": "If the target's Shrink Resist (inclusive of All Resist) is greater than an unknown second roll value, it will resist the shrinking effect. (Pop-up: Linus tries... but  resists!)Attack Type 2 previously renamed targets 'Shrunken '; due to its potential to break battle mechanics, this was removed on  July 3rd, 2020. • Despite requiring a DC item to obtain, the Platinum Penguin Shrink Ray merge version of this pet is not DC tagged, thus ineligible for free storage. • Pet is animated; it sways back and forth continuously. • Silver for image. • Jay for attack type images and information, combine information, other information, and corrections. • StealthNinja for original entry. • Cheese, Stephen Nix, and The 13th for entry formatting. • ILmaster13 and zeke50100 for description information. • Andy8, Keldorn2198, senomi15, and Zystral for information. • AstralCodex and Peachii for corrections.",
+    "notes": "If the target's Shrink Resist (inclusive of All Resist) is greater than an unknown second roll value, it will resist the shrinking effect. (Pop-up: Linus tries... but  resists!)Attack Type 2 previously renamed targets 'Shrunken '; due to its potential to break battle mechanics, this was removed on  July 3rd, 2020. • Despite requiring a DC item to obtain, the Platinum Penguin Shrink Ray merge version of this pet is not DC tagged, thus ineligible for free storage. • Pet is animated; it sways back and forth continuously.",
     "alsoSee": [
       {
         "name": "Linus",
@@ -15832,6 +15829,9 @@
       "pet",
       "ice",
       "shr"
+    ],
+    "traits": [
+      "SHR"
     ]
   },
   {
@@ -15844,7 +15844,6 @@
     "elements": [
       "FIR"
     ],
-    "specialMarkers": [],
     "level": "Scaled",
     "damage": "Scaled",
     "stats": "None",
@@ -15867,7 +15866,8 @@
     "tags": [
       "pet",
       "fir"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-pristine-dragon-snowman-all-versions",
@@ -15879,7 +15879,6 @@
     "elements": [
       "ICE"
     ],
-    "specialMarkers": [],
     "level": "35",
     "damage": "15-20",
     "stats": "Crit +3",
@@ -15915,7 +15914,8 @@
     "tags": [
       "pet",
       "ice"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-pristine-snowman-all-versions",
@@ -15927,7 +15927,6 @@
     "elements": [
       "ICE"
     ],
-    "specialMarkers": [],
     "level": "35",
     "damage": "12-17",
     "stats": "None",
@@ -15963,7 +15962,8 @@
     "tags": [
       "pet",
       "ice"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-prius-kitten-cat",
@@ -15975,7 +15975,6 @@
     "elements": [
       "ICE"
     ],
-    "specialMarkers": [],
     "level": "15",
     "damage": "6-16",
     "stats": "None",
@@ -16010,7 +16009,8 @@
     "tags": [
       "pet",
       "ice"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-professor",
@@ -16022,7 +16022,6 @@
     "elements": [
       "MET"
     ],
-    "specialMarkers": [],
     "level": "As player",
     "damage": "Scaled",
     "stats": "None",
@@ -16040,12 +16039,13 @@
     "evolutions": [],
     "releaseDate": "August 3rd, 2012",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20575037",
-    "notes": "Professor was previously attainable from the access point:  Forging. • DemonicDarkwraith for entry reformat, images, and corrections. • Azan for correction.",
+    "notes": "Professor was previously attainable from the access point:  Forging.",
     "alsoSee": [],
     "tags": [
       "pet",
       "met"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-ptoleme-sneevmole-all-versions",
@@ -16057,7 +16057,6 @@
     "elements": [
       "STO"
     ],
-    "specialMarkers": [],
     "level": "10",
     "damage": "4-14",
     "stats": "None",
@@ -16092,7 +16091,8 @@
     "tags": [
       "pet",
       "sto"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-punchy",
@@ -16105,7 +16105,6 @@
       "FIR",
       "WIN"
     ],
-    "specialMarkers": [],
     "level": "8",
     "damage": "10-13",
     "stats": "None",
@@ -16141,7 +16140,8 @@
       "pet",
       "fir",
       "win"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-rabbitizer-6000-mach-2-all-versions",
@@ -16153,7 +16153,6 @@
     "elements": [
       "ENE"
     ],
-    "specialMarkers": [],
     "level": "33",
     "damage": "9-15",
     "stats": "None",
@@ -16182,7 +16181,8 @@
     "tags": [
       "pet",
       "ene"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-ralon",
@@ -16194,7 +16194,6 @@
     "elements": [
       "MET"
     ],
-    "specialMarkers": [],
     "level": "Scaled",
     "damage": "Scaled",
     "stats": "None",
@@ -16217,7 +16216,8 @@
     "tags": [
       "pet",
       "met"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-rare-clockwork-tog",
@@ -16229,7 +16229,6 @@
     "elements": [
       "MET"
     ],
-    "specialMarkers": [],
     "level": "10",
     "damage": "6-15",
     "stats": "Crit +1",
@@ -16255,7 +16254,7 @@
     "evolutions": [],
     "releaseDate": "September 21st, 2006",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19368298",
-    "notes": "Pet is animated; its drill bit tongue rapidly rotates continuously. • Jay for image, attack type image, and other information. • The Legendary Hero for original entry. • ILmaster 13 for entry reformat. • bezima, Denzera, QueenBowie, and Stephen Nix for information. • Peachii for corrections.",
+    "notes": "Pet is animated; its drill bit tongue rapidly rotates continuously.",
     "alsoSee": [
       {
         "name": "Clockwork Tog",
@@ -16276,7 +16275,8 @@
     "tags": [
       "pet",
       "met"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-rare-pet-slime",
@@ -16288,7 +16288,6 @@
     "elements": [
       "POI"
     ],
-    "specialMarkers": [],
     "level": "1",
     "damage": "3-9",
     "stats": "Block +5, Dodge +5, Parry +5, Crit +5, Magic Def +5, Pierce Def +5, Melee Def +5",
@@ -16323,7 +16322,8 @@
     "tags": [
       "pet",
       "poi"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-rare-pet-tog",
@@ -16335,7 +16335,6 @@
     "elements": [
       "STO"
     ],
-    "specialMarkers": [],
     "level": "10",
     "damage": "6-11",
     "stats": "Block +5, Dodge +5, Parry +5, Crit +5, Magic Def +5, Pierce Def +5, Melee Def +5",
@@ -16370,7 +16369,8 @@
     "tags": [
       "pet",
       "sto"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-rare-pet-wyvern",
@@ -16382,7 +16382,6 @@
     "elements": [
       "WIN"
     ],
-    "specialMarkers": [],
     "level": "20",
     "damage": "9-15",
     "stats": "Block +5, Dodge +5, Parry +5, Crit +5, Magic Def +5, Pierce Def +5, Melee Def +5",
@@ -16407,7 +16406,7 @@
     "evolutions": [],
     "releaseDate": "July 21st, 2006",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18748897",
-    "notes": "Pet is animated; it hovers up and down in place, while flapping its wings continuously. • Jay for image, other information, and entry reformat. • Rubioalto for attack type image. • M.X for original entry. • nightslayer321, and Stephen Nix for information.",
+    "notes": "Pet is animated; it hovers up and down in place, while flapping its wings continuously.",
     "alsoSee": [
       {
         "name": "Pet Wyvern",
@@ -16418,7 +16417,8 @@
     "tags": [
       "pet",
       "win"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-rare-powertog",
@@ -16431,7 +16431,6 @@
       "FIR",
       "MET"
     ],
-    "specialMarkers": [],
     "level": "20",
     "damage": "11-19",
     "stats": "Crit +2",
@@ -16463,7 +16462,7 @@
     "evolutions": [],
     "releaseDate": "September 21st, 2006",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19412021",
-    "notes": "Despite requiring a DC-item to merge, this pet is not DC-tagged, and thus is ineligible for free storage at the bank. • Pet is animated; its drill bit tongue rapidly rotates continuously. • Jay for image, attack type images, and other information. • Tolkienfanatic for original entry. • Karika for non-DA requirement. • Sir Plus for required items. • Cysero for level requirement. • Kazix for damage information. • Armakuny and Sasuke Uchiha for corrections.",
+    "notes": "Despite requiring a DC-item to merge, this pet is not DC-tagged, and thus is ineligible for free storage at the bank. • Pet is animated; its drill bit tongue rapidly rotates continuously.",
     "alsoSee": [
       {
         "name": "Steam Tog",
@@ -16485,7 +16484,8 @@
       "pet",
       "fir",
       "met"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-rare-robotog",
@@ -16497,7 +16497,6 @@
     "elements": [
       "MET"
     ],
-    "specialMarkers": [],
     "level": "20",
     "damage": "8-19",
     "stats": "Crit +1",
@@ -16523,7 +16522,7 @@
     "evolutions": [],
     "releaseDate": "September 21st, 2006",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19412063",
-    "notes": "Pet is animated; its drill bit tongue rapidly rotates continuously. • Jay for image, attack type image, and other information. • Andy8 for original entry. • Ssetra for information. • Niki and Peachii for corrections.",
+    "notes": "Pet is animated; its drill bit tongue rapidly rotates continuously.",
     "alsoSee": [
       {
         "name": "Clockwork Tog",
@@ -16544,7 +16543,8 @@
     "tags": [
       "pet",
       "met"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-rare-steam-tog",
@@ -16557,7 +16557,6 @@
       "FIR",
       "MET"
     ],
-    "specialMarkers": [],
     "level": "10",
     "damage": "8-15",
     "stats": "Block +2",
@@ -16589,7 +16588,7 @@
     "evolutions": [],
     "releaseDate": "September 21st, 2006",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19411912",
-    "notes": "Despite requiring a DC-item to merge, this pet is not DC-tagged, and thus is ineligible for free storage at the bank. • Pet is animated; its drill bit tongue rapidly rotates continuously. • Jay for image, attack type images, other information, and corrections. • Sasuke Uchiha for original entry. • Karika for non-DA requirement. • Kazix for damage information. • Armakuny and Niki for corrections.",
+    "notes": "Despite requiring a DC-item to merge, this pet is not DC-tagged, and thus is ineligible for free storage at the bank. • Pet is animated; its drill bit tongue rapidly rotates continuously.",
     "alsoSee": [
       {
         "name": "Steam Tog",
@@ -16611,7 +16610,8 @@
       "pet",
       "fir",
       "met"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-raven-2",
@@ -16623,7 +16623,6 @@
     "elements": [
       "ENE"
     ],
-    "specialMarkers": [],
     "level": "As player",
     "damage": "Scaled",
     "stats": "None",
@@ -16652,7 +16651,8 @@
     "tags": [
       "pet",
       "ene"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-red-imp-i-ii",
@@ -16664,7 +16664,6 @@
     "elements": [
       "DAR"
     ],
-    "specialMarkers": [],
     "level": "12",
     "damage": "6-15",
     "stats": "Crit +2",
@@ -16694,7 +16693,8 @@
     "tags": [
       "pet",
       "dar"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-revered-ancestral-boar-spirit",
@@ -16706,7 +16706,6 @@
     "elements": [
       "BAC"
     ],
-    "specialMarkers": [],
     "level": "45",
     "damage": "16-21",
     "stats": "None",
@@ -16741,7 +16740,8 @@
     "tags": [
       "pet",
       "bac"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-revered-ancestral-snake-spirit",
@@ -16753,7 +16753,6 @@
     "elements": [
       "WIN"
     ],
-    "specialMarkers": [],
     "level": "50",
     "damage": "16-22",
     "stats": "None",
@@ -16788,7 +16787,8 @@
     "tags": [
       "pet",
       "win"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-revered-ancient-ninja-terrapin",
@@ -16800,7 +16800,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "60",
     "damage": "17-25",
     "stats": "None",
@@ -16863,7 +16862,8 @@
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-revered-post-adolescent-ninja-terrapin",
@@ -16875,7 +16875,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "35",
     "damage": "15-19",
     "stats": "None",
@@ -16938,7 +16937,8 @@
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-revered-shadow-monkey",
@@ -16950,7 +16950,6 @@
     "elements": [
       "POI"
     ],
-    "specialMarkers": [],
     "level": "40",
     "damage": "15-21",
     "stats": "None",
@@ -16985,7 +16984,8 @@
     "tags": [
       "pet",
       "poi"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-revered-sneevil-ninja-buddy",
@@ -16997,7 +16997,6 @@
     "elements": [
       "MET"
     ],
-    "specialMarkers": [],
     "level": "55",
     "damage": "18-22",
     "stats": "None",
@@ -17038,7 +17037,8 @@
     "tags": [
       "pet",
       "met"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-rhubarb",
@@ -17051,7 +17051,6 @@
       "DIS",
       "MET"
     ],
-    "specialMarkers": [],
     "level": "As player",
     "damage": "Scaled",
     "stats": "None",
@@ -17075,13 +17074,14 @@
     "evolutions": [],
     "releaseDate": "September 19th, 2014",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21931193",
-    "notes": "Rhubarb has a series of unconventional stats in the zones  The Quest for More Booty! - Choose a Side /  The Quest for More Booty! - Rhubarb; Bonus: 20, Crit: 25, Melee: 15, Pierce: 15, Magic: 0, Parry: 10 • DemonicDarkwraith for entry reformat, image, skill buttons, skill appearances, other information, and corrections. • Slayer Zach for correction.",
+    "notes": "Rhubarb has a series of unconventional stats in the zones  The Quest for More Booty! - Choose a Side /  The Quest for More Booty! - Rhubarb; Bonus: 20, Crit: 25, Melee: 15, Pierce: 15, Magic: 0, Parry: 10",
     "alsoSee": [],
     "tags": [
       "pet",
       "dis",
       "met"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-riadne-2",
@@ -17093,7 +17093,6 @@
     "elements": [
       "POI"
     ],
-    "specialMarkers": [],
     "level": "As player",
     "damage": "Scaled",
     "stats": "None",
@@ -17123,7 +17122,8 @@
     "tags": [
       "pet",
       "poi"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-robina-1",
@@ -17135,7 +17135,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "As player / 2",
     "damage": "As player / 5-12",
     "stats": "None",
@@ -17158,7 +17157,8 @@
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-robotog",
@@ -17170,7 +17170,6 @@
     "elements": [
       "MET"
     ],
-    "specialMarkers": [],
     "level": "20",
     "damage": "5-16",
     "stats": "Crit +1",
@@ -17196,7 +17195,7 @@
     "evolutions": [],
     "releaseDate": "September 21st, 2006",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=6482240",
-    "notes": "Pet is animated; its drill bit tongue rapidly rotates continuously. • Jay for image, attack type image, and other information. • Stephen Nix for entry reformat. • Niki and Peachii for corrections.",
+    "notes": "Pet is animated; its drill bit tongue rapidly rotates continuously.",
     "alsoSee": [
       {
         "name": "Clockwork Tog",
@@ -17217,7 +17216,8 @@
     "tags": [
       "pet",
       "met"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-rolith-1",
@@ -17229,7 +17229,6 @@
     "elements": [
       "MET"
     ],
-    "specialMarkers": [],
     "level": "As player",
     "damage": "Scaled",
     "stats": "None",
@@ -17259,7 +17258,8 @@
     "tags": [
       "pet",
       "met"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-rummage",
@@ -17272,7 +17272,6 @@
       "ENE",
       "MET"
     ],
-    "specialMarkers": [],
     "level": "10",
     "damage": "6-11",
     "stats": "None",
@@ -17303,7 +17302,7 @@
     "evolutions": [],
     "releaseDate": "August 14th, 2009",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=16496034",
-    "notes": "If Attack Type 2 was used again prior to 'Blind' expiring, it will be reapplied to target for 2 turns. • ZanpakuT� for original entry. • Stephen Nix for image, attack type images, and corrections. • pjc for information. • TheChosen1, Jay, Barong the DemiGod, and Baltheon for corrections. • DemonicDarkwraith for other information and corrections.",
+    "notes": "If Attack Type 2 was used again prior to 'Blind' expiring, it will be reapplied to target for 2 turns. • ZanpakuT� for original entry.",
     "alsoSee": [
       {
         "name": "Tweaked Rummage",
@@ -17325,7 +17324,8 @@
       "pet",
       "ene",
       "met"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-rush-of-zardlings-all-versions",
@@ -17337,7 +17337,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "10",
     "damage": "8-14",
     "stats": "None",
@@ -17366,7 +17365,8 @@
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-sand-stinger",
@@ -17378,7 +17378,6 @@
     "elements": [
       "STO"
     ],
-    "specialMarkers": [],
     "level": "3",
     "damage": "1-5",
     "stats": "None",
@@ -17413,7 +17412,8 @@
     "tags": [
       "pet",
       "sto"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-sandcrabz",
@@ -17425,7 +17425,6 @@
     "elements": [
       "LIG"
     ],
-    "specialMarkers": [],
     "level": "19",
     "damage": "12-15",
     "stats": "None",
@@ -17460,7 +17459,8 @@
     "tags": [
       "pet",
       "lig"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-scaredy-bear-cub",
@@ -17472,7 +17472,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "30",
     "damage": "9-15",
     "stats": "None",
@@ -17543,7 +17542,8 @@
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-scary-doll-all-versions",
@@ -17555,7 +17555,6 @@
     "elements": [
       "FIR"
     ],
-    "specialMarkers": [],
     "level": "8",
     "damage": "6-15",
     "stats": "None",
@@ -17590,7 +17589,8 @@
     "tags": [
       "pet",
       "fir"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-schnozzberry-ghost-tog",
@@ -17603,7 +17603,6 @@
       "CUR",
       "FIR"
     ],
-    "specialMarkers": [],
     "level": "55",
     "damage": "20-23",
     "stats": "END +5, CHA +5, LUK +5",
@@ -17639,7 +17638,8 @@
       "pet",
       "cur",
       "fir"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-sepulchure",
@@ -17651,7 +17651,6 @@
     "elements": [
       "EVI"
     ],
-    "specialMarkers": [],
     "level": "Scaled",
     "damage": "Scaled",
     "stats": "None",
@@ -17674,7 +17673,8 @@
     "tags": [
       "pet",
       "evi"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-serenity-okami",
@@ -17684,9 +17684,6 @@
     "description": "Human Pirate",
     "daRequired": false,
     "elements": [],
-    "specialMarkers": [
-      "ALA"
-    ],
     "level": "Scaled",
     "damage": "Scaled",
     "stats": "None",
@@ -17708,6 +17705,9 @@
     "tags": [
       "pet",
       "ala"
+    ],
+    "traits": [
+      "ALA"
     ]
   },
   {
@@ -17720,7 +17720,6 @@
     "elements": [
       "POI"
     ],
-    "specialMarkers": [],
     "level": "25",
     "damage": "5-15",
     "stats": "None",
@@ -17755,7 +17754,8 @@
     "tags": [
       "pet",
       "poi"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-shake-spear-all-versions",
@@ -17767,7 +17767,6 @@
     "elements": [
       "SIL"
     ],
-    "specialMarkers": [],
     "level": "10",
     "damage": "5-9",
     "stats": "None",
@@ -17796,7 +17795,8 @@
     "tags": [
       "pet",
       "sil"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-shellack",
@@ -17808,7 +17808,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "1",
     "damage": "1-5",
     "stats": "None",
@@ -17838,7 +17837,8 @@
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-shining-fireflies",
@@ -17850,7 +17850,6 @@
     "elements": [
       "LIG"
     ],
-    "specialMarkers": [],
     "level": "60",
     "damage": "18-25",
     "stats": "None",
@@ -17901,7 +17900,8 @@
     "tags": [
       "pet",
       "lig"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-sir-ano",
@@ -17913,7 +17913,6 @@
     "elements": [
       "MET"
     ],
-    "specialMarkers": [],
     "level": "As player",
     "damage": "Scaled",
     "stats": "None",
@@ -17937,12 +17936,13 @@
     "evolutions": [],
     "releaseDate": "November 21st, 2008",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15093277",
-    "notes": "Sir Ano was previously attainable from the following retired access points:  Nose for Trouble,  Major Mayhem,   There's No Place Like Oaklore, and  Victoria's Secret. • The following changes were implemented on  April 11th, 2025: • Tooltips were updated for this guest. • Damage from 'Swordplay' was increased from 100% to 200%.Total damage of 'Swordplay' and 'Attack' was lowered from 200% to 140% on  August 22nd, 2024. • Art was updated on  August 29th, 2025. • Old Appearance • DemonicDarkwraith for entry reformat, image, skill appearances, other information, and corrections. • Peachii for locations. • Stephen Nix for skill button and corrections. • SalvationXI for corrections. • Stelios for initial entry rewrite.",
+    "notes": "Sir Ano was previously attainable from the following retired access points:  Nose for Trouble,  Major Mayhem,   There's No Place Like Oaklore, and  Victoria's Secret. • The following changes were implemented on  April 11th, 2025: • Tooltips were updated for this guest. • Damage from 'Swordplay' was increased from 100% to 200%.Total damage of 'Swordplay' and 'Attack' was lowered from 200% to 140% on  August 22nd, 2024. • Art was updated on  August 29th, 2025. • Old Appearance",
     "alsoSee": [],
     "tags": [
       "pet",
       "met"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-sir-fluffykins-i-viii",
@@ -17954,7 +17954,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "1",
     "damage": "1-5",
     "stats": "Crit +1, Bonus +1",
@@ -17983,7 +17982,8 @@
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-sir-leon-2",
@@ -17995,7 +17995,6 @@
     "elements": [
       "LIG"
     ],
-    "specialMarkers": [],
     "level": "As player",
     "damage": "Scaled",
     "stats": "None",
@@ -18019,7 +18018,8 @@
     "tags": [
       "pet",
       "lig"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-sir-stephan-all-versions",
@@ -18033,9 +18033,6 @@
       "LIG",
       "MET",
       "NAT"
-    ],
-    "specialMarkers": [
-      "ALA"
     ],
     "level": "Scaled",
     "damage": "Scaled",
@@ -18063,6 +18060,9 @@
       "met",
       "nat",
       "ala"
+    ],
+    "traits": [
+      "ALA"
     ]
   },
   {
@@ -18075,7 +18075,6 @@
     "elements": [
       "MET"
     ],
-    "specialMarkers": [],
     "level": "As player",
     "damage": "Scaled",
     "stats": "None",
@@ -18104,7 +18103,8 @@
     "tags": [
       "pet",
       "met"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-sirius",
@@ -18116,7 +18116,6 @@
     "elements": [
       "GOO"
     ],
-    "specialMarkers": [],
     "level": "As player",
     "damage": "Scaled",
     "stats": "None",
@@ -18139,7 +18138,8 @@
     "tags": [
       "pet",
       "goo"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-slight-squishie",
@@ -18151,7 +18151,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "70",
     "damage": "17-25",
     "stats": "None",
@@ -18216,7 +18215,8 @@
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-slushy-dragon-snowman",
@@ -18228,7 +18228,6 @@
     "elements": [
       "ICE"
     ],
-    "specialMarkers": [],
     "level": "15",
     "damage": "5-15",
     "stats": "Crit +1",
@@ -18259,7 +18258,7 @@
     "evolutions": [],
     "releaseDate": "December 31st, 2007",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=12403220",
-    "notes": "Transformed from  Blue Dragon Gift Box II on  December 31st, 2007. • Stephen Nix for rewrite and images. • Scakk for the rarity score. • Peachii for corrections. • Slayer Zach for correction.",
+    "notes": "Transformed from  Blue Dragon Gift Box II on  December 31st, 2007. • Stephen Nix for rewrite and images. • Scakk for the rarity score.",
     "alsoSee": [
       {
         "name": "Slushy Snowman",
@@ -18270,7 +18269,8 @@
     "tags": [
       "pet",
       "ice"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-slushy-snowman",
@@ -18282,7 +18282,6 @@
     "elements": [
       "ICE"
     ],
-    "specialMarkers": [],
     "level": "15",
     "damage": "4-14",
     "stats": "None",
@@ -18324,7 +18323,8 @@
     "tags": [
       "pet",
       "ice"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-snailmail",
@@ -18336,7 +18336,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "1",
     "damage": "1-3",
     "stats": "None",
@@ -18362,12 +18361,13 @@
     "evolutions": [],
     "releaseDate": "August 30th, 2006",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=6205980",
-    "notes": "Pet is animated; Snailmail's shell and mushrooms wobble, and its eye tentacles move continuously. • Jay for images, other information, and corrections. • The 13th for initial entry reformat. • Naurchir and Stephen Nix for information. • Peachii for correction.",
+    "notes": "Pet is animated; Snailmail's shell and mushrooms wobble, and its eye tentacles move continuously.",
     "alsoSee": [],
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-snapperdilla-all-versions",
@@ -18380,7 +18380,6 @@
       "FIR",
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "30",
     "damage": "13-19",
     "stats": "None",
@@ -18416,7 +18415,8 @@
       "pet",
       "fir",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-sneegion-minion-all-versions",
@@ -18428,7 +18428,6 @@
     "elements": [
       "EVI"
     ],
-    "specialMarkers": [],
     "level": "10",
     "damage": "5-11",
     "stats": "None",
@@ -18457,7 +18456,8 @@
     "tags": [
       "pet",
       "evi"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-sneevil-charger-general",
@@ -18469,7 +18469,6 @@
     "elements": [
       "WIN"
     ],
-    "specialMarkers": [],
     "level": "40",
     "damage": "15-20",
     "stats": "None",
@@ -18498,7 +18497,8 @@
     "tags": [
       "pet",
       "win"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-sneevil-ninja-buddy",
@@ -18510,7 +18510,6 @@
     "elements": [
       "MET"
     ],
-    "specialMarkers": [],
     "level": "25",
     "damage": "5-17",
     "stats": "None",
@@ -18551,7 +18550,8 @@
     "tags": [
       "pet",
       "met"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-snuggles-all-versions",
@@ -18563,7 +18563,6 @@
     "elements": [
       "DAR"
     ],
-    "specialMarkers": [],
     "level": "30",
     "damage": "9-15",
     "stats": "None",
@@ -18598,7 +18597,8 @@
     "tags": [
       "pet",
       "dar"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-solid-gold-tog",
@@ -18610,7 +18610,6 @@
     "elements": [
       "STO"
     ],
-    "specialMarkers": [],
     "level": "50",
     "damage": "19-22",
     "stats": "None",
@@ -18660,7 +18659,8 @@
     "tags": [
       "pet",
       "sto"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-sparklepony",
@@ -18673,7 +18673,6 @@
       "FIR",
       "LIG"
     ],
-    "specialMarkers": [],
     "level": "20",
     "damage": "10-14",
     "stats": "None",
@@ -18709,7 +18708,8 @@
       "pet",
       "fir",
       "lig"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-sporcaling",
@@ -18721,7 +18721,6 @@
     "elements": [
       "FEA"
     ],
-    "specialMarkers": [],
     "level": "1",
     "damage": "Scaled, rounded downMin: 4*[SQRT(Player's level)]",
     "stats": "Crit +5, Bonus +5",
@@ -18756,7 +18755,8 @@
     "tags": [
       "pet",
       "fea"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-spots-the-two-headed-puppy",
@@ -18769,7 +18769,6 @@
       "ICE",
       "POI"
     ],
-    "specialMarkers": [],
     "level": "35",
     "damage": "15-19",
     "stats": "None",
@@ -18811,7 +18810,8 @@
       "pet",
       "ice",
       "poi"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-spotted-chickcalf",
@@ -18823,7 +18823,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "50",
     "damage": "16-22",
     "stats": "Crit +4, WIS +5, END +4",
@@ -18854,7 +18853,7 @@
     "evolutions": [],
     "releaseDate": "April 16th, 2010",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17506125",
-    "notes": "Pet is animated; it blinks, looks upwards, preens, and pecks at the ground sporadically. • Silver for image. • Stephen Nix for attack type image. • Jay for other information, also see links, and corrections. • Sasuke Uchiha1132 for information.",
+    "notes": "Pet is animated; it blinks, looks upwards, preens, and pecks at the ground sporadically.",
     "alsoSee": [
       {
         "name": "Armored Chickcalf (I-VII)",
@@ -18880,7 +18879,8 @@
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-sprinkles-all-versions",
@@ -18892,7 +18892,6 @@
     "elements": [
       "ICE"
     ],
-    "specialMarkers": [],
     "level": "10",
     "damage": "5-9",
     "stats": "None",
@@ -18928,7 +18927,8 @@
     "tags": [
       "pet",
       "ice"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-spume",
@@ -18940,7 +18940,6 @@
     "elements": [
       "WAT"
     ],
-    "specialMarkers": [],
     "level": "5",
     "damage": "2-7",
     "stats": "None",
@@ -18969,7 +18968,8 @@
     "tags": [
       "pet",
       "wat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-stan-the-scanorb",
@@ -18979,9 +18979,6 @@
     "description": "The one and only, Stan the ScanOrb! Accept no substitutes! Made in Lore.",
     "daRequired": false,
     "elements": [],
-    "specialMarkers": [
-      "N/A"
-    ],
     "level": "1",
     "damage": "0-0",
     "stats": "None",
@@ -19024,11 +19021,14 @@
     "evolutions": [],
     "releaseDate": "July 24th, 2015",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22010074",
-    "notes": "Stan the ScanOrb will display one of the following pop-up headlines during its turn, at random: • quote: • blip* Actually, that would be an insult to vegetables. • blip* Everyone expects the Stan-ish Inquisition. • blip* Face Scan of target suggests 99% resemblance to Magus Z's • blip* The real question is... Where is Waldo? • blip* You, sir, have the intellect of a vegetable. • blip* Your collective grey matter is a figure that approaches negative infinity. • blip* Your father was... Actually, let's not talk about your father... • blip* Your mother was a Sneevil. • Silver for image, updated attack type information, and corrections. • Jay for attack type images and corrections. • Slayer Zach for attack type information. • crabpeople for pop-up headlines.",
+    "notes": "Stan the ScanOrb will display one of the following pop-up headlines during its turn, at random: • quote: • blip* Actually, that would be an insult to vegetables. • blip* Everyone expects the Stan-ish Inquisition. • blip* Face Scan of target suggests 99% resemblance to Magus Z's • blip* The real question is... Where is Waldo? • blip* You, sir, have the intellect of a vegetable. • blip* Your collective grey matter is a figure that approaches negative infinity. • blip* Your father was... Actually, let's not talk about your father... • blip* Your mother was a Sneevil.",
     "alsoSee": [],
     "tags": [
       "pet",
       "n-a"
+    ],
+    "traits": [
+      "N/A"
     ]
   },
   {
@@ -19042,7 +19042,6 @@
       "FIR",
       "MET"
     ],
-    "specialMarkers": [],
     "level": "10",
     "damage": "6-13",
     "stats": "Block +2, Crit +2",
@@ -19074,7 +19073,7 @@
     "evolutions": [],
     "releaseDate": "September 21st, 2006",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=6483272",
-    "notes": "Despite requiring a DC-item to merge, this pet is not DC-tagged, and thus is ineligible for free storage at the bank. • Pet is animated; its drill bit tongue rapidly rotates continuously. • Jay for image, attack type images, and other information. • Stephen Nix for entry reformat. • Karika for non-DA requirement. • Kazix for damage information. • Armakuny, Niki, and SalvationXI for corrections.",
+    "notes": "Despite requiring a DC-item to merge, this pet is not DC-tagged, and thus is ineligible for free storage at the bank. • Pet is animated; its drill bit tongue rapidly rotates continuously.",
     "alsoSee": [
       {
         "name": "Rare Steam Tog",
@@ -19096,7 +19095,8 @@
       "pet",
       "fir",
       "met"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-stumpy",
@@ -19108,7 +19108,6 @@
     "elements": [
       "WOO"
     ],
-    "specialMarkers": [],
     "level": "3",
     "damage": "1-5",
     "stats": "None",
@@ -19134,12 +19133,13 @@
     "evolutions": [],
     "releaseDate": "August 30th, 2006",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=6206134",
-    "notes": "Pet is animated; Stumpy's eye blinks regularly. • Jay for images and corrections. • The 13th for initial entry reformat. • Karika, someoneguy577, and Stephen Nix for corrections.",
+    "notes": "Pet is animated; Stumpy's eye blinks regularly.",
     "alsoSee": [],
     "tags": [
       "pet",
       "woo"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-super-lucky-wyvern-i-viii",
@@ -19151,7 +19151,6 @@
     "elements": [
       "LIG"
     ],
-    "specialMarkers": [],
     "level": "1",
     "damage": "3-9",
     "stats": "Crit +1",
@@ -19181,7 +19180,8 @@
     "tags": [
       "pet",
       "lig"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-sweet-capustak",
@@ -19193,7 +19193,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "1",
     "damage": "Scaled, rounded downMin: SQRT(Player's level)",
     "stats": "CHA +200",
@@ -19229,7 +19228,8 @@
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-sweetfishy-coldface",
@@ -19241,7 +19241,6 @@
     "elements": [
       "ICE"
     ],
-    "specialMarkers": [],
     "level": "70",
     "damage": "17-23",
     "stats": "None",
@@ -19323,7 +19322,8 @@
     "tags": [
       "pet",
       "ice"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-swerski-bear-cub",
@@ -19335,7 +19335,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "76",
     "damage": "17-27",
     "stats": "None",
@@ -19406,7 +19405,8 @@
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-symone",
@@ -19418,7 +19418,6 @@
     "elements": [
       "MET"
     ],
-    "specialMarkers": [],
     "level": "As player",
     "damage": "Scaled",
     "stats": "None",
@@ -19443,12 +19442,13 @@
     "releaseDate": "November 5th, 2013",
     "imageUrl": "http://i.imgur.com/amHEVxQ.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21850713",
-    "notes": "Skill was initially called 'Cleanse'. • Appearance • Sword Combo • Strong sword combo! • Requirements: None • Effect: 5 hits of 42% damage, amounting to 210% damage. • Mana Cost: 20 • Cooldown: 11 • Attack Type: Melee • Appearance 1 /  1.1 • Attack • Requirements: None • Effect: 3 hits of 40% damage, amounting to 120% damage. • Mana Cost: 0 • Cooldown: 0 • Attack Type: Melee • Appearance 1 /  1.1 • Symone is only invited with 0 Pierce Avoidance from  Forest Hunt and  Storming the Castle. • A Dragon Amulet is required to invite Symone as a guest at  Serenity Before The Storm and  Dark Night. • Symone has a series of unconventional stats in the quest  Calamity; STR: 0, LUK: 0, Bonus: 50, Crit: 5. • DemonicDarkwraith for entry reformat, image, skill appearance images, other information, and corrections. • Ash for skill updates. • Slayer Zach for skill icons and other information. • Stephen Nix for correction.",
+    "notes": "Skill was initially called 'Cleanse'. • Appearance • Sword Combo • Strong sword combo! • Requirements: None • Effect: 5 hits of 42% damage, amounting to 210% damage. • Mana Cost: 20 • Cooldown: 11 • Attack Type: Melee • Appearance 1 /  1.1 • Attack • Requirements: None • Effect: 3 hits of 40% damage, amounting to 120% damage. • Mana Cost: 0 • Cooldown: 0 • Attack Type: Melee • Appearance 1 /  1.1 • Symone is only invited with 0 Pierce Avoidance from  Forest Hunt and  Storming the Castle. • A Dragon Amulet is required to invite Symone as a guest at  Serenity Before The Storm and  Dark Night. • Symone has a series of unconventional stats in the quest  Calamity; STR: 0, LUK: 0, Bonus: 50, Crit: 5.",
     "alsoSee": [],
     "tags": [
       "pet",
       "met"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-teeny-squishie",
@@ -19460,7 +19460,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "60",
     "damage": "17-23",
     "stats": "None",
@@ -19525,7 +19524,8 @@
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-thom",
@@ -19537,7 +19537,6 @@
     "elements": [
       "MET"
     ],
-    "specialMarkers": [],
     "level": "Scaled",
     "damage": "Scaled",
     "stats": "None",
@@ -19560,7 +19559,8 @@
     "tags": [
       "pet",
       "met"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-tiny-bear-cub",
@@ -19572,7 +19572,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "10",
     "damage": "5-9",
     "stats": "None",
@@ -19643,7 +19642,8 @@
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-tiny-fireflies",
@@ -19655,7 +19655,6 @@
     "elements": [
       "LIG"
     ],
-    "specialMarkers": [],
     "level": "15",
     "damage": "8-14",
     "stats": "None",
@@ -19706,7 +19705,8 @@
     "tags": [
       "pet",
       "lig"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-tiny-squishie",
@@ -19718,7 +19718,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "10",
     "damage": "5-9",
     "stats": "None",
@@ -19783,7 +19782,8 @@
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-togrider-lieutenant-general",
@@ -19795,7 +19795,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "15",
     "damage": "5-16",
     "stats": "Crit +2",
@@ -19825,7 +19824,8 @@
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-toil",
@@ -19837,7 +19837,6 @@
     "elements": [
       "ICE"
     ],
-    "specialMarkers": [],
     "level": "As player",
     "damage": "Scaled",
     "stats": "None",
@@ -19860,7 +19859,8 @@
     "tags": [
       "pet",
       "ice"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-tomix-4",
@@ -19872,7 +19872,6 @@
     "elements": [
       "EVI"
     ],
-    "specialMarkers": [],
     "level": "As player",
     "damage": "Scaled",
     "stats": "None",
@@ -19895,7 +19894,8 @@
     "tags": [
       "pet",
       "evi"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-toppings",
@@ -19907,7 +19907,6 @@
     "elements": [
       "ICE"
     ],
-    "specialMarkers": [],
     "level": "50",
     "damage": "13-19",
     "stats": "None",
@@ -19989,7 +19988,8 @@
     "tags": [
       "pet",
       "ice"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-triks-the-moglin-all-versions",
@@ -20001,7 +20001,6 @@
     "elements": [
       "LIG"
     ],
-    "specialMarkers": [],
     "level": "20",
     "damage": "14-18",
     "stats": "Crit +5",
@@ -20042,7 +20041,8 @@
     "tags": [
       "pet",
       "lig"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-tropical-bugmonkee",
@@ -20054,7 +20054,6 @@
     "elements": [
       "POI"
     ],
-    "specialMarkers": [],
     "level": "20",
     "damage": "6-18",
     "stats": "None",
@@ -20083,7 +20082,8 @@
     "tags": [
       "pet",
       "poi"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-tropy",
@@ -20095,7 +20095,6 @@
     "elements": [
       "DAR"
     ],
-    "specialMarkers": [],
     "level": "Scaled",
     "damage": "Scaled",
     "stats": "None",
@@ -20118,7 +20117,8 @@
     "tags": [
       "pet",
       "dar"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-trouble",
@@ -20130,7 +20130,6 @@
     "elements": [
       "FIR"
     ],
-    "specialMarkers": [],
     "level": "As player",
     "damage": "Scaled",
     "stats": "None",
@@ -20153,7 +20152,8 @@
     "tags": [
       "pet",
       "fir"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-turdraken-wyvernling",
@@ -20165,7 +20165,6 @@
     "elements": [
       "WIN"
     ],
-    "specialMarkers": [],
     "level": "1",
     "damage": "Scaled, rounded upMin: [Level*2/5 - 10], bounded below 1",
     "stats": "Crit +5, Bonus +5",
@@ -20195,7 +20194,8 @@
     "tags": [
       "pet",
       "win"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-tweaked-rummage",
@@ -20208,7 +20208,6 @@
       "ENE",
       "MET"
     ],
-    "specialMarkers": [],
     "level": "20",
     "damage": "8-19",
     "stats": "None",
@@ -20239,7 +20238,7 @@
     "evolutions": [],
     "releaseDate": "August 14th, 2009",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19412135",
-    "notes": "If Attack Type 2 was used again prior to 'Blind' expiring, it will be reapplied to target for 2 turns. • Ash for original entry. • pjc for information. • TheChosen1, Jay, Barong the DemiGod, and Baltheon for corrections. • DemonicDarkwraith for other information and corrections.",
+    "notes": "If Attack Type 2 was used again prior to 'Blind' expiring, it will be reapplied to target for 2 turns. • Ash for original entry.",
     "alsoSee": [
       {
         "name": "Rummage",
@@ -20261,7 +20260,8 @@
       "pet",
       "ene",
       "met"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-twilly",
@@ -20273,7 +20273,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "As player",
     "damage": "Scaled, rounded normallyMin: 1.9*[SQRT(Level)]",
     "stats": "Crit +5, Bonus +[10 + Level/2]",
@@ -20295,7 +20294,8 @@
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-two-headed-puppy",
@@ -20308,7 +20308,6 @@
       "ICE",
       "POI"
     ],
-    "specialMarkers": [],
     "level": "15",
     "damage": "11-15",
     "stats": "None",
@@ -20350,7 +20349,8 @@
       "pet",
       "ice",
       "poi"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-uaanta-fayt",
@@ -20362,7 +20362,6 @@
     "elements": [
       "WIN"
     ],
-    "specialMarkers": [],
     "level": "As player",
     "damage": "Scaled",
     "stats": "None",
@@ -20439,7 +20438,8 @@
     "tags": [
       "pet",
       "win"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-undead-chickencow-all-versions",
@@ -20452,7 +20452,6 @@
       "DIS",
       "FIR"
     ],
-    "specialMarkers": [],
     "level": "10",
     "damage": "8-14",
     "stats": "None",
@@ -20488,7 +20487,8 @@
       "pet",
       "dis",
       "fir"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-valencia-2",
@@ -20500,7 +20500,6 @@
     "elements": [
       "MET"
     ],
-    "specialMarkers": [],
     "level": "As player",
     "damage": "Scaled",
     "stats": "None",
@@ -20524,7 +20523,8 @@
     "tags": [
       "pet",
       "met"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-valentidus",
@@ -20536,7 +20536,6 @@
     "elements": [
       "GOO"
     ],
-    "specialMarkers": [],
     "level": "As player",
     "damage": "Scaled",
     "stats": "None",
@@ -20558,7 +20557,8 @@
     "tags": [
       "pet",
       "goo"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-vayle-2",
@@ -20570,7 +20570,6 @@
     "elements": [
       "DAR"
     ],
-    "specialMarkers": [],
     "level": "As player",
     "damage": "Scaled",
     "stats": "None",
@@ -20606,7 +20605,8 @@
     "tags": [
       "pet",
       "dar"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-verlyrus",
@@ -20618,7 +20618,6 @@
     "elements": [
       "???"
     ],
-    "specialMarkers": [],
     "level": "Scaled",
     "damage": "Scaled",
     "stats": "None",
@@ -20641,7 +20640,8 @@
     "tags": [
       "pet",
       "???"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-vilmor-1",
@@ -20653,7 +20653,6 @@
     "elements": [
       "ICE"
     ],
-    "specialMarkers": [],
     "level": "As player",
     "damage": "Scaled",
     "stats": "None",
@@ -20682,7 +20681,8 @@
     "tags": [
       "pet",
       "ice"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-wafflecone-toasti",
@@ -20694,7 +20694,6 @@
     "elements": [
       "ICE"
     ],
-    "specialMarkers": [],
     "level": "40",
     "damage": "11-17",
     "stats": "None",
@@ -20776,7 +20775,8 @@
     "tags": [
       "pet",
       "ice"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-war-wolf-i-ii-iii",
@@ -20788,7 +20788,6 @@
     "elements": [
       "ICE"
     ],
-    "specialMarkers": [],
     "level": "25",
     "damage": "10-18",
     "stats": "Crit +5, CHA +2, LUK +2, Bonus +5",
@@ -20824,7 +20823,8 @@
     "tags": [
       "pet",
       "ice"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-warlic-2",
@@ -20837,7 +20837,6 @@
       "ENE",
       "ICE"
     ],
-    "specialMarkers": [],
     "level": "As player",
     "damage": "Scaled",
     "stats": "None",
@@ -20862,7 +20861,8 @@
       "pet",
       "ene",
       "ice"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-westminster-bear-cub",
@@ -20874,7 +20874,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "73",
     "damage": "17-25",
     "stats": "None",
@@ -20945,7 +20944,8 @@
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-white-dragon-snowman",
@@ -20957,7 +20957,6 @@
     "elements": [
       "ICE"
     ],
-    "specialMarkers": [],
     "level": "25",
     "damage": "12-17",
     "stats": "Crit +2",
@@ -20988,7 +20987,7 @@
     "evolutions": [],
     "releaseDate": "December 31st, 2007",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=12403089",
-    "notes": "Transformed from  Blue Dragon Gift Box III on  December 31st, 2007. • Stephen Nix for post reformat and images. • gladiator hawk for post reformat and old attack images. • Scakk for rare status and rarity score. • Peachii for corrections. • Slayer Zach for correction.",
+    "notes": "Transformed from  Blue Dragon Gift Box III on  December 31st, 2007. • Stephen Nix for post reformat and images. • gladiator hawk for post reformat and old attack images. • Scakk for rare status and rarity score.",
     "alsoSee": [
       {
         "name": "White Snowman",
@@ -20999,7 +20998,8 @@
     "tags": [
       "pet",
       "ice"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-white-snowman",
@@ -21011,7 +21011,6 @@
     "elements": [
       "ICE"
     ],
-    "specialMarkers": [],
     "level": "25",
     "damage": "10-16",
     "stats": "None",
@@ -21053,7 +21052,8 @@
     "tags": [
       "pet",
       "ice"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-wondrous-gift-box",
@@ -21065,7 +21065,6 @@
     "elements": [
       "FIR"
     ],
-    "specialMarkers": [],
     "level": "71",
     "damage": "21-25",
     "stats": "Bonus +6",
@@ -21117,7 +21116,8 @@
     "tags": [
       "pet",
       "fir"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-xor-vrailin-ii",
@@ -21127,9 +21127,6 @@
     "description": "As character",
     "daRequired": false,
     "elements": [],
-    "specialMarkers": [
-      "A/C"
-    ],
     "level": "As character",
     "damage": "As character",
     "stats": "None",
@@ -21152,6 +21149,9 @@
     "tags": [
       "pet",
       "a-c"
+    ],
+    "traits": [
+      "A/C"
     ]
   },
   {
@@ -21164,7 +21164,6 @@
     "elements": [
       "???"
     ],
-    "specialMarkers": [],
     "level": "As player",
     "damage": "Scaled",
     "stats": "None",
@@ -21192,7 +21191,8 @@
     "tags": [
       "pet",
       "???"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-yellow-dragon-snowman",
@@ -21204,7 +21204,6 @@
     "elements": [
       "ICE"
     ],
-    "specialMarkers": [],
     "level": "5",
     "damage": "3-8",
     "stats": "None",
@@ -21235,7 +21234,7 @@
     "evolutions": [],
     "releaseDate": "December 31st, 2007",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=12403273",
-    "notes": "Transformed from  Blue Dragon Gift Box on  December 31st, 2007. • Stephen Nix for rewrite and images. • Scakk for rare info and rarity score. • Peachii for corrections. • Slayer Zach for correction.",
+    "notes": "Transformed from  Blue Dragon Gift Box on  December 31st, 2007. • Stephen Nix for rewrite and images. • Scakk for rare info and rarity score.",
     "alsoSee": [
       {
         "name": "Yellow Snowman",
@@ -21246,7 +21245,8 @@
     "tags": [
       "pet",
       "ice"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-yellow-snowman",
@@ -21258,7 +21258,6 @@
     "elements": [
       "ICE"
     ],
-    "specialMarkers": [],
     "level": "5",
     "damage": "2-7",
     "stats": "None",
@@ -21300,7 +21299,8 @@
     "tags": [
       "pet",
       "ice"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-yoooogi-bear-cub",
@@ -21312,7 +21312,6 @@
     "elements": [
       "NAT"
     ],
-    "specialMarkers": [],
     "level": "1",
     "damage": "1-5",
     "stats": "None",
@@ -21383,7 +21382,8 @@
     "tags": [
       "pet",
       "nat"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-zardbirillaomgiphant-all-versions",
@@ -21396,7 +21396,6 @@
       "DIS",
       "FIR"
     ],
-    "specialMarkers": [],
     "level": "10",
     "damage": "8-14",
     "stats": "None",
@@ -21432,7 +21431,8 @@
       "pet",
       "dis",
       "fir"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-zhoom-1",
@@ -21446,7 +21446,6 @@
       "FIR",
       "MET"
     ],
-    "specialMarkers": [],
     "level": "15",
     "damage": "15-25",
     "stats": "None",
@@ -21472,7 +21471,8 @@
       "ene",
       "fir",
       "met"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-zixcy",
@@ -21484,7 +21484,6 @@
     "elements": [
       "MET"
     ],
-    "specialMarkers": [],
     "level": "22",
     "damage": "10-19",
     "stats": "None",
@@ -21519,7 +21518,8 @@
     "tags": [
       "pet",
       "met"
-    ]
+    ],
+    "traits": []
   },
   {
     "id": "pet-zorbak",
@@ -21531,7 +21531,6 @@
     "elements": [
       "DAR"
     ],
-    "specialMarkers": [],
     "level": "Scaled",
     "damage": "Scaled",
     "stats": "None",
@@ -21566,6 +21565,7 @@
     "tags": [
       "pet",
       "dar"
-    ]
+    ],
+    "traits": []
   }
 ]

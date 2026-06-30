@@ -23,7 +23,7 @@
     { "code": "WIN", "name": "Wind Element",       "shortName": "Wind",     "colour": "bg-teal-400/20 text-teal-300" },
     { "code": "WOO", "name": "Wood Element",       "shortName": "Wood",     "colour": "bg-emerald-700/20 text-emerald-400" }
   ],
-  "markers": [
+  "traits": [
     { "code": "A/C", "name": "As Character",    "colour": "bg-indigo-500/20 text-indigo-300" },
     { "code": "ALA", "name": "As Last Attack",  "colour": "bg-orange-500/20 text-orange-300" },
     { "code": "N/A", "name": "No Attack",       "colour": "bg-bg-overlay text-text-muted" },

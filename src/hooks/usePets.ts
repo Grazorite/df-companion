@@ -20,9 +20,9 @@ function searchPets(pets: Pet[], filters: PetFilters): Pet[] {
         if (!filters.type.includes(pet.type)) return false
       }
 
-      // Element filter — OR logic across selected elements
+      // Element/trait filter — OR logic across selected codes (elements + traits combined)
       if (filters.elements && filters.elements.length > 0) {
-        const petCodes = [...pet.elements, ...pet.specialMarkers]
+        const petCodes = [...pet.elements, ...pet.traits]
         if (!filters.elements.some(e => petCodes.includes(e))) return false
       }
 
@@ -39,6 +39,7 @@ function searchPets(pets: Pet[], filters: PetFilters): Pet[] {
           pet.name,
           pet.description,
           ...pet.elements.map(e => elementMeta.elements.find(el => el.code === e)?.shortName ?? e),
+          ...pet.traits.map(t => elementMeta.traits.find(tr => tr.code === t)?.name ?? t),
           ...pet.tags,
         ].join(' ').toLowerCase()
 

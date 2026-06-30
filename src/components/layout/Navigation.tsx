@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom'
 import { Trophy, Map, Skull, Home, Sword, Users, Shirt, House, Package, PawPrint } from 'lucide-react'
 import { useTotalBadgeCount } from '../../hooks/useBadges'
+import { useTotalPetCount } from '../../hooks/usePets'
 
 // Mirrors the DF Encyclopedia forum structure exactly:
 // https://forums2.battleon.com/f/tt.asp?forumid=256
@@ -13,13 +14,14 @@ const NAV_ITEMS = [
   { to: '/locations', icon: Map, label: 'Locations / Quests', exact: false, available: false },
   { to: '/monsters', icon: Skull, label: 'Monsters', exact: false, available: false },
   { to: '/npcs', icon: Users, label: 'NPCs', exact: false, available: false },
-  { to: '/pets', icon: PawPrint, label: 'Pets / Guests', exact: false, available: false },
+  { to: '/pets', icon: PawPrint, label: 'Pets / Guests', exact: false, available: true },
   { to: '/items', icon: Package, label: 'Stackable Items', exact: false, available: false },
   { to: '/weapons', icon: Sword, label: 'Weapons', exact: false, available: false },
 ]
 
 export default function Navigation() {
   const badgeCount = useTotalBadgeCount()
+  const petCount = useTotalPetCount()
 
   return (
     <>
@@ -61,6 +63,9 @@ export default function Navigation() {
                   {to === '/badges' && (
                     <span className="text-xs text-text-muted tabular-nums">{badgeCount}</span>
                   )}
+                  {to === '/pets' && (
+                    <span className="text-xs text-text-muted tabular-nums">{petCount}</span>
+                  )}
                 </NavLink>
               ) : (
                 <div
@@ -101,7 +106,7 @@ export default function Navigation() {
         aria-label="Main navigation"
       >
         <ul className="flex h-14" role="list">
-          {NAV_ITEMS.filter(item => item.to === '/' || item.to === '/badges' || item.to === '/locations' || item.to === '/monsters' || item.to === '/weapons').map(({ to, icon: Icon, label, exact, available }) => (
+          {NAV_ITEMS.filter(item => item.to === '/' || item.to === '/badges' || item.to === '/pets' || item.to === '/monsters' || item.to === '/locations').map(({ to, icon: Icon, label, exact, available }) => (
             <li key={to} className="flex-1">
               {available ? (
                 <NavLink

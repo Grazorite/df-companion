@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { Trophy, Map, Skull, Sword, Users, Shirt, House, Package, PawPrint } from 'lucide-react'
 import { useTotalBadgeCount } from '../hooks/useBadges'
+import { useTotalPetCount } from '../hooks/usePets'
 
 // All sections in forum order — each as its own card, uniform grid
 const SECTIONS = [
@@ -11,13 +12,14 @@ const SECTIONS = [
   { to: '/locations', icon: Map, label: 'Locations / Quests / Events', desc: 'All the different places in DF — shops, access areas, battlezones and Special Event entries.', available: false },
   { to: '/monsters', icon: Skull, label: 'Monsters', desc: 'All the creepy, crawly, cute or scary monsters that you face throughout DragonFable.', available: false },
   { to: '/npcs', icon: Users, label: 'NPCs', desc: 'All those people who talk to you in the game? Put them here.', available: false },
-  { to: '/pets', icon: PawPrint, label: 'Pets / Guests', desc: 'The people (or pets) who will help you in your battles.', available: false },
+  { to: '/pets', icon: PawPrint, label: 'Pets / Guests', desc: 'The people (or pets) who will help you in your battles.', available: true },
   { to: '/items', icon: Package, label: 'Stackable / Non-Equippable Items', desc: 'If it\'s a resource, stackable item, or non-equippable item, you\'ll find it here.', available: false },
   { to: '/weapons', icon: Sword, label: 'Weapons', desc: 'If you hit with it, throw it, or use it to multiply spell energy, put it here.', available: false },
 ]
 
 export default function HomePage() {
   const badgeCount = useTotalBadgeCount()
+  const petCount = useTotalPetCount()
 
   return (
     <main className="px-4 sm:px-6 py-8 max-w-2xl mx-auto">
@@ -60,6 +62,9 @@ export default function HomePage() {
                   {label}
                   {to === '/badges' && (
                     <span className="ml-1.5 text-xs font-normal text-text-muted">({badgeCount})</span>
+                  )}
+                  {to === '/pets' && (
+                    <span className="ml-1.5 text-xs font-normal text-text-muted">({petCount})</span>
                   )}
                 </div>
                 <div className="text-text-secondary text-xs mt-1 leading-relaxed">{desc}</div>

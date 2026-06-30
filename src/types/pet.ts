@@ -43,7 +43,7 @@ export interface Pet {
 
   // Elements — array since a pet can have multiple
   elements: string[]       // Element codes: ["ICE"] or ["ICE", "FIR"]
-  specialMarkers: string[] // Marker codes: ["SHR", "W/S"]
+  traits: string[]         // Behavioural trait codes: ["SHR", "W/S"] (formerly specialMarkers)
 
   // Stats
   level: string            // "19" or "19-25"

@@ -266,12 +266,14 @@ function parsePetThread(html: string, name: string): {
     }
 
     if (/^Other\s+information/i.test(line)) { inNotes = true; continue }
-    if (/^Thanks\s+to/i.test(line)) continue
+    if (/^Thanks\s+to/i.test(line)) break  // stop processing — everything from here is attribution
 
     if (!description && !inNotes && !currentAttack && line.length > 5) { description = line; continue }
     if (inNotes && line.length > 3) {
-      // Skip edit timestamps: "Username -- M/D/YYYY HH:MM:SS >"
+      // Skip edit timestamps
       if (/\w+\s+--\s+\d+\/\d+\/\d+\s+\d+:\d+:\d+/.test(line)) continue
+      // Stop at attribution lines: "Name for image/entry/corrections/etc."
+      if (/^[\w\s,]+\s+for\s+(image|attack|information|entry|corrections|formatting|description)/i.test(line)) break
       noteLines.push(line.replace(/^[•\-\*]\s*/, ''))
     }
   }
@@ -469,8 +471,7 @@ async function main() {
         description: data.description,
         daRequired: data.daRequired,
         elements: stub.elements,
-        specialMarkers: stub.markers,
-        level: data.level || 'Unknown',
+        traits: stub.markers,        level: data.level || 'Unknown',
         damage: data.damage || 'Unknown',
         stats: data.stats || 'None',
         resists: data.resists || 'None',
@@ -483,8 +484,7 @@ async function main() {
         forumUrl: stub.forumUrl,
         ...(data.notes ? { notes: data.notes } : {}),
         alsoSee,
-        tags: [stub.type, ...stub.elements.map(e => e.toLowerCase()), ...stub.markers.map(m => m.toLowerCase().replace('/', '-'))],
-      }
+        tags: [stub.type, ...stub.elements.map(e => e.toLowerCase()), ...stub.markers.map(m => m.toLowerCase().replace('/', '-'))]      }
 
       progressMap.set(stub.slug, pet)
       scraped++

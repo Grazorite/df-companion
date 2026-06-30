@@ -2,11 +2,11 @@ import { Link } from 'react-router-dom'
 import elementsData from '../../data/elements.json'
 import type { ElementsData } from '../../types/element'
 
-const { elements, markers } = elementsData as ElementsData
+const { elements, traits } = elementsData as ElementsData
 
 // Build lookup maps once
 const elementMap = new Map(elements.map(e => [e.code, e]))
-const markerMap = new Map(markers.map(m => [m.code, m]))
+const traitMap = new Map(traits.map(t => [t.code, t]))
 
 interface ElementPillProps {
   code: string
@@ -16,7 +16,7 @@ interface ElementPillProps {
 }
 
 export default function ElementPill({ code, clickable = false, size = 'sm' }: ElementPillProps) {
-  const entry = elementMap.get(code) ?? markerMap.get(code)
+  const entry = elementMap.get(code) ?? traitMap.get(code)
   const label = entry?.shortName ?? code
   const colour = entry?.colour ?? 'bg-bg-overlay text-text-muted'
   const classes = `inline-flex items-center font-medium rounded-full whitespace-nowrap ${colour} ${

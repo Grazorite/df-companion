@@ -6,6 +6,9 @@ import { BadgeGridSkeleton } from './components/shared/LoadingSkeleton'
 const HomePage = lazy(() => import('./pages/HomePage'))
 const BadgesPage = lazy(() => import('./pages/BadgesPage'))
 const BadgeDetailPage = lazy(() => import('./pages/BadgeDetailPage'))
+const PetsPage = lazy(() => import('./pages/PetsPage'))
+const PetDetailPage = lazy(() => import('./pages/PetDetailPage'))
+const GuestDetailPage = lazy(() => import('./pages/GuestDetailPage'))
 const ComingSoonPage = lazy(() => import('./pages/ComingSoonPage'))
 
 function PageLoader() {
@@ -27,13 +30,15 @@ export default function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/badges" element={<BadgesPage />} />
             <Route path="/badges/:slug" element={<BadgeDetailPage />} />
+            <Route path="/pets" element={<PetsPage />} />
+            <Route path="/pets/:slug" element={<PetDetailPage />} />
+            <Route path="/guests/:slug" element={<GuestDetailPage />} />
             <Route path="/accessories" element={<ComingSoonPage />} />
             <Route path="/classes" element={<ComingSoonPage />} />
             <Route path="/housing" element={<ComingSoonPage />} />
             <Route path="/locations" element={<ComingSoonPage />} />
             <Route path="/monsters" element={<ComingSoonPage />} />
             <Route path="/npcs" element={<ComingSoonPage />} />
-            <Route path="/pets" element={<ComingSoonPage />} />
             <Route path="/items" element={<ComingSoonPage />} />
             <Route path="/weapons" element={<ComingSoonPage />} />
             <Route path="*" element={<ComingSoonPage />} />
