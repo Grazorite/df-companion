@@ -21,25 +21,26 @@ export default function ElementLegend() {
 
       {open && (
         <div className="mt-3 bg-bg-surface border border-border-default rounded-lg p-4">
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 mb-3">
-            {elements.map(e => (
-              <div key={e.code} className="flex items-center gap-2">
-                <span className={`text-xs font-medium px-1.5 py-0.5 rounded-full ${e.colour}`}>
-                  [{e.code}]
-                </span>
-                <span className="text-text-secondary text-xs">{e.shortName}</span>
-              </div>
-            ))}
+          <div className="mb-3">
+            <p className="text-text-muted text-xs mb-2 font-medium uppercase tracking-wider">Elements</p>
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
+              {elements.map(e => (
+                <div key={e.code} className="flex items-center gap-2" title={e.name}>
+                  <span className={`text-xs font-medium px-1.5 py-0.5 rounded-full ${e.colour}`}>
+                    {e.code}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
           <div className="border-t border-border-default pt-3">
             <p className="text-text-muted text-xs mb-2 font-medium uppercase tracking-wider">Traits</p>
             <div className="flex flex-wrap gap-2">
               {traits.map(t => (
-                <div key={t.code} className="flex items-center gap-1.5">
+                <div key={t.code} className="flex items-center gap-1.5" title={t.name}>
                   <span className={`text-xs font-medium px-1.5 py-0.5 rounded-full ${t.colour}`}>
-                    [{t.code}]
+                    {t.code}
                   </span>
-                  <span className="text-text-secondary text-xs">{t.name}</span>
                 </div>
               ))}
             </div>

@@ -91,31 +91,29 @@ export default function BadgeDetailPage() {
           )}
         </div>
 
-        <div className="flex items-start gap-4 mb-3">
-          {/* Badge image — show placeholder if no image */}
-          {badge.imageVariants ? (
-            <div className="flex-shrink-0">
-              <div className="w-20 h-20 rounded-lg bg-bg-elevated border border-border-default flex flex-col items-center justify-center gap-1 text-center p-2">
-                <span className="text-gold text-xs font-bold">32</span>
-                <span className="text-text-muted text-[10px] leading-tight">variants</span>
-              </div>
-            </div>
-          ) : badge.imageUrl ? (
-            <img
-              src={badge.imageUrl}
-              alt={`${badge.name} badge icon`}
-              className="w-20 h-20 rounded-lg object-contain flex-shrink-0 bg-bg-elevated border border-border-default p-1.5 shadow-subtle img-fade"
-            />
-          ) : (
-            <div className="w-20 h-20 rounded-lg flex-shrink-0 bg-bg-elevated border border-border-default flex items-center justify-center shadow-subtle">
-              <Shield className="w-8 h-8 text-border-hover" aria-hidden="true" />
-            </div>
-          )}
-          <div>
-            <h1 className="text-2xl font-bold text-text-primary mb-2">{badge.name}</h1>
-            <p className="text-text-secondary leading-relaxed text-sm italic">{badge.description}</p>
+        <h1 className="text-2xl font-bold text-text-primary mb-2">{badge.name}</h1>
+        <p className="text-text-secondary leading-relaxed text-sm italic">{badge.description}</p>
+      </div>
+
+      {/* Badge image */}
+      <div className="mb-6">
+        {badge.imageVariants ? (
+          <div className="w-full max-w-xs mx-auto aspect-square rounded-xl bg-bg-elevated border border-border-default flex flex-col items-center justify-center gap-2 text-center p-6 shadow-medium">
+            <span className="text-gold text-2xl font-bold">32</span>
+            <span className="text-text-muted text-sm leading-tight">variants</span>
           </div>
-        </div>
+        ) : badge.imageUrl ? (
+          <img
+            src={badge.imageUrl}
+            alt={`${badge.name} badge icon`}
+            loading="lazy"
+            className="max-w-xs w-full mx-auto rounded-xl object-contain bg-bg-elevated border border-border-default p-6 shadow-medium img-fade"
+          />
+        ) : (
+          <div className="w-full max-w-xs mx-auto aspect-square bg-bg-elevated border border-border-default rounded-xl flex items-center justify-center shadow-medium">
+            <Shield className="w-16 h-16 text-border-hover" aria-hidden="true" />
+          </div>
+        )}
       </div>
 
       {/* How to obtain — gold accent left border */}

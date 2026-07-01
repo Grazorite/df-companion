@@ -31,7 +31,12 @@ export default function PetsPage() {
 
   const activeElements = elementParam ? elementParam.split(',').filter(Boolean) : []
   const { elements, traits } = useElements()
-  const allCodes = [...elements.map(e => e.code), ...traits.map(t => t.code)]
+  const filterEntries = [...elements, ...traits]
+  const allCodes = filterEntries.map(e => e.code)
+  const activeAccessLabel = ACCESS_OPTIONS.find(opt => opt.id === accessParam)?.label ?? accessParam
+  const activeTypeLabel = activeTypes.length === 1
+    ? activeTypes[0] === 'pet' ? 'Pets' : 'Guests'
+    : activeTypes.length > 1 ? 'Pets & Guests' : undefined
 
   // Sync URL
   useEffect(() => {
@@ -149,9 +154,9 @@ export default function PetsPage() {
             >
               <span className="pointer-events-none">
                 <span className={`inline-flex items-center text-xs font-medium px-1.5 py-0.5 rounded-full ${
-                  [...elements, ...traits].find(e => e.code === code)?.colour ?? 'bg-bg-overlay text-text-muted'
+                  filterEntries.find(e => e.code === code)?.colour ?? 'bg-bg-overlay text-text-muted'
                 }`}>
-                  {[...elements, ...traits].find(e => e.code === code)?.name ?? code}
+                  {code}
                 </span>
               </span>
             </button>
@@ -177,8 +182,13 @@ export default function PetsPage() {
       <ElementLegend />
 
       {/* Results count */}
-      <p className="text-text-muted text-xs mb-4" aria-live="polite">
+      <p className="text-text-muted text-xs mb-4" aria-live="polite" aria-atomic="true">
         {total} {total === 1 ? 'entry' : 'entries'} found
+        {activeTypeLabel && <span className="text-text-secondary"> in {activeTypeLabel}</span>}
+        {activeElements.length > 0 && (
+          <span className="text-gold"> · {activeElements.join(', ')}</span>
+        )}
+        {accessParam !== 'all' && <span className="text-orange-400"> · {activeAccessLabel}</span>}
       </p>
 
       {/* List */}

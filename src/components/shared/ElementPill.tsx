@@ -17,7 +17,6 @@ interface ElementPillProps {
 
 export default function ElementPill({ code, clickable = false, size = 'sm' }: ElementPillProps) {
   const entry = elementMap.get(code) ?? traitMap.get(code)
-  const label = (entry as { shortName?: string; name?: string } | undefined)?.shortName ?? entry?.name ?? code
   const colour = entry?.colour ?? 'bg-bg-overlay text-text-muted'
   const classes = `inline-flex items-center font-medium rounded-full whitespace-nowrap ${colour} ${
     size === 'sm' ? 'text-xs px-1.5 py-0.5' : 'text-sm px-2.5 py-1'
@@ -31,14 +30,14 @@ export default function ElementPill({ code, clickable = false, size = 'sm' }: El
         title={entry?.name ?? code}
         onClick={e => e.stopPropagation()}
       >
-        {label}
+        {code}
       </Link>
     )
   }
 
   return (
     <span className={classes} title={entry?.name ?? code}>
-      {label}
+      {code}
     </span>
   )
 }
