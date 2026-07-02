@@ -23,7 +23,7 @@ export default function BadgeCard({ badge, toUrl, replace }: BadgeCardProps) {
     <Link
       to={toUrl ?? `/badges/${badge.slug}`}
       replace={replace}
-      className="group flex items-start gap-3 bg-bg-surface border border-border-default rounded-lg p-4 min-h-[80px] transition-all duration-200 ease-out hover:bg-bg-elevated hover:border-border-hover hover:-translate-y-0.5 hover:shadow-medium focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 focus:ring-offset-bg-base"
+      className="group flex items-start gap-3 bg-bg-surface border border-border-default rounded-lg p-4 h-[120px] transition-all duration-200 ease-out hover:bg-bg-elevated hover:border-border-hover hover:-translate-y-0.5 hover:shadow-medium focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 focus:ring-offset-bg-base"
     >
       <div className="flex-1 min-w-0">
         <div className="flex items-center gap-2 mb-1.5">
@@ -33,7 +33,7 @@ export default function BadgeCard({ badge, toUrl, replace }: BadgeCardProps) {
             {badge.category.replace(/-/g, ' ')}
           </span>
         </div>
-        <h3 className="font-semibold text-text-primary text-sm leading-snug mb-1">{badge.name}</h3>
+        <h3 className="font-semibold text-text-primary text-sm leading-snug mb-1 line-clamp-1">{badge.name}</h3>
         <p className="text-text-secondary text-xs leading-relaxed line-clamp-2">{badge.description}</p>
       </div>
       <ChevronRight

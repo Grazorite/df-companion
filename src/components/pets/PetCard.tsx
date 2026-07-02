@@ -22,7 +22,7 @@ export default function PetCard({ pet, toUrl, replace }: PetCardProps) {
     <Link
       to={route}
       replace={replace}
-      className="group flex items-start gap-3 bg-bg-surface border border-border-default rounded-lg p-4 min-h-[80px] transition-all duration-200 ease-out hover:bg-bg-elevated hover:border-border-hover hover:-translate-y-0.5 hover:shadow-medium focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 focus:ring-offset-bg-base"
+      className="group flex items-start gap-3 bg-bg-surface border border-border-default rounded-lg p-4 h-[120px] transition-all duration-200 ease-out hover:bg-bg-elevated hover:border-border-hover hover:-translate-y-0.5 hover:shadow-medium focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 focus:ring-offset-bg-base"
     >
       <div className="flex-1 min-w-0">
         {/* Element pills + type badge */}
@@ -40,7 +40,7 @@ export default function PetCard({ pet, toUrl, replace }: PetCardProps) {
           </span>
         </div>
 
-        <h3 className="font-semibold text-text-primary text-sm leading-snug mb-1">{pet.name}</h3>
+        <h3 className="font-semibold text-text-primary text-sm leading-snug mb-1 line-clamp-1">{pet.name}</h3>
         <p className="text-text-secondary text-xs leading-relaxed line-clamp-2">{pet.description}</p>
       </div>
       <ChevronRight

@@ -1,8 +1,8 @@
 /**
- * Pets & Guests Scraper — A-Z Master Page Strategy (Two-Pass, Resumable)
+ * Pets & Guests Scraper — Chronology-First Strategy (Five-Pass, Resumable)
  *
- * The A-Z Pets & Guests page (m=22349620, mpage=1) contains all entries grouped
- * by letter, each hyperlinked to its individual forum thread.
+ * This scraper fetches Chronology first to get authoritative pet/guest types,
+ * then parses the A-Z page to build stubs with correct type prefixes.
  *
  * Entry format: [ICE][SHR] Pet Name (D-Amulet/Seasonal)
  *
@@ -176,7 +176,7 @@ interface PetStub {
   letter: string  // '#', 'A', 'B', etc.
 }
 
-function parseAZPage(html: string): PetStub[] {
+function parseAZPage(html: string, chronoTypes: Map<string, EntryType>): PetStub[] {
   const stubs: PetStub[] = []
   const seen = new Set<string>()
   const chunks = html.split(/<br\s*\/?>/)
@@ -229,10 +229,14 @@ function parseAZPage(html: string): PetStub[] {
       continue
     }
 
+    // Determine type from Chronology (primary source) or default to 'pet'
+    const key = name.toLowerCase()
+    const type = chronoTypes.get(key) ?? chronoTypes.get(name.replace(/\s*\([^)]+\)\s*$/, '').trim().toLowerCase()) ?? 'pet' as EntryType
+
     stubs.push({
       name,
-      slug: prefixedSlug(name, 'pet'),
-      type: 'pet',
+      slug: prefixedSlug(name, type),
+      type,
       forumUrl: `${FORUM_BASE}/tm.asp?m=${msgId}`,
       messageId: msgId,
       elements,
@@ -250,20 +254,38 @@ function parseAZPage(html: string): PetStub[] {
 
 // ─── Individual pet thread parsing ───────────────────────────────────────────
 
-function parsePriceType(price: string): ObtainMethod['priceType'] {
+function parsePriceType(price: string, requiredItems?: string): ObtainMethod['priceType'] {
   const p = price.toLowerCase()
+  
+  // Dragon Coins
   if (p.includes('dragon coin') || p.includes(' dc') || p === '0 dc') return 'dc'
-  if (p === 'n/a' || p === '0 gold' || p === '0' || p === 'free') return 'free'
+  
+  // Defender's Medals
+  if (p.includes("defender's medal") || p.includes('defender medal') || p.includes(' dm')) return 'dm'
+  
+  // Free = explicitly 0 Gold or "Free"
+  if (p === '0 gold' || p === 'free') return 'free'
+  
+  // Merge = N/A price WITH required items
+  if ((p === 'n/a' || p === '0') && requiredItems && requiredItems.trim().length > 0) return 'merge'
+  
+  // Gold (includes paid gold amounts and N/A without required items)
   if (p.includes('gold')) return 'gold'
-  return 'merge'
+  
+  // Default to merge for anything else with required items
+  if (requiredItems && requiredItems.trim().length > 0) return 'merge'
+  
+  return 'gold'
 }
 
 function parsePetThread(html: string, name: string): {
-  description: string; daRequired: boolean; dcRequired: boolean; obtainMethods: ObtainMethod[]
+  description: string; daRequired: boolean; dcRequired: boolean; dmRequired: boolean
+  isTemp: boolean; isRare: boolean; isSeasonal: boolean; isSpecialOffer: boolean; retired: boolean
+  obtainMethods: ObtainMethod[]
   level: string; damage: string; stats: string; resists: string
   evolutions: { combineWith: string; resultName: string }[]
   rarity: string; attacks: Attack[]; notes?: string
-  alsoSeeNames: string[]; imageUrl?: string; isGuest: boolean
+  alsoSeeNames: string[]; imageUrl?: string; hasDetailedStats: boolean
 } {
   const bodyMatch = html.match(/<td[^>]*valign=["']?top["']?[^>]*width=["']?100%["']?[^>]*>([\s\S]*?)<\/td>/i)
   const rawBody = bodyMatch ? bodyMatch[1] : html
@@ -272,7 +294,13 @@ function parsePetThread(html: string, name: string): {
 
   let description = ''
   let daRequired = false
-  let dcRequired = false  // detect from DC.png presence
+  let dcRequired = false
+  let dmRequired = false
+  let isTemp = false
+  let isRare = false
+  let isSeasonal = false
+  let isSpecialOffer = false
+  let retired = false
   const obtainMethods: ObtainMethod[] = []
   let currentObtain: Partial<ObtainMethod> | null = null
   let level = '', damage = '', stats = '', resists = ''
@@ -284,18 +312,33 @@ function parsePetThread(html: string, name: string): {
   let inNotes = false
   const alsoSeeNames: string[] = []
   
-  // Guest detection: Guests have extensive stats and skill buttons with images
-  // Look for guest-specific patterns: HP:, MP:, STR:, DEX:, INT:, CHA:, etc.
+  // Guest detection: Guests have extensive stats — used as fallback if Chronology doesn't have type
   const hasDetailedStats = /\b(HP|MP|STR|DEX|INT|CHA|LUK|END|WIS):/i.test(text)
-  const hasSkillButtons = /Appearance/i.test(text) && rawBody.includes('<img')
-  const isGuest = hasDetailedStats || hasSkillButtons
 
-  // Detect DA and DC requirements from image tags
+  // Detect DA, DC, DM, and category tags from image tags
+  if (/<img[^>]+src=["'][^"']*\/tags\/DA\.png["']/i.test(rawBody)) {
+    daRequired = true
+  }
   if (/<img[^>]+src=["'][^"']*\/tags\/DC\.png["']/i.test(rawBody)) {
     dcRequired = true
   }
-  if (/<img[^>]+src=["'][^"']*\/tags\/DA\.png["']/i.test(rawBody)) {
-    daRequired = true
+  if (/<img[^>]+src=["'][^"']*\/tags\/DM\.png["']/i.test(rawBody)) {
+    dmRequired = true
+  }
+  if (/<img[^>]+src=["'][^"']*\/tags\/Temp\.png["']/i.test(rawBody)) {
+    isTemp = true
+  }
+  if (/<img[^>]+src=["'][^"']*\/tags\/Rare\.jpg["']/i.test(rawBody)) {
+    isRare = true
+  }
+  if (/<img[^>]+src=["'][^"']*\/tags\/Seasonal\.jpg["']/i.test(rawBody)) {
+    isSeasonal = true
+  }
+  if (/<img[^>]+src=["'][^"']*\/tags\/SpecialOffer\.png["']/i.test(rawBody)) {
+    isSpecialOffer = true
+  }
+  if (/<img[^>]+src=["'][^"']*\/tags\/Retired\.png["']/i.test(rawBody)) {
+    retired = true
   }
 
   const saveObtain = () => {
@@ -304,7 +347,7 @@ function parsePetThread(html: string, name: string): {
     obtainMethods.push({
       location: currentObtain.location,
       price: p,
-      priceType: parsePriceType(p),
+      priceType: parsePriceType(p, currentObtain.requiredItems),
       ...(currentObtain.requiredItems ? { requiredItems: currentObtain.requiredItems } : {}),
       sellback: currentObtain.sellback ?? '0 Gold',
     })
@@ -392,6 +435,17 @@ function parsePetThread(html: string, name: string): {
       inNotes = true
       continue
     }
+    
+    // Capture standalone "Note:" lines (outside "Other information" section)
+    if (!inNotes && /^Note:/i.test(trimmedLine)) {
+      // Add to notes array without the "Note:" prefix
+      const noteText = trimmedLine.replace(/^Note:\s*/i, '').trim()
+      if (noteText.length > 0) {
+        noteLines.push(noteText)
+      }
+      continue
+    }
+    
     if (/^Thanks\s+to/i.test(trimmedLine)) break  // stop processing — everything from here is attribution
 
     if (!description && !inNotes && !currentAttack && trimmedLine.length > 5) { description = trimmedLine; continue }
@@ -400,6 +454,12 @@ function parsePetThread(html: string, name: string): {
       if (/\w+\s+--\s+\d+\/\d+\/\d+\s+\d+:\d+:\d+/.test(trimmedLine)) continue
       // Stop at attribution lines: "Name for image/entry/corrections/etc."
       if (/^[\w\s,]+\s+for\s+(image|attack|information|entry|corrections|formatting|description)/i.test(trimmedLine)) break
+      
+      // Strip "Note:" prefix if present at the start of a line
+      let processedLine = trimmedLine
+      if (/^Note:/i.test(processedLine)) {
+        processedLine = processedLine.replace(/^Note:\s*/i, '').trim()
+      }
       
       // Detect indented bullets (sub-items) — use ORIGINAL line to preserve spacing
       const indentMatch = line.match(/^(\s*)([•\-\*])\s*(.*)$/)
@@ -416,8 +476,10 @@ function parsePetThread(html: string, name: string): {
           noteLines.push(text.trim())
         }
       } else {
-        // Non-bullet line — treat as separate top-level note
-        noteLines.push(trimmedLine.trim())
+        // Non-bullet line — treat as separate top-level note (use processed line without "Note:")
+        if (processedLine.length > 0) {
+          noteLines.push(processedLine)
+        }
       }
     }
   }
@@ -490,11 +552,17 @@ function parsePetThread(html: string, name: string): {
     description: description || name,
     daRequired,
     dcRequired,
+    dmRequired,
+    isTemp,
+    isRare,
+    isSeasonal,
+    isSpecialOffer,
+    retired,
     obtainMethods,
     level, damage, stats, resists,
     evolutions, rarity, attacks,
     notes: noteLines.length > 0 ? noteLines.join('\n') : undefined,
-    alsoSeeNames, imageUrl, isGuest,
+    alsoSeeNames, imageUrl, hasDetailedStats,
   }
 }
 
@@ -552,7 +620,7 @@ function parseChronology(html: string): { dates: Map<string, string>; types: Map
 // ─── Main ─────────────────────────────────────────────────────────────────────
 
 async function main() {
-  console.log('🐾 DragonFable Pets & Guests Scraper (Resumable, Two-Pass)')
+  console.log('🐾 DragonFable Pets & Guests Scraper (Resumable, Chronology-First)')
   console.log('─'.repeat(50))
   if (startArg) console.log(`▶  Resuming from letter: ${startArg}`)
   if (letterArg) console.log(`▶  Only scraping letter: ${letterArg}`)
@@ -561,7 +629,23 @@ async function main() {
   const cookie = loadCookie()
   console.log('✅ Cookie loaded\n')
 
-  // ── Step 1: Fetch A-Z master page ─────────────────────────────────────────
+  // ── Step 1: Fetch Chronology for types and dates ──────────────────────────
+
+  console.log('📅 Fetching Chronology for types and release dates...')
+  let chronoDates = new Map<string, string>()
+  let chronoTypes = new Map<string, EntryType>()
+  try {
+    const chronoHtml = await fetchPage(CHRONOLOGY_URL, cookie)
+    const parsed = parseChronology(chronoHtml)
+    chronoDates = parsed.dates
+    chronoTypes = parsed.types
+    console.log(`✅ Parsed ${chronoDates.size} chronology entries`)
+  } catch (err) {
+    console.warn(`⚠️  Chronology fetch error: ${err} — will use content detection fallback`)
+  }
+  console.log()
+
+  // ── Step 2: Fetch A-Z master page ─────────────────────────────────────────
 
   console.log('📄 Fetching A-Z Pets & Guests master page...')
   let azHtml = ''
@@ -572,7 +656,7 @@ async function main() {
     process.exit(1)
   }
 
-  const allStubs = parseAZPage(azHtml)
+  const allStubs = parseAZPage(azHtml, chronoTypes)
   if (allStubs.length === 0) {
     console.error('❌ No pet/guest stubs found. Page size:', azHtml.length)
     const preview = stripHtml(decodeHTML(azHtml)).slice(0, 200)
@@ -605,7 +689,7 @@ async function main() {
     if (base !== stub.name.toLowerCase()) nameToSlug.set(base, { slug: stub.slug, type: stub.type })
   }
 
-  // ── Step 2: Load existing progress ────────────────────────────────────────
+  // ── Step 3: Load existing progress ────────────────────────────────────────
 
   const progressMap = new Map<string, Pet>()
   if (fs.existsSync(PROGRESS_PATH)) {
@@ -616,7 +700,7 @@ async function main() {
     } catch { /* ignore corrupt progress */ }
   }
 
-  // ── Step 3: Fetch each pet thread ─────────────────────────────────────────
+  // ── Step 4: Fetch each pet/guest thread ────────────────────────────────────
 
   let scraped = 0, skipped = 0, fromCache = 0
   const startTime = Date.now()
@@ -645,8 +729,9 @@ async function main() {
 
       const data = parsePetThread(html, stub.name)
       
-      // Determine type: use detected guest status, fallback to stub type
-      const detectedType: EntryType = data.isGuest ? 'guest' : stub.type
+      // Determine type: use Chronology as primary source (most reliable), fallback to content detection
+      // Chronology will be applied later in Step 4, so we initially set type based on stub
+      const detectedType: EntryType = stub.type
       const finalSlug = prefixedSlug(stub.name, detectedType)
 
       // Resolve Also See (best effort — may be partially unresolved)
@@ -676,6 +761,12 @@ async function main() {
         description: data.description,
         daRequired: data.daRequired,
         ...(data.dcRequired ? { dcRequired: data.dcRequired } : {}),
+        ...(data.dmRequired ? { dmRequired: data.dmRequired } : {}),
+        ...(data.isTemp ? { isTemp: data.isTemp } : {}),
+        ...(data.isRare ? { isRare: data.isRare } : {}),
+        ...(data.isSeasonal ? { isSeasonal: data.isSeasonal } : {}),
+        ...(data.isSpecialOffer ? { isSpecialOffer: data.isSpecialOffer } : {}),
+        ...(data.retired ? { retired: data.retired } : {}),
         elements: stub.elements,
         traits: stub.markers,
         level: data.level || 'Unknown',
@@ -686,7 +777,7 @@ async function main() {
         attacks: data.attacks,
         rarity: data.rarity || 'Unknown',
         evolutions,
-        releaseDate: 'Unknown',  // filled in Step 4
+        releaseDate: chronoDates.get(stub.name.toLowerCase()) ?? 'Unknown',
         ...(data.imageUrl ? { imageUrl: data.imageUrl } : {}),
         forumUrl: stub.forumUrl,
         ...(data.notes ? { notes: data.notes } : {}),
@@ -720,33 +811,6 @@ async function main() {
   }
 
   console.log(`\n✅ Scraped: ${scraped}  Cached: ${fromCache}  Skipped: ${skipped}`)
-
-  // ── Step 4: Fetch Chronology and add release dates ─────────────────────────
-
-  console.log('\n📅 Fetching Chronology for release dates and types...')
-  await sleep(DELAY_MS)
-  try {
-    const chronoHtml = await fetchPage(CHRONOLOGY_URL, cookie)
-    const { dates, types } = parseChronology(chronoHtml)
-    console.log(`✅ Parsed ${dates.size} release date entries`)
-
-    for (const pet of progressMap.values()) {
-      const key = pet.name.toLowerCase()
-      const date = dates.get(key) ?? dates.get(pet.name)
-      if (date) pet.releaseDate = date
-      
-      // Update type from Chronology if available (Chronology is authoritative)
-      const chronoType = types.get(key) ?? types.get(pet.name)
-      if (chronoType) {
-        pet.type = chronoType
-        // Update slug to match type
-        pet.slug = prefixedSlug(pet.name, chronoType)
-        pet.id = pet.slug
-      }
-    }
-  } catch (err) {
-    console.warn(`⚠️  Chronology fetch error: ${err} — release dates left as Unknown`)
-  }
 
   // ── Step 5: Write final output ─────────────────────────────────────────────
 

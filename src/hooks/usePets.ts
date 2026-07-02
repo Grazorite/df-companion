@@ -34,11 +34,41 @@ function searchPets(pets: Pet[], filters: PetFilters): Pet[] {
         if (!filters.elements.some(e => petCodes.includes(e))) return false
       }
 
-      // Access filter
-      if (filters.access) {
-        if (filters.access === 'da' && !pet.daRequired) return false
-        if (filters.access === 'dc' && !pet.obtainMethods.some(m => m.priceType === 'dc')) return false
-        if (filters.access === 'free' && !pet.obtainMethods.some(m => m.priceType === 'free')) return false
+      // Access filter (Level 1) — multi-select with AND logic
+      if (filters.access && filters.access.length > 0) {
+        // Check each selected access filter
+        for (const accessType of filters.access) {
+          if (accessType === 'da' && !pet.daRequired) return false
+          if (accessType === 'dc' && !pet.dcRequired) return false
+          if (accessType === 'dm' && !pet.dmRequired) return false
+          if (accessType === 'free' && !pet.obtainMethods.some(m => m.priceType === 'free')) return false
+          if (accessType === 'merge' && !pet.obtainMethods.some(m => m.priceType === 'merge')) return false
+        }
+      }
+
+      // Category filter (Level 2) — multi-select with OR logic
+      if (filters.categories && filters.categories.length > 0) {
+        const hasCategory = filters.categories.some(cat => {
+          if (cat === 'temp') return pet.isTemp === true
+          if (cat === 'rare') return pet.isRare === true
+          if (cat === 'seasonal') return pet.isSeasonal === true
+          if (cat === 'special-offer') return pet.isSpecialOffer === true
+          if (cat === 'retired') return pet.retired === true
+          return false
+        })
+        
+        // Special handling for retired: when selected, ONLY show retired; otherwise exclude retired
+        if (filters.categories.includes('retired')) {
+          if (!pet.retired) return false
+        } else {
+          // If retired NOT selected and other categories are, exclude retired items
+          if (pet.retired) return false
+          // If other categories selected, must match at least one
+          if (!hasCategory) return false
+        }
+      } else {
+        // No categories selected — exclude retired by default (same as badges)
+        if (pet.retired) return false
       }
 
       // Text search — word-prefix matching (same algorithm as badges)

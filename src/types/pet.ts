@@ -1,11 +1,11 @@
 export type EntryType = 'pet' | 'guest'
 
-export type PriceType = 'gold' | 'dc' | 'free' | 'merge'
+export type PriceType = 'gold' | 'dc' | 'dm' | 'free' | 'merge'
 
 export interface ObtainMethod {
   location: string         // "Grams Pets", "Cysero's Shop"
   price: string            // "500 Gold", "200 Dragon Coins", "N/A"
-  priceType: PriceType     // For filtering and DC logo display
+  priceType: PriceType     // For filtering and DC/DM logo display
   requiredItems?: string   // "1 Prince Linus & 1 Royal Penguin Shrink Ray"
   sellback: string         // "0 Gold", "125 Gold"
 }
@@ -41,6 +41,14 @@ export interface Pet {
   description: string      // Flavour text
   daRequired: boolean
   dcRequired?: boolean     // true if DC logo image present in forum post
+  dmRequired?: boolean     // true if DM logo image present (Defender's Medals)
+
+  // Categories (Level 2 filters)
+  isTemp?: boolean         // Temporary availability
+  isRare?: boolean         // Rare item
+  isSeasonal?: boolean     // Seasonal item
+  isSpecialOffer?: boolean // Special offer item
+  retired?: boolean        // Retired/unavailable
 
   // Elements — array since a pet can have multiple
   elements: string[]       // Element codes: ["ICE"] or ["ICE", "FIR"]
@@ -77,5 +85,6 @@ export interface PetFilters {
   query?: string
   type?: EntryType[]       // Which segment(s) are active
   elements?: string[]      // Multi-select element codes (OR logic)
-  access?: 'free' | 'dc' | 'da'
+  access?: ('free' | 'dc' | 'dm' | 'da' | 'merge')[]  // Level 1 multi-select access filters
+  categories?: ('temp' | 'rare' | 'seasonal' | 'special-offer' | 'retired')[]  // Level 2 multi-select
 }

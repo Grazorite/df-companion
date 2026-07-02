@@ -118,7 +118,7 @@ export default function BadgesPage() {
       <div className="flex gap-2 flex-wrap mb-2" role="group" aria-label="Filter by category">
         <button
           onClick={() => selectCategory(undefined)}
-          className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors duration-150 min-h-[36px] ${
+          className={`px-2.5 py-1 rounded-full text-[11px] font-medium transition-colors duration-150 ${
             !activeCategory
               ? 'bg-orange-500/80 text-white font-semibold'
               : 'bg-bg-overlay text-text-secondary hover:bg-border-hover hover:text-text-primary'
@@ -131,7 +131,7 @@ export default function BadgesPage() {
           <button
             key={cat.id}
             onClick={() => selectCategory(cat.id)}
-            className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors duration-150 min-h-[36px] ${
+            className={`px-2.5 py-1 rounded-full text-[11px] font-medium transition-colors duration-150 ${
               activeCategory === cat.id
                 ? 'bg-orange-500/80 text-white font-semibold'
                 : 'bg-bg-overlay text-text-secondary hover:bg-border-hover hover:text-text-primary'
@@ -143,7 +143,7 @@ export default function BadgesPage() {
         ))}
         <button
           onClick={() => selectCategory('retired')}
-          className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors duration-150 min-h-[36px] ${
+          className={`px-2.5 py-1 rounded-full text-[11px] font-medium transition-colors duration-150 ${
             activeCategory === 'retired'
               ? 'bg-orange-500/80 text-white font-semibold'
               : 'bg-bg-overlay text-text-secondary hover:bg-border-hover hover:text-text-primary'
@@ -165,7 +165,7 @@ export default function BadgesPage() {
             <button
               key={sub}
               onClick={() => selectSubcategory(sub)}
-              className={`px-2.5 py-1 rounded-full text-xs transition-all duration-150 min-h-[30px] border ${
+              className={`px-2 py-0.5 rounded-full text-[10px] transition-all duration-150 border ${
                 activeSubcategory === sub
                   ? 'bg-gold/20 text-gold border-gold/50'
                   : 'bg-bg-surface text-text-muted border-border-default hover:text-text-primary hover:border-border-hover'

@@ -12,7 +12,10 @@
     "validate": "node scripts/validate-badges.mjs && node scripts/validate-pets.mjs",
     "scrape:badges": "tsx scripts/scrape-badges.ts",
     "scrape:pets": "tsx scripts/scrape-pets.ts",
-    "images:pets": "python3 scripts/add_pet_images.py"
+    "images:pets": "bash scripts/run_with_venv.sh scripts/add_pet_images.py",
+    "images:guests": "bash scripts/run_with_venv.sh scripts/add_guest_images.py",
+    "images:clear": "bash scripts/run_with_venv.sh scripts/clear_images.py",
+    "setup:python": "bash scripts/setup_venv.sh"
   },
   "dependencies": {
     "lucide-react": "^1.22.0",

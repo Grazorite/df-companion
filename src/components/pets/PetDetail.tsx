@@ -3,7 +3,6 @@ import { ExternalLink, Shield, ImageOff } from 'lucide-react'
 import type { Pet } from '../../types/pet'
 import ElementPill from '../shared/ElementPill'
 import AccessPills from '../shared/AccessPills'
-import ObtainCard from '../shared/ObtainCard'
 import StatBar from '../shared/StatBar'
 import NotesList from '../shared/NotesList'
 import PetAttacks from './PetAttacks'
@@ -39,7 +38,8 @@ function PetImage({ src, name }: { src: string; name: string }) {
 
 export default function PetDetail({ pet, backUrl }: PetDetailProps) {
   const relatedPets = useRelatedPets(pet.alsoSee)
-  const dcRequired = pet.dcRequired || pet.obtainMethods.some(m => m.priceType === 'dc')
+  const dcRequired = pet.dcRequired ?? false
+  const dmRequired = pet.dmRequired ?? false
 
   // Strip everything from "Thanks to" onwards — attribution lines, not content
   const cleanedNotes = pet.notes
@@ -74,7 +74,7 @@ export default function PetDetail({ pet, backUrl }: PetDetailProps) {
           {pet.traits.map(code => (
             <ElementPill key={code} code={code} size="md" />
           ))}
-          <AccessPills daRequired={pet.daRequired} dcRequired={dcRequired} filterBase="/pets" />
+          <AccessPills daRequired={pet.daRequired} dcRequired={dcRequired} dmRequired={dmRequired} filterBase="/pets" />
           <span className="inline-block text-xs font-medium px-2.5 py-1 rounded-full bg-bg-overlay text-text-muted capitalize ml-auto">
             {pet.type}
           </span>
@@ -112,17 +112,55 @@ export default function PetDetail({ pet, backUrl }: PetDetailProps) {
       {/* How to Obtain */}
       {pet.obtainMethods.length > 0 && (
         <section aria-labelledby="obtain-heading" className="mb-5">
-          <h2 id="obtain-heading" className="text-xs font-semibold text-text-muted uppercase tracking-wider mb-3">
-            How to Obtain
-          </h2>
-          <div className="space-y-2">
-            {pet.obtainMethods.map((method, i) => (
-              <ObtainCard
-                key={i}
-                method={method}
-                index={pet.obtainMethods.length > 1 ? i : undefined}
-              />
-            ))}
+          <div className="space-y-3">
+            {pet.obtainMethods.map((method, i) => {
+              const isDC = method.priceType === 'dc'
+              const isDM = method.priceType === 'dm'
+              const isGuest = pet.type === 'guest'
+              
+              return (
+                <div key={i} className="bg-bg-surface border-l-4 border-gold rounded-lg p-5">
+                  {/* Heading */}
+                  <h2 id="obtain-heading" className="text-xs font-semibold text-text-muted uppercase tracking-wider mb-3">
+                    How to Obtain{pet.obtainMethods.length > 1 ? ` (Method ${i + 1})` : ''}
+                  </h2>
+                  
+                  {/* Location */}
+                  <p className="text-text-primary text-sm leading-relaxed">
+                    {method.location}
+                  </p>
+                  
+                  {/* Pet-specific details */}
+                  {!isGuest && (
+                    <div className="space-y-1 mt-3 pt-3 border-t border-border-default">
+                      {/* Price */}
+                      <div className="flex gap-2">
+                        <span className="text-text-muted text-xs w-20 flex-shrink-0">Price</span>
+                        <span className={`text-xs ${isDC ? 'text-amber-300' : isDM ? 'text-slate-300' : 'text-text-secondary'}`}>
+                          {method.price}
+                        </span>
+                      </div>
+                      
+                      {/* Required Items */}
+                      {method.requiredItems && (
+                        <div className="flex gap-2">
+                          <span className="text-text-muted text-xs w-20 flex-shrink-0">Requires</span>
+                          <span className={`text-xs leading-snug ${method.requiredItems.includes("Defender's Medal") ? 'text-slate-300' : 'text-text-secondary'}`}>
+                            {method.requiredItems}
+                          </span>
+                        </div>
+                      )}
+                      
+                      {/* Sellback */}
+                      <div className="flex gap-2">
+                        <span className="text-text-muted text-xs w-20 flex-shrink-0">Sellback</span>
+                        <span className="text-text-muted text-xs">{method.sellback}</span>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              )
+            })}
           </div>
         </section>
       )}

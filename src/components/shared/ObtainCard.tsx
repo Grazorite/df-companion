@@ -7,6 +7,7 @@ interface ObtainCardProps {
 
 export default function ObtainCard({ method, index }: ObtainCardProps) {
   const isDC = method.priceType === 'dc'
+  const isDM = method.priceType === 'dm'
 
   return (
     <div className="bg-bg-surface border border-border-default rounded-lg p-4">
@@ -26,7 +27,7 @@ export default function ObtainCard({ method, index }: ObtainCardProps) {
         {/* Price */}
         <div className="flex gap-2">
           <span className="text-text-muted text-xs w-20 flex-shrink-0">Price</span>
-          <span className={`text-sm ${isDC ? 'text-amber-300' : 'text-text-primary'}`}>
+          <span className={`text-sm ${isDC ? 'text-amber-300' : isDM ? 'text-slate-300' : 'text-text-primary'}`}>
             {method.price}
           </span>
         </div>

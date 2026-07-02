@@ -1,17 +1,19 @@
 /**
- * AccessPills — reusable DA Required / DC Required pill tags
+ * AccessPills — reusable DA Required / DC / DM pill tags
  *
  * Used on pet detail pages, badge detail pages, and any future section
  * where items have access requirements.
  *
  * DA Required: links to filter by DA access
- * DC Required: links to filter by DC access (shown when an obtain method uses DC)
+ * DC: links to filter by DC access
+ * DM: links to filter by Defender's Medal access
  */
 import { Link } from 'react-router-dom'
 
 interface AccessPillsProps {
   daRequired: boolean
-  dcRequired?: boolean   // true if any obtain method uses priceType='dc'
+  dcRequired?: boolean   // true if DC tag in forum post
+  dmRequired?: boolean   // true if DM tag in forum post
   /** Base path for the filter link — e.g. "/pets" or "/badges" */
   filterBase?: string
 }
@@ -19,9 +21,10 @@ interface AccessPillsProps {
 export default function AccessPills({
   daRequired,
   dcRequired = false,
+  dmRequired = false,
   filterBase = '/pets',
 }: AccessPillsProps) {
-  if (!daRequired && !dcRequired) return null
+  if (!daRequired && !dcRequired && !dmRequired) return null
 
   return (
     <>
@@ -42,7 +45,17 @@ export default function AccessPills({
           title="Filter: Dragon Coins required"
           onClick={e => e.stopPropagation()}
         >
-          DC Required
+          DC
+        </Link>
+      )}
+      {dmRequired && (
+        <Link
+          to={`${filterBase}?access=dm`}
+          className="inline-flex items-center text-xs font-medium px-2.5 py-1 rounded-full bg-slate-500/20 text-slate-300 transition-colors hover:bg-slate-500/30"
+          title="Filter: Defender's Medals required"
+          onClick={e => e.stopPropagation()}
+        >
+          DM
         </Link>
       )}
     </>

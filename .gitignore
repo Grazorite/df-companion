@@ -27,6 +27,11 @@ dist-ssr
 .env
 AGENTS.md
 
+# Python virtual environment
+.venv/
+__pycache__/
+*.pyc
+
 # Scraper progress files (intermediate, not needed in repo)
 src/data/pets-progress.json
 src/data/guests-progress.json
