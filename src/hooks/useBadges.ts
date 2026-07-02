@@ -27,7 +27,14 @@ export function useSubcategories(category: string): string[] {
       .filter((b) => b.category === category && b.subcategory)
       .map((b) => b.subcategory as string)
     // Preserve forum order by using insertion-order dedup
-    return [...new Set(subs)]
+    const allSubs = [...new Set(subs)]
+    
+    // Remove "Misc" from quest-completion and collection categories
+    if (category === 'quest-completion' || category === 'collection') {
+      return allSubs.filter(sub => sub !== 'Misc')
+    }
+    
+    return allSubs
   }, [category])
 }
 
