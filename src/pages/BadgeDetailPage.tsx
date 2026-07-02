@@ -73,27 +73,17 @@ export default function BadgeDetailPage() {
           {/* DA Required pill — clickable, links to DA Required filter */}
           {badge.daRequired && (
             <Link
-              to="/badges?da=true"
+              to="/badges?access=da"
               className="inline-block text-xs font-medium px-2.5 py-1 rounded-full bg-orange-500/20 text-orange-400 transition-colors hover:bg-orange-500/30"
               title="Browse all DA Required badges"
             >
               DA Required
             </Link>
           )}
-          {/* DC Required pill — clickable, links to DC Required filter */}
-          {badge.dcRequired && (
-            <Link
-              to="/badges?dc=true"
-              className="inline-block text-xs font-medium px-2.5 py-1 rounded-full bg-amber-500/20 text-amber-300 transition-colors hover:bg-amber-500/30"
-              title="Browse all DC Required badges"
-            >
-              DC Required
-            </Link>
-          )}
-          {/* Retired — clickable filter like DA Required */}
+          {/* Retired — clickable filter */}
           {badge.retired && (
             <Link
-              to="/badges?retired=true"
+              to="/badges?category=retired"
               className="inline-block text-xs font-medium px-2.5 py-1 rounded-full bg-bg-overlay text-text-secondary border border-border-default transition-colors hover:border-border-hover hover:text-text-primary"
               title="Browse all retired badges"
             >

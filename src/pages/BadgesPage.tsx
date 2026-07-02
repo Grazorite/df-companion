@@ -10,86 +10,61 @@ export default function BadgesPage() {
   const [searchParams, setSearchParams] = useSearchParams()
   const [inputValue, setInputValue] = useState(searchParams.get('q') ?? '')
   const debouncedQuery = useDebounce(inputValue, 300)
-  const activeCategory = (searchParams.get('category') as BadgeCategory) ?? undefined
+  
+  // Level 1: Access filter (all, da)
+  const accessParam = searchParams.get('access') ?? 'all'
+  
+  // Level 2: Category filter (includes "retired" as mutually exclusive option)
+  const activeCategory = (searchParams.get('category') as BadgeCategory | 'retired') ?? undefined
+  
+  // Level 3: Subcategory filter
   const activeSubcategory = searchParams.get('sub') ?? undefined
-  const activeDaRequired = searchParams.get('da') === 'true'
-  const activeDcRequired = searchParams.get('dc') === 'true'
-  const activeRetired = searchParams.get('retired') === 'true'
 
   const categories = useCategories()
-  const subcategories = useSubcategories(activeCategory ?? '')
+  const subcategories = useSubcategories(
+    activeCategory && activeCategory !== 'retired' ? activeCategory : ''
+  )
 
   useEffect(() => {
     const params: Record<string, string> = {}
     if (debouncedQuery) params.q = debouncedQuery
+    if (accessParam !== 'all') params.access = accessParam
     if (activeCategory) params.category = activeCategory
     if (activeSubcategory) params.sub = activeSubcategory
-    if (activeDaRequired) params.da = 'true'
-    if (activeDcRequired) params.dc = 'true'
-    if (activeRetired) params.retired = 'true'
     setSearchParams(params, { replace: true })
-  }, [debouncedQuery, activeCategory, activeSubcategory, activeDaRequired, activeDcRequired, activeRetired, setSearchParams])
+  }, [debouncedQuery, accessParam, activeCategory, activeSubcategory, setSearchParams])
 
   const { badges, total } = useBadges({
     query: debouncedQuery,
-    category: activeCategory,
+    category: activeCategory !== 'retired' ? activeCategory : undefined,
     subcategory: activeSubcategory,
-    daRequired: activeDaRequired || undefined,
-    dcRequired: activeDcRequired || undefined,
-    retired: activeRetired || undefined,
+    daRequired: accessParam === 'da' ? true : undefined,
+    retired: activeCategory === 'retired' ? true : undefined,
   })
 
-  function selectCategory(id: BadgeCategory | undefined) {
+  function setAccess(id: string) {
     const params: Record<string, string> = {}
     if (debouncedQuery) params.q = debouncedQuery
+    if (id !== 'all') params.access = id
+    if (activeCategory) params.category = activeCategory
+    if (activeSubcategory) params.sub = activeSubcategory
+    setSearchParams(params, { replace: true })
+  }
+
+  function selectCategory(id: BadgeCategory | 'retired' | undefined) {
+    const params: Record<string, string> = {}
+    if (debouncedQuery) params.q = debouncedQuery
+    if (accessParam !== 'all') params.access = accessParam
     if (id) params.category = id
-    if (activeDaRequired) params.da = 'true'
-    if (activeDcRequired) params.dc = 'true'
-    if (activeRetired) params.retired = 'true'
     setSearchParams(params, { replace: true })
   }
 
   function selectSubcategory(sub: string) {
     const params: Record<string, string> = {}
     if (debouncedQuery) params.q = debouncedQuery
+    if (accessParam !== 'all') params.access = accessParam
     if (activeCategory) params.category = activeCategory
     if (sub !== activeSubcategory) params.sub = sub
-    if (activeDaRequired) params.da = 'true'
-    if (activeDcRequired) params.dc = 'true'
-    if (activeRetired) params.retired = 'true'
-    setSearchParams(params, { replace: true })
-  }
-
-  function toggleDaRequired() {
-    const params: Record<string, string> = {}
-    if (debouncedQuery) params.q = debouncedQuery
-    if (activeCategory) params.category = activeCategory
-    if (activeSubcategory) params.sub = activeSubcategory
-    if (!activeDaRequired) params.da = 'true'
-    if (activeDcRequired) params.dc = 'true'
-    if (activeRetired) params.retired = 'true'
-    setSearchParams(params, { replace: true })
-  }
-
-  function toggleDcRequired() {
-    const params: Record<string, string> = {}
-    if (debouncedQuery) params.q = debouncedQuery
-    if (activeCategory) params.category = activeCategory
-    if (activeSubcategory) params.sub = activeSubcategory
-    if (activeDaRequired) params.da = 'true'
-    if (!activeDcRequired) params.dc = 'true'
-    if (activeRetired) params.retired = 'true'
-    setSearchParams(params, { replace: true })
-  }
-
-  function toggleRetired() {
-    const params: Record<string, string> = {}
-    if (debouncedQuery) params.q = debouncedQuery
-    if (activeCategory) params.category = activeCategory
-    if (activeSubcategory) params.sub = activeSubcategory
-    if (activeDaRequired) params.da = 'true'
-    if (activeDcRequired) params.dc = 'true'
-    if (!activeRetired) params.retired = 'true'
     setSearchParams(params, { replace: true })
   }
 
@@ -113,13 +88,39 @@ export default function BadgesPage() {
         />
       </div>
 
-      {/* Top-level category filters */}
+      {/* Level 1: Access filters (highest level) */}
+      <div className="flex gap-2 flex-wrap mb-3" role="group" aria-label="Filter by access">
+        <button
+          onClick={() => setAccess('all')}
+          className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors duration-150 min-h-[36px] ${
+            accessParam === 'all'
+              ? 'bg-gold-bright text-bg-base font-semibold'
+              : 'bg-bg-overlay text-text-secondary hover:bg-border-hover hover:text-text-primary'
+          }`}
+          aria-pressed={accessParam === 'all'}
+        >
+          All
+        </button>
+        <button
+          onClick={() => setAccess('da')}
+          className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors duration-150 min-h-[36px] ${
+            accessParam === 'da'
+              ? 'bg-gold-bright text-bg-base font-semibold'
+              : 'bg-bg-overlay text-text-secondary hover:bg-border-hover hover:text-text-primary'
+          }`}
+          aria-pressed={accessParam === 'da'}
+        >
+          DA Required
+        </button>
+      </div>
+
+      {/* Level 2: Category filters */}
       <div className="flex gap-2 flex-wrap mb-2" role="group" aria-label="Filter by category">
         <button
           onClick={() => selectCategory(undefined)}
           className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors duration-150 min-h-[36px] ${
             !activeCategory
-              ? 'bg-gold-bright text-bg-base font-semibold'
+              ? 'bg-orange-500/80 text-white font-semibold'
               : 'bg-bg-overlay text-text-secondary hover:bg-border-hover hover:text-text-primary'
           }`}
           aria-pressed={!activeCategory}
@@ -132,7 +133,7 @@ export default function BadgesPage() {
             onClick={() => selectCategory(cat.id)}
             className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors duration-150 min-h-[36px] ${
               activeCategory === cat.id
-                ? 'bg-gold-bright text-bg-base font-semibold'
+                ? 'bg-orange-500/80 text-white font-semibold'
                 : 'bg-bg-overlay text-text-secondary hover:bg-border-hover hover:text-text-primary'
             }`}
             aria-pressed={activeCategory === cat.id}
@@ -140,46 +141,21 @@ export default function BadgesPage() {
             {cat.displayName}
           </button>
         ))}
-        {/* DA Required toggle */}
         <button
-          onClick={toggleDaRequired}
+          onClick={() => selectCategory('retired')}
           className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors duration-150 min-h-[36px] ${
-            activeDaRequired
+            activeCategory === 'retired'
               ? 'bg-orange-500/80 text-white font-semibold'
               : 'bg-bg-overlay text-text-secondary hover:bg-border-hover hover:text-text-primary'
           }`}
-          aria-pressed={activeDaRequired}
-        >
-          DA Required
-        </button>
-        {/* DC Required toggle */}
-        <button
-          onClick={toggleDcRequired}
-          className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors duration-150 min-h-[36px] ${
-            activeDcRequired
-              ? 'bg-amber-500/80 text-white font-semibold'
-              : 'bg-bg-overlay text-text-secondary hover:bg-border-hover hover:text-text-primary'
-          }`}
-          aria-pressed={activeDcRequired}
-        >
-          DC Required
-        </button>
-        {/* Retired toggle */}
-        <button
-          onClick={toggleRetired}
-          className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors duration-150 min-h-[36px] ${
-            activeRetired
-              ? 'bg-bg-overlay text-text-primary font-semibold border border-border-hover'
-              : 'bg-bg-overlay text-text-secondary hover:bg-border-hover hover:text-text-primary'
-          }`}
-          aria-pressed={activeRetired}
+          aria-pressed={activeCategory === 'retired'}
         >
           Retired
         </button>
       </div>
 
-      {/* Subcategory filters */}
-      {activeCategory && subcategories.length > 0 && (
+      {/* Level 3: Subcategory filters */}
+      {activeCategory && activeCategory !== 'retired' && subcategories.length > 0 && (
         <div
           className="flex gap-1.5 flex-wrap mb-4 ml-1 pl-3 border-l-2 border-border-default"
           role="group"
@@ -207,12 +183,12 @@ export default function BadgesPage() {
         {total} {total === 1 ? 'badge' : 'badges'} found
         {activeSubcategory ? (
           <span className="text-text-secondary"> in {activeSubcategory}</span>
+        ) : activeCategory === 'retired' ? (
+          <span className="text-text-secondary"> in Retired</span>
         ) : activeCategory ? (
           <span className="text-text-secondary"> in {categories.find(c => c.id === activeCategory)?.displayName ?? activeCategory}</span>
         ) : null}
-        {activeDaRequired && <span className="text-orange-400"> · DA Required</span>}
-        {activeDcRequired && <span className="text-amber-300"> · DC Required</span>}
-        {activeRetired && <span className="text-text-muted"> · Retired</span>}
+        {accessParam === 'da' && <span className="text-orange-400"> · DA Required</span>}
       </p>
 
       {/* Badge grid */}

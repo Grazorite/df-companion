@@ -5,7 +5,7 @@
     "slug": "pet-dragon-1",
     "type": "pet",
     "description": "Toddler Dragon",
-    "daRequired": false,
+    "daRequired": true,
     "elements": [
       "BAC",
       "DAR",
@@ -175,7 +175,7 @@
     "rarity": "N/A",
     "evolutions": [],
     "releaseDate": "Unknown",
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Baby.png",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Kid.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=9977305",
     "alsoSee": [],
     "tags": [
@@ -458,7 +458,7 @@
     "slug": "pet-2-star-general-butterbomb",
     "type": "pet",
     "description": "This pet requires the power of a Dragon Amulet. 2 Star General Butterbomb the battle turkey was trained by Dr. Voltabolt to be the worlds most deadly turkey and pilot.",
-    "daRequired": false,
+    "daRequired": true,
     "elements": [
       "NAT"
     ],
@@ -644,7 +644,7 @@
     "slug": "pet-3-star-general-butterbomb",
     "type": "pet",
     "description": "This pet requires the power of a Dragon Amulet. 3 Star General Butterbomb the battle turkey was trained by Dr. Voltabolt to be the worlds most deadly turkey and pilot.",
-    "daRequired": false,
+    "daRequired": true,
     "elements": [
       "NAT"
     ],
@@ -831,7 +831,7 @@
     "slug": "pet-4-star-general-butterbomb",
     "type": "pet",
     "description": "This pet requires the power of a Dragon Amulet. 4 Star General Butterbomb the battle turkey was trained by Dr. Voltabolt to be the worlds most deadly turkey and pilot.",
-    "daRequired": false,
+    "daRequired": true,
     "elements": [
       "NAT"
     ],
@@ -1091,7 +1091,7 @@
     "slug": "pet-5-star-general-butterbomb",
     "type": "pet",
     "description": "This pet requires the power of a Dragon Amulet. 4 Star General Butterbomb the battle turkey was trained by Dr. Voltabolt to be the worlds most deadly turkey and pilot.",
-    "daRequired": false,
+    "daRequired": true,
     "elements": [
       "NAT"
     ],
@@ -1222,7 +1222,7 @@
     "slug": "pet-6-star-general-butterbomb",
     "type": "pet",
     "description": "This pet requires the power of a Dragon Amulet. 4 Star General Butterbomb the battle turkey was trained by Dr. Voltabolt to be the worlds most deadly turkey and pilot.",
-    "daRequired": false,
+    "daRequired": true,
     "elements": [
       "NAT"
     ],
@@ -1353,7 +1353,7 @@
     "slug": "pet-7-star-general-butterbomb",
     "type": "pet",
     "description": "This pet requires the power of a Dragon Amulet. 7 Star General Butterbomb the battle turkey was trained by Dr. Voltabolt to be the worlds most deadly turkey and pilot.",
-    "daRequired": false,
+    "daRequired": true,
     "elements": [
       "NAT"
     ],
@@ -1483,7 +1483,7 @@
     "slug": "pet-8-star-general-butterbomb",
     "type": "pet",
     "description": "This pet requires the power of a Dragon Amulet. 8 Star General Butterbomb the battle turkey was trained by Dr. Voltabolt to be the worlds most deadly turkey and pilot.",
-    "daRequired": false,
+    "daRequired": true,
     "elements": [
       "NAT"
     ],
@@ -1866,7 +1866,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "March 24th, 2023",
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Amadeus-Button01-Seek.png",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Amadeus.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22409331",
     "notes": "Amadeus has a series of unconventional stats in the quests  Hawk in the Sky,  Crash and Burn,  The Flame Within,  At Fissure's Edge,  The Final Steps, and  Convergence (Part 1):\n  • Amadeus gains -10 Immobility,  -60 Health, +60 All Resists.\n  • Amadeus' base damage is increased by 50%.\nLost Blade and Skip skills were added with the release of  Crash and Burn.\nEmpowered Appearance",
     "alsoSee": [],
@@ -1978,7 +1978,7 @@
     "slug": "pet-ancient-ninja-terrapin",
     "type": "pet",
     "description": "This pet requires a Dragon Amulet. This rare fresh water turtle has, through some magical accident been transformed into an elderly fighting machine, with a bad attitude. He's old enough to know a snap kick from a snapping turtle.",
-    "daRequired": false,
+    "daRequired": true,
     "elements": [
       "NAT"
     ],
@@ -2075,7 +2075,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "April 2nd, 2010",
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Aquella1.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17452451",
     "notes": "• Aquella will announce how much HP she has left with her turn; if Aquella dies, the battle against Captain Davey will automatically be lost.",
     "alsoSee": [],
@@ -2197,7 +2197,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "October 23rd, 2006",
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Artix1-Button01-Holy.png",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Artix1.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=6818835",
     "notes": "• This is the original version of the guest; intended to be completely replaced by a new version, it remains in-game erroneously.",
     "alsoSee": [],
@@ -2706,7 +2706,7 @@
     "slug": "pet-batoro",
     "type": "pet",
     "description": "Human The ArchKnight",
-    "daRequired": false,
+    "daRequired": true,
     "elements": [
       "DAR"
     ],
@@ -2897,7 +2897,7 @@
     "slug": "pet-black-ice-pwny",
     "type": "pet",
     "description": "This pet was given to you by a moglin in Frostvale who you saved from a terrible fate. (Requires Dragon Amulet).",
-    "daRequired": false,
+    "daRequired": true,
     "elements": [
       "ICE"
     ],
@@ -2990,7 +2990,7 @@
     "slug": "pet-bonehead",
     "type": "pet",
     "description": "This special baby dracolich is here to stay! He has a chance to heal you with the legendary power of turkeys stuffed into small places. Requires a Dragon Amulet to use.",
-    "daRequired": false,
+    "daRequired": true,
     "dcRequired": true,
     "elements": [
       "DAR"
@@ -3146,7 +3146,7 @@
     "slug": "pet-boxzar",
     "type": "pet",
     "description": "The players came together and won the Zard Frenzy Challenge! For totally destroying 5 MILLION zards in LESS the a week enjoy this Boxzar!This item requires a Dragon Amulet.",
-    "daRequired": false,
+    "daRequired": true,
     "elements": [
       "NAT"
     ],
@@ -3292,7 +3292,7 @@
     "slug": "pet-brigadier-general-butterbomb",
     "type": "pet",
     "description": "This pet requires the power of a Dragon Amulet. Brigadier General Butterbomb the battle turkey was trained by Dr. Voltabolt to be the worlds most deadly turkey and pilot.",
-    "daRequired": false,
+    "daRequired": true,
     "elements": [
       "NAT"
     ],
@@ -3724,7 +3724,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "August 13th, 2022",
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/CaptainLestrad-Button01-Channel.png",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/CaptainLestrad.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22404781",
     "notes": "Skill erroneously increases the player's Bonus and Boost instead of Captain Lestrad's Crit and Boost.\nAppearance\nRush\nAvailable after a successful Pierce\nRequirements: Successful 'Pierce' to unlock\nEffect: 3 hits of 150% damage, amounting to 450% damage.\nMana Cost: 0\nCooldown: 0\nDamage Type: Melee\nAppearance 1 /  1.1 /  1.2\nPierce\nUnlocked after a succesful attack.\nRequirements: Successful attack to unlock\nEffect: 1 hit of 150% damage.\nMana Cost: 0\nCooldown: 2\nDamage Type: Melee\nAppearance\nAttack\nRequirements: None\nEffect: 1 hit of 120% damage, with 60 Bonus.\nMana Cost: 0\nCooldown: 0\nDamage Type: Melee\nAppearance\nGuest is animated; his cape flaps continuously, both while standing and during all skill animations.",
     "alsoSee": [],
@@ -4595,7 +4595,7 @@
     "slug": "pet-colonel-butterbomb",
     "type": "pet",
     "description": "This pet requires the power of a Dragon Amulet. Colonel Butterbomb the battle turkey was trained by Dr. Voltabolt to be the worlds most deadly turkey and pilot.",
-    "daRequired": false,
+    "daRequired": true,
     "elements": [
       "NAT"
     ],
@@ -4947,7 +4947,7 @@
     "slug": "pet-crabastian-i-ii-iii",
     "type": "pet",
     "description": "Crabastian I",
-    "daRequired": false,
+    "daRequired": true,
     "elements": [
       "WAT"
     ],
@@ -5074,7 +5074,7 @@
     "slug": "pet-cuddly-bear-cub",
     "type": "pet",
     "description": "It's so sweet and cuddly and totally not a #1 threat! This item requires a Dragon Amulet.",
-    "daRequired": false,
+    "daRequired": true,
     "elements": [
       "NAT"
     ],
@@ -5638,7 +5638,7 @@
     "slug": "pet-donovan",
     "type": "pet",
     "description": "Human Wannabe Beastmaster",
-    "daRequired": false,
+    "daRequired": true,
     "elements": [
       "MET"
     ],
@@ -5968,7 +5968,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "April 12th, 2025",
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Eirn-Button01-Beam.png",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Eirn.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22421691",
     "alsoSee": [],
     "tags": [
@@ -6116,7 +6116,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "December 29th, 2023",
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Etaos&Nirios-Button01-Final.png",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Etaos&Nirios.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22413732",
     "notes": "Tooltips for this guest was updated on  April 25th, 2025.",
     "alsoSee": [],
@@ -6337,7 +6337,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "January 24th, 2020",
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Faust-Button01-Noire.png",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Faust.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22374619",
     "alsoSee": [],
     "tags": [
@@ -6400,7 +6400,7 @@
     "slug": "pet-fierce-baron-cat",
     "type": "pet",
     "description": "Meow meow meooooooow! This item requires a Dragon Amulet.",
-    "daRequired": false,
+    "daRequired": true,
     "dcRequired": true,
     "elements": [
       "LIG"
@@ -6455,7 +6455,7 @@
     "slug": "pet-fierce-bravesirrobin-cat",
     "type": "pet",
     "description": "Meow meow meooooooow! This item requires a Dragon Amulet.",
-    "daRequired": false,
+    "daRequired": true,
     "dcRequired": true,
     "elements": [
       "SIL"
@@ -6510,7 +6510,7 @@
     "slug": "pet-fierce-deatharrows-cat",
     "type": "pet",
     "description": "Meow meow meooooooow! This item requires a Dragon Amulet.",
-    "daRequired": false,
+    "daRequired": true,
     "dcRequired": true,
     "elements": [
       "DAR"
@@ -6565,7 +6565,7 @@
     "slug": "pet-fierce-josh-cat",
     "type": "pet",
     "description": "Meow meow meooooooow! This item requires a Dragon Amulet.",
-    "daRequired": false,
+    "daRequired": true,
     "dcRequired": true,
     "elements": [
       "WAT"
@@ -6620,7 +6620,7 @@
     "slug": "pet-fierce-lfal-cat",
     "type": "pet",
     "description": "Woof woof wooooooooof! This item requires a Dragon Amulet.",
-    "daRequired": false,
+    "daRequired": true,
     "dcRequired": true,
     "elements": [
       "STO"
@@ -6675,7 +6675,7 @@
     "slug": "pet-fierce-prius-cat",
     "type": "pet",
     "description": "Meow meow meooooooow! This item requires a Dragon Amulet.",
-    "daRequired": false,
+    "daRequired": true,
     "dcRequired": true,
     "elements": [
       "ICE"
@@ -7073,7 +7073,7 @@
     "slug": "pet-flying-mogkee",
     "type": "pet",
     "description": "Guaranteed to find shoes and little dogs too! This item requires a Dragon Amulet.",
-    "daRequired": false,
+    "daRequired": true,
     "elements": [
       "DAR"
     ],
@@ -7520,7 +7520,7 @@
     "slug": "pet-fuzzy-bear-cub",
     "type": "pet",
     "description": "It's so sweet and cuddly and totally not a #1 threat! This item requires a Dragon Amulet.",
-    "daRequired": false,
+    "daRequired": true,
     "elements": [
       "NAT"
     ],
@@ -7667,7 +7667,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "February 26th, 2015",
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Galanoth2-Button01-Spirit.png",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Galanoth2.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=14753989",
     "notes": "• Galanoth (2)'s tooltips were updated on  April 11th, 2025.",
     "alsoSee": [],
@@ -7682,7 +7682,7 @@
     "slug": "pet-general-butterbomb",
     "type": "pet",
     "description": "This pet requires the power of a Dragon Amulet. General Butterbomb the battle turkey was trained by Dr. Voltabolt to be the worlds most deadly turkey and pilot.",
-    "daRequired": false,
+    "daRequired": true,
     "elements": [
       "NAT"
     ],
@@ -7906,7 +7906,7 @@
     "slug": "pet-gift-box",
     "type": "pet",
     "description": "This item requires a Dragon Amulet. He'll swiftly wraps up your presents (and enemies) for a efficient and enjoyable Frostval season!",
-    "daRequired": false,
+    "daRequired": true,
     "elements": [
       "FIR"
     ],
@@ -8683,7 +8683,7 @@
     "slug": "pet-grenwog-jr",
     "type": "pet",
     "description": "Aww! It's so... hairy! This faithful little companion does damage (scaling off of your level) and blinds enemies (scaling with your CHA) with eggs! Requires a Dragon Amulet to use.",
-    "daRequired": false,
+    "daRequired": true,
     "elements": [
       "BAC"
     ],
@@ -9377,7 +9377,7 @@
     "slug": "pet-imaru",
     "type": "pet",
     "description": "Human Pirate",
-    "daRequired": false,
+    "daRequired": true,
     "elements": [],
     "traits": [
       "ALA"
@@ -9447,7 +9447,7 @@
     "slug": "pet-itty-squishie",
     "type": "pet",
     "description": "Looks like something tagged along when the shrink-ray wore off! This item requires a Dragon Amulet.",
-    "daRequired": false,
+    "daRequired": true,
     "elements": [
       "NAT"
     ],
@@ -9573,7 +9573,7 @@
     "slug": "pet-jimmy-the-eye-i-ii",
     "type": "pet",
     "description": "Jimmy The Eye",
-    "daRequired": false,
+    "daRequired": true,
     "elements": [
       "ENE",
       "WIN"
@@ -9706,7 +9706,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "May 24th, 2013",
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/KaraSuLema-Button01-Stun.png",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/KaraSuLema.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21290875",
     "notes": "Kara SuLema was previously attainable from the following retired access point:  Facing Z -> Add Kara\nKara has a series of unconventional stats in the quests  Fate's Flow (Part 1) and  Fallen Facade; INT: 0, CHA: 0, LUK: 0, Crit: 5\nKara SuLema's stun duration was lowered from 2 turns to 1 turn on  February 28th, 2020.\nFate's Flow (Part 1) Appearance",
     "alsoSee": [],
@@ -9750,7 +9750,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "July 22nd, 2022",
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Kassandra-Button01-Bind.png",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Kassandra.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22404167",
     "notes": "Seek's MP in  Jungle Adventure was  reduced from 40 to 20 to match with the subsequent quests on  March 8th, 2024; Kassandra's tooltips were also updated on that date.\nResearcher Appearance",
     "alsoSee": [],
@@ -9913,7 +9913,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "June 22nd, 2012",
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Konnan-Button01-Control.png",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Konnan.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20422674",
     "notes": "Skill button was updated on  May 15th, 2026, replacing  its old appearance.\nAppearance\nAttack\n3 hits x 100%  damage (300%)\nRequirements: None\nEffect: 3 hits of 100% damage, amounting to 300% damage.\nMana Cost: 0\nCooldown: 0\nDamage Type: Melee\nAppearance\n#In the quest  The Merge, Konnan's Pierce Avoidance stat will instead be 0.\nKonnan, named as Apprentice, was previously attainable from the following access points:  Dreamscape,  Nightmares, and  Forging.\nIn the quest  The Merge, his name will instead be Apprentice.\nKonnan's appearance was updated on  February 20th, 2026.\n'Controlled Flames' skill was added on  May 15th, 2026.\nOld Appearance",
     "alsoSee": [],
@@ -10205,7 +10205,7 @@
     "slug": "pet-lieutenant-general-butterbomb",
     "type": "pet",
     "description": "This pet requires the power of a Dragon Amulet. Lieutenant General Butterbomb the battle turkey was trained by Dr. Voltabolt to be the worlds most deadly turkey and pilot.",
-    "daRequired": false,
+    "daRequired": true,
     "elements": [
       "NAT"
     ],
@@ -10813,7 +10813,7 @@
     "slug": "pet-magic-gift-box",
     "type": "pet",
     "description": "This item requires a Dragon Amulet. He'll swiftly wraps up your presents (and enemies) for a efficient and enjoyable Frostval season!",
-    "daRequired": false,
+    "daRequired": true,
     "elements": [
       "FIR"
     ],
@@ -10920,7 +10920,7 @@
     "slug": "pet-major-butterbomb",
     "type": "pet",
     "description": "This pet requires the power of a Dragon Amulet. Major Butterbomb the battle turkey was trained by Dr. Voltabolt to be the worlds most deadly turkey and pilot.",
-    "daRequired": false,
+    "daRequired": true,
     "elements": [
       "NAT"
     ],
@@ -11185,7 +11185,7 @@
     "slug": "pet-major-general-butterbomb",
     "type": "pet",
     "description": "This pet requires the power of a Dragon Amulet. Major General Butterbomb the battle turkey was trained by Dr. Voltabolt to be the worlds most deadly turkey and pilot.",
-    "daRequired": false,
+    "daRequired": true,
     "elements": [
       "NAT"
     ],
@@ -11494,7 +11494,7 @@
     "slug": "pet-mazurek-2",
     "type": "pet",
     "description": "Human Pirate Captain",
-    "daRequired": false,
+    "daRequired": true,
     "elements": [
       "DIS",
       "MET"
@@ -11641,7 +11641,7 @@
     "slug": "pet-mini-squishie",
     "type": "pet",
     "description": "Looks like something tagged along when the shrink-ray wore off! This item requires a Dragon Amulet.",
-    "daRequired": false,
+    "daRequired": true,
     "elements": [
       "NAT"
     ],
@@ -11925,7 +11925,7 @@
     "slug": "pet-mr-mangles-all-versions",
     "type": "pet",
     "description": "Mr. Mangles",
-    "daRequired": false,
+    "daRequired": true,
     "dcRequired": true,
     "elements": [
       "DAR"
@@ -12028,7 +12028,7 @@
     "slug": "pet-mritha-1",
     "type": "pet",
     "description": "Human DragonLord",
-    "daRequired": false,
+    "daRequired": true,
     "elements": [
       "MET"
     ],
@@ -12055,7 +12055,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "January 26th, 2015",
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mritha-Button01-Fury.png",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mritha1.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21333429",
     "notes": "Mritha (1) was previously attainable from the following retired DA access point:  War of the Dragon Rose - Rose Front -> Rose Camp! -> Invite Mritha as a guest\n• Mritha (1) has a series of unconventional stats in the quest  Saellah; Melee: 25, Pierce: 10, Magic: 30, Block: 50, Bonus: 25",
     "alsoSee": [],
@@ -12070,7 +12070,7 @@
     "slug": "pet-my-little-pegasus",
     "type": "pet",
     "description": "Some say that this little guy's birth is linked somehow to the death of Medewwsa. But that can't be right. Something this cute couldn't come from something that creepy, right?! This item requires a Dragon Amulet.",
-    "daRequired": false,
+    "daRequired": true,
     "elements": [
       "WAT",
       "WIN"
@@ -12120,7 +12120,7 @@
     "slug": "pet-my-tiny-avenging-angel-pwny-i-v",
     "type": "pet",
     "description": "My Tiny Avenging Angel Pwny I",
-    "daRequired": false,
+    "daRequired": true,
     "elements": [
       "LIG"
     ],
@@ -12170,7 +12170,7 @@
     "slug": "pet-my-tiny-derp-pwny-i-v",
     "type": "pet",
     "description": "My Tiny Derp Pwny I",
-    "daRequired": false,
+    "daRequired": true,
     "elements": [
       "BAC"
     ],
@@ -12304,7 +12304,7 @@
     "slug": "pet-my-tiny-void-pwny-i-iv",
     "type": "pet",
     "description": "My Tiny Void Pwny I",
-    "daRequired": false,
+    "daRequired": true,
     "elements": [
       "???"
     ],
@@ -12368,7 +12368,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "January 26th, 2023",
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Myalos-Button01-Mini.png",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Myalos.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22408177",
     "notes": "Myalos' Charge stacks cap at 100.",
     "alsoSee": [],
@@ -12383,7 +12383,7 @@
     "slug": "pet-mystic-gift-box",
     "type": "pet",
     "description": "This item requires a Dragon Amulet. He'll swiftly wraps up your presents (and enemies) for a efficient and enjoyable Frostval season!",
-    "daRequired": false,
+    "daRequired": true,
     "elements": [
       "FIR"
     ],
@@ -12545,7 +12545,7 @@
     "slug": "pet-niki-1",
     "type": "pet",
     "description": "Human Mage",
-    "daRequired": false,
+    "daRequired": true,
     "elements": [
       "NAT"
     ],
@@ -12572,7 +12572,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "January 28th, 2022",
-    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Niki-Button01-Power.png",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Niki1.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21332919",
     "notes": "Niki (1) was previously attainable from the following retired DA access points:  War of the Dragon Rose - Dragon Front -> Dragon Camp! -> Invite Niki as a guest,  After the War -> Invite Niki as a guest\n• Niki (1) previously had the following stats; Pierce: 5, Bonus: 60, and the 'Barrier' skill previously only provided +140 Parry Defense, with a cooldown of 6 turns.",
     "alsoSee": [],
@@ -12660,7 +12660,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "January 6th, 2017",
-    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/NytheraUnearthpic.png",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Nythera.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22217923",
     "notes": "Scaled Mana Cost for this guest is equal to [0.3008*(Level+5)+1.0025]. Each Mana Cost is rounded down to the nearest whole number.",
     "alsoSee": [],
@@ -12772,7 +12772,7 @@
     "slug": "pet-ostara-s-dracobunny",
     "type": "pet",
     "description": "The Ostara's Dracobunny is a rare and legendary creature that is as cute as it is deadly! This pet's damage scales with your level. Raised by Dracelix! This item requires a Dragon Amulet to use.",
-    "daRequired": false,
+    "daRequired": true,
     "elements": [
       "NAT"
     ],
@@ -12833,7 +12833,7 @@
     "slug": "pet-overclocked-rummage",
     "type": "pet",
     "description": "A thank you gift from Doctor Voltabolt for your help in recoloring SureWould Forest! This item requires a Dragon Amulet.",
-    "daRequired": false,
+    "daRequired": true,
     "elements": [
       "ENE",
       "MET"
@@ -15642,11 +15642,7 @@
         "description": "Casts a spell, applying one of the following stackable effects to the player for 2 turns, where X is equal to the number of times the effect has been applied:",
         "images": [],
         "notes": [
-          "Silver Orb: Applies 'PoeLaLa's Block Buff' (+X Block Defense), capped at +10.",
-          "Blue Orb: Applies 'PoeLaLa's Parry Buff' (+X Parry Defense), capped at +10.",
-          "Green Orb: Applies 'PoeLaLa's Dodge Buff' (+X Dodge Defense), capped at +10.",
-          "Red Orb: Applies 'PoeLaLa's Crit Buff' (+X Crit), capped at +2.",
-          "Yellow Orb: Applies 'PoeLaLa's Bonus Buff' (+X Bonus), capped at +5."
+          "Silver Orb: Applies 'PoeLaLa's Block Buff' (+X Block Defense), capped at +10.\n  • Blue Orb: Applies 'PoeLaLa's Parry Buff' (+X Parry Defense), capped at +10.\n  • Green Orb: Applies 'PoeLaLa's Dodge Buff' (+X Dodge Defense), capped at +10.\n  • Red Orb: Applies 'PoeLaLa's Crit Buff' (+X Crit), capped at +2.\n  • Yellow Orb: Applies 'PoeLaLa's Bonus Buff' (+X Bonus), capped at +5."
         ]
       }
     ],
@@ -15691,11 +15687,7 @@
         "description": "Casts a spell, applying one of the following stackable effects to the player for 2 turns, where X is equal to the number of times the effect has been applied:",
         "images": [],
         "notes": [
-          "Silver Orb: Applies 'PoeLaLa's Melee Buff' (+X Melee Avoidance), capped at +10.",
-          "Blue Orb: Applies 'PoeLaLa's Magic Buff' (+X Magic Avoidance), capped at +10.",
-          "Green Orb: Applies 'PoeLaLa's Pierce Buff' (+X Pierce Avoidance), capped at +10.",
-          "Red Orb: Applies 'PoeLaLa's Crit Buff' (+X Crit), capped at +2.",
-          "Yellow Orb: Applies 'PoeLaLa's Dodge Buff' (+X Dodge Defense), capped at +2."
+          "Silver Orb: Applies 'PoeLaLa's Melee Buff' (+X Melee Avoidance), capped at +10.\n  • Blue Orb: Applies 'PoeLaLa's Magic Buff' (+X Magic Avoidance), capped at +10.\n  • Green Orb: Applies 'PoeLaLa's Pierce Buff' (+X Pierce Avoidance), capped at +10.\n  • Red Orb: Applies 'PoeLaLa's Crit Buff' (+X Crit), capped at +2.\n  • Yellow Orb: Applies 'PoeLaLa's Dodge Buff' (+X Dodge Defense), capped at +2."
         ]
       }
     ],
@@ -15716,7 +15708,7 @@
     "slug": "pet-post-adolescent-ninja-terrapin",
     "type": "pet",
     "description": "This pet requires a Dragon Amulet. This rare fresh water turtle has, through some magical accident been transformed into a post-adolescent fighting machine, with a bad attitude. He'll probably grow out of that.",
-    "daRequired": false,
+    "daRequired": true,
     "elements": [
       "NAT"
     ],
@@ -16132,7 +16124,7 @@
     "slug": "pet-pristine-dragon-snowman-all-versions",
     "type": "pet",
     "description": "Pristine Dragon Snowman",
-    "daRequired": false,
+    "daRequired": true,
     "elements": [
       "ICE"
     ],
@@ -16894,7 +16886,7 @@
     "slug": "pet-raven-2",
     "type": "pet",
     "description": "Human Energizer",
-    "daRequired": false,
+    "daRequired": true,
     "elements": [
       "ENE"
     ],
@@ -16921,7 +16913,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "January 29th, 2016",
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Raven2-Button01-Shock.png",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Raven2.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21711731",
     "notes": "• Raven's stun duration was lowered from 2 turns to 1 turn on  February 28th, 2020.",
     "alsoSee": [],
@@ -16936,7 +16928,7 @@
     "slug": "pet-red-imp-i-ii",
     "type": "pet",
     "description": "Red Imp",
-    "daRequired": false,
+    "daRequired": true,
     "elements": [
       "DAR"
     ],
@@ -17075,7 +17067,7 @@
     "slug": "pet-revered-ancient-ninja-terrapin",
     "type": "pet",
     "description": "This Pet requires a Dragon Amulet. This rare fresh water turtle has, through some magical accident been transformed into an elderly fighting machine, with a bad attitude. Day of the Ninja rare pet!",
-    "daRequired": false,
+    "daRequired": true,
     "elements": [
       "NAT"
     ],
@@ -17151,7 +17143,7 @@
     "slug": "pet-revered-post-adolescent-ninja-terrapin",
     "type": "pet",
     "description": "This Pet requires a Dragon Amulet. This rare fresh water turtle has, through some magical accident been transformed into a post-abolescent fighting machine, with a bad attitude. Day of the Ninja rare pet!",
-    "daRequired": false,
+    "daRequired": true,
     "elements": [
       "NAT"
     ],
@@ -17275,7 +17267,7 @@
     "slug": "pet-revered-sneevil-ninja-buddy",
     "type": "pet",
     "description": "This Pet requires a Dragon Amulet. Sneevil Ninja Buddy... Sneevil Ninja Buddy! Sneevil Ninja Buddy and me! Day of the Ninja rare pet!",
-    "daRequired": false,
+    "daRequired": true,
     "elements": [
       "MET"
     ],
@@ -17329,7 +17321,7 @@
     "slug": "pet-rhubarb",
     "type": "pet",
     "description": "Human Pirate",
-    "daRequired": false,
+    "daRequired": true,
     "elements": [
       "DIS",
       "MET"
@@ -17357,7 +17349,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "September 19th, 2014",
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Rhubarb-Button01-LimeAid.png",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Rhubarb.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21931193",
     "notes": "Rhubarb has a series of unconventional stats in the zones  The Quest for More Booty! - Choose a Side /  The Quest for More Booty! - Rhubarb; Bonus: 20, Crit: 25, Melee: 15, Pierce: 15, Magic: 0, Parry: 10",
     "alsoSee": [],
@@ -17373,7 +17365,7 @@
     "slug": "pet-riadne-2",
     "type": "pet",
     "description": "Human Arachnomancer",
-    "daRequired": false,
+    "daRequired": true,
     "elements": [
       "POI"
     ],
@@ -17436,7 +17428,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "June 16th, 2006",
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Robina1-Button01-Precise.png",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Robina1.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=5112057",
     "notes": "Robina (1) was previously attainable from the following retired access point:  Dragon Attack at Willowshire! -> Team up! -> Yes\nRobina (1) in  Surewould Forest (Books 1 and 2) uses the Wood element instead of Nature.\nThe following changes were implemented on  April 11th, 2025:\n  • Tooltips were updated for this guest.\n  • Two new skills were added.",
     "alsoSee": [],
@@ -17511,7 +17503,7 @@
     "slug": "pet-rolith-1",
     "type": "pet",
     "description": "Human Knight Captain",
-    "daRequired": false,
+    "daRequired": true,
     "elements": [
       "MET"
     ],
@@ -17977,7 +17969,7 @@
     "slug": "pet-serenity-okami",
     "type": "pet",
     "description": "Human Pirate",
-    "daRequired": false,
+    "daRequired": true,
     "elements": [],
     "traits": [
       "ALA"
@@ -18102,7 +18094,7 @@
     "slug": "pet-shellack",
     "type": "pet",
     "description": "This pet requires a Dragon Amulet. This hard-shelled pet is amazingly loyal and is found only in the forest of Oaklore, making it the perfect pet for the Knights of the Pactogonal Table.",
-    "daRequired": false,
+    "daRequired": true,
     "elements": [
       "NAT"
     ],
@@ -18145,7 +18137,7 @@
     "slug": "pet-shining-fireflies",
     "type": "pet",
     "description": "These fireflies from the Creatioux Grove have taken a liking to you. It looks like you've found some new pets, and their presence can buff you! This item requires a Dragon Amulet.",
-    "daRequired": false,
+    "daRequired": true,
     "elements": [
       "LIG"
     ],
@@ -18209,7 +18201,7 @@
     "slug": "pet-sir-ano",
     "type": "pet",
     "description": "Human Pactogonal Knight",
-    "daRequired": false,
+    "daRequired": true,
     "elements": [
       "MET"
     ],
@@ -18236,7 +18228,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "November 21st, 2008",
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/SirAno-Button01-Sword.png",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/SirAno.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15093277",
     "notes": "Sir Ano was previously attainable from the following retired access points:  Nose for Trouble,  Major Mayhem,   There's No Place Like Oaklore, and  Victoria's Secret.\nThe following changes were implemented on  April 11th, 2025:\n  • Tooltips were updated for this guest.\n  • Damage from 'Swordplay' was increased from 100% to 200%.\nTotal damage of 'Swordplay' and 'Attack' was lowered from 200% to 140% on  August 22nd, 2024.\nArt was updated on  August 29th, 2025.\nOld Appearance",
     "alsoSee": [],
@@ -18251,7 +18243,7 @@
     "slug": "pet-sir-fluffykins-i-viii",
     "type": "pet",
     "description": "Sir Fluffykins I",
-    "daRequired": false,
+    "daRequired": true,
     "elements": [
       "NAT"
     ],
@@ -18329,7 +18321,7 @@
     "slug": "pet-sir-stephan-all-versions",
     "type": "pet",
     "description": "Sir Stephan (1)",
-    "daRequired": false,
+    "daRequired": true,
     "elements": [
       "???",
       "LIG",
@@ -18355,7 +18347,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "Unknown",
-    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/SirStephenMultipic.png",
+    "imageUrl": "http://i.imgur.com/MTcDrk1.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20069217",
     "alsoSee": [],
     "tags": [
@@ -18435,7 +18427,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "April 9th, 2022",
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Sirius-Button01-Swords.png",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Sirius.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22402145",
     "notes": "The Emperor skill was added with the release of  Across the Fearscape, but it was locked until the release of  The Aker'varus; Sirius' tooltips were also updated with the release of that quest.",
     "alsoSee": [],
@@ -18450,7 +18442,7 @@
     "slug": "pet-slight-squishie",
     "type": "pet",
     "description": "Looks like something tagged along when the shrink-ray wore off! This item requires a Dragon Amulet.",
-    "daRequired": false,
+    "daRequired": true,
     "elements": [
       "NAT"
     ],
@@ -18528,7 +18520,7 @@
     "slug": "pet-slushy-dragon-snowman",
     "type": "pet",
     "description": "This item requires a Dragon Amulet. This magical pet was made from animated slush that gathers on the side of the paths in Falconreach.",
-    "daRequired": false,
+    "daRequired": true,
     "elements": [
       "ICE"
     ],
@@ -18921,7 +18913,7 @@
     "slug": "pet-solid-gold-tog",
     "type": "pet",
     "description": "So shiny, and a bite like a gold-plated steel trap! This item requires a Dragon Amulet.",
-    "daRequired": false,
+    "daRequired": true,
     "elements": [
       "STO"
     ],
@@ -19058,8 +19050,7 @@
         "description": "Approaches target and flies into it for 1 hit of {100 + [(12 + X)*Y]}% Pierce Fear damage, where:",
         "images": [],
         "notes": [
-          "X is equal to [(Player's CHA)/20], rounded up.",
-          "Y is equal to the number of DoT effects applied to the target, capped at 6."
+          "X is equal to [(Player's CHA)/20], rounded up.\n  • Y is equal to the number of DoT effects applied to the target, capped at 6."
         ]
       },
       {
@@ -19067,8 +19058,7 @@
         "description": "Approaches target and claws at it for 1 hit of 100% Pierce Fear damage; applies one of the following effects:",
         "images": [],
         "notes": [
-          "Upon first use, applies 'Sporca Toxin', a 50% Magic Poison DoT effect, to target for 3 turns.",
-          "Upon second use, applies 'Sporca Venom', a 50% Magic Poison DoT effect, to target for 3 turns."
+          "Upon first use, applies 'Sporca Toxin', a 50% Magic Poison DoT effect, to target for 3 turns.\n  • Upon second use, applies 'Sporca Venom', a 50% Magic Poison DoT effect, to target for 3 turns."
         ]
       }
     ],
@@ -19090,7 +19080,7 @@
     "slug": "pet-spots-the-two-headed-puppy",
     "type": "pet",
     "description": "When all four of Spot's big red eyes look up at you, you can't help but want to pet him and pet him!As it gets older, a third head will emerge until it looks like its father. Freaky! This item requires a Dragon Amulet.",
-    "daRequired": false,
+    "daRequired": true,
     "dcRequired": true,
     "elements": [
       "ICE",
@@ -19267,7 +19257,7 @@
     "slug": "pet-spume",
     "type": "pet",
     "description": "This pet requires a Dragon Amulet. This frothy little creature, is only found in the deepest, dankest water caves near Oaklore.",
-    "daRequired": false,
+    "daRequired": true,
     "elements": [
       "WAT"
     ],
@@ -19659,7 +19649,7 @@
     "slug": "pet-swerski-bear-cub",
     "type": "pet",
     "description": "It's so sweet and cuddly and totally not a #1 threat! This item requires a Dragon Amulet.",
-    "daRequired": false,
+    "daRequired": true,
     "elements": [
       "NAT"
     ],
@@ -19785,7 +19775,7 @@
     "slug": "pet-teeny-squishie",
     "type": "pet",
     "description": "Looks like something tagged along when the shrink-ray wore off! This item requires a Dragon Amulet.",
-    "daRequired": false,
+    "daRequired": true,
     "elements": [
       "NAT"
     ],
@@ -20223,7 +20213,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "February 26th, 2015",
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix1-Button01-Circle.png",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix4.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=16803107",
     "notes": "Skill button was updated on  April 11th, 2025, replacing  its old appearance.\nAppearance 1 /  1.1\nPurification Cross\n8 hits x 25% damage (200%)\nAvailable after a successful attack.\nRequirements: Successful attack where the last hit connects to unlock\nEffect: 8 hits of 25% damage, amounting to 200% damage.\nMana Cost: 50\nCooldown: 6\nAttack Type: Melee\nSkill button was updated on  April 11th, 2025, replacing  its old appearance.\nAppearance 1 /  1.1\nSoul Thread Cutter\n6 hits x 25% damage (150%)\nAvailable after a successful attack.\nRequirements: Successful attack where the last hit connects to unlock\nEffect: 6 hits of 25% damage, amounting to 150% damage.\nMana Cost: 25\nCooldown: 4\nAttack Type: Melee\nSkill button was updated on  April 11th, 2025, replacing  its old appearance.\nAppearance\nAttack\n3 hits x 33.3% damage (100%)\nRequirements: None\nEffect: 3 hits of ~33.3% damage, amounting to 100% damage\nMana Cost: 0\nCooldown: 0\nAttack Type: Melee\nAppearance 1 /  1.1\nThe following changes were implemented on  April 11th, 2025:\n  • Tomix (1)'s tooltips were updated.\n  • 'Circle of Retribution' was increased from 10 hits of 15% damage (150%) to 10 hits of 25% damage (250%).\n  • Skill icons were updated.",
     "alsoSee": [],
@@ -20333,7 +20323,7 @@
     "slug": "pet-triks-the-moglin-all-versions",
     "type": "pet",
     "description": "Triks the Moglin",
-    "daRequired": false,
+    "daRequired": true,
     "dcRequired": true,
     "elements": [
       "LIG"
@@ -20703,7 +20693,7 @@
     "slug": "pet-uaanta-fayt",
     "type": "pet",
     "description": "Human Swordcerer",
-    "daRequired": false,
+    "daRequired": true,
     "elements": [
       "WIN"
     ],
@@ -20778,7 +20768,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "July 18th, 2018",
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/UaantaFayt-Button01-Stun.png",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/UaantaFayt.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22333514",
     "notes": "In  The Dreamers' Abyss, Uaanta's END stat is instead 100.",
     "alsoSee": [],
@@ -20864,7 +20854,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "February 26th, 2015",
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Valencia2-Button04-Eye.png",
+    "imageUrl": "https://i.imgur.com/id73pIM.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=8534333",
     "notes": "Skill's name was previously called 'Resourceful Hunter' and had its own  skill button; this was replaced by 'Eye for Treasure' on  May 30th, 2025.\nAppearance\nAttack\n1 hit x 125% damage\nRequirements: None\nEffect: 1 hit of 125% damage.\nMana Cost: 0\nCooldown: 0\nDamage Type: Melee\nAppearance\n• Valencia (2)'s tooltips were updated on  April 11th, 2025.",
     "alsoSee": [],
@@ -20900,7 +20890,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "February 14th, 2025",
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Valentidus-Button01-Jump.png",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Valentidus.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22421044",
     "alsoSee": [],
     "tags": [
@@ -20914,7 +20904,7 @@
     "slug": "pet-vayle-2",
     "type": "pet",
     "description": "Human Necromancer",
-    "daRequired": false,
+    "daRequired": true,
     "elements": [
       "DAR"
     ],
@@ -20997,7 +20987,7 @@
     "slug": "pet-vilmor-1",
     "type": "pet",
     "description": "Human Ice DragonLord",
-    "daRequired": false,
+    "daRequired": true,
     "elements": [
       "ICE"
     ],
@@ -21024,7 +21014,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "September 24th, 2010",
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vilmor-Button01-Ice.png",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vilmor1.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18157682",
     "notes": "The following changes were implemented on  April 11th, 2025:\n  • Tooltips were updated for this guest.\n  • 'Attack' was reduced from 3 hits of 100% damage (300%) to 3 hits of 50% damage (150%).\n• *In the quest  Betrayal, Vilmor gains 0 Pierce Avoidance instead of 5.",
     "alsoSee": [],
@@ -21221,7 +21211,7 @@
     "slug": "pet-westminster-bear-cub",
     "type": "pet",
     "description": "It's so sweet and cuddly and totally not a #1 threat! This item requires a Dragon Amulet.",
-    "daRequired": false,
+    "daRequired": true,
     "elements": [
       "NAT"
     ],
@@ -21305,7 +21295,7 @@
     "slug": "pet-white-dragon-snowman",
     "type": "pet",
     "description": "This item requires a Dragon Amulet. This magical pet was made from the pure white snow from the rooftops of Falconreach.",
-    "daRequired": false,
+    "daRequired": true,
     "elements": [
       "ICE"
     ],
@@ -21415,7 +21405,7 @@
     "slug": "pet-wondrous-gift-box",
     "type": "pet",
     "description": "This item requires a Dragon Amulet. He'll swiftly wraps up your presents (and enemies) for a efficient and enjoyable Frostval season!",
-    "daRequired": false,
+    "daRequired": true,
     "elements": [
       "FIR"
     ],
@@ -21542,7 +21532,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "May 9th, 2025",
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Yashta-Button01-Shock.png",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Yashta.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22421962",
     "alsoSee": [],
     "tags": [
@@ -21556,7 +21546,7 @@
     "slug": "pet-yellow-dragon-snowman",
     "type": "pet",
     "description": "This item requires a Dragon Amulet. This magical pet was made from a pile of yellow snow, only found on a small patch in Falconreach!",
-    "daRequired": false,
+    "daRequired": true,
     "elements": [
       "ICE"
     ],
