@@ -83,7 +83,7 @@ function stripHtml(html: string): string {
   let depth = 0
   let processed = ''
   let i = 0
-  const maxIterations = html.length * 2  // Safety limit
+  const maxIterations = Math.max(html.length * 3, 100000)  // Increased safety limit for long pages
   let iterations = 0
   
   while (i < html.length && iterations < maxIterations) {
@@ -124,7 +124,7 @@ function stripHtml(html: string): string {
   }
   
   if (iterations >= maxIterations) {
-    console.warn('⚠️  stripHtml reached iteration limit — possible infinite loop avoided')
+    console.warn('⚠️  stripHtml reached iteration limit on a very large page')
   }
   
   // Clean up remaining HTML and whitespace
@@ -219,6 +219,15 @@ function parseAZPage(html: string): PetStub[] {
       skippedCount++
       continue
     }
+    
+    // Skip navigation/meta links (Chronology, A-Z page itself, etc.)
+    if (name.toLowerCase().includes('chronology') || 
+        name.toLowerCase().includes('a-z') ||
+        name.toLowerCase() === 'pets' ||
+        name.toLowerCase() === 'guests') {
+      skippedCount++
+      continue
+    }
 
     stubs.push({
       name,
@@ -233,7 +242,7 @@ function parseAZPage(html: string): PetStub[] {
   }
   
   if (skippedCount > 0) {
-    console.log(`   ⚠️  Skipped ${skippedCount} entries (duplicates or invalid names)`)
+    console.log(`   ⚠️  Skipped ${skippedCount} entries (duplicates, navigation links, or invalid names)`)
   }
 
   return stubs
