@@ -4,7 +4,15 @@ import elementsData from '../data/elements.json'
 import type { Pet, PetFilters, EntryType } from '../types/pet'
 import type { ElementsData } from '../types/element'
 
-const allPets = petsData as Pet[]
+// Normalize legacy field names (specialMarkers → traits) at load time
+const allPets: Pet[] = (petsData as unknown as Array<Pet & { specialMarkers?: string[] }>).map(p => {
+  if (!p.traits && p.specialMarkers) {
+    p.traits = p.specialMarkers
+    delete p.specialMarkers
+  }
+  if (!p.traits) p.traits = []
+  return p as Pet
+})
 const elementMeta = elementsData as ElementsData
 
 // ─── Search ───────────────────────────────────────────────────────────────────

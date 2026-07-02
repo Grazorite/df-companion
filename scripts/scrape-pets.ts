@@ -76,8 +76,64 @@ function decodeHTML(str: string): string {
 }
 
 function stripHtml(html: string): string {
-  return html.replace(/<br\s*\/?>/gi, '\n').replace(/<\/p>/gi, '\n')
-    .replace(/<[^>]+>/g, '').replace(/\n{3,}/g, '\n\n').trim()
+  // Handle forum's malformed HTML:
+  // - Top-level <li> without <ul>
+  // - Nested <ul><li>...<li></ul> for sub-items
+  
+  let depth = 0
+  let processed = ''
+  let i = 0
+  const maxIterations = html.length * 2  // Safety limit
+  let iterations = 0
+  
+  while (i < html.length && iterations < maxIterations) {
+    iterations++
+    
+    // Check for <ul> or <ol> opening
+    if (html.substr(i, 3) === '<ul' || html.substr(i, 3) === '<ol') {
+      depth++
+      const closeTag = html.indexOf('>', i)
+      i = closeTag >= 0 ? closeTag + 1 : i + 3
+      processed += '\n'
+    }
+    // Check for </ul> or </ol> closing
+    else if (html.substr(i, 4) === '</ul' || html.substr(i, 4) === '</ol') {
+      depth = Math.max(0, depth - 1)
+      const closeTag = html.indexOf('>', i)
+      i = closeTag >= 0 ? closeTag + 1 : i + 4
+      processed += '\n'
+    }
+    // Check for <li>
+    else if (html.substr(i, 3) === '<li') {
+      const closeTag = html.indexOf('>', i)
+      const indent = '  '.repeat(Math.max(0, depth))
+      processed += `\n${indent}• `
+      i = closeTag >= 0 ? closeTag + 1 : i + 3
+    }
+    // Check for </li>
+    else if (html.substr(i, 4) === '</li') {
+      const closeTag = html.indexOf('>', i)
+      i = closeTag >= 0 ? closeTag + 1 : i + 4
+      processed += '\n'
+    }
+    // Regular character
+    else {
+      processed += html[i]
+      i++
+    }
+  }
+  
+  if (iterations >= maxIterations) {
+    console.warn('⚠️  stripHtml reached iteration limit — possible infinite loop avoided')
+  }
+  
+  // Clean up remaining HTML and whitespace
+  return processed
+    .replace(/<br\s*\/?>/gi, '\n')
+    .replace(/<\/p>/gi, '\n')
+    .replace(/<[^>]+>/g, '')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim()
 }
 
 function loadCookie(): string {
@@ -180,7 +236,7 @@ function parsePriceType(price: string): ObtainMethod['priceType'] {
 }
 
 function parsePetThread(html: string, name: string): {
-  description: string; daRequired: boolean; obtainMethods: ObtainMethod[]
+  description: string; daRequired: boolean; dcRequired: boolean; obtainMethods: ObtainMethod[]
   level: string; damage: string; stats: string; resists: string
   evolutions: { combineWith: string; resultName: string }[]
   rarity: string; attacks: Attack[]; notes?: string
@@ -189,10 +245,11 @@ function parsePetThread(html: string, name: string): {
   const bodyMatch = html.match(/<td[^>]*valign=["']?top["']?[^>]*width=["']?100%["']?[^>]*>([\s\S]*?)<\/td>/i)
   const rawBody = bodyMatch ? bodyMatch[1] : html
   const text = stripHtml(decodeHTML(rawBody))
-  const lines = text.split('\n').map(l => l.trim()).filter(Boolean)
+  const lines = text.split('\n').filter(l => l.length > 0)  // DON'T trim — preserve indentation!
 
   let description = ''
   let daRequired = false
+  let dcRequired = false  // detect from DC.png presence
   const obtainMethods: ObtainMethod[] = []
   let currentObtain: Partial<ObtainMethod> | null = null
   let level = '', damage = '', stats = '', resists = ''
@@ -203,6 +260,14 @@ function parsePetThread(html: string, name: string): {
   const noteLines: string[] = []
   let inNotes = false
   const alsoSeeNames: string[] = []
+
+  // Detect DA and DC requirements from image tags
+  if (/<img[^>]+src=["'][^"']*\/tags\/DC\.png["']/i.test(rawBody)) {
+    dcRequired = true
+  }
+  if (/<img[^>]+src=["'][^"']*\/tags\/DA\.png["']/i.test(rawBody)) {
+    daRequired = true
+  }
 
   const saveObtain = () => {
     if (!currentObtain?.location) return
@@ -218,92 +283,188 @@ function parsePetThread(html: string, name: string): {
   }
 
   for (const line of lines) {
-    if (line === name || line === `The ${name}`) continue
+    const trimmedLine = line.trim()
+    if (trimmedLine === name || trimmedLine === `The ${name}`) continue
 
-    if (/^\(.*\)$/.test(line)) {
-      if (/No DA/i.test(line)) daRequired = false
-      else if (/DA Required/i.test(line)) daRequired = true
-      continue
-    }
+    // Skip parenthetical notes like "(No DA)" or "(DA Required)" - already detected from images
+    if (/^\(.*\)$/.test(trimmedLine)) continue
 
-    if (/^Location:/i.test(line)) { saveObtain(); currentObtain = { location: line.replace(/^Location:\s*/i, '').trim() }; continue }
-    if (/^Price:/i.test(line) && currentObtain) { currentObtain.price = line.replace(/^Price:\s*/i, '').trim(); continue }
-    if (/^Required Items?:/i.test(line) && currentObtain) { currentObtain.requiredItems = line.replace(/^Required Items?:\s*/i, '').trim(); continue }
-    if (/^Sellback:/i.test(line) && currentObtain) { currentObtain.sellback = line.replace(/^Sellback:\s*/i, '').trim(); continue }
+    if (/^Location:/i.test(trimmedLine)) { saveObtain(); currentObtain = { location: trimmedLine.replace(/^Location:\s*/i, '').trim() }; continue }
+    if (/^Price:/i.test(trimmedLine) && currentObtain) { currentObtain.price = trimmedLine.replace(/^Price:\s*/i, '').trim(); continue }
+    if (/^Required Items?:/i.test(trimmedLine) && currentObtain) { currentObtain.requiredItems = trimmedLine.replace(/^Required Items?:\s*/i, '').trim(); continue }
+    if (/^Sellback:/i.test(trimmedLine) && currentObtain) { currentObtain.sellback = trimmedLine.replace(/^Sellback:\s*/i, '').trim(); continue }
 
-    if (/^Level:/i.test(line)) { level = line.replace(/^Level:\s*/i, '').trim(); continue }
-    if (/^Damage:/i.test(line)) { damage = line.replace(/^Damage:\s*/i, '').trim(); continue }
-    if (/^Pet'?s?\s+Stats?:/i.test(line)) { stats = line.replace(/^Pet'?s?\s+Stats?:\s*/i, '').trim(); continue }
-    if (/^Pet'?s?\s+Resists?:/i.test(line)) { resists = line.replace(/^Pet'?s?\s+Resists?:\s*/i, '').trim(); continue }
-    if (/^Element:/i.test(line)) continue  // elements come from A-Z listing
+    if (/^Level:/i.test(trimmedLine)) { level = trimmedLine.replace(/^Level:\s*/i, '').trim(); continue }
+    if (/^Damage:/i.test(trimmedLine)) { damage = trimmedLine.replace(/^Damage:\s*/i, '').trim(); continue }
+    if (/^Min:/i.test(trimmedLine)) { damage += '\n' + trimmedLine.trim(); continue }
+    if (/^Max:/i.test(trimmedLine)) { damage += '\n' + trimmedLine.trim(); continue }
+    if (/^Pet'?s?\s+Stats?:/i.test(trimmedLine)) { stats = trimmedLine.replace(/^Pet'?s?\s+Stats?:\s*/i, '').trim(); continue }
+    if (/^Pet'?s?\s+Resists?:/i.test(trimmedLine)) { resists = trimmedLine.replace(/^Pet'?s?\s+Resists?:\s*/i, '').trim(); continue }
+    if (/^Element:/i.test(trimmedLine)) continue  // elements come from A-Z listing
 
-    if (/^Combine\s+\d+\s+with/i.test(line)) {
-      const m = line.match(/^Combine\s+\d+\s+with\s+(.+?)\s+to\s+form\s+(.+)$/i)
+    if (/^Combine\s+\d+\s+with/i.test(trimmedLine)) {
+      const m = trimmedLine.match(/^Combine\s+\d+\s+with\s+(.+?)\s+to\s+form\s+(.+)$/i)
       if (m) evolutions.push({ combineWith: m[1].trim(), resultName: m[2].trim() })
       continue
     }
 
-    if (/^Rarity:/i.test(line)) { rarity = line.replace(/^Rarity:\s*/i, '').trim(); continue }
+    if (/^Rarity:/i.test(trimmedLine)) { rarity = trimmedLine.replace(/^Rarity:\s*/i, '').trim(); continue }
 
-    if (/^Attack\s+Type\s+[\d./]+/i.test(line)) {
+    if (/^Attack\s+Type\s+[\d./]+/i.test(trimmedLine)) {
+      // If we're already in notes section, don't treat this as an attack — add to notes instead
+      if (inNotes) {
+        noteLines.push(trimmedLine)
+        continue
+      }
       if (currentAttack?.name) attacks.push(currentAttack as Attack)
-      const dashIdx = line.indexOf(' - ')
+      const dashIdx = trimmedLine.indexOf(' - ')
       currentAttack = dashIdx > -1
-        ? { name: line.slice(0, dashIdx).trim(), description: line.slice(dashIdx + 3).trim(), images: [], notes: [] }
-        : { name: line.trim(), description: '', images: [], notes: [] }
+        ? { name: trimmedLine.slice(0, dashIdx).trim(), description: trimmedLine.slice(dashIdx + 3).trim(), images: [], notes: [] }
+        : { name: trimmedLine.trim(), description: '', images: [], notes: [] }
       continue
     }
 
-    if (currentAttack && /^[•\-\*]\s+/.test(line)) {
+    if (currentAttack && !inNotes && /^[•\-\*]\s+/.test(trimmedLine)) {
       currentAttack.notes = currentAttack.notes ?? []
-      currentAttack.notes.push(line.replace(/^[•\-\*]\s+/, ''))
+      
+      // Detect indented bullets (sub-items) using ORIGINAL line to preserve spacing
+      const indentMatch = line.match(/^(\s*)([•\-\*])\s*(.*)$/)
+      
+      if (indentMatch) {
+        const [, indent, , text] = indentMatch
+        const isSubBullet = indent.length >= 2
+        
+        if (isSubBullet && currentAttack.notes.length > 0) {
+          // Sub-bullet: append to previous note with preserved indent
+          const lastIdx = currentAttack.notes.length - 1
+          currentAttack.notes[lastIdx] += '\n  • ' + text.trim()
+        } else {
+          // Top-level bullet
+          currentAttack.notes.push(text.trim())
+        }
+      } else {
+        // Fallback: just strip bullet marker
+        currentAttack.notes.push(trimmedLine.replace(/^[•\-\*]\s+/, ''))
+      }
       continue
     }
 
-    if (/^Also\s+See:/i.test(line)) {
-      alsoSeeNames.push(...line.replace(/^Also\s+See:\s*/i, '').split(',').map(n => n.trim()).filter(Boolean))
+    if (/^Also\s+See:/i.test(trimmedLine)) {
+      alsoSeeNames.push(...trimmedLine.replace(/^Also\s+See:\s*/i, '').split(',').map(n => n.trim()).filter(Boolean))
       continue
     }
 
-    if (/^Other\s+information/i.test(line)) { inNotes = true; continue }
-    if (/^Thanks\s+to/i.test(line)) break  // stop processing — everything from here is attribution
+    if (/^Other\s+information/i.test(trimmedLine)) {
+      // Finalize current attack before switching to notes section
+      if (currentAttack?.name) {
+        attacks.push(currentAttack as Attack)
+        currentAttack = null
+      }
+      inNotes = true
+      continue
+    }
+    if (/^Thanks\s+to/i.test(trimmedLine)) break  // stop processing — everything from here is attribution
 
-    if (!description && !inNotes && !currentAttack && line.length > 5) { description = line; continue }
-    if (inNotes && line.length > 3) {
+    if (!description && !inNotes && !currentAttack && trimmedLine.length > 5) { description = trimmedLine; continue }
+    if (inNotes && trimmedLine.length > 3) {
       // Skip edit timestamps
-      if (/\w+\s+--\s+\d+\/\d+\/\d+\s+\d+:\d+:\d+/.test(line)) continue
+      if (/\w+\s+--\s+\d+\/\d+\/\d+\s+\d+:\d+:\d+/.test(trimmedLine)) continue
       // Stop at attribution lines: "Name for image/entry/corrections/etc."
-      if (/^[\w\s,]+\s+for\s+(image|attack|information|entry|corrections|formatting|description)/i.test(line)) break
-      noteLines.push(line.replace(/^[•\-\*]\s*/, ''))
+      if (/^[\w\s,]+\s+for\s+(image|attack|information|entry|corrections|formatting|description)/i.test(trimmedLine)) break
+      
+      // Detect indented bullets (sub-items) — use ORIGINAL line to preserve spacing
+      const indentMatch = line.match(/^(\s*)([•\-\*])\s*(.*)$/)
+      
+      if (indentMatch) {
+        const [, indent, , text] = indentMatch
+        const isSubBullet = indent.length >= 2
+        
+        if (isSubBullet && noteLines.length > 0) {
+          // Sub-bullet: append to previous line with preserved indent
+          noteLines[noteLines.length - 1] += '\n  • ' + text.trim()
+        } else {
+          // Top-level bullet
+          noteLines.push(text.trim())
+        }
+      } else {
+        // Non-bullet line — treat as separate top-level note
+        noteLines.push(trimmedLine.trim())
+      }
     }
   }
 
   saveObtain()
   if (currentAttack?.name) attacks.push(currentAttack as Attack)
 
-  // Extract pet image (skip UI/tag images)
+  // Extract pet image — prioritize images with pet name in URL
   let imageUrl: string | undefined
   const imgRegex = /<img[^>]+src=["']([^"']+)["'][^>]*>/gi
   let imgMatch: RegExpExecArray | null
+  const candidates: string[] = []
+  
   while ((imgMatch = imgRegex.exec(rawBody)) !== null) {
     const src = imgMatch[1]
+    // Skip UI/tag/button/attack images
     if (src.includes('/f/image/') || src.includes('forumheader') || src.includes('quantserve') ||
         src.includes('artix.com/shared') || src.includes('ArtixGameLauncher') ||
-        src.includes('/tags/') || src.includes('clear.gif') || src.includes('blank.gif')) continue
+        src.includes('/tags/') || src.includes('clear.gif') || src.includes('blank.gif') ||
+        src.includes('Button') || src.includes('-Button') || src.includes('button') ||
+        src.includes('Attack.png') || src.includes('attack.png')) continue
+    
+    // Collect valid candidates
     if (src.includes('imgur.com') || src.includes('i.imgur.com') ||
         src.includes('battleon.com/encyc') || src.includes('artix.com/encyc') ||
+        src.includes('github.com') || src.includes('githubusercontent.com') ||
         (src.includes('/f/upfiles/') && src.length > 60)) {
-      imageUrl = src; break
+      candidates.push(src)
     }
+  }
+  
+  // Prioritize: images with pet name in URL (case-insensitive, match slug-like patterns)
+  const nameParts = name.toLowerCase().replace(/[^a-z0-9\s]/g, '').split(/\s+/)
+  const nameMatches = candidates.filter(url => {
+    const urlLower = url.toLowerCase()
+    
+    // Extract filename from URL (last path segment before extension)
+    const filename = urlLower.split('/').pop()?.replace(/\.(png|jpg|jpeg|gif)$/, '') || ''
+    
+    // Exact match or very close match (filename contains name without extra suffixes)
+    const nameSlug = nameParts.join('').toLowerCase()
+    if (filename === nameSlug || filename === nameSlug + '1' || filename === nameSlug + 's') return true
+    
+    // Match if URL contains most of the name words (at least 50% for multi-word names)
+    const matchCount = nameParts.filter(part => part.length > 2 && urlLower.includes(part)).length
+    return matchCount >= Math.ceil(nameParts.length / 2)
+  })
+  
+  if (nameMatches.length > 0) {
+    // Prefer DF-Pedia GitHub images, and prefer shorter filenames (less likely to be attack/button variants)
+    const githubMatches = nameMatches.filter(url => url.includes('github.com') || url.includes('githubusercontent.com'))
+    if (githubMatches.length > 0) {
+      // Sort by URL length (shorter = simpler filename = more likely to be the main image)
+      githubMatches.sort((a, b) => a.length - b.length)
+      imageUrl = githubMatches[0]
+    } else {
+      imageUrl = nameMatches[0]
+    }
+  } else if (candidates.length > 0) {
+    // Fallback to first valid candidate (also sort by length)
+    candidates.sort((a, b) => a.length - b.length)
+    imageUrl = candidates[0]
+  } else {
+    // Last resort: construct DF-Pedia URL from name
+    const filename = name.replace(/[^a-zA-Z0-9\s]/g, '').replace(/\s+/g, '') + '.png'
+    imageUrl = `https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/${filename}`
   }
 
   return {
     description: description || name,
     daRequired,
+    dcRequired,
     obtainMethods,
     level, damage, stats, resists,
     evolutions, rarity, attacks,
-    notes: noteLines.length > 0 ? noteLines.join(' • ') : undefined,
+    notes: noteLines.length > 0 ? noteLines.join('\n') : undefined,
     alsoSeeNames, imageUrl,
   }
 }
@@ -419,6 +580,7 @@ async function main() {
   // ── Step 3: Fetch each pet thread ─────────────────────────────────────────
 
   let scraped = 0, skipped = 0, fromCache = 0
+  const startTime = Date.now()
 
   for (let i = 0; i < stubs.length; i++) {
     const stub = stubs[i]
@@ -470,6 +632,7 @@ async function main() {
         type: stub.type,
         description: data.description,
         daRequired: data.daRequired,
+        ...(data.dcRequired ? { dcRequired: data.dcRequired } : {}),
         elements: stub.elements,
         traits: stub.markers,        level: data.level || 'Unknown',
         damage: data.damage || 'Unknown',
@@ -493,6 +656,15 @@ async function main() {
       // Save progress after every entry
       const progress = Array.from(progressMap.values())
       fs.writeFileSync(PROGRESS_PATH, JSON.stringify(progress, null, 2) + '\n', 'utf-8')
+
+      // Progress update every 10 pets
+      if ((scraped + skipped) % 10 === 0) {
+        const elapsed = Math.round((Date.now() - startTime) / 1000)
+        const rate = elapsed > 0 ? (scraped + fromCache) / elapsed : 0
+        const remaining = stubs.length - (i + 1)
+        const eta = rate > 0 ? Math.round(remaining / rate) : 0
+        console.log(`   ⏱️  Progress: ${scraped + fromCache}/${stubs.length} | ${elapsed}s elapsed | ETA ${eta}s`)
+      }
 
     } catch (err) {
       console.log(` ❌ error: ${err} — skipping`)
@@ -523,10 +695,8 @@ async function main() {
 
   // ── Step 5: Write final output ─────────────────────────────────────────────
 
-  // Only write pets that are in our current stub set (or full set if no filter)
-  const targetSlugs = new Set(letterArg || startArg ? stubs.map(s => s.slug) : allStubs.map(s => s.slug))
+  // Always write ALL pets from progress map (full dataset)
   const finalPets = Array.from(progressMap.values())
-    .filter(p => !letterArg && !startArg ? true : targetSlugs.has(p.slug))
     .sort((a, b) => a.name.localeCompare(b.name))
 
   fs.writeFileSync(OUTPUT_PATH, JSON.stringify(finalPets, null, 2) + '\n', 'utf-8')

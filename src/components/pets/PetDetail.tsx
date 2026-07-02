@@ -5,6 +5,7 @@ import ElementPill from '../shared/ElementPill'
 import AccessPills from '../shared/AccessPills'
 import ObtainCard from '../shared/ObtainCard'
 import StatBar from '../shared/StatBar'
+import NotesList from '../shared/NotesList'
 import PetAttacks from './PetAttacks'
 import PetEvolutions from './PetEvolutions'
 import PetCard from './PetCard'
@@ -38,15 +39,18 @@ function PetImage({ src, name }: { src: string; name: string }) {
 
 export default function PetDetail({ pet, backUrl }: PetDetailProps) {
   const relatedPets = useRelatedPets(pet.alsoSee)
-  const dcRequired = pet.obtainMethods.some(m => m.priceType === 'dc')
+  const dcRequired = pet.dcRequired || pet.obtainMethods.some(m => m.priceType === 'dc')
 
   // Strip everything from "Thanks to" onwards — attribution lines, not content
   const cleanedNotes = pet.notes
     ? (() => {
-        const bullets = pet.notes.split(' • ')
+        // Handle both newline-separated (new) and " • "-separated (legacy) formats
+        const separator = pet.notes.includes('\n') ? '\n' : ' • '
+        const bullets = pet.notes.split(separator)
         const cutoff = bullets.findIndex(n => /^Thanks\s+to\b/i.test(n.trim()))
         const kept = cutoff >= 0 ? bullets.slice(0, cutoff) : bullets
-        return kept.filter(n => n.trim().length > 0).join(' • ') || undefined
+        const result = kept.filter(n => n.trim().length > 0).join(separator)
+        return result || undefined
       })()
     : undefined
 
@@ -135,14 +139,7 @@ export default function PetDetail({ pet, backUrl }: PetDetailProps) {
           <h2 className="text-xs font-semibold text-text-muted uppercase tracking-wider mb-3">
             Other Information
           </h2>
-          <ul className="space-y-2">
-            {cleanedNotes.split(' • ').filter(n => n.trim().length > 0).map((note, i) => (
-              <li key={i} className="flex gap-2 text-sm text-text-secondary leading-relaxed">
-                <span className="text-text-muted mt-0.5 flex-shrink-0">•</span>
-                <span>{note.trim()}</span>
-              </li>
-            ))}
-          </ul>
+          <NotesList notes={cleanedNotes} />
         </section>
       )}
 

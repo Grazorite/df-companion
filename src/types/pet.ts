@@ -40,6 +40,7 @@ export interface Pet {
   // Description
   description: string      // Flavour text
   daRequired: boolean
+  dcRequired?: boolean     // true if DC logo image present in forum post
 
   // Elements — array since a pet can have multiple
   elements: string[]       // Element codes: ["ICE"] or ["ICE", "FIR"]

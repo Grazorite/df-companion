@@ -11,7 +11,8 @@
     "preview": "vite preview",
     "validate": "node scripts/validate-badges.mjs && node scripts/validate-pets.mjs",
     "scrape:badges": "tsx scripts/scrape-badges.ts",
-    "scrape:pets": "tsx scripts/scrape-pets.ts"
+    "scrape:pets": "tsx scripts/scrape-pets.ts",
+    "images:pets": "python3 scripts/add_pet_images.py"
   },
   "dependencies": {
     "lucide-react": "^1.22.0",

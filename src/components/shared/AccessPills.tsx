@@ -9,8 +9,6 @@
  */
 import { Link } from 'react-router-dom'
 
-const DC_LOGO = 'https://media.artix.com/encyc/df/tags/DC.png'
-
 interface AccessPillsProps {
   daRequired: boolean
   dcRequired?: boolean   // true if any obtain method uses priceType='dc'
@@ -40,11 +38,10 @@ export default function AccessPills({
       {dcRequired && (
         <Link
           to={`${filterBase}?access=dc`}
-          className="inline-flex items-center gap-1 text-xs font-medium px-2.5 py-1 rounded-full bg-amber-500/20 text-amber-300 transition-colors hover:bg-amber-500/30"
+          className="inline-flex items-center text-xs font-medium px-2.5 py-1 rounded-full bg-amber-500/20 text-amber-300 transition-colors hover:bg-amber-500/30"
           title="Filter: Dragon Coins required"
           onClick={e => e.stopPropagation()}
         >
-          <img src={DC_LOGO} alt="" className="w-3.5 h-3.5 object-contain" aria-hidden="true" />
           DC Required
         </Link>
       )}

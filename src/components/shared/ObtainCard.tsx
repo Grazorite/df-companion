@@ -1,7 +1,5 @@
 import type { ObtainMethod } from '../../types/pet'
 
-const DC_LOGO = 'https://media.artix.com/encyc/df/tags/DC.png'
-
 interface ObtainCardProps {
   method: ObtainMethod
   index?: number
@@ -26,19 +24,10 @@ export default function ObtainCard({ method, index }: ObtainCardProps) {
         </div>
 
         {/* Price */}
-        <div className="flex gap-2 items-center">
+        <div className="flex gap-2">
           <span className="text-text-muted text-xs w-20 flex-shrink-0">Price</span>
-          <span className="flex items-center gap-1.5 text-sm">
-            {isDC && (
-              <img
-                src={DC_LOGO}
-                alt="Dragon Coins"
-                className="w-4 h-4 object-contain flex-shrink-0"
-              />
-            )}
-            <span className={isDC ? 'text-amber-300' : 'text-text-primary'}>
-              {method.price}
-            </span>
+          <span className={`text-sm ${isDC ? 'text-amber-300' : 'text-text-primary'}`}>
+            {method.price}
           </span>
         </div>
 

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { ChevronDown, ChevronUp, ImageOff } from 'lucide-react'
 import type { Attack } from '../../types/pet'
+import NotesList from '../shared/NotesList'
 
 interface PetAttacksProps {
   attacks: Attack[]
@@ -46,14 +47,7 @@ function AttackCard({ attack, index }: { attack: Attack; index: number }) {
           <p className="text-text-secondary text-sm leading-relaxed">{attack.description}</p>
 
           {attack.notes && attack.notes.length > 0 && (
-            <ul className="space-y-1">
-              {attack.notes.map((note, i) => (
-                <li key={i} className="flex gap-2 text-xs text-text-muted leading-relaxed">
-                  <span className="mt-0.5 flex-shrink-0">•</span>
-                  <span>{note}</span>
-                </li>
-              ))}
-            </ul>
+            <NotesList notes={attack.notes.join('\n')} />
           )}
 
           {attack.images && attack.images.length > 0 && (

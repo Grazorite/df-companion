@@ -208,20 +208,26 @@ async function fetchBadgeDetails(
 
     let description = ''
     let daRequired = false
+    let dcRequired = false
     let requirements = ''
     let category = stub.category
     let subcategory = stub.subcategory
     const noteLines: string[] = []
     let inNotes = false
 
+    // Detect DA and DC requirements from image tags
+    if (/<img[^>]+src=["'][^"']*\/tags\/DA\.png["']/i.test(rawBody)) {
+      daRequired = true
+    }
+    if (/<img[^>]+src=["'][^"']*\/tags\/DC\.png["']/i.test(rawBody)) {
+      dcRequired = true
+    }
+
     for (const line of lines) {
       if (line === stub.name || line === `The ${stub.name}`) continue
 
-      if (/^\(.*\)$/.test(line)) {
-        if (/No DA/i.test(line)) daRequired = false
-        else if (/DA Required/i.test(line)) daRequired = true
-        continue
-      }
+      // Skip parenthetical notes like "(No DA)" or "(DA Required)" - already detected from images
+      if (/^\(.*\)$/.test(line)) continue
 
       if (/^Requirements?:/i.test(line)) {
         requirements = line.replace(/^Requirements?:\s*/i, '').trim()
@@ -285,6 +291,7 @@ async function fetchBadgeDetails(
     return {
       description: description || `Badge: ${stub.name}`,
       daRequired,
+      dcRequired,
       requirements,
       category,
       subcategory,
@@ -370,6 +377,7 @@ async function main() {
       description: details.description ?? `Badge: ${stub.name}`,
       requirements: details.requirements ?? '',
       daRequired: details.daRequired ?? false,
+      ...(details.dcRequired ? { dcRequired: details.dcRequired } : {}),
       category: (() => {
         const cat = details.category ?? stub.category
         const sub = details.subcategory ?? stub.subcategory

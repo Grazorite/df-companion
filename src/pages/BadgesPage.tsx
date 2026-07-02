@@ -13,6 +13,7 @@ export default function BadgesPage() {
   const activeCategory = (searchParams.get('category') as BadgeCategory) ?? undefined
   const activeSubcategory = searchParams.get('sub') ?? undefined
   const activeDaRequired = searchParams.get('da') === 'true'
+  const activeDcRequired = searchParams.get('dc') === 'true'
   const activeRetired = searchParams.get('retired') === 'true'
 
   const categories = useCategories()
@@ -24,15 +25,17 @@ export default function BadgesPage() {
     if (activeCategory) params.category = activeCategory
     if (activeSubcategory) params.sub = activeSubcategory
     if (activeDaRequired) params.da = 'true'
+    if (activeDcRequired) params.dc = 'true'
     if (activeRetired) params.retired = 'true'
     setSearchParams(params, { replace: true })
-  }, [debouncedQuery, activeCategory, activeSubcategory, activeDaRequired, activeRetired, setSearchParams])
+  }, [debouncedQuery, activeCategory, activeSubcategory, activeDaRequired, activeDcRequired, activeRetired, setSearchParams])
 
   const { badges, total } = useBadges({
     query: debouncedQuery,
     category: activeCategory,
     subcategory: activeSubcategory,
     daRequired: activeDaRequired || undefined,
+    dcRequired: activeDcRequired || undefined,
     retired: activeRetired || undefined,
   })
 
@@ -41,6 +44,7 @@ export default function BadgesPage() {
     if (debouncedQuery) params.q = debouncedQuery
     if (id) params.category = id
     if (activeDaRequired) params.da = 'true'
+    if (activeDcRequired) params.dc = 'true'
     if (activeRetired) params.retired = 'true'
     setSearchParams(params, { replace: true })
   }
@@ -51,6 +55,7 @@ export default function BadgesPage() {
     if (activeCategory) params.category = activeCategory
     if (sub !== activeSubcategory) params.sub = sub
     if (activeDaRequired) params.da = 'true'
+    if (activeDcRequired) params.dc = 'true'
     if (activeRetired) params.retired = 'true'
     setSearchParams(params, { replace: true })
   }
@@ -61,6 +66,18 @@ export default function BadgesPage() {
     if (activeCategory) params.category = activeCategory
     if (activeSubcategory) params.sub = activeSubcategory
     if (!activeDaRequired) params.da = 'true'
+    if (activeDcRequired) params.dc = 'true'
+    if (activeRetired) params.retired = 'true'
+    setSearchParams(params, { replace: true })
+  }
+
+  function toggleDcRequired() {
+    const params: Record<string, string> = {}
+    if (debouncedQuery) params.q = debouncedQuery
+    if (activeCategory) params.category = activeCategory
+    if (activeSubcategory) params.sub = activeSubcategory
+    if (activeDaRequired) params.da = 'true'
+    if (!activeDcRequired) params.dc = 'true'
     if (activeRetired) params.retired = 'true'
     setSearchParams(params, { replace: true })
   }
@@ -71,6 +88,7 @@ export default function BadgesPage() {
     if (activeCategory) params.category = activeCategory
     if (activeSubcategory) params.sub = activeSubcategory
     if (activeDaRequired) params.da = 'true'
+    if (activeDcRequired) params.dc = 'true'
     if (!activeRetired) params.retired = 'true'
     setSearchParams(params, { replace: true })
   }
@@ -134,6 +152,18 @@ export default function BadgesPage() {
         >
           DA Required
         </button>
+        {/* DC Required toggle */}
+        <button
+          onClick={toggleDcRequired}
+          className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors duration-150 min-h-[36px] ${
+            activeDcRequired
+              ? 'bg-amber-500/80 text-white font-semibold'
+              : 'bg-bg-overlay text-text-secondary hover:bg-border-hover hover:text-text-primary'
+          }`}
+          aria-pressed={activeDcRequired}
+        >
+          DC Required
+        </button>
         {/* Retired toggle */}
         <button
           onClick={toggleRetired}
@@ -181,6 +211,7 @@ export default function BadgesPage() {
           <span className="text-text-secondary"> in {categories.find(c => c.id === activeCategory)?.displayName ?? activeCategory}</span>
         ) : null}
         {activeDaRequired && <span className="text-orange-400"> · DA Required</span>}
+        {activeDcRequired && <span className="text-amber-300"> · DC Required</span>}
         {activeRetired && <span className="text-text-muted"> · Retired</span>}
       </p>
 

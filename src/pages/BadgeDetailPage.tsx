@@ -2,6 +2,7 @@ import { useParams, useLocation, Link } from 'react-router-dom'
 import { ArrowLeft, ExternalLink, Shield } from 'lucide-react'
 import { useBadgeBySlug, useBadgesByCategory } from '../hooks/useBadges'
 import BadgeCard from '../components/badges/BadgeCard'
+import NotesList from '../components/shared/NotesList'
 
 export default function BadgeDetailPage() {
   const { slug } = useParams<{ slug: string }>()
@@ -79,6 +80,16 @@ export default function BadgeDetailPage() {
               DA Required
             </Link>
           )}
+          {/* DC Required pill — clickable, links to DC Required filter */}
+          {badge.dcRequired && (
+            <Link
+              to="/badges?dc=true"
+              className="inline-block text-xs font-medium px-2.5 py-1 rounded-full bg-amber-500/20 text-amber-300 transition-colors hover:bg-amber-500/30"
+              title="Browse all DC Required badges"
+            >
+              DC Required
+            </Link>
+          )}
           {/* Retired — clickable filter like DA Required */}
           {badge.retired && (
             <Link
@@ -138,14 +149,7 @@ export default function BadgeDetailPage() {
           <h2 className="text-xs font-semibold text-text-muted uppercase tracking-wider mb-3">
             Other Information
           </h2>
-          <ul className="space-y-2">
-            {badge.notes.split(' • ').filter((n) => n.trim().length > 0).map((note, i) => (
-              <li key={i} className="flex gap-2 text-sm text-text-secondary leading-relaxed">
-                <span className="text-text-muted mt-0.5 flex-shrink-0">•</span>
-                <span>{note.trim()}</span>
-              </li>
-            ))}
-          </ul>
+          <NotesList notes={badge.notes} />
         </section>
       )}
 
