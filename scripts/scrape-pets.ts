@@ -181,6 +181,7 @@ function parseAZPage(html: string): PetStub[] {
   const seen = new Set<string>()
   const chunks = html.split(/<br\s*\/?>/)
   let currentLetter = '#'
+  let skippedCount = 0
 
   for (const chunk of chunks) {
     const text = stripHtml(decodeHTML(chunk)).trim()
@@ -195,7 +196,10 @@ function parseAZPage(html: string): PetStub[] {
     const linkMatch = /href=["']?(?:https?:\/\/forums2\.battleon\.com\/f\/)?tm\.asp\?m=(\d+)["'\s>]/i.exec(chunk)
     if (!linkMatch) continue
     const msgId = linkMatch[1]
-    if (seen.has(msgId)) continue
+    if (seen.has(msgId)) {
+      skippedCount++
+      continue
+    }
     seen.add(msgId)
 
     // Elements/markers appear BEFORE the <a> tag in the line
@@ -204,11 +208,17 @@ function parseAZPage(html: string): PetStub[] {
 
     // Extract anchor text (pet name — may also contain brackets if inside the <a>)
     const anchorText = decodeHTML((chunk.match(/<a[^>]+>([^<]+)<\/a>/i)?.[1] ?? '').trim())
-    if (!anchorText || anchorText.length < 2) continue
+    if (!anchorText || anchorText.length < 2) {
+      if (anchorText) skippedCount++
+      continue
+    }
 
     // Name is anchor text with any remaining bracket codes stripped
     const name = anchorText.replace(/\[[A-Z?/]+\]/g, '').trim()
-    if (!name) continue
+    if (!name) {
+      skippedCount++
+      continue
+    }
 
     stubs.push({
       name,
@@ -220,6 +230,10 @@ function parseAZPage(html: string): PetStub[] {
       markers,
       letter: currentLetter,
     })
+  }
+  
+  if (skippedCount > 0) {
+    console.log(`   ⚠️  Skipped ${skippedCount} entries (duplicates or invalid names)`)
   }
 
   return stubs
@@ -240,7 +254,7 @@ function parsePetThread(html: string, name: string): {
   level: string; damage: string; stats: string; resists: string
   evolutions: { combineWith: string; resultName: string }[]
   rarity: string; attacks: Attack[]; notes?: string
-  alsoSeeNames: string[]; imageUrl?: string
+  alsoSeeNames: string[]; imageUrl?: string; isGuest: boolean
 } {
   const bodyMatch = html.match(/<td[^>]*valign=["']?top["']?[^>]*width=["']?100%["']?[^>]*>([\s\S]*?)<\/td>/i)
   const rawBody = bodyMatch ? bodyMatch[1] : html
@@ -260,6 +274,12 @@ function parsePetThread(html: string, name: string): {
   const noteLines: string[] = []
   let inNotes = false
   const alsoSeeNames: string[] = []
+  
+  // Guest detection: Guests have extensive stats and skill buttons with images
+  // Look for guest-specific patterns: HP:, MP:, STR:, DEX:, INT:, CHA:, etc.
+  const hasDetailedStats = /\b(HP|MP|STR|DEX|INT|CHA|LUK|END|WIS):/i.test(text)
+  const hasSkillButtons = /Appearance/i.test(text) && rawBody.includes('<img')
+  const isGuest = hasDetailedStats || hasSkillButtons
 
   // Detect DA and DC requirements from image tags
   if (/<img[^>]+src=["'][^"']*\/tags\/DC\.png["']/i.test(rawBody)) {
@@ -465,14 +485,15 @@ function parsePetThread(html: string, name: string): {
     level, damage, stats, resists,
     evolutions, rarity, attacks,
     notes: noteLines.length > 0 ? noteLines.join('\n') : undefined,
-    alsoSeeNames, imageUrl,
+    alsoSeeNames, imageUrl, isGuest,
   }
 }
 
 // ─── Chronology parsing ───────────────────────────────────────────────────────
 
-function parseChronology(html: string): Map<string, string> {
+function parseChronology(html: string): { dates: Map<string, string>; types: Map<string, EntryType> } {
   const dates = new Map<string, string>()
+  const types = new Map<string, EntryType>()
   const text = stripHtml(decodeHTML(html))
   const lines = text.split('\n').map(l => l.trim()).filter(Boolean)
 
@@ -496,18 +517,27 @@ function parseChronology(html: string): Map<string, string> {
 
     const entryMatch = entryPattern.exec(line)
     if (entryMatch && currentDate) {
+      const typeMarker = entryMatch[1]  // 'P' or 'G'
+      const type: EntryType = typeMarker === 'G' ? 'guest' : 'pet'
+      
       // Extract name — strip trailing parenthetical (D-Coins), (Normal; D-Coins), (Seasonal) etc.
       const rawName = entryMatch[2].trim()
       const name = rawName.replace(/\s*\([^)]*\)\s*$/, '').trim()
       if (name.length > 0) {
-        dates.set(name.toLowerCase(), currentDate)
+        const key = name.toLowerCase()
+        dates.set(key, currentDate)
+        types.set(key, type)
         // Also store with parenthetical in case entry names include them (e.g. "King Linus (Normal)")
-        if (rawName !== name) dates.set(rawName.toLowerCase(), currentDate)
+        if (rawName !== name) {
+          const rawKey = rawName.toLowerCase()
+          dates.set(rawKey, currentDate)
+          types.set(rawKey, type)
+        }
       }
     }
   }
 
-  return dates
+  return { dates, types }
 }
 
 // ─── Main ─────────────────────────────────────────────────────────────────────
@@ -605,6 +635,10 @@ async function main() {
       }
 
       const data = parsePetThread(html, stub.name)
+      
+      // Determine type: use detected guest status, fallback to stub type
+      const detectedType: EntryType = data.isGuest ? 'guest' : stub.type
+      const finalSlug = prefixedSlug(stub.name, detectedType)
 
       // Resolve Also See (best effort — may be partially unresolved)
       const alsoSee: AlsoSeeRef[] = data.alsoSeeNames.map(rawName => {
@@ -626,15 +660,16 @@ async function main() {
       })
 
       const pet: Pet = {
-        id: stub.slug,
+        id: finalSlug,
         name: stub.name,
-        slug: stub.slug,
-        type: stub.type,
+        slug: finalSlug,
+        type: detectedType,
         description: data.description,
         daRequired: data.daRequired,
         ...(data.dcRequired ? { dcRequired: data.dcRequired } : {}),
         elements: stub.elements,
-        traits: stub.markers,        level: data.level || 'Unknown',
+        traits: stub.markers,
+        level: data.level || 'Unknown',
         damage: data.damage || 'Unknown',
         stats: data.stats || 'None',
         resists: data.resists || 'None',
@@ -647,9 +682,10 @@ async function main() {
         forumUrl: stub.forumUrl,
         ...(data.notes ? { notes: data.notes } : {}),
         alsoSee,
-        tags: [stub.type, ...stub.elements.map(e => e.toLowerCase()), ...stub.markers.map(m => m.toLowerCase().replace('/', '-'))]      }
+        tags: [detectedType, ...stub.elements.map(e => e.toLowerCase()), ...stub.markers.map(m => m.toLowerCase().replace('/', '-'))]
+      }
 
-      progressMap.set(stub.slug, pet)
+      progressMap.set(finalSlug, pet)
       scraped++
       console.log(' ✓')
 
@@ -678,16 +714,26 @@ async function main() {
 
   // ── Step 4: Fetch Chronology and add release dates ─────────────────────────
 
-  console.log('\n📅 Fetching Chronology for release dates...')
+  console.log('\n📅 Fetching Chronology for release dates and types...')
   await sleep(DELAY_MS)
   try {
     const chronoHtml = await fetchPage(CHRONOLOGY_URL, cookie)
-    const dates = parseChronology(chronoHtml)
+    const { dates, types } = parseChronology(chronoHtml)
     console.log(`✅ Parsed ${dates.size} release date entries`)
 
     for (const pet of progressMap.values()) {
-      const date = dates.get(pet.name.toLowerCase()) ?? dates.get(pet.name)
+      const key = pet.name.toLowerCase()
+      const date = dates.get(key) ?? dates.get(pet.name)
       if (date) pet.releaseDate = date
+      
+      // Update type from Chronology if available (Chronology is authoritative)
+      const chronoType = types.get(key) ?? types.get(pet.name)
+      if (chronoType) {
+        pet.type = chronoType
+        // Update slug to match type
+        pet.slug = prefixedSlug(pet.name, chronoType)
+        pet.id = pet.slug
+      }
     }
   } catch (err) {
     console.warn(`⚠️  Chronology fetch error: ${err} — release dates left as Unknown`)
@@ -701,12 +747,14 @@ async function main() {
 
   fs.writeFileSync(OUTPUT_PATH, JSON.stringify(finalPets, null, 2) + '\n', 'utf-8')
 
-  console.log(`\n📁 Written ${finalPets.length} pets to pets.json`)
+  console.log(`\n📁 Written ${finalPets.length} pets+guests to pets.json`)
   console.log(`📁 Progress file (${progressMap.size} total) saved to pets-progress.json`)
   console.log('\n🎉 Done!')
   console.log('\n📊 Summary:')
   console.log(`   Total stubs:   ${allStubs.length}`)
   console.log(`   In progress:   ${progressMap.size}`)
+  console.log(`   Pets:          ${finalPets.filter(p => p.type === 'pet').length}`)
+  console.log(`   Guests:        ${finalPets.filter(p => p.type === 'guest').length}`)
   console.log(`   With images:   ${finalPets.filter(p => p.imageUrl).length}`)
   console.log(`   With dates:    ${finalPets.filter(p => p.releaseDate !== 'Unknown').length}`)
 }
