@@ -145,22 +145,24 @@ export default function PetsPage() {
       <div className="mb-2">
         <p className="text-text-muted text-xs mb-2 font-medium">Element / Trait filter:</p>
         <div className="flex flex-wrap gap-1.5">
-          {allCodes.map(code => (
-            <button
-              key={code}
-              onClick={() => toggleElement(code)}
-              aria-pressed={activeElements.includes(code)}
-              className={`transition-all duration-150 rounded-full ${activeElements.includes(code) ? 'ring-2 ring-gold' : 'opacity-60 hover:opacity-100'}`}
-            >
-              <span className="pointer-events-none">
-                <span className={`inline-flex items-center text-xs font-medium px-1.5 py-0.5 rounded-full ${
-                  filterEntries.find(e => e.code === code)?.colour ?? 'bg-bg-overlay text-text-muted'
+          {allCodes.map(code => {
+            const isActive = activeElements.includes(code)
+            const colour = filterEntries.find(e => e.code === code)?.colour ?? 'bg-bg-overlay text-text-muted'
+            return (
+              <button
+                key={code}
+                onClick={() => toggleElement(code)}
+                aria-pressed={isActive}
+                className="transition-all duration-150"
+              >
+                <span className={`inline-flex items-center text-xs font-medium px-1.5 py-0.5 rounded-full ${colour} ${
+                  isActive ? 'ring-2 ring-gold' : 'opacity-60 hover:opacity-100'
                 }`}>
                   {code}
                 </span>
-              </span>
-            </button>
-          ))}
+              </button>
+            )
+          })}
           {activeElements.length > 0 && (
             <button
               onClick={() => {
