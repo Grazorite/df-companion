@@ -1,13 +1,13 @@
 /**
- * Pet Scraper — A-Z Master Page Strategy (Two-Pass, Resumable)
+ * Pets & Guests Scraper — A-Z Master Page Strategy (Two-Pass, Resumable)
  *
- * The A-Z Pets page (m=22349620, mpage=1) contains all pet entries grouped
+ * The A-Z Pets & Guests page (m=22349620, mpage=1) contains all entries grouped
  * by letter, each hyperlinked to its individual forum thread.
  *
  * Entry format: [ICE][SHR] Pet Name (D-Amulet/Seasonal)
  *
  * USAGE:
- *   npm run scrape:pets              # Scrape all pets
+ *   npm run scrape:pets              # Scrape all pets & guests
  *   npm run scrape:pets -- --start=C # Resume from letter C onwards
  *   npm run scrape:pets -- --letter=B # Scrape only letter B
  *
@@ -22,7 +22,7 @@ import * as path from 'node:path'
 import type { Pet, ObtainMethod, Attack, Evolution, AlsoSeeRef, EntryType } from '../src/types/pet.ts'
 
 const FORUM_BASE = 'https://forums2.battleon.com/f'
-const AZ_PETS_URL = `${FORUM_BASE}/tm.asp?m=22349620&mpage=1`
+const AZ_PETS_URL = `${FORUM_BASE}/tm.asp?m=22349620&mpage=1`  // A-Z Pets & Guests combined
 const CHRONOLOGY_URL = `${FORUM_BASE}/tm.asp?m=10738071`
 const DELAY_MS = 1000
 const OUTPUT_PATH = path.resolve(import.meta.dirname, '../src/data/pets.json')
@@ -552,7 +552,7 @@ function parseChronology(html: string): { dates: Map<string, string>; types: Map
 // ─── Main ─────────────────────────────────────────────────────────────────────
 
 async function main() {
-  console.log('🐾 DragonFable Pet Scraper (Resumable, Two-Pass)')
+  console.log('🐾 DragonFable Pets & Guests Scraper (Resumable, Two-Pass)')
   console.log('─'.repeat(50))
   if (startArg) console.log(`▶  Resuming from letter: ${startArg}`)
   if (letterArg) console.log(`▶  Only scraping letter: ${letterArg}`)
@@ -563,7 +563,7 @@ async function main() {
 
   // ── Step 1: Fetch A-Z master page ─────────────────────────────────────────
 
-  console.log('📄 Fetching A-Z Pets master page...')
+  console.log('📄 Fetching A-Z Pets & Guests master page...')
   let azHtml = ''
   try {
     azHtml = await fetchPage(AZ_PETS_URL, cookie)
@@ -574,25 +574,25 @@ async function main() {
 
   const allStubs = parseAZPage(azHtml)
   if (allStubs.length === 0) {
-    console.error('❌ No pet stubs found. Page size:', azHtml.length)
+    console.error('❌ No pet/guest stubs found. Page size:', azHtml.length)
     const preview = stripHtml(decodeHTML(azHtml)).slice(0, 200)
     console.error('   Page preview:', preview)
     process.exit(1)
   }
-  console.log(`✅ Found ${allStubs.length} pets in A-Z listing`)
+  console.log(`✅ Found ${allStubs.length} pets & guests in A-Z listing`)
 
   // Apply letter filters
   let stubs = allStubs
   if (letterArg) {
     stubs = allStubs.filter(s => s.letter === letterArg)
-    console.log(`   Filtered to letter ${letterArg}: ${stubs.length} pets`)
+    console.log(`   Filtered to letter ${letterArg}: ${stubs.length} entries`)
   } else if (startArg) {
     let past = false
     stubs = allStubs.filter(s => {
       if (s.letter === startArg) past = true
       return past
     })
-    console.log(`   Resuming from ${startArg}: ${stubs.length} pets remaining`)
+    console.log(`   Resuming from ${startArg}: ${stubs.length} entries remaining`)
   }
   console.log()
 
