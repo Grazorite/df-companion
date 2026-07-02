@@ -150,7 +150,7 @@ export default function PetsPage() {
               key={code}
               onClick={() => toggleElement(code)}
               aria-pressed={activeElements.includes(code)}
-              className={`transition-all duration-150 rounded-full ${activeElements.includes(code) ? 'ring-2 ring-gold ring-offset-1 ring-offset-bg-base' : 'opacity-60 hover:opacity-100'}`}
+              className={`transition-all duration-150 rounded-full ${activeElements.includes(code) ? 'ring-2 ring-gold' : 'opacity-60 hover:opacity-100'}`}
             >
               <span className="pointer-events-none">
                 <span className={`inline-flex items-center text-xs font-medium px-1.5 py-0.5 rounded-full ${
