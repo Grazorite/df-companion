@@ -9,6 +9,7 @@ import PetList from '../components/pets/PetList'
 import type { EntryType } from '../types/pet'
 
 const ACCESS_OPTIONS = [
+  { id: 'multi', label: 'Multiple Versions', petsOnly: false },
   { id: 'da', label: 'DA Required', petsOnly: false },
   { id: 'merge', label: 'Merge Required', petsOnly: true },
   { id: 'free', label: 'Free', petsOnly: true },
@@ -40,8 +41,8 @@ export default function PetsPage() {
     : []  // empty = both
 
   const activeElements = elementParam ? elementParam.split(',').filter(Boolean) : []
-  const activeAccess = accessParam ? accessParam.split(',').filter((a): a is 'free' | 'merge' | 'dc' | 'dm' | 'da' =>
-    ['free', 'merge', 'dc', 'dm', 'da'].includes(a)
+  const activeAccess = accessParam ? accessParam.split(',').filter((a): a is 'multi' | 'free' | 'merge' | 'dc' | 'dm' | 'da' =>
+    ['multi', 'free', 'merge', 'dc', 'dm', 'da'].includes(a)
   ) : []
   const activeCategories = categoryParam ? categoryParam.split(',').filter((c): c is 'temp' | 'rare' | 'seasonal' | 'special-offer' | 'retired' => 
     ['temp', 'rare', 'seasonal', 'special-offer', 'retired'].includes(c)
@@ -110,7 +111,7 @@ export default function PetsPage() {
   }
 
   function toggleAccess(id: string) {
-    const accessType = id as 'free' | 'merge' | 'dc' | 'dm' | 'da'
+    const accessType = id as 'multi' | 'free' | 'merge' | 'dc' | 'dm' | 'da'
     const next = activeAccess.includes(accessType)
       ? activeAccess.filter(a => a !== accessType)
       : [...activeAccess, accessType]

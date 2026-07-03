@@ -1,7 +1,14 @@
 import { useParams, useLocation, Link } from 'react-router-dom'
 import { ArrowLeft } from 'lucide-react'
 import { usePetBySlug } from '../hooks/usePets'
+import { itemFamilyToPet } from '../utils/itemMigration'
+import type { Pet } from '../types/pet'
+import type { ItemFamily } from '../types/item'
 import PetDetail from '../components/pets/PetDetail'
+
+function isItemFamily(item: Pet | ItemFamily): item is ItemFamily {
+  return 'levelVariants' in item && 'familyName' in item
+}
 
 export default function PetDetailPage() {
   const { slug } = useParams<{ slug: string }>()
@@ -12,9 +19,9 @@ export default function PetDetailPage() {
 
   // Slugs are type-prefixed — ensure we look up "pet-{slug}"
   const fullSlug = slug?.startsWith('pet-') ? slug : `pet-${slug ?? ''}`
-  const pet = usePetBySlug(fullSlug)
+  const result = usePetBySlug(fullSlug)
 
-  if (!pet) {
+  if (!result) {
     return (
       <main className="px-4 py-8 max-w-3xl mx-auto text-center">
         <p className="text-text-secondary text-lg mb-4">Pet not found.</p>
@@ -24,6 +31,11 @@ export default function PetDetailPage() {
       </main>
     )
   }
+
+  // Handle both Pet and ItemFamily
+  const isFamily = isItemFamily(result)
+  const pet = isFamily ? itemFamilyToPet(result as ItemFamily) : (result as Pet)
+  const family = isFamily ? (result as ItemFamily) : undefined
 
   return (
     <>
@@ -36,7 +48,7 @@ export default function PetDetailPage() {
           Back to Pets & Guests
         </Link>
       </div>
-      <PetDetail pet={pet} backUrl={backUrl} />
+      <PetDetail pet={pet} backUrl={backUrl} family={family} />
     </>
   )
 }

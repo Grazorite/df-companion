@@ -8,6 +8,10 @@ export interface ObtainMethod {
   priceType: PriceType     // For filtering and DC/DM logo display
   requiredItems?: string   // "1 Prince Linus & 1 Royal Penguin Shrink Ray"
   sellback: string         // "0 Gold", "125 Gold"
+  // Per-method access flags (optional - only present if detected in that method's context)
+  daRequired?: boolean     // true if DA tag appears near this specific obtain method
+  dcRequired?: boolean     // true if DC tag appears near this specific obtain method
+  dmRequired?: boolean     // true if DM tag appears near this specific obtain method
 }
 
 export interface Attack {
@@ -58,6 +62,7 @@ export interface Pet {
   level: string            // "19" or "19-25"
   damage: string           // "2-16"
   stats: string            // "Crit +3" or "None"
+  statsType?: 'petStats' | 'bonuses'  // Dynamic stat type for header display
   resists: string          // "None" or "Fire +10"
 
   // Acquisition
@@ -85,6 +90,6 @@ export interface PetFilters {
   query?: string
   type?: EntryType[]       // Which segment(s) are active
   elements?: string[]      // Multi-select element codes (OR logic)
-  access?: ('free' | 'dc' | 'dm' | 'da' | 'merge')[]  // Level 1 multi-select access filters
+  access?: ('multi' | 'free' | 'dc' | 'dm' | 'da' | 'merge')[]  // Level 1 multi-select access filters
   categories?: ('temp' | 'rare' | 'seasonal' | 'special-offer' | 'retired')[]  // Level 2 multi-select
 }

@@ -2,6 +2,7 @@ import { useMemo } from 'react'
 import petsData from '../data/pets.json'
 import elementsData from '../data/elements.json'
 import type { Pet, PetFilters, EntryType } from '../types/pet'
+import type { ItemFamily } from '../types/item'
 import type { ElementsData } from '../types/element'
 
 // Normalize legacy field names (specialMarkers → traits) at load time
@@ -15,90 +16,144 @@ const allPets: Pet[] = (petsData as unknown as Array<Pet & { specialMarkers?: st
 })
 const elementMeta = elementsData as ElementsData
 
+// ─── Type Guard ───────────────────────────────────────────────────────────────
+
+function isItemFamily(item: Pet | ItemFamily): item is ItemFamily {
+  return 'levelVariants' in item && 'familyName' in item
+}
+
 // ─── Search ───────────────────────────────────────────────────────────────────
 
-function searchPets(pets: Pet[], filters: PetFilters): Pet[] {
+function searchPets(pets: (Pet | ItemFamily)[], filters: PetFilters): (Pet | ItemFamily)[] {
   const query = (filters.query ?? '').toLowerCase().trim()
   const queryWords = query.split(/\s+/).filter(w => w.length >= 2)
 
   return pets
-    .filter(pet => {
+    .filter(item => {
+      const isFamily = isItemFamily(item)
+      
+      // Extract fields based on type
+      const pet = isFamily ? null : (item as Pet)
+      const family = isFamily ? (item as ItemFamily) : null
+      
+      const itemType = isFamily ? family!.type : pet!.type
+      const itemElements = isFamily ? family!.elements : pet!.elements
+      const itemTraits = isFamily ? [] : pet!.traits  // Families don't have traits yet
+      const itemName = isFamily ? family!.familyName : pet!.name
+      const itemDescription = isFamily ? family!.shared.description : pet!.description
+      const itemTags = isFamily ? family!.tags : pet!.tags
+      const itemRetired = isFamily ? (family!.retired ?? false) : (pet!.retired ?? false)
+      
       // Segment filter — which type(s) are active
       if (filters.type && filters.type.length > 0) {
-        if (!filters.type.includes(pet.type)) return false
+        if (!filters.type.includes(itemType as EntryType)) return false
       }
 
       // Element/trait filter — OR logic across selected codes (elements + traits combined)
       if (filters.elements && filters.elements.length > 0) {
-        const petCodes = [...pet.elements, ...pet.traits]
-        if (!filters.elements.some(e => petCodes.includes(e))) return false
+        const itemCodes = [...itemElements, ...itemTraits]
+        if (!filters.elements.some(e => itemCodes.includes(e))) return false
       }
 
       // Access filter (Level 1) — multi-select with AND logic
       if (filters.access && filters.access.length > 0) {
-        // Check each selected access filter
         for (const accessType of filters.access) {
-          if (accessType === 'da' && !pet.daRequired) return false
-          if (accessType === 'dc' && !pet.dcRequired) return false
-          if (accessType === 'dm' && !pet.dmRequired) return false
-          if (accessType === 'free' && !pet.obtainMethods.some(m => m.priceType === 'free')) return false
-          if (accessType === 'merge' && !pet.obtainMethods.some(m => m.priceType === 'merge')) return false
+          if (accessType === 'multi') {
+            // Multiple Versions: show only ItemFamily with more than 1 level variant
+            if (!isFamily || family!.levelVariants.length <= 1) return false
+          }
+          if (accessType === 'da') {
+            const hasDA = isFamily ? family!.hasDA : pet!.daRequired
+            if (!hasDA) return false
+          }
+          if (accessType === 'dc') {
+            const hasDC = isFamily ? family!.hasDC : (pet!.dcRequired ?? false)
+            if (!hasDC) return false
+          }
+          if (accessType === 'dm') {
+            const hasDM = isFamily ? family!.hasDM : (pet!.dmRequired ?? false)
+            if (!hasDM) return false
+          }
+          if (accessType === 'free') {
+            const hasFree = isFamily
+              ? family!.hasFree
+              : pet!.obtainMethods.some(m => m.priceType === 'free')
+            if (!hasFree) return false
+          }
+          if (accessType === 'merge') {
+            const hasMerge = isFamily
+              ? family!.hasMerge
+              : pet!.obtainMethods.some(m => m.priceType === 'merge')
+            if (!hasMerge) return false
+          }
         }
       }
 
       // Category filter (Level 2) — multi-select with OR logic
       if (filters.categories && filters.categories.length > 0) {
         const hasCategory = filters.categories.some(cat => {
-          if (cat === 'temp') return pet.isTemp === true
-          if (cat === 'rare') return pet.isRare === true
-          if (cat === 'seasonal') return pet.isSeasonal === true
-          if (cat === 'special-offer') return pet.isSpecialOffer === true
-          if (cat === 'retired') return pet.retired === true
+          if (cat === 'temp') return isFamily ? (family!.isTemp === true) : (pet!.isTemp === true)
+          if (cat === 'rare') return isFamily ? (family!.isRare === true) : (pet!.isRare === true)
+          if (cat === 'seasonal') return isFamily ? (family!.isSeasonal === true) : (pet!.isSeasonal === true)
+          if (cat === 'special-offer') return isFamily ? (family!.isSpecialOffer === true) : (pet!.isSpecialOffer === true)
+          if (cat === 'retired') return itemRetired === true
           return false
         })
         
         // Special handling for retired: when selected, ONLY show retired; otherwise exclude retired
         if (filters.categories.includes('retired')) {
-          if (!pet.retired) return false
+          if (!itemRetired) return false
         } else {
           // If retired NOT selected and other categories are, exclude retired items
-          if (pet.retired) return false
+          if (itemRetired) return false
           // If other categories selected, must match at least one
           if (!hasCategory) return false
         }
       } else {
         // No categories selected — exclude retired by default (same as badges)
-        if (pet.retired) return false
+        if (itemRetired) return false
       }
 
-      // Text search — word-prefix matching (same algorithm as badges)
+      // Text search — word-prefix matching
+      // For families, search matches familyName, all variant names, and description
       if (queryWords.length > 0) {
+        const variantNames = isFamily
+          ? family!.levelVariants.map(lv => lv.name)
+          : []
+        
         const searchableText = [
-          pet.name,
-          pet.description,
-          ...pet.elements.map(e => elementMeta.elements.find(el => el.code === e)?.shortName ?? e),
-          ...pet.traits.map(t => elementMeta.traits.find(tr => tr.code === t)?.name ?? t),
-          ...pet.tags,
+          itemName,
+          ...variantNames,
+          itemDescription,
+          ...itemElements.map(e => elementMeta.elements.find(el => el.code === e)?.shortName ?? e),
+          ...itemTraits.map(t => elementMeta.traits.find(tr => tr.code === t)?.name ?? t),
+          ...itemTags,
         ].join(' ').toLowerCase()
 
         const contentWords = searchableText.split(/\W+/)
-        return queryWords.every(qWord =>
+        const matches = queryWords.every(qWord =>
           contentWords.some(cWord => cWord.startsWith(qWord))
         )
+        if (!matches) return false
       }
 
       return true
     })
     .sort((a, b) => {
+      const aIsFamily = isItemFamily(a)
+      const bIsFamily = isItemFamily(b)
+      const aName = aIsFamily ? (a as ItemFamily).familyName : (a as Pet).name
+      const bName = bIsFamily ? (b as ItemFamily).familyName : (b as Pet).name
+      
       if (queryWords.length > 0) {
-        const aNameWords = a.name.toLowerCase().split(/\W+/)
-        const bNameWords = b.name.toLowerCase().split(/\W+/)
+        const aNameWords = aName.toLowerCase().split(/\W+/)
+        const bNameWords = bName.toLowerCase().split(/\W+/)
         const aMatch = queryWords.some(qw => aNameWords.some(nw => nw.startsWith(qw)))
         const bMatch = queryWords.some(qw => bNameWords.some(nw => nw.startsWith(qw)))
         if (aMatch && !bMatch) return -1
         if (!aMatch && bMatch) return 1
       }
-      return a.name.localeCompare(b.name)
+      return aName.localeCompare(bName)
     })
 }
 
@@ -109,7 +164,7 @@ export function usePets(filters: PetFilters = {}) {
   return { pets: results, total: results.length }
 }
 
-export function usePetBySlug(slug: string) {
+export function usePetBySlug(slug: string): Pet | ItemFamily | null {
   return useMemo(() => allPets.find(p => p.slug === slug) ?? null, [slug])
 }
 

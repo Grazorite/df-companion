@@ -1,10 +1,15 @@
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
+import { useSearchParams } from 'react-router-dom'
 import { ExternalLink, Shield, ImageOff } from 'lucide-react'
 import type { Pet } from '../../types/pet'
+import type { ItemFamily } from '../../types/item'
+import { isSingleVariant } from '../../utils/variantHelpers'
 import ElementPill from '../shared/ElementPill'
 import AccessPills from '../shared/AccessPills'
-import StatBar from '../shared/StatBar'
 import NotesList from '../shared/NotesList'
+import LevelStatsTable from '../shared/LevelStatsTable'
+import LevelSelector from '../shared/LevelSelector'
+import ObtainVariantCard from '../shared/ObtainVariantCard'
 import PetAttacks from './PetAttacks'
 import PetEvolutions from './PetEvolutions'
 import PetCard from './PetCard'
@@ -13,6 +18,8 @@ import { useRelatedPets } from '../../hooks/usePets'
 interface PetDetailProps {
   pet: Pet
   backUrl: string
+  // Optional: ItemFamily for multi-variant display
+  family?: ItemFamily
 }
 
 function PetImage({ src, name }: { src: string; name: string }) {
@@ -36,17 +43,88 @@ function PetImage({ src, name }: { src: string; name: string }) {
   )
 }
 
-export default function PetDetail({ pet, backUrl }: PetDetailProps) {
-  const relatedPets = useRelatedPets(pet.alsoSee)
+export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
+  const [searchParams, setSearchParams] = useSearchParams()
   const dcRequired = pet.dcRequired ?? false
   const dmRequired = pet.dmRequired ?? false
+  
+  // Alternative image toggle state
+  const [activeImageIndex, setActiveImageIndex] = useState(0)
+  
+  // Determine if we're using multi-variant display
+  const isMultiVariant = family && !isSingleVariant(family)
+  
+  // Parse level URL param for multi-variant display
+  const levelParam = searchParams.get('level')
+  const activeIndex = useMemo(() => {
+    if (!isMultiVariant || !family || !levelParam) return 0
+    
+    // Try to match by levelNumber, levelDisplay, or name
+    const idx = family.levelVariants.findIndex(
+      lv =>
+        String(lv.levelNumber) === levelParam ||
+        lv.levelDisplay.toLowerCase() === levelParam.toLowerCase() ||
+        lv.name.toLowerCase().includes(levelParam.toLowerCase())
+    )
+    return idx >= 0 ? idx : 0
+  }, [levelParam, isMultiVariant, family])
+  
+  // Handler for level selection
+  const handleLevelChange = (index: number) => {
+    if (!family) return
+    setSearchParams(
+      prev => {
+        prev.set('level', String(family.levelVariants[index].levelNumber))
+        return prev
+      },
+      { replace: true }
+    )
+  }
+  
+  // Use shared data if available, otherwise fall back to Pet data
+  const displayData = family ? {
+    description: family.shared.description,
+    imageUrl: family.shared.imageUrl,
+    alternativeImages: family.shared.alternativeImages,
+    element: family.shared.element,
+    resists: family.shared.resists,
+    rarity: family.shared.rarity,
+    attacks: family.shared.attacks,
+    notes: family.shared.notes,
+    alsoSee: family.shared.alsoSee,
+  } : {
+    description: pet.description,
+    imageUrl: pet.imageUrl,
+    alternativeImages: undefined,
+    element: pet.elements[0],
+    resists: pet.resists,
+    rarity: pet.rarity,
+    attacks: pet.attacks,
+    notes: pet.notes,
+    alsoSee: pet.alsoSee,
+  }
+  
+  // Use displayData.alsoSee for related pets (works for both single and multi-variant)
+  const relatedPets = useRelatedPets(displayData.alsoSee ?? [])
+  
+  // Build array of all images (main + alternatives)
+  const allImages: Array<{ url: string; caption: string }> = []
+  if (displayData.imageUrl) {
+    allImages.push({ url: displayData.imageUrl, caption: 'Main Image' })
+  }
+  if (displayData.alternativeImages) {
+    allImages.push(...displayData.alternativeImages)
+  }
+  
+  // Currently displayed image
+  const currentImage = allImages[activeImageIndex]
 
   // Strip everything from "Thanks to" onwards — attribution lines, not content
-  const cleanedNotes = pet.notes
+  const cleanedNotes = displayData.notes
     ? (() => {
         // Handle both newline-separated (new) and " • "-separated (legacy) formats
-        const separator = pet.notes.includes('\n') ? '\n' : ' • '
-        const bullets = pet.notes.split(separator)
+        const separator = displayData.notes.includes('\n') ? '\n' : ' • '
+        const bullets = displayData.notes.split(separator)
         const cutoff = bullets.findIndex(n => /^Thanks\s+to\b/i.test(n.trim()))
         const kept = cutoff >= 0 ? bullets.slice(0, cutoff) : bullets
         const result = kept.filter(n => n.trim().length > 0).join(separator)
@@ -75,13 +153,26 @@ export default function PetDetail({ pet, backUrl }: PetDetailProps) {
             <ElementPill key={code} code={code} size="md" />
           ))}
           <AccessPills daRequired={pet.daRequired} dcRequired={dcRequired} dmRequired={dmRequired} filterBase="/pets" />
+          
+          {/* Multiple Versions pill for multi-variant items */}
+          {isMultiVariant && family && (
+            <span className="inline-block text-xs font-semibold px-3 py-1.5 rounded-full bg-gold-bright text-bg-base cursor-default">
+              Multiple Versions
+            </span>
+          )}
+          
           <span className="inline-block text-xs font-medium px-2.5 py-1 rounded-full bg-bg-overlay text-text-muted capitalize ml-auto">
             {pet.type}
           </span>
         </div>
 
-        <h1 className="text-2xl font-bold text-text-primary mb-2">{pet.name}</h1>
-        <p className="text-text-secondary text-sm italic leading-relaxed mb-2">{pet.description}</p>
+        {/* Display family name with level range for multi-variant, regular name for single */}
+        <h1 className="text-2xl font-bold text-text-primary mb-2">
+          {isMultiVariant && family ? (
+            family.isMultiPost ? family.familyName : `${family.familyName} (${family.levelRange})`
+          ) : pet.name}
+        </h1>
+        <p className="text-text-secondary text-sm italic leading-relaxed mb-2">{displayData.description}</p>
 
         {pet.releaseDate && pet.releaseDate !== 'Unknown' && (
           <p className="text-text-muted text-xs">Released: {pet.releaseDate}</p>
@@ -89,9 +180,29 @@ export default function PetDetail({ pet, backUrl }: PetDetailProps) {
       </div>
 
       {/* Pet image */}
-      {pet.imageUrl ? (
+      {currentImage ? (
         <div className="mb-6">
-          <PetImage src={pet.imageUrl} name={pet.name} />
+          <PetImage src={currentImage.url} name={pet.name} />
+          {/* Image toggle - only show if multiple images exist */}
+          {allImages.length > 1 && (
+            <div className="max-w-xs mx-auto mt-2">
+              <div className="flex gap-2 justify-center">
+                {allImages.map((_image, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setActiveImageIndex(idx)}
+                    className={`px-3 py-1 text-xs rounded-md transition-colors ${
+                      idx === activeImageIndex
+                        ? 'bg-gold text-bg-base font-medium'
+                        : 'bg-bg-overlay text-text-secondary hover:bg-bg-elevated'
+                    }`}
+                  >
+                    {idx === 0 ? 'Main' : `Alt ${idx}`}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       ) : (
         <div className="mb-6 w-full max-w-xs mx-auto aspect-square bg-bg-elevated border border-border-default rounded-xl flex items-center justify-center">
@@ -99,87 +210,233 @@ export default function PetDetail({ pet, backUrl }: PetDetailProps) {
         </div>
       )}
 
-      {/* Stats */}
-      {stats.length > 0 && (
+      {/* Stats - show for single-variant items in table format */}
+      {!isMultiVariant && stats.length > 0 && (
         <section aria-labelledby="stats-heading" className="mb-5">
           <h2 id="stats-heading" className="text-xs font-semibold text-text-muted uppercase tracking-wider mb-3">
             Stats
           </h2>
-          <StatBar stats={stats} />
+          
+          <div className="overflow-x-auto -mx-4 sm:mx-0">
+            <div className="inline-block min-w-full align-middle px-4 sm:px-0">
+              <table className="min-w-full border-collapse">
+                <thead>
+                  <tr className="border-b border-border-default">
+                    <th className="sticky left-0 bg-bg-base px-4 py-2 text-left text-xs font-semibold text-text-muted uppercase tracking-wider">
+                      Level
+                    </th>
+                    <th className="px-4 py-2 text-left text-xs font-semibold text-text-muted uppercase tracking-wider">
+                      Damage
+                    </th>
+                    <th className="px-4 py-2 text-left text-xs font-semibold text-text-muted uppercase tracking-wider">
+                      {/* Dynamic header based on statsType from pet data */}
+                      {pet.statsType === 'bonuses' ? 'Bonuses' : "Pet's Stats"}
+                    </th>
+                    <th className="px-4 py-2 text-center" title="Dragon Amulet Required">
+                      <img 
+                        src="https://github.com/DF-Pedia/DF-Pedia/blob/master/tags_banners/Banner-DragonAmulet.png?raw=true" 
+                        alt="DA" 
+                        className="w-4 h-4 mx-auto"
+                      />
+                    </th>
+                    <th className="px-4 py-2 text-center" title="Dragon Coins">
+                      <img 
+                        src="https://github.com/DF-Pedia/DF-Pedia/blob/master/weapons/DragonCoin.png?raw=true" 
+                        alt="DC" 
+                        className="w-4 h-4 mx-auto"
+                      />
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-border-default">
+                  <tr className="hover:bg-bg-surface transition-colors">
+                    <td className="sticky left-0 bg-bg-base hover:bg-bg-surface transition-colors px-4 py-3 text-sm text-text-secondary font-medium">
+                      {pet.level}
+                    </td>
+                    <td className="px-4 py-3 text-sm text-text-secondary whitespace-pre-line">
+                      {pet.damage}
+                    </td>
+                    <td className="px-4 py-3 text-sm text-text-secondary">
+                      {pet.stats}
+                    </td>
+                    <td className="px-4 py-3 text-center">
+                      {pet.daRequired ? (
+                        <span className="inline-flex items-center justify-center w-5 h-5 rounded bg-gold text-bg-base text-xs font-bold">
+                          ✓
+                        </span>
+                      ) : (
+                        <span className="text-text-muted text-xs">—</span>
+                      )}
+                    </td>
+                    <td className="px-4 py-3 text-center">
+                      {dcRequired ? (
+                        <span className="inline-flex items-center justify-center w-5 h-5 rounded bg-amber-500 text-white text-xs font-bold">
+                          ✓
+                        </span>
+                      ) : (
+                        <span className="text-text-muted text-xs">—</span>
+                      )}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </section>
       )}
+      
+      {/* Level Stats Table - only for multi-variant items */}
+      {isMultiVariant && family && (
+        <section aria-labelledby="level-stats-heading" className="mb-5">
+          <LevelStatsTable 
+            levels={family.levelVariants}
+            hideVariantColumn={family.levelRange.includes('All Versions')}
+          />
+        </section>
+      )}
+      
+      {/* Level selector and rarity - only for multi-variant items */}
+      {isMultiVariant && family && family.levelVariants.length > 1 && (
+        <section className="mb-5">
+          <LevelSelector
+            levels={family.levelVariants}
+            activeIndex={activeIndex}
+            onChange={handleLevelChange}
+          />
+        </section>
+      )}
+      
+      {/* Rarity - positioned after level selector for multi-variants, after stats for single */}
+      {(() => {
+        // For multi-variant, use level-specific rarity; for single, use pet rarity
+        const displayRarity = isMultiVariant && family 
+          ? family.levelVariants[activeIndex].rarity || family.shared.rarity
+          : pet.rarity || family?.shared.rarity
+        
+        if (!displayRarity || displayRarity === 'Unknown') return null
+        
+        return (
+          <section aria-labelledby="rarity-heading" className="mb-5">
+            <h2 id="rarity-heading" className="text-xs font-semibold text-text-muted uppercase tracking-wider mb-3">
+              Rarity
+            </h2>
+            <div className="flex gap-2">
+              <span className="inline-block text-sm px-3 py-1.5 rounded-md bg-bg-overlay text-text-secondary border border-border-default">
+                {displayRarity}
+              </span>
+            </div>
+          </section>
+        )
+      })()}
 
       {/* How to Obtain */}
-      {pet.obtainMethods.length > 0 && (
-        <section aria-labelledby="obtain-heading" className="mb-5">
+      {isMultiVariant && family ? (
+        /* Multi-variant obtain section */
+        <section aria-labelledby="obtain-heading" className="mb-5 space-y-4">
+          {/* Obtain cards for selected level */}
           <div className="space-y-3">
-            {pet.obtainMethods.map((method, i) => {
-              const isDC = method.priceType === 'dc'
-              const isDM = method.priceType === 'dm'
-              const isGuest = pet.type === 'guest'
+            {family.levelVariants[activeIndex].obtainVariants.map((variant, i) => {
+              // Determine label based on number of variants
+              const label =
+                family.levelVariants[activeIndex].obtainVariants.length > 1
+                  ? variant.priceType === 'free'
+                    ? 'Free Option'
+                    : variant.priceType === 'dc'
+                      ? 'DC Option'
+                      : variant.priceType === 'dm'
+                        ? 'DM Option'
+                        : `Method ${i + 1}`
+                  : undefined
               
               return (
-                <div key={i} className="bg-bg-surface border-l-4 border-gold rounded-lg p-5">
-                  {/* Heading */}
-                  <h2 id="obtain-heading" className="text-xs font-semibold text-text-muted uppercase tracking-wider mb-3">
-                    How to Obtain{pet.obtainMethods.length > 1 ? ` (Method ${i + 1})` : ''}
-                  </h2>
-                  
-                  {/* Location */}
-                  <p className="text-text-primary text-sm leading-relaxed">
-                    {method.location}
-                  </p>
-                  
-                  {/* Pet-specific details */}
-                  {!isGuest && (
-                    <div className="space-y-1 mt-3 pt-3 border-t border-border-default">
-                      {/* Price */}
-                      <div className="flex gap-2">
-                        <span className="text-text-muted text-xs w-20 flex-shrink-0">Price</span>
-                        <span className={`text-xs ${isDC ? 'text-amber-300' : isDM ? 'text-slate-300' : 'text-text-secondary'}`}>
-                          {method.price}
-                        </span>
-                      </div>
-                      
-                      {/* Required Items */}
-                      {method.requiredItems && (
-                        <div className="flex gap-2">
-                          <span className="text-text-muted text-xs w-20 flex-shrink-0">Requires</span>
-                          <span className={`text-xs leading-snug ${method.requiredItems.includes("Defender's Medal") ? 'text-slate-300' : 'text-text-secondary'}`}>
-                            {method.requiredItems}
-                          </span>
-                        </div>
-                      )}
-                      
-                      {/* Sellback */}
-                      <div className="flex gap-2">
-                        <span className="text-text-muted text-xs w-20 flex-shrink-0">Sellback</span>
-                        <span className="text-text-muted text-xs">{method.sellback}</span>
-                      </div>
-                    </div>
-                  )}
-                </div>
+                <ObtainVariantCard
+                  key={i}
+                  variant={variant}
+                  label={label}
+                />
               )
             })}
           </div>
         </section>
-      )}
+      ) : pet.obtainMethods.length > 0 ? (
+        /* Single-variant obtain section - use standardized format */
+        <section aria-labelledby="obtain-heading" className="mb-5">
+          <div className="space-y-3">
+            {pet.obtainMethods.map((method, i) => {
+              const obtainVariant = {
+                location: method.location,
+                price: method.price,
+                priceType: method.priceType,
+                sellback: method.sellback,
+                // Use per-method DA/DC/DM flags if available, otherwise fall back to pet-level flags
+                daRequired: method.daRequired ?? pet.daRequired,
+                ...(method.dcRequired || pet.dcRequired ? { dcRequired: method.dcRequired ?? pet.dcRequired } : {}),
+                ...(method.dmRequired || pet.dmRequired ? { dmRequired: method.dmRequired ?? pet.dmRequired } : {}),
+                ...(method.requiredItems ? { requiredItems: method.requiredItems } : {}),
+              }
+              
+              const label = pet.obtainMethods.length > 1 ? `Method ${i + 1}` : undefined
+              
+              return (
+                <ObtainVariantCard
+                  key={i}
+                  variant={obtainVariant}
+                  label={label}
+                />
+              )
+            })}
+          </div>
+        </section>
+      ) : null}
 
       {/* Evolutions */}
       <PetEvolutions evolutions={pet.evolutions} fromUrl={backUrl} />
 
       {/* Attacks */}
-      <PetAttacks attacks={pet.attacks} />
+      <PetAttacks attacks={displayData.attacks ?? []} />
 
-      {/* Notes */}
-      {cleanedNotes && (
-        <section className="bg-bg-surface/60 border border-border-default rounded-lg p-4 mb-5">
-          <h2 className="text-xs font-semibold text-text-muted uppercase tracking-wider mb-3">
-            Other Information
-          </h2>
-          <NotesList notes={cleanedNotes} />
-        </section>
-      )}
+      {/* Notes - for multi-variant, show level-specific notes; for single, show pet notes */}
+      {(() => {
+        // For multi-variant items, check if the active level has notes
+        if (isMultiVariant && family) {
+          const activeLevel = family.levelVariants[activeIndex]
+          const levelNotes = activeLevel.notes
+          if (!levelNotes) return null
+          
+          // Clean notes (remove attribution)
+          const cleanedLevelNotes = (() => {
+            const separator = levelNotes.includes('\n') ? '\n' : ' • '
+            const bullets = levelNotes.split(separator)
+            const cutoff = bullets.findIndex(n => /^Thanks\s+to\b/i.test(n.trim()))
+            const kept = cutoff >= 0 ? bullets.slice(0, cutoff) : bullets
+            const result = kept.filter(n => n.trim().length > 0).join(separator)
+            return result || undefined
+          })()
+          
+          if (!cleanedLevelNotes) return null
+          
+          return (
+            <section className="bg-bg-surface/60 border border-border-default rounded-lg p-4 mb-5">
+              <h2 className="text-xs font-semibold text-text-muted uppercase tracking-wider mb-3">
+                Other Information
+              </h2>
+              <NotesList notes={cleanedLevelNotes} />
+            </section>
+          )
+        }
+        
+        // For single-variant items, use cleanedNotes
+        if (!cleanedNotes) return null
+        
+        return (
+          <section className="bg-bg-surface/60 border border-border-default rounded-lg p-4 mb-5">
+            <h2 className="text-xs font-semibold text-text-muted uppercase tracking-wider mb-3">
+              Other Information
+            </h2>
+            <NotesList notes={cleanedNotes} />
+          </section>
+        )
+      })()}
 
       {/* Forum Source */}
       <section aria-labelledby="source-heading" className="mb-5">
@@ -194,7 +451,9 @@ export default function PetDetail({ pet, backUrl }: PetDetailProps) {
         >
           <div>
             <span className="text-gold text-xs font-medium block mb-0.5">Primary Source</span>
-            <span className="text-text-primary text-sm font-medium">DF Encyclopedia: {pet.name}</span>
+            <span className="text-text-primary text-sm font-medium">
+              DF Encyclopedia: {isMultiVariant && family ? family.familyName : pet.name}
+            </span>
           </div>
           <ExternalLink className="w-4 h-4 text-text-muted flex-shrink-0 ml-3" aria-hidden="true" />
         </a>

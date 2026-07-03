@@ -20,6 +20,8 @@
 import * as fs from 'node:fs'
 import * as path from 'node:path'
 import type { Pet, ObtainMethod, Attack, Evolution, AlsoSeeRef, EntryType } from '../src/types/pet.ts'
+import type { ItemFamily, ObtainVariant, LevelVariant, SharedData } from '../src/types/item.ts'
+import { computePriceType, computeFamilyFlags, normalizeLevel } from '../src/utils/variantHelpers.ts'
 
 const FORUM_BASE = 'https://forums2.battleon.com/f'
 const AZ_PETS_URL = `${FORUM_BASE}/tm.asp?m=22349620&mpage=1`  // A-Z Pets & Guests combined
@@ -73,65 +75,90 @@ function decodeHTML(str: string): string {
     .replace(/&quot;/g, '"').replace(/&#39;/g, "'")
     .replace(/&#(\d+);/g, (_, n) => String.fromCharCode(Number(n)))
     .replace(/&nbsp;/g, ' ')
+    .replace(/&apos;/g, "'")  // Also handle &apos; entity
 }
 
 function stripHtml(html: string): string {
   // Handle forum's malformed HTML:
   // - Top-level <li> without <ul>
   // - Nested <ul><li>...<li></ul> for sub-items
+  // - Text content with < or > characters (like "<1%")
   
   let depth = 0
   let processed = ''
   let i = 0
-  const maxIterations = Math.max(html.length * 3, 100000)  // Increased safety limit for long pages
+  const maxIterations = Math.max(html.length * 3, 100000)
   let iterations = 0
+  let inTag = false
+  let tagStart = -1
   
   while (i < html.length && iterations < maxIterations) {
     iterations++
     
-    // Check for <ul> or <ol> opening
-    if (html.substr(i, 3) === '<ul' || html.substr(i, 3) === '<ol') {
-      depth++
-      const closeTag = html.indexOf('>', i)
-      i = closeTag >= 0 ? closeTag + 1 : i + 3
-      processed += '\n'
-    }
-    // Check for </ul> or </ol> closing
-    else if (html.substr(i, 4) === '</ul' || html.substr(i, 4) === '</ol') {
-      depth = Math.max(0, depth - 1)
-      const closeTag = html.indexOf('>', i)
-      i = closeTag >= 0 ? closeTag + 1 : i + 4
-      processed += '\n'
-    }
-    // Check for <li>
-    else if (html.substr(i, 3) === '<li') {
-      const closeTag = html.indexOf('>', i)
-      const indent = '  '.repeat(Math.max(0, depth))
-      processed += `\n${indent}• `
-      i = closeTag >= 0 ? closeTag + 1 : i + 3
-    }
-    // Check for </li>
-    else if (html.substr(i, 4) === '</li') {
-      const closeTag = html.indexOf('>', i)
-      i = closeTag >= 0 ? closeTag + 1 : i + 4
-      processed += '\n'
-    }
-    // Regular character
-    else {
-      processed += html[i]
+    const char = html[i]
+    
+    // Check if this might be the start of a tag
+    if (char === '<' && !inTag) {
+      // Look ahead to see if this is actually a tag or just a < character in text
+      const nextChars = html.slice(i, i + 10)
+      // Valid HTML tags start with < followed by letter or / or !
+      if (/^<[a-zA-Z!\/]/.test(nextChars)) {
+        inTag = true
+        tagStart = i
+      } else {
+        // It's just a < character in text content, keep it
+        processed += char
+      }
       i++
+      continue
     }
+    
+    // Check if we're closing a tag
+    if (char === '>' && inTag) {
+      inTag = false
+      
+      // Check what type of tag we just closed
+      const tagContent = html.slice(tagStart, i + 1)
+      
+      if (tagContent.match(/<ul|<ol/i)) {
+        depth++
+        processed += '\n'
+      } else if (tagContent.match(/<\/ul|<\/ol/i)) {
+        depth = Math.max(0, depth - 1)
+        processed += '\n'
+      } else if (tagContent.match(/<li/i)) {
+        const indent = '  '.repeat(Math.max(0, depth))
+        processed += `\n${indent}• `
+      } else if (tagContent.match(/<\/li/i)) {
+        processed += '\n'
+      } else if (tagContent.match(/<br/i)) {
+        processed += '\n'
+      } else if (tagContent.match(/<\/p/i)) {
+        processed += '\n'
+      }
+      // For other tags, just skip them
+      
+      i++
+      continue
+    }
+    
+    // If we're inside a tag, skip the character
+    if (inTag) {
+      i++
+      continue
+    }
+    
+    // Regular character outside tags - add to output
+    processed += char
+    i++
   }
   
   if (iterations >= maxIterations) {
     console.warn('⚠️  stripHtml reached iteration limit on a very large page')
   }
   
-  // Clean up remaining HTML and whitespace
+  // Clean up whitespace
   return processed
-    .replace(/<br\s*\/?>/gi, '\n')
-    .replace(/<\/p>/gi, '\n')
-    .replace(/<[^>]+>/g, '')
     .replace(/\n{3,}/g, '\n\n')
     .trim()
 }
@@ -254,6 +281,239 @@ function parseAZPage(html: string, chronoTypes: Map<string, EntryType>): PetStub
 
 // ─── Individual pet thread parsing ───────────────────────────────────────────
 
+// ─── Multi-Variant Detection Helpers (Sprint 5) ──────────────────────────────
+
+/**
+ * Check if a forum thread has multiple posts (separate variants in single thread)
+ * Examples: Baron (Kitten, Cat) - two separate posts for different variants
+ * Returns array of post boundaries if multi-post, empty array if single-post
+ */
+function detectMultiPostVariants(html: string, baseName: string): Array<{ startIndex: number; variantName: string; level?: number }> {
+  // Look for the base name followed by a variant suffix (not roman numerals)
+  // Pattern: "Baron Kitten", "Baron Cat", etc.
+  // This is different from roman numerals (I, II, III) or "All Versions"
+  
+  const variants: Array<{ startIndex: number; variantName: string; level?: number }> = []
+  
+  // Pattern 1: Base name + word (like "Baron Kitten", "Baron Cat")
+  // Match heading-like text with the base name followed by a capitalized word
+  // Must be at start of line or after HTML tag to avoid matching within paragraphs
+  const variantPattern = new RegExp(
+    `(?:^|<[^>]+>)\\s*(${baseName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\s+([A-Z][a-z]+))\\s*(?:<|$)`,
+    'gim'
+  )
+  
+  let match: RegExpExecArray | null
+  const seenVariants = new Set<string>()
+  
+  while ((match = variantPattern.exec(html)) !== null) {
+    const fullName = match[1].trim()
+    const variantSuffix = match[2]
+    
+    // Skip if this is a roman numeral (I, II, III, etc.)
+    if (/^[IVX]+$/i.test(variantSuffix)) continue
+    
+    // Skip if this is "Level", "Element", etc. (common keywords, not variant names)
+    if (/^(Level|Element|Damage|Attack|Type|Rarity|Location|Price|Sellback|Stats|Resists|Bonuses|Pet|Guest)$/i.test(variantSuffix)) continue
+    
+    // Skip common forum poster names (Baron Dante, etc.)
+    if (/^(Dante|Member|Moderator|Admin)$/i.test(variantSuffix)) continue
+    
+    // Avoid duplicates
+    if (seenVariants.has(variantSuffix.toLowerCase())) continue
+    seenVariants.add(variantSuffix.toLowerCase())
+    
+    variants.push({
+      startIndex: match.index,
+      variantName: variantSuffix,
+    })
+  }
+  
+  // Only return if we found 2+ distinct variants
+  return variants.length >= 2 ? variants : []
+}
+
+/**
+ * Detect number of pages in a forum thread
+ */
+function detectMultiPage(html: string): number {
+  // Look for "Page 1 of 7" indicators
+  const pageMatch = html.match(/Page\s+\d+\s+of\s+(\d+)/i)
+  if (pageMatch) return parseInt(pageMatch[1], 10)
+  
+  // Fallback: look for mpage= links
+  const pageLinks = html.match(/mpage=\d+/gi) || []
+  if (pageLinks.length > 0) {
+    const pageNumbers = pageLinks.map(link => parseInt(link.match(/\d+/)![0], 10))
+    return Math.max(...pageNumbers, 1)
+  }
+  
+  return 1
+}
+
+/**
+ * Parse DA requirement from section text
+ * Handles all known variations:
+ * - Image tag: <img src=".../tags/DA.png">
+ * - "Requires a Dragon Amulet to use"
+ * - "(No DA Required)" or "No DA Required"
+ * - Absence of text (default: false)
+ */
+function parseDARequiredFromSection(sectionText: string, rawHtml: string): boolean {
+  // Primary: Check for DA.png image tag (most reliable)
+  if (/<img[^>]+src=["'][^"']*\/tags\/DA\.png["']/i.test(rawHtml)) {
+    return true
+  }
+  
+  // Text patterns
+  if (/Requires\s+a\s+Dragon\s+Amulet/i.test(sectionText)) return true
+  if (/\(?\s*No\s+DA\s+Required\s*\)?/i.test(sectionText)) return false
+  
+  // Default: no DA required
+  return false
+}
+
+/**
+ * Detect level from pet name
+ * Returns { number, display } or null if not a leveled variant
+ * Examples: 
+ * - "Goldfish Knight IV" → {4, "IV"}
+ * - "BabyWeaver I" (within body) → {1, "I"}
+ * - "BabyWeaver (I-VI)" → null (range notation, not a specific level)
+ */
+function detectLevel(name: string): { number: number; display: string } | null {
+  // Skip range notations like "(I-VI)" — these indicate the thread contains multiple levels
+  if (/\([IVX]+-[IVX]+\)/.test(name)) {
+    return null
+  }
+  
+  // Roman numerals at end: "Goldfish Knight IV"
+  const romanMatch = name.match(/\b([IVX]+)$/i)
+  if (romanMatch) {
+    const roman = romanMatch[1].toUpperCase()
+    const normalized = normalizeLevel(roman)
+    if (normalized.number > 0 && normalized.number <= 10) {
+      return normalized
+    }
+  }
+  
+  // Numeric levels at end: "Level 30", "Lv 40"
+  const numericMatch = name.match(/\b(?:Level|Lv\.?)\s+(\d+)$/i)
+  if (numericMatch) {
+    const num = parseInt(numericMatch[1], 10)
+    return { number: num, display: num.toString() }
+  }
+  
+  return null
+}
+
+/**
+ * Check if pet name indicates a multi-level thread with range notation
+ * Examples: 
+ * - "BabyWeaver (I-VI)" → true
+ * - "Balloon Chickencow Pet (All Versions)" → true
+ * - "Goldfish Knight IV" → false
+ */
+function hasLevelRange(name: string): boolean {
+  return /\([IVX]+-[IVX]+\)/.test(name) || /\(All Versions\)/i.test(name)
+}
+
+/**
+ * Extract shared image and alternative images from post HTML
+ * Returns main image URL and array of alternative images with captions
+ */
+function extractImages(html: string): { main?: string; alternatives: Array<{ url: string; caption: string }> } {
+  const skipPatterns = [
+    /Button/i,
+    /Attack\.png/i,
+    /tags\/(DA|DC|DM|Temp|Rare|Seasonal|SpecialOffer|Retired)/i,
+    /width=["']?\d{1,2}["']?/,  // Tiny images
+    /forumheader/i,
+    /clear\.gif/i,
+    /blank\.gif/i,
+  ]
+  
+  const imgRegex = /<img[^>]+src=["']([^"']+)["'][^>]*>/gi
+  let imgMatch: RegExpExecArray | null
+  
+  const candidates: string[] = []
+  while ((imgMatch = imgRegex.exec(html)) !== null) {
+    const src = imgMatch[1]
+    if (skipPatterns.some(p => p.test(imgMatch![0]))) continue
+    
+    // Valid sources: DF encyclopedia, GitHub, Imgur (both http and https)
+    if (src.includes('media.artix.com/encyc') || 
+        src.includes('battleon.com/encyc') ||
+        src.includes('github.com') || 
+        src.includes('githubusercontent.com') ||
+        src.includes('imgur.com') ||
+        src.includes('i.imgur.com')) {
+      candidates.push(src)
+    }
+  }
+  
+  // Also look for image URLs in text (not wrapped in <img> tags)
+  // Pattern: http(s)://imgur.com/... or similar
+  const urlRegex = /https?:\/\/(?:i\.)?imgur\.com\/[a-zA-Z0-9]+\.(?:jpg|jpeg|png|gif)/gi
+  let urlMatch: RegExpExecArray | null
+  while ((urlMatch = urlRegex.exec(html)) !== null) {
+    const url = urlMatch[0]
+    // Avoid duplicates
+    if (!candidates.includes(url)) {
+      candidates.push(url)
+    }
+  }
+  
+  if (candidates.length === 0) {
+    return { main: undefined, alternatives: [] }
+  }
+  
+  // First image is the main image
+  const main = candidates[0]
+  
+  // Look for alternative image captions near subsequent images
+  // Common patterns: "Alternative Image", "Empowered Appearance", etc.
+  const alternatives: Array<{ url: string; caption: string }> = []
+  
+  for (let i = 1; i < candidates.length; i++) {
+    const imageUrl = candidates[i]
+    
+    // Find this image's position in HTML
+    const imgPos = html.indexOf(imageUrl)
+    if (imgPos === -1) continue
+    
+    // Look backward up to 200 chars for caption text
+    const beforeImg = html.slice(Math.max(0, imgPos - 200), imgPos)
+    
+    // Try to find caption patterns
+    // Pattern 1: <b>Caption Text</b> followed by image
+    const boldMatch = beforeImg.match(/<b>([^<]+)<\/b>\s*$/i)
+    if (boldMatch) {
+      const caption = stripHtml(decodeHTML(boldMatch[1])).trim()
+      alternatives.push({ url: imageUrl, caption })
+      continue
+    }
+    
+    // Pattern 2: Plain text followed by image
+    const plainTextMatch = beforeImg.match(/([A-Z][a-z\s]+)\s*$/i)
+    if (plainTextMatch && plainTextMatch[1].length < 50) {
+      const caption = plainTextMatch[1].trim()
+      // Only use if it looks like a caption (short, capitalized)
+      if (caption.length > 3 && /^[A-Z]/.test(caption)) {
+        alternatives.push({ url: imageUrl, caption })
+        continue
+      }
+    }
+    
+    // Fallback: use generic caption
+    alternatives.push({ url: imageUrl, caption: 'Alternative Image' })
+  }
+  
+  return { main, alternatives }
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+
 function parsePriceType(price: string, requiredItems?: string): ObtainMethod['priceType'] {
   const p = price.toLowerCase()
   
@@ -278,11 +538,620 @@ function parsePriceType(price: string, requiredItems?: string): ObtainMethod['pr
   return 'gold'
 }
 
+// ─── Multi-Variant Wrapper (Sprint 5) ────────────────────────────────────────
+
+/**
+ * Parse pet thread with multi-variant detection
+ * Returns Pet (single-variant) or ItemFamily (multi-variant)
+ * 
+ * Strategy:
+ * 1. Check for multi-page thread (detectMultiPage)
+ * 2. For single-page threads with no level indicator → use existing parsePetThread
+ * 3. For multi-page or leveled threads → parse all posts as ItemFamily
+ */
+async function parsePetThreadMultiVariant(
+  html: string,
+  name: string,
+  stub: PetStub,
+  cookie: string,
+  chronoDates: Map<string, string>,
+  nameToSlug: Map<string, { slug: string; type: EntryType }>
+): Promise<Pet | ItemFamily> {
+  // Check for level indicator in name (e.g., "BabyWeaver I" or range notation "(I-VI)")
+  const hasLevelInName = /\b([IVX]+|Level\s+\d+)$/i.test(name) || hasLevelRange(name)
+  
+  // Check for multi-page thread
+  const totalPages = detectMultiPage(html)
+  
+  // Check for multi-post variants (like Baron (Kitten, Cat))
+  const baseName = name.replace(/\s*\([^)]+\)/, '').trim()
+  const multiPostVariants = detectMultiPostVariants(html, baseName)
+  const hasMultiPostVariants = multiPostVariants.length >= 2
+  
+  // Single-page AND no level indicator AND no multi-post variants → use existing logic (backward compat)
+  if (totalPages === 1 && !hasLevelInName && !hasMultiPostVariants) {
+    const data = parsePetThread(html, name)
+    return convertToPet(data, stub, chronoDates, nameToSlug)
+  }
+  
+  // Multi-variant path: fetch all pages if needed
+  let allPosts: string[] = [html]
+  
+  if (totalPages > 1) {
+    console.log(` [${totalPages} pages]`)
+    for (let page = 2; page <= totalPages; page++) {
+      const pageUrl = stub.forumUrl.includes('mpage=') 
+        ? stub.forumUrl.replace(/mpage=\d+/, `mpage=${page}`)
+        : `${stub.forumUrl}&mpage=${page}`
+      
+      try {
+        await sleep(DELAY_MS)
+        const pageHtml = await fetchPage(pageUrl, cookie)
+        allPosts.push(pageHtml)
+      } catch (err) {
+        console.warn(`⚠️  Page ${page}/${totalPages} failed: ${err}`)
+        break
+      }
+    }
+  }
+  
+  // Parse level variants from all posts
+  const levelVariantsMap = new Map<number, LevelVariant>()
+  let sharedDescription = ''
+  let sharedElement: string | undefined
+  let sharedRarity: string | undefined
+  let sharedResists: string | undefined
+  let sharedAttacks: Attack[] = []
+  let sharedNotes: string | undefined
+  let sharedAlsoSeeNames: string[] = []
+  
+  // Handle multi-post variants first (like Baron: Kitten, Cat)
+  if (hasMultiPostVariants) {
+    console.log(` [Multi-post: ${multiPostVariants.map(v => v.variantName).join(', ')}]`)
+    
+    // Sort variants by start index
+    multiPostVariants.sort((a, b) => a.startIndex - b.startIndex)
+    
+    // Strategy: Look for table row boundaries that separate forum posts
+    // Each forum post is typically in its own table structure
+    // We need to find the <tr> or <table> that contains each variant heading
+    
+    for (let i = 0; i < multiPostVariants.length; i++) {
+      const variant = multiPostVariants[i]
+      const nextVariant = multiPostVariants[i + 1]
+      
+      // Find the table row containing this variant
+      // Search backward from variant.startIndex to find <tr or <table
+      const searchStart = Math.max(0, variant.startIndex - 500)
+      const htmlBefore = html.slice(searchStart, variant.startIndex)
+      
+      // Find the last <tr> or <table> before the variant heading
+      const lastTR = htmlBefore.lastIndexOf('<tr')
+      const lastTable = htmlBefore.lastIndexOf('<table')
+      const contentStart = searchStart + Math.max(lastTR, lastTable, 0)
+      
+      // End at the next variant's table start, or at end of HTML
+      let contentEnd: number
+      if (nextVariant) {
+        const nextSearchStart = Math.max(0, nextVariant.startIndex - 500)
+        const nextHtmlBefore = html.slice(nextSearchStart, nextVariant.startIndex)
+        const nextLastTR = nextHtmlBefore.lastIndexOf('<tr')
+        const nextLastTable = nextHtmlBefore.lastIndexOf('<table')
+        contentEnd = nextSearchStart + Math.max(nextLastTR, nextLastTable, 0)
+      } else {
+        contentEnd = html.length
+      }
+      
+      const variantHtml = html.slice(contentStart, contentEnd)
+      
+      // Parse this variant's data
+      const data = parsePetThread(variantHtml, `${baseName} ${variant.variantName}`)
+      
+      // Use sequential numbering for level sorting
+      const levelNum = i + 1
+      
+      const obtainVariants: ObtainVariant[] = data.obtainMethods.map(om => ({
+        location: om.location,
+        price: om.price,
+        priceType: computePriceType(om.price, om.requiredItems),
+        sellback: om.sellback,
+        daRequired: om.daRequired ?? false,
+        ...(om.dcRequired ? { dcRequired: om.dcRequired } : {}),
+        ...(om.dmRequired ? { dmRequired: om.dmRequired } : {}),
+        ...(om.requiredItems ? { requiredItems: om.requiredItems } : {}),
+      }))
+      
+      if (obtainVariants.length > 0) {
+        const actualLevel = data.level && data.level !== 'Unknown' ? parseInt(data.level, 10) : undefined
+        
+        levelVariantsMap.set(levelNum, {
+          levelNumber: levelNum,
+          levelDisplay: variant.variantName,  // "Kitten", "Cat"
+          ...(actualLevel && !isNaN(actualLevel) ? { actualLevel } : {}),
+          name: `${baseName} ${variant.variantName}`,
+          damage: data.damage || 'Unknown',
+          stats: data.stats || 'None',
+          ...(data.statsType ? { statsType: data.statsType } : {}),
+          obtainVariants,
+          ...(data.resists && data.resists !== 'None' ? { resists: data.resists } : {}),
+          ...(data.rarity && data.rarity !== 'Unknown' ? { rarity: data.rarity } : {}),
+          ...(data.notes ? { notes: data.notes } : {}),
+        })
+        
+        // Capture shared data from first variant
+        if (!sharedDescription) {
+          sharedDescription = data.description
+          sharedElement = stub.elements.length > 0 ? stub.elements[0] : undefined
+          sharedRarity = data.rarity !== 'Unknown' ? data.rarity : undefined
+          sharedResists = data.resists !== 'None' ? data.resists : undefined
+          sharedAttacks = data.attacks
+          sharedNotes = data.notes
+          sharedAlsoSeeNames = data.alsoSeeNames
+        }
+      } else {
+        console.log(` [variant ${variant.variantName}: no obtain methods found]`)
+      }
+    }
+  } else if (hasLevelRange(name)) {
+    // Two types of multi-variant notation:
+    // 1. Roman numeral range: "Pet Name (I-VI)" → sections named "Pet Name I", "Pet Name II", etc.
+    // 2. All Versions: "Pet Name (All Versions)" → repeated pet name + Level: X markers
+    
+    const baseName = name.replace(/\s*\([IVX]+-[IVX]+\)/, '').replace(/\s*\(All Versions\)/, '').trim()
+    const isAllVersions = /\(All Versions\)/i.test(name)
+    
+    const sections: Array<{ levelNum: number; romanDisplay: string; html: string; startIndex: number }> = []
+    
+    if (isAllVersions) {
+      // "(All Versions)" pattern - look for repeated pet name headings + Level: X
+      // The same name appears multiple times, each followed by different level data
+      
+      // Find all occurrences of the pet name in heading-like context
+      const namePattern = new RegExp(
+        `(?:<[^>]*>\\s*)?${baseName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(?:\\s*<[^>]*>)?`,
+        'gi'
+      )
+      
+      const potentialSections: Array<{ startIndex: number; level?: number }> = []
+      let match: RegExpExecArray | null
+      
+      while ((match = namePattern.exec(html)) !== null) {
+        potentialSections.push({ startIndex: match.index })
+      }
+      
+      // For each potential section, look for the Level: X that follows it
+      for (const section of potentialSections) {
+        const htmlSlice = html.slice(section.startIndex, section.startIndex + 500)
+        const levelMatch = htmlSlice.match(/Level:\s*(\d+)/i)
+        if (levelMatch) {
+          section.level = parseInt(levelMatch[1], 10)
+        }
+      }
+      
+      // Keep only sections with valid levels
+      const validSections = potentialSections
+        .filter(s => s.level && s.level > 0 && s.level <= 200)
+        .sort((a, b) => a.startIndex - b.startIndex)
+      
+      // Remove duplicate levels (keep first occurrence)
+      const seenLevels = new Set<number>()
+      for (const section of validSections) {
+        if (!seenLevels.has(section.level!)) {
+          seenLevels.add(section.level!)
+          sections.push({
+            levelNum: section.level!,
+            romanDisplay: section.level!.toString(),
+            html: '',
+            startIndex: section.startIndex,
+          })
+        }
+      }
+    } else {
+      // Roman numeral range pattern - look for "Pet Name I", "Pet Name II", etc.
+      // Handle extreme spacing variations like:
+      // - "BabyWeaver I" (no space in name)
+      // - "Baby Weaver III" (space in name)
+      // - "BabyWeaverVI" (no space before numeral)
+      // Strategy: Make EVERY character in the base name match with optional whitespace after it
+      const baseChars = baseName.split('')
+      const ultraFlexPattern = baseChars
+        .map(char => char.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\s*')
+        .join('')
+      
+      const sectionPattern = new RegExp(
+        `(?:<[^>]*>)?\\s*(${ultraFlexPattern}([IVX]+))\\s*(?:<[^>]*>)?`,
+        'gi'
+      )
+      
+      let match: RegExpExecArray | null
+      while ((match = sectionPattern.exec(html)) !== null) {
+        const romanDisplay = match[2]
+        const levelNum = normalizeLevel(romanDisplay).number
+        if (levelNum > 0 && levelNum <= 10) {
+          sections.push({
+            levelNum,
+            romanDisplay,
+            html: '',
+            startIndex: match.index,
+          })
+        }
+      }
+    }
+    
+    // Sort by start index and extract HTML for each section
+    sections.sort((a, b) => a.startIndex - b.startIndex)
+    
+    for (let i = 0; i < sections.length; i++) {
+      const section = sections[i]
+      const nextSection = sections[i + 1]
+      
+      // For the last section, look for common end markers
+      let endIndex: number
+      if (nextSection) {
+        endIndex = nextSection.startIndex
+      } else {
+        // Last section - find reasonable end boundary
+        const thanksMatch = html.slice(section.startIndex).search(/Thanks\s+to\b/i)
+        const alsoSeeMatch = html.slice(section.startIndex).search(/Also\s+See:/i)
+        const endMarkers = [thanksMatch, alsoSeeMatch].filter(m => m > 0)
+        
+        if (endMarkers.length > 0) {
+          endIndex = section.startIndex + Math.min(...endMarkers)
+        } else {
+          endIndex = html.length
+        }
+      }
+      
+      section.html = html.slice(section.startIndex, endIndex)
+    }
+    
+    // Parse each section
+    for (const section of sections) {
+      const levelName = isAllVersions ? baseName : `${baseName} ${section.romanDisplay}`
+      const data = parsePetThread(section.html, levelName)
+      
+      // Parse actual level number from "Level: X" in the section
+      const actualLevel = data.level && data.level !== 'Unknown' ? parseInt(data.level, 10) : undefined
+      
+      // Detect DA/DC from THIS section's HTML (not global)
+      const sectionDARequired = parseDARequiredFromSection(section.html, section.html)
+      const sectionDCRequired = /<img[^>]+src=["'][^"']*\/tags\/DC\.png["']/i.test(section.html)
+      const sectionDMRequired = /<img[^>]+src=["'][^"']*\/tags\/DM\.png["']/i.test(section.html)
+      
+      // Debug: Check for DC tag in price text as fallback (sometimes tag appears in obtain method)
+      let dcFromPrice = false
+      if (!sectionDCRequired && data.obtainMethods.length > 0) {
+        dcFromPrice = data.obtainMethods.some(om => 
+          om.price.toLowerCase().includes('dragon coin') || 
+          om.priceType === 'dc'
+        )
+      }
+      
+      const obtainVariants: ObtainVariant[] = data.obtainMethods.map(om => ({
+        location: om.location,
+        price: om.price,
+        priceType: computePriceType(om.price, om.requiredItems),
+        sellback: om.sellback,
+        daRequired: sectionDARequired,
+        ...(sectionDCRequired || dcFromPrice ? { dcRequired: true } : {}),
+        ...(sectionDMRequired ? { dmRequired: sectionDMRequired } : {}),
+        ...(om.requiredItems ? { requiredItems: om.requiredItems } : {}),
+      }))
+      
+      if (obtainVariants.length > 0) {
+        levelVariantsMap.set(section.levelNum, {
+          levelNumber: section.levelNum,
+          levelDisplay: section.romanDisplay,
+          ...(actualLevel && !isNaN(actualLevel) ? { actualLevel } : {}),
+          name: levelName,
+          damage: data.damage || 'Unknown',
+          stats: data.stats || 'None',
+          ...(data.statsType ? { statsType: data.statsType } : {}),
+          obtainVariants,
+          ...(data.resists && data.resists !== 'None' ? { resists: data.resists } : {}),
+          ...(data.rarity && data.rarity !== 'Unknown' ? { rarity: data.rarity } : {}),
+          ...(data.notes ? { notes: data.notes } : {}),
+        })
+        
+        // Capture shared data from first level
+        if (!sharedDescription) {
+          sharedDescription = data.description
+          sharedElement = stub.elements.length > 0 ? stub.elements[0] : undefined
+          sharedRarity = data.rarity !== 'Unknown' ? data.rarity : undefined
+          sharedResists = data.resists !== 'None' ? data.resists : undefined
+          sharedAttacks = data.attacks
+          sharedNotes = data.notes
+          sharedAlsoSeeNames = data.alsoSeeNames
+        }
+      }
+    }
+    
+    // For range notation threads, look for "Other information" section after all levels
+    // (Usually appears at the end of the thread, after all level sections)
+    if (sections.length > 0 && !sharedNotes) {
+      const lastSection = sections[sections.length - 1]
+      const afterLastSection = html.slice(lastSection.startIndex + lastSection.html.length)
+      
+      // Parse the remainder of the HTML to extract notes from "Other information"
+      const remainderData = parsePetThread(afterLastSection, baseName)
+      if (remainderData.notes) {
+        sharedNotes = remainderData.notes
+      }
+    }
+  } else {
+    // Multi-page thread with separate posts per level
+    for (const postHtml of allPosts) {
+      const data = parsePetThread(postHtml, name)
+      
+      // Detect level for this post
+      const levelInfo = detectLevel(name)
+      if (!levelInfo) {
+        // No level detected - treat as single variant
+        return convertToPet(data, stub, chronoDates, nameToSlug)
+      }
+      
+      // Parse obtain variants from this post
+      const obtainVariants: ObtainVariant[] = data.obtainMethods.map(om => ({
+        location: om.location,
+        price: om.price,
+        priceType: computePriceType(om.price, om.requiredItems),
+        sellback: om.sellback,
+        daRequired: parseDARequiredFromSection(postHtml, postHtml),
+        ...(data.dcRequired ? { dcRequired: data.dcRequired } : {}),
+        ...(data.dmRequired ? { dmRequired: data.dmRequired } : {}),
+        ...(om.requiredItems ? { requiredItems: om.requiredItems } : {}),
+      }))
+      
+      // Check if we already have this level (same level, different obtain method)
+      const existing = levelVariantsMap.get(levelInfo.number)
+      if (existing) {
+        // Merge obtain variants
+        existing.obtainVariants.push(...obtainVariants)
+      } else {
+        // New level variant
+        levelVariantsMap.set(levelInfo.number, {
+          levelNumber: levelInfo.number,
+          levelDisplay: levelInfo.display,
+          name: name,
+          damage: data.damage || 'Unknown',
+          stats: data.stats || 'None',
+          obtainVariants,
+          ...(data.resists && data.resists !== 'None' ? { resists: data.resists } : {}),
+          ...(data.rarity && data.rarity !== 'Unknown' ? { rarity: data.rarity } : {}),
+          ...(data.notes ? { notes: data.notes } : {}),
+        })
+      }
+      
+      // Capture shared data from first post
+      if (!sharedDescription) {
+        sharedDescription = data.description
+        sharedElement = stub.elements.length > 0 ? stub.elements[0] : undefined
+        sharedRarity = data.rarity !== 'Unknown' ? data.rarity : undefined
+        sharedResists = data.resists !== 'None' ? data.resists : undefined
+        sharedAttacks = data.attacks
+        sharedNotes = data.notes
+        sharedAlsoSeeNames = data.alsoSeeNames
+      }
+    }
+  }
+  
+  const levelVariants = Array.from(levelVariantsMap.values()).sort((a, b) => a.levelNumber - b.levelNumber)
+  
+  // If shared notes not found, check level variants for notes (common pattern: notes appear on last level)
+  if (!sharedNotes && levelVariants.length > 0) {
+    const levelWithNotes = levelVariants.find(lv => lv.notes)
+    if (levelWithNotes?.notes) {
+      sharedNotes = levelWithNotes.notes
+    }
+  }
+  
+  // If no level variants found (empty levelVariantsMap), fall back to single-variant Pet
+  if (levelVariants.length === 0) {
+    console.log(' [no variants detected, falling back to Pet]')
+    const data = parsePetThread(allPosts[0], name)
+    return convertToPet(data, stub, chronoDates, nameToSlug)
+  }
+  
+  // If only one level variant found, return as Pet (backward compat)
+  if (levelVariants.length === 1) {
+    const data = parsePetThread(allPosts[0], name)
+    return convertToPet(data, stub, chronoDates, nameToSlug)
+  }
+  
+  // Extract image from LAST post first (common pattern for multi-post threads)
+  let imageUrl: string | undefined
+  const alternativeImages: Array<{ url: string; caption: string }> = []
+  
+  for (let i = allPosts.length - 1; i >= 0; i--) {
+    const images = extractImages(allPosts[i])
+    if (images.main) {
+      imageUrl = images.main
+      alternativeImages.push(...images.alternatives)
+      break
+    }
+  }
+  
+  // Resolve Also See references
+  const alsoSee: AlsoSeeRef[] = sharedAlsoSeeNames.map(rawName => {
+    const key = rawName.toLowerCase().replace(/[.,!?]+$/, '').trim()
+    const r = nameToSlug.get(key) ?? nameToSlug.get(key.replace(/\s*\([^)]+\)\s*$/, '').trim())
+    return r ? { name: rawName.replace(/[.,!?]+$/, '').trim(), slug: r.slug, type: r.type } : null
+  }).filter((r): r is AlsoSeeRef => r !== null)
+  
+  // Build ItemFamily
+  const shared: SharedData = {
+    description: sharedDescription || name,
+    ...(sharedElement ? { element: sharedElement } : {}),
+    ...(sharedRarity ? { rarity: sharedRarity } : {}),
+    ...(sharedResists ? { resists: sharedResists } : {}),
+    ...(sharedAttacks.length > 0 ? { attacks: sharedAttacks } : {}),
+    ...(sharedNotes ? { notes: sharedNotes } : {}),
+    ...(imageUrl ? { imageUrl } : {}),
+    ...(alternativeImages.length > 0 ? { alternativeImages } : {}),
+    ...(alsoSee.length > 0 ? { alsoSee } : {}),
+  }
+  
+  // Detect category flags from the FULL thread HTML (not just sections)
+  // These tags appear at thread level, usually at the top
+  const threadIsTemp = /<img[^>]+src=["'][^"']*\/tags\/Temp\.png["']/i.test(html)
+  const threadIsRare = /<img[^>]+src=["'][^"']*\/tags\/Rare\.jpg["']/i.test(html)
+  const threadIsSeasonal = /<img[^>]+src=["'][^"']*\/tags\/Seasonal\.jpg["']/i.test(html)
+  const threadIsSpecialOffer = /<img[^>]+src=["'][^"']*\/tags\/SpecialOffer\.png["']/i.test(html)
+  const threadRetired = /<img[^>]+src=["'][^"']*\/tags\/Retired\.png["']/i.test(html)
+  
+  // Check for DC tag in thread HTML as well (for cases like Baby Kraken VI)
+  const threadHasDC = /<img[^>]+src=["'][^"']*\/tags\/DC\.png["']/i.test(html)
+  
+  // Also check allPosts if multi-page thread
+  let isTemp = threadIsTemp
+  let isRare = threadIsRare
+  let isSeasonal = threadIsSeasonal
+  let isSpecialOffer = threadIsSpecialOffer
+  let retired = threadRetired
+  let hasDCInThread = threadHasDC
+  
+  if (allPosts.length > 1) {
+    for (const postHtml of allPosts) {
+      if (!isTemp) isTemp = /<img[^>]+src=["'][^"']*\/tags\/Temp\.png["']/i.test(postHtml)
+      if (!isRare) isRare = /<img[^>]+src=["'][^"']*\/tags\/Rare\.jpg["']/i.test(postHtml)
+      if (!isSeasonal) isSeasonal = /<img[^>]+src=["'][^"']*\/tags\/Seasonal\.jpg["']/i.test(postHtml)
+      if (!isSpecialOffer) isSpecialOffer = /<img[^>]+src=["'][^"']*\/tags\/SpecialOffer\.png["']/i.test(postHtml)
+      if (!retired) retired = /<img[^>]+src=["'][^"']*\/tags\/Retired\.png["']/i.test(postHtml)
+      if (!hasDCInThread) hasDCInThread = /<img[^>]+src=["'][^"']*\/tags\/DC\.png["']/i.test(postHtml)
+    }
+  }
+  
+  // If DC tag found in thread, mark ALL obtain variants as DC required
+  // (This handles cases like Baby Kraken VI where DC icon appears but price isn't DC)
+  if (hasDCInThread) {
+    for (const levelVariant of levelVariants) {
+      for (const obtainVariant of levelVariant.obtainVariants) {
+        obtainVariant.dcRequired = true
+      }
+    }
+  }
+  
+  // Strip level suffix from family name
+  // For multi-post variants (e.g., Baron (Kitten, Cat)), use the ORIGINAL name from forums
+  // For roman numeral ranges (e.g., BabyWeaver (I-VI)), strip the range notation
+  let familyName: string
+  let isMultiPostFamily = false
+  
+  if (hasMultiPostVariants) {
+    // Multi-post variant: use original name exactly as it appears in forums
+    // e.g., "Baron (Kitten, Cat)" not "Baron"
+    familyName = name
+    isMultiPostFamily = true
+  } else {
+    // Roman numeral or "All Versions" ranges: strip the suffix
+    familyName = name
+      .replace(/\s+[IVX]+$/i, '')
+      .replace(/\s+Level\s+\d+$/i, '')
+      .replace(/\s+\([IVX]+-[IVX]+\)$/i, '')
+      .replace(/\s+\(All Versions\)$/i, '')
+      .trim()
+  }
+  
+  const family: ItemFamily = {
+    id: prefixedSlug(familyName, stub.type),
+    familyName,
+    slug: prefixedSlug(familyName, stub.type),
+    type: stub.type,
+    forumUrl: stub.forumUrl,
+    shared,
+    levelVariants,
+    ...(chronoDates.get(stub.name.toLowerCase()) ? { releaseDate: chronoDates.get(stub.name.toLowerCase())! } : {}),
+    tags: [stub.type, ...stub.elements.map(e => e.toLowerCase()), ...stub.markers.map(m => m.toLowerCase().replace('/', '-'))],
+    // Category flags from thread-level detection
+    ...(isTemp ? { isTemp } : {}),
+    ...(isRare ? { isRare } : {}),
+    ...(isSeasonal ? { isSeasonal } : {}),
+    ...(isSpecialOffer ? { isSpecialOffer } : {}),
+    ...(retired ? { retired } : {}),
+    // Access flags will be computed by computeFamilyFlags
+    hasDA: false,
+    hasDC: false,
+    hasDM: false,
+    hasFree: false,
+    hasMerge: false,
+    levelRange: '',
+    elements: [],
+    // Mark multi-post families for special handling
+    ...(isMultiPostFamily ? { isMultiPost: true } : {}),
+  }
+  
+  // Compute family-level flags
+  return computeFamilyFlags(family)
+}
+
+/**
+ * Convert parsed thread data to Pet object (backward compatibility)
+ */
+function convertToPet(
+  data: ReturnType<typeof parsePetThread>,
+  stub: PetStub,
+  chronoDates: Map<string, string>,
+  nameToSlug: Map<string, { slug: string; type: EntryType }>
+): Pet {
+  // Resolve Also See references
+  const alsoSee: AlsoSeeRef[] = data.alsoSeeNames.map(rawName => {
+    const key = rawName.toLowerCase().replace(/[.,!?]+$/, '').trim()
+    const r = nameToSlug.get(key) ?? nameToSlug.get(key.replace(/\s*\([^)]+\)\s*$/, '').trim())
+    return r ? { name: rawName.replace(/[.,!?]+$/, '').trim(), slug: r.slug, type: r.type } : null
+  }).filter((r): r is AlsoSeeRef => r !== null)
+  
+  // Resolve evolutions
+  const evolutions: Evolution[] = data.evolutions.map(ev => {
+    const key = ev.resultName.toLowerCase()
+    const r = nameToSlug.get(key) ?? nameToSlug.get(key.replace(/\s*\([^)]+\)\s*$/, '').trim())
+    return {
+      combineWith: ev.combineWith,
+      resultName: ev.resultName,
+      resultSlug: r?.slug ?? prefixedSlug(ev.resultName, 'pet'),
+      resultType: r?.type ?? 'pet' as EntryType,
+    }
+  })
+  
+  return {
+    id: stub.slug,
+    name: stub.name,
+    slug: stub.slug,
+    type: stub.type,
+    description: data.description,
+    daRequired: data.daRequired,
+    ...(data.dcRequired ? { dcRequired: data.dcRequired } : {}),
+    ...(data.dmRequired ? { dmRequired: data.dmRequired } : {}),
+    ...(data.isTemp ? { isTemp: data.isTemp } : {}),
+    ...(data.isRare ? { isRare: data.isRare } : {}),
+    ...(data.isSeasonal ? { isSeasonal: data.isSeasonal } : {}),
+    ...(data.isSpecialOffer ? { isSpecialOffer: data.isSpecialOffer } : {}),
+    ...(data.retired ? { retired: data.retired } : {}),
+    elements: stub.elements,
+    traits: stub.markers,
+    level: data.level || 'Unknown',
+    damage: data.damage || 'Unknown',
+    stats: data.stats || 'None',
+    resists: data.resists || 'None',
+    obtainMethods: data.obtainMethods,
+    attacks: data.attacks,
+    rarity: data.rarity || 'Unknown',
+    evolutions,
+    releaseDate: chronoDates.get(stub.name.toLowerCase()) ?? 'Unknown',
+    ...(data.imageUrl ? { imageUrl: data.imageUrl } : {}),
+    forumUrl: stub.forumUrl,
+    ...(data.notes ? { notes: data.notes } : {}),
+    alsoSee,
+    tags: [stub.type, ...stub.elements.map(e => e.toLowerCase()), ...stub.markers.map(m => m.toLowerCase().replace('/', '-'))]
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+
 function parsePetThread(html: string, name: string): {
   description: string; daRequired: boolean; dcRequired: boolean; dmRequired: boolean
   isTemp: boolean; isRare: boolean; isSeasonal: boolean; isSpecialOffer: boolean; retired: boolean
   obtainMethods: ObtainMethod[]
-  level: string; damage: string; stats: string; resists: string
+  level: string; damage: string; stats: string; statsType: 'petStats' | 'bonuses' | undefined; resists: string
   evolutions: { combineWith: string; resultName: string }[]
   rarity: string; attacks: Attack[]; notes?: string
   alsoSeeNames: string[]; imageUrl?: string; hasDetailedStats: boolean
@@ -304,6 +1173,7 @@ function parsePetThread(html: string, name: string): {
   const obtainMethods: ObtainMethod[] = []
   let currentObtain: Partial<ObtainMethod> | null = null
   let level = '', damage = '', stats = '', resists = ''
+  let statsType: 'petStats' | 'bonuses' | undefined = undefined
   const evolutions: { combineWith: string; resultName: string }[] = []
   let rarity = ''
   const attacks: Attack[] = []
@@ -341,18 +1211,80 @@ function parsePetThread(html: string, name: string): {
     retired = true
   }
 
-  const saveObtain = () => {
-    if (!currentObtain?.location) return
-    const p = currentObtain.price ?? 'N/A'
-    obtainMethods.push({
-      location: currentObtain.location,
-      price: p,
-      priceType: parsePriceType(p, currentObtain.requiredItems),
-      ...(currentObtain.requiredItems ? { requiredItems: currentObtain.requiredItems } : {}),
-      sellback: currentObtain.sellback ?? '0 Gold',
-    })
-    currentObtain = null
+function rephraseTimedSellback(sellback: string): string {
+  // Match pattern: "X [currency] before Y, Z [currency] after Y"
+  // Examples:
+  // "68 Dragon Coins before 24 hours, 19 Dragon Coins after 24 hours"
+  // "500 Gold before 24 hours, 125 Gold after 24 hours"
+  const timedPattern = /^(\d+)\s+(Dragon Coins?|Gold|Defender'?s? Medals?)\s+before\s+(.+?),\s*(\d+)\s+(Dragon Coins?|Gold|Defender'?s? Medals?)\s+after\s+\3$/i
+  const match = sellback.match(timedPattern)
+  
+  if (match) {
+    const [, beforeAmount, beforeCurrency, timeframe, afterAmount, afterCurrency] = match
+    // Normalize currency names (remove trailing 's' for singular, use standard forms)
+    const currency = beforeCurrency.toLowerCase().includes('dragon') ? 'DC' : 
+                     beforeCurrency.toLowerCase().includes('gold') ? 'Gold' :
+                     beforeCurrency.toLowerCase().includes('medal') ? 'DM' : beforeCurrency
+    
+    return `${beforeAmount} ${currency} (<${timeframe}) / ${afterAmount} ${currency} (>${timeframe})`
   }
+  
+  return sellback
+}
+
+/**
+ * Detect DA/DC/DM tags in the HTML context around a specific text location.
+ * Used to check if access requirements apply to a specific obtain method.
+ * 
+ * @param html - Full HTML to search
+ * @param searchText - Text to find (e.g., location name)
+ * @param contextSize - How many characters before/after to check (default: 500)
+ * @returns Object with daRequired, dcRequired, dmRequired flags
+ */
+function detectAccessTagsNearText(html: string, searchText: string, contextSize: number = 500): {
+  daRequired: boolean
+  dcRequired: boolean  
+  dmRequired: boolean
+} {
+  const index = html.indexOf(searchText)
+  if (index === -1) {
+    return { daRequired: false, dcRequired: false, dmRequired: false }
+  }
+  
+  // Extract context window around the search text
+  const start = Math.max(0, index - contextSize)
+  const end = Math.min(html.length, index + searchText.length + contextSize)
+  const context = html.slice(start, end)
+  
+  return {
+    daRequired: /<img[^>]+src=["'][^"']*\/tags\/DA\.png["']/i.test(context),
+    dcRequired: /<img[^>]+src=["'][^"']*\/tags\/DC\.png["']/i.test(context),
+    dmRequired: /<img[^>]+src=["'][^"']*\/tags\/DM\.png["']/i.test(context),
+  }
+}
+
+const saveObtain = () => {
+  if (!currentObtain?.location) return
+  const p = currentObtain.price ?? 'N/A'
+  const rawSellback = currentObtain.sellback ?? '0 Gold'
+  const sellback = rephraseTimedSellback(rawSellback)
+  
+  // Detect DA/DC/DM in context around this specific location
+  const accessFlags = detectAccessTagsNearText(rawBody, currentObtain.location)
+  
+  obtainMethods.push({
+    location: currentObtain.location,
+    price: p,
+    priceType: parsePriceType(p, currentObtain.requiredItems),
+    ...(currentObtain.requiredItems ? { requiredItems: currentObtain.requiredItems } : {}),
+    sellback,
+    // Store per-method access flags
+    ...(accessFlags.daRequired ? { daRequired: accessFlags.daRequired } : {}),
+    ...(accessFlags.dcRequired ? { dcRequired: accessFlags.dcRequired } : {}),
+    ...(accessFlags.dmRequired ? { dmRequired: accessFlags.dmRequired } : {}),
+  })
+  currentObtain = null
+}
 
   for (const line of lines) {
     const trimmedLine = line.trim()
@@ -368,9 +1300,19 @@ function parsePetThread(html: string, name: string): {
 
     if (/^Level:/i.test(trimmedLine)) { level = trimmedLine.replace(/^Level:\s*/i, '').trim(); continue }
     if (/^Damage:/i.test(trimmedLine)) { damage = trimmedLine.replace(/^Damage:\s*/i, '').trim(); continue }
-    if (/^Min:/i.test(trimmedLine)) { damage += '\n' + trimmedLine.trim(); continue }
-    if (/^Max:/i.test(trimmedLine)) { damage += '\n' + trimmedLine.trim(); continue }
-    if (/^Pet'?s?\s+Stats?:/i.test(trimmedLine)) { stats = trimmedLine.replace(/^Pet'?s?\s+Stats?:\s*/i, '').trim(); continue }
+    // Handle bullets or direct Min:/Max: lines
+    if (/^•?\s*Min:/i.test(trimmedLine)) { damage += '\n' + trimmedLine.replace(/^•?\s*/, '').trim(); continue }
+    if (/^•?\s*Max:/i.test(trimmedLine)) { damage += '\n' + trimmedLine.replace(/^•?\s*/, '').trim(); continue }
+    if (/^Pet'?s?\s+Stats?:/i.test(trimmedLine)) { 
+      stats = trimmedLine.replace(/^Pet'?s?\s+Stats?:\s*/i, '').trim()
+      statsType = 'petStats'
+      continue
+    }
+    if (/^Bonuses?:/i.test(trimmedLine)) { 
+      stats = trimmedLine.replace(/^Bonuses?:\s*/i, '').trim()
+      statsType = 'bonuses'
+      continue
+    }
     if (/^Pet'?s?\s+Resists?:/i.test(trimmedLine)) { resists = trimmedLine.replace(/^Pet'?s?\s+Resists?:\s*/i, '').trim(); continue }
     if (/^Element:/i.test(trimmedLine)) continue  // elements come from A-Z listing
 
@@ -453,7 +1395,10 @@ function parsePetThread(html: string, name: string): {
       // Skip edit timestamps
       if (/\w+\s+--\s+\d+\/\d+\/\d+\s+\d+:\d+:\d+/.test(trimmedLine)) continue
       // Stop at attribution lines: "Name for image/entry/corrections/etc."
-      if (/^[\w\s,]+\s+for\s+(image|attack|information|entry|corrections|formatting|description)/i.test(trimmedLine)) break
+      // Attribution format: short name (1-4 words max) followed by " for [contribution type]"
+      // Example: "John Smith for image", "Alex for corrections", "Name1, Name2 for stats"
+      const attributionPattern = /^([A-Z][\w'-]+(?:\s+[A-Z][\w'-]+){0,3}(?:\s*,\s*[A-Z][\w'-]+(?:\s+[A-Z][\w'-]+){0,2})*)\s+for\s+(image|attack|information|images|entry|entries|corrections|formatting|description|original|banner|code|stats|data|location|price)/i
+      if (attributionPattern.test(trimmedLine)) break
       
       // Strip "Note:" prefix if present at the start of a line
       let processedLine = trimmedLine
@@ -559,7 +1504,7 @@ function parsePetThread(html: string, name: string): {
     isSpecialOffer,
     retired,
     obtainMethods,
-    level, damage, stats, resists,
+    level, damage, stats, statsType, resists,
     evolutions, rarity, attacks,
     notes: noteLines.length > 0 ? noteLines.join('\n') : undefined,
     alsoSeeNames, imageUrl, hasDetailedStats,
@@ -727,67 +1672,23 @@ async function main() {
         continue
       }
 
-      const data = parsePetThread(html, stub.name)
+      // Use multi-variant parser (Sprint 5)
+      const result = await parsePetThreadMultiVariant(html, stub.name, stub, cookie, chronoDates, nameToSlug)
       
-      // Determine type: use Chronology as primary source (most reliable), fallback to content detection
-      // Chronology will be applied later in Step 4, so we initially set type based on stub
-      const detectedType: EntryType = stub.type
-      const finalSlug = prefixedSlug(stub.name, detectedType)
-
-      // Resolve Also See (best effort — may be partially unresolved)
-      const alsoSee: AlsoSeeRef[] = data.alsoSeeNames.map(rawName => {
-        const key = rawName.toLowerCase().replace(/[.,!?]+$/, '').trim()
-        const r = nameToSlug.get(key) ?? nameToSlug.get(key.replace(/\s*\([^)]+\)\s*$/, '').trim())
-        return r ? { name: rawName.replace(/[.,!?]+$/, '').trim(), slug: r.slug, type: r.type } : null
-      }).filter((r): r is AlsoSeeRef => r !== null)
-
-      // Resolve evolutions
-      const evolutions: Evolution[] = data.evolutions.map(ev => {
-        const key = ev.resultName.toLowerCase()
-        const r = nameToSlug.get(key) ?? nameToSlug.get(key.replace(/\s*\([^)]+\)\s*$/, '').trim())
-        return {
-          combineWith: ev.combineWith,
-          resultName: ev.resultName,
-          resultSlug: r?.slug ?? prefixedSlug(ev.resultName, 'pet'),
-          resultType: r?.type ?? 'pet' as EntryType,
-        }
-      })
-
-      const pet: Pet = {
-        id: finalSlug,
-        name: stub.name,
-        slug: finalSlug,
-        type: detectedType,
-        description: data.description,
-        daRequired: data.daRequired,
-        ...(data.dcRequired ? { dcRequired: data.dcRequired } : {}),
-        ...(data.dmRequired ? { dmRequired: data.dmRequired } : {}),
-        ...(data.isTemp ? { isTemp: data.isTemp } : {}),
-        ...(data.isRare ? { isRare: data.isRare } : {}),
-        ...(data.isSeasonal ? { isSeasonal: data.isSeasonal } : {}),
-        ...(data.isSpecialOffer ? { isSpecialOffer: data.isSpecialOffer } : {}),
-        ...(data.retired ? { retired: data.retired } : {}),
-        elements: stub.elements,
-        traits: stub.markers,
-        level: data.level || 'Unknown',
-        damage: data.damage || 'Unknown',
-        stats: data.stats || 'None',
-        resists: data.resists || 'None',
-        obtainMethods: data.obtainMethods,
-        attacks: data.attacks,
-        rarity: data.rarity || 'Unknown',
-        evolutions,
-        releaseDate: chronoDates.get(stub.name.toLowerCase()) ?? 'Unknown',
-        ...(data.imageUrl ? { imageUrl: data.imageUrl } : {}),
-        forumUrl: stub.forumUrl,
-        ...(data.notes ? { notes: data.notes } : {}),
-        alsoSee,
-        tags: [detectedType, ...stub.elements.map(e => e.toLowerCase()), ...stub.markers.map(m => m.toLowerCase().replace('/', '-'))]
+      // Handle both Pet and ItemFamily types
+      if ('levelVariants' in result) {
+        // ItemFamily path (multi-variant)
+        const family = result as ItemFamily
+        progressMap.set(family.slug, family as any)  // Store as-is
+        console.log(' ✓ [ItemFamily]')
+      } else {
+        // Pet path (single-variant, existing logic)
+        const pet = result as Pet
+        progressMap.set(pet.slug, pet)
+        console.log(' ✓')
       }
-
-      progressMap.set(finalSlug, pet)
+      
       scraped++
-      console.log(' ✓')
 
       // Save progress after every entry
       const progress = Array.from(progressMap.values())
@@ -816,7 +1717,11 @@ async function main() {
 
   // Always write ALL pets from progress map (full dataset)
   const finalPets = Array.from(progressMap.values())
-    .sort((a, b) => a.name.localeCompare(b.name))
+    .sort((a, b) => {
+      const aName = 'familyName' in a ? a.familyName : a.name
+      const bName = 'familyName' in b ? b.familyName : b.name
+      return aName.localeCompare(bName)
+    })
 
   fs.writeFileSync(OUTPUT_PATH, JSON.stringify(finalPets, null, 2) + '\n', 'utf-8')
 

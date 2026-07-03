@@ -52,71 +52,138 @@ const allSlugs = new Set(pets.map(p => p.slug))
 
 for (let i = 0; i < pets.length; i++) {
   const p = pets[i]
-  const prefix = `Pet #${i} ("${p.name || 'unnamed'}")`
-
-  // Required string fields
-  for (const field of ['id', 'name', 'slug', 'description', 'type', 'forumUrl', 'releaseDate']) {
-    if (typeof p[field] !== 'string' || p[field].trim().length === 0) {
-      errors.push(`${prefix}: missing or empty field "${field}"`)
+  
+  // Check if this is an ItemFamily (multi-variant)
+  const isFamily = p.levelVariants && Array.isArray(p.levelVariants)
+  
+  if (isFamily) {
+    // ItemFamily validation
+    const familyName = p.familyName || 'unnamed'
+    const prefix = `Pet #${i + 1} ("${familyName}") [ItemFamily]`
+    
+    // Required fields for ItemFamily
+    for (const field of ['id', 'familyName', 'slug', 'type', 'forumUrl']) {
+      if (typeof p[field] !== 'string' || p[field].trim().length === 0) {
+        errors.push(`${prefix}: missing or empty field "${field}"`)
+      }
     }
-  }
-
-  // Type must be pet or guest
-  if (!['pet', 'guest'].includes(p.type)) {
-    errors.push(`${prefix}: "type" must be "pet" or "guest", got "${p.type}"`)
-  }
-
-  // Slug must be type-prefixed and URL-safe
-  if (p.slug && !/^(pet|guest)-[a-z0-9-]+$/.test(p.slug)) {
-    errors.push(`${prefix}: slug "${p.slug}" must be prefixed with "pet-" or "guest-" and contain only [a-z0-9-]`)
-  }
-
-  // Slug uniqueness
-  if (slugs.has(p.slug)) {
-    errors.push(`${prefix}: duplicate slug "${p.slug}"`)
-  }
-  slugs.add(p.slug)
-
-  // Boolean fields
-  if (typeof p.daRequired !== 'boolean') {
-    errors.push(`${prefix}: "daRequired" must be boolean`)
-  }
-
-  // Elements array
-  if (!Array.isArray(p.elements)) {
-    errors.push(`${prefix}: "elements" must be an array`)
+    
+    // Type must be pet or guest
+    if (!['pet', 'guest'].includes(p.type)) {
+      errors.push(`${prefix}: "type" must be "pet" or "guest", got "${p.type}"`)
+    }
+    
+    // Slug must be type-prefixed
+    if (p.slug && !/^(pet|guest)-[a-z0-9-]+$/.test(p.slug)) {
+      errors.push(`${prefix}: slug "${p.slug}" must be prefixed with "pet-" or "guest-" and contain only [a-z0-9-]`)
+    }
+    
+    // Slug uniqueness
+    if (slugs.has(p.slug)) {
+      errors.push(`${prefix}: duplicate slug "${p.slug}"`)
+    }
+    slugs.add(p.slug)
+    
+    // Shared data must exist
+    if (!p.shared || typeof p.shared !== 'object') {
+      errors.push(`${prefix}: missing "shared" object`)
+    } else {
+      if (!p.shared.description || typeof p.shared.description !== 'string') {
+        errors.push(`${prefix}: shared.description must be a non-empty string`)
+      }
+    }
+    
+    // Level variants must be non-empty array
+    if (!Array.isArray(p.levelVariants) || p.levelVariants.length === 0) {
+      errors.push(`${prefix}: "levelVariants" must be a non-empty array`)
+    }
+    
+    // Elements array
+    if (!Array.isArray(p.elements)) {
+      errors.push(`${prefix}: "elements" must be an array`)
+    } else {
+      for (const code of p.elements) {
+        if (!validElementCodes.has(code)) {
+          errors.push(`${prefix}: unknown element code "${code}"`)
+        }
+      }
+    }
+    
+    // Boolean flags
+    for (const flag of ['hasDA', 'hasDC', 'hasDM', 'hasFree', 'hasMerge']) {
+      if (typeof p[flag] !== 'boolean') {
+        errors.push(`${prefix}: "${flag}" must be boolean`)
+      }
+    }
+    
   } else {
-    for (const code of p.elements) {
-      if (!validElementCodes.has(code)) {
-        errors.push(`${prefix}: unknown element code "${code}"`)
+    // Regular Pet validation
+    const prefix = `Pet #${i + 1} ("${p.name || 'unnamed'}")`
+
+    // Required string fields
+    for (const field of ['id', 'name', 'slug', 'description', 'type', 'forumUrl', 'releaseDate']) {
+      if (typeof p[field] !== 'string' || p[field].trim().length === 0) {
+        errors.push(`${prefix}: missing or empty field "${field}"`)
       }
     }
-  }
 
-  // Special markers array
-  if (!Array.isArray(p[markerField])) {
-    errors.push(`${prefix}: "${markerField}" must be an array`)
-  } else {
-    for (const code of p[markerField]) {
-      if (!validMarkerCodes.has(code)) {
-        errors.push(`${prefix}: unknown marker code "${code}"`)
+    // Type must be pet or guest
+    if (!['pet', 'guest'].includes(p.type)) {
+      errors.push(`${prefix}: "type" must be "pet" or "guest", got "${p.type}"`)
+    }
+
+    // Slug must be type-prefixed and URL-safe
+    if (p.slug && !/^(pet|guest)-[a-z0-9-]+$/.test(p.slug)) {
+      errors.push(`${prefix}: slug "${p.slug}" must be prefixed with "pet-" or "guest-" and contain only [a-z0-9-]`)
+    }
+
+    // Slug uniqueness
+    if (slugs.has(p.slug)) {
+      errors.push(`${prefix}: duplicate slug "${p.slug}"`)
+    }
+    slugs.add(p.slug)
+
+    // Boolean fields
+    if (typeof p.daRequired !== 'boolean') {
+      errors.push(`${prefix}: "daRequired" must be boolean`)
+    }
+
+    // Elements array
+    if (!Array.isArray(p.elements)) {
+      errors.push(`${prefix}: "elements" must be an array`)
+    } else {
+      for (const code of p.elements) {
+        if (!validElementCodes.has(code)) {
+          errors.push(`${prefix}: unknown element code "${code}"`)
+        }
       }
     }
-  }
 
-  // Also See — verify slugs exist in dataset
-  if (Array.isArray(p.alsoSee)) {
-    for (const ref of p.alsoSee) {
-      if (!allSlugs.has(ref.slug)) {
-        // Warn but don't fail — may be resolved in a future scrape
-        console.warn(`  ⚠️  ${prefix}: alsoSee ref "${ref.name}" (${ref.slug}) not found in dataset`)
+    // Special markers array
+    if (!Array.isArray(p[markerField])) {
+      errors.push(`${prefix}: "${markerField}" must be an array`)
+    } else {
+      for (const code of p[markerField]) {
+        if (!validMarkerCodes.has(code)) {
+          errors.push(`${prefix}: unknown marker code "${code}"`)
+        }
       }
     }
-  }
 
-  // ForumUrl must be valid
-  if (p.forumUrl && !p.forumUrl.startsWith('http')) {
-    errors.push(`${prefix}: "forumUrl" is not a valid URL`)
+    // Also See — verify slugs exist in dataset
+    if (Array.isArray(p.alsoSee)) {
+      for (const ref of p.alsoSee) {
+        if (!allSlugs.has(ref.slug)) {
+          // Warn but don't fail — may be resolved in a future scrape
+          console.warn(`  ⚠️  ${prefix}: alsoSee ref "${ref.name}" (${ref.slug}) not found in dataset`)
+        }
+      }
+    }
+
+    // ForumUrl must be valid
+    if (p.forumUrl && !p.forumUrl.startsWith('http')) {
+      errors.push(`${prefix}: "forumUrl" is not a valid URL`)
+    }
   }
 }
 
