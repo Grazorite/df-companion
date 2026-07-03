@@ -64,6 +64,7 @@ export default function PetsPage() {
     if (activeAccess.length > 0) params.access = activeAccess.join(',')
     if (activeCategories.length > 0) params.category = activeCategories.join(',')
     setSearchParams(params, { replace: true })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [debouncedQuery, typeParam, elementParam, accessParam, categoryParam, setSearchParams])
 
   const filters = {

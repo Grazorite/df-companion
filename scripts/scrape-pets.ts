@@ -310,7 +310,6 @@ function detectMultiPostVariants(html: string, baseName: string): Array<{ startI
   const seenVariants = new Set<string>()
   
   while ((match = variantPattern.exec(html)) !== null) {
-    const fullName = match[1].trim()
     const variantSuffix = match[2]
     
     // Skip if this is a roman numeral (I, II, III, etc.)
@@ -1317,7 +1316,7 @@ function rephraseTimedSellback(sellback: string): string {
   const match = sellback.match(timedPattern)
   
   if (match) {
-    const [, beforeAmount, beforeCurrency, timeframe, afterAmount, afterCurrency] = match
+    const [, beforeAmount, beforeCurrency, timeframe, afterAmount] = match
     // Normalize currency names (remove trailing 's' for singular, use standard forms)
     const currency = beforeCurrency.toLowerCase().includes('dragon') ? 'DC' : 
                      beforeCurrency.toLowerCase().includes('gold') ? 'Gold' :
