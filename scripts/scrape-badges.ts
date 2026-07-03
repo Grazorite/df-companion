@@ -23,6 +23,7 @@
 
 import * as fs from 'node:fs'
 import * as path from 'node:path'
+import { fetchPrintable, getPostContent } from './lib/printable-parser.ts'
 
 const FORUM_BASE = 'https://forums2.battleon.com/f'
 const AZ_PAGE_URL = `${FORUM_BASE}/tm.asp?m=22304590&mpage=1&key=`
@@ -195,14 +196,10 @@ async function fetchBadgeDetails(
   cookie: string
 ): Promise<Partial<BadgeData>> {
   try {
-    const html = await fetchPage(stub.forumUrl, cookie)
+    const html = await fetchPrintable(stub.messageId, cookie)
+    const rawBody = getPostContent(html)
 
-    if (html.includes('This message has been deleted or moved')) {
-      return {}
-    }
-
-    const bodyMatch = html.match(/<td[^>]*valign=["']?top["']?[^>]*width=["']?100%["']?[^>]*>([\s\S]*?)<\/td>/i)
-    const rawBody = bodyMatch ? bodyMatch[1] : html
+    if (!rawBody) return {}
     const text = stripHtml(decodeHTML(rawBody))
     const lines = text.split('\n').map(l => l.trim()).filter(Boolean)
 

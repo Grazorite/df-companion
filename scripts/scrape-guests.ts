@@ -21,7 +21,8 @@
 import * as fs from 'node:fs'
 import * as path from 'node:path'
 import type { Guest, GuestAttack, GuestStats, ObtainMethod, AlsoSeeRef, EntryType } from '../src/types/pet.ts'
-import type { ItemFamily, ObtainVariant, LevelVariant } from '../src/types/item.ts'
+import type { ItemFamily } from '../src/types/item.ts'
+import { fetchPrintable, getPostContent } from './lib/printable-parser.ts'
 
 const FORUM_BASE = 'https://forums2.battleon.com/f'
 const AZ_PETS_URL = `${FORUM_BASE}/tm.asp?m=22349620&mpage=1`  // A-Z Pets & Guests combined (filtered by type)
@@ -1243,7 +1244,12 @@ async function main(): Promise<void> {
     }
 
     try {
-      const html = await fetchPage(stub.forumUrl, cookie)
+      const html = getPostContent(await fetchPrintable(stub.messageId, cookie))
+      if (!html) {
+        console.log('⚠️  deleted — skipping')
+        skipped++
+        continue
+      }
       
       // Parse all guest data
       const description = parseDescription(html, stub.name)

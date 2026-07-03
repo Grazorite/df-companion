@@ -24,6 +24,7 @@ import * as path from 'node:path'
 import type { Pet, ObtainMethod, Attack, Evolution, AlsoSeeRef, EntryType } from '../src/types/pet.ts'
 import type { ItemFamily, ObtainVariant, LevelVariant, SharedData } from '../src/types/item.ts'
 import { computePriceType, computeFamilyFlags, normalizeLevel } from '../src/utils/variantHelpers.ts'
+import { fetchPrintable, getPostContent } from './lib/printable-parser.ts'
 
 const FORUM_BASE = 'https://forums2.battleon.com/f'
 const AZ_PETS_URL = `${FORUM_BASE}/tm.asp?m=22349620&mpage=1`  // A-Z Pets & Guests combined (filtered by type)
@@ -666,13 +667,9 @@ async function parsePetThreadMultiVariant(
   if (totalPages > 1) {
     console.log(` [${totalPages} pages]`)
     for (let page = 2; page <= totalPages; page++) {
-      const pageUrl = stub.forumUrl.includes('mpage=') 
-        ? stub.forumUrl.replace(/mpage=\d+/, `mpage=${page}`)
-        : `${stub.forumUrl}&mpage=${page}`
-      
       try {
         await sleep(DELAY_MS)
-        const pageHtml = await fetchPage(pageUrl, cookie)
+        const pageHtml = getPostContent(await fetchPrintable(stub.messageId, cookie, page))
         allPosts.push(pageHtml)
       } catch (err) {
         console.warn(`⚠️  Page ${page}/${totalPages} failed: ${err}`)
@@ -1735,9 +1732,9 @@ async function main() {
     process.stdout.write(`[${i + 1}/${stubs.length}] ${stub.name}...`)
 
     try {
-      const html = await fetchPage(stub.forumUrl, cookie)
+      const html = getPostContent(await fetchPrintable(stub.messageId, cookie))
 
-      if (html.includes('This message has been deleted or moved')) {
+      if (!html) {
         console.log(' ⚠️  deleted — skipping')
         skipped++
         if (i < stubs.length - 1) await sleep(DELAY_MS)

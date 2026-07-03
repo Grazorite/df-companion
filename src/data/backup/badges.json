@@ -5,7 +5,7 @@
     "messageId": "20716396",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20716396",
     "category": "seasonal",
-    "subcategory": "Other Badges",
+    "subcategory": "Hero's Heart Day",
     "retired": false,
     "unreleased": false,
     "id": "1-threat-bears",
@@ -29,7 +29,8 @@
       "other-badges"
     ],
     "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/%231-Threat-Bears.jpg",
-    "notes": "If you choose to reset Hero's Heart Day 2012 clues, your badge will be gone until after the boss fight."
+    "notes": "If you choose to reset Hero's Heart Day 2012 clues, your badge will be gone until after the boss fight.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/%231-Threat-Bears.jpg"
   },
   {
     "name": "+1 Pyronomicon",
@@ -37,7 +38,7 @@
     "messageId": "20703103",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20703103",
     "category": "quest-completion",
-    "subcategory": "Quests Badges",
+    "subcategory": "Early Days",
     "retired": false,
     "unreleased": false,
     "id": "1-pyronomicon",
@@ -60,7 +61,8 @@
     "tags": [
       "quests-badges"
     ],
-    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/1-Pyronomicon.png"
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/1-Pyronomicon.png",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/1-Pyronomicon.png"
   },
   {
     "name": "48 Weeks Later",
@@ -68,7 +70,7 @@
     "messageId": "20716405",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20716405",
     "category": "seasonal",
-    "subcategory": "Other Badges",
+    "subcategory": "Mogloween",
     "retired": false,
     "unreleased": false,
     "id": "48-weeks-later",
@@ -91,7 +93,8 @@
     "tags": [
       "other-badges"
     ],
-    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/48WeeksLater.jpg"
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/48WeeksLater.jpg",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/48WeeksLater.jpg"
   },
   {
     "name": "A Hero is Thawed",
@@ -99,7 +102,7 @@
     "messageId": "22417384",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22417384",
     "category": "quest-completion",
-    "subcategory": "Quests Badges",
+    "subcategory": "Book 3",
     "retired": false,
     "unreleased": false,
     "id": "a-hero-is-thawed",
@@ -123,7 +126,8 @@
       "quests-badges"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/AHeroisThawed.png",
-    "notes": "Badge's art was added on  July 27th, 2024."
+    "notes": "Badge's art was added on  July 27th, 2024.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/AHeroisThawed.png"
   },
   {
     "name": "A.A.R.G.H. Mastery",
@@ -131,7 +135,7 @@
     "messageId": "22387907",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22387907",
     "category": "combat",
-    "subcategory": "Challenges Badges",
+    "subcategory": "Arena Challenges",
     "retired": false,
     "unreleased": false,
     "id": "a-a-r-g-h-mastery",
@@ -155,7 +159,8 @@
       "challenges-badges"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/AARGHMastery.png",
-    "notes": "The count displayed on the badge is the number of Timewarped Trophies owned by the player; Timewarped Trophies stack to a maximum of 15 as of  October 1st, 2021. • Timewarped Trophies previously stacked up to 10.Timewarped Trophies may be stored in the bank and the player's correct count will still be displayed."
+    "notes": "The count displayed on the badge is the number of Timewarped Trophies owned by the player; Timewarped Trophies stack to a maximum of 15 as of  October 1st, 2021. • Timewarped Trophies previously stacked up to 10.Timewarped Trophies may be stored in the bank and the player's correct count will still be displayed.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/AARGHMastery.png"
   },
   {
     "name": "A'maze'n",
@@ -163,7 +168,7 @@
     "messageId": "20702380",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20702380",
     "category": "quest-completion",
-    "subcategory": "Quests Badges",
+    "subcategory": "Side Quests",
     "retired": false,
     "unreleased": false,
     "id": "a-maze-n",
@@ -187,7 +192,8 @@
       "quests-badges",
       "lymcrest"
     ],
-    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/A-maze-n.png"
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/A-maze-n.png",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/A-maze-n.png"
   },
   {
     "name": "Adept",
@@ -195,14 +201,13 @@
     "messageId": "20702883",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20702883",
     "category": "collection",
-    "subcategory": "Classes Badges",
+    "subcategory": "Special Classes",
     "retired": false,
     "unreleased": false,
     "id": "adept",
     "description": "Own the Kathool Adept Armor!",
     "requirements": "Own  Kathool Adept Armor",
     "daRequired": false,
-    "dcRequired": true,
     "howToObtain": [
       {
         "order": 1,
@@ -219,7 +224,8 @@
     "tags": [
       "classes-badges"
     ],
-    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Adept.png"
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Adept.png",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Adept.png"
   },
   {
     "name": "Amityvale Defender",
@@ -227,7 +233,7 @@
     "messageId": "22417415",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22417415",
     "category": "quest-completion",
-    "subcategory": "Quests Badges",
+    "subcategory": "Side Quests",
     "retired": false,
     "unreleased": false,
     "id": "amityvale-defender",
@@ -252,7 +258,8 @@
       "amityvale"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/AmityvaleDefender.png",
-    "notes": "Badge's name was previously called 'Thursdays'. • Badge's art was added on  July 27th, 2024."
+    "notes": "Badge's name was previously called 'Thursdays'. • Badge's art was added on  July 27th, 2024.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/AmityvaleDefender.png"
   },
   {
     "name": "An Uneasy Alliance",
@@ -260,7 +267,7 @@
     "messageId": "22417390",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22417390",
     "category": "quest-completion",
-    "subcategory": "Quests Badges",
+    "subcategory": "Book 3",
     "retired": false,
     "unreleased": false,
     "id": "an-uneasy-alliance",
@@ -284,7 +291,8 @@
       "quests-badges"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/AnUneasyAlliance.png",
-    "notes": "Badge's art was added on  July 27th, 2024."
+    "notes": "Badge's art was added on  July 27th, 2024.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/AnUneasyAlliance.png"
   },
   {
     "name": "Arachnalchemy Mastery",
@@ -292,13 +300,13 @@
     "messageId": "22421140",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22421140",
     "category": "misc",
-    "subcategory": "General",
+    "subcategory": "Skills",
     "retired": false,
     "unreleased": false,
     "id": "arachnalchemy-mastery",
     "description": "Arachnalchemy Training (Dire Wolf Spider)",
     "requirements": "Dragon Amulet, Completion of  Just Chillin'",
-    "daRequired": true,
+    "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
@@ -314,7 +322,8 @@
     ],
     "tags": [],
     "forumImageUrl": "https://media.artix.com/encyc/df/banners/Ravenloss.jpg",
-    "notes": "Completion of this quest unlocks the  Arachnalchemy Lab shop and the  Arachnalchemy interface."
+    "notes": "Completion of this quest unlocks the  Arachnalchemy Lab shop and the  Arachnalchemy interface.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/ArachnalchemyMastery.png"
   },
   {
     "name": "Arr' Captain's Orders",
@@ -322,7 +331,7 @@
     "messageId": "20749703",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20749703",
     "category": "quest-completion",
-    "subcategory": "Quests Badges",
+    "subcategory": "Book 1 & 2",
     "retired": false,
     "unreleased": false,
     "id": "arr-captain-s-orders",
@@ -346,7 +355,8 @@
       "quests-badges"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/Arr",
-    "notes": "Badge's art was updated on  July 27th, 2024, replacing its  old appearance."
+    "notes": "Badge's art was updated on  July 27th, 2024, replacing its  old appearance.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Arr%27Captain%27sOrders.png"
   },
   {
     "name": "Asander's Freedom",
@@ -354,8 +364,8 @@
     "messageId": "20703146",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20703146",
     "category": "quest-completion",
-    "subcategory": "Quest Badges",
-    "retired": false,
+    "subcategory": "Misc",
+    "retired": true,
     "unreleased": false,
     "id": "asander-s-freedom",
     "description": "Free Asander's ghost in Blackwyn Tomb!",
@@ -378,7 +388,8 @@
       "quest-badges"
     ],
     "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/AsandersFreedom.png",
-    "notes": "Badge was retired on  July 19th, 2024."
+    "notes": "Badge was retired on  July 19th, 2024.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/AsandersFreedom.png"
   },
   {
     "name": "Ascended ChickenCow",
@@ -386,14 +397,13 @@
     "messageId": "21983412",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21983412",
     "category": "collection",
-    "subcategory": "Classes Badges",
+    "subcategory": "Special Classes",
     "retired": false,
     "unreleased": false,
     "id": "ascended-chickencow",
     "description": "Own the Ascended ChickenCowLord Armor!",
     "requirements": "Own  Ascended ChickenCow Armor (D-Coins)",
-    "daRequired": true,
-    "dcRequired": true,
+    "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
@@ -410,7 +420,8 @@
     "tags": [
       "classes-badges"
     ],
-    "forumImageUrl": "https://i.imgur.com/7scNAzM.png"
+    "forumImageUrl": "https://i.imgur.com/7scNAzM.png",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/AscendedChickenCow.png"
   },
   {
     "name": "Ascension",
@@ -418,7 +429,7 @@
     "messageId": "22372086",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22372086",
     "category": "combat",
-    "subcategory": "Challenges Badges",
+    "subcategory": "Arena Challenges",
     "retired": false,
     "unreleased": false,
     "id": "ascension",
@@ -441,7 +452,8 @@
     "tags": [
       "challenges-badges"
     ],
-    "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/Ascension.png"
+    "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/Ascension.png",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Ascension.png"
   },
   {
     "name": "Asynchronized",
@@ -449,14 +461,13 @@
     "messageId": "22417430",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22417430",
     "category": "combat",
-    "subcategory": "Challenges Badges",
+    "subcategory": "Arena Challenges",
     "retired": false,
     "unreleased": false,
     "id": "asynchronized",
     "description": "Asychronized",
     "requirements": "Own  Helm of Aegis",
     "daRequired": true,
-    "dcRequired": true,
     "howToObtain": [
       {
         "order": 1,
@@ -474,7 +485,8 @@
       "challenges-badges"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/Asynchronized.png",
-    "notes": "Badge's art was added on  July 27th, 2024."
+    "notes": "Badge's art was added on  July 27th, 2024.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Asynchronized.png"
   },
   {
     "name": "Avatar Ender",
@@ -482,7 +494,7 @@
     "messageId": "20747195",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20747195",
     "category": "quest-completion",
-    "subcategory": "Quests Badges",
+    "subcategory": "Book 1 & 2",
     "retired": false,
     "unreleased": false,
     "id": "avatar-ender",
@@ -506,7 +518,8 @@
       "quests-badges"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/AvatarEnder.png",
-    "notes": "Badge's art was updated on  July 19th, 2024, replacing its  old appearance. • Quest initially required completion of  Wargoth Approaches before being replaced by  The Harbinger on  April 8th, 2025."
+    "notes": "Badge's art was updated on  July 19th, 2024, replacing its  old appearance. • Quest initially required completion of  Wargoth Approaches before being replaced by  The Harbinger on  April 8th, 2025.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/AvatarEnder.png"
   },
   {
     "name": "Baby Dragon",
@@ -514,7 +527,7 @@
     "messageId": "20697498",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20697498",
     "category": "quest-completion",
-    "subcategory": "Quests Badges",
+    "subcategory": "Early Days",
     "retired": false,
     "unreleased": false,
     "id": "baby-dragon",
@@ -537,7 +550,8 @@
     "tags": [
       "quests-badges"
     ],
-    "forumImageUrl": "http://i.imgur.com/1OynO.png"
+    "forumImageUrl": "http://i.imgur.com/1OynO.png",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/BabyDragon.png"
   },
   {
     "name": "Bachelor PAR-TAY!",
@@ -545,7 +559,7 @@
     "messageId": "21238161",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21238161",
     "category": "seasonal",
-    "subcategory": "Other Badges",
+    "subcategory": "Hero's Heart Day",
     "retired": false,
     "unreleased": false,
     "id": "bachelor-par-tay",
@@ -568,7 +582,8 @@
     "tags": [
       "other-badges"
     ],
-    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/BachelorPAR-TAY.png"
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/BachelorPAR-TAY.png",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/BachelorPAR-TAY.png"
   },
   {
     "name": "Bad Toys",
@@ -576,7 +591,7 @@
     "messageId": "20716329",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20716329",
     "category": "seasonal",
-    "subcategory": "Other Badges",
+    "subcategory": "Frostval",
     "retired": false,
     "unreleased": false,
     "id": "bad-toys",
@@ -599,7 +614,8 @@
     "tags": [
       "other-badges"
     ],
-    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/BadToys.jpg"
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/BadToys.jpg",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/BadToys.jpg"
   },
   {
     "name": "Base Armor",
@@ -607,7 +623,7 @@
     "messageId": "20702712",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20702712",
     "category": "collection",
-    "subcategory": "Classes Badges",
+    "subcategory": "Trained Classes",
     "retired": false,
     "unreleased": false,
     "id": "base-armor",
@@ -630,7 +646,8 @@
     "tags": [
       "classes-badges"
     ],
-    "forumImageUrl": "http://i.imgur.com/KtzcN.png"
+    "forumImageUrl": "http://i.imgur.com/KtzcN.png",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/BaseArmor.png"
   },
   {
     "name": "Battle Hewn Warmonger",
@@ -638,7 +655,7 @@
     "messageId": "22421255",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22421255",
     "category": "misc",
-    "subcategory": "Other Badges",
+    "subcategory": "Warmonger",
     "retired": false,
     "unreleased": false,
     "id": "battle-hewn-warmonger",
@@ -662,7 +679,8 @@
       "other-badges"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/BattleHewnWarmonger.png",
-    "notes": "Badge was initially conceptualized as defeating 10,000 waves since  September 16th, 2012. • Badge was made functional based on how many  Defender's Medal are owned by the player on  February 28th, 2025."
+    "notes": "Badge was initially conceptualized as defeating 10,000 waves since  September 16th, 2012. • Badge was made functional based on how many  Defender's Medal are owned by the player on  February 28th, 2025.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/BattleHewnWarmonger.png"
   },
   {
     "name": "Blacksmith Mastery",
@@ -670,7 +688,7 @@
     "messageId": "20712483",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20712483",
     "category": "combat",
-    "subcategory": "Challenges Badges",
+    "subcategory": "Skills",
     "retired": false,
     "unreleased": false,
     "id": "blacksmith-mastery",
@@ -693,7 +711,8 @@
     "tags": [
       "challenges-badges"
     ],
-    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/BlacksmithMastery.png"
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/BlacksmithMastery.png",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/BlacksmithMastery.png"
   },
   {
     "name": "Blood & Roses",
@@ -701,7 +720,7 @@
     "messageId": "22417416",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22417416",
     "category": "quest-completion",
-    "subcategory": "Quests Badges",
+    "subcategory": "Side Quests",
     "retired": false,
     "unreleased": false,
     "id": "blood-roses",
@@ -725,7 +744,8 @@
       "quests-badges"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/Blood&Roses.png",
-    "notes": "Badge's art was added on  July 27th, 2024."
+    "notes": "Badge's art was added on  July 27th, 2024.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Blood%26Roses.png"
   },
   {
     "name": "Breaking Awe",
@@ -733,8 +753,8 @@
     "messageId": "20703227",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20703227",
     "category": "quest-completion",
-    "subcategory": "Quest Badges",
-    "retired": false,
+    "subcategory": "Misc",
+    "retired": true,
     "unreleased": false,
     "id": "breaking-awe",
     "description": "Help Valencia hide the Blade of Awe!",
@@ -757,7 +777,8 @@
       "quest-badges"
     ],
     "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/BreakingAwe.png",
-    "notes": "Players must completed these in order:  Hidden Blades's Introduction cutscene and  Entropic Earth Boss. • Badge was retired on  July 19th, 2024."
+    "notes": "Players must completed these in order:  Hidden Blades's Introduction cutscene and  Entropic Earth Boss. • Badge was retired on  July 19th, 2024.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/BreakingAwe.png"
   },
   {
     "name": "Burning Revenge",
@@ -765,7 +786,7 @@
     "messageId": "20706497",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20706497",
     "category": "quest-completion",
-    "subcategory": "Quests Badges",
+    "subcategory": "Book 1 & 2",
     "retired": false,
     "unreleased": false,
     "id": "burning-revenge",
@@ -789,7 +810,8 @@
       "quests-badges"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/BurningRevenge.png",
-    "notes": "Badge's art was updated on  July 19th, 2024, replacing its  old appearance."
+    "notes": "Badge's art was updated on  July 19th, 2024, replacing its  old appearance.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/BurningRevenge.png"
   },
   {
     "name": "Calamity",
@@ -797,7 +819,7 @@
     "messageId": "22417422",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22417422",
     "category": "quest-completion",
-    "subcategory": "Quests Badges",
+    "subcategory": "Side Quests",
     "retired": false,
     "unreleased": false,
     "id": "calamity",
@@ -821,7 +843,8 @@
       "quests-badges"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/Calamity.png",
-    "notes": "Badge's art was added on  July 27th, 2024."
+    "notes": "Badge's art was added on  July 27th, 2024.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Calamity.png"
   },
   {
     "name": "CARNAX",
@@ -829,7 +852,7 @@
     "messageId": "22409758",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22409758",
     "category": "combat",
-    "subcategory": "Challenges Badges",
+    "subcategory": "Arena Challenges",
     "retired": false,
     "unreleased": false,
     "id": "carnax",
@@ -852,7 +875,8 @@
     "tags": [
       "challenges-badges"
     ],
-    "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/CARNAX.png"
+    "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/CARNAX.png",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/CARNAX.png"
   },
   {
     "name": "Catastrophic Candy",
@@ -860,7 +884,7 @@
     "messageId": "20828166",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20828166",
     "category": "seasonal",
-    "subcategory": "Other Badges",
+    "subcategory": "Mogloween",
     "retired": false,
     "unreleased": false,
     "id": "catastrophic-candy",
@@ -883,7 +907,8 @@
     "tags": [
       "other-badges"
     ],
-    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/CatastrophicCandy.jpg"
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/CatastrophicCandy.jpg",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/CatastrophicCandy.jpg"
   },
   {
     "name": "Chaos Slayer",
@@ -891,14 +916,13 @@
     "messageId": "22417429",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22417429",
     "category": "combat",
-    "subcategory": "Challenges Badges",
+    "subcategory": "Arena Challenges",
     "retired": false,
     "unreleased": false,
     "id": "chaos-slayer",
     "description": "Defeat the 13th Lord of Chaos.",
     "requirements": "Own  Parallel Chaos Amulet",
     "daRequired": false,
-    "dcRequired": true,
     "howToObtain": [
       {
         "order": 1,
@@ -916,7 +940,8 @@
       "challenges-badges"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/ChaosSlayer.png",
-    "notes": "Badge's art was added on  July 27th, 2024."
+    "notes": "Badge's art was added on  July 27th, 2024.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/ChaosSlayer.png"
   },
   {
     "name": "ChaosWeaver",
@@ -924,14 +949,13 @@
     "messageId": "22417424",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22417424",
     "category": "collection",
-    "subcategory": "Classes Badges",
+    "subcategory": "Special Classes",
     "retired": false,
     "unreleased": false,
     "id": "chaosweaver",
     "description": "Own the ChaosWeaver Armor!",
     "requirements": "Own  Chaosweaver Armor",
     "daRequired": false,
-    "dcRequired": true,
     "howToObtain": [
       {
         "order": 1,
@@ -949,7 +973,8 @@
       "classes-badges"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/ChaosWeaver.png",
-    "notes": "Badge's art was added on  July 27th, 2024."
+    "notes": "Badge's art was added on  July 27th, 2024.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/ChaosWeaver.png"
   },
   {
     "name": "Cold as Ice",
@@ -957,7 +982,7 @@
     "messageId": "20702329",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20702329",
     "category": "quest-completion",
-    "subcategory": "Quests Badges",
+    "subcategory": "Book 1 & 2",
     "retired": false,
     "unreleased": false,
     "id": "cold-as-ice",
@@ -981,7 +1006,8 @@
       "quests-badges"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/ColdasIce.png",
-    "notes": "Badge's art was updated on  July 27th, 2024, replacing its  old appearance."
+    "notes": "Badge's art was updated on  July 27th, 2024, replacing its  old appearance.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/ColdasIce.png"
   },
   {
     "name": "Confront Sek-Duat",
@@ -989,7 +1015,7 @@
     "messageId": "20706468",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20706468",
     "category": "quest-completion",
-    "subcategory": "Quests Badges",
+    "subcategory": "Book 1 & 2",
     "retired": false,
     "unreleased": false,
     "id": "confront-sek-duat",
@@ -1013,7 +1039,8 @@
       "quests-badges"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/ConfrontSek-Duat.png",
-    "notes": "Badge's art was updated on  July 19th, 2024, replacing its  old appearance."
+    "notes": "Badge's art was updated on  July 19th, 2024, replacing its  old appearance.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/ConfrontSek-Duat.png"
   },
   {
     "name": "Convergence",
@@ -1021,7 +1048,7 @@
     "messageId": "22417394",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22417394",
     "category": "quest-completion",
-    "subcategory": "Quests Badges",
+    "subcategory": "Book 3",
     "retired": false,
     "unreleased": false,
     "id": "convergence",
@@ -1045,7 +1072,8 @@
       "quests-badges"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/Convergence.png",
-    "notes": "Badge's art was added on  July 27th, 2024."
+    "notes": "Badge's art was added on  July 27th, 2024.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Convergence.png"
   },
   {
     "name": "Cookie Song!",
@@ -1053,14 +1081,13 @@
     "messageId": "22424523",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22424523",
     "category": "misc",
-    "subcategory": "Other Badges",
+    "subcategory": "Misc",
     "retired": false,
     "unreleased": false,
     "id": "cookie-song",
     "description": "Own the Musical Cookie Box from the holiday Cookie Song event from HeroMart.",
     "requirements": "Own  Musical Cookie Box",
     "daRequired": false,
-    "dcRequired": true,
     "howToObtain": [
       {
         "order": 1,
@@ -1077,7 +1104,8 @@
     "tags": [
       "other-badges"
     ],
-    "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/CookieSong!.png"
+    "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/CookieSong!.png",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/CookieSong%21.png"
   },
   {
     "name": "Crystal Breaker",
@@ -1085,7 +1113,7 @@
     "messageId": "20705424",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20705424",
     "category": "quest-completion",
-    "subcategory": "Quests Badges",
+    "subcategory": "Book 1 & 2",
     "retired": false,
     "unreleased": false,
     "id": "crystal-breaker",
@@ -1109,7 +1137,8 @@
       "quests-badges"
     ],
     "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/CrystalBreaker.png",
-    "notes": "Badge previously have the text: Break Jaania free from her icy prison!"
+    "notes": "Badge previously have the text: Break Jaania free from her icy prison!",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/CrystalBreaker.png"
   },
   {
     "name": "Cutest Legion EVER",
@@ -1117,7 +1146,7 @@
     "messageId": "20706539",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20706539",
     "category": "quest-completion",
-    "subcategory": "Quests Badges",
+    "subcategory": "Side Quests",
     "retired": false,
     "unreleased": false,
     "id": "cutest-legion-ever",
@@ -1140,7 +1169,8 @@
     "tags": [
       "quests-badges"
     ],
-    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/CutestLegionEVER.jpg"
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/CutestLegionEVER.jpg",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/CutestLegionEVER.jpg"
   },
   {
     "name": "Death of a Knight",
@@ -1148,7 +1178,7 @@
     "messageId": "20702830",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20702830",
     "category": "quest-completion",
-    "subcategory": "Quests Badges",
+    "subcategory": "Early Days",
     "retired": false,
     "unreleased": false,
     "id": "death-of-a-knight",
@@ -1171,7 +1201,8 @@
     "tags": [
       "quests-badges"
     ],
-    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/DeathofaKnight.png"
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/DeathofaKnight.png",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/DeathofaKnight.png"
   },
   {
     "name": "DeathKnight",
@@ -1179,7 +1210,7 @@
     "messageId": "20707684",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20707684",
     "category": "collection",
-    "subcategory": "Classes Badges",
+    "subcategory": "Trained Classes",
     "retired": false,
     "unreleased": false,
     "id": "deathknight",
@@ -1202,7 +1233,8 @@
     "tags": [
       "classes-badges"
     ],
-    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/DeathKnight.png"
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/DeathKnight.png",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/DeathKnight.png"
   },
   {
     "name": "DoomKnight",
@@ -1210,7 +1242,7 @@
     "messageId": "20716155",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20716155",
     "category": "collection",
-    "subcategory": "Classes Badges",
+    "subcategory": "Special Classes",
     "retired": false,
     "unreleased": false,
     "id": "doomknight",
@@ -1233,7 +1265,8 @@
     "tags": [
       "classes-badges"
     ],
-    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/DoomKnight.jpg"
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/DoomKnight.jpg",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/DoomKnight.jpg"
   },
   {
     "name": "DoomWood Fishing",
@@ -1241,7 +1274,7 @@
     "messageId": "20717273",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20717273",
     "category": "combat",
-    "subcategory": "Challenges Badges",
+    "subcategory": "Skills",
     "retired": false,
     "unreleased": false,
     "id": "doomwood-fishing",
@@ -1264,7 +1297,8 @@
     "tags": [
       "challenges-badges"
     ],
-    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/DoomWoodFishing.png"
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/DoomWoodFishing.png",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/DoomWoodFishing.png"
   },
   {
     "name": "Dracolich Fishing",
@@ -1272,7 +1306,7 @@
     "messageId": "22421251",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22421251",
     "category": "combat",
-    "subcategory": "Challenges Badges",
+    "subcategory": "Skills",
     "retired": false,
     "unreleased": false,
     "id": "dracolich-fishing",
@@ -1297,7 +1331,8 @@
       "book-3"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/DracolichFishing.png",
-    "notes": "Badge replaced the unreleased Deep Water Fishing badge. • Badge was initially made, but nonfunctional on  July 19th, 2024 before being made functional on  February 28th, 2025."
+    "notes": "Badge replaced the unreleased Deep Water Fishing badge. • Badge was initially made, but nonfunctional on  July 19th, 2024 before being made functional on  February 28th, 2025.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/DracolichFishing.png"
   },
   {
     "name": "Dragon School",
@@ -1305,7 +1340,7 @@
     "messageId": "20726398",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20726398",
     "category": "quest-completion",
-    "subcategory": "Quests Badges",
+    "subcategory": "Early Days",
     "retired": false,
     "unreleased": false,
     "id": "dragon-school",
@@ -1328,7 +1363,8 @@
     "tags": [
       "quests-badges"
     ],
-    "forumImageUrl": "http://i.imgur.com/drfpv.png"
+    "forumImageUrl": "http://i.imgur.com/drfpv.png",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/DragonSchool.png"
   },
   {
     "name": "DragonLord",
@@ -1336,7 +1372,7 @@
     "messageId": "20707688",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20707688",
     "category": "collection",
-    "subcategory": "Classes Badges",
+    "subcategory": "Trained Classes",
     "retired": false,
     "unreleased": false,
     "id": "dragonlord",
@@ -1359,7 +1395,8 @@
     "tags": [
       "classes-badges"
     ],
-    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/DragonLord.png"
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/DragonLord.png",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/DragonLord.png"
   },
   {
     "name": "DragonRider",
@@ -1367,7 +1404,7 @@
     "messageId": "20702717",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20702717",
     "category": "collection",
-    "subcategory": "Classes Badges",
+    "subcategory": "Trained Classes",
     "retired": false,
     "unreleased": false,
     "id": "dragonrider",
@@ -1390,7 +1427,8 @@
     "tags": [
       "classes-badges"
     ],
-    "forumImageUrl": "http://i.imgur.com/pqhg8.png"
+    "forumImageUrl": "http://i.imgur.com/pqhg8.png",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/DragonRider.png"
   },
   {
     "name": "DragonSlayer",
@@ -1398,7 +1436,7 @@
     "messageId": "20712465",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20712465",
     "category": "collection",
-    "subcategory": "Classes Badges",
+    "subcategory": "Trained Classes",
     "retired": false,
     "unreleased": false,
     "id": "dragonslayer",
@@ -1421,7 +1459,8 @@
     "tags": [
       "classes-badges"
     ],
-    "forumImageUrl": "https://i.imgur.com/Dake9wd.png"
+    "forumImageUrl": "https://i.imgur.com/Dake9wd.png",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/DragonSlayer.png"
   },
   {
     "name": "Egg-cellent!",
@@ -1429,7 +1468,7 @@
     "messageId": "20697496",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20697496",
     "category": "quest-completion",
-    "subcategory": "Quests Badges",
+    "subcategory": "Early Days",
     "retired": false,
     "unreleased": false,
     "id": "egg-cellent",
@@ -1452,7 +1491,8 @@
     "tags": [
       "quests-badges"
     ],
-    "forumImageUrl": "https://i.imgur.com/IYkIT3U.png"
+    "forumImageUrl": "https://i.imgur.com/IYkIT3U.png",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Egg-cellent.png"
   },
   {
     "name": "EGG-STIR-MIN-ATE",
@@ -1460,8 +1500,8 @@
     "messageId": "20741782",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20741782",
     "category": "quest-completion",
-    "subcategory": "Quest Badges",
-    "retired": false,
+    "subcategory": "Misc",
+    "retired": true,
     "unreleased": false,
     "id": "egg-stir-min-ate",
     "description": "Defeat the infamous Doctor When!",
@@ -1484,7 +1524,8 @@
       "quest-badges"
     ],
     "forumImageUrl": "https://i.imgur.com/A53SsST.jpg",
-    "notes": "Badge was retired on  July 19th, 2024."
+    "notes": "Badge was retired on  July 19th, 2024.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/EGG-STIR-MIN-ATE.jpg"
   },
   {
     "name": "Elemental Chaos",
@@ -1492,7 +1533,7 @@
     "messageId": "20749726",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20749726",
     "category": "quest-completion",
-    "subcategory": "Quests Badges",
+    "subcategory": "Side Quests",
     "retired": false,
     "unreleased": false,
     "id": "elemental-chaos",
@@ -1515,7 +1556,8 @@
     "tags": [
       "quests-badges"
     ],
-    "forumImageUrl": "http://i.imgur.com/4fbAHcS.png"
+    "forumImageUrl": "http://i.imgur.com/4fbAHcS.png",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/ElementalChaos.png"
   },
   {
     "name": "EnTropic!",
@@ -1523,7 +1565,7 @@
     "messageId": "21325052",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21325052",
     "category": "quest-completion",
-    "subcategory": "Quests Badges",
+    "subcategory": "Book 1 & 2",
     "retired": false,
     "unreleased": false,
     "id": "entropic",
@@ -1547,7 +1589,8 @@
       "quests-badges"
     ],
     "forumImageUrl": "http://i.imgur.com/Wb2KWvB.png",
-    "notes": "Players must complete these in order:  Hidden Blades's Introduction cutscene and  Entropic Earth Boss."
+    "notes": "Players must complete these in order:  Hidden Blades's Introduction cutscene and  Entropic Earth Boss.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/EnTropic.png"
   },
   {
     "name": "enTropy",
@@ -1555,14 +1598,13 @@
     "messageId": "20716191",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20716191",
     "category": "collection",
-    "subcategory": "Classes Badges",
+    "subcategory": "Special Classes",
     "retired": false,
     "unreleased": false,
     "id": "entropy",
     "description": "Own the enTropy Armor!",
     "requirements": "Own  enTropy Armor",
     "daRequired": false,
-    "dcRequired": true,
     "howToObtain": [
       {
         "order": 1,
@@ -1579,7 +1621,8 @@
     "tags": [
       "classes-badges"
     ],
-    "forumImageUrl": "https://i.imgur.com/eqyDbn3.jpg"
+    "forumImageUrl": "https://i.imgur.com/eqyDbn3.jpg",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/enTropy.jpg"
   },
   {
     "name": "Evolved ChickenCow",
@@ -1587,14 +1630,13 @@
     "messageId": "20701246",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20701246",
     "category": "collection",
-    "subcategory": "Classes Badges",
+    "subcategory": "Special Classes",
     "retired": false,
     "unreleased": false,
     "id": "evolved-chickencow",
     "description": "Own the Evolved ChickenCowLord Armor!",
     "requirements": "Own  Evolved ChickenCow Armor (D-Coins) or  Ascended ChickenCow Armor (D-Coins)",
-    "daRequired": true,
-    "dcRequired": true,
+    "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
@@ -1611,7 +1653,8 @@
     "tags": [
       "classes-badges"
     ],
-    "forumImageUrl": "https://i.imgur.com/k3XY39O.png"
+    "forumImageUrl": "https://i.imgur.com/k3XY39O.png",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/EvolvedChickenCow.png"
   },
   {
     "name": "Evolved DragonLord",
@@ -1619,8 +1662,8 @@
     "messageId": "20707694",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20707694",
     "category": "collection",
-    "subcategory": "Armor Badges",
-    "retired": false,
+    "subcategory": "Misc",
+    "retired": true,
     "unreleased": false,
     "id": "evolved-dragonlord",
     "description": "Fully trained Evolved DragonLord Armor in Sunbreeze Grove!",
@@ -1643,7 +1686,8 @@
       "armor-badges"
     ],
     "forumImageUrl": "https://i.imgur.com/N8FNdA5.png",
-    "notes": "Badge was retired on  July 19th, 2024."
+    "notes": "Badge was retired on  July 19th, 2024.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/EvolvedDragonLord.png"
   },
   {
     "name": "Evolved PumpkinLord",
@@ -1651,7 +1695,7 @@
     "messageId": "20707709",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20707709",
     "category": "collection",
-    "subcategory": "Classes Badges",
+    "subcategory": "Trained Classes",
     "retired": false,
     "unreleased": false,
     "id": "evolved-pumpkinlord",
@@ -1674,7 +1718,8 @@
     "tags": [
       "classes-badges"
     ],
-    "forumImageUrl": "https://i.imgur.com/8AaVvov.png"
+    "forumImageUrl": "https://i.imgur.com/8AaVvov.png",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/EvolvedPumpkinLord.png"
   },
   {
     "name": "Face-Off!",
@@ -1682,7 +1727,7 @@
     "messageId": "20703056",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20703056",
     "category": "quest-completion",
-    "subcategory": "Quests Badges",
+    "subcategory": "Side Quests",
     "retired": false,
     "unreleased": false,
     "id": "face-off",
@@ -1705,7 +1750,8 @@
     "tags": [
       "quests-badges"
     ],
-    "forumImageUrl": "https://i.imgur.com/wCLLkTx.png"
+    "forumImageUrl": "https://i.imgur.com/wCLLkTx.png",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Face-Off.png"
   },
   {
     "name": "Fallen General",
@@ -1713,7 +1759,7 @@
     "messageId": "20706221",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20706221",
     "category": "quest-completion",
-    "subcategory": "Quests Badges",
+    "subcategory": "Book 1 & 2",
     "retired": false,
     "unreleased": false,
     "id": "fallen-general",
@@ -1737,7 +1783,8 @@
       "quests-badges"
     ],
     "forumImageUrl": "https://i.imgur.com/AoIwK3S.jpg",
-    "notes": "Badge initially required completion of  Rising Fire (Intro) before being reimagined on  March 28th, 2025."
+    "notes": "Badge initially required completion of  Rising Fire (Intro) before being reimagined on  March 28th, 2025.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/FallenGeneral.jpg"
   },
   {
     "name": "Fear Engine",
@@ -1745,7 +1792,7 @@
     "messageId": "22421250",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22421250",
     "category": "combat",
-    "subcategory": "Challenges Badges",
+    "subcategory": "Side Quests",
     "retired": false,
     "unreleased": false,
     "id": "fear-engine",
@@ -1769,7 +1816,8 @@
       "challenges-badges"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/FearEngine.png",
-    "notes": "Badge was initially made and nonfunctional on  July 19th, 2024 before being made unlockable on  February 28th, 2025."
+    "notes": "Badge was initially made and nonfunctional on  July 19th, 2024 before being made unlockable on  February 28th, 2025.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/FearEngine.png"
   },
   {
     "name": "Fierce Warmonger",
@@ -1777,7 +1825,7 @@
     "messageId": "22421254",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22421254",
     "category": "misc",
-    "subcategory": "Other Badges",
+    "subcategory": "Warmonger",
     "retired": false,
     "unreleased": false,
     "id": "fierce-warmonger",
@@ -1801,7 +1849,8 @@
       "other-badges"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/FierceWarmonger.png",
-    "notes": "Badge was initially conceptualized as defeating 5,000 waves since  September 16th, 2012. • Badge was made functional based on how many  Defender's Medal are owned by the player on  February 28th, 2025."
+    "notes": "Badge was initially conceptualized as defeating 5,000 waves since  September 16th, 2012. • Badge was made functional based on how many  Defender's Medal are owned by the player on  February 28th, 2025.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/FierceWarmonger.png"
   },
   {
     "name": "Final 13th!",
@@ -1809,7 +1858,7 @@
     "messageId": "20705416",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20705416",
     "category": "quest-completion",
-    "subcategory": "Quests Badges",
+    "subcategory": "Book 1 & 2",
     "retired": false,
     "unreleased": false,
     "id": "final-13th",
@@ -1832,7 +1881,8 @@
     "tags": [
       "quests-badges"
     ],
-    "forumImageUrl": "https://i.imgur.com/WUrM9wr.png"
+    "forumImageUrl": "https://i.imgur.com/WUrM9wr.png",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Final13th.png"
   },
   {
     "name": "Fire Fighter",
@@ -1840,7 +1890,7 @@
     "messageId": "21438027",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21438027",
     "category": "quest-completion",
-    "subcategory": "Quests Badges",
+    "subcategory": "Book 1 & 2",
     "retired": false,
     "unreleased": false,
     "id": "fire-fighter",
@@ -1864,7 +1914,8 @@
       "quests-badges"
     ],
     "forumImageUrl": "https://i.imgur.com/SYy5hha.png",
-    "notes": "Badge previously have the text: Defeat Titan Wargoth in theChapter 2 Finale."
+    "notes": "Badge previously have the text: Defeat Titan Wargoth in theChapter 2 Finale.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/FireFighter.png"
   },
   {
     "name": "First Weaver",
@@ -1872,7 +1923,7 @@
     "messageId": "22417417",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22417417",
     "category": "quest-completion",
-    "subcategory": "Quests Badges",
+    "subcategory": "Side Quests",
     "retired": false,
     "unreleased": false,
     "id": "first-weaver",
@@ -1896,7 +1947,8 @@
       "quests-badges"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/FirstWeaver.png",
-    "notes": "Badge's art was added on  July 27th, 2024."
+    "notes": "Badge's art was added on  July 27th, 2024.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/FirstWeaver.png"
   },
   {
     "name": "Fishing Mastery",
@@ -1904,7 +1956,7 @@
     "messageId": "20716582",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20716582",
     "category": "combat",
-    "subcategory": "Challenges Badges",
+    "subcategory": "Skills",
     "retired": false,
     "unreleased": false,
     "id": "fishing-mastery",
@@ -1928,7 +1980,8 @@
       "challenges-badges",
       "falconreach"
     ],
-    "forumImageUrl": "https://i.imgur.com/56XlFHu.png"
+    "forumImageUrl": "https://i.imgur.com/56XlFHu.png",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/FishingMastery.png"
   },
   {
     "name": "For SCIENCE!",
@@ -1936,7 +1989,7 @@
     "messageId": "20703042",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20703042",
     "category": "quest-completion",
-    "subcategory": "Quests Badges",
+    "subcategory": "Side Quests",
     "retired": false,
     "unreleased": false,
     "id": "for-science",
@@ -1959,7 +2012,8 @@
     "tags": [
       "quests-badges"
     ],
-    "forumImageUrl": "https://i.imgur.com/k5reS78.png"
+    "forumImageUrl": "https://i.imgur.com/k5reS78.png",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/ForSCIENCE.png"
   },
   {
     "name": "Fresh Warmonger",
@@ -1967,7 +2021,7 @@
     "messageId": "22421253",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22421253",
     "category": "misc",
-    "subcategory": "Other Badges",
+    "subcategory": "Warmonger",
     "retired": false,
     "unreleased": false,
     "id": "fresh-warmonger",
@@ -1991,7 +2045,8 @@
       "other-badges"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/FreshWarmonger.png",
-    "notes": "Badge was initially conceptualized as defeating 1,000 waves since  September 16th, 2012. • Badge was made functional based on how many  Defender's Medal are owned by the player on  February 28th, 2025."
+    "notes": "Badge was initially conceptualized as defeating 1,000 waves since  September 16th, 2012. • Badge was made functional based on how many  Defender's Medal are owned by the player on  February 28th, 2025.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/FreshWarmonger.png"
   },
   {
     "name": "Frost Moglin",
@@ -1999,7 +2054,7 @@
     "messageId": "20707712",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20707712",
     "category": "collection",
-    "subcategory": "Classes Badges",
+    "subcategory": "Trained Classes",
     "retired": false,
     "unreleased": false,
     "id": "frost-moglin",
@@ -2022,7 +2077,8 @@
     "tags": [
       "classes-badges"
     ],
-    "forumImageUrl": "https://i.imgur.com/jvgb4bU.jpg"
+    "forumImageUrl": "https://i.imgur.com/jvgb4bU.jpg",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/FrostMoglin.png"
   },
   {
     "name": "Frostvayle",
@@ -2030,7 +2086,7 @@
     "messageId": "21009836",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21009836",
     "category": "seasonal",
-    "subcategory": "Other Badges",
+    "subcategory": "Frostval",
     "retired": false,
     "unreleased": false,
     "id": "frostvayle",
@@ -2053,7 +2109,8 @@
     "tags": [
       "other-badges"
     ],
-    "forumImageUrl": "https://i.imgur.com/jo59QYP.jpg"
+    "forumImageUrl": "https://i.imgur.com/jo59QYP.jpg",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Frostvayle.png"
   },
   {
     "name": "Fungus Among Us",
@@ -2061,7 +2118,7 @@
     "messageId": "22417393",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22417393",
     "category": "quest-completion",
-    "subcategory": "Quests Badges",
+    "subcategory": "Book 3",
     "retired": false,
     "unreleased": false,
     "id": "fungus-among-us",
@@ -2085,7 +2142,8 @@
       "quests-badges"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/FungusAmongUs.png",
-    "notes": "Badge's art was added on  July 27th, 2024."
+    "notes": "Badge's art was added on  July 27th, 2024.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/FungusAmongUs.png"
   },
   {
     "name": "Gathering Shadows",
@@ -2093,7 +2151,7 @@
     "messageId": "22417421",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22417421",
     "category": "quest-completion",
-    "subcategory": "Quests Badges",
+    "subcategory": "Side Quests",
     "retired": false,
     "unreleased": false,
     "id": "gathering-shadows",
@@ -2117,7 +2175,8 @@
       "quests-badges"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/GatheringShadows.png",
-    "notes": "Badge's art was added on  July 27th, 2024."
+    "notes": "Badge's art was added on  July 27th, 2024.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/GatheringShadows.png"
   },
   {
     "name": "Golem Breaker",
@@ -2125,7 +2184,7 @@
     "messageId": "20716324",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20716324",
     "category": "seasonal",
-    "subcategory": "Other Badges",
+    "subcategory": "Frostval",
     "retired": false,
     "unreleased": false,
     "id": "golem-breaker",
@@ -2148,7 +2207,8 @@
     "tags": [
       "other-badges"
     ],
-    "forumImageUrl": "https://i.imgur.com/ltKptRY.jpg"
+    "forumImageUrl": "https://i.imgur.com/ltKptRY.jpg",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/GolemBreaker.jpg"
   },
   {
     "name": "Gourmet",
@@ -2156,7 +2216,7 @@
     "messageId": "20717259",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20717259",
     "category": "combat",
-    "subcategory": "Challenges Badges",
+    "subcategory": "Skills",
     "retired": false,
     "unreleased": false,
     "id": "gourmet",
@@ -2180,7 +2240,8 @@
       "challenges-badges"
     ],
     "forumImageUrl": "https://i.imgur.com/FPSIScw.png",
-    "notes": "As of  July 19th, 2024, this badge is nonfunctional."
+    "notes": "As of  July 19th, 2024, this badge is nonfunctional.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Gourmet.png"
   },
   {
     "name": "GPS",
@@ -2188,14 +2249,13 @@
     "messageId": "20716200",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20716200",
     "category": "collection",
-    "subcategory": "Classes Badges",
+    "subcategory": "Special Classes",
     "retired": false,
     "unreleased": false,
     "id": "gps",
     "description": "Own the Gnomish Personal Steamtank Armor!",
     "requirements": "Own  GPS (2.0) Armor",
     "daRequired": false,
-    "dcRequired": true,
     "howToObtain": [
       {
         "order": 1,
@@ -2212,7 +2272,8 @@
     "tags": [
       "classes-badges"
     ],
-    "forumImageUrl": "https://i.imgur.com/7laK2Kz.jpg"
+    "forumImageUrl": "https://i.imgur.com/7laK2Kz.jpg",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/GPS.jpg"
   },
   {
     "name": "Grrrberus!",
@@ -2220,13 +2281,13 @@
     "messageId": "20702374",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20702374",
     "category": "quest-completion",
-    "subcategory": "Quest Badges",
-    "retired": false,
+    "subcategory": "Misc",
+    "retired": true,
     "unreleased": false,
     "id": "grrrberus",
     "description": "Fight Grrrberus to keep Spots the two-headed puppy!",
     "requirements": "Completion of  Grrberus' Revenge",
-    "daRequired": true,
+    "daRequired": false,
     "howToObtain": [
       {
         "order": 1,
@@ -2244,7 +2305,8 @@
       "quest-badges"
     ],
     "forumImageUrl": "https://i.imgur.com/u5dvuxp.png",
-    "notes": "Badge was retired on  July 19th, 2024."
+    "notes": "Badge was retired on  July 19th, 2024.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Grrrberus.png"
   },
   {
     "name": "Guardian",
@@ -2252,7 +2314,7 @@
     "messageId": "20707652",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20707652",
     "category": "collection",
-    "subcategory": "Classes Badges",
+    "subcategory": "Special Classes",
     "retired": false,
     "unreleased": false,
     "id": "guardian",
@@ -2275,7 +2337,8 @@
     "tags": [
       "classes-badges"
     ],
-    "forumImageUrl": "https://i.imgur.com/sM7RbT7.png"
+    "forumImageUrl": "https://i.imgur.com/sM7RbT7.png",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Guardian.png"
   },
   {
     "name": "Health Potion Mastery",
@@ -2283,7 +2346,7 @@
     "messageId": "20716154",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20716154",
     "category": "combat",
-    "subcategory": "Challenges Badges",
+    "subcategory": "Skills",
     "retired": false,
     "unreleased": false,
     "id": "health-potion-mastery",
@@ -2306,7 +2369,8 @@
     "tags": [
       "challenges-badges"
     ],
-    "forumImageUrl": "https://i.imgur.com/pxosrFi.png"
+    "forumImageUrl": "https://i.imgur.com/pxosrFi.png",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/HealthPotionMastery.png"
   },
   {
     "name": "Heart of Darkness",
@@ -2314,7 +2378,7 @@
     "messageId": "20701193",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20701193",
     "category": "quest-completion",
-    "subcategory": "Quests Badges",
+    "subcategory": "Side Quests",
     "retired": false,
     "unreleased": false,
     "id": "heart-of-darkness",
@@ -2338,7 +2402,8 @@
       "quests-badges"
     ],
     "forumImageUrl": "https://i.imgur.com/9DRs2Yp.png",
-    "notes": "Quest previously required completion of  Deepest Neverglades."
+    "notes": "Quest previously required completion of  Deepest Neverglades.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/HeartofDarkness.png"
   },
   {
     "name": "Home Owner",
@@ -2346,7 +2411,7 @@
     "messageId": "20717319",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20717319",
     "category": "misc",
-    "subcategory": "Other Badges",
+    "subcategory": "Misc",
     "retired": false,
     "unreleased": false,
     "id": "home-owner",
@@ -2369,7 +2434,8 @@
     "tags": [
       "other-badges"
     ],
-    "forumImageUrl": "https://i.imgur.com/o8sxUQD.png"
+    "forumImageUrl": "https://i.imgur.com/o8sxUQD.png",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/HomeOwner.png"
   },
   {
     "name": "HONK!",
@@ -2377,7 +2443,7 @@
     "messageId": "22397683",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22397683",
     "category": "combat",
-    "subcategory": "Challenges Badges",
+    "subcategory": "Arena Challenges",
     "retired": false,
     "unreleased": false,
     "id": "honk",
@@ -2400,7 +2466,8 @@
     "tags": [
       "challenges-badges"
     ],
-    "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/HONK!.png"
+    "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/HONK!.png",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/HONK%21.png"
   },
   {
     "name": "Hope",
@@ -2408,7 +2475,7 @@
     "messageId": "22375705",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22375705",
     "category": "combat",
-    "subcategory": "Challenges Badges",
+    "subcategory": "Arena Challenges",
     "retired": false,
     "unreleased": false,
     "id": "hope",
@@ -2432,7 +2499,8 @@
       "challenges-badges"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/Hope.png",
-    "notes": "This badge was also awarded to players who completed the previous no-heal challenge during Pandora's Gauntlet prior to the badge's release."
+    "notes": "This badge was also awarded to players who completed the previous no-heal challenge during Pandora's Gauntlet prior to the badge's release.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Hope.png"
   },
   {
     "name": "Hopeless",
@@ -2440,7 +2508,7 @@
     "messageId": "22417387",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22417387",
     "category": "quest-completion",
-    "subcategory": "Quests Badges",
+    "subcategory": "Book 3",
     "retired": false,
     "unreleased": false,
     "id": "hopeless",
@@ -2464,7 +2532,8 @@
       "quests-badges"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/Hopeless.png",
-    "notes": "Badge's art was added on  July 27th, 2024."
+    "notes": "Badge's art was added on  July 27th, 2024.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Hopeless.png"
   },
   {
     "name": "Hugs for DoomKittens",
@@ -2472,7 +2541,7 @@
     "messageId": "20697500",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20697500",
     "category": "quest-completion",
-    "subcategory": "Quests Badges",
+    "subcategory": "Early Days",
     "retired": false,
     "unreleased": false,
     "id": "hugs-for-doomkittens",
@@ -2495,7 +2564,8 @@
     "tags": [
       "quests-badges"
     ],
-    "forumImageUrl": "https://i.imgur.com/EqgEfdG.png"
+    "forumImageUrl": "https://i.imgur.com/EqgEfdG.png",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/HugsforDoomKittens.png"
   },
   {
     "name": "Hydra Slayer",
@@ -2503,7 +2573,7 @@
     "messageId": "20697501",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20697501",
     "category": "quest-completion",
-    "subcategory": "Quests Badges",
+    "subcategory": "Early Days",
     "retired": false,
     "unreleased": false,
     "id": "hydra-slayer",
@@ -2527,7 +2597,8 @@
       "quests-badges"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/HydraSlayer.png",
-    "notes": "Badge was previously called 'Oaklore Navigation' and initially required the completion of  Ambush in the Bushes; this was modified on  July 24th, 2024. • Badge's art was updated on  July 27th, 2024, replacing its  old appearance. • Old Appearance • DemonicDarkwraith for image and other information. • pjc for Oaklore Navigation image."
+    "notes": "Badge was previously called 'Oaklore Navigation' and initially required the completion of  Ambush in the Bushes; this was modified on  July 24th, 2024. • Badge's art was updated on  July 27th, 2024, replacing its  old appearance. • Old Appearance • DemonicDarkwraith for image and other information. • pjc for Oaklore Navigation image.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/HydraSlayer.png"
   },
   {
     "name": "I Spy",
@@ -2535,8 +2606,8 @@
     "messageId": "20703068",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20703068",
     "category": "quest-completion",
-    "subcategory": "Quest Badges",
-    "retired": false,
+    "subcategory": "Misc",
+    "retired": true,
     "unreleased": false,
     "id": "i-spy",
     "description": "Discover the Falconreach Spy!",
@@ -2559,7 +2630,8 @@
       "quest-badges"
     ],
     "forumImageUrl": "https://i.imgur.com/pTZ1GfM.png",
-    "notes": "Badge was retired on  July 19th, 2024."
+    "notes": "Badge was retired on  July 19th, 2024.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/ISpy.png"
   },
   {
     "name": "Icebound Revenant",
@@ -2567,14 +2639,13 @@
     "messageId": "21782672",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21782672",
     "category": "collection",
-    "subcategory": "Classes Badges",
+    "subcategory": "Special Classes",
     "retired": false,
     "unreleased": false,
     "id": "icebound-revenant",
     "description": "Own the Icebound Revenant Armor!",
     "requirements": "Own  Icebound Revenant Armor",
     "daRequired": false,
-    "dcRequired": true,
     "howToObtain": [
       {
         "order": 1,
@@ -2591,7 +2662,8 @@
     "tags": [
       "classes-badges"
     ],
-    "forumImageUrl": "https://i.imgur.com/kMm5oq9.png"
+    "forumImageUrl": "https://i.imgur.com/kMm5oq9.png",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/IceboundRevenant.png"
   },
   {
     "name": "Icemaster",
@@ -2599,7 +2671,7 @@
     "messageId": "20716312",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20716312",
     "category": "seasonal",
-    "subcategory": "Other Badges",
+    "subcategory": "Frostval",
     "retired": false,
     "unreleased": false,
     "id": "icemaster",
@@ -2622,7 +2694,8 @@
     "tags": [
       "other-badges"
     ],
-    "forumImageUrl": "https://i.imgur.com/nwHFcU1.jpg"
+    "forumImageUrl": "https://i.imgur.com/nwHFcU1.jpg",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Icemaster.jpg"
   },
   {
     "name": "Idle Heroes",
@@ -2630,8 +2703,8 @@
     "messageId": "20703217",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20703217",
     "category": "quest-completion",
-    "subcategory": "Quest Badges",
-    "retired": false,
+    "subcategory": "Misc",
+    "retired": true,
     "unreleased": false,
     "id": "idle-heroes",
     "description": "Sing your way through Falconreach Idle!",
@@ -2655,7 +2728,8 @@
       "falconreach"
     ],
     "forumImageUrl": "https://i.imgur.com/N7tjICh.png",
-    "notes": "Badge was retired on  July 19th, 2024."
+    "notes": "Badge was retired on  July 19th, 2024.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/IdleHeroes.png"
   },
   {
     "name": "Information on Sepulchure",
@@ -2663,8 +2737,8 @@
     "messageId": "20702858",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20702858",
     "category": "quest-completion",
-    "subcategory": "Quest Badges",
-    "retired": false,
+    "subcategory": "Misc",
+    "retired": true,
     "unreleased": false,
     "id": "information-on-sepulchure",
     "description": "Discover information about Sepulchure!",
@@ -2687,7 +2761,8 @@
       "quest-badges"
     ],
     "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/InformationonSepulchure.png",
-    "notes": "Badge was retired on  July 19th, 2024."
+    "notes": "Badge was retired on  July 19th, 2024.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/InformationonSepulchure.png"
   },
   {
     "name": "List Completion",
@@ -2695,7 +2770,7 @@
     "messageId": "21887489",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21887489",
     "category": "seasonal",
-    "subcategory": "Other Badges",
+    "subcategory": "Mogloween",
     "retired": false,
     "unreleased": false,
     "id": "list-completion",
@@ -2718,7 +2793,8 @@
     "tags": [
       "other-badges"
     ],
-    "forumImageUrl": "http://i.imgur.com/MNATHBf.png"
+    "forumImageUrl": "http://i.imgur.com/MNATHBf.png",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/ListCompletion.png"
   },
   {
     "name": "Locksmith",
@@ -2726,7 +2802,7 @@
     "messageId": "20739835",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20739835",
     "category": "quest-completion",
-    "subcategory": "Quests Badges",
+    "subcategory": "Early Days",
     "retired": false,
     "unreleased": false,
     "id": "locksmith",
@@ -2750,7 +2826,8 @@
       "quests-badges",
       "oaklore"
     ],
-    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Locksmith.jpg"
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Locksmith.jpg",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Locksmith.jpg"
   },
   {
     "name": "Maleurous",
@@ -2758,7 +2835,7 @@
     "messageId": "22417423",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22417423",
     "category": "quest-completion",
-    "subcategory": "Quests Badges",
+    "subcategory": "Side Quests",
     "retired": false,
     "unreleased": false,
     "id": "maleurous",
@@ -2782,7 +2859,8 @@
       "quests-badges"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/Maleurous.png",
-    "notes": "Badge's art was added on  July 27th, 2024."
+    "notes": "Badge's art was added on  July 27th, 2024.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Maleurous.png"
   },
   {
     "name": "Mana Potion Mastery",
@@ -2790,7 +2868,7 @@
     "messageId": "20716141",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20716141",
     "category": "combat",
-    "subcategory": "Challenges Badges",
+    "subcategory": "Skills",
     "retired": false,
     "unreleased": false,
     "id": "mana-potion-mastery",
@@ -2813,7 +2891,8 @@
     "tags": [
       "challenges-badges"
     ],
-    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/ManaPotionMastery.png"
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/ManaPotionMastery.png",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/ManaPotionMastery.png"
   },
   {
     "name": "Merry Togsmas!",
@@ -2821,7 +2900,7 @@
     "messageId": "20716391",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20716391",
     "category": "seasonal",
-    "subcategory": "Other Badges",
+    "subcategory": "Frostval",
     "retired": false,
     "unreleased": false,
     "id": "merry-togsmas",
@@ -2844,7 +2923,8 @@
     "tags": [
       "other-badges"
     ],
-    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/MerryTogsmas.jpg"
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/MerryTogsmas.jpg",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/MerryTogsmas.jpg"
   },
   {
     "name": "Mogloween '07 Masks",
@@ -2852,7 +2932,7 @@
     "messageId": "20724455",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20724455",
     "category": "seasonal",
-    "subcategory": "Other Badges",
+    "subcategory": "Mogloween",
     "retired": false,
     "unreleased": false,
     "id": "mogloween-07-masks",
@@ -2876,7 +2956,8 @@
       "other-badges",
       "mogloween"
     ],
-    "forumImageUrl": "http://i.imgur.com/ruFKa.png"
+    "forumImageUrl": "http://i.imgur.com/ruFKa.png",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Mogloween07Masks.png"
   },
   {
     "name": "Mogloween '08 Masks",
@@ -2884,7 +2965,7 @@
     "messageId": "20724456",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20724456",
     "category": "seasonal",
-    "subcategory": "Other Badges",
+    "subcategory": "Mogloween",
     "retired": false,
     "unreleased": false,
     "id": "mogloween-08-masks",
@@ -2908,7 +2989,8 @@
       "other-badges",
       "mogloween"
     ],
-    "forumImageUrl": "http://i.imgur.com/8clbV.png"
+    "forumImageUrl": "http://i.imgur.com/8clbV.png",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Mogloween08Masks.png"
   },
   {
     "name": "Mogloween '09 Masks",
@@ -2916,7 +2998,7 @@
     "messageId": "20828185",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20828185",
     "category": "seasonal",
-    "subcategory": "Other Badges",
+    "subcategory": "Mogloween",
     "retired": false,
     "unreleased": false,
     "id": "mogloween-09-masks",
@@ -2940,7 +3022,8 @@
       "other-badges",
       "mogloween"
     ],
-    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Mogloween09Masks.jpg"
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Mogloween09Masks.jpg",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Mogloween09Masks.jpg"
   },
   {
     "name": "Mogloween '10 Masks",
@@ -2948,7 +3031,7 @@
     "messageId": "20736150",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20736150",
     "category": "seasonal",
-    "subcategory": "Other Badges",
+    "subcategory": "Mogloween",
     "retired": false,
     "unreleased": false,
     "id": "mogloween-10-masks",
@@ -2972,7 +3055,8 @@
       "other-badges",
       "mogloween"
     ],
-    "forumImageUrl": "http://i.imgur.com/SWnP0.png"
+    "forumImageUrl": "http://i.imgur.com/SWnP0.png",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Mogloween10Masks.png"
   },
   {
     "name": "Mogloween '11 Masks",
@@ -2980,7 +3064,7 @@
     "messageId": "20736151",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20736151",
     "category": "seasonal",
-    "subcategory": "Other Badges",
+    "subcategory": "Mogloween",
     "retired": false,
     "unreleased": false,
     "id": "mogloween-11-masks",
@@ -3004,7 +3088,8 @@
       "other-badges",
       "mogloween"
     ],
-    "forumImageUrl": "http://i.imgur.com/9Ixkf.png"
+    "forumImageUrl": "http://i.imgur.com/9Ixkf.png",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Mogloween11Masks.png"
   },
   {
     "name": "Mogloween '12 Masks",
@@ -3012,7 +3097,7 @@
     "messageId": "20828178",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20828178",
     "category": "seasonal",
-    "subcategory": "Other Badges",
+    "subcategory": "Mogloween",
     "retired": false,
     "unreleased": false,
     "id": "mogloween-12-masks",
@@ -3036,7 +3121,8 @@
       "other-badges",
       "mogloween"
     ],
-    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Mogloween12Masks.jpg"
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Mogloween12Masks.jpg",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Mogloween12Masks.jpg"
   },
   {
     "name": "Mogloween '13 Masks",
@@ -3044,7 +3130,7 @@
     "messageId": "21502340",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21502340",
     "category": "seasonal",
-    "subcategory": "Other Badges",
+    "subcategory": "Mogloween",
     "retired": false,
     "unreleased": false,
     "id": "mogloween-13-masks",
@@ -3068,7 +3154,8 @@
       "other-badges",
       "mogloween"
     ],
-    "forumImageUrl": "http://i.imgur.com/USSx93y.png"
+    "forumImageUrl": "http://i.imgur.com/USSx93y.png",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Mogloween13Masks.png"
   },
   {
     "name": "Mogloween '14 Masks",
@@ -3076,7 +3163,7 @@
     "messageId": "21851595",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21851595",
     "category": "seasonal",
-    "subcategory": "Other Badges",
+    "subcategory": "Mogloween",
     "retired": false,
     "unreleased": false,
     "id": "mogloween-14-masks",
@@ -3100,7 +3187,8 @@
       "other-badges",
       "mogloween"
     ],
-    "forumImageUrl": "http://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Mogloween14Masks.png"
+    "forumImageUrl": "http://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Mogloween14Masks.png",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Mogloween14Masks.png"
   },
   {
     "name": "Mogloween '15 Masks",
@@ -3108,7 +3196,7 @@
     "messageId": "22053311",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22053311",
     "category": "seasonal",
-    "subcategory": "Other Badges",
+    "subcategory": "Mogloween",
     "retired": false,
     "unreleased": false,
     "id": "mogloween-15-masks",
@@ -3132,7 +3220,8 @@
       "other-badges",
       "mogloween"
     ],
-    "forumImageUrl": "http://i.imgur.com/0SQCOPq.png"
+    "forumImageUrl": "http://i.imgur.com/0SQCOPq.png",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Mogloween15Masks.png"
   },
   {
     "name": "Mollo Destruction",
@@ -3140,7 +3229,7 @@
     "messageId": "20702314",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20702314",
     "category": "quest-completion",
-    "subcategory": "Quests Badges",
+    "subcategory": "Side Quests",
     "retired": false,
     "unreleased": false,
     "id": "mollo-destruction",
@@ -3163,7 +3252,8 @@
     "tags": [
       "quests-badges"
     ],
-    "forumImageUrl": "http://i.imgur.com/Oj0jZ.png"
+    "forumImageUrl": "http://i.imgur.com/Oj0jZ.png",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/MolloDestruction.png"
   },
   {
     "name": "Monkee Business",
@@ -3171,7 +3261,7 @@
     "messageId": "20706754",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20706754",
     "category": "quest-completion",
-    "subcategory": "Quests Badges",
+    "subcategory": "Side Quests",
     "retired": false,
     "unreleased": false,
     "id": "monkee-business",
@@ -3194,7 +3284,8 @@
     "tags": [
       "quests-badges"
     ],
-    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/MonkeeBusiness.jpg"
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/MonkeeBusiness.jpg",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/MonkeeBusiness.jpg"
   },
   {
     "name": "More Boxes!",
@@ -3202,7 +3293,7 @@
     "messageId": "20739708",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20739708",
     "category": "quest-completion",
-    "subcategory": "Quests Badges",
+    "subcategory": "Early Days",
     "retired": false,
     "unreleased": false,
     "id": "more-boxes",
@@ -3225,7 +3316,8 @@
     "tags": [
       "quests-badges"
     ],
-    "forumImageUrl": "http://i.imgur.com/IoOJ7.png"
+    "forumImageUrl": "http://i.imgur.com/IoOJ7.png",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/MoreBoxes.png"
   },
   {
     "name": "Naughty List",
@@ -3233,7 +3325,7 @@
     "messageId": "20716321",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20716321",
     "category": "seasonal",
-    "subcategory": "Other Badges",
+    "subcategory": "Frostval",
     "retired": false,
     "unreleased": false,
     "id": "naughty-list",
@@ -3256,7 +3348,8 @@
     "tags": [
       "other-badges"
     ],
-    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/NaughtyList.jpg"
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/NaughtyList.jpg",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/NaughtyList.jpg"
   },
   {
     "name": "Necromancer",
@@ -3264,7 +3357,7 @@
     "messageId": "20707718",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20707718",
     "category": "collection",
-    "subcategory": "Classes Badges",
+    "subcategory": "Trained Classes",
     "retired": false,
     "unreleased": false,
     "id": "necromancer",
@@ -3287,7 +3380,8 @@
     "tags": [
       "classes-badges"
     ],
-    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Necromancer.png"
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Necromancer.png",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Necromancer.png"
   },
   {
     "name": "Nest Defended",
@@ -3295,7 +3389,7 @@
     "messageId": "22417419",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22417419",
     "category": "quest-completion",
-    "subcategory": "Quests Badges",
+    "subcategory": "Side Quests",
     "retired": false,
     "unreleased": false,
     "id": "nest-defended",
@@ -3319,7 +3413,8 @@
       "quests-badges"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/NestDefended.png",
-    "notes": "Badge's art was added on  July 27th, 2024."
+    "notes": "Badge's art was added on  July 27th, 2024.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/NestDefended.png"
   },
   {
     "name": "Ninja",
@@ -3327,7 +3422,7 @@
     "messageId": "20707700",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20707700",
     "category": "collection",
-    "subcategory": "Classes Badges",
+    "subcategory": "Trained Classes",
     "retired": false,
     "unreleased": false,
     "id": "ninja",
@@ -3350,7 +3445,8 @@
     "tags": [
       "classes-badges"
     ],
-    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Ninja.png"
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Ninja.png",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Ninja.png"
   },
   {
     "name": "Nose for Trouble",
@@ -3358,7 +3454,7 @@
     "messageId": "22417413",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22417413",
     "category": "quest-completion",
-    "subcategory": "Quests Badges",
+    "subcategory": "Side Quests",
     "retired": false,
     "unreleased": false,
     "id": "nose-for-trouble",
@@ -3382,7 +3478,8 @@
       "quests-badges"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/NoseforTrouble.png",
-    "notes": "Badge's art was added on  July 27th, 2024."
+    "notes": "Badge's art was added on  July 27th, 2024.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/NoseforTrouble.png"
   },
   {
     "name": "Orb Extractor",
@@ -3390,7 +3487,7 @@
     "messageId": "21246503",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21246503",
     "category": "quest-completion",
-    "subcategory": "Quests Badges",
+    "subcategory": "Book 1 & 2",
     "retired": false,
     "unreleased": false,
     "id": "orb-extractor",
@@ -3414,7 +3511,8 @@
       "quests-badges"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/OrbExtractor.png",
-    "notes": "Badge's art was updated on  July 27th, 2024, replacing its  old appearance."
+    "notes": "Badge's art was updated on  July 27th, 2024, replacing its  old appearance.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/OrbExtractor.png"
   },
   {
     "name": "Paladin",
@@ -3422,7 +3520,7 @@
     "messageId": "20707730",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20707730",
     "category": "collection",
-    "subcategory": "Classes Badges",
+    "subcategory": "Trained Classes",
     "retired": false,
     "unreleased": false,
     "id": "paladin",
@@ -3446,7 +3544,8 @@
       "classes-badges"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/Paladin.png",
-    "notes": "Badge's art was changed since its inception. • Old Appearance • Older Appearance"
+    "notes": "Badge's art was changed since its inception. • Old Appearance • Older Appearance",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Paladin.png"
   },
   {
     "name": "Party On, Olaf!",
@@ -3454,8 +3553,8 @@
     "messageId": "20702348",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20702348",
     "category": "quest-completion",
-    "subcategory": "Quest Badges",
-    "retired": false,
+    "subcategory": "Misc",
+    "retired": true,
     "unreleased": false,
     "id": "party-on-olaf",
     "description": "DragonLords party with Olaf!",
@@ -3478,7 +3577,8 @@
       "quest-badges"
     ],
     "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/PartyOnOlaf.png",
-    "notes": "Badge was retired on  July 19th, 2024."
+    "notes": "Badge was retired on  July 19th, 2024.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/PartyOnOlaf.png"
   },
   {
     "name": "Pet Training Mastery",
@@ -3486,7 +3586,7 @@
     "messageId": "20702351",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20702351",
     "category": "combat",
-    "subcategory": "Challenges Badges",
+    "subcategory": "Skills",
     "retired": false,
     "unreleased": false,
     "id": "pet-training-mastery",
@@ -3509,7 +3609,8 @@
     "tags": [
       "challenges-badges"
     ],
-    "forumImageUrl": "http://i.imgur.com/q1RPm.png"
+    "forumImageUrl": "http://i.imgur.com/q1RPm.png",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/PetTrainingMastery.png"
   },
   {
     "name": "Pirate",
@@ -3517,7 +3618,7 @@
     "messageId": "20707697",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20707697",
     "category": "collection",
-    "subcategory": "Classes Badges",
+    "subcategory": "Trained Classes",
     "retired": false,
     "unreleased": false,
     "id": "pirate",
@@ -3540,7 +3641,8 @@
     "tags": [
       "classes-badges"
     ],
-    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Pirate.png"
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Pirate.png",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Pirate.png"
   },
   {
     "name": "Primalized",
@@ -3548,7 +3650,7 @@
     "messageId": "20707751",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20707751",
     "category": "collection",
-    "subcategory": "Classes Badges",
+    "subcategory": "Trained Classes",
     "retired": false,
     "unreleased": false,
     "id": "primalized",
@@ -3571,7 +3673,8 @@
     "tags": [
       "classes-badges"
     ],
-    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Primalized.png"
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Primalized.png",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Primalized.png"
   },
   {
     "name": "Primordial Witness",
@@ -3579,7 +3682,7 @@
     "messageId": "22317238",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22317238",
     "category": "combat",
-    "subcategory": "Challenges Badges",
+    "subcategory": "Arena Challenges",
     "retired": false,
     "unreleased": false,
     "id": "primordial-witness",
@@ -3602,7 +3705,8 @@
     "tags": [
       "challenges-badges"
     ],
-    "forumImageUrl": "https://i.imgur.com/C3GtzHi.png"
+    "forumImageUrl": "https://i.imgur.com/C3GtzHi.png",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/PrimordialWitness.png"
   },
   {
     "name": "PumpkinLord",
@@ -3610,7 +3714,7 @@
     "messageId": "20707706",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20707706",
     "category": "collection",
-    "subcategory": "Classes Badges",
+    "subcategory": "Trained Classes",
     "retired": false,
     "unreleased": false,
     "id": "pumpkinlord",
@@ -3633,7 +3737,8 @@
     "tags": [
       "classes-badges"
     ],
-    "forumImageUrl": "https://i.imgur.com/fqtkrPs.png"
+    "forumImageUrl": "https://i.imgur.com/fqtkrPs.png",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/PumpkinLord.png"
   },
   {
     "name": "PvP Arena Fighter",
@@ -3641,7 +3746,7 @@
     "messageId": "20705535",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20705535",
     "category": "combat",
-    "subcategory": "Other Badges",
+    "subcategory": "PvP",
     "retired": false,
     "unreleased": false,
     "id": "pvp-arena-fighter",
@@ -3665,7 +3770,8 @@
       "other-badges"
     ],
     "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/PvPArenaFighter.png",
-    "notes": "Badge was moved from Challenges Badges to Other Badges on  February 28th, 2025."
+    "notes": "Badge was moved from Challenges Badges to Other Badges on  February 28th, 2025.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/PvPArenaFighter.png"
   },
   {
     "name": "PvP Brawler",
@@ -3673,7 +3779,7 @@
     "messageId": "20705532",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20705532",
     "category": "combat",
-    "subcategory": "Other Badges",
+    "subcategory": "PvP",
     "retired": false,
     "unreleased": false,
     "id": "pvp-brawler",
@@ -3697,7 +3803,8 @@
       "other-badges"
     ],
     "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/PvPBrawler.png",
-    "notes": "Badge was moved from Challenges Badges to Other Badges on  February 28th, 2025."
+    "notes": "Badge was moved from Challenges Badges to Other Badges on  February 28th, 2025.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/PvPBrawler.png"
   },
   {
     "name": "PvP Grandmaster",
@@ -3705,7 +3812,7 @@
     "messageId": "20797154",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20797154",
     "category": "combat",
-    "subcategory": "Other Badges",
+    "subcategory": "PvP",
     "retired": false,
     "unreleased": false,
     "id": "pvp-grandmaster",
@@ -3729,7 +3836,8 @@
       "other-badges"
     ],
     "forumImageUrl": "http://i.imgur.com/McAiaEa.png",
-    "notes": "Badge was moved from Challenges Badges to Other Badges on  February 28th, 2025."
+    "notes": "Badge was moved from Challenges Badges to Other Badges on  February 28th, 2025.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/PvPGrandmaster.png"
   },
   {
     "name": "PvP Prize Fighter",
@@ -3737,7 +3845,7 @@
     "messageId": "20797152",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20797152",
     "category": "combat",
-    "subcategory": "Other Badges",
+    "subcategory": "PvP",
     "retired": false,
     "unreleased": false,
     "id": "pvp-prize-fighter",
@@ -3761,7 +3869,8 @@
       "other-badges"
     ],
     "forumImageUrl": "http://i.imgur.com/yYzhUKz.png",
-    "notes": "Badge was moved from Challenges Badges to Other Badges on  February 28th, 2025."
+    "notes": "Badge was moved from Challenges Badges to Other Badges on  February 28th, 2025.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/PvPPrizeFighter.png"
   },
   {
     "name": "Pyromancer",
@@ -3769,14 +3878,13 @@
     "messageId": "20857622",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20857622",
     "category": "collection",
-    "subcategory": "Classes Badges",
+    "subcategory": "Special Classes",
     "retired": false,
     "unreleased": false,
     "id": "pyromancer",
     "description": "Own the Pyromancer Armor!",
     "requirements": "Own  Pyromancer Armor",
     "daRequired": false,
-    "dcRequired": true,
     "howToObtain": [
       {
         "order": 1,
@@ -3793,7 +3901,8 @@
     "tags": [
       "classes-badges"
     ],
-    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Pyromancer.png"
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Pyromancer.png",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Pyromancer.png"
   },
   {
     "name": "Quadforce",
@@ -3801,7 +3910,7 @@
     "messageId": "22417414",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22417414",
     "category": "quest-completion",
-    "subcategory": "Quests Badges",
+    "subcategory": "Side Quests",
     "retired": false,
     "unreleased": false,
     "id": "quadforce",
@@ -3825,7 +3934,8 @@
       "quests-badges"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/Quadforce.png",
-    "notes": "Badge's art was added on  July 27th, 2024."
+    "notes": "Badge's art was added on  July 27th, 2024.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Quadforce.png"
   },
   {
     "name": "Quick Buy!",
@@ -3833,14 +3943,13 @@
     "messageId": "20728042",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20728042",
     "category": "misc",
-    "subcategory": "Other Badges",
-    "retired": false,
+    "subcategory": "Misc",
+    "retired": true,
     "unreleased": false,
     "id": "quick-buy",
     "description": "Own any of the Limited Quantity Shop items!",
     "requirements": "Own any  LQS weapon",
     "daRequired": false,
-    "dcRequired": true,
     "howToObtain": [
       {
         "order": 1,
@@ -3858,7 +3967,8 @@
       "other-badges"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/QuickBuy.png",
-    "notes": "Badge was retired on  February 28th, 2025."
+    "notes": "Badge was retired on  February 28th, 2025.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/QuickBuy.png"
   },
   {
     "name": "Ranger",
@@ -3866,7 +3976,7 @@
     "messageId": "20707701",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20707701",
     "category": "collection",
-    "subcategory": "Classes Badges",
+    "subcategory": "Trained Classes",
     "retired": false,
     "unreleased": false,
     "id": "ranger",
@@ -3890,7 +4000,8 @@
       "classes-badges"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/Ranger.png",
-    "notes": "Badge's art was updated on  July 19th, 2024, replacing its  old appearance."
+    "notes": "Badge's art was updated on  July 19th, 2024, replacing its  old appearance.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Ranger.png"
   },
   {
     "name": "Resident: Sneevil",
@@ -3898,7 +4009,7 @@
     "messageId": "20716400",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20716400",
     "category": "seasonal",
-    "subcategory": "Other Badges",
+    "subcategory": "Mogloween",
     "retired": false,
     "unreleased": false,
     "id": "resident-sneevil",
@@ -3921,7 +4032,8 @@
     "tags": [
       "other-badges"
     ],
-    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/ResidentSneevil.jpg"
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/ResidentSneevil.jpg",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/ResidentSneevil.jpg"
   },
   {
     "name": "Sailor of the Seas",
@@ -3929,7 +4041,7 @@
     "messageId": "22417389",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22417389",
     "category": "quest-completion",
-    "subcategory": "Quests Badges",
+    "subcategory": "Book 3",
     "retired": false,
     "unreleased": false,
     "id": "sailor-of-the-seas",
@@ -3953,7 +4065,8 @@
       "quests-badges"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/SailoroftheSeas.png",
-    "notes": "Badge's art was added on  July 27th, 2024."
+    "notes": "Badge's art was added on  July 27th, 2024.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/SailoroftheSeas.png"
   },
   {
     "name": "Sands of Eternity",
@@ -3961,7 +4074,7 @@
     "messageId": "22417385",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22417385",
     "category": "quest-completion",
-    "subcategory": "Quests Badges",
+    "subcategory": "Book 3",
     "retired": false,
     "unreleased": false,
     "id": "sands-of-eternity",
@@ -3985,7 +4098,8 @@
       "quests-badges"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/SandsofEternity.png",
-    "notes": "Badge's art was added on  July 27th, 2024."
+    "notes": "Badge's art was added on  July 27th, 2024.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/SandsofEternity.png"
   },
   {
     "name": "Secrets of Bacon!",
@@ -3993,7 +4107,7 @@
     "messageId": "20702365",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20702365",
     "category": "quest-completion",
-    "subcategory": "Quests Badges",
+    "subcategory": "Side Quests",
     "retired": false,
     "unreleased": false,
     "id": "secrets-of-bacon",
@@ -4016,7 +4130,8 @@
     "tags": [
       "quests-badges"
     ],
-    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/SecretsofBacon.png"
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/SecretsofBacon.png",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/SecretsofBacon.png"
   },
   {
     "name": "Shadow Hunter",
@@ -4024,7 +4139,7 @@
     "messageId": "21827291",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21827291",
     "category": "collection",
-    "subcategory": "Classes Badges",
+    "subcategory": "Trained Classes",
     "retired": false,
     "unreleased": false,
     "id": "shadow-hunter",
@@ -4048,7 +4163,8 @@
       "classes-badges"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/ShadowHunter.png",
-    "notes": "Badge's art was updated on  February 28th, 2025, replacing its  old appearance."
+    "notes": "Badge's art was updated on  February 28th, 2025, replacing its  old appearance.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/ShadowHunter.png"
   },
   {
     "name": "Shocking!",
@@ -4056,7 +4172,7 @@
     "messageId": "20728068",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20728068",
     "category": "quest-completion",
-    "subcategory": "Quests Badges",
+    "subcategory": "Book 1 & 2",
     "retired": false,
     "unreleased": false,
     "id": "shocking",
@@ -4080,7 +4196,8 @@
       "quests-badges"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/Shocking!.png",
-    "notes": "Badge's art was updated on  July 27th, 2024, replacing its  old appearance."
+    "notes": "Badge's art was updated on  July 27th, 2024, replacing its  old appearance.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Shocking%21.png"
   },
   {
     "name": "Siege of Haven",
@@ -4088,7 +4205,7 @@
     "messageId": "22417386",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22417386",
     "category": "quest-completion",
-    "subcategory": "Quests Badges",
+    "subcategory": "Book 3",
     "retired": false,
     "unreleased": false,
     "id": "siege-of-haven",
@@ -4112,7 +4229,8 @@
       "quests-badges"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/SiegeofHaven.png",
-    "notes": "Badge's art was added on  July 27th, 2024."
+    "notes": "Badge's art was added on  July 27th, 2024.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/SiegeofHaven.png"
   },
   {
     "name": "SoulWeaver",
@@ -4120,7 +4238,7 @@
     "messageId": "20707758",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20707758",
     "category": "collection",
-    "subcategory": "Classes Badges",
+    "subcategory": "Trained Classes",
     "retired": false,
     "unreleased": false,
     "id": "soulweaver",
@@ -4143,7 +4261,8 @@
     "tags": [
       "classes-badges"
     ],
-    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/SoulWeaver.png"
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/SoulWeaver.png",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/SoulWeaver.png"
   },
   {
     "name": "Special Delivery",
@@ -4151,7 +4270,7 @@
     "messageId": "20703287",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20703287",
     "category": "quest-completion",
-    "subcategory": "Quests Badges",
+    "subcategory": "Side Quests",
     "retired": false,
     "unreleased": false,
     "id": "special-delivery",
@@ -4174,7 +4293,8 @@
     "tags": [
       "quests-badges"
     ],
-    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/SpecialDelivery.png"
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/SpecialDelivery.png",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/SpecialDelivery.png"
   },
   {
     "name": "Star's Descendant",
@@ -4182,7 +4302,7 @@
     "messageId": "22417391",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22417391",
     "category": "quest-completion",
-    "subcategory": "Quests Badges",
+    "subcategory": "Book 3",
     "retired": false,
     "unreleased": false,
     "id": "star-s-descendant",
@@ -4206,7 +4326,8 @@
       "quests-badges"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/Star",
-    "notes": "Badge's art was added on  July 27th, 2024."
+    "notes": "Badge's art was added on  July 27th, 2024.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Star%27sDescendant.png"
   },
   {
     "name": "Starting Out",
@@ -4214,7 +4335,7 @@
     "messageId": "22417380",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22417380",
     "category": "quest-completion",
-    "subcategory": "Quests Badges",
+    "subcategory": "Early Days",
     "retired": false,
     "unreleased": false,
     "id": "starting-out",
@@ -4238,7 +4359,8 @@
       "quests-badges"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/StartingOut.png",
-    "notes": "Badge's art was added on  July 27th, 2024."
+    "notes": "Badge's art was added on  July 27th, 2024.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/StartingOut.png"
   },
   {
     "name": "Storm in the Night",
@@ -4246,7 +4368,7 @@
     "messageId": "22417392",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22417392",
     "category": "quest-completion",
-    "subcategory": "Quests Badges",
+    "subcategory": "Book 3",
     "retired": false,
     "unreleased": false,
     "id": "storm-in-the-night",
@@ -4270,7 +4392,8 @@
       "quests-badges"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/StormintheNight.png",
-    "notes": "Badge's art was added on  July 27th, 2024."
+    "notes": "Badge's art was added on  July 27th, 2024.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/StormintheNight.png"
   },
   {
     "name": "Sugary Nightmare",
@@ -4278,7 +4401,7 @@
     "messageId": "21571464",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21571464",
     "category": "seasonal",
-    "subcategory": "Other Badges",
+    "subcategory": "Frostval",
     "retired": false,
     "unreleased": false,
     "id": "sugary-nightmare",
@@ -4301,7 +4424,8 @@
     "tags": [
       "other-badges"
     ],
-    "forumImageUrl": "http://i.imgur.com/PagYiyj.png"
+    "forumImageUrl": "http://i.imgur.com/PagYiyj.png",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/SugaryNightmare.png"
   },
   {
     "name": "Technomancer",
@@ -4309,7 +4433,7 @@
     "messageId": "20707765",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20707765",
     "category": "collection",
-    "subcategory": "Classes Badges",
+    "subcategory": "Trained Classes",
     "retired": false,
     "unreleased": false,
     "id": "technomancer",
@@ -4332,7 +4456,8 @@
     "tags": [
       "classes-badges"
     ],
-    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Technomancer.png"
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Technomancer.png",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Technomancer.png"
   },
   {
     "name": "The ArchKnight",
@@ -4340,7 +4465,7 @@
     "messageId": "20712044",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20712044",
     "category": "quest-completion",
-    "subcategory": "Quests Badges",
+    "subcategory": "Side Quests",
     "retired": false,
     "unreleased": false,
     "id": "the-archknight",
@@ -4363,7 +4488,8 @@
     "tags": [
       "quests-badges"
     ],
-    "forumImageUrl": "http://i.imgur.com/EGuAt.png"
+    "forumImageUrl": "http://i.imgur.com/EGuAt.png",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/ArchKnight-The.png"
   },
   {
     "name": "The Balance",
@@ -4371,7 +4497,7 @@
     "messageId": "22417428",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22417428",
     "category": "combat",
-    "subcategory": "Challenges Badges",
+    "subcategory": "Arena Challenges",
     "retired": false,
     "unreleased": false,
     "id": "the-balance",
@@ -4395,7 +4521,8 @@
       "challenges-badges"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/TheBalance.png",
-    "notes": "Badge's art was added on  July 27th, 2024."
+    "notes": "Badge's art was added on  July 27th, 2024.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/TheBalance.png"
   },
   {
     "name": "The End of Magic",
@@ -4403,7 +4530,7 @@
     "messageId": "22417395",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22417395",
     "category": "quest-completion",
-    "subcategory": "Quests Badges",
+    "subcategory": "Book 3",
     "retired": false,
     "unreleased": false,
     "id": "the-end-of-magic",
@@ -4427,7 +4554,8 @@
       "quests-badges"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/TheEndofMagic.png",
-    "notes": "Badge's art was added on  July 27th, 2024."
+    "notes": "Badge's art was added on  July 27th, 2024.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/TheEndofMagic.png"
   },
   {
     "name": "The Magnum Opus",
@@ -4435,7 +4563,7 @@
     "messageId": "22403874",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22403874",
     "category": "combat",
-    "subcategory": "Challenges Badges",
+    "subcategory": "Arena Challenges",
     "retired": false,
     "unreleased": false,
     "id": "the-magnum-opus",
@@ -4458,7 +4586,8 @@
     "tags": [
       "challenges-badges"
     ],
-    "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/TheMagnumOpus.png"
+    "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/TheMagnumOpus.png",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/TheMagnumOpus.png"
   },
   {
     "name": "The Mystery is Afoot!",
@@ -4466,7 +4595,7 @@
     "messageId": "20702304",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20702304",
     "category": "quest-completion",
-    "subcategory": "Quests Badges",
+    "subcategory": "Side Quests",
     "retired": false,
     "unreleased": false,
     "id": "the-mystery-is-afoot",
@@ -4489,7 +4618,8 @@
     "tags": [
       "quests-badges"
     ],
-    "forumImageUrl": "http://i.imgur.com/gSQQa.png"
+    "forumImageUrl": "http://i.imgur.com/gSQQa.png",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/MysteryisAfoot-The.png"
   },
   {
     "name": "The Priestess",
@@ -4497,7 +4627,7 @@
     "messageId": "22417381",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22417381",
     "category": "quest-completion",
-    "subcategory": "Quests Badges",
+    "subcategory": "Early Days",
     "retired": false,
     "unreleased": false,
     "id": "the-priestess",
@@ -4521,7 +4651,8 @@
       "quests-badges"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/ThePriestess.png",
-    "notes": "Badge's art was added on  July 27th, 2024."
+    "notes": "Badge's art was added on  July 27th, 2024.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/ThePriestess.png"
   },
   {
     "name": "Thorns",
@@ -4529,7 +4660,7 @@
     "messageId": "22417420",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22417420",
     "category": "quest-completion",
-    "subcategory": "Quests Badges",
+    "subcategory": "Side Quests",
     "retired": false,
     "unreleased": false,
     "id": "thorns",
@@ -4553,7 +4684,8 @@
       "quests-badges"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/Thorns.png",
-    "notes": "Badge's art was added on  July 27th, 2024."
+    "notes": "Badge's art was added on  July 27th, 2024.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Thorns.png"
   },
   {
     "name": "Time Walker",
@@ -4561,14 +4693,13 @@
     "messageId": "20702956",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20702956",
     "category": "collection",
-    "subcategory": "Classes Badges",
+    "subcategory": "Special Classes",
     "retired": false,
     "unreleased": false,
     "id": "time-walker",
     "description": "Own any of the Calendar Armors!",
     "requirements": "Own  Chronomancer Armor,  Chronocorruptor,  TimeKiller,  ChronoZ,  Avatar of Time,  Archivist,  ShadowWalker of Time, or  Epoch Armor",
     "daRequired": false,
-    "dcRequired": true,
     "howToObtain": [
       {
         "order": 1,
@@ -4586,7 +4717,8 @@
       "classes-badges"
     ],
     "forumImageUrl": "https://i.imgur.com/KF0iY0U.png",
-    "notes": "This badge was previously named Time Killer."
+    "notes": "This badge was previously named Time Killer.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/TimeWalker.png"
   },
   {
     "name": "Timetorn Veteran!",
@@ -4594,7 +4726,7 @@
     "messageId": "22300645",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22300645",
     "category": "combat",
-    "subcategory": "Challenges Badges",
+    "subcategory": "Arena Challenges",
     "retired": false,
     "unreleased": false,
     "id": "timetorn-veteran",
@@ -4617,7 +4749,8 @@
     "tags": [
       "challenges-badges"
     ],
-    "forumImageUrl": "https://i.imgur.com/sGkK32n.png"
+    "forumImageUrl": "https://i.imgur.com/sGkK32n.png",
+    "imageUrl": "https://i.imgur.com/sGkK32n.png"
   },
   {
     "name": "Tog Nightmare",
@@ -4625,7 +4758,7 @@
     "messageId": "22325307",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22325307",
     "category": "combat",
-    "subcategory": "Challenges Badges",
+    "subcategory": "Arena Challenges",
     "retired": false,
     "unreleased": false,
     "id": "tog-nightmare",
@@ -4656,7 +4789,7 @@
     "messageId": "20707768",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20707768",
     "category": "collection",
-    "subcategory": "Classes Badges",
+    "subcategory": "Trained Classes",
     "retired": false,
     "unreleased": false,
     "id": "togslayer",
@@ -4679,7 +4812,8 @@
     "tags": [
       "classes-badges"
     ],
-    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/TogSlayer.png"
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/TogSlayer.png",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/TogSlayer.png"
   },
   {
     "name": "Tournament Champion",
@@ -4687,7 +4821,7 @@
     "messageId": "22417388",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22417388",
     "category": "quest-completion",
-    "subcategory": "Quests Badges",
+    "subcategory": "Book 3",
     "retired": false,
     "unreleased": false,
     "id": "tournament-champion",
@@ -4711,7 +4845,8 @@
       "quests-badges"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/TournamentChampion.png",
-    "notes": "Badge's art was added on  July 27th, 2024."
+    "notes": "Badge's art was added on  July 27th, 2024.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/TournamentChampion.png"
   },
   {
     "name": "Ultimate Destiny",
@@ -4719,14 +4854,13 @@
     "messageId": "22417425",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22417425",
     "category": "combat",
-    "subcategory": "Challenges Badges",
+    "subcategory": "Arena Challenges",
     "retired": false,
     "unreleased": false,
     "id": "ultimate-destiny",
     "description": "Forge an Ultimate Destiny Weapon.",
     "requirements": "Own  Ultimate Blinding Light of Destiny,  Ultimate DragonStaff of Destiny, or  Ultimate Twin Blades of Destiny",
     "daRequired": true,
-    "dcRequired": true,
     "howToObtain": [
       {
         "order": 1,
@@ -4744,7 +4878,8 @@
       "challenges-badges"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/UltimateDestiny.png",
-    "notes": "Badge's art was added on  July 27th, 2024."
+    "notes": "Badge's art was added on  July 27th, 2024.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/UltimateDestiny.png"
   },
   {
     "name": "Unreal Doom",
@@ -4752,14 +4887,13 @@
     "messageId": "22417426",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22417426",
     "category": "combat",
-    "subcategory": "Challenges Badges",
+    "subcategory": "Arena Challenges",
     "retired": false,
     "unreleased": false,
     "id": "unreal-doom",
     "description": "Forge an Unreal Doom Weapon.",
     "requirements": "Own  Unreal ShadowReaper of Doom,  Unreal Skullstaff of Doom, or  Unreal Twin Blades of Doom",
     "daRequired": true,
-    "dcRequired": true,
     "howToObtain": [
       {
         "order": 1,
@@ -4777,7 +4911,8 @@
       "challenges-badges"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/UnrealDoom.png",
-    "notes": "Badge's art was added on  July 27th, 2024."
+    "notes": "Badge's art was added on  July 27th, 2024.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/UnrealDoom.png"
   },
   {
     "name": "Void Magic",
@@ -4785,7 +4920,7 @@
     "messageId": "20706578",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20706578",
     "category": "quest-completion",
-    "subcategory": "Quests Badges",
+    "subcategory": "Side Quests",
     "retired": false,
     "unreleased": false,
     "id": "void-magic",
@@ -4808,7 +4943,8 @@
     "tags": [
       "quests-badges"
     ],
-    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/VoidMagicpic.jpg"
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/VoidMagicpic.jpg",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/VoidMagicpic.jpg"
   },
   {
     "name": "Walk Through Fire",
@@ -4816,7 +4952,7 @@
     "messageId": "20797933",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20797933",
     "category": "quest-completion",
-    "subcategory": "Quests Badges",
+    "subcategory": "Book 1 & 2",
     "retired": false,
     "unreleased": false,
     "id": "walk-through-fire",
@@ -4840,7 +4976,8 @@
       "quests-badges"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/WalkThroughFire.png",
-    "notes": "Badge's art was updated on  July 19th, 2024, replacing its  old appearance. • DemonicDarkwraith for image and other information. • Legendary Ash for requirement correction."
+    "notes": "Badge's art was updated on  July 19th, 2024, replacing its  old appearance. • DemonicDarkwraith for image and other information. • Legendary Ash for requirement correction.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/WalkThroughFire.png"
   },
   {
     "name": "Wanderer",
@@ -4848,7 +4985,7 @@
     "messageId": "20703176",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20703176",
     "category": "quest-completion",
-    "subcategory": "Quests Badges",
+    "subcategory": "Side Quests",
     "retired": false,
     "unreleased": false,
     "id": "wanderer",
@@ -4871,7 +5008,8 @@
     "tags": [
       "quests-badges"
     ],
-    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Wanderer.png"
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Wanderer.png",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Wanderer.png"
   },
   {
     "name": "Water You Doing?",
@@ -4879,7 +5017,7 @@
     "messageId": "21440422",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21440422",
     "category": "quest-completion",
-    "subcategory": "Quests Badges",
+    "subcategory": "Book 1 & 2",
     "retired": false,
     "unreleased": false,
     "id": "water-you-doing",
@@ -4903,7 +5041,8 @@
       "quests-badges"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/WaterYouDoing.png",
-    "notes": "Badge's art was updated on  July 27th, 2024, replacing its  old appearance. • DemonicDarkwraith for image and other information. • Niki for correction."
+    "notes": "Badge's art was updated on  July 27th, 2024, replacing its  old appearance. • DemonicDarkwraith for image and other information. • Niki for correction.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/WaterYouDoing.png"
   },
   {
     "name": "Weave With Me!",
@@ -4911,7 +5050,7 @@
     "messageId": "20796140",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20796140",
     "category": "quest-completion",
-    "subcategory": "Quests Badges",
+    "subcategory": "Side Quests",
     "retired": false,
     "unreleased": false,
     "id": "weave-with-me",
@@ -4934,7 +5073,8 @@
     "tags": [
       "quests-badges"
     ],
-    "forumImageUrl": "http://i.imgur.com/gifhP.png"
+    "forumImageUrl": "http://i.imgur.com/gifhP.png",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/WeaveWithMe.png"
   },
   {
     "name": "Weave Without Me!",
@@ -4942,7 +5082,7 @@
     "messageId": "21862454",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21862454",
     "category": "quest-completion",
-    "subcategory": "Quests Badges",
+    "subcategory": "Side Quests",
     "retired": false,
     "unreleased": false,
     "id": "weave-without-me",
@@ -4965,7 +5105,8 @@
     "tags": [
       "quests-badges"
     ],
-    "forumImageUrl": "http://i.imgur.com/kSwMrB8.png"
+    "forumImageUrl": "http://i.imgur.com/kSwMrB8.png",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/WeaveWithoutMe.png"
   },
   {
     "name": "Wild Fighter",
@@ -4973,8 +5114,8 @@
     "messageId": "20703126",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20703126",
     "category": "quest-completion",
-    "subcategory": "Quest Badges",
-    "retired": false,
+    "subcategory": "Misc",
+    "retired": true,
     "unreleased": false,
     "id": "wild-fighter",
     "description": "Defeat Wolf and Bear at the Forest Gate!",
@@ -4997,7 +5138,8 @@
       "quest-badges"
     ],
     "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/WildFighter.png",
-    "notes": "Badge was retired on  July 19th, 2024."
+    "notes": "Badge was retired on  July 19th, 2024.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/WildFighter.png"
   },
   {
     "name": "Worthy",
@@ -5005,7 +5147,7 @@
     "messageId": "21063536",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21063536",
     "category": "collection",
-    "subcategory": "Classes Badges",
+    "subcategory": "Trained Classes",
     "retired": false,
     "unreleased": false,
     "id": "worthy",
@@ -5028,7 +5170,8 @@
     "tags": [
       "classes-badges"
     ],
-    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Worthy.jpg"
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Worthy.jpg",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Worthy.jpg"
   },
   {
     "name": "Wrestling Champion!",
@@ -5036,7 +5179,7 @@
     "messageId": "21238166",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21238166",
     "category": "seasonal",
-    "subcategory": "Other Badges",
+    "subcategory": "Hero's Heart Day",
     "retired": false,
     "unreleased": false,
     "id": "wrestling-champion",
@@ -5059,7 +5202,8 @@
     "tags": [
       "other-badges"
     ],
-    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/WrestlingChampion.png"
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/WrestlingChampion.png",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/WrestlingChampion.png"
   },
   {
     "name": "X-val!",
@@ -5067,7 +5211,7 @@
     "messageId": "20716316",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20716316",
     "category": "seasonal",
-    "subcategory": "Other Badges",
+    "subcategory": "Frostval",
     "retired": false,
     "unreleased": false,
     "id": "x-val",
@@ -5090,6 +5234,7 @@
     "tags": [
       "other-badges"
     ],
-    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/X-valpic.jpg"
+    "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/X-valpic.jpg",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/X-val.jpg"
   }
 ]

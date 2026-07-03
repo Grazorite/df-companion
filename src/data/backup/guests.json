@@ -1,0 +1,1298 @@
+[
+  {
+    "id": "guest-aegis-1",
+    "name": "Aegis (1)",
+    "slug": "guest-aegis-1",
+    "type": "guest",
+    "description": "A temporary guest companion.",
+    "daRequired": false,
+    "isTemp": true,
+    "elements": [
+      "ICE"
+    ],
+    "traits": [],
+    "level": "As player",
+    "damage": "Scaled",
+    "stats": "See guestStats",
+    "resists": "None",
+    "obtainMethods": [
+      {
+        "location": "Book of Lore -> Guests (-> Book 1&2) -> Aegis - Invite as First Guest/Second Guest (DA Required),  Ravenloss (Books 1 and 2) -> Invite Aegis",
+        "priceType": "free",
+        "requirements": "None"
+      }
+    ],
+    "attacks": [
+      {
+        "name": "Shatter",
+        "description": "1 hit x 160% damage \n This attack has +120 Bonus.",
+        "effect": "1 hit of 160% damage, with +120 Bonus.",
+        "manaCost": "20",
+        "cooldown": "9",
+        "damageType": "Magic",
+        "element": "Ice",
+        "buttonImageUrl": "https://i.imgur.com/UNNyCz6.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Aegis1-Shatter.png"
+      },
+      {
+        "name": "Ice Domain",
+        "description": "4 hits x 50% damage (200%) \n Target: (On hit) -20 Ice resist for 3 turns.",
+        "effect": "4 hits of 50% damage, amounting to 200% damage; applies 'Ice Domain' (-20 Ice Resist) to target for 3 turns inclusive.",
+        "manaCost": "20",
+        "cooldown": "4",
+        "damageType": "Magic",
+        "element": "Ice",
+        "buttonImageUrl": "https://i.imgur.com/8SqQTZK.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Aegis1-IceDomain.png"
+      },
+      {
+        "name": "Shield",
+        "description": "Hero: +40 Defenses for 6 turns.",
+        "effect": "Applies 'Soul Shield' (+40 Block/Parry/Dodge Defense) to player for 6 turns.",
+        "manaCost": "15",
+        "cooldown": "9",
+        "damageType": "N/A",
+        "element": "N/A",
+        "buttonImageUrl": "https://i.imgur.com/Mxli5RW.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Aegis1-Shield.png"
+      },
+      {
+        "name": "Hailstorm",
+        "description": "1 hit x 150% damage to all targets",
+        "effect": "1 hit of 150% damage to all foes.",
+        "manaCost": "20",
+        "cooldown": "3",
+        "damageType": "Magic",
+        "element": "Ice",
+        "buttonImageUrl": "https://i.imgur.com/MVt9GX8.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Aegis1-Hailstorm.png"
+      },
+      {
+        "name": "Attack",
+        "description": "3 hits x 40% damage (120%)",
+        "effect": "3 hits of 40% damage, amounting to 120% damage, with -5 Bonus.",
+        "manaCost": "0",
+        "cooldown": "0",
+        "damageType": "Magic",
+        "element": "Ice",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Aegis1-Attack.png"
+      }
+    ],
+    "rarity": "Unknown",
+    "evolutions": [],
+    "releaseDate": "July 11th, 2014",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18708516",
+    "notes": "• Players initially required to equip the  SoulWeaver class to invite Aegis (1); this requirement was modified to unlocking the  SoulWeaver class on  February 28th, 2025.\n• The following changes were implemented on  April 11th, 2025:\n  • Aegis (1)'s tooltips were updated.\n• 'Shatter', 'Ice Domain', and 'Hailstorm' skills were modified.",
+    "alsoSee": [],
+    "tags": [
+      "aegis",
+      "(1)",
+      "temporary",
+      "guest",
+      "companion.",
+      "ice"
+    ],
+    "guestStats": {
+      "level": "As player",
+      "damage": "Scaled",
+      "damageType": "Magic",
+      "element": "Ice",
+      "hp": "As player, less END bonus",
+      "mp": "As player, less WIS bonus",
+      "characterStats": {
+        "str": "0",
+        "dex": "0",
+        "int": "0",
+        "cha": "0",
+        "luk": "0",
+        "end": "0",
+        "wis": "0"
+      },
+      "offense": {
+        "boost": "0%",
+        "bonus": "50",
+        "crit": "10"
+      },
+      "damageMultipliers": {
+        "nonCrit": "100%",
+        "dex": "100%",
+        "dot": "100%",
+        "crit": "175%"
+      },
+      "defense": {
+        "melee": "5",
+        "pierce": "0",
+        "magic": "5",
+        "block": "0",
+        "parry": "0",
+        "dodge": "0"
+      },
+      "damageReduction": {
+        "nonCrit": "0%",
+        "dot": "0%",
+        "crit": "0%"
+      }
+    }
+  },
+  {
+    "id": "guest-alteon",
+    "name": "Alteon",
+    "slug": "guest-alteon",
+    "type": "guest",
+    "description": "Human DragonLord",
+    "daRequired": false,
+    "isTemp": true,
+    "elements": [
+      "ENE",
+      "FIR"
+    ],
+    "traits": [],
+    "level": "As player",
+    "damage": "Scaled",
+    "stats": "See guestStats",
+    "resists": "None",
+    "obtainMethods": [
+      {
+        "location": "Chasing Answers,  Outpost Outskirts,  Hawk in the Sky,  Crash and Burn,  The Flame Within,  At Fissure's Edge,  The Final Steps,  Convergence (Part 1) -> Invite Alteon and Amadeus",
+        "priceType": "free",
+        "requirements": "None"
+      }
+    ],
+    "attacks": [
+      {
+        "name": "DragonLord's Fury",
+        "description": "Focus your fury to stun foe",
+        "effect": "1 hit of 160% damage, with 30 Bonus; applies 'Cannot attack' to target, stunning it for 1 turn.",
+        "manaCost": "25",
+        "cooldown": "19",
+        "damageType": "Magic",
+        "element": "Energy",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alteon-Button01-Fury.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alteon-PierceDragonLordsFury.png"
+      },
+      {
+        "name": "Dragon's Breath",
+        "description": "Embrace the burning fury of dragons.",
+        "effect": "1 hit of 100% damage; applies 'Dragon Fire' (a 50% Magic Fire DoT effect, -10 All Resist, +10 Health Resist) to target for 4 turns inclusive.",
+        "manaCost": "15",
+        "cooldown": "11",
+        "damageType": "Magic",
+        "element": "Fire",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alteon-Button02-Flame.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alteon-DragonsBreath.png"
+      },
+      {
+        "name": "Rush",
+        "description": "Available after a successful Pierce",
+        "requirements": "Successful 'Pierce' to unlock",
+        "effect": "3 hits of 150% damage, amounting to 450% damage.",
+        "manaCost": "0",
+        "cooldown": "0",
+        "damageType": "Magic",
+        "element": "Energy",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alteon-Button03-Rush.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alteon-Rush.png"
+      },
+      {
+        "name": "Pierce",
+        "description": "Unlocked after a succesful attack.",
+        "requirements": "Successful attack to unlock",
+        "effect": "1 hit of 150% damage.",
+        "manaCost": "0",
+        "cooldown": "2",
+        "damageType": "Magic",
+        "element": "Energy",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alteon-Button04-Pierce.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alteon-PierceDragonLordsFury.png"
+      },
+      {
+        "name": "Attack",
+        "effect": "1 hit of 120% damage, with +60 Bonus.",
+        "manaCost": "0",
+        "cooldown": "0",
+        "damageType": "Magic",
+        "element": "Energy",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alteon-Attack.png"
+      }
+    ],
+    "rarity": "Unknown",
+    "evolutions": [],
+    "releaseDate": "March 24th, 2023",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alteon.png",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22409330",
+    "notes": "• Alteon has a series of unconventional stats in the quests  Hawk in the Sky,  Crash and Burn,  The Flame Within,  At Fissure's Edge,  The Final Steps, and  Convergence (Part 1):\n  • Alteon gains -10 Immobility,  -60 Health, + 60 All Resists.\n• Alteon's base damage is increased by 50%.\n• Skip skill was added with the release of  Crash and Burn.",
+    "alsoSee": [],
+    "tags": [
+      "alteon",
+      "human",
+      "dragonlord",
+      "ene",
+      "fir"
+    ],
+    "guestStats": {
+      "level": "As player",
+      "damage": "Scaled",
+      "damageType": "Magic",
+      "element": "Energy",
+      "hp": "As player, less END bonus",
+      "mp": "As player, less WIS bonus",
+      "characterStats": {
+        "str": "0",
+        "dex": "0",
+        "int": "0",
+        "cha": "0",
+        "luk": "0",
+        "end": "0",
+        "wis": "0"
+      },
+      "offense": {
+        "boost": "0%",
+        "bonus": "100",
+        "crit": "5"
+      },
+      "damageMultipliers": {
+        "nonCrit": "100%",
+        "dex": "100%",
+        "dot": "100%",
+        "crit": "175%"
+      },
+      "defense": {
+        "melee": "5",
+        "pierce": "0",
+        "magic": "5",
+        "block": "0",
+        "parry": "0",
+        "dodge": "0"
+      },
+      "damageReduction": {
+        "nonCrit": "0%",
+        "dot": "0%",
+        "crit": "0%"
+      }
+    }
+  },
+  {
+    "id": "guest-alz-ein-etaos",
+    "name": "Alz'ein & Etaos",
+    "slug": "guest-alz-ein-etaos",
+    "type": "guest",
+    "description": "Ateala Riftwalker & Cryptic",
+    "daRequired": false,
+    "isTemp": true,
+    "elements": [
+      "???"
+    ],
+    "traits": [],
+    "level": "As player",
+    "damage": "Scaled",
+    "stats": "See guestStats",
+    "resists": "None",
+    "obtainMethods": [
+      {
+        "location": "Master of Puppets",
+        "priceType": "free",
+        "requirements": "None"
+      }
+    ],
+    "attacks": [
+      {
+        "name": "Final Blow",
+        "description": "11 hits x 36.35% damage (400%)",
+        "effect": "11 hits of ~36.36% damage, amounting to 400% damage.",
+        "manaCost": "20",
+        "cooldown": "14",
+        "damageType": "Melee",
+        "element": "???",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz"
+      },
+      {
+        "name": "Realm Change",
+        "description": "1 hit x 100% damage \n Self: +180 Avoidance for 2 turns, +50 Boost for 3 turns.",
+        "effect": "Applies 'Fade' (+180 Melee/Pierce/Magic Avoidance) to themselves for 2 turns; applies 'Higher Realm' (+50% Boost) to themselves for 3 turns inclusive; 1 hit of 100% damage.",
+        "manaCost": "20",
+        "cooldown": "4",
+        "damageType": "Melee",
+        "element": "???",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz"
+      },
+      {
+        "name": "Etaos' Precision",
+        "description": "3 hits x 70% damage (210%) \n Target: (On hit) -20 All for 3 turns",
+        "effect": "1 hit of 70% damage; applies 'Precision Pierce' (-15 All Resist, +15 Health Resist) to target for 3 turns inclusive.",
+        "manaCost": "15",
+        "cooldown": "5",
+        "damageType": "Melee",
+        "element": "???",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz"
+      },
+      {
+        "name": "Attack",
+        "description": "4 hits x 25% damage (100%)",
+        "effect": "4 hits of 25% damage, amounting to 100% damage.",
+        "manaCost": "0",
+        "cooldown": "0",
+        "damageType": "Melee",
+        "element": "???",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz"
+      },
+      {
+        "name": "Melee Combo",
+        "description": "5 hits x 40% damage (200%) \n Available after a successful attack.",
+        "requirements": "Successful attack where the last hit lands to unlock",
+        "effect": "5 hits of 40% damage, amounting to 200% damage.",
+        "manaCost": "15",
+        "cooldown": "2",
+        "damageType": "Melee",
+        "element": "???",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz"
+      },
+      {
+        "name": "Rift Effect",
+        "description": "5 hits x 40% damage (200%) \n Available after a successful Combo.",
+        "requirements": "Successful 'Melee Combo' where the last hit lands to unlock",
+        "effect": "5 hits of 40% damage, amounting to 200% damage.",
+        "manaCost": "20",
+        "cooldown": "0",
+        "damageType": "Melee",
+        "element": "???",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz"
+      },
+      {
+        "name": "Rift Cross",
+        "description": "2 hits x 75% damage (150%) \n Target: (On hit) Stun for 1 turn.",
+        "effect": "2 hits of 75% damage, amounting to 150% damage; applies 'Stun' to target, stunning it for 1 turn.",
+        "manaCost": "27",
+        "cooldown": "14",
+        "damageType": "Melee",
+        "element": "???",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz"
+      },
+      {
+        "name": "Strength Strike",
+        "description": "1 hit x 37.5% damage \n Target: (On hit) -20 Boost for 5 turns.",
+        "effect": "1 hit of 37.5% damage; applies 'Str Strike' (-20% Boost) to target for 5 turns.",
+        "manaCost": "25",
+        "cooldown": "10",
+        "damageType": "Melee",
+        "element": "???",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz"
+      }
+    ],
+    "rarity": "Unknown",
+    "evolutions": [],
+    "releaseDate": "May 15th, 2026",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22426204",
+    "alsoSee": [],
+    "tags": [
+      "alz'ein",
+      "etaos",
+      "ateala",
+      "riftwalker",
+      "cryptic",
+      "???"
+    ],
+    "guestStats": {
+      "level": "As player",
+      "damage": "Scaled",
+      "damageType": "Melee",
+      "element": "???",
+      "hp": "As player, less END bonus",
+      "mp": "As player, less WIS bonus",
+      "characterStats": {
+        "str": "0",
+        "dex": "0",
+        "int": "0",
+        "cha": "0",
+        "luk": "0",
+        "end": "0",
+        "wis": "0"
+      },
+      "offense": {
+        "boost": "0%",
+        "bonus": "50",
+        "crit": "5"
+      },
+      "damageMultipliers": {
+        "nonCrit": "100%",
+        "dex": "100%",
+        "dot": "100%",
+        "crit": "175%"
+      },
+      "defense": {
+        "melee": "5",
+        "pierce": "5",
+        "magic": "5",
+        "block": "0",
+        "parry": "0",
+        "dodge": "0"
+      },
+      "damageReduction": {
+        "nonCrit": "0%",
+        "dot": "0%",
+        "crit": "0%"
+      }
+    }
+  },
+  {
+    "id": "guest-alz-ein-isiri-1",
+    "name": "Alz'ein & Isiri (1)",
+    "slug": "guest-alz-ein-isiri-1",
+    "type": "guest",
+    "description": "A temporary guest companion.",
+    "daRequired": false,
+    "isTemp": true,
+    "elements": [
+      "DAR"
+    ],
+    "traits": [],
+    "level": "As player",
+    "damage": "Scaled",
+    "stats": "See guestStats",
+    "resists": "None",
+    "obtainMethods": [
+      {
+        "location": "The General's Arrival,  The Puppet General",
+        "priceType": "free",
+        "requirements": "None"
+      }
+    ],
+    "attacks": [
+      {
+        "name": "Final Blow",
+        "description": "11 hits x 36.35% damage (400%)",
+        "effect": "11 hits of ~36.36% damage, amounting to 400% damage.",
+        "manaCost": "20",
+        "cooldown": "14",
+        "damageType": "Melee",
+        "element": "Darkness",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz"
+      },
+      {
+        "name": "Realm Change",
+        "description": "1 hit x 100% damage \n Self: +180 Avoidance for 2 turns, +50 Boost for 3 turns.",
+        "effect": "Applies 'Fade' (+180 Melee/Pierce/Magic Avoidance) to themselves for 2 turns; applies 'Higher Realm' (+50% Boost) to themselves for 3 turns inclusive; 1 hit of 100% damage.",
+        "manaCost": "20",
+        "cooldown": "4",
+        "damageType": "Melee",
+        "element": "Darkness",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz"
+      },
+      {
+        "name": "Isiri's Sight",
+        "description": "Self: +50 Boost for 4 turns. Hero: +20 Boost for 4 turns.",
+        "effect": "Applies 'Star's Blessing' (+20% Boost) to player for 4 turns; applies 'Star's Blessing' (+50% Boost) to themselves for 4 turns.",
+        "manaCost": "15",
+        "cooldown": "5",
+        "damageType": "N/A",
+        "element": "N/A",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz"
+      },
+      {
+        "name": "Attack",
+        "description": "4 hits x 25% damage (100%)",
+        "effect": "4 hits of 25% damage, amounting to 100% damage.",
+        "manaCost": "0",
+        "cooldown": "0",
+        "damageType": "Melee",
+        "element": "Darkness",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz"
+      },
+      {
+        "name": "Melee Combo",
+        "description": "5 hits x 40% damage (200%) \n Available after a successful attack.",
+        "requirements": "Successful attack where the last hit lands to unlock",
+        "effect": "5 hits of 40% damage, amounting to 200% damage.",
+        "manaCost": "15",
+        "cooldown": "2",
+        "damageType": "Melee",
+        "element": "Darkness",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz"
+      },
+      {
+        "name": "Rift Effect",
+        "description": "5 hits x 40% damage (200%) \n Available after a successful Combo.",
+        "requirements": "Successful 'Melee Combo' where the last hit lands to unlock",
+        "effect": "5 hits of 40% damage, amounting to 200% damage.",
+        "manaCost": "20",
+        "cooldown": "0",
+        "damageType": "Melee",
+        "element": "Darkness",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz"
+      },
+      {
+        "name": "Rift Cross",
+        "description": "2 hits x 75% damage (150%) \n Target: (On hit) Stun for 1 turn.",
+        "effect": "2 hits of 75% damage, amounting to 150% damage; applies 'Stun' to target, stunning it for 1 turn.",
+        "manaCost": "27",
+        "cooldown": "14",
+        "damageType": "Melee",
+        "element": "Darkness",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz"
+      },
+      {
+        "name": "Strength Strike",
+        "description": "1 hit x 37.5% damage \n Target: (On hit) -20 Boost for 5 turns.",
+        "effect": "1 hit of 37.5% damage; applies 'Str Strike' (-20% Boost) to target for 5 turns.",
+        "manaCost": "25",
+        "cooldown": "10",
+        "damageType": "Melee",
+        "element": "Darkness",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz"
+      }
+    ],
+    "rarity": "Unknown",
+    "evolutions": [],
+    "releaseDate": "December 29th, 2023",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22413728",
+    "notes": "• Tooltips for this guest were updated on  April 25th, 2025.",
+    "alsoSee": [],
+    "tags": [
+      "alz'ein",
+      "isiri",
+      "(1)",
+      "temporary",
+      "guest",
+      "companion.",
+      "dar"
+    ],
+    "guestStats": {
+      "level": "As player",
+      "damage": "Scaled",
+      "damageType": "Melee",
+      "element": "Darkness",
+      "hp": "As player, less END bonus",
+      "mp": "As player, less WIS bonus",
+      "characterStats": {
+        "str": "0",
+        "dex": "0",
+        "int": "0",
+        "cha": "0",
+        "luk": "0",
+        "end": "0",
+        "wis": "0"
+      },
+      "offense": {
+        "boost": "0%",
+        "bonus": "50",
+        "crit": "5"
+      },
+      "damageMultipliers": {
+        "nonCrit": "100%",
+        "dex": "100%",
+        "dot": "100%",
+        "crit": "175%"
+      },
+      "defense": {
+        "melee": "5",
+        "pierce": "5",
+        "magic": "5",
+        "block": "0",
+        "parry": "0",
+        "dodge": "0"
+      },
+      "damageReduction": {
+        "nonCrit": "0%",
+        "dot": "0%",
+        "crit": "0%"
+      }
+    }
+  },
+  {
+    "id": "guest-alz-ein-nirios",
+    "name": "Alz'ein & Nirios",
+    "slug": "guest-alz-ein-nirios",
+    "type": "guest",
+    "description": "Ateala Riftwalker & Cryptic",
+    "daRequired": false,
+    "isTemp": true,
+    "elements": [
+      "???"
+    ],
+    "traits": [],
+    "level": "As player",
+    "damage": "Scaled",
+    "stats": "See guestStats",
+    "resists": "None",
+    "obtainMethods": [
+      {
+        "location": "After Alz'ein!,  Where's Warlic?",
+        "priceType": "free",
+        "requirements": "None"
+      }
+    ],
+    "attacks": [
+      {
+        "name": "Final Blow",
+        "description": "11 hits x 36.35% damage (400%)",
+        "effect": "11 hits of ~36.36% damage, amounting to 400% damage.",
+        "manaCost": "20",
+        "cooldown": "14",
+        "damageType": "Melee",
+        "element": "???",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz"
+      },
+      {
+        "name": "Illusionary Veil",
+        "description": "Self: +200 Crit for 4 turns.",
+        "effect": "Applies 'Illusion' (+200 Crit) to themselves for 4 turns.",
+        "manaCost": "15",
+        "cooldown": "8",
+        "damageType": "N/A",
+        "element": "N/A",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz"
+      },
+      {
+        "name": "Nirios' Focus",
+        "description": "Self: +60 Bonus for 4 turns. Hero: +30 Bonus for 4 turns.",
+        "effect": "Applies 'Mind Focused' (+60 Bonus) to themselves for 4 turns; applies 'Mind Focused' (+30 Bonus) to player for 4 turns.",
+        "manaCost": "15",
+        "cooldown": "5",
+        "damageType": "N/A",
+        "element": "N/A",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz"
+      },
+      {
+        "name": "Attack",
+        "description": "4 hits x 25% damage (100%)",
+        "effect": "4 hits of 25% damage, amounting to 100% damage.",
+        "manaCost": "0",
+        "cooldown": "0",
+        "damageType": "Melee",
+        "element": "???",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz"
+      },
+      {
+        "name": "Melee Combo",
+        "description": "5 hits x 40% damage (200%) \n Available after a successful attack.",
+        "requirements": "Successful attack where the last hit lands to unlock",
+        "effect": "5 hits of 40% damage, amounting to 200% damage.",
+        "manaCost": "15",
+        "cooldown": "2",
+        "damageType": "Melee",
+        "element": "???",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz"
+      },
+      {
+        "name": "Rift Effect",
+        "description": "5 hits x 40% damage (200%) \n Available after a successful Combo.",
+        "requirements": "Successful 'Melee Combo' where the last hit lands to unlock",
+        "effect": "5 hits of 40% damage, amounting to 200% damage.",
+        "manaCost": "20",
+        "cooldown": "0",
+        "damageType": "Melee",
+        "element": "???",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz"
+      },
+      {
+        "name": "Rift Cross",
+        "description": "2 hits x 75% damage (150%) \n Target: (On hit) Stun for 1 turn.",
+        "effect": "2 hits of 75% damage, amounting to 150% damage; applies 'Stunned' to target, stunning it for 1 turn.",
+        "manaCost": "27",
+        "cooldown": "14",
+        "damageType": "Melee",
+        "element": "???",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz"
+      },
+      {
+        "name": "Strength Strike",
+        "description": "1 hit x 37.5% damage \n Target: (On hit) -20 Boost for 5 turns.",
+        "effect": "1 hit of 37.5% damage; applies 'Str Strike' (-20% Boost) to target for 5 turns.",
+        "manaCost": "25",
+        "cooldown": "10",
+        "damageType": "Melee",
+        "element": "???",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz"
+      }
+    ],
+    "rarity": "Unknown",
+    "evolutions": [],
+    "releaseDate": "April 25th, 2025",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22421842",
+    "notes": "• Alz'ein & Nirios' element was changed from Darkness to ??? on  May 23rd, 2025.",
+    "alsoSee": [],
+    "tags": [
+      "alz'ein",
+      "nirios",
+      "ateala",
+      "riftwalker",
+      "cryptic",
+      "???"
+    ],
+    "guestStats": {
+      "level": "As player",
+      "damage": "Scaled",
+      "damageType": "Melee",
+      "element": "???",
+      "hp": "As player, less END bonus",
+      "mp": "As player, less WIS bonus",
+      "characterStats": {
+        "str": "0",
+        "dex": "0",
+        "int": "0",
+        "cha": "0",
+        "luk": "0",
+        "end": "0",
+        "wis": "0"
+      },
+      "offense": {
+        "boost": "0%",
+        "bonus": "50",
+        "crit": "5"
+      },
+      "damageMultipliers": {
+        "nonCrit": "100%",
+        "dex": "100%",
+        "dot": "100%",
+        "crit": "175%"
+      },
+      "defense": {
+        "melee": "5",
+        "pierce": "5",
+        "magic": "5",
+        "block": "0",
+        "parry": "0",
+        "dodge": "0"
+      },
+      "damageReduction": {
+        "nonCrit": "0%",
+        "dot": "0%",
+        "crit": "0%"
+      }
+    }
+  },
+  {
+    "id": "guest-amadeus",
+    "name": "Amadeus",
+    "slug": "guest-amadeus",
+    "type": "guest",
+    "description": "Human ???",
+    "daRequired": false,
+    "isTemp": true,
+    "elements": [
+      "DAR"
+    ],
+    "traits": [
+      "W/S"
+    ],
+    "level": "As player",
+    "damage": "Scaled",
+    "stats": "See guestStats",
+    "resists": "None",
+    "obtainMethods": [
+      {
+        "location": "Chasing Answers,  Outpost Outskirts,  Hawk in the Sky,  Crash and Burn,  The Flame Within,  At Fissure's Edge,  The Final Steps,  Convergence (Part 1) -> Invite Alteon and Amadeus",
+        "priceType": "free",
+        "requirements": "None"
+      }
+    ],
+    "attacks": [
+      {
+        "name": "Lost Blade",
+        "description": "Swap between Darkness and seeking.",
+        "effect": "Toggles Amadeus' attacks between Darkness damage and weakness seeking damage. (Pop-ups: Amadeus: 'I am not ruled by Darkness!' / Amadeus: 'Back to the shadows...')",
+        "manaCost": "0",
+        "cooldown": "0",
+        "damageType": "N/A",
+        "element": "N/A",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Amadeus-Button01-Seek.png"
+      },
+      {
+        "name": "Hold Nothing Back",
+        "description": "Skills empowered for 3 turns, but cost % HP.",
+        "effect": "1 hit of 160% damage to all foes, with +30 Bonus; in the next three turns, Amadeus is empowered and certain skills gain additional effects, but at the cost of 5% of his maximum HP. (Pop-ups: Amadeus: 'You will not stand in my way.' / Amadeus: 'This pain... is nothing...')",
+        "manaCost": "25",
+        "cooldown": "3",
+        "damageType": "Melee",
+        "element": "Darkness/Weakness seeks",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Amadeus-Button02-Drain.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Amadeus-HoldNothingBack.png"
+      },
+      {
+        "name": "Embrace the Darkness",
+        "description": "Unleash a powerful attack.",
+        "effect": "5 hits of 50% damage, amounting to 250% damage.\n  • If Amadeus is empowered, attack will instead perform 17 hits of 50% damage, amounting to 850% damage.",
+        "manaCost": "25",
+        "cooldown": "19",
+        "damageType": "Melee",
+        "element": "Darkness/Weakness seeks",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Amadeus-Button03-Unleash.png"
+      },
+      {
+        "name": "Heartcleaver",
+        "description": "Critical attack.",
+        "effect": "3 hits of 120% damage, amounting to 360% damage, with +200 Crit; if Amadeus is empowered, attack gains an additional +20% damage.",
+        "manaCost": "15",
+        "cooldown": "11",
+        "damageType": "Melee",
+        "element": "Darkness/Weakness seeks",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Amadeus-Button04-Cleave.png"
+      },
+      {
+        "name": "Rush",
+        "description": "Available after a successful Pierce",
+        "requirements": "Successful 'Pierce' to unlock",
+        "effect": "3 hits of 150% damage, amounting to 450% damage; if Amadeus is empowered, attack gains an additional +30% damage.",
+        "manaCost": "0",
+        "cooldown": "0",
+        "damageType": "Melee",
+        "element": "Darkness/Weakness seeks",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Amadeus-Button05-Rush.png"
+      },
+      {
+        "name": "Pierce",
+        "description": "Unlocked after a succesful attack.",
+        "requirements": "Successful attack to unlock",
+        "effect": "1 hit of 150% damage; if Amadeus is empowered, attack gains an additional +50% damage.",
+        "manaCost": "0",
+        "cooldown": "2",
+        "damageType": "Melee",
+        "element": "Darkness/Weakness seeks",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Amadeus-Button06-Pierce.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Amadeus-Pierce.png"
+      },
+      {
+        "name": "Attack",
+        "effect": "1 hit of 120% damage, with +60 Bonus; recovers 5% of Amadeus' maximum HP.\n  • If Amadeus is empowered, the heal effect will not be applied and attack gains an additional +30% damage.",
+        "manaCost": "0",
+        "cooldown": "0",
+        "damageType": "Melee",
+        "element": "Darkness/Weakness seeks",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Amadeus-Attack.png"
+      }
+    ],
+    "rarity": "Unknown",
+    "evolutions": [],
+    "releaseDate": "March 24th, 2023",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Amadeus.png",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22409331",
+    "notes": "• Amadeus has a series of unconventional stats in the quests  Hawk in the Sky,  Crash and Burn,  The Flame Within,  At Fissure's Edge,  The Final Steps, and  Convergence (Part 1):\n  • Amadeus gains -10 Immobility,  -60 Health, +60 All Resists.\n• Amadeus' base damage is increased by 50%.\n• Lost Blade and Skip skills were added with the release of  Crash and Burn.",
+    "alsoSee": [],
+    "tags": [
+      "amadeus",
+      "human",
+      "dar"
+    ],
+    "guestStats": {
+      "level": "As player",
+      "damage": "Scaled",
+      "damageType": "Melee",
+      "element": "Darkness",
+      "hp": "As player, less END bonus",
+      "mp": "As player, less WIS bonus",
+      "characterStats": {
+        "str": "0",
+        "dex": "0",
+        "int": "0",
+        "cha": "0",
+        "luk": "0",
+        "end": "0",
+        "wis": "0"
+      },
+      "offense": {
+        "boost": "0%",
+        "bonus": "100",
+        "crit": "5"
+      },
+      "damageMultipliers": {
+        "nonCrit": "100%",
+        "dex": "100%",
+        "dot": "100%",
+        "crit": "175%"
+      },
+      "defense": {
+        "melee": "5",
+        "pierce": "0",
+        "magic": "5",
+        "block": "0",
+        "parry": "0",
+        "dodge": "0"
+      },
+      "damageReduction": {
+        "nonCrit": "0%",
+        "dot": "0%",
+        "crit": "0%"
+      }
+    },
+    "alternativeImages": [
+      {
+        "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Amadeus-EmpoweredSword.png",
+        "caption": "Empowered Appearance"
+      }
+    ]
+  },
+  {
+    "id": "guest-aquella-1",
+    "name": "Aquella (1)",
+    "slug": "guest-aquella-1",
+    "type": "guest",
+    "description": "A temporary guest companion.",
+    "daRequired": false,
+    "isTemp": true,
+    "elements": [
+      "NAT"
+    ],
+    "traits": [],
+    "level": "2",
+    "damage": "8-12",
+    "stats": "See guestStats",
+    "resists": "None",
+    "obtainMethods": [
+      {
+        "location": "Rescue!",
+        "priceType": "free",
+        "requirements": "None"
+      }
+    ],
+    "attacks": [
+      {
+        "name": "Attack",
+        "effect": "Applies 'Wound', a 10-15 Melee Metal DoT effect, to herself for 10 turns inclusive. (Pop-up: Help me!)",
+        "manaCost": "0",
+        "cooldown": "0",
+        "damageType": "N/A",
+        "element": "N/A",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Aquella1-Attack.png"
+      }
+    ],
+    "rarity": "Unknown",
+    "evolutions": [],
+    "releaseDate": "April 2nd, 2010",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17452451",
+    "notes": "• Aquella will announce how much HP she has left with her turn; if Aquella dies, the battle against Captain Davey will automatically be lost.",
+    "alsoSee": [],
+    "tags": [
+      "aquella",
+      "(1)",
+      "temporary",
+      "guest",
+      "companion.",
+      "nat"
+    ],
+    "guestStats": {
+      "level": "2",
+      "damage": "8-12",
+      "damageType": "Melee",
+      "element": "Nature",
+      "hp": "100",
+      "mp": "100",
+      "characterStats": {
+        "str": "0",
+        "dex": "0",
+        "int": "0",
+        "cha": "0",
+        "luk": "0",
+        "end": "0",
+        "wis": "0"
+      },
+      "offense": {
+        "boost": "0%",
+        "bonus": "1",
+        "crit": "2"
+      },
+      "damageMultipliers": {
+        "nonCrit": "100%",
+        "dex": "100%",
+        "dot": "100%",
+        "crit": "175%"
+      },
+      "defense": {
+        "melee": "5",
+        "pierce": "0",
+        "magic": "5",
+        "block": "0",
+        "parry": "0",
+        "dodge": "0"
+      },
+      "damageReduction": {
+        "nonCrit": "0%",
+        "dot": "0%",
+        "crit": "0%"
+      }
+    }
+  },
+  {
+    "id": "guest-aria-1",
+    "name": "Aria (1)",
+    "slug": "guest-aria-1",
+    "type": "guest",
+    "description": "A temporary guest companion.",
+    "daRequired": false,
+    "isTemp": true,
+    "elements": [
+      "NAT"
+    ],
+    "traits": [],
+    "level": "2",
+    "damage": "8-12",
+    "stats": "See guestStats",
+    "resists": "None",
+    "obtainMethods": [
+      {
+        "location": "Critter Cave (Books 1 and 2)",
+        "priceType": "free",
+        "requirements": "None"
+      }
+    ],
+    "attacks": [
+      {
+        "name": "Attack",
+        "effect": "Shoots a blowdart at target for 1 hit of 100% damage.",
+        "manaCost": "0",
+        "cooldown": "0",
+        "damageType": "Pierce",
+        "element": "Nature",
+        "buttonImageUrl": "https://i.imgur.com/MWb3liE.png",
+        "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Aria%20Attack%201.bmp"
+      }
+    ],
+    "rarity": "Unknown",
+    "evolutions": [],
+    "releaseDate": "August 4th, 2006",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=10837661",
+    "notes": "• Aria will remain as a guest if you exit before quest completion.",
+    "alsoSee": [],
+    "tags": [
+      "aria",
+      "(1)",
+      "temporary",
+      "guest",
+      "companion.",
+      "nat"
+    ],
+    "guestStats": {
+      "level": "2",
+      "damage": "8-12",
+      "damageType": "Pierce",
+      "element": "Nature",
+      "hp": "110",
+      "mp": "105",
+      "characterStats": {
+        "str": "0",
+        "dex": "0",
+        "int": "0",
+        "cha": "0",
+        "luk": "0",
+        "end": "0",
+        "wis": "0"
+      },
+      "offense": {
+        "boost": "0%",
+        "bonus": "1",
+        "crit": "2"
+      }
+    }
+  },
+  {
+    "id": "guest-artix-1",
+    "name": "Artix (1)",
+    "slug": "guest-artix-1",
+    "type": "guest",
+    "description": "A temporary guest companion.",
+    "daRequired": false,
+    "isTemp": true,
+    "isSeasonal": true,
+    "elements": [
+      "LIG",
+      "MET"
+    ],
+    "traits": [],
+    "level": "3",
+    "damage": "5-30",
+    "stats": "See guestStats",
+    "resists": "None",
+    "obtainMethods": [
+      {
+        "location": "Book of Lore -> Guests (-> Book 1&2) -> Artix - Invite as First Guest/Second Guest (DA Required),  Amityvale (Books 1 and 2) -> Right ->  Artix -> Invite -> ...as Friend A / ...as Friend B,  The Necropolis ->  Artix -> Invite Artix! -> ...as Friend A / ...as Friend B,  Artix Vs. The Undead,  Artix Statue",
+        "priceType": "free",
+        "requirements": "None"
+      }
+    ],
+    "attacks": [
+      {
+        "name": "Holy Strike",
+        "description": "Converts damage into Light.",
+        "effect": "Attacks for 4 hits of 100% damage, amounting to 400% damage.",
+        "manaCost": "10",
+        "cooldown": "14",
+        "damageType": "Melee",
+        "element": "Light",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Artix1-Button01-Holy.png"
+      },
+      {
+        "name": "Attack",
+        "effect": "Attacks for 1 hit of 100% damage; 10% chance to attack target for 4 hits of 100% damage, amounting to 400% damage",
+        "manaCost": "0",
+        "cooldown": "0",
+        "damageType": "Melee",
+        "element": "Metal",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png"
+      }
+    ],
+    "rarity": "Unknown",
+    "evolutions": [],
+    "releaseDate": "January 6th, 2017",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=6818835",
+    "notes": "• This is the original version of the guest; intended to be completely replaced by a new version, it remains in-game erroneously.",
+    "alsoSee": [],
+    "tags": [
+      "artix",
+      "(1)",
+      "temporary",
+      "guest",
+      "companion.",
+      "lig",
+      "met"
+    ],
+    "guestStats": {
+      "level": "3",
+      "damage": "5-30",
+      "damageType": "Melee",
+      "element": "Metal/Light",
+      "hp": "160",
+      "mp": "130",
+      "characterStats": {
+        "str": "0",
+        "dex": "0",
+        "int": "0",
+        "cha": "0",
+        "luk": "0",
+        "end": "0",
+        "wis": "0"
+      },
+      "offense": {
+        "boost": "0%",
+        "bonus": "100",
+        "crit": "15"
+      },
+      "damageMultipliers": {
+        "nonCrit": "100%",
+        "dex": "100%",
+        "dot": "100%",
+        "crit": "175%"
+      },
+      "defense": {
+        "melee": "5",
+        "pierce": "0",
+        "magic": "5",
+        "block": "0",
+        "parry": "0",
+        "dodge": "0"
+      },
+      "damageReduction": {
+        "nonCrit": "0%",
+        "dot": "0%",
+        "crit": "0%"
+      }
+    }
+  },
+  {
+    "id": "guest-ash-1",
+    "name": "Ash (1)",
+    "slug": "guest-ash-1",
+    "type": "guest",
+    "description": "A temporary guest companion.",
+    "daRequired": false,
+    "isTemp": true,
+    "elements": [
+      "MET"
+    ],
+    "traits": [],
+    "level": "1",
+    "damage": "5-10",
+    "stats": "See guestStats",
+    "resists": "None",
+    "obtainMethods": [
+      {
+        "location": "Falconreach (Books 1 and 2) /  Wrath of Xan Falconreach (All Versions) ->  Ash -> Add to group,  Willowshire Outpost -> Team up! -> Yes",
+        "priceType": "free",
+        "requirements": "None"
+      }
+    ],
+    "attacks": [
+      {
+        "name": "Attack",
+        "effect": "Approaches target and swings his sword up and down for 1 hit of 100% damage; 50% chance to let go of sword on the upward swing, causing him to cower as it falls down.",
+        "manaCost": "0",
+        "cooldown": "0",
+        "damageType": "Melee",
+        "element": "Metal",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png"
+      }
+    ],
+    "rarity": "Unknown",
+    "evolutions": [],
+    "releaseDate": "June 16th, 2006",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=10851216",
+    "notes": "• Ash (1) was previously attainable from the following retired access point:  Dragon Attack at Willowshire! -> Team up! -> Yes",
+    "alsoSee": [],
+    "tags": [
+      "ash",
+      "(1)",
+      "temporary",
+      "guest",
+      "companion.",
+      "met"
+    ],
+    "guestStats": {
+      "level": "1",
+      "damage": "5-10",
+      "damageType": "Melee",
+      "element": "Metal",
+      "hp": "",
+      "mp": "",
+      "characterStats": {
+        "str": "0",
+        "dex": "0",
+        "int": "0",
+        "cha": "0",
+        "luk": "0",
+        "end": "0",
+        "wis": "0"
+      },
+      "offense": {
+        "boost": "0%",
+        "bonus": "1",
+        "crit": "5"
+      },
+      "damageMultipliers": {
+        "nonCrit": "100%",
+        "dex": "100%",
+        "dot": "100%",
+        "crit": "175%"
+      },
+      "defense": {
+        "melee": "5",
+        "pierce": "0",
+        "magic": "5",
+        "block": "0",
+        "parry": "0",
+        "dodge": "0"
+      },
+      "damageReduction": {
+        "nonCrit": "0%",
+        "dot": "0%",
+        "crit": "0%"
+      }
+    }
+  }
+]
