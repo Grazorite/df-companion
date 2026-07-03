@@ -1,12 +1,13 @@
 import { useMemo } from 'react'
 import petsData from '../data/pets.json'
+import guestsData from '../data/guests.json'
 import elementsData from '../data/elements.json'
 import type { Pet, PetFilters, EntryType } from '../types/pet'
 import type { ItemFamily } from '../types/item'
 import type { ElementsData } from '../types/element'
 
 // Normalize legacy field names (specialMarkers → traits) at load time
-const allPets: Pet[] = (petsData as unknown as Array<Pet & { specialMarkers?: string[] }>).map(p => {
+const loadedPets: Pet[] = (petsData as unknown as Array<Pet & { specialMarkers?: string[] }>).map(p => {
   if (!p.traits && p.specialMarkers) {
     p.traits = p.specialMarkers
     delete p.specialMarkers
@@ -14,6 +15,18 @@ const allPets: Pet[] = (petsData as unknown as Array<Pet & { specialMarkers?: st
   if (!p.traits) p.traits = []
   return p as Pet
 })
+
+const loadedGuests: Pet[] = (guestsData as unknown as Array<Pet & { specialMarkers?: string[] }>).map(p => {
+  if (!p.traits && p.specialMarkers) {
+    p.traits = p.specialMarkers
+    delete p.specialMarkers
+  }
+  if (!p.traits) p.traits = []
+  return p as Pet
+})
+
+// Combine pets and guests into single array
+const allPets: Pet[] = [...loadedPets, ...loadedGuests]
 const elementMeta = elementsData as ElementsData
 
 // ─── Type Guard ───────────────────────────────────────────────────────────────

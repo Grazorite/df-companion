@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { ExternalLink, Shield, ImageOff } from 'lucide-react'
-import type { Pet } from '../../types/pet'
+import type { Pet, Guest } from '../../types/pet'
 import type { ItemFamily } from '../../types/item'
 import { isSingleVariant } from '../../utils/variantHelpers'
 import ElementPill from '../shared/ElementPill'
@@ -11,6 +11,8 @@ import LevelStatsTable from '../shared/LevelStatsTable'
 import LevelSelector from '../shared/LevelSelector'
 import ObtainVariantCard from '../shared/ObtainVariantCard'
 import PetAttacks from './PetAttacks'
+import GuestAttacks from '../guests/GuestAttacks'
+import GuestStatsSection from '../guests/GuestStatsSection'
 import PetEvolutions from './PetEvolutions'
 import PetCard from './PetCard'
 import { useRelatedPets } from '../../hooks/usePets'
@@ -47,6 +49,10 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
   const [searchParams, setSearchParams] = useSearchParams()
   const dcRequired = pet.dcRequired ?? false
   const dmRequired = pet.dmRequired ?? false
+  
+  // Check if this is a guest
+  const isGuest = pet.type === 'guest'
+  const guest = isGuest ? (pet as Guest) : undefined
   
   // Alternative image toggle state
   const [activeImageIndex, setActiveImageIndex] = useState(0)
@@ -95,7 +101,7 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
   } : {
     description: pet.description,
     imageUrl: pet.imageUrl,
-    alternativeImages: undefined,
+    alternativeImages: pet.alternativeImages,
     element: pet.elements[0],
     resists: pet.resists,
     rarity: pet.rarity,
@@ -210,8 +216,8 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
         </div>
       )}
 
-      {/* Stats - show for single-variant items in table format */}
-      {!isMultiVariant && stats.length > 0 && (
+      {/* Stats - show for single-variant items in table format (Pets only) */}
+      {!isMultiVariant && !isGuest && stats.length > 0 && (
         <section aria-labelledby="stats-heading" className="mb-5">
           <h2 id="stats-heading" className="text-xs font-semibold text-text-muted uppercase tracking-wider mb-3">
             Stats
@@ -285,6 +291,11 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
         </section>
       )}
       
+      {/* Guest Stats Section - show for guests */}
+      {isGuest && guest?.guestStats && (
+        <GuestStatsSection stats={guest.guestStats} />
+      )}
+      
       {/* Level Stats Table - only for multi-variant items */}
       {isMultiVariant && family && (
         <section aria-labelledby="level-stats-heading" className="mb-5">
@@ -353,6 +364,7 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
                   key={i}
                   variant={variant}
                   label={label}
+                  isGuest={isGuest}
                 />
               )
             })}
@@ -383,6 +395,7 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
                   key={i}
                   variant={obtainVariant}
                   label={label}
+                  isGuest={isGuest}
                 />
               )
             })}
@@ -393,35 +406,57 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
       {/* Evolutions */}
       <PetEvolutions evolutions={pet.evolutions} fromUrl={backUrl} />
 
-      {/* Attacks */}
-      <PetAttacks attacks={displayData.attacks ?? []} />
+      {/* Attacks - use GuestAttacks for guests, PetAttacks for pets */}
+      {isGuest && guest ? (
+        <GuestAttacks attacks={guest.attacks} />
+      ) : (
+        <PetAttacks attacks={displayData.attacks ?? []} />
+      )}
 
-      {/* Notes - for multi-variant, show level-specific notes; for single, show pet notes */}
+      {/* Notes - show shared notes for multi-variant (always visible), and/or level-specific notes */}
       {(() => {
-        // For multi-variant items, check if the active level has notes
+        // For multi-variant items
         if (isMultiVariant && family) {
           const activeLevel = family.levelVariants[activeIndex]
-          const levelNotes = activeLevel.notes
-          if (!levelNotes) return null
           
-          // Clean notes (remove attribution)
-          const cleanedLevelNotes = (() => {
-            const separator = levelNotes.includes('\n') ? '\n' : ' • '
-            const bullets = levelNotes.split(separator)
+          // Clean shared notes (remove attribution)
+          const cleanedSharedNotes = family.shared.notes ? (() => {
+            const separator = family.shared.notes.includes('\n') ? '\n' : ' • '
+            const bullets = family.shared.notes.split(separator)
             const cutoff = bullets.findIndex(n => /^Thanks\s+to\b/i.test(n.trim()))
             const kept = cutoff >= 0 ? bullets.slice(0, cutoff) : bullets
             const result = kept.filter(n => n.trim().length > 0).join(separator)
             return result || undefined
-          })()
+          })() : undefined
           
-          if (!cleanedLevelNotes) return null
+          // Clean level-specific notes (remove attribution)
+          const cleanedLevelNotes = activeLevel.notes ? (() => {
+            const separator = activeLevel.notes.includes('\n') ? '\n' : ' • '
+            const bullets = activeLevel.notes.split(separator)
+            const cutoff = bullets.findIndex(n => /^Thanks\s+to\b/i.test(n.trim()))
+            const kept = cutoff >= 0 ? bullets.slice(0, cutoff) : bullets
+            const result = kept.filter(n => n.trim().length > 0).join(separator)
+            return result || undefined
+          })() : undefined
+          
+          // If neither exists, don't render
+          if (!cleanedSharedNotes && !cleanedLevelNotes) return null
           
           return (
             <section className="bg-bg-surface/60 border border-border-default rounded-lg p-4 mb-5">
               <h2 className="text-xs font-semibold text-text-muted uppercase tracking-wider mb-3">
                 Other Information
               </h2>
-              <NotesList notes={cleanedLevelNotes} />
+              {cleanedSharedNotes && <NotesList notes={cleanedSharedNotes} />}
+              {cleanedSharedNotes && cleanedLevelNotes && <div className="my-3 border-t border-border-default" />}
+              {cleanedLevelNotes && (
+                <>
+                  <p className="text-xs font-medium text-text-muted uppercase tracking-wider mb-2">
+                    Level {activeLevel.levelDisplay} Notes
+                  </p>
+                  <NotesList notes={cleanedLevelNotes} />
+                </>
+              )}
             </section>
           )
         }

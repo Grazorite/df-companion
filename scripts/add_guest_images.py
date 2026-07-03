@@ -10,6 +10,12 @@ Guests have skill button images that should be excluded. This script:
 
 USAGE:
   python3 scripts/add_guest_images.py
+  python3 scripts/add_guest_images.py --letter=A
+  python3 scripts/add_guest_images.py --letters=A,B
+  python3 scripts/add_guest_images.py --letters=A,B --force
+
+FLAGS:
+  --force    Re-scrape images even if imageUrl already exists
 
 Requires: requests library (pip install requests)
 """
@@ -19,6 +25,7 @@ import re
 import os
 import time
 import sys
+from pathlib import Path
 
 try:
     import requests
@@ -28,9 +35,42 @@ except ImportError:
 
 # ─── Config ───────────────────────────────────────────────────────────────────
 
-PETS_JSON = os.path.join(os.path.dirname(__file__), '../src/data/pets.json')
+GUESTS_JSON = Path(__file__).parent.parent / 'src' / 'data' / 'guests.json'
 DELAY_MS = 1000
 FORUM_COOKIE = os.getenv('FORUM_COOKIE', '')
+
+# ─── Parse CLI args ───────────────────────────────────────────────────────────
+
+def parse_args():
+    """Parse command line arguments for letter filtering."""
+    letter_filter = None
+    letters_filter = None
+    force = False
+    
+    for arg in sys.argv[1:]:
+        if arg.startswith('--letter='):
+            letter_filter = arg.split('=')[1].upper()
+        elif arg.startswith('--letters='):
+            letters_filter = [l.strip().upper() for l in arg.split('=')[1].split(',')]
+        elif arg == '--force':
+            force = True
+    
+    return letter_filter, letters_filter, force
+
+
+def should_process(name, letter_filter, letters_filter):
+    """Check if guest should be processed based on letter filters."""
+    if not name:
+        return False
+    
+    first_letter = name[0].upper()
+    
+    if letters_filter:
+        return first_letter in letters_filter
+    elif letter_filter:
+        return first_letter == letter_filter
+    else:
+        return True
 
 # ─── Load forum cookie from .env ──────────────────────────────────────────────
 
@@ -137,33 +177,49 @@ def extract_guest_image(html, guest_name):
 # ─── Main ─────────────────────────────────────────────────────────────────────
 
 def main():
-    print('🖼️  Guest Image Scraper')
+    letter_filter, letters_filter, force = parse_args()
+    
+    filter_desc = ''
+    if letters_filter:
+        filter_desc = f' (letters: {", ".join(letters_filter)})'
+    elif letter_filter:
+        filter_desc = f' (letter: {letter_filter})'
+    
+    if force:
+        filter_desc += ' [FORCE REFRESH]'
+    
+    print(f'🖼️  Guest Image Scraper{filter_desc}')
     print('─' * 50)
     
-    # Load pets.json
-    if not os.path.exists(PETS_JSON):
-        print(f"❌ File not found: {PETS_JSON}")
+    # Load guests.json
+    if not os.path.exists(GUESTS_JSON):
+        print(f"❌ File not found: {GUESTS_JSON}")
         sys.exit(1)
     
-    with open(PETS_JSON, 'r') as f:
-        pets = json.load(f)
+    with open(GUESTS_JSON, 'r') as f:
+        guests = json.load(f)
     
-    # Filter to guests only
-    guests = [p for p in pets if p.get('type') == 'guest']
-    print(f"📊 Found {len(guests)} guests in pets.json")
+    # All entries should be guests (no filtering needed)
+    print(f"📊 Found {len(guests)} guests in guests.json\n")
     
     # Stats
     updated = 0
     skipped = 0
+    filtered_out = 0
     errors = 0
     
     for i, guest in enumerate(guests):
         name = guest.get('name', 'Unknown')
         forum_url = guest.get('forumUrl')
         
-        # Skip if already has image
-        if guest.get('imageUrl'):
-            print(f"[{i+1}/{len(guests)}] {name} — already has image, skipping")
+        # Apply letter filter
+        if not should_process(name, letter_filter, letters_filter):
+            filtered_out += 1
+            continue
+        
+        # Skip if already has image (unless --force)
+        if guest.get('imageUrl') and not force:
+            print(f"[{i+1}/{len(guests)}] {name} — already has image, skipping (use --force to refresh)")
             skipped += 1
             continue
         
@@ -196,16 +252,18 @@ def main():
         if i < len(guests) - 1:
             time.sleep(DELAY_MS / 1000)
     
-    # Write updated pets.json
-    with open(PETS_JSON, 'w') as f:
-        json.dump(pets, f, indent=2)
+    # Write updated guests.json
+    with open(GUESTS_JSON, 'w') as f:
+        json.dump(guests, f, indent=2)
         f.write('\n')
     
     print(f"\n✅ Done!")
     print(f"   Updated: {updated}")
     print(f"   Skipped: {skipped}")
+    if filtered_out > 0:
+        print(f"   Filtered: {filtered_out}")
     print(f"   Errors:  {errors}")
-    print(f"\n📁 Updated pets.json written to {PETS_JSON}")
+    print(f"\n📁 Updated guests.json written to {GUESTS_JSON}")
 
 if __name__ == '__main__':
     main()

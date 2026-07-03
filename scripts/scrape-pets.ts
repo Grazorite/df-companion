@@ -1,15 +1,17 @@
 /**
- * Pets & Guests Scraper — Chronology-First Strategy (Five-Pass, Resumable)
+ * Pets Scraper — Chronology-First Strategy (Five-Pass, Resumable)
  *
- * This scraper fetches Chronology first to get authoritative pet/guest types,
+ * This scraper fetches Chronology first to get authoritative pet types,
  * then parses the A-Z page to build stubs with correct type prefixes.
+ * GUESTS are now handled by scrape-guests.ts.
  *
  * Entry format: [ICE][SHR] Pet Name (D-Amulet/Seasonal)
  *
  * USAGE:
- *   npm run scrape:pets              # Scrape all pets & guests
- *   npm run scrape:pets -- --start=C # Resume from letter C onwards
- *   npm run scrape:pets -- --letter=B # Scrape only letter B
+ *   npm run scrape:pets                 # Scrape all pets (guests excluded)
+ *   npm run scrape:pets -- --start=C    # Resume from letter C onwards
+ *   npm run scrape:pets -- --letter=B   # Scrape only letter B
+ *   npm run scrape:pets -- --letters=A,B # Scrape multiple letters A and B
  *
  * Progress is saved to pets-progress.json after each entry,
  * so a timeout or crash won't lose work. Final output is pets.json.
@@ -24,7 +26,7 @@ import type { ItemFamily, ObtainVariant, LevelVariant, SharedData } from '../src
 import { computePriceType, computeFamilyFlags, normalizeLevel } from '../src/utils/variantHelpers.ts'
 
 const FORUM_BASE = 'https://forums2.battleon.com/f'
-const AZ_PETS_URL = `${FORUM_BASE}/tm.asp?m=22349620&mpage=1`  // A-Z Pets & Guests combined
+const AZ_PETS_URL = `${FORUM_BASE}/tm.asp?m=22349620&mpage=1`  // A-Z Pets & Guests combined (filtered by type)
 const CHRONOLOGY_URL = `${FORUM_BASE}/tm.asp?m=10738071`
 const DELAY_MS = 1000
 const OUTPUT_PATH = path.resolve(import.meta.dirname, '../src/data/pets.json')
@@ -35,6 +37,7 @@ const PROGRESS_PATH = path.resolve(import.meta.dirname, '../src/data/pets-progre
 const args = process.argv.slice(2)
 const startArg = args.find(a => a.startsWith('--start='))?.split('=')[1]?.toUpperCase()
 const letterArg = args.find(a => a.startsWith('--letter='))?.split('=')[1]?.toUpperCase()
+const lettersArg = args.find(a => a.startsWith('--letters='))?.split('=')[1]?.toUpperCase().split(',') // Support multiple: --letters=A,B
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
 
@@ -420,12 +423,24 @@ function hasLevelRange(name: string): boolean {
 
 /**
  * Extract shared image and alternative images from post HTML
- * Returns main image URL and array of alternative images with captions
+ * 
+ * Priority for main image:
+ * 1. GitHub DF-Pedia URLs (github.com or githubusercontent.com with DF-Pedia path)
+ * 2. imgur as fallback if no DF-Pedia found
+ * 
+ * Alternative images: All other valid images (imgur, etc.) when DF-Pedia main exists
+ * 
+ * Filters out: Attack images, Button images, tag images
  */
 function extractImages(html: string): { main?: string; alternatives: Array<{ url: string; caption: string }> } {
   const skipPatterns = [
     /Button/i,
     /Attack\.png/i,
+    /Attack\d+\.png/i,  // Attack1.png, Attack2.png, etc.
+    /PetAttack/i,       // AncientNinjaTerrapinPetAttack1.png
+    /AttackType/i,      // BabyDracolichPet-AttackType1.png
+    /-Attack/i,         // Any attack image with dash prefix
+    /forums2\.battleon\.com\/f\/upfiles/i,  // Forum poster profile images
     /tags\/(DA|DC|DM|Temp|Rare|Seasonal|SpecialOffer|Retired)/i,
     /width=["']?\d{1,2}["']?/,  // Tiny images
     /forumheader/i,
@@ -433,83 +448,155 @@ function extractImages(html: string): { main?: string; alternatives: Array<{ url
     /blank\.gif/i,
   ]
   
+  // Helper to check if URL should be skipped
+  const shouldSkip = (url: string) => skipPatterns.some(p => p.test(url))
+  
+  // Separate lists for different sources
+  const dfPediaImages: string[] = []
+  const imgurImages: string[] = []
+  const otherImages: string[] = []
+  
+  // Extract from <img> tags
   const imgRegex = /<img[^>]+src=["']([^"']+)["'][^>]*>/gi
   let imgMatch: RegExpExecArray | null
   
-  const candidates: string[] = []
   while ((imgMatch = imgRegex.exec(html)) !== null) {
     const src = imgMatch[1]
-    if (skipPatterns.some(p => p.test(imgMatch![0]))) continue
+    if (shouldSkip(src)) continue
     
-    // Valid sources: DF encyclopedia, GitHub, Imgur (both http and https)
-    if (src.includes('media.artix.com/encyc') || 
-        src.includes('battleon.com/encyc') ||
-        src.includes('github.com') || 
-        src.includes('githubusercontent.com') ||
-        src.includes('imgur.com') ||
-        src.includes('i.imgur.com')) {
-      candidates.push(src)
+    if (src.includes('github.com/DF-Pedia') || src.includes('githubusercontent.com') && src.includes('DF-Pedia')) {
+      if (!dfPediaImages.includes(src)) dfPediaImages.push(src)
+    } else if (src.includes('imgur.com') || src.includes('i.imgur.com')) {
+      if (!imgurImages.includes(src)) imgurImages.push(src)
+    } else if (src.includes('media.artix.com/encyc') || 
+               src.includes('battleon.com/encyc') ||
+               (src.includes('/f/upfiles/') && src.length > 60)) {
+      if (!otherImages.includes(src)) otherImages.push(src)
     }
   }
   
-  // Also look for image URLs in text (not wrapped in <img> tags)
-  // Pattern: http(s)://imgur.com/... or similar
-  const urlRegex = /https?:\/\/(?:i\.)?imgur\.com\/[a-zA-Z0-9]+\.(?:jpg|jpeg|png|gif)/gi
+  // Extract from <a href> tags (for "Alternative Image" links)
+  const linkRegex = /<a[^>]+href=["']([^"']+\.(?:jpg|jpeg|png|gif))["'][^>]*>/gi
+  let linkMatch: RegExpExecArray | null
+  while ((linkMatch = linkRegex.exec(html)) !== null) {
+    const url = linkMatch[1]
+    if (shouldSkip(url)) continue
+    
+    if (url.includes('github.com/DF-Pedia') || url.includes('githubusercontent.com') && url.includes('DF-Pedia')) {
+      if (!dfPediaImages.includes(url)) dfPediaImages.push(url)
+    } else if (url.includes('imgur.com') || url.includes('i.imgur.com')) {
+      if (!imgurImages.includes(url)) imgurImages.push(url)
+    } else if (url.includes('media.artix.com/encyc') || 
+               url.includes('battleon.com/encyc') ||
+               (url.includes('/f/upfiles/') && url.length > 60)) {
+      if (!otherImages.includes(url)) otherImages.push(url)
+    }
+  }
+  
+  // Extract bare URLs in text
+  const bareUrlRegex = /https?:\/\/(?:[^\s<>"]+?)\.(?:jpg|jpeg|png|gif)/gi
   let urlMatch: RegExpExecArray | null
-  while ((urlMatch = urlRegex.exec(html)) !== null) {
+  while ((urlMatch = bareUrlRegex.exec(html)) !== null) {
     const url = urlMatch[0]
-    // Avoid duplicates
-    if (!candidates.includes(url)) {
-      candidates.push(url)
+    if (shouldSkip(url)) continue
+    
+    if (url.includes('github.com/DF-Pedia') || url.includes('githubusercontent.com') && url.includes('DF-Pedia')) {
+      if (!dfPediaImages.includes(url)) dfPediaImages.push(url)
+    } else if (url.includes('imgur.com') || url.includes('i.imgur.com')) {
+      if (!imgurImages.includes(url)) imgurImages.push(url)
+    } else if (url.includes('media.artix.com/encyc') || 
+               url.includes('battleon.com/encyc') ||
+               (url.includes('/f/upfiles/') && url.length > 60)) {
+      if (!otherImages.includes(url)) otherImages.push(url)
     }
   }
   
-  if (candidates.length === 0) {
-    return { main: undefined, alternatives: [] }
-  }
-  
-  // First image is the main image
-  const main = candidates[0]
-  
-  // Look for alternative image captions near subsequent images
-  // Common patterns: "Alternative Image", "Empowered Appearance", etc.
+  // Determine main image
+  let main: string | undefined
   const alternatives: Array<{ url: string; caption: string }> = []
   
-  for (let i = 1; i < candidates.length; i++) {
-    const imageUrl = candidates[i]
+  if (dfPediaImages.length > 0) {
+    // DF-Pedia is main, everything else is alternative
+    main = dfPediaImages[0]
     
-    // Find this image's position in HTML
-    const imgPos = html.indexOf(imageUrl)
-    if (imgPos === -1) continue
-    
-    // Look backward up to 200 chars for caption text
-    const beforeImg = html.slice(Math.max(0, imgPos - 200), imgPos)
-    
-    // Try to find caption patterns
-    // Pattern 1: <b>Caption Text</b> followed by image
-    const boldMatch = beforeImg.match(/<b>([^<]+)<\/b>\s*$/i)
-    if (boldMatch) {
-      const caption = stripHtml(decodeHTML(boldMatch[1])).trim()
-      alternatives.push({ url: imageUrl, caption })
-      continue
+    // Additional DF-Pedia images are alternatives too (but shouldn't happen since we filter attacks)
+    for (let i = 1; i < dfPediaImages.length; i++) {
+      alternatives.push({ url: dfPediaImages[i], caption: 'Alternative Image' })
     }
     
-    // Pattern 2: Plain text followed by image
-    const plainTextMatch = beforeImg.match(/([A-Z][a-z\s]+)\s*$/i)
-    if (plainTextMatch && plainTextMatch[1].length < 50) {
-      const caption = plainTextMatch[1].trim()
-      // Only use if it looks like a caption (short, capitalized)
-      if (caption.length > 3 && /^[A-Z]/.test(caption)) {
-        alternatives.push({ url: imageUrl, caption })
-        continue
-      }
+    // All imgur images are alternatives
+    for (const url of imgurImages) {
+      const imgPos = html.indexOf(url)
+      const caption = findCaptionNear(html, imgPos)
+      alternatives.push({ url, caption })
     }
     
-    // Fallback: use generic caption
-    alternatives.push({ url: imageUrl, caption: 'Alternative Image' })
+    // Other images are alternatives
+    for (const url of otherImages) {
+      const imgPos = html.indexOf(url)
+      const caption = findCaptionNear(html, imgPos)
+      alternatives.push({ url, caption })
+    }
+  } else if (imgurImages.length > 0) {
+    // No DF-Pedia, use imgur as fallback main
+    main = imgurImages[0]
+    
+    // Rest of imgur are alternatives
+    for (let i = 1; i < imgurImages.length; i++) {
+      alternatives.push({ url: imgurImages[i], caption: 'Alternative Image' })
+    }
+    
+    // Other images are alternatives
+    for (const url of otherImages) {
+      const imgPos = html.indexOf(url)
+      const caption = findCaptionNear(html, imgPos)
+      alternatives.push({ url, caption })
+    }
+  } else if (otherImages.length > 0) {
+    // Last resort: use other images
+    main = otherImages[0]
+    for (let i = 1; i < otherImages.length; i++) {
+      alternatives.push({ url: otherImages[i], caption: 'Alternative Image' })
+    }
   }
   
   return { main, alternatives }
+}
+
+/**
+ * Find caption text near an image position in HTML
+ */
+function findCaptionNear(html: string, imgPos: number): string {
+  if (imgPos === -1) return 'Alternative Image'
+  
+  // Look backward up to 200 chars for caption text
+  const beforeImg = html.slice(Math.max(0, imgPos - 200), imgPos)
+  
+  // Pattern 1: <b>Caption Text</b> followed by image
+  const boldMatch = beforeImg.match(/<b>([^<]+)<\/b>\s*$/i)
+  if (boldMatch) {
+    return stripHtml(decodeHTML(boldMatch[1])).trim()
+  }
+  
+  // Pattern 2: Link text like "Alternative Image"
+  const linkTextMatch = beforeImg.match(/>([^<]+)<\/a>\s*$/i)
+  if (linkTextMatch) {
+    const text = stripHtml(decodeHTML(linkTextMatch[1])).trim()
+    if (text.length > 3 && text.length < 50) {
+      return text
+    }
+  }
+  
+  // Pattern 3: Plain text followed by image
+  const plainTextMatch = beforeImg.match(/([A-Z][a-z\s]+)\s*$/i)
+  if (plainTextMatch && plainTextMatch[1].length < 50) {
+    const caption = plainTextMatch[1].trim()
+    if (caption.length > 3 && /^[A-Z]/.test(caption)) {
+      return caption
+    }
+  }
+  
+  return 'Alternative Image'
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -664,6 +751,20 @@ async function parsePetThreadMultiVariant(
       if (obtainVariants.length > 0) {
         const actualLevel = data.level && data.level !== 'Unknown' ? parseInt(data.level, 10) : undefined
         
+        // Capture shared data from first variant BEFORE creating level variant
+        // so we can distinguish between shared vs level-specific notes
+        const isFirstVariant = !sharedDescription
+        if (isFirstVariant) {
+          sharedDescription = data.description
+          sharedElement = stub.elements.length > 0 ? stub.elements[0] : undefined
+          sharedRarity = data.rarity !== 'Unknown' ? data.rarity : undefined
+          sharedResists = data.resists !== 'None' ? data.resists : undefined
+          sharedAttacks = data.attacks
+          sharedNotes = data.notes // Shared notes come from first variant
+          sharedAlsoSeeNames = data.alsoSeeNames
+        }
+        
+        // Create level variant - only include notes if NOT the first variant (to avoid duplication)
         levelVariantsMap.set(levelNum, {
           levelNumber: levelNum,
           levelDisplay: variant.variantName,  // "Kitten", "Cat"
@@ -675,19 +776,9 @@ async function parsePetThreadMultiVariant(
           obtainVariants,
           ...(data.resists && data.resists !== 'None' ? { resists: data.resists } : {}),
           ...(data.rarity && data.rarity !== 'Unknown' ? { rarity: data.rarity } : {}),
-          ...(data.notes ? { notes: data.notes } : {}),
+          // Only include notes if NOT from first variant (first variant notes go to shared)
+          ...(!isFirstVariant && data.notes ? { notes: data.notes } : {}),
         })
-        
-        // Capture shared data from first variant
-        if (!sharedDescription) {
-          sharedDescription = data.description
-          sharedElement = stub.elements.length > 0 ? stub.elements[0] : undefined
-          sharedRarity = data.rarity !== 'Unknown' ? data.rarity : undefined
-          sharedResists = data.resists !== 'None' ? data.resists : undefined
-          sharedAttacks = data.attacks
-          sharedNotes = data.notes
-          sharedAlsoSeeNames = data.alsoSeeNames
-        }
       } else {
         console.log(` [variant ${variant.variantName}: no obtain methods found]`)
       }
@@ -791,9 +882,12 @@ async function parsePetThreadMultiVariant(
         endIndex = nextSection.startIndex
       } else {
         // Last section - find reasonable end boundary
+        // Look for common markers that indicate end of level-specific content
+        const dfPediaImageMatch = html.slice(section.startIndex).search(/https:\/\/github\.com\/DF-Pedia\/DF-Pedia\/raw\/master/i)
+        const otherInfoMatch = html.slice(section.startIndex).search(/<b>\s*<u>\s*Other\s+information\s*<\/u>\s*<\/b>/i)
         const thanksMatch = html.slice(section.startIndex).search(/Thanks\s+to\b/i)
         const alsoSeeMatch = html.slice(section.startIndex).search(/Also\s+See:/i)
-        const endMarkers = [thanksMatch, alsoSeeMatch].filter(m => m > 0)
+        const endMarkers = [dfPediaImageMatch, otherInfoMatch, thanksMatch, alsoSeeMatch].filter(m => m > 0)
         
         if (endMarkers.length > 0) {
           endIndex = section.startIndex + Math.min(...endMarkers)
@@ -839,6 +933,18 @@ async function parsePetThreadMultiVariant(
       }))
       
       if (obtainVariants.length > 0) {
+        // Capture shared data from first level BEFORE creating variant
+        const isFirstLevel = !sharedDescription
+        if (isFirstLevel) {
+          sharedDescription = data.description
+          sharedElement = stub.elements.length > 0 ? stub.elements[0] : undefined
+          sharedRarity = data.rarity !== 'Unknown' ? data.rarity : undefined
+          sharedResists = data.resists !== 'None' ? data.resists : undefined
+          sharedAttacks = data.attacks
+          sharedNotes = data.notes // Shared notes come from first level
+          sharedAlsoSeeNames = data.alsoSeeNames
+        }
+        
         levelVariantsMap.set(section.levelNum, {
           levelNumber: section.levelNum,
           levelDisplay: section.romanDisplay,
@@ -850,19 +956,9 @@ async function parsePetThreadMultiVariant(
           obtainVariants,
           ...(data.resists && data.resists !== 'None' ? { resists: data.resists } : {}),
           ...(data.rarity && data.rarity !== 'Unknown' ? { rarity: data.rarity } : {}),
-          ...(data.notes ? { notes: data.notes } : {}),
+          // Only include notes if NOT from first level (first level notes go to shared)
+          ...(!isFirstLevel && data.notes ? { notes: data.notes } : {}),
         })
-        
-        // Capture shared data from first level
-        if (!sharedDescription) {
-          sharedDescription = data.description
-          sharedElement = stub.elements.length > 0 ? stub.elements[0] : undefined
-          sharedRarity = data.rarity !== 'Unknown' ? data.rarity : undefined
-          sharedResists = data.resists !== 'None' ? data.resists : undefined
-          sharedAttacks = data.attacks
-          sharedNotes = data.notes
-          sharedAlsoSeeNames = data.alsoSeeNames
-        }
       }
     }
     
@@ -908,6 +1004,18 @@ async function parsePetThreadMultiVariant(
         // Merge obtain variants
         existing.obtainVariants.push(...obtainVariants)
       } else {
+        // Capture shared data from first post BEFORE creating variant
+        const isFirstPost = !sharedDescription
+        if (isFirstPost) {
+          sharedDescription = data.description
+          sharedElement = stub.elements.length > 0 ? stub.elements[0] : undefined
+          sharedRarity = data.rarity !== 'Unknown' ? data.rarity : undefined
+          sharedResists = data.resists !== 'None' ? data.resists : undefined
+          sharedAttacks = data.attacks
+          sharedNotes = data.notes // Shared notes come from first post
+          sharedAlsoSeeNames = data.alsoSeeNames
+        }
+        
         // New level variant
         levelVariantsMap.set(levelInfo.number, {
           levelNumber: levelInfo.number,
@@ -918,32 +1026,14 @@ async function parsePetThreadMultiVariant(
           obtainVariants,
           ...(data.resists && data.resists !== 'None' ? { resists: data.resists } : {}),
           ...(data.rarity && data.rarity !== 'Unknown' ? { rarity: data.rarity } : {}),
-          ...(data.notes ? { notes: data.notes } : {}),
+          // Only include notes if NOT from first post (first post notes go to shared)
+          ...(!isFirstPost && data.notes ? { notes: data.notes } : {}),
         })
-      }
-      
-      // Capture shared data from first post
-      if (!sharedDescription) {
-        sharedDescription = data.description
-        sharedElement = stub.elements.length > 0 ? stub.elements[0] : undefined
-        sharedRarity = data.rarity !== 'Unknown' ? data.rarity : undefined
-        sharedResists = data.resists !== 'None' ? data.resists : undefined
-        sharedAttacks = data.attacks
-        sharedNotes = data.notes
-        sharedAlsoSeeNames = data.alsoSeeNames
       }
     }
   }
   
   const levelVariants = Array.from(levelVariantsMap.values()).sort((a, b) => a.levelNumber - b.levelNumber)
-  
-  // If shared notes not found, check level variants for notes (common pattern: notes appear on last level)
-  if (!sharedNotes && levelVariants.length > 0) {
-    const levelWithNotes = levelVariants.find(lv => lv.notes)
-    if (levelWithNotes?.notes) {
-      sharedNotes = levelWithNotes.notes
-    }
-  }
   
   // If no level variants found (empty levelVariantsMap), fall back to single-variant Pet
   if (levelVariants.length === 0) {
@@ -1138,6 +1228,7 @@ function convertToPet(
     evolutions,
     releaseDate: chronoDates.get(stub.name.toLowerCase()) ?? 'Unknown',
     ...(data.imageUrl ? { imageUrl: data.imageUrl } : {}),
+    ...(data.alternativeImages && data.alternativeImages.length > 0 ? { alternativeImages: data.alternativeImages } : {}),
     forumUrl: stub.forumUrl,
     ...(data.notes ? { notes: data.notes } : {}),
     alsoSee,
@@ -1154,7 +1245,7 @@ function parsePetThread(html: string, name: string): {
   level: string; damage: string; stats: string; statsType: 'petStats' | 'bonuses' | undefined; resists: string
   evolutions: { combineWith: string; resultName: string }[]
   rarity: string; attacks: Attack[]; notes?: string
-  alsoSeeNames: string[]; imageUrl?: string; hasDetailedStats: boolean
+  alsoSeeNames: string[]; imageUrl?: string; alternativeImages?: Array<{ url: string; caption: string }>; hasDetailedStats: boolean
 } {
   const bodyMatch = html.match(/<td[^>]*valign=["']?top["']?[^>]*width=["']?100%["']?[^>]*>([\s\S]*?)<\/td>/i)
   const rawBody = bodyMatch ? bodyMatch[1] : html
@@ -1459,66 +1550,8 @@ const saveObtain = () => {
   saveObtain()
   if (currentAttack?.name) attacks.push(currentAttack as Attack)
 
-  // Extract pet image — prioritize images with pet name in URL
-  let imageUrl: string | undefined
-  const imgRegex = /<img[^>]+src=["']([^"']+)["'][^>]*>/gi
-  let imgMatch: RegExpExecArray | null
-  const candidates: string[] = []
-  
-  while ((imgMatch = imgRegex.exec(rawBody)) !== null) {
-    const src = imgMatch[1]
-    // Skip UI/tag/button/attack images
-    if (src.includes('/f/image/') || src.includes('forumheader') || src.includes('quantserve') ||
-        src.includes('artix.com/shared') || src.includes('ArtixGameLauncher') ||
-        src.includes('/tags/') || src.includes('clear.gif') || src.includes('blank.gif') ||
-        src.includes('Button') || src.includes('-Button') || src.includes('button') ||
-        src.includes('Attack.png') || src.includes('attack.png')) continue
-    
-    // Collect valid candidates
-    if (src.includes('imgur.com') || src.includes('i.imgur.com') ||
-        src.includes('battleon.com/encyc') || src.includes('artix.com/encyc') ||
-        src.includes('github.com') || src.includes('githubusercontent.com') ||
-        (src.includes('/f/upfiles/') && src.length > 60)) {
-      candidates.push(src)
-    }
-  }
-  
-  // Prioritize: images with pet name in URL (case-insensitive, match slug-like patterns)
-  const nameParts = name.toLowerCase().replace(/[^a-z0-9\s]/g, '').split(/\s+/)
-  const nameMatches = candidates.filter(url => {
-    const urlLower = url.toLowerCase()
-    
-    // Extract filename from URL (last path segment before extension)
-    const filename = urlLower.split('/').pop()?.replace(/\.(png|jpg|jpeg|gif)$/, '') || ''
-    
-    // Exact match or very close match (filename contains name without extra suffixes)
-    const nameSlug = nameParts.join('').toLowerCase()
-    if (filename === nameSlug || filename === nameSlug + '1' || filename === nameSlug + 's') return true
-    
-    // Match if URL contains most of the name words (at least 50% for multi-word names)
-    const matchCount = nameParts.filter(part => part.length > 2 && urlLower.includes(part)).length
-    return matchCount >= Math.ceil(nameParts.length / 2)
-  })
-  
-  if (nameMatches.length > 0) {
-    // Prefer DF-Pedia GitHub images, and prefer shorter filenames (less likely to be attack/button variants)
-    const githubMatches = nameMatches.filter(url => url.includes('github.com') || url.includes('githubusercontent.com'))
-    if (githubMatches.length > 0) {
-      // Sort by URL length (shorter = simpler filename = more likely to be the main image)
-      githubMatches.sort((a, b) => a.length - b.length)
-      imageUrl = githubMatches[0]
-    } else {
-      imageUrl = nameMatches[0]
-    }
-  } else if (candidates.length > 0) {
-    // Fallback to first valid candidate (also sort by length)
-    candidates.sort((a, b) => a.length - b.length)
-    imageUrl = candidates[0]
-  } else {
-    // Last resort: construct DF-Pedia URL from name
-    const filename = name.replace(/[^a-zA-Z0-9\s]/g, '').replace(/\s+/g, '') + '.png'
-    imageUrl = `https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/${filename}`
-  }
+  // Extract pet images using extractImages helper
+  const { main: imageUrl, alternatives: alternativeImages } = extractImages(rawBody)
 
   return {
     description: description || name,
@@ -1534,7 +1567,10 @@ const saveObtain = () => {
     level, damage, stats, statsType, resists,
     evolutions, rarity, attacks,
     notes: noteLines.length > 0 ? noteLines.join('\n') : undefined,
-    alsoSeeNames, imageUrl, hasDetailedStats,
+    alsoSeeNames, 
+    imageUrl,
+    ...(alternativeImages.length > 0 ? { alternativeImages } : {}),
+    hasDetailedStats,
   }
 }
 
@@ -1637,14 +1673,24 @@ async function main() {
   }
   console.log(`✅ Found ${allStubs.length} pets & guests in A-Z listing`)
 
+  // Filter out guests (now handled by scrape-guests.ts)
+  const petsOnly = allStubs.filter(s => s.type === 'pet')
+  console.log(`   Filtered to pets only: ${petsOnly.length} entries (guests excluded)`)
+
   // Apply letter filters
-  let stubs = allStubs
-  if (letterArg) {
-    stubs = allStubs.filter(s => s.letter === letterArg)
+  let stubs = petsOnly
+  if (lettersArg && lettersArg.length > 0) {
+    // Filter by multiple letters: --letters=A,B
+    stubs = petsOnly.filter(s => lettersArg.includes(s.letter))
+    console.log(`   Filtered to letters ${lettersArg.join(', ')}: ${stubs.length} entries`)
+  } else if (letterArg) {
+    // Filter by single letter: --letter=A
+    stubs = petsOnly.filter(s => s.letter === letterArg)
     console.log(`   Filtered to letter ${letterArg}: ${stubs.length} entries`)
   } else if (startArg) {
+    // Resume from letter: --start=C
     let past = false
-    stubs = allStubs.filter(s => {
+    stubs = petsOnly.filter(s => {
       if (s.letter === startArg) past = true
       return past
     })
@@ -1654,7 +1700,7 @@ async function main() {
 
   // Build name→slug map for ALL pets (needed for cross-reference resolution)
   const nameToSlug = new Map<string, { slug: string; type: EntryType }>()
-  for (const stub of allStubs) {
+  for (const stub of petsOnly) {
     nameToSlug.set(stub.name.toLowerCase(), { slug: stub.slug, type: stub.type })
     // Also index without trailing parentheticals: "Emperor Linus (Normal)" → "emperor linus"
     const base = stub.name.replace(/\s*\([^)]+\)\s*$/, '').trim().toLowerCase()
@@ -1663,10 +1709,10 @@ async function main() {
 
   // ── Step 3: Load existing progress ────────────────────────────────────────
 
-  const progressMap = new Map<string, Pet>()
+  const progressMap = new Map<string, Pet | ItemFamily>()
   if (fs.existsSync(PROGRESS_PATH)) {
     try {
-      const existing: Pet[] = JSON.parse(fs.readFileSync(PROGRESS_PATH, 'utf-8'))
+      const existing: (Pet | ItemFamily)[] = JSON.parse(fs.readFileSync(PROGRESS_PATH, 'utf-8'))
       for (const p of existing) progressMap.set(p.slug, p)
       console.log(`📂 Loaded ${progressMap.size} previously scraped entries from progress file`)
     } catch { /* ignore corrupt progress */ }
@@ -1706,7 +1752,7 @@ async function main() {
       if ('levelVariants' in result) {
         // ItemFamily path (multi-variant)
         const family = result as ItemFamily
-        progressMap.set(family.slug, family as any)  // Store as-is
+        progressMap.set(family.slug, family)
         console.log(' ✓ [ItemFamily]')
       } else {
         // Pet path (single-variant, existing logic)
@@ -1752,14 +1798,13 @@ async function main() {
 
   fs.writeFileSync(OUTPUT_PATH, JSON.stringify(finalPets, null, 2) + '\n', 'utf-8')
 
-  console.log(`\n📁 Written ${finalPets.length} pets+guests to pets.json`)
+  console.log(`\n📁 Written ${finalPets.length} pets to pets.json (guests excluded)`)
   console.log(`📁 Progress file (${progressMap.size} total) saved to pets-progress.json`)
   console.log('\n🎉 Done!')
   console.log('\n📊 Summary:')
   console.log(`   Total stubs:   ${allStubs.length}`)
   console.log(`   In progress:   ${progressMap.size}`)
   console.log(`   Pets:          ${finalPets.filter(p => p.type === 'pet').length}`)
-  console.log(`   Guests:        ${finalPets.filter(p => p.type === 'guest').length}`)
   console.log(`   With images:   ${finalPets.filter(p => p.imageUrl).length}`)
   console.log(`   With dates:    ${finalPets.filter(p => p.releaseDate !== 'Unknown').length}`)
 }

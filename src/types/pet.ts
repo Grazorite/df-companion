@@ -2,16 +2,77 @@ export type EntryType = 'pet' | 'guest'
 
 export type PriceType = 'gold' | 'dc' | 'dm' | 'free' | 'merge'
 
+// ─── Guest-Specific Stat Interfaces ──────────────────────────────────────────
+
+export interface GuestCharacterStats {
+  str?: string   // "0" or formula like "As player"
+  dex?: string
+  int?: string
+  cha?: string
+  luk?: string
+  end?: string
+  wis?: string
+}
+
+export interface GuestOffenseStats {
+  boost?: string     // "0%"
+  bonus?: string     // "100"
+  crit?: string      // "5"
+}
+
+export interface GuestDamageMultipliers {
+  nonCrit?: string   // "100%"
+  dex?: string       // "100%"
+  dot?: string       // "100%"
+  crit?: string      // "175%"
+}
+
+export interface GuestDefenseStats {
+  melee?: string     // "5"
+  pierce?: string    // "0"
+  magic?: string     // "5"
+  block?: string     // "0"
+  parry?: string     // "0"
+  dodge?: string     // "0"
+}
+
+export interface GuestDamageReduction {
+  nonCrit?: string   // "0%"
+  dot?: string       // "0%"
+  crit?: string      // "0%"
+}
+
+export interface GuestStats {
+  // Basic Info
+  level?: string           // "As player" or numeric
+  damage?: string          // "Scaled"
+  damageType?: 'Melee' | 'Magic' | 'Pierce'
+  element?: string         // "Darkness"
+  
+  // HP/MP
+  hp?: string              // "As player, less END bonus"
+  mp?: string              // "As player, less WIS bonus"
+  
+  // Stat sections
+  characterStats?: GuestCharacterStats
+  offense?: GuestOffenseStats
+  damageMultipliers?: GuestDamageMultipliers
+  defense?: GuestDefenseStats
+  damageReduction?: GuestDamageReduction
+  resistances?: Record<string, string>  // Element code → value
+}
+
 export interface ObtainMethod {
-  location: string         // "Grams Pets", "Cysero's Shop"
-  price: string            // "500 Gold", "200 Dragon Coins", "N/A"
+  location: string         // "Grams Pets", "Cysero's Shop", "Chasing Answers"
   priceType: PriceType     // For filtering and DC/DM logo display
+  requirements?: string    // "Completion of Hawk in the Sky to unlock"
+  price?: string           // "500 Gold", "200 Dragon Coins", "N/A" (optional - not used for guests)
   requiredItems?: string   // "1 Prince Linus & 1 Royal Penguin Shrink Ray"
-  sellback: string         // "0 Gold", "125 Gold"
+  sellback?: string        // "0 Gold", "125 Gold" (optional - not used for guests)
   // Per-method access flags (optional - only present if detected in that method's context)
   daRequired?: boolean     // true if DA tag appears near this specific obtain method
-  dcRequired?: boolean     // true if DC tag appears near this specific obtain method
-  dmRequired?: boolean     // true if DM tag appears near this specific obtain method
+  dcRequired?: boolean     // true if DC tag appears near this specific obtain method (not used for guests)
+  dmRequired?: boolean     // true if DM tag appears near this specific obtain method (not used for guests)
 }
 
 export interface Attack {
@@ -19,6 +80,11 @@ export interface Attack {
   description: string      // Full description text
   images?: string[]        // URLs to attack animation images
   notes?: string[]         // Sub-bullet mechanic notes
+}
+
+export interface GuestAttack extends Attack {
+  buttonImageUrl?: string  // URL to skill button icon
+  order: number            // Sort order (Attack=0, then numbered)
 }
 
 export interface Evolution {
@@ -78,6 +144,7 @@ export interface Pet {
   // Metadata
   releaseDate: string      // "September 15th, 2017" — required from Chronology
   imageUrl?: string        // Full pet image URL
+  alternativeImages?: Array<{ url: string; caption: string }>  // Alternative images with captions
   forumUrl: string
   notes?: string           // Bullet-separated notes with " • "
   alsoSee: AlsoSeeRef[]   // Explicit typed cross-references
@@ -92,4 +159,16 @@ export interface PetFilters {
   elements?: string[]      // Multi-select element codes (OR logic)
   access?: ('multi' | 'free' | 'dc' | 'dm' | 'da' | 'merge')[]  // Level 1 multi-select access filters
   categories?: ('temp' | 'rare' | 'seasonal' | 'special-offer' | 'retired')[]  // Level 2 multi-select
+}
+
+// ─── Guest Type (extends Pet with structured stats) ──────────────────────────
+
+export interface Guest extends Omit<Pet, 'attacks' | 'damage' | 'stats' | 'statsType'> {
+  type: 'guest'
+  guestStats?: GuestStats           // Structured guest stats
+  attacks: GuestAttack[]            // Attacks with button images
+  alternativeImages?: Array<{       // Alt appearances with captions
+    url: string
+    caption?: string
+  }>
 }

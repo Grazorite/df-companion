@@ -12,10 +12,10 @@
     "validate": "node scripts/validate-badges.mjs && node scripts/validate-pets.mjs",
     "scrape:badges": "tsx scripts/scrape-badges.ts",
     "scrape:pets": "tsx scripts/scrape-pets.ts",
-    "images:pets": "bash scripts/run_with_venv.sh scripts/add_pet_images.py",
-    "images:guests": "bash scripts/run_with_venv.sh scripts/add_guest_images.py",
-    "images:clear": "bash scripts/run_with_venv.sh scripts/clear_images.py",
-    "setup:python": "bash scripts/setup_venv.sh"
+    "scrape:guests": "tsx scripts/scrape-guests.ts",
+    "clear:pets": "echo '[]' > src/data/pets.json && rm -f src/data/pets-progress.json && echo 'Cleared pets.json and progress'",
+    "clear:guests": "echo '[]' > src/data/guests.json && rm -f src/data/guests-progress.json && echo 'Cleared guests.json and progress'",
+    "clear:all": "npm run clear:pets && npm run clear:guests && echo 'All data cleared'"
   },
   "dependencies": {
     "lucide-react": "^1.22.0",

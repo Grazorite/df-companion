@@ -1,5 +1,542 @@
 [
   {
+    "id": "pet-adorable-baby-dracolich-pet",
+    "familyName": "Adorable Baby Dracolich Pet",
+    "slug": "pet-adorable-baby-dracolich-pet",
+    "type": "pet",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17224593",
+    "shared": {
+      "description": "You fought long and hard to protect Zorbak's legion of baby dracoliches, and now you can have one of them as a pet!",
+      "element": "DAR",
+      "rarity": "5",
+      "attacks": [
+        {
+          "name": "Attack Type 1",
+          "description": "Approaches target and bites it for 1 hit of 100% Melee Darkness damage. (Rate: 50%)",
+          "images": [],
+          "notes": []
+        },
+        {
+          "name": "Attack Type 2",
+          "description": "Approaches target and breathes dark flames at it for 3 hits of 50% Magic Darkness damage, amounting to 150% damage. (Rate: 50%) DF AQW",
+          "images": [],
+          "notes": []
+        }
+      ],
+      "notes": "Pets apply the global CHA damage buff per hit instead of per turn, increasing their damage by [(Player's CHA)/10] per hit, rounded down.\nPets are animated; they move their tails, wings, heads, and other parts of their bodies periodically.",
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/DracolichPet.png"
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 20,
+        "levelDisplay": "20",
+        "actualLevel": 20,
+        "name": "Adorable Baby Dracolich Pet",
+        "damage": "14-18",
+        "stats": "None",
+        "statsType": "petStats",
+        "obtainVariants": [
+          {
+            "location": "Rare Pets",
+            "price": "125 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "113 DC (<24 hours) / 32 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "rarity": "5"
+      },
+      {
+        "levelNumber": 40,
+        "levelDisplay": "40",
+        "actualLevel": 40,
+        "name": "Adorable Baby Dracolich Pet",
+        "damage": "16-20",
+        "stats": "Crit +5, Bonus +5",
+        "statsType": "petStats",
+        "obtainVariants": [
+          {
+            "location": "Rare Pets",
+            "price": "125 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "113 DC (<24 hours) / 32 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "rarity": "5"
+      },
+      {
+        "levelNumber": 55,
+        "levelDisplay": "55",
+        "actualLevel": 55,
+        "name": "Adorable Baby Dracolich Pet",
+        "damage": "20-24",
+        "stats": "Crit +5, Bonus +5",
+        "statsType": "petStats",
+        "obtainVariants": [
+          {
+            "location": "Rare Pets",
+            "price": "125 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "113 DC (<24 hours) / 32 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "rarity": "5"
+      }
+    ],
+    "releaseDate": "January 22nd, 2010",
+    "tags": [
+      "pet",
+      "dar"
+    ],
+    "hasDA": false,
+    "hasDC": true,
+    "hasDM": false,
+    "hasFree": false,
+    "hasMerge": false,
+    "levelRange": "20-55",
+    "elements": [
+      "DAR"
+    ]
+  },
+  {
+    "id": "pet-ancestral-boar-spirit",
+    "name": "Ancestral Boar Spirit",
+    "slug": "pet-ancestral-boar-spirit",
+    "type": "pet",
+    "description": "This pet has been granted to the ninjas of the Shadow of the Wind Clan by Nago, the boar god. It represents a fierce nature, strong spirit and breath as fresh as a summer ham.",
+    "daRequired": false,
+    "elements": [
+      "BAC"
+    ],
+    "traits": [],
+    "level": "15",
+    "damage": "4-14",
+    "stats": "Crit +2, STR +2",
+    "resists": "None",
+    "obtainMethods": [
+      {
+        "location": "Snake Ear's Pets",
+        "price": "700 Gold",
+        "priceType": "gold",
+        "sellback": "70 Gold"
+      }
+    ],
+    "attacks": [
+      {
+        "name": "Attack Type 1",
+        "description": "Runs up and rams its head into the enemy for one hit of 100% Melee Bacon damage",
+        "images": [],
+        "notes": []
+      }
+    ],
+    "rarity": "0",
+    "evolutions": [],
+    "releaseDate": "November 9th, 2007",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/AncestralBoarSpiritPetpic.png",
+    "alternativeImages": [
+      {
+        "url": "http://i.imgur.com/0sMYvNE.png",
+        "caption": "Alternative Image"
+      }
+    ],
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=11799632",
+    "alsoSee": [
+      {
+        "name": "Revered Ancestral Boar Spirit",
+        "slug": "pet-revered-ancestral-boar-spirit",
+        "type": "pet"
+      }
+    ],
+    "tags": [
+      "pet",
+      "bac"
+    ]
+  },
+  {
+    "id": "pet-ancestral-snake-spirit",
+    "name": "Ancestral Snake Spirit",
+    "slug": "pet-ancestral-snake-spirit",
+    "type": "pet",
+    "description": "This spiritual serpent has been granted to members of the Shadow of the Wind Clan. It represents the ability to free yourself from any situation, as a snake escapes its own skin.",
+    "daRequired": false,
+    "elements": [
+      "WIN"
+    ],
+    "traits": [],
+    "level": "5",
+    "damage": "2-7",
+    "stats": "None",
+    "resists": "None",
+    "obtainMethods": [
+      {
+        "location": "Snake Ear's Pets",
+        "price": "125 Gold",
+        "priceType": "gold",
+        "sellback": "13 Gold"
+      }
+    ],
+    "attacks": [
+      {
+        "name": "Attack Type 1",
+        "description": "Flies up to the enemy and breaths fire out of its mouth for 1 hit of Melee Wind damage",
+        "images": [],
+        "notes": []
+      }
+    ],
+    "rarity": "0",
+    "evolutions": [],
+    "releaseDate": "November 9th, 2007",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/AncestralSnakeSpiritPetpic.png",
+    "alternativeImages": [
+      {
+        "url": "http://i.imgur.com/rbCl4Wn.png",
+        "caption": "Alternative Image"
+      }
+    ],
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=11799693",
+    "alsoSee": [
+      {
+        "name": "Revered Ancestral Snake Spirit",
+        "slug": "pet-revered-ancestral-snake-spirit",
+        "type": "pet"
+      }
+    ],
+    "tags": [
+      "pet",
+      "win"
+    ]
+  },
+  {
+    "id": "pet-ancient-ninja-terrapin",
+    "name": "Ancient Ninja Terrapin",
+    "slug": "pet-ancient-ninja-terrapin",
+    "type": "pet",
+    "description": "This pet requires a Dragon Amulet. This rare fresh water turtle has, through some magical accident been transformed into an elderly fighting machine, with a bad attitude. He's old enough to know a snap kick from a snapping turtle.",
+    "daRequired": true,
+    "elements": [
+      "NAT"
+    ],
+    "traits": [],
+    "level": "35",
+    "damage": "15-22",
+    "stats": "None",
+    "resists": "None",
+    "obtainMethods": [
+      {
+        "location": "Snake Ear's Pets",
+        "price": "3,000 Gold",
+        "priceType": "gold",
+        "sellback": "300 Gold",
+        "daRequired": true
+      }
+    ],
+    "attacks": [
+      {
+        "name": "Attack Type 1",
+        "description": "Runs to the enemy, unsheathes two blades and hits for one hit of 100% Melee Nature damage",
+        "images": [],
+        "notes": []
+      },
+      {
+        "name": "Attack Type 2",
+        "description": "Runs to the enemy, unsheathes a star and throws it at the enemy for one hit of 100% Melee Nature damage",
+        "images": [],
+        "notes": []
+      },
+      {
+        "name": "Attack Type 3",
+        "description": "Runs to the enemy, unsheathes a whip and strikes it at the enemy for one hit of 100% Melee Nature damage",
+        "images": [],
+        "notes": []
+      },
+      {
+        "name": "Attack Type 4",
+        "description": "Runs to the enemy and kicks them for one hit of 100% Melee Nature damage",
+        "images": [],
+        "notes": []
+      }
+    ],
+    "rarity": "1",
+    "evolutions": [],
+    "releaseDate": "November 9th, 2007",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/AncientNinjaTerrapinPetpic.png",
+    "alternativeImages": [
+      {
+        "url": "http://i.imgur.com/EpKhxiM.png",
+        "caption": "Alternative Image"
+      }
+    ],
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=11799521",
+    "alsoSee": [
+      {
+        "name": "Post-Adolescent Ninja Terrapin",
+        "slug": "pet-post-adolescent-ninja-terrapin",
+        "type": "pet"
+      },
+      {
+        "name": "Revered Post-Adolescent Ninja Terrapin",
+        "slug": "pet-revered-post-adolescent-ninja-terrapin",
+        "type": "pet"
+      },
+      {
+        "name": "Revered Ancient Ninja Terrapin",
+        "slug": "pet-revered-ancient-ninja-terrapin",
+        "type": "pet"
+      }
+    ],
+    "tags": [
+      "pet",
+      "nat"
+    ]
+  },
+  {
+    "id": "pet-armored-chickcalf",
+    "familyName": "Armored Chickcalf",
+    "slug": "pet-armored-chickcalf",
+    "type": "pet",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18250112",
+    "shared": {
+      "description": "You have had this baby chickencow since it was just an egg. It is ready to defend you in its brand new armor, but only because it thinks you are its mother.",
+      "element": "BAC",
+      "rarity": "77",
+      "attacks": [
+        {
+          "name": "Attack Type 1",
+          "description": "Hovers and casts a shield, applying 'Chickcalf's Aegis' (+15 Dodge Defense) to player for 4 turns.",
+          "images": [],
+          "notes": []
+        },
+        {
+          "name": "Attack Type 2",
+          "description": "Runs toward target and jumps into it, hovering afterwards for 1 hit of 100% Magic Bacon damage. DF MQ AQW",
+          "images": [],
+          "notes": []
+        }
+      ],
+      "notes": "Pets will only use Attack Type 1 whenever the player is not affected by 'Chickcalf's Aegis'.\nPets were initially automatically upgraded to the highest level a player could use; this level-to-upgrade model was retired on  September 10th, 2012, in favor of the merge-to-upgrade model.\nPets were DC-tagged on January 9th, 2021.\nPets are animated; they blink, look upwards, preen, and peck at the ground sporadically.",
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/ArmoredChickcalf.png"
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
+        "levelDisplay": "I",
+        "actualLevel": 10,
+        "name": "Armored Chickcalf I",
+        "damage": "5-13",
+        "stats": "Crit +1, Bonus +1",
+        "statsType": "petStats",
+        "obtainVariants": [
+          {
+            "location": "Redeem the code received from purchasing the ChickenCow T-Shirt from  HeroMart",
+            "price": "$19.99-$21.99 USD + Postage",
+            "priceType": "gold",
+            "sellback": "0 Gold 0 Dragon Coins",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "rarity": "77"
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "II",
+        "name": "Armored Chickcalf II",
+        "damage": "Unknown",
+        "stats": "None",
+        "obtainVariants": [
+          {
+            "location": "Armored Chickcalf Pet",
+            "price": "N/A",
+            "priceType": "merge",
+            "sellback": "0 Gold",
+            "daRequired": false,
+            "requiredItems": "1",
+            "dcRequired": true
+          }
+        ]
+      },
+      {
+        "levelNumber": 3,
+        "levelDisplay": "III",
+        "name": "Armored Chickcalf III",
+        "damage": "Unknown",
+        "stats": "None",
+        "obtainVariants": [
+          {
+            "location": "Armored Chickcalf Pet",
+            "price": "N/A",
+            "priceType": "merge",
+            "sellback": "0 Gold",
+            "daRequired": false,
+            "requiredItems": "1",
+            "dcRequired": true
+          }
+        ]
+      },
+      {
+        "levelNumber": 4,
+        "levelDisplay": "IV",
+        "name": "Armored Chickcalf IV",
+        "damage": "Unknown",
+        "stats": "None",
+        "obtainVariants": [
+          {
+            "location": "Armored Chickcalf Pet",
+            "price": "N/A",
+            "priceType": "merge",
+            "sellback": "0 Gold",
+            "daRequired": false,
+            "requiredItems": "1",
+            "dcRequired": true
+          }
+        ]
+      },
+      {
+        "levelNumber": 5,
+        "levelDisplay": "V",
+        "name": "Armored Chickcalf V",
+        "damage": "Unknown",
+        "stats": "None",
+        "obtainVariants": [
+          {
+            "location": "Armored Chickcalf Pet",
+            "price": "N/A",
+            "priceType": "merge",
+            "sellback": "0 Gold",
+            "daRequired": false,
+            "requiredItems": "1",
+            "dcRequired": true
+          }
+        ]
+      },
+      {
+        "levelNumber": 6,
+        "levelDisplay": "VI",
+        "name": "Armored Chickcalf VI",
+        "damage": "Unknown",
+        "stats": "None",
+        "obtainVariants": [
+          {
+            "location": "Armored Chickcalf Pet",
+            "price": "N/A",
+            "priceType": "merge",
+            "sellback": "0 Gold",
+            "daRequired": false,
+            "requiredItems": "1",
+            "dcRequired": true
+          }
+        ]
+      },
+      {
+        "levelNumber": 7,
+        "levelDisplay": "VII",
+        "name": "Armored Chickcalf VII",
+        "damage": "Unknown",
+        "stats": "None",
+        "obtainVariants": [
+          {
+            "location": "Armored Chickcalf Pet",
+            "price": "N/A",
+            "priceType": "merge",
+            "sellback": "0 Gold",
+            "daRequired": false,
+            "requiredItems": "1",
+            "dcRequired": true
+          }
+        ]
+      }
+    ],
+    "tags": [
+      "pet",
+      "bac"
+    ],
+    "isRare": true,
+    "isSpecialOffer": true,
+    "retired": true,
+    "hasDA": false,
+    "hasDC": true,
+    "hasDM": false,
+    "hasFree": false,
+    "hasMerge": true,
+    "levelRange": "I-VII",
+    "elements": [
+      "BAC"
+    ]
+  },
+  {
+    "id": "pet-atgasedd-doll",
+    "name": "Atgasedd Doll",
+    "slug": "pet-atgasedd-doll",
+    "type": "pet",
+    "description": "Are you feeling it? Buffs you and debuffs enemies, scaling a small amount off of your CHA stat.",
+    "daRequired": false,
+    "elements": [
+      "FEA"
+    ],
+    "traits": [],
+    "level": "1",
+    "damage": "0-0",
+    "stats": "None",
+    "resists": "None",
+    "obtainMethods": [
+      {
+        "location": "Atgasedd Doll (Shop)",
+        "price": "N/A",
+        "priceType": "merge",
+        "requiredItems": "1  Condensed C Blob & 1  Glob of Unigedd",
+        "sellback": "0 Gold"
+      }
+    ],
+    "attacks": [
+      {
+        "name": "Attack Type 1",
+        "description": "Summons a symbol with a red glow, applying 'Atgasedd' (+X% Boost) to player for 1 turn.",
+        "images": [],
+        "notes": []
+      },
+      {
+        "name": "Attack Type 2",
+        "description": "Summons a symbol with a yellow glow, applying 'Atgno' (+2X Bonus) to player for 1 turn.",
+        "images": [],
+        "notes": []
+      },
+      {
+        "name": "Attack Type 3",
+        "description": "Summons a symbol with a blue glow for 1 hit of 100% Melee Fear damage; applies 'Bradychwyd' (-2X Bonus) to target for 1 turn.",
+        "images": [],
+        "notes": []
+      },
+      {
+        "name": "Attack Type 4",
+        "description": "Summons a symbol with a green glow for 1 hit of 100% Melee Fear damage; applies 'Mwrn' (-X% Boost) to target for 1 turn.",
+        "images": [],
+        "notes": []
+      },
+      {
+        "name": "Attack Type 5",
+        "description": "Summons a symbol with a purple glow, applying 'Unigedd' (+X Block/Parry/Dodge Defense) to player for 2 turns.",
+        "images": [],
+        "notes": []
+      }
+    ],
+    "rarity": "1",
+    "evolutions": [],
+    "releaseDate": "March 9th, 2018",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/AtgaseddDoll.png",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22317421",
+    "notes": "X is equal to [5 + (Player's CHA)/40], rounded up.\nAtgasedd Doll's damage is affected by the global CHA damage buff, increasing its damage by [(Player's CHA)/10], rounded down.\nAtgasedd Doll's attack rotation always follows and repeats the above cycle; re-equipping Atgasedd Doll will not reset its rotation.",
+    "alsoSee": [],
+    "tags": [
+      "pet",
+      "fea"
+    ]
+  },
+  {
     "id": "pet-babmuu",
     "name": "Babmuu",
     "slug": "pet-babmuu",
@@ -168,8 +705,7 @@
             "daRequired": false
           }
         ],
-        "rarity": "5",
-        "notes": "Pets have an extremely low (<1%) drop rate.\nPets are animated; they move their tails, wings, heads, and other parts of their bodies periodically."
+        "rarity": "5"
       }
     ],
     "releaseDate": "January 22nd, 2010",
@@ -333,8 +869,7 @@
             "dcRequired": true
           }
         ],
-        "rarity": "77",
-        "notes": "The following changes were implemented on December 23rd, 2018:\n  • Pets initially had a sellback value of 50 Gold, before being DC tagged and becoming unsellable.\n  • Pets cannot be destroyed."
+        "rarity": "77"
       }
     ],
     "releaseDate": "November 5th, 2010",
@@ -427,7 +962,6 @@
           "notes": []
         }
       ],
-      "notes": "Pet's name is erroneously called '",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/BabyWeaver.png"
     },
     "levelVariants": [
@@ -831,42 +1365,6 @@
     "isMultiPost": true
   },
   {
-    "id": "guest-batoro",
-    "name": "Batoro",
-    "slug": "guest-batoro",
-    "type": "guest",
-    "description": "Human The ArchKnight",
-    "daRequired": true,
-    "elements": [
-      "DAR"
-    ],
-    "traits": [],
-    "level": "As player",
-    "damage": "Scaled",
-    "stats": "None",
-    "resists": "None",
-    "obtainMethods": [
-      {
-        "location": "Evening Falconreach (Book 3) -> Down -> 2 Down Right -> Left -> Invite Batoro as a guest",
-        "price": "N/A",
-        "priceType": "gold",
-        "sellback": "0 Gold"
-      }
-    ],
-    "attacks": [],
-    "rarity": "Unknown",
-    "evolutions": [],
-    "releaseDate": "September 21st, 2012",
-    "imageUrl": "https://i.imgur.com/OrjlrpG.png",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20722177",
-    "notes": "Batoro's stun duration was lowered from 2 turns to 1 turn on February 28th, 2020; more information can be found in the  February 28th, 2020 Design Notes.",
-    "alsoSee": [],
-    "tags": [
-      "guest",
-      "dar"
-    ]
-  },
-  {
     "id": "pet-battle-piggy",
     "name": "Battle Piggy",
     "slug": "pet-battle-piggy",
@@ -906,42 +1404,6 @@
     "tags": [
       "pet",
       "nat"
-    ]
-  },
-  {
-    "id": "guest-belle",
-    "name": "Belle",
-    "slug": "guest-belle",
-    "type": "guest",
-    "description": "Human Soulweaver",
-    "daRequired": false,
-    "isTemp": true,
-    "elements": [
-      "FEA"
-    ],
-    "traits": [],
-    "level": "As player",
-    "damage": "Scaled",
-    "stats": "None",
-    "resists": "None",
-    "obtainMethods": [
-      {
-        "location": "Fortress of Thorns,  Unraveled",
-        "price": "N/A",
-        "priceType": "gold",
-        "sellback": "0 Gold"
-      }
-    ],
-    "attacks": [],
-    "rarity": "Unknown",
-    "evolutions": [],
-    "releaseDate": "July 12th, 2019",
-    "imageUrl": "https://i.imgur.com/mn5OeC9.png",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22365227",
-    "alsoSee": [],
-    "tags": [
-      "guest",
-      "fea"
     ]
   },
   {
@@ -1059,6 +1521,12 @@
     "evolutions": [],
     "releaseDate": "January 1st, 2007",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/BlackIcePwnyPetpic.png",
+    "alternativeImages": [
+      {
+        "url": "https://i.imgur.com/9xXRe5e.jpg",
+        "caption": "Alternative Image"
+      }
+    ],
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=7579805",
     "notes": "Transformed from  Large Dragon Gift Box on  January 1st, 2007.\nAlternative Image",
     "alsoSee": [],
@@ -1234,6 +1702,12 @@
     "evolutions": [],
     "releaseDate": "May 16th, 2015",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/BearCubPetpic.png",
+    "alternativeImages": [
+      {
+        "url": "http://i.imgur.com/ujzXQwH.png",
+        "caption": "Alternative Image"
+      }
+    ],
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21975785",
     "alsoSee": [
       {
@@ -1313,6 +1787,16 @@
     "evolutions": [],
     "releaseDate": "August 20th, 2010",
     "imageUrl": "https://i.imgur.com/0s8cPNW.png",
+    "alternativeImages": [
+      {
+        "url": "http://i.imgur.com/wBcT5Ag.png",
+        "caption": "Alternative Image"
+      },
+      {
+        "url": "http://media.artix.com/encyc/df/tags/WarLoot.jpg",
+        "caption": "Alternative Image"
+      }
+    ],
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18037313",
     "alsoSee": [],
     "tags": [
@@ -1582,8 +2066,7 @@
             "dcRequired": true
           }
         ],
-        "rarity": "12",
-        "notes": "*Each time Braydenball pets perform Attack Type 2 or 3, they increase their max damage value for Attack Type 1 by 10, capping at 250; once Attack Type 1 is performed, the max damage value is reset.\nBraydenball pets previously had a different mechanic:\n  • Each time a Braydenball pet performed its idle bounce animation, it could increase its max damage value for Attack Type 1, capping only at the global damage cap of SQRT(Pet's level)*100.\n  • Upon its discovery, this mechanic was deemed overpowered, and thus the mechanic was changed in August 2019; rates of each attack type occurring were also adjusted.\nPets are animated; they bounce up and down in place."
+        "rarity": "12"
       }
     ],
     "tags": [
@@ -1851,79 +2334,6 @@
     "tags": [
       "pet",
       "lig"
-    ]
-  },
-  {
-    "id": "guest-bubble",
-    "name": "Bubble",
-    "slug": "guest-bubble",
-    "type": "guest",
-    "description": "Human TART",
-    "daRequired": false,
-    "isSeasonal": true,
-    "elements": [
-      "LIG"
-    ],
-    "traits": [],
-    "level": "As player",
-    "damage": "Scaled",
-    "stats": "None",
-    "resists": "None",
-    "obtainMethods": [
-      {
-        "location": "Resident Sneevil: The Beehive!,  Resident Sneevil: Uprising",
-        "price": "N/A",
-        "priceType": "gold",
-        "sellback": "0 Gold"
-      }
-    ],
-    "attacks": [],
-    "rarity": "Unknown",
-    "evolutions": [],
-    "releaseDate": "October 15th, 2010",
-    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Bubble%20pic.bmp",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18230081",
-    "notes": "Bubble has a 10% chance to attempt a second attack type which is currently bugged, causing her turn to stick.",
-    "alsoSee": [],
-    "tags": [
-      "guest",
-      "lig"
-    ]
-  },
-  {
-    "id": "guest-bug-kid",
-    "name": "Bug Kid",
-    "slug": "guest-bug-kid",
-    "type": "guest",
-    "description": "Human Wannabe Beastmaster",
-    "daRequired": false,
-    "isTemp": true,
-    "elements": [
-      "NAT"
-    ],
-    "traits": [],
-    "level": "2",
-    "damage": "8-12",
-    "stats": "None",
-    "resists": "None",
-    "obtainMethods": [
-      {
-        "location": "Critter Cave (Book 3)",
-        "price": "N/A",
-        "priceType": "gold",
-        "sellback": "0 Gold"
-      }
-    ],
-    "attacks": [],
-    "rarity": "Unknown",
-    "evolutions": [],
-    "releaseDate": "July 28th, 2023",
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/BugKid.png",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22411019",
-    "alsoSee": [],
-    "tags": [
-      "guest",
-      "nat"
     ]
   }
 ]
