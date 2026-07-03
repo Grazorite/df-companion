@@ -239,31 +239,32 @@ function parseGuestStats(html: string, guestName: string): GuestStats {
     if (DEBUG) console.log(`  MP: ${stats.mp}`)
   }
   
-  // Parse Stats section (STR, DEX, INT, CHA, LUK, END, WIS)
-  const statsSection = html.match(/<b><u>Stats<\/u><\/b>([\s\S]*?)(?=<b><u>|$)/i)
+  // Parse Stats section (STR, DEX, INT, CHA, LUK, END, WIS) - may or may not have <b> tags
+  const statsSection = html.match(/(?:<b>)?<u>Stats<\/u>(?:<\/b>)?([\s\S]*?)(?=<u>|<hr>|$)/i)
   if (statsSection) {
     if (DEBUG) console.log(`  Found Stats section`)
     const characterStats: typeof stats.characterStats = {}
     
-    const strMatch = statsSection[1].match(/<b>STR:<\/b>\s*([^<\n]+)/i)
+    // Stats are plain text: "STR: 0" not "<b>STR:</b> 0"
+    const strMatch = statsSection[1].match(/STR:\s*([^<\n]+)/i)
     if (strMatch) characterStats.str = strMatch[1].trim()
     
-    const dexMatch = statsSection[1].match(/<b>DEX:<\/b>\s*([^<\n]+)/i)
+    const dexMatch = statsSection[1].match(/DEX:\s*([^<\n]+)/i)
     if (dexMatch) characterStats.dex = dexMatch[1].trim()
     
-    const intMatch = statsSection[1].match(/<b>INT:<\/b>\s*([^<\n]+)/i)
+    const intMatch = statsSection[1].match(/INT:\s*([^<\n]+)/i)
     if (intMatch) characterStats.int = intMatch[1].trim()
     
-    const chaMatch = statsSection[1].match(/<b>CHA:<\/b>\s*([^<\n]+)/i)
+    const chaMatch = statsSection[1].match(/CHA:\s*([^<\n]+)/i)
     if (chaMatch) characterStats.cha = chaMatch[1].trim()
     
-    const lukMatch = statsSection[1].match(/<b>LUK:<\/b>\s*([^<\n]+)/i)
+    const lukMatch = statsSection[1].match(/LUK:\s*([^<\n]+)/i)
     if (lukMatch) characterStats.luk = lukMatch[1].trim()
     
-    const endMatch = statsSection[1].match(/<b>END:<\/b>\s*([^<\n]+)/i)
+    const endMatch = statsSection[1].match(/END:\s*([^<\n]+)/i)
     if (endMatch) characterStats.end = endMatch[1].trim()
     
-    const wisMatch = statsSection[1].match(/<b>WIS:<\/b>\s*([^<\n]+)/i)
+    const wisMatch = statsSection[1].match(/WIS:\s*([^<\n]+)/i)
     if (wisMatch) characterStats.wis = wisMatch[1].trim()
     
     if (Object.keys(characterStats).length > 0) {
@@ -272,19 +273,20 @@ function parseGuestStats(html: string, guestName: string): GuestStats {
     }
   }
   
-  // Parse Offense section
-  const offenseSection = html.match(/<b><u>Offense<\/u><\/b>([\s\S]*?)(?=<b><u>|$)/i)
+  // Parse Offense section (may or may not have <b> tags)
+  const offenseSection = html.match(/(?:<b>)?<u>Offense<\/u>(?:<\/b>)?([\s\S]*?)(?=<u>|<hr>|$)/i)
   if (offenseSection) {
     if (DEBUG) console.log(`  Found Offense section`)
     const offense: typeof stats.offense = {}
     
-    const boostMatch = offenseSection[1].match(/<b>Boost:<\/b>\s*([^<\n]+)/i)
+    // Stats are plain text: "Boost: 0%" not "<b>Boost:</b> 0%"
+    const boostMatch = offenseSection[1].match(/\bBoost:\s*([^<\n]+)/i)
     if (boostMatch) offense.boost = boostMatch[1].trim()
     
-    const bonusMatch = offenseSection[1].match(/<b>Bonus:<\/b>\s*([^<\n]+)/i)
+    const bonusMatch = offenseSection[1].match(/\bBonus:\s*([^<\n]+)/i)
     if (bonusMatch) offense.bonus = bonusMatch[1].trim()
     
-    const critMatch = offenseSection[1].match(/<b>Crit:<\/b>\s*([^<\n]+)/i)
+    const critMatch = offenseSection[1].match(/\bCrit:\s*([^<\n]+)/i)
     if (critMatch) offense.crit = critMatch[1].trim()
     
     if (Object.keys(offense).length > 0) {
@@ -293,22 +295,24 @@ function parseGuestStats(html: string, guestName: string): GuestStats {
     }
   }
   
-  // Parse Damage Multipliers section
-  const dmgMultSection = html.match(/<b><u>Damage Multipliers<\/u><\/b>([\s\S]*?)(?=<b><u>|$)/i)
+  // Parse Damage Multipliers section (may not have <b> tags)
+  const dmgMultSection = html.match(/(?:<b>)?<u>Damage Multipliers<\/u>(?:<\/b>)?([\s\S]*?)(?=(?:<b>)?<u>|<hr>|$)/i)
   if (dmgMultSection) {
     if (DEBUG) console.log(`  Found Damage Multipliers section`)
+    const sectionText = dmgMultSection[1]
     const damageMultipliers: typeof stats.damageMultipliers = {}
     
-    const nonCritMatch = dmgMultSection[1].match(/<b>Non-Crit:<\/b>\s*([^<\n]+)/i)
+    const nonCritMatch = sectionText.match(/Non-Crit:\s*([^<\n]+)/i)
     if (nonCritMatch) damageMultipliers.nonCrit = nonCritMatch[1].trim()
     
-    const dexMatch = dmgMultSection[1].match(/<b>Dex:<\/b>\s*([^<\n]+)/i)
+    const dexMatch = sectionText.match(/\bDex:\s*([^<\n]+)/i)
     if (dexMatch) damageMultipliers.dex = dexMatch[1].trim()
     
-    const dotMatch = dmgMultSection[1].match(/<b>DoT:<\/b>\s*([^<\n]+)/i)
+    const dotMatch = sectionText.match(/\bDoT:\s*([^<\n]+)/i)
     if (dotMatch) damageMultipliers.dot = dotMatch[1].trim()
     
-    const critMatch = dmgMultSection[1].match(/<b>Crit:<\/b>\s*([^<\n]+)/i)
+    // Match "Crit:" but NOT "Non-Crit:" - use word boundary or negative lookbehind
+    const critMatch = sectionText.match(/(?<!Non-)Crit:\s*([^<\n]+)/i)
     if (critMatch) damageMultipliers.crit = critMatch[1].trim()
     
     if (Object.keys(damageMultipliers).length > 0) {
@@ -318,27 +322,27 @@ function parseGuestStats(html: string, guestName: string): GuestStats {
   }
   
   // Parse Defense section
-  const defenseSection = html.match(/<b><u>Defense<\/u><\/b>([\s\S]*?)(?=<b><u>|$)/i)
+  const defenseSection = html.match(/(?:<b>)?<u>Defense<\/u>(?:<\/b>)?([\s\S]*?)(?=<u>|<hr>|$)/i)
   if (defenseSection) {
     if (DEBUG) console.log(`  Found Defense section`)
     const defense: typeof stats.defense = {}
     
-    const meleeMatch = defenseSection[1].match(/<b>Melee:<\/b>\s*([^<\n]+)/i)
+    const meleeMatch = defenseSection[1].match(/Melee:\s*([^<\n]+)/i)
     if (meleeMatch) defense.melee = meleeMatch[1].trim()
     
-    const pierceMatch = defenseSection[1].match(/<b>Pierce:<\/b>\s*([^<\n]+)/i)
+    const pierceMatch = defenseSection[1].match(/Pierce:\s*([^<\n]+)/i)
     if (pierceMatch) defense.pierce = pierceMatch[1].trim()
     
-    const magicMatch = defenseSection[1].match(/<b>Magic:<\/b>\s*([^<\n]+)/i)
+    const magicMatch = defenseSection[1].match(/Magic:\s*([^<\n]+)/i)
     if (magicMatch) defense.magic = magicMatch[1].trim()
     
-    const blockMatch = defenseSection[1].match(/<b>Block:<\/b>\s*([^<\n]+)/i)
+    const blockMatch = defenseSection[1].match(/Block:\s*([^<\n]+)/i)
     if (blockMatch) defense.block = blockMatch[1].trim()
     
-    const parryMatch = defenseSection[1].match(/<b>Parry:<\/b>\s*([^<\n]+)/i)
+    const parryMatch = defenseSection[1].match(/Parry:\s*([^<\n]+)/i)
     if (parryMatch) defense.parry = parryMatch[1].trim()
     
-    const dodgeMatch = defenseSection[1].match(/<b>Dodge:<\/b>\s*([^<\n]+)/i)
+    const dodgeMatch = defenseSection[1].match(/Dodge:\s*([^<\n]+)/i)
     if (dodgeMatch) defense.dodge = dodgeMatch[1].trim()
     
     if (Object.keys(defense).length > 0) {
@@ -348,18 +352,19 @@ function parseGuestStats(html: string, guestName: string): GuestStats {
   }
   
   // Parse Damage Reduction section
-  const dmgRedSection = html.match(/<b><u>Damage Reduction<\/u><\/b>([\s\S]*?)(?=<b><u>|$)/i)
+  const dmgRedSection = html.match(/(?:<b>)?<u>Damage Reduction<\/u>(?:<\/b>)?([\s\S]*?)(?=<u>|<hr>|$)/i)
   if (dmgRedSection) {
     if (DEBUG) console.log(`  Found Damage Reduction section`)
     const damageReduction: typeof stats.damageReduction = {}
     
-    const nonCritMatch = dmgRedSection[1].match(/<b>Non-Crit:<\/b>\s*([^<\n]+)/i)
+    const nonCritMatch = dmgRedSection[1].match(/Non-Crit:\s*([^<\n]+)/i)
     if (nonCritMatch) damageReduction.nonCrit = nonCritMatch[1].trim()
     
-    const dotMatch = dmgRedSection[1].match(/<b>DoT:<\/b>\s*([^<\n]+)/i)
+    const dotMatch = dmgRedSection[1].match(/\bDoT:\s*([^<\n]+)/i)
     if (dotMatch) damageReduction.dot = dotMatch[1].trim()
     
-    const critMatch = dmgRedSection[1].match(/<b>Crit:<\/b>\s*([^<\n]+)/i)
+    // Match "Crit:" but NOT "Non-Crit:" - use negative lookbehind
+    const critMatch = dmgRedSection[1].match(/(?<!Non-)Crit:\s*([^<\n]+)/i)
     if (critMatch) damageReduction.crit = critMatch[1].trim()
     
     if (Object.keys(damageReduction).length > 0) {
@@ -369,7 +374,7 @@ function parseGuestStats(html: string, guestName: string): GuestStats {
   }
   
   // Parse Resistances section
-  const resistSection = html.match(/<b><u>Resistances<\/u><\/b>([\s\S]*?)(?=<b><u>|$)/i)
+  const resistSection = html.match(/(?:<b>)?<u>Resistances<\/u>(?:<\/b>)?([\s\S]*?)(?=<u>|<hr>|$)/i)
   if (resistSection) {
     if (DEBUG) console.log(`  Found Resistances section`)
     const text = stripHtml(decodeHTML(resistSection[1]))
@@ -401,24 +406,6 @@ function parseGuestStats(html: string, guestName: string): GuestStats {
 
 // ─── Attack Parsing with Button Image URLs ───────────────────────────────────
 
-const DFPEDIA_BASE = 'https://github.com/DF-Pedia/DF-Pedia/raw/master'
-const DEFAULT_ATTACK_URL = `${DFPEDIA_BASE}/classes_abilities/Attack.png`
-
-function generateButtonImageUrl(guestName: string, attackName: string, index: number): string | undefined {
-  // Skip attack named "Skip"
-  if (attackName.toLowerCase() === 'skip') return undefined
-  
-  // Default Attack skill uses shared image
-  if (attackName === 'Attack') return DEFAULT_ATTACK_URL
-  
-  // Sanitize names for URL
-  const sanitizedGuest = guestName.replace(/[^a-zA-Z0-9]/g, '')
-  const sanitizedAttack = attackName.replace(/[^a-zA-Z0-9]/g, '')
-  const buttonNum = String(index).padStart(2, '0')
-  
-  return `${DFPEDIA_BASE}/pets_guests/${sanitizedGuest}-Button${buttonNum}-${sanitizedAttack}.png`
-}
-
 function parseGuestAttacks(html: string, guestName: string): GuestAttack[] {
   const DEBUG = process.env.DEBUG_ATTACKS === '1'
   const attacks: GuestAttack[] = []
@@ -426,9 +413,8 @@ function parseGuestAttacks(html: string, guestName: string): GuestAttack[] {
   if (DEBUG) console.log(`\n[DEBUG] Parsing attacks for ${guestName}`)
   
   // Attacks are marked with <font size='2'><b>Attack Name</b></font> and separated by <hr>
-  // Find the section between Resistances and Other information
-  // Use a more precise pattern that stops at the FIRST occurrence of Other information
-  const attacksSection = html.match(/<b><u>Resistances<\/u><\/b>([\s\S]*?)<b><u>Other information<\/u><\/b>/i)
+  // Find the section between Resistances and Other information (or end of post)
+  const attacksSection = html.match(/<b><u>Resistances<\/u><\/b>([\s\S]*?)(?:<b><u>Other [Ii]nformation<\/u><\/b>|Thanks to|<font color='#eeeeee'>)/i)
   
   if (!attacksSection) {
     if (DEBUG) console.log(`  No attacks section found`)
@@ -440,110 +426,143 @@ function parseGuestAttacks(html: string, guestName: string): GuestAttack[] {
   // Split by <hr> to get individual attack blocks
   const blocks = section.split(/<hr>/i)
   
-  let buttonIndex = 1
-  
   for (const block of blocks) {
     if (!block.trim()) continue
     
     // Look for attack name in <font size='2'><b>Name</b></font> format
     const nameMatch = block.match(/<font\s+size=['"]2['"]><b>([^<]+)<\/b><\/font>/i)
     if (!nameMatch) {
-      if (DEBUG) console.log(`  Skipped block (no attack name): ${block.slice(0, 50)}...`)
+      if (DEBUG) console.log(`  Skipped block (no attack name)`)
       continue
     }
     
     const name = decodeHTML(nameMatch[1]).trim()
     
-    // Skip "Skip" attack
+    // Skip "Skip" attack entirely
     if (name.toLowerCase() === 'skip') {
       if (DEBUG) console.log(`  Skipped attack: ${name}`)
       continue
     }
     
-    // Skip blocks that look like forum metadata or navigation
+    // Skip blocks that look like forum metadata
     if (name.toLowerCase().includes('logged in') || 
         name.toLowerCase().includes('post #') ||
         /^[a-z0-9_]+$/i.test(name) && name.length > 15) {
-      if (DEBUG) console.log(`  Skipped junk block: ${name}`)
       continue
     }
     
-    // Extract italic description
-    const italicMatch = block.match(/<i>([^<]+)<\/i>/)
-    let description = italicMatch ? decodeHTML(italicMatch[1]).trim() : ''
-    
-    // Extract structured fields
-    const fields: Record<string, string> = {}
-    
-    const requirementsMatch = block.match(/<b>Requirements:<\/b>\s*([^<]+(?:<[^>]+>[^<]*)*?)(?=\s*<br>\s*<br>|\s*<br>\s*<b>)/i)
-    if (requirementsMatch) {
-      fields.requirements = stripHtml(decodeHTML(requirementsMatch[1])).trim()
+    // Extract italic description (may be multiline, stop at first non-italic)
+    const italicMatch = block.match(/<i>([^<]+(?:<br>[^<]*)*?)<\/i>/i)
+    let description: string | undefined
+    if (italicMatch) {
+      description = stripHtml(decodeHTML(italicMatch[1])).trim()
+      if (description.length === 0) description = undefined
     }
     
-    const effectMatch = block.match(/<b>Effect:<\/b>\s*([\s\S]*?)(?=<br>\s*<b>Mana Cost|<br>\s*<img|$)/i)
+    // Extract Requirements
+    const reqMatch = block.match(/Requirements:\s*([^<\n]+?)(?=\s*<br>|\s*$)/i)
+    let requirements: string | undefined
+    if (reqMatch) {
+      requirements = decodeHTML(reqMatch[1]).trim()
+      // Hide if "None"
+      if (requirements.toLowerCase() === 'none') requirements = undefined
+    }
+    
+    // Extract Effect - handle multiline with nested bullets, stop before Mana Cost
+    const effectMatch = block.match(/Effect:\s*([\s\S]*?)(?=\s*Mana Cost:)/i)
+    let effect = 'Unknown effect'
     if (effectMatch) {
-      fields.effect = stripHtml(decodeHTML(effectMatch[1])).trim()
-    }
-    
-    const manaCostMatch = block.match(/<b>Mana Cost:<\/b>\s*([^<\n]+)/i)
-    if (manaCostMatch) {
-      fields.manaCost = decodeHTML(manaCostMatch[1]).trim()
-    }
-    
-    const cooldownMatch = block.match(/<b>Cooldown:<\/b>\s*([^<\n]+)/i)
-    if (cooldownMatch) {
-      fields.cooldown = decodeHTML(cooldownMatch[1]).trim()
-    }
-    
-    const damageTypeMatch = block.match(/<b>Damage Type:<\/b>\s*([^<\n]+)/i)
-    if (damageTypeMatch) {
-      fields.damageType = decodeHTML(damageTypeMatch[1]).trim()
-    }
-    
-    const elementMatch = block.match(/<b>Element:<\/b>\s*([^<\n]+)/i)
-    if (elementMatch) {
-      fields.element = decodeHTML(elementMatch[1]).trim()
-    }
-    
-    // Build full description
-    let fullDescription = description
-    if (Object.keys(fields).length > 0) {
-      const fieldLines = []
-      if (fields.requirements) fieldLines.push(`Requirements: ${fields.requirements}`)
-      if (fields.effect) fieldLines.push(`Effect: ${fields.effect}`)
-      if (fields.manaCost) fieldLines.push(`Mana Cost: ${fields.manaCost}`)
-      if (fields.cooldown) fieldLines.push(`Cooldown: ${fields.cooldown}`)
-      if (fields.damageType) fieldLines.push(`Damage Type: ${fields.damageType}`)
-      if (fields.element) fieldLines.push(`Element: ${fields.element}`)
+      let rawEffect = effectMatch[1]
       
-      if (fieldLines.length > 0) {
-        fullDescription += (fullDescription ? '\n\n' : '') + fieldLines.join('\n')
+      // Process nested list bullets (<ul><li>) as indented bullets
+      rawEffect = rawEffect
+        .replace(/<ul>\s*<li>/gi, '\n  • ')
+        .replace(/<\/li>\s*<li>/gi, '\n  • ')
+        .replace(/<\/?ul>/gi, '')
+        .replace(/<\/?li>/gi, '')
+        .replace(/<br\s*\/?>/gi, '\n')
+      
+      effect = stripHtml(decodeHTML(rawEffect))
+        .split('\n')
+        .map(line => line.trimEnd())
+        .filter(line => {
+          const trimmed = line.trim()
+          // Filter out field labels that shouldn't be in effect
+          return trimmed.length > 0 && 
+                 !/^Mana Cost:/i.test(trimmed) &&
+                 !/^Cooldown:/i.test(trimmed) &&
+                 !/^Damage Type:/i.test(trimmed) &&
+                 !/^Element:/i.test(trimmed)
+        })
+        .join('\n')
+        .trim()
+    }
+    
+    // Extract Mana Cost
+    const manaMatch = block.match(/Mana Cost:\s*([^<\n]+)/i)
+    const manaCost = manaMatch ? decodeHTML(manaMatch[1]).trim() : '—'
+    
+    // Extract Cooldown
+    const cdMatch = block.match(/Cooldown:\s*([^<\n]+)/i)
+    const cooldown = cdMatch ? decodeHTML(cdMatch[1]).trim() : '—'
+    
+    // Extract Damage Type
+    const dmgTypeMatch = block.match(/Damage Type:\s*([^<\n]+)/i)
+    const damageType = dmgTypeMatch ? decodeHTML(dmgTypeMatch[1]).trim() : '—'
+    
+    // Extract Element
+    const elemMatch = block.match(/Element:\s*([^<\n]+)/i)
+    const element = elemMatch ? decodeHTML(elemMatch[1]).trim() : '—'
+    
+    // Extract button image URL - look for DF-Pedia image with "Button" in URL
+    let buttonImageUrl: string | undefined
+    const buttonImgMatch = block.match(/<img[^>]+src=["']([^"']*(?:github\.com\/DF-Pedia|githubusercontent\.com)[^"']*(?:Button|button|Attack\.png)[^"']*)["']/i)
+    if (buttonImgMatch) {
+      buttonImageUrl = buttonImgMatch[1]
+    } else {
+      // Fallback: look for any DF-Pedia image in the attack block
+      const dfPediaImgMatch = block.match(/<img[^>]+src=["']([^"']*(?:github\.com\/DF-Pedia|githubusercontent\.com)[^"']*)["']/i)
+      if (dfPediaImgMatch) {
+        buttonImageUrl = dfPediaImgMatch[1]
+      } else {
+        // Try imgur as last resort
+        const imgurMatch = block.match(/<img[^>]+src=["']([^"']*imgur\.com[^"']*)["']/i)
+        if (imgurMatch) {
+          buttonImageUrl = imgurMatch[1]
+        }
       }
     }
     
-    // Determine order
-    const order = name === 'Attack' ? 0 : buttonIndex++
-    
-    // Generate button image URL
-    const buttonImageUrl = generateButtonImageUrl(guestName, name, buttonIndex - 1)
+    // Extract appearance URL from hyperlinked "Appearance" text
+    let appearanceUrl: string | undefined
+    const appearanceMatch = block.match(/<a[^>]+href=["']([^"']+)["'][^>]*>Appearance<\/a>/i)
+    if (appearanceMatch) {
+      appearanceUrl = appearanceMatch[1]
+    }
     
     if (DEBUG) {
       console.log(`  Attack: ${name}`)
-      console.log(`    Order: ${order}`)
-      console.log(`    Button URL: ${buttonImageUrl}`)
-      console.log(`    Description: ${fullDescription.slice(0, 80)}...`)
+      console.log(`    Description: ${description?.slice(0, 50) || 'none'}...`)
+      console.log(`    Requirements: ${requirements || 'None'}`)
+      console.log(`    Effect: ${effect.slice(0, 50)}...`)
+      console.log(`    Mana: ${manaCost}, CD: ${cooldown}, Type: ${damageType}, Elem: ${element}`)
+      console.log(`    Button URL: ${buttonImageUrl || 'none'}`)
+      console.log(`    Appearance URL: ${appearanceUrl || 'none'}`)
     }
     
     attacks.push({
       name,
-      description: fullDescription,
-      order,
+      description,
+      requirements,
+      effect,
+      manaCost,
+      cooldown,
+      damageType,
+      element,
       buttonImageUrl,
+      appearanceUrl,
     })
   }
-  
-  // Sort by order
-  attacks.sort((a, b) => a.order - b.order)
   
   if (DEBUG) console.log(`[DEBUG] Found ${attacks.length} attacks\n`)
   
@@ -603,118 +622,106 @@ function extractGuestImages(html: string, guestName: string): { imageUrl?: strin
   
   if (DEBUG) console.log(`\n[DEBUG] Extracting images for ${guestName}`)
   
-  // Extract images BEFORE "Appearance" section (skills come after)
-  const appearanceMatch = html.match(/<b><u>Appearance<\/u><\/b>/i)
-  const htmlBeforeAppearance = appearanceMatch ? html.slice(0, appearanceMatch.index) : html
-  
-  // Skip patterns for UI/tag/button/attack images
+  // Skip patterns for UI/tag/button/attack/appearance images
   const skipPatterns = [
-    /\/f\/image\//i,
+    /forums2\.battleon\.com/i,          // Forum images (poster avatars, etc.)
+    /\/f\/image\//i,                     // Forum UI images
+    /\/f\/upfiles\//i,                   // Forum user uploads
     /forumheader/i,
     /quantserve/i,
     /artix\.com\/shared/i,
     /artixgamelaunch/i,
-    /\/tags\//i,
+    /\/tags\//i,                         // Tag images (DA, DC, etc.)
     /clear\.gif/i,
     /blank\.gif/i,
-    /button/i,
-    /-button/i,
-    /attack\.png/i,
-    /attack\.jpg/i,
+    /-button/i,                          // Skill button images
+    /-Button/i,
+    /Button\d+/i,                        // Button01, Button02 etc
+    /PetAttack/i,
+    /AttackType/i,
+    /-Attack\./i,
+    /\/classes_abilities\//i,            // Skip Attack.png and class ability images
   ]
   
-  // Extract image URLs from <img> tags
-  const imgRegex = /<img[^>]+src=["']([^"']+)["'][^>]*>/gi
-  let imgMatch: RegExpExecArray | null
-  const candidates: string[] = []
+  // Find main image in "Other information" section - this is the character portrait
+  // Pattern: <img src="...pets_guests/GuestName.png" after "Other information"
+  const mainImagePattern = new RegExp(
+    `<b><u>Other [Ii]nformation<\/u><\/b>[\\s\\S]*?<img[^>]+src=["']([^"']*(?:github\\.com\\/DF-Pedia|githubusercontent\\.com)[^"']*\\/pets_guests\\/${guestName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\.png[^"']*)["']`,
+    'i'
+  )
+  const mainImageMatch = html.match(mainImagePattern)
+  const imageUrl = mainImageMatch ? mainImageMatch[1] : undefined
   
-  while ((imgMatch = imgRegex.exec(htmlBeforeAppearance)) !== null) {
-    const src = imgMatch[1]
-    
-    // Skip if matches any skip pattern
-    if (skipPatterns.some(p => p.test(src))) continue
-    
-    // Collect valid image sources
-    if (src.includes('imgur.com') || 
-        src.includes('i.imgur.com') ||
-        src.includes('battleon.com/encyc') ||
-        src.includes('artix.com/encyc') ||
-        src.includes('github.com') ||
-        src.includes('githubusercontent.com') ||
-        (src.includes('/f/upfiles/') && src.length > 60)) {
-      candidates.push(src)
-    }
-  }
+  if (DEBUG && imageUrl) console.log(`  Found main image: ${imageUrl}`)
   
-  // Also extract bare image URLs from text (not wrapped in <img> tags)
-  const bareUrlRegex = /https?:\/\/(?:[^\s<>"]+?)\.(?:jpg|jpeg|png|gif)/gi
-  let urlMatch: RegExpExecArray | null
-  
-  while ((urlMatch = bareUrlRegex.exec(htmlBeforeAppearance)) !== null) {
-    const url = urlMatch[0]
-    
-    // Skip if matches any skip pattern
-    if (skipPatterns.some(p => p.test(url))) continue
-    
-    // Only include valid sources
-    if (url.includes('imgur.com') || 
-        url.includes('i.imgur.com') ||
-        url.includes('github.com') || 
-        url.includes('githubusercontent.com') ||
-        url.includes('artix.com/encyc') ||
-        url.includes('battleon.com/encyc')) {
-      // Avoid duplicates
-      if (!candidates.includes(url)) {
-        candidates.push(url)
-      }
-    }
-  }
-  
-  if (DEBUG) {
-    console.log(`  Found ${candidates.length} image candidates`)
-    candidates.forEach((c, i) => console.log(`    [${i}] ${c}`))
-  }
-  
-  // First image is main, rest are alternatives
-  const imageUrl = candidates.length > 0 ? candidates[0] : undefined
+  // Find alternative images - look for hyperlinked image captions AFTER main image
+  // Pattern: <a href="url">Caption Text</a> where URL is an image
   const alternativeImages: Array<{ url: string; caption?: string }> = []
   
-  // Extract alternatives with captions
-  for (let i = 1; i < candidates.length; i++) {
-    const url = candidates[i]
+  if (mainImageMatch) {
+    // Start searching after the main image position
+    const mainImagePos = html.indexOf(mainImageMatch[0])
+    const afterMainImage = html.slice(mainImagePos + mainImageMatch[0].length)
     
-    // Look for caption near this image
-    const imgPos = htmlBeforeAppearance.indexOf(url)
-    if (imgPos >= 0) {
-      const beforeImg = htmlBeforeAppearance.slice(Math.max(0, imgPos - 200), imgPos)
+    // Look for hyperlinked images with captions before the attribution line or end marker
+    // Pattern: <a href="image_url.png">Caption Text</a>
+    const hyperlinkPattern = /<a[^>]+href=["']([^"']+\.(?:png|jpg|jpeg|gif))["'][^>]*>([^<]+)<\/a>/gi
+    let match: RegExpExecArray | null
+    
+    while ((match = hyperlinkPattern.exec(afterMainImage)) !== null) {
+      const url = match[1]
+      const caption = decodeHTML(match[2]).trim()
       
-      // Try to find caption patterns
-      const boldMatch = beforeImg.match(/<b>([^<]+)<\/b>\s*$/i)
-      if (boldMatch) {
-        const caption = stripHtml(decodeHTML(boldMatch[1])).trim()
+      // Stop at attribution lines
+      if (/thanks to|also see:/i.test(caption)) break
+      
+      // Skip if URL matches skip patterns
+      if (skipPatterns.some(p => p.test(url))) continue
+      
+      // Skip "Appearance" links (these are skill animations, not character images)
+      if (/appearance/i.test(caption) && !/(empowered|alternate|variant)/i.test(caption)) continue
+      
+      // Add as alternative image with caption
+      if (url.includes('github.com/DF-Pedia') || url.includes('githubusercontent.com') || 
+          url.includes('imgur.com')) {
         alternativeImages.push({ url, caption })
-        continue
+        if (DEBUG) console.log(`  Found alt image: ${caption} -> ${url.slice(0, 60)}...`)
       }
+    }
+  }
+  
+  // If no main image found, fall back to searching entire HTML
+  if (!imageUrl) {
+    const dfPediaImages: string[] = []
+    const imgRegex = /<img[^>]+src=["']([^"']+)["'][^>]*>/gi
+    let imgMatch: RegExpExecArray | null
+    
+    while ((imgMatch = imgRegex.exec(html)) !== null) {
+      const src = imgMatch[1]
+      if (skipPatterns.some(p => p.test(src))) continue
+      if (/button/i.test(src)) continue
       
-      // Plain text caption
-      const plainMatch = beforeImg.match(/([A-Z][a-z\s]+)\s*$/i)
-      if (plainMatch && plainMatch[1].length < 50) {
-        const caption = plainMatch[1].trim()
-        if (caption.length > 3 && /^[A-Z]/.test(caption)) {
-          alternativeImages.push({ url, caption })
-          continue
-        }
+      if ((src.includes('github.com/DF-Pedia') || src.includes('githubusercontent.com')) &&
+          src.includes('/pets_guests/')) {
+        dfPediaImages.push(src)
       }
     }
     
-    // No caption found - use generic
-    alternativeImages.push({ url, caption: 'Alternative Image' })
+    // Find the simple name pattern as fallback
+    const simpleNamePattern = new RegExp(`/pets_guests/${guestName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\.png$`, 'i')
+    const fallbackMain = dfPediaImages.find(u => simpleNamePattern.test(u))
+    
+    if (DEBUG && fallbackMain) console.log(`  Fallback main image: ${fallbackMain}`)
+    
+    return { 
+      imageUrl: fallbackMain, 
+      alternativeImages 
+    }
   }
   
   if (DEBUG) {
     console.log(`  Main image: ${imageUrl || 'none'}`)
     console.log(`  Alternative images: ${alternativeImages.length}`)
-    alternativeImages.forEach((alt, i) => console.log(`    [${i}] ${alt.url} (${alt.caption || 'no caption'})`))
   }
   
   return { imageUrl, alternativeImages }
@@ -867,34 +874,74 @@ function parseNotes(html: string, guestName: string): string | undefined {
   const noteLines: string[] = []
   
   // Look for "Other information" or "Other Information" section
-  const otherInfoMatch = html.match(/<b><u>Other [Ii]nformation<\/u><\/b>([\s\S]*?)(?=<b><u>|Thanks to|Also See|$)/i)
+  // End at: main image (DF-Pedia pets_guests/), "Thanks to", "Also See", or end of post
+  const otherInfoMatch = html.match(/<b><u>Other [Ii]nformation<\/u><\/b>([\s\S]*?)(?=<img[^>]+src=["'][^"']*(?:github\.com\/DF-Pedia|githubusercontent\.com)[^"']*\/pets_guests\/[^"']+\.png|<i>Thanks to|Also See:|<font color='#eeeeee'>|$)/i)
   
   if (otherInfoMatch) {
     if (DEBUG) console.log(`  Found Other Information section`)
     
-    const text = stripHtml(decodeHTML(otherInfoMatch[1]))
-    const lines = text.split('\n').filter(l => l.trim().length > 0)
+    let processed = otherInfoMatch[1]
+    
+    // Convert nested list items with proper indentation
+    // Pattern: <li>Text<ul><li>Nested1<br><li>Nested2</ul><li>NextTop
+    // Result: • Text\n  • Nested1\n  • Nested2\n• NextTop
+    
+    // First, mark nested <li> within <ul>
+    processed = processed.replace(/<ul>/gi, '<UL_START>')
+    processed = processed.replace(/<\/ul>/gi, '<UL_END>')
+    
+    // Convert <li> to bullets (we'll indent UL_START...UL_END content later)
+    processed = processed.replace(/<li>/gi, '\n<BULLET>')
+    processed = processed.replace(/<\/li>/gi, '')
+    
+    // Convert <br> to newlines
+    processed = processed.replace(/<br\s*\/?>/gi, '\n')
+    
+    // Remove all other HTML tags (links, bold, etc.) but keep our markers
+    processed = processed.replace(/<\/?(?!UL_START|UL_END|BULLET)[a-z][^>]*>/gi, '')
+    
+    // Decode HTML entities
+    processed = decodeHTML(processed)
+    
+    // Now process line by line with indentation tracking
+    const lines = processed.split('\n')
+    let inNestedList = false
     
     for (const line of lines) {
-      const trimmed = line.trim()
+      let trimmed = line.trim()
+      
+      // Skip empty lines
+      if (trimmed.length === 0) continue
+      
+      // Handle list markers
+      if (trimmed.includes('<UL_START>')) {
+        inNestedList = true
+        trimmed = trimmed.replace('<UL_START>', '')
+      }
+      if (trimmed.includes('<UL_END>')) {
+        inNestedList = false
+        trimmed = trimmed.replace('<UL_END>', '')
+      }
+      
+      // Convert bullets with proper indentation
+      if (trimmed.includes('<BULLET>')) {
+        trimmed = trimmed.replace('<BULLET>', '')
+        const indent = inNestedList ? '  ' : ''
+        trimmed = `${indent}• ${trimmed.trim()}`
+      }
+      
+      // Skip if only whitespace after processing
+      if (trimmed.trim().length === 0) continue
       
       // Skip edit timestamps
       if (/\w+\s+--\s+\d+\/\d+\/\d+\s+\d+:\d+:\d+/.test(trimmed)) continue
       
-      // Skip attribution lines
-      if (/^[A-Z][\w'-]+(?:\s+[A-Z][\w'-]+){0,3}\s+for\s+(image|attack|information|entry|corrections)/i.test(trimmed)) continue
-      
-      // Strip "Note:" prefix
-      let processedLine = trimmed.replace(/^Note:\s*/i, '').trim()
-      
-      if (processedLine.length > 0) {
-        noteLines.push(processedLine)
-      }
+      noteLines.push(trimmed)
     }
   }
   
   if (noteLines.length > 0) {
-    const notes = noteLines.join(' • ')
+    const notes = noteLines.join('\n')
     if (DEBUG) console.log(`  Found ${noteLines.length} note lines`)
     return notes
   }

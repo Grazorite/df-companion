@@ -97,6 +97,7 @@ export interface ObtainVariant {
   price: string              // "N/A", "150 Dragon Coins", "500 Gold"
   priceType: PriceType       // Computed from price + requiredItems
   sellback?: string          // "9 Gold", "135 DC before 24h, 38 DC after"
+  requirements?: string      // "Completion of Hawk in the Sky to unlock" - hide if "None"
   
   /**
    * DA Required flag

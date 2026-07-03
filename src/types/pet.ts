@@ -82,9 +82,17 @@ export interface Attack {
   notes?: string[]         // Sub-bullet mechanic notes
 }
 
-export interface GuestAttack extends Attack {
+export interface GuestAttack {
+  name: string             // "DragonLord's Fury", "Pierce", "Attack"
+  description?: string     // Italic description text (multiline supported)
+  requirements?: string    // "Successful 'Pierce' to unlock" - hide if "None"
+  effect: string           // Effect description text
+  manaCost: string         // "25", "0"
+  cooldown: string         // "19", "0"
+  damageType: string       // "Magic", "Melee", "Pierce", "N/A"
+  element: string          // "Energy", "Fire", "???"
   buttonImageUrl?: string  // URL to skill button icon
-  order: number            // Sort order (Attack=0, then numbered)
+  appearanceUrl?: string   // URL to appearance/animation image (from hyperlink)
 }
 
 export interface Evolution {
@@ -163,10 +171,10 @@ export interface PetFilters {
 
 // ─── Guest Type (extends Pet with structured stats) ──────────────────────────
 
-export interface Guest extends Omit<Pet, 'attacks' | 'damage' | 'stats' | 'statsType'> {
+export interface Guest extends Omit<Pet, 'attacks' | 'damage' | 'stats' | 'statsType' | 'rarity'> {
   type: 'guest'
-  guestStats?: GuestStats           // Structured guest stats
-  attacks: GuestAttack[]            // Attacks with button images
+  guestStats: GuestStats            // Structured guest stats (always present for guests)
+  attacks: GuestAttack[]            // Attacks with button images and structured data
   alternativeImages?: Array<{       // Alt appearances with captions
     url: string
     caption?: string

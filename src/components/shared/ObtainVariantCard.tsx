@@ -63,7 +63,14 @@ export default function ObtainVariantCard({ variant, label, isGuest = false }: O
         )}
       </div>
       
-      {/* Requirements (if present) - for guests, this is the main info after location */}
+      {/* Requirements (if present and not "None") - for guests, this is important info */}
+      {variant.requirements && variant.requirements.toLowerCase() !== 'none' && (
+        <div>
+          <p className="text-xs text-text-muted mb-1">Requires</p>
+          <p className="text-sm text-text-secondary">{variant.requirements}</p>
+        </div>
+      )}
+      
       {/* Only show divider and price fields if NOT a guest */}
       {showPriceFields && (
         <>

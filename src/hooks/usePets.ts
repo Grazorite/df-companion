@@ -79,21 +79,34 @@ function searchPets(pets: (Pet | ItemFamily)[], filters: PetFilters): (Pet | Ite
             const hasDA = isFamily ? family!.hasDA : pet!.daRequired
             if (!hasDA) return false
           }
+          
+          // Guests are never purchased - skip Free/DC/DM/Merge filters for guests
+          const entryType: EntryType = isFamily ? family!.type : pet!.type
+          const isGuest = entryType === 'guest'
+          
           if (accessType === 'dc') {
+            // Guests can't be DC purchased, always exclude
+            if (isGuest) return false
             const hasDC = isFamily ? family!.hasDC : (pet!.dcRequired ?? false)
             if (!hasDC) return false
           }
           if (accessType === 'dm') {
+            // Guests can't be DM purchased, always exclude
+            if (isGuest) return false
             const hasDM = isFamily ? family!.hasDM : (pet!.dmRequired ?? false)
             if (!hasDM) return false
           }
           if (accessType === 'free') {
+            // Guests are always "free" (invited), skip this filter for guests
+            if (isGuest) return false
             const hasFree = isFamily
               ? family!.hasFree
               : pet!.obtainMethods.some(m => m.priceType === 'free')
             if (!hasFree) return false
           }
           if (accessType === 'merge') {
+            // Guests can't be merged, always exclude
+            if (isGuest) return false
             const hasMerge = isFamily
               ? family!.hasMerge
               : pet!.obtainMethods.some(m => m.priceType === 'merge')

@@ -470,10 +470,10 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
         )
       })()}
 
-      {/* Forum Source */}
+      {/* Source */}
       <section aria-labelledby="source-heading" className="mb-5">
         <h2 id="source-heading" className="text-xs font-semibold text-text-muted uppercase tracking-wider mb-3">
-          Forum Source
+          Source
         </h2>
         <a
           href={pet.forumUrl}

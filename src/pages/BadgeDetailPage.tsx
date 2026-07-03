@@ -143,13 +143,13 @@ export default function BadgeDetailPage() {
         </section>
       )}
 
-      {/* Forum sources */}
+      {/* Sources */}
       <section aria-labelledby="sources-heading" className="mb-5">
         <h2
           id="sources-heading"
           className="text-xs font-semibold text-text-muted uppercase tracking-wider mb-3"
         >
-          Forum Source{badge.forumLinks.length > 1 ? 's' : ''}
+          Source{badge.forumLinks.length > 1 ? 's' : ''}
         </h2>
         <div className="space-y-2">
           {badge.forumLinks.map((link) => (

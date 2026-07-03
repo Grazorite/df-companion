@@ -1,302 +1,197 @@
-import { useState } from 'react'
-import { ChevronDown } from 'lucide-react'
 import type { GuestStats } from '../../types/pet'
 
 interface GuestStatsSectionProps {
   stats: GuestStats
 }
 
+// Helper to check if a value is non-zero/non-none
+function isNonZero(value: string | undefined): boolean {
+  if (!value) return false
+  const normalized = value.toLowerCase().trim()
+  return normalized !== '0' && 
+         normalized !== '0%' && 
+         normalized !== 'none' &&
+         normalized !== 'n/a'
+}
+
+// Helper to check if any stat in a record is non-zero
+function hasNonZeroStats(stats: Record<string, string | undefined> | undefined): boolean {
+  if (!stats) return false
+  return Object.values(stats).some(v => isNonZero(v))
+}
+
+// Stat display row component
+function StatRow({ label, value }: { label: string; value: string | undefined }) {
+  if (!value) return null
+  return (
+    <div className="flex justify-between text-sm py-0.5">
+      <span className="text-text-muted">{label}</span>
+      <span className="text-text-secondary font-medium">{value}</span>
+    </div>
+  )
+}
+
+// Filter stats to only show non-zero values
+function filterNonZeroStats(stats: Record<string, string | undefined>): Record<string, string> {
+  const result: Record<string, string> = {}
+  for (const [key, value] of Object.entries(stats)) {
+    if (isNonZero(value)) {
+      result[key] = value!
+    }
+  }
+  return result
+}
+
 export default function GuestStatsSection({ stats }: GuestStatsSectionProps) {
-  const [isOpen, setIsOpen] = useState(false)
+  // Build stat category cards that have at least one non-zero value
+  const categories: Array<{
+    title: string
+    stats: Array<{ label: string; value: string }>
+  }> = []
   
-  // Check if we have any detailed stats to display
-  const hasDetailedStats = 
-    stats.characterStats ||
-    stats.offense ||
-    stats.damageMultipliers ||
-    stats.defense ||
-    stats.damageReduction ||
-    stats.resistances
+  // Stats (STR, DEX, etc.) - show if any non-zero
+  if (stats.characterStats && hasNonZeroStats(stats.characterStats as Record<string, string | undefined>)) {
+    const filtered = filterNonZeroStats(stats.characterStats as Record<string, string | undefined>)
+    categories.push({
+      title: 'Stats',
+      stats: Object.entries(filtered).map(([key, value]) => ({
+        label: key.toUpperCase(),
+        value,
+      })),
+    })
+  }
   
-  if (!hasDetailedStats) return null
+  // Offense - show if any non-zero
+  if (stats.offense && hasNonZeroStats(stats.offense as Record<string, string | undefined>)) {
+    const filtered = filterNonZeroStats(stats.offense as Record<string, string | undefined>)
+    const labelMap: Record<string, string> = { boost: 'Boost', bonus: 'Bonus', crit: 'Crit' }
+    categories.push({
+      title: 'Offense',
+      stats: Object.entries(filtered).map(([key, value]) => ({
+        label: labelMap[key] || key,
+        value,
+      })),
+    })
+  }
+  
+  // Damage Multipliers - show if any non-100% (base) or non-zero
+  if (stats.damageMultipliers) {
+    // For damage multipliers, filter out 100% (base value) as well as 0%
+    const filtered: Record<string, string> = {}
+    const dm = stats.damageMultipliers as Record<string, string | undefined>
+    for (const [key, value] of Object.entries(dm)) {
+      if (value && value !== '100%' && value !== '0%') {
+        filtered[key] = value
+      }
+    }
+    if (Object.keys(filtered).length > 0) {
+      const labelMap: Record<string, string> = { nonCrit: 'Non-Crit', dex: 'Dex', dot: 'DoT', crit: 'Crit' }
+      categories.push({
+        title: 'Damage Multipliers',
+        stats: Object.entries(filtered).map(([key, value]) => ({
+          label: labelMap[key] || key,
+          value,
+        })),
+      })
+    }
+  }
+  
+  // Defense - show if any non-zero
+  if (stats.defense && hasNonZeroStats(stats.defense as Record<string, string | undefined>)) {
+    const filtered = filterNonZeroStats(stats.defense as Record<string, string | undefined>)
+    const labelMap: Record<string, string> = { 
+      melee: 'Melee', pierce: 'Pierce', magic: 'Magic', 
+      block: 'Block', parry: 'Parry', dodge: 'Dodge' 
+    }
+    categories.push({
+      title: 'Defense',
+      stats: Object.entries(filtered).map(([key, value]) => ({
+        label: labelMap[key] || key,
+        value,
+      })),
+    })
+  }
+  
+  // Damage Reduction - show if any non-zero
+  if (stats.damageReduction && hasNonZeroStats(stats.damageReduction as Record<string, string | undefined>)) {
+    const filtered = filterNonZeroStats(stats.damageReduction as Record<string, string | undefined>)
+    const labelMap: Record<string, string> = { nonCrit: 'Non-Crit', dot: 'DoT', crit: 'Crit' }
+    categories.push({
+      title: 'Damage Reduction',
+      stats: Object.entries(filtered).map(([key, value]) => ({
+        label: labelMap[key] || key,
+        value,
+      })),
+    })
+  }
+  
+  // Resistances - show if not "None"
+  if (stats.resistances && Object.keys(stats.resistances).length > 0) {
+    const hasNonNone = Object.values(stats.resistances).some(v => v.toLowerCase() !== 'none')
+    if (hasNonNone) {
+      categories.push({
+        title: 'Resistances',
+        stats: Object.entries(stats.resistances)
+          .filter(([, value]) => value.toLowerCase() !== 'none')
+          .map(([element, value]) => ({
+            label: element,
+            value,
+          })),
+      })
+    }
+  }
+  
+  // If no categories have data, don't render
+  if (categories.length === 0 && !stats.level && !stats.damage && !stats.damageType) {
+    return null
+  }
   
   return (
-    <section aria-labelledby="guest-stats-heading" className="mb-5">
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center justify-between bg-bg-surface border border-border-default rounded-lg p-4 hover:bg-bg-elevated transition-colors text-left"
-        aria-expanded={isOpen}
-      >
-        <div>
-          <h2 id="guest-stats-heading" className="text-xs font-semibold text-text-muted uppercase tracking-wider mb-1">
-            Detailed Stats
-          </h2>
-          <p className="text-sm text-text-secondary">
-            {stats.level} • {stats.damageType} • {stats.element}
-          </p>
-        </div>
-        <ChevronDown
-          className={`w-5 h-5 text-text-muted transition-transform ${isOpen ? 'rotate-180' : ''}`}
-          aria-hidden="true"
-        />
-      </button>
-      
-      {isOpen && (
-        <div className="mt-3 space-y-4 bg-bg-surface/40 border border-border-default rounded-lg p-4">
-          {/* Basic Info */}
-          <div>
-            <h3 className="text-xs font-semibold text-text-muted uppercase tracking-wider mb-2">
-              Basic Info
-            </h3>
-            <div className="grid grid-cols-2 gap-2 text-sm">
-              {stats.level && (
-                <div>
-                  <span className="text-text-muted">Level:</span>{' '}
-                  <span className="text-text-secondary">{stats.level}</span>
-                </div>
-              )}
-              {stats.damage && (
-                <div>
-                  <span className="text-text-muted">Damage:</span>{' '}
-                  <span className="text-text-secondary">{stats.damage}</span>
-                </div>
-              )}
-              {stats.damageType && (
-                <div>
-                  <span className="text-text-muted">Damage Type:</span>{' '}
-                  <span className="text-text-secondary">{stats.damageType}</span>
-                </div>
-              )}
-              {stats.element && (
-                <div>
-                  <span className="text-text-muted">Element:</span>{' '}
-                  <span className="text-text-secondary">{stats.element}</span>
-                </div>
-              )}
-              {stats.hp && (
-                <div>
-                  <span className="text-text-muted">HP:</span>{' '}
-                  <span className="text-text-secondary">{stats.hp}</span>
-                </div>
-              )}
-              {stats.mp && (
-                <div>
-                  <span className="text-text-muted">MP:</span>{' '}
-                  <span className="text-text-secondary">{stats.mp}</span>
-                </div>
-              )}
-            </div>
+    <section className="mb-5">
+      {/* Basic Info - Level, Damage, Damage Type */}
+      {(stats.level || stats.damage || stats.damageType) && (
+        <div className="bg-bg-surface border border-border-default rounded-lg p-4 mb-3">
+          <div className="grid grid-cols-3 gap-4 text-center">
+            {stats.level && (
+              <div>
+                <p className="text-xs text-text-muted uppercase tracking-wider mb-1">Level</p>
+                <p className="text-sm font-medium text-text-primary">{stats.level}</p>
+              </div>
+            )}
+            {stats.damage && (
+              <div>
+                <p className="text-xs text-text-muted uppercase tracking-wider mb-1">Damage</p>
+                <p className="text-sm font-medium text-text-primary">{stats.damage}</p>
+              </div>
+            )}
+            {stats.damageType && (
+              <div>
+                <p className="text-xs text-text-muted uppercase tracking-wider mb-1">Type</p>
+                <p className="text-sm font-medium text-text-primary">{stats.damageType}</p>
+              </div>
+            )}
           </div>
-          
-          {/* Character Stats */}
-          {stats.characterStats && (
-            <div>
+        </div>
+      )}
+      
+      {/* Stat Categories - 2-column grid */}
+      {categories.length > 0 && (
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          {categories.map((category) => (
+            <div 
+              key={category.title} 
+              className="bg-bg-surface border border-border-default rounded-lg p-4"
+            >
               <h3 className="text-xs font-semibold text-text-muted uppercase tracking-wider mb-2">
-                Stats
+                {category.title}
               </h3>
-              <div className="grid grid-cols-4 sm:grid-cols-7 gap-2 text-sm">
-                {stats.characterStats.str && (
-                  <div>
-                    <span className="text-text-muted">STR:</span>{' '}
-                    <span className="text-text-secondary">{stats.characterStats.str}</span>
-                  </div>
-                )}
-                {stats.characterStats.dex && (
-                  <div>
-                    <span className="text-text-muted">DEX:</span>{' '}
-                    <span className="text-text-secondary">{stats.characterStats.dex}</span>
-                  </div>
-                )}
-                {stats.characterStats.int && (
-                  <div>
-                    <span className="text-text-muted">INT:</span>{' '}
-                    <span className="text-text-secondary">{stats.characterStats.int}</span>
-                  </div>
-                )}
-                {stats.characterStats.cha && (
-                  <div>
-                    <span className="text-text-muted">CHA:</span>{' '}
-                    <span className="text-text-secondary">{stats.characterStats.cha}</span>
-                  </div>
-                )}
-                {stats.characterStats.luk && (
-                  <div>
-                    <span className="text-text-muted">LUK:</span>{' '}
-                    <span className="text-text-secondary">{stats.characterStats.luk}</span>
-                  </div>
-                )}
-                {stats.characterStats.end && (
-                  <div>
-                    <span className="text-text-muted">END:</span>{' '}
-                    <span className="text-text-secondary">{stats.characterStats.end}</span>
-                  </div>
-                )}
-                {stats.characterStats.wis && (
-                  <div>
-                    <span className="text-text-muted">WIS:</span>{' '}
-                    <span className="text-text-secondary">{stats.characterStats.wis}</span>
-                  </div>
-                )}
-              </div>
-            </div>
-          )}
-          
-          {/* Offense */}
-          {stats.offense && (
-            <div>
-              <h3 className="text-xs font-semibold text-text-muted uppercase tracking-wider mb-2">
-                Offense
-              </h3>
-              <div className="grid grid-cols-3 gap-2 text-sm">
-                {stats.offense.boost && (
-                  <div>
-                    <span className="text-text-muted">Boost:</span>{' '}
-                    <span className="text-text-secondary">{stats.offense.boost}</span>
-                  </div>
-                )}
-                {stats.offense.bonus && (
-                  <div>
-                    <span className="text-text-muted">Bonus:</span>{' '}
-                    <span className="text-text-secondary">{stats.offense.bonus}</span>
-                  </div>
-                )}
-                {stats.offense.crit && (
-                  <div>
-                    <span className="text-text-muted">Crit:</span>{' '}
-                    <span className="text-text-secondary">{stats.offense.crit}</span>
-                  </div>
-                )}
-              </div>
-            </div>
-          )}
-          
-          {/* Damage Multipliers */}
-          {stats.damageMultipliers && (
-            <div>
-              <h3 className="text-xs font-semibold text-text-muted uppercase tracking-wider mb-2">
-                Damage Multipliers
-              </h3>
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-sm">
-                {stats.damageMultipliers.nonCrit && (
-                  <div>
-                    <span className="text-text-muted">Non-Crit:</span>{' '}
-                    <span className="text-text-secondary">{stats.damageMultipliers.nonCrit}</span>
-                  </div>
-                )}
-                {stats.damageMultipliers.dex && (
-                  <div>
-                    <span className="text-text-muted">Dex:</span>{' '}
-                    <span className="text-text-secondary">{stats.damageMultipliers.dex}</span>
-                  </div>
-                )}
-                {stats.damageMultipliers.dot && (
-                  <div>
-                    <span className="text-text-muted">DoT:</span>{' '}
-                    <span className="text-text-secondary">{stats.damageMultipliers.dot}</span>
-                  </div>
-                )}
-                {stats.damageMultipliers.crit && (
-                  <div>
-                    <span className="text-text-muted">Crit:</span>{' '}
-                    <span className="text-text-secondary">{stats.damageMultipliers.crit}</span>
-                  </div>
-                )}
-              </div>
-            </div>
-          )}
-          
-          {/* Defense */}
-          {stats.defense && (
-            <div>
-              <h3 className="text-xs font-semibold text-text-muted uppercase tracking-wider mb-2">
-                Defense
-              </h3>
-              <div className="grid grid-cols-3 sm:grid-cols-6 gap-2 text-sm">
-                {stats.defense.melee && (
-                  <div>
-                    <span className="text-text-muted">Melee:</span>{' '}
-                    <span className="text-text-secondary">{stats.defense.melee}</span>
-                  </div>
-                )}
-                {stats.defense.pierce && (
-                  <div>
-                    <span className="text-text-muted">Pierce:</span>{' '}
-                    <span className="text-text-secondary">{stats.defense.pierce}</span>
-                  </div>
-                )}
-                {stats.defense.magic && (
-                  <div>
-                    <span className="text-text-muted">Magic:</span>{' '}
-                    <span className="text-text-secondary">{stats.defense.magic}</span>
-                  </div>
-                )}
-                {stats.defense.block && (
-                  <div>
-                    <span className="text-text-muted">Block:</span>{' '}
-                    <span className="text-text-secondary">{stats.defense.block}</span>
-                  </div>
-                )}
-                {stats.defense.parry && (
-                  <div>
-                    <span className="text-text-muted">Parry:</span>{' '}
-                    <span className="text-text-secondary">{stats.defense.parry}</span>
-                  </div>
-                )}
-                {stats.defense.dodge && (
-                  <div>
-                    <span className="text-text-muted">Dodge:</span>{' '}
-                    <span className="text-text-secondary">{stats.defense.dodge}</span>
-                  </div>
-                )}
-              </div>
-            </div>
-          )}
-          
-          {/* Damage Reduction */}
-          {stats.damageReduction && (
-            <div>
-              <h3 className="text-xs font-semibold text-text-muted uppercase tracking-wider mb-2">
-                Damage Reduction
-              </h3>
-              <div className="grid grid-cols-3 gap-2 text-sm">
-                {stats.damageReduction.nonCrit && (
-                  <div>
-                    <span className="text-text-muted">Non-Crit:</span>{' '}
-                    <span className="text-text-secondary">{stats.damageReduction.nonCrit}</span>
-                  </div>
-                )}
-                {stats.damageReduction.dot && (
-                  <div>
-                    <span className="text-text-muted">DoT:</span>{' '}
-                    <span className="text-text-secondary">{stats.damageReduction.dot}</span>
-                  </div>
-                )}
-                {stats.damageReduction.crit && (
-                  <div>
-                    <span className="text-text-muted">Crit:</span>{' '}
-                    <span className="text-text-secondary">{stats.damageReduction.crit}</span>
-                  </div>
-                )}
-              </div>
-            </div>
-          )}
-          
-          {/* Resistances */}
-          {stats.resistances && Object.keys(stats.resistances).length > 0 && (
-            <div>
-              <h3 className="text-xs font-semibold text-text-muted uppercase tracking-wider mb-2">
-                Resistances
-              </h3>
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 text-sm">
-                {Object.entries(stats.resistances).map(([element, value]) => (
-                  <div key={element}>
-                    <span className="text-text-muted capitalize">{element}:</span>{' '}
-                    <span className="text-text-secondary">{value}</span>
-                  </div>
+              <div className="space-y-0.5">
+                {category.stats.map((stat) => (
+                  <StatRow key={stat.label} label={stat.label} value={stat.value} />
                 ))}
               </div>
             </div>
-          )}
+          ))}
         </div>
       )}
     </section>
