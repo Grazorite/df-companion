@@ -52,7 +52,7 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
   
   // Check if this is a guest
   const isGuest = pet.type === 'guest'
-  const guest = isGuest ? (pet as Guest) : undefined
+  const guest = isGuest ? (pet as unknown as Guest) : undefined
   
   // Alternative image toggle state
   const [activeImageIndex, setActiveImageIndex] = useState(0)
