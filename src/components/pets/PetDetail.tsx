@@ -218,11 +218,7 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
 
       {/* Stats - show for single-variant items in table format (Pets only) */}
       {!isMultiVariant && !isGuest && stats.length > 0 && (
-        <section aria-labelledby="stats-heading" className="mb-5">
-          <h2 id="stats-heading" className="text-xs font-semibold text-text-muted uppercase tracking-wider mb-3">
-            Stats
-          </h2>
-          
+        <section className="mb-5">
           <div className="overflow-x-auto -mx-4 sm:mx-0">
             <div className="inline-block min-w-full align-middle px-4 sm:px-0">
               <table className="min-w-full border-collapse">
@@ -298,7 +294,7 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
       
       {/* Level Stats Table - only for multi-variant items */}
       {isMultiVariant && family && (
-        <section aria-labelledby="level-stats-heading" className="mb-5">
+        <section className="mb-5">
           <LevelStatsTable 
             levels={family.levelVariants}
             hideVariantColumn={family.levelRange.includes('All Versions')}

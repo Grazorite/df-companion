@@ -29,11 +29,8 @@ export default function LevelStatsTable({ levels, hideVariantColumn = false }: L
       : 'Stats'
   
   return (
-    <div className="space-y-3">
-      <h2 className="text-xs font-semibold text-text-muted uppercase tracking-wider">Stats by Level</h2>
-      
-      <div className="overflow-x-auto -mx-4 sm:mx-0">
-        <div className="inline-block min-w-full align-middle px-4 sm:px-0">
+    <div className="overflow-x-auto -mx-4 sm:mx-0">
+      <div className="inline-block min-w-full align-middle px-4 sm:px-0">
           <table className="min-w-full border-collapse">
             <thead>
               <tr className="border-b border-border-default">
