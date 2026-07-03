@@ -1718,8 +1718,8 @@ async function main() {
   // Always write ALL pets from progress map (full dataset)
   const finalPets = Array.from(progressMap.values())
     .sort((a, b) => {
-      const aName = 'familyName' in a ? a.familyName : a.name
-      const bName = 'familyName' in b ? b.familyName : b.name
+      const aName: string = 'familyName' in a ? a.familyName : a.name
+      const bName: string = 'familyName' in b ? b.familyName : b.name
       return aName.localeCompare(bName)
     })
 
