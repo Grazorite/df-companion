@@ -1158,7 +1158,13 @@ function parsePetThread(html: string, name: string): {
 } {
   const bodyMatch = html.match(/<td[^>]*valign=["']?top["']?[^>]*width=["']?100%["']?[^>]*>([\s\S]*?)<\/td>/i)
   const rawBody = bodyMatch ? bodyMatch[1] : html
-  const text = stripHtml(decodeHTML(rawBody))
+  
+  // Pre-process: Remove edit timestamp sections that can interfere with note parsing
+  // Strategy: Remove <font color='#eeeeee'> tags and everything that follows them
+  // These tags wrap edit timestamps that shouldn't be part of the content
+  const cleanedBody = rawBody.replace(/<font color=['"]#eeeeee['"]>.*?(<\/font>|$)/gis, '')
+  
+  const text = stripHtml(decodeHTML(cleanedBody))
   const lines = text.split('\n').filter(l => l.length > 0)  // DON'T trim — preserve indentation!
 
   let description = ''

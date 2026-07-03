@@ -123,7 +123,7 @@
       "attacks": [
         {
           "name": "Attack Type 1",
-          "description": "Approaches target and bites it for 1 hit of 100% Melee Darkness damage.",
+          "description": "Approaches target and bites it for 1 hit of 100% Melee Darkness damage. DF MQ AQW Epic",
           "images": [],
           "notes": []
         }
@@ -200,7 +200,7 @@
       "attacks": [
         {
           "name": "Attack Type 1",
-          "description": "Runs to the enemy and breathes bubbles at the enemy for 1 hit of melee damage",
+          "description": "Runs to the enemy and breathes bubbles at the enemy for 1 hit of melee damage DF MQ AQW Epic",
           "images": [],
           "notes": []
         }
@@ -422,7 +422,7 @@
         },
         {
           "name": "Attack Type 2",
-          "description": "Approaches and slashes target with its kamas for 1 hit of 100% Melee Darkness damage; applies 'Poison Strike!', a 100% Magic Poison DoT effect, to target for 5 turns. (Rate: 2%)",
+          "description": "Approaches and slashes target with its kamas for 1 hit of 100% Melee Darkness damage; applies 'Poison Strike!', a 100% Magic Poison DoT effect, to target for 5 turns. (Rate: 2%) AQW",
           "images": [],
           "notes": []
         }
@@ -576,7 +576,7 @@
       "attacks": [
         {
           "name": "Attack Type 1",
-          "description": "The pet walks up to your enemy and its coxcomb pops for 1 hit of 100% Magic damage",
+          "description": "The pet walks up to your enemy and its coxcomb pops for 1 hit of 100% Magic damage DF MQ AQW Epic",
           "images": [],
           "notes": []
         }
@@ -1435,7 +1435,7 @@
         },
         {
           "name": "Attack Type 3 /  3.1",
-          "description": "Bounces toward target, hovers mid-air, and blasts it with multiple beams for 5 hits of 100% Melee ??? damage, amounting to 500% damage. (Rate: 5%)",
+          "description": "Bounces toward target, hovers mid-air, and blasts it with multiple beams for 5 hits of 100% Melee ??? damage, amounting to 500% damage. (Rate: 5%) DF MQ AQW Epic",
           "images": [],
           "notes": []
         }
