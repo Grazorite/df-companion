@@ -114,6 +114,5 @@ export default function LevelStatsTable({ levels, hideVariantColumn = false }: L
           </table>
         </div>
       </div>
-    </div>
   )
 }
