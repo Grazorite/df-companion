@@ -1236,6 +1236,8 @@ function rephraseTimedSellback(sellback: string): string {
  * Detect DA/DC/DM tags in the HTML context around a specific text location.
  * Used to check if access requirements apply to a specific obtain method.
  * 
+ * IMPORTANT: If text explicitly says "(No DA Required)", respect that over image tags.
+ * 
  * @param html - Full HTML to search
  * @param searchText - Text to find (e.g., location name)
  * @param contextSize - How many characters before/after to check (default: 500)
@@ -1256,8 +1258,11 @@ function detectAccessTagsNearText(html: string, searchText: string, contextSize:
   const end = Math.min(html.length, index + searchText.length + contextSize)
   const context = html.slice(start, end)
   
+  // Check for explicit "(No DA Required)" text - this overrides image tags
+  const hasNoDAText = /\(?\s*No\s+DA\s+Required\s*\)?/i.test(context)
+  
   return {
-    daRequired: /<img[^>]+src=["'][^"']*\/tags\/DA\.png["']/i.test(context),
+    daRequired: hasNoDAText ? false : /<img[^>]+src=["'][^"']*\/tags\/DA\.png["']/i.test(context),
     dcRequired: /<img[^>]+src=["'][^"']*\/tags\/DC\.png["']/i.test(context),
     dmRequired: /<img[^>]+src=["'][^"']*\/tags\/DM\.png["']/i.test(context),
   }
@@ -1388,7 +1393,10 @@ const saveObtain = () => {
       continue
     }
     
-    if (/^Thanks\s+to/i.test(trimmedLine)) break  // stop processing — everything from here is attribution
+    if (/^Thanks\s+to/i.test(trimmedLine)) {
+      // Stop processing — everything from here is attribution
+      break
+    }
 
     if (!description && !inNotes && !currentAttack && trimmedLine.length > 5) { description = trimmedLine; continue }
     if (inNotes && trimmedLine.length > 3) {
@@ -1397,8 +1405,11 @@ const saveObtain = () => {
       // Stop at attribution lines: "Name for image/entry/corrections/etc."
       // Attribution format: short name (1-4 words max) followed by " for [contribution type]"
       // Example: "John Smith for image", "Alex for corrections", "Name1, Name2 for stats"
+      // BUT: Don't match if the line is part of a note like "Pet's name is erroneously called 'BabyWeaver' instead of..."
       const attributionPattern = /^([A-Z][\w'-]+(?:\s+[A-Z][\w'-]+){0,3}(?:\s*,\s*[A-Z][\w'-]+(?:\s+[A-Z][\w'-]+){0,2})*)\s+for\s+(image|attack|information|images|entry|entries|corrections|formatting|description|original|banner|code|stats|data|location|price)/i
-      if (attributionPattern.test(trimmedLine)) break
+      // Only stop if it's a clean attribution line (not mid-sentence)
+      // Check if this line starts with a capital letter AND matches attribution pattern AND is short (< 100 chars)
+      if (attributionPattern.test(trimmedLine) && trimmedLine.length < 100 && /^[A-Z]/.test(trimmedLine)) break
       
       // Strip "Note:" prefix if present at the start of a line
       let processedLine = trimmedLine
@@ -1421,9 +1432,19 @@ const saveObtain = () => {
           noteLines.push(text.trim())
         }
       } else {
-        // Non-bullet line — treat as separate top-level note (use processed line without "Note:")
+        // Non-bullet line
+        // If the previous line doesn't end with punctuation (., !, ?, :) and this line continues text,
+        // append to previous line (handle line wrapping in forum posts)
         if (processedLine.length > 0) {
-          noteLines.push(processedLine)
+          if (noteLines.length > 0 && 
+              !/[.!?:]$/.test(noteLines[noteLines.length - 1]) && 
+              /^[a-z'"]/.test(processedLine)) {
+            // Continuation of previous line - append with space
+            noteLines[noteLines.length - 1] += ' ' + processedLine
+          } else {
+            // New note line
+            noteLines.push(processedLine)
+          }
         }
       }
     }

@@ -368,10 +368,11 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
                 price: method.price,
                 priceType: method.priceType,
                 sellback: method.sellback,
-                // Use per-method DA/DC/DM flags if available, otherwise fall back to pet-level flags
-                daRequired: method.daRequired ?? pet.daRequired,
-                ...(method.dcRequired || pet.dcRequired ? { dcRequired: method.dcRequired ?? pet.dcRequired } : {}),
-                ...(method.dmRequired || pet.dmRequired ? { dmRequired: method.dmRequired ?? pet.dmRequired } : {}),
+                // Use ONLY per-method flags - do NOT fall back to pet-level flags
+                // Per-method flags are authoritative; pet-level flags are just summaries
+                daRequired: method.daRequired ?? false,
+                ...(method.dcRequired ? { dcRequired: method.dcRequired } : {}),
+                ...(method.dmRequired ? { dmRequired: method.dmRequired } : {}),
                 ...(method.requiredItems ? { requiredItems: method.requiredItems } : {}),
               }
               
