@@ -38,7 +38,9 @@ function AttackCard({ attack, index }: { attack: Attack; index: number }) {
         className="w-full flex items-center justify-between px-4 py-3 text-left hover:bg-bg-elevated transition-colors"
         aria-expanded={open}
       >
-        <span className="text-sm font-medium text-text-primary">{attack.name}</span>
+        <span className="text-sm font-medium text-text-primary">
+          {attack.name.replace(/^Attack\s+/i, '')}
+        </span>
         {open ? <ChevronUp className="w-4 h-4 text-text-muted flex-shrink-0" /> : <ChevronDown className="w-4 h-4 text-text-muted flex-shrink-0" />}
       </button>
 

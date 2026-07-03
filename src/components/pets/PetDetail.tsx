@@ -297,7 +297,10 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
         <section className="mb-5">
           <LevelStatsTable 
             levels={family.levelVariants}
-            hideVariantColumn={family.levelRange.includes('All Versions')}
+            hideVariantColumn={
+              // Hide variant column if all levelDisplay values match levelNumber (no roman numerals)
+              family.levelVariants.every(lv => lv.levelDisplay === lv.levelNumber.toString())
+            }
           />
         </section>
       )}
