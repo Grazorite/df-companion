@@ -4,7 +4,11 @@ import categoriesData from '../data/categories.json'
 import { searchBadges } from '../utils/search'
 import type { Badge, BadgeFilters, CategoryMeta } from '../types/badge'
 
-const badges = badgesData as Badge[]
+const badges = (badgesData as Badge[]).map((badge) => ({
+  ...badge,
+  retired: badge.retired || /badge was retired on/i.test(badge.notes ?? ''),
+  imageUrl: badge.imageUrl ?? badge.forumImageUrl,
+}))
 const categories = categoriesData as CategoryMeta[]
 
 export function useBadges(filters: BadgeFilters = {}) {

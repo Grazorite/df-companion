@@ -81,7 +81,7 @@ export default function PetCard({ pet, toUrl, replace, family }: PetCardProps) {
               DM
             </span>
           )}
-          {displayFlags.hasFree && !displayFlags.hasDA && (
+          {pet.type !== 'guest' && displayFlags.hasFree && !displayFlags.hasDA && (
             <span className="text-[10px] text-green-400 bg-green-500/20 px-1.5 py-0.5 rounded-full font-medium">
               Free
             </span>

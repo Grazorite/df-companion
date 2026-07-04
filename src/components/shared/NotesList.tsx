@@ -34,16 +34,16 @@ function parseNotes(raw: string): NoteItem[] {
       const trimmed = line.trim()
       if (!trimmed) continue
 
-      if (line.startsWith('  • ') || line.startsWith('  - ')) {
+      if (/^\s{2,}[•\-*]\s/.test(line)) {
         // Sub-bullet — attach to previous item
         if (items.length > 0) {
-          items[items.length - 1].subItems.push(trimmed.replace(/^[•\-\*]\s*/, ''))
+          items[items.length - 1].subItems.push(trimmed.replace(/^(?:[•\-*]\s*)+/, ''))
         } else {
-          items.push({ text: trimmed.replace(/^[•\-\*]\s*/, ''), subItems: [] })
+          items.push({ text: trimmed.replace(/^(?:[•\-*]\s*)+/, ''), subItems: [] })
         }
       } else {
         // Top-level note
-        items.push({ text: trimmed.replace(/^[•\-\*]\s*/, ''), subItems: [] })
+        items.push({ text: trimmed.replace(/^(?:[•\-*]\s*)+/, ''), subItems: [] })
       }
     }
     return items.filter(item => item.text.length > 0)
@@ -53,7 +53,7 @@ function parseNotes(raw: string): NoteItem[] {
   return topLevel
     .map(s => s.trim())
     .filter(s => s.length > 0)
-    .map(text => ({ text, subItems: [] }))
+    .map(text => ({ text: text.replace(/^(?:[•\-*]\s*)+/, ''), subItems: [] }))
 }
 
 export default function NotesList({ notes }: NotesListProps) {

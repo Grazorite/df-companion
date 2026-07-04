@@ -177,6 +177,6 @@ export interface Guest extends Omit<Pet, 'attacks' | 'damage' | 'stats' | 'stats
   attacks: GuestAttack[]            // Attacks with button images and structured data
   alternativeImages?: Array<{       // Alt appearances with captions
     url: string
-    caption?: string
+    caption: string
   }>
 }

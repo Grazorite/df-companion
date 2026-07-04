@@ -25,15 +25,64 @@ const loadedGuests: Pet[] = (guestsData as unknown as Array<Pet & { specialMarke
   return p as Pet
 })
 
-// Combine pets and guests into single array
-const allPets: Pet[] = [...loadedPets, ...loadedGuests]
-const elementMeta = elementsData as ElementsData
-
-// ─── Type Guard ───────────────────────────────────────────────────────────────
-
 function isItemFamily(item: Pet | ItemFamily): item is ItemFamily {
   return 'levelVariants' in item && 'familyName' in item
 }
+
+function getDisplayName(item: Pet | ItemFamily): string {
+  return isItemFamily(item) ? item.familyName : item.name
+}
+
+function normalizeDuplicateVariantName(name: string): string {
+  return name
+    .replace(/\s+\((All Versions|[IVX]+-[IVX]+)\)$/i, '')
+    .trim()
+}
+
+function dedupeVariantEntries(items: Array<Pet | ItemFamily>) {
+  const canonicalByNormalized = new Map<string, Pet | ItemFamily>()
+  const aliasToCanonicalSlug = new Map<string, string>()
+
+  for (const item of items) {
+    const displayName = getDisplayName(item)
+    const normalizedName = normalizeDuplicateVariantName(displayName)
+    const existing = canonicalByNormalized.get(normalizedName)
+
+    if (!existing) {
+      canonicalByNormalized.set(normalizedName, item)
+      continue
+    }
+
+    const existingName = getDisplayName(existing)
+    const currentIsCanonicalName = displayName === normalizedName
+    const existingIsCanonicalName = existingName === normalizedName
+    const currentScore =
+      (currentIsCanonicalName ? 4 : 0) +
+      (isItemFamily(item) ? 2 : 0) +
+      ('imageUrl' in item && item.imageUrl ? 1 : 0)
+    const existingScore =
+      (existingIsCanonicalName ? 4 : 0) +
+      (isItemFamily(existing) ? 2 : 0) +
+      ('imageUrl' in existing && existing.imageUrl ? 1 : 0)
+
+    if (currentScore > existingScore) {
+      aliasToCanonicalSlug.set(existing.slug, item.slug)
+      canonicalByNormalized.set(normalizedName, item)
+    } else {
+      aliasToCanonicalSlug.set(item.slug, existing.slug)
+    }
+  }
+
+  return {
+    items: Array.from(canonicalByNormalized.values()),
+    aliasToCanonicalSlug,
+  }
+}
+
+const dedupedEntries = dedupeVariantEntries([...loadedPets, ...loadedGuests] as Array<Pet | ItemFamily>)
+const allPets = dedupedEntries.items
+const petSlugAliases = dedupedEntries.aliasToCanonicalSlug
+const elementMeta = elementsData as ElementsData
 
 // ─── Search ───────────────────────────────────────────────────────────────────
 
@@ -81,7 +130,7 @@ function searchPets(pets: (Pet | ItemFamily)[], filters: PetFilters): (Pet | Ite
           }
           
           // Guests are never purchased - skip Free/DC/DM/Merge filters for guests
-          const entryType: EntryType = isFamily ? family!.type : pet!.type
+          const entryType = isFamily ? family!.type : pet!.type
           const isGuest = entryType === 'guest'
           
           if (accessType === 'dc') {
@@ -191,7 +240,10 @@ export function usePets(filters: PetFilters = {}) {
 }
 
 export function usePetBySlug(slug: string): Pet | ItemFamily | null {
-  return useMemo(() => allPets.find(p => p.slug === slug) ?? null, [slug])
+  return useMemo(() => {
+    const canonicalSlug = petSlugAliases.get(slug) ?? slug
+    return allPets.find(p => p.slug === canonicalSlug) ?? null
+  }, [slug])
 }
 
 /** Counts per type for the segment toggle — applies search/filter but ignores type filter */
@@ -209,7 +261,7 @@ export function usePetCounts(filters: Omit<PetFilters, 'type'> = {}): Record<Ent
 export function useRelatedPets(alsoSee: { slug: string; name: string; type: string }[]) {
   return useMemo(
     () => alsoSee
-      .map(ref => allPets.find(p => p.slug === ref.slug))
+      .map(ref => allPets.find(p => p.slug === (petSlugAliases.get(ref.slug) ?? ref.slug)))
       .filter((p): p is Pet => p !== null && p !== undefined),
     [alsoSee]
   )

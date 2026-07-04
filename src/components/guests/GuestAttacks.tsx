@@ -56,7 +56,7 @@ function AttackCard({ attack, defaultOpen = false }: { attack: GuestAttack; defa
             {attack.name}
           </h3>
           {attack.description && (
-            <p className="text-xs text-text-secondary italic mt-1 line-clamp-2">
+            <p className="text-xs text-text-secondary italic mt-1 line-clamp-2 whitespace-pre-line">
               {attack.description}
             </p>
           )}
@@ -80,7 +80,7 @@ function AttackCard({ attack, defaultOpen = false }: { attack: GuestAttack; defa
           )}
           
           {/* Effect - highlighted */}
-          <p className="text-sm text-gold mt-3 mb-4">
+          <p className="text-sm text-gold mt-3 mb-4 whitespace-pre-line">
             {attack.effect}
           </p>
           

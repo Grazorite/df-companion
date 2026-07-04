@@ -214,20 +214,24 @@ export default function PetsPage() {
       {/* Level 2: Category filter (multi-select) */}
       <div className="mb-3">
         <div className="flex flex-wrap gap-2">
-          {CATEGORY_OPTIONS.map(opt => (
-            <button
-              key={opt.id}
-              onClick={() => toggleCategory(opt.id)}
-              aria-pressed={activeCategories.includes(opt.id as any)}
-              className={`px-2.5 py-1 rounded-full text-[11px] font-medium transition-colors duration-150 ${
-                activeCategories.includes(opt.id as any)
-                  ? 'bg-orange-500/80 text-white font-semibold'
-                  : 'bg-bg-overlay text-text-secondary hover:bg-border-hover hover:text-text-primary'
-              }`}
-            >
-              {opt.label}
-            </button>
-          ))}
+          {CATEGORY_OPTIONS.map(opt => {
+            if (isGuestsOnly && opt.id === 'special-offer') return null
+
+            return (
+              <button
+                key={opt.id}
+                onClick={() => toggleCategory(opt.id)}
+                aria-pressed={activeCategories.includes(opt.id as any)}
+                className={`px-2.5 py-1 rounded-full text-[11px] font-medium transition-colors duration-150 ${
+                  activeCategories.includes(opt.id as any)
+                    ? 'bg-orange-500/80 text-white font-semibold'
+                    : 'bg-bg-overlay text-text-secondary hover:bg-border-hover hover:text-text-primary'
+                }`}
+              >
+                {opt.label}
+              </button>
+            )
+          })}
           {activeCategories.length > 0 && (
             <button
               onClick={() => {

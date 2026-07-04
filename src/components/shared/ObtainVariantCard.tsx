@@ -41,23 +41,25 @@ export default function ObtainVariantCard({ variant, label, isGuest = false }: O
       </h3>
       
       {/* Location with optional link and DA pill */}
-      <div className="flex items-start justify-between gap-3">
-        {variant.locationUrl ? (
-          <a
-            href={variant.locationUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-text-primary hover:text-gold transition-colors underline"
-          >
-            {variant.location}
-          </a>
-        ) : (
-          <p className="text-text-primary">{variant.location}</p>
-        )}
+      <div className="grid grid-cols-[minmax(0,1fr)_auto] items-start gap-3">
+        <div className="min-w-0">
+          {variant.locationUrl ? (
+            <a
+              href={variant.locationUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-text-primary hover:text-gold transition-colors underline break-words"
+            >
+              {variant.location}
+            </a>
+          ) : (
+            <p className="text-text-primary break-words">{variant.location}</p>
+          )}
+        </div>
         
         {/* DA Required pill (non-clickable in obtain context) */}
         {variant.daRequired && (
-          <span className="inline-flex items-center text-xs font-medium px-2.5 py-1 rounded-full bg-orange-500/20 text-orange-400">
+          <span className="inline-flex items-center justify-center whitespace-nowrap min-w-[92px] text-xs font-medium px-3 py-1 rounded-full bg-orange-500/20 text-orange-400">
             DA Required
           </span>
         )}

@@ -4,9 +4,8 @@
     "name": "Aegis (1)",
     "slug": "guest-aegis-1",
     "type": "guest",
-    "description": "A temporary guest companion.",
+    "description": "Spirit Soul Ally",
     "daRequired": false,
-    "isTemp": true,
     "elements": [
       "ICE"
     ],
@@ -19,7 +18,7 @@
       {
         "location": "Book of Lore -> Guests (-> Book 1&2) -> Aegis - Invite as First Guest/Second Guest (DA Required),  Ravenloss (Books 1 and 2) -> Invite Aegis",
         "priceType": "free",
-        "requirements": "None"
+        "requirements": "Completion of  Meet Aegis,  SoulWeaver unlocked"
       }
     ],
     "attacks": [
@@ -82,15 +81,16 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "July 11th, 2014",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Aegis1.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18708516",
-    "notes": "• Players initially required to equip the  SoulWeaver class to invite Aegis (1); this requirement was modified to unlocking the  SoulWeaver class on  February 28th, 2025.\n• The following changes were implemented on  April 11th, 2025:\n  • Aegis (1)'s tooltips were updated.\n• 'Shatter', 'Ice Domain', and 'Hailstorm' skills were modified.",
+    "notes": "• Players initially required to equip the  SoulWeaver class to invite Aegis (1); this requirement was modified to unlocking the  SoulWeaver class on  February 28th, 2025. \n• The following changes were implemented on  April 11th, 2025: \n  • Aegis (1)'s tooltips were updated. \n  • 'Shatter', 'Ice Domain', and 'Hailstorm' skills were modified.",
     "alsoSee": [],
     "tags": [
       "aegis",
       "(1)",
-      "temporary",
-      "guest",
-      "companion.",
+      "spirit",
+      "soul",
+      "ally",
       "ice"
     ],
     "guestStats": {
@@ -222,7 +222,7 @@
     "releaseDate": "March 24th, 2023",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alteon.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22409330",
-    "notes": "• Alteon has a series of unconventional stats in the quests  Hawk in the Sky,  Crash and Burn,  The Flame Within,  At Fissure's Edge,  The Final Steps, and  Convergence (Part 1):\n  • Alteon gains -10 Immobility,  -60 Health, + 60 All Resists.\n• Alteon's base damage is increased by 50%.\n• Skip skill was added with the release of  Crash and Burn.",
+    "notes": "• Alteon has a series of unconventional stats in the quests  Hawk in the Sky,  Crash and Burn,  The Flame Within,  At Fissure's Edge,  The Final Steps, and  Convergence (Part 1): \n  • Alteon gains -10 Immobility,  -60 Health, + 60 All Resists. \n  • Alteon's base damage is increased by 50%.\n• Skip skill was added with the release of  Crash and Burn.",
     "alsoSee": [],
     "tags": [
       "alteon",
@@ -305,7 +305,8 @@
         "cooldown": "14",
         "damageType": "Melee",
         "element": "???",
-        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz"
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Etaos-Button01-Final.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Etaos-FinalBlow1.0.png"
       },
       {
         "name": "Realm Change",
@@ -315,7 +316,8 @@
         "cooldown": "4",
         "damageType": "Melee",
         "element": "???",
-        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz"
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Etaos-Button02-Fade.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Etaos-RealmChange1.0.png"
       },
       {
         "name": "Etaos' Precision",
@@ -325,8 +327,8 @@
         "cooldown": "5",
         "damageType": "Melee",
         "element": "???",
-        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz"
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Etaos-Button03-Etaos.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Etaos-Etaos'Precision.png"
       },
       {
         "name": "Attack",
@@ -337,7 +339,7 @@
         "damageType": "Melee",
         "element": "???",
         "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Etaos-Attack.png"
       },
       {
         "name": "Melee Combo",
@@ -348,7 +350,8 @@
         "cooldown": "2",
         "damageType": "Melee",
         "element": "???",
-        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz"
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Etaos-Button04-Combo.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Etaos-Attack.png"
       },
       {
         "name": "Rift Effect",
@@ -359,8 +362,8 @@
         "cooldown": "0",
         "damageType": "Melee",
         "element": "???",
-        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz"
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Etaos-Button05-Rift.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Etaos-RiftEffect.png"
       },
       {
         "name": "Rift Cross",
@@ -370,8 +373,8 @@
         "cooldown": "14",
         "damageType": "Melee",
         "element": "???",
-        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz"
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Etaos-Button06-TheX.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Etaos-RiftCross.png"
       },
       {
         "name": "Strength Strike",
@@ -381,13 +384,14 @@
         "cooldown": "10",
         "damageType": "Melee",
         "element": "???",
-        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz"
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Etaos-Button07-STR.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Etaos-MeleeCombo1.1.png"
       }
     ],
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "May 15th, 2026",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Etaos.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22426204",
     "alsoSee": [],
     "tags": [
@@ -445,7 +449,7 @@
     "name": "Alz'ein & Isiri (1)",
     "slug": "guest-alz-ein-isiri-1",
     "type": "guest",
-    "description": "A temporary guest companion.",
+    "description": "Ateala Riftwalker & Ascendant",
     "daRequired": false,
     "isTemp": true,
     "elements": [
@@ -472,7 +476,8 @@
         "cooldown": "14",
         "damageType": "Melee",
         "element": "Darkness",
-        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz"
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Isiri-Button01-Final.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Isiri-FinalBlow1.0.png"
       },
       {
         "name": "Realm Change",
@@ -482,7 +487,8 @@
         "cooldown": "4",
         "damageType": "Melee",
         "element": "Darkness",
-        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz"
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Isiri-Button02-Fade.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Isiri-RealmChange1.0.png"
       },
       {
         "name": "Isiri's Sight",
@@ -492,8 +498,8 @@
         "cooldown": "5",
         "damageType": "N/A",
         "element": "N/A",
-        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz"
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Isiri-Button03-Isiri.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Isiri-Isiri'sSight.png"
       },
       {
         "name": "Attack",
@@ -504,7 +510,7 @@
         "damageType": "Melee",
         "element": "Darkness",
         "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Isiri-Attack.png"
       },
       {
         "name": "Melee Combo",
@@ -515,7 +521,8 @@
         "cooldown": "2",
         "damageType": "Melee",
         "element": "Darkness",
-        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz"
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Isiri-Button04-Combo.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Isiri-Attack.png"
       },
       {
         "name": "Rift Effect",
@@ -526,8 +533,8 @@
         "cooldown": "0",
         "damageType": "Melee",
         "element": "Darkness",
-        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz"
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Isiri-Button05-Rift.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Isiri-RiftEffect.png"
       },
       {
         "name": "Rift Cross",
@@ -537,8 +544,8 @@
         "cooldown": "14",
         "damageType": "Melee",
         "element": "Darkness",
-        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz"
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Isiri-Button06-TheX.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Isiri-RiftCross.png"
       },
       {
         "name": "Strength Strike",
@@ -548,8 +555,8 @@
         "cooldown": "10",
         "damageType": "Melee",
         "element": "Darkness",
-        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz"
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Isiri-Button07-STR.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Isiri-MeleeCombo1.1.png"
       }
     ],
     "rarity": "Unknown",
@@ -562,9 +569,9 @@
       "alz'ein",
       "isiri",
       "(1)",
-      "temporary",
-      "guest",
-      "companion.",
+      "ateala",
+      "riftwalker",
+      "ascendant",
       "dar"
     ],
     "guestStats": {
@@ -641,7 +648,8 @@
         "cooldown": "14",
         "damageType": "Melee",
         "element": "???",
-        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz"
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Nirios-Button01-Final.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Nirios-FinalBlow1.0.png"
       },
       {
         "name": "Illusionary Veil",
@@ -651,8 +659,8 @@
         "cooldown": "8",
         "damageType": "N/A",
         "element": "N/A",
-        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz"
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Nirios-Button02-Veil.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Nirios-IllusionaryVeil.png"
       },
       {
         "name": "Nirios' Focus",
@@ -662,8 +670,8 @@
         "cooldown": "5",
         "damageType": "N/A",
         "element": "N/A",
-        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz"
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Nirios-Button03-Nirios.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Nirios-Nirios'Focus.png"
       },
       {
         "name": "Attack",
@@ -674,7 +682,7 @@
         "damageType": "Melee",
         "element": "???",
         "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Nirios-Attack.png"
       },
       {
         "name": "Melee Combo",
@@ -685,7 +693,8 @@
         "cooldown": "2",
         "damageType": "Melee",
         "element": "???",
-        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz"
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Nirios-Button04-Combo.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Nirios-Attack.png"
       },
       {
         "name": "Rift Effect",
@@ -696,8 +705,8 @@
         "cooldown": "0",
         "damageType": "Melee",
         "element": "???",
-        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz"
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Nirios-Button05-Rift.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Nirios-RiftEffect.png"
       },
       {
         "name": "Rift Cross",
@@ -707,8 +716,8 @@
         "cooldown": "14",
         "damageType": "Melee",
         "element": "???",
-        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz"
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Nirios-Button06-TheX.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Nirios-RiftCross.png"
       },
       {
         "name": "Strength Strike",
@@ -718,13 +727,14 @@
         "cooldown": "10",
         "damageType": "Melee",
         "element": "???",
-        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz"
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Nirios-Button07-STR.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Nirios-MeleeCombo1.1.png"
       }
     ],
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "April 25th, 2025",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Nirios.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22421842",
     "notes": "• Alz'ein & Nirios' element was changed from Darkness to ??? on  May 23rd, 2025.",
     "alsoSee": [],
@@ -833,7 +843,8 @@
         "cooldown": "19",
         "damageType": "Melee",
         "element": "Darkness/Weakness seeks",
-        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Amadeus-Button03-Unleash.png"
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Amadeus-Button03-Unleash.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Amadeus-EmbracetheDarkness1.0.png"
       },
       {
         "name": "Heartcleaver",
@@ -843,7 +854,8 @@
         "cooldown": "11",
         "damageType": "Melee",
         "element": "Darkness/Weakness seeks",
-        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Amadeus-Button04-Cleave.png"
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Amadeus-Button04-Cleave.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Amadeus-Heartcleaver1.0.png"
       },
       {
         "name": "Rush",
@@ -854,7 +866,8 @@
         "cooldown": "0",
         "damageType": "Melee",
         "element": "Darkness/Weakness seeks",
-        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Amadeus-Button05-Rush.png"
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Amadeus-Button05-Rush.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Amadeus-Rush1.0.png"
       },
       {
         "name": "Pierce",
@@ -884,7 +897,7 @@
     "releaseDate": "March 24th, 2023",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Amadeus.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22409331",
-    "notes": "• Amadeus has a series of unconventional stats in the quests  Hawk in the Sky,  Crash and Burn,  The Flame Within,  At Fissure's Edge,  The Final Steps, and  Convergence (Part 1):\n  • Amadeus gains -10 Immobility,  -60 Health, +60 All Resists.\n• Amadeus' base damage is increased by 50%.\n• Lost Blade and Skip skills were added with the release of  Crash and Burn.",
+    "notes": "• Amadeus has a series of unconventional stats in the quests  Hawk in the Sky,  Crash and Burn,  The Flame Within,  At Fissure's Edge,  The Final Steps, and  Convergence (Part 1): \n  • Amadeus gains -10 Immobility,  -60 Health, +60 All Resists. \n  • Amadeus' base damage is increased by 50%.\n• Lost Blade and Skip skills were added with the release of  Crash and Burn. ",
     "alsoSee": [],
     "tags": [
       "amadeus",
@@ -944,7 +957,7 @@
     "name": "Aquella (1)",
     "slug": "guest-aquella-1",
     "type": "guest",
-    "description": "A temporary guest companion.",
+    "description": "Sea Elf Fish?",
     "daRequired": false,
     "isTemp": true,
     "elements": [
@@ -983,15 +996,12 @@
     "tags": [
       "aquella",
       "(1)",
-      "temporary",
-      "guest",
-      "companion.",
+      "fish?",
       "nat"
     ],
     "guestStats": {
       "level": "2",
       "damage": "8-12",
-      "damageType": "Melee",
       "element": "Nature",
       "hp": "100",
       "mp": "100",
@@ -1035,9 +1045,8 @@
     "name": "Aria (1)",
     "slug": "guest-aria-1",
     "type": "guest",
-    "description": "A temporary guest companion.",
+    "description": "Human Wannabe Beastmaster",
     "daRequired": false,
-    "isTemp": true,
     "elements": [
       "NAT"
     ],
@@ -1068,15 +1077,16 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "August 4th, 2006",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Aria%20pic.bmp",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=10837661",
     "notes": "• Aria will remain as a guest if you exit before quest completion.",
     "alsoSee": [],
     "tags": [
       "aria",
       "(1)",
-      "temporary",
-      "guest",
-      "companion.",
+      "human",
+      "wannabe",
+      "beastmaster",
       "nat"
     ],
     "guestStats": {
@@ -1099,6 +1109,14 @@
         "boost": "0%",
         "bonus": "1",
         "crit": "2"
+      },
+      "defense": {
+        "melee": "5",
+        "pierce": "0",
+        "magic": "5",
+        "block": "0",
+        "parry": "0",
+        "dodge": "0"
       }
     }
   },
@@ -1107,10 +1125,8 @@
     "name": "Artix (1)",
     "slug": "guest-artix-1",
     "type": "guest",
-    "description": "A temporary guest companion.",
+    "description": "Human Paladin",
     "daRequired": false,
-    "isTemp": true,
-    "isSeasonal": true,
     "elements": [
       "LIG",
       "MET"
@@ -1122,7 +1138,7 @@
     "resists": "None",
     "obtainMethods": [
       {
-        "location": "Book of Lore -> Guests (-> Book 1&2) -> Artix - Invite as First Guest/Second Guest (DA Required),  Amityvale (Books 1 and 2) -> Right ->  Artix -> Invite -> ...as Friend A / ...as Friend B,  The Necropolis ->  Artix -> Invite Artix! -> ...as Friend A / ...as Friend B,  Artix Vs. The Undead,  Artix Statue",
+        "location": "Well, Well, Well.,  The Necropolis,  Artix Vs. The Undead,  Noxus Fumes,  Artix Statue",
         "priceType": "free",
         "requirements": "None"
       }
@@ -1136,7 +1152,8 @@
         "cooldown": "14",
         "damageType": "Melee",
         "element": "Light",
-        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Artix1-Button01-Holy.png"
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Artix1-Button01-Holy.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Artix1-HolyStrike1.0.png"
       },
       {
         "name": "Attack",
@@ -1145,7 +1162,8 @@
         "cooldown": "0",
         "damageType": "Melee",
         "element": "Metal",
-        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png"
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Artix1-Attack.png"
       }
     ],
     "rarity": "Unknown",
@@ -1157,9 +1175,8 @@
     "tags": [
       "artix",
       "(1)",
-      "temporary",
-      "guest",
-      "companion.",
+      "human",
+      "paladin",
       "lig",
       "met"
     ],
@@ -1210,7 +1227,7 @@
     "name": "Ash (1)",
     "slug": "guest-ash-1",
     "type": "guest",
-    "description": "A temporary guest companion.",
+    "description": "Puny Pip Squeak",
     "daRequired": false,
     "isTemp": true,
     "elements": [
@@ -1236,21 +1253,22 @@
         "cooldown": "0",
         "damageType": "Melee",
         "element": "Metal",
-        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png"
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Ash1-Attack1.png"
       }
     ],
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "June 16th, 2006",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Ash1.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=10851216",
     "notes": "• Ash (1) was previously attainable from the following retired access point:  Dragon Attack at Willowshire! -> Team up! -> Yes",
     "alsoSee": [],
     "tags": [
       "ash",
       "(1)",
-      "temporary",
-      "guest",
-      "companion.",
+      "puny",
+      "squeak",
       "met"
     ],
     "guestStats": {
@@ -1300,7 +1318,7 @@
     "name": "Batoro",
     "slug": "guest-batoro",
     "type": "guest",
-    "description": "A guest companion in DragonFable.",
+    "description": "Human The ArchKnight",
     "daRequired": true,
     "elements": [
       "DAR"
@@ -1327,7 +1345,8 @@
         "cooldown": "3",
         "damageType": "Melee",
         "element": "Darkness",
-        "buttonImageUrl": "https://i.imgur.com/OrjlrpG.png"
+        "buttonImageUrl": "https://i.imgur.com/OrjlrpG.png",
+        "appearanceUrl": "https://i.imgur.com/ozbfcxx.png"
       },
       {
         "name": "OOOOOFF!",
@@ -1337,7 +1356,8 @@
         "cooldown": "6",
         "damageType": "Melee",
         "element": "Darkness",
-        "buttonImageUrl": "https://i.imgur.com/jetil97.png"
+        "buttonImageUrl": "https://i.imgur.com/jetil97.png",
+        "appearanceUrl": "https://i.imgur.com/U6wF779.png"
       },
       {
         "name": "BAM!",
@@ -1347,7 +1367,8 @@
         "cooldown": "9",
         "damageType": "Melee",
         "element": "Darkness",
-        "buttonImageUrl": "https://i.imgur.com/p1ChAFH.png"
+        "buttonImageUrl": "https://i.imgur.com/p1ChAFH.png",
+        "appearanceUrl": "https://i.imgur.com/wvykwps.png"
       },
       {
         "name": "Attack",
@@ -1363,14 +1384,14 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "September 21st, 2012",
+    "imageUrl": "https://i.imgur.com/WkHSthH.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20722177",
     "notes": "• Batoro's stun duration was lowered from 2 turns to 1 turn on February 28th, 2020; more information can be found in the  February 28th, 2020 Design Notes.",
     "alsoSee": [],
     "tags": [
       "batoro",
-      "guest",
-      "companion",
-      "dragonfable.",
+      "human",
+      "archknight",
       "dar"
     ],
     "guestStats": {
@@ -1393,6 +1414,14 @@
         "boost": "0%",
         "bonus": "100",
         "crit": "5"
+      },
+      "defense": {
+        "melee": "5",
+        "pierce": "0",
+        "magic": "5",
+        "block": "0",
+        "parry": "0",
+        "dodge": "0"
       }
     }
   },
@@ -1401,7 +1430,7 @@
     "name": "Belle",
     "slug": "guest-belle",
     "type": "guest",
-    "description": "A temporary guest companion.",
+    "description": "Human Soulweaver",
     "daRequired": false,
     "isTemp": true,
     "elements": [
@@ -1439,7 +1468,8 @@
         "cooldown": "6",
         "damageType": "Pierce",
         "element": "Fear",
-        "buttonImageUrl": "https://i.imgur.com/HIust3s.png"
+        "buttonImageUrl": "https://i.imgur.com/HIust3s.png",
+        "appearanceUrl": "https://i.imgur.com/1t5N9HS.png"
       },
       {
         "name": "Soul Piercer",
@@ -1449,7 +1479,8 @@
         "cooldown": "4",
         "damageType": "Pierce",
         "element": "Fear",
-        "buttonImageUrl": "https://i.imgur.com/ZXth7sT.png"
+        "buttonImageUrl": "https://i.imgur.com/ZXth7sT.png",
+        "appearanceUrl": "https://i.imgur.com/Hp3szbu.png"
       },
       {
         "name": "Attack",
@@ -1458,19 +1489,20 @@
         "cooldown": "0",
         "damageType": "Pierce",
         "element": "Fear",
-        "buttonImageUrl": "https://i.imgur.com/CTnLIC6.png"
+        "buttonImageUrl": "https://i.imgur.com/CTnLIC6.png",
+        "appearanceUrl": "https://i.imgur.com/W4nI2hG.png"
       }
     ],
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "July 12th, 2019",
+    "imageUrl": "https://i.imgur.com/x6tFLHZ.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22365227",
     "alsoSee": [],
     "tags": [
       "belle",
-      "temporary",
-      "guest",
-      "companion.",
+      "human",
+      "soulweaver",
       "fea"
     ],
     "guestStats": {
@@ -1493,6 +1525,14 @@
         "boost": "0%",
         "bonus": "50",
         "crit": "30"
+      },
+      "defense": {
+        "melee": "5 + LUK/20",
+        "pierce": "5 + LUK/20",
+        "magic": "5 + LUK/20",
+        "block": "15",
+        "parry": "15",
+        "dodge": "15"
       }
     }
   },
@@ -1501,7 +1541,7 @@
     "name": "Bubble",
     "slug": "guest-bubble",
     "type": "guest",
-    "description": "A guest companion in DragonFable.",
+    "description": "Human TART",
     "daRequired": false,
     "isSeasonal": true,
     "elements": [
@@ -1534,14 +1574,14 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "October 15th, 2010",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Bubble%20pic.bmp",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18230081",
     "notes": "• Bubble has a 10% chance to attempt a second attack type which is currently bugged, causing her turn to stick.",
     "alsoSee": [],
     "tags": [
       "bubble",
-      "guest",
-      "companion",
-      "dragonfable.",
+      "human",
+      "tart",
       "lig"
     ],
     "guestStats": {
@@ -1564,6 +1604,14 @@
         "boost": "0%",
         "bonus": "100",
         "crit": "15"
+      },
+      "defense": {
+        "melee": "5",
+        "pierce": "0",
+        "magic": "5",
+        "block": "0",
+        "parry": "0",
+        "dodge": "0"
       }
     }
   },
@@ -1598,12 +1646,14 @@
         "cooldown": "0",
         "damageType": "Pierce",
         "element": "Nature",
-        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png"
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/BugKid-Attack1.0.png"
       }
     ],
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "July 28th, 2023",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/BugKid.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22411019",
     "alsoSee": [],
     "tags": [
@@ -1634,6 +1684,14 @@
         "boost": "0%",
         "bonus": "1",
         "crit": "2"
+      },
+      "defense": {
+        "melee": "5",
+        "pierce": "0",
+        "magic": "5",
+        "block": "0",
+        "parry": "0",
+        "dodge": "0"
       }
     }
   },
@@ -1642,7 +1700,7 @@
     "name": "Captain Lestrad",
     "slug": "guest-captain-lestrad",
     "type": "guest",
-    "description": "A temporary guest companion.",
+    "description": "Human DragonLord",
     "daRequired": false,
     "isTemp": true,
     "elements": [
@@ -1656,7 +1714,8 @@
     "obtainMethods": [
       {
         "location": "Fate's Flow (Part 1)",
-        "priceType": "free"
+        "priceType": "free",
+        "requirements": "Join the Rose Faction in  The Greenguard Alliance - Choose a Faction"
       }
     ],
     "attacks": [
@@ -1668,7 +1727,8 @@
         "cooldown": "99",
         "damageType": "Melee",
         "element": "Metal",
-        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/CaptainLestrad-Button01-Channel.png"
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/CaptainLestrad-Button01-Channel.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/CaptainLestrad-ChannelHemlock1.0.png"
       },
       {
         "name": "Dragon's Sight",
@@ -1683,15 +1743,15 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "August 13th, 2022",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/CaptainLestrad.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22404781",
-    "notes": "• Skill erroneously increases the player's Bonus and Boost instead of Captain Lestrad's Crit and Boost.\nAppearance\nRush\nAvailable after a successful Pierce\nRequirements: Successful 'Pierce' to unlock\nEffect: 3 hits of 150% damage, amounting to 450% damage.\nMana Cost: 0\nCooldown: 0\nDamage Type: Melee\nElement: Metal",
+    "notes": "• Guest is animated; his cape flaps continuously, both while standing and during all skill animations.",
     "alsoSee": [],
     "tags": [
       "captain",
       "lestrad",
-      "temporary",
-      "guest",
-      "companion.",
+      "human",
+      "dragonlord",
       "met"
     ],
     "guestStats": {
@@ -1714,6 +1774,14 @@
         "boost": "0%",
         "bonus": "100",
         "crit": "10"
+      },
+      "defense": {
+        "melee": "5",
+        "pierce": "0",
+        "magic": "5",
+        "block": "0",
+        "parry": "0",
+        "dodge": "0"
       }
     }
   },
@@ -1722,7 +1790,7 @@
     "name": "Caran",
     "slug": "guest-caran",
     "type": "guest",
-    "description": "A temporary guest companion.",
+    "description": "Human Death Knight",
     "daRequired": false,
     "isTemp": true,
     "elements": [
@@ -1789,6 +1857,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "May 7th, 2010",
+    "imageUrl": "https://i.imgur.com/zW0kwuI.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20073726",
     "notes": "• *'Multi Strike' skill's tooltip incorrectly states successful usage of a 'Pierce' skill is required to unlock; no such skill exists for this guest.",
     "alsoSee": [
@@ -1800,9 +1869,9 @@
     ],
     "tags": [
       "caran",
-      "temporary",
-      "guest",
-      "companion.",
+      "human",
+      "death",
+      "knight",
       "dar",
       "evi"
     ],
@@ -1826,6 +1895,14 @@
         "boost": "0%",
         "bonus": "50",
         "crit": "15"
+      },
+      "defense": {
+        "melee": "5",
+        "pierce": "0",
+        "magic": "5",
+        "block": "0",
+        "parry": "0",
+        "dodge": "0"
       }
     }
   },
@@ -1834,7 +1911,7 @@
     "name": "Caravaner",
     "slug": "guest-caravaner",
     "type": "guest",
-    "description": "A guest companion in DragonFable.",
+    "description": "Human Merchant",
     "daRequired": false,
     "elements": [
       "EVI"
@@ -1866,14 +1943,14 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "March 25th, 2011",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Caravaner%20pic.bmp",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18800829",
-    "notes": "• Caravaner will remain as a guest if you exit before quest completion.\n• *Caravaner's title is 'Human Merchant - No You're not getting[...]', but is unable to be fully displayed on the information panel.",
+    "notes": "• Caravaner will remain as a guest if you exit before quest completion. \n• *Caravaner's title is 'Human Merchant - No You're not getting[...]', but is unable to be fully displayed on the information panel.",
     "alsoSee": [],
     "tags": [
       "caravaner",
-      "guest",
-      "companion",
-      "dragonfable.",
+      "human",
+      "merchant",
       "evi"
     ],
     "guestStats": {
@@ -1896,6 +1973,14 @@
         "boost": "0%",
         "bonus": "100",
         "crit": "15"
+      },
+      "defense": {
+        "melee": "5",
+        "pierce": "0",
+        "magic": "5",
+        "block": "0",
+        "parry": "0",
+        "dodge": "0"
       }
     }
   },
@@ -1904,7 +1989,7 @@
     "name": "Cheese Seller",
     "slug": "guest-cheese-seller",
     "type": "guest",
-    "description": "A temporary guest companion.",
+    "description": "Human Merchant",
     "daRequired": false,
     "isTemp": true,
     "elements": [
@@ -1937,14 +2022,14 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "March 10th, 2017",
+    "imageUrl": "https://i.imgur.com/BuHhlXR.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22244856",
     "alsoSee": [],
     "tags": [
       "cheese",
       "seller",
-      "temporary",
-      "guest",
-      "companion.",
+      "human",
+      "merchant",
       "nat"
     ],
     "guestStats": {
@@ -1967,6 +2052,14 @@
         "boost": "0%",
         "bonus": "100",
         "crit": "15"
+      },
+      "defense": {
+        "melee": "5",
+        "pierce": "0",
+        "magic": "5",
+        "block": "0",
+        "parry": "0",
+        "dodge": "0"
       }
     }
   },
@@ -1987,13 +2080,18 @@
     "damage": "As character",
     "stats": "None",
     "resists": "None",
-    "obtainMethods": [],
+    "obtainMethods": [
+      {
+        "location": "Battleon Burns!",
+        "priceType": "free"
+      }
+    ],
     "attacks": [],
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "August 14th, 2009",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=16496517",
-    "notes": "• This guest is linked to a real player's character ID, and as such all variables are subject to change, such as in an  Aeris Minor Tournament.\n• Current class and equipment can be previewed on this guest's character page:  Cranix",
+    "notes": "• This guest is linked to a real player's character ID, and as such all variables are subject to change, such as in an  Aeris Minor Tournament. \n• Current class and equipment can be previewed on this guest's character page:  Cranix",
     "alsoSee": [],
     "tags": [
       "cranix",
@@ -2012,7 +2110,7 @@
     "name": "Daimyo",
     "slug": "guest-daimyo",
     "type": "guest",
-    "description": "A temporary guest companion.",
+    "description": "Dog Paladin",
     "daRequired": false,
     "isTemp": true,
     "elements": [
@@ -2056,13 +2154,12 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "September 9th, 2016",
+    "imageUrl": "https://i.imgur.com/nGGOIrx.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22172801",
     "alsoSee": [],
     "tags": [
       "daimyo",
-      "temporary",
-      "guest",
-      "companion.",
+      "paladin",
       "lig"
     ],
     "guestStats": {
@@ -2085,6 +2182,14 @@
         "boost": "0%",
         "bonus": "25",
         "crit": "10"
+      },
+      "defense": {
+        "melee": "5",
+        "pierce": "0",
+        "magic": "5",
+        "block": "0",
+        "parry": "0",
+        "dodge": "0"
       }
     }
   },
@@ -2104,13 +2209,18 @@
     "damage": "As character",
     "stats": "None",
     "resists": "None",
-    "obtainMethods": [],
+    "obtainMethods": [
+      {
+        "location": "Battle For the Eastern Hills!",
+        "priceType": "free"
+      }
+    ],
     "attacks": [],
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "August 7th, 2009",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=16496479",
-    "notes": "• This guest is linked to a real player's character ID, and as such all variables are subject to change, such as in an  Aeris Minor Tournament.\n• Current class and equipment can be previewed on this guest's character page:  Dain Lorilann",
+    "notes": "• This guest is linked to a real player's character ID, and as such all variables are subject to change, such as in an  Aeris Minor Tournament. \n• Current class and equipment can be previewed on this guest's character page:  Dain Lorilann",
     "alsoSee": [],
     "tags": [
       "dain",
@@ -2130,7 +2240,7 @@
     "name": "Dame Entia",
     "slug": "guest-dame-entia",
     "type": "guest",
-    "description": "A temporary guest companion.",
+    "description": "Human Pactogonal Knight",
     "daRequired": false,
     "isTemp": true,
     "elements": [
@@ -2168,7 +2278,8 @@
         "cooldown": "2",
         "damageType": "Magic",
         "element": "Metal",
-        "buttonImageUrl": "https://i.imgur.com/wC69Rla.png"
+        "buttonImageUrl": "https://i.imgur.com/wC69Rla.png",
+        "appearanceUrl": "https://i.imgur.com/Kg9dInG.png"
       },
       {
         "name": "Attack",
@@ -2184,6 +2295,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "February 20th, 2015",
+    "imageUrl": "https://i.imgur.com/p3M9HyF.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21927310",
     "alsoSee": [
       {
@@ -2195,9 +2307,9 @@
     "tags": [
       "dame",
       "entia",
-      "temporary",
-      "guest",
-      "companion.",
+      "human",
+      "pactogonal",
+      "knight",
       "met"
     ],
     "guestStats": {
@@ -2220,6 +2332,14 @@
         "boost": "0%",
         "bonus": "50",
         "crit": "5"
+      },
+      "defense": {
+        "melee": "5",
+        "pierce": "0",
+        "magic": "5",
+        "block": "0",
+        "parry": "0",
+        "dodge": "0"
       }
     }
   },
@@ -2228,7 +2348,7 @@
     "name": "Diawe",
     "slug": "guest-diawe",
     "type": "guest",
-    "description": "A temporary guest companion.",
+    "description": "Human Death Knight",
     "daRequired": false,
     "isTemp": true,
     "elements": [
@@ -2295,6 +2415,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "May 7th, 2010",
+    "imageUrl": "https://i.imgur.com/zW0kwuI.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20073735",
     "notes": "• *'Multi Strike' skill's tooltip incorrectly states successful usage of a 'Pierce' skill is required to unlock; no such skill exists for this guest.",
     "alsoSee": [
@@ -2306,9 +2427,9 @@
     ],
     "tags": [
       "diawe",
-      "temporary",
-      "guest",
-      "companion.",
+      "human",
+      "death",
+      "knight",
       "dar",
       "evi"
     ],
@@ -2332,6 +2453,14 @@
         "boost": "0%",
         "bonus": "50",
         "crit": "15"
+      },
+      "defense": {
+        "melee": "5",
+        "pierce": "0",
+        "magic": "5",
+        "block": "0",
+        "parry": "0",
+        "dodge": "0"
       }
     }
   },
@@ -2340,7 +2469,7 @@
     "name": "Donovan",
     "slug": "guest-donovan",
     "type": "guest",
-    "description": "A temporary guest companion.",
+    "description": "Human Wannabe Beastmaster",
     "daRequired": true,
     "isTemp": true,
     "elements": [
@@ -2374,13 +2503,14 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "September 5th, 2010",
+    "imageUrl": "https://i.imgur.com/r5l2L8Q.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18100396",
     "alsoSee": [],
     "tags": [
       "donovan",
-      "temporary",
-      "guest",
-      "companion.",
+      "human",
+      "wannabe",
+      "beastmaster",
       "met"
     ],
     "guestStats": {
@@ -2403,6 +2533,14 @@
         "boost": "0%",
         "bonus": "1",
         "crit": "20 + LUK/10"
+      },
+      "defense": {
+        "melee": "5 + LUK/20",
+        "pierce": "5 + LUK/20",
+        "magic": "5 + LUK/20",
+        "block": "5",
+        "parry": "5",
+        "dodge": "6"
       }
     }
   },
@@ -2411,7 +2549,7 @@
     "name": "Eirn",
     "slug": "guest-eirn",
     "type": "guest",
-    "description": "A temporary guest companion.",
+    "description": "Gnome Technomancer",
     "daRequired": false,
     "isTemp": true,
     "elements": [
@@ -2426,7 +2564,7 @@
       {
         "location": "Void Ship -> 3 Left -> 4 Right -> 2 Left ->  Eirn -> Invite Eirn as a guest",
         "priceType": "free",
-        "requirements": "None"
+        "requirements": "Completion of  The Forgotten Vessel"
       }
     ],
     "attacks": [
@@ -2482,7 +2620,8 @@
         "cooldown": "5",
         "damageType": "Magic",
         "element": "Energy",
-        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Eirn-Button05-Drive.png"
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Eirn-Button05-Drive.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Eirn-Overdrive1.0.png"
       },
       {
         "name": "Attack",
@@ -2504,9 +2643,8 @@
     "alsoSee": [],
     "tags": [
       "eirn",
-      "temporary",
-      "guest",
-      "companion.",
+      "gnome",
+      "technomancer",
       "ene"
     ],
     "guestStats": {
@@ -2556,7 +2694,7 @@
     "name": "Elgert",
     "slug": "guest-elgert",
     "type": "guest",
-    "description": "A temporary guest companion.",
+    "description": "As character",
     "daRequired": false,
     "isTemp": true,
     "elements": [],
@@ -2567,19 +2705,22 @@
     "damage": "As character",
     "stats": "None",
     "resists": "None",
-    "obtainMethods": [],
+    "obtainMethods": [
+      {
+        "location": "Battle For the Eastern Hills!",
+        "priceType": "free"
+      }
+    ],
     "attacks": [],
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "August 7th, 2009",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=16460532",
-    "notes": "• This guest is linked to a real player's character ID, and as such all variables are subject to change, such as in an  Aeris Minor Tournament.\n• Current class and equipment can be previewed on this guest's character page:  Elgert",
+    "notes": "• This guest is linked to a real player's character ID, and as such all variables are subject to change, such as in an  Aeris Minor Tournament. \n• Current class and equipment can be previewed on this guest's character page:  Elgert",
     "alsoSee": [],
     "tags": [
       "elgert",
-      "temporary",
-      "guest",
-      "companion."
+      "character"
     ],
     "guestStats": {
       "level": "As character",
@@ -2644,7 +2785,7 @@
         "damageType": "N/A",
         "element": "N/A",
         "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Etaos&Nirios-Button03-Nirios.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Etaos&Nirios-Nirios"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Etaos&Nirios-Nirios'Focus.png"
       },
       {
         "name": "Attack",
@@ -2705,6 +2846,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "December 29th, 2023",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Etaos&Nirios.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22413732",
     "notes": "• Tooltips for this guest was updated on  April 25th, 2025.",
     "alsoSee": [],
@@ -2762,7 +2904,7 @@
     "name": "Faust",
     "slug": "guest-faust",
     "type": "guest",
-    "description": "A temporary guest companion.",
+    "description": "Human Faust",
     "daRequired": false,
     "isTemp": true,
     "elements": [
@@ -2770,7 +2912,7 @@
     ],
     "traits": [],
     "level": "As player",
-    "damage": "Unknown",
+    "damage": "30 + Level",
     "stats": "See guestStats",
     "resists": "None",
     "obtainMethods": [
@@ -2799,7 +2941,8 @@
         "cooldown": "0",
         "damageType": "As weapon",
         "element": "As weapon",
-        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png"
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Faust-Attack1.0.png"
       },
       {
         "name": "Overlimit",
@@ -2809,7 +2952,8 @@
         "cooldown": "4 (carries between battles)",
         "damageType": "As weapon",
         "element": "As weapon",
-        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Faust-Button02-Over.png"
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Faust-Button02-Over.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Faust-Overlimit1.0.png"
       },
       {
         "name": "The Bargain",
@@ -2831,13 +2975,12 @@
     "alsoSee": [],
     "tags": [
       "faust",
-      "temporary",
-      "guest",
-      "companion.",
+      "human",
       "non"
     ],
     "guestStats": {
       "level": "As player",
+      "damage": "30 + Level",
       "damageType": "Melee",
       "element": "None",
       "hp": "As player, less END bonus",
@@ -2855,6 +2998,14 @@
         "boost": "0%",
         "bonus": "50",
         "crit": "15"
+      },
+      "defense": {
+        "melee": "10",
+        "pierce": "10",
+        "magic": "10",
+        "block": "10",
+        "parry": "10",
+        "dodge": "10"
       }
     }
   },
@@ -2863,7 +3014,7 @@
     "name": "G'joob",
     "slug": "guest-g-joob",
     "type": "guest",
-    "description": "A guest companion in DragonFable.",
+    "description": "Tusker Ambassador",
     "daRequired": false,
     "elements": [
       "MET"
@@ -2911,20 +3062,21 @@
         "cooldown": "2",
         "damageType": "Melee",
         "element": "Metal",
-        "buttonImageUrl": "https://i.imgur.com/3MygmU6.png"
+        "buttonImageUrl": "https://i.imgur.com/3MygmU6.png",
+        "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/GjoobDouble1pic.png"
       }
     ],
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "November 14th, 2008",
+    "imageUrl": "https://i.imgur.com/3ZngqTs.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15063185",
-    "notes": "• G'joob will remain as a guest if you exit before quest completion.\n• *'Fish Slap' skill is currently bugged, causing his turn to stick.",
+    "notes": "• G'joob will remain as a guest if you exit before quest completion. \n• *'Fish Slap' skill is currently bugged, causing his turn to stick.",
     "alsoSee": [],
     "tags": [
       "g'joob",
-      "guest",
-      "companion",
-      "dragonfable.",
+      "tusker",
+      "ambassador",
       "met"
     ],
     "guestStats": {
@@ -2947,6 +3099,14 @@
         "boost": "0%",
         "bonus": "100",
         "crit": "15"
+      },
+      "defense": {
+        "melee": "5",
+        "pierce": "0",
+        "magic": "5",
+        "block": "0",
+        "parry": "0",
+        "dodge": "0"
       }
     }
   },
@@ -2955,7 +3115,7 @@
     "name": "Galanoth (2)",
     "slug": "guest-galanoth-2",
     "type": "guest",
-    "description": "A temporary guest companion.",
+    "description": "Human DragonSlayer",
     "daRequired": false,
     "isTemp": true,
     "elements": [
@@ -2970,7 +3130,7 @@
       {
         "location": "Book of Lore -> Guests (-> Book 1&2) -> Galanoth - Invite as First Guest/Second Guest (DA Required),  Dragesvard ->  Galanoth -> Invite Galanoth,  The Snow Fields,  Gary's Fate,  Flashpoint",
         "priceType": "free",
-        "requirements": "None"
+        "requirements": "Completion of  A Cold Reception (Book of Lore); Completion of  Un-BEAR-Able Cold (Dragesvard); None"
       }
     ],
     "attacks": [
@@ -2983,7 +3143,7 @@
         "damageType": "N/A",
         "element": "N/A",
         "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Galanoth2-Button01-Spirit.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Galanoth2-Slayer"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Galanoth2-Slayer'sSpirit.png"
       },
       {
         "name": "Shin Kick",
@@ -3004,7 +3164,8 @@
         "cooldown": "4",
         "damageType": "Melee",
         "element": "Metal",
-        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Galanoth2-Button03-Dagger.png"
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Galanoth2-Button03-Dagger.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Galanoth2-DaggerToss1.0.png"
       },
       {
         "name": "Fierce Spear Stab",
@@ -3014,7 +3175,8 @@
         "cooldown": "10",
         "damageType": "Melee",
         "element": "Metal",
-        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Galanoth2-Button04-Spear.png"
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Galanoth2-Button04-Spear.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Galanoth2-Slayer'sSpirit.png"
       },
       {
         "name": "Attack",
@@ -3037,9 +3199,8 @@
     "tags": [
       "galanoth",
       "(2)",
-      "temporary",
-      "guest",
-      "companion.",
+      "human",
+      "dragonslayer",
       "met"
     ],
     "guestStats": {
@@ -3089,7 +3250,7 @@
     "name": "Grrol",
     "slug": "guest-grrol",
     "type": "guest",
-    "description": "A guest companion in DragonFable.",
+    "description": "Ursice Shaman",
     "daRequired": false,
     "elements": [
       "MET"
@@ -3137,20 +3298,21 @@
         "cooldown": "2",
         "damageType": "Melee",
         "element": "Metal",
-        "buttonImageUrl": "https://i.imgur.com/3MygmU6.png"
+        "buttonImageUrl": "https://i.imgur.com/3MygmU6.png",
+        "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/GrrolDouble1pic.png"
       }
     ],
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "November 14th, 2008",
+    "imageUrl": "https://i.imgur.com/5lbELWV.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15062918",
     "notes": "• Grrol will remain as a guest if you exit before quest completion.",
     "alsoSee": [],
     "tags": [
       "grrol",
-      "guest",
-      "companion",
-      "dragonfable.",
+      "ursice",
+      "shaman",
       "met"
     ],
     "guestStats": {
@@ -3173,6 +3335,14 @@
         "boost": "0%",
         "bonus": "100",
         "crit": "15"
+      },
+      "defense": {
+        "melee": "5",
+        "pierce": "0",
+        "magic": "5",
+        "block": "0",
+        "parry": "0",
+        "dodge": "0"
       }
     }
   },
@@ -3181,7 +3351,7 @@
     "name": "Icemaster Yeti",
     "slug": "guest-icemaster-yeti",
     "type": "guest",
-    "description": "A temporary guest companion.",
+    "description": "Beast Warrior",
     "daRequired": false,
     "isTemp": true,
     "isSeasonal": true,
@@ -3189,26 +3359,90 @@
       "ICE"
     ],
     "traits": [],
-    "level": "Unknown",
-    "damage": "Unknown",
-    "stats": "None",
+    "level": "Scaled",
+    "damage": "Scaled",
+    "stats": "See guestStats",
     "resists": "None",
-    "obtainMethods": [],
-    "attacks": [],
+    "obtainMethods": [
+      {
+        "location": "Return to the Yeti Cave!",
+        "priceType": "free",
+        "requirements": "None"
+      }
+    ],
+    "attacks": [
+      {
+        "name": "Avalanche",
+        "description": "Pound your foe with snow.",
+        "effect": "Gathers some snow and places it in both hands while bringing the snow up over his head, and then down on the enemy for one hit of melee damage",
+        "manaCost": "0",
+        "cooldown": "0",
+        "damageType": "Melee",
+        "element": "Ice",
+        "buttonImageUrl": "http://i.imgur.com/e46zW.png"
+      },
+      {
+        "name": "Snowball",
+        "description": "Throw a snowball",
+        "effect": "Gathers some snow on the ground in a fast motion and throws it at the enemy for one hit of melee damage",
+        "manaCost": "0",
+        "cooldown": "0",
+        "damageType": "Melee",
+        "element": "Ice",
+        "buttonImageUrl": "http://i.imgur.com/X4tVu.png"
+      },
+      {
+        "name": "Attack",
+        "effect": "Jumps in the air and with his claws down, he cuts up the enemy for one hit of melee damage",
+        "manaCost": "0",
+        "cooldown": "0",
+        "damageType": "Melee",
+        "element": "Ice",
+        "buttonImageUrl": "http://i.imgur.com/MTcDrk1.png"
+      }
+    ],
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "December 25th, 2007",
+    "imageUrl": "http://i.imgur.com/dZ3OBga.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=12338375",
     "alsoSee": [],
     "tags": [
       "icemaster",
       "yeti",
-      "temporary",
-      "guest",
-      "companion.",
+      "beast",
+      "warrior",
       "ice"
     ],
-    "guestStats": {}
+    "guestStats": {
+      "level": "Scaled",
+      "damage": "Scaled",
+      "element": "Ice",
+      "hp": "As player, less END bonus",
+      "mp": "As player, less WIS bonus",
+      "characterStats": {
+        "str": "0",
+        "dex": "0",
+        "int": "0",
+        "cha": "0",
+        "luk": "0",
+        "end": "0",
+        "wis": "0"
+      },
+      "offense": {
+        "boost": "0%",
+        "bonus": "0",
+        "crit": "7"
+      },
+      "defense": {
+        "melee": "5",
+        "pierce": "0",
+        "magic": "5",
+        "block": "0",
+        "parry": "0",
+        "dodge": "0"
+      }
+    }
   },
   {
     "id": "guest-imaru",
@@ -3222,15 +3456,104 @@
     "traits": [
       "ALA"
     ],
-    "level": "Unknown",
-    "damage": "Unknown",
-    "stats": "None",
+    "level": "Scaled",
+    "damage": "Scaled",
+    "stats": "See guestStats",
     "resists": "None",
-    "obtainMethods": [],
-    "attacks": [],
+    "obtainMethods": [
+      {
+        "location": "Imaru's Treasure",
+        "priceType": "free",
+        "requirements": "None"
+      }
+    ],
+    "attacks": [
+      {
+        "name": "Quick Shot",
+        "description": "Hits all enemies! Yarr!",
+        "effect": "The opponents are shot for 2 hits of damage as last attack.",
+        "manaCost": "15",
+        "cooldown": "4",
+        "damageType": "As last attack",
+        "element": "As last attack",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/PirateR1-Button05-Quick.png"
+      },
+      {
+        "name": "Shield",
+        "description": "+80 Block for 2 turns",
+        "effect": "Imaru yells \"I am ready... bring it on!\", increasing Block by +80 for 2 turns.",
+        "manaCost": "20",
+        "cooldown": "4",
+        "damageType": "As last attack",
+        "element": "As last attack",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/PirateR1-Button07-Shield.png"
+      },
+      {
+        "name": "Attack",
+        "effect": "Runs towards the enemy and slashes it for 1 hit of damage as last attack.",
+        "manaCost": "0",
+        "cooldown": "0",
+        "damageType": "As last attack",
+        "element": "As last attack",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png"
+      },
+      {
+        "name": "Scurvy",
+        "description": "Wish you had Vitamin C",
+        "effect": "The target is attacked for 1 hit of damage as last attack.",
+        "manaCost": "5",
+        "cooldown": "9",
+        "damageType": "As last attack",
+        "element": "As last attack",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/PirateR1-Button08-Scurvy.png"
+      },
+      {
+        "name": "Sneaky",
+        "description": "Available after a critical hit.",
+        "requirements": "Requires a critical hit",
+        "effect": "The target is attacked for 1 hit of damage as last attack, and Bonus is increased by 30% for 10 turns.",
+        "manaCost": "10",
+        "cooldown": "4",
+        "damageType": "As last attack",
+        "element": "As last attack",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/PirateR1-Button09-Sneaky.png"
+      },
+      {
+        "name": "1st Mate Aid",
+        "description": "Heals 20% of your HP",
+        "requirements": "A stun attack must be resisted",
+        "effect": "Heals for 20% of max HP.",
+        "manaCost": "20",
+        "cooldown": "9",
+        "damageType": "N/A",
+        "element": "N/A",
+        "buttonImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/PirateR1-Button10-Aid.png"
+      },
+      {
+        "name": "Shout",
+        "description": "Makes enemy stronger with high miss chance",
+        "effect": "The sword is held up and lowers the target's Bonus by -70 but also raises the target's Crit with +70 for 4 turns.",
+        "manaCost": "10",
+        "cooldown": "9",
+        "damageType": "N/A",
+        "element": "N/A",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/PirateR1-Button11-Shout.png"
+      },
+      {
+        "name": "LimeAid",
+        "description": "25% boost for 5 turns",
+        "effect": "A potion is drunk and boost is increased by 25% for 5 turns.",
+        "manaCost": "0",
+        "cooldown": "9",
+        "damageType": "N/A",
+        "element": "N/A",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/PirateR1-Button12-LimeAid.png"
+      }
+    ],
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "July 27th, 2012",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Imaru%20pic.bmp",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21187682",
     "alsoSee": [],
     "tags": [
@@ -3238,14 +3561,42 @@
       "human",
       "pirate"
     ],
-    "guestStats": {}
+    "guestStats": {
+      "level": "Scaled",
+      "damage": "Scaled",
+      "element": "Silver",
+      "hp": "As player, less END bonus",
+      "mp": "As player, less WIS bonus",
+      "characterStats": {
+        "str": "10",
+        "dex": "0",
+        "int": "0",
+        "cha": "0",
+        "luk": "10",
+        "end": "0",
+        "wis": "0"
+      },
+      "offense": {
+        "boost": "0",
+        "bonus": "100",
+        "crit": "15"
+      },
+      "defense": {
+        "melee": "5",
+        "pierce": "0",
+        "magic": "5",
+        "block": "0",
+        "parry": "0",
+        "dodge": "0"
+      }
+    }
   },
   {
     "id": "guest-irwin",
     "name": "Irwin",
     "slug": "guest-irwin",
     "type": "guest",
-    "description": "A guest companion in DragonFable.",
+    "description": "Human Zard Hunter",
     "daRequired": false,
     "isSeasonal": true,
     "elements": [
@@ -3278,13 +3629,14 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "October 15th, 2010",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Irwin%20pic.bmp",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18230205",
     "alsoSee": [],
     "tags": [
       "irwin",
-      "guest",
-      "companion",
-      "dragonfable.",
+      "human",
+      "zard",
+      "hunter",
       "nat"
     ],
     "guestStats": {
@@ -3307,6 +3659,14 @@
         "boost": "0%",
         "bonus": "100",
         "crit": "15"
+      },
+      "defense": {
+        "melee": "5",
+        "pierce": "0",
+        "magic": "5",
+        "block": "0",
+        "parry": "0",
+        "dodge": "0"
       }
     }
   },
@@ -3315,7 +3675,7 @@
     "name": "Kara SuLema",
     "slug": "guest-kara-sulema",
     "type": "guest",
-    "description": "A temporary guest companion.",
+    "description": "Elf Mage",
     "daRequired": false,
     "isTemp": true,
     "elements": [
@@ -3342,7 +3702,8 @@
         "cooldown": "24 (carries between battles)",
         "damageType": "Magic",
         "element": "Wind",
-        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/KaraSuLema-Button01-Stun.png"
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/KaraSuLema-Button01-Stun.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/KaraSuLema-Stun1.0.png"
       },
       {
         "name": "Nature's Wonder",
@@ -3352,7 +3713,8 @@
         "cooldown": "4 (carries between battles)",
         "damageType": "Magic",
         "element": "Wind",
-        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/KaraSuLema-Button02-Wonder.png"
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/KaraSuLema-Button02-Wonder.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/KaraSuLema-NaturesWonder1.0.png"
       },
       {
         "name": "Breeze",
@@ -3379,15 +3741,14 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "May 24th, 2013",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/KaraSuLema.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21290875",
-    "notes": "• Kara SuLema was previously attainable from the following retired access point:  Facing Z -> Add Kara\n• Kara has a series of unconventional stats in the quests  Fate's Flow (Part 1) and  Fallen Facade; INT: 0, CHA: 0, LUK: 0, Crit: 5\n• Kara SuLema's stun duration was lowered from 2 turns to 1 turn on  February 28th, 2020.",
+    "notes": "• Kara SuLema was previously attainable from the following retired access point:  Facing Z -> Add Kara \n• Kara has a series of unconventional stats in the quests  Fate's Flow (Part 1) and  Fallen Facade; INT: 0, CHA: 0, LUK: 0, Crit: 5 \n• Kara SuLema's stun duration was lowered from 2 turns to 1 turn on  February 28th, 2020. ",
     "alsoSee": [],
     "tags": [
       "kara",
       "sulema",
-      "temporary",
-      "guest",
-      "companion.",
+      "mage",
       "win"
     ],
     "guestStats": {
@@ -3437,7 +3798,7 @@
     "name": "Kassandra",
     "slug": "guest-kassandra",
     "type": "guest",
-    "description": "A temporary guest companion.",
+    "description": "Human Explorer",
     "daRequired": false,
     "isTemp": true,
     "elements": [
@@ -3497,13 +3858,12 @@
     "releaseDate": "July 22nd, 2022",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Kassandra.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22404167",
-    "notes": "• Seek's MP in  Jungle Adventure was  reduced from 40 to 20 to match with the subsequent quests on  March 8th, 2024; Kassandra's tooltips were also updated on that date.",
+    "notes": "• Seek's MP in  Jungle Adventure was  reduced from 40 to 20 to match with the subsequent quests on  March 8th, 2024; Kassandra's tooltips were also updated on that date. ",
     "alsoSee": [],
     "tags": [
       "kassandra",
-      "temporary",
-      "guest",
-      "companion.",
+      "human",
+      "explorer",
       "fea"
     ],
     "guestStats": {
@@ -3526,8 +3886,22 @@
         "boost": "0%",
         "bonus": "100",
         "crit": "20"
+      },
+      "defense": {
+        "melee": "20",
+        "pierce": "0",
+        "magic": "20",
+        "block": "20",
+        "parry": "20",
+        "dodge": "20"
       }
-    }
+    },
+    "alternativeImages": [
+      {
+        "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Kassandra-Researcher.png",
+        "caption": "Researcher Appearance"
+      }
+    ]
   },
   {
     "id": "guest-kid-volty",
@@ -3541,15 +3915,52 @@
       "MET"
     ],
     "traits": [],
-    "level": "Unknown",
-    "damage": "Unknown",
-    "stats": "None",
+    "level": "Scaled",
+    "damage": "Scaled",
+    "stats": "See guestStats",
     "resists": "None",
-    "obtainMethods": [],
-    "attacks": [],
+    "obtainMethods": [
+      {
+        "location": "Food Fight! -> Fight with Kid Volty!",
+        "priceType": "free",
+        "requirements": "None"
+      }
+    ],
+    "attacks": [
+      {
+        "name": "Wrench",
+        "description": "Wrench to the face!",
+        "effect": "1 hit of 100% damage",
+        "manaCost": "0",
+        "cooldown": "0",
+        "damageType": "Melee",
+        "element": "Metal",
+        "buttonImageUrl": "http://i.imgur.com/v3RnhRG.png"
+      },
+      {
+        "name": "Smack",
+        "description": "Careful, that thing is heavy!",
+        "effect": "1 hit of 100% damage",
+        "manaCost": "0",
+        "cooldown": "0",
+        "damageType": "Melee",
+        "element": "Metal",
+        "buttonImageUrl": "http://i.imgur.com/ZsqS3wl.png"
+      },
+      {
+        "name": "Attack",
+        "effect": "1 hit of 100% damage",
+        "manaCost": "0",
+        "cooldown": "0",
+        "damageType": "Melee",
+        "element": "Metal",
+        "buttonImageUrl": "http://i.imgur.com/uSKSqoU.png"
+      }
+    ],
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "November 30th, 2013",
+    "imageUrl": "http://i.imgur.com/VElnQoj.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21859811",
     "alsoSee": [],
     "tags": [
@@ -3559,14 +3970,42 @@
       "dentizt",
       "met"
     ],
-    "guestStats": {}
+    "guestStats": {
+      "level": "Scaled",
+      "damage": "Scaled",
+      "element": "Metal",
+      "hp": "As player, less END bonus",
+      "mp": "As player, less WIS bonus",
+      "characterStats": {
+        "str": "0",
+        "dex": "5",
+        "int": "0",
+        "cha": "10",
+        "luk": "5",
+        "end": "0",
+        "wis": "0"
+      },
+      "offense": {
+        "boost": "0%",
+        "bonus": "75",
+        "crit": "7"
+      },
+      "defense": {
+        "melee": "5",
+        "pierce": "0",
+        "magic": "5",
+        "block": "0",
+        "parry": "0",
+        "dodge": "0"
+      }
+    }
   },
   {
     "id": "guest-king-linus",
     "name": "King Linus",
     "slug": "guest-king-linus",
     "type": "guest",
-    "description": "A guest companion in DragonFable.",
+    "description": "With the upgraded shrinking ray your tiny penguin pal rises in the ranks of nobility, dealing more damage and gaining a 3% chance to SHRINK your opponent!",
     "daRequired": false,
     "dcRequired": true,
     "elements": [
@@ -3575,34 +4014,46 @@
     "traits": [
       "SHR"
     ],
-    "level": "Unknown",
-    "damage": "Unknown",
+    "level": "19",
+    "damage": "2-16",
     "stats": "None",
     "resists": "None",
-    "obtainMethods": [],
+    "obtainMethods": [
+      {
+        "location": "Grams Pets \n Price: N/A \n Required Items: 1  Prince Linus & 1  Royal Penguin Shrink Ray \n Sellback: 0 Gold \n  \n King Linus \n With the upgraded shrinking ray your tiny penguin pal rises in the ranks of nobility, dealing more damage and gaining a 3% chance to SHRINK your opponent! \n (No DA Required) \n  \n Location:  Grams Pets \n Price: N/A \n Required Items: 1  Prince Linus & 1  Platinum Penguin Shrink Ray \n Sellback: 0 Gold",
+        "priceType": "free"
+      }
+    ],
     "attacks": [],
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "November 14th, 2008",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/EmperorLinus.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18762263",
-    "notes": "  • Attack Type 2's rate is equal to [(Pet's Crit) + (Player's LUK)/10]: (Pop-up: Need <= <x> to shrink | Rolled <y>)\n  • If the target has already been shrunken, its HP and size will not be reduced again. (Pop-up: Linus tries... but <target's name> is already SHRUNK!)\n• If the target's Shrink Resist (inclusive of All Resist) is greater than an unknown second roll value, it will resist the shrinking effect. (Pop-up: Linus tries... but <target's name> resists!)\n• Attack Type 2 previously renamed targets 'Shrunken <target's name>'; due to its potential to break battle mechanics, this was removed on  July 3rd, 2020.\n• Despite requiring a DC item to obtain, the Platinum Penguin Shrink Ray merge version of this pet is not DC tagged, thus ineligible for free storage.\n• Pet is animated; it sways back and forth continuously.",
+    "notes": "• Attack Type 2's rate is equal to [(Pet's Crit) + (Player's LUK)/10]: (Pop-up: Need <= <x> to shrink | Rolled <y>)\n  • If the target has already been shrunken, its HP and size will not be reduced again. (Pop-up: Linus tries... but <target's name> is already SHRUNK!) \n  • If the target's Shrink Resist (inclusive of All Resist) is greater than an unknown second roll value, it will resist the shrinking effect. (Pop-up: Linus tries... but <target's name> resists!)\n• Attack Type 2 previously renamed targets 'Shrunken <target's name>'; due to its potential to break battle mechanics, this was removed on  July 3rd, 2020. \n• Despite requiring a DC item to obtain, the Platinum Penguin Shrink Ray merge version of this pet is not DC tagged, thus ineligible for free storage. \n• Pet is animated; it sways back and forth continuously.",
     "alsoSee": [],
     "tags": [
       "king",
       "linus",
-      "guest",
-      "companion",
-      "dragonfable.",
+      "with",
+      "upgraded",
+      "shrinking",
+      "your",
+      "tiny",
       "ice"
     ],
-    "guestStats": {}
+    "guestStats": {
+      "level": "19",
+      "damage": "2-16",
+      "element": "Ice"
+    }
   },
   {
     "id": "guest-konnan",
     "name": "Konnan",
     "slug": "guest-konnan",
     "type": "guest",
-    "description": "A temporary guest companion.",
+    "description": "Human Apprentice",
     "daRequired": false,
     "isTemp": true,
     "elements": [
@@ -3624,7 +4075,7 @@
     "attacks": [
       {
         "name": "Controlled Flames",
-        "description": "2 hits x 100%  damage (200%) \n Changes Konnan's attacks to  element.",
+        "description": "2 hits x 100% <Metal/Fire> damage (200%) \n Changes Konnan's attacks to <Metal/Fire> element.",
         "effect": "2 hits of 100% damage, amounting to 200% damage; changes Konnan's attacks to Metal or Fire element.\n  • Metal will be changed first before Fire and vice versa.",
         "manaCost": "0",
         "cooldown": "2",
@@ -3635,7 +4086,7 @@
       },
       {
         "name": "Jab",
-        "description": "2 hits x 100%  damage (200%) \n This attack has +100 Bonus and +100 Crit",
+        "description": "2 hits x 100% <Fire/Metal> damage (200%) \n This attack has +100 Bonus and +100 Crit",
         "effect": "2 hits of 100% damage, amounting to 200% damage, with +100 Bonus and +100 Crit.",
         "manaCost": "0",
         "cooldown": "2",
@@ -3648,13 +4099,12 @@
     "releaseDate": "June 22nd, 2012",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Konnan.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20422674",
-    "notes": "• Skill button was updated on  May 15th, 2026, replacing  its old appearance.",
+    "notes": "• #In the quest  The Merge, Konnan's Pierce Avoidance stat will instead be 0. \n• Konnan, named as Apprentice, was previously attainable from the following access points:  Dreamscape,  Nightmares, and  Forging. \n• In the quest  The Merge, his name will instead be Apprentice. \n• Konnan's appearance was updated on  February 20th, 2026. \n• 'Controlled Flames' skill was added on  May 15th, 2026. ",
     "alsoSee": [],
     "tags": [
       "konnan",
-      "temporary",
-      "guest",
-      "companion.",
+      "human",
+      "apprentice",
       "fir",
       "met"
     ],
@@ -3698,14 +4148,20 @@
         "dot": "0%",
         "crit": "0%"
       }
-    }
+    },
+    "alternativeImages": [
+      {
+        "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Konnan-Old.png",
+        "caption": "Old Appearance"
+      }
+    ]
   },
   {
     "id": "guest-magus-hansa-2",
     "name": "Magus Hansa (2)",
     "slug": "guest-magus-hansa-2",
     "type": "guest",
-    "description": "A temporary guest companion.",
+    "description": "Human Magus",
     "daRequired": false,
     "isTemp": true,
     "elements": [
@@ -3730,7 +4186,7 @@
         "effect": "Applies 'I have seen...' (+40% Boost) to herself for 4 turns.",
         "manaCost": "20",
         "cooldown": "19",
-        "damageType": "—",
+        "damageType": "N/A",
         "element": "N/A",
         "buttonImageUrl": "https://i.imgur.com/Wf7ggzx.png",
         "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/MagusHansa-Insight.png"
@@ -3741,7 +4197,7 @@
         "effect": "1 hit of 200% damage, with +200 Crit.",
         "manaCost": "50",
         "cooldown": "19",
-        "damageType": "—",
+        "damageType": "Magic",
         "element": "Energy",
         "buttonImageUrl": "https://i.imgur.com/oW6Qoi7.png",
         "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/MagusHansa-ShadowCast.png"
@@ -3753,7 +4209,7 @@
         "effect": "6 hits of 50% damage, amounting to 300% damage.",
         "manaCost": "40",
         "cooldown": "11",
-        "damageType": "—",
+        "damageType": "Magic",
         "element": "Energy",
         "buttonImageUrl": "https://i.imgur.com/rnJPS5x.png",
         "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/MagusHansa-Eruption.png"
@@ -3765,7 +4221,7 @@
         "effect": "8 hits of 20% damage, amounting to 160% damage.",
         "manaCost": "25",
         "cooldown": "4",
-        "damageType": "—",
+        "damageType": "Magic",
         "element": "Energy",
         "buttonImageUrl": "https://i.imgur.com/rrOTK4i.png",
         "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/MagusHansa-DarkBlast.png"
@@ -3775,7 +4231,7 @@
         "effect": "2 hits of 50% damage, amounting to 100% damage.",
         "manaCost": "0",
         "cooldown": "0",
-        "damageType": "—",
+        "damageType": "Magic",
         "element": "Energy",
         "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png",
         "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/MagusHansa-Attack.png"
@@ -3784,19 +4240,19 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "January 29th, 2016",
+    "imageUrl": "https://i.imgur.com/rrOTK4i.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21274402",
-    "notes": "• Magus Hansa (2) was previously attainable from the following retired access point:  Sands of Eternity -> Add Hansa\n• Hansa has a series of unconventional stats in the quests  Fate's Flow (Part 1) and  Fallen Facade; INT: 0, LUK: 0, END: 0, WIS: 0, Melee: 5, Magic: 5, Crit: 5",
+    "notes": "• Magus Hansa (2) was previously attainable from the following retired access point:  Sands of Eternity -> Add Hansa \n• Hansa has a series of unconventional stats in the quests  Fate's Flow (Part 1) and  Fallen Facade; INT: 0, LUK: 0, END: 0, WIS: 0, Melee: 5, Magic: 5, Crit: 5",
     "alsoSee": [],
     "tags": [
       "magus",
       "hansa",
       "(2)",
-      "temporary",
-      "guest",
-      "companion.",
+      "human",
       "ene"
     ],
     "guestStats": {
+      "element": "N/A",
       "characterStats": {
         "str": "0",
         "dex": "0",
@@ -3837,7 +4293,7 @@
     "name": "Mazurek (2)",
     "slug": "guest-mazurek-2",
     "type": "guest",
-    "description": "A temporary guest companion.",
+    "description": "Human Pirate Captain",
     "daRequired": true,
     "isTemp": true,
     "elements": [
@@ -3857,19 +4313,109 @@
         "daRequired": true
       }
     ],
-    "attacks": [],
+    "attacks": [
+      {
+        "name": "LimeAid",
+        "description": "25% Boost for 5 turns",
+        "effect": "Applies 'Aid' (+25% Boost) to herself for 5 turns.",
+        "manaCost": "0",
+        "cooldown": "9",
+        "damageType": "N/A",
+        "element": "N/A",
+        "buttonImageUrl": "http://i.imgur.com/vTgfLfy.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mazurek-LimeAid.png"
+      },
+      {
+        "name": "Flirty and in Charge",
+        "description": "Lowers enemy hit but increases its damage",
+        "effect": "Applies 'Flirt' (-70 Bonus, +70 Crit) to all foes for 3 turns.",
+        "manaCost": "30",
+        "cooldown": "9",
+        "damageType": "N/A",
+        "element": "N/A",
+        "buttonImageUrl": "http://i.imgur.com/j2vuTB3.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mazurek-FlirtyandinCharge.png"
+      },
+      {
+        "name": "1st Mate Aid",
+        "description": "heals 20% of your HP",
+        "effect": "Recovers 20% of her max HP. (Message: *Healed: +<x> HP!*)",
+        "manaCost": "20",
+        "cooldown": "9",
+        "damageType": "N/A",
+        "element": "N/A",
+        "buttonImageUrl": "http://i.imgur.com/WlHZbOU.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mazurek-FlirtyandinCharge.png"
+      },
+      {
+        "name": "Walk The Plank!",
+        "description": "Available after a critical hit.",
+        "requirements": "Successful attack where the last hit is a Crit to use",
+        "effect": "Applies 'Sneaky' (+30 Bonus) to herself for 3 turns inclusive; 3 hits of 66% damage, amounting to 198% damage.",
+        "manaCost": "10",
+        "cooldown": "5",
+        "damageType": "Melee",
+        "element": "Metal",
+        "buttonImageUrl": "http://i.imgur.com/VTMvCzl.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mazurek-WalkthePlank!.png"
+      },
+      {
+        "name": "Scurvy",
+        "description": "Yarr, where be his Vitamin C?",
+        "effect": "1 hit of 100% damage; applies 'Scurvy', a 40% Magic Disease DoT effect, to target for 5 turns.",
+        "manaCost": "8",
+        "cooldown": "4",
+        "damageType": "Magic",
+        "element": "Disease",
+        "buttonImageUrl": "http://i.imgur.com/UgC8nSs.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mazurek-WalkthePlank!.png"
+      },
+      {
+        "name": "Quick Shot",
+        "description": "Hits all enemies, yarr!",
+        "effect": "1 hit of 120% damage to all foes.",
+        "manaCost": "15",
+        "cooldown": "2",
+        "damageType": "Pierce",
+        "element": "Metal",
+        "buttonImageUrl": "http://i.imgur.com/T6Zx4YE.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mazurek-QuickShot.png"
+      },
+      {
+        "name": "Captain's Intuition",
+        "description": "+180 Dodge/Parry for 2 turns",
+        "effect": "Applies +180 Parry/Dodge Defense to herself for 2 turns. (Message: Bring it on ye Bilge Rats!)",
+        "manaCost": "20",
+        "cooldown": "4",
+        "damageType": "N/A",
+        "element": "N/A",
+        "buttonImageUrl": "http://i.imgur.com/TJ0zto8.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mazurek-Captain'sIntuition.png"
+      },
+      {
+        "name": "Attack",
+        "effect": "1 hit of 100% damage.",
+        "manaCost": "0",
+        "cooldown": "0",
+        "damageType": "Melee",
+        "element": "Metal",
+        "buttonImageUrl": "http://i.imgur.com/MTcDrk1.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mazurek-Attack.png"
+      }
+    ],
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "September 18th, 2015",
+    "imageUrl": "http://i.imgur.com/MTcDrk1.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21462550",
-    "notes": "• Mazurek (2) has a series of unconventional stats in the access points  The Autumn Wind and  The Quest for More Booty! - Choose a Side /  The Quest for More Booty! - Mazurek; DEX: 5, CHA: 10, LUK: 5, Bonus: 75, Crit: 5, Pierce: 0\n• Mazurek (2) has a series of unconventional stats in the access point  A Pirate's Revenge; Bonus: 20, Crit: 25, Melee: 15, Pierce: 15",
+    "notes": "• Mazurek (2) has a series of unconventional stats in the access points  The Autumn Wind and  The Quest for More Booty! - Choose a Side /  The Quest for More Booty! - Mazurek; DEX: 5, CHA: 10, LUK: 5, Bonus: 75, Crit: 5, Pierce: 0 \n• Mazurek (2) has a series of unconventional stats in the access point  A Pirate's Revenge; Bonus: 20, Crit: 25, Melee: 15, Pierce: 15",
     "alsoSee": [],
     "tags": [
       "mazurek",
       "(2)",
-      "temporary",
-      "guest",
-      "companion.",
+      "human",
+      "pirate",
+      "captain",
       "dis",
       "met"
     ],
@@ -3920,7 +4466,7 @@
     "name": "Mennace",
     "slug": "guest-mennace",
     "type": "guest",
-    "description": "A temporary guest companion.",
+    "description": "As character",
     "daRequired": false,
     "isTemp": true,
     "elements": [],
@@ -3931,19 +4477,22 @@
     "damage": "As character",
     "stats": "None",
     "resists": "None",
-    "obtainMethods": [],
+    "obtainMethods": [
+      {
+        "location": "Battle For the Eastern Hills!",
+        "priceType": "free"
+      }
+    ],
     "attacks": [],
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "August 7th, 2009",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=16477813",
-    "notes": "• This guest is linked to a real player's character ID, and as such all variables are subject to change, such as in an  Aeris Minor Tournament.\n• Current class and equipment can be previewed on this guest's character page:  Mennace",
+    "notes": "• This guest is linked to a real player's character ID, and as such all variables are subject to change, such as in an  Aeris Minor Tournament. \n• Current class and equipment can be previewed on this guest's character page:  Mennace",
     "alsoSee": [],
     "tags": [
       "mennace",
-      "temporary",
-      "guest",
-      "companion."
+      "character"
     ],
     "guestStats": {
       "level": "As character",
@@ -3958,7 +4507,7 @@
     "name": "Mritha (1)",
     "slug": "guest-mritha-1",
     "type": "guest",
-    "description": "A temporary guest companion.",
+    "description": "Human DragonLord",
     "daRequired": true,
     "isTemp": true,
     "elements": [
@@ -3973,7 +4522,7 @@
       {
         "location": "Trust,  Severed Hope,  Saellah,  A Shocking Discovery,  Broken Circuit (Part 2),  Fate's Flow (Part 1)",
         "priceType": "free",
-        "requirements": "Dragon Amulet"
+        "requirements": "None; Join the Vind Faction in  The Greenguard Alliance - Choose a Faction (Fate's Flow (Part 1))"
       }
     ],
     "attacks": [
@@ -4008,7 +4557,8 @@
         "cooldown": "0",
         "damageType": "Melee",
         "element": "Metal",
-        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mritha-Button03-Rush.png"
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mritha-Button03-Rush.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mritha-Rush1.0.png"
       },
       {
         "name": "Pierce",
@@ -4037,14 +4587,13 @@
     "evolutions": [],
     "releaseDate": "January 26th, 2015",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21333429",
-    "notes": "• Mritha (1) was previously attainable from the following retired DA access point:  War of the Dragon Rose - Rose Front -> Rose Camp! -> Invite Mritha as a guest\n• Mritha (1) has a series of unconventional stats in the quest  Saellah; Melee: 25, Pierce: 10, Magic: 30, Block: 50, Bonus: 25",
+    "notes": "• Mritha (1) was previously attainable from the following retired DA access point:  War of the Dragon Rose - Rose Front -> Rose Camp! -> Invite Mritha as a guest \n• Mritha (1) has a series of unconventional stats in the quest  Saellah; Melee: 25, Pierce: 10, Magic: 30, Block: 50, Bonus: 25",
     "alsoSee": [],
     "tags": [
       "mritha",
       "(1)",
-      "temporary",
-      "guest",
-      "companion.",
+      "human",
+      "dragonlord",
       "met"
     ],
     "guestStats": {
@@ -4094,7 +4643,7 @@
     "name": "Myalos",
     "slug": "guest-myalos",
     "type": "guest",
-    "description": "A temporary guest companion.",
+    "description": "??? Hero",
     "daRequired": false,
     "isTemp": true,
     "elements": [
@@ -4155,9 +4704,7 @@
     "alsoSee": [],
     "tags": [
       "myalos",
-      "temporary",
-      "guest",
-      "companion.",
+      "hero",
       "met"
     ],
     "guestStats": {
@@ -4180,6 +4727,14 @@
         "boost": "0%",
         "bonus": "50",
         "crit": "15"
+      },
+      "defense": {
+        "melee": "5",
+        "pierce": "5",
+        "magic": "5",
+        "block": "0",
+        "parry": "0",
+        "dodge": "0"
       }
     }
   },
@@ -4188,7 +4743,7 @@
     "name": "Niki (1)",
     "slug": "guest-niki-1",
     "type": "guest",
-    "description": "A temporary guest companion.",
+    "description": "Human Mage",
     "daRequired": true,
     "isTemp": true,
     "elements": [
@@ -4256,14 +4811,13 @@
     "evolutions": [],
     "releaseDate": "January 28th, 2022",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21332919",
-    "notes": "• Niki (1) was previously attainable from the following retired DA access points:  War of the Dragon Rose - Dragon Front -> Dragon Camp! -> Invite Niki as a guest,  After the War -> Invite Niki as a guest\n• Niki (1) previously had the following stats; Pierce: 5, Bonus: 60, and the 'Barrier' skill previously only provided +140 Parry Defense, with a cooldown of 6 turns.",
+    "notes": "• Niki (1) was previously attainable from the following retired DA access points:  War of the Dragon Rose - Dragon Front -> Dragon Camp! -> Invite Niki as a guest,  After the War -> Invite Niki as a guest \n• Niki (1) previously had the following stats; Pierce: 5, Bonus: 60, and the 'Barrier' skill previously only provided +140 Parry Defense, with a cooldown of 6 turns.",
     "alsoSee": [],
     "tags": [
       "niki",
       "(1)",
-      "temporary",
-      "guest",
-      "companion.",
+      "human",
+      "mage",
       "nat"
     ],
     "guestStats": {
@@ -4286,6 +4840,14 @@
         "boost": "0%",
         "bonus": "100",
         "crit": "5"
+      },
+      "defense": {
+        "melee": "5",
+        "pierce": "0",
+        "magic": "5",
+        "block": "0",
+        "parry": "0",
+        "dodge": "0"
       }
     }
   },
@@ -4294,7 +4856,7 @@
     "name": "Nythera",
     "slug": "guest-nythera",
     "type": "guest",
-    "description": "A temporary guest companion.",
+    "description": "Half-Dragon Mage",
     "daRequired": false,
     "isTemp": true,
     "elements": [
@@ -4313,10 +4875,131 @@
       {
         "location": "Book of Lore -> Guests (-> Book 3) -> Nythera - Invite as First Guest/Second Guest (DA Required),  Friday the 13th Invasion - Black Winter -> To the War! -> To Battle! -> Invite Guests -> Invite Nythera as second guest",
         "priceType": "free",
-        "requirements": "None"
+        "requirements": "Completion of  Doom Amulet (Book of Lore); None"
       }
     ],
-    "attacks": [],
+    "attacks": [
+      {
+        "name": "Unearth",
+        "description": "Time to unearth some history!",
+        "effect": "3 hits of 25% damage, amounting to 75% damage; applies 'Bound by earth' (-50 Bonus) to target for 1 turn. (Pop-up: Enemy is earth bound!)",
+        "manaCost": "Round(1.5 * Scaled Mana Cost)",
+        "cooldown": "6",
+        "damageType": "Melee",
+        "element": "Nature",
+        "buttonImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/NytheraUnearthpic.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Nythera-Unearth.png"
+      },
+      {
+        "name": "Rain",
+        "description": "Tap into the life-sustaining pool of water!",
+        "effect": "Recovers Nythera for 20% of her max HP and MP. (Pop-up: The rain heals your mind, body, and soul!)",
+        "manaCost": "0",
+        "cooldown": "14",
+        "damageType": "N/A",
+        "element": "N/A",
+        "buttonImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/NytheraRainpic.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Nythera-Rain.png"
+      },
+      {
+        "name": "Flame",
+        "description": "Ouch, burned!",
+        "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Burn', a 30% base damage Magic Fire DoT effect, to target for 5 turns.",
+        "manaCost": "Round(3 * Scaled Mana Cost)",
+        "cooldown": "9",
+        "damageType": "Melee",
+        "element": "Fire",
+        "buttonImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/NytheraFlamepic.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Nythera-Flame.png"
+      },
+      {
+        "name": "Razor Wind",
+        "description": "The very air itself pierces your foes!",
+        "effect": "1 hit of 100% damage to all foes.",
+        "manaCost": "Round(0.5 * Scaled Mana Cost)",
+        "cooldown": "6",
+        "damageType": "Melee",
+        "element": "Wind",
+        "buttonImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/NytheraRazorpic.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Nythera-RazorWind.png"
+      },
+      {
+        "name": "Attack",
+        "effect": "2 hits of 60% damage, amounting to 120% damage.",
+        "manaCost": "0",
+        "cooldown": "0",
+        "damageType": "Magic",
+        "element": "???",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Nythera-Attack.png"
+      },
+      {
+        "name": "Haste",
+        "description": "Attack with a blindingly-fast strike!",
+        "effect": "1 hit of 125% damage, with +50 Bonus.",
+        "manaCost": "Round(1.55 * Scaled Mana Cost)",
+        "cooldown": "2",
+        "damageType": "Melee",
+        "element": "Light",
+        "buttonImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/NytheraHastepic.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Nythera-Haste.png"
+      },
+      {
+        "name": "Beam",
+        "description": "Smite the entire battlefield!",
+        "effect": "5 hits of 40% damage distributed randomly between all foes, amounting to 200% damage distributed randomly between all foes.",
+        "manaCost": "Round(2.5 * Scaled Mana Cost)",
+        "cooldown": "5",
+        "damageType": "Melee",
+        "element": "Light",
+        "buttonImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/NytheraBeampic.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Nythera-Beam.png"
+      },
+      {
+        "name": "Roar",
+        "description": "Obliterate your foe with a dragon's roar!",
+        "effect": "4 hits of 50% damage, amounting to 200% damage.",
+        "manaCost": "Round(3.2 * Scaled Mana Cost)",
+        "cooldown": "5",
+        "damageType": "Melee",
+        "element": "Light",
+        "buttonImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/NytheraRoarpic.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Nythera-Roar.png"
+      },
+      {
+        "name": "Fiend",
+        "description": "Summon an unearthly creature to do your bidding!",
+        "effect": "1 hit of 140% damage.",
+        "manaCost": "Round(2 * Scaled Mana Cost)",
+        "cooldown": "3",
+        "damageType": "Magic",
+        "element": "???",
+        "buttonImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/NytheraAbysspic.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Nythera-Fiend.png"
+      },
+      {
+        "name": "Rapture",
+        "description": "Summon an awesome, spear-like projectile!",
+        "effect": "1 hit of 170% damage; automatically applies 'Void Seizure', a [(Level/2)-(Level)] Magic NaN DoT effect, to target for 2 turns. (Pop-up: Your foe has been infected by powerful void magic!)",
+        "manaCost": "Round(2 * Scaled Mana Cost)",
+        "cooldown": "4",
+        "damageType": "Magic",
+        "element": "???",
+        "buttonImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/NytheraRapturepic.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Nythera-Rapture1.0.png"
+      },
+      {
+        "name": "Syphon",
+        "description": "Call upon the void to steal your opponent's life!",
+        "effect": "3 hits of 50% damage, amounting to 150% damage; each hit that lands heals Nythera's HP and MP equal to 50% of the damage dealt.",
+        "manaCost": "Scaled mana * 2",
+        "cooldown": "5",
+        "damageType": "Magic",
+        "element": "???",
+        "buttonImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/NytheraAbysmapic.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Nythera-Syphon.png"
+      }
+    ],
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "January 6th, 2017",
@@ -4326,9 +5009,8 @@
     "alsoSee": [],
     "tags": [
       "nythera",
-      "temporary",
-      "guest",
-      "companion.",
+      "half-dragon",
+      "mage",
       "???",
       "fir",
       "lig",
@@ -4382,7 +5064,7 @@
     "name": "Pepper Merchant",
     "slug": "guest-pepper-merchant",
     "type": "guest",
-    "description": "A temporary guest companion.",
+    "description": "Human Merchant",
     "daRequired": false,
     "isTemp": true,
     "elements": [
@@ -4400,19 +5082,28 @@
         "requirements": "None"
       }
     ],
-    "attacks": [],
+    "attacks": [
+      {
+        "name": "Attack",
+        "effect": "Attacks for 1 hit of 100% damage.",
+        "manaCost": "0",
+        "cooldown": "0",
+        "damageType": "Melee",
+        "element": "Nature",
+        "buttonImageUrl": "http://i.imgur.com/MTcDrk1.png"
+      }
+    ],
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "September 15th, 2018",
+    "imageUrl": "https://i.imgur.com/oEZhPmL.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22348084",
     "notes": "• Pepper Merchant was previously attainable from the following retired access point:  An Elegy of Ice and Fire.",
     "alsoSee": [],
     "tags": [
       "pepper",
       "merchant",
-      "temporary",
-      "guest",
-      "companion.",
+      "human",
       "nat"
     ],
     "guestStats": {
@@ -4435,6 +5126,14 @@
         "boost": "0%",
         "bonus": "100",
         "crit": "15"
+      },
+      "defense": {
+        "melee": "5",
+        "pierce": "0",
+        "magic": "5",
+        "block": "0",
+        "parry": "0",
+        "dodge": "0"
       }
     }
   },
@@ -4461,7 +5160,18 @@
         "requirements": "None"
       }
     ],
-    "attacks": [],
+    "attacks": [
+      {
+        "name": "Attack",
+        "effect": "Performs one of the following attacks, each for 50% chance:\n  • Recovers 10% of player's HP and applies 'Tech Buff (+20% Boost, +20 Melee/Pierce/Magic Avoidance) to player for 3 turns.\n  • 1 hit of 100% damage and applies 'Tech debuff' (-20% boost, -20 Melee/Pierce/Magic Avoidance) for 3 turns inclusive.",
+        "manaCost": "0",
+        "cooldown": "0",
+        "damageType": "Melee",
+        "element": "Metal",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Professor-Attack1.png"
+      }
+    ],
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "August 3rd, 2012",
@@ -4529,15 +5239,41 @@
       "MET"
     ],
     "traits": [],
-    "level": "Unknown",
-    "damage": "Unknown",
-    "stats": "None",
+    "level": "Scaled",
+    "damage": "Scaled",
+    "stats": "See guestStats",
     "resists": "None",
-    "obtainMethods": [],
-    "attacks": [],
+    "obtainMethods": [
+      {
+        "location": "Finding the Red Brick Road",
+        "priceType": "free",
+        "requirements": "None"
+      }
+    ],
+    "attacks": [
+      {
+        "name": "Strike",
+        "effect": "Hits the enemy with both his fists. The hit deals 100% damage and has +100 to crit.",
+        "manaCost": "10",
+        "cooldown": "15",
+        "damageType": "Melee",
+        "element": "Metal",
+        "buttonImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/RalonBoppic.png"
+      },
+      {
+        "name": "Attack!",
+        "effect": "A drill comes out of his hand and he uses it to attack the enemy. The hit deals 100% damage.",
+        "manaCost": "0",
+        "cooldown": "0",
+        "damageType": "Melee",
+        "element": "Metal",
+        "buttonImageUrl": "https://i.imgur.com/MWb3liE.png"
+      }
+    ],
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "December 20th, 2012",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/RalonGuestpic.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20957863",
     "alsoSee": [],
     "tags": [
@@ -4546,14 +5282,42 @@
       "aluminium",
       "met"
     ],
-    "guestStats": {}
+    "guestStats": {
+      "level": "Scaled",
+      "damage": "Scaled",
+      "element": "Metal",
+      "hp": "As player, less END bonus",
+      "mp": "As player, less WIS bonus",
+      "characterStats": {
+        "str": "0",
+        "dex": "0",
+        "int": "0",
+        "cha": "0",
+        "luk": "0",
+        "end": "0",
+        "wis": "0"
+      },
+      "offense": {
+        "boost": "0%",
+        "bonus": "50",
+        "crit": "15"
+      },
+      "defense": {
+        "melee": "5",
+        "pierce": "0",
+        "magic": "5",
+        "block": "0",
+        "parry": "0",
+        "dodge": "0"
+      }
+    }
   },
   {
     "id": "guest-raven-2",
     "name": "Raven (2)",
     "slug": "guest-raven-2",
     "type": "guest",
-    "description": "A temporary guest companion.",
+    "description": "Human Energizer",
     "daRequired": true,
     "isTemp": true,
     "elements": [
@@ -4568,7 +5332,7 @@
       {
         "location": "Friday the 13th - Full Moon -> Doomwood Camp -> Invite Raven as a guest,  Book of Lore -> Guests (-> Book 3) -> Raven - Invite as First Guest/Second Guest",
         "priceType": "free",
-        "requirements": "None",
+        "requirements": "Dragon Amulet, Completion of  Howl at the Moon (Book of Lore); Dragon Amulet (Friday the 13th - Full Moon)",
         "daRequired": true
       }
     ],
@@ -4581,7 +5345,8 @@
         "cooldown": "25",
         "damageType": "Magic",
         "element": "Energy",
-        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Raven2-Button01-Shock.png"
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Raven2-Button01-Shock.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Raven2-ShockingDash1.0.png"
       },
       {
         "name": "Charged Attack",
@@ -4591,7 +5356,8 @@
         "cooldown": "5",
         "damageType": "Magic",
         "element": "Energy",
-        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Raven2-Button02-Charged.png"
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Raven2-Button02-Charged.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Raven2-ChargedAttack1.0.png"
       },
       {
         "name": "Energy Shield",
@@ -4611,7 +5377,8 @@
         "cooldown": "0",
         "damageType": "Magic",
         "element": "Energy",
-        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png"
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Raven2-Attack1.0.png"
       }
     ],
     "rarity": "Unknown",
@@ -4623,9 +5390,8 @@
     "tags": [
       "raven",
       "(2)",
-      "temporary",
-      "guest",
-      "companion.",
+      "human",
+      "energizer",
       "ene"
     ],
     "guestStats": {
@@ -4694,7 +5460,96 @@
         "daRequired": true
       }
     ],
-    "attacks": [],
+    "attacks": [
+      {
+        "name": "LimeAid",
+        "description": "25% Boost for 5 turns",
+        "effect": "Applies 'Aid' (+25% Boost) to himself for 5 turns.",
+        "manaCost": "0",
+        "cooldown": "9",
+        "damageType": "N/A",
+        "element": "N/A",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Rhubarb-Button01-LimeAid.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Rhubarb-LimeAid.png"
+      },
+      {
+        "name": "Intimidating Presence!",
+        "description": "Lowers enemy hit but increases its damage",
+        "effect": "Applies 'Intimidated' (-70 Bonus, +70 Crit) to all foes for 3 turns.",
+        "manaCost": "30",
+        "cooldown": "9",
+        "damageType": "N/A",
+        "element": "N/A",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Rhubarb-Button02-Fright.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Rhubarb-IntimidatingPresence!.png"
+      },
+      {
+        "name": "1st Mate Aid",
+        "description": "Heals 20% of your HP",
+        "effect": "Recovers 20% of his max HP. (Message: *Healed: +<x> HP!*)",
+        "manaCost": "20",
+        "cooldown": "9",
+        "damageType": "N/A",
+        "element": "N/A",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Rhubarb-Button03-Aid.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Rhubarb-1stMateAid.png"
+      },
+      {
+        "name": "Fire the Port Sides!",
+        "description": "Available after a critical hit.",
+        "requirements": "Successful attack where the last hit is a Crit to use",
+        "effect": "Applies 'Dead Aim' (+30 Bonus) to himself for 3 turns inclusive; 1 hit of 200% damage, with +50 Bonus.",
+        "manaCost": "10",
+        "cooldown": "5",
+        "damageType": "Melee",
+        "element": "Metal",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Rhubarb-Button04-Cannon.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Rhubarb-FirethePortSides!.png"
+      },
+      {
+        "name": "Scurvy",
+        "description": "Yarr, where be his Vitamin C?",
+        "effect": "1 hit of 100% damage; applies 'Scurvy', a 40% Magic Disease DoT effect, to target for 5 turns.",
+        "manaCost": "8",
+        "cooldown": "4",
+        "damageType": "Magic",
+        "element": "Disease",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Rhubarb-Button05-Scurvy.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Rhubarb-Scurvy.png"
+      },
+      {
+        "name": "Quick Shot",
+        "description": "Hits all enemies, yarr!",
+        "effect": "1 hit of 120% damage to all foes.",
+        "manaCost": "15",
+        "cooldown": "2",
+        "damageType": "Pierce",
+        "element": "Metal",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Rhubarb-Button06-Quick.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Rhubarb-QuickShot.png"
+      },
+      {
+        "name": "Sea Legs",
+        "description": "+180 Dodge/Parry for 2 turns",
+        "effect": "Applies +180 Parry/Dodge Defense to himself for 2 turns. (Message: I be ready for ye Land Lubbers!)",
+        "manaCost": "20",
+        "cooldown": "4",
+        "damageType": "N/A",
+        "element": "N/A",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Rhubarb-Button07-Legs.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Rhubarb-SeaLegs.png"
+      },
+      {
+        "name": "Attack",
+        "effect": "1 hit of 100% damage.",
+        "manaCost": "0",
+        "cooldown": "0",
+        "damageType": "Melee",
+        "element": "Metal",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Rhubarb-Attack.png"
+      }
+    ],
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "September 19th, 2014",
@@ -4756,7 +5611,7 @@
     "name": "Riadne (2)",
     "slug": "guest-riadne-2",
     "type": "guest",
-    "description": "A temporary guest companion.",
+    "description": "Human Arachnomancer",
     "daRequired": true,
     "isTemp": true,
     "elements": [
@@ -4771,23 +5626,33 @@
       {
         "location": "Book of Lore -> Guests (-> Book 1&2) -> Riadne - Invite as First Guest/Second Guest",
         "priceType": "free",
-        "requirements": "None",
+        "requirements": "Dragon Amulet, Completion of  The End?",
         "daRequired": true
       }
     ],
-    "attacks": [],
+    "attacks": [
+      {
+        "name": "Spider's Web",
+        "description": "1 hit x 120% damage \n Target: (On hit) Stun for 1 turn.",
+        "effect": "1 hit of 120% damage; applies 'Webbed' to target, stunning it for 1 turn.",
+        "manaCost": "20",
+        "cooldown": "15",
+        "damageType": "Magic",
+        "element": "Poison"
+      }
+    ],
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "January 29th, 2016",
+    "imageUrl": "http://i.imgur.com/oxvsqpq.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18550703",
-    "notes": "• The Riadne guest in  At the Gate erroneously uses its old tooltip: Web your foe!\nAppearance\nPoisonPunch\n2 hits x 70% damage (140%)\nTarget: (On hit) 10% Poison DoT for 3 turns.\nDoT damage increases with each use, to 10 times.\nRequirements: None\nEffect: 2 hits of 70% damage, amounting to 140% damage; applies 'Spider's Venom', a 10X% Magic Poison DoT effect, to target for 3 turns, where X is equal to the number of times 'Spider's Venom' was applied, capped at 10.\nMana Cost: 18\nCooldown: 3\nElement: Poison\nAttack Type: Magic\nOther information\n• The Riadne guest in  At the Gate erroneously uses its old tooltip: Web your foe!\nAppearance\nArachnoSlasher\n3 hits x 30% damage (90%)\nSelf: +20 Boost for 4 turns.\nTarget: (On hit) -20 Boost for 3 turns.\nRequirements: None\nEffect: 3 hits of 30% damage, amounting to 90% damage; applies 'Spider's Fury' (+20% Boost) to herself for 4 turns inclusive; applies 'Spider's Anger' (-20% Boost) to target for 3 turns.\nMana Cost: 10\nCooldown: 11\nElement: Poison\nAttack Type: Magic\nOther information\n• The Riadne guest in  At the Gate erroneously uses its old tooltip: Web your foe!\nAppearance\nAttack\n3 hits x 40% damage (120%)\nRequirements: None\nEffect: 3 hits of 40% damage, amounting to 120% damage.\nMana Cost: 0\nCooldown: 0\nElement: Poison\nAttack Type: Magic\nOther information\n• The Riadne guest in  At the Gate does not have a tooltip for this skill.\nAppearance\nOther information\n• *In the quests  Altar Hill and  At the Gate, her element is erroneously listed as Light.\n• Riadne (2)'s tooltips were updated on  April 11th, 2025.",
+    "notes": "• *In the quests  Altar Hill and  At the Gate, her element is erroneously listed as Light. \n• Riadne (2)'s tooltips were updated on  April 11th, 2025.",
     "alsoSee": [],
     "tags": [
       "riadne",
       "(2)",
-      "temporary",
-      "guest",
-      "companion.",
+      "human",
+      "arachnomancer",
       "poi"
     ],
     "guestStats": {
@@ -4837,7 +5702,7 @@
     "name": "Robina (1)",
     "slug": "guest-robina-1",
     "type": "guest",
-    "description": "A guest companion in DragonFable.",
+    "description": "Human Noble Thief",
     "daRequired": false,
     "elements": [
       "NAT"
@@ -4850,7 +5715,8 @@
     "obtainMethods": [
       {
         "location": "Book of Lore -> Guests (-> Book 1&2) -> Robina - Invite as First Guest/Second Guest (DA Required),  Surewould Forest (Books 1 and 2) -> Right (x2) ->  Robina -> Invite -> ...as Friend A/...as Friend B,  Opening The Black Box,  Willowshire Outpost -> Team up! -> Yes",
-        "priceType": "free"
+        "priceType": "free",
+        "requirements": "Completion of  Give Til It Hurts (Book of Lore); None"
       }
     ],
     "attacks": [
@@ -4862,7 +5728,8 @@
         "cooldown": "12",
         "damageType": "Pierce",
         "element": "Nature",
-        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Robina1-Button01-Precise.png"
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Robina1-Button01-Precise.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Robina1-Attack1.0.png"
       },
       {
         "name": "Piercing Arrow",
@@ -4872,7 +5739,8 @@
         "cooldown": "6",
         "damageType": "Pierce",
         "element": "Nature",
-        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Robina1-Button02-Pierce.png"
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Robina1-Button02-Pierce.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Robina1-Attack1.0.png"
       },
       {
         "name": "Attack",
@@ -4882,21 +5750,23 @@
         "cooldown": "0",
         "damageType": "Pierce",
         "element": "Nature",
-        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png"
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Robina1-Attack1.0.png"
       }
     ],
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "June 16th, 2006",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Robina1.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=5112057",
-    "notes": "• Robina (1) was previously attainable from the following retired access point:  Dragon Attack at Willowshire! -> Team up! -> Yes\n• Robina (1) in  Surewould Forest (Books 1 and 2) uses the Wood element instead of Nature.\n• The following changes were implemented on  April 11th, 2025:\n  • Tooltips were updated for this guest.\n• Two new skills were added.",
+    "notes": "• Robina (1) was previously attainable from the following retired access point:  Dragon Attack at Willowshire! -> Team up! -> Yes \n• Robina (1) in  Surewould Forest (Books 1 and 2) uses the Wood element instead of Nature. \n• The following changes were implemented on  April 11th, 2025: \n  • Tooltips were updated for this guest. \n  • Two new skills were added.",
     "alsoSee": [],
     "tags": [
       "robina",
       "(1)",
-      "guest",
-      "companion",
-      "dragonfable.",
+      "human",
+      "noble",
+      "thief",
       "nat"
     ],
     "guestStats": {
@@ -4946,7 +5816,7 @@
     "name": "Rolith (1)",
     "slug": "guest-rolith-1",
     "type": "guest",
-    "description": "A temporary guest companion.",
+    "description": "Human Knight Captain",
     "daRequired": true,
     "isTemp": true,
     "elements": [
@@ -4961,23 +5831,65 @@
       {
         "location": "Oaklore Keep (Books 1 and 2) -> Up ->  Rolith -> Invite Rolith as a guest",
         "priceType": "free",
-        "requirements": "None",
+        "requirements": "Dragon Amulet, Completion of  A Hero is Bored /  A Hero Is Thawed",
         "daRequired": true
       }
     ],
-    "attacks": [],
+    "attacks": [
+      {
+        "name": "SLAM!",
+        "description": "2 hits x 25% damage (50%) \n Target: (On hit) Stun for 1 turn.",
+        "effect": "2 hits of 25% damage, amounting to 50% damage; applies 'SLAMED' to target, stunning it for 1 turn.",
+        "manaCost": "16",
+        "cooldown": "8",
+        "damageType": "Melee",
+        "element": "Metal",
+        "buttonImageUrl": "http://i.imgur.com/wJ7kWOH.png"
+      },
+      {
+        "name": "Crushing Attack",
+        "description": "8 hits x 20% damage (160%)",
+        "effect": "8 hits of 20% damage, amounting to 160% damage.",
+        "manaCost": "35",
+        "cooldown": "12",
+        "damageType": "Melee",
+        "element": "Metal",
+        "buttonImageUrl": "http://i.imgur.com/oevlJ9P.png"
+      },
+      {
+        "name": "Heavy Attack",
+        "description": "4 hits x 30% damage (120%)",
+        "effect": "4 hits of 30% damage, amounting to 120% damage.",
+        "manaCost": "15",
+        "cooldown": "4",
+        "damageType": "Melee",
+        "element": "Metal",
+        "buttonImageUrl": "http://i.imgur.com/dGVD18Q.png"
+      },
+      {
+        "name": "Attack",
+        "description": "2 hits x 50% damage (100%)",
+        "effect": "2 hits of 50% damage, amounting to 100% damage.",
+        "manaCost": "0",
+        "cooldown": "0",
+        "damageType": "Melee",
+        "element": "Metal",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png"
+      }
+    ],
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "January 6th, 2017",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Rolith1.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18114964",
-    "notes": "• Rolith (1) has a series of unconventional stats in the quest  Alina's Answer; STR: 25, DEX: 1, INT: 5, CHA: 15, LUK: 5, END: 15, Crit: 15\n• Rolith (1)'s tooltips were updated on  April 11th, 2025.",
+    "notes": "• Rolith (1) has a series of unconventional stats in the quest  Alina's Answer; STR: 25, DEX: 1, INT: 5, CHA: 15, LUK: 5, END: 15, Crit: 15 \n• Rolith (1)'s tooltips were updated on  April 11th, 2025.",
     "alsoSee": [],
     "tags": [
       "rolith",
       "(1)",
-      "temporary",
-      "guest",
-      "companion.",
+      "human",
+      "knight",
+      "captain",
       "met"
     ],
     "guestStats": {
@@ -5027,32 +5939,76 @@
     "name": "Sepulchure",
     "slug": "guest-sepulchure",
     "type": "guest",
-    "description": "A temporary guest companion.",
+    "description": "Human DragonRider",
     "daRequired": false,
     "isTemp": true,
     "elements": [
       "EVI"
     ],
     "traits": [],
-    "level": "Unknown",
-    "damage": "Unknown",
-    "stats": "None",
+    "level": "Scaled",
+    "damage": "Scaled",
+    "stats": "See guestStats",
     "resists": "None",
-    "obtainMethods": [],
-    "attacks": [],
+    "obtainMethods": [
+      {
+        "location": "An Unlikely Duo",
+        "priceType": "free"
+      }
+    ],
+    "attacks": [
+      {
+        "name": "Attack",
+        "effect": "Does one of the following:\n 1) Unleashes a doom bubble for 1 hit of 100% damage and inflicts 'Corrupted' status, reducing the enemy's PowerBoost by 25% for 5 turns.\n 2) Jumps, summons a darkness shroud and downcuts  for 1 hit of 100% damage.\n 3) Cleaves the opponent for one hit of 100% damage which activates a 1-400 DoT for 6 turns (rot, Poison Pierce damage).\n 4) Clenches his fist and deals 4 hits of 100% damage each which deals a DoT and reduces the enemy's immobility resistance by 25 for 5 turns.",
+        "manaCost": "0",
+        "cooldown": "0",
+        "damageType": "Melee",
+        "element": "Evil",
+        "buttonImageUrl": "http://i.imgur.com/MTcDrk1.png"
+      }
+    ],
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "July 22nd, 2011",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Sepulchure%20pic.bmp",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19342419",
     "alsoSee": [],
     "tags": [
       "sepulchure",
-      "temporary",
-      "guest",
-      "companion.",
+      "human",
+      "dragonrider",
       "evi"
     ],
-    "guestStats": {}
+    "guestStats": {
+      "level": "Scaled",
+      "damage": "Scaled",
+      "damageType": "Melee",
+      "element": "Evil",
+      "hp": "As player, less END bonus",
+      "mp": "As player, less WIS bonus",
+      "characterStats": {
+        "str": "0",
+        "dex": "0",
+        "int": "0",
+        "cha": "0",
+        "luk": "0",
+        "end": "0",
+        "wis": "0"
+      },
+      "offense": {
+        "boost": "0%",
+        "bonus": "100",
+        "crit": "20"
+      },
+      "defense": {
+        "melee": "5",
+        "pierce": "0",
+        "magic": "5",
+        "block": "0",
+        "parry": "0",
+        "dodge": "0"
+      }
+    }
   },
   {
     "id": "guest-serenity-okami",
@@ -5066,15 +6022,104 @@
     "traits": [
       "ALA"
     ],
-    "level": "Unknown",
-    "damage": "Unknown",
-    "stats": "None",
+    "level": "Scaled",
+    "damage": "Scaled",
+    "stats": "See guestStats",
     "resists": "None",
-    "obtainMethods": [],
-    "attacks": [],
+    "obtainMethods": [
+      {
+        "location": "Imaru's Treasure",
+        "priceType": "free",
+        "requirements": "None"
+      }
+    ],
+    "attacks": [
+      {
+        "name": "Quick Shot",
+        "description": "Hits all enemies! Yarr!",
+        "effect": "The opponents are shot for 2 hits of damage as last attack.",
+        "manaCost": "15",
+        "cooldown": "4",
+        "damageType": "As last attack",
+        "element": "As last attack",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/PirateR1-Button05-Quick.png"
+      },
+      {
+        "name": "Shield",
+        "description": "+80 Block for 2 turns",
+        "effect": "Serenity Okami yells \"I am ready... bring it on!\", increasing Block by +80 for 2 turns.",
+        "manaCost": "20",
+        "cooldown": "4",
+        "damageType": "As last attack",
+        "element": "As last attack",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/PirateR1-Button07-Shield.png"
+      },
+      {
+        "name": "Attack",
+        "effect": "Runs towards the enemy and slashes it for 1 hit of damage as last attack.",
+        "manaCost": "0",
+        "cooldown": "0",
+        "damageType": "As last attack",
+        "element": "As last attack",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png"
+      },
+      {
+        "name": "Scurvy",
+        "description": "Wish you had Vitamin C",
+        "effect": "The target is attacked for 1 hit of damage as last attack.",
+        "manaCost": "5",
+        "cooldown": "9",
+        "damageType": "As last attack",
+        "element": "As last attack",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/PirateR1-Button08-Scurvy.png"
+      },
+      {
+        "name": "Sneaky",
+        "description": "Available after a critical hit.",
+        "requirements": "Requires a critical hit",
+        "effect": "The target is attacked for 1 hit of damage as last attack, and Bonus is increased by 30% for 10 turns.",
+        "manaCost": "10",
+        "cooldown": "4",
+        "damageType": "As last attack",
+        "element": "As last attack",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/PirateR1-Button09-Sneaky.png"
+      },
+      {
+        "name": "1st Mate Aid",
+        "description": "heals 20% of your HP",
+        "requirements": "A stun attack must be resisted",
+        "effect": "Heals for 20% of max HP.",
+        "manaCost": "20",
+        "cooldown": "9",
+        "damageType": "N/A",
+        "element": "N/A",
+        "buttonImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/PirateR1-Button10-Aid.png"
+      },
+      {
+        "name": "Shout",
+        "description": "Makes enemy stronger with high miss chance",
+        "effect": "The sword is held up and lowers the target's Bonus by -70 but also raises the target's Crit with +70 for 4 turns.",
+        "manaCost": "10",
+        "cooldown": "9",
+        "damageType": "N/A",
+        "element": "N/A",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/PirateR1-Button11-Shout.png"
+      },
+      {
+        "name": "LimeAid",
+        "description": "25% boost for 5 turns",
+        "effect": "A potion is drunk and boost is increased by 25% for 5 turns.",
+        "manaCost": "0",
+        "cooldown": "9",
+        "damageType": "N/A",
+        "element": "N/A",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/PirateR1-Button12-LimeAid.png"
+      }
+    ],
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "July 27th, 2012",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Serenity%20Okami%20pic%203.bmp",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21187298",
     "alsoSee": [],
     "tags": [
@@ -5083,14 +6128,42 @@
       "human",
       "pirate"
     ],
-    "guestStats": {}
+    "guestStats": {
+      "level": "Scaled",
+      "damage": "Scaled",
+      "element": "Silver",
+      "hp": "As player, less END bonus",
+      "mp": "As player, less WIS bonus",
+      "characterStats": {
+        "str": "10",
+        "dex": "0",
+        "int": "0",
+        "cha": "0",
+        "luk": "10",
+        "end": "0",
+        "wis": "0"
+      },
+      "offense": {
+        "boost": "0",
+        "bonus": "100",
+        "crit": "15"
+      },
+      "defense": {
+        "melee": "5",
+        "pierce": "0",
+        "magic": "5",
+        "block": "0",
+        "parry": "0",
+        "dodge": "0"
+      }
+    }
   },
   {
     "id": "guest-sir-ano",
     "name": "Sir Ano",
     "slug": "guest-sir-ano",
     "type": "guest",
-    "description": "A temporary guest companion.",
+    "description": "Human Pactogonal Knight",
     "daRequired": true,
     "isTemp": true,
     "elements": [
@@ -5105,23 +6178,47 @@
       {
         "location": "Book of Lore -> Guests (-> Book 1&2) -> Sir Ano - Invite as First Guest/Second Guest",
         "priceType": "free",
-        "requirements": "None",
+        "requirements": "Dragon Amulet, Completion of  Nose for Trouble",
         "daRequired": true
       }
     ],
-    "attacks": [],
+    "attacks": [
+      {
+        "name": "Swordplay",
+        "description": "1 hit x 140% damage \n This attack has +200 Crit.",
+        "effect": "1 hit of 140% damage, with +200 Crit.",
+        "manaCost": "10",
+        "cooldown": "14",
+        "damageType": "Melee",
+        "element": "Metal",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/SirAno-Button01-Sword.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/SirAno-Swordplay1.0.png"
+      },
+      {
+        "name": "Attack",
+        "description": "2 hits x 70% damage (140%)",
+        "effect": "2 hits of 70% damage, amounting to 140% damage.",
+        "manaCost": "0",
+        "cooldown": "0",
+        "damageType": "Melee",
+        "element": "Metal",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/SirAno-Attack1.0.png"
+      }
+    ],
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "November 21st, 2008",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/SirAno.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15093277",
-    "notes": "• Sir Ano was previously attainable from the following retired access points:  Nose for Trouble,  Major Mayhem,   There's No Place Like Oaklore, and  Victoria's Secret.\n• The following changes were implemented on  April 11th, 2025:\n  • Tooltips were updated for this guest.\n• Damage from 'Swordplay' was increased from 100% to 200%.\n• Total damage of 'Swordplay' and 'Attack' was lowered from 200% to 140% on  August 22nd, 2024.\n• Art was updated on  August 29th, 2025.",
+    "notes": "• Sir Ano was previously attainable from the following retired access points:  Nose for Trouble,  Major Mayhem,   There's No Place Like Oaklore, and  Victoria's Secret. \n• The following changes were implemented on  April 11th, 2025: \n  • Tooltips were updated for this guest. \n  • Damage from 'Swordplay' was increased from 100% to 200%.\n• Total damage of 'Swordplay' and 'Attack' was lowered from 200% to 140% on  August 22nd, 2024. \n• Art was updated on  August 29th, 2025. ",
     "alsoSee": [],
     "tags": [
       "sir",
       "ano",
-      "temporary",
-      "guest",
-      "companion.",
+      "human",
+      "pactogonal",
+      "knight",
       "met"
     ],
     "guestStats": {
@@ -5171,7 +6268,7 @@
     "name": "Sir Leon (2)",
     "slug": "guest-sir-leon-2",
     "type": "guest",
-    "description": "A guest companion in DragonFable.",
+    "description": "Human MageKnight",
     "daRequired": false,
     "elements": [
       "LIG"
@@ -5184,7 +6281,8 @@
     "obtainMethods": [
       {
         "location": "The Shears ->  Sir Leon -> Add to group,  Shear Destruction,  A New Discovery,  Gorillaphant Warfare",
-        "priceType": "free"
+        "priceType": "free",
+        "requirements": "Completion of  Oculus Tower"
       }
     ],
     "attacks": [
@@ -5229,7 +6327,8 @@
         "cooldown": "2",
         "damageType": "Pierce",
         "element": "Light",
-        "buttonImageUrl": "https://i.imgur.com/waAdDYO.png"
+        "buttonImageUrl": "https://i.imgur.com/waAdDYO.png",
+        "appearanceUrl": "https://i.imgur.com/xvCtyM4.png"
       },
       {
         "name": "Stun",
@@ -5261,7 +6360,8 @@
         "cooldown": "4",
         "damageType": "Melee",
         "element": "Light",
-        "buttonImageUrl": "https://i.imgur.com/ufK0Hzo.png"
+        "buttonImageUrl": "https://i.imgur.com/ufK0Hzo.png",
+        "appearanceUrl": "https://i.imgur.com/LWus6QM.png"
       },
       {
         "name": "Attack",
@@ -5270,7 +6370,8 @@
         "cooldown": "0",
         "damageType": "Melee",
         "element": "Light",
-        "buttonImageUrl": "https://i.imgur.com/CTnLIC6.png"
+        "buttonImageUrl": "https://i.imgur.com/CTnLIC6.png",
+        "appearanceUrl": "https://i.imgur.com/pbv8YmU.png"
       },
       {
         "name": "Double Attack",
@@ -5281,7 +6382,8 @@
         "cooldown": "2",
         "damageType": "Melee",
         "element": "Light",
-        "buttonImageUrl": "https://i.imgur.com/jtnIPwq.png"
+        "buttonImageUrl": "https://i.imgur.com/jtnIPwq.png",
+        "appearanceUrl": "https://i.imgur.com/u5VU9Hg.png"
       },
       {
         "name": "Triple Attack",
@@ -5292,7 +6394,8 @@
         "cooldown": "0",
         "damageType": "Melee",
         "element": "Light",
-        "buttonImageUrl": "https://i.imgur.com/6GBlzdC.png"
+        "buttonImageUrl": "https://i.imgur.com/6GBlzdC.png",
+        "appearanceUrl": "https://i.imgur.com/x6cMvRP.png"
       },
       {
         "name": "Mana Strike",
@@ -5313,7 +6416,8 @@
         "cooldown": "2",
         "damageType": "Melee",
         "element": "Light",
-        "buttonImageUrl": "https://i.imgur.com/5hjPDCi.png"
+        "buttonImageUrl": "https://i.imgur.com/5hjPDCi.png",
+        "appearanceUrl": "https://i.imgur.com/xvCtyM4.png"
       },
       {
         "name": "Strength Strike",
@@ -5334,7 +6438,8 @@
         "cooldown": "4",
         "damageType": "Melee",
         "element": "Light",
-        "buttonImageUrl": "https://i.imgur.com/37AOMwF.png"
+        "buttonImageUrl": "https://i.imgur.com/37AOMwF.png",
+        "appearanceUrl": "https://i.imgur.com/pbv8YmU.png"
       },
       {
         "name": "Final Blow",
@@ -5351,16 +6456,16 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "September 26th, 2014",
+    "imageUrl": "https://i.imgur.com/f0gSDDV.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21680820",
-    "notes": "• This version of Sir Leon was released on September 26th, 2014 with the quest Shear Destruction; it was again updated on February 3rd, 2015, altering Defensive Stance's animation and Final Blow's damage.\n• Sir Leon's stun duration was lowered from 3 turns to 1 turn on February 28th, 2020; more information can be found in the  February 28th, 2020 Design Notes.",
+    "notes": "• This version of Sir Leon was released on September 26th, 2014 with the quest Shear Destruction; it was again updated on February 3rd, 2015, altering Defensive Stance's animation and Final Blow's damage. \n• Sir Leon's stun duration was lowered from 3 turns to 1 turn on February 28th, 2020; more information can be found in the  February 28th, 2020 Design Notes.",
     "alsoSee": [],
     "tags": [
       "sir",
       "leon",
       "(2)",
-      "guest",
-      "companion",
-      "dragonfable.",
+      "human",
+      "mageknight",
       "lig"
     ],
     "guestStats": {
@@ -5383,6 +6488,14 @@
         "boost": "0%",
         "bonus": "70",
         "crit": "5"
+      },
+      "defense": {
+        "melee": "0",
+        "pierce": "0",
+        "magic": "5",
+        "block": "0",
+        "parry": "0",
+        "dodge": "0"
       }
     }
   },
@@ -5391,7 +6504,7 @@
     "name": "Sir Tainly",
     "slug": "guest-sir-tainly",
     "type": "guest",
-    "description": "A temporary guest companion.",
+    "description": "Human Pactogonal Knight",
     "daRequired": false,
     "isTemp": true,
     "elements": [
@@ -5429,7 +6542,8 @@
         "cooldown": "2",
         "damageType": "Magic",
         "element": "Metal",
-        "buttonImageUrl": "https://i.imgur.com/wC69Rla.png"
+        "buttonImageUrl": "https://i.imgur.com/wC69Rla.png",
+        "appearanceUrl": "https://i.imgur.com/jv5PirB.png"
       },
       {
         "name": "Attack",
@@ -5445,6 +6559,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "February 20th, 2015",
+    "imageUrl": "https://i.imgur.com/DAmhng7.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21927314",
     "alsoSee": [
       {
@@ -5456,9 +6571,9 @@
     "tags": [
       "sir",
       "tainly",
-      "temporary",
-      "guest",
-      "companion.",
+      "human",
+      "pactogonal",
+      "knight",
       "met"
     ],
     "guestStats": {
@@ -5481,6 +6596,14 @@
         "boost": "0%",
         "bonus": "50",
         "crit": "5"
+      },
+      "defense": {
+        "melee": "5",
+        "pierce": "0",
+        "magic": "5",
+        "block": "0",
+        "parry": "0",
+        "dodge": "0"
       }
     }
   },
@@ -5489,7 +6612,7 @@
     "name": "Sirius",
     "slug": "guest-sirius",
     "type": "guest",
-    "description": "A temporary guest companion.",
+    "description": "Human Rune Arcanum",
     "daRequired": false,
     "isTemp": true,
     "elements": [
@@ -5516,7 +6639,8 @@
         "cooldown": "4",
         "damageType": "Magic",
         "element": "Good",
-        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Sirius-Button01-Swords.png"
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Sirius-Button01-Swords.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Sirius-3ofSwords1.0.png"
       },
       {
         "name": "Attack",
@@ -5526,7 +6650,8 @@
         "cooldown": "0",
         "damageType": "Magic",
         "element": "Good",
-        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png"
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Sirius-Attack1.0.png"
       },
       {
         "name": "The Fool",
@@ -5571,9 +6696,9 @@
     "alsoSee": [],
     "tags": [
       "sirius",
-      "temporary",
-      "guest",
-      "companion.",
+      "human",
+      "rune",
+      "arcanum",
       "goo"
     ],
     "guestStats": {
@@ -5596,6 +6721,14 @@
         "boost": "0%",
         "bonus": "100",
         "crit": "20"
+      },
+      "defense": {
+        "melee": "5",
+        "pierce": "0",
+        "magic": "5",
+        "block": "0",
+        "parry": "0",
+        "dodge": "0"
       }
     }
   },
@@ -5619,16 +6752,59 @@
       {
         "location": "Book of Lore -> Guests (-> Book 3) -> Symone - Invite as First Guest/Second Guest  (DA Required),  Forest Hunt,  Storming the Castle,  Friday the 13th Invasion - Serenity Before The Storm -> Attack! -> Explore Camp -> Invite Symone as a guest,  Friday the 13th Invasion - Dark Night -> Attack! -> Talk -> Invite Symone as a guest,  Friday the 13th Invasion - Black Winter -> To the War! -> To Battle! -> Invite Guests -> Invite Symone as second guest",
         "priceType": "free",
-        "requirements": "None"
+        "requirements": "Completion of  The Summoning (Boss Fight) (Book of Lore); None"
       }
     ],
-    "attacks": [],
+    "attacks": [
+      {
+        "name": "Night Stalker",
+        "description": "Harness the Night!",
+        "effect": "6 hits of 30% damage, amounting to 180% damage, with +200 Crit.",
+        "manaCost": "30",
+        "cooldown": "16",
+        "damageType": "Melee",
+        "element": "Metal",
+        "buttonImageUrl": "http://i.imgur.com/amHEVxQ.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Symone-NightStalker.png"
+      },
+      {
+        "name": "Gun Combo",
+        "description": "Fast gun combo!",
+        "effect": "3 hits of 50% damage, amounting to 150% damage.",
+        "manaCost": "15",
+        "cooldown": "4",
+        "damageType": "Melee",
+        "element": "Metal",
+        "buttonImageUrl": "http://i.imgur.com/6TGO13p.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Symone-GunCombo1.0.png"
+      },
+      {
+        "name": "Shadow Venom",
+        "description": "Weakens enemy healing!",
+        "effect": "4 hits of 30% damage, amounting to 120% damage; applies 'Venom' (+30 Health Resist) to target for 5 turns inclusive. (Pop-up: 'Begone, fiend!')\n  • If 'Venom' was applied to  Valtrith, instead of +30 Health Resist, 'Venom' will apply +100 Health Resist.",
+        "manaCost": "12",
+        "cooldown": "4",
+        "damageType": "Melee",
+        "element": "Metal",
+        "buttonImageUrl": "http://i.imgur.com/8us5LYo.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Symone-ShadowVenom1.0.png"
+      },
+      {
+        "name": "Shared Will",
+        "description": "Prevent your ally from being stunned!",
+        "effect": "Applies 'Shared Will' (+25 Immobility Resist) to player for 4 turns. (Pop-up: 'What a horrible night to be immobilized!')",
+        "manaCost": "0",
+        "cooldown": "4",
+        "damageType": "N/A",
+        "element": "N/A"
+      }
+    ],
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "November 5th, 2013",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Symone.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21850713",
-    "notes": "• Skill was initially called 'Cleanse'.\nAppearance\nSword Combo\nStrong sword combo!\nRequirements: None\nEffect: 5 hits of 42% damage, amounting to 210% damage.\nMana Cost: 20\nCooldown: 11\nElement: Metal\nAttack Type: Melee\nAppearance 1 /  1.1\nAttack\nRequirements: None\nEffect: 3 hits of 40% damage, amounting to 120% damage.\nMana Cost: 0\nCooldown: 0\nElement: Metal\nAttack Type: Melee\nAppearance 1 /  1.1\nOther information\n• *Symone is only invited with 0 Pierce Avoidance from  Forest Hunt and  Storming the Castle.\n• A Dragon Amulet is required to invite Symone as a guest at  Serenity Before The Storm and  Dark Night.\n• Symone has a series of unconventional stats in the quest  Calamity; STR: 0, LUK: 0, Bonus: 50, Crit: 5.",
+    "notes": "• *Symone is only invited with 0 Pierce Avoidance from  Forest Hunt and  Storming the Castle. \n• A Dragon Amulet is required to invite Symone as a guest at  Serenity Before The Storm and  Dark Night. \n• Symone has a series of unconventional stats in the quest  Calamity; STR: 0, LUK: 0, Bonus: 50, Crit: 5.",
     "alsoSee": [],
     "tags": [
       "symone",
@@ -5692,15 +6868,41 @@
       "MET"
     ],
     "traits": [],
-    "level": "Unknown",
-    "damage": "Unknown",
-    "stats": "None",
+    "level": "Scaled",
+    "damage": "Scaled",
+    "stats": "See guestStats",
     "resists": "None",
-    "obtainMethods": [],
-    "attacks": [],
+    "obtainMethods": [
+      {
+        "location": "Finding the Red Brick Road",
+        "priceType": "free",
+        "requirements": "None"
+      }
+    ],
+    "attacks": [
+      {
+        "name": "Strike",
+        "effect": "Kicks a pumpkin at the enemy. The hit deals 100% damage and has +100 to crit.",
+        "manaCost": "10",
+        "cooldown": "15",
+        "damageType": "Melee",
+        "element": "Metal",
+        "buttonImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/ThomBoppic.png"
+      },
+      {
+        "name": "Attack!",
+        "effect": "Slices the enemy with his scythe. The hit deals 100% damage.",
+        "manaCost": "0",
+        "cooldown": "0",
+        "damageType": "Melee",
+        "element": "Metal",
+        "buttonImageUrl": "https://i.imgur.com/MWb3liE.png"
+      }
+    ],
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "December 20th, 2012",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/ThomGuestpic.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20957804",
     "alsoSee": [],
     "tags": [
@@ -5709,14 +6911,42 @@
       "scarecrow",
       "met"
     ],
-    "guestStats": {}
+    "guestStats": {
+      "level": "Scaled",
+      "damage": "Scaled",
+      "element": "Metal",
+      "hp": "As player, less END bonus",
+      "mp": "As player, less WIS bonus",
+      "characterStats": {
+        "str": "0",
+        "dex": "0",
+        "int": "0",
+        "cha": "0",
+        "luk": "0",
+        "end": "0",
+        "wis": "0"
+      },
+      "offense": {
+        "boost": "0%",
+        "bonus": "50",
+        "crit": "15"
+      },
+      "defense": {
+        "melee": "5",
+        "pierce": "0",
+        "magic": "5",
+        "block": "0",
+        "parry": "0",
+        "dodge": "0"
+      }
+    }
   },
   {
     "id": "guest-toil",
     "name": "Toil",
     "slug": "guest-toil",
     "type": "guest",
-    "description": "A guest companion in DragonFable.",
+    "description": "Human TART",
     "daRequired": false,
     "isSeasonal": true,
     "elements": [
@@ -5749,13 +6979,13 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "October 15th, 2010",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Toil%20pic.bmp",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18230148",
     "alsoSee": [],
     "tags": [
       "toil",
-      "guest",
-      "companion",
-      "dragonfable.",
+      "human",
+      "tart",
       "ice"
     ],
     "guestStats": {
@@ -5778,6 +7008,14 @@
         "boost": "0%",
         "bonus": "100",
         "crit": "15"
+      },
+      "defense": {
+        "melee": "5",
+        "pierce": "0",
+        "magic": "5",
+        "block": "0",
+        "parry": "0",
+        "dodge": "0"
       }
     }
   },
@@ -5786,7 +7024,7 @@
     "name": "Tomix (4)",
     "slug": "guest-tomix-4",
     "type": "guest",
-    "description": "A guest companion in DragonFable.",
+    "description": "Human Soul Weaver",
     "daRequired": false,
     "elements": [
       "EVI"
@@ -5799,22 +7037,34 @@
     "obtainMethods": [
       {
         "location": "Book of Lore -> Guests (-> Book 1&2) -> Tomix - Invite as First Guest/Second Guest (DA Required),  As the Cauldron Boils...,  Ravenloss (Books 1 and 2),  Dusk Alley,  Weaving Emporium,  Market District,  Silkwood Park,  Mystlyk Museum,  Dark Tower Penitentiary,  The Sewers,  Altar Hill,  At the Gate,  Ravenloss War",
-        "priceType": "free"
+        "priceType": "free",
+        "requirements": "Completion of  Dusk Alley (Book of Lore); None"
       }
     ],
-    "attacks": [],
+    "attacks": [
+      {
+        "name": "Circle of Retribution",
+        "description": "10 hits x 25% damage (250%) \n Available after a successful Purification Cross.",
+        "requirements": "Successful 'Purification Cross' where the last hit connects to unlock",
+        "effect": "10 hits of 15% damage, amounting to 150% damage.",
+        "manaCost": "50",
+        "cooldown": "6",
+        "damageType": "Melee",
+        "element": "Evil"
+      }
+    ],
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "February 26th, 2015",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=16803107",
-    "notes": "• Skill button was updated on  April 11th, 2025, replacing  its old appearance.",
+    "notes": "• The following changes were implemented on  April 11th, 2025: \n  • Tomix (1)'s tooltips were updated. \n  • 'Circle of Retribution' was increased from 10 hits of 15% damage (150%) to 10 hits of 25% damage (250%). \n  • Skill icons were updated.",
     "alsoSee": [],
     "tags": [
       "tomix",
       "(4)",
-      "guest",
-      "companion",
-      "dragonfable.",
+      "human",
+      "soul",
+      "weaver",
       "evi"
     ],
     "guestStats": {
@@ -5864,39 +7114,116 @@
     "name": "Tropy",
     "slug": "guest-tropy",
     "type": "guest",
-    "description": "A temporary guest companion.",
+    "description": "Reanimate Doom Soldier",
     "daRequired": false,
     "isTemp": true,
     "elements": [
       "DAR"
     ],
     "traits": [],
-    "level": "Unknown",
-    "damage": "Unknown",
-    "stats": "None",
+    "level": "Scaled",
+    "damage": "Scaled",
+    "stats": "See guestStats",
     "resists": "None",
-    "obtainMethods": [],
-    "attacks": [],
+    "obtainMethods": [
+      {
+        "location": "En Tropy",
+        "priceType": "free",
+        "requirements": "None"
+      }
+    ],
+    "attacks": [
+      {
+        "name": "End",
+        "description": "End.",
+        "effect": "Summon all attacks, including Normal Attack, Decompose and Crumble, dealing several hits of damage.",
+        "manaCost": "3",
+        "cooldown": "30",
+        "damageType": "Melee",
+        "element": "Darkness",
+        "buttonImageUrl": "http://i.imgur.com/Djhcju0.png"
+      },
+      {
+        "name": "Crumble",
+        "description": "Reduces Enemy's Damage.",
+        "effect": "Runs up and use jump kick, darkness surrounds the enemy, and absorbing its health for 9 hits of 100% damage which may cause -45 to Powerboost for 5 turns.",
+        "manaCost": "3",
+        "cooldown": "3",
+        "damageType": "Melee",
+        "element": "Darkness",
+        "buttonImageUrl": "http://i.imgur.com/2GhW1fB.png"
+      },
+      {
+        "name": "Decompose",
+        "description": "Powerful DOT.",
+        "effect": "Runs up to the enemy and summons a grey aura that swirls around, causing 1 hit of 100% damage to him. May cause a DOT effect.",
+        "manaCost": "3",
+        "cooldown": "3",
+        "damageType": "Melee",
+        "element": "Darkness",
+        "buttonImageUrl": "http://i.imgur.com/k6BxUuT.png",
+        "appearanceUrl": "http://i.imgur.com/xfRnUmn.png"
+      },
+      {
+        "name": "Attack",
+        "effect": "Runs up to the enemy and summons darkness around it for 2 hits of 100% damage.",
+        "manaCost": "0",
+        "cooldown": "0",
+        "damageType": "Melee",
+        "element": "Darkness",
+        "buttonImageUrl": "http://i.imgur.com/OjxfXex.png",
+        "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/TropyAttackpic.png"
+      }
+    ],
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "February 25th, 2011",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Tropypic.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18712530",
     "alsoSee": [],
     "tags": [
       "tropy",
-      "temporary",
-      "guest",
-      "companion.",
+      "reanimate",
+      "doom",
+      "soldier",
       "dar"
     ],
-    "guestStats": {}
+    "guestStats": {
+      "level": "Scaled",
+      "damage": "Scaled",
+      "element": "Darkness",
+      "hp": "As player, less END bonus",
+      "mp": "As player, less WIS bonus",
+      "characterStats": {
+        "str": "0",
+        "dex": "0",
+        "int": "0",
+        "cha": "0",
+        "luk": "0",
+        "end": "0",
+        "wis": "0"
+      },
+      "offense": {
+        "boost": "0%",
+        "bonus": "100",
+        "crit": "12"
+      },
+      "defense": {
+        "melee": "5",
+        "pierce": "0",
+        "magic": "5",
+        "block": "0",
+        "parry": "0",
+        "dodge": "0"
+      }
+    }
   },
   {
     "id": "guest-trouble",
     "name": "Trouble",
     "slug": "guest-trouble",
     "type": "guest",
-    "description": "A guest companion in DragonFable.",
+    "description": "Human TART",
     "daRequired": false,
     "isSeasonal": true,
     "elements": [
@@ -5929,13 +7256,13 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "October 15th, 2010",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Trouble%20pic.bmp",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18230109",
     "alsoSee": [],
     "tags": [
       "trouble",
-      "guest",
-      "companion",
-      "dragonfable.",
+      "human",
+      "tart",
       "fir"
     ],
     "guestStats": {
@@ -5958,6 +7285,14 @@
         "boost": "0%",
         "bonus": "100",
         "crit": "15"
+      },
+      "defense": {
+        "melee": "5",
+        "pierce": "0",
+        "magic": "5",
+        "block": "0",
+        "parry": "0",
+        "dodge": "0"
       }
     }
   },
@@ -5966,7 +7301,7 @@
     "name": "Uaanta Fayt",
     "slug": "guest-uaanta-fayt",
     "type": "guest",
-    "description": "A temporary guest companion.",
+    "description": "Human Swordcerer",
     "daRequired": true,
     "isTemp": true,
     "elements": [
@@ -5981,76 +7316,23 @@
       {
         "location": "Book of Lore -> Guests (-> Book 3) -> Uaanta - Invite as First Guest/Second Guest,",
         "priceType": "free",
-        "requirements": "None",
+        "requirements": "Dragon Amulet, Completion of  The Firmament (Book of Lore); Completion of  Uaanta's Dream (Reawakening)",
         "daRequired": true
       }
     ],
-    "attacks": [
-      {
-        "name": "Overwhelm",
-        "description": "Overwhelm and stun a foe.",
-        "effect": "2 hits of 160% damage, amounting to 320% damage, with 30 Bonus; applies 'Overwhelmed' to target, stunning it for 1 turn.",
-        "manaCost": "25",
-        "cooldown": "19",
-        "damageType": "Melee",
-        "element": "Wind",
-        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/UaantaFayt-Button01-Stun.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/UaantaFayt-Overwhelm.png"
-      },
-      {
-        "name": "Magic Fog",
-        "description": "Increase both your and your ally's Avd!",
-        "effect": "Applies 'Magic Fog' (+60 Melee/Pierce/Magic Avoidance) to both herself and the player for 4 turns inclusive.",
-        "manaCost": "15",
-        "cooldown": "11",
-        "damageType": "N/A",
-        "element": "N/A",
-        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/UaantaFayt-Button02-Fog.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/UaantaFayt-MagicFog.png"
-      },
-      {
-        "name": "Rush",
-        "description": "Smash your foe, limiting their healing. Only available after a successful Pierce.",
-        "effect": "1 hit of 150% Magic damage, followed by 1 hit of 175% Melee damage, amounting to 325% damage; applies 'Magic Residue' (+25 Health Resist) to target for 2 turns.",
-        "manaCost": "0",
-        "cooldown": "2",
-        "damageType": "Magic / Melee",
-        "element": "Wind",
-        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/UaantaFayt-Button03-Rush.png"
-      },
-      {
-        "name": "Double",
-        "description": "Double strike. Available after a successful attack.",
-        "effect": "1 hit of 175% Magic damage, followed by 1 hit of 175% Melee damage, amounting to 350% damage.",
-        "manaCost": "0",
-        "cooldown": "2",
-        "damageType": "Magic / Melee",
-        "element": "Wind",
-        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/UaantaFayt-Button04-Double.png"
-      },
-      {
-        "name": "Attack",
-        "effect": "1 hit of 150% damage, with 60 Bonus.",
-        "manaCost": "0",
-        "cooldown": "0",
-        "damageType": "Magic",
-        "element": "Wind",
-        "buttonImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/Attack.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/UaantaFayt-Attack.png"
-      }
-    ],
+    "attacks": [],
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "July 18th, 2018",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/UaantaFayt.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22333514",
     "notes": "• In  The Dreamers' Abyss, Uaanta's END stat is instead 100.",
     "alsoSee": [],
     "tags": [
       "uaanta",
       "fayt",
-      "temporary",
-      "guest",
-      "companion.",
+      "human",
+      "swordcerer",
       "win"
     ],
     "guestStats": {
@@ -6092,7 +7374,7 @@
     "name": "Valencia (2)",
     "slug": "guest-valencia-2",
     "type": "guest",
-    "description": "A guest companion in DragonFable.",
+    "description": "Human Rare Item Hunter",
     "daRequired": false,
     "elements": [
       "MET"
@@ -6105,7 +7387,8 @@
     "obtainMethods": [
       {
         "location": "Book of Lore -> Guests (-> Book 1&2) -> Valencia - Invite as First Guest/Second Guest (DA Required),  That A'Way! (Books 1 and 2) -> 2 Right ->  Valencia -> Talk -> Invite -> ...as Friend A / ...as Friend B,  Egg Recovery,  Surehunter Woes",
-        "priceType": "free"
+        "priceType": "free",
+        "requirements": "Completion of  The Sneevil Dumpsite (Book of Lore); None"
       }
     ],
     "attacks": [
@@ -6117,7 +7400,8 @@
         "cooldown": "2",
         "damageType": "Melee",
         "element": "Metal",
-        "buttonImageUrl": "https://i.imgur.com/id73pIM.png"
+        "buttonImageUrl": "https://i.imgur.com/id73pIM.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Valencia-DualStrike1.0.png"
       },
       {
         "name": "Sharpened Blade Toss",
@@ -6127,7 +7411,8 @@
         "cooldown": "4",
         "damageType": "Pierce",
         "element": "Metal",
-        "buttonImageUrl": "https://i.imgur.com/PEuHifz.png"
+        "buttonImageUrl": "https://i.imgur.com/PEuHifz.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Valencia-SharpenedBladeToss1.0.png"
       },
       {
         "name": "High Kick",
@@ -6153,15 +7438,17 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "February 26th, 2015",
+    "imageUrl": "https://i.imgur.com/05dNvw0.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=8534333",
-    "notes": "• Skill's name was previously called 'Resourceful Hunter' and had its own  skill button; this was replaced by 'Eye for Treasure' on  May 30th, 2025.",
+    "notes": "• Valencia (2)'s tooltips were updated on  April 11th, 2025.",
     "alsoSee": [],
     "tags": [
       "valencia",
       "(2)",
-      "guest",
-      "companion",
-      "dragonfable.",
+      "human",
+      "rare",
+      "item",
+      "hunter",
       "met"
     ],
     "guestStats": {
@@ -6211,7 +7498,7 @@
     "name": "Valentidus",
     "slug": "guest-valentidus",
     "type": "guest",
-    "description": "A temporary guest companion.",
+    "description": "Human Heart Seeker",
     "daRequired": false,
     "isTemp": true,
     "isSeasonal": true,
@@ -6261,7 +7548,8 @@
         "cooldown": "1",
         "damageType": "Pierce",
         "element": "Good",
-        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Valentidus-Button03-Spread.png"
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Valentidus-Button03-Spread.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Valentidus-SpreadtheLove1.0.png"
       },
       {
         "name": "Light of Love",
@@ -6271,7 +7559,8 @@
         "cooldown": "15",
         "damageType": "Pierce",
         "element": "Good",
-        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Valentidus-Button04-Light.png"
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Valentidus-Button04-Light.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Valentidus-LightofLove1.0.png"
       },
       {
         "name": "Heart Cracker",
@@ -6281,7 +7570,8 @@
         "cooldown": "2",
         "damageType": "Pierce",
         "element": "Good",
-        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Valentidus-Button05-Heart.png"
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Valentidus-Button05-Heart.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Valentidus-Heart1.0.png"
       },
       {
         "name": "Attack",
@@ -6291,7 +7581,8 @@
         "cooldown": "0",
         "damageType": "Pierce",
         "element": "Good",
-        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png"
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Valentidus-Attack1.0.png"
       }
     ],
     "rarity": "Unknown",
@@ -6302,9 +7593,9 @@
     "alsoSee": [],
     "tags": [
       "valentidus",
-      "temporary",
-      "guest",
-      "companion.",
+      "human",
+      "heart",
+      "seeker",
       "goo"
     ],
     "guestStats": {
@@ -6354,7 +7645,7 @@
     "name": "Vayle (2)",
     "slug": "guest-vayle-2",
     "type": "guest",
-    "description": "A temporary guest companion.",
+    "description": "Human Necromancer",
     "daRequired": true,
     "isTemp": true,
     "isSeasonal": true,
@@ -6370,23 +7661,33 @@
       {
         "location": "Book of Lore -> Guests (-> Book 1&2) -> Vayle - Invite as First Guest/Second Guest",
         "priceType": "free",
-        "requirements": "Dragon Amulet",
+        "requirements": "Dragon Amulet, Completion of  Memory-Demons",
         "daRequired": true
       }
     ],
-    "attacks": [],
+    "attacks": [
+      {
+        "name": "Dark Drain",
+        "description": "1 hit x 40% damage \n Self: Heal self for 5% of target's max HP. Recover 5% max MP.",
+        "effect": "Recovers 5% of Vayle's max MP; removes target's MP equal to 5% of Vayle's max MP; heals Vayle for 5% of target's max HP; 1 hit of 40% damage.",
+        "manaCost": "20",
+        "cooldown": "7",
+        "damageType": "Melee",
+        "element": "Darkness"
+      }
+    ],
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "February 26th, 2015",
+    "imageUrl": "http://i.imgur.com/5MooA4d.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=14060482",
-    "notes": "• The Vayle guest in  Frostval - Winged Darkness erroneously uses its old tooltip: Drain Health and Mana\nAppearance 1 /  1.1\nDark Command\n1 hit x 120% damage\nTarget: (On hit) Stun for 1 turn. | Target: (On hit) Stun for 2 turns.\nThis skill is more effective against Undead foes. | Effect increased due to targeted Undead!\nEffect: 1 hit of 120% damage; applies 'Command' to target, stunning it for 1 turn.\n• If target's race is 'Undead', 'Command' is instead applied for 2 turns.Mana Cost: 18\nCooldown: 8\nElement: Darkness\nAttack Type: Melee\nOther information\n• The Vayle guest in  Frostval - Winged Darkness erroneously uses its old tooltip: Command your foe to halt\nAppearance 1 /  1.1\nSummon Undead\n2 hits x 75% damage (150%)\nEffect: 2 hits of 75% damage, amounting to 150% damage.\nMana Cost: 15\nCooldown: 2\nElement: Darkness\nAttack Type: Melee\nOther information\n• The Vayle guest in  Frostval - Winged Darkness erroneously uses its old tooltip: Summon undead minions to attack.\nAppearance\nAttack\n1 hit x 115% damage\nHas a 10% chance for 2 hits x 115% damage (230%)\nRequirements: None\nEffect: 1 hit of 115% damage.\n• Attack has a 10% chance to perform 2 hits of 115% damage, amounting to 230% damage.Mana Cost: 0\nCooldown: 0\nElement: Darkness\nAttack Type: Melee\nOther information\n• The Vayle guest in  Frostval - Winged Darkness does not have a tooltip for this skill.\nAppearance 1 /  2\nOther information\n• Vayle (2) has a series of unconventional stats in the zone  Frostval - Winged Darkness; Damage Type: Magic, Melee: 5, Pierce: 0, Magic: 5, Block: 0, Parry: 0, Dodge: 0, Bonus: 100, Crit: 5.\n• Tooltips for this guest was updated on  April 11th, 2025.",
+    "notes": "• Vayle (2) has a series of unconventional stats in the zone  Frostval - Winged Darkness; Damage Type: Magic, Melee: 5, Pierce: 0, Magic: 5, Block: 0, Parry: 0, Dodge: 0, Bonus: 100, Crit: 5. \n• Tooltips for this guest was updated on  April 11th, 2025.",
     "alsoSee": [],
     "tags": [
       "vayle",
       "(2)",
-      "temporary",
-      "guest",
-      "companion.",
+      "human",
+      "necromancer",
       "dar"
     ],
     "guestStats": {
@@ -6444,29 +7745,74 @@
       "???"
     ],
     "traits": [],
-    "level": "Unknown",
-    "damage": "Unknown",
-    "stats": "None",
+    "level": "Scaled",
+    "damage": "Scaled",
+    "stats": "See guestStats",
     "resists": "None",
-    "obtainMethods": [],
-    "attacks": [],
+    "obtainMethods": [
+      {
+        "location": "Apsaydaaun,  The Foulest,  AbracaDabra",
+        "priceType": "free",
+        "requirements": "The Plaguenog"
+      }
+    ],
+    "attacks": [
+      {
+        "name": "Attack",
+        "effect": "Performs two hits of 100% damage, for 200% total damage.",
+        "manaCost": "0",
+        "cooldown": "0",
+        "damageType": "Melee",
+        "element": "???",
+        "buttonImageUrl": "http://i.imgur.com/MTcDrk1.png"
+      }
+    ],
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "October 14th, 2016",
+    "imageUrl": "http://i.imgur.com/kbS06mn.jpg",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22181367",
     "alsoSee": [],
     "tags": [
       "verlyrus",
       "???"
     ],
-    "guestStats": {}
+    "guestStats": {
+      "level": "Scaled",
+      "damage": "Scaled",
+      "element": "???",
+      "hp": "As player, less END bonus",
+      "mp": "As player, less WIS bonus",
+      "characterStats": {
+        "str": "0",
+        "dex": "0",
+        "int": "0",
+        "cha": "0",
+        "luk": "0",
+        "end": "0",
+        "wis": "0"
+      },
+      "offense": {
+        "boost": "0%",
+        "bonus": "25",
+        "crit": "10"
+      },
+      "defense": {
+        "melee": "5",
+        "pierce": "0",
+        "magic": "5",
+        "block": "0",
+        "parry": "0",
+        "dodge": "0"
+      }
+    }
   },
   {
     "id": "guest-vilmor-1",
     "name": "Vilmor (1)",
     "slug": "guest-vilmor-1",
     "type": "guest",
-    "description": "A temporary guest companion.",
+    "description": "Human Ice DragonLord",
     "daRequired": true,
     "isTemp": true,
     "elements": [
@@ -6481,23 +7827,56 @@
       {
         "location": "Book of Lore -> Guests (-> Book 1&2) -> Vilmor - Invite as First Guest/Second Guest",
         "priceType": "free",
-        "requirements": "Dragon Amulet",
+        "requirements": "Dragon Amulet, Completion of  Betrayal",
         "daRequired": true
       }
     ],
-    "attacks": [],
+    "attacks": [
+      {
+        "name": "Ice Lightning",
+        "description": "3 hits x 100% damage (300%)",
+        "effect": "3 hits of 100% damage, amounting to 300% damage.",
+        "manaCost": "20",
+        "cooldown": "4",
+        "damageType": "Melee",
+        "element": "Ice",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vilmor-Button01-Ice.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vilmor-IceLightning1.0.png"
+      },
+      {
+        "name": "Shard",
+        "description": "1 hit x 100% damage to all targets",
+        "effect": "1 hit of 100% damage to all foes.",
+        "manaCost": "0",
+        "cooldown": "1",
+        "damageType": "Melee",
+        "element": "Ice",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vilmor-Button02-Shard.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vilmor-Shard.png"
+      },
+      {
+        "name": "Attack",
+        "description": "3 hits x 50% damage (150%)",
+        "effect": "3 hits of 50% damage, amounting to 150% damage.",
+        "manaCost": "0",
+        "cooldown": "0",
+        "damageType": "Melee",
+        "element": "Ice",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vilmor-Attack1.0.png"
+      }
+    ],
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "September 24th, 2010",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18157682",
-    "notes": "• The following changes were implemented on  April 11th, 2025:\n  • Tooltips were updated for this guest.\n• 'Attack' was reduced from 3 hits of 100% damage (300%) to 3 hits of 50% damage (150%).\n• *In the quest  Betrayal, Vilmor gains 0 Pierce Avoidance instead of 5.",
+    "notes": "• The following changes were implemented on  April 11th, 2025: \n  • Tooltips were updated for this guest. \n  • 'Attack' was reduced from 3 hits of 100% damage (300%) to 3 hits of 50% damage (150%).\n• *In the quest  Betrayal, Vilmor gains 0 Pierce Avoidance instead of 5.",
     "alsoSee": [],
     "tags": [
       "vilmor",
       "(1)",
-      "temporary",
-      "guest",
-      "companion.",
+      "human",
+      "dragonlord",
       "ice"
     ],
     "guestStats": {
@@ -6547,7 +7926,7 @@
     "name": "Warlic (2)",
     "slug": "guest-warlic-2",
     "type": "guest",
-    "description": "A temporary guest companion.",
+    "description": "Human Mage",
     "daRequired": false,
     "isTemp": true,
     "elements": [
@@ -6566,19 +7945,53 @@
         "requirements": "None"
       }
     ],
-    "attacks": [],
+    "attacks": [
+      {
+        "name": "Zap",
+        "description": "1 hit x 150% Energy damage \n This attack has +200 crit.",
+        "effect": "1 hit of 150% damage, with +200 Crit.",
+        "manaCost": "15",
+        "cooldown": "9",
+        "damageType": "Magic",
+        "element": "Energy",
+        "buttonImageUrl": "http://i.imgur.com/wJqtgeB.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Warlic-Zap1.0.png"
+      },
+      {
+        "name": "Attack",
+        "description": "1 hit x 120% Energy damage",
+        "effect": "1 hit of 120% damage.",
+        "manaCost": "0",
+        "cooldown": "0",
+        "damageType": "Magic",
+        "element": "Energy",
+        "buttonImageUrl": "http://i.imgur.com/MTcDrk1.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Warlic-Attack.png"
+      },
+      {
+        "name": "Ice Strike",
+        "description": "1 hit x 140% Ice damage' \n Target: (On hit) Stun for 1 turn.",
+        "effect": "1 hit of 140% Ice damage; applies 'Deep Chill' to target, stunning it for 1 turn.",
+        "manaCost": "12",
+        "cooldown": "7",
+        "damageType": "Magic",
+        "element": "Ice",
+        "buttonImageUrl": "http://i.imgur.com/STZRQ1m.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Warlic-IceStrike.png"
+      }
+    ],
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "February 26th, 2015",
+    "imageUrl": "http://i.imgur.com/STZRQ1m.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=10700009",
-    "notes": "• Tooltips were updated on  March 20th, 2026.\n• Warlic (2) was previously attainable in the retired quest  Xan's Volcano Fortress.",
+    "notes": "• Tooltips were updated on  March 20th, 2026. \n• Warlic (2) was previously attainable in the retired quest  Xan's Volcano Fortress.",
     "alsoSee": [],
     "tags": [
       "warlic",
       "(2)",
-      "temporary",
-      "guest",
-      "companion.",
+      "human",
+      "mage",
       "ene",
       "ice"
     ],
@@ -6641,13 +8054,18 @@
     "damage": "As character",
     "stats": "None",
     "resists": "None",
-    "obtainMethods": [],
+    "obtainMethods": [
+      {
+        "location": "Battleon Burns!",
+        "priceType": "free"
+      }
+    ],
     "attacks": [],
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "August 14th, 2009",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=16496504",
-    "notes": "• This guest is linked to a real player's character ID, and as such all variables are subject to change, such as in an  Aeris Minor Tournament.\n• Current class and equipment can be previewed on this guest's character page:  Xor Vrailin II",
+    "notes": "• This guest is linked to a real player's character ID, and as such all variables are subject to change, such as in an  Aeris Minor Tournament. \n• Current class and equipment can be previewed on this guest's character page:  Xor Vrailin II",
     "alsoSee": [],
     "tags": [
       "xor",
@@ -6705,7 +8123,8 @@
         "cooldown": "14",
         "damageType": "Magic",
         "element": "???",
-        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Yashta-Button02-Stun.png"
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Yashta-Button02-Stun.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Yashta-StunningLeap1.0.png"
       },
       {
         "name": "Resilient Flex",
@@ -6738,7 +8157,8 @@
         "cooldown": "1",
         "damageType": "Magic",
         "element": "???",
-        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Yashta-Button04-Punch.png"
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Yashta-Button04-Punch.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Yashta-Attack.png"
       },
       {
         "name": "Focused Combo",
@@ -6812,7 +8232,7 @@
     "name": "Zhoom (1)",
     "slug": "guest-zhoom-1",
     "type": "guest",
-    "description": "A guest companion in DragonFable.",
+    "description": "Human Ranger",
     "daRequired": false,
     "elements": [
       "ENE",
@@ -6831,19 +8251,86 @@
         "requirements": "None"
       }
     ],
-    "attacks": [],
+    "attacks": [
+      {
+        "name": "Read The Wind",
+        "description": "Protect yourself!",
+        "effect": "Applies 'Wind Read' (+200 Block/Parry/Dodge Defense) to himself for 2 turns.",
+        "manaCost": "13",
+        "cooldown": "10",
+        "damageType": "N/A",
+        "element": "N/A",
+        "buttonImageUrl": "http://i.imgur.com/twNnqGp.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Zhoom-ReadtheWind.png"
+      },
+      {
+        "name": "Bomb Arrow",
+        "description": "Stunning Explosive Shot",
+        "effect": "1 hit of 120% damage; applies 'BOOM Bomb Shot' to target, stunning it for 1 turn.",
+        "manaCost": "20",
+        "cooldown": "2",
+        "damageType": "Pierce",
+        "element": "Fire",
+        "buttonImageUrl": "http://i.imgur.com/UfgOeFX.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Zhoom-BombArrow1.0.png"
+      },
+      {
+        "name": "Fire Arrow",
+        "description": "Launch a Burning Arrow!",
+        "effect": "1 hit of 130% Pierce damage; applies 'Burning Arrow', a 50% Melee Fire DoT effect, to target for 3 turns.",
+        "manaCost": "18",
+        "cooldown": "2",
+        "damageType": "Pierce",
+        "element": "Fire",
+        "buttonImageUrl": "http://i.imgur.com/oMdG2GX.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Zhoom-FireArrow1.0.png"
+      },
+      {
+        "name": "Double Arrow",
+        "description": "Twin Shots!",
+        "requirements": "Successful attack where the last hit connects",
+        "effect": "2 hits of 90% damage, amounting to 180% damage.",
+        "manaCost": "15",
+        "cooldown": "5",
+        "damageType": "Pierce",
+        "element": "Metal",
+        "buttonImageUrl": "http://i.imgur.com/JcCXfyc.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Zhoom-DoubleArrow.png"
+      },
+      {
+        "name": "Summon Zixcy",
+        "description": "Summon Your Companion",
+        "effect": "1 hit of 150% damage.",
+        "manaCost": "12",
+        "cooldown": "7",
+        "damageType": "Pierce",
+        "element": "Energy",
+        "buttonImageUrl": "http://i.imgur.com/HUMmFKm.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Zhoom-SummonZixcy.png"
+      },
+      {
+        "name": "Attack",
+        "effect": "1 hit of 110% damage.",
+        "manaCost": "0",
+        "cooldown": "0",
+        "damageType": "Pierce",
+        "element": "Metal",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Zhoom-Attack1.0.png"
+      }
+    ],
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "January 6th, 2017",
+    "imageUrl": "http://i.imgur.com/HUMmFKm.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=13156284",
     "notes": "• This is the original version of the guest; intended to be completely replaced by a new version, it remains in-game erroneously.",
     "alsoSee": [],
     "tags": [
       "zhoom",
       "(1)",
-      "guest",
-      "companion",
-      "dragonfable.",
+      "human",
+      "ranger",
       "ene",
       "fir",
       "met"

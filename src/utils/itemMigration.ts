@@ -48,7 +48,7 @@ export function petToItemFamily(pet: Pet): ItemFamily {
   const obtainVariants: ObtainVariant[] = pet.obtainMethods.map(method => ({
     location: method.location,
     locationUrl: undefined, // Not present in current Pet schema
-    price: method.price,
+    price: method.price ?? 'N/A',
     priceType: method.priceType, // Already computed in Pet
     sellback: method.sellback,
     daRequired: pet.daRequired, // Pet-level flag applies to all obtain methods

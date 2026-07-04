@@ -207,6 +207,47 @@ interface PetStub {
   letter: string  // '#', 'A', 'B', etc.
 }
 
+function getDisplayName(item: Pet | ItemFamily): string {
+  return 'familyName' in item ? item.familyName : item.name
+}
+
+function normalizeDuplicateVariantName(name: string): string {
+  return name
+    .replace(/\s+\((All Versions|[IVX]+-[IVX]+)\)$/i, '')
+    .trim()
+}
+
+function dedupeVariantEntries(items: Array<Pet | ItemFamily>): Array<Pet | ItemFamily> {
+  const canonicalByNormalized = new Map<string, Pet | ItemFamily>()
+
+  for (const item of items) {
+    const displayName = getDisplayName(item)
+    const normalizedName = normalizeDuplicateVariantName(displayName)
+    const existing = canonicalByNormalized.get(normalizedName)
+
+    if (!existing) {
+      canonicalByNormalized.set(normalizedName, item)
+      continue
+    }
+
+    const existingName = getDisplayName(existing)
+    const currentScore =
+      (displayName === normalizedName ? 4 : 0) +
+      ('familyName' in item ? 2 : 0) +
+      ('imageUrl' in item && item.imageUrl ? 1 : 0)
+    const existingScore =
+      (existingName === normalizedName ? 4 : 0) +
+      ('familyName' in existing ? 2 : 0) +
+      ('imageUrl' in existing && existing.imageUrl ? 1 : 0)
+
+    if (currentScore > existingScore) {
+      canonicalByNormalized.set(normalizedName, item)
+    }
+  }
+
+  return Array.from(canonicalByNormalized.values())
+}
+
 function parseAZPage(html: string, chronoTypes: Map<string, EntryType>): PetStub[] {
   const stubs: PetStub[] = []
   const seen = new Set<string>()
@@ -452,9 +493,16 @@ function extractImages(html: string): { main?: string; alternatives: Array<{ url
   const shouldSkip = (url: string) => skipPatterns.some(p => p.test(url))
   
   // Separate lists for different sources
-  const dfPediaImages: string[] = []
-  const imgurImages: string[] = []
-  const otherImages: string[] = []
+  const dfPediaImages: Array<{ url: string; caption?: string }> = []
+  const imgurImages: Array<{ url: string; caption?: string }> = []
+  const otherImages: Array<{ url: string; caption?: string }> = []
+  const seenUrls = new Set<string>()
+
+  const pushImage = (bucket: Array<{ url: string; caption?: string }>, url: string, caption?: string) => {
+    if (seenUrls.has(url)) return
+    seenUrls.add(url)
+    bucket.push({ url, caption })
+  }
   
   // Extract from <img> tags
   const imgRegex = /<img[^>]+src=["']([^"']+)["'][^>]*>/gi
@@ -465,31 +513,32 @@ function extractImages(html: string): { main?: string; alternatives: Array<{ url
     if (shouldSkip(src)) continue
     
     if (src.includes('github.com/DF-Pedia') || src.includes('githubusercontent.com') && src.includes('DF-Pedia')) {
-      if (!dfPediaImages.includes(src)) dfPediaImages.push(src)
+      pushImage(dfPediaImages, src)
     } else if (src.includes('imgur.com') || src.includes('i.imgur.com')) {
-      if (!imgurImages.includes(src)) imgurImages.push(src)
+      pushImage(imgurImages, src)
     } else if (src.includes('media.artix.com/encyc') || 
                src.includes('battleon.com/encyc') ||
                (src.includes('/f/upfiles/') && src.length > 60)) {
-      if (!otherImages.includes(src)) otherImages.push(src)
+      pushImage(otherImages, src)
     }
   }
   
-  // Extract from <a href> tags (for "Alternative Image" links)
-  const linkRegex = /<a[^>]+href=["']([^"']+\.(?:jpg|jpeg|png|gif))["'][^>]*>/gi
+  // Extract from <a href> tags (for "Alternative Image" / "... Appearance" links)
+  const linkRegex = /<a[^>]+href=["']([^"']+\.(?:jpg|jpeg|png|gif))["'][^>]*>([^<]*)<\/a>/gi
   let linkMatch: RegExpExecArray | null
   while ((linkMatch = linkRegex.exec(html)) !== null) {
     const url = linkMatch[1]
+    const caption = stripHtml(decodeHTML(linkMatch[2] ?? '')).trim() || undefined
     if (shouldSkip(url)) continue
     
     if (url.includes('github.com/DF-Pedia') || url.includes('githubusercontent.com') && url.includes('DF-Pedia')) {
-      if (!dfPediaImages.includes(url)) dfPediaImages.push(url)
+      pushImage(dfPediaImages, url, caption)
     } else if (url.includes('imgur.com') || url.includes('i.imgur.com')) {
-      if (!imgurImages.includes(url)) imgurImages.push(url)
+      pushImage(imgurImages, url, caption)
     } else if (url.includes('media.artix.com/encyc') || 
                url.includes('battleon.com/encyc') ||
                (url.includes('/f/upfiles/') && url.length > 60)) {
-      if (!otherImages.includes(url)) otherImages.push(url)
+      pushImage(otherImages, url, caption)
     }
   }
   
@@ -501,13 +550,13 @@ function extractImages(html: string): { main?: string; alternatives: Array<{ url
     if (shouldSkip(url)) continue
     
     if (url.includes('github.com/DF-Pedia') || url.includes('githubusercontent.com') && url.includes('DF-Pedia')) {
-      if (!dfPediaImages.includes(url)) dfPediaImages.push(url)
+      pushImage(dfPediaImages, url)
     } else if (url.includes('imgur.com') || url.includes('i.imgur.com')) {
-      if (!imgurImages.includes(url)) imgurImages.push(url)
+      pushImage(imgurImages, url)
     } else if (url.includes('media.artix.com/encyc') || 
                url.includes('battleon.com/encyc') ||
                (url.includes('/f/upfiles/') && url.length > 60)) {
-      if (!otherImages.includes(url)) otherImages.push(url)
+      pushImage(otherImages, url)
     }
   }
   
@@ -517,46 +566,46 @@ function extractImages(html: string): { main?: string; alternatives: Array<{ url
   
   if (dfPediaImages.length > 0) {
     // DF-Pedia is main, everything else is alternative
-    main = dfPediaImages[0]
+    main = dfPediaImages[0].url
     
     // Additional DF-Pedia images are alternatives too (but shouldn't happen since we filter attacks)
     for (let i = 1; i < dfPediaImages.length; i++) {
-      alternatives.push({ url: dfPediaImages[i], caption: 'Alternative Image' })
+      alternatives.push({ url: dfPediaImages[i].url, caption: dfPediaImages[i].caption || 'Alternative Image' })
     }
     
     // All imgur images are alternatives
-    for (const url of imgurImages) {
-      const imgPos = html.indexOf(url)
-      const caption = findCaptionNear(html, imgPos)
-      alternatives.push({ url, caption })
+    for (const image of imgurImages) {
+      const imgPos = html.indexOf(image.url)
+      const caption = image.caption || findCaptionNear(html, imgPos)
+      alternatives.push({ url: image.url, caption })
     }
     
     // Other images are alternatives
-    for (const url of otherImages) {
-      const imgPos = html.indexOf(url)
-      const caption = findCaptionNear(html, imgPos)
-      alternatives.push({ url, caption })
+    for (const image of otherImages) {
+      const imgPos = html.indexOf(image.url)
+      const caption = image.caption || findCaptionNear(html, imgPos)
+      alternatives.push({ url: image.url, caption })
     }
   } else if (imgurImages.length > 0) {
     // No DF-Pedia, use imgur as fallback main
-    main = imgurImages[0]
+    main = imgurImages[0].url
     
     // Rest of imgur are alternatives
     for (let i = 1; i < imgurImages.length; i++) {
-      alternatives.push({ url: imgurImages[i], caption: 'Alternative Image' })
+      alternatives.push({ url: imgurImages[i].url, caption: imgurImages[i].caption || 'Alternative Image' })
     }
     
     // Other images are alternatives
-    for (const url of otherImages) {
-      const imgPos = html.indexOf(url)
-      const caption = findCaptionNear(html, imgPos)
-      alternatives.push({ url, caption })
+    for (const image of otherImages) {
+      const imgPos = html.indexOf(image.url)
+      const caption = image.caption || findCaptionNear(html, imgPos)
+      alternatives.push({ url: image.url, caption })
     }
   } else if (otherImages.length > 0) {
     // Last resort: use other images
-    main = otherImages[0]
+    main = otherImages[0].url
     for (let i = 1; i < otherImages.length; i++) {
-      alternatives.push({ url: otherImages[i], caption: 'Alternative Image' })
+      alternatives.push({ url: otherImages[i].url, caption: otherImages[i].caption || 'Alternative Image' })
     }
   }
   
@@ -1785,7 +1834,7 @@ async function main() {
   // ── Step 5: Write final output ─────────────────────────────────────────────
 
   // Always write ALL pets from progress map (full dataset)
-  const finalPets = Array.from(progressMap.values())
+  const finalPets = dedupeVariantEntries(Array.from(progressMap.values()))
     .sort((a, b) => {
       const aName: string = 'familyName' in a ? a.familyName : a.name
       const bName: string = 'familyName' in b ? b.familyName : b.name

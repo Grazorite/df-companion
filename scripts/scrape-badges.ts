@@ -29,6 +29,7 @@ const FORUM_BASE = 'https://forums2.battleon.com/f'
 const AZ_PAGE_URL = `${FORUM_BASE}/tm.asp?m=22304590&mpage=1&key=`
 const DELAY_MS = 800
 const OUTPUT_PATH = path.resolve(import.meta.dirname, '../src/data/badges.json')
+const BADGE_SUBCATEGORY_FALLBACK_PATH = path.resolve(import.meta.dirname, '../src/data/backup/badges.json')
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -53,6 +54,12 @@ interface BadgeData extends BadgeStub {
   forumImageUrl?: string  // image URL extracted from forum post (imgur, upfiles, etc.)
   tags: string[]
   notes?: string
+}
+
+interface BadgeSubcategoryFallback {
+  subcategory?: string
+  category?: string
+  retired?: boolean
 }
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
@@ -116,6 +123,32 @@ function loadCookie(): string {
   return match[1]
 }
 
+function loadBadgeSubcategoryFallbacks(): Map<string, BadgeSubcategoryFallback> {
+  if (!fs.existsSync(BADGE_SUBCATEGORY_FALLBACK_PATH)) {
+    return new Map()
+  }
+
+  const data = JSON.parse(fs.readFileSync(BADGE_SUBCATEGORY_FALLBACK_PATH, 'utf-8')) as Array<{
+    name?: string
+    subcategory?: string
+    category?: string
+    retired?: boolean
+  }>
+
+  return new Map(
+    data
+      .filter((badge) => typeof badge.name === 'string')
+      .map((badge) => [
+        badge.name!.toLowerCase(),
+        {
+          subcategory: badge.subcategory,
+          category: badge.category,
+          retired: badge.retired,
+        },
+      ])
+  )
+}
+
 // ─── Step 1: Parse A-Z master page ───────────────────────────────────────────
 
 function mapForumCategory(raw: string): string {
@@ -138,7 +171,18 @@ function mapSubcategoryToSeasonal(subcategory: string): boolean {
     s.includes('holiday') || s.includes('hero\'s heart')
 }
 
-function parseAZPage(html: string): BadgeStub[] {
+function isLikelyBadgeImage(src: string): boolean {
+  return (
+    src.includes('imgur.com') ||
+    src.includes('i.imgur.com') ||
+    src.includes('DF-Pedia') ||
+    src.includes('battleon.com/encyc') ||
+    src.includes('artix.com/encyc') ||
+    (src.includes('/f/upfiles/') && src.length > 60)
+  )
+}
+
+function parseAZPage(html: string, fallbackMap: Map<string, BadgeSubcategoryFallback>): BadgeStub[] {
   const stubs: BadgeStub[] = []
   const seen = new Set<string>()
 
@@ -174,14 +218,24 @@ function parseAZPage(html: string): BadgeStub[] {
     if (seen.has(msgId)) continue // dedup — first occurrence wins (alphabetical section)
     seen.add(msgId)
 
+    // Detect "(Retired)" in the parenthetical text after the link
+    // e.g.: <a href="...">Asander's Freedom</a> (Retired)
+    // or:   <a href="...">Party On, Olaf!</a> (D-Amulet/Retired)
+    const afterLink = chunk.slice(chunk.indexOf(linkMatch[0]) + linkMatch[0].length)
+    const parenMatch = afterLink.match(/^\s*\(([^)]+)\)/)
+    const parenText = parenMatch ? parenMatch[1] : ''
+    const isRetiredFromParen = /Retired/i.test(parenText)
+
+    const fallback = fallbackMap.get(name.toLowerCase())
+
     stubs.push({
       name,
       slug: slugify(name),
       messageId: msgId,
       forumUrl: `${FORUM_BASE}/tm.asp?m=${msgId}`,
-      category: 'misc',
-      subcategory: 'General',
-      retired: inRetired,
+      category: fallback?.category ?? 'misc',
+      subcategory: fallback?.subcategory ?? 'General',
+      retired: inRetired || isRetiredFromParen || fallback?.retired === true,
       unreleased: inUnreleased,
     })
   }
@@ -220,6 +274,9 @@ async function fetchBadgeDetails(
       dcRequired = true
     }
 
+    // Detect retired status from image tag
+    const retiredFromTag = /<img[^>]+src=["'][^"']*\/tags\/Retired\.png["']/i.test(rawBody)
+
     for (const line of lines) {
       if (line === stub.name || line === `The ${stub.name}`) continue
 
@@ -233,7 +290,9 @@ async function fetchBadgeDetails(
 
       if (/^Category:/i.test(line)) {
         const rawCat = line.replace(/^Category:\s*/i, '').trim()
-        subcategory = rawCat
+        if (!/badge/i.test(rawCat)) {
+          subcategory = rawCat
+        }
         category = mapForumCategory(rawCat)
         continue
       }
@@ -255,7 +314,8 @@ async function fetchBadgeDetails(
     // Forum posts may have images from imgur, battleon upfiles, or DF-Pedia GitHub
     // Skip UI/avatar images (board icons, user avatars, tag banners, tracker pixels)
     let forumImageUrl: string | undefined
-    const imgRegex = /<img[^>]+src=["']([^"']+)["'][^>]*>/gi
+    const candidateImages: string[] = []
+    const imgRegex = /<img[^>]+src="([^"]+)"[^>]*>/gi
     let imgMatch: RegExpExecArray | null
     while ((imgMatch = imgRegex.exec(rawBody)) !== null) {
       const src = imgMatch[1]
@@ -271,24 +331,19 @@ async function fetchBadgeDetails(
       ) continue
 
       // Accept badge images from known sources
-      if (
-        src.includes('imgur.com') ||
-        src.includes('i.imgur.com') ||
-        src.includes('DF-Pedia') ||
-        src.includes('DF-Pedia'.toLowerCase()) ||
-        src.includes('battleon.com/encyc') ||
-        src.includes('artix.com/encyc') ||
-        (src.includes('/f/upfiles/') && src.length > 60)  // longer upfile URLs are actual badge images
-      ) {
-        forumImageUrl = src
-        break
+      if (isLikelyBadgeImage(src)) {
+        candidateImages.push(src)
       }
     }
+
+    // In printable posts the badge art is usually the last real image in the post.
+    forumImageUrl = candidateImages.at(-1)
 
     return {
       description: description || `Badge: ${stub.name}`,
       daRequired,
       dcRequired,
+      retired: retiredFromTag || undefined,
       requirements,
       category,
       subcategory,
@@ -340,12 +395,13 @@ async function main() {
   console.log('─'.repeat(50))
 
   const cookie = loadCookie()
+  const fallbackMap = loadBadgeSubcategoryFallbacks()
   console.log('✅ Cookie loaded\n')
 
   // Step 1: Parse A-Z master page
   console.log('📄 Fetching A-Z Badges master page...')
   const azHtml = await fetchPage(AZ_PAGE_URL, cookie)
-  const stubs = parseAZPage(azHtml)
+  const stubs = parseAZPage(azHtml, fallbackMap)
   console.log(`✅ Found ${stubs.length} badges in A-Z page\n`)
 
   if (stubs.length === 0) {
@@ -370,6 +426,8 @@ async function main() {
 
     const badge: BadgeData = {
       ...stub,
+      // Override retired if detected from individual page tag
+      retired: stub.retired || details.retired || false,
       id: stub.slug,
       description: details.description ?? `Badge: ${stub.name}`,
       requirements: details.requirements ?? '',

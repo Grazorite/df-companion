@@ -119,7 +119,10 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
     allImages.push({ url: displayData.imageUrl, caption: 'Main Image' })
   }
   if (displayData.alternativeImages) {
-    allImages.push(...displayData.alternativeImages)
+    allImages.push(...displayData.alternativeImages.map(image => ({
+      url: image.url,
+      caption: image.caption || 'Alternative Image',
+    })))
   }
   
   // Currently displayed image
@@ -189,6 +192,11 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
       {currentImage ? (
         <div className="mb-6">
           <PetImage src={currentImage.url} name={pet.name} />
+          {currentImage.caption !== 'Main Image' && (
+            <p className="max-w-xs mx-auto mt-2 text-center text-xs text-text-secondary">
+              {currentImage.caption}
+            </p>
+          )}
           {/* Image toggle - only show if multiple images exist */}
           {allImages.length > 1 && (
             <div className="max-w-xs mx-auto mt-2">
@@ -376,7 +384,7 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
             {pet.obtainMethods.map((method, i) => {
               const obtainVariant = {
                 location: method.location,
-                price: method.price,
+                price: method.price ?? 'N/A',
                 priceType: method.priceType,
                 sellback: method.sellback,
                 // Use ONLY per-method flags - do NOT fall back to pet-level flags
