@@ -33,6 +33,21 @@ export default function ObtainVariantCard({ variant, label, isGuest = false }: O
   
   const showPriceFields = !isGuest
   const showRequirements = Boolean(variant.requirements && variant.requirements.toLowerCase() !== 'none')
+  const getCurrencyTextClass = (text?: string, fallback?: 'dc' | 'dm') => {
+    const normalized = text?.toLowerCase() ?? ''
+    if (fallback === 'dc' || normalized.includes('dragon coin') || /\bdc\b/.test(normalized)) {
+      return 'text-gold'
+    }
+    if (
+      fallback === 'dm' ||
+      normalized.includes("defender's medal") ||
+      normalized.includes('defender medal') ||
+      /\bdm\b/.test(normalized)
+    ) {
+      return 'text-slate-300'
+    }
+    return 'text-text-primary'
+  }
   
   return (
     <div className="bg-bg-surface border-l-4 border-gold rounded-lg p-5 space-y-3">
@@ -83,11 +98,10 @@ export default function ObtainVariantCard({ variant, label, isGuest = false }: O
               <div>
                 <p className="text-xs text-text-muted mb-1">Requires</p>
                 <p
-                  className={`text-sm ${
-                    variant.dmRequired
-                      ? 'text-slate-300'  // Silver for DM items
-                      : 'text-text-primary'
-                  }`}
+                  className={`text-sm ${getCurrencyTextClass(
+                    variant.requiredItems,
+                    variant.dmRequired ? 'dm' : variant.dcRequired ? 'dc' : undefined
+                  )}`}
                 >
                   {normalizeDisplayText(variant.requiredItems)}
                 </p>
@@ -102,13 +116,10 @@ export default function ObtainVariantCard({ variant, label, isGuest = false }: O
               <div>
                 <p className="text-xs text-text-muted mb-1">Price</p>
                 <p
-                  className={`text-sm ${
-                    variant.priceType === 'dc'
-                      ? 'text-gold'  // Amber for DC sellback
-                      : variant.priceType === 'dm'
-                        ? 'text-slate-300'  // Silver for DM sellback
-                        : 'text-text-primary'
-                  }`}
+                  className={`text-sm ${getCurrencyTextClass(
+                    variant.price,
+                    variant.priceType === 'dc' ? 'dc' : variant.priceType === 'dm' ? 'dm' : undefined
+                  )}`}
                 >
                   {normalizeDisplayText(variant.price)}
                 </p>
@@ -119,13 +130,10 @@ export default function ObtainVariantCard({ variant, label, isGuest = false }: O
                 <div>
                   <p className="text-xs text-text-muted mb-1">Sellback</p>
                   <p
-                    className={`text-sm ${
-                      variant.priceType === 'dc'
-                        ? 'text-gold'
-                        : variant.priceType === 'dm'
-                          ? 'text-slate-300'
-                          : 'text-text-primary'
-                    }`}
+                    className={`text-sm ${getCurrencyTextClass(
+                      variant.sellback,
+                      variant.priceType === 'dc' ? 'dc' : variant.priceType === 'dm' ? 'dm' : undefined
+                    )}`}
                   >
                     {normalizeDisplayText(variant.sellback)}
                   </p>

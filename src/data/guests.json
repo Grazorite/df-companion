@@ -5573,9 +5573,14 @@
     "resists": "None",
     "obtainMethods": [
       {
-        "location": "The Quest for More Booty! - Choose a Side /  The Quest for More Booty! - Rhubarb -> Continue -> Invite Rhubarb",
+        "location": "The Quest for More Booty! - Choose a Side / The Quest for More Booty! - Rhubarb -> Continue -> Invite Rhubarb",
         "priceType": "free",
-        "requirements": "Dragon Amulet",
+        "daRequired": true
+      },
+      {
+        "location": "Book of Lore -> Guests (-> Book 3) -> Rhubarb - Invite as First Guest/Second Guest (DA Required), Friday the 13th Invasion - Black Winter -> To the War! -> To Battle! -> Invite Guests -> Invite Rhubarb as first guest",
+        "priceType": "free",
+        "requirements": "Completion of Hydra Boss (Books 3 and 4) (Book of Lore)",
         "daRequired": true
       }
     ],

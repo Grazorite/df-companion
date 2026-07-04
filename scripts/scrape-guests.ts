@@ -958,6 +958,14 @@ function parseObtainMethods(html: string, guestName: string): ObtainMethod[] {
   
   const obtainMethods: ObtainMethod[] = []
 
+  const normalizeRequirements = (requirements?: string): string | undefined => {
+    if (!requirements) return undefined
+    const normalized = requirements.trim().replace(/\s*;\s*None\s*$/i, '')
+    if (!normalized || /^none$/i.test(normalized)) return undefined
+    if (/^dragon amulet$/i.test(normalized)) return undefined
+    return normalized
+  }
+
   const firstFieldIndex = [
     /(?:<b>)?Level:(?:<\/b>)?/i,
     /<u>Stats<\/u>/i,
@@ -1073,7 +1081,8 @@ function parseObtainMethods(html: string, guestName: string): ObtainMethod[] {
         priceType,
       }
 
-      if (block.requirements) method.requirements = block.requirements
+      const normalizedRequirements = normalizeRequirements(block.requirements)
+      if (normalizedRequirements) method.requirements = normalizedRequirements
       if (block.price) method.price = block.price
       if (block.sellback) method.sellback = block.sellback
       if (block.requiredItems) method.requiredItems = block.requiredItems
@@ -1085,7 +1094,7 @@ function parseObtainMethods(html: string, guestName: string): ObtainMethod[] {
 
       if (DEBUG) {
         console.log(`  Location: ${location}`)
-        if (block.requirements) console.log(`  Requirements: ${block.requirements}`)
+        if (normalizedRequirements) console.log(`  Requirements: ${normalizedRequirements}`)
         if (block.price) console.log(`  Price: ${block.price} (${priceType})`)
         if (block.sellback) console.log(`  Sellback: ${block.sellback}`)
         if (block.requiredItems) console.log(`  Required Items: ${block.requiredItems}`)
@@ -1119,7 +1128,9 @@ function parseObtainMethods(html: string, guestName: string): ObtainMethod[] {
 
       if (/^(Requirements|Level\/Quest\/Items to unlock):/i.test(line)) {
         if (!current) current = {}
-        current.requirements = line.replace(/^(Requirements|Level\/Quest\/Items to unlock):\s*/i, '').trim()
+        current.requirements = normalizeRequirements(
+          line.replace(/^(Requirements|Level\/Quest\/Items to unlock):\s*/i, '').trim()
+        )
       }
     }
 

@@ -9,6 +9,21 @@ interface ObtainCardProps {
 export default function ObtainCard({ method, index }: ObtainCardProps) {
   const isDC = method.priceType === 'dc'
   const isDM = method.priceType === 'dm'
+  const getCurrencyTextClass = (text?: string, fallback?: 'dc' | 'dm') => {
+    const normalized = text?.toLowerCase() ?? ''
+    if (fallback === 'dc' || normalized.includes('dragon coin') || /\bdc\b/.test(normalized)) {
+      return 'text-amber-300'
+    }
+    if (
+      fallback === 'dm' ||
+      normalized.includes("defender's medal") ||
+      normalized.includes('defender medal') ||
+      /\bdm\b/.test(normalized)
+    ) {
+      return 'text-slate-300'
+    }
+    return 'text-text-primary'
+  }
 
   return (
     <div className="bg-bg-surface border border-border-default rounded-lg p-4">
@@ -28,7 +43,7 @@ export default function ObtainCard({ method, index }: ObtainCardProps) {
         {/* Price */}
         <div className="flex gap-2">
           <span className="text-text-muted text-xs w-20 flex-shrink-0">Price</span>
-          <span className={`text-sm ${isDC ? 'text-amber-300' : isDM ? 'text-slate-300' : 'text-text-primary'}`}>
+          <span className={`text-sm ${getCurrencyTextClass(method.price, isDC ? 'dc' : isDM ? 'dm' : undefined)}`}>
             {normalizeDisplayText(method.price)}
           </span>
         </div>
@@ -37,14 +52,18 @@ export default function ObtainCard({ method, index }: ObtainCardProps) {
         {method.requiredItems && (
           <div className="flex gap-2">
             <span className="text-text-muted text-xs w-20 flex-shrink-0 pt-0.5">Requires</span>
-            <span className="text-text-primary text-sm leading-snug">{normalizeDisplayText(method.requiredItems)}</span>
+            <span className={`text-sm leading-snug ${getCurrencyTextClass(method.requiredItems, isDM ? 'dm' : isDC ? 'dc' : undefined)}`}>
+              {normalizeDisplayText(method.requiredItems)}
+            </span>
           </div>
         )}
 
         {/* Sellback */}
         <div className="flex gap-2">
           <span className="text-text-muted text-xs w-20 flex-shrink-0">Sellback</span>
-          <span className="text-text-secondary text-sm">{normalizeDisplayText(method.sellback)}</span>
+          <span className={`text-sm ${getCurrencyTextClass(method.sellback, isDC ? 'dc' : isDM ? 'dm' : undefined)}`}>
+            {normalizeDisplayText(method.sellback)}
+          </span>
         </div>
       </div>
     </div>
