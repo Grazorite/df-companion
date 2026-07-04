@@ -545,7 +545,7 @@ function parseGuestAttacks(html: string, guestName: string): GuestAttack[] {
   
   // Attacks are marked with <font size='2'><b>Attack Name</b></font> and separated by <hr>
   // Find the section between Resistances and Other information (or end of post)
-  const otherInfoMatch = html.match(/<b><u>Other [Ii]nformation<\/u><\/b>|Thanks to|<font color='#eeeeee'>/i)
+  const sectionEndMatch = html.match(/Thanks to|<font color='#eeeeee'>/i)
   const attacksStartMatch = html.match(/(?:<b><u>Resistances<\/u><\/b>|(?:<b>)?<u>Resistances<\/u>(?:<\/b>)?|Resistances:\s*[^<\n]+)(?:[\s\S]*?)<hr>/i)
   
   if (!attacksStartMatch || attacksStartMatch.index === undefined) {
@@ -554,7 +554,7 @@ function parseGuestAttacks(html: string, guestName: string): GuestAttack[] {
   }
   
   const sectionStart = attacksStartMatch.index + attacksStartMatch[0].length
-  const sectionEnd = otherInfoMatch?.index ?? html.length
+  const sectionEnd = sectionEndMatch?.index ?? html.length
   const section = html.slice(sectionStart, sectionEnd)
   
   // Split by <hr> to get individual attack blocks
@@ -596,10 +596,10 @@ function parseGuestAttacks(html: string, guestName: string): GuestAttack[] {
     }
     
     // Extract Requirements
-    const reqMatch = block.match(/(?:Requirements|Level\/Quest\/Items required):\s*([^<\n]+?)(?=\s*<br>|\s*$)/i)
+    const reqMatch = block.match(/(?:Requirements|Level\/Quest\/Items required):\s*([\s\S]*?)(?=\s*<br>\s*(?:<br>\s*)?(?:Effect:|Mana Cost:|Cooldown:|(?:Damage|Attack) Type:|Element:|<img|<b><u>Other [Ii]nformation<\/u><\/b>|$))/i)
     let requirements: string | undefined
     if (reqMatch) {
-      requirements = decodeHTML(reqMatch[1]).trim()
+      requirements = stripHtml(decodeHTML(reqMatch[1])).trim()
       // Hide if "None"
       if (requirements.toLowerCase() === 'none') requirements = undefined
     }
@@ -622,6 +622,19 @@ function parseGuestAttacks(html: string, guestName: string): GuestAttack[] {
         })
         .join('\n')
         .trim()
+    }
+
+    const inlineOtherInfoMatch = block.match(/<b><u>Other [Ii]nformation<\/u><\/b>\s*([\s\S]*?)(?=\s*(?:<img|<a[^>]+href="[^"]+\.(?:png|jpg|jpeg|gif|bmp)|$))/i)
+    if (inlineOtherInfoMatch) {
+      const inlineOtherInfo = normalizeStructuredText(inlineOtherInfoMatch[1])
+        .split('\n')
+        .map(line => line.trimEnd())
+        .filter(line => line.trim().length > 0)
+        .join('\n')
+        .trim()
+      if (inlineOtherInfo) {
+        effect = effect === 'Unknown effect' ? inlineOtherInfo : `${effect}\n${inlineOtherInfo}`
+      }
     }
     
     // Extract Mana Cost
@@ -804,12 +817,12 @@ function extractGuestImages(html: string, guestName: string): { imageUrl?: strin
     
     // Look for hyperlinked images with captions before the attribution line or end marker
     // Pattern: <a href="image_url.png">Caption Text</a>
-    const hyperlinkPattern = /<a[^>]+href="([^"]+\.(?:png|jpg|jpeg|gif|bmp))"[^>]*>([^<]+)<\/a>/gi
+    const hyperlinkPattern = /<a[^>]+href="([^"]+\.(?:png|jpg|jpeg|gif|bmp))"[^>]*>([\s\S]*?)<\/a>/gi
     let match: RegExpExecArray | null
     
     while ((match = hyperlinkPattern.exec(afterMainImage)) !== null) {
       const url = match[1]
-      const caption = decodeHTML(match[2]).trim()
+      const caption = stripHtml(decodeHTML(match[2])).trim()
       
       // Stop at attribution lines
       if (/thanks to|also see:/i.test(caption)) break
@@ -853,6 +866,21 @@ function extractGuestImages(html: string, guestName: string): { imageUrl?: strin
       allImages.find(u => simpleNamePattern.test(u)) ??
       allImages.at(-1)
     
+    if (fallbackMain) {
+      const fallbackPos = otherInfoHtml.lastIndexOf(fallbackMain)
+      if (fallbackPos >= 0) {
+        const afterMainImage = otherInfoHtml.slice(fallbackPos + fallbackMain.length)
+        const hyperlinkPattern = /<a[^>]+href="([^"]+\.(?:png|jpg|jpeg|gif|bmp))"[^>]*>([\s\S]*?)<\/a>/gi
+        let match: RegExpExecArray | null
+        while ((match = hyperlinkPattern.exec(afterMainImage)) !== null) {
+          const url = match[1]
+          const caption = stripHtml(decodeHTML(match[2])).trim()
+          if (!caption || !isCandidateMainImage(url)) continue
+          alternativeImages.push({ url, caption })
+        }
+      }
+    }
+
     if (DEBUG && fallbackMain) console.log(`  Fallback main image: ${fallbackMain}`)
     
     return { 
@@ -929,75 +957,180 @@ function parseObtainMethods(html: string, guestName: string): ObtainMethod[] {
   if (DEBUG) console.log(`\n[DEBUG] Parsing obtain methods for ${guestName}`)
   
   const obtainMethods: ObtainMethod[] = []
-  
-  // Parse Location - capture everything up to the next <br> or field
-  const locationMatch = html.match(/(?:<b>)?Location:(?:<\/b>)?\s*([\s\S]*?)(?=\s*<br>\s*(?:<b>|(?:Level\/Quest\/Items to unlock|Level|Damage|HP|MP|Stats|Defenses?|Offenses?|Resistances)\s*:))/i)
-  const location = locationMatch ? stripHtml(decodeHTML(locationMatch[1])).trim() : undefined
-  
-  // Parse Requirements - capture only up to first <br> to avoid capturing stats blocks
-  // Pattern: match text up to a line break OR next <b> tag
-  const requirementsMatch = html.match(/(?:<b>)?(?:Requirements|Level\/Quest\/Items to unlock):(?:<\/b>)?\s*([\s\S]*?)(?=\s*<br>\s*(?:<br>\s*)?(?:<img|<font|<b>|(?:Level|Damage|HP|MP|Stats|Defenses?|Offenses?|Resistances|Category)\s*:))/i)
-  const requirements = requirementsMatch ? stripHtml(decodeHTML(requirementsMatch[1])).trim() : undefined
-  
-  // Parse Price (optional - many guests are Temp and don't have prices)
-  const priceMatch = html.match(/<b>Price:<\/b>\s*([^<\n]+)/i)
-  const price = priceMatch ? decodeHTML(priceMatch[1]).trim() : undefined
-  
-  // Parse Sellback (optional)
-  const sellbackMatch = html.match(/<b>Sellback:<\/b>\s*([^<\n]+)/i)
-  const sellback = sellbackMatch ? decodeHTML(sellbackMatch[1]).trim() : undefined
-  
-  // Parse Required Items (for merge shops)
-  const requiredMatch = html.match(/<b>(?:Required|Requires):<\/b>\s*([^<\n]+)/i)
-  const requiredItems = requiredMatch ? decodeHTML(requiredMatch[1]).trim() : undefined
-  
-  // Guests must have at least a location to be valid
-  if (location) {
-    // Determine price type
+
+  const firstFieldIndex = [
+    /(?:<b>)?Level:(?:<\/b>)?/i,
+    /<u>Stats<\/u>/i,
+    /<u>Offense<\/u>/i,
+    /<u>Avoidance and Defense<\/u>/i,
+    /<u>Defense<\/u>/i,
+    /<u>Defenses<\/u>/i,
+    /<u>Resistances<\/u>/i,
+  ]
+    .map(pattern => html.search(pattern))
+    .filter(index => index >= 0)
+    .sort((a, b) => a - b)[0] ?? html.length
+
+  const introHtml = html
+    .slice(0, firstFieldIndex)
+    .replace(/<b>\s*<font[^>]*>\s*Location:\s*<\/font>\s*<\/b>/gi, '<b>Location:</b>')
+    .replace(/<b>\s*<font[^>]*>\s*(Requirements|Level\/Quest\/Items to unlock):\s*<\/font>\s*<\/b>/gi, '<b>$1:</b>')
+    .replace(/(?:^|\s)(Location|Requirements|Level\/Quest\/Items to unlock|Price|Sellback|Required|Requires):/gi, ' <b>$1:</b>')
+
+  const blocks: Array<{
+    locations: string[]
+    requirements?: string
+    price?: string
+    sellback?: string
+    requiredItems?: string
+    hasDA: boolean
+    hasDC: boolean
+    hasDM: boolean
+  }> = []
+
+  let currentBlock: typeof blocks[number] | undefined
+  let pendingDA = false
+  let pendingDC = false
+  let pendingDM = false
+
+  const rawLines = introHtml
+    .split(/<br\s*\/?>/i)
+    .map(line => line.trim())
+    .filter(line => line.length > 0)
+
+  for (const rawLine of rawLines) {
+    pendingDA = pendingDA || /<img[^>]+src=["'][^"']*\/tags\/DA\.png["']/i.test(rawLine)
+    pendingDC = pendingDC || /<img[^>]+src=["'][^"']*\/tags\/DC\.png["']/i.test(rawLine)
+    pendingDM = pendingDM || /<img[^>]+src=["'][^"']*\/tags\/DM\.png["']/i.test(rawLine)
+
+    const fieldMatch = rawLine.match(/<b>(Location|Requirements|Level\/Quest\/Items to unlock|Price|Sellback|Required|Requires):<\/b>\s*([\s\S]*)/i)
+    if (!fieldMatch) continue
+
+    const fieldName = fieldMatch[1].toLowerCase()
+    const rawValue = fieldMatch[2]
+    const value = normalizeStructuredText(decodeHTML(rawValue))
+      .replace(/\n+/g, ' ')
+      .replace(/\s{2,}/g, ' ')
+      .trim()
+
+    if (!value) continue
+
+    if (fieldName === 'location') {
+      if (!currentBlock || currentBlock.requirements || currentBlock.price || currentBlock.sellback || currentBlock.requiredItems) {
+        currentBlock = {
+          locations: [],
+          hasDA: pendingDA,
+          hasDC: pendingDC,
+          hasDM: pendingDM,
+        }
+        blocks.push(currentBlock)
+      }
+
+      currentBlock.locations.push(value)
+      currentBlock.hasDA = currentBlock.hasDA || pendingDA
+      currentBlock.hasDC = currentBlock.hasDC || pendingDC
+      currentBlock.hasDM = currentBlock.hasDM || pendingDM
+      continue
+    }
+
+    if (!currentBlock) {
+      currentBlock = {
+        locations: [],
+        hasDA: pendingDA,
+        hasDC: pendingDC,
+        hasDM: pendingDM,
+      }
+      blocks.push(currentBlock)
+    }
+
+    if (fieldName === 'requirements' || fieldName === 'level/quest/items to unlock') {
+      currentBlock.requirements = value
+    } else if (fieldName === 'price') {
+      currentBlock.price = value
+    } else if (fieldName === 'sellback') {
+      currentBlock.sellback = value
+    } else if (fieldName === 'required' || fieldName === 'requires') {
+      currentBlock.requiredItems = value
+    }
+  }
+
+  for (const block of blocks) {
+    if (block.locations.length === 0) continue
+
     let priceType: ObtainMethod['priceType'] = 'free'
-    if (price) {
-      priceType = computePriceType(price, requiredItems)
-    } else if (requiredItems) {
+    if (block.price) {
+      priceType = computePriceType(block.price, block.requiredItems)
+    } else if (block.requiredItems) {
       priceType = 'merge'
     }
-    
-    // Check for DA requirement near the location/price
-    // Look within 300 chars before and after the Location field
-    const locationIndex = html.search(/<b>Location:<\/b>/i)
-    const contextStart = Math.max(0, locationIndex - 300)
-    const contextEnd = Math.min(html.length, locationIndex + 600)
-    const context = html.slice(contextStart, contextEnd)
-    
-    const daRequired = /<img[^>]+src=["'][^"']*\/tags\/DA\.png["']/i.test(context)
-    const dcRequired = priceType === 'dc' || /<img[^>]+src=["'][^"']*\/tags\/DC\.png["']/i.test(context)
-    const dmRequired = priceType === 'dm' || /<img[^>]+src=["'][^"']*\/tags\/DM\.png["']/i.test(context)
-    
-    const method: ObtainMethod = {
-      location,
-      priceType,
+
+    const dcRequired = block.hasDC || priceType === 'dc'
+    const dmRequired = block.hasDM || priceType === 'dm'
+
+    for (const location of block.locations) {
+      const method: ObtainMethod = {
+        location,
+        priceType,
+      }
+
+      if (block.requirements) method.requirements = block.requirements
+      if (block.price) method.price = block.price
+      if (block.sellback) method.sellback = block.sellback
+      if (block.requiredItems) method.requiredItems = block.requiredItems
+      if (block.hasDA) method.daRequired = true
+      if (dcRequired) method.dcRequired = true
+      if (dmRequired) method.dmRequired = true
+
+      obtainMethods.push(method)
+
+      if (DEBUG) {
+        console.log(`  Location: ${location}`)
+        if (block.requirements) console.log(`  Requirements: ${block.requirements}`)
+        if (block.price) console.log(`  Price: ${block.price} (${priceType})`)
+        if (block.sellback) console.log(`  Sellback: ${block.sellback}`)
+        if (block.requiredItems) console.log(`  Required Items: ${block.requiredItems}`)
+        console.log(`  DA: ${block.hasDA}, DC: ${dcRequired}, DM: ${dmRequired}`)
+      }
     }
-    
-    if (requirements) method.requirements = requirements
-    if (price) method.price = price
-    if (sellback) method.sellback = sellback
-    if (requiredItems) method.requiredItems = requiredItems
-    if (daRequired) method.daRequired = daRequired
-    if (dcRequired) method.dcRequired = dcRequired
-    if (dmRequired) method.dmRequired = dmRequired
-    
-    obtainMethods.push(method)
-    
-    if (DEBUG) {
-      console.log(`  Location: ${location}`)
-      if (requirements) console.log(`  Requirements: ${requirements}`)
-      if (price) console.log(`  Price: ${price} (${priceType})`)
-      if (sellback) console.log(`  Sellback: ${sellback}`)
-      if (requiredItems) console.log(`  Required Items: ${requiredItems}`)
-      console.log(`  DA: ${daRequired}, DC: ${dcRequired}, DM: ${dmRequired}`)
-    }
-  } else {
-    if (DEBUG) console.log(`  No location field found`)
   }
+
+  if (obtainMethods.length <= 1) {
+    const fallbackMethods: ObtainMethod[] = []
+    const introText = normalizeStructuredText(introHtml)
+    const textLines = introText.split('\n').map(line => line.trim()).filter(Boolean)
+    let current: { location?: string; requirements?: string } | null = null
+
+    const pushCurrent = () => {
+      if (!current?.location) return
+      fallbackMethods.push({
+        location: current.location,
+        priceType: 'free',
+        ...(current.requirements ? { requirements: current.requirements } : {}),
+      })
+      current = null
+    }
+
+    for (const line of textLines) {
+      if (/^Location:/i.test(line)) {
+        pushCurrent()
+        current = { location: line.replace(/^Location:\s*/i, '').trim() }
+        continue
+      }
+
+      if (/^(Requirements|Level\/Quest\/Items to unlock):/i.test(line)) {
+        if (!current) current = {}
+        current.requirements = line.replace(/^(Requirements|Level\/Quest\/Items to unlock):\s*/i, '').trim()
+      }
+    }
+
+    pushCurrent()
+
+    if (fallbackMethods.length > obtainMethods.length) {
+      return fallbackMethods
+    }
+  }
+
+  if (obtainMethods.length === 0 && DEBUG) console.log(`  No location field found`)
   
   if (DEBUG) console.log(`[DEBUG] Found ${obtainMethods.length} obtain methods\n`)
   
@@ -1043,6 +1176,24 @@ function parseNotes(html: string, guestName: string): string | undefined {
       if (/^[•\s]*[A-Za-z0-9&/'().,-]+(?:\s+[A-Za-z0-9&/'().,-]+)*\s+Appearance(?:\s+\d+(?:\.\d+)?)?\s*$/i.test(line)) continue
       noteLines.push(line)
     }
+  }
+
+  const seenNotes = new Set(noteLines.map(line => line.trim()))
+  const rawNoteMatches = html.matchAll(/<li>\s*<i>\s*Note:\s*([\s\S]*?)<\/i>/gi)
+  for (const match of rawNoteMatches) {
+    const note = normalizeStructuredText(match[1]).trim()
+    if (!note || seenNotes.has(note)) continue
+    seenNotes.add(note)
+    noteLines.push(note)
+  }
+
+  for (const line of normalizeStructuredText(html).split('\n')) {
+    const trimmed = line.trim()
+    if (!/^Note:/i.test(trimmed)) continue
+    const note = trimmed.replace(/^Note:\s*/i, '').trim()
+    if (!note || seenNotes.has(note)) continue
+    seenNotes.add(note)
+    noteLines.push(note)
   }
   
   if (noteLines.length > 0) {
@@ -1113,23 +1264,34 @@ function generateTags(name: string, description: string, elements: string[]): st
 
 // ─── Chronology parsing ───────────────────────────────────────────────────────
 
-function parseChronology(html: string): Map<string, string> {
+interface ChronologyData {
+  datesByName: Map<string, string>
+  datesByMessageId: Map<string, string>
+  guestNames: Set<string>
+  guestMessageIds: Set<string>
+}
+
+function parseChronology(html: string): ChronologyData {
   const DEBUG = process.env.DEBUG_CHRONO === '1'
-  const dates = new Map<string, string>()
-  const lines = stripHtml(decodeHTML(html)).split('\n')
+  const datesByName = new Map<string, string>()
+  const datesByMessageId = new Map<string, string>()
+  const guestNames = new Set<string>()
+  const guestMessageIds = new Set<string>()
+  const chunks = html.split(/<br\s*\/?>/i)
   
   if (DEBUG) {
-    console.log(`\n[DEBUG] Parsing Chronology (${lines.length} lines)`)
+    console.log(`\n[DEBUG] Parsing Chronology (${chunks.length} chunks)`)
     console.log(`  First 20 lines:`)
-    lines.slice(0, 20).forEach((line, i) => {
+    chunks.slice(0, 20).forEach((line, i) => {
+      const text = stripHtml(decodeHTML(line)).trim()
       console.log(`    ${i}: ${line.slice(0, 80)}`)
     })
   }
   
   let currentDate = ''
   
-  for (const line of lines) {
-    const trimmed = line.trim()
+  for (const chunk of chunks) {
+    const trimmed = stripHtml(decodeHTML(chunk)).trim()
     if (!trimmed) continue
     
     // Check if this is a date line: "Month DDth, YYYY" or "Month DD, YYYY"
@@ -1148,20 +1310,27 @@ function parseChronology(html: string): Map<string, string> {
       // Strip trailing parentheticals like "(2)" or "(Normal; D-Coins)"
       name = name.replace(/\s*\([^)]+\)\s*$/, '').trim()
       
-      dates.set(name.toLowerCase(), currentDate)
+      datesByName.set(name.toLowerCase(), currentDate)
+      guestNames.add(name.toLowerCase())
+      const idMatch = chunk.match(/tm\.asp\?m=(\d+)|fb\.asp\?m=(\d+)/i)
+      const messageId = idMatch?.[1] ?? idMatch?.[2]
+      if (messageId) {
+        guestMessageIds.add(messageId)
+        datesByMessageId.set(messageId, currentDate)
+      }
       
       if (DEBUG) console.log(`  Found guest: ${name} (${currentDate})`)
     }
   }
   
-  if (DEBUG) console.log(`[DEBUG] Chronology parsing found ${dates.size} guests\n`)
+  if (DEBUG) console.log(`[DEBUG] Chronology parsing found ${guestNames.size} guests\n`)
   
-  return dates
+  return { datesByName, datesByMessageId, guestNames, guestMessageIds }
 }
 
 // ─── A-Z page parsing ─────────────────────────────────────────────────────────
 
-function parseAZPage(html: string, guestNames: Set<string>): GuestStub[] {
+function parseAZPage(html: string, chronology: ChronologyData): GuestStub[] {
   const stubs: GuestStub[] = []
   const seen = new Set<string>()
   const chunks = html.split(/<br\s*\/?>/)
@@ -1214,9 +1383,7 @@ function parseAZPage(html: string, guestNames: Set<string>): GuestStub[] {
     }
 
     // Filter: only include guests (determined by Chronology)
-    const key = name.toLowerCase()
-    const baseKey = name.replace(/\s*\([^)]+\)\s*$/, '').trim().toLowerCase()
-    if (!guestNames.has(key) && !guestNames.has(baseKey)) {
+    if (!chronology.guestMessageIds.has(msgId)) {
       continue  // Not a guest, skip silently
     }
 
@@ -1258,9 +1425,8 @@ async function main(): Promise<void> {
     console.warn('   Continuing without release dates...')
   }
 
-  const chronoDates = parseChronology(chronoHtml)
-  const guestNames = new Set(chronoDates.keys())
-  console.log(`✅ Found ${guestNames.size} guests in Chronology\n`)
+  const chronology = parseChronology(chronoHtml)
+  console.log(`✅ Found ${chronology.guestNames.size} guests in Chronology\n`)
 
   // ── Step 2: Fetch A-Z page ─────────────────────────────────────────────────
 
@@ -1273,7 +1439,7 @@ async function main(): Promise<void> {
     process.exit(1)
   }
 
-  let allStubs = parseAZPage(azHtml, guestNames)
+  let allStubs = parseAZPage(azHtml, chronology)
   if (allStubs.length === 0) {
     console.error('❌ No guests found in A-Z page')
     const preview = stripHtml(decodeHTML(azHtml)).slice(0, 200)
@@ -1395,7 +1561,11 @@ async function main(): Promise<void> {
         attacks,
         rarity,
         evolutions: [],  // Guests typically don't evolve
-        releaseDate: chronoDates.get(stub.name.toLowerCase()) || chronoDates.get(stub.name.replace(/\s*\([^)]+\)\s*$/, '').trim().toLowerCase()) || 'Unknown',
+        releaseDate:
+          chronology.datesByMessageId.get(stub.messageId) ||
+          chronology.datesByName.get(stub.name.toLowerCase()) ||
+          chronology.datesByName.get(stub.name.replace(/\s*\([^)]+\)\s*$/, '').trim().toLowerCase()) ||
+          'Unknown',
         imageUrl,
         forumUrl: stub.forumUrl,
         notes,

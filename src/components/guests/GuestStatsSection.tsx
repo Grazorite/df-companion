@@ -43,6 +43,12 @@ function filterNonZeroStats(stats: Record<string, string | undefined>): Record<s
 }
 
 export default function GuestStatsSection({ stats }: GuestStatsSectionProps) {
+  const basicStats = [
+    stats.level ? { label: 'Level', value: stats.level } : null,
+    stats.damage ? { label: 'Damage', value: stats.damage } : null,
+    stats.damageType ? { label: 'Type', value: stats.damageType } : null,
+  ].filter((entry): entry is { label: string; value: string } => Boolean(entry))
+
   // Build stat category cards that have at least one non-zero value
   const categories: Array<{
     title: string
@@ -149,27 +155,15 @@ export default function GuestStatsSection({ stats }: GuestStatsSectionProps) {
   return (
     <section className="mb-5">
       {/* Basic Info - Level, Damage, Damage Type */}
-      {(stats.level || stats.damage || stats.damageType) && (
+      {basicStats.length > 0 && (
         <div className="bg-bg-surface border border-border-default rounded-lg p-4 mb-3">
-          <div className="grid grid-cols-3 gap-4 text-center">
-            {stats.level && (
-              <div>
-                <p className="text-xs text-text-muted uppercase tracking-wider mb-1">Level</p>
-                <p className="text-sm font-medium text-text-primary">{stats.level}</p>
+          <div className={`grid gap-4 text-center ${basicStats.length >= 3 ? 'grid-cols-3' : 'grid-cols-2'}`}>
+            {basicStats.map(stat => (
+              <div key={stat.label}>
+                <p className="text-xs text-text-muted uppercase tracking-wider mb-1">{stat.label}</p>
+                <p className="text-sm font-medium text-text-primary">{stat.value}</p>
               </div>
-            )}
-            {stats.damage && (
-              <div>
-                <p className="text-xs text-text-muted uppercase tracking-wider mb-1">Damage</p>
-                <p className="text-sm font-medium text-text-primary">{stats.damage}</p>
-              </div>
-            )}
-            {stats.damageType && (
-              <div>
-                <p className="text-xs text-text-muted uppercase tracking-wider mb-1">Type</p>
-                <p className="text-sm font-medium text-text-primary">{stats.damageType}</p>
-              </div>
-            )}
+            ))}
           </div>
         </div>
       )}

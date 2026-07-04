@@ -3,7 +3,8 @@ import { useSearchParams } from 'react-router-dom'
 import { ExternalLink, Shield, ImageOff } from 'lucide-react'
 import type { Pet, Guest } from '../../types/pet'
 import type { ItemFamily } from '../../types/item'
-import { isSingleVariant } from '../../utils/variantHelpers'
+import { hasSameLevelVariants, isSingleVariant } from '../../utils/variantHelpers'
+import { normalizeDisplayText } from '../../utils/displayText'
 import ElementPill from '../shared/ElementPill'
 import AccessPills from '../shared/AccessPills'
 import NotesList from '../shared/NotesList'
@@ -59,6 +60,7 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
   
   // Determine if we're using multi-variant display
   const isMultiVariant = family && !isSingleVariant(family)
+  const sameLevelVariants = family ? hasSameLevelVariants(family) : false
   
   // Parse level URL param for multi-variant display
   const levelParam = searchParams.get('level')
@@ -127,6 +129,20 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
   
   // Currently displayed image
   const currentImage = allImages[activeImageIndex]
+  const displayedRequirements = useMemo(() => {
+    const requirementSet = new Set<string>()
+    const obtainSources = isMultiVariant && family
+      ? family.levelVariants[activeIndex].obtainVariants
+      : pet.obtainMethods
+
+    for (const method of obtainSources) {
+      const requirement = method.requirements?.trim()
+      if (!requirement || requirement.toLowerCase() === 'none') continue
+      requirementSet.add(requirement)
+    }
+
+    return [...requirementSet]
+  }, [activeIndex, family, isMultiVariant, pet.obtainMethods])
 
   // Strip everything from "Thanks to" onwards — attribution lines, not content
   const cleanedNotes = displayData.notes
@@ -178,10 +194,10 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
         {/* Display family name with level range for multi-variant, regular name for single */}
         <h1 className="text-2xl font-bold text-text-primary mb-2">
           {isMultiVariant && family ? (
-            family.isMultiPost ? family.familyName : `${family.familyName} (${family.levelRange})`
+            family.isMultiPost || sameLevelVariants ? family.familyName : `${family.familyName} (${family.levelRange})`
           ) : pet.name}
         </h1>
-        <p className="text-text-secondary text-sm italic leading-relaxed mb-2">{displayData.description}</p>
+        <p className="text-text-secondary text-sm italic leading-relaxed mb-2">{normalizeDisplayText(displayData.description)}</p>
 
         {pet.releaseDate && pet.releaseDate !== 'Unknown' && (
           <p className="text-text-muted text-xs">Released: {pet.releaseDate}</p>
@@ -280,7 +296,7 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
                     </td>
                     <td className="px-4 py-3 text-center">
                       {dcRequired ? (
-                        <span className="inline-flex items-center justify-center w-5 h-5 rounded bg-amber-500 text-white text-xs font-bold">
+                        <span className="inline-flex items-center justify-center w-5 h-5 rounded bg-amber-500 text-bg-base text-xs font-bold">
                           ✓
                         </span>
                       ) : (
@@ -305,7 +321,10 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
         <section className="mb-5">
           <LevelStatsTable 
             levels={family.levelVariants}
+            familyName={family.familyName}
             hideVariantColumn={
+              !sameLevelVariants &&
+              !family.levelVariants.some(level => Boolean(level.variantName)) &&
               // Hide variant column if all levelDisplay values match levelNumber (no roman numerals)
               family.levelVariants.every(lv => lv.levelDisplay === lv.levelNumber.toString())
             }
@@ -320,6 +339,7 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
             levels={family.levelVariants}
             activeIndex={activeIndex}
             onChange={handleLevelChange}
+            familyName={family.familyName}
           />
         </section>
       )}
@@ -387,6 +407,7 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
                 price: method.price ?? 'N/A',
                 priceType: method.priceType,
                 sellback: method.sellback,
+                ...(method.requirements ? { requirements: method.requirements } : {}),
                 // Use ONLY per-method flags - do NOT fall back to pet-level flags
                 // Per-method flags are authoritative; pet-level flags are just summaries
                 daRequired: method.daRequired ?? false,
@@ -409,6 +430,21 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
           </div>
         </section>
       ) : null}
+
+      {displayedRequirements.length > 0 && !isGuest && (
+        <section aria-labelledby="requirements-heading" className="mb-5">
+          <div className="bg-bg-surface/60 border border-border-default rounded-lg p-4 space-y-3">
+            <h2 id="requirements-heading" className="text-xs font-semibold text-text-muted uppercase tracking-wider">
+              Requirements
+            </h2>
+            {displayedRequirements.map(requirement => (
+              <p key={requirement} className="text-sm text-text-secondary leading-relaxed break-words">
+                {normalizeDisplayText(requirement)}
+              </p>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* Evolutions */}
       <PetEvolutions evolutions={pet.evolutions} fromUrl={backUrl} />
@@ -459,7 +495,7 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
               {cleanedLevelNotes && (
                 <>
                   <p className="text-xs font-medium text-text-muted uppercase tracking-wider mb-2">
-                    Level {activeLevel.levelDisplay} Notes
+                    {activeLevel.variantName ? `${activeLevel.variantName} Notes` : `Level ${activeLevel.levelDisplay} Notes`}
                   </p>
                   <NotesList notes={cleanedLevelNotes} />
                 </>

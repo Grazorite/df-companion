@@ -162,6 +162,7 @@ export interface LevelVariant {
   levelNumber: number        // 1, 2, 3... (parsed from roman or numeric)
   levelDisplay: string       // "I", "II", "III" or "30", "45", "60"
   actualLevel?: number       // Game level if different (Level I = Lv 30)
+  variantName?: string       // "Normal", "D-Coins", "Resource" for same-level branch variants
   name: string               // "Goldfish Knight IV" - for search indexing
   damage: string             // "17-17"
   stats: string              // "Crit +6, Bonus +6"

@@ -1,4 +1,5 @@
 import type { ObtainMethod } from '../../types/pet'
+import { normalizeDisplayText } from '../../utils/displayText'
 
 interface ObtainCardProps {
   method: ObtainMethod
@@ -21,14 +22,14 @@ export default function ObtainCard({ method, index }: ObtainCardProps) {
         {/* Location */}
         <div className="flex gap-2">
           <span className="text-text-muted text-xs w-20 flex-shrink-0 pt-0.5">Location</span>
-          <span className="text-text-primary text-sm leading-snug">{method.location}</span>
+          <span className="text-text-primary text-sm leading-snug">{normalizeDisplayText(method.location)}</span>
         </div>
 
         {/* Price */}
         <div className="flex gap-2">
           <span className="text-text-muted text-xs w-20 flex-shrink-0">Price</span>
           <span className={`text-sm ${isDC ? 'text-amber-300' : isDM ? 'text-slate-300' : 'text-text-primary'}`}>
-            {method.price}
+            {normalizeDisplayText(method.price)}
           </span>
         </div>
 
@@ -36,14 +37,14 @@ export default function ObtainCard({ method, index }: ObtainCardProps) {
         {method.requiredItems && (
           <div className="flex gap-2">
             <span className="text-text-muted text-xs w-20 flex-shrink-0 pt-0.5">Requires</span>
-            <span className="text-text-primary text-sm leading-snug">{method.requiredItems}</span>
+            <span className="text-text-primary text-sm leading-snug">{normalizeDisplayText(method.requiredItems)}</span>
           </div>
         )}
 
         {/* Sellback */}
         <div className="flex gap-2">
           <span className="text-text-muted text-xs w-20 flex-shrink-0">Sellback</span>
-          <span className="text-text-secondary text-sm">{method.sellback}</span>
+          <span className="text-text-secondary text-sm">{normalizeDisplayText(method.sellback)}</span>
         </div>
       </div>
     </div>

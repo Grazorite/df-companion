@@ -5,7 +5,8 @@
  * computation, family flag derivation, level normalization, and roman numeral parsing.
  */
 
-import type { ItemFamily, PriceType } from '../types/item'
+import type { ItemFamily, LevelVariant, PriceType } from '../types/item'
+import { normalizeDisplayText } from './displayText'
 
 /**
  * Compute price type from price string and required items.
@@ -96,7 +97,7 @@ export function computeFamilyFlags(family: ItemFamily): ItemFamily {
   let hasDM = false
   let hasFree = false
   let hasMerge = false
-  const elementSet = new Set<string>()
+  const elementSet = new Set<string>(family.elements)
   
   // Scan all level variants and their obtain variants
   for (const levelVariant of family.levelVariants) {
@@ -230,4 +231,78 @@ export function isSingleVariant(family: ItemFamily): boolean {
     family.levelVariants.length === 1 &&
     family.levelVariants[0].obtainVariants.length <= 1
   )
+}
+
+/**
+ * Check whether every variant in a family shares the same actual level.
+ *
+ * Used for branch-style families like Resource vs D-Coins where the meaningful
+ * difference is the variant label, not the level progression.
+ */
+export function hasSameLevelVariants(family: ItemFamily): boolean {
+  if (family.levelVariants.length <= 1) return false
+
+  const levels = new Set(
+    family.levelVariants.map(levelVariant => String(levelVariant.actualLevel ?? levelVariant.levelDisplay))
+  )
+
+  return levels.size === 1
+}
+
+function stripAccessVariantSuffix(name: string): string {
+  return name.replace(/\s+\((?:D-Coins?|DC|D-Amulet|D-Amulet\/D-Coins|D-Amulet\/DC|Resource|Normal)\)$/i, '').trim()
+}
+
+function getCondensedTitleVariant(levelName: string, familyName: string): string | undefined {
+  const normalizedLevelName = stripAccessVariantSuffix(levelName)
+  if (!normalizedLevelName) return undefined
+
+  if (normalizedLevelName === familyName) {
+    const tailWord = familyName.split(/\s+/).at(-1)
+    return tailWord && tailWord !== familyName ? tailWord : undefined
+  }
+
+  if (normalizedLevelName.startsWith(`${familyName} `)) {
+    return normalizedLevelName.slice(familyName.length).trim()
+  }
+
+  return undefined
+}
+
+export function hasTitleDrivenVariantNames(levels: LevelVariant[], familyName: string): boolean {
+  return levels.some(level => stripAccessVariantSuffix(level.name) !== familyName)
+}
+
+export function getLevelVariantLabel(level: LevelVariant, familyName?: string, useTitleLabels: boolean = false): string {
+  const levelLabel = String(level.actualLevel ?? level.levelDisplay)
+  const hasDC = level.obtainVariants.some(variant => variant.dcRequired || variant.priceType === 'dc')
+  const normalizedVariantName = level.variantName ? normalizeDisplayText(level.variantName) : undefined
+
+  if (familyName && useTitleLabels) {
+    const condensedTitle = getCondensedTitleVariant(level.name, familyName)
+    if (condensedTitle) {
+      return `${normalizeDisplayText(condensedTitle)} (${levelLabel}${hasDC ? ', DC' : ''})`
+    }
+  }
+
+  if (normalizedVariantName) {
+    return `${levelLabel} / ${normalizedVariantName}`
+  }
+
+  return normalizeDisplayText(level.levelDisplay)
+}
+
+export function shouldUseSplitVariantRows(levels: LevelVariant[]): boolean {
+  if (levels.length < 8) return false
+
+  const dcLevels = levels.filter(level =>
+    level.obtainVariants.some(variant => variant.dcRequired || variant.priceType === 'dc')
+  )
+  if (dcLevels.length === 0 || dcLevels.length === levels.length) return false
+
+  const nonDcLevels = levels.filter(level => !dcLevels.includes(level))
+  const nonDcKeys = new Set(nonDcLevels.map(level => String(level.actualLevel ?? level.levelDisplay)))
+  const dcKeys = new Set(dcLevels.map(level => String(level.actualLevel ?? level.levelDisplay)))
+
+  return nonDcKeys.size === dcKeys.size && [...nonDcKeys].every(key => dcKeys.has(key))
 }

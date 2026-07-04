@@ -3,6 +3,7 @@ import { ArrowLeft, ExternalLink, Shield } from 'lucide-react'
 import { useBadgeBySlug, useBadgesByCategory } from '../hooks/useBadges'
 import BadgeCard from '../components/badges/BadgeCard'
 import NotesList from '../components/shared/NotesList'
+import { normalizeDisplayText } from '../utils/displayText'
 
 export default function BadgeDetailPage() {
   const { slug } = useParams<{ slug: string }>()
@@ -129,7 +130,7 @@ export default function BadgeDetailPage() {
           How to Obtain
         </h2>
         <p className="text-text-primary text-sm leading-relaxed">
-          {badge.howToObtain[0]?.instruction ?? 'See forum link for details.'}
+          {normalizeDisplayText(badge.howToObtain[0]?.instruction ?? 'See forum link for details.')}
         </p>
       </section>
 

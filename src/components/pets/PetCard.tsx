@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { ChevronRight } from 'lucide-react'
 import type { Pet } from '../../types/pet'
 import type { ItemFamily } from '../../types/item'
-import { isSingleVariant } from '../../utils/variantHelpers'
+import { hasSameLevelVariants, isSingleVariant } from '../../utils/variantHelpers'
 import ElementPill from '../shared/ElementPill'
 import LevelRangeBadge from '../shared/LevelRangeBadge'
 
@@ -14,7 +14,7 @@ interface PetCardProps {
   family?: ItemFamily
 }
 
-const MAX_PILLS = 2
+const MAX_PILLS = 3
 
 export default function PetCard({ pet, toUrl, replace, family }: PetCardProps) {
   const allCodes = [...pet.elements, ...pet.traits]
@@ -25,6 +25,7 @@ export default function PetCard({ pet, toUrl, replace, family }: PetCardProps) {
   
   // Check if multi-variant
   const isMultiVariant = family && !isSingleVariant(family)
+  const sameLevelVariants = family ? hasSameLevelVariants(family) : false
   
   // Strip roman numerals from display name for multi-variant items
   const displayName = isMultiVariant && family 
@@ -65,7 +66,9 @@ export default function PetCard({ pet, toUrl, replace, family }: PetCardProps) {
           )}
           
           {/* Multi-variant indicators */}
-          {isMultiVariant && !family?.isMultiPost && <LevelRangeBadge levelRange={displayFlags.levelRange} />}
+          {isMultiVariant && !family?.isMultiPost && !sameLevelVariants && (
+            <LevelRangeBadge levelRange={displayFlags.levelRange} />
+          )}
           {displayFlags.hasDA && (
             <span className="text-[10px] text-orange-400 bg-orange-500/20 px-1.5 py-0.5 rounded-full font-medium">
               DA
@@ -81,7 +84,7 @@ export default function PetCard({ pet, toUrl, replace, family }: PetCardProps) {
               DM
             </span>
           )}
-          {pet.type !== 'guest' && displayFlags.hasFree && !displayFlags.hasDA && (
+          {pet.type !== 'guest' && displayFlags.hasFree && (
             <span className="text-[10px] text-green-400 bg-green-500/20 px-1.5 py-0.5 rounded-full font-medium">
               Free
             </span>

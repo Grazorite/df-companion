@@ -4,7 +4,7 @@
  * Displays a single obtain method with location, price, DA/DC/DM requirements,
  * sellback, and required items (for merge shops).
  * 
- * For guests: Shows only location + requirements (badge-style), no price/sellback
+ * For guests: Shows location only (badge-style), no price/sellback
  * For pets: Shows full details including price and sellback
  * 
  * Uses the unified obtain card styling:
@@ -20,6 +20,7 @@
  */
 
 import type { ObtainVariant } from '../../types/item'
+import { normalizeDisplayText } from '../../utils/displayText'
 
 interface ObtainVariantCardProps {
   variant: ObtainVariant
@@ -30,8 +31,8 @@ interface ObtainVariantCardProps {
 export default function ObtainVariantCard({ variant, label, isGuest = false }: ObtainVariantCardProps) {
   const headingText = label ? `How to Obtain (${label})` : 'How to Obtain'
   
-  // For guests, only show location + requirements (no price/sellback)
   const showPriceFields = !isGuest
+  const showRequirements = Boolean(variant.requirements && variant.requirements.toLowerCase() !== 'none')
   
   return (
     <div className="bg-bg-surface border-l-4 border-gold rounded-lg p-5 space-y-3">
@@ -50,10 +51,10 @@ export default function ObtainVariantCard({ variant, label, isGuest = false }: O
               rel="noopener noreferrer"
               className="text-text-primary hover:text-gold transition-colors underline break-words"
             >
-              {variant.location}
+              {normalizeDisplayText(variant.location)}
             </a>
           ) : (
-            <p className="text-text-primary break-words">{variant.location}</p>
+            <p className="text-text-primary break-words">{normalizeDisplayText(variant.location)}</p>
           )}
         </div>
         
@@ -65,20 +66,17 @@ export default function ObtainVariantCard({ variant, label, isGuest = false }: O
         )}
       </div>
       
-      {/* Requirements (if present and not "None") - for guests, this is important info */}
-      {variant.requirements && variant.requirements.toLowerCase() !== 'none' && (
-        <div>
-          <p className="text-xs text-text-muted mb-1">Requires</p>
-          <p className="text-sm text-text-secondary">{variant.requirements}</p>
-        </div>
-      )}
-      
-      {/* Only show divider and price fields if NOT a guest */}
-      {showPriceFields && (
+      {(showRequirements || showPriceFields) && (
         <>
-          {/* Divider */}
           <div className="border-t border-border-default" />
-          
+
+          {showRequirements && (
+            <div>
+              <p className="text-xs text-text-muted mb-1">Requires</p>
+              <p className="text-sm text-text-primary break-words">{normalizeDisplayText(variant.requirements)}</p>
+            </div>
+          )}
+
           {/* Required Items FIRST (merge shops) */}
           {variant.requiredItems && (
             <div className="grid grid-cols-1 gap-3">
@@ -91,34 +89,18 @@ export default function ObtainVariantCard({ variant, label, isGuest = false }: O
                       : 'text-text-primary'
                   }`}
                 >
-                  {variant.requiredItems}
+                  {normalizeDisplayText(variant.requiredItems)}
                 </p>
               </div>
             </div>
           )}
           
           {/* Price and Sellback grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {/* Price */}
-            <div>
-              <p className="text-xs text-text-muted mb-1">Price</p>
-              <p
-                className={`text-sm ${
-                  variant.priceType === 'dc'
-                    ? 'text-gold'  // Amber for Dragon Coins
-                    : variant.priceType === 'dm'
-                      ? 'text-slate-300'  // Silver for Defender's Medals
-                      : 'text-text-primary'
-                }`}
-              >
-                {variant.price}
-              </p>
-            </div>
-            
-            {/* Sellback */}
-            {variant.sellback && (
+          {showPriceFields && (
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {/* Price */}
               <div>
-                <p className="text-xs text-text-muted mb-1">Sellback</p>
+                <p className="text-xs text-text-muted mb-1">Price</p>
                 <p
                   className={`text-sm ${
                     variant.priceType === 'dc'
@@ -128,11 +110,29 @@ export default function ObtainVariantCard({ variant, label, isGuest = false }: O
                         : 'text-text-primary'
                   }`}
                 >
-                  {variant.sellback}
+                  {normalizeDisplayText(variant.price)}
                 </p>
               </div>
-            )}
-          </div>
+
+              {/* Sellback */}
+              {variant.sellback && (
+                <div>
+                  <p className="text-xs text-text-muted mb-1">Sellback</p>
+                  <p
+                    className={`text-sm ${
+                      variant.priceType === 'dc'
+                        ? 'text-gold'
+                        : variant.priceType === 'dm'
+                          ? 'text-slate-300'
+                          : 'text-text-primary'
+                    }`}
+                  >
+                    {normalizeDisplayText(variant.sellback)}
+                  </p>
+                </div>
+              )}
+            </div>
+          )}
         </>
       )}
     </div>

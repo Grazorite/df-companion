@@ -8,6 +8,8 @@
  * Reusable across pets, badges, and future sections.
  */
 
+import { normalizeDisplayText } from '../../utils/displayText'
+
 interface NotesListProps {
   notes: string
 }
@@ -66,14 +68,14 @@ export default function NotesList({ notes }: NotesListProps) {
         <li key={i}>
           <div className="flex gap-2 text-sm text-text-secondary leading-relaxed">
             <span className="text-text-muted mt-0.5 flex-shrink-0">•</span>
-            <span>{item.text}</span>
+            <span>{normalizeDisplayText(item.text)}</span>
           </div>
           {item.subItems.length > 0 && (
             <ul className="ml-5 mt-1 space-y-1">
               {item.subItems.map((sub, j) => (
                 <li key={j} className="flex gap-2 text-sm text-text-secondary leading-relaxed">
                   <span className="text-text-muted mt-0.5 flex-shrink-0">•</span>
-                  <span>{sub}</span>
+                  <span>{normalizeDisplayText(sub)}</span>
                 </li>
               ))}
             </ul>

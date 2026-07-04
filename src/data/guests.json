@@ -1733,11 +1733,47 @@
       {
         "name": "Dragon's Sight",
         "description": "Increase own Crit and Boost.",
-        "effect": "Applies 'Dragon's Sight' (+80 Bonus, +80% Boost) to the player for 5 turns inclusive.",
+        "effect": "Applies 'Dragon's Sight' (+80 Bonus, +80% Boost) to the player for 5 turns inclusive.\n• Skill erroneously increases the player's Bonus and Boost instead of Captain Lestrad's Crit and Boost.",
         "manaCost": "15",
         "cooldown": "11",
         "damageType": "N/A",
-        "element": "N/A"
+        "element": "N/A",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/CaptainLestrad-Button02-Dragon's.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/CaptainLestrad-Dragon'sSight.png"
+      },
+      {
+        "name": "Rush",
+        "description": "Available after a successful Pierce",
+        "requirements": "Successful 'Pierce' to unlock",
+        "effect": "3 hits of 150% damage, amounting to 450% damage.",
+        "manaCost": "0",
+        "cooldown": "0",
+        "damageType": "Melee",
+        "element": "Metal",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/CaptainLestrad-Button03-Rush.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/CaptainLestrad-Rush1.0.png"
+      },
+      {
+        "name": "Pierce",
+        "description": "Unlocked after a succesful attack.",
+        "requirements": "Successful attack to unlock",
+        "effect": "1 hit of 150% damage.",
+        "manaCost": "0",
+        "cooldown": "2",
+        "damageType": "Melee",
+        "element": "Metal",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/CaptainLestrad-Button04-Pierce.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/CaptainLestrad-Pierce.png"
+      },
+      {
+        "name": "Attack",
+        "effect": "1 hit of 120% damage, with 60 Bonus.",
+        "manaCost": "0",
+        "cooldown": "0",
+        "damageType": "Melee",
+        "element": "Metal",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/CaptainLestrad-Attack.png"
       }
     ],
     "rarity": "Unknown",
@@ -3555,6 +3591,7 @@
     "releaseDate": "July 27th, 2012",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Imaru%20pic.bmp",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21187682",
+    "notes": "Though the description says that this guest's weapon element is Silver, this guest copies the element, damage type and base damage as the player, enemy or pet which attacked previously before this guest's turn. If the player, enemy or pet which attacked before did not use an attacking move or the attack failed to land, then this guest's attacks will be blocked, dodged, Parried or will miss on that turn. This guest also copies any buff, critical hit or boost which affect the previous attacker's attack.\nAll skill cooldowns for this guest are carried on to the next battle as well.",
     "alsoSee": [],
     "tags": [
       "imaru",
@@ -3688,9 +3725,19 @@
     "resists": "None",
     "obtainMethods": [
       {
-        "location": "Sulen'Eska -> Up -> Up Vortex -> Up ->  Kara SuLema -> Add Kara (as Guest)",
+        "location": "Sulen'Eska -> Up -> Up Vortex -> Up -> Kara SuLema -> Add Kara (as Guest)",
         "priceType": "free",
         "requirements": "None"
+      },
+      {
+        "location": "Smoke in the Trees, My Spot",
+        "priceType": "free",
+        "requirements": "None"
+      },
+      {
+        "location": "Fate's Flow (Part 1), Fallen Facade",
+        "priceType": "free",
+        "requirements": "Join the Vind Faction in The Greenguard Alliance - Choose a Faction (Fate's Flow (Part 1))"
       }
     ],
     "attacks": [
@@ -3740,7 +3787,7 @@
     ],
     "rarity": "Unknown",
     "evolutions": [],
-    "releaseDate": "May 24th, 2013",
+    "releaseDate": "August 13th, 2022",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/KaraSuLema.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21290875",
     "notes": "• Kara SuLema was previously attainable from the following retired access point:  Facing Z -> Add Kara \n• Kara has a series of unconventional stats in the quests  Fate's Flow (Part 1) and  Fallen Facade; INT: 0, CHA: 0, LUK: 0, Crit: 5 \n• Kara SuLema's stun duration was lowered from 2 turns to 1 turn on  February 28th, 2020. ",
@@ -3791,7 +3838,13 @@
         "dot": "0%",
         "crit": "0%"
       }
-    }
+    },
+    "alternativeImages": [
+      {
+        "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/KaraSuLema-FFP1.png",
+        "caption": "Fate's Flow (Part 1) Appearance"
+      }
+    ]
   },
   {
     "id": "guest-kassandra",
@@ -4005,47 +4058,100 @@
     "name": "King Linus",
     "slug": "guest-king-linus",
     "type": "guest",
-    "description": "With the upgraded shrinking ray your tiny penguin pal rises in the ranks of nobility, dealing more damage and gaining a 3% chance to SHRINK your opponent!",
+    "description": "Killguin King",
     "daRequired": false,
-    "dcRequired": true,
     "elements": [
-      "ICE"
+      "MET"
     ],
-    "traits": [
-      "SHR"
-    ],
-    "level": "19",
-    "damage": "2-16",
-    "stats": "None",
+    "traits": [],
+    "level": "20",
+    "damage": "5-30",
+    "stats": "See guestStats",
     "resists": "None",
     "obtainMethods": [
       {
-        "location": "Grams Pets \n Price: N/A \n Required Items: 1  Prince Linus & 1  Royal Penguin Shrink Ray \n Sellback: 0 Gold \n  \n King Linus \n With the upgraded shrinking ray your tiny penguin pal rises in the ranks of nobility, dealing more damage and gaining a 3% chance to SHRINK your opponent! \n (No DA Required) \n  \n Location:  Grams Pets \n Price: N/A \n Required Items: 1  Prince Linus & 1  Platinum Penguin Shrink Ray \n Sellback: 0 Gold",
-        "priceType": "free"
+        "location": "Defend the Killguins,  Gary's Fate",
+        "priceType": "free",
+        "requirements": "None"
       }
     ],
-    "attacks": [],
+    "attacks": [
+      {
+        "name": "Fish Slap",
+        "description": "Guaranteed Crit",
+        "effect": "Pulls out a fish and throws it at the target for 1 hit of 100% damage with 100% chance to Crit.",
+        "manaCost": "5",
+        "cooldown": "14",
+        "damageType": "Melee",
+        "element": "Metal",
+        "buttonImageUrl": "https://i.imgur.com/Oxdf5dZ.png",
+        "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/KingLinusFishpic.png"
+      },
+      {
+        "name": "Attack",
+        "effect": "Approaches and slams into the target for 1 hit of 100% damage.",
+        "manaCost": "0",
+        "cooldown": "0",
+        "damageType": "Melee",
+        "element": "Metal",
+        "buttonImageUrl": "https://i.imgur.com/MWb3liE.png",
+        "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/KingLinusAttackpic.png"
+      },
+      {
+        "name": "Double Attack",
+        "description": "Available after a successful Attack.",
+        "requirements": "Successful attack to unlock",
+        "effect": "Smiles before approaching the target and jumping up, kicking it twice for 2 hits of 75% damage, for a total of 150% damage.",
+        "manaCost": "0",
+        "cooldown": "2",
+        "damageType": "Melee",
+        "element": "Metal",
+        "buttonImageUrl": "https://i.imgur.com/3MygmU6.png",
+        "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/KingLinusDouble1pic.png"
+      }
+    ],
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "November 14th, 2008",
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/EmperorLinus.png",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18762263",
-    "notes": "• Attack Type 2's rate is equal to [(Pet's Crit) + (Player's LUK)/10]: (Pop-up: Need <= <x> to shrink | Rolled <y>)\n  • If the target has already been shrunken, its HP and size will not be reduced again. (Pop-up: Linus tries... but <target's name> is already SHRUNK!) \n  • If the target's Shrink Resist (inclusive of All Resist) is greater than an unknown second roll value, it will resist the shrinking effect. (Pop-up: Linus tries... but <target's name> resists!)\n• Attack Type 2 previously renamed targets 'Shrunken <target's name>'; due to its potential to break battle mechanics, this was removed on  July 3rd, 2020. \n• Despite requiring a DC item to obtain, the Platinum Penguin Shrink Ray merge version of this pet is not DC tagged, thus ineligible for free storage. \n• Pet is animated; it sways back and forth continuously.",
+    "imageUrl": "https://i.imgur.com/d6DrsPB.png",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15063015",
+    "notes": "• King Linus will remain as a guest if you exit before quest completion.",
     "alsoSee": [],
     "tags": [
       "king",
       "linus",
-      "with",
-      "upgraded",
-      "shrinking",
-      "your",
-      "tiny",
-      "ice"
+      "killguin",
+      "met"
     ],
     "guestStats": {
-      "level": "19",
-      "damage": "2-16",
-      "element": "Ice"
+      "level": "20",
+      "damage": "5-30",
+      "damageType": "Melee",
+      "element": "Metal",
+      "hp": "260",
+      "mp": "230",
+      "characterStats": {
+        "str": "0",
+        "dex": "0",
+        "int": "0",
+        "cha": "0",
+        "luk": "0",
+        "end": "0",
+        "wis": "0"
+      },
+      "offense": {
+        "boost": "0%",
+        "bonus": "100",
+        "crit": "15"
+      },
+      "defense": {
+        "melee": "5",
+        "pierce": "0",
+        "magic": "5",
+        "block": "0",
+        "parry": "0",
+        "dodge": "0"
+      }
     }
   },
   {
@@ -4087,11 +4193,24 @@
       {
         "name": "Jab",
         "description": "2 hits x 100% <Fire/Metal> damage (200%) \n This attack has +100 Bonus and +100 Crit",
-        "effect": "2 hits of 100% damage, amounting to 200% damage, with +100 Bonus and +100 Crit.",
+        "effect": "2 hits of 100% damage, amounting to 200% damage, with +100 Bonus and +100 Crit.\n• Skill button was updated on  May 15th, 2026, replacing",
         "manaCost": "0",
         "cooldown": "2",
         "damageType": "Melee",
-        "element": "Fire OR Metal"
+        "element": "Fire OR Metal",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Konnan-Button02-Jab.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Konnan-Button02-Jab-Old.png"
+      },
+      {
+        "name": "Attack",
+        "description": "3 hits x 100% <Fire/Metal> damage (300%)",
+        "effect": "3 hits of 100% damage, amounting to 300% damage.",
+        "manaCost": "0",
+        "cooldown": "0",
+        "damageType": "Melee",
+        "element": "Fire OR Metal",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Konnan-Attack.png"
       }
     ],
     "rarity": "Unknown",
@@ -7316,7 +7435,61 @@
       {
         "location": "Book of Lore -> Guests (-> Book 3) -> Uaanta - Invite as First Guest/Second Guest,",
         "priceType": "free",
-        "requirements": "Dragon Amulet, Completion of  The Firmament (Book of Lore); Completion of  Uaanta's Dream (Reawakening)",
+        "requirements": "Dragon Amulet, Completion of The Firmament (Book of Lore); Completion of Uaanta's Dream (Reawakening)",
+        "daRequired": true
+      },
+      {
+        "location": "Friday the 13th Sinnocence -> To the War! -> Invite Uaanta,",
+        "priceType": "free",
+        "requirements": "Dragon Amulet, Completion of The Firmament (Book of Lore); Completion of Uaanta's Dream (Reawakening)",
+        "daRequired": true
+      },
+      {
+        "location": "Falconreach (Books 3 and 4) -> Up -> Left -> Uaanta -> Invite as Guest,",
+        "priceType": "free",
+        "requirements": "Dragon Amulet, Completion of The Firmament (Book of Lore); Completion of Uaanta's Dream (Reawakening)",
+        "daRequired": true
+      },
+      {
+        "location": "Friday the 13th - Mr. Nameless -> To the War! -> Invite Uaanta,",
+        "priceType": "free",
+        "requirements": "Dragon Amulet, Completion of The Firmament (Book of Lore); Completion of Uaanta's Dream (Reawakening)",
+        "daRequired": true
+      },
+      {
+        "location": "Friday the 13th - Remthalas -> To the War! -> Invite Uaanta,",
+        "priceType": "free",
+        "requirements": "Dragon Amulet, Completion of The Firmament (Book of Lore); Completion of Uaanta's Dream (Reawakening)",
+        "daRequired": true
+      },
+      {
+        "location": "Friday the 13th 14th - The Angel of Azaveyr -> To the War! -> Invite Uaanta,",
+        "priceType": "free",
+        "requirements": "Dragon Amulet, Completion of The Firmament (Book of Lore); Completion of Uaanta's Dream (Reawakening)",
+        "daRequired": true
+      },
+      {
+        "location": "A Friendly Contest -> To the War! -> Invite Uaanta",
+        "priceType": "free",
+        "requirements": "Dragon Amulet, Completion of The Firmament (Book of Lore); Completion of Uaanta's Dream (Reawakening)",
+        "daRequired": true
+      },
+      {
+        "location": "Reawakening -> To the War! -> Invite Uaanta",
+        "priceType": "free",
+        "requirements": "Dragon Amulet, Completion of The Firmament (Book of Lore); Completion of Uaanta's Dream (Reawakening)",
+        "daRequired": true
+      },
+      {
+        "location": "Ancient Abyss -> To War! -> Invite Uaanta",
+        "priceType": "free",
+        "requirements": "Dragon Amulet, Completion of The Firmament (Book of Lore); Completion of Uaanta's Dream (Reawakening)",
+        "daRequired": true
+      },
+      {
+        "location": "Sinnocence (Boss Fight), The Angel's Tomb, Uaanta's Dream, Myalos' Dream, Notha's Dream, Rebirth, The Dreamers' Abyss",
+        "priceType": "free",
+        "requirements": "None",
         "daRequired": true
       }
     ],
@@ -7428,11 +7601,24 @@
       {
         "name": "Eye for Treasure",
         "description": "Self: Heal 15% max HP, +50 Bonus for 5 turns. \n Hero: +50 Bonus for 5 turns.",
-        "effect": "Recovers 15% of her max HP; applies 'Eye for Treasure' (+50 Bonus) to herself for 5 turns; applies 'Eye for Treasure' (+50 Bonus) to the player for 5 turns.",
+        "effect": "Recovers 15% of her max HP; applies 'Eye for Treasure' (+50 Bonus) to herself for 5 turns; applies 'Eye for Treasure' (+50 Bonus) to the player for 5 turns.\n• Skill's name was previously called 'Resourceful Hunter' and had its own",
         "manaCost": "0",
         "cooldown": "10",
         "damageType": "N/A",
-        "element": "N/A"
+        "element": "N/A",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Valencia2-Button04-Eye.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Valencia-EyeforTreasure.png"
+      },
+      {
+        "name": "Attack",
+        "description": "1 hit x 125% damage",
+        "effect": "1 hit of 125% damage.",
+        "manaCost": "0",
+        "cooldown": "0",
+        "damageType": "Melee",
+        "element": "Metal",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Valencia-Attack.png"
       }
     ],
     "rarity": "Unknown",
@@ -7669,11 +7855,46 @@
       {
         "name": "Dark Drain",
         "description": "1 hit x 40% damage \n Self: Heal self for 5% of target's max HP. Recover 5% max MP.",
-        "effect": "Recovers 5% of Vayle's max MP; removes target's MP equal to 5% of Vayle's max MP; heals Vayle for 5% of target's max HP; 1 hit of 40% damage.",
+        "effect": "Recovers 5% of Vayle's max MP; removes target's MP equal to 5% of Vayle's max MP; heals Vayle for 5% of target's max HP; 1 hit of 40% damage.\n• The Vayle guest in  Frostval - Winged Darkness erroneously uses its old tooltip: Drain Health and Mana",
         "manaCost": "20",
         "cooldown": "7",
         "damageType": "Melee",
-        "element": "Darkness"
+        "element": "Darkness",
+        "buttonImageUrl": "http://i.imgur.com/TaFcqkC.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vayle-DarkDrain1.0.png"
+      },
+      {
+        "name": "Dark Command",
+        "description": "1 hit x 120% damage \n Target: (On hit) Stun for 1 turn. | Target: (On hit) Stun for 2 turns. \n This skill is more effective against Undead foes. | Effect increased due to targeted Undead!",
+        "effect": "1 hit of 120% damage; applies 'Command' to target, stunning it for 1 turn.\n  • If target's race is 'Undead', 'Command' is instead applied for 2 turns.\n• The Vayle guest in  Frostval - Winged Darkness erroneously uses its old tooltip: Command your foe to halt",
+        "manaCost": "18",
+        "cooldown": "8",
+        "damageType": "Melee",
+        "element": "Darkness",
+        "buttonImageUrl": "http://i.imgur.com/spv6xyu.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vayle-DarkCommand1.0.png"
+      },
+      {
+        "name": "Summon Undead",
+        "description": "2 hits x 75% damage (150%)",
+        "effect": "2 hits of 75% damage, amounting to 150% damage.\n• The Vayle guest in  Frostval - Winged Darkness erroneously uses its old tooltip: Summon undead minions to attack.",
+        "manaCost": "15",
+        "cooldown": "2",
+        "damageType": "Melee",
+        "element": "Darkness",
+        "buttonImageUrl": "http://i.imgur.com/5MooA4d.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vayle-CommandUndead.png"
+      },
+      {
+        "name": "Attack",
+        "description": "1 hit x 115% damage \n Has a 10% chance for 2 hits x 115% damage (230%)",
+        "effect": "1 hit of 115% damage.\n  • Attack has a 10% chance to perform 2 hits of 115% damage, amounting to 230% damage.\n• The Vayle guest in  Frostval - Winged Darkness does not have a tooltip for this skill.",
+        "manaCost": "0",
+        "cooldown": "0",
+        "damageType": "Melee",
+        "element": "Darkness",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vayle-Attack1.png"
       }
     ],
     "rarity": "Unknown",
@@ -7751,7 +7972,7 @@
     "resists": "None",
     "obtainMethods": [
       {
-        "location": "Apsaydaaun,  The Foulest,  AbracaDabra",
+        "location": "Apsaydaaun, The Foulest, AbracaDabra",
         "priceType": "free",
         "requirements": "The Plaguenog"
       }
@@ -8098,7 +8319,12 @@
     "resists": "None",
     "obtainMethods": [
       {
-        "location": "Unvoided Ravenloss (Book 3) -> 2 Down -> Left -> Up -> 7 Left -> Enter house beside Equilibrium Gate ->  Yashta -> Invite Yashta!",
+        "location": "Unvoided Ravenloss (Book 3) -> 2 Down -> Left -> Up -> 7 Left -> Enter house beside Equilibrium Gate -> Yashta -> Invite Yashta!",
+        "priceType": "free",
+        "requirements": "None"
+      },
+      {
+        "location": "Securing the Sandsea",
         "priceType": "free",
         "requirements": "None"
       }

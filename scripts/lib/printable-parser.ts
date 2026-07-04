@@ -39,6 +39,19 @@ export function extractContent(html: string): string {
   return match[1]
 }
 
+export function extractAllContent(html: string): string {
+  if (html.includes('This message has been deleted or moved')) {
+    return ''
+  }
+
+  const matches = [...html.matchAll(/<span\s+class=["']?msg["']?[^>]*>([\s\S]*?)<\/span>/gi)]
+  if (matches.length === 0) {
+    throw new Error('Could not find printable content block')
+  }
+
+  return matches.map(match => match[1]).join('\n<hr>\n')
+}
+
 export function convertImageTags(content: string): string {
   return content.replace(/\[image\]([\s\S]*?)\[\/image\]/gi, (_, url: string) => {
     const src = url.trim()
@@ -48,4 +61,8 @@ export function convertImageTags(content: string): string {
 
 export function getPostContent(html: string): string {
   return convertImageTags(extractContent(html))
+}
+
+export function getAllPostContent(html: string): string {
+  return convertImageTags(extractAllContent(html))
 }

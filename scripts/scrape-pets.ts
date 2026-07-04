@@ -24,7 +24,7 @@ import * as path from 'node:path'
 import type { Pet, ObtainMethod, Attack, Evolution, AlsoSeeRef, EntryType } from '../src/types/pet.ts'
 import type { ItemFamily, ObtainVariant, LevelVariant, SharedData } from '../src/types/item.ts'
 import { computePriceType, computeFamilyFlags, normalizeLevel } from '../src/utils/variantHelpers.ts'
-import { fetchPrintable, getPostContent } from './lib/printable-parser.ts'
+import { fetchPrintable, getAllPostContent } from './lib/printable-parser.ts'
 
 const FORUM_BASE = 'https://forums2.battleon.com/f'
 const AZ_PETS_URL = `${FORUM_BASE}/tm.asp?m=22349620&mpage=1`  // A-Z Pets & Guests combined (filtered by type)
@@ -180,6 +180,31 @@ function loadCookie(): string {
 // Handles: [ICE], [FIR], [N/A], [W/S], [???], [ICE][SHR], mixed combos
 
 const KNOWN_MARKERS = new Set(['A/C', 'ALA', 'N/A', 'SHR', 'W/S'])
+const ELEMENT_NAME_TO_CODE = new Map<string, string>([
+  ['bacon', 'BAC'],
+  ['curse', 'CUR'],
+  ['darkness', 'DAR'],
+  ['disease', 'DIS'],
+  ['ebil', 'EBI'],
+  ['energy', 'ENE'],
+  ['evil', 'EVI'],
+  ['fear', 'FEA'],
+  ['fire', 'FIR'],
+  ['good', 'GOO'],
+  ['ice', 'ICE'],
+  ['light', 'LIG'],
+  ['metal', 'MET'],
+  ['nature', 'NAT'],
+  ['none', 'NON'],
+  ['poison', 'POI'],
+  ['silver', 'SIL'],
+  ['stone', 'STO'],
+  ['water', 'WAT'],
+  ['wind', 'WIN'],
+  ['wood', 'WOO'],
+  ['void', '???'],
+  ['???', '???'],
+])
 
 function parseBracketCodes(raw: string): { elements: string[]; markers: string[] } {
   const elements: string[] = []
@@ -192,6 +217,20 @@ function parseBracketCodes(raw: string): { elements: string[]; markers: string[]
     else elements.push(code)
   }
   return { elements, markers }
+}
+
+function uniqueStrings(values: string[]): string[] {
+  return Array.from(new Set(values.filter(Boolean)))
+}
+
+function parseElementCodesFromText(raw: string): string[] {
+  return uniqueStrings(
+    raw
+      .split(/[\/,&]|(?:\s+\+\s+)|(?:\s+and\s+)/i)
+      .map(part => part.trim().toLowerCase())
+      .map(part => ELEMENT_NAME_TO_CODE.get(part))
+      .filter((code): code is string => Boolean(code))
+  )
 }
 
 // ─── A-Z page parsing ─────────────────────────────────────────────────────────
@@ -207,8 +246,260 @@ interface PetStub {
   letter: string  // '#', 'A', 'B', etc.
 }
 
+interface ChronologyData {
+  datesByName: Map<string, string>
+  datesByMessageId: Map<string, string>
+  typesByName: Map<string, EntryType>
+  typesByMessageId: Map<string, EntryType>
+}
+
+interface ParsedAllVersionsCandidate {
+  html: string
+  data: ReturnType<typeof parsePetThread>
+  actualLevel: number
+  displayName: string
+  explicitPostLabel?: string
+}
+
 function getDisplayName(item: Pet | ItemFamily): string {
   return 'familyName' in item ? item.familyName : item.name
+}
+
+function normalizeRefLookupName(name: string): string {
+  return name
+    .toLowerCase()
+    .replace(/[.,!?]+$/, '')
+    .replace(/\s+\((all versions|[ivx]+-[ivx]+)\)$/i, '')
+    .replace(/\s+\((i,\s*ii(?:,\s*iii)?|lieutenant,\s*general|kitten,\s*cat)\)$/i, '')
+    .replace(/\s+/g, ' ')
+    .trim()
+}
+
+function normalizeAllVersionsMatchName(name: string): string {
+  return name
+    .replace(/\(All Versions\)/gi, '')
+    .replace(/\([^)]*\)/g, '')
+    .replace(/,\s*(the|a|an)\s*$/i, '')
+    .replace(/^\s*(the|a|an)\s+/i, '')
+    .replace(/[^a-z0-9]+/gi, '')
+    .toLowerCase()
+}
+
+function extractExplicitVariantLabel(text: string): string | undefined {
+  const matches = text.match(/\(([^)]+)\)/gi) ?? []
+  const knownLabels = new Map<string, string>([
+    ['normal', 'Normal'],
+    ['d-coins', 'DC'],
+    ['d-coin', 'DC'],
+    ['dc', 'DC'],
+    ['d-amulet', 'D-Amulet'],
+    ['d-amulet/d-coins', 'D-Amulet/DC'],
+    ['d-amulet/dc', 'D-Amulet/DC'],
+    ['resource', 'Resource'],
+  ])
+
+  for (const match of matches) {
+    const normalized = match.slice(1, -1).trim().toLowerCase()
+    const label = knownLabels.get(normalized)
+    if (label) return label
+  }
+
+  return undefined
+}
+
+function inferAccessVariantLabelFromMethods(methods: ObtainMethod[]): string | undefined {
+  const hasDC = methods.some(method => method.priceType === 'dc' || method.dcRequired)
+  const hasDA = methods.some(method => method.daRequired)
+
+  if (hasDC) return 'DC'
+  if (hasDA) return 'D-Amulet'
+  return undefined
+}
+
+function extractPostDisplayName(html: string, baseName: string): string {
+  const titleMatch = html.match(/<font[^>]*size=['"]3['"][^>]*>\s*<b>([^<]+)<\/b>/i)
+    ?? html.match(/<b>\s*<font[^>]*size=['"]3['"][^>]*>([^<]+)<\/font>\s*<\/b>/i)
+
+  if (!titleMatch) return baseName
+
+  const title = stripHtml(decodeHTML(titleMatch[1])).trim()
+  return title || baseName
+}
+
+function buildObtainVariantsFromMethods(
+  methods: ObtainMethod[],
+  sectionHtml: string,
+  fallbackFlags?: { daRequired?: boolean; dcRequired?: boolean; dmRequired?: boolean },
+  explicitVariantName?: string
+): ObtainVariant[] {
+  const sectionDARequired = fallbackFlags?.daRequired ?? parseDARequiredFromSection(sectionHtml, sectionHtml)
+  const sectionDCRequired = fallbackFlags?.dcRequired ?? /<img[^>]+src=["'][^"']*\/tags\/DC\.png["']/i.test(sectionHtml)
+  const sectionDMRequired = fallbackFlags?.dmRequired ?? /<img[^>]+src=["'][^"']*\/tags\/DM\.png["']/i.test(sectionHtml)
+  const groupHasExplicitDC = methods.some(method => method.priceType === 'dc' || method.dcRequired)
+
+  return methods.map(om => {
+    const priceType = computePriceType(om.price, om.requiredItems)
+    const explicitVariantHasDC = explicitVariantName ? /\b(?:d-coins?|dc)\b/i.test(explicitVariantName) : undefined
+    const dcRequired =
+      explicitVariantHasDC === undefined
+        ? priceType === 'dc' || Boolean(om.dcRequired) || (sectionDCRequired && groupHasExplicitDC)
+        : explicitVariantHasDC || priceType === 'dc'
+
+    return {
+      location: om.location,
+      price: om.price,
+      priceType,
+      sellback: om.sellback,
+      ...(om.requirements ? { requirements: om.requirements } : {}),
+      daRequired: om.daRequired ?? sectionDARequired,
+      ...(dcRequired ? { dcRequired: true } : {}),
+      ...(om.dmRequired || sectionDMRequired ? { dmRequired: true } : {}),
+      ...(om.requiredItems ? { requiredItems: om.requiredItems } : {}),
+    }
+  })
+}
+
+function notesBelongToVariant(notes: string | undefined, variantName: string | undefined): boolean {
+  if (!notes || !variantName) return false
+  const escapedLabel = variantName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+  return new RegExp(`\\(${escapedLabel}\\)|\\b${escapedLabel}\\b`, 'i').test(notes)
+}
+
+function groupObtainMethodsByVariant(
+  methods: ObtainMethod[],
+  fallbackLabel?: string
+): Array<{ label?: string; methods: ObtainMethod[] }> {
+  if (methods.length === 0) return []
+
+  const groups = new Map<string, { label?: string; methods: ObtainMethod[] }>()
+  let sawExplicitLabel = false
+
+  for (const method of methods) {
+    const explicitLabel =
+      extractExplicitVariantLabel(method.requiredItems ?? '') ??
+      extractExplicitVariantLabel(method.location)
+
+    if (explicitLabel) sawExplicitLabel = true
+
+    const groupKey = explicitLabel ?? '__default__'
+    const existing = groups.get(groupKey)
+    if (existing) {
+      existing.methods.push(method)
+    } else {
+      groups.set(groupKey, {
+        ...(explicitLabel ? { label: explicitLabel } : fallbackLabel ? { label: fallbackLabel } : {}),
+        methods: [method],
+      })
+    }
+  }
+
+  if (!sawExplicitLabel) {
+    const inferredGroups = new Map<string, { label?: string; methods: ObtainMethod[] }>()
+
+    for (const method of methods) {
+      const inferredLabel =
+        method.priceType === 'dc' || method.dcRequired
+          ? 'DC'
+          : fallbackLabel
+
+      const groupKey = inferredLabel ?? '__default__'
+      const existing = inferredGroups.get(groupKey)
+      if (existing) {
+        existing.methods.push(method)
+      } else {
+        inferredGroups.set(groupKey, {
+          ...(inferredLabel ? { label: inferredLabel } : {}),
+          methods: [method],
+        })
+      }
+    }
+
+    if (inferredGroups.size >= 2) {
+      return Array.from(inferredGroups.values())
+    }
+
+    return [
+      {
+        ...(fallbackLabel ? { label: fallbackLabel } : {}),
+        methods,
+      },
+    ]
+  }
+
+  return Array.from(groups.values()).map(group => ({
+    ...group,
+    ...(!group.label && fallbackLabel ? { label: fallbackLabel } : {}),
+  }))
+}
+
+function buildVariantFamilyFromSinglePost(
+  data: ReturnType<typeof parsePetThread>,
+  name: string,
+  stub: PetStub,
+  chronology: ChronologyData
+): ItemFamily | undefined {
+  const fallbackVariantLabel = extractExplicitVariantLabel(data.notes ?? '')
+  const methodGroups = groupObtainMethodsByVariant(data.obtainMethods, fallbackVariantLabel)
+  const labels = uniqueStrings(methodGroups.map(group => group.label ?? ''))
+  if (methodGroups.length < 2 || labels.length < 2) return undefined
+
+  const actualLevel = data.level && data.level !== 'Unknown' ? parseInt(data.level, 10) : undefined
+  const elementCodes = data.elementCodes.length > 0 ? data.elementCodes : stub.elements
+  const sharedNotes = notesBelongToVariant(data.notes, fallbackVariantLabel) ? undefined : data.notes
+
+  const levelVariants = methodGroups.map((group, index) => {
+    const variantName = group.label ?? `Variant ${index + 1}`
+    return {
+      levelNumber: index + 1,
+      levelDisplay: data.level || 'Unknown',
+      ...(actualLevel && !isNaN(actualLevel) ? { actualLevel } : {}),
+      variantName,
+      name: `${name} (${variantName})`,
+      damage: data.damage || 'Unknown',
+      stats: data.stats || 'None',
+      ...(data.statsType ? { statsType: data.statsType } : {}),
+      obtainVariants: buildObtainVariantsFromMethods(group.methods, data.sourceHtml, undefined, variantName),
+      ...(elementCodes[0] ? { element: elementCodes[0] } : {}),
+      ...(data.resists && data.resists !== 'None' ? { resists: data.resists } : {}),
+      ...(data.rarity && data.rarity !== 'Unknown' ? { rarity: data.rarity } : {}),
+      ...(notesBelongToVariant(data.notes, variantName) ? { notes: data.notes } : {}),
+    }
+  })
+
+  return computeFamilyFlags({
+    id: prefixedSlug(name, stub.type),
+    familyName: name,
+    slug: prefixedSlug(name, stub.type),
+    type: stub.type,
+    forumUrl: stub.forumUrl,
+    shared: {
+      description: data.description,
+      ...(elementCodes[0] ? { element: elementCodes[0] } : {}),
+      ...(data.rarity && data.rarity !== 'Unknown' ? { rarity: data.rarity } : {}),
+      ...(data.resists && data.resists !== 'None' ? { resists: data.resists } : {}),
+      ...(data.attacks.length > 0 ? { attacks: data.attacks } : {}),
+      ...(sharedNotes ? { notes: sharedNotes } : {}),
+      ...(data.imageUrl ? { imageUrl: data.imageUrl } : {}),
+      ...(data.alternativeImages && data.alternativeImages.length > 0 ? { alternativeImages: data.alternativeImages } : {}),
+    },
+    levelVariants,
+    ...(chronology.datesByMessageId.get(stub.messageId) || chronology.datesByName.get(stub.name.toLowerCase())
+      ? { releaseDate: chronology.datesByMessageId.get(stub.messageId) ?? chronology.datesByName.get(stub.name.toLowerCase())! }
+      : {}),
+    tags: [stub.type, ...elementCodes.map(code => code.toLowerCase()), ...stub.markers.map(marker => marker.toLowerCase().replace('/', '-'))],
+    ...(data.isTemp ? { isTemp: data.isTemp } : {}),
+    ...(data.isRare ? { isRare: data.isRare } : {}),
+    ...(data.isSeasonal ? { isSeasonal: data.isSeasonal } : {}),
+    ...(data.isSpecialOffer ? { isSpecialOffer: data.isSpecialOffer } : {}),
+    ...(data.retired ? { retired: data.retired } : {}),
+    hasDA: false,
+    hasDC: false,
+    hasDM: false,
+    hasFree: false,
+    hasMerge: false,
+    levelRange: '',
+    elements: elementCodes,
+  })
 }
 
 function normalizeDuplicateVariantName(name: string): string {
@@ -248,7 +539,7 @@ function dedupeVariantEntries(items: Array<Pet | ItemFamily>): Array<Pet | ItemF
   return Array.from(canonicalByNormalized.values())
 }
 
-function parseAZPage(html: string, chronoTypes: Map<string, EntryType>): PetStub[] {
+function parseAZPage(html: string, chronology: ChronologyData): PetStub[] {
   const stubs: PetStub[] = []
   const seen = new Set<string>()
   const chunks = html.split(/<br\s*\/?>/)
@@ -303,7 +594,11 @@ function parseAZPage(html: string, chronoTypes: Map<string, EntryType>): PetStub
 
     // Determine type from Chronology (primary source) or default to 'pet'
     const key = name.toLowerCase()
-    const type = chronoTypes.get(key) ?? chronoTypes.get(name.replace(/\s*\([^)]+\)\s*$/, '').trim().toLowerCase()) ?? 'pet' as EntryType
+    const type =
+      chronology.typesByMessageId.get(msgId) ??
+      chronology.typesByName.get(key) ??
+      chronology.typesByName.get(name.replace(/\s*\([^)]+\)\s*$/, '').trim().toLowerCase()) ??
+      'pet' as EntryType
 
     stubs.push({
       name,
@@ -459,7 +754,7 @@ function detectLevel(name: string): { number: number; display: string } | null {
  * - "Goldfish Knight IV" → false
  */
 function hasLevelRange(name: string): boolean {
-  return /\([IVX]+-[IVX]+\)/.test(name) || /\(All Versions\)/i.test(name)
+  return /\([IVX]+(?:[-,\s]+[IVX]+)+\)/.test(name) || /\(All Versions\)/i.test(name)
 }
 
 /**
@@ -492,16 +787,12 @@ function extractImages(html: string): { main?: string; alternatives: Array<{ url
   // Helper to check if URL should be skipped
   const shouldSkip = (url: string) => skipPatterns.some(p => p.test(url))
   
-  // Separate lists for different sources
-  const dfPediaImages: Array<{ url: string; caption?: string }> = []
-  const imgurImages: Array<{ url: string; caption?: string }> = []
-  const otherImages: Array<{ url: string; caption?: string }> = []
+  const candidateImages: string[] = []
   const seenUrls = new Set<string>()
-
-  const pushImage = (bucket: Array<{ url: string; caption?: string }>, url: string, caption?: string) => {
+  const pushCandidate = (url: string) => {
     if (seenUrls.has(url)) return
     seenUrls.add(url)
-    bucket.push({ url, caption })
+    candidateImages.push(url)
   }
   
   // Extract from <img> tags
@@ -513,102 +804,55 @@ function extractImages(html: string): { main?: string; alternatives: Array<{ url
     if (shouldSkip(src)) continue
     
     if (src.includes('github.com/DF-Pedia') || src.includes('githubusercontent.com') && src.includes('DF-Pedia')) {
-      pushImage(dfPediaImages, src)
+      pushCandidate(src)
     } else if (src.includes('imgur.com') || src.includes('i.imgur.com')) {
-      pushImage(imgurImages, src)
+      pushCandidate(src)
     } else if (src.includes('media.artix.com/encyc') || 
                src.includes('battleon.com/encyc') ||
                (src.includes('/f/upfiles/') && src.length > 60)) {
-      pushImage(otherImages, src)
+      pushCandidate(src)
     }
   }
-  
-  // Extract from <a href> tags (for "Alternative Image" / "... Appearance" links)
-  const linkRegex = /<a[^>]+href=["']([^"']+\.(?:jpg|jpeg|png|gif))["'][^>]*>([^<]*)<\/a>/gi
-  let linkMatch: RegExpExecArray | null
-  while ((linkMatch = linkRegex.exec(html)) !== null) {
-    const url = linkMatch[1]
-    const caption = stripHtml(decodeHTML(linkMatch[2] ?? '')).trim() || undefined
-    if (shouldSkip(url)) continue
-    
-    if (url.includes('github.com/DF-Pedia') || url.includes('githubusercontent.com') && url.includes('DF-Pedia')) {
-      pushImage(dfPediaImages, url, caption)
-    } else if (url.includes('imgur.com') || url.includes('i.imgur.com')) {
-      pushImage(imgurImages, url, caption)
-    } else if (url.includes('media.artix.com/encyc') || 
-               url.includes('battleon.com/encyc') ||
-               (url.includes('/f/upfiles/') && url.length > 60)) {
-      pushImage(otherImages, url, caption)
+
+  const labeledImages: Array<{ url: string; caption: string }> = []
+  const labeledImageRegex = /<(?:b|strong)>([^<]+)<\/(?:b|strong)>\s*(?:<br\s*\/?>|\s|&nbsp;)*<img[^>]+src=["']([^"']+)["'][^>]*>/gi
+  let labeledMatch: RegExpExecArray | null
+
+  while ((labeledMatch = labeledImageRegex.exec(html)) !== null) {
+    const caption = stripHtml(decodeHTML(labeledMatch[1] ?? '')).trim()
+    const url = labeledMatch[2]
+    if (!caption || shouldSkip(url)) continue
+    if (/attack type|attack\b|button/i.test(caption)) continue
+    labeledImages.push({ url, caption })
+  }
+
+  if (labeledImages.length > 0) {
+    const [mainImage, ...altImages] = labeledImages
+    return {
+      main: mainImage.url,
+      alternatives: altImages.filter(image => image.url !== mainImage.url),
     }
   }
-  
-  // Extract bare URLs in text
-  const bareUrlRegex = /https?:\/\/(?:[^\s<>"]+?)\.(?:jpg|jpeg|png|gif)/gi
-  let urlMatch: RegExpExecArray | null
-  while ((urlMatch = bareUrlRegex.exec(html)) !== null) {
-    const url = urlMatch[0]
-    if (shouldSkip(url)) continue
-    
-    if (url.includes('github.com/DF-Pedia') || url.includes('githubusercontent.com') && url.includes('DF-Pedia')) {
-      pushImage(dfPediaImages, url)
-    } else if (url.includes('imgur.com') || url.includes('i.imgur.com')) {
-      pushImage(imgurImages, url)
-    } else if (url.includes('media.artix.com/encyc') || 
-               url.includes('battleon.com/encyc') ||
-               (url.includes('/f/upfiles/') && url.length > 60)) {
-      pushImage(otherImages, url)
-    }
-  }
-  
-  // Determine main image
-  let main: string | undefined
+
+  const main = candidateImages.at(-1)
   const alternatives: Array<{ url: string; caption: string }> = []
-  
-  if (dfPediaImages.length > 0) {
-    // DF-Pedia is main, everything else is alternative
-    main = dfPediaImages[0].url
-    
-    // Additional DF-Pedia images are alternatives too (but shouldn't happen since we filter attacks)
-    for (let i = 1; i < dfPediaImages.length; i++) {
-      alternatives.push({ url: dfPediaImages[i].url, caption: dfPediaImages[i].caption || 'Alternative Image' })
-    }
-    
-    // All imgur images are alternatives
-    for (const image of imgurImages) {
-      const imgPos = html.indexOf(image.url)
-      const caption = image.caption || findCaptionNear(html, imgPos)
-      alternatives.push({ url: image.url, caption })
-    }
-    
-    // Other images are alternatives
-    for (const image of otherImages) {
-      const imgPos = html.indexOf(image.url)
-      const caption = image.caption || findCaptionNear(html, imgPos)
-      alternatives.push({ url: image.url, caption })
-    }
-  } else if (imgurImages.length > 0) {
-    // No DF-Pedia, use imgur as fallback main
-    main = imgurImages[0].url
-    
-    // Rest of imgur are alternatives
-    for (let i = 1; i < imgurImages.length; i++) {
-      alternatives.push({ url: imgurImages[i].url, caption: imgurImages[i].caption || 'Alternative Image' })
-    }
-    
-    // Other images are alternatives
-    for (const image of otherImages) {
-      const imgPos = html.indexOf(image.url)
-      const caption = image.caption || findCaptionNear(html, imgPos)
-      alternatives.push({ url: image.url, caption })
-    }
-  } else if (otherImages.length > 0) {
-    // Last resort: use other images
-    main = otherImages[0].url
-    for (let i = 1; i < otherImages.length; i++) {
-      alternatives.push({ url: otherImages[i].url, caption: otherImages[i].caption || 'Alternative Image' })
-    }
+  if (!main) return { main: undefined, alternatives }
+
+  const mainImagePos = html.lastIndexOf(main)
+  const afterMain = mainImagePos >= 0 ? html.slice(mainImagePos + main.length) : ''
+  const linkRegex = /<a[^>]+href=["']([^"']+\.(?:jpg|jpeg|png|gif|bmp))["'][^>]*>([^<]*)<\/a>/gi
+  let linkMatch: RegExpExecArray | null
+  const seenAlt = new Set<string>()
+  while ((linkMatch = linkRegex.exec(afterMain)) !== null) {
+    const url = linkMatch[1]
+    const caption = stripHtml(decodeHTML(linkMatch[2] ?? '')).trim()
+    if (!caption || shouldSkip(url) || seenAlt.has(url)) continue
+    if (/attack type|attack\b|button/i.test(caption)) continue
+    if (!/(appearance|alternative|variant|form|mode|style|version)/i.test(caption)) continue
+    seenAlt.add(url)
+    alternatives.push({ url, caption })
   }
-  
+
   return { main, alternatives }
 }
 
@@ -690,7 +934,7 @@ async function parsePetThreadMultiVariant(
   name: string,
   stub: PetStub,
   cookie: string,
-  chronoDates: Map<string, string>,
+  chronology: ChronologyData,
   nameToSlug: Map<string, { slug: string; type: EntryType }>
 ): Promise<Pet | ItemFamily> {
   // Check for level indicator in name (e.g., "BabyWeaver I" or range notation "(I-VI)")
@@ -701,13 +945,15 @@ async function parsePetThreadMultiVariant(
   
   // Check for multi-post variants (like Baron (Kitten, Cat))
   const baseName = name.replace(/\s*\([^)]+\)/, '').trim()
-  const multiPostVariants = detectMultiPostVariants(html, baseName)
+  const multiPostVariants = hasLevelRange(name) ? [] : detectMultiPostVariants(html, baseName)
   const hasMultiPostVariants = multiPostVariants.length >= 2
   
   // Single-page AND no level indicator AND no multi-post variants → use existing logic (backward compat)
   if (totalPages === 1 && !hasLevelInName && !hasMultiPostVariants) {
     const data = parsePetThread(html, name)
-    return convertToPet(data, stub, chronoDates, nameToSlug)
+    const sameLevelFamily = buildVariantFamilyFromSinglePost(data, name, stub, chronology)
+    if (sameLevelFamily) return sameLevelFamily
+    return convertToPet(data, stub, chronology, nameToSlug)
   }
   
   // Multi-variant path: fetch all pages if needed
@@ -718,7 +964,7 @@ async function parsePetThreadMultiVariant(
     for (let page = 2; page <= totalPages; page++) {
       try {
         await sleep(DELAY_MS)
-        const pageHtml = getPostContent(await fetchPrintable(stub.messageId, cookie, page))
+        const pageHtml = getAllPostContent(await fetchPrintable(stub.messageId, cookie, page))
         allPosts.push(pageHtml)
       } catch (err) {
         console.warn(`⚠️  Page ${page}/${totalPages} failed: ${err}`)
@@ -731,6 +977,7 @@ async function parsePetThreadMultiVariant(
   const levelVariantsMap = new Map<number, LevelVariant>()
   let sharedDescription = ''
   let sharedElement: string | undefined
+  let sharedElementCodes: string[] = [...stub.elements]
   let sharedRarity: string | undefined
   let sharedResists: string | undefined
   let sharedAttacks: Attack[] = []
@@ -787,6 +1034,7 @@ async function parsePetThreadMultiVariant(
         price: om.price,
         priceType: computePriceType(om.price, om.requiredItems),
         sellback: om.sellback,
+        ...(om.requirements ? { requirements: om.requirements } : {}),
         daRequired: om.daRequired ?? false,
         ...(om.dcRequired ? { dcRequired: om.dcRequired } : {}),
         ...(om.dmRequired ? { dmRequired: om.dmRequired } : {}),
@@ -801,7 +1049,8 @@ async function parsePetThreadMultiVariant(
         const isFirstVariant = !sharedDescription
         if (isFirstVariant) {
           sharedDescription = data.description
-          sharedElement = stub.elements.length > 0 ? stub.elements[0] : undefined
+          sharedElementCodes = uniqueStrings([...sharedElementCodes, ...data.elementCodes])
+          sharedElement = sharedElementCodes[0]
           sharedRarity = data.rarity !== 'Unknown' ? data.rarity : undefined
           sharedResists = data.resists !== 'None' ? data.resists : undefined
           sharedAttacks = data.attacks
@@ -819,6 +1068,7 @@ async function parsePetThreadMultiVariant(
           stats: data.stats || 'None',
           ...(data.statsType ? { statsType: data.statsType } : {}),
           obtainVariants,
+          ...(data.elementCodes[0] ? { element: data.elementCodes[0] } : {}),
           ...(data.resists && data.resists !== 'None' ? { resists: data.resists } : {}),
           ...(data.rarity && data.rarity !== 'Unknown' ? { rarity: data.rarity } : {}),
           // Only include notes if NOT from first variant (first variant notes go to shared)
@@ -830,15 +1080,123 @@ async function parsePetThreadMultiVariant(
     }
   } else if (hasLevelRange(name)) {
     // Two types of multi-variant notation:
-    // 1. Roman numeral range: "Pet Name (I-VI)" → sections named "Pet Name I", "Pet Name II", etc.
+    // 1. Roman numeral range: "Pet Name (I-VI)" or "(I, II)" → sections named "Pet Name I", "Pet Name II", etc.
     // 2. All Versions: "Pet Name (All Versions)" → repeated pet name + Level: X markers
     
-    const baseName = name.replace(/\s*\([IVX]+-[IVX]+\)/, '').replace(/\s*\(All Versions\)/, '').trim()
+    const baseName = name.replace(/\s*\([IVX]+(?:[-,\s]+[IVX]+)+\)/, '').replace(/\s*\(All Versions\)/, '').trim()
     const isAllVersions = /\(All Versions\)/i.test(name)
     
     const sections: Array<{ levelNum: number; romanDisplay: string; html: string; startIndex: number }> = []
+    let handledByPostCandidates = false
     
     if (isAllVersions) {
+      const postChunks = html.includes('\n<hr>\n') ? html.split('\n<hr>\n') : [html]
+      const normalizedBaseName = normalizeAllVersionsMatchName(name)
+      const postCandidates: ParsedAllVersionsCandidate[] = []
+
+      for (const chunk of postChunks) {
+        const plainChunk = stripHtml(decodeHTML(chunk)).replace(/\s+/g, ' ').trim()
+        const normalizedChunk = normalizeAllVersionsMatchName(plainChunk)
+        if (!normalizedChunk.includes(normalizedBaseName)) continue
+
+        const data = parsePetThread(chunk, baseName)
+        const actualLevel = data.level && data.level !== 'Unknown' ? parseInt(data.level, 10) : NaN
+        if (!actualLevel || isNaN(actualLevel)) continue
+
+        const explicitPostLabel =
+          extractExplicitVariantLabel(chunk) ??
+          extractExplicitVariantLabel(data.notes ?? '')
+
+        postCandidates.push({
+          html: chunk,
+          data,
+          actualLevel,
+          displayName: extractPostDisplayName(chunk, baseName),
+          ...(explicitPostLabel ? { explicitPostLabel } : {}),
+        })
+      }
+
+      const explicitLabelCandidates = postCandidates.flatMap(candidate =>
+        groupObtainMethodsByVariant(candidate.data.obtainMethods, candidate.explicitPostLabel)
+          .map(group => group.label)
+          .filter((label): label is string => Boolean(label))
+      )
+
+      const uniqueActualLevels = new Set(postCandidates.map(candidate => candidate.actualLevel))
+      const hasNamedVariantBranches = new Set(explicitLabelCandidates).size > 0
+
+      if (postCandidates.length >= 2 && (uniqueActualLevels.size >= 2 || hasNamedVariantBranches)) {
+        const sortedCandidates = [...postCandidates].sort((a, b) => a.actualLevel - b.actualLevel)
+        let variantOrder = 1
+
+        for (const candidate of sortedCandidates) {
+          const methodGroups = groupObtainMethodsByVariant(candidate.data.obtainMethods, candidate.explicitPostLabel)
+
+          if (!sharedDescription) {
+            sharedDescription = candidate.data.description
+            sharedElementCodes = uniqueStrings([...sharedElementCodes, ...candidate.data.elementCodes])
+            sharedElement = sharedElementCodes[0]
+            sharedRarity = candidate.data.rarity !== 'Unknown' ? candidate.data.rarity : undefined
+            sharedResists = candidate.data.resists !== 'None' ? candidate.data.resists : undefined
+            sharedAttacks = candidate.data.attacks
+            sharedNotes = notesBelongToVariant(candidate.data.notes, candidate.explicitPostLabel)
+              ? undefined
+              : candidate.data.notes
+            sharedAlsoSeeNames = candidate.data.alsoSeeNames
+          }
+
+          for (const group of methodGroups) {
+            let variantName = group.label
+            if (hasNamedVariantBranches && !variantName) {
+              variantName = inferAccessVariantLabelFromMethods(group.methods)
+            }
+
+            const obtainVariants = buildObtainVariantsFromMethods(
+              group.methods,
+              candidate.html,
+              undefined,
+              variantName
+            )
+            if (obtainVariants.length === 0) continue
+
+            const variantKey = `${candidate.actualLevel}:${variantName ?? ''}`
+            const existingVariant = Array.from(levelVariantsMap.values()).find(levelVariant =>
+              `${levelVariant.actualLevel ?? levelVariant.levelDisplay}:${levelVariant.variantName ?? ''}` === variantKey
+            )
+
+            if (existingVariant) {
+              existingVariant.obtainVariants.push(...obtainVariants)
+              continue
+            }
+
+            const variantDisplay = candidate.actualLevel.toString()
+            const displayName = variantName ? `${candidate.displayName} (${variantName})` : candidate.displayName
+
+            levelVariantsMap.set(variantOrder, {
+              levelNumber: variantOrder,
+              levelDisplay: variantDisplay,
+              actualLevel: candidate.actualLevel,
+              ...(variantName ? { variantName } : {}),
+              name: displayName,
+              damage: candidate.data.damage || 'Unknown',
+              stats: candidate.data.stats || 'None',
+              ...(candidate.data.statsType ? { statsType: candidate.data.statsType } : {}),
+              obtainVariants,
+              ...(candidate.data.elementCodes[0] ? { element: candidate.data.elementCodes[0] } : {}),
+              ...(candidate.data.resists && candidate.data.resists !== 'None' ? { resists: candidate.data.resists } : {}),
+              ...(candidate.data.rarity && candidate.data.rarity !== 'Unknown' ? { rarity: candidate.data.rarity } : {}),
+              ...(notesBelongToVariant(candidate.data.notes, variantName) ? { notes: candidate.data.notes } : {}),
+            })
+            variantOrder++
+          }
+        }
+
+        handledByPostCandidates = levelVariantsMap.size >= 2
+      }
+
+      if (handledByPostCandidates) {
+        // Skip the older heading-based "(All Versions)" detector when post-level parsing succeeded.
+      } else {
       // "(All Versions)" pattern - look for repeated pet name headings + Level: X
       // The same name appears multiple times, each followed by different level data
       
@@ -882,6 +1240,7 @@ async function parsePetThreadMultiVariant(
           })
         }
       }
+      }
     } else {
       // Roman numeral range pattern - look for "Pet Name I", "Pet Name II", etc.
       // Handle extreme spacing variations like:
@@ -895,7 +1254,7 @@ async function parsePetThreadMultiVariant(
         .join('')
       
       const sectionPattern = new RegExp(
-        `(?:<[^>]*>)?\\s*(${ultraFlexPattern}([IVX]+))\\s*(?:<[^>]*>)?`,
+        `(?:<[^>]*>)?\\s*(${ultraFlexPattern}([IVX]+))\\b\\s*(?:<[^>]*>)?`,
         'gi'
       )
       
@@ -912,13 +1271,70 @@ async function parsePetThreadMultiVariant(
           })
         }
       }
+      
+      // Handle the case where the first variant is just the base name (e.g. "Jimmy The Eye" instead of "Jimmy The Eye I")
+      if (sections.length > 0 && !sections.find(s => s.levelNum === 1)) {
+        const firstOccurrence = new RegExp(`(?:<[^>]*>)?\\s*(${ultraFlexPattern})\\b\\s*(?:<[^>]*>)?`, 'i').exec(html)
+        if (firstOccurrence && firstOccurrence.index < sections[0].startIndex) {
+          sections.push({
+            levelNum: 1,
+            romanDisplay: 'I',
+            html: '',
+            startIndex: firstOccurrence.index,
+          })
+        } else if (sections[0].startIndex > 50) {
+          sections.push({
+            levelNum: 1,
+            romanDisplay: 'I',
+            html: '',
+            startIndex: 0,
+          })
+        }
+      }
     }
     
     // Sort by start index and extract HTML for each section
     sections.sort((a, b) => a.startIndex - b.startIndex)
+
+    if (!handledByPostCandidates && sections.length <= 1 && html.includes('\n<hr>\n')) {
+      const postChunks = html.split('\n<hr>\n')
+      let cursor = 0
+      const fallbackSections: Array<{ levelNum: number; romanDisplay: string; html: string; startIndex: number }> = []
+      const seenLevels = new Set<number>()
+
+      for (const chunk of postChunks) {
+        const startIndex = html.indexOf(chunk, cursor)
+        if (startIndex >= 0) cursor = startIndex + chunk.length
+
+        const plainChunk = stripHtml(decodeHTML(chunk)).replace(/\s+/g, ' ').trim()
+        const levelMatch = plainChunk.match(/\bLevel:\s*(\d+)\b/i)
+        if (!levelMatch) continue
+
+        const levelNum = parseInt(levelMatch[1], 10)
+        if (!(levelNum > 0 && levelNum <= 200) || seenLevels.has(levelNum)) continue
+
+        const normalizedBaseName = normalizeAllVersionsMatchName(name)
+        const normalizedChunk = normalizeAllVersionsMatchName(plainChunk)
+        if (!normalizedChunk.includes(normalizedBaseName)) continue
+
+        seenLevels.add(levelNum)
+        fallbackSections.push({
+          levelNum,
+          romanDisplay: levelNum.toString(),
+          html: chunk,
+          startIndex: startIndex >= 0 ? startIndex : cursor,
+        })
+      }
+
+      if (fallbackSections.length >= 2) {
+        sections.length = 0
+        sections.push(...fallbackSections)
+      }
+    }
     
     for (let i = 0; i < sections.length; i++) {
       const section = sections[i]
+      if (section.html) continue
       const nextSection = sections[i + 1]
       
       // For the last section, look for common end markers
@@ -952,37 +1368,15 @@ async function parsePetThreadMultiVariant(
       // Parse actual level number from "Level: X" in the section
       const actualLevel = data.level && data.level !== 'Unknown' ? parseInt(data.level, 10) : undefined
       
-      // Detect DA/DC from THIS section's HTML (not global)
-      const sectionDARequired = parseDARequiredFromSection(section.html, section.html)
-      const sectionDCRequired = /<img[^>]+src=["'][^"']*\/tags\/DC\.png["']/i.test(section.html)
-      const sectionDMRequired = /<img[^>]+src=["'][^"']*\/tags\/DM\.png["']/i.test(section.html)
-      
-      // Debug: Check for DC tag in price text as fallback (sometimes tag appears in obtain method)
-      let dcFromPrice = false
-      if (!sectionDCRequired && data.obtainMethods.length > 0) {
-        dcFromPrice = data.obtainMethods.some(om => 
-          om.price.toLowerCase().includes('dragon coin') || 
-          om.priceType === 'dc'
-        )
-      }
-      
-      const obtainVariants: ObtainVariant[] = data.obtainMethods.map(om => ({
-        location: om.location,
-        price: om.price,
-        priceType: computePriceType(om.price, om.requiredItems),
-        sellback: om.sellback,
-        daRequired: sectionDARequired,
-        ...(sectionDCRequired || dcFromPrice ? { dcRequired: true } : {}),
-        ...(sectionDMRequired ? { dmRequired: sectionDMRequired } : {}),
-        ...(om.requiredItems ? { requiredItems: om.requiredItems } : {}),
-      }))
+      const obtainVariants = buildObtainVariantsFromMethods(data.obtainMethods, section.html)
       
       if (obtainVariants.length > 0) {
         // Capture shared data from first level BEFORE creating variant
         const isFirstLevel = !sharedDescription
         if (isFirstLevel) {
           sharedDescription = data.description
-          sharedElement = stub.elements.length > 0 ? stub.elements[0] : undefined
+          sharedElementCodes = uniqueStrings([...sharedElementCodes, ...data.elementCodes])
+          sharedElement = sharedElementCodes[0]
           sharedRarity = data.rarity !== 'Unknown' ? data.rarity : undefined
           sharedResists = data.resists !== 'None' ? data.resists : undefined
           sharedAttacks = data.attacks
@@ -999,6 +1393,7 @@ async function parsePetThreadMultiVariant(
           stats: data.stats || 'None',
           ...(data.statsType ? { statsType: data.statsType } : {}),
           obtainVariants,
+          ...(data.elementCodes[0] ? { element: data.elementCodes[0] } : {}),
           ...(data.resists && data.resists !== 'None' ? { resists: data.resists } : {}),
           ...(data.rarity && data.rarity !== 'Unknown' ? { rarity: data.rarity } : {}),
           // Only include notes if NOT from first level (first level notes go to shared)
@@ -1028,7 +1423,7 @@ async function parsePetThreadMultiVariant(
       const levelInfo = detectLevel(name)
       if (!levelInfo) {
         // No level detected - treat as single variant
-        return convertToPet(data, stub, chronoDates, nameToSlug)
+        return convertToPet(data, stub, chronology, nameToSlug)
       }
       
       // Parse obtain variants from this post
@@ -1037,6 +1432,7 @@ async function parsePetThreadMultiVariant(
         price: om.price,
         priceType: computePriceType(om.price, om.requiredItems),
         sellback: om.sellback,
+        ...(om.requirements ? { requirements: om.requirements } : {}),
         daRequired: parseDARequiredFromSection(postHtml, postHtml),
         ...(data.dcRequired ? { dcRequired: data.dcRequired } : {}),
         ...(data.dmRequired ? { dmRequired: data.dmRequired } : {}),
@@ -1053,7 +1449,8 @@ async function parsePetThreadMultiVariant(
         const isFirstPost = !sharedDescription
         if (isFirstPost) {
           sharedDescription = data.description
-          sharedElement = stub.elements.length > 0 ? stub.elements[0] : undefined
+          sharedElementCodes = uniqueStrings([...sharedElementCodes, ...data.elementCodes])
+          sharedElement = sharedElementCodes[0]
           sharedRarity = data.rarity !== 'Unknown' ? data.rarity : undefined
           sharedResists = data.resists !== 'None' ? data.resists : undefined
           sharedAttacks = data.attacks
@@ -1069,6 +1466,7 @@ async function parsePetThreadMultiVariant(
           damage: data.damage || 'Unknown',
           stats: data.stats || 'None',
           obtainVariants,
+          ...(data.elementCodes[0] ? { element: data.elementCodes[0] } : {}),
           ...(data.resists && data.resists !== 'None' ? { resists: data.resists } : {}),
           ...(data.rarity && data.rarity !== 'Unknown' ? { rarity: data.rarity } : {}),
           // Only include notes if NOT from first post (first post notes go to shared)
@@ -1084,13 +1482,22 @@ async function parsePetThreadMultiVariant(
   if (levelVariants.length === 0) {
     console.log(' [no variants detected, falling back to Pet]')
     const data = parsePetThread(allPosts[0], name)
-    return convertToPet(data, stub, chronoDates, nameToSlug)
+    return convertToPet(data, stub, chronology, nameToSlug)
   }
   
   // If only one level variant found, return as Pet (backward compat)
   if (levelVariants.length === 1) {
     const data = parsePetThread(allPosts[0], name)
-    return convertToPet(data, stub, chronoDates, nameToSlug)
+    if (!data.imageUrl || !data.alternativeImages || data.alternativeImages.length === 0) {
+      const fullThreadImages = extractImages(html)
+      if (!data.imageUrl && fullThreadImages.main) {
+        data.imageUrl = fullThreadImages.main
+      }
+      if ((!data.alternativeImages || data.alternativeImages.length === 0) && fullThreadImages.alternatives.length > 0) {
+        data.alternativeImages = fullThreadImages.alternatives
+      }
+    }
+    return convertToPet(data, stub, chronology, nameToSlug)
   }
   
   // Extract image from LAST post first (common pattern for multi-post threads)
@@ -1134,16 +1541,12 @@ async function parsePetThreadMultiVariant(
   const threadIsSpecialOffer = /<img[^>]+src=["'][^"']*\/tags\/SpecialOffer\.png["']/i.test(html)
   const threadRetired = /<img[^>]+src=["'][^"']*\/tags\/Retired\.png["']/i.test(html)
   
-  // Check for DC tag in thread HTML as well (for cases like Baby Kraken VI)
-  const threadHasDC = /<img[^>]+src=["'][^"']*\/tags\/DC\.png["']/i.test(html)
-  
   // Also check allPosts if multi-page thread
   let isTemp = threadIsTemp
   let isRare = threadIsRare
   let isSeasonal = threadIsSeasonal
   let isSpecialOffer = threadIsSpecialOffer
   let retired = threadRetired
-  let hasDCInThread = threadHasDC
   
   if (allPosts.length > 1) {
     for (const postHtml of allPosts) {
@@ -1152,17 +1555,6 @@ async function parsePetThreadMultiVariant(
       if (!isSeasonal) isSeasonal = /<img[^>]+src=["'][^"']*\/tags\/Seasonal\.jpg["']/i.test(postHtml)
       if (!isSpecialOffer) isSpecialOffer = /<img[^>]+src=["'][^"']*\/tags\/SpecialOffer\.png["']/i.test(postHtml)
       if (!retired) retired = /<img[^>]+src=["'][^"']*\/tags\/Retired\.png["']/i.test(postHtml)
-      if (!hasDCInThread) hasDCInThread = /<img[^>]+src=["'][^"']*\/tags\/DC\.png["']/i.test(postHtml)
-    }
-  }
-  
-  // If DC tag found in thread, mark ALL obtain variants as DC required
-  // (This handles cases like Baby Kraken VI where DC icon appears but price isn't DC)
-  if (hasDCInThread) {
-    for (const levelVariant of levelVariants) {
-      for (const obtainVariant of levelVariant.obtainVariants) {
-        obtainVariant.dcRequired = true
-      }
     }
   }
   
@@ -1182,7 +1574,7 @@ async function parsePetThreadMultiVariant(
     familyName = name
       .replace(/\s+[IVX]+$/i, '')
       .replace(/\s+Level\s+\d+$/i, '')
-      .replace(/\s+\([IVX]+-[IVX]+\)$/i, '')
+      .replace(/\s*\([IVX]+(?:[-,\s]+[IVX]+)+\)$/i, '')
       .replace(/\s+\(All Versions\)$/i, '')
       .trim()
   }
@@ -1195,8 +1587,14 @@ async function parsePetThreadMultiVariant(
     forumUrl: stub.forumUrl,
     shared,
     levelVariants,
-    ...(chronoDates.get(stub.name.toLowerCase()) ? { releaseDate: chronoDates.get(stub.name.toLowerCase())! } : {}),
-    tags: [stub.type, ...stub.elements.map(e => e.toLowerCase()), ...stub.markers.map(m => m.toLowerCase().replace('/', '-'))],
+    ...(chronology.datesByMessageId.get(stub.messageId) || chronology.datesByName.get(stub.name.toLowerCase())
+      ? { releaseDate: chronology.datesByMessageId.get(stub.messageId) ?? chronology.datesByName.get(stub.name.toLowerCase())! }
+      : {}),
+    tags: [
+      stub.type,
+      ...uniqueStrings([...stub.elements, ...sharedElementCodes]).map(e => e.toLowerCase()),
+      ...stub.markers.map(m => m.toLowerCase().replace('/', '-')),
+    ],
     // Category flags from thread-level detection
     ...(isTemp ? { isTemp } : {}),
     ...(isRare ? { isRare } : {}),
@@ -1210,7 +1608,7 @@ async function parsePetThreadMultiVariant(
     hasFree: false,
     hasMerge: false,
     levelRange: '',
-    elements: [],
+    elements: uniqueStrings([...stub.elements, ...sharedElementCodes]),
     // Mark multi-post families for special handling
     ...(isMultiPostFamily ? { isMultiPost: true } : {}),
   }
@@ -1225,7 +1623,7 @@ async function parsePetThreadMultiVariant(
 function convertToPet(
   data: ReturnType<typeof parsePetThread>,
   stub: PetStub,
-  chronoDates: Map<string, string>,
+  chronology: ChronologyData,
   nameToSlug: Map<string, { slug: string; type: EntryType }>
 ): Pet {
   // Resolve Also See references
@@ -1261,7 +1659,7 @@ function convertToPet(
     ...(data.isSeasonal ? { isSeasonal: data.isSeasonal } : {}),
     ...(data.isSpecialOffer ? { isSpecialOffer: data.isSpecialOffer } : {}),
     ...(data.retired ? { retired: data.retired } : {}),
-    elements: stub.elements,
+    elements: data.elementCodes.length > 0 ? data.elementCodes : stub.elements,
     traits: stub.markers,
     level: data.level || 'Unknown',
     damage: data.damage || 'Unknown',
@@ -1271,14 +1669,69 @@ function convertToPet(
     attacks: data.attacks,
     rarity: data.rarity || 'Unknown',
     evolutions,
-    releaseDate: chronoDates.get(stub.name.toLowerCase()) ?? 'Unknown',
+    releaseDate: chronology.datesByMessageId.get(stub.messageId) ?? chronology.datesByName.get(stub.name.toLowerCase()) ?? 'Unknown',
     ...(data.imageUrl ? { imageUrl: data.imageUrl } : {}),
     ...(data.alternativeImages && data.alternativeImages.length > 0 ? { alternativeImages: data.alternativeImages } : {}),
     forumUrl: stub.forumUrl,
     ...(data.notes ? { notes: data.notes } : {}),
     alsoSee,
-    tags: [stub.type, ...stub.elements.map(e => e.toLowerCase()), ...stub.markers.map(m => m.toLowerCase().replace('/', '-'))]
+    tags: [
+      stub.type,
+      ...(data.elementCodes.length > 0 ? data.elementCodes : stub.elements).map(e => e.toLowerCase()),
+      ...stub.markers.map(m => m.toLowerCase().replace('/', '-')),
+    ]
   }
+}
+
+function canonicalizePetRelationships(items: Array<Pet | ItemFamily>): Array<Pet | ItemFamily> {
+  const nameToCanonical = new Map<string, { slug: string; type: EntryType }>()
+
+  for (const item of items) {
+    const displayName = getDisplayName(item)
+    const baseName = normalizeRefLookupName(displayName)
+    const current = { slug: item.slug, type: item.type as EntryType }
+    nameToCanonical.set(displayName.toLowerCase(), current)
+    nameToCanonical.set(baseName, current)
+  }
+
+  const resolveRef = (name: string, fallbackSlug: string, fallbackType: EntryType) => {
+    const canonical =
+      nameToCanonical.get(name.toLowerCase()) ??
+      nameToCanonical.get(normalizeRefLookupName(name))
+
+    return canonical ?? { slug: fallbackSlug, type: fallbackType }
+  }
+
+  return items.map(item => {
+    if ('levelVariants' in item) {
+      const family = item as ItemFamily
+      return {
+        ...family,
+        shared: family.shared.alsoSee
+          ? {
+              ...family.shared,
+              alsoSee: family.shared.alsoSee.map(ref => {
+                const resolved = resolveRef(ref.name, ref.slug, ref.type as EntryType)
+                return { ...ref, slug: resolved.slug, type: resolved.type }
+              }),
+            }
+          : family.shared,
+      }
+    }
+
+    const pet = item as Pet
+    return {
+      ...pet,
+      alsoSee: pet.alsoSee.map(ref => {
+        const resolved = resolveRef(ref.name, ref.slug, ref.type)
+        return { ...ref, slug: resolved.slug, type: resolved.type }
+      }),
+      evolutions: pet.evolutions.map(evolution => {
+        const resolved = resolveRef(evolution.resultName, evolution.resultSlug, evolution.resultType)
+        return { ...evolution, resultSlug: resolved.slug, resultType: resolved.type }
+      }),
+    }
+  })
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -1291,6 +1744,7 @@ function parsePetThread(html: string, name: string): {
   evolutions: { combineWith: string; resultName: string }[]
   rarity: string; attacks: Attack[]; notes?: string
   alsoSeeNames: string[]; imageUrl?: string; alternativeImages?: Array<{ url: string; caption: string }>; hasDetailedStats: boolean
+  elementCodes: string[]; sourceHtml: string
 } {
   const bodyMatch = html.match(/<td[^>]*valign=["']?top["']?[^>]*width=["']?100%["']?[^>]*>([\s\S]*?)<\/td>/i)
   const rawBody = bodyMatch ? bodyMatch[1] : html
@@ -1312,10 +1766,11 @@ function parsePetThread(html: string, name: string): {
   let isSeasonal = false
   let isSpecialOffer = false
   let retired = false
-  const obtainMethods: ObtainMethod[] = []
+  let obtainMethods: ObtainMethod[] = []
   let currentObtain: Partial<ObtainMethod> | null = null
   let level = '', damage = '', stats = '', resists = ''
   let statsType: 'petStats' | 'bonuses' | undefined = undefined
+  let elementCodes: string[] = []
   const evolutions: { combineWith: string; resultName: string }[] = []
   let rarity = ''
   const attacks: Attack[] = []
@@ -1394,11 +1849,46 @@ function detectAccessTagsNearText(html: string, searchText: string, contextSize:
   if (index === -1) {
     return { daRequired: false, dcRequired: false, dmRequired: false }
   }
-  
-  // Extract context window around the search text
-  const start = Math.max(0, index - contextSize)
-  const end = Math.min(html.length, index + searchText.length + contextSize)
-  const context = html.slice(start, end)
+
+  const segmentStartCandidates = [
+    html.lastIndexOf("<font size='3'><b>", index),
+    html.lastIndexOf('<font size="3"><b>', index),
+    html.lastIndexOf('<b><font size=\'3\'>', index),
+    html.lastIndexOf('<b><font size="3">', index),
+    html.lastIndexOf('Location:', index),
+  ].filter(candidate => candidate >= 0)
+
+  const segmentStart = segmentStartCandidates.length > 0
+    ? Math.max(...segmentStartCandidates)
+    : Math.max(0, index - contextSize)
+
+  const forwardHtml = html.slice(index + searchText.length)
+  const nextTitleOffsets = [
+    forwardHtml.search(/<font size=['"]3['"]><b>/i),
+    forwardHtml.search(/<b><font size=['"]3['"]>/i),
+  ].filter(offset => offset >= 0)
+
+  let segmentEnd = Math.min(html.length, index + searchText.length + contextSize)
+
+  if (nextTitleOffsets.length > 0) {
+    const nextTitleIndex = index + searchText.length + Math.min(...nextTitleOffsets)
+    const precedingImageIndex = html.lastIndexOf('<img', nextTitleIndex)
+    segmentEnd =
+      precedingImageIndex > index
+        ? precedingImageIndex
+        : nextTitleIndex
+  } else {
+    const nextFieldOffsets = [
+      forwardHtml.search(/(?:<br>\s*)?Level:/i),
+      forwardHtml.search(/(?:<br>\s*)?<b><u>Other information<\/u><\/b>/i),
+    ].filter(offset => offset >= 0)
+
+    if (nextFieldOffsets.length > 0) {
+      segmentEnd = index + searchText.length + Math.min(...nextFieldOffsets)
+    }
+  }
+
+  const context = html.slice(segmentStart, segmentEnd)
   
   // Check for explicit "(No DA Required)" text - this overrides image tags
   const hasNoDAText = /\(?\s*No\s+DA\s+Required\s*\)?/i.test(context)
@@ -1461,7 +1951,13 @@ const saveObtain = () => {
       continue
     }
     if (/^Pet'?s?\s+Resists?:/i.test(trimmedLine)) { resists = trimmedLine.replace(/^Pet'?s?\s+Resists?:\s*/i, '').trim(); continue }
-    if (/^Element:/i.test(trimmedLine)) continue  // elements come from A-Z listing
+    if (/^Element:/i.test(trimmedLine)) {
+      const parsedCodes = parseElementCodesFromText(trimmedLine.replace(/^Element:\s*/i, '').trim())
+      if (parsedCodes.length > 0) {
+        elementCodes = uniqueStrings([...elementCodes, ...parsedCodes])
+      }
+      continue
+    }
 
     if (/^Combine\s+\d+\s+with/i.test(trimmedLine)) {
       const m = trimmedLine.match(/^Combine\s+\d+\s+with\s+(.+?)\s+to\s+form\s+(.+)$/i)
@@ -1540,7 +2036,14 @@ const saveObtain = () => {
       break
     }
 
-    if (!description && !inNotes && !currentAttack && trimmedLine.length > 5) { description = trimmedLine; continue }
+    if (!description && !inNotes && !currentAttack && trimmedLine.length > 5) {
+      // Check if this line is just the pet's name repeated as a heading
+      if (name.toLowerCase().includes(trimmedLine.toLowerCase()) && trimmedLine.length < 50) {
+        continue
+      }
+      description = trimmedLine
+      continue
+    }
     if (inNotes && trimmedLine.length > 3) {
       // Skip edit timestamps
       if (/\w+\s+--\s+\d+\/\d+\/\d+\s+\d+:\d+:\d+/.test(trimmedLine)) continue
@@ -1595,8 +2098,84 @@ const saveObtain = () => {
   saveObtain()
   if (currentAttack?.name) attacks.push(currentAttack as Attack)
 
+  if (obtainMethods.length <= 1) {
+    const fallbackMethods: ObtainMethod[] = []
+    const firstLevelIndex = lines.findIndex(line => /^Level:/i.test(line.trim()))
+    const introLines = (firstLevelIndex >= 0 ? lines.slice(0, firstLevelIndex) : lines).map(line => line.trim()).filter(Boolean)
+    let fallbackCurrent: Partial<ObtainMethod> | null = null
+    let pendingField: 'location' | 'price' | 'requiredItems' | 'sellback' | null = null
+
+    const pushFallback = () => {
+      if (!fallbackCurrent?.location) return
+      fallbackMethods.push({
+        location: fallbackCurrent.location,
+        price: fallbackCurrent.price ?? 'N/A',
+        priceType: computePriceType(fallbackCurrent.price ?? 'N/A', fallbackCurrent.requiredItems),
+        ...(fallbackCurrent.requirements ? { requirements: fallbackCurrent.requirements } : {}),
+        ...(fallbackCurrent.requiredItems ? { requiredItems: fallbackCurrent.requiredItems } : {}),
+        ...(fallbackCurrent.sellback ? { sellback: fallbackCurrent.sellback } : {}),
+        daRequired: fallbackCurrent.daRequired ?? false,
+        ...(fallbackCurrent.dcRequired ? { dcRequired: fallbackCurrent.dcRequired } : {}),
+        ...(fallbackCurrent.dmRequired ? { dmRequired: fallbackCurrent.dmRequired } : {}),
+      })
+      fallbackCurrent = null
+    }
+
+    for (const line of introLines) {
+      if (pendingField) {
+        if (!fallbackCurrent) fallbackCurrent = {}
+        if (pendingField === 'location') fallbackCurrent.location = line
+        if (pendingField === 'price') fallbackCurrent.price = line
+        if (pendingField === 'requiredItems') fallbackCurrent.requiredItems = line
+        if (pendingField === 'sellback') fallbackCurrent.sellback = line
+        pendingField = null
+        continue
+      }
+
+      if (/^Location:/i.test(line)) {
+        pushFallback()
+        const value = line.replace(/^Location:\s*/i, '').trim()
+        fallbackCurrent = value ? { location: value } : {}
+        pendingField = value ? null : 'location'
+        continue
+      }
+      if (!fallbackCurrent) continue
+      if (/^Price:/i.test(line)) {
+        const value = line.replace(/^Price:\s*/i, '').trim()
+        if (value) fallbackCurrent.price = value
+        else pendingField = 'price'
+        continue
+      }
+      if (/^Required Items?:/i.test(line)) {
+        const value = line.replace(/^Required Items?:\s*/i, '').trim()
+        if (value) fallbackCurrent.requiredItems = value
+        else pendingField = 'requiredItems'
+        continue
+      }
+      if (/^Sellback:/i.test(line)) {
+        const value = line.replace(/^Sellback:\s*/i, '').trim()
+        if (value) fallbackCurrent.sellback = value
+        else pendingField = 'sellback'
+        continue
+      }
+    }
+
+    pushFallback()
+    if (fallbackMethods.length > obtainMethods.length) {
+      obtainMethods = fallbackMethods
+    }
+  }
+
   // Extract pet images using extractImages helper
   const { main: imageUrl, alternatives: alternativeImages } = extractImages(rawBody)
+  const cleanedNoteLines = noteLines.filter(note => {
+    const trimmed = note.trim()
+    if (!trimmed) return false
+    if (/^Attack\s+Type\s+[\d./]+\b/i.test(trimmed)) return false
+    if (description && trimmed === description.trim()) return false
+    if (trimmed === name.trim()) return false
+    return true
+  })
 
   return {
     description: description || name,
@@ -1611,21 +2190,24 @@ const saveObtain = () => {
     obtainMethods,
     level, damage, stats, statsType, resists,
     evolutions, rarity, attacks,
-    notes: noteLines.length > 0 ? noteLines.join('\n') : undefined,
+    notes: cleanedNoteLines.length > 0 ? cleanedNoteLines.join('\n') : undefined,
     alsoSeeNames, 
     imageUrl,
     ...(alternativeImages.length > 0 ? { alternativeImages } : {}),
     hasDetailedStats,
+    elementCodes,
+    sourceHtml: cleanedBody,
   }
 }
 
 // ─── Chronology parsing ───────────────────────────────────────────────────────
 
-function parseChronology(html: string): { dates: Map<string, string>; types: Map<string, EntryType> } {
-  const dates = new Map<string, string>()
-  const types = new Map<string, EntryType>()
-  const text = stripHtml(decodeHTML(html))
-  const lines = text.split('\n').map(l => l.trim()).filter(Boolean)
+function parseChronology(html: string): ChronologyData {
+  const datesByName = new Map<string, string>()
+  const datesByMessageId = new Map<string, string>()
+  const typesByName = new Map<string, EntryType>()
+  const typesByMessageId = new Map<string, EntryType>()
+  const chunks = html.split(/<br\s*\/?>/i)
 
   // Format:
   //   "November 10th, 2006"   ← date heading (bold line)
@@ -1639,7 +2221,10 @@ function parseChronology(html: string): { dates: Map<string, string>; types: Map
 
   let currentDate = ''
 
-  for (const line of lines) {
+  for (const chunk of chunks) {
+    const line = stripHtml(decodeHTML(chunk)).trim()
+    if (!line) continue
+
     if (datePattern.test(line)) {
       currentDate = line
       continue
@@ -1653,21 +2238,27 @@ function parseChronology(html: string): { dates: Map<string, string>; types: Map
       // Extract name — strip trailing parenthetical (D-Coins), (Normal; D-Coins), (Seasonal) etc.
       const rawName = entryMatch[2].trim()
       const name = rawName.replace(/\s*\([^)]*\)\s*$/, '').trim()
+      const idMatch = chunk.match(/tm\.asp\?m=(\d+)|fb\.asp\?m=(\d+)/i)
+      const messageId = idMatch?.[1] ?? idMatch?.[2]
       if (name.length > 0) {
         const key = name.toLowerCase()
-        dates.set(key, currentDate)
-        types.set(key, type)
+        datesByName.set(key, currentDate)
+        typesByName.set(key, type)
+        if (messageId) {
+          datesByMessageId.set(messageId, currentDate)
+          typesByMessageId.set(messageId, type)
+        }
         // Also store with parenthetical in case entry names include them (e.g. "King Linus (Normal)")
         if (rawName !== name) {
           const rawKey = rawName.toLowerCase()
-          dates.set(rawKey, currentDate)
-          types.set(rawKey, type)
+          datesByName.set(rawKey, currentDate)
+          typesByName.set(rawKey, type)
         }
       }
     }
   }
 
-  return { dates, types }
+  return { datesByName, datesByMessageId, typesByName, typesByMessageId }
 }
 
 // ─── Main ─────────────────────────────────────────────────────────────────────
@@ -1685,14 +2276,16 @@ async function main() {
   // ── Step 1: Fetch Chronology for types and dates ──────────────────────────
 
   console.log('📅 Fetching Chronology for types and release dates...')
-  let chronoDates = new Map<string, string>()
-  let chronoTypes = new Map<string, EntryType>()
+  let chronology: ChronologyData = {
+    datesByName: new Map<string, string>(),
+    datesByMessageId: new Map<string, string>(),
+    typesByName: new Map<string, EntryType>(),
+    typesByMessageId: new Map<string, EntryType>(),
+  }
   try {
     const chronoHtml = await fetchPage(CHRONOLOGY_URL, cookie)
-    const parsed = parseChronology(chronoHtml)
-    chronoDates = parsed.dates
-    chronoTypes = parsed.types
-    console.log(`✅ Parsed ${chronoDates.size} chronology entries`)
+    chronology = parseChronology(chronoHtml)
+    console.log(`✅ Parsed ${chronology.datesByName.size} chronology entries`)
   } catch (err) {
     console.warn(`⚠️  Chronology fetch error: ${err} — will use content detection fallback`)
   }
@@ -1709,7 +2302,7 @@ async function main() {
     process.exit(1)
   }
 
-  const allStubs = parseAZPage(azHtml, chronoTypes)
+  const allStubs = parseAZPage(azHtml, chronology)
   if (allStubs.length === 0) {
     console.error('❌ No pet/guest stubs found. Page size:', azHtml.length)
     const preview = stripHtml(decodeHTML(azHtml)).slice(0, 200)
@@ -1781,7 +2374,7 @@ async function main() {
     process.stdout.write(`[${i + 1}/${stubs.length}] ${stub.name}...`)
 
     try {
-      const html = getPostContent(await fetchPrintable(stub.messageId, cookie))
+      const html = getAllPostContent(await fetchPrintable(stub.messageId, cookie))
 
       if (!html) {
         console.log(' ⚠️  deleted — skipping')
@@ -1791,7 +2384,7 @@ async function main() {
       }
 
       // Use multi-variant parser (Sprint 5)
-      const result = await parsePetThreadMultiVariant(html, stub.name, stub, cookie, chronoDates, nameToSlug)
+      const result = await parsePetThreadMultiVariant(html, stub.name, stub, cookie, chronology, nameToSlug)
       
       // Handle both Pet and ItemFamily types
       if ('levelVariants' in result) {
@@ -1834,7 +2427,9 @@ async function main() {
   // ── Step 5: Write final output ─────────────────────────────────────────────
 
   // Always write ALL pets from progress map (full dataset)
-  const finalPets = dedupeVariantEntries(Array.from(progressMap.values()))
+  const finalPets = canonicalizePetRelationships(
+    dedupeVariantEntries(Array.from(progressMap.values()))
+  )
     .sort((a, b) => {
       const aName: string = 'familyName' in a ? a.familyName : a.name
       const bName: string = 'familyName' in b ? b.familyName : b.name
