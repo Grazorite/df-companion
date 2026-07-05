@@ -65,7 +65,7 @@ export default function PetList({ pets, loading = false }: PetListProps) {
             requiredItems: ov.requiredItems,
             sellback: ov.sellback ?? '0 Gold',
           })),
-          attacks: family!.shared.attacks ?? [],
+          attacks: family!.type === 'guest' ? [] : ((family!.shared.attacks as Pet['attacks'] | undefined) ?? []),
           rarity: family!.levelVariants[0].rarity ?? family!.shared.rarity ?? '1',
           evolutions: [],
           releaseDate: family!.releaseDate ?? '',

@@ -25,6 +25,7 @@ import type { Pet, ObtainMethod, Attack, Evolution, AlsoSeeRef, EntryType } from
 import type { ItemFamily, ObtainVariant, LevelVariant, SharedData } from '../src/types/item.ts'
 import { computePriceType, computeFamilyFlags, normalizeLevel } from '../src/utils/variantHelpers.ts'
 import { fetchPrintable, getAllPostContent } from './lib/printable-parser.ts'
+import { promoteCrossPostFamilies } from './lib/cross-post-family.ts'
 
 const FORUM_BASE = 'https://forums2.battleon.com/f'
 const AZ_PETS_URL = `${FORUM_BASE}/tm.asp?m=22349620&mpage=1`  // A-Z Pets & Guests combined (filtered by type)
@@ -1067,10 +1068,15 @@ async function parsePetThreadMultiVariant(
           damage: data.damage || 'Unknown',
           stats: data.stats || 'None',
           ...(data.statsType ? { statsType: data.statsType } : {}),
+          sourceUrl: stub.forumUrl,
+          description: data.description,
+          ...(data.imageUrl ? { imageUrl: data.imageUrl } : {}),
+          ...(data.alternativeImages && data.alternativeImages.length > 0 ? { alternativeImages: data.alternativeImages } : {}),
           obtainVariants,
           ...(data.elementCodes[0] ? { element: data.elementCodes[0] } : {}),
           ...(data.resists && data.resists !== 'None' ? { resists: data.resists } : {}),
           ...(data.rarity && data.rarity !== 'Unknown' ? { rarity: data.rarity } : {}),
+          ...(data.attacks.length > 0 ? { attacks: data.attacks } : {}),
           // Only include notes if NOT from first variant (first variant notes go to shared)
           ...(!isFirstVariant && data.notes ? { notes: data.notes } : {}),
         })
@@ -1181,10 +1187,15 @@ async function parsePetThreadMultiVariant(
               damage: candidate.data.damage || 'Unknown',
               stats: candidate.data.stats || 'None',
               ...(candidate.data.statsType ? { statsType: candidate.data.statsType } : {}),
+              sourceUrl: stub.forumUrl,
+              description: candidate.data.description,
+              ...(candidate.data.imageUrl ? { imageUrl: candidate.data.imageUrl } : {}),
+              ...(candidate.data.alternativeImages && candidate.data.alternativeImages.length > 0 ? { alternativeImages: candidate.data.alternativeImages } : {}),
               obtainVariants,
               ...(candidate.data.elementCodes[0] ? { element: candidate.data.elementCodes[0] } : {}),
               ...(candidate.data.resists && candidate.data.resists !== 'None' ? { resists: candidate.data.resists } : {}),
               ...(candidate.data.rarity && candidate.data.rarity !== 'Unknown' ? { rarity: candidate.data.rarity } : {}),
+              ...(candidate.data.attacks.length > 0 ? { attacks: candidate.data.attacks } : {}),
               ...(notesBelongToVariant(candidate.data.notes, variantName) ? { notes: candidate.data.notes } : {}),
             })
             variantOrder++
@@ -2428,7 +2439,7 @@ async function main() {
 
   // Always write ALL pets from progress map (full dataset)
   const finalPets = canonicalizePetRelationships(
-    dedupeVariantEntries(Array.from(progressMap.values()))
+    promoteCrossPostFamilies(dedupeVariantEntries(Array.from(progressMap.values())))
   )
     .sort((a, b) => {
       const aName: string = 'familyName' in a ? a.familyName : a.name

@@ -1,9 +1,9 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { ExternalLink, Shield, ImageOff } from 'lucide-react'
 import type { Pet, Guest } from '../../types/pet'
 import type { ItemFamily } from '../../types/item'
-import { hasSameLevelVariants, isSingleVariant } from '../../utils/variantHelpers'
+import { getDisplayFamilyName, getLevelVariantLabel, hasSameLevelVariants, hasTitleDrivenVariantNames, isSingleVariant } from '../../utils/variantHelpers'
 import { normalizeDisplayText } from '../../utils/displayText'
 import ElementPill from '../shared/ElementPill'
 import AccessPills from '../shared/AccessPills'
@@ -48,8 +48,6 @@ function PetImage({ src, name }: { src: string; name: string }) {
 
 export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
   const [searchParams, setSearchParams] = useSearchParams()
-  const dcRequired = pet.dcRequired ?? false
-  const dmRequired = pet.dmRequired ?? false
   
   // Check if this is a guest
   const isGuest = pet.type === 'guest'
@@ -61,18 +59,29 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
   // Determine if we're using multi-variant display
   const isMultiVariant = family && !isSingleVariant(family)
   const sameLevelVariants = family ? hasSameLevelVariants(family) : false
+  const displayFamilyName = family ? getDisplayFamilyName(family) : undefined
+  const useTitleDrivenVariantNames = family && displayFamilyName
+    ? hasTitleDrivenVariantNames(family.levelVariants, displayFamilyName)
+    : false
   
   // Parse level URL param for multi-variant display
   const levelParam = searchParams.get('level')
   const activeIndex = useMemo(() => {
     if (!isMultiVariant || !family || !levelParam) return 0
+
+    const variantMatch = levelParam.match(/^variant-(\d+)$/i)
+    if (variantMatch) {
+      const variantNumber = Number.parseInt(variantMatch[1], 10)
+      const variantIndex = family.levelVariants.findIndex(lv => lv.levelNumber === variantNumber)
+      return variantIndex >= 0 ? variantIndex : 0
+    }
     
-    // Try to match by levelNumber, levelDisplay, or name
+    // Match by exact level number first, then exact display/name fallbacks for legacy URLs.
     const idx = family.levelVariants.findIndex(
       lv =>
         String(lv.levelNumber) === levelParam ||
         lv.levelDisplay.toLowerCase() === levelParam.toLowerCase() ||
-        lv.name.toLowerCase().includes(levelParam.toLowerCase())
+        lv.name.toLowerCase() === levelParam.toLowerCase()
     )
     return idx >= 0 ? idx : 0
   }, [levelParam, isMultiVariant, family])
@@ -82,24 +91,32 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
     if (!family) return
     setSearchParams(
       prev => {
-        prev.set('level', String(family.levelVariants[index].levelNumber))
-        return prev
+        const nextParams = new URLSearchParams(prev)
+        nextParams.set('level', `variant-${family.levelVariants[index].levelNumber}`)
+        return nextParams
       },
       { replace: true }
     )
   }
+
+  const activeLevel = isMultiVariant && family ? family.levelVariants[activeIndex] : undefined
+
+  useEffect(() => {
+    setActiveImageIndex(0)
+  }, [activeIndex])
   
   // Use shared data if available, otherwise fall back to Pet data
   const displayData = family ? {
-    description: family.shared.description,
-    imageUrl: family.shared.imageUrl,
-    alternativeImages: family.shared.alternativeImages,
-    element: family.shared.element,
-    resists: family.shared.resists,
-    rarity: family.shared.rarity,
-    attacks: family.shared.attacks,
-    notes: family.shared.notes,
+    description: activeLevel?.description ?? family.shared.description,
+    imageUrl: activeLevel?.imageUrl ?? family.shared.imageUrl,
+    alternativeImages: activeLevel?.alternativeImages ?? family.shared.alternativeImages,
+    element: activeLevel?.element ?? family.shared.element,
+    resists: activeLevel?.resists ?? family.shared.resists,
+    rarity: activeLevel?.rarity ?? family.shared.rarity,
+    attacks: activeLevel?.attacks ?? family.shared.attacks,
+    notes: activeLevel?.notes ?? family.shared.notes,
     alsoSee: family.shared.alsoSee,
+    sourceUrl: activeLevel?.sourceUrl ?? family.forumUrl,
   } : {
     description: pet.description,
     imageUrl: pet.imageUrl,
@@ -110,7 +127,26 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
     attacks: pet.attacks,
     notes: pet.notes,
     alsoSee: pet.alsoSee,
+    sourceUrl: pet.forumUrl,
   }
+  const displayAccess = family
+    ? {
+        daRequired: family.hasDA,
+        dcRequired: family.hasDC,
+        dmRequired: family.hasDM,
+      }
+    : {
+        daRequired: pet.daRequired,
+        dcRequired: pet.dcRequired ?? false,
+        dmRequired: pet.dmRequired ?? false,
+      }
+
+  const displayGuestStats = isGuest
+    ? activeLevel?.guestStats ?? guest?.guestStats
+    : undefined
+  const displayGuestAttacks = isGuest
+    ? ((displayData.attacks as Guest['attacks'] | undefined) ?? guest?.attacks ?? [])
+    : []
   
   // Use displayData.alsoSee for related pets (works for both single and multi-variant)
   const relatedPets = useRelatedPets(displayData.alsoSee ?? [])
@@ -118,7 +154,7 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
   // Build array of all images (main + alternatives)
   const allImages: Array<{ url: string; caption: string }> = []
   if (displayData.imageUrl) {
-    allImages.push({ url: displayData.imageUrl, caption: 'Main Image' })
+    allImages.push({ url: displayData.imageUrl, caption: displayFamilyName ?? pet.name })
   }
   if (displayData.alternativeImages) {
     allImages.push(...displayData.alternativeImages.map(image => ({
@@ -126,6 +162,40 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
       caption: image.caption || 'Alternative Image',
     })))
   }
+
+  useEffect(() => {
+    if (allImages.length <= 1) {
+      setActiveImageIndex(0)
+      return
+    }
+
+    const levelLabel = activeLevel?.name ?? ''
+    const normalizedLevelName = levelLabel.replace(/\s+\((?:dc|d-coins?)\)$/i, '').trim()
+    const isBaseFamilyVariant = Boolean(displayFamilyName && normalizedLevelName === displayFamilyName)
+
+    if (isBaseFamilyVariant) {
+      setActiveImageIndex(0)
+      return
+    }
+
+    const variantSelectorLabel = activeLevel && displayFamilyName
+      ? getLevelVariantLabel(activeLevel, displayFamilyName, useTitleDrivenVariantNames)
+      : undefined
+    const variantHint = variantSelectorLabel?.replace(/\s*\([^)]*\)\s*$/, '').trim()
+      || (displayFamilyName
+        ? levelLabel
+            .replace(displayFamilyName, '')
+            .replace(/\(dc\)/i, '')
+            .trim()
+        : levelLabel.replace(/\(dc\)/i, '').trim())
+    const matchingAltIndex = allImages.findIndex((image, index) =>
+      index > 0 &&
+      ((variantHint && image.caption.toLowerCase().includes(variantHint.toLowerCase())) ||
+        (levelLabel && image.caption.toLowerCase().includes(levelLabel.toLowerCase().replace(/\(dc\)/i, '').trim())))
+    )
+
+    setActiveImageIndex(matchingAltIndex >= 0 ? matchingAltIndex : 0)
+  }, [activeLevel, allImages.length, displayFamilyName, useTitleDrivenVariantNames])
   
   // Currently displayed image
   const currentImage = allImages[activeImageIndex]
@@ -177,7 +247,7 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
           {pet.traits.map(code => (
             <ElementPill key={code} code={code} size="md" />
           ))}
-          <AccessPills daRequired={pet.daRequired} dcRequired={dcRequired} dmRequired={dmRequired} filterBase="/pets" />
+          <AccessPills daRequired={displayAccess.daRequired} dcRequired={displayAccess.dcRequired} dmRequired={displayAccess.dmRequired} filterBase="/pets" />
           
           {/* Multiple Versions pill for multi-variant items */}
           {isMultiVariant && family && (
@@ -194,7 +264,7 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
         {/* Display family name with level range for multi-variant, regular name for single */}
         <h1 className="text-2xl font-bold text-text-primary mb-2">
           {isMultiVariant && family ? (
-            family.isMultiPost || sameLevelVariants ? family.familyName : `${family.familyName} (${family.levelRange})`
+            family.isMultiPost || sameLevelVariants ? displayFamilyName : `${displayFamilyName} (${family.levelRange})`
           ) : pet.name}
         </h1>
         <p className="text-text-secondary text-sm italic leading-relaxed mb-2">{normalizeDisplayText(displayData.description)}</p>
@@ -208,7 +278,7 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
       {currentImage ? (
         <div className="mb-6">
           <PetImage src={currentImage.url} name={pet.name} />
-          {currentImage.caption !== 'Main Image' && (
+          {allImages.length > 1 && currentImage.caption && (
             <p className="max-w-xs mx-auto mt-2 text-center text-xs text-text-secondary">
               {currentImage.caption}
             </p>
@@ -295,7 +365,7 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
                       )}
                     </td>
                     <td className="px-4 py-3 text-center">
-                      {dcRequired ? (
+                      {displayAccess.dcRequired ? (
                         <span className="inline-flex items-center justify-center w-5 h-5 rounded bg-amber-500 text-bg-base text-xs font-bold">
                           ✓
                         </span>
@@ -312,8 +382,8 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
       )}
       
       {/* Guest Stats Section - show for guests */}
-      {isGuest && guest?.guestStats && (
-        <GuestStatsSection stats={guest.guestStats} />
+      {isGuest && displayGuestStats && (
+        <GuestStatsSection stats={displayGuestStats} />
       )}
       
       {/* Level Stats Table - only for multi-variant items */}
@@ -321,12 +391,11 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
         <section className="mb-5">
           <LevelStatsTable 
             levels={family.levelVariants}
-            familyName={family.familyName}
+            familyName={displayFamilyName}
             hideVariantColumn={
               !sameLevelVariants &&
               !family.levelVariants.some(level => Boolean(level.variantName)) &&
-              // Hide variant column if all levelDisplay values match levelNumber (no roman numerals)
-              family.levelVariants.every(lv => lv.levelDisplay === lv.levelNumber.toString())
+              !useTitleDrivenVariantNames
             }
           />
         </section>
@@ -339,7 +408,7 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
             levels={family.levelVariants}
             activeIndex={activeIndex}
             onChange={handleLevelChange}
-            familyName={family.familyName}
+            familyName={displayFamilyName}
           />
         </section>
       )}
@@ -451,9 +520,9 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
 
       {/* Attacks - use GuestAttacks for guests, PetAttacks for pets */}
       {isGuest && guest ? (
-        <GuestAttacks attacks={guest.attacks} />
+        <GuestAttacks attacks={displayGuestAttacks} />
       ) : (
-        <PetAttacks attacks={displayData.attacks ?? []} />
+        <PetAttacks attacks={(displayData.attacks as Pet['attacks'] | undefined) ?? []} />
       )}
 
       {/* Notes - show shared notes for multi-variant (always visible), and/or level-specific notes */}
@@ -461,9 +530,12 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
         // For multi-variant items
         if (isMultiVariant && family) {
           const activeLevel = family.levelVariants[activeIndex]
+          const shouldShowSharedNotes =
+            family.familyOrigin !== 'cross-post' ||
+            family.levelVariants.every(level => (level.notes ?? undefined) === (family.shared.notes ?? undefined))
           
           // Clean shared notes (remove attribution)
-          const cleanedSharedNotes = family.shared.notes ? (() => {
+          const cleanedSharedNotes = shouldShowSharedNotes && family.shared.notes ? (() => {
             const separator = family.shared.notes.includes('\n') ? '\n' : ' • '
             const bullets = family.shared.notes.split(separator)
             const cutoff = bullets.findIndex(n => /^Thanks\s+to\b/i.test(n.trim()))
@@ -523,15 +595,14 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
           Source
         </h2>
         <a
-          href={pet.forumUrl}
+          href={displayData.sourceUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center justify-between bg-gold/10 border-l-4 border-gold rounded-lg p-4 min-h-[56px] hover:bg-gold/15 transition-colors"
         >
           <div>
-            <span className="text-gold text-xs font-medium block mb-0.5">Primary Source</span>
             <span className="text-text-primary text-sm font-medium">
-              DF Encyclopedia: {isMultiVariant && family ? family.familyName : pet.name}
+              DF Encyclopedia: {isMultiVariant && family ? activeLevel?.name ?? displayFamilyName : pet.name}
             </span>
           </div>
           <ExternalLink className="w-4 h-4 text-text-muted flex-shrink-0 ml-3" aria-hidden="true" />

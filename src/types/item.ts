@@ -29,6 +29,8 @@
  * - dm: Price is in Defender's Medals (earned currency from wars)
  *   Example: "75 Defender's Medals"
  */
+import type { GuestAttack, GuestStats } from './pet'
+
 export type PriceType = 'gold' | 'dc' | 'dm' | 'free' | 'merge'
 
 /**
@@ -49,6 +51,20 @@ export interface Attack {
   description: string      // Full description text
   images?: string[]        // URLs to attack animation images
   notes?: string[]         // Sub-bullet mechanic notes
+}
+
+export type VariantAttack = Attack | GuestAttack
+
+export interface AlternativeImage {
+  url: string
+  caption: string
+}
+
+export interface FamilySourceRef {
+  url: string
+  title: string
+  variantLabel?: string
+  isPrimary?: boolean
 }
 
 /**
@@ -172,10 +188,15 @@ export interface LevelVariant {
   obtainVariants: ObtainVariant[]
   
   // Override shared fields if they differ at this level
+  sourceUrl?: string
+  description?: string
+  imageUrl?: string
+  alternativeImages?: AlternativeImage[]
   element?: string           // Only if different from shared.element
   resists?: string           // Only if different from shared.resists
   rarity?: string            // Only if different from shared.rarity
-  attacks?: Attack[]         // Only if attacks differ at this level
+  attacks?: VariantAttack[]  // Only if attacks differ at this level
+  guestStats?: GuestStats
   notes?: string             // Level-specific notes
 }
 
@@ -204,11 +225,11 @@ export interface SharedData {
   description: string        // Shared flavour text
   ability?: string           // "Can recover mana based on level and CHA"
   imageUrl?: string          // Shared image (often in last post of multi-post threads)
-  alternativeImages?: Array<{ url: string; caption: string }>  // Alternative images with captions
+  alternativeImages?: AlternativeImage[]  // Alternative images with captions
   element?: string           // "Water" - when same for all levels
   resists?: string           // "None" - when same for all levels  
   rarity?: string            // "1" - when same for all levels
-  attacks?: Attack[]         // When attacks are same for all levels
+  attacks?: VariantAttack[]  // When attacks are same for all levels
   notes?: string             // Shared notes (bullet-separated with " • ")
   alsoSee?: AlsoSeeRef[]     // Related items
 }
@@ -251,9 +272,13 @@ export interface ItemFamily {
   // Identity
   id: string
   familyName: string         // "Goldfish Knight" (without level suffix)
+  familySubtitle?: string    // Optional short qualifier shown in variant-driven families
   slug: string               // Type-prefixed: "pet-goldfish-knight"
+  aliasSlugs?: string[]      // Legacy or merged slugs that should resolve to this family
   type: ItemType
   forumUrl: string           // Thread URL
+  familyOrigin?: 'single-thread' | 'same-thread-multi-post' | 'cross-post'
+  familySources?: FamilySourceRef[]
   
   // Shared data (same across all levels)
   shared: SharedData

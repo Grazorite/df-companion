@@ -253,9 +253,56 @@ function stripAccessVariantSuffix(name: string): string {
   return name.replace(/\s+\((?:D-Coins?|DC|D-Amulet|D-Amulet\/D-Coins|D-Amulet\/DC|Resource|Normal)\)$/i, '').trim()
 }
 
+function tokenizeVariantName(name: string): string[] {
+  return normalizeDisplayText(name)
+    .replace(/[()]/g, ' ')
+    .split(/\s+/)
+    .filter(Boolean)
+}
+
+function tokenizeFamilyComparisonName(name: string): string[] {
+  const tokens = tokenizeVariantName(name)
+  while (tokens.length > 0 && /^(jr|sr)\.?$/i.test(tokens[tokens.length - 1])) {
+    tokens.pop()
+  }
+  return tokens
+}
+
+function titleCaseTokens(tokens: string[]): string {
+  return tokens
+    .map(token => token.replace(/\b\w/g, character => character.toUpperCase()))
+    .join(' ')
+}
+
+export function getDisplayFamilyName(family: ItemFamily): string {
+  if (family.familyOrigin !== 'cross-post') return family.familyName
+
+  const tokenSets = family.levelVariants.map(level => tokenizeFamilyComparisonName(stripAccessVariantSuffix(level.name)))
+  if (tokenSets.length === 0) return family.familyName
+
+  const reversed = tokenSets.map(tokens => [...tokens].reverse())
+  const suffix: string[] = []
+  let index = 0
+
+  while (true) {
+    const candidate = reversed[0][index]
+    if (!candidate) break
+    if (reversed.every(tokens => tokens[index]?.toLowerCase() === candidate.toLowerCase())) {
+      suffix.unshift(candidate)
+      index += 1
+      continue
+    }
+    break
+  }
+
+  return suffix.length > 0 ? titleCaseTokens(suffix) : family.familyName
+}
+
 function getCondensedTitleVariant(levelName: string, familyName: string): string | undefined {
   const normalizedLevelName = stripAccessVariantSuffix(levelName)
   if (!normalizedLevelName) return undefined
+
+  const parentheticalBaseName = familyName.replace(/\s*\([^)]*\)\s*$/, '').trim()
 
   if (normalizedLevelName === familyName) {
     const tailWord = familyName.split(/\s+/).at(-1)
@@ -264,6 +311,33 @@ function getCondensedTitleVariant(levelName: string, familyName: string): string
 
   if (normalizedLevelName.startsWith(`${familyName} `)) {
     return normalizedLevelName.slice(familyName.length).trim()
+  }
+
+  if (normalizedLevelName.endsWith(` ${familyName}`)) {
+    return normalizedLevelName.slice(0, normalizedLevelName.length - familyName.length).trim()
+  }
+
+  if (parentheticalBaseName && parentheticalBaseName !== familyName) {
+    if (normalizedLevelName.startsWith(`${parentheticalBaseName} `)) {
+      return normalizedLevelName.slice(parentheticalBaseName.length).trim()
+    }
+
+    if (normalizedLevelName.endsWith(` ${parentheticalBaseName}`)) {
+      return normalizedLevelName.slice(0, normalizedLevelName.length - parentheticalBaseName.length).trim()
+    }
+  }
+
+  const familyTokens = tokenizeVariantName(familyName).map(token => token.toLowerCase())
+  const levelTokens = tokenizeVariantName(normalizedLevelName)
+  const remainingTokens = [...levelTokens]
+
+  for (const familyToken of familyTokens) {
+    const index = remainingTokens.findIndex(token => token.toLowerCase() === familyToken)
+    if (index >= 0) remainingTokens.splice(index, 1)
+  }
+
+  if (remainingTokens.length > 0) {
+    return remainingTokens.join(' ')
   }
 
   return undefined
@@ -305,4 +379,22 @@ export function shouldUseSplitVariantRows(levels: LevelVariant[]): boolean {
   const dcKeys = new Set(dcLevels.map(level => String(level.actualLevel ?? level.levelDisplay)))
 
   return nonDcKeys.size === dcKeys.size && [...nonDcKeys].every(key => dcKeys.has(key))
+}
+
+export function chunkVariantRows<T>(items: T[], maxPerRow: number = 8): T[][] {
+  if (items.length <= maxPerRow) return [items]
+
+  const rowCount = Math.min(3, Math.ceil(items.length / maxPerRow))
+  const baseSize = Math.floor(items.length / rowCount)
+  const remainder = items.length % rowCount
+  const rows: T[][] = []
+  let start = 0
+
+  for (let rowIndex = 0; rowIndex < rowCount; rowIndex += 1) {
+    const size = baseSize + (rowIndex < remainder ? 1 : 0)
+    rows.push(items.slice(start, start + size))
+    start += size
+  }
+
+  return rows.filter(row => row.length > 0)
 }

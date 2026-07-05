@@ -6,7 +6,7 @@
  * support.
  */
 
-import type { Pet, AlsoSeeRef as PetAlsoSeeRef } from '../types/pet'
+import type { Pet, Guest, AlsoSeeRef as PetAlsoSeeRef } from '../types/pet'
 import type { ItemFamily, ObtainVariant } from '../types/item'
 import { computeFamilyFlags, normalizeLevel } from './variantHelpers'
 
@@ -89,6 +89,13 @@ export function petToItemFamily(pet: Pet): ItemFamily {
         damage: pet.damage,
         stats: pet.stats,
         obtainVariants,
+        sourceUrl: pet.forumUrl,
+        description: pet.description,
+        ...(pet.imageUrl ? { imageUrl: pet.imageUrl } : {}),
+        ...(pet.alternativeImages ? { alternativeImages: pet.alternativeImages } : {}),
+        ...('guestStats' in pet ? { guestStats: (pet as unknown as Guest).guestStats } : {}),
+        ...(pet.attacks.length > 0 ? { attacks: pet.attacks } : {}),
+        ...(pet.notes ? { notes: pet.notes } : {}),
         // No overrides needed for single-variant
       },
     ],
@@ -163,7 +170,7 @@ export function itemFamilyToPet(family: ItemFamily): Pet {
     type: family.type as 'pet' | 'guest',
     
     // Description
-    description: family.shared.description,
+    description: firstLevel.description ?? family.shared.description,
     daRequired: firstObtain?.daRequired ?? false,
     dcRequired: firstObtain?.dcRequired,
     dmRequired: firstObtain?.dmRequired,
@@ -189,7 +196,9 @@ export function itemFamilyToPet(family: ItemFamily): Pet {
     obtainMethods,
     
     // Combat
-    attacks: firstLevel.attacks ?? family.shared.attacks ?? [],
+    attacks: family.type === 'guest'
+      ? []
+      : ((firstLevel.attacks ?? family.shared.attacks ?? []) as Pet['attacks']),
     rarity: firstLevel.rarity ?? family.shared.rarity ?? '1',
     
     // Evolution paths (not in ItemFamily yet)
@@ -197,7 +206,10 @@ export function itemFamilyToPet(family: ItemFamily): Pet {
     
     // Metadata
     releaseDate: family.releaseDate ?? '',
-    imageUrl: family.shared.imageUrl,
+    imageUrl: firstLevel.imageUrl ?? family.shared.imageUrl,
+    ...(firstLevel.alternativeImages || family.shared.alternativeImages
+      ? { alternativeImages: firstLevel.alternativeImages ?? family.shared.alternativeImages }
+      : {}),
     forumUrl: family.forumUrl,
     notes: firstLevel.notes ?? family.shared.notes,
     alsoSee: (family.shared.alsoSee ?? []).map(ref => ({
@@ -208,6 +220,15 @@ export function itemFamilyToPet(family: ItemFamily): Pet {
     
     // Search
     tags: family.tags,
+  }
+
+  if (family.type === 'guest' && firstLevel.guestStats) {
+    return {
+      ...(pet as unknown as Guest),
+      type: 'guest',
+      guestStats: firstLevel.guestStats,
+      attacks: (firstLevel.attacks ?? family.shared.attacks ?? []) as Guest['attacks'],
+    } as unknown as Pet
   }
   
   return pet

@@ -15,7 +15,7 @@
  */
 
 import type { LevelVariant } from '../../types/item'
-import { getLevelVariantLabel, hasTitleDrivenVariantNames, shouldUseSplitVariantRows } from '../../utils/variantHelpers'
+import { chunkVariantRows, getLevelVariantLabel, hasTitleDrivenVariantNames, shouldUseSplitVariantRows } from '../../utils/variantHelpers'
 
 interface LevelSelectorProps {
   levels: LevelVariant[]
@@ -35,29 +35,38 @@ export default function LevelSelector({ levels, activeIndex, onChange, familyNam
 
   const getButtonLabel = (level: LevelVariant) => getLevelVariantLabel(level, familyName, useTitleLabels)
   const splitRows = shouldUseSplitVariantRows(levels)
-  const nonDcLevels = levels.filter(level => !level.obtainVariants.some(variant => variant.dcRequired || variant.priceType === 'dc'))
-  const dcLevels = levels.filter(level => level.obtainVariants.some(variant => variant.dcRequired || variant.priceType === 'dc'))
-  const rows = splitRows ? [nonDcLevels, dcLevels] : [levels]
+  const indexedLevels = levels.map((level, index) => ({ level, index }))
+  const daLevels = indexedLevels.filter(({ level }) => level.obtainVariants.some(variant => variant.daRequired))
+  const nonDaLevels = indexedLevels.filter(({ level }) => !level.obtainVariants.some(variant => variant.daRequired))
+  const nonDcLevels = indexedLevels.filter(({ level }) => !level.obtainVariants.some(variant => variant.dcRequired || variant.priceType === 'dc'))
+  const dcLevels = indexedLevels.filter(({ level }) => level.obtainVariants.some(variant => variant.dcRequired || variant.priceType === 'dc'))
+  const shouldSplitDaRows = indexedLevels.length >= 8 && daLevels.length > 0 && nonDaLevels.length > 0
+  const groupedRows = shouldSplitDaRows
+    ? [nonDaLevels, daLevels]
+    : splitRows
+      ? [nonDcLevels, dcLevels]
+      : [indexedLevels]
+  const rows = groupedRows.flatMap(row => chunkVariantRows(row))
   
+  const usesVariantLabels = hasVariantNames || useTitleLabels
+
   return (
     <div className="space-y-2">
       <p className="text-xs font-semibold text-text-muted uppercase tracking-wider">
-        {hasVariantNames ? 'Select Variant' : 'Select Level'}
+        {usesVariantLabels ? 'Select Variant' : 'Select Level'}
       </p>
       
-      {/* Horizontal scrollable pill container */}
-      <div className="overflow-x-auto -mx-4 sm:mx-0">
+      <div className="-mx-4 sm:mx-0">
         <div className="px-4 sm:px-0 pb-1 space-y-2">
           {rows.map((row, rowIndex) => (
-            <div key={rowIndex} className="flex gap-2 w-max min-w-full">
-              {row.map((level) => {
-                const index = levels.findIndex(candidate => candidate.levelNumber === level.levelNumber)
+            <div key={rowIndex} className="flex flex-wrap gap-2">
+              {row.map(({ level, index }) => {
                 return (
                   <button
                     key={level.levelNumber}
                     onClick={() => onChange(index)}
                     className={`
-                      flex-shrink-0 min-h-11 min-w-11 px-4 py-2 rounded-lg
+                      min-h-11 min-w-11 px-4 py-2 rounded-lg whitespace-nowrap
                       text-sm font-medium transition-all duration-200
                       ${
                         index === activeIndex
@@ -66,7 +75,7 @@ export default function LevelSelector({ levels, activeIndex, onChange, familyNam
                       }
                     `}
                     aria-pressed={index === activeIndex}
-                    aria-label={`Select ${hasVariantNames ? 'variant' : 'level'} ${getButtonLabel(level)}`}
+                    aria-label={`Select ${usesVariantLabels ? 'variant' : 'level'} ${getButtonLabel(level)}`}
                   >
                     {getButtonLabel(level)}
                   </button>

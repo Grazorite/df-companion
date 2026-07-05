@@ -166,11 +166,6 @@ export default function BadgeDetailPage() {
               }`}
             >
               <div className="min-w-0">
-                {link.isPrimary && (
-                  <span className="text-gold text-xs font-medium block mb-0.5">
-                    Primary Source
-                  </span>
-                )}
                 <span className="text-text-primary text-sm font-medium truncate block">{link.title}</span>
               </div>
               <ExternalLink className="w-4 h-4 text-text-muted flex-shrink-0 ml-3" aria-hidden="true" />

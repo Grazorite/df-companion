@@ -67,9 +67,19 @@ function dedupeVariantEntries(items: Array<Pet | ItemFamily>) {
 
     if (currentScore > existingScore) {
       aliasToCanonicalSlug.set(existing.slug, item.slug)
+      if (isItemFamily(existing)) {
+        existing.aliasSlugs?.forEach(alias => aliasToCanonicalSlug.set(alias, item.slug))
+      }
       canonicalByNormalized.set(normalizedName, item)
     } else {
       aliasToCanonicalSlug.set(item.slug, existing.slug)
+    }
+  }
+
+  for (const item of canonicalByNormalized.values()) {
+    if (!isItemFamily(item) || !item.aliasSlugs) continue
+    for (const aliasSlug of item.aliasSlugs) {
+      aliasToCanonicalSlug.set(aliasSlug, item.slug)
     }
   }
 

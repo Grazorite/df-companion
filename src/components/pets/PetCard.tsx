@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { ChevronRight } from 'lucide-react'
 import type { Pet } from '../../types/pet'
 import type { ItemFamily } from '../../types/item'
-import { hasSameLevelVariants, isSingleVariant } from '../../utils/variantHelpers'
+import { getDisplayFamilyName, hasSameLevelVariants, isSingleVariant } from '../../utils/variantHelpers'
 import ElementPill from '../shared/ElementPill'
 import LevelRangeBadge from '../shared/LevelRangeBadge'
 
@@ -29,7 +29,7 @@ export default function PetCard({ pet, toUrl, replace, family }: PetCardProps) {
   
   // Strip roman numerals from display name for multi-variant items
   const displayName = isMultiVariant && family 
-    ? family.familyName 
+    ? getDisplayFamilyName(family)
     : pet.name
   
   // Use family flags if available, otherwise fall back to Pet flags
