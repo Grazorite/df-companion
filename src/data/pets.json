@@ -1,150 +1,779 @@
 [
   {
-    "id": "pet-dragon-baby-dragon",
-    "name": "<Dragon> (Baby Dragon)",
-    "slug": "pet-dragon-baby-dragon",
+    "id": "pet-dragon",
+    "familyName": "<Dragon>",
+    "slug": "pet-dragon",
     "type": "pet",
-    "description": "Morning Falconreach (Books 1 and 2) ->  Twilly -> Invite Dragon,",
-    "daRequired": true,
-    "retired": true,
-    "elements": [
-      "BAC",
-      "DAR",
-      "ENE",
-      "FIR",
-      "ICE",
-      "LIG",
-      "NAT",
-      "STO",
-      "WAT",
-      "WIN"
-    ],
-    "traits": [],
-    "level": "As player",
-    "damage": "Scaled\nMin: ([Level*0.85]-[Level/9])*1.1, rounded up\nMax: ([Level*0.85]+[Level/9])*1.1, rounded up",
-    "stats": "Crit +10, Magic Def +5, Pierce Def +5, Melee Def +5, Bonus +[20 + Level/2]",
-    "resists": "None",
-    "obtainMethods": [
-      {
-        "location": "Sunbreeze Grove ->  Lady Celestia /  Elysia -> Baby Dragon Quests & Training -> Equip,",
-        "price": "N/A",
-        "priceType": "gold",
-        "sellback": "N/A"
-      },
-      {
-        "location": "Sunbreeze Grove ->  Lady Celestia /  Elysia -> Baby Dragon Quests & Training -> Equip,",
-        "price": "10,000 Gold",
-        "priceType": "gold",
-        "sellback": "N/A"
-      },
-      {
-        "location": "Sunbreeze Grove ->  Lady Celestia /  Elysia -> Baby Dragon Quests & Training -> Equip,",
-        "price": "N/A",
-        "priceType": "gold",
-        "sellback": "N/A"
-      }
-    ],
-    "attacks": [],
-    "rarity": "N/A",
-    "evolutions": [],
-    "releaseDate": "June 13th, 2014",
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Kid.png",
-    "alternativeImages": [
-      {
-        "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Heal.png",
-        "caption": "Appearance"
-      },
-      {
-        "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Beam.png",
-        "caption": "Appearance"
-      },
-      {
-        "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Lash1.0.png",
-        "caption": "Appearance 1"
-      },
-      {
-        "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Scout.png",
-        "caption": "Appearance"
-      },
-      {
-        "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Scale.png",
-        "caption": "Appearance"
-      },
-      {
-        "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Nova1.0.png",
-        "caption": "Appearance 1"
-      },
-      {
-        "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Outrage1.0.png",
-        "caption": "Appearance 1"
-      },
-      {
-        "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Boost.png",
-        "caption": "Appearance"
-      },
-      {
-        "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Tickles.png",
-        "caption": "Appearance"
-      },
-      {
-        "url": "https://i.imgur.com/5hQkhqc.png",
-        "caption": "Appearance"
-      },
-      {
-        "url": "https://i.imgur.com/gsDuN45.png",
-        "caption": "Appearance"
-      },
-      {
-        "url": "https://i.imgur.com/CrM19nK.png",
-        "caption": "Appearance 1"
-      },
-      {
-        "url": "https://i.imgur.com/aaXfzSU.png",
-        "caption": "Appearance 1"
-      },
-      {
-        "url": "https://i.imgur.com/pTGcZLf.jpg",
-        "caption": "Appearance 1"
-      },
-      {
-        "url": "https://i.imgur.com/g1w6Fgz.png",
-        "caption": "Appearance"
-      },
-      {
-        "url": "https://i.imgur.com/tgH9uAg.png",
-        "caption": "Appearance"
-      },
-      {
-        "url": "https://i.imgur.com/nphRX0H.png",
-        "caption": "Appearance"
-      },
-      {
-        "url": "https://i.imgur.com/Pl0pDR7.png",
-        "caption": "Appearance"
-      },
-      {
-        "url": "https://i.imgur.com/gUwG064.png",
-        "caption": "Appearance"
-      },
-      {
-        "url": "https://i.imgur.com/Egfg8JX.png",
-        "caption": "Appearance"
-      },
-      {
-        "url": "https://i.imgur.com/2VXQj4H.png",
-        "caption": "Appearance"
-      },
-      {
-        "url": "https://i.imgur.com/uSKNSfK.png",
-        "caption": "Appearance"
-      },
-      {
-        "url": "https://i.imgur.com/OZotwTN.png",
-        "caption": "Appearance"
-      }
-    ],
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=9977305",
-    "alsoSee": [],
+    "shared": {
+      "description": "",
+      "rarity": "Element: Chosen via Dragon Elementization"
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
+        "levelDisplay": "As player",
+        "variantName": "Baby",
+        "name": "<Dragon> (Baby)",
+        "damage": "Scaled\nMin: [Level*0.85]-[Level/9]\nMax: [Level*0.85]+[Level/9]",
+        "stats": "Crit +5, Magic Def +5, Pierce Def +5, Melee Def +5, Bonus +[10 + Level/2]",
+        "statsType": "petStats",
+        "obtainVariants": [
+          {
+            "location": "Sunbreeze Grove -> Lady Celestia / Elysia -> Baby Dragon Quests & Training -> Equip",
+            "price": "N/A",
+            "priceType": "free",
+            "requirements": "Completion of  The Hatching /  Dragon Hatching",
+            "sellback": "N/A",
+            "daRequired": false
+          },
+          {
+            "location": "Morning Falconreach (Books 1 and 2) -> Twilly -> Invite Dragon",
+            "price": "N/A",
+            "priceType": "free",
+            "requirements": "Completion of  The Hatching /  Dragon Hatching",
+            "sellback": "N/A",
+            "daRequired": false
+          },
+          {
+            "location": "Morning Falconreach (Book 3) -> Twilly -> Invite your Dragon!",
+            "price": "N/A",
+            "priceType": "free",
+            "requirements": "Completion of  The Hatching /  Dragon Hatching",
+            "sellback": "N/A",
+            "daRequired": false
+          },
+          {
+            "location": "Dragon Amulet Interface -> Summon Dragon -> Summon Dragon as Pet",
+            "price": "N/A",
+            "priceType": "free",
+            "requirements": "Completion of  The Hatching /  Dragon Hatching",
+            "sellback": "N/A",
+            "daRequired": false
+          },
+          {
+            "location": "Noon of the Dead",
+            "price": "N/A",
+            "priceType": "free",
+            "requirements": "Completion of  The Hatching /  Dragon Hatching",
+            "sellback": "N/A",
+            "daRequired": false
+          },
+          {
+            "location": "Beach Vacation Invasion",
+            "price": "N/A",
+            "priceType": "free",
+            "requirements": "Completion of  The Hatching /  Dragon Hatching",
+            "sellback": "N/A",
+            "daRequired": false
+          },
+          {
+            "location": "Dragonsbreath (All Versions)",
+            "price": "N/A",
+            "priceType": "free",
+            "requirements": "Completion of  The Hatching /  Dragon Hatching",
+            "sellback": "N/A",
+            "daRequired": false
+          },
+          {
+            "location": "The Harbinger",
+            "price": "N/A",
+            "priceType": "free",
+            "requirements": "Completion of  The Hatching /  Dragon Hatching",
+            "sellback": "N/A",
+            "daRequired": false
+          },
+          {
+            "location": "Caught in a Vise",
+            "price": "N/A",
+            "priceType": "free",
+            "requirements": "Completion of  The Hatching /  Dragon Hatching",
+            "sellback": "N/A",
+            "daRequired": false
+          },
+          {
+            "location": "Supply and Demand",
+            "price": "N/A",
+            "priceType": "free",
+            "requirements": "Completion of  The Hatching /  Dragon Hatching",
+            "sellback": "N/A",
+            "daRequired": false
+          },
+          {
+            "location": "A Hero of the People",
+            "price": "N/A",
+            "priceType": "free",
+            "requirements": "Completion of  The Hatching /  Dragon Hatching",
+            "sellback": "N/A",
+            "daRequired": false
+          },
+          {
+            "location": "Trust",
+            "price": "N/A",
+            "priceType": "free",
+            "requirements": "Completion of  The Hatching /  Dragon Hatching",
+            "sellback": "N/A",
+            "daRequired": false
+          },
+          {
+            "location": "Darkheart",
+            "price": "N/A",
+            "priceType": "free",
+            "requirements": "Completion of  The Hatching /  Dragon Hatching",
+            "sellback": "N/A",
+            "daRequired": false
+          },
+          {
+            "location": "The Angel's Tomb",
+            "price": "N/A",
+            "priceType": "free",
+            "requirements": "Completion of  The Hatching /  Dragon Hatching",
+            "sellback": "N/A",
+            "daRequired": false
+          },
+          {
+            "location": "Broken Circuit (Part 1)",
+            "price": "N/A",
+            "priceType": "free",
+            "requirements": "Completion of  The Hatching /  Dragon Hatching",
+            "sellback": "N/A",
+            "daRequired": false
+          },
+          {
+            "location": "The Great One",
+            "price": "N/A",
+            "priceType": "free",
+            "requirements": "Completion of  The Hatching /  Dragon Hatching",
+            "sellback": "N/A",
+            "daRequired": false
+          },
+          {
+            "location": "Fate's Flow (Part 1)",
+            "price": "N/A",
+            "priceType": "free",
+            "requirements": "Completion of  The Hatching /  Dragon Hatching",
+            "sellback": "N/A",
+            "daRequired": false
+          },
+          {
+            "location": "The Trail of Myx",
+            "price": "N/A",
+            "priceType": "free",
+            "requirements": "Completion of  The Hatching /  Dragon Hatching",
+            "sellback": "N/A",
+            "daRequired": false
+          },
+          {
+            "location": "Solid Cotton Balloons",
+            "price": "N/A",
+            "priceType": "free",
+            "requirements": "Completion of  The Hatching /  Dragon Hatching",
+            "sellback": "N/A",
+            "daRequired": false
+          },
+          {
+            "location": "Artax & Shogun",
+            "price": "N/A",
+            "priceType": "free",
+            "requirements": "Completion of  The Hatching /  Dragon Hatching",
+            "sellback": "N/A",
+            "daRequired": false
+          }
+        ],
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Baby.png",
+        "rarity": "Element: Chosen via Dragon Elementization",
+        "attacks": [
+          {
+            "name": "Tier 0: Attack",
+            "description": "Breathes fire at target for 1 hit of 100% Magic damage.",
+            "notes": [
+              "Cooldown: 0"
+            ]
+          },
+          {
+            "name": "Tier 1: Heal Ally",
+            "description": "Recovers [4 + 0.04 * (2 + Protection skill level)]% of player's maximum HP.",
+            "notes": [
+              "Requirements: 1 Protection skill point minimum",
+              "Cooldown: 14 - [(Player CHA/50), rounded down]"
+            ]
+          },
+          {
+            "name": "Tier 1: Magic Beam",
+            "description": "1 hit of [100 + (Magic skill level * 0.75)]% Magic damage, with +[Magic skill level / 2] Bonus.",
+            "notes": [
+              "Requirements: 1 Magic skill point minimum",
+              "Cooldown: 4 - [(Player CHA/50), rounded down]"
+            ]
+          },
+          {
+            "name": "Tier 1: Tail Lash",
+            "description": "1 hit of [100 + (Fighting skill level / 4)]% Melee damage; applies 'Tail Lash', a Melee DoT effect equal to [10 + (Fighting skill level / 4) * (Level + 10)% � 5], to target for 3 turns.",
+            "notes": [
+              "Requirements: 1 Fighting skill point minimum",
+              "Cooldown: 4 - [(Player CHA/50), rounded down]"
+            ]
+          },
+          {
+            "name": "Tier 1: Dragon Scout",
+            "description": "Applies 'Dragon Scout' (+[Assistance skill level / 2] Bonus) to player for 4 turns. (Pop-up: Bonus increased!)",
+            "notes": [
+              "Requirements: 1 Assistance skill point minimum",
+              "Cooldown: 8 - [(Player CHA/50), rounded down]"
+            ]
+          },
+          {
+            "name": "Tier 1: Noxious Fumes",
+            "description": "1 hit of 100% Magic damage; applies 'Noxious Fumes' (-[Mischief skill level / 2] Immobility Resist) to target for 1 turn inclusive; applies 'Dragon Fumes' to target, stunning it for 1 turn.",
+            "notes": [
+              "Requirements: 1 Mischief skill point minimum",
+              "Cooldown: 19 - [(Player CHA/50), rounded down]"
+            ]
+          }
+        ]
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "As player",
+        "variantName": "Toddler",
+        "name": "<Dragon> (Toddler)",
+        "damage": "Scaled\nMin: [Level*0.85]-[Level/9]\nMax: [Level*0.85]+[Level/9]",
+        "stats": "Crit +5, Magic Def +5, Pierce Def +5, Melee Def +5, Bonus +[10 + Level/2]",
+        "statsType": "petStats",
+        "obtainVariants": [
+          {
+            "location": "Sunbreeze Grove -> Lady Celestia / Elysia -> Baby Dragon Quests & Training -> Equip",
+            "price": "10,000 Gold",
+            "priceType": "gold",
+            "requirements": "Dragon Amulet, Grow your Baby Dragon via  Sunbreeze Grove ->  Lady Celestia /  Elysia -> Left -> Baby Dragon Quests & Training -> Grow Dragon -> Grow",
+            "sellback": "N/A",
+            "daRequired": true
+          },
+          {
+            "location": "Morning Falconreach (Books 1 and 2) -> Twilly -> Invite Dragon",
+            "price": "10,000 Gold",
+            "priceType": "gold",
+            "requirements": "Dragon Amulet, Grow your Baby Dragon via  Sunbreeze Grove ->  Lady Celestia /  Elysia -> Left -> Baby Dragon Quests & Training -> Grow Dragon -> Grow",
+            "sellback": "N/A",
+            "daRequired": true
+          },
+          {
+            "location": "Morning Falconreach (Book 3) -> Twilly -> Invite your Dragon!",
+            "price": "10,000 Gold",
+            "priceType": "gold",
+            "requirements": "Dragon Amulet, Grow your Baby Dragon via  Sunbreeze Grove ->  Lady Celestia /  Elysia -> Left -> Baby Dragon Quests & Training -> Grow Dragon -> Grow",
+            "sellback": "N/A",
+            "daRequired": true
+          },
+          {
+            "location": "Dragon Amulet Interface -> Summon Dragon -> Summon Dragon as Pet",
+            "price": "10,000 Gold",
+            "priceType": "gold",
+            "requirements": "Dragon Amulet, Grow your Baby Dragon via  Sunbreeze Grove ->  Lady Celestia /  Elysia -> Left -> Baby Dragon Quests & Training -> Grow Dragon -> Grow",
+            "sellback": "N/A",
+            "daRequired": true
+          },
+          {
+            "location": "Noon of the Dead",
+            "price": "10,000 Gold",
+            "priceType": "gold",
+            "requirements": "Dragon Amulet, Grow your Baby Dragon via  Sunbreeze Grove ->  Lady Celestia /  Elysia -> Left -> Baby Dragon Quests & Training -> Grow Dragon -> Grow",
+            "sellback": "N/A",
+            "daRequired": true
+          },
+          {
+            "location": "Beach Vacation Invasion",
+            "price": "10,000 Gold",
+            "priceType": "gold",
+            "requirements": "Dragon Amulet, Grow your Baby Dragon via  Sunbreeze Grove ->  Lady Celestia /  Elysia -> Left -> Baby Dragon Quests & Training -> Grow Dragon -> Grow",
+            "sellback": "N/A",
+            "daRequired": true
+          },
+          {
+            "location": "Dragonsbreath (All Versions)",
+            "price": "10,000 Gold",
+            "priceType": "gold",
+            "requirements": "Dragon Amulet, Grow your Baby Dragon via  Sunbreeze Grove ->  Lady Celestia /  Elysia -> Left -> Baby Dragon Quests & Training -> Grow Dragon -> Grow",
+            "sellback": "N/A",
+            "daRequired": true
+          },
+          {
+            "location": "The Harbinger",
+            "price": "10,000 Gold",
+            "priceType": "gold",
+            "requirements": "Dragon Amulet, Grow your Baby Dragon via  Sunbreeze Grove ->  Lady Celestia /  Elysia -> Left -> Baby Dragon Quests & Training -> Grow Dragon -> Grow",
+            "sellback": "N/A",
+            "daRequired": true
+          },
+          {
+            "location": "Caught in a Vise",
+            "price": "10,000 Gold",
+            "priceType": "gold",
+            "requirements": "Dragon Amulet, Grow your Baby Dragon via  Sunbreeze Grove ->  Lady Celestia /  Elysia -> Left -> Baby Dragon Quests & Training -> Grow Dragon -> Grow",
+            "sellback": "N/A",
+            "daRequired": true
+          },
+          {
+            "location": "Supply and Demand",
+            "price": "10,000 Gold",
+            "priceType": "gold",
+            "requirements": "Dragon Amulet, Grow your Baby Dragon via  Sunbreeze Grove ->  Lady Celestia /  Elysia -> Left -> Baby Dragon Quests & Training -> Grow Dragon -> Grow",
+            "sellback": "N/A",
+            "daRequired": true
+          },
+          {
+            "location": "A Hero of the People",
+            "price": "10,000 Gold",
+            "priceType": "gold",
+            "requirements": "Dragon Amulet, Grow your Baby Dragon via  Sunbreeze Grove ->  Lady Celestia /  Elysia -> Left -> Baby Dragon Quests & Training -> Grow Dragon -> Grow",
+            "sellback": "N/A",
+            "daRequired": true
+          },
+          {
+            "location": "Trust",
+            "price": "10,000 Gold",
+            "priceType": "gold",
+            "requirements": "Dragon Amulet, Grow your Baby Dragon via  Sunbreeze Grove ->  Lady Celestia /  Elysia -> Left -> Baby Dragon Quests & Training -> Grow Dragon -> Grow",
+            "sellback": "N/A",
+            "daRequired": true
+          },
+          {
+            "location": "Darkheart",
+            "price": "10,000 Gold",
+            "priceType": "gold",
+            "requirements": "Dragon Amulet, Grow your Baby Dragon via  Sunbreeze Grove ->  Lady Celestia /  Elysia -> Left -> Baby Dragon Quests & Training -> Grow Dragon -> Grow",
+            "sellback": "N/A",
+            "daRequired": true
+          },
+          {
+            "location": "The Angel's Tomb",
+            "price": "10,000 Gold",
+            "priceType": "gold",
+            "requirements": "Dragon Amulet, Grow your Baby Dragon via  Sunbreeze Grove ->  Lady Celestia /  Elysia -> Left -> Baby Dragon Quests & Training -> Grow Dragon -> Grow",
+            "sellback": "N/A",
+            "daRequired": true
+          },
+          {
+            "location": "Broken Circuit (Part 1)",
+            "price": "10,000 Gold",
+            "priceType": "gold",
+            "requirements": "Dragon Amulet, Grow your Baby Dragon via  Sunbreeze Grove ->  Lady Celestia /  Elysia -> Left -> Baby Dragon Quests & Training -> Grow Dragon -> Grow",
+            "sellback": "N/A",
+            "daRequired": true
+          },
+          {
+            "location": "The Great One",
+            "price": "10,000 Gold",
+            "priceType": "gold",
+            "requirements": "Dragon Amulet, Grow your Baby Dragon via  Sunbreeze Grove ->  Lady Celestia /  Elysia -> Left -> Baby Dragon Quests & Training -> Grow Dragon -> Grow",
+            "sellback": "N/A",
+            "daRequired": true
+          },
+          {
+            "location": "Fate's Flow (Part 1)",
+            "price": "10,000 Gold",
+            "priceType": "gold",
+            "requirements": "Dragon Amulet, Grow your Baby Dragon via  Sunbreeze Grove ->  Lady Celestia /  Elysia -> Left -> Baby Dragon Quests & Training -> Grow Dragon -> Grow",
+            "sellback": "N/A",
+            "daRequired": true
+          },
+          {
+            "location": "The Trail of Myx",
+            "price": "10,000 Gold",
+            "priceType": "gold",
+            "requirements": "Dragon Amulet, Grow your Baby Dragon via  Sunbreeze Grove ->  Lady Celestia /  Elysia -> Left -> Baby Dragon Quests & Training -> Grow Dragon -> Grow",
+            "sellback": "N/A",
+            "daRequired": true
+          },
+          {
+            "location": "Solid Cotton Balloons",
+            "price": "10,000 Gold",
+            "priceType": "gold",
+            "requirements": "Dragon Amulet, Grow your Baby Dragon via  Sunbreeze Grove ->  Lady Celestia /  Elysia -> Left -> Baby Dragon Quests & Training -> Grow Dragon -> Grow",
+            "sellback": "N/A",
+            "daRequired": true
+          },
+          {
+            "location": "Artax & Shogun",
+            "price": "10,000 Gold",
+            "priceType": "gold",
+            "requirements": "Dragon Amulet, Grow your Baby Dragon via  Sunbreeze Grove ->  Lady Celestia /  Elysia -> Left -> Baby Dragon Quests & Training -> Grow Dragon -> Grow",
+            "sellback": "N/A",
+            "daRequired": true
+          }
+        ],
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Toddler.png",
+        "rarity": "Element: Chosen via Dragon Elementization",
+        "attacks": [
+          {
+            "name": "Tier 0: Attack",
+            "description": "Breathes fire at target for 1 hit of 100% Magic damage.",
+            "notes": [
+              "Cooldown: 0"
+            ]
+          },
+          {
+            "name": "Tier 1: Heal Ally",
+            "description": "Recovers [4 + 0.04 * (2 + Protection skill level)]% of player's maximum HP.",
+            "notes": [
+              "Requirements: 1 Protection skill point minimum",
+              "Cooldown: 14 - [(Player CHA/50), rounded down]"
+            ]
+          },
+          {
+            "name": "Tier 1: Magic Beam",
+            "description": "1 hit of [100 + (Magic skill level * 0.75)]% Magic damage, with +[Magic skill level / 2] Bonus.",
+            "notes": [
+              "Requirements: 1 Magic skill point minimum",
+              "Cooldown: 4 - [(Player CHA/50), rounded down]"
+            ]
+          },
+          {
+            "name": "Tier 1: Tail Lash",
+            "description": "1 hit of [100 + (Fighting skill level / 4)]% Melee damage; applies 'Tail Lash', a Melee DoT effect equal to [10 + (Fighting skill level / 4) * (Level + 10)% � 5], to target for 3 turns.",
+            "notes": [
+              "Requirements: 1 Fighting skill point minimum",
+              "Cooldown: 4 - [(Player CHA/50), rounded down]"
+            ]
+          },
+          {
+            "name": "Tier 1: Dragon Scout",
+            "description": "Applies 'Dragon Scout' (+[Assistance skill level / 2] Bonus) to player for 4 turns. (Pop-up: Bonus increased!)",
+            "notes": [
+              "Requirements: 1 Assistance skill point minimum",
+              "Cooldown: 8 - [(Player CHA/50), rounded down]"
+            ]
+          },
+          {
+            "name": "Tier 1: Noxious Fumes",
+            "description": "1 hit of 100% Magic damage; applies 'Noxious Fumes' (-[Mischief skill level / 2] Immobility Resist) to target for 1 turn inclusive; applies 'Dragon Fumes' to target, stunning it for 1 turn.",
+            "notes": [
+              "Requirements: 1 Mischief skill point minimum",
+              "Cooldown: 19 - [(Player CHA/50), rounded down]"
+            ]
+          },
+          {
+            "name": "Tier 2: Dragon's Scales",
+            "description": "Applies +[Protection skill level] Melee/Pierce/Magic Avoidance to player for 2 turns. (Pop-up: Avoidance increased!)",
+            "notes": [
+              "Requirements: Dragon Amulet; Toddler or Kid Dragon; 100 Protection skill points minimum",
+              "Cooldown: 19 - [(Player CHA/50), rounded down]"
+            ]
+          },
+          {
+            "name": "Tier 2: Elemental Supernova",
+            "description": "1 hit of [100 + (Magic skill level)]% Magic Weakness seeking damage, with +[Magic skill level] Crit.",
+            "notes": [
+              "Requirements: Dragon Amulet; Toddler or Kid Dragon; 100 Magic skill points minimum",
+              "Cooldown: 19 - [(Player CHA/50), rounded down]"
+            ]
+          },
+          {
+            "name": "Tier 2: Outrage",
+            "description": "4 hits of [40 + (Fighting skill level / 10)]% Pierce damage, amounting to [160 + (Fighting skill level / 2.5)]% damage; applies 'Outrage', a Pierce DoT effect equal to [10 + (Fighting skill level / 2) * (Level + 10)% � 5], to target for 3 turns.",
+            "notes": [
+              "Requirements: Dragon Amulet; Toddler or Kid Dragon; 100 Fighting skill points minimum",
+              "Cooldown: 19 - [(Player CHA/50), rounded down]"
+            ]
+          },
+          {
+            "name": "Tier 2: Overcharge",
+            "description": "Applies +[5 + (Assistance skill level / 10)]% Boost to player for 2 turns. (Pop-up: Damage increased!)",
+            "notes": [
+              "Requirements: Dragon Amulet; Toddler or Kid Dragon; 100 Assistance skill points minimum",
+              "Cooldown: 19 - [(Player CHA/50), rounded down]"
+            ]
+          },
+          {
+            "name": "Tier 2: Tickles",
+            "description": "Applies -[Mischief skill level / 4] Crit, -[Mischief skill level * 0.1]% Boost, -[Mischief skill level * 0.05] All Resist, and +[10 + (Mischief skill level * 0.1)] Health Resist to target for 3 turns. (Pop-up: Your foe deals and heals less damage, takes more damage, and is less likely to land a critical hit!)",
+            "notes": [
+              "Requirements: Dragon Amulet; Toddler or Kid Dragon; 100 Mischief skill points minimum",
+              "Cooldown: 19 - [(Player CHA/50), rounded down]"
+            ]
+          }
+        ]
+      },
+      {
+        "levelNumber": 3,
+        "levelDisplay": "As player",
+        "variantName": "Kid",
+        "name": "<Dragon> (Kid)",
+        "damage": "Scaled\nMin: ([Level*0.85]-[Level/9])*1.1, rounded up\nMax: ([Level*0.85]+[Level/9])*1.1, rounded up",
+        "stats": "Crit +10, Magic Def +5, Pierce Def +5, Melee Def +5, Bonus +[20 + Level/2]",
+        "statsType": "petStats",
+        "obtainVariants": [
+          {
+            "location": "Sunbreeze Grove -> Lady Celestia / Elysia -> Baby Dragon Quests & Training -> Equip",
+            "price": "N/A",
+            "priceType": "free",
+            "requirements": "Dragon Amulet, Completion of  Fire Primal,  Earth Primal, and  Water Primal, Grow your Toddler Dragon via  Sunbreeze Grove (Book 3) ->  Elysia -> Left -> DragonRider -> Primal Dragon Training -> Check Dragon Growth",
+            "sellback": "N/A",
+            "daRequired": true
+          },
+          {
+            "location": "Morning Falconreach (Books 1 and 2) -> Twilly -> Invite Dragon",
+            "price": "N/A",
+            "priceType": "free",
+            "requirements": "Dragon Amulet, Completion of  Fire Primal,  Earth Primal, and  Water Primal, Grow your Toddler Dragon via  Sunbreeze Grove (Book 3) ->  Elysia -> Left -> DragonRider -> Primal Dragon Training -> Check Dragon Growth",
+            "sellback": "N/A",
+            "daRequired": true
+          },
+          {
+            "location": "Morning Falconreach (Book 3) -> Twilly -> Invite your Dragon!",
+            "price": "N/A",
+            "priceType": "free",
+            "requirements": "Dragon Amulet, Completion of  Fire Primal,  Earth Primal, and  Water Primal, Grow your Toddler Dragon via  Sunbreeze Grove (Book 3) ->  Elysia -> Left -> DragonRider -> Primal Dragon Training -> Check Dragon Growth",
+            "sellback": "N/A",
+            "daRequired": true
+          },
+          {
+            "location": "Dragon Amulet Interface -> Summon Dragon -> Summon Dragon as Pet",
+            "price": "N/A",
+            "priceType": "free",
+            "requirements": "Dragon Amulet, Completion of  Fire Primal,  Earth Primal, and  Water Primal, Grow your Toddler Dragon via  Sunbreeze Grove (Book 3) ->  Elysia -> Left -> DragonRider -> Primal Dragon Training -> Check Dragon Growth",
+            "sellback": "N/A",
+            "daRequired": true
+          },
+          {
+            "location": "Noon of the Dead",
+            "price": "N/A",
+            "priceType": "free",
+            "requirements": "Dragon Amulet, Completion of  Fire Primal,  Earth Primal, and  Water Primal, Grow your Toddler Dragon via  Sunbreeze Grove (Book 3) ->  Elysia -> Left -> DragonRider -> Primal Dragon Training -> Check Dragon Growth",
+            "sellback": "N/A",
+            "daRequired": true
+          },
+          {
+            "location": "Beach Vacation Invasion",
+            "price": "N/A",
+            "priceType": "free",
+            "requirements": "Dragon Amulet, Completion of  Fire Primal,  Earth Primal, and  Water Primal, Grow your Toddler Dragon via  Sunbreeze Grove (Book 3) ->  Elysia -> Left -> DragonRider -> Primal Dragon Training -> Check Dragon Growth",
+            "sellback": "N/A",
+            "daRequired": true
+          },
+          {
+            "location": "Dragonsbreath (All Versions)",
+            "price": "N/A",
+            "priceType": "free",
+            "requirements": "Dragon Amulet, Completion of  Fire Primal,  Earth Primal, and  Water Primal, Grow your Toddler Dragon via  Sunbreeze Grove (Book 3) ->  Elysia -> Left -> DragonRider -> Primal Dragon Training -> Check Dragon Growth",
+            "sellback": "N/A",
+            "daRequired": true
+          },
+          {
+            "location": "The Harbinger",
+            "price": "N/A",
+            "priceType": "free",
+            "requirements": "Dragon Amulet, Completion of  Fire Primal,  Earth Primal, and  Water Primal, Grow your Toddler Dragon via  Sunbreeze Grove (Book 3) ->  Elysia -> Left -> DragonRider -> Primal Dragon Training -> Check Dragon Growth",
+            "sellback": "N/A",
+            "daRequired": true
+          },
+          {
+            "location": "Caught in a Vise",
+            "price": "N/A",
+            "priceType": "free",
+            "requirements": "Dragon Amulet, Completion of  Fire Primal,  Earth Primal, and  Water Primal, Grow your Toddler Dragon via  Sunbreeze Grove (Book 3) ->  Elysia -> Left -> DragonRider -> Primal Dragon Training -> Check Dragon Growth",
+            "sellback": "N/A",
+            "daRequired": true
+          },
+          {
+            "location": "Supply and Demand",
+            "price": "N/A",
+            "priceType": "free",
+            "requirements": "Dragon Amulet, Completion of  Fire Primal,  Earth Primal, and  Water Primal, Grow your Toddler Dragon via  Sunbreeze Grove (Book 3) ->  Elysia -> Left -> DragonRider -> Primal Dragon Training -> Check Dragon Growth",
+            "sellback": "N/A",
+            "daRequired": true
+          },
+          {
+            "location": "A Hero of the People",
+            "price": "N/A",
+            "priceType": "free",
+            "requirements": "Dragon Amulet, Completion of  Fire Primal,  Earth Primal, and  Water Primal, Grow your Toddler Dragon via  Sunbreeze Grove (Book 3) ->  Elysia -> Left -> DragonRider -> Primal Dragon Training -> Check Dragon Growth",
+            "sellback": "N/A",
+            "daRequired": true
+          },
+          {
+            "location": "Trust",
+            "price": "N/A",
+            "priceType": "free",
+            "requirements": "Dragon Amulet, Completion of  Fire Primal,  Earth Primal, and  Water Primal, Grow your Toddler Dragon via  Sunbreeze Grove (Book 3) ->  Elysia -> Left -> DragonRider -> Primal Dragon Training -> Check Dragon Growth",
+            "sellback": "N/A",
+            "daRequired": true
+          },
+          {
+            "location": "Darkheart",
+            "price": "N/A",
+            "priceType": "free",
+            "requirements": "Dragon Amulet, Completion of  Fire Primal,  Earth Primal, and  Water Primal, Grow your Toddler Dragon via  Sunbreeze Grove (Book 3) ->  Elysia -> Left -> DragonRider -> Primal Dragon Training -> Check Dragon Growth",
+            "sellback": "N/A",
+            "daRequired": true
+          },
+          {
+            "location": "The Angel's Tomb",
+            "price": "N/A",
+            "priceType": "free",
+            "requirements": "Dragon Amulet, Completion of  Fire Primal,  Earth Primal, and  Water Primal, Grow your Toddler Dragon via  Sunbreeze Grove (Book 3) ->  Elysia -> Left -> DragonRider -> Primal Dragon Training -> Check Dragon Growth",
+            "sellback": "N/A",
+            "daRequired": true
+          },
+          {
+            "location": "Broken Circuit (Part 1)",
+            "price": "N/A",
+            "priceType": "free",
+            "requirements": "Dragon Amulet, Completion of  Fire Primal,  Earth Primal, and  Water Primal, Grow your Toddler Dragon via  Sunbreeze Grove (Book 3) ->  Elysia -> Left -> DragonRider -> Primal Dragon Training -> Check Dragon Growth",
+            "sellback": "N/A",
+            "daRequired": true
+          },
+          {
+            "location": "The Great One",
+            "price": "N/A",
+            "priceType": "free",
+            "requirements": "Dragon Amulet, Completion of  Fire Primal,  Earth Primal, and  Water Primal, Grow your Toddler Dragon via  Sunbreeze Grove (Book 3) ->  Elysia -> Left -> DragonRider -> Primal Dragon Training -> Check Dragon Growth",
+            "sellback": "N/A",
+            "daRequired": true
+          },
+          {
+            "location": "Fate's Flow (Part 1)",
+            "price": "N/A",
+            "priceType": "free",
+            "requirements": "Dragon Amulet, Completion of  Fire Primal,  Earth Primal, and  Water Primal, Grow your Toddler Dragon via  Sunbreeze Grove (Book 3) ->  Elysia -> Left -> DragonRider -> Primal Dragon Training -> Check Dragon Growth",
+            "sellback": "N/A",
+            "daRequired": true
+          },
+          {
+            "location": "The Trail of Myx",
+            "price": "N/A",
+            "priceType": "free",
+            "requirements": "Dragon Amulet, Completion of  Fire Primal,  Earth Primal, and  Water Primal, Grow your Toddler Dragon via  Sunbreeze Grove (Book 3) ->  Elysia -> Left -> DragonRider -> Primal Dragon Training -> Check Dragon Growth",
+            "sellback": "N/A",
+            "daRequired": true
+          },
+          {
+            "location": "Solid Cotton Balloons",
+            "price": "N/A",
+            "priceType": "free",
+            "requirements": "Dragon Amulet, Completion of  Fire Primal,  Earth Primal, and  Water Primal, Grow your Toddler Dragon via  Sunbreeze Grove (Book 3) ->  Elysia -> Left -> DragonRider -> Primal Dragon Training -> Check Dragon Growth",
+            "sellback": "N/A",
+            "daRequired": true
+          },
+          {
+            "location": "Artax & Shogun",
+            "price": "N/A",
+            "priceType": "free",
+            "requirements": "Dragon Amulet, Completion of  Fire Primal,  Earth Primal, and  Water Primal, Grow your Toddler Dragon via  Sunbreeze Grove (Book 3) ->  Elysia -> Left -> DragonRider -> Primal Dragon Training -> Check Dragon Growth",
+            "sellback": "N/A",
+            "daRequired": true
+          }
+        ],
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Kid.png",
+        "rarity": "Element: Chosen via Dragon Elementization",
+        "attacks": [
+          {
+            "name": "Tier 0: Attack",
+            "description": "Breathes fire at target for 1 hit of 100% Magic damage.",
+            "notes": [
+              "Cooldown: 0"
+            ]
+          },
+          {
+            "name": "Tier 0: Attack",
+            "description": "Has a [Magic skill level / 4]% chance to cast a ball of magic at target for 1 hit of [100 + (Magic skill level / 5)]% Magic damage, if no other skill is selected.",
+            "notes": [
+              "Requirements: Dragon Amulet; Kid Dragon; 1 Magic skill point minimum",
+              "Cooldown: 0"
+            ]
+          },
+          {
+            "name": "Tier 0: Attack",
+            "description": "Has a [Fighting skill level / 4]% chance to dash at target quickly for 1 hit of [100 + (Fighting skill level / 5)]% Melee damage, if no other skill is selected.",
+            "notes": [
+              "Requirements: Dragon Amulet; Kid Dragon; 1 Fighting skill point minimum",
+              "Cooldown: 0"
+            ]
+          },
+          {
+            "name": "Tier 1: Heal Ally",
+            "description": "Recovers [4 + 0.04 * (2 + Protection skill level)]% of player's maximum HP.",
+            "notes": [
+              "Requirements: 1 Protection skill point minimum",
+              "Cooldown: 14 - [(Player CHA/50), rounded down]"
+            ]
+          },
+          {
+            "name": "Tier 1: Magic Beam",
+            "description": "1 hit of [100 + (Magic skill level * 0.75)]% Magic damage, with +[Magic skill level / 2] Bonus.",
+            "notes": [
+              "Requirements: 1 Magic skill point minimum",
+              "Cooldown: 4 - [(Player CHA/50), rounded down]"
+            ]
+          },
+          {
+            "name": "Tier 1: Tail Lash",
+            "description": "1 hit of [100 + (Fighting skill level / 4)]% Melee damage; applies 'Tail Lash', a Melee DoT effect equal to [10 + (Fighting skill level / 4) * (Level + 10)% � 5], to target for 3 turns.",
+            "notes": [
+              "Requirements: 1 Fighting skill point minimum",
+              "Cooldown: 4 - [(Player CHA/50), rounded down]"
+            ]
+          },
+          {
+            "name": "Tier 1: Dragon Scout",
+            "description": "Applies 'Dragon Scout' (+[Assistance skill level / 2] Bonus) to player for 4 turns. (Pop-up: Bonus increased!)",
+            "notes": [
+              "Requirements: 1 Assistance skill point minimum",
+              "Cooldown: 8 - [(Player CHA/50), rounded down]"
+            ]
+          },
+          {
+            "name": "Tier 1: Noxious Fumes",
+            "description": "1 hit of 100% Magic damage; applies 'Noxious Fumes' (-[Mischief skill level / 2] Immobility Resist) to target for 1 turn inclusive; applies 'Dragon Fumes' to target, stunning it for 1 turn.",
+            "notes": [
+              "Requirements: 1 Mischief skill point minimum",
+              "Cooldown: 19 - [(Player CHA/50), rounded down]"
+            ]
+          },
+          {
+            "name": "Tier 2: Dragon's Scales",
+            "description": "Applies +[Protection skill level] Melee/Pierce/Magic Avoidance to player for 2 turns. (Pop-up: Avoidance increased!)",
+            "notes": [
+              "Requirements: Dragon Amulet; Toddler or Kid Dragon; 100 Protection skill points minimum",
+              "Cooldown: 19 - [(Player CHA/50), rounded down]"
+            ]
+          },
+          {
+            "name": "Tier 2: Elemental Supernova",
+            "description": "1 hit of [100 + (Magic skill level)]% Magic Weakness seeking damage, with +[Magic skill level] Crit.",
+            "notes": [
+              "Requirements: Dragon Amulet; Toddler or Kid Dragon; 100 Magic skill points minimum",
+              "Cooldown: 19 - [(Player CHA/50), rounded down]"
+            ]
+          },
+          {
+            "name": "Tier 2: Outrage",
+            "description": "4 hits of [40 + (Fighting skill level / 10)]% Pierce damage, amounting to [160 + (Fighting skill level / 2.5)]% damage; applies 'Outrage', a Pierce DoT effect equal to [10 + (Fighting skill level / 2) * (Level + 10)% � 5], to target for 3 turns.",
+            "notes": [
+              "Requirements: Dragon Amulet; Toddler or Kid Dragon; 100 Fighting skill points minimum",
+              "Cooldown: 19 - [(Player CHA/50), rounded down]"
+            ]
+          },
+          {
+            "name": "Tier 2: Overcharge",
+            "description": "Applies +[5 + (Assistance skill level / 10)]% Boost to player for 2 turns. (Pop-up: Damage increased!)",
+            "notes": [
+              "Requirements: Dragon Amulet; Toddler or Kid Dragon; 100 Assistance skill points minimum",
+              "Cooldown: 19 - [(Player CHA/50), rounded down]"
+            ]
+          },
+          {
+            "name": "Tier 2: Tickles",
+            "description": "Applies -[Mischief skill level / 4] Crit, -[Mischief skill level * 0.1]% Boost, -[Mischief skill level * 0.05] All Resist, and +[10 + (Mischief skill level * 0.1)] Health Resist to target for 3 turns. (Pop-up: Your foe deals and heals less damage, takes more damage, and is less likely to land a critical hit!)",
+            "notes": [
+              "Requirements: Dragon Amulet; Toddler or Kid Dragon; 100 Mischief skill points minimum",
+              "Cooldown: 19 - [(Player CHA/50), rounded down]"
+            ]
+          }
+        ]
+      }
+    ],
+    "releaseDate": "June 13th, 2014",
     "tags": [
       "pet",
       "bac",
@@ -157,942 +786,26 @@
       "sto",
       "wat",
       "win"
-    ]
-  },
-  {
-    "id": "pet-5-lb-butterbomb",
-    "familyName": "Butterbomb",
-    "slug": "pet-5-lb-butterbomb",
-    "aliasSlugs": [
-      "pet-10-lb-butterbomb",
-      "pet-15-lb-butterbomb",
-      "pet-2-star-general-butterbomb",
-      "pet-3-star-general-butterbomb",
-      "pet-4-star-general-butterbomb",
-      "pet-5-star-general-butterbomb",
-      "pet-6-star-general-butterbomb",
-      "pet-7-star-general-butterbomb",
-      "pet-8-star-general-butterbomb",
-      "pet-brigadier-general-butterbomb",
-      "pet-colonel-butterbomb",
-      "pet-corporal-butterbomb",
-      "pet-general-butterbomb",
-      "pet-lieutenant-general-butterbomb",
-      "pet-lieutenant-general-butterbomb-jr",
-      "pet-major-butterbomb",
-      "pet-major-butterbomb-jr",
-      "pet-major-general-butterbomb",
-      "pet-major-general-butterbomb-jr"
-    ],
-    "type": "pet",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20110338",
-    "familyOrigin": "cross-post",
-    "familySources": [
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20110338",
-        "title": "DF Encyclopedia: 10 lb Butterbomb",
-        "variantLabel": "10 lb Butterbomb",
-        "isPrimary": true
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20110343",
-        "title": "DF Encyclopedia: 15 lb Butterbomb",
-        "variantLabel": "15 lb Butterbomb",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20110413",
-        "title": "DF Encyclopedia: 2 Star General Butterbomb",
-        "variantLabel": "2 Star General Butterbomb",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20110428",
-        "title": "DF Encyclopedia: 3 Star General Butterbomb",
-        "variantLabel": "3 Star General Butterbomb",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20110433",
-        "title": "DF Encyclopedia: 4 Star General Butterbomb",
-        "variantLabel": "4 Star General Butterbomb",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=7121324",
-        "title": "DF Encyclopedia: 5 lb Butterbomb",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20110441",
-        "title": "DF Encyclopedia: 5 Star General Butterbomb",
-        "variantLabel": "5 Star General Butterbomb",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20110442",
-        "title": "DF Encyclopedia: 6 Star General Butterbomb",
-        "variantLabel": "6 Star General Butterbomb",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21883885",
-        "title": "DF Encyclopedia: 7 Star General Butterbomb",
-        "variantLabel": "7 Star General Butterbomb",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21883892",
-        "title": "DF Encyclopedia: 8 Star General Butterbomb",
-        "variantLabel": "8 Star General Butterbomb",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20110392",
-        "title": "DF Encyclopedia: Brigadier General Butterbomb",
-        "variantLabel": "Brigadier General Butterbomb",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20110386",
-        "title": "DF Encyclopedia: Colonel Butterbomb",
-        "variantLabel": "Colonel Butterbomb",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20110358",
-        "title": "DF Encyclopedia: Corporal Butterbomb",
-        "variantLabel": "Corporal Butterbomb",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20110411",
-        "title": "DF Encyclopedia: General Butterbomb",
-        "variantLabel": "General Butterbomb",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20110405",
-        "title": "DF Encyclopedia: Lieutenant General Butterbomb",
-        "variantLabel": "Lieutenant General Butterbomb",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20110369",
-        "title": "DF Encyclopedia: Lieutenant General Butterbomb Jr.",
-        "variantLabel": "Lieutenant General Butterbomb Jr.",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20110382",
-        "title": "DF Encyclopedia: Major Butterbomb",
-        "variantLabel": "Major Butterbomb",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20110362",
-        "title": "DF Encyclopedia: Major Butterbomb Jr.",
-        "variantLabel": "Major Butterbomb Jr.",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20110400",
-        "title": "DF Encyclopedia: Major General Butterbomb",
-        "variantLabel": "Major General Butterbomb",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20110364",
-        "title": "DF Encyclopedia: Major General Butterbomb Jr.",
-        "variantLabel": "Major General Butterbomb Jr.",
-        "isPrimary": false
-      }
-    ],
-    "shared": {
-      "description": "Butterbomb the battle turkey was trained by Dr. Voltabolt to be the worlds most deadly turkey and pilot.",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Butterbomb.png",
-      "element": "NAT",
-      "rarity": "3",
-      "attacks": [
-        {
-          "name": "Attack Type 1",
-          "description": "Approaches target and pecks it for 1 hit of 100% Melee Nature damage. (Rate: 80%)",
-          "images": [],
-          "notes": []
-        },
-        {
-          "name": "Attack Type 2 /  2.1 /  2.2",
-          "description": "Fires a corn on the cob at target for 1 hit of 100% Melee Nature damage, with +200 Crit. (Rate: 20%)",
-          "images": [],
-          "notes": []
-        }
-      ]
-    },
-    "levelVariants": [
-      {
-        "levelNumber": 1,
-        "levelDisplay": "5",
-        "actualLevel": 5,
-        "name": "5 lb Butterbomb",
-        "damage": "2-7",
-        "stats": "None",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=7121324",
-        "description": "Butterbomb the battle turkey was trained by Dr. Voltabolt to be the worlds most deadly turkey and pilot.",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Butterbomb.png",
-        "obtainVariants": [
-          {
-            "location": "Battle Turkey Upgrade",
-            "price": "N/A",
-            "priceType": "merge",
-            "sellback": "300 Gold",
-            "daRequired": false,
-            "requiredItems": "1  Turkey Tail Feather & 10  Corn Kernel"
-          }
-        ],
-        "element": "NAT",
-        "rarity": "3",
-        "attacks": [
-          {
-            "name": "Attack Type 1",
-            "description": "Approaches target and pecks it for 1 hit of 100% Melee Nature damage. (Rate: 80%)",
-            "images": [],
-            "notes": []
-          },
-          {
-            "name": "Attack Type 2 /  2.1 /  2.2",
-            "description": "Fires a corn on the cob at target for 1 hit of 100% Melee Nature damage, with +200 Crit. (Rate: 20%)",
-            "images": [],
-            "notes": []
-          }
-        ]
-      },
-      {
-        "levelNumber": 2,
-        "levelDisplay": "10",
-        "actualLevel": 10,
-        "name": "10 lb Butterbomb",
-        "damage": "6-11",
-        "stats": "None",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20110338",
-        "description": "Butterbomb the battle turkey was trained by Dr. Voltabolt to be the worlds most deadly turkey and pilot.",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Butterbomb.png",
-        "obtainVariants": [
-          {
-            "location": "Battle Turkey Upgrade",
-            "price": "N/A",
-            "priceType": "merge",
-            "sellback": "350 Gold",
-            "daRequired": false,
-            "requiredItems": "1  Turkey Tail Feather & 20  Corn Kernel OR 1  5 lb Butterbomb & 10  Corn Kernel"
-          }
-        ],
-        "element": "NAT",
-        "rarity": "3",
-        "attacks": [
-          {
-            "name": "Attack Type 1",
-            "description": "Approaches target and pecks it for 1 hit of 100% Melee Nature damage. (Rate: 80%)",
-            "images": [],
-            "notes": []
-          },
-          {
-            "name": "Attack Type 2 /  2.1 /  2.2",
-            "description": "Fires a corn on the cob at target for 1 hit of 100% Melee Nature damage, with +200 Crit. (Rate: 20%)",
-            "images": [],
-            "notes": []
-          }
-        ]
-      },
-      {
-        "levelNumber": 3,
-        "levelDisplay": "15",
-        "actualLevel": 15,
-        "name": "15 lb Butterbomb",
-        "damage": "5-16",
-        "stats": "None",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20110343",
-        "description": "Butterbomb the battle turkey was trained by Dr. Voltabolt to be the worlds most deadly turkey and pilot.",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Butterbomb.png",
-        "obtainVariants": [
-          {
-            "location": "Battle Turkey Upgrade",
-            "price": "N/A",
-            "priceType": "merge",
-            "sellback": "400 Gold",
-            "daRequired": false,
-            "requiredItems": "1  Turkey Tail Feather & 30  Corn Kernel OR 1  10 lb Butterbomb & 10  Corn Kernel"
-          }
-        ],
-        "element": "NAT",
-        "rarity": "3",
-        "attacks": [
-          {
-            "name": "Attack Type 1",
-            "description": "Approaches target and pecks it for 1 hit of 100% Melee Nature damage. (Rate: 80%)",
-            "images": [],
-            "notes": []
-          },
-          {
-            "name": "Attack Type 2 /  2.1 /  2.2",
-            "description": "Fires a corn on the cob at target for 1 hit of 100% Melee Nature damage, with +200 Crit. (Rate: 20%)",
-            "images": [],
-            "notes": []
-          }
-        ]
-      },
-      {
-        "levelNumber": 4,
-        "levelDisplay": "20",
-        "actualLevel": 20,
-        "name": "Corporal Butterbomb",
-        "damage": "10-13",
-        "stats": "Crit +1",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20110358",
-        "description": "Corporal Butterbomb the battle turkey was trained by Dr. Voltabolt to be the worlds most deadly turkey and pilot.",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Butterbomb.png",
-        "obtainVariants": [
-          {
-            "location": "Battle Turkey Upgrade",
-            "price": "N/A",
-            "priceType": "merge",
-            "sellback": "450 Gold",
-            "daRequired": false,
-            "requiredItems": "30  Corn Kernel & 3  Turkey Tail Feather OR 1  15 lb Butterbomb & 10  Corn Kernel"
-          }
-        ],
-        "element": "NAT",
-        "rarity": "3",
-        "attacks": [
-          {
-            "name": "Attack Type 1",
-            "description": "Approaches target and pecks it for 1 hit of 100% Melee Nature damage. (Rate: 80%)",
-            "images": [],
-            "notes": []
-          },
-          {
-            "name": "Attack Type 2 /  2.1 /  2.2",
-            "description": "Fires a corn on the cob at target for 1 hit of 100% Melee Nature damage, with +200 Crit. (Rate: 20%)",
-            "images": [],
-            "notes": []
-          }
-        ]
-      },
-      {
-        "levelNumber": 5,
-        "levelDisplay": "20",
-        "actualLevel": 20,
-        "name": "Major Butterbomb",
-        "damage": "10-16",
-        "stats": "Crit +1",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20110382",
-        "description": "This pet requires the power of a Dragon Amulet. Major Butterbomb the battle turkey was trained by Dr. Voltabolt to be the worlds most deadly turkey and pilot.",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Butterbomb.png",
-        "obtainVariants": [
-          {
-            "location": "Battle Turkey Upgrade",
-            "price": "N/A",
-            "priceType": "merge",
-            "sellback": "450 Gold",
-            "daRequired": true,
-            "requiredItems": "1  Turkey Tail Feather & 30  Corn Kernel OR 1  15 lb Butterbomb & 10  Corn Kernel"
-          }
-        ],
-        "element": "NAT",
-        "rarity": "3",
-        "attacks": [
-          {
-            "name": "Attack Type 1",
-            "description": "Approaches target and pecks it for 1 hit of 100% Melee Nature damage. (Rate: 80%)",
-            "images": [],
-            "notes": []
-          },
-          {
-            "name": "Attack Type 2 /  2.1 /  2.2",
-            "description": "Fires a corn on the cob at target for 1 hit of 100% Melee Nature damage, with +200 Crit. (Rate: 20%)",
-            "images": [],
-            "notes": []
-          }
-        ]
-      },
-      {
-        "levelNumber": 6,
-        "levelDisplay": "25",
-        "actualLevel": 25,
-        "name": "Colonel Butterbomb",
-        "damage": "12-17",
-        "stats": "Crit +1",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20110386",
-        "description": "This pet requires the power of a Dragon Amulet. Colonel Butterbomb the battle turkey was trained by Dr. Voltabolt to be the worlds most deadly turkey and pilot.",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Butterbomb.png",
-        "obtainVariants": [
-          {
-            "location": "Battle Turkey Upgrade",
-            "price": "N/A",
-            "priceType": "merge",
-            "sellback": "500 Gold",
-            "daRequired": true,
-            "requiredItems": "30  Corn Kernel & 3  Turkey Tail Feather OR 1  Major Butterbomb & 5  Corn Kernel"
-          }
-        ],
-        "element": "NAT",
-        "rarity": "3",
-        "attacks": [
-          {
-            "name": "Attack Type 1",
-            "description": "Approaches target and pecks it for 1 hit of 100% Melee Nature damage. (Rate: 80%)",
-            "images": [],
-            "notes": []
-          },
-          {
-            "name": "Attack Type 2 /  2.1 /  2.2",
-            "description": "Fires a corn on the cob at target for 1 hit of 100% Melee Nature damage, with +200 Crit. (Rate: 20%)",
-            "images": [],
-            "notes": []
-          }
-        ]
-      },
-      {
-        "levelNumber": 7,
-        "levelDisplay": "25",
-        "actualLevel": 25,
-        "name": "Major Butterbomb Jr.",
-        "damage": "10-16",
-        "stats": "Crit +1",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20110362",
-        "description": "Major Butterbomb Jr. the battle turkey was trained by Dr. Voltabolt to be the worlds most deadly turkey and pilot.",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Butterbomb.png",
-        "obtainVariants": [
-          {
-            "location": "Battle Turkey Upgrade",
-            "price": "N/A",
-            "priceType": "merge",
-            "sellback": "500 Gold",
-            "daRequired": false,
-            "requiredItems": "30  Corn Kernel & 4  Turkey Tail Feather OR 1  Corporal Butterbomb & 10  Corn Kernel"
-          }
-        ],
-        "element": "NAT",
-        "rarity": "3",
-        "attacks": [
-          {
-            "name": "Attack Type 1",
-            "description": "Approaches target and pecks it for 1 hit of 100% Melee Nature damage. (Rate: 80%)",
-            "images": [],
-            "notes": []
-          },
-          {
-            "name": "Attack Type 2 /  2.1 /  2.2",
-            "description": "Fires a corn on the cob at target for 1 hit of 100% Melee Nature damage, with +200 Crit. (Rate: 20%)",
-            "images": [],
-            "notes": []
-          }
-        ]
-      },
-      {
-        "levelNumber": 8,
-        "levelDisplay": "30",
-        "actualLevel": 30,
-        "name": "Brigadier General Butterbomb",
-        "damage": "14-18",
-        "stats": "Crit +1",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20110392",
-        "description": "This pet requires the power of a Dragon Amulet. Brigadier General Butterbomb the battle turkey was trained by Dr. Voltabolt to be the worlds most deadly turkey and pilot.",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Butterbomb.png",
-        "obtainVariants": [
-          {
-            "location": "Battle Turkey Upgrade",
-            "price": "N/A",
-            "priceType": "merge",
-            "sellback": "550 Gold",
-            "daRequired": true,
-            "requiredItems": "30  Corn Kernel & 4  Turkey Tail Feather OR 1  Colonel Butterbomb & 5  Corn Kernel"
-          }
-        ],
-        "element": "NAT",
-        "rarity": "3",
-        "attacks": [
-          {
-            "name": "Attack Type 1",
-            "description": "Approaches target and pecks it for 1 hit of 100% Melee Nature damage. (Rate: 80%)",
-            "images": [],
-            "notes": []
-          },
-          {
-            "name": "Attack Type 2 /  2.1 /  2.2",
-            "description": "Fires a corn on the cob at target for 1 hit of 100% Melee Nature damage, with +200 Crit. (Rate: 20%)",
-            "images": [],
-            "notes": []
-          }
-        ]
-      },
-      {
-        "levelNumber": 9,
-        "levelDisplay": "35",
-        "actualLevel": 35,
-        "name": "Major General Butterbomb",
-        "damage": "15-20",
-        "stats": "Crit +1",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20110400",
-        "description": "This pet requires the power of a Dragon Amulet. Major General Butterbomb the battle turkey was trained by Dr. Voltabolt to be the worlds most deadly turkey and pilot.",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Butterbomb.png",
-        "obtainVariants": [
-          {
-            "location": "Battle Turkey Upgrade",
-            "price": "N/A",
-            "priceType": "merge",
-            "sellback": "550 Gold",
-            "daRequired": true,
-            "requiredItems": "30  Corn Kernel & 4  Turkey Tail Feather"
-          }
-        ],
-        "element": "NAT",
-        "rarity": "3",
-        "attacks": [
-          {
-            "name": "Attack Type 1",
-            "description": "Approaches target and pecks it for 1 hit of 100% Melee Nature damage. (Rate: 80%)",
-            "images": [],
-            "notes": []
-          },
-          {
-            "name": "Attack Type 2 /  2.1 /  2.2",
-            "description": "Fires a corn on the cob at target for 1 hit of 100% Melee Nature damage, with +200 Crit. (Rate: 20%)",
-            "images": [],
-            "notes": []
-          }
-        ]
-      },
-      {
-        "levelNumber": 10,
-        "levelDisplay": "35",
-        "actualLevel": 35,
-        "name": "Major General Butterbomb Jr.",
-        "damage": "12-17",
-        "stats": "Crit +1",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20110364",
-        "description": "This pet requires the power of a Dragon Amulet. Major General Butterbomb the battle turkey was trained by Dr. Voltabolt to be the worlds most deadly turkey and pilot.",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Butterbomb.png",
-        "obtainVariants": [
-          {
-            "location": "Battle Turkey Upgrade",
-            "price": "N/A",
-            "priceType": "merge",
-            "sellback": "550 Gold",
-            "daRequired": false,
-            "requiredItems": "30  Corn Kernel & 4  Turkey Tail Feather"
-          }
-        ],
-        "element": "NAT",
-        "rarity": "3",
-        "attacks": [
-          {
-            "name": "Attack Type 1",
-            "description": "Approaches target and pecks it for 1 hit of 100% Melee Nature damage. (Rate: 80%)",
-            "images": [],
-            "notes": []
-          },
-          {
-            "name": "Attack Type 2 /  2.1 /  2.2",
-            "description": "Fires a corn on the cob at target for 1 hit of 100% Melee Nature damage, with +200 Crit. (Rate: 20%)",
-            "images": [],
-            "notes": []
-          }
-        ],
-        "notes": "Description erroneously claims this pet requires a Dragon Amulet."
-      },
-      {
-        "levelNumber": 11,
-        "levelDisplay": "40",
-        "actualLevel": 40,
-        "name": "Lieutenant General Butterbomb",
-        "damage": "16-20",
-        "stats": "Crit +1",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20110405",
-        "description": "This pet requires the power of a Dragon Amulet. Lieutenant General Butterbomb the battle turkey was trained by Dr. Voltabolt to be the worlds most deadly turkey and pilot.",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Butterbomb.png",
-        "obtainVariants": [
-          {
-            "location": "Battle Turkey Upgrade",
-            "price": "N/A",
-            "priceType": "merge",
-            "sellback": "550 Gold",
-            "daRequired": true,
-            "requiredItems": "30  Corn Kernel & 5  Turkey Tail Feather"
-          }
-        ],
-        "element": "NAT",
-        "rarity": "3",
-        "attacks": [
-          {
-            "name": "Attack Type 1",
-            "description": "Approaches target and pecks it for 1 hit of 100% Melee Nature damage. (Rate: 80%)",
-            "images": [],
-            "notes": []
-          },
-          {
-            "name": "Attack Type 2 /  2.1 /  2.2",
-            "description": "Fires a corn on the cob at target for 1 hit of 100% Melee Nature damage, with +200 Crit. (Rate: 20%)",
-            "images": [],
-            "notes": []
-          }
-        ]
-      },
-      {
-        "levelNumber": 12,
-        "levelDisplay": "40",
-        "actualLevel": 40,
-        "name": "Lieutenant General Butterbomb Jr.",
-        "damage": "14-18",
-        "stats": "Crit +1",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20110369",
-        "description": "This pet requires the power of a Dragon Amulet. Lieutenant General Butterbomb the battle turkey was trained by Dr. Voltabolt to be the worlds most deadly turkey and pilot.",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Butterbomb.png",
-        "obtainVariants": [
-          {
-            "location": "Battle Turkey Upgrade",
-            "price": "N/A",
-            "priceType": "merge",
-            "sellback": "550 Gold",
-            "daRequired": false,
-            "requiredItems": "30  Corn Kernel & 5  Turkey Tail Feather"
-          }
-        ],
-        "element": "NAT",
-        "rarity": "3",
-        "attacks": [
-          {
-            "name": "Attack Type 1",
-            "description": "Approaches target and pecks it for 1 hit of 100% Melee Nature damage. (Rate: 80%)",
-            "images": [],
-            "notes": []
-          },
-          {
-            "name": "Attack Type 2 /  2.1 /  2.2",
-            "description": "Fires a corn on the cob at target for 1 hit of 100% Melee Nature damage, with +200 Crit. (Rate: 20%)",
-            "images": [],
-            "notes": []
-          }
-        ],
-        "notes": "Description erroneously claims this pet requires a Dragon Amulet."
-      },
-      {
-        "levelNumber": 13,
-        "levelDisplay": "45",
-        "actualLevel": 45,
-        "name": "General Butterbomb",
-        "damage": "16-21",
-        "stats": "Crit +1",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20110411",
-        "description": "This pet requires the power of a Dragon Amulet. General Butterbomb the battle turkey was trained by Dr. Voltabolt to be the worlds most deadly turkey and pilot.",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Butterbomb.png",
-        "obtainVariants": [
-          {
-            "location": "Battle Turkey Upgrade",
-            "price": "N/A",
-            "priceType": "merge",
-            "sellback": "550 Gold",
-            "daRequired": true,
-            "requiredItems": "30  Corn Kernel & 5  Turkey Tail Feather"
-          }
-        ],
-        "element": "NAT",
-        "rarity": "3",
-        "attacks": [
-          {
-            "name": "Attack Type 1",
-            "description": "Approaches target and pecks it for 1 hit of 100% Melee Nature damage. (Rate: 80%)",
-            "images": [],
-            "notes": []
-          },
-          {
-            "name": "Attack Type 2 /  2.1 /  2.2",
-            "description": "Fires a corn on the cob at target for 1 hit of 100% Melee Nature damage, with +200 Crit. (Rate: 20%)",
-            "images": [],
-            "notes": []
-          }
-        ]
-      },
-      {
-        "levelNumber": 14,
-        "levelDisplay": "50",
-        "actualLevel": 50,
-        "name": "2 Star General Butterbomb",
-        "damage": "16-22",
-        "stats": "Crit +1",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20110413",
-        "description": "This pet requires the power of a Dragon Amulet. 2 Star General Butterbomb the battle turkey was trained by Dr. Voltabolt to be the worlds most deadly turkey and pilot.",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Butterbomb.png",
-        "obtainVariants": [
-          {
-            "location": "Battle Turkey Upgrade",
-            "price": "N/A",
-            "priceType": "merge",
-            "sellback": "550 Gold",
-            "daRequired": true,
-            "requiredItems": "30  Corn Kernel & 5  Turkey Tail Feather"
-          }
-        ],
-        "element": "NAT",
-        "rarity": "3",
-        "attacks": [
-          {
-            "name": "Attack Type 1",
-            "description": "Approaches target and pecks it for 1 hit of 100% Melee Nature damage. (Rate: 80%)",
-            "images": [],
-            "notes": []
-          },
-          {
-            "name": "Attack Type 2 /  2.1 /  2.2",
-            "description": "Fires a corn on the cob at target for 1 hit of 100% Melee Nature damage, with +200 Crit. (Rate: 20%)",
-            "images": [],
-            "notes": []
-          }
-        ]
-      },
-      {
-        "levelNumber": 15,
-        "levelDisplay": "55",
-        "actualLevel": 55,
-        "name": "3 Star General Butterbomb",
-        "damage": "16-24",
-        "stats": "Crit +1",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20110428",
-        "description": "This pet requires the power of a Dragon Amulet. 3 Star General Butterbomb the battle turkey was trained by Dr. Voltabolt to be the worlds most deadly turkey and pilot.",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Butterbomb.png",
-        "obtainVariants": [
-          {
-            "location": "Battle Turkey Upgrade",
-            "price": "N/A",
-            "priceType": "merge",
-            "sellback": "600 Gold",
-            "daRequired": true,
-            "requiredItems": "30  Corn Kernel & 5  Turkey Tail Feather"
-          }
-        ],
-        "element": "NAT",
-        "rarity": "3",
-        "attacks": [
-          {
-            "name": "Attack Type 1",
-            "description": "Approaches target and pecks it for 1 hit of 100% Melee Nature damage. (Rate: 80%)",
-            "images": [],
-            "notes": []
-          },
-          {
-            "name": "Attack Type 2 /  2.1 /  2.2",
-            "description": "Fires a corn on the cob at target for 1 hit of 100% Melee Nature damage, with +200 Crit. (Rate: 20%)",
-            "images": [],
-            "notes": []
-          }
-        ]
-      },
-      {
-        "levelNumber": 16,
-        "levelDisplay": "60",
-        "actualLevel": 60,
-        "name": "4 Star General Butterbomb",
-        "damage": "17-25",
-        "stats": "Crit +1",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20110433",
-        "description": "This pet requires the power of a Dragon Amulet. 4 Star General Butterbomb the battle turkey was trained by Dr. Voltabolt to be the worlds most deadly turkey and pilot.",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Butterbomb.png",
-        "obtainVariants": [
-          {
-            "location": "Battle Turkey Upgrade",
-            "price": "N/A",
-            "priceType": "merge",
-            "sellback": "600 Gold",
-            "daRequired": true,
-            "requiredItems": "30  Corn Kernel & 5  Turkey Tail Feather"
-          }
-        ],
-        "element": "NAT",
-        "rarity": "3",
-        "attacks": [
-          {
-            "name": "Attack Type 1",
-            "description": "Approaches target and pecks it for 1 hit of 100% Melee Nature damage. (Rate: 80%)",
-            "images": [],
-            "notes": []
-          },
-          {
-            "name": "Attack Type 2 /  2.1 /  2.2",
-            "description": "Fires a corn on the cob at target for 1 hit of 100% Melee Nature damage, with +200 Crit. (Rate: 20%)",
-            "images": [],
-            "notes": []
-          }
-        ]
-      },
-      {
-        "levelNumber": 17,
-        "levelDisplay": "65",
-        "actualLevel": 65,
-        "name": "5 Star General Butterbomb",
-        "damage": "17-27",
-        "stats": "Crit +1, Bonus +1",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20110441",
-        "description": "This pet requires the power of a Dragon Amulet. 4 Star General Butterbomb the battle turkey was trained by Dr. Voltabolt to be the worlds most deadly turkey and pilot.",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Butterbomb.png",
-        "obtainVariants": [
-          {
-            "location": "Battle Turkey Upgrade",
-            "price": "N/A",
-            "priceType": "merge",
-            "sellback": "600 Gold",
-            "daRequired": true,
-            "requiredItems": "30  Corn Kernel & 5  Turkey Tail Feather"
-          }
-        ],
-        "element": "NAT",
-        "rarity": "3",
-        "attacks": [
-          {
-            "name": "Attack Type 1",
-            "description": "Approaches target and pecks it for 1 hit of 100% Melee Nature damage. (Rate: 80%)",
-            "images": [],
-            "notes": []
-          },
-          {
-            "name": "Attack Type 2 /  2.1 /  2.2",
-            "description": "Fires a corn on the cob at target for 1 hit of 100% Melee Nature damage, with +200 Crit. (Rate: 20%)",
-            "images": [],
-            "notes": []
-          }
-        ],
-        "notes": "Description is erroneously identical to  4 Star General Butterbomb."
-      },
-      {
-        "levelNumber": 18,
-        "levelDisplay": "70",
-        "actualLevel": 70,
-        "name": "6 Star General Butterbomb",
-        "damage": "19-27",
-        "stats": "Crit +2, Bonus +1",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20110442",
-        "description": "This pet requires the power of a Dragon Amulet. 4 Star General Butterbomb the battle turkey was trained by Dr. Voltabolt to be the worlds most deadly turkey and pilot.",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Butterbomb.png",
-        "obtainVariants": [
-          {
-            "location": "Battle Turkey Upgrade",
-            "price": "N/A",
-            "priceType": "merge",
-            "sellback": "600 Gold",
-            "daRequired": true,
-            "requiredItems": "30  Corn Kernel & 5  Turkey Tail Feather"
-          }
-        ],
-        "element": "NAT",
-        "rarity": "3",
-        "attacks": [
-          {
-            "name": "Attack Type 1",
-            "description": "Approaches target and pecks it for 1 hit of 100% Melee Nature damage. (Rate: 80%)",
-            "images": [],
-            "notes": []
-          },
-          {
-            "name": "Attack Type 2 /  2.1 /  2.2",
-            "description": "Fires a corn on the cob at target for 1 hit of 100% Melee Nature damage, with +200 Crit. (Rate: 20%)",
-            "images": [],
-            "notes": []
-          }
-        ],
-        "notes": "Description is erroneously identical to  4 Star General Butterbomb."
-      },
-      {
-        "levelNumber": 19,
-        "levelDisplay": "75",
-        "actualLevel": 75,
-        "name": "7 Star General Butterbomb",
-        "damage": "20-29",
-        "stats": "Crit +2, Bonus +2",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21883885",
-        "description": "This pet requires the power of a Dragon Amulet. 7 Star General Butterbomb the battle turkey was trained by Dr. Voltabolt to be the worlds most deadly turkey and pilot.",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Butterbomb.png",
-        "obtainVariants": [
-          {
-            "location": "Battle Turkey Upgrade",
-            "price": "N/A",
-            "priceType": "merge",
-            "sellback": "600 Gold",
-            "daRequired": true,
-            "requiredItems": "30  Corn Kernel & 6  Turkey Tail Feather"
-          }
-        ],
-        "element": "NAT",
-        "rarity": "3",
-        "attacks": [
-          {
-            "name": "Attack Type 1",
-            "description": "Approaches target and pecks it for 1 hit of 100% Melee Nature damage. (Rate: 80%)",
-            "images": [],
-            "notes": []
-          },
-          {
-            "name": "Attack Type 2 /  2.1 /  2.2",
-            "description": "Fires a corn on the cob at target for 1 hit of 100% Melee Nature damage, with +200 Crit. (Rate: 20%)",
-            "images": [],
-            "notes": []
-          }
-        ]
-      },
-      {
-        "levelNumber": 20,
-        "levelDisplay": "80",
-        "actualLevel": 80,
-        "name": "8 Star General Butterbomb",
-        "damage": "21-30",
-        "stats": "Crit +3, Bonus +3",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21883892",
-        "description": "This pet requires the power of a Dragon Amulet. 8 Star General Butterbomb the battle turkey was trained by Dr. Voltabolt to be the worlds most deadly turkey and pilot.",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Butterbomb.png",
-        "obtainVariants": [
-          {
-            "location": "Battle Turkey Upgrade",
-            "price": "N/A",
-            "priceType": "merge",
-            "sellback": "600 Gold",
-            "daRequired": true,
-            "requiredItems": "30  Corn Kernel & 6  Turkey Tail Feather"
-          }
-        ],
-        "element": "NAT",
-        "rarity": "3",
-        "attacks": [
-          {
-            "name": "Attack Type 1",
-            "description": "Approaches target and pecks it for 1 hit of 100% Melee Nature damage. (Rate: 80%)",
-            "images": [],
-            "notes": []
-          },
-          {
-            "name": "Attack Type 2 /  2.1 /  2.2",
-            "description": "Fires a corn on the cob at target for 1 hit of 100% Melee Nature damage, with +200 Crit. (Rate: 20%)",
-            "images": [],
-            "notes": []
-          }
-        ]
-      }
-    ],
-    "releaseDate": "November 20th, 2009",
-    "tags": [
-      "nat",
-      "pet"
     ],
     "hasDA": true,
     "hasDC": false,
     "hasDM": false,
-    "hasFree": false,
-    "hasMerge": true,
-    "isTemp": false,
-    "isRare": false,
-    "isSeasonal": true,
-    "isSpecialOffer": false,
-    "retired": false,
-    "levelRange": "5-80",
+    "hasFree": true,
+    "hasMerge": false,
+    "levelRange": "As player-As player",
     "elements": [
-      "NAT"
-    ]
+      "BAC",
+      "DAR",
+      "ENE",
+      "FIR",
+      "ICE",
+      "LIG",
+      "NAT",
+      "STO",
+      "WAT",
+      "WIN"
+    ],
+    "isMultiPost": true
   },
   {
     "id": "pet-adorable-baby-dracolich-pet",
@@ -1562,104 +1275,128 @@
       {
         "levelNumber": 2,
         "levelDisplay": "II",
+        "actualLevel": 20,
         "name": "Armored Chickcalf II",
-        "damage": "Unknown",
-        "stats": "None",
+        "damage": "10-16",
+        "stats": "Crit +2, Bonus +2",
+        "statsType": "petStats",
         "obtainVariants": [
           {
             "location": "Armored Chickcalf Pet",
             "price": "N/A",
             "priceType": "merge",
-            "sellback": "0 Gold",
+            "sellback": "0 Gold 0 Dragon Coins",
             "daRequired": false,
-            "requiredItems": "1"
+            "requiredItems": "1 Armored Chickcalf I"
           }
-        ]
+        ],
+        "element": "BAC",
+        "rarity": "77"
       },
       {
         "levelNumber": 3,
         "levelDisplay": "III",
+        "actualLevel": 30,
         "name": "Armored Chickcalf III",
-        "damage": "Unknown",
-        "stats": "None",
+        "damage": "13-18",
+        "stats": "Crit +3, Bonus +3",
+        "statsType": "petStats",
         "obtainVariants": [
           {
             "location": "Armored Chickcalf Pet",
             "price": "N/A",
             "priceType": "merge",
-            "sellback": "0 Gold",
+            "sellback": "0 Gold 0 Dragon Coins",
             "daRequired": false,
-            "requiredItems": "1"
+            "requiredItems": "1 Armored Chickcalf I OR 1 Armored Chickcalf II"
           }
-        ]
+        ],
+        "element": "BAC",
+        "rarity": "77"
       },
       {
         "levelNumber": 4,
         "levelDisplay": "IV",
+        "actualLevel": 40,
         "name": "Armored Chickcalf IV",
-        "damage": "Unknown",
-        "stats": "None",
+        "damage": "16-20",
+        "stats": "Crit +4, Bonus +4",
+        "statsType": "petStats",
         "obtainVariants": [
           {
             "location": "Armored Chickcalf Pet",
             "price": "N/A",
             "priceType": "merge",
-            "sellback": "0 Gold",
+            "sellback": "0 Gold 0 Dragon Coins",
             "daRequired": false,
-            "requiredItems": "1"
+            "requiredItems": "1 Armored Chickcalf I OR 1 Armored Chickcalf III"
           }
-        ]
+        ],
+        "element": "BAC",
+        "rarity": "77"
       },
       {
         "levelNumber": 5,
         "levelDisplay": "V",
+        "actualLevel": 50,
         "name": "Armored Chickcalf V",
-        "damage": "Unknown",
-        "stats": "None",
+        "damage": "16-22",
+        "stats": "Crit +5, Bonus +5",
+        "statsType": "petStats",
         "obtainVariants": [
           {
             "location": "Armored Chickcalf Pet",
             "price": "N/A",
             "priceType": "merge",
-            "sellback": "0 Gold",
+            "sellback": "0 Gold 0 Dragon Coins",
             "daRequired": false,
-            "requiredItems": "1"
+            "requiredItems": "1 Armored Chickcalf I OR 1 Armored Chickcalf IV"
           }
-        ]
+        ],
+        "element": "BAC",
+        "rarity": "77"
       },
       {
         "levelNumber": 6,
         "levelDisplay": "VI",
+        "actualLevel": 60,
         "name": "Armored Chickcalf VI",
-        "damage": "Unknown",
-        "stats": "None",
+        "damage": "19-25",
+        "stats": "Crit +6, Bonus +6",
+        "statsType": "petStats",
         "obtainVariants": [
           {
             "location": "Armored Chickcalf Pet",
             "price": "N/A",
             "priceType": "merge",
-            "sellback": "0 Gold",
+            "sellback": "0 Gold 0 Dragon Coins",
             "daRequired": false,
-            "requiredItems": "1"
+            "requiredItems": "1 Armored Chickcalf I OR 1 Armored Chickcalf V"
           }
-        ]
+        ],
+        "element": "BAC",
+        "rarity": "77"
       },
       {
         "levelNumber": 7,
         "levelDisplay": "VII",
+        "actualLevel": 70,
         "name": "Armored Chickcalf VII",
-        "damage": "Unknown",
-        "stats": "None",
+        "damage": "21-25",
+        "stats": "Crit +7, Bonus +7",
+        "statsType": "petStats",
         "obtainVariants": [
           {
             "location": "Armored Chickcalf Pet",
             "price": "N/A",
             "priceType": "merge",
-            "sellback": "0 Gold",
+            "sellback": "50 Gold 0 Dragon Coins",
             "daRequired": false,
-            "requiredItems": "1"
+            "requiredItems": "1 Armored Chickcalf VI"
           }
-        ]
+        ],
+        "element": "BAC",
+        "rarity": "77"
       }
     ],
     "releaseDate": "October 12th, 2010",
@@ -1675,7 +1412,7 @@
     "hasDM": false,
     "hasFree": false,
     "hasMerge": true,
-    "levelRange": "I-VII",
+    "levelRange": "10-70",
     "elements": [
       "BAC"
     ]
@@ -1973,7 +1710,6 @@
           "notes": []
         }
       ],
-      "notes": "The following changes were implemented on December 23rd, 2018:\n  • Pets initially had a sellback value of 50 Gold, before being DC tagged and becoming unsellable.\n  • Pets cannot be destroyed.",
       "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/BabyKrakenpic.png"
     },
     "levelVariants": [
@@ -2109,7 +1845,7 @@
     "hasDM": false,
     "hasFree": false,
     "hasMerge": false,
-    "levelRange": "I-VI",
+    "levelRange": "10-60",
     "elements": [
       "WAT"
     ]
@@ -2249,7 +1985,7 @@
         ],
         "element": "DAR",
         "rarity": "50",
-        "notes": "Pet's name is erroneously called '"
+        "notes": "Pet's name is erroneously called 'Baby Weaver III' instead of 'BabyWeaver III'."
       },
       {
         "levelNumber": 4,
@@ -2310,7 +2046,7 @@
         ],
         "element": "DAR",
         "rarity": "50",
-        "notes": "Pet's name is erroneously called '"
+        "notes": "Pet's name is erroneously called 'BabyWeaverVI' instead of 'BabyWeaver VI'."
       }
     ],
     "releaseDate": "February 11th, 2011",
@@ -2323,7 +2059,7 @@
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
-    "levelRange": "I-VI",
+    "levelRange": "10-60",
     "elements": [
       "DAR"
     ]
@@ -3982,6 +3718,943 @@
     ]
   },
   {
+    "id": "pet-butterbomb",
+    "familyName": "Butterbomb",
+    "slug": "pet-butterbomb",
+    "aliasSlugs": [
+      "pet-10-lb-butterbomb",
+      "pet-15-lb-butterbomb",
+      "pet-2-star-general-butterbomb",
+      "pet-3-star-general-butterbomb",
+      "pet-4-star-general-butterbomb",
+      "pet-5-lb-butterbomb",
+      "pet-5-star-general-butterbomb",
+      "pet-6-star-general-butterbomb",
+      "pet-7-star-general-butterbomb",
+      "pet-8-star-general-butterbomb",
+      "pet-brigadier-general-butterbomb",
+      "pet-colonel-butterbomb",
+      "pet-corporal-butterbomb",
+      "pet-general-butterbomb",
+      "pet-lieutenant-general-butterbomb",
+      "pet-lieutenant-general-butterbomb-jr",
+      "pet-major-butterbomb",
+      "pet-major-butterbomb-jr",
+      "pet-major-general-butterbomb",
+      "pet-major-general-butterbomb-jr"
+    ],
+    "type": "pet",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20110338",
+    "familyOrigin": "cross-post",
+    "familySources": [
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20110338",
+        "title": "DF Encyclopedia: 10 lb Butterbomb",
+        "variantLabel": "10 lb Butterbomb",
+        "isPrimary": true
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20110343",
+        "title": "DF Encyclopedia: 15 lb Butterbomb",
+        "variantLabel": "15 lb Butterbomb",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20110413",
+        "title": "DF Encyclopedia: 2 Star General Butterbomb",
+        "variantLabel": "2 Star General Butterbomb",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20110428",
+        "title": "DF Encyclopedia: 3 Star General Butterbomb",
+        "variantLabel": "3 Star General Butterbomb",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20110433",
+        "title": "DF Encyclopedia: 4 Star General Butterbomb",
+        "variantLabel": "4 Star General Butterbomb",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=7121324",
+        "title": "DF Encyclopedia: 5 lb Butterbomb",
+        "variantLabel": "5 lb Butterbomb",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20110441",
+        "title": "DF Encyclopedia: 5 Star General Butterbomb",
+        "variantLabel": "5 Star General Butterbomb",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20110442",
+        "title": "DF Encyclopedia: 6 Star General Butterbomb",
+        "variantLabel": "6 Star General Butterbomb",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21883885",
+        "title": "DF Encyclopedia: 7 Star General Butterbomb",
+        "variantLabel": "7 Star General Butterbomb",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21883892",
+        "title": "DF Encyclopedia: 8 Star General Butterbomb",
+        "variantLabel": "8 Star General Butterbomb",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20110392",
+        "title": "DF Encyclopedia: Brigadier General Butterbomb",
+        "variantLabel": "Brigadier General Butterbomb",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20110386",
+        "title": "DF Encyclopedia: Colonel Butterbomb",
+        "variantLabel": "Colonel Butterbomb",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20110358",
+        "title": "DF Encyclopedia: Corporal Butterbomb",
+        "variantLabel": "Corporal Butterbomb",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20110411",
+        "title": "DF Encyclopedia: General Butterbomb",
+        "variantLabel": "General Butterbomb",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20110405",
+        "title": "DF Encyclopedia: Lieutenant General Butterbomb",
+        "variantLabel": "Lieutenant General Butterbomb",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20110369",
+        "title": "DF Encyclopedia: Lieutenant General Butterbomb Jr.",
+        "variantLabel": "Lieutenant General Butterbomb Jr.",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20110382",
+        "title": "DF Encyclopedia: Major Butterbomb",
+        "variantLabel": "Major Butterbomb",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20110362",
+        "title": "DF Encyclopedia: Major Butterbomb Jr.",
+        "variantLabel": "Major Butterbomb Jr.",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20110400",
+        "title": "DF Encyclopedia: Major General Butterbomb",
+        "variantLabel": "Major General Butterbomb",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20110364",
+        "title": "DF Encyclopedia: Major General Butterbomb Jr.",
+        "variantLabel": "Major General Butterbomb Jr.",
+        "isPrimary": false
+      }
+    ],
+    "shared": {
+      "description": "Butterbomb the battle turkey was trained by Dr. Voltabolt to be the worlds most deadly turkey and pilot.",
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Butterbomb.png",
+      "element": "NAT",
+      "rarity": "3",
+      "attacks": [
+        {
+          "name": "Attack Type 1",
+          "description": "Approaches target and pecks it for 1 hit of 100% Melee Nature damage. (Rate: 80%)",
+          "images": [],
+          "notes": []
+        },
+        {
+          "name": "Attack Type 2 /  2.1 /  2.2",
+          "description": "Fires a corn on the cob at target for 1 hit of 100% Melee Nature damage, with +200 Crit. (Rate: 20%)",
+          "images": [],
+          "notes": []
+        }
+      ]
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
+        "levelDisplay": "5",
+        "actualLevel": 5,
+        "name": "5 lb Butterbomb",
+        "damage": "2-7",
+        "stats": "None",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=7121324",
+        "description": "Butterbomb the battle turkey was trained by Dr. Voltabolt to be the worlds most deadly turkey and pilot.",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Butterbomb.png",
+        "obtainVariants": [
+          {
+            "location": "Battle Turkey Upgrade",
+            "price": "N/A",
+            "priceType": "merge",
+            "sellback": "300 Gold",
+            "daRequired": false,
+            "requiredItems": "1  Turkey Tail Feather & 10  Corn Kernel"
+          }
+        ],
+        "element": "NAT",
+        "rarity": "3",
+        "attacks": [
+          {
+            "name": "Attack Type 1",
+            "description": "Approaches target and pecks it for 1 hit of 100% Melee Nature damage. (Rate: 80%)",
+            "images": [],
+            "notes": []
+          },
+          {
+            "name": "Attack Type 2 /  2.1 /  2.2",
+            "description": "Fires a corn on the cob at target for 1 hit of 100% Melee Nature damage, with +200 Crit. (Rate: 20%)",
+            "images": [],
+            "notes": []
+          }
+        ]
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "10",
+        "actualLevel": 10,
+        "name": "10 lb Butterbomb",
+        "damage": "6-11",
+        "stats": "None",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20110338",
+        "description": "Butterbomb the battle turkey was trained by Dr. Voltabolt to be the worlds most deadly turkey and pilot.",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Butterbomb.png",
+        "obtainVariants": [
+          {
+            "location": "Battle Turkey Upgrade",
+            "price": "N/A",
+            "priceType": "merge",
+            "sellback": "350 Gold",
+            "daRequired": false,
+            "requiredItems": "1  Turkey Tail Feather & 20  Corn Kernel OR 1  5 lb Butterbomb & 10  Corn Kernel"
+          }
+        ],
+        "element": "NAT",
+        "rarity": "3",
+        "attacks": [
+          {
+            "name": "Attack Type 1",
+            "description": "Approaches target and pecks it for 1 hit of 100% Melee Nature damage. (Rate: 80%)",
+            "images": [],
+            "notes": []
+          },
+          {
+            "name": "Attack Type 2 /  2.1 /  2.2",
+            "description": "Fires a corn on the cob at target for 1 hit of 100% Melee Nature damage, with +200 Crit. (Rate: 20%)",
+            "images": [],
+            "notes": []
+          }
+        ]
+      },
+      {
+        "levelNumber": 3,
+        "levelDisplay": "15",
+        "actualLevel": 15,
+        "name": "15 lb Butterbomb",
+        "damage": "5-16",
+        "stats": "None",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20110343",
+        "description": "Butterbomb the battle turkey was trained by Dr. Voltabolt to be the worlds most deadly turkey and pilot.",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Butterbomb.png",
+        "obtainVariants": [
+          {
+            "location": "Battle Turkey Upgrade",
+            "price": "N/A",
+            "priceType": "merge",
+            "sellback": "400 Gold",
+            "daRequired": false,
+            "requiredItems": "1  Turkey Tail Feather & 30  Corn Kernel OR 1  10 lb Butterbomb & 10  Corn Kernel"
+          }
+        ],
+        "element": "NAT",
+        "rarity": "3",
+        "attacks": [
+          {
+            "name": "Attack Type 1",
+            "description": "Approaches target and pecks it for 1 hit of 100% Melee Nature damage. (Rate: 80%)",
+            "images": [],
+            "notes": []
+          },
+          {
+            "name": "Attack Type 2 /  2.1 /  2.2",
+            "description": "Fires a corn on the cob at target for 1 hit of 100% Melee Nature damage, with +200 Crit. (Rate: 20%)",
+            "images": [],
+            "notes": []
+          }
+        ]
+      },
+      {
+        "levelNumber": 4,
+        "levelDisplay": "20",
+        "actualLevel": 20,
+        "name": "Corporal Butterbomb",
+        "damage": "10-13",
+        "stats": "Crit +1",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20110358",
+        "description": "Corporal Butterbomb the battle turkey was trained by Dr. Voltabolt to be the worlds most deadly turkey and pilot.",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Butterbomb.png",
+        "obtainVariants": [
+          {
+            "location": "Battle Turkey Upgrade",
+            "price": "N/A",
+            "priceType": "merge",
+            "sellback": "450 Gold",
+            "daRequired": false,
+            "requiredItems": "30  Corn Kernel & 3  Turkey Tail Feather OR 1  15 lb Butterbomb & 10  Corn Kernel"
+          }
+        ],
+        "element": "NAT",
+        "rarity": "3",
+        "attacks": [
+          {
+            "name": "Attack Type 1",
+            "description": "Approaches target and pecks it for 1 hit of 100% Melee Nature damage. (Rate: 80%)",
+            "images": [],
+            "notes": []
+          },
+          {
+            "name": "Attack Type 2 /  2.1 /  2.2",
+            "description": "Fires a corn on the cob at target for 1 hit of 100% Melee Nature damage, with +200 Crit. (Rate: 20%)",
+            "images": [],
+            "notes": []
+          }
+        ]
+      },
+      {
+        "levelNumber": 5,
+        "levelDisplay": "20",
+        "actualLevel": 20,
+        "name": "Major Butterbomb",
+        "damage": "10-16",
+        "stats": "Crit +1",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20110382",
+        "description": "This pet requires the power of a Dragon Amulet. Major Butterbomb the battle turkey was trained by Dr. Voltabolt to be the worlds most deadly turkey and pilot.",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Butterbomb.png",
+        "obtainVariants": [
+          {
+            "location": "Battle Turkey Upgrade",
+            "price": "N/A",
+            "priceType": "merge",
+            "sellback": "450 Gold",
+            "daRequired": true,
+            "requiredItems": "1  Turkey Tail Feather & 30  Corn Kernel OR 1  15 lb Butterbomb & 10  Corn Kernel"
+          }
+        ],
+        "element": "NAT",
+        "rarity": "3",
+        "attacks": [
+          {
+            "name": "Attack Type 1",
+            "description": "Approaches target and pecks it for 1 hit of 100% Melee Nature damage. (Rate: 80%)",
+            "images": [],
+            "notes": []
+          },
+          {
+            "name": "Attack Type 2 /  2.1 /  2.2",
+            "description": "Fires a corn on the cob at target for 1 hit of 100% Melee Nature damage, with +200 Crit. (Rate: 20%)",
+            "images": [],
+            "notes": []
+          }
+        ]
+      },
+      {
+        "levelNumber": 6,
+        "levelDisplay": "25",
+        "actualLevel": 25,
+        "name": "Colonel Butterbomb",
+        "damage": "12-17",
+        "stats": "Crit +1",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20110386",
+        "description": "This pet requires the power of a Dragon Amulet. Colonel Butterbomb the battle turkey was trained by Dr. Voltabolt to be the worlds most deadly turkey and pilot.",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Butterbomb.png",
+        "obtainVariants": [
+          {
+            "location": "Battle Turkey Upgrade",
+            "price": "N/A",
+            "priceType": "merge",
+            "sellback": "500 Gold",
+            "daRequired": true,
+            "requiredItems": "30  Corn Kernel & 3  Turkey Tail Feather OR 1  Major Butterbomb & 5  Corn Kernel"
+          }
+        ],
+        "element": "NAT",
+        "rarity": "3",
+        "attacks": [
+          {
+            "name": "Attack Type 1",
+            "description": "Approaches target and pecks it for 1 hit of 100% Melee Nature damage. (Rate: 80%)",
+            "images": [],
+            "notes": []
+          },
+          {
+            "name": "Attack Type 2 /  2.1 /  2.2",
+            "description": "Fires a corn on the cob at target for 1 hit of 100% Melee Nature damage, with +200 Crit. (Rate: 20%)",
+            "images": [],
+            "notes": []
+          }
+        ]
+      },
+      {
+        "levelNumber": 7,
+        "levelDisplay": "25",
+        "actualLevel": 25,
+        "name": "Major Butterbomb Jr.",
+        "damage": "10-16",
+        "stats": "Crit +1",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20110362",
+        "description": "Major Butterbomb Jr. the battle turkey was trained by Dr. Voltabolt to be the worlds most deadly turkey and pilot.",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Butterbomb.png",
+        "obtainVariants": [
+          {
+            "location": "Battle Turkey Upgrade",
+            "price": "N/A",
+            "priceType": "merge",
+            "sellback": "500 Gold",
+            "daRequired": false,
+            "requiredItems": "30  Corn Kernel & 4  Turkey Tail Feather OR 1  Corporal Butterbomb & 10  Corn Kernel"
+          }
+        ],
+        "element": "NAT",
+        "rarity": "3",
+        "attacks": [
+          {
+            "name": "Attack Type 1",
+            "description": "Approaches target and pecks it for 1 hit of 100% Melee Nature damage. (Rate: 80%)",
+            "images": [],
+            "notes": []
+          },
+          {
+            "name": "Attack Type 2 /  2.1 /  2.2",
+            "description": "Fires a corn on the cob at target for 1 hit of 100% Melee Nature damage, with +200 Crit. (Rate: 20%)",
+            "images": [],
+            "notes": []
+          }
+        ]
+      },
+      {
+        "levelNumber": 8,
+        "levelDisplay": "30",
+        "actualLevel": 30,
+        "name": "Brigadier General Butterbomb",
+        "damage": "14-18",
+        "stats": "Crit +1",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20110392",
+        "description": "This pet requires the power of a Dragon Amulet. Brigadier General Butterbomb the battle turkey was trained by Dr. Voltabolt to be the worlds most deadly turkey and pilot.",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Butterbomb.png",
+        "obtainVariants": [
+          {
+            "location": "Battle Turkey Upgrade",
+            "price": "N/A",
+            "priceType": "merge",
+            "sellback": "550 Gold",
+            "daRequired": true,
+            "requiredItems": "30  Corn Kernel & 4  Turkey Tail Feather OR 1  Colonel Butterbomb & 5  Corn Kernel"
+          }
+        ],
+        "element": "NAT",
+        "rarity": "3",
+        "attacks": [
+          {
+            "name": "Attack Type 1",
+            "description": "Approaches target and pecks it for 1 hit of 100% Melee Nature damage. (Rate: 80%)",
+            "images": [],
+            "notes": []
+          },
+          {
+            "name": "Attack Type 2 /  2.1 /  2.2",
+            "description": "Fires a corn on the cob at target for 1 hit of 100% Melee Nature damage, with +200 Crit. (Rate: 20%)",
+            "images": [],
+            "notes": []
+          }
+        ]
+      },
+      {
+        "levelNumber": 9,
+        "levelDisplay": "35",
+        "actualLevel": 35,
+        "name": "Major General Butterbomb",
+        "damage": "15-20",
+        "stats": "Crit +1",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20110400",
+        "description": "This pet requires the power of a Dragon Amulet. Major General Butterbomb the battle turkey was trained by Dr. Voltabolt to be the worlds most deadly turkey and pilot.",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Butterbomb.png",
+        "obtainVariants": [
+          {
+            "location": "Battle Turkey Upgrade",
+            "price": "N/A",
+            "priceType": "merge",
+            "sellback": "550 Gold",
+            "daRequired": true,
+            "requiredItems": "30  Corn Kernel & 4  Turkey Tail Feather"
+          }
+        ],
+        "element": "NAT",
+        "rarity": "3",
+        "attacks": [
+          {
+            "name": "Attack Type 1",
+            "description": "Approaches target and pecks it for 1 hit of 100% Melee Nature damage. (Rate: 80%)",
+            "images": [],
+            "notes": []
+          },
+          {
+            "name": "Attack Type 2 /  2.1 /  2.2",
+            "description": "Fires a corn on the cob at target for 1 hit of 100% Melee Nature damage, with +200 Crit. (Rate: 20%)",
+            "images": [],
+            "notes": []
+          }
+        ]
+      },
+      {
+        "levelNumber": 10,
+        "levelDisplay": "35",
+        "actualLevel": 35,
+        "name": "Major General Butterbomb Jr.",
+        "damage": "12-17",
+        "stats": "Crit +1",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20110364",
+        "description": "This pet requires the power of a Dragon Amulet. Major General Butterbomb the battle turkey was trained by Dr. Voltabolt to be the worlds most deadly turkey and pilot.",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Butterbomb.png",
+        "obtainVariants": [
+          {
+            "location": "Battle Turkey Upgrade",
+            "price": "N/A",
+            "priceType": "merge",
+            "sellback": "550 Gold",
+            "daRequired": false,
+            "requiredItems": "30  Corn Kernel & 4  Turkey Tail Feather"
+          }
+        ],
+        "element": "NAT",
+        "rarity": "3",
+        "attacks": [
+          {
+            "name": "Attack Type 1",
+            "description": "Approaches target and pecks it for 1 hit of 100% Melee Nature damage. (Rate: 80%)",
+            "images": [],
+            "notes": []
+          },
+          {
+            "name": "Attack Type 2 /  2.1 /  2.2",
+            "description": "Fires a corn on the cob at target for 1 hit of 100% Melee Nature damage, with +200 Crit. (Rate: 20%)",
+            "images": [],
+            "notes": []
+          }
+        ],
+        "notes": "Description erroneously claims this pet requires a Dragon Amulet."
+      },
+      {
+        "levelNumber": 11,
+        "levelDisplay": "40",
+        "actualLevel": 40,
+        "name": "Lieutenant General Butterbomb",
+        "damage": "16-20",
+        "stats": "Crit +1",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20110405",
+        "description": "This pet requires the power of a Dragon Amulet. Lieutenant General Butterbomb the battle turkey was trained by Dr. Voltabolt to be the worlds most deadly turkey and pilot.",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Butterbomb.png",
+        "obtainVariants": [
+          {
+            "location": "Battle Turkey Upgrade",
+            "price": "N/A",
+            "priceType": "merge",
+            "sellback": "550 Gold",
+            "daRequired": true,
+            "requiredItems": "30  Corn Kernel & 5  Turkey Tail Feather"
+          }
+        ],
+        "element": "NAT",
+        "rarity": "3",
+        "attacks": [
+          {
+            "name": "Attack Type 1",
+            "description": "Approaches target and pecks it for 1 hit of 100% Melee Nature damage. (Rate: 80%)",
+            "images": [],
+            "notes": []
+          },
+          {
+            "name": "Attack Type 2 /  2.1 /  2.2",
+            "description": "Fires a corn on the cob at target for 1 hit of 100% Melee Nature damage, with +200 Crit. (Rate: 20%)",
+            "images": [],
+            "notes": []
+          }
+        ]
+      },
+      {
+        "levelNumber": 12,
+        "levelDisplay": "40",
+        "actualLevel": 40,
+        "name": "Lieutenant General Butterbomb Jr.",
+        "damage": "14-18",
+        "stats": "Crit +1",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20110369",
+        "description": "This pet requires the power of a Dragon Amulet. Lieutenant General Butterbomb the battle turkey was trained by Dr. Voltabolt to be the worlds most deadly turkey and pilot.",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Butterbomb.png",
+        "obtainVariants": [
+          {
+            "location": "Battle Turkey Upgrade",
+            "price": "N/A",
+            "priceType": "merge",
+            "sellback": "550 Gold",
+            "daRequired": false,
+            "requiredItems": "30  Corn Kernel & 5  Turkey Tail Feather"
+          }
+        ],
+        "element": "NAT",
+        "rarity": "3",
+        "attacks": [
+          {
+            "name": "Attack Type 1",
+            "description": "Approaches target and pecks it for 1 hit of 100% Melee Nature damage. (Rate: 80%)",
+            "images": [],
+            "notes": []
+          },
+          {
+            "name": "Attack Type 2 /  2.1 /  2.2",
+            "description": "Fires a corn on the cob at target for 1 hit of 100% Melee Nature damage, with +200 Crit. (Rate: 20%)",
+            "images": [],
+            "notes": []
+          }
+        ],
+        "notes": "Description erroneously claims this pet requires a Dragon Amulet."
+      },
+      {
+        "levelNumber": 13,
+        "levelDisplay": "45",
+        "actualLevel": 45,
+        "name": "General Butterbomb",
+        "damage": "16-21",
+        "stats": "Crit +1",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20110411",
+        "description": "This pet requires the power of a Dragon Amulet. General Butterbomb the battle turkey was trained by Dr. Voltabolt to be the worlds most deadly turkey and pilot.",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Butterbomb.png",
+        "obtainVariants": [
+          {
+            "location": "Battle Turkey Upgrade",
+            "price": "N/A",
+            "priceType": "merge",
+            "sellback": "550 Gold",
+            "daRequired": true,
+            "requiredItems": "30  Corn Kernel & 5  Turkey Tail Feather"
+          }
+        ],
+        "element": "NAT",
+        "rarity": "3",
+        "attacks": [
+          {
+            "name": "Attack Type 1",
+            "description": "Approaches target and pecks it for 1 hit of 100% Melee Nature damage. (Rate: 80%)",
+            "images": [],
+            "notes": []
+          },
+          {
+            "name": "Attack Type 2 /  2.1 /  2.2",
+            "description": "Fires a corn on the cob at target for 1 hit of 100% Melee Nature damage, with +200 Crit. (Rate: 20%)",
+            "images": [],
+            "notes": []
+          }
+        ]
+      },
+      {
+        "levelNumber": 14,
+        "levelDisplay": "50",
+        "actualLevel": 50,
+        "name": "2 Star General Butterbomb",
+        "damage": "16-22",
+        "stats": "Crit +1",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20110413",
+        "description": "This pet requires the power of a Dragon Amulet. 2 Star General Butterbomb the battle turkey was trained by Dr. Voltabolt to be the worlds most deadly turkey and pilot.",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Butterbomb.png",
+        "obtainVariants": [
+          {
+            "location": "Battle Turkey Upgrade",
+            "price": "N/A",
+            "priceType": "merge",
+            "sellback": "550 Gold",
+            "daRequired": true,
+            "requiredItems": "30  Corn Kernel & 5  Turkey Tail Feather"
+          }
+        ],
+        "element": "NAT",
+        "rarity": "3",
+        "attacks": [
+          {
+            "name": "Attack Type 1",
+            "description": "Approaches target and pecks it for 1 hit of 100% Melee Nature damage. (Rate: 80%)",
+            "images": [],
+            "notes": []
+          },
+          {
+            "name": "Attack Type 2 /  2.1 /  2.2",
+            "description": "Fires a corn on the cob at target for 1 hit of 100% Melee Nature damage, with +200 Crit. (Rate: 20%)",
+            "images": [],
+            "notes": []
+          }
+        ]
+      },
+      {
+        "levelNumber": 15,
+        "levelDisplay": "55",
+        "actualLevel": 55,
+        "name": "3 Star General Butterbomb",
+        "damage": "16-24",
+        "stats": "Crit +1",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20110428",
+        "description": "This pet requires the power of a Dragon Amulet. 3 Star General Butterbomb the battle turkey was trained by Dr. Voltabolt to be the worlds most deadly turkey and pilot.",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Butterbomb.png",
+        "obtainVariants": [
+          {
+            "location": "Battle Turkey Upgrade",
+            "price": "N/A",
+            "priceType": "merge",
+            "sellback": "600 Gold",
+            "daRequired": true,
+            "requiredItems": "30  Corn Kernel & 5  Turkey Tail Feather"
+          }
+        ],
+        "element": "NAT",
+        "rarity": "3",
+        "attacks": [
+          {
+            "name": "Attack Type 1",
+            "description": "Approaches target and pecks it for 1 hit of 100% Melee Nature damage. (Rate: 80%)",
+            "images": [],
+            "notes": []
+          },
+          {
+            "name": "Attack Type 2 /  2.1 /  2.2",
+            "description": "Fires a corn on the cob at target for 1 hit of 100% Melee Nature damage, with +200 Crit. (Rate: 20%)",
+            "images": [],
+            "notes": []
+          }
+        ]
+      },
+      {
+        "levelNumber": 16,
+        "levelDisplay": "60",
+        "actualLevel": 60,
+        "name": "4 Star General Butterbomb",
+        "damage": "17-25",
+        "stats": "Crit +1",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20110433",
+        "description": "This pet requires the power of a Dragon Amulet. 4 Star General Butterbomb the battle turkey was trained by Dr. Voltabolt to be the worlds most deadly turkey and pilot.",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Butterbomb.png",
+        "obtainVariants": [
+          {
+            "location": "Battle Turkey Upgrade",
+            "price": "N/A",
+            "priceType": "merge",
+            "sellback": "600 Gold",
+            "daRequired": true,
+            "requiredItems": "30  Corn Kernel & 5  Turkey Tail Feather"
+          }
+        ],
+        "element": "NAT",
+        "rarity": "3",
+        "attacks": [
+          {
+            "name": "Attack Type 1",
+            "description": "Approaches target and pecks it for 1 hit of 100% Melee Nature damage. (Rate: 80%)",
+            "images": [],
+            "notes": []
+          },
+          {
+            "name": "Attack Type 2 /  2.1 /  2.2",
+            "description": "Fires a corn on the cob at target for 1 hit of 100% Melee Nature damage, with +200 Crit. (Rate: 20%)",
+            "images": [],
+            "notes": []
+          }
+        ]
+      },
+      {
+        "levelNumber": 17,
+        "levelDisplay": "65",
+        "actualLevel": 65,
+        "name": "5 Star General Butterbomb",
+        "damage": "17-27",
+        "stats": "Crit +1, Bonus +1",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20110441",
+        "description": "This pet requires the power of a Dragon Amulet. 4 Star General Butterbomb the battle turkey was trained by Dr. Voltabolt to be the worlds most deadly turkey and pilot.",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Butterbomb.png",
+        "obtainVariants": [
+          {
+            "location": "Battle Turkey Upgrade",
+            "price": "N/A",
+            "priceType": "merge",
+            "sellback": "600 Gold",
+            "daRequired": true,
+            "requiredItems": "30  Corn Kernel & 5  Turkey Tail Feather"
+          }
+        ],
+        "element": "NAT",
+        "rarity": "3",
+        "attacks": [
+          {
+            "name": "Attack Type 1",
+            "description": "Approaches target and pecks it for 1 hit of 100% Melee Nature damage. (Rate: 80%)",
+            "images": [],
+            "notes": []
+          },
+          {
+            "name": "Attack Type 2 /  2.1 /  2.2",
+            "description": "Fires a corn on the cob at target for 1 hit of 100% Melee Nature damage, with +200 Crit. (Rate: 20%)",
+            "images": [],
+            "notes": []
+          }
+        ],
+        "notes": "Description is erroneously identical to  4 Star General Butterbomb."
+      },
+      {
+        "levelNumber": 18,
+        "levelDisplay": "70",
+        "actualLevel": 70,
+        "name": "6 Star General Butterbomb",
+        "damage": "19-27",
+        "stats": "Crit +2, Bonus +1",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20110442",
+        "description": "This pet requires the power of a Dragon Amulet. 4 Star General Butterbomb the battle turkey was trained by Dr. Voltabolt to be the worlds most deadly turkey and pilot.",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Butterbomb.png",
+        "obtainVariants": [
+          {
+            "location": "Battle Turkey Upgrade",
+            "price": "N/A",
+            "priceType": "merge",
+            "sellback": "600 Gold",
+            "daRequired": true,
+            "requiredItems": "30  Corn Kernel & 5  Turkey Tail Feather"
+          }
+        ],
+        "element": "NAT",
+        "rarity": "3",
+        "attacks": [
+          {
+            "name": "Attack Type 1",
+            "description": "Approaches target and pecks it for 1 hit of 100% Melee Nature damage. (Rate: 80%)",
+            "images": [],
+            "notes": []
+          },
+          {
+            "name": "Attack Type 2 /  2.1 /  2.2",
+            "description": "Fires a corn on the cob at target for 1 hit of 100% Melee Nature damage, with +200 Crit. (Rate: 20%)",
+            "images": [],
+            "notes": []
+          }
+        ],
+        "notes": "Description is erroneously identical to  4 Star General Butterbomb."
+      },
+      {
+        "levelNumber": 19,
+        "levelDisplay": "75",
+        "actualLevel": 75,
+        "name": "7 Star General Butterbomb",
+        "damage": "20-29",
+        "stats": "Crit +2, Bonus +2",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21883885",
+        "description": "This pet requires the power of a Dragon Amulet. 7 Star General Butterbomb the battle turkey was trained by Dr. Voltabolt to be the worlds most deadly turkey and pilot.",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Butterbomb.png",
+        "obtainVariants": [
+          {
+            "location": "Battle Turkey Upgrade",
+            "price": "N/A",
+            "priceType": "merge",
+            "sellback": "600 Gold",
+            "daRequired": true,
+            "requiredItems": "30  Corn Kernel & 6  Turkey Tail Feather"
+          }
+        ],
+        "element": "NAT",
+        "rarity": "3",
+        "attacks": [
+          {
+            "name": "Attack Type 1",
+            "description": "Approaches target and pecks it for 1 hit of 100% Melee Nature damage. (Rate: 80%)",
+            "images": [],
+            "notes": []
+          },
+          {
+            "name": "Attack Type 2 /  2.1 /  2.2",
+            "description": "Fires a corn on the cob at target for 1 hit of 100% Melee Nature damage, with +200 Crit. (Rate: 20%)",
+            "images": [],
+            "notes": []
+          }
+        ]
+      },
+      {
+        "levelNumber": 20,
+        "levelDisplay": "80",
+        "actualLevel": 80,
+        "name": "8 Star General Butterbomb",
+        "damage": "21-30",
+        "stats": "Crit +3, Bonus +3",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21883892",
+        "description": "This pet requires the power of a Dragon Amulet. 8 Star General Butterbomb the battle turkey was trained by Dr. Voltabolt to be the worlds most deadly turkey and pilot.",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Butterbomb.png",
+        "obtainVariants": [
+          {
+            "location": "Battle Turkey Upgrade",
+            "price": "N/A",
+            "priceType": "merge",
+            "sellback": "600 Gold",
+            "daRequired": true,
+            "requiredItems": "30  Corn Kernel & 6  Turkey Tail Feather"
+          }
+        ],
+        "element": "NAT",
+        "rarity": "3",
+        "attacks": [
+          {
+            "name": "Attack Type 1",
+            "description": "Approaches target and pecks it for 1 hit of 100% Melee Nature damage. (Rate: 80%)",
+            "images": [],
+            "notes": []
+          },
+          {
+            "name": "Attack Type 2 /  2.1 /  2.2",
+            "description": "Fires a corn on the cob at target for 1 hit of 100% Melee Nature damage, with +200 Crit. (Rate: 20%)",
+            "images": [],
+            "notes": []
+          }
+        ]
+      }
+    ],
+    "releaseDate": "November 20th, 2009",
+    "tags": [
+      "nat",
+      "pet"
+    ],
+    "hasDA": true,
+    "hasDC": false,
+    "hasDM": false,
+    "hasFree": false,
+    "hasMerge": true,
+    "isTemp": false,
+    "isRare": false,
+    "isSeasonal": true,
+    "isSpecialOffer": false,
+    "retired": false,
+    "levelRange": "5-80",
+    "elements": [
+      "NAT"
+    ]
+  },
+  {
     "id": "pet-candemini",
     "familyName": "Candemini",
     "slug": "pet-candemini",
@@ -4878,7 +5551,7 @@
             "price": "N/A",
             "priceType": "free",
             "sellback": "75 Gold",
-            "daRequired": true
+            "daRequired": false
           }
         ],
         "element": "NAT",
@@ -4935,81 +5608,91 @@
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
-    "levelRange": "I-IV",
+    "levelRange": "20-50",
     "elements": [
       "NAT"
     ]
   },
   {
     "id": "pet-chickcalf",
-    "name": "Chickcalf",
+    "familyName": "Chickcalf",
     "slug": "pet-chickcalf",
     "type": "pet",
-    "description": "You have had this baby chickencow since it was just an egg. It is ready to defend you but only because it thinks you are its mother.",
-    "daRequired": false,
-    "dcRequired": true,
-    "isRare": true,
-    "elements": [
-      "BAC"
-    ],
-    "traits": [],
-    "level": "20",
-    "damage": "10-16",
-    "stats": "None",
-    "resists": "None",
-    "obtainMethods": [
-      {
-        "location": "Transformed from  Purple Striped Egg (Normal)",
-        "price": "N/A",
-        "priceType": "gold",
-        "sellback": "50 Gold"
-      },
-      {
-        "location": "Transformed from  Purple Striped Egg (D-Coins)",
-        "price": "N/A",
-        "priceType": "gold",
-        "sellback": "19 Dragon Coins"
-      }
-    ],
-    "attacks": [
-      {
-        "name": "Attack Type 1",
-        "description": "Runs toward target and jumps into it, hovering afterwards for 1 hit of 100% Magic Bacon damage.",
-        "images": [],
-        "notes": []
-      }
-    ],
-    "rarity": "77",
-    "evolutions": [],
-    "releaseDate": "April 17th, 2009",
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Chickcalf.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15865269",
-    "notes": "Pet is animated; it blinks, looks upwards, preens, and pecks at the ground sporadically.",
-    "alsoSee": [
+    "shared": {
+      "description": "You have had this baby chickencow since it was just an egg. It is ready to defend you but only because it thinks you are its mother.",
+      "element": "BAC",
+      "rarity": "77",
+      "attacks": [
+        {
+          "name": "Attack Type 1",
+          "description": "Runs toward target and jumps into it, hovering afterwards for 1 hit of 100% Magic Bacon damage.",
+          "images": [],
+          "notes": []
+        }
+      ],
+      "notes": "Pet is animated; it blinks, looks upwards, preens, and pecks at the ground sporadically.",
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Chickcalf.png"
+    },
+    "levelVariants": [
       {
-        "name": "Armored Chickcalf (I-VII)",
-        "slug": "pet-armored-chickcalf",
-        "type": "pet"
+        "levelNumber": 1,
+        "levelDisplay": "20",
+        "actualLevel": 20,
+        "variantName": "Normal",
+        "name": "Chickcalf (Normal)",
+        "damage": "10-16",
+        "stats": "None",
+        "statsType": "petStats",
+        "obtainVariants": [
+          {
+            "location": "Transformed from  Purple Striped Egg (Normal)",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "50 Gold",
+            "daRequired": false
+          }
+        ],
+        "element": "BAC",
+        "rarity": "77"
       },
       {
-        "name": "Golden Chickcalf (I-VII)",
-        "slug": "pet-golden-chickcalf",
-        "type": "pet"
-      },
-      {
-        "name": "Marshmallow Pip (All Versions)",
-        "slug": "pet-marshmallow-pip",
-        "type": "pet"
-      },
-      {
-        "name": "Spotted Chickcalf",
-        "slug": "pet-spotted-chickcalf",
-        "type": "pet"
+        "levelNumber": 2,
+        "levelDisplay": "20",
+        "actualLevel": 20,
+        "variantName": "DC",
+        "name": "Chickcalf (DC)",
+        "damage": "10-16",
+        "stats": "None",
+        "statsType": "petStats",
+        "obtainVariants": [
+          {
+            "location": "Transformed from  Purple Striped Egg (D-Coins)",
+            "price": "N/A",
+            "priceType": "dc",
+            "sellback": "19 Dragon Coins",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "element": "BAC",
+        "rarity": "77"
       }
     ],
+    "releaseDate": "April 17th, 2009",
     "tags": [
       "pet",
       "bac"
+    ],
+    "isRare": true,
+    "hasDA": false,
+    "hasDC": true,
+    "hasDM": false,
+    "hasFree": true,
+    "hasMerge": false,
+    "levelRange": "20",
+    "elements": [
+      "BAC"
     ]
   },
   {
@@ -6358,7 +7041,6 @@
           "notes": []
         }
       ],
-      "notes": "Pets were tiered with Roman numerals and the element on the level 40 Crabastian was corrected on July 12th, 2023.\nAlternative Image",
       "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/CrabastianPetpic.png",
       "alternativeImages": [
         {
@@ -6382,7 +7064,7 @@
             "price": "N/A",
             "priceType": "free",
             "sellback": "20 Gold",
-            "daRequired": true
+            "daRequired": false
           }
         ],
         "element": "WAT",
@@ -6402,7 +7084,7 @@
             "price": "N/A",
             "priceType": "free",
             "sellback": "100 Gold",
-            "daRequired": true
+            "daRequired": false
           }
         ],
         "element": "WAT",
@@ -6434,12 +7116,12 @@
       "pet",
       "wat"
     ],
-    "hasDA": true,
+    "hasDA": false,
     "hasDC": false,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
-    "levelRange": "I-III",
+    "levelRange": "10-40",
     "elements": [
       "WAT"
     ]
@@ -7868,7 +8550,7 @@
             "price": "500 Gold",
             "priceType": "gold",
             "sellback": "50 Gold",
-            "daRequired": true
+            "daRequired": false
           }
         ],
         "element": "NAT",
@@ -7966,7 +8648,7 @@
     "hasDM": false,
     "hasFree": false,
     "hasMerge": false,
-    "levelRange": "I-VIII",
+    "levelRange": "1-76",
     "elements": [
       "NAT"
     ]
@@ -11944,104 +12626,128 @@
       {
         "levelNumber": 2,
         "levelDisplay": "II",
+        "actualLevel": 20,
         "name": "Golden Chickcalf II",
-        "damage": "Unknown",
-        "stats": "None",
+        "damage": "10-16",
+        "stats": "Crit +2, Bonus +2",
+        "statsType": "petStats",
         "obtainVariants": [
           {
             "location": "Golden Chickcalf",
             "price": "N/A",
             "priceType": "merge",
-            "sellback": "0 Gold",
+            "sellback": "N/A",
             "daRequired": false,
-            "requiredItems": "1"
+            "requiredItems": "1 Golden Chickcalf I"
           }
-        ]
+        ],
+        "element": "BAC",
+        "rarity": "77"
       },
       {
         "levelNumber": 3,
         "levelDisplay": "III",
+        "actualLevel": 30,
         "name": "Golden Chickcalf III",
-        "damage": "Unknown",
-        "stats": "None",
+        "damage": "13-18",
+        "stats": "Crit +3, Bonus +3",
+        "statsType": "petStats",
         "obtainVariants": [
           {
             "location": "Golden Chickcalf",
             "price": "N/A",
             "priceType": "merge",
-            "sellback": "0 Gold",
+            "sellback": "N/A",
             "daRequired": false,
-            "requiredItems": "1"
+            "requiredItems": "1 Golden Chickcalf II"
           }
-        ]
+        ],
+        "element": "BAC",
+        "rarity": "77"
       },
       {
         "levelNumber": 4,
         "levelDisplay": "IV",
+        "actualLevel": 40,
         "name": "Golden Chickcalf IV",
-        "damage": "Unknown",
-        "stats": "None",
+        "damage": "16-20",
+        "stats": "Crit +4, Bonus +4",
+        "statsType": "petStats",
         "obtainVariants": [
           {
             "location": "Golden Chickcalf",
             "price": "N/A",
             "priceType": "merge",
-            "sellback": "0 Gold",
+            "sellback": "N/A",
             "daRequired": false,
-            "requiredItems": "1"
+            "requiredItems": "1 Golden Chickcalf III"
           }
-        ]
+        ],
+        "element": "BAC",
+        "rarity": "77"
       },
       {
         "levelNumber": 5,
         "levelDisplay": "V",
+        "actualLevel": 50,
         "name": "Golden Chickcalf V",
-        "damage": "Unknown",
-        "stats": "None",
+        "damage": "16-22",
+        "stats": "Crit +5, Bonus +5",
+        "statsType": "petStats",
         "obtainVariants": [
           {
             "location": "Golden Chickcalf",
             "price": "N/A",
             "priceType": "merge",
-            "sellback": "0 Gold",
+            "sellback": "N/A",
             "daRequired": false,
-            "requiredItems": "1"
+            "requiredItems": "1 Golden Chickcalf IV"
           }
-        ]
+        ],
+        "element": "BAC",
+        "rarity": "77"
       },
       {
         "levelNumber": 6,
         "levelDisplay": "VI",
+        "actualLevel": 60,
         "name": "Golden Chickcalf VI",
-        "damage": "Unknown",
-        "stats": "None",
+        "damage": "19-25",
+        "stats": "Crit +6, Bonus +6",
+        "statsType": "petStats",
         "obtainVariants": [
           {
             "location": "Golden Chickcalf",
             "price": "N/A",
             "priceType": "merge",
-            "sellback": "0 Gold",
+            "sellback": "N/A",
             "daRequired": false,
-            "requiredItems": "1"
+            "requiredItems": "1 Golden Chickcalf V"
           }
-        ]
+        ],
+        "element": "BAC",
+        "rarity": "77"
       },
       {
         "levelNumber": 7,
         "levelDisplay": "VII",
+        "actualLevel": 70,
         "name": "Golden Chickcalf VII",
-        "damage": "Unknown",
-        "stats": "None",
+        "damage": "21-25",
+        "stats": "Crit +7, Bonus +7",
+        "statsType": "petStats",
         "obtainVariants": [
           {
             "location": "Golden Chickcalf",
             "price": "N/A",
             "priceType": "merge",
-            "sellback": "0 Gold",
+            "sellback": "N/A",
             "daRequired": false,
-            "requiredItems": "1"
+            "requiredItems": "1 Golden Chickcalf VI"
           }
-        ]
+        ],
+        "element": "BAC",
+        "rarity": "77"
       }
     ],
     "releaseDate": "February 8th, 2013",
@@ -12055,7 +12761,7 @@
     "hasDM": false,
     "hasFree": false,
     "hasMerge": true,
-    "levelRange": "I-VII",
+    "levelRange": "10-70",
     "elements": [
       "BAC"
     ]
@@ -12251,7 +12957,7 @@
             "price": "150 Dragon Coins",
             "priceType": "dc",
             "sellback": "135 DC (<24 hours) / 38 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -12273,7 +12979,7 @@
             "price": "150 Dragon Coins",
             "priceType": "dc",
             "sellback": "135 DC (<24 hours) / 38 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -12295,7 +13001,7 @@
             "price": "150 Dragon Coins",
             "priceType": "dc",
             "sellback": "135 DC (<24 hours) / 38 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -12317,7 +13023,7 @@
             "price": "150 Dragon Coins",
             "priceType": "dc",
             "sellback": "135 DC (<24 hours) / 38 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -12353,7 +13059,7 @@
       "pet",
       "wat"
     ],
-    "hasDA": true,
+    "hasDA": false,
     "hasDC": true,
     "hasDM": false,
     "hasFree": false,
@@ -12363,7 +13069,7 @@
     "isSeasonal": false,
     "isSpecialOffer": false,
     "retired": false,
-    "levelRange": "1-VII",
+    "levelRange": "1-90",
     "elements": [
       "WAT"
     ]
@@ -12453,7 +13159,7 @@
           {
             "location": "Transformed from  Small Twisted Gourd (D-Coins)",
             "price": "N/A",
-            "priceType": "free",
+            "priceType": "dc",
             "sellback": "13 Dragon Coins",
             "daRequired": false,
             "dcRequired": true
@@ -26811,7 +27517,7 @@
     "hasDM": false,
     "hasFree": false,
     "hasMerge": false,
-    "levelRange": "I-VIII",
+    "levelRange": "1-76",
     "elements": [
       "NAT"
     ]
@@ -27854,74 +28560,84 @@
   },
   {
     "id": "pet-spotted-chickcalf",
-    "name": "Spotted Chickcalf",
+    "familyName": "Spotted Chickcalf",
     "slug": "pet-spotted-chickcalf",
     "type": "pet",
-    "description": "You have had this baby chickencow since it was just an egg. It is ready to defend you but only because it thinks you are its mother.",
-    "daRequired": false,
-    "dcRequired": true,
-    "isRare": true,
-    "elements": [
-      "NAT"
-    ],
-    "traits": [],
-    "level": "50",
-    "damage": "16-22",
-    "stats": "Crit +4, WIS +5, END +4",
-    "resists": "None",
-    "obtainMethods": [
-      {
-        "location": "Transformed from  Sparkly Egg (Normal)",
-        "price": "N/A",
-        "priceType": "gold",
-        "sellback": "100 Gold"
-      },
-      {
-        "location": "Transformed from  Sparkly Egg (D-Coins)",
-        "price": "N/A",
-        "priceType": "gold",
-        "sellback": "19 Dragon Coins"
-      }
-    ],
-    "attacks": [
-      {
-        "name": "Attack Type 1",
-        "description": "Runs toward target and jumps into it, hovering afterwards for 1 hit of 100% Melee Nature damage.",
-        "images": [],
-        "notes": []
-      }
-    ],
-    "rarity": "100",
-    "evolutions": [],
-    "releaseDate": "April 16th, 2010",
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/SpottedChickcalf.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17506125",
-    "notes": "Pet is animated; it blinks, looks upwards, preens, and pecks at the ground sporadically.",
-    "alsoSee": [
+    "shared": {
+      "description": "You have had this baby chickencow since it was just an egg. It is ready to defend you but only because it thinks you are its mother.",
+      "element": "NAT",
+      "rarity": "100",
+      "attacks": [
+        {
+          "name": "Attack Type 1",
+          "description": "Runs toward target and jumps into it, hovering afterwards for 1 hit of 100% Melee Nature damage.",
+          "images": [],
+          "notes": []
+        }
+      ],
+      "notes": "Pet is animated; it blinks, looks upwards, preens, and pecks at the ground sporadically.",
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/SpottedChickcalf.png"
+    },
+    "levelVariants": [
       {
-        "name": "Armored Chickcalf (I-VII)",
-        "slug": "pet-armored-chickcalf",
-        "type": "pet"
+        "levelNumber": 1,
+        "levelDisplay": "50",
+        "actualLevel": 50,
+        "variantName": "Normal",
+        "name": "Spotted Chickcalf (Normal)",
+        "damage": "16-22",
+        "stats": "Crit +4, WIS +5, END +4",
+        "statsType": "petStats",
+        "obtainVariants": [
+          {
+            "location": "Transformed from  Sparkly Egg (Normal)",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "100 Gold",
+            "daRequired": false
+          }
+        ],
+        "element": "NAT",
+        "rarity": "100"
       },
       {
-        "name": "Chickcalf",
-        "slug": "pet-chickcalf",
-        "type": "pet"
-      },
-      {
-        "name": "Golden Chickcalf (I-VII)",
-        "slug": "pet-golden-chickcalf",
-        "type": "pet"
-      },
-      {
-        "name": "Marshmallow Pip (All Versions)",
-        "slug": "pet-marshmallow-pip",
-        "type": "pet"
+        "levelNumber": 2,
+        "levelDisplay": "50",
+        "actualLevel": 50,
+        "variantName": "DC",
+        "name": "Spotted Chickcalf (DC)",
+        "damage": "16-22",
+        "stats": "Crit +4, WIS +5, END +4",
+        "statsType": "petStats",
+        "obtainVariants": [
+          {
+            "location": "Transformed from  Sparkly Egg (D-Coins)",
+            "price": "N/A",
+            "priceType": "dc",
+            "sellback": "19 Dragon Coins",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "element": "NAT",
+        "rarity": "100"
       }
     ],
+    "releaseDate": "April 16th, 2010",
     "tags": [
       "pet",
       "nat"
+    ],
+    "isRare": true,
+    "hasDA": false,
+    "hasDC": true,
+    "hasDM": false,
+    "hasFree": true,
+    "hasMerge": false,
+    "levelRange": "50",
+    "elements": [
+      "NAT"
     ]
   },
   {
@@ -28726,121 +29442,149 @@
       {
         "levelNumber": 2,
         "levelDisplay": "II",
+        "actualLevel": 10,
         "name": "Super Lucky Wyvern II",
-        "damage": "Unknown",
-        "stats": "None",
+        "damage": "5-13",
+        "stats": "Crit +1, Bonus +1",
+        "statsType": "petStats",
         "obtainVariants": [
           {
             "location": "Lucky 13 Chest Items",
             "price": "N/A",
             "priceType": "merge",
-            "sellback": "0 Gold",
+            "sellback": "19 Dragon Coins",
             "daRequired": false,
-            "requiredItems": "1"
+            "requiredItems": "1 Super Lucky Wyvern I"
           }
-        ]
+        ],
+        "element": "LIG",
+        "rarity": "77"
       },
       {
         "levelNumber": 3,
         "levelDisplay": "III",
+        "actualLevel": 30,
         "name": "Super Lucky Wyvern III",
-        "damage": "Unknown",
-        "stats": "None",
+        "damage": "13-18",
+        "stats": "Crit +3, Bonus +3",
+        "statsType": "petStats",
         "obtainVariants": [
           {
             "location": "Lucky 13 Chest Items",
             "price": "N/A",
             "priceType": "merge",
-            "sellback": "0 Gold",
+            "sellback": "19 Dragon Coins",
             "daRequired": false,
-            "requiredItems": "1"
+            "requiredItems": "1 Super Lucky Wyvern II"
           }
-        ]
+        ],
+        "element": "LIG",
+        "rarity": "77"
       },
       {
         "levelNumber": 4,
         "levelDisplay": "IV",
+        "actualLevel": 50,
         "name": "Super Lucky Wyvern IV",
-        "damage": "Unknown",
-        "stats": "None",
+        "damage": "16-22",
+        "stats": "Crit +5, INT +1, Bonus +5",
+        "statsType": "petStats",
         "obtainVariants": [
           {
             "location": "Lucky 13 Chest Items",
             "price": "N/A",
             "priceType": "merge",
-            "sellback": "0 Gold",
+            "sellback": "19 Dragon Coins",
             "daRequired": false,
-            "requiredItems": "1"
+            "requiredItems": "1 Super Lucky Wyvern III"
           }
-        ]
+        ],
+        "element": "LIG",
+        "rarity": "77"
       },
       {
         "levelNumber": 5,
         "levelDisplay": "V",
+        "actualLevel": 60,
         "name": "Super Lucky Wyvern V",
-        "damage": "Unknown",
-        "stats": "None",
+        "damage": "19-25",
+        "stats": "Crit +7, INT +2, Bonus +6",
+        "statsType": "petStats",
         "obtainVariants": [
           {
             "location": "Lucky 13 Chest Items",
             "price": "N/A",
             "priceType": "merge",
-            "sellback": "0 Gold",
+            "sellback": "19 Dragon Coins",
             "daRequired": true,
-            "requiredItems": "1"
+            "requiredItems": "1 Super Lucky Wyvern IV"
           }
-        ]
+        ],
+        "element": "LIG",
+        "rarity": "77"
       },
       {
         "levelNumber": 6,
         "levelDisplay": "VI",
+        "actualLevel": 70,
         "name": "Super Lucky Wyvern VI",
-        "damage": "Unknown",
-        "stats": "None",
+        "damage": "21-25",
+        "stats": "Crit +8, INT +3, Bonus +7",
+        "statsType": "petStats",
         "obtainVariants": [
           {
             "location": "Lucky 13 Chest Items",
             "price": "N/A",
             "priceType": "merge",
-            "sellback": "0 Gold",
+            "sellback": "19 Dragon Coins",
             "daRequired": true,
-            "requiredItems": "1"
+            "requiredItems": "1 Super Lucky Wyvern V"
           }
-        ]
+        ],
+        "element": "LIG",
+        "rarity": "77"
       },
       {
         "levelNumber": 7,
         "levelDisplay": "VII",
+        "actualLevel": 73,
         "name": "Super Lucky Wyvern VII",
-        "damage": "Unknown",
-        "stats": "None",
+        "damage": "21-27",
+        "stats": "Crit +8, INT +3, Bonus +9",
+        "statsType": "petStats",
         "obtainVariants": [
           {
             "location": "Lucky 13 Chest Items",
             "price": "N/A",
             "priceType": "merge",
-            "sellback": "0 Gold",
+            "sellback": "19 Dragon Coins",
             "daRequired": true,
-            "requiredItems": "1"
+            "requiredItems": "1 Super Lucky Wyvern VI"
           }
-        ]
+        ],
+        "element": "LIG",
+        "rarity": "77"
       },
       {
         "levelNumber": 8,
         "levelDisplay": "VIII",
+        "actualLevel": 76,
         "name": "Super Lucky Wyvern VIII",
-        "damage": "Unknown",
-        "stats": "None",
+        "damage": "21-27",
+        "stats": "Crit +9, INT +3, Bonus +10",
+        "statsType": "petStats",
         "obtainVariants": [
           {
             "location": "Lucky 13 Chest Items",
             "price": "N/A",
             "priceType": "merge",
-            "sellback": "0 Gold",
+            "sellback": "19 Dragon Coins",
             "daRequired": true,
-            "requiredItems": "1"
+            "requiredItems": "1 Super Lucky Wyvern VII"
           }
-        ]
+        ],
+        "element": "LIG",
+        "rarity": "77"
       }
     ],
     "releaseDate": "March 18th, 2013",
@@ -28854,7 +29598,7 @@
     "hasDM": false,
     "hasFree": false,
     "hasMerge": true,
-    "levelRange": "I-VIII",
+    "levelRange": "1-76",
     "elements": [
       "LIG"
     ]

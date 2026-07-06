@@ -25,6 +25,12 @@ interface LevelStatsTableProps {
 export default function LevelStatsTable({ levels, hideVariantColumn = false, familyName }: LevelStatsTableProps) {
   const hasVariantNames = levels.some(level => Boolean(level.variantName))
   const useTitleLabels = familyName ? hasTitleDrivenVariantNames(levels, familyName) : false
+  const variantLabels = levels.map(level => getLevelVariantLabel(level, familyName, useTitleLabels))
+  const hasRedundantVariantColumn = variantLabels.every((label, index) => {
+    const level = levels[index]
+    return label === String(level.actualLevel ?? level.levelDisplay)
+  })
+  const showVariantColumn = !hasRedundantVariantColumn && (!hideVariantColumn || hasVariantNames || useTitleLabels)
 
   // Determine the correct stats column header based on statsType
   const statsHeader = levels.find(lv => lv.statsType === 'bonuses') 
@@ -39,12 +45,12 @@ export default function LevelStatsTable({ levels, hideVariantColumn = false, fam
           <table className="min-w-full border-collapse">
             <thead>
               <tr className="border-b border-border-default">
-                {(!hideVariantColumn || hasVariantNames) && (
+                {showVariantColumn && (
                   <th className="sticky left-0 bg-bg-base px-4 py-2 text-left text-xs font-semibold text-text-muted uppercase tracking-wider">
                     Variant
                   </th>
                 )}
-                <th className={`px-4 py-2 text-left text-xs font-semibold text-text-muted uppercase tracking-wider ${hideVariantColumn && !hasVariantNames ? 'sticky left-0 bg-bg-base' : ''}`}>
+                <th className={`px-4 py-2 text-left text-xs font-semibold text-text-muted uppercase tracking-wider ${!showVariantColumn ? 'sticky left-0 bg-bg-base' : ''}`}>
                   Level
                 </th>
                 <th className="px-4 py-2 text-left text-xs font-semibold text-text-muted uppercase tracking-wider">
@@ -70,7 +76,7 @@ export default function LevelStatsTable({ levels, hideVariantColumn = false, fam
               </tr>
             </thead>
             <tbody className="divide-y divide-border-default">
-              {levels.map((level) => {
+              {levels.map((level, index) => {
                 // Check if ANY obtain variant has DA/DC
                 const hasDA = level.obtainVariants.some(ov => ov.daRequired)
                 const hasDC = level.obtainVariants.some(ov => ov.dcRequired || ov.priceType === 'dc')
@@ -80,12 +86,12 @@ export default function LevelStatsTable({ levels, hideVariantColumn = false, fam
                     key={level.levelNumber}
                     className="hover:bg-bg-surface transition-colors"
                   >
-                    {(!hideVariantColumn || hasVariantNames) && (
+                    {showVariantColumn && (
                       <td className="sticky left-0 bg-bg-base hover:bg-bg-surface transition-colors px-4 py-3 text-sm text-text-primary font-medium">
-                        {getLevelVariantLabel(level, familyName, useTitleLabels)}
+                        {variantLabels[index]}
                       </td>
                     )}
-                    <td className={`px-4 py-3 text-sm text-text-secondary ${hideVariantColumn && !hasVariantNames ? 'sticky left-0 bg-bg-base hover:bg-bg-surface transition-colors font-medium' : ''}`}>
+                    <td className={`px-4 py-3 text-sm text-text-secondary ${!showVariantColumn ? 'sticky left-0 bg-bg-base hover:bg-bg-surface transition-colors font-medium' : ''}`}>
                       {level.actualLevel ?? level.levelDisplay}
                     </td>
                     <td className="px-4 py-3 text-sm text-text-secondary whitespace-pre-line">

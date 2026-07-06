@@ -32,6 +32,8 @@ export default function LevelSelector({ levels, activeIndex, onChange, familyNam
 
   const hasVariantNames = levels.some(level => Boolean(level.variantName))
   const useTitleLabels = familyName ? hasTitleDrivenVariantNames(levels, familyName) : false
+  const levelKeys = levels.map(level => String(level.actualLevel ?? level.levelDisplay))
+  const hasDuplicateLevels = new Set(levelKeys).size !== levelKeys.length
 
   const getButtonLabel = (level: LevelVariant) => getLevelVariantLabel(level, familyName, useTitleLabels)
   const splitRows = shouldUseSplitVariantRows(levels)
@@ -40,7 +42,7 @@ export default function LevelSelector({ levels, activeIndex, onChange, familyNam
   const nonDaLevels = indexedLevels.filter(({ level }) => !level.obtainVariants.some(variant => variant.daRequired))
   const nonDcLevels = indexedLevels.filter(({ level }) => !level.obtainVariants.some(variant => variant.dcRequired || variant.priceType === 'dc'))
   const dcLevels = indexedLevels.filter(({ level }) => level.obtainVariants.some(variant => variant.dcRequired || variant.priceType === 'dc'))
-  const shouldSplitDaRows = indexedLevels.length >= 8 && daLevels.length > 0 && nonDaLevels.length > 0
+  const shouldSplitDaRows = hasDuplicateLevels && indexedLevels.length >= 8 && daLevels.length > 0 && nonDaLevels.length > 0
   const groupedRows = shouldSplitDaRows
     ? [nonDaLevels, daLevels]
     : splitRows

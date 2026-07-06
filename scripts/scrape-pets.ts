@@ -66,6 +66,10 @@ async function fetchPage(url: string, cookie: string): Promise<string> {
   }
 }
 
+async function fetchThreadHtml(messageId: string, cookie: string): Promise<string> {
+  return fetchPage(`${FORUM_BASE}/fb.asp?m=${messageId}`, cookie)
+}
+
 function slugify(name: string): string {
   return name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 120)
 }
@@ -166,6 +170,26 @@ function stripHtml(html: string): string {
   return processed
     .replace(/\n{3,}/g, '\n\n')
     .trim()
+}
+
+function extractOtherInfoBulletLines(html: string): string[] {
+  const match = html.match(
+    /<b>\s*<u>\s*Other\s+information\s*<\/u>\s*<\/b>([\s\S]*?)(?:Also\s+See:|<i>\s*Thanks\s+to|Thanks\s+to|<font color=['"]#eeeeee['"]|$)/i
+  )
+  if (!match) return []
+
+  const segment = match[1]
+  const bulletMatches = [
+    ...segment.matchAll(
+      /<li>\s*([\s\S]*?)(?=(?:<br>\s*<li>)|(?:<br>\s*(?:<img|Also\s+See:|<i>\s*Thanks\s+to|Thanks\s+to))|$)/gi
+    ),
+  ]
+
+  if (bulletMatches.length === 0) return []
+
+  return bulletMatches
+    .map(match => stripHtml(decodeHTML(match[1] ?? '')).trim())
+    .filter(line => line.length > 0)
 }
 
 function loadCookie(): string {
@@ -317,6 +341,15 @@ function inferAccessVariantLabelFromMethods(methods: ObtainMethod[]): string | u
   return undefined
 }
 
+function inferAccessVariantLabelFromObtainVariants(methods: ObtainVariant[]): string | undefined {
+  const hasDC = methods.some(method => method.priceType === 'dc' || method.dcRequired)
+  const hasDA = methods.some(method => method.daRequired)
+
+  if (hasDC) return 'DC'
+  if (hasDA) return 'D-Amulet'
+  return 'Normal'
+}
+
 function extractPostDisplayName(html: string, baseName: string): string {
   const titleMatch = html.match(/<font[^>]*size=['"]3['"][^>]*>\s*<b>([^<]+)<\/b>/i)
     ?? html.match(/<b>\s*<font[^>]*size=['"]3['"][^>]*>([^<]+)<\/font>\s*<\/b>/i)
@@ -325,6 +358,50 @@ function extractPostDisplayName(html: string, baseName: string): string {
 
   const title = stripHtml(decodeHTML(titleMatch[1])).trim()
   return title || baseName
+}
+
+function extractLastPostDisplayName(html: string, baseName: string): string {
+  const patterns = [
+    /<font[^>]*size=['"]3['"][^>]*>\s*<b>([^<]+)<\/b>/gi,
+    /<b>\s*<font[^>]*size=['"]3['"][^>]*>([^<]+)<\/font>\s*<\/b>/gi,
+  ]
+
+  const titles: string[] = []
+  for (const pattern of patterns) {
+    let match: RegExpExecArray | null
+    while ((match = pattern.exec(html)) !== null) {
+      const title = stripHtml(decodeHTML(match[1] ?? '')).trim()
+      if (title) titles.push(title)
+    }
+  }
+
+  return titles.at(-1) ?? extractPostDisplayName(html, baseName)
+}
+
+function trimToLastNamedEntry(html: string, expectedName: string): string {
+  const escapedName = expectedName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+  const titlePatterns = [
+    new RegExp(`<font[^>]*size=['"]3['"][^>]*>\\s*<b>\\s*${escapedName}\\s*<\\/b>\\s*<\\/font>`, 'gi'),
+    new RegExp(`<b>\\s*${escapedName}\\s*<\\/b>`, 'gi'),
+  ]
+
+  let lastIndex = -1
+
+  for (const pattern of titlePatterns) {
+    let match: RegExpExecArray | null
+    while ((match = pattern.exec(html)) !== null) {
+      lastIndex = Math.max(lastIndex, match.index)
+    }
+  }
+
+  if (lastIndex <= 0) return html
+
+  const leadingTagIndex = html.lastIndexOf('[image]', lastIndex)
+  const sliceStart = leadingTagIndex >= 0 && lastIndex - leadingTagIndex < 250
+    ? leadingTagIndex
+    : lastIndex
+
+  return html.slice(sliceStart)
 }
 
 function buildObtainVariantsFromMethods(
@@ -339,8 +416,13 @@ function buildObtainVariantsFromMethods(
   const groupHasExplicitDC = methods.some(method => method.priceType === 'dc' || method.dcRequired)
 
   return methods.map(om => {
-    const priceType = computePriceType(om.price, om.requiredItems)
     const explicitVariantHasDC = explicitVariantName ? /\b(?:d-coins?|dc)\b/i.test(explicitVariantName) : undefined
+    const sellbackHasDC = /dragon\s+coins?|\bdc\b/i.test(om.sellback ?? '')
+    const inferredDC = explicitVariantHasDC === true || Boolean(om.dcRequired) || sellbackHasDC
+    const priceType =
+      inferredDC && computePriceType(om.price, om.requiredItems) === 'free'
+        ? 'dc'
+        : computePriceType(om.price, om.requiredItems)
     const dcRequired =
       explicitVariantHasDC === undefined
         ? priceType === 'dc' || Boolean(om.dcRequired) || (sectionDCRequired && groupHasExplicitDC)
@@ -433,6 +515,64 @@ function groupObtainMethodsByVariant(
   }))
 }
 
+function detectAccessTagsInHtmlContext(html: string, searchText: string, contextSize: number = 500): {
+  daRequired: boolean
+  dcRequired: boolean
+  dmRequired: boolean
+} {
+  const index = html.indexOf(searchText)
+  if (index === -1) {
+    return { daRequired: false, dcRequired: false, dmRequired: false }
+  }
+
+  const segmentStartCandidates = [
+    html.lastIndexOf("<font size='3'><b>", index),
+    html.lastIndexOf('<font size="3"><b>', index),
+    html.lastIndexOf("<b><font size='3'>", index),
+    html.lastIndexOf('<b><font size="3">', index),
+    html.lastIndexOf('Location:', index),
+  ].filter(candidate => candidate >= 0)
+
+  const segmentStart = segmentStartCandidates.length > 0
+    ? Math.max(...segmentStartCandidates)
+    : Math.max(0, index - contextSize)
+
+  const forwardHtml = html.slice(index + searchText.length)
+  const nextTitleOffsets = [
+    forwardHtml.search(/<font size=['"]3['"]><b>/i),
+    forwardHtml.search(/<b><font size=['"]3['"]>/i),
+  ].filter(offset => offset >= 0)
+
+  let segmentEnd = Math.min(html.length, index + searchText.length + contextSize)
+
+  if (nextTitleOffsets.length > 0) {
+    const nextTitleIndex = index + searchText.length + Math.min(...nextTitleOffsets)
+    const precedingImageIndex = html.lastIndexOf('<img', nextTitleIndex)
+    segmentEnd =
+      precedingImageIndex > index
+        ? precedingImageIndex
+        : nextTitleIndex
+  } else {
+    const nextFieldOffsets = [
+      forwardHtml.search(/(?:<br>\s*)?Level:/i),
+      forwardHtml.search(/(?:<br>\s*)?<b><u>Other information<\/u><\/b>/i),
+    ].filter(offset => offset >= 0)
+
+    if (nextFieldOffsets.length > 0) {
+      segmentEnd = index + searchText.length + Math.min(...nextFieldOffsets)
+    }
+  }
+
+  const context = html.slice(segmentStart, segmentEnd)
+  const hasNoDAText = /\(?\s*No\s+DA\s+Required\s*\)?/i.test(context)
+
+  return {
+    daRequired: hasNoDAText ? false : /<img[^>]+src=["'][^"']*\/tags\/DA\.png["']/i.test(context),
+    dcRequired: /<img[^>]+src=["'][^"']*\/tags\/DC\.png["']/i.test(context),
+    dmRequired: /<img[^>]+src=["'][^"']*\/tags\/DM\.png["']/i.test(context),
+  }
+}
+
 function buildVariantFamilyFromSinglePost(
   data: ReturnType<typeof parsePetThread>,
   name: string,
@@ -441,15 +581,16 @@ function buildVariantFamilyFromSinglePost(
 ): ItemFamily | undefined {
   const fallbackVariantLabel = extractExplicitVariantLabel(data.notes ?? '')
   const methodGroups = groupObtainMethodsByVariant(data.obtainMethods, fallbackVariantLabel)
-  const labels = uniqueStrings(methodGroups.map(group => group.label ?? ''))
-  if (methodGroups.length < 2 || labels.length < 2) return undefined
+  if (methodGroups.length < 2) return undefined
 
   const actualLevel = data.level && data.level !== 'Unknown' ? parseInt(data.level, 10) : undefined
   const elementCodes = data.elementCodes.length > 0 ? data.elementCodes : stub.elements
   const sharedNotes = notesBelongToVariant(data.notes, fallbackVariantLabel) ? undefined : data.notes
 
   const levelVariants = methodGroups.map((group, index) => {
-    const variantName = group.label ?? `Variant ${index + 1}`
+    const provisionalVariantName = group.label ?? `Variant ${index + 1}`
+    const obtainVariants = buildObtainVariantsFromMethods(group.methods, data.sourceHtml, undefined, provisionalVariantName)
+    const variantName = group.label ?? inferAccessVariantLabelFromObtainVariants(obtainVariants) ?? `Variant ${index + 1}`
     return {
       levelNumber: index + 1,
       levelDisplay: data.level || 'Unknown',
@@ -459,13 +600,16 @@ function buildVariantFamilyFromSinglePost(
       damage: data.damage || 'Unknown',
       stats: data.stats || 'None',
       ...(data.statsType ? { statsType: data.statsType } : {}),
-      obtainVariants: buildObtainVariantsFromMethods(group.methods, data.sourceHtml, undefined, variantName),
+      obtainVariants,
       ...(elementCodes[0] ? { element: elementCodes[0] } : {}),
       ...(data.resists && data.resists !== 'None' ? { resists: data.resists } : {}),
       ...(data.rarity && data.rarity !== 'Unknown' ? { rarity: data.rarity } : {}),
       ...(notesBelongToVariant(data.notes, variantName) ? { notes: data.notes } : {}),
     }
   })
+
+  const labels = uniqueStrings(levelVariants.map(level => level.variantName ?? ''))
+  if (labels.length < 2) return undefined
 
   return computeFamilyFlags({
     id: prefixedSlug(name, stub.type),
@@ -736,6 +880,16 @@ function detectLevel(name: string): { number: number; display: string } | null {
       return normalized
     }
   }
+
+  // No-space Roman numeral suffixes like "BabyWeaverVI"
+  const compactRomanMatch = name.match(/[A-Za-z]([IVX]{1,4})$/)
+  if (compactRomanMatch) {
+    const roman = compactRomanMatch[1].toUpperCase()
+    const normalized = normalizeLevel(roman)
+    if (normalized.number > 0 && normalized.number <= 10) {
+      return normalized
+    }
+  }
   
   // Numeric levels at end: "Level 30", "Lv 40"
   const numericMatch = name.match(/\b(?:Level|Lv\.?)\s+(\d+)$/i)
@@ -797,11 +951,11 @@ function extractImages(html: string): { main?: string; alternatives: Array<{ url
   }
   
   // Extract from <img> tags
-  const imgRegex = /<img[^>]+src=["']([^"']+)["'][^>]*>/gi
+  const imgRegex = /<img[^>]+src=(["'])(.*?)\1[^>]*>/gi
   let imgMatch: RegExpExecArray | null
   
   while ((imgMatch = imgRegex.exec(html)) !== null) {
-    const src = imgMatch[1]
+    const src = imgMatch[2]
     if (shouldSkip(src)) continue
     
     if (src.includes('github.com/DF-Pedia') || src.includes('githubusercontent.com') && src.includes('DF-Pedia')) {
@@ -816,12 +970,12 @@ function extractImages(html: string): { main?: string; alternatives: Array<{ url
   }
 
   const labeledImages: Array<{ url: string; caption: string }> = []
-  const labeledImageRegex = /<(?:b|strong)>([^<]+)<\/(?:b|strong)>\s*(?:<br\s*\/?>|\s|&nbsp;)*<img[^>]+src=["']([^"']+)["'][^>]*>/gi
+  const labeledImageRegex = /<(?:b|strong)>([^<]+)<\/(?:b|strong)>\s*(?:<br\s*\/?>|\s|&nbsp;)*<img[^>]+src=(["'])(.*?)\2[^>]*>/gi
   let labeledMatch: RegExpExecArray | null
 
   while ((labeledMatch = labeledImageRegex.exec(html)) !== null) {
     const caption = stripHtml(decodeHTML(labeledMatch[1] ?? '')).trim()
-    const url = labeledMatch[2]
+    const url = labeledMatch[3]
     if (!caption || shouldSkip(url)) continue
     if (/attack type|attack\b|button/i.test(caption)) continue
     labeledImages.push({ url, caption })
@@ -841,15 +995,14 @@ function extractImages(html: string): { main?: string; alternatives: Array<{ url
 
   const mainImagePos = html.lastIndexOf(main)
   const afterMain = mainImagePos >= 0 ? html.slice(mainImagePos + main.length) : ''
-  const linkRegex = /<a[^>]+href=["']([^"']+\.(?:jpg|jpeg|png|gif|bmp))["'][^>]*>([^<]*)<\/a>/gi
+  const linkRegex = /<a[^>]+href=(["'])(.*?\.(?:jpg|jpeg|png|gif|bmp))\1[^>]*>([^<]*)<\/a>/gi
   let linkMatch: RegExpExecArray | null
   const seenAlt = new Set<string>()
   while ((linkMatch = linkRegex.exec(afterMain)) !== null) {
-    const url = linkMatch[1]
-    const caption = stripHtml(decodeHTML(linkMatch[2] ?? '')).trim()
+    const url = linkMatch[2]
+    const caption = stripHtml(decodeHTML(linkMatch[3] ?? '')).trim()
     if (!caption || shouldSkip(url) || seenAlt.has(url)) continue
     if (/attack type|attack\b|button/i.test(caption)) continue
-    if (!/(appearance|alternative|variant|form|mode|style|version)/i.test(caption)) continue
     seenAlt.add(url)
     alternatives.push({ url, caption })
   }
@@ -919,6 +1072,250 @@ function parsePriceType(price: string, requiredItems?: string): ObtainMethod['pr
   return 'gold'
 }
 
+function extractPostBlockByMessageId(threadHtml: string, messageId: string): string | undefined {
+  const anchor = `name=${messageId}`
+  const startIndex = threadHtml.indexOf(anchor)
+  if (startIndex < 0) return undefined
+
+  const nextAnchorMatch = threadHtml.slice(startIndex + anchor.length).match(/<a name=\d+><\/a>/i)
+  const endIndex = nextAnchorMatch
+    ? startIndex + anchor.length + nextAnchorMatch.index
+    : threadHtml.length
+
+  return threadHtml.slice(startIndex, endIndex)
+}
+
+function extractDragonVariantSections(html: string): Array<{ variantName: string; html: string }> {
+  const sections: Array<{ variantName: string; html: string }> = []
+  const retiredIndex = html.search(/\/tags\/Retired\.png/i)
+  const activeHtml = retiredIndex >= 0 ? html.slice(0, retiredIndex) : html
+  const headerRegex = /(?:<img[^>]+src=["'][^"']*\/tags\/DA\.png["'][^>]*>\s*)?(?:<font[^>]*size=['"]3['"][^>]*>\s*<b>\s*&lt;Dragon&gt;\s*<\/b>\s*<\/font>|<b>\s*<font[^>]*size=['"]3['"][^>]*>\s*&lt;Dragon&gt;\s*<\/font>\s*<\/b>)\s*<br>\s*<i>\s*(Baby|Toddler|Kid)\s+Dragon\s*<\/i>/gi
+  const matches = [...activeHtml.matchAll(headerRegex)]
+
+  for (let i = 0; i < matches.length; i += 1) {
+    const match = matches[i]
+    const nextMatch = matches[i + 1]
+    const start = match.index ?? 0
+    const end = nextMatch?.index ?? activeHtml.length
+    const variantName = match[1][0].toUpperCase() + match[1].slice(1).toLowerCase()
+    sections.push({
+      variantName,
+      html: activeHtml.slice(start, end),
+    })
+  }
+
+  return sections
+}
+
+function parseDragonSkillAttacks(postHtml: string): Attack[] {
+  const currentSectionMatch = postHtml.match(
+    /<div[^>]*align=["']center["'][^>]*>[\s\S]*?<font[^>]*size=['"]3['"][^>]*><b>Pet Dragon Skills<\/b><\/font>\s*\(2019[\s\S]*?Present\)[\s\S]*?(?=<b>\s*2015[^<]*Skills<\/b>|<b>\s*2007[^<]*Skills<\/b>|<img[^>]+src=["'][^"']*\/tags\/Retired\.png["'][^>]*>|$)/i
+  )
+  const currentSkillsHtml = currentSectionMatch?.[0] ?? postHtml
+  const attacks: Attack[] = []
+  const tierHeadingRegex = /<div[^>]*align=["']center["'][^>]*>[\s\S]*?<font[^>]*size=['"]2['"][^>]*><b>Tier\s+(\d+)<\/b><\/font>[\s\S]*?<\/div>/gi
+  const tierSections: Array<{ tier: string; start: number; end: number }> = []
+  let tierMatch: RegExpExecArray | null
+
+  while ((tierMatch = tierHeadingRegex.exec(currentSkillsHtml)) !== null) {
+    tierSections.push({
+      tier: tierMatch[1],
+      start: tierMatch.index,
+      end: tierHeadingRegex.lastIndex,
+    })
+  }
+
+  for (let i = 0; i < tierSections.length; i += 1) {
+    const current = tierSections[i]
+    const next = tierSections[i + 1]
+    const tierHtml = currentSkillsHtml.slice(current.end, next ? next.start : currentSkillsHtml.length)
+    const skillHeaderRegex = /(<img[^>]+src=["'][^"']*\/tags\/DA\.png["'][^>]*>\s*)?<font[^>]*size=['"]2['"][^>]*><b>([^<]+)<\/b><\/font>/gi
+    const skillMatches = [...tierHtml.matchAll(skillHeaderRegex)]
+
+    for (let skillIndex = 0; skillIndex < skillMatches.length; skillIndex += 1) {
+      const match = skillMatches[skillIndex]
+      const nextMatch = skillMatches[skillIndex + 1]
+      const start = match.index ?? 0
+      const end = nextMatch?.index ?? tierHtml.length
+      const block = tierHtml.slice(start, end)
+      const rawName = stripHtml(decodeHTML(match[2] ?? '')).trim()
+      if (/^Tier\s+\d+$/i.test(rawName)) continue
+      const requirementsMatch = block.match(/Requirements:\s*([\s\S]*?)<br>\s*<br>/i)
+      const effectMatch = block.match(/Effect:\s*([\s\S]*?)(?=<br>\s*<br>\s*(?:Cooldown:|<b>\s*<a|<img|$))/i)
+      const cooldownMatch = block.match(/Cooldown:\s*([\s\S]*?)(?=<br>\s*<br>\s*(?:<b>\s*<a|<img|$))/i)
+
+      if (!rawName || !effectMatch) continue
+
+      const requirements = requirementsMatch
+        ? stripHtml(decodeHTML(requirementsMatch[1])).replace(/\s+/g, ' ').trim()
+        : 'None'
+      const effect = stripHtml(decodeHTML(effectMatch[1])).replace(/\s+/g, ' ').trim()
+      const cooldown = cooldownMatch
+        ? stripHtml(decodeHTML(cooldownMatch[1])).replace(/\s+/g, ' ').trim()
+        : undefined
+
+      attacks.push({
+        name: `Tier ${current.tier}: ${rawName}`,
+        description: effect,
+        notes: [
+          ...(requirements && requirements !== 'None' ? [`Requirements: ${requirements}`] : []),
+          ...(cooldown ? [`Cooldown: ${cooldown}`] : []),
+        ],
+      })
+    }
+  }
+
+  return attacks
+}
+
+function extractDragonObtainVariants(sectionHtml: string): ObtainVariant[] {
+  const normalizedSectionHtml = sectionHtml.replace(/<font[^>]*>\s*Location:\s*<\/font>/gi, 'Location:')
+  const fieldBoundary = normalizedSectionHtml.search(/<br>\s*Price:|<br>\s*Level:/i)
+  const locationArea = fieldBoundary >= 0 ? normalizedSectionHtml.slice(0, fieldBoundary) : normalizedSectionHtml
+  const locationRegex = /(?:^|<br>\s*)Location:\s*([\s\S]*?)(?=(?:<br>\s*Location:|<br>\s*Price:|<br>\s*Requirements?:|<br>\s*Sellback:|<br>\s*Level:|$))/gi
+  const rawLocations: string[] = []
+  let locationMatch: RegExpExecArray | null
+
+  while ((locationMatch = locationRegex.exec(locationArea)) !== null) {
+    const cleanedLocation = stripHtml(decodeHTML(locationMatch[1] ?? ''))
+      .replace(/\s+/g, ' ')
+      .replace(/,\s*$/, '')
+      .trim()
+
+    if (!cleanedLocation) continue
+
+    if (!cleanedLocation.includes('->') && cleanedLocation.includes(',')) {
+      const splitLocations = cleanedLocation
+        .split(/\s*,\s*/)
+        .map(part => part.trim())
+        .filter(Boolean)
+      rawLocations.push(...splitLocations)
+    } else {
+      rawLocations.push(cleanedLocation)
+    }
+  }
+
+  const text = stripHtml(decodeHTML(sectionHtml))
+  const requirements = (text.match(/Requirements?:\s*([^\n]+)/i)?.[1] ?? '').trim()
+  const price = (text.match(/Price:\s*([^\n]+)/i)?.[1] ?? 'N/A').trim() || 'N/A'
+  const sellback = (text.match(/Sellback:\s*([^\n]+)/i)?.[1] ?? 'N/A').trim() || 'N/A'
+  const sectionHasDA =
+    /\/tags\/DA\.png/i.test(sectionHtml) ||
+    /\(\s*DA\s+Required\s*\)/i.test(text) ||
+    /\bDragon Amulet\b/i.test(requirements)
+  const sectionHasDC = /\/tags\/DC\.png/i.test(sectionHtml)
+  const sectionHasDM = /\/tags\/DM\.png/i.test(sectionHtml)
+
+  return rawLocations.map(location => ({
+    location,
+    price,
+    priceType: computePriceType(price),
+    ...(requirements ? { requirements } : {}),
+    ...(sellback ? { sellback } : {}),
+    daRequired: sectionHasDA,
+    ...(sectionHasDC ? { dcRequired: true } : {}),
+    ...(sectionHasDM ? { dmRequired: true } : {}),
+  }))
+}
+
+function filterDragonAttacksForVariant(attacks: Attack[], variantName: string): Attack[] {
+  const normalizedVariant = variantName.toLowerCase()
+  return attacks.filter(attack => {
+    const tierMatch = attack.name.match(/^Tier\s+(\d+):/i)
+    const tier = tierMatch ? Number.parseInt(tierMatch[1], 10) : 0
+    const requirements = attack.notes?.find(note => note.startsWith('Requirements:')) ?? ''
+    const kidOnlyTierZero = /Kid Dragon/i.test(requirements) && tier === 0
+
+    if (tier > 2) return false
+
+    if (normalizedVariant === 'baby') {
+      return tier <= 1 && !kidOnlyTierZero
+    }
+
+    if (normalizedVariant === 'toddler') {
+      return !kidOnlyTierZero
+    }
+
+    return true
+  })
+}
+
+async function tryBuildDragonFamily(
+  html: string,
+  name: string,
+  stub: PetStub,
+  cookie: string,
+  chronology: ChronologyData
+): Promise<ItemFamily | undefined> {
+  if (!/^<Dragon>/i.test(name)) return undefined
+
+  const sections = extractDragonVariantSections(html)
+  if (sections.length < 3) return undefined
+
+  const skillPostId = '21927215'
+
+  let dragonSkillAttacks: Attack[] = []
+  try {
+    const skillThreadHtml = await fetchThreadHtml(skillPostId, cookie)
+    dragonSkillAttacks = parseDragonSkillAttacks(skillThreadHtml)
+  } catch {
+    // Fall back to no attacks if the linked skill post cannot be parsed.
+  }
+
+  const levelVariants: LevelVariant[] = sections.map((section, index) => {
+    const data = parsePetThread(section.html, `${name} (${section.variantName})`)
+    const obtainVariants = extractDragonObtainVariants(section.html)
+    const displayLevel = data.level || 'As player'
+
+    return {
+      levelNumber: index + 1,
+      levelDisplay: displayLevel,
+      variantName: section.variantName,
+      name: `<Dragon> (${section.variantName})`,
+      damage: data.damage || 'Unknown',
+      stats: data.stats || 'None',
+      ...(data.statsType ? { statsType: data.statsType } : {}),
+      obtainVariants,
+      ...(data.imageUrl ? { imageUrl: data.imageUrl } : {}),
+      ...(data.elementCodes[0] ? { element: data.elementCodes[0] } : {}),
+      ...(data.resists && data.resists !== 'None' ? { resists: data.resists } : {}),
+      rarity: 'Element: Chosen via Dragon Elementization',
+      ...(dragonSkillAttacks.length > 0
+        ? { attacks: filterDragonAttacksForVariant(dragonSkillAttacks, section.variantName) }
+        : {}),
+    }
+  })
+
+  const family: ItemFamily = {
+    id: prefixedSlug('<Dragon>', stub.type),
+    familyName: '<Dragon>',
+    slug: prefixedSlug('<Dragon>', stub.type),
+    type: stub.type,
+    forumUrl: stub.forumUrl,
+    shared: {
+      description: '',
+      rarity: 'Element: Chosen via Dragon Elementization',
+    },
+    levelVariants,
+    releaseDate: chronology.datesByMessageId.get(stub.messageId) ?? chronology.datesByName.get(stub.name.toLowerCase()) ?? 'Unknown',
+    tags: [
+      stub.type,
+      ...stub.elements.map(element => element.toLowerCase()),
+      ...stub.markers.map(marker => marker.toLowerCase().replace('/', '-')),
+    ],
+    hasDA: false,
+    hasDC: false,
+    hasDM: false,
+    hasFree: false,
+    hasMerge: false,
+    levelRange: '',
+    elements: stub.elements,
+    isMultiPost: true,
+  }
+
+  return computeFamilyFlags(family)
+}
+
 // ─── Multi-Variant Wrapper (Sprint 5) ────────────────────────────────────────
 
 /**
@@ -938,6 +1335,9 @@ async function parsePetThreadMultiVariant(
   chronology: ChronologyData,
   nameToSlug: Map<string, { slug: string; type: EntryType }>
 ): Promise<Pet | ItemFamily> {
+  const dragonFamily = await tryBuildDragonFamily(html, name, stub, cookie, chronology)
+  if (dragonFamily) return dragonFamily
+
   // Check for level indicator in name (e.g., "BabyWeaver I" or range notation "(I-VI)")
   const hasLevelInName = /\b([IVX]+|Level\s+\d+)$/i.test(name) || hasLevelRange(name)
   
@@ -1094,6 +1494,78 @@ async function parsePetThreadMultiVariant(
     
     const sections: Array<{ levelNum: number; romanDisplay: string; html: string; startIndex: number }> = []
     let handledByPostCandidates = false
+
+    if (!isAllVersions && html.includes('\n<hr>\n')) {
+      const postChunks = html.split('\n<hr>\n')
+      const postCandidates: Array<{
+        html: string
+        data: ReturnType<typeof parsePetThread>
+        displayName: string
+        levelInfo: { number: number; display: string }
+        actualLevel?: number
+      }> = []
+
+      for (const chunk of postChunks) {
+        const displayName = extractLastPostDisplayName(chunk, baseName)
+        if (!normalizeAllVersionsMatchName(displayName).includes(normalizeAllVersionsMatchName(baseName))) continue
+
+        const levelInfo = detectLevel(displayName)
+        if (!levelInfo) continue
+
+        const normalizedChunk = trimToLastNamedEntry(chunk, displayName)
+        const data = parsePetThread(normalizedChunk, displayName)
+        const actualLevel = data.level && data.level !== 'Unknown' ? parseInt(data.level, 10) : undefined
+
+        if (data.obtainMethods.length === 0 && !actualLevel) continue
+
+        postCandidates.push({
+          html: normalizedChunk,
+          data,
+          displayName,
+          levelInfo,
+          ...(actualLevel && !isNaN(actualLevel) ? { actualLevel } : {}),
+        })
+      }
+
+      const uniqueVariantNumbers = new Set(postCandidates.map(candidate => candidate.levelInfo.number))
+      if (postCandidates.length >= 2 && uniqueVariantNumbers.size >= 2) {
+        const sortedCandidates = [...postCandidates].sort((a, b) => a.levelInfo.number - b.levelInfo.number)
+
+        for (const candidate of sortedCandidates) {
+          const obtainVariants = buildObtainVariantsFromMethods(candidate.data.obtainMethods, candidate.html)
+          if (obtainVariants.length === 0) continue
+
+          const isFirstLevel = !sharedDescription
+          if (isFirstLevel) {
+            sharedDescription = candidate.data.description
+            sharedElementCodes = uniqueStrings([...sharedElementCodes, ...candidate.data.elementCodes])
+            sharedElement = sharedElementCodes[0]
+            sharedRarity = candidate.data.rarity !== 'Unknown' ? candidate.data.rarity : undefined
+            sharedResists = candidate.data.resists !== 'None' ? candidate.data.resists : undefined
+            sharedAttacks = candidate.data.attacks
+            sharedNotes = candidate.data.notes
+            sharedAlsoSeeNames = candidate.data.alsoSeeNames
+          }
+
+          levelVariantsMap.set(candidate.levelInfo.number, {
+            levelNumber: candidate.levelInfo.number,
+            levelDisplay: candidate.levelInfo.display,
+            ...(candidate.actualLevel ? { actualLevel: candidate.actualLevel } : {}),
+            name: `${baseName} ${candidate.levelInfo.display}`,
+            damage: candidate.data.damage || 'Unknown',
+            stats: candidate.data.stats || 'None',
+            ...(candidate.data.statsType ? { statsType: candidate.data.statsType } : {}),
+            obtainVariants,
+            ...(candidate.data.elementCodes[0] ? { element: candidate.data.elementCodes[0] } : {}),
+            ...(candidate.data.resists && candidate.data.resists !== 'None' ? { resists: candidate.data.resists } : {}),
+            ...(candidate.data.rarity && candidate.data.rarity !== 'Unknown' ? { rarity: candidate.data.rarity } : {}),
+            ...(!isFirstLevel && candidate.data.notes ? { notes: candidate.data.notes } : {}),
+          })
+        }
+
+        handledByPostCandidates = levelVariantsMap.size >= 2
+      }
+    }
     
     if (isAllVersions) {
       const postChunks = html.includes('\n<hr>\n') ? html.split('\n<hr>\n') : [html]
@@ -1252,7 +1724,7 @@ async function parsePetThreadMultiVariant(
         }
       }
       }
-    } else {
+    } else if (!handledByPostCandidates) {
       // Roman numeral range pattern - look for "Pet Name I", "Pet Name II", etc.
       // Handle extreme spacing variations like:
       // - "BabyWeaver I" (no space in name)
@@ -1304,10 +1776,11 @@ async function parsePetThreadMultiVariant(
       }
     }
     
+    if (!handledByPostCandidates) {
     // Sort by start index and extract HTML for each section
     sections.sort((a, b) => a.startIndex - b.startIndex)
 
-    if (!handledByPostCandidates && sections.length <= 1 && html.includes('\n<hr>\n')) {
+    if (sections.length <= 1 && html.includes('\n<hr>\n')) {
       const postChunks = html.split('\n<hr>\n')
       let cursor = 0
       const fallbackSections: Array<{ levelNum: number; romanDisplay: string; html: string; startIndex: number }> = []
@@ -1374,12 +1847,13 @@ async function parsePetThreadMultiVariant(
     // Parse each section
     for (const section of sections) {
       const levelName = isAllVersions ? baseName : `${baseName} ${section.romanDisplay}`
-      const data = parsePetThread(section.html, levelName)
+      const normalizedSectionHtml = trimToLastNamedEntry(section.html, levelName)
+      const data = parsePetThread(normalizedSectionHtml, levelName)
       
       // Parse actual level number from "Level: X" in the section
       const actualLevel = data.level && data.level !== 'Unknown' ? parseInt(data.level, 10) : undefined
       
-      const obtainVariants = buildObtainVariantsFromMethods(data.obtainMethods, section.html)
+      const obtainVariants = buildObtainVariantsFromMethods(data.obtainMethods, normalizedSectionHtml)
       
       if (obtainVariants.length > 0) {
         // Capture shared data from first level BEFORE creating variant
@@ -1425,10 +1899,12 @@ async function parsePetThreadMultiVariant(
         sharedNotes = remainderData.notes
       }
     }
+    }
   } else {
     // Multi-page thread with separate posts per level
     for (const postHtml of allPosts) {
-      const data = parsePetThread(postHtml, name)
+      const normalizedPostHtml = trimToLastNamedEntry(postHtml, name)
+      const data = parsePetThread(normalizedPostHtml, name)
       
       // Detect level for this post
       const levelInfo = detectLevel(name)
@@ -1444,7 +1920,7 @@ async function parsePetThreadMultiVariant(
         priceType: computePriceType(om.price, om.requiredItems),
         sellback: om.sellback,
         ...(om.requirements ? { requirements: om.requirements } : {}),
-        daRequired: parseDARequiredFromSection(postHtml, postHtml),
+        daRequired: parseDARequiredFromSection(normalizedPostHtml, normalizedPostHtml),
         ...(data.dcRequired ? { dcRequired: data.dcRequired } : {}),
         ...(data.dmRequired ? { dmRequired: data.dmRequired } : {}),
         ...(om.requiredItems ? { requiredItems: om.requiredItems } : {}),
@@ -1533,7 +2009,7 @@ async function parsePetThreadMultiVariant(
   
   // Build ItemFamily
   const shared: SharedData = {
-    description: sharedDescription || name,
+    description: sharedDescription,
     ...(sharedElement ? { element: sharedElement } : {}),
     ...(sharedRarity ? { rarity: sharedRarity } : {}),
     ...(sharedResists ? { resists: sharedResists } : {}),
@@ -1779,6 +2255,7 @@ function parsePetThread(html: string, name: string): {
   let retired = false
   let obtainMethods: ObtainMethod[] = []
   let currentObtain: Partial<ObtainMethod> | null = null
+  let activeObtainField: 'location' | 'price' | 'requiredItems' | 'sellback' | null = null
   let level = '', damage = '', stats = '', resists = ''
   let statsType: 'petStats' | 'bonuses' | undefined = undefined
   let elementCodes: string[] = []
@@ -1932,6 +2409,15 @@ const saveObtain = () => {
     ...(accessFlags.dmRequired ? { dmRequired: accessFlags.dmRequired } : {}),
   })
   currentObtain = null
+  activeObtainField = null
+}
+
+function appendToCurrentObtainField(lineText: string) {
+  if (!currentObtain || !activeObtainField || !lineText) return
+  const existing = currentObtain[activeObtainField]
+  currentObtain[activeObtainField] = existing
+    ? `${existing} ${lineText}`.trim()
+    : lineText.trim()
 }
 
   for (const line of lines) {
@@ -1941,28 +2427,63 @@ const saveObtain = () => {
     // Skip parenthetical notes like "(No DA)" or "(DA Required)" - already detected from images
     if (/^\(.*\)$/.test(trimmedLine)) continue
 
-    if (/^Location:/i.test(trimmedLine)) { saveObtain(); currentObtain = { location: trimmedLine.replace(/^Location:\s*/i, '').trim() }; continue }
-    if (/^Price:/i.test(trimmedLine) && currentObtain) { currentObtain.price = trimmedLine.replace(/^Price:\s*/i, '').trim(); continue }
-    if (/^Required Items?:/i.test(trimmedLine) && currentObtain) { currentObtain.requiredItems = trimmedLine.replace(/^Required Items?:\s*/i, '').trim(); continue }
-    if (/^Sellback:/i.test(trimmedLine) && currentObtain) { currentObtain.sellback = trimmedLine.replace(/^Sellback:\s*/i, '').trim(); continue }
+    if (/^Location:/i.test(trimmedLine)) {
+      saveObtain()
+      currentObtain = { location: trimmedLine.replace(/^Location:\s*/i, '').trim() }
+      activeObtainField = 'location'
+      continue
+    }
+    if (/^Price:/i.test(trimmedLine) && currentObtain) {
+      currentObtain.price = trimmedLine.replace(/^Price:\s*/i, '').trim()
+      activeObtainField = 'price'
+      continue
+    }
+    if (/^Required Items?:/i.test(trimmedLine) && currentObtain) {
+      currentObtain.requiredItems = trimmedLine.replace(/^Required Items?:\s*/i, '').trim()
+      activeObtainField = 'requiredItems'
+      continue
+    }
+    if (/^Sellback:/i.test(trimmedLine) && currentObtain) {
+      currentObtain.sellback = trimmedLine.replace(/^Sellback:\s*/i, '').trim()
+      activeObtainField = 'sellback'
+      continue
+    }
 
-    if (/^Level:/i.test(trimmedLine)) { level = trimmedLine.replace(/^Level:\s*/i, '').trim(); continue }
-    if (/^Damage:/i.test(trimmedLine)) { damage = trimmedLine.replace(/^Damage:\s*/i, '').trim(); continue }
+    if (
+      currentObtain &&
+      activeObtainField &&
+      !/^(Level|Damage|Pet'?s?\s+Stats?|Bonuses?|Pet'?s?\s+Resists?|Resists?|Element|Rarity|Attack\s+Type|Also\s+See|Other\s+information|Note:|Thanks\s+to|Combine\s+\d+\s+with)\b/i.test(trimmedLine)
+    ) {
+      const normalizedLine = trimmedLine.replace(/\s+/g, ' ').trim()
+      const normalizedDescription = description.replace(/\s+/g, ' ').trim()
+      if (normalizedDescription && normalizedLine === normalizedDescription) {
+        activeObtainField = null
+        continue
+      }
+      appendToCurrentObtainField(trimmedLine)
+      continue
+    }
+
+    if (/^Level:/i.test(trimmedLine)) { activeObtainField = null; level = trimmedLine.replace(/^Level:\s*/i, '').trim(); continue }
+    if (/^Damage:/i.test(trimmedLine)) { activeObtainField = null; damage = trimmedLine.replace(/^Damage:\s*/i, '').trim(); continue }
     // Handle bullets or direct Min:/Max: lines
     if (/^•?\s*Min:/i.test(trimmedLine)) { damage += '\n' + trimmedLine.replace(/^•?\s*/, '').trim(); continue }
     if (/^•?\s*Max:/i.test(trimmedLine)) { damage += '\n' + trimmedLine.replace(/^•?\s*/, '').trim(); continue }
     if (/^Pet'?s?\s+Stats?:/i.test(trimmedLine)) { 
+      activeObtainField = null
       stats = trimmedLine.replace(/^Pet'?s?\s+Stats?:\s*/i, '').trim()
       statsType = 'petStats'
       continue
     }
     if (/^Bonuses?:/i.test(trimmedLine)) { 
+      activeObtainField = null
       stats = trimmedLine.replace(/^Bonuses?:\s*/i, '').trim()
       statsType = 'bonuses'
       continue
     }
-    if (/^Pet'?s?\s+Resists?:/i.test(trimmedLine)) { resists = trimmedLine.replace(/^Pet'?s?\s+Resists?:\s*/i, '').trim(); continue }
+    if (/^Pet'?s?\s+Resists?:/i.test(trimmedLine)) { activeObtainField = null; resists = trimmedLine.replace(/^Pet'?s?\s+Resists?:\s*/i, '').trim(); continue }
     if (/^Element:/i.test(trimmedLine)) {
+      activeObtainField = null
       const parsedCodes = parseElementCodesFromText(trimmedLine.replace(/^Element:\s*/i, '').trim())
       if (parsedCodes.length > 0) {
         elementCodes = uniqueStrings([...elementCodes, ...parsedCodes])
@@ -1976,7 +2497,7 @@ const saveObtain = () => {
       continue
     }
 
-    if (/^Rarity:/i.test(trimmedLine)) { rarity = trimmedLine.replace(/^Rarity:\s*/i, '').trim(); continue }
+    if (/^Rarity:/i.test(trimmedLine)) { activeObtainField = null; rarity = trimmedLine.replace(/^Rarity:\s*/i, '').trim(); continue }
 
     if (/^Attack\s+Type\s+[\d./]+/i.test(trimmedLine)) {
       // If we're already in notes section, don't treat this as an attack — add to notes instead
@@ -1993,6 +2514,16 @@ const saveObtain = () => {
     }
 
     if (currentAttack && !inNotes && /^[•\-\*]\s+/.test(trimmedLine)) {
+      const routeToOtherInformation = /does not attack/i.test(currentAttack.description ?? '')
+
+      if (routeToOtherInformation) {
+        const attackNote = trimmedLine.replace(/^[•\-\*]\s+/, '').trim()
+        if (attackNote) {
+          noteLines.push(attackNote)
+        }
+        continue
+      }
+
       currentAttack.notes = currentAttack.notes ?? []
       
       // Detect indented bullets (sub-items) using ORIGINAL line to preserve spacing
@@ -2052,6 +2583,9 @@ const saveObtain = () => {
       if (name.toLowerCase().includes(trimmedLine.toLowerCase()) && trimmedLine.length < 50) {
         continue
       }
+      if (/^(location|price|required items?|sellback|level|damage|pet'?s?\s+stats?|bonuses?|pet'?s?\s+resists?|resists?|element|rarity|attack\s+type)\s*:/i.test(trimmedLine)) {
+        continue
+      }
       description = trimmedLine
       continue
     }
@@ -2108,6 +2642,20 @@ const saveObtain = () => {
 
   saveObtain()
   if (currentAttack?.name) attacks.push(currentAttack as Attack)
+
+  const recoveredOtherInfoLines = extractOtherInfoBulletLines(rawBody)
+  const parsedNotesLookTruncated =
+    noteLines.length > 0 &&
+    recoveredOtherInfoLines.length > 0 &&
+    noteLines.some(line => /['"]$/.test(line.trim())) &&
+    recoveredOtherInfoLines.join(' ').length > noteLines.join(' ').length
+
+  if (noteLines.length === 0 && recoveredOtherInfoLines.length > 0) {
+    noteLines.push(...recoveredOtherInfoLines)
+  } else if (parsedNotesLookTruncated) {
+    noteLines.length = 0
+    noteLines.push(...recoveredOtherInfoLines)
+  }
 
   if (obtainMethods.length <= 1) {
     const fallbackMethods: ObtainMethod[] = []
@@ -2189,7 +2737,7 @@ const saveObtain = () => {
   })
 
   return {
-    description: description || name,
+    description,
     daRequired,
     dcRequired,
     dmRequired,

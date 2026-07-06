@@ -272,7 +272,7 @@ export function useRelatedPets(alsoSee: { slug: string; name: string; type: stri
   return useMemo(
     () => alsoSee
       .map(ref => allPets.find(p => p.slug === (petSlugAliases.get(ref.slug) ?? ref.slug)))
-      .filter((p): p is Pet => p !== null && p !== undefined),
+      .filter((p): p is Pet | ItemFamily => p !== null && p !== undefined),
     [alsoSee]
   )
 }

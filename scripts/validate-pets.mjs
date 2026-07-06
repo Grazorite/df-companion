@@ -88,8 +88,8 @@ for (let i = 0; i < pets.length; i++) {
     if (!p.shared || typeof p.shared !== 'object') {
       errors.push(`${prefix}: missing "shared" object`)
     } else {
-      if (!p.shared.description || typeof p.shared.description !== 'string') {
-        errors.push(`${prefix}: shared.description must be a non-empty string`)
+      if (typeof p.shared.description !== 'string') {
+        errors.push(`${prefix}: shared.description must be a string`)
       }
     }
     

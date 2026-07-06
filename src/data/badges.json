@@ -202,7 +202,6 @@
     "description": "Own the Kathool Adept Armor!",
     "requirements": "Own  Kathool Adept Armor",
     "daRequired": false,
-    "dcRequired": true,
     "howToObtain": [
       {
         "order": 1,
@@ -289,32 +288,34 @@
   {
     "name": "Arachnalchemy Mastery",
     "slug": "arachnalchemy-mastery",
-    "messageId": "22421140",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22421140",
-    "category": "misc",
+    "messageId": "22421146",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22421146",
+    "category": "combat",
     "subcategory": "Skills",
     "retired": false,
     "unreleased": false,
     "id": "arachnalchemy-mastery",
-    "description": "Arachnalchemy Training (Dire Wolf Spider)",
-    "requirements": "Dragon Amulet, Completion of  Just Chillin'",
+    "description": "Max out your Arachnalchemy training with Riadne!",
+    "requirements": "Completion of Arachnalchemy Training (Mutagen U)",
     "daRequired": true,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Dragon Amulet, Completion of  Just Chillin'"
+        "instruction": "Completion of Arachnalchemy Training (Mutagen U)",
+        "daRequired": true
       }
     ],
     "forumLinks": [
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=22421140",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=22421146",
         "title": "DF Encyclopedia: Arachnalchemy Mastery",
         "isPrimary": true
       }
     ],
     "tags": [],
-    "forumImageUrl": "https://media.artix.com/encyc/df/banners/Ravenloss.jpg",
-    "notes": "Completion of this quest unlocks the  Arachnalchemy Lab shop and the  Arachnalchemy interface."
+    "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/ArachnalchemyMastery.png",
+    "notes": "Completion of this quest unlocks the Arachnalchemy Lab shop and the Arachnalchemy interface.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/ArachnalchemyMastery.png"
   },
   {
     "name": "Arr' Captain's Orders",
@@ -345,8 +346,9 @@
     "tags": [
       "quests-badges"
     ],
-    "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/Arr",
-    "notes": "Badge's art was updated on  July 27th, 2024, replacing its  old appearance."
+    "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/Arr'Captain'sOrders.png",
+    "notes": "Badge's art was updated on  July 27th, 2024, replacing its  old appearance.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Arr%27Captain%27sOrders.png"
   },
   {
     "name": "Asander's Freedom",
@@ -391,13 +393,17 @@
     "unreleased": false,
     "id": "ascended-chickencow",
     "description": "Own the Ascended ChickenCowLord Armor!",
-    "requirements": "Own  Ascended ChickenCow Armor (D-Coins)",
+    "requirements": "Own Ascended ChickenCow Armor (D-Amulet) OR Ascended ChickenCow Armor (D-Coins)",
     "daRequired": true,
-    "dcRequired": true,
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Own  Ascended ChickenCow Armor (D-Coins)"
+        "instruction": "Own Ascended ChickenCow Armor (D-Amulet)",
+        "daRequired": true
+      },
+      {
+        "order": 2,
+        "instruction": "Own Ascended ChickenCow Armor (D-Coins)"
       }
     ],
     "forumLinks": [
@@ -456,7 +462,6 @@
     "description": "Asychronized",
     "requirements": "Own  Helm of Aegis",
     "daRequired": true,
-    "dcRequired": true,
     "howToObtain": [
       {
         "order": 1,
@@ -898,7 +903,6 @@
     "description": "Defeat the 13th Lord of Chaos.",
     "requirements": "Own  Parallel Chaos Amulet",
     "daRequired": false,
-    "dcRequired": true,
     "howToObtain": [
       {
         "order": 1,
@@ -931,7 +935,6 @@
     "description": "Own the ChaosWeaver Armor!",
     "requirements": "Own  Chaosweaver Armor",
     "daRequired": false,
-    "dcRequired": true,
     "howToObtain": [
       {
         "order": 1,
@@ -981,7 +984,8 @@
       "quests-badges"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/ColdasIce.png",
-    "notes": "Badge's art was updated on  July 27th, 2024, replacing its  old appearance."
+    "notes": "Badge's art was updated on  July 27th, 2024, replacing its  old appearance.",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/ColdasIce.png"
   },
   {
     "name": "Confront Sek-Duat",
@@ -1060,7 +1064,6 @@
     "description": "Own the Musical Cookie Box from the holiday Cookie Song event from HeroMart.",
     "requirements": "Own  Musical Cookie Box",
     "daRequired": false,
-    "dcRequired": true,
     "howToObtain": [
       {
         "order": 1,
@@ -1562,7 +1565,6 @@
     "description": "Own the enTropy Armor!",
     "requirements": "Own  enTropy Armor",
     "daRequired": false,
-    "dcRequired": true,
     "howToObtain": [
       {
         "order": 1,
@@ -1594,7 +1596,6 @@
     "description": "Own the Evolved ChickenCowLord Armor!",
     "requirements": "Own  Evolved ChickenCow Armor (D-Coins) or  Ascended ChickenCow Armor (D-Coins)",
     "daRequired": true,
-    "dcRequired": true,
     "howToObtain": [
       {
         "order": 1,
@@ -2195,7 +2196,6 @@
     "description": "Own the Gnomish Personal Steamtank Armor!",
     "requirements": "Own  GPS (2.0) Armor",
     "daRequired": false,
-    "dcRequired": true,
     "howToObtain": [
       {
         "order": 1,
@@ -2574,7 +2574,6 @@
     "description": "Own the Icebound Revenant Armor!",
     "requirements": "Own  Icebound Revenant Armor",
     "daRequired": false,
-    "dcRequired": true,
     "howToObtain": [
       {
         "order": 1,
@@ -3776,7 +3775,6 @@
     "description": "Own the Pyromancer Armor!",
     "requirements": "Own  Pyromancer Armor",
     "daRequired": false,
-    "dcRequired": true,
     "howToObtain": [
       {
         "order": 1,
@@ -3840,7 +3838,6 @@
     "description": "Own any of the Limited Quantity Shop items!",
     "requirements": "Own any  LQS weapon",
     "daRequired": false,
-    "dcRequired": true,
     "howToObtain": [
       {
         "order": 1,
@@ -4568,7 +4565,6 @@
     "description": "Own any of the Calendar Armors!",
     "requirements": "Own  Chronomancer Armor,  Chronocorruptor,  TimeKiller,  ChronoZ,  Avatar of Time,  Archivist,  ShadowWalker of Time, or  Epoch Armor",
     "daRequired": false,
-    "dcRequired": true,
     "howToObtain": [
       {
         "order": 1,
@@ -4726,7 +4722,6 @@
     "description": "Forge an Ultimate Destiny Weapon.",
     "requirements": "Own  Ultimate Blinding Light of Destiny,  Ultimate DragonStaff of Destiny, or  Ultimate Twin Blades of Destiny",
     "daRequired": true,
-    "dcRequired": true,
     "howToObtain": [
       {
         "order": 1,
@@ -4759,7 +4754,6 @@
     "description": "Forge an Unreal Doom Weapon.",
     "requirements": "Own  Unreal ShadowReaper of Doom,  Unreal Skullstaff of Doom, or  Unreal Twin Blades of Doom",
     "daRequired": true,
-    "dcRequired": true,
     "howToObtain": [
       {
         "order": 1,

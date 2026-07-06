@@ -30,6 +30,9 @@ const AZ_PAGE_URL = `${FORUM_BASE}/tm.asp?m=22304590&mpage=1&key=`
 const DELAY_MS = 800
 const OUTPUT_PATH = path.resolve(import.meta.dirname, '../src/data/badges.json')
 const BADGE_SUBCATEGORY_FALLBACK_PATH = path.resolve(import.meta.dirname, '../src/data/backup/badges.json')
+const THREAD_URL_OVERRIDES: Record<string, string> = {
+  'Arachnalchemy Mastery': '22421146',
+}
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -49,7 +52,7 @@ interface BadgeData extends BadgeStub {
   description: string
   requirements: string
   daRequired: boolean
-  howToObtain: { order: number; instruction: string }[]
+  howToObtain: { order: number; instruction: string; daRequired?: boolean }[]
   forumLinks: { url: string; title: string; isPrimary: boolean }[]
   forumImageUrl?: string  // image URL extracted from forum post (imgur, upfiles, etc.)
   tags: string[]
@@ -172,6 +175,8 @@ function mapSubcategoryToSeasonal(subcategory: string): boolean {
 }
 
 function isLikelyBadgeImage(src: string): boolean {
+  if (/\/banners\//i.test(src) || /Ravenloss\.jpg/i.test(src)) return false
+  if (/\/tags\//i.test(src)) return false
   return (
     src.includes('imgur.com') ||
     src.includes('i.imgur.com') ||
@@ -231,8 +236,8 @@ function parseAZPage(html: string, fallbackMap: Map<string, BadgeSubcategoryFall
     stubs.push({
       name,
       slug: slugify(name),
-      messageId: msgId,
-      forumUrl: `${FORUM_BASE}/tm.asp?m=${msgId}`,
+      messageId: THREAD_URL_OVERRIDES[name] ?? msgId,
+      forumUrl: `${FORUM_BASE}/tm.asp?m=${THREAD_URL_OVERRIDES[name] ?? msgId}`,
       category: fallback?.category ?? 'misc',
       subcategory: fallback?.subcategory ?? 'General',
       retired: inRetired || isRetiredFromParen || fallback?.retired === true,
@@ -259,23 +264,49 @@ async function fetchBadgeDetails(
 
     let description = ''
     let daRequired = false
-    let dcRequired = false
     let requirements = ''
     let category = stub.category
     let subcategory = stub.subcategory
     const noteLines: string[] = []
     let inNotes = false
+    const howToObtain: Array<{ order: number; instruction: string; daRequired?: boolean }> = []
 
-    // Detect DA and DC requirements from image tags
+    // Detect DA requirements from image tags
     if (/<img[^>]+src=["'][^"']*\/tags\/DA\.png["']/i.test(rawBody)) {
       daRequired = true
-    }
-    if (/<img[^>]+src=["'][^"']*\/tags\/DC\.png["']/i.test(rawBody)) {
-      dcRequired = true
     }
 
     // Detect retired status from image tag
     const retiredFromTag = /<img[^>]+src=["'][^"']*\/tags\/Retired\.png["']/i.test(rawBody)
+
+    const escapedName = stub.name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+    const titlePattern = new RegExp(
+      String.raw`((?:<img[^>]+src=["'][^"']*\/tags\/(?:DA|DC)\.png["'][^>]*>\s*)*)(?:<b>\s*<font[^>]*size=['"]3['"][^>]*>\s*${escapedName}\s*<\/font>\s*<\/b>|<font[^>]*size=['"]3['"][^>]*>\s*<b>\s*${escapedName}\s*<\/b>\s*<\/font>)([\s\S]*?)(?=(?:<img[^>]+src=["'][^"']*\/tags\/(?:DA|DC)\.png["'][^>]*>\s*)?(?:<b>\s*<font[^>]*size=['"]3['"][^>]*>\s*${escapedName}\s*<\/font>\s*<\/b>|<font[^>]*size=['"]3['"][^>]*>\s*<b>\s*${escapedName}\s*<\/b>\s*<\/font>)|<b>\s*<u>\s*Other\s+information\s*<\/u>\s*<\/b>|<i>\s*Thanks\s+to|Thanks\s+to|$)`,
+      'gi'
+    )
+
+    const titleMatches = [...rawBody.matchAll(titlePattern)]
+    if (titleMatches.length > 0) {
+      titleMatches.forEach((match, index) => {
+        const tagsHtml = match[1] ?? ''
+        const bodyHtml = match[2] ?? ''
+        const methodDaRequired = /\/tags\/DA\.png/i.test(tagsHtml)
+        const requirementsMatch = bodyHtml.match(/Requirements?:\s*([\s\S]*?)(?=<br>\s*Category:|$)/i)
+        const instruction = requirementsMatch
+          ? stripHtml(decodeHTML(requirementsMatch[1])).replace(/\s+/g, ' ').trim()
+          : ''
+
+        if (instruction) {
+          howToObtain.push({
+            order: index + 1,
+            instruction,
+            ...(methodDaRequired ? { daRequired: true } : {}),
+          })
+        }
+
+        if (methodDaRequired) daRequired = true
+      })
+    }
 
     for (const line of lines) {
       if (line === stub.name || line === `The ${stub.name}`) continue
@@ -315,10 +346,10 @@ async function fetchBadgeDetails(
     // Skip UI/avatar images (board icons, user avatars, tag banners, tracker pixels)
     let forumImageUrl: string | undefined
     const candidateImages: string[] = []
-    const imgRegex = /<img[^>]+src="([^"]+)"[^>]*>/gi
+    const imgRegex = /<img[^>]+src=(["'])(.*?)\1[^>]*>/gi
     let imgMatch: RegExpExecArray | null
     while ((imgMatch = imgRegex.exec(rawBody)) !== null) {
-      const src = imgMatch[1]
+      const src = imgMatch[2]
       // Skip known non-badge images
       if (
         src.includes('/f/image/') ||          // forum UI images
@@ -342,9 +373,9 @@ async function fetchBadgeDetails(
     return {
       description: description || `Badge: ${stub.name}`,
       daRequired,
-      dcRequired,
       retired: retiredFromTag || undefined,
       requirements,
+      ...(howToObtain.length > 0 ? { howToObtain } : {}),
       category,
       subcategory,
       forumImageUrl,
@@ -432,7 +463,6 @@ async function main() {
       description: details.description ?? `Badge: ${stub.name}`,
       requirements: details.requirements ?? '',
       daRequired: details.daRequired ?? false,
-      ...(details.dcRequired ? { dcRequired: details.dcRequired } : {}),
       category: (() => {
         const cat = details.category ?? stub.category
         const sub = details.subcategory ?? stub.subcategory
@@ -446,7 +476,9 @@ async function main() {
         return cat
       })(),
       subcategory: details.subcategory ?? stub.subcategory,
-      howToObtain: details.requirements
+      howToObtain: details.howToObtain && details.howToObtain.length > 0
+        ? details.howToObtain
+        : details.requirements
         ? [{ order: 1, instruction: details.requirements }]
         : [{ order: 1, instruction: 'See forum link for details.' }],
       forumLinks: [

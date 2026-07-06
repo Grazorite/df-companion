@@ -25,6 +25,62 @@ interface PetDetailProps {
   family?: ItemFamily
 }
 
+function isItemFamily(item: Pet | ItemFamily): item is ItemFamily {
+  return 'levelVariants' in item && 'familyName' in item
+}
+
+function buildCardPet(item: Pet | ItemFamily): Pet {
+  if (!isItemFamily(item)) return item
+
+  const firstLevel = item.levelVariants[0]
+
+  return {
+    id: item.id,
+    name: firstLevel?.name ?? item.familyName,
+    slug: item.slug,
+    type: item.type as 'pet' | 'guest',
+    description: item.shared.description,
+    daRequired: item.hasDA,
+    dcRequired: item.hasDC,
+    dmRequired: item.hasDM,
+    elements: item.elements,
+    traits: [],
+    level: item.levelRange,
+    damage: firstLevel?.damage ?? 'Unknown',
+    stats: firstLevel?.stats ?? 'None',
+    resists: firstLevel?.resists ?? item.shared.resists ?? 'None',
+    obtainMethods: (firstLevel?.obtainVariants ?? []).map(variant => ({
+      location: variant.location,
+      price: variant.price,
+      priceType: variant.priceType,
+      requiredItems: variant.requiredItems,
+      sellback: variant.sellback ?? '0 Gold',
+      requirements: variant.requirements,
+      daRequired: variant.daRequired,
+      dcRequired: variant.dcRequired,
+      dmRequired: variant.dmRequired,
+    })),
+    attacks: item.type === 'guest'
+      ? []
+      : ((item.shared.attacks as Pet['attacks'] | undefined) ?? []),
+    rarity: firstLevel?.rarity ?? item.shared.rarity ?? '1',
+    evolutions: [],
+    releaseDate: item.releaseDate ?? '',
+    imageUrl: firstLevel?.imageUrl ?? item.shared.imageUrl,
+    ...(firstLevel?.alternativeImages || item.shared.alternativeImages
+      ? { alternativeImages: firstLevel?.alternativeImages ?? item.shared.alternativeImages }
+      : {}),
+    forumUrl: item.forumUrl,
+    notes: firstLevel?.notes ?? item.shared.notes,
+    alsoSee: item.shared.alsoSee?.map(ref => ({
+      name: ref.name,
+      slug: ref.slug,
+      type: ref.type as 'pet' | 'guest',
+    })) ?? [],
+    tags: item.tags,
+  }
+}
+
 function PetImage({ src, name }: { src: string; name: string }) {
   const [broken, setBroken] = useState(false)
   if (broken) {
@@ -58,6 +114,7 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
   
   // Determine if we're using multi-variant display
   const isMultiVariant = family && !isSingleVariant(family)
+  const isDragonFamily = family?.slug === 'pet-dragon'
   const sameLevelVariants = family ? hasSameLevelVariants(family) : false
   const displayFamilyName = family ? getDisplayFamilyName(family) : undefined
   const useTitleDrivenVariantNames = family && displayFamilyName
@@ -107,7 +164,9 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
   
   // Use shared data if available, otherwise fall back to Pet data
   const displayData = family ? {
-    description: activeLevel?.description ?? family.shared.description,
+    description: isDragonFamily
+      ? `${activeLevel?.variantName ?? 'Baby'} Dragon`
+      : activeLevel?.description ?? family.shared.description,
     imageUrl: activeLevel?.imageUrl ?? family.shared.imageUrl,
     alternativeImages: activeLevel?.alternativeImages ?? family.shared.alternativeImages,
     element: activeLevel?.element ?? family.shared.element,
@@ -232,7 +291,13 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
     { label: 'Damage', value: pet.damage },
     { label: 'Stats', value: pet.stats },
     { label: 'Resists', value: pet.resists },
-    { label: 'Rarity', value: pet.rarity },
+    (() => {
+      if (pet.rarity?.includes(':')) {
+        const [label, ...rest] = pet.rarity.split(':')
+        return { label: label.trim(), value: rest.join(':').trim() }
+      }
+      return { label: 'Rarity', value: pet.rarity }
+    })(),
   ].filter(s => s.value && s.value !== 'Unknown' && s.value !== 'None' || s.label === 'Level')
 
   return (
@@ -264,10 +329,18 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
         {/* Display family name with level range for multi-variant, regular name for single */}
         <h1 className="text-2xl font-bold text-text-primary mb-2">
           {isMultiVariant && family ? (
-            family.isMultiPost || sameLevelVariants ? displayFamilyName : `${displayFamilyName} (${family.levelRange})`
+            isDragonFamily
+              ? '<Dragon> (Baby, Toddler, Kid)'
+              : family.isMultiPost || sameLevelVariants
+                ? displayFamilyName
+                : `${displayFamilyName} (${family.levelRange})`
           ) : pet.name}
         </h1>
-        <p className="text-text-secondary text-sm italic leading-relaxed mb-2">{normalizeDisplayText(displayData.description)}</p>
+        {displayData.description && (
+          <p className="text-text-secondary text-sm italic leading-relaxed mb-2">
+            {normalizeDisplayText(displayData.description)}
+          </p>
+        )}
 
         {pet.releaseDate && pet.releaseDate !== 'Unknown' && (
           <p className="text-text-muted text-xs">Released: {pet.releaseDate}</p>
@@ -422,14 +495,21 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
         
         if (!displayRarity || displayRarity === 'Unknown') return null
         
+        const metadataLabel = displayRarity.includes(':')
+          ? displayRarity.split(':')[0].trim()
+          : 'Rarity'
+        const metadataValue = displayRarity.includes(':')
+          ? displayRarity.split(':').slice(1).join(':').trim()
+          : displayRarity
+
         return (
           <section aria-labelledby="rarity-heading" className="mb-5">
             <h2 id="rarity-heading" className="text-xs font-semibold text-text-muted uppercase tracking-wider mb-3">
-              Rarity
+              {metadataLabel}
             </h2>
             <div className="flex gap-2">
               <span className="inline-block text-sm px-3 py-1.5 rounded-md bg-bg-overlay text-text-secondary border border-border-default">
-                {displayRarity}
+                {metadataValue}
               </span>
             </div>
           </section>
@@ -445,13 +525,15 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
             {family.levelVariants[activeIndex].obtainVariants.map((variant, i) => {
               // Determine label based on number of variants
               const label =
-                family.levelVariants[activeIndex].obtainVariants.length > 1
-                  ? variant.priceType === 'free'
-                    ? 'Free Option'
-                    : variant.priceType === 'dc'
-                      ? 'DC Option'
-                      : variant.priceType === 'dm'
-                        ? 'DM Option'
+                isDragonFamily
+                  ? `Method ${i + 1}`
+                  : family.levelVariants[activeIndex].obtainVariants.length > 1
+                  ? variant.dcRequired || variant.priceType === 'dc'
+                    ? 'DC Option'
+                    : variant.dmRequired || variant.priceType === 'dm'
+                      ? 'DM Option'
+                      : variant.priceType === 'free'
+                        ? 'Free Option'
                         : `Method ${i + 1}`
                   : undefined
               
@@ -461,6 +543,7 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
                   variant={variant}
                   label={label}
                   isGuest={isGuest}
+                  locationOnly={isDragonFamily}
                 />
               )
             })}
@@ -629,10 +712,12 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
             {relatedPets.map(related => {
               const section = related.type === 'pet' ? 'pets' : 'guests'
+              const relatedFamily = isItemFamily(related) ? related : undefined
               return (
                 <li key={related.id}>
                   <PetCard
-                    pet={related}
+                    pet={buildCardPet(related)}
+                    family={relatedFamily}
                     toUrl={`/${section}/${related.slug}?from=${encodeURIComponent(backUrl)}`}
                     replace
                   />

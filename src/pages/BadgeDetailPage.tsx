@@ -4,6 +4,7 @@ import { useBadgeBySlug, useBadgesByCategory } from '../hooks/useBadges'
 import BadgeCard from '../components/badges/BadgeCard'
 import NotesList from '../components/shared/NotesList'
 import { normalizeDisplayText } from '../utils/displayText'
+import AccessPills from '../components/shared/AccessPills'
 
 export default function BadgeDetailPage() {
   const { slug } = useParams<{ slug: string }>()
@@ -119,19 +120,31 @@ export default function BadgeDetailPage() {
       </div>
 
       {/* How to obtain — gold accent left border */}
-      <section
-        aria-labelledby="how-to-obtain-heading"
-        className="bg-bg-surface border-l-4 border-gold rounded-lg p-5 mb-5"
-      >
-        <h2
-          id="how-to-obtain-heading"
-          className="text-xs font-semibold text-text-muted uppercase tracking-wider mb-3"
-        >
+      <section aria-labelledby="how-to-obtain-heading" className="mb-5 space-y-3">
+        <h2 id="how-to-obtain-heading" className="sr-only">
           How to Obtain
         </h2>
-        <p className="text-text-primary text-sm leading-relaxed">
-          {normalizeDisplayText(badge.howToObtain[0]?.instruction ?? 'See forum link for details.')}
-        </p>
+        {badge.howToObtain.map((step, index) => (
+          <div
+            key={`${step.order}-${step.instruction}`}
+            className="bg-bg-surface border-l-4 border-gold rounded-lg p-5"
+          >
+            <div className="flex items-start justify-between gap-3 mb-3">
+              <h3 className="text-xs font-semibold text-text-muted uppercase tracking-wider">
+                How to Obtain{badge.howToObtain.length > 1 ? ` (Method ${index + 1})` : ''}
+              </h3>
+              <div className="flex items-center gap-2 flex-wrap justify-end">
+                <AccessPills
+                  daRequired={Boolean(step.daRequired)}
+                  filterBase="/badges"
+                />
+              </div>
+            </div>
+            <p className="text-text-primary text-sm leading-relaxed">
+              {normalizeDisplayText(step.instruction ?? 'See forum link for details.')}
+            </p>
+          </div>
+        ))}
       </section>
 
       {/* Other information */}

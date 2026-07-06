@@ -72,6 +72,15 @@ for (let i = 0; i < badges.length; i++) {
   // howToObtain
   if (!Array.isArray(b.howToObtain) || b.howToObtain.length === 0) {
     errors.push(`${prefix}: must have at least 1 howToObtain step`)
+  } else {
+    for (const [stepIndex, step] of b.howToObtain.entries()) {
+      if (typeof step.instruction !== 'string' || step.instruction.trim().length === 0) {
+        errors.push(`${prefix}: howToObtain[${stepIndex}] missing instruction`)
+      }
+      if (step.daRequired !== undefined && typeof step.daRequired !== 'boolean') {
+        errors.push(`${prefix}: howToObtain[${stepIndex}].daRequired must be boolean when present`)
+      }
+    }
   }
 
   // Slug uniqueness

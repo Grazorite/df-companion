@@ -26,12 +26,18 @@ interface ObtainVariantCardProps {
   variant: ObtainVariant
   label?: string  // "Free Option", "DC Option", "Method 1"
   isGuest?: boolean  // If true, hide price/sellback fields (badge-style)
+  locationOnly?: boolean
 }
 
-export default function ObtainVariantCard({ variant, label, isGuest = false }: ObtainVariantCardProps) {
+export default function ObtainVariantCard({
+  variant,
+  label,
+  isGuest = false,
+  locationOnly = false,
+}: ObtainVariantCardProps) {
   const headingText = label ? `How to Obtain (${label})` : 'How to Obtain'
   
-  const showPriceFields = !isGuest
+  const showPriceFields = !isGuest && !locationOnly
   const showRequirements = Boolean(variant.requirements && variant.requirements.toLowerCase() !== 'none')
   const getCurrencyTextClass = (text?: string, fallback?: 'dc' | 'dm') => {
     const normalized = text?.toLowerCase() ?? ''
@@ -81,7 +87,7 @@ export default function ObtainVariantCard({ variant, label, isGuest = false }: O
         )}
       </div>
       
-      {(showRequirements || showPriceFields) && (
+      {!locationOnly && (showRequirements || showPriceFields) && (
         <>
           <div className="border-t border-border-default" />
 

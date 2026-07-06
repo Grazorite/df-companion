@@ -118,8 +118,14 @@ export function computeFamilyFlags(family: ItemFamily): ItemFamily {
   }
   
   // Compute level range
-  const firstLevel = family.levelVariants[0]?.levelDisplay
-  const lastLevel = family.levelVariants.at(-1)?.levelDisplay
+  const firstVariant = family.levelVariants[0]
+  const lastVariant = family.levelVariants.at(-1)
+  const firstLevel = firstVariant
+    ? String(firstVariant.actualLevel ?? firstVariant.levelDisplay)
+    : 'Unknown'
+  const lastLevel = lastVariant
+    ? String(lastVariant.actualLevel ?? lastVariant.levelDisplay)
+    : firstLevel
   
   // For multi-post families (Baron (Kitten, Cat)), don't add range suffix — name already contains variants
   let levelRange: string
@@ -355,7 +361,18 @@ export function getLevelVariantLabel(level: LevelVariant, familyName?: string, u
   if (familyName && useTitleLabels) {
     const condensedTitle = getCondensedTitleVariant(level.name, familyName)
     if (condensedTitle) {
+      if (levelLabel.toLowerCase() === 'as player') {
+        return `${normalizeDisplayText(condensedTitle)}${hasDC ? ' (DC)' : ''}`
+      }
+      if (parseRomanNumeral(condensedTitle.toUpperCase()) !== null) {
+        return `${normalizeDisplayText(condensedTitle)}${hasDC ? ' (DC)' : ''}`
+      }
       return `${normalizeDisplayText(condensedTitle)} (${levelLabel}${hasDC ? ', DC' : ''})`
+    }
+
+    const normalizedLevelName = normalizeDisplayText(stripAccessVariantSuffix(level.name))
+    if (normalizedLevelName === familyName) {
+      return `${familyName} (${levelLabel}${hasDC ? ', DC' : ''})`
     }
   }
 

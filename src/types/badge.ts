@@ -15,6 +15,7 @@ export interface ObtainStep {
   order: number
   instruction: string
   forumReference?: string
+  daRequired?: boolean
 }
 
 export interface Badge {
@@ -27,7 +28,6 @@ export interface Badge {
   howToObtain: ObtainStep[]
   requirements: string // Short requirement summary (e.g. "Completion of A Hero is Thawed")
   daRequired: boolean  // Whether a Dragon Amulet is needed
-  dcRequired?: boolean // Whether Dragon Coins are needed (detected from DC.png image in forum)
   retired: boolean     // Whether the badge is no longer obtainable
   forumLinks: ForumLink[]
   wikiLink?: string

@@ -30,6 +30,9 @@ function AttackImage({ src, alt }: { src: string; alt: string }) {
 
 function AttackCard({ attack, index }: { attack: Attack; index: number }) {
   const [open, setOpen] = useState(index === 0)
+  const requirementsNote = attack.notes?.find(note => note.startsWith('Requirements:'))
+  const extraNotes = attack.notes?.filter(note => !note.startsWith('Requirements:')) ?? []
+  const requirementsText = requirementsNote?.replace(/^Requirements:\s*/i, '').trim()
 
   return (
     <div className="bg-bg-surface border border-border-default rounded-lg overflow-hidden">
@@ -46,10 +49,16 @@ function AttackCard({ attack, index }: { attack: Attack; index: number }) {
 
       {open && (
         <div className="px-4 pb-4 space-y-3 border-t border-border-default pt-3">
+          {requirementsText && requirementsText.toLowerCase() !== 'none' && (
+            <p className="text-xs text-text-muted">
+              <span className="font-medium">Requires:</span> {requirementsText}
+            </p>
+          )}
+
           <p className="text-text-secondary text-sm leading-relaxed">{attack.description}</p>
 
-          {attack.notes && attack.notes.length > 0 && (
-            <NotesList notes={attack.notes.join('\n')} />
+          {extraNotes.length > 0 && (
+            <NotesList notes={extraNotes.join('\n')} />
           )}
 
           {attack.images && attack.images.length > 0 && (
@@ -68,14 +77,42 @@ function AttackCard({ attack, index }: { attack: Attack; index: number }) {
 export default function PetAttacks({ attacks }: PetAttacksProps) {
   if (attacks.length === 0) return null
 
+  const groupedAttacks = attacks.reduce<Array<{ heading?: string; attacks: Attack[] }>>((groups, attack) => {
+    const tierMatch = attack.name.match(/^(Tier\s+\d+):\s*(.+)$/i)
+    const heading = tierMatch ? tierMatch[1] : undefined
+    const normalizedAttack = tierMatch ? { ...attack, name: tierMatch[2] } : attack
+    const lastGroup = groups[groups.length - 1]
+
+    if (heading && lastGroup?.heading === heading) {
+      lastGroup.attacks.push(normalizedAttack)
+      return groups
+    }
+
+    groups.push({ ...(heading ? { heading } : {}), attacks: [normalizedAttack] })
+    return groups
+  }, [])
+
   return (
     <section aria-labelledby="attacks-heading" className="mb-5">
       <h2 id="attacks-heading" className="text-xs font-semibold text-text-muted uppercase tracking-wider mb-3">
         Attacks
       </h2>
-      <div className="space-y-2">
-        {attacks.map((attack, i) => (
-          <AttackCard key={attack.name} attack={attack} index={i} />
+      <div className="space-y-4">
+        {groupedAttacks.map((group, groupIndex) => (
+          <div key={group.heading ?? `group-${groupIndex}`} className="space-y-2">
+            {group.heading && (
+              <p className="text-xs font-semibold text-text-muted uppercase tracking-wider">
+                {group.heading}
+              </p>
+            )}
+            {group.attacks.map((attack, attackIndex) => (
+              <AttackCard
+                key={`${group.heading ?? 'base'}-${attack.name}-${attackIndex}`}
+                attack={attack}
+                index={groupIndex === 0 && attackIndex === 0 ? 0 : 1}
+              />
+            ))}
+          </div>
         ))}
       </div>
     </section>
