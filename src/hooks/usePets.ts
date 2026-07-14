@@ -99,6 +99,14 @@ const elementMeta = elementsData as ElementsData
 function searchPets(pets: (Pet | ItemFamily)[], filters: PetFilters): (Pet | ItemFamily)[] {
   const query = (filters.query ?? '').toLowerCase().trim()
   const queryWords = query.split(/\s+/).filter(w => w.length >= 2)
+  const hasRetiredSignal = (...values: Array<string | undefined>): boolean =>
+    values.some(value =>
+      value
+        ? /previously attainable[\s\S]*retired|retired (?:access point|da access point|quest|version|location|entry)|previously attainable in the retired/i.test(
+            value
+          )
+        : false
+    )
 
   return pets
     .filter(item => {
@@ -109,12 +117,30 @@ function searchPets(pets: (Pet | ItemFamily)[], filters: PetFilters): (Pet | Ite
       const family = isFamily ? (item as ItemFamily) : null
       
       const itemType = isFamily ? family!.type : pet!.type
+      const isGuestEntry = itemType === 'guest'
       const itemElements = isFamily ? family!.elements : pet!.elements
       const itemTraits = isFamily ? [] : pet!.traits  // Families don't have traits yet
       const itemName = isFamily ? family!.familyName : pet!.name
       const itemDescription = isFamily ? family!.shared.description : pet!.description
       const itemTags = isFamily ? family!.tags : pet!.tags
-      const itemRetired = isFamily ? (family!.retired ?? false) : (pet!.retired ?? false)
+      const itemRetired = isFamily
+        ? Boolean(
+            family!.retired ||
+              hasRetiredSignal(
+                family!.shared.notes,
+                ...family!.levelVariants.map(level => level.notes),
+                ...family!.levelVariants.flatMap(level =>
+                  level.obtainVariants.map(variant => `${variant.location} ${variant.requirements ?? ''}`)
+                )
+              )
+          )
+        : Boolean(
+            pet!.retired ||
+              hasRetiredSignal(
+                pet!.notes,
+                ...pet!.obtainMethods.map(method => `${method.location} ${method.requirements ?? ''}`)
+              )
+          )
       
       // Segment filter — which type(s) are active
       if (filters.type && filters.type.length > 0) {
@@ -189,14 +215,16 @@ function searchPets(pets: (Pet | ItemFamily)[], filters: PetFilters): (Pet | Ite
         if (filters.categories.includes('retired')) {
           if (!itemRetired) return false
         } else {
-          // If retired NOT selected and other categories are, exclude retired items
-          if (itemRetired) return false
+          // Pets keep the badges-style retired exclusion.
+          // Guests remain visible in "All" and category browsing even if marked retired.
+          if (!isGuestEntry && itemRetired) return false
           // If other categories selected, must match at least one
           if (!hasCategory) return false
         }
       } else {
-        // No categories selected — exclude retired by default (same as badges)
-        if (itemRetired) return false
+        // No categories selected — exclude retired pets by default.
+        // Guests stay visible so older companion entries don't disappear from "All".
+        if (!isGuestEntry && itemRetired) return false
       }
 
       // Text search — word-prefix matching

@@ -5,7 +5,7 @@
  * computation, family flag derivation, level normalization, and roman numeral parsing.
  */
 
-import type { ItemFamily, LevelVariant, PriceType } from '../types/item'
+import type { ItemFamily, ItemType, LevelVariant, PriceType } from '../types/item'
 import { normalizeDisplayText } from './displayText'
 
 /**
@@ -256,7 +256,7 @@ export function hasSameLevelVariants(family: ItemFamily): boolean {
 }
 
 function stripAccessVariantSuffix(name: string): string {
-  return name.replace(/\s+\((?:D-Coins?|DC|D-Amulet|D-Amulet\/D-Coins|D-Amulet\/DC|Resource|Normal)\)$/i, '').trim()
+  return name.replace(/\s+\((?:D-Coins?|DC|D-Amulet|DA|D-Amulet\/D-Coins|D-Amulet\/DC|DA\/DC|Resource|Normal)\)$/i, '').trim()
 }
 
 function tokenizeVariantName(name: string): string[] {
@@ -353,10 +353,39 @@ export function hasTitleDrivenVariantNames(levels: LevelVariant[], familyName: s
   return levels.some(level => stripAccessVariantSuffix(level.name) !== familyName)
 }
 
-export function getLevelVariantLabel(level: LevelVariant, familyName?: string, useTitleLabels: boolean = false): string {
+function extractNumericFamilyVariant(name: string, familyName?: string): string | undefined {
+  if (!familyName) return undefined
+  const match = normalizeDisplayText(name).match(/\((\d+)\)\s*$/)
+  if (!match) return undefined
+  const base = normalizeDisplayText(name.replace(/\s*\(\d+\)\s*$/, '')).trim()
+  if (base === familyName) return `(${match[1]})`
+  return undefined
+}
+
+export function getLevelVariantLabel(
+  level: LevelVariant,
+  familyName?: string,
+  useTitleLabels: boolean = false,
+  itemType?: ItemType
+): string {
   const levelLabel = String(level.actualLevel ?? level.levelDisplay)
   const hasDC = level.obtainVariants.some(variant => variant.dcRequired || variant.priceType === 'dc')
   const normalizedVariantName = level.variantName ? normalizeDisplayText(level.variantName) : undefined
+
+  if (itemType === 'guest') {
+    const numericFamilyVariant = extractNumericFamilyVariant(level.name, familyName)
+    if (numericFamilyVariant) return numericFamilyVariant
+    if (normalizedVariantName) return normalizedVariantName
+    const normalizedLevelName = normalizeDisplayText(stripAccessVariantSuffix(level.name))
+    if (normalizedLevelName) {
+      if (levelLabel.toLowerCase() === 'unknown' || levelLabel.toLowerCase() === 'as player') {
+        return normalizedLevelName
+      }
+      if (normalizedLevelName !== familyName) {
+        return `${normalizedLevelName} (${levelLabel}${hasDC ? ', DC' : ''})`
+      }
+    }
+  }
 
   if (familyName && useTitleLabels) {
     const condensedTitle = getCondensedTitleVariant(level.name, familyName)

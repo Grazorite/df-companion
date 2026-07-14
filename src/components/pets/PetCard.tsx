@@ -66,7 +66,7 @@ export default function PetCard({ pet, toUrl, replace, family }: PetCardProps) {
           )}
           
           {/* Multi-variant indicators */}
-          {isMultiVariant && !family?.isMultiPost && !sameLevelVariants && (
+          {isMultiVariant && pet.type !== 'guest' && !family?.isMultiPost && !sameLevelVariants && (
             <LevelRangeBadge levelRange={displayFlags.levelRange} />
           )}
           {displayFlags.hasDA && (

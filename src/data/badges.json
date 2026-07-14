@@ -15,7 +15,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  The Boss Bear"
+        "instruction": "Completion of The Boss Bear"
       }
     ],
     "forumLinks": [
@@ -26,7 +26,7 @@
       }
     ],
     "tags": [
-      "other-badges"
+      "hero-s-heart-day"
     ],
     "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/%231-Threat-Bears.jpg",
     "notes": "If you choose to reset Hero's Heart Day 2012 clues, your badge will be gone until after the boss fight."
@@ -47,7 +47,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  Xan's Volcano Fortress"
+        "instruction": "Completion of Xan's Volcano Fortress"
       }
     ],
     "forumLinks": [
@@ -58,7 +58,8 @@
       }
     ],
     "tags": [
-      "quests-badges"
+      "early-days",
+      "early-game"
     ],
     "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/1-Pyronomicon.png"
   },
@@ -78,7 +79,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  ZardbiBubble"
+        "instruction": "Completion of ZardbiBubble"
       }
     ],
     "forumLinks": [
@@ -89,7 +90,7 @@
       }
     ],
     "tags": [
-      "other-badges"
+      "mogloween"
     ],
     "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/48WeeksLater.jpg"
   },
@@ -109,7 +110,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  A Hero is Thawed"
+        "instruction": "Completion of A Hero is Thawed"
       }
     ],
     "forumLinks": [
@@ -120,7 +121,7 @@
       }
     ],
     "tags": [
-      "quests-badges"
+      "book-3"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/AHeroisThawed.png",
     "notes": "Badge's art was added on  July 27th, 2024."
@@ -141,7 +142,8 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Own at least 1  Timewarped Trophy"
+        "instruction": "Own at least 1 Timewarped Trophy",
+        "daRequired": true
       }
     ],
     "forumLinks": [
@@ -152,7 +154,7 @@
       }
     ],
     "tags": [
-      "challenges-badges"
+      "arena-challenges"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/AARGHMastery.png",
     "notes": "The count displayed on the badge is the number of Timewarped Trophies owned by the player; Timewarped Trophies stack to a maximum of 15 as of  October 1st, 2021. • Timewarped Trophies previously stacked up to 10.Timewarped Trophies may be stored in the bank and the player's correct count will still be displayed."
@@ -173,7 +175,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  The Lymcrest Labyrinth (All Versions)"
+        "instruction": "Completion of The Lymcrest Labyrinth (All Versions)"
       }
     ],
     "forumLinks": [
@@ -184,7 +186,7 @@
       }
     ],
     "tags": [
-      "quests-badges",
+      "side-quests",
       "lymcrest"
     ],
     "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/A-maze-n.png"
@@ -205,7 +207,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Own  Kathool Adept Armor"
+        "instruction": "Own Kathool Adept Armor"
       }
     ],
     "forumLinks": [
@@ -216,7 +218,7 @@
       }
     ],
     "tags": [
-      "classes-badges"
+      "special-classes"
     ],
     "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Adept.png"
   },
@@ -236,7 +238,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  The Vampire Tower"
+        "instruction": "Completion of The Vampire Tower"
       }
     ],
     "forumLinks": [
@@ -247,7 +249,7 @@
       }
     ],
     "tags": [
-      "quests-badges",
+      "side-quests",
       "amityvale"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/AmityvaleDefender.png",
@@ -269,7 +271,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  Sunfall: Part 2"
+        "instruction": "Completion of Sunfall: Part 2"
       }
     ],
     "forumLinks": [
@@ -280,7 +282,7 @@
       }
     ],
     "tags": [
-      "quests-badges"
+      "book-3"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/AnUneasyAlliance.png",
     "notes": "Badge's art was added on  July 27th, 2024."
@@ -296,7 +298,7 @@
     "unreleased": false,
     "id": "arachnalchemy-mastery",
     "description": "Max out your Arachnalchemy training with Riadne!",
-    "requirements": "Completion of Arachnalchemy Training (Mutagen U)",
+    "requirements": "Completion of  Arachnalchemy Training (Mutagen U)",
     "daRequired": true,
     "howToObtain": [
       {
@@ -312,10 +314,10 @@
         "isPrimary": true
       }
     ],
-    "tags": [],
-    "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/ArachnalchemyMastery.png",
-    "notes": "Completion of this quest unlocks the Arachnalchemy Lab shop and the Arachnalchemy interface.",
-    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/ArachnalchemyMastery.png"
+    "tags": [
+      "skills"
+    ],
+    "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/ArachnalchemyMastery.png"
   },
   {
     "name": "Arr' Captain's Orders",
@@ -333,7 +335,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  Red Betty's Spell"
+        "instruction": "Completion of Red Betty's Spell"
       }
     ],
     "forumLinks": [
@@ -344,11 +346,11 @@
       }
     ],
     "tags": [
-      "quests-badges"
+      "book-1-2",
+      "book-1"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/Arr'Captain'sOrders.png",
-    "notes": "Badge's art was updated on  July 27th, 2024, replacing its  old appearance.",
-    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Arr%27Captain%27sOrders.png"
+    "notes": "Badge's art was updated on  July 27th, 2024, replacing its  old appearance."
   },
   {
     "name": "Asander's Freedom",
@@ -357,7 +359,7 @@
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20703146",
     "category": "quest-completion",
     "subcategory": "Misc",
-    "retired": false,
+    "retired": true,
     "unreleased": false,
     "id": "asander-s-freedom",
     "description": "Free Asander's ghost in Blackwyn Tomb!",
@@ -366,7 +368,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Enter  Blackwyn Tomb, find Asander and talk to him"
+        "instruction": "Enter Blackwyn Tomb, find Asander and talk to him"
       }
     ],
     "forumLinks": [
@@ -377,7 +379,7 @@
       }
     ],
     "tags": [
-      "quest-badges"
+      "misc"
     ],
     "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/AsandersFreedom.png",
     "notes": "Badge was retired on  July 19th, 2024."
@@ -393,7 +395,7 @@
     "unreleased": false,
     "id": "ascended-chickencow",
     "description": "Own the Ascended ChickenCowLord Armor!",
-    "requirements": "Own Ascended ChickenCow Armor (D-Amulet) OR Ascended ChickenCow Armor (D-Coins)",
+    "requirements": "Own  Ascended ChickenCow Armor (D-Coins)",
     "daRequired": true,
     "howToObtain": [
       {
@@ -414,7 +416,7 @@
       }
     ],
     "tags": [
-      "classes-badges"
+      "special-classes"
     ],
     "forumImageUrl": "https://i.imgur.com/7scNAzM.png"
   },
@@ -434,7 +436,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  The Exaltia Tower: The Apex"
+        "instruction": "Completion of The Exaltia Tower: The Apex"
       }
     ],
     "forumLinks": [
@@ -445,7 +447,7 @@
       }
     ],
     "tags": [
-      "challenges-badges"
+      "arena-challenges"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/Ascension.png"
   },
@@ -476,7 +478,7 @@
       }
     ],
     "tags": [
-      "challenges-badges"
+      "arena-challenges"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/Asynchronized.png",
     "notes": "Badge's art was added on  July 27th, 2024."
@@ -497,7 +499,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  The Harbinger"
+        "instruction": "Completion of The Harbinger"
       }
     ],
     "forumLinks": [
@@ -508,7 +510,8 @@
       }
     ],
     "tags": [
-      "quests-badges"
+      "book-1-2",
+      "book-1"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/AvatarEnder.png",
     "notes": "Badge's art was updated on  July 19th, 2024, replacing its  old appearance. • Quest initially required completion of  Wargoth Approaches before being replaced by  The Harbinger on  April 8th, 2025."
@@ -529,7 +532,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  The Hatching /  Dragon Hatching"
+        "instruction": "Completion of The Hatching / Dragon Hatching"
       }
     ],
     "forumLinks": [
@@ -540,7 +543,8 @@
       }
     ],
     "tags": [
-      "quests-badges"
+      "early-days",
+      "early-game"
     ],
     "forumImageUrl": "http://i.imgur.com/1OynO.png"
   },
@@ -560,7 +564,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  Bachelor Party"
+        "instruction": "Completion of Bachelor Party"
       }
     ],
     "forumLinks": [
@@ -571,7 +575,7 @@
       }
     ],
     "tags": [
-      "other-badges"
+      "hero-s-heart-day"
     ],
     "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/BachelorPAR-TAY.png"
   },
@@ -591,7 +595,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  Plushie Fury"
+        "instruction": "Completion of Plushie Fury"
       }
     ],
     "forumLinks": [
@@ -602,7 +606,7 @@
       }
     ],
     "tags": [
-      "other-badges"
+      "frostval"
     ],
     "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/BadToys.jpg"
   },
@@ -622,7 +626,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Fully trained either  Warrior,  Mage, or  Rogue."
+        "instruction": "Fully trained either Warrior, Mage, or Rogue."
       }
     ],
     "forumLinks": [
@@ -633,7 +637,7 @@
       }
     ],
     "tags": [
-      "classes-badges"
+      "trained-classes"
     ],
     "forumImageUrl": "http://i.imgur.com/KtzcN.png"
   },
@@ -653,7 +657,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Own at least 7,500  Defender's Medal"
+        "instruction": "Own at least 7,500 Defender's Medal"
       }
     ],
     "forumLinks": [
@@ -664,7 +668,7 @@
       }
     ],
     "tags": [
-      "other-badges"
+      "warmonger"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/BattleHewnWarmonger.png",
     "notes": "Badge was initially conceptualized as defeating 10,000 waves since  September 16th, 2012. • Badge was made functional based on how many  Defender's Medal are owned by the player on  February 28th, 2025."
@@ -685,7 +689,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Reach Rank 35 in Blacksmithing at  Yulgar's Forge"
+        "instruction": "Reach Rank 35 in Blacksmithing at Yulgar's Forge"
       }
     ],
     "forumLinks": [
@@ -696,7 +700,7 @@
       }
     ],
     "tags": [
-      "challenges-badges"
+      "skills"
     ],
     "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/BlacksmithMastery.png"
   },
@@ -716,7 +720,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  Blood Feud"
+        "instruction": "Completion of Blood Feud"
       }
     ],
     "forumLinks": [
@@ -727,7 +731,7 @@
       }
     ],
     "tags": [
-      "quests-badges"
+      "side-quests"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/Blood&Roses.png",
     "notes": "Badge's art was added on  July 27th, 2024."
@@ -739,7 +743,7 @@
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20703227",
     "category": "quest-completion",
     "subcategory": "Misc",
-    "retired": false,
+    "retired": true,
     "unreleased": false,
     "id": "breaking-awe",
     "description": "Help Valencia hide the Blade of Awe!",
@@ -748,7 +752,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  Hidden Blades's Introduction cutscene and  Entropic Earth Boss"
+        "instruction": "Completion of Hidden Blades's Introduction cutscene and Entropic Earth Boss"
       }
     ],
     "forumLinks": [
@@ -759,7 +763,7 @@
       }
     ],
     "tags": [
-      "quest-badges"
+      "misc"
     ],
     "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/BreakingAwe.png",
     "notes": "Players must completed these in order:  Hidden Blades's Introduction cutscene and  Entropic Earth Boss. • Badge was retired on  July 19th, 2024."
@@ -780,7 +784,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  Epilogue"
+        "instruction": "Completion of Epilogue"
       }
     ],
     "forumLinks": [
@@ -791,7 +795,8 @@
       }
     ],
     "tags": [
-      "quests-badges"
+      "book-1-2",
+      "book-1"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/BurningRevenge.png",
     "notes": "Badge's art was updated on  July 19th, 2024, replacing its  old appearance."
@@ -812,7 +817,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  Calamity"
+        "instruction": "Completion of Calamity"
       }
     ],
     "forumLinks": [
@@ -823,7 +828,7 @@
       }
     ],
     "tags": [
-      "quests-badges"
+      "side-quests"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/Calamity.png",
     "notes": "Badge's art was added on  July 27th, 2024."
@@ -844,7 +849,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  Carnax (Extreme)"
+        "instruction": "Completion of Carnax (Extreme)"
       }
     ],
     "forumLinks": [
@@ -855,7 +860,7 @@
       }
     ],
     "tags": [
-      "challenges-badges"
+      "arena-challenges"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/CARNAX.png"
   },
@@ -875,7 +880,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  Catastrophic Candy"
+        "instruction": "Completion of Catastrophic Candy"
       }
     ],
     "forumLinks": [
@@ -886,7 +891,7 @@
       }
     ],
     "tags": [
-      "other-badges"
+      "mogloween"
     ],
     "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/CatastrophicCandy.jpg"
   },
@@ -906,7 +911,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Own  Parallel Chaos Amulet"
+        "instruction": "Own Parallel Chaos Amulet"
       }
     ],
     "forumLinks": [
@@ -917,7 +922,7 @@
       }
     ],
     "tags": [
-      "challenges-badges"
+      "arena-challenges"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/ChaosSlayer.png",
     "notes": "Badge's art was added on  July 27th, 2024."
@@ -938,7 +943,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Own  Chaosweaver Armor"
+        "instruction": "Own Chaosweaver Armor"
       }
     ],
     "forumLinks": [
@@ -949,7 +954,7 @@
       }
     ],
     "tags": [
-      "classes-badges"
+      "special-classes"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/ChaosWeaver.png",
     "notes": "Badge's art was added on  July 27th, 2024."
@@ -970,7 +975,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  Ice Queen"
+        "instruction": "Completion of Ice Queen"
       }
     ],
     "forumLinks": [
@@ -981,11 +986,11 @@
       }
     ],
     "tags": [
-      "quests-badges"
+      "book-1-2",
+      "book-1"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/ColdasIce.png",
-    "notes": "Badge's art was updated on  July 27th, 2024, replacing its  old appearance.",
-    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/ColdasIce.png"
+    "notes": "Badge's art was updated on  July 27th, 2024, replacing its  old appearance."
   },
   {
     "name": "Confront Sek-Duat",
@@ -1003,7 +1008,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  Sek-Duat Lives Again"
+        "instruction": "Completion of Sek-Duat Lives Again"
       }
     ],
     "forumLinks": [
@@ -1014,7 +1019,8 @@
       }
     ],
     "tags": [
-      "quests-badges"
+      "book-1-2",
+      "book-1"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/ConfrontSek-Duat.png",
     "notes": "Badge's art was updated on  July 19th, 2024, replacing its  old appearance."
@@ -1035,7 +1041,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  Convergence (Part 2)"
+        "instruction": "Completion of Convergence (Part 2)"
       }
     ],
     "forumLinks": [
@@ -1046,7 +1052,7 @@
       }
     ],
     "tags": [
-      "quests-badges"
+      "book-3"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/Convergence.png",
     "notes": "Badge's art was added on  July 27th, 2024."
@@ -1067,7 +1073,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Own  Musical Cookie Box"
+        "instruction": "Own Musical Cookie Box"
       }
     ],
     "forumLinks": [
@@ -1078,7 +1084,7 @@
       }
     ],
     "tags": [
-      "other-badges"
+      "misc"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/CookieSong!.png"
   },
@@ -1098,7 +1104,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  Breaking Crystal"
+        "instruction": "Completion of Breaking Crystal"
       }
     ],
     "forumLinks": [
@@ -1109,7 +1115,8 @@
       }
     ],
     "tags": [
-      "quests-badges"
+      "book-1-2",
+      "book-1"
     ],
     "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/CrystalBreaker.png",
     "notes": "Badge previously have the text: Break Jaania free from her icy prison!"
@@ -1130,7 +1137,8 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  Tiny Terrors In Town!"
+        "instruction": "Completion of Tiny Terrors In Town!",
+        "daRequired": true
       }
     ],
     "forumLinks": [
@@ -1141,7 +1149,7 @@
       }
     ],
     "tags": [
-      "quests-badges"
+      "side-quests"
     ],
     "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/CutestLegionEVER.jpg"
   },
@@ -1161,7 +1169,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Must have finished the story of  DeathKnight by completing the quest 11 times."
+        "instruction": "Must have finished the story of DeathKnight by completing the quest 11 times."
       }
     ],
     "forumLinks": [
@@ -1172,7 +1180,8 @@
       }
     ],
     "tags": [
-      "quests-badges"
+      "early-days",
+      "early-game"
     ],
     "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/DeathofaKnight.png"
   },
@@ -1192,7 +1201,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "A fully trained  DeathKnight"
+        "instruction": "A fully trained DeathKnight"
       }
     ],
     "forumLinks": [
@@ -1203,7 +1212,7 @@
       }
     ],
     "tags": [
-      "classes-badges"
+      "trained-classes"
     ],
     "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/DeathKnight.png"
   },
@@ -1223,7 +1232,8 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Own  DoomKnight Armor or  DoomKnight Variant One"
+        "instruction": "Own DoomKnight Armor or DoomKnight Variant One",
+        "daRequired": true
       }
     ],
     "forumLinks": [
@@ -1234,7 +1244,7 @@
       }
     ],
     "tags": [
-      "classes-badges"
+      "special-classes"
     ],
     "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/DoomKnight.jpg"
   },
@@ -1254,7 +1264,8 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Catch all 40 fish at  Doomwood Dock"
+        "instruction": "Catch all 40 fish at Doomwood Dock",
+        "daRequired": true
       }
     ],
     "forumLinks": [
@@ -1265,7 +1276,7 @@
       }
     ],
     "tags": [
-      "challenges-badges"
+      "skills"
     ],
     "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/DoomWoodFishing.png"
   },
@@ -1285,7 +1296,8 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Catch all 20 fish at  Dracolich Fishing (Books 1 and 2) and  Dracolich Fishing (Book 3)"
+        "instruction": "Catch all 20 fish at Dracolich Fishing (Books 1 and 2) and Dracolich Fishing (Book 3)",
+        "daRequired": true
       }
     ],
     "forumLinks": [
@@ -1296,7 +1308,7 @@
       }
     ],
     "tags": [
-      "challenges-badges",
+      "skills",
       "book-3"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/DracolichFishing.png",
@@ -1318,7 +1330,8 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  Baby Steps"
+        "instruction": "Completion of Baby Steps",
+        "daRequired": true
       }
     ],
     "forumLinks": [
@@ -1329,7 +1342,8 @@
       }
     ],
     "tags": [
-      "quests-badges"
+      "early-days",
+      "early-game"
     ],
     "forumImageUrl": "http://i.imgur.com/drfpv.png"
   },
@@ -1349,7 +1363,8 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "A fully trained  DragonLord"
+        "instruction": "A fully trained DragonLord",
+        "daRequired": true
       }
     ],
     "forumLinks": [
@@ -1360,7 +1375,7 @@
       }
     ],
     "tags": [
-      "classes-badges"
+      "trained-classes"
     ],
     "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/DragonLord.png"
   },
@@ -1380,7 +1395,8 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "A fully trained  DragonRider"
+        "instruction": "A fully trained DragonRider",
+        "daRequired": true
       }
     ],
     "forumLinks": [
@@ -1391,7 +1407,7 @@
       }
     ],
     "tags": [
-      "classes-badges"
+      "trained-classes"
     ],
     "forumImageUrl": "http://i.imgur.com/pqhg8.png"
   },
@@ -1411,7 +1427,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "A fully trained  DragonSlayer"
+        "instruction": "A fully trained DragonSlayer"
       }
     ],
     "forumLinks": [
@@ -1422,7 +1438,7 @@
       }
     ],
     "tags": [
-      "classes-badges"
+      "trained-classes"
     ],
     "forumImageUrl": "https://i.imgur.com/Dake9wd.png"
   },
@@ -1442,7 +1458,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Select 'YES!!!!' option from  Warlic in  Warlic's Zone / Completion of  Dragon Hatching"
+        "instruction": "Select 'YES!!!!' option from Warlic in Warlic's Zone / Completion of Dragon Hatching"
       }
     ],
     "forumLinks": [
@@ -1453,7 +1469,8 @@
       }
     ],
     "tags": [
-      "quests-badges"
+      "early-days",
+      "early-game"
     ],
     "forumImageUrl": "https://i.imgur.com/IYkIT3U.png"
   },
@@ -1464,7 +1481,7 @@
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20741782",
     "category": "quest-completion",
     "subcategory": "Misc",
-    "retired": false,
+    "retired": true,
     "unreleased": false,
     "id": "egg-stir-min-ate",
     "description": "Defeat the infamous Doctor When!",
@@ -1473,7 +1490,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  When"
+        "instruction": "Completion of When"
       }
     ],
     "forumLinks": [
@@ -1484,7 +1501,7 @@
       }
     ],
     "tags": [
-      "quest-badges"
+      "misc"
     ],
     "forumImageUrl": "https://i.imgur.com/A53SsST.jpg",
     "notes": "Badge was retired on  July 19th, 2024."
@@ -1505,7 +1522,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  The Final Showdown"
+        "instruction": "Completion of The Final Showdown"
       }
     ],
     "forumLinks": [
@@ -1516,7 +1533,7 @@
       }
     ],
     "tags": [
-      "quests-badges"
+      "side-quests"
     ],
     "forumImageUrl": "http://i.imgur.com/4fbAHcS.png"
   },
@@ -1536,7 +1553,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  Hidden Blades's Introduction cutscene and  Entropic Earth Boss"
+        "instruction": "Completion of Hidden Blades's Introduction cutscene and Entropic Earth Boss"
       }
     ],
     "forumLinks": [
@@ -1547,7 +1564,8 @@
       }
     ],
     "tags": [
-      "quests-badges"
+      "book-1-2",
+      "book-1"
     ],
     "forumImageUrl": "http://i.imgur.com/Wb2KWvB.png",
     "notes": "Players must complete these in order:  Hidden Blades's Introduction cutscene and  Entropic Earth Boss."
@@ -1568,7 +1586,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Own  enTropy Armor"
+        "instruction": "Own enTropy Armor"
       }
     ],
     "forumLinks": [
@@ -1579,7 +1597,7 @@
       }
     ],
     "tags": [
-      "classes-badges"
+      "special-classes"
     ],
     "forumImageUrl": "https://i.imgur.com/eqyDbn3.jpg"
   },
@@ -1599,7 +1617,16 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Own  Evolved ChickenCow Armor (D-Coins) or  Ascended ChickenCow Armor (D-Coins)"
+        "instruction": "Own Evolved ChickenCow Armor (D-Amulet) or Ascended ChickenCow Armor (D-Amulet)",
+        "daRequired": true
+      },
+      {
+        "order": 2,
+        "instruction": "Own Evolved ChickenCow Armor (D-Amulet/D-Coins)"
+      },
+      {
+        "order": 3,
+        "instruction": "Own Evolved ChickenCow Armor (D-Coins) or Ascended ChickenCow Armor (D-Coins)"
       }
     ],
     "forumLinks": [
@@ -1610,7 +1637,7 @@
       }
     ],
     "tags": [
-      "classes-badges"
+      "special-classes"
     ],
     "forumImageUrl": "https://i.imgur.com/k3XY39O.png"
   },
@@ -1621,7 +1648,7 @@
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20707694",
     "category": "collection",
     "subcategory": "Misc",
-    "retired": false,
+    "retired": true,
     "unreleased": false,
     "id": "evolved-dragonlord",
     "description": "Fully trained Evolved DragonLord Armor in Sunbreeze Grove!",
@@ -1630,7 +1657,8 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Upgrade  DragonLord to Evolved from  Lady Celestia /  Elysia in  Sunbreeze Grove"
+        "instruction": "Upgrade DragonLord to Evolved from Lady Celestia / Elysia in Sunbreeze Grove",
+        "daRequired": true
       }
     ],
     "forumLinks": [
@@ -1641,7 +1669,7 @@
       }
     ],
     "tags": [
-      "armor-badges"
+      "misc"
     ],
     "forumImageUrl": "https://i.imgur.com/N8FNdA5.png",
     "notes": "Badge was retired on  July 19th, 2024."
@@ -1662,7 +1690,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "A fully trained  Evolved PumpkinLord"
+        "instruction": "A fully trained Evolved PumpkinLord"
       }
     ],
     "forumLinks": [
@@ -1673,7 +1701,7 @@
       }
     ],
     "tags": [
-      "classes-badges"
+      "trained-classes"
     ],
     "forumImageUrl": "https://i.imgur.com/8AaVvov.png"
   },
@@ -1693,7 +1721,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  CyseRedux"
+        "instruction": "Completion of CyseRedux"
       }
     ],
     "forumLinks": [
@@ -1704,7 +1732,7 @@
       }
     ],
     "tags": [
-      "quests-badges"
+      "side-quests"
     ],
     "forumImageUrl": "https://i.imgur.com/wCLLkTx.png"
   },
@@ -1724,7 +1752,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  Rising Fire (Intro)"
+        "instruction": "Completion of Rising Fire (Intro)"
       }
     ],
     "forumLinks": [
@@ -1735,7 +1763,8 @@
       }
     ],
     "tags": [
-      "quests-badges"
+      "book-1-2",
+      "book-1"
     ],
     "forumImageUrl": "https://i.imgur.com/AoIwK3S.jpg",
     "notes": "Badge initially required completion of  Rising Fire (Intro) before being reimagined on  March 28th, 2025."
@@ -1756,7 +1785,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  Epilogue: Overcome"
+        "instruction": "Completion of Epilogue: Overcome"
       }
     ],
     "forumLinks": [
@@ -1767,7 +1796,7 @@
       }
     ],
     "tags": [
-      "challenges-badges"
+      "side-quests"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/FearEngine.png",
     "notes": "Badge was initially made and nonfunctional on  July 19th, 2024 before being made unlockable on  February 28th, 2025."
@@ -1788,7 +1817,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Own at least 3,000  Defender's Medal"
+        "instruction": "Own at least 3,000 Defender's Medal"
       }
     ],
     "forumLinks": [
@@ -1799,7 +1828,7 @@
       }
     ],
     "tags": [
-      "other-badges"
+      "warmonger"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/FierceWarmonger.png",
     "notes": "Badge was initially conceptualized as defeating 5,000 waves since  September 16th, 2012. • Badge was made functional based on how many  Defender's Medal are owned by the player on  February 28th, 2025."
@@ -1820,7 +1849,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  Book One Epilogue"
+        "instruction": "Completion of Book One Epilogue"
       }
     ],
     "forumLinks": [
@@ -1831,7 +1860,8 @@
       }
     ],
     "tags": [
-      "quests-badges"
+      "book-1-2",
+      "book-1"
     ],
     "forumImageUrl": "https://i.imgur.com/WUrM9wr.png"
   },
@@ -1851,7 +1881,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  The Merge"
+        "instruction": "Completion of The Merge"
       }
     ],
     "forumLinks": [
@@ -1862,7 +1892,8 @@
       }
     ],
     "tags": [
-      "quests-badges"
+      "book-1-2",
+      "book-1"
     ],
     "forumImageUrl": "https://i.imgur.com/SYy5hha.png",
     "notes": "Badge previously have the text: Defeat Titan Wargoth in theChapter 2 Finale."
@@ -1883,7 +1914,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  The End of the Beginning"
+        "instruction": "Completion of The End of the Beginning"
       }
     ],
     "forumLinks": [
@@ -1894,7 +1925,7 @@
       }
     ],
     "tags": [
-      "quests-badges"
+      "side-quests"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/FirstWeaver.png",
     "notes": "Badge's art was added on  July 27th, 2024."
@@ -1915,7 +1946,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Catch all 20 fish at  Falconreach Dock"
+        "instruction": "Catch all 20 fish at Falconreach Dock"
       }
     ],
     "forumLinks": [
@@ -1926,7 +1957,7 @@
       }
     ],
     "tags": [
-      "challenges-badges",
+      "skills",
       "falconreach"
     ],
     "forumImageUrl": "https://i.imgur.com/56XlFHu.png"
@@ -1947,7 +1978,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  Circuit City"
+        "instruction": "Completion of Circuit City"
       }
     ],
     "forumLinks": [
@@ -1958,7 +1989,7 @@
       }
     ],
     "tags": [
-      "quests-badges"
+      "side-quests"
     ],
     "forumImageUrl": "https://i.imgur.com/k5reS78.png"
   },
@@ -1978,7 +2009,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Own at least 1,000  Defender's Medal"
+        "instruction": "Own at least 1,000 Defender's Medal"
       }
     ],
     "forumLinks": [
@@ -1989,7 +2020,7 @@
       }
     ],
     "tags": [
-      "other-badges"
+      "warmonger"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/FreshWarmonger.png",
     "notes": "Badge was initially conceptualized as defeating 1,000 waves since  September 16th, 2012. • Badge was made functional based on how many  Defender's Medal are owned by the player on  February 28th, 2025."
@@ -2010,7 +2041,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "A fully trained  Frost Moglin"
+        "instruction": "A fully trained Frost Moglin"
       }
     ],
     "forumLinks": [
@@ -2021,7 +2052,7 @@
       }
     ],
     "tags": [
-      "classes-badges"
+      "trained-classes"
     ],
     "forumImageUrl": "https://i.imgur.com/jvgb4bU.jpg"
   },
@@ -2041,7 +2072,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  Wicked Queen"
+        "instruction": "Completion of Wicked Queen"
       }
     ],
     "forumLinks": [
@@ -2052,7 +2083,7 @@
       }
     ],
     "tags": [
-      "other-badges"
+      "frostval"
     ],
     "forumImageUrl": "https://i.imgur.com/jo59QYP.jpg"
   },
@@ -2072,7 +2103,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  Twin Tides"
+        "instruction": "Completion of Twin Tides"
       }
     ],
     "forumLinks": [
@@ -2083,7 +2114,7 @@
       }
     ],
     "tags": [
-      "quests-badges"
+      "book-3"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/FungusAmongUs.png",
     "notes": "Badge's art was added on  July 27th, 2024."
@@ -2104,7 +2135,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  Caitiff"
+        "instruction": "Completion of Caitiff"
       }
     ],
     "forumLinks": [
@@ -2115,7 +2146,7 @@
       }
     ],
     "tags": [
-      "quests-badges"
+      "side-quests"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/GatheringShadows.png",
     "notes": "Badge's art was added on  July 27th, 2024."
@@ -2136,7 +2167,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  We're Gonna Need More Fire..."
+        "instruction": "Completion of We're Gonna Need More Fire..."
       }
     ],
     "forumLinks": [
@@ -2147,7 +2178,7 @@
       }
     ],
     "tags": [
-      "other-badges"
+      "frostval"
     ],
     "forumImageUrl": "https://i.imgur.com/ltKptRY.jpg"
   },
@@ -2167,7 +2198,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Reach rank 6 in  Cooking"
+        "instruction": "Reach rank 6 in Cooking"
       }
     ],
     "forumLinks": [
@@ -2178,7 +2209,7 @@
       }
     ],
     "tags": [
-      "challenges-badges"
+      "skills"
     ],
     "forumImageUrl": "https://i.imgur.com/FPSIScw.png",
     "notes": "As of  July 19th, 2024, this badge is nonfunctional."
@@ -2199,7 +2230,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Own  GPS (2.0) Armor"
+        "instruction": "Own GPS (2.0) Armor"
       }
     ],
     "forumLinks": [
@@ -2210,7 +2241,7 @@
       }
     ],
     "tags": [
-      "classes-badges"
+      "special-classes"
     ],
     "forumImageUrl": "https://i.imgur.com/7laK2Kz.jpg"
   },
@@ -2221,7 +2252,7 @@
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20702374",
     "category": "quest-completion",
     "subcategory": "Misc",
-    "retired": false,
+    "retired": true,
     "unreleased": false,
     "id": "grrrberus",
     "description": "Fight Grrrberus to keep Spots the two-headed puppy!",
@@ -2230,7 +2261,8 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  Grrberus' Revenge"
+        "instruction": "Completion of Grrberus' Revenge",
+        "daRequired": true
       }
     ],
     "forumLinks": [
@@ -2241,7 +2273,7 @@
       }
     ],
     "tags": [
-      "quest-badges"
+      "misc"
     ],
     "forumImageUrl": "https://i.imgur.com/u5dvuxp.png",
     "notes": "Badge was retired on  July 19th, 2024."
@@ -2262,7 +2294,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "A fully trained  Guardian"
+        "instruction": "A fully trained Guardian"
       }
     ],
     "forumLinks": [
@@ -2273,7 +2305,7 @@
       }
     ],
     "tags": [
-      "classes-badges"
+      "special-classes"
     ],
     "forumImageUrl": "https://i.imgur.com/sM7RbT7.png"
   },
@@ -2293,7 +2325,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Reach Skill Level 40 in Health Alchemy at  Reens' Health Potion Shop"
+        "instruction": "Reach Skill Level 40 in Health Alchemy at Reens' Health Potion Shop"
       }
     ],
     "forumLinks": [
@@ -2304,7 +2336,7 @@
       }
     ],
     "tags": [
-      "challenges-badges"
+      "skills"
     ],
     "forumImageUrl": "https://i.imgur.com/pxosrFi.png"
   },
@@ -2324,7 +2356,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  Deepest Neverglades"
+        "instruction": "Completion of Deepest Neverglades"
       }
     ],
     "forumLinks": [
@@ -2335,7 +2367,7 @@
       }
     ],
     "tags": [
-      "quests-badges"
+      "side-quests"
     ],
     "forumImageUrl": "https://i.imgur.com/9DRs2Yp.png",
     "notes": "Quest previously required completion of  Deepest Neverglades."
@@ -2356,7 +2388,8 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Own a house. There's a list of all the houses in the game  here."
+        "instruction": "Own a house. There's a list of all the houses in the game here.",
+        "daRequired": true
       }
     ],
     "forumLinks": [
@@ -2367,7 +2400,7 @@
       }
     ],
     "tags": [
-      "other-badges"
+      "misc"
     ],
     "forumImageUrl": "https://i.imgur.com/o8sxUQD.png"
   },
@@ -2387,7 +2420,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  Goose Dragon, the Untitled"
+        "instruction": "Completion of Goose Dragon, the Untitled"
       }
     ],
     "forumLinks": [
@@ -2398,7 +2431,7 @@
       }
     ],
     "tags": [
-      "challenges-badges"
+      "arena-challenges"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/HONK!.png"
   },
@@ -2418,7 +2451,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of the 'Pandora (Extreme)' option in  Pandora's Gauntlet"
+        "instruction": "Completion of the 'Pandora (Extreme)' option in Pandora's Gauntlet"
       }
     ],
     "forumLinks": [
@@ -2429,7 +2462,7 @@
       }
     ],
     "tags": [
-      "challenges-badges"
+      "arena-challenges"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/Hope.png",
     "notes": "This badge was also awarded to players who completed the previous no-heal challenge during Pandora's Gauntlet prior to the badge's release."
@@ -2450,7 +2483,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  Severed Hope"
+        "instruction": "Completion of Severed Hope"
       }
     ],
     "forumLinks": [
@@ -2461,7 +2494,7 @@
       }
     ],
     "tags": [
-      "quests-badges"
+      "book-3"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/Hopeless.png",
     "notes": "Badge's art was added on  July 27th, 2024."
@@ -2493,7 +2526,8 @@
       }
     ],
     "tags": [
-      "quests-badges"
+      "early-days",
+      "early-game"
     ],
     "forumImageUrl": "https://i.imgur.com/EqgEfdG.png"
   },
@@ -2513,7 +2547,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  Hydra Boss (Books 1 and 2)"
+        "instruction": "Completion of Hydra Boss (Books 1 and 2)"
       }
     ],
     "forumLinks": [
@@ -2524,7 +2558,8 @@
       }
     ],
     "tags": [
-      "quests-badges"
+      "early-days",
+      "early-game"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/HydraSlayer.png",
     "notes": "Badge was previously called 'Oaklore Navigation' and initially required the completion of  Ambush in the Bushes; this was modified on  July 24th, 2024. • Badge's art was updated on  July 27th, 2024, replacing its  old appearance. • Old Appearance • DemonicDarkwraith for image and other information. • pjc for Oaklore Navigation image."
@@ -2536,7 +2571,7 @@
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20703068",
     "category": "quest-completion",
     "subcategory": "Misc",
-    "retired": false,
+    "retired": true,
     "unreleased": false,
     "id": "i-spy",
     "description": "Discover the Falconreach Spy!",
@@ -2545,7 +2580,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  Mission: Improbable"
+        "instruction": "Completion of Mission: Improbable"
       }
     ],
     "forumLinks": [
@@ -2556,7 +2591,7 @@
       }
     ],
     "tags": [
-      "quest-badges"
+      "misc"
     ],
     "forumImageUrl": "https://i.imgur.com/pTZ1GfM.png",
     "notes": "Badge was retired on  July 19th, 2024."
@@ -2577,7 +2612,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Own  Icebound Revenant Armor"
+        "instruction": "Own Icebound Revenant Armor"
       }
     ],
     "forumLinks": [
@@ -2588,7 +2623,7 @@
       }
     ],
     "tags": [
-      "classes-badges"
+      "special-classes"
     ],
     "forumImageUrl": "https://i.imgur.com/kMm5oq9.png"
   },
@@ -2608,7 +2643,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  Icemaster Yeti's cave"
+        "instruction": "Completion of Icemaster Yeti's cave"
       }
     ],
     "forumLinks": [
@@ -2619,7 +2654,7 @@
       }
     ],
     "tags": [
-      "other-badges"
+      "frostval"
     ],
     "forumImageUrl": "https://i.imgur.com/nwHFcU1.jpg"
   },
@@ -2630,7 +2665,7 @@
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20703217",
     "category": "quest-completion",
     "subcategory": "Misc",
-    "retired": false,
+    "retired": true,
     "unreleased": false,
     "id": "idle-heroes",
     "description": "Sing your way through Falconreach Idle!",
@@ -2639,7 +2674,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  Falconreach Idle! and  We now return to your show!"
+        "instruction": "Completion of Falconreach Idle! and We now return to your show!"
       }
     ],
     "forumLinks": [
@@ -2650,7 +2685,7 @@
       }
     ],
     "tags": [
-      "quest-badges",
+      "misc",
       "falconreach"
     ],
     "forumImageUrl": "https://i.imgur.com/N7tjICh.png",
@@ -2663,7 +2698,7 @@
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20702858",
     "category": "quest-completion",
     "subcategory": "Misc",
-    "retired": false,
+    "retired": true,
     "unreleased": false,
     "id": "information-on-sepulchure",
     "description": "Discover information about Sepulchure!",
@@ -2672,7 +2707,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of The  Temple Of The Four Winds"
+        "instruction": "Completion of The Temple Of The Four Winds"
       }
     ],
     "forumLinks": [
@@ -2683,7 +2718,7 @@
       }
     ],
     "tags": [
-      "quest-badges"
+      "misc"
     ],
     "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/InformationonSepulchure.png",
     "notes": "Badge was retired on  July 19th, 2024."
@@ -2704,7 +2739,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Turn in all 11 ingredients in  The List Turn In"
+        "instruction": "Turn in all 11 ingredients in The List Turn In"
       }
     ],
     "forumLinks": [
@@ -2715,7 +2750,7 @@
       }
     ],
     "tags": [
-      "other-badges"
+      "mogloween"
     ],
     "forumImageUrl": "http://i.imgur.com/MNATHBf.png"
   },
@@ -2735,7 +2770,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of the 999 Closet Locked Door in  Oaklore Keep"
+        "instruction": "Completion of the 999 Closet Locked Door in Oaklore Keep"
       }
     ],
     "forumLinks": [
@@ -2746,7 +2781,8 @@
       }
     ],
     "tags": [
-      "quests-badges",
+      "early-days",
+      "early-game",
       "oaklore"
     ],
     "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Locksmith.jpg"
@@ -2767,7 +2803,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  Rebirth"
+        "instruction": "Completion of Rebirth"
       }
     ],
     "forumLinks": [
@@ -2778,7 +2814,7 @@
       }
     ],
     "tags": [
-      "quests-badges"
+      "side-quests"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/Maleurous.png",
     "notes": "Badge's art was added on  July 27th, 2024."
@@ -2799,7 +2835,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Reach Skill Level 40 in Mana Alchemy at  Alina's Mana Potion Shop"
+        "instruction": "Reach Skill Level 40 in Mana Alchemy at Alina's Mana Potion Shop"
       }
     ],
     "forumLinks": [
@@ -2810,7 +2846,7 @@
       }
     ],
     "tags": [
-      "challenges-badges"
+      "skills"
     ],
     "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/ManaPotionMastery.png"
   },
@@ -2830,7 +2866,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  Captain Rolith's Revenge"
+        "instruction": "Completion of Captain Rolith's Revenge"
       }
     ],
     "forumLinks": [
@@ -2841,7 +2877,7 @@
       }
     ],
     "tags": [
-      "other-badges"
+      "frostval"
     ],
     "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/MerryTogsmas.jpg"
   },
@@ -2861,7 +2897,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Unlock all masks in  Mogloween Masks! (Chapter 1)"
+        "instruction": "Unlock all masks in Mogloween Masks! (Chapter 1)"
       }
     ],
     "forumLinks": [
@@ -2872,7 +2908,6 @@
       }
     ],
     "tags": [
-      "other-badges",
       "mogloween"
     ],
     "forumImageUrl": "http://i.imgur.com/ruFKa.png"
@@ -2893,7 +2928,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Unlock all masks in  Mogloween Masks! (Chapter 3)"
+        "instruction": "Unlock all masks in Mogloween Masks! (Chapter 3)"
       }
     ],
     "forumLinks": [
@@ -2904,7 +2939,6 @@
       }
     ],
     "tags": [
-      "other-badges",
       "mogloween"
     ],
     "forumImageUrl": "http://i.imgur.com/8clbV.png"
@@ -2925,7 +2959,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Unlock all masks in  Mogloween Masks! (Chapter 4)"
+        "instruction": "Unlock all masks in Mogloween Masks! (Chapter 4)"
       }
     ],
     "forumLinks": [
@@ -2936,7 +2970,6 @@
       }
     ],
     "tags": [
-      "other-badges",
       "mogloween"
     ],
     "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Mogloween09Masks.jpg"
@@ -2957,7 +2990,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Unlock all masks in  Mogloween Masks! (Chapter 5)"
+        "instruction": "Unlock all masks in Mogloween Masks! (Chapter 5)"
       }
     ],
     "forumLinks": [
@@ -2968,7 +3001,6 @@
       }
     ],
     "tags": [
-      "other-badges",
       "mogloween"
     ],
     "forumImageUrl": "http://i.imgur.com/SWnP0.png"
@@ -2989,7 +3021,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Unlock all masks in  Mogloween Masks! (Chapter 6)"
+        "instruction": "Unlock all masks in Mogloween Masks! (Chapter 6)"
       }
     ],
     "forumLinks": [
@@ -3000,7 +3032,6 @@
       }
     ],
     "tags": [
-      "other-badges",
       "mogloween"
     ],
     "forumImageUrl": "http://i.imgur.com/9Ixkf.png"
@@ -3021,7 +3052,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Unlock all masks in  Mogloween Masks! (Chapter 7)"
+        "instruction": "Unlock all masks in Mogloween Masks! (Chapter 7)"
       }
     ],
     "forumLinks": [
@@ -3032,7 +3063,6 @@
       }
     ],
     "tags": [
-      "other-badges",
       "mogloween"
     ],
     "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Mogloween12Masks.jpg"
@@ -3053,7 +3083,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Unlock all masks in  Mogloween Masks! (Chapter 8)"
+        "instruction": "Unlock all masks in Mogloween Masks! (Chapter 8)"
       }
     ],
     "forumLinks": [
@@ -3064,7 +3094,6 @@
       }
     ],
     "tags": [
-      "other-badges",
       "mogloween"
     ],
     "forumImageUrl": "http://i.imgur.com/USSx93y.png"
@@ -3085,7 +3114,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Unlock all masks in  Mogloween Masks! (Chapter 9)"
+        "instruction": "Unlock all masks in Mogloween Masks! (Chapter 9)"
       }
     ],
     "forumLinks": [
@@ -3096,7 +3125,6 @@
       }
     ],
     "tags": [
-      "other-badges",
       "mogloween"
     ],
     "forumImageUrl": "http://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Mogloween14Masks.png"
@@ -3117,7 +3145,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Unlock all masks in  Mogloween Masks! (Chapter 10)"
+        "instruction": "Unlock all masks in Mogloween Masks! (Chapter 10)"
       }
     ],
     "forumLinks": [
@@ -3128,7 +3156,6 @@
       }
     ],
     "tags": [
-      "other-badges",
       "mogloween"
     ],
     "forumImageUrl": "http://i.imgur.com/0SQCOPq.png"
@@ -3149,7 +3176,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  Burn It All!"
+        "instruction": "Completion of Burn It All!"
       }
     ],
     "forumLinks": [
@@ -3160,7 +3187,7 @@
       }
     ],
     "tags": [
-      "quests-badges"
+      "side-quests"
     ],
     "forumImageUrl": "http://i.imgur.com/Oj0jZ.png"
   },
@@ -3180,7 +3207,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  Bad Bananas"
+        "instruction": "Completion of Bad Bananas"
       }
     ],
     "forumLinks": [
@@ -3191,7 +3218,7 @@
       }
     ],
     "tags": [
-      "quests-badges"
+      "side-quests"
     ],
     "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/MonkeeBusiness.jpg"
   },
@@ -3211,7 +3238,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  Sneevil Boxopolis"
+        "instruction": "Completion of Sneevil Boxopolis"
       }
     ],
     "forumLinks": [
@@ -3222,7 +3249,8 @@
       }
     ],
     "tags": [
-      "quests-badges"
+      "early-days",
+      "early-game"
     ],
     "forumImageUrl": "http://i.imgur.com/IoOJ7.png"
   },
@@ -3242,7 +3270,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  You Never Asked"
+        "instruction": "Completion of You Never Asked"
       }
     ],
     "forumLinks": [
@@ -3253,7 +3281,7 @@
       }
     ],
     "tags": [
-      "other-badges"
+      "frostval"
     ],
     "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/NaughtyList.jpg"
   },
@@ -3273,7 +3301,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "A fully trained  Necromancer"
+        "instruction": "A fully trained Necromancer"
       }
     ],
     "forumLinks": [
@@ -3284,7 +3312,7 @@
       }
     ],
     "tags": [
-      "classes-badges"
+      "trained-classes"
     ],
     "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Necromancer.png"
   },
@@ -3304,7 +3332,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  Leaving the Nest"
+        "instruction": "Completion of Leaving the Nest"
       }
     ],
     "forumLinks": [
@@ -3315,7 +3343,7 @@
       }
     ],
     "tags": [
-      "quests-badges"
+      "side-quests"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/NestDefended.png",
     "notes": "Badge's art was added on  July 27th, 2024."
@@ -3336,7 +3364,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "A fully trained  Ninja"
+        "instruction": "A fully trained Ninja"
       }
     ],
     "forumLinks": [
@@ -3347,7 +3375,7 @@
       }
     ],
     "tags": [
-      "classes-badges"
+      "trained-classes"
     ],
     "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Ninja.png"
   },
@@ -3367,7 +3395,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  Victoria's Secret"
+        "instruction": "Completion of Victoria's Secret"
       }
     ],
     "forumLinks": [
@@ -3378,7 +3406,7 @@
       }
     ],
     "tags": [
-      "quests-badges"
+      "side-quests"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/NoseforTrouble.png",
     "notes": "Badge's art was added on  July 27th, 2024."
@@ -3399,7 +3427,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  Memory-Demons"
+        "instruction": "Completion of Memory-Demons"
       }
     ],
     "forumLinks": [
@@ -3410,7 +3438,8 @@
       }
     ],
     "tags": [
-      "quests-badges"
+      "book-1-2",
+      "book-1"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/OrbExtractor.png",
     "notes": "Badge's art was updated on  July 27th, 2024, replacing its  old appearance."
@@ -3431,7 +3460,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "A fully trained  Paladin"
+        "instruction": "A fully trained Paladin"
       }
     ],
     "forumLinks": [
@@ -3442,7 +3471,7 @@
       }
     ],
     "tags": [
-      "classes-badges"
+      "trained-classes"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/Paladin.png",
     "notes": "Badge's art was changed since its inception. • Old Appearance • Older Appearance"
@@ -3454,7 +3483,7 @@
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20702348",
     "category": "quest-completion",
     "subcategory": "Misc",
-    "retired": false,
+    "retired": true,
     "unreleased": false,
     "id": "party-on-olaf",
     "description": "DragonLords party with Olaf!",
@@ -3463,7 +3492,8 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  Olaf's Party"
+        "instruction": "Completion of Olaf's Party",
+        "daRequired": true
       }
     ],
     "forumLinks": [
@@ -3474,7 +3504,7 @@
       }
     ],
     "tags": [
-      "quest-badges"
+      "misc"
     ],
     "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/PartyOnOlaf.png",
     "notes": "Badge was retired on  July 19th, 2024."
@@ -3495,7 +3525,8 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  The Grinder's Paw"
+        "instruction": "Completion of The Grinder's Paw",
+        "daRequired": true
       }
     ],
     "forumLinks": [
@@ -3506,7 +3537,7 @@
       }
     ],
     "tags": [
-      "challenges-badges"
+      "skills"
     ],
     "forumImageUrl": "http://i.imgur.com/q1RPm.png"
   },
@@ -3526,7 +3557,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "A fully trained  Pirate"
+        "instruction": "A fully trained Pirate"
       }
     ],
     "forumLinks": [
@@ -3537,7 +3568,7 @@
       }
     ],
     "tags": [
-      "classes-badges"
+      "trained-classes"
     ],
     "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Pirate.png"
   },
@@ -3557,7 +3588,8 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  Primal Dragon Training"
+        "instruction": "Completion of Primal Dragon Training",
+        "daRequired": true
       }
     ],
     "forumLinks": [
@@ -3568,7 +3600,7 @@
       }
     ],
     "tags": [
-      "classes-badges"
+      "trained-classes"
     ],
     "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Primalized.png"
   },
@@ -3588,7 +3620,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  The Primordials"
+        "instruction": "Completion of The Primordials"
       }
     ],
     "forumLinks": [
@@ -3599,7 +3631,7 @@
       }
     ],
     "tags": [
-      "challenges-badges"
+      "arena-challenges"
     ],
     "forumImageUrl": "https://i.imgur.com/C3GtzHi.png"
   },
@@ -3619,7 +3651,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "A fully trained  PumpkinLord"
+        "instruction": "A fully trained PumpkinLord"
       }
     ],
     "forumLinks": [
@@ -3630,7 +3662,7 @@
       }
     ],
     "tags": [
-      "classes-badges"
+      "trained-classes"
     ],
     "forumImageUrl": "https://i.imgur.com/fqtkrPs.png"
   },
@@ -3650,7 +3682,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Get to PvP Rank 10 in  Aeris Battlespire"
+        "instruction": "Get to PvP Rank 10 in Aeris Battlespire"
       }
     ],
     "forumLinks": [
@@ -3661,7 +3693,7 @@
       }
     ],
     "tags": [
-      "other-badges"
+      "pvp"
     ],
     "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/PvPArenaFighter.png",
     "notes": "Badge was moved from Challenges Badges to Other Badges on  February 28th, 2025."
@@ -3682,7 +3714,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Get to PvP Rank 5 in  Aeris Battlespire"
+        "instruction": "Get to PvP Rank 5 in Aeris Battlespire"
       }
     ],
     "forumLinks": [
@@ -3693,7 +3725,7 @@
       }
     ],
     "tags": [
-      "other-badges"
+      "pvp"
     ],
     "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/PvPBrawler.png",
     "notes": "Badge was moved from Challenges Badges to Other Badges on  February 28th, 2025."
@@ -3714,7 +3746,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Get to PvP Rank 20 in  Aeris Battlespire"
+        "instruction": "Get to PvP Rank 20 in Aeris Battlespire"
       }
     ],
     "forumLinks": [
@@ -3725,7 +3757,7 @@
       }
     ],
     "tags": [
-      "other-badges"
+      "pvp"
     ],
     "forumImageUrl": "http://i.imgur.com/McAiaEa.png",
     "notes": "Badge was moved from Challenges Badges to Other Badges on  February 28th, 2025."
@@ -3746,7 +3778,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Get to PvP Rank 15 in  Aeris Battlespire"
+        "instruction": "Get to PvP Rank 15 in Aeris Battlespire"
       }
     ],
     "forumLinks": [
@@ -3757,7 +3789,7 @@
       }
     ],
     "tags": [
-      "other-badges"
+      "pvp"
     ],
     "forumImageUrl": "http://i.imgur.com/yYzhUKz.png",
     "notes": "Badge was moved from Challenges Badges to Other Badges on  February 28th, 2025."
@@ -3778,7 +3810,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Own  Pyromancer Armor"
+        "instruction": "Own Pyromancer Armor"
       }
     ],
     "forumLinks": [
@@ -3789,7 +3821,7 @@
       }
     ],
     "tags": [
-      "classes-badges"
+      "special-classes"
     ],
     "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Pyromancer.png"
   },
@@ -3809,7 +3841,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  Defeat Gananana!"
+        "instruction": "Completion of Defeat Gananana!"
       }
     ],
     "forumLinks": [
@@ -3820,7 +3852,7 @@
       }
     ],
     "tags": [
-      "quests-badges"
+      "side-quests"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/Quadforce.png",
     "notes": "Badge's art was added on  July 27th, 2024."
@@ -3832,7 +3864,7 @@
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20728042",
     "category": "misc",
     "subcategory": "Misc",
-    "retired": false,
+    "retired": true,
     "unreleased": false,
     "id": "quick-buy",
     "description": "Own any of the Limited Quantity Shop items!",
@@ -3841,7 +3873,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Own any  LQS weapon"
+        "instruction": "Own any LQS weapon"
       }
     ],
     "forumLinks": [
@@ -3852,7 +3884,7 @@
       }
     ],
     "tags": [
-      "other-badges"
+      "misc"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/QuickBuy.png",
     "notes": "Badge was retired on  February 28th, 2025."
@@ -3873,7 +3905,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "A fully trained  Ranger"
+        "instruction": "A fully trained Ranger"
       }
     ],
     "forumLinks": [
@@ -3884,7 +3916,7 @@
       }
     ],
     "tags": [
-      "classes-badges"
+      "trained-classes"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/Ranger.png",
     "notes": "Badge's art was updated on  July 19th, 2024, replacing its  old appearance."
@@ -3905,7 +3937,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  Resident Sneevil: Zemesis"
+        "instruction": "Completion of Resident Sneevil: Zemesis"
       }
     ],
     "forumLinks": [
@@ -3916,7 +3948,7 @@
       }
     ],
     "tags": [
-      "other-badges"
+      "mogloween"
     ],
     "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/ResidentSneevil.jpg"
   },
@@ -3936,7 +3968,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  The Obsidian Tomb"
+        "instruction": "Completion of The Obsidian Tomb"
       }
     ],
     "forumLinks": [
@@ -3947,7 +3979,7 @@
       }
     ],
     "tags": [
-      "quests-badges"
+      "book-3"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/SailoroftheSeas.png",
     "notes": "Badge's art was added on  July 27th, 2024."
@@ -3968,7 +4000,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  Sands of Eternity"
+        "instruction": "Completion of Sands of Eternity"
       }
     ],
     "forumLinks": [
@@ -3979,7 +4011,7 @@
       }
     ],
     "tags": [
-      "quests-badges"
+      "book-3"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/SandsofEternity.png",
     "notes": "Badge's art was added on  July 27th, 2024."
@@ -4000,7 +4032,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  The Secret Revealed"
+        "instruction": "Completion of The Secret Revealed"
       }
     ],
     "forumLinks": [
@@ -4011,7 +4043,7 @@
       }
     ],
     "tags": [
-      "quests-badges"
+      "side-quests"
     ],
     "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/SecretsofBacon.png"
   },
@@ -4031,7 +4063,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "A fully trained  ShadowHunter"
+        "instruction": "A fully trained ShadowHunter"
       }
     ],
     "forumLinks": [
@@ -4042,7 +4074,7 @@
       }
     ],
     "tags": [
-      "classes-badges"
+      "trained-classes"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/ShadowHunter.png",
     "notes": "Badge's art was updated on  February 28th, 2025, replacing its  old appearance."
@@ -4063,7 +4095,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  Ex Machina"
+        "instruction": "Completion of Ex Machina"
       }
     ],
     "forumLinks": [
@@ -4074,7 +4106,8 @@
       }
     ],
     "tags": [
-      "quests-badges"
+      "book-1-2",
+      "book-1"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/Shocking!.png",
     "notes": "Badge's art was updated on  July 27th, 2024, replacing its  old appearance."
@@ -4095,7 +4128,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  A Decisive Blow"
+        "instruction": "Completion of A Decisive Blow"
       }
     ],
     "forumLinks": [
@@ -4106,7 +4139,7 @@
       }
     ],
     "tags": [
-      "quests-badges"
+      "book-3"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/SiegeofHaven.png",
     "notes": "Badge's art was added on  July 27th, 2024."
@@ -4127,7 +4160,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "A fully trained  SoulWeaver"
+        "instruction": "A fully trained SoulWeaver"
       }
     ],
     "forumLinks": [
@@ -4138,7 +4171,7 @@
       }
     ],
     "tags": [
-      "classes-badges"
+      "trained-classes"
     ],
     "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/SoulWeaver.png"
   },
@@ -4158,7 +4191,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  Gnomenapped?!"
+        "instruction": "Completion of Gnomenapped?!"
       }
     ],
     "forumLinks": [
@@ -4169,7 +4202,7 @@
       }
     ],
     "tags": [
-      "quests-badges"
+      "side-quests"
     ],
     "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/SpecialDelivery.png"
   },
@@ -4189,7 +4222,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  Song in Our Hearts"
+        "instruction": "Completion of Song in Our Hearts"
       }
     ],
     "forumLinks": [
@@ -4200,9 +4233,9 @@
       }
     ],
     "tags": [
-      "quests-badges"
+      "book-3"
     ],
-    "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/Star",
+    "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/Star'sDescendant.png",
     "notes": "Badge's art was added on  July 27th, 2024."
   },
   {
@@ -4221,7 +4254,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  A Hero is Bored"
+        "instruction": "Completion of A Hero is Bored"
       }
     ],
     "forumLinks": [
@@ -4232,7 +4265,8 @@
       }
     ],
     "tags": [
-      "quests-badges"
+      "early-days",
+      "early-game"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/StartingOut.png",
     "notes": "Badge's art was added on  July 27th, 2024."
@@ -4253,7 +4287,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  Of Duty and Dragons"
+        "instruction": "Completion of Of Duty and Dragons"
       }
     ],
     "forumLinks": [
@@ -4264,7 +4298,7 @@
       }
     ],
     "tags": [
-      "quests-badges"
+      "book-3"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/StormintheNight.png",
     "notes": "Badge's art was added on  July 27th, 2024."
@@ -4285,7 +4319,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  Chilly and the Candy Factory"
+        "instruction": "Completion of Chilly and the Candy Factory"
       }
     ],
     "forumLinks": [
@@ -4296,7 +4330,7 @@
       }
     ],
     "tags": [
-      "other-badges"
+      "frostval"
     ],
     "forumImageUrl": "http://i.imgur.com/PagYiyj.png"
   },
@@ -4316,7 +4350,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "A fully trained  Technomancer"
+        "instruction": "A fully trained Technomancer"
       }
     ],
     "forumLinks": [
@@ -4327,7 +4361,7 @@
       }
     ],
     "tags": [
-      "classes-badges"
+      "trained-classes"
     ],
     "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Technomancer.png"
   },
@@ -4347,7 +4381,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  Killer Dragonman"
+        "instruction": "Completion of Killer Dragonman"
       }
     ],
     "forumLinks": [
@@ -4358,7 +4392,7 @@
       }
     ],
     "tags": [
-      "quests-badges"
+      "side-quests"
     ],
     "forumImageUrl": "http://i.imgur.com/EGuAt.png"
   },
@@ -4378,7 +4412,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  Inevitable Equilibrium"
+        "instruction": "Completion of Inevitable Equilibrium"
       }
     ],
     "forumLinks": [
@@ -4389,7 +4423,7 @@
       }
     ],
     "tags": [
-      "challenges-badges"
+      "arena-challenges"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/TheBalance.png",
     "notes": "Badge's art was added on  July 27th, 2024."
@@ -4410,7 +4444,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  The End of Magic (Part 2)"
+        "instruction": "Completion of The End of Magic (Part 2)"
       }
     ],
     "forumLinks": [
@@ -4421,7 +4455,7 @@
       }
     ],
     "tags": [
-      "quests-badges"
+      "book-3"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/TheEndofMagic.png",
     "notes": "Badge's art was added on  July 27th, 2024."
@@ -4442,7 +4476,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  Swan Song (Extreme)"
+        "instruction": "Completion of Swan Song (Extreme)"
       }
     ],
     "forumLinks": [
@@ -4453,7 +4487,7 @@
       }
     ],
     "tags": [
-      "challenges-badges"
+      "arena-challenges"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/TheMagnumOpus.png"
   },
@@ -4473,7 +4507,8 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  Betrayal"
+        "instruction": "Completion of Betrayal",
+        "daRequired": true
       }
     ],
     "forumLinks": [
@@ -4484,7 +4519,7 @@
       }
     ],
     "tags": [
-      "quests-badges"
+      "side-quests"
     ],
     "forumImageUrl": "http://i.imgur.com/gSQQa.png"
   },
@@ -4504,7 +4539,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  The Black Dragon Box"
+        "instruction": "Completion of The Black Dragon Box"
       }
     ],
     "forumLinks": [
@@ -4515,7 +4550,8 @@
       }
     ],
     "tags": [
-      "quests-badges"
+      "early-days",
+      "early-game"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/ThePriestess.png",
     "notes": "Badge's art was added on  July 27th, 2024."
@@ -4536,7 +4572,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  Loose Ends"
+        "instruction": "Completion of Loose Ends"
       }
     ],
     "forumLinks": [
@@ -4547,7 +4583,7 @@
       }
     ],
     "tags": [
-      "quests-badges"
+      "side-quests"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/Thorns.png",
     "notes": "Badge's art was added on  July 27th, 2024."
@@ -4568,7 +4604,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Own  Chronomancer Armor,  Chronocorruptor,  TimeKiller,  ChronoZ,  Avatar of Time,  Archivist,  ShadowWalker of Time, or  Epoch Armor"
+        "instruction": "Own Chronomancer Armor, Chronocorruptor, TimeKiller, ChronoZ, Avatar of Time, Archivist, ShadowWalker of Time, or Epoch Armor"
       }
     ],
     "forumLinks": [
@@ -4579,7 +4615,7 @@
       }
     ],
     "tags": [
-      "classes-badges"
+      "special-classes"
     ],
     "forumImageUrl": "https://i.imgur.com/KF0iY0U.png",
     "notes": "This badge was previously named Time Killer."
@@ -4600,7 +4636,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  Timetorn Matrix III"
+        "instruction": "Completion of Timetorn Matrix III"
       }
     ],
     "forumLinks": [
@@ -4611,7 +4647,7 @@
       }
     ],
     "tags": [
-      "challenges-badges"
+      "arena-challenges"
     ],
     "forumImageUrl": "https://i.imgur.com/sGkK32n.png"
   },
@@ -4631,7 +4667,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Defeat 1,000 waves of tog invaders in  The Endless Invasion"
+        "instruction": "Defeat 1,000 waves of tog invaders in The Endless Invasion"
       }
     ],
     "forumLinks": [
@@ -4642,7 +4678,7 @@
       }
     ],
     "tags": [
-      "challenges-badges"
+      "arena-challenges"
     ],
     "notes": "The appearance of the badge changes each time you view it, with a total of 32 different possibilities. • Tog Images"
   },
@@ -4662,7 +4698,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "A fully trained  Togslayer"
+        "instruction": "A fully trained Togslayer"
       }
     ],
     "forumLinks": [
@@ -4673,7 +4709,7 @@
       }
     ],
     "tags": [
-      "classes-badges"
+      "trained-classes"
     ],
     "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/TogSlayer.png"
   },
@@ -4693,7 +4729,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  Tournament of Champions Part 2"
+        "instruction": "Completion of Tournament of Champions Part 2"
       }
     ],
     "forumLinks": [
@@ -4704,7 +4740,7 @@
       }
     ],
     "tags": [
-      "quests-badges"
+      "book-3"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/TournamentChampion.png",
     "notes": "Badge's art was added on  July 27th, 2024."
@@ -4725,7 +4761,8 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Own  Ultimate Blinding Light of Destiny,  Ultimate DragonStaff of Destiny, or  Ultimate Twin Blades of Destiny"
+        "instruction": "Own Ultimate Blinding Light of Destiny, Ultimate DragonStaff of Destiny, or Ultimate Twin Blades of Destiny",
+        "daRequired": true
       }
     ],
     "forumLinks": [
@@ -4736,7 +4773,7 @@
       }
     ],
     "tags": [
-      "challenges-badges"
+      "arena-challenges"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/UltimateDestiny.png",
     "notes": "Badge's art was added on  July 27th, 2024."
@@ -4757,7 +4794,8 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Own  Unreal ShadowReaper of Doom,  Unreal Skullstaff of Doom, or  Unreal Twin Blades of Doom"
+        "instruction": "Own Unreal ShadowReaper of Doom, Unreal Skullstaff of Doom, or Unreal Twin Blades of Doom",
+        "daRequired": true
       }
     ],
     "forumLinks": [
@@ -4768,7 +4806,7 @@
       }
     ],
     "tags": [
-      "challenges-badges"
+      "arena-challenges"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/UnrealDoom.png",
     "notes": "Badge's art was added on  July 27th, 2024."
@@ -4789,7 +4827,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  Embrace Your Destiny"
+        "instruction": "Completion of Embrace Your Destiny"
       }
     ],
     "forumLinks": [
@@ -4800,7 +4838,7 @@
       }
     ],
     "tags": [
-      "quests-badges"
+      "side-quests"
     ],
     "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/VoidMagicpic.jpg"
   },
@@ -4820,7 +4858,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  Walk Through Fire"
+        "instruction": "Completion of Walk Through Fire"
       }
     ],
     "forumLinks": [
@@ -4831,7 +4869,8 @@
       }
     ],
     "tags": [
-      "quests-badges"
+      "book-1-2",
+      "book-1"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/WalkThroughFire.png",
     "notes": "Badge's art was updated on  July 19th, 2024, replacing its  old appearance. • DemonicDarkwraith for image and other information. • Legendary Ash for requirement correction."
@@ -4852,7 +4891,8 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  Queen of Tarts"
+        "instruction": "Completion of Queen of Tarts",
+        "daRequired": true
       }
     ],
     "forumLinks": [
@@ -4863,7 +4903,7 @@
       }
     ],
     "tags": [
-      "quests-badges"
+      "side-quests"
     ],
     "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Wanderer.png"
   },
@@ -4883,7 +4923,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  Descent"
+        "instruction": "Completion of Descent"
       }
     ],
     "forumLinks": [
@@ -4894,7 +4934,8 @@
       }
     ],
     "tags": [
-      "quests-badges"
+      "book-1-2",
+      "book-1"
     ],
     "forumImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/badges/WaterYouDoing.png",
     "notes": "Badge's art was updated on  July 27th, 2024, replacing its  old appearance. • DemonicDarkwraith for image and other information. • Niki for correction."
@@ -4915,7 +4956,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  The End?"
+        "instruction": "Completion of The End?"
       }
     ],
     "forumLinks": [
@@ -4926,7 +4967,7 @@
       }
     ],
     "tags": [
-      "quests-badges"
+      "side-quests"
     ],
     "forumImageUrl": "http://i.imgur.com/gifhP.png"
   },
@@ -4946,7 +4987,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  Tomix's Saga Epilogue"
+        "instruction": "Completion of Tomix's Saga Epilogue"
       }
     ],
     "forumLinks": [
@@ -4957,7 +4998,7 @@
       }
     ],
     "tags": [
-      "quests-badges"
+      "side-quests"
     ],
     "forumImageUrl": "http://i.imgur.com/kSwMrB8.png"
   },
@@ -4968,7 +5009,7 @@
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20703126",
     "category": "quest-completion",
     "subcategory": "Misc",
-    "retired": false,
+    "retired": true,
     "unreleased": false,
     "id": "wild-fighter",
     "description": "Defeat Wolf and Bear at the Forest Gate!",
@@ -4977,7 +5018,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  Wolf and Bear"
+        "instruction": "Completion of Wolf and Bear"
       }
     ],
     "forumLinks": [
@@ -4988,7 +5029,7 @@
       }
     ],
     "tags": [
-      "quest-badges"
+      "misc"
     ],
     "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/WildFighter.png",
     "notes": "Badge was retired on  July 19th, 2024."
@@ -5009,7 +5050,8 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Unlock any of the Atealan Armors by completing  Milkgrass Arena,  Cosmos or  Mind Chamber."
+        "instruction": "Unlock any of the Atealan Armors by completing Milkgrass Arena, Cosmos or Mind Chamber.",
+        "daRequired": true
       }
     ],
     "forumLinks": [
@@ -5020,7 +5062,7 @@
       }
     ],
     "tags": [
-      "classes-badges"
+      "trained-classes"
     ],
     "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/Worthy.jpg"
   },
@@ -5040,7 +5082,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  The Happy Couple"
+        "instruction": "Completion of The Happy Couple"
       }
     ],
     "forumLinks": [
@@ -5051,7 +5093,7 @@
       }
     ],
     "tags": [
-      "other-badges"
+      "hero-s-heart-day"
     ],
     "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/WrestlingChampion.png"
   },
@@ -5071,7 +5113,7 @@
     "howToObtain": [
       {
         "order": 1,
-        "instruction": "Completion of  Return to the Yeti Cave!"
+        "instruction": "Completion of Return to the Yeti Cave!"
       }
     ],
     "forumLinks": [
@@ -5082,7 +5124,7 @@
       }
     ],
     "tags": [
-      "other-badges"
+      "frostval"
     ],
     "forumImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/badges/X-valpic.jpg"
   }

@@ -21,8 +21,10 @@
 import * as fs from 'node:fs'
 import * as path from 'node:path'
 import type { Guest, GuestAttack, GuestStats, ObtainMethod, AlsoSeeRef, EntryType } from '../src/types/pet.ts'
-import type { ItemFamily } from '../src/types/item.ts'
-import { fetchPrintable, getPostContent } from './lib/printable-parser.ts'
+import type { AlternativeImage, ItemFamily, LevelVariant, ObtainVariant } from '../src/types/item.ts'
+import { convertImageTags, fetchPrintable, getPostContent } from './lib/printable-parser.ts'
+import { computeFamilyFlags, normalizeLevel } from '../src/utils/variantHelpers.ts'
+import { promoteCrossPostFamilies } from './lib/cross-post-family.ts'
 
 const FORUM_BASE = 'https://forums2.battleon.com/f'
 const AZ_PETS_URL = `${FORUM_BASE}/tm.asp?m=22349620&mpage=1`  // A-Z Pets & Guests combined (filtered by type)
@@ -60,6 +62,39 @@ async function fetchPage(url: string, cookie: string): Promise<string> {
     return res.text()
   } finally {
     clearTimeout(timer)
+  }
+}
+
+function extractReplyPostContent(html: string, messageId: string): string {
+  if (html.includes('This message has been deleted or moved')) {
+    return ''
+  }
+
+  const anchorRegex = new RegExp(`<a\\s+name=${messageId}\\b[^>]*><\\/a>`, 'i')
+  const anchorMatch = anchorRegex.exec(html)
+  if (!anchorMatch || anchorMatch.index === undefined) {
+    throw new Error(`Could not find reply anchor for message ${messageId}`)
+  }
+
+  const slice = html.slice(anchorMatch.index)
+  const cellMatch = slice.match(/<td\b[^>]*class=["']?msg["']?[^>]*>([\s\S]*?)<\/td>/i)
+  if (!cellMatch) {
+    throw new Error(`Could not find reply content block for message ${messageId}`)
+  }
+
+  return convertImageTags(cellMatch[1])
+}
+
+async function fetchGuestPostContent(messageId: string, cookie: string): Promise<string> {
+  try {
+    return getPostContent(await fetchPrintable(messageId, cookie))
+  } catch (error) {
+    if (!(error instanceof Error) || !/HTTP 500/i.test(error.message)) {
+      throw error
+    }
+
+    const forumHtml = await fetchPage(`${FORUM_BASE}/fb.asp?m=${messageId}`, cookie)
+    return extractReplyPostContent(forumHtml, messageId)
   }
 }
 
@@ -535,6 +570,129 @@ function findLastSection(html: string, sectionRegex: RegExp): string | undefined
   return html.slice(last.index + last[0].length)
 }
 
+function stripTrailingVariantNumber(name: string): string {
+  return name.replace(/\s*\((\d+)\)\s*$/, '').trim()
+}
+
+function tokenizeGuestTitle(name: string): string[] {
+  return stripTrailingVariantNumber(name)
+    .toLowerCase()
+    .replace(/[^\w\s]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .split(' ')
+    .filter(Boolean)
+}
+
+function getLongestCommonSuffix(tokensList: string[][]): string[] {
+  if (tokensList.length === 0) return []
+  const reversed = tokensList.map(tokens => [...tokens].reverse())
+  const result: string[] = []
+  let index = 0
+
+  while (true) {
+    const candidate = reversed[0][index]
+    if (!candidate) break
+    if (reversed.every(tokens => tokens[index] === candidate)) {
+      result.unshift(candidate)
+      index += 1
+      continue
+    }
+    break
+  }
+
+  return result
+}
+
+function toTitleCase(tokens: string[]): string {
+  return tokens.map(token => token.replace(/\b\w/g, char => char.toUpperCase())).join(' ')
+}
+
+function deriveGuestFamilyName(sectionNames: string[]): string {
+  const stripped = sectionNames.map(stripTrailingVariantNumber)
+  if (stripped.every(name => name.toLowerCase() === stripped[0].toLowerCase())) {
+    return stripped[0]
+  }
+
+  const tokenSets = stripped.map(tokenizeGuestTitle)
+  const suffix = getLongestCommonSuffix(tokenSets)
+  if (suffix.length > 0) return toTitleCase(suffix)
+
+  return stripped.slice().sort((a, b) => a.length - b.length || a.localeCompare(b))[0]
+}
+
+function deriveGuestVariantLabel(sectionName: string, familyName: string): string | undefined {
+  const numberMatch = sectionName.match(/\((\d+)\)\s*$/)
+  const stripped = stripTrailingVariantNumber(sectionName)
+
+  if (stripped.toLowerCase() === familyName.toLowerCase()) {
+    return numberMatch?.[1]
+  }
+
+  return numberMatch ? `${stripped} (${numberMatch[1]})` : stripped
+}
+
+function collapseGuestSections(sections: Array<{ name: string; html: string }>): Array<{ name: string; html: string }> {
+  const collapsed: Array<{ name: string; html: string }> = []
+
+  for (const section of sections) {
+    const previous = collapsed.at(-1)
+    if (previous && previous.name.trim().toLowerCase() === section.name.trim().toLowerCase()) {
+      previous.html = `${previous.html}<br>${section.html}`
+      continue
+    }
+
+    collapsed.push({ ...section })
+  }
+
+  return collapsed
+}
+
+function extractGuestHeaderSuffix(html: string, headerEndIndex: number): string {
+  const suffixSlice = html.slice(headerEndIndex, headerEndIndex + 80)
+  const suffixMatch = suffixSlice.match(/^\s*(\([^<)]{1,40}\))/)
+  if (!suffixMatch) return ''
+  return stripHtml(decodeHTML(suffixMatch[1])).trim()
+}
+
+function hasRetiredGuestSignal(...values: Array<string | undefined>): boolean {
+  return values.some(value =>
+    value
+      ? /previously attainable[\s\S]*retired|retired (?:access point|da access point|quest|version|location|entry)|previously attainable in the retired/i.test(
+          value
+        )
+      : false
+  )
+}
+
+function extractGuestVariantSections(html: string): Array<{ name: string; html: string }> {
+  const sections: Array<{ name: string; html: string }> = []
+  const headerRegex = /((?:<img[^>]+src=["'][^"']*\/tags\/(?:DA|DC|DM|Temp|Rare|Seasonal|SpecialOffer|Retired)\.(?:png|jpg)["'][^>]*>\s*)*)(?:<b>\s*<font[^>]*size=['"]3['"][^>]*>\s*([^<]+?)\s*<\/font>\s*<\/b>|<font[^>]*size=['"]3['"][^>]*>\s*<b>\s*([^<]+?)\s*<\/b>\s*<\/font>)/gi
+  const matches = [...html.matchAll(headerRegex)]
+
+  for (let i = 0; i < matches.length; i += 1) {
+    const match = matches[i]
+    const nextMatch = matches[i + 1]
+    const start = match.index ?? 0
+    const end = nextMatch?.index ?? html.length
+    const baseName = decodeHTML((match[2] ?? match[3] ?? '').trim())
+    const suffix = extractGuestHeaderSuffix(html, start + match[0].length)
+    const name = suffix ? `${baseName} ${suffix}` : baseName
+    const sectionHtml = html.slice(start, end)
+
+    if (!name) continue
+    if (
+      !/(?:Location:|Level:|<u>Stats<\/u>|<u>Offense<\/u>|<u>Avoidance and Defense<\/u>|<u>Defense<\/u>)/i.test(sectionHtml)
+    ) {
+      continue
+    }
+
+    sections.push({ name, html: sectionHtml })
+  }
+
+  return collapseGuestSections(sections)
+}
+
 // ─── Attack Parsing with Button Image URLs ───────────────────────────────────
 
 function parseGuestAttacks(html: string, guestName: string): GuestAttack[] {
@@ -555,7 +713,10 @@ function parseGuestAttacks(html: string, guestName: string): GuestAttack[] {
   
   const sectionStart = attacksStartMatch.index + attacksStartMatch[0].length
   const sectionEnd = sectionEndMatch?.index ?? html.length
-  const section = html.slice(sectionStart, sectionEnd)
+  const retiredIndex = html.slice(sectionStart, sectionEnd).search(/<img[^>]+src=["'][^"']*\/tags\/Retired\.png["'][^>]*>/i)
+  const section = retiredIndex >= 0
+    ? html.slice(sectionStart, sectionStart + retiredIndex)
+    : html.slice(sectionStart, sectionEnd)
   
   // Split by <hr> to get individual attack blocks
   const blocks = section.split(/<hr>/i)
@@ -787,6 +948,7 @@ function extractGuestImages(html: string, guestName: string): { imageUrl?: strin
     if (/button/i.test(src)) return false
     return (
       src.includes('github.com/DF-Pedia') ||
+      src.includes('raw.githubusercontent.com') ||
       src.includes('githubusercontent.com') ||
       src.includes('imgur.com') ||
       src.includes('i.imgur.com')
@@ -798,7 +960,7 @@ function extractGuestImages(html: string, guestName: string): { imageUrl?: strin
   const otherInfoHtml = findLastSection(html, /<b><u>Other [Ii]nformation<\/u><\/b>/gi) ?? html
   const escapedName = guestName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
   const mainImagePattern = new RegExp(
-    `<img[^>]+src="([^"]*(?:github\\.com\\/DF-Pedia|githubusercontent\\.com)[^"]*\\/pets_guests\\/${escapedName}(?:\\.(?:png|jpg|jpeg|gif|bmp)|%20pic\\.bmp)[^"]*)"[^>]*>`,
+    `<img[^>]+src="([^"]*(?:github\\.com\\/DF-Pedia|raw\\.githubusercontent\\.com|githubusercontent\\.com)[^"]*\\/pets_guests\\/${escapedName}(?:\\.(?:png|jpg|jpeg|gif|bmp)|%20pic\\.bmp)[^"]*)"[^>]*>`,
     'i'
   )
   const mainImageMatch = otherInfoHtml.match(mainImagePattern)
@@ -831,7 +993,7 @@ function extractGuestImages(html: string, guestName: string): { imageUrl?: strin
       if (!isCandidateMainImage(url)) continue
       
       // Add as alternative image with caption
-      if (url.includes('github.com/DF-Pedia') || url.includes('githubusercontent.com') || 
+      if (url.includes('github.com/DF-Pedia') || url.includes('raw.githubusercontent.com') || url.includes('githubusercontent.com') || 
           url.includes('imgur.com')) {
         alternativeImages.push({ url, caption })
         if (DEBUG) console.log(`  Found alt image: ${caption} -> ${url.slice(0, 60)}...`)
@@ -843,7 +1005,6 @@ function extractGuestImages(html: string, guestName: string): { imageUrl?: strin
   // then the last valid image in the entire post.
   if (!imageUrl) {
     const sectionImages: string[] = []
-    const allImages: string[] = []
     const imgRegex = /<img[^>]+src="([^"]+)"[^>]*>/gi
     let imgMatch: RegExpExecArray | null
 
@@ -851,20 +1012,12 @@ function extractGuestImages(html: string, guestName: string): { imageUrl?: strin
       const src = imgMatch[1]
       if (isCandidateMainImage(src)) sectionImages.push(src)
     }
-
-    imgRegex.lastIndex = 0
-    while ((imgMatch = imgRegex.exec(html)) !== null) {
-      const src = imgMatch[1]
-      if (isCandidateMainImage(src)) allImages.push(src)
-    }
     
     // Find the simple name pattern as fallback
     const simpleNamePattern = new RegExp(`/pets_guests/${escapedName}(?:\\.(?:png|jpg|jpeg|gif|bmp)|%20pic\\.bmp)$`, 'i')
     const fallbackMain =
       sectionImages.find(u => simpleNamePattern.test(u)) ??
-      sectionImages.at(-1) ??
-      allImages.find(u => simpleNamePattern.test(u)) ??
-      allImages.at(-1)
+      sectionImages.at(-1)
     
     if (fallbackMain) {
       const fallbackPos = otherInfoHtml.lastIndexOf(fallbackMain)
@@ -895,6 +1048,69 @@ function extractGuestImages(html: string, guestName: string): { imageUrl?: strin
   }
   
   return { imageUrl, alternativeImages }
+}
+
+function sanitizeGuestMedia<T extends { imageUrl?: string; alternativeImages?: AlternativeImage[]; attacks?: GuestAttack[] }>(
+  entry: T
+): T {
+  const attackMediaUrls = new Set(
+    (entry.attacks ?? []).flatMap(attack => [attack.buttonImageUrl, attack.appearanceUrl]).filter(Boolean)
+  )
+  const imageUrl =
+    entry.imageUrl && attackMediaUrls.has(entry.imageUrl)
+      ? undefined
+      : entry.imageUrl
+
+  const alternativeImages = entry.alternativeImages?.filter(image => {
+    if (!attackMediaUrls.has(image.url)) return true
+    const caption = image.caption?.trim().toLowerCase() ?? ''
+    return caption.length > 0 && !/^(appearance(?:\s+\d+(?:\.\d+)?)?|[0-9.]+)$/.test(caption)
+  })
+
+  const { imageUrl: _ignoredImageUrl, alternativeImages: _ignoredAlternativeImages, ...rest } = entry
+
+  return {
+    ...rest,
+    ...(imageUrl ? { imageUrl } : {}),
+    ...(alternativeImages && alternativeImages.length > 0 ? { alternativeImages } : {}),
+  }
+}
+
+function sanitizeGuestFamilyLevelVariants(family: ItemFamily): ItemFamily {
+  if (family.type !== 'guest') return family
+
+  const sanitizedLevels = family.levelVariants.map(level => {
+    const attackMediaUrls = new Set(
+      (level.attacks ?? []).flatMap(attack => {
+        const typedAttack = attack as GuestAttack
+        return [typedAttack.buttonImageUrl, typedAttack.appearanceUrl]
+      }).filter(Boolean)
+    )
+
+    const imageUrl =
+      family.shared.imageUrl && level.imageUrl && attackMediaUrls.has(level.imageUrl)
+        ? undefined
+        : level.imageUrl
+
+    const alternativeImages = level.alternativeImages?.filter(image => {
+      if (!attackMediaUrls.has(image.url)) return true
+      const caption = image.caption?.trim().toLowerCase() ?? ''
+      return caption.length > 0 && !/^(appearance(?:\s+\d+(?:\.\d+)?)?|[0-9.]+)$/.test(caption)
+    })
+
+    const { imageUrl: _ignoredImageUrl, alternativeImages: _ignoredAlternativeImages, ...rest } = level
+
+    return {
+      ...rest,
+      ...(imageUrl ? { imageUrl } : {}),
+      ...(alternativeImages && alternativeImages.length > 0 ? { alternativeImages } : {}),
+    }
+  })
+
+  return {
+    ...family,
+    levelVariants: sanitizedLevels,
+  }
 }
 
 // ─── Description Parsing ──────────────────────────────────────────────────────
@@ -1282,6 +1498,17 @@ interface ChronologyData {
   guestMessageIds: Set<string>
 }
 
+function normalizeGuestLookupName(name: string): string {
+  return decodeHTML(name)
+    .toLowerCase()
+    .replace(/\s*\(all versions\)\s*$/, '')
+    .replace(/\s*\(guest\)\s*$/, '')
+    .replace(/\s*\(\d+\)\s*$/, '')
+    .replace(/[^\w\s]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
+}
+
 function parseChronology(html: string): ChronologyData {
   const DEBUG = process.env.DEBUG_CHRONO === '1'
   const datesByName = new Map<string, string>()
@@ -1323,6 +1550,7 @@ function parseChronology(html: string): ChronologyData {
       
       datesByName.set(name.toLowerCase(), currentDate)
       guestNames.add(name.toLowerCase())
+      guestNames.add(normalizeGuestLookupName(name))
       const idMatch = chunk.match(/tm\.asp\?m=(\d+)|fb\.asp\?m=(\d+)/i)
       const messageId = idMatch?.[1] ?? idMatch?.[2]
       if (messageId) {
@@ -1342,7 +1570,7 @@ function parseChronology(html: string): ChronologyData {
 // ─── A-Z page parsing ─────────────────────────────────────────────────────────
 
 function parseAZPage(html: string, chronology: ChronologyData): GuestStub[] {
-  const stubs: GuestStub[] = []
+  const stubsByKey = new Map<string, GuestStub>()
   const seen = new Set<string>()
   const chunks = html.split(/<br\s*\/?>/)
   let currentLetter = '#'
@@ -1358,9 +1586,10 @@ function parseAZPage(html: string, chronology: ChronologyData): GuestStub[] {
     }
 
     // Match links
-    const linkMatch = /href=["']?(?:https?:\/\/forums2\.battleon\.com\/f\/)?tm\.asp\?m=(\d+)["'\s>]/i.exec(chunk)
+    const linkMatch = /href=["']?(?:https?:\/\/forums2\.battleon\.com\/f\/)?((tm|fb)\.asp\?m=(\d+))["'\s>]/i.exec(chunk)
     if (!linkMatch) continue
-    const msgId = linkMatch[1]
+    const linkPath = linkMatch[1]
+    const msgId = linkMatch[3]
     if (seen.has(msgId)) {
       skippedCount++
       continue
@@ -1378,7 +1607,11 @@ function parseAZPage(html: string, chronology: ChronologyData): GuestStub[] {
     }
 
     // Name is anchor text with any remaining bracket codes stripped
-    const name = anchorText.replace(/\[[A-Z?/]+\]/g, '').trim()
+    const name = anchorText
+      .replace(/\[[A-Z?/]+\]/g, '')
+      .replace(/\s*\(Guest\)\s*$/i, '')
+      .replace(/\s*\(All Versions\)\s*$/i, '')
+      .trim()
     if (!name) {
       skippedCount++
       continue
@@ -1393,28 +1626,354 @@ function parseAZPage(html: string, chronology: ChronologyData): GuestStub[] {
       continue
     }
 
-    // Filter: only include guests (determined by Chronology)
-    if (!chronology.guestMessageIds.has(msgId)) {
+    // Filter: only include guests (determined by Chronology).
+    // Some A-Z guest variants point at fb.asp reply posts that do not appear in chronology by message id,
+    // so fall back to normalized guest-name matching in those cases.
+    if (
+      !chronology.guestMessageIds.has(msgId) &&
+      !chronology.guestNames.has(normalizeGuestLookupName(name))
+    ) {
       continue  // Not a guest, skip silently
     }
 
-    stubs.push({
+    const stub: GuestStub = {
       name,
       slug: prefixedSlug(name, 'guest'),
       type: 'guest',
-      forumUrl: `${FORUM_BASE}/tm.asp?m=${msgId}`,
+      forumUrl: `${FORUM_BASE}/${linkPath}`,
       messageId: msgId,
       elements,
       traits,
       letter: currentLetter,
-    })
+    }
+
+    const normalizedKey = normalizeGuestLookupName(name)
+    const existing = stubsByKey.get(normalizedKey)
+    const candidateIsChronologyMatch = chronology.guestMessageIds.has(msgId)
+    const existingIsChronologyMatch = existing ? chronology.guestMessageIds.has(existing.messageId) : false
+
+    if (!existing || (candidateIsChronologyMatch && !existingIsChronologyMatch)) {
+      stubsByKey.set(normalizedKey, stub)
+    }
   }
   
   if (skippedCount > 0) {
     console.log(`   ⚠️  Skipped ${skippedCount} entries (duplicates, navigation links, or invalid names)`)
   }
 
-  return stubs
+  return Array.from(stubsByKey.values())
+}
+
+function extractThreadMessageBlocks(html: string): string[] {
+  return [...html.matchAll(/<td\b[^>]*class=["']?msg["']?[^>]*>([\s\S]*?)<\/td>/gi)].map(match => convertImageTags(match[1]))
+}
+
+function mergeNotesText(...notes: Array<string | undefined>): string | undefined {
+  const seen = new Set<string>()
+  const ordered: string[] = []
+
+  for (const noteText of notes) {
+    if (!noteText) continue
+    const separator = noteText.includes('\n') ? '\n' : ' • '
+    for (const rawPart of noteText.split(separator)) {
+      const part = rawPart.trim()
+      if (!part || seen.has(part)) continue
+      seen.add(part)
+      ordered.push(part)
+    }
+  }
+
+  return ordered.length > 0 ? ordered.join('\n') : undefined
+}
+
+function extractSupplementalGuestThreadNotes(html: string): string | undefined {
+  const blocks = extractThreadMessageBlocks(html)
+  if (blocks.length <= 1) return undefined
+
+  const supplemental: string[] = []
+  for (const block of blocks.slice(1)) {
+    if (!/<b><u>Other [Ii]nformation<\/u><\/b>/i.test(block)) continue
+    if (/(?:<b>\s*<font[^>]*size=['"]3['"]|<font[^>]*size=['"]3['"][^>]*>\s*<b>)/i.test(block)) continue
+    const notes = parseNotes(block, 'shared')
+    if (notes) supplemental.push(notes)
+  }
+
+  return mergeNotesText(...supplemental)
+}
+
+function extractSupplementalGuestThreadMedia(
+  html: string
+): { imageUrl?: string; alternativeImages?: AlternativeImage[] } {
+  const blocks = extractThreadMessageBlocks(html)
+  if (blocks.length <= 1) return {}
+
+  const skipPatterns = [
+    /forums2\.battleon\.com/i,
+    /\/f\/image\//i,
+    /\/f\/upfiles\//i,
+    /forumheader/i,
+    /quantserve/i,
+    /artix\.com\/shared/i,
+    /artixgamelaunch/i,
+    /\/tags\//i,
+    /clear\.gif/i,
+    /blank\.gif/i,
+    /-button/i,
+    /Button\d+/i,
+    /PetAttack/i,
+    /AttackType/i,
+    /-Attack\./i,
+    /\/classes_abilities\//i,
+  ]
+
+  const isCandidateImage = (url: string): boolean => {
+    if (skipPatterns.some(pattern => pattern.test(url))) return false
+    return /github\.com|raw\.githubusercontent\.com|githubusercontent\.com|imgur\.com/i.test(url)
+  }
+
+  let imageUrl: string | undefined
+  const alternativeImages: AlternativeImage[] = []
+
+  for (const block of blocks.slice(1)) {
+    if (
+      /<font[^>]*size=['"]3['"]/i.test(block) ||
+      /<b>\s*(?:Location|Requirements|Level|Damage|Damage Type|Element|HP|MP):/i.test(block) ||
+      /(?:Mana Cost|Cooldown|Damage Multipliers|Damage Reduction):/i.test(block)
+    ) {
+      continue
+    }
+
+    const candidateImages = [...block.matchAll(/<img[^>]+src="([^"]+)"[^>]*>/gi)]
+      .map(match => match[1])
+      .filter(isCandidateImage)
+
+    if (!imageUrl && candidateImages.length > 0) {
+      imageUrl = candidateImages.at(-1)
+    }
+
+    const hyperlinkPattern = /<a[^>]+href="([^"]+\.(?:png|jpg|jpeg|gif|bmp))"[^>]*>([\s\S]*?)<\/a>/gi
+    let match: RegExpExecArray | null
+    while ((match = hyperlinkPattern.exec(block)) !== null) {
+      const url = match[1]
+      const caption = stripHtml(decodeHTML(match[2])).trim()
+      if (!caption || !isCandidateImage(url) || /thanks to|also see:/i.test(caption)) continue
+      alternativeImages.push({ url, caption })
+    }
+  }
+
+  return {
+    ...(imageUrl ? { imageUrl } : {}),
+    ...(alternativeImages.length > 0 ? { alternativeImages } : {}),
+  }
+}
+
+function buildGuestFamilyFromSections(
+  stub: GuestStub,
+  sections: Array<{ name: string; html: string }>,
+  chronology: ChronologyData,
+  nameToSlug: Map<string, { slug: string; type: EntryType }>,
+  sharedNotes?: string
+): ItemFamily {
+  const familyName = deriveGuestFamilyName(sections.map(section => section.name))
+  const variants: Array<Guest & { sourceName: string }> = sections.map(section => {
+    const description = parseDescription(section.html, section.name)
+    const guestStats = parseGuestStats(section.html, section.name)
+    const attacks = parseGuestAttacks(section.html, section.name)
+    const categoryTags = detectCategoryTags(section.html)
+    const { imageUrl, alternativeImages } = extractGuestImages(section.html, section.name)
+    const obtainMethods = parseObtainMethods(section.html, section.name)
+    const notes = parseNotes(section.html, section.name)
+    const alsoSee = parseAlsoSee(section.html, nameToSlug, section.name)
+    const tags = generateTags(section.name, description, stub.elements)
+    const daRequired = /<img[^>]+src=["'][^"']*\/tags\/DA\.png["']/i.test(section.html)
+    const dcRequired = /<img[^>]+src=["'][^"']*\/tags\/DC\.png["']/i.test(section.html)
+    const dmRequired = /<img[^>]+src=["'][^"']*\/tags\/DM\.png["']/i.test(section.html)
+    const rarityMatch = section.html.match(/<b>Rarity:<\/b>\s*([^<\n]+)/i)
+    const rarity = rarityMatch ? rarityMatch[1].trim() : 'Unknown'
+
+    return sanitizeGuestMedia({
+      id: prefixedSlug(section.name, 'guest'),
+      name: section.name,
+      slug: prefixedSlug(section.name, 'guest'),
+      type: 'guest',
+      description,
+      daRequired,
+      dcRequired: dcRequired || undefined,
+      dmRequired: dmRequired || undefined,
+      ...categoryTags,
+      elements: stub.elements,
+      traits: stub.traits,
+      level: guestStats.level || 'Unknown',
+      damage: guestStats.damage || 'Unknown',
+      stats: guestStats.characterStats ? 'See guestStats' : 'None',
+      resists: guestStats.resistances ? 'See guestStats' : 'None',
+      obtainMethods,
+      attacks,
+      rarity,
+      evolutions: [],
+      releaseDate:
+        chronology.datesByMessageId.get(stub.messageId) ||
+        chronology.datesByName.get(section.name.toLowerCase()) ||
+        chronology.datesByName.get(stripTrailingVariantNumber(section.name).toLowerCase()) ||
+        chronology.datesByName.get(stub.name.toLowerCase()) ||
+        'Unknown',
+      imageUrl,
+      forumUrl: stub.forumUrl,
+      notes,
+      alsoSee,
+      tags,
+      guestStats,
+      alternativeImages: alternativeImages.length > 0 ? alternativeImages : undefined,
+      retired: categoryTags.retired || hasRetiredGuestSignal(notes) || undefined,
+      sourceName: section.name,
+    })
+  })
+
+  const allInternalSlugs = new Set(variants.map(variant => variant.slug))
+  const levelVariants: LevelVariant[] = variants.map((variant, index) => {
+    const levelInfo = normalizeLevel(variant.guestStats.level || variant.level || String(index + 1))
+    const actualLevel = /^\d+$/.test((variant.guestStats.level || variant.level || '').trim())
+      ? parseInt((variant.guestStats.level || variant.level).trim(), 10)
+      : undefined
+
+    const obtainVariants: ObtainVariant[] = variant.obtainMethods.map(method => ({
+      location: method.location,
+      price: method.price ?? 'N/A',
+      priceType: method.priceType,
+      ...(method.sellback ? { sellback: method.sellback } : {}),
+      ...(method.requirements ? { requirements: method.requirements } : {}),
+      daRequired: method.daRequired ?? variant.daRequired,
+      ...(method.dcRequired ?? variant.dcRequired ? { dcRequired: method.dcRequired ?? variant.dcRequired } : {}),
+      ...(method.dmRequired ?? variant.dmRequired ? { dmRequired: method.dmRequired ?? variant.dmRequired } : {}),
+      ...(method.requiredItems ? { requiredItems: method.requiredItems } : {}),
+    }))
+
+    return {
+      levelNumber: index + 1,
+      levelDisplay: levelInfo.display,
+      ...(actualLevel !== undefined ? { actualLevel } : {}),
+      ...(deriveGuestVariantLabel(variant.name, familyName) ? { variantName: deriveGuestVariantLabel(variant.name, familyName) } : {}),
+      name: variant.name,
+      damage: variant.damage,
+      stats: variant.stats,
+      sourceUrl: variant.forumUrl,
+      description: variant.description,
+      ...(variant.imageUrl ? { imageUrl: variant.imageUrl } : {}),
+      ...(variant.alternativeImages ? { alternativeImages: variant.alternativeImages } : {}),
+      obtainVariants,
+      ...(variant.elements[0] ? { element: variant.elements[0] } : {}),
+      ...(variant.rarity && variant.rarity !== 'Unknown' ? { rarity: variant.rarity } : {}),
+      ...(variant.attacks.length > 0 ? { attacks: variant.attacks } : {}),
+      guestStats: variant.guestStats,
+      ...(variant.notes ? { notes: variant.notes } : {}),
+    }
+  })
+
+  const mergedAlsoSee = Array.from(
+    new Map(
+      variants
+        .flatMap(variant => variant.alsoSee)
+        .filter(ref => !allInternalSlugs.has(ref.slug))
+        .map(ref => [`${ref.type}:${ref.slug}`, ref])
+    ).values()
+  )
+
+  const family: ItemFamily = {
+    id: prefixedSlug(familyName, 'guest'),
+    familyName,
+    slug: prefixedSlug(familyName, 'guest'),
+    aliasSlugs: variants.map(variant => variant.slug),
+    type: 'guest',
+    forumUrl: stub.forumUrl,
+    familyOrigin: 'single-thread',
+    isMultiPost: true,
+    shared: {
+      description: '',
+      ...(() => {
+        const trailingVariantWithImage = [...levelVariants].reverse().find(
+          level => level.imageUrl || (level.alternativeImages && level.alternativeImages.length > 0)
+        )
+        return trailingVariantWithImage
+          ? {
+              ...(trailingVariantWithImage.imageUrl ? { imageUrl: trailingVariantWithImage.imageUrl } : {}),
+              ...(trailingVariantWithImage.alternativeImages ? { alternativeImages: trailingVariantWithImage.alternativeImages } : {}),
+            }
+          : {}
+      })(),
+      ...(sharedNotes ? { notes: sharedNotes } : {}),
+      ...(mergedAlsoSee.length > 0 ? { alsoSee: mergedAlsoSee } : {}),
+    },
+    levelVariants,
+    releaseDate: variants.map(variant => variant.releaseDate).find(date => date && date !== 'Unknown') ?? 'Unknown',
+    tags: Array.from(new Set(variants.flatMap(variant => variant.tags))).sort(),
+    hasDA: false,
+    hasDC: false,
+    hasDM: false,
+    hasFree: false,
+    hasMerge: false,
+    isTemp: variants.some(variant => variant.isTemp === true) || undefined,
+    isRare: variants.some(variant => variant.isRare === true) || undefined,
+    isSeasonal: variants.some(variant => variant.isSeasonal === true) || undefined,
+    isSpecialOffer: variants.some(variant => variant.isSpecialOffer === true) || undefined,
+    retired: variants.some(variant => variant.retired === true || hasRetiredGuestSignal(variant.notes)) || undefined,
+    levelRange: '',
+    elements: Array.from(new Set(variants.flatMap(variant => variant.elements))),
+  }
+
+  return computeFamilyFlags(family)
+}
+
+function applySupplementalGuestData(
+  items: Array<Guest | ItemFamily>,
+  supplementalNotesByForumUrl: Map<string, string>,
+  supplementalMediaByForumUrl: Map<string, { imageUrl?: string; alternativeImages?: AlternativeImage[] }>
+): Array<Guest | ItemFamily> {
+  return items.map(item => {
+    const supplementalNotes = supplementalNotesByForumUrl.get(item.forumUrl)
+    const supplementalMedia = supplementalMediaByForumUrl.get(item.forumUrl)
+    if (!supplementalNotes && !supplementalMedia) return item
+
+    if ('levelVariants' in item && item.type === 'guest') {
+      return sanitizeGuestFamilyLevelVariants({
+        ...item,
+        shared: {
+          ...item.shared,
+          ...(supplementalNotes ? { notes: mergeNotesText(item.shared.notes, supplementalNotes) } : {}),
+          ...(item.shared.imageUrl ?? supplementalMedia?.imageUrl ? { imageUrl: item.shared.imageUrl ?? supplementalMedia?.imageUrl } : {}),
+          ...(item.shared.alternativeImages ?? supplementalMedia?.alternativeImages
+            ? { alternativeImages: item.shared.alternativeImages ?? supplementalMedia?.alternativeImages }
+            : {}),
+        },
+      })
+    }
+
+    if (item.type === 'guest') {
+      return sanitizeGuestMedia({
+        ...item,
+        ...(supplementalNotes ? { notes: mergeNotesText(item.notes, supplementalNotes) } : {}),
+        ...(item.imageUrl ?? supplementalMedia?.imageUrl ? { imageUrl: item.imageUrl ?? supplementalMedia?.imageUrl } : {}),
+        ...(item.alternativeImages ?? supplementalMedia?.alternativeImages
+          ? { alternativeImages: item.alternativeImages ?? supplementalMedia?.alternativeImages }
+          : {}),
+      })
+    }
+
+    return item
+  })
+}
+
+function sanitizePromotedGuestEntries(items: Array<Guest | ItemFamily>): Array<Guest | ItemFamily> {
+  return items.map(item => {
+    if ('levelVariants' in item && item.type === 'guest') {
+      return sanitizeGuestFamilyLevelVariants(item)
+    }
+
+    if (item.type === 'guest') {
+      return sanitizeGuestMedia(item)
+    }
+
+    return item
+  })
 }
 
 // ─── Main ─────────────────────────────────────────────────────────────────────
@@ -1492,6 +2051,8 @@ async function main(): Promise<void> {
   // ── Step 3: Load existing progress ─────────────────────────────────────────
 
   const progressMap = new Map<string, Guest | ItemFamily>()
+  const supplementalNotesByForumUrl = new Map<string, string>()
+  const supplementalMediaByForumUrl = new Map<string, { imageUrl?: string; alternativeImages?: AlternativeImage[] }>()
   if (fs.existsSync(PROGRESS_PATH)) {
     try {
       const existing: (Guest | ItemFamily)[] = JSON.parse(fs.readFileSync(PROGRESS_PATH, 'utf-8'))
@@ -1518,17 +2079,53 @@ async function main(): Promise<void> {
     process.stdout.write(`[${i + 1}/${stubs.length}] ${stub.name}... `)
 
     // Check if already in progress
-    if (progressMap.has(stub.slug)) {
+    const cachedEntry = progressMap.get(stub.slug) ?? Array.from(progressMap.values()).find(entry => entry.forumUrl === stub.forumUrl)
+    if (cachedEntry) {
       console.log('✓ [cached]')
       fromCache++
       continue
     }
 
     try {
-      const html = getPostContent(await fetchPrintable(stub.messageId, cookie))
+      const html = await fetchGuestPostContent(stub.messageId, cookie)
       if (!html) {
         console.log('⚠️  deleted — skipping')
         skipped++
+        continue
+      }
+
+      if (!supplementalNotesByForumUrl.has(stub.forumUrl) && /\/tm\.asp\?m=/i.test(stub.forumUrl)) {
+        try {
+          const fullThreadHtml = await fetchPage(stub.forumUrl, cookie)
+          const supplementalNotes = extractSupplementalGuestThreadNotes(fullThreadHtml)
+          if (supplementalNotes) {
+            supplementalNotesByForumUrl.set(stub.forumUrl, supplementalNotes)
+          }
+          const supplementalMedia = extractSupplementalGuestThreadMedia(fullThreadHtml)
+          if (supplementalMedia.imageUrl || supplementalMedia.alternativeImages?.length) {
+            supplementalMediaByForumUrl.set(stub.forumUrl, supplementalMedia)
+          }
+        } catch {
+          // Ignore supplemental note fetch failures and continue with printable data.
+        }
+      }
+
+      const variantSections = extractGuestVariantSections(html)
+      if (variantSections.length > 1) {
+        const family = buildGuestFamilyFromSections(
+          stub,
+          variantSections,
+          chronology,
+          nameToSlug,
+          supplementalNotesByForumUrl.get(stub.forumUrl)
+        )
+        progressMap.set(family.slug, family)
+        console.log(`✓ [ItemFamily: ${variantSections.length} variants]`)
+        scraped++
+
+        const progress = Array.from(progressMap.values())
+        fs.writeFileSync(PROGRESS_PATH, JSON.stringify(progress, null, 2) + '\n', 'utf-8')
+        if (i < stubs.length - 1) await sleep(DELAY_MS)
         continue
       }
       
@@ -1552,7 +2149,7 @@ async function main(): Promise<void> {
       const rarityMatch = html.match(/<b>Rarity:<\/b>\s*([^<\n]+)/i)
       const rarity = rarityMatch ? rarityMatch[1].trim() : 'Unknown'
       
-      const guest: Guest = {
+      const guest: Guest = sanitizeGuestMedia({
         id: stub.slug,
         name: stub.name,
         slug: stub.slug,
@@ -1583,8 +2180,9 @@ async function main(): Promise<void> {
         alsoSee,
         tags,
         guestStats,
+        retired: categoryTags.retired || hasRetiredGuestSignal(notes) || undefined,
         alternativeImages: alternativeImages.length > 0 ? alternativeImages : undefined,
-      }
+      })
 
       progressMap.set(guest.slug, guest)
       console.log(' ✓')
@@ -1615,7 +2213,17 @@ async function main(): Promise<void> {
 
   // ── Step 5: Write final output ─────────────────────────────────────────────
 
-  const finalGuests = Array.from(progressMap.values())
+  const hydratedGuests = applySupplementalGuestData(
+    Array.from(progressMap.values()) as Array<Guest | ItemFamily>,
+    supplementalNotesByForumUrl,
+    supplementalMediaByForumUrl
+  )
+  const promotedGuests = applySupplementalGuestData(
+    sanitizePromotedGuestEntries(promoteCrossPostFamilies(hydratedGuests)),
+    supplementalNotesByForumUrl,
+    supplementalMediaByForumUrl
+  )
+  const finalGuests = promotedGuests
     .sort((a, b) => {
       const aName: string = 'familyName' in a ? a.familyName : a.name
       const bName: string = 'familyName' in b ? b.familyName : b.name

@@ -1266,7 +1266,8 @@
             "price": "$19.99-$21.99 USD + Postage",
             "priceType": "gold",
             "sellback": "0 Gold 0 Dragon Coins",
-            "daRequired": false
+            "daRequired": false,
+            "dcRequired": true
           }
         ],
         "element": "BAC",
@@ -1282,11 +1283,20 @@
         "statsType": "petStats",
         "obtainVariants": [
           {
+            "location": "Redeem the code received from purchasing the ChickenCow T-Shirt from  HeroMart",
+            "price": "$19.99-$21.99 USD + Postage",
+            "priceType": "gold",
+            "sellback": "0 Gold 0 Dragon Coins",
+            "daRequired": false,
+            "dcRequired": true
+          },
+          {
             "location": "Armored Chickcalf Pet",
             "price": "N/A",
             "priceType": "merge",
             "sellback": "0 Gold 0 Dragon Coins",
             "daRequired": false,
+            "dcRequired": true,
             "requiredItems": "1 Armored Chickcalf I"
           }
         ],
@@ -1303,11 +1313,20 @@
         "statsType": "petStats",
         "obtainVariants": [
           {
+            "location": "Redeem the code received from purchasing the ChickenCow T-Shirt from  HeroMart",
+            "price": "$19.99-$21.99 USD + Postage",
+            "priceType": "gold",
+            "sellback": "0 Gold 0 Dragon Coins",
+            "daRequired": false,
+            "dcRequired": true
+          },
+          {
             "location": "Armored Chickcalf Pet",
             "price": "N/A",
             "priceType": "merge",
             "sellback": "0 Gold 0 Dragon Coins",
             "daRequired": false,
+            "dcRequired": true,
             "requiredItems": "1 Armored Chickcalf I OR 1 Armored Chickcalf II"
           }
         ],
@@ -1324,11 +1343,20 @@
         "statsType": "petStats",
         "obtainVariants": [
           {
+            "location": "Redeem the code received from purchasing the ChickenCow T-Shirt from  HeroMart",
+            "price": "$19.99-$21.99 USD + Postage",
+            "priceType": "gold",
+            "sellback": "0 Gold 0 Dragon Coins",
+            "daRequired": false,
+            "dcRequired": true
+          },
+          {
             "location": "Armored Chickcalf Pet",
             "price": "N/A",
             "priceType": "merge",
             "sellback": "0 Gold 0 Dragon Coins",
             "daRequired": false,
+            "dcRequired": true,
             "requiredItems": "1 Armored Chickcalf I OR 1 Armored Chickcalf III"
           }
         ],
@@ -1345,11 +1373,20 @@
         "statsType": "petStats",
         "obtainVariants": [
           {
+            "location": "Redeem the code received from purchasing the ChickenCow T-Shirt from  HeroMart",
+            "price": "$19.99-$21.99 USD + Postage",
+            "priceType": "gold",
+            "sellback": "0 Gold 0 Dragon Coins",
+            "daRequired": false,
+            "dcRequired": true
+          },
+          {
             "location": "Armored Chickcalf Pet",
             "price": "N/A",
             "priceType": "merge",
             "sellback": "0 Gold 0 Dragon Coins",
             "daRequired": false,
+            "dcRequired": true,
             "requiredItems": "1 Armored Chickcalf I OR 1 Armored Chickcalf IV"
           }
         ],
@@ -1366,11 +1403,20 @@
         "statsType": "petStats",
         "obtainVariants": [
           {
+            "location": "Redeem the code received from purchasing the ChickenCow T-Shirt from  HeroMart",
+            "price": "$19.99-$21.99 USD + Postage",
+            "priceType": "gold",
+            "sellback": "0 Gold 0 Dragon Coins",
+            "daRequired": false,
+            "dcRequired": true
+          },
+          {
             "location": "Armored Chickcalf Pet",
             "price": "N/A",
             "priceType": "merge",
             "sellback": "0 Gold 0 Dragon Coins",
             "daRequired": false,
+            "dcRequired": true,
             "requiredItems": "1 Armored Chickcalf I OR 1 Armored Chickcalf V"
           }
         ],
@@ -1392,6 +1438,7 @@
             "priceType": "merge",
             "sellback": "50 Gold 0 Dragon Coins",
             "daRequired": false,
+            "dcRequired": true,
             "requiredItems": "1 Armored Chickcalf VI"
           }
         ],
@@ -1408,7 +1455,7 @@
     "isSpecialOffer": true,
     "retired": true,
     "hasDA": false,
-    "hasDC": false,
+    "hasDC": true,
     "hasDM": false,
     "hasFree": false,
     "hasMerge": true,
@@ -1494,8 +1541,8 @@
     "daRequired": false,
     "dcRequired": true,
     "elements": [
-      "FIR",
-      "STO"
+      "STO",
+      "FIR"
     ],
     "traits": [],
     "level": "17",
@@ -1532,8 +1579,8 @@
     "alsoSee": [],
     "tags": [
       "pet",
-      "fir",
-      "sto"
+      "sto",
+      "fir"
     ]
   },
   {
@@ -1545,8 +1592,8 @@
     "daRequired": false,
     "dcRequired": true,
     "elements": [
-      "FIR",
-      "NAT"
+      "NAT",
+      "FIR"
     ],
     "traits": [],
     "level": "1",
@@ -1591,8 +1638,8 @@
     "alsoSee": [],
     "tags": [
       "pet",
-      "fir",
-      "nat"
+      "nat",
+      "fir"
     ]
   },
   {
@@ -2339,15 +2386,19 @@
         "damage": "6-16",
         "stats": "Crit +2",
         "statsType": "bonuses",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20847504",
+        "description": "Meow meow meooooooow!",
         "obtainVariants": [
           {
             "location": "Rare Pets",
             "price": "50 Dragon Coins",
             "priceType": "dc",
             "sellback": "45 DC (<24 hours) / 13 DC (>24 hours)",
-            "daRequired": false
+            "daRequired": false,
+            "dcRequired": true
           }
         ],
+        "element": "LIG",
         "rarity": "5"
       },
       {
@@ -2358,16 +2409,47 @@
         "damage": "13-19",
         "stats": "Crit +3, Bonus +1",
         "statsType": "bonuses",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20847504",
+        "description": ".githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/BaronCatPetAttack1.png\">Attack Type 1 - Scratches the opponent two times for 2 hits of melee Light damage",
+        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/BaronCatPetpic.png",
+        "alternativeImages": [
+          {
+            "url": "http://i.imgur.com/LwFwK.jpg",
+            "caption": "Alternative Image"
+          }
+        ],
         "obtainVariants": [
           {
             "location": "Rare Pets",
             "price": "70 Dragon Coins",
             "priceType": "dc",
             "sellback": "63 DC (<24 hours) / 18 DC (>24 hours)",
-            "daRequired": false
+            "daRequired": false,
+            "dcRequired": true
           }
         ],
-        "rarity": "10"
+        "element": "LIG",
+        "rarity": "10",
+        "attacks": [
+          {
+            "name": "Attack Type 2",
+            "description": "Scratches the opponent four times for 4 hits of melee Light damage",
+            "images": [],
+            "notes": []
+          },
+          {
+            "name": "Attack Type 1",
+            "description": "Scratches the opponent two times for 2 hits of melee Light damage",
+            "images": [],
+            "notes": []
+          },
+          {
+            "name": "Attack Type 2",
+            "description": "Scratches the opponent four times for 4 hits of melee Light damage",
+            "images": [],
+            "notes": []
+          }
+        ]
       }
     ],
     "releaseDate": "November 9th, 2012",
@@ -2980,75 +3062,90 @@
   },
   {
     "id": "pet-bonehead",
-    "name": "Bonehead",
+    "familyName": "Bonehead",
     "slug": "pet-bonehead",
     "type": "pet",
-    "description": "This special baby dracolich is here to stay! He has a chance to heal you with the legendary power of turkeys stuffed into small places. Requires a Dragon Amulet to use.",
-    "daRequired": true,
-    "dcRequired": true,
-    "isSeasonal": true,
-    "elements": [
-      "DAR"
-    ],
-    "traits": [],
-    "level": "20",
-    "damage": "15-15",
-    "stats": "Crit +1, Bonus +1",
-    "resists": "None",
-    "obtainMethods": [
-      {
-        "location": "A Boneheaded Brawl",
-        "price": "N/A",
-        "priceType": "gold",
-        "sellback": "30 Gold"
-      },
-      {
-        "location": "Boneheaded Brawl Loot",
-        "price": "300 Dragon Coins",
-        "priceType": "dc",
-        "sellback": "270 DC (<24 hours) / 75 DC (>24 hours)"
-      }
-    ],
-    "attacks": [
-      {
-        "name": "Attack Type 1",
-        "description": "Approaches target and bites it for 1 hit of 100% Melee Darkness damage. (Rate: 70%)",
-        "images": [],
-        "notes": []
-      },
-      {
-        "name": "Attack Type 2",
-        "description": "Recovers 5% of player's max HP; approaches target and breathes dark flames at it for 3 hits of 100% Melee Darkness damage, amounting to 300% damage; applies 'Darkness Breath' (-10 Bonus) to target for 1 turn. (Rate: 30%)",
-        "images": [],
-        "notes": []
-      }
-    ],
-    "rarity": "5",
-    "evolutions": [],
-    "releaseDate": "November 22nd, 2017",
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Bonehead.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22302288",
-    "notes": "Pet is animated; it moves its tail, wings, head, and other parts of its body periodically.",
-    "alsoSee": [
+    "shared": {
+      "description": "This special baby dracolich is here to stay! He has a chance to heal you with the legendary power of turkeys stuffed into small places. Requires a Dragon Amulet to use.",
+      "element": "DAR",
+      "rarity": "5",
+      "attacks": [
+        {
+          "name": "Attack Type 1",
+          "description": "Approaches target and bites it for 1 hit of 100% Melee Darkness damage. (Rate: 70%)",
+          "images": [],
+          "notes": []
+        },
+        {
+          "name": "Attack Type 2",
+          "description": "Recovers 5% of player's max HP; approaches target and breathes dark flames at it for 3 hits of 100% Melee Darkness damage, amounting to 300% damage; applies 'Darkness Breath' (-10 Bonus) to target for 1 turn. (Rate: 30%)",
+          "images": [],
+          "notes": []
+        }
+      ],
+      "notes": "Pet is animated; it moves its tail, wings, head, and other parts of its body periodically.",
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Bonehead.png"
+    },
+    "levelVariants": [
       {
-        "name": "Adorable Baby Dracolich Pet (All Versions)",
-        "slug": "pet-adorable-baby-dracolich-pet",
-        "type": "pet"
+        "levelNumber": 1,
+        "levelDisplay": "20",
+        "actualLevel": 20,
+        "variantName": "DA",
+        "name": "Bonehead (DA)",
+        "damage": "15-15",
+        "stats": "Crit +1, Bonus +1",
+        "statsType": "petStats",
+        "obtainVariants": [
+          {
+            "location": "A Boneheaded Brawl",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "30 Gold This special baby dracolich is here to stay! He has a chance to heal you with the legendary power of turkeys stuffed into small places. (Has a low chance to drop from A Boneheaded Brawl.)",
+            "daRequired": true
+          }
+        ],
+        "element": "DAR",
+        "rarity": "5"
       },
       {
-        "name": "Baby Dracolich Pet (All Versions)",
-        "slug": "pet-baby-dracolich-pet",
-        "type": "pet"
-      },
-      {
-        "name": "Cuddly Dracolich (All Versions)",
-        "slug": "pet-cuddly-dracolich",
-        "type": "pet"
+        "levelNumber": 2,
+        "levelDisplay": "20",
+        "actualLevel": 20,
+        "variantName": "DC",
+        "name": "Bonehead (DC)",
+        "damage": "15-15",
+        "stats": "Crit +1, Bonus +1",
+        "statsType": "petStats",
+        "obtainVariants": [
+          {
+            "location": "Boneheaded Brawl Loot",
+            "price": "300 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "270 DC (<24 hours) / 75 DC (>24 hours)",
+            "daRequired": true,
+            "dcRequired": true
+          }
+        ],
+        "element": "DAR",
+        "rarity": "5"
       }
     ],
+    "releaseDate": "November 22nd, 2017",
     "tags": [
       "pet",
       "dar"
+    ],
+    "isSeasonal": true,
+    "hasDA": true,
+    "hasDC": true,
+    "hasDM": false,
+    "hasFree": true,
+    "hasMerge": false,
+    "levelRange": "20",
+    "elements": [
+      "DAR"
     ]
   },
   {
@@ -3120,15 +3217,19 @@
         "damage": "6-16",
         "stats": "Crit +2",
         "statsType": "bonuses",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20850469",
+        "description": "Meow meow meooooooow!",
         "obtainVariants": [
           {
             "location": "Rare Pets",
             "price": "50 Dragon Coins",
             "priceType": "dc",
             "sellback": "45 DC (<24 hours) / 10 DC (>24 hours)",
-            "daRequired": false
+            "daRequired": false,
+            "dcRequired": true
           }
         ],
+        "element": "SIL",
         "rarity": "5"
       },
       {
@@ -3139,16 +3240,47 @@
         "damage": "13-19",
         "stats": "Crit +3, Bonus +1",
         "statsType": "bonuses",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20850469",
+        "description": "ttps://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/BraveSirRobinCatPetAttack1.png\">Attack Type 1 - Scratches the enemy for 2 hits of melee Silver damage",
+        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/BraveSirRobinCatPetpic.png",
+        "alternativeImages": [
+          {
+            "url": "http://i.imgur.com/bGsKM.png",
+            "caption": "Alternative Image"
+          }
+        ],
         "obtainVariants": [
           {
             "location": "Rare Pets",
             "price": "70 Dragon Coins",
             "priceType": "dc",
             "sellback": "63 DC (<24 hours) / 18 DC (>24 hours)",
-            "daRequired": false
+            "daRequired": false,
+            "dcRequired": true
           }
         ],
-        "rarity": "10"
+        "element": "SIL",
+        "rarity": "10",
+        "attacks": [
+          {
+            "name": "Attack Type 2",
+            "description": "Scratches the enemy for 4 hits of melee Silver damage",
+            "images": [],
+            "notes": []
+          },
+          {
+            "name": "Attack Type 1",
+            "description": "Scratches the enemy for 2 hits of melee Silver damage",
+            "images": [],
+            "notes": []
+          },
+          {
+            "name": "Attack Type 2",
+            "description": "Scratches the enemy for 4 hits of melee Silver damage",
+            "images": [],
+            "notes": []
+          }
+        ]
       }
     ],
     "releaseDate": "November 9th, 2012",
@@ -3662,59 +3794,84 @@
   },
   {
     "id": "pet-brightwing",
-    "name": "Brightwing",
+    "familyName": "Brightwing",
     "slug": "pet-brightwing",
     "type": "pet",
-    "description": "As you rested in a clearing, a butterfly floated down and landed on your hand. You made a Tame Pet roll and scored a critical success. Brightwing is yours!",
-    "daRequired": false,
-    "dcRequired": true,
-    "isRare": true,
-    "elements": [
-      "LIG"
-    ],
-    "traits": [],
-    "level": "10",
-    "damage": "5-13",
-    "stats": "Crit +2",
-    "resists": "None",
-    "obtainMethods": [
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17514874",
+    "shared": {
+      "description": "As you rested in a clearing, a butterfly floated down and landed on your hand. You made a Tame Pet roll and scored a critical success. Brightwing is yours!",
+      "element": "LIG",
+      "rarity": "100",
+      "attacks": [
+        {
+          "name": "Attack Type 1",
+          "description": "Approaches target and bursts into five smaller butterflies, striking target for 1 hit of 100% Melee Light damage.",
+          "images": [],
+          "notes": []
+        }
+      ],
+      "notes": "Pet is animated; it hovers up and down in place, while rapidly fluttering its wings continuously.",
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Brightwing.png"
+    },
+    "levelVariants": [
       {
-        "location": "Transformed from  Striped Egg (Normal)",
-        "price": "N/A",
-        "priceType": "gold",
-        "sellback": "100 Gold"
+        "levelNumber": 1,
+        "levelDisplay": "10",
+        "actualLevel": 10,
+        "variantName": "Normal",
+        "name": "Brightwing (Normal)",
+        "damage": "5-13",
+        "stats": "Crit +2",
+        "statsType": "petStats",
+        "obtainVariants": [
+          {
+            "location": "Transformed from  Striped Egg (Normal)",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "100 Gold",
+            "daRequired": false
+          }
+        ],
+        "element": "LIG",
+        "rarity": "100"
       },
       {
-        "location": "Transformed from  Striped Egg (D-Coins)",
-        "price": "N/A",
-        "priceType": "gold",
-        "sellback": "19 Dragon Coins"
+        "levelNumber": 2,
+        "levelDisplay": "10",
+        "actualLevel": 10,
+        "variantName": "DC",
+        "name": "Brightwing (DC)",
+        "damage": "5-13",
+        "stats": "Crit +2",
+        "statsType": "petStats",
+        "obtainVariants": [
+          {
+            "location": "Transformed from  Striped Egg (D-Coins)",
+            "price": "N/A",
+            "priceType": "dc",
+            "sellback": "19 Dragon Coins",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "element": "LIG",
+        "rarity": "100"
       }
     ],
-    "attacks": [
-      {
-        "name": "Attack Type 1",
-        "description": "Approaches target and bursts into five smaller butterflies, striking target for 1 hit of 100% Melee Light damage.",
-        "images": [],
-        "notes": []
-      }
-    ],
-    "rarity": "100",
-    "evolutions": [],
     "releaseDate": "April 16th, 2010",
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Brightwing.png",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17514874",
-    "notes": "Pet is animated; it hovers up and down in place, while rapidly fluttering its wings continuously.",
-    "alsoSee": [
-      {
-        "name": "Chillwing",
-        "slug": "pet-chillwing",
-        "type": "pet"
-      }
-    ],
     "tags": [
       "pet",
       "lig"
+    ],
+    "isRare": true,
+    "hasDA": false,
+    "hasDC": true,
+    "hasDM": false,
+    "hasFree": true,
+    "hasMerge": false,
+    "levelRange": "10",
+    "elements": [
+      "LIG"
     ]
   },
   {
@@ -5697,59 +5854,84 @@
   },
   {
     "id": "pet-chillwing",
-    "name": "Chillwing",
+    "familyName": "Chillwing",
     "slug": "pet-chillwing",
     "type": "pet",
-    "description": "As you rested in a clearing, a butterfly floated down and landed on your hand. You made a Tame Pet roll and scored a critical success. Chillwing is yours!",
-    "daRequired": false,
-    "dcRequired": true,
-    "isRare": true,
-    "elements": [
-      "ICE"
-    ],
-    "traits": [],
-    "level": "60",
-    "damage": "18-25",
-    "stats": "Crit +5, WIS +5, END +5",
-    "resists": "None",
-    "obtainMethods": [
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17513105",
+    "shared": {
+      "description": "As you rested in a clearing, a butterfly floated down and landed on your hand. You made a Tame Pet roll and scored a critical success. Chillwing is yours!",
+      "element": "ICE",
+      "rarity": "100",
+      "attacks": [
+        {
+          "name": "Attack Type 1",
+          "description": "Approaches target and bursts into five smaller butterflies, striking target for 1 hit of 100% Melee Ice damage.",
+          "images": [],
+          "notes": []
+        }
+      ],
+      "notes": "Pet is animated; it hovers up and down in place, while rapidly fluttering its wings continuously.",
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Chillwing.png"
+    },
+    "levelVariants": [
       {
-        "location": "Transformed from  Golden Egg (Normal)",
-        "price": "N/A",
-        "priceType": "gold",
-        "sellback": "100 Gold"
+        "levelNumber": 1,
+        "levelDisplay": "60",
+        "actualLevel": 60,
+        "variantName": "Normal",
+        "name": "Chillwing (Normal)",
+        "damage": "18-25",
+        "stats": "Crit +5, WIS +5, END +5",
+        "statsType": "petStats",
+        "obtainVariants": [
+          {
+            "location": "Transformed from  Golden Egg (Normal)",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "100 Gold",
+            "daRequired": false
+          }
+        ],
+        "element": "ICE",
+        "rarity": "100"
       },
       {
-        "location": "Transformed from  Golden Egg (D-Coins)",
-        "price": "N/A",
-        "priceType": "gold",
-        "sellback": "19 Dragon Coins"
+        "levelNumber": 2,
+        "levelDisplay": "60",
+        "actualLevel": 60,
+        "variantName": "DC",
+        "name": "Chillwing (DC)",
+        "damage": "18-25",
+        "stats": "Crit +5, WIS +5, END +5",
+        "statsType": "petStats",
+        "obtainVariants": [
+          {
+            "location": "Transformed from  Golden Egg (D-Coins)",
+            "price": "N/A",
+            "priceType": "dc",
+            "sellback": "19 Dragon Coins",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "element": "ICE",
+        "rarity": "100"
       }
     ],
-    "attacks": [
-      {
-        "name": "Attack Type 1",
-        "description": "Approaches target and bursts into five smaller butterflies, striking target for 1 hit of 100% Melee Ice damage.",
-        "images": [],
-        "notes": []
-      }
-    ],
-    "rarity": "100",
-    "evolutions": [],
     "releaseDate": "April 16th, 2010",
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Chillwing.png",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17513105",
-    "notes": "Pet is animated; it hovers up and down in place, while rapidly fluttering its wings continuously.",
-    "alsoSee": [
-      {
-        "name": "Brightwing",
-        "slug": "pet-brightwing",
-        "type": "pet"
-      }
-    ],
     "tags": [
       "pet",
       "ice"
+    ],
+    "isRare": true,
+    "hasDA": false,
+    "hasDC": true,
+    "hasDM": false,
+    "hasFree": true,
+    "hasMerge": false,
+    "levelRange": "60",
+    "elements": [
+      "ICE"
     ]
   },
   {
@@ -7064,7 +7246,7 @@
             "price": "N/A",
             "priceType": "free",
             "sellback": "20 Gold",
-            "daRequired": false
+            "daRequired": true
           }
         ],
         "element": "WAT",
@@ -7084,7 +7266,7 @@
             "price": "N/A",
             "priceType": "free",
             "sellback": "100 Gold",
-            "daRequired": false
+            "daRequired": true
           }
         ],
         "element": "WAT",
@@ -7104,7 +7286,7 @@
             "price": "N/A",
             "priceType": "free",
             "sellback": "100 Gold",
-            "daRequired": false
+            "daRequired": true
           }
         ],
         "element": "WAT",
@@ -7116,7 +7298,7 @@
       "pet",
       "wat"
     ],
-    "hasDA": false,
+    "hasDA": true,
     "hasDC": false,
     "hasDM": false,
     "hasFree": true,
@@ -7539,83 +7721,134 @@
     ]
   },
   {
-    "id": "pet-cysero-s-agitated-orb-all-versions",
-    "name": "Cysero's Agitated Orb (All Versions)",
-    "slug": "pet-cysero-s-agitated-orb-all-versions",
+    "id": "pet-cysero-s-agitated-orb",
+    "familyName": "Cysero's Agitated Orb",
+    "slug": "pet-cysero-s-agitated-orb",
     "type": "pet",
-    "description": "It's Cysero's Orb, and its CRANKY!",
-    "daRequired": true,
-    "dcRequired": true,
-    "elements": [
-      "ENE",
-      "FIR"
-    ],
-    "traits": [],
-    "level": "35",
-    "damage": "16-20",
-    "stats": "Crit +3",
-    "resists": "None",
-    "obtainMethods": [
-      {
-        "location": "The Coming Storm",
-        "price": "N/A",
-        "priceType": "gold",
-        "sellback": "150 Gold"
-      },
-      {
-        "location": "Rare Pets",
-        "price": "350 Dragon Coins",
-        "priceType": "dc",
-        "sellback": "315 DC (<24 hours) / 88 DC (>24 hours)"
-      }
-    ],
-    "attacks": [
-      {
-        "name": "Attack Type 1",
-        "description": "Approaches target and launches one of its claws through it for 1 hit of 100% Melee Energy damage.",
-        "images": [],
-        "notes": []
-      },
-      {
-        "name": "Attack Type 2",
-        "description": "Approaches target and blasts it for 2 hits of 100% Melee Fire damage, amounting to 200% damage.",
-        "images": [],
-        "notes": []
-      },
-      {
-        "name": "Attack Type 1",
-        "description": "Approaches target and launches one of its claws through it for 1 hit of 100% Melee Energy damage.",
-        "images": [],
-        "notes": []
-      },
-      {
-        "name": "Attack Type 2",
-        "description": "Approaches target and blasts it for 2 hits of 100% Melee Fire damage, amounting to 200% damage.",
-        "images": [],
-        "notes": []
-      }
-    ],
-    "rarity": "9",
-    "evolutions": [],
-    "releaseDate": "January 9th, 2009",
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Cysero",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15352600",
-    "alsoSee": [],
+    "shared": {
+      "description": "It's Cysero's Orb, and its CRANKY!",
+      "element": "ENE",
+      "rarity": "9",
+      "attacks": [
+        {
+          "name": "Attack Type 1",
+          "description": "Approaches target and launches one of its claws through it for 1 hit of 100% Melee Energy damage.",
+          "images": [],
+          "notes": []
+        },
+        {
+          "name": "Attack Type 2",
+          "description": "Approaches target and blasts it for 2 hits of 100% Melee Fire damage, amounting to 200% damage.",
+          "images": [],
+          "notes": []
+        }
+      ],
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Cysero'sAgitatedOrb.png"
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
+        "levelDisplay": "35",
+        "actualLevel": 35,
+        "variantName": "Normal",
+        "name": "Cysero's Agitated Orb (Normal)",
+        "damage": "16-20",
+        "stats": "Crit +3",
+        "statsType": "bonuses",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=15352600",
+        "description": "It's Cysero's Orb, and its CRANKY!",
+        "obtainVariants": [
+          {
+            "location": "The Coming Storm",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "150 Gold",
+            "daRequired": true
+          }
+        ],
+        "element": "ENE",
+        "rarity": "9",
+        "attacks": [
+          {
+            "name": "Attack Type 1",
+            "description": "Approaches target and launches one of its claws through it for 1 hit of 100% Melee Energy damage.",
+            "images": [],
+            "notes": []
+          },
+          {
+            "name": "Attack Type 2",
+            "description": "Approaches target and blasts it for 2 hits of 100% Melee Fire damage, amounting to 200% damage.",
+            "images": [],
+            "notes": []
+          }
+        ]
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "35",
+        "actualLevel": 35,
+        "variantName": "DC",
+        "name": "Cysero's Agitated Orb (DC)",
+        "damage": "16-20",
+        "stats": "Crit +3",
+        "statsType": "bonuses",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=15352600",
+        "description": "It's Cysero's Orb, and its CRANKY!",
+        "obtainVariants": [
+          {
+            "location": "Rare Pets",
+            "price": "350 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "315 DC (<24 hours) / 88 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "element": "ENE",
+        "rarity": "9",
+        "attacks": [
+          {
+            "name": "Attack Type 1",
+            "description": "Approaches target and launches one of its claws through it for 1 hit of 100% Melee Energy damage.",
+            "images": [],
+            "notes": []
+          },
+          {
+            "name": "Attack Type 2",
+            "description": "Approaches target and blasts it for 2 hits of 100% Melee Fire damage, amounting to 200% damage.",
+            "images": [],
+            "notes": []
+          }
+        ]
+      }
+    ],
+    "releaseDate": "January 9th, 2009",
     "tags": [
       "pet",
       "ene",
       "fir"
+    ],
+    "hasDA": true,
+    "hasDC": true,
+    "hasDM": false,
+    "hasFree": true,
+    "hasMerge": false,
+    "levelRange": "35",
+    "elements": [
+      "ENE",
+      "FIR"
     ]
   },
   {
-    "id": "pet-dandytiger",
+    "id": "pet-firehead-daisy",
     "familyName": "Dandytiger",
-    "slug": "pet-dandytiger",
+    "slug": "pet-firehead-daisy",
     "aliasSlugs": [
-      "pet-firehead-daisy"
+      "pet-dandytiger"
     ],
     "type": "pet",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=6129827",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17505517",
     "familyOrigin": "cross-post",
     "familySources": [
       {
@@ -7632,7 +7865,16 @@
     ],
     "shared": {
       "description": "This friendly little flower is one of the several local plants that like to act like they are animals.",
-      "element": "NAT"
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/FireheadDaisy.png",
+      "element": "NAT",
+      "attacks": [
+        {
+          "name": "Attack Type 1",
+          "description": "Approaches target and strikes it for 1 hit of 100% Melee Nature damage.",
+          "images": [],
+          "notes": []
+        }
+      ]
     },
     "levelVariants": [
       {
@@ -7669,25 +7911,16 @@
         "levelNumber": 2,
         "levelDisplay": "40",
         "actualLevel": 40,
-        "name": "Firehead Daisy",
+        "variantName": "DC",
+        "name": "Firehead Daisy (DC)",
         "damage": "13-19",
         "stats": "Crit +4, END +3",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=17505517",
-        "description": "April showers bring... April flowers! The Firehead Daisy only grows at the base of volcanoes in the early Spring!",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/FireheadDaisy.png",
+        "statsType": "petStats",
         "obtainVariants": [
-          {
-            "location": "Transformed from  Bright Pink Egg (Normal)",
-            "price": "N/A",
-            "priceType": "gold",
-            "sellback": "100 Gold",
-            "daRequired": false,
-            "dcRequired": true
-          },
           {
             "location": "Transformed from  Bright Pink Egg (D-Coins)",
             "price": "N/A",
-            "priceType": "gold",
+            "priceType": "dc",
             "sellback": "19 Dragon Coins",
             "daRequired": false,
             "dcRequired": true
@@ -7695,14 +7928,29 @@
         ],
         "element": "NAT",
         "rarity": "100",
-        "attacks": [
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=17505517"
+      },
+      {
+        "levelNumber": 3,
+        "levelDisplay": "40",
+        "actualLevel": 40,
+        "variantName": "Normal",
+        "name": "Firehead Daisy (Normal)",
+        "damage": "13-19",
+        "stats": "Crit +4, END +3",
+        "statsType": "petStats",
+        "obtainVariants": [
           {
-            "name": "Attack Type 1",
-            "description": "Approaches target and strikes it for 2 hits of 100% Melee Nature damage, amounting to 200% damage.",
-            "images": [],
-            "notes": []
+            "location": "Transformed from  Bright Pink Egg (Normal)",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "100 Gold",
+            "daRequired": false
           }
-        ]
+        ],
+        "element": "NAT",
+        "rarity": "100",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=17505517"
       }
     ],
     "releaseDate": "April 16th, 2010",
@@ -7713,7 +7961,7 @@
     "hasDA": false,
     "hasDC": true,
     "hasDM": false,
-    "hasFree": false,
+    "hasFree": true,
     "hasMerge": false,
     "isTemp": false,
     "isRare": true,
@@ -7752,15 +8000,19 @@
         "damage": "6-16",
         "stats": "Crit +2",
         "statsType": "bonuses",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20850561",
+        "description": "Meow meow meooooooow!",
         "obtainVariants": [
           {
             "location": "Rare Pets",
             "price": "50 Dragon Coins",
             "priceType": "dc",
             "sellback": "45 DC (<24 hours) / 10 DC (>24 hours)",
-            "daRequired": false
+            "daRequired": false,
+            "dcRequired": true
           }
         ],
+        "element": "DAR",
         "rarity": "5"
       },
       {
@@ -7771,16 +8023,47 @@
         "damage": "13-19",
         "stats": "Crit +3, Bonus +1",
         "statsType": "bonuses",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20850561",
+        "description": "ttps://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/DeatharrowsCatPetAttack1.png\">Attack Type 1 - Scratches the enemy for 2 hits of Melee Darkness damage",
+        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/DeatharrowsCatPetpic.png",
+        "alternativeImages": [
+          {
+            "url": "http://i.imgur.com/Xj9Nd.jpg",
+            "caption": "Alternative Image"
+          }
+        ],
         "obtainVariants": [
           {
             "location": "Rare Pets",
             "price": "70 Dragon Coins",
             "priceType": "dc",
             "sellback": "63 DC (<24 hours) / 18 DC (>24 hours)",
-            "daRequired": false
+            "daRequired": false,
+            "dcRequired": true
           }
         ],
-        "rarity": "10"
+        "element": "DAR",
+        "rarity": "10",
+        "attacks": [
+          {
+            "name": "Attack Type 2",
+            "description": "Scratches the enemy for 4 hits of Melee Darkness damage",
+            "images": [],
+            "notes": []
+          },
+          {
+            "name": "Attack Type 1",
+            "description": "Scratches the enemy for 2 hits of Melee Darkness damage",
+            "images": [],
+            "notes": []
+          },
+          {
+            "name": "Attack Type 2",
+            "description": "Scratches the enemy for 4 hits of Melee Darkness damage",
+            "images": [],
+            "notes": []
+          }
+        ]
       }
     ],
     "releaseDate": "November 9th, 2012",
@@ -8325,7 +8608,9 @@
     "daRequired": false,
     "isRare": true,
     "isSpecialOffer": true,
-    "elements": [],
+    "elements": [
+      "NAT"
+    ],
     "traits": [
       "N/A"
     ],
@@ -8358,6 +8643,7 @@
     "alsoSee": [],
     "tags": [
       "pet",
+      "nat",
       "n-a"
     ]
   },
@@ -9128,7 +9414,7 @@
     "hasDM": false,
     "hasFree": false,
     "hasMerge": false,
-    "levelRange": "I-VII",
+    "levelRange": "10-70",
     "elements": [
       "DAR"
     ]
@@ -9175,7 +9461,6 @@
           "notes": []
         }
       ],
-      "notes": "Attack Types 1 and 2 will only be used while the player has greater than 50% of their maximum HP remaining. (Rate: 50% each)\nAttack Types 3 and 4 will only be used while the player has less than or equal to 50% of their maximum HP remaining. (Rate: {[100 - (Player's CHA)/8]/2}% each)",
       "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/ExtraFluffyTog.png"
     },
     "levelVariants": [
@@ -9203,36 +9488,44 @@
       {
         "levelNumber": 2,
         "levelDisplay": "II",
+        "actualLevel": 60,
         "name": "Extra Fluffy Tog II",
-        "damage": "Unknown",
-        "stats": "None",
+        "damage": "21-26",
+        "stats": "CHA +200, Bonus +20",
+        "statsType": "petStats",
         "obtainVariants": [
           {
             "location": "Extra Fluffy Tog",
             "price": "N/A",
             "priceType": "merge",
-            "sellback": "0 Gold",
+            "sellback": "N/A",
             "daRequired": false,
-            "requiredItems": "1"
+            "requiredItems": "1 Extra Fluffy Tog I & 1  Aspenvale Academy Sweater"
           }
-        ]
+        ],
+        "element": "EBI",
+        "rarity": "1"
       },
       {
         "levelNumber": 3,
         "levelDisplay": "III",
+        "actualLevel": 90,
         "name": "Extra Fluffy Tog III",
-        "damage": "Unknown",
-        "stats": "None",
+        "damage": "27-32",
+        "stats": "CHA +200, Bonus +20",
+        "statsType": "petStats",
         "obtainVariants": [
           {
             "location": "Extra Fluffy Tog",
             "price": "N/A",
             "priceType": "merge",
-            "sellback": "0 Gold",
+            "sellback": "N/A",
             "daRequired": false,
-            "requiredItems": "1"
+            "requiredItems": "1 Extra Fluffy Tog II & 1  Aspenvale Academy Sweater"
           }
-        ]
+        ],
+        "element": "EBI",
+        "rarity": "1"
       }
     ],
     "releaseDate": "May 7th, 2021",
@@ -9245,7 +9538,7 @@
     "hasDM": false,
     "hasFree": false,
     "hasMerge": true,
-    "levelRange": "I-III",
+    "levelRange": "30-90",
     "elements": [
       "EBI"
     ]
@@ -11036,6 +11329,12 @@
     "shared": {
       "description": "What a thoughtful gift from Twig! Part fish, part sprinkle, all ice cweam! (Contains 5% cherry).",
       "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/IcefishsprinkleguyPetpic.png",
+      "alternativeImages": [
+        {
+          "url": "https://i.imgur.com/bZYOYh0.png",
+          "caption": "Alternative Image"
+        }
+      ],
       "element": "ICE",
       "notes": "Transformed from  Yellow Present (2015) on  January 1st, 2016.\nThis pet deals 0 damage unless you have stat points in CHA or LUK.\nAlternative Image"
     },
@@ -11958,10 +12257,12 @@
     "name": "Geo",
     "slug": "pet-geo",
     "type": "pet",
-    "description": "Resists: None",
+    "description": "",
     "daRequired": false,
     "isTemp": true,
-    "elements": [],
+    "elements": [
+      "NON"
+    ],
     "traits": [
       "N/A"
     ],
@@ -11982,19 +12283,25 @@
         "name": "Attack Type 1",
         "description": "Geo does not attack",
         "images": [],
-        "notes": [
-          "This pet, like most civilized rocks, is passive and does absolutely nothing."
-        ]
+        "notes": []
       }
     ],
     "rarity": "0",
     "evolutions": [],
     "releaseDate": "February 29th, 2008",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/GeoPetpic.png",
+    "alternativeImages": [
+      {
+        "url": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Geo%20pic.png",
+        "caption": "April 1st Image"
+      }
+    ],
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=13031751",
+    "notes": "This pet, like most civilized rocks, is passive and does absolutely nothing.",
     "alsoSee": [],
     "tags": [
       "pet",
+      "non",
       "n-a"
     ]
   },
@@ -12768,58 +13075,89 @@
   },
   {
     "id": "pet-golden-egg-the",
-    "name": "Golden Egg, The",
+    "familyName": "Golden Egg, The",
     "slug": "pet-golden-egg-the",
     "type": "pet",
-    "description": "The Golden Egg",
-    "daRequired": false,
-    "dcRequired": true,
-    "isRare": true,
-    "elements": [
-      "NAT"
-    ],
-    "traits": [],
-    "level": "10",
-    "damage": "8-12",
-    "stats": "Crit +5, Bonus +12",
-    "resists": "None",
-    "obtainMethods": [
-      {
-        "location": "Transformed from  Purple Spotted Egg (Normal)",
-        "price": "N/A",
-        "priceType": "gold",
-        "sellback": "50 Gold"
-      },
-      {
-        "location": "Transformed from  Purple Spotted Egg (D-Coins)",
-        "price": "N/A",
-        "priceType": "gold",
-        "sellback": "19 Dragon Coins"
-      }
-    ],
-    "attacks": [
-      {
-        "name": "Attack Type 1",
-        "description": "Approaches target and bumps into it for 1 hit of 100% Melee Nature damage. (Rate: 50%)",
-        "images": [],
-        "notes": []
-      },
-      {
-        "name": "Attack Type 2 /  2.1 /  2.2",
-        "description": "Approaches target, glows, and summons a Chocolate Bunny to jump into it for 1 hit of 100% Melee Nature damage. (Rate: 50%)",
-        "images": [],
-        "notes": []
-      }
-    ],
-    "rarity": "77",
-    "evolutions": [],
-    "releaseDate": "April 17th, 2009",
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/TheGoldenEgg.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15865301",
-    "alsoSee": [],
+    "shared": {
+      "description": "The Golden Egg",
+      "element": "NAT",
+      "rarity": "77",
+      "attacks": [
+        {
+          "name": "Attack Type 1",
+          "description": "Approaches target and bumps into it for 1 hit of 100% Melee Nature damage. (Rate: 50%)",
+          "images": [],
+          "notes": []
+        },
+        {
+          "name": "Attack Type 2 /  2.1 /  2.2",
+          "description": "Approaches target, glows, and summons a Chocolate Bunny to jump into it for 1 hit of 100% Melee Nature damage. (Rate: 50%)",
+          "images": [],
+          "notes": []
+        }
+      ],
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/TheGoldenEgg.png"
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
+        "levelDisplay": "10",
+        "actualLevel": 10,
+        "variantName": "Normal",
+        "name": "Golden Egg, The (Normal)",
+        "damage": "8-12",
+        "stats": "Crit +5, Bonus +12",
+        "statsType": "petStats",
+        "obtainVariants": [
+          {
+            "location": "Transformed from  Purple Spotted Egg (Normal)",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "50 Gold",
+            "daRequired": false
+          }
+        ],
+        "element": "NAT",
+        "rarity": "77"
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "10",
+        "actualLevel": 10,
+        "variantName": "DC",
+        "name": "Golden Egg, The (DC)",
+        "damage": "8-12",
+        "stats": "Crit +5, Bonus +12",
+        "statsType": "petStats",
+        "obtainVariants": [
+          {
+            "location": "Transformed from  Purple Spotted Egg (D-Coins)",
+            "price": "N/A",
+            "priceType": "dc",
+            "sellback": "19 Dragon Coins",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "element": "NAT",
+        "rarity": "77"
+      }
+    ],
+    "releaseDate": "April 17th, 2009",
     "tags": [
       "pet",
       "nat"
+    ],
+    "isRare": true,
+    "hasDA": false,
+    "hasDC": true,
+    "hasDM": false,
+    "hasFree": true,
+    "hasMerge": false,
+    "levelRange": "10",
+    "elements": [
+      "NAT"
     ]
   },
   {
@@ -12909,6 +13247,14 @@
         "statsType": "petStats",
         "obtainVariants": [
           {
+            "location": "Efficient Housework",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "9 Gold",
+            "daRequired": false,
+            "dcRequired": true
+          },
+          {
             "location": "EH Loot for DCs",
             "price": "150 Dragon Coins",
             "priceType": "dc",
@@ -12930,6 +13276,14 @@
         "stats": "Crit +4, Bonus +4",
         "statsType": "petStats",
         "obtainVariants": [
+          {
+            "location": "Efficient Housework",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "11 Gold",
+            "daRequired": false,
+            "dcRequired": true
+          },
           {
             "location": "EH Loot for DCs",
             "price": "150 Dragon Coins",
@@ -12953,6 +13307,14 @@
         "statsType": "petStats",
         "obtainVariants": [
           {
+            "location": "Efficient Housework",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "13 Gold",
+            "daRequired": false,
+            "dcRequired": true
+          },
+          {
             "location": "EH Loot for DCs",
             "price": "150 Dragon Coins",
             "priceType": "dc",
@@ -12975,11 +13337,19 @@
         "statsType": "petStats",
         "obtainVariants": [
           {
+            "location": "Efficient Housework",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "15 Gold",
+            "daRequired": true,
+            "dcRequired": true
+          },
+          {
             "location": "EH Loot for DCs",
             "price": "150 Dragon Coins",
             "priceType": "dc",
             "sellback": "135 DC (<24 hours) / 38 DC (>24 hours)",
-            "daRequired": false,
+            "daRequired": true,
             "dcRequired": true
           }
         ],
@@ -12997,11 +13367,19 @@
         "statsType": "petStats",
         "obtainVariants": [
           {
+            "location": "Efficient Housework",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "17 Gold",
+            "daRequired": true,
+            "dcRequired": true
+          },
+          {
             "location": "EH Loot for DCs",
             "price": "150 Dragon Coins",
             "priceType": "dc",
             "sellback": "135 DC (<24 hours) / 38 DC (>24 hours)",
-            "daRequired": false,
+            "daRequired": true,
             "dcRequired": true
           }
         ],
@@ -13019,11 +13397,19 @@
         "statsType": "petStats",
         "obtainVariants": [
           {
+            "location": "Efficient Housework",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "20 Gold",
+            "daRequired": true,
+            "dcRequired": true
+          },
+          {
             "location": "EH Loot for DCs",
             "price": "150 Dragon Coins",
             "priceType": "dc",
             "sellback": "135 DC (<24 hours) / 38 DC (>24 hours)",
-            "daRequired": false,
+            "daRequired": true,
             "dcRequired": true
           }
         ],
@@ -13041,11 +13427,19 @@
         "statsType": "petStats",
         "obtainVariants": [
           {
+            "location": "Efficient Housework",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "24 Gold",
+            "daRequired": true,
+            "dcRequired": true
+          },
+          {
             "location": "EH Loot for DCs",
             "price": "150 Dragon Coins",
             "priceType": "dc",
             "sellback": "135 DC (<24 hours) / 38 DC (>24 hours)",
-            "daRequired": false,
+            "daRequired": true,
             "dcRequired": true
           }
         ],
@@ -13059,10 +13453,10 @@
       "pet",
       "wat"
     ],
-    "hasDA": false,
+    "hasDA": true,
     "hasDC": true,
     "hasDM": false,
-    "hasFree": false,
+    "hasFree": true,
     "hasMerge": true,
     "isTemp": true,
     "isRare": false,
@@ -13822,8 +14216,8 @@
     "daRequired": false,
     "isSeasonal": true,
     "elements": [
-      "ENE",
-      "MET"
+      "MET",
+      "ENE"
     ],
     "traits": [],
     "level": "22",
@@ -13861,8 +14255,8 @@
     "alsoSee": [],
     "tags": [
       "pet",
-      "ene",
-      "met"
+      "met",
+      "ene"
     ]
   },
   {
@@ -14253,7 +14647,6 @@
           "notes": []
         }
       ],
-      "notes": "Dragon Amulet was misspelled as DragonAmulet; this was corrected on  July 22nd, 2023.\nPets are animated; it hovers up and down in place, while rapidly fluttering its wings continuously.",
       "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/JimmytheEyePetpic.png"
     },
     "levelVariants": [
@@ -14294,6 +14687,7 @@
             "priceType": "merge",
             "sellback": "5 Gold",
             "daRequired": true,
+            "dmRequired": true,
             "requiredItems": "75  Defender's Medal & 1 Jimmy The Eye"
           }
         ],
@@ -14312,7 +14706,7 @@
     "hasDM": true,
     "hasFree": false,
     "hasMerge": true,
-    "levelRange": "I-II",
+    "levelRange": "8-12",
     "elements": [
       "ENE",
       "WIN"
@@ -14345,15 +14739,19 @@
         "damage": "6-16",
         "stats": "Crit +2",
         "statsType": "bonuses",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20850534",
+        "description": "Meow meow meooooooow!",
         "obtainVariants": [
           {
             "location": "Rare Pets",
             "price": "50 Dragon Coins",
             "priceType": "dc",
             "sellback": "45 DC (<24 hours) / 10 DC (>24 hours)",
-            "daRequired": false
+            "daRequired": false,
+            "dcRequired": true
           }
         ],
+        "element": "WAT",
         "rarity": "5"
       },
       {
@@ -14364,16 +14762,47 @@
         "damage": "13-19",
         "stats": "Crit +3, Bonus +1",
         "statsType": "bonuses",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20850534",
+        "description": "get=\"_blank\" href=\"https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/JoshCatPetAttack1.png\">Attack Type 1 - Scratches the enemy for 2 hits of melee Water damage",
+        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/JoshCatPetpic.png",
+        "alternativeImages": [
+          {
+            "url": "http://i.imgur.com/iPyus.jpg",
+            "caption": "Alternative Image"
+          }
+        ],
         "obtainVariants": [
           {
             "location": "Rare Pets",
             "price": "70 Dragon Coins",
             "priceType": "dc",
             "sellback": "63 DC (<24 hours) / 18 DC (>24 hours)",
-            "daRequired": false
+            "daRequired": false,
+            "dcRequired": true
           }
         ],
-        "rarity": "10"
+        "element": "WAT",
+        "rarity": "10",
+        "attacks": [
+          {
+            "name": "Attack Type 2",
+            "description": "Scratches the enemy for 4 hits of melee Water damage",
+            "images": [],
+            "notes": []
+          },
+          {
+            "name": "Attack Type 1",
+            "description": "Scratches the enemy for 2 hits of melee Water damage",
+            "images": [],
+            "notes": []
+          },
+          {
+            "name": "Attack Type 2",
+            "description": "Scratches the enemy for 4 hits of melee Water damage",
+            "images": [],
+            "notes": []
+          }
+        ]
       }
     ],
     "releaseDate": "November 9th, 2012",
@@ -14514,15 +14943,19 @@
         "damage": "6-16",
         "stats": "Crit +2",
         "statsType": "bonuses",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20850430",
+        "description": "Woof woof wooooooooof!",
         "obtainVariants": [
           {
             "location": "Rare Pets",
             "price": "50 Dragon Coins",
             "priceType": "dc",
             "sellback": "45 DC (<24 hours) / 10 DC (>24 hours)",
-            "daRequired": false
+            "daRequired": false,
+            "dcRequired": true
           }
         ],
+        "element": "STO",
         "rarity": "5"
       },
       {
@@ -14533,16 +14966,47 @@
         "damage": "13-19",
         "stats": "Crit +3, Bonus +1",
         "statsType": "bonuses",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20850430",
+        "description": "et=\"_blank\" href=\"https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/LFALCatPetAttack1.png\">Attack Type 1 - Scratches the enemy for 2 hits of melee Stone damage",
+        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/LFALCatPetpic.png",
+        "alternativeImages": [
+          {
+            "url": "http://i.imgur.com/N07IP.jpg",
+            "caption": "Alternative Image"
+          }
+        ],
         "obtainVariants": [
           {
             "location": "Rare Pets",
             "price": "70 Dragon Coins",
             "priceType": "dc",
             "sellback": "63 DC (<24 hours) / 18 DC (>24 hours)",
-            "daRequired": false
+            "daRequired": false,
+            "dcRequired": true
           }
         ],
-        "rarity": "10"
+        "element": "STO",
+        "rarity": "10",
+        "attacks": [
+          {
+            "name": "Attack Type 2",
+            "description": "Scratches the enemy for 4 hits of melee Stone damage",
+            "images": [],
+            "notes": []
+          },
+          {
+            "name": "Attack Type 1",
+            "description": "Scratches the enemy for 2 hits of melee Stone damage",
+            "images": [],
+            "notes": []
+          },
+          {
+            "name": "Attack Type 2",
+            "description": "Scratches the enemy for 4 hits of melee Stone damage",
+            "images": [],
+            "notes": []
+          }
+        ]
       }
     ],
     "releaseDate": "November 9th, 2012",
@@ -14570,8 +15034,18 @@
     "shared": {
       "description": "That is the cutest fire elemental EVER!",
       "element": "FIR",
-      "notes": "Pets were tiered with Roman numerals and its resistances were corrected on  July 14th, 2023.",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Li"
+      "rarity": "10",
+      "resists": "Water -10, Cute +1000",
+      "attacks": [
+        {
+          "name": "Attack Type 1",
+          "description": "Approaches target and casts a flare towards it for 1 hit of 100% Melee Fire damage",
+          "images": [],
+          "notes": []
+        }
+      ],
+      "notes": "Transformed from  Green Present 2010 on  January 2nd, 2011.",
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Li'lInferno.png"
     },
     "levelVariants": [
       {
@@ -14584,6 +15058,13 @@
         "statsType": "petStats",
         "obtainVariants": [
           {
+            "location": "Gift Boxes",
+            "price": "1,000 Gold",
+            "priceType": "gold",
+            "sellback": "100 Gold",
+            "daRequired": false
+          },
+          {
             "location": "Frostval 2010",
             "price": "N/A",
             "priceType": "merge",
@@ -14594,8 +15075,7 @@
         ],
         "element": "FIR",
         "resists": "Water -10, Cute +1000",
-        "rarity": "10",
-        "notes": "Transformed from  Green Present 2010 on  January 2nd, 2011."
+        "rarity": "10"
       },
       {
         "levelNumber": 2,
@@ -14632,7 +15112,7 @@
             "price": "2,000 Gold",
             "priceType": "gold",
             "sellback": "200 Gold",
-            "daRequired": true
+            "daRequired": false
           }
         ],
         "element": "FIR",
@@ -14674,7 +15154,7 @@
             "price": "2,500 Gold",
             "priceType": "gold",
             "sellback": "250 Gold",
-            "daRequired": false
+            "daRequired": true
           }
         ],
         "element": "FIR",
@@ -14694,7 +15174,7 @@
     "hasDM": false,
     "hasFree": false,
     "hasMerge": true,
-    "levelRange": "I-V",
+    "levelRange": "20-80",
     "elements": [
       "FIR"
     ]
@@ -14718,8 +15198,7 @@
           "notes": []
         }
       ],
-      "notes": "Pets were tiered with Roman numerals and its resistances were corrected on  July 14th, 2023.",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Li"
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Li'lSquall.png"
     },
     "levelVariants": [
       {
@@ -14774,11 +15253,18 @@
         "statsType": "petStats",
         "obtainVariants": [
           {
+            "location": "Gift Boxes",
+            "price": "2,000 Gold",
+            "priceType": "gold",
+            "sellback": "200 Gold",
+            "daRequired": false
+          },
+          {
             "location": "Frostval 2010",
             "price": "N/A",
             "priceType": "merge",
             "sellback": "200 Gold",
-            "daRequired": true,
+            "daRequired": false,
             "requiredItems": "1  Blue Present 2010"
           }
         ],
@@ -14822,7 +15308,7 @@
             "price": "2,500 Gold",
             "priceType": "gold",
             "sellback": "250 Gold",
-            "daRequired": false
+            "daRequired": true
           }
         ],
         "element": "WIN",
@@ -14842,7 +15328,7 @@
     "hasDM": false,
     "hasFree": false,
     "hasMerge": true,
-    "levelRange": "I-V",
+    "levelRange": "20-80",
     "elements": [
       "WIN"
     ]
@@ -14866,8 +15352,7 @@
           "notes": []
         }
       ],
-      "notes": "Pets were tiered with Roman numerals and its resistances were corrected on  July 14th, 2023.",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Li"
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Li'lTyphoon.png"
     },
     "levelVariants": [
       {
@@ -14926,7 +15411,7 @@
             "price": "2,000 Gold",
             "priceType": "gold",
             "sellback": "200 Gold",
-            "daRequired": true
+            "daRequired": false
           }
         ],
         "element": "WAT",
@@ -14942,6 +15427,13 @@
         "stats": "None",
         "statsType": "petStats",
         "obtainVariants": [
+          {
+            "location": "Gift Boxes",
+            "price": "2,500 Gold",
+            "priceType": "gold",
+            "sellback": "250 Gold",
+            "daRequired": true
+          },
           {
             "location": "Frostval 2010",
             "price": "N/A",
@@ -14970,7 +15462,7 @@
             "price": "2,500 Gold",
             "priceType": "gold",
             "sellback": "250 Gold",
-            "daRequired": false
+            "daRequired": true
           }
         ],
         "element": "WAT",
@@ -14990,7 +15482,7 @@
     "hasDM": false,
     "hasFree": false,
     "hasMerge": true,
-    "levelRange": "I-V",
+    "levelRange": "20-80",
     "elements": [
       "WAT"
     ]
@@ -15034,6 +15526,7 @@
     ],
     "shared": {
       "description": "Your tiny penguin pal. He gets confused alot and likes cleaning... but will not do windows!",
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Linus.png",
       "element": "ICE"
     },
     "levelVariants": [
@@ -15637,121 +16130,149 @@
       {
         "levelNumber": 2,
         "levelDisplay": "II",
+        "actualLevel": 10,
         "name": "Lucky Wyvern II",
-        "damage": "Unknown",
-        "stats": "None",
+        "damage": "5-13",
+        "stats": "Crit +1, Bonus +1",
+        "statsType": "petStats",
         "obtainVariants": [
           {
             "location": "Lucky 13 Chest Items",
             "price": "N/A",
             "priceType": "merge",
-            "sellback": "0 Gold",
+            "sellback": "50 Gold",
             "daRequired": false,
-            "requiredItems": "1"
+            "requiredItems": "1 Lucky Wyvern I"
           }
-        ]
+        ],
+        "element": "LIG",
+        "rarity": "77"
       },
       {
         "levelNumber": 3,
         "levelDisplay": "III",
+        "actualLevel": 30,
         "name": "Lucky Wyvern III",
-        "damage": "Unknown",
-        "stats": "None",
+        "damage": "13-18",
+        "stats": "Crit +3, Bonus +3",
+        "statsType": "petStats",
         "obtainVariants": [
           {
             "location": "Lucky 13 Chest Items",
             "price": "N/A",
             "priceType": "merge",
-            "sellback": "0 Gold",
+            "sellback": "50 Gold",
             "daRequired": false,
-            "requiredItems": "1"
+            "requiredItems": "1 Lucky Wyvern II"
           }
-        ]
+        ],
+        "element": "LIG",
+        "rarity": "77"
       },
       {
         "levelNumber": 4,
         "levelDisplay": "IV",
+        "actualLevel": 50,
         "name": "Lucky Wyvern IV",
-        "damage": "Unknown",
-        "stats": "None",
+        "damage": "16-22",
+        "stats": "Crit +5, INT +1, Bonus +5",
+        "statsType": "petStats",
         "obtainVariants": [
           {
             "location": "Lucky 13 Chest Items",
             "price": "N/A",
             "priceType": "merge",
-            "sellback": "0 Gold",
+            "sellback": "50 Gold",
             "daRequired": false,
-            "requiredItems": "1"
+            "requiredItems": "1 Lucky Wyvern III"
           }
-        ]
+        ],
+        "element": "LIG",
+        "rarity": "77"
       },
       {
         "levelNumber": 5,
         "levelDisplay": "V",
+        "actualLevel": 60,
         "name": "Lucky Wyvern V",
-        "damage": "Unknown",
-        "stats": "None",
+        "damage": "19-25",
+        "stats": "Crit +7, INT +2, Bonus +6",
+        "statsType": "petStats",
         "obtainVariants": [
           {
             "location": "Lucky 13 Chest Items",
             "price": "N/A",
             "priceType": "merge",
-            "sellback": "0 Gold",
+            "sellback": "50 Gold",
             "daRequired": true,
-            "requiredItems": "1"
+            "requiredItems": "1 Lucky Wyvern IV"
           }
-        ]
+        ],
+        "element": "LIG",
+        "rarity": "77"
       },
       {
         "levelNumber": 6,
         "levelDisplay": "VI",
+        "actualLevel": 70,
         "name": "Lucky Wyvern VI",
-        "damage": "Unknown",
-        "stats": "None",
+        "damage": "21-25",
+        "stats": "Crit +8, INT +3, Bonus +7",
+        "statsType": "petStats",
         "obtainVariants": [
           {
             "location": "Lucky 13 Chest Items",
             "price": "N/A",
             "priceType": "merge",
-            "sellback": "0 Gold",
+            "sellback": "50 Gold",
             "daRequired": true,
-            "requiredItems": "1"
+            "requiredItems": "1 Lucky Wyvern V"
           }
-        ]
+        ],
+        "element": "LIG",
+        "rarity": "77"
       },
       {
         "levelNumber": 7,
         "levelDisplay": "VII",
+        "actualLevel": 73,
         "name": "Lucky Wyvern VII",
-        "damage": "Unknown",
-        "stats": "None",
+        "damage": "21-27",
+        "stats": "Crit +8, INT +3, Bonus +9",
+        "statsType": "petStats",
         "obtainVariants": [
           {
             "location": "Lucky 13 Chest Items",
             "price": "N/A",
             "priceType": "merge",
-            "sellback": "0 Gold",
+            "sellback": "50 Gold",
             "daRequired": true,
-            "requiredItems": "1"
+            "requiredItems": "1 Lucky Wyvern VI"
           }
-        ]
+        ],
+        "element": "LIG",
+        "rarity": "77"
       },
       {
         "levelNumber": 8,
         "levelDisplay": "VIII",
+        "actualLevel": 76,
         "name": "Lucky Wyvern VIII",
-        "damage": "Unknown",
-        "stats": "None",
+        "damage": "21-27",
+        "stats": "Crit +9, INT +3, Bonus +10",
+        "statsType": "petStats",
         "obtainVariants": [
           {
             "location": "Lucky 13 Chest Items",
             "price": "N/A",
             "priceType": "merge",
-            "sellback": "0 Gold",
+            "sellback": "50 Gold",
             "daRequired": true,
-            "requiredItems": "1"
+            "requiredItems": "1 Lucky Wyvern VII"
           }
-        ]
+        ],
+        "element": "LIG",
+        "rarity": "77"
       }
     ],
     "releaseDate": "March 18th, 2013",
@@ -15765,7 +16286,7 @@
     "hasDM": false,
     "hasFree": true,
     "hasMerge": true,
-    "levelRange": "I-VIII",
+    "levelRange": "1-76",
     "elements": [
       "LIG"
     ]
@@ -15910,6 +16431,21 @@
     "shared": {
       "description": "This little fellow followed you out of Verlyrus' boxscape. You weren't just imagining things!",
       "element": "FEA",
+      "rarity": "1",
+      "attacks": [
+        {
+          "name": "Attack Type 1 /  1.1",
+          "description": "Approaches target and crashes through it twice for 2 hits of 100% Melee Fear damage, amounting to 200% damage.",
+          "images": [],
+          "notes": []
+        },
+        {
+          "name": "Attack Type 2 /  2.1",
+          "description": "Approaches target and stomps before it for 1 hit of 100% Melee Fear damage; applies 'Stun' to target, stunning it for 1 turn.",
+          "images": [],
+          "notes": []
+        }
+      ],
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mewphant.png"
     },
     "levelVariants": [
@@ -15922,6 +16458,14 @@
         "stats": "Crit +1",
         "statsType": "petStats",
         "obtainVariants": [
+          {
+            "location": "Into the Box",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "5 Gold",
+            "daRequired": false,
+            "dcRequired": true
+          },
           {
             "location": "Box Loot for DCs",
             "price": "50 Dragon Coins",
@@ -15944,6 +16488,14 @@
         "statsType": "petStats",
         "obtainVariants": [
           {
+            "location": "Into the Box",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "7 Gold",
+            "daRequired": false,
+            "dcRequired": true
+          },
+          {
             "location": "Box Loot for DCs",
             "price": "70 Dragon Coins",
             "priceType": "dc",
@@ -15964,6 +16516,14 @@
         "stats": "Crit +3, Bonus +2",
         "statsType": "petStats",
         "obtainVariants": [
+          {
+            "location": "Into the Box",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "9 Gold",
+            "daRequired": false,
+            "dcRequired": true
+          },
           {
             "location": "Box Loot for DCs",
             "price": "90 Dragon Coins",
@@ -15986,6 +16546,14 @@
         "statsType": "petStats",
         "obtainVariants": [
           {
+            "location": "Into the Box",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "11 Gold",
+            "daRequired": false,
+            "dcRequired": true
+          },
+          {
             "location": "Box Loot for DCs",
             "price": "110 Dragon Coins",
             "priceType": "dc",
@@ -16006,6 +16574,14 @@
         "stats": "Crit +5, Bonus +5",
         "statsType": "petStats",
         "obtainVariants": [
+          {
+            "location": "Into the Box",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "13 Gold",
+            "daRequired": false,
+            "dcRequired": true
+          },
           {
             "location": "Box Loot for DCs",
             "price": "130 Dragon Coins",
@@ -16028,6 +16604,14 @@
         "statsType": "petStats",
         "obtainVariants": [
           {
+            "location": "Into the Box",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "15 Gold",
+            "daRequired": false,
+            "dcRequired": true
+          },
+          {
             "location": "Box Loot for DCs",
             "price": "150 Dragon Coins",
             "priceType": "dc",
@@ -16049,11 +16633,19 @@
         "statsType": "petStats",
         "obtainVariants": [
           {
+            "location": "Into the Box",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "17 Gold",
+            "daRequired": false,
+            "dcRequired": true
+          },
+          {
             "location": "Box Loot for DCs",
             "price": "170 Dragon Coins",
             "priceType": "dc",
             "sellback": "153 DC (<24 hours) / 43 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -16069,6 +16661,14 @@
         "stats": "Crit +8, Bonus +8",
         "statsType": "petStats",
         "obtainVariants": [
+          {
+            "location": "Into the Box",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "20 Gold This little fellow followed you out of Verlyrus' boxscape. You weren't just imagining things!",
+            "daRequired": true,
+            "dcRequired": true
+          },
           {
             "location": "Box Loot for DCs",
             "price": "200 Dragon Coins",
@@ -16091,11 +16691,19 @@
         "statsType": "petStats",
         "obtainVariants": [
           {
+            "location": "Into the Box",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "24 Gold This little fellow followed you out of Verlyrus' boxscape. You weren't just imagining things!",
+            "daRequired": true,
+            "dcRequired": true
+          },
+          {
             "location": "Box Loot for DCs",
             "price": "235 Dragon Coins",
             "priceType": "dc",
             "sellback": "212 DC (<24 hours) / 59 DC (>24 hours)",
-            "daRequired": false,
+            "daRequired": true,
             "dcRequired": true
           }
         ],
@@ -16111,9 +16719,9 @@
     "hasDA": true,
     "hasDC": true,
     "hasDM": false,
-    "hasFree": false,
+    "hasFree": true,
     "hasMerge": false,
-    "levelRange": "I-IX",
+    "levelRange": "10-85",
     "elements": [
       "FEA"
     ]
@@ -16678,7 +17286,7 @@
             "location": "Dark Devices",
             "price": "N/A",
             "priceType": "free",
-            "sellback": "20 Gold",
+            "sellback": "20 Gold This appears to be a miniature prototype Manaphage! It seems to have taken a liking to you. For now. Has a small chance to share some mana with you!",
             "daRequired": true
           }
         ],
@@ -16803,104 +17411,128 @@
       {
         "levelNumber": 2,
         "levelDisplay": "II",
+        "actualLevel": 20,
         "name": "MiniVolt II",
-        "damage": "Unknown",
-        "stats": "None",
+        "damage": "10-16",
+        "stats": "Crit +2, Bonus +2",
+        "statsType": "petStats",
         "obtainVariants": [
           {
             "location": "MiniVolt",
             "price": "N/A",
             "priceType": "merge",
-            "sellback": "0 Gold",
+            "sellback": "N/A",
             "daRequired": false,
-            "requiredItems": "1"
+            "requiredItems": "1 MiniVolt I"
           }
-        ]
+        ],
+        "element": "ENE",
+        "rarity": "77"
       },
       {
         "levelNumber": 3,
         "levelDisplay": "III",
+        "actualLevel": 30,
         "name": "MiniVolt III",
-        "damage": "Unknown",
-        "stats": "None",
+        "damage": "13-18",
+        "stats": "Crit +3, Bonus +3",
+        "statsType": "petStats",
         "obtainVariants": [
           {
             "location": "MiniVolt",
             "price": "N/A",
             "priceType": "merge",
-            "sellback": "0 Gold",
+            "sellback": "N/A",
             "daRequired": false,
-            "requiredItems": "1"
+            "requiredItems": "1 MiniVolt II"
           }
-        ]
+        ],
+        "element": "ENE",
+        "rarity": "77"
       },
       {
         "levelNumber": 4,
         "levelDisplay": "IV",
+        "actualLevel": 40,
         "name": "MiniVolt IV",
-        "damage": "Unknown",
-        "stats": "None",
+        "damage": "16-20",
+        "stats": "Crit +4, Bonus +4",
+        "statsType": "petStats",
         "obtainVariants": [
           {
             "location": "MiniVolt",
             "price": "N/A",
             "priceType": "merge",
-            "sellback": "0 Gold",
+            "sellback": "N/A",
             "daRequired": false,
-            "requiredItems": "1"
+            "requiredItems": "1 MiniVolt III"
           }
-        ]
+        ],
+        "element": "ENE",
+        "rarity": "77"
       },
       {
         "levelNumber": 5,
         "levelDisplay": "V",
+        "actualLevel": 50,
         "name": "MiniVolt V",
-        "damage": "Unknown",
-        "stats": "None",
+        "damage": "16-22",
+        "stats": "Crit +5, Bonus +5",
+        "statsType": "petStats",
         "obtainVariants": [
           {
             "location": "MiniVolt",
             "price": "N/A",
             "priceType": "merge",
-            "sellback": "0 Gold",
+            "sellback": "N/A",
             "daRequired": false,
-            "requiredItems": "1"
+            "requiredItems": "1 MiniVolt IV"
           }
-        ]
+        ],
+        "element": "MET",
+        "rarity": "77"
       },
       {
         "levelNumber": 6,
         "levelDisplay": "VI",
+        "actualLevel": 60,
         "name": "MiniVolt VI",
-        "damage": "Unknown",
-        "stats": "None",
+        "damage": "19-25",
+        "stats": "Crit +6, Bonus +6",
+        "statsType": "petStats",
         "obtainVariants": [
           {
             "location": "MiniVolt",
             "price": "N/A",
             "priceType": "merge",
-            "sellback": "0 Gold",
+            "sellback": "N/A",
             "daRequired": false,
-            "requiredItems": "1"
+            "requiredItems": "1 MiniVolt V"
           }
-        ]
+        ],
+        "element": "ENE",
+        "rarity": "77"
       },
       {
         "levelNumber": 7,
         "levelDisplay": "VII",
+        "actualLevel": 70,
         "name": "MiniVolt VII",
-        "damage": "Unknown",
-        "stats": "None",
+        "damage": "21-25",
+        "stats": "Crit +7, Bonus +7",
+        "statsType": "petStats",
         "obtainVariants": [
           {
             "location": "MiniVolt",
             "price": "N/A",
             "priceType": "merge",
-            "sellback": "0 Gold",
+            "sellback": "N/A",
             "daRequired": false,
-            "requiredItems": "1"
+            "requiredItems": "1 MiniVolt VI"
           }
-        ]
+        ],
+        "element": "ENE",
+        "rarity": "77"
       }
     ],
     "releaseDate": "June 21st, 2013",
@@ -16915,9 +17547,10 @@
     "hasDM": false,
     "hasFree": false,
     "hasMerge": true,
-    "levelRange": "I-VII",
+    "levelRange": "1-70",
     "elements": [
-      "ENE"
+      "ENE",
+      "MET"
     ]
   },
   {
@@ -17518,8 +18151,8 @@
         "levelNumber": 1,
         "levelDisplay": "10",
         "actualLevel": 10,
-        "variantName": "D-Amulet",
-        "name": "Mr. Mangles (D-Amulet)",
+        "variantName": "DA",
+        "name": "Mr. Mangles (DA)",
         "damage": "10-16",
         "stats": "STR +5",
         "statsType": "petStats",
@@ -17555,8 +18188,8 @@
         "levelNumber": 2,
         "levelDisplay": "10",
         "actualLevel": 10,
-        "variantName": "D-Amulet/DC",
-        "name": "Mr. Mangles (D-Amulet/DC)",
+        "variantName": "DA/DC",
+        "name": "Mr. Mangles (DA/DC)",
         "damage": "10-16",
         "stats": "STR +5",
         "statsType": "petStats",
@@ -17566,7 +18199,7 @@
           {
             "location": "Transformed from  Black Gourd (D-Amulet/D-Coins)",
             "price": "N/A",
-            "priceType": "free",
+            "priceType": "dc",
             "sellback": "13 Dragon Coins",
             "daRequired": true,
             "dcRequired": true
@@ -17593,8 +18226,8 @@
         "levelNumber": 3,
         "levelDisplay": "40",
         "actualLevel": 40,
-        "variantName": "D-Amulet",
-        "name": "Mr. Mangles (D-Amulet)",
+        "variantName": "DA",
+        "name": "Mr. Mangles (DA)",
         "damage": "15-20",
         "stats": "Bonus +5, STR +5",
         "statsType": "petStats",
@@ -17631,8 +18264,8 @@
         "levelNumber": 4,
         "levelDisplay": "40",
         "actualLevel": 40,
-        "variantName": "D-Amulet/DC",
-        "name": "Mr. Mangles (D-Amulet/DC)",
+        "variantName": "DA/DC",
+        "name": "Mr. Mangles (DA/DC)",
         "damage": "15-20",
         "stats": "Bonus +5, STR +5",
         "statsType": "petStats",
@@ -17915,8 +18548,8 @@
     "description": "Some say that this little guy's birth is linked somehow to the death of Medewwsa. But that can't be right. Something this cute couldn't come from something that creepy, right?! This item requires a Dragon Amulet.",
     "daRequired": true,
     "elements": [
-      "WAT",
-      "WIN"
+      "WIN",
+      "WAT"
     ],
     "traits": [],
     "level": "30",
@@ -17959,8 +18592,8 @@
     "alsoSee": [],
     "tags": [
       "pet",
-      "wat",
-      "win"
+      "win",
+      "wat"
     ]
   },
   {
@@ -18108,7 +18741,7 @@
     "hasDM": false,
     "hasFree": false,
     "hasMerge": true,
-    "levelRange": "I-V",
+    "levelRange": "5-80",
     "elements": [
       "LIG"
     ]
@@ -18251,7 +18884,7 @@
     "hasDM": false,
     "hasFree": false,
     "hasMerge": true,
-    "levelRange": "I-V",
+    "levelRange": "10-80",
     "elements": [
       "BAC"
     ]
@@ -18421,7 +19054,7 @@
     "hasDM": false,
     "hasFree": false,
     "hasMerge": false,
-    "levelRange": "I-VI",
+    "levelRange": "15-80",
     "elements": [
       "DAR"
     ]
@@ -18559,7 +19192,7 @@
     "hasDM": false,
     "hasFree": false,
     "hasMerge": false,
-    "levelRange": "I-V",
+    "levelRange": "5-80",
     "elements": [
       "NAT"
     ]
@@ -18681,7 +19314,7 @@
     "hasDM": false,
     "hasFree": false,
     "hasMerge": true,
-    "levelRange": "I-IV",
+    "levelRange": "20-80",
     "elements": [
       "???"
     ]
@@ -18723,10 +19356,12 @@
         "levelNumber": 1,
         "levelDisplay": "10",
         "actualLevel": 10,
-        "name": "Necsnowmancer, The",
+        "name": "The Necsnowmancer",
         "damage": "4-11",
         "stats": "Crit +1",
         "statsType": "bonuses",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22203163",
+        "description": "The Necsnowmancer",
         "obtainVariants": [
           {
             "location": "Frostval Presents!",
@@ -18737,16 +19372,33 @@
             "requiredItems": "1  Ominous Frozen Gift Box"
           }
         ],
-        "rarity": "1"
+        "element": "ICE",
+        "rarity": "1",
+        "attacks": [
+          {
+            "name": "Attack Type 1",
+            "description": "The Necsnowmancer summons a skeletal version of Snowfang so it can breathe an icy blue fire that deals 7 hits of 20% Melee Ice damage",
+            "images": [],
+            "notes": []
+          },
+          {
+            "name": "Attack Type 2",
+            "description": "The Necsnowmancer restores 5% of your HP, causing the following popup to appear, \"The Necsnowmancer channels his energy! You heal for # health!\"",
+            "images": [],
+            "notes": []
+          }
+        ]
       },
       {
         "levelNumber": 2,
         "levelDisplay": "20",
         "actualLevel": 20,
-        "name": "Necsnowmancer, The",
+        "name": "The Necsnowmancer",
         "damage": "6-13",
         "stats": "Crit +2",
         "statsType": "bonuses",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22203163",
+        "description": "The Necsnowmancer",
         "obtainVariants": [
           {
             "location": "Frostval Presents!",
@@ -18757,16 +19409,33 @@
             "requiredItems": "1  Ominous Frozen Gift Box"
           }
         ],
-        "rarity": "1"
+        "element": "ICE",
+        "rarity": "1",
+        "attacks": [
+          {
+            "name": "Attack Type 1",
+            "description": "The Necsnowmancer summons a skeletal version of Snowfang so it can breathe an icy blue fire that deals 7 hits of 20% Melee Ice damage",
+            "images": [],
+            "notes": []
+          },
+          {
+            "name": "Attack Type 2",
+            "description": "The Necsnowmancer restores 5% of your HP, causing the following popup to appear, \"The Necsnowmancer channels his energy! You heal for # health!\"",
+            "images": [],
+            "notes": []
+          }
+        ]
       },
       {
         "levelNumber": 3,
         "levelDisplay": "30",
         "actualLevel": 30,
-        "name": "Necsnowmancer, The",
+        "name": "The Necsnowmancer",
         "damage": "8-15",
         "stats": "Crit +3, Bonus +2",
         "statsType": "bonuses",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22203163",
+        "description": "The Necsnowmancer",
         "obtainVariants": [
           {
             "location": "Frostval Presents!",
@@ -18777,16 +19446,33 @@
             "requiredItems": "1  Ominous Frozen Gift Box"
           }
         ],
-        "rarity": "1"
+        "element": "ICE",
+        "rarity": "1",
+        "attacks": [
+          {
+            "name": "Attack Type 1",
+            "description": "The Necsnowmancer summons a skeletal version of Snowfang so it can breathe an icy blue fire that deals 7 hits of 20% Melee Ice damage",
+            "images": [],
+            "notes": []
+          },
+          {
+            "name": "Attack Type 2",
+            "description": "The Necsnowmancer restores 5% of your HP, causing the following popup to appear, \"The Necsnowmancer channels his energy! You heal for # health!\"",
+            "images": [],
+            "notes": []
+          }
+        ]
       },
       {
         "levelNumber": 4,
         "levelDisplay": "40",
         "actualLevel": 40,
-        "name": "Necsnowmancer, The",
+        "name": "The Necsnowmancer",
         "damage": "10-17",
         "stats": "Crit +4, Bonus +4",
         "statsType": "bonuses",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22203163",
+        "description": "The Necsnowmancer",
         "obtainVariants": [
           {
             "location": "Frostval Presents!",
@@ -18797,16 +19483,33 @@
             "requiredItems": "1  Ominous Frozen Gift Box"
           }
         ],
-        "rarity": "1"
+        "element": "ICE",
+        "rarity": "1",
+        "attacks": [
+          {
+            "name": "Attack Type 1",
+            "description": "The Necsnowmancer summons a skeletal version of Snowfang so it can breathe an icy blue fire that deals 7 hits of 20% Melee Ice damage",
+            "images": [],
+            "notes": []
+          },
+          {
+            "name": "Attack Type 2",
+            "description": "The Necsnowmancer restores 5% of your HP, causing the following popup to appear, \"The Necsnowmancer channels his energy! You heal for # health!\"",
+            "images": [],
+            "notes": []
+          }
+        ]
       },
       {
         "levelNumber": 5,
         "levelDisplay": "50",
         "actualLevel": 50,
-        "name": "Necsnowmancer, The",
+        "name": "The Necsnowmancer",
         "damage": "12-19",
         "stats": "Crit +5, Bonus +5",
         "statsType": "bonuses",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22203163",
+        "description": "The Necsnowmancer",
         "obtainVariants": [
           {
             "location": "Frostval Presents!",
@@ -18817,16 +19520,33 @@
             "requiredItems": "1  Ominous Frozen Gift Box"
           }
         ],
-        "rarity": "1"
+        "element": "ICE",
+        "rarity": "1",
+        "attacks": [
+          {
+            "name": "Attack Type 1",
+            "description": "The Necsnowmancer summons a skeletal version of Snowfang so it can breathe an icy blue fire that deals 7 hits of 20% Melee Ice damage",
+            "images": [],
+            "notes": []
+          },
+          {
+            "name": "Attack Type 2",
+            "description": "The Necsnowmancer restores 5% of your HP, causing the following popup to appear, \"The Necsnowmancer channels his energy! You heal for # health!\"",
+            "images": [],
+            "notes": []
+          }
+        ]
       },
       {
         "levelNumber": 6,
         "levelDisplay": "60",
         "actualLevel": 60,
-        "name": "Necsnowmancer, The",
+        "name": "The Necsnowmancer",
         "damage": "13-21",
         "stats": "Crit +6, Bonus +6",
         "statsType": "bonuses",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22203163",
+        "description": "The Necsnowmancer",
         "obtainVariants": [
           {
             "location": "Frostval Presents!",
@@ -18837,16 +19557,33 @@
             "requiredItems": "1  Ominous Frozen Gift Box"
           }
         ],
-        "rarity": "1"
+        "element": "ICE",
+        "rarity": "1",
+        "attacks": [
+          {
+            "name": "Attack Type 1",
+            "description": "The Necsnowmancer summons a skeletal version of Snowfang so it can breathe an icy blue fire that deals 7 hits of 20% Melee Ice damage",
+            "images": [],
+            "notes": []
+          },
+          {
+            "name": "Attack Type 2",
+            "description": "The Necsnowmancer restores 5% of your HP, causing the following popup to appear, \"The Necsnowmancer channels his energy! You heal for # health!\"",
+            "images": [],
+            "notes": []
+          }
+        ]
       },
       {
         "levelNumber": 7,
         "levelDisplay": "70",
         "actualLevel": 70,
-        "name": "Necsnowmancer, The",
+        "name": "The Necsnowmancer",
         "damage": "16-24",
         "stats": "Crit +7, Bonus +7",
         "statsType": "bonuses",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22203163",
+        "description": "The Necsnowmancer",
         "obtainVariants": [
           {
             "location": "Frostval Presents!",
@@ -18857,16 +19594,33 @@
             "requiredItems": "1  Ominous Frozen Gift Box"
           }
         ],
-        "rarity": "1"
+        "element": "ICE",
+        "rarity": "1",
+        "attacks": [
+          {
+            "name": "Attack Type 1",
+            "description": "The Necsnowmancer summons a skeletal version of Snowfang so it can breathe an icy blue fire that deals 7 hits of 20% Melee Ice damage",
+            "images": [],
+            "notes": []
+          },
+          {
+            "name": "Attack Type 2",
+            "description": "The Necsnowmancer restores 5% of your HP, causing the following popup to appear, \"The Necsnowmancer channels his energy! You heal for # health!\"",
+            "images": [],
+            "notes": []
+          }
+        ]
       },
       {
         "levelNumber": 8,
         "levelDisplay": "80",
         "actualLevel": 80,
-        "name": "Necsnowmancer, The",
+        "name": "The Necsnowmancer",
         "damage": "20-30",
         "stats": "Crit +8, Bonus +8",
         "statsType": "bonuses",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22203163",
+        "description": "The Necsnowmancer",
         "obtainVariants": [
           {
             "location": "Frostval Presents!",
@@ -18877,7 +19631,22 @@
             "requiredItems": "1  Ominous Frozen Gift Box"
           }
         ],
-        "rarity": "1"
+        "element": "ICE",
+        "rarity": "1",
+        "attacks": [
+          {
+            "name": "Attack Type 1",
+            "description": "The Necsnowmancer summons a skeletal version of Snowfang so it can breathe an icy blue fire that deals 7 hits of 20% Melee Ice damage",
+            "images": [],
+            "notes": []
+          },
+          {
+            "name": "Attack Type 2",
+            "description": "The Necsnowmancer restores 5% of your HP, causing the following popup to appear, \"The Necsnowmancer channels his energy! You heal for # health!\"",
+            "images": [],
+            "notes": []
+          }
+        ]
       }
     ],
     "releaseDate": "December 31st, 2016",
@@ -19671,7 +20440,7 @@
     "rarity": "1",
     "evolutions": [],
     "releaseDate": "April 19th, 2019",
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Ostara",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Ostara'sDracobunny.png",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22359985",
     "notes": "Pet is animated; it moves its tail, wings, head, and other parts of its body periodically.",
     "alsoSee": [
@@ -20507,7 +21276,7 @@
             "location": "TLaPD Items",
             "price": "8,500 Gold",
             "priceType": "gold",
-            "sellback": "850 Gold",
+            "sellback": "850 Gold Squawk! This is the perfect pet for land-lubbers or sea-dogs alike! Watch as a flurry of foliage is flung at your opponents as Parrrrrotical Pete the Parrot pet defends you!",
             "daRequired": true
           }
         ],
@@ -20739,6 +21508,7 @@
     ],
     "shared": {
       "description": "This friendly little blob has been with you since it hatched. It bubbles when it's happy and leaks when it's sad...you think.",
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/PetSlime.png",
       "element": "POI",
       "attacks": [
         {
@@ -20857,6 +21627,7 @@
     ],
     "shared": {
       "description": "This baby tog was hatched from an egg that you found. His favorite pastimes are snorting and chewing holes in things.",
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/PetTog.png",
       "element": "STO",
       "attacks": [
         {
@@ -20975,6 +21746,7 @@
     ],
     "shared": {
       "description": "This small feathery lizard is a Wyvern which hatched from a weird looking egg. He likes to curl around your neck for warmth...or maybe that's just how they smother their prey.",
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/PetWyvern.png",
       "element": "WIN",
       "attacks": [
         {
@@ -22324,14 +23096,14 @@
         ],
         "element": "DAR",
         "rarity": "10",
-        "notes": "Transformed from  Plushie Ghost (Resource) on  January 2nd, 2011."
+        "notes": "Transformed from  Plushie Ghost (Resource) on  January 2nd, 2011.\nAttack Type 1 - Floats to the enemy and bashes the enemy with his head for one hit of 100% Melee Darkness damage\nAttack Type 2 - Floats to the enemy and flies all over the enemy, dealing four hits of 100% Melee Darkness damage"
       },
       {
         "levelNumber": 2,
         "levelDisplay": "30",
         "actualLevel": 30,
-        "variantName": "D-Coins",
-        "name": "Plushie Ghost (D-Coins)",
+        "variantName": "DC",
+        "name": "Plushie Ghost (DC)",
         "damage": "12-16",
         "stats": "Bonus +5",
         "statsType": "petStats",
@@ -23794,8 +24566,8 @@
     "daRequired": false,
     "dcRequired": true,
     "elements": [
-      "DAR",
-      "ICE"
+      "ICE",
+      "DAR"
     ],
     "traits": [],
     "level": "35",
@@ -23838,8 +24610,8 @@
     "alsoSee": [],
     "tags": [
       "pet",
-      "dar",
-      "ice"
+      "ice",
+      "dar"
     ]
   },
   {
@@ -24658,9 +25430,9 @@
       }
     ],
     "shared": {
-      "description": "Rare Steam Tog",
+      "description": "",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/TogMetalFire.png",
-      "element": "FIR",
+      "element": "MET",
       "rarity": "8",
       "attacks": [
         {
@@ -24687,7 +25459,7 @@
         "damage": "8-15",
         "stats": "Block +2",
         "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=19411912",
-        "description": "Rare Steam Tog",
+        "description": "",
         "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/TogMetalFire.png",
         "obtainVariants": [
           {
@@ -24700,7 +25472,7 @@
             "requiredItems": "1  Enchanted Battle Core & 40  Scrap metal"
           }
         ],
-        "element": "FIR",
+        "element": "MET",
         "rarity": "8",
         "attacks": [
           {
@@ -24739,7 +25511,7 @@
             "requiredItems": "1  Enchanted Battle Core & 10  Scrap metal"
           }
         ],
-        "element": "FIR",
+        "element": "MET",
         "rarity": "8",
         "attacks": [
           {
@@ -24778,7 +25550,7 @@
             "requiredItems": "1  Enchanted Battle Core & 15  Scrap metal"
           }
         ],
-        "element": "FIR",
+        "element": "MET",
         "rarity": "8",
         "attacks": [
           {
@@ -24817,7 +25589,7 @@
             "requiredItems": "1  Enchanted Battle Core & 100  Scrap metal"
           }
         ],
-        "element": "FIR",
+        "element": "MET",
         "rarity": "8",
         "attacks": [
           {
@@ -24854,8 +25626,8 @@
     "retired": false,
     "levelRange": "10-20",
     "elements": [
-      "FIR",
-      "MET"
+      "MET",
+      "FIR"
     ]
   },
   {
@@ -24968,7 +25740,9 @@
     "type": "pet",
     "description": "A startlingly accurate facsimile of the Lagohm prince: Eulin Verriton IV, one of many commissioned by Raven. Just like the actual prince, however, this magical recreation doesn't do much in combat besides looking cute.",
     "daRequired": true,
-    "elements": [],
+    "elements": [
+      "ENE"
+    ],
     "traits": [
       "N/A"
     ],
@@ -25007,6 +25781,7 @@
     "alsoSee": [],
     "tags": [
       "pet",
+      "ene",
       "n-a"
     ]
   },
@@ -25487,15 +26262,19 @@
         "damage": "6-16",
         "stats": "Crit +2",
         "statsType": "bonuses",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20850493",
+        "description": "Meow meow meooooooow!",
         "obtainVariants": [
           {
             "location": "Rare Pets",
             "price": "50 Dragon Coins",
             "priceType": "dc",
             "sellback": "45 DC (<24 hours) / 10 DC (>24 hours)",
-            "daRequired": false
+            "daRequired": false,
+            "dcRequired": true
           }
         ],
+        "element": "ICE",
         "rarity": "5"
       },
       {
@@ -25506,16 +26285,47 @@
         "damage": "13-19",
         "stats": "Crit +3, Bonus +1",
         "statsType": "bonuses",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20850493",
+        "description": "arget=\"_blank\" href=\"https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/PriusCatPetAttack1.png\">Attack Type 1 - Scratches the enemy for 2 hits of melee Ice damage",
+        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/PriusCatPetpic.png",
+        "alternativeImages": [
+          {
+            "url": "http://i.imgur.com/DHO4v.jpg",
+            "caption": "Alternative Image"
+          }
+        ],
         "obtainVariants": [
           {
             "location": "Rare Pets",
             "price": "70 Dragon Coins",
             "priceType": "dc",
             "sellback": "63 DC (<24 hours) / 18 DC (>24 hours)",
-            "daRequired": false
+            "daRequired": false,
+            "dcRequired": true
           }
         ],
-        "rarity": "10"
+        "element": "ICE",
+        "rarity": "10",
+        "attacks": [
+          {
+            "name": "Attack Type 2",
+            "description": "Scratches the enemy for 4 hits of melee Ice damage",
+            "images": [],
+            "notes": []
+          },
+          {
+            "name": "Attack Type 1",
+            "description": "Scratches the enemy for 2 hits of melee Ice damage",
+            "images": [],
+            "notes": []
+          },
+          {
+            "name": "Attack Type 2",
+            "description": "Scratches the enemy for 4 hits of melee Ice damage",
+            "images": [],
+            "notes": []
+          }
+        ]
       }
     ],
     "releaseDate": "November 9th, 2012",
@@ -25731,8 +26541,8 @@
     "dcRequired": true,
     "isRare": true,
     "elements": [
-      "FIR",
-      "WIN"
+      "WIN",
+      "FIR"
     ],
     "traits": [],
     "level": "8",
@@ -25769,8 +26579,8 @@
     "alsoSee": [],
     "tags": [
       "pet",
-      "fir",
-      "win"
+      "win",
+      "fir"
     ]
   },
   {
@@ -25995,7 +26805,8 @@
             "price": "N/A",
             "priceType": "merge",
             "sellback": "0 Gold",
-            "daRequired": false,
+            "daRequired": true,
+            "dmRequired": true,
             "requiredItems": "75  Defender's Medal & 1 Red Imp"
           }
         ],
@@ -26013,7 +26824,7 @@
     "hasDM": true,
     "hasFree": false,
     "hasMerge": true,
-    "levelRange": "I-II",
+    "levelRange": "12-15",
     "elements": [
       "DAR"
     ]
@@ -26260,7 +27071,7 @@
     "shared": {
       "description": "A thank you gift from Dr. Voltabolt for your help in recoloring SureWould forest.",
       "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/RummagePetpic.png",
-      "element": "ENE",
+      "element": "MET",
       "rarity": "5",
       "attacks": [
         {
@@ -26298,7 +27109,7 @@
             "daRequired": false
           }
         ],
-        "element": "ENE",
+        "element": "MET",
         "rarity": "5",
         "attacks": [
           {
@@ -26335,7 +27146,7 @@
             "daRequired": false
           }
         ],
-        "element": "ENE",
+        "element": "MET",
         "rarity": "5",
         "attacks": [
           {
@@ -26372,7 +27183,7 @@
             "daRequired": false
           }
         ],
-        "element": "ENE",
+        "element": "MET",
         "rarity": "5",
         "attacks": [
           {
@@ -26409,7 +27220,7 @@
             "daRequired": true
           }
         ],
-        "element": "ENE",
+        "element": "MET",
         "rarity": "5",
         "attacks": [
           {
@@ -26446,8 +27257,8 @@
     "retired": false,
     "levelRange": "10-40",
     "elements": [
-      "ENE",
-      "MET"
+      "MET",
+      "ENE"
     ]
   },
   {
@@ -28462,8 +29273,8 @@
     "description": "When the flerd (the technical term for a flock-herd) of pegasi gathers together, this little filly easily outshines the other colts.",
     "daRequired": false,
     "elements": [
-      "FIR",
-      "LIG"
+      "LIG",
+      "FIR"
     ],
     "traits": [],
     "level": "20",
@@ -28500,8 +29311,8 @@
     "alsoSee": [],
     "tags": [
       "pet",
-      "fir",
-      "lig"
+      "lig",
+      "fir"
     ]
   },
   {
@@ -29309,7 +30120,9 @@
     "type": "pet",
     "description": "The one and only, Stan the ScanOrb! Accept no substitutes! Made in Lore.",
     "daRequired": false,
-    "elements": [],
+    "elements": [
+      "FEA"
+    ],
     "traits": [
       "N/A"
     ],
@@ -29348,6 +30161,7 @@
     "alsoSee": [],
     "tags": [
       "pet",
+      "fea",
       "n-a"
     ]
   },
@@ -29454,6 +30268,7 @@
             "priceType": "merge",
             "sellback": "19 Dragon Coins",
             "daRequired": false,
+            "dcRequired": true,
             "requiredItems": "1 Super Lucky Wyvern I"
           }
         ],
@@ -29475,6 +30290,7 @@
             "priceType": "merge",
             "sellback": "19 Dragon Coins",
             "daRequired": false,
+            "dcRequired": true,
             "requiredItems": "1 Super Lucky Wyvern II"
           }
         ],
@@ -29496,6 +30312,7 @@
             "priceType": "merge",
             "sellback": "19 Dragon Coins",
             "daRequired": false,
+            "dcRequired": true,
             "requiredItems": "1 Super Lucky Wyvern III"
           }
         ],
@@ -29517,6 +30334,7 @@
             "priceType": "merge",
             "sellback": "19 Dragon Coins",
             "daRequired": true,
+            "dcRequired": true,
             "requiredItems": "1 Super Lucky Wyvern IV"
           }
         ],
@@ -29538,6 +30356,7 @@
             "priceType": "merge",
             "sellback": "19 Dragon Coins",
             "daRequired": true,
+            "dcRequired": true,
             "requiredItems": "1 Super Lucky Wyvern V"
           }
         ],
@@ -29559,6 +30378,7 @@
             "priceType": "merge",
             "sellback": "19 Dragon Coins",
             "daRequired": true,
+            "dcRequired": true,
             "requiredItems": "1 Super Lucky Wyvern VI"
           }
         ],
@@ -29580,6 +30400,7 @@
             "priceType": "merge",
             "sellback": "19 Dragon Coins",
             "daRequired": true,
+            "dcRequired": true,
             "requiredItems": "1 Super Lucky Wyvern VII"
           }
         ],
@@ -29914,6 +30735,8 @@
         "damage": "9-1",
         "stats": "Crit +2",
         "statsType": "petStats",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=16109630",
+        "description": "llback: 10 Gold",
         "obtainVariants": [
           {
             "location": "Def. Rares",
@@ -29921,10 +30744,20 @@
             "priceType": "merge",
             "sellback": "10 Gold",
             "daRequired": false,
+            "dmRequired": true,
             "requiredItems": "1 Togrider & 15  Defender's Medal"
           }
         ],
-        "rarity": "5"
+        "element": "NAT",
+        "rarity": "5",
+        "attacks": [
+          {
+            "name": "Attack Type 1",
+            "description": "Charges toward target and strikes it with its spear for 1 hit of 100% Melee Nature damage.",
+            "images": [],
+            "notes": []
+          }
+        ]
       },
       {
         "levelNumber": 2,
@@ -29934,17 +30767,37 @@
         "damage": "15-20",
         "stats": "None",
         "statsType": "petStats",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=16109630",
+        "description": "",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/TogRider.png",
         "obtainVariants": [
           {
             "location": "Def. Rares",
             "price": "N/A",
             "priceType": "merge",
             "sellback": "10 Gold",
-            "daRequired": false,
+            "daRequired": true,
+            "dmRequired": true,
             "requiredItems": "1 Togrider Lieutenant & 25  Defender's Medal"
           }
         ],
-        "rarity": "5"
+        "element": "NAT",
+        "rarity": "5",
+        "attacks": [
+          {
+            "name": "Attack Type 1",
+            "description": "Charges toward target and strikes it with its spear for 1 hit of 100% Melee Nature damage.",
+            "images": [],
+            "notes": []
+          },
+          {
+            "name": "Attack Type 1",
+            "description": "Charges toward target and strikes it with its spear for 1 hit of 100% Melee Nature damage.",
+            "images": [],
+            "notes": []
+          }
+        ],
+        "notes": "Despite these pets' elements being Nature, their attack  previously dealt Wood damage; this was fixed on  April 2nd, 2021."
       }
     ],
     "releaseDate": "June 5th, 2009",
@@ -29952,9 +30805,9 @@
       "pet",
       "nat"
     ],
-    "hasDA": false,
+    "hasDA": true,
     "hasDC": false,
-    "hasDM": false,
+    "hasDM": true,
     "hasFree": false,
     "hasMerge": true,
     "levelRange": "Lieutenant, General",
@@ -30000,8 +30853,8 @@
         "levelNumber": 1,
         "levelDisplay": "20",
         "actualLevel": 20,
-        "variantName": "D-Amulet",
-        "name": "Triks the Moglin (D-Amulet)",
+        "variantName": "DA",
+        "name": "Triks the Moglin (DA)",
         "damage": "14-18",
         "stats": "Crit +5",
         "statsType": "petStats",
@@ -30037,8 +30890,8 @@
         "levelNumber": 2,
         "levelDisplay": "20",
         "actualLevel": 20,
-        "variantName": "D-Amulet/DC",
-        "name": "Triks the Moglin (D-Amulet/DC)",
+        "variantName": "DA/DC",
+        "name": "Triks the Moglin (DA/DC)",
         "damage": "14-18",
         "stats": "Crit +5",
         "statsType": "petStats",
@@ -30048,7 +30901,7 @@
           {
             "location": "Transformed from  The Great Gourd (D-Amulet/D-Coins)",
             "price": "N/A",
-            "priceType": "free",
+            "priceType": "dc",
             "sellback": "13 Dragon Coins",
             "daRequired": true,
             "dcRequired": true
@@ -30075,8 +30928,8 @@
         "levelNumber": 3,
         "levelDisplay": "45",
         "actualLevel": 45,
-        "variantName": "D-Amulet",
-        "name": "Triks the Moglin (D-Amulet)",
+        "variantName": "DA",
+        "name": "Triks the Moglin (DA)",
         "damage": "16-20",
         "stats": "Bonus +5, Crit +5",
         "statsType": "petStats",
@@ -30113,8 +30966,8 @@
         "levelNumber": 4,
         "levelDisplay": "45",
         "actualLevel": 45,
-        "variantName": "D-Amulet/DC",
-        "name": "Triks the Moglin (D-Amulet/DC)",
+        "variantName": "DA/DC",
+        "name": "Triks the Moglin (DA/DC)",
         "damage": "16-20",
         "stats": "Bonus +5, Crit +5",
         "statsType": "petStats",
@@ -30655,9 +31508,11 @@
       {
         "levelNumber": 2,
         "levelDisplay": "II",
+        "actualLevel": 45,
         "name": "War Wolf II",
-        "damage": "Unknown",
-        "stats": "None",
+        "damage": "18-20",
+        "stats": "Crit +8, CHA +5, LUK +5, Bonus +8",
+        "statsType": "petStats",
         "obtainVariants": [
           {
             "location": "War Wolf Shop",
@@ -30665,16 +31520,21 @@
             "priceType": "merge",
             "sellback": "0 Gold",
             "daRequired": false,
-            "requiredItems": "75  Defender's Medal & 1"
+            "dmRequired": true,
+            "requiredItems": "75  Defender's Medal & 1 War Wolf I"
           }
-        ]
+        ],
+        "element": "ICE",
+        "rarity": "5"
       },
       {
         "levelNumber": 3,
         "levelDisplay": "III",
+        "actualLevel": 65,
         "name": "War Wolf III",
-        "damage": "Unknown",
-        "stats": "None",
+        "damage": "20-22",
+        "stats": "Crit +8, END +5, CHA +5, LUK +5, STR +5, Bonus +8",
+        "statsType": "petStats",
         "obtainVariants": [
           {
             "location": "War Wolf Shop",
@@ -30682,9 +31542,12 @@
             "priceType": "merge",
             "sellback": "0 Gold",
             "daRequired": false,
-            "requiredItems": "75  Defender's Medal & 1"
+            "dmRequired": true,
+            "requiredItems": "75  Defender's Medal & 1 War Wolf II"
           }
-        ]
+        ],
+        "element": "ICE",
+        "rarity": "5"
       }
     ],
     "releaseDate": "June 17th, 2011",
@@ -30697,7 +31560,7 @@
     "hasDM": true,
     "hasFree": false,
     "hasMerge": true,
-    "levelRange": "I-III",
+    "levelRange": "25-65",
     "elements": [
       "ICE"
     ]

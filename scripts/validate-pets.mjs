@@ -121,10 +121,14 @@ for (let i = 0; i < pets.length; i++) {
     const prefix = `Pet #${i + 1} ("${p.name || 'unnamed'}")`
 
     // Required string fields
-    for (const field of ['id', 'name', 'slug', 'description', 'type', 'forumUrl', 'releaseDate']) {
+    for (const field of ['id', 'name', 'slug', 'type', 'forumUrl', 'releaseDate']) {
       if (typeof p[field] !== 'string' || p[field].trim().length === 0) {
         errors.push(`${prefix}: missing or empty field "${field}"`)
       }
+    }
+
+    if (typeof p.description !== 'string') {
+      errors.push(`${prefix}: "description" must be a string`)
     }
 
     // Type must be pet or guest

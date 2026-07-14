@@ -317,9 +317,11 @@ function extractExplicitVariantLabel(text: string): string | undefined {
     ['d-coins', 'DC'],
     ['d-coin', 'DC'],
     ['dc', 'DC'],
-    ['d-amulet', 'D-Amulet'],
-    ['d-amulet/d-coins', 'D-Amulet/DC'],
-    ['d-amulet/dc', 'D-Amulet/DC'],
+    ['d-amulet', 'DA'],
+    ['da', 'DA'],
+    ['d-amulet/d-coins', 'DA/DC'],
+    ['d-amulet/dc', 'DA/DC'],
+    ['da/dc', 'DA/DC'],
     ['resource', 'Resource'],
   ])
 
@@ -334,19 +336,15 @@ function extractExplicitVariantLabel(text: string): string | undefined {
 
 function inferAccessVariantLabelFromMethods(methods: ObtainMethod[]): string | undefined {
   const hasDC = methods.some(method => method.priceType === 'dc' || method.dcRequired)
-  const hasDA = methods.some(method => method.daRequired)
 
   if (hasDC) return 'DC'
-  if (hasDA) return 'D-Amulet'
-  return undefined
+  return 'Normal'
 }
 
 function inferAccessVariantLabelFromObtainVariants(methods: ObtainVariant[]): string | undefined {
   const hasDC = methods.some(method => method.priceType === 'dc' || method.dcRequired)
-  const hasDA = methods.some(method => method.daRequired)
 
   if (hasDC) return 'DC'
-  if (hasDA) return 'D-Amulet'
   return 'Normal'
 }
 
@@ -382,6 +380,7 @@ function trimToLastNamedEntry(html: string, expectedName: string): string {
   const escapedName = expectedName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
   const titlePatterns = [
     new RegExp(`<font[^>]*size=['"]3['"][^>]*>\\s*<b>\\s*${escapedName}\\s*<\\/b>\\s*<\\/font>`, 'gi'),
+    new RegExp(`<b>\\s*<font[^>]*size=['"]3['"][^>]*>\\s*${escapedName}\\s*<\\/font>\\s*<\\/b>`, 'gi'),
     new RegExp(`<b>\\s*${escapedName}\\s*<\\/b>`, 'gi'),
   ]
 
@@ -402,6 +401,20 @@ function trimToLastNamedEntry(html: string, expectedName: string): string {
     : lastIndex
 
   return html.slice(sliceStart)
+}
+
+function includeLeadingAccessTags(html: string, startIndex: number, maxDistance: number = 250): number {
+  if (startIndex <= 0) return startIndex
+
+  const imageCandidates = [
+    html.lastIndexOf('[image]', startIndex),
+    html.lastIndexOf('<img', startIndex),
+  ].filter(candidate => candidate >= 0)
+
+  if (imageCandidates.length === 0) return startIndex
+
+  const candidate = Math.max(...imageCandidates)
+  return startIndex - candidate <= maxDistance ? candidate : startIndex
 }
 
 function buildObtainVariantsFromMethods(
@@ -425,7 +438,7 @@ function buildObtainVariantsFromMethods(
         : computePriceType(om.price, om.requiredItems)
     const dcRequired =
       explicitVariantHasDC === undefined
-        ? priceType === 'dc' || Boolean(om.dcRequired) || (sectionDCRequired && groupHasExplicitDC)
+        ? priceType === 'dc' || inferredDC || Boolean(om.dcRequired) || (sectionDCRequired && groupHasExplicitDC)
         : explicitVariantHasDC || priceType === 'dc'
 
     return {
@@ -589,7 +602,12 @@ function buildVariantFamilyFromSinglePost(
 
   const levelVariants = methodGroups.map((group, index) => {
     const provisionalVariantName = group.label ?? `Variant ${index + 1}`
-    const obtainVariants = buildObtainVariantsFromMethods(group.methods, data.sourceHtml, undefined, provisionalVariantName)
+    const obtainVariants = buildObtainVariantsFromMethods(
+      group.methods,
+      data.sourceHtml,
+      { daRequired: data.daRequired, dcRequired: data.dcRequired, dmRequired: data.dmRequired },
+      provisionalVariantName
+    )
     const variantName = group.label ?? inferAccessVariantLabelFromObtainVariants(obtainVariants) ?? `Variant ${index + 1}`
     return {
       levelNumber: index + 1,
@@ -1327,7 +1345,7 @@ async function tryBuildDragonFamily(
  * 2. For single-page threads with no level indicator → use existing parsePetThread
  * 3. For multi-page or leveled threads → parse all posts as ItemFamily
  */
-async function parsePetThreadMultiVariant(
+export async function parsePetThreadMultiVariant(
   html: string,
   name: string,
   stub: PetStub,
@@ -1436,9 +1454,9 @@ async function parsePetThreadMultiVariant(
         priceType: computePriceType(om.price, om.requiredItems),
         sellback: om.sellback,
         ...(om.requirements ? { requirements: om.requirements } : {}),
-        daRequired: om.daRequired ?? false,
-        ...(om.dcRequired ? { dcRequired: om.dcRequired } : {}),
-        ...(om.dmRequired ? { dmRequired: om.dmRequired } : {}),
+        daRequired: om.daRequired ?? data.daRequired,
+        ...((om.dcRequired ?? data.dcRequired) ? { dcRequired: om.dcRequired ?? data.dcRequired } : {}),
+        ...((om.dmRequired ?? data.dmRequired) ? { dmRequired: om.dmRequired ?? data.dmRequired } : {}),
         ...(om.requiredItems ? { requiredItems: om.requiredItems } : {}),
       }))
       
@@ -1509,10 +1527,14 @@ async function parsePetThreadMultiVariant(
         const displayName = extractLastPostDisplayName(chunk, baseName)
         if (!normalizeAllVersionsMatchName(displayName).includes(normalizeAllVersionsMatchName(baseName))) continue
 
-        const levelInfo = detectLevel(displayName)
+        const levelInfo =
+          detectLevel(displayName) ??
+          (normalizeAllVersionsMatchName(displayName) === normalizeAllVersionsMatchName(baseName)
+            ? { number: 1, display: 'I' }
+            : undefined)
         if (!levelInfo) continue
 
-        const normalizedChunk = trimToLastNamedEntry(chunk, displayName)
+        const normalizedChunk = chunk
         const data = parsePetThread(normalizedChunk, displayName)
         const actualLevel = data.level && data.level !== 'Unknown' ? parseInt(data.level, 10) : undefined
 
@@ -1532,7 +1554,15 @@ async function parsePetThreadMultiVariant(
         const sortedCandidates = [...postCandidates].sort((a, b) => a.levelInfo.number - b.levelInfo.number)
 
         for (const candidate of sortedCandidates) {
-          const obtainVariants = buildObtainVariantsFromMethods(candidate.data.obtainMethods, candidate.html)
+          const obtainVariants = buildObtainVariantsFromMethods(
+            candidate.data.obtainMethods,
+            candidate.html,
+            {
+              daRequired: candidate.data.daRequired,
+              dcRequired: candidate.data.dcRequired,
+              dmRequired: candidate.data.dmRequired,
+            }
+          )
           if (obtainVariants.length === 0) continue
 
           const isFirstLevel = !sharedDescription
@@ -1602,8 +1632,15 @@ async function parsePetThreadMultiVariant(
 
       const uniqueActualLevels = new Set(postCandidates.map(candidate => candidate.actualLevel))
       const hasNamedVariantBranches = new Set(explicitLabelCandidates).size > 0
+      const levelCounts = new Map<number, number>()
 
-      if (postCandidates.length >= 2 && (uniqueActualLevels.size >= 2 || hasNamedVariantBranches)) {
+      for (const candidate of postCandidates) {
+        levelCounts.set(candidate.actualLevel, (levelCounts.get(candidate.actualLevel) ?? 0) + 1)
+      }
+
+      const hasRepeatedLevels = Array.from(levelCounts.values()).some(count => count > 1)
+
+      if (postCandidates.length >= 2 && (uniqueActualLevels.size >= 2 || hasNamedVariantBranches || hasRepeatedLevels)) {
         const sortedCandidates = [...postCandidates].sort((a, b) => a.actualLevel - b.actualLevel)
         let variantOrder = 1
 
@@ -1625,14 +1662,20 @@ async function parsePetThreadMultiVariant(
 
           for (const group of methodGroups) {
             let variantName = group.label
-            if (hasNamedVariantBranches && !variantName) {
+            const hasSameLevelSibling = (levelCounts.get(candidate.actualLevel) ?? 0) > 1
+
+            if ((hasNamedVariantBranches || hasSameLevelSibling) && !variantName) {
               variantName = inferAccessVariantLabelFromMethods(group.methods)
             }
 
             const obtainVariants = buildObtainVariantsFromMethods(
               group.methods,
               candidate.html,
-              undefined,
+              {
+                daRequired: candidate.data.daRequired,
+                dcRequired: candidate.data.dcRequired,
+                dmRequired: candidate.data.dmRequired,
+              },
               variantName
             )
             if (obtainVariants.length === 0) continue
@@ -1719,7 +1762,7 @@ async function parsePetThreadMultiVariant(
             levelNum: section.level!,
             romanDisplay: section.level!.toString(),
             html: '',
-            startIndex: section.startIndex,
+            startIndex: includeLeadingAccessTags(html, section.startIndex),
           })
         }
       }
@@ -1750,7 +1793,7 @@ async function parsePetThreadMultiVariant(
             levelNum,
             romanDisplay,
             html: '',
-            startIndex: match.index,
+            startIndex: includeLeadingAccessTags(html, match.index),
           })
         }
       }
@@ -1763,7 +1806,7 @@ async function parsePetThreadMultiVariant(
             levelNum: 1,
             romanDisplay: 'I',
             html: '',
-            startIndex: firstOccurrence.index,
+            startIndex: includeLeadingAccessTags(html, firstOccurrence.index),
           })
         } else if (sections[0].startIndex > 50) {
           sections.push({
@@ -1853,7 +1896,11 @@ async function parsePetThreadMultiVariant(
       // Parse actual level number from "Level: X" in the section
       const actualLevel = data.level && data.level !== 'Unknown' ? parseInt(data.level, 10) : undefined
       
-      const obtainVariants = buildObtainVariantsFromMethods(data.obtainMethods, normalizedSectionHtml)
+      const obtainVariants = buildObtainVariantsFromMethods(
+        data.obtainMethods,
+        normalizedSectionHtml,
+        { daRequired: data.daRequired, dcRequired: data.dcRequired, dmRequired: data.dmRequired }
+      )
       
       if (obtainVariants.length > 0) {
         // Capture shared data from first level BEFORE creating variant
@@ -1889,14 +1936,18 @@ async function parsePetThreadMultiVariant(
     
     // For range notation threads, look for "Other information" section after all levels
     // (Usually appears at the end of the thread, after all level sections)
-    if (sections.length > 0 && !sharedNotes) {
+    if (sections.length > 0) {
       const lastSection = sections[sections.length - 1]
       const afterLastSection = html.slice(lastSection.startIndex + lastSection.html.length)
       
-      // Parse the remainder of the HTML to extract notes from "Other information"
+      // Parse the remainder of the HTML to extract shared thread tail content such as
+      // Other Information and Also See sections that appear after the final level block.
       const remainderData = parsePetThread(afterLastSection, baseName)
-      if (remainderData.notes) {
+      if (!sharedNotes && remainderData.notes) {
         sharedNotes = remainderData.notes
+      }
+      if (remainderData.alsoSeeNames.length > 0) {
+        sharedAlsoSeeNames = uniqueStrings([...sharedAlsoSeeNames, ...remainderData.alsoSeeNames])
       }
     }
     }
@@ -1920,9 +1971,9 @@ async function parsePetThreadMultiVariant(
         priceType: computePriceType(om.price, om.requiredItems),
         sellback: om.sellback,
         ...(om.requirements ? { requirements: om.requirements } : {}),
-        daRequired: parseDARequiredFromSection(normalizedPostHtml, normalizedPostHtml),
-        ...(data.dcRequired ? { dcRequired: data.dcRequired } : {}),
-        ...(data.dmRequired ? { dmRequired: data.dmRequired } : {}),
+        daRequired: om.daRequired ?? parseDARequiredFromSection(normalizedPostHtml, normalizedPostHtml),
+        ...((om.dcRequired ?? data.dcRequired) ? { dcRequired: om.dcRequired ?? data.dcRequired } : {}),
+        ...((om.dmRequired ?? data.dmRequired) ? { dmRequired: om.dmRequired ?? data.dmRequired } : {}),
         ...(om.requiredItems ? { requiredItems: om.requiredItems } : {}),
       }))
       
@@ -2223,7 +2274,7 @@ function canonicalizePetRelationships(items: Array<Pet | ItemFamily>): Array<Pet
 
 // ─────────────────────────────────────────────────────────────────────────────
 
-function parsePetThread(html: string, name: string): {
+export function parsePetThread(html: string, name: string): {
   description: string; daRequired: boolean; dcRequired: boolean; dmRequired: boolean
   isTemp: boolean; isRare: boolean; isSeasonal: boolean; isSpecialOffer: boolean; retired: boolean
   obtainMethods: ObtainMethod[]
@@ -2328,27 +2379,35 @@ function rephraseTimedSellback(sellback: string): string {
  * @param contextSize - How many characters before/after to check (default: 500)
  * @returns Object with daRequired, dcRequired, dmRequired flags
  */
-function detectAccessTagsNearText(html: string, searchText: string, contextSize: number = 500): {
+function detectAccessTagsNearText(
+  html: string,
+  searchText: string,
+  contextSize: number = 500,
+  fromIndex: number = 0
+): {
   daRequired: boolean
   dcRequired: boolean  
   dmRequired: boolean
+  matchIndex: number
 } {
-  const index = html.indexOf(searchText)
+  const index = html.indexOf(searchText, Math.max(0, fromIndex))
   if (index === -1) {
-    return { daRequired: false, dcRequired: false, dmRequired: false }
+    return { daRequired: false, dcRequired: false, dmRequired: false, matchIndex: -1 }
   }
 
-  const segmentStartCandidates = [
+  const titleStartCandidates = [
     html.lastIndexOf("<font size='3'><b>", index),
     html.lastIndexOf('<font size="3"><b>', index),
     html.lastIndexOf('<b><font size=\'3\'>', index),
     html.lastIndexOf('<b><font size="3">', index),
-    html.lastIndexOf('Location:', index),
   ].filter(candidate => candidate >= 0)
 
-  const segmentStart = segmentStartCandidates.length > 0
-    ? Math.max(...segmentStartCandidates)
-    : Math.max(0, index - contextSize)
+  const locationStart = html.lastIndexOf('Location:', index)
+  const segmentStart = titleStartCandidates.length > 0
+    ? Math.max(...titleStartCandidates)
+    : locationStart >= 0
+      ? locationStart
+      : Math.max(0, index - contextSize)
 
   const forwardHtml = html.slice(index + searchText.length)
   const nextTitleOffsets = [
@@ -2385,8 +2444,11 @@ function detectAccessTagsNearText(html: string, searchText: string, contextSize:
     daRequired: hasNoDAText ? false : /<img[^>]+src=["'][^"']*\/tags\/DA\.png["']/i.test(context),
     dcRequired: /<img[^>]+src=["'][^"']*\/tags\/DC\.png["']/i.test(context),
     dmRequired: /<img[^>]+src=["'][^"']*\/tags\/DM\.png["']/i.test(context),
+    matchIndex: index,
   }
 }
+
+let accessSearchOffset = 0
 
 const saveObtain = () => {
   if (!currentObtain?.location) return
@@ -2395,7 +2457,10 @@ const saveObtain = () => {
   const sellback = rephraseTimedSellback(rawSellback)
   
   // Detect DA/DC/DM in context around this specific location
-  const accessFlags = detectAccessTagsNearText(rawBody, currentObtain.location)
+  const accessFlags = detectAccessTagsNearText(rawBody, currentObtain.location, 500, accessSearchOffset)
+  if (accessFlags.matchIndex >= 0) {
+    accessSearchOffset = accessFlags.matchIndex + currentObtain.location.length
+  }
   
   obtainMethods.push({
     location: currentObtain.location,
@@ -2663,9 +2728,14 @@ function appendToCurrentObtainField(lineText: string) {
     const introLines = (firstLevelIndex >= 0 ? lines.slice(0, firstLevelIndex) : lines).map(line => line.trim()).filter(Boolean)
     let fallbackCurrent: Partial<ObtainMethod> | null = null
     let pendingField: 'location' | 'price' | 'requiredItems' | 'sellback' | null = null
+    let fallbackAccessOffset = 0
 
     const pushFallback = () => {
       if (!fallbackCurrent?.location) return
+      const accessFlags = detectAccessTagsNearText(rawBody, fallbackCurrent.location, 500, fallbackAccessOffset)
+      if (accessFlags.matchIndex >= 0) {
+        fallbackAccessOffset = accessFlags.matchIndex + fallbackCurrent.location.length
+      }
       fallbackMethods.push({
         location: fallbackCurrent.location,
         price: fallbackCurrent.price ?? 'N/A',
@@ -2673,9 +2743,9 @@ function appendToCurrentObtainField(lineText: string) {
         ...(fallbackCurrent.requirements ? { requirements: fallbackCurrent.requirements } : {}),
         ...(fallbackCurrent.requiredItems ? { requiredItems: fallbackCurrent.requiredItems } : {}),
         ...(fallbackCurrent.sellback ? { sellback: fallbackCurrent.sellback } : {}),
-        daRequired: fallbackCurrent.daRequired ?? false,
-        ...(fallbackCurrent.dcRequired ? { dcRequired: fallbackCurrent.dcRequired } : {}),
-        ...(fallbackCurrent.dmRequired ? { dmRequired: fallbackCurrent.dmRequired } : {}),
+        ...((fallbackCurrent.daRequired || accessFlags.daRequired) ? { daRequired: true } : {}),
+        ...((fallbackCurrent.dcRequired || accessFlags.dcRequired) ? { dcRequired: true } : {}),
+        ...((fallbackCurrent.dmRequired || accessFlags.dmRequired) ? { dmRequired: true } : {}),
       })
       fallbackCurrent = null
     }
@@ -2730,7 +2800,6 @@ function appendToCurrentObtainField(lineText: string) {
   const cleanedNoteLines = noteLines.filter(note => {
     const trimmed = note.trim()
     if (!trimmed) return false
-    if (/^Attack\s+Type\s+[\d./]+\b/i.test(trimmed)) return false
     if (description && trimmed === description.trim()) return false
     if (trimmed === name.trim()) return false
     return true
@@ -3004,8 +3073,10 @@ async function main() {
   console.log(`   Total stubs:   ${allStubs.length}`)
   console.log(`   In progress:   ${progressMap.size}`)
   console.log(`   Pets:          ${finalPets.filter(p => p.type === 'pet').length}`)
-  console.log(`   With images:   ${finalPets.filter(p => p.imageUrl).length}`)
+  console.log(`   With images:   ${finalPets.filter(p => ('shared' in p ? p.shared.imageUrl : p.imageUrl)).length}`)
   console.log(`   With dates:    ${finalPets.filter(p => p.releaseDate !== 'Unknown').length}`)
 }
 
-main().catch(err => { console.error('Fatal:', err); process.exit(1) })
+if (import.meta.main) {
+  main().catch(err => { console.error('Fatal:', err); process.exit(1) })
+}

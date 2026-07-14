@@ -17,6 +17,7 @@ interface NotesListProps {
 interface NoteItem {
   text: string
   subItems: string[]
+  quoteItems: string[]
 }
 
 function parseNotes(raw: string): NoteItem[] {
@@ -28,34 +29,57 @@ function parseNotes(raw: string): NoteItem[] {
     : raw.split(' • ')
 
   if (hasNewlines) {
-    // Parse with sub-bullet support
+    // Parse with sub-bullet and forum quote-box support
     const items: NoteItem[] = []
     const lines = raw.split('\n')
+    let activeQuoteItem: NoteItem | null = null
 
     for (const line of lines) {
       const trimmed = line.trim()
       if (!trimmed) continue
+
+      if (/^quote:$/i.test(trimmed)) {
+        if (items.length === 0) {
+          items.push({ text: '', subItems: [], quoteItems: [] })
+        }
+        activeQuoteItem = items[items.length - 1]
+        continue
+      }
+
+      if (activeQuoteItem) {
+        if (/^\s{2,}[•\-*]\s/.test(line)) {
+          activeQuoteItem.subItems.push(trimmed.replace(/^(?:[•\-*]\s*)+/, ''))
+          continue
+        }
+
+        if (/^(?:[•\-*]\s+)/.test(trimmed)) {
+          activeQuoteItem = null
+        } else {
+          activeQuoteItem.quoteItems.push(trimmed.replace(/^(?:[•\-*]\s*)+/, ''))
+          continue
+        }
+      }
 
       if (/^\s{2,}[•\-*]\s/.test(line)) {
         // Sub-bullet — attach to previous item
         if (items.length > 0) {
           items[items.length - 1].subItems.push(trimmed.replace(/^(?:[•\-*]\s*)+/, ''))
         } else {
-          items.push({ text: trimmed.replace(/^(?:[•\-*]\s*)+/, ''), subItems: [] })
+          items.push({ text: trimmed.replace(/^(?:[•\-*]\s*)+/, ''), subItems: [], quoteItems: [] })
         }
       } else {
         // Top-level note
-        items.push({ text: trimmed.replace(/^(?:[•\-*]\s*)+/, ''), subItems: [] })
+        items.push({ text: trimmed.replace(/^(?:[•\-*]\s*)+/, ''), subItems: [], quoteItems: [] })
       }
     }
-    return items.filter(item => item.text.length > 0)
+    return items.filter(item => item.text.length > 0 || item.quoteItems.length > 0)
   }
 
   // Legacy flat format — all top-level, no sub-bullets
   return topLevel
     .map(s => s.trim())
     .filter(s => s.length > 0)
-    .map(text => ({ text: text.replace(/^(?:[•\-*]\s*)+/, ''), subItems: [] }))
+    .map(text => ({ text: text.replace(/^(?:[•\-*]\s*)+/, ''), subItems: [], quoteItems: [] }))
 }
 
 export default function NotesList({ notes }: NotesListProps) {
@@ -66,10 +90,12 @@ export default function NotesList({ notes }: NotesListProps) {
     <ul className="space-y-2">
       {items.map((item, i) => (
         <li key={i}>
-          <div className="flex gap-2 text-sm text-text-secondary leading-relaxed">
-            <span className="text-text-muted mt-0.5 flex-shrink-0">•</span>
-            <span>{normalizeDisplayText(item.text)}</span>
-          </div>
+          {item.text && (
+            <div className="flex gap-2 text-sm text-text-secondary leading-relaxed">
+              <span className="text-text-muted mt-0.5 flex-shrink-0">•</span>
+              <span>{normalizeDisplayText(item.text)}</span>
+            </div>
+          )}
           {item.subItems.length > 0 && (
             <ul className="ml-5 mt-1 space-y-1">
               {item.subItems.map((sub, j) => (
@@ -79,6 +105,17 @@ export default function NotesList({ notes }: NotesListProps) {
                 </li>
               ))}
             </ul>
+          )}
+          {item.quoteItems.length > 0 && (
+            <div className={`${item.text ? 'ml-5 mt-2' : ''} rounded-md border border-border-default bg-bg-elevated px-3 py-2`}>
+              <ul className="space-y-1">
+                {item.quoteItems.map((quote, j) => (
+                  <li key={j} className="text-sm text-text-secondary leading-relaxed italic">
+                    {normalizeDisplayText(quote)}
+                  </li>
+                ))}
+              </ul>
+            </div>
           )}
         </li>
       ))}

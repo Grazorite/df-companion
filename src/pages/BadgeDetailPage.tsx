@@ -189,16 +189,22 @@ export default function BadgeDetailPage() {
 
       {/* Tags — internal search keywords, not clickable filters */}
       {badge.tags.length > 0 && (
-        <div className="mb-8">
-          <p className="text-xs font-semibold text-text-muted uppercase tracking-wider mb-2">Tags</p>
-          <div className="flex flex-wrap gap-1.5" aria-label="Search tags">
+        <details className="mb-8 group">
+          <summary className="list-none cursor-pointer select-none">
+            <div className="inline-flex items-center gap-2 text-xs font-semibold text-text-muted uppercase tracking-wider hover:text-text-secondary transition-colors">
+              <span>Tags</span>
+              <span className="text-[10px] normal-case tracking-normal group-open:hidden">Show</span>
+              <span className="text-[10px] normal-case tracking-normal hidden group-open:inline">Hide</span>
+            </div>
+          </summary>
+          <div className="flex flex-wrap gap-1.5 mt-3" aria-label="Search tags">
             {badge.tags.map((tag) => (
               <span key={tag} className="bg-bg-overlay text-text-muted text-xs px-2.5 py-1 rounded-full border border-border-subtle">
                 {tag}
               </span>
             ))}
           </div>
-        </div>
+        </details>
       )}
 
       {/* Related badges */}

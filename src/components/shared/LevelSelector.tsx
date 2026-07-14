@@ -16,15 +16,17 @@
 
 import type { LevelVariant } from '../../types/item'
 import { chunkVariantRows, getLevelVariantLabel, hasTitleDrivenVariantNames, shouldUseSplitVariantRows } from '../../utils/variantHelpers'
+import type { ItemType } from '../../types/item'
 
 interface LevelSelectorProps {
   levels: LevelVariant[]
   activeIndex: number
   onChange: (index: number) => void
   familyName?: string
+  itemType?: ItemType
 }
 
-export default function LevelSelector({ levels, activeIndex, onChange, familyName }: LevelSelectorProps) {
+export default function LevelSelector({ levels, activeIndex, onChange, familyName, itemType }: LevelSelectorProps) {
   // Don't render if only one level
   if (levels.length <= 1) {
     return null
@@ -35,7 +37,7 @@ export default function LevelSelector({ levels, activeIndex, onChange, familyNam
   const levelKeys = levels.map(level => String(level.actualLevel ?? level.levelDisplay))
   const hasDuplicateLevels = new Set(levelKeys).size !== levelKeys.length
 
-  const getButtonLabel = (level: LevelVariant) => getLevelVariantLabel(level, familyName, useTitleLabels)
+  const getButtonLabel = (level: LevelVariant) => getLevelVariantLabel(level, familyName, useTitleLabels, itemType)
   const splitRows = shouldUseSplitVariantRows(levels)
   const indexedLevels = levels.map((level, index) => ({ level, index }))
   const daLevels = indexedLevels.filter(({ level }) => level.obtainVariants.some(variant => variant.daRequired))

@@ -331,6 +331,8 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
           {isMultiVariant && family ? (
             isDragonFamily
               ? '<Dragon> (Baby, Toddler, Kid)'
+              : isGuest
+                ? displayFamilyName
               : family.isMultiPost || sameLevelVariants
                 ? displayFamilyName
                 : `${displayFamilyName} (${family.levelRange})`
@@ -460,7 +462,7 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
       )}
       
       {/* Level Stats Table - only for multi-variant items */}
-      {isMultiVariant && family && (
+      {isMultiVariant && family && !isGuest && (
         <section className="mb-5">
           <LevelStatsTable 
             levels={family.levelVariants}
@@ -482,6 +484,7 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
             activeIndex={activeIndex}
             onChange={handleLevelChange}
             familyName={displayFamilyName}
+            itemType={family.type}
           />
         </section>
       )}
@@ -523,19 +526,7 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
           {/* Obtain cards for selected level */}
           <div className="space-y-3">
             {family.levelVariants[activeIndex].obtainVariants.map((variant, i) => {
-              // Determine label based on number of variants
-              const label =
-                isDragonFamily
-                  ? `Method ${i + 1}`
-                  : family.levelVariants[activeIndex].obtainVariants.length > 1
-                  ? variant.dcRequired || variant.priceType === 'dc'
-                    ? 'DC Option'
-                    : variant.dmRequired || variant.priceType === 'dm'
-                      ? 'DM Option'
-                      : variant.priceType === 'free'
-                        ? 'Free Option'
-                        : `Method ${i + 1}`
-                  : undefined
+              const label = family.levelVariants[activeIndex].obtainVariants.length > 1 ? `Method ${i + 1}` : undefined
               
               return (
                 <ObtainVariantCard
@@ -636,9 +627,12 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
             const result = kept.filter(n => n.trim().length > 0).join(separator)
             return result || undefined
           })() : undefined
+          const dedupedLevelNotes = cleanedLevelNotes && cleanedLevelNotes !== cleanedSharedNotes
+            ? cleanedLevelNotes
+            : undefined
           
           // If neither exists, don't render
-          if (!cleanedSharedNotes && !cleanedLevelNotes) return null
+          if (!cleanedSharedNotes && !dedupedLevelNotes) return null
           
           return (
             <section className="bg-bg-surface/60 border border-border-default rounded-lg p-4 mb-5">
@@ -646,15 +640,8 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
                 Other Information
               </h2>
               {cleanedSharedNotes && <NotesList notes={cleanedSharedNotes} />}
-              {cleanedSharedNotes && cleanedLevelNotes && <div className="my-3 border-t border-border-default" />}
-              {cleanedLevelNotes && (
-                <>
-                  <p className="text-xs font-medium text-text-muted uppercase tracking-wider mb-2">
-                    {activeLevel.variantName ? `${activeLevel.variantName} Notes` : `Level ${activeLevel.levelDisplay} Notes`}
-                  </p>
-                  <NotesList notes={cleanedLevelNotes} />
-                </>
-              )}
+              {cleanedSharedNotes && dedupedLevelNotes && <div className="my-3 border-t border-border-default" />}
+              {dedupedLevelNotes && <NotesList notes={dedupedLevelNotes} />}
             </section>
           )
         }

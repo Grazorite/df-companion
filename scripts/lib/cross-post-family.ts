@@ -19,6 +19,12 @@ function normalizeLookupName(name: string): string {
     .trim()
 }
 
+function extractNumericVariantBase(name: string): string | undefined {
+  if (!/\(\d+\)\s*$/i.test(name)) return undefined
+  const base = normalizeLookupName(name.replace(/\s+\(\d+\)\s*$/i, ''))
+  return base || undefined
+}
+
 function tokenizeTitle(name: string): string[] {
   const tokens = normalizeLookupName(name).split(' ').filter(Boolean)
   while (tokens.length > 0 && /^(jr|sr)$/.test(tokens[tokens.length - 1])) {
@@ -133,6 +139,31 @@ function sharesExplicitReference(a: Pet | ItemFamily, b: Pet | ItemFamily): bool
   return aNames.has(bName) || bNames.has(aName)
 }
 
+function sharesNumericVariantBase(a: Pet | ItemFamily, b: Pet | ItemFamily): boolean {
+  const aBase = extractNumericVariantBase(getDisplayName(a))
+  const bBase = extractNumericVariantBase(getDisplayName(b))
+  return Boolean(aBase && bBase && aBase === bBase)
+}
+
+function sharesGuestFamilyVariantOverlap(a: Pet | ItemFamily, b: Pet | ItemFamily): boolean {
+  const family = isItemFamily(a) ? a : isItemFamily(b) ? b : undefined
+  const standalone = !isItemFamily(a) ? a : !isItemFamily(b) ? b : undefined
+  if (!family || !standalone) return false
+  if (family.type !== 'guest' || standalone.type !== 'guest') return false
+  if (!(family.retired || standalone.retired)) return false
+
+  const standaloneName = normalizeLookupName(standalone.name)
+  if (!standaloneName) return false
+
+  return family.levelVariants.some(level => {
+    const variantName = normalizeLookupName(level.name)
+    return Boolean(
+      variantName &&
+      (variantName.includes(standaloneName) || standaloneName.includes(variantName))
+    )
+  })
+}
+
 function getItemElements(item: Pet | ItemFamily): string[] {
   return isItemFamily(item)
     ? item.levelVariants.map(level => level.element).filter((value): value is string => Boolean(value))
@@ -142,7 +173,14 @@ function getItemElements(item: Pet | ItemFamily): string[] {
 function canCrossMerge(a: Pet | ItemFamily, b: Pet | ItemFamily): boolean {
   if (a.type !== b.type) return false
   if (isItemFamily(a) && isItemFamily(b)) return false
-  if (!sharesExplicitReference(a, b)) return false
+  const hasExplicitReference = sharesExplicitReference(a, b)
+  const hasNumericVariantBase = sharesNumericVariantBase(a, b)
+  const hasGuestVariantOverlap = sharesGuestFamilyVariantOverlap(a, b)
+  if (!hasExplicitReference && !hasNumericVariantBase && !hasGuestVariantOverlap) return false
+
+  if (a.type === 'guest' && (hasNumericVariantBase || hasGuestVariantOverlap)) {
+    return true
+  }
 
   const aElements = new Set(getItemElements(a))
   const bElements = new Set(getItemElements(b))
@@ -260,10 +298,29 @@ function allSame<T>(values: T[]): boolean {
   return values.every(value => JSON.stringify(value) === JSON.stringify(values[0]))
 }
 
+function getTrailingNumericVariant(level: LevelVariant): number | undefined {
+  const source = level.variantName ?? level.name
+  const match = source.match(/\((\d+)\)\s*$/)
+  return match ? Number.parseInt(match[1], 10) : undefined
+}
+
+function shouldSortByTrailingNumericVariant(levels: LevelVariant[]): boolean {
+  const numericVariants = levels.map(getTrailingNumericVariant)
+  return numericVariants.length > 1 && numericVariants.every((value): value is number => value !== undefined)
+}
+
 function sortAndRenumberVariants(levels: LevelVariant[]): LevelVariant[] {
+  const sortByNumericVariant = shouldSortByTrailingNumericVariant(levels)
+
   return levels
     .slice()
     .sort((a, b) => {
+      if (sortByNumericVariant) {
+        const aVariant = getTrailingNumericVariant(a) ?? 0
+        const bVariant = getTrailingNumericVariant(b) ?? 0
+        if (aVariant !== bVariant) return aVariant - bVariant
+      }
+
       const aLevel = a.actualLevel ?? a.levelNumber
       const bLevel = b.actualLevel ?? b.levelNumber
       if (aLevel !== bLevel) return aLevel - bLevel
@@ -299,8 +356,18 @@ function buildFamilyFromGroup(items: Array<Pet | ItemFamily>): ItemFamily {
   const baseAlsoSee = gatherAllRefs(sorted, internalSlugs)
   const baseDescription =
     descriptions.length > 0 && allSame(descriptions) ? descriptions[0] : (allLevels[0].description ?? (isItemFamily(sorted[0]) ? sorted[0].shared.description : sorted[0].description))
-  const baseImageUrl = imageUrls.length > 0 && allSame(imageUrls) ? imageUrls[0] : undefined
-  const baseAlternativeImages = alternativeImages.length > 0 && allSame(alternativeImages) ? alternativeImages[0] : undefined
+  const anchorImageUrl = familyAnchor?.shared.imageUrl
+  const anchorAlternativeImages = familyAnchor?.shared.alternativeImages
+  const baseImageUrl = anchorImageUrl ?? (
+    imageUrls.length > 0
+      ? (allSame(imageUrls) ? imageUrls[0] : (sorted[0].type === 'guest' ? imageUrls.at(-1) : imageUrls[0]))
+      : undefined
+  )
+  const baseAlternativeImages = anchorAlternativeImages ?? (
+    alternativeImages.length > 0
+      ? (allSame(alternativeImages) ? alternativeImages[0] : (sorted[0].type === 'guest' ? alternativeImages.at(-1) : alternativeImages[0]))
+      : undefined
+  )
   const baseAttacks = attacks.length > 0 && allSame(attacks) ? attacks[0] : undefined
   const baseNotes = notes.length > 0 && allSame(notes) ? notes[0] : undefined
   const baseElement = allLevels.every(level => level.element && level.element === allLevels[0].element) ? allLevels[0].element : undefined
@@ -345,7 +412,7 @@ function buildFamilyFromGroup(items: Array<Pet | ItemFamily>): ItemFamily {
     isRare: sorted.some(item => item.isRare),
     isSeasonal: sorted.some(item => item.isSeasonal),
     isSpecialOffer: sorted.some(item => item.isSpecialOffer),
-    retired: sorted.some(item => item.retired),
+    retired: sorted.some(item => item.retired === true),
     levelRange: '',
     elements: Array.from(new Set(sorted.flatMap(item => (isItemFamily(item) ? item.elements : item.elements)))),
   }
