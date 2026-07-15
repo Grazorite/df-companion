@@ -1,7 +1,8 @@
 import { lazy, Suspense } from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Navigate, Routes, Route } from 'react-router-dom'
 import Layout from './components/layout/Layout'
 import { BadgeGridSkeleton } from './components/shared/LoadingSkeleton'
+import { ACCESSORY_SUBTYPES } from './types/accessory'
 
 const HomePage = lazy(() => import('./pages/HomePage'))
 const BadgesPage = lazy(() => import('./pages/BadgesPage'))
@@ -9,6 +10,8 @@ const BadgeDetailPage = lazy(() => import('./pages/BadgeDetailPage'))
 const PetsPage = lazy(() => import('./pages/PetsPage'))
 const PetDetailPage = lazy(() => import('./pages/PetDetailPage'))
 const GuestDetailPage = lazy(() => import('./pages/GuestDetailPage'))
+const AccessoryListPage = lazy(() => import('./pages/AccessoryListPage'))
+const AccessoryDetailPage = lazy(() => import('./pages/AccessoryDetailPage'))
 const ComingSoonPage = lazy(() => import('./pages/ComingSoonPage'))
 
 function PageLoader() {
@@ -33,7 +36,15 @@ export default function App() {
             <Route path="/pets" element={<PetsPage />} />
             <Route path="/pets/:slug" element={<PetDetailPage />} />
             <Route path="/guests/:slug" element={<GuestDetailPage />} />
-            <Route path="/accessories" element={<ComingSoonPage />} />
+            <Route path="/accessories" element={<AccessoryListPage />} />
+            <Route path="/accessories/:slug" element={<AccessoryDetailPage />} />
+            {ACCESSORY_SUBTYPES.map(meta => (
+              <Route
+                key={meta.route}
+                path={meta.route}
+                element={<Navigate to={`/accessories?type=${encodeURIComponent(meta.subtype)}`} replace />}
+              />
+            ))}
             <Route path="/classes" element={<ComingSoonPage />} />
             <Route path="/housing" element={<ComingSoonPage />} />
             <Route path="/locations" element={<ComingSoonPage />} />

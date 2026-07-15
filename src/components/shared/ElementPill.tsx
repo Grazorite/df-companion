@@ -13,9 +13,15 @@ interface ElementPillProps {
   /** When true, clicking links to /pets?element=CODE */
   clickable?: boolean
   size?: 'sm' | 'md'
+  filterBase?: string
 }
 
-export default function ElementPill({ code, clickable = false, size = 'sm' }: ElementPillProps) {
+export default function ElementPill({
+  code,
+  clickable = false,
+  size = 'sm',
+  filterBase = '/pets',
+}: ElementPillProps) {
   const entry = elementMap.get(code) ?? traitMap.get(code)
   const colour = entry?.colour ?? 'bg-bg-overlay text-text-muted'
   const classes = `inline-flex items-center font-medium rounded-full whitespace-nowrap ${colour} ${
@@ -25,7 +31,7 @@ export default function ElementPill({ code, clickable = false, size = 'sm' }: El
   if (clickable) {
     return (
       <Link
-        to={`/pets?element=${encodeURIComponent(code)}`}
+        to={`${filterBase}?element=${encodeURIComponent(code)}`}
         className={classes}
         title={entry?.name ?? code}
         onClick={e => e.stopPropagation()}

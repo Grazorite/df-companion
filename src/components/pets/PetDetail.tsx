@@ -1,6 +1,6 @@
 import { useState, useMemo, useEffect } from 'react'
 import { useSearchParams } from 'react-router-dom'
-import { ExternalLink, Shield, ImageOff } from 'lucide-react'
+import { Shield, ImageOff } from 'lucide-react'
 import type { Pet, Guest } from '../../types/pet'
 import type { ItemFamily } from '../../types/item'
 import { getDisplayFamilyName, getLevelVariantLabel, hasSameLevelVariants, hasTitleDrivenVariantNames, isSingleVariant } from '../../utils/variantHelpers'
@@ -11,6 +11,8 @@ import NotesList from '../shared/NotesList'
 import LevelStatsTable from '../shared/LevelStatsTable'
 import LevelSelector from '../shared/LevelSelector'
 import ObtainVariantCard from '../shared/ObtainVariantCard'
+import SourceLinksCard from '../shared/SourceLinksCard'
+import CollapsibleSection from '../shared/CollapsibleSection'
 import PetAttacks from './PetAttacks'
 import GuestAttacks from '../guests/GuestAttacks'
 import GuestStatsSection from '../guests/GuestStatsSection'
@@ -300,6 +302,18 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
     })(),
   ].filter(s => s.value && s.value !== 'Unknown' && s.value !== 'None' || s.label === 'Level')
 
+  const sourceLinks = family?.familySources?.length
+    ? family.familySources.map(link => ({
+        url: link.url,
+        label: link.variantLabel ?? link.title,
+      }))
+    : [
+        {
+          url: displayData.sourceUrl,
+          label: `DF Encyclopedia: ${isMultiVariant && family ? activeLevel?.name ?? displayFamilyName : pet.name}`,
+        },
+      ]
+
   return (
     <main className="px-4 sm:px-6 py-6 max-w-3xl mx-auto">
       {/* Header */}
@@ -307,7 +321,7 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
         {/* Meta pills */}
         <div className="flex items-center gap-2 flex-wrap mb-3">
           {pet.elements.map(code => (
-            <ElementPill key={code} code={code} size="md" clickable />
+            <ElementPill key={code} code={code} size="md" clickable filterBase="/pets" />
           ))}
           {pet.traits.map(code => (
             <ElementPill key={code} code={code} size="md" />
@@ -464,15 +478,17 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
       {/* Level Stats Table - only for multi-variant items */}
       {isMultiVariant && family && !isGuest && (
         <section className="mb-5">
-          <LevelStatsTable 
-            levels={family.levelVariants}
-            familyName={displayFamilyName}
-            hideVariantColumn={
-              !sameLevelVariants &&
-              !family.levelVariants.some(level => Boolean(level.variantName)) &&
-              !useTitleDrivenVariantNames
-            }
-          />
+          <CollapsibleSection title="Stats by Level">
+            <LevelStatsTable 
+              levels={family.levelVariants}
+              familyName={displayFamilyName}
+              hideVariantColumn={
+                !sameLevelVariants &&
+                !family.levelVariants.some(level => Boolean(level.variantName)) &&
+                !useTitleDrivenVariantNames
+              }
+            />
+          </CollapsibleSection>
         </section>
       )}
       
@@ -659,24 +675,8 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
         )
       })()}
 
-      {/* Source */}
-      <section aria-labelledby="source-heading" className="mb-5">
-        <h2 id="source-heading" className="text-xs font-semibold text-text-muted uppercase tracking-wider mb-3">
-          Source
-        </h2>
-        <a
-          href={displayData.sourceUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center justify-between bg-gold/10 border-l-4 border-gold rounded-lg p-4 min-h-[56px] hover:bg-gold/15 transition-colors"
-        >
-          <div>
-            <span className="text-text-primary text-sm font-medium">
-              DF Encyclopedia: {isMultiVariant && family ? activeLevel?.name ?? displayFamilyName : pet.name}
-            </span>
-          </div>
-          <ExternalLink className="w-4 h-4 text-text-muted flex-shrink-0 ml-3" aria-hidden="true" />
-        </a>
+      <section className="mb-5">
+        <SourceLinksCard links={sourceLinks} />
       </section>
 
       {/* Tags */}

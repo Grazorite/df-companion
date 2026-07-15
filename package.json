@@ -5,14 +5,15 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node scripts/validate-badges.mjs && node scripts/validate-pets.mjs && tsc -b && vite build",
+    "build": "node scripts/validate-badges.mjs && node scripts/validate-pets.mjs && node scripts/validate-accessories.mjs && tsc -b && vite build",
     "lint": "oxlint",
     "format": "prettier --write src/",
     "preview": "vite preview",
-    "validate": "node scripts/validate-badges.mjs && node scripts/validate-pets.mjs",
+    "validate": "node scripts/validate-badges.mjs && node scripts/validate-pets.mjs && node scripts/validate-accessories.mjs",
     "scrape:badges": "tsx scripts/scrape-badges.ts",
     "scrape:pets": "tsx scripts/scrape-pets.ts",
     "scrape:guests": "tsx scripts/scrape-guests.ts",
+    "scrape:accessories": "tsx scripts/scrape-accessories.ts",
     "clear:pets": "echo '[]' > src/data/pets.json && rm -f src/data/pets-progress.json && echo 'Cleared pets.json and progress'",
     "clear:guests": "echo '[]' > src/data/guests.json && rm -f src/data/guests-progress.json && echo 'Cleared guests.json and progress'",
     "clear:all": "npm run clear:pets && npm run clear:guests && echo 'All data cleared'"

@@ -14,8 +14,8 @@ import { normalizeDisplayText } from './displayText'
  * Logic:
  * - free: "N/A", "0 Gold", or "Free" with NO required items
  * - merge: "N/A" but HAS required items (merge shop)
- * - dc: Contains "Dragon Coin"
- * - dm: Contains "Defender's Medal"
+ * - dc: Contains "Dragon Coin" or forum shorthand like "DC"
+ * - dm: Contains "Defender's Medal" or forum shorthand like "DM"
  * - gold: Default (anything else)
  * 
  * @param price - Price string from forum post
@@ -45,12 +45,12 @@ export function computePriceType(price: string, requiredItems?: string): PriceTy
   
   // DC
   // Examples: Goldfish Knight I-VII (DC option: 150 Dragon Coins)
-  if (p.includes('dragon coin')) {
+  if (p.includes('dragon coin') || p.includes(' dc')) {
     return 'dc'
   }
   
   // DM
-  if (p.includes("defender's medal")) {
+  if (p.includes("defender's medal") || p.includes('defender medal') || p.includes(' dm')) {
     return 'dm'
   }
   
@@ -410,6 +410,40 @@ export function getLevelVariantLabel(
   }
 
   return normalizeDisplayText(level.levelDisplay)
+}
+
+function isPureRomanVariantLabel(label: string): boolean {
+  return parseRomanNumeral(label.trim().toUpperCase()) !== null
+}
+
+export function shouldHideVariantColumn(
+  levels: LevelVariant[],
+  familyName?: string,
+  itemType?: ItemType
+): boolean {
+  if (levels.length === 0) return true
+
+  const useTitleLabels = familyName ? hasTitleDrivenVariantNames(levels, familyName) : false
+  const variantLabels = levels.map(level =>
+    getLevelVariantLabel(level, familyName, useTitleLabels, itemType)
+  )
+
+  const redundantExact = variantLabels.every((label, index) => {
+    const level = levels[index]
+    return label === String(level.actualLevel ?? level.levelDisplay)
+  })
+  if (redundantExact) return true
+
+  const allRomanLabels = variantLabels.every(label => isPureRomanVariantLabel(label))
+  const hasDuplicateLevels = new Set(
+    levels.map(level => String(level.actualLevel ?? level.levelDisplay))
+  ).size !== levels.length
+
+  if (allRomanLabels && !hasDuplicateLevels) {
+    return true
+  }
+
+  return false
 }
 
 export function shouldUseSplitVariantRows(levels: LevelVariant[]): boolean {

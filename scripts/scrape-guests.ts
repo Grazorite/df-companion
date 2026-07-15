@@ -23,7 +23,7 @@ import * as path from 'node:path'
 import type { Guest, GuestAttack, GuestStats, ObtainMethod, AlsoSeeRef, EntryType } from '../src/types/pet.ts'
 import type { AlternativeImage, ItemFamily, LevelVariant, ObtainVariant } from '../src/types/item.ts'
 import { convertImageTags, fetchPrintable, getPostContent } from './lib/printable-parser.ts'
-import { computeFamilyFlags, normalizeLevel } from '../src/utils/variantHelpers.ts'
+import { computeFamilyFlags, computePriceType, normalizeLevel } from '../src/utils/variantHelpers.ts'
 import { promoteCrossPostFamilies } from './lib/cross-post-family.ts'
 
 const FORUM_BASE = 'https://forums2.battleon.com/f'
@@ -1362,22 +1362,6 @@ function parseObtainMethods(html: string, guestName: string): ObtainMethod[] {
   if (DEBUG) console.log(`[DEBUG] Found ${obtainMethods.length} obtain methods\n`)
   
   return obtainMethods
-}
-
-// Helper: Compute price type from price string and required items
-function computePriceType(price: string, requiredItems?: string): ObtainMethod['priceType'] {
-  const p = price.toLowerCase()
-  
-  if (p.includes('dragon coin') || p.includes(' dc')) return 'dc'
-  if (p.includes("defender's medal") || p.includes('defender medal') || p.includes(' dm')) return 'dm'
-  if (p === '0 gold' || p === 'free' || p === 'n/a') {
-    if (requiredItems && requiredItems.trim().length > 0) return 'merge'
-    return 'free'
-  }
-  if (p.includes('gold')) return 'gold'
-  
-  // Default: if has required items, it's merge; otherwise gold
-  return requiredItems && requiredItems.trim().length > 0 ? 'merge' : 'gold'
 }
 
 // ─── Notes Parsing ────────────────────────────────────────────────────────────

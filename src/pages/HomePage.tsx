@@ -2,10 +2,11 @@ import { Link } from 'react-router-dom'
 import { Trophy, Map, Skull, Sword, Users, Shirt, House, Package, PawPrint } from 'lucide-react'
 import { useTotalBadgeCount } from '../hooks/useBadges'
 import { useTotalPetCount } from '../hooks/usePets'
+import { useTotalAccessoryCount } from '../hooks/useAccessories'
 
 // All sections in forum order — each as its own card, uniform grid
 const SECTIONS = [
-  { to: '/accessories', icon: Shirt, label: 'Accessories', desc: 'Belts, necklaces, rings, brooches, wings and capes. If you can equip it and it\'s not a weapon, you\'ll find it here.', available: false },
+  { to: '/accessories', icon: Shirt, label: 'Accessories', desc: 'Belts, necklaces, rings, brooches, wings and capes. If you can equip it and it\'s not a weapon, you\'ll find it here.', available: true },
   { to: '/badges', icon: Trophy, label: 'Badges', desc: 'The where, what and how of Badges.', available: true },
   { to: '/classes', icon: Sword, label: 'Classes / Abilities', desc: 'All the different stats and abilities for the different classes in DragonFable.', available: false },
   { to: '/housing', icon: House, label: 'Housing & House Items', desc: 'Home is where the monsters are. Better get some stuff to make it more comfy.', available: false },
@@ -18,6 +19,7 @@ const SECTIONS = [
 ]
 
 export default function HomePage() {
+  const accessoryCount = useTotalAccessoryCount()
   const badgeCount = useTotalBadgeCount()
   const petCount = useTotalPetCount()
 
@@ -65,6 +67,9 @@ export default function HomePage() {
                   )}
                   {to === '/pets' && (
                     <span className="ml-1.5 text-xs font-normal text-text-muted">({petCount})</span>
+                  )}
+                  {to === '/accessories' && (
+                    <span className="ml-1.5 text-xs font-normal text-text-muted">({accessoryCount})</span>
                   )}
                 </div>
                 <div className="text-text-secondary text-xs mt-1 leading-relaxed">{desc}</div>

@@ -1,0 +1,253 @@
+[
+  {
+    "id": "accessory-azaveyran-farewell-i-ii-iii",
+    "name": "Azaveyran Farewell (I, II, III)",
+    "slug": "accessory-azaveyran-farewell-i-ii-iii",
+    "type": "accessory",
+    "subtype": "bracer",
+    "description": "A bracelet of oddly colored shells and trinkets, this gift is said to promise the reunion of distant lovers after a time apart. This item requires a Dragon Amulet to use.",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22360031",
+    "releaseDate": "",
+    "elements": [
+      "FEA"
+    ],
+    "level": "30",
+    "stats": "LUK +2",
+    "resists": "None",
+    "rarity": "0",
+    "itemType": "Bracer",
+    "equipSpot": "Wrist",
+    "category": "Armor",
+    "obtainMethods": [
+      {
+        "location": "Coming Home",
+        "price": "N/A",
+        "priceType": "free",
+        "sellback": "100 Gold",
+        "daRequired": false
+      },
+      {
+        "location": "Coming Home Loot for DCs",
+        "price": "100 Dragon Coins",
+        "priceType": "dc",
+        "sellback": "90 Dragon Coins before 24 hours, 25 Dragon Coins after 24 hours",
+        "daRequired": false,
+        "dcRequired": true
+      }
+    ],
+    "notes": "• Bracer has a 3.33% drop rate from the quest Coming Home.",
+    "tags": [
+      "fea",
+      "free"
+    ],
+    "daRequired": true,
+    "dcRequired": true
+  },
+  {
+    "id": "accessory-falwynn-s-disguise-kit",
+    "name": "Falwynn's Disguise Kit",
+    "slug": "accessory-falwynn-s-disguise-kit",
+    "type": "accessory",
+    "subtype": "bracer",
+    "description": "Falwynn has shared her secrets of impersonation with you. It kind of looks like a couple of dirty twigs and leaves. Use it to fool your friends and battle your enemies! At least, that's what Falwynn says.",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22313248",
+    "releaseDate": "",
+    "elements": [
+      "NAT"
+    ],
+    "level": "30",
+    "stats": "CHA +2",
+    "resists": "None",
+    "rarity": "0",
+    "itemType": "Bracer",
+    "equipSpot": "Wrist",
+    "category": "Armor",
+    "obtainMethods": [
+      {
+        "location": "The Apprentice",
+        "price": "N/A",
+        "priceType": "free",
+        "sellback": "0 Gold",
+        "daRequired": false
+      }
+    ],
+    "tags": [
+      "nat",
+      "free"
+    ],
+    "daRequired": false
+  },
+  {
+    "id": "accessory-falwynn-s-lucky-rock",
+    "name": "Falwynn's Lucky Rock",
+    "slug": "accessory-falwynn-s-lucky-rock",
+    "type": "accessory",
+    "subtype": "bracer",
+    "description": "Falwynn gave you this bracelet as a sign of friendship. It has a polished green stone embedded in its leather strapping. Falwynn assures you that it'll bring good luck!",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22252428",
+    "releaseDate": "",
+    "elements": [
+      "NAT"
+    ],
+    "level": "30",
+    "stats": "LUK +2",
+    "resists": "None",
+    "rarity": "0",
+    "itemType": "Bracer",
+    "equipSpot": "Wrist",
+    "category": "Armor",
+    "obtainMethods": [
+      {
+        "location": "Return to Lymcrest",
+        "price": "N/A",
+        "priceType": "free",
+        "sellback": "0 Gold",
+        "daRequired": false
+      }
+    ],
+    "tags": [
+      "nat",
+      "free"
+    ],
+    "daRequired": false
+  },
+  {
+    "id": "accessory-falwynn-s-moon-charm",
+    "name": "Falwynn's Moon Charm",
+    "slug": "accessory-falwynn-s-moon-charm",
+    "type": "accessory",
+    "subtype": "bracer",
+    "description": "A souvenir obtained from a festival in a remote village. It's a little crescent moon that Falwynn says will help you ring in the new year. Holding it makes you feel a little bit wiser.",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22374513",
+    "releaseDate": "",
+    "elements": [
+      "NAT"
+    ],
+    "level": "30",
+    "stats": "WIS +2",
+    "resists": "None",
+    "rarity": "0",
+    "itemType": "Bracer",
+    "equipSpot": "Wrist",
+    "category": "Armor",
+    "obtainMethods": [
+      {
+        "location": "Darkheart",
+        "price": "N/A",
+        "priceType": "free",
+        "sellback": "0 Gold",
+        "daRequired": false
+      }
+    ],
+    "tags": [
+      "nat",
+      "free"
+    ],
+    "daRequired": false
+  },
+  {
+    "id": "accessory-falwynn-s-snackpack",
+    "name": "Falwynn's Snackpack",
+    "slug": "accessory-falwynn-s-snackpack",
+    "type": "accessory",
+    "subtype": "bracer",
+    "description": "Full of snacks and a lovingly-crafted meal to boost your endurance. Look, it's JUST as important as your regular bag, okay?",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22396139",
+    "releaseDate": "",
+    "elements": [
+      "NAT"
+    ],
+    "level": "30",
+    "stats": "END +2",
+    "resists": "None",
+    "rarity": "0",
+    "itemType": "Bracer",
+    "equipSpot": "Wrist",
+    "category": "Armor",
+    "obtainMethods": [
+      {
+        "location": "ANOMALY",
+        "price": "N/A",
+        "priceType": "free",
+        "sellback": "0 Gold",
+        "daRequired": false
+      }
+    ],
+    "tags": [
+      "nat",
+      "free"
+    ],
+    "daRequired": false
+  },
+  {
+    "id": "accessory-hero-s-armband",
+    "name": "Hero's Armband",
+    "slug": "accessory-hero-s-armband",
+    "type": "accessory",
+    "subtype": "bracer",
+    "description": "A red cloth armband, emblazoned with a black and gold dragon emblem. This item requires a Dragon Amulet to use.",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22229856",
+    "releaseDate": "",
+    "elements": [
+      "GOO"
+    ],
+    "level": "85",
+    "stats": "LUK +1, INT +2, DEX +2, STR +2",
+    "resists": "None",
+    "rarity": "0",
+    "itemType": "Bracer",
+    "equipSpot": "Wrist",
+    "category": "Armor",
+    "obtainMethods": [
+      {
+        "location": "Calamity",
+        "price": "N/A",
+        "priceType": "free",
+        "sellback": "10 Gold",
+        "daRequired": false
+      }
+    ],
+    "notes": "• Item has an uncommon drop rate.",
+    "tags": [
+      "goo",
+      "free"
+    ],
+    "daRequired": true
+  },
+  {
+    "id": "accessory-legion-bracer",
+    "name": "Legion Bracer",
+    "slug": "accessory-legion-bracer",
+    "type": "accessory",
+    "subtype": "bracer",
+    "description": "The bracer of the Legion, brought to the Arena of Time, and recovered by the Hero!",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22303541",
+    "releaseDate": "",
+    "elements": [
+      "EVI"
+    ],
+    "level": "1",
+    "stats": "Crit +5, WIS +1, END +1, CHA +1, LUK +1, INT +1, DEX +1, STR +1, Bonus +5",
+    "resists": "All +1",
+    "rarity": "0",
+    "itemType": "Bracer",
+    "equipSpot": "Wrist",
+    "category": "Armor",
+    "obtainMethods": [
+      {
+        "location": "Undead Challenge",
+        "price": "N/A",
+        "priceType": "free",
+        "sellback": "N/A",
+        "daRequired": false
+      }
+    ],
+    "notes": "• Bracer was DC tagged on  July 27th, 2022.",
+    "tags": [
+      "evi",
+      "free"
+    ],
+    "daRequired": false,
+    "dcRequired": true
+  }
+]

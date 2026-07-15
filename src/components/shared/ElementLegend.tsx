@@ -5,7 +5,11 @@ import type { ElementsData } from '../../types/element'
 
 const { elements, traits } = elementsData as ElementsData
 
-export default function ElementLegend() {
+interface ElementLegendProps {
+  includeTraits?: boolean
+}
+
+export default function ElementLegend({ includeTraits = true }: ElementLegendProps) {
   const [open, setOpen] = useState(false)
 
   return (
@@ -34,19 +38,21 @@ export default function ElementLegend() {
               ))}
             </div>
           </div>
-          <div className="border-t border-border-default pt-3">
-            <p className="text-text-muted text-xs mb-2 font-medium uppercase tracking-wider">Traits</p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-1.5">
-              {traits.map(t => (
-                <div key={t.code} className="flex items-center gap-2">
-                  <span className={`text-xs font-medium px-1.5 py-0.5 rounded-full ${t.colour}`}>
-                    {t.code}
-                  </span>
-                  <span className="text-xs text-text-secondary">{t.name}</span>
-                </div>
-              ))}
+          {includeTraits && (
+            <div className="border-t border-border-default pt-3">
+              <p className="text-text-muted text-xs mb-2 font-medium uppercase tracking-wider">Traits</p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-1.5">
+                {traits.map(t => (
+                  <div key={t.code} className="flex items-center gap-2">
+                    <span className={`text-xs font-medium px-1.5 py-0.5 rounded-full ${t.colour}`}>
+                      {t.code}
+                    </span>
+                    <span className="text-xs text-text-secondary">{t.name}</span>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
         </div>
       )}
     </div>

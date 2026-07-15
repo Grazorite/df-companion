@@ -1,13 +1,14 @@
-import { NavLink } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
 import { Trophy, Map, Skull, Home, Sword, Users, Shirt, House, Package, PawPrint } from 'lucide-react'
 import { useTotalBadgeCount } from '../../hooks/useBadges'
 import { useTotalPetCount } from '../../hooks/usePets'
+import { useTotalAccessoryCount } from '../../hooks/useAccessories'
 
 // Mirrors the DF Encyclopedia forum structure exactly:
 // https://forums2.battleon.com/f/tt.asp?forumid=256
 const NAV_ITEMS = [
   { to: '/', icon: Home, label: 'Home', exact: true, available: true },
-  { to: '/accessories', icon: Shirt, label: 'Accessories', exact: false, available: false },
+  { to: '/accessories', icon: Shirt, label: 'Accessories', exact: false, available: true },
   { to: '/badges', icon: Trophy, label: 'Badges', exact: false, available: true },
   { to: '/classes', icon: Sword, label: 'Classes / Abilities', exact: false, available: false },
   { to: '/housing', icon: House, label: 'Housing', exact: false, available: false },
@@ -20,8 +21,31 @@ const NAV_ITEMS = [
 ]
 
 export default function Navigation() {
+  const location = useLocation()
   const badgeCount = useTotalBadgeCount()
   const petCount = useTotalPetCount()
+  const accessoryCount = useTotalAccessoryCount()
+
+  const isNavItemActive = (to: string, exact: boolean) => {
+    if (to === '/accessories') {
+      return (
+        location.pathname === '/accessories' ||
+        [
+          '/artifacts',
+          '/belts',
+          '/bracers',
+          '/capes-wings',
+          '/helms',
+          '/necklaces',
+          '/rings',
+          '/trinkets',
+        ].some(route => location.pathname === route || location.pathname.startsWith(`${route}/`))
+      )
+    }
+
+    if (exact) return location.pathname === to
+    return location.pathname === to || location.pathname.startsWith(`${to}/`)
+  }
 
   return (
     <>
@@ -50,16 +74,17 @@ export default function Navigation() {
                 <NavLink
                   to={to}
                   end={exact}
-                  className={({ isActive }) =>
-                    `flex items-center gap-3 pl-2 pr-3 py-2.5 rounded-lg text-sm transition-all duration-150 ${
-                      isActive
-                        ? 'border-l-[3px] border-gold bg-gold/10 text-gold font-medium pl-[5px]'
-                        : 'border-l-[3px] border-transparent text-text-secondary hover:text-text-primary hover:bg-bg-overlay/60 pl-[5px]'
-                    }`
-                  }
+                  className={`flex items-center gap-3 pl-2 pr-3 py-2.5 rounded-lg text-sm transition-all duration-150 ${
+                    isNavItemActive(to, exact)
+                      ? 'border-l-[3px] border-gold bg-gold/10 text-gold font-medium pl-[5px]'
+                      : 'border-l-[3px] border-transparent text-text-secondary hover:text-text-primary hover:bg-bg-overlay/60 pl-[5px]'
+                  }`}
                 >
                   <Icon className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
                   <span className="flex-1">{label}</span>
+                  {to === '/accessories' && (
+                    <span className="text-xs text-text-muted tabular-nums">{accessoryCount}</span>
+                  )}
                   {to === '/badges' && (
                     <span className="text-xs text-text-muted tabular-nums">{badgeCount}</span>
                   )}
@@ -106,21 +131,21 @@ export default function Navigation() {
         aria-label="Main navigation"
       >
         <ul className="flex h-14" role="list">
-          {NAV_ITEMS.filter(item => item.to === '/' || item.to === '/badges' || item.to === '/pets' || item.to === '/monsters' || item.to === '/locations').map(({ to, icon: Icon, label, exact, available }) => (
+          {NAV_ITEMS.filter(item => item.to === '/' || item.to === '/accessories' || item.to === '/badges' || item.to === '/pets' || item.to === '/locations').map(({ to, icon: Icon, label, exact, available }) => (
             <li key={to} className="flex-1">
               {available ? (
                 <NavLink
                   to={to}
                   end={exact}
-                  className={({ isActive }) =>
+                  className={() =>
                     `relative flex flex-col items-center justify-center h-full gap-0.5 transition-colors duration-150 ${
-                      isActive ? 'text-gold' : 'text-text-muted active:text-text-secondary'
+                      isNavItemActive(to, exact) ? 'text-gold' : 'text-text-muted active:text-text-secondary'
                     }`
                   }
                 >
-                  {({ isActive }) => (
+                  {() => (
                     <>
-                      {isActive && (
+                      {isNavItemActive(to, exact) && (
                         <span className="absolute top-0 inset-x-2 h-0.5 bg-gold rounded-b-full" />
                       )}
                       <Icon className="w-5 h-5" aria-hidden="true" />

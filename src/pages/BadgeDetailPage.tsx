@@ -1,10 +1,11 @@
 import { useParams, useLocation, Link } from 'react-router-dom'
-import { ArrowLeft, ExternalLink, Shield } from 'lucide-react'
+import { ArrowLeft, Shield } from 'lucide-react'
 import { useBadgeBySlug, useBadgesByCategory } from '../hooks/useBadges'
 import BadgeCard from '../components/badges/BadgeCard'
 import NotesList from '../components/shared/NotesList'
 import { normalizeDisplayText } from '../utils/displayText'
 import AccessPills from '../components/shared/AccessPills'
+import SourceLinksCard from '../components/shared/SourceLinksCard'
 
 export default function BadgeDetailPage() {
   const { slug } = useParams<{ slug: string }>()
@@ -157,34 +158,13 @@ export default function BadgeDetailPage() {
         </section>
       )}
 
-      {/* Sources */}
-      <section aria-labelledby="sources-heading" className="mb-5">
-        <h2
-          id="sources-heading"
-          className="text-xs font-semibold text-text-muted uppercase tracking-wider mb-3"
-        >
-          Source{badge.forumLinks.length > 1 ? 's' : ''}
-        </h2>
-        <div className="space-y-2">
-          {badge.forumLinks.map((link) => (
-            <a
-              key={link.url}
-              href={link.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`flex items-center justify-between rounded-lg p-4 min-h-[56px] transition-all duration-150 ${
-                link.isPrimary
-                  ? 'bg-gold/10 border-l-4 border-gold hover:bg-gold/15'
-                  : 'bg-bg-surface border border-border-default hover:bg-bg-elevated hover:border-border-hover'
-              }`}
-            >
-              <div className="min-w-0">
-                <span className="text-text-primary text-sm font-medium truncate block">{link.title}</span>
-              </div>
-              <ExternalLink className="w-4 h-4 text-text-muted flex-shrink-0 ml-3" aria-hidden="true" />
-            </a>
-          ))}
-        </div>
+      <section className="mb-5">
+        <SourceLinksCard
+          links={badge.forumLinks.map(link => ({
+            url: link.url,
+            label: link.title,
+          }))}
+        />
       </section>
 
       {/* Tags — internal search keywords, not clickable filters */}
