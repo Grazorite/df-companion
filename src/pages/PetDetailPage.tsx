@@ -21,6 +21,14 @@ export default function PetDetailPage() {
   const fullSlug = slug?.startsWith('pet-') ? slug : `pet-${slug ?? ''}`
   const result = usePetBySlug(fullSlug)
 
+  if (result === undefined) {
+    return (
+      <main className="px-4 py-8 max-w-3xl mx-auto text-center">
+        <p className="text-text-secondary text-lg mb-4">Loading pet...</p>
+      </main>
+    )
+  }
+
   if (!result) {
     return (
       <main className="px-4 py-8 max-w-3xl mx-auto text-center">

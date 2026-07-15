@@ -1,61 +1,109 @@
-import { useMemo } from 'react'
-import badgesData from '../data/badges.json'
-import categoriesData from '../data/categories.json'
+import { useEffect, useMemo, useState } from 'react'
 import { searchBadges } from '../utils/search'
+import { loadBadges, loadCategories } from '../utils/dataLoaders'
 import type { Badge, BadgeFilters, CategoryMeta } from '../types/badge'
 
-const badges = (badgesData as Badge[]).map((badge) => ({
-  ...badge,
-  retired: badge.retired || /badge was retired on/i.test(badge.notes ?? ''),
-  imageUrl: badge.imageUrl ?? badge.forumImageUrl,
-}))
-const categories = categoriesData as CategoryMeta[]
+function useBadgeDataset() {
+  const [badges, setBadges] = useState<Badge[]>([])
+  const [loading, setLoading] = useState(true)
 
-export function useBadges(filters: BadgeFilters = {}) {
-  const results = useMemo(() => searchBadges(badges, filters), [filters])
-  return { badges: results, total: results.length }
-}
-export function useBadgeBySlug(slug: string) {
-  return useMemo(() => badges.find((b) => b.slug === slug) ?? null, [slug])
+  useEffect(() => {
+    let active = true
+    loadBadges()
+      .then(data => {
+        if (!active) return
+        setBadges(data)
+        setLoading(false)
+      })
+      .catch(() => {
+        if (!active) return
+        setBadges([])
+        setLoading(false)
+      })
+
+    return () => {
+      active = false
+    }
+  }, [])
+
+  return { badges, loading }
 }
 
-export function useCategories() {
+function useCategoryDataset() {
+  const [categories, setCategories] = useState<CategoryMeta[]>([])
+
+  useEffect(() => {
+    let active = true
+    loadCategories()
+      .then(data => {
+        if (active) setCategories(data)
+      })
+      .catch(() => {
+        if (active) setCategories([])
+      })
+
+    return () => {
+      active = false
+    }
+  }, [])
+
   return categories
 }
 
-/** Returns all subcategories for a given top-level category, sorted as they appear in the forum */
+export function useBadges(filters: BadgeFilters = {}) {
+  const { badges, loading } = useBadgeDataset()
+  const results = useMemo(() => searchBadges(badges, filters), [badges, filters])
+  return { badges: results, total: results.length, loading }
+}
+
+export function useBadgeBySlug(slug: string) {
+  const { badges, loading } = useBadgeDataset()
+  const badge = useMemo(() => {
+    if (loading) return undefined
+    return badges.find(b => b.slug === slug) ?? null
+  }, [badges, loading, slug])
+
+  return { badge, loading }
+}
+
+export function useCategories() {
+  return useCategoryDataset()
+}
+
 export function useSubcategories(category: string): string[] {
+  const { badges } = useBadgeDataset()
+
   return useMemo(() => {
     if (!category) return []
     const subs = badges
-      .filter((b) => b.category === category && b.subcategory)
-      .map((b) => b.subcategory as string)
-    // Preserve forum order by using insertion-order dedup
+      .filter(b => b.category === category && b.subcategory)
+      .map(b => b.subcategory as string)
     const allSubs = [...new Set(subs)]
-    
-    // Remove "Misc" from quest-completion and collection categories
+
     if (category === 'quest-completion' || category === 'collection') {
       return allSubs.filter(sub => sub !== 'Misc')
     }
-    
+
     return allSubs
-  }, [category])
+  }, [badges, category])
 }
 
 export function useBadgesByCategory(category: string, excludeSlug?: string, subcategory?: string) {
+  const { badges } = useBadgeDataset()
+
   return useMemo(() => {
-    const pool = badges.filter((b) => b.category === category && b.slug !== excludeSlug)
-    const sameSubcat = subcategory ? pool.filter((b) => b.subcategory === subcategory) : []
-    const others = pool.filter((b) => !subcategory || b.subcategory !== subcategory)
-    // Prefer same subcategory, shuffled — then fill from rest of category, also shuffled
+    const pool = badges.filter(b => b.category === category && b.slug !== excludeSlug)
+    const sameSubcat = subcategory ? pool.filter(b => b.subcategory === subcategory) : []
+    const others = pool.filter(b => !subcategory || b.subcategory !== subcategory)
     const shuffled = [
       ...sameSubcat.sort(() => Math.random() - 0.5),
       ...others.sort(() => Math.random() - 0.5),
     ]
     return shuffled.slice(0, 5)
-  }, [category, excludeSlug, subcategory])
+  }, [badges, category, excludeSlug, subcategory])
 }
 
 export function useTotalBadgeCount() {
+  const { badges } = useBadgeDataset()
   return badges.length
 }

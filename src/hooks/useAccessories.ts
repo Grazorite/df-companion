@@ -1,13 +1,4 @@
-import { useMemo } from 'react'
-import artifactsData from '../data/artifacts.json'
-import beltsData from '../data/belts.json'
-import bracersData from '../data/bracers.json'
-import capesWingsData from '../data/capes-wings.json'
-import helmsData from '../data/helms.json'
-import necklacesData from '../data/necklaces.json'
-import ringsData from '../data/rings.json'
-import trinketsData from '../data/trinkets.json'
-import elementsData from '../data/elements.json'
+import { useEffect, useMemo, useState } from 'react'
 import type { ElementsData } from '../types/element'
 import type {
   AccessoryEntry,
@@ -16,20 +7,65 @@ import type {
   AccessorySubtype,
 } from '../types/accessory'
 import { isAccessoryFamily, ACCESSORY_SUBTYPES } from '../types/accessory'
+import { loadAccessoriesBySubtype, loadElements } from '../utils/dataLoaders'
 
-const datasets = {
-  artifact: artifactsData as AccessoryEntry[],
-  belt: beltsData as AccessoryEntry[],
-  bracer: bracersData as AccessoryEntry[],
-  'cape-wing': capesWingsData as AccessoryEntry[],
-  helm: helmsData as AccessoryEntry[],
-  necklace: necklacesData as AccessoryEntry[],
-  ring: ringsData as AccessoryEntry[],
-  trinket: trinketsData as AccessoryEntry[],
+function useAccessoryDataset() {
+  const [datasets, setDatasets] = useState<Record<AccessorySubtype, AccessoryEntry[]>>({
+    artifact: [],
+    belt: [],
+    bracer: [],
+    'cape-wing': [],
+    helm: [],
+    necklace: [],
+    ring: [],
+    trinket: [],
+  })
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    let active = true
+    loadAccessoriesBySubtype()
+      .then(data => {
+        if (!active) return
+        setDatasets(data)
+        setLoading(false)
+      })
+      .catch(() => {
+        if (!active) return
+        setLoading(false)
+      })
+
+    return () => {
+      active = false
+    }
+  }, [])
+
+  return { datasets, loading }
 }
 
-const allAccessories = ACCESSORY_SUBTYPES.flatMap(meta => datasets[meta.subtype])
-const elementMeta = elementsData as ElementsData
+function useElementDataset() {
+  const [elementMeta, setElementMeta] = useState<ElementsData>({
+    elements: [],
+    traits: [],
+  })
+
+  useEffect(() => {
+    let active = true
+    loadElements()
+      .then(data => {
+        if (active) setElementMeta(data)
+      })
+      .catch(() => {
+        if (active) setElementMeta({ elements: [], traits: [] })
+      })
+
+    return () => {
+      active = false
+    }
+  }, [])
+
+  return elementMeta
+}
 
 function hasMultipleVersionHint(name: string): boolean {
   return /\((?:All Versions|[IVX]+(?:\s*[-,]\s*[IVX]+)+|[IVX]+-[IVX]+)\)/i.test(name)
@@ -43,7 +79,8 @@ function getAccessoryNameRange(name: string): string | undefined {
 function searchAccessories(
   items: AccessoryEntry[],
   subtype: AccessorySubtype,
-  filters: AccessoryFilters
+  filters: AccessoryFilters,
+  elementMeta: ElementsData
 ): AccessoryEntry[] {
   const query = (filters.query ?? '').toLowerCase().trim()
   const queryWords = query.split(/\s+/).filter(word => word.length >= 2)
@@ -117,27 +154,39 @@ function searchAccessories(
 }
 
 export function useAccessories(subtype: AccessorySubtype, filters: AccessoryFilters = {}) {
+  const { datasets, loading } = useAccessoryDataset()
+  const allAccessories = useMemo(
+    () => ACCESSORY_SUBTYPES.flatMap(meta => datasets[meta.subtype]),
+    [datasets]
+  )
+  const elementMeta = useElementDataset()
   const accessories = useMemo(
-    () => searchAccessories(allAccessories, subtype, filters),
-    [subtype, filters.query, filters.access, filters.elements]
+    () => searchAccessories(allAccessories, subtype, filters, elementMeta),
+    [allAccessories, subtype, filters, elementMeta]
   )
 
   return {
     accessories,
     total: accessories.length,
+    loading,
   }
 }
 
 export function useAccessoryBySlug(subtype: AccessorySubtype, slug?: string) {
+  const { datasets, loading } = useAccessoryDataset()
   const accessory = useMemo(
-    () => datasets[subtype].find(entry => entry.slug === slug),
-    [subtype, slug]
+    () => {
+      if (loading) return undefined
+      return datasets[subtype].find(entry => entry.slug === slug) ?? null
+    },
+    [datasets, loading, subtype, slug]
   )
 
-  return accessory
+  return { accessory, loading }
 }
 
 export function useAccessoryCounts() {
+  const { datasets } = useAccessoryDataset()
   return useMemo(() => {
     const counts = Object.fromEntries(
       ACCESSORY_SUBTYPES.map(meta => [meta.subtype, datasets[meta.subtype].length])

@@ -20,6 +20,14 @@ export default function GuestDetailPage() {
   const fullSlug = slug?.startsWith('guest-') ? slug : `guest-${slug ?? ''}`
   const result = usePetBySlug(fullSlug)
 
+  if (result === undefined) {
+    return (
+      <main className="px-4 py-8 max-w-3xl mx-auto text-center">
+        <p className="text-text-secondary text-lg mb-4">Loading guest...</p>
+      </main>
+    )
+  }
+
   if (!result) {
     return (
       <main className="px-4 py-8 max-w-3xl mx-auto text-center">

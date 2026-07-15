@@ -10,7 +10,17 @@ export default function AccessoryDetailPage() {
   const activeSubtype = ACCESSORY_SUBTYPES.some(meta => meta.subtype === typeParam)
     ? (typeParam as AccessorySubtype)
     : 'artifact'
-  const accessory = useAccessoryBySlug(activeSubtype, slug)
+  const { accessory, loading } = useAccessoryBySlug(activeSubtype, slug)
+
+  if (loading) {
+    return (
+      <main className="px-4 sm:px-6 py-8 max-w-3xl mx-auto">
+        <div className="bg-bg-surface border border-border-default rounded-lg p-6 text-text-secondary">
+          Loading accessory entry...
+        </div>
+      </main>
+    )
+  }
 
   if (!accessory) {
     return (

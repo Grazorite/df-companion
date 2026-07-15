@@ -1,29 +1,8 @@
-import { useMemo } from 'react'
-import petsData from '../data/pets.json'
-import guestsData from '../data/guests.json'
-import elementsData from '../data/elements.json'
+import { useEffect, useMemo, useState } from 'react'
 import type { Pet, PetFilters, EntryType } from '../types/pet'
 import type { ItemFamily } from '../types/item'
 import type { ElementsData } from '../types/element'
-
-// Normalize legacy field names (specialMarkers → traits) at load time
-const loadedPets: Pet[] = (petsData as unknown as Array<Pet & { specialMarkers?: string[] }>).map(p => {
-  if (!p.traits && p.specialMarkers) {
-    p.traits = p.specialMarkers
-    delete p.specialMarkers
-  }
-  if (!p.traits) p.traits = []
-  return p as Pet
-})
-
-const loadedGuests: Pet[] = (guestsData as unknown as Array<Pet & { specialMarkers?: string[] }>).map(p => {
-  if (!p.traits && p.specialMarkers) {
-    p.traits = p.specialMarkers
-    delete p.specialMarkers
-  }
-  if (!p.traits) p.traits = []
-  return p as Pet
-})
+import { loadElements, loadPetsAndGuests } from '../utils/dataLoaders'
 
 function isItemFamily(item: Pet | ItemFamily): item is ItemFamily {
   return 'levelVariants' in item && 'familyName' in item
@@ -89,14 +68,67 @@ function dedupeVariantEntries(items: Array<Pet | ItemFamily>) {
   }
 }
 
-const dedupedEntries = dedupeVariantEntries([...loadedPets, ...loadedGuests] as Array<Pet | ItemFamily>)
-const allPets = dedupedEntries.items
-const petSlugAliases = dedupedEntries.aliasToCanonicalSlug
-const elementMeta = elementsData as ElementsData
+function usePetDataset() {
+  const [allPets, setAllPets] = useState<Array<Pet | ItemFamily>>([])
+  const [petSlugAliases, setPetSlugAliases] = useState<Map<string, string>>(new Map())
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    let active = true
+    loadPetsAndGuests()
+      .then(items => {
+        if (!active) return
+        const dedupedEntries = dedupeVariantEntries(items)
+        setAllPets(dedupedEntries.items)
+        setPetSlugAliases(dedupedEntries.aliasToCanonicalSlug)
+        setLoading(false)
+      })
+      .catch(() => {
+        if (!active) return
+        setAllPets([])
+        setPetSlugAliases(new Map())
+        setLoading(false)
+      })
+
+    return () => {
+      active = false
+    }
+  }, [])
+
+  return { allPets, petSlugAliases, loading }
+}
+
+function useElementsDataset() {
+  const [elementMeta, setElementMeta] = useState<ElementsData>({
+    elements: [],
+    traits: [],
+  })
+
+  useEffect(() => {
+    let active = true
+    loadElements()
+      .then(data => {
+        if (active) setElementMeta(data)
+      })
+      .catch(() => {
+        if (active) setElementMeta({ elements: [], traits: [] })
+      })
+
+    return () => {
+      active = false
+    }
+  }, [])
+
+  return elementMeta
+}
 
 // ─── Search ───────────────────────────────────────────────────────────────────
 
-function searchPets(pets: (Pet | ItemFamily)[], filters: PetFilters): (Pet | ItemFamily)[] {
+function searchPets(
+  pets: (Pet | ItemFamily)[],
+  filters: PetFilters,
+  elementMeta: ElementsData
+): (Pet | ItemFamily)[] {
   const query = (filters.query ?? '').toLowerCase().trim()
   const queryWords = query.split(/\s+/).filter(w => w.length >= 2)
   const hasRetiredSignal = (...values: Array<string | undefined>): boolean =>
@@ -273,44 +305,52 @@ function searchPets(pets: (Pet | ItemFamily)[], filters: PetFilters): (Pet | Ite
 // ─── Hooks ────────────────────────────────────────────────────────────────────
 
 export function usePets(filters: PetFilters = {}) {
-  const results = useMemo(() => searchPets(allPets, filters), [filters])
-  return { pets: results, total: results.length }
+  const { allPets, loading } = usePetDataset()
+  const elementMeta = useElementsDataset()
+  const results = useMemo(() => searchPets(allPets, filters, elementMeta), [allPets, filters, elementMeta])
+  return { pets: results, total: results.length, loading }
 }
 
-export function usePetBySlug(slug: string): Pet | ItemFamily | null {
+export function usePetBySlug(slug: string): Pet | ItemFamily | null | undefined {
+  const { allPets, petSlugAliases, loading } = usePetDataset()
   return useMemo(() => {
+    if (loading) return undefined
     const canonicalSlug = petSlugAliases.get(slug) ?? slug
     return allPets.find(p => p.slug === canonicalSlug) ?? null
-  }, [slug])
+  }, [allPets, loading, petSlugAliases, slug])
 }
 
 /** Counts per type for the segment toggle — applies search/filter but ignores type filter */
 export function usePetCounts(filters: Omit<PetFilters, 'type'> = {}): Record<EntryType, number> {
+  const { allPets } = usePetDataset()
+  const elementMeta = useElementsDataset()
   return useMemo(() => {
     const filtersWithoutType = { ...filters, type: undefined }
-    const all = searchPets(allPets, filtersWithoutType as PetFilters)
+    const all = searchPets(allPets, filtersWithoutType as PetFilters, elementMeta)
     return {
       pet: all.filter(p => p.type === 'pet').length,
       guest: all.filter(p => p.type === 'guest').length,
     }
-  }, [filters])
+  }, [allPets, elementMeta, filters])
 }
 
 export function useRelatedPets(alsoSee: { slug: string; name: string; type: string }[]) {
+  const { allPets, petSlugAliases } = usePetDataset()
   return useMemo(
     () => alsoSee
       .map(ref => allPets.find(p => p.slug === (petSlugAliases.get(ref.slug) ?? ref.slug)))
       .filter((p): p is Pet | ItemFamily => p !== null && p !== undefined),
-    [alsoSee]
+    [allPets, alsoSee, petSlugAliases]
   )
 }
 
 export function useTotalPetCount() {
+  const { allPets } = usePetDataset()
   return allPets.length
 }
 
 // ─── Element hook ─────────────────────────────────────────────────────────────
 
 export function useElements() {
-  return elementMeta
+  return useElementsDataset()
 }

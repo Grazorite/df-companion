@@ -10,7 +10,7 @@ import SourceLinksCard from '../components/shared/SourceLinksCard'
 export default function BadgeDetailPage() {
   const { slug } = useParams<{ slug: string }>()
   const location = useLocation()
-  const badge = useBadgeBySlug(slug ?? '')
+  const { badge, loading } = useBadgeBySlug(slug ?? '')
   const relatedBadges = useBadgesByCategory(badge?.category ?? '', badge?.slug, badge?.subcategory)
 
   // The URL to return to when pressing "Back to Badges"
@@ -26,6 +26,14 @@ export default function BadgeDetailPage() {
     const params = new URLSearchParams()
     params.set('from', backUrl)
     return `/badges/${relatedSlug}?${params.toString()}`
+  }
+
+  if (loading) {
+    return (
+      <main className="px-4 py-8 max-w-3xl mx-auto text-center">
+        <p className="text-text-secondary text-lg mb-4">Loading badge...</p>
+      </main>
+    )
   }
 
   if (!badge) {
