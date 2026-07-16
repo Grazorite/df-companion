@@ -67,7 +67,7 @@ export default function LevelSelector({ levels, activeIndex, onChange, familyNam
               {row.map(({ level, index }) => {
                 return (
                   <button
-                    key={level.levelNumber}
+                    key={`${level.levelNumber}-${level.name}-${index}`}
                     onClick={() => onChange(index)}
                     className={`
                       min-h-11 min-w-11 px-4 py-2 rounded-lg whitespace-nowrap

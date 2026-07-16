@@ -62,7 +62,7 @@ export default function AccessoryStatsTable({
               )
 
               return (
-                <tr key={`${level.levelNumber}-${level.name}`} className="hover:bg-bg-surface transition-colors">
+                <tr key={`${level.levelNumber}-${level.name}-${index}`} className="hover:bg-bg-surface transition-colors">
                   {!hasRedundantVariantColumn && (
                     <td className="sticky left-0 bg-bg-base hover:bg-bg-surface transition-colors px-4 py-3 text-sm text-text-primary font-medium">
                       {variantLabels[index]}

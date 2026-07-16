@@ -1,47 +1,209 @@
 [
   {
-    "id": "accessory-azaveyran-farewell-i-ii-iii",
-    "name": "Azaveyran Farewell (I, II, III)",
-    "slug": "accessory-azaveyran-farewell-i-ii-iii",
+    "id": "accessory-azaveyran-farewell",
+    "familyName": "Azaveyran Farewell",
+    "slug": "accessory-azaveyran-farewell",
+    "aliasSlugs": [
+      "accessory-azaveyran-farewell-i",
+      "accessory-azaveyran-farewell-ii",
+      "accessory-azaveyran-farewell-iii"
+    ],
     "type": "accessory",
     "subtype": "bracer",
-    "description": "A bracelet of oddly colored shells and trinkets, this gift is said to promise the reunion of distant lovers after a time apart. This item requires a Dragon Amulet to use.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22360031",
-    "releaseDate": "",
-    "elements": [
-      "FEA"
-    ],
-    "level": "30",
-    "stats": "LUK +2",
-    "resists": "None",
-    "rarity": "0",
-    "itemType": "Bracer",
-    "equipSpot": "Wrist",
-    "category": "Armor",
-    "obtainMethods": [
+    "familyOrigin": "same-thread-multi-post",
+    "familySources": [
       {
-        "location": "Coming Home",
-        "price": "N/A",
-        "priceType": "free",
-        "sellback": "100 Gold",
-        "daRequired": false
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22360031",
+        "title": "DF Encyclopedia: Azaveyran Farewell I",
+        "variantLabel": "Azaveyran Farewell I",
+        "isPrimary": true
       },
       {
-        "location": "Coming Home Loot for DCs",
-        "price": "100 Dragon Coins",
-        "priceType": "dc",
-        "sellback": "90 Dragon Coins before 24 hours, 25 Dragon Coins after 24 hours",
-        "daRequired": false,
-        "dcRequired": true
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22360032",
+        "title": "DF Encyclopedia: Azaveyran Farewell II",
+        "variantLabel": "Azaveyran Farewell II",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22360033",
+        "title": "DF Encyclopedia: Azaveyran Farewell III",
+        "variantLabel": "Azaveyran Farewell III",
+        "isPrimary": false
       }
     ],
-    "notes": "• Bracer has a 3.33% drop rate from the quest Coming Home.",
+    "shared": {
+      "description": "A bracelet of oddly colored shells and trinkets, this gift is said to promise the reunion of distant lovers after a time apart. This item requires a Dragon Amulet to use.",
+      "resists": "None",
+      "rarity": "0"
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 30,
+        "levelDisplay": "30",
+        "actualLevel": 30,
+        "variantName": "I",
+        "name": "Azaveyran Farewell I",
+        "damage": "",
+        "stats": "LUK +2",
+        "obtainVariants": [
+          {
+            "location": "Coming Home",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "100 Gold",
+            "daRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22360031",
+        "description": "A bracelet of oddly colored shells and trinkets, this gift is said to promise the reunion of distant lovers after a time apart. This item requires a Dragon Amulet to use.",
+        "element": "FEA",
+        "resists": "None",
+        "rarity": "0",
+        "notes": "• Bracer has a 3.33% drop rate from the quest Coming Home."
+      },
+      {
+        "levelNumber": 30,
+        "levelDisplay": "30",
+        "actualLevel": 30,
+        "variantName": "I",
+        "name": "Azaveyran Farewell I",
+        "damage": "",
+        "stats": "LUK +2",
+        "obtainVariants": [
+          {
+            "location": "Coming Home Loot for DCs",
+            "price": "100 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "90 Dragon Coins before 24 hours, 25 Dragon Coins after 24 hours",
+            "daRequired": true,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22360031",
+        "description": "A bracelet of oddly colored shells and trinkets, this gift is said to promise the reunion of distant lovers after a time apart. This item requires a Dragon Amulet to use.",
+        "element": "FEA",
+        "resists": "None",
+        "rarity": "0",
+        "notes": "• Bracer has a 3.33% drop rate from the quest Coming Home."
+      },
+      {
+        "levelNumber": 60,
+        "levelDisplay": "60",
+        "actualLevel": 60,
+        "variantName": "II",
+        "name": "Azaveyran Farewell II",
+        "damage": "",
+        "stats": "LUK +5",
+        "obtainVariants": [
+          {
+            "location": "Coming Home",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "150 Gold",
+            "daRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22360032",
+        "description": "A bracelet of oddly colored shells and trinkets, this gift is said to promise the reunion of distant lovers after a time apart. This item requires a Dragon Amulet to use.",
+        "element": "FEA",
+        "resists": "None",
+        "rarity": "0",
+        "notes": "• Bracer has a 3.33% drop rate from the quest Coming Home."
+      },
+      {
+        "levelNumber": 60,
+        "levelDisplay": "60",
+        "actualLevel": 60,
+        "variantName": "II",
+        "name": "Azaveyran Farewell II",
+        "damage": "",
+        "stats": "LUK +5",
+        "obtainVariants": [
+          {
+            "location": "Coming Home Loot for DCs",
+            "price": "150 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "135 Dragon Coins before 24 hours, 38 Dragon Coins after 24 hours",
+            "daRequired": true,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22360032",
+        "description": "A bracelet of oddly colored shells and trinkets, this gift is said to promise the reunion of distant lovers after a time apart. This item requires a Dragon Amulet to use.",
+        "element": "FEA",
+        "resists": "None",
+        "rarity": "0",
+        "notes": "• Bracer has a 3.33% drop rate from the quest Coming Home."
+      },
+      {
+        "levelNumber": 90,
+        "levelDisplay": "90",
+        "actualLevel": 90,
+        "variantName": "III",
+        "name": "Azaveyran Farewell III",
+        "damage": "",
+        "stats": "LUK +7",
+        "obtainVariants": [
+          {
+            "location": "Coming Home",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "200 Gold",
+            "daRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22360033",
+        "description": "A bracelet of oddly colored shells and trinkets, this gift is said to promise the reunion of distant lovers after a time apart. This item requires a Dragon Amulet to use.",
+        "element": "FEA",
+        "resists": "None",
+        "rarity": "0",
+        "notes": "• Bracer has a 3.33% drop rate from the quest Coming Home."
+      },
+      {
+        "levelNumber": 90,
+        "levelDisplay": "90",
+        "actualLevel": 90,
+        "variantName": "III",
+        "name": "Azaveyran Farewell III",
+        "damage": "",
+        "stats": "LUK +7",
+        "obtainVariants": [
+          {
+            "location": "Coming Home Loot for DCs",
+            "price": "200 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "180 Dragon Coins before 24 hours, 50 Dragon Coins after 24 hours",
+            "daRequired": true,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22360033",
+        "description": "A bracelet of oddly colored shells and trinkets, this gift is said to promise the reunion of distant lovers after a time apart. This item requires a Dragon Amulet to use.",
+        "element": "FEA",
+        "resists": "None",
+        "rarity": "0",
+        "notes": "• Bracer has a 3.33% drop rate from the quest Coming Home."
+      }
+    ],
+    "itemType": "Bracer",
+    "equipSlot": "Wrist",
+    "category": "Armor",
+    "releaseDate": "",
     "tags": [
+      "dc",
       "fea",
       "free"
     ],
-    "daRequired": true,
-    "dcRequired": true
+    "hasDA": true,
+    "hasDC": true,
+    "hasDM": false,
+    "hasFree": true,
+    "hasMerge": false,
+    "levelRange": "I-III",
+    "elements": [
+      "FEA"
+    ]
   },
   {
     "id": "accessory-falwynn-s-disguise-kit",
@@ -204,7 +366,7 @@
         "price": "N/A",
         "priceType": "free",
         "sellback": "10 Gold",
-        "daRequired": false
+        "daRequired": true
       }
     ],
     "notes": "• Item has an uncommon drop rate.",
@@ -247,7 +409,6 @@
       "evi",
       "free"
     ],
-    "daRequired": false,
-    "dcRequired": true
+    "daRequired": false
   }
 ]

@@ -126,13 +126,28 @@ export function computeFamilyFlags(family: ItemFamily): ItemFamily {
   const lastLevel = lastVariant
     ? String(lastVariant.actualLevel ?? lastVariant.levelDisplay)
     : firstLevel
+
+  const romanVariantRange = Array.from(
+    new Set(
+      family.levelVariants
+        .map(levelVariant => levelVariant.variantName?.trim())
+        .filter((variantName): variantName is string => Boolean(variantName))
+        .filter(variantName => parseRomanNumeral(variantName.toUpperCase()) !== null)
+    )
+  )
   
   // For multi-post families (Baron (Kitten, Cat)), don't add range suffix — name already contains variants
   let levelRange: string
-  if (family.isMultiPost) {
+  if (romanVariantRange.length >= 2) {
+    levelRange = `${romanVariantRange[0]}-${romanVariantRange.at(-1)}`
+  } else if (family.isMultiPost) {
     // Extract variant list from name: "Baron (Kitten, Cat)" -> "(Kitten, Cat)"
     const variantMatch = family.familyName.match(/\(([^)]+)\)/)
-    levelRange = variantMatch ? variantMatch[1] : `${firstLevel}-${lastLevel}`
+    const variantLabel = variantMatch?.[1]?.trim()
+    levelRange =
+      variantLabel && /,/.test(variantLabel)
+        ? variantLabel
+        : `${firstLevel}-${lastLevel}`
   } else {
     // Standard range notation
     levelRange = firstLevel === lastLevel || family.levelVariants.length === 1
@@ -201,20 +216,33 @@ export function normalizeLevel(level: string): { number: number; display: string
  * parseRomanNumeral("ABC") // null
  */
 export function parseRomanNumeral(s: string): number | null {
-  const romanMap: Record<string, number> = {
-    'I': 1,
-    'II': 2,
-    'III': 3,
-    'IV': 4,
-    'V': 5,
-    'VI': 6,
-    'VII': 7,
-    'VIII': 8,
-    'IX': 9,
-    'X': 10,
+  if (!/^[IVXLCDM]+$/.test(s)) return null
+
+  const romanValues: Record<string, number> = {
+    I: 1,
+    V: 5,
+    X: 10,
+    L: 50,
+    C: 100,
+    D: 500,
+    M: 1000,
   }
-  
-  return romanMap[s] ?? null
+
+  let total = 0
+
+  for (let index = 0; index < s.length; index += 1) {
+    const current = romanValues[s[index]]
+    const next = romanValues[s[index + 1]]
+
+    if (!current) return null
+    if (next && current < next) {
+      total -= current
+    } else {
+      total += current
+    }
+  }
+
+  return total > 0 ? total : null
 }
 
 /**
@@ -387,6 +415,10 @@ export function getLevelVariantLabel(
     }
   }
 
+  if (normalizedVariantName && parseRomanNumeral(normalizedVariantName.trim().toUpperCase()) !== null) {
+    return `${normalizedVariantName}${hasDC ? ' (DC)' : ''}`
+  }
+
   if (familyName && useTitleLabels) {
     const condensedTitle = getCondensedTitleVariant(level.name, familyName)
     if (condensedTitle) {
@@ -406,14 +438,10 @@ export function getLevelVariantLabel(
   }
 
   if (normalizedVariantName) {
-    return `${levelLabel} / ${normalizedVariantName}`
+    return `${normalizedVariantName}${hasDC ? ' (DC)' : ''}`
   }
 
-  return normalizeDisplayText(level.levelDisplay)
-}
-
-function isPureRomanVariantLabel(label: string): boolean {
-  return parseRomanNumeral(label.trim().toUpperCase()) !== null
+  return `${normalizeDisplayText(level.levelDisplay)}${hasDC ? ' (DC)' : ''}`
 }
 
 export function shouldHideVariantColumn(
@@ -432,16 +460,11 @@ export function shouldHideVariantColumn(
     const level = levels[index]
     return label === String(level.actualLevel ?? level.levelDisplay)
   })
-  if (redundantExact) return true
-
-  const allRomanLabels = variantLabels.every(label => isPureRomanVariantLabel(label))
   const hasDuplicateLevels = new Set(
     levels.map(level => String(level.actualLevel ?? level.levelDisplay))
   ).size !== levels.length
 
-  if (allRomanLabels && !hasDuplicateLevels) {
-    return true
-  }
+  if (redundantExact && !hasDuplicateLevels) return true
 
   return false
 }

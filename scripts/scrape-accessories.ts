@@ -380,6 +380,42 @@ function scoreTrinketAttackCandidate(candidate: GuestAttack, entryName: string, 
   return score
 }
 
+function getTrinketAttackDetailScore(candidate: GuestAttack): number {
+  let score = 0
+  if (candidate.effect && candidate.effect !== 'Unknown effect') score += 6
+  if (candidate.buttonImageUrl) score += 4
+  if (candidate.appearanceUrl) score += 2
+  if (candidate.manaCost && candidate.manaCost !== '—') score += 2
+  if (candidate.cooldown && candidate.cooldown !== '—') score += 2
+  if (candidate.damageType && candidate.damageType !== '—') score += 1
+  if (candidate.element && candidate.element !== '—') score += 1
+  if (candidate.requirements) score += 1
+  if (candidate.description) score += 1
+  return score
+}
+
+function dedupeTrinketAttacks(candidates: GuestAttack[]): GuestAttack[] {
+  const grouped = new Map<string, GuestAttack[]>()
+
+  for (const candidate of candidates) {
+    const key = candidate.name.trim().toLowerCase()
+    const existing = grouped.get(key)
+    if (existing) {
+      existing.push(candidate)
+    } else {
+      grouped.set(key, [candidate])
+    }
+  }
+
+  return Array.from(grouped.values()).map(group => {
+    if (group.length === 1) return group[0]
+
+    return [...group].sort((a, b) => {
+      return getTrinketAttackDetailScore(b) - getTrinketAttackDetailScore(a)
+    })[0]
+  })
+}
+
 function parseTrinketAttacks(html: string, fallbackName: string, entryName: string): GuestAttack[] {
   const sections = splitTrinketAttackSections(html)
   const candidates = sections
@@ -396,8 +432,8 @@ function parseTrinketAttacks(html: string, fallbackName: string, entryName: stri
     .sort((a, b) => b.score - a.score)
 
   const bestScore = ranked[0]?.score ?? 0
-  if (bestScore <= 0) return [ranked[0].candidate]
-  return ranked.filter(item => item.score === bestScore).map(item => item.candidate)
+  if (bestScore <= 0) return dedupeTrinketAttacks([ranked[0].candidate])
+  return dedupeTrinketAttacks(ranked.filter(item => item.score === bestScore).map(item => item.candidate))
 }
 
 function parseObtainMethods(html: string): Accessory['obtainMethods'] {
@@ -619,6 +655,33 @@ function uniqueStrings(values: Array<string | undefined>): string[] {
   return Array.from(new Set(values.filter((value): value is string => Boolean(value))))
 }
 
+function mergeAlternativeImages(
+  first?: Array<{ url: string; caption: string }>,
+  second?: Array<{ url: string; caption: string }>
+) {
+  const merged = [...(first ?? []), ...(second ?? [])]
+  const seen = new Set<string>()
+  return merged.filter(image => {
+    const key = `${image.url}::${image.caption}`
+    if (seen.has(key)) return false
+    seen.add(key)
+    return true
+  })
+}
+
+function mergeObtainMethods(methods: Accessory['obtainMethods']): Accessory['obtainMethods']
+function mergeObtainMethods(
+  methods: Array<Accessory['obtainMethods'][number]>
+): Array<Accessory['obtainMethods'][number]> {
+  const seen = new Set<string>()
+  return methods.filter(method => {
+    const key = JSON.stringify(method)
+    if (seen.has(key)) return false
+    seen.add(key)
+    return true
+  })
+}
+
 function parseNumericLevel(level?: string): number | undefined {
   if (!level) return undefined
   const trimmed = level.trim()
@@ -629,6 +692,117 @@ function parseNumericLevel(level?: string): number | undefined {
 function allSame<T>(values: T[]): boolean {
   if (values.length <= 1) return true
   return values.every(value => JSON.stringify(value) === JSON.stringify(values[0]))
+}
+
+function getAccessoryVariantCompletenessScore(variant: Accessory): number {
+  return [
+    variant.level,
+    variant.stats,
+    variant.resists,
+    variant.ability,
+    variant.rarity,
+    variant.itemType,
+    variant.equipSpot,
+    variant.category,
+    variant.imageUrl,
+    variant.description,
+    variant.notes,
+  ].filter(Boolean).length +
+    variant.elements.length +
+    variant.obtainMethods.length +
+    (variant.alternativeImages?.length ?? 0) +
+    (variant.attacks?.length ?? 0)
+}
+
+function enrichAccessorySiblingVariants(variants: Accessory[]): Accessory[] {
+  const grouped = new Map<string, Accessory[]>()
+
+  for (const variant of variants) {
+    const levelKey = variant.level?.trim().toLowerCase()
+    if (!levelKey) {
+      const passthroughKey = `${variant.name.trim().toLowerCase()}::__unique__${variant.slug}`
+      grouped.set(passthroughKey, [variant])
+      continue
+    }
+
+    const key = `${variant.name.trim().toLowerCase()}::${levelKey}`
+    const existing = grouped.get(key)
+    if (existing) {
+      existing.push(variant)
+    } else {
+      grouped.set(key, [variant])
+    }
+  }
+
+  return Array.from(grouped.values()).flatMap(group => {
+    if (group.length === 1) return group
+
+    const sorted = [...group].sort(
+      (a, b) => getAccessoryVariantCompletenessScore(b) - getAccessoryVariantCompletenessScore(a)
+    )
+    const primary = sorted[0]
+
+    return sorted.map(variant => ({
+      ...variant,
+      description:
+        getAccessoryVariantCompletenessScore(primary) > getAccessoryVariantCompletenessScore(variant) &&
+        primary.description
+          ? primary.description
+          : variant.description || primary.description,
+      forumUrl: variant.forumUrl || primary.forumUrl,
+      imageUrl: variant.imageUrl ?? primary.imageUrl,
+      alternativeImages: mergeAlternativeImages(variant.alternativeImages, primary.alternativeImages),
+      elements: Array.from(new Set([...variant.elements, ...primary.elements])),
+      level: variant.level ?? primary.level,
+      stats: variant.stats ?? primary.stats,
+      resists: variant.resists ?? primary.resists,
+      ability: variant.ability ?? primary.ability,
+      abilityUrl: variant.abilityUrl ?? primary.abilityUrl,
+      attacks: variant.attacks ?? primary.attacks,
+      rarity: variant.rarity ?? primary.rarity,
+      itemType: variant.itemType ?? primary.itemType,
+      equipSpot: variant.equipSpot ?? primary.equipSpot,
+      category: variant.category ?? primary.category,
+      notes:
+        variant.notes && primary.notes && variant.notes !== primary.notes
+          ? `${variant.notes}\n${primary.notes}`
+          : variant.notes ?? primary.notes,
+      tags: Array.from(new Set([...variant.tags, ...primary.tags])).sort(),
+      daRequired: variant.daRequired || primary.daRequired,
+      ...(variant.dcRequired || primary.dcRequired ? { dcRequired: true } : {}),
+      ...(variant.dmRequired || primary.dmRequired ? { dmRequired: true } : {}),
+      ...(variant.isTemp || primary.isTemp ? { isTemp: true } : {}),
+      ...(variant.isRare || primary.isRare ? { isRare: true } : {}),
+      ...(variant.isSeasonal || primary.isSeasonal ? { isSeasonal: true } : {}),
+      ...(variant.isSpecialOffer || primary.isSpecialOffer ? { isSpecialOffer: true } : {}),
+      ...(variant.retired || primary.retired ? { retired: true } : {}),
+      obtainMethods: mergeObtainMethods(variant.obtainMethods),
+    }))
+  })
+}
+
+function expandAccessoryFamilyVariants(variants: Accessory[]): Accessory[] {
+  return variants.flatMap(variant => {
+    if (variant.obtainMethods.length <= 1) return [variant]
+
+    return variant.obtainMethods.map(method => {
+      const { dcRequired: _dcRequired, dmRequired: _dmRequired, ...baseVariant } = variant
+
+      return {
+        ...baseVariant,
+      obtainMethods: [method],
+      daRequired: method.daRequired,
+      ...(method.dcRequired || method.priceType === 'dc' ? { dcRequired: true } : {}),
+      ...(method.dmRequired || method.priceType === 'dm' ? { dmRequired: true } : {}),
+      tags: Array.from(
+        new Set([
+          ...variant.tags.filter(tag => !['free', 'merge', 'gold', 'dc', 'dm'].includes(tag)),
+          method.priceType,
+        ])
+      ).sort(),
+      }
+    })
+  })
 }
 
 function buildAccessoryEntry(
@@ -722,18 +896,21 @@ async function enrichTrinketAbility(entry: Accessory, cookie: string): Promise<A
 }
 
 function buildAccessoryFamily(stub: AccessoryStub, variants: Accessory[]): AccessoryFamily {
+  const consolidatedVariants = expandAccessoryFamilyVariants(
+    enrichAccessorySiblingVariants(variants)
+  )
   const familyName = normalizeAccessoryFamilyName(stub.name)
-  const descriptions = uniqueStrings(variants.map(variant => variant.description).filter(Boolean))
-  const resists = uniqueStrings(variants.map(variant => variant.resists).filter(Boolean))
-  const abilities = uniqueStrings(variants.map(variant => variant.ability).filter(Boolean))
-  const attacks = variants.map(variant => variant.attacks).filter((value): value is GuestAttack[] => Boolean(value))
-  const images = uniqueStrings(variants.map(variant => variant.imageUrl).filter(Boolean))
-  const alternativeImages = variants
+  const descriptions = uniqueStrings(consolidatedVariants.map(variant => variant.description).filter(Boolean))
+  const resists = uniqueStrings(consolidatedVariants.map(variant => variant.resists).filter(Boolean))
+  const abilities = uniqueStrings(consolidatedVariants.map(variant => variant.ability).filter(Boolean))
+  const attacks = consolidatedVariants.map(variant => variant.attacks).filter((value): value is GuestAttack[] => Boolean(value))
+  const images = uniqueStrings(consolidatedVariants.map(variant => variant.imageUrl).filter(Boolean))
+  const alternativeImages = consolidatedVariants
     .map(variant => variant.alternativeImages)
     .filter((value): value is NonNullable<Accessory['alternativeImages']> => Boolean(value))
-  const rarities = uniqueStrings(variants.map(variant => variant.rarity).filter(Boolean))
+  const rarities = uniqueStrings(consolidatedVariants.map(variant => variant.rarity).filter(Boolean))
 
-  const levelVariants: LevelVariant[] = variants
+  const levelVariants: LevelVariant[] = consolidatedVariants
     .map((variant, index) => {
       const normalizedLevel = normalizeLevel(variant.level ?? String(index + 1))
       const actualLevel = parseNumericLevel(variant.level)
@@ -797,28 +974,28 @@ function buildAccessoryFamily(stub: AccessoryStub, variants: Accessory[]): Acces
       ...(rarities.length === 1 ? { rarity: rarities[0] } : {}),
     },
     levelVariants,
-    itemType: variants.find(variant => variant.itemType)?.itemType,
-    equipSlot: variants.find(variant => variant.equipSpot)?.equipSpot,
-    category: variants.find(variant => variant.category)?.category,
-    releaseDate: variants.find(variant => variant.releaseDate)?.releaseDate ?? '',
-    tags: Array.from(new Set(variants.flatMap(variant => variant.tags))).sort(),
-    isTemp: variants.some(variant => variant.isTemp) || undefined,
-    isRare: variants.some(variant => variant.isRare) || undefined,
-    isSeasonal: variants.some(variant => variant.isSeasonal) || undefined,
-    isSpecialOffer: variants.some(variant => variant.isSpecialOffer) || undefined,
-    retired: variants.some(variant => variant.retired) || undefined,
+    itemType: consolidatedVariants.find(variant => variant.itemType)?.itemType,
+    equipSlot: consolidatedVariants.find(variant => variant.equipSpot)?.equipSpot,
+    category: consolidatedVariants.find(variant => variant.category)?.category,
+    releaseDate: consolidatedVariants.find(variant => variant.releaseDate)?.releaseDate ?? '',
+    tags: Array.from(new Set(consolidatedVariants.flatMap(variant => variant.tags))).sort(),
+    isTemp: consolidatedVariants.some(variant => variant.isTemp) || undefined,
+    isRare: consolidatedVariants.some(variant => variant.isRare) || undefined,
+    isSeasonal: consolidatedVariants.some(variant => variant.isSeasonal) || undefined,
+    isSpecialOffer: consolidatedVariants.some(variant => variant.isSpecialOffer) || undefined,
+    retired: consolidatedVariants.some(variant => variant.retired) || undefined,
     hasDA: false,
     hasDC: false,
     hasDM: false,
     hasFree: false,
     hasMerge: false,
     levelRange: '',
-    elements: Array.from(new Set(variants.flatMap(variant => variant.elements))),
+    elements: Array.from(new Set(consolidatedVariants.flatMap(variant => variant.elements))),
   })
 
   family.shared.description = allSame(descriptions) ? descriptions[0] ?? '' : ''
   if (!family.shared.description) {
-    const firstDescription = variants.find(variant => variant.description)?.description
+    const firstDescription = consolidatedVariants.find(variant => variant.description)?.description
     family.shared.description = firstDescription ?? ''
   }
 

@@ -504,7 +504,7 @@
     "hasDM": false,
     "hasFree": false,
     "hasMerge": false,
-    "levelRange": "10-50",
+    "levelRange": "I-III",
     "elements": [
       "ENE"
     ]
@@ -610,6 +610,7 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21818652",
         "description": "Summon the LSS Booty Sniffer to wash away your foes and leave behind bonus gold! Arr! This trinket be water damage 'n honor o' th' Red Betty!",
+        "alternativeImages": [],
         "element": "WAT",
         "resists": "Water +10",
         "attacks": [
@@ -648,6 +649,7 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21818657",
         "description": "Summon the LSS Booty Sniffer to wash away your foes and leave behind bonus gold! Arr! This trinket be wind damage 'n honor o' th' Autumn Wind!",
+        "alternativeImages": [],
         "element": "WIN",
         "resists": "Wind +10",
         "attacks": [
@@ -665,7 +667,7 @@
           }
         ],
         "rarity": "5",
-        "notes": "• Having this Trinket in the player's inventory doubled the amount of 'Booty Collected' (waves completed) per wave cleared in  The Quest for More Booty! event for the Mazurek side."
+        "notes": "• Having this Trinket in the player's inventory doubled the amount of 'Booty Collected' (waves completed) per wave cleared in  The Quest for More Booty! event for the Mazurek side.\n• Having this Trinket in the player's inventory doubled the amount of 'Booty Collected' (waves completed) per wave cleared in  The Quest for More Booty! event for the Rhubarb side."
       }
     ],
     "itemType": "Trinket",
@@ -840,7 +842,23 @@
             "priceType": "free",
             "sellback": "150 Gold",
             "daRequired": false
-          },
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22391399",
+        "description": "Messimy carved this discarded scale with a blessing of luck and gave it to you as a parting gift.",
+        "element": "DAR",
+        "resists": "None",
+        "rarity": "0"
+      },
+      {
+        "levelNumber": 30,
+        "levelDisplay": "30",
+        "actualLevel": 30,
+        "variantName": "I",
+        "name": "Carved Dragon Scale I",
+        "damage": "",
+        "stats": "Crit +1, Magic Def +1, Pierce Def +1, Melee Def +1, WIS +1, END +1, LUK +10, Bonus +1",
+        "obtainVariants": [
           {
             "location": "TNE Loot for DCs",
             "price": "150 Dragon Coins",
@@ -871,7 +889,23 @@
             "priceType": "free",
             "sellback": "200 Gold",
             "daRequired": true
-          },
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22391400",
+        "description": "Messimy carved this discarded scale with a blessing of luck and gave it to you as a parting gift. This item requires a Dragon Amulet.",
+        "element": "DAR",
+        "resists": "None",
+        "rarity": "0"
+      },
+      {
+        "levelNumber": 60,
+        "levelDisplay": "60",
+        "actualLevel": 60,
+        "variantName": "II",
+        "name": "Carved Dragon Scale II",
+        "damage": "",
+        "stats": "Crit +1, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +2, END +2, LUK +12, Bonus +1",
+        "obtainVariants": [
           {
             "location": "TNE Loot for DCs",
             "price": "150 Dragon Coins",
@@ -902,7 +936,23 @@
             "priceType": "free",
             "sellback": "275 Gold",
             "daRequired": true
-          },
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22391401",
+        "description": "Messimy carved this discarded scale with a blessing of luck and gave it to you as a parting gift. This item requires a Dragon Amulet.",
+        "element": "DAR",
+        "resists": "None",
+        "rarity": "0"
+      },
+      {
+        "levelNumber": 70,
+        "levelDisplay": "70",
+        "actualLevel": 70,
+        "variantName": "III",
+        "name": "Carved Dragon Scale III",
+        "damage": "",
+        "stats": "Crit +2, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +3, END +3, LUK +15, Bonus +2",
+        "obtainVariants": [
           {
             "location": "TNE Loot for DCs",
             "price": "150 Dragon Coins",
@@ -933,7 +983,23 @@
             "priceType": "free",
             "sellback": "350 Gold",
             "daRequired": true
-          },
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22391402",
+        "description": "Messimy carved this discarded scale with a blessing of luck and gave it to you as a parting gift. This item requires a Dragon Amulet.",
+        "element": "DAR",
+        "resists": "None",
+        "rarity": "1"
+      },
+      {
+        "levelNumber": 80,
+        "levelDisplay": "80",
+        "actualLevel": 80,
+        "variantName": "IV",
+        "name": "Carved Dragon Scale IV",
+        "damage": "",
+        "stats": "Crit +3, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +4, END +4, LUK +17, Bonus +3",
+        "obtainVariants": [
           {
             "location": "TNE Loot for DCs",
             "price": "150 Dragon Coins",
@@ -964,7 +1030,23 @@
             "priceType": "free",
             "sellback": "400 Gold",
             "daRequired": true
-          },
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22391403",
+        "description": "Messimy carved this discarded scale with a blessing of luck and gave it to you as a parting gift. This item requires a Dragon Amulet.",
+        "element": "DAR",
+        "resists": "Darkness +1, Nature +1",
+        "rarity": "0"
+      },
+      {
+        "levelNumber": 90,
+        "levelDisplay": "90",
+        "actualLevel": 90,
+        "variantName": "V",
+        "name": "Carved Dragon Scale V",
+        "damage": "",
+        "stats": "Crit +5, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +5, END +5, LUK +20, Bonus +5",
+        "obtainVariants": [
           {
             "location": "TNE Loot for DCs",
             "price": "150 Dragon Coins",
@@ -987,6 +1069,7 @@
     "releaseDate": "",
     "tags": [
       "dar",
+      "dc",
       "free"
     ],
     "hasDA": true,
@@ -994,7 +1077,7 @@
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
-    "levelRange": "30-90",
+    "levelRange": "I-V",
     "elements": [
       "DAR"
     ]
@@ -1095,16 +1178,6 @@
     "daRequired": true,
     "isRare": true,
     "attacks": [
-      {
-        "name": "Chocobunny Storm",
-        "description": "125% damage attack!",
-        "requirements": "Chocobunny Storm (D-Amulet) equipped",
-        "effect": "Unknown effect",
-        "manaCost": "—",
-        "cooldown": "—",
-        "damageType": "—",
-        "element": "—"
-      },
       {
         "name": "Chocobunny Storm",
         "description": "125% damage attack!",
@@ -1429,7 +1502,7 @@
     "hasDM": false,
     "hasFree": false,
     "hasMerge": true,
-    "levelRange": "30-60",
+    "levelRange": "I-IV",
     "elements": [
       "MET"
     ]
@@ -1645,16 +1718,6 @@
       {
         "name": "Elemental Unity",
         "description": "17 hits of 11.8% Good damage (200%) \n Target: (On hit) -30 Bonus for 3 turns.",
-        "requirements": "Elemental Unity equipped",
-        "effect": "Unknown effect",
-        "manaCost": "—",
-        "cooldown": "—",
-        "damageType": "—",
-        "element": "—"
-      },
-      {
-        "name": "Elemental Unity",
-        "description": "17 hits of 11.8% Good damage (200%) \n Target: (On hit) -30 Bonus for 3 turns.",
         "requirements": "Elemental Unity Defender (I-XV) equipped",
         "effect": "17 hits of ~11.8% damage, amounting to 200% damage; applies 'Blinded' (-30 Bonus) to target for 3 turns.\n• Previously had the tooltip: Unify the Elements!\n• The following changes were implemented on  June 20th, 2025:\n  • Tooltip was updated.\n  • Cooldown was lowered from 29 to 19.",
         "manaCost": "10",
@@ -1790,16 +1853,6 @@
         {
           "name": "Elemental Unity",
           "description": "17 hits of 11.8% Good damage (200%) \n Target: (On hit) -30 Bonus for 3 turns.",
-          "requirements": "Elemental Unity equipped",
-          "effect": "Unknown effect",
-          "manaCost": "—",
-          "cooldown": "—",
-          "damageType": "—",
-          "element": "—"
-        },
-        {
-          "name": "Elemental Unity",
-          "description": "17 hits of 11.8% Good damage (200%) \n Target: (On hit) -30 Bonus for 3 turns.",
           "requirements": "Elemental Unity Defender (I-XV) equipped",
           "effect": "17 hits of ~11.8% damage, amounting to 200% damage; applies 'Blinded' (-30 Bonus) to target for 3 turns.\n• Previously had the tooltip: Unify the Elements!\n• The following changes were implemented on  June 20th, 2025:\n  • Tooltip was updated.\n  • Cooldown was lowered from 29 to 19.",
           "manaCost": "10",
@@ -1836,16 +1889,6 @@
         "element": "GOO",
         "resists": "All +1",
         "attacks": [
-          {
-            "name": "Elemental Unity",
-            "description": "17 hits of 11.8% Good damage (200%) \n Target: (On hit) -30 Bonus for 3 turns.",
-            "requirements": "Elemental Unity equipped",
-            "effect": "Unknown effect",
-            "manaCost": "—",
-            "cooldown": "—",
-            "damageType": "—",
-            "element": "—"
-          },
           {
             "name": "Elemental Unity",
             "description": "17 hits of 11.8% Good damage (200%) \n Target: (On hit) -30 Bonus for 3 turns.",
@@ -1887,16 +1930,6 @@
           {
             "name": "Elemental Unity",
             "description": "17 hits of 11.8% Good damage (200%) \n Target: (On hit) -30 Bonus for 3 turns.",
-            "requirements": "Elemental Unity equipped",
-            "effect": "Unknown effect",
-            "manaCost": "—",
-            "cooldown": "—",
-            "damageType": "—",
-            "element": "—"
-          },
-          {
-            "name": "Elemental Unity",
-            "description": "17 hits of 11.8% Good damage (200%) \n Target: (On hit) -30 Bonus for 3 turns.",
             "requirements": "Elemental Unity Defender (I-XV) equipped",
             "effect": "17 hits of ~11.8% damage, amounting to 200% damage; applies 'Blinded' (-30 Bonus) to target for 3 turns.\n• Previously had the tooltip: Unify the Elements!\n• The following changes were implemented on  June 20th, 2025:\n  • Tooltip was updated.\n  • Cooldown was lowered from 29 to 19.",
             "manaCost": "10",
@@ -1932,16 +1965,6 @@
         "element": "GOO",
         "resists": "All +2",
         "attacks": [
-          {
-            "name": "Elemental Unity",
-            "description": "17 hits of 11.8% Good damage (200%) \n Target: (On hit) -30 Bonus for 3 turns.",
-            "requirements": "Elemental Unity equipped",
-            "effect": "Unknown effect",
-            "manaCost": "—",
-            "cooldown": "—",
-            "damageType": "—",
-            "element": "—"
-          },
           {
             "name": "Elemental Unity",
             "description": "17 hits of 11.8% Good damage (200%) \n Target: (On hit) -30 Bonus for 3 turns.",
@@ -1983,16 +2006,6 @@
           {
             "name": "Elemental Unity",
             "description": "17 hits of 11.8% Good damage (200%) \n Target: (On hit) -30 Bonus for 3 turns.",
-            "requirements": "Elemental Unity equipped",
-            "effect": "Unknown effect",
-            "manaCost": "—",
-            "cooldown": "—",
-            "damageType": "—",
-            "element": "—"
-          },
-          {
-            "name": "Elemental Unity",
-            "description": "17 hits of 11.8% Good damage (200%) \n Target: (On hit) -30 Bonus for 3 turns.",
             "requirements": "Elemental Unity Defender (I-XV) equipped",
             "effect": "17 hits of ~11.8% damage, amounting to 200% damage; applies 'Blinded' (-30 Bonus) to target for 3 turns.\n• Previously had the tooltip: Unify the Elements!\n• The following changes were implemented on  June 20th, 2025:\n  • Tooltip was updated.\n  • Cooldown was lowered from 29 to 19.",
             "manaCost": "10",
@@ -2028,16 +2041,6 @@
         "element": "GOO",
         "resists": "All +3, Health -1",
         "attacks": [
-          {
-            "name": "Elemental Unity",
-            "description": "17 hits of 11.8% Good damage (200%) \n Target: (On hit) -30 Bonus for 3 turns.",
-            "requirements": "Elemental Unity equipped",
-            "effect": "Unknown effect",
-            "manaCost": "—",
-            "cooldown": "—",
-            "damageType": "—",
-            "element": "—"
-          },
           {
             "name": "Elemental Unity",
             "description": "17 hits of 11.8% Good damage (200%) \n Target: (On hit) -30 Bonus for 3 turns.",
@@ -2079,16 +2082,6 @@
           {
             "name": "Elemental Unity",
             "description": "17 hits of 11.8% Good damage (200%) \n Target: (On hit) -30 Bonus for 3 turns.",
-            "requirements": "Elemental Unity equipped",
-            "effect": "Unknown effect",
-            "manaCost": "—",
-            "cooldown": "—",
-            "damageType": "—",
-            "element": "—"
-          },
-          {
-            "name": "Elemental Unity",
-            "description": "17 hits of 11.8% Good damage (200%) \n Target: (On hit) -30 Bonus for 3 turns.",
             "requirements": "Elemental Unity Defender (I-XV) equipped",
             "effect": "17 hits of ~11.8% damage, amounting to 200% damage; applies 'Blinded' (-30 Bonus) to target for 3 turns.\n• Previously had the tooltip: Unify the Elements!\n• The following changes were implemented on  June 20th, 2025:\n  • Tooltip was updated.\n  • Cooldown was lowered from 29 to 19.",
             "manaCost": "10",
@@ -2124,16 +2117,6 @@
         "element": "GOO",
         "resists": "All +3, Health -1",
         "attacks": [
-          {
-            "name": "Elemental Unity",
-            "description": "17 hits of 11.8% Good damage (200%) \n Target: (On hit) -30 Bonus for 3 turns.",
-            "requirements": "Elemental Unity equipped",
-            "effect": "Unknown effect",
-            "manaCost": "—",
-            "cooldown": "—",
-            "damageType": "—",
-            "element": "—"
-          },
           {
             "name": "Elemental Unity",
             "description": "17 hits of 11.8% Good damage (200%) \n Target: (On hit) -30 Bonus for 3 turns.",
@@ -2175,16 +2158,6 @@
           {
             "name": "Elemental Unity",
             "description": "17 hits of 11.8% Good damage (200%) \n Target: (On hit) -30 Bonus for 3 turns.",
-            "requirements": "Elemental Unity equipped",
-            "effect": "Unknown effect",
-            "manaCost": "—",
-            "cooldown": "—",
-            "damageType": "—",
-            "element": "—"
-          },
-          {
-            "name": "Elemental Unity",
-            "description": "17 hits of 11.8% Good damage (200%) \n Target: (On hit) -30 Bonus for 3 turns.",
             "requirements": "Elemental Unity Defender (I-XV) equipped",
             "effect": "17 hits of ~11.8% damage, amounting to 200% damage; applies 'Blinded' (-30 Bonus) to target for 3 turns.\n• Previously had the tooltip: Unify the Elements!\n• The following changes were implemented on  June 20th, 2025:\n  • Tooltip was updated.\n  • Cooldown was lowered from 29 to 19.",
             "manaCost": "10",
@@ -2220,16 +2193,6 @@
         "element": "GOO",
         "resists": "All +3, Health -2",
         "attacks": [
-          {
-            "name": "Elemental Unity",
-            "description": "17 hits of 11.8% Good damage (200%) \n Target: (On hit) -30 Bonus for 3 turns.",
-            "requirements": "Elemental Unity equipped",
-            "effect": "Unknown effect",
-            "manaCost": "—",
-            "cooldown": "—",
-            "damageType": "—",
-            "element": "—"
-          },
           {
             "name": "Elemental Unity",
             "description": "17 hits of 11.8% Good damage (200%) \n Target: (On hit) -30 Bonus for 3 turns.",
@@ -2271,16 +2234,6 @@
           {
             "name": "Elemental Unity",
             "description": "17 hits of 11.8% Good damage (200%) \n Target: (On hit) -30 Bonus for 3 turns.",
-            "requirements": "Elemental Unity equipped",
-            "effect": "Unknown effect",
-            "manaCost": "—",
-            "cooldown": "—",
-            "damageType": "—",
-            "element": "—"
-          },
-          {
-            "name": "Elemental Unity",
-            "description": "17 hits of 11.8% Good damage (200%) \n Target: (On hit) -30 Bonus for 3 turns.",
             "requirements": "Elemental Unity Defender (I-XV) equipped",
             "effect": "17 hits of ~11.8% damage, amounting to 200% damage; applies 'Blinded' (-30 Bonus) to target for 3 turns.\n• Previously had the tooltip: Unify the Elements!\n• The following changes were implemented on  June 20th, 2025:\n  • Tooltip was updated.\n  • Cooldown was lowered from 29 to 19.",
             "manaCost": "10",
@@ -2316,16 +2269,6 @@
         "element": "GOO",
         "resists": "All +3, Health -4",
         "attacks": [
-          {
-            "name": "Elemental Unity",
-            "description": "17 hits of 11.8% Good damage (200%) \n Target: (On hit) -30 Bonus for 3 turns.",
-            "requirements": "Elemental Unity equipped",
-            "effect": "Unknown effect",
-            "manaCost": "—",
-            "cooldown": "—",
-            "damageType": "—",
-            "element": "—"
-          },
           {
             "name": "Elemental Unity",
             "description": "17 hits of 11.8% Good damage (200%) \n Target: (On hit) -30 Bonus for 3 turns.",
@@ -2367,16 +2310,6 @@
           {
             "name": "Elemental Unity",
             "description": "17 hits of 11.8% Good damage (200%) \n Target: (On hit) -30 Bonus for 3 turns.",
-            "requirements": "Elemental Unity equipped",
-            "effect": "Unknown effect",
-            "manaCost": "—",
-            "cooldown": "—",
-            "damageType": "—",
-            "element": "—"
-          },
-          {
-            "name": "Elemental Unity",
-            "description": "17 hits of 11.8% Good damage (200%) \n Target: (On hit) -30 Bonus for 3 turns.",
             "requirements": "Elemental Unity Defender (I-XV) equipped",
             "effect": "17 hits of ~11.8% damage, amounting to 200% damage; applies 'Blinded' (-30 Bonus) to target for 3 turns.\n• Previously had the tooltip: Unify the Elements!\n• The following changes were implemented on  June 20th, 2025:\n  • Tooltip was updated.\n  • Cooldown was lowered from 29 to 19.",
             "manaCost": "10",
@@ -2412,16 +2345,6 @@
         "element": "GOO",
         "resists": "All +4, Health -5",
         "attacks": [
-          {
-            "name": "Elemental Unity",
-            "description": "17 hits of 11.8% Good damage (200%) \n Target: (On hit) -30 Bonus for 3 turns.",
-            "requirements": "Elemental Unity equipped",
-            "effect": "Unknown effect",
-            "manaCost": "—",
-            "cooldown": "—",
-            "damageType": "—",
-            "element": "—"
-          },
           {
             "name": "Elemental Unity",
             "description": "17 hits of 11.8% Good damage (200%) \n Target: (On hit) -30 Bonus for 3 turns.",
@@ -2463,16 +2386,6 @@
           {
             "name": "Elemental Unity",
             "description": "17 hits of 11.8% Good damage (200%) \n Target: (On hit) -30 Bonus for 3 turns.",
-            "requirements": "Elemental Unity equipped",
-            "effect": "Unknown effect",
-            "manaCost": "—",
-            "cooldown": "—",
-            "damageType": "—",
-            "element": "—"
-          },
-          {
-            "name": "Elemental Unity",
-            "description": "17 hits of 11.8% Good damage (200%) \n Target: (On hit) -30 Bonus for 3 turns.",
             "requirements": "Elemental Unity Defender (I-XV) equipped",
             "effect": "17 hits of ~11.8% damage, amounting to 200% damage; applies 'Blinded' (-30 Bonus) to target for 3 turns.\n• Previously had the tooltip: Unify the Elements!\n• The following changes were implemented on  June 20th, 2025:\n  • Tooltip was updated.\n  • Cooldown was lowered from 29 to 19.",
             "manaCost": "10",
@@ -2511,16 +2424,6 @@
           {
             "name": "Elemental Unity",
             "description": "17 hits of 11.8% Good damage (200%) \n Target: (On hit) -30 Bonus for 3 turns.",
-            "requirements": "Elemental Unity equipped",
-            "effect": "Unknown effect",
-            "manaCost": "—",
-            "cooldown": "—",
-            "damageType": "—",
-            "element": "—"
-          },
-          {
-            "name": "Elemental Unity",
-            "description": "17 hits of 11.8% Good damage (200%) \n Target: (On hit) -30 Bonus for 3 turns.",
             "requirements": "Elemental Unity Defender (I-XV) equipped",
             "effect": "17 hits of ~11.8% damage, amounting to 200% damage; applies 'Blinded' (-30 Bonus) to target for 3 turns.\n• Previously had the tooltip: Unify the Elements!\n• The following changes were implemented on  June 20th, 2025:\n  • Tooltip was updated.\n  • Cooldown was lowered from 29 to 19.",
             "manaCost": "10",
@@ -2548,7 +2451,7 @@
     "hasDM": false,
     "hasFree": false,
     "hasMerge": true,
-    "levelRange": "10-77",
+    "levelRange": "I-XV",
     "elements": [
       "GOO"
     ]
@@ -2621,16 +2524,6 @@
         {
           "name": "Uaanta's Blaster (Amalgam)",
           "description": "5 hits x 25% Fear damage (125%) \n Target: (On hit) +<x> Health resistance for 5 turns.",
-          "requirements": "Uaanta's Blaster (I-IV) (Amalgam) equipped",
-          "effect": "Unknown effect",
-          "manaCost": "—",
-          "cooldown": "—",
-          "damageType": "—",
-          "element": "—"
-        },
-        {
-          "name": "Uaanta's Blaster (Amalgam)",
-          "description": "5 hits x 25% Fear damage (125%) \n Target: (On hit) +<x> Health resistance for 5 turns.",
           "requirements": "Exalted Blaster (I, II) (Amalgam) equipped",
           "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Amalgam Scar' (+X* Health Resist) to target for 5 turns inclusive.\n• Previously had the tooltip: 5 hits of Fear, +Health res.\n• *X is equal to the equipped Trinket's Level/3, rounded normally; thus, potential Health Resist values are 7, 13, 20, and 30 respectively.\n• Tooltip was updated on  June 20th, 2025.",
           "manaCost": "0",
@@ -2667,16 +2560,6 @@
         "element": "FEA",
         "resists": "Light +7, Darkness +7, Good +4, Evil +4",
         "attacks": [
-          {
-            "name": "Uaanta's Blaster (Amalgam)",
-            "description": "5 hits x 25% Fear damage (125%) \n Target: (On hit) +<x> Health resistance for 5 turns.",
-            "requirements": "Uaanta's Blaster (I-IV) (Amalgam) equipped",
-            "effect": "Unknown effect",
-            "manaCost": "—",
-            "cooldown": "—",
-            "damageType": "—",
-            "element": "—"
-          },
           {
             "name": "Uaanta's Blaster (Amalgam)",
             "description": "5 hits x 25% Fear damage (125%) \n Target: (On hit) +<x> Health resistance for 5 turns.",
@@ -2718,16 +2601,6 @@
           {
             "name": "Uaanta's Blaster (Amalgam)",
             "description": "5 hits x 25% Fear damage (125%) \n Target: (On hit) +<x> Health resistance for 5 turns.",
-            "requirements": "Uaanta's Blaster (I-IV) (Amalgam) equipped",
-            "effect": "Unknown effect",
-            "manaCost": "—",
-            "cooldown": "—",
-            "damageType": "—",
-            "element": "—"
-          },
-          {
-            "name": "Uaanta's Blaster (Amalgam)",
-            "description": "5 hits x 25% Fear damage (125%) \n Target: (On hit) +<x> Health resistance for 5 turns.",
             "requirements": "Exalted Blaster (I, II) (Amalgam) equipped",
             "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Amalgam Scar' (+X* Health Resist) to target for 5 turns inclusive.\n• Previously had the tooltip: 5 hits of Fear, +Health res.\n• *X is equal to the equipped Trinket's Level/3, rounded normally; thus, potential Health Resist values are 7, 13, 20, and 30 respectively.\n• Tooltip was updated on  June 20th, 2025.",
             "manaCost": "0",
@@ -2754,7 +2627,7 @@
     "hasDM": false,
     "hasFree": false,
     "hasMerge": true,
-    "levelRange": "60-90",
+    "levelRange": "I-II",
     "elements": [
       "FEA"
     ]
@@ -2789,16 +2662,6 @@
       "description": "Notha and Myalos worked together to attach some ancient tech to Uaanta's Blaster! This wand does Good damage and decreases its target's bonus! This item requires a Dragon Amulet.",
       "ability": "Uaanta's Blaster (Destiny)",
       "attacks": [
-        {
-          "name": "Uaanta's Blaster (Destiny)",
-          "description": "5 hits x 25% Good damage (125%) \n Target: -<x> Bonus for 5 turns.",
-          "requirements": "Uaanta's Blaster (I-IV) (Destiny) equipped",
-          "effect": "Unknown effect",
-          "manaCost": "—",
-          "cooldown": "—",
-          "damageType": "—",
-          "element": "—"
-        },
         {
           "name": "Uaanta's Blaster (Destiny)",
           "description": "5 hits x 25% Good damage (125%) \n Target: -<x> Bonus for 5 turns.",
@@ -2841,16 +2704,6 @@
           {
             "name": "Uaanta's Blaster (Destiny)",
             "description": "5 hits x 25% Good damage (125%) \n Target: -<x> Bonus for 5 turns.",
-            "requirements": "Uaanta's Blaster (I-IV) (Destiny) equipped",
-            "effect": "Unknown effect",
-            "manaCost": "—",
-            "cooldown": "—",
-            "damageType": "—",
-            "element": "—"
-          },
-          {
-            "name": "Uaanta's Blaster (Destiny)",
-            "description": "5 hits x 25% Good damage (125%) \n Target: -<x> Bonus for 5 turns.",
             "requirements": "Exalted Blaster (I, II) (Destiny) equipped",
             "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Destiny's Command' (-X* Bonus) to target for 4 turns.\n• Previously had the tooltip: 5 hits of Good, -Bonus.\n• *X is equal to the equipped Trinket's Level/3, rounded normally; thus, potential Bonus values are -7, -13, -20, and -30 respectively.\n• Tooltip was updated on  June 20th, 2025.",
             "manaCost": "0",
@@ -2889,16 +2742,6 @@
           {
             "name": "Uaanta's Blaster (Destiny)",
             "description": "5 hits x 25% Good damage (125%) \n Target: -<x> Bonus for 5 turns.",
-            "requirements": "Uaanta's Blaster (I-IV) (Destiny) equipped",
-            "effect": "Unknown effect",
-            "manaCost": "—",
-            "cooldown": "—",
-            "damageType": "—",
-            "element": "—"
-          },
-          {
-            "name": "Uaanta's Blaster (Destiny)",
-            "description": "5 hits x 25% Good damage (125%) \n Target: -<x> Bonus for 5 turns.",
             "requirements": "Exalted Blaster (I, II) (Destiny) equipped",
             "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Destiny's Command' (-X* Bonus) to target for 4 turns.\n• Previously had the tooltip: 5 hits of Good, -Bonus.\n• *X is equal to the equipped Trinket's Level/3, rounded normally; thus, potential Bonus values are -7, -13, -20, and -30 respectively.\n• Tooltip was updated on  June 20th, 2025.",
             "manaCost": "0",
@@ -2925,7 +2768,7 @@
     "hasDM": false,
     "hasFree": false,
     "hasMerge": true,
-    "levelRange": "60-90",
+    "levelRange": "I-II",
     "elements": [
       "GOO"
     ]
@@ -2960,16 +2803,6 @@
       "description": "Notha and Myalos worked together to attach some ancient tech to Uaanta's Blaster! This wand does Evil damage and decreases its target's Avoidance! This item requires a Dragon Amulet.",
       "ability": "Uaanta's Blaster (Doom)",
       "attacks": [
-        {
-          "name": "Uaanta's Blaster (Doom)",
-          "description": "5 hits x 25% Evil damage (125%) \n Target: -<x> Avoidance for 5 turns.",
-          "requirements": "Uaanta's Blaster (I-IV) (Doom) equipped",
-          "effect": "Unknown effect",
-          "manaCost": "—",
-          "cooldown": "—",
-          "damageType": "—",
-          "element": "—"
-        },
         {
           "name": "Uaanta's Blaster (Doom)",
           "description": "5 hits x 25% Evil damage (125%) \n Target: -<x> Avoidance for 5 turns.",
@@ -3012,16 +2845,6 @@
           {
             "name": "Uaanta's Blaster (Doom)",
             "description": "5 hits x 25% Evil damage (125%) \n Target: -<x> Avoidance for 5 turns.",
-            "requirements": "Uaanta's Blaster (I-IV) (Doom) equipped",
-            "effect": "Unknown effect",
-            "manaCost": "—",
-            "cooldown": "—",
-            "damageType": "—",
-            "element": "—"
-          },
-          {
-            "name": "Uaanta's Blaster (Doom)",
-            "description": "5 hits x 25% Evil damage (125%) \n Target: -<x> Avoidance for 5 turns.",
             "requirements": "Exalted Blaster (I, II) (Doom) equipped",
             "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Doom's Ambition' (-X* Melee/Pierce/Magic Avoidance) to target for 5 turns inclusive.\n• Previously had the tooltip: 5 hits of Evil, -Avd.\n• *X is equal to the equipped Trinket's Level/3, rounded normally; thus, potential Avoidance values are -7, -13, -20, and -30 respectively.\n• Tooltip was updated on  June 20th, 2025.",
             "manaCost": "0",
@@ -3060,16 +2883,6 @@
           {
             "name": "Uaanta's Blaster (Doom)",
             "description": "5 hits x 25% Evil damage (125%) \n Target: -<x> Avoidance for 5 turns.",
-            "requirements": "Uaanta's Blaster (I-IV) (Doom) equipped",
-            "effect": "Unknown effect",
-            "manaCost": "—",
-            "cooldown": "—",
-            "damageType": "—",
-            "element": "—"
-          },
-          {
-            "name": "Uaanta's Blaster (Doom)",
-            "description": "5 hits x 25% Evil damage (125%) \n Target: -<x> Avoidance for 5 turns.",
             "requirements": "Exalted Blaster (I, II) (Doom) equipped",
             "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Doom's Ambition' (-X* Melee/Pierce/Magic Avoidance) to target for 5 turns inclusive.\n• Previously had the tooltip: 5 hits of Evil, -Avd.\n• *X is equal to the equipped Trinket's Level/3, rounded normally; thus, potential Avoidance values are -7, -13, -20, and -30 respectively.\n• Tooltip was updated on  June 20th, 2025.",
             "manaCost": "0",
@@ -3096,7 +2909,7 @@
     "hasDM": false,
     "hasFree": false,
     "hasMerge": true,
-    "levelRange": "60-90",
+    "levelRange": "I-II",
     "elements": [
       "EVI"
     ]
@@ -3738,7 +3551,22 @@
             "priceType": "free",
             "sellback": "15 Gold",
             "daRequired": false
-          },
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22257261",
+        "description": "A mana gem that has had most, if not all, of its mana drained from it. It doesn't have much going for it, but it helps channel your mana a bit better.",
+        "element": "NON",
+        "resists": "None",
+        "rarity": "1"
+      },
+      {
+        "levelNumber": 30,
+        "levelDisplay": "30",
+        "actualLevel": 30,
+        "name": "Inert Mana Gem",
+        "damage": "",
+        "stats": "WIS +4",
+        "obtainVariants": [
           {
             "location": "Dwarf Loot for DCs",
             "price": "15 Dragon Coins",
@@ -3768,7 +3596,22 @@
             "priceType": "free",
             "sellback": "18 Gold",
             "daRequired": true
-          },
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22257263",
+        "description": "A mana gem that has had most, if not all, of its mana drained from it. It doesn't have much going for it, but it helps channel your mana a bit better. This item requires a Dragon Amulet.",
+        "element": "NON",
+        "resists": "None",
+        "rarity": "1"
+      },
+      {
+        "levelNumber": 40,
+        "levelDisplay": "40",
+        "actualLevel": 40,
+        "name": "Inert Mana Gem",
+        "damage": "",
+        "stats": "WIS +6",
+        "obtainVariants": [
           {
             "location": "Dwarf Loot for DCs",
             "price": "20 Dragon Coins",
@@ -3798,7 +3641,22 @@
             "priceType": "free",
             "sellback": "24 Gold",
             "daRequired": true
-          },
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22257264",
+        "description": "A mana gem that has had most, if not all, of its mana drained from it. It doesn't have much going for it, but it helps channel your mana a bit better. This item requires a Dragon Amulet.",
+        "element": "NON",
+        "resists": "None",
+        "rarity": "1"
+      },
+      {
+        "levelNumber": 50,
+        "levelDisplay": "50",
+        "actualLevel": 50,
+        "name": "Inert Mana Gem",
+        "damage": "",
+        "stats": "WIS +8",
+        "obtainVariants": [
           {
             "location": "Dwarf Loot for DCs",
             "price": "30 Dragon Coins",
@@ -3828,7 +3686,22 @@
             "priceType": "free",
             "sellback": "50 Gold",
             "daRequired": true
-          },
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22257266",
+        "description": "A mana gem that has had most, if not all, of its mana drained from it. It doesn't have much going for it, but it helps channel your mana a bit better. This item requires a Dragon Amulet.",
+        "element": "NON",
+        "resists": "None",
+        "rarity": "1"
+      },
+      {
+        "levelNumber": 60,
+        "levelDisplay": "60",
+        "actualLevel": 60,
+        "name": "Inert Mana Gem",
+        "damage": "",
+        "stats": "WIS +12",
+        "obtainVariants": [
           {
             "location": "Dwarf Loot for DCs",
             "price": "50 Dragon Coins",
@@ -3858,7 +3731,22 @@
             "priceType": "free",
             "sellback": "56 Gold",
             "daRequired": true
-          },
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22257267",
+        "description": "A mana gem that has had most, if not all, of its mana drained from it. It doesn't have much going for it, but it helps channel your mana a bit better. This item requires a Dragon Amulet.",
+        "element": "NON",
+        "resists": "None",
+        "rarity": "12"
+      },
+      {
+        "levelNumber": 70,
+        "levelDisplay": "70",
+        "actualLevel": 70,
+        "name": "Inert Mana Gem",
+        "damage": "",
+        "stats": "WIS +16, INT +2, DEX +2, STR +2",
+        "obtainVariants": [
           {
             "location": "Dwarf Loot for DCs",
             "price": "60 Dragon Coins",
@@ -3888,7 +3776,22 @@
             "priceType": "free",
             "sellback": "60 Gold",
             "daRequired": true
-          },
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22257268",
+        "description": "A mana gem that has had most, if not all, of its mana drained from it. It doesn't have much going for it, but it helps channel your mana a bit better. This item requires a Dragon Amulet.",
+        "element": "NON",
+        "resists": "None",
+        "rarity": "1"
+      },
+      {
+        "levelNumber": 80,
+        "levelDisplay": "80",
+        "actualLevel": 80,
+        "name": "Inert Mana Gem",
+        "damage": "",
+        "stats": "WIS +20, INT +2, DEX +2, STR +2",
+        "obtainVariants": [
           {
             "location": "Dwarf Loot for DCs",
             "price": "70 Dragon Coins",
@@ -3918,7 +3821,22 @@
             "priceType": "free",
             "sellback": "75 Gold",
             "daRequired": true
-          },
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22257269",
+        "description": "A mana gem that has had most, if not all, of its mana drained from it. It doesn't have much going for it, but it helps channel your mana a bit better. This item requires a Dragon Amulet.",
+        "element": "NON",
+        "resists": "None",
+        "rarity": "1"
+      },
+      {
+        "levelNumber": 85,
+        "levelDisplay": "85",
+        "actualLevel": 85,
+        "name": "Inert Mana Gem",
+        "damage": "",
+        "stats": "WIS +25, INT +3, DEX +3, STR +3",
+        "obtainVariants": [
           {
             "location": "Dwarf Loot for DCs",
             "price": "80 Dragon Coins",
@@ -3940,6 +3858,7 @@
     "category": "Armor",
     "releaseDate": "",
     "tags": [
+      "dc",
       "free",
       "non"
     ],
@@ -4906,7 +4825,21 @@
     ],
     "shared": {
       "description": "This strange translucent sphere contains a whirling array of gears and magic inside. Uses time magic to temporarily transform your dragon into a young dragon form for an attack!",
-      "ability": "Summon Young Dragon"
+      "ability": "Summon Young Dragon",
+      "attacks": [
+        {
+          "name": "Summon Young Dragon",
+          "description": "3 hits x 75% damage (225%) \n Self: 1% max HP HoT for 5 turns. Target: (On hit) 25% DoT for 5 turns. \n This attack has +50 Bonus and +200 Crit. Damage and DoT element based on dragon's element.",
+          "requirements": "Relic of When - Draconic Growth (EX) equipped",
+          "effect": "Applies '<Dragon>'s Boon', a HoT equal to 1% of the player's max HP, to player for 5 turns; 3 hits of 75% damage, amounting to 225% damage, with +50 Bonus and +200 Crit; applies '<Dragon>'s Bane', a 25% Melee DoT effect, to target for 5 turns.\n• Draco is the default name for all status names from this trinket skill; they are linked to the player's dragon's name from  Dragon Customization.\n• <Dragon>'s appearance is linked to the player's dragon's Head, Wing, and Tail Styles from  Dragon Customization, as well as their current color palette from  Dragon Customization /  Armor Paint Room.\n• <Dragon>'s attacks (including breath animation and '<Dragon>'s Bane' DoT) and Body (including Primal Tattoos via Dragon Primalization) are color-synchronized to player's dragon's element via  Dragon Elementization; this skill can only have 1 out of 10 available elements (Bacon, Darkness, Energy, Fire, Ice, Light, Nature, Stone, Water, and Wind).\n  • Array of breath attacks:  Bacon,  Darkness,  Energy,  Fire,  Ice,  Light,  Nature,  Stone,  Water,  Wind\n• If <Dragon> was equipped, either as a  pet or a  guest, <Dragon> will temporarily disappear upon using the trinket skill.",
+          "manaCost": "50",
+          "cooldown": "19 - [(Player LUK/50), rounded down]",
+          "damageType": "As weapon",
+          "element": "As dragon",
+          "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-SummonYoungDragon.png",
+          "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-SummonYoungDragon-Appearance1.0.png"
+        }
+      ]
     },
     "levelVariants": [
       {
@@ -4930,16 +4863,6 @@
         "element": "EVI",
         "resists": "None",
         "attacks": [
-          {
-            "name": "Summon Young Dragon",
-            "description": "3 hits x 75% damage (225%) \n Self: 1% max HP HoT for 5 turns. Target: (On hit) 25% DoT for 5 turns. \n This attack has +50 Bonus and +200 Crit. Damage and DoT element based on dragon's element.",
-            "requirements": "Relic of When - Draconic Growth equipped",
-            "effect": "Unknown effect",
-            "manaCost": "—",
-            "cooldown": "—",
-            "damageType": "—",
-            "element": "—"
-          },
           {
             "name": "Summon Young Dragon",
             "description": "3 hits x 75% damage (225%) \n Self: 1% max HP HoT for 5 turns. Target: (On hit) 25% DoT for 5 turns. \n This attack has +50 Bonus and +200 Crit. Damage and DoT element based on dragon's element.",
@@ -5405,7 +5328,23 @@
             "priceType": "free",
             "sellback": "150 Gold",
             "daRequired": false
-          },
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22401716",
+        "description": "This carved wooden charm was given to you as you prepared to leave Sulen'Eska to fight the amassing Rose forces at the swamp border. May it help you weather the coming storm.",
+        "element": "WIN",
+        "resists": "None",
+        "rarity": "1"
+      },
+      {
+        "levelNumber": 30,
+        "levelDisplay": "30",
+        "actualLevel": 30,
+        "variantName": "I",
+        "name": "Sanctuary's Promise I",
+        "damage": "",
+        "stats": "END +8",
+        "obtainVariants": [
           {
             "location": "CW Loot for DCs",
             "price": "90 Dragon Coins",
@@ -5436,7 +5375,23 @@
             "priceType": "free",
             "sellback": "180 Gold",
             "daRequired": true
-          },
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22401717",
+        "description": "This carved wooden charm was given to you as you prepared to leave Sulen'Eska to fight the amassing Rose forces at the swamp border. May it help you weather the coming storm. This item requires a Dragon Amulet.",
+        "element": "WIN",
+        "resists": "None",
+        "rarity": "1"
+      },
+      {
+        "levelNumber": 35,
+        "levelDisplay": "35",
+        "actualLevel": 35,
+        "variantName": "II",
+        "name": "Sanctuary's Promise II",
+        "damage": "",
+        "stats": "END +12",
+        "obtainVariants": [
           {
             "location": "CW Loot for DCs",
             "price": "90 Dragon Coins",
@@ -5467,7 +5422,23 @@
             "priceType": "free",
             "sellback": "240 Gold",
             "daRequired": true
-          },
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22401718",
+        "description": "This carved wooden charm was given to you as you prepared to leave Sulen'Eska to fight the amassing Rose forces at the swamp border. May it help you weather the coming storm. This item requires a Dragon Amulet.",
+        "element": "WIN",
+        "resists": "None",
+        "rarity": "1"
+      },
+      {
+        "levelNumber": 40,
+        "levelDisplay": "40",
+        "actualLevel": 40,
+        "variantName": "III",
+        "name": "Sanctuary's Promise III",
+        "damage": "",
+        "stats": "END +16",
+        "obtainVariants": [
           {
             "location": "CW Loot for DCs",
             "price": "90 Dragon Coins",
@@ -5498,7 +5469,23 @@
             "priceType": "free",
             "sellback": "500 Gold",
             "daRequired": true
-          },
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22401719",
+        "description": "This carved wooden charm was given to you as you prepared to leave Sulen'Eska to fight the amassing Rose forces at the swamp border. May it help you weather the coming storm. This item requires a Dragon Amulet.",
+        "element": "WIN",
+        "resists": "None",
+        "rarity": "1"
+      },
+      {
+        "levelNumber": 45,
+        "levelDisplay": "45",
+        "actualLevel": 45,
+        "variantName": "IV",
+        "name": "Sanctuary's Promise IV",
+        "damage": "",
+        "stats": "END +24",
+        "obtainVariants": [
           {
             "location": "CW Loot for DCs",
             "price": "90 Dragon Coins",
@@ -5529,7 +5516,23 @@
             "priceType": "free",
             "sellback": "560 Gold",
             "daRequired": true
-          },
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22401720",
+        "description": "This carved wooden charm was given to you as you prepared to leave Sulen'Eska to fight the amassing Rose forces at the swamp border. May it help you weather the coming storm. This item requires a Dragon Amulet.",
+        "element": "WIN",
+        "resists": "None",
+        "rarity": "12"
+      },
+      {
+        "levelNumber": 50,
+        "levelDisplay": "50",
+        "actualLevel": 50,
+        "variantName": "V",
+        "name": "Sanctuary's Promise V",
+        "damage": "",
+        "stats": "END +32, INT +2, DEX +2, STR +2",
+        "obtainVariants": [
           {
             "location": "CW Loot for DCs",
             "price": "90 Dragon Coins",
@@ -5560,7 +5563,23 @@
             "priceType": "free",
             "sellback": "600 Gold",
             "daRequired": true
-          },
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22401721",
+        "description": "This carved wooden charm was given to you as you prepared to leave Sulen'Eska to fight the amassing Rose forces at the swamp border. May it help you weather the coming storm. This item requires a Dragon Amulet.",
+        "element": "WIN",
+        "resists": "None",
+        "rarity": "1"
+      },
+      {
+        "levelNumber": 55,
+        "levelDisplay": "55",
+        "actualLevel": 55,
+        "variantName": "VI",
+        "name": "Sanctuary's Promise VI",
+        "damage": "",
+        "stats": "END +40, INT +2, DEX +2, STR +2",
+        "obtainVariants": [
           {
             "location": "CW Loot for DCs",
             "price": "90 Dragon Coins",
@@ -5591,7 +5610,23 @@
             "priceType": "free",
             "sellback": "750 Gold",
             "daRequired": true
-          },
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22401722",
+        "description": "This carved wooden charm was given to you as you prepared to leave Sulen'Eska to fight the amassing Rose forces at the swamp border. May it help you weather the coming storm. This item requires a Dragon Amulet.",
+        "element": "WIN",
+        "resists": "None",
+        "rarity": "1"
+      },
+      {
+        "levelNumber": 60,
+        "levelDisplay": "60",
+        "actualLevel": 60,
+        "variantName": "VII",
+        "name": "Sanctuary's Promise VII",
+        "damage": "",
+        "stats": "END +50, INT +3, DEX +3, STR +3",
+        "obtainVariants": [
           {
             "location": "CW Loot for DCs",
             "price": "90 Dragon Coins",
@@ -5613,6 +5648,7 @@
     "category": "Armor",
     "releaseDate": "",
     "tags": [
+      "dc",
       "free",
       "win"
     ],
@@ -5621,7 +5657,7 @@
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
-    "levelRange": "30-60",
+    "levelRange": "I-VII",
     "elements": [
       "WIN"
     ]
@@ -5765,7 +5801,23 @@
             "priceType": "free",
             "sellback": "150 Gold",
             "daRequired": false
-          },
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22346460",
+        "description": "A small idol carved from golden stone. The eyes and mouths of the four faces of the Shapeless glow faintly with a blue light. Said to bring good luck to the law-abiding.",
+        "element": "FEA",
+        "resists": "None",
+        "rarity": "0"
+      },
+      {
+        "levelNumber": 30,
+        "levelDisplay": "30",
+        "actualLevel": 30,
+        "variantName": "I",
+        "name": "Shapeless Idol I",
+        "damage": "",
+        "stats": "Crit +2, INT +1, DEX +1, STR +1, Bonus +2",
+        "obtainVariants": [
           {
             "location": "DJ Loot for DCs",
             "price": "150 Dragon Coins",
@@ -5796,7 +5848,23 @@
             "priceType": "free",
             "sellback": "200 Gold",
             "daRequired": true
-          },
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22346470",
+        "description": "A small idol carved from golden stone. The eyes and mouths of the four faces of the Shapeless glow faintly with a blue light. Said to bring good luck to the law-abiding. This item requires a Dragon Amulet.",
+        "element": "FEA",
+        "resists": "None",
+        "rarity": "0"
+      },
+      {
+        "levelNumber": 60,
+        "levelDisplay": "60",
+        "actualLevel": 60,
+        "variantName": "II",
+        "name": "Shapeless Idol II",
+        "damage": "",
+        "stats": "Crit +6, INT +1, DEX +1, STR +1, Bonus +6",
+        "obtainVariants": [
           {
             "location": "DJ Loot for DCs",
             "price": "200 Dragon Coins",
@@ -5827,7 +5895,23 @@
             "priceType": "free",
             "sellback": "275 Gold",
             "daRequired": true
-          },
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22346471",
+        "description": "A small idol carved from golden stone. The eyes and mouths of the four faces of the Shapeless glow faintly with a blue light. Said to bring good luck to the law-abiding. This item requires a Dragon Amulet.",
+        "element": "FEA",
+        "resists": "None",
+        "rarity": "0"
+      },
+      {
+        "levelNumber": 70,
+        "levelDisplay": "70",
+        "actualLevel": 70,
+        "variantName": "III",
+        "name": "Shapeless Idol III",
+        "damage": "",
+        "stats": "Crit +8, INT +1, DEX +1, STR +1, Bonus +8",
+        "obtainVariants": [
           {
             "location": "DJ Loot for DCs",
             "price": "275 Dragon Coins",
@@ -5858,7 +5942,23 @@
             "priceType": "free",
             "sellback": "350 Gold",
             "daRequired": true
-          },
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22346472",
+        "description": "A small idol carved from golden stone. The eyes and mouths of the four faces of the Shapeless glow faintly with a blue light. Said to bring good luck to the law-abiding. This item requires a Dragon Amulet.",
+        "element": "FEA",
+        "resists": "None",
+        "rarity": "0"
+      },
+      {
+        "levelNumber": 80,
+        "levelDisplay": "80",
+        "actualLevel": 80,
+        "variantName": "IV",
+        "name": "Shapeless Idol IV",
+        "damage": "",
+        "stats": "Crit +10, INT +1, DEX +1, STR +1, Bonus +10",
+        "obtainVariants": [
           {
             "location": "DJ Loot for DCs",
             "price": "350 Dragon Coins",
@@ -5889,7 +5989,23 @@
             "priceType": "free",
             "sellback": "400 Gold",
             "daRequired": true
-          },
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22346473",
+        "description": "A small idol carved from golden stone. The eyes and mouths of the four faces of the Shapeless glow faintly with a blue light. Said to bring good luck to the law-abiding. This item requires a Dragon Amulet.",
+        "element": "FEA",
+        "resists": "Good +1, Evil +1, Fear +1",
+        "rarity": "0"
+      },
+      {
+        "levelNumber": 90,
+        "levelDisplay": "90",
+        "actualLevel": 90,
+        "variantName": "V",
+        "name": "Shapeless Idol V",
+        "damage": "",
+        "stats": "Crit +15, INT +1, DEX +1, STR +1, Bonus +15",
+        "obtainVariants": [
           {
             "location": "DJ Loot for DCs",
             "price": "400 Dragon Coins",
@@ -5911,6 +6027,7 @@
     "category": "Armor",
     "releaseDate": "",
     "tags": [
+      "dc",
       "fea",
       "free"
     ],
@@ -5919,7 +6036,7 @@
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
-    "levelRange": "30-90",
+    "levelRange": "I-V",
     "elements": [
       "FEA"
     ]
@@ -6905,16 +7022,6 @@
         {
           "name": "Uaanta's Blaster (Amalgam)",
           "description": "5 hits x 25% Fear damage (125%) \n Target: (On hit) +<x> Health resistance for 5 turns.",
-          "requirements": "Uaanta's Blaster (I-IV) (Amalgam) equipped",
-          "effect": "Unknown effect",
-          "manaCost": "—",
-          "cooldown": "—",
-          "damageType": "—",
-          "element": "—"
-        },
-        {
-          "name": "Uaanta's Blaster (Amalgam)",
-          "description": "5 hits x 25% Fear damage (125%) \n Target: (On hit) +<x> Health resistance for 5 turns.",
           "requirements": "Exalted Blaster (I, II) (Amalgam) equipped",
           "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Amalgam Scar' (+X* Health Resist) to target for 5 turns inclusive.\n• Previously had the tooltip: 5 hits of Fear, +Health res.\n• *X is equal to the equipped Trinket's Level/3, rounded normally; thus, potential Health Resist values are 7, 13, 20, and 30 respectively.\n• Tooltip was updated on  June 20th, 2025.",
           "manaCost": "0",
@@ -6951,16 +7058,6 @@
         "element": "FEA",
         "resists": "Light +5, Darkness +5, Good +2, Evil +2",
         "attacks": [
-          {
-            "name": "Uaanta's Blaster (Amalgam)",
-            "description": "5 hits x 25% Fear damage (125%) \n Target: (On hit) +<x> Health resistance for 5 turns.",
-            "requirements": "Uaanta's Blaster (I-IV) (Amalgam) equipped",
-            "effect": "Unknown effect",
-            "manaCost": "—",
-            "cooldown": "—",
-            "damageType": "—",
-            "element": "—"
-          },
           {
             "name": "Uaanta's Blaster (Amalgam)",
             "description": "5 hits x 25% Fear damage (125%) \n Target: (On hit) +<x> Health resistance for 5 turns.",
@@ -7002,16 +7099,6 @@
           {
             "name": "Uaanta's Blaster (Amalgam)",
             "description": "5 hits x 25% Fear damage (125%) \n Target: (On hit) +<x> Health resistance for 5 turns.",
-            "requirements": "Uaanta's Blaster (I-IV) (Amalgam) equipped",
-            "effect": "Unknown effect",
-            "manaCost": "—",
-            "cooldown": "—",
-            "damageType": "—",
-            "element": "—"
-          },
-          {
-            "name": "Uaanta's Blaster (Amalgam)",
-            "description": "5 hits x 25% Fear damage (125%) \n Target: (On hit) +<x> Health resistance for 5 turns.",
             "requirements": "Exalted Blaster (I, II) (Amalgam) equipped",
             "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Amalgam Scar' (+X* Health Resist) to target for 5 turns inclusive.\n• Previously had the tooltip: 5 hits of Fear, +Health res.\n• *X is equal to the equipped Trinket's Level/3, rounded normally; thus, potential Health Resist values are 7, 13, 20, and 30 respectively.\n• Tooltip was updated on  June 20th, 2025.",
             "manaCost": "0",
@@ -7047,16 +7134,6 @@
         "element": "FEA",
         "resists": "Light +7, Darkness +7, Good +4, Evil +4",
         "attacks": [
-          {
-            "name": "Uaanta's Blaster (Amalgam)",
-            "description": "5 hits x 25% Fear damage (125%) \n Target: (On hit) +<x> Health resistance for 5 turns.",
-            "requirements": "Uaanta's Blaster (I-IV) (Amalgam) equipped",
-            "effect": "Unknown effect",
-            "manaCost": "—",
-            "cooldown": "—",
-            "damageType": "—",
-            "element": "—"
-          },
           {
             "name": "Uaanta's Blaster (Amalgam)",
             "description": "5 hits x 25% Fear damage (125%) \n Target: (On hit) +<x> Health resistance for 5 turns.",
@@ -7098,16 +7175,6 @@
           {
             "name": "Uaanta's Blaster (Amalgam)",
             "description": "5 hits x 25% Fear damage (125%) \n Target: (On hit) +<x> Health resistance for 5 turns.",
-            "requirements": "Uaanta's Blaster (I-IV) (Amalgam) equipped",
-            "effect": "Unknown effect",
-            "manaCost": "—",
-            "cooldown": "—",
-            "damageType": "—",
-            "element": "—"
-          },
-          {
-            "name": "Uaanta's Blaster (Amalgam)",
-            "description": "5 hits x 25% Fear damage (125%) \n Target: (On hit) +<x> Health resistance for 5 turns.",
             "requirements": "Exalted Blaster (I, II) (Amalgam) equipped",
             "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Amalgam Scar' (+X* Health Resist) to target for 5 turns inclusive.\n• Previously had the tooltip: 5 hits of Fear, +Health res.\n• *X is equal to the equipped Trinket's Level/3, rounded normally; thus, potential Health Resist values are 7, 13, 20, and 30 respectively.\n• Tooltip was updated on  June 20th, 2025.",
             "manaCost": "0",
@@ -7134,7 +7201,7 @@
     "hasDM": false,
     "hasFree": false,
     "hasMerge": true,
-    "levelRange": "20-90",
+    "levelRange": "I-IV",
     "elements": [
       "FEA"
     ]
@@ -7200,7 +7267,23 @@
             "sellback": "100 Gold",
             "requiredItems": "1 Uaanta's Blaster I (Uncharged) & 1 Lhe'Shyiac Capacitor Gem",
             "daRequired": false
-          },
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22373245",
+        "description": "Uaanta gifted this emergency back-up wand to you. With the attachment of a Capacitor Gem, it's starting to charge, but it feels like there are some pieces missing still.",
+        "element": "WIN",
+        "resists": "Light +3, Darkness +3",
+        "rarity": "15"
+      },
+      {
+        "levelNumber": 20,
+        "levelDisplay": "20",
+        "actualLevel": 20,
+        "variantName": "I",
+        "name": "Uaanta's Blaster I (Charging)",
+        "damage": "",
+        "stats": "Block +1, Dodge +1, Parry +1, Crit +3, Magic Def +1, Pierce Def +1, Melee Def +1, WIS +1, END +1, CHA +3, LUK +3, Bonus +3",
+        "obtainVariants": [
           {
             "location": "Blaster Reconfiguration",
             "price": "N/A",
@@ -7232,7 +7315,23 @@
             "sellback": "200 Gold",
             "requiredItems": "1 Uaanta's Blaster (I, II) (Uncharged) & 1 Lhe'Shyiac Capacitor Gem",
             "daRequired": true
-          },
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22373246",
+        "description": "Uaanta gifted this emergency back-up wand to you. With the attachment of a Capacitor Gem, it's starting to charge, but it feels like there are some pieces missing still. This item requires a Dragon Amulet.",
+        "element": "WIN",
+        "resists": "Light +5, Darkness +5",
+        "rarity": "15"
+      },
+      {
+        "levelNumber": 40,
+        "levelDisplay": "40",
+        "actualLevel": 40,
+        "variantName": "II",
+        "name": "Uaanta's Blaster II (Charging)",
+        "damage": "",
+        "stats": "Block +3, Dodge +3, Parry +3, Crit +5, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +2, END +2, CHA +4, LUK +4, Bonus +5",
+        "obtainVariants": [
           {
             "location": "Blaster Reconfiguration",
             "price": "N/A",
@@ -7264,7 +7363,23 @@
             "sellback": "300 Gold",
             "requiredItems": "1 Uaanta's Blaster (I, II, III) (Uncharged) & 1 Lhe'Shyiac Capacitor Gem",
             "daRequired": true
-          },
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22373247",
+        "description": "Uaanta gifted this emergency back-up wand to you. With the attachment of a Capacitor Gem, it's starting to charge, but it feels like there are some pieces missing still. This item requires a Dragon Amulet.",
+        "element": "WIN",
+        "resists": "Light +7, Darkness +7",
+        "rarity": "15"
+      },
+      {
+        "levelNumber": 60,
+        "levelDisplay": "60",
+        "actualLevel": 60,
+        "variantName": "III",
+        "name": "Uaanta's Blaster III (Charging)",
+        "damage": "",
+        "stats": "Block +4, Dodge +4, Parry +4, Crit +6, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +4, END +4, CHA +8, LUK +8, Bonus +6",
+        "obtainVariants": [
           {
             "location": "Blaster Reconfiguration",
             "price": "N/A",
@@ -7296,7 +7411,23 @@
             "sellback": "400 Gold",
             "requiredItems": "1 Uaanta's Blaster (I-IV) (Uncharged) & 1 Lhe'Shyiac Capacitor Gem",
             "daRequired": true
-          },
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22373248",
+        "description": "Uaanta gifted this emergency back-up wand to you. With the attachment of a Capacitor Gem, it's starting to charge, but it feels like there are some pieces missing still. This item requires a Dragon Amulet.",
+        "element": "WIN",
+        "resists": "Light +10, Darkness +10",
+        "rarity": "15"
+      },
+      {
+        "levelNumber": 90,
+        "levelDisplay": "90",
+        "actualLevel": 90,
+        "variantName": "IV",
+        "name": "Uaanta's Blaster IV (Charging)",
+        "damage": "",
+        "stats": "Block +5, Dodge +5, Parry +5, Crit +10, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +8, END +8, CHA +12, LUK +12, Bonus +10",
+        "obtainVariants": [
           {
             "location": "Blaster Reconfiguration",
             "price": "N/A",
@@ -7326,7 +7457,7 @@
     "hasDM": false,
     "hasFree": false,
     "hasMerge": true,
-    "levelRange": "20-90",
+    "levelRange": "I-IV",
     "elements": [
       "WIN"
     ]
@@ -7378,16 +7509,6 @@
         {
           "name": "Uaanta's Blaster (Destiny)",
           "description": "5 hits x 25% Good damage (125%) \n Target: -<x> Bonus for 5 turns.",
-          "requirements": "Uaanta's Blaster (I-IV) (Destiny) equipped",
-          "effect": "Unknown effect",
-          "manaCost": "—",
-          "cooldown": "—",
-          "damageType": "—",
-          "element": "—"
-        },
-        {
-          "name": "Uaanta's Blaster (Destiny)",
-          "description": "5 hits x 25% Good damage (125%) \n Target: -<x> Bonus for 5 turns.",
           "requirements": "Exalted Blaster (I, II) (Destiny) equipped",
           "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Destiny's Command' (-X* Bonus) to target for 4 turns.\n• Previously had the tooltip: 5 hits of Good, -Bonus.\n• *X is equal to the equipped Trinket's Level/3, rounded normally; thus, potential Bonus values are -7, -13, -20, and -30 respectively.\n• Tooltip was updated on  June 20th, 2025.",
           "manaCost": "0",
@@ -7424,16 +7545,6 @@
         "element": "GOO",
         "resists": "Light +5, Darkness +5, Good +2, Evil +2",
         "attacks": [
-          {
-            "name": "Uaanta's Blaster (Destiny)",
-            "description": "5 hits x 25% Good damage (125%) \n Target: -<x> Bonus for 5 turns.",
-            "requirements": "Uaanta's Blaster (I-IV) (Destiny) equipped",
-            "effect": "Unknown effect",
-            "manaCost": "—",
-            "cooldown": "—",
-            "damageType": "—",
-            "element": "—"
-          },
           {
             "name": "Uaanta's Blaster (Destiny)",
             "description": "5 hits x 25% Good damage (125%) \n Target: -<x> Bonus for 5 turns.",
@@ -7475,16 +7586,6 @@
           {
             "name": "Uaanta's Blaster (Destiny)",
             "description": "5 hits x 25% Good damage (125%) \n Target: -<x> Bonus for 5 turns.",
-            "requirements": "Uaanta's Blaster (I-IV) (Destiny) equipped",
-            "effect": "Unknown effect",
-            "manaCost": "—",
-            "cooldown": "—",
-            "damageType": "—",
-            "element": "—"
-          },
-          {
-            "name": "Uaanta's Blaster (Destiny)",
-            "description": "5 hits x 25% Good damage (125%) \n Target: -<x> Bonus for 5 turns.",
             "requirements": "Exalted Blaster (I, II) (Destiny) equipped",
             "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Destiny's Command' (-X* Bonus) to target for 4 turns.\n• Previously had the tooltip: 5 hits of Good, -Bonus.\n• *X is equal to the equipped Trinket's Level/3, rounded normally; thus, potential Bonus values are -7, -13, -20, and -30 respectively.\n• Tooltip was updated on  June 20th, 2025.",
             "manaCost": "0",
@@ -7520,16 +7621,6 @@
         "element": "GOO",
         "resists": "Light +7, Darkness +7, Good +4, Evil +4",
         "attacks": [
-          {
-            "name": "Uaanta's Blaster (Destiny)",
-            "description": "5 hits x 25% Good damage (125%) \n Target: -<x> Bonus for 5 turns.",
-            "requirements": "Uaanta's Blaster (I-IV) (Destiny) equipped",
-            "effect": "Unknown effect",
-            "manaCost": "—",
-            "cooldown": "—",
-            "damageType": "—",
-            "element": "—"
-          },
           {
             "name": "Uaanta's Blaster (Destiny)",
             "description": "5 hits x 25% Good damage (125%) \n Target: -<x> Bonus for 5 turns.",
@@ -7571,16 +7662,6 @@
           {
             "name": "Uaanta's Blaster (Destiny)",
             "description": "5 hits x 25% Good damage (125%) \n Target: -<x> Bonus for 5 turns.",
-            "requirements": "Uaanta's Blaster (I-IV) (Destiny) equipped",
-            "effect": "Unknown effect",
-            "manaCost": "—",
-            "cooldown": "—",
-            "damageType": "—",
-            "element": "—"
-          },
-          {
-            "name": "Uaanta's Blaster (Destiny)",
-            "description": "5 hits x 25% Good damage (125%) \n Target: -<x> Bonus for 5 turns.",
             "requirements": "Exalted Blaster (I, II) (Destiny) equipped",
             "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Destiny's Command' (-X* Bonus) to target for 4 turns.\n• Previously had the tooltip: 5 hits of Good, -Bonus.\n• *X is equal to the equipped Trinket's Level/3, rounded normally; thus, potential Bonus values are -7, -13, -20, and -30 respectively.\n• Tooltip was updated on  June 20th, 2025.",
             "manaCost": "0",
@@ -7607,7 +7688,7 @@
     "hasDM": false,
     "hasFree": false,
     "hasMerge": true,
-    "levelRange": "20-90",
+    "levelRange": "I-IV",
     "elements": [
       "GOO"
     ]
@@ -7659,16 +7740,6 @@
         {
           "name": "Uaanta's Blaster (Doom)",
           "description": "5 hits x 25% Evil damage (125%) \n Target: -<x> Avoidance for 5 turns.",
-          "requirements": "Uaanta's Blaster (I-IV) (Doom) equipped",
-          "effect": "Unknown effect",
-          "manaCost": "—",
-          "cooldown": "—",
-          "damageType": "—",
-          "element": "—"
-        },
-        {
-          "name": "Uaanta's Blaster (Doom)",
-          "description": "5 hits x 25% Evil damage (125%) \n Target: -<x> Avoidance for 5 turns.",
           "requirements": "Exalted Blaster (I, II) (Doom) equipped",
           "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Doom's Ambition' (-X* Melee/Pierce/Magic Avoidance) to target for 5 turns inclusive.\n• Previously had the tooltip: 5 hits of Evil, -Avd.\n• *X is equal to the equipped Trinket's Level/3, rounded normally; thus, potential Avoidance values are -7, -13, -20, and -30 respectively.\n• Tooltip was updated on  June 20th, 2025.",
           "manaCost": "0",
@@ -7705,16 +7776,6 @@
         "element": "EVI",
         "resists": "Light +5, Darkness +5, Good +2, Evil +2",
         "attacks": [
-          {
-            "name": "Uaanta's Blaster (Doom)",
-            "description": "5 hits x 25% Evil damage (125%) \n Target: -<x> Avoidance for 5 turns.",
-            "requirements": "Uaanta's Blaster (I-IV) (Doom) equipped",
-            "effect": "Unknown effect",
-            "manaCost": "—",
-            "cooldown": "—",
-            "damageType": "—",
-            "element": "—"
-          },
           {
             "name": "Uaanta's Blaster (Doom)",
             "description": "5 hits x 25% Evil damage (125%) \n Target: -<x> Avoidance for 5 turns.",
@@ -7756,16 +7817,6 @@
           {
             "name": "Uaanta's Blaster (Doom)",
             "description": "5 hits x 25% Evil damage (125%) \n Target: -<x> Avoidance for 5 turns.",
-            "requirements": "Uaanta's Blaster (I-IV) (Doom) equipped",
-            "effect": "Unknown effect",
-            "manaCost": "—",
-            "cooldown": "—",
-            "damageType": "—",
-            "element": "—"
-          },
-          {
-            "name": "Uaanta's Blaster (Doom)",
-            "description": "5 hits x 25% Evil damage (125%) \n Target: -<x> Avoidance for 5 turns.",
             "requirements": "Exalted Blaster (I, II) (Doom) equipped",
             "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Doom's Ambition' (-X* Melee/Pierce/Magic Avoidance) to target for 5 turns inclusive.\n• Previously had the tooltip: 5 hits of Evil, -Avd.\n• *X is equal to the equipped Trinket's Level/3, rounded normally; thus, potential Avoidance values are -7, -13, -20, and -30 respectively.\n• Tooltip was updated on  June 20th, 2025.",
             "manaCost": "0",
@@ -7801,16 +7852,6 @@
         "element": "EVI",
         "resists": "Light +7, Darkness +7, Good +4, Evil +4",
         "attacks": [
-          {
-            "name": "Uaanta's Blaster (Doom)",
-            "description": "5 hits x 25% Evil damage (125%) \n Target: -<x> Avoidance for 5 turns.",
-            "requirements": "Uaanta's Blaster (I-IV) (Doom) equipped",
-            "effect": "Unknown effect",
-            "manaCost": "—",
-            "cooldown": "—",
-            "damageType": "—",
-            "element": "—"
-          },
           {
             "name": "Uaanta's Blaster (Doom)",
             "description": "5 hits x 25% Evil damage (125%) \n Target: -<x> Avoidance for 5 turns.",
@@ -7852,16 +7893,6 @@
           {
             "name": "Uaanta's Blaster (Doom)",
             "description": "5 hits x 25% Evil damage (125%) \n Target: -<x> Avoidance for 5 turns.",
-            "requirements": "Uaanta's Blaster (I-IV) (Doom) equipped",
-            "effect": "Unknown effect",
-            "manaCost": "—",
-            "cooldown": "—",
-            "damageType": "—",
-            "element": "—"
-          },
-          {
-            "name": "Uaanta's Blaster (Doom)",
-            "description": "5 hits x 25% Evil damage (125%) \n Target: -<x> Avoidance for 5 turns.",
             "requirements": "Exalted Blaster (I, II) (Doom) equipped",
             "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Doom's Ambition' (-X* Melee/Pierce/Magic Avoidance) to target for 5 turns inclusive.\n• Previously had the tooltip: 5 hits of Evil, -Avd.\n• *X is equal to the equipped Trinket's Level/3, rounded normally; thus, potential Avoidance values are -7, -13, -20, and -30 respectively.\n• Tooltip was updated on  June 20th, 2025.",
             "manaCost": "0",
@@ -7888,7 +7919,7 @@
     "hasDM": false,
     "hasFree": false,
     "hasMerge": true,
-    "levelRange": "20-90",
+    "levelRange": "I-IV",
     "elements": [
       "EVI"
     ]
@@ -8044,7 +8075,7 @@
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
-    "levelRange": "20-90",
+    "levelRange": "I-IV",
     "elements": [
       "WIN"
     ]
@@ -8300,16 +8331,6 @@
     "daRequired": true,
     "isRare": true,
     "attacks": [
-      {
-        "name": "You Are Here",
-        "description": "25% damage/5 rnds but easier to hit.",
-        "requirements": "You Are Here (D-Amulet) equipped",
-        "effect": "Unknown effect",
-        "manaCost": "—",
-        "cooldown": "—",
-        "damageType": "—",
-        "element": "—"
-      },
       {
         "name": "You Are Here",
         "description": "25% damage/5 rnds but easier to hit.",

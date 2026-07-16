@@ -196,7 +196,7 @@ export function useAccessoryCounts() {
       total: Object.values(counts).reduce((sum, count) => sum + count, 0),
       bySubtype: counts,
     }
-  }, [])
+  }, [datasets])
 }
 
 export function useTotalAccessoryCount() {
