@@ -40,6 +40,7 @@ export interface Accessory {
   rarity?: string
   itemType?: string
   equipSpot?: string
+  modifies?: string
   category?: string
   obtainMethods: ObtainVariant[]
   notes?: string
@@ -57,6 +58,7 @@ export interface Accessory {
 export type AccessoryFamily = ItemFamily & {
   type: 'accessory'
   subtype: AccessorySubtype
+  modifies?: string
 }
 
 export type AccessoryEntry = Accessory | AccessoryFamily

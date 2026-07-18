@@ -80,6 +80,66 @@ function getAccessoryNotes(
   return levelNotes ?? sharedNotes
 }
 
+function isCapeOrHelmLike(value?: string): boolean {
+  return Boolean(value && /\b(?:cape|cloak|wing|wings|helm|helmet|hat|hood|mask|circlet)\b/i.test(value))
+}
+
+function shouldDisplayAccessoryImages(
+  accessory: AccessoryEntry,
+  family: AccessoryFamily | undefined,
+  singleAccessory: Accessory | undefined,
+  activeLevel: LevelVariant | undefined
+): boolean {
+  if (accessory.subtype === 'cape-wing' || accessory.subtype === 'helm') return true
+  if (accessory.subtype !== 'artifact') return false
+
+  return [
+    family?.familyName,
+    family?.itemType,
+    family?.equipSlot,
+    family?.category,
+    activeLevel?.name,
+    singleAccessory?.name,
+    singleAccessory?.itemType,
+    singleAccessory?.equipSpot,
+    singleAccessory?.category,
+  ].some(isCapeOrHelmLike)
+}
+
+function ArtifactMetadataStrip({
+  modifies,
+  equipSpot,
+}: {
+  modifies?: string
+  equipSpot?: string
+}) {
+  const values = [
+    modifies ? { label: 'Modifies', value: modifies } : null,
+    equipSpot ? { label: 'Equip Spot', value: equipSpot } : null,
+  ].filter((entry): entry is { label: string; value: string } => Boolean(entry))
+
+  if (values.length === 0) return null
+
+  return (
+    <section className="mb-8">
+      <div className="bg-bg-surface border border-border-default rounded-lg p-4">
+        <div className={`grid gap-4 text-center ${values.length > 1 ? 'grid-cols-2' : 'grid-cols-1'}`}>
+          {values.map(item => (
+            <div key={item.label}>
+              <p className="text-xs text-text-muted uppercase tracking-wider mb-1">
+                {item.label}
+              </p>
+              <p className="text-sm font-medium text-text-primary">
+                {normalizeDisplayText(item.value)}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
 export default function AccessoryDetail({ accessory, filterBase }: AccessoryDetailProps) {
   const family = isAccessoryFamily(accessory) ? (accessory as AccessoryFamily) : undefined
   const singleAccessory = family ? undefined : (accessory as Accessory)
@@ -100,12 +160,14 @@ export default function AccessoryDetail({ accessory, filterBase }: AccessoryDeta
   const altImages = family
     ? activeLevel?.alternativeImages ?? family.shared.alternativeImages
     : singleAccessory?.alternativeImages
+  const shouldShowImages = shouldDisplayAccessoryImages(accessory, family, singleAccessory, activeLevel)
   const allImages = useMemo(() => {
+    if (!shouldShowImages) return []
     const images: Array<{ url: string; caption: string }> = []
     if (imageUrl) images.push({ url: imageUrl, caption: title })
     if (altImages) images.push(...altImages)
     return images
-  }, [altImages, imageUrl, title])
+  }, [altImages, imageUrl, shouldShowImages, title])
   const currentImage = allImages[activeImageIndex]
 
   const access = family
@@ -124,6 +186,8 @@ export default function AccessoryDetail({ accessory, filterBase }: AccessoryDeta
       : []
   const rarity = family ? activeLevel?.rarity ?? family.shared.rarity : singleAccessory?.rarity
   const ability = family ? family.shared.ability : singleAccessory?.ability
+  const artifactModifies = family ? family.modifies : singleAccessory?.modifies
+  const artifactEquipSpot = family ? family.equipSlot : singleAccessory?.equipSpot
   const attacks = family
     ? ((activeLevel?.attacks ?? family.shared.attacks) as GuestAttack[] | undefined)
     : singleAccessory?.attacks
@@ -197,6 +261,10 @@ export default function AccessoryDetail({ accessory, filterBase }: AccessoryDeta
         </div>
       )}
 
+      {accessory.subtype === 'artifact' && (
+        <ArtifactMetadataStrip modifies={artifactModifies} equipSpot={artifactEquipSpot} />
+      )}
+
       {displayLevels.length > 0 && (
         <section className="mb-8 space-y-6">
           <CollapsibleSection title="Stats by Level">
@@ -243,10 +311,6 @@ export default function AccessoryDetail({ accessory, filterBase }: AccessoryDeta
         </section>
       )}
 
-      {accessory.subtype === 'trinket' && attacks && attacks.length > 0 && (
-        <GuestAttacks attacks={attacks} />
-      )}
-
       {obtainMethods.length > 0 && (
         <section className="mb-8 space-y-4">
           {obtainMethods.map((method, index) => (
@@ -257,6 +321,10 @@ export default function AccessoryDetail({ accessory, filterBase }: AccessoryDeta
             />
           ))}
         </section>
+      )}
+
+      {attacks && attacks.length > 0 && (
+        <GuestAttacks attacks={attacks} />
       )}
 
       {notes && (

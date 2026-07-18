@@ -17,6 +17,11 @@ const FORUM_BASE = 'https://forums2.battleon.com/f'
 const ACCESSORIES_INDEX_URL = `${FORUM_BASE}/printable.asp?m=20985110`
 const OUTPUT_DIR = path.resolve(import.meta.dirname, '../src/data')
 const DELAY_MS = 900
+const ACCESSORY_IMAGE_OVERRIDES: Record<string, string> = {
+  "Baltael's Aventail": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/Baltael'sAventail.png",
+  "Frost Moglin Knight's Cloak": 'https://i.imgur.com/StWTUCm.png',
+  "Navigator's Hat": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/Navigator'sHat-CC.png",
+}
 
 type PriceType = Accessory['obtainMethods'][number]['priceType']
 
@@ -52,6 +57,25 @@ function sleep(ms: number): Promise<void> {
   return new Promise(resolve => setTimeout(resolve, ms))
 }
 
+async function withRetry<T>(label: string, operation: () => Promise<T>, attempts = 3): Promise<T> {
+  let lastError: unknown
+
+  for (let attempt = 1; attempt <= attempts; attempt += 1) {
+    try {
+      return await operation()
+    } catch (error) {
+      lastError = error
+      const message = error instanceof Error ? error.message : String(error)
+      if (/^HTTP 500:/i.test(message)) break
+      if (attempt === attempts) break
+      console.warn(`Retrying ${label} after ${message} (${attempt}/${attempts})`)
+      await sleep(DELAY_MS * attempt)
+    }
+  }
+
+  throw lastError
+}
+
 function decodeHtml(text: string): string {
   return text
     .replace(/&amp;/g, '&')
@@ -64,6 +88,10 @@ function decodeHtml(text: string): string {
 
 function slugify(name: string): string {
   return name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '')
+}
+
+function getAccessoryImageOverride(name: string): string | undefined {
+  return ACCESSORY_IMAGE_OVERRIDES[normalizeAccessoryFamilyName(name)] ?? ACCESSORY_IMAGE_OVERRIDES[name]
 }
 
 function getEntryDisplayName(entry: AccessoryEntry): string {
@@ -572,20 +600,33 @@ function extractAccessoryImages(html: string): {
     /\.(?:png|jpg|jpeg|gif|bmp)(?:\?|$)/i.test(src)
 
   const otherInfoHtml = findLastSection(html, /<b><u>Other [Ii]nformation<\/u><\/b>/gi) ?? html
-  const imageMatches = [...otherInfoHtml.matchAll(/<img[^>]+src="([^"]+)"[^>]*>/gi)]
-    .map(match => match[1])
-    .filter(isCandidateImage)
-  const imageUrl = imageMatches.at(-1)
+  const imageCandidates: Array<{ url: string; caption?: string }> = [
+    ...[...otherInfoHtml.matchAll(/<img[^>]+src="([^"]+)"[^>]*>/gi)].map(match => ({
+      url: match[1],
+    })),
+    ...[...otherInfoHtml.matchAll(/<a[^>]+href="([^"]+\.(?:png|jpg|jpeg|gif|bmp)(?:\?[^"]*)?)"[^>]*>([\s\S]*?)<\/a>/gi)].map(match => ({
+      url: match[1],
+      caption: stripHtml(decodeHtml(match[2])).trim(),
+    })),
+    ...[...otherInfoHtml.matchAll(/https?:\/\/[^\s"'<>]+\.(?:png|jpg|jpeg|gif|bmp)(?:\?[^\s"'<>]*)?/gi)].map(match => ({
+      url: match[0],
+    })),
+  ].filter(candidate => isCandidateImage(candidate.url))
+
+  const seenImageUrls = new Set<string>()
+  const uniqueImageCandidates = imageCandidates.filter(candidate => {
+    if (seenImageUrls.has(candidate.url)) return false
+    seenImageUrls.add(candidate.url)
+    return true
+  })
+  const imageUrl = uniqueImageCandidates.at(-1)?.url
 
   const alternativeImages: Array<{ url: string; caption: string }> = []
   if (imageUrl) {
-    const afterMain = otherInfoHtml.slice(otherInfoHtml.lastIndexOf(imageUrl) + imageUrl.length)
-    const linkMatches = [...afterMain.matchAll(/<a[^>]+href="([^"]+\.(?:png|jpg|jpeg|gif|bmp))"[^>]*>([\s\S]*?)<\/a>/gi)]
-    for (const match of linkMatches) {
-      const url = match[1]
-      const caption = stripHtml(decodeHtml(match[2])).trim()
-      if (!caption || !isCandidateImage(url)) continue
-      alternativeImages.push({ url, caption })
+    for (const candidate of uniqueImageCandidates) {
+      const caption = candidate.caption?.trim()
+      if (!caption || candidate.url === imageUrl) continue
+      alternativeImages.push({ url: candidate.url, caption })
     }
   }
 
@@ -597,10 +638,11 @@ function extractAccessoryImages(html: string): {
 
 function parseTagFlags(html: string) {
   const leadHtml = getAccessoryLeadHtml(html)
+  const tagPattern = (tag: string) => new RegExp(`/tags/${tag}\\.(?:png|jpg|jpeg|gif)`, 'i')
   return {
-    daRequired: /\/tags\/DA\.png/i.test(leadHtml),
-    dcRequired: /\/tags\/DC\.png/i.test(leadHtml),
-    dmRequired: /\/tags\/DM\.png/i.test(leadHtml),
+    daRequired: tagPattern('DA').test(leadHtml),
+    dcRequired: tagPattern('DC').test(leadHtml),
+    dmRequired: tagPattern('DM').test(leadHtml),
     isTemp: /\/tags\/Temp\.(?:png|jpg|jpeg|gif)/i.test(leadHtml),
     isRare: /\/tags\/Rare\.(?:png|jpg|jpeg|gif)/i.test(leadHtml),
     isSeasonal: /\/tags\/Seasonal\.(?:png|jpg|jpeg|gif)/i.test(leadHtml),
@@ -689,6 +731,73 @@ function parseNumericLevel(level?: string): number | undefined {
   return undefined
 }
 
+function romanToNumber(value: string): number {
+  const romanValues: Record<string, number> = {
+    I: 1,
+    V: 5,
+    X: 10,
+    L: 50,
+    C: 100,
+    D: 500,
+    M: 1000,
+  }
+
+  let total = 0
+  const upper = value.toUpperCase()
+  for (let index = 0; index < upper.length; index += 1) {
+    const current = romanValues[upper[index]] ?? 0
+    const next = romanValues[upper[index + 1]] ?? 0
+    total += next > current ? -current : current
+  }
+  return total
+}
+
+function numberToRoman(value: number): string {
+  const numerals: Array<[number, string]> = [
+    [1000, 'M'],
+    [900, 'CM'],
+    [500, 'D'],
+    [400, 'CD'],
+    [100, 'C'],
+    [90, 'XC'],
+    [50, 'L'],
+    [40, 'XL'],
+    [10, 'X'],
+    [9, 'IX'],
+    [5, 'V'],
+    [4, 'IV'],
+    [1, 'I'],
+  ]
+
+  let remaining = value
+  let output = ''
+  for (const [amount, roman] of numerals) {
+    while (remaining >= amount) {
+      output += roman
+      remaining -= amount
+    }
+  }
+  return output
+}
+
+function getExpectedRomanVariants(name: string): string[] {
+  const group = name.match(/\(([^)]*)\)/)?.[1]
+  if (!group || !/^[IVXLCDM,\s-]+$/i.test(group)) return []
+
+  const rangeMatch = group.match(/^\s*([IVXLCDM]+)\s*-\s*([IVXLCDM]+)\s*$/i)
+  if (rangeMatch) {
+    const start = romanToNumber(rangeMatch[1])
+    const end = romanToNumber(rangeMatch[2])
+    if (!start || !end || end < start) return []
+    return Array.from({ length: end - start + 1 }, (_, index) => numberToRoman(start + index))
+  }
+
+  return group
+    .split(',')
+    .map(value => value.trim().toUpperCase())
+    .filter(value => /^[IVXLCDM]+$/.test(value))
+}
+
 function allSame<T>(values: T[]): boolean {
   if (values.length <= 1) return true
   return values.every(value => JSON.stringify(value) === JSON.stringify(values[0]))
@@ -703,6 +812,7 @@ function getAccessoryVariantCompletenessScore(variant: Accessory): number {
     variant.rarity,
     variant.itemType,
     variant.equipSpot,
+    variant.modifies,
     variant.category,
     variant.imageUrl,
     variant.description,
@@ -762,6 +872,7 @@ function enrichAccessorySiblingVariants(variants: Accessory[]): Accessory[] {
       rarity: variant.rarity ?? primary.rarity,
       itemType: variant.itemType ?? primary.itemType,
       equipSpot: variant.equipSpot ?? primary.equipSpot,
+      modifies: variant.modifies ?? primary.modifies,
       category: variant.category ?? primary.category,
       notes:
         variant.notes && primary.notes && variant.notes !== primary.notes
@@ -819,7 +930,9 @@ function buildAccessoryEntry(
   }
   const obtainMethods = parseObtainMethods(html).map(method => ({
     ...method,
-    daRequired: method.daRequired || textSignals.daRequired,
+    daRequired: method.daRequired || flags.daRequired || textSignals.daRequired,
+    ...(flags.dcRequired || method.dcRequired ? { dcRequired: true } : {}),
+    ...(flags.dmRequired || method.dmRequired ? { dmRequired: true } : {}),
   }))
   const explicitElement =
     parseHtmlField(html, ['Element']) ??
@@ -836,7 +949,9 @@ function buildAccessoryEntry(
   const rarityValue = parseHtmlField(html, ['Rarity']) ?? parseFieldValue(normalizedText, ['Rarity'])
   const itemTypeValue = parseHtmlField(html, ['Item Type']) ?? parseFieldValue(normalizedText, ['Item Type'])
   const equipSpotValue = parseHtmlField(html, ['Equip Spot', 'Equip Slot']) ?? parseFieldValue(normalizedText, ['Equip Spot', 'Equip Slot'])
+  const modifiesValue = parseHtmlField(html, ['Modifies']) ?? parseFieldValue(normalizedText, ['Modifies'])
   const categoryValue = parseHtmlField(html, ['Category']) ?? parseFieldValue(normalizedText, ['Category'])
+  const imageOverride = getAccessoryImageOverride(override?.name ?? stub.name)
 
   return {
     id: `accessory-${slugify(override?.name ?? stub.name)}`,
@@ -847,7 +962,7 @@ function buildAccessoryEntry(
     description: parseDescription(html),
     forumUrl: override?.forumUrl ?? stub.forumUrl,
     releaseDate: '',
-    ...(images.imageUrl ? { imageUrl: images.imageUrl } : {}),
+    ...(imageOverride || images.imageUrl ? { imageUrl: imageOverride ?? images.imageUrl } : {}),
     ...(images.alternativeImages ? { alternativeImages: images.alternativeImages } : {}),
     elements: parsedElements,
     ...(levelValue ? { level: levelValue } : {}),
@@ -858,6 +973,7 @@ function buildAccessoryEntry(
     ...(rarityValue ? { rarity: rarityValue } : {}),
     ...(itemTypeValue ? { itemType: itemTypeValue } : {}),
     ...(equipSpotValue ? { equipSpot: equipSpotValue } : {}),
+    ...(modifiesValue ? { modifies: modifiesValue } : {}),
     ...(categoryValue ? { category: categoryValue } : {}),
     obtainMethods,
     ...(parseNotes(html) ? { notes: parseNotes(html) } : {}),
@@ -865,9 +981,9 @@ function buildAccessoryEntry(
       ...parsedElements.map(code => code.toLowerCase()),
       ...(primaryPriceType ? [primaryPriceType] : []),
     ],
-    daRequired: textSignals.daRequired || obtainMethods.some(method => method.daRequired),
-    ...(obtainMethods.some(method => method.dcRequired) ? { dcRequired: true } : {}),
-    ...(obtainMethods.some(method => method.dmRequired) ? { dmRequired: true } : {}),
+    daRequired: flags.daRequired || textSignals.daRequired || obtainMethods.some(method => method.daRequired),
+    ...(flags.dcRequired || obtainMethods.some(method => method.dcRequired) ? { dcRequired: true } : {}),
+    ...(flags.dmRequired || obtainMethods.some(method => method.dmRequired) ? { dmRequired: true } : {}),
     ...(flags.isTemp ? { isTemp: true } : {}),
     ...(flags.isRare ? { isRare: true } : {}),
     ...(flags.isSeasonal ? { isSeasonal: true } : {}),
@@ -876,8 +992,8 @@ function buildAccessoryEntry(
   }
 }
 
-async function enrichTrinketAbility(entry: Accessory, cookie: string): Promise<Accessory> {
-  if (entry.subtype !== 'trinket' || !entry.abilityUrl) return entry
+async function enrichAccessoryAbility(entry: Accessory, cookie: string): Promise<Accessory> {
+  if (!entry.abilityUrl) return entry
 
   const abilityMessageId = entry.abilityUrl.match(/m=(\d+)/i)?.[1]
   if (!abilityMessageId) return entry
@@ -900,6 +1016,8 @@ function buildAccessoryFamily(stub: AccessoryStub, variants: Accessory[]): Acces
     enrichAccessorySiblingVariants(variants)
   )
   const familyName = normalizeAccessoryFamilyName(stub.name)
+  const imageOverride = getAccessoryImageOverride(familyName)
+  const expectedRomanVariants = getExpectedRomanVariants(stub.name)
   const descriptions = uniqueStrings(consolidatedVariants.map(variant => variant.description).filter(Boolean))
   const resists = uniqueStrings(consolidatedVariants.map(variant => variant.resists).filter(Boolean))
   const abilities = uniqueStrings(consolidatedVariants.map(variant => variant.ability).filter(Boolean))
@@ -909,12 +1027,16 @@ function buildAccessoryFamily(stub: AccessoryStub, variants: Accessory[]): Acces
     .map(variant => variant.alternativeImages)
     .filter((value): value is NonNullable<Accessory['alternativeImages']> => Boolean(value))
   const rarities = uniqueStrings(consolidatedVariants.map(variant => variant.rarity).filter(Boolean))
+  const modifies = uniqueStrings(consolidatedVariants.map(variant => variant.modifies).filter(Boolean))
 
   const levelVariants: LevelVariant[] = consolidatedVariants
     .map((variant, index) => {
       const normalizedLevel = normalizeLevel(variant.level ?? String(index + 1))
       const actualLevel = parseNumericLevel(variant.level)
-      const variantName = deriveAccessoryVariantName(variant.name, familyName)
+      const derivedVariantName = deriveAccessoryVariantName(variant.name, familyName)
+      const variantName =
+        derivedVariantName ??
+        (expectedRomanVariants[0] === 'I' && variant.name.trim() === familyName ? 'I' : undefined)
       const displayLevel = String(actualLevel ?? normalizedLevel.display)
       const resolvedVariantName =
         variantName && variantName !== normalizedLevel.display && variantName !== displayLevel
@@ -969,13 +1091,14 @@ function buildAccessoryFamily(stub: AccessoryStub, variants: Accessory[]): Acces
       ...(resists.length === 1 ? { resists: resists[0] } : {}),
       ...(abilities.length === 1 ? { ability: abilities[0] } : {}),
       ...(attacks.length > 0 && allSame(attacks) ? { attacks: attacks[0] } : {}),
-      ...(images.length === 1 ? { imageUrl: images[0] } : {}),
+      ...(imageOverride || images.length === 1 ? { imageUrl: imageOverride ?? images[0] } : {}),
       ...(alternativeImages.length === 1 ? { alternativeImages: alternativeImages[0] } : {}),
       ...(rarities.length === 1 ? { rarity: rarities[0] } : {}),
     },
     levelVariants,
     itemType: consolidatedVariants.find(variant => variant.itemType)?.itemType,
     equipSlot: consolidatedVariants.find(variant => variant.equipSpot)?.equipSpot,
+    modifies: modifies.length === 1 ? modifies[0] : consolidatedVariants.find(variant => variant.modifies)?.modifies,
     category: consolidatedVariants.find(variant => variant.category)?.category,
     releaseDate: consolidatedVariants.find(variant => variant.releaseDate)?.releaseDate ?? '',
     tags: Array.from(new Set(consolidatedVariants.flatMap(variant => variant.tags))).sort(),
@@ -1016,10 +1139,30 @@ function extractThreadPostHtml(threadHtml: string): Map<string, string> {
   return posts
 }
 
+async function fetchThreadPages(messageId: string, cookie: string): Promise<string> {
+  const firstPageUrl = `${FORUM_BASE}/fb.asp?m=${messageId}`
+  const firstPageHtml = await fetchPage(firstPageUrl, cookie)
+  const pageNumbers = Array.from(
+    new Set(
+      [...firstPageHtml.matchAll(/\bmpage=(\d+)/gi)]
+        .map(match => Number.parseInt(match[1], 10))
+        .filter(pageNumber => pageNumber > 1)
+    )
+  ).sort((a, b) => a - b)
+
+  const additionalPages: string[] = []
+  for (const pageNumber of pageNumbers) {
+    additionalPages.push(await fetchPage(`${FORUM_BASE}/tm.asp?m=${messageId}&mpage=${pageNumber}`, cookie))
+    await sleep(250)
+  }
+
+  return [firstPageHtml, ...additionalPages].join('\n')
+}
+
 async function buildAccessoryOrFamily(stub: AccessoryStub, cookie: string): Promise<AccessoryEntry> {
   const shouldInspectThread = hasMultipleVersionHint(stub.name)
   if (shouldInspectThread) {
-    const threadHtml = await fetchPage(`${FORUM_BASE}/fb.asp?m=${stub.messageId}`, cookie)
+    const threadHtml = await fetchThreadPages(stub.messageId, cookie)
     const messageIds = Array.from(new Set([...threadHtml.matchAll(/<a\s+name=(\d+)\b/gi)].map(match => match[1])))
     const postHtmlById = extractThreadPostHtml(threadHtml)
     const variants: Accessory[] = []
@@ -1035,7 +1178,7 @@ async function buildAccessoryOrFamily(stub: AccessoryStub, cookie: string): Prom
       const title = parseAccessoryTitle(html)
       if (!title) continue
 
-      const variant = await enrichTrinketAbility(
+      const variant = await enrichAccessoryAbility(
         buildAccessoryEntry(stub, html, {
           name: title,
           forumUrl: `${FORUM_BASE}/fb.asp?m=${messageId}`,
@@ -1055,20 +1198,26 @@ async function buildAccessoryOrFamily(stub: AccessoryStub, cookie: string): Prom
 
   const html = await fetchPostContent(stub.messageId, cookie)
   const title = parseAccessoryTitle(html)
-  return enrichTrinketAbility(
-    buildAccessoryEntry(stub, html, title ? { name: title } : undefined),
+  const resolvedTitle =
+    title && /\(Retired\)/i.test(stub.name) && !/\(Retired\)/i.test(title)
+      ? `${title} (Retired)`
+      : title
+  return enrichAccessoryAbility(
+    buildAccessoryEntry(stub, html, resolvedTitle ? { name: resolvedTitle } : undefined),
     cookie
   )
 }
 
 async function fetchPage(url: string, cookie: string): Promise<string> {
-  const response = await fetch(url, {
-    headers: {
-      Cookie: cookie,
-      'User-Agent': 'Mozilla/5.0',
-      Accept: 'text/html,application/xhtml+xml',
-    },
-  })
+  const response = await withRetry(url, () =>
+    fetch(url, {
+      headers: {
+        Cookie: cookie,
+        'User-Agent': 'Mozilla/5.0',
+        Accept: 'text/html,application/xhtml+xml',
+      },
+    })
+  )
 
   if (!response.ok) {
     throw new Error(`HTTP ${response.status}: ${url}`)
@@ -1095,7 +1244,7 @@ function extractReplyPostContent(html: string, messageId: string): string {
 
 async function fetchPostContent(messageId: string, cookie: string): Promise<string> {
   try {
-    return getPostContent(await fetchPrintable(messageId, cookie))
+    return getPostContent(await withRetry(`printable ${messageId}`, () => fetchPrintable(messageId, cookie)))
   } catch (error) {
     if (!(error instanceof Error) || !/HTTP 500/i.test(error.message)) {
       throw error

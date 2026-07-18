@@ -1,1 +1,2356 @@
-[]
+[
+  {
+    "id": "accessory-baltael-s-aventail",
+    "familyName": "Baltael's Aventail",
+    "slug": "accessory-baltael-s-aventail",
+    "aliasSlugs": [
+      "accessory-baltael-s-aventail-str-i",
+      "accessory-baltael-s-aventail-dex-i",
+      "accessory-baltael-s-aventail-int-i",
+      "accessory-baltael-s-aventail-luk-cha-i",
+      "accessory-baltael-s-aventail-end-wis-i",
+      "accessory-baltael-s-aventail-skilled",
+      "accessory-baltael-s-aventail-str-ii",
+      "accessory-baltael-s-aventail-dex-ii",
+      "accessory-baltael-s-aventail-int-ii",
+      "accessory-baltael-s-aventail-luk-cha-ii",
+      "accessory-baltael-s-aventail-end-wis-ii",
+      "accessory-baltael-s-aventail-master",
+      "accessory-baltael-s-aventail-synched"
+    ],
+    "type": "accessory",
+    "subtype": "artifact",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21779920",
+    "familyOrigin": "same-thread-multi-post",
+    "familySources": [
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=21779920",
+        "title": "DF Encyclopedia: Baltael's Aventail (STR) I",
+        "variantLabel": "Baltael's Aventail (STR) I",
+        "isPrimary": true
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=21779921",
+        "title": "DF Encyclopedia: Baltael's Aventail (DEX) I",
+        "variantLabel": "Baltael's Aventail (DEX) I",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=21779922",
+        "title": "DF Encyclopedia: Baltael's Aventail (INT) I",
+        "variantLabel": "Baltael's Aventail (INT) I",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=21779924",
+        "title": "DF Encyclopedia: Baltael's Aventail (LUK/CHA) I",
+        "variantLabel": "Baltael's Aventail (LUK/CHA) I",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=21779925",
+        "title": "DF Encyclopedia: Baltael's Aventail (END/WIS) I",
+        "variantLabel": "Baltael's Aventail (END/WIS) I",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=21779930",
+        "title": "DF Encyclopedia: Baltael's Aventail (Skilled)",
+        "variantLabel": "Baltael's Aventail (Skilled)",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=21779931",
+        "title": "DF Encyclopedia: Baltael's Aventail (STR) II",
+        "variantLabel": "Baltael's Aventail (STR) II",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=21779932",
+        "title": "DF Encyclopedia: Baltael's Aventail (DEX) II",
+        "variantLabel": "Baltael's Aventail (DEX) II",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=21779933",
+        "title": "DF Encyclopedia: Baltael's Aventail (INT) II",
+        "variantLabel": "Baltael's Aventail (INT) II",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=21779934",
+        "title": "DF Encyclopedia: Baltael's Aventail (LUK/CHA) II",
+        "variantLabel": "Baltael's Aventail (LUK/CHA) II",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=21779936",
+        "title": "DF Encyclopedia: Baltael's Aventail (END/WIS) II",
+        "variantLabel": "Baltael's Aventail (END/WIS) II",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22418105",
+        "title": "DF Encyclopedia: Baltael's Aventail (Master)",
+        "variantLabel": "Baltael's Aventail (Master)",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22418106",
+        "title": "DF Encyclopedia: Baltael's Aventail (Synched)",
+        "variantLabel": "Baltael's Aventail (Synched)",
+        "isPrimary": false
+      }
+    ],
+    "shared": {
+      "description": "This helm once belonged to Baltael, the first SoulWeaver. The power it bestows shows you how to fully Synchronize with Aegis, enhancing your Soul Aegis's defensive power, SoulSynch's number of hits, and Retribution's damage.",
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/Baltael'sAventail.png",
+      "rarity": "100"
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 60,
+        "levelDisplay": "60",
+        "actualLevel": 60,
+        "variantName": "(DEX) I",
+        "name": "Baltael's Aventail (DEX) I",
+        "damage": "",
+        "stats": "Crit +4, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +2, END +2, DEX +9, Bonus +5",
+        "obtainVariants": [
+          {
+            "location": "Baltael's Aventail (Shop)",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "0 Gold",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21779921",
+        "description": "This helm once belonged to Baltael, the first SoulWeaver. The power it bestows shows you how to fully Synchronize with Aegis, enhancing your Soul Aegis's defensive power, SoulSynch's number of hits, and Retribution's damage.",
+        "element": "NON",
+        "resists": "All +5, Health -5, Immobility +5, Light +3, Water +3",
+        "rarity": "100",
+        "notes": "• Helm initially have +5 Light, +5 Water Resists."
+      },
+      {
+        "levelNumber": 60,
+        "levelDisplay": "60",
+        "actualLevel": 60,
+        "variantName": "(END/WIS) I",
+        "name": "Baltael's Aventail (END/WIS) I",
+        "damage": "",
+        "stats": "Block +5, Dodge +5, Parry +5, Crit +4, Magic Def +10, Pierce Def +10, Melee Def +10, WIS +10, END +10, INT +2, DEX +2, STR +2, Bonus +4",
+        "obtainVariants": [
+          {
+            "location": "Baltael's Aventail (Shop)",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "0 Gold",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21779925",
+        "description": "This helm once belonged to Baltael, the first SoulWeaver. The power it bestows shows you how to fully Synchronize with Aegis, enhancing your Soul Aegis's defensive power, SoulSynch's number of hits, and Retribution's damage.",
+        "element": "NON",
+        "resists": "All +5, Health -5, Immobility +5, Light +3, Water +3",
+        "rarity": "100",
+        "notes": "• Helm initially have +8 Light, +8 Water Resists."
+      },
+      {
+        "levelNumber": 60,
+        "levelDisplay": "60",
+        "actualLevel": 60,
+        "variantName": "(INT) I",
+        "name": "Baltael's Aventail (INT) I",
+        "damage": "",
+        "stats": "Crit +4, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +2, END +2, INT +9, Bonus +5",
+        "obtainVariants": [
+          {
+            "location": "Baltael's Aventail (Shop)",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "0 Gold",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21779922",
+        "description": "This helm once belonged to Baltael, the first SoulWeaver. The power it bestows shows you how to fully Synchronize with Aegis, enhancing your Soul Aegis's defensive power, SoulSynch's number of hits, and Retribution's damage.",
+        "element": "NON",
+        "resists": "All +5, Health -5, Immobility +5, Light +3, Water +3",
+        "rarity": "100",
+        "notes": "• Helm initially have +5 Light, +5 Water Resists."
+      },
+      {
+        "levelNumber": 60,
+        "levelDisplay": "60",
+        "actualLevel": 60,
+        "variantName": "(LUK/CHA) I",
+        "name": "Baltael's Aventail (LUK/CHA) I",
+        "damage": "",
+        "stats": "Crit +4, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +7, END +6, CHA +15, LUK +15, INT +2, DEX +2, STR +2, Bonus +4",
+        "obtainVariants": [
+          {
+            "location": "Baltael's Aventail (Shop)",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "0 Gold",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21779924",
+        "description": "This helm once belonged to Baltael, the first SoulWeaver. The power it bestows shows you how to fully Synchronize with Aegis, enhancing your Soul Aegis's defensive power, SoulSynch's number of hits, and Retribution's damage.",
+        "element": "NON",
+        "resists": "All +5, Health -5, Immobility +5, Light +3, Water +3",
+        "rarity": "100",
+        "notes": "• Helm initially have +4 Light, +4 Water Resists."
+      },
+      {
+        "levelNumber": 60,
+        "levelDisplay": "60",
+        "actualLevel": 60,
+        "variantName": "(STR) I",
+        "name": "Baltael's Aventail (STR) I",
+        "damage": "",
+        "stats": "Crit +4, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +2, END +2, STR +9, Bonus +5",
+        "obtainVariants": [
+          {
+            "location": "Baltael's Aventail (Shop)",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "0 Gold",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21779920",
+        "description": "This helm once belonged to Baltael, the first SoulWeaver. The power it bestows shows you how to fully Synchronize with Aegis, enhancing your Soul Aegis's defensive power, SoulSynch's number of hits, and Retribution's damage.",
+        "element": "NON",
+        "resists": "All +5, Health -5, Immobility +5, Light +3, Water +3",
+        "rarity": "100",
+        "notes": "• Helm initially have +5 Light, +5 Water Resists."
+      },
+      {
+        "levelNumber": 65,
+        "levelDisplay": "65",
+        "actualLevel": 65,
+        "variantName": "(Skilled)",
+        "name": "Baltael's Aventail (Skilled)",
+        "damage": "",
+        "stats": "Block +5, Dodge +5, Parry +5, Crit +3, Magic Def +10, Pierce Def +10, Melee Def +10, WIS +10, END +10, CHA +5, LUK +5, INT +7, DEX +7, STR +7, Bonus +6",
+        "obtainVariants": [
+          {
+            "location": "Baltael's Aventail (Shop)",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "0 Gold",
+            "daRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21779930",
+        "description": "This helm once belonged to Baltael, the first SoulWeaver. The power it bestows shows you how to fully Synchronize with Aegis, enhancing your Soul Aegis's defensive power, SoulSynch's number of hits, and Retribution's damage. Requires a Dragon Amulet.",
+        "element": "NON",
+        "resists": "All +5, Health -5, Immobility +3, Light +3, Water +3",
+        "rarity": "100"
+      },
+      {
+        "levelNumber": 80,
+        "levelDisplay": "80",
+        "actualLevel": 80,
+        "variantName": "(DEX) II",
+        "name": "Baltael's Aventail (DEX) II",
+        "damage": "",
+        "stats": "Crit +6, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +6, END +5, DEX +15, Bonus +5",
+        "obtainVariants": [
+          {
+            "location": "Baltael's Aventail (Shop)",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "0 Gold",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21779932",
+        "description": "This helm once belonged to Baltael, the first SoulWeaver. The power it bestows shows you how to fully Synchronize with Aegis, enhancing your Soul Aegis's defensive power, SoulSynch's number of hits, and Retribution's damage.",
+        "element": "NON",
+        "resists": "All +7, Health -7, Immobility +7, Light +3, Water +3",
+        "rarity": "100",
+        "notes": "• Helm initially have +8 Light, +8 Water Resists."
+      },
+      {
+        "levelNumber": 80,
+        "levelDisplay": "80",
+        "actualLevel": 80,
+        "variantName": "(END/WIS) II",
+        "name": "Baltael's Aventail (END/WIS) II",
+        "damage": "",
+        "stats": "Block +8, Dodge +8, Parry +8, Crit +5, Magic Def +14, Pierce Def +14, Melee Def +14, WIS +20, END +20, INT +3, DEX +3, STR +3, Bonus +5",
+        "obtainVariants": [
+          {
+            "location": "Baltael's Aventail (Shop)",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "0 Gold",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21779936",
+        "description": "This helm once belonged to Baltael, the first SoulWeaver. The power it bestows shows you how to fully Synchronize with Aegis, enhancing your Soul Aegis's defensive power, SoulSynch's number of hits, and Retribution's damage.",
+        "element": "NON",
+        "resists": "All +7, Health -7, Immobility +7, Light +3, Water +3",
+        "rarity": "100",
+        "notes": "• Helm initially have +14 Light, +14 Water Resists."
+      },
+      {
+        "levelNumber": 80,
+        "levelDisplay": "80",
+        "actualLevel": 80,
+        "variantName": "(INT) II",
+        "name": "Baltael's Aventail (INT) II",
+        "damage": "",
+        "stats": "Crit +6, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +6, END +5, INT +15, Bonus +5",
+        "obtainVariants": [
+          {
+            "location": "Baltael's Aventail (Shop)",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "0 Gold",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21779933",
+        "description": "This helm once belonged to Baltael, the first SoulWeaver. The power it bestows shows you how to fully Synchronize with Aegis, enhancing your Soul Aegis's defensive power, SoulSynch's number of hits, and Retribution's damage.",
+        "element": "NON",
+        "resists": "All +7, Health -7, Immobility +7, Light +3, Water +3",
+        "rarity": "100",
+        "notes": "• Helm initially have +8 Light, +8 Water Resists."
+      },
+      {
+        "levelNumber": 80,
+        "levelDisplay": "80",
+        "actualLevel": 80,
+        "variantName": "(LUK/CHA) II",
+        "name": "Baltael's Aventail (LUK/CHA) II",
+        "damage": "",
+        "stats": "Crit +6, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +7, END +6, CHA +25, LUK +25, INT +3, DEX +3, STR +3, Bonus +5",
+        "obtainVariants": [
+          {
+            "location": "Baltael's Aventail (Shop)",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "0 Gold",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21779934",
+        "description": "This helm once belonged to Baltael, the first SoulWeaver. The power it bestows shows you how to fully Synchronize with Aegis, enhancing your Soul Aegis's defensive power, SoulSynch's number of hits, and Retribution's damage.",
+        "element": "NON",
+        "resists": "All +7, Health -7, Immobility +7, Light +3, Water +3",
+        "rarity": "100",
+        "notes": "• Helm initially have +8 Light, +8 Water Resists."
+      },
+      {
+        "levelNumber": 80,
+        "levelDisplay": "80",
+        "actualLevel": 80,
+        "variantName": "(STR) II",
+        "name": "Baltael's Aventail (STR) II",
+        "damage": "",
+        "stats": "Crit +6, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +6, END +5, STR +15, Bonus +5",
+        "obtainVariants": [
+          {
+            "location": "Baltael's Aventail (Shop)",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "0 Gold",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21779931",
+        "description": "This helm once belonged to Baltael, the first SoulWeaver. The power it bestows shows you how to fully Synchronize with Aegis, enhancing your Soul Aegis's defensive power, SoulSynch's number of hits, and Retribution's damage.",
+        "element": "NON",
+        "resists": "All +7, Health -7, Immobility +7, Light +3, Water +3",
+        "rarity": "100",
+        "notes": "• Helm initially have +8 Light, +8 Water Resists."
+      },
+      {
+        "levelNumber": 85,
+        "levelDisplay": "85",
+        "actualLevel": 85,
+        "variantName": "(Master)",
+        "name": "Baltael's Aventail (Master)",
+        "damage": "",
+        "stats": "Block +8, Dodge +8, Parry +8, Crit +5, Magic Def +14, Pierce Def +14, Melee Def +14, WIS +20, END +20, CHA +10, LUK +10, INT +9, DEX +9, STR +9, Bonus +7",
+        "obtainVariants": [
+          {
+            "location": "Baltael's Aventail (Shop)",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "0 Gold",
+            "daRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22418105",
+        "description": "This helm once belonged to Baltael, the first SoulWeaver. The power it bestows shows you how to fully Synchronize with Aegis, enhancing your Soul Aegis's defensive power, SoulSynch's number of hits, and Retribution's damage. Requires a Dragon Amulet.",
+        "element": "NON",
+        "resists": "All +7, Health -7, Immobility +5, Light +7, Water +7",
+        "rarity": "100"
+      },
+      {
+        "levelNumber": 90,
+        "levelDisplay": "90",
+        "actualLevel": 90,
+        "variantName": "(Synched)",
+        "name": "Baltael's Aventail (Synched)",
+        "damage": "",
+        "stats": "Block +10, Dodge +10, Parry +10, Crit +10, Magic Def +14, Pierce Def +14, Melee Def +14, WIS +20, END +20, CHA +15, LUK +15, INT +10, DEX +10, STR +10, Bonus +10",
+        "obtainVariants": [
+          {
+            "location": "Unwavering Determination (Shop)",
+            "price": "N/A",
+            "priceType": "merge",
+            "sellback": "0 Gold",
+            "requiredItems": "1 Baltael's Aventail (Skilled) & 1 Headmaster's Soul Looms OR 1 Baltael's Aventail (Master) & 1 Headmaster's Soul Looms",
+            "daRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22418106",
+        "description": "This helm once belonged to Baltael, the first SoulWeaver. The power it bestows shows you how to fully Synchronize with Aegis. Proof of victory over the Unwavering Determination challenge. Requires a Dragon Amulet.",
+        "element": "NON",
+        "resists": "All +7, Health -7, Immobility +7, Light +7, Water +7",
+        "rarity": "100"
+      }
+    ],
+    "itemType": "Artifact",
+    "equipSlot": "Head",
+    "modifies": "SoulWeaver",
+    "category": "Armor",
+    "releaseDate": "",
+    "tags": [
+      "free",
+      "merge",
+      "non"
+    ],
+    "hasDA": true,
+    "hasDC": false,
+    "hasDM": false,
+    "hasFree": true,
+    "hasMerge": true,
+    "levelRange": "60-90",
+    "elements": [
+      "NON"
+    ]
+  },
+  {
+    "id": "accessory-cloak-scrap",
+    "name": "Cloak Scrap",
+    "slug": "accessory-cloak-scrap",
+    "type": "accessory",
+    "subtype": "artifact",
+    "description": "A darkness swirls around this small scrap of black cloth... it almost seems to pull in the shadows around you.",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21834946",
+    "releaseDate": "",
+    "elements": [
+      "EVI"
+    ],
+    "level": "1",
+    "stats": "Crit +4, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +2, END +2, INT +6, DEX +6, STR +6, Bonus +5",
+    "resists": "Light +5, Darkness +5",
+    "rarity": "100",
+    "itemType": "Artifact",
+    "equipSpot": "Neck",
+    "modifies": "Warrior, Mage, Rogue, Ancient Shadow Warrior, Ancient Shadow Mage, Ancient Shadow Rogue, Shadow Warrior, Shadow Mage, Shadow Rogue",
+    "category": "Armor",
+    "obtainMethods": [
+      {
+        "location": "The Evil Artifact",
+        "price": "N/A",
+        "priceType": "free",
+        "sellback": "0 Gold",
+        "daRequired": false
+      }
+    ],
+    "notes": "• Item is one of the 13 cursed items from Artix Entertainment's 12th Anniversary  Curse of the Phantom Pixel special event. \n• Item occupies the player's necklace slot when equipped. \n• Item unlocks additional dialogue during the quest  Caitiff if in the player's inventory.",
+    "tags": [
+      "evi",
+      "free"
+    ],
+    "daRequired": false
+  },
+  {
+    "id": "accessory-corrupted-doom-cassette",
+    "name": "Corrupted Doom Cassette",
+    "slug": "accessory-corrupted-doom-cassette",
+    "type": "accessory",
+    "subtype": "artifact",
+    "description": "This gnarly old cassette tape radiates with the corrupting glow of Doom! The 2019 artifact for the Epoch class!",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22349968",
+    "releaseDate": "",
+    "elements": [
+      "EVI"
+    ],
+    "level": "1",
+    "stats": "Crit +5, WIS +1, END +1, CHA +1, LUK +1, INT +1, DEX +1, STR +1, Bonus +5",
+    "resists": "All +1",
+    "rarity": "0",
+    "itemType": "Artifact",
+    "equipSpot": "Wrist",
+    "modifies": "Epoch",
+    "category": "Armor",
+    "obtainMethods": [
+      {
+        "location": "Redeem the code received from purchasing the AE 2019 Calendar from HeroMart",
+        "price": "$19.95 USD (Standard) / $29.95 USD (Collector's Edition) + Postage",
+        "priceType": "gold",
+        "sellback": "N/A",
+        "daRequired": false,
+        "dcRequired": true
+      }
+    ],
+    "notes": "• Item cannot be destroyed. \n• Item occupies the player's bracer slot when equipped. \n• Item modified  Epoch as Corrupted Doom Epoch on  March 15th, 2019.",
+    "tags": [
+      "evi",
+      "gold"
+    ],
+    "daRequired": false,
+    "dcRequired": true,
+    "isRare": true,
+    "isSpecialOffer": true
+  },
+  {
+    "id": "accessory-draconic-glowtooth",
+    "name": "Draconic Glowtooth",
+    "slug": "accessory-draconic-glowtooth",
+    "type": "accessory",
+    "subtype": "artifact",
+    "description": "This brightly glowing dragon's tooth seems to slot into the gauntlet of the Epoch armor. The 2021 artifact for the Epoch class!",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22387135",
+    "releaseDate": "",
+    "elements": [
+      "LIG"
+    ],
+    "level": "1",
+    "stats": "Crit +5, WIS +1, END +1, CHA +1, LUK +1, INT +1, DEX +1, STR +1, Bonus +5",
+    "resists": "All +1",
+    "rarity": "0",
+    "itemType": "Artifact",
+    "equipSpot": "Wrist",
+    "modifies": "Epoch",
+    "category": "Armor",
+    "obtainMethods": [
+      {
+        "location": "Redeem the code received from purchasing the AE 2021 Calendar from HeroMart",
+        "price": "$19.95 USD (2021 Standard) / $29.95 USD (2021 Collector's Edition) / $24.95-34.95 USD (2025) + Postage",
+        "priceType": "gold",
+        "sellback": "N/A",
+        "daRequired": false,
+        "dcRequired": true
+      }
+    ],
+    "notes": "• Item cannot be destroyed. \n• Item occupies the player's bracer slot when equipped. \n• Item modified  Epoch as DragonByte Epoch on  February 5th, 2021.",
+    "tags": [
+      "lig",
+      "gold"
+    ],
+    "daRequired": false,
+    "dcRequired": true,
+    "isSpecialOffer": true
+  },
+  {
+    "id": "accessory-dragon-s-bulwark",
+    "name": "Dragon's Bulwark",
+    "slug": "accessory-dragon-s-bulwark",
+    "type": "accessory",
+    "subtype": "artifact",
+    "description": "This small blue sphere spins with power. When close to a Dragon Amulet, the sphere glows brighter. This trinket raises the power of a defensive DragonLord. This item requires a Dragon Amulet to use.",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22393345",
+    "releaseDate": "",
+    "elements": [
+      "GOO"
+    ],
+    "level": "55",
+    "stats": "Block +5, Dodge +5, Parry +5, Crit +5, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +15, END +15, INT +6, DEX +6, STR +6, Bonus +5",
+    "resists": "Light +5, Darkness +5, All +3, Health -3",
+    "ability": "DragonLord's Patience",
+    "abilityUrl": "https://forums2.battleon.com/f/tm.asp?m=22422447",
+    "rarity": "100",
+    "itemType": "Artifact",
+    "equipSpot": "Trinket",
+    "modifies": "DragonLord",
+    "category": "Armor",
+    "obtainMethods": [
+      {
+        "location": "DragonLord Artifacts",
+        "price": "N/A",
+        "priceType": "merge",
+        "sellback": "32,500 Gold",
+        "requiredItems": "1 Dragon's Patience (D-Amulet) & 1 Dragoncore Stone OR 1 Dragon's Patience (D-Amulet) & 1 Dragoncore Crystal",
+        "daRequired": true
+      },
+      {
+        "location": "DragonLord Artifacts",
+        "price": "N/A",
+        "priceType": "merge",
+        "sellback": "0 Dragon Coins",
+        "requiredItems": "1 Dragon's Patience (D-Amulet/D-Coins) & 1 Dragoncore Crystal OR 1 Dragon's Patience (D-Amulet/D-Coins) & 1 Dragoncore Stone",
+        "daRequired": true
+      }
+    ],
+    "notes": "• Item occupies the player's trinket slot when equipped. \n• Gold and DC versions of this item initially had the sellback values of 32,500 Gold and 188 Dragon Coins respectively. \n• The Dragoncore Stone only upgraded the Gold version and the Dragoncore Crystal only upgraded the DC version between  August 6th, 2021 and  September 6th, 2024, when merge compatibility for all versions was added. \n• Equipping this artifact trinket automatically changes the appearance of any  Visage of the Dragon helm equipped or shown. \n• A trinket skill was added on  June 20th, 2025.",
+    "tags": [
+      "goo",
+      "merge"
+    ],
+    "daRequired": true,
+    "attacks": [
+      {
+        "name": "DragonLord's Patience",
+        "description": "1 hit x 150% damage \n Self: +5 Bonus for the rest of the battle. | Self: +10 Bonus for the rest of the battle. \n Fills DragonLord Spirit and Body.",
+        "requirements": "Dragon's Patience / Dragon's Bulwark equipped",
+        "effect": "Permanently applies 'Dragon's Patience' (+5 Bonus) to player; 1 hit of 150% damage.\n  • If the player equipped  Patience DragonLord, 'Dragon's Patience' is raised to +10 Bonus.\n  • If the player equipped  Bulwark DragonLord, instead permanently applies 'Dragon's Bulwark' (+10 Bonus) and completely fills Dragon's Body and Dragon's Spirit charges.\n• If the player equipped  Bulwark DragonLord, the skill's name instead says 'DragonLord's Bulwark' and its  label is replaced by 'Bulwark'.\n• Fills DragonLord Spirit and Body. tooltip is exclusive to  Bulwark DragonLord.",
+        "manaCost": "20",
+        "cooldown": "19 - [(Player LUK/50), rounded down]",
+        "damageType": "As weapon",
+        "element": "As weapon",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-DragonLord'sPatience.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-DragonLord'sPatienceBulwark-Appearance.png"
+      }
+    ]
+  },
+  {
+    "id": "accessory-dragon-s-patience",
+    "name": "Dragon's Patience",
+    "slug": "accessory-dragon-s-patience",
+    "type": "accessory",
+    "subtype": "artifact",
+    "description": "This small blue sphere swirls with energy. When close to a Dragon Amulet, the energy starts to glow. This trinket raises the power of a defensive DragonLord. This item requires a Dragon Amulet to use. (Gold)",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22265929",
+    "releaseDate": "",
+    "elements": [
+      "GOO"
+    ],
+    "level": "25",
+    "stats": "Crit +4, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +2, END +2, INT +6, DEX +6, STR +6, Bonus +5",
+    "resists": "Light +5, Darkness +5",
+    "ability": "DragonLord's Patience",
+    "abilityUrl": "https://forums2.battleon.com/f/tm.asp?m=22422447",
+    "rarity": "100",
+    "itemType": "Artifact",
+    "equipSpot": "Trinket",
+    "modifies": "DragonLord",
+    "category": "Armor",
+    "obtainMethods": [
+      {
+        "location": "DragonLord Artifacts",
+        "price": "25,000 Gold",
+        "priceType": "gold",
+        "sellback": "2,500 Gold",
+        "daRequired": true
+      },
+      {
+        "location": "DragonLord Artifacts",
+        "price": "250 Dragon Coins",
+        "priceType": "dc",
+        "sellback": "225 Dragon Coins before 24 hours, 63 Dragon Coins after 24 hours",
+        "daRequired": true,
+        "dcRequired": true
+      }
+    ],
+    "notes": "• Item occupies the player's trinket slot when equipped. \n• Previously only required players to be Level 1 to equip this artifact trinket; this was changed to Level 25 on  June 25th, 2021. \n• The prices of both Gold and DC versions of this item were originally priced at 325,000 Gold and 750 Dragon Coins, with a sellback of 32,500 Gold and 675 Dragon Coins before 24 hours, 188 Dragon Coins after 24 hours respectively; this was changed to 25,000 Gold and 250 Dragon Coins, with the remaining 300,000 Gold and 500 Dragon Coins transposed to  Dragoncore Stone and  Dragoncore Crystal respectively, on  August 6th, 2021. \n• Equipping this artifact trinket automatically changes the appearance of any  Visage of the Dragon helm equipped or shown. \n• Both Gold and Dragon Coins descriptions of this item were updated to differentiate both versions on  September 6th, 2024. \n• A trinket skill was added on  June 20th, 2025.",
+    "tags": [
+      "goo",
+      "gold"
+    ],
+    "daRequired": true,
+    "dcRequired": true,
+    "attacks": [
+      {
+        "name": "DragonLord's Patience",
+        "description": "1 hit x 150% damage \n Self: +5 Bonus for the rest of the battle. | Self: +10 Bonus for the rest of the battle. \n Fills DragonLord Spirit and Body.",
+        "requirements": "Dragon's Patience / Dragon's Bulwark equipped",
+        "effect": "Permanently applies 'Dragon's Patience' (+5 Bonus) to player; 1 hit of 150% damage.\n  • If the player equipped  Patience DragonLord, 'Dragon's Patience' is raised to +10 Bonus.\n  • If the player equipped  Bulwark DragonLord, instead permanently applies 'Dragon's Bulwark' (+10 Bonus) and completely fills Dragon's Body and Dragon's Spirit charges.\n• If the player equipped  Bulwark DragonLord, the skill's name instead says 'DragonLord's Bulwark' and its  label is replaced by 'Bulwark'.\n• Fills DragonLord Spirit and Body. tooltip is exclusive to  Bulwark DragonLord.",
+        "manaCost": "20",
+        "cooldown": "19 - [(Player LUK/50), rounded down]",
+        "damageType": "As weapon",
+        "element": "As weapon",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-DragonLord'sPatience.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-DragonLord'sPatienceBulwark-Appearance.png"
+      }
+    ]
+  },
+  {
+    "id": "accessory-dragon-s-rage",
+    "name": "Dragon's Rage",
+    "slug": "accessory-dragon-s-rage",
+    "type": "accessory",
+    "subtype": "artifact",
+    "description": "This small purple sphere shudders with power. It resonates with Dragon Amulets to increase the offensive power of DragonLords at the cost of defensive ability. This item requires a Dragon Amulet to use. (Gold)",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22265952",
+    "releaseDate": "",
+    "elements": [
+      "GOO"
+    ],
+    "level": "25",
+    "stats": "Crit +4, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +2, END +2, INT +6, DEX +6, STR +6, Bonus +5",
+    "resists": "Light +5, Darkness +5",
+    "ability": "DragonLord's Rage",
+    "abilityUrl": "https://forums2.battleon.com/f/tm.asp?m=22422448",
+    "rarity": "100",
+    "itemType": "Artifact",
+    "equipSpot": "Trinket",
+    "modifies": "DragonLord",
+    "category": "Armor",
+    "obtainMethods": [
+      {
+        "location": "DragonLord Artifacts",
+        "price": "25,000 Gold",
+        "priceType": "gold",
+        "sellback": "2,500 Gold",
+        "daRequired": true
+      },
+      {
+        "location": "DragonLord Artifacts",
+        "price": "250 Dragon Coins",
+        "priceType": "dc",
+        "sellback": "225 Dragon Coins before 24 hours, 63 Dragon Coins after 24 hours",
+        "daRequired": true,
+        "dcRequired": true
+      }
+    ],
+    "notes": "• Item occupies the player's trinket slot when equipped. \n• Previously only required players to be Level 1 to equip this artifact trinket; this was changed to Level 25 on  June 25th, 2021. \n• The prices of both Gold and DC versions of this item were originally priced at 325,000 Gold and 750 Dragon Coins, with a sellback of 32,500 Gold and 675 Dragon Coins before 24 hours, 188 Dragon Coins after 24 hours respectively; this was changed to 25,000 Gold and 250 Dragon Coins, with the remaining 300,000 Gold and 500 Dragon Coins transposed to  Dragoncore Stone and  Dragoncore Crystal respectively, on  August 6th, 2021. \n• Equipping this artifact trinket automatically changes the appearance of any  Visage of the Dragon helm equipped or shown. \n• Both Gold and Dragon Coins descriptions of this item were updated to differentiate both versions on  September 6th, 2024. \n• A trinket skill was added on  June 20th, 2025.",
+    "tags": [
+      "goo",
+      "gold"
+    ],
+    "daRequired": true,
+    "dcRequired": true,
+    "attacks": [
+      {
+        "name": "DragonLord's Rage",
+        "description": "1 hit x 150% damage \n Self: +5 Boost for the rest of the battle. | Self: +10 Boost for the rest of the battle. \n Fills DragonLord Spirit and Body.",
+        "requirements": "Dragon's Rage / Dragon's Wrath equipped",
+        "effect": "Permanently applies 'Dragon's Rage' (+5% Boost) to player; 1 hit of 150% damage.\n  • If the player equipped  Rage DragonLord, 'Dragon's Rage' is raised to +10% Boost.\n  • If the player equipped  Wrath DragonLord, instead permanently applies 'Dragon's Wrath' (+10% Boost) and completely fills Dragon's Body and Dragon's Spirit charges.\n• If the player equipped  Wrath DragonLord, the skill's name instead says 'DragonLord's Wrath' and its  label is replaced by 'Wrath'.\n• Fills DragonLord Spirit and Body. tooltip is exclusive to  Wrath DragonLord.",
+        "manaCost": "20",
+        "cooldown": "19 - [(Player LUK/50), rounded down]",
+        "damageType": "As weapon",
+        "element": "As weapon",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-DragonLord'sRage.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-DragonLord'sRageWrath-Appearance.png"
+      }
+    ]
+  },
+  {
+    "id": "accessory-dragon-s-wrath",
+    "name": "Dragon's Wrath",
+    "slug": "accessory-dragon-s-wrath",
+    "type": "accessory",
+    "subtype": "artifact",
+    "description": "This small purple sphere trembles with energy. It resonates with Dragon Amulets to increase the offensive power of DragonLords at the cost of defensive ability. This item requires a Dragon Amulet to use.",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22393342",
+    "releaseDate": "",
+    "elements": [
+      "GOO"
+    ],
+    "level": "55",
+    "stats": "Block +2, Dodge +2, Parry +2, Crit +5, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +2, END +2, INT +10, DEX +10, STR +10, Bonus +5",
+    "resists": "Light +5, Darkness +5, All +3, Health -3",
+    "ability": "DragonLord's Rage",
+    "abilityUrl": "https://forums2.battleon.com/f/tm.asp?m=22422448",
+    "rarity": "100",
+    "itemType": "Artifact",
+    "equipSpot": "Trinket",
+    "modifies": "DragonLord",
+    "category": "Armor",
+    "obtainMethods": [
+      {
+        "location": "DragonLord Artifacts",
+        "price": "N/A",
+        "priceType": "merge",
+        "sellback": "0 Gold",
+        "requiredItems": "1 Dragon's Rage (D-Amulet) & 1 Dragoncore Stone OR 1 Dragon's Rage (D-Amulet) & 1 Dragoncore Crystal",
+        "daRequired": true
+      },
+      {
+        "location": "DragonLord Artifacts",
+        "price": "N/A",
+        "priceType": "merge",
+        "sellback": "0 Dragon Coins",
+        "requiredItems": "1 Dragon's Rage (D-Amulet/D-Coins) & 1 Dragoncore Crystal OR 1 Dragon's Rage (D-Amulet/D-Coins) & 1 Dragoncore Stone",
+        "daRequired": true
+      }
+    ],
+    "notes": "• Item occupies the player's trinket slot when equipped. \n• Gold and DC versions of this item initially had the sellback values of 32,500 Gold and 188 Dragon Coins respectively. \n• The Dragoncore Stone only upgraded the Gold version and the Dragoncore Crystal only upgraded the DC version between  August 6th, 2021 and  September 6th, 2024, when merge compatibility for all versions was added. \n• Equipping this artifact trinket automatically changes the appearance of any  Visage of the Dragon helm equipped or shown. \n• A trinket skill was added on  June 20th, 2025.",
+    "tags": [
+      "goo",
+      "merge"
+    ],
+    "daRequired": true,
+    "attacks": [
+      {
+        "name": "DragonLord's Rage",
+        "description": "1 hit x 150% damage \n Self: +5 Boost for the rest of the battle. | Self: +10 Boost for the rest of the battle. \n Fills DragonLord Spirit and Body.",
+        "requirements": "Dragon's Rage / Dragon's Wrath equipped",
+        "effect": "Permanently applies 'Dragon's Rage' (+5% Boost) to player; 1 hit of 150% damage.\n  • If the player equipped  Rage DragonLord, 'Dragon's Rage' is raised to +10% Boost.\n  • If the player equipped  Wrath DragonLord, instead permanently applies 'Dragon's Wrath' (+10% Boost) and completely fills Dragon's Body and Dragon's Spirit charges.\n• If the player equipped  Wrath DragonLord, the skill's name instead says 'DragonLord's Wrath' and its  label is replaced by 'Wrath'.\n• Fills DragonLord Spirit and Body. tooltip is exclusive to  Wrath DragonLord.",
+        "manaCost": "20",
+        "cooldown": "19 - [(Player LUK/50), rounded down]",
+        "damageType": "As weapon",
+        "element": "As weapon",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-DragonLord'sRage.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-DragonLord'sRageWrath-Appearance.png"
+      }
+    ]
+  },
+  {
+    "id": "accessory-epocharina",
+    "name": "Epocharina",
+    "slug": "accessory-epocharina",
+    "type": "accessory",
+    "subtype": "artifact",
+    "description": "This opalescent ocarina doesn't actually slot into the Epoch gauntlet. Instead, it resonates with the gauntlet's frequency! The 2022 artifact for the Epoch class!",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22399109",
+    "releaseDate": "",
+    "elements": [
+      "STO"
+    ],
+    "level": "1",
+    "stats": "Crit +5, WIS +1, END +1, CHA +1, LUK +1, INT +1, DEX +1, STR +1, Bonus +5",
+    "resists": "All +1",
+    "rarity": "0",
+    "itemType": "Artifact",
+    "equipSpot": "Wrist",
+    "modifies": "Epoch",
+    "category": "Armor",
+    "obtainMethods": [
+      {
+        "location": "Redeem the code received from purchasing the AE 2022 Calendar from HeroMart",
+        "price": "$19.95 USD (2022 Standard) / $29.95 USD (2022 Collector's Edition) / $24.95-34.95 USD (2025) + Postage",
+        "priceType": "gold",
+        "sellback": "N/A",
+        "daRequired": false,
+        "dcRequired": true
+      }
+    ],
+    "notes": "• Item cannot be destroyed. \n• Item occupies the player's bracer slot when equipped. \n• Item modified  Epoch as Bardcore Epoch on  April 1st, 2022.",
+    "tags": [
+      "sto",
+      "gold"
+    ],
+    "daRequired": false,
+    "dcRequired": true,
+    "isSpecialOffer": true
+  },
+  {
+    "id": "accessory-eternal-locket",
+    "name": "Eternal Locket",
+    "slug": "accessory-eternal-locket",
+    "type": "accessory",
+    "subtype": "artifact",
+    "description": "The orb on this chain shines fiercely, swirling with color and untapped power. The 2018 artifact for the Epoch class!",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22305903",
+    "releaseDate": "",
+    "elements": [
+      "FEA"
+    ],
+    "level": "1",
+    "stats": "Crit +5, WIS +1, END +1, CHA +1, LUK +1, INT +1, DEX +1, STR +1, Bonus +5",
+    "resists": "All +1",
+    "rarity": "0",
+    "itemType": "Artifact",
+    "equipSpot": "Wrist",
+    "modifies": "Epoch",
+    "category": "Armor",
+    "obtainMethods": [
+      {
+        "location": "Redeem the code received from purchasing the AE 2018 Calendar from HeroMart",
+        "price": "$19.95 USD (Standard) / $24.95 USD (Collector's Edition) + Postage",
+        "priceType": "gold",
+        "sellback": "N/A",
+        "daRequired": false,
+        "dcRequired": true
+      }
+    ],
+    "notes": "• Item cannot be destroyed. \n• Item occupies the player's bracer slot when equipped. \n• Item modified  Epoch as Eternal Epoch on  September 30th, 2018.",
+    "tags": [
+      "fea",
+      "gold"
+    ],
+    "daRequired": false,
+    "dcRequired": true,
+    "isRare": true,
+    "isSpecialOffer": true
+  },
+  {
+    "id": "accessory-frost-moglin-knight-s-cloak",
+    "familyName": "Frost Moglin Knight's Cloak",
+    "slug": "accessory-frost-moglin-knight-s-cloak",
+    "aliasSlugs": [
+      "accessory-frost-moglin-knight-s-cloak-i",
+      "accessory-frost-moglin-knight-s-cloak-ii",
+      "accessory-frost-moglin-knight-s-cloak-iii",
+      "accessory-frost-moglin-knight-s-cloak-iv",
+      "accessory-frost-moglin-knight-s-cloak-v",
+      "accessory-frost-moglin-knight-s-cloak-vi",
+      "accessory-frost-moglin-knight-s-cloak-vii",
+      "accessory-frost-moglin-knight-s-cloak-viii"
+    ],
+    "type": "accessory",
+    "subtype": "artifact",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22306967",
+    "familyOrigin": "same-thread-multi-post",
+    "familySources": [
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22306967",
+        "title": "DF Encyclopedia: Frost Moglin Knight's Cloak I",
+        "variantLabel": "Frost Moglin Knight's Cloak I",
+        "isPrimary": true
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22306973",
+        "title": "DF Encyclopedia: Frost Moglin Knight's Cloak II",
+        "variantLabel": "Frost Moglin Knight's Cloak II",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22306975",
+        "title": "DF Encyclopedia: Frost Moglin Knight's Cloak III",
+        "variantLabel": "Frost Moglin Knight's Cloak III",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22307008",
+        "title": "DF Encyclopedia: Frost Moglin Knight's Cloak IV",
+        "variantLabel": "Frost Moglin Knight's Cloak IV",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22307009",
+        "title": "DF Encyclopedia: Frost Moglin Knight's Cloak V",
+        "variantLabel": "Frost Moglin Knight's Cloak V",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22307010",
+        "title": "DF Encyclopedia: Frost Moglin Knight's Cloak VI",
+        "variantLabel": "Frost Moglin Knight's Cloak VI",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22307011",
+        "title": "DF Encyclopedia: Frost Moglin Knight's Cloak VII",
+        "variantLabel": "Frost Moglin Knight's Cloak VII",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22307012",
+        "title": "DF Encyclopedia: Frost Moglin Knight's Cloak VIII",
+        "variantLabel": "Frost Moglin Knight's Cloak VIII",
+        "isPrimary": false
+      }
+    ],
+    "shared": {
+      "description": "The warm and magically infused cloak of the Frost Moglin Knights! Equip this item with the Frost Moglin Knight's Helm to upgrade the Frost Moglin Armor!",
+      "imageUrl": "https://i.imgur.com/StWTUCm.png",
+      "rarity": "0"
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 15,
+        "levelDisplay": "15",
+        "actualLevel": 15,
+        "variantName": "I",
+        "name": "Frost Moglin Knight's Cloak I",
+        "damage": "",
+        "stats": "Block +2, Dodge +2, Parry +2, Crit +1, CHA +1, LUK +1, INT +1, DEX +1, STR +1, Bonus +1",
+        "obtainVariants": [
+          {
+            "location": "Frost Moglin Artifacts",
+            "price": "N/A",
+            "priceType": "merge",
+            "sellback": "5 Gold",
+            "requiredItems": "1 Intriguing Frozen Gift Box & 1 Glowing Snowflake",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22306967",
+        "description": "The warm and magically infused cloak of the Frost Moglin Knights! Equip this item with the Frost Moglin Knight's Helm to upgrade the Frost Moglin Armor!",
+        "element": "MET",
+        "resists": "Metal +5, Poison +5",
+        "rarity": "0"
+      },
+      {
+        "levelNumber": 25,
+        "levelDisplay": "25",
+        "actualLevel": 25,
+        "variantName": "II",
+        "name": "Frost Moglin Knight's Cloak II",
+        "damage": "",
+        "stats": "Block +2, Dodge +2, Parry +2, Crit +2, CHA +2, LUK +2, INT +2, DEX +2, STR +2, Bonus +2",
+        "obtainVariants": [
+          {
+            "location": "Frost Moglin Artifacts",
+            "price": "N/A",
+            "priceType": "merge",
+            "sellback": "10 Gold",
+            "requiredItems": "1 Intriguing Frozen Gift Box & 1 Glowing Snowflake",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22306973",
+        "description": "The warm and magically infused cloak of the Frost Moglin Knights! Equip this item with the Frost Moglin Knight's Helm to upgrade the Frost Moglin Armor!",
+        "element": "MET",
+        "resists": "Metal +6, Poison +6",
+        "rarity": "0"
+      },
+      {
+        "levelNumber": 35,
+        "levelDisplay": "35",
+        "actualLevel": 35,
+        "variantName": "III",
+        "name": "Frost Moglin Knight's Cloak III",
+        "damage": "",
+        "stats": "Block +3, Dodge +3, Parry +3, Crit +3, CHA +3, LUK +3, INT +3, DEX +3, STR +3, Bonus +3",
+        "obtainVariants": [
+          {
+            "location": "Frost Moglin Artifacts",
+            "price": "N/A",
+            "priceType": "merge",
+            "sellback": "15 Gold",
+            "requiredItems": "1 Intriguing Frozen Gift Box & 1 Glowing Snowflake",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22306975",
+        "description": "The warm and magically infused cloak of the Frost Moglin Knights! Equip this item with the Frost Moglin Knight's Helm to upgrade the Frost Moglin Armor!",
+        "element": "MET",
+        "resists": "Metal +7, Poison +7",
+        "rarity": "0"
+      },
+      {
+        "levelNumber": 45,
+        "levelDisplay": "45",
+        "actualLevel": 45,
+        "variantName": "IV",
+        "name": "Frost Moglin Knight's Cloak IV",
+        "damage": "",
+        "stats": "Block +4, Dodge +4, Parry +4, Crit +4, CHA +4, LUK +4, INT +4, DEX +4, STR +4, Bonus +4",
+        "obtainVariants": [
+          {
+            "location": "Frost Moglin Artifacts",
+            "price": "N/A",
+            "priceType": "merge",
+            "sellback": "20 Gold",
+            "requiredItems": "1 Intriguing Frozen Gift Box & 1 Glowing Snowflake",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22307008",
+        "description": "The warm and magically infused cloak of the Frost Moglin Knights! Equip this item with the Frost Moglin Knight's Helm to upgrade the Frost Moglin Armor!",
+        "element": "MET",
+        "resists": "Metal +8, Poison +8, Immobility +2, Health -1",
+        "rarity": "0"
+      },
+      {
+        "levelNumber": 55,
+        "levelDisplay": "55",
+        "actualLevel": 55,
+        "variantName": "V",
+        "name": "Frost Moglin Knight's Cloak V",
+        "damage": "",
+        "stats": "Block +5, Dodge +5, Parry +5, Crit +5, END +5, CHA +5, LUK +5, INT +5, DEX +5, STR +5, Bonus +5",
+        "obtainVariants": [
+          {
+            "location": "Frost Moglin Artifacts",
+            "price": "N/A",
+            "priceType": "merge",
+            "sellback": "25 Gold",
+            "requiredItems": "1 Intriguing Frozen Gift Box & 1 Glowing Snowflake",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22307009",
+        "description": "The warm and magically infused cloak of the Frost Moglin Knights! Equip this item with the Frost Moglin Knight's Helm to upgrade the Frost Moglin Armor!",
+        "element": "MET",
+        "resists": "Metal +9, Poison +9, Immobility +3, Health -2",
+        "rarity": "0"
+      },
+      {
+        "levelNumber": 65,
+        "levelDisplay": "65",
+        "actualLevel": 65,
+        "variantName": "VI",
+        "name": "Frost Moglin Knight's Cloak VI",
+        "damage": "",
+        "stats": "Block +6, Dodge +6, Parry +6, Crit +6, CHA +6, LUK +6, INT +6, DEX +6, STR +6, Bonus +6",
+        "obtainVariants": [
+          {
+            "location": "Frost Moglin Artifacts",
+            "price": "N/A",
+            "priceType": "merge",
+            "sellback": "30 Gold",
+            "requiredItems": "1 Intriguing Frozen Gift Box & 1 Glowing Snowflake",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22307010",
+        "description": "The warm and magically infused cloak of the Frost Moglin Knights! Equip this item with the Frost Moglin Knight's Helm to upgrade the Frost Moglin Armor!",
+        "element": "MET",
+        "resists": "Metal +10, Poison +10, Immobility +4, Health -3",
+        "rarity": "0"
+      },
+      {
+        "levelNumber": 75,
+        "levelDisplay": "75",
+        "actualLevel": 75,
+        "variantName": "VII",
+        "name": "Frost Moglin Knight's Cloak VII",
+        "damage": "",
+        "stats": "Block +7, Dodge +7, Parry +7, Crit +7, END +7, CHA +7, LUK +7, INT +7, DEX +7, STR +7, Bonus +7",
+        "obtainVariants": [
+          {
+            "location": "Frost Moglin Artifacts",
+            "price": "N/A",
+            "priceType": "merge",
+            "sellback": "35 Gold",
+            "requiredItems": "1 Intriguing Frozen Gift Box & 1 Glowing Snowflake",
+            "daRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22307011",
+        "description": "The warm and magically infused cloak of the Frost Moglin Knights! Equip this item with the Frost Moglin Knight's Helm to upgrade the Frost Moglin Armor! This item requires a Dragon Amulet.",
+        "element": "MET",
+        "resists": "Metal +10, Poison +10, Immobility +5, Health -4",
+        "rarity": "0"
+      },
+      {
+        "levelNumber": 85,
+        "levelDisplay": "85",
+        "actualLevel": 85,
+        "variantName": "VIII",
+        "name": "Frost Moglin Knight's Cloak VIII",
+        "damage": "",
+        "stats": "Block +8, Dodge +8, Parry +8, Crit +9, CHA +8, LUK +8, INT +8, DEX +8, STR +8, Bonus +9",
+        "obtainVariants": [
+          {
+            "location": "Frost Moglin Artifacts",
+            "price": "N/A",
+            "priceType": "merge",
+            "sellback": "40 Gold",
+            "requiredItems": "1 Intriguing Frozen Gift Box & 1 Glowing Snowflake",
+            "daRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22307012",
+        "description": "The warm and magically infused cloak of the Frost Moglin Knights! Equip this item with the Frost Moglin Knight's Helm to upgrade the Frost Moglin Armor! This item requires a Dragon Amulet.",
+        "element": "MET",
+        "resists": "Metal +10, Poison +10, Immobility +5, Health -5",
+        "rarity": "0"
+      }
+    ],
+    "itemType": "Artifact",
+    "equipSlot": "Back",
+    "modifies": "Frost Moglin if equipped with Frost Moglin Knight's Helm I",
+    "category": "Armor",
+    "releaseDate": "",
+    "tags": [
+      "merge",
+      "met"
+    ],
+    "isSeasonal": true,
+    "hasDA": true,
+    "hasDC": false,
+    "hasDM": false,
+    "hasFree": false,
+    "hasMerge": true,
+    "levelRange": "I-VIII",
+    "elements": [
+      "MET"
+    ]
+  },
+  {
+    "id": "accessory-frost-moglin-knight-s-helm",
+    "familyName": "Frost Moglin Knight's Helm",
+    "slug": "accessory-frost-moglin-knight-s-helm",
+    "aliasSlugs": [
+      "accessory-frost-moglin-knight-s-helm-i",
+      "accessory-frost-moglin-knight-s-helm-ii",
+      "accessory-frost-moglin-knight-s-helm-iii",
+      "accessory-frost-moglin-knight-s-helm-iv",
+      "accessory-frost-moglin-knight-s-helm-v",
+      "accessory-frost-moglin-knight-s-helm-vi",
+      "accessory-frost-moglin-knight-s-helm-vii",
+      "accessory-frost-moglin-knight-s-helm-viii"
+    ],
+    "type": "accessory",
+    "subtype": "artifact",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22307025",
+    "familyOrigin": "same-thread-multi-post",
+    "familySources": [
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22307025",
+        "title": "DF Encyclopedia: Frost Moglin Knight's Helm I",
+        "variantLabel": "Frost Moglin Knight's Helm I",
+        "isPrimary": true
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22307026",
+        "title": "DF Encyclopedia: Frost Moglin Knight's Helm II",
+        "variantLabel": "Frost Moglin Knight's Helm II",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22307027",
+        "title": "DF Encyclopedia: Frost Moglin Knight's Helm III",
+        "variantLabel": "Frost Moglin Knight's Helm III",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22307028",
+        "title": "DF Encyclopedia: Frost Moglin Knight's Helm IV",
+        "variantLabel": "Frost Moglin Knight's Helm IV",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22307029",
+        "title": "DF Encyclopedia: Frost Moglin Knight's Helm V",
+        "variantLabel": "Frost Moglin Knight's Helm V",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22307030",
+        "title": "DF Encyclopedia: Frost Moglin Knight's Helm VI",
+        "variantLabel": "Frost Moglin Knight's Helm VI",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22307032",
+        "title": "DF Encyclopedia: Frost Moglin Knight's Helm VII",
+        "variantLabel": "Frost Moglin Knight's Helm VII",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22307033",
+        "title": "DF Encyclopedia: Frost Moglin Knight's Helm VIII",
+        "variantLabel": "Frost Moglin Knight's Helm VIII",
+        "isPrimary": false
+      }
+    ],
+    "shared": {
+      "description": "The helm of the legendary order of Frost Moglin Knights! An artifact for Frost Moglin Armor along with the Frost Moglin Knight's Cape.",
+      "rarity": "5"
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 15,
+        "levelDisplay": "15",
+        "actualLevel": 15,
+        "variantName": "I",
+        "name": "Frost Moglin Knight's Helm I",
+        "damage": "",
+        "stats": "CHA +1, LUK +1, INT +1, DEX +1, STR +1",
+        "obtainVariants": [
+          {
+            "location": "Frost Moglin Artifacts",
+            "price": "N/A",
+            "priceType": "merge",
+            "sellback": "5 Gold",
+            "requiredItems": "1 Mysterious Frozen Gift Box & 1 Glowing Snowflake",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22307025",
+        "description": "The helm of the legendary order of Frost Moglin Knights! An artifact for Frost Moglin Armor along with the Frost Moglin Knight's Cape.",
+        "element": "MET",
+        "resists": "Light +5, Darkness +5, Health -5",
+        "rarity": "5"
+      },
+      {
+        "levelNumber": 25,
+        "levelDisplay": "25",
+        "actualLevel": 25,
+        "variantName": "II",
+        "name": "Frost Moglin Knight's Helm II",
+        "damage": "",
+        "stats": "CHA +1, LUK +1, INT +2, DEX +2, STR +2",
+        "obtainVariants": [
+          {
+            "location": "Frost Moglin Artifacts",
+            "price": "N/A",
+            "priceType": "merge",
+            "sellback": "7 Gold",
+            "requiredItems": "1 Mysterious Frozen Gift Box & 1 Glowing Snowflake",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22307026",
+        "description": "The helm of the legendary order of Frost Moglin Knights! An artifact for Frost Moglin Armor along with the Frost Moglin Knight's Cape.",
+        "element": "MET",
+        "resists": "Light +6, Darkness +6, Health -6",
+        "rarity": "5"
+      },
+      {
+        "levelNumber": 35,
+        "levelDisplay": "35",
+        "actualLevel": 35,
+        "variantName": "III",
+        "name": "Frost Moglin Knight's Helm III",
+        "damage": "",
+        "stats": "CHA +3, LUK +3, INT +4, DEX +4, STR +4",
+        "obtainVariants": [
+          {
+            "location": "Frost Moglin Artifacts",
+            "price": "N/A",
+            "priceType": "merge",
+            "sellback": "9 Gold",
+            "requiredItems": "1 Mysterious Frozen Gift Box & 1 Glowing Snowflake",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22307027",
+        "description": "The helm of the legendary order of Frost Moglin Knights! An artifact for Frost Moglin Armor along with the Frost Moglin Knight's Cape.",
+        "element": "MET",
+        "resists": "Light +7, Darkness +7, Health -7",
+        "rarity": "5"
+      },
+      {
+        "levelNumber": 45,
+        "levelDisplay": "45",
+        "actualLevel": 45,
+        "variantName": "IV",
+        "name": "Frost Moglin Knight's Helm IV",
+        "damage": "",
+        "stats": "Crit +1, CHA +3, LUK +3, INT +5, DEX +5, STR +5, Bonus +1",
+        "obtainVariants": [
+          {
+            "location": "Frost Moglin Artifacts",
+            "price": "N/A",
+            "priceType": "merge",
+            "sellback": "11 Gold",
+            "requiredItems": "1 Mysterious Frozen Gift Box & 1 Glowing Snowflake",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22307028",
+        "description": "The helm of the legendary order of Frost Moglin Knights! An artifact for Frost Moglin Armor along with the Frost Moglin Knight's Cape.",
+        "element": "MET",
+        "resists": "Light +8, Darkness +8, Health -8",
+        "rarity": "5"
+      },
+      {
+        "levelNumber": 55,
+        "levelDisplay": "55",
+        "actualLevel": 55,
+        "variantName": "V",
+        "name": "Frost Moglin Knight's Helm V",
+        "damage": "",
+        "stats": "Block +3, Dodge +3, Parry +3, Crit +2, CHA +4, LUK +4, INT +8, DEX +8, STR +8, Bonus +2",
+        "obtainVariants": [
+          {
+            "location": "Frost Moglin Artifacts",
+            "price": "N/A",
+            "priceType": "merge",
+            "sellback": "12 Gold",
+            "requiredItems": "1 Mysterious Frozen Gift Box & 1 Glowing Snowflake",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22307029",
+        "description": "The helm of the legendary order of Frost Moglin Knights! An artifact for Frost Moglin Armor along with the Frost Moglin Knight's Cape.",
+        "element": "MET",
+        "resists": "Light +9, Darkness +9, Health -9",
+        "rarity": "5"
+      },
+      {
+        "levelNumber": 65,
+        "levelDisplay": "65",
+        "actualLevel": 65,
+        "variantName": "VI",
+        "name": "Frost Moglin Knight's Helm VI",
+        "damage": "",
+        "stats": "Crit +3, CHA +6, LUK +6, INT +10, DEX +10, STR +10, Bonus +3",
+        "obtainVariants": [
+          {
+            "location": "Frost Moglin Artifacts",
+            "price": "N/A",
+            "priceType": "merge",
+            "sellback": "14 Gold",
+            "requiredItems": "1 Mysterious Frozen Gift Box & 1 Glowing Snowflake",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22307030",
+        "description": "The helm of the legendary order of Frost Moglin Knights! An artifact for Frost Moglin Armor along with the Frost Moglin Knight's Cape.",
+        "element": "MET",
+        "resists": "Light +10, Darkness +10, Health -10",
+        "rarity": "5"
+      },
+      {
+        "levelNumber": 75,
+        "levelDisplay": "75",
+        "actualLevel": 75,
+        "variantName": "VII",
+        "name": "Frost Moglin Knight's Helm VII",
+        "damage": "",
+        "stats": "Crit +4, CHA +8, LUK +8, INT +12, DEX +12, STR +12, Bonus +4",
+        "obtainVariants": [
+          {
+            "location": "Frost Moglin Artifacts",
+            "price": "N/A",
+            "priceType": "merge",
+            "sellback": "18 Gold",
+            "requiredItems": "1 Mysterious Frozen Gift Box & 1 Glowing Snowflake",
+            "daRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22307032",
+        "description": "The helm of the legendary order of Frost Moglin Knights! An artifact for Frost Moglin Armor along with the Frost Moglin Knight's Cape. This item requires a Dragon Amulet.",
+        "element": "MET",
+        "resists": "Light +10, Darkness +10, Health -10, Fire +5",
+        "rarity": "5"
+      },
+      {
+        "levelNumber": 85,
+        "levelDisplay": "85",
+        "actualLevel": 85,
+        "variantName": "VIII",
+        "name": "Frost Moglin Knight's Helm VIII",
+        "damage": "",
+        "stats": "Crit +5, CHA +10, LUK +10, INT +14, DEX +14, STR +14, Bonus +5",
+        "obtainVariants": [
+          {
+            "location": "Frost Moglin Artifacts",
+            "price": "N/A",
+            "priceType": "merge",
+            "sellback": "22 Gold",
+            "requiredItems": "1 Mysterious Frozen Gift Box & 1 Glowing Snowflake",
+            "daRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22307033",
+        "description": "The helm of the legendary order of Frost Moglin Knights! An artifact for Frost Moglin Armor along with the Frost Moglin Knight's Cape. This item requires a Dragon Amulet.",
+        "element": "MET",
+        "resists": "Light +10, Darkness +10, Health -10, Fire +6",
+        "rarity": "5"
+      }
+    ],
+    "itemType": "Artifact",
+    "equipSlot": "Head",
+    "modifies": "Frost Moglin if equipped with Frost Moglin Knight's Cloak I",
+    "category": "Armor",
+    "releaseDate": "",
+    "tags": [
+      "merge",
+      "met"
+    ],
+    "isSeasonal": true,
+    "hasDA": true,
+    "hasDC": false,
+    "hasDM": false,
+    "hasFree": false,
+    "hasMerge": true,
+    "levelRange": "I-VIII",
+    "elements": [
+      "MET"
+    ]
+  },
+  {
+    "id": "accessory-harmonized-cowbell",
+    "familyName": "Harmonized Cowbell",
+    "slug": "accessory-harmonized-cowbell",
+    "aliasSlugs": [
+      "accessory-harmonized-cowbell-0001",
+      "accessory-harmonized-cowbell-0010",
+      "accessory-harmonized-cowbell-0011",
+      "accessory-harmonized-cowbell-0100",
+      "accessory-harmonized-cowbell-0101",
+      "accessory-harmonized-cowbell-0110",
+      "accessory-harmonized-cowbell-0111",
+      "accessory-harmonized-cowbell-1000",
+      "accessory-harmonized-cowbell-1001"
+    ],
+    "type": "accessory",
+    "subtype": "artifact",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22377874",
+    "familyOrigin": "same-thread-multi-post",
+    "familySources": [
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22377874",
+        "title": "DF Encyclopedia: Harmonized Cowbell 0001",
+        "variantLabel": "Harmonized Cowbell 0001",
+        "isPrimary": true
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22377875",
+        "title": "DF Encyclopedia: Harmonized Cowbell 0010",
+        "variantLabel": "Harmonized Cowbell 0010",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22377876",
+        "title": "DF Encyclopedia: Harmonized Cowbell 0011",
+        "variantLabel": "Harmonized Cowbell 0011",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22377878",
+        "title": "DF Encyclopedia: Harmonized Cowbell 0100",
+        "variantLabel": "Harmonized Cowbell 0100",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22377879",
+        "title": "DF Encyclopedia: Harmonized Cowbell 0101",
+        "variantLabel": "Harmonized Cowbell 0101",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22377880",
+        "title": "DF Encyclopedia: Harmonized Cowbell 0110",
+        "variantLabel": "Harmonized Cowbell 0110",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22377881",
+        "title": "DF Encyclopedia: Harmonized Cowbell 0111",
+        "variantLabel": "Harmonized Cowbell 0111",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22377883",
+        "title": "DF Encyclopedia: Harmonized Cowbell 1000",
+        "variantLabel": "Harmonized Cowbell 1000",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22377884",
+        "title": "DF Encyclopedia: Harmonized Cowbell 1001",
+        "variantLabel": "Harmonized Cowbell 1001",
+        "isPrimary": false
+      }
+    ],
+    "shared": {
+      "description": "This shining gold cowbell smells faintly of fresh bacon. If you wanted, you could wear it around your neck. But... why? An Artifact for the Evolved ChickenCow armor.",
+      "rarity": "5"
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 10,
+        "levelDisplay": "10",
+        "actualLevel": 10,
+        "variantName": "0001",
+        "name": "Harmonized Cowbell 0001",
+        "damage": "",
+        "stats": "Block +1, Dodge +1, Parry +1, Crit +1, WIS +2, END +2, CHA +2, LUK +2, Bonus +1",
+        "obtainVariants": [
+          {
+            "location": "Harmonized Cowbell",
+            "price": "0 Gold",
+            "priceType": "free",
+            "sellback": "0 Gold",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22377874",
+        "description": "This shining gold cowbell smells faintly of fresh bacon. If you wanted, you could wear it around your neck. But... why? An Artifact for the Evolved ChickenCow armor.",
+        "element": "BAC",
+        "resists": "Ice +3, Metal +3",
+        "rarity": "5"
+      },
+      {
+        "levelNumber": 20,
+        "levelDisplay": "20",
+        "actualLevel": 20,
+        "variantName": "0010",
+        "name": "Harmonized Cowbell 0010",
+        "damage": "",
+        "stats": "Block +2, Dodge +2, Parry +2, Crit +2, WIS +3, END +3, CHA +3, LUK +3, INT +1, DEX +1, STR +1, Bonus +2",
+        "obtainVariants": [
+          {
+            "location": "Harmonized Cowbell",
+            "price": "0 Gold",
+            "priceType": "free",
+            "sellback": "0 Gold",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22377875",
+        "description": "This shining gold cowbell smells faintly of fresh bacon. If you wanted, you could wear it around your neck. But... why? An Artifact for the Evolved ChickenCow armor.",
+        "element": "BAC",
+        "resists": "Ice +4, Metal +4",
+        "rarity": "5"
+      },
+      {
+        "levelNumber": 30,
+        "levelDisplay": "30",
+        "actualLevel": 30,
+        "variantName": "0011",
+        "name": "Harmonized Cowbell 0011",
+        "damage": "",
+        "stats": "Block +3, Dodge +3, Parry +3, Crit +3, WIS +4, END +4, CHA +4, LUK +4, INT +2, DEX +2, STR +2, Bonus +3",
+        "obtainVariants": [
+          {
+            "location": "Harmonized Cowbell",
+            "price": "0 Gold",
+            "priceType": "free",
+            "sellback": "0 Gold",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22377876",
+        "description": "This shining gold cowbell smells faintly of fresh bacon. If you wanted, you could wear it around your neck. But... why? An Artifact for the Evolved ChickenCow armor.",
+        "element": "BAC",
+        "resists": "Ice +5, Metal +5",
+        "rarity": "5"
+      },
+      {
+        "levelNumber": 40,
+        "levelDisplay": "40",
+        "actualLevel": 40,
+        "variantName": "0100",
+        "name": "Harmonized Cowbell 0100",
+        "damage": "",
+        "stats": "Block +4, Dodge +4, Parry +4, Crit +4, WIS +5, END +5, CHA +5, LUK +5, INT +3, DEX +3, STR +3, Bonus +4",
+        "obtainVariants": [
+          {
+            "location": "Harmonized Cowbell",
+            "price": "0 Gold",
+            "priceType": "free",
+            "sellback": "0 Gold",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22377878",
+        "description": "This shining gold cowbell smells faintly of fresh bacon. If you wanted, you could wear it around your neck. But... why? An Artifact for the Evolved ChickenCow armor.",
+        "element": "BAC",
+        "resists": "Ice +6, Metal +6, Health -1",
+        "rarity": "5"
+      },
+      {
+        "levelNumber": 50,
+        "levelDisplay": "50",
+        "actualLevel": 50,
+        "variantName": "0101",
+        "name": "Harmonized Cowbell 0101",
+        "damage": "",
+        "stats": "Block +5, Dodge +5, Parry +5, Crit +5, WIS +6, END +6, CHA +6, LUK +6, INT +4, DEX +4, STR +4, Bonus +5",
+        "obtainVariants": [
+          {
+            "location": "Harmonized Cowbell",
+            "price": "0 Gold",
+            "priceType": "free",
+            "sellback": "0 Gold",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22377879",
+        "description": "This shining gold cowbell smells faintly of fresh bacon. If you wanted, you could wear it around your neck. But... why? An Artifact for the Evolved ChickenCow armor.",
+        "element": "BAC",
+        "resists": "Metal +7, Ice +7, Health -2",
+        "rarity": "5"
+      },
+      {
+        "levelNumber": 60,
+        "levelDisplay": "60",
+        "actualLevel": 60,
+        "variantName": "0110",
+        "name": "Harmonized Cowbell 0110",
+        "damage": "",
+        "stats": "Block +6, Dodge +6, Parry +6, Crit +6, WIS +8, END +8, CHA +8, LUK +8, INT +5, DEX +5, STR +5, Bonus +6",
+        "obtainVariants": [
+          {
+            "location": "Harmonized Cowbell",
+            "price": "0 Gold",
+            "priceType": "free",
+            "sellback": "0 Gold",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22377880",
+        "description": "This shining gold cowbell smells faintly of fresh bacon. If you wanted, you could wear it around your neck. But... why? An Artifact for the Evolved ChickenCow armor.",
+        "element": "BAC",
+        "resists": "Ice +8, Metal +8, Health -3",
+        "rarity": "5"
+      },
+      {
+        "levelNumber": 70,
+        "levelDisplay": "70",
+        "actualLevel": 70,
+        "variantName": "0111",
+        "name": "Harmonized Cowbell 0111",
+        "damage": "",
+        "stats": "Block +8, Dodge +8, Parry +8, Crit +7, WIS +10, END +10, CHA +10, LUK +10, INT +6, DEX +6, STR +6, Bonus +7",
+        "obtainVariants": [
+          {
+            "location": "Harmonized Cowbell",
+            "price": "0 Gold",
+            "priceType": "free",
+            "sellback": "0 Gold",
+            "daRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22377881",
+        "description": "This shining gold cowbell smells faintly of fresh bacon. If you wanted, you could wear it around your neck. But... why? An Artifact for the Evolved ChickenCow armor. This item requires a Dragon Amulet.",
+        "element": "BAC",
+        "resists": "Ice +10, Metal +10, Health -4",
+        "rarity": "5"
+      },
+      {
+        "levelNumber": 80,
+        "levelDisplay": "80",
+        "actualLevel": 80,
+        "variantName": "1000",
+        "name": "Harmonized Cowbell 1000",
+        "damage": "",
+        "stats": "Block +10, Dodge +10, Parry +10, Crit +8, WIS +13, END +13, CHA +13, LUK +13, INT +8, DEX +8, STR +8, Bonus +8",
+        "obtainVariants": [
+          {
+            "location": "Harmonized Cowbell",
+            "price": "0 Gold",
+            "priceType": "free",
+            "sellback": "0 Gold",
+            "daRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22377883",
+        "description": "This shining gold cowbell smells faintly of fresh bacon. If you wanted, you could wear it around your neck. But... why? An Artifact for the Evolved ChickenCow armor. This item requires a Dragon Amulet.",
+        "element": "BAC",
+        "resists": "Ice +12, Metal +12, Health -5",
+        "rarity": "5"
+      },
+      {
+        "levelNumber": 90,
+        "levelDisplay": "90",
+        "actualLevel": 90,
+        "variantName": "1001",
+        "name": "Harmonized Cowbell 1001",
+        "damage": "",
+        "stats": "Block +12, Dodge +12, Parry +12, Crit +10, WIS +15, END +15, CHA +15, LUK +15, INT +9, DEX +9, STR +9, Bonus +10",
+        "obtainVariants": [
+          {
+            "location": "Harmonized Cowbell",
+            "price": "0 Gold",
+            "priceType": "free",
+            "sellback": "0 Gold",
+            "daRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22377884",
+        "description": "This shining gold cowbell smells faintly of fresh bacon. If you wanted, you could wear it around your neck. But... why? An Artifact for the Evolved ChickenCow armor. This item requires a Dragon Amulet.",
+        "element": "BAC",
+        "resists": "Ice +12, Metal +12, Health -6",
+        "rarity": "5"
+      }
+    ],
+    "itemType": "Artifact",
+    "equipSlot": "Neck",
+    "modifies": "Evolved Chickencow",
+    "category": "Armor",
+    "releaseDate": "",
+    "tags": [
+      "bac",
+      "free"
+    ],
+    "hasDA": true,
+    "hasDC": false,
+    "hasDM": false,
+    "hasFree": true,
+    "hasMerge": false,
+    "levelRange": "10-90",
+    "elements": [
+      "BAC"
+    ]
+  },
+  {
+    "id": "accessory-mechanical-metronome",
+    "name": "Mechanical Metronome",
+    "slug": "accessory-mechanical-metronome",
+    "type": "accessory",
+    "subtype": "artifact",
+    "description": "The 2026 artifact for the Epoch class! (To be implemented soon!)",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22424486",
+    "releaseDate": "",
+    "elements": [
+      "MET"
+    ],
+    "level": "1",
+    "stats": "Crit +5, WIS +1, END +1, CHA +1, LUK +1, INT +1, DEX +1, STR +1, Bonus +5",
+    "resists": "All +1",
+    "rarity": "0",
+    "itemType": "Artifact",
+    "equipSpot": "Wrist",
+    "modifies": "Epoch",
+    "category": "Armor",
+    "obtainMethods": [
+      {
+        "location": "Redeem the code received from purchasing the AE 2026 Calendar from HeroMart",
+        "price": "$19.95 USD (Standard) / $29.95-34.95 USD (Collector's Edition) / $74.80-113.80 (Collector's Edition Bundle) + Postage",
+        "priceType": "gold",
+        "sellback": "N/A",
+        "daRequired": false,
+        "dcRequired": true
+      }
+    ],
+    "notes": "• Item cannot be destroyed. \n• Item occupies the player's bracer slot when equipped. \n• Item modified  Epoch as Maestro Epoch on  February 20th, 2026.",
+    "tags": [
+      "met",
+      "gold"
+    ],
+    "daRequired": false,
+    "dcRequired": true,
+    "isSpecialOffer": true
+  },
+  {
+    "id": "accessory-navigator-s-hat",
+    "familyName": "Navigator's Hat",
+    "slug": "accessory-navigator-s-hat",
+    "aliasSlugs": [
+      "accessory-navigator-s-hat-i",
+      "accessory-navigator-s-hat-ii",
+      "accessory-navigator-s-hat-iii",
+      "accessory-navigator-s-hat-iv",
+      "accessory-navigator-s-hat-v",
+      "accessory-navigator-s-hat-vi"
+    ],
+    "type": "accessory",
+    "subtype": "artifact",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22340940",
+    "familyOrigin": "same-thread-multi-post",
+    "familySources": [
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22340940",
+        "title": "DF Encyclopedia: Navigator's Hat I",
+        "variantLabel": "Navigator's Hat I",
+        "isPrimary": true
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22340941",
+        "title": "DF Encyclopedia: Navigator's Hat II",
+        "variantLabel": "Navigator's Hat II",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22340942",
+        "title": "DF Encyclopedia: Navigator's Hat III",
+        "variantLabel": "Navigator's Hat III",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22340943",
+        "title": "DF Encyclopedia: Navigator's Hat IV",
+        "variantLabel": "Navigator's Hat IV",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22340945",
+        "title": "DF Encyclopedia: Navigator's Hat V",
+        "variantLabel": "Navigator's Hat V",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22340946",
+        "title": "DF Encyclopedia: Navigator's Hat VI",
+        "variantLabel": "Navigator's Hat VI",
+        "isPrimary": false
+      }
+    ],
+    "shared": {
+      "description": "A legendary pirate hat, worn by a long gone pirate hero who is said to have guided the first expedition across the Pale Sea. This artifact will change the appearance of the Pirate class when equipped!",
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/Navigator'sHat-CC.png",
+      "rarity": "5"
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 40,
+        "levelDisplay": "40",
+        "actualLevel": 40,
+        "variantName": "I",
+        "name": "Navigator's Hat I",
+        "damage": "",
+        "stats": "WIS +1, END +1, CHA +3, LUK +3, INT +4, DEX +4, STR +4",
+        "obtainVariants": [
+          {
+            "location": "Pirate Raid, Rose Attack, Sea Monsters, Magesterium Guardship, Sea Chicken Attack!",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "5,000 Gold",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22340940",
+        "description": "A legendary pirate hat, worn by a long gone pirate hero who is said to have guided the first expedition across the Pale Sea. This artifact will change the appearance of the Pirate class when equipped!",
+        "element": "WAT",
+        "resists": "Water +7, Health -7",
+        "rarity": "5"
+      },
+      {
+        "levelNumber": 40,
+        "levelDisplay": "40",
+        "actualLevel": 40,
+        "variantName": "I",
+        "name": "Navigator's Hat I",
+        "damage": "",
+        "stats": "WIS +1, END +1, CHA +3, LUK +3, INT +4, DEX +4, STR +4",
+        "obtainVariants": [
+          {
+            "location": "Navigator's Hat",
+            "price": "500 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "450 Dragon Coins before 24 hours, 125 Dragon Coins after 24 hours",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22340940",
+        "description": "A legendary pirate hat, worn by a long gone pirate hero who is said to have guided the first expedition across the Pale Sea. This artifact will change the appearance of the Pirate class when equipped!",
+        "element": "WAT",
+        "resists": "Water +7, Health -7",
+        "rarity": "5"
+      },
+      {
+        "levelNumber": 50,
+        "levelDisplay": "50",
+        "actualLevel": 50,
+        "variantName": "II",
+        "name": "Navigator's Hat II",
+        "damage": "",
+        "stats": "Crit +1, WIS +1, END +1, CHA +3, LUK +3, INT +5, DEX +5, STR +5, Bonus +1",
+        "obtainVariants": [
+          {
+            "location": "Pirate Raid, Rose Attack, Sea Monsters, Magesterium Guardship, Sea Chicken Attack!",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "5,000 Gold",
+            "daRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22340941",
+        "description": "A legendary pirate hat, worn by a long gone pirate hero who is said to have guided the first expedition across the Pale Sea. This artifact will change the appearance of the Pirate class when equipped! This item requires a Dragon Amulet.",
+        "element": "WAT",
+        "resists": "Water +8, Health -8",
+        "rarity": "5"
+      },
+      {
+        "levelNumber": 50,
+        "levelDisplay": "50",
+        "actualLevel": 50,
+        "variantName": "II",
+        "name": "Navigator's Hat II",
+        "damage": "",
+        "stats": "Crit +1, WIS +1, END +1, CHA +3, LUK +3, INT +5, DEX +5, STR +5, Bonus +1",
+        "obtainVariants": [
+          {
+            "location": "Navigator's Hat",
+            "price": "500 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "450 Dragon Coins before 24 hours, 125 Dragon Coins after 24 hours",
+            "daRequired": true,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22340941",
+        "description": "A legendary pirate hat, worn by a long gone pirate hero who is said to have guided the first expedition across the Pale Sea. This artifact will change the appearance of the Pirate class when equipped! This item requires a Dragon Amulet.",
+        "element": "WAT",
+        "resists": "Water +8, Health -8",
+        "rarity": "5"
+      },
+      {
+        "levelNumber": 60,
+        "levelDisplay": "60",
+        "actualLevel": 60,
+        "variantName": "III",
+        "name": "Navigator's Hat III",
+        "damage": "",
+        "stats": "Crit +2, WIS +1, END +1, CHA +4, LUK +4, INT +8, DEX +8, STR +8, Bonus +2",
+        "obtainVariants": [
+          {
+            "location": "Pirate Raid, Rose Attack, Sea Monsters, Magesterium Guardship, Sea Chicken Attack!",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "5,000 Gold",
+            "daRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22340942",
+        "description": "A legendary pirate hat, worn by a long gone pirate hero who is said to have guided the first expedition across the Pale Sea. This artifact will change the appearance of the Pirate class when equipped! This item requires a Dragon Amulet.",
+        "element": "WAT",
+        "resists": "Water +9, Health -9",
+        "rarity": "5"
+      },
+      {
+        "levelNumber": 60,
+        "levelDisplay": "60",
+        "actualLevel": 60,
+        "variantName": "III",
+        "name": "Navigator's Hat III",
+        "damage": "",
+        "stats": "Crit +2, WIS +1, END +1, CHA +4, LUK +4, INT +8, DEX +8, STR +8, Bonus +2",
+        "obtainVariants": [
+          {
+            "location": "Navigator's Hat",
+            "price": "500 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "450 Dragon Coins before 24 hours, 125 Dragon Coins after 24 hours",
+            "daRequired": true,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22340942",
+        "description": "A legendary pirate hat, worn by a long gone pirate hero who is said to have guided the first expedition across the Pale Sea. This artifact will change the appearance of the Pirate class when equipped! This item requires a Dragon Amulet.",
+        "element": "WAT",
+        "resists": "Water +9, Health -9",
+        "rarity": "5"
+      },
+      {
+        "levelNumber": 70,
+        "levelDisplay": "70",
+        "actualLevel": 70,
+        "variantName": "IV",
+        "name": "Navigator's Hat IV",
+        "damage": "",
+        "stats": "Crit +3, WIS +1, END +1, CHA +6, LUK +6, INT +10, DEX +10, STR +10, Bonus +3",
+        "obtainVariants": [
+          {
+            "location": "Pirate Raid, Rose Attack, Sea Monsters, Magesterium Guardship, Sea Chicken Attack!",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "5,000 Gold",
+            "daRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22340943",
+        "description": "A legendary pirate hat, worn by a long gone pirate hero who is said to have guided the first expedition across the Pale Sea. This artifact will change the appearance of the Pirate class when equipped! This item requires a Dragon Amulet.",
+        "element": "WAT",
+        "resists": "Water +10, Health -10",
+        "rarity": "5"
+      },
+      {
+        "levelNumber": 70,
+        "levelDisplay": "70",
+        "actualLevel": 70,
+        "variantName": "IV",
+        "name": "Navigator's Hat IV",
+        "damage": "",
+        "stats": "Crit +3, WIS +1, END +1, CHA +6, LUK +6, INT +10, DEX +10, STR +10, Bonus +3",
+        "obtainVariants": [
+          {
+            "location": "Navigator's Hat",
+            "price": "500 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "450 Dragon Coins before 24 hours, 125 Dragon Coins after 24 hours",
+            "daRequired": true,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22340943",
+        "description": "A legendary pirate hat, worn by a long gone pirate hero who is said to have guided the first expedition across the Pale Sea. This artifact will change the appearance of the Pirate class when equipped! This item requires a Dragon Amulet.",
+        "element": "WAT",
+        "resists": "Water +10, Health -10",
+        "rarity": "5"
+      },
+      {
+        "levelNumber": 80,
+        "levelDisplay": "80",
+        "actualLevel": 80,
+        "variantName": "V",
+        "name": "Navigator's Hat V",
+        "damage": "",
+        "stats": "Crit +4, WIS +1, END +1, CHA +8, LUK +8, INT +12, DEX +12, STR +12, Bonus +4",
+        "obtainVariants": [
+          {
+            "location": "Pirate Raid, Rose Attack, Sea Monsters, Magesterium Guardship, Sea Chicken Attack!",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "5,000 Gold",
+            "daRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22340945",
+        "description": "A legendary pirate hat, worn by a long gone pirate hero who is said to have guided the first expedition across the Pale Sea. This artifact will change the appearance of the Pirate class when equipped! This item requires a Dragon Amulet.",
+        "element": "WAT",
+        "resists": "Water +10, Health -10, Wind +5",
+        "rarity": "5"
+      },
+      {
+        "levelNumber": 80,
+        "levelDisplay": "80",
+        "actualLevel": 80,
+        "variantName": "V",
+        "name": "Navigator's Hat V",
+        "damage": "",
+        "stats": "Crit +4, WIS +1, END +1, CHA +8, LUK +8, INT +12, DEX +12, STR +12, Bonus +4",
+        "obtainVariants": [
+          {
+            "location": "Navigator's Hat",
+            "price": "500 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "450 Dragon Coins before 24 hours, 125 Dragon Coins after 24 hours",
+            "daRequired": true,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22340945",
+        "description": "A legendary pirate hat, worn by a long gone pirate hero who is said to have guided the first expedition across the Pale Sea. This artifact will change the appearance of the Pirate class when equipped! This item requires a Dragon Amulet.",
+        "element": "WAT",
+        "resists": "Water +10, Health -10, Wind +5",
+        "rarity": "5"
+      },
+      {
+        "levelNumber": 90,
+        "levelDisplay": "90",
+        "actualLevel": 90,
+        "variantName": "VI",
+        "name": "Navigator's Hat VI",
+        "damage": "",
+        "stats": "Crit +5, WIS +1, END +1, CHA +10, LUK +10, INT +14, DEX +14, STR +14, Bonus +5",
+        "obtainVariants": [
+          {
+            "location": "Pirate Raid, Rose Attack, Sea Monsters, Magesterium Guardship, Sea Chicken Attack!",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "5,000 Gold",
+            "daRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22340946",
+        "description": "A legendary pirate hat, worn by a long gone pirate hero who is said to have guided the first expedition across the Pale Sea. This artifact will change the appearance of the Pirate class when equipped! This item requires a Dragon Amulet.",
+        "element": "WAT",
+        "resists": "Water +10, Health -10, Wind +6",
+        "rarity": "5"
+      },
+      {
+        "levelNumber": 90,
+        "levelDisplay": "90",
+        "actualLevel": 90,
+        "variantName": "VI",
+        "name": "Navigator's Hat VI",
+        "damage": "",
+        "stats": "Crit +5, WIS +1, END +1, CHA +10, LUK +10, INT +14, DEX +14, STR +14, Bonus +5",
+        "obtainVariants": [
+          {
+            "location": "Navigator's Hat",
+            "price": "500 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "450 Dragon Coins before 24 hours, 125 Dragon Coins after 24 hours",
+            "daRequired": true,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22340946",
+        "description": "A legendary pirate hat, worn by a long gone pirate hero who is said to have guided the first expedition across the Pale Sea. This artifact will change the appearance of the Pirate class when equipped! This item requires a Dragon Amulet.",
+        "element": "WAT",
+        "resists": "Water +10, Health -10, Wind +6",
+        "rarity": "5"
+      }
+    ],
+    "itemType": "Artifact",
+    "equipSlot": "Head",
+    "category": "Armor",
+    "releaseDate": "",
+    "tags": [
+      "dc",
+      "free",
+      "wat"
+    ],
+    "hasDA": true,
+    "hasDC": true,
+    "hasDM": false,
+    "hasFree": true,
+    "hasMerge": false,
+    "levelRange": "I-VI",
+    "elements": [
+      "WAT"
+    ]
+  },
+  {
+    "id": "accessory-shadowheart-bracer",
+    "name": "Shadowheart Bracer",
+    "slug": "accessory-shadowheart-bracer",
+    "type": "accessory",
+    "subtype": "artifact",
+    "description": "Legends tell the story of a Darkness elemental who fell in love with a hero. The elemental gave up their mortal form to be with the hero always. \n  \n This artifact boosts the effectiveness of Shadow Mage, Shadow Rogue, and Shadow Warrior skills.",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22161028",
+    "releaseDate": "",
+    "elements": [
+      "DAR"
+    ],
+    "level": "1",
+    "stats": "WIS +1, END +1, CHA +1, LUK +1",
+    "resists": "None",
+    "rarity": "0",
+    "itemType": "Artifact",
+    "equipSpot": "Wrist",
+    "modifies": "Ancient Shadow Warrior, Ancient Shadow Mage, Ancient Shadow Rogue, Shadow Warrior, Shadow Mage, Shadow Rogue",
+    "category": "Armor",
+    "obtainMethods": [
+      {
+        "location": "Shattered, Ashes, Madness, Doomed, Peril, Old Friends, Flight from Sho'Nuff",
+        "price": "N/A",
+        "priceType": "free",
+        "sellback": "N/A",
+        "daRequired": false,
+        "dcRequired": true
+      }
+    ],
+    "notes": "• Item has a 5% drop rate from select Calamity Saga quests, as indicated in the  July 29th, 2016 Design Notes. \n• Item occupies the player's bracer slot when equipped. \n• Item initially had a sellback value of 0 Gold; it was DC tagged and became unsellable on  March 11th, 2023.",
+    "tags": [
+      "dar",
+      "free"
+    ],
+    "daRequired": false,
+    "dcRequired": true
+  },
+  {
+    "id": "accessory-solo-adagio",
+    "name": "Solo Adagio",
+    "slug": "accessory-solo-adagio",
+    "type": "accessory",
+    "subtype": "artifact",
+    "description": "A shadowed emerald conductor's baton, said to let its wielder conduct the symphony between life and death! The 2024 artifact for the Epoch class!",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22413930",
+    "releaseDate": "",
+    "elements": [
+      "DAR"
+    ],
+    "level": "1",
+    "stats": "Crit +5, WIS +1, END +1, CHA +1, LUK +1, INT +1, DEX +1, STR +1, Bonus +5",
+    "resists": "All +1",
+    "rarity": "0",
+    "itemType": "Artifact",
+    "equipSpot": "Wrist",
+    "modifies": "Epoch",
+    "category": "Armor",
+    "obtainMethods": [
+      {
+        "location": "Redeem the code received from purchasing the AE 2024 Calendar from HeroMart",
+        "price": "$19.95 USD (Standard) / $29.95 USD (Collector's Edition) / $24.95-34.95 USD (2025) + Postage",
+        "priceType": "gold",
+        "sellback": "N/A",
+        "daRequired": false,
+        "dcRequired": true
+      }
+    ],
+    "notes": "• Item cannot be destroyed. \n• Item occupies the player's bracer slot when equipped. \n• Item modified  Epoch as Virtuoso Epoch on  February 2nd, 2024.",
+    "tags": [
+      "dar",
+      "gold"
+    ],
+    "daRequired": false,
+    "dcRequired": true,
+    "isSpecialOffer": true
+  },
+  {
+    "id": "accessory-the-eraglass",
+    "name": "The Eraglass",
+    "slug": "accessory-the-eraglass",
+    "type": "accessory",
+    "subtype": "artifact",
+    "description": "This small blue hourglass hums with the power of Death as it fits into the gauntlet of the Epoch. The 2020 artifact for the Epoch class!",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22371497",
+    "releaseDate": "",
+    "elements": [
+      "EVI"
+    ],
+    "level": "1",
+    "stats": "Crit +5, WIS +1, END +1, CHA +1, LUK +1, INT +1, DEX +1, STR +1, Bonus +5",
+    "resists": "All +1",
+    "rarity": "0",
+    "itemType": "Artifact",
+    "equipSpot": "Wrist",
+    "modifies": "Epoch",
+    "category": "Armor",
+    "obtainMethods": [
+      {
+        "location": "Redeem the code received from purchasing the AE 2020 Calendar from HeroMart",
+        "price": "$19.95 USD (Standard) / $29.95 USD (Collector's Edition) + Postage",
+        "priceType": "gold",
+        "sellback": "N/A",
+        "daRequired": false,
+        "dcRequired": true
+      }
+    ],
+    "notes": "• Item cannot be destroyed. \n• Item occupies the player's bracer slot when equipped. \n• The following changes were implemented on December 2nd, 2019: \n  • Previously named 'Underworld Record'. \n  • Previously had the description: This old and beat-up record hums with the power of Death! The 2020 artifact for the Epoch class!\n• Item modified  Epoch as Underworld Epoch on  January 17th, 2020.",
+    "tags": [
+      "evi",
+      "gold"
+    ],
+    "daRequired": false,
+    "dcRequired": true,
+    "isRare": true,
+    "isSpecialOffer": true
+  },
+  {
+    "id": "accessory-timeless-lightsticks",
+    "name": "Timeless Lightsticks",
+    "slug": "accessory-timeless-lightsticks",
+    "type": "accessory",
+    "subtype": "artifact",
+    "description": "These lightsticks last forever! Slots into the gauntlet of the Epoch armor. The 2023 artifact for the Epoch class!",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22408272",
+    "releaseDate": "",
+    "elements": [
+      "LIG"
+    ],
+    "level": "1",
+    "stats": "Crit +5, WIS +1, END +1, CHA +1, LUK +1, INT +1, DEX +1, STR +1, Bonus +5",
+    "resists": "All +1",
+    "rarity": "0",
+    "itemType": "Artifact",
+    "equipSpot": "Wrist",
+    "modifies": "Epoch",
+    "category": "Armor",
+    "obtainMethods": [
+      {
+        "location": "Redeem the code received from purchasing the AE 2023 Calendar from HeroMart",
+        "price": "$19.95 USD (2023 Standard) / $29.95 USD (2023 Collector's Edition) / $24.95-34.95 USD (2025) / $64.85 (20th Anniversary Bundle) + Postage",
+        "priceType": "gold",
+        "sellback": "N/A",
+        "daRequired": false,
+        "dcRequired": true
+      }
+    ],
+    "notes": "• Item cannot be destroyed. \n• Item occupies the player's bracer slot when equipped. \n• Item modified  Epoch as Timeless Destiny Epoch on  March 3rd, 2023.",
+    "tags": [
+      "lig",
+      "gold"
+    ],
+    "daRequired": false,
+    "dcRequired": true,
+    "isSpecialOffer": true
+  },
+  {
+    "id": "accessory-voicecatcher",
+    "name": "Voicecatcher",
+    "slug": "accessory-voicecatcher",
+    "type": "accessory",
+    "subtype": "artifact",
+    "description": "The 2025 artifact for the Epoch class!",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22420422",
+    "releaseDate": "",
+    "elements": [
+      "LIG"
+    ],
+    "level": "1",
+    "stats": "Crit +5, WIS +1, END +1, CHA +1, LUK +1, INT +1, DEX +1, STR +1, Bonus +5",
+    "resists": "All +1",
+    "rarity": "0",
+    "itemType": "Artifact",
+    "equipSpot": "Wrist",
+    "modifies": "Epoch",
+    "category": "Armor",
+    "obtainMethods": [
+      {
+        "location": "Redeem the code received from purchasing the AE 2025 Calendar from HeroMart",
+        "price": "$19.95 USD (2025 Standard) / $29.95 USD (2025 Collector's Edition) / $24.95-34.95 USD (2025 HeroMart 3.0) / $59.95-63.95 (2025 Collector's Edition Bundle - Holiday Promotional Price) / $74.85-78.85 USD (2025 Collector's Edition Bundle - Full Price) + Postage",
+        "priceType": "gold",
+        "sellback": "N/A",
+        "daRequired": false,
+        "dcRequired": true
+      }
+    ],
+    "notes": "• Item cannot be destroyed. \n• Item occupies the player's bracer slot when equipped. \n• Item modified  Epoch as Lament Epoch on  January 10th, 2025.",
+    "tags": [
+      "lig",
+      "gold"
+    ],
+    "daRequired": false,
+    "dcRequired": true,
+    "isSpecialOffer": true
+  }
+]
