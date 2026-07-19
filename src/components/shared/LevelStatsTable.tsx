@@ -13,7 +13,7 @@
  */
 
 import type { LevelVariant } from '../../types/item'
-import { getLevelVariantLabel, hasTitleDrivenVariantNames, shouldHideVariantColumn } from '../../utils/variantHelpers'
+import { getLevelVariantLabels, hasTitleDrivenVariantNames, shouldHideVariantColumn } from '../../utils/variantHelpers'
 
 interface LevelStatsTableProps {
   levels: LevelVariant[]
@@ -25,7 +25,7 @@ interface LevelStatsTableProps {
 export default function LevelStatsTable({ levels, hideVariantColumn = false, familyName }: LevelStatsTableProps) {
   const hasVariantNames = levels.some(level => Boolean(level.variantName))
   const useTitleLabels = familyName ? hasTitleDrivenVariantNames(levels, familyName) : false
-  const variantLabels = levels.map(level => getLevelVariantLabel(level, familyName, useTitleLabels))
+  const variantLabels = getLevelVariantLabels(levels, familyName)
   const hasRedundantVariantColumn = shouldHideVariantColumn(levels, familyName)
   const showVariantColumn = !hasRedundantVariantColumn && (!hideVariantColumn || hasVariantNames || useTitleLabels)
 

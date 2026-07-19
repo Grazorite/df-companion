@@ -21,7 +21,7 @@ function stripHtml(html) {
     
     if (char === '<' && !inTag) {
       const nextChars = html.slice(i, i + 10)
-      if (/^<[a-zA-Z!\/]/.test(nextChars)) {
+      if (/^<[a-zA-Z!/]/.test(nextChars)) {
         inTag = true
         tagStart = i
       } else {

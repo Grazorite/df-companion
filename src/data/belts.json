@@ -152,7 +152,7 @@
             "location": "LitS Loot for DCs",
             "price": "45 Dragon Coins",
             "priceType": "dc",
-            "sellback": "41 Dragon Coins before 24 hours, 12 Dragon Coins after 24 hours",
+            "sellback": "41 DC (<24 hours) / 12 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -199,7 +199,7 @@
             "location": "LitS Loot for DCs",
             "price": "45 Dragon Coins",
             "priceType": "dc",
-            "sellback": "41 Dragon Coins before 24 hours, 12 Dragon Coins after 24 hours",
+            "sellback": "41 DC (<24 hours) / 12 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -246,7 +246,7 @@
             "location": "LitS Loot for DCs",
             "price": "45 Dragon Coins",
             "priceType": "dc",
-            "sellback": "41 Dragon Coins before 24 hours, 12 Dragon Coins after 24 hours",
+            "sellback": "41 DC (<24 hours) / 12 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -293,7 +293,7 @@
             "location": "LitS Loot for DCs",
             "price": "45 Dragon Coins",
             "priceType": "dc",
-            "sellback": "41 Dragon Coins before 24 hours, 12 Dragon Coins after 24 hours",
+            "sellback": "41 DC (<24 hours) / 12 DC (>24 hours)",
             "daRequired": true,
             "dcRequired": true
           }
@@ -340,7 +340,7 @@
             "location": "LitS Loot for DCs",
             "price": "45 Dragon Coins",
             "priceType": "dc",
-            "sellback": "41 Dragon Coins before 24 hours, 12 Dragon Coins after 24 hours",
+            "sellback": "41 DC (<24 hours) / 12 DC (>24 hours)",
             "daRequired": true,
             "dcRequired": true
           }
@@ -459,7 +459,7 @@
             "location": "tMT Loot for DCs",
             "price": "90 Dragon Coins",
             "priceType": "dc",
-            "sellback": "81 Dragon Coins before 24 hours, 23 Dragon Coins after 24 hours",
+            "sellback": "81 DC (<24 hours) / 23 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -506,7 +506,7 @@
             "location": "tMT Loot for DCs",
             "price": "90 Dragon Coins",
             "priceType": "dc",
-            "sellback": "81 Dragon Coins before 24 hours, 23 Dragon Coins after 24 hours",
+            "sellback": "81 DC (<24 hours) / 23 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -553,7 +553,7 @@
             "location": "tMT Loot for DCs",
             "price": "90 Dragon Coins",
             "priceType": "dc",
-            "sellback": "81 Dragon Coins before 24 hours, 23 Dragon Coins after 24 hours",
+            "sellback": "81 DC (<24 hours) / 23 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -600,7 +600,7 @@
             "location": "tMT Loot for DCs",
             "price": "90 Dragon Coins",
             "priceType": "dc",
-            "sellback": "81 Dragon Coins before 24 hours, 23 Dragon Coins after 24 hours",
+            "sellback": "81 DC (<24 hours) / 23 DC (>24 hours)",
             "daRequired": true,
             "dcRequired": true
           }
@@ -647,7 +647,7 @@
             "location": "tMT Loot for DCs",
             "price": "90 Dragon Coins",
             "priceType": "dc",
-            "sellback": "81 Dragon Coins before 24 hours, 23 Dragon Coins after 24 hours",
+            "sellback": "81 DC (<24 hours) / 23 DC (>24 hours)",
             "daRequired": true,
             "dcRequired": true
           }
@@ -932,7 +932,7 @@
             "location": "RG Loot for DCs",
             "price": "100 Dragon Coins",
             "priceType": "dc",
-            "sellback": "90 Dragon Coins before 24 hours, 25 Dragon Coins after 24 hours",
+            "sellback": "90 DC (<24 hours) / 25 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -979,7 +979,7 @@
             "location": "RG Loot for DCs",
             "price": "100 Dragon Coins",
             "priceType": "dc",
-            "sellback": "90 Dragon Coins before 24 hours, 25 Dragon Coins after 24 hours",
+            "sellback": "90 DC (<24 hours) / 25 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -1026,7 +1026,7 @@
             "location": "RG Loot for DCs",
             "price": "100 Dragon Coins",
             "priceType": "dc",
-            "sellback": "90 Dragon Coins before 24 hours, 25 Dragon Coins after 24 hours",
+            "sellback": "90 DC (<24 hours) / 25 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -1073,7 +1073,7 @@
             "location": "RG Loot for DCs",
             "price": "100 Dragon Coins",
             "priceType": "dc",
-            "sellback": "90 Dragon Coins before 24 hours, 25 Dragon Coins after 24 hours",
+            "sellback": "90 DC (<24 hours) / 25 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -1120,7 +1120,7 @@
             "location": "RG Loot for DCs",
             "price": "100 Dragon Coins",
             "priceType": "dc",
-            "sellback": "90 Dragon Coins before 24 hours, 25 Dragon Coins after 24 hours",
+            "sellback": "90 DC (<24 hours) / 25 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -1167,7 +1167,7 @@
             "location": "RG Loot for DCs",
             "price": "100 Dragon Coins",
             "priceType": "dc",
-            "sellback": "90 Dragon Coins before 24 hours, 25 Dragon Coins after 24 hours",
+            "sellback": "90 DC (<24 hours) / 25 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -1214,7 +1214,7 @@
             "location": "RG Loot for DCs",
             "price": "100 Dragon Coins",
             "priceType": "dc",
-            "sellback": "90 Dragon Coins before 24 hours, 25 Dragon Coins after 24 hours",
+            "sellback": "90 DC (<24 hours) / 25 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -1261,7 +1261,7 @@
             "location": "RG Loot for DCs",
             "price": "100 Dragon Coins",
             "priceType": "dc",
-            "sellback": "90 Dragon Coins before 24 hours, 25 Dragon Coins after 24 hours",
+            "sellback": "90 DC (<24 hours) / 25 DC (>24 hours)",
             "daRequired": true,
             "dcRequired": true
           }
@@ -1308,7 +1308,7 @@
             "location": "RG Loot for DCs",
             "price": "100 Dragon Coins",
             "priceType": "dc",
-            "sellback": "90 Dragon Coins before 24 hours, 25 Dragon Coins after 24 hours",
+            "sellback": "90 DC (<24 hours) / 25 DC (>24 hours)",
             "daRequired": true,
             "dcRequired": true
           }
@@ -1542,7 +1542,7 @@
         "location": "Edelia Drop DC",
         "price": "10 Dragon Coins",
         "priceType": "dc",
-        "sellback": "9 Dragon Coins before 24 hours, 2 Dragon Coins after 24 hours",
+        "sellback": "9 DC (<24 hours) / 2 DC (>24 hours)",
         "daRequired": false,
         "dcRequired": true
       }
@@ -1638,8 +1638,9 @@
           {
             "location": "Falconreach Shop",
             "price": "N/A",
-            "priceType": "free",
+            "priceType": "merge",
             "sellback": "0 Gold",
+            "requiredItems": "1 The Last Board of Falconreach",
             "daRequired": false
           }
         ],
@@ -1661,8 +1662,9 @@
           {
             "location": "Falconreach Shop",
             "price": "N/A",
-            "priceType": "free",
+            "priceType": "merge",
             "sellback": "0 Gold",
+            "requiredItems": "1 The Last Board of Falconreach",
             "daRequired": false
           }
         ],
@@ -1684,8 +1686,9 @@
           {
             "location": "Falconreach Shop",
             "price": "N/A",
-            "priceType": "free",
+            "priceType": "merge",
             "sellback": "0 Gold",
+            "requiredItems": "1 The Last Board of Falconreach",
             "daRequired": false
           }
         ],
@@ -1701,14 +1704,14 @@
     "category": "Armor",
     "releaseDate": "",
     "tags": [
-      "free",
+      "merge",
       "non"
     ],
     "hasDA": false,
     "hasDC": false,
     "hasDM": false,
-    "hasFree": true,
-    "hasMerge": false,
+    "hasFree": false,
+    "hasMerge": true,
     "levelRange": "I-III",
     "elements": [
       "NON"
@@ -2298,7 +2301,7 @@
         "location": "Rescue DC Shop",
         "price": "20 Dragon Coins",
         "priceType": "dc",
-        "sellback": "18 Dragon Coins before 24 hours, 5 Dragon Coins after 24 hours",
+        "sellback": "18 DC (<24 hours) / 5 DC (>24 hours)",
         "daRequired": false,
         "dcRequired": true
       }
@@ -2689,7 +2692,7 @@
         "location": "Rescue DC Shop",
         "price": "30 Dragon Coins",
         "priceType": "dc",
-        "sellback": "27 Dragon Coins before 24 hours, 8 Dragon Coins after 24 hours",
+        "sellback": "27 DC (<24 hours) / 8 DC (>24 hours)",
         "daRequired": false,
         "dcRequired": true
       }
@@ -2962,7 +2965,7 @@
             "location": "TNR Loot for DCs",
             "price": "70 Dragon Coins",
             "priceType": "dc",
-            "sellback": "63 Dragon Coins before 24 hours, 18 Dragon Coins after 24 hours",
+            "sellback": "63 DC (<24 hours) / 18 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -3009,7 +3012,7 @@
             "location": "TNR Loot for DCs",
             "price": "110 Dragon Coins",
             "priceType": "dc",
-            "sellback": "99 Dragon Coins before 24 hours, 28 Dragon Coins after 24 hours",
+            "sellback": "99 DC (<24 hours) / 28 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -3056,7 +3059,7 @@
             "location": "TNR Loot for DCs",
             "price": "150 Dragon Coins",
             "priceType": "dc",
-            "sellback": "135 Dragon Coins before 24 hours, 38 Dragon Coins after 24 hours",
+            "sellback": "135 DC (<24 hours) / 38 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -3103,7 +3106,7 @@
             "location": "TNR Loot for DCs",
             "price": "200 Dragon Coins",
             "priceType": "dc",
-            "sellback": "180 Dragon Coins before 24 hours, 50 Dragon Coins after 24 hours",
+            "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
             "daRequired": true,
             "dcRequired": true
           }
@@ -3150,7 +3153,7 @@
             "location": "TNR Loot for DCs",
             "price": "225 Dragon Coins",
             "priceType": "dc",
-            "sellback": "203 Dragon Coins before 24 hours, 57 Dragon Coins after 24 hours",
+            "sellback": "203 DC (<24 hours) / 57 DC (>24 hours)",
             "daRequired": true,
             "dcRequired": true
           }
@@ -3341,14 +3344,15 @@
       {
         "location": "DeathKnight Items",
         "price": "N/A",
-        "priceType": "free",
+        "priceType": "merge",
         "sellback": "100 Gold",
+        "requiredItems": "1 Undead Slayer Badge",
         "daRequired": false
       }
     ],
     "tags": [
       "dar",
-      "free"
+      "merge"
     ],
     "daRequired": false
   },
@@ -4438,8 +4442,9 @@
           {
             "location": "Defender Item Swap",
             "price": "N/A",
-            "priceType": "free",
+            "priceType": "merge",
             "sellback": "0 Gold",
+            "requiredItems": "1 Defender's Belt V",
             "daRequired": true,
             "dmRequired": true
           }
@@ -4587,8 +4592,9 @@
           {
             "location": "Defender Item Swap",
             "price": "N/A",
-            "priceType": "free",
+            "priceType": "merge",
             "sellback": "0 Gold",
+            "requiredItems": "1 Defender's Belt X",
             "daRequired": true,
             "dmRequired": true
           }
@@ -4736,8 +4742,9 @@
           {
             "location": "Defender Item Swap",
             "price": "N/A",
-            "priceType": "free",
+            "priceType": "merge",
             "sellback": "0 Gold",
+            "requiredItems": "1 Defender's Belt XV",
             "daRequired": true,
             "dmRequired": true
           }
@@ -4885,8 +4892,9 @@
           {
             "location": "Defender Item Swap",
             "price": "N/A",
-            "priceType": "free",
+            "priceType": "merge",
             "sellback": "0 Gold",
+            "requiredItems": "1 Defender's Belt XX",
             "daRequired": true,
             "dmRequired": true
           }
@@ -4984,8 +4992,9 @@
           {
             "location": "Defender Item Swap",
             "price": "N/A",
-            "priceType": "free",
+            "priceType": "merge",
             "sellback": "0 Gold",
+            "requiredItems": "1 Defender's Belt XXIII",
             "daRequired": true,
             "dmRequired": true
           }
@@ -5002,14 +5011,13 @@
     "category": "Armor",
     "releaseDate": "",
     "tags": [
-      "free",
       "merge",
       "non"
     ],
     "hasDA": true,
     "hasDC": false,
     "hasDM": true,
-    "hasFree": true,
+    "hasFree": false,
     "hasMerge": true,
     "levelRange": "I-XXIII",
     "elements": [
@@ -5160,7 +5168,7 @@
             "location": "NS Loot for DCs",
             "price": "50 Dragon Coins",
             "priceType": "dc",
-            "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+            "sellback": "45 DC (<24 hours) / 13 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -5205,7 +5213,7 @@
             "location": "NS Loot for DCs",
             "price": "70 Dragon Coins",
             "priceType": "dc",
-            "sellback": "63 Dragon Coins before 24 hours, 18 Dragon Coins after 24 hours",
+            "sellback": "63 DC (<24 hours) / 18 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -5250,7 +5258,7 @@
             "location": "NS Loot for DCs",
             "price": "90 Dragon Coins",
             "priceType": "dc",
-            "sellback": "81 Dragon Coins before 24 hours, 23 Dragon Coins after 24 hours",
+            "sellback": "81 DC (<24 hours) / 23 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -5295,7 +5303,7 @@
             "location": "NS Loot for DCs",
             "price": "110 Dragon Coins",
             "priceType": "dc",
-            "sellback": "81 Dragon Coins before 24 hours, 28 Dragon Coins after 24 hours",
+            "sellback": "81 DC (<24 hours) / 28 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -5340,7 +5348,7 @@
             "location": "NS Loot for DCs",
             "price": "130 Dragon Coins",
             "priceType": "dc",
-            "sellback": "117 Dragon Coins before 24 hours, 33 Dragon Coins after 24 hours",
+            "sellback": "117 DC (<24 hours) / 33 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -5385,7 +5393,7 @@
             "location": "NS Loot for DCs",
             "price": "150 Dragon Coins",
             "priceType": "dc",
-            "sellback": "135 Dragon Coins before 24 hours, 38 Dragon Coins after 24 hours",
+            "sellback": "135 DC (<24 hours) / 38 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -5430,7 +5438,7 @@
             "location": "NS Loot for DCs",
             "price": "170 Dragon Coins",
             "priceType": "dc",
-            "sellback": "153 Dragon Coins before 24 hours, 43 Dragon Coins after 24 hours",
+            "sellback": "153 DC (<24 hours) / 43 DC (>24 hours)",
             "daRequired": true,
             "dcRequired": true
           }
@@ -5475,7 +5483,7 @@
             "location": "NS Loot for DCs",
             "price": "200 Dragon Coins",
             "priceType": "dc",
-            "sellback": "180 Dragon Coins before 24 hours, 50 Dragon Coins after 24 hours",
+            "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
             "daRequired": true,
             "dcRequired": true
           }
@@ -5778,7 +5786,7 @@
         "location": "Rescue DC Shop",
         "price": "15 Dragon Coins",
         "priceType": "dc",
-        "sellback": "14 Dragon Coins before 24 hours, 4 Dragon Coins after 24 hours",
+        "sellback": "14 DC (<24 hours) / 4 DC (>24 hours)",
         "daRequired": true,
         "dcRequired": true
       }
@@ -6383,7 +6391,7 @@
             "location": "Alien Loot for DCs",
             "price": "50 Dragon Coins",
             "priceType": "dc",
-            "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+            "sellback": "45 DC (<24 hours) / 13 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -6430,7 +6438,7 @@
             "location": "Alien Loot for DCs",
             "price": "70 Dragon Coins",
             "priceType": "dc",
-            "sellback": "63 Dragon Coins before 24 hours, 18 Dragon Coins after 24 hours",
+            "sellback": "63 DC (<24 hours) / 18 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -6477,7 +6485,7 @@
             "location": "Alien Loot for DCs",
             "price": "90 Dragon Coins",
             "priceType": "dc",
-            "sellback": "81 Dragon Coins before 24 hours, 23 Dragon Coins after 24 hours",
+            "sellback": "81 DC (<24 hours) / 23 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -6524,7 +6532,7 @@
             "location": "Alien Loot for DCs",
             "price": "110 Dragon Coins",
             "priceType": "dc",
-            "sellback": "99 Dragon Coins before 24 hours, 28 Dragon Coins after 24 hours",
+            "sellback": "99 DC (<24 hours) / 28 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -6571,7 +6579,7 @@
             "location": "Alien Loot for DCs",
             "price": "130 Dragon Coins",
             "priceType": "dc",
-            "sellback": "117 Dragon Coins before 24 hours, 33 Dragon Coins after 24 hours",
+            "sellback": "117 DC (<24 hours) / 33 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -6618,7 +6626,7 @@
             "location": "Alien Loot for DCs",
             "price": "150 Dragon Coins",
             "priceType": "dc",
-            "sellback": "135 Dragon Coins before 24 hours, 38 Dragon Coins after 24 hours",
+            "sellback": "135 DC (<24 hours) / 38 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -6665,7 +6673,7 @@
             "location": "Alien Loot for DCs",
             "price": "170 Dragon Coins",
             "priceType": "dc",
-            "sellback": "153 Dragon Coins before 24 hours, 43 Dragon Coins after 24 hours",
+            "sellback": "153 DC (<24 hours) / 43 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -6712,7 +6720,7 @@
             "location": "Alien Loot for DCs",
             "price": "200 Dragon Coins",
             "priceType": "dc",
-            "sellback": "180 Dragon Coins before 24 hours, 50 Dragon Coins after 24 hours",
+            "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
             "daRequired": true,
             "dcRequired": true
           }
@@ -6759,7 +6767,7 @@
             "location": "Alien Loot for DCs",
             "price": "225 Dragon Coins",
             "priceType": "dc",
-            "sellback": "203 Dragon Coins before 24 hours, 57 Dragon Coins after 24 hours",
+            "sellback": "203 DC (<24 hours) / 57 DC (>24 hours)",
             "daRequired": true,
             "dcRequired": true
           }
@@ -6821,7 +6829,7 @@
         "location": "Edelia Drop DC",
         "price": "20 Dragon Coins",
         "priceType": "dc",
-        "sellback": "18 Dragon Coins before 24 hours, 5 Dragon Coins after 24 hours",
+        "sellback": "18 DC (<24 hours) / 5 DC (>24 hours)",
         "daRequired": false,
         "dcRequired": true
       }
@@ -7222,7 +7230,7 @@
             "location": "TLU Loot for DCs",
             "price": "50 Dragon Coins",
             "priceType": "dc",
-            "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+            "sellback": "45 DC (<24 hours) / 13 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -7269,7 +7277,7 @@
             "location": "TLU Loot for DCs",
             "price": "70 Dragon Coins",
             "priceType": "dc",
-            "sellback": "63 Dragon Coins before 24 hours, 18 Dragon Coins after 24 hours",
+            "sellback": "63 DC (<24 hours) / 18 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -7316,7 +7324,7 @@
             "location": "TLU Loot for DCs",
             "price": "90 Dragon Coins",
             "priceType": "dc",
-            "sellback": "81 Dragon Coins before 24 hours, 23 Dragon Coins after 24 hours",
+            "sellback": "81 DC (<24 hours) / 23 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -7363,7 +7371,7 @@
             "location": "TLU Loot for DCs",
             "price": "110 Dragon Coins",
             "priceType": "dc",
-            "sellback": "99 Dragon Coins before 24 hours, 28 Dragon Coins after 24 hours",
+            "sellback": "99 DC (<24 hours) / 28 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -7410,7 +7418,7 @@
             "location": "TLU Loot for DCs",
             "price": "130 Dragon Coins",
             "priceType": "dc",
-            "sellback": "117 Dragon Coins before 24 hours, 33 Dragon Coins after 24 hours",
+            "sellback": "117 DC (<24 hours) / 33 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -7457,7 +7465,7 @@
             "location": "TLU Loot for DCs",
             "price": "150 Dragon Coins",
             "priceType": "dc",
-            "sellback": "135 Dragon Coins before 24 hours, 38 Dragon Coins after 24 hours",
+            "sellback": "135 DC (<24 hours) / 38 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -7504,7 +7512,7 @@
             "location": "TLU Loot for DCs",
             "price": "170 Dragon Coins",
             "priceType": "dc",
-            "sellback": "153 Dragon Coins before 24 hours, 43 Dragon Coins after 24 hours",
+            "sellback": "153 DC (<24 hours) / 43 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -7551,7 +7559,7 @@
             "location": "TLU Loot for DCs",
             "price": "200 Dragon Coins",
             "priceType": "dc",
-            "sellback": "180 Dragon Coins before 24 hours, 50 Dragon Coins after 24 hours",
+            "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
             "daRequired": true,
             "dcRequired": true
           }
@@ -7598,7 +7606,7 @@
             "location": "TLU Loot for DCs",
             "price": "225 Dragon Coins",
             "priceType": "dc",
-            "sellback": "203 Dragon Coins before 24 hours, 57 Dragon Coins after 24 hours",
+            "sellback": "203 DC (<24 hours) / 57 DC (>24 hours)",
             "daRequired": true,
             "dcRequired": true
           }
@@ -7920,15 +7928,16 @@
       {
         "location": "Book Return",
         "price": "N/A",
-        "priceType": "free",
+        "priceType": "merge",
         "sellback": "0 Gold",
+        "requiredItems": "Mage's Sketchbook",
         "daRequired": true
       }
     ],
     "notes": "• The following changes were implemented on  March 28th, 2025:\n  • Block was updated from +1 to +4. \n  • Dodge +4, Parry +4, WIS +1, and, LUK +1 stats were added.",
     "tags": [
       "met",
-      "free"
+      "merge"
     ],
     "daRequired": true
   },
@@ -8088,7 +8097,7 @@
             "location": "CS Loot for DCs",
             "price": "70 Dragon Coins",
             "priceType": "dc",
-            "sellback": "63 Dragon Coins before 24 hours, 18 Dragon Coins after 24 hours",
+            "sellback": "63 DC (<24 hours) / 18 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -8135,7 +8144,7 @@
             "location": "CS Loot for DCs",
             "price": "110 Dragon Coins",
             "priceType": "dc",
-            "sellback": "99 Dragon Coins before 24 hours, 28 Dragon Coins after 24 hours",
+            "sellback": "99 DC (<24 hours) / 28 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -8182,7 +8191,7 @@
             "location": "CS Loot for DCs",
             "price": "150 Dragon Coins",
             "priceType": "dc",
-            "sellback": "135 Dragon Coins before 24 hours, 38 Dragon Coins after 24 hours",
+            "sellback": "135 DC (<24 hours) / 38 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -8229,7 +8238,7 @@
             "location": "CS Loot for DCs",
             "price": "200 Dragon Coins",
             "priceType": "dc",
-            "sellback": "180 Dragon Coins before 24 hours, 50 Dragon Coins after 24 hours",
+            "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
             "daRequired": true,
             "dcRequired": true
           }
@@ -8276,7 +8285,7 @@
             "location": "CS Loot for DCs",
             "price": "225 Dragon Coins",
             "priceType": "dc",
-            "sellback": "203 Dragon Coins before 24 hours, 56 Dragon Coins after 24 hours",
+            "sellback": "203 DC (<24 hours) / 56 DC (>24 hours)",
             "daRequired": true,
             "dcRequired": true
           }
@@ -8885,7 +8894,7 @@
         "location": "Edelia Drop DC",
         "price": "35 Dragon Coins",
         "priceType": "dc",
-        "sellback": "31 Dragon Coins before 24 hours, 9 Dragon Coins after 24 hours",
+        "sellback": "31 DC (<24 hours) / 9 DC (>24 hours)",
         "daRequired": true,
         "dcRequired": true
       }
@@ -9067,7 +9076,7 @@
             "location": "SFP1 Loot for DCs",
             "price": "90 Dragon Coins",
             "priceType": "dc",
-            "sellback": "81 Dragon Coins before 24 hours, 23 Dragon Coins after 24 hours",
+            "sellback": "81 DC (<24 hours) / 23 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -9114,7 +9123,7 @@
             "location": "SFP1 Loot for DCs",
             "price": "110 Dragon Coins",
             "priceType": "dc",
-            "sellback": "99 Dragon Coins before 24 hours, 28 Dragon Coins after 24 hours",
+            "sellback": "99 DC (<24 hours) / 28 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -9161,7 +9170,7 @@
             "location": "SFP1 Loot for DCs",
             "price": "130 Dragon Coins",
             "priceType": "dc",
-            "sellback": "117 Dragon Coins before 24 hours, 33 Dragon Coins after 24 hours",
+            "sellback": "117 DC (<24 hours) / 33 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -9208,7 +9217,7 @@
             "location": "SFP1 Loot for DCs",
             "price": "150 Dragon Coins",
             "priceType": "dc",
-            "sellback": "135 Dragon Coins before 24 hours, 38 Dragon Coins after 24 hours",
+            "sellback": "135 DC (<24 hours) / 38 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -9255,7 +9264,7 @@
             "location": "SFP1 Loot for DCs",
             "price": "170 Dragon Coins",
             "priceType": "dc",
-            "sellback": "153 Dragon Coins before 24 hours, 43 Dragon Coins after 24 hours",
+            "sellback": "153 DC (<24 hours) / 43 DC (>24 hours)",
             "daRequired": true,
             "dcRequired": true
           }
@@ -9302,7 +9311,7 @@
             "location": "SFP1 Loot for DCs",
             "price": "200 Dragon Coins",
             "priceType": "dc",
-            "sellback": "180 Dragon Coins before 24 hours, 50 Dragon Coins after 24 hours",
+            "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
             "daRequired": true,
             "dcRequired": true
           }
@@ -9349,7 +9358,7 @@
             "location": "SFP1 Loot for DCs",
             "price": "225 Dragon Coins",
             "priceType": "dc",
-            "sellback": "203 Dragon Coins before 24 hours, 57 Dragon Coins after 24 hours",
+            "sellback": "203 DC (<24 hours) / 57 DC (>24 hours)",
             "daRequired": true,
             "dcRequired": true
           }
@@ -9610,7 +9619,7 @@
         "location": "Sandsea Trinkets",
         "price": "50 Dragon Coins",
         "priceType": "dc",
-        "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+        "sellback": "45 DC (<24 hours) / 13 DC (>24 hours)",
         "daRequired": true,
         "dcRequired": true
       }
@@ -9710,7 +9719,7 @@
             "location": "TtT Loot for DCs",
             "price": "60 Dragon Coins",
             "priceType": "dc",
-            "sellback": "54 Dragon Coins before 24 hours, 15 Dragon Coins after 24 hours",
+            "sellback": "54 DC (<24 hours) / 15 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -9757,7 +9766,7 @@
             "location": "TtT Loot for DCs",
             "price": "60 Dragon Coins",
             "priceType": "dc",
-            "sellback": "54 Dragon Coins before 24 hours, 15 Dragon Coins after 24 hours",
+            "sellback": "54 DC (<24 hours) / 15 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -9804,7 +9813,7 @@
             "location": "TtT Loot for DCs",
             "price": "60 Dragon Coins",
             "priceType": "dc",
-            "sellback": "54 Dragon Coins before 24 hours, 15 Dragon Coins after 24 hours",
+            "sellback": "54 DC (<24 hours) / 15 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -9851,7 +9860,7 @@
             "location": "TtT Loot for DCs",
             "price": "60 Dragon Coins",
             "priceType": "dc",
-            "sellback": "54 Dragon Coins before 24 hours, 15 Dragon Coins after 24 hours",
+            "sellback": "54 DC (<24 hours) / 15 DC (>24 hours)",
             "daRequired": true,
             "dcRequired": true
           }
@@ -9898,7 +9907,7 @@
             "location": "TtT Loot for DCs",
             "price": "60 Dragon Coins",
             "priceType": "dc",
-            "sellback": "54 Dragon Coins before 24 hours, 15 Dragon Coins after 24 hours",
+            "sellback": "54 DC (<24 hours) / 15 DC (>24 hours)",
             "daRequired": true,
             "dcRequired": true
           }
@@ -10079,7 +10088,7 @@
             "location": "Melissa Loot for DCs",
             "price": "50 Dragon Coins",
             "priceType": "dc",
-            "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+            "sellback": "45 DC (<24 hours) / 13 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -10126,7 +10135,7 @@
             "location": "Melissa Loot for DCs",
             "price": "70 Dragon Coins",
             "priceType": "dc",
-            "sellback": "63 Dragon Coins before 24 hours, 18 Dragon Coins after 24 hours",
+            "sellback": "63 DC (<24 hours) / 18 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -10173,7 +10182,7 @@
             "location": "Melissa Loot for DCs",
             "price": "90 Dragon Coins",
             "priceType": "dc",
-            "sellback": "81 Dragon Coins before 24 hours, 23 Dragon Coins after 24 hours",
+            "sellback": "81 DC (<24 hours) / 23 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -10220,7 +10229,7 @@
             "location": "Melissa Loot for DCs",
             "price": "110 Dragon Coins",
             "priceType": "dc",
-            "sellback": "99 Dragon Coins before 24 hours, 28 Dragon Coins after 24 hours",
+            "sellback": "99 DC (<24 hours) / 28 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -10267,7 +10276,7 @@
             "location": "Melissa Loot for DCs",
             "price": "130 Dragon Coins",
             "priceType": "dc",
-            "sellback": "117 Dragon Coins before 24 hours, 33 Dragon Coins after 24 hours",
+            "sellback": "117 DC (<24 hours) / 33 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -10314,7 +10323,7 @@
             "location": "Melissa Loot for DCs",
             "price": "150 Dragon Coins",
             "priceType": "dc",
-            "sellback": "135 Dragon Coins before 24 hours, 38 Dragon Coins after 24 hours",
+            "sellback": "135 DC (<24 hours) / 38 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -10361,7 +10370,7 @@
             "location": "Melissa Loot for DCs",
             "price": "170 Dragon Coins",
             "priceType": "dc",
-            "sellback": "153 Dragon Coins before 24 hours, 43 Dragon Coins after 24 hours",
+            "sellback": "153 DC (<24 hours) / 43 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -10408,7 +10417,7 @@
             "location": "Melissa Loot for DCs",
             "price": "200 Dragon Coins",
             "priceType": "dc",
-            "sellback": "180 Dragon Coins before 24 hours, 50 Dragon Coins after 24 hours",
+            "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
             "daRequired": true,
             "dcRequired": true
           }
@@ -10455,7 +10464,7 @@
             "location": "Melissa Loot for DCs",
             "price": "225 Dragon Coins",
             "priceType": "dc",
-            "sellback": "203 Dragon Coins before 24 hours, 57 Dragon Coins after 24 hours",
+            "sellback": "203 DC (<24 hours) / 57 DC (>24 hours)",
             "daRequired": true,
             "dcRequired": true
           }
@@ -10550,8 +10559,9 @@
           {
             "location": "Challenger Belts",
             "price": "N/A",
-            "priceType": "free",
+            "priceType": "merge",
             "sellback": "0 Dragon Coins",
+            "requiredItems": "1 Challenger Belt",
             "daRequired": false,
             "dcRequired": true
           }
@@ -10668,14 +10678,13 @@
     "category": "Armor",
     "releaseDate": "",
     "tags": [
-      "free",
       "merge",
       "met"
     ],
     "hasDA": false,
     "hasDC": true,
     "hasDM": false,
-    "hasFree": true,
+    "hasFree": false,
     "hasMerge": true,
     "levelRange": "I-V",
     "elements": [
@@ -11394,7 +11403,7 @@
         "location": "Sandsea Trinkets",
         "price": "5 Dragon Coins",
         "priceType": "dc",
-        "sellback": "5 Dragon Coins before 24 hours, 2 Dragon Coins after 24 hours",
+        "sellback": "5 DC (<24 hours) / 2 DC (>24 hours)",
         "daRequired": false,
         "dcRequired": true
       }
@@ -11530,7 +11539,7 @@
         "location": "Cysero's Shop",
         "price": "300 Dragon Coins",
         "priceType": "dc",
-        "sellback": "270 Dragon Coins before 24 hours, 75 Dragon Coins after 24 hours",
+        "sellback": "270 DC (<24 hours) / 75 DC (>24 hours)",
         "daRequired": false,
         "dcRequired": true
       }
@@ -11708,7 +11717,7 @@
         "location": "Edelia Drop DC",
         "price": "15 Dragon Coins",
         "priceType": "dc",
-        "sellback": "14 Dragon Coins before 24 hours, 4 Dragon Coins after 24 hours",
+        "sellback": "14 DC (<24 hours) / 4 DC (>24 hours)",
         "daRequired": true,
         "dcRequired": true
       }
@@ -11786,7 +11795,7 @@
         "location": "Rescue DC Shop",
         "price": "50 Dragon Coins",
         "priceType": "dc",
-        "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+        "sellback": "45 DC (<24 hours) / 13 DC (>24 hours)",
         "daRequired": true,
         "dcRequired": true
       }
@@ -12142,7 +12151,7 @@
         "location": "Sandsea Trinkets",
         "price": "35 Dragon Coins",
         "priceType": "dc",
-        "sellback": "32 Dragon Coins before 24 hours, 9 Dragon Coins after 24 hours",
+        "sellback": "32 DC (<24 hours) / 9 DC (>24 hours)",
         "daRequired": true,
         "dcRequired": true
       }
@@ -12310,15 +12319,16 @@
       {
         "location": "Sir Vey's Shop",
         "price": "N/A",
-        "priceType": "free",
+        "priceType": "merge",
         "sellback": "20 Gold",
+        "requiredItems": "1 Pouch of Sparkling Sand",
         "daRequired": false
       }
     ],
     "notes": "• Belt previously required 5  Pouch of Sparkling Sand; this was lowered to 1 on  March 21st, 2025. \n• The following changes were implemented on  March 28th, 2025:\n  • The description's excerpt It increases your Block, Parry, and Dodge Defenses, making it slightly more likely for you to Defend against attacks. was added. \n  • Block stat was updated from +1 to +4. \n  • Parry and Dodge stats were added.",
     "tags": [
       "met",
-      "free"
+      "merge"
     ],
     "daRequired": false
   },
@@ -12441,8 +12451,9 @@
           {
             "location": "Covetous Fortune (Shop)",
             "price": "N/A",
-            "priceType": "free",
+            "priceType": "merge",
             "sellback": "0 Dragon Coins",
+            "requiredItems": "1 Golden Fortune",
             "daRequired": false,
             "dcRequired": true
           }
@@ -12465,8 +12476,9 @@
           {
             "location": "Covetous Fortune (Shop)",
             "price": "N/A",
-            "priceType": "free",
+            "priceType": "merge",
             "sellback": "0 Dragon Coins",
+            "requiredItems": "1 Golden Fortune",
             "daRequired": false,
             "dcRequired": true
           }
@@ -12489,8 +12501,9 @@
           {
             "location": "Covetous Fortune (Shop)",
             "price": "N/A",
-            "priceType": "free",
+            "priceType": "merge",
             "sellback": "0 Dragon Coins",
+            "requiredItems": "1 Golden Fortune",
             "daRequired": false,
             "dcRequired": true
           }
@@ -12507,14 +12520,14 @@
     "category": "Armor",
     "releaseDate": "",
     "tags": [
-      "free",
+      "merge",
       "nat"
     ],
     "hasDA": false,
     "hasDC": true,
     "hasDM": false,
-    "hasFree": true,
-    "hasMerge": false,
+    "hasFree": false,
+    "hasMerge": true,
     "levelRange": "I-III",
     "elements": [
       "NAT"
@@ -13052,7 +13065,7 @@
             "location": "TGH Loot for DCs",
             "price": "70 Dragon Coins",
             "priceType": "dc",
-            "sellback": "63 Dragon Coins before 24 hours, 18 Dragon Coins after 24 hours",
+            "sellback": "63 DC (<24 hours) / 18 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -13099,7 +13112,7 @@
             "location": "TGH Loot for DCs",
             "price": "110 Dragon Coins",
             "priceType": "dc",
-            "sellback": "99 Dragon Coins before 24 hours, 28 Dragon Coins after 24 hours",
+            "sellback": "99 DC (<24 hours) / 28 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -13146,7 +13159,7 @@
             "location": "TGH Loot for DCs",
             "price": "150 Dragon Coins",
             "priceType": "dc",
-            "sellback": "135 Dragon Coins before 24 hours, 38 Dragon Coins after 24 hours",
+            "sellback": "135 DC (<24 hours) / 38 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -13193,7 +13206,7 @@
             "location": "TGH Loot for DCs",
             "price": "200 Dragon Coins",
             "priceType": "dc",
-            "sellback": "180 Dragon Coins before 24 hours, 50 Dragon Coins after 24 hours",
+            "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
             "daRequired": true,
             "dcRequired": true
           }
@@ -13240,7 +13253,7 @@
             "location": "TGH Loot for DCs",
             "price": "225 Dragon Coins",
             "priceType": "dc",
-            "sellback": "203 Dragon Coins before 24 hours, 57 Dragon Coins after 24 hours",
+            "sellback": "203 DC (<24 hours) / 57 DC (>24 hours)",
             "daRequired": true,
             "dcRequired": true
           }
@@ -13369,8 +13382,9 @@
           {
             "location": "Challenger Belts",
             "price": "N/A",
-            "priceType": "free",
+            "priceType": "merge",
             "sellback": "0 Dragon Coins",
+            "requiredItems": "1 Challenger Belt",
             "daRequired": false,
             "dcRequired": true
           }
@@ -13487,14 +13501,13 @@
     "category": "Armor",
     "releaseDate": "",
     "tags": [
-      "free",
       "merge",
       "met"
     ],
     "hasDA": false,
     "hasDC": true,
     "hasDM": false,
-    "hasFree": true,
+    "hasFree": false,
     "hasMerge": true,
     "levelRange": "I-V",
     "elements": [
@@ -14130,7 +14143,7 @@
             "location": "Facade Loot for DCs",
             "price": "90 Dragon Coins",
             "priceType": "dc",
-            "sellback": "81 Dragon Coins before 24 hours, 23 Dragon Coins after 24 hours",
+            "sellback": "81 DC (<24 hours) / 23 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -14177,7 +14190,7 @@
             "location": "Facade Loot for DCs",
             "price": "90 Dragon Coins",
             "priceType": "dc",
-            "sellback": "81 Dragon Coins before 24 hours, 23 Dragon Coins after 24 hours",
+            "sellback": "81 DC (<24 hours) / 23 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -14224,7 +14237,7 @@
             "location": "Facade Loot for DCs",
             "price": "90 Dragon Coins",
             "priceType": "dc",
-            "sellback": "81 Dragon Coins before 24 hours, 23 Dragon Coins after 24 hours",
+            "sellback": "81 DC (<24 hours) / 23 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -14271,7 +14284,7 @@
             "location": "Facade Loot for DCs",
             "price": "90 Dragon Coins",
             "priceType": "dc",
-            "sellback": "81 Dragon Coins before 24 hours, 23 Dragon Coins after 24 hours",
+            "sellback": "81 DC (<24 hours) / 23 DC (>24 hours)",
             "daRequired": true,
             "dcRequired": true
           }
@@ -14318,7 +14331,7 @@
             "location": "Facade Loot for DCs",
             "price": "90 Dragon Coins",
             "priceType": "dc",
-            "sellback": "81 Dragon Coins before 24 hours, 23 Dragon Coins after 24 hours",
+            "sellback": "81 DC (<24 hours) / 23 DC (>24 hours)",
             "daRequired": true,
             "dcRequired": true
           }
@@ -14414,7 +14427,7 @@
         "location": "Edelia Drop DC",
         "price": "45 Dragon Coins",
         "priceType": "dc",
-        "sellback": "40 Dragon Coins before 24 hours, 11 Dragon Coins after 24 hours",
+        "sellback": "40 DC (<24 hours) / 11 DC (>24 hours)",
         "daRequired": true,
         "dcRequired": true
       }
@@ -15407,7 +15420,7 @@
         "location": "Edelia Drop DC",
         "price": "25 Dragon Coins",
         "priceType": "dc",
-        "sellback": "22 Dragon Coins before 24 hours, 6 Dragon Coins after 24 hours",
+        "sellback": "22 DC (<24 hours) / 6 DC (>24 hours)",
         "daRequired": false,
         "dcRequired": true
       }
@@ -15483,7 +15496,7 @@
         "location": "Star Captain DC Belts",
         "price": "20 Dragon Coins",
         "priceType": "dc",
-        "sellback": "18 Dragon Coins before 24 hours, 5 Dragon Coins after 24 hours",
+        "sellback": "18 DC (<24 hours) / 5 DC (>24 hours)",
         "daRequired": true,
         "dcRequired": true
       }
@@ -15526,7 +15539,7 @@
         "location": "Star Captain DC Belts",
         "price": "40 Dragon Coins",
         "priceType": "dc",
-        "sellback": "36 Dragon Coins before 24 hours, 10 Dragon Coins after 24 hours",
+        "sellback": "36 DC (<24 hours) / 10 DC (>24 hours)",
         "daRequired": false,
         "dcRequired": true
       }
@@ -15570,7 +15583,7 @@
         "location": "Star Captain DC Belts",
         "price": "35 Dragon Coins",
         "priceType": "dc",
-        "sellback": "32 Dragon Coins before 24 hours, 9 Dragon Coins after 24 hours",
+        "sellback": "32 DC (<24 hours) / 9 DC (>24 hours)",
         "daRequired": true,
         "dcRequired": true
       }
@@ -15613,7 +15626,7 @@
         "location": "Star Captain DC Belts",
         "price": "50 Dragon Coins",
         "priceType": "dc",
-        "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+        "sellback": "45 DC (<24 hours) / 13 DC (>24 hours)",
         "daRequired": true,
         "dcRequired": true
       }
@@ -15657,7 +15670,7 @@
         "location": "Star Captain DC Belts",
         "price": "45 Dragon Coins",
         "priceType": "dc",
-        "sellback": "41 Dragon Coins before 24 hours, 11 Dragon Coins after 24 hours",
+        "sellback": "41 DC (<24 hours) / 11 DC (>24 hours)",
         "daRequired": false,
         "dcRequired": true
       }
@@ -15701,7 +15714,7 @@
         "location": "Star Captain DC Belts",
         "price": "15 Dragon Coins",
         "priceType": "dc",
-        "sellback": "14 Dragon Coins before 24 hours, 4 Dragon Coins after 24 hours",
+        "sellback": "14 DC (<24 hours) / 4 DC (>24 hours)",
         "daRequired": false,
         "dcRequired": true
       }
@@ -15744,7 +15757,7 @@
         "location": "Star Captain DC Belts",
         "price": "30 Dragon Coins",
         "priceType": "dc",
-        "sellback": "27 Dragon Coins before 24 hours, 8 Dragon Coins after 24 hours",
+        "sellback": "27 DC (<24 hours) / 8 DC (>24 hours)",
         "daRequired": false,
         "dcRequired": true
       }
@@ -15787,7 +15800,7 @@
         "location": "Star Captain DC Belts",
         "price": "25 Dragon Coins",
         "priceType": "dc",
-        "sellback": "23 Dragon Coins before 24 hours, 7 Dragon Coins after 24 hours",
+        "sellback": "23 DC (<24 hours) / 7 DC (>24 hours)",
         "daRequired": false,
         "dcRequired": true
       }
@@ -15935,7 +15948,7 @@
             "location": "DC Loot for DCs",
             "price": "90 Dragon Coins",
             "priceType": "dc",
-            "sellback": "81 Dragon Coins before 24 hours, 23 Dragon Coins after 24 hours",
+            "sellback": "81 DC (<24 hours) / 23 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -15982,7 +15995,7 @@
             "location": "DC Loot for DCs",
             "price": "110 Dragon Coins",
             "priceType": "dc",
-            "sellback": "99 Dragon Coins before 24 hours, 28 Dragon Coins after 24 hours",
+            "sellback": "99 DC (<24 hours) / 28 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -16029,7 +16042,7 @@
             "location": "DC Loot for DCs",
             "price": "130 Dragon Coins",
             "priceType": "dc",
-            "sellback": "117 Dragon Coins before 24 hours, 33 Dragon Coins after 24 hours",
+            "sellback": "117 DC (<24 hours) / 33 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -16076,7 +16089,7 @@
             "location": "DC Loot for DCs",
             "price": "150 Dragon Coins",
             "priceType": "dc",
-            "sellback": "135 Dragon Coins before 24 hours, 38 Dragon Coins after 24 hours",
+            "sellback": "135 DC (<24 hours) / 38 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -16123,7 +16136,7 @@
             "location": "DC Loot for DCs",
             "price": "170 Dragon Coins",
             "priceType": "dc",
-            "sellback": "153 Dragon Coins before 24 hours, 43 Dragon Coins after 24 hours",
+            "sellback": "153 DC (<24 hours) / 43 DC (>24 hours)",
             "daRequired": true,
             "dcRequired": true
           }
@@ -16170,7 +16183,7 @@
             "location": "DC Loot for DCs",
             "price": "200 Dragon Coins",
             "priceType": "dc",
-            "sellback": "180 Dragon Coins before 24 hours, 50 Dragon Coins after 24 hours",
+            "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
             "daRequired": true,
             "dcRequired": true
           }
@@ -16217,7 +16230,7 @@
             "location": "DC Loot for DCs",
             "price": "225 Dragon Coins",
             "priceType": "dc",
-            "sellback": "203 Dragon Coins before 24 hours, 57 Dragon Coins after 24 hours",
+            "sellback": "203 DC (<24 hours) / 57 DC (>24 hours)",
             "daRequired": true,
             "dcRequired": true
           }
@@ -16587,7 +16600,7 @@
             "location": "TheProf Loot for DCs",
             "price": "30 Dragon Coins",
             "priceType": "dc",
-            "sellback": "27 Dragon Coins before 24 hours, 8 Dragon Coins after 24 hours",
+            "sellback": "27 DC (<24 hours) / 8 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -16634,7 +16647,7 @@
             "location": "TheProf Loot for DCs",
             "price": "30 Dragon Coins",
             "priceType": "dc",
-            "sellback": "27 Dragon Coins before 24 hours, 8 Dragon Coins after 24 hours",
+            "sellback": "27 DC (<24 hours) / 8 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -16681,7 +16694,7 @@
             "location": "TheProf Loot for DCs",
             "price": "30 Dragon Coins",
             "priceType": "dc",
-            "sellback": "27 Dragon Coins before 24 hours, 8 Dragon Coins after 24 hours",
+            "sellback": "27 DC (<24 hours) / 8 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -16728,7 +16741,7 @@
             "location": "TheProf Loot for DCs",
             "price": "30 Dragon Coins",
             "priceType": "dc",
-            "sellback": "27 Dragon Coins before 24 hours, 8 Dragon Coins after 24 hours",
+            "sellback": "27 DC (<24 hours) / 8 DC (>24 hours)",
             "daRequired": true,
             "dcRequired": true
           }
@@ -16775,7 +16788,7 @@
             "location": "TheProf Loot for DCs",
             "price": "30 Dragon Coins",
             "priceType": "dc",
-            "sellback": "27 Dragon Coins before 24 hours, 8 Dragon Coins after 24 hours",
+            "sellback": "27 DC (<24 hours) / 8 DC (>24 hours)",
             "daRequired": true,
             "dcRequired": true
           }
@@ -16822,7 +16835,7 @@
             "location": "TheProf Loot for DCs",
             "price": "30 Dragon Coins",
             "priceType": "dc",
-            "sellback": "27 Dragon Coins before 24 hours, 8 Dragon Coins after 24 hours",
+            "sellback": "27 DC (<24 hours) / 8 DC (>24 hours)",
             "daRequired": true,
             "dcRequired": true
           }
@@ -16911,14 +16924,15 @@
       {
         "location": "Thursday Belts",
         "price": "N/A",
-        "priceType": "free",
+        "priceType": "merge",
         "sellback": "100 Gold",
+        "requiredItems": "Thursday's Pendant",
         "daRequired": false
       }
     ],
     "tags": [
       "lig",
-      "free"
+      "merge"
     ],
     "daRequired": false
   },
@@ -16944,14 +16958,15 @@
       {
         "location": "Thursday Belts",
         "price": "N/A",
-        "priceType": "free",
+        "priceType": "merge",
         "sellback": "100 Gold",
+        "requiredItems": "Thursday's Pendant",
         "daRequired": true
       }
     ],
     "tags": [
       "lig",
-      "free"
+      "merge"
     ],
     "daRequired": true
   },
@@ -16986,7 +17001,7 @@
         "location": "Rescue DC Shop",
         "price": "10 Dragon Coins",
         "priceType": "dc",
-        "sellback": "9 Dragon Coins before 24 hours, 3 Dragon Coins after 24 hours",
+        "sellback": "9 DC (<24 hours) / 3 DC (>24 hours)",
         "daRequired": false,
         "dcRequired": true
       }
@@ -17508,7 +17523,7 @@
         "location": "Sandsea Trinkets",
         "price": "25 Dragon Coins",
         "priceType": "dc",
-        "sellback": "23 Dragon Coins before 24 hours, 7 Dragon Coins after 24 hours",
+        "sellback": "23 DC (<24 hours) / 7 DC (>24 hours)",
         "daRequired": false,
         "dcRequired": true
       }
@@ -17746,7 +17761,7 @@
         "location": "Sandsea Trinkets",
         "price": "15 Dragon Coins",
         "priceType": "dc",
-        "sellback": "14 Dragon Coins before 24 hours, 4 Dragon Coins after 24 hours",
+        "sellback": "14 DC (<24 hours) / 4 DC (>24 hours)",
         "daRequired": true,
         "dcRequired": true
       }
@@ -17859,7 +17874,7 @@
         "location": "Rescue DC Shop",
         "price": "50 Dragon Coins",
         "priceType": "dc",
-        "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+        "sellback": "45 DC (<24 hours) / 13 DC (>24 hours)",
         "daRequired": true,
         "dcRequired": true
       }
@@ -18171,7 +18186,7 @@
             "location": "Stolen Souls Loot for DCs",
             "price": "30 Dragon Coins",
             "priceType": "dc",
-            "sellback": "27 Dragon Coins before 24 hours, 8 Dragon Coins after 24 hours",
+            "sellback": "27 DC (<24 hours) / 8 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -18216,7 +18231,7 @@
             "location": "Stolen Souls Loot for DCs",
             "price": "30 Dragon Coins",
             "priceType": "dc",
-            "sellback": "27 Dragon Coins before 24 hours, 8 Dragon Coins after 24 hours",
+            "sellback": "27 DC (<24 hours) / 8 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -18261,7 +18276,7 @@
             "location": "Stolen Souls Loot for DCs",
             "price": "30 Dragon Coins",
             "priceType": "dc",
-            "sellback": "27 Dragon Coins before 24 hours, 8 Dragon Coins after 24 hours",
+            "sellback": "27 DC (<24 hours) / 8 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -18306,7 +18321,7 @@
             "location": "Stolen Souls Loot for DCs",
             "price": "30 Dragon Coins",
             "priceType": "dc",
-            "sellback": "27 Dragon Coins before 24 hours, 8 Dragon Coins after 24 hours",
+            "sellback": "27 DC (<24 hours) / 8 DC (>24 hours)",
             "daRequired": true,
             "dcRequired": true
           }
@@ -18351,7 +18366,7 @@
             "location": "Stolen Souls Loot for DCs",
             "price": "30 Dragon Coins",
             "priceType": "dc",
-            "sellback": "27 Dragon Coins before 24 hours, 8 Dragon Coins after 24 hours",
+            "sellback": "27 DC (<24 hours) / 8 DC (>24 hours)",
             "daRequired": true,
             "dcRequired": true
           }
@@ -18601,7 +18616,7 @@
         "location": "Rescue DC Shop",
         "price": "40 Dragon Coins",
         "priceType": "dc",
-        "sellback": "36 Dragon Coins before 24 hours, 10 Dragon Coins after 24 hours",
+        "sellback": "36 DC (<24 hours) / 10 DC (>24 hours)",
         "daRequired": true,
         "dcRequired": true
       }
@@ -18720,7 +18735,7 @@
             "location": "Discovery Loot for DCs",
             "price": "50 Dragon Coins",
             "priceType": "dc",
-            "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+            "sellback": "45 DC (<24 hours) / 13 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -18763,7 +18778,7 @@
             "location": "Discovery Loot for DCs",
             "price": "70 Dragon Coins",
             "priceType": "dc",
-            "sellback": "63 Dragon Coins before 24 hours, 18 Dragon Coins after 24 hours",
+            "sellback": "63 DC (<24 hours) / 18 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -18806,7 +18821,7 @@
             "location": "Discovery Loot for DCs",
             "price": "90 Dragon Coins",
             "priceType": "dc",
-            "sellback": "81 Dragon Coins before 24 hours, 23 Dragon Coins after 24 hours",
+            "sellback": "81 DC (<24 hours) / 23 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -18849,7 +18864,7 @@
             "location": "Discovery Loot for DCs",
             "price": "110 Dragon Coins",
             "priceType": "dc",
-            "sellback": "99 Dragon Coins before 24 hours, 28 Dragon Coins after 24 hours",
+            "sellback": "99 DC (<24 hours) / 28 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -18892,7 +18907,7 @@
             "location": "Discovery Loot for DCs",
             "price": "130 Dragon Coins",
             "priceType": "dc",
-            "sellback": "117 Dragon Coins before 24 hours, 33 Dragon Coins after 24 hours",
+            "sellback": "117 DC (<24 hours) / 33 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -18935,7 +18950,7 @@
             "location": "Discovery Loot for DCs",
             "price": "150 Dragon Coins",
             "priceType": "dc",
-            "sellback": "135 Dragon Coins before 24 hours, 38 Dragon Coins after 24 hours",
+            "sellback": "135 DC (<24 hours) / 38 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -18978,7 +18993,7 @@
             "location": "Discovery Loot for DCs",
             "price": "170 Dragon Coins",
             "priceType": "dc",
-            "sellback": "153 Dragon Coins before 24 hours, 43 Dragon Coins after 24 hours",
+            "sellback": "153 DC (<24 hours) / 43 DC (>24 hours)",
             "daRequired": true,
             "dcRequired": true
           }
@@ -19021,7 +19036,7 @@
             "location": "Discovery Loot for DCs",
             "price": "200 Dragon Coins",
             "priceType": "dc",
-            "sellback": "180 Dragon Coins before 24 hours, 50 Dragon Coins after 24 hours",
+            "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
             "daRequired": true,
             "dcRequired": true
           }
@@ -19112,8 +19127,9 @@
           {
             "location": "Challenger Belts",
             "price": "N/A",
-            "priceType": "free",
+            "priceType": "merge",
             "sellback": "0 Dragon Coins",
+            "requiredItems": "1 Challenger Belt",
             "daRequired": false,
             "dcRequired": true
           }
@@ -19230,14 +19246,13 @@
     "category": "Armor",
     "releaseDate": "",
     "tags": [
-      "free",
       "merge",
       "met"
     ],
     "hasDA": false,
     "hasDC": true,
     "hasDM": false,
-    "hasFree": true,
+    "hasFree": false,
     "hasMerge": true,
     "levelRange": "I-V",
     "elements": [
@@ -19679,7 +19694,7 @@
         "location": "Cysero's Shop",
         "price": "300 Dragon Coins",
         "priceType": "dc",
-        "sellback": "270 Dragon Coins before 24 hours, 75 Dragon Coins after 24 hours",
+        "sellback": "270 DC (<24 hours) / 75 DC (>24 hours)",
         "daRequired": false,
         "dcRequired": true
       }
@@ -19748,7 +19763,7 @@
             "location": "Zeclem's Items",
             "price": "125 Dragon Coins",
             "priceType": "dc",
-            "sellback": "113 Dragon Coins before 24 hours, 32 Dragon Coins after 24 hours",
+            "sellback": "113 DC (<24 hours) / 32 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -19771,7 +19786,7 @@
             "location": "Zeclem's Items",
             "price": "150 Dragon Coins",
             "priceType": "dc",
-            "sellback": "135 Dragon Coins before 24 hours, 38 Dragon Coins after 24 hours",
+            "sellback": "135 DC (<24 hours) / 38 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -19794,7 +19809,7 @@
             "location": "Zeclem's Items",
             "price": "175 Dragon Coins",
             "priceType": "dc",
-            "sellback": "158 Dragon Coins before 24 hours, 44 Dragon Coins after 24 hours",
+            "sellback": "158 DC (<24 hours) / 44 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -19817,7 +19832,7 @@
             "location": "Zeclem's Items",
             "price": "200 Dragon Coins",
             "priceType": "dc",
-            "sellback": "180 Dragon Coins before 24 hours, 50 Dragon Coins after 24 hours",
+            "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }

@@ -15,7 +15,7 @@
  */
 
 import type { LevelVariant } from '../../types/item'
-import { chunkVariantRows, getLevelVariantLabel, hasTitleDrivenVariantNames, shouldUseSplitVariantRows } from '../../utils/variantHelpers'
+import { getLevelVariantLabels, hasTitleDrivenVariantNames } from '../../utils/variantHelpers'
 import type { ItemType } from '../../types/item'
 
 interface LevelSelectorProps {
@@ -34,61 +34,67 @@ export default function LevelSelector({ levels, activeIndex, onChange, familyNam
 
   const hasVariantNames = levels.some(level => Boolean(level.variantName))
   const useTitleLabels = familyName ? hasTitleDrivenVariantNames(levels, familyName) : false
-  const levelKeys = levels.map(level => String(level.actualLevel ?? level.levelDisplay))
-  const hasDuplicateLevels = new Set(levelKeys).size !== levelKeys.length
 
-  const getButtonLabel = (level: LevelVariant) => getLevelVariantLabel(level, familyName, useTitleLabels, itemType)
-  const splitRows = shouldUseSplitVariantRows(levels)
+  const variantLabels = getLevelVariantLabels(levels, familyName, itemType)
+  const getButtonLabel = (_level: LevelVariant, index: number) => variantLabels[index]
   const indexedLevels = levels.map((level, index) => ({ level, index }))
-  const daLevels = indexedLevels.filter(({ level }) => level.obtainVariants.some(variant => variant.daRequired))
-  const nonDaLevels = indexedLevels.filter(({ level }) => !level.obtainVariants.some(variant => variant.daRequired))
-  const nonDcLevels = indexedLevels.filter(({ level }) => !level.obtainVariants.some(variant => variant.dcRequired || variant.priceType === 'dc'))
-  const dcLevels = indexedLevels.filter(({ level }) => level.obtainVariants.some(variant => variant.dcRequired || variant.priceType === 'dc'))
-  const shouldSplitDaRows = hasDuplicateLevels && indexedLevels.length >= 8 && daLevels.length > 0 && nonDaLevels.length > 0
-  const groupedRows = shouldSplitDaRows
-    ? [nonDaLevels, daLevels]
-    : splitRows
-      ? [nonDcLevels, dcLevels]
-      : [indexedLevels]
-  const rows = groupedRows.flatMap(row => chunkVariantRows(row))
   
   const usesVariantLabels = hasVariantNames || useTitleLabels
+  const useDropdown = levels.length > 12
+  const activeLevel = levels[activeIndex]
+  const compactButtons = levels.length > 8
 
   return (
     <div className="space-y-2">
       <p className="text-xs font-semibold text-text-muted uppercase tracking-wider">
         {usesVariantLabels ? 'Select Variant' : 'Select Level'}
       </p>
-      
-      <div className="-mx-4 sm:mx-0">
-        <div className="px-4 sm:px-0 pb-1 space-y-2">
-          {rows.map((row, rowIndex) => (
-            <div key={rowIndex} className="flex flex-wrap gap-2">
-              {row.map(({ level, index }) => {
-                return (
-                  <button
-                    key={`${level.levelNumber}-${level.name}-${index}`}
-                    onClick={() => onChange(index)}
-                    className={`
-                      min-h-11 min-w-11 px-4 py-2 rounded-lg whitespace-nowrap
-                      text-sm font-medium transition-all duration-200
-                      ${
-                        index === activeIndex
-                          ? 'bg-gold text-bg-base shadow-medium'
-                          : 'bg-bg-surface text-text-secondary border border-border-default hover:border-border-hover hover:text-text-primary'
-                      }
-                    `}
-                    aria-pressed={index === activeIndex}
-                    aria-label={`Select ${usesVariantLabels ? 'variant' : 'level'} ${getButtonLabel(level)}`}
-                  >
-                    {getButtonLabel(level)}
-                  </button>
-                )
-              })}
-            </div>
+
+      {useDropdown ? (
+        <select
+          value={String(activeIndex)}
+          onChange={event => onChange(Number.parseInt(event.target.value, 10))}
+          className="w-full sm:max-w-sm min-h-11 rounded-lg bg-bg-surface border border-border-default px-3 py-2 text-sm font-medium text-text-primary focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 focus:ring-offset-bg-base"
+          aria-label={`Select ${usesVariantLabels ? 'variant' : 'level'}`}
+        >
+          {levels.map((level, index) => (
+            <option key={`${level.levelNumber}-${level.name}-${index}`} value={index}>
+              {getButtonLabel(level, index)}
+            </option>
           ))}
+        </select>
+      ) : (
+        <div className="-mx-4 sm:mx-0">
+          <div className="px-4 sm:px-0 pb-1 flex flex-wrap gap-2">
+            {indexedLevels.map(({ level, index }) => (
+              <button
+                key={`${level.levelNumber}-${level.name}-${index}`}
+                onClick={() => onChange(index)}
+                className={`
+                  min-h-11 min-w-11 rounded-lg whitespace-nowrap
+                  ${compactButtons ? 'px-3 py-2 text-xs' : 'px-4 py-2 text-sm'}
+                  font-medium transition-all duration-200
+                  ${
+                    index === activeIndex
+                      ? 'bg-gold text-bg-base shadow-medium'
+                      : 'bg-bg-surface text-text-secondary border border-border-default hover:border-border-hover hover:text-text-primary'
+                  }
+                `}
+                aria-pressed={index === activeIndex}
+                aria-label={`Select ${usesVariantLabels ? 'variant' : 'level'} ${getButtonLabel(level, index)}`}
+              >
+                {getButtonLabel(level, index)}
+              </button>
+            ))}
+          </div>
         </div>
-      </div>
+      )}
+      
+      {useDropdown && activeLevel && (
+        <p className="text-xs text-text-muted">
+          Showing {getButtonLabel(activeLevel, activeIndex)}
+        </p>
+      )}
     </div>
   )
 }

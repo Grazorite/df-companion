@@ -19,6 +19,14 @@ const ACCESS_OPTIONS = [
   { id: 'dm', label: 'DM' },
 ] as const
 
+const CATEGORY_OPTIONS = [
+  { id: 'temp', label: 'Temp' },
+  { id: 'rare', label: 'Rare' },
+  { id: 'seasonal', label: 'Seasonal' },
+  { id: 'special-offer', label: 'Special Offer' },
+  { id: 'retired', label: 'Retired' },
+] as const
+
 export default function AccessoryListPage() {
   const [searchParams, setSearchParams] = useSearchParams()
   const typeParam = searchParams.get('type')
@@ -30,14 +38,31 @@ export default function AccessoryListPage() {
   const debouncedQuery = useDebounce(inputValue, 300)
   const elementParam = searchParams.get('element')
   const accessParam = searchParams.get('access')
-  const activeElements = elementParam ? elementParam.split(',').filter(Boolean) : []
-  const activeAccess = accessParam
-    ? accessParam
-        .split(',')
-        .filter((value): value is (typeof ACCESS_OPTIONS)[number]['id'] =>
-          ACCESS_OPTIONS.some(option => option.id === value)
-        )
-    : []
+  const categoryParam = searchParams.get('category')
+  const activeElements = useMemo(
+    () => elementParam ? elementParam.split(',').filter(Boolean) : [],
+    [elementParam]
+  )
+  const activeAccess = useMemo(
+    () => accessParam
+      ? accessParam
+          .split(',')
+          .filter((value): value is (typeof ACCESS_OPTIONS)[number]['id'] =>
+            ACCESS_OPTIONS.some(option => option.id === value)
+          )
+      : [],
+    [accessParam]
+  )
+  const activeCategories = useMemo(
+    () => categoryParam
+      ? categoryParam
+          .split(',')
+          .filter((value): value is (typeof CATEGORY_OPTIONS)[number]['id'] =>
+            CATEGORY_OPTIONS.some(option => option.id === value)
+          )
+      : [],
+    [categoryParam]
+  )
 
   const { elements } = elementsData as ElementsData
   const { bySubtype } = useAccessoryCounts()
@@ -48,8 +73,9 @@ export default function AccessoryListPage() {
     if (debouncedQuery) params.set('q', debouncedQuery)
     if (activeElements.length > 0) params.set('element', activeElements.join(','))
     if (activeAccess.length > 0) params.set('access', activeAccess.join(','))
+    if (activeCategories.length > 0) params.set('category', activeCategories.join(','))
     return params.toString()
-  }, [activeSubtype, debouncedQuery, activeElements, activeAccess])
+  }, [activeSubtype, debouncedQuery, activeElements, activeAccess, activeCategories])
 
   useEffect(() => {
     if (searchParams.toString() === canonicalQueryString) return
@@ -63,8 +89,9 @@ export default function AccessoryListPage() {
       query: debouncedQuery || undefined,
       elements: activeElements.length > 0 ? activeElements : undefined,
       access: activeAccess.length > 0 ? activeAccess : undefined,
+      categories: activeCategories.length > 0 ? activeCategories : undefined,
     }),
-    [activeAccess, activeElements, debouncedQuery]
+    [activeAccess, activeCategories, activeElements, debouncedQuery]
   )
 
   const { accessories, total } = useAccessories(activeSubtype, filters)
@@ -77,7 +104,20 @@ export default function AccessoryListPage() {
     params.type = activeSubtype
     if (debouncedQuery) params.q = debouncedQuery
     if (activeElements.length > 0) params.element = activeElements.join(',')
+    if (activeCategories.length > 0) params.category = activeCategories.join(',')
     if (next.length > 0) params.access = next.join(',')
+    setSearchParams(params, { replace: true })
+  }
+
+  function toggleCategory(id: (typeof CATEGORY_OPTIONS)[number]['id']) {
+    const next = activeCategories.includes(id)
+      ? activeCategories.filter(value => value !== id)
+      : [...activeCategories, id]
+    const params: Record<string, string> = { type: activeSubtype }
+    if (debouncedQuery) params.q = debouncedQuery
+    if (activeElements.length > 0) params.element = activeElements.join(',')
+    if (activeAccess.length > 0) params.access = activeAccess.join(',')
+    if (next.length > 0) params.category = next.join(',')
     setSearchParams(params, { replace: true })
   }
 
@@ -90,6 +130,7 @@ export default function AccessoryListPage() {
     if (debouncedQuery) params.q = debouncedQuery
     if (next.length > 0) params.element = next.join(',')
     if (activeAccess.length > 0) params.access = activeAccess.join(',')
+    if (activeCategories.length > 0) params.category = activeCategories.join(',')
     setSearchParams(params, { replace: true })
   }
 
@@ -99,6 +140,7 @@ export default function AccessoryListPage() {
     if (debouncedQuery) params.q = debouncedQuery
     if (activeElements.length > 0) params.element = activeElements.join(',')
     if (activeAccess.length > 0) params.access = activeAccess.join(',')
+    if (activeCategories.length > 0) params.category = activeCategories.join(',')
     setSearchParams(params, { replace: true })
   }
 
@@ -153,6 +195,7 @@ export default function AccessoryListPage() {
               const params: Record<string, string> = { type: activeSubtype }
               if (debouncedQuery) params.q = debouncedQuery
               if (activeElements.length > 0) params.element = activeElements.join(',')
+              if (activeCategories.length > 0) params.category = activeCategories.join(',')
               setSearchParams(params, { replace: true })
             }}
             className="text-xs text-text-muted hover:text-text-primary underline underline-offset-2 ml-1"
@@ -160,6 +203,42 @@ export default function AccessoryListPage() {
             Clear filters
           </button>
         )}
+      </div>
+
+      <div className="mb-3">
+        <div className="flex flex-wrap gap-2" role="group" aria-label="Filter by category">
+          {CATEGORY_OPTIONS.map(option => {
+            const isActive = activeCategories.includes(option.id)
+            return (
+              <button
+                key={option.id}
+                onClick={() => toggleCategory(option.id)}
+                aria-pressed={isActive}
+                className={`px-2.5 py-1 rounded-full text-[11px] font-medium transition-colors duration-150 ${
+                  isActive
+                    ? 'bg-orange-500/80 text-white font-semibold'
+                    : 'bg-bg-overlay text-text-secondary hover:bg-border-hover hover:text-text-primary'
+                }`}
+              >
+                {option.label}
+              </button>
+            )
+          })}
+          {activeCategories.length > 0 && (
+            <button
+              onClick={() => {
+                const params: Record<string, string> = { type: activeSubtype }
+                if (debouncedQuery) params.q = debouncedQuery
+                if (activeElements.length > 0) params.element = activeElements.join(',')
+                if (activeAccess.length > 0) params.access = activeAccess.join(',')
+                setSearchParams(params, { replace: true })
+              }}
+              className="text-[11px] text-text-muted hover:text-text-primary underline underline-offset-2 ml-1"
+            >
+              Clear filters
+            </button>
+          )}
+        </div>
       </div>
 
       <div className="mb-2">
@@ -189,6 +268,7 @@ export default function AccessoryListPage() {
                 const params: Record<string, string> = { type: activeSubtype }
                 if (debouncedQuery) params.q = debouncedQuery
                 if (activeAccess.length > 0) params.access = activeAccess.join(',')
+                if (activeCategories.length > 0) params.category = activeCategories.join(',')
                 setSearchParams(params, { replace: true })
               }}
               className="text-[10px] text-text-muted hover:text-text-primary underline underline-offset-2 ml-1"
@@ -210,6 +290,15 @@ export default function AccessoryListPage() {
             ·{' '}
             {activeAccess
               .map(id => ACCESS_OPTIONS.find(option => option.id === id)?.label ?? id)
+              .join(', ')}
+          </span>
+        )}
+        {activeCategories.length > 0 && (
+          <span className="text-orange-400">
+            {' '}
+            ·{' '}
+            {activeCategories
+              .map(id => CATEGORY_OPTIONS.find(option => option.id === id)?.label ?? id)
               .join(', ')}
           </span>
         )}

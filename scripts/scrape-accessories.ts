@@ -9,7 +9,15 @@ import {
   type AccessoryFamily,
   type AccessorySubtype,
 } from '../src/types/accessory.ts'
-import { convertImageTags, fetchPrintable, getPostContent } from './lib/printable-parser.ts'
+import {
+  convertImageTags,
+  extractThreadPostContents,
+  fetchPrintable,
+  fetchThreadPages as fetchForumThreadPages,
+  getPostContent,
+} from './lib/printable-parser.ts'
+import { rephraseTimedSellback } from './lib/obtain-formatting.ts'
+import { getAccessorySubtypeStrategy } from './lib/accessories/index.ts'
 import type { FamilySourceRef, LevelVariant } from '../src/types/item.ts'
 import type { GuestAttack } from '../src/types/pet.ts'
 
@@ -20,6 +28,7 @@ const DELAY_MS = 900
 const ACCESSORY_IMAGE_OVERRIDES: Record<string, string> = {
   "Baltael's Aventail": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/Baltael'sAventail.png",
   "Frost Moglin Knight's Cloak": 'https://i.imgur.com/StWTUCm.png',
+  "Frost Moglin Knight's Helm": 'https://i.imgur.com/UWUlCbM.png',
   "Navigator's Hat": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/Navigator'sHat-CC.png",
 }
 
@@ -122,7 +131,7 @@ function normalizeStructuredText(html: string): string {
 
     if (char === '<' && !inTag) {
       const nextChars = html.slice(i, i + 12)
-      if (/^<[a-zA-Z!\/]/.test(nextChars)) {
+      if (/^<[a-zA-Z!/]/.test(nextChars)) {
         inTag = true
         tagStart = i
       } else {
@@ -479,8 +488,8 @@ function parseObtainMethods(html: string): Accessory['obtainMethods'] {
 
   const introHtml = html
     .slice(0, firstFieldIndex)
-    .replace(/<b>\s*<font[^>]*>\s*(Location|Requirements|Level\/Quest\/Items to unlock|Price|Sellback|Required Items|Required|Requires):\s*<\/font>\s*<\/b>/gi, '<b>$1:</b>')
-    .replace(/(?:^|\s)(Location|Requirements|Level\/Quest\/Items to unlock|Price|Sellback|Required Items|Required|Requires):/gi, ' <b>$1:</b>')
+    .replace(/<b>\s*<font[^>]*>\s*(Location|Requirements|Level\/Quest\/Items to unlock|Price|Sellback|Required Items?|Required|Requires):\s*<\/font>\s*<\/b>/gi, '<b>$1:</b>')
+    .replace(/(?:^|\s)(Location|Requirements|Level\/Quest\/Items to unlock|Price|Sellback|Required Items?|Required|Requires):/gi, ' <b>$1:</b>')
 
   const blocks: Array<{
     location?: string
@@ -513,7 +522,7 @@ function parseObtainMethods(html: string): Accessory['obtainMethods'] {
       const hasDA = /<img[^>]+src=["'][^"']*\/tags\/DA\.(?:png|jpg|jpeg|gif)["']/i.test(rawLine)
       const hasDC = /<img[^>]+src=["'][^"']*\/tags\/DC\.(?:png|jpg|jpeg|gif)["']/i.test(rawLine)
       const hasDM = /<img[^>]+src=["'][^"']*\/tags\/DM\.(?:png|jpg|jpeg|gif)["']/i.test(rawLine)
-      const fieldMatch = rawLine.match(/<b>(Location|Requirements|Level\/Quest\/Items to unlock|Price|Sellback|Required Items|Required|Requires):<\/b>\s*([\s\S]*)/i)
+      const fieldMatch = rawLine.match(/<b>(Location|Requirements|Level\/Quest\/Items to unlock|Price|Sellback|Required Items?|Required|Requires):<\/b>\s*([\s\S]*)/i)
       if (!fieldMatch) continue
 
       const fieldName = fieldMatch[1].toLowerCase()
@@ -550,7 +559,7 @@ function parseObtainMethods(html: string): Accessory['obtainMethods'] {
         current.price = value
       } else if (fieldName === 'sellback') {
         current.sellback = value
-      } else if (fieldName === 'required items' || fieldName === 'required' || fieldName === 'requires') {
+      } else if (fieldName === 'required item' || fieldName === 'required items' || fieldName === 'required' || fieldName === 'requires') {
         current.requiredItems = value
       }
     }
@@ -564,7 +573,7 @@ function parseObtainMethods(html: string): Accessory['obtainMethods'] {
       location: block.location,
       price,
       priceType,
-      ...(block.sellback ? { sellback: block.sellback } : {}),
+      ...(block.sellback ? { sellback: rephraseTimedSellback(block.sellback) } : {}),
       ...(block.requiredItems ? { requiredItems: block.requiredItems } : {}),
       ...(block.requirements && !/^none$/i.test(block.requirements) ? { requirements: block.requirements } : {}),
       daRequired: block.daRequired,
@@ -901,16 +910,16 @@ function expandAccessoryFamilyVariants(variants: Accessory[]): Accessory[] {
 
       return {
         ...baseVariant,
-      obtainMethods: [method],
-      daRequired: method.daRequired,
-      ...(method.dcRequired || method.priceType === 'dc' ? { dcRequired: true } : {}),
-      ...(method.dmRequired || method.priceType === 'dm' ? { dmRequired: true } : {}),
-      tags: Array.from(
-        new Set([
-          ...variant.tags.filter(tag => !['free', 'merge', 'gold', 'dc', 'dm'].includes(tag)),
-          method.priceType,
-        ])
-      ).sort(),
+        obtainMethods: [method],
+        daRequired: method.daRequired,
+        ...(method.dcRequired || method.priceType === 'dc' ? { dcRequired: true } : {}),
+        ...(method.dmRequired || method.priceType === 'dm' ? { dmRequired: true } : {}),
+        tags: Array.from(
+          new Set([
+            ...variant.tags.filter(tag => !['free', 'merge', 'gold', 'dc', 'dm'].includes(tag)),
+            method.priceType,
+          ])
+        ).sort(),
       }
     })
   })
@@ -940,7 +949,6 @@ function buildAccessoryEntry(
   const parsedElements = parseElementCodes(explicitElement)
   const firstMethod = obtainMethods[0]
   const primaryPriceType = firstMethod?.priceType
-  const images = extractAccessoryImages(html)
   const levelValue = parseHtmlField(html, ['Level']) ?? parseFieldValue(normalizedText, ['Level'])
   const statsValue = parseHtmlField(html, ['Stats', 'Bonuses']) ?? parseFieldValue(normalizedText, ['Stats', 'Bonuses'])
   const resistsValue = parseHtmlField(html, ['Resists', 'Resistances']) ?? parseFieldValue(normalizedText, ['Resists', 'Resistances'])
@@ -951,6 +959,15 @@ function buildAccessoryEntry(
   const equipSpotValue = parseHtmlField(html, ['Equip Spot', 'Equip Slot']) ?? parseFieldValue(normalizedText, ['Equip Spot', 'Equip Slot'])
   const modifiesValue = parseHtmlField(html, ['Modifies']) ?? parseFieldValue(normalizedText, ['Modifies'])
   const categoryValue = parseHtmlField(html, ['Category']) ?? parseFieldValue(normalizedText, ['Category'])
+  const strategy = getAccessorySubtypeStrategy(stub.subtype)
+  const images = strategy.shouldExtractImages({
+    name: override?.name ?? stub.name,
+    subtype: stub.subtype,
+    itemType: itemTypeValue,
+    equipSpot: equipSpotValue,
+  })
+    ? extractAccessoryImages(html)
+    : {}
   const imageOverride = getAccessoryImageOverride(override?.name ?? stub.name)
 
   return {
@@ -993,7 +1010,8 @@ function buildAccessoryEntry(
 }
 
 async function enrichAccessoryAbility(entry: Accessory, cookie: string): Promise<Accessory> {
-  if (!entry.abilityUrl) return entry
+  const strategy = getAccessorySubtypeStrategy(entry.subtype)
+  if (!strategy.shouldEnrichAbility(entry)) return entry
 
   const abilityMessageId = entry.abilityUrl.match(/m=(\d+)/i)?.[1]
   if (!abilityMessageId) return entry
@@ -1122,57 +1140,29 @@ function buildAccessoryFamily(stub: AccessoryStub, variants: Accessory[]): Acces
     family.shared.description = firstDescription ?? ''
   }
 
+  if (family.familyName === 'Harmonized Cowbell') {
+    const binaryVariants = uniqueStrings(levelVariants.map(variant => variant.variantName))
+      .filter(variant => /^[01]+$/.test(variant))
+    if (binaryVariants.length >= 2) {
+      family.levelRange = `${binaryVariants[0]}-${binaryVariants.at(-1)}`
+    }
+  }
+
   return family
-}
-
-function extractThreadPostHtml(threadHtml: string): Map<string, string> {
-  const posts = new Map<string, string>()
-  const regex =
-    /<a\s+name=(\d+)\b[^>]*><\/a>[\s\S]*?<td\b[^>]*class=["']?msg["']?[^>]*>([\s\S]*?)<\/td>/gi
-
-  for (const match of threadHtml.matchAll(regex)) {
-    const messageId = match[1]
-    const html = convertImageTags(match[2])
-    posts.set(messageId, html)
-  }
-
-  return posts
-}
-
-async function fetchThreadPages(messageId: string, cookie: string): Promise<string> {
-  const firstPageUrl = `${FORUM_BASE}/fb.asp?m=${messageId}`
-  const firstPageHtml = await fetchPage(firstPageUrl, cookie)
-  const pageNumbers = Array.from(
-    new Set(
-      [...firstPageHtml.matchAll(/\bmpage=(\d+)/gi)]
-        .map(match => Number.parseInt(match[1], 10))
-        .filter(pageNumber => pageNumber > 1)
-    )
-  ).sort((a, b) => a - b)
-
-  const additionalPages: string[] = []
-  for (const pageNumber of pageNumbers) {
-    additionalPages.push(await fetchPage(`${FORUM_BASE}/tm.asp?m=${messageId}&mpage=${pageNumber}`, cookie))
-    await sleep(250)
-  }
-
-  return [firstPageHtml, ...additionalPages].join('\n')
 }
 
 async function buildAccessoryOrFamily(stub: AccessoryStub, cookie: string): Promise<AccessoryEntry> {
   const shouldInspectThread = hasMultipleVersionHint(stub.name)
   if (shouldInspectThread) {
-    const threadHtml = await fetchThreadPages(stub.messageId, cookie)
-    const messageIds = Array.from(new Set([...threadHtml.matchAll(/<a\s+name=(\d+)\b/gi)].map(match => match[1])))
-    const postHtmlById = extractThreadPostHtml(threadHtml)
+    const threadPosts = extractThreadPostContents(await fetchForumThreadPages(stub.messageId, cookie))
     const variants: Accessory[] = []
 
-    for (const messageId of messageIds) {
+    for (const post of threadPosts) {
       let html: string
       try {
-        html = await fetchPostContent(messageId, cookie)
+        html = await fetchPostContent(post.messageId, cookie)
       } catch {
-        html = postHtmlById.get(messageId) ?? ''
+        html = post.html
       }
       if (!html) continue
       const title = parseAccessoryTitle(html)
@@ -1181,7 +1171,7 @@ async function buildAccessoryOrFamily(stub: AccessoryStub, cookie: string): Prom
       const variant = await enrichAccessoryAbility(
         buildAccessoryEntry(stub, html, {
           name: title,
-          forumUrl: `${FORUM_BASE}/fb.asp?m=${messageId}`,
+          forumUrl: post.sourceUrl,
         }),
         cookie
       )

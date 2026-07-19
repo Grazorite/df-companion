@@ -1,5 +1,5 @@
 import type { LevelVariant } from '../../types/item'
-import { getLevelVariantLabel, hasTitleDrivenVariantNames, shouldHideVariantColumn } from '../../utils/variantHelpers'
+import { getLevelVariantLabels, shouldHideVariantColumn } from '../../utils/variantHelpers'
 
 interface AccessoryStatsTableProps {
   levels: LevelVariant[]
@@ -10,8 +10,7 @@ export default function AccessoryStatsTable({
   levels,
   familyName,
 }: AccessoryStatsTableProps) {
-  const useTitleLabels = familyName ? hasTitleDrivenVariantNames(levels, familyName) : false
-  const variantLabels = levels.map(level => getLevelVariantLabel(level, familyName, useTitleLabels))
+  const variantLabels = getLevelVariantLabels(levels, familyName, 'accessory')
   const hasRedundantVariantColumn = shouldHideVariantColumn(levels, familyName, 'accessory')
 
   return (

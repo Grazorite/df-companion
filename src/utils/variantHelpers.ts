@@ -390,58 +390,201 @@ function extractNumericFamilyVariant(name: string, familyName?: string): string 
   return undefined
 }
 
-export function getLevelVariantLabel(
+interface LevelVariantLabelInfo {
+  label: string
+  canAddLevelSuffix: boolean
+  levelLabel: string
+  hasDC: boolean
+}
+
+function getLevelVariantLabelInfo(
   level: LevelVariant,
   familyName?: string,
   useTitleLabels: boolean = false,
   itemType?: ItemType
-): string {
+): LevelVariantLabelInfo {
   const levelLabel = String(level.actualLevel ?? level.levelDisplay)
   const hasDC = level.obtainVariants.some(variant => variant.dcRequired || variant.priceType === 'dc')
   const normalizedVariantName = level.variantName ? normalizeDisplayText(level.variantName) : undefined
 
+  if (familyName === 'Harmonized Cowbell' && normalizedVariantName) {
+    return { label: normalizedVariantName, canAddLevelSuffix: false, levelLabel, hasDC }
+  }
+
   if (itemType === 'guest') {
     const numericFamilyVariant = extractNumericFamilyVariant(level.name, familyName)
-    if (numericFamilyVariant) return numericFamilyVariant
-    if (normalizedVariantName) return normalizedVariantName
+    if (numericFamilyVariant) {
+      return { label: numericFamilyVariant, canAddLevelSuffix: false, levelLabel, hasDC }
+    }
+    if (normalizedVariantName) {
+      return { label: normalizedVariantName, canAddLevelSuffix: true, levelLabel, hasDC }
+    }
     const normalizedLevelName = normalizeDisplayText(stripAccessVariantSuffix(level.name))
     if (normalizedLevelName) {
       if (levelLabel.toLowerCase() === 'unknown' || levelLabel.toLowerCase() === 'as player') {
-        return normalizedLevelName
+        return { label: normalizedLevelName, canAddLevelSuffix: false, levelLabel, hasDC }
       }
       if (normalizedLevelName !== familyName) {
-        return `${normalizedLevelName} (${levelLabel}${hasDC ? ', DC' : ''})`
+        return {
+          label: normalizedLevelName,
+          canAddLevelSuffix: true,
+          levelLabel,
+          hasDC,
+        }
       }
     }
   }
 
   if (normalizedVariantName && parseRomanNumeral(normalizedVariantName.trim().toUpperCase()) !== null) {
-    return `${normalizedVariantName}${hasDC ? ' (DC)' : ''}`
+    return {
+      label: normalizedVariantName,
+      canAddLevelSuffix: true,
+      levelLabel,
+      hasDC,
+    }
   }
 
   if (familyName && useTitleLabels) {
     const condensedTitle = getCondensedTitleVariant(level.name, familyName)
     if (condensedTitle) {
       if (levelLabel.toLowerCase() === 'as player') {
-        return `${normalizeDisplayText(condensedTitle)}${hasDC ? ' (DC)' : ''}`
+        return {
+          label: normalizeDisplayText(condensedTitle),
+          canAddLevelSuffix: false,
+          levelLabel,
+          hasDC,
+        }
       }
       if (parseRomanNumeral(condensedTitle.toUpperCase()) !== null) {
-        return `${normalizeDisplayText(condensedTitle)}${hasDC ? ' (DC)' : ''}`
+        return {
+          label: normalizeDisplayText(condensedTitle),
+          canAddLevelSuffix: true,
+          levelLabel,
+          hasDC,
+        }
       }
-      return `${normalizeDisplayText(condensedTitle)} (${levelLabel}${hasDC ? ', DC' : ''})`
+      return {
+        label: normalizeDisplayText(condensedTitle),
+        canAddLevelSuffix: true,
+        levelLabel,
+        hasDC,
+      }
     }
 
     const normalizedLevelName = normalizeDisplayText(stripAccessVariantSuffix(level.name))
     if (normalizedLevelName === familyName) {
-      return `${familyName} (${levelLabel}${hasDC ? ', DC' : ''})`
+      return {
+        label: familyName,
+        canAddLevelSuffix: true,
+        levelLabel,
+        hasDC,
+      }
     }
   }
 
   if (normalizedVariantName) {
-    return `${normalizedVariantName}${hasDC ? ' (DC)' : ''}`
+    return {
+      label: normalizedVariantName,
+      canAddLevelSuffix: true,
+      levelLabel,
+      hasDC,
+    }
   }
 
-  return `${normalizeDisplayText(level.levelDisplay)}${hasDC ? ' (DC)' : ''}`
+  return {
+    label: normalizeDisplayText(level.levelDisplay),
+    canAddLevelSuffix: true,
+    levelLabel,
+    hasDC,
+  }
+}
+
+function normalizeComparableValue(value?: string): string {
+  return normalizeDisplayText(value ?? '').replace(/\s+/g, ' ').trim().toLowerCase()
+}
+
+function hasDifferentObtainMethods(first: LevelVariant, second: LevelVariant): boolean {
+  const serialize = (level: LevelVariant) =>
+    level.obtainVariants
+      .map(variant => [
+        normalizeComparableValue(variant.location),
+        normalizeComparableValue(variant.price),
+        variant.priceType,
+        String(variant.daRequired),
+        String(Boolean(variant.dcRequired)),
+        String(Boolean(variant.dmRequired)),
+        normalizeComparableValue(variant.requiredItems),
+      ].join('|'))
+      .sort()
+      .join('||')
+
+  return serialize(first) !== serialize(second)
+}
+
+function hasSameDisplayedLevelAndStats(first: LevelVariant, second: LevelVariant): boolean {
+  return String(first.actualLevel ?? first.levelDisplay) === String(second.actualLevel ?? second.levelDisplay) &&
+    normalizeComparableValue(first.damage) === normalizeComparableValue(second.damage) &&
+    normalizeComparableValue(first.stats) === normalizeComparableValue(second.stats) &&
+    normalizeComparableValue(first.resists) === normalizeComparableValue(second.resists)
+}
+
+function shouldAddLevelSuffixForDuplicate(
+  levels: LevelVariant[],
+  labels: LevelVariantLabelInfo[],
+  index: number
+): boolean {
+  const label = labels[index]
+  if (!label.canAddLevelSuffix) return false
+
+  return labels.some((otherLabel, otherIndex) =>
+    otherIndex !== index &&
+    otherLabel.label === label.label &&
+    hasSameDisplayedLevelAndStats(levels[index], levels[otherIndex]) &&
+    hasDifferentObtainMethods(levels[index], levels[otherIndex])
+  )
+}
+
+function hasDcDuplicateDisambiguator(
+  levels: LevelVariant[],
+  labels: LevelVariantLabelInfo[],
+  index: number
+): boolean {
+  const label = labels[index]
+  if (!label.canAddLevelSuffix) return false
+
+  return labels.some((otherLabel, otherIndex) =>
+    otherIndex !== index &&
+    (label.hasDC || otherLabel.hasDC) &&
+    otherLabel.label === label.label &&
+    hasSameDisplayedLevelAndStats(levels[index], levels[otherIndex]) &&
+    hasDifferentObtainMethods(levels[index], levels[otherIndex])
+  )
+}
+
+export function getLevelVariantLabels(
+  levels: LevelVariant[],
+  familyName?: string,
+  itemType?: ItemType
+): string[] {
+  const useTitleLabels = familyName ? hasTitleDrivenVariantNames(levels, familyName) : false
+  const labels = levels.map(level => getLevelVariantLabelInfo(level, familyName, useTitleLabels, itemType))
+
+  return labels.map((label, index) => {
+    if (hasDcDuplicateDisambiguator(levels, labels, index)) {
+      return label.hasDC ? `${label.label} (DC)` : label.label
+    }
+    if (!shouldAddLevelSuffixForDuplicate(levels, labels, index)) return label.label
+    return `${label.label} (${label.levelLabel})`
+  })
+}
+
+export function getLevelVariantLabel(
+  level: LevelVariant,
+  familyName?: string,
+  useTitleLabels: boolean = false,
+  itemType?: ItemType
+): string {
+  return getLevelVariantLabelInfo(level, familyName, useTitleLabels, itemType).label
 }
 
 export function shouldHideVariantColumn(
@@ -451,10 +594,7 @@ export function shouldHideVariantColumn(
 ): boolean {
   if (levels.length === 0) return true
 
-  const useTitleLabels = familyName ? hasTitleDrivenVariantNames(levels, familyName) : false
-  const variantLabels = levels.map(level =>
-    getLevelVariantLabel(level, familyName, useTitleLabels, itemType)
-  )
+  const variantLabels = getLevelVariantLabels(levels, familyName, itemType)
 
   const redundantExact = variantLabels.every((label, index) => {
     const level = levels[index]

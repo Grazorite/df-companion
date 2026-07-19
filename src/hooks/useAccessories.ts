@@ -114,6 +114,26 @@ function searchAccessories(
         }
       }
 
+      const itemRetired = isAccessoryFamily(item) ? item.retired === true : item.retired === true
+      if (filters.categories && filters.categories.length > 0) {
+        const hasCategory = filters.categories.some(category => {
+          if (category === 'temp') return item.isTemp === true
+          if (category === 'rare') return item.isRare === true
+          if (category === 'seasonal') return item.isSeasonal === true
+          if (category === 'special-offer') return item.isSpecialOffer === true
+          if (category === 'retired') return itemRetired
+          return false
+        })
+
+        if (filters.categories.includes('retired')) {
+          if (!itemRetired) return false
+        } else if (!hasCategory || itemRetired) {
+          return false
+        }
+      } else if (itemRetired) {
+        return false
+      }
+
       if (filters.elements && filters.elements.length > 0) {
         const itemElements = isAccessoryFamily(item) ? item.elements : item.elements
         if (!filters.elements.some(code => itemElements.includes(code))) return false

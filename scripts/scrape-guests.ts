@@ -1,8 +1,8 @@
 /**
- * Guests Scraper — Chronology-First Strategy (Resumable)
+ * Guests Scraper — A-Z Master List Strategy (Resumable)
  *
- * This scraper fetches Chronology first to get authoritative guest types,
- * then parses the A-Z page to build stubs with correct type prefixes.
+ * This scraper reads the Guests section from the A-Z Pets & Guests master page
+ * to build source stubs, then uses Chronology for release-date enrichment.
  *
  * Entry format: [DAR] Guest Name (D-Coins/Seasonal)
  *
@@ -22,12 +22,14 @@ import * as fs from 'node:fs'
 import * as path from 'node:path'
 import type { Guest, GuestAttack, GuestStats, ObtainMethod, AlsoSeeRef, EntryType } from '../src/types/pet.ts'
 import type { AlternativeImage, ItemFamily, LevelVariant, ObtainVariant } from '../src/types/item.ts'
-import { convertImageTags, fetchPrintable, getPostContent } from './lib/printable-parser.ts'
+import { convertImageTags, extractThreadPostContents, fetchPrintable, fetchThreadPages, getPostContent, type ThreadPostContent } from './lib/printable-parser.ts'
 import { computeFamilyFlags, computePriceType, normalizeLevel } from '../src/utils/variantHelpers.ts'
-import { promoteCrossPostFamilies } from './lib/cross-post-family.ts'
+import { canonicalizePromotedRelationships, promoteCrossPostFamilies } from './lib/cross-post-family.ts'
+import { rephraseTimedSellback } from './lib/obtain-formatting.ts'
+import { repairAccessFlags } from './lib/access-flag-repair.ts'
 
 const FORUM_BASE = 'https://forums2.battleon.com/f'
-const AZ_PETS_URL = `${FORUM_BASE}/tm.asp?m=22349620&mpage=1`  // A-Z Pets & Guests combined (filtered by type)
+const AZ_PETS_URL = `${FORUM_BASE}/tm.asp?m=22349620&mpage=1`  // A-Z Pets & Guests master page
 const CHRONOLOGY_URL = `${FORUM_BASE}/tm.asp?m=10738071`
 const DELAY_MS = 1000
 const OUTPUT_PATH = path.resolve(import.meta.dirname, '../src/data/guests.json')
@@ -106,6 +108,10 @@ function prefixedSlug(name: string, type: EntryType): string {
   return `${type}-${slugify(name)}`
 }
 
+function directForumPostUrl(_linkPath: string, messageId: string): string {
+  return `${FORUM_BASE}/fb.asp?m=${messageId}`
+}
+
 function decodeHTML(str: string): string {
   return str
     .replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>')
@@ -132,7 +138,7 @@ function stripHtml(html: string): string {
     
     if (char === '<' && !inTag) {
       const nextChars = html.slice(i, i + 10)
-      if (/^<[a-zA-Z!\/]/.test(nextChars)) {
+      if (/^<[a-zA-Z!/]/.test(nextChars)) {
         inTag = true
         tagStart = i
       } else {
@@ -517,7 +523,7 @@ function normalizeStructuredText(html: string): string {
 
     if (char === '<' && !inTag) {
       const nextChars = html.slice(i, i + 12)
-      if (/^<[a-zA-Z!\/]/.test(nextChars)) {
+      if (/^<[a-zA-Z!/]/.test(nextChars)) {
         inTag = true
         tagStart = i
       } else {
@@ -632,8 +638,14 @@ function deriveGuestVariantLabel(sectionName: string, familyName: string): strin
   return numberMatch ? `${stripped} (${numberMatch[1]})` : stripped
 }
 
-function collapseGuestSections(sections: Array<{ name: string; html: string }>): Array<{ name: string; html: string }> {
-  const collapsed: Array<{ name: string; html: string }> = []
+interface GuestVariantSection {
+  name: string
+  html: string
+  sourceUrl?: string
+}
+
+function collapseGuestSections(sections: GuestVariantSection[]): GuestVariantSection[] {
+  const collapsed: GuestVariantSection[] = []
 
   for (const section of sections) {
     const previous = collapsed.at(-1)
@@ -665,8 +677,8 @@ function hasRetiredGuestSignal(...values: Array<string | undefined>): boolean {
   )
 }
 
-function extractGuestVariantSections(html: string): Array<{ name: string; html: string }> {
-  const sections: Array<{ name: string; html: string }> = []
+function extractGuestVariantSections(html: string, sourcePosts: ThreadPostContent[] = []): GuestVariantSection[] {
+  const sections: GuestVariantSection[] = []
   const headerRegex = /((?:<img[^>]+src=["'][^"']*\/tags\/(?:DA|DC|DM|Temp|Rare|Seasonal|SpecialOffer|Retired)\.(?:png|jpg)["'][^>]*>\s*)*)(?:<b>\s*<font[^>]*size=['"]3['"][^>]*>\s*([^<]+?)\s*<\/font>\s*<\/b>|<font[^>]*size=['"]3['"][^>]*>\s*<b>\s*([^<]+?)\s*<\/b>\s*<\/font>)/gi
   const matches = [...html.matchAll(headerRegex)]
 
@@ -679,6 +691,7 @@ function extractGuestVariantSections(html: string): Array<{ name: string; html: 
     const suffix = extractGuestHeaderSuffix(html, start + match[0].length)
     const name = suffix ? `${baseName} ${suffix}` : baseName
     const sectionHtml = html.slice(start, end)
+    const sourceUrl = sourcePosts.find(post => post.html.includes(sectionHtml) || sectionHtml.includes(post.html))?.sourceUrl
 
     if (!name) continue
     if (
@@ -687,7 +700,7 @@ function extractGuestVariantSections(html: string): Array<{ name: string; html: 
       continue
     }
 
-    sections.push({ name, html: sectionHtml })
+    sections.push({ name, html: sectionHtml, ...(sourceUrl ? { sourceUrl } : {}) })
   }
 
   return collapseGuestSections(sections)
@@ -1198,8 +1211,8 @@ function parseObtainMethods(html: string, guestName: string): ObtainMethod[] {
   const introHtml = html
     .slice(0, firstFieldIndex)
     .replace(/<b>\s*<font[^>]*>\s*Location:\s*<\/font>\s*<\/b>/gi, '<b>Location:</b>')
-    .replace(/<b>\s*<font[^>]*>\s*(Requirements|Level\/Quest\/Items to unlock):\s*<\/font>\s*<\/b>/gi, '<b>$1:</b>')
-    .replace(/(?:^|\s)(Location|Requirements|Level\/Quest\/Items to unlock|Price|Sellback|Required|Requires):/gi, ' <b>$1:</b>')
+    .replace(/<b>\s*<font[^>]*>\s*(Requirements|Level\/Quest\/Items to unlock|Required Items?):\s*<\/font>\s*<\/b>/gi, '<b>$1:</b>')
+    .replace(/(?:^|\s)(Location|Requirements|Level\/Quest\/Items to unlock|Price|Sellback|Required Items?|Required|Requires):/gi, ' <b>$1:</b>')
 
   const blocks: Array<{
     locations: string[]
@@ -1227,7 +1240,7 @@ function parseObtainMethods(html: string, guestName: string): ObtainMethod[] {
     pendingDC = pendingDC || /<img[^>]+src=["'][^"']*\/tags\/DC\.png["']/i.test(rawLine)
     pendingDM = pendingDM || /<img[^>]+src=["'][^"']*\/tags\/DM\.png["']/i.test(rawLine)
 
-    const fieldMatch = rawLine.match(/<b>(Location|Requirements|Level\/Quest\/Items to unlock|Price|Sellback|Required|Requires):<\/b>\s*([\s\S]*)/i)
+    const fieldMatch = rawLine.match(/<b>(Location|Requirements|Level\/Quest\/Items to unlock|Price|Sellback|Required Items?|Required|Requires):<\/b>\s*([\s\S]*)/i)
     if (!fieldMatch) continue
 
     const fieldName = fieldMatch[1].toLowerCase()
@@ -1273,7 +1286,7 @@ function parseObtainMethods(html: string, guestName: string): ObtainMethod[] {
       currentBlock.price = value
     } else if (fieldName === 'sellback') {
       currentBlock.sellback = value
-    } else if (fieldName === 'required' || fieldName === 'requires') {
+    } else if (fieldName === 'required item' || fieldName === 'required items' || fieldName === 'required' || fieldName === 'requires') {
       currentBlock.requiredItems = value
     }
   }
@@ -1300,7 +1313,7 @@ function parseObtainMethods(html: string, guestName: string): ObtainMethod[] {
       const normalizedRequirements = normalizeRequirements(block.requirements)
       if (normalizedRequirements) method.requirements = normalizedRequirements
       if (block.price) method.price = block.price
-      if (block.sellback) method.sellback = block.sellback
+      if (block.sellback) method.sellback = rephraseTimedSellback(block.sellback)
       if (block.requiredItems) method.requiredItems = block.requiredItems
       if (block.hasDA) method.daRequired = true
       if (dcRequired) method.dcRequired = true
@@ -1436,7 +1449,7 @@ function parseAlsoSee(html: string, nameToSlug: Map<string, { slug: string; type
     const lines = text.split('\n').filter(l => l.trim().length > 0)
     
     for (const line of lines) {
-      const trimmed = line.trim().replace(/^[•\-\*]\s*/, '')
+      const trimmed = line.trim().replace(/^[•*-]\s*/, '')
       
       // Try to resolve name to slug
       const key = trimmed.toLowerCase()
@@ -1505,7 +1518,6 @@ function parseChronology(html: string): ChronologyData {
     console.log(`\n[DEBUG] Parsing Chronology (${chunks.length} chunks)`)
     console.log(`  First 20 lines:`)
     chunks.slice(0, 20).forEach((line, i) => {
-      const text = stripHtml(decodeHTML(line)).trim()
       console.log(`    ${i}: ${line.slice(0, 80)}`)
     })
   }
@@ -1553,10 +1565,18 @@ function parseChronology(html: string): ChronologyData {
 
 // ─── A-Z page parsing ─────────────────────────────────────────────────────────
 
+function extractAZListBlock(html: string, section: 'pet' | 'guest'): string {
+  const blocks = [...html.matchAll(/<td\b[^>]*class=["']?msg["']?[^>]*>([\s\S]*?)<\/td>/gi)].map(match => match[1])
+  const index = section === 'pet' ? 1 : 2
+  const block = blocks[index]
+  return block ?? html
+}
+
 function parseAZPage(html: string, chronology: ChronologyData): GuestStub[] {
   const stubsByKey = new Map<string, GuestStub>()
   const seen = new Set<string>()
-  const chunks = html.split(/<br\s*\/?>/)
+  const listHtml = extractAZListBlock(html, 'guest')
+  const chunks = listHtml.split(/<br\s*\/?>/)
   let currentLetter = '#'
   let skippedCount = 0
 
@@ -1574,11 +1594,14 @@ function parseAZPage(html: string, chronology: ChronologyData): GuestStub[] {
     if (!linkMatch) continue
     const linkPath = linkMatch[1]
     const msgId = linkMatch[3]
-    if (seen.has(msgId)) {
+
+    // Keep same-thread variants as distinct stubs while still ignoring repeated list rows.
+    const seenKey = `${msgId}:${stripHtml(decodeHTML(chunk)).trim().toLowerCase()}`
+    if (seen.has(seenKey)) {
       skippedCount++
       continue
     }
-    seen.add(msgId)
+    seen.add(seenKey)
 
     // Elements/traits appear BEFORE the <a> tag
     const { elements, traits } = parseBracketCodes(chunk)
@@ -1610,21 +1633,11 @@ function parseAZPage(html: string, chronology: ChronologyData): GuestStub[] {
       continue
     }
 
-    // Filter: only include guests (determined by Chronology).
-    // Some A-Z guest variants point at fb.asp reply posts that do not appear in chronology by message id,
-    // so fall back to normalized guest-name matching in those cases.
-    if (
-      !chronology.guestMessageIds.has(msgId) &&
-      !chronology.guestNames.has(normalizeGuestLookupName(name))
-    ) {
-      continue  // Not a guest, skip silently
-    }
-
     const stub: GuestStub = {
       name,
       slug: prefixedSlug(name, 'guest'),
       type: 'guest',
-      forumUrl: `${FORUM_BASE}/${linkPath}`,
+      forumUrl: directForumPostUrl(linkPath, msgId),
       messageId: msgId,
       elements,
       traits,
@@ -1753,7 +1766,7 @@ function extractSupplementalGuestThreadMedia(
 
 function buildGuestFamilyFromSections(
   stub: GuestStub,
-  sections: Array<{ name: string; html: string }>,
+  sections: GuestVariantSection[],
   chronology: ChronologyData,
   nameToSlug: Map<string, { slug: string; type: EntryType }>,
   sharedNotes?: string
@@ -1802,7 +1815,7 @@ function buildGuestFamilyFromSections(
         chronology.datesByName.get(stub.name.toLowerCase()) ||
         'Unknown',
       imageUrl,
-      forumUrl: stub.forumUrl,
+      forumUrl: section.sourceUrl ?? stub.forumUrl,
       notes,
       alsoSee,
       tags,
@@ -1984,7 +1997,7 @@ async function main(): Promise<void> {
 
   // ── Step 2: Fetch A-Z page ─────────────────────────────────────────────────
 
-  console.log('📄 Fetching A-Z Pets & Guests page (filtering for guests)...')
+  console.log('📄 Fetching A-Z Pets & Guests master page...')
   let azHtml = ''
   try {
     azHtml = await fetchPage(AZ_PETS_URL, cookie)
@@ -2071,16 +2084,26 @@ async function main(): Promise<void> {
     }
 
     try {
-      const html = await fetchGuestPostContent(stub.messageId, cookie)
+      let sourcePosts: ThreadPostContent[] = []
+      let fullThreadHtml = ''
+      try {
+        fullThreadHtml = await fetchThreadPages(stub.messageId, cookie)
+        sourcePosts = extractThreadPostContents(fullThreadHtml)
+      } catch {
+        sourcePosts = []
+      }
+
+      const html = sourcePosts.length > 0
+        ? sourcePosts.map(post => post.html).join('\n<hr>\n')
+        : await fetchGuestPostContent(stub.messageId, cookie)
       if (!html) {
         console.log('⚠️  deleted — skipping')
         skipped++
         continue
       }
 
-      if (!supplementalNotesByForumUrl.has(stub.forumUrl) && /\/tm\.asp\?m=/i.test(stub.forumUrl)) {
+      if (!supplementalNotesByForumUrl.has(stub.forumUrl) && fullThreadHtml) {
         try {
-          const fullThreadHtml = await fetchPage(stub.forumUrl, cookie)
           const supplementalNotes = extractSupplementalGuestThreadNotes(fullThreadHtml)
           if (supplementalNotes) {
             supplementalNotesByForumUrl.set(stub.forumUrl, supplementalNotes)
@@ -2094,17 +2117,22 @@ async function main(): Promise<void> {
         }
       }
 
-      const variantSections = extractGuestVariantSections(html)
-      if (variantSections.length > 1) {
+      const variantSections = extractGuestVariantSections(html, sourcePosts)
+      const stubBaseName = normalizeGuestLookupName(stripTrailingVariantNumber(stub.name))
+      const scopedVariantSections = variantSections.filter(section =>
+        normalizeGuestLookupName(stripTrailingVariantNumber(section.name)) === stubBaseName
+      )
+      const candidateVariantSections = scopedVariantSections.length > 0 ? scopedVariantSections : variantSections
+      if (candidateVariantSections.length > 1) {
         const family = buildGuestFamilyFromSections(
           stub,
-          variantSections,
+          candidateVariantSections,
           chronology,
           nameToSlug,
           supplementalNotesByForumUrl.get(stub.forumUrl)
         )
         progressMap.set(family.slug, family)
-        console.log(`✓ [ItemFamily: ${variantSections.length} variants]`)
+        console.log(`✓ [ItemFamily: ${candidateVariantSections.length} variants]`)
         scraped++
 
         const progress = Array.from(progressMap.values())
@@ -2203,7 +2231,7 @@ async function main(): Promise<void> {
     supplementalMediaByForumUrl
   )
   const promotedGuests = applySupplementalGuestData(
-    sanitizePromotedGuestEntries(promoteCrossPostFamilies(hydratedGuests)),
+    repairAccessFlags(sanitizePromotedGuestEntries(canonicalizePromotedRelationships(promoteCrossPostFamilies(hydratedGuests)))),
     supplementalNotesByForumUrl,
     supplementalMediaByForumUrl
   )

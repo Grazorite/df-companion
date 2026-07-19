@@ -66,6 +66,7 @@ export type AccessoryEntry = Accessory | AccessoryFamily
 export interface AccessoryFilters {
   query?: string
   access?: Array<'multi' | 'free' | 'merge' | 'dc' | 'dm' | 'da'>
+  categories?: Array<'temp' | 'rare' | 'seasonal' | 'special-offer' | 'retired'>
   elements?: string[]
 }
 

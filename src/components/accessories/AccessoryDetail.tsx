@@ -9,9 +9,10 @@ import ElementPill from '../shared/ElementPill'
 import AccessPills from '../shared/AccessPills'
 import NotesList from '../shared/NotesList'
 import LevelSelector from '../shared/LevelSelector'
-import ObtainVariantCard from '../shared/ObtainVariantCard'
+import ObtainSection from '../shared/ObtainSection'
 import SourceLinksCard from '../shared/SourceLinksCard'
 import CollapsibleSection from '../shared/CollapsibleSection'
+import MetadataChipSection from '../shared/MetadataChipSection'
 import AccessoryStatsTable from './AccessoryStatsTable'
 import GuestAttacks from '../guests/GuestAttacks'
 
@@ -81,7 +82,20 @@ function getAccessoryNotes(
 }
 
 function isCapeOrHelmLike(value?: string): boolean {
-  return Boolean(value && /\b(?:cape|cloak|wing|wings|helm|helmet|hat|hood|mask|circlet)\b/i.test(value))
+  return Boolean(value && /\b(?:back|cape|cloak|head|wing|wings|helm|helmet|hat|hood|mask|circlet)\b/i.test(value))
+}
+
+function normalizeSourceVariantLabel(label: string) {
+  return normalizeDisplayText(label)
+    .replace(/^DF Encyclopedia:\s*/i, '')
+    .replace(/\s+\((?:DA|DC|D-Amulet|D-Coins?|Normal)\)$/i, '')
+    .trim()
+}
+
+function getLevelSourceSuffix(level: LevelVariant): string {
+  const levelLabel = String(level.actualLevel ?? level.levelDisplay).trim()
+  if (!levelLabel || levelLabel.toLowerCase() === 'unknown') return ''
+  return levelLabel.toLowerCase() === 'as player' ? 'As player' : `Level ${levelLabel}`
 }
 
 function shouldDisplayAccessoryImages(
@@ -195,17 +209,52 @@ export default function AccessoryDetail({ accessory, filterBase }: AccessoryDeta
     () => (family ? family.levelVariants : singleAccessory ? [buildSingleAccessoryLevel(singleAccessory)] : []),
     [family, singleAccessory]
   )
-  const sourceLinks = family?.familySources?.length
-    ? family.familySources.map(link => ({
-        url: link.url,
-        label: link.variantLabel ?? link.title,
-      }))
-    : [
+  const sourceLinks = useMemo(() => {
+    if (!family) {
+      return [
         {
           url: accessory.forumUrl,
-          label: `DF Encyclopedia: ${title}`,
+          label: title,
         },
       ]
+    }
+
+    const baseSourceLabels = family.levelVariants.map(level => normalizeSourceVariantLabel(level.name))
+    const uniqueBaseSourceLabels = new Set(baseSourceLabels.map(label => label.toLowerCase()))
+    const uniqueLevelLabels = new Set(
+      family.levelVariants
+        .map(level => String(level.actualLevel ?? level.levelDisplay ?? '').trim().toLowerCase())
+        .filter(Boolean)
+    )
+    const shouldAppendLevelToSource =
+      family.levelVariants.length > 1 && uniqueBaseSourceLabels.size === 1 && uniqueLevelLabels.size > 1
+    const seen = new Set<string>()
+    const links = family.levelVariants.flatMap(level => {
+      const sourceUrl = level.sourceUrl ?? family.forumUrl
+      const levelSuffix = getLevelSourceSuffix(level)
+      const baseLabel = normalizeSourceVariantLabel(level.name)
+      const label = shouldAppendLevelToSource && levelSuffix
+        ? `${baseLabel} (${levelSuffix})`
+        : baseLabel
+      const key = [sourceUrl, label, String(level.actualLevel ?? level.levelDisplay ?? '')].join('|').toLowerCase()
+
+      if (seen.has(key)) return []
+      seen.add(key)
+      return [{ url: sourceUrl, label }]
+    })
+
+    for (const source of family.familySources ?? []) {
+      if (family.levelVariants.some(level => (level.sourceUrl ?? family.forumUrl) === source.url)) continue
+
+      const label = normalizeSourceVariantLabel(source.variantLabel ?? source.title)
+      const key = `${source.url}|${label}`.toLowerCase()
+      if (seen.has(key)) continue
+      seen.add(key)
+      links.push({ url: source.url, label })
+    }
+
+    return links
+  }, [accessory.forumUrl, family, title])
 
   return (
     <main className="px-4 sm:px-6 py-6 max-w-3xl mx-auto">
@@ -282,21 +331,7 @@ export default function AccessoryDetail({ accessory, filterBase }: AccessoryDeta
         </section>
       )}
 
-      {rarity && rarity !== 'Unknown' && (
-        <section aria-labelledby="rarity-heading" className="mb-8">
-          <h2
-            id="rarity-heading"
-            className="text-xs font-semibold text-text-muted uppercase tracking-wider mb-3"
-          >
-            Rarity
-          </h2>
-          <div className="flex gap-2">
-            <span className="inline-block text-sm px-3 py-1.5 rounded-md bg-bg-overlay text-text-secondary border border-border-default">
-              {normalizeDisplayText(rarity)}
-            </span>
-          </div>
-        </section>
-      )}
+      <MetadataChipSection label="Rarity" value={rarity} className="mb-8" />
 
       {ability && (!attacks || attacks.length === 0) && (
         <section className="mb-8">
@@ -311,17 +346,7 @@ export default function AccessoryDetail({ accessory, filterBase }: AccessoryDeta
         </section>
       )}
 
-      {obtainMethods.length > 0 && (
-        <section className="mb-8 space-y-4">
-          {obtainMethods.map((method, index) => (
-            <ObtainVariantCard
-              key={`${method.location}-${index}`}
-              variant={method}
-              label={obtainMethods.length > 1 ? `Method ${index + 1}` : undefined}
-            />
-          ))}
-        </section>
-      )}
+      <ObtainSection variants={obtainMethods} className="mb-8" />
 
       {attacks && attacks.length > 0 && (
         <GuestAttacks attacks={attacks} />

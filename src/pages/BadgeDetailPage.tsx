@@ -175,26 +175,6 @@ export default function BadgeDetailPage() {
         />
       </section>
 
-      {/* Tags — internal search keywords, not clickable filters */}
-      {badge.tags.length > 0 && (
-        <details className="mb-8 group">
-          <summary className="list-none cursor-pointer select-none">
-            <div className="inline-flex items-center gap-2 text-xs font-semibold text-text-muted uppercase tracking-wider hover:text-text-secondary transition-colors">
-              <span>Tags</span>
-              <span className="text-[10px] normal-case tracking-normal group-open:hidden">Show</span>
-              <span className="text-[10px] normal-case tracking-normal hidden group-open:inline">Hide</span>
-            </div>
-          </summary>
-          <div className="flex flex-wrap gap-1.5 mt-3" aria-label="Search tags">
-            {badge.tags.map((tag) => (
-              <span key={tag} className="bg-bg-overlay text-text-muted text-xs px-2.5 py-1 rounded-full border border-border-subtle">
-                {tag}
-              </span>
-            ))}
-          </div>
-        </details>
-      )}
-
       {/* Related badges */}
       {relatedBadges.length > 0 && (
         <section aria-labelledby="related-heading" className="border-t border-border-default pt-6">

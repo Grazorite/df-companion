@@ -19,6 +19,16 @@ function normalizeLookupName(name: string): string {
     .trim()
 }
 
+function normalizeRefLookupName(name: string): string {
+  return name
+    .toLowerCase()
+    .replace(/[.,!?]+$/, '')
+    .replace(/\s+\((all versions|[ivx]+-[ivx]+)\)$/i, '')
+    .replace(/\s+\((i,\s*ii(?:,\s*iii)?|lieutenant,\s*general|kitten,\s*cat)\)$/i, '')
+    .replace(/\s+/g, ' ')
+    .trim()
+}
+
 function extractNumericVariantBase(name: string): string | undefined {
   if (!/\(\d+\)\s*$/i.test(name)) return undefined
   const base = normalizeLookupName(name.replace(/\s+\(\d+\)\s*$/i, ''))
@@ -164,6 +174,24 @@ function sharesGuestFamilyVariantOverlap(a: Pet | ItemFamily, b: Pet | ItemFamil
   })
 }
 
+function sharesMeaningfulTitleFamily(a: Pet | ItemFamily, b: Pet | ItemFamily): boolean {
+  const names = [getDisplayName(a), getDisplayName(b)]
+  const normalized = names.map(name =>
+    name.replace(/\s+\((?:all versions|[ivxlcdm]+(?:-[ivxlcdm]+)?|\d+)\)$/i, '').trim()
+  )
+
+  if (normalized.every(name => normalizeLookupName(name) === normalizeLookupName(normalized[0]))) {
+    return true
+  }
+
+  const tokenSets = normalized.map(tokenizeTitle)
+  const prefix = getLongestCommonPrefix(tokenSets).filter(token => !/^\d+$/.test(token))
+  const suffix = trimNumericQualifierFromSuffix(getLongestCommonSuffix(tokenSets), tokenSets)
+    .filter(token => !/^\d+$/.test(token))
+
+  return prefix.length >= 2 || suffix.length >= 2
+}
+
 function getItemElements(item: Pet | ItemFamily): string[] {
   return isItemFamily(item)
     ? item.levelVariants.map(level => level.element).filter((value): value is string => Boolean(value))
@@ -178,8 +206,9 @@ function canCrossMerge(a: Pet | ItemFamily, b: Pet | ItemFamily): boolean {
   const hasGuestVariantOverlap = sharesGuestFamilyVariantOverlap(a, b)
   if (!hasExplicitReference && !hasNumericVariantBase && !hasGuestVariantOverlap) return false
 
-  if (a.type === 'guest' && (hasNumericVariantBase || hasGuestVariantOverlap)) {
-    return true
+  if (a.type === 'guest') {
+    if (hasNumericVariantBase || hasGuestVariantOverlap) return true
+    if (!sharesMeaningfulTitleFamily(a, b)) return false
   }
 
   const aElements = new Set(getItemElements(a))
@@ -197,7 +226,7 @@ function canCrossMerge(a: Pet | ItemFamily, b: Pet | ItemFamily): boolean {
   return (
     descriptionsMatch(aDescription, bDescription) ||
     imagesMatch(aImage, bImage) ||
-    normalizeLookupName(deriveFamilyName([a, b])).length > 0
+    sharesMeaningfulTitleFamily(a, b)
   )
 }
 
@@ -291,6 +320,30 @@ function mergeSources(items: Array<Pet | ItemFamily>, familyName: string): Famil
   }
 
   return Array.from(refs.values())
+}
+
+function sortSourcesByLevels(
+  sources: FamilySourceRef[],
+  levels: LevelVariant[]
+): FamilySourceRef[] {
+  const sourceByUrl = new Map(sources.map(source => [source.url, source]))
+  const seenUrls = new Set<string>()
+  const orderedSources = levels
+    .map(level => {
+      if (!level.sourceUrl || seenUrls.has(level.sourceUrl)) return undefined
+      const source = sourceByUrl.get(level.sourceUrl)
+      if (!source) return undefined
+      seenUrls.add(level.sourceUrl)
+      return source
+    })
+    .filter((source): source is FamilySourceRef => Boolean(source))
+
+  orderedSources.push(...sources.filter(source => !seenUrls.has(source.url)))
+
+  return orderedSources.map((source, index) => ({
+    ...source,
+    isPrimary: index === 0,
+  }))
 }
 
 function allSame<T>(values: T[]): boolean {
@@ -388,7 +441,7 @@ function buildFamilyFromGroup(items: Array<Pet | ItemFamily>): ItemFamily {
     type: sorted[0].type,
     forumUrl,
     familyOrigin: 'cross-post',
-    familySources: mergeSources(sorted, familyName),
+    familySources: sortSourcesByLevels(mergeSources(sorted, familyName), allLevels),
     shared: {
       description: baseDescription,
       ...(baseImageUrl ? { imageUrl: baseImageUrl } : {}),
@@ -448,10 +501,87 @@ export function promoteCrossPostFamilies(items: Array<Pet | ItemFamily>): Array<
   return groups.map(group => {
     const hasStandalone = group.some(item => !isItemFamily(item))
     const familyCount = group.filter(isItemFamily).length
+    if (group.some(item => item.type === 'guest')) {
+      return group
+    }
     if (group.length <= 1 || !hasStandalone || familyCount > 1) {
       return group
     }
 
     return [buildFamilyFromGroup(group)]
   }).flat()
+}
+
+export function canonicalizePromotedRelationships(items: Array<Pet | ItemFamily>): Array<Pet | ItemFamily> {
+  const slugToCanonical = new Map<string, { slug: string; type: Pet['type'] }>()
+  const nameToCanonical = new Map<string, { slug: string; type: Pet['type'] }>()
+
+  for (const item of items) {
+    const displayName = getDisplayName(item)
+    const canonical = { slug: item.slug, type: item.type as Pet['type'] }
+    slugToCanonical.set(item.slug, canonical)
+    nameToCanonical.set(displayName.toLowerCase(), canonical)
+    nameToCanonical.set(normalizeRefLookupName(displayName), canonical)
+
+    if (isItemFamily(item)) {
+      for (const aliasSlug of item.aliasSlugs ?? []) {
+        slugToCanonical.set(aliasSlug, canonical)
+      }
+      for (const source of item.familySources ?? []) {
+        const sourceLabel = source.variantLabel ?? source.title.replace(/^DF Encyclopedia:\s*/i, '')
+        nameToCanonical.set(sourceLabel.toLowerCase(), canonical)
+        nameToCanonical.set(normalizeRefLookupName(sourceLabel), canonical)
+      }
+      for (const level of item.levelVariants) {
+        nameToCanonical.set(level.name.toLowerCase(), canonical)
+        nameToCanonical.set(normalizeRefLookupName(level.name), canonical)
+      }
+    }
+  }
+
+  const resolveRef = (name: string, fallbackSlug: string, fallbackType: Pet['type']) =>
+    slugToCanonical.get(fallbackSlug) ??
+    nameToCanonical.get(name.toLowerCase()) ??
+    nameToCanonical.get(normalizeRefLookupName(name)) ??
+    { slug: fallbackSlug, type: fallbackType }
+
+  return items.map(item => {
+    if (isItemFamily(item)) {
+      const alsoSee = item.shared.alsoSee
+        ?.map(ref => {
+          const resolved = resolveRef(ref.name, ref.slug, ref.type as Pet['type'])
+          return { ...ref, slug: resolved.slug, type: resolved.type }
+        })
+        .filter(ref => ref.slug !== item.slug)
+
+      return {
+        ...item,
+        shared: alsoSee && alsoSee.length > 0
+          ? {
+              ...item.shared,
+              alsoSee,
+            }
+          : {
+              ...item.shared,
+              alsoSee: undefined,
+            },
+      }
+    }
+
+    const alsoSee = item.alsoSee
+      .map(ref => {
+        const resolved = resolveRef(ref.name, ref.slug, ref.type)
+        return { ...ref, slug: resolved.slug, type: resolved.type }
+      })
+      .filter(ref => ref.slug !== item.slug)
+
+    return {
+      ...item,
+      alsoSee,
+      evolutions: item.evolutions.map(evolution => {
+        const resolved = resolveRef(evolution.resultName, evolution.resultSlug, evolution.resultType)
+        return { ...evolution, resultSlug: resolved.slug, resultType: resolved.type }
+      }),
+    }
+  })
 }

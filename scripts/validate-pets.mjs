@@ -34,7 +34,7 @@ try {
 let pets
 try {
   pets = JSON.parse(readFileSync(PETS_PATH, 'utf-8'))
-} catch (_e) {
+} catch {
   // pets.json may not exist yet — that's OK, validation is skipped
   console.log('⏭️  pets.json not found — skipping pet validation')
   process.exit(0)

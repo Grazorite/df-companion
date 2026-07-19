@@ -337,7 +337,7 @@ async function fetchBadgeDetails(
       }
 
       if (inNotes && line.length > 3) {
-        noteLines.push(line.replace(/^[•\-\*]\s*/, ''))
+        noteLines.push(line.replace(/^[•*-]\s*/, ''))
       }
     }
 

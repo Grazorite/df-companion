@@ -2,17 +2,18 @@ import { useState, useMemo, useEffect } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { Shield, ImageOff } from 'lucide-react'
 import type { Pet, Guest } from '../../types/pet'
-import type { ItemFamily } from '../../types/item'
-import { getDisplayFamilyName, getLevelVariantLabel, hasSameLevelVariants, hasTitleDrivenVariantNames, isSingleVariant } from '../../utils/variantHelpers'
+import type { ItemFamily, LevelVariant } from '../../types/item'
+import { getDisplayFamilyName, getLevelVariantLabels, hasSameLevelVariants, hasTitleDrivenVariantNames, isSingleVariant } from '../../utils/variantHelpers'
 import { normalizeDisplayText } from '../../utils/displayText'
 import ElementPill from '../shared/ElementPill'
 import AccessPills from '../shared/AccessPills'
 import NotesList from '../shared/NotesList'
 import LevelStatsTable from '../shared/LevelStatsTable'
 import LevelSelector from '../shared/LevelSelector'
-import ObtainVariantCard from '../shared/ObtainVariantCard'
+import ObtainSection from '../shared/ObtainSection'
 import SourceLinksCard from '../shared/SourceLinksCard'
 import CollapsibleSection from '../shared/CollapsibleSection'
+import MetadataChipSection from '../shared/MetadataChipSection'
 import PetAttacks from './PetAttacks'
 import GuestAttacks from '../guests/GuestAttacks'
 import GuestStatsSection from '../guests/GuestStatsSection'
@@ -29,6 +30,12 @@ interface PetDetailProps {
 
 function isItemFamily(item: Pet | ItemFamily): item is ItemFamily {
   return 'levelVariants' in item && 'familyName' in item
+}
+
+function normalizeSourceVariantLabel(label: string) {
+  return normalizeDisplayText(label)
+    .replace(/\s+\((?:DA|DC|D-Amulet|D-Coins?|Normal)\)$/i, '')
+    .trim()
 }
 
 function buildCardPet(item: Pet | ItemFamily): Pet {
@@ -104,6 +111,29 @@ function PetImage({ src, name }: { src: string; name: string }) {
   )
 }
 
+function shouldSplitObtainVariantRows(level: LevelVariant): boolean {
+  if (level.obtainVariants.length <= 1) return false
+  const hasDc = level.obtainVariants.some(variant => variant.priceType === 'dc')
+  const hasNonDc = level.obtainVariants.some(variant => variant.priceType !== 'dc')
+  return hasDc && hasNonDc
+}
+
+function expandDisplayLevelVariants(levels: LevelVariant[]): LevelVariant[] {
+  return levels
+    .flatMap(level =>
+      shouldSplitObtainVariantRows(level)
+        ? level.obtainVariants.map(obtainVariant => ({
+            ...level,
+            obtainVariants: [obtainVariant],
+          }))
+        : [level]
+    )
+    .map((level, index) => ({
+      ...level,
+      levelNumber: index + 1,
+    }))
+}
+
 export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
   const [searchParams, setSearchParams] = useSearchParams()
   
@@ -117,10 +147,14 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
   // Determine if we're using multi-variant display
   const isMultiVariant = family && !isSingleVariant(family)
   const isDragonFamily = family?.slug === 'pet-dragon'
-  const sameLevelVariants = family ? hasSameLevelVariants(family) : false
+  const displayLevels = useMemo(
+    () => family ? expandDisplayLevelVariants(family.levelVariants) : [],
+    [family]
+  )
+  const sameLevelVariants = displayLevels.length > 0 ? hasSameLevelVariants({ ...(family as ItemFamily), levelVariants: displayLevels }) : false
   const displayFamilyName = family ? getDisplayFamilyName(family) : undefined
   const useTitleDrivenVariantNames = family && displayFamilyName
-    ? hasTitleDrivenVariantNames(family.levelVariants, displayFamilyName)
+    ? hasTitleDrivenVariantNames(displayLevels, displayFamilyName)
     : false
   
   // Parse level URL param for multi-variant display
@@ -131,19 +165,19 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
     const variantMatch = levelParam.match(/^variant-(\d+)$/i)
     if (variantMatch) {
       const variantNumber = Number.parseInt(variantMatch[1], 10)
-      const variantIndex = family.levelVariants.findIndex(lv => lv.levelNumber === variantNumber)
+      const variantIndex = displayLevels.findIndex(lv => lv.levelNumber === variantNumber)
       return variantIndex >= 0 ? variantIndex : 0
     }
     
     // Match by exact level number first, then exact display/name fallbacks for legacy URLs.
-    const idx = family.levelVariants.findIndex(
+    const idx = displayLevels.findIndex(
       lv =>
         String(lv.levelNumber) === levelParam ||
         lv.levelDisplay.toLowerCase() === levelParam.toLowerCase() ||
         lv.name.toLowerCase() === levelParam.toLowerCase()
     )
     return idx >= 0 ? idx : 0
-  }, [levelParam, isMultiVariant, family])
+  }, [levelParam, isMultiVariant, family, displayLevels])
   
   // Handler for level selection
   const handleLevelChange = (index: number) => {
@@ -151,21 +185,21 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
     setSearchParams(
       prev => {
         const nextParams = new URLSearchParams(prev)
-        nextParams.set('level', `variant-${family.levelVariants[index].levelNumber}`)
+        nextParams.set('level', `variant-${displayLevels[index].levelNumber}`)
         return nextParams
       },
       { replace: true }
     )
   }
 
-  const activeLevel = isMultiVariant && family ? family.levelVariants[activeIndex] : undefined
+  const activeLevel = isMultiVariant && family ? displayLevels[activeIndex] : undefined
 
   useEffect(() => {
     setActiveImageIndex(0)
   }, [activeIndex])
   
   // Use shared data if available, otherwise fall back to Pet data
-  const displayData = family ? {
+  const displayData = useMemo(() => family ? {
     description: isDragonFamily
       ? `${activeLevel?.variantName ?? 'Baby'} Dragon`
       : activeLevel?.description ?? family.shared.description,
@@ -189,7 +223,7 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
     notes: pet.notes,
     alsoSee: pet.alsoSee,
     sourceUrl: pet.forumUrl,
-  }
+  }, [activeLevel, family, isDragonFamily, pet])
   const displayAccess = family
     ? {
         daRequired: family.hasDA,
@@ -213,16 +247,19 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
   const relatedPets = useRelatedPets(displayData.alsoSee ?? [])
   
   // Build array of all images (main + alternatives)
-  const allImages: Array<{ url: string; caption: string }> = []
-  if (displayData.imageUrl) {
-    allImages.push({ url: displayData.imageUrl, caption: displayFamilyName ?? pet.name })
-  }
-  if (displayData.alternativeImages) {
-    allImages.push(...displayData.alternativeImages.map(image => ({
-      url: image.url,
-      caption: image.caption || 'Alternative Image',
-    })))
-  }
+  const allImages = useMemo(() => {
+    const images: Array<{ url: string; caption: string }> = []
+    if (displayData.imageUrl) {
+      images.push({ url: displayData.imageUrl, caption: displayFamilyName ?? pet.name })
+    }
+    if (displayData.alternativeImages) {
+      images.push(...displayData.alternativeImages.map(image => ({
+        url: image.url,
+        caption: image.caption || 'Alternative Image',
+      })))
+    }
+    return images
+  }, [displayData.alternativeImages, displayData.imageUrl, displayFamilyName, pet.name])
 
   useEffect(() => {
     if (allImages.length <= 1) {
@@ -239,8 +276,8 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
       return
     }
 
-    const variantSelectorLabel = activeLevel && displayFamilyName
-      ? getLevelVariantLabel(activeLevel, displayFamilyName, useTitleDrivenVariantNames)
+    const variantSelectorLabel = activeLevel && displayFamilyName && family
+      ? getLevelVariantLabels(displayLevels, displayFamilyName, family.type)[activeIndex]
       : undefined
     const variantHint = variantSelectorLabel?.replace(/\s*\([^)]*\)\s*$/, '').trim()
       || (displayFamilyName
@@ -256,14 +293,14 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
     )
 
     setActiveImageIndex(matchingAltIndex >= 0 ? matchingAltIndex : 0)
-  }, [activeLevel, allImages.length, displayFamilyName, useTitleDrivenVariantNames])
+  }, [activeIndex, activeLevel, allImages, displayFamilyName, displayLevels, family])
   
   // Currently displayed image
   const currentImage = allImages[activeImageIndex]
   const displayedRequirements = useMemo(() => {
     const requirementSet = new Set<string>()
     const obtainSources = isMultiVariant && family
-      ? family.levelVariants[activeIndex].obtainVariants
+      ? displayLevels[activeIndex].obtainVariants
       : pet.obtainMethods
 
     for (const method of obtainSources) {
@@ -273,7 +310,7 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
     }
 
     return [...requirementSet]
-  }, [activeIndex, family, isMultiVariant, pet.obtainMethods])
+  }, [activeIndex, displayLevels, family, isMultiVariant, pet.obtainMethods])
 
   // Strip everything from "Thanks to" onwards — attribution lines, not content
   const cleanedNotes = displayData.notes
@@ -302,17 +339,71 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
     })(),
   ].filter(s => s.value && s.value !== 'Unknown' && s.value !== 'None' || s.label === 'Level')
 
-  const sourceLinks = family?.familySources?.length
-    ? family.familySources.map(link => ({
+  const sourceLinks = useMemo(() => {
+    if (!family) {
+      return [
+        {
+          url: displayData.sourceUrl,
+          label: pet.name,
+        },
+      ]
+    }
+
+    const baseSourceLabels = family.levelVariants.map(level => normalizeSourceVariantLabel(level.name))
+    const uniqueBaseSourceLabels = new Set(baseSourceLabels.map(label => label.toLowerCase()))
+    const uniqueLevelLabels = new Set(
+      family.levelVariants
+        .map(level => String(level.actualLevel ?? level.levelDisplay ?? '').trim().toLowerCase())
+        .filter(Boolean)
+    )
+    const shouldAppendLevelToSource =
+      family.levelVariants.length > 1 && uniqueBaseSourceLabels.size === 1 && uniqueLevelLabels.size > 1
+
+    const seenSourceVariantKeys = new Set<string>()
+    const sourceLinksByVariant = family.levelVariants.flatMap(level => {
+      const sourceUrl = level.sourceUrl ?? family.forumUrl
+
+      const levelLabel = String(level.actualLevel ?? level.levelDisplay).trim()
+      const levelSuffix = levelLabel && levelLabel.toLowerCase() !== 'unknown'
+        ? levelLabel.toLowerCase() === 'as player'
+          ? 'As player'
+          : `Level ${levelLabel}`
+        : ''
+      const baseLabel = normalizeSourceVariantLabel(level.name)
+      const sourceLabel = shouldAppendLevelToSource && levelSuffix
+        ? `${baseLabel} (${levelSuffix})`
+        : baseLabel
+      const sourceKey = [
+        sourceUrl,
+        sourceLabel,
+        String(level.actualLevel ?? level.levelDisplay ?? ''),
+        level.damage ?? '',
+        level.stats ?? '',
+        level.resists ?? '',
+      ].join('|').toLowerCase()
+
+      if (seenSourceVariantKeys.has(sourceKey)) return []
+      seenSourceVariantKeys.add(sourceKey)
+
+      return [{ url: sourceUrl, label: sourceLabel }]
+    })
+
+    const seenLabels = new Set(sourceLinksByVariant.map(link => `${link.url}:${link.label}`))
+    const unmatchedSources = (family.familySources ?? [])
+      .filter(link => !family.levelVariants.some(level => (level.sourceUrl ?? family.forumUrl) === link.url))
+      .map(link => ({
         url: link.url,
         label: link.variantLabel ?? link.title,
       }))
-    : [
-        {
-          url: displayData.sourceUrl,
-          label: `DF Encyclopedia: ${isMultiVariant && family ? activeLevel?.name ?? displayFamilyName : pet.name}`,
-        },
-      ]
+      .filter(link => {
+        const key = `${link.url}:${link.label}`
+        if (seenLabels.has(key)) return false
+        seenLabels.add(key)
+        return true
+      })
+
+    return [...sourceLinksByVariant, ...unmatchedSources]
+  }, [displayData.sourceUrl, family, pet.name])
 
   return (
     <main className="px-4 sm:px-6 py-6 max-w-3xl mx-auto">
@@ -480,11 +571,11 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
         <section className="mb-5">
           <CollapsibleSection title="Stats by Level">
             <LevelStatsTable 
-              levels={family.levelVariants}
+              levels={displayLevels}
               familyName={displayFamilyName}
               hideVariantColumn={
                 !sameLevelVariants &&
-                !family.levelVariants.some(level => Boolean(level.variantName)) &&
+                !displayLevels.some(level => Boolean(level.variantName)) &&
                 !useTitleDrivenVariantNames
               }
             />
@@ -493,10 +584,10 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
       )}
       
       {/* Level selector and rarity - only for multi-variant items */}
-      {isMultiVariant && family && family.levelVariants.length > 1 && (
+      {isMultiVariant && family && displayLevels.length > 1 && (
         <section className="mb-5">
           <LevelSelector
-            levels={family.levelVariants}
+            levels={displayLevels}
             activeIndex={activeIndex}
             onChange={handleLevelChange}
             familyName={displayFamilyName}
@@ -509,7 +600,7 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
       {(() => {
         // For multi-variant, use level-specific rarity; for single, use pet rarity
         const displayRarity = isMultiVariant && family 
-          ? family.levelVariants[activeIndex].rarity || family.shared.rarity
+          ? displayLevels[activeIndex].rarity || family.shared.rarity
           : pet.rarity || family?.shared.rarity
         
         if (!displayRarity || displayRarity === 'Unknown') return null
@@ -521,73 +612,33 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
           ? displayRarity.split(':').slice(1).join(':').trim()
           : displayRarity
 
-        return (
-          <section aria-labelledby="rarity-heading" className="mb-5">
-            <h2 id="rarity-heading" className="text-xs font-semibold text-text-muted uppercase tracking-wider mb-3">
-              {metadataLabel}
-            </h2>
-            <div className="flex gap-2">
-              <span className="inline-block text-sm px-3 py-1.5 rounded-md bg-bg-overlay text-text-secondary border border-border-default">
-                {metadataValue}
-              </span>
-            </div>
-          </section>
-        )
+        return <MetadataChipSection label={metadataLabel} value={metadataValue} />
       })()}
 
       {/* How to Obtain */}
       {isMultiVariant && family ? (
-        /* Multi-variant obtain section */
-        <section aria-labelledby="obtain-heading" className="mb-5 space-y-4">
-          {/* Obtain cards for selected level */}
-          <div className="space-y-3">
-            {family.levelVariants[activeIndex].obtainVariants.map((variant, i) => {
-              const label = family.levelVariants[activeIndex].obtainVariants.length > 1 ? `Method ${i + 1}` : undefined
-              
-              return (
-                <ObtainVariantCard
-                  key={i}
-                  variant={variant}
-                  label={label}
-                  isGuest={isGuest}
-                  locationOnly={isDragonFamily}
-                />
-              )
-            })}
-          </div>
-        </section>
+        <ObtainSection
+          variants={displayLevels[activeIndex].obtainVariants}
+          isGuest={isGuest}
+          locationOnly={isDragonFamily}
+        />
       ) : pet.obtainMethods.length > 0 ? (
-        /* Single-variant obtain section - use standardized format */
-        <section aria-labelledby="obtain-heading" className="mb-5">
-          <div className="space-y-3">
-            {pet.obtainMethods.map((method, i) => {
-              const obtainVariant = {
-                location: method.location,
-                price: method.price ?? 'N/A',
-                priceType: method.priceType,
-                sellback: method.sellback,
-                ...(method.requirements ? { requirements: method.requirements } : {}),
-                // Use ONLY per-method flags - do NOT fall back to pet-level flags
-                // Per-method flags are authoritative; pet-level flags are just summaries
-                daRequired: method.daRequired ?? false,
-                ...(method.dcRequired ? { dcRequired: method.dcRequired } : {}),
-                ...(method.dmRequired ? { dmRequired: method.dmRequired } : {}),
-                ...(method.requiredItems ? { requiredItems: method.requiredItems } : {}),
-              }
-              
-              const label = pet.obtainMethods.length > 1 ? `Method ${i + 1}` : undefined
-              
-              return (
-                <ObtainVariantCard
-                  key={i}
-                  variant={obtainVariant}
-                  label={label}
-                  isGuest={isGuest}
-                />
-              )
-            })}
-          </div>
-        </section>
+        <ObtainSection
+          variants={pet.obtainMethods.map(method => ({
+            location: method.location,
+            price: method.price ?? 'N/A',
+            priceType: method.priceType,
+            sellback: method.sellback,
+            ...(method.requirements ? { requirements: method.requirements } : {}),
+            // Use ONLY per-method flags - do NOT fall back to pet-level flags
+            // Per-method flags are authoritative; pet-level flags are just summaries
+            daRequired: method.daRequired ?? false,
+            ...(method.dcRequired ? { dcRequired: method.dcRequired } : {}),
+            ...(method.dmRequired ? { dmRequired: method.dmRequired } : {}),
+            ...(method.requiredItems ? { requiredItems: method.requiredItems } : {}),
+          }))}
+          isGuest={isGuest}
+        />
       ) : null}
 
       {displayedRequirements.length > 0 && !isGuest && (
@@ -619,10 +670,10 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
       {(() => {
         // For multi-variant items
         if (isMultiVariant && family) {
-          const activeLevel = family.levelVariants[activeIndex]
+          const activeLevel = displayLevels[activeIndex]
           const shouldShowSharedNotes =
             family.familyOrigin !== 'cross-post' ||
-            family.levelVariants.every(level => (level.notes ?? undefined) === (family.shared.notes ?? undefined))
+            displayLevels.every(level => (level.notes ?? undefined) === (family.shared.notes ?? undefined))
           
           // Clean shared notes (remove attribution)
           const cleanedSharedNotes = shouldShowSharedNotes && family.shared.notes ? (() => {
@@ -678,17 +729,6 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
       <section className="mb-5">
         <SourceLinksCard links={sourceLinks} />
       </section>
-
-      {/* Tags */}
-      {pet.tags.length > 0 && (
-        <div className="flex flex-wrap gap-1.5 mb-8" aria-label="Tags">
-          {pet.tags.map(tag => (
-            <span key={tag} className="bg-bg-overlay text-text-muted text-xs px-2.5 py-1 rounded-full border border-border-subtle">
-              {tag}
-            </span>
-          ))}
-        </div>
-      )}
 
       {/* Also See — related pets from forum data */}
       {relatedPets.length > 0 && (

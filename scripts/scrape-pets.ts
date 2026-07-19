@@ -1,8 +1,8 @@
 /**
- * Pets Scraper — Chronology-First Strategy (Five-Pass, Resumable)
+ * Pets Scraper — A-Z Master List Strategy (Five-Pass, Resumable)
  *
- * This scraper fetches Chronology first to get authoritative pet types,
- * then parses the A-Z page to build stubs with correct type prefixes.
+ * This scraper reads the Pets section from the A-Z Pets & Guests master page
+ * to build source stubs, then uses Chronology for release-date enrichment.
  * GUESTS are now handled by scrape-guests.ts.
  *
  * Entry format: [ICE][SHR] Pet Name (D-Amulet/Seasonal)
@@ -24,11 +24,13 @@ import * as path from 'node:path'
 import type { Pet, ObtainMethod, Attack, Evolution, AlsoSeeRef, EntryType } from '../src/types/pet.ts'
 import type { ItemFamily, ObtainVariant, LevelVariant, SharedData } from '../src/types/item.ts'
 import { computePriceType, computeFamilyFlags, normalizeLevel } from '../src/utils/variantHelpers.ts'
-import { fetchPrintable, getAllPostContent } from './lib/printable-parser.ts'
-import { promoteCrossPostFamilies } from './lib/cross-post-family.ts'
+import { extractThreadPostContents, fetchPrintable, fetchThreadPages, getAllPostContent, type ThreadPostContent } from './lib/printable-parser.ts'
+import { canonicalizePromotedRelationships, promoteCrossPostFamilies } from './lib/cross-post-family.ts'
+import { rephraseTimedSellback } from './lib/obtain-formatting.ts'
+import { repairAccessFlags } from './lib/access-flag-repair.ts'
 
 const FORUM_BASE = 'https://forums2.battleon.com/f'
-const AZ_PETS_URL = `${FORUM_BASE}/tm.asp?m=22349620&mpage=1`  // A-Z Pets & Guests combined (filtered by type)
+const AZ_PETS_URL = `${FORUM_BASE}/tm.asp?m=22349620&mpage=1`  // A-Z Pets & Guests master page
 const CHRONOLOGY_URL = `${FORUM_BASE}/tm.asp?m=10738071`
 const DELAY_MS = 1000
 const OUTPUT_PATH = path.resolve(import.meta.dirname, '../src/data/pets.json')
@@ -78,6 +80,10 @@ function prefixedSlug(name: string, type: EntryType): string {
   return `${type}-${slugify(name)}`
 }
 
+function directForumPostUrl(_linkPath: string, messageId: string): string {
+  return `${FORUM_BASE}/fb.asp?m=${messageId}`
+}
+
 function decodeHTML(str: string): string {
   return str
     .replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>')
@@ -111,7 +117,7 @@ function stripHtml(html: string): string {
       // Look ahead to see if this is actually a tag or just a < character in text
       const nextChars = html.slice(i, i + 10)
       // Valid HTML tags start with < followed by letter or / or !
-      if (/^<[a-zA-Z!\/]/.test(nextChars)) {
+      if (/^<[a-zA-Z!/]/.test(nextChars)) {
         inTag = true
         tagStart = i
       } else {
@@ -192,6 +198,18 @@ function extractOtherInfoBulletLines(html: string): string[] {
     .filter(line => line.length > 0)
 }
 
+function extractAlsoSeeNames(html: string): string[] {
+  const match = html.match(
+    /Also See:\s*([\s\S]*?)(?=<br\s*\/?>\s*<br\s*\/?>|<i>\s*Thanks\s+to|Thanks\s+to|<font color=['"]#eeeeee['"]|$)/i
+  )
+  if (!match) return []
+
+  return stripHtml(decodeHTML(match[1]))
+    .split(/[,\n]/)
+    .map(name => name.trim())
+    .filter(Boolean)
+}
+
 function loadCookie(): string {
   const envPath = path.resolve(import.meta.dirname, '../.env')
   if (!fs.existsSync(envPath)) { console.error('❌ Missing .env'); process.exit(1) }
@@ -251,7 +269,7 @@ function uniqueStrings(values: string[]): string[] {
 function parseElementCodesFromText(raw: string): string[] {
   return uniqueStrings(
     raw
-      .split(/[\/,&]|(?:\s+\+\s+)|(?:\s+and\s+)/i)
+      .split(/[/,&]|(?:\s+\+\s+)|(?:\s+and\s+)/i)
       .map(part => part.trim().toLowerCase())
       .map(part => ELEMENT_NAME_TO_CODE.get(part))
       .filter((code): code is string => Boolean(code))
@@ -280,24 +298,22 @@ interface ChronologyData {
 
 interface ParsedAllVersionsCandidate {
   html: string
+  sourceUrl: string
   data: ReturnType<typeof parsePetThread>
   actualLevel: number
   displayName: string
   explicitPostLabel?: string
 }
 
-function getDisplayName(item: Pet | ItemFamily): string {
-  return 'familyName' in item ? item.familyName : item.name
+function extractAZListBlock(html: string, section: 'pet' | 'guest'): string {
+  const blocks = [...html.matchAll(/<td\b[^>]*class=["']?msg["']?[^>]*>([\s\S]*?)<\/td>/gi)].map(match => match[1])
+  const index = section === 'pet' ? 1 : 2
+  const block = blocks[index]
+  return block ?? html
 }
 
-function normalizeRefLookupName(name: string): string {
-  return name
-    .toLowerCase()
-    .replace(/[.,!?]+$/, '')
-    .replace(/\s+\((all versions|[ivx]+-[ivx]+)\)$/i, '')
-    .replace(/\s+\((i,\s*ii(?:,\s*iii)?|lieutenant,\s*general|kitten,\s*cat)\)$/i, '')
-    .replace(/\s+/g, ' ')
-    .trim()
+function getDisplayName(item: Pet | ItemFamily): string {
+  return 'familyName' in item ? item.familyName : item.name
 }
 
 function normalizeAllVersionsMatchName(name: string): string {
@@ -528,64 +544,6 @@ function groupObtainMethodsByVariant(
   }))
 }
 
-function detectAccessTagsInHtmlContext(html: string, searchText: string, contextSize: number = 500): {
-  daRequired: boolean
-  dcRequired: boolean
-  dmRequired: boolean
-} {
-  const index = html.indexOf(searchText)
-  if (index === -1) {
-    return { daRequired: false, dcRequired: false, dmRequired: false }
-  }
-
-  const segmentStartCandidates = [
-    html.lastIndexOf("<font size='3'><b>", index),
-    html.lastIndexOf('<font size="3"><b>', index),
-    html.lastIndexOf("<b><font size='3'>", index),
-    html.lastIndexOf('<b><font size="3">', index),
-    html.lastIndexOf('Location:', index),
-  ].filter(candidate => candidate >= 0)
-
-  const segmentStart = segmentStartCandidates.length > 0
-    ? Math.max(...segmentStartCandidates)
-    : Math.max(0, index - contextSize)
-
-  const forwardHtml = html.slice(index + searchText.length)
-  const nextTitleOffsets = [
-    forwardHtml.search(/<font size=['"]3['"]><b>/i),
-    forwardHtml.search(/<b><font size=['"]3['"]>/i),
-  ].filter(offset => offset >= 0)
-
-  let segmentEnd = Math.min(html.length, index + searchText.length + contextSize)
-
-  if (nextTitleOffsets.length > 0) {
-    const nextTitleIndex = index + searchText.length + Math.min(...nextTitleOffsets)
-    const precedingImageIndex = html.lastIndexOf('<img', nextTitleIndex)
-    segmentEnd =
-      precedingImageIndex > index
-        ? precedingImageIndex
-        : nextTitleIndex
-  } else {
-    const nextFieldOffsets = [
-      forwardHtml.search(/(?:<br>\s*)?Level:/i),
-      forwardHtml.search(/(?:<br>\s*)?<b><u>Other information<\/u><\/b>/i),
-    ].filter(offset => offset >= 0)
-
-    if (nextFieldOffsets.length > 0) {
-      segmentEnd = index + searchText.length + Math.min(...nextFieldOffsets)
-    }
-  }
-
-  const context = html.slice(segmentStart, segmentEnd)
-  const hasNoDAText = /\(?\s*No\s+DA\s+Required\s*\)?/i.test(context)
-
-  return {
-    daRequired: hasNoDAText ? false : /<img[^>]+src=["'][^"']*\/tags\/DA\.png["']/i.test(context),
-    dcRequired: /<img[^>]+src=["'][^"']*\/tags\/DC\.png["']/i.test(context),
-    dmRequired: /<img[^>]+src=["'][^"']*\/tags\/DM\.png["']/i.test(context),
-  }
-}
-
 function buildVariantFamilyFromSinglePost(
   data: ReturnType<typeof parsePetThread>,
   name: string,
@@ -702,10 +660,11 @@ function dedupeVariantEntries(items: Array<Pet | ItemFamily>): Array<Pet | ItemF
   return Array.from(canonicalByNormalized.values())
 }
 
-function parseAZPage(html: string, chronology: ChronologyData): PetStub[] {
+function parseAZPage(html: string): PetStub[] {
   const stubs: PetStub[] = []
   const seen = new Set<string>()
-  const chunks = html.split(/<br\s*\/?>/)
+  const listHtml = extractAZListBlock(html, 'pet')
+  const chunks = listHtml.split(/<br\s*\/?>/)
   let currentLetter = '#'
   let skippedCount = 0
 
@@ -718,15 +677,19 @@ function parseAZPage(html: string, chronology: ChronologyData): PetStub[] {
       continue
     }
 
-    // Match links — both relative and absolute URLs, single or double quotes
-    const linkMatch = /href=["']?(?:https?:\/\/forums2\.battleon\.com\/f\/)?tm\.asp\?m=(\d+)["'\s>]/i.exec(chunk)
+    // Match links — both relative and absolute URLs, single or double quotes.
+    const linkMatch = /href=["']?(?:https?:\/\/forums2\.battleon\.com\/f\/)?((tm|fb)\.asp\?m=(\d+))["'\s>]/i.exec(chunk)
     if (!linkMatch) continue
-    const msgId = linkMatch[1]
-    if (seen.has(msgId)) {
+    const linkPath = linkMatch[1]
+    const msgId = linkMatch[3]
+
+    // Keep same-thread variants as distinct stubs while still ignoring repeated list rows.
+    const seenKey = `${msgId}:${stripHtml(decodeHTML(chunk)).trim().toLowerCase()}`
+    if (seen.has(seenKey)) {
       skippedCount++
       continue
     }
-    seen.add(msgId)
+    seen.add(seenKey)
 
     // Elements/markers appear BEFORE the <a> tag in the line
     // e.g: [BAC][DAR][WIN] <a href="...">Pet Name</a>
@@ -755,19 +718,11 @@ function parseAZPage(html: string, chronology: ChronologyData): PetStub[] {
       continue
     }
 
-    // Determine type from Chronology (primary source) or default to 'pet'
-    const key = name.toLowerCase()
-    const type =
-      chronology.typesByMessageId.get(msgId) ??
-      chronology.typesByName.get(key) ??
-      chronology.typesByName.get(name.replace(/\s*\([^)]+\)\s*$/, '').trim().toLowerCase()) ??
-      'pet' as EntryType
-
     stubs.push({
       name,
-      slug: prefixedSlug(name, type),
-      type,
-      forumUrl: `${FORUM_BASE}/tm.asp?m=${msgId}`,
+      slug: prefixedSlug(name, 'pet'),
+      type: 'pet',
+      forumUrl: directForumPostUrl(linkPath, msgId),
       messageId: msgId,
       elements,
       markers,
@@ -1028,42 +983,6 @@ function extractImages(html: string): { main?: string; alternatives: Array<{ url
   return { main, alternatives }
 }
 
-/**
- * Find caption text near an image position in HTML
- */
-function findCaptionNear(html: string, imgPos: number): string {
-  if (imgPos === -1) return 'Alternative Image'
-  
-  // Look backward up to 200 chars for caption text
-  const beforeImg = html.slice(Math.max(0, imgPos - 200), imgPos)
-  
-  // Pattern 1: <b>Caption Text</b> followed by image
-  const boldMatch = beforeImg.match(/<b>([^<]+)<\/b>\s*$/i)
-  if (boldMatch) {
-    return stripHtml(decodeHTML(boldMatch[1])).trim()
-  }
-  
-  // Pattern 2: Link text like "Alternative Image"
-  const linkTextMatch = beforeImg.match(/>([^<]+)<\/a>\s*$/i)
-  if (linkTextMatch) {
-    const text = stripHtml(decodeHTML(linkTextMatch[1])).trim()
-    if (text.length > 3 && text.length < 50) {
-      return text
-    }
-  }
-  
-  // Pattern 3: Plain text followed by image
-  const plainTextMatch = beforeImg.match(/([A-Z][a-z\s]+)\s*$/i)
-  if (plainTextMatch && plainTextMatch[1].length < 50) {
-    const caption = plainTextMatch[1].trim()
-    if (caption.length > 3 && /^[A-Z]/.test(caption)) {
-      return caption
-    }
-  }
-  
-  return 'Alternative Image'
-}
-
 // ─────────────────────────────────────────────────────────────────────────────
 
 function parsePriceType(price: string, requiredItems?: string): ObtainMethod['priceType'] {
@@ -1088,19 +1007,6 @@ function parsePriceType(price: string, requiredItems?: string): ObtainMethod['pr
   if (requiredItems && requiredItems.trim().length > 0) return 'merge'
   
   return 'gold'
-}
-
-function extractPostBlockByMessageId(threadHtml: string, messageId: string): string | undefined {
-  const anchor = `name=${messageId}`
-  const startIndex = threadHtml.indexOf(anchor)
-  if (startIndex < 0) return undefined
-
-  const nextAnchorMatch = threadHtml.slice(startIndex + anchor.length).match(/<a name=\d+><\/a>/i)
-  const endIndex = nextAnchorMatch
-    ? startIndex + anchor.length + nextAnchorMatch.index
-    : threadHtml.length
-
-  return threadHtml.slice(startIndex, endIndex)
 }
 
 function extractDragonVariantSections(html: string): Array<{ variantName: string; html: string }> {
@@ -1351,7 +1257,8 @@ export async function parsePetThreadMultiVariant(
   stub: PetStub,
   cookie: string,
   chronology: ChronologyData,
-  nameToSlug: Map<string, { slug: string; type: EntryType }>
+  nameToSlug: Map<string, { slug: string; type: EntryType }>,
+  sourcePosts: ThreadPostContent[] = [{ html, sourceUrl: stub.forumUrl, messageId: stub.messageId }]
 ): Promise<Pet | ItemFamily> {
   const dragonFamily = await tryBuildDragonFamily(html, name, stub, cookie, chronology)
   if (dragonFamily) return dragonFamily
@@ -1513,18 +1420,18 @@ export async function parsePetThreadMultiVariant(
     const sections: Array<{ levelNum: number; romanDisplay: string; html: string; startIndex: number }> = []
     let handledByPostCandidates = false
 
-    if (!isAllVersions && html.includes('\n<hr>\n')) {
-      const postChunks = html.split('\n<hr>\n')
+    if (!isAllVersions && sourcePosts.length > 1) {
       const postCandidates: Array<{
         html: string
+        sourceUrl: string
         data: ReturnType<typeof parsePetThread>
         displayName: string
         levelInfo: { number: number; display: string }
         actualLevel?: number
       }> = []
 
-      for (const chunk of postChunks) {
-        const displayName = extractLastPostDisplayName(chunk, baseName)
+      for (const post of sourcePosts) {
+        const displayName = extractLastPostDisplayName(post.html, baseName)
         if (!normalizeAllVersionsMatchName(displayName).includes(normalizeAllVersionsMatchName(baseName))) continue
 
         const levelInfo =
@@ -1534,7 +1441,7 @@ export async function parsePetThreadMultiVariant(
             : undefined)
         if (!levelInfo) continue
 
-        const normalizedChunk = chunk
+        const normalizedChunk = post.html
         const data = parsePetThread(normalizedChunk, displayName)
         const actualLevel = data.level && data.level !== 'Unknown' ? parseInt(data.level, 10) : undefined
 
@@ -1542,6 +1449,7 @@ export async function parsePetThreadMultiVariant(
 
         postCandidates.push({
           html: normalizedChunk,
+          sourceUrl: post.sourceUrl,
           data,
           displayName,
           levelInfo,
@@ -1585,6 +1493,7 @@ export async function parsePetThreadMultiVariant(
             damage: candidate.data.damage || 'Unknown',
             stats: candidate.data.stats || 'None',
             ...(candidate.data.statsType ? { statsType: candidate.data.statsType } : {}),
+            sourceUrl: candidate.sourceUrl,
             obtainVariants,
             ...(candidate.data.elementCodes[0] ? { element: candidate.data.elementCodes[0] } : {}),
             ...(candidate.data.resists && candidate.data.resists !== 'None' ? { resists: candidate.data.resists } : {}),
@@ -1598,11 +1507,11 @@ export async function parsePetThreadMultiVariant(
     }
     
     if (isAllVersions) {
-      const postChunks = html.includes('\n<hr>\n') ? html.split('\n<hr>\n') : [html]
       const normalizedBaseName = normalizeAllVersionsMatchName(name)
       const postCandidates: ParsedAllVersionsCandidate[] = []
 
-      for (const chunk of postChunks) {
+      for (const post of sourcePosts) {
+        const chunk = post.html
         const plainChunk = stripHtml(decodeHTML(chunk)).replace(/\s+/g, ' ').trim()
         const normalizedChunk = normalizeAllVersionsMatchName(plainChunk)
         if (!normalizedChunk.includes(normalizedBaseName)) continue
@@ -1617,6 +1526,7 @@ export async function parsePetThreadMultiVariant(
 
         postCandidates.push({
           html: chunk,
+          sourceUrl: post.sourceUrl,
           data,
           actualLevel,
           displayName: extractPostDisplayName(chunk, baseName),
@@ -1702,7 +1612,7 @@ export async function parsePetThreadMultiVariant(
               damage: candidate.data.damage || 'Unknown',
               stats: candidate.data.stats || 'None',
               ...(candidate.data.statsType ? { statsType: candidate.data.statsType } : {}),
-              sourceUrl: stub.forumUrl,
+              sourceUrl: candidate.sourceUrl,
               description: candidate.data.description,
               ...(candidate.data.imageUrl ? { imageUrl: candidate.data.imageUrl } : {}),
               ...(candidate.data.alternativeImages && candidate.data.alternativeImages.length > 0 ? { alternativeImages: candidate.data.alternativeImages } : {}),
@@ -2221,57 +2131,6 @@ function convertToPet(
   }
 }
 
-function canonicalizePetRelationships(items: Array<Pet | ItemFamily>): Array<Pet | ItemFamily> {
-  const nameToCanonical = new Map<string, { slug: string; type: EntryType }>()
-
-  for (const item of items) {
-    const displayName = getDisplayName(item)
-    const baseName = normalizeRefLookupName(displayName)
-    const current = { slug: item.slug, type: item.type as EntryType }
-    nameToCanonical.set(displayName.toLowerCase(), current)
-    nameToCanonical.set(baseName, current)
-  }
-
-  const resolveRef = (name: string, fallbackSlug: string, fallbackType: EntryType) => {
-    const canonical =
-      nameToCanonical.get(name.toLowerCase()) ??
-      nameToCanonical.get(normalizeRefLookupName(name))
-
-    return canonical ?? { slug: fallbackSlug, type: fallbackType }
-  }
-
-  return items.map(item => {
-    if ('levelVariants' in item) {
-      const family = item as ItemFamily
-      return {
-        ...family,
-        shared: family.shared.alsoSee
-          ? {
-              ...family.shared,
-              alsoSee: family.shared.alsoSee.map(ref => {
-                const resolved = resolveRef(ref.name, ref.slug, ref.type as EntryType)
-                return { ...ref, slug: resolved.slug, type: resolved.type }
-              }),
-            }
-          : family.shared,
-      }
-    }
-
-    const pet = item as Pet
-    return {
-      ...pet,
-      alsoSee: pet.alsoSee.map(ref => {
-        const resolved = resolveRef(ref.name, ref.slug, ref.type)
-        return { ...ref, slug: resolved.slug, type: resolved.type }
-      }),
-      evolutions: pet.evolutions.map(evolution => {
-        const resolved = resolveRef(evolution.resultName, evolution.resultSlug, evolution.resultType)
-        return { ...evolution, resultSlug: resolved.slug, resultType: resolved.type }
-      }),
-    }
-  })
-}
-
 // ─────────────────────────────────────────────────────────────────────────────
 
 export function parsePetThread(html: string, name: string): {
@@ -2346,27 +2205,6 @@ export function parsePetThread(html: string, name: string): {
   if (/<img[^>]+src=["'][^"']*\/tags\/Retired\.png["']/i.test(rawBody)) {
     retired = true
   }
-
-function rephraseTimedSellback(sellback: string): string {
-  // Match pattern: "X [currency] before Y, Z [currency] after Y"
-  // Examples:
-  // "68 Dragon Coins before 24 hours, 19 Dragon Coins after 24 hours"
-  // "500 Gold before 24 hours, 125 Gold after 24 hours"
-  const timedPattern = /^(\d+)\s+(Dragon Coins?|Gold|Defender'?s? Medals?)\s+before\s+(.+?),\s*(\d+)\s+(Dragon Coins?|Gold|Defender'?s? Medals?)\s+after\s+\3$/i
-  const match = sellback.match(timedPattern)
-  
-  if (match) {
-    const [, beforeAmount, beforeCurrency, timeframe, afterAmount] = match
-    // Normalize currency names (remove trailing 's' for singular, use standard forms)
-    const currency = beforeCurrency.toLowerCase().includes('dragon') ? 'DC' : 
-                     beforeCurrency.toLowerCase().includes('gold') ? 'Gold' :
-                     beforeCurrency.toLowerCase().includes('medal') ? 'DM' : beforeCurrency
-    
-    return `${beforeAmount} ${currency} (<${timeframe}) / ${afterAmount} ${currency} (>${timeframe})`
-  }
-  
-  return sellback
-}
 
 /**
  * Detect DA/DC/DM tags in the HTML context around a specific text location.
@@ -2578,11 +2416,11 @@ function appendToCurrentObtainField(lineText: string) {
       continue
     }
 
-    if (currentAttack && !inNotes && /^[•\-\*]\s+/.test(trimmedLine)) {
+    if (currentAttack && !inNotes && /^[•*-]\s+/.test(trimmedLine)) {
       const routeToOtherInformation = /does not attack/i.test(currentAttack.description ?? '')
 
       if (routeToOtherInformation) {
-        const attackNote = trimmedLine.replace(/^[•\-\*]\s+/, '').trim()
+        const attackNote = trimmedLine.replace(/^[•*-]\s+/, '').trim()
         if (attackNote) {
           noteLines.push(attackNote)
         }
@@ -2592,7 +2430,7 @@ function appendToCurrentObtainField(lineText: string) {
       currentAttack.notes = currentAttack.notes ?? []
       
       // Detect indented bullets (sub-items) using ORIGINAL line to preserve spacing
-      const indentMatch = line.match(/^(\s*)([•\-\*])\s*(.*)$/)
+      const indentMatch = line.match(/^(\s*)([•*-])\s*(.*)$/)
       
       if (indentMatch) {
         const [, indent, , text] = indentMatch
@@ -2608,7 +2446,7 @@ function appendToCurrentObtainField(lineText: string) {
         }
       } else {
         // Fallback: just strip bullet marker
-        currentAttack.notes.push(trimmedLine.replace(/^[•\-\*]\s+/, ''))
+        currentAttack.notes.push(trimmedLine.replace(/^[•*-]\s+/, ''))
       }
       continue
     }
@@ -2673,7 +2511,7 @@ function appendToCurrentObtainField(lineText: string) {
       }
       
       // Detect indented bullets (sub-items) — use ORIGINAL line to preserve spacing
-      const indentMatch = line.match(/^(\s*)([•\-\*])\s*(.*)$/)
+      const indentMatch = line.match(/^(\s*)([•*-])\s*(.*)$/)
       
       if (indentMatch) {
         const [, indent, , text] = indentMatch
@@ -2804,6 +2642,7 @@ function appendToCurrentObtainField(lineText: string) {
     if (trimmed === name.trim()) return false
     return true
   })
+  const recoveredAlsoSeeNames = uniqueStrings([...alsoSeeNames, ...extractAlsoSeeNames(rawBody)])
 
   return {
     description,
@@ -2819,7 +2658,7 @@ function appendToCurrentObtainField(lineText: string) {
     level, damage, stats, statsType, resists,
     evolutions, rarity, attacks,
     notes: cleanedNoteLines.length > 0 ? cleanedNoteLines.join('\n') : undefined,
-    alsoSeeNames, 
+    alsoSeeNames: recoveredAlsoSeeNames,
     imageUrl,
     ...(alternativeImages.length > 0 ? { alternativeImages } : {}),
     hasDetailedStats,
@@ -2892,7 +2731,7 @@ function parseChronology(html: string): ChronologyData {
 // ─── Main ─────────────────────────────────────────────────────────────────────
 
 async function main() {
-  console.log('🐾 DragonFable Pets & Guests Scraper (Resumable, Chronology-First)')
+  console.log('🐾 DragonFable Pets Scraper (Resumable, A-Z Master List)')
   console.log('─'.repeat(50))
   if (startArg) console.log(`▶  Resuming from letter: ${startArg}`)
   if (letterArg) console.log(`▶  Only scraping letter: ${letterArg}`)
@@ -2901,9 +2740,9 @@ async function main() {
   const cookie = loadCookie()
   console.log('✅ Cookie loaded\n')
 
-  // ── Step 1: Fetch Chronology for types and dates ──────────────────────────
+  // ── Step 1: Fetch Chronology for release dates ────────────────────────────
 
-  console.log('📅 Fetching Chronology for types and release dates...')
+  console.log('📅 Fetching Chronology for release dates...')
   let chronology: ChronologyData = {
     datesByName: new Map<string, string>(),
     datesByMessageId: new Map<string, string>(),
@@ -2915,7 +2754,7 @@ async function main() {
     chronology = parseChronology(chronoHtml)
     console.log(`✅ Parsed ${chronology.datesByName.size} chronology entries`)
   } catch (err) {
-    console.warn(`⚠️  Chronology fetch error: ${err} — will use content detection fallback`)
+    console.warn(`⚠️  Chronology fetch error: ${err} — continuing without release dates`)
   }
   console.log()
 
@@ -2930,33 +2769,29 @@ async function main() {
     process.exit(1)
   }
 
-  const allStubs = parseAZPage(azHtml, chronology)
+  const allStubs = parseAZPage(azHtml)
   if (allStubs.length === 0) {
-    console.error('❌ No pet/guest stubs found. Page size:', azHtml.length)
+    console.error('❌ No pet stubs found. Page size:', azHtml.length)
     const preview = stripHtml(decodeHTML(azHtml)).slice(0, 200)
     console.error('   Page preview:', preview)
     process.exit(1)
   }
-  console.log(`✅ Found ${allStubs.length} pets & guests in A-Z listing`)
-
-  // Filter out guests (now handled by scrape-guests.ts)
-  const petsOnly = allStubs.filter(s => s.type === 'pet')
-  console.log(`   Filtered to pets only: ${petsOnly.length} entries (guests excluded)`)
+  console.log(`✅ Found ${allStubs.length} pets in A-Z listing`)
 
   // Apply letter filters
-  let stubs = petsOnly
+  let stubs = allStubs
   if (lettersArg && lettersArg.length > 0) {
     // Filter by multiple letters: --letters=A,B
-    stubs = petsOnly.filter(s => lettersArg.includes(s.letter))
+    stubs = allStubs.filter(s => lettersArg.includes(s.letter))
     console.log(`   Filtered to letters ${lettersArg.join(', ')}: ${stubs.length} entries`)
   } else if (letterArg) {
     // Filter by single letter: --letter=A
-    stubs = petsOnly.filter(s => s.letter === letterArg)
+    stubs = allStubs.filter(s => s.letter === letterArg)
     console.log(`   Filtered to letter ${letterArg}: ${stubs.length} entries`)
   } else if (startArg) {
     // Resume from letter: --start=C
     let past = false
-    stubs = petsOnly.filter(s => {
+    stubs = allStubs.filter(s => {
       if (s.letter === startArg) past = true
       return past
     })
@@ -2966,7 +2801,7 @@ async function main() {
 
   // Build name→slug map for ALL pets (needed for cross-reference resolution)
   const nameToSlug = new Map<string, { slug: string; type: EntryType }>()
-  for (const stub of petsOnly) {
+  for (const stub of allStubs) {
     nameToSlug.set(stub.name.toLowerCase(), { slug: stub.slug, type: stub.type })
     // Also index without trailing parentheticals: "Emperor Linus (Normal)" → "emperor linus"
     const base = stub.name.replace(/\s*\([^)]+\)\s*$/, '').trim().toLowerCase()
@@ -3002,7 +2837,16 @@ async function main() {
     process.stdout.write(`[${i + 1}/${stubs.length}] ${stub.name}...`)
 
     try {
-      const html = getAllPostContent(await fetchPrintable(stub.messageId, cookie))
+      let sourcePosts: ThreadPostContent[] = []
+      try {
+        sourcePosts = extractThreadPostContents(await fetchThreadPages(stub.messageId, cookie))
+      } catch {
+        sourcePosts = []
+      }
+
+      const html = sourcePosts.length > 0
+        ? sourcePosts.map(post => post.html).join('\n<hr>\n')
+        : getAllPostContent(await fetchPrintable(stub.messageId, cookie))
 
       if (!html) {
         console.log(' ⚠️  deleted — skipping')
@@ -3012,7 +2856,7 @@ async function main() {
       }
 
       // Use multi-variant parser (Sprint 5)
-      const result = await parsePetThreadMultiVariant(html, stub.name, stub, cookie, chronology, nameToSlug)
+      const result = await parsePetThreadMultiVariant(html, stub.name, stub, cookie, chronology, nameToSlug, sourcePosts)
       
       // Handle both Pet and ItemFamily types
       if ('levelVariants' in result) {
@@ -3055,9 +2899,9 @@ async function main() {
   // ── Step 5: Write final output ─────────────────────────────────────────────
 
   // Always write ALL pets from progress map (full dataset)
-  const finalPets = canonicalizePetRelationships(
+  const finalPets = repairAccessFlags(canonicalizePromotedRelationships(
     promoteCrossPostFamilies(dedupeVariantEntries(Array.from(progressMap.values())))
-  )
+  ))
     .sort((a, b) => {
       const aName: string = 'familyName' in a ? a.familyName : a.name
       const bName: string = 'familyName' in b ? b.familyName : b.name
