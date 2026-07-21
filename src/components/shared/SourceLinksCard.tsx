@@ -1,5 +1,5 @@
 import { ExternalLink } from 'lucide-react'
-import { normalizeDisplayText } from '../../utils/displayText'
+import { displayTitle, normalizeDisplayText } from '../../utils/displayText'
 
 export interface SourceLinkItem {
   url: string
@@ -26,20 +26,22 @@ export default function SourceLinksCard({ links }: SourceLinksCardProps) {
         Source{links.length > 1 ? 's' : ''}
       </h2>
       <div className="space-y-3">
-        {links.map(link => {
-          const label = normalizeDisplayText(link.label).replace(/^DF Encyclopedia:\s*/i, '')
+        {links.map((link) => {
+          const label = displayTitle(
+            normalizeDisplayText(link.label).replace(/^DF Encyclopedia:\s*/i, '')
+          )
 
           return (
-          <a
-            key={`${link.url}:${link.label}`}
-            href={directForumPostUrl(link.url)}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-start justify-between gap-3 text-sm text-gold hover:text-gold-bright transition-colors"
-          >
-            <span className="min-w-0 break-words">{label}</span>
-            <ExternalLink className="w-4 h-4 mt-0.5 shrink-0" />
-          </a>
+            <a
+              key={`${link.url}:${link.label}`}
+              href={directForumPostUrl(link.url)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-start justify-between gap-3 text-sm text-gold hover:text-gold-bright transition-colors"
+            >
+              <span className="min-w-0 break-words">{label}</span>
+              <ExternalLink className="w-4 h-4 mt-0.5 shrink-0" />
+            </a>
           )
         })}
       </div>

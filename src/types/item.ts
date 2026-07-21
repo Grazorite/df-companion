@@ -76,6 +76,7 @@ export interface AlsoSeeRef {
   name: string             // "Linus"
   slug: string             // "pet-linus"
   type: ItemType           // Item type for routing
+  url?: string             // Optional source URL fallback when an app route is not available
 }
 
 /**

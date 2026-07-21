@@ -6,8 +6,10 @@ import type {
   AccessoryFilters,
   AccessorySubtype,
 } from '../types/accessory'
+import type { AlsoSeeRef } from '../types/item'
 import { isAccessoryFamily, ACCESSORY_SUBTYPES } from '../types/accessory'
 import { loadAccessoriesBySubtype, loadElements } from '../utils/dataLoaders'
+import { compareTitles, displayTitle } from '../utils/displayText'
 import {
   getDisplayFamilyName,
   hasParentheticalVariantFamilyName,
@@ -30,7 +32,7 @@ function useAccessoryDataset() {
   useEffect(() => {
     let active = true
     loadAccessoriesBySubtype()
-      .then(data => {
+      .then((data) => {
         if (!active) return
         setDatasets(data)
         setLoading(false)
@@ -57,7 +59,7 @@ function useElementDataset() {
   useEffect(() => {
     let active = true
     loadElements()
-      .then(data => {
+      .then((data) => {
         if (active) setElementMeta(data)
       })
       .catch(() => {
@@ -77,7 +79,9 @@ function hasMultipleVersionHint(name: string): boolean {
 }
 
 function getAccessoryNameRange(name: string): string | undefined {
-  const match = name.match(/\(((?:All Versions|[IVXLCDM]+(?:\s*[-,]\s*[IVXLCDM]+)+|[IVXLCDM]+-[IVXLCDM]+|\d+\s*-\s*\d+))\)/i)
+  const match = name.match(
+    /\(((?:All Versions|[IVXLCDM]+(?:\s*[-,]\s*[IVXLCDM]+)+|[IVXLCDM]+-[IVXLCDM]+|\d+\s*-\s*\d+))\)/i
+  )
   return match?.[1]?.trim()
 }
 
@@ -88,10 +92,10 @@ function searchAccessories(
   elementMeta: ElementsData
 ): AccessoryEntry[] {
   const query = (filters.query ?? '').toLowerCase().trim()
-  const queryWords = query.split(/\s+/).filter(word => word.length >= 2)
+  const queryWords = query.split(/\s+/).filter((word) => word.length >= 2)
 
   return items
-    .filter(item => {
+    .filter((item) => {
       if (item.subtype !== subtype) return false
 
       const hasAccess = (flag: NonNullable<AccessoryFilters['access']>[number]) => {
@@ -106,11 +110,11 @@ function searchAccessories(
         if (flag === 'free') {
           return isAccessoryFamily(item)
             ? item.hasFree
-            : item.obtainMethods.some(method => method.priceType === 'free')
+            : item.obtainMethods.some((method) => method.priceType === 'free')
         }
         return isAccessoryFamily(item)
           ? item.hasMerge
-          : item.obtainMethods.some(method => method.priceType === 'merge')
+          : item.obtainMethods.some((method) => method.priceType === 'merge')
       }
 
       if (filters.access && filters.access.length > 0) {
@@ -121,7 +125,7 @@ function searchAccessories(
 
       const itemRetired = isAccessoryFamily(item) ? item.retired === true : item.retired === true
       if (filters.categories && filters.categories.length > 0) {
-        const hasCategory = filters.categories.some(category => {
+        const hasCategory = filters.categories.some((category) => {
           if (category === 'temp') return item.isTemp === true
           if (category === 'rare') return item.isRare === true
           if (category === 'seasonal') return item.isSeasonal === true
@@ -141,30 +145,34 @@ function searchAccessories(
 
       if (filters.elements && filters.elements.length > 0) {
         const itemElements = isAccessoryFamily(item) ? item.elements : item.elements
-        if (!filters.elements.some(code => itemElements.includes(code))) return false
+        if (!filters.elements.some((code) => itemElements.includes(code))) return false
       }
 
       if (queryWords.length > 0) {
         const itemName = isAccessoryFamily(item) ? item.familyName : item.name
         const description = isAccessoryFamily(item) ? item.shared.description : item.description
         const tags = item.tags ?? []
-        const variantNames = isAccessoryFamily(item) ? item.levelVariants.map(level => level.name) : []
+        const variantNames = isAccessoryFamily(item)
+          ? item.levelVariants.map((level) => level.name)
+          : []
 
         const searchableText = [
           itemName,
+          displayTitle(itemName),
           description,
           ...variantNames,
           ...tags,
           ...item.elements.map(
-            code => elementMeta.elements.find(element => element.code === code)?.shortName ?? code
+            (code) =>
+              elementMeta.elements.find((element) => element.code === code)?.shortName ?? code
           ),
         ]
           .join(' ')
           .toLowerCase()
 
         const words = searchableText.split(/\W+/)
-        const matches = queryWords.every(queryWord =>
-          words.some(word => word.startsWith(queryWord))
+        const matches = queryWords.every((queryWord) =>
+          words.some((word) => word.startsWith(queryWord))
         )
         if (!matches) return false
       }
@@ -174,14 +182,14 @@ function searchAccessories(
     .sort((a, b) => {
       const aName = isAccessoryFamily(a) ? a.familyName : a.name
       const bName = isAccessoryFamily(b) ? b.familyName : b.name
-      return aName.localeCompare(bName)
+      return compareTitles(aName, bName)
     })
 }
 
 export function useAccessories(subtype: AccessorySubtype, filters: AccessoryFilters = {}) {
   const { datasets, loading } = useAccessoryDataset()
   const allAccessories = useMemo(
-    () => ACCESSORY_SUBTYPES.flatMap(meta => datasets[meta.subtype]),
+    () => ACCESSORY_SUBTYPES.flatMap((meta) => datasets[meta.subtype]),
     [datasets]
   )
   const elementMeta = useElementDataset()
@@ -199,22 +207,38 @@ export function useAccessories(subtype: AccessorySubtype, filters: AccessoryFilt
 
 export function useAccessoryBySlug(subtype: AccessorySubtype, slug?: string) {
   const { datasets, loading } = useAccessoryDataset()
-  const accessory = useMemo(
-    () => {
-      if (loading) return undefined
-      return datasets[subtype].find(entry => entry.slug === slug) ?? null
-    },
-    [datasets, loading, subtype, slug]
-  )
+  const accessory = useMemo(() => {
+    if (loading) return undefined
+    return datasets[subtype].find((entry) => entry.slug === slug) ?? null
+  }, [datasets, loading, subtype, slug])
 
   return { accessory, loading }
+}
+
+export function useRelatedAccessories(alsoSee: AlsoSeeRef[] = []) {
+  const { datasets, loading } = useAccessoryDataset()
+  const allAccessories = useMemo(
+    () => ACCESSORY_SUBTYPES.flatMap((meta) => datasets[meta.subtype]),
+    [datasets]
+  )
+
+  const relatedAccessories = useMemo(
+    () =>
+      alsoSee.map((ref) => ({
+        ref,
+        entry: allAccessories.find((item) => item.slug === ref.slug),
+      })),
+    [allAccessories, alsoSee]
+  )
+
+  return { relatedAccessories, loading }
 }
 
 export function useAccessoryCounts() {
   const { datasets } = useAccessoryDataset()
   return useMemo(() => {
     const counts = Object.fromEntries(
-      ACCESSORY_SUBTYPES.map(meta => [meta.subtype, datasets[meta.subtype].length])
+      ACCESSORY_SUBTYPES.map((meta) => [meta.subtype, datasets[meta.subtype].length])
     ) as Record<AccessorySubtype, number>
 
     return {
@@ -235,13 +259,13 @@ export function getAccessorySubtypeRoute(subtype: AccessorySubtype): string {
 export function buildAccessoryCardData(entry: AccessoryEntry) {
   if (!isAccessoryFamily(entry)) {
     return {
-      name: entry.name,
+      name: displayTitle(entry.name),
       description: entry.description,
       elements: entry.elements,
       daRequired: entry.daRequired,
       dcRequired: entry.dcRequired ?? false,
       dmRequired: entry.dmRequired ?? false,
-      hasFree: entry.obtainMethods.some(method => method.priceType === 'free'),
+      hasFree: entry.obtainMethods.some((method) => method.priceType === 'free'),
       hasMultipleVersions: hasMultipleVersionHint(entry.name),
       levelRange: getAccessoryNameRange(entry.name) ?? entry.level ?? '',
       route: `/accessories/${entry.slug}?type=${encodeURIComponent(entry.subtype)}`,
@@ -249,7 +273,7 @@ export function buildAccessoryCardData(entry: AccessoryEntry) {
   }
 
   return {
-    name: getDisplayFamilyName(entry),
+    name: displayTitle(getDisplayFamilyName(entry)),
     description: entry.shared.description,
     elements: entry.elements,
     daRequired: entry.hasDA,
@@ -257,9 +281,10 @@ export function buildAccessoryCardData(entry: AccessoryEntry) {
     dmRequired: entry.hasDM,
     hasFree: entry.hasFree,
     hasMultipleVersions: entry.levelVariants.length > 1,
-    levelRange: hasSameLevelVariants(entry) || hasParentheticalVariantFamilyName(entry.familyName)
-      ? ''
-      : entry.levelRange,
+    levelRange:
+      hasSameLevelVariants(entry) || hasParentheticalVariantFamilyName(entry.familyName)
+        ? ''
+        : entry.levelRange,
     route: `/accessories/${entry.slug}?type=${encodeURIComponent(entry.subtype)}`,
   }
 }

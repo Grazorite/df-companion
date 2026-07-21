@@ -3,6 +3,7 @@ import type { Pet, PetFilters, EntryType } from '../types/pet'
 import type { ItemFamily } from '../types/item'
 import type { ElementsData } from '../types/element'
 import { loadElements, loadPetsAndGuests } from '../utils/dataLoaders'
+import { compareTitles, displayTitle } from '../utils/displayText'
 
 function isItemFamily(item: Pet | ItemFamily): item is ItemFamily {
   return 'levelVariants' in item && 'familyName' in item
@@ -13,9 +14,7 @@ function getDisplayName(item: Pet | ItemFamily): string {
 }
 
 function normalizeDuplicateVariantName(name: string): string {
-  return name
-    .replace(/\s+\((All Versions|[IVX]+-[IVX]+)\)$/i, '')
-    .trim()
+  return name.replace(/\s+\((All Versions|[IVX]+-[IVX]+)\)$/i, '').trim()
 }
 
 function dedupeVariantEntries(items: Array<Pet | ItemFamily>) {
@@ -47,7 +46,7 @@ function dedupeVariantEntries(items: Array<Pet | ItemFamily>) {
     if (currentScore > existingScore) {
       aliasToCanonicalSlug.set(existing.slug, item.slug)
       if (isItemFamily(existing)) {
-        existing.aliasSlugs?.forEach(alias => aliasToCanonicalSlug.set(alias, item.slug))
+        existing.aliasSlugs?.forEach((alias) => aliasToCanonicalSlug.set(alias, item.slug))
       }
       canonicalByNormalized.set(normalizedName, item)
     } else {
@@ -76,7 +75,7 @@ function usePetDataset() {
   useEffect(() => {
     let active = true
     loadPetsAndGuests()
-      .then(items => {
+      .then((items) => {
         if (!active) return
         const dedupedEntries = dedupeVariantEntries(items)
         setAllPets(dedupedEntries.items)
@@ -107,7 +106,7 @@ function useElementsDataset() {
   useEffect(() => {
     let active = true
     loadElements()
-      .then(data => {
+      .then((data) => {
         if (active) setElementMeta(data)
       })
       .catch(() => {
@@ -130,9 +129,9 @@ function searchPets(
   elementMeta: ElementsData
 ): (Pet | ItemFamily)[] {
   const query = (filters.query ?? '').toLowerCase().trim()
-  const queryWords = query.split(/\s+/).filter(w => w.length >= 2)
+  const queryWords = query.split(/\s+/).filter((w) => w.length >= 2)
   const hasRetiredSignal = (...values: Array<string | undefined>): boolean =>
-    values.some(value =>
+    values.some((value) =>
       value
         ? /previously attainable[\s\S]*retired|retired (?:access point|da access point|quest|version|location|entry)|previously attainable in the retired/i.test(
             value
@@ -141,39 +140,43 @@ function searchPets(
     )
 
   return pets
-    .filter(item => {
+    .filter((item) => {
       const isFamily = isItemFamily(item)
-      
+
       // Extract fields based on type
       const pet = isFamily ? null : (item as Pet)
       const family = isFamily ? (item as ItemFamily) : null
-      
+
       const itemType = isFamily ? family!.type : pet!.type
       const isGuestEntry = itemType === 'guest'
       const itemElements = isFamily ? family!.elements : pet!.elements
-      const itemTraits = isFamily ? [] : pet!.traits  // Families don't have traits yet
+      const itemTraits = isFamily ? [] : pet!.traits // Families don't have traits yet
       const itemName = isFamily ? family!.familyName : pet!.name
       const itemDescription = isFamily ? family!.shared.description : pet!.description
       const itemTags = isFamily ? family!.tags : pet!.tags
       const itemRetired = isFamily
         ? Boolean(
             family!.retired ||
-              hasRetiredSignal(
-                family!.shared.notes,
-                ...family!.levelVariants.map(level => level.notes),
-                ...family!.levelVariants.flatMap(level =>
-                  level.obtainVariants.map(variant => `${variant.location} ${variant.requirements ?? ''}`)
+            hasRetiredSignal(
+              family!.shared.notes,
+              ...family!.levelVariants.map((level) => level.notes),
+              ...family!.levelVariants.flatMap((level) =>
+                level.obtainVariants.map(
+                  (variant) => `${variant.location} ${variant.requirements ?? ''}`
                 )
               )
+            )
           )
         : Boolean(
             pet!.retired ||
-              hasRetiredSignal(
-                pet!.notes,
-                ...pet!.obtainMethods.map(method => `${method.location} ${method.requirements ?? ''}`)
+            hasRetiredSignal(
+              pet!.notes,
+              ...pet!.obtainMethods.map(
+                (method) => `${method.location} ${method.requirements ?? ''}`
               )
+            )
           )
-      
+
       // Segment filter — which type(s) are active
       if (filters.type && filters.type.length > 0) {
         if (!filters.type.includes(itemType as EntryType)) return false
@@ -182,7 +185,7 @@ function searchPets(
       // Element/trait filter — OR logic across selected codes (elements + traits combined)
       if (filters.elements && filters.elements.length > 0) {
         const itemCodes = [...itemElements, ...itemTraits]
-        if (!filters.elements.some(e => itemCodes.includes(e))) return false
+        if (!filters.elements.some((e) => itemCodes.includes(e))) return false
       }
 
       // Access filter (Level 1) — multi-select with AND logic
@@ -196,11 +199,11 @@ function searchPets(
             const hasDA = isFamily ? family!.hasDA : pet!.daRequired
             if (!hasDA) return false
           }
-          
+
           // Guests are never purchased - skip Free/DC/DM/Merge filters for guests
           const entryType = isFamily ? family!.type : pet!.type
           const isGuest = entryType === 'guest'
-          
+
           if (accessType === 'dc') {
             // Guests can't be DC purchased, always exclude
             if (isGuest) return false
@@ -218,7 +221,7 @@ function searchPets(
             if (isGuest) return false
             const hasFree = isFamily
               ? family!.hasFree
-              : pet!.obtainMethods.some(m => m.priceType === 'free')
+              : pet!.obtainMethods.some((m) => m.priceType === 'free')
             if (!hasFree) return false
           }
           if (accessType === 'merge') {
@@ -226,7 +229,7 @@ function searchPets(
             if (isGuest) return false
             const hasMerge = isFamily
               ? family!.hasMerge
-              : pet!.obtainMethods.some(m => m.priceType === 'merge')
+              : pet!.obtainMethods.some((m) => m.priceType === 'merge')
             if (!hasMerge) return false
           }
         }
@@ -234,15 +237,17 @@ function searchPets(
 
       // Category filter (Level 2) — multi-select with OR logic
       if (filters.categories && filters.categories.length > 0) {
-        const hasCategory = filters.categories.some(cat => {
-          if (cat === 'temp') return isFamily ? (family!.isTemp === true) : (pet!.isTemp === true)
-          if (cat === 'rare') return isFamily ? (family!.isRare === true) : (pet!.isRare === true)
-          if (cat === 'seasonal') return isFamily ? (family!.isSeasonal === true) : (pet!.isSeasonal === true)
-          if (cat === 'special-offer') return isFamily ? (family!.isSpecialOffer === true) : (pet!.isSpecialOffer === true)
+        const hasCategory = filters.categories.some((cat) => {
+          if (cat === 'temp') return isFamily ? family!.isTemp === true : pet!.isTemp === true
+          if (cat === 'rare') return isFamily ? family!.isRare === true : pet!.isRare === true
+          if (cat === 'seasonal')
+            return isFamily ? family!.isSeasonal === true : pet!.isSeasonal === true
+          if (cat === 'special-offer')
+            return isFamily ? family!.isSpecialOffer === true : pet!.isSpecialOffer === true
           if (cat === 'retired') return itemRetired === true
           return false
         })
-        
+
         // Special handling for retired: when selected, ONLY show retired; otherwise exclude retired
         if (filters.categories.includes('retired')) {
           if (!itemRetired) return false
@@ -262,22 +267,25 @@ function searchPets(
       // Text search — word-prefix matching
       // For families, search matches familyName, all variant names, and description
       if (queryWords.length > 0) {
-        const variantNames = isFamily
-          ? family!.levelVariants.map(lv => lv.name)
-          : []
-        
+        const variantNames = isFamily ? family!.levelVariants.map((lv) => lv.name) : []
+
         const searchableText = [
           itemName,
+          displayTitle(itemName),
           ...variantNames,
           itemDescription,
-          ...itemElements.map(e => elementMeta.elements.find(el => el.code === e)?.shortName ?? e),
-          ...itemTraits.map(t => elementMeta.traits.find(tr => tr.code === t)?.name ?? t),
+          ...itemElements.map(
+            (e) => elementMeta.elements.find((el) => el.code === e)?.shortName ?? e
+          ),
+          ...itemTraits.map((t) => elementMeta.traits.find((tr) => tr.code === t)?.name ?? t),
           ...itemTags,
-        ].join(' ').toLowerCase()
+        ]
+          .join(' ')
+          .toLowerCase()
 
         const contentWords = searchableText.split(/\W+/)
-        const matches = queryWords.every(qWord =>
-          contentWords.some(cWord => cWord.startsWith(qWord))
+        const matches = queryWords.every((qWord) =>
+          contentWords.some((cWord) => cWord.startsWith(qWord))
         )
         if (!matches) return false
       }
@@ -289,16 +297,16 @@ function searchPets(
       const bIsFamily = isItemFamily(b)
       const aName = aIsFamily ? (a as ItemFamily).familyName : (a as Pet).name
       const bName = bIsFamily ? (b as ItemFamily).familyName : (b as Pet).name
-      
+
       if (queryWords.length > 0) {
-        const aNameWords = aName.toLowerCase().split(/\W+/)
-        const bNameWords = bName.toLowerCase().split(/\W+/)
-        const aMatch = queryWords.some(qw => aNameWords.some(nw => nw.startsWith(qw)))
-        const bMatch = queryWords.some(qw => bNameWords.some(nw => nw.startsWith(qw)))
+        const aNameWords = displayTitle(aName).toLowerCase().split(/\W+/)
+        const bNameWords = displayTitle(bName).toLowerCase().split(/\W+/)
+        const aMatch = queryWords.some((qw) => aNameWords.some((nw) => nw.startsWith(qw)))
+        const bMatch = queryWords.some((qw) => bNameWords.some((nw) => nw.startsWith(qw)))
         if (aMatch && !bMatch) return -1
         if (!aMatch && bMatch) return 1
       }
-      return aName.localeCompare(bName)
+      return compareTitles(aName, bName)
     })
 }
 
@@ -307,7 +315,10 @@ function searchPets(
 export function usePets(filters: PetFilters = {}) {
   const { allPets, loading } = usePetDataset()
   const elementMeta = useElementsDataset()
-  const results = useMemo(() => searchPets(allPets, filters, elementMeta), [allPets, filters, elementMeta])
+  const results = useMemo(
+    () => searchPets(allPets, filters, elementMeta),
+    [allPets, filters, elementMeta]
+  )
   return { pets: results, total: results.length, loading }
 }
 
@@ -316,7 +327,7 @@ export function usePetBySlug(slug: string): Pet | ItemFamily | null | undefined 
   return useMemo(() => {
     if (loading) return undefined
     const canonicalSlug = petSlugAliases.get(slug) ?? slug
-    return allPets.find(p => p.slug === canonicalSlug) ?? null
+    return allPets.find((p) => p.slug === canonicalSlug) ?? null
   }, [allPets, loading, petSlugAliases, slug])
 }
 
@@ -328,8 +339,8 @@ export function usePetCounts(filters: Omit<PetFilters, 'type'> = {}): Record<Ent
     const filtersWithoutType = { ...filters, type: undefined }
     const all = searchPets(allPets, filtersWithoutType as PetFilters, elementMeta)
     return {
-      pet: all.filter(p => p.type === 'pet').length,
-      guest: all.filter(p => p.type === 'guest').length,
+      pet: all.filter((p) => p.type === 'pet').length,
+      guest: all.filter((p) => p.type === 'guest').length,
     }
   }, [allPets, elementMeta, filters])
 }
@@ -337,9 +348,10 @@ export function usePetCounts(filters: Omit<PetFilters, 'type'> = {}): Record<Ent
 export function useRelatedPets(alsoSee: { slug: string; name: string; type: string }[]) {
   const { allPets, petSlugAliases } = usePetDataset()
   return useMemo(
-    () => alsoSee
-      .map(ref => allPets.find(p => p.slug === (petSlugAliases.get(ref.slug) ?? ref.slug)))
-      .filter((p): p is Pet | ItemFamily => p !== null && p !== undefined),
+    () =>
+      alsoSee
+        .map((ref) => allPets.find((p) => p.slug === (petSlugAliases.get(ref.slug) ?? ref.slug)))
+        .filter((p): p is Pet | ItemFamily => p !== null && p !== undefined),
     [allPets, alsoSee, petSlugAliases]
   )
 }

@@ -1,9 +1,11 @@
 import { useEffect, useMemo, useState } from 'react'
+import { ExternalLink } from 'lucide-react'
 import type { Accessory, AccessoryEntry, AccessoryFamily } from '../../types/accessory'
 import { isAccessoryFamily } from '../../types/accessory'
 import type { LevelVariant, ObtainVariant } from '../../types/item'
 import type { GuestAttack } from '../../types/pet'
-import { normalizeDisplayText } from '../../utils/displayText'
+import { useRelatedAccessories } from '../../hooks/useAccessories'
+import { displayTitle, normalizeDisplayText } from '../../utils/displayText'
 import { getDisplayFamilyName, isSingleVariant } from '../../utils/variantHelpers'
 import ElementPill from '../shared/ElementPill'
 import AccessPills from '../shared/AccessPills'
@@ -14,6 +16,7 @@ import SourceLinksCard from '../shared/SourceLinksCard'
 import CollapsibleSection from '../shared/CollapsibleSection'
 import MetadataChipSection from '../shared/MetadataChipSection'
 import AccessoryStatsTable from './AccessoryStatsTable'
+import AccessoryCard from './AccessoryCard'
 import GuestAttacks from '../guests/GuestAttacks'
 
 interface AccessoryDetailProps {
@@ -88,14 +91,19 @@ function getAccessoryNotes(
 }
 
 function isCapeOrHelmLike(value?: string): boolean {
-  return Boolean(value && /\b(?:back|cape|cloak|head|wing|wings|helm|helmet|hat|hood|mask|circlet)\b/i.test(value))
+  return Boolean(
+    value &&
+    /\b(?:back|cape|cloak|head|wing|wings|helm|helmet|hat|hood|mask|circlet)\b/i.test(value)
+  )
 }
 
 function normalizeSourceVariantLabel(label: string) {
-  return normalizeDisplayText(label)
-    .replace(/^DF Encyclopedia:\s*/i, '')
-    .replace(/\s+\((?:DA|DC|D-Amulet|D-Coins?|Normal)\)$/i, '')
-    .trim()
+  return displayTitle(
+    normalizeDisplayText(label)
+      .replace(/^DF Encyclopedia:\s*/i, '')
+      .replace(/\s+\((?:DA|DC|D-Amulet|D-Coins?|Normal)\)$/i, '')
+      .trim()
+  )
 }
 
 function getLevelSourceSuffix(level: LevelVariant): string {
@@ -126,13 +134,7 @@ function shouldDisplayAccessoryImages(
   ].some(isCapeOrHelmLike)
 }
 
-function ArtifactMetadataStrip({
-  modifies,
-  equipSpot,
-}: {
-  modifies?: string
-  equipSpot?: string
-}) {
+function ArtifactMetadataStrip({ modifies, equipSpot }: { modifies?: string; equipSpot?: string }) {
   const values = [
     modifies ? { label: 'Modifies', value: modifies } : null,
     equipSpot ? { label: 'Equip Spot', value: equipSpot } : null,
@@ -143,12 +145,12 @@ function ArtifactMetadataStrip({
   return (
     <section className="mb-8">
       <div className="bg-bg-surface border border-border-default rounded-lg p-4">
-        <div className={`grid gap-4 text-center ${values.length > 1 ? 'grid-cols-2' : 'grid-cols-1'}`}>
-          {values.map(item => (
+        <div
+          className={`grid gap-4 text-center ${values.length > 1 ? 'grid-cols-2' : 'grid-cols-1'}`}
+        >
+          {values.map((item) => (
             <div key={item.label}>
-              <p className="text-xs text-text-muted uppercase tracking-wider mb-1">
-                {item.label}
-              </p>
+              <p className="text-xs text-text-muted uppercase tracking-wider mb-1">{item.label}</p>
               <p className="text-sm font-medium text-text-primary">
                 {normalizeDisplayText(item.value)}
               </p>
@@ -166,21 +168,32 @@ export default function AccessoryDetail({ accessory, filterBase }: AccessoryDeta
   const [activeIndex, setActiveIndex] = useState(0)
   const [activeImageIndex, setActiveImageIndex] = useState(0)
   const isMultiVariant = family && !isSingleVariant(family)
-  const activeLevel = family ? family.levelVariants[Math.min(activeIndex, family.levelVariants.length - 1)] : undefined
+  const activeLevel = family
+    ? family.levelVariants[Math.min(activeIndex, family.levelVariants.length - 1)]
+    : undefined
 
   useEffect(() => {
     setActiveImageIndex(0)
   }, [activeIndex])
 
-  const title = family ? getDisplayFamilyName(family) : singleAccessory?.name ?? 'Accessory'
+  const title = family
+    ? getDisplayFamilyName(family)
+    : displayTitle(singleAccessory?.name ?? 'Accessory')
   const description = family
-    ? activeLevel?.description ?? family.shared.description
+    ? (activeLevel?.description ?? family.shared.description)
     : singleAccessory?.description
-  const imageUrl = family ? family.shared.imageUrl ?? activeLevel?.imageUrl : singleAccessory?.imageUrl
+  const imageUrl = family
+    ? (family.shared.imageUrl ?? activeLevel?.imageUrl)
+    : singleAccessory?.imageUrl
   const altImages = family
-    ? family.shared.alternativeImages ?? nonEmptyAlternativeImages(activeLevel?.alternativeImages)
+    ? (family.shared.alternativeImages ?? nonEmptyAlternativeImages(activeLevel?.alternativeImages))
     : singleAccessory?.alternativeImages
-  const shouldShowImages = shouldDisplayAccessoryImages(accessory, family, singleAccessory, activeLevel)
+  const shouldShowImages = shouldDisplayAccessoryImages(
+    accessory,
+    family,
+    singleAccessory,
+    activeLevel
+  )
   const allImages = useMemo(() => {
     if (!shouldShowImages) return []
     const images: Array<{ url: string; caption: string }> = []
@@ -200,11 +213,11 @@ export default function AccessoryDetail({ accessory, filterBase }: AccessoryDeta
 
   const notes = getAccessoryNotes(family, singleAccessory, activeIndex)
   const obtainMethods = family
-    ? activeLevel?.obtainVariants ?? []
+    ? (activeLevel?.obtainVariants ?? [])
     : singleAccessory
       ? buildSingleVariant(singleAccessory)
       : []
-  const rarity = family ? activeLevel?.rarity ?? family.shared.rarity : singleAccessory?.rarity
+  const rarity = family ? (activeLevel?.rarity ?? family.shared.rarity) : singleAccessory?.rarity
   const ability = family ? family.shared.ability : singleAccessory?.ability
   const artifactModifies = family ? family.modifies : singleAccessory?.modifies
   const artifactEquipSpot = family ? family.equipSlot : singleAccessory?.equipSpot
@@ -212,7 +225,12 @@ export default function AccessoryDetail({ accessory, filterBase }: AccessoryDeta
     ? ((activeLevel?.attacks ?? family.shared.attacks) as GuestAttack[] | undefined)
     : singleAccessory?.attacks
   const displayLevels = useMemo(
-    () => (family ? family.levelVariants : singleAccessory ? [buildSingleAccessoryLevel(singleAccessory)] : []),
+    () =>
+      family
+        ? family.levelVariants
+        : singleAccessory
+          ? [buildSingleAccessoryLevel(singleAccessory)]
+          : [],
     [family, singleAccessory]
   )
   const sourceLinks = useMemo(() => {
@@ -225,24 +243,33 @@ export default function AccessoryDetail({ accessory, filterBase }: AccessoryDeta
       ]
     }
 
-    const baseSourceLabels = family.levelVariants.map(level => normalizeSourceVariantLabel(level.name))
-    const uniqueBaseSourceLabels = new Set(baseSourceLabels.map(label => label.toLowerCase()))
+    const baseSourceLabels = family.levelVariants.map((level) =>
+      normalizeSourceVariantLabel(level.name)
+    )
+    const uniqueBaseSourceLabels = new Set(baseSourceLabels.map((label) => label.toLowerCase()))
     const uniqueLevelLabels = new Set(
       family.levelVariants
-        .map(level => String(level.actualLevel ?? level.levelDisplay ?? '').trim().toLowerCase())
+        .map((level) =>
+          String(level.actualLevel ?? level.levelDisplay ?? '')
+            .trim()
+            .toLowerCase()
+        )
         .filter(Boolean)
     )
     const shouldAppendLevelToSource =
-      family.levelVariants.length > 1 && uniqueBaseSourceLabels.size === 1 && uniqueLevelLabels.size > 1
+      family.levelVariants.length > 1 &&
+      uniqueBaseSourceLabels.size === 1 &&
+      uniqueLevelLabels.size > 1
     const seen = new Set<string>()
-    const links = family.levelVariants.flatMap(level => {
+    const links = family.levelVariants.flatMap((level) => {
       const sourceUrl = level.sourceUrl ?? family.forumUrl
       const levelSuffix = getLevelSourceSuffix(level)
       const baseLabel = normalizeSourceVariantLabel(level.name)
-      const label = shouldAppendLevelToSource && levelSuffix
-        ? `${baseLabel} (${levelSuffix})`
-        : baseLabel
-      const key = [sourceUrl, label, String(level.actualLevel ?? level.levelDisplay ?? '')].join('|').toLowerCase()
+      const label =
+        shouldAppendLevelToSource && levelSuffix ? `${baseLabel} (${levelSuffix})` : baseLabel
+      const key = [sourceUrl, label, String(level.actualLevel ?? level.levelDisplay ?? '')]
+        .join('|')
+        .toLowerCase()
 
       if (seen.has(key)) return []
       seen.add(key)
@@ -250,7 +277,8 @@ export default function AccessoryDetail({ accessory, filterBase }: AccessoryDeta
     })
 
     for (const source of family.familySources ?? []) {
-      if (family.levelVariants.some(level => (level.sourceUrl ?? family.forumUrl) === source.url)) continue
+      if (family.levelVariants.some((level) => (level.sourceUrl ?? family.forumUrl) === source.url))
+        continue
 
       const label = normalizeSourceVariantLabel(source.variantLabel ?? source.title)
       const key = `${source.url}|${label}`.toLowerCase()
@@ -261,12 +289,21 @@ export default function AccessoryDetail({ accessory, filterBase }: AccessoryDeta
 
     return links
   }, [accessory.forumUrl, family, title])
+  const alsoSeeRefs = useMemo(() => {
+    const currentSlugs = new Set(
+      family ? [family.slug, ...(family.aliasSlugs ?? [])] : [singleAccessory?.slug ?? accessory.slug]
+    )
+    const refs = family ? (family.shared.alsoSee ?? []) : (singleAccessory?.alsoSee ?? [])
+
+    return refs.filter((ref) => !currentSlugs.has(ref.slug))
+  }, [accessory.slug, family, singleAccessory])
+  const { relatedAccessories } = useRelatedAccessories(alsoSeeRefs)
 
   return (
     <main className="px-4 sm:px-6 py-6 max-w-3xl mx-auto">
       <div className="mb-6">
         <div className="flex items-center gap-2 flex-wrap mb-3">
-          {accessory.elements.map(code => (
+          {accessory.elements.map((code) => (
             <ElementPill key={code} code={code} size="md" clickable filterBase={filterBase} />
           ))}
           <AccessPills
@@ -297,21 +334,21 @@ export default function AccessoryDetail({ accessory, filterBase }: AccessoryDeta
         <div className="mb-8">
           <AccessoryImage src={currentImage.url} name={currentImage.caption ?? title} />
           {allImages.length > 1 && (
-          <div className="mt-4 flex flex-wrap gap-2 justify-center">
-            {allImages.map((image, index) => (
-              <button
-                key={`${image.url}-${index}`}
-                onClick={() => setActiveImageIndex(index)}
-                className={`min-h-11 px-4 py-2 rounded-lg text-sm transition-colors ${
-                  activeImageIndex === index
-                    ? 'bg-gold text-bg-base'
-                    : 'bg-bg-surface border border-border-default text-text-secondary hover:text-text-primary hover:border-border-hover'
-                }`}
-              >
-                {image.caption}
-              </button>
-            ))}
-          </div>
+            <div className="mt-4 flex flex-wrap gap-2 justify-center">
+              {allImages.map((image, index) => (
+                <button
+                  key={`${image.url}-${index}`}
+                  onClick={() => setActiveImageIndex(index)}
+                  className={`min-h-11 px-4 py-2 rounded-lg text-sm transition-colors ${
+                    activeImageIndex === index
+                      ? 'bg-gold text-bg-base'
+                      : 'bg-bg-surface border border-border-default text-text-secondary hover:text-text-primary hover:border-border-hover'
+                  }`}
+                >
+                  {image.caption}
+                </button>
+              ))}
+            </div>
           )}
         </div>
       )}
@@ -354,9 +391,7 @@ export default function AccessoryDetail({ accessory, filterBase }: AccessoryDeta
 
       <ObtainSection variants={obtainMethods} className="mb-8" />
 
-      {attacks && attacks.length > 0 && (
-        <GuestAttacks attacks={attacks} />
-      )}
+      {attacks && attacks.length > 0 && <GuestAttacks attacks={attacks} />}
 
       {notes && (
         <section className="mb-8">
@@ -369,7 +404,48 @@ export default function AccessoryDetail({ accessory, filterBase }: AccessoryDeta
         </section>
       )}
 
-      <SourceLinksCard links={sourceLinks} />
+      <section className="mb-5">
+        <SourceLinksCard links={sourceLinks} />
+      </section>
+
+      {relatedAccessories.length > 0 && (
+        <section aria-labelledby="related-heading" className="border-t border-border-default pt-6">
+          <h2
+            id="related-heading"
+            className="text-xs font-semibold text-text-muted uppercase tracking-wider mb-3"
+          >
+            Also See
+          </h2>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            {relatedAccessories.map(({ ref, entry }) =>
+              entry ? (
+                <li key={`${ref.slug}-${ref.url ?? 'route'}`}>
+                  <AccessoryCard accessory={entry} />
+                </li>
+              ) : ref.url ? (
+                <li key={`${ref.slug}-${ref.url}`}>
+                  <a
+                    href={ref.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-between gap-3 bg-bg-surface border border-border-default rounded-lg p-4 h-[120px] text-sm font-semibold text-gold hover:text-gold-bright hover:border-border-hover transition-colors"
+                  >
+                    <span>{displayTitle(ref.name)}</span>
+                    <ExternalLink className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
+                  </a>
+                </li>
+              ) : (
+                <li
+                  key={`${ref.slug}-unresolved`}
+                  className="bg-bg-surface border border-border-default rounded-lg p-4 h-[120px] text-sm font-semibold text-text-secondary"
+                >
+                  {displayTitle(ref.name)}
+                </li>
+              )
+            )}
+          </ul>
+        </section>
+      )}
     </main>
   )
 }

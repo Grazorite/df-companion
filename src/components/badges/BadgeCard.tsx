@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { ChevronRight } from 'lucide-react'
 import type { Badge } from '../../types/badge'
+import { displayTitle } from '../../utils/displayText'
 
 interface BadgeCardProps {
   badge: Badge
@@ -33,8 +34,12 @@ export default function BadgeCard({ badge, toUrl, replace }: BadgeCardProps) {
             {badge.category.replace(/-/g, ' ')}
           </span>
         </div>
-        <h3 className="font-semibold text-text-primary text-sm leading-snug mb-1 line-clamp-1">{badge.name}</h3>
-        <p className="text-text-secondary text-xs leading-relaxed line-clamp-2">{badge.description}</p>
+        <h3 className="font-semibold text-text-primary text-sm leading-snug mb-1 line-clamp-1">
+          {displayTitle(badge.name)}
+        </h3>
+        <p className="text-text-secondary text-xs leading-relaxed line-clamp-2">
+          {badge.description}
+        </p>
       </div>
       <ChevronRight
         className="w-4 h-4 text-text-muted group-hover:text-text-secondary flex-shrink-0 mt-0.5 transition-colors duration-150"

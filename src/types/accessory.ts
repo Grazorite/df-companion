@@ -1,21 +1,14 @@
-import type { ItemFamily, ObtainVariant } from './item'
+import type { AlsoSeeRef, ItemFamily, ObtainVariant } from './item'
 import type { GuestAttack } from './pet'
 
 export type AccessorySubtype =
-  | 'artifact'
-  | 'belt'
-  | 'bracer'
-  | 'cape-wing'
-  | 'helm'
-  | 'necklace'
-  | 'ring'
-  | 'trinket'
+  'artifact' | 'belt' | 'bracer' | 'cape-wing' | 'helm' | 'necklace' | 'ring' | 'trinket'
 
 export interface AccessorySubtypeMeta {
   subtype: AccessorySubtype
   label: string
   route: string
-  dataFile: string
+  dataFiles: string[]
   shortDescription: string
 }
 
@@ -44,6 +37,7 @@ export interface Accessory {
   category?: string
   obtainMethods: ObtainVariant[]
   notes?: string
+  alsoSee?: AlsoSeeRef[]
   tags: string[]
   daRequired: boolean
   dcRequired?: boolean
@@ -75,62 +69,62 @@ export const ACCESSORY_SUBTYPES: AccessorySubtypeMeta[] = [
     subtype: 'artifact',
     label: 'Artifacts',
     route: '/artifacts',
-    dataFile: 'artifacts.json',
+    dataFiles: ['artifacts.json'],
     shortDescription: 'Magical accessories and artifact-tier equipment.',
   },
   {
     subtype: 'belt',
     label: 'Belts',
     route: '/belts',
-    dataFile: 'belts.json',
+    dataFiles: ['belts.json'],
     shortDescription: 'Waist-slot accessories with stat or utility effects.',
   },
   {
     subtype: 'bracer',
     label: 'Bracers',
     route: '/bracers',
-    dataFile: 'bracers.json',
+    dataFiles: ['bracers.json'],
     shortDescription: 'Arm-slot accessories including family and branch variants.',
   },
   {
     subtype: 'cape-wing',
     label: 'Capes & Wings',
     route: '/capes-wings',
-    dataFile: 'capes-wings.json',
+    dataFiles: ['capes-wings-a-l.json', 'capes-wings-m-z.json'],
     shortDescription: 'Back-slot cosmetic and combat accessories.',
   },
   {
     subtype: 'helm',
     label: 'Helms',
     route: '/helms',
-    dataFile: 'helms.json',
+    dataFiles: ['helms-a-l.json', 'helms-m-z.json'],
     shortDescription: 'Head-slot accessories, helms, masks, and circlets.',
   },
   {
     subtype: 'necklace',
     label: 'Necklaces',
     route: '/necklaces',
-    dataFile: 'necklaces.json',
+    dataFiles: ['necklaces.json'],
     shortDescription: 'Neck-slot accessories with passive bonuses and utility.',
   },
   {
     subtype: 'ring',
     label: 'Rings',
     route: '/rings',
-    dataFile: 'rings.json',
+    dataFiles: ['rings.json'],
     shortDescription: 'Ring-slot accessories, from simple stat boosts to families.',
   },
   {
     subtype: 'trinket',
     label: 'Trinkets',
     route: '/trinkets',
-    dataFile: 'trinkets.json',
+    dataFiles: ['trinkets.json'],
     shortDescription: 'Trinkets, gadgets, and activated accessory-style items.',
   },
 ]
 
 export const ACCESSORY_SUBTYPE_BY_ROUTE = new Map(
-  ACCESSORY_SUBTYPES.map(meta => [meta.route, meta])
+  ACCESSORY_SUBTYPES.map((meta) => [meta.route, meta])
 )
 
 export function isAccessoryFamily(entry: AccessoryEntry): entry is AccessoryFamily {

@@ -2,7 +2,12 @@ import { Link } from 'react-router-dom'
 import { ChevronRight } from 'lucide-react'
 import type { Pet } from '../../types/pet'
 import type { ItemFamily } from '../../types/item'
-import { getDisplayFamilyName, hasSameLevelVariants, isSingleVariant } from '../../utils/variantHelpers'
+import { displayTitle } from '../../utils/displayText'
+import {
+  getDisplayFamilyName,
+  hasSameLevelVariants,
+  isSingleVariant,
+} from '../../utils/variantHelpers'
 import ElementPill from '../shared/ElementPill'
 import LevelRangeBadge from '../shared/LevelRangeBadge'
 
@@ -22,30 +27,32 @@ export default function PetCard({ pet, toUrl, replace, family }: PetCardProps) {
   const overflow = allCodes.length - MAX_PILLS
 
   const route = toUrl ?? `/${pet.type === 'pet' ? 'pets' : 'guests'}/${pet.slug}`
-  
+
   // Check if multi-variant
   const isMultiVariant = family && !isSingleVariant(family)
   const sameLevelVariants = family ? hasSameLevelVariants(family) : false
-  
+
   // Strip roman numerals from display name for multi-variant items
-  const displayName = isMultiVariant && family 
-    ? getDisplayFamilyName(family)
-    : pet.name
-  
+  const displayName = displayTitle(
+    isMultiVariant && family ? getDisplayFamilyName(family) : pet.name
+  )
+
   // Use family flags if available, otherwise fall back to Pet flags
-  const displayFlags = family ? {
-    hasDA: family.hasDA,
-    hasDC: family.hasDC,
-    hasDM: family.hasDM,
-    hasFree: family.hasFree,
-    levelRange: family.levelRange,
-  } : {
-    hasDA: pet.daRequired,
-    hasDC: pet.dcRequired ?? false,
-    hasDM: pet.dmRequired ?? false,
-    hasFree: pet.obtainMethods.some(m => m.priceType === 'free'),
-    levelRange: pet.level,
-  }
+  const displayFlags = family
+    ? {
+        hasDA: family.hasDA,
+        hasDC: family.hasDC,
+        hasDM: family.hasDM,
+        hasFree: family.hasFree,
+        levelRange: family.levelRange,
+      }
+    : {
+        hasDA: pet.daRequired,
+        hasDC: pet.dcRequired ?? false,
+        hasDM: pet.dmRequired ?? false,
+        hasFree: pet.obtainMethods.some((m) => m.priceType === 'free'),
+        levelRange: pet.level,
+      }
 
   return (
     <Link
@@ -56,7 +63,7 @@ export default function PetCard({ pet, toUrl, replace, family }: PetCardProps) {
       <div className="flex-1 min-w-0">
         {/* Element pills + access pills + level range + type badge */}
         <div className="flex items-center gap-1.5 flex-wrap mb-1.5">
-          {visibleCodes.map(code => (
+          {visibleCodes.map((code) => (
             <ElementPill key={code} code={code} size="sm" />
           ))}
           {overflow > 0 && (
@@ -64,7 +71,7 @@ export default function PetCard({ pet, toUrl, replace, family }: PetCardProps) {
               +{overflow}
             </span>
           )}
-          
+
           {/* Multi-variant indicators */}
           {isMultiVariant && pet.type !== 'guest' && !family?.isMultiPost && !sameLevelVariants && (
             <LevelRangeBadge levelRange={displayFlags.levelRange} />
@@ -89,14 +96,18 @@ export default function PetCard({ pet, toUrl, replace, family }: PetCardProps) {
               Free
             </span>
           )}
-          
+
           <span className="ml-auto text-[10px] text-text-muted bg-bg-overlay px-1.5 py-0.5 rounded-full capitalize flex-shrink-0">
             {pet.type}
           </span>
         </div>
 
-        <h3 className="font-semibold text-text-primary text-sm leading-snug mb-1 line-clamp-1">{displayName}</h3>
-        <p className="text-text-secondary text-xs leading-relaxed line-clamp-2">{pet.description}</p>
+        <h3 className="font-semibold text-text-primary text-sm leading-snug mb-1 line-clamp-1">
+          {displayName}
+        </h3>
+        <p className="text-text-secondary text-xs leading-relaxed line-clamp-2">
+          {pet.description}
+        </p>
       </div>
       <ChevronRight
         className="w-4 h-4 text-text-muted group-hover:text-text-secondary flex-shrink-0 mt-0.5 transition-colors duration-150"

@@ -24,6 +24,7 @@
 import * as fs from 'node:fs'
 import * as path from 'node:path'
 import { fetchPrintable, getPostContent } from './lib/printable-parser.ts'
+import { compareTitles } from '../src/utils/displayText.ts'
 
 const FORUM_BASE = 'https://forums2.battleon.com/f'
 const AZ_PAGE_URL = `${FORUM_BASE}/tm.asp?m=22304590&mpage=1&key=`
@@ -41,8 +42,8 @@ interface BadgeStub {
   slug: string
   messageId: string
   forumUrl: string
-  category: string      // top-level: quest-completion, classes, challenges, other
-  subcategory: string   // e.g. "Early Days", "Book 3", "Side Quests", "Frostval"
+  category: string // top-level: quest-completion, classes, challenges, other
+  subcategory: string // e.g. "Early Days", "Book 3", "Side Quests", "Frostval"
   retired: boolean
   unreleased: boolean
 }
@@ -55,7 +56,7 @@ interface BadgeData extends BadgeStub {
   howToObtain: { order: number; instruction: string; daRequired?: boolean }[]
   forumLinks: { url: string; title: string; isPrimary: boolean }[]
   imageUrl?: string
-  forumImageUrl?: string  // image URL extracted from forum post (imgur, upfiles, etc.)
+  forumImageUrl?: string // image URL extracted from forum post (imgur, upfiles, etc.)
   imageVariants?: string[]
   tags: string[]
   notes?: string
@@ -80,7 +81,8 @@ async function fetchPage(url: string, cookie: string): Promise<string> {
   const res = await fetch(url, {
     headers: {
       Cookie: cookie,
-      'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) Chrome/120.0.0.0 Safari/537.36',
+      'User-Agent':
+        'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) Chrome/120.0.0.0 Safari/537.36',
       Accept: 'text/html,application/xhtml+xml',
     },
   })
@@ -173,7 +175,8 @@ function mapForumCategory(raw: string): string {
   // "Random Badges"
   if (s.includes('quest')) return 'quest-completion'
   if (s.includes('holiday') || s.includes('seasonal')) return 'seasonal'
-  if (s.includes('class') || s.includes('armor') || s.includes('skill') || s.includes('random')) return 'collection'
+  if (s.includes('class') || s.includes('armor') || s.includes('skill') || s.includes('random'))
+    return 'collection'
   if (s.includes('challenge') || s.includes('pvp') || s.includes('combat')) return 'combat'
   return 'misc'
 }
@@ -181,8 +184,13 @@ function mapForumCategory(raw: string): string {
 function mapSubcategoryToSeasonal(subcategory: string): boolean {
   // Some badges are in "Other Badges" category but their subcategory reveals they're seasonal
   const s = subcategory.toLowerCase()
-  return s.includes('frostval') || s.includes('mogloween') || s.includes('hhd') ||
-    s.includes('holiday') || s.includes('hero\'s heart')
+  return (
+    s.includes('frostval') ||
+    s.includes('mogloween') ||
+    s.includes('hhd') ||
+    s.includes('holiday') ||
+    s.includes("hero's heart")
+  )
 }
 
 function isLikelyBadgeImage(src: string): boolean {
@@ -198,7 +206,10 @@ function isLikelyBadgeImage(src: string): boolean {
   )
 }
 
-function parseAZPage(html: string, fallbackMap: Map<string, BadgeSubcategoryFallback>): BadgeStub[] {
+function parseAZPage(
+  html: string,
+  fallbackMap: Map<string, BadgeSubcategoryFallback>
+): BadgeStub[] {
   const stubs: BadgeStub[] = []
   const seen = new Set<string>()
 
@@ -216,12 +227,27 @@ function parseAZPage(html: string, fallbackMap: Map<string, BadgeSubcategoryFall
     const text = stripHtml(decodeHTML(chunk)).trim()
 
     // Detect retired / unreleased sections by their headings
-    if (/Retired Badges Sorted by Category/i.test(text)) { inRetired = true; inUnreleased = false; continue }
-    if (/Unreleased Badges Sorted by Category/i.test(text)) { inUnreleased = true; inRetired = false; continue }
+    if (/Retired Badges Sorted by Category/i.test(text)) {
+      inRetired = true
+      inUnreleased = false
+      continue
+    }
+    if (/Unreleased Badges Sorted by Category/i.test(text)) {
+      inUnreleased = true
+      inRetired = false
+      continue
+    }
     // The alphabetical listing heading resets state
-    if (/^Alphabetical Badge Listing$/i.test(text)) { inRetired = false; inUnreleased = false; continue }
+    if (/^Alphabetical Badge Listing$/i.test(text)) {
+      inRetired = false
+      inUnreleased = false
+      continue
+    }
 
-    const linkMatch = /href="https?:\/\/forums2\.battleon\.com\/f\/tm\.asp\?m=(\d+)"[^>]*>\s*([^<]+?)\s*<\/a>/i.exec(chunk)
+    const linkMatch =
+      /href="https?:\/\/forums2\.battleon\.com\/f\/tm\.asp\?m=(\d+)"[^>]*>\s*([^<]+?)\s*<\/a>/i.exec(
+        chunk
+      )
     if (!linkMatch) continue
 
     const msgId = linkMatch[1]
@@ -261,17 +287,17 @@ function parseAZPage(html: string, fallbackMap: Map<string, BadgeSubcategoryFall
 
 // ─── Step 2: Fetch individual badge thread for full details ──────────────────
 
-async function fetchBadgeDetails(
-  stub: BadgeStub,
-  cookie: string
-): Promise<Partial<BadgeData>> {
+async function fetchBadgeDetails(stub: BadgeStub, cookie: string): Promise<Partial<BadgeData>> {
   try {
     const html = await fetchPrintable(stub.messageId, cookie)
     const rawBody = getPostContent(html)
 
     if (!rawBody) return {}
     const text = stripHtml(decodeHTML(rawBody))
-    const lines = text.split('\n').map(l => l.trim()).filter(Boolean)
+    const lines = text
+      .split('\n')
+      .map((l) => l.trim())
+      .filter(Boolean)
 
     let description = ''
     let daRequired = false
@@ -302,7 +328,9 @@ async function fetchBadgeDetails(
         const tagsHtml = match[1] ?? ''
         const bodyHtml = match[2] ?? ''
         const methodDaRequired = /\/tags\/DA\.png/i.test(tagsHtml)
-        const requirementsMatch = bodyHtml.match(/Requirements?:\s*([\s\S]*?)(?=<br>\s*Category:|$)/i)
+        const requirementsMatch = bodyHtml.match(
+          /Requirements?:\s*([\s\S]*?)(?=<br>\s*Category:|$)/i
+        )
         const instruction = requirementsMatch
           ? stripHtml(decodeHTML(requirementsMatch[1])).replace(/\s+/g, ' ').trim()
           : ''
@@ -339,7 +367,10 @@ async function fetchBadgeDetails(
         continue
       }
 
-      if (/^Other information/i.test(line)) { inNotes = true; continue }
+      if (/^Other information/i.test(line)) {
+        inNotes = true
+        continue
+      }
       if (/^Thanks to/i.test(line)) continue
 
       if (!description && !inNotes && line.length > 5) {
@@ -363,14 +394,15 @@ async function fetchBadgeDetails(
       const src = imgMatch[2]
       // Skip known non-badge images
       if (
-        src.includes('/f/image/') ||          // forum UI images
-        src.includes('forumheader') ||         // header banner
-        src.includes('quantserve') ||          // tracker pixel
-        src.includes('artix.com/shared') ||    // nav icons
-        src.includes('ArtixGameLauncher') ||   // launcher image
-        src.includes('tags/') ||               // category tag banners (DA.png, Seasonal.jpg etc.)
-        src.includes('upfiles/') && src.includes('/f/upfiles/') && src.length < 60 // tiny avatars
-      ) continue
+        src.includes('/f/image/') || // forum UI images
+        src.includes('forumheader') || // header banner
+        src.includes('quantserve') || // tracker pixel
+        src.includes('artix.com/shared') || // nav icons
+        src.includes('ArtixGameLauncher') || // launcher image
+        src.includes('tags/') || // category tag banners (DA.png, Seasonal.jpg etc.)
+        (src.includes('upfiles/') && src.includes('/f/upfiles/') && src.length < 60) // tiny avatars
+      )
+        continue
 
       // Accept badge images from known sources
       if (isLikelyBadgeImage(src)) {
@@ -482,17 +514,23 @@ async function main() {
         // Seasonal detection: subcategory hint OR name patterns
         if (cat === 'misc') {
           if (mapSubcategoryToSeasonal(sub)) return 'seasonal'
-          if (/mogloween|frostval|frost moglin|golem breaker|naughty list|bad toys|x-val|icemaster|merry togsmas|sugary nightmare|frostvayle|list completion|resident: sneevil|pumpkinlord|evolved pumpkinlord|togslayer|#1 threat|bachelor|wrestling champion|catastrophic candy|48 weeks/i.test(name)) return 'seasonal'
+          if (
+            /mogloween|frostval|frost moglin|golem breaker|naughty list|bad toys|x-val|icemaster|merry togsmas|sugary nightmare|frostvayle|list completion|resident: sneevil|pumpkinlord|evolved pumpkinlord|togslayer|#1 threat|bachelor|wrestling champion|catastrophic candy|48 weeks/i.test(
+              name
+            )
+          )
+            return 'seasonal'
           if (/pvp/i.test(name)) return 'combat'
         }
         return cat
       })(),
       subcategory: details.subcategory ?? stub.subcategory,
-      howToObtain: details.howToObtain && details.howToObtain.length > 0
-        ? details.howToObtain
-        : details.requirements
-        ? [{ order: 1, instruction: details.requirements }]
-        : [{ order: 1, instruction: 'See forum link for details.' }],
+      howToObtain:
+        details.howToObtain && details.howToObtain.length > 0
+          ? details.howToObtain
+          : details.requirements
+            ? [{ order: 1, instruction: details.requirements }]
+            : [{ order: 1, instruction: 'See forum link for details.' }],
       forumLinks: [
         {
           url: stub.forumUrl,
@@ -500,7 +538,11 @@ async function main() {
           isPrimary: true,
         },
       ],
-      tags: generateTags(stub.name, details.requirements ?? '', details.subcategory ?? stub.subcategory),
+      tags: generateTags(
+        stub.name,
+        details.requirements ?? '',
+        details.subcategory ?? stub.subcategory
+      ),
       // Prefer the latest forum scrape, but preserve existing curated image fields across re-scrapes.
       ...(badgeFallback?.imageUrl ? { imageUrl: badgeFallback.imageUrl } : {}),
       ...(details.forumImageUrl || badgeFallback?.forumImageUrl
@@ -517,7 +559,7 @@ async function main() {
   }
 
   // Sort alphabetically
-  badges.sort((a, b) => a.name.localeCompare(b.name))
+  badges.sort((a, b) => compareTitles(a.name, b.name))
 
   console.log('\n' + '─'.repeat(50))
   console.log(`✅ Enriched with full details: ${enriched}`)
@@ -528,4 +570,7 @@ async function main() {
   console.log('\n🎉 Done!')
 }
 
-main().catch(err => { console.error('Fatal:', err); process.exit(1) })
+main().catch((err) => {
+  console.error('Fatal:', err)
+  process.exit(1)
+})

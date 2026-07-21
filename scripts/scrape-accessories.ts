@@ -1,7 +1,12 @@
 import * as fs from 'node:fs'
 import * as path from 'node:path'
 import elementsData from '../src/data/elements.json' with { type: 'json' }
-import { computeFamilyFlags, computePriceType, normalizeLevel } from '../src/utils/variantHelpers.ts'
+import {
+  computeFamilyFlags,
+  computePriceType,
+  normalizeLevel,
+} from '../src/utils/variantHelpers.ts'
+import { compareTitles, titleSortKey } from '../src/utils/displayText.ts'
 import {
   ACCESSORY_SUBTYPES,
   type Accessory,
@@ -18,7 +23,9 @@ import {
 } from './lib/printable-parser.ts'
 import { rephraseTimedSellback } from './lib/obtain-formatting.ts'
 import { getAccessorySubtypeStrategy } from './lib/accessories/index.ts'
+import { extractAlsoSeeRefs, type ParsedAlsoSeeRef } from './lib/also-see.ts'
 import type { FamilySourceRef, LevelVariant } from '../src/types/item.ts'
+import type { AlsoSeeRef } from '../src/types/item.ts'
 import type { GuestAttack } from '../src/types/pet.ts'
 
 const FORUM_BASE = 'https://forums2.battleon.com/f'
@@ -26,10 +33,12 @@ const ACCESSORIES_INDEX_URL = `${FORUM_BASE}/printable.asp?m=20985110`
 const OUTPUT_DIR = path.resolve(import.meta.dirname, '../src/data')
 const DELAY_MS = 900
 const ACCESSORY_IMAGE_OVERRIDES: Record<string, string> = {
-  "Baltael's Aventail": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/Baltael'sAventail.png",
+  "Baltael's Aventail":
+    "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/Baltael'sAventail.png",
   "Frost Moglin Knight's Cloak": 'https://i.imgur.com/StWTUCm.png',
   "Frost Moglin Knight's Helm": 'https://i.imgur.com/UWUlCbM.png',
-  "Navigator's Hat": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/Navigator'sHat-CC.png",
+  "Navigator's Hat":
+    "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/Navigator'sHat-CC.png",
 }
 
 type PriceType = Accessory['obtainMethods'][number]['priceType']
@@ -50,20 +59,30 @@ interface SubtypeIndexRef {
   messageId: string
 }
 
-const elementEntries = (elementsData as {
-  elements: Array<{ code: string; name: string; shortName: string }>
-}).elements
-const elementPatterns = elementEntries.map(entry => ({
+type AccessoryRefResolver = (refs: ParsedAlsoSeeRef[]) => AlsoSeeRef[]
+
+const elementEntries = (
+  elementsData as {
+    elements: Array<{ code: string; name: string; shortName: string }>
+  }
+).elements
+const elementPatterns = elementEntries.map((entry) => ({
   code: entry.code,
   patterns: [
     new RegExp(`\\b${entry.code.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i'),
     new RegExp(`\\b${entry.shortName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i'),
-    new RegExp(`\\b${entry.name.replace(/\s+Element$/i, '').replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i'),
+    new RegExp(
+      `\\b${entry.name.replace(/\s+Element$/i, '').replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`,
+      'i'
+    ),
   ],
 }))
 
 function getArg(name: string): string | undefined {
-  return process.argv.slice(2).find(arg => arg.startsWith(`--${name}=`))?.split('=')[1]
+  return process.argv
+    .slice(2)
+    .find((arg) => arg.startsWith(`--${name}=`))
+    ?.split('=')[1]
 }
 
 function loadCookie(): string {
@@ -84,7 +103,7 @@ function loadCookie(): string {
 }
 
 function sleep(ms: number): Promise<void> {
-  return new Promise(resolve => setTimeout(resolve, ms))
+  return new Promise((resolve) => setTimeout(resolve, ms))
 }
 
 async function withRetry<T>(label: string, operation: () => Promise<T>, attempts = 3): Promise<T> {
@@ -117,11 +136,20 @@ function decodeHtml(text: string): string {
 }
 
 function slugify(name: string): string {
-  return name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '')
+  return name
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+}
+
+function accessorySlugForName(name: string): string {
+  return `accessory-${slugify(normalizeAccessoryFamilyName(name))}`
 }
 
 function getAccessoryImageOverride(name: string): string | undefined {
-  return ACCESSORY_IMAGE_OVERRIDES[normalizeAccessoryFamilyName(name)] ?? ACCESSORY_IMAGE_OVERRIDES[name]
+  return (
+    ACCESSORY_IMAGE_OVERRIDES[normalizeAccessoryFamilyName(name)] ?? ACCESSORY_IMAGE_OVERRIDES[name]
+  )
 }
 
 function getEntryDisplayName(entry: AccessoryEntry): string {
@@ -129,7 +157,62 @@ function getEntryDisplayName(entry: AccessoryEntry): string {
 }
 
 function getInitialForName(name: string): string {
-  return /^[A-Z]/i.test(name) ? name[0].toUpperCase() : '#'
+  const sortableName = titleSortKey(name)
+  return /^[A-Z]/i.test(sortableName) ? sortableName[0].toUpperCase() : '#'
+}
+
+function isALInitial(name: string): boolean {
+  const initial = getInitialForName(name)
+  return initial >= 'A' && initial <= 'L'
+}
+
+function normalizeForumUrl(url: string): string {
+  if (!url) return url
+  if (url.startsWith('http')) return url
+  return `${FORUM_BASE}/${url.replace(/^\.\//, '')}`
+}
+
+function createAccessoryRefResolver(stubs: AccessoryStub[]): AccessoryRefResolver {
+  const stubByMessageId = new Map(stubs.map((stub) => [stub.messageId, stub]))
+  const stubByName = new Map(
+    stubs.map((stub) => [normalizeAccessoryFamilyName(stub.name).toLowerCase(), stub])
+  )
+
+  return (refs) => {
+    const resolved = new Map<string, AlsoSeeRef>()
+
+    for (const ref of refs) {
+      const messageId = ref.url?.match(/[?&]m=(\d+)/i)?.[1]
+      const targetStub =
+        (messageId ? stubByMessageId.get(messageId) : undefined) ??
+        stubByName.get(normalizeAccessoryFamilyName(ref.name).toLowerCase())
+      const name = normalizeAccessoryFamilyName(targetStub?.name ?? ref.name)
+      const slug = targetStub ? accessorySlugForName(targetStub.name) : accessorySlugForName(ref.name)
+      const url = ref.url ? normalizeForumUrl(ref.url) : targetStub?.forumUrl
+      const key = `${slug}|${url ?? ''}`
+
+      if (resolved.has(key)) continue
+      resolved.set(key, {
+        name,
+        slug,
+        type: 'accessory',
+        ...(url ? { url } : {}),
+      })
+    }
+
+    return Array.from(resolved.values()).sort((a, b) => compareTitles(a.name, b.name))
+  }
+}
+
+function getAccessoryDataFiles(meta: { dataFiles: string[] }): string[] {
+  return meta.dataFiles
+}
+
+function entryBelongsInDataFile(entry: AccessoryEntry, dataFile: string): boolean {
+  const name = getEntryDisplayName(entry)
+  if (dataFile.endsWith('-a-l.json')) return isALInitial(name)
+  if (dataFile.endsWith('-m-z.json')) return !isALInitial(name)
+  return true
 }
 
 function stripHtml(html: string): string {
@@ -206,17 +289,18 @@ function findLastSection(html: string, sectionRegex: RegExp): string | undefined
 }
 
 function getAccessoryLeadHtml(html: string): string {
-  const firstFieldIndex = [
-    /(?:<b>)?Level:(?:<\/b>)?/i,
-    /(?:<b>)?Element:(?:<\/b>)?/i,
-    /(?:<b>)?Location:(?:<\/b>)?/i,
-    /(?:<b>)?Stats:(?:<\/b>)?/i,
-    /(?:<b>)?Resists:(?:<\/b>)?/i,
-    /<u>Other [Ii]nformation<\/u>/i,
-  ]
-    .map(pattern => html.search(pattern))
-    .filter(index => index >= 0)
-    .sort((a, b) => a - b)[0] ?? html.length
+  const firstFieldIndex =
+    [
+      /(?:<b>)?Level:(?:<\/b>)?/i,
+      /(?:<b>)?Element:(?:<\/b>)?/i,
+      /(?:<b>)?Location:(?:<\/b>)?/i,
+      /(?:<b>)?Stats:(?:<\/b>)?/i,
+      /(?:<b>)?Resists:(?:<\/b>)?/i,
+      /<u>Other [Ii]nformation<\/u>/i,
+    ]
+      .map((pattern) => html.search(pattern))
+      .filter((index) => index >= 0)
+      .sort((a, b) => a - b)[0] ?? html.length
 
   return html.slice(0, firstFieldIndex)
 }
@@ -239,7 +323,7 @@ function parseElementCodes(value?: string): string[] {
   const found = new Set<string>()
 
   for (const entry of elementPatterns) {
-    if (entry.patterns.some(pattern => pattern.test(value))) {
+    if (entry.patterns.some((pattern) => pattern.test(value))) {
       found.add(entry.code)
     }
   }
@@ -248,7 +332,7 @@ function parseElementCodes(value?: string): string[] {
 }
 
 function parseFieldValue(text: string, labels: string[]): string | undefined {
-  const escaped = labels.map(label => label.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))
+  const escaped = labels.map((label) => label.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))
   const match = text.match(new RegExp(`(?:^|\\n)(?:${escaped.join('|')}):\\s*([^\\n]+)`, 'i'))
   const value = match?.[1]?.trim()
   return value && !/^n\/a$/i.test(value) ? value : value
@@ -264,7 +348,10 @@ function parseHtmlField(html: string, labels: string[]): string | undefined {
       )
     )
     const value = match?.[1]
-      ? normalizeStructuredText(match[1]).replace(/\n+/g, ' ').replace(/\s{2,}/g, ' ').trim()
+      ? normalizeStructuredText(match[1])
+          .replace(/\n+/g, ' ')
+          .replace(/\s{2,}/g, ' ')
+          .trim()
       : undefined
     if (value) return value
   }
@@ -277,7 +364,10 @@ function parseAbilityInfo(html: string): { label?: string; url?: string } {
   )
   if (!match) return {}
 
-  const label = normalizeStructuredText(match[1]).replace(/\n+/g, ' ').replace(/\s{2,}/g, ' ').trim()
+  const label = normalizeStructuredText(match[1])
+    .replace(/\n+/g, ' ')
+    .replace(/\s{2,}/g, ' ')
+    .trim()
   const urlMatch = match[1].match(/<a[^>]+href="([^"]+)"[^>]*>/i)
 
   return {
@@ -329,8 +419,8 @@ function buildTrinketAttackFromHtml(html: string, fallbackName: string): GuestAt
   let effect = effectMatch
     ? normalizeStructuredText(effectMatch[1])
         .split('\n')
-        .map(line => line.trimEnd())
-        .filter(line => {
+        .map((line) => line.trimEnd())
+        .filter((line) => {
           const trimmed = line.trim()
           return (
             trimmed.length > 0 &&
@@ -352,8 +442,8 @@ function buildTrinketAttackFromHtml(html: string, fallbackName: string): GuestAt
         .replace(/<img[^>]+src="[^"]+\.(?:png|jpg|jpeg|gif|bmp)"[^>]*>/gi, '')
     )
       .split('\n')
-      .map(line => line.trimEnd())
-      .filter(line => {
+      .map((line) => line.trimEnd())
+      .filter((line) => {
         const trimmed = line.trim()
         return (
           trimmed.length > 0 &&
@@ -381,10 +471,11 @@ function buildTrinketAttackFromHtml(html: string, fallbackName: string): GuestAt
     '—'
 
   const buttonImageUrl = [...html.matchAll(/<img[^>]+src="([^"]+)"[^>]*>/gi)]
-    .map(match => match[1])
-    .find(src =>
-      /(?:github\.com\/DF-Pedia|githubusercontent\.com|imgur\.com)/i.test(src) &&
-      !/Appearance/i.test(src)
+    .map((match) => match[1])
+    .find(
+      (src) =>
+        /(?:github\.com\/DF-Pedia|githubusercontent\.com|imgur\.com)/i.test(src) &&
+        !/Appearance/i.test(src)
     )
 
   const appearanceUrl = html.match(/<a[^>]+href="([^"]+)"[^>]*>([^<]*Appearance[^<]*)<\/a>/i)?.[1]
@@ -415,7 +506,11 @@ function splitTrinketAttackSections(html: string): string[] {
   })
 }
 
-function scoreTrinketAttackCandidate(candidate: GuestAttack, entryName: string, abilityName: string): number {
+function scoreTrinketAttackCandidate(
+  candidate: GuestAttack,
+  entryName: string,
+  abilityName: string
+): number {
   const haystacks = [
     candidate.name,
     candidate.description,
@@ -465,7 +560,7 @@ function dedupeTrinketAttacks(candidates: GuestAttack[]): GuestAttack[] {
     }
   }
 
-  return Array.from(grouped.values()).map(group => {
+  return Array.from(grouped.values()).map((group) => {
     if (group.length === 1) return group[0]
 
     return [...group].sort((a, b) => {
@@ -477,13 +572,13 @@ function dedupeTrinketAttacks(candidates: GuestAttack[]): GuestAttack[] {
 function parseTrinketAttacks(html: string, fallbackName: string, entryName: string): GuestAttack[] {
   const sections = splitTrinketAttackSections(html)
   const candidates = sections
-    .map(section => buildTrinketAttackFromHtml(section, fallbackName))
-    .filter(candidate => candidate.name || candidate.effect)
+    .map((section) => buildTrinketAttackFromHtml(section, fallbackName))
+    .filter((candidate) => candidate.name || candidate.effect)
 
   if (candidates.length <= 1) return candidates
 
   const ranked = candidates
-    .map(candidate => ({
+    .map((candidate) => ({
       candidate,
       score: scoreTrinketAttackCandidate(candidate, entryName, fallbackName),
     }))
@@ -491,26 +586,35 @@ function parseTrinketAttacks(html: string, fallbackName: string, entryName: stri
 
   const bestScore = ranked[0]?.score ?? 0
   if (bestScore <= 0) return dedupeTrinketAttacks([ranked[0].candidate])
-  return dedupeTrinketAttacks(ranked.filter(item => item.score === bestScore).map(item => item.candidate))
+  return dedupeTrinketAttacks(
+    ranked.filter((item) => item.score === bestScore).map((item) => item.candidate)
+  )
 }
 
 function parseObtainMethods(html: string): Accessory['obtainMethods'] {
   const obtainMethods: Accessory['obtainMethods'] = []
-  const firstFieldIndex = [
-    /(?:<b>)?Level:(?:<\/b>)?/i,
-    /(?:<b>)?Element:(?:<\/b>)?/i,
-    /(?:<b>)?Stats:(?:<\/b>)?/i,
-    /(?:<b>)?Resists:(?:<\/b>)?/i,
-    /<u>Other [Ii]nformation<\/u>/i,
-  ]
-    .map(pattern => html.search(pattern))
-    .filter(index => index >= 0)
-    .sort((a, b) => a - b)[0] ?? html.length
+  const firstFieldIndex =
+    [
+      /(?:<b>)?Level:(?:<\/b>)?/i,
+      /(?:<b>)?Element:(?:<\/b>)?/i,
+      /(?:<b>)?Stats:(?:<\/b>)?/i,
+      /(?:<b>)?Resists:(?:<\/b>)?/i,
+      /<u>Other [Ii]nformation<\/u>/i,
+    ]
+      .map((pattern) => html.search(pattern))
+      .filter((index) => index >= 0)
+      .sort((a, b) => a - b)[0] ?? html.length
 
   const introHtml = html
     .slice(0, firstFieldIndex)
-    .replace(/<b>\s*<font[^>]*>\s*(Location|Requirements|Level\/Quest\/Items to unlock|Price|Sellback|Required Items?|Required|Requires):\s*<\/font>\s*<\/b>/gi, '<b>$1:</b>')
-    .replace(/(?:^|\s)(Location|Requirements|Level\/Quest\/Items to unlock|Price|Sellback|Required Items?|Required|Requires):/gi, ' <b>$1:</b>')
+    .replace(
+      /<b>\s*<font[^>]*>\s*(Location|Requirements|Level\/Quest\/Items to unlock|Price|Sellback|Required Items?|Required|Requires):\s*<\/font>\s*<\/b>/gi,
+      '<b>$1:</b>'
+    )
+    .replace(
+      /(?:^|\s)(Location|Requirements|Level\/Quest\/Items to unlock|Price|Sellback|Required Items?|Required|Requires):/gi,
+      ' <b>$1:</b>'
+    )
 
   const blocks: Array<{
     location?: string
@@ -537,17 +641,25 @@ function parseObtainMethods(html: string): Accessory['obtainMethods'] {
 
   for (const segment of segments) {
     let current: (typeof blocks)[number] | undefined
-    const rawLines = segment.split(/<br\s*\/?>/i).map(line => line.trim()).filter(Boolean)
+    const rawLines = segment
+      .split(/<br\s*\/?>/i)
+      .map((line) => line.trim())
+      .filter(Boolean)
 
     for (const rawLine of rawLines) {
       const hasDA = /<img[^>]+src=["'][^"']*\/tags\/DA\.(?:png|jpg|jpeg|gif)["']/i.test(rawLine)
       const hasDC = /<img[^>]+src=["'][^"']*\/tags\/DC\.(?:png|jpg|jpeg|gif)["']/i.test(rawLine)
       const hasDM = /<img[^>]+src=["'][^"']*\/tags\/DM\.(?:png|jpg|jpeg|gif)["']/i.test(rawLine)
-      const fieldMatch = rawLine.match(/<b>(Location|Requirements|Level\/Quest\/Items to unlock|Price|Sellback|Required Items?|Required|Requires):<\/b>\s*([\s\S]*)/i)
+      const fieldMatch = rawLine.match(
+        /<b>(Location|Requirements|Level\/Quest\/Items to unlock|Price|Sellback|Required Items?|Required|Requires):<\/b>\s*([\s\S]*)/i
+      )
       if (!fieldMatch) continue
 
       const fieldName = fieldMatch[1].toLowerCase()
-      const value = normalizeStructuredText(fieldMatch[2]).replace(/\n+/g, ' ').replace(/\s{2,}/g, ' ').trim()
+      const value = normalizeStructuredText(fieldMatch[2])
+        .replace(/\n+/g, ' ')
+        .replace(/\s{2,}/g, ' ')
+        .trim()
       if (!value) continue
 
       if (fieldName === 'location') {
@@ -580,7 +692,12 @@ function parseObtainMethods(html: string): Accessory['obtainMethods'] {
         current.price = value
       } else if (fieldName === 'sellback') {
         current.sellback = value
-      } else if (fieldName === 'required item' || fieldName === 'required items' || fieldName === 'required' || fieldName === 'requires') {
+      } else if (
+        fieldName === 'required item' ||
+        fieldName === 'required items' ||
+        fieldName === 'required' ||
+        fieldName === 'requires'
+      ) {
         current.requiredItems = value
       }
     }
@@ -596,7 +713,9 @@ function parseObtainMethods(html: string): Accessory['obtainMethods'] {
       priceType,
       ...(block.sellback ? { sellback: rephraseTimedSellback(block.sellback) } : {}),
       ...(block.requiredItems ? { requiredItems: block.requiredItems } : {}),
-      ...(block.requirements && !/^none$/i.test(block.requirements) ? { requirements: block.requirements } : {}),
+      ...(block.requirements && !/^none$/i.test(block.requirements)
+        ? { requirements: block.requirements }
+        : {}),
       daRequired: block.daRequired,
       ...(block.dcRequired || priceType === 'dc' ? { dcRequired: true } : {}),
       ...(block.dmRequired || priceType === 'dm' ? { dmRequired: true } : {}),
@@ -630,35 +749,43 @@ function extractAccessoryImages(html: string): AccessoryImageBundle {
   ]
 
   const isCandidateImage = (src: string) =>
-    !skipPatterns.some(pattern => pattern.test(src)) &&
+    !/[\s<>"]/.test(src) &&
+    !skipPatterns.some((pattern) => pattern.test(src)) &&
     /\.(?:png|jpg|jpeg|gif|bmp)(?:\?|$)/i.test(src)
 
   const otherInfoHtml = findLastSection(html, /<b><u>Other [Ii]nformation<\/u><\/b>/gi) ?? html
   const imageCandidates: Array<{ url: string; caption?: string }> = [
-    ...[...otherInfoHtml.matchAll(/<img[^>]+src=(["'])(.*?)\1[^>]*>/gi)].map(match => ({
+    ...[...otherInfoHtml.matchAll(/<img[^>]+src=(["'])(.*?)\1[^>]*>/gi)].map((match) => ({
       url: match[2],
     })),
-    ...[...otherInfoHtml.matchAll(/<a[^>]+href=(["'])(.*?\.(?:png|jpg|jpeg|gif|bmp)(?:\?[^"']*)?)\1[^>]*>([\s\S]*?)<\/a>/gi)].map(match => ({
+    ...[
+      ...otherInfoHtml.matchAll(
+        /<a[^>]+href=(["'])([^"']*?\.(?:png|jpg|jpeg|gif|bmp)(?:\?[^"']*)?)\1[^>]*>([\s\S]*?)<\/a>/gi
+      ),
+    ].map((match) => ({
       url: match[2],
       caption: stripHtml(decodeHtml(match[3])).trim(),
     })),
-    ...[...otherInfoHtml.matchAll(/https?:\/\/[^\s"'<>]+\.(?:png|jpg|jpeg|gif|bmp)(?:\?[^\s"'<>]*)?/gi)].map(match => ({
+    ...[
+      ...otherInfoHtml.matchAll(
+        /https?:\/\/[^\s"'<>]+\.(?:png|jpg|jpeg|gif|bmp)(?:\?[^\s"'<>]*)?/gi
+      ),
+    ].map((match) => ({
       url: match[0],
     })),
-  ].filter(candidate => isCandidateImage(candidate.url))
+  ].filter((candidate) => isCandidateImage(candidate.url))
 
   const seenImageUrls = new Set<string>()
-  const uniqueImageCandidates = imageCandidates.filter(candidate => {
+  const uniqueImageCandidates = imageCandidates.filter((candidate) => {
     if (seenImageUrls.has(candidate.url)) return false
     seenImageUrls.add(candidate.url)
     return true
   })
   const preferredImageCandidates = uniqueImageCandidates.filter(
-    candidate => !/forums2\.battleon\.com\/f\/upfiles\//i.test(candidate.url)
+    (candidate) => !/forums2\.battleon\.com\/f\/upfiles\//i.test(candidate.url)
   )
-  const displayImageCandidates = preferredImageCandidates.length > 0
-    ? preferredImageCandidates
-    : uniqueImageCandidates
+  const displayImageCandidates =
+    preferredImageCandidates.length > 0 ? preferredImageCandidates : uniqueImageCandidates
   const imageUrl = displayImageCandidates[0]?.url
 
   const alternativeImages: Array<{ url: string; caption: string }> = []
@@ -692,8 +819,10 @@ function parseTagFlags(html: string) {
 }
 
 function hasMultipleVersionHint(name: string): boolean {
-  return /\((?:All Versions|[IVX]+(?:\s*[-,]\s*[IVX]+)+|[IVX]+-[IVX]+)\)/i.test(name) ||
+  return (
+    /\((?:All Versions|[IVX]+(?:\s*[-,]\s*[IVX]+)+|[IVX]+-[IVX]+)\)/i.test(name) ||
     hasAccessoryFormVariantHint(name)
+  )
 }
 
 function shouldInspectThreadForSubtype(subtype: AccessorySubtype): boolean {
@@ -706,18 +835,17 @@ function hasAccessoryFormVariantHint(name: string): boolean {
 
   const forms = match[1]
     .split(',')
-    .map(value => value.trim().toLowerCase())
+    .map((value) => value.trim().toLowerCase())
     .filter(Boolean)
   if (forms.length === 0) return false
 
   const knownForms = new Set(['mask', 'head', 'helm', 'hood', 'cowl'])
-  return forms.every(form => knownForms.has(form))
+  return forms.every((form) => knownForms.has(form))
 }
 
 function parseAccessoryTitle(html: string): string | undefined {
   const match =
-    html.match(/<font[^>]*>\s*<b>([\s\S]*?)<\/b>\s*<\/font>/i) ??
-    html.match(/<b>([\s\S]*?)<\/b>/i)
+    html.match(/<font[^>]*>\s*<b>([\s\S]*?)<\/b>\s*<\/font>/i) ?? html.match(/<b>([\s\S]*?)<\/b>/i)
 
   const title = match ? normalizeStructuredText(match[1]).trim() : ''
   return title || undefined
@@ -725,7 +853,10 @@ function parseAccessoryTitle(html: string): string | undefined {
 
 function normalizeAccessoryFamilyName(name: string): string {
   return name
-    .replace(/\s*\((?:All Versions|[IVXLCDM]+(?:\s*[-,]\s*[IVXLCDM]+)+|[IVXLCDM]+-[IVXLCDM]+)\)\s*/i, ' ')
+    .replace(
+      /\s*\((?:All Versions|[IVXLCDM]+(?:\s*[-,]\s*[IVXLCDM]+)+|[IVXLCDM]+-[IVXLCDM]+)\)\s*/i,
+      ' '
+    )
     .replace(/\s{2,}/g, ' ')
     .trim()
 }
@@ -756,13 +887,25 @@ function uniqueStrings(values: Array<string | undefined>): string[] {
   return Array.from(new Set(values.filter((value): value is string => Boolean(value))))
 }
 
+function mergeAccessoryAlsoSee(variants: Accessory[], familySlug: string): AlsoSeeRef[] {
+  const variantSlugs = new Set(variants.map((variant) => variant.slug))
+  const refs = new Map<string, AlsoSeeRef>()
+
+  for (const ref of variants.flatMap((variant) => variant.alsoSee ?? [])) {
+    if (ref.slug === familySlug || variantSlugs.has(ref.slug)) continue
+    refs.set(`${ref.type}:${ref.slug}:${ref.url ?? ''}`, ref)
+  }
+
+  return Array.from(refs.values()).sort((a, b) => compareTitles(a.name, b.name))
+}
+
 function mergeAlternativeImages(
   first?: Array<{ url: string; caption: string }>,
   second?: Array<{ url: string; caption: string }>
 ) {
   const merged = [...(first ?? []), ...(second ?? [])]
   const seen = new Set<string>()
-  return merged.filter(image => {
+  return merged.filter((image) => {
     const key = `${image.url}::${image.caption}`
     if (seen.has(key)) return false
     seen.add(key)
@@ -775,7 +918,7 @@ function mergeObtainMethods(
   methods: Array<Accessory['obtainMethods'][number]>
 ): Array<Accessory['obtainMethods'][number]> {
   const seen = new Set<string>()
-  return methods.filter(method => {
+  return methods.filter((method) => {
     const key = JSON.stringify(method)
     if (seen.has(key)) return false
     seen.add(key)
@@ -853,34 +996,36 @@ function getExpectedRomanVariants(name: string): string[] {
 
   return group
     .split(',')
-    .map(value => value.trim().toUpperCase())
-    .filter(value => /^[IVXLCDM]+$/.test(value))
+    .map((value) => value.trim().toUpperCase())
+    .filter((value) => /^[IVXLCDM]+$/.test(value))
 }
 
 function allSame<T>(values: T[]): boolean {
   if (values.length <= 1) return true
-  return values.every(value => JSON.stringify(value) === JSON.stringify(values[0]))
+  return values.every((value) => JSON.stringify(value) === JSON.stringify(values[0]))
 }
 
 function getAccessoryVariantCompletenessScore(variant: Accessory): number {
-  return [
-    variant.level,
-    variant.stats,
-    variant.resists,
-    variant.ability,
-    variant.rarity,
-    variant.itemType,
-    variant.equipSpot,
-    variant.modifies,
-    variant.category,
-    variant.imageUrl,
-    variant.description,
-    variant.notes,
-  ].filter(Boolean).length +
+  return (
+    [
+      variant.level,
+      variant.stats,
+      variant.resists,
+      variant.ability,
+      variant.rarity,
+      variant.itemType,
+      variant.equipSpot,
+      variant.modifies,
+      variant.category,
+      variant.imageUrl,
+      variant.description,
+      variant.notes,
+    ].filter(Boolean).length +
     variant.elements.length +
     variant.obtainMethods.length +
     (variant.alternativeImages?.length ?? 0) +
     (variant.attacks?.length ?? 0)
+  )
 }
 
 function enrichAccessorySiblingVariants(variants: Accessory[]): Accessory[] {
@@ -903,7 +1048,7 @@ function enrichAccessorySiblingVariants(variants: Accessory[]): Accessory[] {
     }
   }
 
-  return Array.from(grouped.values()).flatMap(group => {
+  return Array.from(grouped.values()).flatMap((group) => {
     if (group.length === 1) return group
 
     const sorted = [...group].sort(
@@ -911,16 +1056,19 @@ function enrichAccessorySiblingVariants(variants: Accessory[]): Accessory[] {
     )
     const primary = sorted[0]
 
-    return sorted.map(variant => ({
+    return sorted.map((variant) => ({
       ...variant,
       description:
-        getAccessoryVariantCompletenessScore(primary) > getAccessoryVariantCompletenessScore(variant) &&
-        primary.description
+        getAccessoryVariantCompletenessScore(primary) >
+          getAccessoryVariantCompletenessScore(variant) && primary.description
           ? primary.description
           : variant.description || primary.description,
       forumUrl: variant.forumUrl || primary.forumUrl,
       imageUrl: variant.imageUrl ?? primary.imageUrl,
-      alternativeImages: mergeAlternativeImages(variant.alternativeImages, primary.alternativeImages),
+      alternativeImages: mergeAlternativeImages(
+        variant.alternativeImages,
+        primary.alternativeImages
+      ),
       elements: Array.from(new Set([...variant.elements, ...primary.elements])),
       level: variant.level ?? primary.level,
       stats: variant.stats ?? primary.stats,
@@ -936,7 +1084,7 @@ function enrichAccessorySiblingVariants(variants: Accessory[]): Accessory[] {
       notes:
         variant.notes && primary.notes && variant.notes !== primary.notes
           ? `${variant.notes}\n${primary.notes}`
-          : variant.notes ?? primary.notes,
+          : (variant.notes ?? primary.notes),
       tags: Array.from(new Set([...variant.tags, ...primary.tags])).sort(),
       daRequired: variant.daRequired || primary.daRequired,
       ...(variant.dcRequired || primary.dcRequired ? { dcRequired: true } : {}),
@@ -952,10 +1100,10 @@ function enrichAccessorySiblingVariants(variants: Accessory[]): Accessory[] {
 }
 
 function expandAccessoryFamilyVariants(variants: Accessory[]): Accessory[] {
-  return variants.flatMap(variant => {
+  return variants.flatMap((variant) => {
     if (variant.obtainMethods.length <= 1) return [variant]
 
-    return variant.obtainMethods.map(method => {
+    return variant.obtainMethods.map((method) => {
       const { dcRequired: _dcRequired, dmRequired: _dmRequired, ...baseVariant } = variant
 
       return {
@@ -966,7 +1114,7 @@ function expandAccessoryFamilyVariants(variants: Accessory[]): Accessory[] {
         ...(method.dmRequired || method.priceType === 'dm' ? { dmRequired: true } : {}),
         tags: Array.from(
           new Set([
-            ...variant.tags.filter(tag => !['free', 'merge', 'gold', 'dc', 'dm'].includes(tag)),
+            ...variant.tags.filter((tag) => !['free', 'merge', 'gold', 'dc', 'dm'].includes(tag)),
             method.priceType,
           ])
         ).sort(),
@@ -978,6 +1126,7 @@ function expandAccessoryFamilyVariants(variants: Accessory[]): Accessory[] {
 function buildAccessoryEntry(
   stub: AccessoryStub,
   html: string,
+  resolveAlsoSee: AccessoryRefResolver,
   override?: { name?: string; forumUrl?: string }
 ): Accessory {
   const normalizedText = normalizeStructuredText(html)
@@ -987,28 +1136,40 @@ function buildAccessoryEntry(
       /this item requires a dragon amulet/i.test(normalizedText) &&
       !/\(no da required\)/i.test(normalizedText),
   }
-  const obtainMethods = parseObtainMethods(html).map(method => ({
+  const obtainMethods = parseObtainMethods(html).map((method) => ({
     ...method,
     daRequired: method.daRequired || flags.daRequired || textSignals.daRequired,
     ...(flags.dcRequired || method.dcRequired ? { dcRequired: true } : {}),
     ...(flags.dmRequired || method.dmRequired ? { dmRequired: true } : {}),
   }))
   const explicitElement =
-    parseHtmlField(html, ['Element']) ??
-    parseFieldValue(normalizedText, ['Element'])
+    parseHtmlField(html, ['Element']) ?? parseFieldValue(normalizedText, ['Element'])
   const parsedElements = parseElementCodes(explicitElement)
   const firstMethod = obtainMethods[0]
   const primaryPriceType = firstMethod?.priceType
   const levelValue = parseHtmlField(html, ['Level']) ?? parseFieldValue(normalizedText, ['Level'])
-  const statsValue = parseHtmlField(html, ['Stats', 'Bonuses']) ?? parseFieldValue(normalizedText, ['Stats', 'Bonuses'])
-  const resistsValue = parseHtmlField(html, ['Resists', 'Resistances']) ?? parseFieldValue(normalizedText, ['Resists', 'Resistances'])
+  const statsValue =
+    parseHtmlField(html, ['Stats', 'Bonuses']) ??
+    parseFieldValue(normalizedText, ['Stats', 'Bonuses'])
+  const resistsValue =
+    parseHtmlField(html, ['Resists', 'Resistances']) ??
+    parseFieldValue(normalizedText, ['Resists', 'Resistances'])
   const abilityInfo = parseAbilityInfo(html)
-  const abilityValue = abilityInfo.label ?? parseHtmlField(html, ['Ability']) ?? parseFieldValue(normalizedText, ['Ability'])
-  const rarityValue = parseHtmlField(html, ['Rarity']) ?? parseFieldValue(normalizedText, ['Rarity'])
-  const itemTypeValue = parseHtmlField(html, ['Item Type']) ?? parseFieldValue(normalizedText, ['Item Type'])
-  const equipSpotValue = parseHtmlField(html, ['Equip Spot', 'Equip Slot']) ?? parseFieldValue(normalizedText, ['Equip Spot', 'Equip Slot'])
-  const modifiesValue = parseHtmlField(html, ['Modifies']) ?? parseFieldValue(normalizedText, ['Modifies'])
-  const categoryValue = parseHtmlField(html, ['Category']) ?? parseFieldValue(normalizedText, ['Category'])
+  const abilityValue =
+    abilityInfo.label ??
+    parseHtmlField(html, ['Ability']) ??
+    parseFieldValue(normalizedText, ['Ability'])
+  const rarityValue =
+    parseHtmlField(html, ['Rarity']) ?? parseFieldValue(normalizedText, ['Rarity'])
+  const itemTypeValue =
+    parseHtmlField(html, ['Item Type']) ?? parseFieldValue(normalizedText, ['Item Type'])
+  const equipSpotValue =
+    parseHtmlField(html, ['Equip Spot', 'Equip Slot']) ??
+    parseFieldValue(normalizedText, ['Equip Spot', 'Equip Slot'])
+  const modifiesValue =
+    parseHtmlField(html, ['Modifies']) ?? parseFieldValue(normalizedText, ['Modifies'])
+  const categoryValue =
+    parseHtmlField(html, ['Category']) ?? parseFieldValue(normalizedText, ['Category'])
   const strategy = getAccessorySubtypeStrategy(stub.subtype)
   const images = strategy.shouldExtractImages({
     name: override?.name ?? stub.name,
@@ -1019,6 +1180,7 @@ function buildAccessoryEntry(
     ? extractAccessoryImages(html)
     : {}
   const imageOverride = getAccessoryImageOverride(override?.name ?? stub.name)
+  const alsoSee = resolveAlsoSee(extractAlsoSeeRefs(html))
 
   return {
     id: `accessory-${slugify(override?.name ?? stub.name)}`,
@@ -1044,13 +1206,21 @@ function buildAccessoryEntry(
     ...(categoryValue ? { category: categoryValue } : {}),
     obtainMethods,
     ...(parseNotes(html) ? { notes: parseNotes(html) } : {}),
+    ...(alsoSee.length > 0 ? { alsoSee } : {}),
     tags: [
-      ...parsedElements.map(code => code.toLowerCase()),
+      ...parsedElements.map((code) => code.toLowerCase()),
       ...(primaryPriceType ? [primaryPriceType] : []),
     ],
-    daRequired: flags.daRequired || textSignals.daRequired || obtainMethods.some(method => method.daRequired),
-    ...(flags.dcRequired || obtainMethods.some(method => method.dcRequired) ? { dcRequired: true } : {}),
-    ...(flags.dmRequired || obtainMethods.some(method => method.dmRequired) ? { dmRequired: true } : {}),
+    daRequired:
+      flags.daRequired ||
+      textSignals.daRequired ||
+      obtainMethods.some((method) => method.daRequired),
+    ...(flags.dcRequired || obtainMethods.some((method) => method.dcRequired)
+      ? { dcRequired: true }
+      : {}),
+    ...(flags.dmRequired || obtainMethods.some((method) => method.dmRequired)
+      ? { dmRequired: true }
+      : {}),
     ...(flags.isTemp ? { isTemp: true } : {}),
     ...(flags.isRare ? { isRare: true } : {}),
     ...(flags.isSeasonal ? { isSeasonal: true } : {}),
@@ -1091,21 +1261,39 @@ function buildAccessoryFamily(
     enrichAccessorySiblingVariants(variants)
   )
   const familyName = normalizeAccessoryFamilyName(stub.name)
+  const familySlug = accessorySlugForName(familyName)
   const imageOverride = getAccessoryImageOverride(familyName)
   const expectedRomanVariants = getExpectedRomanVariants(stub.name)
-  const descriptions = uniqueStrings(consolidatedVariants.map(variant => variant.description).filter(Boolean))
-  const resists = uniqueStrings(consolidatedVariants.map(variant => variant.resists).filter(Boolean))
-  const abilities = uniqueStrings(consolidatedVariants.map(variant => variant.ability).filter(Boolean))
-  const attacks = consolidatedVariants.map(variant => variant.attacks).filter((value): value is GuestAttack[] => Boolean(value))
-  const images = uniqueStrings(consolidatedVariants.map(variant => variant.imageUrl).filter(Boolean))
+  const descriptions = uniqueStrings(
+    consolidatedVariants.map((variant) => variant.description).filter(Boolean)
+  )
+  const resists = uniqueStrings(
+    consolidatedVariants.map((variant) => variant.resists).filter(Boolean)
+  )
+  const abilities = uniqueStrings(
+    consolidatedVariants.map((variant) => variant.ability).filter(Boolean)
+  )
+  const attacks = consolidatedVariants
+    .map((variant) => variant.attacks)
+    .filter((value): value is GuestAttack[] => Boolean(value))
+  const images = uniqueStrings(
+    consolidatedVariants.map((variant) => variant.imageUrl).filter(Boolean)
+  )
   const alternativeImages = consolidatedVariants
-    .map(variant => variant.alternativeImages)
+    .map((variant) => variant.alternativeImages)
     .filter((value): value is NonNullable<Accessory['alternativeImages']> => Boolean(value))
-  const sharedImageUrl = imageOverride ?? fallbackImages.imageUrl ?? (images.length === 1 ? images[0] : undefined)
+  const sharedImageUrl =
+    imageOverride ?? fallbackImages.imageUrl ?? (images.length === 1 ? images[0] : undefined)
   const sharedAlternativeImages =
-    fallbackImages.alternativeImages ?? (alternativeImages.length === 1 ? alternativeImages[0] : undefined)
-  const rarities = uniqueStrings(consolidatedVariants.map(variant => variant.rarity).filter(Boolean))
-  const modifies = uniqueStrings(consolidatedVariants.map(variant => variant.modifies).filter(Boolean))
+    fallbackImages.alternativeImages ??
+    (alternativeImages.length === 1 ? alternativeImages[0] : undefined)
+  const rarities = uniqueStrings(
+    consolidatedVariants.map((variant) => variant.rarity).filter(Boolean)
+  )
+  const modifies = uniqueStrings(
+    consolidatedVariants.map((variant) => variant.modifies).filter(Boolean)
+  )
+  const alsoSee = mergeAccessoryAlsoSee(consolidatedVariants, familySlug)
 
   const levelVariants: LevelVariant[] = consolidatedVariants
     .map((variant, index) => {
@@ -1144,7 +1332,7 @@ function buildAccessoryFamily(
     .sort((a, b) => {
       const aLevel = a.actualLevel ?? a.levelNumber
       const bLevel = b.actualLevel ?? b.levelNumber
-      return aLevel - bLevel || a.name.localeCompare(b.name)
+      return aLevel - bLevel || compareTitles(a.name, b.name)
     })
 
   const familySources: FamilySourceRef[] = variants.map((variant, index) => ({
@@ -1155,54 +1343,61 @@ function buildAccessoryFamily(
   }))
 
   const family = computeFamilyFlags({
-    id: `accessory-${slugify(familyName)}`,
+    id: familySlug,
     familyName,
-    slug: `accessory-${slugify(familyName)}`,
-    aliasSlugs: variants.map(variant => variant.slug),
+    slug: familySlug,
+    aliasSlugs: variants.map((variant) => variant.slug),
     type: 'accessory',
     subtype: stub.subtype,
     forumUrl: stub.forumUrl,
     familyOrigin: 'same-thread-multi-post',
     familySources,
     shared: {
-      description: allSame(descriptions) ? descriptions[0] ?? '' : descriptions[0] ?? '',
+      description: allSame(descriptions) ? (descriptions[0] ?? '') : (descriptions[0] ?? ''),
       ...(resists.length === 1 ? { resists: resists[0] } : {}),
       ...(abilities.length === 1 ? { ability: abilities[0] } : {}),
       ...(attacks.length > 0 && allSame(attacks) ? { attacks: attacks[0] } : {}),
       ...(sharedImageUrl ? { imageUrl: sharedImageUrl } : {}),
       ...(sharedAlternativeImages ? { alternativeImages: sharedAlternativeImages } : {}),
       ...(rarities.length === 1 ? { rarity: rarities[0] } : {}),
+      ...(alsoSee.length > 0 ? { alsoSee } : {}),
     },
     levelVariants,
-    itemType: consolidatedVariants.find(variant => variant.itemType)?.itemType,
-    equipSlot: consolidatedVariants.find(variant => variant.equipSpot)?.equipSpot,
-    modifies: modifies.length === 1 ? modifies[0] : consolidatedVariants.find(variant => variant.modifies)?.modifies,
-    category: consolidatedVariants.find(variant => variant.category)?.category,
-    releaseDate: consolidatedVariants.find(variant => variant.releaseDate)?.releaseDate ?? '',
-    tags: Array.from(new Set(consolidatedVariants.flatMap(variant => variant.tags))).sort(),
-    isTemp: consolidatedVariants.some(variant => variant.isTemp) || undefined,
-    isRare: consolidatedVariants.some(variant => variant.isRare) || undefined,
-    isSeasonal: consolidatedVariants.some(variant => variant.isSeasonal) || undefined,
-    isSpecialOffer: consolidatedVariants.some(variant => variant.isSpecialOffer) || undefined,
-    retired: consolidatedVariants.some(variant => variant.retired) || undefined,
+    itemType: consolidatedVariants.find((variant) => variant.itemType)?.itemType,
+    equipSlot: consolidatedVariants.find((variant) => variant.equipSpot)?.equipSpot,
+    modifies:
+      modifies.length === 1
+        ? modifies[0]
+        : consolidatedVariants.find((variant) => variant.modifies)?.modifies,
+    category: consolidatedVariants.find((variant) => variant.category)?.category,
+    releaseDate: consolidatedVariants.find((variant) => variant.releaseDate)?.releaseDate ?? '',
+    tags: Array.from(new Set(consolidatedVariants.flatMap((variant) => variant.tags))).sort(),
+    isTemp: consolidatedVariants.some((variant) => variant.isTemp) || undefined,
+    isRare: consolidatedVariants.some((variant) => variant.isRare) || undefined,
+    isSeasonal: consolidatedVariants.some((variant) => variant.isSeasonal) || undefined,
+    isSpecialOffer: consolidatedVariants.some((variant) => variant.isSpecialOffer) || undefined,
+    retired: consolidatedVariants.some((variant) => variant.retired) || undefined,
     hasDA: false,
     hasDC: false,
     hasDM: false,
     hasFree: false,
     hasMerge: false,
     levelRange: '',
-    elements: Array.from(new Set(consolidatedVariants.flatMap(variant => variant.elements))),
+    elements: Array.from(new Set(consolidatedVariants.flatMap((variant) => variant.elements))),
   })
 
-  family.shared.description = allSame(descriptions) ? descriptions[0] ?? '' : ''
+  family.shared.description = allSame(descriptions) ? (descriptions[0] ?? '') : ''
   if (!family.shared.description) {
-    const firstDescription = consolidatedVariants.find(variant => variant.description)?.description
+    const firstDescription = consolidatedVariants.find(
+      (variant) => variant.description
+    )?.description
     family.shared.description = firstDescription ?? ''
   }
 
   if (family.familyName === 'Harmonized Cowbell') {
-    const binaryVariants = uniqueStrings(levelVariants.map(variant => variant.variantName))
-      .filter(variant => /^[01]+$/.test(variant))
+    const binaryVariants = uniqueStrings(
+      levelVariants.map((variant) => variant.variantName)
+    ).filter((variant) => /^[01]+$/.test(variant))
     if (binaryVariants.length >= 2) {
       family.levelRange = `${binaryVariants[0]}-${binaryVariants.at(-1)}`
     }
@@ -1211,18 +1406,21 @@ function buildAccessoryFamily(
   return family
 }
 
-async function buildAccessoryOrFamily(stub: AccessoryStub, cookie: string): Promise<AccessoryEntry> {
+async function buildAccessoryOrFamily(
+  stub: AccessoryStub,
+  cookie: string,
+  resolveAlsoSee: AccessoryRefResolver
+): Promise<AccessoryEntry> {
   const hasExplicitThreadHint = hasMultipleVersionHint(stub.name)
   const shouldInspectThread = hasExplicitThreadHint || shouldInspectThreadForSubtype(stub.subtype)
   if (shouldInspectThread) {
-    const threadHtml = await withRetry(
-      `thread ${stub.messageId}`,
-      () => fetchForumThreadPages(stub.messageId, cookie)
+    const threadHtml = await withRetry(`thread ${stub.messageId}`, () =>
+      fetchForumThreadPages(stub.messageId, cookie)
     )
     const threadPosts = extractThreadPostContents(threadHtml)
     const variants: Accessory[] = []
     const strategy = getAccessorySubtypeStrategy(stub.subtype)
-    const messageHtml = threadPosts.map(post => post.html).join('\n')
+    const messageHtml = threadPosts.map((post) => post.html).join('\n')
     const fallbackImages = strategy.shouldExtractImages({ name: stub.name, subtype: stub.subtype })
       ? extractAccessoryImages(messageHtml)
       : {}
@@ -1239,10 +1437,15 @@ async function buildAccessoryOrFamily(stub: AccessoryStub, cookie: string): Prom
       if (!title) continue
 
       const variant = await enrichAccessoryAbility(
-        buildAccessoryEntry(stub, html, {
-          name: title,
-          forumUrl: post.sourceUrl,
-        }),
+        buildAccessoryEntry(
+          stub,
+          html,
+          resolveAlsoSee,
+          {
+            name: title,
+            forumUrl: post.sourceUrl,
+          }
+        ),
         cookie
       )
 
@@ -1269,7 +1472,12 @@ async function buildAccessoryOrFamily(stub: AccessoryStub, cookie: string): Prom
       ? `${title} (Retired)`
       : title
   const entry = await enrichAccessoryAbility(
-    buildAccessoryEntry(stub, html, resolvedTitle ? { name: resolvedTitle } : undefined),
+    buildAccessoryEntry(
+      stub,
+      html,
+      resolveAlsoSee,
+      resolvedTitle ? { name: resolvedTitle } : undefined
+    ),
     cookie
   )
   const strategy = getAccessorySubtypeStrategy(stub.subtype)
@@ -1283,16 +1491,19 @@ async function buildAccessoryOrFamily(stub: AccessoryStub, cookie: string): Prom
     !entry.imageUrl &&
     !entry.alternativeImages?.length
   ) {
-    const threadHtml = await withRetry(
-      `thread ${stub.messageId}`,
-      () => fetchForumThreadPages(stub.messageId, cookie)
+    const threadHtml = await withRetry(`thread ${stub.messageId}`, () =>
+      fetchForumThreadPages(stub.messageId, cookie)
     )
-    const messageHtml = extractThreadPostContents(threadHtml).map(post => post.html).join('\n')
+    const messageHtml = extractThreadPostContents(threadHtml)
+      .map((post) => post.html)
+      .join('\n')
     const fallbackImages = extractAccessoryImages(messageHtml)
     return {
       ...entry,
       ...(fallbackImages.imageUrl ? { imageUrl: fallbackImages.imageUrl } : {}),
-      ...(fallbackImages.alternativeImages ? { alternativeImages: fallbackImages.alternativeImages } : {}),
+      ...(fallbackImages.alternativeImages
+        ? { alternativeImages: fallbackImages.alternativeImages }
+        : {}),
     }
   }
 
@@ -1335,7 +1546,9 @@ function extractReplyPostContent(html: string, messageId: string): string {
 
 async function fetchPostContent(messageId: string, cookie: string): Promise<string> {
   try {
-    return getPostContent(await withRetry(`printable ${messageId}`, () => fetchPrintable(messageId, cookie)))
+    return getPostContent(
+      await withRetry(`printable ${messageId}`, () => fetchPrintable(messageId, cookie))
+    )
   } catch (error) {
     if (!(error instanceof Error) || !/HTTP 500/i.test(error.message)) {
       throw error
@@ -1376,7 +1589,7 @@ function parseAccessoryIndex(html: string): AccessoryStub[] {
     }
   }
 
-  return refs.map(ref => ({
+  return refs.map((ref) => ({
     name: '',
     forumUrl: '',
     messageId: ref.messageId,
@@ -1405,7 +1618,9 @@ function parseSubtypePage(html: string, subtype: AccessorySubtype): AccessoryStu
   const stubs: AccessoryStub[] = []
   const seen = new Set<string>()
 
-  for (const match of content.matchAll(/<a[^>]+href="([^"]*tm\.asp\?m=(\d+)[^"]*)"[^>]*>([\s\S]*?)<\/a>/gi)) {
+  for (const match of content.matchAll(
+    /<a[^>]+href="([^"]*tm\.asp\?m=(\d+)[^"]*)"[^>]*>([\s\S]*?)<\/a>/gi
+  )) {
     const href = match[1]
     const messageId = match[2]
     const name = decodeHtml(match[3].replace(/<[^>]+>/g, '')).trim()
@@ -1413,14 +1628,18 @@ function parseSubtypePage(html: string, subtype: AccessorySubtype): AccessoryStu
     if (!name) continue
     if (/^\([A-Z]-[A-Z]\)$/i.test(name)) continue
     if (/^A-Z\s+.*\bSkills\b/i.test(name)) continue
-    if (/\bSkills\b/i.test(name) && !/\(All Versions\)|\([IVX, -]+\)|\bSkillstone\b/i.test(name)) continue
-    if (/(?:Artifacts|Belts|Bracers|Capes\s*&\s*Wings|Helms|Necklaces|Rings|Trinkets)\s+\(A-Z\)/i.test(name)) continue
+    if (/\bSkills\b/i.test(name) && !/\(All Versions\)|\([IVX, -]+\)|\bSkillstone\b/i.test(name))
+      continue
+    if (
+      /(?:Artifacts|Belts|Bracers|Capes\s*&\s*Wings|Helms|Necklaces|Rings|Trinkets)\s+\(A-Z\)/i.test(
+        name
+      )
+    )
+      continue
     if (seen.has(messageId)) continue
     seen.add(messageId)
 
-    const forumUrl = href.startsWith('http')
-      ? href
-      : `${FORUM_BASE}/${href.replace(/^\.\//, '')}`
+    const forumUrl = href.startsWith('http') ? href : `${FORUM_BASE}/${href.replace(/^\.\//, '')}`
 
     stubs.push({
       name,
@@ -1441,32 +1660,38 @@ function writeDatasets(
   for (const meta of ACCESSORY_SUBTYPES) {
     if (!selectedSubtypes.has(meta.subtype)) continue
     let entries = entriesBySubtype.get(meta.subtype) ?? []
+    const dataFiles = getAccessoryDataFiles(meta)
 
     if (lettersArg && lettersArg.length > 0) {
-      const filePath = path.resolve(OUTPUT_DIR, meta.dataFile)
-      const existingEntries = fs.existsSync(filePath)
-        ? (JSON.parse(fs.readFileSync(filePath, 'utf-8')) as AccessoryEntry[])
-        : []
+      const existingEntries = dataFiles.flatMap((dataFile) => {
+        const filePath = path.resolve(OUTPUT_DIR, dataFile)
+        return fs.existsSync(filePath)
+          ? (JSON.parse(fs.readFileSync(filePath, 'utf-8')) as AccessoryEntry[])
+          : []
+      })
       const excludedInitials = new Set(lettersArg)
       const preservedEntries = existingEntries.filter(
-        entry => !excludedInitials.has(getInitialForName(getEntryDisplayName(entry)))
+        (entry) => !excludedInitials.has(getInitialForName(getEntryDisplayName(entry)))
       )
       entries = [...preservedEntries, ...entries]
     }
 
-    entries = Array.from(new Map(entries.map(entry => [entry.slug, entry])).values())
+    entries = Array.from(new Map(entries.map((entry) => [entry.slug, entry])).values())
 
     entries.sort((a, b) => {
       const aName = getEntryDisplayName(a)
       const bName = getEntryDisplayName(b)
-      return aName.localeCompare(bName)
+      return compareTitles(aName, bName)
     })
 
-    fs.writeFileSync(
-      path.resolve(OUTPUT_DIR, meta.dataFile),
-      `${JSON.stringify(entries, null, 2)}\n`,
-      'utf-8'
-    )
+    for (const dataFile of dataFiles) {
+      const fileEntries = entries.filter((entry) => entryBelongsInDataFile(entry, dataFile))
+      fs.writeFileSync(
+        path.resolve(OUTPUT_DIR, dataFile),
+        `${JSON.stringify(fileEntries, null, 2)}\n`,
+        'utf-8'
+      )
+    }
   }
 }
 
@@ -1479,10 +1704,10 @@ async function main() {
   const indexHtml = await fetchPage(ACCESSORIES_INDEX_URL, cookie)
   const subtypeRefs = parseAccessoryIndex(indexHtml)
   const selectedSubtypes = subtypesArg
-    ? new Set(subtypesArg.split(',').map(value => value.trim() as AccessorySubtype))
+    ? new Set(subtypesArg.split(',').map((value) => value.trim() as AccessorySubtype))
     : subtypeArg
       ? new Set<AccessorySubtype>([subtypeArg])
-      : new Set<AccessorySubtype>(ACCESSORY_SUBTYPES.map(meta => meta.subtype))
+      : new Set<AccessorySubtype>(ACCESSORY_SUBTYPES.map((meta) => meta.subtype))
   const allStubs: AccessoryStub[] = []
 
   for (const ref of subtypeRefs) {
@@ -1493,20 +1718,20 @@ async function main() {
     await sleep(250)
   }
 
-  const filteredStubs = allStubs.filter(stub => {
+  const filteredStubs = allStubs.filter((stub) => {
     if (!selectedSubtypes.has(stub.subtype)) return false
     if (!lettersArg || lettersArg.length === 0) return true
-    const initial = /^[A-Z]/i.test(stub.name) ? stub.name[0].toUpperCase() : '#'
-    return lettersArg.includes(initial)
+    return lettersArg.includes(getInitialForName(stub.name))
   })
+  const resolveAlsoSee = createAccessoryRefResolver(allStubs)
   const entriesBySubtype = new Map<AccessorySubtype, AccessoryEntry[]>(
-    ACCESSORY_SUBTYPES.map(meta => [meta.subtype, []])
+    ACCESSORY_SUBTYPES.map((meta) => [meta.subtype, []])
   )
 
   for (let index = 0; index < filteredStubs.length; index++) {
     const stub = filteredStubs[index]
     console.log(`[${index + 1}/${filteredStubs.length}] ${stub.name} (${stub.subtype})`)
-    const entry = await buildAccessoryOrFamily(stub, cookie)
+    const entry = await buildAccessoryOrFamily(stub, cookie, resolveAlsoSee)
     entriesBySubtype.get(stub.subtype)?.push(entry)
     await sleep(DELAY_MS)
   }
@@ -1520,7 +1745,7 @@ async function main() {
 }
 
 if (import.meta.main) {
-  main().catch(error => {
+  main().catch((error) => {
     console.error('❌ scrape-accessories failed:', error instanceof Error ? error.message : error)
     process.exit(1)
   })

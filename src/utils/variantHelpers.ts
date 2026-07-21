@@ -1,27 +1,27 @@
 /**
  * Variant Helper Utilities
- * 
+ *
  * Utility functions for working with multi-variant items, including price type
  * computation, family flag derivation, level normalization, and roman numeral parsing.
  */
 
 import type { ItemFamily, ItemType, LevelVariant, PriceType } from '../types/item'
-import { normalizeDisplayText } from './displayText'
+import { displayTitle, normalizeDisplayText } from './displayText'
 
 /**
  * Compute price type from price string and required items.
- * 
+ *
  * Logic:
  * - free: "N/A", "0 Gold", or "Free" with NO required items
  * - merge: "N/A" but HAS required items (merge shop)
  * - dc: Contains "Dragon Coin" or forum shorthand like "DC"
  * - dm: Contains "Defender's Medal" or forum shorthand like "DM"
  * - gold: Default (anything else)
- * 
+ *
  * @param price - Price string from forum post
  * @param requiredItems - Optional required items string
  * @returns Computed price type
- * 
+ *
  * @example
  * computePriceType("N/A", undefined) // "free"
  * computePriceType("N/A", "1 Prince Linus") // "merge"
@@ -30,49 +30,49 @@ import { normalizeDisplayText } from './displayText'
  */
 export function computePriceType(price: string, requiredItems?: string): PriceType {
   const p = price.toLowerCase().trim()
-  
+
   // Free: "N/A", "0 Gold", "Free" with NO required items
   // Examples: Goldfish Knight I-VII (free option), quest reward pets
   if ((p === 'n/a' || p === '0 gold' || p === 'free') && !requiredItems) {
     return 'free'
   }
-  
+
   // Merge: "N/A" but HAS required items
   // Examples: DM shop pets (price N/A but requires medals), crafted items
   if (p === 'n/a' && requiredItems) {
     return 'merge'
   }
-  
+
   // DC
   // Examples: Goldfish Knight I-VII (DC option: 150 Dragon Coins)
   if (p.includes('dragon coin') || p.includes(' dc')) {
     return 'dc'
   }
-  
+
   // DM
   if (p.includes("defender's medal") || p.includes('defender medal') || p.includes(' dm')) {
     return 'dm'
   }
-  
+
   // Default to gold
   return 'gold'
 }
 
 /**
  * Compute family-level flags from all variants.
- * 
+ *
  * Scans through all level variants and all obtain variants to determine which
  * access methods exist. These flags are used for filtering in the UI.
- * 
+ *
  * Important: An item can have multiple flags true simultaneously.
  * Example: Goldfish Knight has hasDA=true, hasDC=true, hasFree=true because:
  * - Free option at IV-VII requires DA (hasDA)
  * - DC purchase option exists (hasDC)
  * - Free option exists at all levels (hasFree)
- * 
+ *
  * @param family - ItemFamily object (must have levelVariants populated)
  * @returns Updated ItemFamily with computed flags
- * 
+ *
  * @example
  * const family = {
  *   ...baseData,
@@ -98,7 +98,7 @@ export function computeFamilyFlags<T extends ItemFamily>(family: T): T {
   let hasFree = false
   let hasMerge = false
   const elementSet = new Set<string>(family.elements)
-  
+
   // Scan all level variants and their obtain variants
   for (const levelVariant of family.levelVariants) {
     // Check element (use level-specific or fallback to shared)
@@ -106,7 +106,7 @@ export function computeFamilyFlags<T extends ItemFamily>(family: T): T {
     if (element) {
       elementSet.add(element)
     }
-    
+
     // Check each obtain variant's flags and price type
     for (const obtainVariant of levelVariant.obtainVariants) {
       if (obtainVariant.daRequired) hasDA = true
@@ -116,7 +116,7 @@ export function computeFamilyFlags<T extends ItemFamily>(family: T): T {
       if (obtainVariant.priceType === 'merge') hasMerge = true
     }
   }
-  
+
   // Compute level range
   const firstVariant = family.levelVariants[0]
   const lastVariant = family.levelVariants.at(-1)
@@ -130,12 +130,12 @@ export function computeFamilyFlags<T extends ItemFamily>(family: T): T {
   const romanVariantRange = Array.from(
     new Set(
       family.levelVariants
-        .map(levelVariant => levelVariant.variantName?.trim())
+        .map((levelVariant) => levelVariant.variantName?.trim())
         .filter((variantName): variantName is string => Boolean(variantName))
-        .filter(variantName => parseRomanNumeral(variantName.toUpperCase()) !== null)
+        .filter((variantName) => parseRomanNumeral(variantName.toUpperCase()) !== null)
     )
   )
-  
+
   // For multi-post families (Baron (Kitten, Cat)), don't add range suffix — name already contains variants
   let levelRange: string
   if (romanVariantRange.length >= 2) {
@@ -145,16 +145,15 @@ export function computeFamilyFlags<T extends ItemFamily>(family: T): T {
     const variantMatch = family.familyName.match(/\(([^)]+)\)/)
     const variantLabel = variantMatch?.[1]?.trim()
     levelRange =
-      variantLabel && /,/.test(variantLabel)
-        ? variantLabel
-        : `${firstLevel}-${lastLevel}`
+      variantLabel && /,/.test(variantLabel) ? variantLabel : `${firstLevel}-${lastLevel}`
   } else {
     // Standard range notation
-    levelRange = firstLevel === lastLevel || family.levelVariants.length === 1
-      ? firstLevel
-      : `${firstLevel}-${lastLevel}`
+    levelRange =
+      firstLevel === lastLevel || family.levelVariants.length === 1
+        ? firstLevel
+        : `${firstLevel}-${lastLevel}`
   }
-  
+
   return {
     ...family,
     hasDA,
@@ -169,12 +168,12 @@ export function computeFamilyFlags<T extends ItemFamily>(family: T): T {
 
 /**
  * Parse roman numeral (I-X) or numeric string to number.
- * 
+ *
  * Used for level normalization and URL param parsing.
- * 
+ *
  * @param level - Level string (roman or numeric)
  * @returns Parsed level object with number and original display
- * 
+ *
  * @example
  * normalizeLevel("IV") // { number: 4, display: "IV" }
  * normalizeLevel("7") // { number: 7, display: "7" }
@@ -183,31 +182,31 @@ export function computeFamilyFlags<T extends ItemFamily>(family: T): T {
 export function normalizeLevel(level: string): { number: number; display: string } {
   const trimmed = level.trim()
   const upper = trimmed.toUpperCase()
-  
+
   // Try roman numeral first
   const romanValue = parseRomanNumeral(upper)
   if (romanValue !== null) {
     return { number: romanValue, display: trimmed }
   }
-  
+
   // Try numeric
   const numericValue = parseInt(trimmed, 10)
   if (!isNaN(numericValue)) {
     return { number: numericValue, display: trimmed }
   }
-  
+
   // Fallback
   return { number: 1, display: trimmed }
 }
 
 /**
  * Parse roman numeral I-X to number.
- * 
+ *
  * Supports I (1) through X (10). Returns null if not a valid roman numeral.
- * 
+ *
  * @param s - Roman numeral string (uppercase)
  * @returns Number value or null
- * 
+ *
  * @example
  * parseRomanNumeral("I") // 1
  * parseRomanNumeral("IV") // 4
@@ -247,24 +246,21 @@ export function parseRomanNumeral(s: string): number | null {
 
 /**
  * Check if an item family is a single-variant item.
- * 
+ *
  * Single-variant items have only 1 level and 1 obtain method. These items
  * display without the level stats table or level selector (backward compatible
  * with existing Pet display).
- * 
+ *
  * @param family - ItemFamily object
  * @returns True if single-variant (1 level, ≤1 obtain method)
- * 
+ *
  * @example
  * isSingleVariant({ levelVariants: [{ obtainVariants: [{}] }] }) // true
  * isSingleVariant({ levelVariants: [{ obtainVariants: [{}, {}] }] }) // false
  * isSingleVariant({ levelVariants: [{}, {}] }) // false
  */
 export function isSingleVariant(family: ItemFamily): boolean {
-  return (
-    family.levelVariants.length === 1 &&
-    family.levelVariants[0].obtainVariants.length <= 1
-  )
+  return family.levelVariants.length === 1 && family.levelVariants[0].obtainVariants.length <= 1
 }
 
 /**
@@ -277,21 +273,25 @@ export function hasSameLevelVariants(family: ItemFamily): boolean {
   if (family.levelVariants.length <= 1) return false
 
   const levels = new Set(
-    family.levelVariants.map(levelVariant => String(levelVariant.actualLevel ?? levelVariant.levelDisplay))
+    family.levelVariants.map((levelVariant) =>
+      String(levelVariant.actualLevel ?? levelVariant.levelDisplay)
+    )
   )
 
   return levels.size === 1
 }
 
 function stripAccessVariantSuffix(name: string): string {
-  return name.replace(/\s+\((?:D-Coins?|DC|D-Amulet|DA|D-Amulet\/D-Coins|D-Amulet\/DC|DA\/DC|Resource|Normal)\)$/i, '').trim()
+  return name
+    .replace(
+      /\s+\((?:D-Coins?|DC|D-Amulet|DA|D-Amulet\/D-Coins|D-Amulet\/DC|DA\/DC|Resource|Normal)\)$/i,
+      ''
+    )
+    .trim()
 }
 
 function tokenizeVariantName(name: string): string[] {
-  return normalizeDisplayText(name)
-    .replace(/[()]/g, ' ')
-    .split(/\s+/)
-    .filter(Boolean)
+  return normalizeDisplayText(name).replace(/[()]/g, ' ').split(/\s+/).filter(Boolean)
 }
 
 function tokenizeFamilyComparisonName(name: string): string[] {
@@ -304,24 +304,26 @@ function tokenizeFamilyComparisonName(name: string): string[] {
 
 function titleCaseTokens(tokens: string[]): string {
   return tokens
-    .map(token => token.replace(/\b\w/g, character => character.toUpperCase()))
+    .map((token) => token.replace(/\b\w/g, (character) => character.toUpperCase()))
     .join(' ')
 }
 
 export function getDisplayFamilyName(family: ItemFamily): string {
-  if (family.familyOrigin !== 'cross-post') return family.familyName
+  if (family.familyOrigin !== 'cross-post') return displayTitle(family.familyName)
 
-  const tokenSets = family.levelVariants.map(level => tokenizeFamilyComparisonName(stripAccessVariantSuffix(level.name)))
-  if (tokenSets.length === 0) return family.familyName
+  const tokenSets = family.levelVariants.map((level) =>
+    tokenizeFamilyComparisonName(stripAccessVariantSuffix(level.name))
+  )
+  if (tokenSets.length === 0) return displayTitle(family.familyName)
 
-  const reversed = tokenSets.map(tokens => [...tokens].reverse())
+  const reversed = tokenSets.map((tokens) => [...tokens].reverse())
   const suffix: string[] = []
   let index = 0
 
   while (true) {
     const candidate = reversed[0][index]
     if (!candidate) break
-    if (reversed.every(tokens => tokens[index]?.toLowerCase() === candidate.toLowerCase())) {
+    if (reversed.every((tokens) => tokens[index]?.toLowerCase() === candidate.toLowerCase())) {
       suffix.unshift(candidate)
       index += 1
       continue
@@ -329,29 +331,31 @@ export function getDisplayFamilyName(family: ItemFamily): string {
     break
   }
 
-  return suffix.length > 0 ? titleCaseTokens(suffix) : family.familyName
+  return displayTitle(suffix.length > 0 ? titleCaseTokens(suffix) : family.familyName)
 }
 
 function getParentheticalVariantBaseName(familyName: string): string | undefined {
   return getParentheticalVariantParts(familyName)?.baseName
 }
 
-function getParentheticalVariantParts(familyName: string): { baseName: string; variants: string[] } | undefined {
+function getParentheticalVariantParts(
+  familyName: string
+): { baseName: string; variants: string[] } | undefined {
   const match = familyName.match(/^(.*?)\s*\(([^)]+)\)\s*$/)
   if (!match) return undefined
 
   const variants = match[2]
     .split(',')
-    .map(value => value.trim())
+    .map((value) => value.trim())
     .filter(Boolean)
   if (variants.length === 0) return undefined
 
   const knownVariantTerms = new Set(['mask', 'head', 'helm', 'hood', 'cowl'])
-  if (!variants.every(variant => knownVariantTerms.has(variant.toLowerCase()))) return undefined
+  if (!variants.every((variant) => knownVariantTerms.has(variant.toLowerCase()))) return undefined
 
   return {
     baseName: normalizeDisplayText(match[1]),
-    variants: variants.map(variant => normalizeDisplayText(variant)),
+    variants: variants.map((variant) => normalizeDisplayText(variant)),
   }
 }
 
@@ -384,16 +388,18 @@ function getCondensedTitleVariant(levelName: string, familyName: string): string
     }
 
     if (normalizedLevelName.endsWith(` ${parentheticalBaseName}`)) {
-      return normalizedLevelName.slice(0, normalizedLevelName.length - parentheticalBaseName.length).trim()
+      return normalizedLevelName
+        .slice(0, normalizedLevelName.length - parentheticalBaseName.length)
+        .trim()
     }
   }
 
-  const familyTokens = tokenizeVariantName(familyName).map(token => token.toLowerCase())
+  const familyTokens = tokenizeVariantName(familyName).map((token) => token.toLowerCase())
   const levelTokens = tokenizeVariantName(normalizedLevelName)
   const remainingTokens = [...levelTokens]
 
   for (const familyToken of familyTokens) {
-    const index = remainingTokens.findIndex(token => token.toLowerCase() === familyToken)
+    const index = remainingTokens.findIndex((token) => token.toLowerCase() === familyToken)
     if (index >= 0) remainingTokens.splice(index, 1)
   }
 
@@ -405,7 +411,7 @@ function getCondensedTitleVariant(levelName: string, familyName: string): string
 }
 
 export function hasTitleDrivenVariantNames(levels: LevelVariant[], familyName: string): boolean {
-  return levels.some(level => stripAccessVariantSuffix(level.name) !== familyName)
+  return levels.some((level) => stripAccessVariantSuffix(level.name) !== familyName)
 }
 
 function extractNumericFamilyVariant(name: string, familyName?: string): string | undefined {
@@ -432,9 +438,13 @@ function getLevelVariantLabelInfo(
   itemType?: ItemType
 ): LevelVariantLabelInfo {
   const levelLabel = String(level.actualLevel ?? level.levelDisplay)
-  const hasDC = level.obtainVariants.some(variant => variant.dcRequired || variant.priceType === 'dc')
-  const hasDA = level.obtainVariants.some(variant => variant.daRequired)
-  const normalizedVariantName = level.variantName ? normalizeDisplayText(level.variantName) : undefined
+  const hasDC = level.obtainVariants.some(
+    (variant) => variant.dcRequired || variant.priceType === 'dc'
+  )
+  const hasDA = level.obtainVariants.some((variant) => variant.daRequired)
+  const normalizedVariantName = level.variantName
+    ? normalizeDisplayText(level.variantName)
+    : undefined
 
   if (familyName === 'Harmonized Cowbell' && normalizedVariantName) {
     return { label: normalizedVariantName, canAddLevelSuffix: false, levelLabel, hasDC, hasDA }
@@ -465,7 +475,10 @@ function getLevelVariantLabelInfo(
     }
   }
 
-  if (normalizedVariantName && parseRomanNumeral(normalizedVariantName.trim().toUpperCase()) !== null) {
+  if (
+    normalizedVariantName &&
+    parseRomanNumeral(normalizedVariantName.trim().toUpperCase()) !== null
+  ) {
     return {
       label: normalizedVariantName,
       canAddLevelSuffix: true,
@@ -489,10 +502,11 @@ function getLevelVariantLabelInfo(
         }
       }
 
-      const matchingVariant = parentheticalVariant.variants.find(variant =>
-        normalizedLevelName === `${parentheticalVariant.baseName} ${variant}` ||
-        normalizedLevelName.replace(/\s+/g, '').toLowerCase() ===
-          `${parentheticalVariant.baseName}${variant}`.replace(/\s+/g, '').toLowerCase()
+      const matchingVariant = parentheticalVariant.variants.find(
+        (variant) =>
+          normalizedLevelName === `${parentheticalVariant.baseName} ${variant}` ||
+          normalizedLevelName.replace(/\s+/g, '').toLowerCase() ===
+            `${parentheticalVariant.baseName}${variant}`.replace(/\s+/g, '').toLowerCase()
       )
       if (matchingVariant) {
         return {
@@ -566,21 +580,26 @@ function getLevelVariantLabelInfo(
 }
 
 function normalizeComparableValue(value?: string): string {
-  return normalizeDisplayText(value ?? '').replace(/\s+/g, ' ').trim().toLowerCase()
+  return normalizeDisplayText(value ?? '')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .toLowerCase()
 }
 
 function hasDifferentObtainMethods(first: LevelVariant, second: LevelVariant): boolean {
   const serialize = (level: LevelVariant) =>
     level.obtainVariants
-      .map(variant => [
-        normalizeComparableValue(variant.location),
-        normalizeComparableValue(variant.price),
-        variant.priceType,
-        String(variant.daRequired),
-        String(Boolean(variant.dcRequired)),
-        String(Boolean(variant.dmRequired)),
-        normalizeComparableValue(variant.requiredItems),
-      ].join('|'))
+      .map((variant) =>
+        [
+          normalizeComparableValue(variant.location),
+          normalizeComparableValue(variant.price),
+          variant.priceType,
+          String(variant.daRequired),
+          String(Boolean(variant.dcRequired)),
+          String(Boolean(variant.dmRequired)),
+          normalizeComparableValue(variant.requiredItems),
+        ].join('|')
+      )
       .sort()
       .join('||')
 
@@ -588,10 +607,13 @@ function hasDifferentObtainMethods(first: LevelVariant, second: LevelVariant): b
 }
 
 function hasSameDisplayedLevelAndStats(first: LevelVariant, second: LevelVariant): boolean {
-  return String(first.actualLevel ?? first.levelDisplay) === String(second.actualLevel ?? second.levelDisplay) &&
+  return (
+    String(first.actualLevel ?? first.levelDisplay) ===
+      String(second.actualLevel ?? second.levelDisplay) &&
     normalizeComparableValue(first.damage) === normalizeComparableValue(second.damage) &&
     normalizeComparableValue(first.stats) === normalizeComparableValue(second.stats) &&
     normalizeComparableValue(first.resists) === normalizeComparableValue(second.resists)
+  )
 }
 
 function shouldAddLevelSuffixForDuplicate(
@@ -602,53 +624,49 @@ function shouldAddLevelSuffixForDuplicate(
   const label = labels[index]
   if (!label.canAddLevelSuffix) return false
 
-  return labels.some((otherLabel, otherIndex) =>
-    otherIndex !== index &&
-    otherLabel.label === label.label &&
-    hasSameDisplayedLevelAndStats(levels[index], levels[otherIndex]) &&
-    hasDifferentObtainMethods(levels[index], levels[otherIndex])
+  return labels.some(
+    (otherLabel, otherIndex) =>
+      otherIndex !== index &&
+      otherLabel.label === label.label &&
+      hasSameDisplayedLevelAndStats(levels[index], levels[otherIndex]) &&
+      hasDifferentObtainMethods(levels[index], levels[otherIndex])
   )
 }
 
 function getAccessDuplicateSuffix(
-  levels: LevelVariant[],
   labels: LevelVariantLabelInfo[],
   index: number
 ): 'DC' | 'DA' | undefined {
   const label = labels[index]
 
-  const duplicateLabels = labels.filter((otherLabel, otherIndex) =>
-    otherIndex !== index &&
-      otherLabel.label === label.label &&
-      hasSameDisplayedLevelAndStats(levels[index], levels[otherIndex]) &&
-      hasDifferentObtainMethods(levels[index], levels[otherIndex])
+  const duplicateLabels = labels.filter(
+    (otherLabel, otherIndex) => otherIndex !== index && otherLabel.label === label.label
   )
 
   if (duplicateLabels.length === 0) return undefined
-  if (!label.hasDC && !label.hasDA && duplicateLabels.every(otherLabel => !otherLabel.hasDC && !otherLabel.hasDA)) {
+  if (
+    !label.hasDC &&
+    !label.hasDA &&
+    duplicateLabels.every((otherLabel) => !otherLabel.hasDC && !otherLabel.hasDA)
+  ) {
     return undefined
   }
 
   if (label.hasDC) return 'DC'
-  if (duplicateLabels.some(otherLabel => otherLabel.hasDC)) return undefined
+  if (duplicateLabels.some((otherLabel) => otherLabel.hasDC)) return undefined
   if (label.hasDA) return 'DA'
 
   return undefined
 }
 
-function hasAccessDisambiguatedDuplicate(
-  levels: LevelVariant[],
-  labels: LevelVariantLabelInfo[],
-  index: number
-): boolean {
+function hasAccessDisambiguatedDuplicate(labels: LevelVariantLabelInfo[], index: number): boolean {
   const label = labels[index]
 
-  return labels.some((otherLabel, otherIndex) =>
-    otherIndex !== index &&
+  return labels.some(
+    (otherLabel, otherIndex) =>
+      otherIndex !== index &&
       otherLabel.label === label.label &&
-      (label.hasDC || label.hasDA || otherLabel.hasDC || otherLabel.hasDA) &&
-      hasSameDisplayedLevelAndStats(levels[index], levels[otherIndex]) &&
-      hasDifferentObtainMethods(levels[index], levels[otherIndex])
+      (label.hasDC || label.hasDA || otherLabel.hasDC || otherLabel.hasDA)
   )
 }
 
@@ -663,8 +681,10 @@ function shouldUseCompactDcOnlyLabel(
   if (firstLabel.hasDC === secondLabel.hasDC) return false
   if (firstLabel.hasDA || secondLabel.hasDA) return false
 
-  return hasSameDisplayedLevelAndStats(levels[0], levels[1]) &&
+  return (
+    hasSameDisplayedLevelAndStats(levels[0], levels[1]) &&
     hasDifferentObtainMethods(levels[0], levels[1])
+  )
 }
 
 export function getLevelVariantLabels(
@@ -673,16 +693,18 @@ export function getLevelVariantLabels(
   itemType?: ItemType
 ): string[] {
   const useTitleLabels = familyName ? hasTitleDrivenVariantNames(levels, familyName) : false
-  const labels = levels.map(level => getLevelVariantLabelInfo(level, familyName, useTitleLabels, itemType))
+  const labels = levels.map((level) =>
+    getLevelVariantLabelInfo(level, familyName, useTitleLabels, itemType)
+  )
   const useCompactDcOnlyLabel = shouldUseCompactDcOnlyLabel(levels, labels)
 
   return labels.map((label, index) => {
     if (useCompactDcOnlyLabel && label.hasDC) return '(DC)'
-    const accessDuplicateSuffix = getAccessDuplicateSuffix(levels, labels, index)
+    const accessDuplicateSuffix = getAccessDuplicateSuffix(labels, index)
     if (accessDuplicateSuffix) {
       return `${label.label} (${accessDuplicateSuffix})`
     }
-    if (hasAccessDisambiguatedDuplicate(levels, labels, index)) return label.label
+    if (hasAccessDisambiguatedDuplicate(labels, index)) return label.label
     if (!shouldAddLevelSuffixForDuplicate(levels, labels, index)) return label.label
     return `${label.label} (${label.levelLabel})`
   })
@@ -710,9 +732,9 @@ export function shouldHideVariantColumn(
     const level = levels[index]
     return label === String(level.actualLevel ?? level.levelDisplay)
   })
-  const hasDuplicateLevels = new Set(
-    levels.map(level => String(level.actualLevel ?? level.levelDisplay))
-  ).size !== levels.length
+  const hasDuplicateLevels =
+    new Set(levels.map((level) => String(level.actualLevel ?? level.levelDisplay))).size !==
+    levels.length
 
   if (redundantExact && !hasDuplicateLevels) return true
 
@@ -725,7 +747,7 @@ export function shouldShowVariantColumn(
   itemType?: ItemType,
   hideVariantColumn: boolean = false
 ): boolean {
-  const hasVariantNames = levels.some(level => Boolean(level.variantName))
+  const hasVariantNames = levels.some((level) => Boolean(level.variantName))
   const useTitleLabels = familyName ? hasTitleDrivenVariantNames(levels, familyName) : false
   const hasRedundantVariantColumn = shouldHideVariantColumn(levels, familyName, itemType)
 
@@ -735,16 +757,18 @@ export function shouldShowVariantColumn(
 export function shouldUseSplitVariantRows(levels: LevelVariant[]): boolean {
   if (levels.length < 8) return false
 
-  const dcLevels = levels.filter(level =>
-    level.obtainVariants.some(variant => variant.dcRequired || variant.priceType === 'dc')
+  const dcLevels = levels.filter((level) =>
+    level.obtainVariants.some((variant) => variant.dcRequired || variant.priceType === 'dc')
   )
   if (dcLevels.length === 0 || dcLevels.length === levels.length) return false
 
-  const nonDcLevels = levels.filter(level => !dcLevels.includes(level))
-  const nonDcKeys = new Set(nonDcLevels.map(level => String(level.actualLevel ?? level.levelDisplay)))
-  const dcKeys = new Set(dcLevels.map(level => String(level.actualLevel ?? level.levelDisplay)))
+  const nonDcLevels = levels.filter((level) => !dcLevels.includes(level))
+  const nonDcKeys = new Set(
+    nonDcLevels.map((level) => String(level.actualLevel ?? level.levelDisplay))
+  )
+  const dcKeys = new Set(dcLevels.map((level) => String(level.actualLevel ?? level.levelDisplay)))
 
-  return nonDcKeys.size === dcKeys.size && [...nonDcKeys].every(key => dcKeys.has(key))
+  return nonDcKeys.size === dcKeys.size && [...nonDcKeys].every((key) => dcKeys.has(key))
 }
 
 export function chunkVariantRows<T>(items: T[], maxPerRow: number = 8): T[][] {
@@ -762,5 +786,5 @@ export function chunkVariantRows<T>(items: T[], maxPerRow: number = 8): T[][] {
     start += size
   }
 
-  return rows.filter(row => row.length > 0)
+  return rows.filter((row) => row.length > 0)
 }

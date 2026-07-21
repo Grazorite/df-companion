@@ -33,15 +33,35 @@ import type {
   AlsoSeeRef,
   EntryType,
 } from '../src/types/pet.ts'
-import type { AlternativeImage, ItemFamily, LevelVariant, ObtainVariant } from '../src/types/item.ts'
-import { convertImageTags, extractThreadPostContents, fetchPrintable, fetchThreadPages, getPostContent, type ThreadPostContent } from './lib/printable-parser.ts'
-import { computeFamilyFlags, computePriceType, normalizeLevel } from '../src/utils/variantHelpers.ts'
-import { canonicalizePromotedRelationships, promoteCrossPostFamilies } from './lib/cross-post-family.ts'
+import type {
+  AlternativeImage,
+  ItemFamily,
+  LevelVariant,
+  ObtainVariant,
+} from '../src/types/item.ts'
+import {
+  convertImageTags,
+  extractThreadPostContents,
+  fetchPrintable,
+  fetchThreadPages,
+  getPostContent,
+  type ThreadPostContent,
+} from './lib/printable-parser.ts'
+import {
+  computeFamilyFlags,
+  computePriceType,
+  normalizeLevel,
+} from '../src/utils/variantHelpers.ts'
+import {
+  canonicalizePromotedRelationships,
+  promoteCrossPostFamilies,
+} from './lib/cross-post-family.ts'
 import { rephraseTimedSellback } from './lib/obtain-formatting.ts'
 import { repairAccessFlags } from './lib/access-flag-repair.ts'
+import { compareTitles } from '../src/utils/displayText.ts'
 
 const FORUM_BASE = 'https://forums2.battleon.com/f'
-const AZ_PETS_URL = `${FORUM_BASE}/tm.asp?m=22349620&mpage=1`  // A-Z Pets & Guests master page
+const AZ_PETS_URL = `${FORUM_BASE}/tm.asp?m=22349620&mpage=1` // A-Z Pets & Guests master page
 const CHRONOLOGY_URL = `${FORUM_BASE}/tm.asp?m=10738071`
 const DELAY_MS = 1000
 const OUTPUT_PATH = path.resolve(import.meta.dirname, '../src/data/guests.json')
@@ -50,25 +70,36 @@ const PROGRESS_PATH = path.resolve(import.meta.dirname, '../src/data/guests-prog
 // ─── CLI args ─────────────────────────────────────────────────────────────────
 
 const args = process.argv.slice(2)
-const startArg = args.find(a => a.startsWith('--start='))?.split('=')[1]?.toUpperCase()
-const letterArg = args.find(a => a.startsWith('--letter='))?.split('=')[1]?.toUpperCase()
-const lettersArg = args.find(a => a.startsWith('--letters='))?.split('=')[1]?.toUpperCase().split(',') // Support multiple: --letters=A,B
+const startArg = args
+  .find((a) => a.startsWith('--start='))
+  ?.split('=')[1]
+  ?.toUpperCase()
+const letterArg = args
+  .find((a) => a.startsWith('--letter='))
+  ?.split('=')[1]
+  ?.toUpperCase()
+const lettersArg = args
+  .find((a) => a.startsWith('--letters='))
+  ?.split('=')[1]
+  ?.toUpperCase()
+  .split(',') // Support multiple: --letters=A,B
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
 
 function sleep(ms: number): Promise<void> {
-  return new Promise(r => setTimeout(r, ms))
+  return new Promise((r) => setTimeout(r, ms))
 }
 
 async function fetchPage(url: string, cookie: string): Promise<string> {
   const controller = new AbortController()
-  const timer = setTimeout(() => controller.abort(), 45000)  // 45s timeout
+  const timer = setTimeout(() => controller.abort(), 45000) // 45s timeout
   try {
     const res = await fetch(url, {
       signal: controller.signal,
       headers: {
         Cookie: cookie,
-        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) Chrome/120.0.0.0 Safari/537.36',
+        'User-Agent':
+          'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) Chrome/120.0.0.0 Safari/537.36',
         Accept: 'text/html,application/xhtml+xml',
       },
     })
@@ -113,7 +144,11 @@ async function fetchGuestPostContent(messageId: string, cookie: string): Promise
 }
 
 function slugify(name: string): string {
-  return name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 120)
+  return name
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .slice(0, 120)
 }
 
 function prefixedSlug(name: string, type: EntryType): string {
@@ -126,8 +161,11 @@ function directForumPostUrl(_linkPath: string, messageId: string): string {
 
 function decodeHTML(str: string): string {
   return str
-    .replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>')
-    .replace(/&quot;/g, '"').replace(/&#39;/g, "'")
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
     .replace(/&#(\d+);/g, (_, n) => String.fromCharCode(Number(n)))
     .replace(/&nbsp;/g, ' ')
     .replace(/&apos;/g, "'")
@@ -142,12 +180,12 @@ function stripHtml(html: string): string {
   let iterations = 0
   let inTag = false
   let tagStart = -1
-  
+
   while (i < html.length && iterations < maxIterations) {
     iterations++
-    
+
     const char = html[i]
-    
+
     if (char === '<' && !inTag) {
       const nextChars = html.slice(i, i + 10)
       if (/^<[a-zA-Z!/]/.test(nextChars)) {
@@ -159,11 +197,11 @@ function stripHtml(html: string): string {
       i++
       continue
     }
-    
+
     if (char === '>' && inTag) {
       inTag = false
       const tagContent = html.slice(tagStart, i + 1)
-      
+
       if (tagContent.match(/<ul|<ol/i)) {
         depth++
         processed += '\n'
@@ -180,24 +218,24 @@ function stripHtml(html: string): string {
       } else if (tagContent.match(/<\/p/i)) {
         processed += '\n'
       }
-      
+
       i++
       continue
     }
-    
+
     if (inTag) {
       i++
       continue
     }
-    
+
     processed += char
     i++
   }
-  
+
   if (iterations >= maxIterations) {
     console.warn('⚠️  stripHtml reached iteration limit')
   }
-  
+
   return processed.replace(/\n{3,}/g, '\n\n').trim()
 }
 
@@ -260,80 +298,80 @@ function parseBracketCodes(raw: string): { elements: string[]; traits: string[] 
 function parseGuestStats(html: string, guestName: string): GuestStats {
   const DEBUG = process.env.DEBUG_STATS === '1'
   const stats: GuestStats = {}
-  
+
   if (DEBUG) console.log(`\n[DEBUG] Parsing stats for ${guestName}`)
-  
+
   // Extract Basic Info (Level, Damage, Damage Type, Element, HP, MP)
   const levelMatch = html.match(/(?:<b>)?Level:(?:<\/b>)?\s*([^<\n]+)/i)
   if (levelMatch) {
     stats.level = levelMatch[1].trim()
     if (DEBUG) console.log(`  Level: ${stats.level}`)
   }
-  
+
   const damageMatch = html.match(/(?:<b>)?Damage:(?:<\/b>)?\s*([^<\n]+)/i)
   if (damageMatch) {
     stats.damage = damageMatch[1].trim()
     if (DEBUG) console.log(`  Damage: ${stats.damage}`)
   }
-  
+
   const damageTypeMatch = html.match(/(?:<b>)?Damage Type:(?:<\/b>)?\s*(Melee|Magic|Pierce)/i)
   if (damageTypeMatch) {
     stats.damageType = damageTypeMatch[1] as 'Melee' | 'Magic' | 'Pierce'
     if (DEBUG) console.log(`  Damage Type: ${stats.damageType}`)
   }
-  
+
   const elementMatch = html.match(/(?:<b>)?Element:(?:<\/b>)?\s*([^<\n]+)/i)
   if (elementMatch) {
     stats.element = elementMatch[1].trim()
     if (DEBUG) console.log(`  Element: ${stats.element}`)
   }
-  
+
   const hpMatch = html.match(/(?:<b>)?HP:(?:<\/b>)?\s*([^<\n]+)/i)
   if (hpMatch) {
     stats.hp = hpMatch[1].trim()
     if (DEBUG) console.log(`  HP: ${stats.hp}`)
   }
-  
+
   const mpMatch = html.match(/(?:<b>)?MP:(?:<\/b>)?\s*([^<\n]+)/i)
   if (mpMatch) {
     stats.mp = mpMatch[1].trim()
     if (DEBUG) console.log(`  MP: ${stats.mp}`)
   }
-  
+
   // Parse Stats section (STR, DEX, INT, CHA, LUK, END, WIS) - may or may not have <b> tags
   const statsSection = html.match(/(?:<b>)?<u>Stats<\/u>(?:<\/b>)?([\s\S]*?)(?=<u>|<hr>|$)/i)
   if (statsSection) {
     if (DEBUG) console.log(`  Found Stats section`)
     const characterStats: GuestCharacterStats = {}
-    
+
     // Stats are plain text: "STR: 0" not "<b>STR:</b> 0"
     const strMatch = statsSection[1].match(/STR:\s*([^<\n]+)/i)
     if (strMatch) characterStats.str = strMatch[1].trim()
-    
+
     const dexMatch = statsSection[1].match(/DEX:\s*([^<\n]+)/i)
     if (dexMatch) characterStats.dex = dexMatch[1].trim()
-    
+
     const intMatch = statsSection[1].match(/INT:\s*([^<\n]+)/i)
     if (intMatch) characterStats.int = intMatch[1].trim()
-    
+
     const chaMatch = statsSection[1].match(/CHA:\s*([^<\n]+)/i)
     if (chaMatch) characterStats.cha = chaMatch[1].trim()
-    
+
     const lukMatch = statsSection[1].match(/LUK:\s*([^<\n]+)/i)
     if (lukMatch) characterStats.luk = lukMatch[1].trim()
-    
+
     const endMatch = statsSection[1].match(/END:\s*([^<\n]+)/i)
     if (endMatch) characterStats.end = endMatch[1].trim()
-    
+
     const wisMatch = statsSection[1].match(/WIS:\s*([^<\n]+)/i)
     if (wisMatch) characterStats.wis = wisMatch[1].trim()
-    
+
     if (Object.keys(characterStats).length > 0) {
       stats.characterStats = characterStats
       if (DEBUG) console.log(`    Found ${Object.keys(characterStats).length} character stats`)
     }
   }
-  
+
   if (!stats.characterStats) {
     const legacyStatsLine = html.match(/Stats:\s*([^<\n]+)/i)
     if (legacyStatsLine) {
@@ -358,29 +396,29 @@ function parseGuestStats(html: string, guestName: string): GuestStats {
       }
     }
   }
-  
+
   // Parse Offense section (may or may not have <b> tags)
   const offenseSection = html.match(/(?:<b>)?<u>Offense<\/u>(?:<\/b>)?([\s\S]*?)(?=<u>|<hr>|$)/i)
   if (offenseSection) {
     if (DEBUG) console.log(`  Found Offense section`)
     const offense: GuestOffenseStats = {}
-    
+
     // Stats are plain text: "Boost: 0%" not "<b>Boost:</b> 0%"
     const boostMatch = offenseSection[1].match(/\bBoost:\s*([^<\n]+)/i)
     if (boostMatch) offense.boost = boostMatch[1].trim()
-    
+
     const bonusMatch = offenseSection[1].match(/\bBonus:\s*([^<\n]+)/i)
     if (bonusMatch) offense.bonus = bonusMatch[1].trim()
-    
+
     const critMatch = offenseSection[1].match(/\bCrit:\s*([^<\n]+)/i)
     if (critMatch) offense.crit = critMatch[1].trim()
-    
+
     if (Object.keys(offense).length > 0) {
       stats.offense = offense
       if (DEBUG) console.log(`    Found ${Object.keys(offense).length} offense stats`)
     }
   }
-  
+
   if (!stats.offense) {
     const legacyOffenseLine = html.match(/Offenses?:\s*([^<\n]+)/i)
     if (legacyOffenseLine) {
@@ -397,63 +435,68 @@ function parseGuestStats(html: string, guestName: string): GuestStats {
       }
     }
   }
-  
+
   // Parse Damage Multipliers section (may not have <b> tags)
-  const dmgMultSection = html.match(/(?:<b>)?<u>Damage Multipliers<\/u>(?:<\/b>)?([\s\S]*?)(?=(?:<b>)?<u>|<hr>|$)/i)
+  const dmgMultSection = html.match(
+    /(?:<b>)?<u>Damage Multipliers<\/u>(?:<\/b>)?([\s\S]*?)(?=(?:<b>)?<u>|<hr>|$)/i
+  )
   if (dmgMultSection) {
     if (DEBUG) console.log(`  Found Damage Multipliers section`)
     const sectionText = dmgMultSection[1]
     const damageMultipliers: GuestDamageMultipliers = {}
-    
+
     const nonCritMatch = sectionText.match(/Non-Crit:\s*([^<\n]+)/i)
     if (nonCritMatch) damageMultipliers.nonCrit = nonCritMatch[1].trim()
-    
+
     const dexMatch = sectionText.match(/\bDex:\s*([^<\n]+)/i)
     if (dexMatch) damageMultipliers.dex = dexMatch[1].trim()
-    
+
     const dotMatch = sectionText.match(/\bDoT:\s*([^<\n]+)/i)
     if (dotMatch) damageMultipliers.dot = dotMatch[1].trim()
-    
+
     // Match "Crit:" but NOT "Non-Crit:" - use word boundary or negative lookbehind
     const critMatch = sectionText.match(/(?<!Non-)Crit:\s*([^<\n]+)/i)
     if (critMatch) damageMultipliers.crit = critMatch[1].trim()
-    
+
     if (Object.keys(damageMultipliers).length > 0) {
       stats.damageMultipliers = damageMultipliers
-      if (DEBUG) console.log(`    Found ${Object.keys(damageMultipliers).length} damage multipliers`)
+      if (DEBUG)
+        console.log(`    Found ${Object.keys(damageMultipliers).length} damage multipliers`)
     }
   }
-  
+
   // Parse Defense section
-  const defenseSection = html.match(/(?:<b>)?<u>(?:Avoidance and )?Defense<\/u>(?:<\/b>)?([\s\S]*?)(?=<u>|<hr>|$)/i)
+  const defenseSection = html.match(
+    /(?:<b>)?<u>(?:Avoidance and )?Defense<\/u>(?:<\/b>)?([\s\S]*?)(?=<u>|<hr>|$)/i
+  )
   if (defenseSection) {
     if (DEBUG) console.log(`  Found Defense section`)
     const defense: GuestDefenseStats = {}
-    
+
     const meleeMatch = defenseSection[1].match(/Melee:\s*([^<\n]+)/i)
     if (meleeMatch) defense.melee = meleeMatch[1].trim()
-    
+
     const pierceMatch = defenseSection[1].match(/Pierce:\s*([^<\n]+)/i)
     if (pierceMatch) defense.pierce = pierceMatch[1].trim()
-    
+
     const magicMatch = defenseSection[1].match(/Magic:\s*([^<\n]+)/i)
     if (magicMatch) defense.magic = magicMatch[1].trim()
-    
+
     const blockMatch = defenseSection[1].match(/Block:\s*([^<\n]+)/i)
     if (blockMatch) defense.block = blockMatch[1].trim()
-    
+
     const parryMatch = defenseSection[1].match(/Parry:\s*([^<\n]+)/i)
     if (parryMatch) defense.parry = parryMatch[1].trim()
-    
+
     const dodgeMatch = defenseSection[1].match(/Dodge:\s*([^<\n]+)/i)
     if (dodgeMatch) defense.dodge = dodgeMatch[1].trim()
-    
+
     if (Object.keys(defense).length > 0) {
       stats.defense = defense
       if (DEBUG) console.log(`    Found ${Object.keys(defense).length} defense stats`)
     }
   }
-  
+
   if (!stats.defense) {
     const legacyDefenseLine = html.match(/Defenses?:\s*([^<\n]+)/i)
     if (legacyDefenseLine) {
@@ -476,57 +519,60 @@ function parseGuestStats(html: string, guestName: string): GuestStats {
       }
     }
   }
-  
+
   // Parse Damage Reduction section
-  const dmgRedSection = html.match(/(?:<b>)?<u>Damage Reduction<\/u>(?:<\/b>)?([\s\S]*?)(?=<u>|<hr>|$)/i)
+  const dmgRedSection = html.match(
+    /(?:<b>)?<u>Damage Reduction<\/u>(?:<\/b>)?([\s\S]*?)(?=<u>|<hr>|$)/i
+  )
   if (dmgRedSection) {
     if (DEBUG) console.log(`  Found Damage Reduction section`)
     const damageReduction: GuestDamageReduction = {}
-    
+
     const nonCritMatch = dmgRedSection[1].match(/Non-Crit:\s*([^<\n]+)/i)
     if (nonCritMatch) damageReduction.nonCrit = nonCritMatch[1].trim()
-    
+
     const dotMatch = dmgRedSection[1].match(/\bDoT:\s*([^<\n]+)/i)
     if (dotMatch) damageReduction.dot = dotMatch[1].trim()
-    
+
     // Match "Crit:" but NOT "Non-Crit:" - use negative lookbehind
     const critMatch = dmgRedSection[1].match(/(?<!Non-)Crit:\s*([^<\n]+)/i)
     if (critMatch) damageReduction.crit = critMatch[1].trim()
-    
+
     if (Object.keys(damageReduction).length > 0) {
       stats.damageReduction = damageReduction
-      if (DEBUG) console.log(`    Found ${Object.keys(damageReduction).length} damage reduction stats`)
+      if (DEBUG)
+        console.log(`    Found ${Object.keys(damageReduction).length} damage reduction stats`)
     }
   }
-  
+
   // Parse Resistances section
   const resistSection = html.match(/(?:<b>)?<u>Resistances<\/u>(?:<\/b>)?([\s\S]*?)(?=<u>|<hr>|$)/i)
   if (resistSection) {
     if (DEBUG) console.log(`  Found Resistances section`)
     const text = stripHtml(decodeHTML(resistSection[1]))
-    
+
     // If just "None", skip it
     if (!/^none$/i.test(text.trim())) {
       const resistances: Record<string, string> = {}
-      
+
       // Parse lines like "Fire: +10" or "Ice +5"
-      const lines = text.split('\n').filter(l => l.trim().length > 0)
+      const lines = text.split('\n').filter((l) => l.trim().length > 0)
       for (const line of lines) {
         const match = line.match(/([A-Za-z]+):?\s*([+-]?\d+%?)/i)
         if (match) {
           resistances[match[1]] = match[2]
         }
       }
-      
+
       if (Object.keys(resistances).length > 0) {
         stats.resistances = resistances
         if (DEBUG) console.log(`    Found ${Object.keys(resistances).length} resistances`)
       }
     }
   }
-  
+
   if (DEBUG) console.log(`[DEBUG] Stats parsing complete\n`)
-  
+
   return stats
 }
 
@@ -611,14 +657,14 @@ function tokenizeGuestTitle(name: string): string[] {
 
 function getLongestCommonSuffix(tokensList: string[][]): string[] {
   if (tokensList.length === 0) return []
-  const reversed = tokensList.map(tokens => [...tokens].reverse())
+  const reversed = tokensList.map((tokens) => [...tokens].reverse())
   const result: string[] = []
   let index = 0
 
   while (true) {
     const candidate = reversed[0][index]
     if (!candidate) break
-    if (reversed.every(tokens => tokens[index] === candidate)) {
+    if (reversed.every((tokens) => tokens[index] === candidate)) {
       result.unshift(candidate)
       index += 1
       continue
@@ -630,12 +676,12 @@ function getLongestCommonSuffix(tokensList: string[][]): string[] {
 }
 
 function toTitleCase(tokens: string[]): string {
-  return tokens.map(token => token.replace(/\b\w/g, char => char.toUpperCase())).join(' ')
+  return tokens.map((token) => token.replace(/\b\w/g, (char) => char.toUpperCase())).join(' ')
 }
 
 function deriveGuestFamilyName(sectionNames: string[]): string {
   const stripped = sectionNames.map(stripTrailingVariantNumber)
-  if (stripped.every(name => name.toLowerCase() === stripped[0].toLowerCase())) {
+  if (stripped.every((name) => name.toLowerCase() === stripped[0].toLowerCase())) {
     return stripped[0]
   }
 
@@ -643,7 +689,7 @@ function deriveGuestFamilyName(sectionNames: string[]): string {
   const suffix = getLongestCommonSuffix(tokenSets)
   if (suffix.length > 0) return toTitleCase(suffix)
 
-  return stripped.slice().sort((a, b) => a.length - b.length || a.localeCompare(b))[0]
+  return stripped.slice().sort((a, b) => a.length - b.length || compareTitles(a, b))[0]
 }
 
 function deriveGuestVariantLabel(sectionName: string, familyName: string): string | undefined {
@@ -687,7 +733,7 @@ function extractGuestHeaderSuffix(html: string, headerEndIndex: number): string 
 }
 
 function hasRetiredGuestSignal(...values: Array<string | undefined>): boolean {
-  return values.some(value =>
+  return values.some((value) =>
     value
       ? /previously attainable[\s\S]*retired|retired (?:access point|da access point|quest|version|location|entry)|previously attainable in the retired/i.test(
           value
@@ -696,9 +742,13 @@ function hasRetiredGuestSignal(...values: Array<string | undefined>): boolean {
   )
 }
 
-function extractGuestVariantSections(html: string, sourcePosts: ThreadPostContent[] = []): GuestVariantSection[] {
+function extractGuestVariantSections(
+  html: string,
+  sourcePosts: ThreadPostContent[] = []
+): GuestVariantSection[] {
   const sections: GuestVariantSection[] = []
-  const headerRegex = /((?:<img[^>]+src=["'][^"']*\/tags\/(?:DA|DC|DM|Temp|Rare|Seasonal|SpecialOffer|Retired)\.(?:png|jpg)["'][^>]*>\s*)*)(?:<b>\s*<font[^>]*size=['"]3['"][^>]*>\s*([^<]+?)\s*<\/font>\s*<\/b>|<font[^>]*size=['"]3['"][^>]*>\s*<b>\s*([^<]+?)\s*<\/b>\s*<\/font>)/gi
+  const headerRegex =
+    /((?:<img[^>]+src=["'][^"']*\/tags\/(?:DA|DC|DM|Temp|Rare|Seasonal|SpecialOffer|Retired)\.(?:png|jpg)["'][^>]*>\s*)*)(?:<b>\s*<font[^>]*size=['"]3['"][^>]*>\s*([^<]+?)\s*<\/font>\s*<\/b>|<font[^>]*size=['"]3['"][^>]*>\s*<b>\s*([^<]+?)\s*<\/b>\s*<\/font>)/gi
   const matches = [...html.matchAll(headerRegex)]
 
   for (let i = 0; i < matches.length; i += 1) {
@@ -710,11 +760,15 @@ function extractGuestVariantSections(html: string, sourcePosts: ThreadPostConten
     const suffix = extractGuestHeaderSuffix(html, start + match[0].length)
     const name = suffix ? `${baseName} ${suffix}` : baseName
     const sectionHtml = html.slice(start, end)
-    const sourceUrl = sourcePosts.find(post => post.html.includes(sectionHtml) || sectionHtml.includes(post.html))?.sourceUrl
+    const sourceUrl = sourcePosts.find(
+      (post) => post.html.includes(sectionHtml) || sectionHtml.includes(post.html)
+    )?.sourceUrl
 
     if (!name) continue
     if (
-      !/(?:Location:|Level:|<u>Stats<\/u>|<u>Offense<\/u>|<u>Avoidance and Defense<\/u>|<u>Defense<\/u>)/i.test(sectionHtml)
+      !/(?:Location:|Level:|<u>Stats<\/u>|<u>Offense<\/u>|<u>Avoidance and Defense<\/u>|<u>Defense<\/u>)/i.test(
+        sectionHtml
+      )
     ) {
       continue
     }
@@ -730,32 +784,37 @@ function extractGuestVariantSections(html: string, sourcePosts: ThreadPostConten
 function parseGuestAttacks(html: string, guestName: string): GuestAttack[] {
   const DEBUG = process.env.DEBUG_ATTACKS === '1'
   const attacks: GuestAttack[] = []
-  
+
   if (DEBUG) console.log(`\n[DEBUG] Parsing attacks for ${guestName}`)
-  
+
   // Attacks are marked with <font size='2'><b>Attack Name</b></font> and separated by <hr>
   // Find the section between Resistances and Other information (or end of post)
   const sectionEndMatch = html.match(/Thanks to|<font color='#eeeeee'>/i)
-  const attacksStartMatch = html.match(/(?:<b><u>Resistances<\/u><\/b>|(?:<b>)?<u>Resistances<\/u>(?:<\/b>)?|Resistances:\s*[^<\n]+)(?:[\s\S]*?)<hr>/i)
-  
+  const attacksStartMatch = html.match(
+    /(?:<b><u>Resistances<\/u><\/b>|(?:<b>)?<u>Resistances<\/u>(?:<\/b>)?|Resistances:\s*[^<\n]+)(?:[\s\S]*?)<hr>/i
+  )
+
   if (!attacksStartMatch || attacksStartMatch.index === undefined) {
     if (DEBUG) console.log(`  No attacks section found`)
     return attacks
   }
-  
+
   const sectionStart = attacksStartMatch.index + attacksStartMatch[0].length
   const sectionEnd = sectionEndMatch?.index ?? html.length
-  const retiredIndex = html.slice(sectionStart, sectionEnd).search(/<img[^>]+src=["'][^"']*\/tags\/Retired\.png["'][^>]*>/i)
-  const section = retiredIndex >= 0
-    ? html.slice(sectionStart, sectionStart + retiredIndex)
-    : html.slice(sectionStart, sectionEnd)
-  
+  const retiredIndex = html
+    .slice(sectionStart, sectionEnd)
+    .search(/<img[^>]+src=["'][^"']*\/tags\/Retired\.png["'][^>]*>/i)
+  const section =
+    retiredIndex >= 0
+      ? html.slice(sectionStart, sectionStart + retiredIndex)
+      : html.slice(sectionStart, sectionEnd)
+
   // Split by <hr> to get individual attack blocks
   const blocks = section.split(/<hr>/i)
-  
+
   for (const block of blocks) {
     if (!block.trim()) continue
-    
+
     // Look for attack name in <font size='2'><b>Name</b></font> format
     const nameMatch =
       block.match(/<font\s+size=['"]2['"]>\s*<b>([^<]+)<\/b>\s*<\/font>/i) ??
@@ -764,22 +823,24 @@ function parseGuestAttacks(html: string, guestName: string): GuestAttack[] {
       if (DEBUG) console.log(`  Skipped block (no attack name)`)
       continue
     }
-    
+
     const name = decodeHTML(nameMatch[1]).trim()
-    
+
     // Skip "Skip" attack entirely
     if (name.toLowerCase() === 'skip') {
       if (DEBUG) console.log(`  Skipped attack: ${name}`)
       continue
     }
-    
+
     // Skip blocks that look like forum metadata
-    if (name.toLowerCase().includes('logged in') || 
-        name.toLowerCase().includes('post #') ||
-        /^[a-z0-9_]+$/i.test(name) && name.length > 15) {
+    if (
+      name.toLowerCase().includes('logged in') ||
+      name.toLowerCase().includes('post #') ||
+      (/^[a-z0-9_]+$/i.test(name) && name.length > 15)
+    ) {
       continue
     }
-    
+
     // Extract italic description (may be multiline, stop at first non-italic)
     const italicMatch = block.match(/<i>([\s\S]*?)<\/i>/i)
     let description: string | undefined
@@ -787,73 +848,83 @@ function parseGuestAttacks(html: string, guestName: string): GuestAttack[] {
       description = normalizeStructuredText(italicMatch[1]).trim()
       if (description.length === 0) description = undefined
     }
-    
+
     // Extract Requirements
-    const reqMatch = block.match(/(?:Requirements|Level\/Quest\/Items required):\s*([\s\S]*?)(?=\s*<br>\s*(?:<br>\s*)?(?:Effect:|Mana Cost:|Cooldown:|(?:Damage|Attack) Type:|Element:|<img|<b><u>Other [Ii]nformation<\/u><\/b>|$))/i)
+    const reqMatch = block.match(
+      /(?:Requirements|Level\/Quest\/Items required):\s*([\s\S]*?)(?=\s*<br>\s*(?:<br>\s*)?(?:Effect:|Mana Cost:|Cooldown:|(?:Damage|Attack) Type:|Element:|<img|<b><u>Other [Ii]nformation<\/u><\/b>|$))/i
+    )
     let requirements: string | undefined
     if (reqMatch) {
       requirements = stripHtml(decodeHTML(reqMatch[1])).trim()
       // Hide if "None"
       if (requirements.toLowerCase() === 'none') requirements = undefined
     }
-    
+
     // Extract Effect - handle multiline with nested bullets, stop before Mana Cost
     const effectMatch = block.match(/Effect:\s*([\s\S]*?)(?=\s*Mana Cost:)/i)
     let effect = 'Unknown effect'
     if (effectMatch) {
       effect = normalizeStructuredText(effectMatch[1])
         .split('\n')
-        .map(line => line.trimEnd())
-        .filter(line => {
+        .map((line) => line.trimEnd())
+        .filter((line) => {
           const trimmed = line.trim()
           // Filter out field labels that shouldn't be in effect
-          return trimmed.length > 0 && 
-                 !/^Mana Cost:/i.test(trimmed) &&
-                 !/^Cooldown:/i.test(trimmed) &&
-                 !/^Damage Type:/i.test(trimmed) &&
-                 !/^Element:/i.test(trimmed)
+          return (
+            trimmed.length > 0 &&
+            !/^Mana Cost:/i.test(trimmed) &&
+            !/^Cooldown:/i.test(trimmed) &&
+            !/^Damage Type:/i.test(trimmed) &&
+            !/^Element:/i.test(trimmed)
+          )
         })
         .join('\n')
         .trim()
     }
 
-    const inlineOtherInfoMatch = block.match(/<b><u>Other [Ii]nformation<\/u><\/b>\s*([\s\S]*?)(?=\s*(?:<img|<a[^>]+href="[^"]+\.(?:png|jpg|jpeg|gif|bmp)|$))/i)
+    const inlineOtherInfoMatch = block.match(
+      /<b><u>Other [Ii]nformation<\/u><\/b>\s*([\s\S]*?)(?=\s*(?:<img|<a[^>]+href="[^"]+\.(?:png|jpg|jpeg|gif|bmp)|$))/i
+    )
     if (inlineOtherInfoMatch) {
       const inlineOtherInfo = normalizeStructuredText(inlineOtherInfoMatch[1])
         .split('\n')
-        .map(line => line.trimEnd())
-        .filter(line => line.trim().length > 0)
+        .map((line) => line.trimEnd())
+        .filter((line) => line.trim().length > 0)
         .join('\n')
         .trim()
       if (inlineOtherInfo) {
         effect = effect === 'Unknown effect' ? inlineOtherInfo : `${effect}\n${inlineOtherInfo}`
       }
     }
-    
+
     // Extract Mana Cost
     const manaMatch = block.match(/Mana Cost:\s*([^<\n]+)/i)
     const manaCost = manaMatch ? decodeHTML(manaMatch[1]).trim() : '—'
-    
+
     // Extract Cooldown
     const cdMatch = block.match(/Cooldown:\s*([^<\n]+)/i)
     const cooldown = cdMatch ? decodeHTML(cdMatch[1]).trim() : '—'
-    
+
     // Extract Damage Type
     const dmgTypeMatch = block.match(/(?:Damage|Attack) Type:\s*([^<\n]+)/i)
     const damageType = dmgTypeMatch ? decodeHTML(dmgTypeMatch[1]).trim() : '—'
-    
+
     // Extract Element
     const elemMatch = block.match(/Element:\s*([^<\n]+)/i)
     const element = elemMatch ? decodeHTML(elemMatch[1]).trim() : '—'
-    
+
     // Extract button image URL - look for DF-Pedia image with "Button" in URL
     let buttonImageUrl: string | undefined
-    const buttonImgMatch = block.match(/<img[^>]+src="([^"]*(?:github\.com\/DF-Pedia|githubusercontent\.com)[^"]*(?:Button|button|Attack\.png)[^"]*)"[^>]*>/i)
+    const buttonImgMatch = block.match(
+      /<img[^>]+src="([^"]*(?:github\.com\/DF-Pedia|githubusercontent\.com)[^"]*(?:Button|button|Attack\.png)[^"]*)"[^>]*>/i
+    )
     if (buttonImgMatch) {
       buttonImageUrl = buttonImgMatch[1]
     } else {
       // Fallback: look for any DF-Pedia image in the attack block
-      const dfPediaImgMatch = block.match(/<img[^>]+src="([^"]*(?:github\.com\/DF-Pedia|githubusercontent\.com)[^"]*)"[^>]*>/i)
+      const dfPediaImgMatch = block.match(
+        /<img[^>]+src="([^"]*(?:github\.com\/DF-Pedia|githubusercontent\.com)[^"]*)"[^>]*>/i
+      )
       if (dfPediaImgMatch) {
         buttonImageUrl = dfPediaImgMatch[1]
       } else {
@@ -864,14 +935,14 @@ function parseGuestAttacks(html: string, guestName: string): GuestAttack[] {
         }
       }
     }
-    
+
     // Extract appearance URL from hyperlinked "Appearance" text
     let appearanceUrl: string | undefined
     const appearanceMatch = block.match(/<a[^>]+href="([^"]+)"[^>]*>([^<]*Appearance[^<]*)<\/a>/i)
     if (appearanceMatch) {
       appearanceUrl = appearanceMatch[1]
     }
-    
+
     if (DEBUG) {
       console.log(`  Attack: ${name}`)
       console.log(`    Description: ${description?.slice(0, 50) || 'none'}...`)
@@ -881,7 +952,7 @@ function parseGuestAttacks(html: string, guestName: string): GuestAttack[] {
       console.log(`    Button URL: ${buttonImageUrl || 'none'}`)
       console.log(`    Appearance URL: ${appearanceUrl || 'none'}`)
     }
-    
+
     attacks.push({
       name,
       description,
@@ -895,9 +966,9 @@ function parseGuestAttacks(html: string, guestName: string): GuestAttack[] {
       appearanceUrl,
     })
   }
-  
+
   if (DEBUG) console.log(`[DEBUG] Found ${attacks.length} attacks\n`)
-  
+
   return attacks
 }
 
@@ -914,69 +985,72 @@ interface CategoryTags {
 function detectCategoryTags(html: string): CategoryTags {
   const DEBUG = process.env.DEBUG_TAGS === '1'
   const tags: CategoryTags = {}
-  
+
   if (DEBUG) console.log(`\n[DEBUG] Detecting category tags`)
-  
+
   if (/<img[^>]+src=["'][^"']*\/tags\/Temp\.png["']/i.test(html)) {
     tags.isTemp = true
     if (DEBUG) console.log(`  Found: Temp`)
   }
-  
+
   if (/<img[^>]+src=["'][^"']*\/tags\/Rare\.jpg["']/i.test(html)) {
     tags.isRare = true
     if (DEBUG) console.log(`  Found: Rare`)
   }
-  
+
   if (/<img[^>]+src=["'][^"']*\/tags\/Seasonal\.jpg["']/i.test(html)) {
     tags.isSeasonal = true
     if (DEBUG) console.log(`  Found: Seasonal`)
   }
-  
+
   if (/<img[^>]+src=["'][^"']*\/tags\/SpecialOffer\.png["']/i.test(html)) {
     tags.isSpecialOffer = true
     if (DEBUG) console.log(`  Found: SpecialOffer`)
   }
-  
+
   if (/<img[^>]+src=["'][^"']*\/tags\/Retired\.png["']/i.test(html)) {
     tags.retired = true
     if (DEBUG) console.log(`  Found: Retired`)
   }
-  
+
   if (DEBUG) console.log(`[DEBUG] Found ${Object.keys(tags).length} category tags\n`)
-  
+
   return tags
 }
 
 // ─── Image Extraction ─────────────────────────────────────────────────────────
 
-function extractGuestImages(html: string, guestName: string): { imageUrl?: string; alternativeImages: AlternativeImage[] } {
+function extractGuestImages(
+  html: string,
+  guestName: string
+): { imageUrl?: string; alternativeImages: AlternativeImage[] } {
   const DEBUG = process.env.DEBUG_IMAGES === '1'
-  
+
   if (DEBUG) console.log(`\n[DEBUG] Extracting images for ${guestName}`)
-  
+
   // Skip patterns for UI/tag/button/attack/appearance images
   const skipPatterns = [
-    /\/f\/image\//i,                     // Forum UI images
+    /\/f\/image\//i, // Forum UI images
     /^image\//i,
     /^micons\//i,
     /forumheader/i,
     /quantserve/i,
     /artix\.com\/shared/i,
     /artixgamelaunch/i,
-    /\/tags\//i,                         // Tag images (DA, DC, etc.)
+    /\/tags\//i, // Tag images (DA, DC, etc.)
     /clear\.gif/i,
     /blank\.gif/i,
-    /-button/i,                          // Skill button images
+    /-button/i, // Skill button images
     /-Button/i,
-    /Button\d+/i,                        // Button01, Button02 etc
+    /Button\d+/i, // Button01, Button02 etc
     /PetAttack/i,
     /AttackType/i,
     /-Attack\./i,
-    /\/classes_abilities\//i,            // Skip Attack.png and class ability images
+    /\/classes_abilities\//i, // Skip Attack.png and class ability images
   ]
 
   const isCandidateMainImage = (src: string) => {
-    if (skipPatterns.some(p => p.test(src))) return false
+    if (skipPatterns.some((p) => p.test(src))) return false
     if (/button/i.test(src)) return false
     return (
       src.includes('github.com/DF-Pedia') ||
@@ -987,7 +1061,7 @@ function extractGuestImages(html: string, guestName: string): { imageUrl?: strin
       (src.includes('/f/upfiles/') && src.length > 60)
     )
   }
-  
+
   // Find main image in "Other information" section - this is the character portrait
   // Pattern: <img src="...pets_guests/GuestName.png" after "Other information"
   const otherInfoHtml = findLastSection(html, /<b><u>Other [Ii]nformation<\/u><\/b>/gi) ?? html
@@ -998,42 +1072,47 @@ function extractGuestImages(html: string, guestName: string): { imageUrl?: strin
   )
   const mainImageMatch = otherInfoHtml.match(mainImagePattern)
   let imageUrl = mainImageMatch ? mainImageMatch[1] : undefined
-  
+
   if (DEBUG && imageUrl) console.log(`  Found main image: ${imageUrl}`)
-  
+
   // Find alternative images - look for hyperlinked image captions AFTER main image
   // Pattern: <a href="url">Caption Text</a> where URL is an image
   const alternativeImages: AlternativeImage[] = []
-  
+
   if (mainImageMatch) {
     // Start searching after the main image position
     const mainImagePos = otherInfoHtml.indexOf(mainImageMatch[0])
     const afterMainImage = otherInfoHtml.slice(mainImagePos + mainImageMatch[0].length)
-    
+
     // Look for hyperlinked images with captions before the attribution line or end marker
     // Pattern: <a href="image_url.png">Caption Text</a>
-    const hyperlinkPattern = /<a[^>]+href="([^"]+\.(?:png|jpg|jpeg|gif|bmp))"[^>]*>([\s\S]*?)<\/a>/gi
+    const hyperlinkPattern =
+      /<a[^>]+href="([^"]+\.(?:png|jpg|jpeg|gif|bmp))"[^>]*>([\s\S]*?)<\/a>/gi
     let match: RegExpExecArray | null
-    
+
     while ((match = hyperlinkPattern.exec(afterMainImage)) !== null) {
       const url = match[1]
       const caption = stripHtml(decodeHTML(match[2])).trim()
-      
+
       // Stop at attribution lines
       if (/thanks to|also see:/i.test(caption)) break
-      
+
       // Skip if URL matches skip patterns
       if (!isCandidateMainImage(url)) continue
-      
+
       // Add as alternative image with caption
-      if (url.includes('github.com/DF-Pedia') || url.includes('raw.githubusercontent.com') || url.includes('githubusercontent.com') || 
-          url.includes('imgur.com')) {
+      if (
+        url.includes('github.com/DF-Pedia') ||
+        url.includes('raw.githubusercontent.com') ||
+        url.includes('githubusercontent.com') ||
+        url.includes('imgur.com')
+      ) {
         alternativeImages.push({ url, caption })
         if (DEBUG) console.log(`  Found alt image: ${caption} -> ${url.slice(0, 60)}...`)
       }
     }
   }
-  
+
   // If no main image found, fall back to the last valid image in Other Information,
   // then the last valid image in the entire post.
   if (!imageUrl) {
@@ -1045,18 +1124,21 @@ function extractGuestImages(html: string, guestName: string): { imageUrl?: strin
       const src = imgMatch[2]
       if (isCandidateMainImage(src)) sectionImages.push(src)
     }
-    
+
     // Find the simple name pattern as fallback
-    const simpleNamePattern = new RegExp(`/pets_guests/${escapedName}(?:\\.(?:png|jpg|jpeg|gif|bmp)|%20pic\\.bmp)$`, 'i')
+    const simpleNamePattern = new RegExp(
+      `/pets_guests/${escapedName}(?:\\.(?:png|jpg|jpeg|gif|bmp)|%20pic\\.bmp)$`,
+      'i'
+    )
     const fallbackMain =
-      sectionImages.find(u => simpleNamePattern.test(u)) ??
-      sectionImages.at(-1)
-    
+      sectionImages.find((u) => simpleNamePattern.test(u)) ?? sectionImages.at(-1)
+
     if (fallbackMain) {
       const fallbackPos = otherInfoHtml.lastIndexOf(fallbackMain)
       if (fallbackPos >= 0) {
         const afterMainImage = otherInfoHtml.slice(fallbackPos + fallbackMain.length)
-        const hyperlinkPattern = /<a[^>]+href=(["'])(.*?\.(?:png|jpg|jpeg|gif|bmp))\1[^>]*>([\s\S]*?)<\/a>/gi
+        const hyperlinkPattern =
+          /<a[^>]+href=(["'])(.*?\.(?:png|jpg|jpeg|gif|bmp))\1[^>]*>([\s\S]*?)<\/a>/gi
         let match: RegExpExecArray | null
         while ((match = hyperlinkPattern.exec(afterMainImage)) !== null) {
           const url = match[2]
@@ -1068,18 +1150,18 @@ function extractGuestImages(html: string, guestName: string): { imageUrl?: strin
     }
 
     if (DEBUG && fallbackMain) console.log(`  Fallback main image: ${fallbackMain}`)
-    
-    return { 
-      imageUrl: fallbackMain, 
-      alternativeImages 
+
+    return {
+      imageUrl: fallbackMain,
+      alternativeImages,
     }
   }
-  
+
   if (DEBUG) {
     console.log(`  Main image: ${imageUrl || 'none'}`)
     console.log(`  Alternative images: ${alternativeImages.length}`)
   }
-  
+
   return { imageUrl, alternativeImages }
 }
 
@@ -1088,20 +1170,22 @@ function hasRequiredGuestImage(item: Guest | ItemFamily): boolean {
     return Boolean(
       item.shared.imageUrl ||
       item.shared.alternativeImages?.length ||
-      item.levelVariants.some(level => level.imageUrl || level.alternativeImages?.length)
+      item.levelVariants.some((level) => level.imageUrl || level.alternativeImages?.length)
     )
   }
 
   return Boolean(item.imageUrl || item.alternativeImages?.length)
 }
 
-function sanitizeGuestMedia<T extends { imageUrl?: string; alternativeImages?: AlternativeImage[]; attacks?: GuestAttack[] }>(
-  entry: T
-): T {
+function sanitizeGuestMedia<
+  T extends { imageUrl?: string; alternativeImages?: AlternativeImage[]; attacks?: GuestAttack[] },
+>(entry: T): T {
   const attackMediaUrls = new Set(
-    (entry.attacks ?? []).flatMap(attack => [attack.buttonImageUrl, attack.appearanceUrl]).filter(Boolean)
+    (entry.attacks ?? [])
+      .flatMap((attack) => [attack.buttonImageUrl, attack.appearanceUrl])
+      .filter(Boolean)
   )
-  const alternativeImages = entry.alternativeImages?.filter(image => {
+  const alternativeImages = entry.alternativeImages?.filter((image) => {
     if (!attackMediaUrls.has(image.url)) return true
     const caption = image.caption?.trim().toLowerCase() ?? ''
     return caption.length > 0 && !/^(appearance(?:\s+\d+(?:\.\d+)?)?|[0-9.]+)$/.test(caption)
@@ -1124,12 +1208,14 @@ function sanitizeGuestMedia<T extends { imageUrl?: string; alternativeImages?: A
 function sanitizeGuestFamilyLevelVariants(family: ItemFamily): ItemFamily {
   if (family.type !== 'guest') return family
 
-  const sanitizedLevels = family.levelVariants.map(level => {
+  const sanitizedLevels = family.levelVariants.map((level) => {
     const attackMediaUrls = new Set(
-      (level.attacks ?? []).flatMap(attack => {
-        const typedAttack = attack as GuestAttack
-        return [typedAttack.buttonImageUrl, typedAttack.appearanceUrl]
-      }).filter(Boolean)
+      (level.attacks ?? [])
+        .flatMap((attack) => {
+          const typedAttack = attack as GuestAttack
+          return [typedAttack.buttonImageUrl, typedAttack.appearanceUrl]
+        })
+        .filter(Boolean)
     )
 
     const imageUrl =
@@ -1137,13 +1223,17 @@ function sanitizeGuestFamilyLevelVariants(family: ItemFamily): ItemFamily {
         ? undefined
         : level.imageUrl
 
-    const alternativeImages = level.alternativeImages?.filter(image => {
+    const alternativeImages = level.alternativeImages?.filter((image) => {
       if (!attackMediaUrls.has(image.url)) return true
       const caption = image.caption?.trim().toLowerCase() ?? ''
       return caption.length > 0 && !/^(appearance(?:\s+\d+(?:\.\d+)?)?|[0-9.]+)$/.test(caption)
     })
 
-    const { imageUrl: _ignoredImageUrl, alternativeImages: _ignoredAlternativeImages, ...rest } = level
+    const {
+      imageUrl: _ignoredImageUrl,
+      alternativeImages: _ignoredAlternativeImages,
+      ...rest
+    } = level
 
     return {
       ...rest,
@@ -1162,24 +1252,30 @@ function sanitizeGuestFamilyLevelVariants(family: ItemFamily): ItemFamily {
 
 function parseDescription(html: string, guestName: string): string {
   const DEBUG = process.env.DEBUG_DESC === '1'
-  
+
   if (DEBUG) console.log(`\n[DEBUG] Parsing description for ${guestName}`)
-  
+
   // Look for italic text right after the guest name header
   // Pattern: <b><font size='3'>GuestName</font></b> <br> <i>Description</i>
   // Use a more flexible pattern that handles special characters in guest names
   const escapedName = guestName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
-  
+
   // Try flexible pattern that allows whitespace variations and optional attributes
   const patterns = [
     // Exact format with size attribute
-    new RegExp(`<b><font\\s+size=['"]3['"]>${escapedName}</font></b>\\s*<br>\\s*<i>([^<]+)</i>`, 'i'),
+    new RegExp(
+      `<b><font\\s+size=['"]3['"]>${escapedName}</font></b>\\s*<br>\\s*<i>([^<]+)</i>`,
+      'i'
+    ),
     // Without size attribute
     new RegExp(`<b><font[^>]*>${escapedName}</font></b>\\s*<br>\\s*<i>([^<]+)</i>`, 'i'),
     // Allow extra spaces
-    new RegExp(`<b>\\s*<font[^>]*>\\s*${escapedName}\\s*</font>\\s*</b>\\s*<br>\\s*<i>([^<]+)</i>`, 'i'),
+    new RegExp(
+      `<b>\\s*<font[^>]*>\\s*${escapedName}\\s*</font>\\s*</b>\\s*<br>\\s*<i>([^<]+)</i>`,
+      'i'
+    ),
   ]
-  
+
   for (const pattern of patterns) {
     const match = html.match(pattern)
     if (match) {
@@ -1191,10 +1287,19 @@ function parseDescription(html: string, guestName: string): string {
     }
   }
 
-  const firstFieldIndex = ['<b>Location:</b>', '<b>Level:</b>', '<u>Stats</u>', '<u>Offense</u>', '<u>Avoidance and Defense</u>', '<u>Defense</u>', '<u>Resistances</u>']
-    .map(marker => html.indexOf(marker))
-    .filter(index => index >= 0)
-    .sort((a, b) => a - b)[0] ?? html.length
+  const firstFieldIndex =
+    [
+      '<b>Location:</b>',
+      '<b>Level:</b>',
+      '<u>Stats</u>',
+      '<u>Offense</u>',
+      '<u>Avoidance and Defense</u>',
+      '<u>Defense</u>',
+      '<u>Resistances</u>',
+    ]
+      .map((marker) => html.indexOf(marker))
+      .filter((index) => index >= 0)
+      .sort((a, b) => a - b)[0] ?? html.length
   const introSlice = html.slice(0, firstFieldIndex)
   const fallbackItalic = introSlice.match(/<i>([\s\S]*?)<\/i>/i)
   if (fallbackItalic) {
@@ -1204,7 +1309,7 @@ function parseDescription(html: string, guestName: string): string {
       return desc
     }
   }
-  
+
   if (DEBUG) console.log(`  No description found, using default`)
   const isTemp = /<img[^>]+src=["'][^"']*\/tags\/Temp\.png["']/i.test(html)
   return isTemp ? `A temporary guest companion.` : `A guest companion in DragonFable.`
@@ -1214,9 +1319,9 @@ function parseDescription(html: string, guestName: string): string {
 
 function parseObtainMethods(html: string, guestName: string): ObtainMethod[] {
   const DEBUG = process.env.DEBUG_OBTAIN === '1'
-  
+
   if (DEBUG) console.log(`\n[DEBUG] Parsing obtain methods for ${guestName}`)
-  
+
   const obtainMethods: ObtainMethod[] = []
 
   const normalizeRequirements = (requirements?: string): string | undefined => {
@@ -1227,24 +1332,31 @@ function parseObtainMethods(html: string, guestName: string): ObtainMethod[] {
     return normalized
   }
 
-  const firstFieldIndex = [
-    /(?:<b>)?Level:(?:<\/b>)?/i,
-    /<u>Stats<\/u>/i,
-    /<u>Offense<\/u>/i,
-    /<u>Avoidance and Defense<\/u>/i,
-    /<u>Defense<\/u>/i,
-    /<u>Defenses<\/u>/i,
-    /<u>Resistances<\/u>/i,
-  ]
-    .map(pattern => html.search(pattern))
-    .filter(index => index >= 0)
-    .sort((a, b) => a - b)[0] ?? html.length
+  const firstFieldIndex =
+    [
+      /(?:<b>)?Level:(?:<\/b>)?/i,
+      /<u>Stats<\/u>/i,
+      /<u>Offense<\/u>/i,
+      /<u>Avoidance and Defense<\/u>/i,
+      /<u>Defense<\/u>/i,
+      /<u>Defenses<\/u>/i,
+      /<u>Resistances<\/u>/i,
+    ]
+      .map((pattern) => html.search(pattern))
+      .filter((index) => index >= 0)
+      .sort((a, b) => a - b)[0] ?? html.length
 
   const introHtml = html
     .slice(0, firstFieldIndex)
     .replace(/<b>\s*<font[^>]*>\s*Location:\s*<\/font>\s*<\/b>/gi, '<b>Location:</b>')
-    .replace(/<b>\s*<font[^>]*>\s*(Requirements|Level\/Quest\/Items to unlock|Required Items?):\s*<\/font>\s*<\/b>/gi, '<b>$1:</b>')
-    .replace(/(?:^|\s)(Location|Requirements|Level\/Quest\/Items to unlock|Price|Sellback|Required Items?|Required|Requires):/gi, ' <b>$1:</b>')
+    .replace(
+      /<b>\s*<font[^>]*>\s*(Requirements|Level\/Quest\/Items to unlock|Required Items?):\s*<\/font>\s*<\/b>/gi,
+      '<b>$1:</b>'
+    )
+    .replace(
+      /(?:^|\s)(Location|Requirements|Level\/Quest\/Items to unlock|Price|Sellback|Required Items?|Required|Requires):/gi,
+      ' <b>$1:</b>'
+    )
 
   const blocks: Array<{
     locations: string[]
@@ -1257,22 +1369,24 @@ function parseObtainMethods(html: string, guestName: string): ObtainMethod[] {
     hasDM: boolean
   }> = []
 
-  let currentBlock: typeof blocks[number] | undefined
+  let currentBlock: (typeof blocks)[number] | undefined
   let pendingDA = false
   let pendingDC = false
   let pendingDM = false
 
   const rawLines = introHtml
     .split(/<br\s*\/?>/i)
-    .map(line => line.trim())
-    .filter(line => line.length > 0)
+    .map((line) => line.trim())
+    .filter((line) => line.length > 0)
 
   for (const rawLine of rawLines) {
     pendingDA = pendingDA || /<img[^>]+src=["'][^"']*\/tags\/DA\.png["']/i.test(rawLine)
     pendingDC = pendingDC || /<img[^>]+src=["'][^"']*\/tags\/DC\.png["']/i.test(rawLine)
     pendingDM = pendingDM || /<img[^>]+src=["'][^"']*\/tags\/DM\.png["']/i.test(rawLine)
 
-    const fieldMatch = rawLine.match(/<b>(Location|Requirements|Level\/Quest\/Items to unlock|Price|Sellback|Required Items?|Required|Requires):<\/b>\s*([\s\S]*)/i)
+    const fieldMatch = rawLine.match(
+      /<b>(Location|Requirements|Level\/Quest\/Items to unlock|Price|Sellback|Required Items?|Required|Requires):<\/b>\s*([\s\S]*)/i
+    )
     if (!fieldMatch) continue
 
     const fieldName = fieldMatch[1].toLowerCase()
@@ -1285,7 +1399,13 @@ function parseObtainMethods(html: string, guestName: string): ObtainMethod[] {
     if (!value) continue
 
     if (fieldName === 'location') {
-      if (!currentBlock || currentBlock.requirements || currentBlock.price || currentBlock.sellback || currentBlock.requiredItems) {
+      if (
+        !currentBlock ||
+        currentBlock.requirements ||
+        currentBlock.price ||
+        currentBlock.sellback ||
+        currentBlock.requiredItems
+      ) {
         currentBlock = {
           locations: [],
           hasDA: pendingDA,
@@ -1318,7 +1438,12 @@ function parseObtainMethods(html: string, guestName: string): ObtainMethod[] {
       currentBlock.price = value
     } else if (fieldName === 'sellback') {
       currentBlock.sellback = value
-    } else if (fieldName === 'required item' || fieldName === 'required items' || fieldName === 'required' || fieldName === 'requires') {
+    } else if (
+      fieldName === 'required item' ||
+      fieldName === 'required items' ||
+      fieldName === 'required' ||
+      fieldName === 'requires'
+    ) {
       currentBlock.requiredItems = value
     }
   }
@@ -1367,7 +1492,10 @@ function parseObtainMethods(html: string, guestName: string): ObtainMethod[] {
   if (obtainMethods.length <= 1) {
     const fallbackMethods: ObtainMethod[] = []
     const introText = normalizeStructuredText(introHtml)
-    const textLines = introText.split('\n').map(line => line.trim()).filter(Boolean)
+    const textLines = introText
+      .split('\n')
+      .map((line) => line.trim())
+      .filter(Boolean)
     let current: { location?: string; requirements?: string } | null = null
 
     const pushCurrent = () => {
@@ -1403,9 +1531,9 @@ function parseObtainMethods(html: string, guestName: string): ObtainMethod[] {
   }
 
   if (obtainMethods.length === 0 && DEBUG) console.log(`  No location field found`)
-  
+
   if (DEBUG) console.log(`[DEBUG] Found ${obtainMethods.length} obtain methods\n`)
-  
+
   return obtainMethods
 }
 
@@ -1413,9 +1541,9 @@ function parseObtainMethods(html: string, guestName: string): ObtainMethod[] {
 
 function parseNotes(html: string, guestName: string): string | undefined {
   const DEBUG = process.env.DEBUG_NOTES === '1'
-  
+
   if (DEBUG) console.log(`\n[DEBUG] Parsing notes for ${guestName}`)
-  
+
   const noteLines: string[] = []
   const otherInfoHtml = findLastSection(html, /<b><u>Other [Ii]nformation<\/u><\/b>/gi)
 
@@ -1424,17 +1552,25 @@ function parseNotes(html: string, guestName: string): string | undefined {
 
     const trimmedSection = otherInfoHtml
       .split(/<i>Thanks to|Also See:|<font color='#eeeeee'>/i)[0]
-      .replace(/<img[^>]+src="[^"]*(?:github\.com\/DF-Pedia|githubusercontent\.com)[^"]*\/pets_guests\/[^"]*\.(?:png|jpg|jpeg|gif|bmp)"[^>]*>/gi, '')
+      .replace(
+        /<img[^>]+src="[^"]*(?:github\.com\/DF-Pedia|githubusercontent\.com)[^"]*\/pets_guests\/[^"]*\.(?:png|jpg|jpeg|gif|bmp)"[^>]*>/gi,
+        ''
+      )
 
     for (const line of normalizeStructuredText(trimmedSection).split('\n')) {
       if (!line.trim()) continue
       if (/\w+\s+--\s+\d+\/\d+\/\d+\s+\d+:\d+:\d+/.test(line)) continue
-      if (/^[•\s]*[A-Za-z0-9&/'().,-]+(?:\s+[A-Za-z0-9&/'().,-]+)*\s+Appearance(?:\s+\d+(?:\.\d+)?)?\s*$/i.test(line)) continue
+      if (
+        /^[•\s]*[A-Za-z0-9&/'().,-]+(?:\s+[A-Za-z0-9&/'().,-]+)*\s+Appearance(?:\s+\d+(?:\.\d+)?)?\s*$/i.test(
+          line
+        )
+      )
+        continue
       noteLines.push(line)
     }
   }
 
-  const seenNotes = new Set(noteLines.map(line => line.trim()))
+  const seenNotes = new Set(noteLines.map((line) => line.trim()))
   const rawNoteMatches = html.matchAll(/<li>\s*<i>\s*Note:\s*([\s\S]*?)<\/i>/gi)
   for (const match of rawNoteMatches) {
     const note = normalizeStructuredText(match[1]).trim()
@@ -1451,58 +1587,62 @@ function parseNotes(html: string, guestName: string): string | undefined {
     seenNotes.add(note)
     noteLines.push(note)
   }
-  
+
   if (noteLines.length > 0) {
     const notes = noteLines.join('\n')
     if (DEBUG) console.log(`  Found ${noteLines.length} note lines`)
     return notes
   }
-  
+
   if (DEBUG) console.log(`  No notes found`)
   return undefined
 }
 
 // ─── Also See Parsing ─────────────────────────────────────────────────────────
 
-function parseAlsoSee(html: string, nameToSlug: Map<string, { slug: string; type: EntryType }>, guestName: string): AlsoSeeRef[] {
+function parseAlsoSee(
+  html: string,
+  nameToSlug: Map<string, { slug: string; type: EntryType }>,
+  guestName: string
+): AlsoSeeRef[] {
   const DEBUG = process.env.DEBUG_ALSOSEE === '1'
-  
+
   if (DEBUG) console.log(`\n[DEBUG] Parsing Also See for ${guestName}`)
-  
+
   const alsoSee: AlsoSeeRef[] = []
-  
+
   // Look for "Also See:" section
   const alsoSeeMatch = html.match(/Also See:\s*([\s\S]*?)(?=<br><br>|Thanks to|$)/i)
-  
+
   if (alsoSeeMatch) {
     if (DEBUG) console.log(`  Found Also See section`)
-    
+
     const text = stripHtml(decodeHTML(alsoSeeMatch[1]))
-    const lines = text.split('\n').filter(l => l.trim().length > 0)
-    
+    const lines = text.split('\n').filter((l) => l.trim().length > 0)
+
     for (const line of lines) {
       const trimmed = line.trim().replace(/^[•*-]\s*/, '')
-      
+
       // Try to resolve name to slug
       const key = trimmed.toLowerCase()
       const resolved = nameToSlug.get(key)
-      
+
       if (resolved) {
         alsoSee.push({
           name: trimmed,
           slug: resolved.slug,
           type: resolved.type,
         })
-        
+
         if (DEBUG) console.log(`  Resolved: ${trimmed} → ${resolved.slug} (${resolved.type})`)
       } else {
         if (DEBUG) console.log(`  Unresolved: ${trimmed}`)
       }
     }
   }
-  
+
   if (DEBUG) console.log(`[DEBUG] Found ${alsoSee.length} also see references\n`)
-  
+
   return alsoSee
 }
 
@@ -1510,10 +1650,17 @@ function parseAlsoSee(html: string, nameToSlug: Map<string, { slug: string; type
 
 function generateTags(name: string, description: string, elements: string[]): string[] {
   // Simple tag generation: lowercase words from name + elements
-  const nameParts = name.toLowerCase().split(/\s+/).filter(w => w.length > 2)
-  const descParts = description.toLowerCase().split(/\s+/).filter(w => w.length > 3).slice(0, 5)
-  const elementTags = elements.map(e => e.toLowerCase())
-  
+  const nameParts = name
+    .toLowerCase()
+    .split(/\s+/)
+    .filter((w) => w.length > 2)
+  const descParts = description
+    .toLowerCase()
+    .split(/\s+/)
+    .filter((w) => w.length > 3)
+    .slice(0, 5)
+  const elementTags = elements.map((e) => e.toLowerCase())
+
   const tags = [...new Set([...nameParts, ...descParts, ...elementTags])]
   return tags
 }
@@ -1545,7 +1692,7 @@ function parseChronology(html: string): ChronologyData {
   const guestNames = new Set<string>()
   const guestMessageIds = new Set<string>()
   const chunks = html.split(/<br\s*\/?>/i)
-  
+
   if (DEBUG) {
     console.log(`\n[DEBUG] Parsing Chronology (${chunks.length} chunks)`)
     console.log(`  First 20 lines:`)
@@ -1553,13 +1700,13 @@ function parseChronology(html: string): ChronologyData {
       console.log(`    ${i}: ${line.slice(0, 80)}`)
     })
   }
-  
+
   let currentDate = ''
-  
+
   for (const chunk of chunks) {
     const trimmed = stripHtml(decodeHTML(chunk)).trim()
     if (!trimmed) continue
-    
+
     // Check if this is a date line: "Month DDth, YYYY" or "Month DD, YYYY"
     const dateMatch = trimmed.match(/^([A-Z][a-z]+\s+\d+(?:st|nd|rd|th)?,\s+\d{4})$/)
     if (dateMatch) {
@@ -1567,15 +1714,15 @@ function parseChronology(html: string): ChronologyData {
       if (DEBUG) console.log(`  Found date: ${currentDate}`)
       continue
     }
-    
+
     // Check if this is a guest entry line: "[G] Guest Name"
     const guestMatch = trimmed.match(/^\[G\]\s+(.+)$/)
     if (guestMatch && currentDate) {
       let name = guestMatch[1].trim()
-      
+
       // Strip trailing parentheticals like "(2)" or "(Normal; D-Coins)"
       name = name.replace(/\s*\([^)]+\)\s*$/, '').trim()
-      
+
       datesByName.set(name.toLowerCase(), currentDate)
       guestNames.add(name.toLowerCase())
       guestNames.add(normalizeGuestLookupName(name))
@@ -1585,20 +1732,22 @@ function parseChronology(html: string): ChronologyData {
         guestMessageIds.add(messageId)
         datesByMessageId.set(messageId, currentDate)
       }
-      
+
       if (DEBUG) console.log(`  Found guest: ${name} (${currentDate})`)
     }
   }
-  
+
   if (DEBUG) console.log(`[DEBUG] Chronology parsing found ${guestNames.size} guests\n`)
-  
+
   return { datesByName, datesByMessageId, guestNames, guestMessageIds }
 }
 
 // ─── A-Z page parsing ─────────────────────────────────────────────────────────
 
 function extractAZListBlock(html: string, section: 'pet' | 'guest'): string {
-  const blocks = [...html.matchAll(/<td\b[^>]*class=["']?msg["']?[^>]*>([\s\S]*?)<\/td>/gi)].map(match => match[1])
+  const blocks = [...html.matchAll(/<td\b[^>]*class=["']?msg["']?[^>]*>([\s\S]*?)<\/td>/gi)].map(
+    (match) => match[1]
+  )
   const index = section === 'pet' ? 1 : 2
   const block = blocks[index]
   return block ?? html
@@ -1622,7 +1771,10 @@ function parseAZPage(html: string, chronology: ChronologyData): GuestStub[] {
     }
 
     // Match links
-    const linkMatch = /href=["']?(?:https?:\/\/forums2\.battleon\.com\/f\/)?((tm|fb)\.asp\?m=(\d+))["'\s>]/i.exec(chunk)
+    const linkMatch =
+      /href=["']?(?:https?:\/\/forums2\.battleon\.com\/f\/)?((tm|fb)\.asp\?m=(\d+))["'\s>]/i.exec(
+        chunk
+      )
     if (!linkMatch) continue
     const linkPath = linkMatch[1]
     const msgId = linkMatch[3]
@@ -1655,12 +1807,14 @@ function parseAZPage(html: string, chronology: ChronologyData): GuestStub[] {
       skippedCount++
       continue
     }
-    
+
     // Skip navigation/meta links
-    if (name.toLowerCase().includes('chronology') || 
-        name.toLowerCase().includes('a-z') ||
-        name.toLowerCase() === 'pets' ||
-        name.toLowerCase() === 'guests') {
+    if (
+      name.toLowerCase().includes('chronology') ||
+      name.toLowerCase().includes('a-z') ||
+      name.toLowerCase() === 'pets' ||
+      name.toLowerCase() === 'guests'
+    ) {
       skippedCount++
       continue
     }
@@ -1679,22 +1833,28 @@ function parseAZPage(html: string, chronology: ChronologyData): GuestStub[] {
     const normalizedKey = normalizeGuestLookupName(name)
     const existing = stubsByKey.get(normalizedKey)
     const candidateIsChronologyMatch = chronology.guestMessageIds.has(msgId)
-    const existingIsChronologyMatch = existing ? chronology.guestMessageIds.has(existing.messageId) : false
+    const existingIsChronologyMatch = existing
+      ? chronology.guestMessageIds.has(existing.messageId)
+      : false
 
     if (!existing || (candidateIsChronologyMatch && !existingIsChronologyMatch)) {
       stubsByKey.set(normalizedKey, stub)
     }
   }
-  
+
   if (skippedCount > 0) {
-    console.log(`   ⚠️  Skipped ${skippedCount} entries (duplicates, navigation links, or invalid names)`)
+    console.log(
+      `   ⚠️  Skipped ${skippedCount} entries (duplicates, navigation links, or invalid names)`
+    )
   }
 
   return Array.from(stubsByKey.values())
 }
 
 function extractThreadMessageBlocks(html: string): string[] {
-  return [...html.matchAll(/<td\b[^>]*class=["']?msg["']?[^>]*>([\s\S]*?)<\/td>/gi)].map(match => convertImageTags(match[1]))
+  return [...html.matchAll(/<td\b[^>]*class=["']?msg["']?[^>]*>([\s\S]*?)<\/td>/gi)].map((match) =>
+    convertImageTags(match[1])
+  )
 }
 
 function mergeNotesText(...notes: Array<string | undefined>): string | undefined {
@@ -1722,7 +1882,8 @@ function extractSupplementalGuestThreadNotes(html: string): string | undefined {
   const supplemental: string[] = []
   for (const block of blocks.slice(1)) {
     if (!/<b><u>Other [Ii]nformation<\/u><\/b>/i.test(block)) continue
-    if (/(?:<b>\s*<font[^>]*size=['"]3['"]|<font[^>]*size=['"]3['"][^>]*>\s*<b>)/i.test(block)) continue
+    if (/(?:<b>\s*<font[^>]*size=['"]3['"]|<font[^>]*size=['"]3['"][^>]*>\s*<b>)/i.test(block))
+      continue
     const notes = parseNotes(block, 'shared')
     if (notes) supplemental.push(notes)
   }
@@ -1730,9 +1891,10 @@ function extractSupplementalGuestThreadNotes(html: string): string | undefined {
   return mergeNotesText(...supplemental)
 }
 
-function extractSupplementalGuestThreadMedia(
-  html: string
-): { imageUrl?: string; alternativeImages?: AlternativeImage[] } {
+function extractSupplementalGuestThreadMedia(html: string): {
+  imageUrl?: string
+  alternativeImages?: AlternativeImage[]
+} {
   const blocks = extractThreadMessageBlocks(html)
   if (blocks.length <= 1) return {}
 
@@ -1756,8 +1918,10 @@ function extractSupplementalGuestThreadMedia(
   ]
 
   const isCandidateImage = (url: string): boolean => {
-    if (skipPatterns.some(pattern => pattern.test(url))) return false
-    return /github\.com|raw\.githubusercontent\.com|githubusercontent\.com|imgur\.com|\/f\/upfiles\//i.test(url)
+    if (skipPatterns.some((pattern) => pattern.test(url))) return false
+    return /github\.com|raw\.githubusercontent\.com|githubusercontent\.com|imgur\.com|\/f\/upfiles\//i.test(
+      url
+    )
   }
 
   let imageUrl: string | undefined
@@ -1773,14 +1937,15 @@ function extractSupplementalGuestThreadMedia(
     }
 
     const candidateImages = [...block.matchAll(/<img[^>]+src=(["'])(.*?)\1[^>]*>/gi)]
-      .map(match => match[2])
+      .map((match) => match[2])
       .filter(isCandidateImage)
 
     if (!imageUrl && candidateImages.length > 0) {
       imageUrl = candidateImages.at(-1)
     }
 
-    const hyperlinkPattern = /<a[^>]+href=(["'])(.*?\.(?:png|jpg|jpeg|gif|bmp))\1[^>]*>([\s\S]*?)<\/a>/gi
+    const hyperlinkPattern =
+      /<a[^>]+href=(["'])(.*?\.(?:png|jpg|jpeg|gif|bmp))\1[^>]*>([\s\S]*?)<\/a>/gi
     let match: RegExpExecArray | null
     while ((match = hyperlinkPattern.exec(block)) !== null) {
       const url = match[2]
@@ -1803,8 +1968,8 @@ function buildGuestFamilyFromSections(
   nameToSlug: Map<string, { slug: string; type: EntryType }>,
   sharedNotes?: string
 ): ItemFamily {
-  const familyName = deriveGuestFamilyName(sections.map(section => section.name))
-  const variants: GuestFamilyVariant[] = sections.map(section => {
+  const familyName = deriveGuestFamilyName(sections.map((section) => section.name))
+  const variants: GuestFamilyVariant[] = sections.map((section) => {
     const description = parseDescription(section.html, section.name)
     const guestStats = parseGuestStats(section.html, section.name)
     const attacks = parseGuestAttacks(section.html, section.name)
@@ -1858,22 +2023,26 @@ function buildGuestFamilyFromSections(
     })
   })
 
-  const allInternalSlugs = new Set(variants.map(variant => variant.slug))
+  const allInternalSlugs = new Set(variants.map((variant) => variant.slug))
   const levelVariants: LevelVariant[] = variants.map((variant, index) => {
     const levelInfo = normalizeLevel(variant.guestStats.level || variant.level || String(index + 1))
     const actualLevel = /^\d+$/.test((variant.guestStats.level || variant.level || '').trim())
       ? parseInt((variant.guestStats.level || variant.level).trim(), 10)
       : undefined
 
-    const obtainVariants: ObtainVariant[] = variant.obtainMethods.map(method => ({
+    const obtainVariants: ObtainVariant[] = variant.obtainMethods.map((method) => ({
       location: method.location,
       price: method.price ?? 'N/A',
       priceType: method.priceType,
       ...(method.sellback ? { sellback: method.sellback } : {}),
       ...(method.requirements ? { requirements: method.requirements } : {}),
       daRequired: method.daRequired ?? variant.daRequired,
-      ...(method.dcRequired ?? variant.dcRequired ? { dcRequired: method.dcRequired ?? variant.dcRequired } : {}),
-      ...(method.dmRequired ?? variant.dmRequired ? { dmRequired: method.dmRequired ?? variant.dmRequired } : {}),
+      ...((method.dcRequired ?? variant.dcRequired)
+        ? { dcRequired: method.dcRequired ?? variant.dcRequired }
+        : {}),
+      ...((method.dmRequired ?? variant.dmRequired)
+        ? { dmRequired: method.dmRequired ?? variant.dmRequired }
+        : {}),
       ...(method.requiredItems ? { requiredItems: method.requiredItems } : {}),
     }))
 
@@ -1881,7 +2050,9 @@ function buildGuestFamilyFromSections(
       levelNumber: index + 1,
       levelDisplay: levelInfo.display,
       ...(actualLevel !== undefined ? { actualLevel } : {}),
-      ...(deriveGuestVariantLabel(variant.name, familyName) ? { variantName: deriveGuestVariantLabel(variant.name, familyName) } : {}),
+      ...(deriveGuestVariantLabel(variant.name, familyName)
+        ? { variantName: deriveGuestVariantLabel(variant.name, familyName) }
+        : {}),
       name: variant.name,
       damage: variant.damage,
       stats: variant.stats,
@@ -1901,9 +2072,9 @@ function buildGuestFamilyFromSections(
   const mergedAlsoSee = Array.from(
     new Map(
       variants
-        .flatMap(variant => variant.alsoSee)
-        .filter(ref => !allInternalSlugs.has(ref.slug))
-        .map(ref => [`${ref.type}:${ref.slug}`, ref])
+        .flatMap((variant) => variant.alsoSee)
+        .filter((ref) => !allInternalSlugs.has(ref.slug))
+        .map((ref) => [`${ref.type}:${ref.slug}`, ref])
     ).values()
   )
 
@@ -1911,7 +2082,7 @@ function buildGuestFamilyFromSections(
     id: prefixedSlug(familyName, 'guest'),
     familyName,
     slug: prefixedSlug(familyName, 'guest'),
-    aliasSlugs: variants.map(variant => variant.slug),
+    aliasSlugs: variants.map((variant) => variant.slug),
     type: 'guest',
     forumUrl: stub.forumUrl,
     familyOrigin: 'single-thread',
@@ -1919,13 +2090,20 @@ function buildGuestFamilyFromSections(
     shared: {
       description: '',
       ...(() => {
-        const trailingVariantWithImage = [...levelVariants].reverse().find(
-          level => level.imageUrl || (level.alternativeImages && level.alternativeImages.length > 0)
-        )
+        const trailingVariantWithImage = [...levelVariants]
+          .reverse()
+          .find(
+            (level) =>
+              level.imageUrl || (level.alternativeImages && level.alternativeImages.length > 0)
+          )
         return trailingVariantWithImage
           ? {
-              ...(trailingVariantWithImage.imageUrl ? { imageUrl: trailingVariantWithImage.imageUrl } : {}),
-              ...(trailingVariantWithImage.alternativeImages ? { alternativeImages: trailingVariantWithImage.alternativeImages } : {}),
+              ...(trailingVariantWithImage.imageUrl
+                ? { imageUrl: trailingVariantWithImage.imageUrl }
+                : {}),
+              ...(trailingVariantWithImage.alternativeImages
+                ? { alternativeImages: trailingVariantWithImage.alternativeImages }
+                : {}),
             }
           : {}
       })(),
@@ -1933,20 +2111,25 @@ function buildGuestFamilyFromSections(
       ...(mergedAlsoSee.length > 0 ? { alsoSee: mergedAlsoSee } : {}),
     },
     levelVariants,
-    releaseDate: variants.map(variant => variant.releaseDate).find(date => date && date !== 'Unknown') ?? 'Unknown',
-    tags: Array.from(new Set(variants.flatMap(variant => variant.tags))).sort(),
+    releaseDate:
+      variants.map((variant) => variant.releaseDate).find((date) => date && date !== 'Unknown') ??
+      'Unknown',
+    tags: Array.from(new Set(variants.flatMap((variant) => variant.tags))).sort(),
     hasDA: false,
     hasDC: false,
     hasDM: false,
     hasFree: false,
     hasMerge: false,
-    isTemp: variants.some(variant => variant.isTemp === true) || undefined,
-    isRare: variants.some(variant => variant.isRare === true) || undefined,
-    isSeasonal: variants.some(variant => variant.isSeasonal === true) || undefined,
-    isSpecialOffer: variants.some(variant => variant.isSpecialOffer === true) || undefined,
-    retired: variants.some(variant => variant.retired === true || hasRetiredGuestSignal(variant.notes)) || undefined,
+    isTemp: variants.some((variant) => variant.isTemp === true) || undefined,
+    isRare: variants.some((variant) => variant.isRare === true) || undefined,
+    isSeasonal: variants.some((variant) => variant.isSeasonal === true) || undefined,
+    isSpecialOffer: variants.some((variant) => variant.isSpecialOffer === true) || undefined,
+    retired:
+      variants.some(
+        (variant) => variant.retired === true || hasRetiredGuestSignal(variant.notes)
+      ) || undefined,
     levelRange: '',
-    elements: Array.from(new Set(variants.flatMap(variant => variant.elements))),
+    elements: Array.from(new Set(variants.flatMap((variant) => variant.elements))),
   }
 
   return computeFamilyFlags(family)
@@ -1955,9 +2138,12 @@ function buildGuestFamilyFromSections(
 function applySupplementalGuestData(
   items: Array<Guest | ItemFamily>,
   supplementalNotesByForumUrl: Map<string, string>,
-  supplementalMediaByForumUrl: Map<string, { imageUrl?: string; alternativeImages?: AlternativeImage[] }>
+  supplementalMediaByForumUrl: Map<
+    string,
+    { imageUrl?: string; alternativeImages?: AlternativeImage[] }
+  >
 ): Array<Guest | ItemFamily> {
-  return items.map(item => {
+  return items.map((item) => {
     const supplementalNotes = supplementalNotesByForumUrl.get(item.forumUrl)
     const supplementalMedia = supplementalMediaByForumUrl.get(item.forumUrl)
     if (!supplementalNotes && !supplementalMedia) return item
@@ -1967,10 +2153,17 @@ function applySupplementalGuestData(
         ...item,
         shared: {
           ...item.shared,
-          ...(supplementalNotes ? { notes: mergeNotesText(item.shared.notes, supplementalNotes) } : {}),
-          ...(item.shared.imageUrl ?? supplementalMedia?.imageUrl ? { imageUrl: item.shared.imageUrl ?? supplementalMedia?.imageUrl } : {}),
-          ...(item.shared.alternativeImages ?? supplementalMedia?.alternativeImages
-            ? { alternativeImages: item.shared.alternativeImages ?? supplementalMedia?.alternativeImages }
+          ...(supplementalNotes
+            ? { notes: mergeNotesText(item.shared.notes, supplementalNotes) }
+            : {}),
+          ...((item.shared.imageUrl ?? supplementalMedia?.imageUrl)
+            ? { imageUrl: item.shared.imageUrl ?? supplementalMedia?.imageUrl }
+            : {}),
+          ...((item.shared.alternativeImages ?? supplementalMedia?.alternativeImages)
+            ? {
+                alternativeImages:
+                  item.shared.alternativeImages ?? supplementalMedia?.alternativeImages,
+              }
             : {}),
         },
       })
@@ -1980,8 +2173,10 @@ function applySupplementalGuestData(
       return sanitizeGuestMedia({
         ...item,
         ...(supplementalNotes ? { notes: mergeNotesText(item.notes, supplementalNotes) } : {}),
-        ...(item.imageUrl ?? supplementalMedia?.imageUrl ? { imageUrl: item.imageUrl ?? supplementalMedia?.imageUrl } : {}),
-        ...(item.alternativeImages ?? supplementalMedia?.alternativeImages
+        ...((item.imageUrl ?? supplementalMedia?.imageUrl)
+          ? { imageUrl: item.imageUrl ?? supplementalMedia?.imageUrl }
+          : {}),
+        ...((item.alternativeImages ?? supplementalMedia?.alternativeImages)
           ? { alternativeImages: item.alternativeImages ?? supplementalMedia?.alternativeImages }
           : {}),
       })
@@ -1992,7 +2187,7 @@ function applySupplementalGuestData(
 }
 
 function sanitizePromotedGuestEntries(items: Array<Guest | ItemFamily>): Array<Guest | ItemFamily> {
-  return items.map(item => {
+  return items.map((item) => {
     if ('levelVariants' in item && item.type === 'guest') {
       return sanitizeGuestFamilyLevelVariants(item)
     }
@@ -2051,16 +2246,16 @@ async function main(): Promise<void> {
   let stubs = allStubs
   if (lettersArg && lettersArg.length > 0) {
     // Filter by multiple letters: --letters=A,B
-    stubs = allStubs.filter(s => lettersArg.includes(s.letter))
+    stubs = allStubs.filter((s) => lettersArg.includes(s.letter))
     console.log(`   Filtered to letters ${lettersArg.join(', ')}: ${stubs.length} entries`)
   } else if (letterArg) {
     // Filter by single letter: --letter=A
-    stubs = allStubs.filter(s => s.letter === letterArg)
+    stubs = allStubs.filter((s) => s.letter === letterArg)
     console.log(`   Filtered to letter ${letterArg}: ${stubs.length} entries`)
   } else if (startArg) {
     // Resume from letter: --start=C
     let past = false
-    stubs = allStubs.filter(s => {
+    stubs = allStubs.filter((s) => {
       if (s.letter === startArg) past = true
       return past
     })
@@ -2073,7 +2268,10 @@ async function main(): Promise<void> {
   for (const stub of allStubs) {
     nameToSlug.set(stub.name.toLowerCase(), { slug: stub.slug, type: stub.type })
     // Also index without trailing parentheticals
-    const base = stub.name.replace(/\s*\([^)]+\)\s*$/, '').trim().toLowerCase()
+    const base = stub.name
+      .replace(/\s*\([^)]+\)\s*$/, '')
+      .trim()
+      .toLowerCase()
     if (base !== stub.name.toLowerCase()) nameToSlug.set(base, { slug: stub.slug, type: stub.type })
   }
 
@@ -2081,7 +2279,10 @@ async function main(): Promise<void> {
 
   const progressMap = new Map<string, Guest | ItemFamily>()
   const supplementalNotesByForumUrl = new Map<string, string>()
-  const supplementalMediaByForumUrl = new Map<string, { imageUrl?: string; alternativeImages?: AlternativeImage[] }>()
+  const supplementalMediaByForumUrl = new Map<
+    string,
+    { imageUrl?: string; alternativeImages?: AlternativeImage[] }
+  >()
   if (fs.existsSync(PROGRESS_PATH)) {
     try {
       const existing: (Guest | ItemFamily)[] = JSON.parse(fs.readFileSync(PROGRESS_PATH, 'utf-8'))
@@ -2098,7 +2299,7 @@ async function main(): Promise<void> {
   // ── Step 4: Scrape guests ──────────────────────────────────────────────────
 
   console.log(`🔄 Scraping ${stubs.length} guests...\n`)
-  
+
   let scraped = 0
   let fromCache = 0
   let skipped = 0
@@ -2108,7 +2309,9 @@ async function main(): Promise<void> {
     process.stdout.write(`[${i + 1}/${stubs.length}] ${stub.name}... `)
 
     // Check if already in progress
-    const cachedEntry = progressMap.get(stub.slug) ?? Array.from(progressMap.values()).find(entry => entry.forumUrl === stub.forumUrl)
+    const cachedEntry =
+      progressMap.get(stub.slug) ??
+      Array.from(progressMap.values()).find((entry) => entry.forumUrl === stub.forumUrl)
     if (cachedEntry) {
       console.log('✓ [cached]')
       fromCache++
@@ -2125,9 +2328,10 @@ async function main(): Promise<void> {
         sourcePosts = []
       }
 
-      const html = sourcePosts.length > 0
-        ? sourcePosts.map(post => post.html).join('\n<hr>\n')
-        : await fetchGuestPostContent(stub.messageId, cookie)
+      const html =
+        sourcePosts.length > 0
+          ? sourcePosts.map((post) => post.html).join('\n<hr>\n')
+          : await fetchGuestPostContent(stub.messageId, cookie)
       if (!html) {
         console.log('⚠️  deleted — skipping')
         skipped++
@@ -2151,10 +2355,12 @@ async function main(): Promise<void> {
 
       const variantSections = extractGuestVariantSections(html, sourcePosts)
       const stubBaseName = normalizeGuestLookupName(stripTrailingVariantNumber(stub.name))
-      const scopedVariantSections = variantSections.filter(section =>
-        normalizeGuestLookupName(stripTrailingVariantNumber(section.name)) === stubBaseName
+      const scopedVariantSections = variantSections.filter(
+        (section) =>
+          normalizeGuestLookupName(stripTrailingVariantNumber(section.name)) === stubBaseName
       )
-      const candidateVariantSections = scopedVariantSections.length > 0 ? scopedVariantSections : variantSections
+      const candidateVariantSections =
+        scopedVariantSections.length > 0 ? scopedVariantSections : variantSections
       if (candidateVariantSections.length > 1) {
         const family = buildGuestFamilyFromSections(
           stub,
@@ -2172,7 +2378,7 @@ async function main(): Promise<void> {
         if (i < stubs.length - 1) await sleep(DELAY_MS)
         continue
       }
-      
+
       // Parse all guest data
       const description = parseDescription(html, stub.name)
       const guestStats = parseGuestStats(html, stub.name)
@@ -2183,16 +2389,16 @@ async function main(): Promise<void> {
       const notes = parseNotes(html, stub.name)
       const alsoSee = parseAlsoSee(html, nameToSlug, stub.name)
       const tags = generateTags(stub.name, description, stub.elements)
-      
+
       // Detect DA/DC/DM requirements at thread level
       const daRequired = /<img[^>]+src=["'][^"']*\/tags\/DA\.png["']/i.test(html)
       const dcRequired = /<img[^>]+src=["'][^"']*\/tags\/DC\.png["']/i.test(html)
       const dmRequired = /<img[^>]+src=["'][^"']*\/tags\/DM\.png["']/i.test(html)
-      
+
       // Parse rarity if present
       const rarityMatch = html.match(/<b>Rarity:<\/b>\s*([^<\n]+)/i)
       const rarity = rarityMatch ? rarityMatch[1].trim() : 'Unknown'
-      
+
       const guest: Guest = sanitizeGuestMedia({
         id: stub.slug,
         name: stub.name,
@@ -2212,11 +2418,16 @@ async function main(): Promise<void> {
         obtainMethods,
         attacks,
         rarity,
-        evolutions: [],  // Guests typically don't evolve
+        evolutions: [], // Guests typically don't evolve
         releaseDate:
           chronology.datesByMessageId.get(stub.messageId) ||
           chronology.datesByName.get(stub.name.toLowerCase()) ||
-          chronology.datesByName.get(stub.name.replace(/\s*\([^)]+\)\s*$/, '').trim().toLowerCase()) ||
+          chronology.datesByName.get(
+            stub.name
+              .replace(/\s*\([^)]+\)\s*$/, '')
+              .trim()
+              .toLowerCase()
+          ) ||
           'Unknown',
         imageUrl,
         forumUrl: stub.forumUrl,
@@ -2242,9 +2453,10 @@ async function main(): Promise<void> {
         const rate = elapsed > 0 ? (scraped + fromCache) / elapsed : 0
         const remaining = stubs.length - (i + 1)
         const eta = rate > 0 ? Math.round(remaining / rate) : 0
-        console.log(`   ⏱️  Progress: ${scraped + fromCache}/${stubs.length} | ${elapsed}s elapsed | ETA ${eta}s`)
+        console.log(
+          `   ⏱️  Progress: ${scraped + fromCache}/${stubs.length} | ${elapsed}s elapsed | ETA ${eta}s`
+        )
       }
-
     } catch (err) {
       console.log(` ❌ error: ${err} — skipping`)
       skipped++
@@ -2263,16 +2475,19 @@ async function main(): Promise<void> {
     supplementalMediaByForumUrl
   )
   const promotedGuests = applySupplementalGuestData(
-    repairAccessFlags(sanitizePromotedGuestEntries(canonicalizePromotedRelationships(promoteCrossPostFamilies(hydratedGuests)))),
+    repairAccessFlags(
+      sanitizePromotedGuestEntries(
+        canonicalizePromotedRelationships(promoteCrossPostFamilies(hydratedGuests))
+      )
+    ),
     supplementalNotesByForumUrl,
     supplementalMediaByForumUrl
   )
-  const finalGuests = promotedGuests
-    .sort((a, b) => {
-      const aName: string = 'familyName' in a ? a.familyName : a.name
-      const bName: string = 'familyName' in b ? b.familyName : b.name
-      return aName.localeCompare(bName)
-    })
+  const finalGuests = promotedGuests.sort((a, b) => {
+    const aName: string = 'familyName' in a ? a.familyName : a.name
+    const bName: string = 'familyName' in b ? b.familyName : b.name
+    return compareTitles(aName, bName)
+  })
 
   fs.writeFileSync(OUTPUT_PATH, JSON.stringify(finalGuests, null, 2) + '\n', 'utf-8')
 
@@ -2282,10 +2497,15 @@ async function main(): Promise<void> {
   console.log('\n📊 Summary:')
   console.log(`   Total stubs:   ${allStubs.length}`)
   console.log(`   In progress:   ${progressMap.size}`)
-  console.log(`   Guests:        ${finalGuests.filter(g => g.type === 'guest').length}`)
+  console.log(`   Guests:        ${finalGuests.filter((g) => g.type === 'guest').length}`)
   console.log(`   With images:   ${finalGuests.filter(hasRequiredGuestImage).length}`)
-  console.log(`   Missing images:${finalGuests.filter(g => !hasRequiredGuestImage(g)).length}`)
-  console.log(`   With dates:    ${finalGuests.filter(g => 'releaseDate' in g && g.releaseDate !== 'Unknown').length}`)
+  console.log(`   Missing images:${finalGuests.filter((g) => !hasRequiredGuestImage(g)).length}`)
+  console.log(
+    `   With dates:    ${finalGuests.filter((g) => 'releaseDate' in g && g.releaseDate !== 'Unknown').length}`
+  )
 }
 
-main().catch(err => { console.error('Fatal:', err); process.exit(1) })
+main().catch((err) => {
+  console.error('Fatal:', err)
+  process.exit(1)
+})

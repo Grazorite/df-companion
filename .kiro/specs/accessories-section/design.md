@@ -23,7 +23,7 @@ The design intentionally mirrors the proven architecture from Pets/Guests:
 
 **Phase 1 delivery strategy:** build the full accessories architecture from day one, but populate and verify **Bracers** and **Trinkets** first.
 
-**Current implementation status:** the shared accessory routes, validation, and real-data rollout for Bracers and Trinkets are already in place. The main remaining engineering tasks are resumable scraper progress, deeper family-validation checks, and future cross-post consolidation beyond same-thread families.
+**Current implementation status:** the shared accessory routes, validation, and real-data rollout are in place. Helms and Capes & Wings are stored as A-L / M-Z JSON shards for lazy-loading efficiency while remaining one logical UI subtype each. The main remaining engineering tasks are resumable scraper progress, deeper family-validation checks, and continuing subtype-specific scrape passes.
 
 ## Components and Interfaces
 
@@ -37,8 +37,10 @@ The design intentionally mirrors the proven architecture from Pets/Guests:
 | `src/data/artifacts.json` | Data | Artifact entries |
 | `src/data/belts.json` | Data | Belt entries |
 | `src/data/bracers.json` | Data | Bracer entries |
-| `src/data/capes-wings.json` | Data | Cape and wing entries |
-| `src/data/helms.json` | Data | Helm entries |
+| `src/data/capes-wings-a-l.json` | Data | Cape and wing entries A-L |
+| `src/data/capes-wings-m-z.json` | Data | Cape and wing entries M-Z |
+| `src/data/helms-a-l.json` | Data | Helm entries A-L |
+| `src/data/helms-m-z.json` | Data | Helm entries M-Z |
 | `src/data/necklaces.json` | Data | Necklace entries |
 | `src/data/rings.json` | Data | Ring entries |
 | `src/data/trinkets.json` | Data | Trinket entries |
@@ -57,7 +59,9 @@ The design intentionally mirrors the proven architecture from Pets/Guests:
 | `src/pages/HomePage.tsx` | Activate Accessories card |
 | `scripts/lib/printable-parser.ts` | Reused for accessories scraper |
 | `src/utils/variantHelpers.ts` | Reused or extended for accessory families |
-| `scripts/lib/cross-post-family.ts` | Reused or generalized for accessory cross-post family promotion if needed |
+| `scripts/lib/also-see.ts` | Shared neutral parser for `Also See:` source references |
+| `scripts/lib/cross-post-family.ts` | Pet/guest cross-post family promotion helper; accessories should not use `Also See` for promotion by default |
+| `scripts/lib/accessories/*` | Accessory subtype strategies for image extraction, thread inspection, and subtype-specific quirks |
 
 ### Route Interface
 
@@ -159,13 +163,15 @@ Accessories reuse the existing `ItemFamily` pattern with `type: 'accessory'` and
 
 ### Data Loading Strategy
 
-Unlike pets/guests, accessories are stored in **separate subtype JSON files**. The UI layer loads them through a shared hook:
+Unlike pets/guests, accessories are stored in **separate subtype JSON files**. Large image-heavy subtypes can use multiple JSON shards without changing the route or UI subtype. The UI layer loads them through a shared hook:
 
 ```text
 src/data/artifacts.json
 src/data/belts.json
 src/data/bracers.json
 ...
+src/data/helms-a-l.json + src/data/helms-m-z.json
+src/data/capes-wings-a-l.json + src/data/capes-wings-m-z.json
 src/data/trinkets.json
         ↓
 useAccessories()
@@ -213,6 +219,8 @@ Fetch Accessories A-Z index (m=20985110)
   -> validate datasets
 ```
 
+The scraper entry file should remain an orchestration layer. Shared neutral parsing belongs in `scripts/lib/*`; accessory-specific decisions belong in subtype strategy modules under `scripts/lib/accessories/*`.
+
 ### Subtype Index Parsing
 
 The accessories index is a single forum post with content headings such as:
@@ -254,6 +262,12 @@ Trinkets add one extra parsing path beyond the baseline accessory schema:
 - the linked skill post should be treated as a detail expansion of the trinket, not as a separate accessory entry or family
 
 This keeps active-effect trinkets aligned with the existing expander-based skill UI and avoids inventing a trinket-only attack renderer.
+
+### Also See Strategy
+
+Accessories may expose `Also See:` links in forum posts. These links should be preserved and rendered as related items, but they should not be used to consolidate separate accessory posts into one `ItemFamily`. This differs from pets/guests, where carefully scored cross-post relationships can be promoted when names, mechanics, and obtain data indicate true variants.
+
+This distinction is deliberate for Helms and Capes & Wings: some entries share images and stats but differ by obtain method, rarity/tagging, or availability, and should remain separate cards.
 
 ### Multi-Variant Strategy
 
@@ -396,3 +410,5 @@ The Bracers/Trinkets-first rollout must not require a separate architecture from
 ### Property 6: UI Consistency
 
 Accessory list/detail experiences should feel native beside Badges, Pets, and Guests, reusing established filter, card, and obtain-card patterns wherever appropriate.
+
+Shared detail-section ordering should match the item-family pattern used by Pets/Guests. In particular, `Also See` renders after `Sources`, not before it, and uses the same bordered related-card section style. Category-specific content may add sections above stats or obtain data only when the source schema requires it, such as artifact `Modifies` / `Equip Spot`.

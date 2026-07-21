@@ -3,7 +3,7 @@ import { ArrowLeft, Shield } from 'lucide-react'
 import { useBadgeBySlug, useBadgesByCategory } from '../hooks/useBadges'
 import BadgeCard from '../components/badges/BadgeCard'
 import NotesList from '../components/shared/NotesList'
-import { normalizeDisplayText } from '../utils/displayText'
+import { displayTitle, normalizeDisplayText } from '../utils/displayText'
 import AccessPills from '../components/shared/AccessPills'
 import SourceLinksCard from '../components/shared/SourceLinksCard'
 
@@ -103,7 +103,7 @@ export default function BadgeDetailPage() {
           )}
         </div>
 
-        <h1 className="text-2xl font-bold text-text-primary mb-2">{badge.name}</h1>
+        <h1 className="text-2xl font-bold text-text-primary mb-2">{displayTitle(badge.name)}</h1>
         <p className="text-text-secondary leading-relaxed text-sm italic">{badge.description}</p>
       </div>
 
@@ -117,7 +117,7 @@ export default function BadgeDetailPage() {
         ) : badge.imageUrl ? (
           <img
             src={badge.imageUrl}
-            alt={`${badge.name} badge icon`}
+            alt={`${displayTitle(badge.name)} badge icon`}
             loading="lazy"
             className="max-w-xs w-full mx-auto rounded-xl object-contain bg-bg-elevated border border-border-default p-6 shadow-medium img-fade"
           />
@@ -143,10 +143,7 @@ export default function BadgeDetailPage() {
                 How to Obtain{badge.howToObtain.length > 1 ? ` (Method ${index + 1})` : ''}
               </h3>
               <div className="flex items-center gap-2 flex-wrap justify-end">
-                <AccessPills
-                  daRequired={Boolean(step.daRequired)}
-                  filterBase="/badges"
-                />
+                <AccessPills daRequired={Boolean(step.daRequired)} filterBase="/badges" />
               </div>
             </div>
             <p className="text-text-primary text-sm leading-relaxed">
@@ -168,7 +165,7 @@ export default function BadgeDetailPage() {
 
       <section className="mb-5">
         <SourceLinksCard
-          links={badge.forumLinks.map(link => ({
+          links={badge.forumLinks.map((link) => ({
             url: link.url,
             label: link.title,
           }))}
