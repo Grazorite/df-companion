@@ -20,7 +20,19 @@
 
 import * as fs from 'node:fs'
 import * as path from 'node:path'
-import type { Guest, GuestAttack, GuestStats, ObtainMethod, AlsoSeeRef, EntryType } from '../src/types/pet.ts'
+import type {
+  Guest,
+  GuestAttack,
+  GuestCharacterStats,
+  GuestDamageMultipliers,
+  GuestDamageReduction,
+  GuestDefenseStats,
+  GuestOffenseStats,
+  GuestStats,
+  ObtainMethod,
+  AlsoSeeRef,
+  EntryType,
+} from '../src/types/pet.ts'
 import type { AlternativeImage, ItemFamily, LevelVariant, ObtainVariant } from '../src/types/item.ts'
 import { convertImageTags, extractThreadPostContents, fetchPrintable, fetchThreadPages, getPostContent, type ThreadPostContent } from './lib/printable-parser.ts'
 import { computeFamilyFlags, computePriceType, normalizeLevel } from '../src/utils/variantHelpers.ts'
@@ -219,6 +231,13 @@ interface GuestStub {
   letter: string
 }
 
+type GuestFamilyVariant = Guest & {
+  sourceName: string
+  damage: string
+  stats: string
+  rarity: string
+}
+
 // ─── Bracket code parser ─────────────────────────────────────────────────────
 
 const KNOWN_TRAITS = new Set(['A/C', 'ALA', 'N/A', 'SHR', 'W/S'])
@@ -285,7 +304,7 @@ function parseGuestStats(html: string, guestName: string): GuestStats {
   const statsSection = html.match(/(?:<b>)?<u>Stats<\/u>(?:<\/b>)?([\s\S]*?)(?=<u>|<hr>|$)/i)
   if (statsSection) {
     if (DEBUG) console.log(`  Found Stats section`)
-    const characterStats: typeof stats.characterStats = {}
+    const characterStats: GuestCharacterStats = {}
     
     // Stats are plain text: "STR: 0" not "<b>STR:</b> 0"
     const strMatch = statsSection[1].match(/STR:\s*([^<\n]+)/i)
@@ -318,7 +337,7 @@ function parseGuestStats(html: string, guestName: string): GuestStats {
   if (!stats.characterStats) {
     const legacyStatsLine = html.match(/Stats:\s*([^<\n]+)/i)
     if (legacyStatsLine) {
-      const characterStats: typeof stats.characterStats = {}
+      const characterStats: GuestCharacterStats = {}
       const sectionText = legacyStatsLine[1]
       const strMatch = sectionText.match(/\bSTR:\s*([^,<\n]+)/i)
       if (strMatch) characterStats.str = strMatch[1].trim()
@@ -344,7 +363,7 @@ function parseGuestStats(html: string, guestName: string): GuestStats {
   const offenseSection = html.match(/(?:<b>)?<u>Offense<\/u>(?:<\/b>)?([\s\S]*?)(?=<u>|<hr>|$)/i)
   if (offenseSection) {
     if (DEBUG) console.log(`  Found Offense section`)
-    const offense: typeof stats.offense = {}
+    const offense: GuestOffenseStats = {}
     
     // Stats are plain text: "Boost: 0%" not "<b>Boost:</b> 0%"
     const boostMatch = offenseSection[1].match(/\bBoost:\s*([^<\n]+)/i)
@@ -365,7 +384,7 @@ function parseGuestStats(html: string, guestName: string): GuestStats {
   if (!stats.offense) {
     const legacyOffenseLine = html.match(/Offenses?:\s*([^<\n]+)/i)
     if (legacyOffenseLine) {
-      const offense: typeof stats.offense = {}
+      const offense: GuestOffenseStats = {}
       const sectionText = legacyOffenseLine[1]
       const boostMatch = sectionText.match(/\bBoost:\s*([^,<\n]+)/i)
       if (boostMatch) offense.boost = boostMatch[1].trim()
@@ -384,7 +403,7 @@ function parseGuestStats(html: string, guestName: string): GuestStats {
   if (dmgMultSection) {
     if (DEBUG) console.log(`  Found Damage Multipliers section`)
     const sectionText = dmgMultSection[1]
-    const damageMultipliers: typeof stats.damageMultipliers = {}
+    const damageMultipliers: GuestDamageMultipliers = {}
     
     const nonCritMatch = sectionText.match(/Non-Crit:\s*([^<\n]+)/i)
     if (nonCritMatch) damageMultipliers.nonCrit = nonCritMatch[1].trim()
@@ -409,7 +428,7 @@ function parseGuestStats(html: string, guestName: string): GuestStats {
   const defenseSection = html.match(/(?:<b>)?<u>(?:Avoidance and )?Defense<\/u>(?:<\/b>)?([\s\S]*?)(?=<u>|<hr>|$)/i)
   if (defenseSection) {
     if (DEBUG) console.log(`  Found Defense section`)
-    const defense: typeof stats.defense = {}
+    const defense: GuestDefenseStats = {}
     
     const meleeMatch = defenseSection[1].match(/Melee:\s*([^<\n]+)/i)
     if (meleeMatch) defense.melee = meleeMatch[1].trim()
@@ -438,7 +457,7 @@ function parseGuestStats(html: string, guestName: string): GuestStats {
   if (!stats.defense) {
     const legacyDefenseLine = html.match(/Defenses?:\s*([^<\n]+)/i)
     if (legacyDefenseLine) {
-      const defense: typeof stats.defense = {}
+      const defense: GuestDefenseStats = {}
       const sectionText = legacyDefenseLine[1]
       const meleeMatch = sectionText.match(/\bMelee:\s*([^,<\n]+)/i)
       if (meleeMatch) defense.melee = meleeMatch[1].trim()
@@ -462,7 +481,7 @@ function parseGuestStats(html: string, guestName: string): GuestStats {
   const dmgRedSection = html.match(/(?:<b>)?<u>Damage Reduction<\/u>(?:<\/b>)?([\s\S]*?)(?=<u>|<hr>|$)/i)
   if (dmgRedSection) {
     if (DEBUG) console.log(`  Found Damage Reduction section`)
-    const damageReduction: typeof stats.damageReduction = {}
+    const damageReduction: GuestDamageReduction = {}
     
     const nonCritMatch = dmgRedSection[1].match(/Non-Crit:\s*([^<\n]+)/i)
     if (nonCritMatch) damageReduction.nonCrit = nonCritMatch[1].trim()
@@ -930,16 +949,16 @@ function detectCategoryTags(html: string): CategoryTags {
 
 // ─── Image Extraction ─────────────────────────────────────────────────────────
 
-function extractGuestImages(html: string, guestName: string): { imageUrl?: string; alternativeImages: Array<{ url: string; caption?: string }> } {
+function extractGuestImages(html: string, guestName: string): { imageUrl?: string; alternativeImages: AlternativeImage[] } {
   const DEBUG = process.env.DEBUG_IMAGES === '1'
   
   if (DEBUG) console.log(`\n[DEBUG] Extracting images for ${guestName}`)
   
   // Skip patterns for UI/tag/button/attack/appearance images
   const skipPatterns = [
-    /forums2\.battleon\.com/i,          // Forum images (poster avatars, etc.)
     /\/f\/image\//i,                     // Forum UI images
-    /\/f\/upfiles\//i,                   // Forum user uploads
+    /^image\//i,
+    /^micons\//i,
     /forumheader/i,
     /quantserve/i,
     /artix\.com\/shared/i,
@@ -964,7 +983,8 @@ function extractGuestImages(html: string, guestName: string): { imageUrl?: strin
       src.includes('raw.githubusercontent.com') ||
       src.includes('githubusercontent.com') ||
       src.includes('imgur.com') ||
-      src.includes('i.imgur.com')
+      src.includes('i.imgur.com') ||
+      (src.includes('/f/upfiles/') && src.length > 60)
     )
   }
   
@@ -983,7 +1003,7 @@ function extractGuestImages(html: string, guestName: string): { imageUrl?: strin
   
   // Find alternative images - look for hyperlinked image captions AFTER main image
   // Pattern: <a href="url">Caption Text</a> where URL is an image
-  const alternativeImages: Array<{ url: string; caption?: string }> = []
+  const alternativeImages: AlternativeImage[] = []
   
   if (mainImageMatch) {
     // Start searching after the main image position
@@ -1018,11 +1038,11 @@ function extractGuestImages(html: string, guestName: string): { imageUrl?: strin
   // then the last valid image in the entire post.
   if (!imageUrl) {
     const sectionImages: string[] = []
-    const imgRegex = /<img[^>]+src="([^"]+)"[^>]*>/gi
+    const imgRegex = /<img[^>]+src=(["'])(.*?)\1[^>]*>/gi
     let imgMatch: RegExpExecArray | null
 
     while ((imgMatch = imgRegex.exec(otherInfoHtml)) !== null) {
-      const src = imgMatch[1]
+      const src = imgMatch[2]
       if (isCandidateMainImage(src)) sectionImages.push(src)
     }
     
@@ -1036,11 +1056,11 @@ function extractGuestImages(html: string, guestName: string): { imageUrl?: strin
       const fallbackPos = otherInfoHtml.lastIndexOf(fallbackMain)
       if (fallbackPos >= 0) {
         const afterMainImage = otherInfoHtml.slice(fallbackPos + fallbackMain.length)
-        const hyperlinkPattern = /<a[^>]+href="([^"]+\.(?:png|jpg|jpeg|gif|bmp))"[^>]*>([\s\S]*?)<\/a>/gi
+        const hyperlinkPattern = /<a[^>]+href=(["'])(.*?\.(?:png|jpg|jpeg|gif|bmp))\1[^>]*>([\s\S]*?)<\/a>/gi
         let match: RegExpExecArray | null
         while ((match = hyperlinkPattern.exec(afterMainImage)) !== null) {
-          const url = match[1]
-          const caption = stripHtml(decodeHTML(match[2])).trim()
+          const url = match[2]
+          const caption = stripHtml(decodeHTML(match[3])).trim()
           if (!caption || !isCandidateMainImage(url)) continue
           alternativeImages.push({ url, caption })
         }
@@ -1063,30 +1083,42 @@ function extractGuestImages(html: string, guestName: string): { imageUrl?: strin
   return { imageUrl, alternativeImages }
 }
 
+function hasRequiredGuestImage(item: Guest | ItemFamily): boolean {
+  if ('levelVariants' in item) {
+    return Boolean(
+      item.shared.imageUrl ||
+      item.shared.alternativeImages?.length ||
+      item.levelVariants.some(level => level.imageUrl || level.alternativeImages?.length)
+    )
+  }
+
+  return Boolean(item.imageUrl || item.alternativeImages?.length)
+}
+
 function sanitizeGuestMedia<T extends { imageUrl?: string; alternativeImages?: AlternativeImage[]; attacks?: GuestAttack[] }>(
   entry: T
 ): T {
   const attackMediaUrls = new Set(
     (entry.attacks ?? []).flatMap(attack => [attack.buttonImageUrl, attack.appearanceUrl]).filter(Boolean)
   )
-  const imageUrl =
-    entry.imageUrl && attackMediaUrls.has(entry.imageUrl)
-      ? undefined
-      : entry.imageUrl
-
   const alternativeImages = entry.alternativeImages?.filter(image => {
     if (!attackMediaUrls.has(image.url)) return true
     const caption = image.caption?.trim().toLowerCase() ?? ''
     return caption.length > 0 && !/^(appearance(?:\s+\d+(?:\.\d+)?)?|[0-9.]+)$/.test(caption)
   })
 
-  const { imageUrl: _ignoredImageUrl, alternativeImages: _ignoredAlternativeImages, ...rest } = entry
+  const sanitized = { ...entry }
 
-  return {
-    ...rest,
-    ...(imageUrl ? { imageUrl } : {}),
-    ...(alternativeImages && alternativeImages.length > 0 ? { alternativeImages } : {}),
+  if (sanitized.imageUrl && attackMediaUrls.has(sanitized.imageUrl)) {
+    delete sanitized.imageUrl
   }
+  if (alternativeImages && alternativeImages.length > 0) {
+    sanitized.alternativeImages = alternativeImages
+  } else {
+    delete sanitized.alternativeImages
+  }
+
+  return sanitized
 }
 
 function sanitizeGuestFamilyLevelVariants(family: ItemFamily): ItemFamily {
@@ -1705,9 +1737,9 @@ function extractSupplementalGuestThreadMedia(
   if (blocks.length <= 1) return {}
 
   const skipPatterns = [
-    /forums2\.battleon\.com/i,
     /\/f\/image\//i,
-    /\/f\/upfiles\//i,
+    /^image\//i,
+    /^micons\//i,
     /forumheader/i,
     /quantserve/i,
     /artix\.com\/shared/i,
@@ -1725,7 +1757,7 @@ function extractSupplementalGuestThreadMedia(
 
   const isCandidateImage = (url: string): boolean => {
     if (skipPatterns.some(pattern => pattern.test(url))) return false
-    return /github\.com|raw\.githubusercontent\.com|githubusercontent\.com|imgur\.com/i.test(url)
+    return /github\.com|raw\.githubusercontent\.com|githubusercontent\.com|imgur\.com|\/f\/upfiles\//i.test(url)
   }
 
   let imageUrl: string | undefined
@@ -1740,19 +1772,19 @@ function extractSupplementalGuestThreadMedia(
       continue
     }
 
-    const candidateImages = [...block.matchAll(/<img[^>]+src="([^"]+)"[^>]*>/gi)]
-      .map(match => match[1])
+    const candidateImages = [...block.matchAll(/<img[^>]+src=(["'])(.*?)\1[^>]*>/gi)]
+      .map(match => match[2])
       .filter(isCandidateImage)
 
     if (!imageUrl && candidateImages.length > 0) {
       imageUrl = candidateImages.at(-1)
     }
 
-    const hyperlinkPattern = /<a[^>]+href="([^"]+\.(?:png|jpg|jpeg|gif|bmp))"[^>]*>([\s\S]*?)<\/a>/gi
+    const hyperlinkPattern = /<a[^>]+href=(["'])(.*?\.(?:png|jpg|jpeg|gif|bmp))\1[^>]*>([\s\S]*?)<\/a>/gi
     let match: RegExpExecArray | null
     while ((match = hyperlinkPattern.exec(block)) !== null) {
-      const url = match[1]
-      const caption = stripHtml(decodeHTML(match[2])).trim()
+      const url = match[2]
+      const caption = stripHtml(decodeHTML(match[3])).trim()
       if (!caption || !isCandidateImage(url) || /thanks to|also see:/i.test(caption)) continue
       alternativeImages.push({ url, caption })
     }
@@ -1772,7 +1804,7 @@ function buildGuestFamilyFromSections(
   sharedNotes?: string
 ): ItemFamily {
   const familyName = deriveGuestFamilyName(sections.map(section => section.name))
-  const variants: Array<Guest & { sourceName: string }> = sections.map(section => {
+  const variants: GuestFamilyVariant[] = sections.map(section => {
     const description = parseDescription(section.html, section.name)
     const guestStats = parseGuestStats(section.html, section.name)
     const attacks = parseGuestAttacks(section.html, section.name)
@@ -1944,7 +1976,7 @@ function applySupplementalGuestData(
       })
     }
 
-    if (item.type === 'guest') {
+    if (!('levelVariants' in item)) {
       return sanitizeGuestMedia({
         ...item,
         ...(supplementalNotes ? { notes: mergeNotesText(item.notes, supplementalNotes) } : {}),
@@ -1965,7 +1997,7 @@ function sanitizePromotedGuestEntries(items: Array<Guest | ItemFamily>): Array<G
       return sanitizeGuestFamilyLevelVariants(item)
     }
 
-    if (item.type === 'guest') {
+    if (!('levelVariants' in item)) {
       return sanitizeGuestMedia(item)
     }
 
@@ -2251,6 +2283,8 @@ async function main(): Promise<void> {
   console.log(`   Total stubs:   ${allStubs.length}`)
   console.log(`   In progress:   ${progressMap.size}`)
   console.log(`   Guests:        ${finalGuests.filter(g => g.type === 'guest').length}`)
+  console.log(`   With images:   ${finalGuests.filter(hasRequiredGuestImage).length}`)
+  console.log(`   Missing images:${finalGuests.filter(g => !hasRequiredGuestImage(g)).length}`)
   console.log(`   With dates:    ${finalGuests.filter(g => 'releaseDate' in g && g.releaseDate !== 'Unknown').length}`)
 }
 

@@ -8,6 +8,11 @@ import type {
 } from '../types/accessory'
 import { isAccessoryFamily, ACCESSORY_SUBTYPES } from '../types/accessory'
 import { loadAccessoriesBySubtype, loadElements } from '../utils/dataLoaders'
+import {
+  getDisplayFamilyName,
+  hasParentheticalVariantFamilyName,
+  hasSameLevelVariants,
+} from '../utils/variantHelpers'
 
 function useAccessoryDataset() {
   const [datasets, setDatasets] = useState<Record<AccessorySubtype, AccessoryEntry[]>>({
@@ -244,7 +249,7 @@ export function buildAccessoryCardData(entry: AccessoryEntry) {
   }
 
   return {
-    name: entry.familyName,
+    name: getDisplayFamilyName(entry),
     description: entry.shared.description,
     elements: entry.elements,
     daRequired: entry.hasDA,
@@ -252,7 +257,9 @@ export function buildAccessoryCardData(entry: AccessoryEntry) {
     dmRequired: entry.hasDM,
     hasFree: entry.hasFree,
     hasMultipleVersions: entry.levelVariants.length > 1,
-    levelRange: entry.levelRange,
+    levelRange: hasSameLevelVariants(entry) || hasParentheticalVariantFamilyName(entry.familyName)
+      ? ''
+      : entry.levelRange,
     route: `/accessories/${entry.slug}?type=${encodeURIComponent(entry.subtype)}`,
   }
 }

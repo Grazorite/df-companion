@@ -1,12 +1,18 @@
-import type { Guest, Pet } from '../../src/types/pet.ts'
+import type { EntryType, Guest, Pet } from '../../src/types/pet.ts'
 import type { AlternativeImage, AlsoSeeRef, FamilySourceRef, ItemFamily, LevelVariant, VariantAttack } from '../../src/types/item.ts'
 import { computeFamilyFlags, normalizeLevel } from '../../src/utils/variantHelpers.ts'
 
-function isItemFamily(item: Pet | ItemFamily): item is ItemFamily {
+type ScrapedEntry = Guest | Pet | ItemFamily
+
+function isItemFamily(item: ScrapedEntry): item is ItemFamily {
   return 'levelVariants' in item && 'familyName' in item
 }
 
-function getDisplayName(item: Pet | ItemFamily): string {
+function isPetFamilyEntry(item: ScrapedEntry): item is Pet | ItemFamily {
+  return item.type !== 'guest'
+}
+
+function getDisplayName(item: ScrapedEntry): string {
   return isItemFamily(item) ? item.familyName : item.name
 }
 
@@ -100,7 +106,7 @@ function trimNumericQualifierFromSuffix(suffix: string[], tokenSets: string[][])
   return shouldTrim ? suffix.slice(1) : suffix
 }
 
-function deriveFamilyName(items: Array<Pet | ItemFamily>): string {
+function deriveFamilyName(items: Array<ScrapedEntry>): string {
   const displayNames = items.map(getDisplayName)
   const normalizedWithoutTrailingVariants = displayNames.map(name =>
     name.replace(/\s+\((?:all versions|[ivxlcdm]+(?:-[ivxlcdm]+)?|\d+)\)$/i, '').trim()
@@ -139,7 +145,7 @@ function imagesMatch(a?: string, b?: string): boolean {
   return Boolean(a && b && a === b)
 }
 
-function sharesExplicitReference(a: Pet | ItemFamily, b: Pet | ItemFamily): boolean {
+function sharesExplicitReference(a: ScrapedEntry, b: ScrapedEntry): boolean {
   const aRefs = isItemFamily(a) ? a.shared.alsoSee ?? [] : a.alsoSee
   const bRefs = isItemFamily(b) ? b.shared.alsoSee ?? [] : b.alsoSee
   const aNames = new Set(aRefs.map(ref => normalizeLookupName(ref.name)))
@@ -149,13 +155,13 @@ function sharesExplicitReference(a: Pet | ItemFamily, b: Pet | ItemFamily): bool
   return aNames.has(bName) || bNames.has(aName)
 }
 
-function sharesNumericVariantBase(a: Pet | ItemFamily, b: Pet | ItemFamily): boolean {
+function sharesNumericVariantBase(a: ScrapedEntry, b: ScrapedEntry): boolean {
   const aBase = extractNumericVariantBase(getDisplayName(a))
   const bBase = extractNumericVariantBase(getDisplayName(b))
   return Boolean(aBase && bBase && aBase === bBase)
 }
 
-function sharesGuestFamilyVariantOverlap(a: Pet | ItemFamily, b: Pet | ItemFamily): boolean {
+function sharesGuestFamilyVariantOverlap(a: ScrapedEntry, b: ScrapedEntry): boolean {
   const family = isItemFamily(a) ? a : isItemFamily(b) ? b : undefined
   const standalone = !isItemFamily(a) ? a : !isItemFamily(b) ? b : undefined
   if (!family || !standalone) return false
@@ -174,7 +180,7 @@ function sharesGuestFamilyVariantOverlap(a: Pet | ItemFamily, b: Pet | ItemFamil
   })
 }
 
-function sharesMeaningfulTitleFamily(a: Pet | ItemFamily, b: Pet | ItemFamily): boolean {
+function sharesMeaningfulTitleFamily(a: ScrapedEntry, b: ScrapedEntry): boolean {
   const names = [getDisplayName(a), getDisplayName(b)]
   const normalized = names.map(name =>
     name.replace(/\s+\((?:all versions|[ivxlcdm]+(?:-[ivxlcdm]+)?|\d+)\)$/i, '').trim()
@@ -192,13 +198,13 @@ function sharesMeaningfulTitleFamily(a: Pet | ItemFamily, b: Pet | ItemFamily): 
   return prefix.length >= 2 || suffix.length >= 2
 }
 
-function getItemElements(item: Pet | ItemFamily): string[] {
+function getItemElements(item: ScrapedEntry): string[] {
   return isItemFamily(item)
     ? item.levelVariants.map(level => level.element).filter((value): value is string => Boolean(value))
     : item.elements
 }
 
-function canCrossMerge(a: Pet | ItemFamily, b: Pet | ItemFamily): boolean {
+function canCrossMerge(a: ScrapedEntry, b: ScrapedEntry): boolean {
   if (a.type !== b.type) return false
   if (isItemFamily(a) && isItemFamily(b)) return false
   const hasExplicitReference = sharesExplicitReference(a, b)
@@ -230,7 +236,7 @@ function canCrossMerge(a: Pet | ItemFamily, b: Pet | ItemFamily): boolean {
   )
 }
 
-function gatherAllRefs(items: Array<Pet | ItemFamily>, internalSlugs: Set<string>): AlsoSeeRef[] {
+function gatherAllRefs(items: Array<ScrapedEntry>, internalSlugs: Set<string>): AlsoSeeRef[] {
   const refs = new Map<string, AlsoSeeRef>()
 
   for (const item of items) {
@@ -291,7 +297,7 @@ function flattenFamilyVariants(family: ItemFamily): LevelVariant[] {
   }))
 }
 
-function mergeTags(items: Array<Pet | ItemFamily>): string[] {
+function mergeTags(items: Array<ScrapedEntry>): string[] {
   return Array.from(
     new Set(
       items.flatMap(item => item.tags)
@@ -299,7 +305,7 @@ function mergeTags(items: Array<Pet | ItemFamily>): string[] {
   ).sort()
 }
 
-function mergeSources(items: Array<Pet | ItemFamily>, familyName: string): FamilySourceRef[] {
+function mergeSources(items: Array<ScrapedEntry>, familyName: string): FamilySourceRef[] {
   const refs = new Map<string, FamilySourceRef>()
 
   for (const item of items) {
@@ -473,14 +479,16 @@ function buildFamilyFromGroup(items: Array<Pet | ItemFamily>): ItemFamily {
   return computeFamilyFlags(mergedFamily)
 }
 
-export function promoteCrossPostFamilies(items: Array<Pet | ItemFamily>): Array<Pet | ItemFamily> {
+export function promoteCrossPostFamilies(items: Array<Guest | ItemFamily>): Array<Guest | ItemFamily>
+export function promoteCrossPostFamilies(items: Array<Pet | ItemFamily>): Array<Pet | ItemFamily>
+export function promoteCrossPostFamilies(items: Array<ScrapedEntry>): Array<ScrapedEntry> {
   const visited = new Set<string>()
-  const groups: Array<Array<Pet | ItemFamily>> = []
+  const groups: Array<Array<ScrapedEntry>> = []
 
   for (const item of items) {
     if (visited.has(item.slug)) continue
     const queue = [item]
-    const group: Array<Pet | ItemFamily> = []
+    const group: Array<ScrapedEntry> = []
 
     while (queue.length > 0) {
       const current = queue.shift()!
@@ -508,17 +516,19 @@ export function promoteCrossPostFamilies(items: Array<Pet | ItemFamily>): Array<
       return group
     }
 
-    return [buildFamilyFromGroup(group)]
+    return [buildFamilyFromGroup(group.filter(isPetFamilyEntry))]
   }).flat()
 }
 
-export function canonicalizePromotedRelationships(items: Array<Pet | ItemFamily>): Array<Pet | ItemFamily> {
-  const slugToCanonical = new Map<string, { slug: string; type: Pet['type'] }>()
-  const nameToCanonical = new Map<string, { slug: string; type: Pet['type'] }>()
+export function canonicalizePromotedRelationships(items: Array<Guest | ItemFamily>): Array<Guest | ItemFamily>
+export function canonicalizePromotedRelationships(items: Array<Pet | ItemFamily>): Array<Pet | ItemFamily>
+export function canonicalizePromotedRelationships(items: Array<ScrapedEntry>): Array<ScrapedEntry> {
+  const slugToCanonical = new Map<string, { slug: string; type: EntryType }>()
+  const nameToCanonical = new Map<string, { slug: string; type: EntryType }>()
 
   for (const item of items) {
     const displayName = getDisplayName(item)
-    const canonical = { slug: item.slug, type: item.type as Pet['type'] }
+    const canonical = { slug: item.slug, type: item.type as EntryType }
     slugToCanonical.set(item.slug, canonical)
     nameToCanonical.set(displayName.toLowerCase(), canonical)
     nameToCanonical.set(normalizeRefLookupName(displayName), canonical)
@@ -539,7 +549,7 @@ export function canonicalizePromotedRelationships(items: Array<Pet | ItemFamily>
     }
   }
 
-  const resolveRef = (name: string, fallbackSlug: string, fallbackType: Pet['type']) =>
+  const resolveRef = (name: string, fallbackSlug: string, fallbackType: EntryType) =>
     slugToCanonical.get(fallbackSlug) ??
     nameToCanonical.get(name.toLowerCase()) ??
     nameToCanonical.get(normalizeRefLookupName(name)) ??
@@ -549,7 +559,7 @@ export function canonicalizePromotedRelationships(items: Array<Pet | ItemFamily>
     if (isItemFamily(item)) {
       const alsoSee = item.shared.alsoSee
         ?.map(ref => {
-          const resolved = resolveRef(ref.name, ref.slug, ref.type as Pet['type'])
+          const resolved = resolveRef(ref.name, ref.slug, ref.type as EntryType)
           return { ...ref, slug: resolved.slug, type: resolved.type }
         })
         .filter(ref => ref.slug !== item.slug)

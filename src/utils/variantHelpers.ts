@@ -91,7 +91,7 @@ export function computePriceType(price: string, requiredItems?: string): PriceTy
  * // updated.hasDC = true (DC variant exists)
  * // updated.hasFree = true (free variant exists)
  */
-export function computeFamilyFlags(family: ItemFamily): ItemFamily {
+export function computeFamilyFlags<T extends ItemFamily>(family: T): T {
   let hasDA = false
   let hasDC = false
   let hasDM = false
@@ -332,6 +332,33 @@ export function getDisplayFamilyName(family: ItemFamily): string {
   return suffix.length > 0 ? titleCaseTokens(suffix) : family.familyName
 }
 
+function getParentheticalVariantBaseName(familyName: string): string | undefined {
+  return getParentheticalVariantParts(familyName)?.baseName
+}
+
+function getParentheticalVariantParts(familyName: string): { baseName: string; variants: string[] } | undefined {
+  const match = familyName.match(/^(.*?)\s*\(([^)]+)\)\s*$/)
+  if (!match) return undefined
+
+  const variants = match[2]
+    .split(',')
+    .map(value => value.trim())
+    .filter(Boolean)
+  if (variants.length === 0) return undefined
+
+  const knownVariantTerms = new Set(['mask', 'head', 'helm', 'hood', 'cowl'])
+  if (!variants.every(variant => knownVariantTerms.has(variant.toLowerCase()))) return undefined
+
+  return {
+    baseName: normalizeDisplayText(match[1]),
+    variants: variants.map(variant => normalizeDisplayText(variant)),
+  }
+}
+
+export function hasParentheticalVariantFamilyName(familyName: string): boolean {
+  return Boolean(getParentheticalVariantBaseName(familyName))
+}
+
 function getCondensedTitleVariant(levelName: string, familyName: string): string | undefined {
   const normalizedLevelName = stripAccessVariantSuffix(levelName)
   if (!normalizedLevelName) return undefined
@@ -395,6 +422,7 @@ interface LevelVariantLabelInfo {
   canAddLevelSuffix: boolean
   levelLabel: string
   hasDC: boolean
+  hasDA: boolean
 }
 
 function getLevelVariantLabelInfo(
@@ -405,24 +433,25 @@ function getLevelVariantLabelInfo(
 ): LevelVariantLabelInfo {
   const levelLabel = String(level.actualLevel ?? level.levelDisplay)
   const hasDC = level.obtainVariants.some(variant => variant.dcRequired || variant.priceType === 'dc')
+  const hasDA = level.obtainVariants.some(variant => variant.daRequired)
   const normalizedVariantName = level.variantName ? normalizeDisplayText(level.variantName) : undefined
 
   if (familyName === 'Harmonized Cowbell' && normalizedVariantName) {
-    return { label: normalizedVariantName, canAddLevelSuffix: false, levelLabel, hasDC }
+    return { label: normalizedVariantName, canAddLevelSuffix: false, levelLabel, hasDC, hasDA }
   }
 
   if (itemType === 'guest') {
     const numericFamilyVariant = extractNumericFamilyVariant(level.name, familyName)
     if (numericFamilyVariant) {
-      return { label: numericFamilyVariant, canAddLevelSuffix: false, levelLabel, hasDC }
+      return { label: numericFamilyVariant, canAddLevelSuffix: false, levelLabel, hasDC, hasDA }
     }
     if (normalizedVariantName) {
-      return { label: normalizedVariantName, canAddLevelSuffix: true, levelLabel, hasDC }
+      return { label: normalizedVariantName, canAddLevelSuffix: true, levelLabel, hasDC, hasDA }
     }
     const normalizedLevelName = normalizeDisplayText(stripAccessVariantSuffix(level.name))
     if (normalizedLevelName) {
       if (levelLabel.toLowerCase() === 'unknown' || levelLabel.toLowerCase() === 'as player') {
-        return { label: normalizedLevelName, canAddLevelSuffix: false, levelLabel, hasDC }
+        return { label: normalizedLevelName, canAddLevelSuffix: false, levelLabel, hasDC, hasDA }
       }
       if (normalizedLevelName !== familyName) {
         return {
@@ -430,6 +459,7 @@ function getLevelVariantLabelInfo(
           canAddLevelSuffix: true,
           levelLabel,
           hasDC,
+          hasDA,
         }
       }
     }
@@ -441,10 +471,40 @@ function getLevelVariantLabelInfo(
       canAddLevelSuffix: true,
       levelLabel,
       hasDC,
+      hasDA,
     }
   }
 
   if (familyName && useTitleLabels) {
+    const parentheticalVariant = getParentheticalVariantParts(familyName)
+    if (parentheticalVariant) {
+      const normalizedLevelName = normalizeDisplayText(stripAccessVariantSuffix(level.name))
+      if (normalizedLevelName === parentheticalVariant.baseName) {
+        return {
+          label: hasDC ? '(DC)' : parentheticalVariant.variants[0],
+          canAddLevelSuffix: false,
+          levelLabel,
+          hasDC,
+          hasDA,
+        }
+      }
+
+      const matchingVariant = parentheticalVariant.variants.find(variant =>
+        normalizedLevelName === `${parentheticalVariant.baseName} ${variant}` ||
+        normalizedLevelName.replace(/\s+/g, '').toLowerCase() ===
+          `${parentheticalVariant.baseName}${variant}`.replace(/\s+/g, '').toLowerCase()
+      )
+      if (matchingVariant) {
+        return {
+          label: matchingVariant,
+          canAddLevelSuffix: false,
+          levelLabel,
+          hasDC,
+          hasDA,
+        }
+      }
+    }
+
     const condensedTitle = getCondensedTitleVariant(level.name, familyName)
     if (condensedTitle) {
       if (levelLabel.toLowerCase() === 'as player') {
@@ -453,6 +513,7 @@ function getLevelVariantLabelInfo(
           canAddLevelSuffix: false,
           levelLabel,
           hasDC,
+          hasDA,
         }
       }
       if (parseRomanNumeral(condensedTitle.toUpperCase()) !== null) {
@@ -461,6 +522,7 @@ function getLevelVariantLabelInfo(
           canAddLevelSuffix: true,
           levelLabel,
           hasDC,
+          hasDA,
         }
       }
       return {
@@ -468,6 +530,7 @@ function getLevelVariantLabelInfo(
         canAddLevelSuffix: true,
         levelLabel,
         hasDC,
+        hasDA,
       }
     }
 
@@ -478,6 +541,7 @@ function getLevelVariantLabelInfo(
         canAddLevelSuffix: true,
         levelLabel,
         hasDC,
+        hasDA,
       }
     }
   }
@@ -488,6 +552,7 @@ function getLevelVariantLabelInfo(
       canAddLevelSuffix: true,
       levelLabel,
       hasDC,
+      hasDA,
     }
   }
 
@@ -496,6 +561,7 @@ function getLevelVariantLabelInfo(
     canAddLevelSuffix: true,
     levelLabel,
     hasDC,
+    hasDA,
   }
 }
 
@@ -544,21 +610,61 @@ function shouldAddLevelSuffixForDuplicate(
   )
 }
 
-function hasDcDuplicateDisambiguator(
+function getAccessDuplicateSuffix(
+  levels: LevelVariant[],
+  labels: LevelVariantLabelInfo[],
+  index: number
+): 'DC' | 'DA' | undefined {
+  const label = labels[index]
+
+  const duplicateLabels = labels.filter((otherLabel, otherIndex) =>
+    otherIndex !== index &&
+      otherLabel.label === label.label &&
+      hasSameDisplayedLevelAndStats(levels[index], levels[otherIndex]) &&
+      hasDifferentObtainMethods(levels[index], levels[otherIndex])
+  )
+
+  if (duplicateLabels.length === 0) return undefined
+  if (!label.hasDC && !label.hasDA && duplicateLabels.every(otherLabel => !otherLabel.hasDC && !otherLabel.hasDA)) {
+    return undefined
+  }
+
+  if (label.hasDC) return 'DC'
+  if (duplicateLabels.some(otherLabel => otherLabel.hasDC)) return undefined
+  if (label.hasDA) return 'DA'
+
+  return undefined
+}
+
+function hasAccessDisambiguatedDuplicate(
   levels: LevelVariant[],
   labels: LevelVariantLabelInfo[],
   index: number
 ): boolean {
   const label = labels[index]
-  if (!label.canAddLevelSuffix) return false
 
   return labels.some((otherLabel, otherIndex) =>
     otherIndex !== index &&
-    (label.hasDC || otherLabel.hasDC) &&
-    otherLabel.label === label.label &&
-    hasSameDisplayedLevelAndStats(levels[index], levels[otherIndex]) &&
-    hasDifferentObtainMethods(levels[index], levels[otherIndex])
+      otherLabel.label === label.label &&
+      (label.hasDC || label.hasDA || otherLabel.hasDC || otherLabel.hasDA) &&
+      hasSameDisplayedLevelAndStats(levels[index], levels[otherIndex]) &&
+      hasDifferentObtainMethods(levels[index], levels[otherIndex])
   )
+}
+
+function shouldUseCompactDcOnlyLabel(
+  levels: LevelVariant[],
+  labels: LevelVariantLabelInfo[]
+): boolean {
+  if (levels.length !== 2) return false
+
+  const [firstLabel, secondLabel] = labels
+  if (firstLabel.label !== secondLabel.label) return false
+  if (firstLabel.hasDC === secondLabel.hasDC) return false
+  if (firstLabel.hasDA || secondLabel.hasDA) return false
+
+  return hasSameDisplayedLevelAndStats(levels[0], levels[1]) &&
+    hasDifferentObtainMethods(levels[0], levels[1])
 }
 
 export function getLevelVariantLabels(
@@ -568,11 +674,15 @@ export function getLevelVariantLabels(
 ): string[] {
   const useTitleLabels = familyName ? hasTitleDrivenVariantNames(levels, familyName) : false
   const labels = levels.map(level => getLevelVariantLabelInfo(level, familyName, useTitleLabels, itemType))
+  const useCompactDcOnlyLabel = shouldUseCompactDcOnlyLabel(levels, labels)
 
   return labels.map((label, index) => {
-    if (hasDcDuplicateDisambiguator(levels, labels, index)) {
-      return label.hasDC ? `${label.label} (DC)` : label.label
+    if (useCompactDcOnlyLabel && label.hasDC) return '(DC)'
+    const accessDuplicateSuffix = getAccessDuplicateSuffix(levels, labels, index)
+    if (accessDuplicateSuffix) {
+      return `${label.label} (${accessDuplicateSuffix})`
     }
+    if (hasAccessDisambiguatedDuplicate(levels, labels, index)) return label.label
     if (!shouldAddLevelSuffixForDuplicate(levels, labels, index)) return label.label
     return `${label.label} (${label.levelLabel})`
   })
@@ -607,6 +717,19 @@ export function shouldHideVariantColumn(
   if (redundantExact && !hasDuplicateLevels) return true
 
   return false
+}
+
+export function shouldShowVariantColumn(
+  levels: LevelVariant[],
+  familyName?: string,
+  itemType?: ItemType,
+  hideVariantColumn: boolean = false
+): boolean {
+  const hasVariantNames = levels.some(level => Boolean(level.variantName))
+  const useTitleLabels = familyName ? hasTitleDrivenVariantNames(levels, familyName) : false
+  const hasRedundantVariantColumn = shouldHideVariantColumn(levels, familyName, itemType)
+
+  return !hasRedundantVariantColumn && (!hideVariantColumn || hasVariantNames || useTitleLabels)
 }
 
 export function shouldUseSplitVariantRows(levels: LevelVariant[]): boolean {

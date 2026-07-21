@@ -1,7 +1,7 @@
-import type { Pet } from '../../src/types/pet.ts'
+import type { Guest, Pet } from '../../src/types/pet.ts'
 import type { ItemFamily, ObtainVariant } from '../../src/types/item.ts'
 
-type ScrapedEntry = Pet | ItemFamily
+type ScrapedEntry = Guest | Pet | ItemFamily
 
 function isItemFamily(entry: ScrapedEntry): entry is ItemFamily {
   return 'levelVariants' in entry
@@ -146,7 +146,7 @@ function repairFamily(entry: ItemFamily): ItemFamily {
   }
 }
 
-function repairSingle(entry: Pet): Pet {
+function repairSingle<T extends Guest | Pet>(entry: T): T {
   const obtainMethods = repairMethodGroup(
     entry.obtainMethods.map(method => ({
       location: method.location,

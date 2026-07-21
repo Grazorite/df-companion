@@ -13,21 +13,25 @@
  */
 
 import type { LevelVariant } from '../../types/item'
-import { getLevelVariantLabels, hasTitleDrivenVariantNames, shouldHideVariantColumn } from '../../utils/variantHelpers'
+import { getLevelVariantLabels, shouldShowVariantColumn } from '../../utils/variantHelpers'
+import type { ItemType } from '../../types/item'
 
 interface LevelStatsTableProps {
   levels: LevelVariant[]
   /** Hide the Variant column (for "All Versions" pets with no roman numerals) */
   hideVariantColumn?: boolean
   familyName?: string
+  itemType?: ItemType
 }
 
-export default function LevelStatsTable({ levels, hideVariantColumn = false, familyName }: LevelStatsTableProps) {
-  const hasVariantNames = levels.some(level => Boolean(level.variantName))
-  const useTitleLabels = familyName ? hasTitleDrivenVariantNames(levels, familyName) : false
-  const variantLabels = getLevelVariantLabels(levels, familyName)
-  const hasRedundantVariantColumn = shouldHideVariantColumn(levels, familyName)
-  const showVariantColumn = !hasRedundantVariantColumn && (!hideVariantColumn || hasVariantNames || useTitleLabels)
+export default function LevelStatsTable({
+  levels,
+  hideVariantColumn = false,
+  familyName,
+  itemType,
+}: LevelStatsTableProps) {
+  const variantLabels = getLevelVariantLabels(levels, familyName, itemType)
+  const showVariantColumn = shouldShowVariantColumn(levels, familyName, itemType, hideVariantColumn)
 
   // Determine the correct stats column header based on statsType
   const statsHeader = levels.find(lv => lv.statsType === 'bonuses') 

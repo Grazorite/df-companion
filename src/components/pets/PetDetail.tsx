@@ -28,6 +28,12 @@ interface PetDetailProps {
   family?: ItemFamily
 }
 
+function nonEmptyAlternativeImages(
+  images?: Array<{ url: string; caption: string }>
+): Array<{ url: string; caption: string }> | undefined {
+  return images && images.length > 0 ? images : undefined
+}
+
 function isItemFamily(item: Pet | ItemFamily): item is ItemFamily {
   return 'levelVariants' in item && 'familyName' in item
 }
@@ -75,9 +81,15 @@ function buildCardPet(item: Pet | ItemFamily): Pet {
     rarity: firstLevel?.rarity ?? item.shared.rarity ?? '1',
     evolutions: [],
     releaseDate: item.releaseDate ?? '',
-    imageUrl: firstLevel?.imageUrl ?? item.shared.imageUrl,
+    imageUrl: item.type === 'guest'
+      ? firstLevel?.imageUrl ?? item.shared.imageUrl
+      : item.shared.imageUrl ?? firstLevel?.imageUrl,
     ...(firstLevel?.alternativeImages || item.shared.alternativeImages
-      ? { alternativeImages: firstLevel?.alternativeImages ?? item.shared.alternativeImages }
+      ? {
+          alternativeImages: item.type === 'guest'
+            ? nonEmptyAlternativeImages(firstLevel?.alternativeImages) ?? item.shared.alternativeImages
+            : item.shared.alternativeImages ?? nonEmptyAlternativeImages(firstLevel?.alternativeImages),
+        }
       : {}),
     forumUrl: item.forumUrl,
     notes: firstLevel?.notes ?? item.shared.notes,
@@ -156,6 +168,10 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
   const useTitleDrivenVariantNames = family && displayFamilyName
     ? hasTitleDrivenVariantNames(displayLevels, displayFamilyName)
     : false
+  const hideVariantColumn =
+    !sameLevelVariants &&
+    !displayLevels.some(level => Boolean(level.variantName)) &&
+    !useTitleDrivenVariantNames
   
   // Parse level URL param for multi-variant display
   const levelParam = searchParams.get('level')
@@ -203,8 +219,12 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
     description: isDragonFamily
       ? `${activeLevel?.variantName ?? 'Baby'} Dragon`
       : activeLevel?.description ?? family.shared.description,
-    imageUrl: activeLevel?.imageUrl ?? family.shared.imageUrl,
-    alternativeImages: activeLevel?.alternativeImages ?? family.shared.alternativeImages,
+    imageUrl: family.type === 'guest'
+      ? activeLevel?.imageUrl ?? family.shared.imageUrl
+      : family.shared.imageUrl ?? activeLevel?.imageUrl,
+    alternativeImages: family.type === 'guest'
+      ? nonEmptyAlternativeImages(activeLevel?.alternativeImages) ?? family.shared.alternativeImages
+      : family.shared.alternativeImages ?? nonEmptyAlternativeImages(activeLevel?.alternativeImages),
     element: activeLevel?.element ?? family.shared.element,
     resists: activeLevel?.resists ?? family.shared.resists,
     rarity: activeLevel?.rarity ?? family.shared.rarity,
@@ -573,11 +593,8 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
             <LevelStatsTable 
               levels={displayLevels}
               familyName={displayFamilyName}
-              hideVariantColumn={
-                !sameLevelVariants &&
-                !displayLevels.some(level => Boolean(level.variantName)) &&
-                !useTitleDrivenVariantNames
-              }
+              itemType={family.type}
+              hideVariantColumn={hideVariantColumn}
             />
           </CollapsibleSection>
         </section>
@@ -592,6 +609,7 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
             onChange={handleLevelChange}
             familyName={displayFamilyName}
             itemType={family.type}
+            hideVariantColumn={hideVariantColumn}
           />
         </section>
       )}

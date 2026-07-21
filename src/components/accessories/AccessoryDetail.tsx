@@ -41,6 +41,12 @@ function buildSingleVariant(entry: Accessory): ObtainVariant[] {
   return entry.obtainMethods
 }
 
+function nonEmptyAlternativeImages(
+  images?: Array<{ url: string; caption: string }>
+): Array<{ url: string; caption: string }> | undefined {
+  return images && images.length > 0 ? images : undefined
+}
+
 function buildSingleAccessoryLevel(entry: Accessory): LevelVariant {
   return {
     levelNumber: 1,
@@ -170,9 +176,9 @@ export default function AccessoryDetail({ accessory, filterBase }: AccessoryDeta
   const description = family
     ? activeLevel?.description ?? family.shared.description
     : singleAccessory?.description
-  const imageUrl = family ? activeLevel?.imageUrl ?? family.shared.imageUrl : singleAccessory?.imageUrl
+  const imageUrl = family ? family.shared.imageUrl ?? activeLevel?.imageUrl : singleAccessory?.imageUrl
   const altImages = family
-    ? activeLevel?.alternativeImages ?? family.shared.alternativeImages
+    ? family.shared.alternativeImages ?? nonEmptyAlternativeImages(activeLevel?.alternativeImages)
     : singleAccessory?.alternativeImages
   const shouldShowImages = shouldDisplayAccessoryImages(accessory, family, singleAccessory, activeLevel)
   const allImages = useMemo(() => {

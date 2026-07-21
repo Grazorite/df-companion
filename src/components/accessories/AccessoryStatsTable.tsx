@@ -1,5 +1,5 @@
 import type { LevelVariant } from '../../types/item'
-import { getLevelVariantLabels, shouldHideVariantColumn } from '../../utils/variantHelpers'
+import { getLevelVariantLabels, shouldShowVariantColumn } from '../../utils/variantHelpers'
 
 interface AccessoryStatsTableProps {
   levels: LevelVariant[]
@@ -11,7 +11,7 @@ export default function AccessoryStatsTable({
   familyName,
 }: AccessoryStatsTableProps) {
   const variantLabels = getLevelVariantLabels(levels, familyName, 'accessory')
-  const hasRedundantVariantColumn = shouldHideVariantColumn(levels, familyName, 'accessory')
+  const showVariantColumn = shouldShowVariantColumn(levels, familyName, 'accessory')
 
   return (
     <div className="overflow-x-auto -mx-4 sm:mx-0">
@@ -19,14 +19,14 @@ export default function AccessoryStatsTable({
         <table className="min-w-full border-collapse">
           <thead>
             <tr className="border-b border-border-default">
-              {!hasRedundantVariantColumn && (
+              {showVariantColumn && (
                 <th className="sticky left-0 bg-bg-base px-4 py-2 text-left text-xs font-semibold text-text-muted uppercase tracking-wider">
                   Variant
                 </th>
               )}
               <th
                 className={`px-4 py-2 text-left text-xs font-semibold text-text-muted uppercase tracking-wider ${
-                  hasRedundantVariantColumn ? 'sticky left-0 bg-bg-base' : ''
+                  !showVariantColumn ? 'sticky left-0 bg-bg-base' : ''
                 }`}
               >
                 Level
@@ -62,14 +62,14 @@ export default function AccessoryStatsTable({
 
               return (
                 <tr key={`${level.levelNumber}-${level.name}-${index}`} className="hover:bg-bg-surface transition-colors">
-                  {!hasRedundantVariantColumn && (
+                  {showVariantColumn && (
                     <td className="sticky left-0 bg-bg-base hover:bg-bg-surface transition-colors px-4 py-3 text-sm text-text-primary font-medium">
                       {variantLabels[index]}
                     </td>
                   )}
                   <td
                     className={`px-4 py-3 text-sm text-text-secondary ${
-                      hasRedundantVariantColumn
+                      !showVariantColumn
                         ? 'sticky left-0 bg-bg-base hover:bg-bg-surface transition-colors font-medium'
                         : ''
                     }`}

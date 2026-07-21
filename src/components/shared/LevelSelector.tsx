@@ -15,7 +15,7 @@
  */
 
 import type { LevelVariant } from '../../types/item'
-import { getLevelVariantLabels, hasTitleDrivenVariantNames } from '../../utils/variantHelpers'
+import { getLevelVariantLabels, shouldShowVariantColumn } from '../../utils/variantHelpers'
 import type { ItemType } from '../../types/item'
 
 interface LevelSelectorProps {
@@ -24,22 +24,27 @@ interface LevelSelectorProps {
   onChange: (index: number) => void
   familyName?: string
   itemType?: ItemType
+  hideVariantColumn?: boolean
 }
 
-export default function LevelSelector({ levels, activeIndex, onChange, familyName, itemType }: LevelSelectorProps) {
+export default function LevelSelector({
+  levels,
+  activeIndex,
+  onChange,
+  familyName,
+  itemType,
+  hideVariantColumn = false,
+}: LevelSelectorProps) {
   // Don't render if only one level
   if (levels.length <= 1) {
     return null
   }
 
-  const hasVariantNames = levels.some(level => Boolean(level.variantName))
-  const useTitleLabels = familyName ? hasTitleDrivenVariantNames(levels, familyName) : false
-
   const variantLabels = getLevelVariantLabels(levels, familyName, itemType)
   const getButtonLabel = (_level: LevelVariant, index: number) => variantLabels[index]
   const indexedLevels = levels.map((level, index) => ({ level, index }))
   
-  const usesVariantLabels = hasVariantNames || useTitleLabels
+  const usesVariantLabels = shouldShowVariantColumn(levels, familyName, itemType, hideVariantColumn)
   const useDropdown = levels.length > 12
   const activeLevel = levels[activeIndex]
   const compactButtons = levels.length > 8

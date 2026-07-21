@@ -33,6 +33,10 @@ const ACCESSORY_IMAGE_OVERRIDES: Record<string, string> = {
 }
 
 type PriceType = Accessory['obtainMethods'][number]['priceType']
+type AccessoryImageBundle = {
+  imageUrl?: string
+  alternativeImages?: Array<{ url: string; caption: string }>
+}
 
 interface AccessoryStub {
   name: string
@@ -60,6 +64,23 @@ const elementPatterns = elementEntries.map(entry => ({
 
 function getArg(name: string): string | undefined {
   return process.argv.slice(2).find(arg => arg.startsWith(`--${name}=`))?.split('=')[1]
+}
+
+function loadCookie(): string {
+  if (process.env.FORUM_COOKIE) return process.env.FORUM_COOKIE
+
+  const envPath = path.resolve(import.meta.dirname, '../.env')
+  if (!fs.existsSync(envPath)) {
+    throw new Error('FORUM_COOKIE is required in the environment or .env to scrape accessories.')
+  }
+
+  const content = fs.readFileSync(envPath, 'utf-8')
+  const match = content.match(/FORUM_COOKIE=["'](.+?)["']\s*$/)
+  if (!match) {
+    throw new Error('FORUM_COOKIE not found in .env.')
+  }
+
+  return match[1]
 }
 
 function sleep(ms: number): Promise<void> {
@@ -585,14 +606,11 @@ function parseObtainMethods(html: string): Accessory['obtainMethods'] {
   return obtainMethods
 }
 
-function extractAccessoryImages(html: string): {
-  imageUrl?: string
-  alternativeImages?: Array<{ url: string; caption: string }>
-} {
+function extractAccessoryImages(html: string): AccessoryImageBundle {
   const skipPatterns = [
-    /forums2\.battleon\.com/i,
     /\/f\/image\//i,
-    /\/f\/upfiles\//i,
+    /^image\//i,
+    /^micons\//i,
     /forumheader/i,
     /quantserve/i,
     /artix\.com\/shared/i,
@@ -600,6 +618,13 @@ function extractAccessoryImages(html: string): {
     /\/tags\//i,
     /clear\.gif/i,
     /blank\.gif/i,
+    /face\.gif/i,
+    /pm\.gif/i,
+    /address\.gif/i,
+    /block\.gif/i,
+    /asc\.gif/i,
+    /print\.gif/i,
+    /icon\d*\.gif/i,
     /button/i,
     /attack/i,
   ]
@@ -610,12 +635,12 @@ function extractAccessoryImages(html: string): {
 
   const otherInfoHtml = findLastSection(html, /<b><u>Other [Ii]nformation<\/u><\/b>/gi) ?? html
   const imageCandidates: Array<{ url: string; caption?: string }> = [
-    ...[...otherInfoHtml.matchAll(/<img[^>]+src="([^"]+)"[^>]*>/gi)].map(match => ({
-      url: match[1],
+    ...[...otherInfoHtml.matchAll(/<img[^>]+src=(["'])(.*?)\1[^>]*>/gi)].map(match => ({
+      url: match[2],
     })),
-    ...[...otherInfoHtml.matchAll(/<a[^>]+href="([^"]+\.(?:png|jpg|jpeg|gif|bmp)(?:\?[^"]*)?)"[^>]*>([\s\S]*?)<\/a>/gi)].map(match => ({
-      url: match[1],
-      caption: stripHtml(decodeHtml(match[2])).trim(),
+    ...[...otherInfoHtml.matchAll(/<a[^>]+href=(["'])(.*?\.(?:png|jpg|jpeg|gif|bmp)(?:\?[^"']*)?)\1[^>]*>([\s\S]*?)<\/a>/gi)].map(match => ({
+      url: match[2],
+      caption: stripHtml(decodeHtml(match[3])).trim(),
     })),
     ...[...otherInfoHtml.matchAll(/https?:\/\/[^\s"'<>]+\.(?:png|jpg|jpeg|gif|bmp)(?:\?[^\s"'<>]*)?/gi)].map(match => ({
       url: match[0],
@@ -628,13 +653,19 @@ function extractAccessoryImages(html: string): {
     seenImageUrls.add(candidate.url)
     return true
   })
-  const imageUrl = uniqueImageCandidates.at(-1)?.url
+  const preferredImageCandidates = uniqueImageCandidates.filter(
+    candidate => !/forums2\.battleon\.com\/f\/upfiles\//i.test(candidate.url)
+  )
+  const displayImageCandidates = preferredImageCandidates.length > 0
+    ? preferredImageCandidates
+    : uniqueImageCandidates
+  const imageUrl = displayImageCandidates[0]?.url
 
   const alternativeImages: Array<{ url: string; caption: string }> = []
   if (imageUrl) {
-    for (const candidate of uniqueImageCandidates) {
-      const caption = candidate.caption?.trim()
-      if (!caption || candidate.url === imageUrl) continue
+    for (const [index, candidate] of displayImageCandidates.entries()) {
+      if (candidate.url === imageUrl) continue
+      const caption = candidate.caption?.trim() || `Alternative ${index}`
       alternativeImages.push({ url: candidate.url, caption })
     }
   }
@@ -661,7 +692,26 @@ function parseTagFlags(html: string) {
 }
 
 function hasMultipleVersionHint(name: string): boolean {
-  return /\((?:All Versions|[IVX]+(?:\s*[-,]\s*[IVX]+)+|[IVX]+-[IVX]+)\)/i.test(name)
+  return /\((?:All Versions|[IVX]+(?:\s*[-,]\s*[IVX]+)+|[IVX]+-[IVX]+)\)/i.test(name) ||
+    hasAccessoryFormVariantHint(name)
+}
+
+function shouldInspectThreadForSubtype(subtype: AccessorySubtype): boolean {
+  return subtype === 'helm' || subtype === 'cape-wing'
+}
+
+function hasAccessoryFormVariantHint(name: string): boolean {
+  const match = name.match(/\(([^)]+)\)/)
+  if (!match) return false
+
+  const forms = match[1]
+    .split(',')
+    .map(value => value.trim().toLowerCase())
+    .filter(Boolean)
+  if (forms.length === 0) return false
+
+  const knownForms = new Set(['mask', 'head', 'helm', 'hood', 'cowl'])
+  return forms.every(form => knownForms.has(form))
 }
 
 function parseAccessoryTitle(html: string): string | undefined {
@@ -1013,7 +1063,10 @@ async function enrichAccessoryAbility(entry: Accessory, cookie: string): Promise
   const strategy = getAccessorySubtypeStrategy(entry.subtype)
   if (!strategy.shouldEnrichAbility(entry)) return entry
 
-  const abilityMessageId = entry.abilityUrl.match(/m=(\d+)/i)?.[1]
+  const abilityUrl = entry.abilityUrl
+  if (!abilityUrl) return entry
+
+  const abilityMessageId = abilityUrl.match(/m=(\d+)/i)?.[1]
   if (!abilityMessageId) return entry
 
   try {
@@ -1029,7 +1082,11 @@ async function enrichAccessoryAbility(entry: Accessory, cookie: string): Promise
   }
 }
 
-function buildAccessoryFamily(stub: AccessoryStub, variants: Accessory[]): AccessoryFamily {
+function buildAccessoryFamily(
+  stub: AccessoryStub,
+  variants: Accessory[],
+  fallbackImages: AccessoryImageBundle = {}
+): AccessoryFamily {
   const consolidatedVariants = expandAccessoryFamilyVariants(
     enrichAccessorySiblingVariants(variants)
   )
@@ -1044,6 +1101,9 @@ function buildAccessoryFamily(stub: AccessoryStub, variants: Accessory[]): Acces
   const alternativeImages = consolidatedVariants
     .map(variant => variant.alternativeImages)
     .filter((value): value is NonNullable<Accessory['alternativeImages']> => Boolean(value))
+  const sharedImageUrl = imageOverride ?? fallbackImages.imageUrl ?? (images.length === 1 ? images[0] : undefined)
+  const sharedAlternativeImages =
+    fallbackImages.alternativeImages ?? (alternativeImages.length === 1 ? alternativeImages[0] : undefined)
   const rarities = uniqueStrings(consolidatedVariants.map(variant => variant.rarity).filter(Boolean))
   const modifies = uniqueStrings(consolidatedVariants.map(variant => variant.modifies).filter(Boolean))
 
@@ -1109,8 +1169,8 @@ function buildAccessoryFamily(stub: AccessoryStub, variants: Accessory[]): Acces
       ...(resists.length === 1 ? { resists: resists[0] } : {}),
       ...(abilities.length === 1 ? { ability: abilities[0] } : {}),
       ...(attacks.length > 0 && allSame(attacks) ? { attacks: attacks[0] } : {}),
-      ...(imageOverride || images.length === 1 ? { imageUrl: imageOverride ?? images[0] } : {}),
-      ...(alternativeImages.length === 1 ? { alternativeImages: alternativeImages[0] } : {}),
+      ...(sharedImageUrl ? { imageUrl: sharedImageUrl } : {}),
+      ...(sharedAlternativeImages ? { alternativeImages: sharedAlternativeImages } : {}),
       ...(rarities.length === 1 ? { rarity: rarities[0] } : {}),
     },
     levelVariants,
@@ -1152,10 +1212,20 @@ function buildAccessoryFamily(stub: AccessoryStub, variants: Accessory[]): Acces
 }
 
 async function buildAccessoryOrFamily(stub: AccessoryStub, cookie: string): Promise<AccessoryEntry> {
-  const shouldInspectThread = hasMultipleVersionHint(stub.name)
+  const hasExplicitThreadHint = hasMultipleVersionHint(stub.name)
+  const shouldInspectThread = hasExplicitThreadHint || shouldInspectThreadForSubtype(stub.subtype)
   if (shouldInspectThread) {
-    const threadPosts = extractThreadPostContents(await fetchForumThreadPages(stub.messageId, cookie))
+    const threadHtml = await withRetry(
+      `thread ${stub.messageId}`,
+      () => fetchForumThreadPages(stub.messageId, cookie)
+    )
+    const threadPosts = extractThreadPostContents(threadHtml)
     const variants: Accessory[] = []
+    const strategy = getAccessorySubtypeStrategy(stub.subtype)
+    const messageHtml = threadPosts.map(post => post.html).join('\n')
+    const fallbackImages = strategy.shouldExtractImages({ name: stub.name, subtype: stub.subtype })
+      ? extractAccessoryImages(messageHtml)
+      : {}
 
     for (const post of threadPosts) {
       let html: string
@@ -1177,12 +1247,18 @@ async function buildAccessoryOrFamily(stub: AccessoryStub, cookie: string): Prom
       )
 
       if (!variant.level && !variant.stats && variant.obtainMethods.length === 0) continue
+      if (
+        !hasExplicitThreadHint &&
+        normalizeAccessoryFamilyName(variant.name) !== normalizeAccessoryFamilyName(stub.name)
+      ) {
+        continue
+      }
       variants.push(variant)
       await sleep(Math.round(DELAY_MS / 2))
     }
 
     if (variants.length > 1) {
-      return buildAccessoryFamily(stub, variants)
+      return buildAccessoryFamily(stub, variants, fallbackImages)
     }
   }
 
@@ -1192,10 +1268,35 @@ async function buildAccessoryOrFamily(stub: AccessoryStub, cookie: string): Prom
     title && /\(Retired\)/i.test(stub.name) && !/\(Retired\)/i.test(title)
       ? `${title} (Retired)`
       : title
-  return enrichAccessoryAbility(
+  const entry = await enrichAccessoryAbility(
     buildAccessoryEntry(stub, html, resolvedTitle ? { name: resolvedTitle } : undefined),
     cookie
   )
+  const strategy = getAccessorySubtypeStrategy(stub.subtype)
+  if (
+    strategy.shouldExtractImages({
+      name: entry.name,
+      subtype: entry.subtype,
+      itemType: entry.itemType,
+      equipSpot: entry.equipSpot,
+    }) &&
+    !entry.imageUrl &&
+    !entry.alternativeImages?.length
+  ) {
+    const threadHtml = await withRetry(
+      `thread ${stub.messageId}`,
+      () => fetchForumThreadPages(stub.messageId, cookie)
+    )
+    const messageHtml = extractThreadPostContents(threadHtml).map(post => post.html).join('\n')
+    const fallbackImages = extractAccessoryImages(messageHtml)
+    return {
+      ...entry,
+      ...(fallbackImages.imageUrl ? { imageUrl: fallbackImages.imageUrl } : {}),
+      ...(fallbackImages.alternativeImages ? { alternativeImages: fallbackImages.alternativeImages } : {}),
+    }
+  }
+
+  return entry
 }
 
 async function fetchPage(url: string, cookie: string): Promise<string> {
@@ -1353,6 +1454,8 @@ function writeDatasets(
       entries = [...preservedEntries, ...entries]
     }
 
+    entries = Array.from(new Map(entries.map(entry => [entry.slug, entry])).values())
+
     entries.sort((a, b) => {
       const aName = getEntryDisplayName(a)
       const bName = getEntryDisplayName(b)
@@ -1368,10 +1471,7 @@ function writeDatasets(
 }
 
 async function main() {
-  const cookie = process.env.FORUM_COOKIE
-  if (!cookie) {
-    throw new Error('FORUM_COOKIE is required in the environment to scrape accessories.')
-  }
+  const cookie = loadCookie()
 
   const subtypeArg = getArg('subtype') as AccessorySubtype | undefined
   const subtypesArg = getArg('subtypes')

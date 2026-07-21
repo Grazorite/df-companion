@@ -364,6 +364,10 @@ function inferAccessVariantLabelFromObtainVariants(methods: ObtainVariant[]): st
   return 'Normal'
 }
 
+function normalizeObtainPrice(price?: string): string {
+  return price?.trim() || 'N/A'
+}
+
 function extractPostDisplayName(html: string, baseName: string): string {
   const titleMatch = html.match(/<font[^>]*size=['"]3['"][^>]*>\s*<b>([^<]+)<\/b>/i)
     ?? html.match(/<b>\s*<font[^>]*size=['"]3['"][^>]*>([^<]+)<\/font>\s*<\/b>/i)
@@ -448,10 +452,11 @@ function buildObtainVariantsFromMethods(
     const explicitVariantHasDC = explicitVariantName ? /\b(?:d-coins?|dc)\b/i.test(explicitVariantName) : undefined
     const sellbackHasDC = /dragon\s+coins?|\bdc\b/i.test(om.sellback ?? '')
     const inferredDC = explicitVariantHasDC === true || Boolean(om.dcRequired) || sellbackHasDC
+    const price = normalizeObtainPrice(om.price)
     const priceType =
-      inferredDC && computePriceType(om.price, om.requiredItems) === 'free'
+      inferredDC && computePriceType(price, om.requiredItems) === 'free'
         ? 'dc'
-        : computePriceType(om.price, om.requiredItems)
+        : computePriceType(price, om.requiredItems)
     const dcRequired =
       explicitVariantHasDC === undefined
         ? priceType === 'dc' || inferredDC || Boolean(om.dcRequired) || (sectionDCRequired && groupHasExplicitDC)
@@ -459,7 +464,7 @@ function buildObtainVariantsFromMethods(
 
     return {
       location: om.location,
-      price: om.price,
+      price,
       priceType,
       sellback: om.sellback,
       ...(om.requirements ? { requirements: om.requirements } : {}),
@@ -904,7 +909,9 @@ function extractImages(html: string): { main?: string; alternatives: Array<{ url
     /PetAttack/i,       // AncientNinjaTerrapinPetAttack1.png
     /AttackType/i,      // BabyDracolichPet-AttackType1.png
     /-Attack/i,         // Any attack image with dash prefix
-    /forums2\.battleon\.com\/f\/upfiles/i,  // Forum poster profile images
+    /\/f\/image\//i,    // Forum UI images
+    /^image\//i,
+    /^micons\//i,
     /tags\/(DA|DC|DM|Temp|Rare|Seasonal|SpecialOffer|Retired)/i,
     /width=["']?\d{1,2}["']?/,  // Tiny images
     /forumheader/i,
@@ -981,6 +988,18 @@ function extractImages(html: string): { main?: string; alternatives: Array<{ url
   }
 
   return { main, alternatives }
+}
+
+function hasRequiredItemImage(item: Pet | ItemFamily): boolean {
+  if ('levelVariants' in item) {
+    return Boolean(
+      item.shared.imageUrl ||
+      item.shared.alternativeImages?.length ||
+      item.levelVariants.some(level => level.imageUrl || level.alternativeImages?.length)
+    )
+  }
+
+  return Boolean(item.imageUrl || item.alternativeImages?.length)
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -1357,8 +1376,8 @@ export async function parsePetThreadMultiVariant(
       
       const obtainVariants: ObtainVariant[] = data.obtainMethods.map(om => ({
         location: om.location,
-        price: om.price,
-        priceType: computePriceType(om.price, om.requiredItems),
+        price: normalizeObtainPrice(om.price),
+        priceType: computePriceType(normalizeObtainPrice(om.price), om.requiredItems),
         sellback: om.sellback,
         ...(om.requirements ? { requirements: om.requirements } : {}),
         daRequired: om.daRequired ?? data.daRequired,
@@ -1877,8 +1896,8 @@ export async function parsePetThreadMultiVariant(
       // Parse obtain variants from this post
       const obtainVariants: ObtainVariant[] = data.obtainMethods.map(om => ({
         location: om.location,
-        price: om.price,
-        priceType: computePriceType(om.price, om.requiredItems),
+        price: normalizeObtainPrice(om.price),
+        priceType: computePriceType(normalizeObtainPrice(om.price), om.requiredItems),
         sellback: om.sellback,
         ...(om.requirements ? { requirements: om.requirements } : {}),
         daRequired: om.daRequired ?? parseDARequiredFromSection(normalizedPostHtml, normalizedPostHtml),
@@ -2917,7 +2936,8 @@ async function main() {
   console.log(`   Total stubs:   ${allStubs.length}`)
   console.log(`   In progress:   ${progressMap.size}`)
   console.log(`   Pets:          ${finalPets.filter(p => p.type === 'pet').length}`)
-  console.log(`   With images:   ${finalPets.filter(p => ('shared' in p ? p.shared.imageUrl : p.imageUrl)).length}`)
+  console.log(`   With images:   ${finalPets.filter(hasRequiredItemImage).length}`)
+  console.log(`   Missing images:${finalPets.filter(p => !hasRequiredItemImage(p)).length}`)
   console.log(`   With dates:    ${finalPets.filter(p => p.releaseDate !== 'Unknown').length}`)
 }
 

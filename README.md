@@ -9,19 +9,21 @@ npm run dev
 npm run build
 npm run validate
 npm run lint
+npm run typecheck:scripts
 ```
 
 ## Data Validation
 
-The production build runs the badge, pet/guest, and accessory validators before compiling:
+The production build runs the badge, pet/guest, and accessory validators plus a TypeScript check for scraper files before compiling:
 
 ```sh
 node scripts/validate-badges.mjs
 node scripts/validate-pets.mjs
 node scripts/validate-accessories.mjs
+npm run typecheck:scripts
 ```
 
-Run `npm run validate` when changing files in `src/data`.
+Run `npm run validate` when changing files in `src/data` or `scripts`. This catches scraper-only TypeScript issues that the app build does not otherwise see.
 
 ## Scraping
 
@@ -35,3 +37,13 @@ npm run scrape:accessories
 ```
 
 Use `.env.example` as the template. The real `.env` is ignored because it contains session cookies.
+
+Scraper guidelines:
+
+- Scraper intermediates may be loose, but final shared types should be strict at the boundary. For example, convert optional prices to `N/A` before building an `ObtainVariant`.
+- Keep shared item-family behavior in `src/utils/variantHelpers.ts` or `scripts/lib/*` when pets, guests, and accessories should agree.
+- Prefer subtype strategy modules under `scripts/lib/accessories/` for accessory-specific behavior.
+- Progress files such as `src/data/pets-progress.json` and `src/data/guests-progress.json` are local scratch files and should remain untracked.
+- Badge re-scrapes preserve curated image and subcategory fields from the existing `src/data/badges.json`, so no separate image/subcategory post-processing step is required.
+
+Image enrichment for active sections happens inside the TypeScript scrapers.

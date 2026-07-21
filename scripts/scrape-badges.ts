@@ -29,7 +29,7 @@ const FORUM_BASE = 'https://forums2.battleon.com/f'
 const AZ_PAGE_URL = `${FORUM_BASE}/tm.asp?m=22304590&mpage=1&key=`
 const DELAY_MS = 800
 const OUTPUT_PATH = path.resolve(import.meta.dirname, '../src/data/badges.json')
-const BADGE_SUBCATEGORY_FALLBACK_PATH = path.resolve(import.meta.dirname, '../src/data/backup/badges.json')
+const BADGE_SUBCATEGORY_FALLBACK_PATH = OUTPUT_PATH
 const THREAD_URL_OVERRIDES: Record<string, string> = {
   'Arachnalchemy Mastery': '22421146',
 }
@@ -54,7 +54,9 @@ interface BadgeData extends BadgeStub {
   daRequired: boolean
   howToObtain: { order: number; instruction: string; daRequired?: boolean }[]
   forumLinks: { url: string; title: string; isPrimary: boolean }[]
+  imageUrl?: string
   forumImageUrl?: string  // image URL extracted from forum post (imgur, upfiles, etc.)
+  imageVariants?: string[]
   tags: string[]
   notes?: string
 }
@@ -63,6 +65,9 @@ interface BadgeSubcategoryFallback {
   subcategory?: string
   category?: string
   retired?: boolean
+  imageUrl?: string
+  forumImageUrl?: string
+  imageVariants?: string[]
 }
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
@@ -136,6 +141,9 @@ function loadBadgeSubcategoryFallbacks(): Map<string, BadgeSubcategoryFallback> 
     subcategory?: string
     category?: string
     retired?: boolean
+    imageUrl?: string
+    forumImageUrl?: string
+    imageVariants?: string[]
   }>
 
   return new Map(
@@ -147,6 +155,9 @@ function loadBadgeSubcategoryFallbacks(): Map<string, BadgeSubcategoryFallback> 
           subcategory: badge.subcategory,
           category: badge.category,
           retired: badge.retired,
+          imageUrl: badge.imageUrl,
+          forumImageUrl: badge.forumImageUrl,
+          imageVariants: badge.imageVariants,
         },
       ])
   )
@@ -451,6 +462,7 @@ async function main() {
 
     const details = await fetchBadgeDetails(stub, cookie)
     const hasDetails = !!details.description && !details.description?.startsWith('Badge:')
+    const badgeFallback = fallbackMap.get(stub.name.toLowerCase())
 
     if (hasDetails) enriched++
     else fallback++
@@ -489,9 +501,12 @@ async function main() {
         },
       ],
       tags: generateTags(stub.name, details.requirements ?? '', details.subcategory ?? stub.subcategory),
-      // imageUrl: DF-Pedia adds this in a post-processing step (add_images.py)
-      // forumImageUrl is stored for badges where DF-Pedia has no image
-      ...(details.forumImageUrl ? { forumImageUrl: details.forumImageUrl } : {}),
+      // Prefer the latest forum scrape, but preserve existing curated image fields across re-scrapes.
+      ...(badgeFallback?.imageUrl ? { imageUrl: badgeFallback.imageUrl } : {}),
+      ...(details.forumImageUrl || badgeFallback?.forumImageUrl
+        ? { forumImageUrl: details.forumImageUrl ?? badgeFallback?.forumImageUrl }
+        : {}),
+      ...(badgeFallback?.imageVariants ? { imageVariants: badgeFallback.imageVariants } : {}),
       ...(details.notes ? { notes: details.notes } : {}),
     }
 
