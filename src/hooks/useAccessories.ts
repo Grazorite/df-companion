@@ -10,6 +10,7 @@ import type { AlsoSeeRef } from '../types/item'
 import { isAccessoryFamily, ACCESSORY_SUBTYPES } from '../types/accessory'
 import { loadAccessoriesBySubtype, loadElements } from '../utils/dataLoaders'
 import { compareTitles, displayTitle } from '../utils/displayText'
+import { getSearchWords } from '../utils/search'
 import {
   getDisplayFamilyName,
   hasParentheticalVariantFamilyName,
@@ -91,8 +92,7 @@ function searchAccessories(
   filters: AccessoryFilters,
   elementMeta: ElementsData
 ): AccessoryEntry[] {
-  const query = (filters.query ?? '').toLowerCase().trim()
-  const queryWords = query.split(/\s+/).filter((word) => word.length >= 2)
+  const queryWords = getSearchWords(filters.query ?? '')
 
   return items
     .filter((item) => {
@@ -170,7 +170,7 @@ function searchAccessories(
           .join(' ')
           .toLowerCase()
 
-        const words = searchableText.split(/\W+/)
+        const words = getSearchWords(searchableText)
         const matches = queryWords.every((queryWord) =>
           words.some((word) => word.startsWith(queryWord))
         )

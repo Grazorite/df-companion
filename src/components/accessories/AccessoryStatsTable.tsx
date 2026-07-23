@@ -1,15 +1,16 @@
 import type { LevelVariant } from '../../types/item'
-import { getLevelVariantLabels, shouldShowVariantColumn } from '../../utils/variantHelpers'
+import {
+  getLevelVariantLabels,
+  obtainVariantHasDC,
+  shouldShowVariantColumn,
+} from '../../utils/variantHelpers'
 
 interface AccessoryStatsTableProps {
   levels: LevelVariant[]
   familyName?: string
 }
 
-export default function AccessoryStatsTable({
-  levels,
-  familyName,
-}: AccessoryStatsTableProps) {
+export default function AccessoryStatsTable({ levels, familyName }: AccessoryStatsTableProps) {
   const variantLabels = getLevelVariantLabels(levels, familyName, 'accessory')
   const showVariantColumn = shouldShowVariantColumn(levels, familyName, 'accessory')
 
@@ -55,13 +56,14 @@ export default function AccessoryStatsTable({
           </thead>
           <tbody className="divide-y divide-border-default">
             {levels.map((level, index) => {
-              const hasDA = level.obtainVariants.some(variant => variant.daRequired)
-              const hasDC = level.obtainVariants.some(
-                variant => variant.dcRequired || variant.priceType === 'dc'
-              )
+              const hasDA = level.obtainVariants.some((variant) => variant.daRequired)
+              const hasDC = level.obtainVariants.some(obtainVariantHasDC)
 
               return (
-                <tr key={`${level.levelNumber}-${level.name}-${index}`} className="hover:bg-bg-surface transition-colors">
+                <tr
+                  key={`${level.levelNumber}-${level.name}-${index}`}
+                  className="hover:bg-bg-surface transition-colors"
+                >
                   {showVariantColumn && (
                     <td className="sticky left-0 bg-bg-base hover:bg-bg-surface transition-colors px-4 py-3 text-sm text-text-primary font-medium">
                       {variantLabels[index]}

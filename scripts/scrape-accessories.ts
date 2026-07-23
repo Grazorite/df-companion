@@ -5,6 +5,7 @@ import {
   computeFamilyFlags,
   computePriceType,
   normalizeLevel,
+  obtainVariantHasDC,
 } from '../src/utils/variantHelpers.ts'
 import { compareTitles, titleSortKey } from '../src/utils/displayText.ts'
 import {
@@ -22,6 +23,7 @@ import {
   getPostContent,
 } from './lib/printable-parser.ts'
 import { rephraseTimedSellback } from './lib/obtain-formatting.ts'
+import { repairAccessFlags } from './lib/access-flag-repair.ts'
 import { getAccessorySubtypeStrategy } from './lib/accessories/index.ts'
 import { extractAlsoSeeRefs, type ParsedAlsoSeeRef } from './lib/also-see.ts'
 import type { FamilySourceRef, LevelVariant } from '../src/types/item.ts'
@@ -146,6 +148,27 @@ function accessorySlugForName(name: string): string {
   return `accessory-${slugify(normalizeAccessoryFamilyName(name))}`
 }
 
+function preserveStubVariantSuffix(stubName: string, title?: string): string | undefined {
+  if (!title) return undefined
+  const stubMatch = stubName.match(/^(.*?)\s*(\([^)]*\))\s*$/)
+  if (!stubMatch) return title
+
+  const suffix = stubMatch[2].trim()
+  if (
+    /\((?:All Versions|[IVXLCDM]+(?:\s*[-,]\s*[IVXLCDM]+)+|[IVXLCDM]+-[IVXLCDM]+)\)/i.test(suffix)
+  ) {
+    return title
+  }
+
+  const stubBaseName = normalizeAccessoryFamilyName(stubMatch[1]).toLowerCase()
+  const titleBaseName = normalizeAccessoryFamilyName(title).toLowerCase()
+  if (stubBaseName === titleBaseName && !title.endsWith(suffix)) {
+    return `${title} ${suffix}`
+  }
+
+  return title
+}
+
 function getAccessoryImageOverride(name: string): string | undefined {
   return (
     ACCESSORY_IMAGE_OVERRIDES[normalizeAccessoryFamilyName(name)] ?? ACCESSORY_IMAGE_OVERRIDES[name]
@@ -187,7 +210,9 @@ function createAccessoryRefResolver(stubs: AccessoryStub[]): AccessoryRefResolve
         (messageId ? stubByMessageId.get(messageId) : undefined) ??
         stubByName.get(normalizeAccessoryFamilyName(ref.name).toLowerCase())
       const name = normalizeAccessoryFamilyName(targetStub?.name ?? ref.name)
-      const slug = targetStub ? accessorySlugForName(targetStub.name) : accessorySlugForName(ref.name)
+      const slug = targetStub
+        ? accessorySlugForName(targetStub.name)
+        : accessorySlugForName(ref.name)
       const url = ref.url ? normalizeForumUrl(ref.url) : targetStub?.forumUrl
       const key = `${slug}|${url ?? ''}`
 
@@ -288,6 +313,19 @@ function findLastSection(html: string, sectionRegex: RegExp): string | undefined
   return html.slice(last.index + last[0].length)
 }
 
+function findOtherInformationSection(html: string): string | undefined {
+  return (
+    findLastSection(html, /<b>\s*<u>\s*Other [Ii]nformation\s*<\/u>\s*<\/b>/gi) ??
+    findLastSection(html, /<u>\s*Other [Ii]nformation\s*<\/u>/gi) ??
+    findLastSection(html, /(?:<b>\s*)?Other [Ii]nformation\s*:(?:\s*<\/b>)?/gi) ??
+    findLastSection(
+      html,
+      /(?:<b>\s*)?Other [Ii]nformation\s*(?:<\/b>)?(?=\s*(?:<br\s*\/?>|\n))/gi
+    ) ??
+    findLastSection(html, /\bOther [Ii]nformation\b/gi)
+  )
+}
+
 function getAccessoryLeadHtml(html: string): string {
   const firstFieldIndex =
     [
@@ -296,7 +334,10 @@ function getAccessoryLeadHtml(html: string): string {
       /(?:<b>)?Location:(?:<\/b>)?/i,
       /(?:<b>)?Stats:(?:<\/b>)?/i,
       /(?:<b>)?Resists:(?:<\/b>)?/i,
-      /<u>Other [Ii]nformation<\/u>/i,
+      /<u>\s*Other [Ii]nformation\s*<\/u>/i,
+      /(?:<b>\s*)?Other [Ii]nformation\s*:/i,
+      /(?:<b>\s*)?Other [Ii]nformation\s*(?:<\/b>)?(?=\s*(?:<br\s*\/?>|\n))/i,
+      /\bOther [Ii]nformation\b/i,
     ]
       .map((pattern) => html.search(pattern))
       .filter((index) => index >= 0)
@@ -392,17 +433,29 @@ function parseDescription(html: string): string {
 
 function parseNotes(html: string): string | undefined {
   const noteLines: string[] = []
-  const otherInfoHtml = findLastSection(html, /<b><u>Other [Ii]nformation<\/u><\/b>/gi)
+  const otherInfoHtml = findOtherInformationSection(html)
 
   if (otherInfoHtml) {
     const trimmedSection = otherInfoHtml
       .split(/<i>Thanks to|Also See:|<font color='#eeeeee'>/i)[0]
+      .replace(
+        /<a[^>]+href=(["'])([^"']*?\.(?:png|jpg|jpeg|gif|bmp)(?:\?[^"']*)?)\1[^>]*>[\s\S]*?<\/a>/gi,
+        ''
+      )
       .replace(/<img[^>]+src="[^"]+\.(?:png|jpg|jpeg|gif|bmp)"[^>]*>/gi, '')
+      .replace(/https?:\/\/[^\s"'<>]+\.(?:png|jpg|jpeg|gif|bmp)(?:\?[^\s"'<>]*)?/gi, '')
 
     for (const line of normalizeStructuredText(trimmedSection).split('\n')) {
-      if (!line.trim()) continue
-      if (/\w+\s+--\s+\d+\/\d+\/\d+\s+\d+:\d+:\d+/.test(line)) continue
-      noteLines.push(line)
+      const trimmed = line.trim()
+      if (!trimmed) continue
+      if (/\w+\s+--\s+\d+\/\d+\/\d+\s+\d+:\d+:\d+/.test(trimmed)) continue
+      if (
+        /^(?:clicked appearance|alternative image|alt(?:ernative)? appearance|appearance(?:\s+\d.*)?|2nd appearance)$/i.test(
+          trimmed
+        )
+      )
+        continue
+      noteLines.push(trimmed)
     }
   }
 
@@ -434,7 +487,7 @@ function buildTrinketAttackFromHtml(html: string, fallbackName: string): GuestAt
         .trim()
     : 'Unknown effect'
 
-  const otherInfoHtml = findLastSection(html, /<b><u>Other [Ii]nformation<\/u><\/b>/gi)
+  const otherInfoHtml = findOtherInformationSection(html)
   if (otherInfoHtml) {
     const inlineOtherInfo = normalizeStructuredText(
       otherInfoHtml
@@ -707,7 +760,7 @@ function parseObtainMethods(html: string): Accessory['obtainMethods'] {
     if (!block.location) continue
     const price = block.price?.trim() || 'N/A'
     const priceType: PriceType = computePriceType(price, block.requiredItems)
-    obtainMethods.push({
+    const methodDetails = {
       location: block.location,
       price,
       priceType,
@@ -716,9 +769,14 @@ function parseObtainMethods(html: string): Accessory['obtainMethods'] {
       ...(block.requirements && !/^none$/i.test(block.requirements)
         ? { requirements: block.requirements }
         : {}),
-      daRequired: block.daRequired,
-      ...(block.dcRequired || priceType === 'dc' ? { dcRequired: true } : {}),
       ...(block.dmRequired || priceType === 'dm' ? { dmRequired: true } : {}),
+    }
+    const inferredDC =
+      block.dcRequired || obtainVariantHasDC({ ...methodDetails, daRequired: block.daRequired })
+    obtainMethods.push({
+      ...methodDetails,
+      daRequired: inferredDC ? false : block.daRequired,
+      ...(inferredDC ? { dcRequired: true } : {}),
     })
   }
 
@@ -748,30 +806,30 @@ function extractAccessoryImages(html: string): AccessoryImageBundle {
     /attack/i,
   ]
 
+  const normalizeImageUrl = (src: string) => decodeHtml(src).trim().replace(/\s/g, '%20')
   const isCandidateImage = (src: string) =>
-    !/[\s<>"]/.test(src) &&
+    !/[<>"]/.test(src) &&
     !skipPatterns.some((pattern) => pattern.test(src)) &&
     /\.(?:png|jpg|jpeg|gif|bmp)(?:\?|$)/i.test(src)
 
-  const otherInfoHtml = findLastSection(html, /<b><u>Other [Ii]nformation<\/u><\/b>/gi) ?? html
+  const otherInfoHtml = findOtherInformationSection(html)
+  const scanHtml = otherInfoHtml ? `${otherInfoHtml}\n${html}` : html
   const imageCandidates: Array<{ url: string; caption?: string }> = [
-    ...[...otherInfoHtml.matchAll(/<img[^>]+src=(["'])(.*?)\1[^>]*>/gi)].map((match) => ({
-      url: match[2],
+    ...[...scanHtml.matchAll(/<img[^>]+src=(["'])(.*?)\1[^>]*>/gi)].map((match) => ({
+      url: normalizeImageUrl(match[2]),
     })),
     ...[
-      ...otherInfoHtml.matchAll(
+      ...scanHtml.matchAll(
         /<a[^>]+href=(["'])([^"']*?\.(?:png|jpg|jpeg|gif|bmp)(?:\?[^"']*)?)\1[^>]*>([\s\S]*?)<\/a>/gi
       ),
     ].map((match) => ({
-      url: match[2],
+      url: normalizeImageUrl(match[2]),
       caption: stripHtml(decodeHtml(match[3])).trim(),
     })),
     ...[
-      ...otherInfoHtml.matchAll(
-        /https?:\/\/[^\s"'<>]+\.(?:png|jpg|jpeg|gif|bmp)(?:\?[^\s"'<>]*)?/gi
-      ),
+      ...scanHtml.matchAll(/https?:\/\/[^\s"<>]+\.(?:png|jpg|jpeg|gif|bmp)(?:\?[^\s"<>]*)?/gi),
     ].map((match) => ({
-      url: match[0],
+      url: normalizeImageUrl(match[0]),
     })),
   ].filter((candidate) => isCandidateImage(candidate.url))
 
@@ -1255,7 +1313,8 @@ async function enrichAccessoryAbility(entry: Accessory, cookie: string): Promise
 function buildAccessoryFamily(
   stub: AccessoryStub,
   variants: Accessory[],
-  fallbackImages: AccessoryImageBundle = {}
+  fallbackImages: AccessoryImageBundle = {},
+  fallbackNotes?: string
 ): AccessoryFamily {
   const consolidatedVariants = expandAccessoryFamilyVariants(
     enrichAccessorySiblingVariants(variants)
@@ -1294,6 +1353,8 @@ function buildAccessoryFamily(
     consolidatedVariants.map((variant) => variant.modifies).filter(Boolean)
   )
   const alsoSee = mergeAccessoryAlsoSee(consolidatedVariants, familySlug)
+  const notes = uniqueStrings(consolidatedVariants.map((variant) => variant.notes).filter(Boolean))
+  const sharedNotes = fallbackNotes ?? (notes.length === 1 ? notes[0] : undefined)
 
   const levelVariants: LevelVariant[] = consolidatedVariants
     .map((variant, index) => {
@@ -1360,6 +1421,7 @@ function buildAccessoryFamily(
       ...(sharedImageUrl ? { imageUrl: sharedImageUrl } : {}),
       ...(sharedAlternativeImages ? { alternativeImages: sharedAlternativeImages } : {}),
       ...(rarities.length === 1 ? { rarity: rarities[0] } : {}),
+      ...(sharedNotes ? { notes: sharedNotes } : {}),
       ...(alsoSee.length > 0 ? { alsoSee } : {}),
     },
     levelVariants,
@@ -1424,6 +1486,7 @@ async function buildAccessoryOrFamily(
     const fallbackImages = strategy.shouldExtractImages({ name: stub.name, subtype: stub.subtype })
       ? extractAccessoryImages(messageHtml)
       : {}
+    const threadNotes = uniqueStrings([parseNotes(messageHtml)].filter(Boolean))
 
     for (const post of threadPosts) {
       let html: string
@@ -1433,19 +1496,16 @@ async function buildAccessoryOrFamily(
         html = post.html
       }
       if (!html) continue
-      const title = parseAccessoryTitle(html)
+      const postNotes = parseNotes(html)
+      if (postNotes) threadNotes.push(postNotes)
+      const title = preserveStubVariantSuffix(stub.name, parseAccessoryTitle(html))
       if (!title) continue
 
       const variant = await enrichAccessoryAbility(
-        buildAccessoryEntry(
-          stub,
-          html,
-          resolveAlsoSee,
-          {
-            name: title,
-            forumUrl: post.sourceUrl,
-          }
-        ),
+        buildAccessoryEntry(stub, html, resolveAlsoSee, {
+          name: title,
+          forumUrl: post.sourceUrl,
+        }),
         cookie
       )
 
@@ -1461,7 +1521,8 @@ async function buildAccessoryOrFamily(
     }
 
     if (variants.length > 1) {
-      return buildAccessoryFamily(stub, variants, fallbackImages)
+      const fallbackNotes = uniqueStrings(threadNotes).join('\n') || undefined
+      return buildAccessoryFamily(stub, variants, fallbackImages, fallbackNotes)
     }
   }
 
@@ -1470,7 +1531,7 @@ async function buildAccessoryOrFamily(
   const resolvedTitle =
     title && /\(Retired\)/i.test(stub.name) && !/\(Retired\)/i.test(title)
       ? `${title} (Retired)`
-      : title
+      : preserveStubVariantSuffix(stub.name, title)
   const entry = await enrichAccessoryAbility(
     buildAccessoryEntry(
       stub,
@@ -1676,7 +1737,9 @@ function writeDatasets(
       entries = [...preservedEntries, ...entries]
     }
 
-    entries = Array.from(new Map(entries.map((entry) => [entry.slug, entry])).values())
+    entries = repairAccessFlags(
+      Array.from(new Map(entries.map((entry) => [entry.slug, entry])).values())
+    )
 
     entries.sort((a, b) => {
       const aName = getEntryDisplayName(a)
@@ -1693,6 +1756,22 @@ function writeDatasets(
       )
     }
   }
+}
+
+function loadExistingAccessoryEntry(stub: AccessoryStub): AccessoryEntry | undefined {
+  const meta = ACCESSORY_SUBTYPES.find((item) => item.subtype === stub.subtype)
+  if (!meta) return undefined
+  const expectedSlug = accessorySlugForName(stub.name)
+
+  for (const dataFile of getAccessoryDataFiles(meta)) {
+    const filePath = path.resolve(OUTPUT_DIR, dataFile)
+    if (!fs.existsSync(filePath)) continue
+    const entries = JSON.parse(fs.readFileSync(filePath, 'utf-8')) as AccessoryEntry[]
+    const existing = entries.find((entry) => entry.slug === expectedSlug)
+    if (existing) return existing
+  }
+
+  return undefined
 }
 
 async function main() {
@@ -1731,8 +1810,19 @@ async function main() {
   for (let index = 0; index < filteredStubs.length; index++) {
     const stub = filteredStubs[index]
     console.log(`[${index + 1}/${filteredStubs.length}] ${stub.name} (${stub.subtype})`)
-    const entry = await buildAccessoryOrFamily(stub, cookie, resolveAlsoSee)
-    entriesBySubtype.get(stub.subtype)?.push(entry)
+    try {
+      const entry = await buildAccessoryOrFamily(stub, cookie, resolveAlsoSee)
+      entriesBySubtype.get(stub.subtype)?.push(entry)
+    } catch (error) {
+      const existing = loadExistingAccessoryEntry(stub)
+      if (!existing) throw error
+      console.warn(
+        `⚠️  Keeping existing ${stub.name} after scrape failure: ${
+          error instanceof Error ? error.message : String(error)
+        }`
+      )
+      entriesBySubtype.get(stub.subtype)?.push(existing)
+    }
     await sleep(DELAY_MS)
   }
 

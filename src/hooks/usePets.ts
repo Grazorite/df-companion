@@ -4,6 +4,7 @@ import type { ItemFamily } from '../types/item'
 import type { ElementsData } from '../types/element'
 import { loadElements, loadPetsAndGuests } from '../utils/dataLoaders'
 import { compareTitles, displayTitle } from '../utils/displayText'
+import { getSearchWords } from '../utils/search'
 
 function isItemFamily(item: Pet | ItemFamily): item is ItemFamily {
   return 'levelVariants' in item && 'familyName' in item
@@ -128,8 +129,7 @@ function searchPets(
   filters: PetFilters,
   elementMeta: ElementsData
 ): (Pet | ItemFamily)[] {
-  const query = (filters.query ?? '').toLowerCase().trim()
-  const queryWords = query.split(/\s+/).filter((w) => w.length >= 2)
+  const queryWords = getSearchWords(filters.query ?? '')
   const hasRetiredSignal = (...values: Array<string | undefined>): boolean =>
     values.some((value) =>
       value
@@ -283,7 +283,7 @@ function searchPets(
           .join(' ')
           .toLowerCase()
 
-        const contentWords = searchableText.split(/\W+/)
+        const contentWords = getSearchWords(searchableText)
         const matches = queryWords.every((qWord) =>
           contentWords.some((cWord) => cWord.startsWith(qWord))
         )
@@ -299,8 +299,8 @@ function searchPets(
       const bName = bIsFamily ? (b as ItemFamily).familyName : (b as Pet).name
 
       if (queryWords.length > 0) {
-        const aNameWords = displayTitle(aName).toLowerCase().split(/\W+/)
-        const bNameWords = displayTitle(bName).toLowerCase().split(/\W+/)
+        const aNameWords = getSearchWords(displayTitle(aName))
+        const bNameWords = getSearchWords(displayTitle(bName))
         const aMatch = queryWords.some((qw) => aNameWords.some((nw) => nw.startsWith(qw)))
         const bMatch = queryWords.some((qw) => bNameWords.some((nw) => nw.startsWith(qw)))
         if (aMatch && !bMatch) return -1

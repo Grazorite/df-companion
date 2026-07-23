@@ -219,6 +219,10 @@ Fetch Accessories A-Z index (m=20985110)
   -> validate datasets
 ```
 
+### Long Scrape Handoff
+
+For long or broad scrape runs, Codex should provide the user with the exact terminal command, prerequisites, expected output files, and any post-run validation commands instead of running the whole scrape inside the agent session. Codex should still run short targeted scrapes when needed to prove a parser fix, then use the user-run output for data review and follow-up logic work.
+
 The scraper entry file should remain an orchestration layer. Shared neutral parsing belongs in `scripts/lib/*`; accessory-specific decisions belong in subtype strategy modules under `scripts/lib/accessories/*`.
 
 ### Subtype Index Parsing

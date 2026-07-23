@@ -5,8 +5,20 @@
  * computation, family flag derivation, level normalization, and roman numeral parsing.
  */
 
-import type { ItemFamily, ItemType, LevelVariant, PriceType } from '../types/item'
+import type { ItemFamily, ItemType, LevelVariant, ObtainVariant, PriceType } from '../types/item'
 import { displayTitle, normalizeDisplayText } from './displayText'
+
+export function obtainVariantHasDC(variant: ObtainVariant): boolean {
+  return (
+    variant.dcRequired === true ||
+    variant.priceType === 'dc' ||
+    /\b(?:D-Coins?|Dragon\s+Coins?|DC)\b/i.test(
+      [variant.price, variant.requiredItems, variant.requirements, variant.location]
+        .filter(Boolean)
+        .join(' ')
+    )
+  )
+}
 
 /**
  * Compute price type from price string and required items.
@@ -110,7 +122,7 @@ export function computeFamilyFlags<T extends ItemFamily>(family: T): T {
     // Check each obtain variant's flags and price type
     for (const obtainVariant of levelVariant.obtainVariants) {
       if (obtainVariant.daRequired) hasDA = true
-      if (obtainVariant.priceType === 'dc' || obtainVariant.dcRequired) hasDC = true
+      if (obtainVariantHasDC(obtainVariant)) hasDC = true
       if (obtainVariant.priceType === 'dm' || obtainVariant.dmRequired) hasDM = true
       if (obtainVariant.priceType === 'free') hasFree = true
       if (obtainVariant.priceType === 'merge') hasMerge = true
@@ -438,9 +450,7 @@ function getLevelVariantLabelInfo(
   itemType?: ItemType
 ): LevelVariantLabelInfo {
   const levelLabel = String(level.actualLevel ?? level.levelDisplay)
-  const hasDC = level.obtainVariants.some(
-    (variant) => variant.dcRequired || variant.priceType === 'dc'
-  )
+  const hasDC = level.obtainVariants.some(obtainVariantHasDC)
   const hasDA = level.obtainVariants.some((variant) => variant.daRequired)
   const normalizedVariantName = level.variantName
     ? normalizeDisplayText(level.variantName)
@@ -757,9 +767,7 @@ export function shouldShowVariantColumn(
 export function shouldUseSplitVariantRows(levels: LevelVariant[]): boolean {
   if (levels.length < 8) return false
 
-  const dcLevels = levels.filter((level) =>
-    level.obtainVariants.some((variant) => variant.dcRequired || variant.priceType === 'dc')
-  )
+  const dcLevels = levels.filter((level) => level.obtainVariants.some(obtainVariantHasDC))
   if (dcLevels.length === 0 || dcLevels.length === levels.length) return false
 
   const nonDcLevels = levels.filter((level) => !dcLevels.includes(level))
