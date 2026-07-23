@@ -20,6 +20,7 @@
     "clear:all": "npm run clear:pets && npm run clear:guests && echo 'All data cleared'"
   },
   "dependencies": {
+    "@vercel/speed-insights": "^2.0.0",
     "lucide-react": "^1.22.0",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
