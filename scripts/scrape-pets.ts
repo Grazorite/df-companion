@@ -12,6 +12,8 @@
  *   npm run scrape:pets -- --start=C    # Resume from letter C onwards
  *   npm run scrape:pets -- --letter=B   # Scrape only letter B
  *   npm run scrape:pets -- --letters=A,B # Scrape multiple letters A and B
+ *   npm run scrape:pets -- --letter=A --limit=2 # Smoke-test a small subset
+ *   npm run scrape:pets -- --concurrency=1 # Disable worker concurrency for debugging
  *
  * Progress is saved to pets-progress.json after each entry,
  * so a timeout or crash won't lose work. Final output is pets.json.
@@ -50,8 +52,24 @@ import { rephraseTimedSellback } from './lib/obtain-formatting.ts'
 import { repairAccessFlags } from './lib/access-flag-repair.ts'
 import { writePetsGuestsManifest } from './lib/data-manifests.ts'
 import { compareTitles } from '../src/utils/displayText.ts'
+import {
+  FORUM_BASE,
+  directForumPostUrl,
+  fetchForumPage as fetchPage,
+  loadForumCookie,
+  sleep,
+} from './lib/forum.ts'
+import { decodeHtml as decodeHTML, slugify, stripForumHtml, uniqueStrings } from './lib/text.ts'
+import {
+  applyLetterFilter,
+  applyLimit,
+  getConcurrencyArg,
+  getLetterFilterArgs,
+  getLimitArg,
+} from './lib/scraper-cli.ts'
+import { loadProgressEntries, saveProgressEntries } from './lib/progress.ts'
+import { processWithConcurrency } from './lib/work-queue.ts'
 
-const FORUM_BASE = 'https://forums2.battleon.com/f'
 const AZ_PETS_URL = `${FORUM_BASE}/tm.asp?m=22349620&mpage=1` // A-Z Pets & Guests master page
 const CHRONOLOGY_URL = `${FORUM_BASE}/tm.asp?m=10738071`
 const DELAY_MS = 1000
@@ -61,160 +79,20 @@ const PROGRESS_PATH = path.resolve(import.meta.dirname, '../src/data/pets-progre
 
 // ─── CLI args ─────────────────────────────────────────────────────────────────
 
-const args = process.argv.slice(2)
-const startArg = args
-  .find((a) => a.startsWith('--start='))
-  ?.split('=')[1]
-  ?.toUpperCase()
-const letterArg = args
-  .find((a) => a.startsWith('--letter='))
-  ?.split('=')[1]
-  ?.toUpperCase()
-const lettersArg = args
-  .find((a) => a.startsWith('--letters='))
-  ?.split('=')[1]
-  ?.toUpperCase()
-  .split(',') // Support multiple: --letters=A,B
-
-// ─── Helpers ─────────────────────────────────────────────────────────────────
-
-function sleep(ms: number): Promise<void> {
-  return new Promise((r) => setTimeout(r, ms))
-}
-
-async function fetchPage(url: string, cookie: string): Promise<string> {
-  const controller = new AbortController()
-  const timer = setTimeout(() => controller.abort(), 45000) // 45s timeout
-  try {
-    const res = await fetch(url, {
-      signal: controller.signal,
-      headers: {
-        Cookie: cookie,
-        'User-Agent':
-          'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) Chrome/120.0.0.0 Safari/537.36',
-        Accept: 'text/html,application/xhtml+xml',
-      },
-    })
-    if (!res.ok) throw new Error(`HTTP ${res.status}: ${url}`)
-    return res.text()
-  } finally {
-    clearTimeout(timer)
-  }
-}
+const letterFilter = getLetterFilterArgs()
+const limitArg = getLimitArg()
+const concurrencyArg = getConcurrencyArg()
 
 async function fetchThreadHtml(messageId: string, cookie: string): Promise<string> {
   return fetchPage(`${FORUM_BASE}/fb.asp?m=${messageId}`, cookie)
 }
 
-function slugify(name: string): string {
-  return name
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-+|-+$/g, '')
-    .slice(0, 120)
-}
-
 function prefixedSlug(name: string, type: EntryType): string {
-  return `${type}-${slugify(name)}`
-}
-
-function directForumPostUrl(_linkPath: string, messageId: string): string {
-  return `${FORUM_BASE}/fb.asp?m=${messageId}`
-}
-
-function decodeHTML(str: string): string {
-  return str
-    .replace(/&amp;/g, '&')
-    .replace(/&lt;/g, '<')
-    .replace(/&gt;/g, '>')
-    .replace(/&quot;/g, '"')
-    .replace(/&#39;/g, "'")
-    .replace(/&#(\d+);/g, (_, n) => String.fromCharCode(Number(n)))
-    .replace(/&nbsp;/g, ' ')
-    .replace(/&apos;/g, "'") // Also handle &apos; entity
+  return `${type}-${slugify(name, 120)}`
 }
 
 function stripHtml(html: string): string {
-  // Handle forum's malformed HTML:
-  // - Top-level <li> without <ul>
-  // - Nested <ul><li>...<li></ul> for sub-items
-  // - Text content with < or > characters (like "<1%")
-
-  let depth = 0
-  let processed = ''
-  let i = 0
-  const maxIterations = Math.max(html.length * 3, 100000)
-  let iterations = 0
-  let inTag = false
-  let tagStart = -1
-
-  while (i < html.length && iterations < maxIterations) {
-    iterations++
-
-    const char = html[i]
-
-    // Check if this might be the start of a tag
-    if (char === '<' && !inTag) {
-      // Look ahead to see if this is actually a tag or just a < character in text
-      const nextChars = html.slice(i, i + 10)
-      // Valid HTML tags start with < followed by letter or / or !
-      if (/^<[a-zA-Z!/]/.test(nextChars)) {
-        inTag = true
-        tagStart = i
-      } else {
-        // It's just a < character in text content, keep it
-        processed += char
-      }
-      i++
-      continue
-    }
-
-    // Check if we're closing a tag
-    if (char === '>' && inTag) {
-      inTag = false
-
-      // Check what type of tag we just closed
-      const tagContent = html.slice(tagStart, i + 1)
-
-      if (tagContent.match(/<ul|<ol/i)) {
-        depth++
-        processed += '\n'
-      } else if (tagContent.match(/<\/ul|<\/ol/i)) {
-        depth = Math.max(0, depth - 1)
-        processed += '\n'
-      } else if (tagContent.match(/<li/i)) {
-        const indent = '  '.repeat(Math.max(0, depth))
-        processed += `\n${indent}• `
-      } else if (tagContent.match(/<\/li/i)) {
-        processed += '\n'
-      } else if (tagContent.match(/<br/i)) {
-        processed += '\n'
-      } else if (tagContent.match(/<\/p/i)) {
-        processed += '\n'
-      }
-      // For other tags, just skip them
-
-      i++
-      continue
-    }
-
-    // If we're inside a tag, skip the character
-    if (inTag) {
-      i++
-      continue
-    }
-
-    // Regular character outside tags - add to output
-    processed += char
-    i++
-  }
-
-  if (iterations >= maxIterations) {
-    console.warn('⚠️  stripHtml reached iteration limit on a very large page')
-  }
-
-  // Clean up whitespace
-  return processed.replace(/\n{3,}/g, '\n\n').trim()
+  return stripForumHtml(html, 'stripHtml', { includeListItemClosers: true })
 }
 
 function extractOtherInfoBulletLines(html: string): string[] {
@@ -250,18 +128,12 @@ function extractAlsoSeeNames(html: string): string[] {
 }
 
 function loadCookie(): string {
-  const envPath = path.resolve(import.meta.dirname, '../.env')
-  if (!fs.existsSync(envPath)) {
-    console.error('❌ Missing .env')
+  try {
+    return loadForumCookie('pet scraper')
+  } catch (error) {
+    console.error(`❌ ${error instanceof Error ? error.message : String(error)}`)
     process.exit(1)
   }
-  const content = fs.readFileSync(envPath, 'utf-8')
-  const match = content.match(/FORUM_COOKIE=["'](.+?)["']\s*$/)
-  if (!match) {
-    console.error('❌ FORUM_COOKIE not found in .env')
-    process.exit(1)
-  }
-  return match[1]
 }
 
 // ─── Bracket code parser ─────────────────────────────────────────────────────
@@ -305,10 +177,6 @@ function parseBracketCodes(raw: string): { elements: string[]; markers: string[]
     else elements.push(code)
   }
   return { elements, markers }
-}
-
-function uniqueStrings(values: string[]): string[] {
-  return Array.from(new Set(values.filter(Boolean)))
 }
 
 function parseElementCodesFromText(raw: string): string[] {
@@ -770,7 +638,6 @@ function parseAZPage(html: string): PetStub[] {
         chunk
       )
     if (!linkMatch) continue
-    const linkPath = linkMatch[1]
     const msgId = linkMatch[3]
 
     // Keep same-thread variants as distinct stubs while still ignoring repeated list rows.
@@ -814,7 +681,7 @@ function parseAZPage(html: string): PetStub[] {
       name,
       slug: prefixedSlug(name, 'pet'),
       type: 'pet',
-      forumUrl: directForumPostUrl(linkPath, msgId),
+      forumUrl: directForumPostUrl(msgId),
       messageId: msgId,
       elements,
       markers,
@@ -3068,8 +2935,12 @@ function parseChronology(html: string): ChronologyData {
 async function main() {
   console.log('🐾 DragonFable Pets Scraper (Resumable, A-Z Master List)')
   console.log('─'.repeat(50))
-  if (startArg) console.log(`▶  Resuming from letter: ${startArg}`)
-  if (letterArg) console.log(`▶  Only scraping letter: ${letterArg}`)
+  if (letterFilter.start) console.log(`▶  Resuming from letter: ${letterFilter.start}`)
+  if (letterFilter.letter) console.log(`▶  Only scraping letter: ${letterFilter.letter}`)
+  if (letterFilter.letters)
+    console.log(`▶  Only scraping letters: ${letterFilter.letters.join(', ')}`)
+  if (limitArg) console.log(`▶  Limiting scrape to ${limitArg} entries`)
+  console.log(`▶  Detail concurrency: ${concurrencyArg} (entry starts spaced ${DELAY_MS}ms apart)`)
   console.log()
 
   const cookie = loadCookie()
@@ -3114,24 +2985,10 @@ async function main() {
   console.log(`✅ Found ${allStubs.length} pets in A-Z listing`)
 
   // Apply letter filters
-  let stubs = allStubs
-  if (lettersArg && lettersArg.length > 0) {
-    // Filter by multiple letters: --letters=A,B
-    stubs = allStubs.filter((s) => lettersArg.includes(s.letter))
-    console.log(`   Filtered to letters ${lettersArg.join(', ')}: ${stubs.length} entries`)
-  } else if (letterArg) {
-    // Filter by single letter: --letter=A
-    stubs = allStubs.filter((s) => s.letter === letterArg)
-    console.log(`   Filtered to letter ${letterArg}: ${stubs.length} entries`)
-  } else if (startArg) {
-    // Resume from letter: --start=C
-    let past = false
-    stubs = allStubs.filter((s) => {
-      if (s.letter === startArg) past = true
-      return past
-    })
-    console.log(`   Resuming from ${startArg}: ${stubs.length} entries remaining`)
-  }
+  const filtered = applyLetterFilter(allStubs, letterFilter)
+  const stubs = applyLimit(filtered.entries, limitArg)
+  if (filtered.message) console.log(`   ${filtered.message}`)
+  if (limitArg) console.log(`   Limited to first ${stubs.length} selected entries`)
   console.log()
 
   // Build name→slug map for ALL pets (needed for cross-reference resolution)
@@ -3148,11 +3005,10 @@ async function main() {
 
   // ── Step 3: Load existing progress ────────────────────────────────────────
 
-  const progressMap = new Map<string, Pet | ItemFamily>()
+  let progressMap = new Map<string, Pet | ItemFamily>()
   if (fs.existsSync(PROGRESS_PATH)) {
     try {
-      const existing: (Pet | ItemFamily)[] = JSON.parse(fs.readFileSync(PROGRESS_PATH, 'utf-8'))
-      for (const p of existing) progressMap.set(p.slug, p)
+      progressMap = loadProgressEntries<Pet | ItemFamily>(PROGRESS_PATH)
       console.log(`📂 Loaded ${progressMap.size} previously scraped entries from progress file`)
     } catch {
       /* ignore corrupt progress */
@@ -3165,86 +3021,95 @@ async function main() {
     skipped = 0,
     fromCache = 0
   const startTime = Date.now()
+  const pendingStubs: Array<{ stub: PetStub; index: number }> = []
 
   for (let i = 0; i < stubs.length; i++) {
     const stub = stubs[i]
 
-    // Skip if already in progress cache
     if (progressMap.has(stub.slug)) {
       process.stdout.write(`[${i + 1}/${stubs.length}] ${stub.name} (cached)\n`)
       fromCache++
       continue
     }
 
-    process.stdout.write(`[${i + 1}/${stubs.length}] ${stub.name}...`)
-
-    try {
-      let sourcePosts: ThreadPostContent[] = []
-      try {
-        sourcePosts = extractThreadPostContents(await fetchThreadPages(stub.messageId, cookie))
-      } catch {
-        sourcePosts = []
-      }
-
-      const html =
-        sourcePosts.length > 0
-          ? sourcePosts.map((post) => post.html).join('\n<hr>\n')
-          : getAllPostContent(await fetchPrintable(stub.messageId, cookie))
-
-      if (!html) {
-        console.log(' ⚠️  deleted — skipping')
-        skipped++
-        if (i < stubs.length - 1) await sleep(DELAY_MS)
-        continue
-      }
-
-      // Use multi-variant parser (Sprint 5)
-      const result = await parsePetThreadMultiVariant(
-        html,
-        stub.name,
-        stub,
-        cookie,
-        chronology,
-        nameToSlug,
-        sourcePosts
-      )
-
-      // Handle both Pet and ItemFamily types
-      if ('levelVariants' in result) {
-        // ItemFamily path (multi-variant)
-        const family = result as ItemFamily
-        progressMap.set(family.slug, family)
-        console.log(' ✓ [ItemFamily]')
-      } else {
-        // Pet path (single-variant, existing logic)
-        const pet = result as Pet
-        progressMap.set(pet.slug, pet)
-        console.log(' ✓')
-      }
-
-      scraped++
-
-      // Save progress after every entry
-      const progress = Array.from(progressMap.values())
-      fs.writeFileSync(PROGRESS_PATH, JSON.stringify(progress, null, 2) + '\n', 'utf-8')
-
-      // Progress update every 10 pets
-      if ((scraped + skipped) % 10 === 0) {
-        const elapsed = Math.round((Date.now() - startTime) / 1000)
-        const rate = elapsed > 0 ? (scraped + fromCache) / elapsed : 0
-        const remaining = stubs.length - (i + 1)
-        const eta = rate > 0 ? Math.round(remaining / rate) : 0
-        console.log(
-          `   ⏱️  Progress: ${scraped + fromCache}/${stubs.length} | ${elapsed}s elapsed | ETA ${eta}s`
-        )
-      }
-    } catch (err) {
-      console.log(` ❌ error: ${err} — skipping`)
-      skipped++
-    }
-
-    if (i < stubs.length - 1) await sleep(DELAY_MS)
+    pendingStubs.push({ stub, index: i })
   }
+
+  let processedPending = 0
+  await processWithConcurrency({
+    items: pendingStubs,
+    concurrency: concurrencyArg,
+    startDelayMs: DELAY_MS,
+    processItem: async ({ stub, index: i }) => {
+      process.stdout.write(`[${i + 1}/${stubs.length}] ${stub.name}...`)
+
+      try {
+        let sourcePosts: ThreadPostContent[] = []
+        try {
+          sourcePosts = extractThreadPostContents(await fetchThreadPages(stub.messageId, cookie))
+        } catch {
+          sourcePosts = []
+        }
+
+        const html =
+          sourcePosts.length > 0
+            ? sourcePosts.map((post) => post.html).join('\n<hr>\n')
+            : getAllPostContent(await fetchPrintable(stub.messageId, cookie))
+
+        if (!html) {
+          console.log(' ⚠️  deleted — skipping')
+          skipped++
+          return
+        }
+
+        // Use multi-variant parser (Sprint 5)
+        const result = await parsePetThreadMultiVariant(
+          html,
+          stub.name,
+          stub,
+          cookie,
+          chronology,
+          nameToSlug,
+          sourcePosts
+        )
+
+        // Handle both Pet and ItemFamily types
+        if ('levelVariants' in result) {
+          // ItemFamily path (multi-variant)
+          const family = result as ItemFamily
+          progressMap.set(family.slug, family)
+          console.log(' ✓ [ItemFamily]')
+        } else {
+          // Pet path (single-variant, existing logic)
+          const pet = result as Pet
+          progressMap.set(pet.slug, pet)
+          console.log(' ✓')
+        }
+
+        scraped++
+
+        // Save progress after every entry
+        const progress = Array.from(progressMap.values())
+        saveProgressEntries(PROGRESS_PATH, progress)
+
+        // Progress update every 10 pets
+        if ((scraped + skipped) % 10 === 0) {
+          const elapsed = Math.round((Date.now() - startTime) / 1000)
+          const rate = elapsed > 0 ? (scraped + fromCache) / elapsed : 0
+          const remaining = pendingStubs.length - processedPending
+          const eta = rate > 0 ? Math.round(remaining / rate) : 0
+          console.log(
+            `   ⏱️  Progress: ${scraped + fromCache}/${stubs.length} | ${elapsed}s elapsed | ETA ${eta}s`
+          )
+        }
+      } catch (err) {
+        console.log(` ❌ error: ${err} — skipping`)
+        skipped++
+      } finally {
+        processedPending++
+      }
+    },
+  })
 
   console.log(`\n✅ Scraped: ${scraped}  Cached: ${fromCache}  Skipped: ${skipped}`)
 

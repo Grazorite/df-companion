@@ -35,6 +35,7 @@ __pycache__/
 # Scraper progress files (intermediate, not needed in repo)
 src/data/pets-progress.json
 src/data/guests-progress.json
+src/data/*-progress.json.tmp
 src/data/backup/
 src/data/*.html
 temp.json

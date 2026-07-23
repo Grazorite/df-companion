@@ -29,8 +29,23 @@ import { extractAlsoSeeRefs, type ParsedAlsoSeeRef } from './lib/also-see.ts'
 import type { FamilySourceRef, LevelVariant } from '../src/types/item.ts'
 import type { AlsoSeeRef } from '../src/types/item.ts'
 import type { GuestAttack } from '../src/types/pet.ts'
+import {
+  FORUM_BASE,
+  fetchForumPage as fetchPage,
+  loadForumCookie,
+  sleep,
+  withRetry,
+} from './lib/forum.ts'
+import {
+  decodeHtml,
+  normalizeStructuredText,
+  slugify,
+  stripSimpleHtml as stripHtml,
+  uniqueStrings,
+} from './lib/text.ts'
+import { applyLimit, getArg, getConcurrencyArg, getLimitArg } from './lib/scraper-cli.ts'
+import { processWithConcurrency } from './lib/work-queue.ts'
 
-const FORUM_BASE = 'https://forums2.battleon.com/f'
 const ACCESSORIES_INDEX_URL = `${FORUM_BASE}/printable.asp?m=20985110`
 const OUTPUT_DIR = path.resolve(import.meta.dirname, '../src/data')
 const DELAY_MS = 900
@@ -80,68 +95,12 @@ const elementPatterns = elementEntries.map((entry) => ({
   ],
 }))
 
-function getArg(name: string): string | undefined {
-  return process.argv
-    .slice(2)
-    .find((arg) => arg.startsWith(`--${name}=`))
-    ?.split('=')[1]
-}
-
 function loadCookie(): string {
-  if (process.env.FORUM_COOKIE) return process.env.FORUM_COOKIE
-
-  const envPath = path.resolve(import.meta.dirname, '../.env')
-  if (!fs.existsSync(envPath)) {
-    throw new Error('FORUM_COOKIE is required in the environment or .env to scrape accessories.')
+  try {
+    return loadForumCookie('accessory scraper')
+  } catch (error) {
+    throw new Error(error instanceof Error ? error.message : String(error))
   }
-
-  const content = fs.readFileSync(envPath, 'utf-8')
-  const match = content.match(/FORUM_COOKIE=["'](.+?)["']\s*$/)
-  if (!match) {
-    throw new Error('FORUM_COOKIE not found in .env.')
-  }
-
-  return match[1]
-}
-
-function sleep(ms: number): Promise<void> {
-  return new Promise((resolve) => setTimeout(resolve, ms))
-}
-
-async function withRetry<T>(label: string, operation: () => Promise<T>, attempts = 3): Promise<T> {
-  let lastError: unknown
-
-  for (let attempt = 1; attempt <= attempts; attempt += 1) {
-    try {
-      return await operation()
-    } catch (error) {
-      lastError = error
-      const message = error instanceof Error ? error.message : String(error)
-      if (/^HTTP 500:/i.test(message)) break
-      if (attempt === attempts) break
-      console.warn(`Retrying ${label} after ${message} (${attempt}/${attempts})`)
-      await sleep(DELAY_MS * attempt)
-    }
-  }
-
-  throw lastError
-}
-
-function decodeHtml(text: string): string {
-  return text
-    .replace(/&amp;/g, '&')
-    .replace(/&lt;/g, '<')
-    .replace(/&gt;/g, '>')
-    .replace(/&quot;/g, '"')
-    .replace(/&#39;/g, "'")
-    .replace(/&nbsp;/g, ' ')
-}
-
-function slugify(name: string): string {
-  return name
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-+|-+$/g, '')
 }
 
 function accessorySlugForName(name: string): string {
@@ -238,72 +197,6 @@ function entryBelongsInDataFile(entry: AccessoryEntry, dataFile: string): boolea
   if (dataFile.endsWith('-a-l.json')) return isALInitial(name)
   if (dataFile.endsWith('-m-z.json')) return !isALInitial(name)
   return true
-}
-
-function stripHtml(html: string): string {
-  return html
-    .replace(/<br\s*\/?>/gi, '\n')
-    .replace(/<\/p>/gi, '\n')
-    .replace(/<hr[^>]*>/gi, '\n')
-    .replace(/<[^>]+>/g, '')
-}
-
-function normalizeStructuredText(html: string): string {
-  let depth = 0
-  let output = ''
-  let i = 0
-  let inTag = false
-  let tagStart = -1
-
-  while (i < html.length) {
-    const char = html[i]
-
-    if (char === '<' && !inTag) {
-      const nextChars = html.slice(i, i + 12)
-      if (/^<[a-zA-Z!/]/.test(nextChars)) {
-        inTag = true
-        tagStart = i
-      } else {
-        output += char
-      }
-      i++
-      continue
-    }
-
-    if (char === '>' && inTag) {
-      inTag = false
-      const tagContent = html.slice(tagStart, i + 1)
-
-      if (/<ul|<ol/i.test(tagContent)) {
-        depth++
-        output += '\n'
-      } else if (/<\/ul|<\/ol/i.test(tagContent)) {
-        depth = Math.max(0, depth - 1)
-        output += '\n'
-      } else if (/<li/i.test(tagContent)) {
-        const indent = '  '.repeat(Math.max(0, depth))
-        output += `\n${indent}• `
-      } else if (/<br/i.test(tagContent) || /<\/p/i.test(tagContent) || /<hr/i.test(tagContent)) {
-        output += '\n'
-      }
-
-      i++
-      continue
-    }
-
-    if (inTag) {
-      i++
-      continue
-    }
-
-    output += char
-    i++
-  }
-
-  return decodeHtml(output)
-    .replace(/\r/g, '')
-    .replace(/\n{3,}/g, '\n\n')
-    .trim()
 }
 
 function findLastSection(html: string, sectionRegex: RegExp): string | undefined {
@@ -941,10 +834,6 @@ function deriveAccessoryVariantName(name: string, familyName: string): string | 
   return undefined
 }
 
-function uniqueStrings(values: Array<string | undefined>): string[] {
-  return Array.from(new Set(values.filter((value): value is string => Boolean(value))))
-}
-
 function mergeAccessoryAlsoSee(variants: Accessory[], familySlug: string): AlsoSeeRef[] {
   const variantSlugs = new Set(variants.map((variant) => variant.slug))
   const refs = new Map<string, AlsoSeeRef>()
@@ -1571,24 +1460,6 @@ async function buildAccessoryOrFamily(
   return entry
 }
 
-async function fetchPage(url: string, cookie: string): Promise<string> {
-  const response = await withRetry(url, () =>
-    fetch(url, {
-      headers: {
-        Cookie: cookie,
-        'User-Agent': 'Mozilla/5.0',
-        Accept: 'text/html,application/xhtml+xml',
-      },
-    })
-  )
-
-  if (!response.ok) {
-    throw new Error(`HTTP ${response.status}: ${url}`)
-  }
-
-  return response.text()
-}
-
 function extractReplyPostContent(html: string, messageId: string): string {
   const anchorRegex = new RegExp(`<a\\s+name=${messageId}\\b[^>]*><\\/a>`, 'i')
   const anchorMatch = anchorRegex.exec(html)
@@ -1804,6 +1675,8 @@ async function main() {
   const subtypeArg = getArg('subtype') as AccessorySubtype | undefined
   const subtypesArg = getArg('subtypes')
   const lettersArg = getArg('letters')?.toUpperCase().split(',').filter(Boolean)
+  const limitArg = getLimitArg()
+  const concurrencyArg = getConcurrencyArg()
   const indexHtml = await fetchPage(ACCESSORIES_INDEX_URL, cookie)
   const subtypeRefs = parseAccessoryIndex(indexHtml)
   const selectedSubtypes = subtypesArg
@@ -1821,34 +1694,42 @@ async function main() {
     await sleep(250)
   }
 
-  const filteredStubs = allStubs.filter((stub) => {
-    if (!selectedSubtypes.has(stub.subtype)) return false
-    if (!lettersArg || lettersArg.length === 0) return true
-    return lettersArg.includes(getInitialForName(stub.name))
-  })
+  const filteredStubs = applyLimit(
+    allStubs.filter((stub) => {
+      if (!selectedSubtypes.has(stub.subtype)) return false
+      if (!lettersArg || lettersArg.length === 0) return true
+      return lettersArg.includes(getInitialForName(stub.name))
+    }),
+    limitArg
+  )
   const resolveAlsoSee = createAccessoryRefResolver(allStubs)
   const entriesBySubtype = new Map<AccessorySubtype, AccessoryEntry[]>(
     ACCESSORY_SUBTYPES.map((meta) => [meta.subtype, []])
   )
 
-  for (let index = 0; index < filteredStubs.length; index++) {
-    const stub = filteredStubs[index]
-    console.log(`[${index + 1}/${filteredStubs.length}] ${stub.name} (${stub.subtype})`)
-    try {
-      const entry = await buildAccessoryOrFamily(stub, cookie, resolveAlsoSee)
-      entriesBySubtype.get(stub.subtype)?.push(entry)
-    } catch (error) {
-      const existing = loadExistingAccessoryEntry(stub)
-      if (!existing) throw error
-      console.warn(
-        `⚠️  Keeping existing ${stub.name} after scrape failure: ${
-          error instanceof Error ? error.message : String(error)
-        }`
-      )
-      entriesBySubtype.get(stub.subtype)?.push(existing)
-    }
-    await sleep(DELAY_MS)
-  }
+  console.log(`Detail concurrency: ${concurrencyArg} (entry starts spaced ${DELAY_MS}ms apart)`)
+
+  await processWithConcurrency({
+    items: filteredStubs,
+    concurrency: concurrencyArg,
+    startDelayMs: DELAY_MS,
+    processItem: async (stub, index) => {
+      console.log(`[${index + 1}/${filteredStubs.length}] ${stub.name} (${stub.subtype})`)
+      try {
+        const entry = await buildAccessoryOrFamily(stub, cookie, resolveAlsoSee)
+        entriesBySubtype.get(stub.subtype)?.push(entry)
+      } catch (error) {
+        const existing = loadExistingAccessoryEntry(stub)
+        if (!existing) throw error
+        console.warn(
+          `⚠️  Keeping existing ${stub.name} after scrape failure: ${
+            error instanceof Error ? error.message : String(error)
+          }`
+        )
+        entriesBySubtype.get(stub.subtype)?.push(existing)
+      }
+    },
+  })
 
   console.log(
     `Parsed accessory entries: ${filteredStubs.length}${

@@ -16,6 +16,8 @@
  * 1. Get your session cookie from DevTools → Network → Headers → Cookie
  * 2. Add to .env: FORUM_COOKIE="your_cookie_string"
  * 3. Run: npm run scrape:badges
+ *    Smoke test: npm run scrape:badges -- --limit=2
+ *    Sequential debug mode: npm run scrape:badges -- --concurrency=1
  *
  * The A-Z master post URL:
  * https://forums2.battleon.com/f/tm.asp?m=22304590&mpage=1&key=
@@ -26,8 +28,11 @@ import * as path from 'node:path'
 import { fetchPrintable, getPostContent } from './lib/printable-parser.ts'
 import { compareTitles } from '../src/utils/displayText.ts'
 import { writeBadgeManifest } from './lib/data-manifests.ts'
+import { FORUM_BASE, fetchForumPage as fetchPage, loadForumCookie } from './lib/forum.ts'
+import { decodeHtml as decodeHTML, slugify, stripSimpleHtml as stripHtml } from './lib/text.ts'
+import { applyLimit, getConcurrencyArg, getLimitArg } from './lib/scraper-cli.ts'
+import { processWithConcurrency } from './lib/work-queue.ts'
 
-const FORUM_BASE = 'https://forums2.battleon.com/f'
 const AZ_PAGE_URL = `${FORUM_BASE}/tm.asp?m=22304590&mpage=1&key=`
 const DELAY_MS = 800
 const DATA_DIR = path.resolve(import.meta.dirname, '../src/data')
@@ -36,6 +41,8 @@ const BADGE_SUBCATEGORY_FALLBACK_PATH = OUTPUT_PATH
 const THREAD_URL_OVERRIDES: Record<string, string> = {
   'Arachnalchemy Mastery': '22421146',
 }
+const limitArg = getLimitArg()
+const concurrencyArg = getConcurrencyArg()
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -73,66 +80,13 @@ interface BadgeSubcategoryFallback {
   imageVariants?: string[]
 }
 
-// ─── Helpers ─────────────────────────────────────────────────────────────────
-
-function sleep(ms: number): Promise<void> {
-  return new Promise((r) => setTimeout(r, ms))
-}
-
-async function fetchPage(url: string, cookie: string): Promise<string> {
-  const res = await fetch(url, {
-    headers: {
-      Cookie: cookie,
-      'User-Agent':
-        'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) Chrome/120.0.0.0 Safari/537.36',
-      Accept: 'text/html,application/xhtml+xml',
-    },
-  })
-  if (!res.ok) throw new Error(`HTTP ${res.status}: ${url}`)
-  return res.text()
-}
-
-function slugify(name: string): string {
-  return name
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-+|-+$/g, '')
-    .slice(0, 120)
-}
-
-function decodeHTML(str: string): string {
-  return str
-    .replace(/&amp;/g, '&')
-    .replace(/&lt;/g, '<')
-    .replace(/&gt;/g, '>')
-    .replace(/&quot;/g, '"')
-    .replace(/&#39;/g, "'")
-    .replace(/&#(\d+);/g, (_, n) => String.fromCharCode(Number(n)))
-    .replace(/&nbsp;/g, ' ')
-}
-
-function stripHtml(html: string): string {
-  return html
-    .replace(/<br\s*\/?>/gi, '\n')
-    .replace(/<\/p>/gi, '\n')
-    .replace(/<[^>]+>/g, '')
-    .replace(/\n{3,}/g, '\n\n')
-    .trim()
-}
-
 function loadCookie(): string {
-  const envPath = path.resolve(import.meta.dirname, '../.env')
-  if (!fs.existsSync(envPath)) {
-    console.error('❌ Missing .env file. Add FORUM_COOKIE="..." to it.')
+  try {
+    return loadForumCookie('badge scraper')
+  } catch (error) {
+    console.error(`❌ ${error instanceof Error ? error.message : String(error)}`)
     process.exit(1)
   }
-  const content = fs.readFileSync(envPath, 'utf-8')
-  const match = content.match(/FORUM_COOKIE=["'](.+?)["']\s*$/)
-  if (!match) {
-    console.error('❌ FORUM_COOKIE not found in .env')
-    process.exit(1)
-  }
-  return match[1]
 }
 
 function loadBadgeSubcategoryFallbacks(): Map<string, BadgeSubcategoryFallback> {
@@ -274,7 +228,7 @@ function parseAZPage(
 
     stubs.push({
       name,
-      slug: slugify(name),
+      slug: slugify(name, 120),
       messageId: THREAD_URL_OVERRIDES[name] ?? msgId,
       forumUrl: `${FORUM_BASE}/tm.asp?m=${THREAD_URL_OVERRIDES[name] ?? msgId}`,
       category: fallback?.category ?? 'misc',
@@ -477,8 +431,12 @@ async function main() {
   // Step 1: Parse A-Z master page
   console.log('📄 Fetching A-Z Badges master page...')
   const azHtml = await fetchPage(AZ_PAGE_URL, cookie)
-  const stubs = parseAZPage(azHtml, fallbackMap)
-  console.log(`✅ Found ${stubs.length} badges in A-Z page\n`)
+  const allStubs = parseAZPage(azHtml, fallbackMap)
+  const stubs = applyLimit(allStubs, limitArg)
+  console.log(`✅ Found ${allStubs.length} badges in A-Z page`)
+  if (limitArg) console.log(`   Limited to first ${stubs.length} badges`)
+  console.log(`   Detail concurrency: ${concurrencyArg} (entry starts spaced ${DELAY_MS}ms apart)`)
+  console.log()
 
   if (stubs.length === 0) {
     console.error('❌ No badges found — cookie may have expired. Refresh and retry.')
@@ -490,75 +448,77 @@ async function main() {
   let enriched = 0
   let fallback = 0
 
-  for (let i = 0; i < stubs.length; i++) {
-    const stub = stubs[i]
-    process.stdout.write(`[${i + 1}/${stubs.length}] ${stub.name}...`)
+  await processWithConcurrency({
+    items: stubs,
+    concurrency: concurrencyArg,
+    startDelayMs: DELAY_MS,
+    processItem: async (stub, i) => {
+      process.stdout.write(`[${i + 1}/${stubs.length}] ${stub.name}...`)
 
-    const details = await fetchBadgeDetails(stub, cookie)
-    const hasDetails = !!details.description && !details.description?.startsWith('Badge:')
-    const badgeFallback = fallbackMap.get(stub.name.toLowerCase())
+      const details = await fetchBadgeDetails(stub, cookie)
+      const hasDetails = !!details.description && !details.description?.startsWith('Badge:')
+      const badgeFallback = fallbackMap.get(stub.name.toLowerCase())
 
-    if (hasDetails) enriched++
-    else fallback++
+      if (hasDetails) enriched++
+      else fallback++
 
-    const badge: BadgeData = {
-      ...stub,
-      // Override retired if detected from individual page tag
-      retired: stub.retired || details.retired || false,
-      id: stub.slug,
-      description: details.description ?? `Badge: ${stub.name}`,
-      requirements: details.requirements ?? '',
-      daRequired: details.daRequired ?? false,
-      category: (() => {
-        const cat = details.category ?? stub.category
-        const sub = details.subcategory ?? stub.subcategory
-        const name = stub.name.toLowerCase()
-        // Seasonal detection: subcategory hint OR name patterns
-        if (cat === 'misc') {
-          if (mapSubcategoryToSeasonal(sub)) return 'seasonal'
-          if (
-            /mogloween|frostval|frost moglin|golem breaker|naughty list|bad toys|x-val|icemaster|merry togsmas|sugary nightmare|frostvayle|list completion|resident: sneevil|pumpkinlord|evolved pumpkinlord|togslayer|#1 threat|bachelor|wrestling champion|catastrophic candy|48 weeks/i.test(
-              name
+      const badge: BadgeData = {
+        ...stub,
+        // Override retired if detected from individual page tag
+        retired: stub.retired || details.retired || false,
+        id: stub.slug,
+        description: details.description ?? `Badge: ${stub.name}`,
+        requirements: details.requirements ?? '',
+        daRequired: details.daRequired ?? false,
+        category: (() => {
+          const cat = details.category ?? stub.category
+          const sub = details.subcategory ?? stub.subcategory
+          const name = stub.name.toLowerCase()
+          // Seasonal detection: subcategory hint OR name patterns
+          if (cat === 'misc') {
+            if (mapSubcategoryToSeasonal(sub)) return 'seasonal'
+            if (
+              /mogloween|frostval|frost moglin|golem breaker|naughty list|bad toys|x-val|icemaster|merry togsmas|sugary nightmare|frostvayle|list completion|resident: sneevil|pumpkinlord|evolved pumpkinlord|togslayer|#1 threat|bachelor|wrestling champion|catastrophic candy|48 weeks/i.test(
+                name
+              )
             )
-          )
-            return 'seasonal'
-          if (/pvp/i.test(name)) return 'combat'
-        }
-        return cat
-      })(),
-      subcategory: details.subcategory ?? stub.subcategory,
-      howToObtain:
-        details.howToObtain && details.howToObtain.length > 0
-          ? details.howToObtain
-          : details.requirements
-            ? [{ order: 1, instruction: details.requirements }]
-            : [{ order: 1, instruction: 'See forum link for details.' }],
-      forumLinks: [
-        {
-          url: stub.forumUrl,
-          title: `DF Encyclopedia: ${stub.name}`,
-          isPrimary: true,
-        },
-      ],
-      tags: generateTags(
-        stub.name,
-        details.requirements ?? '',
-        details.subcategory ?? stub.subcategory
-      ),
-      // Prefer the latest forum scrape, but preserve existing curated image fields across re-scrapes.
-      ...(badgeFallback?.imageUrl ? { imageUrl: badgeFallback.imageUrl } : {}),
-      ...(details.forumImageUrl || badgeFallback?.forumImageUrl
-        ? { forumImageUrl: details.forumImageUrl ?? badgeFallback?.forumImageUrl }
-        : {}),
-      ...(badgeFallback?.imageVariants ? { imageVariants: badgeFallback.imageVariants } : {}),
-      ...(details.notes ? { notes: details.notes } : {}),
-    }
+              return 'seasonal'
+            if (/pvp/i.test(name)) return 'combat'
+          }
+          return cat
+        })(),
+        subcategory: details.subcategory ?? stub.subcategory,
+        howToObtain:
+          details.howToObtain && details.howToObtain.length > 0
+            ? details.howToObtain
+            : details.requirements
+              ? [{ order: 1, instruction: details.requirements }]
+              : [{ order: 1, instruction: 'See forum link for details.' }],
+        forumLinks: [
+          {
+            url: stub.forumUrl,
+            title: `DF Encyclopedia: ${stub.name}`,
+            isPrimary: true,
+          },
+        ],
+        tags: generateTags(
+          stub.name,
+          details.requirements ?? '',
+          details.subcategory ?? stub.subcategory
+        ),
+        // Prefer the latest forum scrape, but preserve existing curated image fields across re-scrapes.
+        ...(badgeFallback?.imageUrl ? { imageUrl: badgeFallback.imageUrl } : {}),
+        ...(details.forumImageUrl || badgeFallback?.forumImageUrl
+          ? { forumImageUrl: details.forumImageUrl ?? badgeFallback?.forumImageUrl }
+          : {}),
+        ...(badgeFallback?.imageVariants ? { imageVariants: badgeFallback.imageVariants } : {}),
+        ...(details.notes ? { notes: details.notes } : {}),
+      }
 
-    badges.push(badge)
-    console.log(hasDetails ? ' ✓' : ' (no details)')
-
-    if (i < stubs.length - 1) await sleep(DELAY_MS)
-  }
+      badges.push(badge)
+      console.log(hasDetails ? ' ✓' : ' (no details)')
+    },
+  })
 
   // Sort alphabetically
   badges.sort((a, b) => compareTitles(a.name, b.name))

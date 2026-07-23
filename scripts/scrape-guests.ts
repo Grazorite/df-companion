@@ -11,6 +11,8 @@
  *   npm run scrape:guests -- --start=C    # Resume from letter C onwards
  *   npm run scrape:guests -- --letter=B   # Scrape only letter B
  *   npm run scrape:guests -- --letters=A,B # Scrape multiple letters A and B
+ *   npm run scrape:guests -- --letter=A --limit=2 # Smoke-test a small subset
+ *   npm run scrape:guests -- --concurrency=1 # Disable worker concurrency for debugging
  *
  * Progress is saved to guests-progress.json after each entry,
  * so a timeout or crash won't lose work. Final output is guests.json.
@@ -60,8 +62,28 @@ import { rephraseTimedSellback } from './lib/obtain-formatting.ts'
 import { repairAccessFlags } from './lib/access-flag-repair.ts'
 import { writePetsGuestsManifest } from './lib/data-manifests.ts'
 import { compareTitles } from '../src/utils/displayText.ts'
+import {
+  FORUM_BASE,
+  directForumPostUrl,
+  fetchForumPage as fetchPage,
+  loadForumCookie,
+} from './lib/forum.ts'
+import {
+  decodeHtml as decodeHTML,
+  normalizeStructuredText,
+  slugify,
+  stripForumHtml,
+} from './lib/text.ts'
+import {
+  applyLetterFilter,
+  applyLimit,
+  getConcurrencyArg,
+  getLetterFilterArgs,
+  getLimitArg,
+} from './lib/scraper-cli.ts'
+import { loadProgressEntries, saveProgressEntries } from './lib/progress.ts'
+import { processWithConcurrency } from './lib/work-queue.ts'
 
-const FORUM_BASE = 'https://forums2.battleon.com/f'
 const AZ_PETS_URL = `${FORUM_BASE}/tm.asp?m=22349620&mpage=1` // A-Z Pets & Guests master page
 const CHRONOLOGY_URL = `${FORUM_BASE}/tm.asp?m=10738071`
 const DELAY_MS = 1000
@@ -71,46 +93,9 @@ const PROGRESS_PATH = path.resolve(import.meta.dirname, '../src/data/guests-prog
 
 // ─── CLI args ─────────────────────────────────────────────────────────────────
 
-const args = process.argv.slice(2)
-const startArg = args
-  .find((a) => a.startsWith('--start='))
-  ?.split('=')[1]
-  ?.toUpperCase()
-const letterArg = args
-  .find((a) => a.startsWith('--letter='))
-  ?.split('=')[1]
-  ?.toUpperCase()
-const lettersArg = args
-  .find((a) => a.startsWith('--letters='))
-  ?.split('=')[1]
-  ?.toUpperCase()
-  .split(',') // Support multiple: --letters=A,B
-
-// ─── Helpers ─────────────────────────────────────────────────────────────────
-
-function sleep(ms: number): Promise<void> {
-  return new Promise((r) => setTimeout(r, ms))
-}
-
-async function fetchPage(url: string, cookie: string): Promise<string> {
-  const controller = new AbortController()
-  const timer = setTimeout(() => controller.abort(), 45000) // 45s timeout
-  try {
-    const res = await fetch(url, {
-      signal: controller.signal,
-      headers: {
-        Cookie: cookie,
-        'User-Agent':
-          'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) Chrome/120.0.0.0 Safari/537.36',
-        Accept: 'text/html,application/xhtml+xml',
-      },
-    })
-    if (!res.ok) throw new Error(`HTTP ${res.status}: ${url}`)
-    return res.text()
-  } finally {
-    clearTimeout(timer)
-  }
-}
+const letterFilter = getLetterFilterArgs()
+const limitArg = getLimitArg()
+const concurrencyArg = getConcurrencyArg()
 
 function extractReplyPostContent(html: string, messageId: string): string {
   if (html.includes('This message has been deleted or moved')) {
@@ -145,117 +130,21 @@ async function fetchGuestPostContent(messageId: string, cookie: string): Promise
   }
 }
 
-function slugify(name: string): string {
-  return name
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-+|-+$/g, '')
-    .slice(0, 120)
-}
-
 function prefixedSlug(name: string, type: EntryType): string {
-  return `${type}-${slugify(name)}`
-}
-
-function directForumPostUrl(_linkPath: string, messageId: string): string {
-  return `${FORUM_BASE}/fb.asp?m=${messageId}`
-}
-
-function decodeHTML(str: string): string {
-  return str
-    .replace(/&amp;/g, '&')
-    .replace(/&lt;/g, '<')
-    .replace(/&gt;/g, '>')
-    .replace(/&quot;/g, '"')
-    .replace(/&#39;/g, "'")
-    .replace(/&#(\d+);/g, (_, n) => String.fromCharCode(Number(n)))
-    .replace(/&nbsp;/g, ' ')
-    .replace(/&apos;/g, "'")
+  return `${type}-${slugify(name, 120)}`
 }
 
 function stripHtml(html: string): string {
-  // Handle forum's malformed HTML - reuse logic from scrape-pets.ts
-  let depth = 0
-  let processed = ''
-  let i = 0
-  const maxIterations = Math.max(html.length * 3, 100000)
-  let iterations = 0
-  let inTag = false
-  let tagStart = -1
-
-  while (i < html.length && iterations < maxIterations) {
-    iterations++
-
-    const char = html[i]
-
-    if (char === '<' && !inTag) {
-      const nextChars = html.slice(i, i + 10)
-      if (/^<[a-zA-Z!/]/.test(nextChars)) {
-        inTag = true
-        tagStart = i
-      } else {
-        processed += char
-      }
-      i++
-      continue
-    }
-
-    if (char === '>' && inTag) {
-      inTag = false
-      const tagContent = html.slice(tagStart, i + 1)
-
-      if (tagContent.match(/<ul|<ol/i)) {
-        depth++
-        processed += '\n'
-      } else if (tagContent.match(/<\/ul|<\/ol/i)) {
-        depth = Math.max(0, depth - 1)
-        processed += '\n'
-      } else if (tagContent.match(/<li/i)) {
-        const indent = '  '.repeat(Math.max(0, depth))
-        processed += `\n${indent}• `
-      } else if (tagContent.match(/<\/li/i)) {
-        processed += '\n'
-      } else if (tagContent.match(/<br/i)) {
-        processed += '\n'
-      } else if (tagContent.match(/<\/p/i)) {
-        processed += '\n'
-      }
-
-      i++
-      continue
-    }
-
-    if (inTag) {
-      i++
-      continue
-    }
-
-    processed += char
-    i++
-  }
-
-  if (iterations >= maxIterations) {
-    console.warn('⚠️  stripHtml reached iteration limit')
-  }
-
-  return processed.replace(/\n{3,}/g, '\n\n').trim()
+  return stripForumHtml(html, 'stripHtml', { includeListItemClosers: true })
 }
 
 function loadCookie(): string {
-  const envPath = path.resolve(import.meta.dirname, '../.env')
-  if (!fs.existsSync(envPath)) {
-    console.error('❌ Missing .env file')
-    console.error('   Create .env with FORUM_COOKIE="..." (see .env.example)')
+  try {
+    return loadForumCookie('guest scraper')
+  } catch (error) {
+    console.error(`❌ ${error instanceof Error ? error.message : String(error)}`)
     process.exit(1)
   }
-  const content = fs.readFileSync(envPath, 'utf-8')
-  const match = content.match(/FORUM_COOKIE=["'](.+?)["']\s*$/)
-  if (!match) {
-    console.error('❌ FORUM_COOKIE not found in .env')
-    console.error('   Add FORUM_COOKIE="..." to your .env file')
-    process.exit(1)
-  }
-  return match[1]
 }
 
 // ─── Guest Stub ───────────────────────────────────────────────────────────────
@@ -576,64 +465,6 @@ function parseGuestStats(html: string, guestName: string): GuestStats {
   if (DEBUG) console.log(`[DEBUG] Stats parsing complete\n`)
 
   return stats
-}
-
-function normalizeStructuredText(html: string): string {
-  let depth = 0
-  let output = ''
-  let i = 0
-  let inTag = false
-  let tagStart = -1
-
-  while (i < html.length) {
-    const char = html[i]
-
-    if (char === '<' && !inTag) {
-      const nextChars = html.slice(i, i + 12)
-      if (/^<[a-zA-Z!/]/.test(nextChars)) {
-        inTag = true
-        tagStart = i
-      } else {
-        output += char
-      }
-      i++
-      continue
-    }
-
-    if (char === '>' && inTag) {
-      inTag = false
-      const tagContent = html.slice(tagStart, i + 1)
-
-      if (/<ul|<ol/i.test(tagContent)) {
-        depth++
-        output += '\n'
-      } else if (/<\/ul|<\/ol/i.test(tagContent)) {
-        depth = Math.max(0, depth - 1)
-        output += '\n'
-      } else if (/<li/i.test(tagContent)) {
-        const indent = '  '.repeat(Math.max(0, depth))
-        output += `\n${indent}• `
-      } else if (/<br/i.test(tagContent) || /<\/p/i.test(tagContent) || /<hr/i.test(tagContent)) {
-        output += '\n'
-      }
-
-      i++
-      continue
-    }
-
-    if (inTag) {
-      i++
-      continue
-    }
-
-    output += char
-    i++
-  }
-
-  return decodeHTML(output)
-    .replace(/\r/g, '')
-    .replace(/\n{3,}/g, '\n\n')
-    .trim()
 }
 
 function findLastSection(html: string, sectionRegex: RegExp): string | undefined {
@@ -1778,7 +1609,6 @@ function parseAZPage(html: string, chronology: ChronologyData): GuestStub[] {
         chunk
       )
     if (!linkMatch) continue
-    const linkPath = linkMatch[1]
     const msgId = linkMatch[3]
 
     // Keep same-thread variants as distinct stubs while still ignoring repeated list rows.
@@ -1825,7 +1655,7 @@ function parseAZPage(html: string, chronology: ChronologyData): GuestStub[] {
       name,
       slug: prefixedSlug(name, 'guest'),
       type: 'guest',
-      forumUrl: directForumPostUrl(linkPath, msgId),
+      forumUrl: directForumPostUrl(msgId),
       messageId: msgId,
       elements,
       traits,
@@ -2206,6 +2036,12 @@ function sanitizePromotedGuestEntries(items: Array<Guest | ItemFamily>): Array<G
 
 async function main(): Promise<void> {
   console.log('🎯 DragonFable Guests Scraper\n')
+  if (letterFilter.start) console.log(`▶  Resuming from letter: ${letterFilter.start}`)
+  if (letterFilter.letter) console.log(`▶  Only scraping letter: ${letterFilter.letter}`)
+  if (letterFilter.letters)
+    console.log(`▶  Only scraping letters: ${letterFilter.letters.join(', ')}`)
+  if (limitArg) console.log(`▶  Limiting scrape to ${limitArg} entries`)
+  console.log(`▶  Detail concurrency: ${concurrencyArg} (entry starts spaced ${DELAY_MS}ms apart)`)
 
   const cookie = loadCookie()
   const startTime = Date.now()
@@ -2245,24 +2081,10 @@ async function main(): Promise<void> {
   console.log(`✅ Found ${allStubs.length} guests in A-Z listing`)
 
   // Apply letter filters
-  let stubs = allStubs
-  if (lettersArg && lettersArg.length > 0) {
-    // Filter by multiple letters: --letters=A,B
-    stubs = allStubs.filter((s) => lettersArg.includes(s.letter))
-    console.log(`   Filtered to letters ${lettersArg.join(', ')}: ${stubs.length} entries`)
-  } else if (letterArg) {
-    // Filter by single letter: --letter=A
-    stubs = allStubs.filter((s) => s.letter === letterArg)
-    console.log(`   Filtered to letter ${letterArg}: ${stubs.length} entries`)
-  } else if (startArg) {
-    // Resume from letter: --start=C
-    let past = false
-    stubs = allStubs.filter((s) => {
-      if (s.letter === startArg) past = true
-      return past
-    })
-    console.log(`   Resuming from ${startArg}: ${stubs.length} entries remaining`)
-  }
+  const filtered = applyLetterFilter(allStubs, letterFilter)
+  const stubs = applyLimit(filtered.entries, limitArg)
+  if (filtered.message) console.log(`   ${filtered.message}`)
+  if (limitArg) console.log(`   Limited to first ${stubs.length} selected entries`)
   console.log()
 
   // Build name→slug map for ALL guests (needed for cross-reference resolution)
@@ -2279,7 +2101,7 @@ async function main(): Promise<void> {
 
   // ── Step 3: Load existing progress ─────────────────────────────────────────
 
-  const progressMap = new Map<string, Guest | ItemFamily>()
+  let progressMap = new Map<string, Guest | ItemFamily>()
   const supplementalNotesByForumUrl = new Map<string, string>()
   const supplementalMediaByForumUrl = new Map<
     string,
@@ -2287,10 +2109,7 @@ async function main(): Promise<void> {
   >()
   if (fs.existsSync(PROGRESS_PATH)) {
     try {
-      const existing: (Guest | ItemFamily)[] = JSON.parse(fs.readFileSync(PROGRESS_PATH, 'utf-8'))
-      for (const entry of existing) {
-        progressMap.set(entry.slug, entry)
-      }
+      progressMap = loadProgressEntries<Guest | ItemFamily>(PROGRESS_PATH)
       console.log(`📂 Loaded ${progressMap.size} guests from progress file\n`)
     } catch (err) {
       console.warn(`⚠️  Could not parse progress file: ${err}`)
@@ -2305,167 +2124,178 @@ async function main(): Promise<void> {
   let scraped = 0
   let fromCache = 0
   let skipped = 0
+  const pendingStubs: Array<{ stub: GuestStub; index: number }> = []
 
   for (let i = 0; i < stubs.length; i++) {
     const stub = stubs[i]
-    process.stdout.write(`[${i + 1}/${stubs.length}] ${stub.name}... `)
 
-    // Check if already in progress
     const cachedEntry =
       progressMap.get(stub.slug) ??
       Array.from(progressMap.values()).find((entry) => entry.forumUrl === stub.forumUrl)
     if (cachedEntry) {
+      process.stdout.write(`[${i + 1}/${stubs.length}] ${stub.name}... `)
       console.log('✓ [cached]')
       fromCache++
       continue
     }
 
-    try {
-      let sourcePosts: ThreadPostContent[] = []
-      let fullThreadHtml = ''
+    pendingStubs.push({ stub, index: i })
+  }
+
+  let processedPending = 0
+  await processWithConcurrency({
+    items: pendingStubs,
+    concurrency: concurrencyArg,
+    startDelayMs: DELAY_MS,
+    processItem: async ({ stub, index: i }) => {
+      process.stdout.write(`[${i + 1}/${stubs.length}] ${stub.name}... `)
+
       try {
-        fullThreadHtml = await fetchThreadPages(stub.messageId, cookie)
-        sourcePosts = extractThreadPostContents(fullThreadHtml)
-      } catch {
-        sourcePosts = []
-      }
-
-      const html =
-        sourcePosts.length > 0
-          ? sourcePosts.map((post) => post.html).join('\n<hr>\n')
-          : await fetchGuestPostContent(stub.messageId, cookie)
-      if (!html) {
-        console.log('⚠️  deleted — skipping')
-        skipped++
-        continue
-      }
-
-      if (!supplementalNotesByForumUrl.has(stub.forumUrl) && fullThreadHtml) {
+        let sourcePosts: ThreadPostContent[] = []
+        let fullThreadHtml = ''
         try {
-          const supplementalNotes = extractSupplementalGuestThreadNotes(fullThreadHtml)
-          if (supplementalNotes) {
-            supplementalNotesByForumUrl.set(stub.forumUrl, supplementalNotes)
-          }
-          const supplementalMedia = extractSupplementalGuestThreadMedia(fullThreadHtml)
-          if (supplementalMedia.imageUrl || supplementalMedia.alternativeImages?.length) {
-            supplementalMediaByForumUrl.set(stub.forumUrl, supplementalMedia)
-          }
+          fullThreadHtml = await fetchThreadPages(stub.messageId, cookie)
+          sourcePosts = extractThreadPostContents(fullThreadHtml)
         } catch {
-          // Ignore supplemental note fetch failures and continue with printable data.
+          sourcePosts = []
         }
-      }
 
-      const variantSections = extractGuestVariantSections(html, sourcePosts)
-      const stubBaseName = normalizeGuestLookupName(stripTrailingVariantNumber(stub.name))
-      const scopedVariantSections = variantSections.filter(
-        (section) =>
-          normalizeGuestLookupName(stripTrailingVariantNumber(section.name)) === stubBaseName
-      )
-      const candidateVariantSections =
-        scopedVariantSections.length > 0 ? scopedVariantSections : variantSections
-      if (candidateVariantSections.length > 1) {
-        const family = buildGuestFamilyFromSections(
-          stub,
-          candidateVariantSections,
-          chronology,
-          nameToSlug,
-          supplementalNotesByForumUrl.get(stub.forumUrl)
+        const html =
+          sourcePosts.length > 0
+            ? sourcePosts.map((post) => post.html).join('\n<hr>\n')
+            : await fetchGuestPostContent(stub.messageId, cookie)
+        if (!html) {
+          console.log('⚠️  deleted — skipping')
+          skipped++
+          return
+        }
+
+        if (!supplementalNotesByForumUrl.has(stub.forumUrl) && fullThreadHtml) {
+          try {
+            const supplementalNotes = extractSupplementalGuestThreadNotes(fullThreadHtml)
+            if (supplementalNotes) {
+              supplementalNotesByForumUrl.set(stub.forumUrl, supplementalNotes)
+            }
+            const supplementalMedia = extractSupplementalGuestThreadMedia(fullThreadHtml)
+            if (supplementalMedia.imageUrl || supplementalMedia.alternativeImages?.length) {
+              supplementalMediaByForumUrl.set(stub.forumUrl, supplementalMedia)
+            }
+          } catch {
+            // Ignore supplemental note fetch failures and continue with printable data.
+          }
+        }
+
+        const variantSections = extractGuestVariantSections(html, sourcePosts)
+        const stubBaseName = normalizeGuestLookupName(stripTrailingVariantNumber(stub.name))
+        const scopedVariantSections = variantSections.filter(
+          (section) =>
+            normalizeGuestLookupName(stripTrailingVariantNumber(section.name)) === stubBaseName
         )
-        progressMap.set(family.slug, family)
-        console.log(`✓ [ItemFamily: ${candidateVariantSections.length} variants]`)
+        const candidateVariantSections =
+          scopedVariantSections.length > 0 ? scopedVariantSections : variantSections
+        if (candidateVariantSections.length > 1) {
+          const family = buildGuestFamilyFromSections(
+            stub,
+            candidateVariantSections,
+            chronology,
+            nameToSlug,
+            supplementalNotesByForumUrl.get(stub.forumUrl)
+          )
+          progressMap.set(family.slug, family)
+          console.log(`✓ [ItemFamily: ${candidateVariantSections.length} variants]`)
+          scraped++
+
+          const progress = Array.from(progressMap.values())
+          saveProgressEntries(PROGRESS_PATH, progress)
+          return
+        }
+
+        // Parse all guest data
+        const description = parseDescription(html, stub.name)
+        const guestStats = parseGuestStats(html, stub.name)
+        const attacks = parseGuestAttacks(html, stub.name)
+        const categoryTags = detectCategoryTags(html)
+        const { imageUrl, alternativeImages } = extractGuestImages(html, stub.name)
+        const obtainMethods = parseObtainMethods(html, stub.name)
+        const notes = parseNotes(html, stub.name)
+        const alsoSee = parseAlsoSee(html, nameToSlug, stub.name)
+        const tags = generateTags(stub.name, description, stub.elements)
+
+        // Detect DA/DC/DM requirements at thread level
+        const daRequired = /<img[^>]+src=["'][^"']*\/tags\/DA\.png["']/i.test(html)
+        const dcRequired = /<img[^>]+src=["'][^"']*\/tags\/DC\.png["']/i.test(html)
+        const dmRequired = /<img[^>]+src=["'][^"']*\/tags\/DM\.png["']/i.test(html)
+
+        // Parse rarity if present
+        const rarityMatch = html.match(/<b>Rarity:<\/b>\s*([^<\n]+)/i)
+        const rarity = rarityMatch ? rarityMatch[1].trim() : 'Unknown'
+
+        const guest: Guest = sanitizeGuestMedia({
+          id: stub.slug,
+          name: stub.name,
+          slug: stub.slug,
+          type: 'guest',
+          description,
+          daRequired,
+          dcRequired: dcRequired || undefined,
+          dmRequired: dmRequired || undefined,
+          ...categoryTags,
+          elements: stub.elements,
+          traits: stub.traits,
+          level: guestStats.level || 'Unknown',
+          damage: guestStats.damage || 'Unknown',
+          stats: guestStats.characterStats ? 'See guestStats' : 'None',
+          resists: guestStats.resistances ? 'See guestStats' : 'None',
+          obtainMethods,
+          attacks,
+          rarity,
+          evolutions: [], // Guests typically don't evolve
+          releaseDate:
+            chronology.datesByMessageId.get(stub.messageId) ||
+            chronology.datesByName.get(stub.name.toLowerCase()) ||
+            chronology.datesByName.get(
+              stub.name
+                .replace(/\s*\([^)]+\)\s*$/, '')
+                .trim()
+                .toLowerCase()
+            ) ||
+            'Unknown',
+          imageUrl,
+          forumUrl: stub.forumUrl,
+          notes,
+          alsoSee,
+          tags,
+          guestStats,
+          retired: categoryTags.retired || hasRetiredGuestSignal(notes) || undefined,
+          alternativeImages: alternativeImages.length > 0 ? alternativeImages : undefined,
+        })
+
+        progressMap.set(guest.slug, guest)
+        console.log(' ✓')
         scraped++
 
+        // Save progress after every entry
         const progress = Array.from(progressMap.values())
-        fs.writeFileSync(PROGRESS_PATH, JSON.stringify(progress, null, 2) + '\n', 'utf-8')
-        if (i < stubs.length - 1) await sleep(DELAY_MS)
-        continue
+        saveProgressEntries(PROGRESS_PATH, progress)
+
+        // Progress update every 10 guests
+        if ((scraped + skipped) % 10 === 0) {
+          const elapsed = Math.round((Date.now() - startTime) / 1000)
+          const rate = elapsed > 0 ? (scraped + fromCache) / elapsed : 0
+          const remaining = pendingStubs.length - processedPending
+          const eta = rate > 0 ? Math.round(remaining / rate) : 0
+          console.log(
+            `   ⏱️  Progress: ${scraped + fromCache}/${stubs.length} | ${elapsed}s elapsed | ETA ${eta}s`
+          )
+        }
+      } catch (err) {
+        console.log(` ❌ error: ${err} — skipping`)
+        skipped++
+      } finally {
+        processedPending++
       }
-
-      // Parse all guest data
-      const description = parseDescription(html, stub.name)
-      const guestStats = parseGuestStats(html, stub.name)
-      const attacks = parseGuestAttacks(html, stub.name)
-      const categoryTags = detectCategoryTags(html)
-      const { imageUrl, alternativeImages } = extractGuestImages(html, stub.name)
-      const obtainMethods = parseObtainMethods(html, stub.name)
-      const notes = parseNotes(html, stub.name)
-      const alsoSee = parseAlsoSee(html, nameToSlug, stub.name)
-      const tags = generateTags(stub.name, description, stub.elements)
-
-      // Detect DA/DC/DM requirements at thread level
-      const daRequired = /<img[^>]+src=["'][^"']*\/tags\/DA\.png["']/i.test(html)
-      const dcRequired = /<img[^>]+src=["'][^"']*\/tags\/DC\.png["']/i.test(html)
-      const dmRequired = /<img[^>]+src=["'][^"']*\/tags\/DM\.png["']/i.test(html)
-
-      // Parse rarity if present
-      const rarityMatch = html.match(/<b>Rarity:<\/b>\s*([^<\n]+)/i)
-      const rarity = rarityMatch ? rarityMatch[1].trim() : 'Unknown'
-
-      const guest: Guest = sanitizeGuestMedia({
-        id: stub.slug,
-        name: stub.name,
-        slug: stub.slug,
-        type: 'guest',
-        description,
-        daRequired,
-        dcRequired: dcRequired || undefined,
-        dmRequired: dmRequired || undefined,
-        ...categoryTags,
-        elements: stub.elements,
-        traits: stub.traits,
-        level: guestStats.level || 'Unknown',
-        damage: guestStats.damage || 'Unknown',
-        stats: guestStats.characterStats ? 'See guestStats' : 'None',
-        resists: guestStats.resistances ? 'See guestStats' : 'None',
-        obtainMethods,
-        attacks,
-        rarity,
-        evolutions: [], // Guests typically don't evolve
-        releaseDate:
-          chronology.datesByMessageId.get(stub.messageId) ||
-          chronology.datesByName.get(stub.name.toLowerCase()) ||
-          chronology.datesByName.get(
-            stub.name
-              .replace(/\s*\([^)]+\)\s*$/, '')
-              .trim()
-              .toLowerCase()
-          ) ||
-          'Unknown',
-        imageUrl,
-        forumUrl: stub.forumUrl,
-        notes,
-        alsoSee,
-        tags,
-        guestStats,
-        retired: categoryTags.retired || hasRetiredGuestSignal(notes) || undefined,
-        alternativeImages: alternativeImages.length > 0 ? alternativeImages : undefined,
-      })
-
-      progressMap.set(guest.slug, guest)
-      console.log(' ✓')
-      scraped++
-
-      // Save progress after every entry
-      const progress = Array.from(progressMap.values())
-      fs.writeFileSync(PROGRESS_PATH, JSON.stringify(progress, null, 2) + '\n', 'utf-8')
-
-      // Progress update every 10 guests
-      if ((scraped + skipped) % 10 === 0) {
-        const elapsed = Math.round((Date.now() - startTime) / 1000)
-        const rate = elapsed > 0 ? (scraped + fromCache) / elapsed : 0
-        const remaining = stubs.length - (i + 1)
-        const eta = rate > 0 ? Math.round(remaining / rate) : 0
-        console.log(
-          `   ⏱️  Progress: ${scraped + fromCache}/${stubs.length} | ${elapsed}s elapsed | ETA ${eta}s`
-        )
-      }
-    } catch (err) {
-      console.log(` ❌ error: ${err} — skipping`)
-      skipped++
-    }
-
-    if (i < stubs.length - 1) await sleep(DELAY_MS)
-  }
+    },
+  })
 
   console.log(`\n✅ Scraped: ${scraped}  Cached: ${fromCache}  Skipped: ${skipped}`)
 
