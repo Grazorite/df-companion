@@ -25,10 +25,12 @@ import * as fs from 'node:fs'
 import * as path from 'node:path'
 import { fetchPrintable, getPostContent } from './lib/printable-parser.ts'
 import { compareTitles } from '../src/utils/displayText.ts'
+import { writeBadgeManifest } from './lib/data-manifests.ts'
 
 const FORUM_BASE = 'https://forums2.battleon.com/f'
 const AZ_PAGE_URL = `${FORUM_BASE}/tm.asp?m=22304590&mpage=1&key=`
 const DELAY_MS = 800
+const DATA_DIR = path.resolve(import.meta.dirname, '../src/data')
 const OUTPUT_PATH = path.resolve(import.meta.dirname, '../src/data/badges.json')
 const BADGE_SUBCATEGORY_FALLBACK_PATH = OUTPUT_PATH
 const THREAD_URL_OVERRIDES: Record<string, string> = {
@@ -567,6 +569,7 @@ async function main() {
   console.log(`📁 Writing ${badges.length} badges to ${OUTPUT_PATH}`)
 
   fs.writeFileSync(OUTPUT_PATH, JSON.stringify(badges, null, 2) + '\n', 'utf-8')
+  writeBadgeManifest(DATA_DIR)
   console.log('\n🎉 Done!')
 }
 

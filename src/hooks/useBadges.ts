@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import { searchBadges } from '../utils/search'
-import { loadBadges, loadCategories } from '../utils/dataLoaders'
+import { loadBadgeManifest, loadBadges, loadCategories } from '../utils/dataLoaders'
 import type { Badge, BadgeFilters, CategoryMeta } from '../types/badge'
 
 function useBadgeDataset() {
@@ -10,7 +10,7 @@ function useBadgeDataset() {
   useEffect(() => {
     let active = true
     loadBadges()
-      .then(data => {
+      .then((data) => {
         if (!active) return
         setBadges(data)
         setLoading(false)
@@ -35,7 +35,7 @@ function useCategoryDataset() {
   useEffect(() => {
     let active = true
     loadCategories()
-      .then(data => {
+      .then((data) => {
         if (active) setCategories(data)
       })
       .catch(() => {
@@ -50,6 +50,32 @@ function useCategoryDataset() {
   return categories
 }
 
+function useBadgeManifestDataset() {
+  const [total, setTotal] = useState(0)
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    let active = true
+    loadBadgeManifest()
+      .then((data) => {
+        if (!active) return
+        setTotal(data.total)
+        setLoading(false)
+      })
+      .catch(() => {
+        if (!active) return
+        setTotal(0)
+        setLoading(false)
+      })
+
+    return () => {
+      active = false
+    }
+  }, [])
+
+  return { total, loading }
+}
+
 export function useBadges(filters: BadgeFilters = {}) {
   const { badges, loading } = useBadgeDataset()
   const results = useMemo(() => searchBadges(badges, filters), [badges, filters])
@@ -60,7 +86,7 @@ export function useBadgeBySlug(slug: string) {
   const { badges, loading } = useBadgeDataset()
   const badge = useMemo(() => {
     if (loading) return undefined
-    return badges.find(b => b.slug === slug) ?? null
+    return badges.find((b) => b.slug === slug) ?? null
   }, [badges, loading, slug])
 
   return { badge, loading }
@@ -76,12 +102,12 @@ export function useSubcategories(category: string): string[] {
   return useMemo(() => {
     if (!category) return []
     const subs = badges
-      .filter(b => b.category === category && b.subcategory)
-      .map(b => b.subcategory as string)
+      .filter((b) => b.category === category && b.subcategory)
+      .map((b) => b.subcategory as string)
     const allSubs = [...new Set(subs)]
 
     if (category === 'quest-completion' || category === 'collection') {
-      return allSubs.filter(sub => sub !== 'Misc')
+      return allSubs.filter((sub) => sub !== 'Misc')
     }
 
     return allSubs
@@ -92,9 +118,9 @@ export function useBadgesByCategory(category: string, excludeSlug?: string, subc
   const { badges } = useBadgeDataset()
 
   return useMemo(() => {
-    const pool = badges.filter(b => b.category === category && b.slug !== excludeSlug)
-    const sameSubcat = subcategory ? pool.filter(b => b.subcategory === subcategory) : []
-    const others = pool.filter(b => !subcategory || b.subcategory !== subcategory)
+    const pool = badges.filter((b) => b.category === category && b.slug !== excludeSlug)
+    const sameSubcat = subcategory ? pool.filter((b) => b.subcategory === subcategory) : []
+    const others = pool.filter((b) => !subcategory || b.subcategory !== subcategory)
     const shuffled = [
       ...sameSubcat.sort(() => Math.random() - 0.5),
       ...others.sort(() => Math.random() - 0.5),
@@ -104,6 +130,5 @@ export function useBadgesByCategory(category: string, excludeSlug?: string, subc
 }
 
 export function useTotalBadgeCount() {
-  const { badges } = useBadgeDataset()
-  return badges.length
+  return useBadgeManifestDataset().total
 }

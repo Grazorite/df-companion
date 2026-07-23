@@ -3,6 +3,8 @@ import type { CategoryMeta, Badge } from '../types/badge'
 import type { ElementsData } from '../types/element'
 import type { ItemFamily } from '../types/item'
 import type { Pet } from '../types/pet'
+import accessoryManifestUrl from '../data/accessory-manifest.json?url'
+import badgesManifestUrl from '../data/badges-manifest.json?url'
 import artifactsUrl from '../data/artifacts.json?url'
 import badgesUrl from '../data/badges.json?url'
 import beltsUrl from '../data/belts.json?url'
@@ -15,6 +17,7 @@ import guestsUrl from '../data/guests.json?url'
 import helmsALUrl from '../data/helms-a-l.json?url'
 import helmsMZUrl from '../data/helms-m-z.json?url'
 import necklacesUrl from '../data/necklaces.json?url'
+import petsGuestsManifestUrl from '../data/pets-guests-manifest.json?url'
 import petsUrl from '../data/pets.json?url'
 import ringsUrl from '../data/rings.json?url'
 import trinketsUrl from '../data/trinkets.json?url'
@@ -25,13 +28,50 @@ let badgesPromise: Promise<Badge[]> | null = null
 let categoriesCache: CategoryMeta[] | null = null
 let categoriesPromise: Promise<CategoryMeta[]> | null = null
 
+export interface BadgeManifest {
+  total: number
+}
+
+let badgesManifestCache: BadgeManifest | null = null
+let badgesManifestPromise: Promise<BadgeManifest> | null = null
+
 let petsCache: Array<Pet | ItemFamily> | null = null
 let petsPromise: Promise<Array<Pet | ItemFamily>> | null = null
+
+export interface PetsGuestsManifest {
+  total: number
+  byType: {
+    pet: number
+    guest: number
+  }
+}
+
+let petsGuestsManifestCache: PetsGuestsManifest | null = null
+let petsGuestsManifestPromise: Promise<PetsGuestsManifest> | null = null
 
 let elementsCache: ElementsData | null = null
 let elementsPromise: Promise<ElementsData> | null = null
 
-let accessoriesCache: Record<AccessorySubtype, AccessoryEntry[]> | null = null
+export interface AccessoryManifest {
+  total: number
+  bySubtype: Record<AccessorySubtype, number>
+}
+
+const accessoryDataUrls: Record<AccessorySubtype, string[]> = {
+  artifact: [artifactsUrl],
+  belt: [beltsUrl],
+  bracer: [bracersUrl],
+  'cape-wing': [capesWingsALUrl, capesWingsMZUrl],
+  helm: [helmsALUrl, helmsMZUrl],
+  necklace: [necklacesUrl],
+  ring: [ringsUrl],
+  trinket: [trinketsUrl],
+}
+
+let accessoryManifestCache: AccessoryManifest | null = null
+let accessoryManifestPromise: Promise<AccessoryManifest> | null = null
+const accessorySubtypeCache: Partial<Record<AccessorySubtype, AccessoryEntry[]>> = {}
+const accessorySubtypePromises: Partial<Record<AccessorySubtype, Promise<AccessoryEntry[]>>> = {}
 let accessoriesPromise: Promise<Record<AccessorySubtype, AccessoryEntry[]>> | null = null
 
 function normalizeLoadedPet<T extends Pet & { specialMarkers?: string[] }>(pet: T): Pet {
@@ -78,6 +118,17 @@ export async function loadCategories(): Promise<CategoryMeta[]> {
   return categoriesPromise
 }
 
+export async function loadBadgeManifest(): Promise<BadgeManifest> {
+  if (badgesManifestCache) return badgesManifestCache
+  if (!badgesManifestPromise) {
+    badgesManifestPromise = fetchJson<BadgeManifest>(badgesManifestUrl).then((data) => {
+      badgesManifestCache = data
+      return badgesManifestCache
+    })
+  }
+  return badgesManifestPromise
+}
+
 export async function loadPetsAndGuests(): Promise<Array<Pet | ItemFamily>> {
   if (petsCache) return petsCache
   if (!petsPromise) {
@@ -94,6 +145,19 @@ export async function loadPetsAndGuests(): Promise<Array<Pet | ItemFamily>> {
   return petsPromise
 }
 
+export async function loadPetsGuestsManifest(): Promise<PetsGuestsManifest> {
+  if (petsGuestsManifestCache) return petsGuestsManifestCache
+  if (!petsGuestsManifestPromise) {
+    petsGuestsManifestPromise = fetchJson<PetsGuestsManifest>(petsGuestsManifestUrl).then(
+      (data) => {
+        petsGuestsManifestCache = data
+        return petsGuestsManifestCache
+      }
+    )
+  }
+  return petsGuestsManifestPromise
+}
+
 export async function loadElements(): Promise<ElementsData> {
   if (elementsCache) return elementsCache
   if (!elementsPromise) {
@@ -105,48 +169,56 @@ export async function loadElements(): Promise<ElementsData> {
   return elementsPromise
 }
 
+export async function loadAccessoryManifest(): Promise<AccessoryManifest> {
+  if (accessoryManifestCache) return accessoryManifestCache
+  if (!accessoryManifestPromise) {
+    accessoryManifestPromise = fetchJson<AccessoryManifest>(accessoryManifestUrl).then((data) => {
+      accessoryManifestCache = data
+      return accessoryManifestCache
+    })
+  }
+  return accessoryManifestPromise
+}
+
+export async function loadAccessoriesForSubtype(
+  subtype: AccessorySubtype
+): Promise<AccessoryEntry[]> {
+  if (accessorySubtypeCache[subtype]) return accessorySubtypeCache[subtype]
+  if (!accessorySubtypePromises[subtype]) {
+    accessorySubtypePromises[subtype] = Promise.all(
+      accessoryDataUrls[subtype].map((url) => fetchJson<AccessoryEntry[]>(url))
+    ).then((datasets) => {
+      const entries = datasets.flat()
+      accessorySubtypeCache[subtype] = entries
+      return entries
+    })
+  }
+  return accessorySubtypePromises[subtype]
+}
+
 export async function loadAccessoriesBySubtype(): Promise<
   Record<AccessorySubtype, AccessoryEntry[]>
 > {
-  if (accessoriesCache) return accessoriesCache
   if (!accessoriesPromise) {
     accessoriesPromise = Promise.all([
-      fetchJson<AccessoryEntry[]>(artifactsUrl),
-      fetchJson<AccessoryEntry[]>(beltsUrl),
-      fetchJson<AccessoryEntry[]>(bracersUrl),
-      fetchJson<AccessoryEntry[]>(capesWingsALUrl),
-      fetchJson<AccessoryEntry[]>(capesWingsMZUrl),
-      fetchJson<AccessoryEntry[]>(helmsALUrl),
-      fetchJson<AccessoryEntry[]>(helmsMZUrl),
-      fetchJson<AccessoryEntry[]>(necklacesUrl),
-      fetchJson<AccessoryEntry[]>(ringsUrl),
-      fetchJson<AccessoryEntry[]>(trinketsUrl),
-    ]).then(
-      ([
-        artifactsData,
-        beltsData,
-        bracersData,
-        capesWingsALData,
-        capesWingsMZData,
-        helmsALData,
-        helmsMZData,
-        necklacesData,
-        ringsData,
-        trinketsData,
-      ]) => {
-        accessoriesCache = {
-          artifact: artifactsData,
-          belt: beltsData,
-          bracer: bracersData,
-          'cape-wing': [...capesWingsALData, ...capesWingsMZData],
-          helm: [...helmsALData, ...helmsMZData],
-          necklace: necklacesData,
-          ring: ringsData,
-          trinket: trinketsData,
-        }
-        return accessoriesCache
-      }
-    )
+      loadAccessoriesForSubtype('artifact'),
+      loadAccessoriesForSubtype('belt'),
+      loadAccessoriesForSubtype('bracer'),
+      loadAccessoriesForSubtype('cape-wing'),
+      loadAccessoriesForSubtype('helm'),
+      loadAccessoriesForSubtype('necklace'),
+      loadAccessoriesForSubtype('ring'),
+      loadAccessoriesForSubtype('trinket'),
+    ]).then(([artifact, belt, bracer, capeWing, helm, necklace, ring, trinket]) => ({
+      artifact,
+      belt,
+      bracer,
+      'cape-wing': capeWing,
+      helm,
+      necklace,
+      ring,
+      trinket,
+    }))
   }
   return accessoriesPromise
 }

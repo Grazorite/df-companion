@@ -6,6 +6,7 @@ import NotesList from '../components/shared/NotesList'
 import { displayTitle, normalizeDisplayText } from '../utils/displayText'
 import AccessPills from '../components/shared/AccessPills'
 import SourceLinksCard from '../components/shared/SourceLinksCard'
+import { DetailPageSkeleton } from '../components/shared/LoadingSkeleton'
 
 export default function BadgeDetailPage() {
   const { slug } = useParams<{ slug: string }>()
@@ -29,11 +30,7 @@ export default function BadgeDetailPage() {
   }
 
   if (loading) {
-    return (
-      <main className="px-4 py-8 max-w-3xl mx-auto text-center">
-        <p className="text-text-secondary text-lg mb-4">Loading badge...</p>
-      </main>
-    )
+    return <DetailPageSkeleton />
   }
 
   if (!badge) {

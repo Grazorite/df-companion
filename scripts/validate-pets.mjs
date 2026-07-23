@@ -12,19 +12,21 @@ import { fileURLToPath } from 'node:url'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const PETS_PATH = resolve(__dirname, '../src/data/pets.json')
+const GUESTS_PATH = resolve(__dirname, '../src/data/guests.json')
 const ELEMENTS_PATH = resolve(__dirname, '../src/data/elements.json')
+const MANIFEST_PATH = resolve(__dirname, '../src/data/pets-guests-manifest.json')
 
 // Load elements reference
 let validElementCodes = new Set()
 let validMarkerCodes = new Set()
 try {
   const elemData = JSON.parse(readFileSync(ELEMENTS_PATH, 'utf-8'))
-  validElementCodes = new Set(elemData.elements.map(e => e.code))
+  validElementCodes = new Set(elemData.elements.map((e) => e.code))
   const markerList = Array.isArray(elemData.markers) ? elemData.markers : elemData.traits
   if (!Array.isArray(markerList)) {
     throw new Error('elements.json must include a "traits" or "markers" array')
   }
-  validMarkerCodes = new Set(markerList.map(m => m.code))
+  validMarkerCodes = new Set(markerList.map((m) => m.code))
 } catch (e) {
   console.error('❌ Failed to parse elements.json:', e.message)
   process.exit(1)
@@ -45,45 +47,75 @@ if (!Array.isArray(pets)) {
   process.exit(1)
 }
 
-const markerField = pets.some(p => Array.isArray(p.specialMarkers)) ? 'specialMarkers' : 'traits'
+try {
+  const guests = JSON.parse(readFileSync(GUESTS_PATH, 'utf-8'))
+  const manifest = JSON.parse(readFileSync(MANIFEST_PATH, 'utf-8'))
+  const guestCount = Array.isArray(guests) ? guests.length : 0
+
+  if (manifest.byType?.pet !== pets.length) {
+    console.error(
+      `❌ pets-guests-manifest.json byType.pet must be ${pets.length}, got ${manifest.byType?.pet}`
+    )
+    process.exit(1)
+  }
+  if (manifest.byType?.guest !== guestCount) {
+    console.error(
+      `❌ pets-guests-manifest.json byType.guest must be ${guestCount}, got ${manifest.byType?.guest}`
+    )
+    process.exit(1)
+  }
+  if (manifest.total !== pets.length + guestCount) {
+    console.error(
+      `❌ pets-guests-manifest.json total must be ${pets.length + guestCount}, got ${manifest.total}`
+    )
+    process.exit(1)
+  }
+} catch (e) {
+  console.error('❌ Failed to parse pets-guests-manifest.json or guests.json:', e.message)
+  process.exit(1)
+}
+
+const markerField = pets.some((p) => Array.isArray(p.specialMarkers)) ? 'specialMarkers' : 'traits'
 const errors = []
 const slugs = new Set()
-const allSlugs = new Set(pets.map(p => p.slug))
+const allSlugs = new Set(pets.map((p) => p.slug))
 
 for (let i = 0; i < pets.length; i++) {
   const p = pets[i]
-  
+
   // Check if this is an ItemFamily (multi-variant)
   const isFamily = p.levelVariants && Array.isArray(p.levelVariants)
-  
+
   if (isFamily) {
     // ItemFamily validation
     const familyName = p.familyName || 'unnamed'
     const prefix = `Pet #${i + 1} ("${familyName}") [ItemFamily]`
-    
+
     // Required fields for ItemFamily
     for (const field of ['id', 'familyName', 'slug', 'type', 'forumUrl']) {
       if (typeof p[field] !== 'string' || p[field].trim().length === 0) {
         errors.push(`${prefix}: missing or empty field "${field}"`)
       }
     }
-    
+
     // Type must be pet or guest
     if (!['pet', 'guest'].includes(p.type)) {
       errors.push(`${prefix}: "type" must be "pet" or "guest", got "${p.type}"`)
     }
-    
+
     // Slug must be type-prefixed
     if (p.slug && !/^(pet|guest)-[a-z0-9-]+$/.test(p.slug)) {
-      errors.push(`${prefix}: slug "${p.slug}" must be prefixed with "pet-" or "guest-" and contain only [a-z0-9-]`)
+      errors.push(
+        `${prefix}: slug "${p.slug}" must be prefixed with "pet-" or "guest-" and contain only [a-z0-9-]`
+      )
     }
-    
+
     // Slug uniqueness
     if (slugs.has(p.slug)) {
       errors.push(`${prefix}: duplicate slug "${p.slug}"`)
     }
     slugs.add(p.slug)
-    
+
     // Shared data must exist
     if (!p.shared || typeof p.shared !== 'object') {
       errors.push(`${prefix}: missing "shared" object`)
@@ -92,12 +124,12 @@ for (let i = 0; i < pets.length; i++) {
         errors.push(`${prefix}: shared.description must be a string`)
       }
     }
-    
+
     // Level variants must be non-empty array
     if (!Array.isArray(p.levelVariants) || p.levelVariants.length === 0) {
       errors.push(`${prefix}: "levelVariants" must be a non-empty array`)
     }
-    
+
     // Elements array
     if (!Array.isArray(p.elements)) {
       errors.push(`${prefix}: "elements" must be an array`)
@@ -108,14 +140,13 @@ for (let i = 0; i < pets.length; i++) {
         }
       }
     }
-    
+
     // Boolean flags
     for (const flag of ['hasDA', 'hasDC', 'hasDM', 'hasFree', 'hasMerge']) {
       if (typeof p[flag] !== 'boolean') {
         errors.push(`${prefix}: "${flag}" must be boolean`)
       }
     }
-    
   } else {
     // Regular Pet validation
     const prefix = `Pet #${i + 1} ("${p.name || 'unnamed'}")`
@@ -138,7 +169,9 @@ for (let i = 0; i < pets.length; i++) {
 
     // Slug must be type-prefixed and URL-safe
     if (p.slug && !/^(pet|guest)-[a-z0-9-]+$/.test(p.slug)) {
-      errors.push(`${prefix}: slug "${p.slug}" must be prefixed with "pet-" or "guest-" and contain only [a-z0-9-]`)
+      errors.push(
+        `${prefix}: slug "${p.slug}" must be prefixed with "pet-" or "guest-" and contain only [a-z0-9-]`
+      )
     }
 
     // Slug uniqueness
@@ -179,7 +212,9 @@ for (let i = 0; i < pets.length; i++) {
       for (const ref of p.alsoSee) {
         if (!allSlugs.has(ref.slug)) {
           // Warn but don't fail — may be resolved in a future scrape
-          console.warn(`  ⚠️  ${prefix}: alsoSee ref "${ref.name}" (${ref.slug}) not found in dataset`)
+          console.warn(
+            `  ⚠️  ${prefix}: alsoSee ref "${ref.name}" (${ref.slug}) not found in dataset`
+          )
         }
       }
     }

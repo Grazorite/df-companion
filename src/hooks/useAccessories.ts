@@ -8,7 +8,12 @@ import type {
 } from '../types/accessory'
 import type { AlsoSeeRef } from '../types/item'
 import { isAccessoryFamily, ACCESSORY_SUBTYPES } from '../types/accessory'
-import { loadAccessoriesBySubtype, loadElements } from '../utils/dataLoaders'
+import {
+  loadAccessoriesBySubtype,
+  loadAccessoriesForSubtype,
+  loadAccessoryManifest,
+  loadElements,
+} from '../utils/dataLoaders'
 import { compareTitles, displayTitle } from '../utils/displayText'
 import { getSearchWords } from '../utils/search'
 import {
@@ -17,38 +22,35 @@ import {
   hasSameLevelVariants,
 } from '../utils/variantHelpers'
 
-function useAccessoryDataset() {
-  const [datasets, setDatasets] = useState<Record<AccessorySubtype, AccessoryEntry[]>>({
-    artifact: [],
-    belt: [],
-    bracer: [],
-    'cape-wing': [],
-    helm: [],
-    necklace: [],
-    ring: [],
-    trinket: [],
-  })
+const EMPTY_ACCESSORY_COUNTS = Object.fromEntries(
+  ACCESSORY_SUBTYPES.map((meta) => [meta.subtype, 0])
+) as Record<AccessorySubtype, number>
+
+function useAccessorySubtypeDataset(subtype: AccessorySubtype) {
+  const [accessories, setAccessories] = useState<AccessoryEntry[]>([])
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     let active = true
-    loadAccessoriesBySubtype()
+    setLoading(true)
+    loadAccessoriesForSubtype(subtype)
       .then((data) => {
         if (!active) return
-        setDatasets(data)
+        setAccessories(data)
         setLoading(false)
       })
       .catch(() => {
         if (!active) return
+        setAccessories([])
         setLoading(false)
       })
 
     return () => {
       active = false
     }
-  }, [])
+  }, [subtype])
 
-  return { datasets, loading }
+  return { accessories, loading }
 }
 
 function useElementDataset() {
@@ -73,6 +75,35 @@ function useElementDataset() {
   }, [])
 
   return elementMeta
+}
+
+function useAccessoryCountsDataset() {
+  const [counts, setCounts] = useState<Record<AccessorySubtype, number>>(EMPTY_ACCESSORY_COUNTS)
+  const [total, setTotal] = useState(0)
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    let active = true
+    loadAccessoryManifest()
+      .then((data) => {
+        if (!active) return
+        setCounts(data.bySubtype)
+        setTotal(data.total)
+        setLoading(false)
+      })
+      .catch(() => {
+        if (!active) return
+        setCounts(EMPTY_ACCESSORY_COUNTS)
+        setTotal(0)
+        setLoading(false)
+      })
+
+    return () => {
+      active = false
+    }
+  }, [])
+
+  return { bySubtype: counts, total, loading }
 }
 
 function hasMultipleVersionHint(name: string): boolean {
@@ -187,15 +218,11 @@ function searchAccessories(
 }
 
 export function useAccessories(subtype: AccessorySubtype, filters: AccessoryFilters = {}) {
-  const { datasets, loading } = useAccessoryDataset()
-  const allAccessories = useMemo(
-    () => ACCESSORY_SUBTYPES.flatMap((meta) => datasets[meta.subtype]),
-    [datasets]
-  )
+  const { accessories: subtypeAccessories, loading } = useAccessorySubtypeDataset(subtype)
   const elementMeta = useElementDataset()
   const accessories = useMemo(
-    () => searchAccessories(allAccessories, subtype, filters, elementMeta),
-    [allAccessories, subtype, filters, elementMeta]
+    () => searchAccessories(subtypeAccessories, subtype, filters, elementMeta),
+    [subtypeAccessories, subtype, filters, elementMeta]
   )
 
   return {
@@ -206,21 +233,44 @@ export function useAccessories(subtype: AccessorySubtype, filters: AccessoryFilt
 }
 
 export function useAccessoryBySlug(subtype: AccessorySubtype, slug?: string) {
-  const { datasets, loading } = useAccessoryDataset()
+  const { accessories, loading } = useAccessorySubtypeDataset(subtype)
   const accessory = useMemo(() => {
     if (loading) return undefined
-    return datasets[subtype].find((entry) => entry.slug === slug) ?? null
-  }, [datasets, loading, subtype, slug])
+    return accessories.find((entry) => entry.slug === slug) ?? null
+  }, [accessories, loading, slug])
 
   return { accessory, loading }
 }
 
 export function useRelatedAccessories(alsoSee: AlsoSeeRef[] = []) {
-  const { datasets, loading } = useAccessoryDataset()
-  const allAccessories = useMemo(
-    () => ACCESSORY_SUBTYPES.flatMap((meta) => datasets[meta.subtype]),
-    [datasets]
-  )
+  const [allAccessories, setAllAccessories] = useState<AccessoryEntry[]>([])
+  const [loading, setLoading] = useState(alsoSee.length > 0)
+
+  useEffect(() => {
+    if (alsoSee.length === 0) {
+      setAllAccessories([])
+      setLoading(false)
+      return
+    }
+
+    let active = true
+    setLoading(true)
+    loadAccessoriesBySubtype()
+      .then((data) => {
+        if (!active) return
+        setAllAccessories(ACCESSORY_SUBTYPES.flatMap((meta) => data[meta.subtype]))
+        setLoading(false)
+      })
+      .catch(() => {
+        if (!active) return
+        setAllAccessories([])
+        setLoading(false)
+      })
+
+    return () => {
+      active = false
+    }
+  }, [alsoSee.length])
 
   const relatedAccessories = useMemo(
     () =>
@@ -235,17 +285,7 @@ export function useRelatedAccessories(alsoSee: AlsoSeeRef[] = []) {
 }
 
 export function useAccessoryCounts() {
-  const { datasets } = useAccessoryDataset()
-  return useMemo(() => {
-    const counts = Object.fromEntries(
-      ACCESSORY_SUBTYPES.map((meta) => [meta.subtype, datasets[meta.subtype].length])
-    ) as Record<AccessorySubtype, number>
-
-    return {
-      total: Object.values(counts).reduce((sum, count) => sum + count, 0),
-      bySubtype: counts,
-    }
-  }, [datasets])
+  return useAccessoryCountsDataset()
 }
 
 export function useTotalAccessoryCount() {

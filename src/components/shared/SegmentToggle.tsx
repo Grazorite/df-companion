@@ -1,7 +1,7 @@
 interface Segment {
   id: string
   label: string
-  count: number
+  count?: number
   active: boolean
 }
 
@@ -13,7 +13,7 @@ interface SegmentToggleProps {
 export default function SegmentToggle({ segments, onToggle }: SegmentToggleProps) {
   return (
     <div className="flex gap-2" role="group" aria-label="Filter by type">
-      {segments.map(seg => (
+      {segments.map((seg) => (
         <button
           key={seg.id}
           onClick={() => onToggle(seg.id)}
@@ -30,7 +30,9 @@ export default function SegmentToggle({ segments, onToggle }: SegmentToggleProps
               seg.active ? 'bg-bg-base/20' : 'bg-bg-surface/60'
             }`}
           >
-            {seg.count}
+            {seg.count ?? (
+              <span className="inline-block h-2.5 w-4 rounded bg-current/30 animate-pulse" />
+            )}
           </span>
         </button>
       ))}

@@ -58,12 +58,14 @@ import {
 } from './lib/cross-post-family.ts'
 import { rephraseTimedSellback } from './lib/obtain-formatting.ts'
 import { repairAccessFlags } from './lib/access-flag-repair.ts'
+import { writePetsGuestsManifest } from './lib/data-manifests.ts'
 import { compareTitles } from '../src/utils/displayText.ts'
 
 const FORUM_BASE = 'https://forums2.battleon.com/f'
 const AZ_PETS_URL = `${FORUM_BASE}/tm.asp?m=22349620&mpage=1` // A-Z Pets & Guests master page
 const CHRONOLOGY_URL = `${FORUM_BASE}/tm.asp?m=10738071`
 const DELAY_MS = 1000
+const DATA_DIR = path.resolve(import.meta.dirname, '../src/data')
 const OUTPUT_PATH = path.resolve(import.meta.dirname, '../src/data/guests.json')
 const PROGRESS_PATH = path.resolve(import.meta.dirname, '../src/data/guests-progress.json')
 
@@ -2490,6 +2492,7 @@ async function main(): Promise<void> {
   })
 
   fs.writeFileSync(OUTPUT_PATH, JSON.stringify(finalGuests, null, 2) + '\n', 'utf-8')
+  writePetsGuestsManifest(DATA_DIR)
 
   console.log(`\n📁 Written ${finalGuests.length} guests to guests.json`)
   console.log(`📁 Progress file (${progressMap.size} total) saved to guests-progress.json`)

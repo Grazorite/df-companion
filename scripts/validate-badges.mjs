@@ -12,6 +12,7 @@ import { fileURLToPath } from 'node:url'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const BADGES_PATH = resolve(__dirname, '../src/data/badges.json')
+const MANIFEST_PATH = resolve(__dirname, '../src/data/badges-manifest.json')
 
 const VALID_CATEGORIES = ['quest-completion', 'combat', 'collection', 'seasonal', 'misc']
 
@@ -25,6 +26,17 @@ try {
 
 if (!Array.isArray(badges)) {
   console.error('❌ badges.json must be an array')
+  process.exit(1)
+}
+
+try {
+  const manifest = JSON.parse(readFileSync(MANIFEST_PATH, 'utf-8'))
+  if (manifest.total !== badges.length) {
+    console.error(`❌ badges-manifest.json total must be ${badges.length}, got ${manifest.total}`)
+    process.exit(1)
+  }
+} catch (e) {
+  console.error('❌ Failed to parse badges-manifest.json:', e.message)
   process.exit(1)
 }
 
@@ -44,7 +56,9 @@ for (let i = 0; i < badges.length; i++) {
 
   // Valid category
   if (!VALID_CATEGORIES.includes(b.category)) {
-    errors.push(`${prefix}: invalid category "${b.category}" (valid: ${VALID_CATEGORIES.join(', ')})`)
+    errors.push(
+      `${prefix}: invalid category "${b.category}" (valid: ${VALID_CATEGORIES.join(', ')})`
+    )
   }
 
   // Boolean fields

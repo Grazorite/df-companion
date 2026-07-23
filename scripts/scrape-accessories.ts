@@ -1756,6 +1756,30 @@ function writeDatasets(
       )
     }
   }
+
+  writeAccessoryManifest()
+}
+
+function writeAccessoryManifest() {
+  const bySubtype = Object.fromEntries(
+    ACCESSORY_SUBTYPES.map((meta) => {
+      const count = getAccessoryDataFiles(meta).reduce((sum, dataFile) => {
+        const filePath = path.resolve(OUTPUT_DIR, dataFile)
+        if (!fs.existsSync(filePath)) return sum
+        const entries = JSON.parse(fs.readFileSync(filePath, 'utf-8')) as AccessoryEntry[]
+        return sum + entries.length
+      }, 0)
+
+      return [meta.subtype, count]
+    })
+  ) as Record<AccessorySubtype, number>
+
+  const total = Object.values(bySubtype).reduce((sum, count) => sum + count, 0)
+  fs.writeFileSync(
+    path.resolve(OUTPUT_DIR, 'accessory-manifest.json'),
+    `${JSON.stringify({ total, bySubtype }, null, 2)}\n`,
+    'utf-8'
+  )
 }
 
 function loadExistingAccessoryEntry(stub: AccessoryStub): AccessoryEntry | undefined {

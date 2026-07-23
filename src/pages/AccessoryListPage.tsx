@@ -30,42 +30,45 @@ const CATEGORY_OPTIONS = [
 export default function AccessoryListPage() {
   const [searchParams, setSearchParams] = useSearchParams()
   const typeParam = searchParams.get('type')
-  const activeSubtype = ACCESSORY_SUBTYPES.some(meta => meta.subtype === typeParam)
+  const activeSubtype = ACCESSORY_SUBTYPES.some((meta) => meta.subtype === typeParam)
     ? (typeParam as AccessorySubtype)
     : 'artifact'
-  const subtypeMeta = ACCESSORY_SUBTYPES.find(meta => meta.subtype === activeSubtype) ?? ACCESSORY_SUBTYPES[0]
+  const subtypeMeta =
+    ACCESSORY_SUBTYPES.find((meta) => meta.subtype === activeSubtype) ?? ACCESSORY_SUBTYPES[0]
   const [inputValue, setInputValue] = useState(searchParams.get('q') ?? '')
   const debouncedQuery = useDebounce(inputValue, 300)
   const elementParam = searchParams.get('element')
   const accessParam = searchParams.get('access')
   const categoryParam = searchParams.get('category')
   const activeElements = useMemo(
-    () => elementParam ? elementParam.split(',').filter(Boolean) : [],
+    () => (elementParam ? elementParam.split(',').filter(Boolean) : []),
     [elementParam]
   )
   const activeAccess = useMemo(
-    () => accessParam
-      ? accessParam
-          .split(',')
-          .filter((value): value is (typeof ACCESS_OPTIONS)[number]['id'] =>
-            ACCESS_OPTIONS.some(option => option.id === value)
-          )
-      : [],
+    () =>
+      accessParam
+        ? accessParam
+            .split(',')
+            .filter((value): value is (typeof ACCESS_OPTIONS)[number]['id'] =>
+              ACCESS_OPTIONS.some((option) => option.id === value)
+            )
+        : [],
     [accessParam]
   )
   const activeCategories = useMemo(
-    () => categoryParam
-      ? categoryParam
-          .split(',')
-          .filter((value): value is (typeof CATEGORY_OPTIONS)[number]['id'] =>
-            CATEGORY_OPTIONS.some(option => option.id === value)
-          )
-      : [],
+    () =>
+      categoryParam
+        ? categoryParam
+            .split(',')
+            .filter((value): value is (typeof CATEGORY_OPTIONS)[number]['id'] =>
+              CATEGORY_OPTIONS.some((option) => option.id === value)
+            )
+        : [],
     [categoryParam]
   )
 
   const { elements } = elementsData as ElementsData
-  const { bySubtype } = useAccessoryCounts()
+  const { bySubtype, loading: countsLoading } = useAccessoryCounts()
 
   const canonicalQueryString = useMemo(() => {
     const params = new URLSearchParams()
@@ -94,11 +97,11 @@ export default function AccessoryListPage() {
     [activeAccess, activeCategories, activeElements, debouncedQuery]
   )
 
-  const { accessories, total } = useAccessories(activeSubtype, filters)
+  const { accessories, total, loading } = useAccessories(activeSubtype, filters)
 
   function toggleAccess(id: (typeof ACCESS_OPTIONS)[number]['id']) {
     const next = activeAccess.includes(id)
-      ? activeAccess.filter(value => value !== id)
+      ? activeAccess.filter((value) => value !== id)
       : [...activeAccess, id]
     const params: Record<string, string> = {}
     params.type = activeSubtype
@@ -111,7 +114,7 @@ export default function AccessoryListPage() {
 
   function toggleCategory(id: (typeof CATEGORY_OPTIONS)[number]['id']) {
     const next = activeCategories.includes(id)
-      ? activeCategories.filter(value => value !== id)
+      ? activeCategories.filter((value) => value !== id)
       : [...activeCategories, id]
     const params: Record<string, string> = { type: activeSubtype }
     if (debouncedQuery) params.q = debouncedQuery
@@ -123,7 +126,7 @@ export default function AccessoryListPage() {
 
   function toggleElement(code: string) {
     const next = activeElements.includes(code)
-      ? activeElements.filter(value => value !== code)
+      ? activeElements.filter((value) => value !== code)
       : [...activeElements, code]
     const params: Record<string, string> = {}
     params.type = activeSubtype
@@ -135,7 +138,7 @@ export default function AccessoryListPage() {
   }
 
   function setSubtype(id: string) {
-    if (!ACCESSORY_SUBTYPES.some(meta => meta.subtype === id)) return
+    if (!ACCESSORY_SUBTYPES.some((meta) => meta.subtype === id)) return
     const params: Record<string, string> = { type: id }
     if (debouncedQuery) params.q = debouncedQuery
     if (activeElements.length > 0) params.element = activeElements.join(',')
@@ -144,10 +147,10 @@ export default function AccessoryListPage() {
     setSearchParams(params, { replace: true })
   }
 
-  const segments = ACCESSORY_SUBTYPES.map(meta => ({
+  const segments = ACCESSORY_SUBTYPES.map((meta) => ({
     id: meta.subtype,
     label: meta.label,
-    count: bySubtype[meta.subtype] ?? 0,
+    count: countsLoading ? undefined : (bySubtype[meta.subtype] ?? 0),
     active: meta.subtype === activeSubtype,
   }))
 
@@ -172,7 +175,7 @@ export default function AccessoryListPage() {
       </div>
 
       <div className="flex gap-2 flex-wrap mb-3" role="group" aria-label="Filter by access">
-        {ACCESS_OPTIONS.map(option => {
+        {ACCESS_OPTIONS.map((option) => {
           const isActive = activeAccess.includes(option.id)
           return (
             <button
@@ -207,7 +210,7 @@ export default function AccessoryListPage() {
 
       <div className="mb-3">
         <div className="flex flex-wrap gap-2" role="group" aria-label="Filter by category">
-          {CATEGORY_OPTIONS.map(option => {
+          {CATEGORY_OPTIONS.map((option) => {
             const isActive = activeCategories.includes(option.id)
             return (
               <button
@@ -243,7 +246,7 @@ export default function AccessoryListPage() {
 
       <div className="mb-2">
         <div className="flex flex-wrap gap-1.5">
-          {elements.map(element => {
+          {elements.map((element) => {
             const isActive = activeElements.includes(element.code)
             return (
               <button
@@ -282,14 +285,16 @@ export default function AccessoryListPage() {
       <ElementLegend includeTraits={false} />
 
       <p className="text-text-muted text-xs mb-4" aria-live="polite" aria-atomic="true">
-        {total} {total === 1 ? 'entry' : 'entries'} found
-        {activeElements.length > 0 && <span className="text-gold"> · {activeElements.join(', ')}</span>}
+        {loading ? 'Loading entries...' : `${total} ${total === 1 ? 'entry' : 'entries'} found`}
+        {activeElements.length > 0 && (
+          <span className="text-gold"> · {activeElements.join(', ')}</span>
+        )}
         {activeAccess.length > 0 && (
           <span className="text-orange-400">
             {' '}
             ·{' '}
             {activeAccess
-              .map(id => ACCESS_OPTIONS.find(option => option.id === id)?.label ?? id)
+              .map((id) => ACCESS_OPTIONS.find((option) => option.id === id)?.label ?? id)
               .join(', ')}
           </span>
         )}
@@ -298,13 +303,13 @@ export default function AccessoryListPage() {
             {' '}
             ·{' '}
             {activeCategories
-              .map(id => CATEGORY_OPTIONS.find(option => option.id === id)?.label ?? id)
+              .map((id) => CATEGORY_OPTIONS.find((option) => option.id === id)?.label ?? id)
               .join(', ')}
           </span>
         )}
       </p>
 
-      <AccessoryList accessories={accessories} />
+      <AccessoryList accessories={accessories} loading={loading} />
     </main>
   )
 }

@@ -44,6 +44,7 @@ Scraper guidelines:
 - Keep shared item-family behavior in `src/utils/variantHelpers.ts` or `scripts/lib/*` when pets, guests, and accessories should agree.
 - Prefer subtype strategy modules under `scripts/lib/accessories/` for accessory-specific behavior.
 - Progress files such as `src/data/pets-progress.json` and `src/data/guests-progress.json` are local scratch files and should remain untracked.
+- Scrapers must automatically regenerate any lightweight manifest/count files for the datasets they write. Do not make manifest refresh a manual post-scrape step.
 - Badge re-scrapes preserve curated image and subcategory fields from the existing `src/data/badges.json`, so no separate image/subcategory post-processing step is required.
 
 Image enrichment for active sections happens inside the TypeScript scrapers.

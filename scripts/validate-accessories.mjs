@@ -5,6 +5,7 @@ import { fileURLToPath } from 'node:url'
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const DATA_DIR = resolve(__dirname, '../src/data')
 const ELEMENTS_PATH = resolve(DATA_DIR, 'elements.json')
+const MANIFEST_PATH = resolve(DATA_DIR, 'accessory-manifest.json')
 
 const subtypeFiles = [
   ['artifact', ['artifacts.json']],
@@ -29,6 +30,7 @@ try {
 const errors = []
 const slugSet = new Set()
 const pendingAlsoSeeChecks = []
+const entriesBySubtype = Object.fromEntries(subtypeFiles.map(([subtype]) => [subtype, 0]))
 let totalEntries = 0
 
 for (const [expectedSubtype, filenames] of subtypeFiles) {
@@ -49,6 +51,7 @@ for (const [expectedSubtype, filenames] of subtypeFiles) {
     }
 
     totalEntries += entries.length
+    entriesBySubtype[expectedSubtype] += entries.length
 
     for (let index = 0; index < entries.length; index++) {
       const entry = entries[index]
@@ -127,6 +130,26 @@ for (const [expectedSubtype, filenames] of subtypeFiles) {
   }
 }
 
+try {
+  const manifest = JSON.parse(readFileSync(MANIFEST_PATH, 'utf-8'))
+  if (manifest.total !== totalEntries) {
+    errors.push(`accessory-manifest.json: total must be ${totalEntries}, got ${manifest.total}`)
+  }
+
+  for (const [subtype] of subtypeFiles) {
+    const expectedCount = entriesBySubtype[subtype]
+    const manifestCount = manifest.bySubtype?.[subtype]
+    if (manifestCount !== expectedCount) {
+      errors.push(
+        `accessory-manifest.json: bySubtype.${subtype} must be ${expectedCount}, got ${manifestCount}`
+      )
+    }
+  }
+} catch (error) {
+  console.error('❌ Failed to parse accessory-manifest.json:', error.message)
+  process.exit(1)
+}
+
 for (const check of pendingAlsoSeeChecks) {
   if (check.refs === undefined) continue
   if (!Array.isArray(check.refs)) {
@@ -143,13 +166,17 @@ for (const check of pendingAlsoSeeChecks) {
       errors.push(`${check.prefix}: alsoSee ref "${ref?.name ?? 'unnamed'}" is missing slug`)
     }
     if (ref?.type !== 'accessory') {
-      errors.push(`${check.prefix}: alsoSee ref "${ref?.name ?? 'unnamed'}" must use type "accessory"`)
+      errors.push(
+        `${check.prefix}: alsoSee ref "${ref?.name ?? 'unnamed'}" must use type "accessory"`
+      )
     }
     if (selfSlugs.has(ref?.slug)) {
       errors.push(`${check.prefix}: alsoSee ref "${ref.name}" links to itself`)
     }
     if (!slugSet.has(ref?.slug) && typeof ref?.url !== 'string') {
-      errors.push(`${check.prefix}: alsoSee ref "${ref?.name ?? 'unnamed'}" has no local entry or URL`)
+      errors.push(
+        `${check.prefix}: alsoSee ref "${ref?.name ?? 'unnamed'}" has no local entry or URL`
+      )
     }
   }
 }

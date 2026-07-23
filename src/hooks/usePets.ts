@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react'
 import type { Pet, PetFilters, EntryType } from '../types/pet'
 import type { ItemFamily } from '../types/item'
 import type { ElementsData } from '../types/element'
-import { loadElements, loadPetsAndGuests } from '../utils/dataLoaders'
+import { loadElements, loadPetsAndGuests, loadPetsGuestsManifest } from '../utils/dataLoaders'
 import { compareTitles, displayTitle } from '../utils/displayText'
 import { getSearchWords } from '../utils/search'
 
@@ -120,6 +120,32 @@ function useElementsDataset() {
   }, [])
 
   return elementMeta
+}
+
+function usePetsGuestsManifestDataset() {
+  const [total, setTotal] = useState(0)
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    let active = true
+    loadPetsGuestsManifest()
+      .then((data) => {
+        if (!active) return
+        setTotal(data.total)
+        setLoading(false)
+      })
+      .catch(() => {
+        if (!active) return
+        setTotal(0)
+        setLoading(false)
+      })
+
+    return () => {
+      active = false
+    }
+  }, [])
+
+  return { total, loading }
 }
 
 // ─── Search ───────────────────────────────────────────────────────────────────
@@ -357,8 +383,7 @@ export function useRelatedPets(alsoSee: { slug: string; name: string; type: stri
 }
 
 export function useTotalPetCount() {
-  const { allPets } = usePetDataset()
-  return allPets.length
+  return usePetsGuestsManifestDataset().total
 }
 
 // ─── Element hook ─────────────────────────────────────────────────────────────
