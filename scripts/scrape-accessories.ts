@@ -8,6 +8,7 @@ import {
   obtainVariantHasDC,
 } from '../src/utils/variantHelpers.ts'
 import { compareTitles, titleSortKey } from '../src/utils/displayText.ts'
+import { inferImageCaptionFromUrl } from '../src/utils/imageLabels.ts'
 import {
   ACCESSORY_SUBTYPES,
   type Accessory,
@@ -25,6 +26,7 @@ import {
 import { rephraseTimedSellback } from './lib/obtain-formatting.ts'
 import { repairAccessFlags } from './lib/access-flag-repair.ts'
 import { getAccessorySubtypeStrategy } from './lib/accessories/index.ts'
+import { promoteAccessoryCrossPostFamilies } from './lib/accessories/cross-post-family.ts'
 import { extractAlsoSeeRefs, type ParsedAlsoSeeRef } from './lib/also-see.ts'
 import type { FamilySourceRef, LevelVariant } from '../src/types/item.ts'
 import type { AlsoSeeRef } from '../src/types/item.ts'
@@ -342,8 +344,9 @@ function parseNotes(html: string): string | undefined {
       const trimmed = line.trim()
       if (!trimmed) continue
       if (/\w+\s+--\s+\d+\/\d+\/\d+\s+\d+:\d+:\d+/.test(trimmed)) continue
+      if (/^[\s/|\\-]+$/.test(trimmed)) continue
       if (
-        /^(?:clicked appearance|alternative image|alt(?:ernative)? appearance|appearance(?:\s+\d.*)?|2nd appearance)$/i.test(
+        /^(?:clicked appearance|alternative image|alt(?:ernative)? appearance|appearance(?:\s+\d.*)?|2nd appearance|default|patience\s*\/\s*bulwark|rage\s*\/\s*wrath)$/i.test(
           trimmed
         )
       )
@@ -726,12 +729,18 @@ function extractAccessoryImages(html: string): AccessoryImageBundle {
     })),
   ].filter((candidate) => isCandidateImage(candidate.url))
 
-  const seenImageUrls = new Set<string>()
-  const uniqueImageCandidates = imageCandidates.filter((candidate) => {
-    if (seenImageUrls.has(candidate.url)) return false
-    seenImageUrls.add(candidate.url)
-    return true
-  })
+  const uniqueImageCandidatesByUrl = new Map<string, { url: string; caption?: string }>()
+  for (const candidate of imageCandidates) {
+    const existingCandidate = uniqueImageCandidatesByUrl.get(candidate.url)
+    if (!existingCandidate) {
+      uniqueImageCandidatesByUrl.set(candidate.url, { ...candidate })
+      continue
+    }
+    if (!existingCandidate.caption && candidate.caption?.trim()) {
+      existingCandidate.caption = candidate.caption.trim()
+    }
+  }
+  const uniqueImageCandidates = [...uniqueImageCandidatesByUrl.values()]
   const preferredImageCandidates = uniqueImageCandidates.filter(
     (candidate) => !/forums2\.battleon\.com\/f\/upfiles\//i.test(candidate.url)
   )
@@ -741,9 +750,12 @@ function extractAccessoryImages(html: string): AccessoryImageBundle {
 
   const alternativeImages: Array<{ url: string; caption: string }> = []
   if (imageUrl) {
-    for (const [index, candidate] of displayImageCandidates.entries()) {
+    for (const candidate of displayImageCandidates) {
       if (candidate.url === imageUrl) continue
-      const caption = candidate.caption?.trim() || `Alternative ${index}`
+      const caption =
+        candidate.caption?.trim() ??
+        inferImageCaptionFromUrl(candidate.url) ??
+        `Alternative ${alternativeImages.length + 1}`
       alternativeImages.push({ url: candidate.url, caption })
     }
   }
@@ -1609,7 +1621,9 @@ function writeDatasets(
     }
 
     entries = repairAccessFlags(
-      Array.from(new Map(entries.map((entry) => [entry.slug, entry])).values())
+      promoteAccessoryCrossPostFamilies(
+        Array.from(new Map(entries.map((entry) => [entry.slug, entry])).values())
+      )
     )
 
     entries.sort((a, b) => {

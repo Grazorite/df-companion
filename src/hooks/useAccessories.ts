@@ -232,11 +232,17 @@ export function useAccessories(subtype: AccessorySubtype, filters: AccessoryFilt
   }
 }
 
+function accessoryMatchesSlug(entry: AccessoryEntry, slug?: string): boolean {
+  if (!slug) return false
+  if (entry.slug === slug) return true
+  return isAccessoryFamily(entry) && (entry.aliasSlugs ?? []).includes(slug)
+}
+
 export function useAccessoryBySlug(subtype: AccessorySubtype, slug?: string) {
   const { accessories, loading } = useAccessorySubtypeDataset(subtype)
   const accessory = useMemo(() => {
     if (loading) return undefined
-    return accessories.find((entry) => entry.slug === slug) ?? null
+    return accessories.find((entry) => accessoryMatchesSlug(entry, slug)) ?? null
   }, [accessories, loading, slug])
 
   return { accessory, loading }
@@ -276,7 +282,7 @@ export function useRelatedAccessories(alsoSee: AlsoSeeRef[] = []) {
     () =>
       alsoSee.map((ref) => ({
         ref,
-        entry: allAccessories.find((item) => item.slug === ref.slug),
+        entry: allAccessories.find((item) => accessoryMatchesSlug(item, ref.slug)),
       })),
     [allAccessories, alsoSee]
   )

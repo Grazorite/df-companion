@@ -1,11 +1,11 @@
 import { useEffect, useMemo, useState } from 'react'
-import { ExternalLink } from 'lucide-react'
 import type { Accessory, AccessoryEntry, AccessoryFamily } from '../../types/accessory'
 import { isAccessoryFamily } from '../../types/accessory'
 import type { LevelVariant, ObtainVariant } from '../../types/item'
 import type { GuestAttack } from '../../types/pet'
 import { useRelatedAccessories } from '../../hooks/useAccessories'
 import { displayTitle, normalizeDisplayText } from '../../utils/displayText'
+import { buildDisplayImages } from '../../utils/imageLabels'
 import { getDisplayFamilyName, isSingleVariant } from '../../utils/variantHelpers'
 import ElementPill from '../shared/ElementPill'
 import AccessPills from '../shared/AccessPills'
@@ -196,10 +196,11 @@ export default function AccessoryDetail({ accessory, filterBase }: AccessoryDeta
   )
   const allImages = useMemo(() => {
     if (!shouldShowImages) return []
-    const images: Array<{ url: string; caption: string }> = []
-    if (imageUrl) images.push({ url: imageUrl, caption: title })
-    if (altImages) images.push(...altImages)
-    return images
+    return buildDisplayImages({
+      imageUrl,
+      alternativeImages: altImages,
+      mainCaption: title,
+    })
   }, [altImages, imageUrl, shouldShowImages, title])
   const currentImage = allImages[activeImageIndex]
 
@@ -291,13 +292,18 @@ export default function AccessoryDetail({ accessory, filterBase }: AccessoryDeta
   }, [accessory.forumUrl, family, title])
   const alsoSeeRefs = useMemo(() => {
     const currentSlugs = new Set(
-      family ? [family.slug, ...(family.aliasSlugs ?? [])] : [singleAccessory?.slug ?? accessory.slug]
+      family
+        ? [family.slug, ...(family.aliasSlugs ?? [])]
+        : [singleAccessory?.slug ?? accessory.slug]
     )
     const refs = family ? (family.shared.alsoSee ?? []) : (singleAccessory?.alsoSee ?? [])
 
     return refs.filter((ref) => !currentSlugs.has(ref.slug))
   }, [accessory.slug, family, singleAccessory])
   const { relatedAccessories } = useRelatedAccessories(alsoSeeRefs)
+  const resolvedRelatedAccessories = relatedAccessories.flatMap((related) =>
+    related.entry ? [{ ref: related.ref, entry: related.entry }] : []
+  )
 
   return (
     <main className="px-4 sm:px-6 py-6 max-w-3xl mx-auto">
@@ -408,7 +414,7 @@ export default function AccessoryDetail({ accessory, filterBase }: AccessoryDeta
         <SourceLinksCard links={sourceLinks} />
       </section>
 
-      {relatedAccessories.length > 0 && (
+      {resolvedRelatedAccessories.length > 0 && (
         <section aria-labelledby="related-heading" className="border-t border-border-default pt-6">
           <h2
             id="related-heading"
@@ -417,32 +423,11 @@ export default function AccessoryDetail({ accessory, filterBase }: AccessoryDeta
             Also See
           </h2>
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-            {relatedAccessories.map(({ ref, entry }) =>
-              entry ? (
-                <li key={`${ref.slug}-${ref.url ?? 'route'}`}>
-                  <AccessoryCard accessory={entry} />
-                </li>
-              ) : ref.url ? (
-                <li key={`${ref.slug}-${ref.url}`}>
-                  <a
-                    href={ref.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-between gap-3 bg-bg-surface border border-border-default rounded-lg p-4 h-[120px] text-sm font-semibold text-gold hover:text-gold-bright hover:border-border-hover transition-colors"
-                  >
-                    <span>{displayTitle(ref.name)}</span>
-                    <ExternalLink className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
-                  </a>
-                </li>
-              ) : (
-                <li
-                  key={`${ref.slug}-unresolved`}
-                  className="bg-bg-surface border border-border-default rounded-lg p-4 h-[120px] text-sm font-semibold text-text-secondary"
-                >
-                  {displayTitle(ref.name)}
-                </li>
-              )
-            )}
+            {resolvedRelatedAccessories.map(({ ref, entry }) => (
+              <li key={`${ref.slug}-${ref.url ?? 'route'}`}>
+                <AccessoryCard accessory={entry} />
+              </li>
+            ))}
           </ul>
         </section>
       )}

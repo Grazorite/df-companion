@@ -105,7 +105,8 @@
     "shared": {
       "description": "This helm once belonged to Baltael, the first SoulWeaver. The power it bestows shows you how to fully Synchronize with Aegis, enhancing your Soul Aegis's defensive power, SoulSynch's number of hits, and Retribution's damage.",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/Baltael'sAventail.png",
-      "rarity": "100"
+      "rarity": "100",
+      "notes": "• Items occupy the player's helm slot when equipped.\n• Artifact helms are animated; the soul piece crackles with energy periodically in its Energy elemental attunement appearance, and part of the soul piece spirals continuously in its Poison elemental attunement appearance.\n• Artifact helms are color-custom; the aventail is linked to the player's base color.\n• Artifact helms' soul piece is attuned to the player's equipped weapon's element; refer to  this chart for all appearances.\n• During  April Fools' Day 2018, the level 60 and 80 versions modified the  Fleshweaver class.\n• Level 60 and 80 versions' names were differentiated with stat indicators and tiered with Roman numerals on  July 1st, 2023.\n• The following changes were implemented on  August 23rd, 2024:\n• Level 60 and 80 versions previously had the description: This helm once belonged to Baltael, the first SoulWeaver. The power it bestows shows you how to fully Synchronize with Aegis, enhancing your Soul Aegis's defensive power, Valour Impact's number of hits, and SoulSync's damage.\n• Level 60 and 80 versions' Resists were updated.\n• Skilled and Master versions were released, balancing the benefits of their precursors, but requiring a Dragon Amulet to equip.\n• Synched version was released as a direct upgrade to the Skilled and Master versions, also requiring a Dragon Amulet to equip, on  September 6th, 2024.\n• Helm initially have +5 Light, +5 Water Resists.\n• Helm initially have +4 Light, +4 Water Resists.\n• Helm initially have +8 Light, +8 Water Resists.\n• Helm initially have +14 Light, +14 Water Resists."
     },
     "levelVariants": [
       {
@@ -436,19 +437,14 @@
     "modifies": "SoulWeaver",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "merge",
-      "non"
-    ],
+    "tags": ["merge", "non"],
     "hasDA": true,
     "hasDC": false,
     "hasDM": false,
     "hasFree": false,
     "hasMerge": true,
     "levelRange": "60-90",
-    "elements": [
-      "NON"
-    ]
+    "elements": ["NON"]
   },
   {
     "id": "accessory-cloak-scrap",
@@ -459,9 +455,7 @@
     "description": "A darkness swirls around this small scrap of black cloth... it almost seems to pull in the shadows around you.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21834946",
     "releaseDate": "",
-    "elements": [
-      "EVI"
-    ],
+    "elements": ["EVI"],
     "level": "1",
     "stats": "Crit +4, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +2, END +2, INT +6, DEX +6, STR +6, Bonus +5",
     "resists": "Light +5, Darkness +5",
@@ -473,17 +467,14 @@
     "obtainMethods": [
       {
         "location": "The Evil Artifact",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "0 Gold",
         "daRequired": false
       }
     ],
-    "notes": "• Item is one of the 13 cursed items from Artix Entertainment's 12th Anniversary  Curse of the Phantom Pixel special event. \n• Item occupies the player's necklace slot when equipped. \n• Item unlocks additional dialogue during the quest  Caitiff if in the player's inventory.",
-    "tags": [
-      "evi",
-      "free"
-    ],
+    "notes": "• Item is one of the 13 cursed items from Artix Entertainment's 12th Anniversary  Curse of the Phantom Pixel special event.\n• Item occupies the player's necklace slot when equipped.\n• Item unlocks additional dialogue during the quest  Caitiff if in the player's inventory.",
+    "tags": ["evi", "free"],
     "daRequired": false
   },
   {
@@ -495,9 +486,7 @@
     "description": "This gnarly old cassette tape radiates with the corrupting glow of Doom! The 2019 artifact for the Epoch class!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22349968",
     "releaseDate": "",
-    "elements": [
-      "EVI"
-    ],
+    "elements": ["EVI"],
     "level": "1",
     "stats": "Crit +5, WIS +1, END +1, CHA +1, LUK +1, INT +1, DEX +1, STR +1, Bonus +5",
     "resists": "All +1",
@@ -509,18 +498,15 @@
     "obtainMethods": [
       {
         "location": "Redeem the code received from purchasing the AE 2019 Calendar from HeroMart",
-        "price": "$19.95 USD (Standard) / $29.95 USD (Collector's Edition) + Postage",
         "priceType": "gold",
+        "price": "$19.95 USD (Standard) / $29.95 USD (Collector's Edition) + Postage",
         "sellback": "N/A",
         "daRequired": false,
         "dcRequired": true
       }
     ],
-    "notes": "• Item cannot be destroyed. \n• Item occupies the player's bracer slot when equipped. \n• Item modified  Epoch as Corrupted Doom Epoch on  March 15th, 2019.",
-    "tags": [
-      "evi",
-      "gold"
-    ],
+    "notes": "• Item cannot be destroyed.\n• Item occupies the player's bracer slot when equipped.\n• Item modified  Epoch as Corrupted Doom Epoch on  March 15th, 2019.",
+    "tags": ["evi", "gold"],
     "daRequired": false,
     "dcRequired": true,
     "isRare": true,
@@ -535,9 +521,7 @@
     "description": "This brightly glowing dragon's tooth seems to slot into the gauntlet of the Epoch armor. The 2021 artifact for the Epoch class!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22387135",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "1",
     "stats": "Crit +5, WIS +1, END +1, CHA +1, LUK +1, INT +1, DEX +1, STR +1, Bonus +5",
     "resists": "All +1",
@@ -549,18 +533,15 @@
     "obtainMethods": [
       {
         "location": "Redeem the code received from purchasing the AE 2021 Calendar from HeroMart",
-        "price": "$19.95 USD (2021 Standard) / $29.95 USD (2021 Collector's Edition) / $24.95-34.95 USD (2025) + Postage",
         "priceType": "gold",
+        "price": "$19.95 USD (2021 Standard) / $29.95 USD (2021 Collector's Edition) / $24.95-34.95 USD (2025) + Postage",
         "sellback": "N/A",
         "daRequired": false,
         "dcRequired": true
       }
     ],
-    "notes": "• Item cannot be destroyed. \n• Item occupies the player's bracer slot when equipped. \n• Item modified  Epoch as DragonByte Epoch on  February 5th, 2021.",
-    "tags": [
-      "lig",
-      "gold"
-    ],
+    "notes": "• Item cannot be destroyed.\n• Item occupies the player's bracer slot when equipped.\n• Item modified  Epoch as DragonByte Epoch on  February 5th, 2021.",
+    "tags": ["lig", "gold"],
     "daRequired": false,
     "dcRequired": true,
     "isSpecialOffer": true
@@ -574,9 +555,7 @@
     "description": "This small blue sphere spins with power. When close to a Dragon Amulet, the sphere glows brighter. This trinket raises the power of a defensive DragonLord. This item requires a Dragon Amulet to use.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22393345",
     "releaseDate": "",
-    "elements": [
-      "GOO"
-    ],
+    "elements": ["GOO"],
     "level": "55",
     "stats": "Block +5, Dodge +5, Parry +5, Crit +5, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +15, END +15, INT +6, DEX +6, STR +6, Bonus +5",
     "resists": "Light +5, Darkness +5, All +3, Health -3",
@@ -590,27 +569,26 @@
     "obtainMethods": [
       {
         "location": "DragonLord Artifacts",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "32,500 Gold",
+        "price": "N/A",
         "requiredItems": "1 Dragon's Patience (D-Amulet) & 1 Dragoncore Stone OR 1 Dragon's Patience (D-Amulet) & 1 Dragoncore Crystal",
+        "sellback": "32,500 Gold",
         "daRequired": true
       },
       {
         "location": "DragonLord Artifacts",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "0 Dragon Coins",
+        "price": "N/A",
         "requiredItems": "1 Dragon's Patience (D-Amulet/D-Coins) & 1 Dragoncore Crystal OR 1 Dragon's Patience (D-Amulet/D-Coins) & 1 Dragoncore Stone",
-        "daRequired": true
+        "sellback": "0 Dragon Coins",
+        "daRequired": true,
+        "dcRequired": true
       }
     ],
-    "notes": "• Item occupies the player's trinket slot when equipped. \n• Gold and DC versions of this item initially had the sellback values of 32,500 Gold and 188 Dragon Coins respectively. \n• The Dragoncore Stone only upgraded the Gold version and the Dragoncore Crystal only upgraded the DC version between  August 6th, 2021 and  September 6th, 2024, when merge compatibility for all versions was added. \n• Equipping this artifact trinket automatically changes the appearance of any  Visage of the Dragon helm equipped or shown. \n• A trinket skill was added on  June 20th, 2025.",
-    "tags": [
-      "goo",
-      "merge"
-    ],
+    "notes": "• Item occupies the player's trinket slot when equipped.\n• Gold and DC versions of this item initially had the sellback values of 32,500 Gold and 188 Dragon Coins respectively.\n• The Dragoncore Stone only upgraded the Gold version and the Dragoncore Crystal only upgraded the DC version between  August 6th, 2021 and  September 6th, 2024, when merge compatibility for all versions was added.\n• Equipping this artifact trinket automatically changes the appearance of any  Visage of the Dragon helm equipped or shown.\n• A trinket skill was added on  June 20th, 2025.",
+    "tags": ["goo", "merge"],
     "daRequired": true,
+    "dcRequired": true,
     "attacks": [
       {
         "name": "DragonLord's Patience",
@@ -635,9 +613,7 @@
     "description": "This small blue sphere swirls with energy. When close to a Dragon Amulet, the energy starts to glow. This trinket raises the power of a defensive DragonLord. This item requires a Dragon Amulet to use. (Gold)",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22265929",
     "releaseDate": "",
-    "elements": [
-      "GOO"
-    ],
+    "elements": ["GOO"],
     "level": "25",
     "stats": "Crit +4, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +2, END +2, INT +6, DEX +6, STR +6, Bonus +5",
     "resists": "Light +5, Darkness +5",
@@ -651,25 +627,22 @@
     "obtainMethods": [
       {
         "location": "DragonLord Artifacts",
-        "price": "25,000 Gold",
         "priceType": "gold",
+        "price": "25,000 Gold",
         "sellback": "2,500 Gold",
         "daRequired": true
       },
       {
         "location": "DragonLord Artifacts",
-        "price": "250 Dragon Coins",
         "priceType": "dc",
-        "sellback": "225 Dragon Coins before 24 hours, 63 Dragon Coins after 24 hours",
-        "daRequired": true,
+        "price": "250 Dragon Coins",
+        "sellback": "225 DC (<24 hours) / 63 DC (>24 hours)",
+        "daRequired": false,
         "dcRequired": true
       }
     ],
-    "notes": "• Item occupies the player's trinket slot when equipped. \n• Previously only required players to be Level 1 to equip this artifact trinket; this was changed to Level 25 on  June 25th, 2021. \n• The prices of both Gold and DC versions of this item were originally priced at 325,000 Gold and 750 Dragon Coins, with a sellback of 32,500 Gold and 675 Dragon Coins before 24 hours, 188 Dragon Coins after 24 hours respectively; this was changed to 25,000 Gold and 250 Dragon Coins, with the remaining 300,000 Gold and 500 Dragon Coins transposed to  Dragoncore Stone and  Dragoncore Crystal respectively, on  August 6th, 2021. \n• Equipping this artifact trinket automatically changes the appearance of any  Visage of the Dragon helm equipped or shown. \n• Both Gold and Dragon Coins descriptions of this item were updated to differentiate both versions on  September 6th, 2024. \n• A trinket skill was added on  June 20th, 2025.",
-    "tags": [
-      "goo",
-      "gold"
-    ],
+    "notes": "• Item occupies the player's trinket slot when equipped.\n• Previously only required players to be Level 1 to equip this artifact trinket; this was changed to Level 25 on  June 25th, 2021.\n• The prices of both Gold and DC versions of this item were originally priced at 325,000 Gold and 750 Dragon Coins, with a sellback of 32,500 Gold and 675 Dragon Coins before 24 hours, 188 Dragon Coins after 24 hours respectively; this was changed to 25,000 Gold and 250 Dragon Coins, with the remaining 300,000 Gold and 500 Dragon Coins transposed to  Dragoncore Stone and  Dragoncore Crystal respectively, on  August 6th, 2021.\n• Equipping this artifact trinket automatically changes the appearance of any  Visage of the Dragon helm equipped or shown.\n• Both Gold and Dragon Coins descriptions of this item were updated to differentiate both versions on  September 6th, 2024.\n• A trinket skill was added on  June 20th, 2025.",
+    "tags": ["goo", "gold"],
     "daRequired": true,
     "dcRequired": true,
     "attacks": [
@@ -696,9 +669,7 @@
     "description": "This small purple sphere shudders with power. It resonates with Dragon Amulets to increase the offensive power of DragonLords at the cost of defensive ability. This item requires a Dragon Amulet to use. (Gold)",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22265952",
     "releaseDate": "",
-    "elements": [
-      "GOO"
-    ],
+    "elements": ["GOO"],
     "level": "25",
     "stats": "Crit +4, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +2, END +2, INT +6, DEX +6, STR +6, Bonus +5",
     "resists": "Light +5, Darkness +5",
@@ -712,25 +683,22 @@
     "obtainMethods": [
       {
         "location": "DragonLord Artifacts",
-        "price": "25,000 Gold",
         "priceType": "gold",
+        "price": "25,000 Gold",
         "sellback": "2,500 Gold",
         "daRequired": true
       },
       {
         "location": "DragonLord Artifacts",
-        "price": "250 Dragon Coins",
         "priceType": "dc",
-        "sellback": "225 Dragon Coins before 24 hours, 63 Dragon Coins after 24 hours",
-        "daRequired": true,
+        "price": "250 Dragon Coins",
+        "sellback": "225 DC (<24 hours) / 63 DC (>24 hours)",
+        "daRequired": false,
         "dcRequired": true
       }
     ],
-    "notes": "• Item occupies the player's trinket slot when equipped. \n• Previously only required players to be Level 1 to equip this artifact trinket; this was changed to Level 25 on  June 25th, 2021. \n• The prices of both Gold and DC versions of this item were originally priced at 325,000 Gold and 750 Dragon Coins, with a sellback of 32,500 Gold and 675 Dragon Coins before 24 hours, 188 Dragon Coins after 24 hours respectively; this was changed to 25,000 Gold and 250 Dragon Coins, with the remaining 300,000 Gold and 500 Dragon Coins transposed to  Dragoncore Stone and  Dragoncore Crystal respectively, on  August 6th, 2021. \n• Equipping this artifact trinket automatically changes the appearance of any  Visage of the Dragon helm equipped or shown. \n• Both Gold and Dragon Coins descriptions of this item were updated to differentiate both versions on  September 6th, 2024. \n• A trinket skill was added on  June 20th, 2025.",
-    "tags": [
-      "goo",
-      "gold"
-    ],
+    "notes": "• Item occupies the player's trinket slot when equipped.\n• Previously only required players to be Level 1 to equip this artifact trinket; this was changed to Level 25 on  June 25th, 2021.\n• The prices of both Gold and DC versions of this item were originally priced at 325,000 Gold and 750 Dragon Coins, with a sellback of 32,500 Gold and 675 Dragon Coins before 24 hours, 188 Dragon Coins after 24 hours respectively; this was changed to 25,000 Gold and 250 Dragon Coins, with the remaining 300,000 Gold and 500 Dragon Coins transposed to  Dragoncore Stone and  Dragoncore Crystal respectively, on  August 6th, 2021.\n• Equipping this artifact trinket automatically changes the appearance of any  Visage of the Dragon helm equipped or shown.\n• Both Gold and Dragon Coins descriptions of this item were updated to differentiate both versions on  September 6th, 2024.\n• A trinket skill was added on  June 20th, 2025.",
+    "tags": ["goo", "gold"],
     "daRequired": true,
     "dcRequired": true,
     "attacks": [
@@ -757,9 +725,7 @@
     "description": "This small purple sphere trembles with energy. It resonates with Dragon Amulets to increase the offensive power of DragonLords at the cost of defensive ability. This item requires a Dragon Amulet to use.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22393342",
     "releaseDate": "",
-    "elements": [
-      "GOO"
-    ],
+    "elements": ["GOO"],
     "level": "55",
     "stats": "Block +2, Dodge +2, Parry +2, Crit +5, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +2, END +2, INT +10, DEX +10, STR +10, Bonus +5",
     "resists": "Light +5, Darkness +5, All +3, Health -3",
@@ -773,27 +739,26 @@
     "obtainMethods": [
       {
         "location": "DragonLord Artifacts",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "0 Gold",
+        "price": "N/A",
         "requiredItems": "1 Dragon's Rage (D-Amulet) & 1 Dragoncore Stone OR 1 Dragon's Rage (D-Amulet) & 1 Dragoncore Crystal",
+        "sellback": "0 Gold",
         "daRequired": true
       },
       {
         "location": "DragonLord Artifacts",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "0 Dragon Coins",
+        "price": "N/A",
         "requiredItems": "1 Dragon's Rage (D-Amulet/D-Coins) & 1 Dragoncore Crystal OR 1 Dragon's Rage (D-Amulet/D-Coins) & 1 Dragoncore Stone",
-        "daRequired": true
+        "sellback": "0 Dragon Coins",
+        "daRequired": true,
+        "dcRequired": true
       }
     ],
-    "notes": "• Item occupies the player's trinket slot when equipped. \n• Gold and DC versions of this item initially had the sellback values of 32,500 Gold and 188 Dragon Coins respectively. \n• The Dragoncore Stone only upgraded the Gold version and the Dragoncore Crystal only upgraded the DC version between  August 6th, 2021 and  September 6th, 2024, when merge compatibility for all versions was added. \n• Equipping this artifact trinket automatically changes the appearance of any  Visage of the Dragon helm equipped or shown. \n• A trinket skill was added on  June 20th, 2025.",
-    "tags": [
-      "goo",
-      "merge"
-    ],
+    "notes": "• Item occupies the player's trinket slot when equipped.\n• Gold and DC versions of this item initially had the sellback values of 32,500 Gold and 188 Dragon Coins respectively.\n• The Dragoncore Stone only upgraded the Gold version and the Dragoncore Crystal only upgraded the DC version between  August 6th, 2021 and  September 6th, 2024, when merge compatibility for all versions was added.\n• Equipping this artifact trinket automatically changes the appearance of any  Visage of the Dragon helm equipped or shown.\n• A trinket skill was added on  June 20th, 2025.",
+    "tags": ["goo", "merge"],
     "daRequired": true,
+    "dcRequired": true,
     "attacks": [
       {
         "name": "DragonLord's Rage",
@@ -818,9 +783,7 @@
     "description": "This opalescent ocarina doesn't actually slot into the Epoch gauntlet. Instead, it resonates with the gauntlet's frequency! The 2022 artifact for the Epoch class!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22399109",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "1",
     "stats": "Crit +5, WIS +1, END +1, CHA +1, LUK +1, INT +1, DEX +1, STR +1, Bonus +5",
     "resists": "All +1",
@@ -832,20 +795,52 @@
     "obtainMethods": [
       {
         "location": "Redeem the code received from purchasing the AE 2022 Calendar from HeroMart",
-        "price": "$19.95 USD (2022 Standard) / $29.95 USD (2022 Collector's Edition) / $24.95-34.95 USD (2025) + Postage",
         "priceType": "gold",
+        "price": "$19.95 USD (2022 Standard) / $29.95 USD (2022 Collector's Edition) / $24.95-34.95 USD (2025) + Postage",
         "sellback": "N/A",
         "daRequired": false,
         "dcRequired": true
       }
     ],
-    "notes": "• Item cannot be destroyed. \n• Item occupies the player's bracer slot when equipped. \n• Item modified  Epoch as Bardcore Epoch on  April 1st, 2022.",
-    "tags": [
-      "sto",
-      "gold"
-    ],
+    "notes": "• Item cannot be destroyed.\n• Item occupies the player's bracer slot when equipped.\n• Item modified  Epoch as Bardcore Epoch on  April 1st, 2022.",
+    "tags": ["sto", "gold"],
     "daRequired": false,
     "dcRequired": true,
+    "isSpecialOffer": true
+  },
+  {
+    "id": "accessory-the-eraglass",
+    "name": "The Eraglass",
+    "slug": "accessory-the-eraglass",
+    "type": "accessory",
+    "subtype": "artifact",
+    "description": "This small blue hourglass hums with the power of Death as it fits into the gauntlet of the Epoch. The 2020 artifact for the Epoch class!",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22371497",
+    "releaseDate": "",
+    "elements": ["EVI"],
+    "level": "1",
+    "stats": "Crit +5, WIS +1, END +1, CHA +1, LUK +1, INT +1, DEX +1, STR +1, Bonus +5",
+    "resists": "All +1",
+    "rarity": "0",
+    "itemType": "Artifact",
+    "equipSpot": "Wrist",
+    "modifies": "Epoch",
+    "category": "Armor",
+    "obtainMethods": [
+      {
+        "location": "Redeem the code received from purchasing the AE 2020 Calendar from HeroMart",
+        "priceType": "gold",
+        "price": "$19.95 USD (Standard) / $29.95 USD (Collector's Edition) + Postage",
+        "sellback": "N/A",
+        "daRequired": false,
+        "dcRequired": true
+      }
+    ],
+    "notes": "• Item cannot be destroyed.\n• Item occupies the player's bracer slot when equipped.\n• The following changes were implemented on December 2nd, 2019:\n• Previously named 'Underworld Record'.\n• Previously had the description: This old and beat-up record hums with the power of Death! The 2020 artifact for the Epoch class!\n• Item modified  Epoch as Underworld Epoch on  January 17th, 2020.",
+    "tags": ["evi", "gold"],
+    "daRequired": false,
+    "dcRequired": true,
+    "isRare": true,
     "isSpecialOffer": true
   },
   {
@@ -857,9 +852,7 @@
     "description": "The orb on this chain shines fiercely, swirling with color and untapped power. The 2018 artifact for the Epoch class!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22305903",
     "releaseDate": "",
-    "elements": [
-      "FEA"
-    ],
+    "elements": ["FEA"],
     "level": "1",
     "stats": "Crit +5, WIS +1, END +1, CHA +1, LUK +1, INT +1, DEX +1, STR +1, Bonus +5",
     "resists": "All +1",
@@ -871,18 +864,15 @@
     "obtainMethods": [
       {
         "location": "Redeem the code received from purchasing the AE 2018 Calendar from HeroMart",
-        "price": "$19.95 USD (Standard) / $24.95 USD (Collector's Edition) + Postage",
         "priceType": "gold",
+        "price": "$19.95 USD (Standard) / $24.95 USD (Collector's Edition) + Postage",
         "sellback": "N/A",
         "daRequired": false,
         "dcRequired": true
       }
     ],
-    "notes": "• Item cannot be destroyed. \n• Item occupies the player's bracer slot when equipped. \n• Item modified  Epoch as Eternal Epoch on  September 30th, 2018.",
-    "tags": [
-      "fea",
-      "gold"
-    ],
+    "notes": "• Item cannot be destroyed.\n• Item occupies the player's bracer slot when equipped.\n• Item modified  Epoch as Eternal Epoch on  September 30th, 2018.",
+    "tags": ["fea", "gold"],
     "daRequired": false,
     "dcRequired": true,
     "isRare": true,
@@ -959,7 +949,8 @@
     "shared": {
       "description": "The warm and magically infused cloak of the Frost Moglin Knights! Equip this item with the Frost Moglin Knight's Helm to upgrade the Frost Moglin Armor!",
       "imageUrl": "https://i.imgur.com/StWTUCm.png",
-      "rarity": "0"
+      "rarity": "0",
+      "notes": "• Items occupy the player's cape slot when equipped."
     },
     "levelVariants": [
       {
@@ -1160,10 +1151,7 @@
     "modifies": "Frost Moglin if equipped with Frost Moglin Knight's Helm I",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "merge",
-      "met"
-    ],
+    "tags": ["merge", "met"],
     "isSeasonal": true,
     "hasDA": true,
     "hasDC": false,
@@ -1171,9 +1159,7 @@
     "hasFree": false,
     "hasMerge": true,
     "levelRange": "I-VIII",
-    "elements": [
-      "MET"
-    ]
+    "elements": ["MET"]
   },
   {
     "id": "accessory-frost-moglin-knight-s-helm",
@@ -1245,8 +1231,9 @@
     ],
     "shared": {
       "description": "The helm of the legendary order of Frost Moglin Knights! An artifact for Frost Moglin Armor along with the Frost Moglin Knight's Cape.",
+      "imageUrl": "https://i.imgur.com/UWUlCbM.png",
       "rarity": "5",
-      "imageUrl": "https://i.imgur.com/UWUlCbM.png"
+      "notes": "• Items occupy the player's helm slot when equipped."
     },
     "levelVariants": [
       {
@@ -1447,10 +1434,7 @@
     "modifies": "Frost Moglin if equipped with Frost Moglin Knight's Cloak I",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "merge",
-      "met"
-    ],
+    "tags": ["merge", "met"],
     "isSeasonal": true,
     "hasDA": true,
     "hasDC": false,
@@ -1458,9 +1442,7 @@
     "hasFree": false,
     "hasMerge": true,
     "levelRange": "I-VIII",
-    "elements": [
-      "MET"
-    ]
+    "elements": ["MET"]
   },
   {
     "id": "accessory-harmonized-cowbell",
@@ -1539,7 +1521,8 @@
     ],
     "shared": {
       "description": "This shining gold cowbell smells faintly of fresh bacon. If you wanted, you could wear it around your neck. But... why? An Artifact for the Evolved ChickenCow armor.",
-      "rarity": "5"
+      "rarity": "5",
+      "notes": "• Numerals associated with each Harmonized Cowbell represent the numbers 1-9 in binary.\n• Items occupy the player's necklace slot when equipped."
     },
     "levelVariants": [
       {
@@ -1755,19 +1738,14 @@
     "modifies": "Evolved Chickencow",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "bac",
-      "free"
-    ],
+    "tags": ["bac", "free"],
     "hasDA": true,
     "hasDC": false,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "0001-1001",
-    "elements": [
-      "BAC"
-    ]
+    "elements": ["BAC"]
   },
   {
     "id": "accessory-mechanical-metronome",
@@ -1778,9 +1756,7 @@
     "description": "The 2026 artifact for the Epoch class! (To be implemented soon!)",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22424486",
     "releaseDate": "",
-    "elements": [
-      "MET"
-    ],
+    "elements": ["MET"],
     "level": "1",
     "stats": "Crit +5, WIS +1, END +1, CHA +1, LUK +1, INT +1, DEX +1, STR +1, Bonus +5",
     "resists": "All +1",
@@ -1792,18 +1768,15 @@
     "obtainMethods": [
       {
         "location": "Redeem the code received from purchasing the AE 2026 Calendar from HeroMart",
-        "price": "$19.95 USD (Standard) / $29.95-34.95 USD (Collector's Edition) / $74.80-113.80 (Collector's Edition Bundle) + Postage",
         "priceType": "gold",
+        "price": "$19.95 USD (Standard) / $29.95-34.95 USD (Collector's Edition) / $74.80-113.80 (Collector's Edition Bundle) + Postage",
         "sellback": "N/A",
         "daRequired": false,
         "dcRequired": true
       }
     ],
-    "notes": "• Item cannot be destroyed. \n• Item occupies the player's bracer slot when equipped. \n• Item modified  Epoch as Maestro Epoch on  February 20th, 2026.",
-    "tags": [
-      "met",
-      "gold"
-    ],
+    "notes": "• Item cannot be destroyed.\n• Item occupies the player's bracer slot when equipped.\n• Item modified  Epoch as Maestro Epoch on  February 20th, 2026.",
+    "tags": ["met", "gold"],
     "daRequired": false,
     "dcRequired": true,
     "isSpecialOffer": true
@@ -1865,7 +1838,14 @@
     "shared": {
       "description": "A legendary pirate hat, worn by a long gone pirate hero who is said to have guided the first expedition across the Pale Sea. This artifact will change the appearance of the Pirate class when equipped!",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/Navigator'sHat-CC.png",
-      "rarity": "5"
+      "alternativeImages": [
+        {
+          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/Navigator'sHat.png",
+          "caption": "Alternative 1"
+        }
+      ],
+      "rarity": "5",
+      "notes": "• Dragon Coin versions were only available during Talk Like a Pirate Day 2018; permanent low drop rate versions are available from any random encounter quest in  The Pale Sea or  The Pasgur Ocean (excluding  Treasure!).\n• Items occupy the player's helm slot when equipped.\n• Artifact helms are color-custom; the hair, the hat, the trim and emblem, and the feathers and bandana are linked to the player's hair, base, trim, and dragon skin colors respectively.\n• Artifact helms'  color-custom hair was added on  October 26th, 2018, while all components were made color-custom on  September 24th, 2021.\n• Previously equipping any Navigator's Hat artifact helm was required to modify the appearance of the  Pirate class; they were updated to unlock Navigator  Armor Customization options on  September 17th, 2021."
     },
     "levelVariants": [
       {
@@ -1904,7 +1884,7 @@
             "location": "Navigator's Hat",
             "price": "500 Dragon Coins",
             "priceType": "dc",
-            "sellback": "450 Dragon Coins before 24 hours, 125 Dragon Coins after 24 hours",
+            "sellback": "450 DC (<24 hours) / 125 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -1951,8 +1931,8 @@
             "location": "Navigator's Hat",
             "price": "500 Dragon Coins",
             "priceType": "dc",
-            "sellback": "450 Dragon Coins before 24 hours, 125 Dragon Coins after 24 hours",
-            "daRequired": true,
+            "sellback": "450 DC (<24 hours) / 125 DC (>24 hours)",
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -1998,8 +1978,8 @@
             "location": "Navigator's Hat",
             "price": "500 Dragon Coins",
             "priceType": "dc",
-            "sellback": "450 Dragon Coins before 24 hours, 125 Dragon Coins after 24 hours",
-            "daRequired": true,
+            "sellback": "450 DC (<24 hours) / 125 DC (>24 hours)",
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -2045,8 +2025,8 @@
             "location": "Navigator's Hat",
             "price": "500 Dragon Coins",
             "priceType": "dc",
-            "sellback": "450 Dragon Coins before 24 hours, 125 Dragon Coins after 24 hours",
-            "daRequired": true,
+            "sellback": "450 DC (<24 hours) / 125 DC (>24 hours)",
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -2092,8 +2072,8 @@
             "location": "Navigator's Hat",
             "price": "500 Dragon Coins",
             "priceType": "dc",
-            "sellback": "450 Dragon Coins before 24 hours, 125 Dragon Coins after 24 hours",
-            "daRequired": true,
+            "sellback": "450 DC (<24 hours) / 125 DC (>24 hours)",
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -2139,8 +2119,8 @@
             "location": "Navigator's Hat",
             "price": "500 Dragon Coins",
             "priceType": "dc",
-            "sellback": "450 Dragon Coins before 24 hours, 125 Dragon Coins after 24 hours",
-            "daRequired": true,
+            "sellback": "450 DC (<24 hours) / 125 DC (>24 hours)",
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -2155,20 +2135,14 @@
     "equipSlot": "Head",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dc",
-      "free",
-      "wat"
-    ],
+    "tags": ["dc", "free", "wat"],
     "hasDA": true,
     "hasDC": true,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-VI",
-    "elements": [
-      "WAT"
-    ]
+    "elements": ["WAT"]
   },
   {
     "id": "accessory-shadowheart-bracer",
@@ -2179,9 +2153,7 @@
     "description": "Legends tell the story of a Darkness elemental who fell in love with a hero. The elemental gave up their mortal form to be with the hero always. \n  \n This artifact boosts the effectiveness of Shadow Mage, Shadow Rogue, and Shadow Warrior skills.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22161028",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "1",
     "stats": "WIS +1, END +1, CHA +1, LUK +1",
     "resists": "None",
@@ -2193,18 +2165,15 @@
     "obtainMethods": [
       {
         "location": "Shattered, Ashes, Madness, Doomed, Peril, Old Friends, Flight from Sho'Nuff",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "N/A",
         "daRequired": false,
         "dcRequired": true
       }
     ],
-    "notes": "• Item has a 5% drop rate from select Calamity Saga quests, as indicated in the  July 29th, 2016 Design Notes. \n• Item occupies the player's bracer slot when equipped. \n• Item initially had a sellback value of 0 Gold; it was DC tagged and became unsellable on  March 11th, 2023.",
-    "tags": [
-      "dar",
-      "free"
-    ],
+    "notes": "• Item has a 5% drop rate from select Calamity Saga quests, as indicated in the  July 29th, 2016 Design Notes.\n• Item occupies the player's bracer slot when equipped.\n• Item initially had a sellback value of 0 Gold; it was DC tagged and became unsellable on  March 11th, 2023.",
+    "tags": ["dar", "free"],
     "daRequired": false,
     "dcRequired": true
   },
@@ -2217,9 +2186,7 @@
     "description": "A shadowed emerald conductor's baton, said to let its wielder conduct the symphony between life and death! The 2024 artifact for the Epoch class!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22413930",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "1",
     "stats": "Crit +5, WIS +1, END +1, CHA +1, LUK +1, INT +1, DEX +1, STR +1, Bonus +5",
     "resists": "All +1",
@@ -2231,60 +2198,17 @@
     "obtainMethods": [
       {
         "location": "Redeem the code received from purchasing the AE 2024 Calendar from HeroMart",
+        "priceType": "gold",
         "price": "$19.95 USD (Standard) / $29.95 USD (Collector's Edition) / $24.95-34.95 USD (2025) + Postage",
-        "priceType": "gold",
         "sellback": "N/A",
         "daRequired": false,
         "dcRequired": true
       }
     ],
-    "notes": "• Item cannot be destroyed. \n• Item occupies the player's bracer slot when equipped. \n• Item modified  Epoch as Virtuoso Epoch on  February 2nd, 2024.",
-    "tags": [
-      "dar",
-      "gold"
-    ],
+    "notes": "• Item cannot be destroyed.\n• Item occupies the player's bracer slot when equipped.\n• Item modified  Epoch as Virtuoso Epoch on  February 2nd, 2024.",
+    "tags": ["dar", "gold"],
     "daRequired": false,
     "dcRequired": true,
-    "isSpecialOffer": true
-  },
-  {
-    "id": "accessory-the-eraglass",
-    "name": "The Eraglass",
-    "slug": "accessory-the-eraglass",
-    "type": "accessory",
-    "subtype": "artifact",
-    "description": "This small blue hourglass hums with the power of Death as it fits into the gauntlet of the Epoch. The 2020 artifact for the Epoch class!",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22371497",
-    "releaseDate": "",
-    "elements": [
-      "EVI"
-    ],
-    "level": "1",
-    "stats": "Crit +5, WIS +1, END +1, CHA +1, LUK +1, INT +1, DEX +1, STR +1, Bonus +5",
-    "resists": "All +1",
-    "rarity": "0",
-    "itemType": "Artifact",
-    "equipSpot": "Wrist",
-    "modifies": "Epoch",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "Redeem the code received from purchasing the AE 2020 Calendar from HeroMart",
-        "price": "$19.95 USD (Standard) / $29.95 USD (Collector's Edition) + Postage",
-        "priceType": "gold",
-        "sellback": "N/A",
-        "daRequired": false,
-        "dcRequired": true
-      }
-    ],
-    "notes": "• Item cannot be destroyed. \n• Item occupies the player's bracer slot when equipped. \n• The following changes were implemented on December 2nd, 2019: \n  • Previously named 'Underworld Record'. \n  • Previously had the description: This old and beat-up record hums with the power of Death! The 2020 artifact for the Epoch class!\n• Item modified  Epoch as Underworld Epoch on  January 17th, 2020.",
-    "tags": [
-      "evi",
-      "gold"
-    ],
-    "daRequired": false,
-    "dcRequired": true,
-    "isRare": true,
     "isSpecialOffer": true
   },
   {
@@ -2296,9 +2220,7 @@
     "description": "These lightsticks last forever! Slots into the gauntlet of the Epoch armor. The 2023 artifact for the Epoch class!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22408272",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "1",
     "stats": "Crit +5, WIS +1, END +1, CHA +1, LUK +1, INT +1, DEX +1, STR +1, Bonus +5",
     "resists": "All +1",
@@ -2310,18 +2232,15 @@
     "obtainMethods": [
       {
         "location": "Redeem the code received from purchasing the AE 2023 Calendar from HeroMart",
-        "price": "$19.95 USD (2023 Standard) / $29.95 USD (2023 Collector's Edition) / $24.95-34.95 USD (2025) / $64.85 (20th Anniversary Bundle) + Postage",
         "priceType": "gold",
+        "price": "$19.95 USD (2023 Standard) / $29.95 USD (2023 Collector's Edition) / $24.95-34.95 USD (2025) / $64.85 (20th Anniversary Bundle) + Postage",
         "sellback": "N/A",
         "daRequired": false,
         "dcRequired": true
       }
     ],
-    "notes": "• Item cannot be destroyed. \n• Item occupies the player's bracer slot when equipped. \n• Item modified  Epoch as Timeless Destiny Epoch on  March 3rd, 2023.",
-    "tags": [
-      "lig",
-      "gold"
-    ],
+    "notes": "• Item cannot be destroyed.\n• Item occupies the player's bracer slot when equipped.\n• Item modified  Epoch as Timeless Destiny Epoch on  March 3rd, 2023.",
+    "tags": ["lig", "gold"],
     "daRequired": false,
     "dcRequired": true,
     "isSpecialOffer": true
@@ -2335,9 +2254,7 @@
     "description": "The 2025 artifact for the Epoch class!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22420422",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "1",
     "stats": "Crit +5, WIS +1, END +1, CHA +1, LUK +1, INT +1, DEX +1, STR +1, Bonus +5",
     "resists": "All +1",
@@ -2349,18 +2266,15 @@
     "obtainMethods": [
       {
         "location": "Redeem the code received from purchasing the AE 2025 Calendar from HeroMart",
-        "price": "$19.95 USD (2025 Standard) / $29.95 USD (2025 Collector's Edition) / $24.95-34.95 USD (2025 HeroMart 3.0) / $59.95-63.95 (2025 Collector's Edition Bundle - Holiday Promotional Price) / $74.85-78.85 USD (2025 Collector's Edition Bundle - Full Price) + Postage",
         "priceType": "gold",
+        "price": "$19.95 USD (2025 Standard) / $29.95 USD (2025 Collector's Edition) / $24.95-34.95 USD (2025 HeroMart 3.0) / $59.95-63.95 (2025 Collector's Edition Bundle - Holiday Promotional Price) / $74.85-78.85 USD (2025 Collector's Edition Bundle - Full Price) + Postage",
         "sellback": "N/A",
         "daRequired": false,
         "dcRequired": true
       }
     ],
-    "notes": "• Item cannot be destroyed. \n• Item occupies the player's bracer slot when equipped. \n• Item modified  Epoch as Lament Epoch on  January 10th, 2025.",
-    "tags": [
-      "lig",
-      "gold"
-    ],
+    "notes": "• Item cannot be destroyed.\n• Item occupies the player's bracer slot when equipped.\n• Item modified  Epoch as Lament Epoch on  January 10th, 2025.",
+    "tags": ["lig", "gold"],
     "daRequired": false,
     "dcRequired": true,
     "isSpecialOffer": true

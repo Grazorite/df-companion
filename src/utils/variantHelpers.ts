@@ -306,44 +306,8 @@ function tokenizeVariantName(name: string): string[] {
   return normalizeDisplayText(name).replace(/[()]/g, ' ').split(/\s+/).filter(Boolean)
 }
 
-function tokenizeFamilyComparisonName(name: string): string[] {
-  const tokens = tokenizeVariantName(name)
-  while (tokens.length > 0 && /^(jr|sr)\.?$/i.test(tokens[tokens.length - 1])) {
-    tokens.pop()
-  }
-  return tokens
-}
-
-function titleCaseTokens(tokens: string[]): string {
-  return tokens
-    .map((token) => token.replace(/\b\w/g, (character) => character.toUpperCase()))
-    .join(' ')
-}
-
 export function getDisplayFamilyName(family: ItemFamily): string {
-  if (family.familyOrigin !== 'cross-post') return displayTitle(family.familyName)
-
-  const tokenSets = family.levelVariants.map((level) =>
-    tokenizeFamilyComparisonName(stripAccessVariantSuffix(level.name))
-  )
-  if (tokenSets.length === 0) return displayTitle(family.familyName)
-
-  const reversed = tokenSets.map((tokens) => [...tokens].reverse())
-  const suffix: string[] = []
-  let index = 0
-
-  while (true) {
-    const candidate = reversed[0][index]
-    if (!candidate) break
-    if (reversed.every((tokens) => tokens[index]?.toLowerCase() === candidate.toLowerCase())) {
-      suffix.unshift(candidate)
-      index += 1
-      continue
-    }
-    break
-  }
-
-  return displayTitle(suffix.length > 0 ? titleCaseTokens(suffix) : family.familyName)
+  return displayTitle(family.familyName)
 }
 
 function getParentheticalVariantBaseName(familyName: string): string | undefined {
@@ -362,7 +326,7 @@ function getParentheticalVariantParts(
     .filter(Boolean)
   if (variants.length === 0) return undefined
 
-  const knownVariantTerms = new Set(['mask', 'head', 'helm', 'hood', 'cowl'])
+  const knownVariantTerms = new Set(['face', 'mask', 'head', 'helm', 'hood', 'cowl'])
   if (!variants.every((variant) => knownVariantTerms.has(variant.toLowerCase()))) return undefined
 
   return {
@@ -382,8 +346,7 @@ function getCondensedTitleVariant(levelName: string, familyName: string): string
   const parentheticalBaseName = familyName.replace(/\s*\([^)]*\)\s*$/, '').trim()
 
   if (normalizedLevelName === familyName) {
-    const tailWord = familyName.split(/\s+/).at(-1)
-    return tailWord && tailWord !== familyName ? tailWord : undefined
+    return undefined
   }
 
   if (normalizedLevelName.startsWith(`${familyName} `)) {
@@ -561,7 +524,7 @@ function getLevelVariantLabelInfo(
     const normalizedLevelName = normalizeDisplayText(stripAccessVariantSuffix(level.name))
     if (normalizedLevelName === familyName) {
       return {
-        label: familyName,
+        label: normalizedVariantName === '(DC)' ? '(DC)' : '(Base)',
         canAddLevelSuffix: true,
         levelLabel,
         hasDC,
@@ -697,19 +660,83 @@ function shouldUseCompactDcOnlyLabel(
   )
 }
 
+function shouldUsePlainLevelLabels(levels: LevelVariant[], familyName?: string): boolean {
+  if (!familyName || levels.length <= 1) return false
+
+  const familyLabel = normalizeDisplayText(familyName).toLowerCase()
+  const levelLabels = levels.map((level) => String(level.actualLevel ?? level.levelDisplay))
+
+  return (
+    new Set(levelLabels).size === levels.length &&
+    levels.every((level) => {
+      if (level.variantName) return false
+      return (
+        normalizeDisplayText(stripAccessVariantSuffix(level.name)).toLowerCase() === familyLabel
+      )
+    })
+  )
+}
+
+function getPirateMonkeyVariantLabels(
+  levels: LevelVariant[],
+  familyName?: string
+): string[] | null {
+  if (!familyName || normalizeDisplayText(familyName).toLowerCase() !== 'pirate monkey') {
+    return null
+  }
+
+  const familyLabel = normalizeDisplayText(familyName)
+  const formByLevel = levels.map((level) => {
+    const cleanName = normalizeDisplayText(stripAccessVariantSuffix(level.name))
+    const levelLabel = String(level.actualLevel ?? level.levelDisplay)
+    const hasDC = level.obtainVariants.some(obtainVariantHasDC)
+
+    let form = cleanName
+    if (cleanName.toLowerCase() === familyLabel.toLowerCase()) {
+      form = '(Base)'
+    } else if (cleanName.toLowerCase().startsWith(`${familyLabel.toLowerCase()} `)) {
+      form = cleanName.slice(familyLabel.length).trim()
+    }
+
+    return { form, levelLabel, hasDC }
+  })
+
+  const levelsByForm = new Map<string, Set<string>>()
+  for (const label of formByLevel) {
+    const key = label.form.toLowerCase()
+    levelsByForm.set(key, levelsByForm.get(key) ?? new Set<string>())
+    levelsByForm.get(key)!.add(label.levelLabel)
+  }
+
+  return formByLevel.map(({ form, levelLabel, hasDC }) => {
+    const shouldShowLevel =
+      form === '(Base)' || (levelsByForm.get(form.toLowerCase())?.size ?? 0) > 1
+    const base = shouldShowLevel ? `${form} (${levelLabel})` : form
+    return hasDC ? `${base} (DC)` : base
+  })
+}
+
 export function getLevelVariantLabels(
   levels: LevelVariant[],
   familyName?: string,
   itemType?: ItemType
 ): string[] {
+  const specialLabels = getPirateMonkeyVariantLabels(levels, familyName)
+  if (specialLabels) return specialLabels
+
+  if (shouldUsePlainLevelLabels(levels, familyName)) {
+    return levels.map((level) => String(level.actualLevel ?? level.levelDisplay))
+  }
+
   const useTitleLabels = familyName ? hasTitleDrivenVariantNames(levels, familyName) : false
   const labels = levels.map((level) =>
     getLevelVariantLabelInfo(level, familyName, useTitleLabels, itemType)
   )
   const useCompactDcOnlyLabel = shouldUseCompactDcOnlyLabel(levels, labels)
 
-  return labels.map((label, index) => {
+  const resolvedLabels = labels.map((label, index) => {
     if (useCompactDcOnlyLabel && label.hasDC) return '(DC)'
+    if (useCompactDcOnlyLabel) return '(Base)'
     const accessDuplicateSuffix = getAccessDuplicateSuffix(labels, index)
     if (accessDuplicateSuffix) {
       return `${label.label} (${accessDuplicateSuffix})`
@@ -718,6 +745,25 @@ export function getLevelVariantLabels(
     if (!shouldAddLevelSuffixForDuplicate(levels, labels, index)) return label.label
     return `${label.label} (${label.levelLabel})`
   })
+
+  const baseLabelIndexes = resolvedLabels.flatMap((label, index) =>
+    label === '(Base)' || label === '(Base) (DA)' || label === '(Base) (DC)' ? [index] : []
+  )
+  const baseLevelLabels = new Set(
+    baseLabelIndexes.map((index) => String(levels[index].actualLevel ?? levels[index].levelDisplay))
+  )
+
+  if (baseLabelIndexes.length > 1 && baseLevelLabels.size > 1) {
+    return resolvedLabels.map((label, index) => {
+      if (!baseLabelIndexes.includes(index)) return label
+      const levelLabel = String(levels[index].actualLevel ?? levels[index].levelDisplay)
+      if (label.endsWith('(DA)')) return `${levelLabel} (DA)`
+      if (label.endsWith('(DC)')) return `${levelLabel} (DC)`
+      return levelLabel
+    })
+  }
+
+  return resolvedLabels
 }
 
 export function getLevelVariantLabel(

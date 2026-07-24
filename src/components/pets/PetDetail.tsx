@@ -11,6 +11,7 @@ import {
   isSingleVariant,
 } from '../../utils/variantHelpers'
 import { displayTitle, normalizeDisplayText } from '../../utils/displayText'
+import { buildDisplayImages } from '../../utils/imageLabels'
 import ElementPill from '../shared/ElementPill'
 import AccessPills from '../shared/AccessPills'
 import NotesList from '../shared/NotesList'
@@ -289,24 +290,12 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
   // Use displayData.alsoSee for related pets (works for both single and multi-variant)
   const relatedPets = useRelatedPets(displayData.alsoSee ?? [])
 
-  // Build array of all images (main + alternatives)
   const allImages = useMemo(() => {
-    const images: Array<{ url: string; caption: string }> = []
-    if (displayData.imageUrl) {
-      images.push({
-        url: displayData.imageUrl,
-        caption: displayFamilyName ?? displayTitle(pet.name),
-      })
-    }
-    if (displayData.alternativeImages) {
-      images.push(
-        ...displayData.alternativeImages.map((image) => ({
-          url: image.url,
-          caption: image.caption || 'Alternative Image',
-        }))
-      )
-    }
-    return images
+    return buildDisplayImages({
+      imageUrl: displayData.imageUrl,
+      alternativeImages: displayData.alternativeImages,
+      mainCaption: displayFamilyName ?? displayTitle(pet.name),
+    })
   }, [displayData.alternativeImages, displayData.imageUrl, displayFamilyName, pet.name])
 
   useEffect(() => {
@@ -532,29 +521,22 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
       {currentImage ? (
         <div className="mb-6">
           <PetImage src={currentImage.url} name={displayTitle(pet.name)} />
-          {allImages.length > 1 && currentImage.caption && (
-            <p className="max-w-xs mx-auto mt-2 text-center text-xs text-text-secondary">
-              {currentImage.caption}
-            </p>
-          )}
           {/* Image toggle - only show if multiple images exist */}
           {allImages.length > 1 && (
-            <div className="max-w-xs mx-auto mt-2">
-              <div className="flex gap-2 justify-center">
-                {allImages.map((_image, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => setActiveImageIndex(idx)}
-                    className={`px-3 py-1 text-xs rounded-md transition-colors ${
-                      idx === activeImageIndex
-                        ? 'bg-gold text-bg-base font-medium'
-                        : 'bg-bg-overlay text-text-secondary hover:bg-bg-elevated'
-                    }`}
-                  >
-                    {idx === 0 ? 'Main' : `Alt ${idx}`}
-                  </button>
-                ))}
-              </div>
+            <div className="mt-4 flex flex-wrap gap-2 justify-center">
+              {allImages.map((image, idx) => (
+                <button
+                  key={`${image.url}-${idx}`}
+                  onClick={() => setActiveImageIndex(idx)}
+                  className={`min-h-11 px-4 py-2 rounded-lg text-sm transition-colors ${
+                    idx === activeImageIndex
+                      ? 'bg-gold text-bg-base'
+                      : 'bg-bg-surface border border-border-default text-text-secondary hover:text-text-primary hover:border-border-hover'
+                  }`}
+                >
+                  {image.caption}
+                </button>
+              ))}
             </div>
           )}
         </div>

@@ -8,9 +8,7 @@
     "description": "Wishbones are supposed to be lucky... right? This item requires a Dragon Amulet. Visit the Black Market Moglin to upgrade this item.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19281951",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "1",
     "stats": "Crit +1, LUK +3",
     "resists": "None",
@@ -21,17 +19,16 @@
     "obtainMethods": [
       {
         "location": "Transformed from Ossein Chest (D-Amulet/D-Coins)",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "19 Dragon Coins",
-        "daRequired": true
+        "daRequired": true,
+        "dcRequired": true
       }
     ],
-    "tags": [
-      "dar",
-      "free"
-    ],
+    "tags": ["dar", "free"],
     "daRequired": true,
+    "dcRequired": true,
     "isRare": true
   },
   {
@@ -43,9 +40,7 @@
     "description": "This gold-edged card has magical powers! It's a wonder the Card Masters are willing to sell you any of them!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17759289",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "50",
     "stats": "Dodge +5, Crit +4, Bonus +6",
     "resists": "Wind +10",
@@ -56,17 +51,14 @@
     "obtainMethods": [
       {
         "location": "Ellial's Card Shop",
-        "price": "1,500 Gold",
         "priceType": "gold",
+        "price": "1,500 Gold",
         "sellback": "150 Gold",
-        "daRequired": false
+        "daRequired": true
       }
     ],
-    "tags": [
-      "sto",
-      "gold"
-    ],
-    "daRequired": false
+    "tags": ["sto", "gold"],
+    "daRequired": true
   },
   {
     "id": "accessory-ace-of-diamonds",
@@ -77,9 +69,7 @@
     "description": "This gold-edged card has magical powers! It's a wonder the Card Masters are willing to sell you any of them!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17759276",
     "releaseDate": "",
-    "elements": [
-      "WIN"
-    ],
+    "elements": ["WIN"],
     "level": "50",
     "stats": "Dodge +5, WIS +10",
     "resists": "Stone +10",
@@ -90,17 +80,14 @@
     "obtainMethods": [
       {
         "location": "Ellial's Card Shop",
-        "price": "1,500 Gold",
         "priceType": "gold",
+        "price": "1,500 Gold",
         "sellback": "150 Gold",
-        "daRequired": false
+        "daRequired": true
       }
     ],
-    "tags": [
-      "win",
-      "gold"
-    ],
-    "daRequired": false
+    "tags": ["win", "gold"],
+    "daRequired": true
   },
   {
     "id": "accessory-ace-of-hearts",
@@ -111,9 +98,7 @@
     "description": "This gold-edged card has magical powers! It's a wonder the Card Masters are willing to sell you any of them!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17759259",
     "releaseDate": "",
-    "elements": [
-      "FIR"
-    ],
+    "elements": ["FIR"],
     "level": "50",
     "stats": "Dodge +5, Crit +6, Bonus +4",
     "resists": "Ice +10",
@@ -124,17 +109,14 @@
     "obtainMethods": [
       {
         "location": "Ellial's Card Shop",
-        "price": "2,000 Gold",
         "priceType": "gold",
+        "price": "2,000 Gold",
         "sellback": "200 Gold",
-        "daRequired": false
+        "daRequired": true
       }
     ],
-    "tags": [
-      "fir",
-      "gold"
-    ],
-    "daRequired": false
+    "tags": ["fir", "gold"],
+    "daRequired": true
   },
   {
     "id": "accessory-ace-of-spades",
@@ -145,9 +127,7 @@
     "description": "This gold-edged card has magical powers! It's a wonder the Card Masters are willing to sell you any of them!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17759255",
     "releaseDate": "",
-    "elements": [
-      "WAT"
-    ],
+    "elements": ["WAT"],
     "level": "50",
     "stats": "Dodge +5, END +10",
     "resists": "Energy +10",
@@ -158,17 +138,14 @@
     "obtainMethods": [
       {
         "location": "Ellial's Card Shop",
-        "price": "2,000 Gold",
         "priceType": "gold",
+        "price": "2,000 Gold",
         "sellback": "200 Gold",
-        "daRequired": false
+        "daRequired": true
       }
     ],
-    "tags": [
-      "wat",
-      "gold"
-    ],
-    "daRequired": false
+    "tags": ["wat", "gold"],
+    "daRequired": true
   },
   {
     "id": "accessory-bacon-storm",
@@ -179,9 +156,7 @@
     "description": "Bacon raining down from the sky? Someone up there must like you! The smell of the bacon rain distracts the monsters, making them miss more! This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15998241",
     "releaseDate": "",
-    "elements": [
-      "BAC"
-    ],
+    "elements": ["BAC"],
     "level": "25",
     "stats": "Magic Def +1, Pierce Def +1, Melee Def +1, LUK +3",
     "resists": "None",
@@ -194,23 +169,20 @@
     "obtainMethods": [
       {
         "location": "Bacon Shop!",
-        "price": "15,000 Gold",
         "priceType": "gold",
+        "price": "15,000 Gold",
         "sellback": "1,500 Gold",
         "daRequired": true
       }
     ],
-    "tags": [
-      "bac",
-      "gold"
-    ],
+    "tags": ["bac", "gold"],
     "daRequired": true,
     "attacks": [
       {
         "name": "Bacon Storm",
         "description": "It's raining bacon!",
         "requirements": "Bacon Storm equipped",
-        "effect": "1 hit of 5-10 damage before damage modifiers (Boost, Resists, etc.) are applied; applies 'Bacon-distraction' (-20 Bonus) to target for 3 turns.",
+        "effect": "1 hit of 5-10 damage before damage modifiers (Boost, Resists, etc.) are applied; applies 'Bacon-distraction' (-20 Bonus) to target for 3 turns.\n, and corrections.\n• Verlyrus for updated effect.",
         "manaCost": "10",
         "cooldown": "29 - [(Player LUK/50), rounded down]",
         "damageType": "Magic",
@@ -229,9 +201,7 @@
     "description": "Yix gave this to you in recognition of your valiant efforts to save Popsprocket and the Energy Orb. Each of the four colored orbs represents one of the four pillars of hope: Light, Water, Mastery, and Balance. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=16140842",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "10",
     "stats": "Magic Def +1, Pierce Def +1, Melee Def +1",
     "resists": "None",
@@ -244,16 +214,13 @@
     "obtainMethods": [
       {
         "location": "War Shop",
-        "price": "0 Gold",
         "priceType": "free",
+        "price": "0 Gold",
         "sellback": "0 Gold",
         "daRequired": true
       }
     ],
-    "tags": [
-      "lig",
-      "free"
-    ],
+    "tags": ["lig", "free"],
     "daRequired": true,
     "isRare": true,
     "attacks": [
@@ -280,9 +247,7 @@
     "description": "\"Can't see... so many hearts!\" This trinket blinds your opponent, giving -50 to the hit rate. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17285912",
     "releaseDate": "",
-    "elements": [
-      "FIR"
-    ],
+    "elements": ["FIR"],
     "level": "5",
     "stats": "Crit +2",
     "resists": "None",
@@ -295,17 +260,14 @@
     "obtainMethods": [
       {
         "location": "Daddy's DC Shop",
-        "price": "200 Dragon Coins",
         "priceType": "dc",
-        "sellback": "180 Dragon Coins before 24 hours, 50 Dragon Coins after 24 hours",
+        "price": "200 Dragon Coins",
+        "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
         "daRequired": true,
         "dcRequired": true
       }
     ],
-    "tags": [
-      "fir",
-      "dc"
-    ],
+    "tags": ["fir", "dc"],
     "daRequired": true,
     "dcRequired": true,
     "isSeasonal": true,
@@ -328,11 +290,7 @@
     "id": "accessory-blue-box",
     "familyName": "Blue Box",
     "slug": "accessory-blue-box",
-    "aliasSlugs": [
-      "accessory-blue-box-i",
-      "accessory-blue-box-ii",
-      "accessory-blue-box-iii"
-    ],
+    "aliasSlugs": ["accessory-blue-box-i", "accessory-blue-box-ii", "accessory-blue-box-iii"],
     "type": "accessory",
     "subtype": "trinket",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18824753",
@@ -494,10 +452,7 @@
     "equipSlot": "Trinket",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "ene",
-      "gold"
-    ],
+    "tags": ["ene", "gold"],
     "isSeasonal": true,
     "hasDA": true,
     "hasDC": false,
@@ -505,9 +460,7 @@
     "hasFree": false,
     "hasMerge": false,
     "levelRange": "I-III",
-    "elements": [
-      "ENE"
-    ]
+    "elements": ["ENE"]
   },
   {
     "id": "accessory-boom-voice-brew",
@@ -518,9 +471,7 @@
     "description": "Knock out your enemies with the power of your voice! This trinket gives 140% dmg and a 1% chance to stun! This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18992185",
     "releaseDate": "",
-    "elements": [
-      "ENE"
-    ],
+    "elements": ["ENE"],
     "level": "30",
     "stats": "Crit +4, Magic Def +4, Pierce Def +4, Melee Def +4, END +3, INT +2, DEX +2, STR +2",
     "resists": "None",
@@ -533,18 +484,17 @@
     "obtainMethods": [
       {
         "location": "Def. Rares",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "100 Gold",
+        "price": "N/A",
         "requiredItems": "200 Defender's Medal",
-        "daRequired": true
+        "sellback": "100 Gold",
+        "daRequired": true,
+        "dmRequired": true
       }
     ],
-    "tags": [
-      "ene",
-      "merge"
-    ],
+    "tags": ["ene", "merge"],
     "daRequired": true,
+    "dmRequired": true,
     "attacks": [
       {
         "name": "Boom Voice Brew",
@@ -564,10 +514,7 @@
     "id": "accessory-booty-sniffer",
     "familyName": "Booty Sniffer",
     "slug": "accessory-booty-sniffer",
-    "aliasSlugs": [
-      "accessory-booty-sniffer",
-      "accessory-booty-sniffer"
-    ],
+    "aliasSlugs": ["accessory-booty-sniffer", "accessory-booty-sniffer"],
     "type": "accessory",
     "subtype": "trinket",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21818652",
@@ -588,7 +535,8 @@
     ],
     "shared": {
       "description": "Summon the LSS Booty Sniffer to wash away your foes and leave behind bonus gold! Arr! This trinket be water damage 'n honor o' th' Red Betty!",
-      "rarity": "5"
+      "rarity": "5",
+      "notes": "• Having this Trinket in the player's inventory doubled the amount of 'Booty Collected' (waves completed) per wave cleared in  The Quest for More Booty! event for the Mazurek side.\n• Having this Trinket in the player's inventory doubled the amount of 'Booty Collected' (waves completed) per wave cleared in  The Quest for More Booty! event for the Rhubarb side."
     },
     "levelVariants": [
       {
@@ -603,7 +551,7 @@
             "location": "Booty Challenge Rares",
             "price": "400 Dragon Coins",
             "priceType": "dc",
-            "sellback": "360 Dragon Coins before 24 hours, 100 Dragon Coins after 24 hours",
+            "sellback": "360 DC (<24 hours) / 100 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -618,7 +566,7 @@
             "name": "Booty Sniffer",
             "description": "Summon the LSS Booty Sniffer!",
             "requirements": "Booty Sniffer (1) equipped",
-            "effect": "4 hits of 50% damage, amounting to 200% damage; 20% chance to gain an additional Level/2 Gold per battle. (Pop-up: Yarr! Thar be <Level/2> more gold in ye pockets now!)",
+            "effect": "4 hits of 50% damage, amounting to 200% damage; 20% chance to gain an additional Level/2 Gold per battle. (Pop-up: Yarr! Thar be <Level/2> more gold in ye pockets now!)\n, and corrections.\n• Verlyrus for updated effect.",
             "manaCost": "10",
             "cooldown": "98 - [(Player LUK/50), rounded down]",
             "damageType": "As weapon",
@@ -642,7 +590,7 @@
             "location": "Booty Challenge Rares",
             "price": "400 Dragon Coins",
             "priceType": "dc",
-            "sellback": "360 Dragon Coins before 24 hours, 100 Dragon Coins after 24 hours",
+            "sellback": "360 DC (<24 hours) / 100 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -657,7 +605,7 @@
             "name": "Booty Sniffer",
             "description": "Summon the LSS Booty Sniffer!",
             "requirements": "Booty Sniffer (2) equipped",
-            "effect": "4 hits of 50% damage, amounting to 200% damage; 20% chance to gain an additional Level/2 Gold per battle. (Pop-up: Yarr! Thar be <Level/2> more gold in ye pockets now!)",
+            "effect": "4 hits of 50% damage, amounting to 200% damage; 20% chance to gain an additional Level/2 Gold per battle. (Pop-up: Yarr! Thar be <Level/2> more gold in ye pockets now!)\n, and corrections.\n• Verlyrus for updated effect.",
             "manaCost": "10",
             "cooldown": "98 - [(Player LUK/50), rounded down]",
             "damageType": "As weapon",
@@ -674,21 +622,14 @@
     "equipSlot": "Trinket",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dc",
-      "wat",
-      "win"
-    ],
+    "tags": ["dc", "wat", "win"],
     "hasDA": false,
     "hasDC": true,
     "hasDM": false,
     "hasFree": false,
     "hasMerge": false,
     "levelRange": "5",
-    "elements": [
-      "WAT",
-      "WIN"
-    ]
+    "elements": ["WAT", "WIN"]
   },
   {
     "id": "accessory-bottled-wind",
@@ -699,9 +640,7 @@
     "description": "The gusting winds in this bottle makes it harder for your enemies to hit you.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15387140",
     "releaseDate": "",
-    "elements": [
-      "WIN"
-    ],
+    "elements": ["WIN"],
     "level": "15",
     "stats": "Dodge +1",
     "resists": "None",
@@ -712,17 +651,14 @@
     "obtainMethods": [
       {
         "location": "Ice Titan!, Earth Titan!, Energy Titan!, Fire Titan!, Wind Titan!, Water Titan!, Bomb the Elementals!, Elemental Waves",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "100 Gold",
-        "daRequired": false
+        "daRequired": true
       }
     ],
-    "tags": [
-      "win",
-      "free"
-    ],
-    "daRequired": false
+    "tags": ["win", "free"],
+    "daRequired": true
   },
   {
     "id": "accessory-bubble-charm",
@@ -733,9 +669,7 @@
     "description": "This trinket causes bubbles to form around you wherever you go! Side effects of breathing in so much bubble vapor are currently unknown, but it's probably fine. Those bubbles sure are distracting, though... Proof of victory over \"In Wanderland\".",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22407688",
     "releaseDate": "",
-    "elements": [
-      "POI"
-    ],
+    "elements": ["POI"],
     "level": "1",
     "stats": "Crit +5, WIS +2, END +2, CHA +2, LUK +2, INT +2, DEX +2, STR +2, Bonus +5",
     "resists": "None",
@@ -748,19 +682,18 @@
     "obtainMethods": [
       {
         "location": "In Wanderland (Shop)",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "N/A",
+        "price": "N/A",
         "requiredItems": "1 Dormant Pipe +1 & 1 Essence of Wonder",
-        "daRequired": false
+        "sellback": "N/A",
+        "daRequired": true,
+        "dcRequired": true
       }
     ],
-    "notes": "• Equipping this trinket displays  animated pink bubbles over the player.",
-    "tags": [
-      "poi",
-      "merge"
-    ],
-    "daRequired": false,
+    "notes": "• Equipping this trinket displays  .",
+    "tags": ["poi", "merge"],
+    "daRequired": true,
+    "dcRequired": true,
     "attacks": [
       {
         "name": "Bubbles",
@@ -863,7 +796,7 @@
             "location": "TNE Loot for DCs",
             "price": "150 Dragon Coins",
             "priceType": "dc",
-            "sellback": "135 Dragon Coins before 24 hours, 38 Dragon Coins after 24 hours",
+            "sellback": "135 DC (<24 hours) / 38 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -910,7 +843,7 @@
             "location": "TNE Loot for DCs",
             "price": "150 Dragon Coins",
             "priceType": "dc",
-            "sellback": "135 Dragon Coins before 24 hours, 38 Dragon Coins after 24 hours",
+            "sellback": "135 DC (<24 hours) / 38 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -957,7 +890,7 @@
             "location": "TNE Loot for DCs",
             "price": "150 Dragon Coins",
             "priceType": "dc",
-            "sellback": "135 Dragon Coins before 24 hours, 38 Dragon Coins after 24 hours",
+            "sellback": "135 DC (<24 hours) / 38 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -1004,7 +937,7 @@
             "location": "TNE Loot for DCs",
             "price": "150 Dragon Coins",
             "priceType": "dc",
-            "sellback": "135 Dragon Coins before 24 hours, 38 Dragon Coins after 24 hours",
+            "sellback": "135 DC (<24 hours) / 38 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -1051,7 +984,7 @@
             "location": "TNE Loot for DCs",
             "price": "150 Dragon Coins",
             "priceType": "dc",
-            "sellback": "135 Dragon Coins before 24 hours, 38 Dragon Coins after 24 hours",
+            "sellback": "135 DC (<24 hours) / 38 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -1067,20 +1000,14 @@
     "equipSlot": "Trinket",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dar",
-      "dc",
-      "free"
-    ],
+    "tags": ["dar", "dc", "free"],
     "hasDA": true,
     "hasDC": true,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-V",
-    "elements": [
-      "DAR"
-    ]
+    "elements": ["DAR"]
   },
   {
     "id": "accessory-chi-blast",
@@ -1091,9 +1018,7 @@
     "description": "There isn't any hero more spirited than you are!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15676451",
     "releaseDate": "",
-    "elements": [
-      "WIN"
-    ],
+    "elements": ["WIN"],
     "level": "5",
     "stats": "None",
     "resists": "None",
@@ -1106,18 +1031,15 @@
     "obtainMethods": [
       {
         "location": "Akira Shop",
-        "price": "200 Dragon Coins",
         "priceType": "dc",
-        "sellback": "180 Dragon Coins before 24 hours, 50 Dragon Coins after 24 hours",
-        "daRequired": false,
+        "price": "200 Dragon Coins",
+        "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
+        "daRequired": true,
         "dcRequired": true
       }
     ],
-    "tags": [
-      "win",
-      "dc"
-    ],
-    "daRequired": false,
+    "tags": ["win", "dc"],
+    "daRequired": true,
     "dcRequired": true,
     "attacks": [
       {
@@ -1143,9 +1065,7 @@
     "description": "This item requires a Dragon Amulet. Using the power of this trinket, you can summon a small army of chocolate bunnies to attack your foe for 125% of you weapon's base damage!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15865167",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "5",
     "stats": "Crit +2, CHA +5, DEX +7",
     "resists": "None",
@@ -1158,24 +1078,23 @@
     "obtainMethods": [
       {
         "location": "Transformed from Green ZigZag Egg (D-Amulet)",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "50 Gold",
         "daRequired": true
       },
       {
         "location": "Transformed from Green ZigZag Egg (D-Amulet/D-Coins)",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "19 Dragon Coins",
-        "daRequired": true
+        "daRequired": true,
+        "dcRequired": true
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": true,
+    "dcRequired": true,
     "isRare": true,
     "attacks": [
       {
@@ -1193,6 +1112,63 @@
     ]
   },
   {
+    "id": "accessory-the-corrupted-seven",
+    "name": "The Corrupted Seven",
+    "slug": "accessory-the-corrupted-seven",
+    "type": "accessory",
+    "subtype": "trinket",
+    "description": "Summon the Seven Corrupted elemental spirits to attack your foe! Increases your Boost by 5 on use as well. This item requires a Dragon Amulet.",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22375031",
+    "releaseDate": "",
+    "elements": ["EVI"],
+    "level": "60",
+    "stats": "Crit +5, WIS +5, END +5, CHA +5, LUK +5, INT +8, DEX +8, STR +8, Bonus +5",
+    "resists": "All +4, Health -4",
+    "ability": "The Corrupted Seven",
+    "abilityUrl": "https://forums2.battleon.com/f/tm.asp?m=22375034",
+    "rarity": "0",
+    "itemType": "Trinket",
+    "equipSpot": "Trinket",
+    "category": "Armor",
+    "obtainMethods": [
+      {
+        "location": "Pandora's Gauntlet",
+        "priceType": "free",
+        "price": "N/A",
+        "sellback": "N/A",
+        "daRequired": true,
+        "dcRequired": true
+      },
+      {
+        "location": "Pandora's Merges",
+        "priceType": "merge",
+        "price": "N/A",
+        "requiredItems": "5 Fragment of Ethereal Woe",
+        "sellback": "N/A",
+        "daRequired": true,
+        "dcRequired": true
+      }
+    ],
+    "notes": "• Trinket has an uncommon drop rate from the quest Pandora's Gauntlet.\n• Trinket initially required 10  Fragment of Ethereal Woe; this was lowered to 5 on  February 14th, 2020.\n• Trinket was DC tagged on  July 29th, 2022.",
+    "tags": ["evi", "free"],
+    "daRequired": true,
+    "dcRequired": true,
+    "attacks": [
+      {
+        "name": "The Corrupted Seven",
+        "description": "34 hits x 5.9% damage (200%) \n Self: +5% Boost for 4 turns. \n This skill deals Poison, Darkness, Energy, Fire, Wind, Nature, and Water damage.",
+        "requirements": "The Corrupted Seven equipped",
+        "effect": "Applies 'Empowered' (+5% Boost) to player for 4 turns inclusive; 34 hits of ~5.9% damage, amounting to 200% damage.\n• Previously had the tooltip: Summon the Corrupted Seven!\n• The following changes were implemented on  June 20th, 2025:\n  • Tooltip was updated.\n  • Cooldown was lowered from 34 to 19.",
+        "manaCost": "30",
+        "cooldown": "19 - [(Player LUK/50), rounded down]",
+        "damageType": "As weapon",
+        "element": "Poison / Darkness / Energy / Fire / Wind / Nature / Water",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-CorruptedSeven.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-CorruptedSeven-Appearance1.0.png"
+      }
+    ]
+  },
+  {
     "id": "accessory-crogen-amulet",
     "name": "Crogen Amulet",
     "slug": "accessory-crogen-amulet",
@@ -1201,9 +1177,7 @@
     "description": "Use this magical amulet in battle to unleash holy protection magic! This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17767187",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "40",
     "stats": "Magic Def +4, Pierce Def +4, Melee Def +4, WIS +3, END +3",
     "resists": "None",
@@ -1216,24 +1190,21 @@
     "obtainMethods": [
       {
         "location": "Teral's Gear",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "400 Gold",
+        "price": "N/A",
         "requiredItems": "5 Gold Cabit Tail & 5 Troglomite Eye",
+        "sellback": "400 Gold",
         "daRequired": true
       }
     ],
-    "tags": [
-      "nat",
-      "merge"
-    ],
+    "tags": ["nat", "merge"],
     "daRequired": true,
     "attacks": [
       {
         "name": "Crogen Amulet",
         "description": "+20 Resist to Light and Darkness",
         "requirements": "Crogen Amulet equipped",
-        "effect": "Applies +20 Darkness Resist and +20 Light Resist to player for 10 turns inclusive.",
+        "effect": "Applies +20 Darkness Resist and +20 Light Resist to player for 10 turns inclusive.\n, and corrections.\n• Verlyrus for updated effect.\n• TheDanishGuy for corrections.",
         "manaCost": "50",
         "cooldown": "29 - [(Player LUK/50), rounded down]",
         "damageType": "N/A",
@@ -1252,9 +1223,7 @@
     "description": "May your aim be true.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15387100",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "15",
     "stats": "Bonus +1",
     "rarity": "12",
@@ -1264,17 +1233,14 @@
     "obtainMethods": [
       {
         "location": "Ice Titan!, Earth Titan!, Energy Titan!, Fire Titan!, Wind Titan!, Water Titan!, Bomb the Elementals!, Elemental Waves",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "100 Gold",
-        "daRequired": false
+        "daRequired": true
       }
     ],
-    "tags": [
-      "lig",
-      "free"
-    ],
-    "daRequired": false
+    "tags": ["lig", "free"],
+    "daRequired": true
   },
   {
     "id": "accessory-defender-cannon-mk",
@@ -1351,7 +1317,8 @@
             "priceType": "merge",
             "sellback": "200 Gold",
             "requiredItems": "2,000 Defender's Medal",
-            "daRequired": false
+            "daRequired": true,
+            "dmRequired": true
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21910606",
@@ -1389,7 +1356,8 @@
             "priceType": "merge",
             "sellback": "400 Gold",
             "requiredItems": "1 Defender Cannon Mk. I & 3,000 Defender's Medal",
-            "daRequired": false
+            "daRequired": true,
+            "dmRequired": true
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21914409",
@@ -1427,7 +1395,8 @@
             "priceType": "merge",
             "sellback": "600 Gold",
             "requiredItems": "1 Defender Cannon Mk. II & 4,500 Defender's Medal",
-            "daRequired": false
+            "daRequired": true,
+            "dmRequired": true
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21914791",
@@ -1465,7 +1434,8 @@
             "priceType": "merge",
             "sellback": "600 Gold",
             "requiredItems": "1 Defender Cannon Mk. III & 4,500 Defender's Medal",
-            "daRequired": false
+            "daRequired": true,
+            "dmRequired": true
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21914831",
@@ -1493,19 +1463,14 @@
     "equipSlot": "Trinket",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "merge",
-      "met"
-    ],
-    "hasDA": false,
+    "tags": ["merge", "met"],
+    "hasDA": true,
     "hasDC": false,
-    "hasDM": false,
+    "hasDM": true,
     "hasFree": false,
     "hasMerge": true,
     "levelRange": "I-IV",
-    "elements": [
-      "MET"
-    ]
+    "elements": ["MET"]
   },
   {
     "id": "accessory-dragon-s-ethereal-scale",
@@ -1516,9 +1481,7 @@
     "description": "This dragon scale was shed by your dragon after you defeated them in the Arena at the Edge of Time. It radiates with an unknown power; perhaps the magic of the Inn itself? Proof of victory over \"Your Dragon!\". (Can be upgraded)",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22422253",
     "releaseDate": "",
-    "elements": [
-      "EVI"
-    ],
+    "elements": ["EVI"],
     "level": "70",
     "stats": "Block +5, Dodge +5, Parry +5, Crit +5, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +5, END +5, CHA +10, LUK +10, INT +5, DEX +5, STR +5, Bonus +5",
     "resists": "All +5, Health -5",
@@ -1529,18 +1492,17 @@
     "obtainMethods": [
       {
         "location": "Your Dragon!",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "N/A",
-        "daRequired": false
+        "daRequired": true,
+        "dcRequired": true
       }
     ],
     "notes": "• (Can be upgraded... coming soon!) excerpt was replaced by (Can be upgraded) on  June 27th, 2025.",
-    "tags": [
-      "evi",
-      "free"
-    ],
-    "daRequired": false
+    "tags": ["evi", "free"],
+    "daRequired": true,
+    "dcRequired": true
   },
   {
     "id": "accessory-dragonfable-friends",
@@ -1551,9 +1513,7 @@
     "description": "Call upon your friends to help you in battle!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20323184",
     "releaseDate": "",
-    "elements": [
-      "GOO"
-    ],
+    "elements": ["GOO"],
     "level": "1",
     "stats": "Crit +1, LUK +3",
     "resists": "None",
@@ -1566,18 +1526,17 @@
     "obtainMethods": [
       {
         "location": "Redeem the code received from purchasing the DragonFable Friends Poster from HeroMart",
-        "price": "$9.95 USD (Unsigned) / $25 USD (Signed) + Postage",
         "priceType": "gold",
+        "price": "$9.95 USD (Unsigned) / $25 USD (Signed) + Postage",
         "sellback": "N/A",
-        "daRequired": false
+        "daRequired": false,
+        "dcRequired": true
       }
     ],
     "notes": "• Item cannot be destroyed.",
-    "tags": [
-      "goo",
-      "gold"
-    ],
+    "tags": ["goo", "gold"],
     "daRequired": false,
+    "dcRequired": true,
     "isRare": true,
     "isSpecialOffer": true,
     "attacks": [
@@ -1604,9 +1563,7 @@
     "description": "Draw fortitude from the earth itself and increase your health.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15386834",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "15",
     "stats": "END +2",
     "rarity": "12",
@@ -1616,17 +1573,14 @@
     "obtainMethods": [
       {
         "location": "Ice Titan!, Earth Titan!, Energy Titan!, Fire Titan!, Wind Titan!, Water Titan!, Bomb the Elementals!, Elemental Waves",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "100 Gold",
-        "daRequired": false
+        "daRequired": true
       }
     ],
-    "tags": [
-      "sto",
-      "free"
-    ],
-    "daRequired": false
+    "tags": ["sto", "free"],
+    "daRequired": true
   },
   {
     "id": "accessory-eggsalted-remnant",
@@ -1637,9 +1591,7 @@
     "description": "A shard of power from a (hopefully forever) lost reality. Focusing your will into it summons... well, you'll see.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22401934",
     "releaseDate": "",
-    "elements": [
-      "BAC"
-    ],
+    "elements": ["BAC"],
     "level": "60",
     "stats": "Block +4, Dodge +4, Parry +4, Crit +10, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +10, END +10, CHA +10, LUK +10, INT +10, DEX +10, STR +10, Bonus +10",
     "resists": "Nature +10, Fire +10, Bacon +5",
@@ -1652,17 +1604,16 @@
     "obtainMethods": [
       {
         "location": "Eggsalted Chickencow",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "0 Dragon Coins",
-        "daRequired": false
+        "daRequired": false,
+        "dcRequired": true
       }
     ],
-    "tags": [
-      "bac",
-      "free"
-    ],
+    "tags": ["bac", "free"],
     "daRequired": false,
+    "dcRequired": true,
     "attacks": [
       {
         "name": "Summon Eggsalted",
@@ -1687,9 +1638,7 @@
     "description": "Celebrate the end of Book One! The world of Lore needs elemental unity and balance between the planes for peace.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19679011",
     "releaseDate": "",
-    "elements": [
-      "GOO"
-    ],
+    "elements": ["GOO"],
     "level": "5",
     "stats": "Crit +2, CHA +5, INT +7, DEX +7, STR +7",
     "resists": "None",
@@ -1702,17 +1651,16 @@
     "obtainMethods": [
       {
         "location": "Purchase the 1000 DragonCoins + Elemental Unity Package",
-        "price": "$5.00 USD",
         "priceType": "gold",
+        "price": "$5.00 USD",
         "sellback": "0 Dragon Coins",
-        "daRequired": false
+        "daRequired": false,
+        "dcRequired": true
       }
     ],
-    "tags": [
-      "goo",
-      "gold"
-    ],
+    "tags": ["goo", "gold"],
     "daRequired": false,
+    "dcRequired": true,
     "isSpecialOffer": true,
     "attacks": [
       {
@@ -1863,7 +1811,8 @@
           "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-ElementalUnity-Appearance1.0.png"
         }
       ],
-      "rarity": "77"
+      "rarity": "77",
+      "notes": "• Defender's Medal costs for these items were lowered from 500 to 100 on  August 2nd, 2024."
     },
     "levelVariants": [
       {
@@ -1881,7 +1830,9 @@
             "priceType": "merge",
             "sellback": "0 Dragon Coins",
             "requiredItems": "1 Elemental Unity & 100 Defender's Medal",
-            "daRequired": false
+            "daRequired": false,
+            "dcRequired": true,
+            "dmRequired": true
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=19769625",
@@ -1919,7 +1870,9 @@
             "priceType": "merge",
             "sellback": "0 Dragon Coins",
             "requiredItems": "1 Elemental Unity Defender I & 100 Defender's Medal",
-            "daRequired": false
+            "daRequired": false,
+            "dcRequired": true,
+            "dmRequired": true
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=19775268",
@@ -1957,7 +1910,9 @@
             "priceType": "merge",
             "sellback": "0 Dragon Coins",
             "requiredItems": "1 Elemental Unity Defender II & 100 Defender's Medal",
-            "daRequired": false
+            "daRequired": false,
+            "dcRequired": true,
+            "dmRequired": true
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=19775269",
@@ -1995,7 +1950,9 @@
             "priceType": "merge",
             "sellback": "0 Dragon Coins",
             "requiredItems": "1 Elemental Unity Defender III & 100 Defender's Medal",
-            "daRequired": false
+            "daRequired": false,
+            "dcRequired": true,
+            "dmRequired": true
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=19775270",
@@ -2033,7 +1990,9 @@
             "priceType": "merge",
             "sellback": "0 Dragon Coins",
             "requiredItems": "1 Elemental Unity Defender IV & 100 Defender's Medal",
-            "daRequired": false
+            "daRequired": false,
+            "dcRequired": true,
+            "dmRequired": true
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=19775273",
@@ -2071,7 +2030,9 @@
             "priceType": "merge",
             "sellback": "0 Dragon Coins",
             "requiredItems": "1 Elemental Unity Defender V & 100 Defender's Medal",
-            "daRequired": false
+            "daRequired": false,
+            "dcRequired": true,
+            "dmRequired": true
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=20008709",
@@ -2109,7 +2070,9 @@
             "priceType": "merge",
             "sellback": "0 Dragon Coins",
             "requiredItems": "1 Elemental Unity Defender VI & 100 Defender's Medal",
-            "daRequired": false
+            "daRequired": false,
+            "dcRequired": true,
+            "dmRequired": true
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=20012098",
@@ -2147,7 +2110,9 @@
             "priceType": "merge",
             "sellback": "0 Dragon Coins",
             "requiredItems": "1 Elemental Unity Defender VII & 100 Defender's Medal",
-            "daRequired": false
+            "daRequired": false,
+            "dcRequired": true,
+            "dmRequired": true
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=20499763",
@@ -2185,7 +2150,9 @@
             "priceType": "merge",
             "sellback": "0 Dragon Coins",
             "requiredItems": "1 Elemental Unity Defender VIII & 100 Defender's Medal",
-            "daRequired": false
+            "daRequired": false,
+            "dcRequired": true,
+            "dmRequired": true
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=20499770",
@@ -2223,7 +2190,9 @@
             "priceType": "merge",
             "sellback": "0 Dragon Coins",
             "requiredItems": "1 Elemental Unity Defender IX & 100 Defender's Medal",
-            "daRequired": false
+            "daRequired": false,
+            "dcRequired": true,
+            "dmRequired": true
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=20499781",
@@ -2261,7 +2230,9 @@
             "priceType": "merge",
             "sellback": "0 Dragon Coins",
             "requiredItems": "1 Elemental Unity Defender X & 100 Defender's Medal",
-            "daRequired": false
+            "daRequired": false,
+            "dcRequired": true,
+            "dmRequired": true
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21348120",
@@ -2299,7 +2270,9 @@
             "priceType": "merge",
             "sellback": "0 Dragon Coins",
             "requiredItems": "1 Elemental Unity Defender XI & 100 Defender's Medal",
-            "daRequired": false
+            "daRequired": false,
+            "dcRequired": true,
+            "dmRequired": true
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21348121",
@@ -2337,7 +2310,9 @@
             "priceType": "merge",
             "sellback": "0 Dragon Coins",
             "requiredItems": "1 Elemental Unity Defender XII & 100 Defender's Medal",
-            "daRequired": false
+            "daRequired": false,
+            "dcRequired": true,
+            "dmRequired": true
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21713727",
@@ -2375,7 +2350,9 @@
             "priceType": "merge",
             "sellback": "0 Dragon Coins",
             "requiredItems": "1 Elemental Unity Defender XIII & 100 Defender's Medal",
-            "daRequired": false
+            "daRequired": false,
+            "dcRequired": true,
+            "dmRequired": true
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21713729",
@@ -2413,7 +2390,9 @@
             "priceType": "merge",
             "sellback": "0 Dragon Coins",
             "requiredItems": "1 Elemental Unity Defender XIV & 100 Defender's Medal",
-            "daRequired": false
+            "daRequired": false,
+            "dcRequired": true,
+            "dmRequired": true
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22058863",
@@ -2441,20 +2420,15 @@
     "equipSlot": "Trinket",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "goo",
-      "merge"
-    ],
+    "tags": ["goo", "merge"],
     "isSpecialOffer": true,
     "hasDA": false,
-    "hasDC": false,
-    "hasDM": false,
+    "hasDC": true,
+    "hasDM": true,
     "hasFree": false,
     "hasMerge": true,
     "levelRange": "I-XV",
-    "elements": [
-      "GOO"
-    ]
+    "elements": ["GOO"]
   },
   {
     "id": "accessory-embroidered-guard-tunic",
@@ -2465,9 +2439,7 @@
     "description": "This magical tunic provides even more protection from stun attacks. It pulsates lightly with a golden glow.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19642068",
     "releaseDate": "",
-    "elements": [
-      "ENE"
-    ],
+    "elements": ["ENE"],
     "level": "15",
     "stats": "None",
     "resists": "Immobility +4",
@@ -2478,27 +2450,21 @@
     "obtainMethods": [
       {
         "location": "Teral's Gear",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "100 Gold",
+        "price": "N/A",
         "requiredItems": "1 Guard Tunic & 5 Earth Charm",
-        "daRequired": false
+        "sellback": "100 Gold",
+        "daRequired": true
       }
     ],
-    "tags": [
-      "ene",
-      "merge"
-    ],
-    "daRequired": false
+    "tags": ["ene", "merge"],
+    "daRequired": true
   },
   {
     "id": "accessory-exalted-blaster-amalgam",
     "familyName": "Exalted Blaster (Amalgam)",
     "slug": "accessory-exalted-blaster-amalgam",
-    "aliasSlugs": [
-      "accessory-exalted-blaster-i-amalgam",
-      "accessory-exalted-blaster-ii-amalgam"
-    ],
+    "aliasSlugs": ["accessory-exalted-blaster-i-amalgam", "accessory-exalted-blaster-ii-amalgam"],
     "type": "accessory",
     "subtype": "trinket",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22403195",
@@ -2618,28 +2584,20 @@
     "equipSlot": "Trinket",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "fea",
-      "merge"
-    ],
+    "tags": ["fea", "merge"],
     "hasDA": true,
     "hasDC": false,
     "hasDM": false,
     "hasFree": false,
     "hasMerge": true,
     "levelRange": "I-II",
-    "elements": [
-      "FEA"
-    ]
+    "elements": ["FEA"]
   },
   {
     "id": "accessory-exalted-blaster-destiny",
     "familyName": "Exalted Blaster (Destiny)",
     "slug": "accessory-exalted-blaster-destiny",
-    "aliasSlugs": [
-      "accessory-exalted-blaster-i-destiny",
-      "accessory-exalted-blaster-ii-destiny"
-    ],
+    "aliasSlugs": ["accessory-exalted-blaster-i-destiny", "accessory-exalted-blaster-ii-destiny"],
     "type": "accessory",
     "subtype": "trinket",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22403191",
@@ -2759,28 +2717,20 @@
     "equipSlot": "Trinket",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "goo",
-      "merge"
-    ],
+    "tags": ["goo", "merge"],
     "hasDA": true,
     "hasDC": false,
     "hasDM": false,
     "hasFree": false,
     "hasMerge": true,
     "levelRange": "I-II",
-    "elements": [
-      "GOO"
-    ]
+    "elements": ["GOO"]
   },
   {
     "id": "accessory-exalted-blaster-doom",
     "familyName": "Exalted Blaster (Doom)",
     "slug": "accessory-exalted-blaster-doom",
-    "aliasSlugs": [
-      "accessory-exalted-blaster-i-doom",
-      "accessory-exalted-blaster-ii-doom"
-    ],
+    "aliasSlugs": ["accessory-exalted-blaster-i-doom", "accessory-exalted-blaster-ii-doom"],
     "type": "accessory",
     "subtype": "trinket",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22403193",
@@ -2900,19 +2850,14 @@
     "equipSlot": "Trinket",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "evi",
-      "merge"
-    ],
+    "tags": ["evi", "merge"],
     "hasDA": true,
     "hasDC": false,
     "hasDM": false,
     "hasFree": false,
     "hasMerge": true,
     "levelRange": "I-II",
-    "elements": [
-      "EVI"
-    ]
+    "elements": ["EVI"]
   },
   {
     "id": "accessory-fireworks",
@@ -2923,9 +2868,7 @@
     "description": "Ooooh! Aaaaah! So pretty! It's always a celebration when you're around but you WILL be able to be seen before you're close! This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=16265631",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "5",
     "stats": "Magic Def -3, Pierce Def -3, Melee Def -3, INT +2, DEX +2, STR +2, Bonus +2",
     "resists": "None",
@@ -2938,18 +2881,17 @@
     "obtainMethods": [
       {
         "location": "Fourth of July Rares, New Year's 2010, Liberty Rares Shop, Fourth of July Items, January DC Specials",
-        "price": "400 Gold",
         "priceType": "gold",
+        "price": "400 Gold",
         "sellback": "40 Gold",
-        "daRequired": true
+        "daRequired": true,
+        "dcRequired": true
       }
     ],
-    "notes": "• Equipping this trinket displays  blue,  red, and  green fireworks above the player.",
-    "tags": [
-      "lig",
-      "gold"
-    ],
+    "notes": "• Equipping this trinket displays  ,  , and   fireworks above the player.",
+    "tags": ["lig", "gold"],
     "daRequired": true,
+    "dcRequired": true,
     "isSeasonal": true,
     "attacks": [
       {
@@ -2975,9 +2917,7 @@
     "description": "Wishbones are supposed to be lucky... right? This item requires a Dragon Amulet. Visit the Black Market Moglin to upgrade this item.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21732705",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "70",
     "stats": "Block +4, Dodge +4, Crit +8, LUK +14, INT +6, DEX +6, STR +6, Bonus +8",
     "resists": "Light +12",
@@ -2988,18 +2928,17 @@
     "obtainMethods": [
       {
         "location": "Wishbones",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "19 Dragon Coins",
+        "price": "N/A",
         "requiredItems": "1 Four \"Lucky\" Wishbones & 1 Vertebral Column",
-        "daRequired": true
+        "sellback": "19 Dragon Coins",
+        "daRequired": true,
+        "dcRequired": true
       }
     ],
-    "tags": [
-      "dar",
-      "merge"
-    ],
+    "tags": ["dar", "merge"],
     "daRequired": true,
+    "dcRequired": true,
     "isRare": true
   },
   {
@@ -3011,9 +2950,7 @@
     "description": "Wishbones are supposed to be lucky... right? This item requires a Dragon Amulet. Visit the Black Market Moglin to upgrade this item.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21732710",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "70",
     "stats": "Block +4, Dodge +4, Crit +8, LUK +14, INT +6, DEX +6, STR +6, Bonus +8",
     "resists": "Light +12",
@@ -3024,17 +2961,14 @@
     "obtainMethods": [
       {
         "location": "Wishbones",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "0 Gold",
+        "price": "N/A",
         "requiredItems": "1 Four Found \"Lucky\" Wishbones & 1 Vertebral Column",
+        "sellback": "0 Gold",
         "daRequired": true
       }
     ],
-    "tags": [
-      "dar",
-      "merge"
-    ],
+    "tags": ["dar", "merge"],
     "daRequired": true,
     "isRare": true
   },
@@ -3047,9 +2981,7 @@
     "description": "Wishbones are supposed to be lucky... right? This item requires a Dragon Amulet. Visit the Black Market Moglin to upgrade this item.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19281767",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "1",
     "stats": "Crit +1, LUK +3",
     "resists": "None",
@@ -3060,16 +2992,13 @@
     "obtainMethods": [
       {
         "location": "Transformed from Ossein Chest (D-Amulet)",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "0 Gold",
         "daRequired": true
       }
     ],
-    "tags": [
-      "dar",
-      "free"
-    ],
+    "tags": ["dar", "free"],
     "daRequired": true,
     "isRare": true
   },
@@ -3082,9 +3011,7 @@
     "description": "Wishbones are supposed to be lucky... right? This item requires a Dragon Amulet. Visit the Black Market Moglin to upgrade this item.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19281978",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "60",
     "stats": "Block +2, Dodge +2, Crit +6, LUK +10, INT +4, DEX +4, STR +4, Bonus +6",
     "resists": "Light +10",
@@ -3095,18 +3022,17 @@
     "obtainMethods": [
       {
         "location": "Wishbones",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "19 Dragon Coins",
+        "price": "N/A",
         "requiredItems": "1 Three \"Lucky\" Wishbones & 1 Vertebral Column",
-        "daRequired": true
+        "sellback": "19 Dragon Coins",
+        "daRequired": true,
+        "dcRequired": true
       }
     ],
-    "tags": [
-      "dar",
-      "merge"
-    ],
+    "tags": ["dar", "merge"],
     "daRequired": true,
+    "dcRequired": true,
     "isRare": true
   },
   {
@@ -3118,9 +3044,7 @@
     "description": "Wishbones are supposed to be lucky... right? This item requires a Dragon Amulet. Visit the Black Market Moglin to upgrade this item.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19281956",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "60",
     "stats": "Block +2, Dodge +2, Parry +2, Crit +6, LUK +10, INT +4, DEX +4, STR +4, Bonus +6",
     "resists": "Light +10",
@@ -3131,17 +3055,14 @@
     "obtainMethods": [
       {
         "location": "Wishbones",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "0 Gold",
+        "price": "N/A",
         "requiredItems": "1 Three Found \"Lucky\" Wishbones & 1 Vertebral Column",
+        "sellback": "0 Gold",
         "daRequired": true
       }
     ],
-    "tags": [
-      "dar",
-      "merge"
-    ],
+    "tags": ["dar", "merge"],
     "daRequired": true,
     "isRare": true
   },
@@ -3154,9 +3075,7 @@
     "description": "So much coffee... You have transcended! This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18822144",
     "releaseDate": "",
-    "elements": [
-      "ENE"
-    ],
+    "elements": ["ENE"],
     "level": "15",
     "stats": "Crit +2, Bonus +2",
     "resists": "None",
@@ -3169,17 +3088,14 @@
     "obtainMethods": [
       {
         "location": "Coffee Addict, Happy 2011 April Fools!",
-        "price": "200 Dragon Coins",
         "priceType": "dc",
-        "sellback": "180 Dragon Coins before 24 hours, 50 Dragon Coins after 24 hours",
+        "price": "200 Dragon Coins",
+        "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
         "daRequired": true,
         "dcRequired": true
       }
     ],
-    "tags": [
-      "ene",
-      "dc"
-    ],
+    "tags": ["ene", "dc"],
     "daRequired": true,
     "dcRequired": true,
     "isSeasonal": true,
@@ -3207,9 +3123,7 @@
     "description": "This magical tunic provides protection from stun attacks. It pulsates lightly with a golden glow.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19642024",
     "releaseDate": "",
-    "elements": [
-      "ENE"
-    ],
+    "elements": ["ENE"],
     "level": "15",
     "stats": "None",
     "resists": "Immobility +2",
@@ -3220,18 +3134,15 @@
     "obtainMethods": [
       {
         "location": "Teral's Gear",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "100 Gold",
+        "price": "N/A",
         "requiredItems": "2 Sea Charm & 2 Sky Charm",
-        "daRequired": false
+        "sellback": "100 Gold",
+        "daRequired": true
       }
     ],
-    "tags": [
-      "ene",
-      "merge"
-    ],
-    "daRequired": false
+    "tags": ["ene", "merge"],
+    "daRequired": true
   },
   {
     "id": "accessory-guardian-dragon-s-scale",
@@ -3242,9 +3153,7 @@
     "description": "A large scale shed by the Guardian Dragon. It's covered in dozens of cuts and scars... May have some use in the future!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22426726",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "10",
     "stats": "WIS +10, END +10, LUK +5, Bonus +5",
     "resists": "All +4",
@@ -3255,30 +3164,25 @@
     "obtainMethods": [
       {
         "location": "Caretaker's Fall",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "300 Gold",
-        "daRequired": false
+        "daRequired": true
       }
     ],
-    "tags": [
-      "sto",
-      "free"
-    ],
-    "daRequired": false
+    "tags": ["sto", "free"],
+    "daRequired": true
   },
   {
-    "id": "accessory-honda-s-legacy",
-    "name": "Honda's Legacy",
-    "slug": "accessory-honda-s-legacy",
+    "id": "accessory-honda-s-legacy-ex",
+    "name": "Honda's Legacy (EX)",
+    "slug": "accessory-honda-s-legacy-ex",
     "type": "accessory",
     "subtype": "trinket",
     "description": "An ancient technique developed by the legendary Honda. Summon four kunai to fly at your foe and poison them! This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21920623",
     "releaseDate": "",
-    "elements": [
-      "POI"
-    ],
+    "elements": ["POI"],
     "level": "20",
     "stats": "Block +5, Dodge +5, Parry +5, WIS +5, INT +2, DEX +2, STR +2",
     "resists": "Poison +10",
@@ -3291,17 +3195,14 @@
     "obtainMethods": [
       {
         "location": "Ninja Items",
-        "price": "3,500 Gold",
         "priceType": "gold",
+        "price": "3,500 Gold",
         "sellback": "350 Gold",
         "daRequired": true
       }
     ],
-    "notes": "• The following changes were implemented on  September 1st, 2023:\n  • Previously had the description: The ancient scrolls had a passage on how to summon an illusionary version of the mighty Honda. The illusion is so strong that it will attack and poison your foe! This item requires a Dragon Amulet. \n  • Trinket's name was changed from 'Summon Honda' to 'Honda's Legacy'. \n  • Trinket's Resist was lowered from +25 Poison to +10 Poison. \n  • Trinket's ability was replaced from  Summon Honda to  Summon Kunai (1).",
-    "tags": [
-      "poi",
-      "gold"
-    ],
+    "notes": "• The following changes were implemented on  September 1st, 2023:\n• Previously had the description: The ancient scrolls had a passage on how to summon an illusionary version of the mighty Honda. The illusion is so strong that it will attack and poison your foe! This item requires a Dragon Amulet.\n• Trinket's name was changed from 'Summon Honda' to 'Honda's Legacy'.\n• Trinket's Resist was lowered from +25 Poison to +10 Poison.\n• Trinket's ability was replaced from  Summon Honda to  Summon Kunai (1).",
+    "tags": ["poi", "gold"],
     "daRequired": true,
     "attacks": [
       {
@@ -3327,9 +3228,7 @@
     "description": "Cysero popped back in and did something to this Ice Gem...said you might find it useful",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=16504693",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "5",
     "stats": "Magic Def -3, Pierce Def -3, Melee Def -3, INT +2, DEX +2, STR +2, Bonus +2",
     "resists": "None",
@@ -3342,17 +3241,14 @@
     "obtainMethods": [
       {
         "location": "Ice Gems",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "40 Gold",
-        "daRequired": false
+        "daRequired": true
       }
     ],
-    "tags": [
-      "lig",
-      "free"
-    ],
-    "daRequired": false,
+    "tags": ["lig", "free"],
+    "daRequired": true,
     "attacks": [
       {
         "name": "Ice Gem's Strike",
@@ -3377,9 +3273,7 @@
     "description": "Blast your foes with icy wrath and increase their weakness to fire.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=16726625",
     "releaseDate": "",
-    "elements": [
-      "ICE"
-    ],
+    "elements": ["ICE"],
     "level": "10",
     "stats": "None",
     "resists": "None",
@@ -3392,17 +3286,14 @@
     "obtainMethods": [
       {
         "location": "Ice Princess",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "80 Gold",
-        "daRequired": false
+        "daRequired": true
       }
     ],
-    "tags": [
-      "ice",
-      "free"
-    ],
-    "daRequired": false,
+    "tags": ["ice", "free"],
+    "daRequired": true,
     "attacks": [
       {
         "name": "Ice Princess Tear",
@@ -3427,9 +3318,7 @@
     "description": "\"So... What do you say?\" This trinket stuns your enemy for 2 rounds!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15543874",
     "releaseDate": "",
-    "elements": [
-      "FIR"
-    ],
+    "elements": ["FIR"],
     "level": "5",
     "stats": "Crit +1",
     "resists": "None",
@@ -3442,18 +3331,15 @@
     "obtainMethods": [
       {
         "location": "Daddy's DC Shop",
-        "price": "200 Dragon Coins",
         "priceType": "dc",
-        "sellback": "180 Dragon Coins before 24 hours, 50 Dragon Coins after 24 hours",
-        "daRequired": false,
+        "price": "200 Dragon Coins",
+        "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
+        "daRequired": true,
         "dcRequired": true
       }
     ],
-    "tags": [
-      "fir",
-      "dc"
-    ],
-    "daRequired": false,
+    "tags": ["fir", "dc"],
+    "daRequired": true,
     "dcRequired": true,
     "isSeasonal": true,
     "attacks": [
@@ -3571,7 +3457,7 @@
             "location": "Dwarf Loot for DCs",
             "price": "15 Dragon Coins",
             "priceType": "dc",
-            "sellback": "14 Dragon Coins before 24 hours, 4 Dragon Coins after 24 hours",
+            "sellback": "14 DC (<24 hours) / 4 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -3616,7 +3502,7 @@
             "location": "Dwarf Loot for DCs",
             "price": "20 Dragon Coins",
             "priceType": "dc",
-            "sellback": "18 Dragon Coins before 24 hours, 5 Dragon Coins after 24 hours",
+            "sellback": "18 DC (<24 hours) / 5 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -3661,7 +3547,7 @@
             "location": "Dwarf Loot for DCs",
             "price": "30 Dragon Coins",
             "priceType": "dc",
-            "sellback": "27 Dragon Coins before 24 hours, 8 Dragon Coins after 24 hours",
+            "sellback": "27 DC (<24 hours) / 8 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -3706,7 +3592,7 @@
             "location": "Dwarf Loot for DCs",
             "price": "50 Dragon Coins",
             "priceType": "dc",
-            "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+            "sellback": "45 DC (<24 hours) / 13 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -3751,7 +3637,7 @@
             "location": "Dwarf Loot for DCs",
             "price": "60 Dragon Coins",
             "priceType": "dc",
-            "sellback": "54 Dragon Coins before 24 hours, 15 Dragon Coins after 24 hours",
+            "sellback": "54 DC (<24 hours) / 15 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -3796,7 +3682,7 @@
             "location": "Dwarf Loot for DCs",
             "price": "70 Dragon Coins",
             "priceType": "dc",
-            "sellback": "63 Dragon Coins before 24 hours, 18 Dragon Coins after 24 hours",
+            "sellback": "63 DC (<24 hours) / 18 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -3841,7 +3727,7 @@
             "location": "Dwarf Loot for DCs",
             "price": "80 Dragon Coins",
             "priceType": "dc",
-            "sellback": "72 Dragon Coins before 24 hours, 20 Dragon Coins after 24 hours",
+            "sellback": "72 DC (<24 hours) / 20 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -3857,20 +3743,14 @@
     "equipSlot": "Trinket",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dc",
-      "free",
-      "non"
-    ],
+    "tags": ["dc", "free", "non"],
     "hasDA": true,
     "hasDC": true,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "30-85",
-    "elements": [
-      "NON"
-    ]
+    "elements": ["NON"]
   },
   {
     "id": "accessory-inert-summon-gem-illumina-ex",
@@ -3881,9 +3761,7 @@
     "description": "A Summon Gem Illumina, placed into its setting. It doesn't seem to be able to activate, though. Maybe it's missing something? Proof of victory over Illumina!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22381716",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "0",
     "stats": "Crit +10, WIS +5, END +5, INT +5, DEX +5, STR +5, Bonus +10",
     "resists": "None",
@@ -3894,18 +3772,17 @@
     "obtainMethods": [
       {
         "location": "The Conduit: Duty & Rebellion",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "0 Dragon Coins",
+        "price": "N/A",
         "requiredItems": "1 Summon Gem - Illumina & 1 Summon Gem Setting - Illumina",
-        "daRequired": false
+        "sellback": "0 Dragon Coins",
+        "daRequired": true,
+        "dcRequired": true
       }
     ],
-    "tags": [
-      "lig",
-      "merge"
-    ],
-    "daRequired": false
+    "tags": ["lig", "merge"],
+    "daRequired": true,
+    "dcRequired": true
   },
   {
     "id": "accessory-inert-summon-gem-reaver-ex",
@@ -3916,9 +3793,7 @@
     "description": "A Summon Gem Reaver, placed into its setting. It doesn't seem to be able to activate, though. Maybe it's missing something? Proof of victory over Reaver!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22376518",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "0",
     "stats": "Crit +10, WIS +5, END +5, INT +5, DEX +5, STR +5, Bonus +10",
     "resists": "None",
@@ -3929,19 +3804,18 @@
     "obtainMethods": [
       {
         "location": "The Conduit: Life & Death",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "0 Dragon Coins",
+        "price": "N/A",
         "requiredItems": "1 Summon Gem Setting - Reaver & 1 Summon Gem - Reaver",
-        "daRequired": false
+        "sellback": "0 Dragon Coins",
+        "daRequired": true,
+        "dcRequired": true
       }
     ],
     "notes": "• Item was originally a Resource; was upgraded to an equippable Trinket (without an ability) on  April 10th, 2020.",
-    "tags": [
-      "dar",
-      "merge"
-    ],
-    "daRequired": false
+    "tags": ["dar", "merge"],
+    "daRequired": true,
+    "dcRequired": true
   },
   {
     "id": "accessory-inert-summon-gem-ricterild-ex",
@@ -3952,9 +3826,7 @@
     "description": "A Summon Gem Ricterild, placed into its setting. It doesn't seem to be able to activate, though. Maybe it's missing something? Proof of victory over Ricterild!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22378349",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "0",
     "stats": "Crit +5, Magic Def +5, Pierce Def +5, Melee Def +5, LUK +5, INT +10, DEX +10, STR +10, Bonus +5",
     "resists": "None",
@@ -3965,18 +3837,17 @@
     "obtainMethods": [
       {
         "location": "The Conduit: Crystal & Stone",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "0 Dragon Coins",
+        "price": "N/A",
         "requiredItems": "1 Summon Gem - Ricterild & 1 Summon Gem Setting - Ricterild",
-        "daRequired": false
+        "sellback": "0 Dragon Coins",
+        "daRequired": true,
+        "dcRequired": true
       }
     ],
-    "tags": [
-      "lig",
-      "merge"
-    ],
-    "daRequired": false
+    "tags": ["lig", "merge"],
+    "daRequired": true,
+    "dcRequired": true
   },
   {
     "id": "accessory-inert-summon-gem-roktoru-ex",
@@ -3987,9 +3858,7 @@
     "description": "A Summon Gem Roktoru, placed into its setting. It doesn't seem to be able to activate, though. Maybe it's missing something? Proof of victory over Roktoru!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22378347",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "0",
     "stats": "Block +5, Dodge +5, Parry +5, END +15",
     "resists": "None",
@@ -4000,18 +3869,17 @@
     "obtainMethods": [
       {
         "location": "The Conduit: Crystal & Stone",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "0 Dragon Coins",
+        "price": "N/A",
         "requiredItems": "1 Summon Gem - Roktoru & 1 Summon Gem Setting - Roktoru",
-        "daRequired": false
+        "sellback": "0 Dragon Coins",
+        "daRequired": true,
+        "dcRequired": true
       }
     ],
-    "tags": [
-      "sto",
-      "merge"
-    ],
-    "daRequired": false
+    "tags": ["sto", "merge"],
+    "daRequired": true,
+    "dcRequired": true
   },
   {
     "id": "accessory-leather-gauntlets",
@@ -4022,9 +3890,7 @@
     "description": "These gauntlets are made of hardened leather, and come with a lifetime warranty. Or so Teral says, anyway. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17562778",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "30",
     "stats": "Dodge +2, Magic Def +4, Pierce Def +4, Melee Def +4, END +5, INT +2, DEX +2, STR +2",
     "resists": "None",
@@ -4035,17 +3901,14 @@
     "obtainMethods": [
       {
         "location": "Teral's Gear",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "300 Gold",
+        "price": "N/A",
         "requiredItems": "1 Leather Gloves & 10 Gold Cabit Tail",
+        "sellback": "300 Gold",
         "daRequired": true
       }
     ],
-    "tags": [
-      "nat",
-      "merge"
-    ],
+    "tags": ["nat", "merge"],
     "daRequired": true
   },
   {
@@ -4057,9 +3920,7 @@
     "description": "Tough leather gloves that will withstand the wear and tear of the lifestyle of a monster hunter. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17563944",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "18",
     "stats": "Dodge +1, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +1, END +2, INT +1, DEX +2, STR +1",
     "resists": "None",
@@ -4070,17 +3931,14 @@
     "obtainMethods": [
       {
         "location": "Teral's Gear",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "80 Gold",
+        "price": "N/A",
         "requiredItems": "13 Rhoddhu Claw & 3 Leather",
+        "sellback": "80 Gold",
         "daRequired": true
       }
     ],
-    "tags": [
-      "nat",
-      "merge"
-    ],
+    "tags": ["nat", "merge"],
     "daRequired": true
   },
   {
@@ -4092,9 +3950,7 @@
     "description": "These gloves have been imbued with crit-boosting magic. The best defense is a good offense! This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17763407",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "40",
     "stats": "Dodge +2, Crit +6, Magic Def +4, Pierce Def +4, Melee Def +4, END +5, INT +2, DEX +2, STR +2",
     "resists": "None",
@@ -4105,17 +3961,14 @@
     "obtainMethods": [
       {
         "location": "Teral's Gear",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "400 Gold",
+        "price": "N/A",
         "requiredItems": "1 Leather Gauntlets & 10 Troglomite Eye",
+        "sellback": "400 Gold",
         "daRequired": true
       }
     ],
-    "tags": [
-      "nat",
-      "merge"
-    ],
+    "tags": ["nat", "merge"],
     "daRequired": true
   },
   {
@@ -4127,9 +3980,7 @@
     "description": "Add some charge to your crits!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15386542",
     "releaseDate": "",
-    "elements": [
-      "ENE"
-    ],
+    "elements": ["ENE"],
     "level": "15",
     "stats": "Crit +1",
     "rarity": "12",
@@ -4139,17 +3990,14 @@
     "obtainMethods": [
       {
         "location": "Ice Titan!, Earth Titan!, Energy Titan!, Fire Titan!, Wind Titan!, Water Titan!, Bomb the Elementals!, Elemental Waves",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "100 Gold",
-        "daRequired": false
+        "daRequired": true
       }
     ],
-    "tags": [
-      "ene",
-      "free"
-    ],
-    "daRequired": false
+    "tags": ["ene", "free"],
+    "daRequired": true
   },
   {
     "id": "accessory-lights-of-the-storm-trinket",
@@ -4160,9 +4008,7 @@
     "description": "After emerging from the blizzard, you found these glittering lights attached to you! They're probably safe, right? (Cosmetic)",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22419996",
     "releaseDate": "",
-    "elements": [
-      "ICE"
-    ],
+    "elements": ["ICE"],
     "level": "1",
     "stats": "None",
     "resists": "None",
@@ -4173,19 +4019,20 @@
     "obtainMethods": [
       {
         "location": "Storm of Stars (Shop)",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "N/A",
+        "price": "N/A",
         "requiredItems": "75 Defender's Medal",
-        "daRequired": false
+        "sellback": "N/A",
+        "daRequired": false,
+        "dcRequired": true,
+        "dmRequired": true
       }
     ],
-    "notes": "• Equipping this trinket displays animated stars over the  player, which appear, rise, and disappear with ten different colors.",
-    "tags": [
-      "ice",
-      "merge"
-    ],
+    "notes": "• Equipping this trinket displays animated stars over the  , which appear, rise, and disappear with ten different colors.",
+    "tags": ["ice", "merge"],
     "daRequired": false,
+    "dcRequired": true,
+    "dmRequired": true,
     "isSeasonal": true
   },
   {
@@ -4197,9 +4044,7 @@
     "description": "Lime was so thankful for your help he gave you some of the fireworks you made! Use them on your foes! This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21906073",
     "releaseDate": "",
-    "elements": [
-      "FIR"
-    ],
+    "elements": ["FIR"],
     "level": "5",
     "stats": "None",
     "resists": "None",
@@ -4212,16 +4057,13 @@
     "obtainMethods": [
       {
         "location": "Fireworks!",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "40 Gold",
         "daRequired": true
       }
     ],
-    "tags": [
-      "fir",
-      "free"
-    ],
+    "tags": ["fir", "free"],
     "daRequired": true,
     "attacks": [
       {
@@ -4247,9 +4089,7 @@
     "description": "Weighted to make your Luck even better! Made by the famous trinket-maker, Eric Ravenwing!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17423015",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "5",
     "stats": "Crit +3, LUK +10",
     "rarity": "15",
@@ -4259,17 +4099,14 @@
     "obtainMethods": [
       {
         "location": "Critical Failure!",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "0 Gold",
-        "daRequired": false
+        "daRequired": true
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
-    "daRequired": false
+    "tags": ["nat", "free"],
+    "daRequired": true
   },
   {
     "id": "accessory-man-s-best-friend",
@@ -4280,9 +4117,7 @@
     "description": "Awww, it's in the shape of a puppy!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17878078",
     "releaseDate": "",
-    "elements": [
-      "BAC"
-    ],
+    "elements": ["BAC"],
     "level": "20",
     "stats": "CHA +5, LUK +5",
     "resists": "Nature +5, Bacon -20",
@@ -4293,17 +4128,14 @@
     "obtainMethods": [
       {
         "location": "Bask Chest",
-        "price": "300 Gold",
         "priceType": "gold",
+        "price": "300 Gold",
         "sellback": "30 Gold",
-        "daRequired": false
+        "daRequired": true
       }
     ],
-    "tags": [
-      "bac",
-      "gold"
-    ],
-    "daRequired": false
+    "tags": ["bac", "gold"],
+    "daRequired": true
   },
   {
     "id": "accessory-medewwsa-s-head",
@@ -4314,9 +4146,7 @@
     "description": "Make sure you point her face AWAY from you! This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15939927",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "15",
     "stats": "Bonus +2",
     "resists": "None",
@@ -4329,16 +4159,13 @@
     "obtainMethods": [
       {
         "location": "Garden of Good and Ebil",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "50 Gold",
         "daRequired": true
       }
     ],
-    "tags": [
-      "sto",
-      "free"
-    ],
+    "tags": ["sto", "free"],
     "daRequired": true,
     "attacks": [
       {
@@ -4364,9 +4191,7 @@
     "description": "This Trinket gives you the ancient power of the mirror eye, it will use the foes power against it. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21767332",
     "releaseDate": "",
-    "elements": [
-      "SIL"
-    ],
+    "elements": ["SIL"],
     "level": "20",
     "stats": "None",
     "resists": "Wind +10, Stone +10, Fire +10",
@@ -4379,16 +4204,13 @@
     "obtainMethods": [
       {
         "location": "Illusion",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "100 Gold",
         "daRequired": true
       }
     ],
-    "tags": [
-      "sil",
-      "free"
-    ],
+    "tags": ["sil", "free"],
     "daRequired": true,
     "attacks": [
       {
@@ -4414,9 +4236,7 @@
     "description": "Call in the Moonridge Archers! This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18013842",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "20",
     "stats": "Magic Def +1, Pierce Def +1, Melee Def +1, LUK +3",
     "resists": "None",
@@ -4429,17 +4249,14 @@
     "obtainMethods": [
       {
         "location": "ZardSlayer Shop",
-        "price": "400 Dragon Coins",
         "priceType": "dc",
-        "sellback": "360 Dragon Coins before 24 hours, 100 Dragon Coins after 24 hours",
+        "price": "400 Dragon Coins",
+        "sellback": "360 DC (<24 hours) / 100 DC (>24 hours)",
         "daRequired": true,
         "dcRequired": true
       }
     ],
-    "tags": [
-      "lig",
-      "dc"
-    ],
+    "tags": ["lig", "dc"],
     "daRequired": true,
     "dcRequired": true,
     "isSeasonal": true,
@@ -4467,9 +4284,7 @@
     "description": "The Kittypillar's bubbles have floated away! Use them to distract monsters. This item requires Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=16670969",
     "releaseDate": "",
-    "elements": [
-      "WIN"
-    ],
+    "elements": ["WIN"],
     "level": "25",
     "stats": "END +2",
     "resists": "None",
@@ -4482,17 +4297,14 @@
     "obtainMethods": [
       {
         "location": "Questions",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "100 Gold",
-        "daRequired": false
+        "daRequired": true
       }
     ],
-    "tags": [
-      "win",
-      "free"
-    ],
-    "daRequired": false,
+    "tags": ["win", "free"],
+    "daRequired": true,
     "attacks": [
       {
         "name": "Bubbles",
@@ -4517,9 +4329,7 @@
     "description": "Dodge questions and other attacks, both physical and intellectual with this trinket. This item requires Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=16667561",
     "releaseDate": "",
-    "elements": [
-      "WIN"
-    ],
+    "elements": ["WIN"],
     "level": "15",
     "stats": "Dodge +1, Magic Def +3, Pierce Def +3, Melee Def +3, END +1, INT +1, DEX +1, STR +1",
     "rarity": "15",
@@ -4529,17 +4339,14 @@
     "obtainMethods": [
       {
         "location": "Questions",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "100 Gold",
-        "daRequired": false
+        "daRequired": true
       }
     ],
-    "tags": [
-      "win",
-      "free"
-    ],
-    "daRequired": false
+    "tags": ["win", "free"],
+    "daRequired": true
   },
   {
     "id": "accessory-overclocked-millisecond-hand",
@@ -4550,9 +4357,7 @@
     "description": "With this trinket attached to your armor, time will speed, slow, and race away in battle, allowing you to execute moves you wouldn't be able to otherwise! This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17151769",
     "releaseDate": "",
-    "elements": [
-      "MET"
-    ],
+    "elements": ["MET"],
     "level": "20",
     "stats": "Crit +3, END +3",
     "resists": "None",
@@ -4563,16 +4368,13 @@
     "obtainMethods": [
       {
         "location": "New Year's 2010",
-        "price": "0 Gold",
         "priceType": "free",
+        "price": "0 Gold",
         "sellback": "0 Gold",
         "daRequired": true
       }
     ],
-    "tags": [
-      "met",
-      "free"
-    ],
+    "tags": ["met", "free"],
     "daRequired": true,
     "isRare": true
   },
@@ -4585,9 +4387,7 @@
     "description": "Down in the dark depths of Ravenloss, the Pillar of Light shines steadily from the Beacon of Hope. This trinket was given to you during the Ravenloss War! This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18639842",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "30",
     "stats": "Crit +5, Magic Def +1, Pierce Def +1, Melee Def +1, Bonus +3",
     "resists": "None",
@@ -4600,16 +4400,13 @@
     "obtainMethods": [
       {
         "location": "RavenLoss War Chest",
-        "price": "0 Gold",
         "priceType": "free",
+        "price": "0 Gold",
         "sellback": "0 Gold",
         "daRequired": true
       }
     ],
-    "tags": [
-      "lig",
-      "free"
-    ],
+    "tags": ["lig", "free"],
     "daRequired": true,
     "attacks": [
       {
@@ -4633,9 +4430,7 @@
     "description": "It's a treasure shaped like a...boot? But not just any boot! Footwear encrusted with powerful magic gems to help you in your battles! This item requires a Dragon Amulet",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17329887",
     "releaseDate": "",
-    "elements": [
-      "MET"
-    ],
+    "elements": ["MET"],
     "level": "27",
     "stats": "Dodge +2, Crit +4, Magic Def +3, Pierce Def +3, Melee Def +3",
     "resists": "Health -7, Poison +5",
@@ -4646,16 +4441,13 @@
     "obtainMethods": [
       {
         "location": "Edy's Shinies",
-        "price": "600 Gold",
         "priceType": "gold",
+        "price": "600 Gold",
         "sellback": "60 Gold",
         "daRequired": true
       }
     ],
-    "tags": [
-      "met",
-      "gold"
-    ],
+    "tags": ["met", "gold"],
     "daRequired": true
   },
   {
@@ -4667,9 +4459,7 @@
     "description": "This was a VERY lucky pirate. All the way up until his ship sank. But don't let that discourage you from using his curse against your enemies! This item requires a Dragon Amulet",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17330203",
     "releaseDate": "",
-    "elements": [
-      "ICE"
-    ],
+    "elements": ["ICE"],
     "level": "10",
     "stats": "Dodge +2, Crit +3, Magic Def +3, Pierce Def +3, Melee Def +3, LUK -1",
     "resists": "Health -3",
@@ -4680,16 +4470,13 @@
     "obtainMethods": [
       {
         "location": "Edy's Shinies, Phil's Funkies",
-        "price": "500 Gold",
         "priceType": "gold",
+        "price": "500 Gold",
         "sellback": "50 Gold",
         "daRequired": true
       }
     ],
-    "tags": [
-      "ice",
-      "gold"
-    ],
+    "tags": ["ice", "gold"],
     "daRequired": true
   },
   {
@@ -4701,9 +4488,7 @@
     "description": "The essence of the Elemental Lord's is contained in this trinket. Gives +1 to dodge for 5 turns on use.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15469382",
     "releaseDate": "",
-    "elements": [
-      "NON"
-    ],
+    "elements": ["NON"],
     "level": "25",
     "stats": "END +2",
     "resists": "None",
@@ -4716,17 +4501,14 @@
     "obtainMethods": [
       {
         "location": "The Final Showdown",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "100 Gold",
-        "daRequired": false
+        "daRequired": true
       }
     ],
-    "tags": [
-      "non",
-      "free"
-    ],
-    "daRequired": false,
+    "tags": ["non", "free"],
+    "daRequired": true,
     "isRare": true,
     "attacks": [
       {
@@ -4752,9 +4534,7 @@
     "description": "Shine with aura of brilliance! Allows you to empower yourself for 5 turns, at the cost of your Avoidance.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22396536",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "1",
     "stats": "Crit +5, WIS +2, END +2, CHA +2, LUK +2, INT +2, DEX +2, STR +2, Bonus +5",
     "resists": "None",
@@ -4767,19 +4547,16 @@
     "obtainMethods": [
       {
         "location": "October DC Specials",
-        "price": "250 Dragon Coins",
         "priceType": "dc",
+        "price": "250 Dragon Coins",
         "sellback": "N/A",
-        "daRequired": false,
+        "daRequired": true,
         "dcRequired": true
       }
     ],
-    "notes": "• Equipping this trinket displays an animated  radiant shimmer over the  player, color-custom to the player's trim color.",
-    "tags": [
-      "lig",
-      "dc"
-    ],
-    "daRequired": false,
+    "notes": "• Equipping this trinket displays an animated   over the  , color-custom to the player's trim color.",
+    "tags": ["lig", "dc"],
+    "daRequired": true,
     "dcRequired": true,
     "isSeasonal": true,
     "attacks": [
@@ -4839,7 +4616,8 @@
           "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-SummonYoungDragon.png",
           "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-SummonYoungDragon-Appearance1.0.png"
         }
-      ]
+      ],
+      "notes": "• For a short amount of time on  June 27th, 2025, Relic of When - Draconic Growth was a guaranteed drop from  Artax & Shogun."
     },
     "levelVariants": [
       {
@@ -4855,7 +4633,7 @@
             "price": "0 Gold",
             "priceType": "free",
             "sellback": "0 Gold",
-            "daRequired": false
+            "daRequired": true
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22422527",
@@ -4894,7 +4672,8 @@
             "priceType": "merge",
             "sellback": "0 Dragon Coins",
             "requiredItems": "1 Dragon's Ethereal Scale & 1 Relic of When - Draconic Growth",
-            "daRequired": false
+            "daRequired": true,
+            "dcRequired": true
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22422543",
@@ -4922,20 +4701,14 @@
     "equipSlot": "Trinket",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "evi",
-      "free",
-      "merge"
-    ],
-    "hasDA": false,
-    "hasDC": false,
+    "tags": ["evi", "free", "merge"],
+    "hasDA": true,
+    "hasDC": true,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": true,
     "levelRange": "40-70",
-    "elements": [
-      "EVI"
-    ]
+    "elements": ["EVI"]
   },
   {
     "id": "accessory-runestone",
@@ -5025,7 +4798,7 @@
             "price": "N/A",
             "priceType": "free",
             "sellback": "150 Gold",
-            "daRequired": false
+            "daRequired": true
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21825775",
@@ -5061,7 +4834,7 @@
             "price": "N/A",
             "priceType": "free",
             "sellback": "180 Gold",
-            "daRequired": false
+            "daRequired": true
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21825776",
@@ -5097,7 +4870,7 @@
             "price": "N/A",
             "priceType": "free",
             "sellback": "240 Gold",
-            "daRequired": false
+            "daRequired": true
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21825777",
@@ -5133,7 +4906,7 @@
             "price": "N/A",
             "priceType": "free",
             "sellback": "500 Gold",
-            "daRequired": false
+            "daRequired": true
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21825778",
@@ -5169,7 +4942,7 @@
             "price": "N/A",
             "priceType": "free",
             "sellback": "560 Gold",
-            "daRequired": false
+            "daRequired": true
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21825779",
@@ -5205,7 +4978,7 @@
             "price": "N/A",
             "priceType": "free",
             "sellback": "600 Gold",
-            "daRequired": false
+            "daRequired": true
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21825780",
@@ -5233,19 +5006,14 @@
     "equipSlot": "Trinket",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "free",
-      "non"
-    ],
-    "hasDA": false,
+    "tags": ["free", "non"],
+    "hasDA": true,
     "hasDC": false,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "30-80",
-    "elements": [
-      "NON"
-    ]
+    "elements": ["NON"]
   },
   {
     "id": "accessory-sanctuary-s-promise",
@@ -5349,7 +5117,7 @@
             "location": "CW Loot for DCs",
             "price": "90 Dragon Coins",
             "priceType": "dc",
-            "sellback": "81 Dragon Coins before 24 hours, 23 Dragon Coins after 24 hours",
+            "sellback": "81 DC (<24 hours) / 23 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -5396,7 +5164,7 @@
             "location": "CW Loot for DCs",
             "price": "90 Dragon Coins",
             "priceType": "dc",
-            "sellback": "81 Dragon Coins before 24 hours, 23 Dragon Coins after 24 hours",
+            "sellback": "81 DC (<24 hours) / 23 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -5443,7 +5211,7 @@
             "location": "CW Loot for DCs",
             "price": "90 Dragon Coins",
             "priceType": "dc",
-            "sellback": "81 Dragon Coins before 24 hours, 23 Dragon Coins after 24 hours",
+            "sellback": "81 DC (<24 hours) / 23 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -5490,7 +5258,7 @@
             "location": "CW Loot for DCs",
             "price": "90 Dragon Coins",
             "priceType": "dc",
-            "sellback": "81 Dragon Coins before 24 hours, 23 Dragon Coins after 24 hours",
+            "sellback": "81 DC (<24 hours) / 23 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -5537,7 +5305,7 @@
             "location": "CW Loot for DCs",
             "price": "90 Dragon Coins",
             "priceType": "dc",
-            "sellback": "81 Dragon Coins before 24 hours, 23 Dragon Coins after 24 hours",
+            "sellback": "81 DC (<24 hours) / 23 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -5584,7 +5352,7 @@
             "location": "CW Loot for DCs",
             "price": "90 Dragon Coins",
             "priceType": "dc",
-            "sellback": "81 Dragon Coins before 24 hours, 23 Dragon Coins after 24 hours",
+            "sellback": "81 DC (<24 hours) / 23 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -5631,7 +5399,7 @@
             "location": "CW Loot for DCs",
             "price": "90 Dragon Coins",
             "priceType": "dc",
-            "sellback": "81 Dragon Coins before 24 hours, 23 Dragon Coins after 24 hours",
+            "sellback": "81 DC (<24 hours) / 23 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -5647,20 +5415,14 @@
     "equipSlot": "Trinket",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dc",
-      "free",
-      "win"
-    ],
+    "tags": ["dc", "free", "win"],
     "hasDA": true,
     "hasDC": true,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-VII",
-    "elements": [
-      "WIN"
-    ]
+    "elements": ["WIN"]
   },
   {
     "id": "accessory-seven-lucky-wishbones",
@@ -5671,9 +5433,7 @@
     "description": "Wishbones are supposed to be lucky... right? This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22331546",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "90",
     "stats": "Block +6, Dodge +6, Parry +6, Crit +10, LUK +17, INT +10, DEX +10, STR +10, Bonus +10",
     "resists": "Light +14",
@@ -5684,18 +5444,17 @@
     "obtainMethods": [
       {
         "location": "Wishbones",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "19 Dragon Coins",
+        "price": "N/A",
         "requiredItems": "1 Six \"Lucky\" Wishbones & 1 Vertebral Column",
-        "daRequired": true
+        "sellback": "19 Dragon Coins",
+        "daRequired": true,
+        "dcRequired": true
       }
     ],
-    "tags": [
-      "dar",
-      "merge"
-    ],
+    "tags": ["dar", "merge"],
     "daRequired": true,
+    "dcRequired": true,
     "isRare": true
   },
   {
@@ -5707,9 +5466,7 @@
     "description": "Wishbones are supposed to be lucky... right? This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22331547",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "90",
     "stats": "Block +6, Dodge +6, Parry +6, Crit +10, LUK +17, INT +10, DEX +10, STR +10, Bonus +10",
     "resists": "Light +14",
@@ -5720,17 +5477,14 @@
     "obtainMethods": [
       {
         "location": "Wishbones",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "0 Gold",
+        "price": "N/A",
         "requiredItems": "1 Six Found \"Lucky\" Wishbones & 1 Vertebral Column",
+        "sellback": "0 Gold",
         "daRequired": true
       }
     ],
-    "tags": [
-      "dar",
-      "merge"
-    ],
+    "tags": ["dar", "merge"],
     "daRequired": true,
     "isRare": true
   },
@@ -5822,7 +5576,7 @@
             "location": "DJ Loot for DCs",
             "price": "150 Dragon Coins",
             "priceType": "dc",
-            "sellback": "135 Dragon Coins before 24 hours, 38 Dragon Coins after 24 hours",
+            "sellback": "135 DC (<24 hours) / 38 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -5869,7 +5623,7 @@
             "location": "DJ Loot for DCs",
             "price": "200 Dragon Coins",
             "priceType": "dc",
-            "sellback": "180 Dragon Coins before 24 hours, 50 Dragon Coins after 24 hours",
+            "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -5916,7 +5670,7 @@
             "location": "DJ Loot for DCs",
             "price": "275 Dragon Coins",
             "priceType": "dc",
-            "sellback": "248 Dragon Coins before 24 hours, 69 Dragon Coins after 24 hours",
+            "sellback": "248 DC (<24 hours) / 69 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -5963,7 +5717,7 @@
             "location": "DJ Loot for DCs",
             "price": "350 Dragon Coins",
             "priceType": "dc",
-            "sellback": "315 Dragon Coins before 24 hours, 88 Dragon Coins after 24 hours",
+            "sellback": "315 DC (<24 hours) / 88 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -6010,7 +5764,7 @@
             "location": "DJ Loot for DCs",
             "price": "400 Dragon Coins",
             "priceType": "dc",
-            "sellback": "360 Dragon Coins before 24 hours, 100 Dragon Coins after 24 hours",
+            "sellback": "360 DC (<24 hours) / 100 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -6026,20 +5780,14 @@
     "equipSlot": "Trinket",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dc",
-      "fea",
-      "free"
-    ],
+    "tags": ["dc", "fea", "free"],
     "hasDA": true,
     "hasDC": true,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-V",
-    "elements": [
-      "FEA"
-    ]
+    "elements": ["FEA"]
   },
   {
     "id": "accessory-shattered-summon-gem-ayauhnqui",
@@ -6050,9 +5798,7 @@
     "description": "The powdery remains of what used to be a Summon Gem. Maybe it can be repaired somehow? Proof of victory over Ayauhnqui!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22376517",
     "releaseDate": "",
-    "elements": [
-      "ENE"
-    ],
+    "elements": ["ENE"],
     "level": "0",
     "stats": "Block +5, Dodge +5, Parry +5, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +5, END +5, CHA +5, LUK +5",
     "resists": "None",
@@ -6063,18 +5809,17 @@
     "obtainMethods": [
       {
         "location": "Summon Gem: Ayauhnqui",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "0 Dragon Coins",
-        "daRequired": false
+        "daRequired": true,
+        "dcRequired": true
       }
     ],
     "notes": "• Item was originally a Resource; was upgraded to an equippable Trinket (without an ability) on  April 10th, 2020.",
-    "tags": [
-      "ene",
-      "free"
-    ],
-    "daRequired": false
+    "tags": ["ene", "free"],
+    "daRequired": true,
+    "dcRequired": true
   },
   {
     "id": "accessory-six-lucky-wishbones",
@@ -6085,9 +5830,7 @@
     "description": "Wishbones are supposed to be lucky... right? This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21732708",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "80",
     "stats": "Block +6, Dodge +6, Crit +9, LUK +15, INT +9, DEX +9, STR +9, Bonus +10",
     "resists": "Light +14",
@@ -6098,18 +5841,17 @@
     "obtainMethods": [
       {
         "location": "Wishbones",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "19 Dragon Coins",
+        "price": "N/A",
         "requiredItems": "1 Five \"Lucky\" Wishbones & 1 Vertebral Column",
-        "daRequired": true
+        "sellback": "19 Dragon Coins",
+        "daRequired": true,
+        "dcRequired": true
       }
     ],
-    "tags": [
-      "dar",
-      "merge"
-    ],
+    "tags": ["dar", "merge"],
     "daRequired": true,
+    "dcRequired": true,
     "isRare": true
   },
   {
@@ -6121,9 +5863,7 @@
     "description": "Wishbones are supposed to be lucky... right? This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21732713",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "80",
     "stats": "Block +6, Dodge +6, Crit +9, LUK +15, INT +9, DEX +9, STR +9, Bonus +10",
     "resists": "Light +14",
@@ -6134,17 +5874,14 @@
     "obtainMethods": [
       {
         "location": "Wishbones",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "0 Gold",
+        "price": "N/A",
         "requiredItems": "1 Five Found \"Lucky\" Wishbones & 1 Vertebral Column",
+        "sellback": "0 Gold",
         "daRequired": true
       }
     ],
-    "tags": [
-      "dar",
-      "merge"
-    ],
+    "tags": ["dar", "merge"],
     "daRequired": true,
     "isRare": true
   },
@@ -6157,9 +5894,7 @@
     "description": "This item requires a Dragon Amulet. Salvaged from Kordana's wreckage this mechanical skull shoots lasers! Shark not included.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19113358",
     "releaseDate": "",
-    "elements": [
-      "FIR"
-    ],
+    "elements": ["FIR"],
     "level": "35",
     "stats": "Crit +3, Bonus +3",
     "resists": "None",
@@ -6172,16 +5907,13 @@
     "obtainMethods": [
       {
         "location": "Skull Crusher",
-        "price": "400 Gold",
         "priceType": "gold",
+        "price": "400 Gold",
         "sellback": "40 Gold",
         "daRequired": true
       }
     ],
-    "tags": [
-      "fir",
-      "gold"
-    ],
+    "tags": ["fir", "gold"],
     "daRequired": true,
     "attacks": [
       {
@@ -6207,9 +5939,7 @@
     "description": "This magical eyepiece will enhance your ability to perform critical hits and boost your damage!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19641976",
     "releaseDate": "",
-    "elements": [
-      "ENE"
-    ],
+    "elements": ["ENE"],
     "level": "15",
     "stats": "Crit +1, INT +1, DEX +1, STR +1",
     "resists": "None",
@@ -6220,18 +5950,15 @@
     "obtainMethods": [
       {
         "location": "Teral's Gear",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "100 Gold",
+        "price": "N/A",
         "requiredItems": "4 Troglomite Eye & 4 Barrat Wing",
-        "daRequired": false
+        "sellback": "100 Gold",
+        "daRequired": true
       }
     ],
-    "tags": [
-      "ene",
-      "merge"
-    ],
-    "daRequired": false
+    "tags": ["ene", "merge"],
+    "daRequired": true
   },
   {
     "id": "accessory-soul-purifier",
@@ -6242,9 +5969,7 @@
     "description": "Is something casting a shadow over YOUR soul? The Soul Purifier will help with that! This trinket will raise your defenses for three turns while healing some of your health! This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18393098",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "20",
     "stats": "Crit +3, WIS +3, END +3",
     "resists": "Darkness +10",
@@ -6257,16 +5982,13 @@
     "obtainMethods": [
       {
         "location": "Memory-Demons",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "100 Gold",
         "daRequired": true
       }
     ],
-    "tags": [
-      "lig",
-      "free"
-    ],
+    "tags": ["lig", "free"],
     "daRequired": true,
     "attacks": [
       {
@@ -6292,9 +6014,7 @@
     "description": "Made with hardened leather, imbued with crit-boosting magic, and adorned with cruel spikes. FEEL MY WRATH! This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19639760",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "60",
     "stats": "Dodge +2, Crit +9, Magic Def +4, Pierce Def +4, Melee Def +4, END +5, LUK -3, INT +3, DEX +3, STR +3",
     "resists": "None",
@@ -6305,17 +6025,14 @@
     "obtainMethods": [
       {
         "location": "Teral's Gear",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "400 Gold",
+        "price": "N/A",
         "requiredItems": "1 Leather Power Fists & 5 Unlucky Doom Essence",
+        "sellback": "400 Gold",
         "daRequired": true
       }
     ],
-    "tags": [
-      "nat",
-      "merge"
-    ],
+    "tags": ["nat", "merge"],
     "daRequired": true
   },
   {
@@ -6327,9 +6044,7 @@
     "description": "Summon a simulacrum of the Destiny Dragon! This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21988987",
     "releaseDate": "",
-    "elements": [
-      "GOO"
-    ],
+    "elements": ["GOO"],
     "level": "1",
     "stats": "None",
     "resists": "None",
@@ -6342,17 +6057,14 @@
     "obtainMethods": [
       {
         "location": "DF Birthday, Draconic Items",
-        "price": "25,000 Gold",
         "priceType": "gold",
+        "price": "25,000 Gold",
         "sellback": "2,500 Gold",
         "daRequired": true
       }
     ],
     "notes": "• Item previously had a price of 2,500 Gold, with a sellback of 250 Gold; this was changed alongside its 2023 re-release.",
-    "tags": [
-      "goo",
-      "gold"
-    ],
+    "tags": ["goo", "gold"],
     "daRequired": true,
     "isSeasonal": true,
     "attacks": [
@@ -6379,9 +6091,7 @@
     "description": "The long lost Summon Gem - Ayauhnqui! Its special ability will boost your All resist by 5 when used. Proof of victory over Ayauhnqui and Reaver!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22376498",
     "releaseDate": "",
-    "elements": [
-      "ENE"
-    ],
+    "elements": ["ENE"],
     "level": "25",
     "stats": "Block +5, Dodge +5, Parry +5, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +5, END +5, CHA +5, LUK +5",
     "resists": "Energy +8, Nature +8",
@@ -6394,19 +6104,18 @@
     "obtainMethods": [
       {
         "location": "The Conduit: Life & Death",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "0 Dragon Coins",
+        "price": "N/A",
         "requiredItems": "1 Shattered Summon Gem - Ayauhnqui & 1 Summoner's Conduit: Life and Death",
-        "daRequired": false
+        "sellback": "0 Dragon Coins",
+        "daRequired": true,
+        "dcRequired": true
       }
     ],
     "notes": "• Resists were added on  June 20th, 2025.",
-    "tags": [
-      "ene",
-      "merge"
-    ],
-    "daRequired": false,
+    "tags": ["ene", "merge"],
+    "daRequired": true,
+    "dcRequired": true,
     "attacks": [
       {
         "name": "Summon Aya",
@@ -6423,17 +6132,15 @@
     ]
   },
   {
-    "id": "accessory-summon-gem-illumina",
-    "name": "Summon Gem - Illumina",
-    "slug": "accessory-summon-gem-illumina",
+    "id": "accessory-summon-gem-illumina-ex",
+    "name": "Summon Gem - Illumina (EX)",
+    "slug": "accessory-summon-gem-illumina-ex",
     "type": "accessory",
     "subtype": "trinket",
     "description": "Carry on my wayward sun.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19380568",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "25",
     "stats": "Block +1",
     "resists": "None",
@@ -6446,17 +6153,14 @@
     "obtainMethods": [
       {
         "location": "Gem Shop",
-        "price": "0 Gold",
         "priceType": "free",
+        "price": "0 Gold",
         "sellback": "0 Gold",
-        "daRequired": false
+        "daRequired": true
       }
     ],
-    "tags": [
-      "lig",
-      "free"
-    ],
-    "daRequired": false,
+    "tags": ["lig", "free"],
+    "daRequired": true,
     "attacks": [
       {
         "name": "Summon Illumina",
@@ -6494,18 +6198,18 @@
     "obtainMethods": [
       {
         "location": "The Conduit: Duty & Rebellion",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "0 Dragon Coins",
+        "price": "N/A",
         "requiredItems": "1 Warped Summon Gem - Intaym & 1 Summoner's Conduit: Duty & Rebellion",
-        "daRequired": false
+        "sellback": "0 Dragon Coins",
+        "daRequired": true,
+        "dcRequired": true
       }
     ],
     "notes": "• Resists were added on  June 20th, 2025.",
-    "tags": [
-      "merge"
-    ],
-    "daRequired": false,
+    "tags": ["merge"],
+    "daRequired": true,
+    "dcRequired": true,
     "attacks": [
       {
         "name": "Summon Intaym",
@@ -6522,17 +6226,15 @@
     ]
   },
   {
-    "id": "accessory-summon-gem-reaver",
-    "name": "Summon Gem - Reaver",
-    "slug": "accessory-summon-gem-reaver",
+    "id": "accessory-summon-gem-reaver-ex",
+    "name": "Summon Gem - Reaver (EX)",
+    "slug": "accessory-summon-gem-reaver-ex",
     "type": "accessory",
     "subtype": "trinket",
     "description": "Seasons don't fear the Reaver",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17329606",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "25",
     "stats": "Dodge +1",
     "resists": "None",
@@ -6545,17 +6247,14 @@
     "obtainMethods": [
       {
         "location": "Gem Shop",
-        "price": "0 Gold",
         "priceType": "free",
+        "price": "0 Gold",
         "sellback": "0 Gold",
-        "daRequired": false
+        "daRequired": true
       }
     ],
-    "tags": [
-      "dar",
-      "free"
-    ],
-    "daRequired": false,
+    "tags": ["dar", "free"],
+    "daRequired": true,
     "attacks": [
       {
         "name": "Summon Reaver",
@@ -6572,17 +6271,15 @@
     ]
   },
   {
-    "id": "accessory-summon-gem-ricterild",
-    "name": "Summon Gem - Ricterild",
-    "slug": "accessory-summon-gem-ricterild",
+    "id": "accessory-summon-gem-ricterild-ex",
+    "name": "Summon Gem - Ricterild (EX)",
+    "slug": "accessory-summon-gem-ricterild-ex",
     "type": "accessory",
     "subtype": "trinket",
     "description": "Never forget those that Darkness has claimed! This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22036820",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "5",
     "stats": "None",
     "resists": "None",
@@ -6595,16 +6292,13 @@
     "obtainMethods": [
       {
         "location": "Vizalain's Gratitude",
-        "price": "1,000 Gold",
         "priceType": "gold",
+        "price": "1,000 Gold",
         "sellback": "100 Gold",
         "daRequired": true
       }
     ],
-    "tags": [
-      "lig",
-      "gold"
-    ],
+    "tags": ["lig", "gold"],
     "daRequired": true,
     "attacks": [
       {
@@ -6622,17 +6316,15 @@
     ]
   },
   {
-    "id": "accessory-summon-gem-roktoru",
-    "name": "Summon Gem - Roktoru",
-    "slug": "accessory-summon-gem-roktoru",
+    "id": "accessory-summon-gem-roktoru-ex",
+    "name": "Summon Gem - Roktoru (EX)",
+    "slug": "accessory-summon-gem-roktoru-ex",
     "type": "accessory",
     "subtype": "trinket",
     "description": "Roktoru like a hurricane!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17644800",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "25",
     "stats": "Dodge +1",
     "resists": "None",
@@ -6645,17 +6337,14 @@
     "obtainMethods": [
       {
         "location": "Roktoru Gem Shop",
-        "price": "0 Gold",
         "priceType": "free",
+        "price": "0 Gold",
         "sellback": "0 Gold",
-        "daRequired": false
+        "daRequired": true
       }
     ],
-    "tags": [
-      "sto",
-      "free"
-    ],
-    "daRequired": false,
+    "tags": ["sto", "free"],
+    "daRequired": true,
     "attacks": [
       {
         "name": "Summon Roktoru",
@@ -6680,9 +6369,7 @@
     "description": "Summon a simulacrum of the Destiny Dragon when it was young!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21989012",
     "releaseDate": "",
-    "elements": [
-      "GOO"
-    ],
+    "elements": ["GOO"],
     "level": "1",
     "stats": "None",
     "resists": "None",
@@ -6695,17 +6382,14 @@
     "obtainMethods": [
       {
         "location": "DF Birthday, Draconic Items",
-        "price": "500 Dragon Coins",
         "priceType": "dc",
-        "sellback": "450 Dragon Coins before 24 hours, 125 Dragon Coins after 24 hours",
+        "price": "500 Dragon Coins",
+        "sellback": "450 DC (<24 hours) / 125 DC (>24 hours)",
         "daRequired": false,
         "dcRequired": true
       }
     ],
-    "tags": [
-      "goo",
-      "dc"
-    ],
+    "tags": ["goo", "dc"],
     "daRequired": false,
     "dcRequired": true,
     "isSeasonal": true,
@@ -6725,65 +6409,6 @@
     ]
   },
   {
-    "id": "accessory-the-corrupted-seven",
-    "name": "The Corrupted Seven",
-    "slug": "accessory-the-corrupted-seven",
-    "type": "accessory",
-    "subtype": "trinket",
-    "description": "Summon the Seven Corrupted elemental spirits to attack your foe! Increases your Boost by 5 on use as well. This item requires a Dragon Amulet.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22375031",
-    "releaseDate": "",
-    "elements": [
-      "EVI"
-    ],
-    "level": "60",
-    "stats": "Crit +5, WIS +5, END +5, CHA +5, LUK +5, INT +8, DEX +8, STR +8, Bonus +5",
-    "resists": "All +4, Health -4",
-    "ability": "The Corrupted Seven",
-    "abilityUrl": "https://forums2.battleon.com/f/tm.asp?m=22375034",
-    "rarity": "0",
-    "itemType": "Trinket",
-    "equipSpot": "Trinket",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "Pandora's Gauntlet",
-        "price": "N/A",
-        "priceType": "free",
-        "sellback": "N/A",
-        "daRequired": true
-      },
-      {
-        "location": "Pandora's Merges",
-        "price": "N/A",
-        "priceType": "merge",
-        "sellback": "N/A",
-        "requiredItems": "5 Fragment of Ethereal Woe",
-        "daRequired": true
-      }
-    ],
-    "notes": "• Trinket has an uncommon drop rate from the quest Pandora's Gauntlet. \n• Trinket initially required 10  Fragment of Ethereal Woe; this was lowered to 5 on  February 14th, 2020. \n• Trinket was DC tagged on  July 29th, 2022.",
-    "tags": [
-      "evi",
-      "free"
-    ],
-    "daRequired": true,
-    "attacks": [
-      {
-        "name": "The Corrupted Seven",
-        "description": "34 hits x 5.9% damage (200%) \n Self: +5% Boost for 4 turns. \n This skill deals Poison, Darkness, Energy, Fire, Wind, Nature, and Water damage.",
-        "requirements": "The Corrupted Seven equipped",
-        "effect": "Applies 'Empowered' (+5% Boost) to player for 4 turns inclusive; 34 hits of ~5.9% damage, amounting to 200% damage.\n• Previously had the tooltip: Summon the Corrupted Seven!\n• The following changes were implemented on  June 20th, 2025:\n  • Tooltip was updated.\n  • Cooldown was lowered from 34 to 19.",
-        "manaCost": "30",
-        "cooldown": "19 - [(Player LUK/50), rounded down]",
-        "damageType": "As weapon",
-        "element": "Poison / Darkness / Energy / Fire / Wind / Nature / Water",
-        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-CorruptedSeven.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-CorruptedSeven-Appearance1.0.png"
-      }
-    ]
-  },
-  {
     "id": "accessory-three-lucky-wishbones",
     "name": "Three \"Lucky\" Wishbones",
     "slug": "accessory-three-lucky-wishbones",
@@ -6792,9 +6417,7 @@
     "description": "Wishbones are supposed to be lucky... right? This item requires a Dragon Amulet. Visit the Black Market Moglin to upgrade this item.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19281936",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "40",
     "stats": "Block +2, Dodge +2, Crit +6, LUK +5, INT +2, DEX +2, STR +2, Bonus +3",
     "resists": "Light +5",
@@ -6805,18 +6428,17 @@
     "obtainMethods": [
       {
         "location": "Wishbones",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "19 Dragon Coins",
+        "price": "N/A",
         "requiredItems": "1 Two \"Lucky\" Wishbones & 1 Vertebral Column",
-        "daRequired": true
+        "sellback": "19 Dragon Coins",
+        "daRequired": true,
+        "dcRequired": true
       }
     ],
-    "tags": [
-      "dar",
-      "merge"
-    ],
+    "tags": ["dar", "merge"],
     "daRequired": true,
+    "dcRequired": true,
     "isRare": true
   },
   {
@@ -6828,9 +6450,7 @@
     "description": "Wishbones are supposed to be lucky... right? This item requires a Dragon Amulet. Visit the Black Market Moglin to upgrade this item.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19281796",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "40",
     "stats": "Block +2, Dodge +2, Crit +6, LUK +5, INT +2, DEX +2, STR +2, Bonus +3",
     "resists": "Light +5",
@@ -6841,17 +6461,14 @@
     "obtainMethods": [
       {
         "location": "Wishbones",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "0 Gold",
+        "price": "N/A",
         "requiredItems": "1 Two Found \"Lucky\" Wishbones & 1 Vertebral Column",
+        "sellback": "0 Gold",
         "daRequired": true
       }
     ],
-    "tags": [
-      "dar",
-      "merge"
-    ],
+    "tags": ["dar", "merge"],
     "daRequired": true,
     "isRare": true
   },
@@ -6877,17 +6494,17 @@
     "obtainMethods": [
       {
         "location": "Iadoa, the Chronomancer",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "0 Dragon Coins",
-        "daRequired": false
+        "daRequired": false,
+        "dcRequired": true
       }
     ],
     "notes": "• Equipping this trinket displays  animated gear cogs over the player, color-custom to the player's trim color.",
-    "tags": [
-      "free"
-    ],
+    "tags": ["free"],
     "daRequired": false,
+    "dcRequired": true,
     "attacks": [
       {
         "name": "Time's March",
@@ -6912,9 +6529,7 @@
     "description": "Wishbones are supposed to be lucky... right? This item requires a Dragon Amulet. Visit the Black Market Moglin to upgrade this item.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19281940",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "20",
     "stats": "Crit +3, LUK +3, INT +1, DEX +1, STR +1",
     "resists": "Light +3",
@@ -6925,18 +6540,17 @@
     "obtainMethods": [
       {
         "location": "Wishbones",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "19 Dragon Coins",
+        "price": "N/A",
         "requiredItems": "1 \"Lucky\" Wishbone & 1 Vertebral Column",
-        "daRequired": true
+        "sellback": "19 Dragon Coins",
+        "daRequired": true,
+        "dcRequired": true
       }
     ],
-    "tags": [
-      "dar",
-      "merge"
-    ],
+    "tags": ["dar", "merge"],
     "daRequired": true,
+    "dcRequired": true,
     "isRare": true
   },
   {
@@ -6948,9 +6562,7 @@
     "description": "Wishbones are supposed to be lucky... right? This item requires a Dragon Amulet. Visit the Black Market Moglin to upgrade this item.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19281784",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "20",
     "stats": "Crit +3, LUK +3, INT +1, DEX +1, STR +1",
     "resists": "Light +3",
@@ -6961,17 +6573,14 @@
     "obtainMethods": [
       {
         "location": "Wishbones",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "0 Gold",
+        "price": "N/A",
         "requiredItems": "1 Found \"Lucky\" Wishbone & 1 Vertebral Column",
+        "sellback": "0 Gold",
         "daRequired": true
       }
     ],
-    "tags": [
-      "dar",
-      "merge"
-    ],
+    "tags": ["dar", "merge"],
     "daRequired": true,
     "isRare": true
   },
@@ -7192,19 +6801,14 @@
     "equipSlot": "Trinket",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "fea",
-      "merge"
-    ],
+    "tags": ["fea", "merge"],
     "hasDA": true,
     "hasDC": false,
     "hasDM": false,
     "hasFree": false,
     "hasMerge": true,
     "levelRange": "I-IV",
-    "elements": [
-      "FEA"
-    ]
+    "elements": ["FEA"]
   },
   {
     "id": "accessory-uaanta-s-blaster-charging",
@@ -7448,19 +7052,14 @@
     "equipSlot": "Trinket",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "merge",
-      "win"
-    ],
+    "tags": ["merge", "win"],
     "hasDA": true,
     "hasDC": false,
     "hasDM": false,
     "hasFree": false,
     "hasMerge": true,
     "levelRange": "I-IV",
-    "elements": [
-      "WIN"
-    ]
+    "elements": ["WIN"]
   },
   {
     "id": "accessory-uaanta-s-blaster-destiny",
@@ -7679,19 +7278,14 @@
     "equipSlot": "Trinket",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "goo",
-      "merge"
-    ],
+    "tags": ["goo", "merge"],
     "hasDA": true,
     "hasDC": false,
     "hasDM": false,
     "hasFree": false,
     "hasMerge": true,
     "levelRange": "I-IV",
-    "elements": [
-      "GOO"
-    ]
+    "elements": ["GOO"]
   },
   {
     "id": "accessory-uaanta-s-blaster-doom",
@@ -7806,7 +7400,7 @@
             "priceType": "merge",
             "sellback": "200 Gold",
             "requiredItems": "1 Uaanta's Blaster II (Charging) & 1 Infected Stability Core",
-            "daRequired": false
+            "daRequired": true
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22395365",
@@ -7844,7 +7438,7 @@
             "priceType": "merge",
             "sellback": "300 Gold",
             "requiredItems": "1 Uaanta's Blaster III (Charging) & 1 Infected Stability Core",
-            "daRequired": false
+            "daRequired": true
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22395366",
@@ -7882,7 +7476,7 @@
             "priceType": "merge",
             "sellback": "400 Gold",
             "requiredItems": "1 Uaanta's Blaster IV (Charging) & 1 Infected Stability Core",
-            "daRequired": false
+            "daRequired": true
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22395367",
@@ -7910,19 +7504,14 @@
     "equipSlot": "Trinket",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "evi",
-      "merge"
-    ],
-    "hasDA": false,
+    "tags": ["evi", "merge"],
+    "hasDA": true,
     "hasDC": false,
     "hasDM": false,
     "hasFree": false,
     "hasMerge": true,
     "levelRange": "I-IV",
-    "elements": [
-      "EVI"
-    ]
+    "elements": ["EVI"]
   },
   {
     "id": "accessory-uaanta-s-blaster-uncharged",
@@ -8066,19 +7655,14 @@
     "equipSlot": "Trinket",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "free",
-      "win"
-    ],
+    "tags": ["free", "win"],
     "hasDA": true,
     "hasDC": false,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-IV",
-    "elements": [
-      "WIN"
-    ]
+    "elements": ["WIN"]
   },
   {
     "id": "accessory-vaal-s-ego",
@@ -8089,9 +7673,7 @@
     "description": "Call upon Vaal's Ego in battle. Proof of your victory over the Egomaniacs challenge.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22342750",
     "releaseDate": "",
-    "elements": [
-      "FIR"
-    ],
+    "elements": ["FIR"],
     "level": "1",
     "stats": "Crit +10, WIS +6, END +6, CHA +6, LUK +6, INT +6, DEX +6, STR +6, Bonus +10",
     "resists": "Fire +8",
@@ -8104,19 +7686,18 @@
     "obtainMethods": [
       {
         "location": "Egomaniacs (Shop)",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "0 Dragon Coins",
+        "price": "N/A",
         "requiredItems": "1 Molten Sourcemetal & 1 Fragments of Ego",
-        "daRequired": false
+        "sellback": "0 Dragon Coins",
+        "daRequired": false,
+        "dcRequired": true
       }
     ],
-    "notes": "• Own this item to unlock the Vaal  Armor Customization options for the  Chaosweaver class; this functionality was added on  December 18th, 2020. \n• As of the changes to the DEX stat on  April 16th, 2021, the description's claim that its ability did not affect the DEX damage bonus is outdated, as there is no longer a DEX damage bonus resultant of DoT application. The excerpt Does not affect the DEX damage bonus. would eventually be removed on  October 11th, 2024. \n• Resists were added on  June 20th, 2025.",
-    "tags": [
-      "fir",
-      "merge"
-    ],
+    "notes": "• Own this item to unlock the Vaal  Armor Customization options for the  Chaosweaver class; this functionality was added on  December 18th, 2020.\n• As of the changes to the DEX stat on  April 16th, 2021, the description's claim that its ability did not affect the DEX damage bonus is outdated, as there is no longer a DEX damage bonus resultant of DoT application. The excerpt Does not affect the DEX damage bonus. would eventually be removed on  October 11th, 2024.\n• Resists were added on  June 20th, 2025.",
+    "tags": ["fir", "merge"],
     "daRequired": false,
+    "dcRequired": true,
     "attacks": [
       {
         "name": "Vaal's Ego",
@@ -8141,9 +7722,7 @@
     "description": "Crafted by the Wind Elves of the Dreamwood, this enchanted charm is said to bring its bearer favorable winds toward home. This trinket has a skill that enhances the power of your base class!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22424819",
     "releaseDate": "",
-    "elements": [
-      "WIN"
-    ],
+    "elements": ["WIN"],
     "level": "10",
     "stats": "END +2, INT +2, DEX +2, STR +2",
     "resists": "Fire +2, Darkness +2, Light +2, Wind +2",
@@ -8156,16 +7735,13 @@
     "obtainMethods": [
       {
         "location": "Beach Vacation Invasion",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "300 Gold",
         "daRequired": false
       }
     ],
-    "tags": [
-      "win",
-      "free"
-    ],
+    "tags": ["win", "free"],
     "daRequired": false,
     "attacks": [
       {
@@ -8191,9 +7767,7 @@
     "description": "This little mogbot has decided to follow you around! Click to change its color! (Cosmetic)",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22417711",
     "releaseDate": "",
-    "elements": [
-      "MET"
-    ],
+    "elements": ["MET"],
     "level": "1",
     "stats": "None",
     "resists": "None",
@@ -8204,19 +7778,18 @@
     "obtainMethods": [
       {
         "location": "AARGH Rewards 4",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "N/A",
+        "price": "N/A",
         "requiredItems": "50 Timewarped Medal",
-        "daRequired": false
+        "sellback": "N/A",
+        "daRequired": false,
+        "dcRequired": true
       }
     ],
-    "notes": "• Equipping this trinket displays an animated Mogbot behind the player. \n• Click on the Mogbot to change its light color between  green,  red, and  blue respectively.",
-    "tags": [
-      "met",
-      "merge"
-    ],
-    "daRequired": false
+    "notes": "• Equipping this trinket displays an animated Mogbot behind the player.\n• Click on the Mogbot to change its light color between  ,  , and   respectively.",
+    "tags": ["met", "merge"],
+    "daRequired": false,
+    "dcRequired": true
   },
   {
     "id": "accessory-warped-summon-gem-intaym",
@@ -8238,16 +7811,16 @@
     "obtainMethods": [
       {
         "location": "Summon Gem: Intaym",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "0 Dragon Coins",
-        "daRequired": false
+        "daRequired": true,
+        "dcRequired": true
       }
     ],
-    "tags": [
-      "free"
-    ],
-    "daRequired": false
+    "tags": ["free"],
+    "daRequired": true,
+    "dcRequired": true
   },
   {
     "id": "accessory-warpfire-manifestation",
@@ -8258,9 +7831,7 @@
     "description": "Imbued with an excess of Fire, Riftwalkers on Lore developed techniques to use it in myriad ways, defensive and offensive. Unlocks the Warpfire Customization for Pyromancer. (Cosmetic)",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22425153",
     "releaseDate": "",
-    "elements": [
-      "FIR"
-    ],
+    "elements": ["FIR"],
     "level": "1",
     "stats": "None",
     "resists": "None",
@@ -8271,18 +7842,15 @@
     "obtainMethods": [
       {
         "location": "Customization Catalysts, DC Cosmetics",
-        "price": "600 Dragon Coins",
         "priceType": "dc",
+        "price": "600 Dragon Coins",
         "sellback": "N/A",
         "daRequired": false,
         "dcRequired": true
       }
     ],
-    "notes": "• Equipping this trinket displays an animated orange runic circles over the  player. \n• Own this item to unlock the Warpfire  Armor Customization options for the  Pyromancer class.",
-    "tags": [
-      "fir",
-      "dc"
-    ],
+    "notes": "• Equipping this trinket displays an animated orange runic circles over the  .\n• Own this item to unlock the Warpfire  Armor Customization options for the  Pyromancer class.",
+    "tags": ["fir", "dc"],
     "daRequired": false,
     "dcRequired": true
   },
@@ -8295,9 +7863,7 @@
     "description": "This item requires a Dragon Amulet. Never get lost again! Use this powerful trinket to add damage power to your attack for 5 rounds but be careful, that big arrow makes it eaiser for monster to hit you!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15865056",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "5",
     "stats": "Block -1, Dodge -1, Parry -1, Crit +4, Magic Def -5, Pierce Def -5, Melee Def -5, INT +2, STR +2, Bonus +4",
     "resists": "None",
@@ -8310,25 +7876,24 @@
     "obtainMethods": [
       {
         "location": "Transformed from Red Egg (D-Amulet)",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "50 Gold",
         "daRequired": true
       },
       {
         "location": "Transformed from Red Egg (D-Amulet/D-Coins)",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "19 Dragon Coins",
-        "daRequired": true
+        "daRequired": true,
+        "dcRequired": true
       }
     ],
-    "notes": "• Equipping this trinket displays  \"YOU ARE HERE\" text with an animated arrow pointing down to the  player.",
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "notes": "• Equipping this trinket displays   pointing down to the  .",
+    "tags": ["nat", "free"],
     "daRequired": true,
+    "dcRequired": true,
     "isRare": true,
     "attacks": [
       {
