@@ -14,7 +14,7 @@ import { compareTitles } from '../../../src/utils/displayText.ts'
 import { computeFamilyFlags, normalizeLevel } from '../../../src/utils/variantHelpers.ts'
 import { slugify } from '../text.ts'
 
-const ENABLED_SUBTYPES = new Set<AccessorySubtype>(['helm'])
+const ENABLED_SUBTYPES = new Set<AccessorySubtype>(['helm', 'cape-wing'])
 const DEFERRED_CROSS_POST_FAMILY_PATTERNS = [/\b(?:dragonlion|lion)'?s?\b.*\b(?:head|mane)\b/i]
 const DRAGONLION_VARIANTS = ['(Base)', 'Nervous', 'Alarmed', 'Spooked', 'Panicky', 'Petrified']
 const DRAGONLION_HEAD_FAMILY_NAMES = [
@@ -279,6 +279,9 @@ function getParentheticalPrefixFamilyParts(
 }
 
 function deriveFamilyName(entries: AccessoryEntry[]): string {
+  const worldCupFamilyName = deriveWorldCupFamilyName(entries)
+  if (worldCupFamilyName) return worldCupFamilyName
+
   const parentheticalPrefixFamily = getParentheticalPrefixFamilyParts(entries)
   if (parentheticalPrefixFamily) {
     return `${titleCaseFromTokens(parentheticalPrefixFamily.prefix)} (${parentheticalPrefixFamily.variants.join(', ')})`
@@ -302,6 +305,23 @@ function deriveFamilyName(entries: AccessoryEntry[]): string {
   if (prefixOnly.length >= 2) return titleCaseFromTokens(prefixOnly)
 
   return entries.map(getDisplayName).sort((a, b) => a.length - b.length || compareTitles(a, b))[0]
+}
+
+function deriveWorldCupFamilyName(entries: AccessoryEntry[]): string | undefined {
+  const countries = entries
+    .map((entry) =>
+      getDisplayName(entry)
+        .match(/^World Cup 2010 Cape(?:\s+II)?:\s*(.+)$/i)?.[1]
+        ?.trim()
+    )
+    .filter((country): country is string => Boolean(country))
+
+  if (countries.length !== entries.length) return undefined
+  if (!countries.every((country) => country.toLowerCase() === countries[0].toLowerCase())) {
+    return undefined
+  }
+
+  return `World Cup 2010 Cape: ${countries[0]}`
 }
 
 function deriveVariantName(name: string, familyName: string): string | undefined {
@@ -856,6 +876,196 @@ function applySpecialFamilies(entries: AccessoryEntry[]): AccessoryEntry[] {
   return [...entries.filter((entry) => !consumedSlugs.has(entry.slug)), ...familiesByName.values()]
 }
 
+function hasExactFamilyNameVariant(family: AccessoryFamily): boolean {
+  const familyName = normalizeLookupName(family.familyName)
+  return family.levelVariants.some((variant) => normalizeLookupName(variant.name) === familyName)
+}
+
+function renameFamilyToFirstVariant(family: AccessoryFamily): AccessoryFamily {
+  const firstVariant = family.levelVariants[0]
+  if (
+    !firstVariant?.name ||
+    normalizeLookupName(firstVariant.name) === normalizeLookupName(family.familyName)
+  ) {
+    return family
+  }
+
+  return {
+    ...family,
+    familyName: firstVariant.name,
+    levelVariants: family.levelVariants.map((variant, index) =>
+      index === 0 ? { ...variant, variantName: '(Base)' } : variant
+    ),
+  }
+}
+
+function disambiguateDuplicateFamilyNames(entries: AccessoryEntry[]): AccessoryEntry[] {
+  const familyGroups = new Map<string, AccessoryFamily[]>()
+
+  for (const entry of entries) {
+    if (!isAccessoryFamily(entry) || entry.familyOrigin !== 'cross-post') continue
+    const key = `${entry.subtype}:${normalizeLookupName(entry.familyName)}`
+    familyGroups.set(key, [...(familyGroups.get(key) ?? []), entry])
+  }
+
+  const renamedBySlug = new Map<string, AccessoryFamily>()
+  for (const families of familyGroups.values()) {
+    if (families.length <= 1) continue
+    for (const family of families) {
+      if (hasExactFamilyNameVariant(family)) continue
+      renamedBySlug.set(family.slug, renameFamilyToFirstVariant(family))
+    }
+  }
+
+  if (renamedBySlug.size === 0) return entries
+  return entries.map((entry) => renamedBySlug.get(entry.slug) ?? entry)
+}
+
+function sourceMatchesVariant(source: FamilySourceRef, variant: LevelVariant): boolean {
+  const sourceUrl = variant.sourceUrl
+  if (sourceUrl && source.url === sourceUrl) return true
+
+  const sourceLabel = normalizeLookupName(source.variantLabel ?? source.title)
+  return sourceLabel.includes(normalizeLookupName(variant.name))
+}
+
+function buildCiderKegSplitFamily(
+  baseFamily: AccessoryFamily,
+  familyName: string,
+  slug: string,
+  variants: LevelVariant[]
+): AccessoryFamily {
+  const renumberedVariants = variants.map((variant, index) => ({
+    ...variant,
+    levelNumber: index + 1,
+  }))
+  const sources = (baseFamily.familySources ?? []).filter((source) =>
+    renumberedVariants.some((variant) => sourceMatchesVariant(source, variant))
+  )
+  const aliasSlugs =
+    familyName === 'Cider Keg'
+      ? [
+          'accessory-sweet-cider-keg',
+          'accessory-warm-cider-keg',
+          'accessory-bubbly-cider-keg',
+          'accessory-moglinberry-cider-keg',
+        ]
+      : [
+          'accessory-sweet-void-cider-keg',
+          'accessory-warm-void-cider-keg',
+          'accessory-bubbly-void-cider-keg',
+          'accessory-moglinberry-void-cider-keg',
+        ]
+
+  return computeFamilyFlags({
+    ...baseFamily,
+    id: slug,
+    familyName,
+    slug,
+    aliasSlugs,
+    familySources: sources,
+    shared: baseFamily.shared,
+    levelVariants: renumberedVariants,
+  })
+}
+
+function splitCiderKegFamilies(entries: AccessoryEntry[]): AccessoryEntry[] {
+  return entries.flatMap((entry) => {
+    if (
+      !isAccessoryFamily(entry) ||
+      entry.subtype !== 'cape-wing' ||
+      normalizeLookupName(entry.familyName) !== 'cider keg'
+    ) {
+      return [entry]
+    }
+
+    const nonVoidNames = new Set([
+      'cider keg',
+      'sweet cider keg',
+      'warm cider keg',
+      'spiced cider keg',
+      'mulled cider keg',
+      'foamy cider keg',
+      'bubbly cider keg',
+      'moglinberry cider keg',
+    ])
+    const voidVariantNames = new Map([
+      ['void cider keg', '(Base)'],
+      ['sweet void cider keg', 'Sweet'],
+      ['warm void cider keg', 'Warm'],
+      ['spiced cider keg', 'Spiced'],
+      ['mulled cider keg', 'Mulled'],
+      ['foamy cider keg', 'Foamy'],
+      ['bubbly void cider keg', 'Bubbly'],
+      ['moglinberry void cider keg', 'Moglinberry'],
+    ])
+    const nonVoidVariants = entry.levelVariants.filter((variant) =>
+      nonVoidNames.has(normalizeLookupName(variant.name))
+    )
+    const voidVariants = entry.levelVariants
+      .filter((variant) => voidVariantNames.has(normalizeLookupName(variant.name)))
+      .map((variant) => ({
+        ...variant,
+        variantName: voidVariantNames.get(normalizeLookupName(variant.name))!,
+      }))
+
+    if (nonVoidVariants.length === 0 || voidVariants.length === 0) return [entry]
+
+    const nonVoidFamily = buildCiderKegSplitFamily(
+      entry,
+      'Cider Keg',
+      'accessory-cider-keg',
+      nonVoidVariants
+    )
+    const voidFamily = buildCiderKegSplitFamily(
+      entry,
+      'Void Cider Keg',
+      'accessory-void-cider-keg',
+      voidVariants
+    )
+
+    return [
+      setAlsoSee(nonVoidFamily, [getFamilyRef(voidFamily)]) as AccessoryFamily,
+      setAlsoSee(voidFamily, [getFamilyRef(nonVoidFamily)]) as AccessoryFamily,
+    ]
+  })
+}
+
+function linkSiblingFamilies(entries: AccessoryEntry[]): AccessoryEntry[] {
+  const siblingGroups = [
+    ['Cider Keg', 'Void Cider Keg'],
+    ['Cider Mug', 'Void Cider Mug'],
+    ['Mantle of Shadows', 'Invisible Cape', 'Cloak of Shadows', 'Wrap of Shadows'],
+  ]
+  const familyByName = new Map<string, AccessoryFamily>()
+
+  for (const entry of entries) {
+    if (!isAccessoryFamily(entry)) continue
+    familyByName.set(normalizeLookupName(entry.familyName), entry)
+  }
+
+  const updatedBySlug = new Map<string, AccessoryFamily>()
+  for (const siblingGroup of siblingGroups) {
+    const siblings = siblingGroup
+      .map((name) => familyByName.get(normalizeLookupName(name)))
+      .filter((family): family is AccessoryFamily => Boolean(family))
+    if (siblings.length !== siblingGroup.length) continue
+
+    for (const family of siblings) {
+      const siblingRefs = siblings
+        .filter((sibling) => sibling.slug !== family.slug)
+        .map(getFamilyRef)
+      updatedBySlug.set(
+        family.slug,
+        setAlsoSee(family, [...getAlsoSee(family), ...siblingRefs]) as AccessoryFamily
+      )
+    }
+  }
+
+  if (updatedBySlug.size === 0) return entries
+  return entries.map((entry) => updatedBySlug.get(entry.slug) ?? entry)
+}
+
 export function promoteAccessoryCrossPostFamilies(entries: AccessoryEntry[]): AccessoryEntry[] {
   const visited = new Set<string>()
   const groups: AccessoryEntry[][] = []
@@ -890,5 +1100,9 @@ export function promoteAccessoryCrossPostFamilies(entries: AccessoryEntry[]): Ac
     })
     .flat()
 
-  return rewriteRelatedRefsForPromotedFamilies(applySpecialFamilies(promoted))
+  return rewriteRelatedRefsForPromotedFamilies(
+    linkSiblingFamilies(
+      splitCiderKegFamilies(disambiguateDuplicateFamilyNames(applySpecialFamilies(promoted)))
+    )
+  )
 }

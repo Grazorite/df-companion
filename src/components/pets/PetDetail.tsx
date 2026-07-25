@@ -14,13 +14,13 @@ import { displayTitle, normalizeDisplayText } from '../../utils/displayText'
 import { buildDisplayImages } from '../../utils/imageLabels'
 import ElementPill from '../shared/ElementPill'
 import AccessPills from '../shared/AccessPills'
-import NotesList from '../shared/NotesList'
 import LevelStatsTable from '../shared/LevelStatsTable'
 import LevelSelector from '../shared/LevelSelector'
 import ObtainSection from '../shared/ObtainSection'
 import SourceLinksCard from '../shared/SourceLinksCard'
 import CollapsibleSection from '../shared/CollapsibleSection'
 import MetadataChipSection from '../shared/MetadataChipSection'
+import OtherInformationSection from '../shared/OtherInformationSection'
 import PetAttacks from './PetAttacks'
 import GuestAttacks from '../guests/GuestAttacks'
 import GuestStatsSection from '../guests/GuestStatsSection'
@@ -356,19 +356,6 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
 
     return [...requirementSet]
   }, [activeIndex, displayLevels, family, isMultiVariant, pet.obtainMethods])
-
-  // Strip everything from "Thanks to" onwards — attribution lines, not content
-  const cleanedNotes = displayData.notes
-    ? (() => {
-        // Handle both newline-separated (new) and " • "-separated (legacy) formats
-        const separator = displayData.notes.includes('\n') ? '\n' : ' • '
-        const bullets = displayData.notes.split(separator)
-        const cutoff = bullets.findIndex((n) => /^Thanks\s+to\b/i.test(n.trim()))
-        const kept = cutoff >= 0 ? bullets.slice(0, cutoff) : bullets
-        const result = kept.filter((n) => n.trim().length > 0).join(separator)
-        return result || undefined
-      })()
-    : undefined
 
   const stats = [
     { label: 'Level', value: pet.level },
@@ -723,75 +710,22 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
         <PetAttacks attacks={(displayData.attacks as Pet['attacks'] | undefined) ?? []} />
       )}
 
-      {/* Notes - show shared notes for multi-variant (always visible), and/or level-specific notes */}
-      {(() => {
-        // For multi-variant items
-        if (isMultiVariant && family) {
-          const activeLevel = displayLevels[activeIndex]
-          const shouldShowSharedNotes =
-            family.familyOrigin !== 'cross-post' ||
-            displayLevels.every(
-              (level) => (level.notes ?? undefined) === (family.shared.notes ?? undefined)
-            )
-
-          // Clean shared notes (remove attribution)
-          const cleanedSharedNotes =
-            shouldShowSharedNotes && family.shared.notes
-              ? (() => {
-                  const separator = family.shared.notes.includes('\n') ? '\n' : ' • '
-                  const bullets = family.shared.notes.split(separator)
-                  const cutoff = bullets.findIndex((n) => /^Thanks\s+to\b/i.test(n.trim()))
-                  const kept = cutoff >= 0 ? bullets.slice(0, cutoff) : bullets
-                  const result = kept.filter((n) => n.trim().length > 0).join(separator)
-                  return result || undefined
-                })()
-              : undefined
-
-          // Clean level-specific notes (remove attribution)
-          const cleanedLevelNotes = activeLevel.notes
-            ? (() => {
-                const separator = activeLevel.notes.includes('\n') ? '\n' : ' • '
-                const bullets = activeLevel.notes.split(separator)
-                const cutoff = bullets.findIndex((n) => /^Thanks\s+to\b/i.test(n.trim()))
-                const kept = cutoff >= 0 ? bullets.slice(0, cutoff) : bullets
-                const result = kept.filter((n) => n.trim().length > 0).join(separator)
-                return result || undefined
-              })()
+      <OtherInformationSection
+        notes={family ? undefined : displayData.notes}
+        sharedNotes={family?.shared.notes}
+        activeVariantNotes={isMultiVariant && family ? displayLevels[activeIndex].notes : undefined}
+        allVariantNotes={family?.levelVariants.map((level) => level.notes)}
+        showSharedNotes={
+          family
+            ? family.familyOrigin !== 'cross-post' ||
+              displayLevels.every(
+                (level) => (level.notes ?? undefined) === (family.shared.notes ?? undefined)
+              )
             : undefined
-          const dedupedLevelNotes =
-            cleanedLevelNotes && cleanedLevelNotes !== cleanedSharedNotes
-              ? cleanedLevelNotes
-              : undefined
-
-          // If neither exists, don't render
-          if (!cleanedSharedNotes && !dedupedLevelNotes) return null
-
-          return (
-            <section className="bg-bg-surface/60 border border-border-default rounded-lg p-4 mb-5">
-              <h2 className="text-xs font-semibold text-text-muted uppercase tracking-wider mb-3">
-                Other Information
-              </h2>
-              {cleanedSharedNotes && <NotesList notes={cleanedSharedNotes} />}
-              {cleanedSharedNotes && dedupedLevelNotes && (
-                <div className="my-3 border-t border-border-default" />
-              )}
-              {dedupedLevelNotes && <NotesList notes={dedupedLevelNotes} />}
-            </section>
-          )
         }
-
-        // For single-variant items, use cleanedNotes
-        if (!cleanedNotes) return null
-
-        return (
-          <section className="bg-bg-surface/60 border border-border-default rounded-lg p-4 mb-5">
-            <h2 className="text-xs font-semibold text-text-muted uppercase tracking-wider mb-3">
-              Other Information
-            </h2>
-            <NotesList notes={cleanedNotes} />
-          </section>
-        )
-      })()}
+        className="bg-bg-surface/60 border border-border-default rounded-lg p-4 mb-5"
+        panelClassName=""
+      />
 
       <section className="mb-5">
         <SourceLinksCard links={sourceLinks} />

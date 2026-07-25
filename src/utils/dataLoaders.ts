@@ -21,6 +21,7 @@ import petsGuestsManifestUrl from '../data/pets-guests-manifest.json?url'
 import petsUrl from '../data/pets.json?url'
 import ringsUrl from '../data/rings.json?url'
 import trinketsUrl from '../data/trinkets.json?url'
+import { splitMixedAccessObtainVariantRows } from './variantHelpers'
 
 let badgesCache: Badge[] | null = null
 let badgesPromise: Promise<Badge[]> | null = null
@@ -84,6 +85,10 @@ function normalizeLoadedPet<T extends Pet & { specialMarkers?: string[] }>(pet: 
   return normalized as Pet
 }
 
+function isLoadedFamily(entry: Pet | ItemFamily | AccessoryEntry): entry is ItemFamily {
+  return 'levelVariants' in entry
+}
+
 async function fetchJson<T>(url: string): Promise<T> {
   const response = await fetch(url)
   if (!response.ok) {
@@ -132,12 +137,17 @@ export async function loadBadgeManifest(): Promise<BadgeManifest> {
 export async function loadPetsAndGuests(): Promise<Array<Pet | ItemFamily>> {
   if (petsCache) return petsCache
   if (!petsPromise) {
+    type LoadedPetEntry = (Pet & { specialMarkers?: string[] }) | ItemFamily
     petsPromise = Promise.all([
-      fetchJson<Array<Pet & { specialMarkers?: string[] }>>(petsUrl),
-      fetchJson<Array<Pet & { specialMarkers?: string[] }>>(guestsUrl),
+      fetchJson<LoadedPetEntry[]>(petsUrl),
+      fetchJson<LoadedPetEntry[]>(guestsUrl),
     ]).then(([petsData, guestsData]) => {
-      const pets = petsData.map(normalizeLoadedPet)
-      const guests = guestsData.map(normalizeLoadedPet)
+      const pets = petsData.map((entry) =>
+        isLoadedFamily(entry) ? splitMixedAccessObtainVariantRows(entry) : normalizeLoadedPet(entry)
+      )
+      const guests = guestsData.map((entry) =>
+        isLoadedFamily(entry) ? splitMixedAccessObtainVariantRows(entry) : normalizeLoadedPet(entry)
+      )
       petsCache = [...pets, ...guests] as Array<Pet | ItemFamily>
       return petsCache
     })
@@ -188,7 +198,9 @@ export async function loadAccessoriesForSubtype(
     accessorySubtypePromises[subtype] = Promise.all(
       accessoryDataUrls[subtype].map((url) => fetchJson<AccessoryEntry[]>(url))
     ).then((datasets) => {
-      const entries = datasets.flat()
+      const entries = datasets
+        .flat()
+        .map((entry) => (isLoadedFamily(entry) ? splitMixedAccessObtainVariantRows(entry) : entry))
       accessorySubtypeCache[subtype] = entries
       return entries
     })

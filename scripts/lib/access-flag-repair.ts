@@ -1,7 +1,10 @@
 import type { Accessory } from '../../src/types/accessory.ts'
 import type { Guest, Pet } from '../../src/types/pet.ts'
 import type { ItemFamily, ObtainVariant } from '../../src/types/item.ts'
-import { obtainVariantHasDC } from '../../src/utils/variantHelpers.ts'
+import {
+  obtainVariantHasDC,
+  splitMixedAccessObtainVariantRows,
+} from '../../src/utils/variantHelpers.ts'
 
 type SingleScrapedEntry = Accessory | Guest | Pet
 type ScrapedEntry = SingleScrapedEntry | ItemFamily
@@ -131,7 +134,11 @@ function repairFamily(entry: ItemFamily): ItemFamily {
     }
   }
 
-  const allMethods = levelVariants.flatMap((level) => level.obtainVariants)
+  const splitFamily = splitMixedAccessObtainVariantRows({
+    ...entry,
+    levelVariants,
+  })
+  const allMethods = splitFamily.levelVariants.flatMap((level) => level.obtainVariants)
   const hasDA = allMethods.some((method) => method.daRequired)
   const hasDC = allMethods.some(obtainVariantHasDC)
   const hasDM = allMethods.some((method) => method.priceType === 'dm' || method.dmRequired)
@@ -149,7 +156,7 @@ function repairFamily(entry: ItemFamily): ItemFamily {
           url: directForumPostUrl(source.url) ?? source.url,
         }))
       : entry.familySources,
-    levelVariants,
+    levelVariants: splitFamily.levelVariants,
     hasDA,
     hasDC,
     hasDM,

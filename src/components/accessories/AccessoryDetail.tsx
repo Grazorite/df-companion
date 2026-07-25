@@ -9,12 +9,12 @@ import { buildDisplayImages } from '../../utils/imageLabels'
 import { getDisplayFamilyName, isSingleVariant } from '../../utils/variantHelpers'
 import ElementPill from '../shared/ElementPill'
 import AccessPills from '../shared/AccessPills'
-import NotesList from '../shared/NotesList'
 import LevelSelector from '../shared/LevelSelector'
 import ObtainSection from '../shared/ObtainSection'
 import SourceLinksCard from '../shared/SourceLinksCard'
 import CollapsibleSection from '../shared/CollapsibleSection'
 import MetadataChipSection from '../shared/MetadataChipSection'
+import OtherInformationSection from '../shared/OtherInformationSection'
 import AccessoryStatsTable from './AccessoryStatsTable'
 import AccessoryCard from './AccessoryCard'
 import GuestAttacks from '../guests/GuestAttacks'
@@ -71,23 +71,6 @@ function buildSingleAccessoryLevel(entry: Accessory): LevelVariant {
     ...(entry.rarity ? { rarity: entry.rarity } : {}),
     ...(entry.notes ? { notes: entry.notes } : {}),
   }
-}
-
-function getAccessoryNotes(
-  family: AccessoryFamily | undefined,
-  singleAccessory: Accessory | undefined,
-  activeIndex: number
-): string | undefined {
-  if (!family) return singleAccessory?.notes
-
-  const levelNotes = family.levelVariants[activeIndex]?.notes?.trim()
-  const sharedNotes = family.shared.notes?.trim()
-
-  if (levelNotes && sharedNotes && levelNotes !== sharedNotes) {
-    return `${sharedNotes}\n${levelNotes}`
-  }
-
-  return levelNotes ?? sharedNotes
 }
 
 function isCapeOrHelmLike(value?: string): boolean {
@@ -212,7 +195,6 @@ export default function AccessoryDetail({ accessory, filterBase }: AccessoryDeta
         dm: singleAccessory?.dmRequired ?? false,
       }
 
-  const notes = getAccessoryNotes(family, singleAccessory, activeIndex)
   const obtainMethods = family
     ? (activeLevel?.obtainVariants ?? [])
     : singleAccessory
@@ -399,16 +381,12 @@ export default function AccessoryDetail({ accessory, filterBase }: AccessoryDeta
 
       {attacks && attacks.length > 0 && <GuestAttacks attacks={attacks} />}
 
-      {notes && (
-        <section className="mb-8">
-          <div className="bg-bg-surface border border-border-default rounded-lg p-5">
-            <h2 className="text-xs font-semibold text-text-muted uppercase tracking-wider mb-3">
-              Other Information
-            </h2>
-            <NotesList notes={notes} />
-          </div>
-        </section>
-      )}
+      <OtherInformationSection
+        notes={singleAccessory?.notes}
+        sharedNotes={family?.shared.notes}
+        activeVariantNotes={activeLevel?.notes}
+        allVariantNotes={family?.levelVariants.map((level) => level.notes)}
+      />
 
       <section className="mb-5">
         <SourceLinksCard links={sourceLinks} />

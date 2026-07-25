@@ -140,6 +140,26 @@ function getEntryDisplayName(entry: AccessoryEntry): string {
   return 'familyName' in entry ? entry.familyName : entry.name
 }
 
+function getEntrySearchNames(entry: AccessoryEntry): string[] {
+  if ('levelVariants' in entry) {
+    return [
+      entry.familyName,
+      ...(entry.aliasSlugs ?? []),
+      ...entry.levelVariants.flatMap((variant) => [variant.name, variant.variantName ?? '']),
+    ].filter(Boolean)
+  }
+
+  return [entry.name, entry.slug]
+}
+
+function normalizeNameFilterValue(name: string): string {
+  return normalizeAccessoryFamilyName(name).trim().toLowerCase()
+}
+
+function entryMatchesNameFilter(entry: AccessoryEntry, nameFilter: Set<string>): boolean {
+  return getEntrySearchNames(entry).some((name) => nameFilter.has(normalizeNameFilterValue(name)))
+}
+
 function getInitialForName(name: string): string {
   const sortableName = titleSortKey(name)
   return /^[A-Z]/i.test(sortableName) ? sortableName[0].toUpperCase() : '#'
@@ -340,7 +360,13 @@ function parseNotes(html: string): string | undefined {
       .replace(/<img[^>]+src="[^"]+\.(?:png|jpg|jpeg|gif|bmp)"[^>]*>/gi, '')
       .replace(/https?:\/\/[^\s"'<>]+\.(?:png|jpg|jpeg|gif|bmp)(?:\?[^\s"'<>]*)?/gi, '')
 
-    for (const line of normalizeStructuredText(trimmedSection).split('\n')) {
+    const lines = normalizeStructuredText(trimmedSection).split('\n')
+    const bulletIndents = lines
+      .map((line) => line.match(/^(\s*)[•*-]\s+/)?.[1].length)
+      .filter((value): value is number => value !== undefined)
+    const topLevelBulletIndent = bulletIndents.length > 0 ? Math.min(...bulletIndents) : 0
+
+    for (const line of lines) {
       const trimmed = line.trim()
       if (!trimmed) continue
       if (/\w+\s+--\s+\d+\/\d+\/\d+\s+\d+:\d+:\d+/.test(trimmed)) continue
@@ -351,7 +377,30 @@ function parseNotes(html: string): string | undefined {
         )
       )
         continue
-      noteLines.push(trimmed)
+
+      const bulletMatch = line.match(/^(\s*)([•*-])\s*(.*)$/)
+      if (bulletMatch) {
+        const [, indent, , text] = bulletMatch
+        const cleanedText = text.trim()
+        if (!cleanedText) continue
+
+        if (indent.length > topLevelBulletIndent && noteLines.length > 0) {
+          noteLines.push(`  • ${cleanedText}`)
+        } else {
+          noteLines.push(cleanedText)
+        }
+        continue
+      }
+
+      if (
+        noteLines.length > 0 &&
+        !/[.!?:]$/.test(noteLines[noteLines.length - 1]) &&
+        /^[a-z'"]/.test(trimmed)
+      ) {
+        noteLines[noteLines.length - 1] += ` ${trimmed}`
+      } else {
+        noteLines.push(trimmed)
+      }
     }
   }
 
@@ -542,7 +591,7 @@ function parseTrinketAttacks(html: string, fallbackName: string, entryName: stri
 
 function parseObtainMethods(html: string): Accessory['obtainMethods'] {
   const obtainMethods: Accessory['obtainMethods'] = []
-  const firstFieldIndex =
+  const findFirstDetailFieldIndex = (value: string) =>
     [
       /(?:<b>)?Level:(?:<\/b>)?/i,
       /(?:<b>)?Element:(?:<\/b>)?/i,
@@ -550,12 +599,11 @@ function parseObtainMethods(html: string): Accessory['obtainMethods'] {
       /(?:<b>)?Resists:(?:<\/b>)?/i,
       /<u>Other [Ii]nformation<\/u>/i,
     ]
-      .map((pattern) => html.search(pattern))
+      .map((pattern) => value.search(pattern))
       .filter((index) => index >= 0)
-      .sort((a, b) => a - b)[0] ?? html.length
+      .sort((a, b) => a - b)[0] ?? value.length
 
-  const introHtml = html
-    .slice(0, firstFieldIndex)
+  const normalizedFieldHtml = html
     .replace(
       /<b>\s*<font[^>]*>\s*(Location|Requirements|Level\/Quest\/Items to unlock|Price|Sellback|Required Items?|Required|Requires):\s*<\/font>\s*<\/b>/gi,
       '<b>$1:</b>'
@@ -578,15 +626,16 @@ function parseObtainMethods(html: string): Accessory['obtainMethods'] {
 
   const headerRegex =
     /(?:<img[^>]+src=["'][^"']*\/tags\/(?:DA|DC|DM)\.(?:png|jpg|jpeg|gif)["'][^>]*>\s*)*(?:<font[^>]*>\s*<b>[\s\S]*?<\/b>\s*<\/font>|<b>\s*<font[^>]*>[\s\S]*?<\/font>\s*<\/b>)/gi
-  const headerMatches = [...introHtml.matchAll(headerRegex)]
+  const headerMatches = [...normalizedFieldHtml.matchAll(headerRegex)]
   const segments =
     headerMatches.length > 1
       ? headerMatches.map((match, index) => {
           const start = match.index ?? 0
-          const end = headerMatches[index + 1]?.index ?? introHtml.length
-          return introHtml.slice(start, end)
+          const end = headerMatches[index + 1]?.index ?? normalizedFieldHtml.length
+          const segment = normalizedFieldHtml.slice(start, end)
+          return segment.slice(0, findFirstDetailFieldIndex(segment))
         })
-      : [introHtml]
+      : [normalizedFieldHtml.slice(0, findFirstDetailFieldIndex(normalizedFieldHtml))]
 
   for (const segment of segments) {
     let current: (typeof blocks)[number] | undefined
@@ -1599,14 +1648,15 @@ function parseSubtypePage(html: string, subtype: AccessorySubtype): AccessoryStu
 function writeDatasets(
   entriesBySubtype: Map<AccessorySubtype, AccessoryEntry[]>,
   selectedSubtypes: Set<AccessorySubtype>,
-  lettersArg?: string[]
+  lettersArg?: string[],
+  namesArg?: string[]
 ) {
   for (const meta of ACCESSORY_SUBTYPES) {
     if (!selectedSubtypes.has(meta.subtype)) continue
     let entries = entriesBySubtype.get(meta.subtype) ?? []
     const dataFiles = getAccessoryDataFiles(meta)
 
-    if (lettersArg && lettersArg.length > 0) {
+    if ((lettersArg && lettersArg.length > 0) || (namesArg && namesArg.length > 0)) {
       const existingEntries = dataFiles.flatMap((dataFile) => {
         const filePath = path.resolve(OUTPUT_DIR, dataFile)
         return fs.existsSync(filePath)
@@ -1614,8 +1664,11 @@ function writeDatasets(
           : []
       })
       const excludedInitials = new Set(lettersArg)
+      const excludedNames = new Set((namesArg ?? []).map(normalizeNameFilterValue))
       const preservedEntries = existingEntries.filter(
-        (entry) => !excludedInitials.has(getInitialForName(getEntryDisplayName(entry)))
+        (entry) =>
+          !excludedInitials.has(getInitialForName(getEntryDisplayName(entry))) &&
+          !entryMatchesNameFilter(entry, excludedNames)
       )
       entries = [...preservedEntries, ...entries]
     }
@@ -1689,6 +1742,10 @@ async function main() {
   const subtypeArg = getArg('subtype') as AccessorySubtype | undefined
   const subtypesArg = getArg('subtypes')
   const lettersArg = getArg('letters')?.toUpperCase().split(',').filter(Boolean)
+  const namesArg = getArg('names')
+    ?.split(',')
+    .map((value) => value.trim())
+    .filter(Boolean)
   const limitArg = getLimitArg()
   const concurrencyArg = getConcurrencyArg()
   const indexHtml = await fetchPage(ACCESSORIES_INDEX_URL, cookie)
@@ -1711,6 +1768,11 @@ async function main() {
   const filteredStubs = applyLimit(
     allStubs.filter((stub) => {
       if (!selectedSubtypes.has(stub.subtype)) return false
+      if (namesArg && namesArg.length > 0) {
+        return namesArg.some(
+          (name) => normalizeNameFilterValue(stub.name) === normalizeNameFilterValue(name)
+        )
+      }
       if (!lettersArg || lettersArg.length === 0) return true
       return lettersArg.includes(getInitialForName(stub.name))
     }),
@@ -1750,7 +1812,7 @@ async function main() {
       selectedSubtypes.size === 1 ? ` for ${[...selectedSubtypes][0]}` : ''
     }`
   )
-  writeDatasets(entriesBySubtype, selectedSubtypes, lettersArg)
+  writeDatasets(entriesBySubtype, selectedSubtypes, lettersArg, namesArg)
 }
 
 if (import.meta.main) {

@@ -20,6 +20,40 @@ export function obtainVariantHasDC(variant: ObtainVariant): boolean {
   )
 }
 
+export function splitMixedAccessObtainVariantRows<T extends ItemFamily>(family: T): T {
+  let didSplit = false
+  const levelVariants = family.levelVariants.flatMap((level) => {
+    if (level.obtainVariants.length <= 1) return [level]
+
+    const dcMethods = level.obtainVariants
+      .filter(obtainVariantHasDC)
+      .map((method) => ({ ...method, dcRequired: true }))
+    const nonDcMethods = level.obtainVariants
+      .filter((method) => !obtainVariantHasDC(method))
+      .map((method) => {
+        const { dcRequired: _dcRequired, ...rest } = method
+        return rest
+      })
+
+    if (dcMethods.length === 0 || nonDcMethods.length === 0) return [level]
+
+    didSplit = true
+    return [
+      {
+        ...level,
+        obtainVariants: nonDcMethods,
+      },
+      {
+        ...level,
+        obtainVariants: dcMethods,
+      },
+    ]
+  })
+
+  if (!didSplit) return family
+  return computeFamilyFlags({ ...family, levelVariants })
+}
+
 /**
  * Compute price type from price string and required items.
  *
@@ -344,28 +378,53 @@ function getCondensedTitleVariant(levelName: string, familyName: string): string
   if (!normalizedLevelName) return undefined
 
   const parentheticalBaseName = familyName.replace(/\s*\([^)]*\)\s*$/, '').trim()
+  const worldCupFamily = familyName.match(/^(World Cup 2010 Cape):\s*(.+)$/i)
+  if (worldCupFamily) {
+    const [, baseName, country] = worldCupFamily
+    if (new RegExp(`^${baseName}\\s+II:\\s*${country}$`, 'i').test(normalizedLevelName)) {
+      return 'II'
+    }
+  }
+  const cleanVariant = (variant: string) => {
+    const cleaned = normalizeDisplayText(variant)
+      .replace(/\s*:\s*$/, '')
+      .trim()
+    const familyTokens = new Set(
+      tokenizeVariantName(familyName).map((token) => token.toLowerCase())
+    )
+    const tokens = cleaned.split(/\s+/).filter(Boolean)
+    const filteredTokens =
+      tokens.length > 1
+        ? tokens.filter((token) => !familyTokens.has(token.toLowerCase().replace(/:$/, '')))
+        : tokens
+    return filteredTokens.join(' ') || cleaned
+  }
 
   if (normalizedLevelName === familyName) {
     return undefined
   }
 
   if (normalizedLevelName.startsWith(`${familyName} `)) {
-    return normalizedLevelName.slice(familyName.length).trim()
+    return cleanVariant(normalizedLevelName.slice(familyName.length).trim())
   }
 
   if (normalizedLevelName.endsWith(` ${familyName}`)) {
-    return normalizedLevelName.slice(0, normalizedLevelName.length - familyName.length).trim()
+    return cleanVariant(
+      normalizedLevelName.slice(0, normalizedLevelName.length - familyName.length).trim()
+    )
   }
 
   if (parentheticalBaseName && parentheticalBaseName !== familyName) {
     if (normalizedLevelName.startsWith(`${parentheticalBaseName} `)) {
-      return normalizedLevelName.slice(parentheticalBaseName.length).trim()
+      return cleanVariant(normalizedLevelName.slice(parentheticalBaseName.length).trim())
     }
 
     if (normalizedLevelName.endsWith(` ${parentheticalBaseName}`)) {
-      return normalizedLevelName
-        .slice(0, normalizedLevelName.length - parentheticalBaseName.length)
-        .trim()
+      return cleanVariant(
+        normalizedLevelName
+          .slice(0, normalizedLevelName.length - parentheticalBaseName.length)
+          .trim()
+      )
     }
   }
 
@@ -379,7 +438,7 @@ function getCondensedTitleVariant(levelName: string, familyName: string): string
   }
 
   if (remainingTokens.length > 0) {
-    return remainingTokens.join(' ')
+    return cleanVariant(remainingTokens.join(' '))
   }
 
   return undefined
