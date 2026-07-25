@@ -1,27 +1,100 @@
 import { Link } from 'react-router-dom'
-import { Trophy, Map, Skull, Sword, Users, Shirt, House, Package, PawPrint } from 'lucide-react'
+import {
+  Trophy,
+  Map,
+  Skull,
+  Sword,
+  Users,
+  Shirt,
+  House,
+  Package,
+  PawPrint,
+  Sparkles,
+} from 'lucide-react'
 import { useTotalBadgeCount } from '../hooks/useBadges'
 import { useTotalPetCount } from '../hooks/usePets'
 import { useTotalAccessoryCount } from '../hooks/useAccessories'
+import { useTotalWeaponCount } from '../hooks/useWeapons'
 
 // All sections in forum order — each as its own card, uniform grid
 const SECTIONS = [
-  { to: '/accessories', icon: Shirt, label: 'Accessories', desc: 'Belts, necklaces, rings, brooches, wings and capes. If you can equip it and it\'s not a weapon, you\'ll find it here.', available: true },
-  { to: '/badges', icon: Trophy, label: 'Badges', desc: 'The where, what and how of Badges.', available: true },
-  { to: '/classes', icon: Sword, label: 'Classes / Abilities', desc: 'All the different stats and abilities for the different classes in DragonFable.', available: false },
-  { to: '/housing', icon: House, label: 'Housing & House Items', desc: 'Home is where the monsters are. Better get some stuff to make it more comfy.', available: false },
-  { to: '/locations', icon: Map, label: 'Locations / Quests / Events', desc: 'All the different places in DF — shops, access areas, battlezones and Special Event entries.', available: false },
-  { to: '/monsters', icon: Skull, label: 'Monsters', desc: 'All the creepy, crawly, cute or scary monsters that you face throughout DragonFable.', available: false },
-  { to: '/npcs', icon: Users, label: 'NPCs', desc: 'All those people who talk to you in the game? Put them here.', available: false },
-  { to: '/pets', icon: PawPrint, label: 'Pets / Guests', desc: 'The people (or pets) who will help you in your battles.', available: true },
-  { to: '/items', icon: Package, label: 'Stackable / Non-Equippable Items', desc: 'If it\'s a resource, stackable item, or non-equippable item, you\'ll find it here.', available: false },
-  { to: '/weapons', icon: Sword, label: 'Weapons', desc: 'If you hit with it, throw it, or use it to multiply spell energy, put it here.', available: false },
+  {
+    to: '/accessories',
+    icon: Shirt,
+    label: 'Accessories',
+    desc: "Belts, necklaces, rings, brooches, wings and capes. If you can equip it and it's not a weapon, you'll find it here.",
+    available: true,
+  },
+  {
+    to: '/badges',
+    icon: Trophy,
+    label: 'Badges',
+    desc: 'The where, what and how of Badges.',
+    available: true,
+  },
+  {
+    to: '/classes',
+    icon: Sparkles,
+    label: 'Classes / Abilities',
+    desc: 'All the different stats and abilities for the different classes in DragonFable.',
+    available: false,
+  },
+  {
+    to: '/housing',
+    icon: House,
+    label: 'Housing & House Items',
+    desc: 'Home is where the monsters are. Better get some stuff to make it more comfy.',
+    available: false,
+  },
+  {
+    to: '/locations',
+    icon: Map,
+    label: 'Locations / Quests / Events',
+    desc: 'All the different places in DF — shops, access areas, battlezones and Special Event entries.',
+    available: false,
+  },
+  {
+    to: '/monsters',
+    icon: Skull,
+    label: 'Monsters',
+    desc: 'All the creepy, crawly, cute or scary monsters that you face throughout DragonFable.',
+    available: false,
+  },
+  {
+    to: '/npcs',
+    icon: Users,
+    label: 'NPCs',
+    desc: 'All those people who talk to you in the game? Put them here.',
+    available: false,
+  },
+  {
+    to: '/pets',
+    icon: PawPrint,
+    label: 'Pets / Guests',
+    desc: 'The people (or pets) who will help you in your battles...',
+    available: true,
+  },
+  {
+    to: '/items',
+    icon: Package,
+    label: 'Stackable / Non-Equippable Items',
+    desc: "If it's a resource, stackable item, or non-equippable item, you'll find it here.",
+    available: false,
+  },
+  {
+    to: '/weapons',
+    icon: Sword,
+    label: 'Weapons',
+    desc: 'If you hit with it, throw it, or use it to multiply spell energy, put it here. All the information for the Swords, Daggers and Staves located here.',
+    available: true,
+  },
 ]
 
 export default function HomePage() {
   const accessoryCount = useTotalAccessoryCount()
   const badgeCount = useTotalBadgeCount()
   const petCount = useTotalPetCount()
+  const weaponCount = useTotalWeaponCount()
 
   return (
     <main className="px-4 sm:px-6 py-8 max-w-2xl mx-auto">
@@ -63,13 +136,22 @@ export default function HomePage() {
                 <div className="font-semibold text-text-primary text-sm leading-snug">
                   {label}
                   {to === '/badges' && (
-                    <span className="ml-1.5 text-xs font-normal text-text-muted">({badgeCount})</span>
+                    <span className="ml-1.5 text-xs font-normal text-text-muted">
+                      ({badgeCount})
+                    </span>
                   )}
                   {to === '/pets' && (
                     <span className="ml-1.5 text-xs font-normal text-text-muted">({petCount})</span>
                   )}
                   {to === '/accessories' && (
-                    <span className="ml-1.5 text-xs font-normal text-text-muted">({accessoryCount})</span>
+                    <span className="ml-1.5 text-xs font-normal text-text-muted">
+                      ({accessoryCount})
+                    </span>
+                  )}
+                  {to === '/weapons' && (
+                    <span className="ml-1.5 text-xs font-normal text-text-muted">
+                      ({weaponCount})
+                    </span>
                   )}
                 </div>
                 <div className="text-text-secondary text-xs mt-1 leading-relaxed">{desc}</div>

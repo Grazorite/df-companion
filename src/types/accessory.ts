@@ -71,56 +71,62 @@ export const ACCESSORY_SUBTYPES: AccessorySubtypeMeta[] = [
     label: 'Artifacts',
     route: '/artifacts',
     dataFiles: ['artifacts.json'],
-    shortDescription: 'Magical accessories and artifact-tier equipment.',
+    shortDescription:
+      'Occupies another equip spot, dependant on item type; cannot be equipped or unequipped during battle.',
   },
   {
     subtype: 'belt',
     label: 'Belts',
     route: '/belts',
     dataFiles: ['belts.json'],
-    shortDescription: 'Waist-slot accessories with stat or utility effects.',
+    shortDescription: 'Occupies Waist equip spot; can be equipped or unequipped during battle.',
   },
   {
     subtype: 'bracer',
     label: 'Bracers',
     route: '/bracers',
     dataFiles: ['bracers.json'],
-    shortDescription: 'Arm-slot accessories including family and branch variants.',
+    shortDescription:
+      'Occupies Wrist equip spot; can be equipped or unequipped during battle, unless attempted to be replaced by an Artifact.',
   },
   {
     subtype: 'cape-wing',
     label: 'Capes & Wings',
     route: '/capes-wings',
     dataFiles: ['capes-wings-a-l.json', 'capes-wings-m-z.json'],
-    shortDescription: 'Back-slot cosmetic and combat accessories.',
+    shortDescription:
+      'Occupies Back equip spot; can be equipped or unequipped during battle, unless attempted to be replaced by an Artifact.',
   },
   {
     subtype: 'helm',
     label: 'Helms',
     route: '/helms',
     dataFiles: ['helms-a-l.json', 'helms-m-z.json'],
-    shortDescription: 'Head-slot accessories, helms, masks, and circlets.',
+    shortDescription:
+      'Occupies Head equip spot; can be equipped or unequipped during battle, unless attempted to be replaced by an Artifact.',
   },
   {
     subtype: 'necklace',
     label: 'Necklaces',
     route: '/necklaces',
     dataFiles: ['necklaces.json'],
-    shortDescription: 'Neck-slot accessories with passive bonuses and utility.',
+    shortDescription:
+      'Occupies Neck equip spot; can be equipped or unequipped during battle, unless attempted to be replaced by an Artifact.',
   },
   {
     subtype: 'ring',
     label: 'Rings',
     route: '/rings',
     dataFiles: ['rings.json'],
-    shortDescription: 'Ring-slot accessories, from simple stat boosts to families.',
+    shortDescription: 'Occupies Finger equip spot; can be equipped or unequipped during battle.',
   },
   {
     subtype: 'trinket',
     label: 'Trinkets',
     route: '/trinkets',
     dataFiles: ['trinkets.json'],
-    shortDescription: 'Trinkets, gadgets, and activated accessory-style items.',
+    shortDescription:
+      'Occupies Trinket equip spot; cannot be equipped or unequipped during battle.',
   },
 ]
 

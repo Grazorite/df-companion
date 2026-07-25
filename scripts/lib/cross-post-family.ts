@@ -17,6 +17,15 @@ function isItemFamily(item: ScrapedEntry): item is ItemFamily {
   return 'levelVariants' in item && 'familyName' in item
 }
 
+export function shouldPromoteConnectedFamilyGroup<T>(
+  group: T[],
+  isFamily: (item: T) => boolean
+): boolean {
+  const hasStandalone = group.some((item) => !isFamily(item))
+  const familyCount = group.filter(isFamily).length
+  return group.length > 1 && hasStandalone && familyCount <= 1
+}
+
 function isPetFamilyEntry(item: ScrapedEntry): item is Pet | ItemFamily {
   return item.type !== 'guest'
 }
@@ -25,13 +34,23 @@ function getDisplayName(item: ScrapedEntry): string {
   return isItemFamily(item) ? item.familyName : item.name
 }
 
+// Cross-post promotion compares every entry pairwise (O(n^2)) and re-normalizes
+// the same names repeatedly. Memoizing this pure transform keyed by the exact
+// input string is output-equivalent and avoids the redundant regex work.
+const normalizeLookupNameCache = new Map<string, string>()
+
 function normalizeLookupName(name: string): string {
-  return name
+  const cached = normalizeLookupNameCache.get(name)
+  if (cached !== undefined) return cached
+
+  const normalized = name
     .toLowerCase()
     .replace(/\s+\((all versions|[ivxlcdm]+(?:-[ivxlcdm]+)?|\d+)\)$/i, '')
     .replace(/[^\w\s]+/g, ' ')
     .replace(/\s+/g, ' ')
     .trim()
+  normalizeLookupNameCache.set(name, normalized)
+  return normalized
 }
 
 function normalizeRefLookupName(name: string): string {
@@ -560,12 +579,10 @@ export function promoteCrossPostFamilies(items: Array<ScrapedEntry>): Array<Scra
 
   return groups
     .map((group) => {
-      const hasStandalone = group.some((item) => !isItemFamily(item))
-      const familyCount = group.filter(isItemFamily).length
       if (group.some((item) => item.type === 'guest')) {
         return group
       }
-      if (group.length <= 1 || !hasStandalone || familyCount > 1) {
+      if (!shouldPromoteConnectedFamilyGroup(group, isItemFamily)) {
         return group
       }
 

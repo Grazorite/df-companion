@@ -1,5 +1,48 @@
 [
   {
+    "id": "accessory-13th-mask",
+    "name": "13th Mask",
+    "slug": "accessory-13th-mask",
+    "type": "accessory",
+    "subtype": "helm",
+    "description": "This mask once belonged to the great and terrible warrior Jaysun. It was said long ago that anyone who holds his power would be impossible to kill.",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=8800456",
+    "releaseDate": "",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/13th%20Mask%20pic.bmp",
+    "elements": [
+      "DAR"
+    ],
+    "level": "13",
+    "stats": "Crit +2, END +4, LUK -5, Bonus +2",
+    "resists": "Darkness +4",
+    "rarity": "13",
+    "itemType": "Helm",
+    "equipSpot": "Head",
+    "category": "Armor",
+    "obtainMethods": [
+      {
+        "location": "Undead Slayer Store",
+        "priceType": "gold",
+        "price": "130 Gold",
+        "sellback": "13 Gold",
+        "daRequired": true
+      },
+      {
+        "location": "The Stakeout",
+        "priceType": "free",
+        "price": "N/A",
+        "sellback": "13 Gold",
+        "daRequired": true
+      }
+    ],
+    "notes": "Helm was previously available from the quests  Friday the 13th Invasion,  Friday the 13th Invasion - Part II, and  Friday the 13th III.\nThe following changes were implemented on  September 26th, 2025:\n  • Level's requirement was raised from 5 to 13.\n  • Helm initially have Crit +1, END +2, LUK -5, Bonus +1 Stats.\n  • Darkness Resist was raised from +2 to +4.\n  • Helm initially have 3 Rarity.",
+    "tags": [
+      "dar",
+      "gold"
+    ],
+    "daRequired": true
+  },
+  {
     "id": "accessory-mad-jester",
     "name": "Mad Jester",
     "slug": "accessory-mad-jester",
@@ -669,103 +712,6 @@
     "levelRange": "I-III",
     "elements": [
       "FEA"
-    ]
-  },
-  {
-    "id": "accessory-magical-tyrant-hood",
-    "familyName": "Magical Tyrant Hood",
-    "slug": "accessory-magical-tyrant-hood",
-    "aliasSlugs": [
-      "accessory-magical-tyrant-hood",
-      "accessory-magical-tyrant-hood"
-    ],
-    "type": "accessory",
-    "subtype": "helm",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17506896",
-    "familyOrigin": "same-thread-multi-post",
-    "familySources": [
-      {
-        "url": "https://forums2.battleon.com/f/fb.asp?m=17506896",
-        "title": "DF Encyclopedia: Magical Tyrant Hood",
-        "variantLabel": "Magical Tyrant Hood",
-        "isPrimary": true
-      },
-      {
-        "url": "https://forums2.battleon.com/f/fb.asp?m=17506922",
-        "title": "DF Encyclopedia: Magical Tyrant Hood",
-        "variantLabel": "Magical Tyrant Hood",
-        "isPrimary": false
-      }
-    ],
-    "shared": {
-      "description": "Channel the power of wrath with this despotic hood! It will give you extra health and it's magic will let you match it to the rest of your outfit!",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/MagicalTyrantHood.png",
-      "notes": "Helms are color-custom to the player's base and trim colors."
-    },
-    "levelVariants": [
-      {
-        "levelNumber": 35,
-        "levelDisplay": "35",
-        "actualLevel": 35,
-        "name": "Magical Tyrant Hood",
-        "damage": "",
-        "stats": "Dodge +2, Crit +4, WIS +7, INT +4, DEX +4, STR +4, Bonus +1",
-        "obtainVariants": [
-          {
-            "location": "Alina's Helm Shop",
-            "price": "275 Dragon Coins",
-            "priceType": "dc",
-            "sellback": "248 DC (<24 hours) / 69 DC (>24 hours)",
-            "daRequired": false,
-            "dcRequired": true
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=17506896",
-        "description": "Channel the power of wrath with this despotic hood! It will give you extra health and it's magic will let you match it to the rest of your outfit!",
-        "element": "STO",
-        "resists": "Fire +5, Water +5, Wind +5, Stone +5, Poison +5",
-        "rarity": "3"
-      },
-      {
-        "levelNumber": 55,
-        "levelDisplay": "55",
-        "actualLevel": 55,
-        "name": "Magical Tyrant Hood",
-        "damage": "",
-        "stats": "Crit +4, WIS +8, END +6, INT +6, DEX +4, STR +4, Bonus +2",
-        "obtainVariants": [
-          {
-            "location": "Alina's Helm Shop",
-            "price": "320 Dragon Coins",
-            "priceType": "dc",
-            "sellback": "288 DC (<24 hours) / 80 DC (>24 hours)",
-            "daRequired": false,
-            "dcRequired": true
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=17506922",
-        "description": "Channel the power of wrath with this despotic hood! It will give you extra health and it's magic will let you match it to the rest of your outfit!",
-        "element": "STO",
-        "resists": "Fire +10, Water +5, Wind +10, Stone +5, Poison +10",
-        "rarity": "10"
-      }
-    ],
-    "itemType": "Helm",
-    "equipSlot": "Head",
-    "category": "Armor",
-    "releaseDate": "",
-    "tags": [
-      "dc",
-      "sto"
-    ],
-    "hasDA": false,
-    "hasDC": true,
-    "hasDM": false,
-    "hasFree": false,
-    "hasMerge": false,
-    "levelRange": "35-55",
-    "elements": [
-      "STO"
     ]
   },
   {
@@ -1776,76 +1722,6 @@
     "levelRange": "25-75",
     "elements": [
       "LIG"
-    ]
-  },
-  {
-    "id": "accessory-malicious-cultist-hood",
-    "name": "Malicious Cultist Hood",
-    "slug": "accessory-malicious-cultist-hood",
-    "type": "accessory",
-    "subtype": "helm",
-    "description": "Dark magic and strange murmurs flow through your head.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21453424",
-    "releaseDate": "",
-    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/CultistHoodpic.png",
-    "elements": [
-      "EVI"
-    ],
-    "level": "55",
-    "stats": "Crit +6, Magic Def +6, Pierce Def +5, Melee Def +5, WIS +6, END +6, CHA +5, Bonus +5",
-    "resists": "Darkness +8, Ice +8",
-    "rarity": "10",
-    "itemType": "Helm",
-    "equipSpot": "Head",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "The Summoning",
-        "priceType": "free",
-        "price": "N/A",
-        "sellback": "700 Gold",
-        "daRequired": false
-      },
-      {
-        "location": "Cultist Hood (Shop)",
-        "priceType": "dc",
-        "price": "45 Dragon Coins",
-        "sellback": "41 DC (<24 hours) / 11 DC (>24 hours)",
-        "daRequired": false,
-        "dcRequired": true
-      }
-    ],
-    "tags": [
-      "evi",
-      "free"
-    ],
-    "daRequired": false,
-    "dcRequired": true,
-    "alsoSee": [
-      {
-        "name": "Cultist Hood",
-        "slug": "accessory-cultist-hood",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21453430"
-      },
-      {
-        "name": "Cultist Hood",
-        "slug": "accessory-cultist-hood",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21453414"
-      },
-      {
-        "name": "Evil Cultist Hood",
-        "slug": "accessory-evil-cultist-hood",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21453420"
-      },
-      {
-        "name": "Foul Cultist Hood",
-        "slug": "accessory-foul-cultist-hood",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21453425"
-      }
     ]
   },
   {
@@ -3216,7 +3092,10 @@
       "accessory-greasy-master-chef-hat",
       "accessory-ivory-master-chef-hat",
       "accessory-new-master-chef-hat",
-      "accessory-organic-master-chef-hat"
+      "accessory-organic-master-chef-hat",
+      "accessory-smoky-master-chef-hat",
+      "accessory-stiff-master-chef-hat",
+      "accessory-sweaty-master-chef-hat"
     ],
     "type": "accessory",
     "subtype": "helm",
@@ -3225,43 +3104,25 @@
     "familySources": [
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=22332642",
-        "title": "DF Encyclopedia: Dry-Aged Master Chef Hat",
-        "variantLabel": "Dry-Aged Master Chef Hat",
+        "title": "DF Encyclopedia: Master Chef Hat",
         "isPrimary": true
       },
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21721646",
-        "title": "DF Encyclopedia: Eggshell Master Chef Hat",
-        "variantLabel": "Eggshell Master Chef Hat",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21721657",
+        "title": "DF Encyclopedia: Smoky Master Chef Hat",
+        "variantLabel": "Smoky Master Chef Hat",
         "isPrimary": false
       },
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21721638",
-        "title": "DF Encyclopedia: Greasy Master Chef Hat",
-        "variantLabel": "Greasy Master Chef Hat",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21721653",
+        "title": "DF Encyclopedia: Stiff Master Chef Hat",
+        "variantLabel": "Stiff Master Chef Hat",
         "isPrimary": false
       },
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21721641",
-        "title": "DF Encyclopedia: Ivory Master Chef Hat",
-        "variantLabel": "Ivory Master Chef Hat",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21702430",
-        "title": "DF Encyclopedia: Master Chef Hat",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21721659",
-        "title": "DF Encyclopedia: New Master Chef Hat",
-        "variantLabel": "New Master Chef Hat",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21721663",
-        "title": "DF Encyclopedia: Organic Master Chef Hat",
-        "variantLabel": "Organic Master Chef Hat",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21721632",
+        "title": "DF Encyclopedia: Sweaty Master Chef Hat",
+        "variantLabel": "Sweaty Master Chef Hat",
         "isPrimary": false
       }
     ],
@@ -3296,6 +3157,31 @@
       },
       {
         "levelNumber": 2,
+        "levelDisplay": "20",
+        "actualLevel": 20,
+        "variantName": "Sweaty",
+        "name": "Sweaty Master Chef Hat",
+        "damage": "",
+        "stats": "Crit +3, Magic Def +1, Pierce Def +1, Melee Def +1, WIS +1, CHA +1, LUK +1, INT +2, DEX +2, STR +2, Bonus +1",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21721632",
+        "description": "Only for the most serious of chefs! You can upgrade this item at the Black Market Moglin.",
+        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/MasterChefHatpic.png",
+        "obtainVariants": [
+          {
+            "location": "BBQ Items",
+            "priceType": "merge",
+            "price": "N/A",
+            "requiredItems": "1 Master Chef Hat",
+            "sellback": "10 Gold",
+            "daRequired": false
+          }
+        ],
+        "element": "FIR",
+        "resists": "Light +3, Ice +3",
+        "rarity": "25"
+      },
+      {
+        "levelNumber": 3,
         "levelDisplay": "30",
         "actualLevel": 30,
         "variantName": "Greasy",
@@ -3320,7 +3206,7 @@
         "rarity": "25"
       },
       {
-        "levelNumber": 3,
+        "levelNumber": 4,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "Ivory",
@@ -3345,7 +3231,7 @@
         "rarity": "25"
       },
       {
-        "levelNumber": 4,
+        "levelNumber": 5,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "Eggshell",
@@ -3370,7 +3256,57 @@
         "rarity": "25"
       },
       {
-        "levelNumber": 5,
+        "levelNumber": 6,
+        "levelDisplay": "60",
+        "actualLevel": 60,
+        "variantName": "Stiff",
+        "name": "Stiff Master Chef Hat",
+        "damage": "",
+        "stats": "Crit +8, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +5, END +4, CHA +5, LUK +5, INT +4, DEX +4, STR +4, Bonus +5",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21721653",
+        "description": "Only for the most serious of chefs! You can upgrade this item at the Black Market Moglin.",
+        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/MasterChefHatpic.png",
+        "obtainVariants": [
+          {
+            "location": "BBQ Items",
+            "priceType": "merge",
+            "price": "N/A",
+            "requiredItems": "1 Eggshell Master Chef Hat",
+            "sellback": "30 Gold",
+            "daRequired": false
+          }
+        ],
+        "element": "FIR",
+        "resists": "Light +7, Ice +7, Water +4, Bacon +1",
+        "rarity": "25"
+      },
+      {
+        "levelNumber": 7,
+        "levelDisplay": "70",
+        "actualLevel": 70,
+        "variantName": "Smoky",
+        "name": "Smoky Master Chef Hat",
+        "damage": "",
+        "stats": "Crit +9, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +5, END +4, CHA +6, LUK +6, INT +5, DEX +5, STR +5, Bonus +6",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21721657",
+        "description": "Only for the most serious of chefs! You can upgrade this item at the Black Market Moglin.",
+        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/MasterChefHatpic.png",
+        "obtainVariants": [
+          {
+            "location": "BBQ Items",
+            "priceType": "merge",
+            "price": "N/A",
+            "requiredItems": "1 Stiff Master Chef Hat",
+            "sellback": "35 Gold",
+            "daRequired": false
+          }
+        ],
+        "element": "FIR",
+        "resists": "Light +8, Ice +8, Water +5, Bacon +3",
+        "rarity": "25"
+      },
+      {
+        "levelNumber": 8,
         "levelDisplay": "75",
         "actualLevel": 75,
         "variantName": "New",
@@ -3395,7 +3331,7 @@
         "rarity": "25"
       },
       {
-        "levelNumber": 6,
+        "levelNumber": 9,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "Organic",
@@ -3420,7 +3356,7 @@
         "rarity": "25"
       },
       {
-        "levelNumber": 7,
+        "levelNumber": 10,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "Dry Aged",
@@ -4907,290 +4843,6 @@
     ]
   },
   {
-    "id": "accessory-mirrored-dragonlord-helm",
-    "familyName": "Mirrored DragonLord Helm",
-    "slug": "accessory-mirrored-dragonlord-helm",
-    "aliasSlugs": [
-      "accessory-mirrored-dragonlord-helm",
-      "accessory-mirrored-dragonlord-helm",
-      "accessory-mirrored-dragonlord-helm",
-      "accessory-mirrored-dragonlord-helm",
-      "accessory-mirrored-dragonlord-helm",
-      "accessory-mirrored-dragonlord-helm",
-      "accessory-mirrored-dragonlord-helm",
-      "accessory-mirrored-dragonlord-helm"
-    ],
-    "type": "accessory",
-    "subtype": "helm",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17761883",
-    "familyOrigin": "same-thread-multi-post",
-    "familySources": [
-      {
-        "url": "https://forums2.battleon.com/f/fb.asp?m=17761883",
-        "title": "DF Encyclopedia: Mirrored DragonLord Helm",
-        "variantLabel": "Mirrored DragonLord Helm",
-        "isPrimary": true
-      },
-      {
-        "url": "https://forums2.battleon.com/f/fb.asp?m=17762270",
-        "title": "DF Encyclopedia: Mirrored DragonLord Helm",
-        "variantLabel": "Mirrored DragonLord Helm",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/fb.asp?m=17762296",
-        "title": "DF Encyclopedia: Mirrored DragonLord Helm",
-        "variantLabel": "Mirrored DragonLord Helm",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/fb.asp?m=17762305",
-        "title": "DF Encyclopedia: Mirrored DragonLord Helm",
-        "variantLabel": "Mirrored DragonLord Helm",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/fb.asp?m=17762312",
-        "title": "DF Encyclopedia: Mirrored DragonLord Helm",
-        "variantLabel": "Mirrored DragonLord Helm",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/fb.asp?m=17786216",
-        "title": "DF Encyclopedia: Mirrored DragonLord Helm",
-        "variantLabel": "Mirrored DragonLord Helm",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/fb.asp?m=21732215",
-        "title": "DF Encyclopedia: Mirrored DragonLord Helm",
-        "variantLabel": "Mirrored DragonLord Helm",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/fb.asp?m=21732220",
-        "title": "DF Encyclopedia: Mirrored DragonLord Helm",
-        "variantLabel": "Mirrored DragonLord Helm",
-        "isPrimary": false
-      }
-    ],
-    "shared": {
-      "description": "This helm was forged from the same materials used in making the DragonLord armor. It was designed to strike the same fear and awe into the Dragonlord's foes. Then Cysero coated it with reflective paint, and now it will match your armor!",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/DragonLordHelm.png",
-      "alternativeImages": [
-        {
-          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/DragonLordHelm-Old.png",
-          "caption": "Old Appearance"
-        }
-      ],
-      "rarity": "12",
-      "notes": "Helm is color-custom; the hair, the armet, the mouth, and the eye are linked to the player's hair, base, trim, and dragon eye colors respectively.\nHelm's appearance was updated on June 26th, 2020."
-    },
-    "levelVariants": [
-      {
-        "levelNumber": 12,
-        "levelDisplay": "12",
-        "actualLevel": 12,
-        "name": "Mirrored DragonLord Helm",
-        "damage": "",
-        "stats": "Crit +1, Magic Def +2, Melee Def +3, END +1, LUK +1, INT +5, DEX +2, STR +5, Bonus +2",
-        "obtainVariants": [
-          {
-            "location": "Helms and Capes",
-            "price": "450 Dragon Coins",
-            "priceType": "dc",
-            "sellback": "405 DC (<24 hours) / 113 DC (>24 hours)",
-            "daRequired": true,
-            "dcRequired": true
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=17761883",
-        "description": "This helm was forged from the same materials used in making the DragonLord armor. It was designed to strike the same fear and awe into the Dragonlord's foes. Then Cysero coated it with reflective paint, and now it will match your armor!",
-        "element": "MET",
-        "resists": "All +4",
-        "rarity": "12"
-      },
-      {
-        "levelNumber": 22,
-        "levelDisplay": "22",
-        "actualLevel": 22,
-        "name": "Mirrored DragonLord Helm",
-        "damage": "",
-        "stats": "Crit +1, Magic Def +2, Melee Def +3, END +1, LUK +1, INT +5, DEX +5, STR +5, Bonus +2",
-        "obtainVariants": [
-          {
-            "location": "Helms and Capes",
-            "price": "455 Dragon Coins",
-            "priceType": "dc",
-            "sellback": "410 DC (<24 hours) / 114 DC (>24 hours)",
-            "daRequired": true,
-            "dcRequired": true
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=17762270",
-        "description": "This helm was forged from the same materials used in making the DragonLord armor. It was designed to strike the same fear and awe into the Dragonlord's foes. Then Cysero coated it with reflective paint, and now it will match your armor!",
-        "element": "MET",
-        "resists": "All +5",
-        "rarity": "12"
-      },
-      {
-        "levelNumber": 32,
-        "levelDisplay": "32",
-        "actualLevel": 32,
-        "name": "Mirrored DragonLord Helm",
-        "damage": "",
-        "stats": "Crit +3, Magic Def +2, Melee Def +3, END +1, LUK +1, INT +5, DEX +5, STR +5, Bonus +2",
-        "obtainVariants": [
-          {
-            "location": "Helms and Capes",
-            "price": "460 Dragon Coins",
-            "priceType": "dc",
-            "sellback": "414 DC (<24 hours) / 115 DC (>24 hours)",
-            "daRequired": true,
-            "dcRequired": true
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=17762296",
-        "description": "This helm was forged from the same materials used in making the DragonLord armor. It was designed to strike the same fear and awe into the Dragonlord's foes. Then Cysero coated it with reflective paint, and now it will match your armor!",
-        "element": "MET",
-        "resists": "All +6",
-        "rarity": "12"
-      },
-      {
-        "levelNumber": 42,
-        "levelDisplay": "42",
-        "actualLevel": 42,
-        "name": "Mirrored DragonLord Helm",
-        "damage": "",
-        "stats": "Crit +4, Magic Def +2, Melee Def +3, END +1, LUK +1, INT +5, DEX +5, STR +5, Bonus +4",
-        "obtainVariants": [
-          {
-            "location": "Helms and Capes",
-            "price": "470 Dragon Coins",
-            "priceType": "dc",
-            "sellback": "423 DC (<24 hours) / 118 DC (>24 hours)",
-            "daRequired": true,
-            "dcRequired": true
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=17762305",
-        "description": "This helm was forged from the same materials used in making the DragonLord armor. It was designed to strike the same fear and awe into the Dragonlord's foes. Then Cysero coated it with reflective paint, and now it will match your armor!",
-        "element": "MET",
-        "resists": "All +6",
-        "rarity": "12"
-      },
-      {
-        "levelNumber": 52,
-        "levelDisplay": "52",
-        "actualLevel": 52,
-        "name": "Mirrored DragonLord Helm",
-        "damage": "",
-        "stats": "Crit +5, Magic Def +2, Melee Def +3, END +3, LUK +1, INT +5, DEX +5, STR +5, Bonus +5",
-        "obtainVariants": [
-          {
-            "location": "Helms and Capes",
-            "price": "475 Dragon Coins",
-            "priceType": "dc",
-            "sellback": "428 DC (<24 hours) / 119 DC (>24 hours)",
-            "daRequired": true,
-            "dcRequired": true
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=17762312",
-        "description": "This helm was forged from the same materials used in making the DragonLord armor. It was designed to strike the same fear and awe into the Dragonlord's foes. Then Cysero coated it with reflective paint, and now it will match your armor!",
-        "element": "MET",
-        "resists": "All +6",
-        "rarity": "12"
-      },
-      {
-        "levelNumber": 62,
-        "levelDisplay": "62",
-        "actualLevel": 62,
-        "name": "Mirrored DragonLord Helm",
-        "damage": "",
-        "stats": "Crit +6, Magic Def +3, Melee Def +5, END +4, LUK +2, INT +6, DEX +6, STR +6, Bonus +6",
-        "obtainVariants": [
-          {
-            "location": "Helms and Capes",
-            "price": "480 Dragon Coins",
-            "priceType": "dc",
-            "sellback": "432 DC (<24 hours) / 120 DC (>24 hours)",
-            "daRequired": true,
-            "dcRequired": true
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=17786216",
-        "description": "This helm was forged from the same materials used in making the DragonLord armor. It was designed to strike the same fear and awe into the Dragonlord's foes. Then Cysero coated it with reflective paint, and now it will match your armor!",
-        "element": "MET",
-        "resists": "All +7, Immobility +1",
-        "rarity": "12"
-      },
-      {
-        "levelNumber": 72,
-        "levelDisplay": "72",
-        "actualLevel": 72,
-        "name": "Mirrored DragonLord Helm",
-        "damage": "",
-        "stats": "Crit +7, Magic Def +7, Melee Def +7, END +6, LUK +3, INT +8, DEX +8, STR +8, Bonus +8",
-        "obtainVariants": [
-          {
-            "location": "Helms and Capes",
-            "price": "485 Dragon Coins",
-            "priceType": "dc",
-            "sellback": "437 DC (<24 hours) / 122 DC (>24 hours)",
-            "daRequired": true,
-            "dcRequired": true
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21732215",
-        "description": "This helm was forged from the same materials used in making the DragonLord armor. It was designed to strike the same fear and awe into the Dragonlord's foes. Then Cysero coated it with reflective paint, and now it will match your armor!",
-        "element": "MET",
-        "resists": "All +8, Immobility +3",
-        "rarity": "12"
-      },
-      {
-        "levelNumber": 80,
-        "levelDisplay": "80",
-        "actualLevel": 80,
-        "name": "Mirrored DragonLord Helm",
-        "damage": "",
-        "stats": "Crit +8, Magic Def +10, Melee Def +10, END +9, LUK +4, INT +11, DEX +11, STR +11, Bonus +10",
-        "obtainVariants": [
-          {
-            "location": "Helms and Capes",
-            "price": "500 Dragon Coins",
-            "priceType": "dc",
-            "sellback": "450 DC (<24 hours) / 125 DC (>24 hours)",
-            "daRequired": true,
-            "dcRequired": true
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21732220",
-        "description": "This helm was forged from the same materials used in making the DragonLord armor. It was designed to strike the same fear and awe into the Dragonlord's foes. Then Cysero coated it with reflective paint, and now it will match your armor!",
-        "element": "MET",
-        "resists": "All +8, Immobility +5",
-        "rarity": "12"
-      }
-    ],
-    "itemType": "Helm",
-    "equipSlot": "Head",
-    "category": "Armor",
-    "releaseDate": "",
-    "tags": [
-      "dc",
-      "met"
-    ],
-    "hasDA": true,
-    "hasDC": true,
-    "hasDM": false,
-    "hasFree": false,
-    "hasMerge": false,
-    "levelRange": "12-80",
-    "elements": [
-      "MET"
-    ]
-  },
-  {
     "id": "accessory-mirrored-matey-s-cap",
     "familyName": "Mirrored Matey's Cap",
     "slug": "accessory-mirrored-matey-s-cap",
@@ -5315,57 +4967,6 @@
     "levelRange": "10-50",
     "elements": [
       "WAT"
-    ]
-  },
-  {
-    "id": "accessory-mistral-oleander-veil",
-    "name": "Mistral Oleander Veil",
-    "slug": "accessory-mistral-oleander-veil",
-    "type": "accessory",
-    "subtype": "helm",
-    "description": "A beautiful blossom for your hair! Happy Mother's Day!",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20316949",
-    "releaseDate": "",
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/OleanderVeilM.png",
-    "elements": [
-      "NAT"
-    ],
-    "level": "74",
-    "stats": "Dodge +1, Parry +1, Crit +6, Magic Def +8, Pierce Def +8, Melee Def +8, WIS +10, CHA +10, LUK +10, Bonus +10",
-    "resists": "Light +12, Darkness +12, Nature +5, Immobility +5, Health -2",
-    "rarity": "10",
-    "itemType": "Helm",
-    "equipSpot": "Head",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "Mother's Day 2012, Mother's Day (Shop)",
-        "priceType": "free",
-        "price": "0 Gold",
-        "sellback": "0 Gold",
-        "daRequired": true
-      }
-    ],
-    "notes": "Helm's description previously specified Happy Mother's Day 2012!; this was removed alongside its 2015 re-release.",
-    "tags": [
-      "nat",
-      "free"
-    ],
-    "daRequired": true,
-    "isRare": true,
-    "alsoSee": [
-      {
-        "name": "Breezy Oleander Veil",
-        "slug": "accessory-aerial-oleander-veil",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20316929"
-      },
-      {
-        "name": "Fresh Oleander Veil",
-        "slug": "accessory-fresh-oleander-veil",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20316914"
-      }
     ]
   },
   {
@@ -7605,85 +7206,6 @@
     "levelRange": "1",
     "elements": [
       "NON"
-    ]
-  },
-  {
-    "id": "accessory-nabulsi-helm",
-    "name": "Nabulsi Helm",
-    "slug": "accessory-nabulsi-helm",
-    "type": "accessory",
-    "subtype": "helm",
-    "description": "It's gouda for you!",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21529890",
-    "releaseDate": "",
-    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/ParmesanHelmpic.png",
-    "elements": [
-      "GOO"
-    ],
-    "level": "45",
-    "stats": "Crit +5, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +5, END +6, CHA +3, Bonus +4",
-    "resists": "Light +6, Wind +6, Bacon +3",
-    "rarity": "10",
-    "itemType": "Helm",
-    "equipSpot": "Head",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "Cheese Shop",
-        "priceType": "gold",
-        "price": "6,000 Gold",
-        "sellback": "600 Gold",
-        "daRequired": false
-      }
-    ],
-    "tags": [
-      "goo",
-      "gold"
-    ],
-    "daRequired": false,
-    "alsoSee": [
-      {
-        "name": "Chhurpi Helm",
-        "slug": "accessory-chhurpi-helm",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21529887"
-      },
-      {
-        "name": "Esrom Helm",
-        "slug": "accessory-esrom-helm",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21529896"
-      },
-      {
-        "name": "Imsil Helm",
-        "slug": "accessory-imsil-helm",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21529889"
-      },
-      {
-        "name": "Kasseri Helm",
-        "slug": "accessory-kasseri-helm",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21529892"
-      },
-      {
-        "name": "Kesong Helm",
-        "slug": "accessory-kesong-helm",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21529888"
-      },
-      {
-        "name": "Parmesan Helm",
-        "slug": "accessory-parmesan-helm",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21529895"
-      },
-      {
-        "name": "Stazaar Helm",
-        "slug": "accessory-stazaar-helm",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21529893"
-      }
     ]
   },
   {
@@ -10962,10 +10484,6 @@
     "id": "accessory-nivalis-mask-2011",
     "familyName": "Nivalis Mask (2011)",
     "slug": "accessory-nivalis-mask-2011",
-    "aliasSlugs": [
-      "accessory-nivalis-mask",
-      "accessory-nivalis-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19748642",
@@ -10986,7 +10504,15 @@
     ],
     "shared": {
       "description": "For Mogloween.",
-      "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/NivalisMaskpic.jpg"
+      "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/NivalisMaskpic.jpg",
+      "alsoSee": [
+        {
+          "name": "Nivalis Mask (2019)",
+          "slug": "accessory-nivalis-mask-2019",
+          "type": "accessory",
+          "url": "https://forums2.battleon.com/f/tm.asp?m=22370232"
+        }
+      ]
     },
     "levelVariants": [
       {
@@ -11064,10 +10590,6 @@
     "id": "accessory-nivalis-mask-2019",
     "familyName": "Nivalis Mask (2019)",
     "slug": "accessory-nivalis-mask-2019",
-    "aliasSlugs": [
-      "accessory-nivalis-mask",
-      "accessory-nivalis-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22370232",
@@ -11089,7 +10611,15 @@
     "shared": {
       "description": "A different perspective can change almost anything.",
       "resists": "None",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/NivalisMask.png"
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/NivalisMask.png",
+      "alsoSee": [
+        {
+          "name": "Nivalis Mask (2011)",
+          "slug": "accessory-nivalis-mask-2011",
+          "type": "accessory",
+          "url": "https://forums2.battleon.com/f/tm.asp?m=19748642"
+        }
+      ]
     },
     "levelVariants": [
       {
@@ -13136,36 +12666,6 @@
         "slug": "accessory-crown-of-sek-duat",
         "type": "accessory",
         "url": "https://forums2.battleon.com/f/tm.asp?m=21323236"
-      },
-      {
-        "name": "Golden Crown of Sek Duat",
-        "slug": "accessory-golden-crown-of-sek-duat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21323265"
-      },
-      {
-        "name": "Illuminated Crown of Sek Duat",
-        "slug": "accessory-illuminated-crown-of-sek-duat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21323320"
-      },
-      {
-        "name": "Imperial Crown of Sek Duat",
-        "slug": "accessory-imperial-crown-of-sek-duat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21323294"
-      },
-      {
-        "name": "Jeweled Crown of Sek Duat",
-        "slug": "accessory-jeweled-crown-of-sek-duat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21323248"
-      },
-      {
-        "name": "Kingly Crown of Sek Duat",
-        "slug": "accessory-kingly-crown-of-sek-duat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21323242"
       }
     ]
   },
@@ -13534,132 +13034,6 @@
       "gold"
     ],
     "daRequired": true
-  },
-  {
-    "id": "accessory-opening-oleander-veil",
-    "name": "Opening Oleander Veil",
-    "slug": "accessory-opening-oleander-veil",
-    "type": "accessory",
-    "subtype": "helm",
-    "description": "A beautiful blossom for your hair! Happy Mother's Day!",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20316967",
-    "releaseDate": "",
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/OleanderVeilF.png",
-    "elements": [
-      "NAT"
-    ],
-    "level": "24",
-    "stats": "Magic Def +2, Pierce Def +2, Melee Def +2, WIS +2, CHA +2, LUK +2, Bonus +2",
-    "resists": "Light +3, Darkness +3",
-    "rarity": "10",
-    "itemType": "Helm",
-    "equipSpot": "Head",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "Mother's Day 2012, Mother's Day (Shop)",
-        "priceType": "free",
-        "price": "0 Gold",
-        "sellback": "0 Gold",
-        "daRequired": false
-      }
-    ],
-    "notes": "Helm's description previously specified Happy Mother's Day 2012!; this was removed alongside its 2015 re-release.",
-    "tags": [
-      "nat",
-      "free"
-    ],
-    "daRequired": false,
-    "isRare": true,
-    "alsoSee": [
-      {
-        "name": "Budding Oleander Veil",
-        "slug": "accessory-blooming-oleander-veil",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20316959"
-      },
-      {
-        "name": "Flourishing Oleander Veil",
-        "slug": "accessory-flourishing-oleander-veil",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20316920"
-      },
-      {
-        "name": "Flowering Oleander Veil",
-        "slug": "accessory-flowering-oleander-veil",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20316940"
-      },
-      {
-        "name": "Fragrant Oleander Veil",
-        "slug": "accessory-fragrant-oleander-veil",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20316973"
-      }
-    ]
-  },
-  {
-    "id": "accessory-opening-sakura-adornment",
-    "name": "Opening Sakura Adornment",
-    "slug": "accessory-opening-sakura-adornment",
-    "type": "accessory",
-    "subtype": "helm",
-    "description": "A beautiful blossom for your hair! Happy Mother's Day!",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18962024",
-    "releaseDate": "",
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/SakuraAdornmentF.png",
-    "elements": [
-      "NAT"
-    ],
-    "level": "24",
-    "stats": "Magic Def +2, Pierce Def +2, Melee Def +2, WIS +2, CHA +2, LUK +2, Bonus +2",
-    "resists": "Light +3, Darkness +3",
-    "rarity": "15",
-    "itemType": "Helm",
-    "equipSpot": "Head",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "Mother's Day 2011, Mother's Day (Shop)",
-        "priceType": "free",
-        "price": "0 Gold",
-        "sellback": "0 Gold",
-        "daRequired": false
-      }
-    ],
-    "notes": "Helm's description previously specified Happy Mother's Day, 2011!; this was removed alongside its 2015 re-release.",
-    "tags": [
-      "nat",
-      "free"
-    ],
-    "daRequired": false,
-    "isRare": true,
-    "alsoSee": [
-      {
-        "name": "Budding Sakura Adornment",
-        "slug": "accessory-blooming-sakura-adornment",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=18962017"
-      },
-      {
-        "name": "Flourishing Sakura Adornment",
-        "slug": "accessory-flourishing-sakura-adornment",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=18960108"
-      },
-      {
-        "name": "Flowering Sakura Adornment",
-        "slug": "accessory-flowering-sakura-adornment",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=18962010"
-      },
-      {
-        "name": "Fragrant Sakura Adornment",
-        "slug": "accessory-fragrant-sakura-adornment",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21972181"
-      }
-    ]
   },
   {
     "id": "accessory-oratath-mask",
@@ -14938,135 +14312,6 @@
     ],
     "daRequired": false,
     "dcRequired": true
-  },
-  {
-    "id": "accessory-parched-flare-imp-hat",
-    "name": "Parched Flare Imp Hat",
-    "slug": "accessory-parched-flare-imp-hat",
-    "type": "accessory",
-    "subtype": "helm",
-    "description": "You took this from a cache that belonged to the fiery invading army of the Rising Fire War of 2012!",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20262763",
-    "releaseDate": "",
-    "imageUrl": "http://i.imgur.com/bX1Xv.png",
-    "elements": [
-      "FIR"
-    ],
-    "level": "31",
-    "stats": "Crit +2, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +1, END +1, CHA +1, INT +3, DEX +3, STR +3, Bonus +2",
-    "resists": "Ice +2, Water +3, Fire +5",
-    "rarity": "25",
-    "itemType": "Helm",
-    "equipSpot": "Head",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "Imp Hats",
-        "priceType": "gold",
-        "price": "1,000 Gold",
-        "sellback": "100 Gold",
-        "daRequired": false
-      }
-    ],
-    "tags": [
-      "fir",
-      "gold"
-    ],
-    "daRequired": false,
-    "isRare": true,
-    "alsoSee": [
-      {
-        "name": "Flare Imp Hat",
-        "slug": "accessory-flare-imp-hat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20262879"
-      },
-      {
-        "name": "Flare Imp Hat",
-        "slug": "accessory-flare-imp-hat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20262258"
-      }
-    ]
-  },
-  {
-    "id": "accessory-parmesan-helm",
-    "name": "Parmesan Helm",
-    "slug": "accessory-parmesan-helm",
-    "type": "accessory",
-    "subtype": "helm",
-    "description": "It's gouda for you! This item requires a Dragon Amulet.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21529895",
-    "releaseDate": "",
-    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/ParmesanHelmpic.png",
-    "elements": [
-      "GOO"
-    ],
-    "level": "75",
-    "stats": "Dodge +1, Parry +1, Crit +9, Magic Def +8, Pierce Def +8, Melee Def +8, WIS +10, END +11, CHA +5, INT +2, DEX +2, STR +2, Bonus +7",
-    "resists": "Light +12, Wind +12, Stone +5, Bacon +5, Immobility +5, Health -2",
-    "rarity": "10",
-    "itemType": "Helm",
-    "equipSpot": "Head",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "Cheese Shop",
-        "priceType": "gold",
-        "price": "17,000 Gold",
-        "sellback": "1,700 Gold",
-        "daRequired": true
-      }
-    ],
-    "tags": [
-      "goo",
-      "gold"
-    ],
-    "daRequired": true,
-    "alsoSee": [
-      {
-        "name": "Chhurpi Helm",
-        "slug": "accessory-chhurpi-helm",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21529887"
-      },
-      {
-        "name": "Esrom Helm",
-        "slug": "accessory-esrom-helm",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21529896"
-      },
-      {
-        "name": "Imsil Helm",
-        "slug": "accessory-imsil-helm",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21529889"
-      },
-      {
-        "name": "Kasseri Helm",
-        "slug": "accessory-kasseri-helm",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21529892"
-      },
-      {
-        "name": "Kesong Helm",
-        "slug": "accessory-kesong-helm",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21529888"
-      },
-      {
-        "name": "Nabulsi Helm",
-        "slug": "accessory-nabulsi-helm",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21529890"
-      },
-      {
-        "name": "Stazaar Helm",
-        "slug": "accessory-stazaar-helm",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21529893"
-      }
-    ]
   },
   {
     "id": "accessory-patrick-s-emerald-green-hat",
@@ -19098,49 +18343,6 @@
     ]
   },
   {
-    "id": "accessory-prime-time-helm",
-    "name": "Prime-time Helm",
-    "slug": "accessory-prime-time-helm",
-    "type": "accessory",
-    "subtype": "helm",
-    "description": "Made to commemorate the effort the gnomes of Popsprocket put into their city's defense mechanism.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=16233097",
-    "releaseDate": "",
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/GnomishPrime-timeHelm.png",
-    "elements": [
-      "ENE"
-    ],
-    "level": "20",
-    "stats": "Magic Def +3, Pierce Def +3, Melee Def +3, INT +2, DEX +2, STR +2",
-    "resists": "Energy +2",
-    "rarity": "5",
-    "itemType": "Helm",
-    "equipSpot": "Head",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "The City Fights Back!",
-        "priceType": "free",
-        "price": "N/A",
-        "sellback": "10 Gold",
-        "daRequired": true
-      }
-    ],
-    "tags": [
-      "ene",
-      "free"
-    ],
-    "daRequired": true,
-    "alsoSee": [
-      {
-        "name": "Gnomish Prime",
-        "slug": "accessory-gnomish-prime",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=16233007"
-      }
-    ]
-  },
-  {
     "id": "accessory-prism-dove-mask",
     "familyName": "Prism Dove Mask",
     "slug": "accessory-prism-dove-mask",
@@ -19242,53 +18444,6 @@
     "levelRange": "1",
     "elements": [
       "NON"
-    ]
-  },
-  {
-    "id": "accessory-prismatic-kabutoguard",
-    "name": "Prismatic KabutoGuard",
-    "slug": "accessory-prismatic-kabutoguard",
-    "type": "accessory",
-    "subtype": "helm",
-    "description": "In a distant land, the BeetleLords train arduously in defense of their people, valuing strength and resilience. Little is known of their small order, yet somehow, this helm has made it to you. (Cosmetic)(CC: Base, Trim, DEye)",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22425963",
-    "releaseDate": "",
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/AzureKabutoGuard.png",
-    "elements": [
-      "MET"
-    ],
-    "level": "1",
-    "stats": "None",
-    "resists": "None",
-    "rarity": "9",
-    "itemType": "Helm",
-    "equipSpot": "Head",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "DC Cosmetics",
-        "priceType": "dc",
-        "price": "400 Dragon Coins",
-        "sellback": "360 DC (<24 hours) / 100 DC (>24 hours)",
-        "daRequired": false,
-        "dcRequired": true
-      }
-    ],
-    "notes": "Helm is color-custom; armet and horns are linked to player's base and trim colors, and eyes are linked to player's dragon color.",
-    "tags": [
-      "met",
-      "dc"
-    ],
-    "daRequired": false,
-    "dcRequired": true,
-    "isCosmetic": true,
-    "alsoSee": [
-      {
-        "name": "Azure KabutoGuard",
-        "slug": "accessory-azure-kabutoguard",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=22425962"
-      }
     ]
   },
   {
@@ -19423,24 +18578,22 @@
     "familyName": "Prius Cat Mask",
     "slug": "accessory-prius-cat-mask",
     "aliasSlugs": [
-      "accessory-prius-cat-mask",
-      "accessory-prius-cat-mask"
+      "accessory-fierce-prius-cat-mask"
     ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20827724",
-    "familyOrigin": "same-thread-multi-post",
+    "familyOrigin": "cross-post",
     "familySources": [
       {
-        "url": "https://forums2.battleon.com/f/fb.asp?m=20827724",
-        "title": "DF Encyclopedia: Prius Cat Mask",
-        "variantLabel": "Prius Cat Mask",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20847865",
+        "title": "DF Encyclopedia: Fierce Prius Cat Mask",
+        "variantLabel": "Fierce Prius Cat Mask",
         "isPrimary": true
       },
       {
-        "url": "https://forums2.battleon.com/f/fb.asp?m=20847815",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20827724",
         "title": "DF Encyclopedia: Prius Cat Mask",
-        "variantLabel": "Prius Cat Mask",
         "isPrimary": false
       }
     ],
@@ -19474,7 +18627,7 @@
         "notes": "Prevents moglins from becoming Moglinsters and provides a 52% Candy bonus when equipped while Trick or Treating."
       },
       {
-        "levelNumber": 10,
+        "levelNumber": 2,
         "levelDisplay": "10",
         "actualLevel": 10,
         "name": "Prius Cat Mask",
@@ -19495,6 +18648,31 @@
         "element": "ICE",
         "resists": "Ice +2, Fire +2",
         "rarity": "25"
+      },
+      {
+        "levelNumber": 3,
+        "levelDisplay": "72",
+        "actualLevel": 72,
+        "variantName": "Fierce",
+        "name": "Fierce Prius Cat Mask",
+        "damage": "",
+        "stats": "Block +2, Dodge +3, Crit +9, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +5, END +5, CHA +5, INT +9, DEX +9, STR +9, Bonus +7",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20847865",
+        "description": "Happy Mogloween, 2012!",
+        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/PriusCatMaskpic.jpg",
+        "obtainVariants": [
+          {
+            "location": "Cysero's Mask Shop",
+            "priceType": "dc",
+            "price": "330 Dragon Coins",
+            "sellback": "297 DC (<24 hours) / 83 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "element": "ICE",
+        "resists": "Fire +13, Ice +13, Immobility +3, Health -2",
+        "rarity": "12"
       }
     ],
     "itemType": "Helm",
@@ -19514,10 +18692,10 @@
     "hasDM": false,
     "hasFree": false,
     "hasMerge": true,
-    "levelRange": "1-10",
+    "levelRange": "1-72",
     "elements": [
-      "NON",
-      "ICE"
+      "ICE",
+      "NON"
     ]
   },
   {
@@ -19822,51 +19000,6 @@
     ]
   },
   {
-    "id": "accessory-proto-zard-mask",
-    "name": "Proto-Zard Mask",
-    "slug": "accessory-proto-zard-mask",
-    "type": "accessory",
-    "subtype": "helm",
-    "description": "Half-sneevil, half-zard, all ugly! Happy Mogloween 2010!",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18288632",
-    "releaseDate": "",
-    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/ProtoZardMaskpic.jpg",
-    "elements": [
-      "NON"
-    ],
-    "level": "15",
-    "stats": "Melee Def +2, END +3, CHA -2, LUK +5, DEX +5, Bonus +3",
-    "resists": "Nature +4",
-    "rarity": "0",
-    "itemType": "Helm",
-    "equipSpot": "Head",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "Cysero's Mask Shop",
-        "priceType": "dc",
-        "price": "150 Dragon Coins",
-        "sellback": "135 DC (<24 hours) / 38 DC (>24 hours)",
-        "daRequired": false,
-        "dcRequired": true
-      }
-    ],
-    "tags": [
-      "non",
-      "dc"
-    ],
-    "daRequired": false,
-    "dcRequired": true,
-    "alsoSee": [
-      {
-        "name": "Protozard Mask",
-        "slug": "accessory-protozard-mask",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=18283998"
-      }
-    ]
-  },
-  {
     "id": "accessory-prototype-snugglemech-helm",
     "name": "Prototype Snugglemech Helm",
     "slug": "accessory-prototype-snugglemech-helm",
@@ -19915,49 +19048,103 @@
   },
   {
     "id": "accessory-protozard-mask",
-    "name": "Protozard Mask",
+    "familyName": "Protozard Mask",
     "slug": "accessory-protozard-mask",
+    "aliasSlugs": [
+      "accessory-proto-zard-mask"
+    ],
     "type": "accessory",
     "subtype": "helm",
-    "description": "For Mogloween.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18283998",
-    "releaseDate": "",
-    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/ProtoZardMaskpic.jpg",
-    "elements": [
-      "NON"
-    ],
-    "level": "1",
-    "stats": "None",
-    "resists": "None",
-    "rarity": "1",
-    "itemType": "Helm",
-    "equipSpot": "Head",
-    "category": "Armor",
-    "obtainMethods": [
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18288632",
+    "familyOrigin": "cross-post",
+    "familySources": [
       {
-        "location": "Mogloween Masks! (Chapter 5)",
-        "priceType": "merge",
-        "price": "N/A",
-        "requiredItems": "600 Candy, Unlock Zeuster Mask",
-        "sellback": "N/A",
-        "daRequired": false
+        "url": "https://forums2.battleon.com/f/tm.asp?m=18288632",
+        "title": "DF Encyclopedia: Proto-Zard Mask",
+        "variantLabel": "Proto-Zard Mask",
+        "isPrimary": true
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=18283998",
+        "title": "DF Encyclopedia: Protozard Mask",
+        "isPrimary": false
       }
     ],
-    "notes": "Prevents moglins from becoming Moglinsters and provides a 34% Candy bonus when equipped while Trick or Treating.",
-    "tags": [
-      "non",
-      "merge"
+    "shared": {
+      "description": "For Mogloween.",
+      "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/ProtoZardMaskpic.jpg"
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
+        "levelDisplay": "1",
+        "actualLevel": 1,
+        "variantName": "(Base)",
+        "name": "Protozard Mask",
+        "damage": "",
+        "stats": "None",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=18283998",
+        "description": "For Mogloween.",
+        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/ProtoZardMaskpic.jpg",
+        "obtainVariants": [
+          {
+            "location": "Mogloween Masks! (Chapter 5)",
+            "priceType": "merge",
+            "price": "N/A",
+            "requiredItems": "600 Candy, Unlock Zeuster Mask",
+            "sellback": "N/A",
+            "daRequired": false
+          }
+        ],
+        "element": "NON",
+        "resists": "None",
+        "rarity": "1",
+        "notes": "Prevents moglins from becoming Moglinsters and provides a 34% Candy bonus when equipped while Trick or Treating."
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "15",
+        "actualLevel": 15,
+        "variantName": "Proto-Zard Mask",
+        "name": "Proto-Zard Mask",
+        "damage": "",
+        "stats": "Melee Def +2, END +3, CHA -2, LUK +5, DEX +5, Bonus +3",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=18288632",
+        "description": "Half-sneevil, half-zard, all ugly! Happy Mogloween 2010!",
+        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/ProtoZardMaskpic.jpg",
+        "obtainVariants": [
+          {
+            "location": "Cysero's Mask Shop",
+            "priceType": "dc",
+            "price": "150 Dragon Coins",
+            "sellback": "135 DC (<24 hours) / 38 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "element": "NON",
+        "resists": "Nature +4",
+        "rarity": "0"
+      }
     ],
-    "daRequired": false,
+    "itemType": "Helm",
+    "equipSlot": "Head",
+    "category": "Armor",
+    "tags": [
+      "dc",
+      "merge",
+      "non"
+    ],
     "isTemp": true,
     "isSeasonal": true,
-    "alsoSee": [
-      {
-        "name": "Proto-Zard Mask",
-        "slug": "accessory-proto-zard-mask",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=18288632"
-      }
+    "hasDA": false,
+    "hasDC": true,
+    "hasDM": false,
+    "hasFree": false,
+    "hasMerge": true,
+    "levelRange": "1-15",
+    "elements": [
+      "NON"
     ]
   },
   {
@@ -20405,45 +19592,6 @@
       "NON",
       "LIG"
     ]
-  },
-  {
-    "id": "accessory-pumpkin-mask",
-    "name": "Pumpkin Mask",
-    "slug": "accessory-pumpkin-mask",
-    "type": "accessory",
-    "subtype": "helm",
-    "description": "For Mogloween.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19748657",
-    "releaseDate": "",
-    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/PumpkinMaskpic2.jpg",
-    "elements": [
-      "NON"
-    ],
-    "level": "1",
-    "stats": "None",
-    "resists": "None",
-    "rarity": "1",
-    "itemType": "Helm",
-    "equipSpot": "Head",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "Mogloween Masks! (Chapter 6)",
-        "priceType": "merge",
-        "price": "N/A",
-        "requiredItems": "2,000 Candy, Unlock Nivalis Mask",
-        "sellback": "N/A",
-        "daRequired": false
-      }
-    ],
-    "notes": "Prevents moglins from becoming Moglinsters and provides a 57% Candy bonus when equipped while Trick or Treating.",
-    "tags": [
-      "non",
-      "merge"
-    ],
-    "daRequired": false,
-    "isTemp": true,
-    "isSeasonal": true
   },
   {
     "id": "accessory-pumpkin-pi-mask",
@@ -21382,161 +20530,6 @@
     "levelRange": "I-VII",
     "elements": [
       "NAT"
-    ]
-  },
-  {
-    "id": "accessory-radiant-crown-of-sek-duat",
-    "name": "Radiant Crown of Sek Duat",
-    "slug": "accessory-radiant-crown-of-sek-duat",
-    "type": "accessory",
-    "subtype": "helm",
-    "description": "The radiant crown of Emperor Sek Duat, Ruler of the Sandsea, Supreme Wielder of the Light, now turned to dust....",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22378902",
-    "releaseDate": "",
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/CrownofSekDuat.png",
-    "elements": [
-      "LIG"
-    ],
-    "level": "90",
-    "stats": "Block +5, Dodge +5, Parry +5, Crit +14, Magic Def +8, Pierce Def +8, Melee Def +8, WIS +10, END +6, CHA +8, INT +13, DEX +13, STR +13, Bonus +10",
-    "resists": "Darkness +10, Wind +10, Stone +10, Water +10, Light +5, Immobility +5, All +5",
-    "rarity": "25",
-    "itemType": "Helm",
-    "equipSpot": "Head",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "Sek Duat DC Loot",
-        "priceType": "dc",
-        "price": "450 Dragon Coins",
-        "sellback": "405 DC (<24 hours) / 113 DC (>24 hours)",
-        "daRequired": false,
-        "dcRequired": true
-      }
-    ],
-    "notes": "Helm is color-custom; the hair is linked to the player's hair color.",
-    "tags": [
-      "lig",
-      "dc"
-    ],
-    "daRequired": false,
-    "dcRequired": true,
-    "alsoSee": [
-      {
-        "name": "Crown Of Sek Duat",
-        "slug": "accessory-crown-of-sek-duat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21323252"
-      },
-      {
-        "name": "Crown of Sek Duat",
-        "slug": "accessory-crown-of-sek-duat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21323236"
-      },
-      {
-        "name": "Golden Crown of Sek Duat",
-        "slug": "accessory-golden-crown-of-sek-duat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21323265"
-      },
-      {
-        "name": "Illuminated Crown of Sek Duat",
-        "slug": "accessory-illuminated-crown-of-sek-duat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21323320"
-      },
-      {
-        "name": "Imperial Crown of Sek Duat",
-        "slug": "accessory-imperial-crown-of-sek-duat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21323294"
-      },
-      {
-        "name": "Jeweled Crown of Sek Duat",
-        "slug": "accessory-jeweled-crown-of-sek-duat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21323248"
-      },
-      {
-        "name": "Kingly Crown of Sek Duat",
-        "slug": "accessory-kingly-crown-of-sek-duat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21323242"
-      },
-      {
-        "name": "Obsidian Relic Helm",
-        "slug": "accessory-obsidian-relic-helm",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=22419539"
-      },
-      {
-        "name": "Royal Crown of Sek Duat",
-        "slug": "accessory-royal-crown-of-sek-duat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21323281"
-      }
-    ]
-  },
-  {
-    "id": "accessory-radiant-dravir-warhelm",
-    "name": "Radiant Dravir Warhelm",
-    "slug": "accessory-radiant-dravir-warhelm",
-    "type": "accessory",
-    "subtype": "helm",
-    "description": "Impressed with the bond you share with your dragon, the dravir smiths refitted this helm for you. Kara used some magic to allow it to change color based on your preference! (Cosmetic)",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22389631",
-    "releaseDate": "",
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/RadiantDravirWarhelm.png",
-    "alternativeImages": [
-      {
-        "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/RadiantDravirWarhelm-ElementalAttunement.png",
-        "caption": "this chart"
-      }
-    ],
-    "elements": [
-      "MET"
-    ],
-    "level": "1",
-    "stats": "None",
-    "resists": "None",
-    "rarity": "5",
-    "itemType": "Helm",
-    "equipSpot": "Head",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "Caught in a Vise",
-        "priceType": "free",
-        "price": "N/A",
-        "sellback": "0 Dragon Coins",
-        "daRequired": false,
-        "dcRequired": true
-      },
-      {
-        "location": "CiaV Loot for DCs",
-        "priceType": "dc",
-        "price": "200 Dragon Coins",
-        "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
-        "daRequired": false,
-        "dcRequired": true
-      }
-    ],
-    "notes": "Helm has a low drop rate from the quest Caught in a Vise.\nHelm is color-custom to the player's base and trim colors.\nHelm's eye is attuned to the player's equipped weapon's element; refer to   for all appearances.\nWood elemental attunement became accessible upon the release of  Spare Chair on  January 28th, 2023.",
-    "tags": [
-      "met",
-      "free"
-    ],
-    "daRequired": false,
-    "dcRequired": true,
-    "isCosmetic": true,
-    "alsoSee": [
-      {
-        "name": "Dravir Warhelm",
-        "slug": "accessory-dravir-warhelm",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=22389622"
-      }
     ]
   },
   {
@@ -23808,51 +22801,6 @@
     "hasMerge": false,
     "levelRange": "1",
     "elements": []
-  },
-  {
-    "id": "accessory-retroclear-royal-doom",
-    "name": "Retroclear Royal Doom",
-    "slug": "accessory-retroclear-royal-doom",
-    "type": "accessory",
-    "subtype": "helm",
-    "description": "This mysterious helmet glows with unreadable glyphs. Still, tehre's something familiar... and dangerous about it that you can't quite shake.(Cosmetic)",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22424359",
-    "releaseDate": "",
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/RetroclearRoyalDoom.png",
-    "elements": [],
-    "level": "1",
-    "stats": "None",
-    "resists": "None",
-    "rarity": "1",
-    "itemType": "Helm",
-    "equipSpot": "Head",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "Retroclear",
-        "priceType": "dc",
-        "price": "350 Dragon Coins",
-        "sellback": "315 DC (<24 hours) / 88 DC (>24 hours)",
-        "daRequired": false,
-        "dcRequired": true
-      }
-    ],
-    "notes": "Helm is animated; white swirly waves spirals horizontally and data scrolls vertically through the helm's visor.",
-    "tags": [
-      "dc"
-    ],
-    "daRequired": false,
-    "dcRequired": true,
-    "isCosmetic": true,
-    "isSeasonal": true,
-    "alsoSee": [
-      {
-        "name": "Royal Doom",
-        "slug": "accessory-royal-doom",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=16605119"
-      }
-    ]
   },
   {
     "id": "accessory-rhoddhu-helm",
@@ -26389,55 +25337,6 @@
     ]
   },
   {
-    "id": "accessory-rotted-death-head",
-    "name": "Rotted Death Head",
-    "slug": "accessory-rotted-death-head",
-    "type": "accessory",
-    "subtype": "helm",
-    "description": "Scavenged from Sepulchure's minions this Death Head is infused with darkness!",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19175525",
-    "releaseDate": "",
-    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/DeathHeadpic.jpg",
-    "alternativeImages": [
-      {
-        "url": "http://i.imgur.com/OaHFiHK.jpg",
-        "caption": "Alternative Image"
-      }
-    ],
-    "elements": [
-      "DAR"
-    ],
-    "level": "28",
-    "stats": "Crit +5, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +2, END +5, INT +2, DEX +2, STR +2, Bonus +1",
-    "resists": "Darkness +5, Light +5, Ice +2, Fire +2",
-    "rarity": "10",
-    "itemType": "Helm",
-    "equipSpot": "Head",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "Sepulchure's Fortress",
-        "priceType": "free",
-        "price": "N/A",
-        "sellback": "300 Gold",
-        "daRequired": false
-      }
-    ],
-    "tags": [
-      "dar",
-      "free"
-    ],
-    "daRequired": false,
-    "alsoSee": [
-      {
-        "name": "Death Head",
-        "slug": "accessory-doomed-death-head",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19175356"
-      }
-    ]
-  },
-  {
     "id": "accessory-rotten-overgourd-cover",
     "familyName": "Rotten Overgourd Cover",
     "slug": "accessory-rotten-overgourd-cover",
@@ -26743,182 +25642,61 @@
     "daRequired": false
   },
   {
-    "id": "accessory-royal-crown-of-sek-duat",
-    "name": "Royal Crown of Sek Duat",
-    "slug": "accessory-royal-crown-of-sek-duat",
-    "type": "accessory",
-    "subtype": "helm",
-    "description": "The illuminated crown of Emperor Sek Duat, Ruler of the Sandsea, Supreme Wielder of the Light, now turned to dust....",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21323281",
-    "releaseDate": "",
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/CrownofSekDuat.png",
-    "elements": [
-      "LIG"
-    ],
-    "level": "60",
-    "stats": "Block +1, Dodge +2, Crit +9, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +6, END +2, INT +6, DEX +6, STR +6, Bonus +5",
-    "resists": "Darkness +6, Wind +6, Stone +5, Water +5, Light +2, Immobility +2, All +1",
-    "rarity": "25",
-    "itemType": "Helm",
-    "equipSpot": "Head",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "Sek Duat DC Loot",
-        "priceType": "dc",
-        "price": "285 Dragon Coins",
-        "sellback": "257 DC (<24 hours) / 72 DC (>24 hours)",
-        "daRequired": false,
-        "dcRequired": true
-      }
-    ],
-    "notes": "Helm is color-custom; the hair is linked to the player's hair color.",
-    "tags": [
-      "lig",
-      "dc"
-    ],
-    "daRequired": false,
-    "dcRequired": true,
-    "alsoSee": [
-      {
-        "name": "Crown Of Sek Duat",
-        "slug": "accessory-crown-of-sek-duat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21323252"
-      },
-      {
-        "name": "Crown of Sek Duat",
-        "slug": "accessory-crown-of-sek-duat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21323236"
-      },
-      {
-        "name": "Golden Crown of Sek Duat",
-        "slug": "accessory-golden-crown-of-sek-duat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21323265"
-      },
-      {
-        "name": "Illuminated Crown of Sek Duat",
-        "slug": "accessory-illuminated-crown-of-sek-duat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21323320"
-      },
-      {
-        "name": "Imperial Crown of Sek Duat",
-        "slug": "accessory-imperial-crown-of-sek-duat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21323294"
-      },
-      {
-        "name": "Jeweled Crown of Sek Duat",
-        "slug": "accessory-jeweled-crown-of-sek-duat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21323248"
-      },
-      {
-        "name": "Kingly Crown of Sek Duat",
-        "slug": "accessory-kingly-crown-of-sek-duat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21323242"
-      },
-      {
-        "name": "Obsidian Relic Helm",
-        "slug": "accessory-obsidian-relic-helm",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=22419539"
-      },
-      {
-        "name": "Radiant Crown of Sek Duat",
-        "slug": "accessory-radiant-crown-of-sek-duat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=22378902"
-      }
-    ]
-  },
-  {
     "id": "accessory-royal-doom",
     "familyName": "Royal Doom",
     "slug": "accessory-royal-doom",
     "aliasSlugs": [
-      "accessory-royal-doom",
-      "accessory-royal-doom",
-      "accessory-royal-doom",
-      "accessory-royal-doom",
-      "accessory-royal-doom",
-      "accessory-royal-doom",
-      "accessory-royal-doom",
-      "accessory-royal-doom",
-      "accessory-royal-doom"
+      "accessory-retroclear-royal-doom"
     ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=16605119",
-    "familyOrigin": "same-thread-multi-post",
+    "familyOrigin": "cross-post",
     "familySources": [
       {
-        "url": "https://forums2.battleon.com/f/fb.asp?m=16605119",
-        "title": "DF Encyclopedia: Royal Doom",
-        "variantLabel": "Royal Doom",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=22424359",
+        "title": "DF Encyclopedia: Retroclear Royal Doom",
+        "variantLabel": "Retroclear Royal Doom",
         "isPrimary": true
       },
       {
-        "url": "https://forums2.battleon.com/f/fb.asp?m=16605141",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=16605119",
         "title": "DF Encyclopedia: Royal Doom",
-        "variantLabel": "Royal Doom",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/fb.asp?m=16605146",
-        "title": "DF Encyclopedia: Royal Doom",
-        "variantLabel": "Royal Doom",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/fb.asp?m=16605147",
-        "title": "DF Encyclopedia: Royal Doom",
-        "variantLabel": "Royal Doom",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/fb.asp?m=16605157",
-        "title": "DF Encyclopedia: Royal Doom",
-        "variantLabel": "Royal Doom",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/fb.asp?m=16605265",
-        "title": "DF Encyclopedia: Royal Doom",
-        "variantLabel": "Royal Doom",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/fb.asp?m=22015038",
-        "title": "DF Encyclopedia: Royal Doom",
-        "variantLabel": "Royal Doom",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/fb.asp?m=22015039",
-        "title": "DF Encyclopedia: Royal Doom",
-        "variantLabel": "Royal Doom",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/fb.asp?m=22015040",
-        "title": "DF Encyclopedia: Royal Doom",
-        "variantLabel": "Royal Doom",
         "isPrimary": false
       }
     ],
     "shared": {
-      "description": "Can't you just FEEL the Doom? This item requires a Dragon Amulet.",
-      "imageUrl": "http://i.imgur.com/Ml7AEaD.png",
-      "notes": "Helms cannot be destroyed.\nHelms are animated; red swirly waves spirals horizontally through the helm's visor."
+      "description": "This mysterious helmet glows with unreadable glyphs. Still, tehre's something familiar... and dangerous about it that you can't quite shake.(Cosmetic)",
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/RetroclearRoyalDoom.png"
     },
     "levelVariants": [
       {
         "levelNumber": 1,
+        "levelDisplay": "1",
+        "actualLevel": 1,
+        "variantName": "Retroclear",
+        "name": "Retroclear Royal Doom",
+        "damage": "",
+        "stats": "None",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22424359",
+        "description": "This mysterious helmet glows with unreadable glyphs. Still, tehre's something familiar... and dangerous about it that you can't quite shake.(Cosmetic)",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/RetroclearRoyalDoom.png",
+        "obtainVariants": [
+          {
+            "location": "Retroclear",
+            "priceType": "dc",
+            "price": "350 Dragon Coins",
+            "sellback": "315 DC (<24 hours) / 88 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "resists": "None",
+        "rarity": "1",
+        "notes": "Helm is animated; white swirly waves spirals horizontally and data scrolls vertically through the helm's visor."
+      },
+      {
+        "levelNumber": 2,
         "levelDisplay": "1",
         "actualLevel": 1,
         "name": "Royal Doom",
@@ -26941,7 +25719,7 @@
         "rarity": "0"
       },
       {
-        "levelNumber": 10,
+        "levelNumber": 3,
         "levelDisplay": "10",
         "actualLevel": 10,
         "name": "Royal Doom",
@@ -26964,7 +25742,7 @@
         "rarity": "25"
       },
       {
-        "levelNumber": 20,
+        "levelNumber": 4,
         "levelDisplay": "20",
         "actualLevel": 20,
         "name": "Royal Doom",
@@ -26987,7 +25765,7 @@
         "rarity": "25"
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 5,
         "levelDisplay": "30",
         "actualLevel": 30,
         "name": "Royal Doom",
@@ -27010,7 +25788,7 @@
         "rarity": "25"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 6,
         "levelDisplay": "40",
         "actualLevel": 40,
         "name": "Royal Doom",
@@ -27033,7 +25811,7 @@
         "rarity": "25"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 7,
         "levelDisplay": "50",
         "actualLevel": 50,
         "name": "Royal Doom",
@@ -27056,7 +25834,7 @@
         "rarity": "25"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 8,
         "levelDisplay": "60",
         "actualLevel": 60,
         "name": "Royal Doom",
@@ -27079,7 +25857,7 @@
         "rarity": "25"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 9,
         "levelDisplay": "70",
         "actualLevel": 70,
         "name": "Royal Doom",
@@ -27102,7 +25880,7 @@
         "rarity": "25"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 10,
         "levelDisplay": "80",
         "actualLevel": 80,
         "name": "Royal Doom",
@@ -27133,6 +25911,8 @@
       "dar",
       "dc"
     ],
+    "isCosmetic": true,
+    "isSeasonal": true,
     "hasDA": true,
     "hasDC": true,
     "hasDM": false,
@@ -28360,265 +27140,6 @@
     ]
   },
   {
-    "id": "accessory-salty-aye-guardian-pirate-hat",
-    "name": "Salty Aye Guardian Pirate Hat",
-    "slug": "accessory-salty-aye-guardian-pirate-hat",
-    "type": "accessory",
-    "subtype": "helm",
-    "description": "Ye'll be ready t' sail o'er t' seas o' Lore with this handsome hat.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20707570",
-    "releaseDate": "",
-    "imageUrl": "http://i.imgur.com/CLUyCdv.png",
-    "alternativeImages": [
-      {
-        "url": "http://i.imgur.com/QYJhi.png",
-        "caption": "Alternative Image"
-      }
-    ],
-    "elements": [
-      "SIL"
-    ],
-    "level": "25",
-    "stats": "Crit +3, Magic Def +3, Pierce Def +3, Melee Def +1, WIS +2, END +2, CHA +6, LUK +4, Bonus +5",
-    "resists": "Poison +5",
-    "rarity": "2",
-    "itemType": "Helm",
-    "equipSpot": "Head",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "TLaPD DC, TLaPD DC Bandanas",
-        "priceType": "dc",
-        "price": "100 Dragon Coins",
-        "sellback": "90 DC (<24 hours) / 25 DC (>24 hours)",
-        "daRequired": false,
-        "dcRequired": true
-      }
-    ],
-    "tags": [
-      "sil",
-      "dc"
-    ],
-    "daRequired": false,
-    "dcRequired": true,
-    "alsoSee": [
-      {
-        "name": "Aye Guardian Pirate Hat",
-        "slug": "accessory-aye-guardian-pirate-hat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19634552"
-      },
-      {
-        "name": "Filthy Aye Guardian Pirate Hat",
-        "slug": "accessory-filthy-aye-guardian-pirate-hat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20709735"
-      },
-      {
-        "name": "Foxy Aye Guardian Pirate Hat",
-        "slug": "accessory-foxy-aye-guardian-pirate-hat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19634569"
-      },
-      {
-        "name": "Swarthy Aye Guardian Pirate Hat",
-        "slug": "accessory-swarthy-aye-guardian-pirate-hat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19634566"
-      }
-    ]
-  },
-  {
-    "id": "accessory-salty-bearded-guardian-pirate-hat",
-    "name": "Salty Bearded Guardian Pirate Hat",
-    "slug": "accessory-salty-bearded-guardian-pirate-hat",
-    "type": "accessory",
-    "subtype": "helm",
-    "description": "Ye'll be ready t' sail o'er t' seas o' Lore with this handsome hat.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20707584",
-    "releaseDate": "",
-    "imageUrl": "http://i.imgur.com/x8Tak.png",
-    "alternativeImages": [
-      {
-        "url": "http://i.imgur.com/XboRN5Y.png",
-        "caption": "Alternative Image"
-      }
-    ],
-    "elements": [
-      "SIL"
-    ],
-    "level": "25",
-    "stats": "Crit +3, Magic Def +3, Pierce Def +3, Melee Def +1, WIS +2, END +2, CHA +5, LUK +4, Bonus +5",
-    "resists": "Poison +5",
-    "rarity": "2",
-    "itemType": "Helm",
-    "equipSpot": "Head",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "TLaPD DC, TLaPD DC Bandanas",
-        "priceType": "dc",
-        "price": "100 Dragon Coins",
-        "sellback": "90 DC (<24 hours) / 25 DC (>24 hours)",
-        "daRequired": false,
-        "dcRequired": true
-      }
-    ],
-    "tags": [
-      "sil",
-      "dc"
-    ],
-    "daRequired": false,
-    "dcRequired": true,
-    "alsoSee": [
-      {
-        "name": "Bearded Guardian Pirate Hat",
-        "slug": "accessory-bearded-guardian-pirate-hat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19634590"
-      },
-      {
-        "name": "Filthy Bearded Guardian Pirate Hat",
-        "slug": "accessory-filthy-bearded-guardian-pirate-hat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20709730"
-      },
-      {
-        "name": "Foxy Bearded Guardian Pirate Hat",
-        "slug": "accessory-foxy-bearded-guardian-pirate-hat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19634601"
-      },
-      {
-        "name": "Swarthy Bearded Guardian Pirate Hat",
-        "slug": "accessory-swarthy-bearded-guardian-pirate-hat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19634599"
-      }
-    ]
-  },
-  {
-    "id": "accessory-salty-guardian-pirate-hat",
-    "name": "Salty Guardian Pirate Hat",
-    "slug": "accessory-salty-guardian-pirate-hat",
-    "type": "accessory",
-    "subtype": "helm",
-    "description": "Ye'll be ready t' sail o'er t' seas o' Lore with this handsome hat.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20707569",
-    "releaseDate": "",
-    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/GuardianPirateHatpic.png",
-    "elements": [
-      "SIL"
-    ],
-    "level": "25",
-    "stats": "Crit +3, Magic Def +3, Pierce Def +3, Melee Def +1, WIS +2, END +2, CHA +6, LUK +4, Bonus +5",
-    "resists": "Poison +5",
-    "rarity": "2",
-    "itemType": "Helm",
-    "equipSpot": "Head",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "TLaPD DC, TLaPD DC Bandanas",
-        "priceType": "dc",
-        "price": "100 Dragon Coins",
-        "sellback": "90 DC (<24 hours) / 25 DC (>24 hours)",
-        "daRequired": false,
-        "dcRequired": true
-      }
-    ],
-    "tags": [
-      "sil",
-      "dc"
-    ],
-    "daRequired": false,
-    "dcRequired": true,
-    "alsoSee": [
-      {
-        "name": "Guardian Pirate Hat",
-        "slug": "accessory-guardian-pirate-hat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19631736"
-      },
-      {
-        "name": "Guardian Pirate Hat",
-        "slug": "accessory-guardian-pirate-hat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19631732"
-      },
-      {
-        "name": "Swarthy Guardian Pirate Hat",
-        "slug": "accessory-swarthy-guardian-pirate-hat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19631757"
-      }
-    ]
-  },
-  {
-    "id": "accessory-salty-guardian-pirate-scarf",
-    "name": "Salty Guardian Pirate Scarf",
-    "slug": "accessory-salty-guardian-pirate-scarf",
-    "type": "accessory",
-    "subtype": "helm",
-    "description": "Ye'll be ready t' sail o'er t' seas o' Lore with this handsome scarf. This item requires a Dragon Amulet.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20707568",
-    "releaseDate": "",
-    "imageUrl": "http://i.imgur.com/8Nc2Z.png",
-    "alternativeImages": [
-      {
-        "url": "http://i.imgur.com/qOp9wuG.png",
-        "caption": "Alternative Image"
-      }
-    ],
-    "elements": [
-      "SIL"
-    ],
-    "level": "25",
-    "stats": "Crit +3, Magic Def +3, Pierce Def +3, Melee Def +1, WIS +2, END +2, CHA +6, LUK +4, Bonus +5",
-    "resists": "Poison +5",
-    "rarity": "2",
-    "itemType": "Helm",
-    "equipSpot": "Head",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "TLaPD DC, TLaPD DC Bandanas",
-        "priceType": "dc",
-        "price": "100 Dragon Coins",
-        "sellback": "90 DC (<24 hours) / 25 DC (>24 hours)",
-        "daRequired": false,
-        "dcRequired": true
-      }
-    ],
-    "tags": [
-      "sil",
-      "dc"
-    ],
-    "daRequired": false,
-    "dcRequired": true,
-    "isSeasonal": true,
-    "alsoSee": [
-      {
-        "name": "Guardian Pirate Scarf",
-        "slug": "accessory-guardian-pirate-scarf",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19631292"
-      },
-      {
-        "name": "Guardian Pirate Scarf",
-        "slug": "accessory-guardian-pirate-scarf",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19631278"
-      },
-      {
-        "name": "Swarthy Guardian Pirate Scarf",
-        "slug": "accessory-swarthy-guardian-pirate-scarf",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19631423"
-      }
-    ]
-  },
-  {
     "id": "accessory-salty-pirate-scarf",
     "name": "Salty Pirate Scarf",
     "slug": "accessory-salty-pirate-scarf",
@@ -28917,74 +27438,6 @@
     "daRequired": true
   },
   {
-    "id": "accessory-santaka-sombrero-2010",
-    "name": "Santaka Sombrero 2010",
-    "slug": "accessory-santaka-sombrero-2010",
-    "type": "accessory",
-    "subtype": "helm",
-    "description": "Happy Cinco de Mayo 2010!",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17582895",
-    "releaseDate": "",
-    "imageUrl": "http://i.imgur.com/315413s.png",
-    "elements": [
-      "FIR"
-    ],
-    "level": "45",
-    "stats": "Block +4, Dodge +4, Parry +4, Crit +3, END +6, Bonus +3",
-    "resists": "Darkness +7",
-    "rarity": "10",
-    "itemType": "Helm",
-    "equipSpot": "Head",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "Cinco de Mayo 2010",
-        "priceType": "free",
-        "price": "0 Gold",
-        "sellback": "0 Gold",
-        "daRequired": false
-      }
-    ],
-    "tags": [
-      "fir",
-      "free"
-    ],
-    "daRequired": false,
-    "isRare": true,
-    "alsoSee": [
-      {
-        "name": "Ancho Sombrero 2010",
-        "slug": "accessory-ancho-sombrero-2010",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=17580492"
-      },
-      {
-        "name": "Cayenne Sombrero 2010",
-        "slug": "accessory-cayenne-sombrero-2010",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=17582887"
-      },
-      {
-        "name": "Chipotle Sombrero 2010",
-        "slug": "accessory-chipotle-sombrero-2010",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=17580502"
-      },
-      {
-        "name": "Habanero Sombrero 2010",
-        "slug": "accessory-habanero-sombrero-2010",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=17582890"
-      },
-      {
-        "name": "Serrano Sombrero 2010",
-        "slug": "accessory-serrano-sombrero-2010",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=17580511"
-      }
-    ]
-  },
-  {
     "id": "accessory-sapphire-hood",
     "name": "Sapphire Hood",
     "slug": "accessory-sapphire-hood",
@@ -29021,55 +27474,12 @@
     "daRequired": true
   },
   {
-    "id": "accessory-savage-helm",
-    "name": "Savage Helm",
-    "slug": "accessory-savage-helm",
-    "type": "accessory",
-    "subtype": "helm",
-    "description": "Your hearing seems greatly improved!",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18598079",
-    "releaseDate": "",
-    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/WildHelm.png",
-    "elements": [
-      "NAT"
-    ],
-    "level": "52",
-    "stats": "Crit +4, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +2, END +2, CHA +6, LUK +6, INT +5, DEX +5, STR +5, Bonus +2",
-    "resists": "Nature +6, Water +6, Stone +2, Wind +2",
-    "rarity": "15",
-    "itemType": "Helm",
-    "equipSpot": "Head",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "Reanimated",
-        "priceType": "free",
-        "price": "N/A",
-        "sellback": "175 Gold",
-        "daRequired": false
-      }
-    ],
-    "notes": "Helm is color-custom; the hair is linked to the player's hair color.",
-    "tags": [
-      "nat",
-      "free"
-    ],
-    "daRequired": false,
-    "alsoSee": [
-      {
-        "name": "Wild Helm",
-        "slug": "accessory-wild-helm",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=18598037"
-      }
-    ]
-  },
-  {
     "id": "accessory-black-scalehunter-helm",
     "familyName": "Scalehunter Helm",
     "slug": "accessory-black-scalehunter-helm",
     "aliasSlugs": [
-      "accessory-red-scalehunter-helm"
+      "accessory-red-scalehunter-helm",
+      "accessory-white-scalehunter-helm"
     ],
     "type": "accessory",
     "subtype": "helm",
@@ -29078,14 +27488,13 @@
     "familySources": [
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=14295368",
-        "title": "DF Encyclopedia: Black Scalehunter Helm",
-        "variantLabel": "Black Scalehunter Helm",
+        "title": "DF Encyclopedia: Scalehunter Helm",
         "isPrimary": true
       },
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=14295236",
-        "title": "DF Encyclopedia: Red Scalehunter Helm",
-        "variantLabel": "Red Scalehunter Helm",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=14295301",
+        "title": "DF Encyclopedia: White Scalehunter Helm",
+        "variantLabel": "White Scalehunter Helm",
         "isPrimary": false
       }
     ],
@@ -29143,6 +27552,31 @@
         "element": "FIR",
         "resists": "Fire +4",
         "rarity": "8"
+      },
+      {
+        "levelNumber": 3,
+        "levelDisplay": "9",
+        "actualLevel": 9,
+        "variantName": "White",
+        "name": "White Scalehunter Helm",
+        "damage": "",
+        "stats": "Block +1, Magic Def +3, Pierce Def +3, Melee Def +3, END +4",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=14295301",
+        "description": "This helm was found atop the treasure trove of a giant wind dragon. Apparently, the helm of this fallen White Scalehunter was his greatest prize.",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/WhiteScalehunterHelm.jpg",
+        "obtainVariants": [
+          {
+            "location": "Scavenger Hunt",
+            "priceType": "merge",
+            "price": "N/A",
+            "requiredItems": "15 Pouch of Sparkling Sand & 5 Aeris PVP Trophy",
+            "sellback": "0 Gold",
+            "daRequired": false
+          }
+        ],
+        "element": "WIN",
+        "resists": "Fire +5, Water +3",
+        "rarity": "8"
       }
     ],
     "itemType": "Helm",
@@ -29151,7 +27585,8 @@
     "tags": [
       "dar",
       "fir",
-      "merge"
+      "merge",
+      "win"
     ],
     "isRare": true,
     "hasDA": false,
@@ -29162,7 +27597,8 @@
     "levelRange": "9",
     "elements": [
       "DAR",
-      "FIR"
+      "FIR",
+      "WIN"
     ]
   },
   {
@@ -30105,56 +28541,6 @@
     "levelRange": "1",
     "elements": [
       "NON"
-    ]
-  },
-  {
-    "id": "accessory-scorched-flare-imp-hat",
-    "name": "Scorched Flare Imp Hat",
-    "slug": "accessory-scorched-flare-imp-hat",
-    "type": "accessory",
-    "subtype": "helm",
-    "description": "You took this from a cache that belonged to the fiery invading army of the Rising Fire War of 2012! This item requires a Dragon Amulet.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20262279",
-    "releaseDate": "",
-    "imageUrl": "http://i.imgur.com/QDfU8.png",
-    "elements": [
-      "FIR"
-    ],
-    "level": "61",
-    "stats": "Crit +5, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +4, END +4, CHA +3, INT +5, DEX +5, STR +5, Bonus +6",
-    "resists": "All +1, Immobility +1, Light +3, Ice +5, Water +5, Fire +7",
-    "rarity": "25",
-    "itemType": "Helm",
-    "equipSpot": "Head",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "Imp Hats",
-        "priceType": "gold",
-        "price": "1,500 Gold",
-        "sellback": "150 Gold",
-        "daRequired": true
-      }
-    ],
-    "tags": [
-      "fir",
-      "gold"
-    ],
-    "daRequired": true,
-    "isRare": true,
-    "alsoSee": [
-      {
-        "name": "Burnt Flare Imp Hat",
-        "slug": "accessory-burnt-flare-imp-hat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20262273"
-      },
-      {
-        "name": "Singed Flare Imp Hat",
-        "slug": "accessory-singed-flare-imp-hat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20262275"
-      }
     ]
   },
   {
@@ -31961,74 +30347,6 @@
     ]
   },
   {
-    "id": "accessory-serrano-sombrero-2010",
-    "name": "Serrano Sombrero 2010",
-    "slug": "accessory-serrano-sombrero-2010",
-    "type": "accessory",
-    "subtype": "helm",
-    "description": "Happy Cinco de Mayo 2010!",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17580511",
-    "releaseDate": "",
-    "imageUrl": "http://i.imgur.com/315413s.png",
-    "elements": [
-      "FIR"
-    ],
-    "level": "25",
-    "stats": "Block +2, Dodge +2, Parry +2, Crit +3, END +5, Bonus +3",
-    "resists": "Darkness +5",
-    "rarity": "10",
-    "itemType": "Helm",
-    "equipSpot": "Head",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "Cinco de Mayo 2010",
-        "priceType": "free",
-        "price": "0 Gold",
-        "sellback": "0 Gold",
-        "daRequired": false
-      }
-    ],
-    "tags": [
-      "fir",
-      "free"
-    ],
-    "daRequired": false,
-    "isRare": true,
-    "alsoSee": [
-      {
-        "name": "Ancho Sombrero 2010",
-        "slug": "accessory-ancho-sombrero-2010",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=17580492"
-      },
-      {
-        "name": "Cayenne Sombrero 2010",
-        "slug": "accessory-cayenne-sombrero-2010",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=17582887"
-      },
-      {
-        "name": "Chipotle Sombrero 2010",
-        "slug": "accessory-chipotle-sombrero-2010",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=17580502"
-      },
-      {
-        "name": "Habanero Sombrero 2010",
-        "slug": "accessory-habanero-sombrero-2010",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=17582890"
-      },
-      {
-        "name": "Santaka Sombrero 2010",
-        "slug": "accessory-santaka-sombrero-2010",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=17582895"
-      }
-    ]
-  },
-  {
     "id": "accessory-shades-of-the-eclipse-of-doom",
     "name": "Shades of the Eclipse of DOOM",
     "slug": "accessory-shades-of-the-eclipse-of-doom",
@@ -32106,168 +30424,6 @@
     ],
     "daRequired": false,
     "dcRequired": true
-  },
-  {
-    "id": "accessory-shadowed-deathknight-helm",
-    "familyName": "Shadowed DeathKnight Helm",
-    "slug": "accessory-shadowed-deathknight-helm",
-    "aliasSlugs": [
-      "accessory-shadowed-deathknight-helm-i",
-      "accessory-shadowed-deathknight-helm-ii",
-      "accessory-shadowed-deathknight-helm-iii",
-      "accessory-shadowed-deathknight-helm-iv"
-    ],
-    "type": "accessory",
-    "subtype": "helm",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21834909",
-    "familyOrigin": "same-thread-multi-post",
-    "familySources": [
-      {
-        "url": "https://forums2.battleon.com/f/fb.asp?m=21834909",
-        "title": "DF Encyclopedia: Shadowed DeathKnight Helm I",
-        "variantLabel": "Shadowed DeathKnight Helm I",
-        "isPrimary": true
-      },
-      {
-        "url": "https://forums2.battleon.com/f/fb.asp?m=21834910",
-        "title": "DF Encyclopedia: Shadowed DeathKnight Helm II",
-        "variantLabel": "Shadowed DeathKnight Helm II",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/fb.asp?m=21834911",
-        "title": "DF Encyclopedia: Shadowed DeathKnight Helm III",
-        "variantLabel": "Shadowed DeathKnight Helm III",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/fb.asp?m=21834913",
-        "title": "DF Encyclopedia: Shadowed DeathKnight Helm IV",
-        "variantLabel": "Shadowed DeathKnight Helm IV",
-        "isPrimary": false
-      }
-    ],
-    "shared": {
-      "description": "You've infused your helm with shadow energy. The power that it held has been increased, but you now seem to see odd shapes at the edge of your vision.",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/DeathKnightHelm.png",
-      "rarity": "25",
-      "notes": "II-IV versions previously required 1  DeathKnight Helm & 2/3/4  Dusk Essence respectively.\nHelms were tiered with Roman numerals on  August 25th, 2023; Required Items on II-IV versions were also changed on that date."
-    },
-    "levelVariants": [
-      {
-        "levelNumber": 50,
-        "levelDisplay": "50",
-        "actualLevel": 50,
-        "variantName": "I",
-        "name": "Shadowed DeathKnight Helm I",
-        "damage": "",
-        "stats": "Crit +5, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +5, END +5, INT +4, DEX +4, STR +4, Bonus +4",
-        "obtainVariants": [
-          {
-            "location": "DeathKnight Upgrades",
-            "price": "N/A",
-            "priceType": "merge",
-            "sellback": "120 Gold",
-            "requiredItems": "1 DeathKnight Helm & 1 Dusk Essence",
-            "daRequired": false
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21834909",
-        "description": "You've infused your helm with shadow energy. The power that it held has been increased, but you now seem to see odd shapes at the edge of your vision.",
-        "element": "DAR",
-        "resists": "Darkness +9, Light +9",
-        "rarity": "25"
-      },
-      {
-        "levelNumber": 60,
-        "levelDisplay": "60",
-        "actualLevel": 60,
-        "variantName": "II",
-        "name": "Shadowed DeathKnight Helm II",
-        "damage": "",
-        "stats": "Crit +6, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +4, END +4, INT +5, DEX +5, STR +5, Bonus +5",
-        "obtainVariants": [
-          {
-            "location": "DeathKnight Upgrades",
-            "price": "N/A",
-            "priceType": "merge",
-            "sellback": "140 Gold",
-            "requiredItems": "1 Shadowed DeathKnight Helm I & 1 Dusk Essence",
-            "daRequired": false
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21834910",
-        "description": "You've infused your helm with shadow energy. The power that it held has been increased, but you now seem to see odd shapes at the edge of your vision.",
-        "element": "DAR",
-        "resists": "Darkness +10, Light +10",
-        "rarity": "25"
-      },
-      {
-        "levelNumber": 70,
-        "levelDisplay": "70",
-        "actualLevel": 70,
-        "variantName": "III",
-        "name": "Shadowed DeathKnight Helm III",
-        "damage": "",
-        "stats": "Crit +7, Magic Def +7, Pierce Def +7, Melee Def +7, WIS +5, END +5, INT +6, DEX +6, STR +6, Bonus +6",
-        "obtainVariants": [
-          {
-            "location": "DeathKnight Upgrades",
-            "price": "N/A",
-            "priceType": "merge",
-            "sellback": "180 Gold",
-            "requiredItems": "1 Shadowed DeathKnight Helm II & 1 Dusk Essence",
-            "daRequired": false
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21834911",
-        "description": "You've infused your helm with shadow energy. The power that it held has been increased, but you now seem to see odd shapes at the edge of your vision.",
-        "element": "DAR",
-        "resists": "Darkness +11, Light +11",
-        "rarity": "25"
-      },
-      {
-        "levelNumber": 80,
-        "levelDisplay": "80",
-        "actualLevel": 80,
-        "variantName": "IV",
-        "name": "Shadowed DeathKnight Helm IV",
-        "damage": "",
-        "stats": "Crit +8, Magic Def +8, Pierce Def +8, Melee Def +8, WIS +6, END +6, INT +7, DEX +7, STR +7, Bonus +7",
-        "obtainVariants": [
-          {
-            "location": "DeathKnight Upgrades",
-            "price": "N/A",
-            "priceType": "merge",
-            "sellback": "220 Gold",
-            "requiredItems": "1 Shadowed DeathKnight Helm III & 1 Dusk Essence",
-            "daRequired": false
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21834913",
-        "description": "You've infused your helm with shadow energy. The power that it held has been increased, but you now seem to see odd shapes at the edge of your vision.",
-        "element": "DAR",
-        "resists": "Darkness +12, Light +12",
-        "rarity": "25"
-      }
-    ],
-    "itemType": "Helm",
-    "equipSlot": "Head",
-    "category": "Armor",
-    "releaseDate": "",
-    "tags": [
-      "dar",
-      "merge"
-    ],
-    "hasDA": false,
-    "hasDC": false,
-    "hasDM": false,
-    "hasFree": false,
-    "hasMerge": true,
-    "levelRange": "I-IV",
-    "elements": [
-      "DAR"
-    ]
   },
   {
     "id": "accessory-shadowfire-mask",
@@ -33526,56 +31682,6 @@
     ]
   },
   {
-    "id": "accessory-shining-helm-of-destiny",
-    "name": "Shining Helm of Destiny",
-    "slug": "accessory-shining-helm-of-destiny",
-    "type": "accessory",
-    "subtype": "helm",
-    "description": "Once belonging to a famous paladin, it is said that a single gaze from this helm will obliterate shadow itself; no darkness is safe from its vigilance! This item requires a Dragon Amulet.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19421458",
-    "releaseDate": "",
-    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/HelmofDestinypic.jpg",
-    "elements": [
-      "LIG"
-    ],
-    "level": "68",
-    "stats": "Parry +5, Crit +6, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +6, CHA +6, INT +6, DEX +6, STR +6, Bonus +6",
-    "resists": "Evil +12, Darkness +12, Disease +6, Poison +6",
-    "rarity": "25",
-    "itemType": "Helm",
-    "equipSpot": "Head",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "The Growing Darkness",
-        "priceType": "free",
-        "price": "N/A",
-        "sellback": "500 Gold",
-        "daRequired": true
-      }
-    ],
-    "notes": "A small glow will appear on top of the helm that flashes periodically.",
-    "tags": [
-      "lig",
-      "free"
-    ],
-    "daRequired": true,
-    "alsoSee": [
-      {
-        "name": "Helm Of Destiny",
-        "slug": "accessory-helm-of-destiny",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19423041"
-      },
-      {
-        "name": "Helm of Destiny",
-        "slug": "accessory-helm-of-destiny",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19421500"
-      }
-    ]
-  },
-  {
     "id": "accessory-shiny-eyeball-helm",
     "name": "Shiny Eyeball Helm",
     "slug": "accessory-shiny-eyeball-helm",
@@ -33722,121 +31828,6 @@
     ]
   },
   {
-    "id": "accessory-shocking-hair",
-    "name": "Shocking Hair",
-    "slug": "accessory-shocking-hair",
-    "type": "accessory",
-    "subtype": "helm",
-    "description": "You're going to look gooooood at Thankstaking this year! Happy Thankstaking, 2013!",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21528733",
-    "releaseDate": "",
-    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/ShockingHair.png",
-    "elements": [
-      "NON"
-    ],
-    "level": "25",
-    "stats": "Crit +3, Magic Def +3, Pierce Def +2, Melee Def +2, WIS +2, END +2, CHA +3, Bonus +2",
-    "resists": "Energy +3, Metal +3",
-    "rarity": "10",
-    "itemType": "Helm",
-    "equipSpot": "Head",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "Food Fight!",
-        "priceType": "free",
-        "price": "N/A",
-        "sellback": "0 Gold",
-        "daRequired": false
-      },
-      {
-        "location": "Thankstaking 13 DC",
-        "priceType": "dc",
-        "price": "15 Dragon Coins",
-        "sellback": "14 DC (<24 hours) / 4 DC (>24 hours)",
-        "daRequired": false,
-        "dcRequired": true
-      }
-    ],
-    "tags": [
-      "non",
-      "free"
-    ],
-    "daRequired": false,
-    "dcRequired": true,
-    "isSeasonal": true,
-    "alsoSee": [
-      {
-        "name": "Electric Hair",
-        "slug": "accessory-electric-hair",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21526781"
-      },
-      {
-        "name": "Shockingly Hair",
-        "slug": "accessory-shockingly-amazing-hair",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21528478"
-      }
-    ]
-  },
-  {
-    "id": "accessory-shocking-jack-o-helm",
-    "name": "Shocking Jack 'o Helm",
-    "slug": "accessory-shocking-jack-o-helm",
-    "type": "accessory",
-    "subtype": "helm",
-    "description": "Jack apparently has multiple backup heads in case he loses his. He gave you one of them. How thoughtful!",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21847424",
-    "releaseDate": "",
-    "imageUrl": "http://i.imgur.com/PSqBd04.png",
-    "elements": [
-      "DAR"
-    ],
-    "level": "75",
-    "stats": "Block +2, Dodge +2, Parry +2, Crit +6, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +10, END +10, INT +6, DEX +6, STR +6, Bonus +8",
-    "resists": "Immobility +2, Fire +3, Nature +10, Light +10",
-    "rarity": "15",
-    "itemType": "Helm",
-    "equipSpot": "Head",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "The Perfect Year",
-        "priceType": "free",
-        "price": "N/A",
-        "sellback": "300 Gold",
-        "daRequired": false
-      }
-    ],
-    "tags": [
-      "dar",
-      "free"
-    ],
-    "daRequired": false,
-    "isSeasonal": true,
-    "alsoSee": [
-      {
-        "name": "Jack 'o Helm",
-        "slug": "accessory-jack-o-helm",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21847361"
-      },
-      {
-        "name": "Jack 'o Helm",
-        "slug": "accessory-jack-o-helm",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21847292"
-      },
-      {
-        "name": "Spooky Jack 'o Helm",
-        "slug": "accessory-spooky-jack-o-helm",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21847282"
-      }
-    ]
-  },
-  {
     "id": "accessory-shockingly-amazing-hair",
     "familyName": "Shockingly Hair",
     "slug": "accessory-shockingly-amazing-hair",
@@ -33899,12 +31890,6 @@
           "slug": "accessory-electric-hair",
           "type": "accessory",
           "url": "https://forums2.battleon.com/f/tm.asp?m=21526781"
-        },
-        {
-          "name": "Shocking Hair",
-          "slug": "accessory-shocking-hair",
-          "type": "accessory",
-          "url": "https://forums2.battleon.com/f/tm.asp?m=21528733"
         }
       ]
     },
@@ -35033,56 +33018,6 @@
     ]
   },
   {
-    "id": "accessory-singed-flare-imp-hat",
-    "name": "Singed Flare Imp Hat",
-    "slug": "accessory-singed-flare-imp-hat",
-    "type": "accessory",
-    "subtype": "helm",
-    "description": "You took this from a cache that belonged to the fiery invading army of the Rising Fire War of 2012! This item requires a Dragon Amulet.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20262275",
-    "releaseDate": "",
-    "imageUrl": "http://i.imgur.com/QDfU8.png",
-    "elements": [
-      "FIR"
-    ],
-    "level": "41",
-    "stats": "Crit +4, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +2, END +2, CHA +2, INT +3, DEX +3, STR +3, Bonus +4",
-    "resists": "Immobility +1, Ice +3, Water +3, Fire +5",
-    "rarity": "25",
-    "itemType": "Helm",
-    "equipSpot": "Head",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "Imp Hats",
-        "priceType": "gold",
-        "price": "1,000 Gold",
-        "sellback": "100 Gold",
-        "daRequired": true
-      }
-    ],
-    "tags": [
-      "fir",
-      "gold"
-    ],
-    "daRequired": true,
-    "isRare": true,
-    "alsoSee": [
-      {
-        "name": "Burnt Flare Imp Hat",
-        "slug": "accessory-burnt-flare-imp-hat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20262273"
-      },
-      {
-        "name": "Scorched Flare Imp Hat",
-        "slug": "accessory-scorched-flare-imp-hat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20262279"
-      }
-    ]
-  },
-  {
     "id": "accessory-sirius-mask",
     "familyName": "Sirius Mask",
     "slug": "accessory-sirius-mask",
@@ -35183,57 +33118,6 @@
     "levelRange": "1",
     "elements": [
       "NON"
-    ]
-  },
-  {
-    "id": "accessory-sizziling-flare-imp-hat",
-    "name": "Sizziling Flare Imp Hat",
-    "slug": "accessory-sizziling-flare-imp-hat",
-    "type": "accessory",
-    "subtype": "helm",
-    "description": "You took this from a cache that belonged to the fiery invading army of the Rising Fire War of 2012!",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20262287",
-    "releaseDate": "",
-    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/FlareImpHat.png",
-    "elements": [
-      "FIR"
-    ],
-    "level": "61",
-    "stats": "Crit +4, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +3, END +3, CHA +3, INT +4, DEX +4, STR +4, Bonus +5",
-    "resists": "Fire +7, Water +5, Ice +5, Light +3, Immobility +1",
-    "rarity": "25",
-    "itemType": "Helm",
-    "equipSpot": "Head",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "Imp Hats",
-        "priceType": "gold",
-        "price": "1,500 Gold",
-        "sellback": "150 Gold",
-        "daRequired": false
-      }
-    ],
-    "notes": "Item is mispelled as \"Sizziling\" in-game.",
-    "tags": [
-      "fir",
-      "gold"
-    ],
-    "daRequired": false,
-    "isRare": true,
-    "alsoSee": [
-      {
-        "name": "Blistering Flare Imp Hat",
-        "slug": "accessory-blistering-flare-imp-hat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20262262"
-      },
-      {
-        "name": "Torrid Flare Imp Hat",
-        "slug": "accessory-torrid-flare-imp-hat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20262723"
-      }
     ]
   },
   {
@@ -35816,7 +33700,9 @@
       "accessory-found-skull-ripper-helm",
       "accessory-found-unhallowed-skull-ripper-helm",
       "accessory-found-unholy-skull-ripper-helm",
-      "accessory-grave-skull-ripper-helm"
+      "accessory-grave-skull-ripper-helm",
+      "accessory-unhallowed-skull-ripper-helm",
+      "accessory-unholy-skull-ripper-helm"
     ],
     "type": "accessory",
     "subtype": "helm",
@@ -35825,73 +33711,19 @@
     "familySources": [
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=19280940",
-        "title": "DF Encyclopedia: Fallen Skull Ripper Helm",
-        "variantLabel": "Fallen Skull Ripper Helm",
+        "title": "DF Encyclopedia: Skull Ripper Helm",
         "isPrimary": true
       },
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19281207",
-        "title": "DF Encyclopedia: Found Ancient Skull Ripper Helm",
-        "variantLabel": "Found Ancient Skull Ripper Helm",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21733336",
+        "title": "DF Encyclopedia: Unhallowed Skull Ripper Helm",
+        "variantLabel": "Unhallowed Skull Ripper Helm",
         "isPrimary": false
       },
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19281241",
-        "title": "DF Encyclopedia: Found Blighted Skull Ripper Helm",
-        "variantLabel": "Found Blighted Skull Ripper Helm",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19281230",
-        "title": "DF Encyclopedia: Found Defiled Skull Ripper Helm",
-        "variantLabel": "Found Defiled Skull Ripper Helm",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19281185",
-        "title": "DF Encyclopedia: Found Doomed Skull Ripper Helm",
-        "variantLabel": "Found Doomed Skull Ripper Helm",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19281195",
-        "title": "DF Encyclopedia: Found Fallen Skull Ripper Helm",
-        "variantLabel": "Found Fallen Skull Ripper Helm",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19281218",
-        "title": "DF Encyclopedia: Found Grave Skull Ripper Helm",
-        "variantLabel": "Found Grave Skull Ripper Helm",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19281167",
-        "title": "DF Encyclopedia: Found Skull Ripper Helm",
-        "variantLabel": "Found Skull Ripper Helm",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21733338",
-        "title": "DF Encyclopedia: Found Unhallowed Skull Ripper Helm",
-        "variantLabel": "Found Unhallowed Skull Ripper Helm",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=22331534",
-        "title": "DF Encyclopedia: Found Unholy Skull Ripper Helm",
-        "variantLabel": "Found Unholy Skull Ripper Helm",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19280972",
-        "title": "DF Encyclopedia: Grave Skull Ripper Helm",
-        "variantLabel": "Grave Skull Ripper Helm",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19280900",
-        "title": "DF Encyclopedia: Skull Ripper Helm",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=22331533",
+        "title": "DF Encyclopedia: Unholy Skull Ripper Helm",
+        "variantLabel": "Unholy Skull Ripper Helm",
         "isPrimary": false
       }
     ],
@@ -36178,6 +34010,32 @@
       },
       {
         "levelNumber": 12,
+        "levelDisplay": "80",
+        "actualLevel": 80,
+        "variantName": "Unhallowed",
+        "name": "Unhallowed Skull Ripper Helm",
+        "damage": "",
+        "stats": "Block +4, Dodge +3, Crit +12, Magic Def +7, Pierce Def +7, Melee Def +7, WIS +8, END +8, INT +12, DEX +12, STR +12, Bonus +9",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21733336",
+        "description": "A demonic energy reverberates through the skull.",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/SkullRipperHelm.png",
+        "obtainVariants": [
+          {
+            "location": "Skull Ripper Helm (Shop)",
+            "priceType": "merge",
+            "price": "N/A",
+            "requiredItems": "1 Blighted Skull Ripper Helm & 1 Vertebral Column",
+            "sellback": "19 Dragon Coins",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "element": "DAR",
+        "resists": "Darkness +15, Fire +11, Ice +11, Disease +8, Immobility +6",
+        "rarity": "25"
+      },
+      {
+        "levelNumber": 13,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "Found Unholy",
@@ -36195,6 +34053,32 @@
             "requiredItems": "1 Found Unhallowed Skull Ripper Helm & 1 Vertebral Column",
             "sellback": "0 Gold",
             "daRequired": false
+          }
+        ],
+        "element": "DAR",
+        "resists": "Darkness +15, Fire +11, Ice +11, Disease +8, Immobility +6",
+        "rarity": "25"
+      },
+      {
+        "levelNumber": 14,
+        "levelDisplay": "90",
+        "actualLevel": 90,
+        "variantName": "Unholy",
+        "name": "Unholy Skull Ripper Helm",
+        "damage": "",
+        "stats": "Block +4, Dodge +4, Parry +4, Crit +12, Magic Def +7, Pierce Def +7, Melee Def +7, WIS +10, END +10, INT +14, DEX +14, STR +14, Bonus +10",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22331533",
+        "description": "A demonic energy reverberates through the skull.",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/SkullRipperHelm.png",
+        "obtainVariants": [
+          {
+            "location": "Skull Ripper Helm (Shop)",
+            "priceType": "merge",
+            "price": "N/A",
+            "requiredItems": "1 Unhallowed Skull Ripper Helm & 1 Vertebral Column",
+            "sellback": "19 Dragon Coins",
+            "daRequired": false,
+            "dcRequired": true
           }
         ],
         "element": "DAR",
@@ -36909,69 +34793,6 @@
     "elements": [
       "NON",
       "MET"
-    ]
-  },
-  {
-    "id": "accessory-smoky-master-chef-hat",
-    "name": "Smoky Master Chef Hat",
-    "slug": "accessory-smoky-master-chef-hat",
-    "type": "accessory",
-    "subtype": "helm",
-    "description": "Only for the most serious of chefs! You can upgrade this item at the Black Market Moglin.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21721657",
-    "releaseDate": "",
-    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/MasterChefHatpic.png",
-    "elements": [
-      "FIR"
-    ],
-    "level": "70",
-    "stats": "Crit +9, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +5, END +4, CHA +6, LUK +6, INT +5, DEX +5, STR +5, Bonus +6",
-    "resists": "Light +8, Ice +8, Water +5, Bacon +3",
-    "rarity": "25",
-    "itemType": "Helm",
-    "equipSpot": "Head",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "BBQ Items",
-        "priceType": "merge",
-        "price": "N/A",
-        "requiredItems": "1 Stiff Master Chef Hat",
-        "sellback": "35 Gold",
-        "daRequired": false
-      }
-    ],
-    "tags": [
-      "fir",
-      "merge"
-    ],
-    "daRequired": false,
-    "isRare": true,
-    "alsoSee": [
-      {
-        "name": "Master Chef Hat",
-        "slug": "accessory-master-chef-hat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=22332642"
-      },
-      {
-        "name": "Master Chef Hat",
-        "slug": "accessory-master-chef-hat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21702430"
-      },
-      {
-        "name": "Stiff Master Chef Hat",
-        "slug": "accessory-stiff-master-chef-hat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21721653"
-      },
-      {
-        "name": "Sweaty Master Chef Hat",
-        "slug": "accessory-sweaty-master-chef-hat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21721632"
-      }
     ]
   },
   {
@@ -40448,62 +38269,6 @@
     ]
   },
   {
-    "id": "accessory-spooky-jack-o-helm",
-    "name": "Spooky Jack 'o Helm",
-    "slug": "accessory-spooky-jack-o-helm",
-    "type": "accessory",
-    "subtype": "helm",
-    "description": "Jack apparently has multiple backup heads in case he loses his. He gave you one of them. How thoughtful!",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21847282",
-    "releaseDate": "",
-    "imageUrl": "http://i.imgur.com/PSqBd04.png",
-    "elements": [
-      "DAR"
-    ],
-    "level": "80",
-    "stats": "Block +4, Dodge +4, Parry +4, Crit +8, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +12, END +12, INT +7, DEX +7, STR +7, Bonus +10",
-    "resists": "Immobility +4, Fire +5, Nature +12, Light +12",
-    "rarity": "15",
-    "itemType": "Helm",
-    "equipSpot": "Head",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "The Perfect Year",
-        "priceType": "free",
-        "price": "N/A",
-        "sellback": "350 Gold",
-        "daRequired": false
-      }
-    ],
-    "tags": [
-      "dar",
-      "free"
-    ],
-    "daRequired": false,
-    "isSeasonal": true,
-    "alsoSee": [
-      {
-        "name": "Jack 'o Helm",
-        "slug": "accessory-jack-o-helm",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21847361"
-      },
-      {
-        "name": "Jack 'o Helm",
-        "slug": "accessory-jack-o-helm",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21847292"
-      },
-      {
-        "name": "Shocking Jack 'o Helm",
-        "slug": "accessory-shocking-jack-o-helm",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21847424"
-      }
-    ]
-  },
-  {
     "id": "accessory-spymaster-mask",
     "familyName": "Spymaster Mask",
     "slug": "accessory-spymaster-mask",
@@ -41240,85 +39005,6 @@
     "isCosmetic": true
   },
   {
-    "id": "accessory-stazaar-helm",
-    "name": "Stazaar Helm",
-    "slug": "accessory-stazaar-helm",
-    "type": "accessory",
-    "subtype": "helm",
-    "description": "It's gouda for you! This item requires a Dragon Amulet.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21529893",
-    "releaseDate": "",
-    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/ParmesanHelmpic.png",
-    "elements": [
-      "GOO"
-    ],
-    "level": "65",
-    "stats": "Dodge +1, Parry +1, Crit +7, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +7, END +8, CHA +4, INT +2, DEX +2, STR +2, Bonus +6",
-    "resists": "Light +10, Wind +10, Bacon +4, Stone +3, Immobility +1",
-    "rarity": "10",
-    "itemType": "Helm",
-    "equipSpot": "Head",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "Cheese Shop",
-        "priceType": "gold",
-        "price": "14,000 Gold",
-        "sellback": "1,400 Gold",
-        "daRequired": true
-      }
-    ],
-    "tags": [
-      "goo",
-      "gold"
-    ],
-    "daRequired": true,
-    "alsoSee": [
-      {
-        "name": "Chhurpi Helm",
-        "slug": "accessory-chhurpi-helm",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21529887"
-      },
-      {
-        "name": "Esrom Helm",
-        "slug": "accessory-esrom-helm",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21529896"
-      },
-      {
-        "name": "Imsil Helm",
-        "slug": "accessory-imsil-helm",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21529889"
-      },
-      {
-        "name": "Kasseri Helm",
-        "slug": "accessory-kasseri-helm",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21529892"
-      },
-      {
-        "name": "Kesong Helm",
-        "slug": "accessory-kesong-helm",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21529888"
-      },
-      {
-        "name": "Nabulsi Helm",
-        "slug": "accessory-nabulsi-helm",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21529890"
-      },
-      {
-        "name": "Parmesan Helm",
-        "slug": "accessory-parmesan-helm",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21529895"
-      }
-    ]
-  },
-  {
     "id": "accessory-steampunk-mask",
     "familyName": "Steampunk Mask",
     "slug": "accessory-steampunk-mask",
@@ -41417,69 +39103,6 @@
     "levelRange": "1-70",
     "elements": [
       "NON"
-    ]
-  },
-  {
-    "id": "accessory-stiff-master-chef-hat",
-    "name": "Stiff Master Chef Hat",
-    "slug": "accessory-stiff-master-chef-hat",
-    "type": "accessory",
-    "subtype": "helm",
-    "description": "Only for the most serious of chefs! You can upgrade this item at the Black Market Moglin.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21721653",
-    "releaseDate": "",
-    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/MasterChefHatpic.png",
-    "elements": [
-      "FIR"
-    ],
-    "level": "60",
-    "stats": "Crit +8, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +5, END +4, CHA +5, LUK +5, INT +4, DEX +4, STR +4, Bonus +5",
-    "resists": "Light +7, Ice +7, Water +4, Bacon +1",
-    "rarity": "25",
-    "itemType": "Helm",
-    "equipSpot": "Head",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "BBQ Items",
-        "priceType": "merge",
-        "price": "N/A",
-        "requiredItems": "1 Eggshell Master Chef Hat",
-        "sellback": "30 Gold",
-        "daRequired": false
-      }
-    ],
-    "tags": [
-      "fir",
-      "merge"
-    ],
-    "daRequired": false,
-    "isRare": true,
-    "alsoSee": [
-      {
-        "name": "Master Chef Hat",
-        "slug": "accessory-master-chef-hat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=22332642"
-      },
-      {
-        "name": "Master Chef Hat",
-        "slug": "accessory-master-chef-hat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21702430"
-      },
-      {
-        "name": "Smoky Master Chef Hat",
-        "slug": "accessory-smoky-master-chef-hat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21721657"
-      },
-      {
-        "name": "Sweaty Master Chef Hat",
-        "slug": "accessory-sweaty-master-chef-hat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21721632"
-      }
     ]
   },
   {
@@ -42905,51 +40528,6 @@
     ]
   },
   {
-    "id": "accessory-super-greedy-greedling-helm",
-    "name": "Super Greedy Greedling Helm",
-    "slug": "accessory-super-greedy-greedling-helm",
-    "type": "accessory",
-    "subtype": "helm",
-    "description": "This item requires a Dragon Amulet. A trophy from Mogloween 2009! Wearing it makes you feel slightly stingy...",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19166177",
-    "releaseDate": "",
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/GreedyGreedlingHelm.png",
-    "elements": [
-      "DAR"
-    ],
-    "level": "50",
-    "stats": "Crit +4, END +6, CHA -6, LUK +12, INT +6, Bonus +4",
-    "resists": "Metal +8, Charity -100",
-    "rarity": "25",
-    "itemType": "Helm",
-    "equipSpot": "Head",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "Tricks and Treats 09, Share and Share Alike",
-        "priceType": "free",
-        "price": "N/A",
-        "sellback": "0 Gold",
-        "daRequired": true
-      }
-    ],
-    "notes": "Helm has Charity flavor resistance.",
-    "tags": [
-      "dar",
-      "free"
-    ],
-    "daRequired": true,
-    "isSeasonal": true,
-    "alsoSee": [
-      {
-        "name": "Greedy Greedling Helm",
-        "slug": "accessory-greedy-greedling-helm",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=16872316"
-      }
-    ]
-  },
-  {
     "id": "accessory-superbia-mask",
     "familyName": "Superbia Mask",
     "slug": "accessory-superbia-mask",
@@ -43583,292 +41161,6 @@
     ]
   },
   {
-    "id": "accessory-swarthy-aye-guardian-pirate-hat",
-    "name": "Swarthy Aye Guardian Pirate Hat",
-    "slug": "accessory-swarthy-aye-guardian-pirate-hat",
-    "type": "accessory",
-    "subtype": "helm",
-    "description": "Ye'll be ready t' sail o'er t' seas o' Lore with this handsome hat. This item requires a Dragon Amulet.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19634566",
-    "releaseDate": "",
-    "imageUrl": "http://i.imgur.com/CLUyCdv.png",
-    "alternativeImages": [
-      {
-        "url": "http://i.imgur.com/QYJhi.png",
-        "caption": "Alternative Image"
-      }
-    ],
-    "elements": [
-      "SIL"
-    ],
-    "level": "45",
-    "stats": "Crit +5, Magic Def +6, Pierce Def +6, Melee Def +4, WIS +4, END +4, CHA +7, LUK +6, INT +3, DEX +3, STR +3, Bonus +6",
-    "resists": "Poison +5, Water +5, Nature +5, Immobility +1",
-    "rarity": "2",
-    "itemType": "Helm",
-    "equipSpot": "Head",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "TLaPD 2011, TLaPD Bandanas",
-        "priceType": "gold",
-        "price": "6,000 Gold",
-        "sellback": "600 Gold",
-        "daRequired": true
-      },
-      {
-        "location": "TLaPD DC Bandanas",
-        "priceType": "dc",
-        "price": "140 Dragon Coins",
-        "sellback": "126 DC (<24 hours) / 35 DC (>24 hours)",
-        "daRequired": false,
-        "dcRequired": true
-      }
-    ],
-    "tags": [
-      "sil",
-      "gold"
-    ],
-    "daRequired": true,
-    "dcRequired": true,
-    "alsoSee": [
-      {
-        "name": "Aye Guardian Pirate Hat",
-        "slug": "accessory-aye-guardian-pirate-hat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19634552"
-      },
-      {
-        "name": "Filthy Aye Guardian Pirate Hat",
-        "slug": "accessory-filthy-aye-guardian-pirate-hat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20709735"
-      },
-      {
-        "name": "Foxy Aye Guardian Pirate Hat",
-        "slug": "accessory-foxy-aye-guardian-pirate-hat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19634569"
-      },
-      {
-        "name": "Salty Aye Guardian Pirate Hat",
-        "slug": "accessory-salty-aye-guardian-pirate-hat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20707570"
-      }
-    ]
-  },
-  {
-    "id": "accessory-swarthy-bearded-guardian-pirate-hat",
-    "name": "Swarthy Bearded Guardian Pirate Hat",
-    "slug": "accessory-swarthy-bearded-guardian-pirate-hat",
-    "type": "accessory",
-    "subtype": "helm",
-    "description": "Ye'll be ready t' sail o'er t' seas o' Lore with this handsome hat. This item requires a Dragon Amulet.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19634599",
-    "releaseDate": "",
-    "imageUrl": "http://i.imgur.com/x8Tak.png",
-    "alternativeImages": [
-      {
-        "url": "http://i.imgur.com/XboRN5Y.png",
-        "caption": "Alternative Image"
-      }
-    ],
-    "elements": [
-      "SIL"
-    ],
-    "level": "45",
-    "stats": "Crit +5, Magic Def +6, Pierce Def +6, Melee Def +4, WIS +4, END +4, CHA +7, LUK +6, INT +3, DEX +3, STR +3, Bonus +6",
-    "resists": "Poison +5, Water +5, Nature +5, Immobility +1",
-    "rarity": "2",
-    "itemType": "Helm",
-    "equipSpot": "Head",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "TLaPD 2011, TLaPD Bandanas",
-        "priceType": "gold",
-        "price": "6,000 Gold",
-        "sellback": "600 Gold",
-        "daRequired": true
-      },
-      {
-        "location": "TLaPD DC Bandanas",
-        "priceType": "dc",
-        "price": "140 Dragon Coins",
-        "sellback": "126 DC (<24 hours) / 35 DC (>24 hours)",
-        "daRequired": false,
-        "dcRequired": true
-      }
-    ],
-    "tags": [
-      "sil",
-      "gold"
-    ],
-    "daRequired": true,
-    "dcRequired": true,
-    "alsoSee": [
-      {
-        "name": "Bearded Guardian Pirate Hat",
-        "slug": "accessory-bearded-guardian-pirate-hat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19634590"
-      },
-      {
-        "name": "Filthy Bearded Guardian Pirate Hat",
-        "slug": "accessory-filthy-bearded-guardian-pirate-hat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20709730"
-      },
-      {
-        "name": "Foxy Bearded Guardian Pirate Hat",
-        "slug": "accessory-foxy-bearded-guardian-pirate-hat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19634601"
-      },
-      {
-        "name": "Salty Bearded Guardian Pirate Hat",
-        "slug": "accessory-salty-bearded-guardian-pirate-hat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20707584"
-      }
-    ]
-  },
-  {
-    "id": "accessory-swarthy-guardian-pirate-hat",
-    "name": "Swarthy Guardian Pirate Hat",
-    "slug": "accessory-swarthy-guardian-pirate-hat",
-    "type": "accessory",
-    "subtype": "helm",
-    "description": "Ye'll be ready t' sail o'er t' seas o' Lore with this handsome hat. This item requires a Dragon Amulet.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19631757",
-    "releaseDate": "",
-    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/GuardianPirateHatpic.png",
-    "elements": [
-      "SIL"
-    ],
-    "level": "45",
-    "stats": "Crit +5, Magic Def +6, Pierce Def +6, Melee Def +4, WIS +4, END +4, CHA +7, LUK +6, INT +3, DEX +3, STR +3, Bonus +6",
-    "resists": "Poison +5, Water +5, Nature +5, Immobility +1",
-    "rarity": "2",
-    "itemType": "Helm",
-    "equipSpot": "Head",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "TLaPD 2011, TLaPD Bandanas",
-        "priceType": "gold",
-        "price": "6,000 Gold",
-        "sellback": "600 Gold",
-        "daRequired": true
-      },
-      {
-        "location": "TLaPD DC Bandanas",
-        "priceType": "dc",
-        "price": "140 Dragon Coins",
-        "sellback": "126 DC (<24 hours) / 35 DC (>24 hours)",
-        "daRequired": false,
-        "dcRequired": true
-      }
-    ],
-    "tags": [
-      "sil",
-      "gold"
-    ],
-    "daRequired": true,
-    "dcRequired": true,
-    "alsoSee": [
-      {
-        "name": "Guardian Pirate Hat",
-        "slug": "accessory-guardian-pirate-hat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19631736"
-      },
-      {
-        "name": "Guardian Pirate Hat",
-        "slug": "accessory-guardian-pirate-hat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19631732"
-      },
-      {
-        "name": "Salty Guardian Pirate Hat",
-        "slug": "accessory-salty-guardian-pirate-hat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20707569"
-      }
-    ]
-  },
-  {
-    "id": "accessory-swarthy-guardian-pirate-scarf",
-    "name": "Swarthy Guardian Pirate Scarf",
-    "slug": "accessory-swarthy-guardian-pirate-scarf",
-    "type": "accessory",
-    "subtype": "helm",
-    "description": "Ye'll be ready t' sail o'er t' seas o' Lore with this handsome scarf. This item requires a Dragon Amulet.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19631423",
-    "releaseDate": "",
-    "imageUrl": "http://i.imgur.com/8Nc2Z.png",
-    "alternativeImages": [
-      {
-        "url": "http://i.imgur.com/qOp9wuG.png",
-        "caption": "Alternative Image"
-      }
-    ],
-    "elements": [
-      "SIL"
-    ],
-    "level": "45",
-    "stats": "Crit +5, Magic Def +6, Pierce Def +6, Melee Def +4, WIS +4, END +4, CHA +7, LUK +6, INT +3, DEX +3, STR +3, Bonus +6",
-    "resists": "Poison +5, Water +5, Nature +5, Immobility +1",
-    "rarity": "2",
-    "itemType": "Helm",
-    "equipSpot": "Head",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "TLaPD 2011, TLaPD Bandanas",
-        "priceType": "gold",
-        "price": "6,000 Gold",
-        "sellback": "600 Gold",
-        "daRequired": true
-      },
-      {
-        "location": "TLaPD DC Bandanas",
-        "priceType": "dc",
-        "price": "140 Dragon Coins",
-        "sellback": "126 DC (<24 hours) / 35 DC (>24 hours)",
-        "daRequired": false,
-        "dcRequired": true
-      }
-    ],
-    "tags": [
-      "sil",
-      "gold"
-    ],
-    "daRequired": true,
-    "dcRequired": true,
-    "alsoSee": [
-      {
-        "name": "Guardian Pirate Scarf",
-        "slug": "accessory-guardian-pirate-scarf",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19631292"
-      },
-      {
-        "name": "Guardian Pirate Scarf",
-        "slug": "accessory-guardian-pirate-scarf",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19631278"
-      },
-      {
-        "name": "Salty Guardian Pirate Scarf",
-        "slug": "accessory-salty-guardian-pirate-scarf",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20707568"
-      }
-    ]
-  },
-  {
     "id": "accessory-swarthy-pirate-scarf",
     "name": "Swarthy Pirate Scarf",
     "slug": "accessory-swarthy-pirate-scarf",
@@ -43929,69 +41221,6 @@
         "slug": "accessory-salty-pirate-scarf",
         "type": "accessory",
         "url": "https://forums2.battleon.com/f/tm.asp?m=20707604"
-      }
-    ]
-  },
-  {
-    "id": "accessory-sweaty-master-chef-hat",
-    "name": "Sweaty Master Chef Hat",
-    "slug": "accessory-sweaty-master-chef-hat",
-    "type": "accessory",
-    "subtype": "helm",
-    "description": "Only for the most serious of chefs! You can upgrade this item at the Black Market Moglin.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21721632",
-    "releaseDate": "",
-    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/MasterChefHatpic.png",
-    "elements": [
-      "FIR"
-    ],
-    "level": "20",
-    "stats": "Crit +3, Magic Def +1, Pierce Def +1, Melee Def +1, WIS +1, CHA +1, LUK +1, INT +2, DEX +2, STR +2, Bonus +1",
-    "resists": "Light +3, Ice +3",
-    "rarity": "25",
-    "itemType": "Helm",
-    "equipSpot": "Head",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "BBQ Items",
-        "priceType": "merge",
-        "price": "N/A",
-        "requiredItems": "1 Master Chef Hat",
-        "sellback": "10 Gold",
-        "daRequired": false
-      }
-    ],
-    "tags": [
-      "fir",
-      "merge"
-    ],
-    "daRequired": false,
-    "isRare": true,
-    "alsoSee": [
-      {
-        "name": "Master Chef Hat",
-        "slug": "accessory-master-chef-hat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=22332642"
-      },
-      {
-        "name": "Master Chef Hat",
-        "slug": "accessory-master-chef-hat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21702430"
-      },
-      {
-        "name": "Smoky Master Chef Hat",
-        "slug": "accessory-smoky-master-chef-hat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21721657"
-      },
-      {
-        "name": "Stiff Master Chef Hat",
-        "slug": "accessory-stiff-master-chef-hat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21721653"
       }
     ]
   },
@@ -44236,49 +41465,6 @@
     ]
   },
   {
-    "id": "accessory-tainted-adept-helm",
-    "name": "Tainted Adept Helm",
-    "slug": "accessory-tainted-adept-helm",
-    "type": "accessory",
-    "subtype": "helm",
-    "description": "An deep evil rises... Can you resist? Or will you become what you once destroyed?",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17539762",
-    "releaseDate": "",
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/AdeptHelm.png",
-    "elements": [
-      "DAR"
-    ],
-    "level": "33",
-    "stats": "Crit +2, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +2, END +4, INT +2, DEX +2, STR +2, Bonus +3",
-    "resists": "Water +4, Darkness +3",
-    "rarity": "7",
-    "itemType": "Helm",
-    "equipSpot": "Head",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "Descent",
-        "priceType": "free",
-        "price": "N/A",
-        "sellback": "55 Gold",
-        "daRequired": false
-      }
-    ],
-    "tags": [
-      "dar",
-      "free"
-    ],
-    "daRequired": false,
-    "alsoSee": [
-      {
-        "name": "Adept Helm",
-        "slug": "accessory-adept-helm",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=17539699"
-      }
-    ]
-  },
-  {
     "id": "accessory-tarnished-guardian-helm",
     "name": "Tarnished Guardian Helm",
     "slug": "accessory-tarnished-guardian-helm",
@@ -44316,64 +41502,6 @@
     "daRequired": false,
     "dcRequired": true,
     "isCosmetic": true
-  },
-  {
-    "id": "accessory-tarnished-relic-deathknight-helm",
-    "name": "Tarnished Relic DeathKnight Helm",
-    "slug": "accessory-tarnished-relic-deathknight-helm",
-    "type": "accessory",
-    "subtype": "helm",
-    "description": "You've infused your helm with shadow energy. The power that it held has been increased, but you now seem to see odd shapes at the edge of your vision.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22388620",
-    "releaseDate": "",
-    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/UnhallowedDeathKnightHelm.png",
-    "elements": [
-      "DAR"
-    ],
-    "level": "90",
-    "stats": "Crit +10, Magic Def +8, Pierce Def +8, Melee Def +8, WIS +8, END +8, CHA +2, LUK +2, INT +12, DEX +12, STR +12, Bonus +10",
-    "resists": "Darkness +15, Light +15, Health -5",
-    "rarity": "25",
-    "itemType": "Helm",
-    "equipSpot": "Head",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "Relics of Zeclem",
-        "priceType": "merge",
-        "price": "N/A",
-        "requiredItems": "1 Shadowed DeathKnight Helm IV & 5 Relic of Zeclem",
-        "sellback": "0 Dragon Coins",
-        "daRequired": false,
-        "dcRequired": true
-      }
-    ],
-    "tags": [
-      "dar",
-      "merge"
-    ],
-    "daRequired": false,
-    "dcRequired": true,
-    "alsoSee": [
-      {
-        "name": "Unhallowed DeathKnight Helm",
-        "slug": "accessory-unhallowed-deathknight-helm",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21830959"
-      },
-      {
-        "name": "Zeclem's Helm",
-        "slug": "accessory-zeclem-s-helm",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21828968"
-      },
-      {
-        "name": "Zeclem's Relic Helm",
-        "slug": "accessory-zeclem-s-relic-helm",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=22387764"
-      }
-    ]
   },
   {
     "id": "accessory-tarnished-ruler-s-crown",
@@ -49144,54 +46272,6 @@
     "isSeasonal": true
   },
   {
-    "id": "accessory-toddler-dragon-visage",
-    "name": "Toddler Dragon Visage",
-    "slug": "accessory-toddler-dragon-visage",
-    "type": "accessory",
-    "subtype": "helm",
-    "description": "Do you think your dragon would get confused if it saw you wearing this? (Cosmetic)",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22424131",
-    "releaseDate": "",
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/ToddlerDragonVisage.png",
-    "elements": [
-      "EVI"
-    ],
-    "level": "1",
-    "stats": "None",
-    "resists": "None",
-    "rarity": "0",
-    "itemType": "Helm",
-    "equipSpot": "Head",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "AARGH Rewards 5",
-        "priceType": "merge",
-        "price": "N/A",
-        "requiredItems": "25 Timewarped Medal",
-        "sellback": "0 Dragon Coins",
-        "daRequired": false,
-        "dcRequired": true
-      }
-    ],
-    "notes": "Helm is color-custom; <Dragon> is linked to the player's dragon horn, dragon skin, and dragon eye colors respectively.\nClick the helm to change between <Dragon>'s 17 expressions.",
-    "tags": [
-      "evi",
-      "merge"
-    ],
-    "daRequired": false,
-    "dcRequired": true,
-    "isCosmetic": true,
-    "alsoSee": [
-      {
-        "name": "Dragon Visage",
-        "slug": "accessory-baby-dragon-visage",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=22424124"
-      }
-    ]
-  },
-  {
     "id": "accessory-tog-head",
     "name": "Tog Head",
     "slug": "accessory-tog-head",
@@ -50479,105 +47559,6 @@
     ],
     "daRequired": true,
     "isRare": true
-  },
-  {
-    "id": "accessory-torrid-flare-imp-hat",
-    "name": "Torrid Flare Imp Hat",
-    "slug": "accessory-torrid-flare-imp-hat",
-    "type": "accessory",
-    "subtype": "helm",
-    "description": "You took this from a cache that belonged to the fiery invading army of the Rising Fire War of 2012!",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20262723",
-    "releaseDate": "",
-    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/FlareImpHat.png",
-    "elements": [
-      "FIR"
-    ],
-    "level": "41",
-    "stats": "Crit +3, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +2, END +2, CHA +2, INT +3, DEX +3, STR +3, Bonus +4",
-    "resists": "Fire +5, Water +3, Ice +3",
-    "rarity": "25",
-    "itemType": "Helm",
-    "equipSpot": "Head",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "Imp Hats",
-        "priceType": "gold",
-        "price": "1,000 Gold",
-        "sellback": "100 Gold",
-        "daRequired": false
-      }
-    ],
-    "tags": [
-      "fir",
-      "gold"
-    ],
-    "daRequired": false,
-    "isRare": true,
-    "alsoSee": [
-      {
-        "name": "Blistering Flare Imp Hat",
-        "slug": "accessory-blistering-flare-imp-hat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20262262"
-      },
-      {
-        "name": "Sizziling Flare Imp Hat",
-        "slug": "accessory-sizziling-flare-imp-hat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20262287"
-      }
-    ]
-  },
-  {
-    "id": "accessory-touch-of-ebil",
-    "name": "Touch of Ebil",
-    "slug": "accessory-touch-of-ebil",
-    "type": "accessory",
-    "subtype": "helm",
-    "description": "Strike fear into goody two-shoes everywhere with this terrifying helm!",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=16570874",
-    "releaseDate": "",
-    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/FaceofEbilpic.png",
-    "elements": [
-      "DAR"
-    ],
-    "level": "20",
-    "stats": "Magic Def +3, END +2, CHA +3, INT +3, STR +3, Bonus +3",
-    "resists": "Light +3",
-    "rarity": "3",
-    "itemType": "Helm",
-    "equipSpot": "Head",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "Xan Has A Plan",
-        "priceType": "free",
-        "price": "N/A",
-        "sellback": "60 Gold",
-        "daRequired": true
-      }
-    ],
-    "tags": [
-      "dar",
-      "free"
-    ],
-    "daRequired": true,
-    "alsoSee": [
-      {
-        "name": "Face of Ebil",
-        "slug": "accessory-face-of-ebil",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19185606"
-      },
-      {
-        "name": "Visage of Ebil",
-        "slug": "accessory-visage-of-ebil",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19185600"
-      }
-    ]
   },
   {
     "id": "accessory-tragedy-mask",
@@ -53433,46 +50414,124 @@
     ]
   },
   {
-    "id": "accessory-tyrant-hood",
-    "name": "Tyrant Hood",
-    "slug": "accessory-tyrant-hood",
+    "id": "accessory-magical-tyrant-hood",
+    "familyName": "Tyrant Hood",
+    "slug": "accessory-magical-tyrant-hood",
+    "aliasSlugs": [
+      "accessory-tyrant-hood"
+    ],
     "type": "accessory",
     "subtype": "helm",
-    "description": "Channel the power of wrath with this despotic hood! It will give you extra health!",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17506357",
-    "releaseDate": "",
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/TyrantHood.png",
-    "elements": [
-      "FIR"
-    ],
-    "level": "20",
-    "stats": "Crit +3, WIS +6, INT +3, DEX +3, STR +3, Bonus +3",
-    "resists": "Water +5, Health -5",
-    "rarity": "0",
-    "itemType": "Helm",
-    "equipSpot": "Head",
-    "category": "Armor",
-    "obtainMethods": [
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17506896",
+    "familyOrigin": "cross-post",
+    "familySources": [
       {
-        "location": "Alina's Helm Shop",
-        "priceType": "gold",
-        "price": "250 Gold",
-        "sellback": "25 Gold",
-        "daRequired": false
+        "url": "https://forums2.battleon.com/f/tm.asp?m=17506896",
+        "title": "DF Encyclopedia: Magical Tyrant Hood",
+        "variantLabel": "Magical Tyrant Hood",
+        "isPrimary": true
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=17506357",
+        "title": "DF Encyclopedia: Tyrant Hood",
+        "isPrimary": false
       }
     ],
-    "tags": [
-      "fir",
-      "gold"
-    ],
-    "daRequired": false,
-    "alsoSee": [
+    "shared": {
+      "description": "Channel the power of wrath with this despotic hood! It will give you extra health!",
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/TyrantHood.png"
+    },
+    "levelVariants": [
       {
+        "levelNumber": 1,
+        "levelDisplay": "20",
+        "actualLevel": 20,
+        "variantName": "(Base)",
+        "name": "Tyrant Hood",
+        "damage": "",
+        "stats": "Crit +3, WIS +6, INT +3, DEX +3, STR +3, Bonus +3",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=17506357",
+        "description": "Channel the power of wrath with this despotic hood! It will give you extra health!",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/TyrantHood.png",
+        "obtainVariants": [
+          {
+            "location": "Alina's Helm Shop",
+            "priceType": "gold",
+            "price": "250 Gold",
+            "sellback": "25 Gold",
+            "daRequired": false
+          }
+        ],
+        "element": "FIR",
+        "resists": "Water +5, Health -5",
+        "rarity": "0"
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "35",
+        "actualLevel": 35,
         "name": "Magical Tyrant Hood",
-        "slug": "accessory-magical-tyrant-hood",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=17506896"
+        "damage": "",
+        "stats": "Dodge +2, Crit +4, WIS +7, INT +4, DEX +4, STR +4, Bonus +1",
+        "obtainVariants": [
+          {
+            "location": "Alina's Helm Shop",
+            "price": "275 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "248 DC (<24 hours) / 69 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=17506896",
+        "description": "Channel the power of wrath with this despotic hood! It will give you extra health and it's magic will let you match it to the rest of your outfit!",
+        "element": "STO",
+        "resists": "Fire +5, Water +5, Wind +5, Stone +5, Poison +5",
+        "rarity": "3"
+      },
+      {
+        "levelNumber": 3,
+        "levelDisplay": "55",
+        "actualLevel": 55,
+        "name": "Magical Tyrant Hood",
+        "damage": "",
+        "stats": "Crit +4, WIS +8, END +6, INT +6, DEX +4, STR +4, Bonus +2",
+        "obtainVariants": [
+          {
+            "location": "Alina's Helm Shop",
+            "price": "320 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "288 DC (<24 hours) / 80 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=17506922",
+        "description": "Channel the power of wrath with this despotic hood! It will give you extra health and it's magic will let you match it to the rest of your outfit!",
+        "element": "STO",
+        "resists": "Fire +10, Water +5, Wind +10, Stone +5, Poison +10",
+        "rarity": "10"
       }
+    ],
+    "itemType": "Helm",
+    "equipSlot": "Head",
+    "category": "Armor",
+    "releaseDate": "",
+    "tags": [
+      "dc",
+      "fir",
+      "gold",
+      "sto"
+    ],
+    "hasDA": false,
+    "hasDC": true,
+    "hasDM": false,
+    "hasFree": false,
+    "hasMerge": false,
+    "levelRange": "20-55",
+    "elements": [
+      "STO",
+      "FIR"
     ]
   },
   {
@@ -56022,9 +53081,10 @@
   },
   {
     "id": "accessory-unhallowed-deathknight-helm",
-    "familyName": "Unhallowed DeathKnight Helm",
+    "familyName": "Unhallowed DeathKnight Helm I",
     "slug": "accessory-unhallowed-deathknight-helm",
     "aliasSlugs": [
+      "accessory-tarnished-relic-deathknight-helm",
       "accessory-unhallowed-deathknight-helm-i",
       "accessory-unhallowed-deathknight-helm-ii",
       "accessory-unhallowed-deathknight-helm-iii",
@@ -56033,45 +53093,46 @@
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21830959",
-    "familyOrigin": "same-thread-multi-post",
+    "familyOrigin": "cross-post",
     "familySources": [
       {
-        "url": "https://forums2.battleon.com/f/fb.asp?m=21830959",
-        "title": "DF Encyclopedia: Unhallowed DeathKnight Helm I",
-        "variantLabel": "Unhallowed DeathKnight Helm I",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=22388620",
+        "title": "DF Encyclopedia: Tarnished Relic DeathKnight Helm",
+        "variantLabel": "Tarnished Relic DeathKnight Helm",
         "isPrimary": true
       },
       {
-        "url": "https://forums2.battleon.com/f/fb.asp?m=21830962",
-        "title": "DF Encyclopedia: Unhallowed DeathKnight Helm II",
-        "variantLabel": "Unhallowed DeathKnight Helm II",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/fb.asp?m=21830963",
-        "title": "DF Encyclopedia: Unhallowed DeathKnight Helm III",
-        "variantLabel": "Unhallowed DeathKnight Helm III",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/fb.asp?m=21830964",
-        "title": "DF Encyclopedia: Unhallowed DeathKnight Helm IV",
-        "variantLabel": "Unhallowed DeathKnight Helm IV",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21830959",
+        "title": "DF Encyclopedia: Unhallowed DeathKnight Helm",
+        "variantLabel": "Unhallowed DeathKnight Helm",
         "isPrimary": false
       }
     ],
     "shared": {
       "description": "You've infused your helm with shadow energy. The power that it held has been increased, but you now seem to see odd shapes at the edge of your vision. This item requires a Dragon Amulet.",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/UnhallowedDeathKnightHelm.png",
+      "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/UnhallowedDeathKnightHelm.png",
       "rarity": "25",
-      "notes": "II-IV versions previously required 1  DeathKnight Helm & 2/3/4  Umbral Essence respectively.\nHelms were tiered with Roman numerals on  August 25th, 2023; Required Items on II-IV versions were also changed on that date."
+      "alsoSee": [
+        {
+          "name": "Zeclem's Helm",
+          "slug": "accessory-zeclem-s-helm",
+          "type": "accessory",
+          "url": "https://forums2.battleon.com/f/tm.asp?m=21828968"
+        },
+        {
+          "name": "Zeclem's Relic Helm",
+          "slug": "accessory-zeclem-s-relic-helm",
+          "type": "accessory",
+          "url": "https://forums2.battleon.com/f/tm.asp?m=22387764"
+        }
+      ]
     },
     "levelVariants": [
       {
-        "levelNumber": 50,
+        "levelNumber": 1,
         "levelDisplay": "50",
         "actualLevel": 50,
-        "variantName": "I",
+        "variantName": "(Base)",
         "name": "Unhallowed DeathKnight Helm I",
         "damage": "",
         "stats": "Crit +5, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +5, END +5, INT +5, DEX +5, STR +5, Bonus +5",
@@ -56092,7 +53153,7 @@
         "rarity": "25"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 2,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "II",
@@ -56116,7 +53177,7 @@
         "rarity": "25"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 3,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "III",
@@ -56140,7 +53201,7 @@
         "rarity": "25"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 4,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "IV",
@@ -56162,6 +53223,32 @@
         "element": "DAR",
         "resists": "Darkness +14, Light +14",
         "rarity": "25"
+      },
+      {
+        "levelNumber": 5,
+        "levelDisplay": "90",
+        "actualLevel": 90,
+        "variantName": "Tarnished Relic",
+        "name": "Tarnished Relic DeathKnight Helm",
+        "damage": "",
+        "stats": "Crit +10, Magic Def +8, Pierce Def +8, Melee Def +8, WIS +8, END +8, CHA +2, LUK +2, INT +12, DEX +12, STR +12, Bonus +10",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22388620",
+        "description": "You've infused your helm with shadow energy. The power that it held has been increased, but you now seem to see odd shapes at the edge of your vision.",
+        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/UnhallowedDeathKnightHelm.png",
+        "obtainVariants": [
+          {
+            "location": "Relics of Zeclem",
+            "priceType": "merge",
+            "price": "N/A",
+            "requiredItems": "1 Shadowed DeathKnight Helm IV & 5 Relic of Zeclem",
+            "sellback": "0 Dragon Coins",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "element": "DAR",
+        "resists": "Darkness +15, Light +15, Health -5",
+        "rarity": "25"
       }
     ],
     "itemType": "Helm",
@@ -56173,131 +53260,13 @@
       "merge"
     ],
     "hasDA": true,
-    "hasDC": false,
+    "hasDC": true,
     "hasDM": false,
     "hasFree": false,
     "hasMerge": true,
     "levelRange": "I-IV",
     "elements": [
       "DAR"
-    ]
-  },
-  {
-    "id": "accessory-unhallowed-skull-ripper-helm",
-    "name": "Unhallowed Skull Ripper Helm",
-    "slug": "accessory-unhallowed-skull-ripper-helm",
-    "type": "accessory",
-    "subtype": "helm",
-    "description": "A demonic energy reverberates through the skull.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21733336",
-    "releaseDate": "",
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/SkullRipperHelm.png",
-    "elements": [
-      "DAR"
-    ],
-    "level": "80",
-    "stats": "Block +4, Dodge +3, Crit +12, Magic Def +7, Pierce Def +7, Melee Def +7, WIS +8, END +8, INT +12, DEX +12, STR +12, Bonus +9",
-    "resists": "Darkness +15, Fire +11, Ice +11, Disease +8, Immobility +6",
-    "rarity": "25",
-    "itemType": "Helm",
-    "equipSpot": "Head",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "Skull Ripper Helm (Shop)",
-        "priceType": "merge",
-        "price": "N/A",
-        "requiredItems": "1 Blighted Skull Ripper Helm & 1 Vertebral Column",
-        "sellback": "19 Dragon Coins",
-        "daRequired": false,
-        "dcRequired": true
-      }
-    ],
-    "tags": [
-      "dar",
-      "merge"
-    ],
-    "daRequired": false,
-    "dcRequired": true,
-    "isRare": true,
-    "alsoSee": [
-      {
-        "name": "Skull Ripper Helm",
-        "slug": "accessory-skull-ripper-helm",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19280940"
-      },
-      {
-        "name": "Skull Ripper Helm",
-        "slug": "accessory-skull-ripper-helm",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19280900"
-      },
-      {
-        "name": "Unholy Skull Ripper Helm",
-        "slug": "accessory-unholy-skull-ripper-helm",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=22331533"
-      }
-    ]
-  },
-  {
-    "id": "accessory-unholy-skull-ripper-helm",
-    "name": "Unholy Skull Ripper Helm",
-    "slug": "accessory-unholy-skull-ripper-helm",
-    "type": "accessory",
-    "subtype": "helm",
-    "description": "A demonic energy reverberates through the skull.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22331533",
-    "releaseDate": "",
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/SkullRipperHelm.png",
-    "elements": [
-      "DAR"
-    ],
-    "level": "90",
-    "stats": "Block +4, Dodge +4, Parry +4, Crit +12, Magic Def +7, Pierce Def +7, Melee Def +7, WIS +10, END +10, INT +14, DEX +14, STR +14, Bonus +10",
-    "resists": "Darkness +15, Fire +11, Ice +11, Disease +8, Immobility +6",
-    "rarity": "25",
-    "itemType": "Helm",
-    "equipSpot": "Head",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "Skull Ripper Helm (Shop)",
-        "priceType": "merge",
-        "price": "N/A",
-        "requiredItems": "1 Unhallowed Skull Ripper Helm & 1 Vertebral Column",
-        "sellback": "19 Dragon Coins",
-        "daRequired": false,
-        "dcRequired": true
-      }
-    ],
-    "tags": [
-      "dar",
-      "merge"
-    ],
-    "daRequired": false,
-    "dcRequired": true,
-    "isRare": true,
-    "alsoSee": [
-      {
-        "name": "Skull Ripper Helm",
-        "slug": "accessory-skull-ripper-helm",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19280940"
-      },
-      {
-        "name": "Skull Ripper Helm",
-        "slug": "accessory-skull-ripper-helm",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19280900"
-      },
-      {
-        "name": "Unhallowed Skull Ripper Helm",
-        "slug": "accessory-unhallowed-skull-ripper-helm",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21733336"
-      }
     ]
   },
   {
@@ -56528,49 +53497,105 @@
   },
   {
     "id": "accessory-v-mask",
-    "name": "V Mask",
+    "familyName": "V Mask",
     "slug": "accessory-v-mask",
+    "aliasSlugs": [
+      "accessory-vendetta-mask"
+    ],
     "type": "accessory",
     "subtype": "helm",
-    "description": "For Mogloween.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19749467",
-    "releaseDate": "",
-    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/VMaskpic.jpg",
-    "elements": [
-      "NON"
-    ],
-    "level": "1",
-    "stats": "None",
-    "resists": "None",
-    "rarity": "1",
-    "itemType": "Helm",
-    "equipSpot": "Head",
-    "category": "Armor",
-    "obtainMethods": [
+    "familyOrigin": "cross-post",
+    "familySources": [
       {
-        "location": "Mogloween Masks! (Chapter 6)",
-        "priceType": "merge",
-        "price": "N/A",
-        "requiredItems": "6,000 Candy, Unlock Vaal's Mask",
-        "sellback": "N/A",
-        "daRequired": false
+        "url": "https://forums2.battleon.com/f/tm.asp?m=19749467",
+        "title": "DF Encyclopedia: V Mask",
+        "isPrimary": true
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=19762184",
+        "title": "DF Encyclopedia: Vendetta Mask",
+        "variantLabel": "Vendetta Mask",
+        "isPrimary": false
       }
     ],
-    "notes": "Prevents moglins from becoming Moglinsters and provides a 64% Candy bonus when equipped while Trick or Treating.",
-    "tags": [
-      "non",
-      "merge"
+    "shared": {
+      "description": "For Mogloween.",
+      "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/VMaskpic.jpg"
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
+        "levelDisplay": "1",
+        "actualLevel": 1,
+        "variantName": "(Base)",
+        "name": "V Mask",
+        "damage": "",
+        "stats": "None",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=19749467",
+        "description": "For Mogloween.",
+        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/VMaskpic.jpg",
+        "obtainVariants": [
+          {
+            "location": "Mogloween Masks! (Chapter 6)",
+            "priceType": "merge",
+            "price": "N/A",
+            "requiredItems": "6,000 Candy, Unlock Vaal's Mask",
+            "sellback": "N/A",
+            "daRequired": false
+          }
+        ],
+        "element": "NON",
+        "resists": "None",
+        "rarity": "1",
+        "notes": "Prevents moglins from becoming Moglinsters and provides a 64% Candy bonus when equipped while Trick or Treating."
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "70",
+        "actualLevel": 70,
+        "variantName": "Vendetta Mask",
+        "name": "Vendetta Mask",
+        "damage": "",
+        "stats": "Parry +3, Crit +10, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +8, END +5, CHA +10, LUK +8, INT +7, DEX +7, STR +7, Bonus +5",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=19762184",
+        "description": "Remain anonymous in this mask! Happy Mogloween 2011!",
+        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/VMaskpic.jpg",
+        "obtainVariants": [
+          {
+            "location": "Cysero's Mask Shop",
+            "priceType": "dc",
+            "price": "450 Dragon Coins",
+            "sellback": "405 DC (<24 hours) / 113 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "element": "SIL",
+        "resists": "Darkness +6, All +6",
+        "rarity": "50"
+      }
     ],
-    "daRequired": false,
+    "itemType": "Helm",
+    "equipSlot": "Head",
+    "category": "Armor",
+    "tags": [
+      "dc",
+      "merge",
+      "non",
+      "sil"
+    ],
     "isTemp": true,
     "isSeasonal": true,
-    "alsoSee": [
-      {
-        "name": "Vendetta Mask",
-        "slug": "accessory-vendetta-mask",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19762184"
-      }
+    "hasDA": false,
+    "hasDC": true,
+    "hasDM": false,
+    "hasFree": false,
+    "hasMerge": true,
+    "levelRange": "1-70",
+    "elements": [
+      "NON",
+      "SIL"
     ]
   },
   {
@@ -57937,51 +54962,6 @@
     ]
   },
   {
-    "id": "accessory-vendetta-mask",
-    "name": "Vendetta Mask",
-    "slug": "accessory-vendetta-mask",
-    "type": "accessory",
-    "subtype": "helm",
-    "description": "Remain anonymous in this mask! Happy Mogloween 2011!",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19762184",
-    "releaseDate": "",
-    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/VMaskpic.jpg",
-    "elements": [
-      "SIL"
-    ],
-    "level": "70",
-    "stats": "Parry +3, Crit +10, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +8, END +5, CHA +10, LUK +8, INT +7, DEX +7, STR +7, Bonus +5",
-    "resists": "Darkness +6, All +6",
-    "rarity": "50",
-    "itemType": "Helm",
-    "equipSpot": "Head",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "Cysero's Mask Shop",
-        "priceType": "dc",
-        "price": "450 Dragon Coins",
-        "sellback": "405 DC (<24 hours) / 113 DC (>24 hours)",
-        "daRequired": false,
-        "dcRequired": true
-      }
-    ],
-    "tags": [
-      "sil",
-      "dc"
-    ],
-    "daRequired": false,
-    "dcRequired": true,
-    "alsoSee": [
-      {
-        "name": "V Mask",
-        "slug": "accessory-v-mask",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19749467"
-      }
-    ]
-  },
-  {
     "id": "accessory-verlyrus-mask",
     "familyName": "Verlyrus Mask",
     "slug": "accessory-verlyrus-mask",
@@ -58184,82 +55164,6 @@
     "levelRange": "40-60",
     "elements": [
       "NAT"
-    ]
-  },
-  {
-    "id": "accessory-villainous-cultist-hood",
-    "name": "Villainous Cultist Hood",
-    "slug": "accessory-villainous-cultist-hood",
-    "type": "accessory",
-    "subtype": "helm",
-    "description": "Dark magic and strange murmurs flow through your head.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21453423",
-    "releaseDate": "",
-    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/CultistHoodpic.png",
-    "elements": [
-      "EVI"
-    ],
-    "level": "45",
-    "stats": "Crit +5, Magic Def +5, Pierce Def +4, Melee Def +4, WIS +5, END +5, CHA +4, Bonus +4",
-    "resists": "Darkness +6, Ice +6",
-    "rarity": "10",
-    "itemType": "Helm",
-    "equipSpot": "Head",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "The Summoning",
-        "priceType": "free",
-        "price": "N/A",
-        "sellback": "500 Gold",
-        "daRequired": false
-      },
-      {
-        "location": "Cultist Hood (Shop)",
-        "priceType": "dc",
-        "price": "40 Dragon Coins",
-        "sellback": "36 DC (<24 hours) / 10 DC (>24 hours)",
-        "daRequired": false,
-        "dcRequired": true
-      }
-    ],
-    "tags": [
-      "evi",
-      "free"
-    ],
-    "daRequired": false,
-    "dcRequired": true,
-    "alsoSee": [
-      {
-        "name": "Cultist Hood",
-        "slug": "accessory-cultist-hood",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21453430"
-      },
-      {
-        "name": "Cultist Hood",
-        "slug": "accessory-cultist-hood",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21453414"
-      },
-      {
-        "name": "Evil Cultist Hood",
-        "slug": "accessory-evil-cultist-hood",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21453420"
-      },
-      {
-        "name": "Foul Cultist Hood",
-        "slug": "accessory-foul-cultist-hood",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21453425"
-      },
-      {
-        "name": "Malicious Cultist Hood",
-        "slug": "accessory-malicious-cultist-hood",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21453424"
-      }
     ]
   },
   {
@@ -59165,55 +56069,6 @@
     "isSeasonal": true
   },
   {
-    "id": "accessory-visage-of-ebil",
-    "name": "Visage of Ebil",
-    "slug": "accessory-visage-of-ebil",
-    "type": "accessory",
-    "subtype": "helm",
-    "description": "Strike fear into goody two-shoes everywhere with this terrifying helm!",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19185600",
-    "releaseDate": "",
-    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/FaceofEbilpic.png",
-    "elements": [
-      "DAR"
-    ],
-    "level": "50",
-    "stats": "Block +1, Magic Def +4, Melee Def +2, END +4, CHA +7, INT +5, STR +5, Bonus +5",
-    "resists": "Immobility +3, Light +6",
-    "rarity": "3",
-    "itemType": "Helm",
-    "equipSpot": "Head",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "Xan Has A Plan",
-        "priceType": "free",
-        "price": "N/A",
-        "sellback": "100 Gold",
-        "daRequired": true
-      }
-    ],
-    "tags": [
-      "dar",
-      "free"
-    ],
-    "daRequired": true,
-    "alsoSee": [
-      {
-        "name": "Face of Ebil",
-        "slug": "accessory-face-of-ebil",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19185606"
-      },
-      {
-        "name": "Touch of Ebil",
-        "slug": "accessory-touch-of-ebil",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=16570874"
-      }
-    ]
-  },
-  {
     "id": "accessory-visage-of-fear",
     "name": "Visage of Fear",
     "slug": "accessory-visage-of-fear",
@@ -59487,11 +56342,11 @@
       "alternativeImages": [
         {
           "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/VisageoftheDragon-Patience.png",
-          "caption": "Patience"
+          "caption": "Patience / Bulwark"
         },
         {
           "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/VisageoftheDragon-Rage.png",
-          "caption": "Rage"
+          "caption": "Rage / Wrath"
         }
       ],
       "rarity": "0",
@@ -62485,56 +59340,6 @@
     ]
   },
   {
-    "id": "accessory-warped-adept-helm",
-    "name": "Warped Adept Helm",
-    "slug": "accessory-warped-adept-helm",
-    "type": "accessory",
-    "subtype": "helm",
-    "description": "An deep evil rises... Can you resist? Or will you become what you once destroyed? This item requires a Dragon Amulet.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17539768",
-    "releaseDate": "",
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/AdeptHelmCC.png",
-    "elements": [
-      "DAR"
-    ],
-    "level": "43",
-    "stats": "Block +1, Crit +3, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +5, END +6, INT +4, DEX +4, STR +4, Bonus +4",
-    "resists": "Water +5, Darkness +5, Immobility +2",
-    "rarity": "9",
-    "itemType": "Helm",
-    "equipSpot": "Head",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "Descent",
-        "priceType": "free",
-        "price": "N/A",
-        "sellback": "100 Gold",
-        "daRequired": true
-      }
-    ],
-    "notes": "Helm is color-custom to the player's base and trim colors.",
-    "tags": [
-      "dar",
-      "free"
-    ],
-    "daRequired": true,
-    "alsoSee": [
-      {
-        "name": "Adept Helm",
-        "slug": "accessory-adept-helm",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=17539699"
-      },
-      {
-        "name": "Tainted Adept Helm",
-        "slug": "accessory-tainted-adept-helm",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=17539762"
-      }
-    ]
-  },
-  {
     "id": "accessory-warpfire-rifthelm",
     "name": "Warpfire RiftHelm",
     "slug": "accessory-warpfire-rifthelm",
@@ -63201,50 +60006,6 @@
     "daRequired": false,
     "dcRequired": true,
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/WeaversFacade.png"
-  },
-  {
-    "id": "accessory-well-worn-lucky-cap",
-    "name": "Well Worn Lucky Cap",
-    "slug": "accessory-well-worn-lucky-cap",
-    "type": "accessory",
-    "subtype": "helm",
-    "description": "This well worn cap looks like it's been through some crazy adventures! This item requires a Dragon Amulet",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18381580",
-    "releaseDate": "",
-    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/LuckyCap.png",
-    "elements": [
-      "NAT"
-    ],
-    "level": "56",
-    "stats": "Crit +5, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +5, END +5, CHA +7, LUK +7, INT +5, DEX +5, STR +5, Bonus +6",
-    "resists": "Stone +5, Wind +5, Water +5, Immobility +3",
-    "rarity": "6",
-    "itemType": "Helm",
-    "equipSpot": "Head",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "Locked Chest",
-        "priceType": "free",
-        "price": "0 Gold",
-        "sellback": "0 Gold",
-        "daRequired": true
-      }
-    ],
-    "notes": "Helm is color-custom; the hair is linked to the player's hair color, and the cap is linked to the player's base and trim colors.",
-    "tags": [
-      "nat",
-      "free"
-    ],
-    "daRequired": true,
-    "alsoSee": [
-      {
-        "name": "Lucky Cap",
-        "slug": "accessory-faded-lucky-cap",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=18381593"
-      }
-    ]
   },
   {
     "id": "accessory-well-balanced-tog",
@@ -63939,51 +60700,6 @@
     ]
   },
   {
-    "id": "accessory-white-scalehunter-helm",
-    "name": "White Scalehunter Helm",
-    "slug": "accessory-white-scalehunter-helm",
-    "type": "accessory",
-    "subtype": "helm",
-    "description": "This helm was found atop the treasure trove of a giant wind dragon. Apparently, the helm of this fallen White Scalehunter was his greatest prize.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=14295301",
-    "releaseDate": "",
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/WhiteScalehunterHelm.jpg",
-    "elements": [
-      "WIN"
-    ],
-    "level": "9",
-    "stats": "Block +1, Magic Def +3, Pierce Def +3, Melee Def +3, END +4",
-    "resists": "Fire +5, Water +3",
-    "rarity": "8",
-    "itemType": "Helm",
-    "equipSpot": "Head",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "Scavenger Hunt",
-        "priceType": "merge",
-        "price": "N/A",
-        "requiredItems": "15 Pouch of Sparkling Sand & 5 Aeris PVP Trophy",
-        "sellback": "0 Gold",
-        "daRequired": false
-      }
-    ],
-    "tags": [
-      "win",
-      "merge"
-    ],
-    "daRequired": false,
-    "isRare": true,
-    "alsoSee": [
-      {
-        "name": "Scalehunter Helm",
-        "slug": "accessory-black-scalehunter-helm",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=14295368"
-      }
-    ]
-  },
-  {
     "id": "accessory-white-spy-hat",
     "familyName": "White Spy Hat",
     "slug": "accessory-white-spy-hat",
@@ -64416,46 +61132,98 @@
   },
   {
     "id": "accessory-wild-helm",
-    "name": "Wild Helm",
+    "familyName": "Wild Helm",
     "slug": "accessory-wild-helm",
+    "aliasSlugs": [
+      "accessory-savage-helm"
+    ],
     "type": "accessory",
     "subtype": "helm",
-    "description": "Your hearing seems greatly improved!",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18598037",
-    "releaseDate": "",
-    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/WildHelm.png",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18598079",
+    "familyOrigin": "cross-post",
+    "familySources": [
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=18598079",
+        "title": "DF Encyclopedia: Savage Helm",
+        "variantLabel": "Savage Helm",
+        "isPrimary": true
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=18598037",
+        "title": "DF Encyclopedia: Wild Helm",
+        "isPrimary": false
+      }
+    ],
+    "shared": {
+      "description": "Your hearing seems greatly improved!",
+      "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/WildHelm.png",
+      "notes": "Helm is color-custom; the hair is linked to the player's hair color."
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
+        "levelDisplay": "32",
+        "actualLevel": 32,
+        "variantName": "(Base)",
+        "name": "Wild Helm",
+        "damage": "",
+        "stats": "Crit +3, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +1, END +1, CHA +4, LUK +4, INT +3, DEX +3, STR +3",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=18598037",
+        "description": "Your hearing seems greatly improved!",
+        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/WildHelm.png",
+        "obtainVariants": [
+          {
+            "location": "Reanimated",
+            "priceType": "free",
+            "price": "N/A",
+            "sellback": "125 Gold",
+            "daRequired": false
+          }
+        ],
+        "element": "NAT",
+        "resists": "Nature +3, Water +3",
+        "rarity": "5"
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "52",
+        "actualLevel": 52,
+        "variantName": "Savage Helm",
+        "name": "Savage Helm",
+        "damage": "",
+        "stats": "Crit +4, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +2, END +2, CHA +6, LUK +6, INT +5, DEX +5, STR +5, Bonus +2",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=18598079",
+        "description": "Your hearing seems greatly improved!",
+        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/WildHelm.png",
+        "obtainVariants": [
+          {
+            "location": "Reanimated",
+            "priceType": "free",
+            "price": "N/A",
+            "sellback": "175 Gold",
+            "daRequired": false
+          }
+        ],
+        "element": "NAT",
+        "resists": "Nature +6, Water +6, Stone +2, Wind +2",
+        "rarity": "15"
+      }
+    ],
+    "itemType": "Helm",
+    "equipSlot": "Head",
+    "category": "Armor",
+    "tags": [
+      "free",
+      "nat"
+    ],
+    "hasDA": false,
+    "hasDC": false,
+    "hasDM": false,
+    "hasFree": true,
+    "hasMerge": false,
+    "levelRange": "32-52",
     "elements": [
       "NAT"
-    ],
-    "level": "32",
-    "stats": "Crit +3, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +1, END +1, CHA +4, LUK +4, INT +3, DEX +3, STR +3",
-    "resists": "Nature +3, Water +3",
-    "rarity": "5",
-    "itemType": "Helm",
-    "equipSpot": "Head",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "Reanimated",
-        "priceType": "free",
-        "price": "N/A",
-        "sellback": "125 Gold",
-        "daRequired": false
-      }
-    ],
-    "notes": "Helm is color-custom; the hair is linked to the player's hair color.",
-    "tags": [
-      "nat",
-      "free"
-    ],
-    "daRequired": false,
-    "alsoSee": [
-      {
-        "name": "Savage Helm",
-        "slug": "accessory-savage-helm",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=18598079"
-      }
     ]
   },
   {
@@ -64633,73 +61401,6 @@
     ]
   },
   {
-    "id": "accessory-wily-aye-guardian-pirate-hat",
-    "name": "Wily Aye Guardian Pirate Hat",
-    "slug": "accessory-wily-aye-guardian-pirate-hat",
-    "type": "accessory",
-    "subtype": "helm",
-    "description": "Ye'll be ready t' sail o'er t' seas o' Lore with this handsome hat. This item requires a Dragon Amulet.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19628551",
-    "releaseDate": "",
-    "imageUrl": "http://i.imgur.com/QYJhi.png",
-    "elements": [
-      "SIL"
-    ],
-    "level": "70",
-    "stats": "Parry +2, Crit +6, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +6, END +5, CHA +8, LUK +8, INT +5, DEX +5, STR +5, Bonus +7",
-    "resists": "Poison +8, Water +8, Nature +8, Wind +8, Immobility +4",
-    "rarity": "2",
-    "itemType": "Helm",
-    "equipSpot": "Head",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "TLaPD 2011, TLaPD Bandanas",
-        "priceType": "gold",
-        "price": "10,000 Gold",
-        "sellback": "1,000 Gold",
-        "daRequired": true
-      }
-    ],
-    "tags": [
-      "sil",
-      "gold"
-    ],
-    "daRequired": true,
-    "alsoSee": [
-      {
-        "name": "Aye Guardian Pirate Hat",
-        "slug": "accessory-aye-guardian-pirate-hat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19634552"
-      },
-      {
-        "name": "Filthy Aye Guardian Pirate Hat",
-        "slug": "accessory-filthy-aye-guardian-pirate-hat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20709735"
-      },
-      {
-        "name": "Foxy Aye Guardian Pirate Hat",
-        "slug": "accessory-foxy-aye-guardian-pirate-hat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19634569"
-      },
-      {
-        "name": "Salty Aye Guardian Pirate Hat",
-        "slug": "accessory-salty-aye-guardian-pirate-hat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20707570"
-      },
-      {
-        "name": "Swarthy Aye Guardian Pirate Hat",
-        "slug": "accessory-swarthy-aye-guardian-pirate-hat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19634566"
-      }
-    ]
-  },
-  {
     "id": "accessory-wily-aye-pirate-scarf",
     "name": "Wily Aye Pirate Scarf",
     "slug": "accessory-wily-aye-pirate-scarf",
@@ -64751,195 +61452,6 @@
         "slug": "accessory-aye-pirate-scarf",
         "type": "accessory",
         "url": "https://forums2.battleon.com/f/tm.asp?m=19627893"
-      }
-    ]
-  },
-  {
-    "id": "accessory-wily-bearded-guardian-pirate-hat",
-    "name": "Wily Bearded Guardian Pirate Hat",
-    "slug": "accessory-wily-bearded-guardian-pirate-hat",
-    "type": "accessory",
-    "subtype": "helm",
-    "description": "Ye'll be ready t' sail o'er t' seas o' Lore with this handsome scarf. This item requires a Dragon Amulet.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19628545",
-    "releaseDate": "",
-    "imageUrl": "http://i.imgur.com/x8Tak.png",
-    "elements": [
-      "SIL"
-    ],
-    "level": "70",
-    "stats": "Parry +2, Crit +6, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +6, END +5, CHA +8, LUK +8, INT +5, DEX +5, STR +5, Bonus +7",
-    "resists": "Poison +8, Water +8, Nature +8, Wind +8, Immobility +4",
-    "rarity": "2",
-    "itemType": "Helm",
-    "equipSpot": "Head",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "TLaPD 2011, TLaPD Bandanas",
-        "priceType": "gold",
-        "price": "10,000 Gold",
-        "sellback": "1,000 Gold",
-        "daRequired": true
-      }
-    ],
-    "tags": [
-      "sil",
-      "gold"
-    ],
-    "daRequired": true,
-    "alsoSee": [
-      {
-        "name": "Bearded Guardian Pirate Hat",
-        "slug": "accessory-bearded-guardian-pirate-hat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19634590"
-      },
-      {
-        "name": "Filthy Bearded Guardian Pirate Hat",
-        "slug": "accessory-filthy-bearded-guardian-pirate-hat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20709730"
-      },
-      {
-        "name": "Foxy Bearded Guardian Pirate Hat",
-        "slug": "accessory-foxy-bearded-guardian-pirate-hat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19634601"
-      },
-      {
-        "name": "Salty Bearded Guardian Pirate Hat",
-        "slug": "accessory-salty-bearded-guardian-pirate-hat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20707584"
-      },
-      {
-        "name": "Swarthy Bearded Guardian Pirate Hat",
-        "slug": "accessory-swarthy-bearded-guardian-pirate-hat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19634599"
-      }
-    ]
-  },
-  {
-    "id": "accessory-wily-guardian-pirate-hat",
-    "name": "Wily Guardian Pirate Hat",
-    "slug": "accessory-wily-guardian-pirate-hat",
-    "type": "accessory",
-    "subtype": "helm",
-    "description": "Ye'll be ready t' sail o'er t' seas o' Lore with this handsome hat. This item requires a Dragon Amulet.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19628547",
-    "releaseDate": "",
-    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/GuardianPirateHatpic.png",
-    "elements": [
-      "SIL"
-    ],
-    "level": "70",
-    "stats": "Parry +2, Crit +6, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +6, END +5, CHA +8, LUK +8, INT +5, DEX +5, STR +5, Bonus +7",
-    "resists": "Poison +8, Water +8, Nature +8, Wind +8, Immobility +4",
-    "rarity": "2",
-    "itemType": "Helm",
-    "equipSpot": "Head",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "TLaPD 2011, TLaPD Bandanas",
-        "priceType": "gold",
-        "price": "10,000 Gold",
-        "sellback": "1,000 Gold",
-        "daRequired": true
-      }
-    ],
-    "tags": [
-      "sil",
-      "gold"
-    ],
-    "daRequired": true,
-    "alsoSee": [
-      {
-        "name": "Guardian Pirate Hat",
-        "slug": "accessory-guardian-pirate-hat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19631736"
-      },
-      {
-        "name": "Guardian Pirate Hat",
-        "slug": "accessory-guardian-pirate-hat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19631732"
-      },
-      {
-        "name": "Salty Guardian Pirate Hat",
-        "slug": "accessory-salty-guardian-pirate-hat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20707569"
-      },
-      {
-        "name": "Swarthy Guardian Pirate Hat",
-        "slug": "accessory-swarthy-guardian-pirate-hat",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19631757"
-      }
-    ]
-  },
-  {
-    "id": "accessory-wily-guardian-pirate-scarf",
-    "name": "Wily Guardian Pirate Scarf",
-    "slug": "accessory-wily-guardian-pirate-scarf",
-    "type": "accessory",
-    "subtype": "helm",
-    "description": "Ye'll be ready t' sail o'er t' seas o' Lore with this handsome scarf. This item requires a Dragon Amulet.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19628542",
-    "releaseDate": "",
-    "imageUrl": "http://i.imgur.com/8Nc2Z.png",
-    "elements": [
-      "SIL"
-    ],
-    "level": "70",
-    "stats": "Parry +2, Crit +6, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +6, END +5, CHA +8, LUK +8, INT +5, DEX +5, STR +5, Bonus +7",
-    "resists": "Poison +8, Water +8, Nature +8, Wind +8, Immobility +4",
-    "rarity": "2",
-    "itemType": "Helm",
-    "equipSpot": "Head",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "TLaPD 2011, TLaPD Bandanas",
-        "priceType": "gold",
-        "price": "10,000 Gold",
-        "sellback": "1,000 Gold",
-        "daRequired": true
-      }
-    ],
-    "tags": [
-      "sil",
-      "gold"
-    ],
-    "daRequired": true,
-    "alsoSee": [
-      {
-        "name": "Guardian Pirate Scarf",
-        "slug": "accessory-guardian-pirate-scarf",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19631292"
-      },
-      {
-        "name": "Guardian Pirate Scarf",
-        "slug": "accessory-guardian-pirate-scarf",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19631278"
-      },
-      {
-        "name": "Salty Guardian Pirate Scarf",
-        "slug": "accessory-salty-guardian-pirate-scarf",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20707568"
-      },
-      {
-        "name": "Swarthy Guardian Pirate Scarf",
-        "slug": "accessory-swarthy-guardian-pirate-scarf",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19631423"
       }
     ]
   },
@@ -65263,176 +61775,6 @@
     "elements": [
       "NON",
       "WIN"
-    ]
-  },
-  {
-    "id": "accessory-windblown-sakura-adornment",
-    "name": "Windblown Sakura Adornment",
-    "slug": "accessory-windblown-sakura-adornment",
-    "type": "accessory",
-    "subtype": "helm",
-    "description": "A downy wing to decorate your hair! Happy Mother's Day!",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21971924",
-    "releaseDate": "",
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/SakuraAdornmentM.png",
-    "elements": [
-      "WIN"
-    ],
-    "level": "74",
-    "stats": "Block +1, Dodge +1, Parry +1, Crit +6, Magic Def +8, Pierce Def +8, Melee Def +8, WIS +10, CHA +10, LUK +10, Bonus +10",
-    "resists": "Stone +12, Wind +12, Immobility +5",
-    "rarity": "10",
-    "itemType": "Helm",
-    "equipSpot": "Head",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "Mother's Day (Shop)",
-        "priceType": "free",
-        "price": "0 Gold",
-        "sellback": "0 Gold",
-        "daRequired": true
-      }
-    ],
-    "tags": [
-      "win",
-      "free"
-    ],
-    "daRequired": true,
-    "isRare": true,
-    "alsoSee": [
-      {
-        "name": "Breezy Sakura Adornment",
-        "slug": "accessory-aerial-sakura-adornment",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=18962089"
-      },
-      {
-        "name": "Fresh Sakura Adornment",
-        "slug": "accessory-fresh-sakura-adornment",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=18962110"
-      },
-      {
-        "name": "Windy Sakura Adornment",
-        "slug": "accessory-windy-sakura-adornment",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=18960121"
-      }
-    ]
-  },
-  {
-    "id": "accessory-windy-oleander-veil",
-    "name": "Windy Oleander Veil",
-    "slug": "accessory-windy-oleander-veil",
-    "type": "accessory",
-    "subtype": "helm",
-    "description": "A beautiful blossom for your hair! Happy Mother's Day!",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20316925",
-    "releaseDate": "",
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/OleanderVeilM.png",
-    "elements": [
-      "NAT"
-    ],
-    "level": "64",
-    "stats": "Dodge +1, Crit +3, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +7, CHA +7, LUK +7, Bonus +6",
-    "resists": "Light +10, Darkness +10, Immobility +1",
-    "rarity": "10",
-    "itemType": "Helm",
-    "equipSpot": "Head",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "Mother's Day 2012, Mother's Day (Shop)",
-        "priceType": "free",
-        "price": "0 Gold",
-        "sellback": "0 Gold",
-        "daRequired": false
-      }
-    ],
-    "notes": "Helm's description previously specified Happy Mother's Day 2012!; this was removed alongside its 2015 re-release.",
-    "tags": [
-      "nat",
-      "free"
-    ],
-    "daRequired": false,
-    "isRare": true,
-    "alsoSee": [
-      {
-        "name": "Breezy Oleander Veil",
-        "slug": "accessory-aerial-oleander-veil",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20316929"
-      },
-      {
-        "name": "Fresh Oleander Veil",
-        "slug": "accessory-fresh-oleander-veil",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20316914"
-      },
-      {
-        "name": "Mistral Oleander Veil",
-        "slug": "accessory-mistral-oleander-veil",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20316949"
-      }
-    ]
-  },
-  {
-    "id": "accessory-windy-sakura-adornment",
-    "name": "Windy Sakura Adornment",
-    "slug": "accessory-windy-sakura-adornment",
-    "type": "accessory",
-    "subtype": "helm",
-    "description": "A downy wing to decorate your hair! Happy Mother's Day!",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18960121",
-    "releaseDate": "",
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/SakuraAdornmentM.png",
-    "elements": [
-      "WIN"
-    ],
-    "level": "64",
-    "stats": "Dodge +1, Crit +7, Magic Def +6, Pierce Def +6, Melee Def +6, END +7, CHA +7, LUK +7, Bonus +3",
-    "resists": "Stone +10, Wind +10, Immobility +3",
-    "rarity": "0",
-    "itemType": "Helm",
-    "equipSpot": "Head",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "Mother's Day 2011, Mother's Day (Shop)",
-        "priceType": "free",
-        "price": "0 Gold",
-        "sellback": "0 Gold",
-        "daRequired": false
-      }
-    ],
-    "notes": "Helm's description previously specified Happy Mother's Day, 2011!, and helm previously required a Dragon Amulet; these were removed alongside its 2015 re-release.",
-    "tags": [
-      "win",
-      "free"
-    ],
-    "daRequired": false,
-    "isRare": true,
-    "alsoSee": [
-      {
-        "name": "Breezy Sakura Adornment",
-        "slug": "accessory-aerial-sakura-adornment",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=18962089"
-      },
-      {
-        "name": "Fresh Sakura Adornment",
-        "slug": "accessory-fresh-sakura-adornment",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=18962110"
-      },
-      {
-        "name": "Windblown Sakura Adornment",
-        "slug": "accessory-windblown-sakura-adornment",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21971924"
-      }
     ]
   },
   {
@@ -67363,7 +63705,15 @@
     "shared": {
       "description": "II. The family heirloom was replaced easily enough, the necklace copied in every detail down to the small nick in the side. Putting it on as he did every morning, Zeclem didn't realize that this day would be far different than any other.",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/UnhallowedDeathKnightHelm.png",
-      "rarity": "25"
+      "rarity": "25",
+      "alsoSee": [
+        {
+          "name": "Unhallowed DeathKnight Helm I",
+          "slug": "accessory-unhallowed-deathknight-helm",
+          "type": "accessory",
+          "url": "https://forums2.battleon.com/f/tm.asp?m=21830959"
+        }
+      ]
     },
     "levelVariants": [
       {
@@ -67516,13 +63866,7 @@
     "dcRequired": true,
     "alsoSee": [
       {
-        "name": "Tarnished Relic DeathKnight Helm",
-        "slug": "accessory-tarnished-relic-deathknight-helm",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=22388620"
-      },
-      {
-        "name": "Unhallowed DeathKnight Helm",
+        "name": "Unhallowed DeathKnight Helm I",
         "slug": "accessory-unhallowed-deathknight-helm",
         "type": "accessory",
         "url": "https://forums2.battleon.com/f/tm.asp?m=21830959"

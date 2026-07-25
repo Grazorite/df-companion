@@ -1,0 +1,2077 @@
+[
+  {
+    "id": "weapon-abyssal-aureate",
+    "name": "Abyssal Aureate",
+    "slug": "weapon-abyssal-aureate",
+    "type": "weapon",
+    "subtype": "scythe",
+    "description": "An entirely decorative golden spear once used by the Abyssal Tribe for ceremonial purposes. Despite its age, it has resisted corruption, keeping a shining gleam. (Cosmetic)",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22408271",
+    "releaseDate": "",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AbyssalAureateI.png",
+    "alternativeImages": [
+      {
+        "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AbyssalAureateII.png",
+        "caption": "Alternative 1"
+      },
+      {
+        "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AbyssalAureateIII.png",
+        "caption": "Alternative 2"
+      },
+      {
+        "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AbyssalAureateIV.png",
+        "caption": "Alternative 3"
+      },
+      {
+        "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AbyssalAureateV.png",
+        "caption": "Alternative 4"
+      },
+      {
+        "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AbyssalAureateVI.png",
+        "caption": "Alternative 5"
+      }
+    ],
+    "elements": ["MET"],
+    "level": "1",
+    "damage": "0-0",
+    "stats": "None",
+    "resists": "None",
+    "rarity": "0",
+    "obtainMethods": [
+      {
+        "location": "HeroMart Items",
+        "price": "N/A",
+        "priceType": "merge",
+        "sellback": "0 Dragon Coins",
+        "requiredItems": "2 HeroPoint",
+        "daRequired": false,
+        "dcRequired": true
+      }
+    ],
+    "notes": "Click on the bottom while equipped or shown to cycle through the prior tiers' appearances and return to its default state; weapon is animated between transitions.\nI\nII\nIII\nIV\nV\nVI (Default)",
+    "alsoSee": [
+      {
+        "name": "Abyssal Heart (I-VI)",
+        "slug": "weapon-abyssal-heart-i-vi",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=22407843"
+      }
+    ],
+    "tags": ["met", "merge"],
+    "daRequired": false,
+    "dcRequired": true,
+    "isCosmetic": true,
+    "isSpecialOffer": true
+  },
+  {
+    "id": "weapon-abyssal-elf-scepter-i-vii",
+    "name": "Abyssal Elf Scepter (I-VII)",
+    "slug": "weapon-abyssal-elf-scepter-i-vii",
+    "type": "weapon",
+    "subtype": "scythe",
+    "description": "You found this curious scepter under your bed after you woke up. It has \"Property of Remthalas\" scribbled on the handle. I'm sure it's perfectly safe to use. Definitely not a trap.",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22368148",
+    "releaseDate": "",
+    "elements": ["WAT"],
+    "level": "30",
+    "damage": "30-70",
+    "stats": "Crit +3, Magic Def +2, Pierce Def +2, Melee Def +2, END +4, CHA +4, INT +4, DEX +4, STR +4, Bonus +3",
+    "resists": "Water +5, Darkness +5, Light +5",
+    "rarity": "8",
+    "obtainMethods": [
+      {
+        "location": "Ex Somniis Fabula",
+        "price": "N/A",
+        "priceType": "free",
+        "sellback": "10 Gold",
+        "daRequired": false
+      }
+    ],
+    "tags": ["wat", "free"],
+    "daRequired": false
+  },
+  {
+    "id": "weapon-abyssal-heart-i-vi",
+    "name": "Abyssal Heart (I-VI)",
+    "slug": "weapon-abyssal-heart-i-vi",
+    "type": "weapon",
+    "subtype": "scythe",
+    "description": "This unassuming scepter, once wielded by the Abyssal Elves, still hums with energy. It has potential yet to be unlocked... but what else? (Cosmetic)",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22407843",
+    "releaseDate": "",
+    "elements": ["EVI"],
+    "level": "1",
+    "damage": "0-0",
+    "stats": "None",
+    "resists": "None",
+    "rarity": "0",
+    "obtainMethods": [
+      {
+        "location": "Abyssal Heart (Shop)",
+        "price": "800 Dragon Coins",
+        "priceType": "dc",
+        "sellback": "720 DC (<24 hours) / 200 DC (>24 hours)",
+        "daRequired": false,
+        "dcRequired": true
+      }
+    ],
+    "tags": ["evi", "dc"],
+    "daRequired": false,
+    "dcRequired": true,
+    "isCosmetic": true
+  },
+  {
+    "id": "weapon-abyssal-swordfish",
+    "name": "Abyssal Swordfish",
+    "slug": "weapon-abyssal-swordfish",
+    "type": "weapon",
+    "subtype": "scythe",
+    "description": "Aquella is just as confused as you are. Perhaps an unlucky fish got caught up in a corruption accident? Or an even unluckier elf met a far worse fate? (Cosmetic)",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22408008",
+    "releaseDate": "",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AbyssalSwordfish.png",
+    "elements": ["EVI"],
+    "level": "1",
+    "damage": "0-0",
+    "stats": "None",
+    "resists": "None",
+    "rarity": "0",
+    "obtainMethods": [
+      {
+        "location": "Ancient Abyss Loot",
+        "price": "N/A",
+        "priceType": "merge",
+        "sellback": "0 Dragon Coins",
+        "requiredItems": "50 Defender's Medal",
+        "daRequired": false,
+        "dcRequired": true,
+        "dmRequired": true
+      }
+    ],
+    "tags": ["evi", "merge"],
+    "daRequired": false,
+    "dcRequired": true,
+    "dmRequired": true,
+    "isCosmetic": true
+  },
+  {
+    "id": "weapon-accursed-scimitar",
+    "name": "Accursed Scimitar",
+    "slug": "weapon-accursed-scimitar",
+    "type": "weapon",
+    "subtype": "scythe",
+    "description": "This be a rare blade indeed but it be cursed by th' pirate th' lost it! This item requires a Dragon Amulet.",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21818845",
+    "releaseDate": "",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/weapons/AccursedScimitar.png",
+    "elements": ["MET"],
+    "level": "78",
+    "damage": "73-101",
+    "stats": "Block +1, Dodge +1, Parry +1, Crit +10, Magic Def +7, Pierce Def +7, Melee Def +7, WIS +8, END +6, CHA +8, LUK -4, INT +11, DEX +11, STR +11, Bonus +8",
+    "resists": "Water +8, Fire +8, Darkness +7, Poison +7, Health -3",
+    "rarity": "55",
+    "obtainMethods": [
+      {
+        "location": "Booty for Mazurek, Booty for Rhubarb",
+        "price": "N/A",
+        "priceType": "free",
+        "sellback": "380 Gold",
+        "daRequired": true
+      }
+    ],
+    "alsoSee": [
+      {
+        "name": "Bedeviled Scimitar",
+        "slug": "weapon-bedeviled-scimitar",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21818858"
+      },
+      {
+        "name": "Blasted Scimitar",
+        "slug": "weapon-blasted-scimitar",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21818865"
+      },
+      {
+        "name": "Blighted Scimitar",
+        "slug": "weapon-blighted-scimitar",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21818862"
+      },
+      {
+        "name": "Cursed Scimitar",
+        "slug": "weapon-cursed-scimitar",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21818866"
+      },
+      {
+        "name": "Depraved Scimitar",
+        "slug": "weapon-depraved-scimitar",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21818864"
+      },
+      {
+        "name": "Doomed Scimitar",
+        "slug": "weapon-doomed-scimitar",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21818946"
+      },
+      {
+        "name": "Infernal Scimitar",
+        "slug": "weapon-infernal-scimitar",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21818852"
+      },
+      {
+        "name": "Vile Scimitar",
+        "slug": "weapon-vile-scimitar",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21818848"
+      },
+      {
+        "name": "Villainous Scimitar",
+        "slug": "weapon-villainous-scimitar",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21818860"
+      },
+      {
+        "name": "Wicked Scimitar",
+        "slug": "weapon-wicked-scimitar",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21818822"
+      }
+    ],
+    "tags": ["met", "free"],
+    "daRequired": true
+  },
+  {
+    "id": "weapon-adept-s-spear",
+    "name": "Adept's Spear",
+    "slug": "weapon-adept-s-spear",
+    "type": "weapon",
+    "subtype": "scythe",
+    "description": "At one point this was a beautiful weapon, used by the Abyssal Tribe in the defense of their homeland. Now, like its wielders, it serves The Ancient One. (Cosmetic)",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22408009",
+    "releaseDate": "",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Adept'sSpear.png",
+    "elements": ["EVI"],
+    "level": "1",
+    "damage": "0-0",
+    "stats": "None",
+    "resists": "None",
+    "rarity": "0",
+    "obtainMethods": [
+      {
+        "location": "Ancient Abyss Loot",
+        "price": "N/A",
+        "priceType": "merge",
+        "sellback": "0 Dragon Coins",
+        "requiredItems": "50 Defender's Medal",
+        "daRequired": false,
+        "dcRequired": true,
+        "dmRequired": true
+      }
+    ],
+    "tags": ["evi", "merge"],
+    "daRequired": false,
+    "dcRequired": true,
+    "dmRequired": true,
+    "isCosmetic": true
+  },
+  {
+    "id": "weapon-adventurer-s-spear",
+    "name": "Adventurer's Spear",
+    "slug": "weapon-adventurer-s-spear",
+    "type": "weapon",
+    "subtype": "scythe",
+    "description": "This spear is your trusty companion! Enhanced with the fang of a hydra, it has taken its first steps to glory alongside you! Weapon special (On-Hit): If you have a Dragon Amulet, once per battle, hitting a foe will earn you +10% Exp!",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22412387",
+    "releaseDate": "",
+    "elements": ["MET"],
+    "level": "8",
+    "damage": "24-26",
+    "stats": "Crit +1, INT +1, DEX +1, STR +1, Bonus +1",
+    "resists": "All +1, Health -1",
+    "rarity": "0",
+    "obtainMethods": [
+      {
+        "location": "Spear Upgrades",
+        "price": "N/A",
+        "priceType": "merge",
+        "sellback": "50 Gold",
+        "requiredItems": "1 Hydra Fang & 1 Forgotten Spear OR 1 Hydra Fang & 1 Long Forgotten Spear",
+        "daRequired": false
+      }
+    ],
+    "tags": ["met", "merge"],
+    "daRequired": false
+  },
+  {
+    "id": "weapon-aeonrend",
+    "name": "Aeonrend",
+    "slug": "weapon-aeonrend",
+    "type": "weapon",
+    "subtype": "scythe",
+    "description": "As you wield this you feel the hums and pulses of an unknown resonant energy, as if it hails from another time or place entirely. (Cosmetic)",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22416607",
+    "releaseDate": "",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Aeonrend.png",
+    "elements": ["ENE"],
+    "level": "1",
+    "damage": "0-0",
+    "stats": "None",
+    "resists": "None",
+    "rarity": "0",
+    "obtainMethods": [
+      {
+        "location": "DC Cosmetics",
+        "price": "300 Dragon Coins",
+        "priceType": "dc",
+        "sellback": "270 DC (<24 hours) / 75 DC (>24 hours)",
+        "daRequired": false,
+        "dcRequired": true
+      }
+    ],
+    "tags": ["ene", "dc"],
+    "daRequired": false,
+    "dcRequired": true,
+    "isCosmetic": true
+  },
+  {
+    "id": "weapon-akriloth-s-cinder-bane",
+    "name": "Akriloth's Cinder Bane",
+    "slug": "weapon-akriloth-s-cinder-bane",
+    "type": "weapon",
+    "subtype": "scythe",
+    "description": "The blades of this scythe were forged from the teeth of the great fire dragon!",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20767914",
+    "releaseDate": "",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Akriloth'sFervidBane.png",
+    "elements": ["FIR"],
+    "level": "50",
+    "damage": "55-77",
+    "stats": "Dodge +1, Parry +1, Crit +5, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +6, END +6, CHA +5, LUK +5, INT +5, DEX +5, STR +5, Bonus +6",
+    "resists": "Stone +4, Water +3, Ice +3",
+    "rarity": "10",
+    "obtainMethods": [
+      {
+        "location": "10th Anniversary",
+        "price": "0 Gold",
+        "priceType": "free",
+        "sellback": "0 Gold",
+        "daRequired": false
+      }
+    ],
+    "alsoSee": [
+      {
+        "name": "Akriloth's Ember Bane",
+        "slug": "weapon-akriloth-s-ember-bane",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20767892"
+      },
+      {
+        "name": "Akriloth's Fervid Bane",
+        "slug": "weapon-akriloth-s-fervid-bane",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20767931"
+      },
+      {
+        "name": "Akriloth's Fierce Bane",
+        "slug": "weapon-akriloth-s-fierce-bane",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20767924"
+      },
+      {
+        "name": "Akriloth's Fiery Bane",
+        "slug": "weapon-akriloth-s-fiery-bane",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20767876"
+      }
+    ],
+    "tags": ["fir", "free"],
+    "daRequired": false,
+    "isRare": true
+  },
+  {
+    "id": "weapon-akriloth-s-ember-bane",
+    "name": "Akriloth's Ember Bane",
+    "slug": "weapon-akriloth-s-ember-bane",
+    "type": "weapon",
+    "subtype": "scythe",
+    "description": "The blades of this scythe were forged from the teeth of the great fire dragon!",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20767892",
+    "releaseDate": "",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Akriloth'sFervidBane.png",
+    "elements": ["FIR"],
+    "level": "30",
+    "damage": "38-62",
+    "stats": "Parry +1, Crit +2, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +4, END +4, CHA +3, LUK +3, INT +3, DEX +3, STR +3, Bonus +3",
+    "resists": "Stone +3, Water +2, Ice +2",
+    "rarity": "8",
+    "obtainMethods": [
+      {
+        "location": "10th Anniversary",
+        "price": "0 Gold",
+        "priceType": "free",
+        "sellback": "0 Gold",
+        "daRequired": false
+      }
+    ],
+    "alsoSee": [
+      {
+        "name": "Akriloth's Cinder Bane",
+        "slug": "weapon-akriloth-s-cinder-bane",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20767914"
+      },
+      {
+        "name": "Akriloth's Fervid Bane",
+        "slug": "weapon-akriloth-s-fervid-bane",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20767931"
+      },
+      {
+        "name": "Akriloth's Fierce Bane",
+        "slug": "weapon-akriloth-s-fierce-bane",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20767924"
+      },
+      {
+        "name": "Akriloth's Fiery Bane",
+        "slug": "weapon-akriloth-s-fiery-bane",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20767876"
+      }
+    ],
+    "tags": ["fir", "free"],
+    "daRequired": false,
+    "isRare": true
+  },
+  {
+    "id": "weapon-akriloth-s-fervid-bane",
+    "name": "Akriloth's Fervid Bane",
+    "slug": "weapon-akriloth-s-fervid-bane",
+    "type": "weapon",
+    "subtype": "scythe",
+    "description": "The blades of this scythe were forged from the teeth of the great fire dragon! This item requires a Dragon Amulet.",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20767931",
+    "releaseDate": "",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Akriloth'sFervidBane.png",
+    "elements": ["FIR"],
+    "level": "80",
+    "damage": "73-101",
+    "stats": "Dodge +2, Parry +2, Crit +8, Magic Def +7, Pierce Def +7, Melee Def +7, WIS +8, END +6, CHA +8, LUK +8, INT +12, DEX +12, STR +12, Bonus +10",
+    "resists": "Stone +6, Water +6, Ice +6",
+    "rarity": "25",
+    "obtainMethods": [
+      {
+        "location": "10th Anniversary",
+        "price": "0 Gold",
+        "priceType": "free",
+        "sellback": "0 Gold",
+        "daRequired": true
+      }
+    ],
+    "alsoSee": [
+      {
+        "name": "Akriloth's Cinder Bane",
+        "slug": "weapon-akriloth-s-cinder-bane",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20767914"
+      },
+      {
+        "name": "Akriloth's Ember Bane",
+        "slug": "weapon-akriloth-s-ember-bane",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20767892"
+      },
+      {
+        "name": "Akriloth's Fierce Bane",
+        "slug": "weapon-akriloth-s-fierce-bane",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20767924"
+      },
+      {
+        "name": "Akriloth's Fiery Bane",
+        "slug": "weapon-akriloth-s-fiery-bane",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20767876"
+      }
+    ],
+    "tags": ["fir", "free"],
+    "daRequired": true,
+    "isRare": true
+  },
+  {
+    "id": "weapon-akriloth-s-fierce-bane",
+    "name": "Akriloth's Fierce Bane",
+    "slug": "weapon-akriloth-s-fierce-bane",
+    "type": "weapon",
+    "subtype": "scythe",
+    "description": "The blades of this scythe were forged from the teeth of the great fire dragon!",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20767924",
+    "releaseDate": "",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Akriloth'sFervidBane.png",
+    "elements": ["FIR"],
+    "level": "70",
+    "damage": "68-92",
+    "stats": "Dodge +1, Parry +2, Crit +6, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +8, END +6, CHA +6, LUK +6, INT +8, DEX +8, STR +8, Bonus +8",
+    "resists": "Stone +5, Water +4, Ice +4",
+    "rarity": "15",
+    "obtainMethods": [
+      {
+        "location": "10th Anniversary",
+        "price": "0 Gold",
+        "priceType": "free",
+        "sellback": "0 Gold",
+        "daRequired": false
+      }
+    ],
+    "alsoSee": [
+      {
+        "name": "Akriloth's Cinder Bane",
+        "slug": "weapon-akriloth-s-cinder-bane",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20767914"
+      },
+      {
+        "name": "Akriloth's Ember Bane",
+        "slug": "weapon-akriloth-s-ember-bane",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20767892"
+      },
+      {
+        "name": "Akriloth's Fervid Bane",
+        "slug": "weapon-akriloth-s-fervid-bane",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20767931"
+      },
+      {
+        "name": "Akriloth's Fiery Bane",
+        "slug": "weapon-akriloth-s-fiery-bane",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20767876"
+      }
+    ],
+    "tags": ["fir", "free"],
+    "daRequired": false,
+    "isRare": true
+  },
+  {
+    "id": "weapon-akriloth-s-fiery-bane",
+    "name": "Akriloth's Fiery Bane",
+    "slug": "weapon-akriloth-s-fiery-bane",
+    "type": "weapon",
+    "subtype": "scythe",
+    "description": "The blades of this scythe were forged from the teeth of the great fire dragon!",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20767876",
+    "releaseDate": "",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Akriloth'sFervidBane.png",
+    "elements": ["FIR"],
+    "level": "10",
+    "damage": "21-33",
+    "stats": "Parry +1, Crit +1, WIS +1, END +1, CHA +2, LUK +2, INT +1, DEX +1, STR +1, Bonus +1",
+    "resists": "Water +1, Ice +1",
+    "rarity": "8",
+    "obtainMethods": [
+      {
+        "location": "10th Anniversary",
+        "price": "0 Gold",
+        "priceType": "free",
+        "sellback": "0 Gold",
+        "daRequired": false
+      }
+    ],
+    "alsoSee": [
+      {
+        "name": "Akriloth's Cinder Bane",
+        "slug": "weapon-akriloth-s-cinder-bane",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20767914"
+      },
+      {
+        "name": "Akriloth's Ember Bane",
+        "slug": "weapon-akriloth-s-ember-bane",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20767892"
+      },
+      {
+        "name": "Akriloth's Fervid Bane",
+        "slug": "weapon-akriloth-s-fervid-bane",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20767931"
+      },
+      {
+        "name": "Akriloth's Fierce Bane",
+        "slug": "weapon-akriloth-s-fierce-bane",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20767924"
+      }
+    ],
+    "tags": ["fir", "free"],
+    "daRequired": false,
+    "isRare": true
+  },
+  {
+    "id": "weapon-akriloth-s-revenger",
+    "name": "Akriloth's Revenger",
+    "slug": "weapon-akriloth-s-revenger",
+    "type": "weapon",
+    "subtype": "scythe",
+    "description": "Those who remained alive after Pelekoa's gruesome fate swore revenge on Akriloth, forging weapons such as this one. (Cosmetic)",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22419543",
+    "releaseDate": "",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Akriloth'sRevenger.png",
+    "elements": ["FIR"],
+    "level": "1",
+    "damage": "0-0",
+    "stats": "None",
+    "resists": "None",
+    "rarity": "0",
+    "obtainMethods": [
+      {
+        "location": "The Obsidian Remnant",
+        "price": "N/A",
+        "priceType": "free",
+        "sellback": "0 Dragon Coins",
+        "daRequired": false,
+        "dcRequired": true
+      }
+    ],
+    "tags": ["fir", "free"],
+    "daRequired": false,
+    "dcRequired": true,
+    "isCosmetic": true
+  },
+  {
+    "id": "weapon-alina-s-battle-bouquet-staff-all-versions",
+    "name": "Alina's Battle-Bouquet Staff (All Versions)",
+    "slug": "weapon-alina-s-battle-bouquet-staff-all-versions",
+    "type": "weapon",
+    "subtype": "scythe",
+    "description": "Don't be fooled by this floral weapon; defend the ones you love! Crafted by Ghost in honor of Alina's Wedding to Rolith.",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20780148",
+    "releaseDate": "",
+    "elements": ["BAC"],
+    "level": "20",
+    "damage": "35-47",
+    "stats": "Dodge +1, Crit +2, WIS +1, END +1, CHA +1, INT +1, Bonus +1",
+    "resists": "Nature +5",
+    "rarity": "1020",
+    "obtainMethods": [
+      {
+        "location": "Alina and Rolith Wedding",
+        "price": "1,020 Gold",
+        "priceType": "gold",
+        "sellback": "102 Gold",
+        "daRequired": true
+      }
+    ],
+    "tags": ["bac", "gold"],
+    "daRequired": true,
+    "isRare": true
+  },
+  {
+    "id": "weapon-alteon-s-regalia-sword",
+    "name": "Alteon's Regalia Sword",
+    "slug": "weapon-alteon-s-regalia-sword",
+    "type": "weapon",
+    "subtype": "scythe",
+    "description": "Imbued with the power of an Energy dragon, this blade was once wielded by a hero-turned king. (Cosmetic)",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22417186",
+    "releaseDate": "",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Alteon'sRegaliaSword.png",
+    "alternativeImages": [
+      {
+        "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Alteon'sRegaliaSword-Clicked.png",
+        "caption": "Clicked Appearance"
+      }
+    ],
+    "elements": ["ENE"],
+    "level": "1",
+    "damage": "0-0",
+    "stats": "None",
+    "resists": "None",
+    "rarity": "0",
+    "obtainMethods": [
+      {
+        "location": "Purchase the 2000 DCs + Alteon's Regalia Set package",
+        "price": "$9.95 USD",
+        "priceType": "gold",
+        "sellback": "N/A",
+        "daRequired": false,
+        "dcRequired": true
+      }
+    ],
+    "notes": "Click anywhere on the weapon to change between two appearances.\nDefault\nClicked",
+    "tags": ["ene", "gold"],
+    "daRequired": false,
+    "dcRequired": true,
+    "isCosmetic": true,
+    "isSpecialOffer": true
+  },
+  {
+    "id": "weapon-alz-ein-s-riftblade",
+    "name": "Alz'ein's Riftblade",
+    "slug": "weapon-alz-ein-s-riftblade",
+    "type": "weapon",
+    "subtype": "scythe",
+    "description": "Heavy, powerful, good for hitting things. The favored weapon of Alz'ein. (Cosmetic)",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22412939",
+    "releaseDate": "",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Alz'ein'sRiftblade.png",
+    "elements": [],
+    "level": "1",
+    "damage": "0-0",
+    "stats": "None",
+    "resists": "None",
+    "rarity": "5",
+    "obtainMethods": [
+      {
+        "location": "AARGH Rewards 3",
+        "price": "N/A",
+        "priceType": "merge",
+        "sellback": "0 Dragon Coins",
+        "requiredItems": "25 Timewarped Medal",
+        "daRequired": false,
+        "dcRequired": true
+      }
+    ],
+    "tags": ["merge"],
+    "daRequired": false,
+    "dcRequired": true,
+    "isCosmetic": true
+  },
+  {
+    "id": "weapon-amaterasu-all-versions",
+    "name": "Amaterasu (All Versions)",
+    "slug": "weapon-amaterasu-all-versions",
+    "type": "weapon",
+    "subtype": "scythe",
+    "description": "A powerful sun spirit infused this one-of-a-kind scythe with her majestic aura. Harness the power of both Light and Fire as you slice through your foes with the glory of the sun!",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17244436",
+    "releaseDate": "",
+    "elements": ["FIR", "LIG"],
+    "level": "33",
+    "damage": "53-63",
+    "stats": "Crit +3, END +3, Bonus +3",
+    "resists": "Darkness +5, Light +5, Immobility +5",
+    "rarity": "10",
+    "obtainMethods": [
+      {
+        "location": "Cysero's Weapons",
+        "price": "325 Dragon Coins",
+        "priceType": "dc",
+        "sellback": "293 DC (<24 hours) / 82 DC (>24 hours)",
+        "daRequired": false,
+        "dcRequired": true
+      }
+    ],
+    "tags": ["fir", "lig", "dc"],
+    "daRequired": false,
+    "dcRequired": true,
+    "isRare": true
+  },
+  {
+    "id": "weapon-anagenesis",
+    "name": "Anagenesis",
+    "slug": "weapon-anagenesis",
+    "type": "weapon",
+    "subtype": "scythe",
+    "description": "A pulsing blade made from the still-living flesh of... Just kidding! It's red licorice. (Cosmetic)",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22423874",
+    "releaseDate": "",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Anagenesis.png",
+    "elements": ["DAR"],
+    "level": "1",
+    "damage": "0-0",
+    "stats": "None",
+    "resists": "None",
+    "rarity": "0",
+    "obtainMethods": [
+      {
+        "location": "Vampire Booth 2025",
+        "price": "N/A",
+        "priceType": "merge",
+        "sellback": "N/A",
+        "requiredItems": "1 CandyCon Gummy Gemstone",
+        "daRequired": false,
+        "dcRequired": true
+      }
+    ],
+    "tags": ["dar", "merge"],
+    "daRequired": false,
+    "dcRequired": true,
+    "isCosmetic": true,
+    "isSeasonal": true
+  },
+  {
+    "id": "weapon-ancient-defender-edge-i-vii",
+    "name": "Ancient Defender Edge (I-VII)",
+    "slug": "weapon-ancient-defender-edge-i-vii",
+    "type": "weapon",
+    "subtype": "scythe",
+    "description": "The ancient soldiers of the Void used these arms to defend the Core!",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21748355",
+    "releaseDate": "",
+    "elements": [],
+    "level": "30",
+    "damage": "40-60",
+    "stats": "Crit +5, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +2, END +2, LUK +2, INT +3, DEX +3, STR +3, Bonus +3",
+    "resists": "Darkness +3, Energy +3",
+    "rarity": "8",
+    "obtainMethods": [
+      {
+        "location": "Def. Rares",
+        "price": "N/A",
+        "priceType": "merge",
+        "sellback": "200 Gold",
+        "requiredItems": "50 Defender's Medal",
+        "daRequired": false,
+        "dmRequired": true
+      }
+    ],
+    "tags": ["merge"],
+    "daRequired": false,
+    "dmRequired": true
+  },
+  {
+    "id": "weapon-ancient-energy-blade-i-ii-iii",
+    "name": "Ancient Energy Blade (I, II, III)",
+    "slug": "weapon-ancient-energy-blade-i-ii-iii",
+    "type": "weapon",
+    "subtype": "scythe",
+    "description": "In your hands, the weight of this weapon just feels right. Proof of victory over J6 and Twang. (CC: Element)",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22408378",
+    "releaseDate": "",
+    "elements": ["ENE"],
+    "level": "70",
+    "damage": "85-89",
+    "stats": "Block +9, Dodge +9, Parry +9, Crit +7, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +13, END +13, INT +10, DEX +10, STR +10, Bonus +7",
+    "resists": "All +6, Health -6",
+    "rarity": "0",
+    "obtainMethods": [
+      {
+        "location": "Passion & Peace (Shop)",
+        "price": "N/A",
+        "priceType": "merge",
+        "sellback": "0 Dragon Coins",
+        "requiredItems": "1 Ancient Data Chip & 1 Repaired Energy Blade",
+        "daRequired": false,
+        "dcRequired": true
+      }
+    ],
+    "tags": ["ene", "merge"],
+    "daRequired": false,
+    "dcRequired": true
+  },
+  {
+    "id": "weapon-ancient-frost-moglin-scepter",
+    "name": "Ancient Frost Moglin Scepter",
+    "slug": "weapon-ancient-frost-moglin-scepter",
+    "type": "weapon",
+    "subtype": "scythe",
+    "description": "This scepter was created by Frost Moglins in a past age. Well, not this one specifically. This is just a replica! (Cosmetic)",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22420153",
+    "releaseDate": "",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AncientFrostMoglinScepter.png",
+    "elements": ["ICE"],
+    "level": "1",
+    "damage": "0-0",
+    "stats": "None",
+    "resists": "None",
+    "rarity": "5",
+    "obtainMethods": [
+      {
+        "location": "Thawed Heart Rewards",
+        "price": "N/A",
+        "priceType": "merge",
+        "sellback": "N/A",
+        "requiredItems": "1 Ancient Ice Shard & 25 Defender's Medal",
+        "daRequired": false,
+        "dcRequired": true,
+        "dmRequired": true
+      }
+    ],
+    "tags": ["ice", "merge"],
+    "daRequired": false,
+    "dcRequired": true,
+    "dmRequired": true,
+    "isCosmetic": true,
+    "isSeasonal": true
+  },
+  {
+    "id": "weapon-ancient-frost-moglin-sword",
+    "name": "Ancient Frost Moglin Sword",
+    "slug": "weapon-ancient-frost-moglin-sword",
+    "type": "weapon",
+    "subtype": "scythe",
+    "description": "This sword was created by Frost Moglins to confront an ancient threat. Well, not this one specifically. This is just a replica! (Cosmetic)",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22420154",
+    "releaseDate": "",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AncientFrostMoglinSword.png",
+    "elements": ["ICE"],
+    "level": "1",
+    "damage": "0-0",
+    "stats": "None",
+    "resists": "None",
+    "rarity": "5",
+    "obtainMethods": [
+      {
+        "location": "Thawed Heart Rewards",
+        "price": "N/A",
+        "priceType": "merge",
+        "sellback": "N/A",
+        "requiredItems": "1 Ancient Ice Shard & 25 Defender's Medal",
+        "daRequired": false,
+        "dcRequired": true,
+        "dmRequired": true
+      }
+    ],
+    "tags": ["ice", "merge"],
+    "daRequired": false,
+    "dcRequired": true,
+    "dmRequired": true,
+    "isCosmetic": true,
+    "isSeasonal": true
+  },
+  {
+    "id": "weapon-anguished-gloom-glaive",
+    "name": "Anguished Gloom Glaive",
+    "slug": "weapon-anguished-gloom-glaive",
+    "type": "weapon",
+    "subtype": "scythe",
+    "description": "Nothing can fill the void left behind by this glaive! Visit the Black Market Moglin to upgrade this weapon.",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21046303",
+    "releaseDate": "",
+    "elements": [],
+    "level": "75",
+    "damage": "80-96",
+    "stats": "Dodge +2, Parry +3, Crit +12, Magic Def +8, Pierce Def +8, Melee Def +8, WIS +9, END +6, CHA +5, INT +12, DEX +12, STR +12, Bonus +7",
+    "resists": "All +10, Health -15",
+    "rarity": "25",
+    "obtainMethods": [
+      {
+        "location": "Gloom Glaive (Shop)",
+        "price": "N/A",
+        "priceType": "merge",
+        "sellback": "N/A",
+        "requiredItems": "1 Mournful Gloom Glaive & 1 Gloomy Void Crystal",
+        "daRequired": false,
+        "dcRequired": true
+      }
+    ],
+    "tags": ["merge"],
+    "daRequired": false,
+    "dcRequired": true,
+    "isRare": true
+  },
+  {
+    "id": "weapon-antique-blade-of-awe",
+    "name": "Antique Blade of Awe",
+    "slug": "weapon-antique-blade-of-awe",
+    "type": "weapon",
+    "subtype": "scythe",
+    "description": "Could this be the real thing?! Reforged from the past, this certainly looks like the Blade of Awe from legend. (Cosmetic)",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22411026",
+    "releaseDate": "",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AntiqueBladeofAwe.png",
+    "elements": ["STO"],
+    "level": "1",
+    "damage": "0-0",
+    "stats": "None",
+    "resists": "None",
+    "rarity": "5",
+    "obtainMethods": [
+      {
+        "location": "Guardian Exclusive",
+        "price": "0 Dragon Coins",
+        "priceType": "dc",
+        "sellback": "0 Dragon Coins",
+        "daRequired": false,
+        "dcRequired": true
+      }
+    ],
+    "alsoSee": [
+      {
+        "name": "Retroclear Blade of Awe",
+        "slug": "weapon-retroclear-blade-of-awe",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=22424358"
+      }
+    ],
+    "tags": ["sto", "dc"],
+    "daRequired": false,
+    "dcRequired": true,
+    "isCosmetic": true
+  },
+  {
+    "id": "weapon-antique-blade-of-chaos",
+    "name": "Antique Blade of Chaos",
+    "slug": "weapon-antique-blade-of-chaos",
+    "type": "weapon",
+    "subtype": "scythe",
+    "description": "Contained within this weapon is a strange power, threatening to escape and envelop all with its tendrils... Thankfully it's dormant. For now. (Cosmetic)",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22411032",
+    "releaseDate": "",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AntiqueBladeofChaos.png",
+    "elements": [],
+    "level": "1",
+    "damage": "0-0",
+    "stats": "None",
+    "resists": "None",
+    "rarity": "5",
+    "obtainMethods": [
+      {
+        "location": "Legend Exclusive",
+        "price": "0 Dragon Coins",
+        "priceType": "dc",
+        "sellback": "0 Dragon Coins",
+        "daRequired": false,
+        "dcRequired": true
+      }
+    ],
+    "tags": ["dc"],
+    "daRequired": false,
+    "dcRequired": true,
+    "isCosmetic": true
+  },
+  {
+    "id": "weapon-antique-dragonlord-s-rite",
+    "name": "Antique DragonLord's Rite",
+    "slug": "weapon-antique-dragonlord-s-rite",
+    "type": "weapon",
+    "subtype": "scythe",
+    "description": "A legendary blade wielded by DragonLords of the past, this storied weapon has served alongside dragons and DragonLords in defense of Lore. And now it's yours. (Cosmetic)",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22411028",
+    "releaseDate": "",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AntiqueDragonLord'sRite.png",
+    "elements": ["MET"],
+    "level": "1",
+    "damage": "0-0",
+    "stats": "None",
+    "resists": "None",
+    "rarity": "5",
+    "obtainMethods": [
+      {
+        "location": "DragonLord Exclusive",
+        "price": "0 Dragon Coins",
+        "priceType": "dc",
+        "sellback": "0 Dragon Coins",
+        "daRequired": false,
+        "dcRequired": true
+      }
+    ],
+    "notes": "*Despite not being tagged as DA Required, this weapon does require a Dragon Amulet to obtain.",
+    "tags": ["met", "dc"],
+    "daRequired": false,
+    "dcRequired": true,
+    "isCosmetic": true
+  },
+  {
+    "id": "weapon-antique-star-captain-s-claymore",
+    "name": "Antique Star Captain's Claymore",
+    "slug": "weapon-antique-star-captain-s-claymore",
+    "type": "weapon",
+    "subtype": "scythe",
+    "description": "A weapon from another time and place, it glows and hums with mysterious, otherworldly, power. How it found its way here, you do not know. (Cosmetic)",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22411030",
+    "releaseDate": "",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AntiqueStarCaptain'sClaymore.png",
+    "elements": ["ENE"],
+    "level": "1",
+    "damage": "0-0",
+    "stats": "None",
+    "resists": "None",
+    "rarity": "5",
+    "obtainMethods": [
+      {
+        "location": "Star Captain Exclusive",
+        "price": "0 Dragon Coins",
+        "priceType": "dc",
+        "sellback": "0 Dragon Coins",
+        "daRequired": false,
+        "dcRequired": true
+      }
+    ],
+    "notes": "Own this item to unlock Star Captain and Star Captain (CC)  Armor Customization options for the  Student class; this was implemented on  May 2nd, 2025.",
+    "tags": ["ene", "dc"],
+    "daRequired": false,
+    "dcRequired": true,
+    "isCosmetic": true
+  },
+  {
+    "id": "weapon-apostate-alpha-omega-ultima",
+    "name": "Apostate (Alpha, Omega, Ultima)",
+    "slug": "weapon-apostate-alpha-omega-ultima",
+    "type": "weapon",
+    "subtype": "scythe",
+    "description": "A basic Infernal blade, crafted from Exalted Forgemetal. Can be upgraded with additional Exalted Forgemetal.",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22357170",
+    "releaseDate": "",
+    "elements": ["EVI"],
+    "level": "40",
+    "damage": "60-72",
+    "stats": "Block +2, Dodge +2, Parry +2, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +5, END +5, CHA +2, LUK +2, INT +9, DEX +9, STR +9, Bonus +10",
+    "resists": "All +5, Health -10",
+    "rarity": "25",
+    "obtainMethods": [
+      {
+        "location": "Exalted Armory",
+        "price": "N/A",
+        "priceType": "merge",
+        "sellback": "0 Dragon Coins",
+        "requiredItems": "1 Exalted Forgemetal",
+        "daRequired": false,
+        "dcRequired": true
+      }
+    ],
+    "tags": ["evi", "merge"],
+    "daRequired": false,
+    "dcRequired": true
+  },
+  {
+    "id": "weapon-applied-weaving-for-beginners",
+    "name": "Applied Weaving for Beginners",
+    "slug": "weapon-applied-weaving-for-beginners",
+    "type": "weapon",
+    "subtype": "scythe",
+    "description": "Oddly enough, this book actually exists outside of your dream, although copies are quite rare and hard to come by. (Cosmetic)",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22401113",
+    "releaseDate": "",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AppliedWeavingforBeginners.png",
+    "elements": ["NAT"],
+    "level": "1",
+    "damage": "0-0",
+    "stats": "None",
+    "resists": "None",
+    "rarity": "0",
+    "obtainMethods": [
+      {
+        "location": "Edelian School Gear",
+        "price": "20,000 Gold",
+        "priceType": "gold",
+        "sellback": "2,000 Gold",
+        "daRequired": true
+      }
+    ],
+    "tags": ["nat", "gold"],
+    "daRequired": true,
+    "isCosmetic": true,
+    "isSeasonal": true
+  },
+  {
+    "id": "weapon-apsaydaaun-harvester-i-ix",
+    "name": "Apsaydaaun Harvester (I-IX)",
+    "slug": "weapon-apsaydaaun-harvester-i-ix",
+    "type": "weapon",
+    "subtype": "scythe",
+    "description": "The denizens of Apsaydaaun have never been known for their plant-tending. This prototype garden tool seems to be more practical for culling foes than weeds.",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22385160",
+    "releaseDate": "",
+    "elements": ["DAR"],
+    "level": "10",
+    "damage": "20-34",
+    "stats": "Block +1, Dodge +1, Parry +1, Crit +2, Magic Def +1, Pierce Def +1, Melee Def +1, LUK +2, INT +4, DEX +4, STR +4, Bonus +2",
+    "resists": "Nature +5, Ice +5",
+    "rarity": "8",
+    "obtainMethods": [
+      {
+        "location": "Green Thumbs",
+        "price": "N/A",
+        "priceType": "free",
+        "sellback": "500 Gold",
+        "daRequired": false
+      }
+    ],
+    "tags": ["dar", "free"],
+    "daRequired": false,
+    "isSeasonal": true
+  },
+  {
+    "id": "weapon-apsaydaaun-pumpcake-scepter-all-versions",
+    "name": "Apsaydaaun Pumpcake Scepter (All Versions)",
+    "slug": "weapon-apsaydaaun-pumpcake-scepter-all-versions",
+    "type": "weapon",
+    "subtype": "scythe",
+    "description": "A replica of the scepter wielded by Abraca and Dabra, this cake on a stick still retains some of their mysterious magic! It's tasty too! Probably shouldn't eat it, though. Probably.",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22187233",
+    "releaseDate": "",
+    "elements": ["GOO"],
+    "level": "10",
+    "damage": "26-41",
+    "stats": "Crit +1, CHA +1, LUK +1, INT +1, DEX +1, STR +1, Bonus +1",
+    "resists": "Fire +1, Ice +1, Darkness +1",
+    "rarity": "0",
+    "obtainMethods": [
+      {
+        "location": "Pumpcake Scepters",
+        "price": "100 Dragon Coins",
+        "priceType": "dc",
+        "sellback": "90 DC (<24 hours) / 25 DC (>24 hours)",
+        "daRequired": false,
+        "dcRequired": true
+      }
+    ],
+    "tags": ["goo", "dc"],
+    "daRequired": false,
+    "dcRequired": true,
+    "isRare": true
+  },
+  {
+    "id": "weapon-arcanotech-edge-i-ii-iii",
+    "name": "Arcanotech Edge (I, II, III)",
+    "slug": "weapon-arcanotech-edge-i-ii-iii",
+    "type": "weapon",
+    "subtype": "scythe",
+    "description": "A precise blade forged from lightning and shadow, it hums with the ticks and whirs of its inner workings, delivering swift and deadly strikes. Proof of victory over Duskbolt, the Tempest.",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22409411",
+    "releaseDate": "",
+    "elements": ["WIN"],
+    "level": "50",
+    "damage": "62-86",
+    "stats": "Block +2, Dodge +2, Parry +2, Crit +6, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +3, END +3, LUK +3, INT +10, DEX +10, STR +10, Bonus +6",
+    "resists": "All +6, Health -11",
+    "rarity": "13",
+    "obtainMethods": [
+      {
+        "location": "Duskbolt, the Tempest",
+        "price": "N/A",
+        "priceType": "free",
+        "sellback": "0 Dragon Coins",
+        "daRequired": false,
+        "dcRequired": true
+      }
+    ],
+    "tags": ["win", "free"],
+    "daRequired": false,
+    "dcRequired": true
+  },
+  {
+    "id": "weapon-archivist-s-book-of-lore-the",
+    "name": "Archivist's Book of Lore, The",
+    "slug": "weapon-archivist-s-book-of-lore-the",
+    "type": "weapon",
+    "subtype": "scythe",
+    "description": "It's a Book of Lore! Just like the one you have, except bigger, heavier, and non-functional as a book in all respects. (Cosmetic)",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22403082",
+    "releaseDate": "",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/TheArchivist'sBookofLore.png",
+    "elements": ["NON"],
+    "level": "1",
+    "damage": "0-0",
+    "stats": "None",
+    "resists": "None",
+    "rarity": "0",
+    "obtainMethods": [
+      {
+        "location": "Time Shop",
+        "price": "300 Dragon Coins",
+        "priceType": "dc",
+        "sellback": "270 DC (<24 hours) / 75 DC (>24 hours)",
+        "daRequired": false,
+        "dcRequired": true
+      }
+    ],
+    "tags": ["non", "dc"],
+    "daRequired": false,
+    "dcRequired": true,
+    "isCosmetic": true
+  },
+  {
+    "id": "weapon-ascendant-s-partisan",
+    "name": "Ascendant's Partisan",
+    "slug": "weapon-ascendant-s-partisan",
+    "type": "weapon",
+    "subtype": "scythe",
+    "description": "Crafted in anticipation of an Unael's ascension, this weapon's owner vanished without a trace. (Cosmetic)",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22417697",
+    "releaseDate": "",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Ascendant'sPartisan.png",
+    "elements": [],
+    "level": "1",
+    "damage": "0-0",
+    "stats": "None",
+    "resists": "None",
+    "rarity": "0",
+    "obtainMethods": [
+      {
+        "location": "AARGH Rewards 4",
+        "price": "N/A",
+        "priceType": "merge",
+        "sellback": "N/A",
+        "requiredItems": "25 Timewarped Medal",
+        "daRequired": false,
+        "dcRequired": true
+      }
+    ],
+    "alsoSee": [
+      {
+        "name": "Unnecessarily Ornate Glaive",
+        "slug": "weapon-unnecessarily-ornate-glaive",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=22419998"
+      }
+    ],
+    "tags": ["merge"],
+    "daRequired": false,
+    "dcRequired": true,
+    "isCosmetic": true
+  },
+  {
+    "id": "weapon-ascended-claymore-all-versions",
+    "name": "Ascended Claymore (All Versions)",
+    "slug": "weapon-ascended-claymore-all-versions",
+    "type": "weapon",
+    "subtype": "scythe",
+    "description": "This massive blade is used by those that have fully trained in the ways of the Ascended. The blade seems to be able to cut through almost anything!",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21952639",
+    "releaseDate": "",
+    "elements": ["BAC"],
+    "level": "20",
+    "damage": "35-47",
+    "stats": "Crit +2, WIS +2, END +2, INT +1, DEX +1, STR +1, Bonus +1",
+    "resists": "Fire +3",
+    "rarity": "25",
+    "obtainMethods": [
+      {
+        "location": "Ascendant CC",
+        "price": "1,200 Gold",
+        "priceType": "gold",
+        "sellback": "120 Gold",
+        "daRequired": false
+      }
+    ],
+    "tags": ["bac", "gold"],
+    "daRequired": false
+  },
+  {
+    "id": "weapon-ascended-spear-all-versions",
+    "name": "Ascended Spear (All Versions)",
+    "slug": "weapon-ascended-spear-all-versions",
+    "type": "weapon",
+    "subtype": "scythe",
+    "description": "Arester has entrusted you with one of his spears, his favored weapon. It is a fearsome and deadly implement.",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21953370",
+    "releaseDate": "",
+    "elements": ["BAC"],
+    "level": "20",
+    "damage": "35-57",
+    "stats": "Crit +3, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +2, END +2, CHA +2, INT +3, DEX +3, STR +3, Bonus +3",
+    "resists": "Water +3, Fire +3, Bacon +3, Immobility +1, Health -1",
+    "rarity": "90",
+    "obtainMethods": [
+      {
+        "location": "Ascendant CC DC",
+        "price": "250 Dragon Coins",
+        "priceType": "dc",
+        "sellback": "225 DC (<24 hours) / 63 DC (>24 hours)",
+        "daRequired": false,
+        "dcRequired": true
+      }
+    ],
+    "tags": ["bac", "dc"],
+    "daRequired": false,
+    "dcRequired": true
+  },
+  {
+    "id": "weapon-ashendal-s-z-blade-all-versions",
+    "name": "Ashendal's Z Blade (All Versions)",
+    "slug": "weapon-ashendal-s-z-blade-all-versions",
+    "type": "weapon",
+    "subtype": "scythe",
+    "description": "Crafted by Ashendal in a... different time, this blade hums with kinetic energy.",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22082907",
+    "releaseDate": "",
+    "elements": ["ENE"],
+    "level": "10",
+    "damage": "21-33",
+    "stats": "Crit +1, WIS +1, END +1, INT +1, DEX +1, STR +1, Bonus +1",
+    "resists": "Health -1, Water +1",
+    "rarity": "50",
+    "obtainMethods": [
+      {
+        "location": "Ash's Birthday",
+        "price": "800 Gold",
+        "priceType": "gold",
+        "sellback": "80 Gold",
+        "daRequired": false
+      }
+    ],
+    "tags": ["ene", "gold"],
+    "daRequired": false,
+    "isSeasonal": true
+  },
+  {
+    "id": "weapon-ashened-brand",
+    "name": "Ashened Brand",
+    "slug": "weapon-ashened-brand",
+    "type": "weapon",
+    "subtype": "scythe",
+    "description": "Wreathed in embers, the heat along this blade's edge burns with an unnatural hunger. (Cosmetic)",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22419287",
+    "releaseDate": "",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AshenedBrand.png",
+    "elements": ["FIR"],
+    "level": "1",
+    "damage": "0-0",
+    "stats": "None",
+    "resists": "None",
+    "rarity": "5",
+    "obtainMethods": [
+      {
+        "location": "DC Cosmetics",
+        "price": "300 Dragon Coins",
+        "priceType": "dc",
+        "sellback": "270 DC (<24 hours) / 75 DC (>24 hours)",
+        "daRequired": false,
+        "dcRequired": true
+      }
+    ],
+    "tags": ["fir", "dc"],
+    "daRequired": false,
+    "dcRequired": true,
+    "isCosmetic": true
+  },
+  {
+    "id": "weapon-asiago-blade",
+    "name": "Asiago Blade",
+    "slug": "weapon-asiago-blade",
+    "type": "weapon",
+    "subtype": "scythe",
+    "description": "It's gouda for you! This item requires a Dragon Amulet.",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21522258",
+    "releaseDate": "",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/HavartiBlade.png",
+    "elements": ["GOO"],
+    "level": "76",
+    "damage": "74-98",
+    "stats": "Dodge +2, Parry +1, Crit +9, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +6, END +4, CHA +9, LUK +6, INT +12, DEX +12, STR +12, Bonus +10",
+    "resists": "Water +11, Darkness +11, Energy +6, Light +6, Immobility +4, Health -3",
+    "rarity": "25",
+    "obtainMethods": [
+      {
+        "location": "Cheese Shop",
+        "price": "45,000 Gold",
+        "priceType": "gold",
+        "sellback": "4,500 Gold",
+        "daRequired": true
+      }
+    ],
+    "alsoSee": [
+      {
+        "name": "Bleu Blade",
+        "slug": "weapon-bleu-blade",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21522240"
+      },
+      {
+        "name": "Brie Blade",
+        "slug": "weapon-brie-blade",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21522241"
+      },
+      {
+        "name": "Circassian Blade",
+        "slug": "weapon-circassian-blade",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21522250"
+      },
+      {
+        "name": "Gouda Blade",
+        "slug": "weapon-gouda-blade",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21522266"
+      },
+      {
+        "name": "Havarti Blade",
+        "slug": "weapon-havarti-blade",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21522239"
+      },
+      {
+        "name": "Limburger Blade",
+        "slug": "weapon-limburger-blade",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21522259"
+      },
+      {
+        "name": "Minas Blade",
+        "slug": "weapon-minas-blade",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21522249"
+      },
+      {
+        "name": "Oscypek Blade",
+        "slug": "weapon-oscypek-blade",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21522257"
+      },
+      {
+        "name": "Swiss Blade",
+        "slug": "weapon-swiss-blade",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21522244"
+      }
+    ],
+    "tags": ["goo", "gold"],
+    "daRequired": true
+  },
+  {
+    "id": "weapon-astravian-caliburn",
+    "name": "Astravian Caliburn",
+    "slug": "weapon-astravian-caliburn",
+    "type": "weapon",
+    "subtype": "scythe",
+    "description": "Crafted for a special celebration on a distant world, this sword seems to slowly absorb energy from its surroundings.  (Cosmetic)",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22424538",
+    "releaseDate": "",
+    "elements": ["EVI"],
+    "level": "1",
+    "damage": "0-0",
+    "stats": "None",
+    "resists": "None",
+    "rarity": "1",
+    "obtainMethods": [
+      {
+        "location": "3DBD",
+        "price": "400 Dragon Coins",
+        "priceType": "dc",
+        "sellback": "360 DC (<24 hours) / 100 DC (>24 hours)",
+        "daRequired": false,
+        "dcRequired": true
+      }
+    ],
+    "tags": ["evi", "dc"],
+    "daRequired": false,
+    "dcRequired": true,
+    "isCosmetic": true,
+    "isSeasonal": true
+  },
+  {
+    "id": "weapon-astravian-key",
+    "name": "Astravian Key",
+    "slug": "weapon-astravian-key",
+    "type": "weapon",
+    "subtype": "scythe",
+    "description": "Forged to celebrate Darkon's birthday. This key could unlock many secrets... if it actually worked. (Cosmetic)",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22413654",
+    "releaseDate": "",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AstravianKey.png",
+    "elements": [],
+    "level": "1",
+    "damage": "0-0",
+    "stats": "None",
+    "resists": "None",
+    "rarity": "5",
+    "obtainMethods": [
+      {
+        "location": "3DBD",
+        "price": "500 Dragon Coins",
+        "priceType": "dc",
+        "sellback": "450 DC (<24 hours) / 125 DC (>24 hours)",
+        "daRequired": false,
+        "dcRequired": true
+      }
+    ],
+    "notes": "Weapon is animated; it has many moving, spinning, and rotating components, while the center of the scythe periodically crackles with energy.",
+    "tags": ["dc"],
+    "daRequired": false,
+    "dcRequired": true,
+    "isCosmetic": true,
+    "isSeasonal": true
+  },
+  {
+    "id": "weapon-astravian-paladin-s-blade",
+    "name": "Astravian Paladin's Blade",
+    "slug": "weapon-astravian-paladin-s-blade",
+    "type": "weapon",
+    "subtype": "scythe",
+    "description": "A trusty Paladin's weapon, imbued with Light! (Cosmetic)",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22413958",
+    "releaseDate": "",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AstravianPaladin'sBlade.png",
+    "elements": ["LIG"],
+    "level": "1",
+    "damage": "0-0",
+    "stats": "None",
+    "resists": "None",
+    "rarity": "0",
+    "obtainMethods": [
+      {
+        "location": "DC Cosmetics",
+        "price": "250 Dragon Coins",
+        "priceType": "dc",
+        "sellback": "225 DC (<24 hours) / 63 DC (>24 hours)",
+        "daRequired": false,
+        "dcRequired": true
+      }
+    ],
+    "alsoSee": [
+      {
+        "name": "Long Sword (Paladin Default)",
+        "slug": "weapon-long-sword-paladin-default",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=13524656"
+      }
+    ],
+    "tags": ["lig", "dc"],
+    "daRequired": false,
+    "dcRequired": true,
+    "isCosmetic": true
+  },
+  {
+    "id": "weapon-atealan-ceremonial-spear",
+    "name": "Atealan Ceremonial Spear",
+    "slug": "weapon-atealan-ceremonial-spear",
+    "type": "weapon",
+    "subtype": "scythe",
+    "description": "Spears of this type were once used by the Ateala in their year's end combat rituals. However, much like their ceremonial dances of today, this spear is only a recreation. (Cosmetic)(CC: Element, Base, Trim)",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22399315",
+    "releaseDate": "",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AtealanCeremonialSpear.png",
+    "alternativeImages": [
+      {
+        "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AtealanCeremonialSpear-ElementalAttunement.png",
+        "caption": "Elemental Attunement"
+      }
+    ],
+    "elements": ["NON"],
+    "level": "1",
+    "damage": "0-0",
+    "stats": "None",
+    "resists": "None",
+    "rarity": "0",
+    "obtainMethods": [
+      {
+        "location": "Happy New Year 2022",
+        "price": "N/A",
+        "priceType": "free",
+        "sellback": "N/A",
+        "daRequired": false,
+        "dcRequired": true
+      }
+    ],
+    "notes": "Weapon is animated; ring at the center of the spearhead revolves and radiates bursts of magic continuously.\nWeapon's appearance is attuned to the player's equipped weapon's element; refer to   for all appearances.\nWood elemental attunement became accessible upon the release of  Spare Chair on  January 28th, 2023.",
+    "tags": ["non", "free"],
+    "daRequired": false,
+    "dcRequired": true,
+    "isCosmetic": true,
+    "isSeasonal": true
+  },
+  {
+    "id": "weapon-atherion",
+    "name": "Atherion",
+    "slug": "weapon-atherion",
+    "type": "weapon",
+    "subtype": "scythe",
+    "description": "An ancient tool, once bound to a sacred anvil. Whatever history they may have forged together has been lost to time. Click to change its appearance! (Cosmetic)",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22418850",
+    "releaseDate": "",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Atherion.png",
+    "alternativeImages": [
+      {
+        "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Atherion-Clicked.png",
+        "caption": "Clicked Appearance"
+      }
+    ],
+    "elements": ["FEA"],
+    "level": "1",
+    "damage": "0-0",
+    "stats": "None",
+    "resists": "None",
+    "rarity": "0",
+    "obtainMethods": [
+      {
+        "location": "DC Cosmetics",
+        "price": "400 Dragon Coins",
+        "priceType": "dc",
+        "sellback": "360 DC (<24 hours) / 100 DC (>24 hours)",
+        "daRequired": false,
+        "dcRequired": true
+      }
+    ],
+    "notes": "Weapon is animated; the sphere of mana on the hammer rotates continuously.\nClick anywhere on the weapon to change between two appearances.\nDefault\nClicked",
+    "tags": ["fea", "dc"],
+    "daRequired": false,
+    "dcRequired": true,
+    "isCosmetic": true
+  },
+  {
+    "id": "weapon-aurora-key-the",
+    "name": "Aurora Key, The",
+    "slug": "weapon-aurora-key-the",
+    "type": "weapon",
+    "subtype": "scythe",
+    "description": "A key to the Equilibrium Gate, a key to victory against your opponents. This item requires a Dragon Amulet.",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18663911",
+    "releaseDate": "",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AuroraKey.png",
+    "elements": ["LIG"],
+    "level": "63",
+    "damage": "68-88",
+    "stats": "Crit +7, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +6, INT +6, DEX +6, STR +6, Bonus +6",
+    "resists": "All +2",
+    "rarity": "10",
+    "obtainMethods": [
+      {
+        "location": "Aurora Key",
+        "price": "3,000 Gold",
+        "priceType": "gold",
+        "sellback": "300 Gold",
+        "daRequired": true
+      }
+    ],
+    "alsoSee": [
+      {
+        "name": "Dull Aurora Key",
+        "slug": "weapon-dull-aurora-key",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=18671333"
+      },
+      {
+        "name": "Polished Aurora Key",
+        "slug": "weapon-polished-aurora-key",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=18665152"
+      },
+      {
+        "name": "Shiny Aurora Key",
+        "slug": "weapon-shiny-aurora-key",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=18671328"
+      },
+      {
+        "name": "Tarnished Aurora Key",
+        "slug": "weapon-tarnished-aurora-key",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=18665146"
+      }
+    ],
+    "tags": ["lig", "gold"],
+    "daRequired": true
+  },
+  {
+    "id": "weapon-aurorice",
+    "name": "Aurorice",
+    "slug": "weapon-aurorice",
+    "type": "weapon",
+    "subtype": "scythe",
+    "description": "A versatile staff from the frozen Northlands, shaped for both magic and blade. It carries the legacy of those who braved the ice and its countless perils.(Cosmetic)",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22419834",
+    "releaseDate": "",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Aurorice.png",
+    "alternativeImages": [
+      {
+        "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Aurorice-Clicked.png",
+        "caption": "Clicked Appearance"
+      }
+    ],
+    "elements": ["ICE"],
+    "level": "1",
+    "damage": "0-0",
+    "stats": "None",
+    "resists": "None",
+    "rarity": "5",
+    "obtainMethods": [
+      {
+        "location": "DC Cosmetics",
+        "price": "450 Dragon Coins",
+        "priceType": "dc",
+        "sellback": "405 DC (<24 hours) / 113 DC (>24 hours)",
+        "daRequired": false,
+        "dcRequired": true
+      }
+    ],
+    "notes": "Weapon is animated; the snowflake at the end of the weapon rotates continuously.\nClick anywhere on the weapon to change its appearance between staff (default) and sword.\nStaff (Default)\nSword",
+    "tags": ["ice", "dc"],
+    "daRequired": false,
+    "dcRequired": true,
+    "isCosmetic": true
+  },
+  {
+    "id": "weapon-auto-mecha-hitting-things-cube",
+    "name": "Auto-Mecha-Hitting-Things-Cube",
+    "slug": "weapon-auto-mecha-hitting-things-cube",
+    "type": "weapon",
+    "subtype": "scythe",
+    "description": "You commissioned this cube mechanism based on the memories of your dream, but it ended up just being a solid lump of metal. (Cosmetic)",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22401114",
+    "releaseDate": "",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AutoMechaHittingThingsCube.png",
+    "elements": ["MET"],
+    "level": "1",
+    "damage": "0-0",
+    "stats": "None",
+    "resists": "None",
+    "rarity": "0",
+    "obtainMethods": [
+      {
+        "location": "Edelian School Gear",
+        "price": "20,000 Gold",
+        "priceType": "gold",
+        "sellback": "2,000 Gold",
+        "daRequired": true
+      }
+    ],
+    "tags": ["met", "gold"],
+    "daRequired": true,
+    "isCosmetic": true,
+    "isSeasonal": true
+  },
+  {
+    "id": "weapon-autumn-s-cull-i-ix",
+    "name": "Autumn's Cull (I-IX)",
+    "slug": "weapon-autumn-s-cull-i-ix",
+    "type": "weapon",
+    "subtype": "scythe",
+    "description": "A weapon embodying nature's passage. Click to shift between Nature and Ice damage. This weapon was forged by Dracelix!",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22397687",
+    "releaseDate": "",
+    "elements": ["ICE", "NAT"],
+    "level": "10",
+    "damage": "19-35",
+    "stats": "Crit +2, Magic Def +1, Pierce Def +1, Melee Def +1, WIS +2, END +2, INT +2, DEX +2, STR +2, Bonus +2",
+    "resists": "Darkness +1, Light +1, Health -1",
+    "rarity": "8",
+    "obtainMethods": [
+      {
+        "location": "Autumn's Call",
+        "price": "500 Dragon Coins",
+        "priceType": "dc",
+        "sellback": "450 DC (<24 hours) / 125 DC (>24 hours)",
+        "daRequired": false,
+        "dcRequired": true
+      }
+    ],
+    "tags": ["ice", "nat", "dc"],
+    "daRequired": false,
+    "dcRequired": true,
+    "isSeasonal": true
+  },
+  {
+    "id": "weapon-aware-orchidea",
+    "name": "Aware Orchidea",
+    "slug": "weapon-aware-orchidea",
+    "type": "weapon",
+    "subtype": "scythe",
+    "description": "This gorgeous scythe was woven by the SoulWeaver, Tomix, in celebration of knowledge and learning.",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20685950",
+    "releaseDate": "",
+    "imageUrl": "https://i.imgur.com/z4dxAbw.png",
+    "elements": ["GOO"],
+    "level": "70",
+    "damage": "78-94",
+    "stats": "Block +1, Dodge +1, Parry +2, Crit +9, Magic Def +7, Pierce Def +7, Melee Def +7, WIS +8, END +6, CHA +6, LUK +5, INT +10, DEX +10, STR +10, Bonus +7",
+    "resists": "All +5, Health -8",
+    "rarity": "15",
+    "obtainMethods": [
+      {
+        "location": "Back to School Shop",
+        "price": "375 Dragon Coins",
+        "priceType": "dc",
+        "sellback": "338 DC (<24 hours) / 94 DC (>24 hours)",
+        "daRequired": false,
+        "dcRequired": true
+      }
+    ],
+    "alsoSee": [
+      {
+        "name": "Crafty Orchidea",
+        "slug": "weapon-crafty-orchidea",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20685930"
+      },
+      {
+        "name": "Detailed Orchidea",
+        "slug": "weapon-detailed-orchidea",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20685937"
+      },
+      {
+        "name": "Half-Aware Orchidea",
+        "slug": "weapon-half-aware-orchidea",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20884902"
+      },
+      {
+        "name": "Half-Crafty Orchidea",
+        "slug": "weapon-half-crafty-orchidea",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20884864"
+      },
+      {
+        "name": "Half-Detailed Orchidea",
+        "slug": "weapon-half-detailed-orchidea",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20884881"
+      },
+      {
+        "name": "Half-Learned Orchidea",
+        "slug": "weapon-half-learned-orchidea",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20884893"
+      },
+      {
+        "name": "Half-Proficient Orchidea",
+        "slug": "weapon-half-proficient-orchidea",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20884933"
+      },
+      {
+        "name": "Learned Orchidea",
+        "slug": "weapon-learned-orchidea",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20685940"
+      },
+      {
+        "name": "Proficient Orchidea",
+        "slug": "weapon-proficient-orchidea",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20685955"
+      }
+    ],
+    "tags": ["goo", "dc"],
+    "daRequired": false,
+    "dcRequired": true,
+    "isRare": true
+  },
+  {
+    "id": "weapon-awesome-foam-hammer",
+    "name": "Awesome Foam Hammer",
+    "slug": "weapon-awesome-foam-hammer",
+    "type": "weapon",
+    "subtype": "scythe",
+    "description": "A very realistic foam copy of Rolith's Hammer made in honor of Rolith's Bachelor Party!",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21122129",
+    "releaseDate": "",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/weapons/AwesomeFoamHammer.png",
+    "elements": ["LIG"],
+    "level": "51",
+    "damage": "64-82",
+    "stats": "Parry +1, Crit +3, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +4, LUK +5, INT +7, DEX +7, STR +7, Bonus +6",
+    "resists": "All +5",
+    "rarity": "15",
+    "obtainMethods": [
+      {
+        "location": "HHD13 DC",
+        "price": "300 Dragon Coins",
+        "priceType": "dc",
+        "sellback": "270 DC (<24 hours) / 75 DC (>24 hours)",
+        "daRequired": false,
+        "dcRequired": true
+      }
+    ],
+    "alsoSee": [
+      {
+        "name": "Fan Foam Hammer",
+        "slug": "weapon-fan-foam-hammer",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21122123"
+      },
+      {
+        "name": "Fluffy Foam Hammer",
+        "slug": "weapon-fluffy-foam-hammer",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21122127"
+      },
+      {
+        "name": "Foam Hammer (All Versions)",
+        "slug": "weapon-foam-hammer-all-versions",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21122117"
+      },
+      {
+        "name": "Foam Rolith's Hammer",
+        "slug": "weapon-foam-rolith-s-hammer",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=14789490"
+      },
+      {
+        "name": "Foamy Foam Hammer",
+        "slug": "weapon-foamy-foam-hammer",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21122134"
+      },
+      {
+        "name": "Gritty Foam Hammer",
+        "slug": "weapon-gritty-foam-hammer",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21122121"
+      },
+      {
+        "name": "Hammer (Rolith's Dress Uniform Default)",
+        "slug": "weapon-hammer-rolith-s-dress-uniform-default",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21122112"
+      },
+      {
+        "name": "Light Foam Hammer",
+        "slug": "weapon-light-foam-hammer",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21122136"
+      },
+      {
+        "name": "Rolith's Hammer of Protection (All Versions)",
+        "slug": "weapon-rolith-s-hammer-of-protection-all-versions",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20779688"
+      },
+      {
+        "name": "Squishy Foam Hammer",
+        "slug": "weapon-squishy-foam-hammer",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21122130"
+      },
+      {
+        "name": "Super Foam Hammer",
+        "slug": "weapon-super-foam-hammer",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21122139"
+      },
+      {
+        "name": "Wrestling Foam Hammer",
+        "slug": "weapon-wrestling-foam-hammer",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21122132"
+      }
+    ],
+    "tags": ["lig", "dc"],
+    "daRequired": false,
+    "dcRequired": true,
+    "isSeasonal": true
+  },
+  {
+    "id": "weapon-azure-gleam",
+    "name": "Azure Gleam",
+    "slug": "weapon-azure-gleam",
+    "type": "weapon",
+    "subtype": "scythe",
+    "description": "Wrought with immaculate gold accents, this crystalline gemblade channels the raw power of Neso, Avatar of Water. (Cosmetic)",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22419194",
+    "releaseDate": "",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AzureGleam.png",
+    "elements": ["WAT"],
+    "level": "1",
+    "damage": "0-0",
+    "stats": "None",
+    "resists": "None",
+    "rarity": "5",
+    "obtainMethods": [
+      {
+        "location": "Elemental Gleam",
+        "price": "400 Dragon Coins",
+        "priceType": "dc",
+        "sellback": "360 DC (<24 hours) / 100 DC (>24 hours)",
+        "daRequired": false,
+        "dcRequired": true
+      }
+    ],
+    "notes": "Weapon is animated; the gem gleams periodically, spokes of light surrounding the gem rotate continuously, and particles float along the blade periodically.",
+    "tags": ["wat", "dc"],
+    "daRequired": false,
+    "dcRequired": true,
+    "isCosmetic": true,
+    "isSeasonal": true
+  }
+]

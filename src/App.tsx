@@ -3,6 +3,7 @@ import { BrowserRouter, Navigate, Routes, Route } from 'react-router-dom'
 import Layout from './components/layout/Layout'
 import { BadgeGridSkeleton } from './components/shared/LoadingSkeleton'
 import { ACCESSORY_SUBTYPES } from './types/accessory'
+import { WEAPON_SUBTYPES } from './types/weapon'
 
 const HomePage = lazy(() => import('./pages/HomePage'))
 const BadgesPage = lazy(() => import('./pages/BadgesPage'))
@@ -12,6 +13,8 @@ const PetDetailPage = lazy(() => import('./pages/PetDetailPage'))
 const GuestDetailPage = lazy(() => import('./pages/GuestDetailPage'))
 const AccessoryListPage = lazy(() => import('./pages/AccessoryListPage'))
 const AccessoryDetailPage = lazy(() => import('./pages/AccessoryDetailPage'))
+const WeaponListPage = lazy(() => import('./pages/WeaponListPage'))
+const WeaponDetailPage = lazy(() => import('./pages/WeaponDetailPage'))
 const ComingSoonPage = lazy(() => import('./pages/ComingSoonPage'))
 
 function PageLoader() {
@@ -38,11 +41,24 @@ export default function App() {
             <Route path="/guests/:slug" element={<GuestDetailPage />} />
             <Route path="/accessories" element={<AccessoryListPage />} />
             <Route path="/accessories/:slug" element={<AccessoryDetailPage />} />
-            {ACCESSORY_SUBTYPES.map(meta => (
+            {ACCESSORY_SUBTYPES.map((meta) => (
               <Route
                 key={meta.route}
                 path={meta.route}
-                element={<Navigate to={`/accessories?type=${encodeURIComponent(meta.subtype)}`} replace />}
+                element={
+                  <Navigate to={`/accessories?type=${encodeURIComponent(meta.subtype)}`} replace />
+                }
+              />
+            ))}
+            <Route path="/weapons" element={<WeaponListPage />} />
+            <Route path="/weapons/:slug" element={<WeaponDetailPage />} />
+            {WEAPON_SUBTYPES.map((meta) => (
+              <Route
+                key={meta.route}
+                path={meta.route}
+                element={
+                  <Navigate to={`/weapons?type=${encodeURIComponent(meta.subtype)}`} replace />
+                }
               />
             ))}
             <Route path="/classes" element={<ComingSoonPage />} />
@@ -51,7 +67,6 @@ export default function App() {
             <Route path="/monsters" element={<ComingSoonPage />} />
             <Route path="/npcs" element={<ComingSoonPage />} />
             <Route path="/items" element={<ComingSoonPage />} />
-            <Route path="/weapons" element={<ComingSoonPage />} />
             <Route path="*" element={<ComingSoonPage />} />
           </Routes>
         </Suspense>

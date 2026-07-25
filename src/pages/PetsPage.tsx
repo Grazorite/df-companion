@@ -31,29 +31,48 @@ export default function PetsPage() {
   const debouncedQuery = useDebounce(inputValue, 300)
 
   // Parse URL params
-  const typeParam = searchParams.get('type')  // "pets", "guests", or null (both)
-  const elementParam = searchParams.get('element')  // comma-separated codes
-  const accessParam = searchParams.get('access')  // comma-separated: "da,free" or null (all)
-  const categoryParam = searchParams.get('category')  // comma-separated: "temp,rare"
+  const typeParam = searchParams.get('type') // "pets", "guests", or null (both)
+  const elementParam = searchParams.get('element') // comma-separated codes
+  const accessParam = searchParams.get('access') // comma-separated: "da,free" or null (all)
+  const categoryParam = searchParams.get('category') // comma-separated: "temp,rare"
 
   const activeTypes: EntryType[] = typeParam
     ? typeParam.split(',').filter((t): t is EntryType => t === 'pet' || t === 'guest')
-    : []  // empty = both
+    : [] // empty = both
 
   const activeElements = elementParam ? elementParam.split(',').filter(Boolean) : []
-  const activeAccess = accessParam ? accessParam.split(',').filter((a): a is 'multi' | 'free' | 'merge' | 'dc' | 'dm' | 'da' =>
-    ['multi', 'free', 'merge', 'dc', 'dm', 'da'].includes(a)
-  ) : []
-  const activeCategories = categoryParam ? categoryParam.split(',').filter((c): c is 'temp' | 'rare' | 'seasonal' | 'special-offer' | 'retired' => 
-    ['temp', 'rare', 'seasonal', 'special-offer', 'retired'].includes(c)
-  ) : []
-  
+  const activeAccess = accessParam
+    ? accessParam
+        .split(',')
+        .filter((a): a is 'multi' | 'free' | 'merge' | 'dc' | 'dm' | 'da' =>
+          ['multi', 'free', 'merge', 'dc', 'dm', 'da'].includes(a)
+        )
+    : []
+  const activeCategories = categoryParam
+    ? categoryParam
+        .split(',')
+        .filter((c): c is 'temp' | 'rare' | 'seasonal' | 'special-offer' | 'retired' =>
+          ['temp', 'rare', 'seasonal', 'special-offer', 'retired'].includes(c)
+        )
+    : []
+
   const { elements, traits } = useElements()
   const filterEntries = [...elements, ...traits]
-  const allCodes = filterEntries.map(e => e.code)
-  const activeTypeLabel = activeTypes.length === 1
-    ? activeTypes[0] === 'pet' ? 'Pets' : 'Guests'
-    : activeTypes.length > 1 ? 'Pets & Guests' : undefined
+  const allCodes = filterEntries.map((e) => e.code)
+  const activeTypeLabel =
+    activeTypes.length === 1
+      ? activeTypes[0] === 'pet'
+        ? 'Pets'
+        : 'Guests'
+      : activeTypes.length > 1
+        ? 'Pets & Guests'
+        : undefined
+  const pageDescription =
+    activeTypes.length === 1 && activeTypes[0] === 'pet'
+      ? 'Companions who may deal additional damage, heal you, buff you, or debuff your foe. May be equipped from your inventory, or invited.'
+      : activeTypes.length === 1 && activeTypes[0] === 'guest'
+        ? 'Companions who may have a selection of skills to be utilized, and their own set of potions. Cannot equip items from your inventory.'
+        : 'The people (or pets) who will help you in your battles...'
 
   // Sync URL
   useEffect(() => {
@@ -76,7 +95,12 @@ export default function PetsPage() {
   }
 
   const { pets, total } = usePets(filters)
-  const counts = usePetCounts({ query: debouncedQuery, elements: filters.elements, access: filters.access, categories: filters.categories })
+  const counts = usePetCounts({
+    query: debouncedQuery,
+    elements: filters.elements,
+    access: filters.access,
+    categories: filters.categories,
+  })
 
   // Determine if we're showing guests only (for conditional filter display)
   const isGuestsOnly = activeTypes.length === 1 && activeTypes[0] === 'guest'
@@ -85,7 +109,7 @@ export default function PetsPage() {
     const type = id as EntryType
     let next: EntryType[]
     if (activeTypes.includes(type)) {
-      next = activeTypes.filter(t => t !== type)
+      next = activeTypes.filter((t) => t !== type)
     } else {
       next = [...activeTypes, type]
     }
@@ -100,7 +124,7 @@ export default function PetsPage() {
 
   function toggleElement(code: string) {
     const next = activeElements.includes(code)
-      ? activeElements.filter(e => e !== code)
+      ? activeElements.filter((e) => e !== code)
       : [...activeElements, code]
     const params: Record<string, string> = {}
     if (debouncedQuery) params.q = debouncedQuery
@@ -114,7 +138,7 @@ export default function PetsPage() {
   function toggleAccess(id: string) {
     const accessType = id as 'multi' | 'free' | 'merge' | 'dc' | 'dm' | 'da'
     const next = activeAccess.includes(accessType)
-      ? activeAccess.filter(a => a !== accessType)
+      ? activeAccess.filter((a) => a !== accessType)
       : [...activeAccess, accessType]
     const params: Record<string, string> = {}
     if (debouncedQuery) params.q = debouncedQuery
@@ -128,7 +152,7 @@ export default function PetsPage() {
   function toggleCategory(id: string) {
     const cat = id as 'temp' | 'rare' | 'seasonal' | 'special-offer' | 'retired'
     const next = activeCategories.includes(cat)
-      ? activeCategories.filter(c => c !== cat)
+      ? activeCategories.filter((c) => c !== cat)
       : [...activeCategories, cat]
     const params: Record<string, string> = {}
     if (debouncedQuery) params.q = debouncedQuery
@@ -140,8 +164,18 @@ export default function PetsPage() {
   }
 
   const segments = [
-    { id: 'pet', label: 'Pets', count: counts.pet, active: activeTypes.length === 0 || activeTypes.includes('pet') },
-    { id: 'guest', label: 'Guests', count: counts.guest, active: activeTypes.length === 0 || activeTypes.includes('guest') },
+    {
+      id: 'pet',
+      label: 'Pets',
+      count: counts.pet,
+      active: activeTypes.length === 0 || activeTypes.includes('pet'),
+    },
+    {
+      id: 'guest',
+      label: 'Guests',
+      count: counts.guest,
+      active: activeTypes.length === 0 || activeTypes.includes('guest'),
+    },
   ]
 
   return (
@@ -149,7 +183,7 @@ export default function PetsPage() {
       {/* Header */}
       <div className="mb-5">
         <h1 className="text-2xl font-bold text-gold mb-1">Pets & Guests</h1>
-        <p className="text-text-secondary text-sm">Companions who fight alongside you in DragonFable.</p>
+        <p className="text-text-secondary text-sm">{pageDescription}</p>
       </div>
 
       {/* Segment toggle */}
@@ -169,13 +203,13 @@ export default function PetsPage() {
 
       {/* Level 1: Access filter */}
       <div className="flex gap-2 flex-wrap mb-3" role="group" aria-label="Filter by access">
-        {ACCESS_OPTIONS.map(opt => {
+        {ACCESS_OPTIONS.map((opt) => {
           // Hide pet-only filters when showing guests only
           if (opt.petsOnly && isGuestsOnly) return null
-          
+
           const isActive = activeAccess.includes(opt.id as any)
           const isDisabled = opt.petsOnly && isGuestsOnly
-          
+
           return (
             <button
               key={opt.id}
@@ -186,8 +220,8 @@ export default function PetsPage() {
                 isActive
                   ? 'bg-gold-bright text-bg-base font-semibold'
                   : isDisabled
-                  ? 'bg-bg-overlay text-text-muted opacity-40 cursor-not-allowed'
-                  : 'bg-bg-overlay text-text-secondary hover:bg-border-hover hover:text-text-primary'
+                    ? 'bg-bg-overlay text-text-muted opacity-40 cursor-not-allowed'
+                    : 'bg-bg-overlay text-text-secondary hover:bg-border-hover hover:text-text-primary'
               }`}
             >
               {opt.label}
@@ -214,7 +248,7 @@ export default function PetsPage() {
       {/* Level 2: Category filter (multi-select) */}
       <div className="mb-3">
         <div className="flex flex-wrap gap-2">
-          {CATEGORY_OPTIONS.map(opt => {
+          {CATEGORY_OPTIONS.map((opt) => {
             if (isGuestsOnly && opt.id === 'special-offer') return null
 
             return (
@@ -253,9 +287,10 @@ export default function PetsPage() {
       {/* Level 3: Element/Trait filter — select/deselect element pills */}
       <div className="mb-2">
         <div className="flex flex-wrap gap-1.5">
-          {allCodes.map(code => {
+          {allCodes.map((code) => {
             const isActive = activeElements.includes(code)
-            const colour = filterEntries.find(e => e.code === code)?.colour ?? 'bg-bg-overlay text-text-muted'
+            const colour =
+              filterEntries.find((e) => e.code === code)?.colour ?? 'bg-bg-overlay text-text-muted'
             return (
               <button
                 key={code}
@@ -263,9 +298,11 @@ export default function PetsPage() {
                 aria-pressed={isActive}
                 className="transition-all duration-150"
               >
-                <span className={`inline-flex items-center text-[10px] font-medium px-1.5 py-0.5 rounded-full ${colour} ${
-                  isActive ? 'ring-2 ring-gold' : 'opacity-60 hover:opacity-100'
-                }`}>
+                <span
+                  className={`inline-flex items-center text-[10px] font-medium px-1.5 py-0.5 rounded-full ${colour} ${
+                    isActive ? 'ring-2 ring-gold' : 'opacity-60 hover:opacity-100'
+                  }`}
+                >
                   {code}
                 </span>
               </button>
@@ -300,10 +337,22 @@ export default function PetsPage() {
           <span className="text-gold"> · {activeElements.join(', ')}</span>
         )}
         {activeAccess.length > 0 && (
-          <span className="text-orange-400"> · {activeAccess.map(a => ACCESS_OPTIONS.find(opt => opt.id === a)?.label ?? a).join(', ')}</span>
+          <span className="text-orange-400">
+            {' '}
+            ·{' '}
+            {activeAccess
+              .map((a) => ACCESS_OPTIONS.find((opt) => opt.id === a)?.label ?? a)
+              .join(', ')}
+          </span>
         )}
         {activeCategories.length > 0 && (
-          <span className="text-orange-400"> · {activeCategories.map(c => CATEGORY_OPTIONS.find(opt => opt.id === c)?.label ?? c).join(', ')}</span>
+          <span className="text-orange-400">
+            {' '}
+            ·{' '}
+            {activeCategories
+              .map((c) => CATEGORY_OPTIONS.find((opt) => opt.id === c)?.label ?? c)
+              .join(', ')}
+          </span>
         )}
       </p>
 

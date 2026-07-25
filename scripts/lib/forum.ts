@@ -32,6 +32,48 @@ export function loadForumCookie(label = 'scraper'): string {
   return match[1]
 }
 
+/**
+ * Error thrown when the forum rate-limits us (HTTP 429) or is briefly
+ * unavailable (HTTP 503). Carries an optional server-provided cooldown so the
+ * retry loop can honor `Retry-After` instead of guessing.
+ */
+export class RetryableHttpError extends Error {
+  readonly status: number
+  readonly retryAfterMs?: number
+
+  constructor(status: number, url: string, retryAfterMs?: number) {
+    super(`HTTP ${status}: ${url}`)
+    this.name = 'RetryableHttpError'
+    this.status = status
+    this.retryAfterMs = retryAfterMs
+  }
+}
+
+/**
+ * Parse an HTTP `Retry-After` header, which is either a number of seconds or an
+ * HTTP date. Returns milliseconds, or undefined when absent/unparseable.
+ */
+export function parseRetryAfterMs(headerValue: string | null): number | undefined {
+  if (!headerValue) return undefined
+
+  const seconds = Number(headerValue)
+  if (Number.isFinite(seconds)) return Math.max(0, seconds * 1000)
+
+  const dateMs = Date.parse(headerValue)
+  if (Number.isFinite(dateMs)) return Math.max(0, dateMs - Date.now())
+
+  return undefined
+}
+
+/**
+ * Exponential backoff with full jitter. Jitter spreads retries from concurrent
+ * workers so they don't stampede the forum in lockstep after a throttle.
+ */
+function computeBackoffMs(baseDelayMs: number, attempt: number): number {
+  const ceiling = baseDelayMs * 2 ** (attempt - 1)
+  return Math.round(Math.random() * ceiling)
+}
+
 export async function withRetry<T>(
   label: string,
   operation: () => Promise<T>,
@@ -48,8 +90,16 @@ export async function withRetry<T>(
       const message = error instanceof Error ? error.message : String(error)
       if (!retryHttp500 && /^HTTP 500:/i.test(message)) break
       if (attempt === attempts) break
-      console.warn(`Retrying ${label} after ${message} (${attempt}/${attempts})`)
-      await sleep(delayMs * attempt)
+
+      // Honor a server-provided cooldown for rate limits; otherwise back off
+      // with jitter so parallel workers don't retry in lockstep.
+      const serverRetryMs =
+        error instanceof RetryableHttpError ? error.retryAfterMs : undefined
+      const waitMs = serverRetryMs ?? computeBackoffMs(delayMs, attempt)
+      console.warn(
+        `Retrying ${label} after ${message} in ${waitMs}ms (${attempt}/${attempts})`
+      )
+      await sleep(waitMs)
     }
   }
 
@@ -84,7 +134,16 @@ export async function fetchForumPage(
             ...FORUM_HEADERS,
           },
         })
-        if (!response.ok) throw new Error(`HTTP ${response.status}: ${url}`)
+        if (!response.ok) {
+          if (response.status === 429 || response.status === 503) {
+            throw new RetryableHttpError(
+              response.status,
+              url,
+              parseRetryAfterMs(response.headers.get('retry-after'))
+            )
+          }
+          throw new Error(`HTTP ${response.status}: ${url}`)
+        }
         return response.text()
       } finally {
         clearTimeout(timer)

@@ -1,8 +1,21 @@
 import { NavLink, useLocation } from 'react-router-dom'
-import { Trophy, Map, Skull, Home, Sword, Users, Shirt, House, Package, PawPrint } from 'lucide-react'
+import {
+  Trophy,
+  Map,
+  Skull,
+  Home,
+  Sword,
+  Users,
+  Shirt,
+  House,
+  Package,
+  PawPrint,
+  Sparkles,
+} from 'lucide-react'
 import { useTotalBadgeCount } from '../../hooks/useBadges'
 import { useTotalPetCount } from '../../hooks/usePets'
 import { useTotalAccessoryCount } from '../../hooks/useAccessories'
+import { useTotalWeaponCount } from '../../hooks/useWeapons'
 
 // Mirrors the DF Encyclopedia forum structure exactly:
 // https://forums2.battleon.com/f/tt.asp?forumid=256
@@ -10,14 +23,14 @@ const NAV_ITEMS = [
   { to: '/', icon: Home, label: 'Home', exact: true, available: true },
   { to: '/accessories', icon: Shirt, label: 'Accessories', exact: false, available: true },
   { to: '/badges', icon: Trophy, label: 'Badges', exact: false, available: true },
-  { to: '/classes', icon: Sword, label: 'Classes / Abilities', exact: false, available: false },
+  { to: '/classes', icon: Sparkles, label: 'Classes / Abilities', exact: false, available: false },
   { to: '/housing', icon: House, label: 'Housing', exact: false, available: false },
   { to: '/locations', icon: Map, label: 'Locations / Quests', exact: false, available: false },
   { to: '/monsters', icon: Skull, label: 'Monsters', exact: false, available: false },
   { to: '/npcs', icon: Users, label: 'NPCs', exact: false, available: false },
   { to: '/pets', icon: PawPrint, label: 'Pets / Guests', exact: false, available: true },
   { to: '/items', icon: Package, label: 'Stackable Items', exact: false, available: false },
-  { to: '/weapons', icon: Sword, label: 'Weapons', exact: false, available: false },
+  { to: '/weapons', icon: Sword, label: 'Weapons', exact: false, available: true },
 ]
 
 export default function Navigation() {
@@ -25,6 +38,7 @@ export default function Navigation() {
   const badgeCount = useTotalBadgeCount()
   const petCount = useTotalPetCount()
   const accessoryCount = useTotalAccessoryCount()
+  const weaponCount = useTotalWeaponCount()
 
   const isNavItemActive = (to: string, exact: boolean) => {
     if (to === '/accessories') {
@@ -39,7 +53,7 @@ export default function Navigation() {
           '/necklaces',
           '/rings',
           '/trinkets',
-        ].some(route => location.pathname === route || location.pathname.startsWith(`${route}/`))
+        ].some((route) => location.pathname === route || location.pathname.startsWith(`${route}/`))
       )
     }
 
@@ -91,6 +105,9 @@ export default function Navigation() {
                   {to === '/pets' && (
                     <span className="text-xs text-text-muted tabular-nums">{petCount}</span>
                   )}
+                  {to === '/weapons' && (
+                    <span className="text-xs text-text-muted tabular-nums">{weaponCount}</span>
+                  )}
                 </NavLink>
               ) : (
                 <div
@@ -131,7 +148,14 @@ export default function Navigation() {
         aria-label="Main navigation"
       >
         <ul className="flex h-14" role="list">
-          {NAV_ITEMS.filter(item => item.to === '/' || item.to === '/accessories' || item.to === '/badges' || item.to === '/pets' || item.to === '/locations').map(({ to, icon: Icon, label, exact, available }) => (
+          {NAV_ITEMS.filter(
+            (item) =>
+              item.to === '/' ||
+              item.to === '/accessories' ||
+              item.to === '/badges' ||
+              item.to === '/pets' ||
+              item.to === '/weapons'
+          ).map(({ to, icon: Icon, label, exact, available }) => (
             <li key={to} className="flex-1">
               {available ? (
                 <NavLink
@@ -139,7 +163,9 @@ export default function Navigation() {
                   end={exact}
                   className={() =>
                     `relative flex flex-col items-center justify-center h-full gap-0.5 transition-colors duration-150 ${
-                      isNavItemActive(to, exact) ? 'text-gold' : 'text-text-muted active:text-text-secondary'
+                      isNavItemActive(to, exact)
+                        ? 'text-gold'
+                        : 'text-text-muted active:text-text-secondary'
                     }`
                   }
                 >
@@ -149,14 +175,18 @@ export default function Navigation() {
                         <span className="absolute top-0 inset-x-2 h-0.5 bg-gold rounded-b-full" />
                       )}
                       <Icon className="w-5 h-5" aria-hidden="true" />
-                      <span className="text-[10px] leading-none truncate px-1">{label.split(' /')[0]}</span>
+                      <span className="text-[10px] leading-none truncate px-1">
+                        {label.split(' /')[0]}
+                      </span>
                     </>
                   )}
                 </NavLink>
               ) : (
                 <div className="flex flex-col items-center justify-center h-full gap-0.5 text-text-muted opacity-40 cursor-not-allowed">
                   <Icon className="w-5 h-5" aria-hidden="true" />
-                  <span className="text-[10px] leading-none truncate px-1">{label.split(' /')[0]}</span>
+                  <span className="text-[10px] leading-none truncate px-1">
+                    {label.split(' /')[0]}
+                  </span>
                 </div>
               )}
             </li>

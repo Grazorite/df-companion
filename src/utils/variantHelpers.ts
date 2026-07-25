@@ -54,6 +54,39 @@ export function splitMixedAccessObtainVariantRows<T extends ItemFamily>(family: 
   return computeFamilyFlags({ ...family, levelVariants })
 }
 
+export function hasVersionSuffix(name: string): boolean {
+  return /\((?:All Versions|[IVXLCDM]+(?:\s*(?:,|-)\s*[IVXLCDM]+)+|\d+\s*-\s*\d+)\)\s*$/i.test(name)
+}
+
+function normalizeRomanRange(value: string): string {
+  const romanParts = value
+    .split(/\s*(?:,|-)\s*/)
+    .map((part) => part.trim())
+    .filter(Boolean)
+
+  if (romanParts.length <= 1) return value
+  return `${romanParts[0]}-${romanParts[romanParts.length - 1]}`
+}
+
+export function getVersionSuffixRange(name: string): string | undefined {
+  const match = name.match(
+    /\(((?:All Versions|[IVXLCDM]+(?:\s*(?:,|-)\s*[IVXLCDM]+)+|\d+\s*-\s*\d+))\)\s*$/i
+  )
+  const value = match?.[1]?.trim()
+  if (!value || /^All Versions$/i.test(value)) return undefined
+  if (/^[IVXLCDM]+(?:\s*(?:,|-)\s*[IVXLCDM]+)+$/i.test(value)) return normalizeRomanRange(value)
+  return value
+}
+
+export function stripVersionSuffix(name: string): string {
+  return name
+    .replace(
+      /\s+\((?:All Versions|[IVXLCDM]+(?:\s*(?:,|-)\s*[IVXLCDM]+)+|\d+\s*-\s*\d+)\)\s*$/i,
+      ''
+    )
+    .trim()
+}
+
 /**
  * Compute price type from price string and required items.
  *

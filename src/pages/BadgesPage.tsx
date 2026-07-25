@@ -73,9 +73,7 @@ export default function BadgesPage() {
       {/* Page header */}
       <div className="mb-5">
         <h1 className="text-2xl font-bold text-gold mb-1">Badges</h1>
-        <p className="text-text-secondary text-sm">
-          Hidden achievements earned through quests, exploration, and more.
-        </p>
+        <p className="text-text-secondary text-sm">The where, what and how of Badges.</p>
       </div>
 
       {/* Search */}

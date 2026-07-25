@@ -11,6 +11,7 @@ import { compareTitles, titleSortKey } from '../src/utils/displayText.ts'
 import { inferImageCaptionFromUrl } from '../src/utils/imageLabels.ts'
 import {
   ACCESSORY_SUBTYPES,
+  isAccessoryFamily,
   type Accessory,
   type AccessoryEntry,
   type AccessoryFamily,
@@ -27,6 +28,7 @@ import { rephraseTimedSellback } from './lib/obtain-formatting.ts'
 import {
   distributeSharedNoteLines,
   getImageCaptionNoise,
+  isAttributionNoiseLine,
   isImageCaptionNoiseLine,
 } from './lib/note-cleaning.ts'
 import { repairAccessFlags } from './lib/access-flag-repair.ts'
@@ -165,6 +167,92 @@ function entryMatchesNameFilter(entry: AccessoryEntry, nameFilter: Set<string>):
   return getEntrySearchNames(entry).some((name) => nameFilter.has(normalizeNameFilterValue(name)))
 }
 
+function nameMatchesScopedRefresh(
+  name: string,
+  lettersArg?: string[],
+  nameFilter = new Set<string>()
+): boolean {
+  return (
+    (lettersArg !== undefined &&
+      lettersArg.length > 0 &&
+      lettersArg.includes(getInitialForName(name))) ||
+    nameFilter.has(normalizeNameFilterValue(name))
+  )
+}
+
+function familyVariantToAccessory(family: AccessoryFamily, variant: LevelVariant): Accessory {
+  const element = variant.element ?? family.shared.element
+  const obtainMethods = variant.obtainVariants
+
+  return {
+    id: accessorySlugForName(variant.name),
+    name: variant.name,
+    slug: accessorySlugForName(variant.name),
+    type: 'accessory',
+    subtype: family.subtype,
+    description: variant.description ?? family.shared.description,
+    forumUrl: variant.sourceUrl ?? family.forumUrl,
+    releaseDate: family.releaseDate ?? '',
+    ...(variant.imageUrl ?? family.shared.imageUrl
+      ? { imageUrl: variant.imageUrl ?? family.shared.imageUrl }
+      : {}),
+    ...(variant.alternativeImages ?? family.shared.alternativeImages
+      ? { alternativeImages: variant.alternativeImages ?? family.shared.alternativeImages }
+      : {}),
+    elements: element ? [element] : family.elements,
+    level: variant.actualLevel !== undefined ? String(variant.actualLevel) : variant.levelDisplay,
+    stats: variant.stats,
+    resists: variant.resists ?? family.shared.resists,
+    rarity: variant.rarity ?? family.shared.rarity,
+    itemType: family.itemType,
+    equipSpot: family.equipSlot,
+    modifies: family.modifies,
+    category: family.category,
+    obtainMethods,
+    notes: variant.notes ?? family.shared.notes,
+    alsoSee: family.shared.alsoSee,
+    tags: family.tags,
+    daRequired: obtainMethods.some((method) => method.daRequired),
+    ...(obtainMethods.some((method) => method.dcRequired || method.priceType === 'dc')
+      ? { dcRequired: true }
+      : {}),
+    ...(obtainMethods.some((method) => method.dmRequired || method.priceType === 'dm')
+      ? { dmRequired: true }
+      : {}),
+    ...(family.isTemp ? { isTemp: true } : {}),
+    ...(family.isCosmetic ? { isCosmetic: true } : {}),
+    ...(family.isRare ? { isRare: true } : {}),
+    ...(family.isSeasonal ? { isSeasonal: true } : {}),
+    ...(family.isSpecialOffer ? { isSpecialOffer: true } : {}),
+    ...(family.retired ? { retired: true } : {}),
+  }
+}
+
+function preserveExistingEntriesForScopedRefresh(
+  entry: AccessoryEntry,
+  lettersArg?: string[],
+  nameFilter = new Set<string>()
+): AccessoryEntry[] {
+  if (!isAccessoryFamily(entry)) {
+    return nameMatchesScopedRefresh(getEntryDisplayName(entry), lettersArg, nameFilter) ||
+      entryMatchesNameFilter(entry, nameFilter)
+      ? []
+      : [entry]
+  }
+
+  const targetedVariants = entry.levelVariants.filter((variant) =>
+    nameMatchesScopedRefresh(variant.name, lettersArg, nameFilter)
+  )
+  if (targetedVariants.length === 0) {
+    return nameMatchesScopedRefresh(entry.familyName, lettersArg, nameFilter) ? [] : [entry]
+  }
+
+  const preservedVariants = entry.levelVariants.filter(
+    (variant) => !nameMatchesScopedRefresh(variant.name, lettersArg, nameFilter)
+  )
+  return preservedVariants.map((variant) => familyVariantToAccessory(entry, variant))
+}
+
 function getInitialForName(name: string): string {
   const sortableName = titleSortKey(name)
   return /^[A-Z]/i.test(sortableName) ? sortableName[0].toUpperCase() : '#'
@@ -282,6 +370,7 @@ function normalizeSubtypeHeading(rawHeading: string): AccessorySubtype | undefin
 function parseElementCodes(value?: string): string[] {
   if (!value) return []
   const found = new Set<string>()
+  if (/\?\?\?/.test(value)) found.add('???')
 
   for (const entry of elementPatterns) {
     if (entry.patterns.some((pattern) => pattern.test(value))) {
@@ -429,6 +518,7 @@ function buildTrinketAttackFromHtml(html: string, fallbackName: string): GuestAt
           const trimmed = line.trim()
           return (
             trimmed.length > 0 &&
+            !isAttributionNoiseLine(trimmed) &&
             !/^Mana Cost:/i.test(trimmed) &&
             !/^Cooldown:/i.test(trimmed) &&
             !/^(?:Damage|Attack) Type:/i.test(trimmed) &&
@@ -452,6 +542,7 @@ function buildTrinketAttackFromHtml(html: string, fallbackName: string): GuestAt
         const trimmed = line.trim()
         return (
           trimmed.length > 0 &&
+          !isAttributionNoiseLine(trimmed) &&
           !/^appearance(?:\s+\d.*)?$/i.test(trimmed) &&
           !/^appearance$/i.test(trimmed)
         )
@@ -763,6 +854,11 @@ function extractAccessoryImages(html: string): AccessoryImageBundle {
     !/[<>"]/.test(src) &&
     !skipPatterns.some((pattern) => pattern.test(src)) &&
     /\.(?:png|jpg|jpeg|gif|bmp)(?:\?|$)/i.test(src)
+  const getCaptionOverride = (url: string) => {
+    if (/VisageoftheDragon-Patience\./i.test(url)) return 'Patience / Bulwark'
+    if (/VisageoftheDragon-Rage\./i.test(url)) return 'Rage / Wrath'
+    return undefined
+  }
 
   const otherInfoHtml = findOtherInformationSection(html)
   const scanHtml = otherInfoHtml ? `${otherInfoHtml}\n${html}` : html
@@ -809,6 +905,7 @@ function extractAccessoryImages(html: string): AccessoryImageBundle {
     for (const candidate of displayImageCandidates) {
       if (candidate.url === imageUrl) continue
       const caption =
+        getCaptionOverride(candidate.url) ??
         candidate.caption?.trim() ??
         inferImageCaptionFromUrl(candidate.url) ??
         `Alternative ${alternativeImages.length + 1}`
@@ -897,6 +994,10 @@ function deriveAccessoryVariantName(name: string, familyName: string): string | 
   if (trailingGroupMatch) {
     const prefix = trailingGroupMatch[1].trim()
     const suffix = trailingGroupMatch[2].trim()
+    if (normalizedName === prefix) return '(Base)'
+    if (normalizedName.startsWith(`${prefix} (`) && normalizedName.endsWith(')')) {
+      return normalizedName.slice(prefix.length).trim()
+    }
     if (normalizedName.startsWith(prefix) && normalizedName.endsWith(suffix)) {
       const middle = normalizedName
         .slice(prefix.length, normalizedName.length - suffix.length)
@@ -1201,6 +1302,7 @@ function buildAccessoryEntry(
   const isCosmetic =
     supportsCosmeticFlag(stub.subtype, equipSpotValue) &&
     (hasCosmeticMarker(description) || hasCosmeticMarker(normalizedText))
+  const notes = parseNotes(html)
   const strategy = getAccessorySubtypeStrategy(stub.subtype)
   const images = strategy.shouldExtractImages({
     name: override?.name ?? stub.name,
@@ -1236,7 +1338,7 @@ function buildAccessoryEntry(
     ...(modifiesValue ? { modifies: modifiesValue } : {}),
     ...(categoryValue ? { category: categoryValue } : {}),
     obtainMethods,
-    ...(parseNotes(html) ? { notes: parseNotes(html) } : {}),
+    ...(notes ? { notes } : {}),
     ...(alsoSee.length > 0 ? { alsoSee } : {}),
     tags: [
       ...parsedElements.map((code) => code.toLowerCase()),
@@ -1629,7 +1731,7 @@ function parseSubtypePage(html: string, subtype: AccessorySubtype): AccessoryStu
   const seen = new Set<string>()
 
   for (const match of content.matchAll(
-    /<a[^>]+href="([^"]*tm\.asp\?m=(\d+)[^"]*)"[^>]*>([\s\S]*?)<\/a>/gi
+    /<a[^>]+href="([^"]*(?:tm|fb)\.asp\?m=(\d+)[^"]*)"[^>]*>([\s\S]*?)<\/a>/gi
   )) {
     const href = match[1]
     const messageId = match[2]
@@ -1680,12 +1782,9 @@ function writeDatasets(
           ? (JSON.parse(fs.readFileSync(filePath, 'utf-8')) as AccessoryEntry[])
           : []
       })
-      const excludedInitials = new Set(lettersArg)
-      const excludedNames = new Set((namesArg ?? []).map(normalizeNameFilterValue))
-      const preservedEntries = existingEntries.filter(
-        (entry) =>
-          !excludedInitials.has(getInitialForName(getEntryDisplayName(entry))) &&
-          !entryMatchesNameFilter(entry, excludedNames)
+      const scopedNameFilter = new Set((namesArg ?? []).map(normalizeNameFilterValue))
+      const preservedEntries = existingEntries.flatMap((entry) =>
+        preserveExistingEntriesForScopedRefresh(entry, lettersArg, scopedNameFilter)
       )
       entries = [...preservedEntries, ...entries]
     }

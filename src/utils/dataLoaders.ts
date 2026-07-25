@@ -3,6 +3,7 @@ import type { CategoryMeta, Badge } from '../types/badge'
 import type { ElementsData } from '../types/element'
 import type { ItemFamily } from '../types/item'
 import type { Pet } from '../types/pet'
+import type { WeaponEntry, WeaponSubtype } from '../types/weapon'
 import accessoryManifestUrl from '../data/accessory-manifest.json?url'
 import badgesManifestUrl from '../data/badges-manifest.json?url'
 import artifactsUrl from '../data/artifacts.json?url'
@@ -21,6 +22,18 @@ import petsGuestsManifestUrl from '../data/pets-guests-manifest.json?url'
 import petsUrl from '../data/pets.json?url'
 import ringsUrl from '../data/rings.json?url'
 import trinketsUrl from '../data/trinkets.json?url'
+import weaponManifestUrl from '../data/weapon-manifest.json?url'
+import weaponsDaggersAGUrl from '../data/weapons-daggers-a-g.json?url'
+import weaponsDaggersHNUrl from '../data/weapons-daggers-h-n.json?url'
+import weaponsDaggersOZUrl from '../data/weapons-daggers-o-z.json?url'
+import weaponsScythesAJUrl from '../data/weapons-scythes-a-j.json?url'
+import weaponsScythesKZUrl from '../data/weapons-scythes-k-z.json?url'
+import weaponsStavesWandsAGUrl from '../data/weapons-staves-wands-a-g.json?url'
+import weaponsStavesWandsHNUrl from '../data/weapons-staves-wands-h-n.json?url'
+import weaponsStavesWandsOZUrl from '../data/weapons-staves-wands-o-z.json?url'
+import weaponsSwordsAxesMacesAGUrl from '../data/weapons-swords-axes-maces-a-g.json?url'
+import weaponsSwordsAxesMacesHNUrl from '../data/weapons-swords-axes-maces-h-n.json?url'
+import weaponsSwordsAxesMacesOZUrl from '../data/weapons-swords-axes-maces-o-z.json?url'
 import { splitMixedAccessObtainVariantRows } from './variantHelpers'
 
 let badgesCache: Badge[] | null = null
@@ -58,6 +71,11 @@ export interface AccessoryManifest {
   bySubtype: Record<AccessorySubtype, number>
 }
 
+export interface WeaponManifest {
+  total: number
+  bySubtype: Record<WeaponSubtype, number>
+}
+
 const accessoryDataUrls: Record<AccessorySubtype, string[]> = {
   artifact: [artifactsUrl],
   belt: [beltsUrl],
@@ -69,11 +87,28 @@ const accessoryDataUrls: Record<AccessorySubtype, string[]> = {
   trinket: [trinketsUrl],
 }
 
+const weaponDataUrls: Record<WeaponSubtype, string[]> = {
+  'sword-axe-mace': [
+    weaponsSwordsAxesMacesAGUrl,
+    weaponsSwordsAxesMacesHNUrl,
+    weaponsSwordsAxesMacesOZUrl,
+  ],
+  'staff-wand': [weaponsStavesWandsAGUrl, weaponsStavesWandsHNUrl, weaponsStavesWandsOZUrl],
+  dagger: [weaponsDaggersAGUrl, weaponsDaggersHNUrl, weaponsDaggersOZUrl],
+  scythe: [weaponsScythesAJUrl, weaponsScythesKZUrl],
+}
+
 let accessoryManifestCache: AccessoryManifest | null = null
 let accessoryManifestPromise: Promise<AccessoryManifest> | null = null
 const accessorySubtypeCache: Partial<Record<AccessorySubtype, AccessoryEntry[]>> = {}
 const accessorySubtypePromises: Partial<Record<AccessorySubtype, Promise<AccessoryEntry[]>>> = {}
 let accessoriesPromise: Promise<Record<AccessorySubtype, AccessoryEntry[]>> | null = null
+
+let weaponManifestCache: WeaponManifest | null = null
+let weaponManifestPromise: Promise<WeaponManifest> | null = null
+const weaponSubtypeCache: Partial<Record<WeaponSubtype, WeaponEntry[]>> = {}
+const weaponSubtypePromises: Partial<Record<WeaponSubtype, Promise<WeaponEntry[]>>> = {}
+let weaponsPromise: Promise<Record<WeaponSubtype, WeaponEntry[]>> | null = null
 
 function normalizeLoadedPet<T extends Pet & { specialMarkers?: string[] }>(pet: T): Pet {
   const normalized = { ...pet } as Pet & { specialMarkers?: string[] }
@@ -85,7 +120,9 @@ function normalizeLoadedPet<T extends Pet & { specialMarkers?: string[] }>(pet: 
   return normalized as Pet
 }
 
-function isLoadedFamily(entry: Pet | ItemFamily | AccessoryEntry): entry is ItemFamily {
+function isLoadedFamily(
+  entry: Pet | ItemFamily | AccessoryEntry | WeaponEntry
+): entry is ItemFamily {
   return 'levelVariants' in entry
 }
 
@@ -233,4 +270,48 @@ export async function loadAccessoriesBySubtype(): Promise<
     }))
   }
   return accessoriesPromise
+}
+
+export async function loadWeaponManifest(): Promise<WeaponManifest> {
+  if (weaponManifestCache) return weaponManifestCache
+  if (!weaponManifestPromise) {
+    weaponManifestPromise = fetchJson<WeaponManifest>(weaponManifestUrl).then((data) => {
+      weaponManifestCache = data
+      return weaponManifestCache
+    })
+  }
+  return weaponManifestPromise
+}
+
+export async function loadWeaponsForSubtype(subtype: WeaponSubtype): Promise<WeaponEntry[]> {
+  if (weaponSubtypeCache[subtype]) return weaponSubtypeCache[subtype]
+  if (!weaponSubtypePromises[subtype]) {
+    weaponSubtypePromises[subtype] = Promise.all(
+      weaponDataUrls[subtype].map((url) => fetchJson<WeaponEntry[]>(url))
+    ).then((datasets) => {
+      const entries = datasets
+        .flat()
+        .map((entry) => (isLoadedFamily(entry) ? splitMixedAccessObtainVariantRows(entry) : entry))
+      weaponSubtypeCache[subtype] = entries
+      return entries
+    })
+  }
+  return weaponSubtypePromises[subtype]
+}
+
+export async function loadWeaponsBySubtype(): Promise<Record<WeaponSubtype, WeaponEntry[]>> {
+  if (!weaponsPromise) {
+    weaponsPromise = Promise.all([
+      loadWeaponsForSubtype('sword-axe-mace'),
+      loadWeaponsForSubtype('staff-wand'),
+      loadWeaponsForSubtype('dagger'),
+      loadWeaponsForSubtype('scythe'),
+    ]).then(([swordAxeMace, staffWand, dagger, scythe]) => ({
+      'sword-axe-mace': swordAxeMace,
+      'staff-wand': staffWand,
+      dagger,
+      scythe,
+    }))
+  }
+  return weaponsPromise
 }

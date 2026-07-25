@@ -12,6 +12,7 @@ import type {
 } from '../../../src/types/item.ts'
 import { compareTitles } from '../../../src/utils/displayText.ts'
 import { computeFamilyFlags, normalizeLevel } from '../../../src/utils/variantHelpers.ts'
+import { shouldPromoteConnectedFamilyGroup } from '../cross-post-family.ts'
 import { distributeSharedNoteLines } from '../note-cleaning.ts'
 import { slugify } from '../text.ts'
 
@@ -145,13 +146,24 @@ function getPrimarySortLevel(entry: AccessoryEntry): number {
   return normalizeLevel(entry.level?.trim() || '1').number
 }
 
+// Cross-post promotion compares every entry pairwise (O(n^2)), and each
+// comparison normalizes the same names repeatedly. Memoizing this pure,
+// regex-heavy transform keyed by the exact input string is output-equivalent
+// and removes the redundant work.
+const normalizeLookupNameCache = new Map<string, string>()
+
 function normalizeLookupName(name: string): string {
-  return name
+  const cached = normalizeLookupNameCache.get(name)
+  if (cached !== undefined) return cached
+
+  const normalized = name
     .toLowerCase()
     .replace(/\s+\((?:all versions|[ivxlcdm]+(?:-[ivxlcdm]+)?|\d+)\)$/i, '')
     .replace(/[^\w\s']+/g, ' ')
     .replace(/\s+/g, ' ')
     .trim()
+  normalizeLookupNameCache.set(name, normalized)
+  return normalized
 }
 
 function tokenizeTitle(name: string): string[] {
@@ -333,7 +345,13 @@ function deriveVariantName(name: string, familyName: string): string | undefined
   const familyTokens = tokenizeTitle(familyName)
 
   if (parenthetical) {
-    const baseName = normalizeLookupName(parenthetical[1])
+    const rawBaseName = parenthetical[1].trim()
+    const baseName = normalizeLookupName(rawBaseName)
+    const trimmedName = name.trim()
+    if (trimmedName === rawBaseName) return '(Base)'
+    if (trimmedName.startsWith(`${rawBaseName} (`) && trimmedName.endsWith(')')) {
+      return trimmedName.slice(rawBaseName.length).trim()
+    }
     if (normalizedName.startsWith(`${baseName} `)) {
       const suffix = normalizedName.slice(baseName.length).trim()
       return suffix ? titleCaseFromTokens(suffix.split(/\s+/)) : '(Base)'
@@ -344,12 +362,12 @@ function deriveVariantName(name: string, familyName: string): string | undefined
 
   if (normalizedName.endsWith(` ${normalizedFamily}`)) {
     const prefix = normalizedName.slice(0, normalizedName.length - normalizedFamily.length).trim()
-    return prefix ? titleCaseFromTokens(prefix.split(/\s+/)) : 'Base'
+    return prefix ? titleCaseFromTokens(prefix.split(/\s+/)) : '(Base)'
   }
 
   if (normalizedName.startsWith(`${normalizedFamily} `)) {
     const suffix = normalizedName.slice(normalizedFamily.length).trim()
-    return suffix ? titleCaseFromTokens(suffix.split(/\s+/)) : 'Base'
+    return suffix ? titleCaseFromTokens(suffix.split(/\s+/)) : '(Base)'
   }
 
   const familyPrefix = trimTrailingFamilyStopWords(
@@ -440,7 +458,7 @@ function canCrossMerge(a: AccessoryEntry, b: AccessoryEntry): boolean {
   )
     return false
   if (!sharesExplicitReference(a, b)) return false
-  if (!hasStrongTitleFamily(a, b)) return false
+  if (!hasStrongTitleFamily(a, b)) return hasNonTitleContentEvidence(a, b)
   if (hasOnlyWeakPrefixSuffixTitleFamily([a, b]) && !hasNonTitleContentEvidence(a, b)) return false
   return hasContentEvidence(a, b)
 }
@@ -970,6 +988,83 @@ function buildCiderKegSplitFamily(
   })
 }
 
+function buildCobaltDragonWingsFamily(
+  baseFamily: AccessoryFamily,
+  familyName: string,
+  slug: string,
+  variants: LevelVariant[],
+  notes: string
+): AccessoryFamily {
+  const renumberedVariants = variants.map((variant, index) => ({
+    ...variant,
+    levelNumber: index + 1,
+  }))
+  const sources = (baseFamily.familySources ?? []).filter((source) =>
+    renumberedVariants.some((variant) => sourceMatchesVariant(source, variant))
+  )
+  const imageUrls = renumberedVariants
+    .map((variant) => variant.imageUrl)
+    .filter((value): value is string => Boolean(value))
+  const { alsoSee: _alsoSee, ...sharedWithoutAlsoSee } = baseFamily.shared
+
+  return computeFamilyFlags({
+    ...baseFamily,
+    id: slug,
+    familyName,
+    slug,
+    aliasSlugs: renumberedVariants.map((variant) => `accessory-${slugify(variant.name)}`),
+    familySources: sources,
+    shared: {
+      ...sharedWithoutAlsoSee,
+      ...(imageUrls.length > 0 && allSame(imageUrls) ? { imageUrl: imageUrls[0] } : {}),
+      notes,
+    },
+    levelVariants: renumberedVariants,
+  })
+}
+
+function splitCobaltDragonWingsFamilies(entries: AccessoryEntry[]): AccessoryEntry[] {
+  return entries.flatMap((entry) => {
+    if (
+      !isAccessoryFamily(entry) ||
+      entry.subtype !== 'cape-wing' ||
+      normalizeLookupName(entry.familyName) !== 'dragon wings' ||
+      !entry.levelVariants.some((variant) => /cobalt/i.test(variant.name))
+    ) {
+      return [entry]
+    }
+
+    const normalVariants = entry.levelVariants.filter(
+      (variant) => /cobalt dragon wings$/i.test(variant.name) && !/half-dragon/i.test(variant.name)
+    )
+    const halfOffVariants = entry.levelVariants.filter((variant) =>
+      /cobalt half-dragon wings$/i.test(variant.name)
+    )
+
+    if (normalVariants.length === 0 || halfOffVariants.length === 0) return [entry]
+
+    const normalFamily = buildCobaltDragonWingsFamily(
+      entry,
+      'Cobalt Dragon Wings',
+      'accessory-cobalt-dragon-wings',
+      normalVariants,
+      'Normal'
+    )
+    const halfOffFamily = buildCobaltDragonWingsFamily(
+      entry,
+      'Cobalt Half-Dragon Wings',
+      'accessory-cobalt-half-dragon-wings',
+      halfOffVariants,
+      'Half-off'
+    )
+
+    return [
+      setAlsoSee(normalFamily, [getFamilyRef(halfOffFamily)]) as AccessoryFamily,
+      setAlsoSee(halfOffFamily, [getFamilyRef(normalFamily)]) as AccessoryFamily,
+    ]
+  })
+}
+
 function splitCiderKegFamilies(entries: AccessoryEntry[]): AccessoryEntry[] {
   return entries.flatMap((entry) => {
     if (
@@ -1032,6 +1127,28 @@ function splitCiderKegFamilies(entries: AccessoryEntry[]): AccessoryEntry[] {
   })
 }
 
+function dedupeEntriesBySlug(entries: AccessoryEntry[]): AccessoryEntry[] {
+  return Array.from(new Map(entries.map((entry) => [entry.slug, entry])).values())
+}
+
+function removeCobaltDragonWingAliasEntries(entries: AccessoryEntry[]): AccessoryEntry[] {
+  const cobaltAliasSlugs = new Set(
+    entries
+      .filter(
+        (entry): entry is AccessoryFamily =>
+          isAccessoryFamily(entry) &&
+          /^(?:Cobalt Dragon Wings|Cobalt Half-Dragon Wings)$/i.test(entry.familyName)
+      )
+      .flatMap((entry) => entry.aliasSlugs ?? [])
+  )
+
+  if (cobaltAliasSlugs.size === 0) return entries
+  return entries.filter(
+    (entry) =>
+      !cobaltAliasSlugs.has(entry.slug) || !/cobalt .*dragon wings/i.test(getDisplayName(entry))
+  )
+}
+
 function linkSiblingFamilies(entries: AccessoryEntry[]): AccessoryEntry[] {
   const siblingGroups = [
     ['Cider Keg', 'Void Cider Keg'],
@@ -1067,6 +1184,87 @@ function linkSiblingFamilies(entries: AccessoryEntry[]): AccessoryEntry[] {
   return entries.map((entry) => updatedBySlug.get(entry.slug) ?? entry)
 }
 
+/**
+ * Drop standalone (non-family) entries whose slug is already claimed as an
+ * alias of a promoted family. When a family declares slug X as an alias it is
+ * asserting "X is one of my variants", so a separate standalone X is a
+ * duplicate that should be absorbed. Generalizes the Cobalt-specific cleanup to
+ * every family (e.g. "Grape Poncho" under "Plum Poncho", the duplicate
+ * standalone "Pumpkin Mask" under "Pumpkin (Mask, Helm)").
+ */
+export function removeStandalonesClaimedByFamilies(entries: AccessoryEntry[]): AccessoryEntry[] {
+  const familyAliasSlugs = new Set<string>()
+  for (const entry of entries) {
+    if (!isAccessoryFamily(entry)) continue
+    for (const alias of entry.aliasSlugs ?? []) {
+      if (alias !== entry.slug) familyAliasSlugs.add(alias)
+    }
+  }
+
+  if (familyAliasSlugs.size === 0) return entries
+  return entries.filter((entry) => isAccessoryFamily(entry) || !familyAliasSlugs.has(entry.slug))
+}
+
+/**
+ * Link distinct families that share the same bare alias slug (the same base
+ * name across different releases, e.g. "Aegis Mask (2011)" and
+ * "Aegis Mask (2014)"). Such items are genuinely separate and must stay
+ * separate, but the shared bare alias cannot canonicalize deterministically, so
+ * it is removed from the siblings and replaced with mutual "Also See" links.
+ */
+export function linkSharedAliasSiblingFamilies(entries: AccessoryEntry[]): AccessoryEntry[] {
+  const aliasToFamilies = new Map<string, AccessoryFamily[]>()
+  for (const entry of entries) {
+    if (!isAccessoryFamily(entry)) continue
+    for (const alias of new Set(entry.aliasSlugs ?? [])) {
+      if (alias === entry.slug) continue
+      const claimants = aliasToFamilies.get(alias) ?? []
+      if (!claimants.some((family) => family.slug === entry.slug)) claimants.push(entry)
+      aliasToFamilies.set(alias, claimants)
+    }
+  }
+
+  const siblingSlugs = new Map<string, Set<string>>() // family slug -> sibling family slugs
+  const ambiguousAliases = new Map<string, Set<string>>() // family slug -> aliases to drop
+  for (const [alias, claimants] of aliasToFamilies) {
+    if (claimants.length < 2) continue
+    for (const family of claimants) {
+      const links = siblingSlugs.get(family.slug) ?? new Set<string>()
+      for (const other of claimants) {
+        if (other.slug !== family.slug) links.add(other.slug)
+      }
+      siblingSlugs.set(family.slug, links)
+
+      const drop = ambiguousAliases.get(family.slug) ?? new Set<string>()
+      drop.add(alias)
+      ambiguousAliases.set(family.slug, drop)
+    }
+  }
+
+  if (siblingSlugs.size === 0) return entries
+
+  const familyBySlug = new Map(
+    entries.filter(isAccessoryFamily).map((family) => [family.slug, family])
+  )
+
+  return entries.map((entry) => {
+    if (!isAccessoryFamily(entry)) return entry
+    const links = siblingSlugs.get(entry.slug)
+    if (!links) return entry
+
+    const siblingRefs = [...links]
+      .map((slug) => familyBySlug.get(slug))
+      .filter((family): family is AccessoryFamily => Boolean(family))
+      .map(getFamilyRef)
+    const withRefs = setAlsoSee(entry, [...getAlsoSee(entry), ...siblingRefs]) as AccessoryFamily
+
+    const drop = ambiguousAliases.get(entry.slug) ?? new Set<string>()
+    const filteredAliases = (entry.aliasSlugs ?? []).filter((alias) => !drop.has(alias))
+    const { aliasSlugs: _aliasSlugs, ...withoutAliases } = withRefs
+    return filteredAliases.length ? { ...withoutAliases, aliasSlugs: filteredAliases } : withoutAliases
+  })
+}
+
 export function promoteAccessoryCrossPostFamilies(entries: AccessoryEntry[]): AccessoryEntry[] {
   const visited = new Set<string>()
   const groups: AccessoryEntry[][] = []
@@ -1094,16 +1292,21 @@ export function promoteAccessoryCrossPostFamilies(entries: AccessoryEntry[]): Ac
 
   const promoted = groups
     .map((group) => {
-      const hasFamily = group.some(isAccessoryFamily)
-      if (group.length <= 1 || hasFamily) return group
+      if (!shouldPromoteConnectedFamilyGroup(group, isAccessoryFamily)) return group
+      if (group.some(isAccessoryFamily)) return [buildFamilyFromGroup(group)]
       if (!allMutuallyConnected(group) && getSharedTitleTokens(group).length < 2) return group
       return [buildFamilyFromGroup(group)]
     })
     .flat()
 
-  return rewriteRelatedRefsForPromotedFamilies(
+  const consolidated = removeCobaltDragonWingAliasEntries(
     linkSiblingFamilies(
-      splitCiderKegFamilies(disambiguateDuplicateFamilyNames(applySpecialFamilies(promoted)))
+      splitCobaltDragonWingsFamilies(
+        splitCiderKegFamilies(disambiguateDuplicateFamilyNames(applySpecialFamilies(promoted)))
+      )
     )
   )
+  const linked = linkSharedAliasSiblingFamilies(consolidated)
+  const deduped = removeStandalonesClaimedByFamilies(dedupeEntriesBySlug(linked))
+  return rewriteRelatedRefsForPromotedFamilies(deduped)
 }

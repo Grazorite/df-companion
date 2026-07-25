@@ -37,6 +37,21 @@ export function isImageCaptionNoiseLine(line: string, captions: Set<string>): bo
   return captions.has(normalizeNoteLineKey(line))
 }
 
+export function isAttributionNoiseLine(line: string): boolean {
+  const normalized = line
+    .replace(/^[•*-]\s*/, '')
+    .replace(/\s+/g, ' ')
+    .trim()
+
+  return (
+    /^,?\s*(?:and\s+)?corrections?\.?$/i.test(normalized) ||
+    /^thanks\s+to\b/i.test(normalized) ||
+    /^([A-Z][\w'-]+(?:\s+[A-Z][\w'-]+){0,4}(?:\s*,\s*[A-Z][\w'-]+(?:\s+[A-Z][\w'-]+){0,3})*)\s+for\s+(?:updated\s+)?(?:image|images|attack|attacks|information|entry|entries|corrections?|formatting|description|effect|effects|original|banner|code|stats|data|location|price|resists?)(?:\s+information)?\.?$/i.test(
+      normalized
+    )
+  )
+}
+
 function splitNoteLines(notes: string | undefined): string[] {
   return notes
     ? notes
