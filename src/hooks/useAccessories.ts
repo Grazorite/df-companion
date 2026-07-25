@@ -157,6 +157,7 @@ function searchAccessories(
       const itemRetired = isAccessoryFamily(item) ? item.retired === true : item.retired === true
       if (filters.categories && filters.categories.length > 0) {
         const hasCategory = filters.categories.some((category) => {
+          if (category === 'cosmetic') return item.isCosmetic === true
           if (category === 'temp') return item.isTemp === true
           if (category === 'rare') return item.isRare === true
           if (category === 'seasonal') return item.isSeasonal === true
@@ -294,6 +295,18 @@ export function useAccessoryCounts() {
   return useAccessoryCountsDataset()
 }
 
+export function useAccessoryCategoryAvailability(subtype: AccessorySubtype) {
+  const { accessories, loading } = useAccessorySubtypeDataset(subtype)
+
+  return useMemo(
+    () => ({
+      loading,
+      hasCosmetic: accessories.some((entry) => entry.isCosmetic === true),
+    }),
+    [accessories, loading]
+  )
+}
+
 export function useTotalAccessoryCount() {
   return useAccessoryCounts().total
 }
@@ -311,6 +324,7 @@ export function buildAccessoryCardData(entry: AccessoryEntry) {
       daRequired: entry.daRequired,
       dcRequired: entry.dcRequired ?? false,
       dmRequired: entry.dmRequired ?? false,
+      isCosmetic: entry.isCosmetic ?? false,
       hasFree: entry.obtainMethods.some((method) => method.priceType === 'free'),
       hasMultipleVersions: hasMultipleVersionHint(entry.name),
       levelRange: getAccessoryNameRange(entry.name) ?? entry.level ?? '',
@@ -325,6 +339,7 @@ export function buildAccessoryCardData(entry: AccessoryEntry) {
     daRequired: entry.hasDA,
     dcRequired: entry.hasDC,
     dmRequired: entry.hasDM,
+    isCosmetic: entry.isCosmetic ?? false,
     hasFree: entry.hasFree,
     hasMultipleVersions: entry.levelVariants.length > 1,
     levelRange:

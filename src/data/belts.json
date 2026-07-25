@@ -21,8 +21,8 @@
     "obtainMethods": [
       {
         "location": "Rosewood Chest",
-        "price": "1,500 Gold",
         "priceType": "gold",
+        "price": "1,500 Gold",
         "sellback": "150 Gold",
         "daRequired": false
       }
@@ -53,8 +53,8 @@
     "obtainMethods": [
       {
         "location": "Seeking Advice",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "250 Gold",
         "daRequired": true
       }
@@ -294,7 +294,7 @@
             "price": "45 Dragon Coins",
             "priceType": "dc",
             "sellback": "41 DC (<24 hours) / 12 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -341,7 +341,7 @@
             "price": "45 Dragon Coins",
             "priceType": "dc",
             "sellback": "41 DC (<24 hours) / 12 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -601,7 +601,7 @@
             "price": "90 Dragon Coins",
             "priceType": "dc",
             "sellback": "81 DC (<24 hours) / 23 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -648,7 +648,7 @@
             "price": "90 Dragon Coins",
             "priceType": "dc",
             "sellback": "81 DC (<24 hours) / 23 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -700,13 +700,13 @@
     "obtainMethods": [
       {
         "location": "DeathKnight",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "80 Gold",
         "daRequired": false
       }
     ],
-    "notes": "• Item was previously named 'Deathknight Belt'; this was changed on  August 25th, 2023.",
+    "notes": "Item was previously named 'Deathknight Belt'; this was changed on  August 25th, 2023.",
     "tags": [
       "non",
       "free"
@@ -735,8 +735,8 @@
     "obtainMethods": [
       {
         "location": "What's Mine Is Mine",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "40 Gold",
         "daRequired": false
       }
@@ -769,13 +769,13 @@
     "obtainMethods": [
       {
         "location": "Peril",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "420 Gold",
         "daRequired": true
       }
     ],
-    "notes": "• This item does not require a Dragon Amulet, despite the description claiming so.",
+    "notes": "This item does not require a Dragon Amulet, despite the description claiming so.",
     "tags": [
       "wat",
       "free"
@@ -804,8 +804,8 @@
     "obtainMethods": [
       {
         "location": "Market District",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "125 Gold",
         "daRequired": true
       }
@@ -1262,7 +1262,7 @@
             "price": "100 Dragon Coins",
             "priceType": "dc",
             "sellback": "90 DC (<24 hours) / 25 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -1309,7 +1309,7 @@
             "price": "100 Dragon Coins",
             "priceType": "dc",
             "sellback": "90 DC (<24 hours) / 25 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -1362,8 +1362,8 @@
     "obtainMethods": [
       {
         "location": "Skweel",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "250 Gold",
         "daRequired": true
       }
@@ -1396,8 +1396,8 @@
     "obtainMethods": [
       {
         "location": "Queen of the Jungle",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "75 Gold",
         "daRequired": false
       }
@@ -1430,13 +1430,13 @@
     "obtainMethods": [
       {
         "location": "Give Til It Hurts",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "50 Gold",
         "daRequired": false
       }
     ],
-    "notes": "• Belt's Level was lowered from 10 to 9 on  September 5th, 2025.",
+    "notes": "Belt's Level was lowered from 10 to 9 on  September 5th, 2025.",
     "tags": [
       "met",
       "free"
@@ -1465,8 +1465,8 @@
     "obtainMethods": [
       {
         "location": "Double, Trouble, Boil and Bubble",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "80 Gold",
         "daRequired": true
       }
@@ -1499,8 +1499,8 @@
     "obtainMethods": [
       {
         "location": "The Body Shop",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "24 Gold",
         "daRequired": false
       }
@@ -1533,15 +1533,15 @@
     "obtainMethods": [
       {
         "location": "To Edelia",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "40 Gold",
         "daRequired": false
       },
       {
         "location": "Edelia Drop DC",
-        "price": "10 Dragon Coins",
         "priceType": "dc",
+        "price": "10 Dragon Coins",
         "sellback": "9 DC (<24 hours) / 2 DC (>24 hours)",
         "daRequired": false,
         "dcRequired": true
@@ -1576,8 +1576,8 @@
     "obtainMethods": [
       {
         "location": "Market District",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "100 Gold",
         "daRequired": false
       }
@@ -2045,13 +2045,13 @@
     "obtainMethods": [
       {
         "location": "War at See",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "200 Gold",
         "daRequired": false
       }
     ],
-    "notes": "• Belt was previously available on  The Ancient Eyedols quest. \n• The following changes were implemented on  February 27th, 2026: \n  • Previously had the description: Found in the strange temple of The Irismancer, this belt has a large, eye-shaped buckle that seems to watch you, wherever you move. \n  • Belt was previously stylized as 'Belt of Sight'. \n  • Dragon Amulet requirement was removed. \n  • Level's requirement was increased from 4 to 15. \n  • Crit was increased from +3 to +4. \n  • Parry +1 and Dodge +1 stats were removed. \n  • Magic Def +2, Pierce Def +2, Melee Def +2, and Bonus +4 stats were added.",
+    "notes": "Belt was previously available on  The Ancient Eyedols quest.\nThe following changes were implemented on  February 27th, 2026:\n  • Previously had the description: Found in the strange temple of The Irismancer, this belt has a large, eye-shaped buckle that seems to watch you, wherever you move.\n  • Belt was previously stylized as 'Belt of Sight'.\n  • Dragon Amulet requirement was removed.\n  • Level's requirement was increased from 4 to 15.\n  • Crit was increased from +3 to +4.\n  • Parry +1 and Dodge +1 stats were removed.\n  • Magic Def +2, Pierce Def +2, Melee Def +2, and Bonus +4 stats were added.",
     "tags": [
       "win",
       "free"
@@ -2080,10 +2080,10 @@
     "obtainMethods": [
       {
         "location": "Scavenger Hunt",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "0 Gold",
+        "price": "N/A",
         "requiredItems": "15 Defender's Medal & 1 Battle Core",
+        "sellback": "0 Gold",
         "daRequired": false,
         "dmRequired": true
       }
@@ -2118,13 +2118,13 @@
     "obtainMethods": [
       {
         "location": "Spirits in the Inn",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "7 Gold",
         "daRequired": false
       }
     ],
-    "notes": "• Belt was previously available from the retired quest  Spirits in the Inn.",
+    "notes": "Belt was previously available from the retired quest  Spirits in the Inn.",
     "tags": [
       "dar",
       "free"
@@ -2153,8 +2153,8 @@
     "obtainMethods": [
       {
         "location": "Rescue!",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "70 Gold",
         "daRequired": false
       }
@@ -2187,8 +2187,8 @@
     "obtainMethods": [
       {
         "location": "As the Cauldron Boils...",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "110 Gold",
         "daRequired": false
       }
@@ -2222,8 +2222,8 @@
     "obtainMethods": [
       {
         "location": "The Ruins of Bask",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "74 Gold",
         "daRequired": true
       }
@@ -2256,13 +2256,13 @@
     "obtainMethods": [
       {
         "location": "The Professor",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "150 Gold",
         "daRequired": false
       }
     ],
-    "notes": "• Belt was retired and replaced by  Technician's Tools IV on  November 21st, 2025.",
+    "notes": "Belt was retired and replaced by  Technician's Tools IV on  November 21st, 2025.",
     "tags": [
       "sto",
       "free"
@@ -2292,21 +2292,21 @@
     "obtainMethods": [
       {
         "location": "The Border Prison",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "100 Gold",
         "daRequired": false
       },
       {
         "location": "Rescue DC Shop",
-        "price": "20 Dragon Coins",
         "priceType": "dc",
+        "price": "20 Dragon Coins",
         "sellback": "18 DC (<24 hours) / 5 DC (>24 hours)",
         "daRequired": false,
         "dcRequired": true
       }
     ],
-    "notes": "• Blue Leather Belt was previously available from the retired quest  Rescue of Elanee.",
+    "notes": "Blue Leather Belt was previously available from the retired quest  Rescue of Elanee.",
     "tags": [
       "non",
       "free"
@@ -2336,8 +2336,8 @@
     "obtainMethods": [
       {
         "location": "The Body Shop",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "12 Gold",
         "daRequired": false
       }
@@ -2370,8 +2370,8 @@
     "obtainMethods": [
       {
         "location": "Mission Possible",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "80 Gold",
         "daRequired": true
       }
@@ -2404,8 +2404,8 @@
     "obtainMethods": [
       {
         "location": "Peril",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "80 Gold",
         "daRequired": false
       }
@@ -2438,8 +2438,8 @@
     "obtainMethods": [
       {
         "location": "Drowned Dungeon",
-        "price": "8,500 Gold",
         "priceType": "gold",
+        "price": "8,500 Gold",
         "sellback": "850 Gold",
         "daRequired": true
       }
@@ -2472,8 +2472,8 @@
     "obtainMethods": [
       {
         "location": "An Uncertain Future",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "80 Gold",
         "daRequired": false
       }
@@ -2506,8 +2506,8 @@
     "obtainMethods": [
       {
         "location": "Drowned Dungeon",
-        "price": "9,300 Gold",
         "priceType": "gold",
+        "price": "9,300 Gold",
         "sellback": "930 Gold",
         "daRequired": true
       }
@@ -2540,8 +2540,8 @@
     "obtainMethods": [
       {
         "location": "The Hunt Begins!",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "0 Gold",
         "daRequired": false
       }
@@ -2574,8 +2574,8 @@
     "obtainMethods": [
       {
         "location": "Peril",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "521 Gold",
         "daRequired": false
       }
@@ -2608,17 +2608,18 @@
     "obtainMethods": [
       {
         "location": "Transformed from Brown Chocolate Egg (Normal)",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "50 Gold",
         "daRequired": false
       },
       {
         "location": "Transformed from Brown Chocolate Egg (D-Coins)",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "19 Dragon Coins",
-        "daRequired": false
+        "daRequired": false,
+        "dcRequired": true
       }
     ],
     "tags": [
@@ -2626,6 +2627,7 @@
       "free"
     ],
     "daRequired": false,
+    "dcRequired": true,
     "isRare": true
   },
   {
@@ -2649,8 +2651,8 @@
     "obtainMethods": [
       {
         "location": "Moonridge: Saved!",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "14 Gold",
         "daRequired": true
       }
@@ -2683,21 +2685,21 @@
     "obtainMethods": [
       {
         "location": "The Border Prison",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "150 Gold",
         "daRequired": false
       },
       {
         "location": "Rescue DC Shop",
-        "price": "30 Dragon Coins",
         "priceType": "dc",
+        "price": "30 Dragon Coins",
         "sellback": "27 DC (<24 hours) / 8 DC (>24 hours)",
         "daRequired": false,
         "dcRequired": true
       }
     ],
-    "notes": "• Clawkin Vine Belt was previously available from the retired quest  Rescue of Elanee.",
+    "notes": "Clawkin Vine Belt was previously available from the retired quest  Rescue of Elanee.",
     "tags": [
       "nat",
       "free"
@@ -2727,8 +2729,8 @@
     "obtainMethods": [
       {
         "location": "The Bottom",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "100 Gold",
         "daRequired": false
       }
@@ -2761,13 +2763,13 @@
     "obtainMethods": [
       {
         "location": "The Professor",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "40 Gold",
         "daRequired": false
       }
     ],
-    "notes": "• Belt was retired and replaced by  Technician's Tools I on  November 21st, 2025.",
+    "notes": "Belt was retired and replaced by  Technician's Tools I on  November 21st, 2025.",
     "tags": [
       "met",
       "free"
@@ -2797,8 +2799,8 @@
     "obtainMethods": [
       {
         "location": "Sil Ruins (Shop)",
-        "price": "0 Gold",
         "priceType": "free",
+        "price": "0 Gold",
         "sellback": "0 Gold",
         "daRequired": false
       }
@@ -2831,8 +2833,8 @@
     "obtainMethods": [
       {
         "location": "Seeking Advice",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "70 Gold",
         "daRequired": false
       }
@@ -2865,8 +2867,8 @@
     "obtainMethods": [
       {
         "location": "Trithril for Yashta",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "220 Gold",
         "daRequired": false
       }
@@ -3107,7 +3109,7 @@
             "price": "200 Dragon Coins",
             "priceType": "dc",
             "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -3154,7 +3156,7 @@
             "price": "225 Dragon Coins",
             "priceType": "dc",
             "sellback": "203 DC (<24 hours) / 57 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -3206,8 +3208,8 @@
     "obtainMethods": [
       {
         "location": "Trithril for Yashta",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "950 Gold",
         "daRequired": true
       }
@@ -3240,8 +3242,8 @@
     "obtainMethods": [
       {
         "location": "Sil Ruins (Shop)",
-        "price": "0 Gold",
         "priceType": "free",
+        "price": "0 Gold",
         "sellback": "0 Gold",
         "daRequired": true
       }
@@ -3274,8 +3276,8 @@
     "obtainMethods": [
       {
         "location": "Drowned Dungeon",
-        "price": "3,300 Gold",
         "priceType": "gold",
+        "price": "3,300 Gold",
         "sellback": "330 Gold",
         "daRequired": false
       }
@@ -3308,13 +3310,13 @@
     "obtainMethods": [
       {
         "location": "Peril",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "70 Gold",
         "daRequired": true
       }
     ],
-    "notes": "• A typo exists on description \"an dark dragons scales\".",
+    "notes": "A typo exists on description \"an dark dragons scales\".",
     "tags": [
       "dar",
       "free"
@@ -3343,10 +3345,10 @@
     "obtainMethods": [
       {
         "location": "DeathKnight Items",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "100 Gold",
+        "price": "N/A",
         "requiredItems": "1 Undead Slayer Badge",
+        "sellback": "100 Gold",
         "daRequired": false
       }
     ],
@@ -3531,7 +3533,8 @@
     ],
     "shared": {
       "description": "This belt was awarded to you by the town of Falconreach for defending it against a terrible threat.",
-      "rarity": "1"
+      "rarity": "1",
+      "notes": "Defender's Medal costs for this item were significantly reduced on March 29th, 2021."
     },
     "levelVariants": [
       {
@@ -4302,7 +4305,8 @@
       }
     ],
     "shared": {
-      "description": "This belt can only be worn by one who bears the DragonAmulet. It was awarded to you by the town of Falconreach for defending it against a terrible threat."
+      "description": "This belt can only be worn by one who bears the DragonAmulet. It was awarded to you by the town of Falconreach for defending it against a terrible threat.",
+      "notes": "Defender's Medal costs for this item were significantly reduced on March 29th, 2021.\nBelts were available to merge from  Def. Belts shop until  January 14th, 2023; merge versions from  Defender Item Swap were added on that date."
     },
     "levelVariants": [
       {
@@ -5046,13 +5050,13 @@
     "obtainMethods": [
       {
         "location": "The Hunt Begins",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "80 Gold",
         "daRequired": true
       }
     ],
-    "notes": "• Belt was retired and replaced by  Shining Scaled Belt I on  April 25th, 2025.",
+    "notes": "Belt was retired and replaced by  Shining Scaled Belt I on  April 25th, 2025.",
     "tags": [
       "met",
       "free"
@@ -5439,7 +5443,7 @@
             "price": "170 Dragon Coins",
             "priceType": "dc",
             "sellback": "153 DC (<24 hours) / 43 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -5484,7 +5488,7 @@
             "price": "200 Dragon Coins",
             "priceType": "dc",
             "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -5535,13 +5539,13 @@
     "obtainMethods": [
       {
         "location": "Thing I See..., Happy 2011 April Fools!",
-        "price": "500 Gold",
         "priceType": "gold",
+        "price": "500 Gold",
         "sellback": "50 Gold",
         "daRequired": false
       }
     ],
-    "notes": "• Item has Dirt flavor resistance.",
+    "notes": "Item has Dirt flavor resistance.",
     "tags": [
       "nat",
       "gold"
@@ -5571,8 +5575,8 @@
     "obtainMethods": [
       {
         "location": "Last Year",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "80 Gold",
         "daRequired": false
       }
@@ -5606,8 +5610,8 @@
     "obtainMethods": [
       {
         "location": "Rescue!",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "100 Gold",
         "daRequired": false
       }
@@ -5639,8 +5643,8 @@
     "obtainMethods": [
       {
         "location": "A Cold Reception",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "65 Gold",
         "daRequired": true
       }
@@ -5673,8 +5677,8 @@
     "obtainMethods": [
       {
         "location": "Rosewood Chest",
-        "price": "1,200 Gold",
         "priceType": "gold",
+        "price": "1,200 Gold",
         "sellback": "120 Gold",
         "daRequired": true
       }
@@ -5707,13 +5711,13 @@
     "obtainMethods": [
       {
         "location": "The Hunt Begins",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "100 Gold",
         "daRequired": false
       }
     ],
-    "notes": "• Belt was retired and replaced by  Shining Scaled Belt II on  April 25th, 2025.",
+    "notes": "Belt was retired and replaced by  Shining Scaled Belt II on  April 25th, 2025.",
     "tags": [
       "ene",
       "free"
@@ -5743,8 +5747,8 @@
     "obtainMethods": [
       {
         "location": "Seeking Advice",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "40 Gold",
         "daRequired": false
       }
@@ -5777,21 +5781,21 @@
     "obtainMethods": [
       {
         "location": "The Border Prison",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "120 Gold",
         "daRequired": true
       },
       {
         "location": "Rescue DC Shop",
-        "price": "15 Dragon Coins",
         "priceType": "dc",
+        "price": "15 Dragon Coins",
         "sellback": "14 DC (<24 hours) / 4 DC (>24 hours)",
-        "daRequired": true,
+        "daRequired": false,
         "dcRequired": true
       }
     ],
-    "notes": "• Enchanted Vind Chain was previously available from the retired quest  Rescue of Elanee.",
+    "notes": "Enchanted Vind Chain was previously available from the retired quest  Rescue of Elanee.",
     "tags": [
       "sil",
       "free"
@@ -5819,13 +5823,13 @@
     "obtainMethods": [
       {
         "location": "Crossing the Line",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "200 Gold",
         "daRequired": false
       }
     ],
-    "notes": "• Level's requirement was lowered from 11 to 10 on  September 5th, 2025.",
+    "notes": "Level's requirement was lowered from 11 to 10 on  September 5th, 2025.",
     "tags": [
       "free"
     ],
@@ -5853,8 +5857,8 @@
     "obtainMethods": [
       {
         "location": "The Bottom",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "250 Gold",
         "daRequired": true
       }
@@ -5887,8 +5891,8 @@
     "obtainMethods": [
       {
         "location": "Drowned Dungeon",
-        "price": "8,000 Gold",
         "priceType": "gold",
+        "price": "8,000 Gold",
         "sellback": "800 Gold",
         "daRequired": true
       }
@@ -5921,8 +5925,8 @@
     "obtainMethods": [
       {
         "location": "As the Cauldron Boils...",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "75 Gold",
         "daRequired": false
       }
@@ -5956,8 +5960,8 @@
     "obtainMethods": [
       {
         "location": "An Uncertain Future",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "1,230 Gold",
         "daRequired": true
       }
@@ -5989,8 +5993,8 @@
     "obtainMethods": [
       {
         "location": "A Cold Reception",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "50 Gold",
         "daRequired": true
       }
@@ -6023,8 +6027,8 @@
     "obtainMethods": [
       {
         "location": "Drowned Dungeon",
-        "price": "1,800 Gold",
         "priceType": "gold",
+        "price": "1,800 Gold",
         "sellback": "180 Gold",
         "daRequired": true
       }
@@ -6057,13 +6061,13 @@
     "obtainMethods": [
       {
         "location": "Thing I See..., Happy 2011 April Fools!",
-        "price": "2,500 Gold",
         "priceType": "gold",
+        "price": "2,500 Gold",
         "sellback": "250 Gold",
         "daRequired": true
       }
     ],
-    "notes": "• Item previously had +20 Stone Resist; this was lowered to +12 Stone Resist on 2026's re-release.",
+    "notes": "Item previously had +20 Stone Resist; this was lowered to +12 Stone Resist on 2026's re-release.",
     "tags": [
       "win",
       "gold"
@@ -6093,8 +6097,8 @@
     "obtainMethods": [
       {
         "location": "Queen of the Jungle",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "100 Gold",
         "daRequired": false
       }
@@ -6127,8 +6131,8 @@
     "obtainMethods": [
       {
         "location": "Zoo",
-        "price": "350 Gold",
         "priceType": "gold",
+        "price": "350 Gold",
         "sellback": "35 Gold",
         "daRequired": false
       }
@@ -6160,8 +6164,8 @@
     "obtainMethods": [
       {
         "location": "Unlucky Holiday Shop",
-        "price": "400 Gold",
         "priceType": "gold",
+        "price": "400 Gold",
         "sellback": "40 Gold",
         "daRequired": false
       }
@@ -6195,8 +6199,8 @@
     "obtainMethods": [
       {
         "location": "Mission Possible",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "723 Gold",
         "daRequired": true
       }
@@ -6229,8 +6233,8 @@
     "obtainMethods": [
       {
         "location": "New Year's 2010",
-        "price": "0 Gold",
         "priceType": "free",
+        "price": "0 Gold",
         "sellback": "0 Gold",
         "daRequired": true
       }
@@ -6263,8 +6267,8 @@
     "obtainMethods": [
       {
         "location": "War Memorial Shop",
-        "price": "3,000 Gold",
         "priceType": "gold",
+        "price": "3,000 Gold",
         "sellback": "300 Gold",
         "daRequired": true
       }
@@ -6721,7 +6725,7 @@
             "price": "200 Dragon Coins",
             "priceType": "dc",
             "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -6768,7 +6772,7 @@
             "price": "225 Dragon Coins",
             "priceType": "dc",
             "sellback": "203 DC (<24 hours) / 57 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -6820,15 +6824,15 @@
     "obtainMethods": [
       {
         "location": "To Edelia",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "100 Gold",
         "daRequired": false
       },
       {
         "location": "Edelia Drop DC",
-        "price": "20 Dragon Coins",
         "priceType": "dc",
+        "price": "20 Dragon Coins",
         "sellback": "18 DC (<24 hours) / 5 DC (>24 hours)",
         "daRequired": false,
         "dcRequired": true
@@ -6863,13 +6867,13 @@
     "obtainMethods": [
       {
         "location": "IDI Rewards",
-        "price": "0 Gold",
         "priceType": "free",
+        "price": "0 Gold",
         "sellback": "0 Gold",
         "daRequired": false
       }
     ],
-    "notes": "• Belt had the initial price of 100 Gold and a sellback of 10 Gold. \n• The following changes were implemented on  April 17th, 2026: \n  • Previously had the description: This belt is made from the wings of an Ice Dragon. It adds +1 DEF to MAGIC, +3 ICE resistance and +1 to INT. \n  • Level's requirement was raised from 5 to 15. \n  • Magic Avoidance was raised from +1 to +2. \n  • INT was raised from +1 to +5. \n  • Block/Parry/Dodge Defense and Melee/Pierce Avoidance stats were added. \n  • Ice Resist was raised from +3 to +5.",
+    "notes": "Belt had the initial price of 100 Gold and a sellback of 10 Gold.\nThe following changes were implemented on  April 17th, 2026:\n  • Previously had the description: This belt is made from the wings of an Ice Dragon. It adds +1 DEF to MAGIC, +3 ICE resistance and +1 to INT.\n  • Level's requirement was raised from 5 to 15.\n  • Magic Avoidance was raised from +1 to +2.\n  • INT was raised from +1 to +5.\n  • Block/Parry/Dodge Defense and Melee/Pierce Avoidance stats were added.\n  • Ice Resist was raised from +3 to +5.",
     "tags": [
       "ice",
       "free"
@@ -6898,13 +6902,13 @@
     "obtainMethods": [
       {
         "location": "IDI Rewards",
-        "price": "0 Gold",
         "priceType": "free",
+        "price": "0 Gold",
         "sellback": "0 Gold",
         "daRequired": false
       }
     ],
-    "notes": "• Belt had the initial price of 100 Gold and a sellback of 10 Gold. \n• The following changes were implemented on  April 17th, 2026: \n  • Previously had the description: This belt is made from the wings of an Ice Dragon. It adds +1 DEF to MAGIC, +3 ICE resistance and +1 to STR. \n  • Level's requirement was raised from 5 to 15. \n  • Magic Avoidance was raised from +1 to +2. \n  • STR was raised from +1 to +5. \n  • Block/Parry/Dodge Defense and Melee/Pierce Avoidance stats were added. \n  • Ice Resist was raised from +3 to +5.",
+    "notes": "Belt had the initial price of 100 Gold and a sellback of 10 Gold.\nThe following changes were implemented on  April 17th, 2026:\n  • Previously had the description: This belt is made from the wings of an Ice Dragon. It adds +1 DEF to MAGIC, +3 ICE resistance and +1 to STR.\n  • Level's requirement was raised from 5 to 15.\n  • Magic Avoidance was raised from +1 to +2.\n  • STR was raised from +1 to +5.\n  • Block/Parry/Dodge Defense and Melee/Pierce Avoidance stats were added.\n  • Ice Resist was raised from +3 to +5.",
     "tags": [
       "ice",
       "free"
@@ -6933,13 +6937,13 @@
     "obtainMethods": [
       {
         "location": "IDI Rewards",
-        "price": "0 Gold",
         "priceType": "free",
+        "price": "0 Gold",
         "sellback": "0 Gold",
         "daRequired": false
       }
     ],
-    "notes": "• Belt had the initial price of 100 Gold and a sellback of 10 Gold.  \n• The following changes were implemented on  April 17th, 2026: \n  • Previously had the description: This belt is made from the wings of an Ice Dragon. It adds +1 DEF to MAGIC, +3 ICE resistance and +1 to DEX. \n  • Level's requirement was raised from 5 to 15. \n  • Magic Avoidance was raised from +1 to +2. \n  • DEX was raised from +1 to +5. \n  • Block/Parry/Dodge Defense and Melee/Pierce Avoidance stats were added. \n  • Ice Resist was raised from +3 to +5.",
+    "notes": "Belt had the initial price of 100 Gold and a sellback of 10 Gold.\nThe following changes were implemented on  April 17th, 2026:\n  • Previously had the description: This belt is made from the wings of an Ice Dragon. It adds +1 DEF to MAGIC, +3 ICE resistance and +1 to DEX.\n  • Level's requirement was raised from 5 to 15.\n  • Magic Avoidance was raised from +1 to +2.\n  • DEX was raised from +1 to +5.\n  • Block/Parry/Dodge Defense and Melee/Pierce Avoidance stats were added.\n  • Ice Resist was raised from +3 to +5.",
     "tags": [
       "ice",
       "free"
@@ -6967,8 +6971,8 @@
     "obtainMethods": [
       {
         "location": "Swordhaven Clothing",
-        "price": "400 Gold",
         "priceType": "gold",
+        "price": "400 Gold",
         "sellback": "40 Gold",
         "daRequired": false
       }
@@ -7001,8 +7005,8 @@
     "obtainMethods": [
       {
         "location": "Peril",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "570 Gold",
         "daRequired": false
       }
@@ -7035,8 +7039,8 @@
     "obtainMethods": [
       {
         "location": "Peril",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "360 Gold",
         "daRequired": false
       }
@@ -7069,8 +7073,8 @@
     "obtainMethods": [
       {
         "location": "Trithril for Yashta",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "650 Gold",
         "daRequired": true
       }
@@ -7102,8 +7106,8 @@
     "obtainMethods": [
       {
         "location": "A Cold Reception",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "35 Gold",
         "daRequired": false
       }
@@ -7560,7 +7564,7 @@
             "price": "200 Dragon Coins",
             "priceType": "dc",
             "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -7607,7 +7611,7 @@
             "price": "225 Dragon Coins",
             "priceType": "dc",
             "sellback": "203 DC (<24 hours) / 57 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -7659,8 +7663,8 @@
     "obtainMethods": [
       {
         "location": "Rosewood Chest",
-        "price": "1,000 Gold",
         "priceType": "gold",
+        "price": "1,000 Gold",
         "sellback": "100 Gold",
         "daRequired": false
       }
@@ -7693,8 +7697,8 @@
     "obtainMethods": [
       {
         "location": "Water Breathing Potions",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "100 Gold",
         "daRequired": false
       }
@@ -7727,8 +7731,8 @@
     "obtainMethods": [
       {
         "location": "Zoo",
-        "price": "6,500 Gold",
         "priceType": "gold",
+        "price": "6,500 Gold",
         "sellback": "650 Gold",
         "daRequired": true
       }
@@ -7893,8 +7897,8 @@
     "obtainMethods": [
       {
         "location": "The Bottom",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "70 Gold",
         "daRequired": false
       }
@@ -7927,14 +7931,14 @@
     "obtainMethods": [
       {
         "location": "Book Return",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "0 Gold",
+        "price": "N/A",
         "requiredItems": "Mage's Sketchbook",
+        "sellback": "0 Gold",
         "daRequired": true
       }
     ],
-    "notes": "• The following changes were implemented on  March 28th, 2025:\n  • Block was updated from +1 to +4. \n  • Dodge +4, Parry +4, WIS +1, and, LUK +1 stats were added.",
+    "notes": "The following changes were implemented on  March 28th, 2025:\n  • Block was updated from +1 to +4.\n  • Dodge +4, Parry +4, WIS +1, and, LUK +1 stats were added.",
     "tags": [
       "met",
       "merge"
@@ -7963,8 +7967,8 @@
     "obtainMethods": [
       {
         "location": "Water Breathing Potions",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "50 Gold",
         "daRequired": false
       }
@@ -7997,8 +8001,8 @@
     "obtainMethods": [
       {
         "location": "Seeking Advice",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "100 Gold",
         "daRequired": false
       }
@@ -8058,7 +8062,8 @@
     ],
     "shared": {
       "description": "A thick piece of rope that appears to have been soaked in honey! Every time you turn your head you swear you can hear a giant swarm of bees just behind you.",
-      "rarity": "5"
+      "rarity": "5",
+      "notes": "Honey Laden Girdle (I-V) was previously available in the retired quest  Culture Shock."
     },
     "levelVariants": [
       {
@@ -8239,7 +8244,7 @@
             "price": "200 Dragon Coins",
             "priceType": "dc",
             "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -8286,7 +8291,7 @@
             "price": "225 Dragon Coins",
             "priceType": "dc",
             "sellback": "203 DC (<24 hours) / 56 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -8338,8 +8343,8 @@
     "obtainMethods": [
       {
         "location": "An Uncertain Future",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "780 Gold",
         "daRequired": false
       }
@@ -8372,8 +8377,8 @@
     "obtainMethods": [
       {
         "location": "The Ruins of Bask",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "240 Gold",
         "daRequired": true
       }
@@ -8406,8 +8411,8 @@
     "obtainMethods": [
       {
         "location": "Potion Help",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "240 0 Gold",
         "daRequired": true
       }
@@ -8440,8 +8445,8 @@
     "obtainMethods": [
       {
         "location": "Potion Help",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "723 0 Gold",
         "daRequired": true
       }
@@ -8474,8 +8479,8 @@
     "obtainMethods": [
       {
         "location": "Potion Help",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "521 0 Gold",
         "daRequired": false
       }
@@ -8508,8 +8513,8 @@
     "obtainMethods": [
       {
         "location": "Potion Help",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "360 0 Gold",
         "daRequired": false
       }
@@ -8542,8 +8547,8 @@
     "obtainMethods": [
       {
         "location": "Potion Help",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "410 0 Gold",
         "daRequired": false
       }
@@ -8576,8 +8581,8 @@
     "obtainMethods": [
       {
         "location": "Potion Help",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "80 0 Gold",
         "daRequired": false
       }
@@ -8610,8 +8615,8 @@
     "obtainMethods": [
       {
         "location": "Potion Help",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "24 0 Gold",
         "daRequired": false
       }
@@ -8644,8 +8649,8 @@
     "obtainMethods": [
       {
         "location": "Dragesvard Havoc",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "65 Gold",
         "daRequired": true
       }
@@ -8678,13 +8683,13 @@
     "obtainMethods": [
       {
         "location": "The Professor",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "100 Gold",
         "daRequired": false
       }
     ],
-    "notes": "• Belt was retired and replaced by  Technician's Tools III on  November 21st, 2025.",
+    "notes": "Belt was retired and replaced by  Technician's Tools III on  November 21st, 2025.",
     "tags": [
       "fir",
       "free"
@@ -8714,8 +8719,8 @@
     "obtainMethods": [
       {
         "location": "Last Year",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "250 Gold",
         "daRequired": true
       }
@@ -8749,8 +8754,8 @@
     "obtainMethods": [
       {
         "location": "Trithril for Yashta",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "1,230 Gold",
         "daRequired": true
       }
@@ -8783,8 +8788,8 @@
     "obtainMethods": [
       {
         "location": "Zoo",
-        "price": "12,300 Gold",
         "priceType": "gold",
+        "price": "12,300 Gold",
         "sellback": "1,230 Gold",
         "daRequired": true
       }
@@ -8817,8 +8822,8 @@
     "obtainMethods": [
       {
         "location": "Rescue!",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "250 Gold",
         "daRequired": true
       }
@@ -8851,8 +8856,8 @@
     "obtainMethods": [
       {
         "location": "What's Mine Is Mine",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "15 Gold",
         "daRequired": false
       }
@@ -8885,17 +8890,17 @@
     "obtainMethods": [
       {
         "location": "To Edelia",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "200 Gold",
         "daRequired": true
       },
       {
         "location": "Edelia Drop DC",
-        "price": "35 Dragon Coins",
         "priceType": "dc",
+        "price": "35 Dragon Coins",
         "sellback": "31 DC (<24 hours) / 9 DC (>24 hours)",
-        "daRequired": true,
+        "daRequired": false,
         "dcRequired": true
       }
     ],
@@ -8928,8 +8933,8 @@
     "obtainMethods": [
       {
         "location": "Edy's Shinies, Phil's Funkies",
-        "price": "2,500 Gold",
         "priceType": "gold",
+        "price": "2,500 Gold",
         "sellback": "250 Gold",
         "daRequired": true
       }
@@ -8962,8 +8967,8 @@
     "obtainMethods": [
       {
         "location": "Rosewood Chest",
-        "price": "400 Gold",
         "priceType": "gold",
+        "price": "400 Gold",
         "sellback": "40 Gold",
         "daRequired": false
       }
@@ -9265,7 +9270,7 @@
             "price": "170 Dragon Coins",
             "priceType": "dc",
             "sellback": "153 DC (<24 hours) / 43 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -9312,7 +9317,7 @@
             "price": "200 Dragon Coins",
             "priceType": "dc",
             "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -9359,7 +9364,7 @@
             "price": "225 Dragon Coins",
             "priceType": "dc",
             "sellback": "203 DC (<24 hours) / 57 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -9575,8 +9580,8 @@
     "obtainMethods": [
       {
         "location": "As the Cauldron Boils...",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "24 Gold",
         "daRequired": true
       }
@@ -9610,17 +9615,17 @@
     "obtainMethods": [
       {
         "location": "Face of Death",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "300 Gold",
         "daRequired": true
       },
       {
         "location": "Sandsea Trinkets",
-        "price": "50 Dragon Coins",
         "priceType": "dc",
+        "price": "50 Dragon Coins",
         "sellback": "45 DC (<24 hours) / 13 DC (>24 hours)",
-        "daRequired": true,
+        "daRequired": false,
         "dcRequired": true
       }
     ],
@@ -9861,7 +9866,7 @@
             "price": "60 Dragon Coins",
             "priceType": "dc",
             "sellback": "54 DC (<24 hours) / 15 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -9908,7 +9913,7 @@
             "price": "60 Dragon Coins",
             "priceType": "dc",
             "sellback": "54 DC (<24 hours) / 15 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -9960,8 +9965,8 @@
     "obtainMethods": [
       {
         "location": "Sho'Nuff Havoc",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "125 Gold",
         "daRequired": false
       }
@@ -10418,7 +10423,7 @@
             "price": "200 Dragon Coins",
             "priceType": "dc",
             "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -10465,7 +10470,7 @@
             "price": "225 Dragon Coins",
             "priceType": "dc",
             "sellback": "203 DC (<24 hours) / 57 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -10713,8 +10718,8 @@
     "obtainMethods": [
       {
         "location": "An Uncertain Future",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "570 Gold",
         "daRequired": false
       }
@@ -10747,13 +10752,13 @@
     "obtainMethods": [
       {
         "location": "The River Of Fire, Fetching Fire",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "300 Gold",
         "daRequired": false
       }
     ],
-    "notes": "• The following changes were implemented on  March 20th, 2026: \n  • Dragon Amulet requirement was removed. \n  • Level was raised from 10 to 14. \n  • Magic Def +2 was added. \n  • Melee Def, INT, DEX, and STR was raised from +1 to +2. \n  • Sellback was raised from 30 to 300 Gold.\n• Belt previously appeared in the retired quest  The River Of Fire.",
+    "notes": "The following changes were implemented on  March 20th, 2026:\n  • Dragon Amulet requirement was removed.\n  • Level was raised from 10 to 14.\n  • Magic Def +2 was added.\n  • Melee Def, INT, DEX, and STR was raised from +1 to +2.\n  • Sellback was raised from 30 to 300 Gold.\nBelt previously appeared in the retired quest  The River Of Fire.",
     "tags": [
       "fir",
       "free"
@@ -10782,8 +10787,8 @@
     "obtainMethods": [
       {
         "location": "Mission Possible",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "410 Gold",
         "daRequired": false
       }
@@ -10795,9 +10800,9 @@
     "daRequired": false
   },
   {
-    "id": "accessory-memento-tempii",
-    "name": "Memento Tempii",
-    "slug": "accessory-memento-tempii",
+    "id": "accessory-memento-tempii-aurus-chaotica",
+    "name": "Memento Tempii (Aurus, Chaotica)",
+    "slug": "accessory-memento-tempii-aurus-chaotica",
     "type": "accessory",
     "subtype": "belt",
     "description": "You'll never be late wearing this stylish belt!",
@@ -10815,8 +10820,8 @@
     "obtainMethods": [
       {
         "location": "War Memorial Shop",
-        "price": "150 Gold",
         "priceType": "gold",
+        "price": "150 Gold",
         "sellback": "15 Gold",
         "daRequired": false
       }
@@ -11013,8 +11018,8 @@
     "obtainMethods": [
       {
         "location": "What's Mine Is Mine",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "150 Gold",
         "daRequired": false
       }
@@ -11047,8 +11052,8 @@
     "obtainMethods": [
       {
         "location": "What's Mine Is Mine",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "70 Gold",
         "daRequired": false
       }
@@ -11081,8 +11086,8 @@
     "obtainMethods": [
       {
         "location": "Falconreach Havoc",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "170 Gold",
         "daRequired": false
       }
@@ -11115,13 +11120,13 @@
     "obtainMethods": [
       {
         "location": "The Hunt Begins",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "120 Gold",
         "daRequired": false
       }
     ],
-    "notes": "• Belt was retired and replaced by  Shining Scaled Belt III on  April 25th, 2025.",
+    "notes": "Belt was retired and replaced by  Shining Scaled Belt III on  April 25th, 2025.",
     "tags": [
       "fir",
       "free"
@@ -11151,10 +11156,10 @@
     "obtainMethods": [
       {
         "location": "Teral's Gear",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "125 Gold",
+        "price": "N/A",
         "requiredItems": "1 Troglomite Belt & 7 Scorpiarc Hide",
+        "sellback": "125 Gold",
         "daRequired": false
       }
     ],
@@ -11186,13 +11191,13 @@
     "obtainMethods": [
       {
         "location": "Major Mayhem",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "85 Gold",
         "daRequired": true
       }
     ],
-    "notes": "• Belt previously appeared in the retired quest  Major Mayhem.",
+    "notes": "Belt previously appeared in the retired quest  Major Mayhem.",
     "tags": [
       "nat",
       "free"
@@ -11221,13 +11226,13 @@
     "obtainMethods": [
       {
         "location": "Major Mayhem",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "40 Gold",
         "daRequired": false
       }
     ],
-    "notes": "• Belt previously appeared in the retired quest  Major Mayhem.",
+    "notes": "Belt previously appeared in the retired quest  Major Mayhem.",
     "tags": [
       "nat",
       "free"
@@ -11256,13 +11261,13 @@
     "obtainMethods": [
       {
         "location": "Major Mayhem",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "55 Gold",
         "daRequired": false
       }
     ],
-    "notes": "• Belt previously appeared in the retired quest  Major Mayhem.",
+    "notes": "Belt previously appeared in the retired quest  Major Mayhem.",
     "tags": [
       "nat",
       "free"
@@ -11291,13 +11296,13 @@
     "obtainMethods": [
       {
         "location": "Major Mayhem",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "30 Gold",
         "daRequired": false
       }
     ],
-    "notes": "• Belt previously appeared in the retired quest  Major Mayhem.",
+    "notes": "Belt previously appeared in the retired quest  Major Mayhem.",
     "tags": [
       "nat",
       "free"
@@ -11326,8 +11331,8 @@
     "obtainMethods": [
       {
         "location": "Mission Possible",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "630 Gold",
         "daRequired": true
       }
@@ -11360,8 +11365,8 @@
     "obtainMethods": [
       {
         "location": "The Bottom",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "15 Gold",
         "daRequired": false
       }
@@ -11394,21 +11399,21 @@
     "obtainMethods": [
       {
         "location": "Face of Death",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "15 Gold",
         "daRequired": false
       },
       {
         "location": "Sandsea Trinkets",
-        "price": "5 Dragon Coins",
         "priceType": "dc",
+        "price": "5 Dragon Coins",
         "sellback": "5 DC (<24 hours) / 2 DC (>24 hours)",
         "daRequired": false,
         "dcRequired": true
       }
     ],
-    "notes": "• Nebu Belt was previously available from the retired quest  Face of Death.",
+    "notes": "Nebu Belt was previously available from the retired quest  Face of Death.",
     "tags": [
       "lig",
       "free"
@@ -11437,8 +11442,8 @@
     "obtainMethods": [
       {
         "location": "Necropolis: Last Stand",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "24 Gold",
         "daRequired": false
       }
@@ -11470,8 +11475,8 @@
     "obtainMethods": [
       {
         "location": "Necropolis: Last Stand",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "24 Gold",
         "daRequired": false
       }
@@ -11503,8 +11508,8 @@
     "obtainMethods": [
       {
         "location": "Necropolis: Last Stand",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "24 Gold",
         "daRequired": false
       }
@@ -11537,8 +11542,8 @@
     "obtainMethods": [
       {
         "location": "Cysero's Shop",
-        "price": "300 Dragon Coins",
         "priceType": "dc",
+        "price": "300 Dragon Coins",
         "sellback": "270 DC (<24 hours) / 75 DC (>24 hours)",
         "daRequired": false,
         "dcRequired": true
@@ -11573,8 +11578,8 @@
     "obtainMethods": [
       {
         "location": "Market District",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "75 Gold",
         "daRequired": false
       }
@@ -11606,8 +11611,8 @@
     "obtainMethods": [
       {
         "location": "Double, Trouble, Boil and Bubble",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "150 Gold",
         "daRequired": true
       }
@@ -11640,8 +11645,8 @@
     "obtainMethods": [
       {
         "location": "Water Breathing Potions",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "70 Gold",
         "daRequired": false
       }
@@ -11674,8 +11679,8 @@
     "obtainMethods": [
       {
         "location": "String Thing",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "110 Gold",
         "daRequired": false
       }
@@ -11708,17 +11713,17 @@
     "obtainMethods": [
       {
         "location": "To Edelia",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "120 Gold",
         "daRequired": true
       },
       {
         "location": "Edelia Drop DC",
-        "price": "15 Dragon Coins",
         "priceType": "dc",
+        "price": "15 Dragon Coins",
         "sellback": "14 DC (<24 hours) / 4 DC (>24 hours)",
-        "daRequired": true,
+        "daRequired": false,
         "dcRequired": true
       }
     ],
@@ -11751,8 +11756,8 @@
     "obtainMethods": [
       {
         "location": "As the Cauldron Boils...",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "200 Gold",
         "daRequired": true
       }
@@ -11786,17 +11791,17 @@
     "obtainMethods": [
       {
         "location": "The Border Prison",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "250 Gold",
         "daRequired": true
       },
       {
         "location": "Rescue DC Shop",
-        "price": "50 Dragon Coins",
         "priceType": "dc",
+        "price": "50 Dragon Coins",
         "sellback": "45 DC (<24 hours) / 13 DC (>24 hours)",
-        "daRequired": true,
+        "daRequired": false,
         "dcRequired": true
       }
     ],
@@ -11829,8 +11834,8 @@
     "obtainMethods": [
       {
         "location": "Trithril for Yashta",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "300 Gold",
         "daRequired": true
       }
@@ -11863,8 +11868,8 @@
     "obtainMethods": [
       {
         "location": "The Lost Egg of Orion",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "24 Gold",
         "daRequired": false
       }
@@ -11898,8 +11903,8 @@
     "obtainMethods": [
       {
         "location": "The Lost Egg of Orion",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "360 Gold",
         "daRequired": true
       }
@@ -11933,8 +11938,8 @@
     "obtainMethods": [
       {
         "location": "The Lost Egg of Orion",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "521 Gold",
         "daRequired": false
       }
@@ -11968,8 +11973,8 @@
     "obtainMethods": [
       {
         "location": "The Lost Egg of Orion",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "410 Gold",
         "daRequired": false
       }
@@ -12003,8 +12008,8 @@
     "obtainMethods": [
       {
         "location": "The Lost Egg of Orion",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "80 Gold",
         "daRequired": false
       }
@@ -12038,8 +12043,8 @@
     "obtainMethods": [
       {
         "location": "The Lost Egg of Orion",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "240 Gold",
         "daRequired": false
       }
@@ -12073,8 +12078,8 @@
     "obtainMethods": [
       {
         "location": "The Lost Egg of Orion",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "723 Gold",
         "daRequired": true
       }
@@ -12108,8 +12113,8 @@
     "obtainMethods": [
       {
         "location": "An Uncertain Future",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "1,150 Gold",
         "daRequired": true
       }
@@ -12142,21 +12147,21 @@
     "obtainMethods": [
       {
         "location": "Face of Death",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "230 Gold",
         "daRequired": true
       },
       {
         "location": "Sandsea Trinkets",
-        "price": "35 Dragon Coins",
         "priceType": "dc",
+        "price": "35 Dragon Coins",
         "sellback": "32 DC (<24 hours) / 9 DC (>24 hours)",
-        "daRequired": true,
+        "daRequired": false,
         "dcRequired": true
       }
     ],
-    "notes": "• Ostracon Supplies was previously available from the retired quest  Face of Death.",
+    "notes": "Ostracon Supplies was previously available from the retired quest  Face of Death.",
     "tags": [
       "sil",
       "free"
@@ -12199,7 +12204,8 @@
     ],
     "shared": {
       "description": "A belt woven of living roots, it glows with purple energy. Wherever the root ends or starts, you cannot tell. Proof of victory over Junipurr and The Adjudicator.",
-      "rarity": "5"
+      "rarity": "5",
+      "notes": "Item's name misspells Ouroboros as \"Ourobouros\" in-game."
     },
     "levelVariants": [
       {
@@ -12318,14 +12324,14 @@
     "obtainMethods": [
       {
         "location": "Sir Vey's Shop",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "20 Gold",
+        "price": "N/A",
         "requiredItems": "1 Pouch of Sparkling Sand",
+        "sellback": "20 Gold",
         "daRequired": false
       }
     ],
-    "notes": "• Belt previously required 5  Pouch of Sparkling Sand; this was lowered to 1 on  March 21st, 2025. \n• The following changes were implemented on  March 28th, 2025:\n  • The description's excerpt It increases your Block, Parry, and Dodge Defenses, making it slightly more likely for you to Defend against attacks. was added. \n  • Block stat was updated from +1 to +4. \n  • Parry and Dodge stats were added.",
+    "notes": "Belt previously required 5  Pouch of Sparkling Sand; this was lowered to 1 on  March 21st, 2025.\nThe following changes were implemented on  March 28th, 2025:\n  • The description's excerpt It increases your Block, Parry, and Dodge Defenses, making it slightly more likely for you to Defend against attacks. was added.\n  • Block stat was updated from +1 to +4.\n  • Parry and Dodge stats were added.",
     "tags": [
       "met",
       "merge"
@@ -12354,8 +12360,8 @@
     "obtainMethods": [
       {
         "location": "Skweel",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "195 Gold",
         "daRequired": true
       }
@@ -12388,8 +12394,8 @@
     "obtainMethods": [
       {
         "location": "Last Year",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "200 Gold",
         "daRequired": false
       }
@@ -12555,8 +12561,8 @@
     "obtainMethods": [
       {
         "location": "Last Year",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "150 Gold",
         "daRequired": false
       }
@@ -12590,8 +12596,8 @@
     "obtainMethods": [
       {
         "location": "Drowned Dungeon",
-        "price": "5,700 Gold",
         "priceType": "gold",
+        "price": "5,700 Gold",
         "sellback": "570 Gold",
         "daRequired": false
       }
@@ -12624,8 +12630,8 @@
     "obtainMethods": [
       {
         "location": "Things I See..., Happy 2011 April Fools!",
-        "price": "1,500 Gold",
         "priceType": "gold",
+        "price": "1,500 Gold",
         "sellback": "150 Gold",
         "daRequired": false
       }
@@ -12659,8 +12665,8 @@
     "obtainMethods": [
       {
         "location": "Skweel",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "85 Gold",
         "daRequired": true
       }
@@ -12693,8 +12699,8 @@
     "obtainMethods": [
       {
         "location": "Skweel",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "125 Gold",
         "daRequired": true
       }
@@ -12727,8 +12733,8 @@
     "obtainMethods": [
       {
         "location": "Peril",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "723 Gold",
         "daRequired": false
       }
@@ -12860,8 +12866,8 @@
     "obtainMethods": [
       {
         "location": "Rosewood Chest",
-        "price": "2,000 Gold",
         "priceType": "gold",
+        "price": "2,000 Gold",
         "sellback": "200 Gold",
         "daRequired": true
       }
@@ -12894,8 +12900,8 @@
     "obtainMethods": [
       {
         "location": "Sil Ruins (Shop)",
-        "price": "0 Gold",
         "priceType": "free",
+        "price": "0 Gold",
         "sellback": "0 Gold",
         "daRequired": false
       }
@@ -12928,8 +12934,8 @@
     "obtainMethods": [
       {
         "location": "The Elemental Cave, Ocean Reef",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "20 Gold",
         "daRequired": false
       }
@@ -12962,10 +12968,10 @@
     "obtainMethods": [
       {
         "location": "Relics of Zeclem",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "0 Dragon Coins",
+        "price": "N/A",
         "requiredItems": "1 Unhallowed DeathKnight Belt IV & 5 Relic of Zeclem OR 1 Zeclem's Belt (80) & 5 Relic of Zeclem",
+        "sellback": "0 Dragon Coins",
         "daRequired": true,
         "dcRequired": true
       }
@@ -13207,7 +13213,7 @@
             "price": "200 Dragon Coins",
             "priceType": "dc",
             "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -13254,7 +13260,7 @@
             "price": "225 Dragon Coins",
             "priceType": "dc",
             "sellback": "203 DC (<24 hours) / 57 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -13306,8 +13312,8 @@
     "obtainMethods": [
       {
         "location": "Queen of the Jungle",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "150 Gold",
         "daRequired": true
       }
@@ -13535,8 +13541,8 @@
     "obtainMethods": [
       {
         "location": "War Memorial Shop",
-        "price": "1,500 Gold",
         "priceType": "gold",
+        "price": "1,500 Gold",
         "sellback": "150 Gold",
         "daRequired": false
       }
@@ -13568,8 +13574,8 @@
     "obtainMethods": [
       {
         "location": "War Memorial Shop",
-        "price": "2,000 Gold",
         "priceType": "gold",
+        "price": "2,000 Gold",
         "sellback": "200 Gold",
         "daRequired": false
       }
@@ -13601,8 +13607,8 @@
     "obtainMethods": [
       {
         "location": "War Memorial Shop",
-        "price": "50 Gold",
         "priceType": "gold",
+        "price": "50 Gold",
         "sellback": "5 Gold",
         "daRequired": false
       }
@@ -13634,8 +13640,8 @@
     "obtainMethods": [
       {
         "location": "War Memorial Shop",
-        "price": "300 Gold",
         "priceType": "gold",
+        "price": "300 Gold",
         "sellback": "30 Gold",
         "daRequired": false
       }
@@ -13667,8 +13673,8 @@
     "obtainMethods": [
       {
         "location": "War Memorial Shop",
-        "price": "500 Gold",
         "priceType": "gold",
+        "price": "500 Gold",
         "sellback": "50 Gold",
         "daRequired": false
       }
@@ -13700,8 +13706,8 @@
     "obtainMethods": [
       {
         "location": "War Memorial Shop",
-        "price": "75 Gold",
         "priceType": "gold",
+        "price": "75 Gold",
         "sellback": "8 Gold",
         "daRequired": false
       }
@@ -13734,13 +13740,13 @@
     "obtainMethods": [
       {
         "location": "The Professor",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "200 Gold",
         "daRequired": true
       }
     ],
-    "notes": "• Belt was retired and replaced by  Technician's Tools V on  November 21st, 2025.",
+    "notes": "Belt was retired and replaced by  Technician's Tools V on  November 21st, 2025.",
     "tags": [
       "win",
       "free"
@@ -13770,8 +13776,8 @@
     "obtainMethods": [
       {
         "location": "Drowned Dungeon",
-        "price": "3,100 Gold",
         "priceType": "gold",
+        "price": "3,100 Gold",
         "sellback": "310 Gold",
         "daRequired": true
       }
@@ -13804,8 +13810,8 @@
     "obtainMethods": [
       {
         "location": "Drowned Dungeon",
-        "price": "1,450 Gold",
         "priceType": "gold",
+        "price": "1,450 Gold",
         "sellback": "145 Gold",
         "daRequired": false
       }
@@ -13838,8 +13844,8 @@
     "obtainMethods": [
       {
         "location": "Peril",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "410 Gold",
         "daRequired": true
       }
@@ -13872,8 +13878,8 @@
     "obtainMethods": [
       {
         "location": "Drowned Dungeon",
-        "price": "4,600 Gold",
         "priceType": "gold",
+        "price": "4,600 Gold",
         "sellback": "460 Gold",
         "daRequired": true
       }
@@ -13906,8 +13912,8 @@
     "obtainMethods": [
       {
         "location": "Sandsea Havoc",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "95 Gold",
         "daRequired": false
       }
@@ -13940,13 +13946,13 @@
     "obtainMethods": [
       {
         "location": "The Elemental Cave, Save The Mill!, Ocean Reef",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "30 Gold",
         "daRequired": false
       }
     ],
-    "notes": "• Item's Fire Resist is erroneously written in lower case; resistance still functions as intended.",
+    "notes": "Item's Fire Resist is erroneously written in lower case; resistance still functions as intended.",
     "tags": [
       "fir",
       "free"
@@ -13975,8 +13981,8 @@
     "obtainMethods": [
       {
         "location": "Creepy Undead Forest, Save The Mill!",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "20 Gold",
         "daRequired": false
       }
@@ -14009,8 +14015,8 @@
     "obtainMethods": [
       {
         "location": "Drowned Dungeon",
-        "price": "9,600 Gold",
         "priceType": "gold",
+        "price": "9,600 Gold",
         "sellback": "960 Gold",
         "daRequired": true
       }
@@ -14043,8 +14049,8 @@
     "obtainMethods": [
       {
         "location": "Drowned Dungeon",
-        "price": "6,100 Gold",
         "priceType": "gold",
+        "price": "6,100 Gold",
         "sellback": "610 Gold",
         "daRequired": false
       }
@@ -14285,7 +14291,7 @@
             "price": "90 Dragon Coins",
             "priceType": "dc",
             "sellback": "81 DC (<24 hours) / 23 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -14332,7 +14338,7 @@
             "price": "90 Dragon Coins",
             "priceType": "dc",
             "sellback": "81 DC (<24 hours) / 23 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -14384,8 +14390,8 @@
     "obtainMethods": [
       {
         "location": "What's Mine Is Mine",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "100 Gold",
         "daRequired": false
       }
@@ -14418,17 +14424,17 @@
     "obtainMethods": [
       {
         "location": "To Edelia",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "230 Gold",
         "daRequired": true
       },
       {
         "location": "Edelia Drop DC",
-        "price": "45 Dragon Coins",
         "priceType": "dc",
+        "price": "45 Dragon Coins",
         "sellback": "40 DC (<24 hours) / 11 DC (>24 hours)",
-        "daRequired": true,
+        "daRequired": false,
         "dcRequired": true
       }
     ],
@@ -14461,8 +14467,8 @@
     "obtainMethods": [
       {
         "location": "Peril",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "120 Gold",
         "daRequired": true
       }
@@ -14494,8 +14500,8 @@
     "obtainMethods": [
       {
         "location": "Moonridge: Saved!",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "5 Gold",
         "daRequired": false
       }
@@ -14548,7 +14554,8 @@
     ],
     "shared": {
       "description": "You've enhanced your belt with shadow energy. It feels as though you aren't clasping anything around your waist as you put it on.",
-      "rarity": "10"
+      "rarity": "10",
+      "notes": "II-IV versions previously required 1  DeathKnight Belt & 2/3/4  Dusk Essence respectively.\nBelts were tiered with Roman numerals on  August 25th, 2023; Required Items on II-IV versions were also changed on that date."
     },
     "levelVariants": [
       {
@@ -14688,8 +14695,8 @@
     "obtainMethods": [
       {
         "location": "Rescue!",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "40 Gold",
         "daRequired": false
       }
@@ -14722,8 +14729,8 @@
     "obtainMethods": [
       {
         "location": "Drowned Dungeon",
-        "price": "8,800 Gold",
         "priceType": "gold",
+        "price": "8,800 Gold",
         "sellback": "880 Gold",
         "daRequired": false
       }
@@ -14756,8 +14763,8 @@
     "obtainMethods": [
       {
         "location": "The Body Shop",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "28 Gold",
         "daRequired": true
       }
@@ -14831,7 +14838,8 @@
     ],
     "shared": {
       "description": "From afar it looks to be made of silver dragon scales, but they're actually polished metal.",
-      "rarity": "1"
+      "rarity": "1",
+      "notes": "I-VI versions of this belt replaced  Die Cast Belt,  Electric Chain,  Molten Links,  Stone Cinch,  Shiny Scaled Belt, and  Wonderflonium Belt respectively."
     },
     "levelVariants": [
       {
@@ -15036,13 +15044,13 @@
     "obtainMethods": [
       {
         "location": "The Hunt Begins",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "180 Gold",
         "daRequired": false
       }
     ],
-    "notes": "• Belt was retired and replaced by  Shining Scaled Belt V on  April 25th, 2025.",
+    "notes": "Belt was retired and replaced by  Shining Scaled Belt V on  April 25th, 2025.",
     "tags": [
       "win",
       "free"
@@ -15072,8 +15080,8 @@
     "obtainMethods": [
       {
         "location": "The Elemental Cave, Ocean Reef",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "30 Gold",
         "daRequired": false
       }
@@ -15106,8 +15114,8 @@
     "obtainMethods": [
       {
         "location": "Sil Ruins (Shop)",
-        "price": "0 Gold",
         "priceType": "free",
+        "price": "0 Gold",
         "sellback": "0 Gold",
         "daRequired": false
       }
@@ -15139,8 +15147,8 @@
     "obtainMethods": [
       {
         "location": "Swordhaven Clothing",
-        "price": "300 Gold",
         "priceType": "gold",
+        "price": "300 Gold",
         "sellback": "30 Gold",
         "daRequired": false
       }
@@ -15173,8 +15181,8 @@
     "obtainMethods": [
       {
         "location": "Peril",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "870 Gold",
         "daRequired": true
       }
@@ -15207,8 +15215,8 @@
     "obtainMethods": [
       {
         "location": "Rosewood Chest",
-        "price": "2,300 Gold",
         "priceType": "gold",
+        "price": "2,300 Gold",
         "sellback": "230 Gold",
         "daRequired": true
       }
@@ -15241,8 +15249,8 @@
     "obtainMethods": [
       {
         "location": "Drowned Dungeon",
-        "price": "2,400 Gold",
         "priceType": "gold",
+        "price": "2,400 Gold",
         "sellback": "240 Gold",
         "daRequired": false
       }
@@ -15275,8 +15283,8 @@
     "obtainMethods": [
       {
         "location": "Drowned Dungeon",
-        "price": "7,800 Gold",
         "priceType": "gold",
+        "price": "7,800 Gold",
         "sellback": "780 Gold",
         "daRequired": false
       }
@@ -15309,8 +15317,8 @@
     "obtainMethods": [
       {
         "location": "Zoo",
-        "price": "3,000 Gold",
         "priceType": "gold",
+        "price": "3,000 Gold",
         "sellback": "300 Gold",
         "daRequired": true
       }
@@ -15343,8 +15351,8 @@
     "obtainMethods": [
       {
         "location": "Mission Possible",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "360 Gold",
         "daRequired": false
       }
@@ -15377,8 +15385,8 @@
     "obtainMethods": [
       {
         "location": "Hide n' Seek",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "80 Gold",
         "daRequired": true
       }
@@ -15411,15 +15419,15 @@
     "obtainMethods": [
       {
         "location": "To Edelia",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "150 Gold",
         "daRequired": false
       },
       {
         "location": "Edelia Drop DC",
-        "price": "25 Dragon Coins",
         "priceType": "dc",
+        "price": "25 Dragon Coins",
         "sellback": "22 DC (<24 hours) / 6 DC (>24 hours)",
         "daRequired": false,
         "dcRequired": true
@@ -15453,8 +15461,8 @@
     "obtainMethods": [
       {
         "location": "Moonridge: Saved!",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "12 Gold",
         "daRequired": false
       }
@@ -15487,17 +15495,17 @@
     "obtainMethods": [
       {
         "location": "Star Captain Belts",
-        "price": "240 Gold",
         "priceType": "gold",
+        "price": "240 Gold",
         "sellback": "24 Gold",
         "daRequired": true
       },
       {
         "location": "Star Captain DC Belts",
-        "price": "20 Dragon Coins",
         "priceType": "dc",
+        "price": "20 Dragon Coins",
         "sellback": "18 DC (<24 hours) / 5 DC (>24 hours)",
-        "daRequired": true,
+        "daRequired": false,
         "dcRequired": true
       }
     ],
@@ -15530,21 +15538,21 @@
     "obtainMethods": [
       {
         "location": "Star Captain Belts",
-        "price": "4,100 Gold",
         "priceType": "gold",
+        "price": "4,100 Gold",
         "sellback": "410 Gold",
         "daRequired": false
       },
       {
         "location": "Star Captain DC Belts",
-        "price": "40 Dragon Coins",
         "priceType": "dc",
+        "price": "40 Dragon Coins",
         "sellback": "36 DC (<24 hours) / 10 DC (>24 hours)",
         "daRequired": false,
         "dcRequired": true
       }
     ],
-    "notes": "• Item has Mana flavor resistance.",
+    "notes": "Item has Mana flavor resistance.",
     "tags": [
       "ene",
       "gold"
@@ -15574,17 +15582,17 @@
     "obtainMethods": [
       {
         "location": "Star Captain Belts",
-        "price": "3,600 Gold",
         "priceType": "gold",
+        "price": "3,600 Gold",
         "sellback": "360 Gold",
         "daRequired": true
       },
       {
         "location": "Star Captain DC Belts",
-        "price": "35 Dragon Coins",
         "priceType": "dc",
+        "price": "35 Dragon Coins",
         "sellback": "32 DC (<24 hours) / 9 DC (>24 hours)",
-        "daRequired": true,
+        "daRequired": false,
         "dcRequired": true
       }
     ],
@@ -15617,21 +15625,21 @@
     "obtainMethods": [
       {
         "location": "Star Captain Belts",
-        "price": "7,230 Gold",
         "priceType": "gold",
+        "price": "7,230 Gold",
         "sellback": "723 Gold",
         "daRequired": true
       },
       {
         "location": "Star Captain DC Belts",
-        "price": "50 Dragon Coins",
         "priceType": "dc",
+        "price": "50 Dragon Coins",
         "sellback": "45 DC (<24 hours) / 13 DC (>24 hours)",
-        "daRequired": true,
+        "daRequired": false,
         "dcRequired": true
       }
     ],
-    "notes": "• Item has Mana flavor resistance.",
+    "notes": "Item has Mana flavor resistance.",
     "tags": [
       "ene",
       "gold"
@@ -15661,21 +15669,21 @@
     "obtainMethods": [
       {
         "location": "Star Captain Belts",
-        "price": "5,210 Gold",
         "priceType": "gold",
+        "price": "5,210 Gold",
         "sellback": "521 Gold",
         "daRequired": false
       },
       {
         "location": "Star Captain DC Belts",
-        "price": "45 Dragon Coins",
         "priceType": "dc",
+        "price": "45 Dragon Coins",
         "sellback": "41 DC (<24 hours) / 11 DC (>24 hours)",
         "daRequired": false,
         "dcRequired": true
       }
     ],
-    "notes": "• Item has Mana flavor resistance.",
+    "notes": "Item has Mana flavor resistance.",
     "tags": [
       "ene",
       "gold"
@@ -15705,15 +15713,15 @@
     "obtainMethods": [
       {
         "location": "Star Captain Belts",
-        "price": "1,450 Gold",
         "priceType": "gold",
+        "price": "1,450 Gold",
         "sellback": "145 Gold",
         "daRequired": false
       },
       {
         "location": "Star Captain DC Belts",
-        "price": "15 Dragon Coins",
         "priceType": "dc",
+        "price": "15 Dragon Coins",
         "sellback": "14 DC (<24 hours) / 4 DC (>24 hours)",
         "daRequired": false,
         "dcRequired": true
@@ -15748,15 +15756,15 @@
     "obtainMethods": [
       {
         "location": "Star Captain Belts",
-        "price": "2,400 Gold",
         "priceType": "gold",
+        "price": "2,400 Gold",
         "sellback": "240 Gold",
         "daRequired": false
       },
       {
         "location": "Star Captain DC Belts",
-        "price": "30 Dragon Coins",
         "priceType": "dc",
+        "price": "30 Dragon Coins",
         "sellback": "27 DC (<24 hours) / 8 DC (>24 hours)",
         "daRequired": false,
         "dcRequired": true
@@ -15791,15 +15799,15 @@
     "obtainMethods": [
       {
         "location": "Star Captain Belts",
-        "price": "800 Gold",
         "priceType": "gold",
+        "price": "800 Gold",
         "sellback": "80 Gold",
         "daRequired": false
       },
       {
         "location": "Star Captain DC Belts",
-        "price": "25 Dragon Coins",
         "priceType": "dc",
+        "price": "25 Dragon Coins",
         "sellback": "23 DC (<24 hours) / 7 DC (>24 hours)",
         "daRequired": false,
         "dcRequired": true
@@ -15834,8 +15842,8 @@
     "obtainMethods": [
       {
         "location": "String Thing",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "195 Gold",
         "daRequired": true
       }
@@ -16137,7 +16145,7 @@
             "price": "170 Dragon Coins",
             "priceType": "dc",
             "sellback": "153 DC (<24 hours) / 43 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -16184,7 +16192,7 @@
             "price": "200 Dragon Coins",
             "priceType": "dc",
             "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -16231,7 +16239,7 @@
             "price": "225 Dragon Coins",
             "priceType": "dc",
             "sellback": "203 DC (<24 hours) / 57 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -16283,13 +16291,13 @@
     "obtainMethods": [
       {
         "location": "The Hunt Begins",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "150 Gold",
         "daRequired": false
       }
     ],
-    "notes": "• Belt was retired and replaced by  Shining Scaled Belt IV on  April 25th, 2025.",
+    "notes": "Belt was retired and replaced by  Shining Scaled Belt IV on  April 25th, 2025.",
     "tags": [
       "sto",
       "free"
@@ -16319,8 +16327,8 @@
     "obtainMethods": [
       {
         "location": "The Elemental Cave, Save the Mill!, Ocean Reef",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "20 Gold",
         "daRequired": false
       }
@@ -16353,8 +16361,8 @@
     "obtainMethods": [
       {
         "location": "Mission Possible",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "24 Gold",
         "daRequired": false
       }
@@ -16387,10 +16395,10 @@
     "obtainMethods": [
       {
         "location": "Relics of Zeclem",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "0 Dragon Coins",
+        "price": "N/A",
         "requiredItems": "1 Shadowed DeathKnight Belt IV & 5 Relic of Zeclem",
+        "sellback": "0 Dragon Coins",
         "daRequired": false,
         "dcRequired": true
       }
@@ -16423,8 +16431,8 @@
     "obtainMethods": [
       {
         "location": "Aria In Wanderland",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "0 Gold",
         "daRequired": false
       }
@@ -16457,8 +16465,8 @@
     "obtainMethods": [
       {
         "location": "Hide n' Seek",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "570 Gold",
         "daRequired": false
       }
@@ -16491,13 +16499,13 @@
     "obtainMethods": [
       {
         "location": "The Professor",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "240 Gold",
         "daRequired": true
       }
     ],
-    "notes": "• Belt was retired and replaced by  Technician's Tools II on  November 21st, 2025.",
+    "notes": "Belt was retired and replaced by  Technician's Tools II on  November 21st, 2025.",
     "tags": [
       "met",
       "free"
@@ -16561,7 +16569,8 @@
     ],
     "shared": {
       "description": "Full of delicate tools used for intricate machine work.",
-      "rarity": "5"
+      "rarity": "5",
+      "notes": "These belts replaced  Copper Gears,  Tech Toolbelt,  Imp's Sash,  Blacksmith's Leather Satchel,  Runed Warrior Belt, and  Technician's Tools respectively."
     },
     "levelVariants": [
       {
@@ -16742,7 +16751,7 @@
             "price": "30 Dragon Coins",
             "priceType": "dc",
             "sellback": "27 DC (<24 hours) / 8 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -16789,7 +16798,7 @@
             "price": "30 Dragon Coins",
             "priceType": "dc",
             "sellback": "27 DC (<24 hours) / 8 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -16836,7 +16845,7 @@
             "price": "30 Dragon Coins",
             "priceType": "dc",
             "sellback": "27 DC (<24 hours) / 8 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -16888,13 +16897,13 @@
     "obtainMethods": [
       {
         "location": "The Professor",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "230 Gold",
         "daRequired": true
       }
     ],
-    "notes": "• Belt was retired and replaced by  Technician's Tools VI on  November 21st, 2025.",
+    "notes": "Belt was retired and replaced by  Technician's Tools VI on  November 21st, 2025.",
     "tags": [
       "met",
       "free"
@@ -16923,10 +16932,10 @@
     "obtainMethods": [
       {
         "location": "Thursday Belts",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "100 Gold",
+        "price": "N/A",
         "requiredItems": "Thursday's Pendant",
+        "sellback": "100 Gold",
         "daRequired": false
       }
     ],
@@ -16957,10 +16966,10 @@
     "obtainMethods": [
       {
         "location": "Thursday Belts",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "100 Gold",
+        "price": "N/A",
         "requiredItems": "Thursday's Pendant",
+        "sellback": "100 Gold",
         "daRequired": true
       }
     ],
@@ -16992,21 +17001,21 @@
     "obtainMethods": [
       {
         "location": "The Border Prison",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "40 Gold",
         "daRequired": false
       },
       {
         "location": "Rescue DC Shop",
-        "price": "10 Dragon Coins",
         "priceType": "dc",
+        "price": "10 Dragon Coins",
         "sellback": "9 DC (<24 hours) / 3 DC (>24 hours)",
         "daRequired": false,
         "dcRequired": true
       }
     ],
-    "notes": "• Tog Scale Belt was previously available from the retired quest  Rescue of Elanee.",
+    "notes": "Tog Scale Belt was previously available from the retired quest  Rescue of Elanee.",
     "tags": [
       "nat",
       "free"
@@ -17036,8 +17045,8 @@
     "obtainMethods": [
       {
         "location": "CMC - Oct 09",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "55 Gold",
         "daRequired": false
       }
@@ -17070,8 +17079,8 @@
     "obtainMethods": [
       {
         "location": "An Uncertain Future",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "35 Gold",
         "daRequired": false
       }
@@ -17104,8 +17113,8 @@
     "obtainMethods": [
       {
         "location": "Moonridge Emporium",
-        "price": "2,500 Gold",
         "priceType": "gold",
+        "price": "2,500 Gold",
         "sellback": "250 Gold",
         "daRequired": false
       }
@@ -17138,8 +17147,8 @@
     "obtainMethods": [
       {
         "location": "Trithril for Yashta",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "1,500 Gold",
         "daRequired": true
       }
@@ -17172,8 +17181,8 @@
     "obtainMethods": [
       {
         "location": "Trithril for Yashta",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "570 Gold",
         "daRequired": false
       }
@@ -17206,8 +17215,8 @@
     "obtainMethods": [
       {
         "location": "Trithril for Yashta",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "870 Gold",
         "daRequired": false
       }
@@ -17240,8 +17249,8 @@
     "obtainMethods": [
       {
         "location": "Trithril for Yashta",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "780 Gold",
         "daRequired": false
       }
@@ -17274,8 +17283,8 @@
     "obtainMethods": [
       {
         "location": "Trithril for Yashta",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "420 Gold",
         "daRequired": false
       }
@@ -17308,8 +17317,8 @@
     "obtainMethods": [
       {
         "location": "Trithril for Yashta",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "1,020 Gold",
         "daRequired": true
       }
@@ -17342,8 +17351,8 @@
     "obtainMethods": [
       {
         "location": "Trithril for Yashta",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "1,130 Gold",
         "daRequired": true
       }
@@ -17376,8 +17385,8 @@
     "obtainMethods": [
       {
         "location": "Trithril for Yashta",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "810 Gold",
         "daRequired": true
       }
@@ -17410,8 +17419,8 @@
     "obtainMethods": [
       {
         "location": "Popsprocket Havoc",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "215 Gold",
         "daRequired": true
       }
@@ -17444,10 +17453,10 @@
     "obtainMethods": [
       {
         "location": "Teral's Gear",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "55 Gold",
+        "price": "N/A",
         "requiredItems": "3 Troglomite Pelt & 3 Leather",
+        "sellback": "55 Gold",
         "daRequired": false
       }
     ],
@@ -17479,10 +17488,10 @@
     "obtainMethods": [
       {
         "location": "Teral's Gear",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "140 Gold",
+        "price": "N/A",
         "requiredItems": "1 Troglomite Belt & 4 Troglomite Eye",
+        "sellback": "140 Gold",
         "daRequired": false
       }
     ],
@@ -17514,21 +17523,21 @@
     "obtainMethods": [
       {
         "location": "Face of Death",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "150 Gold",
         "daRequired": false
       },
       {
         "location": "Sandsea Trinkets",
-        "price": "25 Dragon Coins",
         "priceType": "dc",
+        "price": "25 Dragon Coins",
         "sellback": "23 DC (<24 hours) / 7 DC (>24 hours)",
         "daRequired": false,
         "dcRequired": true
       }
     ],
-    "notes": "• Tuat Guide was previously available from the retired quest  Face of Death.",
+    "notes": "Tuat Guide was previously available from the retired quest  Face of Death.",
     "tags": [
       "sto",
       "free"
@@ -17558,8 +17567,8 @@
     "obtainMethods": [
       {
         "location": "Market District",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "185 Gold",
         "daRequired": true
       }
@@ -17612,7 +17621,8 @@
     ],
     "shared": {
       "description": "You've enhanced your belt with shadow energy. It feels as though you aren't clasping anything around your waist as you put it on. This item requires a Dragon Amulet.",
-      "rarity": "10"
+      "rarity": "10",
+      "notes": "II-IV versions previously required 1  DeathKnight Belt & 2/3/4  Umbral Essence respectively.\nBelts were tiered with Roman numerals on  August 25th, 2023; Required Items on II-IV versions were also changed on that date."
     },
     "levelVariants": [
       {
@@ -17752,21 +17762,21 @@
     "obtainMethods": [
       {
         "location": "Face of Death",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "90 Gold",
         "daRequired": true
       },
       {
         "location": "Sandsea Trinkets",
-        "price": "15 Dragon Coins",
         "priceType": "dc",
+        "price": "15 Dragon Coins",
         "sellback": "14 DC (<24 hours) / 4 DC (>24 hours)",
-        "daRequired": true,
+        "daRequired": false,
         "dcRequired": true
       }
     ],
-    "notes": "• Ushabti Sash was previously available from the retired quest  Face of Death.",
+    "notes": "Ushabti Sash was previously available from the retired quest  Face of Death.",
     "tags": [
       "dar",
       "free"
@@ -17796,8 +17806,8 @@
     "obtainMethods": [
       {
         "location": "As the Cauldron Boils...",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "15 Gold",
         "daRequired": false
       }
@@ -17831,8 +17841,8 @@
     "obtainMethods": [
       {
         "location": "Market District",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "50 Gold",
         "daRequired": false
       }
@@ -17865,21 +17875,21 @@
     "obtainMethods": [
       {
         "location": "The Border Prison",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "230 Gold",
         "daRequired": true
       },
       {
         "location": "Rescue DC Shop",
-        "price": "50 Dragon Coins",
         "priceType": "dc",
+        "price": "50 Dragon Coins",
         "sellback": "45 DC (<24 hours) / 13 DC (>24 hours)",
-        "daRequired": true,
+        "daRequired": false,
         "dcRequired": true
       }
     ],
-    "notes": "• Vind Trophy Belt was previously available from the retired quest  Rescue of Elanee.",
+    "notes": "Vind Trophy Belt was previously available from the retired quest  Rescue of Elanee.",
     "tags": [
       "sil",
       "free"
@@ -17909,8 +17919,8 @@
     "obtainMethods": [
       {
         "location": "Last Year",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "100 Gold",
         "daRequired": false
       }
@@ -18322,7 +18332,7 @@
             "price": "30 Dragon Coins",
             "priceType": "dc",
             "sellback": "27 DC (<24 hours) / 8 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -18367,7 +18377,7 @@
             "price": "30 Dragon Coins",
             "priceType": "dc",
             "sellback": "27 DC (<24 hours) / 8 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -18415,10 +18425,10 @@
     "obtainMethods": [
       {
         "location": "Teral's Gear",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "150 Gold",
+        "price": "N/A",
         "requiredItems": "1 Monster Hunter's Belt & 5 Ahzite Ore",
+        "sellback": "150 Gold",
         "daRequired": false
       }
     ],
@@ -18470,7 +18480,8 @@
     ],
     "shared": {
       "description": "This belt of silver fox fur is said to bestow speed upon it's wearer.",
-      "rarity": "6"
+      "rarity": "6",
+      "notes": "These belts went rare on  April 30th, 2021."
     },
     "levelVariants": [
       {
@@ -18607,21 +18618,21 @@
     "obtainMethods": [
       {
         "location": "The Border Prison",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "200 Gold",
         "daRequired": true
       },
       {
         "location": "Rescue DC Shop",
-        "price": "40 Dragon Coins",
         "priceType": "dc",
+        "price": "40 Dragon Coins",
         "sellback": "36 DC (<24 hours) / 10 DC (>24 hours)",
-        "daRequired": true,
+        "daRequired": false,
         "dcRequired": true
       }
     ],
-    "notes": "• Warden Belt was previously available from the retired quest  Rescue of Elanee.",
+    "notes": "Warden Belt was previously available from the retired quest  Rescue of Elanee.",
     "tags": [
       "met",
       "free"
@@ -18994,7 +19005,7 @@
             "price": "170 Dragon Coins",
             "priceType": "dc",
             "sellback": "153 DC (<24 hours) / 43 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -19037,7 +19048,7 @@
             "price": "200 Dragon Coins",
             "priceType": "dc",
             "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -19281,8 +19292,8 @@
     "obtainMethods": [
       {
         "location": "Drowned Dungeon",
-        "price": "2,900 Gold",
         "priceType": "gold",
+        "price": "2,900 Gold",
         "sellback": "290 Gold",
         "daRequired": false
       }
@@ -19315,13 +19326,13 @@
     "obtainMethods": [
       {
         "location": "Everyone Knows It's Windy",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "120 Gold",
         "daRequired": false
       }
     ],
-    "notes": "• The following changes were implemented on  March 20th, 2026: \n  • Dragon Amulet requirement was removed. \n  • Level's requirement was raised from 5 to 15. \n  • Pierce Def +5 stat was removed. \n  • END was raised from +1 to +5. \n  • Bonus was raised from +1 to +2.",
+    "notes": "The following changes were implemented on  March 20th, 2026:\n  • Dragon Amulet requirement was removed.\n  • Level's requirement was raised from 5 to 15.\n  • Pierce Def +5 stat was removed.\n  • END was raised from +1 to +5.\n  • Bonus was raised from +1 to +2.",
     "tags": [
       "win",
       "free"
@@ -19350,8 +19361,8 @@
     "obtainMethods": [
       {
         "location": "Peril",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "1,020 Gold",
         "daRequired": true
       }
@@ -19384,8 +19395,8 @@
     "obtainMethods": [
       {
         "location": "Mission Possible",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "521 Gold",
         "daRequired": false
       }
@@ -19418,8 +19429,8 @@
     "obtainMethods": [
       {
         "location": "An Uncertain Future",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "300 Gold",
         "daRequired": true
       }
@@ -19452,8 +19463,8 @@
     "obtainMethods": [
       {
         "location": "Queen of the Jungle",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "5 Gold",
         "daRequired": false
       }
@@ -19486,13 +19497,13 @@
     "obtainMethods": [
       {
         "location": "The Hunt Begins",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "220 Gold",
         "daRequired": true
       }
     ],
-    "notes": "• Belt was retired and replaced by  Shining Scaled Belt VI on  April 25th, 2025.",
+    "notes": "Belt was retired and replaced by  Shining Scaled Belt VI on  April 25th, 2025.",
     "tags": [
       "dar",
       "free"
@@ -19522,8 +19533,8 @@
     "obtainMethods": [
       {
         "location": "Sil Ruins (Shop)",
-        "price": "0 Gold",
         "priceType": "free",
+        "price": "0 Gold",
         "sellback": "0 Gold",
         "daRequired": false
       }
@@ -19556,8 +19567,8 @@
     "obtainMethods": [
       {
         "location": "Hide n' Seek",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "1,500 Gold",
         "daRequired": true
       }
@@ -19590,8 +19601,8 @@
     "obtainMethods": [
       {
         "location": "Mission Possible",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "240 Gold",
         "daRequired": false
       }
@@ -19624,8 +19635,8 @@
     "obtainMethods": [
       {
         "location": "Night Of The Living Pumpkin",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "50 Gold",
         "daRequired": false
       }
@@ -19658,8 +19669,8 @@
     "obtainMethods": [
       {
         "location": "Double, Trouble, Boil and Bubble",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "180 Gold",
         "daRequired": true
       }
@@ -19692,8 +19703,8 @@
     "obtainMethods": [
       {
         "location": "Cysero's Shop",
-        "price": "300 Dragon Coins",
         "priceType": "dc",
+        "price": "300 Dragon Coins",
         "sellback": "270 DC (<24 hours) / 75 DC (>24 hours)",
         "daRequired": false,
         "dcRequired": true
@@ -19884,10 +19895,10 @@
     "obtainMethods": [
       {
         "location": "Relics of Zeclem",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "0 Dragon Coins",
+        "price": "N/A",
         "requiredItems": "1 Unhallowed DeathKnight Belt IV & 5 Relic of Zeclem OR 1 Zeclem's Belt (80) & 5 Relic of Zeclem",
+        "sellback": "0 Dragon Coins",
         "daRequired": false,
         "dcRequired": true
       }
@@ -19921,8 +19932,8 @@
     "obtainMethods": [
       {
         "location": "Peril",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "65 Gold",
         "daRequired": false
       }

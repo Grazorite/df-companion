@@ -21,8 +21,8 @@
     "obtainMethods": [
       {
         "location": "Prison Brawl",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "210 Gold",
         "daRequired": false
       }
@@ -55,10 +55,10 @@
     "obtainMethods": [
       {
         "location": "Valencia's Shop",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "0 Gold",
+        "price": "N/A",
         "requiredItems": "1 Newspaper Clipping #2 & 1 Newspaper Clipping #4",
+        "sellback": "0 Gold",
         "daRequired": true
       }
     ],
@@ -90,10 +90,10 @@
     "obtainMethods": [
       {
         "location": "Valencia's Shop",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "0 Gold",
+        "price": "N/A",
         "requiredItems": "1 Newspaper Clipping #1 & 1 Newspaper Clipping #3",
+        "sellback": "0 Gold",
         "daRequired": false
       }
     ],
@@ -158,7 +158,8 @@
       }
     ],
     "shared": {
-      "description": "Aegis was so grateful, his emotions manifested into this palpable necklace for you to wear."
+      "description": "Aegis was so grateful, his emotions manifested into this palpable necklace for you to wear.",
+      "notes": "57-77 versions have Mana flavor resistance."
     },
     "levelVariants": [
       {
@@ -334,8 +335,8 @@
     "obtainMethods": [
       {
         "location": "Reforged",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "200 Gold",
         "daRequired": true
       }
@@ -523,13 +524,13 @@
     "obtainMethods": [
       {
         "location": "DeathKnight",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "80 Gold",
         "daRequired": false
       }
     ],
-    "notes": "• Item was previously named 'Deathknight Pendant'; this was changed on  August 25th, 2023.",
+    "notes": "Item was previously named 'Deathknight Pendant'; this was changed on  August 25th, 2023.",
     "tags": [
       "dar",
       "free"
@@ -558,8 +559,8 @@
     "obtainMethods": [
       {
         "location": "Willowshire Thanks",
-        "price": "2,000 Gold",
         "priceType": "gold",
+        "price": "2,000 Gold",
         "sellback": "200 Gold",
         "daRequired": true
       }
@@ -592,8 +593,8 @@
     "obtainMethods": [
       {
         "location": "Your Secret Is Safe",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "70 Gold",
         "daRequired": false
       }
@@ -626,8 +627,8 @@
     "obtainMethods": [
       {
         "location": "The Elite Patrol",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "250 Gold",
         "daRequired": true
       }
@@ -660,8 +661,8 @@
     "obtainMethods": [
       {
         "location": "Yulgar's First Date",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "30 Gold",
         "daRequired": false
       }
@@ -694,8 +695,8 @@
     "obtainMethods": [
       {
         "location": "The Ruins of Bask",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "100 Gold",
         "daRequired": true
       }
@@ -728,8 +729,8 @@
     "obtainMethods": [
       {
         "location": "Frostvale Defense",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "70 Gold",
         "daRequired": false
       }
@@ -763,8 +764,8 @@
     "obtainMethods": [
       {
         "location": "Mother's Day Shop",
-        "price": "500 Gold",
         "priceType": "gold",
+        "price": "500 Gold",
         "sellback": "50 Gold",
         "daRequired": false
       }
@@ -798,8 +799,8 @@
     "obtainMethods": [
       {
         "location": "Yulgar's First Date",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "150 Gold",
         "daRequired": false
       }
@@ -832,8 +833,8 @@
     "obtainMethods": [
       {
         "location": "Trinki's Rings",
-        "price": "300 Gold",
         "priceType": "gold",
+        "price": "300 Gold",
         "sellback": "30 Gold",
         "daRequired": true
       }
@@ -866,15 +867,15 @@
     "obtainMethods": [
       {
         "location": "The Valtrith Tomb",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "230 Gold",
         "daRequired": false
       },
       {
         "location": "Tomb Drops",
-        "price": "70 Dragon Coins",
         "priceType": "dc",
+        "price": "70 Dragon Coins",
         "sellback": "63 DC (<24 hours) / 18 DC (>24 hours)",
         "daRequired": false,
         "dcRequired": true
@@ -909,15 +910,15 @@
     "obtainMethods": [
       {
         "location": "The Valtrith Tomb",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "110 Gold",
         "daRequired": false
       },
       {
         "location": "Tomb Drops",
-        "price": "40 Dragon Coins",
         "priceType": "dc",
+        "price": "40 Dragon Coins",
         "sellback": "36 DC (<24 hours) / 10 DC (>24 hours)",
         "daRequired": false,
         "dcRequired": true
@@ -952,8 +953,8 @@
     "obtainMethods": [
       {
         "location": "Yulgar's First Date",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "100 Gold",
         "daRequired": false
       }
@@ -986,8 +987,8 @@
     "obtainMethods": [
       {
         "location": "The Human Element",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "250 Gold",
         "daRequired": true
       }
@@ -1146,10 +1147,10 @@
     "obtainMethods": [
       {
         "location": "Stevy Shop",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "200 Gold",
+        "price": "N/A",
         "requiredItems": "12 Dark Insicors",
+        "sellback": "200 Gold",
         "daRequired": false
       }
     ],
@@ -1181,8 +1182,8 @@
     "obtainMethods": [
       {
         "location": "FwendQuest",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "150 Gold",
         "daRequired": false
       }
@@ -1216,8 +1217,8 @@
     "obtainMethods": [
       {
         "location": "Yulgar's First Date",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "250 Gold",
         "daRequired": true
       }
@@ -1250,15 +1251,15 @@
     "obtainMethods": [
       {
         "location": "The Valtrith Tomb",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "180 Gold",
         "daRequired": false
       },
       {
         "location": "Tomb Drops",
-        "price": "60 Dragon Coins",
         "priceType": "dc",
+        "price": "60 Dragon Coins",
         "sellback": "54 DC (<24 hours) / 15 DC (>24 hours)",
         "daRequired": false,
         "dcRequired": true
@@ -1293,8 +1294,8 @@
     "obtainMethods": [
       {
         "location": "Hide n' Seek",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "100 Gold",
         "daRequired": true
       }
@@ -1327,8 +1328,8 @@
     "obtainMethods": [
       {
         "location": "The Dragon Drakath",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "125 Gold",
         "daRequired": false
       }
@@ -1361,8 +1362,8 @@
     "obtainMethods": [
       {
         "location": "FwendQuest",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "180 Gold",
         "daRequired": false
       }
@@ -1396,21 +1397,21 @@
     "obtainMethods": [
       {
         "location": "Face of Death",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "230 Gold",
         "daRequired": true
       },
       {
         "location": "Sandsea Trinkets",
-        "price": "35 Dragon Coins",
         "priceType": "dc",
+        "price": "35 Dragon Coins",
         "sellback": "32 DC (<24 hours) / 9 DC (>24 hours)",
-        "daRequired": true,
+        "daRequired": false,
         "dcRequired": true
       }
     ],
-    "notes": "• Canopic Charm was previously available from the retired quest  Face of Death.",
+    "notes": "Canopic Charm was previously available from the retired quest  Face of Death.",
     "tags": [
       "sto",
       "free"
@@ -1622,21 +1623,21 @@
     "obtainMethods": [
       {
         "location": "Face of Death",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "190 Gold",
         "daRequired": false
       },
       {
         "location": "Sandsea Trinkets",
-        "price": "30 Dragon Coins",
         "priceType": "dc",
+        "price": "30 Dragon Coins",
         "sellback": "27 DC (<24 hours) / 8 DC (>24 hours)",
         "daRequired": false,
         "dcRequired": true
       }
     ],
-    "notes": "• Cenotaph Key was previously available from the retired quest  Face of Death.",
+    "notes": "Cenotaph Key was previously available from the retired quest  Face of Death.",
     "tags": [
       "sil",
       "free"
@@ -1666,8 +1667,8 @@
     "obtainMethods": [
       {
         "location": "Bitten",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "180 Gold",
         "daRequired": false
       }
@@ -1700,13 +1701,13 @@
     "obtainMethods": [
       {
         "location": "Nose for Trouble",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "35 Gold",
         "daRequired": false
       }
     ],
-    "notes": "• Item previously appeared in the retired quest  Nose for Trouble. \n• The following changes were implemented on  August 22nd, 2025: \n  • Previously had the description: Found in the gargoyle cavern, when you wipe off the crystal dangling at the end of the chain, it begins to shine brightly, aiding your vision. \n  • LUK stat was increased from +2 to +5. \n  • CHA and Bonus stats were added.",
+    "notes": "Item previously appeared in the retired quest  Nose for Trouble.\nThe following changes were implemented on  August 22nd, 2025:\n  • Previously had the description: Found in the gargoyle cavern, when you wipe off the crystal dangling at the end of the chain, it begins to shine brightly, aiding your vision.\n  • LUK stat was increased from +2 to +5.\n  • CHA and Bonus stats were added.",
     "tags": [
       "lig",
       "free"
@@ -1735,8 +1736,8 @@
     "obtainMethods": [
       {
         "location": "Trinki's Rings",
-        "price": "5,000 Gold",
         "priceType": "gold",
+        "price": "5,000 Gold",
         "sellback": "500 Gold",
         "daRequired": false
       }
@@ -1769,10 +1770,10 @@
     "obtainMethods": [
       {
         "location": "Stevy Shop",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "50 Gold",
+        "price": "N/A",
         "requiredItems": "3 Dark Insicors",
+        "sellback": "50 Gold",
         "daRequired": false
       }
     ],
@@ -1804,8 +1805,8 @@
     "obtainMethods": [
       {
         "location": "Popsprocket Havoc",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "50 Gold",
         "daRequired": false
       }
@@ -2054,7 +2055,7 @@
             "price": "90 Dragon Coins",
             "priceType": "dc",
             "sellback": "81 DC (<24 hours) / 23 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -2101,7 +2102,7 @@
             "price": "90 Dragon Coins",
             "priceType": "dc",
             "sellback": "81 DC (<24 hours) / 23 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -2148,7 +2149,7 @@
             "price": "90 Dragon Coins",
             "priceType": "dc",
             "sellback": "81 DC (<24 hours) / 23 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -2556,7 +2557,7 @@
             "price": "170 Dragon Coins",
             "priceType": "dc",
             "sellback": "153 DC (<24 hours) / 43 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -2601,7 +2602,7 @@
             "price": "200 Dragon Coins",
             "priceType": "dc",
             "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -2653,8 +2654,8 @@
     "obtainMethods": [
       {
         "location": "FwendQuest",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "100 Gold",
         "daRequired": false
       }
@@ -2688,8 +2689,8 @@
     "obtainMethods": [
       {
         "location": "The Chef",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "40 Gold",
         "daRequired": false
       }
@@ -3038,8 +3039,8 @@
     "obtainMethods": [
       {
         "location": "Trinki's Rings",
-        "price": "6,500 Gold",
         "priceType": "gold",
+        "price": "6,500 Gold",
         "sellback": "650 Gold",
         "daRequired": true
       }
@@ -3071,8 +3072,8 @@
     "obtainMethods": [
       {
         "location": "Unlucky Holiday Shop",
-        "price": "1,250 Gold",
         "priceType": "gold",
+        "price": "1,250 Gold",
         "sellback": "125 Gold",
         "daRequired": true
       }
@@ -3375,7 +3376,7 @@
             "price": "85 Dragon Coins",
             "priceType": "dc",
             "sellback": "77 DC (<24 hours) / 21 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -3422,7 +3423,7 @@
             "price": "100 Dragon Coins",
             "priceType": "dc",
             "sellback": "90 DC (<24 hours) / 25 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -3469,7 +3470,7 @@
             "price": "110 Dragon Coins",
             "priceType": "dc",
             "sellback": "99 DC (<24 hours) / 28 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -3521,13 +3522,13 @@
     "obtainMethods": [
       {
         "location": "Bitten",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "80 Gold",
         "daRequired": false
       }
     ],
-    "notes": "• Item has no inventory icon despite being a Necklace.",
+    "notes": "Item has no inventory icon despite being a Necklace.",
     "tags": [
       "nat",
       "free"
@@ -3556,21 +3557,21 @@
     "obtainMethods": [
       {
         "location": "Face of Death",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "120 Gold",
         "daRequired": false
       },
       {
         "location": "Sandsea Trinkets",
-        "price": "20 Dragon Coins",
         "priceType": "dc",
+        "price": "20 Dragon Coins",
         "sellback": "18 DC (<24 hours) / 5 DC (>24 hours)",
         "daRequired": false,
         "dcRequired": true
       }
     ],
-    "notes": "• Criosphinx Trinket was previously available from the retired quest  Face of Death.",
+    "notes": "Criosphinx Trinket was previously available from the retired quest  Face of Death.",
     "tags": [
       "sil",
       "free"
@@ -3600,8 +3601,8 @@
     "obtainMethods": [
       {
         "location": "FwendQuest",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "230 Gold",
         "daRequired": false
       }
@@ -3635,21 +3636,21 @@
     "obtainMethods": [
       {
         "location": "One Step Forward",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "250 Gold",
         "daRequired": true
       },
       {
         "location": "After War DC",
-        "price": "35 Dragon Coins",
         "priceType": "dc",
+        "price": "35 Dragon Coins",
         "sellback": "32 DC (<24 hours) / 9 DC (>24 hours)",
-        "daRequired": true,
+        "daRequired": false,
         "dcRequired": true
       }
     ],
-    "notes": "• Crystal Necklace was previously available from the retired quest  After the War.",
+    "notes": "Crystal Necklace was previously available from the retired quest  After the War.",
     "tags": [
       "nat",
       "free"
@@ -3679,21 +3680,21 @@
     "obtainMethods": [
       {
         "location": "Dreamscape",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "220 Gold",
         "daRequired": true
       },
       {
         "location": "DS Loot for DCs",
-        "price": "30 Dragon Coins",
         "priceType": "dc",
+        "price": "30 Dragon Coins",
         "sellback": "27 DC (<24 hours) / 8 DC (>24 hours)",
-        "daRequired": true,
+        "daRequired": false,
         "dcRequired": true
       }
     ],
-    "notes": "• Necklace previously appeared in the retired quest  Dreamscape and had the initial stats:  \nStats: Block +1, Dodge +1, Crit +5, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +5, END +5, INT +8, DEX +8, STR +8, Bonus +7 \n Resists: All +5, Immobility +2\n• Necklace was previously named 'Crystal Necklace'; this was changed on May 17th, 2021.",
+    "notes": "Necklace previously appeared in the retired quest  Dreamscape and had the initial stats:\nStats: Block +1, Dodge +1, Crit +5, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +5, END +5, INT +8, DEX +8, STR +8, Bonus +7\nResists: All +5, Immobility +2\nNecklace was previously named 'Crystal Necklace'; this was changed on May 17th, 2021.",
     "tags": [
       "ene",
       "free"
@@ -3723,8 +3724,8 @@
     "obtainMethods": [
       {
         "location": "The Elite Patrol",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "200 Gold",
         "daRequired": false
       }
@@ -3757,13 +3758,13 @@
     "obtainMethods": [
       {
         "location": "The Mastermind",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "40 Gold",
         "daRequired": false
       }
     ],
-    "notes": "• Item was previously named 'Dark Crystal'.",
+    "notes": "Item was previously named 'Dark Crystal'.",
     "tags": [
       "dar",
       "free"
@@ -3791,8 +3792,8 @@
     "obtainMethods": [
       {
         "location": "Revenge",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "55 Gold",
         "daRequired": false
       }
@@ -3825,8 +3826,8 @@
     "obtainMethods": [
       {
         "location": "The Ruins of Bask",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "630 Gold",
         "daRequired": true
       }
@@ -3859,10 +3860,10 @@
     "obtainMethods": [
       {
         "location": "DeathKnight Items",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "100 Gold",
+        "price": "N/A",
         "requiredItems": "1 Undead Slayer Badge",
+        "sellback": "100 Gold",
         "daRequired": false
       }
     ],
@@ -3894,8 +3895,8 @@
     "obtainMethods": [
       {
         "location": "As You Lie Dreaming...",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "75 Gold",
         "daRequired": false
       }
@@ -4164,7 +4165,8 @@
       }
     ],
     "shared": {
-      "description": "This necklace can only be worn by a DragonAmulet holder. It was awarded to you by the town of Falconreach for your help defending it against an invading force."
+      "description": "This necklace can only be worn by a DragonAmulet holder. It was awarded to you by the town of Falconreach for your help defending it against an invading force.",
+      "notes": "Defender's Medal costs for this item were significantly reduced on March 29th, 2021.\nNecklaces were available to merge from  Def. Necklaces shop until  January 14th, 2023; merge versions from  Defender Item Swap were added on that date."
     },
     "levelVariants": [
       {
@@ -5494,7 +5496,8 @@
       }
     ],
     "shared": {
-      "description": "This shield shaped necklace is a symbol of heroism and bravery. It is worn exclusively by those who protect this world. It increases your resistance to darkness damage (+5)."
+      "description": "This shield shaped necklace is a symbol of heroism and bravery. It is worn exclusively by those who protect this world. It increases your resistance to darkness damage (+5).",
+      "notes": "Defender's Medal costs for this item were significantly reduced on March 29th, 2021."
     },
     "levelVariants": [
       {
@@ -6413,8 +6416,8 @@
     "obtainMethods": [
       {
         "location": "The Dishwasher",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "40 Gold",
         "daRequired": false
       }
@@ -6447,8 +6450,8 @@
     "obtainMethods": [
       {
         "location": "RoseTree Shop",
-        "price": "1,300 Gold",
         "priceType": "gold",
+        "price": "1,300 Gold",
         "sellback": "130 Gold",
         "daRequired": false
       }
@@ -6481,17 +6484,17 @@
     "obtainMethods": [
       {
         "location": "The Valtrith Tomb",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "90 Gold",
         "daRequired": true
       },
       {
         "location": "Tomb Drops",
-        "price": "25 Dragon Coins",
         "priceType": "dc",
+        "price": "25 Dragon Coins",
         "sellback": "23 DC (<24 hours) / 7 DC (>24 hours)",
-        "daRequired": true,
+        "daRequired": false,
         "dcRequired": true
       }
     ],
@@ -6524,15 +6527,15 @@
     "obtainMethods": [
       {
         "location": "The Valtrith Tomb",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "105 Gold",
         "daRequired": false
       },
       {
         "location": "Tomb Drops",
-        "price": "30 Dragon Coins",
         "priceType": "dc",
+        "price": "30 Dragon Coins",
         "sellback": "27 DC (<24 hours) / 8 DC (>24 hours)",
         "daRequired": false,
         "dcRequired": true
@@ -6567,8 +6570,8 @@
     "obtainMethods": [
       {
         "location": "As You Lie Dreaming...",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "30 Gold",
         "daRequired": false
       }
@@ -6601,8 +6604,8 @@
     "obtainMethods": [
       {
         "location": "Old Scrolls",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "50 Gold",
         "daRequired": false
       }
@@ -6635,8 +6638,8 @@
     "obtainMethods": [
       {
         "location": "Your Secret Is Safe",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "35 Gold",
         "daRequired": true
       }
@@ -6669,8 +6672,8 @@
     "obtainMethods": [
       {
         "location": "The Elite Patrol",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "180 Gold",
         "daRequired": false
       }
@@ -6703,8 +6706,8 @@
     "obtainMethods": [
       {
         "location": "Summoning Help",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "200 Gold",
         "daRequired": false
       }
@@ -6737,8 +6740,8 @@
     "obtainMethods": [
       {
         "location": "The Event Planner",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "40 Gold",
         "daRequired": false
       }
@@ -6771,8 +6774,8 @@
     "obtainMethods": [
       {
         "location": "Sandsea Havoc",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "130 Gold",
         "daRequired": false
       }
@@ -6805,8 +6808,8 @@
     "obtainMethods": [
       {
         "location": "RoseTree Shop",
-        "price": "4,500 Gold",
         "priceType": "gold",
+        "price": "4,500 Gold",
         "sellback": "450 Gold",
         "daRequired": false
       }
@@ -6839,8 +6842,8 @@
     "obtainMethods": [
       {
         "location": "Bitten",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "200 Gold",
         "daRequired": false
       }
@@ -6873,8 +6876,8 @@
     "obtainMethods": [
       {
         "location": "Bitten",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "230 Gold",
         "daRequired": false
       }
@@ -6907,21 +6910,21 @@
     "obtainMethods": [
       {
         "location": "One Step Forward",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "160 Gold",
         "daRequired": false
       },
       {
         "location": "After War DC",
-        "price": "25 Dragon Coins",
         "priceType": "dc",
+        "price": "25 Dragon Coins",
         "sellback": "23 DC (<24 hours) / 7 DC (>24 hours)",
         "daRequired": false,
         "dcRequired": true
       }
     ],
-    "notes": "• Flower Necklace was previously available from the retired quest  After the War.",
+    "notes": "Flower Necklace was previously available from the retired quest  After the War.",
     "tags": [
       "nat",
       "free"
@@ -6950,8 +6953,8 @@
     "obtainMethods": [
       {
         "location": "The Wizards Apprentices",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "150 Gold",
         "daRequired": false
       }
@@ -6984,21 +6987,21 @@
     "obtainMethods": [
       {
         "location": "One Step Forward",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "120 Gold",
         "daRequired": true
       },
       {
         "location": "After War DC",
-        "price": "20 Dragon Coins",
         "priceType": "dc",
+        "price": "20 Dragon Coins",
         "sellback": "18 DC (<24 hours) / 5 DC (>24 hours)",
-        "daRequired": true,
+        "daRequired": false,
         "dcRequired": true
       }
     ],
-    "notes": "• Fossil Necklace was previously available from the retired quest  After the War.",
+    "notes": "Fossil Necklace was previously available from the retired quest  After the War.",
     "tags": [
       "sto",
       "free"
@@ -7028,15 +7031,15 @@
     "obtainMethods": [
       {
         "location": "The Valtrith Tomb",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "150 Gold",
         "daRequired": false
       },
       {
         "location": "Tomb Drops",
-        "price": "50 Dragon Coins",
         "priceType": "dc",
+        "price": "50 Dragon Coins",
         "sellback": "45 DC (<24 hours) / 13 DC (>24 hours)",
         "daRequired": false,
         "dcRequired": true
@@ -7071,13 +7074,13 @@
     "obtainMethods": [
       {
         "location": "We're Gonna Need More Fire...",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "125 Gold",
         "daRequired": false
       }
     ],
-    "notes": "• Healing Resist does not actually impact player's healing, as it is not Health Resist.",
+    "notes": "Healing Resist does not actually impact player's healing, as it is not Health Resist.",
     "tags": [
       "ice",
       "free"
@@ -7106,8 +7109,8 @@
     "obtainMethods": [
       {
         "location": "We're Gonna Need More Fire...",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "50 Gold",
         "daRequired": false
       }
@@ -7141,8 +7144,8 @@
     "obtainMethods": [
       {
         "location": "Prison Brawl",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "180 Gold",
         "daRequired": false
       }
@@ -7175,8 +7178,8 @@
     "obtainMethods": [
       {
         "location": "FwendQuest",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "50 Gold",
         "daRequired": false
       }
@@ -7210,21 +7213,21 @@
     "obtainMethods": [
       {
         "location": "Dreamscape",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "120 Gold",
         "daRequired": true
       },
       {
         "location": "DS Loot for DCs",
-        "price": "30 Dragon Coins",
         "priceType": "dc",
+        "price": "30 Dragon Coins",
         "sellback": "27 DC (<24 hours) / 8 DC (>24 hours)",
-        "daRequired": true,
+        "daRequired": false,
         "dcRequired": true
       }
     ],
-    "notes": "• Necklace previously appeared in the retired quest  Dreamscape and had the initial stats: \nStats: Block +1, Dodge +1, Crit +5, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +4, END +4, INT +3, DEX +3, STR +3, Bonus +3 \n Resists: Fire +6, Energy +8, Metal +5",
+    "notes": "Necklace previously appeared in the retired quest  Dreamscape and had the initial stats:\nStats: Block +1, Dodge +1, Crit +5, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +4, END +4, INT +3, DEX +3, STR +3, Bonus +3\nResists: Fire +6, Energy +8, Metal +5",
     "tags": [
       "ice",
       "free"
@@ -7254,17 +7257,17 @@
     "obtainMethods": [
       {
         "location": "The Valtrith Tomb",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "200 Gold",
         "daRequired": true
       },
       {
         "location": "Tomb Drops",
-        "price": "65 Dragon Coins",
         "priceType": "dc",
+        "price": "65 Dragon Coins",
         "sellback": "59 DC (<24 hours) / 17 DC (>24 hours)",
-        "daRequired": true,
+        "daRequired": false,
         "dcRequired": true
       }
     ],
@@ -7297,17 +7300,17 @@
     "obtainMethods": [
       {
         "location": "One Step Forward",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "300 Gold",
         "daRequired": true
       },
       {
         "location": "After War DC",
-        "price": "50 Dragon Coins",
         "priceType": "dc",
+        "price": "50 Dragon Coins",
         "sellback": "45 DC (<24 hours) / 13 DC (>24 hours)",
-        "daRequired": true,
+        "daRequired": false,
         "dcRequired": true
       }
     ],
@@ -7317,6 +7320,40 @@
     ],
     "daRequired": true,
     "dcRequired": true
+  },
+  {
+    "id": "accessory-the-god-s-tie",
+    "name": "The God's Tie",
+    "slug": "accessory-the-god-s-tie",
+    "type": "accessory",
+    "subtype": "necklace",
+    "description": "Hermes, god of speedy travel, is also Lore's Necktie Diety. This item requires a Dragon Amulet.",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=16192380",
+    "releaseDate": "",
+    "elements": [
+      "NAT"
+    ],
+    "level": "30",
+    "stats": "Magic Def +1, Pierce Def +1, Melee Def +1, END +3, CHA +2, LUK +2, INT +3, DEX +3, STR +3, Immobility +1, Stone +3",
+    "rarity": "10",
+    "itemType": "Necklace",
+    "equipSpot": "Neck",
+    "category": "Armor",
+    "obtainMethods": [
+      {
+        "location": "Father's Day Shop",
+        "priceType": "gold",
+        "price": "1,250 Gold",
+        "sellback": "125 Gold",
+        "daRequired": true
+      }
+    ],
+    "tags": [
+      "nat",
+      "gold"
+    ],
+    "daRequired": true,
+    "isRare": true
   },
   {
     "id": "accessory-gold-scorpiac-stinger",
@@ -7340,8 +7377,8 @@
     "obtainMethods": [
       {
         "location": "The Human Element",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "200 Gold",
         "daRequired": false
       }
@@ -7374,17 +7411,17 @@
     "obtainMethods": [
       {
         "location": "The Valtrith Tomb",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "120 Gold",
         "daRequired": true
       },
       {
         "location": "Tomb Drops",
-        "price": "45 Dragon Coins",
         "priceType": "dc",
+        "price": "45 Dragon Coins",
         "sellback": "41 DC (<24 hours) / 12 DC (>24 hours)",
-        "daRequired": true,
+        "daRequired": false,
         "dcRequired": true
       }
     ],
@@ -7417,8 +7454,8 @@
     "obtainMethods": [
       {
         "location": "Reforged",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "130 Gold",
         "daRequired": false
       }
@@ -7450,8 +7487,8 @@
     "obtainMethods": [
       {
         "location": "The Wizards Apprentices",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "50 Gold",
         "daRequired": false
       }
@@ -7484,8 +7521,8 @@
     "obtainMethods": [
       {
         "location": "The Human Element",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "100 Gold",
         "daRequired": true
       }
@@ -7517,8 +7554,8 @@
     "obtainMethods": [
       {
         "location": "Father's Day Shop",
-        "price": "50 Gold",
         "priceType": "gold",
+        "price": "50 Gold",
         "sellback": "5 Gold",
         "daRequired": false
       }
@@ -7552,8 +7589,8 @@
     "obtainMethods": [
       {
         "location": "Gorgok Returns!",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "200 Gold",
         "daRequired": true
       }
@@ -7586,8 +7623,8 @@
     "obtainMethods": [
       {
         "location": "FwendQuest",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "250 Gold",
         "daRequired": true
       }
@@ -7728,7 +7765,7 @@
             "price": "45 Dragon Coins",
             "priceType": "dc",
             "sellback": "41 DC (<24 hours) / 12 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -7775,7 +7812,7 @@
             "price": "45 Dragon Coins",
             "priceType": "dc",
             "sellback": "41 DC (<24 hours) / 12 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -7822,7 +7859,7 @@
             "price": "45 Dragon Coins",
             "priceType": "dc",
             "sellback": "41 DC (<24 hours) / 12 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -7874,8 +7911,8 @@
     "obtainMethods": [
       {
         "location": "Edy's Shinies",
-        "price": "200 Gold",
         "priceType": "gold",
+        "price": "200 Gold",
         "sellback": "15 Gold",
         "daRequired": false
       }
@@ -7908,10 +7945,10 @@
     "obtainMethods": [
       {
         "location": "Stevy Shop",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "150 Gold",
+        "price": "N/A",
         "requiredItems": "8 Dark Insicors",
+        "sellback": "150 Gold",
         "daRequired": true
       }
     ],
@@ -7943,8 +7980,8 @@
     "obtainMethods": [
       {
         "location": "Yulgar's First Date",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "50 Gold",
         "daRequired": false
       }
@@ -8345,8 +8382,8 @@
     "obtainMethods": [
       {
         "location": "Hide n' Seek",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "180 Gold",
         "daRequired": false
       }
@@ -8379,8 +8416,8 @@
     "obtainMethods": [
       {
         "location": "The Great Petscape",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "200 Gold",
         "daRequired": false
       }
@@ -8412,8 +8449,8 @@
     "obtainMethods": [
       {
         "location": "Unlucky Holiday Shop",
-        "price": "600 Gold",
         "priceType": "gold",
+        "price": "600 Gold",
         "sellback": "60 Gold",
         "daRequired": false
       }
@@ -8424,6 +8461,39 @@
     ],
     "daRequired": false,
     "isRare": true
+  },
+  {
+    "id": "accessory-the-heart-of-the-sea",
+    "name": "The Heart of the Sea",
+    "slug": "accessory-the-heart-of-the-sea",
+    "type": "accessory",
+    "subtype": "necklace",
+    "description": "This titanic sized necklace got caught on the tow of the treasure golem as he was wading past a shipwreck.",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=11323121",
+    "releaseDate": "",
+    "elements": [
+      "ICE"
+    ],
+    "level": "14",
+    "stats": "Magic Def +1, LUK +1, Water +2, Ice +2",
+    "rarity": "0",
+    "itemType": "Necklace",
+    "equipSpot": "Neck",
+    "category": "Armor",
+    "obtainMethods": [
+      {
+        "location": "Reward Chest",
+        "priceType": "free",
+        "price": "0 Gold",
+        "sellback": "0 Gold",
+        "daRequired": false
+      }
+    ],
+    "tags": [
+      "ice",
+      "free"
+    ],
+    "daRequired": false
   },
   {
     "id": "accessory-heart-of-the-wave",
@@ -8447,8 +8517,8 @@
     "obtainMethods": [
       {
         "location": "Edy's Shinies",
-        "price": "300 Gold",
         "priceType": "gold",
+        "price": "300 Gold",
         "sellback": "30 Gold",
         "daRequired": false
       }
@@ -8522,7 +8592,8 @@
     ],
     "shared": {
       "description": "A heart scale from the merged Akriloth, taken by Ashendal after the beast was defeated. It continues to radiate a small amount of warmth and will grant you some of the elemental protection of Akriloth himself!",
-      "rarity": "500"
+      "rarity": "500",
+      "notes": "40-80 versions of this item has Mana flavor resistance.\nDespite being a permanent item, this item requires a Seasonal item, specifically  Ultra Merged Akriloth Tooth Fragment."
     },
     "levelVariants": [
       {
@@ -8726,8 +8797,8 @@
     "obtainMethods": [
       {
         "location": "Mother's Day Shop",
-        "price": "1,000 Gold",
         "priceType": "gold",
+        "price": "1,000 Gold",
         "sellback": "100 Gold",
         "daRequired": true
       }
@@ -8761,14 +8832,47 @@
     "obtainMethods": [
       {
         "location": "The Human Element",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "50 Gold",
         "daRequired": false
       }
     ],
     "tags": [
       "wat",
+      "free"
+    ],
+    "daRequired": false
+  },
+  {
+    "id": "accessory-the-hope-necklace",
+    "name": "The Hope Necklace",
+    "slug": "accessory-the-hope-necklace",
+    "type": "accessory",
+    "subtype": "necklace",
+    "description": "This necklace was abandoned at the gateway of H-E-double hockey sticks!",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=11323717",
+    "releaseDate": "",
+    "elements": [
+      "LIG"
+    ],
+    "level": "26",
+    "stats": "END +2, LUK +2, Bonus +2, Poison +2",
+    "rarity": "0",
+    "itemType": "Necklace",
+    "equipSpot": "Neck",
+    "category": "Armor",
+    "obtainMethods": [
+      {
+        "location": "Reward Chest",
+        "priceType": "free",
+        "price": "0 Gold",
+        "sellback": "0 Gold",
+        "daRequired": false
+      }
+    ],
+    "tags": [
+      "lig",
       "free"
     ],
     "daRequired": false
@@ -8795,8 +8899,8 @@
     "obtainMethods": [
       {
         "location": "Prison Brawl",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "160 Gold",
         "daRequired": true
       }
@@ -9104,8 +9208,8 @@
     "obtainMethods": [
       {
         "location": "The Wizards Apprentices",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "40 Gold",
         "daRequired": false
       }
@@ -9137,8 +9241,8 @@
     "obtainMethods": [
       {
         "location": "We're Gonna Need More Fire...",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "80 Gold",
         "daRequired": false
       }
@@ -9172,8 +9276,8 @@
     "obtainMethods": [
       {
         "location": "Escort to Dragesvard",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "120 Gold",
         "daRequired": true
       }
@@ -9206,8 +9310,8 @@
     "obtainMethods": [
       {
         "location": "Escort to Dragesvard",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "70 Gold",
         "daRequired": false
       }
@@ -9240,21 +9344,21 @@
     "obtainMethods": [
       {
         "location": "Face of Death",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "50 Gold",
         "daRequired": false
       },
       {
         "location": "Sandsea Trinkets",
-        "price": "10 Dragon Coins",
         "priceType": "dc",
+        "price": "10 Dragon Coins",
         "sellback": "9 DC (<24 hours) / 3 DC (>24 hours)",
         "daRequired": false,
         "dcRequired": true
       }
     ],
-    "notes": "• Ieb Weight was previously available from the retired quest  Face of Death.",
+    "notes": "Ieb Weight was previously available from the retired quest  Face of Death.",
     "tags": [
       "win",
       "free"
@@ -9284,10 +9388,10 @@
     "obtainMethods": [
       {
         "location": "Stevy Shop",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "120 Gold",
+        "price": "N/A",
         "requiredItems": "7 Dark Insicors",
+        "sellback": "120 Gold",
         "daRequired": true
       }
     ],
@@ -9319,8 +9423,8 @@
     "obtainMethods": [
       {
         "location": "The Elite Patrol",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "100 Gold",
         "daRequired": true
       }
@@ -9353,10 +9457,10 @@
     "obtainMethods": [
       {
         "location": "Stevy Shop",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "70 Gold",
+        "price": "N/A",
         "requiredItems": "5 Dark Insicors",
+        "sellback": "70 Gold",
         "daRequired": false
       }
     ],
@@ -9388,8 +9492,8 @@
     "obtainMethods": [
       {
         "location": "The Great Petscape",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "110 Gold",
         "daRequired": false
       }
@@ -9421,8 +9525,8 @@
     "obtainMethods": [
       {
         "location": "Father's Day Shop",
-        "price": "100 Gold",
         "priceType": "gold",
+        "price": "100 Gold",
         "sellback": "10 Gold",
         "daRequired": true
       }
@@ -9456,8 +9560,8 @@
     "obtainMethods": [
       {
         "location": "Yulgar's First Date",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "120 Gold",
         "daRequired": true
       }
@@ -9490,13 +9594,13 @@
     "obtainMethods": [
       {
         "location": "Opening The Black Box",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "50 Gold",
         "daRequired": false
       }
     ],
-    "notes": "• The description's excerpt (-Health resistance improves healing, +Health resistance weakens it) was added on  May 9th, 2025. \n• Level's requirement was lowered from 10 to 9 on  September 5th, 2025.",
+    "notes": "The description's excerpt (-Health resistance improves healing, +Health resistance weakens it) was added on  May 9th, 2025.\nLevel's requirement was lowered from 10 to 9 on  September 5th, 2025.",
     "tags": [
       "non",
       "free"
@@ -9525,8 +9629,8 @@
     "obtainMethods": [
       {
         "location": "Memory-Demons",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "125 Gold",
         "daRequired": false
       }
@@ -9559,8 +9663,8 @@
     "obtainMethods": [
       {
         "location": "The Dragon Drakath",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "300 Gold",
         "daRequired": false
       }
@@ -9593,8 +9697,8 @@
     "obtainMethods": [
       {
         "location": "Sho'Nuff Havoc",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "200 Gold",
         "daRequired": true
       }
@@ -9627,8 +9731,8 @@
     "obtainMethods": [
       {
         "location": "The Elite Patrol",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "150 Gold",
         "daRequired": false
       }
@@ -9793,8 +9897,8 @@
     "obtainMethods": [
       {
         "location": "Father's Day Shop",
-        "price": "100 Gold",
         "priceType": "gold",
+        "price": "100 Gold",
         "sellback": "10 Gold",
         "daRequired": false
       }
@@ -10097,7 +10201,7 @@
             "price": "45 Dragon Coins",
             "priceType": "dc",
             "sellback": "41 DC (<24 hours) / 12 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -10144,7 +10248,7 @@
             "price": "45 Dragon Coins",
             "priceType": "dc",
             "sellback": "41 DC (<24 hours) / 12 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -10191,7 +10295,7 @@
             "price": "45 Dragon Coins",
             "priceType": "dc",
             "sellback": "41 DC (<24 hours) / 12 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -10243,13 +10347,13 @@
     "obtainMethods": [
       {
         "location": "Everyone Knows It's Windy",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "150 Gold",
         "daRequired": false
       }
     ],
-    "notes": "• The following changes were implemented on  March 20th, 2026: \n  • Level's requirement was raised from 4 to 14. \n  • DEX and STR stats were raised from +1 and +2 to +5 respectively. \n  • Bonus was raised from +1 to +5. \n  • INT +5 was added. \n  • Wind Resist was raised from +1 to +3. \n  • -1 Stone Resist was removed.",
+    "notes": "The following changes were implemented on  March 20th, 2026:\n  • Level's requirement was raised from 4 to 14.\n  • DEX and STR stats were raised from +1 and +2 to +5 respectively.\n  • Bonus was raised from +1 to +5.\n  • INT +5 was added.\n  • Wind Resist was raised from +1 to +3.\n  • -1 Stone Resist was removed.",
     "tags": [
       "win",
       "free"
@@ -10410,8 +10514,8 @@
     "obtainMethods": [
       {
         "location": "Reforged",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "150 Gold",
         "daRequired": false
       }
@@ -10444,8 +10548,8 @@
     "obtainMethods": [
       {
         "location": "Bitten",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "160 Gold",
         "daRequired": true
       }
@@ -10477,8 +10581,8 @@
     "obtainMethods": [
       {
         "location": "Frostvale Defense",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "300 Gold",
         "daRequired": true
       }
@@ -10512,8 +10616,8 @@
     "obtainMethods": [
       {
         "location": "The Great Petscape",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "250 Gold",
         "daRequired": true
       }
@@ -10546,8 +10650,8 @@
     "obtainMethods": [
       {
         "location": "The Great Petscape",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "70 Gold",
         "daRequired": false
       }
@@ -10579,8 +10683,8 @@
     "obtainMethods": [
       {
         "location": "He's (a) Lyin'",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "35 Gold",
         "daRequired": false
       }
@@ -10613,8 +10717,8 @@
     "obtainMethods": [
       {
         "location": "As You Lie Dreaming...",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "30 Gold",
         "daRequired": false
       }
@@ -10646,8 +10750,8 @@
     "obtainMethods": [
       {
         "location": "Mother's Day Shop",
-        "price": "50 Gold",
         "priceType": "gold",
+        "price": "50 Gold",
         "sellback": "5 Gold",
         "daRequired": false
       }
@@ -10681,8 +10785,8 @@
     "obtainMethods": [
       {
         "location": "RoseTree Shop",
-        "price": "12,000 Gold",
         "priceType": "gold",
+        "price": "12,000 Gold",
         "sellback": "1,200 Gold",
         "daRequired": true
       }
@@ -10715,21 +10819,21 @@
     "obtainMethods": [
       {
         "location": "Dreamscape",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "80 Gold",
         "daRequired": false
       },
       {
         "location": "DS Loot for DCs",
-        "price": "39 Dragon Coins",
         "priceType": "dc",
+        "price": "39 Dragon Coins",
         "sellback": "36 DC (<24 hours) / 10 DC (>24 hours)",
         "daRequired": false,
         "dcRequired": true
       }
     ],
-    "notes": "• Necklace previously appeared in the retired quest  Dreamscape and had the initial stats: \nStats: Crit +5, Magic Def +2, Pierce Def +2, Melee Def +2, END +2, LUK +5 \n Resists: Ice +4, Darkness +3",
+    "notes": "Necklace previously appeared in the retired quest  Dreamscape and had the initial stats:\nStats: Crit +5, Magic Def +2, Pierce Def +2, Melee Def +2, END +2, LUK +5\nResists: Ice +4, Darkness +3",
     "tags": [
       "sil",
       "free"
@@ -10759,17 +10863,17 @@
     "obtainMethods": [
       {
         "location": "The Valtrith Tomb",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "160 Gold",
         "daRequired": true
       },
       {
         "location": "Tomb Drops",
-        "price": "55 Dragon Coins",
         "priceType": "dc",
+        "price": "55 Dragon Coins",
         "sellback": "50 DC (<24 hours) / 14 DC (>24 hours)",
-        "daRequired": true,
+        "daRequired": false,
         "dcRequired": true
       }
     ],
@@ -10802,8 +10906,8 @@
     "obtainMethods": [
       {
         "location": "The Human Element",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "180 Gold",
         "daRequired": false
       }
@@ -10836,8 +10940,8 @@
     "obtainMethods": [
       {
         "location": "RoseTree Shop",
-        "price": "500 Gold",
         "priceType": "gold",
+        "price": "500 Gold",
         "sellback": "50 Gold",
         "daRequired": false
       }
@@ -10870,17 +10974,17 @@
     "obtainMethods": [
       {
         "location": "The Valtrith Tomb",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "250 Gold",
         "daRequired": true
       },
       {
         "location": "Tomb Drops",
-        "price": "75 Dragon Coins",
         "priceType": "dc",
+        "price": "75 Dragon Coins",
         "sellback": "68 DC (<24 hours) / 19 DC (>24 hours)",
-        "daRequired": true,
+        "daRequired": false,
         "dcRequired": true
       }
     ],
@@ -10913,8 +11017,8 @@
     "obtainMethods": [
       {
         "location": "Edy's Shinies, Moonridge Emporium",
-        "price": "1,900 Gold",
         "priceType": "gold",
+        "price": "1,900 Gold",
         "sellback": "190 Gold",
         "daRequired": false
       }
@@ -10946,8 +11050,8 @@
     "obtainMethods": [
       {
         "location": "We're Gonna Need More Fire...",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "180 Gold",
         "daRequired": true
       }
@@ -10980,8 +11084,8 @@
     "obtainMethods": [
       {
         "location": "Frostvale Defense",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "180 Gold",
         "daRequired": true
       }
@@ -11015,8 +11119,8 @@
     "obtainMethods": [
       {
         "location": "Old Scrolls",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "500 Gold",
         "daRequired": true
       }
@@ -11049,10 +11153,10 @@
     "obtainMethods": [
       {
         "location": "Teral's Gear",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "120 Gold",
+        "price": "N/A",
         "requiredItems": "15 Rhoddhu Claw & 10 Dragon Claw Clipping",
+        "sellback": "120 Gold",
         "daRequired": false
       }
     ],
@@ -11084,10 +11188,10 @@
     "obtainMethods": [
       {
         "location": "Stevy Shop",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "100 Gold",
+        "price": "N/A",
         "requiredItems": "6 Dark Insicors",
+        "sellback": "100 Gold",
         "daRequired": false
       }
     ],
@@ -11334,7 +11438,7 @@
             "price": "150 Dragon Coins",
             "priceType": "dc",
             "sellback": "135 DC (<24 hours) / 38 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -11381,7 +11485,7 @@
             "price": "170 Dragon Coins",
             "priceType": "dc",
             "sellback": "153 DC (<24 hours) / 43 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -11428,7 +11532,7 @@
             "price": "200 Dragon Coins",
             "priceType": "dc",
             "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -11479,8 +11583,8 @@
     "obtainMethods": [
       {
         "location": "The Wizards Apprentices",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "50 Gold",
         "daRequired": false
       }
@@ -11797,8 +11901,8 @@
     "obtainMethods": [
       {
         "location": "The Great Petscape",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "50 Gold",
         "daRequired": false
       }
@@ -11831,8 +11935,8 @@
     "obtainMethods": [
       {
         "location": "Prison Brawl",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "250 Gold",
         "daRequired": true
       }
@@ -11865,8 +11969,8 @@
     "obtainMethods": [
       {
         "location": "Old Scrolls",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "150 Gold",
         "daRequired": false
       }
@@ -11899,8 +12003,8 @@
     "obtainMethods": [
       {
         "location": "The Great Petscape",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "120 Gold",
         "daRequired": false
       }
@@ -11932,8 +12036,8 @@
     "obtainMethods": [
       {
         "location": "Reforged",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "80 Gold",
         "daRequired": false
       }
@@ -11966,8 +12070,8 @@
     "obtainMethods": [
       {
         "location": "Dragesvard Havoc",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "70 Gold",
         "daRequired": false
       }
@@ -12000,21 +12104,21 @@
     "obtainMethods": [
       {
         "location": "Dreamscape",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "180 Gold",
         "daRequired": false
       },
       {
         "location": "DS Loot for DCs",
-        "price": "30 Dragon Coins",
         "priceType": "dc",
+        "price": "30 Dragon Coins",
         "sellback": "27 DC (<24 hours) / 8 DC (>24 hours)",
         "daRequired": false,
         "dcRequired": true
       }
     ],
-    "notes": "• Necklace previously appeared in the retired quest  Dreamscape and had the initial stats:  \nStats: Crit +8, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +6, END +4, LUK +6, INT +4, DEX +4, STR +4, Bonus +4 \n Resists: All +2, Immobility +2\n• Necklace's flavor element was previously None; this was changed to Good on  Dreamscape's Reimagined release.",
+    "notes": "Necklace previously appeared in the retired quest  Dreamscape and had the initial stats:\nStats: Crit +8, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +6, END +4, LUK +6, INT +4, DEX +4, STR +4, Bonus +4\nResists: All +2, Immobility +2\nNecklace's flavor element was previously None; this was changed to Good on  Dreamscape's Reimagined release.",
     "tags": [
       "goo",
       "free"
@@ -12044,8 +12148,8 @@
     "obtainMethods": [
       {
         "location": "Escort to Dragesvard",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "90 Gold",
         "daRequired": false
       }
@@ -12078,8 +12182,8 @@
     "obtainMethods": [
       {
         "location": "The Origins of Aspar",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "230 Gold",
         "daRequired": false
       }
@@ -12112,13 +12216,13 @@
     "obtainMethods": [
       {
         "location": "The Origins of Aspar",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "80 Gold",
         "daRequired": false
       }
     ],
-    "notes": "• Item's inventory icon is erroneously a Bluegem, despite being a Necklace.",
+    "notes": "Item's inventory icon is erroneously a Bluegem, despite being a Necklace.",
     "tags": [
       "wat",
       "free"
@@ -12147,8 +12251,8 @@
     "obtainMethods": [
       {
         "location": "Mystlyk Museum",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "200 Gold",
         "daRequired": true
       }
@@ -12181,8 +12285,8 @@
     "obtainMethods": [
       {
         "location": "The Origins of Aspar",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "180 Gold",
         "daRequired": false
       }
@@ -12215,8 +12319,8 @@
     "obtainMethods": [
       {
         "location": "The Origins of Aspar",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "150 Gold",
         "daRequired": false
       }
@@ -12249,8 +12353,8 @@
     "obtainMethods": [
       {
         "location": "The Origins of Aspar",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "125 Gold",
         "daRequired": false
       }
@@ -12283,8 +12387,8 @@
     "obtainMethods": [
       {
         "location": "The Origins of Aspar",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "160 Gold",
         "daRequired": true
       }
@@ -12315,8 +12419,8 @@
     "obtainMethods": [
       {
         "location": "The Origins of Aspar",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "250 Gold",
         "daRequired": true
       }
@@ -12348,8 +12452,8 @@
     "obtainMethods": [
       {
         "location": "The Origins of Aspar",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "200 Gold",
         "daRequired": false
       }
@@ -12382,8 +12486,8 @@
     "obtainMethods": [
       {
         "location": "The Origins of Aspar",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "100 Gold",
         "daRequired": true
       }
@@ -12414,14 +12518,14 @@
     "obtainMethods": [
       {
         "location": "The Chaos Slayers",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "0 Dragon Coins",
         "daRequired": false,
         "dcRequired": true
       }
     ],
-    "notes": "• Own this item to obtain the  Chaos Slayer badge.",
+    "notes": "Own this item to obtain the  Chaos Slayer badge.",
     "tags": [
       "free"
     ],
@@ -12450,8 +12554,8 @@
     "obtainMethods": [
       {
         "location": "Bitten",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "125 Gold",
         "daRequired": false
       }
@@ -12644,13 +12748,13 @@
     "obtainMethods": [
       {
         "location": "Nightmares",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "0 Gold",
         "daRequired": true
       }
     ],
-    "notes": "• Necklace previously appeared in the retired quest  Nightmares.",
+    "notes": "Necklace previously appeared in the retired quest  Nightmares.",
     "tags": [
       "dar",
       "free"
@@ -12679,8 +12783,8 @@
     "obtainMethods": [
       {
         "location": "Your Secret Is Safe",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "50 Gold",
         "daRequired": false
       }
@@ -12713,8 +12817,8 @@
     "obtainMethods": [
       {
         "location": "Trinki's Rings",
-        "price": "5,000 Gold",
         "priceType": "gold",
+        "price": "5,000 Gold",
         "sellback": "500 Gold",
         "daRequired": false
       }
@@ -12747,8 +12851,8 @@
     "obtainMethods": [
       {
         "location": "The Human Element",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "120 Gold",
         "daRequired": false
       }
@@ -13050,7 +13154,7 @@
             "price": "150 Dragon Coins",
             "priceType": "dc",
             "sellback": "135 DC (<24 hours) / 38 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -13097,7 +13201,7 @@
             "price": "170 Dragon Coins",
             "priceType": "dc",
             "sellback": "153 DC (<24 hours) / 43 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -13144,7 +13248,7 @@
             "price": "200 Dragon Coins",
             "priceType": "dc",
             "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -13196,13 +13300,13 @@
     "obtainMethods": [
       {
         "location": "Your Secret Is Safe",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "120 Gold",
         "daRequired": true
       }
     ],
-    "notes": "• Regolith's Stone Resist was previously Earth Resist, then Nature Resist; this was updated on December 23rd, 2020, then again on  December 24th, 2020.",
+    "notes": "Regolith's Stone Resist was previously Earth Resist, then Nature Resist; this was updated on December 23rd, 2020, then again on  December 24th, 2020.",
     "tags": [
       "sto",
       "free"
@@ -13231,10 +13335,10 @@
     "obtainMethods": [
       {
         "location": "Relics of Zeclem",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "0 Dragon Coins",
+        "price": "N/A",
         "requiredItems": "1 Unhallowed DeathKnight Amulet IV & 5 Relic of Zeclem OR 1 Zeclem's Heirloom (80) & 5 Relic of Zeclem",
+        "sellback": "0 Dragon Coins",
         "daRequired": true,
         "dcRequired": true
       }
@@ -13268,13 +13372,13 @@
     "obtainMethods": [
       {
         "location": "Prison Brawl",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "125 Gold",
         "daRequired": false
       }
     ],
-    "notes": "• Item's name misspells 'Rataouille' instead of 'Ratatouille'.",
+    "notes": "Item's name misspells 'Rataouille' instead of 'Ratatouille'.",
     "tags": [
       "nat",
       "free"
@@ -13303,8 +13407,8 @@
     "obtainMethods": [
       {
         "location": "Bitten",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "250 Gold",
         "daRequired": true
       }
@@ -13337,8 +13441,8 @@
     "obtainMethods": [
       {
         "location": "War Shop",
-        "price": "50 Gold",
         "priceType": "gold",
+        "price": "50 Gold",
         "sellback": "5 Gold",
         "daRequired": false
       }
@@ -13372,13 +13476,13 @@
     "obtainMethods": [
       {
         "location": "Escort to Dragesvard",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "200 Gold",
         "daRequired": true
       }
     ],
-    "notes": "• Necklace's description erroneously includes 'ow', a typo of 'now'.",
+    "notes": "Necklace's description erroneously includes 'ow', a typo of 'now'.",
     "tags": [
       "ice",
       "free"
@@ -13676,7 +13780,7 @@
             "price": "150 Dragon Coins",
             "priceType": "dc",
             "sellback": "135 DC (<24 hours) / 38 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -13723,7 +13827,7 @@
             "price": "170 Dragon Coins",
             "priceType": "dc",
             "sellback": "153 DC (<24 hours) / 43 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -13770,7 +13874,7 @@
             "price": "200 Dragon Coins",
             "priceType": "dc",
             "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -13822,8 +13926,8 @@
     "obtainMethods": [
       {
         "location": "Mystlyk Museum",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "105 Gold",
         "daRequired": false
       }
@@ -13856,8 +13960,8 @@
     "obtainMethods": [
       {
         "location": "Mystlyk Museum",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "30 Gold",
         "daRequired": false
       }
@@ -13890,8 +13994,8 @@
     "obtainMethods": [
       {
         "location": "The Elite Patrol",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "50 Gold",
         "daRequired": false
       }
@@ -13924,17 +14028,17 @@
     "obtainMethods": [
       {
         "location": "Face of Death",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "300 Gold",
         "daRequired": true
       },
       {
         "location": "Sandsea Trinkets",
-        "price": "50 Dragon Coins",
         "priceType": "dc",
+        "price": "50 Dragon Coins",
         "sellback": "45 DC (<24 hours) / 13 DC (>24 hours)",
-        "daRequired": true,
+        "daRequired": false,
         "dcRequired": true
       }
     ],
@@ -13967,8 +14071,8 @@
     "obtainMethods": [
       {
         "location": "Old Scrolls",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "110 Gold",
         "daRequired": true
       }
@@ -14001,21 +14105,21 @@
     "obtainMethods": [
       {
         "location": "One Step Forward",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "100 Gold",
         "daRequired": false
       },
       {
         "location": "After War DC",
-        "price": "15 Dragon Coins",
         "priceType": "dc",
+        "price": "15 Dragon Coins",
         "sellback": "14 DC (<24 hours) / 4 DC (>24 hours)",
         "daRequired": false,
         "dcRequired": true
       }
     ],
-    "notes": "• Seed Spitter Seed was previously available from the retired quest  After the War.",
+    "notes": "Seed Spitter Seed was previously available from the retired quest  After the War.",
     "tags": [
       "nat",
       "free"
@@ -14045,8 +14149,8 @@
     "obtainMethods": [
       {
         "location": "Memory-Demons",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "150 Gold",
         "daRequired": false
       }
@@ -14079,8 +14183,8 @@
     "obtainMethods": [
       {
         "location": "Yulgar's First Date",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "190 Gold",
         "daRequired": false
       }
@@ -14133,7 +14237,8 @@
     ],
     "shared": {
       "description": "You've enhanced your amulet with shadows. Wearing it allows you to make out odd shapes that seem to just barely come into view.",
-      "rarity": "10"
+      "rarity": "10",
+      "notes": "II-IV versions previously required 1  DeathKnight Amulet & 2/3/4  Dusk Essence respectively.\nNecklaces were tiered with Roman numerals on  August 25th, 2023; Required Items on II-IV versions were also changed on that date."
     },
     "levelVariants": [
       {
@@ -14273,8 +14378,8 @@
     "obtainMethods": [
       {
         "location": "Yulgar's First Date",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "80 Gold",
         "daRequired": false
       }
@@ -14576,7 +14681,7 @@
             "price": "150 Dragon Coins",
             "priceType": "dc",
             "sellback": "135 DC (<24 hours) / 38 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -14623,7 +14728,7 @@
             "price": "170 Dragon Coins",
             "priceType": "dc",
             "sellback": "153 DC (<24 hours) / 43 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -14670,7 +14775,7 @@
             "price": "200 Dragon Coins",
             "priceType": "dc",
             "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -14721,8 +14826,8 @@
     "obtainMethods": [
       {
         "location": "Frostvale Defense",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "125 Gold",
         "daRequired": false
       }
@@ -14756,17 +14861,17 @@
     "obtainMethods": [
       {
         "location": "Dreamscape",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "300 Gold",
         "daRequired": true
       },
       {
         "location": "DS Loot for DCs",
-        "price": "30 Dragon Coins",
         "priceType": "dc",
+        "price": "30 Dragon Coins",
         "sellback": "27 DC (<24 hours) / 8 DC (>24 hours)",
-        "daRequired": true,
+        "daRequired": false,
         "dcRequired": true
       }
     ],
@@ -14799,10 +14904,10 @@
     "obtainMethods": [
       {
         "location": "Stevy Shop",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "250 Gold",
+        "price": "N/A",
         "requiredItems": "15 Dark Insicors",
+        "sellback": "250 Gold",
         "daRequired": true
       }
     ],
@@ -14834,17 +14939,17 @@
     "obtainMethods": [
       {
         "location": "The Valtrith Tomb",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "100 Gold",
         "daRequired": true
       },
       {
         "location": "Tomb Drops",
-        "price": "35 Dragon Coins",
         "priceType": "dc",
+        "price": "35 Dragon Coins",
         "sellback": "32 DC (<24 hours) / 9 DC (>24 hours)",
-        "daRequired": true,
+        "daRequired": false,
         "dcRequired": true
       }
     ],
@@ -14877,8 +14982,8 @@
     "obtainMethods": [
       {
         "location": "The Dragon Drakath",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "700 Gold",
         "daRequired": true
       }
@@ -14910,8 +15015,8 @@
     "obtainMethods": [
       {
         "location": "The Wizards Apprentices",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "40 Gold",
         "daRequired": false
       }
@@ -14944,8 +15049,8 @@
     "obtainMethods": [
       {
         "location": "The Waiter",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "40 Gold",
         "daRequired": false
       }
@@ -14978,8 +15083,8 @@
     "obtainMethods": [
       {
         "location": "The Human Element",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "80 Gold",
         "daRequired": false
       }
@@ -15012,8 +15117,8 @@
     "obtainMethods": [
       {
         "location": "The Human Element",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "225 Gold",
         "daRequired": false
       }
@@ -15066,7 +15171,8 @@
     ],
     "shared": {
       "description": "You found this slimy necklace inside the shell of the Snail. It seems to have absorbed the defense of the snail.",
-      "rarity": "0"
+      "rarity": "0",
+      "notes": "I, II, and IV versions were tiered with Roman numerals on February 8th, 2025.\nNecklace was erroneously missing the III Roman numeral; this was fixed on  March 21st, 2025."
     },
     "levelVariants": [
       {
@@ -15137,7 +15243,7 @@
         "element": "POI",
         "resists": "Health -20, Immobility +20",
         "rarity": "0",
-        "notes": "• Necklace was erroneously missing the III Roman numeral; this was fixed on  March 21st, 2025."
+        "notes": "Necklace was erroneously missing the III Roman numeral; this was fixed on  March 21st, 2025."
       },
       {
         "levelNumber": 75,
@@ -15203,8 +15309,8 @@
     "obtainMethods": [
       {
         "location": "Old Scrolls",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "80 Gold",
         "daRequired": false
       }
@@ -15691,7 +15797,7 @@
             "price": "30 Dragon Coins",
             "priceType": "dc",
             "sellback": "27 DC (<24 hours) / 8 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -15738,7 +15844,7 @@
             "price": "30 Dragon Coins",
             "priceType": "dc",
             "sellback": "27 DC (<24 hours) / 8 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -15790,8 +15896,8 @@
     "obtainMethods": [
       {
         "location": "Prison Brawl",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "50 Gold",
         "daRequired": false
       }
@@ -15824,8 +15930,8 @@
     "obtainMethods": [
       {
         "location": "Bitten",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "100 Gold",
         "daRequired": true
       }
@@ -15858,8 +15964,8 @@
     "obtainMethods": [
       {
         "location": "FwendQuest",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "250 Gold",
         "daRequired": true
       }
@@ -16057,8 +16163,8 @@
     "obtainMethods": [
       {
         "location": "As You Lie Dreaming...",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "100 Gold",
         "daRequired": true
       }
@@ -16091,8 +16197,8 @@
     "obtainMethods": [
       {
         "location": "FwendQuest",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "50 Gold",
         "daRequired": false
       }
@@ -16126,21 +16232,21 @@
     "obtainMethods": [
       {
         "location": "One Step Forward",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "200 Gold",
         "daRequired": false
       },
       {
         "location": "After War DC",
-        "price": "30 Dragon Coins",
         "priceType": "dc",
+        "price": "30 Dragon Coins",
         "sellback": "27 DC (<24 hours) / 8 DC (>24 hours)",
         "daRequired": false,
         "dcRequired": true
       }
     ],
-    "notes": "• Stone Bead Necklace was previously available from the retired quest  After the War.",
+    "notes": "Stone Bead Necklace was previously available from the retired quest  After the War.",
     "tags": [
       "sto",
       "free"
@@ -16218,7 +16324,8 @@
     ],
     "shared": {
       "description": "An itchy rope collar with a small name tag attached: \"Sugarcube\". Huh.",
-      "rarity": "5"
+      "rarity": "5",
+      "notes": "Street Tog's Discarded Collar (I-VIII) were previously named 'Scratchy Rope Choker'; this was changed on  July 15th, 2022.\nPreviously had the description: A bit itchy, but also cute and stylish! At least, as cute and stylish as a piece of rope around your neck can be."
     },
     "levelVariants": [
       {
@@ -16540,7 +16647,7 @@
             "price": "170 Dragon Coins",
             "priceType": "dc",
             "sellback": "153 DC (<24 hours) / 43 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -16587,7 +16694,7 @@
             "price": "200 Dragon Coins",
             "priceType": "dc",
             "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -16638,8 +16745,8 @@
     "obtainMethods": [
       {
         "location": "Revenge",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "35 Gold",
         "daRequired": false
       }
@@ -16672,8 +16779,8 @@
     "obtainMethods": [
       {
         "location": "Your Secret Is Safe",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "90 Gold",
         "daRequired": false
       }
@@ -16706,8 +16813,8 @@
     "obtainMethods": [
       {
         "location": "Falconreach Havoc",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "160 Gold",
         "daRequired": true
       }
@@ -16740,15 +16847,15 @@
     "obtainMethods": [
       {
         "location": "The Valtrith Tomb",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "50 Gold",
         "daRequired": false
       },
       {
         "location": "Tomb Drops",
-        "price": "20 Dragon Coins",
         "priceType": "dc",
+        "price": "20 Dragon Coins",
         "sellback": "18 DC (<24 hours) / 5 DC (>24 hours)",
         "daRequired": false,
         "dcRequired": true
@@ -16838,7 +16945,8 @@
     ],
     "shared": {
       "description": "An exquisite polished red gem, enveloped by delicate silver and gold dragon wings, hangs from this pendant. The gem itself is surprisingly cool to the touch.",
-      "rarity": "5"
+      "rarity": "5",
+      "notes": "Necklaces were tiered with Roman numerals on  June 21st, 2024."
     },
     "levelVariants": [
       {
@@ -17160,7 +17268,7 @@
             "price": "170 Dragon Coins",
             "priceType": "dc",
             "sellback": "153 DC (<24 hours) / 43 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -17207,7 +17315,7 @@
             "price": "200 Dragon Coins",
             "priceType": "dc",
             "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -17254,7 +17362,7 @@
             "price": "200 Dragon Coins",
             "priceType": "dc",
             "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -17306,8 +17414,8 @@
     "obtainMethods": [
       {
         "location": "FwendQuest",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "120 Gold",
         "daRequired": false
       }
@@ -17341,8 +17449,8 @@
     "obtainMethods": [
       {
         "location": "Hide 'n Seek",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "150 Gold",
         "daRequired": false
       }
@@ -17375,8 +17483,8 @@
     "obtainMethods": [
       {
         "location": "Stocking the Shelves",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "350 Gold",
         "daRequired": false
       }
@@ -17409,10 +17517,10 @@
     "obtainMethods": [
       {
         "location": "Relics of Zeclem",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "0 Dragon Coins",
+        "price": "N/A",
         "requiredItems": "1 Shadowed DeathKnight Amulet IV & 5 Relic of Zeclem",
+        "sellback": "0 Dragon Coins",
         "daRequired": false,
         "dcRequired": true
       }
@@ -17446,8 +17554,8 @@
     "obtainMethods": [
       {
         "location": "Edy's Shinies",
-        "price": "1,000 Gold",
         "priceType": "gold",
+        "price": "1,000 Gold",
         "sellback": "100 Gold",
         "daRequired": false
       }
@@ -17455,106 +17563,6 @@
     "tags": [
       "nat",
       "gold"
-    ],
-    "daRequired": false
-  },
-  {
-    "id": "accessory-the-god-s-tie",
-    "name": "The God's Tie",
-    "slug": "accessory-the-god-s-tie",
-    "type": "accessory",
-    "subtype": "necklace",
-    "description": "Hermes, god of speedy travel, is also Lore's Necktie Diety. This item requires a Dragon Amulet.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=16192380",
-    "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
-    "level": "30",
-    "stats": "Magic Def +1, Pierce Def +1, Melee Def +1, END +3, CHA +2, LUK +2, INT +3, DEX +3, STR +3, Immobility +1, Stone +3",
-    "rarity": "10",
-    "itemType": "Necklace",
-    "equipSpot": "Neck",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "Father's Day Shop",
-        "price": "1,250 Gold",
-        "priceType": "gold",
-        "sellback": "125 Gold",
-        "daRequired": true
-      }
-    ],
-    "tags": [
-      "nat",
-      "gold"
-    ],
-    "daRequired": true,
-    "isRare": true
-  },
-  {
-    "id": "accessory-the-heart-of-the-sea",
-    "name": "The Heart of the Sea",
-    "slug": "accessory-the-heart-of-the-sea",
-    "type": "accessory",
-    "subtype": "necklace",
-    "description": "This titanic sized necklace got caught on the tow of the treasure golem as he was wading past a shipwreck.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=11323121",
-    "releaseDate": "",
-    "elements": [
-      "ICE"
-    ],
-    "level": "14",
-    "stats": "Magic Def +1, LUK +1, Water +2, Ice +2",
-    "rarity": "0",
-    "itemType": "Necklace",
-    "equipSpot": "Neck",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "Reward Chest",
-        "price": "0 Gold",
-        "priceType": "free",
-        "sellback": "0 Gold",
-        "daRequired": false
-      }
-    ],
-    "tags": [
-      "ice",
-      "free"
-    ],
-    "daRequired": false
-  },
-  {
-    "id": "accessory-the-hope-necklace",
-    "name": "The Hope Necklace",
-    "slug": "accessory-the-hope-necklace",
-    "type": "accessory",
-    "subtype": "necklace",
-    "description": "This necklace was abandoned at the gateway of H-E-double hockey sticks!",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=11323717",
-    "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
-    "level": "26",
-    "stats": "END +2, LUK +2, Bonus +2, Poison +2",
-    "rarity": "0",
-    "itemType": "Necklace",
-    "equipSpot": "Neck",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "Reward Chest",
-        "price": "0 Gold",
-        "priceType": "free",
-        "sellback": "0 Gold",
-        "daRequired": false
-      }
-    ],
-    "tags": [
-      "lig",
-      "free"
     ],
     "daRequired": false
   },
@@ -17580,8 +17588,8 @@
     "obtainMethods": [
       {
         "location": "Reforged",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "50 Gold",
         "daRequired": false
       }
@@ -17613,10 +17621,10 @@
     "obtainMethods": [
       {
         "location": "Thursday Necklaces",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "100 Gold",
+        "price": "N/A",
         "requiredItems": "Thursday's Pendant",
+        "sellback": "100 Gold",
         "daRequired": true
       }
     ],
@@ -17647,10 +17655,10 @@
     "obtainMethods": [
       {
         "location": "Thursday Necklaces",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "100 Gold",
+        "price": "N/A",
         "requiredItems": "Thursday's Pendant",
+        "sellback": "100 Gold",
         "daRequired": false
       }
     ],
@@ -17682,8 +17690,8 @@
     "obtainMethods": [
       {
         "location": "Old Scrolls",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "300 Gold",
         "daRequired": false
       }
@@ -17771,7 +17779,8 @@
     ],
     "shared": {
       "description": "The water may be where the Tizheruk hides, but the Trees Behind You is where it lurks.",
-      "rarity": "5"
+      "rarity": "5",
+      "notes": "spoiler:\nDescription for both versions of this item contains an Atbash cipher, which when decoded reads:\nI think the artifact is having some effect on my mind. My thoughts, no, my fears are stronger. I should lock it away, but I can't."
     },
     "levelVariants": [
       {
@@ -17937,7 +17946,7 @@
         "element": "FEA",
         "resists": "All +6, Health +6",
         "rarity": "5",
-        "notes": "spoiler:\nDescription for both versions of this item contains an Atbash cipher, which when decoded reads: \n I think the artifact is having some effect on my mind. My thoughts, no, my fears are stronger. I should lock it away, but I can't."
+        "notes": "spoiler:\nDescription for both versions of this item contains an Atbash cipher, which when decoded reads:\nI think the artifact is having some effect on my mind. My thoughts, no, my fears are stronger. I should lock it away, but I can't."
       },
       {
         "levelNumber": 40,
@@ -17962,7 +17971,7 @@
         "element": "FEA",
         "resists": "All +6, Health +6",
         "rarity": "5",
-        "notes": "spoiler:\nDescription for both versions of this item contains an Atbash cipher, which when decoded reads: \n I think the artifact is having some effect on my mind. My thoughts, no, my fears are stronger. I should lock it away, but I can't."
+        "notes": "spoiler:\nDescription for both versions of this item contains an Atbash cipher, which when decoded reads:\nI think the artifact is having some effect on my mind. My thoughts, no, my fears are stronger. I should lock it away, but I can't."
       },
       {
         "levelNumber": 50,
@@ -18095,7 +18104,7 @@
             "price": "100 Dragon Coins",
             "priceType": "dc",
             "sellback": "90 DC (<24 hours) / 25 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -18142,7 +18151,7 @@
             "price": "100 Dragon Coins",
             "priceType": "dc",
             "sellback": "90 DC (<24 hours) / 25 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -18189,7 +18198,7 @@
             "price": "100 Dragon Coins",
             "priceType": "dc",
             "sellback": "90 DC (<24 hours) / 25 DC (>24 hours)",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -18240,8 +18249,8 @@
     "obtainMethods": [
       {
         "location": "Frostvale Defense",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "230 Gold",
         "daRequired": false
       }
@@ -18274,8 +18283,8 @@
     "obtainMethods": [
       {
         "location": "Abominations Abound",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "1 Gold",
         "daRequired": false
       }
@@ -18308,10 +18317,10 @@
     "obtainMethods": [
       {
         "location": "Stevy Shop",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "180 Gold",
+        "price": "N/A",
         "requiredItems": "10 Dark Insicors",
+        "sellback": "180 Gold",
         "daRequired": false
       }
     ],
@@ -18363,7 +18372,8 @@
     ],
     "shared": {
       "description": "You've enhanced your amulet with shadows. Wearing it allows you to make out odd shapes that seem to just barely come into view. This item requires a Dragon Amulet.",
-      "rarity": "10"
+      "rarity": "10",
+      "notes": "II-IV versions previously required 1  DeathKnight Amulet & 2/3/4  Umbral Essence respectively.\nNecklaces were tiered with Roman numerals on  August 25th, 2023; Required Items on II-IV versions were also changed on that date."
     },
     "levelVariants": [
       {
@@ -18523,7 +18533,8 @@
     ],
     "shared": {
       "description": "This primitive looking necklace is crafted from huge bear teeth of a variety of sizes.",
-      "rarity": "6"
+      "rarity": "6",
+      "notes": "These necklaces went rare on  April 30th, 2021."
     },
     "levelVariants": [
       {
@@ -18660,8 +18671,8 @@
     "obtainMethods": [
       {
         "location": "Memory-Demons",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "200 Gold",
         "daRequired": true
       }
@@ -18694,8 +18705,8 @@
     "obtainMethods": [
       {
         "location": "Mystlyk Museum",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "150 Gold",
         "daRequired": false
       }
@@ -18728,21 +18739,21 @@
     "obtainMethods": [
       {
         "location": "Dreamscape",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "30 Gold",
         "daRequired": false
       },
       {
         "location": "DS Loot for DCs",
-        "price": "30 Dragon Coins",
         "priceType": "dc",
+        "price": "30 Dragon Coins",
         "sellback": "27 DC (<24 hours) / 8 DC (>24 hours)",
         "daRequired": false,
         "dcRequired": true
       }
     ],
-    "notes": "• Necklace previously appeared in the retired quest  Dreamscape and had the initial stats: \nStats: Magic Def +2, WIS +2, INT +2, DEX +2, STR +2, Bonus +2 \n Resists: Wind +5, Ice +5",
+    "notes": "Necklace previously appeared in the retired quest  Dreamscape and had the initial stats:\nStats: Magic Def +2, WIS +2, INT +2, DEX +2, STR +2, Bonus +2\nResists: Wind +5, Ice +5",
     "tags": [
       "win",
       "free"
@@ -18919,8 +18930,8 @@
     "obtainMethods": [
       {
         "location": "Wolf and Bear",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "180 Gold",
         "daRequired": false
       }
@@ -18952,8 +18963,8 @@
     "obtainMethods": [
       {
         "location": "Wolf and Bear",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "220 Gold",
         "daRequired": true
       }
@@ -18985,8 +18996,8 @@
     "obtainMethods": [
       {
         "location": "Wolf and Bear",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "80 Gold",
         "daRequired": false
       }
@@ -19018,8 +19029,8 @@
     "obtainMethods": [
       {
         "location": "Wolf and Bear",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "120 Gold",
         "daRequired": false
       }
@@ -19052,13 +19063,13 @@
     "obtainMethods": [
       {
         "location": "Everyone Knows It's Windy",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "150 Gold",
         "daRequired": false
       }
     ],
-    "notes": "• The following changes were implemented on  March 20th, 2026: \n  • Level's requirement was raised from 4 to 14. \n  • INT +2 and Stone -1 were removed. \n  • Bonus stat was raised from +1 to +5. \n  • CHA and LUK stats were added. \n  • Wind Resist was raised from +1 to +4.",
+    "notes": "The following changes were implemented on  March 20th, 2026:\n  • Level's requirement was raised from 4 to 14.\n  • INT +2 and Stone -1 were removed.\n  • Bonus stat was raised from +1 to +5.\n  • CHA and LUK stats were added.\n  • Wind Resist was raised from +1 to +4.",
     "tags": [
       "win",
       "free"
@@ -19087,21 +19098,21 @@
     "obtainMethods": [
       {
         "location": "One Step Forward",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "70 Gold",
         "daRequired": false
       },
       {
         "location": "After War DC",
-        "price": "10 Dragon Coins",
         "priceType": "dc",
+        "price": "10 Dragon Coins",
         "sellback": "9 DC (<24 hours) / 3 DC (>24 hours)",
         "daRequired": false,
         "dcRequired": true
       }
     ],
-    "notes": "• Wooden Carved Beads was previously available from the retired quest  After the War.",
+    "notes": "Wooden Carved Beads was previously available from the retired quest  After the War.",
     "tags": [
       "nat",
       "free"
@@ -19131,8 +19142,8 @@
     "obtainMethods": [
       {
         "location": "Bitten",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "150 Gold",
         "daRequired": false
       }
@@ -19165,21 +19176,21 @@
     "obtainMethods": [
       {
         "location": "One Step Forward",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "50 Gold",
         "daRequired": false
       },
       {
         "location": "After War DC",
-        "price": "5 Dragon Coins",
         "priceType": "dc",
+        "price": "5 Dragon Coins",
         "sellback": "5 DC (<24 hours) / 2 DC (>24 hours)",
         "daRequired": false,
         "dcRequired": true
       }
     ],
-    "notes": "• Woven Vines was previously available from the retired quest  After the War.",
+    "notes": "Woven Vines was previously available from the retired quest  After the War.",
     "tags": [
       "sil",
       "free"
@@ -19365,10 +19376,10 @@
     "obtainMethods": [
       {
         "location": "Relics of Zeclem",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "0 Dragon Coins",
+        "price": "N/A",
         "requiredItems": "1 Unhallowed DeathKnight Amulet IV & 5 Relic of Zeclem OR 1 Zeclem's Heirloom (80) & 5 Relic of Zeclem",
+        "sellback": "0 Dragon Coins",
         "daRequired": false,
         "dcRequired": true
       }
@@ -19402,8 +19413,8 @@
     "obtainMethods": [
       {
         "location": "Night Of The Living Pumpkin",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "30 Gold",
         "daRequired": false
       }

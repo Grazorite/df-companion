@@ -5,7 +5,11 @@ import ElementLegend from '../components/shared/ElementLegend'
 import SegmentToggle from '../components/shared/SegmentToggle'
 import AccessoryList from '../components/accessories/AccessoryList'
 import { useDebounce } from '../hooks/useDebounce'
-import { useAccessories, useAccessoryCounts } from '../hooks/useAccessories'
+import {
+  useAccessories,
+  useAccessoryCategoryAvailability,
+  useAccessoryCounts,
+} from '../hooks/useAccessories'
 import { ACCESSORY_SUBTYPES, type AccessorySubtype } from '../types/accessory'
 import elementsData from '../data/elements.json'
 import type { ElementsData } from '../types/element'
@@ -20,6 +24,7 @@ const ACCESS_OPTIONS = [
 ] as const
 
 const CATEGORY_OPTIONS = [
+  { id: 'cosmetic', label: 'Cosmetic' },
   { id: 'temp', label: 'Temp' },
   { id: 'rare', label: 'Rare' },
   { id: 'seasonal', label: 'Seasonal' },
@@ -40,6 +45,12 @@ export default function AccessoryListPage() {
   const elementParam = searchParams.get('element')
   const accessParam = searchParams.get('access')
   const categoryParam = searchParams.get('category')
+  const categoryAvailability = useAccessoryCategoryAvailability(activeSubtype)
+  const showCosmeticFilter = categoryAvailability.loading || categoryAvailability.hasCosmetic
+  const visibleCategoryOptions = useMemo(
+    () => CATEGORY_OPTIONS.filter((option) => option.id !== 'cosmetic' || showCosmeticFilter),
+    [showCosmeticFilter]
+  )
   const activeElements = useMemo(
     () => (elementParam ? elementParam.split(',').filter(Boolean) : []),
     [elementParam]
@@ -63,8 +74,9 @@ export default function AccessoryListPage() {
             .filter((value): value is (typeof CATEGORY_OPTIONS)[number]['id'] =>
               CATEGORY_OPTIONS.some((option) => option.id === value)
             )
+            .filter((value) => value !== 'cosmetic' || showCosmeticFilter)
         : [],
-    [categoryParam]
+    [categoryParam, showCosmeticFilter]
   )
 
   const { elements } = elementsData as ElementsData
@@ -210,7 +222,7 @@ export default function AccessoryListPage() {
 
       <div className="mb-3">
         <div className="flex flex-wrap gap-2" role="group" aria-label="Filter by category">
-          {CATEGORY_OPTIONS.map((option) => {
+          {visibleCategoryOptions.map((option) => {
             const isActive = activeCategories.includes(option.id)
             return (
               <button

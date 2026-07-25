@@ -830,6 +830,17 @@ function parseTagFlags(html: string) {
   }
 }
 
+function hasCosmeticMarker(text: string): boolean {
+  return /\(\s*Cosmetic\s*\)/i.test(text)
+}
+
+function supportsCosmeticFlag(subtype: AccessorySubtype, equipSpot?: string): boolean {
+  if (subtype === 'helm' || subtype === 'cape-wing') return true
+  if (subtype !== 'artifact') return false
+
+  return /^(?:head|back)$/i.test(equipSpot?.trim() ?? '')
+}
+
 function hasMultipleVersionHint(name: string): boolean {
   return (
     /\((?:All Versions|[IVX]+(?:\s*[-,]\s*[IVX]+)+|[IVX]+-[IVX]+)\)/i.test(name) ||
@@ -1098,6 +1109,7 @@ function enrichAccessorySiblingVariants(variants: Accessory[]): Accessory[] {
       ...(variant.dcRequired || primary.dcRequired ? { dcRequired: true } : {}),
       ...(variant.dmRequired || primary.dmRequired ? { dmRequired: true } : {}),
       ...(variant.isTemp || primary.isTemp ? { isTemp: true } : {}),
+      ...(variant.isCosmetic || primary.isCosmetic ? { isCosmetic: true } : {}),
       ...(variant.isRare || primary.isRare ? { isRare: true } : {}),
       ...(variant.isSeasonal || primary.isSeasonal ? { isSeasonal: true } : {}),
       ...(variant.isSpecialOffer || primary.isSpecialOffer ? { isSpecialOffer: true } : {}),
@@ -1138,6 +1150,7 @@ function buildAccessoryEntry(
   override?: { name?: string; forumUrl?: string }
 ): Accessory {
   const normalizedText = normalizeStructuredText(html)
+  const description = parseDescription(html)
   const flags = parseTagFlags(html)
   const textSignals = {
     daRequired:
@@ -1178,6 +1191,9 @@ function buildAccessoryEntry(
     parseHtmlField(html, ['Modifies']) ?? parseFieldValue(normalizedText, ['Modifies'])
   const categoryValue =
     parseHtmlField(html, ['Category']) ?? parseFieldValue(normalizedText, ['Category'])
+  const isCosmetic =
+    supportsCosmeticFlag(stub.subtype, equipSpotValue) &&
+    (hasCosmeticMarker(description) || hasCosmeticMarker(normalizedText))
   const strategy = getAccessorySubtypeStrategy(stub.subtype)
   const images = strategy.shouldExtractImages({
     name: override?.name ?? stub.name,
@@ -1196,7 +1212,7 @@ function buildAccessoryEntry(
     slug: `accessory-${slugify(override?.name ?? stub.name)}`,
     type: 'accessory',
     subtype: stub.subtype,
-    description: parseDescription(html),
+    description,
     forumUrl: override?.forumUrl ?? stub.forumUrl,
     releaseDate: '',
     ...(imageOverride || images.imageUrl ? { imageUrl: imageOverride ?? images.imageUrl } : {}),
@@ -1230,6 +1246,7 @@ function buildAccessoryEntry(
       ? { dmRequired: true }
       : {}),
     ...(flags.isTemp ? { isTemp: true } : {}),
+    ...(isCosmetic ? { isCosmetic: true } : {}),
     ...(flags.isRare ? { isRare: true } : {}),
     ...(flags.isSeasonal ? { isSeasonal: true } : {}),
     ...(flags.isSpecialOffer ? { isSpecialOffer: true } : {}),
@@ -1385,6 +1402,7 @@ function buildAccessoryFamily(
     releaseDate: consolidatedVariants.find((variant) => variant.releaseDate)?.releaseDate ?? '',
     tags: Array.from(new Set(consolidatedVariants.flatMap((variant) => variant.tags))).sort(),
     isTemp: consolidatedVariants.some((variant) => variant.isTemp) || undefined,
+    isCosmetic: consolidatedVariants.some((variant) => variant.isCosmetic) || undefined,
     isRare: consolidatedVariants.some((variant) => variant.isRare) || undefined,
     isSeasonal: consolidatedVariants.some((variant) => variant.isSeasonal) || undefined,
     isSpecialOffer: consolidatedVariants.some((variant) => variant.isSpecialOffer) || undefined,

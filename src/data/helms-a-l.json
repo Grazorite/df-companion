@@ -83,7 +83,8 @@
       "merge"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-abomination-mask",
@@ -413,7 +414,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "dmRequired": true
+    "dmRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-abyssal-hunter-visage",
@@ -453,7 +455,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "dmRequired": true
+    "dmRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-abyssal-sentry-visage",
@@ -493,7 +496,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "dmRequired": true
+    "dmRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-abyssal-warhelm",
@@ -537,7 +541,8 @@
       "dc"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-acatriel-mask",
@@ -680,7 +685,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-accursed-wrap",
@@ -716,7 +722,8 @@
       "merge"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-adept-helm",
@@ -1815,7 +1822,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-alina-s-wedding-wreath",
@@ -2025,7 +2033,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isSpecialOffer": true
+    "isSpecialOffer": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-alz-ein-mask",
@@ -2337,7 +2346,8 @@
       "dc"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-ancient-ceremonial-helm-of-ravens",
@@ -2373,7 +2383,8 @@
       "dc"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-ancient-ceremonial-helm-of-wolves",
@@ -2409,7 +2420,8 @@
       "dc"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-ancient-deathknight-helm",
@@ -2882,7 +2894,8 @@
     "levelRange": "1",
     "elements": [
       "ICE"
-    ]
+    ],
+    "isCosmetic": true
   },
   {
     "id": "accessory-ancient-skull-ripper-helm",
@@ -3548,7 +3561,8 @@
       "dc"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-arctic-sherpa-helm",
@@ -3655,7 +3669,8 @@
       "merge"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-ascended-cover",
@@ -4180,7 +4195,8 @@
       "dc"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-aspar-mask",
@@ -4705,7 +4721,8 @@
       "dc"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-ateala-soldier-s-helm",
@@ -4978,7 +4995,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-atealan-star-warrior-mask",
@@ -6509,7 +6527,8 @@
       "dc"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-avenger-s-helm",
@@ -7146,7 +7165,8 @@
         "type": "accessory",
         "url": "https://forums2.battleon.com/f/tm.asp?m=22425963"
       }
-    ]
+    ],
+    "isCosmetic": true
   },
   {
     "id": "accessory-baby-twilly-mask",
@@ -7762,7 +7782,8 @@
         "type": "accessory",
         "url": "https://forums2.battleon.com/f/tm.asp?m=22413357"
       }
-    ]
+    ],
+    "isCosmetic": true
   },
   {
     "id": "accessory-baltael-s-visor",
@@ -7821,7 +7842,8 @@
         "type": "accessory",
         "url": "https://forums2.battleon.com/f/tm.asp?m=22413357"
       }
-    ]
+    ],
+    "isCosmetic": true
   },
   {
     "id": "accessory-baradaa-s-skullhelm",
@@ -13188,7 +13210,8 @@
     "hasFree": false,
     "hasMerge": false,
     "levelRange": "1",
-    "elements": []
+    "elements": [],
+    "isCosmetic": true
   },
   {
     "id": "accessory-fierce-bone-golem-head",
@@ -13834,7 +13857,8 @@
       "dc"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-bound-terror-mask",
@@ -15534,7 +15558,8 @@
       "dc"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-bright-star-helm",
@@ -18570,7 +18595,8 @@
     "daRequired": false,
     "dcRequired": true,
     "dmRequired": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-candybucket-mask-head",
@@ -20018,7 +20044,8 @@
       "merge"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-chaotic-fang",
@@ -20054,7 +20081,8 @@
       "merge"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-chaotic-freedom",
@@ -20090,7 +20118,8 @@
       "merge"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-chaotic-full-helm",
@@ -20125,7 +20154,8 @@
       "merge"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-chaotic-shroudhelm",
@@ -20160,7 +20190,8 @@
       "merge"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-chaotic-threadguard",
@@ -20204,7 +20235,8 @@
       "dc"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-charnel-doom-helmet",
@@ -20672,7 +20704,8 @@
     "levelRange": "1",
     "elements": [
       "BAC"
-    ]
+    ],
+    "isCosmetic": true
   },
   {
     "id": "accessory-chilly-s-glorious-visage",
@@ -22546,7 +22579,8 @@
         "type": "accessory",
         "url": "https://forums2.battleon.com/f/tm.asp?m=22424128"
       }
-    ]
+    ],
+    "isCosmetic": true
   },
   {
     "id": "accessory-chronomancer-s-helm",
@@ -22592,7 +22626,8 @@
         "type": "accessory",
         "url": "https://forums2.battleon.com/f/tm.asp?m=22424127"
       }
-    ]
+    ],
+    "isCosmetic": true
   },
   {
     "id": "accessory-chronovisage",
@@ -26312,7 +26347,8 @@
     "levelRange": "1",
     "elements": [
       "NAT"
-    ]
+    ],
+    "isCosmetic": true
   },
   {
     "id": "accessory-commemorative-birthday-helm",
@@ -27243,7 +27279,8 @@
     "daRequired": false,
     "dcRequired": true,
     "dmRequired": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-crafter-mask",
@@ -30156,7 +30193,8 @@
       "free"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-cute-turdraken-hat",
@@ -30194,7 +30232,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-cutsy-raccoon-cap",
@@ -31691,7 +31730,8 @@
       "dar",
       "free"
     ],
-    "daRequired": true
+    "daRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-dark-diaphanous-helm",
@@ -31729,7 +31769,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-dark-emperor-helm",
@@ -33532,7 +33573,8 @@
       "dc"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-dead-drop-bear-hat",
@@ -35123,7 +35165,8 @@
         "type": "accessory",
         "url": "https://forums2.battleon.com/f/tm.asp?m=22411633"
       }
-    ]
+    ],
+    "isCosmetic": true
   },
   {
     "id": "accessory-delta-star-visor",
@@ -35175,7 +35218,8 @@
         "type": "accessory",
         "url": "https://forums2.battleon.com/f/tm.asp?m=22411632"
       }
-    ]
+    ],
+    "isCosmetic": true
   },
   {
     "id": "accessory-desert-camouflage-wrap",
@@ -37473,7 +37517,8 @@
       "dc"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-double-plumed-dome-helm",
@@ -38240,7 +38285,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-draconic-guard",
@@ -38859,7 +38905,8 @@
     "levelRange": "1",
     "elements": [
       "EVI"
-    ]
+    ],
+    "isCosmetic": true
   },
   {
     "id": "accessory-dragon-s-eternal-flame",
@@ -39562,7 +39609,8 @@
       "dc"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-dragonknight-helm",
@@ -40519,7 +40567,8 @@
     "levelRange": "1",
     "elements": [
       "MET"
-    ]
+    ],
+    "isCosmetic": true
   },
   {
     "id": "accessory-drakonnan-s-armored-helm",
@@ -42595,7 +42644,8 @@
       "merge"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-dreamer-beast-helm",
@@ -43949,7 +43999,8 @@
       "merge"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-dwarvish-army-helm",
@@ -44040,7 +44091,8 @@
         "type": "accessory",
         "url": "https://forums2.battleon.com/f/tm.asp?m=22404808"
       }
-    ]
+    ],
+    "isCosmetic": true
   },
   {
     "id": "accessory-eagle-of-freedom-helm",
@@ -44758,7 +44810,8 @@
     "daRequired": false,
     "dcRequired": true,
     "dmRequired": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-ebilcorp-chairman-mask",
@@ -44834,7 +44887,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-eggplant-helm",
@@ -45224,7 +45278,8 @@
       "merge"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-embodiment-of-might-helm",
@@ -48229,7 +48284,8 @@
       "dc"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-eternal-hourglass-helm",
@@ -49071,7 +49127,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "dmRequired": true
+    "dmRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-extremely-balanced-togs",
@@ -49109,7 +49166,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "dmRequired": true
+    "dmRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-eye-of-the-void-helm",
@@ -49617,7 +49675,8 @@
     "levelRange": "1",
     "elements": [
       "ICE"
-    ]
+    ],
+    "isCosmetic": true
   },
   {
     "id": "accessory-eyes-of-the-seer",
@@ -49652,7 +49711,8 @@
       "free"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-ezrajal-mask",
@@ -49843,7 +49903,8 @@
       "free"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-face-of-greed",
@@ -49880,7 +49941,8 @@
       "free"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-fae-s-beret",
@@ -49925,7 +49987,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-faerie-floss-helm",
@@ -50605,7 +50668,8 @@
       "free"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-falwynn-mask",
@@ -50831,7 +50895,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-fancy-witch-s-hat",
@@ -53667,7 +53732,8 @@
         "type": "accessory",
         "url": "https://forums2.battleon.com/f/tm.asp?m=20422564"
       }
-    ]
+    ],
+    "isCosmetic": true
   },
   {
     "id": "accessory-first-mate-s-hat",
@@ -54099,7 +54165,8 @@
       "free"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-formal-jester-helm",
@@ -56215,7 +56282,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-frostgoblin-helm",
@@ -57934,7 +58002,8 @@
     "levelRange": "1",
     "elements": [
       "MET"
-    ]
+    ],
+    "isCosmetic": true
   },
   {
     "id": "accessory-gaming-headphones",
@@ -57973,7 +58042,8 @@
       "merge"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-gargoyle-mask-helm",
@@ -58188,7 +58258,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-geared-helm",
@@ -64846,7 +64917,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-guise-of-the-unchained",
@@ -66365,7 +66437,8 @@
         "type": "accessory",
         "url": "https://forums2.battleon.com/f/tm.asp?m=22375168"
       }
-    ]
+    ],
+    "isCosmetic": true
   },
   {
     "id": "accessory-heartseeker-s-helm",
@@ -67080,7 +67153,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isSpecialOffer": true
+    "isSpecialOffer": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-helm-of-ancient-maar",
@@ -67118,7 +67192,8 @@
       "dc"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-helm-of-autumn-s-call",
@@ -67732,7 +67807,8 @@
     "levelRange": "1",
     "elements": [
       "WAT"
-    ]
+    ],
+    "isCosmetic": true
   },
   {
     "id": "accessory-helm-of-justice",
@@ -67805,7 +67881,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-helm-of-the-archlord",
@@ -67854,7 +67931,8 @@
         "type": "accessory",
         "url": "https://forums2.battleon.com/f/tm.asp?m=22405965"
       }
-    ]
+    ],
+    "isCosmetic": true
   },
   {
     "id": "accessory-helm-of-the-fallen-star",
@@ -67900,7 +67978,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-helm-of-timeless-destiny",
@@ -67944,7 +68023,8 @@
       "dc"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-helm-systemerror",
@@ -67982,7 +68062,8 @@
       "dc"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-helmet-of-lament",
@@ -68017,7 +68098,8 @@
       "dc"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-helmet-of-tog-control",
@@ -69385,7 +69467,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-hollow-cap",
@@ -69421,7 +69504,8 @@
       "nat",
       "free"
     ],
-    "daRequired": true
+    "daRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-hollow-jaw",
@@ -69457,7 +69541,8 @@
       "nat",
       "free"
     ],
-    "daRequired": true
+    "daRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-hooded-greed",
@@ -69542,7 +69627,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "dmRequired": true
+    "dmRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-hooded-sight-cowl",
@@ -71494,7 +71580,8 @@
       "dc"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-icy-battle-crown",
@@ -74306,7 +74393,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "dmRequired": true
+    "dmRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-jayne-s-snowpacolypse-hat",
@@ -75417,7 +75505,8 @@
       "merge"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-kehaan-helm",
@@ -77615,7 +77704,8 @@
       "dc"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-lightguard-helm",
@@ -77872,7 +77962,8 @@
         "type": "accessory",
         "url": "https://forums2.battleon.com/f/tm.asp?m=22424292"
       }
-    ]
+    ],
+    "isCosmetic": true
   },
   {
     "id": "accessory-lights-out-lampshade",
@@ -78620,7 +78711,8 @@
         "type": "accessory",
         "url": "https://forums2.battleon.com/f/tm.asp?m=22406366"
       }
-    ]
+    ],
+    "isCosmetic": true
   },
   {
     "id": "accessory-locks-of-lament",
@@ -78655,7 +78747,8 @@
       "dc"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-loki-s-mask",
@@ -79136,7 +79229,8 @@
     "elements": [
       "LIG",
       "DAR"
-    ]
+    ],
+    "isCosmetic": true
   },
   {
     "id": "accessory-love-s-touch",

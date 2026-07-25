@@ -23,7 +23,7 @@ export default function AccessoryCard({ accessory }: AccessoryCardProps) {
     >
       <div className="flex-1 min-w-0">
         <div className="flex items-center gap-1.5 flex-wrap mb-1.5">
-          {visibleCodes.map(code => (
+          {visibleCodes.map((code) => (
             <ElementPill key={code} code={code} size="sm" />
           ))}
           {overflow > 0 && (
@@ -33,6 +33,11 @@ export default function AccessoryCard({ accessory }: AccessoryCardProps) {
           )}
           {card.hasMultipleVersions && card.levelRange && (
             <LevelRangeBadge levelRange={card.levelRange} />
+          )}
+          {card.isCosmetic && (
+            <span className="text-[10px] text-orange-300 bg-orange-500/15 px-1.5 py-0.5 rounded-full font-medium">
+              Cosmetic
+            </span>
           )}
           {card.daRequired && (
             <span className="text-[10px] text-orange-400 bg-orange-500/20 px-1.5 py-0.5 rounded-full font-medium">

@@ -43,6 +43,7 @@ export interface Accessory {
   dcRequired?: boolean
   dmRequired?: boolean
   isTemp?: boolean
+  isCosmetic?: boolean
   isRare?: boolean
   isSeasonal?: boolean
   isSpecialOffer?: boolean
@@ -60,7 +61,7 @@ export type AccessoryEntry = Accessory | AccessoryFamily
 export interface AccessoryFilters {
   query?: string
   access?: Array<'multi' | 'free' | 'merge' | 'dc' | 'dm' | 'da'>
-  categories?: Array<'temp' | 'rare' | 'seasonal' | 'special-offer' | 'retired'>
+  categories?: Array<'cosmetic' | 'temp' | 'rare' | 'seasonal' | 'special-offer' | 'retired'>
   elements?: string[]
 }
 

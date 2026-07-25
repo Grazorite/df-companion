@@ -1,5 +1,47 @@
 [
   {
+    "id": "accessory-the-13th-ring",
+    "name": "The 13th Ring",
+    "slug": "accessory-the-13th-ring",
+    "type": "accessory",
+    "subtype": "ring",
+    "description": "This ring once belonged to the great and terrible warrior Jaysun. It was said long ago that anyone who holds his power would be impossible to kill.",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=6735355",
+    "releaseDate": "",
+    "elements": [
+      "DAR"
+    ],
+    "level": "13",
+    "stats": "Crit +2, END +4, LUK -5, Bonus +2",
+    "resists": "Darkness +5",
+    "rarity": "13",
+    "itemType": "Ring",
+    "equipSpot": "Finger",
+    "category": "Armor",
+    "obtainMethods": [
+      {
+        "location": "Undead Slayer Store",
+        "priceType": "gold",
+        "price": "130 Gold",
+        "sellback": "13 Gold",
+        "daRequired": true
+      },
+      {
+        "location": "Friday the 13th Invasion, Friday the 13th Invasion Part IV",
+        "priceType": "free",
+        "price": "N/A",
+        "sellback": "13 Gold",
+        "daRequired": true
+      }
+    ],
+    "notes": "The following changes were implemented on  September 26th, 2025:\n  • Previously had the description: This magic ring was found during the undead invasion. It provides 5% resistance against darkness attacks and a 1% chance to crit.\n  • Price and sellback from  Undead Slayer Store was raised from 0 to 130 Gold and 0 to 13 Gold respectively.\n  • Level's requirement was raised from 7 to 13.\n  • Ring initially had Crit +1 stat.\n  • Ring initially had 10 Rarity.",
+    "tags": [
+      "dar",
+      "gold"
+    ],
+    "daRequired": true
+  },
+  {
     "id": "accessory-a-hole-y-ring",
     "name": "A Hole-y Ring",
     "slug": "accessory-a-hole-y-ring",
@@ -21,9 +63,9 @@
     "obtainMethods": [
       {
         "location": "DC Rings",
-        "price": "315 Dragon Coins",
         "priceType": "dc",
-        "sellback": "284 Dragon Coins before 24 hours, 79 Dragon Coins after 24 hours",
+        "price": "315 Dragon Coins",
+        "sellback": "284 DC (<24 hours) / 79 DC (>24 hours)",
         "daRequired": false,
         "dcRequired": true
       }
@@ -57,9 +99,9 @@
     "obtainMethods": [
       {
         "location": "DC Rings",
-        "price": "275 Dragon Coins",
         "priceType": "dc",
-        "sellback": "248 Dragon Coins before 24 hours, 69 Dragon Coins after 24 hours",
+        "price": "275 Dragon Coins",
+        "sellback": "248 DC (<24 hours) / 69 DC (>24 hours)",
         "daRequired": false,
         "dcRequired": true
       }
@@ -159,7 +201,7 @@
             "location": "HitS Loot for DCs",
             "price": "60 Dragon Coins",
             "priceType": "dc",
-            "sellback": "54 Dragon Coins before 24 hours, 15 Dragon Coins after 24 hours",
+            "sellback": "54 DC (<24 hours) / 15 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -206,7 +248,7 @@
             "location": "HitS Loot for DCs",
             "price": "60 Dragon Coins",
             "priceType": "dc",
-            "sellback": "54 Dragon Coins before 24 hours, 15 Dragon Coins after 24 hours",
+            "sellback": "54 DC (<24 hours) / 15 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -253,8 +295,8 @@
             "location": "HitS Loot for DCs",
             "price": "60 Dragon Coins",
             "priceType": "dc",
-            "sellback": "54 Dragon Coins before 24 hours, 15 Dragon Coins after 24 hours",
-            "daRequired": true,
+            "sellback": "54 DC (<24 hours) / 15 DC (>24 hours)",
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -300,8 +342,8 @@
             "location": "HitS Loot for DCs",
             "price": "60 Dragon Coins",
             "priceType": "dc",
-            "sellback": "54 Dragon Coins before 24 hours, 15 Dragon Coins after 24 hours",
-            "daRequired": true,
+            "sellback": "54 DC (<24 hours) / 15 DC (>24 hours)",
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -347,8 +389,8 @@
             "location": "HitS Loot for DCs",
             "price": "60 Dragon Coins",
             "priceType": "dc",
-            "sellback": "54 Dragon Coins before 24 hours, 15 Dragon Coins after 24 hours",
-            "daRequired": true,
+            "sellback": "54 DC (<24 hours) / 15 DC (>24 hours)",
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -400,8 +442,8 @@
     "obtainMethods": [
       {
         "location": "Flight Training",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "90 Gold",
         "daRequired": true
       }
@@ -528,7 +570,7 @@
             "location": "HL Loot for DCs",
             "price": "50 Dragon Coins",
             "priceType": "dc",
-            "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+            "sellback": "45 DC (<24 hours) / 13 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -575,7 +617,7 @@
             "location": "HL Loot for DCs",
             "price": "75 Dragon Coins",
             "priceType": "dc",
-            "sellback": "68 Dragon Coins before 24 hours, 19 Dragon Coins after 24 hours",
+            "sellback": "68 DC (<24 hours) / 19 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -622,7 +664,7 @@
             "location": "HL Loot for DCs",
             "price": "100 Dragon Coins",
             "priceType": "dc",
-            "sellback": "90 Dragon Coins before 24 hours, 25 Dragon Coins after 24 hours",
+            "sellback": "90 DC (<24 hours) / 25 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -669,7 +711,7 @@
             "location": "HL Loot for DCs",
             "price": "125 Dragon Coins",
             "priceType": "dc",
-            "sellback": "113 Dragon Coins before 24 hours, 32 Dragon Coins after 24 hours",
+            "sellback": "113 DC (<24 hours) / 32 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -716,7 +758,7 @@
             "location": "HL Loot for DCs",
             "price": "150 Dragon Coins",
             "priceType": "dc",
-            "sellback": "135 Dragon Coins before 24 hours, 38 Dragon Coins after 24 hours",
+            "sellback": "135 DC (<24 hours) / 38 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -763,7 +805,7 @@
             "location": "HL Loot for DCs",
             "price": "175 Dragon Coins",
             "priceType": "dc",
-            "sellback": "158 Dragon Coins before 24 hours, 44 Dragon Coins after 24 hours",
+            "sellback": "158 DC (<24 hours) / 44 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -810,8 +852,8 @@
             "location": "HL Loot for DCs",
             "price": "200 Dragon Coins",
             "priceType": "dc",
-            "sellback": "180 Dragon Coins before 24 hours, 50 Dragon Coins after 24 hours",
-            "daRequired": true,
+            "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -857,8 +899,8 @@
             "location": "HL Loot for DCs",
             "price": "225 Dragon Coins",
             "priceType": "dc",
-            "sellback": "203 Dragon Coins before 24 hours, 57 Dragon Coins after 24 hours",
-            "daRequired": true,
+            "sellback": "203 DC (<24 hours) / 57 DC (>24 hours)",
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -904,8 +946,8 @@
             "location": "HL Loot for DCs",
             "price": "250 Dragon Coins",
             "priceType": "dc",
-            "sellback": "225 Dragon Coins before 24 hours, 63 Dragon Coins after 24 hours",
-            "daRequired": true,
+            "sellback": "225 DC (<24 hours) / 63 DC (>24 hours)",
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -1031,7 +1073,7 @@
             "location": "HA Loot for DCs",
             "price": "50 Dragon Coins",
             "priceType": "dc",
-            "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+            "sellback": "45 DC (<24 hours) / 13 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -1078,7 +1120,7 @@
             "location": "HA Loot for DCs",
             "price": "75 Dragon Coins",
             "priceType": "dc",
-            "sellback": "68 Dragon Coins before 24 hours, 19 Dragon Coins after 24 hours",
+            "sellback": "68 DC (<24 hours) / 19 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -1125,7 +1167,7 @@
             "location": "HA Loot for DCs",
             "price": "120 Dragon Coins",
             "priceType": "dc",
-            "sellback": "108 Dragon Coins before 24 hours, 30 Dragon Coins after 24 hours",
+            "sellback": "108 DC (<24 hours) / 30 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -1172,7 +1214,7 @@
             "location": "HA Loot for DCs",
             "price": "150 Dragon Coins",
             "priceType": "dc",
-            "sellback": "135 Dragon Coins before 24 hours, 38 Dragon Coins after 24 hours",
+            "sellback": "135 DC (<24 hours) / 38 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -1219,8 +1261,8 @@
             "location": "HA Loot for DCs",
             "price": "180 Dragon Coins",
             "priceType": "dc",
-            "sellback": "162 Dragon Coins before 24 hours, 45 Dragon Coins after 24 hours",
-            "daRequired": true,
+            "sellback": "162 DC (<24 hours) / 45 DC (>24 hours)",
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -1266,8 +1308,8 @@
             "location": "HA Loot for DCs",
             "price": "225 Dragon Coins",
             "priceType": "dc",
-            "sellback": "203 Dragon Coins before 24 hours, 56 Dragon Coins after 24 hours",
-            "daRequired": true,
+            "sellback": "203 DC (<24 hours) / 56 DC (>24 hours)",
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -1320,8 +1362,8 @@
     "obtainMethods": [
       {
         "location": "MOP Clearance",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "400 Gold",
         "daRequired": true
       }
@@ -1354,8 +1396,8 @@
     "obtainMethods": [
       {
         "location": "Sil Ruins (Shop)",
-        "price": "0 Gold",
         "priceType": "free",
+        "price": "0 Gold",
         "sellback": "0 Gold",
         "daRequired": false
       }
@@ -1388,8 +1430,8 @@
     "obtainMethods": [
       {
         "location": "Sil Ruins (Shop)",
-        "price": "0 Gold",
         "priceType": "free",
+        "price": "0 Gold",
         "sellback": "0 Gold",
         "daRequired": false
       }
@@ -1422,8 +1464,8 @@
     "obtainMethods": [
       {
         "location": "A Rock and A Dark Place",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "150 Gold",
         "daRequired": false
       }
@@ -1456,8 +1498,8 @@
     "obtainMethods": [
       {
         "location": "A Rock and A Dark Place",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "200 Gold",
         "daRequired": true
       }
@@ -1490,8 +1532,8 @@
     "obtainMethods": [
       {
         "location": "Kamilah (Shop)",
-        "price": "1,000 Gold",
         "priceType": "gold",
+        "price": "1,000 Gold",
         "sellback": "100 Gold",
         "daRequired": false
       }
@@ -1524,8 +1566,8 @@
     "obtainMethods": [
       {
         "location": "A Rock and A Dark Place",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "15 Gold",
         "daRequired": false
       }
@@ -1558,8 +1600,8 @@
     "obtainMethods": [
       {
         "location": "A Rock and A Dark Place",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "100 Gold",
         "daRequired": false
       }
@@ -1569,6 +1611,50 @@
       "free"
     ],
     "daRequired": false
+  },
+  {
+    "id": "accessory-the-answer",
+    "name": "The Answer",
+    "slug": "accessory-the-answer",
+    "type": "accessory",
+    "subtype": "ring",
+    "description": "Now you just need to figure out the question....",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20444534",
+    "releaseDate": "",
+    "elements": [
+      "WAT"
+    ],
+    "level": "42",
+    "stats": "Block +3, Dodge +3, Parry +3, Crit +5, Magic Def +3, Pierce Def +3, Melee Def +3, CHA +6, LUK +4, INT +4, DEX +4, STR +4, Bonus +5",
+    "resists": "Fire +4",
+    "rarity": "6",
+    "itemType": "Ring",
+    "equipSpot": "Finger",
+    "category": "Armor",
+    "obtainMethods": [
+      {
+        "location": "Nightmares",
+        "priceType": "free",
+        "price": "N/A",
+        "sellback": "120 Gold",
+        "daRequired": false
+      },
+      {
+        "location": "NMs Loot for DCs",
+        "priceType": "dc",
+        "price": "30 Dragon Coins",
+        "sellback": "27 DC (<24 hours) / 8 DC (>24 hours)",
+        "daRequired": false,
+        "dcRequired": true
+      }
+    ],
+    "notes": "Ring previously appeared in the retired quest  Nightmares as a Necklace and had the following stats:\nStats: Crit +1, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +4, LUK +4, INT +4, DEX +4, STR +4, Bonus +3\nResists: Water +6, Nature +4",
+    "tags": [
+      "wat",
+      "free"
+    ],
+    "daRequired": false,
+    "dcRequired": true
   },
   {
     "id": "accessory-attacker-s-band",
@@ -1592,8 +1678,8 @@
     "obtainMethods": [
       {
         "location": "The Outcast",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "16 Gold",
         "daRequired": true
       }
@@ -1626,8 +1712,8 @@
     "obtainMethods": [
       {
         "location": "Reward Chest",
-        "price": "0 Gold",
         "priceType": "free",
+        "price": "0 Gold",
         "sellback": "0 Gold",
         "daRequired": false
       }
@@ -1660,8 +1746,8 @@
     "obtainMethods": [
       {
         "location": "In the Mountains....",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "500 Gold",
         "daRequired": true
       }
@@ -1695,8 +1781,8 @@
     "obtainMethods": [
       {
         "location": "The Outcast",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "9 Gold",
         "daRequired": false
       }
@@ -1729,8 +1815,8 @@
     "obtainMethods": [
       {
         "location": "Trinki's Rings",
-        "price": "500 Gold",
         "priceType": "gold",
+        "price": "500 Gold",
         "sellback": "50 Gold",
         "daRequired": false
       }
@@ -1763,8 +1849,8 @@
     "obtainMethods": [
       {
         "location": "Hide n' Seek",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "15 Gold",
         "daRequired": false
       }
@@ -1797,13 +1883,13 @@
     "obtainMethods": [
       {
         "location": "The Elemental Cave, Ocean Reef",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "5 Gold",
         "daRequired": false
       }
     ],
-    "notes": "• Previously had the description: This is the type of ring that a necromancer wears to bind it's undead servents to.",
+    "notes": "Previously had the description: This is the type of ring that a necromancer wears to bind it's undead servents to.",
     "tags": [
       "dar",
       "free"
@@ -1832,8 +1918,8 @@
     "obtainMethods": [
       {
         "location": "Reen's Rings",
-        "price": "1,000 Gold",
         "priceType": "gold",
+        "price": "1,000 Gold",
         "sellback": "100 Gold",
         "daRequired": false
       }
@@ -1866,8 +1952,8 @@
     "obtainMethods": [
       {
         "location": "The Dark Tower",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "50 Gold",
         "daRequired": false
       }
@@ -1900,8 +1986,8 @@
     "obtainMethods": [
       {
         "location": "Edy's Shinies",
-        "price": "150 Gold",
         "priceType": "gold",
+        "price": "150 Gold",
         "sellback": "15 Gold",
         "daRequired": false
       }
@@ -1934,16 +2020,50 @@
     "obtainMethods": [
       {
         "location": "Save The Mill!",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "8 Gold",
         "daRequired": false
       },
       {
         "location": "Yulgar's Shop, Moonridge Emporium",
-        "price": "75 Gold",
         "priceType": "gold",
+        "price": "75 Gold",
         "sellback": "8 Gold",
+        "daRequired": false
+      }
+    ],
+    "tags": [
+      "met",
+      "free"
+    ],
+    "daRequired": false
+  },
+  {
+    "id": "accessory-the-brass-ring",
+    "name": "The Brass Ring",
+    "slug": "accessory-the-brass-ring",
+    "type": "accessory",
+    "subtype": "ring",
+    "description": "This is a replica of a ring worn by someone of great power and influence.",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=4153078",
+    "releaseDate": "",
+    "elements": [
+      "MET"
+    ],
+    "level": "1",
+    "stats": "Crit +1, Melee Def +2",
+    "resists": "None",
+    "rarity": "2",
+    "itemType": "Ring",
+    "equipSpot": "Finger",
+    "category": "Armor",
+    "obtainMethods": [
+      {
+        "location": "The Elemental Cave, Ocean Reef",
+        "priceType": "free",
+        "price": "N/A",
+        "sellback": "20 Gold",
         "daRequired": false
       }
     ],
@@ -1975,8 +2095,8 @@
     "obtainMethods": [
       {
         "location": "The Dark Tower",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "290 Gold",
         "daRequired": true
       }
@@ -2009,8 +2129,8 @@
     "obtainMethods": [
       {
         "location": "Temple of the E-Damed",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "120 Gold",
         "daRequired": true
       }
@@ -2043,8 +2163,8 @@
     "obtainMethods": [
       {
         "location": "Trinki's Rings",
-        "price": "5,000 Gold",
         "priceType": "gold",
+        "price": "5,000 Gold",
         "sellback": "500 Gold",
         "daRequired": false
       }
@@ -2077,8 +2197,8 @@
     "obtainMethods": [
       {
         "location": "Edy's Shinies, Phil's Funkies",
-        "price": "1,250 Gold",
         "priceType": "gold",
+        "price": "1,250 Gold",
         "sellback": "125 Gold",
         "daRequired": false
       }
@@ -2111,8 +2231,8 @@
     "obtainMethods": [
       {
         "location": "Mystlyk Museum",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "150 Gold",
         "daRequired": false
       }
@@ -2145,13 +2265,13 @@
     "obtainMethods": [
       {
         "location": "Into The Woods, Lucky Day - Gold Fever, Gold Fever Boss Fight",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "0 Gold",
         "daRequired": false
       }
     ],
-    "notes": "• Transformed from  Puzzling Locked Chest (Normal) on  March 17th, 2008.",
+    "notes": "Transformed from  Puzzling Locked Chest (Normal) on  March 17th, 2008.",
     "tags": [
       "lig",
       "free"
@@ -2201,7 +2321,8 @@
     ],
     "shared": {
       "description": "This ring is crafted from the claw of an unknown feline and plated in silver. Its wicked curvature make it a perfect band.",
-      "rarity": "6"
+      "rarity": "6",
+      "notes": "These rings went rare on  April 30th, 2021."
     },
     "levelVariants": [
       {
@@ -2338,8 +2459,8 @@
     "obtainMethods": [
       {
         "location": "The Elemental Cave, Ocean Reef",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "8 Gold",
         "daRequired": false
       }
@@ -2372,8 +2493,8 @@
     "obtainMethods": [
       {
         "location": "New Year's 2010",
-        "price": "0 Gold",
         "priceType": "free",
+        "price": "0 Gold",
         "sellback": "0 Gold",
         "daRequired": false
       }
@@ -2407,9 +2528,9 @@
     "obtainMethods": [
       {
         "location": "DC Rings",
-        "price": "20 Dragon Coins",
         "priceType": "dc",
-        "sellback": "18 Dragon Coins before 24 hours, 5 Dragon Coins after 24 hours",
+        "price": "20 Dragon Coins",
+        "sellback": "18 DC (<24 hours) / 5 DC (>24 hours)",
         "daRequired": false,
         "dcRequired": true
       }
@@ -2443,8 +2564,8 @@
     "obtainMethods": [
       {
         "location": "The Locket",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "120 Gold",
         "daRequired": false
       }
@@ -2477,8 +2598,8 @@
     "obtainMethods": [
       {
         "location": "Water Breathing Potions, Ocean Reef",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "90 Gold",
         "daRequired": false
       }
@@ -2511,10 +2632,10 @@
     "obtainMethods": [
       {
         "location": "Teral's Gear",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "270 Gold",
+        "price": "N/A",
         "requiredItems": "7 Nautiloid Spike & 5 Gold Cabit Tail",
+        "sellback": "270 Gold",
         "daRequired": false
       }
     ],
@@ -2546,8 +2667,8 @@
     "obtainMethods": [
       {
         "location": "Water Breathing Potions",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "100 Gold",
         "daRequired": false
       }
@@ -2580,8 +2701,8 @@
     "obtainMethods": [
       {
         "location": "The Locket",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "200 Gold",
         "daRequired": false
       }
@@ -2614,8 +2735,8 @@
     "obtainMethods": [
       {
         "location": "Moonridge Emporium",
-        "price": "3,000 Gold",
         "priceType": "gold",
+        "price": "3,000 Gold",
         "sellback": "300 Gold",
         "daRequired": false
       }
@@ -2648,8 +2769,8 @@
     "obtainMethods": [
       {
         "location": "Temple of the E-Damed",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "50 Gold",
         "daRequired": false
       }
@@ -2682,15 +2803,16 @@
     "obtainMethods": [
       {
         "location": "DeathKnight Items",
+        "priceType": "merge",
         "price": "N/A",
-        "priceType": "free",
+        "requiredItems": "1 Undead Slayer Badge",
         "sellback": "100 Gold",
         "daRequired": false
       }
     ],
     "tags": [
       "dar",
-      "free"
+      "merge"
     ],
     "daRequired": false
   },
@@ -2716,10 +2838,10 @@
     "obtainMethods": [
       {
         "location": "Tooth Rings",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "120 Gold",
+        "price": "N/A",
         "requiredItems": "9 Dark Insicors",
+        "sellback": "120 Gold",
         "daRequired": true
       }
     ],
@@ -2751,8 +2873,8 @@
     "obtainMethods": [
       {
         "location": "Falconreach Havoc",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "70 Gold",
         "daRequired": false
       }
@@ -2785,8 +2907,8 @@
     "obtainMethods": [
       {
         "location": "Sir Plus Rings & Necklace",
-        "price": "60 Gold",
         "priceType": "gold",
+        "price": "60 Gold",
         "sellback": "6 Gold",
         "daRequired": true
       }
@@ -3034,7 +3156,8 @@
       }
     ],
     "shared": {
-      "description": "This ring can only be worn one who bears the DragonAmulet. It was awarded to you by the town of Falconreach for defending it against a terrible threat."
+      "description": "This ring can only be worn one who bears the DragonAmulet. It was awarded to you by the town of Falconreach for defending it against a terrible threat.",
+      "notes": "Defender's Medal costs for this item were significantly reduced on March 29th, 2021.\nRings were available to merge from  Def. Rings shop until  January 14th, 2023; merge versions from  Defender Item Swap were added on that date."
     },
     "levelVariants": [
       {
@@ -3174,8 +3297,9 @@
           {
             "location": "Defender Item Swap",
             "price": "N/A",
-            "priceType": "free",
+            "priceType": "merge",
             "sellback": "0 Gold",
+            "requiredItems": "1 Defender's Ring V",
             "daRequired": true,
             "dmRequired": true
           }
@@ -3323,8 +3447,9 @@
           {
             "location": "Defender Item Swap",
             "price": "N/A",
-            "priceType": "free",
+            "priceType": "merge",
             "sellback": "0 Gold",
+            "requiredItems": "1 Defender's Ring X",
             "daRequired": true,
             "dmRequired": true
           }
@@ -3472,8 +3597,9 @@
           {
             "location": "Defender Item Swap",
             "price": "N/A",
-            "priceType": "free",
+            "priceType": "merge",
             "sellback": "0 Gold",
+            "requiredItems": "1 Defender's Ring XV",
             "daRequired": true,
             "dmRequired": true
           }
@@ -3621,8 +3747,9 @@
           {
             "location": "Defender Item Swap",
             "price": "N/A",
-            "priceType": "free",
+            "priceType": "merge",
             "sellback": "0 Gold",
+            "requiredItems": "1 Defender's Ring XX",
             "daRequired": true,
             "dmRequired": true
           }
@@ -3795,8 +3922,9 @@
           {
             "location": "Defender Item Swap",
             "price": "N/A",
-            "priceType": "free",
+            "priceType": "merge",
             "sellback": "0 Gold",
+            "requiredItems": "1 Defender's Ring XXV",
             "daRequired": true,
             "dmRequired": true
           }
@@ -3919,8 +4047,9 @@
           {
             "location": "Defender Item Swap",
             "price": "N/A",
-            "priceType": "free",
+            "priceType": "merge",
             "sellback": "0 Gold",
+            "requiredItems": "1 Defender's Ring XXX",
             "daRequired": true,
             "dmRequired": true
           }
@@ -3993,8 +4122,9 @@
           {
             "location": "Defender Item Swap",
             "price": "N/A",
-            "priceType": "free",
+            "priceType": "merge",
             "sellback": "0 Gold",
+            "requiredItems": "1 Defender's Ring XXXII",
             "daRequired": true,
             "dmRequired": true
           }
@@ -4011,14 +4141,13 @@
     "category": "Armor",
     "releaseDate": "",
     "tags": [
-      "free",
       "merge",
       "non"
     ],
     "hasDA": true,
     "hasDC": false,
     "hasDM": true,
-    "hasFree": true,
+    "hasFree": false,
     "hasMerge": true,
     "levelRange": "I-XXXII",
     "elements": [
@@ -4262,7 +4391,8 @@
       }
     ],
     "shared": {
-      "description": "This ring was awarded to you by the town of Falconreach for defending it against a terrible threat."
+      "description": "This ring was awarded to you by the town of Falconreach for defending it against a terrible threat.",
+      "notes": "Defender's Medal costs for this item were significantly reduced on March 29th, 2021.\nWhile Water Resist is listed in all lower case on this item, it still functions as intended."
     },
     "levelVariants": [
       {
@@ -4564,7 +4694,7 @@
         "element": "NON",
         "resists": "Fire +2, Water +1",
         "rarity": "0",
-        "notes": "• While Water Resist is listed in all lower case on this item, it still functions as intended."
+        "notes": "While Water Resist is listed in all lower case on this item, it still functions as intended."
       },
       {
         "levelNumber": 35,
@@ -4590,7 +4720,7 @@
         "element": "NON",
         "resists": "Fire +2, Water +2",
         "rarity": "0",
-        "notes": "• While Water Resist is listed in all lower case on this item, it still functions as intended."
+        "notes": "While Water Resist is listed in all lower case on this item, it still functions as intended."
       },
       {
         "levelNumber": 37,
@@ -4616,7 +4746,7 @@
         "element": "NON",
         "resists": "Fire +3, Water +3",
         "rarity": "0",
-        "notes": "• While Water Resist is listed in all lower case on this item, it still functions as intended."
+        "notes": "While Water Resist is listed in all lower case on this item, it still functions as intended."
       },
       {
         "levelNumber": 40,
@@ -4642,7 +4772,7 @@
         "element": "NON",
         "resists": "Fire +3, Water +3",
         "rarity": "0",
-        "notes": "• While Water Resist is listed in all lower case on this item, it still functions as intended."
+        "notes": "While Water Resist is listed in all lower case on this item, it still functions as intended."
       },
       {
         "levelNumber": 45,
@@ -5110,9 +5240,9 @@
     "obtainMethods": [
       {
         "location": "DC Rings",
-        "price": "250 Dragon Coins",
         "priceType": "dc",
-        "sellback": "225 Dragon Coins before 24 hours, 63 Dragon Coins after 24 hours",
+        "price": "250 Dragon Coins",
+        "sellback": "225 DC (<24 hours) / 63 DC (>24 hours)",
         "daRequired": false,
         "dcRequired": true
       }
@@ -5146,8 +5276,8 @@
     "obtainMethods": [
       {
         "location": "Sil Ruins (Shop)",
-        "price": "0 Gold",
         "priceType": "free",
+        "price": "0 Gold",
         "sellback": "0 Gold",
         "daRequired": true
       }
@@ -5253,7 +5383,7 @@
             "location": "Cold 2 Loot for DCs",
             "price": "45 Dragon Coins",
             "priceType": "dc",
-            "sellback": "41 Dragon Coins before 24 hours, 12 Dragon Coins after 24 hours",
+            "sellback": "41 DC (<24 hours) / 12 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -5300,7 +5430,7 @@
             "location": "Cold 2 Loot for DCs",
             "price": "45 Dragon Coins",
             "priceType": "dc",
-            "sellback": "41 Dragon Coins before 24 hours, 12 Dragon Coins after 24 hours",
+            "sellback": "41 DC (<24 hours) / 12 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -5347,7 +5477,7 @@
             "location": "Cold 2 Loot for DCs",
             "price": "45 Dragon Coins",
             "priceType": "dc",
-            "sellback": "41 Dragon Coins before 24 hours, 12 Dragon Coins after 24 hours",
+            "sellback": "41 DC (<24 hours) / 12 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -5394,8 +5524,8 @@
             "location": "Cold 2 Loot for DCs",
             "price": "45 Dragon Coins",
             "priceType": "dc",
-            "sellback": "41 Dragon Coins before 24 hours, 12 Dragon Coins after 24 hours",
-            "daRequired": true,
+            "sellback": "41 DC (<24 hours) / 12 DC (>24 hours)",
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -5441,8 +5571,8 @@
             "location": "Cold 2 Loot for DCs",
             "price": "45 Dragon Coins",
             "priceType": "dc",
-            "sellback": "41 Dragon Coins before 24 hours, 12 Dragon Coins after 24 hours",
-            "daRequired": true,
+            "sellback": "41 DC (<24 hours) / 12 DC (>24 hours)",
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -5488,8 +5618,8 @@
             "location": "Cold 2 Loot for DCs",
             "price": "45 Dragon Coins",
             "priceType": "dc",
-            "sellback": "41 Dragon Coins before 24 hours, 12 Dragon Coins after 24 hours",
-            "daRequired": true,
+            "sellback": "41 DC (<24 hours) / 12 DC (>24 hours)",
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -5817,13 +5947,13 @@
     "obtainMethods": [
       {
         "location": "Ironwood Box",
-        "price": "0 Gold",
         "priceType": "free",
+        "price": "0 Gold",
         "sellback": "0 Gold",
         "daRequired": true
       }
     ],
-    "notes": "• The following changes were implemented on  March 28th, 2025: \n  • Previously had the description: THIS RING can only be worn by one who owns a DRAGON AMULET. It was given to you by Sir Valence for your help with some pesky Sneevil troubles. The enchantement of the ring adds +1 END and a bonus to hit, and a +1 to CRIT. \n  • Stats were changed from Crit +1, END +1, Bonus +1 to Crit +4, END +4; description was also updated.",
+    "notes": "The following changes were implemented on  March 28th, 2025:\n  • Previously had the description: THIS RING can only be worn by one who owns a DRAGON AMULET. It was given to you by Sir Valence for your help with some pesky Sneevil troubles. The enchantement of the ring adds +1 END and a bonus to hit, and a +1 to CRIT.\n  • Stats were changed from Crit +1, END +1, Bonus +1 to Crit +4, END +4; description was also updated.",
     "tags": [
       "non",
       "free"
@@ -5931,7 +6061,7 @@
             "location": "LTN Loot for DCs",
             "price": "50 Dragon Coins",
             "priceType": "dc",
-            "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+            "sellback": "45 DC (<24 hours) / 13 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -5978,7 +6108,7 @@
             "location": "LTN Loot for DCs",
             "price": "75 Dragon Coins",
             "priceType": "dc",
-            "sellback": "68 Dragon Coins before 24 hours, 19 Dragon Coins after 24 hours",
+            "sellback": "68 DC (<24 hours) / 19 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -6025,7 +6155,7 @@
             "location": "LTN Loot for DCs",
             "price": "100 Dragon Coins",
             "priceType": "dc",
-            "sellback": "90 Dragon Coins before 24 hours, 25 Dragon Coins after 24 hours",
+            "sellback": "90 DC (<24 hours) / 25 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -6072,7 +6202,7 @@
             "location": "LTN Loot for DCs",
             "price": "125 Dragon Coins",
             "priceType": "dc",
-            "sellback": "113 Dragon Coins before 24 hours, 32 Dragon Coins after 24 hours",
+            "sellback": "113 DC (<24 hours) / 32 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -6119,8 +6249,8 @@
             "location": "LTN Loot for DCs",
             "price": "150 Dragon Coins",
             "priceType": "dc",
-            "sellback": "135 Dragon Coins before 24 hours, 38 Dragon Coins after 24 hours",
-            "daRequired": true,
+            "sellback": "135 DC (<24 hours) / 38 DC (>24 hours)",
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -6166,8 +6296,8 @@
             "location": "LTN Loot for DCs",
             "price": "175 Dragon Coins",
             "priceType": "dc",
-            "sellback": "158 Dragon Coins before 24 hours, 44 Dragon Coins after 24 hours",
-            "daRequired": true,
+            "sellback": "158 DC (<24 hours) / 44 DC (>24 hours)",
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -6213,8 +6343,8 @@
             "location": "LTN Loot for DCs",
             "price": "200 Dragon Coins",
             "priceType": "dc",
-            "sellback": "180 Dragon Coins before 24 hours, 50 Dragon Coins after 24 hours",
-            "daRequired": true,
+            "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -6266,8 +6396,8 @@
     "obtainMethods": [
       {
         "location": "Hide n' Seek",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "150 Gold",
         "daRequired": true
       }
@@ -6394,7 +6524,7 @@
             "location": "BtM Loot for DCs",
             "price": "50 Dragon Coins",
             "priceType": "dc",
-            "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+            "sellback": "45 DC (<24 hours) / 13 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -6441,7 +6571,7 @@
             "location": "BtM Loot for DCs",
             "price": "75 Dragon Coins",
             "priceType": "dc",
-            "sellback": "68 Dragon Coins before 24 hours, 19 Dragon Coins after 24 hours",
+            "sellback": "68 DC (<24 hours) / 19 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -6488,7 +6618,7 @@
             "location": "BtM Loot for DCs",
             "price": "100 Dragon Coins",
             "priceType": "dc",
-            "sellback": "90 Dragon Coins before 24 hours, 25 Dragon Coins after 24 hours",
+            "sellback": "90 DC (<24 hours) / 25 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -6535,7 +6665,7 @@
             "location": "BtM Loot for DCs",
             "price": "125 Dragon Coins",
             "priceType": "dc",
-            "sellback": "113 Dragon Coins before 24 hours, 32 Dragon Coins after 24 hours",
+            "sellback": "113 DC (<24 hours) / 32 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -6582,7 +6712,7 @@
             "location": "BtM Loot for DCs",
             "price": "150 Dragon Coins",
             "priceType": "dc",
-            "sellback": "135 Dragon Coins before 24 hours, 38 Dragon Coins after 24 hours",
+            "sellback": "135 DC (<24 hours) / 38 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -6629,7 +6759,7 @@
             "location": "BtM Loot for DCs",
             "price": "175 Dragon Coins",
             "priceType": "dc",
-            "sellback": "158 Dragon Coins before 24 hours, 44 Dragon Coins after 24 hours",
+            "sellback": "158 DC (<24 hours) / 44 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -6676,8 +6806,8 @@
             "location": "BtM Loot for DCs",
             "price": "200 Dragon Coins",
             "priceType": "dc",
-            "sellback": "180 Dragon Coins before 24 hours, 50 Dragon Coins after 24 hours",
-            "daRequired": true,
+            "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -6723,8 +6853,8 @@
             "location": "BtM Loot for DCs",
             "price": "225 Dragon Coins",
             "priceType": "dc",
-            "sellback": "203 Dragon Coins before 24 hours, 57 Dragon Coins after 24 hours",
-            "daRequired": true,
+            "sellback": "203 DC (<24 hours) / 57 DC (>24 hours)",
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -6770,8 +6900,8 @@
             "location": "BtM Loot for DCs",
             "price": "250 Dragon Coins",
             "priceType": "dc",
-            "sellback": "225 Dragon Coins before 24 hours, 63 Dragon Coins after 24 hours",
-            "daRequired": true,
+            "sellback": "225 DC (<24 hours) / 63 DC (>24 hours)",
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -6823,8 +6953,8 @@
     "obtainMethods": [
       {
         "location": "Hide n' Seek",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "180 Gold",
         "daRequired": false
       }
@@ -6857,8 +6987,8 @@
     "obtainMethods": [
       {
         "location": "Trinki's Rings",
-        "price": "6,500 Gold",
         "priceType": "gold",
+        "price": "6,500 Gold",
         "sellback": "650 Gold",
         "daRequired": true
       }
@@ -6891,8 +7021,8 @@
     "obtainMethods": [
       {
         "location": "Stocking the Shelves",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "150 Gold",
         "daRequired": true
       }
@@ -6923,8 +7053,8 @@
     "obtainMethods": [
       {
         "location": "The Spam Fighters",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "150 Gold",
         "daRequired": true
       }
@@ -6956,8 +7086,8 @@
     "obtainMethods": [
       {
         "location": "The Spam Fighters",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "120 Gold",
         "daRequired": false
       }
@@ -6990,8 +7120,8 @@
     "obtainMethods": [
       {
         "location": "InspecZion",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "180 Gold",
         "daRequired": false
       }
@@ -7118,7 +7248,7 @@
             "location": "RR Loot for DCs",
             "price": "50 Dragon Coins",
             "priceType": "dc",
-            "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+            "sellback": "45 DC (<24 hours) / 13 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -7165,7 +7295,7 @@
             "location": "RR Loot for DCs",
             "price": "75 Dragon Coins",
             "priceType": "dc",
-            "sellback": "68 Dragon Coins before 24 hours, 19 Dragon Coins after 24 hours",
+            "sellback": "68 DC (<24 hours) / 19 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -7212,7 +7342,7 @@
             "location": "RR Loot for DCs",
             "price": "100 Dragon Coins",
             "priceType": "dc",
-            "sellback": "90 Dragon Coins before 24 hours, 25 Dragon Coins after 24 hours",
+            "sellback": "90 DC (<24 hours) / 25 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -7259,7 +7389,7 @@
             "location": "RR Loot for DCs",
             "price": "125 Dragon Coins",
             "priceType": "dc",
-            "sellback": "113 Dragon Coins before 24 hours, 32 Dragon Coins after 24 hours",
+            "sellback": "113 DC (<24 hours) / 32 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -7306,7 +7436,7 @@
             "location": "RR Loot for DCs",
             "price": "150 Dragon Coins",
             "priceType": "dc",
-            "sellback": "135 Dragon Coins before 24 hours, 38 Dragon Coins after 24 hours",
+            "sellback": "135 DC (<24 hours) / 38 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -7353,7 +7483,7 @@
             "location": "RR Loot for DCs",
             "price": "175 Dragon Coins",
             "priceType": "dc",
-            "sellback": "158 Dragon Coins before 24 hours, 44 Dragon Coins after 24 hours",
+            "sellback": "158 DC (<24 hours) / 44 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -7400,8 +7530,8 @@
             "location": "RR Loot for DCs",
             "price": "200 Dragon Coins",
             "priceType": "dc",
-            "sellback": "180 Dragon Coins before 24 hours, 50 Dragon Coins after 24 hours",
-            "daRequired": true,
+            "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -7447,8 +7577,8 @@
             "location": "RR Loot for DCs",
             "price": "225 Dragon Coins",
             "priceType": "dc",
-            "sellback": "203 Dragon Coins before 24 hours, 57 Dragon Coins after 24 hours",
-            "daRequired": true,
+            "sellback": "203 DC (<24 hours) / 57 DC (>24 hours)",
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -7494,8 +7624,8 @@
             "location": "RR Loot for DCs",
             "price": "250 Dragon Coins",
             "priceType": "dc",
-            "sellback": "225 Dragon Coins before 24 hours, 63 Dragon Coins after 24 hours",
-            "daRequired": true,
+            "sellback": "225 DC (<24 hours) / 63 DC (>24 hours)",
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -7548,8 +7678,8 @@
     "obtainMethods": [
       {
         "location": "Temple of the E-Damed",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "0 Gold",
         "daRequired": false
       }
@@ -7582,8 +7712,8 @@
     "obtainMethods": [
       {
         "location": "Hide n' Seek",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "290 Gold",
         "daRequired": true
       }
@@ -7644,8 +7774,9 @@
           {
             "location": "Lagohm Champion",
             "price": "N/A",
-            "priceType": "free",
+            "priceType": "merge",
             "sellback": "0 Dragon Coins",
+            "requiredItems": "1 Lagohm Chargelance",
             "daRequired": false,
             "dcRequired": true
           }
@@ -7668,8 +7799,9 @@
           {
             "location": "Lagohm Champion",
             "price": "N/A",
-            "priceType": "free",
+            "priceType": "merge",
             "sellback": "0 Dragon Coins",
+            "requiredItems": "1 Lagohm Chargelance",
             "daRequired": false,
             "dcRequired": true
           }
@@ -7692,8 +7824,9 @@
           {
             "location": "Lagohm Champion",
             "price": "N/A",
-            "priceType": "free",
+            "priceType": "merge",
             "sellback": "0 Dragon Coins",
+            "requiredItems": "1 Lagohm Chargelance",
             "daRequired": false,
             "dcRequired": true
           }
@@ -7711,13 +7844,13 @@
     "releaseDate": "",
     "tags": [
       "ene",
-      "free"
+      "merge"
     ],
     "hasDA": false,
     "hasDC": true,
     "hasDM": false,
-    "hasFree": true,
-    "hasMerge": false,
+    "hasFree": false,
+    "hasMerge": true,
     "levelRange": "I-III",
     "elements": [
       "ENE"
@@ -7745,10 +7878,10 @@
     "obtainMethods": [
       {
         "location": "Valencia's Shop",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "0 Gold",
+        "price": "N/A",
         "requiredItems": "1 Newspaper Clipping #1 & 1 Newspaper Clipping #2",
+        "sellback": "0 Gold",
         "daRequired": false
       }
     ],
@@ -7780,8 +7913,8 @@
     "obtainMethods": [
       {
         "location": "The Spam Fighters",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "200 Gold",
         "daRequired": false
       }
@@ -7814,8 +7947,8 @@
     "obtainMethods": [
       {
         "location": "The Elemental Cave, Ocean Reef",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "3 Gold",
         "daRequired": false
       }
@@ -7848,8 +7981,8 @@
     "obtainMethods": [
       {
         "location": "MOP Clearance",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "100 Gold",
         "daRequired": false
       }
@@ -7881,8 +8014,8 @@
     "obtainMethods": [
       {
         "location": "5 Gold Rings",
-        "price": "0 Gold",
         "priceType": "free",
+        "price": "0 Gold",
         "sellback": "0 Gold",
         "daRequired": false
       }
@@ -7916,15 +8049,15 @@
     "obtainMethods": [
       {
         "location": "Fiery Heart of Mt. Shining Star, The Elemental Cave, Ocean Reef",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "30 Gold",
         "daRequired": false
       },
       {
         "location": "Yulgar's Shop, Moonridge Emporium",
-        "price": "300 Gold",
         "priceType": "gold",
+        "price": "300 Gold",
         "sellback": "30 Gold",
         "daRequired": false
       }
@@ -7956,8 +8089,8 @@
     "obtainMethods": [
       {
         "location": "5 Gold Rings",
-        "price": "0 Gold",
         "priceType": "free",
+        "price": "0 Gold",
         "sellback": "0 Gold",
         "daRequired": false
       }
@@ -7991,8 +8124,8 @@
     "obtainMethods": [
       {
         "location": "MOP Clearance",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "180 Gold",
         "daRequired": false
       }
@@ -8025,17 +8158,17 @@
     "obtainMethods": [
       {
         "location": "Nightmares",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "300 Gold",
         "daRequired": true
       },
       {
         "location": "NMs Loot for DCs",
-        "price": "30 Dragon Coins",
         "priceType": "dc",
-        "sellback": "27 Dragon Coins before 24 hours, 8 Dragon Coins after 24 hours",
-        "daRequired": true,
+        "price": "30 Dragon Coins",
+        "sellback": "27 DC (<24 hours) / 8 DC (>24 hours)",
+        "daRequired": false,
         "dcRequired": true
       }
     ],
@@ -8108,7 +8241,8 @@
       }
     ],
     "shared": {
-      "description": "A simple silver band, embedded with a tiny clear orange jewel. Given to you by one of the rebel DragonLords. \"I can never go back. Better to leave those memories behind.\""
+      "description": "A simple silver band, embedded with a tiny clear orange jewel. Given to you by one of the rebel DragonLords. \"I can never go back. Better to leave those memories behind.\"",
+      "notes": "While Ice Resist is listed in all lower case on this item, it still functions as intended."
     },
     "levelVariants": [
       {
@@ -8147,7 +8281,7 @@
             "location": "FFF Loot for DCs",
             "price": "90 Dragon Coins",
             "priceType": "dc",
-            "sellback": "81 Dragon Coins before 24 hours, 23 Dragon Coins after 24 hours",
+            "sellback": "81 DC (<24 hours) / 23 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -8194,7 +8328,7 @@
             "location": "FFF Loot for DCs",
             "price": "90 Dragon Coins",
             "priceType": "dc",
-            "sellback": "81 Dragon Coins before 24 hours, 23 Dragon Coins after 24 hours",
+            "sellback": "81 DC (<24 hours) / 23 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -8227,7 +8361,7 @@
         "element": "FIR",
         "resists": "Metal +7, Ice +7, Wind +7",
         "rarity": "0",
-        "notes": "• While Ice Resist is listed in all lower case on this item, it still functions as intended."
+        "notes": "While Ice Resist is listed in all lower case on this item, it still functions as intended."
       },
       {
         "levelNumber": 50,
@@ -8242,7 +8376,7 @@
             "location": "FFF Loot for DCs",
             "price": "90 Dragon Coins",
             "priceType": "dc",
-            "sellback": "81 Dragon Coins before 24 hours, 23 Dragon Coins after 24 hours",
+            "sellback": "81 DC (<24 hours) / 23 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -8252,7 +8386,7 @@
         "element": "FIR",
         "resists": "Metal +7, Ice +7, Wind +7",
         "rarity": "0",
-        "notes": "• While Ice Resist is listed in all lower case on this item, it still functions as intended."
+        "notes": "While Ice Resist is listed in all lower case on this item, it still functions as intended."
       },
       {
         "levelNumber": 60,
@@ -8290,7 +8424,7 @@
             "location": "FFF Loot for DCs",
             "price": "90 Dragon Coins",
             "priceType": "dc",
-            "sellback": "81 Dragon Coins before 24 hours, 23 Dragon Coins after 24 hours",
+            "sellback": "81 DC (<24 hours) / 23 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -8337,8 +8471,8 @@
             "location": "FFF Loot for DCs",
             "price": "90 Dragon Coins",
             "priceType": "dc",
-            "sellback": "81 Dragon Coins before 24 hours, 23 Dragon Coins after 24 hours",
-            "daRequired": true,
+            "sellback": "81 DC (<24 hours) / 23 DC (>24 hours)",
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -8384,8 +8518,8 @@
             "location": "FFF Loot for DCs",
             "price": "90 Dragon Coins",
             "priceType": "dc",
-            "sellback": "81 Dragon Coins before 24 hours, 23 Dragon Coins after 24 hours",
-            "daRequired": true,
+            "sellback": "81 DC (<24 hours) / 23 DC (>24 hours)",
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -8431,8 +8565,8 @@
             "location": "FFF Loot for DCs",
             "price": "90 Dragon Coins",
             "priceType": "dc",
-            "sellback": "81 Dragon Coins before 24 hours, 23 Dragon Coins after 24 hours",
-            "daRequired": true,
+            "sellback": "81 DC (<24 hours) / 23 DC (>24 hours)",
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -8484,8 +8618,8 @@
     "obtainMethods": [
       {
         "location": "Kamilah (Shop)",
-        "price": "11,000 Gold",
         "priceType": "gold",
+        "price": "11,000 Gold",
         "sellback": "1,100 Gold",
         "daRequired": false
       }
@@ -8517,8 +8651,8 @@
     "obtainMethods": [
       {
         "location": "5 Gold Rings",
-        "price": "0 Gold",
         "priceType": "free",
+        "price": "0 Gold",
         "sellback": "0 Gold",
         "daRequired": false
       }
@@ -8551,8 +8685,8 @@
     "obtainMethods": [
       {
         "location": "In the Mountains....",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "50 Gold",
         "daRequired": false
       }
@@ -8651,7 +8785,7 @@
             "location": "TWF Loot for DCs",
             "price": "60 Dragon Coins",
             "priceType": "dc",
-            "sellback": "54 Dragon Coins before 24 hours, 15 Dragon Coins after 24 hours",
+            "sellback": "54 DC (<24 hours) / 15 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -8698,7 +8832,7 @@
             "location": "TWF Loot for DCs",
             "price": "60 Dragon Coins",
             "priceType": "dc",
-            "sellback": "54 Dragon Coins before 24 hours, 15 Dragon Coins after 24 hours",
+            "sellback": "54 DC (<24 hours) / 15 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -8745,8 +8879,8 @@
             "location": "TWF Loot for DCs",
             "price": "60 Dragon Coins",
             "priceType": "dc",
-            "sellback": "54 Dragon Coins before 24 hours, 15 Dragon Coins after 24 hours",
-            "daRequired": true,
+            "sellback": "54 DC (<24 hours) / 15 DC (>24 hours)",
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -8792,8 +8926,8 @@
             "location": "TWF Loot for DCs",
             "price": "60 Dragon Coins",
             "priceType": "dc",
-            "sellback": "54 Dragon Coins before 24 hours, 15 Dragon Coins after 24 hours",
-            "daRequired": true,
+            "sellback": "54 DC (<24 hours) / 15 DC (>24 hours)",
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -8839,8 +8973,8 @@
             "location": "TWF Loot for DCs",
             "price": "60 Dragon Coins",
             "priceType": "dc",
-            "sellback": "54 Dragon Coins before 24 hours, 15 Dragon Coins after 24 hours",
-            "daRequired": true,
+            "sellback": "54 DC (<24 hours) / 15 DC (>24 hours)",
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -8892,8 +9026,8 @@
     "obtainMethods": [
       {
         "location": "Save the Mill!",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "10 Gold",
         "daRequired": false
       }
@@ -8926,8 +9060,8 @@
     "obtainMethods": [
       {
         "location": "Sewer Chest",
-        "price": "70 Gold",
         "priceType": "gold",
+        "price": "70 Gold",
         "sellback": "7 Gold",
         "daRequired": false
       }
@@ -8960,8 +9094,8 @@
     "obtainMethods": [
       {
         "location": "MOP Clearance",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "150 Gold",
         "daRequired": false
       }
@@ -9073,7 +9207,7 @@
             "location": "ASitN Loot for DCs",
             "price": "125 Dragon Coins",
             "priceType": "dc",
-            "sellback": "113 Dragon Coins before 24 hours, 32 Dragon Coins after 24 hours",
+            "sellback": "113 DC (<24 hours) / 32 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -9120,7 +9254,7 @@
             "location": "ASitN Loot for DCs",
             "price": "125 Dragon Coins",
             "priceType": "dc",
-            "sellback": "113 Dragon Coins before 24 hours, 32 Dragon Coins after 24 hours",
+            "sellback": "113 DC (<24 hours) / 32 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -9167,7 +9301,7 @@
             "location": "ASitN Loot for DCs",
             "price": "125 Dragon Coins",
             "priceType": "dc",
-            "sellback": "113 Dragon Coins before 24 hours, 32 Dragon Coins after 24 hours",
+            "sellback": "113 DC (<24 hours) / 32 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -9214,7 +9348,7 @@
             "location": "ASitN Loot for DCs",
             "price": "125 Dragon Coins",
             "priceType": "dc",
-            "sellback": "113 Dragon Coins before 24 hours, 32 Dragon Coins after 24 hours",
+            "sellback": "113 DC (<24 hours) / 32 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -9261,8 +9395,8 @@
             "location": "ASitN Loot for DCs",
             "price": "125 Dragon Coins",
             "priceType": "dc",
-            "sellback": "113 Dragon Coins before 24 hours, 32 Dragon Coins after 24 hours",
-            "daRequired": true,
+            "sellback": "113 DC (<24 hours) / 32 DC (>24 hours)",
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -9308,8 +9442,8 @@
             "location": "ASitN Loot for DCs",
             "price": "125 Dragon Coins",
             "priceType": "dc",
-            "sellback": "113 Dragon Coins before 24 hours, 32 Dragon Coins after 24 hours",
-            "daRequired": true,
+            "sellback": "113 DC (<24 hours) / 32 DC (>24 hours)",
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -9355,8 +9489,8 @@
             "location": "ASitN Loot for DCs",
             "price": "125 Dragon Coins",
             "priceType": "dc",
-            "sellback": "113 Dragon Coins before 24 hours, 32 Dragon Coins after 24 hours",
-            "daRequired": true,
+            "sellback": "113 DC (<24 hours) / 32 DC (>24 hours)",
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -9408,8 +9542,8 @@
     "obtainMethods": [
       {
         "location": "Temple of the E-Damed",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "120 Gold",
         "daRequired": false
       }
@@ -9442,8 +9576,8 @@
     "obtainMethods": [
       {
         "location": "Night Of The Living Pumpkin",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "60 Gold",
         "daRequired": false
       }
@@ -9477,8 +9611,8 @@
     "obtainMethods": [
       {
         "location": "Popsprocket Havoc",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "220 Gold",
         "daRequired": true
       }
@@ -9510,8 +9644,8 @@
     "obtainMethods": [
       {
         "location": "Reward Chest",
-        "price": "0 Gold",
         "priceType": "free",
+        "price": "0 Gold",
         "sellback": "0 Gold",
         "daRequired": false
       }
@@ -9544,8 +9678,8 @@
     "obtainMethods": [
       {
         "location": "Hide n' Seek",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "50 Gold",
         "daRequired": false
       }
@@ -9578,8 +9712,8 @@
     "obtainMethods": [
       {
         "location": "Kamilah (Shop)",
-        "price": "8,000 Gold",
         "priceType": "gold",
+        "price": "8,000 Gold",
         "sellback": "800 Gold",
         "daRequired": false
       }
@@ -9612,8 +9746,8 @@
     "obtainMethods": [
       {
         "location": "Dragesvard Havoc",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "130 Gold",
         "daRequired": true
       }
@@ -9645,13 +9779,13 @@
     "obtainMethods": [
       {
         "location": "The Elemental Cave, Enchanted Grove (Books 1 and 2), Save The Mill!, Ocean Reef",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "7 Gold",
         "daRequired": false
       }
     ],
-    "notes": "• Item's Fire Resist is erroneously written in lower case; resistance still functions as intended.",
+    "notes": "Item's Fire Resist is erroneously written in lower case; resistance still functions as intended.",
     "tags": [
       "met",
       "free"
@@ -9680,8 +9814,8 @@
     "obtainMethods": [
       {
         "location": "The Dark Tower",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "180 Gold",
         "daRequired": false
       }
@@ -9714,8 +9848,8 @@
     "obtainMethods": [
       {
         "location": "The Dark Tower",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "120 Gold",
         "daRequired": false
       }
@@ -9748,8 +9882,8 @@
     "obtainMethods": [
       {
         "location": "The Dark Tower",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "150 Gold",
         "daRequired": false
       }
@@ -9781,8 +9915,8 @@
     "obtainMethods": [
       {
         "location": "Double, Trouble, Boil and Bubble",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "120 Gold",
         "daRequired": true
       }
@@ -9815,8 +9949,8 @@
     "obtainMethods": [
       {
         "location": "The Locket",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "50 Gold",
         "daRequired": false
       }
@@ -9848,8 +9982,8 @@
     "obtainMethods": [
       {
         "location": "In the Mountains....",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "150 Gold",
         "daRequired": false
       }
@@ -9976,13 +10110,13 @@
     "obtainMethods": [
       {
         "location": "Creepy Undead Forest, Save The Mill!",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "15 Gold",
         "daRequired": false
       }
     ],
-    "notes": "• Ring's Nature Resist was listed in all lower case; this was fixed on  July 22nd, 2023.",
+    "notes": "Ring's Nature Resist was listed in all lower case; this was fixed on  July 22nd, 2023.",
     "tags": [
       "met",
       "free"
@@ -10011,8 +10145,8 @@
     "obtainMethods": [
       {
         "location": "New Year's 2010",
-        "price": "0 Gold",
         "priceType": "free",
+        "price": "0 Gold",
         "sellback": "0 Gold",
         "daRequired": false
       }
@@ -10045,8 +10179,8 @@
     "obtainMethods": [
       {
         "location": "Unlucky Holiday Shop",
-        "price": "1,000 Gold",
         "priceType": "gold",
+        "price": "1,000 Gold",
         "sellback": "100 Gold",
         "daRequired": false
       }
@@ -10080,8 +10214,8 @@
     "obtainMethods": [
       {
         "location": "Sewer Chest",
-        "price": "0 Gold",
         "priceType": "free",
+        "price": "0 Gold",
         "sellback": "0 Gold",
         "daRequired": true
       }
@@ -10201,7 +10335,7 @@
             "location": "R&J Loot for DCs",
             "price": "60 Dragon Coins",
             "priceType": "dc",
-            "sellback": "54 Dragon Coins before 24 hours, 15 Dragon Coins after 24 hours",
+            "sellback": "54 DC (<24 hours) / 15 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -10248,7 +10382,7 @@
             "location": "R&J Loot for DCs",
             "price": "80 Dragon Coins",
             "priceType": "dc",
-            "sellback": "72 Dragon Coins before 24 hours, 20 Dragon Coins after 24 hours",
+            "sellback": "72 DC (<24 hours) / 20 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -10295,7 +10429,7 @@
             "location": "R&J Loot for DCs",
             "price": "100 Dragon Coins",
             "priceType": "dc",
-            "sellback": "90 Dragon Coins before 24 hours, 25 Dragon Coins after 24 hours",
+            "sellback": "90 DC (<24 hours) / 25 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -10342,7 +10476,7 @@
             "location": "R&J Loot for DCs",
             "price": "120 Dragon Coins",
             "priceType": "dc",
-            "sellback": "108 Dragon Coins before 24 hours, 30 Dragon Coins after 24 hours",
+            "sellback": "108 DC (<24 hours) / 30 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -10389,7 +10523,7 @@
             "location": "R&J Loot for DCs",
             "price": "140 Dragon Coins",
             "priceType": "dc",
-            "sellback": "126 Dragon Coins before 24 hours, 35 Dragon Coins after 24 hours",
+            "sellback": "126 DC (<24 hours) / 35 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -10436,7 +10570,7 @@
             "location": "R&J Loot for DCs",
             "price": "160 Dragon Coins",
             "priceType": "dc",
-            "sellback": "144 Dragon Coins before 24 hours, 40 Dragon Coins after 24 hours",
+            "sellback": "144 DC (<24 hours) / 40 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -10483,8 +10617,8 @@
             "location": "R&J Loot for DCs",
             "price": "180 Dragon Coins",
             "priceType": "dc",
-            "sellback": "162 Dragon Coins before 24 hours, 45 Dragon Coins after 24 hours",
-            "daRequired": true,
+            "sellback": "162 DC (<24 hours) / 45 DC (>24 hours)",
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -10530,8 +10664,8 @@
             "location": "R&J Loot for DCs",
             "price": "200 Dragon Coins",
             "priceType": "dc",
-            "sellback": "180 Dragon Coins before 24 hours, 50 Dragon Coins after 24 hours",
-            "daRequired": true,
+            "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -10584,15 +10718,15 @@
     "obtainMethods": [
       {
         "location": "The Elemental Cave, Ocean Reef",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "32 Gold",
         "daRequired": false
       },
       {
         "location": "Yulgar's Shop, Moonridge Emporium",
-        "price": "320 Gold",
         "priceType": "gold",
+        "price": "320 Gold",
         "sellback": "32 Gold",
         "daRequired": false
       }
@@ -10625,8 +10759,8 @@
     "obtainMethods": [
       {
         "location": "Temple of the E-Damed",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "220 Gold",
         "daRequired": true
       }
@@ -10658,8 +10792,8 @@
     "obtainMethods": [
       {
         "location": "Revenge",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "30 Gold",
         "daRequired": true
       }
@@ -10692,21 +10826,21 @@
     "obtainMethods": [
       {
         "location": "Nightmares",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "70 Gold",
         "daRequired": false
       },
       {
         "location": "NMs Loot for DCs",
-        "price": "30 Dragon Coins",
         "priceType": "dc",
-        "sellback": "27 Dragon Coins before 24 hours, 8 Dragon Coins after 24 hours",
+        "price": "30 Dragon Coins",
+        "sellback": "27 DC (<24 hours) / 8 DC (>24 hours)",
         "daRequired": false,
         "dcRequired": true
       }
     ],
-    "notes": "• Ring previously appeared in the retired quest  Nightmares as a Necklace and had the following stats: \nStats: Crit +2, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +5, END +3, INT +3 \n Resists: Fire +6\n• Dropped version previously had the description: I single, small orb is hung from this chain. It is freezing cold.",
+    "notes": "Ring previously appeared in the retired quest  Nightmares as a Necklace and had the following stats:\nStats: Crit +2, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +5, END +3, INT +3\nResists: Fire +6\nDropped version previously had the description: I single, small orb is hung from this chain. It is freezing cold.",
     "tags": [
       "ice",
       "free"
@@ -10736,8 +10870,8 @@
     "obtainMethods": [
       {
         "location": "Marsh Madness",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "2 Gold",
         "daRequired": false
       }
@@ -10770,10 +10904,10 @@
     "obtainMethods": [
       {
         "location": "Tooth Rings",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "80 Gold",
+        "price": "N/A",
         "requiredItems": "5 Dark Insicors",
+        "sellback": "80 Gold",
         "daRequired": false
       }
     ],
@@ -10804,8 +10938,8 @@
     "obtainMethods": [
       {
         "location": "In the Mountains....",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "90 Gold",
         "daRequired": false
       }
@@ -10839,8 +10973,8 @@
     "obtainMethods": [
       {
         "location": "The Spam Fighters",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "230 Gold",
         "daRequired": true
       }
@@ -10873,8 +11007,8 @@
     "obtainMethods": [
       {
         "location": "Temple of the E-Damed",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "400 Gold",
         "daRequired": true
       }
@@ -10907,9 +11041,9 @@
     "obtainMethods": [
       {
         "location": "DC Rings",
-        "price": "100 Dragon Coins",
         "priceType": "dc",
-        "sellback": "90 Dragon Coins before 24 hours, 25 Dragon Coins after 24 hours",
+        "price": "100 Dragon Coins",
+        "sellback": "90 DC (<24 hours) / 25 DC (>24 hours)",
         "daRequired": false,
         "dcRequired": true
       }
@@ -10943,8 +11077,8 @@
     "obtainMethods": [
       {
         "location": "Edy's Shinies",
-        "price": "100 Gold",
         "priceType": "gold",
+        "price": "100 Gold",
         "sellback": "10 Gold",
         "daRequired": false
       }
@@ -10977,8 +11111,8 @@
     "obtainMethods": [
       {
         "location": "The Locket",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "290 Gold",
         "daRequired": true
       }
@@ -11011,13 +11145,13 @@
     "obtainMethods": [
       {
         "location": "Yulgar's Shop, Moonridge Emporium",
-        "price": "750 Gold",
         "priceType": "gold",
+        "price": "750 Gold",
         "sellback": "75 Gold",
         "daRequired": false
       }
     ],
-    "notes": "• Item is a reference to the Green Lantern Ring from DC Comics' Green Lantern.",
+    "notes": "Item is a reference to the Green Lantern Ring from DC Comics' Green Lantern.",
     "tags": [
       "met",
       "gold"
@@ -11129,7 +11263,7 @@
             "location": "Banshee Loot for DCs",
             "price": "40 Dragon Coins",
             "priceType": "dc",
-            "sellback": "36 Dragon Coins before 24 hours, 10 Dragon Coins after 24 hours",
+            "sellback": "36 DC (<24 hours) / 10 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -11172,7 +11306,7 @@
             "location": "Banshee Loot for DCs",
             "price": "45 Dragon Coins",
             "priceType": "dc",
-            "sellback": "41 Dragon Coins before 24 hours, 11 Dragon Coins after 24 hours",
+            "sellback": "41 DC (<24 hours) / 11 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -11215,7 +11349,7 @@
             "location": "Banshee Loot for DCs",
             "price": "50 Dragon Coins",
             "priceType": "dc",
-            "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+            "sellback": "45 DC (<24 hours) / 13 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -11258,7 +11392,7 @@
             "location": "Banshee Loot for DCs",
             "price": "55 Dragon Coins",
             "priceType": "dc",
-            "sellback": "50 Dragon Coins before 24 hours, 14 Dragon Coins after 24 hours",
+            "sellback": "50 DC (<24 hours) / 14 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -11301,7 +11435,7 @@
             "location": "Banshee Loot for DCs",
             "price": "60 Dragon Coins",
             "priceType": "dc",
-            "sellback": "54 Dragon Coins before 24 hours, 15 Dragon Coins after 24 hours",
+            "sellback": "54 DC (<24 hours) / 15 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -11344,7 +11478,7 @@
             "location": "Banshee Loot for DCs",
             "price": "65 Dragon Coins",
             "priceType": "dc",
-            "sellback": "59 Dragon Coins before 24 hours, 16 Dragon Coins after 24 hours",
+            "sellback": "59 DC (<24 hours) / 16 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -11387,8 +11521,8 @@
             "location": "Banshee Loot for DCs",
             "price": "70 Dragon Coins",
             "priceType": "dc",
-            "sellback": "63 Dragon Coins before 24 hours, 18 Dragon Coins after 24 hours",
-            "daRequired": true,
+            "sellback": "63 DC (<24 hours) / 18 DC (>24 hours)",
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -11430,8 +11564,8 @@
             "location": "Banshee Loot for DCs",
             "price": "75 Dragon Coins",
             "priceType": "dc",
-            "sellback": "68 Dragon Coins before 24 hours, 19 Dragon Coins after 24 hours",
-            "daRequired": true,
+            "sellback": "68 DC (<24 hours) / 19 DC (>24 hours)",
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -11482,8 +11616,8 @@
     "obtainMethods": [
       {
         "location": "Enchanted Grove (Books 1 and 2)",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "5 Gold",
         "daRequired": false
       }
@@ -11610,7 +11744,7 @@
             "location": "Trust Loot for DCs",
             "price": "60 Dragon Coins",
             "priceType": "dc",
-            "sellback": "54 Dragon Coins before 24 hours, 15 Dragon Coins after 24 hours",
+            "sellback": "54 DC (<24 hours) / 15 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -11657,7 +11791,7 @@
             "location": "Trust Loot for DCs",
             "price": "60 Dragon Coins",
             "priceType": "dc",
-            "sellback": "54 Dragon Coins before 24 hours, 15 Dragon Coins after 24 hours",
+            "sellback": "54 DC (<24 hours) / 15 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -11704,7 +11838,7 @@
             "location": "Trust Loot for DCs",
             "price": "60 Dragon Coins",
             "priceType": "dc",
-            "sellback": "54 Dragon Coins before 24 hours, 15 Dragon Coins after 24 hours",
+            "sellback": "54 DC (<24 hours) / 15 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -11751,7 +11885,7 @@
             "location": "Trust Loot for DCs",
             "price": "60 Dragon Coins",
             "priceType": "dc",
-            "sellback": "54 Dragon Coins before 24 hours, 15 Dragon Coins after 24 hours",
+            "sellback": "54 DC (<24 hours) / 15 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -11798,7 +11932,7 @@
             "location": "Trust Loot for DCs",
             "price": "60 Dragon Coins",
             "priceType": "dc",
-            "sellback": "54 Dragon Coins before 24 hours, 15 Dragon Coins after 24 hours",
+            "sellback": "54 DC (<24 hours) / 15 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -11845,7 +11979,7 @@
             "location": "Trust Loot for DCs",
             "price": "60 Dragon Coins",
             "priceType": "dc",
-            "sellback": "54 Dragon Coins before 24 hours, 15 Dragon Coins after 24 hours",
+            "sellback": "54 DC (<24 hours) / 15 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -11892,8 +12026,8 @@
             "location": "Trust Loot for DCs",
             "price": "60 Dragon Coins",
             "priceType": "dc",
-            "sellback": "54 Dragon Coins before 24 hours, 15 Dragon Coins after 24 hours",
-            "daRequired": true,
+            "sellback": "54 DC (<24 hours) / 15 DC (>24 hours)",
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -11939,8 +12073,8 @@
             "location": "Trust Loot for DCs",
             "price": "60 Dragon Coins",
             "priceType": "dc",
-            "sellback": "54 Dragon Coins before 24 hours, 15 Dragon Coins after 24 hours",
-            "daRequired": true,
+            "sellback": "54 DC (<24 hours) / 15 DC (>24 hours)",
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -11986,8 +12120,8 @@
             "location": "Trust Loot for DCs",
             "price": "60 Dragon Coins",
             "priceType": "dc",
-            "sellback": "54 Dragon Coins before 24 hours, 15 Dragon Coins after 24 hours",
-            "daRequired": true,
+            "sellback": "54 DC (<24 hours) / 15 DC (>24 hours)",
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -12039,9 +12173,9 @@
     "obtainMethods": [
       {
         "location": "DC Rings",
-        "price": "50 Dragon Coins",
         "priceType": "dc",
-        "sellback": "45 Dragon Coins before 24 hours, 12 Dragon Coins after 24 hours",
+        "price": "50 Dragon Coins",
+        "sellback": "45 DC (<24 hours) / 12 DC (>24 hours)",
         "daRequired": false,
         "dcRequired": true
       }
@@ -12228,8 +12362,8 @@
     "obtainMethods": [
       {
         "location": "Sewer Chest",
-        "price": "70 Gold",
         "priceType": "gold",
+        "price": "70 Gold",
         "sellback": "7 Gold",
         "daRequired": false
       }
@@ -12262,8 +12396,8 @@
     "obtainMethods": [
       {
         "location": "The Dragon Drakath",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "500 Gold",
         "daRequired": false
       }
@@ -12295,8 +12429,8 @@
     "obtainMethods": [
       {
         "location": "Swordhaven Jewelry",
-        "price": "80 Gold",
         "priceType": "gold",
+        "price": "80 Gold",
         "sellback": "8 Gold",
         "daRequired": false
       }
@@ -12329,8 +12463,8 @@
     "obtainMethods": [
       {
         "location": "DeathKnight",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "80 Gold",
         "daRequired": false
       }
@@ -12362,8 +12496,8 @@
     "obtainMethods": [
       {
         "location": "Revenge",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "50 Gold",
         "daRequired": false
       }
@@ -12396,8 +12530,8 @@
     "obtainMethods": [
       {
         "location": "The Autumn Wind",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "180 Gold",
         "daRequired": false
       }
@@ -12430,8 +12564,8 @@
     "obtainMethods": [
       {
         "location": "The Autumn Wind",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "80 Gold",
         "daRequired": false
       }
@@ -12464,8 +12598,8 @@
     "obtainMethods": [
       {
         "location": "The Autumn Wind",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "220 Gold",
         "daRequired": true
       }
@@ -12498,8 +12632,8 @@
     "obtainMethods": [
       {
         "location": "The Autumn Wind",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "120 Gold",
         "daRequired": false
       }
@@ -12532,8 +12666,8 @@
     "obtainMethods": [
       {
         "location": "The Autumn Wind",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "290 Gold",
         "daRequired": true
       }
@@ -12645,7 +12779,7 @@
             "location": "RaR Loot for DCs",
             "price": "125 Dragon Coins",
             "priceType": "dc",
-            "sellback": "113 Dragon Coins before 24 hours, 32 Dragon Coins after 24 hours",
+            "sellback": "113 DC (<24 hours) / 32 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -12692,7 +12826,7 @@
             "location": "RaR Loot for DCs",
             "price": "125 Dragon Coins",
             "priceType": "dc",
-            "sellback": "113 Dragon Coins before 24 hours, 32 Dragon Coins after 24 hours",
+            "sellback": "113 DC (<24 hours) / 32 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -12739,7 +12873,7 @@
             "location": "RaR Loot for DCs",
             "price": "125 Dragon Coins",
             "priceType": "dc",
-            "sellback": "113 Dragon Coins before 24 hours, 32 Dragon Coins after 24 hours",
+            "sellback": "113 DC (<24 hours) / 32 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -12786,7 +12920,7 @@
             "location": "RaR Loot for DCs",
             "price": "125 Dragon Coins",
             "priceType": "dc",
-            "sellback": "113 Dragon Coins before 24 hours, 32 Dragon Coins after 24 hours",
+            "sellback": "113 DC (<24 hours) / 32 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -12833,8 +12967,8 @@
             "location": "RaR Loot for DCs",
             "price": "125 Dragon Coins",
             "priceType": "dc",
-            "sellback": "113 Dragon Coins before 24 hours, 32 Dragon Coins after 24 hours",
-            "daRequired": true,
+            "sellback": "113 DC (<24 hours) / 32 DC (>24 hours)",
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -12880,8 +13014,8 @@
             "location": "RaR Loot for DCs",
             "price": "125 Dragon Coins",
             "priceType": "dc",
-            "sellback": "113 Dragon Coins before 24 hours, 32 Dragon Coins after 24 hours",
-            "daRequired": true,
+            "sellback": "113 DC (<24 hours) / 32 DC (>24 hours)",
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -12927,8 +13061,8 @@
             "location": "RaR Loot for DCs",
             "price": "125 Dragon Coins",
             "priceType": "dc",
-            "sellback": "113 Dragon Coins before 24 hours, 32 Dragon Coins after 24 hours",
-            "daRequired": true,
+            "sellback": "113 DC (<24 hours) / 32 DC (>24 hours)",
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -12980,9 +13114,9 @@
     "obtainMethods": [
       {
         "location": "DC Rings",
-        "price": "350 Dragon Coins",
         "priceType": "dc",
-        "sellback": "315 Dragon Coins before 24 hours, 88 Dragon Coins after 24 hours",
+        "price": "350 Dragon Coins",
+        "sellback": "315 DC (<24 hours) / 88 DC (>24 hours)",
         "daRequired": false,
         "dcRequired": true
       }
@@ -13016,8 +13150,8 @@
     "obtainMethods": [
       {
         "location": "Stocking the Shelves",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "50 Gold",
         "daRequired": true
       }
@@ -13050,10 +13184,10 @@
     "obtainMethods": [
       {
         "location": "Tooth Rings",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "230 Gold",
+        "price": "N/A",
         "requiredItems": "15 Dark Insicors",
+        "sellback": "230 Gold",
         "daRequired": true
       }
     ],
@@ -13172,7 +13306,7 @@
             "location": "The Price Loot for DCs",
             "price": "60 Dragon Coins",
             "priceType": "dc",
-            "sellback": "54 Dragon Coins before 24 hours, 15 Dragon Coins after 24 hours",
+            "sellback": "54 DC (<24 hours) / 15 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -13219,7 +13353,7 @@
             "location": "The Price Loot for DCs",
             "price": "80 Dragon Coins",
             "priceType": "dc",
-            "sellback": "72 Dragon Coins before 24 hours, 20 Dragon Coins after 24 hours",
+            "sellback": "72 DC (<24 hours) / 20 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -13266,7 +13400,7 @@
             "location": "The Price Loot for DCs",
             "price": "100 Dragon Coins",
             "priceType": "dc",
-            "sellback": "90 Dragon Coins before 24 hours, 25 Dragon Coins after 24 hours",
+            "sellback": "90 DC (<24 hours) / 25 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -13313,7 +13447,7 @@
             "location": "The Price Loot for DCs",
             "price": "120 Dragon Coins",
             "priceType": "dc",
-            "sellback": "108 Dragon Coins before 24 hours, 30 Dragon Coins after 24 hours",
+            "sellback": "108 DC (<24 hours) / 30 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -13360,7 +13494,7 @@
             "location": "The Price Loot for DCs",
             "price": "140 Dragon Coins",
             "priceType": "dc",
-            "sellback": "126 Dragon Coins before 24 hours, 35 Dragon Coins after 24 hours",
+            "sellback": "126 DC (<24 hours) / 35 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -13407,7 +13541,7 @@
             "location": "The Price Loot for DCs",
             "price": "160 Dragon Coins",
             "priceType": "dc",
-            "sellback": "144 Dragon Coins before 24 hours, 40 Dragon Coins after 24 hours",
+            "sellback": "144 DC (<24 hours) / 40 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -13454,8 +13588,8 @@
             "location": "The Price Loot for DCs",
             "price": "180 Dragon Coins",
             "priceType": "dc",
-            "sellback": "162 Dragon Coins before 24 hours, 45 Dragon Coins after 24 hours",
-            "daRequired": true,
+            "sellback": "162 DC (<24 hours) / 45 DC (>24 hours)",
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -13501,8 +13635,8 @@
             "location": "The Price Loot for DCs",
             "price": "200 Dragon Coins",
             "priceType": "dc",
-            "sellback": "180 Dragon Coins before 24 hours, 50 Dragon Coins after 24 hours",
-            "daRequired": true,
+            "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -13684,8 +13818,8 @@
     "obtainMethods": [
       {
         "location": "The Locket",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "15 Gold",
         "daRequired": false
       }
@@ -13718,8 +13852,8 @@
     "obtainMethods": [
       {
         "location": "Sil Ruins (Shop)",
-        "price": "0 Gold",
         "priceType": "free",
+        "price": "0 Gold",
         "sellback": "0 Gold",
         "daRequired": false
       }
@@ -13752,8 +13886,8 @@
     "obtainMethods": [
       {
         "location": "Sewer Chest",
-        "price": "70 Gold",
         "priceType": "gold",
+        "price": "70 Gold",
         "sellback": "7 Gold",
         "daRequired": false
       }
@@ -13786,8 +13920,8 @@
     "obtainMethods": [
       {
         "location": "Moonridge Emporium",
-        "price": "10,000 Gold",
         "priceType": "gold",
+        "price": "10,000 Gold",
         "sellback": "1,000 Gold",
         "daRequired": false
       }
@@ -13827,7 +13961,8 @@
     "shared": {
       "description": "It feels as cheap as it looks. It is exactly what you expect for the level 1 warrior wanting to make a name for himself.",
       "resists": "None",
-      "rarity": "0"
+      "rarity": "0",
+      "notes": "Item was previously available in the retired quest  Sneevil Box Fort."
     },
     "levelVariants": [
       {
@@ -13852,7 +13987,7 @@
         "element": "MET",
         "resists": "None",
         "rarity": "0",
-        "notes": "• Item was previously available in the retired quest  Sneevil Box Fort."
+        "notes": "Item was previously available in the retired quest  Sneevil Box Fort."
       },
       {
         "levelNumber": 1,
@@ -13876,7 +14011,7 @@
         "element": "MET",
         "resists": "None",
         "rarity": "0",
-        "notes": "• Item was previously available in the retired quest  Sneevil Box Fort."
+        "notes": "Item was previously available in the retired quest  Sneevil Box Fort."
       }
     ],
     "itemType": "Ring",
@@ -14076,8 +14211,8 @@
     "obtainMethods": [
       {
         "location": "Enchanted Grove (Books 1 and 2)",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "4 Gold",
         "daRequired": false
       }
@@ -14171,8 +14306,9 @@
           {
             "location": "Obsidian Shards (Shop)",
             "price": "N/A",
-            "priceType": "free",
+            "priceType": "merge",
             "sellback": "15 Gold",
+            "requiredItems": "1 Obsidian Shards",
             "daRequired": false
           }
         ],
@@ -14349,14 +14485,13 @@
     "category": "Armor",
     "releaseDate": "",
     "tags": [
-      "free",
       "merge",
       "sto"
     ],
     "hasDA": false,
     "hasDC": false,
     "hasDM": false,
-    "hasFree": true,
+    "hasFree": false,
     "hasMerge": true,
     "levelRange": "10-80",
     "elements": [
@@ -14385,13 +14520,13 @@
     "obtainMethods": [
       {
         "location": "The Elemental Cave, Enchanted Grove (Books 1 and 2), Sir Koffagus Sarcophagus, The Keep Invasion, Sneevil Boxopolis, Sneevil-Jitsu Dojo, Ocean Reef",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "4 Gold",
         "daRequired": false
       }
     ],
-    "notes": "• Item is a reference to the  One Ring from J. R. R. Tolkien's 'The Lord of the Rings'. \n• Item was previously available in the retired quest  Sir Koffagus Sarcophagus.",
+    "notes": "Item is a reference to the  One Ring from J. R. R. Tolkien's 'The Lord of the Rings'.\nItem was previously available in the retired quest  Sir Koffagus Sarcophagus.",
     "tags": [
       "met",
       "free"
@@ -14420,8 +14555,8 @@
     "obtainMethods": [
       {
         "location": "Sil Ruins (Shop)",
-        "price": "0 Gold",
         "priceType": "free",
+        "price": "0 Gold",
         "sellback": "0 Gold",
         "daRequired": false
       }
@@ -14454,8 +14589,8 @@
     "obtainMethods": [
       {
         "location": "Temple of the E-Damed",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "200 Gold",
         "daRequired": false
       }
@@ -14488,8 +14623,8 @@
     "obtainMethods": [
       {
         "location": "The Spam Fighters",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "290 Gold",
         "daRequired": true
       }
@@ -14601,7 +14736,7 @@
             "location": "OoC Loot for DCs",
             "price": "50 Dragon Coins",
             "priceType": "dc",
-            "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+            "sellback": "45 DC (<24 hours) / 13 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -14648,7 +14783,7 @@
             "location": "OoC Loot for DCs",
             "price": "75 Dragon Coins",
             "priceType": "dc",
-            "sellback": "68 Dragon Coins before 24 hours, 19 Dragon Coins after 24 hours",
+            "sellback": "68 DC (<24 hours) / 19 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -14695,7 +14830,7 @@
             "location": "OoC Loot for DCs",
             "price": "100 Dragon Coins",
             "priceType": "dc",
-            "sellback": "90 Dragon Coins before 24 hours, 25 Dragon Coins after 24 hours",
+            "sellback": "90 DC (<24 hours) / 25 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -14742,7 +14877,7 @@
             "location": "OoC Loot for DCs",
             "price": "125 Dragon Coins",
             "priceType": "dc",
-            "sellback": "113 Dragon Coins before 24 hours, 32 Dragon Coins after 24 hours",
+            "sellback": "113 DC (<24 hours) / 32 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -14789,8 +14924,8 @@
             "location": "OoC Loot for DCs",
             "price": "150 Dragon Coins",
             "priceType": "dc",
-            "sellback": "135 Dragon Coins before 24 hours, 38 Dragon Coins after 24 hours",
-            "daRequired": true,
+            "sellback": "135 DC (<24 hours) / 38 DC (>24 hours)",
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -14836,8 +14971,8 @@
             "location": "OoC Loot for DCs",
             "price": "175 Dragon Coins",
             "priceType": "dc",
-            "sellback": "158 Dragon Coins before 24 hours, 44 Dragon Coins after 24 hours",
-            "daRequired": true,
+            "sellback": "158 DC (<24 hours) / 44 DC (>24 hours)",
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -14883,8 +15018,8 @@
             "location": "OoC Loot for DCs",
             "price": "200 Dragon Coins",
             "priceType": "dc",
-            "sellback": "180 Dragon Coins before 24 hours, 50 Dragon Coins after 24 hours",
-            "daRequired": true,
+            "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -14936,8 +15071,8 @@
     "obtainMethods": [
       {
         "location": "Mystlyk Museum",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "200 Gold",
         "daRequired": true
       }
@@ -14970,8 +15105,8 @@
     "obtainMethods": [
       {
         "location": "Stocking the Shelves",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "110 Gold",
         "daRequired": true
       }
@@ -15004,8 +15139,8 @@
     "obtainMethods": [
       {
         "location": "Temple of the E-Damed",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "180 Gold",
         "daRequired": false
       }
@@ -15038,9 +15173,9 @@
     "obtainMethods": [
       {
         "location": "DC Rings",
-        "price": "200 Dragon Coins",
         "priceType": "dc",
-        "sellback": "180 Dragon Coins before 24 hours, 50 Dragon Coins after 24 hours",
+        "price": "200 Dragon Coins",
+        "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
         "daRequired": false,
         "dcRequired": true
       }
@@ -15342,8 +15477,8 @@
     "obtainMethods": [
       {
         "location": "Water Breathing Potions",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "150 Gold",
         "daRequired": false
       }
@@ -15376,8 +15511,8 @@
     "obtainMethods": [
       {
         "location": "The Spam Fighters",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "15 Gold",
         "daRequired": false
       }
@@ -15410,14 +15545,14 @@
     "obtainMethods": [
       {
         "location": "Tooth Rings",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "40 Gold",
+        "price": "N/A",
         "requiredItems": "3 Dark Insicors",
+        "sellback": "40 Gold",
         "daRequired": false
       }
     ],
-    "notes": "• Item erroneously has no inventory icon, despite being a Ring.",
+    "notes": "Item erroneously has no inventory icon, despite being a Ring.",
     "tags": [
       "nat",
       "merge"
@@ -15446,8 +15581,8 @@
     "obtainMethods": [
       {
         "location": "Flight Training",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "90 Gold",
         "daRequired": true
       }
@@ -15480,13 +15615,13 @@
     "obtainMethods": [
       {
         "location": "Egg Recovery",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "75 Gold",
         "daRequired": false
       }
     ],
-    "notes": "• Level's requirement was lowered from 11 to 10 on  September 5th, 2025.",
+    "notes": "Level's requirement was lowered from 11 to 10 on  September 5th, 2025.",
     "tags": [
       "win",
       "free"
@@ -15515,13 +15650,13 @@
     "obtainMethods": [
       {
         "location": "Creepy Undead Forest",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "50 Gold",
         "daRequired": false
       }
     ],
-    "notes": "• Ring's Nature Resist was listed in all lower case; this was fixed on  July 22nd, 2023.",
+    "notes": "Ring's Nature Resist was listed in all lower case; this was fixed on  July 22nd, 2023.",
     "tags": [
       "met",
       "free"
@@ -15550,8 +15685,8 @@
     "obtainMethods": [
       {
         "location": "Kamilah (Shop)",
-        "price": "800 Gold",
         "priceType": "gold",
+        "price": "800 Gold",
         "sellback": "80 Gold",
         "daRequired": false
       }
@@ -15583,8 +15718,8 @@
     "obtainMethods": [
       {
         "location": "Resident Sneevil: Outbreak",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "75 Gold",
         "daRequired": true
       }
@@ -15618,13 +15753,13 @@
     "obtainMethods": [
       {
         "location": "Slay Gorgok!",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "5 Gold",
         "daRequired": true
       }
     ],
-    "notes": "• Ring was initially purchasable at  Gargok's Horde Shop for 50 Gold.",
+    "notes": "Ring was initially purchasable at  Gargok's Horde Shop for 50 Gold.",
     "tags": [
       "fir",
       "free"
@@ -15653,8 +15788,8 @@
     "obtainMethods": [
       {
         "location": "Reen's Rings",
-        "price": "1,000 Gold",
         "priceType": "gold",
+        "price": "1,000 Gold",
         "sellback": "100 Gold",
         "daRequired": false
       }
@@ -15687,8 +15822,8 @@
     "obtainMethods": [
       {
         "location": "Edy's Shinies",
-        "price": "2,000 Gold",
         "priceType": "gold",
+        "price": "2,000 Gold",
         "sellback": "200 Gold",
         "daRequired": true
       }
@@ -15720,8 +15855,8 @@
     "obtainMethods": [
       {
         "location": "Revenge",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "60 Gold",
         "daRequired": true
       }
@@ -15753,8 +15888,8 @@
     "obtainMethods": [
       {
         "location": "Swordhaven Jewelry",
-        "price": "50 Gold",
         "priceType": "gold",
+        "price": "50 Gold",
         "sellback": "5 Gold",
         "daRequired": false
       }
@@ -15787,10 +15922,10 @@
     "obtainMethods": [
       {
         "location": "Relics of Zeclem",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "0 Dragon Coins",
+        "price": "N/A",
         "requiredItems": "1 Unhallowed DeathKnight Circlet IV & 5 Relic of Zeclem OR 1 Zeclem's Band (80) & 5 Relic of Zeclem",
+        "sellback": "0 Dragon Coins",
         "daRequired": true,
         "dcRequired": true
       }
@@ -15824,10 +15959,10 @@
     "obtainMethods": [
       {
         "location": "Valencia's Shop",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "0 Gold",
+        "price": "N/A",
         "requiredItems": "1 Newspaper Clipping #3 & 1 Newspaper Clipping #4",
+        "sellback": "0 Gold",
         "daRequired": true
       }
     ],
@@ -15859,8 +15994,8 @@
     "obtainMethods": [
       {
         "location": "Sewer Chest",
-        "price": "120 Gold",
         "priceType": "gold",
+        "price": "120 Gold",
         "sellback": "12 Gold",
         "daRequired": false
       }
@@ -15893,8 +16028,8 @@
     "obtainMethods": [
       {
         "location": "Sir Plus Rings & Necklace",
-        "price": "40 Gold",
         "priceType": "gold",
+        "price": "40 Gold",
         "sellback": "4 Gold",
         "daRequired": true
       }
@@ -16052,8 +16187,8 @@
     "obtainMethods": [
       {
         "location": "The Outcast",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "11 Gold",
         "daRequired": false
       }
@@ -16086,8 +16221,8 @@
     "obtainMethods": [
       {
         "location": "Reen's Rings",
-        "price": "1,000 Gold",
         "priceType": "gold",
+        "price": "1,000 Gold",
         "sellback": "100 Gold",
         "daRequired": false
       }
@@ -16120,8 +16255,8 @@
     "obtainMethods": [
       {
         "location": "Sandsea Havoc",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "170 Gold",
         "daRequired": false
       }
@@ -16154,8 +16289,8 @@
     "obtainMethods": [
       {
         "location": "Reen's Rings, Moonridge Emporium",
-        "price": "1,000 Gold",
         "priceType": "gold",
+        "price": "1,000 Gold",
         "sellback": "100 Gold",
         "daRequired": true
       }
@@ -16188,8 +16323,8 @@
     "obtainMethods": [
       {
         "location": "Reen's Rings, Moonridge Emporium",
-        "price": "1,000 Gold",
         "priceType": "gold",
+        "price": "1,000 Gold",
         "sellback": "100 Gold",
         "daRequired": true
       }
@@ -16309,7 +16444,7 @@
             "location": "tLH Loot for DCs",
             "price": "60 Dragon Coins",
             "priceType": "dc",
-            "sellback": "54 Dragon Coins before 24 hours, 15 Dragon Coins after 24 hours",
+            "sellback": "54 DC (<24 hours) / 15 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -16356,7 +16491,7 @@
             "location": "tLH Loot for DCs",
             "price": "60 Dragon Coins",
             "priceType": "dc",
-            "sellback": "54 Dragon Coins before 24 hours, 15 Dragon Coins after 24 hours",
+            "sellback": "54 DC (<24 hours) / 15 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -16403,7 +16538,7 @@
             "location": "tLH Loot for DCs",
             "price": "60 Dragon Coins",
             "priceType": "dc",
-            "sellback": "54 Dragon Coins before 24 hours, 15 Dragon Coins after 24 hours",
+            "sellback": "54 DC (<24 hours) / 15 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -16450,7 +16585,7 @@
             "location": "tLH Loot for DCs",
             "price": "60 Dragon Coins",
             "priceType": "dc",
-            "sellback": "54 Dragon Coins before 24 hours, 15 Dragon Coins after 24 hours",
+            "sellback": "54 DC (<24 hours) / 15 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -16497,7 +16632,7 @@
             "location": "tLH Loot for DCs",
             "price": "60 Dragon Coins",
             "priceType": "dc",
-            "sellback": "54 Dragon Coins before 24 hours, 15 Dragon Coins after 24 hours",
+            "sellback": "54 DC (<24 hours) / 15 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -16544,8 +16679,8 @@
             "location": "tLH Loot for DCs",
             "price": "60 Dragon Coins",
             "priceType": "dc",
-            "sellback": "54 Dragon Coins before 24 hours, 15 Dragon Coins after 24 hours",
-            "daRequired": true,
+            "sellback": "54 DC (<24 hours) / 15 DC (>24 hours)",
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -16591,8 +16726,8 @@
             "location": "tLH Loot for DCs",
             "price": "60 Dragon Coins",
             "priceType": "dc",
-            "sellback": "54 Dragon Coins before 24 hours, 15 Dragon Coins after 24 hours",
-            "daRequired": true,
+            "sellback": "54 DC (<24 hours) / 15 DC (>24 hours)",
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -16638,8 +16773,8 @@
             "location": "tLH Loot for DCs",
             "price": "60 Dragon Coins",
             "priceType": "dc",
-            "sellback": "54 Dragon Coins before 24 hours, 15 Dragon Coins after 24 hours",
-            "daRequired": true,
+            "sellback": "54 DC (<24 hours) / 15 DC (>24 hours)",
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -16691,8 +16826,8 @@
     "obtainMethods": [
       {
         "location": "Reen's Rings, Moonridge Emporium",
-        "price": "1,000 Gold",
         "priceType": "gold",
+        "price": "1,000 Gold",
         "sellback": "100 Gold",
         "daRequired": false
       }
@@ -16725,13 +16860,13 @@
     "obtainMethods": [
       {
         "location": "Ironwood Box",
-        "price": "0 Gold",
         "priceType": "free",
+        "price": "0 Gold",
         "sellback": "0 Gold",
         "daRequired": false
       }
     ],
-    "notes": "• The following changes were implemented on  March 28th, 2025: \n  • Previously had the description: This ring was given to you by Sir Valence for your help with some pesky Sneevil troubles. The enchantment on the rings adds +1 END and a bonus to hit. \n  • Stats were changed from END +1, Bonus +2 to Crit +3, END +3; description was also updated.",
+    "notes": "The following changes were implemented on  March 28th, 2025:\n  • Previously had the description: This ring was given to you by Sir Valence for your help with some pesky Sneevil troubles. The enchantment on the rings adds +1 END and a bonus to hit.\n  • Stats were changed from END +1, Bonus +2 to Crit +3, END +3; description was also updated.",
     "tags": [
       "non",
       "free"
@@ -16760,8 +16895,8 @@
     "obtainMethods": [
       {
         "location": "Reen's Rings, Moonridge Emporium",
-        "price": "1,000 Gold",
         "priceType": "gold",
+        "price": "1,000 Gold",
         "sellback": "100 Gold",
         "daRequired": false
       }
@@ -16794,9 +16929,9 @@
     "obtainMethods": [
       {
         "location": "DC Rings",
-        "price": "150 Dragon Coins",
         "priceType": "dc",
-        "sellback": "135 Dragon Coins before 24 hours, 38 Dragon Coins after 24 hours",
+        "price": "150 Dragon Coins",
+        "sellback": "135 DC (<24 hours) / 38 DC (>24 hours)",
         "daRequired": false,
         "dcRequired": true
       }
@@ -16830,13 +16965,13 @@
     "obtainMethods": [
       {
         "location": "Spirits in the Inn",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "7 Gold",
         "daRequired": false
       }
     ],
-    "notes": "• Ring was previously available from the retired quest  Spirits in the Inn.",
+    "notes": "Ring was previously available from the retired quest  Spirits in the Inn.",
     "tags": [
       "dar",
       "free"
@@ -16865,13 +17000,13 @@
     "obtainMethods": [
       {
         "location": "Sho'Nuff Havoc",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "90 Gold",
         "daRequired": false
       }
     ],
-    "notes": "• Item has no inventory icon.",
+    "notes": "Item has no inventory icon.",
     "tags": [
       "win",
       "free"
@@ -16899,8 +17034,8 @@
     "obtainMethods": [
       {
         "location": "The Snow Fields",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "150 Gold",
         "daRequired": true
       }
@@ -17026,7 +17161,7 @@
             "location": "Artifact Loot for DCs",
             "price": "40 Dragon Coins",
             "priceType": "dc",
-            "sellback": "36 Dragon Coins before 24 hours, 10 Dragon Coins after 24 hours",
+            "sellback": "36 DC (<24 hours) / 10 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -17073,7 +17208,7 @@
             "location": "Artifact Loot for DCs",
             "price": "45 Dragon Coins",
             "priceType": "dc",
-            "sellback": "41 Dragon Coins before 24 hours, 12 Dragon Coins after 24 hours",
+            "sellback": "41 DC (<24 hours) / 12 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -17120,7 +17255,7 @@
             "location": "Artifact Loot for DCs",
             "price": "50 Dragon Coins",
             "priceType": "dc",
-            "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+            "sellback": "45 DC (<24 hours) / 13 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -17167,7 +17302,7 @@
             "location": "Artifact Loot for DCs",
             "price": "55 Dragon Coins",
             "priceType": "dc",
-            "sellback": "50 Dragon Coins before 24 hours, 14 Dragon Coins after 24 hours",
+            "sellback": "50 DC (<24 hours) / 14 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -17214,7 +17349,7 @@
             "location": "Artifact Loot for DCs",
             "price": "60 Dragon Coins",
             "priceType": "dc",
-            "sellback": "54 Dragon Coins before 24 hours, 15 Dragon Coins after 24 hours",
+            "sellback": "54 DC (<24 hours) / 15 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -17261,7 +17396,7 @@
             "location": "Artifact Loot for DCs",
             "price": "65 Dragon Coins",
             "priceType": "dc",
-            "sellback": "59 Dragon Coins before 24 hours, 17 Dragon Coins after 24 hours",
+            "sellback": "59 DC (<24 hours) / 17 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -17308,7 +17443,7 @@
             "location": "Artifact Loot for DCs",
             "price": "70 Dragon Coins",
             "priceType": "dc",
-            "sellback": "63 Dragon Coins before 24 hours, 18 Dragon Coins after 24 hours",
+            "sellback": "63 DC (<24 hours) / 18 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -17355,8 +17490,8 @@
             "location": "Artifact Loot for DCs",
             "price": "75 Dragon Coins",
             "priceType": "dc",
-            "sellback": "68 Dragon Coins before 24 hours, 19 Dragon Coins after 24 hours",
-            "daRequired": true,
+            "sellback": "68 DC (<24 hours) / 19 DC (>24 hours)",
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -17402,8 +17537,8 @@
             "location": "Artifact Loot for DCs",
             "price": "90 Dragon Coins",
             "priceType": "dc",
-            "sellback": "81 Dragon Coins before 24 hours, 23 Dragon Coins after 24 hours",
-            "daRequired": true,
+            "sellback": "81 DC (<24 hours) / 23 DC (>24 hours)",
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -17455,13 +17590,13 @@
     "obtainMethods": [
       {
         "location": "Everyone Knows It's Windy",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "120 Gold",
         "daRequired": false
       }
     ],
-    "notes": "• The following changes were implemented on  March 20th, 2026: \n  • Item was previously named 'Ring of Four Winds'. \n  • Level's requirement was raised from 10 to 14. \n  • Crit, CHA, LUK, and Wind Resist was raised from +1 to +4. \n  • Pierce/Magic Avoidance and END stats were added.",
+    "notes": "The following changes were implemented on  March 20th, 2026:\n  • Item was previously named 'Ring of Four Winds'.\n  • Level's requirement was raised from 10 to 14.\n  • Crit, CHA, LUK, and Wind Resist was raised from +1 to +4.\n  • Pierce/Magic Avoidance and END stats were added.",
     "tags": [
       "win",
       "free"
@@ -17556,7 +17691,7 @@
             "location": "ACS Loot for DCs",
             "price": "45 Dragon Coins",
             "priceType": "dc",
-            "sellback": "41 Dragon Coins before 24 hours, 12 Dragon Coins after 24 hours",
+            "sellback": "41 DC (<24 hours) / 12 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -17603,7 +17738,7 @@
             "location": "ACS Loot for DCs",
             "price": "55 Dragon Coins",
             "priceType": "dc",
-            "sellback": "50 Dragon Coins before 24 hours, 14 Dragon Coins after 24 hours",
+            "sellback": "50 DC (<24 hours) / 14 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -17650,7 +17785,7 @@
             "location": "ACS Loot for DCs",
             "price": "65 Dragon Coins",
             "priceType": "dc",
-            "sellback": "59 Dragon Coins before 24 hours, 17 Dragon Coins after 24 hours",
+            "sellback": "59 DC (<24 hours) / 17 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -17697,8 +17832,8 @@
             "location": "ACS Loot for DCs",
             "price": "75 Dragon Coins",
             "priceType": "dc",
-            "sellback": "68 Dragon Coins before 24 hours, 19 Dragon Coins after 24 hours",
-            "daRequired": true,
+            "sellback": "68 DC (<24 hours) / 19 DC (>24 hours)",
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -17744,8 +17879,8 @@
             "location": "ACS Loot for DCs",
             "price": "100 Dragon Coins",
             "priceType": "dc",
-            "sellback": "90 Dragon Coins before 24 hours, 25 Dragon Coins after 24 hours",
-            "daRequired": true,
+            "sellback": "90 DC (<24 hours) / 25 DC (>24 hours)",
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -17797,8 +17932,8 @@
     "obtainMethods": [
       {
         "location": "Marsh Madness",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "1 Gold",
         "daRequired": false
       }
@@ -17831,8 +17966,8 @@
     "obtainMethods": [
       {
         "location": "Temple of the E-Damed",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "150 Gold",
         "daRequired": false
       }
@@ -17842,6 +17977,40 @@
       "free"
     ],
     "daRequired": false
+  },
+  {
+    "id": "accessory-the-rose",
+    "name": "The Rose",
+    "slug": "accessory-the-rose",
+    "type": "accessory",
+    "subtype": "ring",
+    "description": "This ring is a small band of jade with a raised rose carved from a ruby. Inside, the name Iva Toguri is engraved. This item requires a Dragon Amulet.",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19296942",
+    "releaseDate": "",
+    "elements": [
+      "ENE"
+    ],
+    "level": "66",
+    "stats": "Block +1, Dodge +1, Crit +5, Magic Def +8, Pierce Def +8, Melee Def +8, WIS +7, END +7, LUK +2, INT +6, DEX +6, STR +6, Bonus +9",
+    "resists": "Darkness +8, Energy +8, Nature +6, Poison +6",
+    "rarity": "0",
+    "itemType": "Ring",
+    "equipSpot": "Finger",
+    "category": "Armor",
+    "obtainMethods": [
+      {
+        "location": "The Dragon Drakath",
+        "priceType": "free",
+        "price": "N/A",
+        "sellback": "1,000 Gold",
+        "daRequired": true
+      }
+    ],
+    "tags": [
+      "ene",
+      "free"
+    ],
+    "daRequired": true
   },
   {
     "id": "accessory-rose-brigadier-band",
@@ -17865,8 +18034,8 @@
     "obtainMethods": [
       {
         "location": "InspecZion",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "200 Gold",
         "daRequired": false
       }
@@ -17899,8 +18068,8 @@
     "obtainMethods": [
       {
         "location": "InspecZion",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "50 Gold",
         "daRequired": false
       }
@@ -17933,8 +18102,8 @@
     "obtainMethods": [
       {
         "location": "InspecZion",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "290 Gold",
         "daRequired": true
       }
@@ -17967,8 +18136,8 @@
     "obtainMethods": [
       {
         "location": "InspecZion",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "230 Gold",
         "daRequired": true
       }
@@ -18001,8 +18170,8 @@
     "obtainMethods": [
       {
         "location": "InspecZion",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "15 Gold",
         "daRequired": false
       }
@@ -18035,8 +18204,8 @@
     "obtainMethods": [
       {
         "location": "InspecZion",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "120 Gold",
         "daRequired": false
       }
@@ -18069,8 +18238,8 @@
     "obtainMethods": [
       {
         "location": "The Spam Fighters",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "180 Gold",
         "daRequired": false
       }
@@ -18103,21 +18272,21 @@
     "obtainMethods": [
       {
         "location": "Nightmares",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "180 Gold",
         "daRequired": false
       },
       {
         "location": "NMs Loot for DCs",
-        "price": "30 Dragon Coins",
         "priceType": "dc",
-        "sellback": "27 Dragon Coins before 24 hours, 8 Dragon Coins after 24 hours",
+        "price": "30 Dragon Coins",
+        "sellback": "27 DC (<24 hours) / 8 DC (>24 hours)",
         "daRequired": false,
         "dcRequired": true
       }
     ],
-    "notes": "• Ring previously appeared in the retired quest  Nightmares as a Necklace and had the following stats: \nStats: Crit +2, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +2, END +5, INT +6, DEX +6, STR +6, Bonus +5 \n Resists: Fire +8, Water +4, Immobility +1\n• Dropped version previously had the description: A vial of cooling salve hangs on this chain.",
+    "notes": "Ring previously appeared in the retired quest  Nightmares as a Necklace and had the following stats:\nStats: Crit +2, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +2, END +5, INT +6, DEX +6, STR +6, Bonus +5\nResists: Fire +8, Water +4, Immobility +1\nDropped version previously had the description: A vial of cooling salve hangs on this chain.",
     "tags": [
       "win",
       "free"
@@ -18147,8 +18316,8 @@
     "obtainMethods": [
       {
         "location": "Kamilah (Shop)",
-        "price": "4,000 Gold",
         "priceType": "gold",
+        "price": "4,000 Gold",
         "sellback": "400 Gold",
         "daRequired": true
       }
@@ -18181,8 +18350,8 @@
     "obtainMethods": [
       {
         "location": "Sil Ruins (Shop)",
-        "price": "0 Gold",
         "priceType": "free",
+        "price": "0 Gold",
         "sellback": "0 Gold",
         "daRequired": false
       }
@@ -18215,8 +18384,8 @@
     "obtainMethods": [
       {
         "location": "Kamilah (Shop)",
-        "price": "15,000 Gold",
         "priceType": "gold",
+        "price": "15,000 Gold",
         "sellback": "1,500 Gold",
         "daRequired": true
       }
@@ -18249,8 +18418,8 @@
     "obtainMethods": [
       {
         "location": "Kamilah (Shop)",
-        "price": "22,000 Gold",
         "priceType": "gold",
+        "price": "22,000 Gold",
         "sellback": "2,200 Gold",
         "daRequired": true
       }
@@ -18283,8 +18452,8 @@
     "obtainMethods": [
       {
         "location": "The Spam Fighters",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "50 Gold",
         "daRequired": false
       }
@@ -18316,8 +18485,8 @@
     "obtainMethods": [
       {
         "location": "5 Gold Rings",
-        "price": "0 Gold",
         "priceType": "free",
+        "price": "0 Gold",
         "sellback": "0 Gold",
         "daRequired": false
       }
@@ -18405,7 +18574,8 @@
       }
     ],
     "shared": {
-      "description": "There is a glittering blue stone on this ring. Staring into it doesn't show you your future, but it does make you feel a little better."
+      "description": "There is a glittering blue stone on this ring. Staring into it doesn't show you your future, but it does make you feel a little better.",
+      "notes": "Seer's Ring (10-80) were previously available from the retired quest  Timelines, with sellback values of 15, 50, 120, 150, 180, 200, 230, and 290 Gold respectively.\nItems were tiered with Roman numerals on  December 30th, 2022."
     },
     "levelVariants": [
       {
@@ -18444,7 +18614,7 @@
             "location": "Timelines Loot for DCs",
             "price": "40 Dragon Coins",
             "priceType": "dc",
-            "sellback": "36 Dragon Coins before 24 hours, 10 Dragon Coins after 24 hours",
+            "sellback": "36 DC (<24 hours) / 10 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -18491,7 +18661,7 @@
             "location": "Timelines Loot for DCs",
             "price": "45 Dragon Coins",
             "priceType": "dc",
-            "sellback": "41 Dragon Coins before 24 hours, 12 Dragon Coins after 24 hours",
+            "sellback": "41 DC (<24 hours) / 12 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -18538,7 +18708,7 @@
             "location": "Timelines Loot for DCs",
             "price": "50 Dragon Coins",
             "priceType": "dc",
-            "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+            "sellback": "45 DC (<24 hours) / 13 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -18585,7 +18755,7 @@
             "location": "Timelines Loot for DCs",
             "price": "55 Dragon Coins",
             "priceType": "dc",
-            "sellback": "50 Dragon Coins before 24 hours, 14 Dragon Coins after 24 hours",
+            "sellback": "50 DC (<24 hours) / 14 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -18632,7 +18802,7 @@
             "location": "Timelines Loot for DCs",
             "price": "60 Dragon Coins",
             "priceType": "dc",
-            "sellback": "54 Dragon Coins before 24 hours, 15 Dragon Coins after 24 hours",
+            "sellback": "54 DC (<24 hours) / 15 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -18679,7 +18849,7 @@
             "location": "Timelines Loot for DCs",
             "price": "65 Dragon Coins",
             "priceType": "dc",
-            "sellback": "59 Dragon Coins before 24 hours, 17 Dragon Coins after 24 hours",
+            "sellback": "59 DC (<24 hours) / 17 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -18726,8 +18896,8 @@
             "location": "Timelines Loot for DCs",
             "price": "70 Dragon Coins",
             "priceType": "dc",
-            "sellback": "63 Dragon Coins before 24 hours, 18 Dragon Coins after 24 hours",
-            "daRequired": true,
+            "sellback": "63 DC (<24 hours) / 18 DC (>24 hours)",
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -18773,8 +18943,8 @@
             "location": "Timelines Loot for DCs",
             "price": "75 Dragon Coins",
             "priceType": "dc",
-            "sellback": "68 Dragon Coins before 24 hours, 19 Dragon Coins after 24 hours",
-            "daRequired": true,
+            "sellback": "68 DC (<24 hours) / 19 DC (>24 hours)",
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -18820,8 +18990,8 @@
             "location": "Timelines Loot for DCs",
             "price": "75 Dragon Coins",
             "priceType": "dc",
-            "sellback": "68 Dragon Coins before 24 hours, 19 Dragon Coins after 24 hours",
-            "daRequired": true,
+            "sellback": "68 DC (<24 hours) / 19 DC (>24 hours)",
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -18873,8 +19043,8 @@
     "obtainMethods": [
       {
         "location": "InspecZion",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "150 Gold",
         "daRequired": true
       }
@@ -18907,8 +19077,8 @@
     "obtainMethods": [
       {
         "location": "MOP Clearance",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "70 Gold",
         "daRequired": false
       }
@@ -18961,7 +19131,8 @@
     ],
     "shared": {
       "description": "You've infused this ring with shadow energy. As you move your hand it seems to blur, almost as though it was leaving shadows of itself behind.",
-      "rarity": "10"
+      "rarity": "10",
+      "notes": "II-IV versions previously required 1  DeathKnight Circlet & 2/3/4  Dusk Essence respectively.\nRings were tiered with Roman numerals on  August 25th, 2023; Required Items on II-IV versions were also changed on that date."
     },
     "levelVariants": [
       {
@@ -19101,10 +19272,10 @@
     "obtainMethods": [
       {
         "location": "Tooth Rings",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "200 Gold",
+        "price": "N/A",
         "requiredItems": "13 Dark Insicors",
+        "sellback": "200 Gold",
         "daRequired": true
       }
     ],
@@ -19115,9 +19286,9 @@
     "daRequired": true
   },
   {
-    "id": "accessory-shield-ring",
-    "name": "Shield Ring",
-    "slug": "accessory-shield-ring",
+    "id": "accessory-shield-ring-beta-omega",
+    "name": "Shield Ring (Beta, Omega)",
+    "slug": "accessory-shield-ring-beta-omega",
     "type": "accessory",
     "subtype": "ring",
     "description": "This beautiful rainbow ring will keep you safe from harm.",
@@ -19136,10 +19307,10 @@
     "obtainMethods": [
       {
         "location": "Teral's Gear",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "80 Gold",
+        "price": "N/A",
         "requiredItems": "3 Nautiloid Shell & 2 Crystals",
+        "sellback": "80 Gold",
         "daRequired": false
       }
     ],
@@ -19171,8 +19342,8 @@
     "obtainMethods": [
       {
         "location": "The Dark Tower",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "200 Gold",
         "daRequired": false
       }
@@ -19205,8 +19376,8 @@
     "obtainMethods": [
       {
         "location": "The Locket",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "150 Gold",
         "daRequired": true
       }
@@ -19239,13 +19410,13 @@
     "obtainMethods": [
       {
         "location": "The Root of All Sneevil, Sneevil Box Fort",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "70 Gold",
         "daRequired": false
       }
     ],
-    "notes": "• Item was previously available in the retired quest  Sneevil Box Fort.",
+    "notes": "Item was previously available in the retired quest  Sneevil Box Fort.",
     "tags": [
       "met",
       "free"
@@ -19274,9 +19445,9 @@
     "obtainMethods": [
       {
         "location": "DC Rings",
-        "price": "300 Dragon Coins",
         "priceType": "dc",
-        "sellback": "270 Dragon Coins before 24 hours, 75 Dragon Coins after 24 hours",
+        "price": "300 Dragon Coins",
+        "sellback": "270 DC (<24 hours) / 75 DC (>24 hours)",
         "daRequired": false,
         "dcRequired": true
       }
@@ -19810,8 +19981,8 @@
     "obtainMethods": [
       {
         "location": "The Locket",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "180 Gold",
         "daRequired": false
       }
@@ -19844,8 +20015,8 @@
     "obtainMethods": [
       {
         "location": "MOP Clearance",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "500 Gold",
         "daRequired": true
       }
@@ -19878,8 +20049,8 @@
     "obtainMethods": [
       {
         "location": "The Hunt Begins!",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "0 Gold",
         "daRequired": false
       }
@@ -19912,8 +20083,8 @@
     "obtainMethods": [
       {
         "location": "The Hunt Begins!",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "0 Gold",
         "daRequired": false
       }
@@ -20033,7 +20204,7 @@
             "location": "tLA Loot for DCs",
             "price": "60 Dragon Coins",
             "priceType": "dc",
-            "sellback": "54 Dragon Coins before 24 hours, 15 Dragon Coins after 24 hours",
+            "sellback": "54 DC (<24 hours) / 15 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -20080,7 +20251,7 @@
             "location": "tLA Loot for DCs",
             "price": "60 Dragon Coins",
             "priceType": "dc",
-            "sellback": "54 Dragon Coins before 24 hours, 15 Dragon Coins after 24 hours",
+            "sellback": "54 DC (<24 hours) / 15 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -20127,7 +20298,7 @@
             "location": "tLA Loot for DCs",
             "price": "60 Dragon Coins",
             "priceType": "dc",
-            "sellback": "54 Dragon Coins before 24 hours, 15 Dragon Coins after 24 hours",
+            "sellback": "54 DC (<24 hours) / 15 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -20174,7 +20345,7 @@
             "location": "tLA Loot for DCs",
             "price": "60 Dragon Coins",
             "priceType": "dc",
-            "sellback": "54 Dragon Coins before 24 hours, 15 Dragon Coins after 24 hours",
+            "sellback": "54 DC (<24 hours) / 15 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -20221,7 +20392,7 @@
             "location": "tLA Loot for DCs",
             "price": "60 Dragon Coins",
             "priceType": "dc",
-            "sellback": "54 Dragon Coins before 24 hours, 15 Dragon Coins after 24 hours",
+            "sellback": "54 DC (<24 hours) / 15 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -20268,8 +20439,8 @@
             "location": "tLA Loot for DCs",
             "price": "60 Dragon Coins",
             "priceType": "dc",
-            "sellback": "54 Dragon Coins before 24 hours, 15 Dragon Coins after 24 hours",
-            "daRequired": true,
+            "sellback": "54 DC (<24 hours) / 15 DC (>24 hours)",
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -20315,8 +20486,8 @@
             "location": "tLA Loot for DCs",
             "price": "60 Dragon Coins",
             "priceType": "dc",
-            "sellback": "54 Dragon Coins before 24 hours, 15 Dragon Coins after 24 hours",
-            "daRequired": true,
+            "sellback": "54 DC (<24 hours) / 15 DC (>24 hours)",
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -20362,8 +20533,8 @@
             "location": "tLA Loot for DCs",
             "price": "60 Dragon Coins",
             "priceType": "dc",
-            "sellback": "54 Dragon Coins before 24 hours, 15 Dragon Coins after 24 hours",
-            "daRequired": true,
+            "sellback": "54 DC (<24 hours) / 15 DC (>24 hours)",
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -20415,8 +20586,8 @@
     "obtainMethods": [
       {
         "location": "The Hunt Begins!",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "0 Gold",
         "daRequired": false
       }
@@ -20449,10 +20620,10 @@
     "obtainMethods": [
       {
         "location": "Tooth Rings",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "180 Gold",
+        "price": "N/A",
         "requiredItems": "11 Dark Insicors",
+        "sellback": "180 Gold",
         "daRequired": false
       }
     ],
@@ -20484,8 +20655,8 @@
     "obtainMethods": [
       {
         "location": "Stocking the Shelves",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "90 Gold",
         "daRequired": true
       }
@@ -20518,10 +20689,10 @@
     "obtainMethods": [
       {
         "location": "Relics of Zeclem",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "0 Dragon Coins",
+        "price": "N/A",
         "requiredItems": "1 Shadowed DeathKnight Circlet IV & 5 Relic of Zeclem",
+        "sellback": "0 Dragon Coins",
         "daRequired": false,
         "dcRequired": true
       }
@@ -20660,160 +20831,6 @@
     "elements": []
   },
   {
-    "id": "accessory-the-13th-ring",
-    "name": "The 13th Ring",
-    "slug": "accessory-the-13th-ring",
-    "type": "accessory",
-    "subtype": "ring",
-    "description": "This ring once belonged to the great and terrible warrior Jaysun. It was said long ago that anyone who holds his power would be impossible to kill.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=6735355",
-    "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
-    "level": "13",
-    "stats": "Crit +2, END +4, LUK -5, Bonus +2",
-    "resists": "Darkness +5",
-    "rarity": "13",
-    "itemType": "Ring",
-    "equipSpot": "Finger",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "Undead Slayer Store",
-        "price": "130 Gold",
-        "priceType": "gold",
-        "sellback": "13 Gold",
-        "daRequired": true
-      },
-      {
-        "location": "Friday the 13th Invasion, Friday the 13th Invasion Part IV",
-        "price": "N/A",
-        "priceType": "free",
-        "sellback": "13 Gold",
-        "daRequired": true
-      }
-    ],
-    "notes": "• The following changes were implemented on  September 26th, 2025: \n  • Previously had the description: This magic ring was found during the undead invasion. It provides 5% resistance against darkness attacks and a 1% chance to crit. \n  • Price and sellback from  Undead Slayer Store was raised from 0 to 130 Gold and 0 to 13 Gold respectively. \n  • Level's requirement was raised from 7 to 13. \n  • Ring initially had Crit +1 stat. \n  • Ring initially had 10 Rarity.",
-    "tags": [
-      "dar",
-      "gold"
-    ],
-    "daRequired": true
-  },
-  {
-    "id": "accessory-the-answer",
-    "name": "The Answer",
-    "slug": "accessory-the-answer",
-    "type": "accessory",
-    "subtype": "ring",
-    "description": "Now you just need to figure out the question....",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20444534",
-    "releaseDate": "",
-    "elements": [
-      "WAT"
-    ],
-    "level": "42",
-    "stats": "Block +3, Dodge +3, Parry +3, Crit +5, Magic Def +3, Pierce Def +3, Melee Def +3, CHA +6, LUK +4, INT +4, DEX +4, STR +4, Bonus +5",
-    "resists": "Fire +4",
-    "rarity": "6",
-    "itemType": "Ring",
-    "equipSpot": "Finger",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "Nightmares",
-        "price": "N/A",
-        "priceType": "free",
-        "sellback": "120 Gold",
-        "daRequired": false
-      },
-      {
-        "location": "NMs Loot for DCs",
-        "price": "30 Dragon Coins",
-        "priceType": "dc",
-        "sellback": "27 Dragon Coins before 24 hours, 8 Dragon Coins after 24 hours",
-        "daRequired": false,
-        "dcRequired": true
-      }
-    ],
-    "notes": "• Ring previously appeared in the retired quest  Nightmares as a Necklace and had the following stats: \nStats: Crit +1, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +4, LUK +4, INT +4, DEX +4, STR +4, Bonus +3 \n Resists: Water +6, Nature +4",
-    "tags": [
-      "wat",
-      "free"
-    ],
-    "daRequired": false,
-    "dcRequired": true
-  },
-  {
-    "id": "accessory-the-brass-ring",
-    "name": "The Brass Ring",
-    "slug": "accessory-the-brass-ring",
-    "type": "accessory",
-    "subtype": "ring",
-    "description": "This is a replica of a ring worn by someone of great power and influence.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=4153078",
-    "releaseDate": "",
-    "elements": [
-      "MET"
-    ],
-    "level": "1",
-    "stats": "Crit +1, Melee Def +2",
-    "resists": "None",
-    "rarity": "2",
-    "itemType": "Ring",
-    "equipSpot": "Finger",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "The Elemental Cave, Ocean Reef",
-        "price": "N/A",
-        "priceType": "free",
-        "sellback": "20 Gold",
-        "daRequired": false
-      }
-    ],
-    "tags": [
-      "met",
-      "free"
-    ],
-    "daRequired": false
-  },
-  {
-    "id": "accessory-the-rose",
-    "name": "The Rose",
-    "slug": "accessory-the-rose",
-    "type": "accessory",
-    "subtype": "ring",
-    "description": "This ring is a small band of jade with a raised rose carved from a ruby. Inside, the name Iva Toguri is engraved. This item requires a Dragon Amulet.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19296942",
-    "releaseDate": "",
-    "elements": [
-      "ENE"
-    ],
-    "level": "66",
-    "stats": "Block +1, Dodge +1, Crit +5, Magic Def +8, Pierce Def +8, Melee Def +8, WIS +7, END +7, LUK +2, INT +6, DEX +6, STR +6, Bonus +9",
-    "resists": "Darkness +8, Energy +8, Nature +6, Poison +6",
-    "rarity": "0",
-    "itemType": "Ring",
-    "equipSpot": "Finger",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "The Dragon Drakath",
-        "price": "N/A",
-        "priceType": "free",
-        "sellback": "1,000 Gold",
-        "daRequired": true
-      }
-    ],
-    "tags": [
-      "ene",
-      "free"
-    ],
-    "daRequired": true
-  },
-  {
     "id": "accessory-third-golden-ring",
     "name": "Third Golden Ring",
     "slug": "accessory-third-golden-ring",
@@ -20834,8 +20851,8 @@
     "obtainMethods": [
       {
         "location": "5 Gold Rings",
-        "price": "0 Gold",
         "priceType": "free",
+        "price": "0 Gold",
         "sellback": "0 Gold",
         "daRequired": false
       }
@@ -20868,8 +20885,8 @@
     "obtainMethods": [
       {
         "location": "O Hole-y Togicide",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "1 Gold",
         "daRequired": false
       }
@@ -20902,10 +20919,10 @@
     "obtainMethods": [
       {
         "location": "Tooth Rings",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "100 Gold",
+        "price": "N/A",
         "requiredItems": "7 Dark Insicors",
+        "sellback": "100 Gold",
         "daRequired": false
       }
     ],
@@ -20937,8 +20954,8 @@
     "obtainMethods": [
       {
         "location": "Reen's Rings",
-        "price": "1,000 Gold",
         "priceType": "gold",
+        "price": "1,000 Gold",
         "sellback": "100 Gold",
         "daRequired": true
       }
@@ -20971,21 +20988,21 @@
     "obtainMethods": [
       {
         "location": "Nightmares",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "200 Gold",
         "daRequired": false
       },
       {
         "location": "NMs Loot for DCs",
-        "price": "30 Dragon Coins",
         "priceType": "dc",
-        "sellback": "27 Dragon Coins before 24 hours, 8 Dragon Coins after 24 hours",
+        "price": "30 Dragon Coins",
+        "sellback": "27 DC (<24 hours) / 8 DC (>24 hours)",
         "daRequired": false,
         "dcRequired": true
       }
     ],
-    "notes": "• Ring previously appeared in the retired quest  Nightmares as a Necklace and had the following stats: \nSellback: 0 Gold \n Stats: Parry +1, Crit +8, WIS +7, END +10, DEX +9, Bonus +5 \n Resists: Metal +8, Fire +8, Nature +8, Immobility +3\n• Dropped version previously had the description: Twisted and broken gears form a chain.",
+    "notes": "Ring previously appeared in the retired quest  Nightmares as a Necklace and had the following stats:\nSellback: 0 Gold\nStats: Parry +1, Crit +8, WIS +7, END +10, DEX +9, Bonus +5\nResists: Metal +8, Fire +8, Nature +8, Immobility +3\nDropped version previously had the description: Twisted and broken gears form a chain.",
     "tags": [
       "met",
       "free"
@@ -21015,9 +21032,9 @@
     "obtainMethods": [
       {
         "location": "DC Rings",
-        "price": "330 Dragon Coins",
         "priceType": "dc",
-        "sellback": "297 Dragon Coins before 24 hours, 83 Dragon Coins after 24 hours",
+        "price": "330 Dragon Coins",
+        "sellback": "297 DC (<24 hours) / 83 DC (>24 hours)",
         "daRequired": false,
         "dcRequired": true
       }
@@ -21071,7 +21088,8 @@
     ],
     "shared": {
       "description": "You've infused this ring with shadow energy. As you move your hand it seems to blur, almost as though it was leaving shadows of itself behind. This item requires a Dragon Amulet.",
-      "rarity": "10"
+      "rarity": "10",
+      "notes": "II-IV versions previously required 1  DeathKnight Circlet & 2/3/4  Umbral Essence respectively.\nRings were tiered with Roman numerals on  August 25th, 2023; Required Items on II-IV versions were also changed on that date."
     },
     "levelVariants": [
       {
@@ -21400,8 +21418,8 @@
     "obtainMethods": [
       {
         "location": "Reen's Rings",
-        "price": "1,000 Gold",
         "priceType": "gold",
+        "price": "1,000 Gold",
         "sellback": "100 Gold",
         "daRequired": false
       }
@@ -21434,8 +21452,8 @@
     "obtainMethods": [
       {
         "location": "Mystlyk Museum",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "100 Gold",
         "daRequired": false
       }
@@ -21468,8 +21486,8 @@
     "obtainMethods": [
       {
         "location": "The Dark Tower",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "230 Gold",
         "daRequired": false
       }
@@ -21502,8 +21520,8 @@
     "obtainMethods": [
       {
         "location": "The Locket",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "230 Gold",
         "daRequired": true
       }
@@ -21692,8 +21710,8 @@
     "obtainMethods": [
       {
         "location": "Trinki's Rings",
-        "price": "300 Gold",
         "priceType": "gold",
+        "price": "300 Gold",
         "sellback": "30 Gold",
         "daRequired": true
       }
@@ -21726,8 +21744,8 @@
     "obtainMethods": [
       {
         "location": "Reen's Rings",
-        "price": "1,000 Gold",
         "priceType": "gold",
+        "price": "1,000 Gold",
         "sellback": "100 Gold",
         "daRequired": false
       }
@@ -21760,8 +21778,8 @@
     "obtainMethods": [
       {
         "location": "The Dragon Drakath",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "800 Gold",
         "daRequired": false
       }
@@ -21794,15 +21812,15 @@
     "obtainMethods": [
       {
         "location": "Marsh Madness",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "60 Gold",
         "daRequired": false
       },
       {
         "location": "Yulgar's Shop, Moonridge Emporium",
-        "price": "600 Gold",
         "priceType": "gold",
+        "price": "600 Gold",
         "sellback": "60 Gold",
         "daRequired": false
       }
@@ -21835,21 +21853,21 @@
     "obtainMethods": [
       {
         "location": "Nightmares",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "220 Gold",
         "daRequired": true
       },
       {
         "location": "NMs Loot for DCs",
-        "price": "30 Dragon Coins",
         "priceType": "dc",
-        "sellback": "27 Dragon Coins before 24 hours, 8 Dragon Coins after 24 hours",
-        "daRequired": true,
+        "price": "30 Dragon Coins",
+        "sellback": "27 DC (<24 hours) / 8 DC (>24 hours)",
+        "daRequired": false,
         "dcRequired": true
       }
     ],
-    "notes": "• Ring previously appeared in the retired quest  Nightmares as a Necklace and had the following stats: \nStats: Parry +2, Crit +7, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +8, END +2, CHA +5, INT +8, DEX +8, STR +8, Bonus +5 \n Resists: All +5, Immobility +2\n• Dropped version previously had the description: A splinter of wood hangs off the end of this chain. You feel magic humming within it. This item requires a Dragon Amulet.",
+    "notes": "Ring previously appeared in the retired quest  Nightmares as a Necklace and had the following stats:\nStats: Parry +2, Crit +7, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +8, END +2, CHA +5, INT +8, DEX +8, STR +8, Bonus +5\nResists: All +5, Immobility +2\nDropped version previously had the description: A splinter of wood hangs off the end of this chain. You feel magic humming within it. This item requires a Dragon Amulet.",
     "tags": [
       "nat",
       "free"
@@ -21879,9 +21897,9 @@
     "obtainMethods": [
       {
         "location": "DC Rings",
-        "price": "225 Dragon Coins",
         "priceType": "dc",
-        "sellback": "203 Dragon Coins before 24 hours, 57 Dragon Coins after 24 hours",
+        "price": "225 Dragon Coins",
+        "sellback": "203 DC (<24 hours) / 57 DC (>24 hours)",
         "daRequired": false,
         "dcRequired": true
       }
@@ -21914,8 +21932,8 @@
     "obtainMethods": [
       {
         "location": "Double, Trouble, Boil and Bubble",
-        "price": "N/A",
         "priceType": "free",
+        "price": "N/A",
         "sellback": "50 Gold",
         "daRequired": true
       }
@@ -21983,7 +22001,7 @@
             "location": "Zeclem's Items",
             "price": "125 Dragon Coins",
             "priceType": "dc",
-            "sellback": "113 Dragon Coins before 24 hours, 32 Dragon Coins after 24 hours",
+            "sellback": "113 DC (<24 hours) / 32 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -22006,7 +22024,7 @@
             "location": "Zeclem's Items",
             "price": "150 Dragon Coins",
             "priceType": "dc",
-            "sellback": "135 Dragon Coins before 24 hours, 38 Dragon Coins after 24 hours",
+            "sellback": "135 DC (<24 hours) / 38 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -22029,7 +22047,7 @@
             "location": "Zeclem's Items",
             "price": "175 Dragon Coins",
             "priceType": "dc",
-            "sellback": "158 Dragon Coins before 24 hours, 44 Dragon Coins after 24 hours",
+            "sellback": "158 DC (<24 hours) / 44 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -22052,7 +22070,7 @@
             "location": "Zeclem's Items",
             "price": "200 Dragon Coins",
             "priceType": "dc",
-            "sellback": "180 Dragon Coins before 24 hours, 50 Dragon Coins after 24 hours",
+            "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
@@ -22104,10 +22122,10 @@
     "obtainMethods": [
       {
         "location": "Relics of Zeclem",
-        "price": "N/A",
         "priceType": "merge",
-        "sellback": "0 Dragon Coins",
+        "price": "N/A",
         "requiredItems": "1 Unhallowed DeathKnight Circlet IV & 5 Relic of Zeclem OR 1 Zeclem's Band (80) & 5 Relic of Zeclem",
+        "sellback": "0 Dragon Coins",
         "daRequired": false,
         "dcRequired": true
       }

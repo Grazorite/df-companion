@@ -208,7 +208,8 @@
       "dc"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-magepriest-headgear",
@@ -398,7 +399,8 @@
     "levelRange": "1",
     "elements": [
       "GOO"
-    ]
+    ],
+    "isCosmetic": true
   },
   {
     "id": "accessory-magi-guard-helm",
@@ -2831,7 +2833,8 @@
       "merge"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-mask-of-akaz",
@@ -3137,7 +3140,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "dmRequired": true
+    "dmRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-master-chef-hat",
@@ -3527,7 +3531,8 @@
       "merge"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-master-s-hood",
@@ -3644,7 +3649,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-mechayeti-mask",
@@ -3682,7 +3688,8 @@
       "merge"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-mechspawn-mask",
@@ -4254,7 +4261,8 @@
         "type": "accessory",
         "url": "https://forums2.battleon.com/f/tm.asp?m=22410297"
       }
-    ]
+    ],
+    "isCosmetic": true
   },
   {
     "id": "accessory-midnight-prince-mask",
@@ -5823,7 +5831,8 @@
       "merge"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-moss-covered-helm",
@@ -6355,7 +6364,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "dmRequired": true
+    "dmRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-mr-scam-mask",
@@ -6553,7 +6563,8 @@
         "type": "accessory",
         "url": "https://forums2.battleon.com/f/tm.asp?m=22415435"
       }
-    ]
+    ],
+    "isCosmetic": true
   },
   {
     "id": "accessory-murk-doomknight-s-helm",
@@ -6611,7 +6622,8 @@
         "type": "accessory",
         "url": "https://forums2.battleon.com/f/tm.asp?m=22415435"
       }
-    ]
+    ],
+    "isCosmetic": true
   },
   {
     "id": "accessory-murk-mask",
@@ -6828,7 +6840,8 @@
     "levelRange": "1",
     "elements": [
       "MET"
-    ]
+    ],
+    "isCosmetic": true
   },
   {
     "id": "accessory-mushroom-cap",
@@ -7391,7 +7404,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "dmRequired": true
+    "dmRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-myalos-visage",
@@ -7431,7 +7445,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "dmRequired": true
+    "dmRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-mysterious-joker",
@@ -11076,7 +11091,8 @@
         "type": "accessory",
         "url": "https://forums2.battleon.com/f/tm.asp?m=22409729"
       }
-    ]
+    ],
+    "isCosmetic": true
   },
   {
     "id": "accessory-nor-easter-helm",
@@ -12115,7 +12131,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "dmRequired": true
+    "dmRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-nova-phoenix-s-aspect",
@@ -12154,7 +12171,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-now-n-forever-helm",
@@ -12970,7 +12988,8 @@
         "type": "accessory",
         "url": "https://forums2.battleon.com/f/tm.asp?m=21323236"
       }
-    ]
+    ],
+    "isCosmetic": true
   },
   {
     "id": "accessory-obsidian-relic-visor",
@@ -13016,7 +13035,8 @@
         "type": "accessory",
         "url": "https://forums2.battleon.com/f/tm.asp?m=22413846"
       }
-    ]
+    ],
+    "isCosmetic": true
   },
   {
     "id": "accessory-obsidian-remnant-helm",
@@ -13191,7 +13211,8 @@
       "merge"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-oogabooga-helm-face",
@@ -14248,7 +14269,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isSpecialOffer": true
+    "isSpecialOffer": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-pallor-s-bitter-helm",
@@ -14946,7 +14968,8 @@
     ],
     "daRequired": true,
     "dmRequired": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-phantom-s-mask-the",
@@ -19009,7 +19032,8 @@
       "dc"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-potato-yix-mask",
@@ -19452,7 +19476,8 @@
         "type": "accessory",
         "url": "https://forums2.battleon.com/f/tm.asp?m=22425962"
       }
-    ]
+    ],
+    "isCosmetic": true
   },
   {
     "id": "accessory-prismatic-matey-s-cap",
@@ -20074,7 +20099,8 @@
         "type": "accessory",
         "url": "https://forums2.battleon.com/f/tm.asp?m=22414814"
       }
-    ]
+    ],
+    "isCosmetic": true
   },
   {
     "id": "accessory-protozard-mask",
@@ -21608,7 +21634,8 @@
         "type": "accessory",
         "url": "https://forums2.battleon.com/f/tm.asp?m=22389622"
       }
-    ]
+    ],
+    "isCosmetic": true
   },
   {
     "id": "accessory-ranger-s-cover",
@@ -22280,7 +22307,8 @@
     "levelRange": "1",
     "elements": [
       "DAR"
-    ]
+    ],
+    "isCosmetic": true
   },
   {
     "id": "accessory-red-head",
@@ -22926,7 +22954,8 @@
       "dc"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-reforged-crown-of-time",
@@ -22963,7 +22992,8 @@
       "dc"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-reforged-shadowwalker-s-mantle",
@@ -22997,7 +23027,8 @@
       "dc"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-reigndragon-mask",
@@ -23878,7 +23909,8 @@
     "hasFree": false,
     "hasMerge": false,
     "levelRange": "1",
-    "elements": []
+    "elements": [],
+    "isCosmetic": true
   },
   {
     "id": "accessory-retroclear-royal-doom",
@@ -23922,7 +23954,8 @@
         "type": "accessory",
         "url": "https://forums2.battleon.com/f/tm.asp?m=16605119"
       }
-    ]
+    ],
+    "isCosmetic": true
   },
   {
     "id": "accessory-rhoddhu-helm",
@@ -24034,7 +24067,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-alz-ein-s-riftwalker-helmet",
@@ -24187,7 +24221,8 @@
     "levelRange": "1",
     "elements": [
       "DAR"
-    ]
+    ],
+    "isCosmetic": true
   },
   {
     "id": "accessory-riftwalker-s-horns",
@@ -24223,7 +24258,8 @@
       "merge"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-robain-hoot-s-hat",
@@ -24428,7 +24464,8 @@
       "merge"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-rolith-s-wedding-tophat",
@@ -27601,7 +27638,8 @@
     "levelRange": "1",
     "elements": [
       "MET"
-    ]
+    ],
+    "isCosmetic": true
   },
   {
     "id": "accessory-rusted-dragonknight-guard",
@@ -30860,7 +30898,8 @@
     "levelRange": "1-90",
     "elements": [
       "FEA"
-    ]
+    ],
+    "isCosmetic": true
   },
   {
     "id": "accessory-sentog-helm",
@@ -31071,7 +31110,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-sepulchure-s-doom",
@@ -31794,7 +31834,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "dmRequired": true
+    "dmRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-shadowdragon-mask",
@@ -32199,7 +32240,8 @@
     "levelRange": "1",
     "elements": [
       "SIL"
-    ]
+    ],
+    "isCosmetic": true
   },
   {
     "id": "accessory-shadowslayer-e-mask",
@@ -33882,7 +33924,8 @@
       "merge"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-silk-hat",
@@ -34997,7 +35040,8 @@
       "free"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-skull-king",
@@ -35164,7 +35208,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "dmRequired": true
+    "dmRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-skull-prince",
@@ -37094,7 +37139,8 @@
     "levelRange": "1",
     "elements": [
       "MET"
-    ]
+    ],
+    "isCosmetic": true
   },
   {
     "id": "accessory-snuggleranger-helm",
@@ -37311,7 +37357,8 @@
     "levelRange": "1",
     "elements": [
       "MET"
-    ]
+    ],
+    "isCosmetic": true
   },
   {
     "id": "accessory-sofist-mask",
@@ -40136,7 +40183,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-statue-s-stone-crown",
@@ -40182,7 +40230,8 @@
       "free"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-statue-s-stone-helm",
@@ -40228,7 +40277,8 @@
       "free"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-statue-s-stone-visage",
@@ -40273,7 +40323,8 @@
       "free"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-stazaar-helm",
@@ -41244,7 +41295,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-summer-s-glare",
@@ -41283,7 +41335,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-summer-s-sight",
@@ -41322,7 +41375,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-sun-god-visor",
@@ -41624,7 +41678,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-sunlit-oath",
@@ -41661,7 +41716,8 @@
       "dc"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-sunshade-headwrap",
@@ -42548,7 +42604,8 @@
       "dc"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-symbrieote-visage",
@@ -42584,7 +42641,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isRare": true
+    "isRare": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-tactical-assault-helm",
@@ -42786,7 +42844,8 @@
       "dc"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-tarnished-relic-deathknight-helm",
@@ -42886,7 +42945,8 @@
       "merge"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-tarot-s-mark",
@@ -42922,7 +42982,8 @@
       "merge"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-tart-bubble-mask",
@@ -43538,7 +43599,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-terrastag-horns",
@@ -44001,7 +44063,8 @@
       "merge"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-the-baroness-courageous-helm",
@@ -44481,7 +44544,8 @@
       "dc"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-the-chariot-s-visage",
@@ -44516,7 +44580,8 @@
       "dc"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-the-helmet-of-ra",
@@ -44673,7 +44738,8 @@
       "free"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-the-whisper-s-crown",
@@ -44970,7 +45036,8 @@
       "merge"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-tibicenas-mask",
@@ -45113,7 +45180,8 @@
       "free"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-tidal-helm",
@@ -48364,7 +48432,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-tog-head",
@@ -48446,7 +48515,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "dmRequired": true
+    "dmRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-togsmas-cowl",
@@ -55239,7 +55309,8 @@
         "type": "accessory",
         "url": "https://forums2.battleon.com/f/tm.asp?m=18654813"
       }
-    ]
+    ],
+    "isCosmetic": true
   },
   {
     "id": "accessory-unnecessarily-ornate-useless-helm-just-for-show",
@@ -55278,7 +55349,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-uthuluc-acolyte-visage",
@@ -55312,7 +55384,8 @@
       "dc"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-uthuluc-mask",
@@ -55506,7 +55579,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-vaal-s-mask",
@@ -55590,7 +55664,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-valen-s-remnant-visage",
@@ -55635,7 +55710,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isSpecialOffer": true
+    "isSpecialOffer": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-valkybrie-helm",
@@ -57847,7 +57923,8 @@
       "dc"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-virtuous-reality-veil",
@@ -57893,7 +57970,8 @@
         "type": "accessory",
         "url": "https://forums2.battleon.com/f/tm.asp?m=22412885"
       }
-    ]
+    ],
+    "isCosmetic": true
   },
   {
     "id": "accessory-visage-of-change",
@@ -57932,7 +58010,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-visage-of-ebil",
@@ -58018,7 +58097,8 @@
       "free"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-visage-of-kartherax",
@@ -58053,7 +58133,8 @@
       "merge"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-visage-of-susanoo",
@@ -58219,7 +58300,8 @@
       "merge"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-visage-of-the-dragon",
@@ -58331,7 +58413,8 @@
     "levelRange": "1",
     "elements": [
       "GOO"
-    ]
+    ],
+    "isCosmetic": true
   },
   {
     "id": "accessory-visage-of-the-unraveler",
@@ -59725,7 +59808,8 @@
     "hasFree": false,
     "hasMerge": false,
     "levelRange": "1",
-    "elements": []
+    "elements": [],
+    "isCosmetic": true
   },
   {
     "id": "accessory-volt-mech-mask",
@@ -61548,7 +61632,8 @@
       "dc"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-warrior-of-chaos",
@@ -62216,7 +62301,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "dmRequired": true
+    "dmRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-werewolf-mask",
@@ -63345,7 +63431,8 @@
       "dc"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-wildheart-fang",
@@ -63382,7 +63469,8 @@
       "dc"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-will-helm",
@@ -63518,7 +63606,8 @@
       "free"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-wind-mask",
@@ -65392,7 +65481,8 @@
     "levelRange": "1",
     "elements": [
       "ICE"
-    ]
+    ],
+    "isCosmetic": true
   },
   {
     "id": "accessory-young-capustak",
@@ -65438,7 +65528,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-zard-hunter-mask",

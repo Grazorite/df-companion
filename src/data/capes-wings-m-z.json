@@ -35,7 +35,8 @@
       "dc"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-magic-card",
@@ -1803,7 +1804,8 @@
       "free"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-mantle-of-shadows",
@@ -3379,7 +3381,8 @@
         "type": "accessory",
         "url": "https://forums2.battleon.com/f/tm.asp?m=22410298"
       }
-    ]
+    ],
+    "isCosmetic": true
   },
   {
     "id": "accessory-mighty-dread-wings",
@@ -4923,7 +4926,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "dmRequired": true
+    "dmRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-myalos-wings",
@@ -4963,7 +4967,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "dmRequired": true
+    "dmRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-mysterious-card",
@@ -7178,7 +7183,8 @@
       "merge"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-nick-s-toasty-cape",
@@ -8038,7 +8044,8 @@
         "type": "accessory",
         "url": "https://forums2.battleon.com/f/tm.asp?m=22409730"
       }
-    ]
+    ],
+    "isCosmetic": true
   },
   {
     "id": "accessory-northern-butterfly-wings",
@@ -8421,7 +8428,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "dmRequired": true
+    "dmRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-notha-s-spell",
@@ -8603,7 +8611,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-obsidian-dragon-wings",
@@ -8860,7 +8869,8 @@
         "type": "accessory",
         "url": "https://forums2.battleon.com/f/tm.asp?m=22402628"
       }
-    ]
+    ],
+    "isCosmetic": true
   },
   {
     "id": "accessory-obsidian-relic-wings",
@@ -8907,7 +8917,8 @@
         "type": "accessory",
         "url": "https://forums2.battleon.com/f/tm.asp?m=22395592"
       }
-    ]
+    ],
+    "isCosmetic": true
   },
   {
     "id": "accessory-blooming-oleander-cape",
@@ -9200,7 +9211,8 @@
     "tags": [
       "free"
     ],
-    "daRequired": true
+    "daRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-on-wings-of-bacon",
@@ -9463,7 +9475,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-orange-cloak",
@@ -9908,7 +9921,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-pactogonal-knight-cape",
@@ -9982,7 +9996,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isSpecialOffer": true
+    "isSpecialOffer": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-perse-poncho",
@@ -10086,7 +10101,8 @@
       "merge"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-phantom-roc-wings",
@@ -11645,7 +11661,8 @@
       "merge"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-portable-americano-dispenser",
@@ -14030,7 +14047,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "dmRequired": true
+    "dmRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-re-lock",
@@ -14071,7 +14089,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "dmRequired": true
+    "dmRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-red-astral-avenger",
@@ -14535,7 +14554,8 @@
       "dc"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-reforged-shadowwalker-s-trail",
@@ -14569,7 +14589,8 @@
       "dc"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-reforged-wings-of-time",
@@ -14606,7 +14627,8 @@
       "dc"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-reigndragon-s-burden",
@@ -14971,7 +14993,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-relic-deathknight-cloak",
@@ -15106,7 +15129,8 @@
     "hasFree": false,
     "hasMerge": false,
     "levelRange": "1",
-    "elements": []
+    "elements": [],
+    "isCosmetic": true
   },
   {
     "id": "accessory-rhoddhu-cape",
@@ -15180,7 +15204,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-ripper-wings",
@@ -15364,7 +15389,8 @@
     "levelRange": "1",
     "elements": [
       "STO"
-    ]
+    ],
+    "isCosmetic": true
   },
   {
     "id": "accessory-rose-chains",
@@ -16983,7 +17009,8 @@
       "dc"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-rushan-cloak",
@@ -17820,7 +17847,8 @@
       "merge"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-scarf-of-pride",
@@ -18100,7 +18128,8 @@
     "levelRange": "1",
     "elements": [
       "NON"
-    ]
+    ],
+    "isCosmetic": true
   },
   {
     "id": "accessory-scarred-dravir-wings",
@@ -18392,7 +18421,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-shadecloak-of-the-emperor",
@@ -19007,7 +19037,8 @@
       "merge"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-shadowrune-cape",
@@ -22985,7 +23016,8 @@
       "merge"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-stonefish",
@@ -23809,7 +23841,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-summer-s-shade",
@@ -23848,7 +23881,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-summer-s-waves",
@@ -23886,7 +23920,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-sun-god-cape",
@@ -24149,7 +24184,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-super-golden-phoenix-wings",
@@ -24917,7 +24953,8 @@
       "dc"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-swordhaven-cape",
@@ -25419,7 +25456,8 @@
     "tags": [
       "free"
     ],
-    "daRequired": true
+    "daRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-swordhaven-cloak",
@@ -25962,7 +26000,8 @@
       "dc"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-tarnished-relic-deathknight-cloak",
@@ -26224,7 +26263,8 @@
       "merge"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-the-aurite-of-burden",
@@ -26273,7 +26313,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-the-book-of-ebil-dread",
@@ -26315,7 +26356,8 @@
     "daRequired": false,
     "dcRequired": true,
     "dmRequired": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-the-puppetmaster-alpha",
@@ -26609,7 +26651,8 @@
       "merge"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-timeblades-of-shadow",
@@ -26705,7 +26748,8 @@
     "hasFree": true,
     "hasMerge": true,
     "levelRange": "1-90",
-    "elements": []
+    "elements": [],
+    "isCosmetic": true
   },
   {
     "id": "accessory-timeblades-of-the-avatar",
@@ -26801,7 +26845,8 @@
     "hasFree": true,
     "hasMerge": true,
     "levelRange": "1-90",
-    "elements": []
+    "elements": [],
+    "isCosmetic": true
   },
   {
     "id": "accessory-gears-of-timeless-destiny",
@@ -26947,7 +26992,8 @@
     "levelRange": "1",
     "elements": [
       "LIG"
-    ]
+    ],
+    "isCosmetic": true
   },
   {
     "id": "accessory-timeshift-cape",
@@ -27271,7 +27317,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "dmRequired": true
+    "dmRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-togpod",
@@ -27312,7 +27359,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "dmRequired": true
+    "dmRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-togslayer-x-s-cape",
@@ -29754,7 +29802,8 @@
       "free"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-tytanbone-pack",
@@ -31538,7 +31587,8 @@
         "type": "accessory",
         "url": "https://forums2.battleon.com/f/tm.asp?m=22418262"
       }
-    ]
+    ],
+    "isCosmetic": true
   },
   {
     "id": "accessory-unnecessarily-ornate-useless-wings-just-for-show",
@@ -31576,7 +31626,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-uthuluc-acolyte-limbs",
@@ -31610,7 +31661,8 @@
       "dc"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-valen-s-remnant-cloak",
@@ -31648,7 +31700,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isSpecialOffer": true
+    "isSpecialOffer": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-vampire-cape",
@@ -32053,7 +32106,8 @@
       "merge"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-vibrant-cobalt-dragon-wings",
@@ -32795,7 +32849,8 @@
       "dc"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-virtuous-reality-radiance",
@@ -32839,7 +32894,8 @@
       "dc"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-vivid-cobalt-dragon-wings",
@@ -32948,7 +33004,8 @@
       "free"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-void-cider-keg",
@@ -33527,7 +33584,8 @@
       "dc"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-voidstar-essence",
@@ -33596,7 +33654,8 @@
       "dc"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-voyna-s-cape",
@@ -33642,7 +33701,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "dmRequired": true
+    "dmRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-wandering-mogbot-cape",
@@ -33765,7 +33825,8 @@
     "levelRange": "1",
     "elements": [
       "MET"
-    ]
+    ],
+    "isCosmetic": true
   },
   {
     "id": "accessory-war-wolf-cape",
@@ -33959,7 +34020,8 @@
       "dc"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-wastes-wanderer-s-cloak",
@@ -34770,7 +34832,8 @@
       "dc"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-wings-of-aker-varus",
@@ -35445,7 +35508,8 @@
       "fea",
       "free"
     ],
-    "daRequired": true
+    "daRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-wings-of-light",
@@ -36106,7 +36170,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "dmRequired": true
+    "dmRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-wings-of-the-chosen",
@@ -36181,7 +36246,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "dmRequired": true
+    "dmRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-wings-of-the-hundred-flames",
@@ -37956,7 +38022,8 @@
       "free"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-world-cup-2010-cape-algeria",
@@ -40528,7 +40595,8 @@
       "merge"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-wrap-of-fiamme",
@@ -40776,7 +40844,8 @@
       "merge"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "isCosmetic": true
   },
   {
     "id": "accessory-yalla-s-wings",
