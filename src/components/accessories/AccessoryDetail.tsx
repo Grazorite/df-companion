@@ -1,9 +1,14 @@
 import { useEffect, useMemo, useState } from 'react'
-import type { Accessory, AccessoryEntry, AccessoryFamily } from '../../types/accessory'
+import type {
+  Accessory,
+  AccessoryEntry,
+  AccessoryFamily,
+  AccessorySubtype,
+} from '../../types/accessory'
 import { isAccessoryFamily } from '../../types/accessory'
 import type { LevelVariant, ObtainVariant } from '../../types/item'
 import type { GuestAttack } from '../../types/pet'
-import { useRelatedAccessories } from '../../hooks/useAccessories'
+import { useAccessoryRelatedItems, type AccessoryRelatedItem } from '../../hooks/useAccessories'
 import { displayTitle, normalizeDisplayText } from '../../utils/displayText'
 import { buildDisplayImages } from '../../utils/imageLabels'
 import { getDisplayFamilyName, isSingleVariant } from '../../utils/variantHelpers'
@@ -18,6 +23,17 @@ import OtherInformationSection from '../shared/OtherInformationSection'
 import AccessoryStatsTable from './AccessoryStatsTable'
 import AccessoryCard from './AccessoryCard'
 import GuestAttacks from '../guests/GuestAttacks'
+
+const ACCESSORY_SUBTYPE_LABELS: Record<AccessorySubtype, string> = {
+  artifact: 'Artifact',
+  belt: 'Belt',
+  bracer: 'Bracer',
+  'cape-wing': 'Cape & Wings',
+  helm: 'Helm',
+  necklace: 'Necklace',
+  ring: 'Ring',
+  trinket: 'Trinket',
+}
 
 interface AccessoryDetailProps {
   accessory: AccessoryEntry
@@ -282,9 +298,9 @@ export default function AccessoryDetail({ accessory, filterBase }: AccessoryDeta
 
     return refs.filter((ref) => !currentSlugs.has(ref.slug))
   }, [accessory.slug, family, singleAccessory])
-  const { relatedAccessories } = useRelatedAccessories(alsoSeeRefs)
-  const resolvedRelatedAccessories = relatedAccessories.flatMap((related) =>
-    related.entry ? [{ ref: related.ref, entry: related.entry }] : []
+  const { relatedAccessories } = useAccessoryRelatedItems(accessory, alsoSeeRefs)
+  const resolvedRelatedAccessories = relatedAccessories.filter(
+    (related): related is AccessoryRelatedItem & { entry: AccessoryEntry } => Boolean(related.entry)
   )
 
   return (
@@ -401,9 +417,14 @@ export default function AccessoryDetail({ accessory, filterBase }: AccessoryDeta
             Also See
           </h2>
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-            {resolvedRelatedAccessories.map(({ ref, entry }) => (
-              <li key={`${ref.slug}-${ref.url ?? 'route'}`}>
-                <AccessoryCard accessory={entry} />
+            {resolvedRelatedAccessories.map(({ ref, entry, relation, scope }) => (
+              <li key={`${entry.slug}-${ref?.url ?? relation}`}>
+                <AccessoryCard
+                  accessory={entry}
+                  badgeLabel={
+                    scope === 'cross-subtype' ? ACCESSORY_SUBTYPE_LABELS[entry.subtype] : undefined
+                  }
+                />
               </li>
             ))}
           </ul>

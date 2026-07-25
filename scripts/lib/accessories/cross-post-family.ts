@@ -12,6 +12,7 @@ import type {
 } from '../../../src/types/item.ts'
 import { compareTitles } from '../../../src/utils/displayText.ts'
 import { computeFamilyFlags, normalizeLevel } from '../../../src/utils/variantHelpers.ts'
+import { distributeSharedNoteLines } from '../note-cleaning.ts'
 import { slugify } from '../text.ts'
 
 const ENABLED_SUBTYPES = new Set<AccessorySubtype>(['helm', 'cape-wing'])
@@ -654,13 +655,14 @@ function buildFamilyFromGroup(entries: AccessoryEntry[]): AccessoryFamily {
     familyAnchor?.slug ??
     exactFamilyNameEntry?.slug ??
     (parentheticalPrefixFamily ? `accessory-${slugify(familyName)}` : sorted[0].slug)
-  const variants = sortVariants(
+  const sortedVariants = sortVariants(
     sorted.flatMap((entry, index) =>
       isAccessoryFamily(entry)
         ? flattenFamilyVariants(entry)
         : [buildVariantFromAccessory(entry, familyName, index)]
     )
   )
+  const { sharedNotes, variants } = distributeSharedNoteLines(sortedVariants)
   const descriptions = variants
     .map((variant) => variant.description)
     .filter((value): value is string => Boolean(value))
@@ -670,9 +672,6 @@ function buildFamilyFromGroup(entries: AccessoryEntry[]): AccessoryFamily {
   const alternativeImages = uniqueAlternativeImages(
     variants.flatMap((variant) => variant.alternativeImages ?? [])
   )
-  const notes = variants
-    .map((variant) => variant.notes)
-    .filter((value): value is string => Boolean(value))
   const abilities = sorted
     .filter((entry): entry is Accessory => !isAccessoryFamily(entry))
     .map((entry) => entry.ability)
@@ -714,7 +713,7 @@ function buildFamilyFromGroup(entries: AccessoryEntry[]): AccessoryFamily {
       ...(abilities.length > 0 && allSame(abilities) ? { ability: abilities[0] } : {}),
       ...(resists.length > 0 && allSame(resists) ? { resists: resists[0] } : {}),
       ...(rarities.length > 0 && allSame(rarities) ? { rarity: rarities[0] } : {}),
-      ...(notes.length > 0 && allSame(notes) ? { notes: notes[0] } : {}),
+      ...(sharedNotes ? { notes: sharedNotes } : {}),
       ...(alsoSee.length ? { alsoSee } : {}),
     },
     levelVariants: variants,
@@ -764,7 +763,7 @@ function buildSpecialFamily(
 
   const familySlug = matchedEntries[0].slug
   let variantIndex = 0
-  const variants = matchedEntries.flatMap((entry) =>
+  const sortedVariants = matchedEntries.flatMap((entry) =>
     flattenSpecialEntry(entry, spec.familyName).map((variant) => {
       const variantName = spec.variantNames[variantIndex] ?? variant.variantName
       variantIndex += 1
@@ -775,15 +774,15 @@ function buildSpecialFamily(
       }
     })
   )
+  const { sharedNotes: distributedSharedNotes, variants } =
+    distributeSharedNoteLines(sortedVariants)
   const imageUrls = variants
     .map((variant) => variant.imageUrl)
     .filter((value): value is string => Boolean(value))
   const alternativeImages = uniqueAlternativeImages(
     variants.flatMap((variant) => variant.alternativeImages ?? [])
   )
-  const notes = spec.notes
-    ? [spec.notes]
-    : variants.map((variant) => variant.notes).filter((value): value is string => Boolean(value))
+  const sharedNotes = spec.notes ?? distributedSharedNotes
   const aliases = Array.from(
     new Set(
       matchedEntries.flatMap((entry) => [
@@ -811,7 +810,7 @@ function buildSpecialFamily(
         (familyAnchor?.shared.description || ''),
       ...(imageUrls.length > 0 && allSame(imageUrls) ? { imageUrl: imageUrls[0] } : {}),
       ...(alternativeImages.length > 0 && allSame(imageUrls) ? { alternativeImages } : {}),
-      ...(notes.length > 0 ? { notes: notes.join('\n') } : {}),
+      ...(sharedNotes ? { notes: sharedNotes } : {}),
       ...(gatherExternalAlsoSee(matchedEntries, familySlug).length
         ? { alsoSee: gatherExternalAlsoSee(matchedEntries, familySlug) }
         : {}),

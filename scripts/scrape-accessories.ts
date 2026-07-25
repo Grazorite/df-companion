@@ -24,6 +24,11 @@ import {
   getPostContent,
 } from './lib/printable-parser.ts'
 import { rephraseTimedSellback } from './lib/obtain-formatting.ts'
+import {
+  distributeSharedNoteLines,
+  getImageCaptionNoise,
+  isImageCaptionNoiseLine,
+} from './lib/note-cleaning.ts'
 import { repairAccessFlags } from './lib/access-flag-repair.ts'
 import { getAccessorySubtypeStrategy } from './lib/accessories/index.ts'
 import { promoteAccessoryCrossPostFamilies } from './lib/accessories/cross-post-family.ts'
@@ -351,6 +356,7 @@ function parseNotes(html: string): string | undefined {
   const otherInfoHtml = findOtherInformationSection(html)
 
   if (otherInfoHtml) {
+    const imageCaptionNoise = getImageCaptionNoise(otherInfoHtml)
     const trimmedSection = otherInfoHtml
       .split(/<i>Thanks to|Also See:|<font color='#eeeeee'>/i)[0]
       .replace(
@@ -371,6 +377,7 @@ function parseNotes(html: string): string | undefined {
       if (!trimmed) continue
       if (/\w+\s+--\s+\d+\/\d+\/\d+\s+\d+:\d+:\d+/.test(trimmed)) continue
       if (/^[\s/|\\-]+$/.test(trimmed)) continue
+      if (isImageCaptionNoiseLine(trimmed, imageCaptionNoise)) continue
       if (
         /^(?:clicked appearance|alternative image|alt(?:ernative)? appearance|appearance(?:\s+\d.*)?|2nd appearance|default|patience\s*\/\s*bulwark|rage\s*\/\s*wrath)$/i.test(
           trimmed
@@ -1280,12 +1287,10 @@ async function enrichAccessoryAbility(entry: Accessory, cookie: string): Promise
 function buildAccessoryFamily(
   stub: AccessoryStub,
   variants: Accessory[],
-  fallbackImages: AccessoryImageBundle = {},
-  fallbackNotes?: string
+  fallbackImages: AccessoryImageBundle = {}
 ): AccessoryFamily {
-  const consolidatedVariants = expandAccessoryFamilyVariants(
-    enrichAccessorySiblingVariants(variants)
-  )
+  const siblingVariants = expandAccessoryFamilyVariants(enrichAccessorySiblingVariants(variants))
+  const { sharedNotes, variants: consolidatedVariants } = distributeSharedNoteLines(siblingVariants)
   const familyName = normalizeAccessoryFamilyName(stub.name)
   const familySlug = accessorySlugForName(familyName)
   const imageOverride = getAccessoryImageOverride(familyName)
@@ -1320,8 +1325,6 @@ function buildAccessoryFamily(
     consolidatedVariants.map((variant) => variant.modifies).filter(Boolean)
   )
   const alsoSee = mergeAccessoryAlsoSee(consolidatedVariants, familySlug)
-  const notes = uniqueStrings(consolidatedVariants.map((variant) => variant.notes).filter(Boolean))
-  const sharedNotes = fallbackNotes ?? (notes.length === 1 ? notes[0] : undefined)
 
   const levelVariants: LevelVariant[] = consolidatedVariants
     .map((variant, index) => {
@@ -1454,7 +1457,6 @@ async function buildAccessoryOrFamily(
     const fallbackImages = strategy.shouldExtractImages({ name: stub.name, subtype: stub.subtype })
       ? extractAccessoryImages(messageHtml)
       : {}
-    const threadNotes = uniqueStrings([parseNotes(messageHtml)].filter(Boolean))
 
     for (const post of threadPosts) {
       let html: string
@@ -1464,8 +1466,6 @@ async function buildAccessoryOrFamily(
         html = post.html
       }
       if (!html) continue
-      const postNotes = parseNotes(html)
-      if (postNotes) threadNotes.push(postNotes)
       const title = preserveStubVariantSuffix(stub.name, parseAccessoryTitle(html))
       if (!title) continue
 
@@ -1489,8 +1489,7 @@ async function buildAccessoryOrFamily(
     }
 
     if (variants.length > 1) {
-      const fallbackNotes = uniqueStrings(threadNotes).join('\n') || undefined
-      return buildAccessoryFamily(stub, variants, fallbackImages, fallbackNotes)
+      return buildAccessoryFamily(stub, variants, fallbackImages)
     }
   }
 

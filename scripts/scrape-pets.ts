@@ -49,6 +49,7 @@ import {
   promoteCrossPostFamilies,
 } from './lib/cross-post-family.ts'
 import { rephraseTimedSellback } from './lib/obtain-formatting.ts'
+import { getImageCaptionNoise, isImageCaptionNoiseLine } from './lib/note-cleaning.ts'
 import { repairAccessFlags } from './lib/access-flag-repair.ts'
 import { writePetsGuestsManifest } from './lib/data-manifests.ts'
 import { compareTitles } from '../src/utils/displayText.ts'
@@ -2830,9 +2831,11 @@ export function parsePetThread(
 
   // Extract pet images using extractImages helper
   const { main: imageUrl, alternatives: alternativeImages } = extractImages(rawBody)
+  const imageCaptionNoise = getImageCaptionNoise(rawBody)
   const cleanedNoteLines = noteLines.filter((note) => {
     const trimmed = note.trim()
     if (!trimmed) return false
+    if (isImageCaptionNoiseLine(trimmed, imageCaptionNoise)) return false
     if (description && trimmed === description.trim()) return false
     if (trimmed === name.trim()) return false
     return true

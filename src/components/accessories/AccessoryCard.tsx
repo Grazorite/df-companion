@@ -7,11 +7,12 @@ import LevelRangeBadge from '../shared/LevelRangeBadge'
 
 interface AccessoryCardProps {
   accessory: AccessoryEntry
+  badgeLabel?: string
 }
 
 const MAX_PILLS = 3
 
-export default function AccessoryCard({ accessory }: AccessoryCardProps) {
+export default function AccessoryCard({ accessory, badgeLabel }: AccessoryCardProps) {
   const card = buildAccessoryCardData(accessory)
   const visibleCodes = card.elements.slice(0, MAX_PILLS)
   const overflow = card.elements.length - MAX_PILLS
@@ -29,6 +30,11 @@ export default function AccessoryCard({ accessory }: AccessoryCardProps) {
           {overflow > 0 && (
             <span className="text-[10px] text-text-muted bg-bg-overlay px-1.5 py-0.5 rounded-full">
               +{overflow}
+            </span>
+          )}
+          {badgeLabel && (
+            <span className="text-[10px] text-sky-300 bg-sky-500/15 px-1.5 py-0.5 rounded-full font-medium">
+              {badgeLabel}
             </span>
           )}
           {card.hasMultipleVersions && card.levelRange && (

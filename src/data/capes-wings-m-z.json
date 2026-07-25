@@ -23981,7 +23981,7 @@
       "description": "The power of the sun radiates from this cape! You can upgrade this cape at the Black Market Moglin.",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/SunGodCape.png",
       "rarity": "25",
-      "notes": "The following changes were implemented on December 23rd, 2018:\n  • Items initially had a sellback value of 0 Dragon Coins, before becoming unsellable.\n  • Items cannot be destroyed."
+      "notes": "The following changes were implemented on December 23rd, 2018:\n• Items initially had a sellback value of 0 Dragon Coins, before becoming unsellable.\n• Items cannot be destroyed."
     },
     "levelVariants": [
       {

@@ -76,7 +76,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "• If the  Abyssal Heart VI scythe is equipped or shown, clicking on the heart of the top of the weapon will change between this cape's two appearances when equipped or shown.\n• Cape is animated between transitions; water also flows continuously through the underside of the cape's transformed appearance.\nTransformed",
+    "notes": "• If the  Abyssal Heart VI scythe is equipped or shown, clicking on the heart of the top of the weapon will change between this cape's two appearances when equipped or shown.\n• Cape is animated between transitions; water also flows continuously through the underside of the cape's transformed appearance.",
     "tags": [
       "evi",
       "dc"
@@ -319,7 +319,7 @@
       "description": "Crafted from enchanted leaves hidden deep in the Neverglades jungle, this backguard will keep you safe, and never wilt.",
       "imageUrl": "http://i.imgur.com/pVd6v.png",
       "rarity": "10",
-      "notes": "Aika Backguard (I-IV) were previously obtained from the retired quests  Neverglades,  Deep Neverglades,  Deeper Neverglades, and  Deepest Neverglades respectively.\nThe following changes were implemented on  November 28th, 2025:\n  • Capes were tiered with Roman numerals.\n  • Capes' stats were updated.\n  • A V tier of this cape was introduced, which require a Dragon Amulet to equip.\nLevel's requirement was reduced from 25 to 15 on  November 28th, 2025.\nDodge +1 and Parry +1 stats were added to this cape on  November 28th, 2025.\nParry +1 stat was added to this cape on  November 28th, 2025.\nParry +2 stat was added to this cape on  November 28th, 2025."
+      "notes": "Aika Backguard (I-IV) were previously obtained from the retired quests  Neverglades,  Deep Neverglades,  Deeper Neverglades, and  Deepest Neverglades respectively.\nThe following changes were implemented on  November 28th, 2025:\n• Capes were tiered with Roman numerals.\n• Capes' stats were updated.\n• A V tier of this cape was introduced, which require a Dragon Amulet to equip.\nLevel's requirement was reduced from 25 to 15 on  November 28th, 2025.\nDodge +1 and Parry +1 stats were added to this cape on  November 28th, 2025.\nParry +1 stat was added to this cape on  November 28th, 2025.\nParry +2 stat was added to this cape on  November 28th, 2025."
     },
     "levelVariants": [
       {
@@ -3684,7 +3684,7 @@
         }
       ],
       "rarity": "0",
-      "notes": "• If any  Autumn's Cull scythe is equipped or shown, clicking anywhere on the weapon will change between this cape's two appearances when equipped or shown.\n• Cape is animated; fireflies hover on and around the cape.\nNature (Default)\nIce"
+      "notes": "• If any  Autumn's Cull scythe is equipped or shown, clicking anywhere on the weapon will change between this cape's two appearances when equipped or shown.\n• Cape is animated; fireflies hover on and around the cape.\nNature (Default)"
     },
     "levelVariants": [
       {

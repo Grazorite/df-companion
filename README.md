@@ -55,6 +55,7 @@ Scraper guidelines:
 - Scraper intermediates may be loose, but final shared types should be strict at the boundary. For example, convert optional prices to `N/A` before building an `ObtainVariant`.
 - Keep shared scraper behavior in `scripts/lib/*`, and shared item-family behavior in `src/utils/variantHelpers.ts` when pets, guests, and accessories should agree.
 - Prefer subtype strategy modules under `scripts/lib/accessories/` for accessory-specific behavior.
+- Use shared note-cleaning helpers for forum `Other Information`: image captions should not become notes, and note lines should only be promoted to shared family notes when every variant has that line.
 - Progress files such as `src/data/pets-progress.json`, `src/data/guests-progress.json`, and their temporary atomic-write files are local scratch files and should remain untracked.
 - Scrapers must automatically regenerate any lightweight manifest/count files for the datasets they write. Do not make manifest refresh a manual post-scrape step.
 - Badge re-scrapes preserve curated image and subcategory fields from the existing `src/data/badges.json`, so no separate image/subcategory post-processing step is required.

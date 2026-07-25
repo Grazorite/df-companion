@@ -9,6 +9,7 @@ import type {
 } from '../../src/types/item.ts'
 import { computeFamilyFlags, normalizeLevel } from '../../src/utils/variantHelpers.ts'
 import { compareTitles } from '../../src/utils/displayText.ts'
+import { distributeSharedNoteLines } from './note-cleaning.ts'
 
 type ScrapedEntry = Guest | Pet | ItemFamily
 
@@ -421,11 +422,12 @@ function buildFamilyFromGroup(items: Array<Pet | ItemFamily>): ItemFamily {
       .replace(/^-+|-+$/g, '')}`
   const canonicalId = familyAnchor?.id ?? canonicalSlug
   const forumUrl = familyAnchor?.forumUrl ?? sorted[0].forumUrl
-  const allLevels = sortAndRenumberVariants(
+  const sortedLevels = sortAndRenumberVariants(
     sorted.flatMap((item) =>
       isItemFamily(item) ? flattenFamilyVariants(item) : [buildVariantFromPet(item)]
     )
   )
+  const { sharedNotes: baseNotes, variants: allLevels } = distributeSharedNoteLines(sortedLevels)
   const internalSlugs = new Set(sorted.map((item) => item.slug))
   const aliasSlugs = Array.from(internalSlugs).filter((slug) => slug !== canonicalSlug)
   const descriptions = allLevels
@@ -437,9 +439,6 @@ function buildFamilyFromGroup(items: Array<Pet | ItemFamily>): ItemFamily {
   const alternativeImages = allLevels
     .map((level) => level.alternativeImages)
     .filter((value): value is AlternativeImage[] => Boolean(value && value.length > 0))
-  const notes = allLevels
-    .map((level) => level.notes)
-    .filter((value): value is string => Boolean(value))
   const attacks = allLevels
     .map((level) => level.attacks)
     .filter((value): value is VariantAttack[] => Boolean(value && value.length > 0))
@@ -470,7 +469,6 @@ function buildFamilyFromGroup(items: Array<Pet | ItemFamily>): ItemFamily {
           : alternativeImages[0]
       : undefined)
   const baseAttacks = attacks.length > 0 && allSame(attacks) ? attacks[0] : undefined
-  const baseNotes = notes.length > 0 && allSame(notes) ? notes[0] : undefined
   const baseElement = allLevels.every(
     (level) => level.element && level.element === allLevels[0].element
   )

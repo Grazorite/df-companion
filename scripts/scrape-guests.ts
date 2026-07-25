@@ -59,6 +59,7 @@ import {
   promoteCrossPostFamilies,
 } from './lib/cross-post-family.ts'
 import { rephraseTimedSellback } from './lib/obtain-formatting.ts'
+import { getImageCaptionNoise, isImageCaptionNoiseLine } from './lib/note-cleaning.ts'
 import { repairAccessFlags } from './lib/access-flag-repair.ts'
 import { writePetsGuestsManifest } from './lib/data-manifests.ts'
 import { compareTitles } from '../src/utils/displayText.ts'
@@ -1382,6 +1383,7 @@ function parseNotes(html: string, guestName: string): string | undefined {
 
   if (otherInfoHtml) {
     if (DEBUG) console.log(`  Found Other Information section`)
+    const imageCaptionNoise = getImageCaptionNoise(otherInfoHtml)
 
     const trimmedSection = otherInfoHtml
       .split(/<i>Thanks to|Also See:|<font color='#eeeeee'>/i)[0]
@@ -1391,7 +1393,9 @@ function parseNotes(html: string, guestName: string): string | undefined {
       )
 
     for (const line of normalizeStructuredText(trimmedSection).split('\n')) {
-      if (!line.trim()) continue
+      const trimmed = line.trim()
+      if (!trimmed) continue
+      if (isImageCaptionNoiseLine(trimmed, imageCaptionNoise)) continue
       if (/\w+\s+--\s+\d+\/\d+\/\d+\s+\d+:\d+:\d+/.test(line)) continue
       if (
         /^[•\s]*[A-Za-z0-9&/'().,-]+(?:\s+[A-Za-z0-9&/'().,-]+)*\s+Appearance(?:\s+\d+(?:\.\d+)?)?\s*$/i.test(
