@@ -24,6 +24,7 @@ const ACCESS_OPTIONS = [
 ] as const
 
 const CATEGORY_OPTIONS = [
+  { id: 'armor-customization', label: 'Armor Customization' },
   { id: 'cosmetic', label: 'Cosmetic' },
   { id: 'temp', label: 'Temp' },
   { id: 'rare', label: 'Rare' },
@@ -46,10 +47,17 @@ export default function AccessoryListPage() {
   const accessParam = searchParams.get('access')
   const categoryParam = searchParams.get('category')
   const categoryAvailability = useAccessoryCategoryAvailability(activeSubtype)
+  const showArmorCustomizationFilter =
+    categoryAvailability.loading || categoryAvailability.hasArmorCustomization
   const showCosmeticFilter = categoryAvailability.loading || categoryAvailability.hasCosmetic
   const visibleCategoryOptions = useMemo(
-    () => CATEGORY_OPTIONS.filter((option) => option.id !== 'cosmetic' || showCosmeticFilter),
-    [showCosmeticFilter]
+    () =>
+      CATEGORY_OPTIONS.filter((option) => {
+        if (option.id === 'armor-customization') return showArmorCustomizationFilter
+        if (option.id === 'cosmetic') return showCosmeticFilter
+        return true
+      }),
+    [showArmorCustomizationFilter, showCosmeticFilter]
   )
   const activeElements = useMemo(
     () => (elementParam ? elementParam.split(',').filter(Boolean) : []),
@@ -75,8 +83,11 @@ export default function AccessoryListPage() {
               CATEGORY_OPTIONS.some((option) => option.id === value)
             )
             .filter((value) => value !== 'cosmetic' || showCosmeticFilter)
+            .filter(
+              (value) => value !== 'armor-customization' || showArmorCustomizationFilter
+            )
         : [],
-    [categoryParam, showCosmeticFilter]
+    [categoryParam, showArmorCustomizationFilter, showCosmeticFilter]
   )
 
   const { elements } = elementsData as ElementsData

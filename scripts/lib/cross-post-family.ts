@@ -207,6 +207,29 @@ function sharesGuestFamilyVariantOverlap(a: ScrapedEntry, b: ScrapedEntry): bool
   })
 }
 
+function getPetEvolutionTargets(item: ScrapedEntry): Set<string> {
+  if (isItemFamily(item) || item.type !== 'pet') return new Set()
+
+  return new Set(
+    (item as Pet).evolutions.flatMap((evolution) => [
+      evolution.resultSlug,
+      normalizeLookupName(evolution.resultName),
+    ])
+  )
+}
+
+function sharesPetEvolutionChain(a: ScrapedEntry, b: ScrapedEntry): boolean {
+  if (a.type !== 'pet' || b.type !== 'pet') return false
+  if (isItemFamily(a) || isItemFamily(b)) return false
+
+  const aTargets = getPetEvolutionTargets(a)
+  const bTargets = getPetEvolutionTargets(b)
+  const aName = normalizeLookupName(getDisplayName(a))
+  const bName = normalizeLookupName(getDisplayName(b))
+
+  return aTargets.has(b.slug) || aTargets.has(bName) || bTargets.has(a.slug) || bTargets.has(aName)
+}
+
 function sharesMeaningfulTitleFamily(a: ScrapedEntry, b: ScrapedEntry): boolean {
   const names = [getDisplayName(a), getDisplayName(b)]
   const normalized = names.map((name) =>
@@ -243,7 +266,12 @@ function canCrossMerge(a: ScrapedEntry, b: ScrapedEntry): boolean {
   const hasExplicitReference = sharesExplicitReference(a, b)
   const hasNumericVariantBase = sharesNumericVariantBase(a, b)
   const hasGuestVariantOverlap = sharesGuestFamilyVariantOverlap(a, b)
-  if (!hasExplicitReference && !hasNumericVariantBase && !hasGuestVariantOverlap) return false
+  const hasPetEvolutionChain = sharesPetEvolutionChain(a, b)
+  if (!hasExplicitReference && !hasNumericVariantBase && !hasGuestVariantOverlap && !hasPetEvolutionChain) {
+    return false
+  }
+
+  if (hasPetEvolutionChain) return true
 
   if (a.type === 'guest') {
     if (hasNumericVariantBase || hasGuestVariantOverlap) return true
@@ -629,7 +657,7 @@ export function canonicalizePromotedRelationships(items: Array<ScrapedEntry>): A
     nameToCanonical.get(name.toLowerCase()) ??
     nameToCanonical.get(normalizeRefLookupName(name)) ?? { slug: fallbackSlug, type: fallbackType }
 
-  return items.map((item) => {
+  const canonicalized = items.map((item) => {
     if (isItemFamily(item)) {
       const alsoSee = item.shared.alsoSee
         ?.map((ref) => {
@@ -672,5 +700,92 @@ export function canonicalizePromotedRelationships(items: Array<ScrapedEntry>): A
         return { ...evolution, resultSlug: resolved.slug, resultType: resolved.type }
       }),
     }
+  })
+
+  return addReciprocalAlsoSeeLinks(canonicalized)
+}
+
+function getCanonicalAlsoSeeRefs(item: ScrapedEntry): AlsoSeeRef[] {
+  return isItemFamily(item) ? (item.shared.alsoSee ?? []) : item.alsoSee
+}
+
+function withCanonicalAlsoSeeRefs(item: ScrapedEntry, refs: AlsoSeeRef[]): ScrapedEntry {
+  const dedupedRefs = Array.from(
+    new Map(
+      refs
+        .filter((ref) => ref.slug !== item.slug)
+        .map((ref) => [`${ref.type}:${ref.slug}`, ref])
+    ).values()
+  ).sort((a, b) => compareTitles(a.name, b.name))
+
+  if (isItemFamily(item)) {
+    const { alsoSee: _alsoSee, ...sharedWithoutAlsoSee } = item.shared
+    return {
+      ...item,
+      shared: {
+        ...sharedWithoutAlsoSee,
+        ...(dedupedRefs.length > 0 ? { alsoSee: dedupedRefs } : {}),
+      },
+    }
+  }
+
+  return {
+    ...item,
+    alsoSee: dedupedRefs.map((ref) => ({
+      ...ref,
+      type: ref.type as EntryType,
+    })),
+  }
+}
+
+function addReciprocalAlsoSeeLinks(items: Array<ScrapedEntry>): Array<ScrapedEntry> {
+  const itemBySlug = new Map(items.map((item) => [item.slug, item]))
+  const relatedBySlug = new Map<string, Set<string>>()
+
+  const ensureSet = (slug: string) => {
+    const existing = relatedBySlug.get(slug)
+    if (existing) return existing
+    const created = new Set<string>()
+    relatedBySlug.set(slug, created)
+    return created
+  }
+
+  for (const item of items) {
+    const explicitRelatedSlugs = getCanonicalAlsoSeeRefs(item)
+      .map((ref) => ref.slug)
+      .filter((slug) => itemBySlug.has(slug) && slug !== item.slug)
+    if (explicitRelatedSlugs.length === 0) continue
+
+    const cluster = [item.slug, ...explicitRelatedSlugs]
+    for (const sourceSlug of cluster) {
+      const related = ensureSet(sourceSlug)
+      for (const targetSlug of cluster) {
+        if (targetSlug !== sourceSlug) related.add(targetSlug)
+      }
+    }
+  }
+
+  if (relatedBySlug.size === 0) return items
+
+  return items.map((item) => {
+    const relatedSlugs = relatedBySlug.get(item.slug)
+    if (!relatedSlugs || relatedSlugs.size === 0) return item
+
+    const existingRefs = getCanonicalAlsoSeeRefs(item)
+    const refsByKey = new Map(existingRefs.map((ref) => [`${ref.type}:${ref.slug}`, ref]))
+
+    for (const slug of relatedSlugs) {
+      const relatedItem = itemBySlug.get(slug)
+      if (!relatedItem) continue
+      const key = `${relatedItem.type}:${relatedItem.slug}`
+      if (refsByKey.has(key)) continue
+      refsByKey.set(key, {
+        name: getDisplayName(relatedItem),
+        slug: relatedItem.slug,
+        type: relatedItem.type as EntryType,
+      })
+    }
+
+    return withCanonicalAlsoSeeRefs(item, Array.from(refsByKey.values()))
   })
 }

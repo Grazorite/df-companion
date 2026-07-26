@@ -1,3 +1,5 @@
+import type { FamilySourceRef } from './item'
+
 export type EntryType = 'pet' | 'guest'
 
 export type PriceType = 'gold' | 'dc' | 'dm' | 'free' | 'merge'
@@ -154,6 +156,7 @@ export interface Pet {
   imageUrl?: string        // Full pet image URL
   alternativeImages?: Array<{ url: string; caption: string }>  // Alternative images with captions
   forumUrl: string
+  sourceLinks?: FamilySourceRef[] // Additional external/source links beyond the forum post
   notes?: string           // Bullet-separated notes with " • "
   alsoSee: AlsoSeeRef[]   // Explicit typed cross-references
 

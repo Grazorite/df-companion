@@ -10,6 +10,20 @@ export interface WeaponSubtypeMeta {
   shortDescription: string
 }
 
+export interface WeaponSpecial {
+  activation: 'on-hit' | 'manual'
+  trigger: string
+  effect: string
+  imageUrl?: string
+  cooldown?: string
+  chargeTime?: string
+}
+
+export interface ArmorCustomization {
+  modifies: string
+  appearance: string
+}
+
 export interface Weapon {
   id: string
   name: string
@@ -27,6 +41,8 @@ export interface Weapon {
   stats?: string
   resists?: string
   ability?: string
+  weaponSpecial?: WeaponSpecial
+  armorCustomization?: ArmorCustomization
   rarity?: string
   obtainMethods: ObtainVariant[]
   notes?: string
@@ -36,6 +52,8 @@ export interface Weapon {
   dcRequired?: boolean
   dmRequired?: boolean
   isTemp?: boolean
+  hasSpecial?: boolean
+  hasArmorCustomization?: boolean
   isCosmetic?: boolean
   isRare?: boolean
   isSeasonal?: boolean
@@ -46,6 +64,12 @@ export interface Weapon {
 export type WeaponFamily = ItemFamily & {
   type: 'weapon'
   subtype: WeaponSubtype
+  shared: ItemFamily['shared'] & {
+    weaponSpecial?: WeaponSpecial
+    armorCustomization?: ArmorCustomization
+  }
+  hasSpecial?: boolean
+  hasArmorCustomization?: boolean
 }
 
 export type WeaponEntry = Weapon | WeaponFamily
@@ -53,7 +77,16 @@ export type WeaponEntry = Weapon | WeaponFamily
 export interface WeaponFilters {
   query?: string
   access?: Array<'multi' | 'free' | 'merge' | 'dc' | 'dm' | 'da'>
-  categories?: Array<'cosmetic' | 'temp' | 'rare' | 'seasonal' | 'special-offer' | 'retired'>
+  categories?: Array<
+    | 'armor-customization'
+    | 'special'
+    | 'cosmetic'
+    | 'temp'
+    | 'rare'
+    | 'seasonal'
+    | 'special-offer'
+    | 'retired'
+  >
   elements?: string[]
 }
 

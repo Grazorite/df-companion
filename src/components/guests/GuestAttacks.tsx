@@ -1,9 +1,11 @@
 import { useState } from 'react'
 import { ChevronDown, ImageOff } from 'lucide-react'
 import type { GuestAttack } from '../../types/pet'
+import NotesList from '../shared/NotesList'
 
 interface GuestAttacksProps {
   attacks: GuestAttack[]
+  heading?: string
 }
 
 function AttackButton({ imageUrl, name }: { imageUrl?: string; name: string }) {
@@ -34,8 +36,26 @@ function AttackButton({ imageUrl, name }: { imageUrl?: string; name: string }) {
   )
 }
 
+function splitEffectAndOtherInformation(effect: string): {
+  effectText: string
+  otherInformation?: string
+} {
+  const lines = effect.split('\n')
+  const firstBulletIndex = lines.findIndex((line) => /^\s*[•\-*]\s+/.test(line))
+
+  if (firstBulletIndex <= 0) {
+    return { effectText: effect.trim() }
+  }
+
+  return {
+    effectText: lines.slice(0, firstBulletIndex).join('\n').trim(),
+    otherInformation: lines.slice(firstBulletIndex).join('\n').trim(),
+  }
+}
+
 function AttackCard({ attack, defaultOpen = false }: { attack: GuestAttack; defaultOpen?: boolean }) {
   const [isOpen, setIsOpen] = useState(defaultOpen)
+  const { effectText, otherInformation } = splitEffectAndOtherInformation(attack.effect)
   
   return (
     <div className="bg-bg-surface border border-border-default rounded-lg overflow-hidden">
@@ -80,9 +100,11 @@ function AttackCard({ attack, defaultOpen = false }: { attack: GuestAttack; defa
           )}
           
           {/* Effect - highlighted */}
-          <p className="text-text-secondary text-sm leading-relaxed mt-3 mb-4 whitespace-pre-line">
-            {attack.effect}
-          </p>
+          {effectText && (
+            <p className="text-text-secondary text-sm leading-relaxed mt-3 mb-4 whitespace-pre-line">
+              {effectText}
+            </p>
+          )}
           
           {/* Stats table */}
           <div className="grid grid-cols-4 gap-2 text-center bg-bg-base rounded-lg p-3">
@@ -91,7 +113,9 @@ function AttackCard({ attack, defaultOpen = false }: { attack: GuestAttack; defa
               <p className="text-xs font-medium text-text-secondary">{attack.manaCost || '—'}</p>
             </div>
             <div>
-              <p className="text-[10px] text-text-muted uppercase tracking-wider mb-0.5">CD</p>
+              <p className="text-[10px] text-text-muted uppercase tracking-wider mb-0.5">
+                Cooldown
+              </p>
               <p className="text-xs font-medium text-text-secondary">{attack.cooldown || '—'}</p>
             </div>
             <div>
@@ -103,24 +127,31 @@ function AttackCard({ attack, defaultOpen = false }: { attack: GuestAttack; defa
               <p className="text-xs font-medium text-text-secondary">{attack.element || '—'}</p>
             </div>
           </div>
+
+          {otherInformation && (
+            <div className="mt-4 border-t border-border-default pt-4">
+              <NotesList notes={otherInformation} />
+            </div>
+          )}
         </div>
       )}
     </div>
   )
 }
 
-export default function GuestAttacks({ attacks }: GuestAttacksProps) {
+export default function GuestAttacks({ attacks, heading }: GuestAttacksProps) {
   if (!attacks || attacks.length === 0) return null
   
   // Filter out "Skip" attack
   const filteredAttacks = attacks.filter(a => a.name.toLowerCase() !== 'skip')
   
   if (filteredAttacks.length === 0) return null
+  const sectionHeading = heading ?? `Attacks (${filteredAttacks.length})`
   
   return (
     <section aria-labelledby="attacks-heading" className="mb-5">
       <h2 id="attacks-heading" className="text-xs font-semibold text-text-muted uppercase tracking-wider mb-3">
-        Attacks ({filteredAttacks.length})
+        {sectionHeading}
       </h2>
       <div className="space-y-3">
         {filteredAttacks.map((attack, index) => (

@@ -8,30 +8,36 @@
     "description": "An entirely decorative golden spear once used by the Abyssal Tribe for ceremonial purposes. Despite its age, it has resisted corruption, keeping a shining gleam. (Cosmetic)",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22408271",
     "releaseDate": "",
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AbyssalAureateI.png",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AbyssalAureateVI.png",
     "alternativeImages": [
       {
+        "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AbyssalAureateI.png",
+        "caption": "I"
+      },
+      {
         "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AbyssalAureateII.png",
-        "caption": "Alternative 1"
+        "caption": "II"
       },
       {
         "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AbyssalAureateIII.png",
-        "caption": "Alternative 2"
+        "caption": "III"
       },
       {
         "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AbyssalAureateIV.png",
-        "caption": "Alternative 3"
+        "caption": "IV"
       },
       {
         "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AbyssalAureateV.png",
-        "caption": "Alternative 4"
+        "caption": "V"
       },
       {
         "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AbyssalAureateVI.png",
-        "caption": "Alternative 5"
+        "caption": "VI (Default)"
       }
     ],
-    "elements": ["MET"],
+    "elements": [
+      "MET"
+    ],
     "level": "1",
     "damage": "0-0",
     "stats": "None",
@@ -48,77 +54,624 @@
         "dcRequired": true
       }
     ],
-    "notes": "Click on the bottom while equipped or shown to cycle through the prior tiers' appearances and return to its default state; weapon is animated between transitions.\nI\nII\nIII\nIV\nV\nVI (Default)",
+    "notes": "Click on the bottom while equipped or shown to cycle through the prior tiers' appearances and return to its default state; weapon is animated between transitions.",
     "alsoSee": [
       {
-        "name": "Abyssal Heart (I-VI)",
-        "slug": "weapon-abyssal-heart-i-vi",
+        "name": "Abyssal Heart",
+        "slug": "weapon-abyssal-heart",
         "type": "weapon",
         "url": "https://forums2.battleon.com/f/tm.asp?m=22407843"
       }
     ],
-    "tags": ["met", "merge"],
+    "tags": [
+      "met",
+      "merge"
+    ],
     "daRequired": false,
     "dcRequired": true,
     "isCosmetic": true,
     "isSpecialOffer": true
   },
   {
-    "id": "weapon-abyssal-elf-scepter-i-vii",
-    "name": "Abyssal Elf Scepter (I-VII)",
-    "slug": "weapon-abyssal-elf-scepter-i-vii",
+    "id": "weapon-abyssal-elf-scepter",
+    "familyName": "Abyssal Elf Scepter",
+    "slug": "weapon-abyssal-elf-scepter",
+    "aliasSlugs": [
+      "weapon-abyssal-elf-scepter-i-vii"
+    ],
     "type": "weapon",
     "subtype": "scythe",
-    "description": "You found this curious scepter under your bed after you woke up. It has \"Property of Remthalas\" scribbled on the handle. I'm sure it's perfectly safe to use. Definitely not a trap.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22368148",
-    "releaseDate": "",
-    "elements": ["WAT"],
-    "level": "30",
-    "damage": "30-70",
-    "stats": "Crit +3, Magic Def +2, Pierce Def +2, Melee Def +2, END +4, CHA +4, INT +4, DEX +4, STR +4, Bonus +3",
-    "resists": "Water +5, Darkness +5, Light +5",
-    "rarity": "8",
-    "obtainMethods": [
+    "familyOrigin": "same-thread-multi-post",
+    "familySources": [],
+    "shared": {
+      "description": "You found this curious scepter under your bed after you woke up. It has \"Property of Remthalas\" scribbled on the handle. I'm sure it's perfectly safe to use. Definitely not a trap.",
+      "imageUrl": "https://i.imgur.com/vX94CkN.png",
+      "notes": "DC version's name is erroneously 'Abyssa Elf Scepter VI' instead of 'Abyssal Elf Scepter VI'; DA version's name was fixed in early 2021.\nWeapons are animated; yellow lights spin in a circular motion at the tip of the scepter."
+    },
+    "levelVariants": [
       {
-        "location": "Ex Somniis Fabula",
-        "price": "N/A",
-        "priceType": "free",
-        "sellback": "10 Gold",
-        "daRequired": false
+        "levelNumber": 1,
+        "levelDisplay": "I",
+        "actualLevel": 30,
+        "variantName": "I",
+        "name": "Abyssal Elf Scepter I",
+        "damage": "30-70",
+        "stats": "Crit +3, Magic Def +2, Pierce Def +2, Melee Def +2, END +4, CHA +4, INT +4, DEX +4, STR +4, Bonus +3",
+        "obtainVariants": [
+          {
+            "location": "Ex Somniis Fabula",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "10 Gold",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22368148",
+        "description": "You found this curious scepter under your bed after you woke up. It has \"Property of Remthalas\" scribbled on the handle. I'm sure it's perfectly safe to use. Definitely not a trap.",
+        "element": "WAT",
+        "resists": "Water +5, Darkness +5, Light +5",
+        "rarity": "8"
+      },
+      {
+        "levelNumber": 1,
+        "levelDisplay": "I",
+        "actualLevel": 30,
+        "variantName": "I (DC)",
+        "name": "Abyssal Elf Scepter I",
+        "damage": "30-70",
+        "stats": "Crit +3, Magic Def +2, Pierce Def +2, Melee Def +2, END +4, CHA +4, INT +4, DEX +4, STR +4, Bonus +3",
+        "obtainVariants": [
+          {
+            "location": "ESF Loot for DCs",
+            "price": "100 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "90 DC (<24 hours) / 25 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22368148",
+        "description": "You found this curious scepter under your bed after you woke up. It has \"Property of Remthalas\" scribbled on the handle. I'm sure it's perfectly safe to use. Definitely not a trap.",
+        "element": "WAT",
+        "resists": "Water +5, Darkness +5, Light +5",
+        "rarity": "8"
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "II",
+        "actualLevel": 40,
+        "variantName": "II",
+        "name": "Abyssal Elf Scepter II",
+        "damage": "39-79",
+        "stats": "Block +1, Dodge +1, Parry +1, Crit +5, Magic Def +3, Pierce Def +3, Melee Def +3, END +4, CHA +4, INT +5, DEX +5, STR +5, Bonus +5",
+        "obtainVariants": [
+          {
+            "location": "Ex Somniis Fabula",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "13 Gold",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22368148",
+        "description": "You found this curious scepter under your bed after you woke up. It has \"Property of Remthalas\" scribbled on the handle. I'm sure it's perfectly safe to use. Definitely not a trap.",
+        "element": "WAT",
+        "resists": "Water +6, Darkness +6, Light +6",
+        "rarity": "10"
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "II",
+        "actualLevel": 40,
+        "variantName": "II (DC)",
+        "name": "Abyssal Elf Scepter II",
+        "damage": "39-79",
+        "stats": "Block +1, Dodge +1, Parry +1, Crit +5, Magic Def +3, Pierce Def +3, Melee Def +3, END +4, CHA +4, INT +5, DEX +5, STR +5, Bonus +5",
+        "obtainVariants": [
+          {
+            "location": "ESF Loot for DCs",
+            "price": "125 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "113 DC (<24 hours) / 32 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22368148",
+        "description": "You found this curious scepter under your bed after you woke up. It has \"Property of Remthalas\" scribbled on the handle. I'm sure it's perfectly safe to use. Definitely not a trap.",
+        "element": "WAT",
+        "resists": "Water +6, Darkness +6, Light +6",
+        "rarity": "10"
+      },
+      {
+        "levelNumber": 3,
+        "levelDisplay": "III",
+        "actualLevel": 50,
+        "variantName": "III",
+        "name": "Abyssal Elf Scepter III",
+        "damage": "46-86",
+        "stats": "Block +3, Dodge +3, Parry +3, Crit +6, Magic Def +4, Pierce Def +4, Melee Def +4, END +6, CHA +6, INT +6, DEX +6, STR +6, Bonus +6",
+        "obtainVariants": [
+          {
+            "location": "Ex Somniis Fabula",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "15 Gold",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22368148",
+        "description": "You found this curious scepter under your bed after you woke up. It has \"Property of Remthalas\" scribbled on the handle. I'm sure it's perfectly safe to use. Definitely not a trap.",
+        "element": "WAT",
+        "resists": "Water +7, Darkness +7, Light +7",
+        "rarity": "10"
+      },
+      {
+        "levelNumber": 3,
+        "levelDisplay": "III",
+        "actualLevel": 50,
+        "variantName": "III (DC)",
+        "name": "Abyssal Elf Scepter III",
+        "damage": "46-86",
+        "stats": "Block +3, Dodge +3, Parry +3, Crit +6, Magic Def +4, Pierce Def +4, Melee Def +4, END +6, CHA +6, INT +6, DEX +6, STR +6, Bonus +6",
+        "obtainVariants": [
+          {
+            "location": "ESF Loot for DCs",
+            "price": "150 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "135 DC (<24 hours) / 38 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22368148",
+        "description": "You found this curious scepter under your bed after you woke up. It has \"Property of Remthalas\" scribbled on the handle. I'm sure it's perfectly safe to use. Definitely not a trap.",
+        "element": "WAT",
+        "resists": "Water +7, Darkness +7, Light +7",
+        "rarity": "10"
+      },
+      {
+        "levelNumber": 4,
+        "levelDisplay": "IV",
+        "actualLevel": 60,
+        "variantName": "IV",
+        "name": "Abyssal Elf Scepter IV",
+        "damage": "53-93",
+        "stats": "Block +3, Dodge +3, Parry +3, Crit +7, Magic Def +5, Pierce Def +5, Melee Def +5, END +6, CHA +6, INT +8, DEX +8, STR +8, Bonus +7",
+        "obtainVariants": [
+          {
+            "location": "Ex Somniis Fabula",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "18 Gold",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22368148",
+        "description": "You found this curious scepter under your bed after you woke up. It has \"Property of Remthalas\" scribbled on the handle. I'm sure it's perfectly safe to use. Definitely not a trap.",
+        "element": "WAT",
+        "resists": "Water +8, Darkness +8, Light +8",
+        "rarity": "15"
+      },
+      {
+        "levelNumber": 4,
+        "levelDisplay": "IV",
+        "actualLevel": 60,
+        "variantName": "IV (DC)",
+        "name": "Abyssal Elf Scepter IV",
+        "damage": "53-93",
+        "stats": "Block +3, Dodge +3, Parry +3, Crit +7, Magic Def +5, Pierce Def +5, Melee Def +5, END +6, CHA +6, INT +8, DEX +8, STR +8, Bonus +7",
+        "obtainVariants": [
+          {
+            "location": "ESF Loot for DCs",
+            "price": "175 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "158 DC (<24 hours) / 44 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22368148",
+        "description": "You found this curious scepter under your bed after you woke up. It has \"Property of Remthalas\" scribbled on the handle. I'm sure it's perfectly safe to use. Definitely not a trap.",
+        "element": "WAT",
+        "resists": "Water +8, Darkness +8, Light +8",
+        "rarity": "15"
+      },
+      {
+        "levelNumber": 5,
+        "levelDisplay": "V",
+        "actualLevel": 70,
+        "variantName": "V",
+        "name": "Abyssal Elf Scepter V",
+        "damage": "60-100",
+        "stats": "Block +4, Dodge +4, Parry +4, Crit +8, Magic Def +6, Pierce Def +6, Melee Def +6, END +8, CHA +8, INT +10, DEX +10, STR +10, Bonus +8",
+        "obtainVariants": [
+          {
+            "location": "Ex Somniis Fabula",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "20 Gold",
+            "daRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22368148",
+        "description": "You found this curious scepter under your bed after you woke up. It has \"Property of Remthalas\" scribbled on the handle. I'm sure it's perfectly safe to use. Definitely not a trap. This item requires a Dragon Amulet.",
+        "element": "WAT",
+        "resists": "Water +9, Darkness +9, Light +9",
+        "rarity": "15"
+      },
+      {
+        "levelNumber": 5,
+        "levelDisplay": "V",
+        "actualLevel": 70,
+        "variantName": "V (DC)",
+        "name": "Abyssal Elf Scepter V",
+        "damage": "60-100",
+        "stats": "Block +4, Dodge +4, Parry +4, Crit +8, Magic Def +6, Pierce Def +6, Melee Def +6, END +8, CHA +8, INT +10, DEX +10, STR +10, Bonus +8",
+        "obtainVariants": [
+          {
+            "location": "ESF Loot for DCs",
+            "price": "200 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22368148",
+        "description": "You found this curious scepter under your bed after you woke up. It has \"Property of Remthalas\" scribbled on the handle. I'm sure it's perfectly safe to use. Definitely not a trap. This item requires a Dragon Amulet.",
+        "element": "WAT",
+        "resists": "Water +9, Darkness +9, Light +9",
+        "rarity": "15"
+      },
+      {
+        "levelNumber": 6,
+        "levelDisplay": "VI",
+        "actualLevel": 80,
+        "variantName": "VI",
+        "name": "Abyssal Elf Scepter VI",
+        "damage": "67-107",
+        "stats": "Block +4, Dodge +4, Parry +4, Crit +9, Magic Def +8, Pierce Def +8, Melee Def +8, END +10, CHA +10, INT +14, DEX +14, STR +14, Bonus +9",
+        "obtainVariants": [
+          {
+            "location": "Ex Somniis Fabula",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "23 Gold",
+            "daRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22368148",
+        "description": "You found this curious scepter under your bed after you woke up. It has \"Property of Remthalas\" scribbled on the handle. I'm sure it's perfectly safe to use. Definitely not a trap. This item requires a Dragon Amulet.",
+        "element": "WAT",
+        "resists": "Water +10, Darkness +10, Light +10",
+        "rarity": "25"
+      },
+      {
+        "levelNumber": 6,
+        "levelDisplay": "VI",
+        "actualLevel": 80,
+        "variantName": "VI (DC)",
+        "name": "Abyssal Elf Scepter VI",
+        "damage": "67-107",
+        "stats": "Block +4, Dodge +4, Parry +4, Crit +9, Magic Def +8, Pierce Def +8, Melee Def +8, END +10, CHA +10, INT +14, DEX +14, STR +14, Bonus +9",
+        "obtainVariants": [
+          {
+            "location": "ESF Loot for DCs",
+            "price": "225 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "203 DC (<24 hours) / 57 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22368148",
+        "description": "You found this curious scepter under your bed after you woke up. It has \"Property of Remthalas\" scribbled on the handle. I'm sure it's perfectly safe to use. Definitely not a trap. This item requires a Dragon Amulet.",
+        "element": "WAT",
+        "resists": "Water +10, Darkness +10, Light +10",
+        "rarity": "25",
+        "notes": "DC version's name is erroneously 'Abyssa Elf Scepter VI' instead of 'Abyssal Elf Scepter VI'; DA version's name was fixed in early 2021."
+      },
+      {
+        "levelNumber": 7,
+        "levelDisplay": "VII",
+        "actualLevel": 90,
+        "variantName": "VII",
+        "name": "Abyssal Elf Scepter VII",
+        "damage": "73-113",
+        "stats": "Block +5, Dodge +5, Parry +5, Crit +10, Magic Def +9, Pierce Def +9, Melee Def +9, END +12, CHA +12, INT +18, DEX +18, STR +18, Bonus +10",
+        "obtainVariants": [
+          {
+            "location": "Ex Somniis Fabula",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "25 Gold",
+            "daRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22368148",
+        "description": "You found this curious scepter under your bed after you woke up. It has \"Property of Remthalas\" scribbled on the handle. I'm sure it's perfectly safe to use. Definitely not a trap. This item requires a Dragon Amulet.",
+        "element": "WAT",
+        "resists": "Water +10, Darkness +10, Light +10, Health -5",
+        "rarity": "25"
+      },
+      {
+        "levelNumber": 7,
+        "levelDisplay": "VII",
+        "actualLevel": 90,
+        "variantName": "VII (DC)",
+        "name": "Abyssal Elf Scepter VII",
+        "damage": "73-113",
+        "stats": "Block +5, Dodge +5, Parry +5, Crit +10, Magic Def +9, Pierce Def +9, Melee Def +9, END +12, CHA +12, INT +18, DEX +18, STR +18, Bonus +10",
+        "obtainVariants": [
+          {
+            "location": "ESF Loot for DCs",
+            "price": "250 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "225 DC (<24 hours) / 63 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22368148",
+        "description": "You found this curious scepter under your bed after you woke up. It has \"Property of Remthalas\" scribbled on the handle. I'm sure it's perfectly safe to use. Definitely not a trap. This item requires a Dragon Amulet.",
+        "element": "WAT",
+        "resists": "Water +10, Darkness +10, Light +10, Health -5",
+        "rarity": "25"
       }
     ],
-    "tags": ["wat", "free"],
-    "daRequired": false
+    "category": "Weapon",
+    "releaseDate": "",
+    "tags": [
+      "wat",
+      "free",
+      "dc"
+    ],
+    "hasDA": true,
+    "hasDC": true,
+    "hasDM": false,
+    "hasFree": true,
+    "hasMerge": false,
+    "elements": [
+      "WAT"
+    ],
+    "levelRange": "I-VII"
   },
   {
-    "id": "weapon-abyssal-heart-i-vi",
-    "name": "Abyssal Heart (I-VI)",
-    "slug": "weapon-abyssal-heart-i-vi",
+    "id": "weapon-abyssal-heart",
+    "familyName": "Abyssal Heart",
+    "slug": "weapon-abyssal-heart",
+    "aliasSlugs": [
+      "weapon-abyssal-heart-i-vi"
+    ],
     "type": "weapon",
     "subtype": "scythe",
-    "description": "This unassuming scepter, once wielded by the Abyssal Elves, still hums with energy. It has potential yet to be unlocked... but what else? (Cosmetic)",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22407843",
-    "releaseDate": "",
-    "elements": ["EVI"],
-    "level": "1",
-    "damage": "0-0",
-    "stats": "None",
-    "resists": "None",
-    "rarity": "0",
-    "obtainMethods": [
+    "familyOrigin": "same-thread-multi-post",
+    "familySources": [],
+    "shared": {
+      "description": "This unassuming scepter, once wielded by the Abyssal Elves, still hums with energy. It has potential yet to be unlocked... but what else? (Cosmetic)",
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AbyssalHeartVI.png",
+      "alternativeImages": [
+        {
+          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AbyssalHeartI.png",
+          "caption": "I"
+        },
+        {
+          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AbyssalHeartII.png",
+          "caption": "II"
+        },
+        {
+          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AbyssalHeartIII.png",
+          "caption": "III"
+        },
+        {
+          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AbyssalHeartIV.png",
+          "caption": "IV"
+        },
+        {
+          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AbyssalHeartV.png",
+          "caption": "V"
+        },
+        {
+          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AbyssalHeartVI.png",
+          "caption": "VI (Default)"
+        },
+        {
+          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AbyssalHeartVI-2.png",
+          "caption": "VI (Clicked)"
+        }
+      ],
+      "notes": "Previously had the descriptions:\n  • From  January 14th, 2023 until  January 20th, 2023: A spear once used by the lost Abyssal Elves. Be careful, lest it consume you as well. Click the bottom to change its appearance. In the future, used to change the appearance of specific Abyssal gear. (Cosmetic) (Future Catalyst for Kathool Adept)\n  • From  January 20th, 2023 until  February 3rd, 2023: A spear once used by the lost Abyssal Elves. Be careful, lest it consume you as well. Click the bottom to change its appearance. Click the top to change the appearance of specific Abyssal gear. (Cosmetic) ( Catalyst for Kathool Adept)\nClick on the heart of the top of the weapon while equipped or shown to change between two appearances; this will also change the appearance of any  Abyssal Warhelm or  Abyssal Shroud cape equipped or shown.\nOwn this item to unlock the Abyssal  Armor Customization options for the  Kathool Adept class.\nClick on the bottom of tiers II-VI while equipped or shown to cycle through the prior tiers' appearances and return to its default state; weapons are animated between transitions.",
+      "alsoSee": [
+        {
+          "name": "Abyssal Aureate",
+          "slug": "weapon-abyssal-aureate",
+          "type": "weapon",
+          "url": "https://forums2.battleon.com/f/tm.asp?m=22408271"
+        }
+      ],
+      "armorCustomization": {
+        "appearance": "Abyssal",
+        "modifies": "Kathool Adept"
+      }
+    },
+    "levelVariants": [
       {
-        "location": "Abyssal Heart (Shop)",
-        "price": "800 Dragon Coins",
-        "priceType": "dc",
-        "sellback": "720 DC (<24 hours) / 200 DC (>24 hours)",
-        "daRequired": false,
-        "dcRequired": true
+        "levelNumber": 1,
+        "levelDisplay": "I",
+        "actualLevel": 1,
+        "variantName": "I",
+        "name": "Abyssal Heart I",
+        "damage": "0-0",
+        "stats": "None",
+        "obtainVariants": [
+          {
+            "location": "Abyssal Heart (Shop)",
+            "price": "800 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "720 DC (<24 hours) / 200 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22407843",
+        "description": "This unassuming scepter, once wielded by the Abyssal Elves, still hums with energy. It has potential yet to be unlocked... but what else? (Cosmetic)",
+        "element": "EVI",
+        "resists": "None",
+        "rarity": "0"
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "II",
+        "actualLevel": 1,
+        "variantName": "II",
+        "name": "Abyssal Heart II",
+        "damage": "0-0",
+        "stats": "None",
+        "obtainVariants": [
+          {
+            "location": "Abyssal Heart Upgrades",
+            "price": "N/A",
+            "priceType": "merge",
+            "sellback": "200 Dragon Coins",
+            "requiredItems": "1 Abyssal Heart I & 25 Defender's Medal",
+            "daRequired": false,
+            "dcRequired": true,
+            "dmRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22407843",
+        "description": "This unassuming scepter, once wielded by the Abyssal Elves, still hums with energy. Click the bottom to change its appearance. It has potential yet to be unlocked... but what else? (Cosmetic)",
+        "element": "EVI",
+        "resists": "None",
+        "rarity": "0"
+      },
+      {
+        "levelNumber": 3,
+        "levelDisplay": "III",
+        "actualLevel": 1,
+        "variantName": "III",
+        "name": "Abyssal Heart III",
+        "damage": "0-0",
+        "stats": "None",
+        "obtainVariants": [
+          {
+            "location": "Abyssal Heart Upgrades",
+            "price": "N/A",
+            "priceType": "merge",
+            "sellback": "200 Dragon Coins",
+            "requiredItems": "1 Abyssal Heart II & 25 Defender's Medal",
+            "daRequired": false,
+            "dcRequired": true,
+            "dmRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22407843",
+        "description": "A short spear once used by the Abyssal Elves in defense of their tribe and homeland. Click the bottom to change its appearance. It has potential yet to be unlocked... but what else? (Cosmetic)",
+        "element": "EVI",
+        "resists": "None",
+        "rarity": "0"
+      },
+      {
+        "levelNumber": 4,
+        "levelDisplay": "IV",
+        "actualLevel": 1,
+        "variantName": "IV",
+        "name": "Abyssal Heart IV",
+        "damage": "0-0",
+        "stats": "None",
+        "obtainVariants": [
+          {
+            "location": "Abyssal Heart Upgrades",
+            "price": "N/A",
+            "priceType": "merge",
+            "sellback": "200 Dragon Coins",
+            "requiredItems": "1 Abyssal Heart III & 25 Defender's Medal",
+            "daRequired": false,
+            "dcRequired": true,
+            "dmRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22407843",
+        "description": "A short spear once used by the Abyssal Elves in defense of their tribe and homeland. Click the bottom to change its appearance. It has potential yet to be unlocked... but what else? (Cosmetic)",
+        "element": "EVI",
+        "resists": "None",
+        "rarity": "0"
+      },
+      {
+        "levelNumber": 5,
+        "levelDisplay": "V",
+        "actualLevel": 1,
+        "variantName": "V",
+        "name": "Abyssal Heart V",
+        "damage": "0-0",
+        "stats": "None",
+        "obtainVariants": [
+          {
+            "location": "Abyssal Heart Upgrades",
+            "price": "N/A",
+            "priceType": "merge",
+            "sellback": "200 Dragon Coins",
+            "requiredItems": "1 Abyssal Heart IV & 25 Defender's Medal",
+            "daRequired": false,
+            "dcRequired": true,
+            "dmRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22407843",
+        "description": "A spear once used by the Abyssal Elves. It glows with power, ever seeking. Almost a hunger. Click the bottom to change its appearance. It has potential yet to be unlocked... (Cosmetic)",
+        "element": "EVI",
+        "resists": "None",
+        "rarity": "0"
+      },
+      {
+        "levelNumber": 6,
+        "levelDisplay": "VI",
+        "actualLevel": 1,
+        "variantName": "VI",
+        "name": "Abyssal Heart VI",
+        "damage": "0-0",
+        "stats": "None",
+        "obtainVariants": [
+          {
+            "location": "Abyssal Heart Upgrades",
+            "price": "N/A",
+            "priceType": "merge",
+            "sellback": "200 Dragon Coins",
+            "requiredItems": "1 Abyssal Heart V & 50 Defender's Medal",
+            "daRequired": false,
+            "dcRequired": true,
+            "dmRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22407843",
+        "description": "A spear once used by the lost Abyssal Elves. Be careful, lest it consume you as well. Click the bottom to change its appearance. Click the top to change the appearance of the Abyssal Warhelm/Shroud. (Cosmetic) (Catalyst for Kathool Adept)",
+        "element": "EVI",
+        "resists": "None",
+        "rarity": "0"
       }
     ],
-    "tags": ["evi", "dc"],
-    "daRequired": false,
-    "dcRequired": true,
-    "isCosmetic": true
+    "category": "Weapon",
+    "releaseDate": "",
+    "tags": [
+      "evi",
+      "dc",
+      "merge",
+      "armor-customization"
+    ],
+    "hasDA": false,
+    "hasDC": true,
+    "hasDM": true,
+    "hasFree": false,
+    "hasMerge": true,
+    "elements": [
+      "EVI"
+    ],
+    "hasArmorCustomization": true,
+    "isCosmetic": true,
+    "levelRange": "I-VI"
   },
   {
     "id": "weapon-abyssal-swordfish",
@@ -130,7 +683,9 @@
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22408008",
     "releaseDate": "",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AbyssalSwordfish.png",
-    "elements": ["EVI"],
+    "elements": [
+      "EVI"
+    ],
     "level": "1",
     "damage": "0-0",
     "stats": "None",
@@ -148,7 +703,10 @@
         "dmRequired": true
       }
     ],
-    "tags": ["evi", "merge"],
+    "tags": [
+      "evi",
+      "merge"
+    ],
     "daRequired": false,
     "dcRequired": true,
     "dmRequired": true,
@@ -164,7 +722,9 @@
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21818845",
     "releaseDate": "",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/weapons/AccursedScimitar.png",
-    "elements": ["MET"],
+    "elements": [
+      "MET"
+    ],
     "level": "78",
     "damage": "73-101",
     "stats": "Block +1, Dodge +1, Parry +1, Crit +10, Magic Def +7, Pierce Def +7, Melee Def +7, WIS +8, END +6, CHA +8, LUK -4, INT +11, DEX +11, STR +11, Bonus +8",
@@ -241,7 +801,10 @@
         "url": "https://forums2.battleon.com/f/tm.asp?m=21818822"
       }
     ],
-    "tags": ["met", "free"],
+    "tags": [
+      "met",
+      "free"
+    ],
     "daRequired": true
   },
   {
@@ -254,7 +817,9 @@
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22408009",
     "releaseDate": "",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Adept'sSpear.png",
-    "elements": ["EVI"],
+    "elements": [
+      "EVI"
+    ],
     "level": "1",
     "damage": "0-0",
     "stats": "None",
@@ -272,7 +837,10 @@
         "dmRequired": true
       }
     ],
-    "tags": ["evi", "merge"],
+    "tags": [
+      "evi",
+      "merge"
+    ],
     "daRequired": false,
     "dcRequired": true,
     "dmRequired": true,
@@ -287,11 +855,21 @@
     "description": "This spear is your trusty companion! Enhanced with the fang of a hydra, it has taken its first steps to glory alongside you! Weapon special (On-Hit): If you have a Dragon Amulet, once per battle, hitting a foe will earn you +10% Exp!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22412387",
     "releaseDate": "",
-    "elements": ["MET"],
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Adventurer'sSpear.png",
+    "elements": [
+      "MET"
+    ],
     "level": "8",
     "damage": "24-26",
     "stats": "Crit +1, INT +1, DEX +1, STR +1, Bonus +1",
     "resists": "All +1, Health -1",
+    "weaponSpecial": {
+      "activation": "on-hit",
+      "trigger": "Your weapon special activates on hit.",
+      "effect": "Upon landing the first hit, permanently apply 'Exp Up' to player. While affected by 'Exp Up', increases Exp gains by +10%. (Rate: 100%)",
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-OnHit.png"
+    },
+    "hasSpecial": true,
     "rarity": "0",
     "obtainMethods": [
       {
@@ -303,7 +881,11 @@
         "daRequired": false
       }
     ],
-    "tags": ["met", "merge"],
+    "notes": "Weapon's special can only be activated once per battle and requires a Dragon Amulet to activate.\nWeapon's special is affected by X-Boost modification, effectively yielding a maximum of +110% Exp rewarded per battle with 10 stacks of  X-Boost: Unlimited.\nWeapon  previously required Level 10 to equip; this was lowered to Level 9 on  March 21st, 2025, before getting lowered even further to Level 8 on  September 5th, 2025.",
+    "tags": [
+      "met",
+      "merge"
+    ],
     "daRequired": false
   },
   {
@@ -316,7 +898,9 @@
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22416607",
     "releaseDate": "",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Aeonrend.png",
-    "elements": ["ENE"],
+    "elements": [
+      "ENE"
+    ],
     "level": "1",
     "damage": "0-0",
     "stats": "None",
@@ -332,7 +916,10 @@
         "dcRequired": true
       }
     ],
-    "tags": ["ene", "dc"],
+    "tags": [
+      "ene",
+      "dc"
+    ],
     "daRequired": false,
     "dcRequired": true,
     "isCosmetic": true
@@ -347,7 +934,9 @@
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20767914",
     "releaseDate": "",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Akriloth'sFervidBane.png",
-    "elements": ["FIR"],
+    "elements": [
+      "FIR"
+    ],
     "level": "50",
     "damage": "55-77",
     "stats": "Dodge +1, Parry +1, Crit +5, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +6, END +6, CHA +5, LUK +5, INT +5, DEX +5, STR +5, Bonus +6",
@@ -388,7 +977,10 @@
         "url": "https://forums2.battleon.com/f/tm.asp?m=20767876"
       }
     ],
-    "tags": ["fir", "free"],
+    "tags": [
+      "fir",
+      "free"
+    ],
     "daRequired": false,
     "isRare": true
   },
@@ -402,7 +994,9 @@
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20767892",
     "releaseDate": "",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Akriloth'sFervidBane.png",
-    "elements": ["FIR"],
+    "elements": [
+      "FIR"
+    ],
     "level": "30",
     "damage": "38-62",
     "stats": "Parry +1, Crit +2, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +4, END +4, CHA +3, LUK +3, INT +3, DEX +3, STR +3, Bonus +3",
@@ -443,7 +1037,10 @@
         "url": "https://forums2.battleon.com/f/tm.asp?m=20767876"
       }
     ],
-    "tags": ["fir", "free"],
+    "tags": [
+      "fir",
+      "free"
+    ],
     "daRequired": false,
     "isRare": true
   },
@@ -457,7 +1054,9 @@
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20767931",
     "releaseDate": "",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Akriloth'sFervidBane.png",
-    "elements": ["FIR"],
+    "elements": [
+      "FIR"
+    ],
     "level": "80",
     "damage": "73-101",
     "stats": "Dodge +2, Parry +2, Crit +8, Magic Def +7, Pierce Def +7, Melee Def +7, WIS +8, END +6, CHA +8, LUK +8, INT +12, DEX +12, STR +12, Bonus +10",
@@ -498,7 +1097,10 @@
         "url": "https://forums2.battleon.com/f/tm.asp?m=20767876"
       }
     ],
-    "tags": ["fir", "free"],
+    "tags": [
+      "fir",
+      "free"
+    ],
     "daRequired": true,
     "isRare": true
   },
@@ -512,7 +1114,9 @@
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20767924",
     "releaseDate": "",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Akriloth'sFervidBane.png",
-    "elements": ["FIR"],
+    "elements": [
+      "FIR"
+    ],
     "level": "70",
     "damage": "68-92",
     "stats": "Dodge +1, Parry +2, Crit +6, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +8, END +6, CHA +6, LUK +6, INT +8, DEX +8, STR +8, Bonus +8",
@@ -553,7 +1157,10 @@
         "url": "https://forums2.battleon.com/f/tm.asp?m=20767876"
       }
     ],
-    "tags": ["fir", "free"],
+    "tags": [
+      "fir",
+      "free"
+    ],
     "daRequired": false,
     "isRare": true
   },
@@ -567,7 +1174,9 @@
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20767876",
     "releaseDate": "",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Akriloth'sFervidBane.png",
-    "elements": ["FIR"],
+    "elements": [
+      "FIR"
+    ],
     "level": "10",
     "damage": "21-33",
     "stats": "Parry +1, Crit +1, WIS +1, END +1, CHA +2, LUK +2, INT +1, DEX +1, STR +1, Bonus +1",
@@ -608,7 +1217,10 @@
         "url": "https://forums2.battleon.com/f/tm.asp?m=20767924"
       }
     ],
-    "tags": ["fir", "free"],
+    "tags": [
+      "fir",
+      "free"
+    ],
     "daRequired": false,
     "isRare": true
   },
@@ -622,7 +1234,9 @@
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22419543",
     "releaseDate": "",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Akriloth'sRevenger.png",
-    "elements": ["FIR"],
+    "elements": [
+      "FIR"
+    ],
     "level": "1",
     "damage": "0-0",
     "stats": "None",
@@ -638,38 +1252,136 @@
         "dcRequired": true
       }
     ],
-    "tags": ["fir", "free"],
+    "tags": [
+      "fir",
+      "free"
+    ],
     "daRequired": false,
     "dcRequired": true,
     "isCosmetic": true
   },
   {
-    "id": "weapon-alina-s-battle-bouquet-staff-all-versions",
-    "name": "Alina's Battle-Bouquet Staff (All Versions)",
-    "slug": "weapon-alina-s-battle-bouquet-staff-all-versions",
+    "id": "weapon-alina-s-battle-bouquet-staff",
+    "familyName": "Alina's Battle-Bouquet Staff",
+    "slug": "weapon-alina-s-battle-bouquet-staff",
+    "aliasSlugs": [
+      "weapon-alina-s-battle-bouquet-staff-all-versions"
+    ],
     "type": "weapon",
     "subtype": "scythe",
-    "description": "Don't be fooled by this floral weapon; defend the ones you love! Crafted by Ghost in honor of Alina's Wedding to Rolith.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20780148",
-    "releaseDate": "",
-    "elements": ["BAC"],
-    "level": "20",
-    "damage": "35-47",
-    "stats": "Dodge +1, Crit +2, WIS +1, END +1, CHA +1, INT +1, Bonus +1",
-    "resists": "Nature +5",
-    "rarity": "1020",
-    "obtainMethods": [
+    "familyOrigin": "same-thread-multi-post",
+    "familySources": [],
+    "shared": {
+      "description": "Don't be fooled by this floral weapon; defend the ones you love! Crafted by Ghost in honor of Alina's Wedding to Rolith.",
+      "imageUrl": "http://i.imgur.com/EBtFJ.jpg"
+    },
+    "levelVariants": [
       {
-        "location": "Alina and Rolith Wedding",
-        "price": "1,020 Gold",
-        "priceType": "gold",
-        "sellback": "102 Gold",
-        "daRequired": true
+        "levelNumber": 20,
+        "levelDisplay": "20",
+        "actualLevel": 20,
+        "name": "Alina's Battle-Bouquet Staff",
+        "damage": "35-47",
+        "stats": "Dodge +1, Crit +2, WIS +1, END +1, CHA +1, INT +1, Bonus +1",
+        "obtainVariants": [
+          {
+            "location": "Alina and Rolith Wedding",
+            "price": "1,020 Gold",
+            "priceType": "gold",
+            "sellback": "102 Gold",
+            "daRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20780148",
+        "description": "Don't be fooled by this floral weapon; defend the ones you love! Crafted by Ghost in honor of Alina's Wedding to Rolith.",
+        "element": "BAC",
+        "resists": "Nature +5",
+        "rarity": "1020"
+      },
+      {
+        "levelNumber": 40,
+        "levelDisplay": "40",
+        "actualLevel": 40,
+        "name": "Alina's Battle-Bouquet Staff",
+        "damage": "54-68",
+        "stats": "Dodge +5, Crit +5, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +2, END +2, CHA +3, INT +5, Bonus +5",
+        "obtainVariants": [
+          {
+            "location": "Alina and Rolith Wedding",
+            "price": "1,020 Gold",
+            "priceType": "gold",
+            "sellback": "102 Gold",
+            "daRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20780148",
+        "description": "Don't be fooled by this floral weapon; defend the ones you love! Crafted by Ghost in honor of Alina's Wedding to Rolith.",
+        "element": "BAC",
+        "resists": "Bacon -5, Poison +1, Fire +3, Water +3, Nature +4",
+        "rarity": "1020"
+      },
+      {
+        "levelNumber": 60,
+        "levelDisplay": "60",
+        "actualLevel": 60,
+        "name": "Alina's Battle Bouquet Staff",
+        "damage": "66-85",
+        "stats": "Dodge +5, Parry +1, Crit +6, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +4, END +4, CHA +6, LUK +2, INT +7, Bonus +6",
+        "obtainVariants": [
+          {
+            "location": "Alina and Rolith Wedding",
+            "price": "1,020 Gold",
+            "priceType": "gold",
+            "sellback": "102 Gold",
+            "daRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20780148",
+        "description": "Don't be fooled by this floral weapon; defend the ones you love! Crafted by Ghost in honor of Alina's Wedding to Rolith.",
+        "element": "BAC",
+        "resists": "Immobility +5, Poison +3, Fire +5, Water +5, Nature +7",
+        "rarity": "1020"
+      },
+      {
+        "levelNumber": 80,
+        "levelDisplay": "80",
+        "actualLevel": 80,
+        "name": "Alina's Battle Bouquet Staff",
+        "damage": "76-99",
+        "stats": "Dodge +2, Parry +2, Crit +9, Magic Def +7, Pierce Def +7, Melee Def +7, WIS +6, END +8, CHA +8, LUK +8, INT +12, Bonus +10",
+        "obtainVariants": [
+          {
+            "location": "Alina and Rolith Wedding",
+            "price": "1,020 Gold",
+            "priceType": "gold",
+            "sellback": "102 Gold",
+            "daRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20780148",
+        "description": "Don't be fooled by this floral weapon; defend the ones you love! Crafted by Ghost in honor of Alina's Wedding to Rolith.",
+        "element": "BAC",
+        "resists": "Immobility +6, Poison +5, Fire +6, Water +6, Nature +8",
+        "rarity": "1020"
       }
     ],
-    "tags": ["bac", "gold"],
-    "daRequired": true,
-    "isRare": true
+    "category": "Weapon",
+    "releaseDate": "",
+    "tags": [
+      "bac",
+      "gold"
+    ],
+    "hasDA": true,
+    "hasDC": false,
+    "hasDM": false,
+    "hasFree": false,
+    "hasMerge": false,
+    "elements": [
+      "BAC"
+    ],
+    "isRare": true,
+    "levelRange": "20-80"
   },
   {
     "id": "weapon-alteon-s-regalia-sword",
@@ -683,11 +1395,17 @@
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Alteon'sRegaliaSword.png",
     "alternativeImages": [
       {
+        "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Alteon'sRegaliaSword.png",
+        "caption": "Default"
+      },
+      {
         "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Alteon'sRegaliaSword-Clicked.png",
-        "caption": "Clicked Appearance"
+        "caption": "Clicked"
       }
     ],
-    "elements": ["ENE"],
+    "elements": [
+      "ENE"
+    ],
     "level": "1",
     "damage": "0-0",
     "stats": "None",
@@ -703,8 +1421,11 @@
         "dcRequired": true
       }
     ],
-    "notes": "Click anywhere on the weapon to change between two appearances.\nDefault\nClicked",
-    "tags": ["ene", "gold"],
+    "notes": "Click anywhere on the weapon to change between two appearances.",
+    "tags": [
+      "ene",
+      "gold"
+    ],
     "daRequired": false,
     "dcRequired": true,
     "isCosmetic": true,
@@ -720,7 +1441,9 @@
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22412939",
     "releaseDate": "",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Alz'ein'sRiftblade.png",
-    "elements": [],
+    "elements": [
+      "???"
+    ],
     "level": "1",
     "damage": "0-0",
     "stats": "None",
@@ -737,40 +1460,128 @@
         "dcRequired": true
       }
     ],
-    "tags": ["merge"],
+    "tags": [
+      "???",
+      "merge"
+    ],
     "daRequired": false,
     "dcRequired": true,
     "isCosmetic": true
   },
   {
-    "id": "weapon-amaterasu-all-versions",
-    "name": "Amaterasu (All Versions)",
-    "slug": "weapon-amaterasu-all-versions",
+    "id": "weapon-amaterasu",
+    "familyName": "Amaterasu",
+    "slug": "weapon-amaterasu",
+    "aliasSlugs": [
+      "weapon-amaterasu-all-versions"
+    ],
     "type": "weapon",
     "subtype": "scythe",
-    "description": "A powerful sun spirit infused this one-of-a-kind scythe with her majestic aura. Harness the power of both Light and Fire as you slice through your foes with the glory of the sun!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17244436",
-    "releaseDate": "",
-    "elements": ["FIR", "LIG"],
-    "level": "33",
-    "damage": "53-63",
-    "stats": "Crit +3, END +3, Bonus +3",
-    "resists": "Darkness +5, Light +5, Immobility +5",
-    "rarity": "10",
-    "obtainMethods": [
+    "familyOrigin": "same-thread-multi-post",
+    "familySources": [],
+    "shared": {
+      "description": "A powerful sun spirit infused this one-of-a-kind scythe with her majestic aura. Harness the power of both Light and Fire as you slice through your foes with the glory of the sun!",
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Amaterasu-Light.png",
+      "alternativeImages": [
+        {
+          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Amaterasu-Light.png",
+          "caption": "Light"
+        },
+        {
+          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Amaterasu-Fire.png",
+          "caption": "Fire"
+        }
+      ],
+      "notes": "Weapons are animated; an orb of light or fire (dependant on selected weapon element) spirals around the blade of the scythe continuously.\nClick anywhere on the weapon to change between its available elements; this will also change its appearance."
+    },
+    "levelVariants": [
       {
-        "location": "Cysero's Weapons",
-        "price": "325 Dragon Coins",
-        "priceType": "dc",
-        "sellback": "293 DC (<24 hours) / 82 DC (>24 hours)",
-        "daRequired": false,
-        "dcRequired": true
+        "levelNumber": 1,
+        "levelDisplay": "I",
+        "actualLevel": 33,
+        "name": "Amaterasu I",
+        "damage": "53-63",
+        "stats": "Crit +3, END +3, Bonus +3",
+        "obtainVariants": [
+          {
+            "location": "Cysero's Weapons",
+            "price": "325 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "293 DC (<24 hours) / 82 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=17244436",
+        "description": "A powerful sun spirit infused this one-of-a-kind scythe with her majestic aura. Harness the power of both Light and Fire as you slice through your foes with the glory of the sun!",
+        "element": "FIR",
+        "resists": "Darkness +5, Light +5, Immobility +5",
+        "rarity": "10"
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "II",
+        "actualLevel": 43,
+        "name": "Amaterasu II",
+        "damage": "60-72",
+        "stats": "Crit +4, Magic Def +1, Pierce Def +1, Melee Def +1, END +6, INT +2, STR +2, Bonus +4",
+        "obtainVariants": [
+          {
+            "location": "Cysero's Weapons",
+            "price": "415 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "374 DC (<24 hours) / 104 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=17244436",
+        "description": "A powerful sun spirit infused this one-of-a-kind scythe with her majestic aura. Harness the power of both Light and Fire as you slice through your foes with the glory of the sun!",
+        "element": "FIR",
+        "resists": "Darkness +7, Light +7, Immobility +7",
+        "rarity": "10"
+      },
+      {
+        "levelNumber": 56,
+        "levelDisplay": "56",
+        "actualLevel": 56,
+        "name": "Amaterasu-Omikami",
+        "damage": "65-85",
+        "stats": "Crit +6, Magic Def +4, Pierce Def +4, Melee Def +4, END +8, INT +4, STR +4, Bonus +4",
+        "obtainVariants": [
+          {
+            "location": "Cysero's Weapons",
+            "price": "485 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "437 DC (<24 hours) / 122 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=17244436",
+        "description": "A powerful sun spirit infused this one-of-a-kind scythe with her majestic aura. Harness the power of both Light and Fire as you slice through your foes with the glory of the sun!",
+        "element": "FIR",
+        "resists": "Darkness +9, Light +9, Immobility +9",
+        "rarity": "10"
       }
     ],
-    "tags": ["fir", "lig", "dc"],
-    "daRequired": false,
-    "dcRequired": true,
-    "isRare": true
+    "category": "Weapon",
+    "releaseDate": "",
+    "tags": [
+      "fir",
+      "dc"
+    ],
+    "hasDA": false,
+    "hasDC": true,
+    "hasDM": false,
+    "hasFree": false,
+    "hasMerge": false,
+    "elements": [
+      "FIR"
+    ],
+    "isRare": true,
+    "levelRange": "33-56"
   },
   {
     "id": "weapon-anagenesis",
@@ -782,7 +1593,9 @@
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22423874",
     "releaseDate": "",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Anagenesis.png",
-    "elements": ["DAR"],
+    "elements": [
+      "DAR"
+    ],
     "level": "1",
     "damage": "0-0",
     "stats": "None",
@@ -799,71 +1612,358 @@
         "dcRequired": true
       }
     ],
-    "tags": ["dar", "merge"],
+    "tags": [
+      "dar",
+      "merge"
+    ],
     "daRequired": false,
     "dcRequired": true,
     "isCosmetic": true,
     "isSeasonal": true
   },
   {
-    "id": "weapon-ancient-defender-edge-i-vii",
-    "name": "Ancient Defender Edge (I-VII)",
-    "slug": "weapon-ancient-defender-edge-i-vii",
+    "id": "weapon-ancient-defender-edge",
+    "familyName": "Ancient Defender Edge",
+    "slug": "weapon-ancient-defender-edge",
+    "aliasSlugs": [
+      "weapon-ancient-defender-edge-i-vii"
+    ],
     "type": "weapon",
     "subtype": "scythe",
-    "description": "The ancient soldiers of the Void used these arms to defend the Core!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21748355",
-    "releaseDate": "",
-    "elements": [],
-    "level": "30",
-    "damage": "40-60",
-    "stats": "Crit +5, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +2, END +2, LUK +2, INT +3, DEX +3, STR +3, Bonus +3",
-    "resists": "Darkness +3, Energy +3",
-    "rarity": "8",
-    "obtainMethods": [
+    "familyOrigin": "same-thread-multi-post",
+    "familySources": [],
+    "shared": {
+      "description": "The ancient soldiers of the Void used these arms to defend the Core!",
+      "imageUrl": "https://i.imgur.com/tt8Po2l.jpg",
+      "alternativeImages": [
+        {
+          "url": "https://i.imgur.com/tt8Po2l.jpg",
+          "caption": "Default"
+        },
+        {
+          "url": "https://i.imgur.com/5uZNNxU.jpg",
+          "caption": "Clicked"
+        }
+      ],
+      "notes": "Click on the weapon's blade to change between two appearances."
+    },
+    "levelVariants": [
       {
-        "location": "Def. Rares",
-        "price": "N/A",
-        "priceType": "merge",
-        "sellback": "200 Gold",
-        "requiredItems": "50 Defender's Medal",
-        "daRequired": false,
-        "dmRequired": true
+        "levelNumber": 1,
+        "levelDisplay": "I",
+        "actualLevel": 30,
+        "variantName": "I",
+        "name": "Ancient Defender Edge I",
+        "damage": "40-60",
+        "stats": "Crit +5, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +2, END +2, LUK +2, INT +3, DEX +3, STR +3, Bonus +3",
+        "obtainVariants": [
+          {
+            "location": "Def. Rares",
+            "price": "N/A",
+            "priceType": "merge",
+            "sellback": "200 Gold",
+            "requiredItems": "50 Defender's Medal",
+            "daRequired": false,
+            "dmRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21748355",
+        "description": "The ancient soldiers of the Void used these arms to defend the Core!",
+        "element": "???",
+        "resists": "Darkness +3, Energy +3",
+        "rarity": "8"
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "II",
+        "actualLevel": 40,
+        "variantName": "II",
+        "name": "Ancient Defender Edge II",
+        "damage": "48-70",
+        "stats": "Crit +6, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +3, END +3, LUK +3, INT +4, DEX +4, STR +4, Bonus +4",
+        "obtainVariants": [
+          {
+            "location": "Def. Rares",
+            "price": "N/A",
+            "priceType": "merge",
+            "sellback": "250 Gold",
+            "requiredItems": "50 Defender's Medal & 1 Ancient Defender Edge I",
+            "daRequired": false,
+            "dmRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21748355",
+        "description": "The ancient soldiers of the Void used these arms to defend the Core!",
+        "element": "???",
+        "resists": "Darkness +4, Energy +4, Fire +2",
+        "rarity": "25"
+      },
+      {
+        "levelNumber": 3,
+        "levelDisplay": "III",
+        "actualLevel": 50,
+        "variantName": "III",
+        "name": "Ancient Defender Edge III",
+        "damage": "57-75",
+        "stats": "Crit +7, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +5, END +5, LUK +4, INT +6, DEX +6, STR +6, Bonus +5",
+        "obtainVariants": [
+          {
+            "location": "Def. Rares",
+            "price": "N/A",
+            "priceType": "merge",
+            "sellback": "275 Gold",
+            "requiredItems": "50 Defender's Medal & 1 Ancient Defender Edge II",
+            "daRequired": false,
+            "dmRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21748355",
+        "description": "The ancient soldiers of the Void used these arms to defend the Core!",
+        "element": "???",
+        "resists": "Darkness +4, Energy +4, Fire +3",
+        "rarity": "10"
+      },
+      {
+        "levelNumber": 4,
+        "levelDisplay": "IV",
+        "actualLevel": 60,
+        "variantName": "IV",
+        "name": "Ancient Defender Edge IV",
+        "damage": "62-86",
+        "stats": "Parry +1, Crit +8, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +6, END +6, LUK +5, INT +8, DEX +8, STR +8, Bonus +6",
+        "obtainVariants": [
+          {
+            "location": "Def. Rares",
+            "price": "N/A",
+            "priceType": "merge",
+            "sellback": "350 Gold",
+            "requiredItems": "50 Defender's Medal & 1 Ancient Defender Edge III",
+            "daRequired": false,
+            "dmRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21748355",
+        "description": "The ancient soldiers of the Void used these arms to defend the Core!",
+        "element": "???",
+        "resists": "Darkness +5, Energy +5, Fire +4",
+        "rarity": "25"
+      },
+      {
+        "levelNumber": 5,
+        "levelDisplay": "V",
+        "actualLevel": 70,
+        "variantName": "V",
+        "name": "Ancient Defender Edge V",
+        "damage": "72-88",
+        "stats": "Dodge +1, Parry +1, Crit +10, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +7, END +7, LUK +6, INT +9, DEX +9, STR +9, Bonus +7",
+        "obtainVariants": [
+          {
+            "location": "Def. Rares",
+            "price": "N/A",
+            "priceType": "merge",
+            "sellback": "375 Gold",
+            "requiredItems": "50 Defender's Medal & 1 Ancient Defender Edge IV",
+            "daRequired": false,
+            "dmRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21748355",
+        "description": "The ancient soldiers of the Void used these arms to defend the Core!",
+        "element": "???",
+        "resists": "Darkness +5, Energy +5, Fire +5, Wind +4, ??? +2",
+        "rarity": "15"
+      },
+      {
+        "levelNumber": 6,
+        "levelDisplay": "VI",
+        "actualLevel": 75,
+        "variantName": "VI",
+        "name": "Ancient Defender Edge VI",
+        "damage": "76-92",
+        "stats": "Block +1, Dodge +1, Parry +1, Crit +10, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +8, END +8, LUK +6, INT +10, DEX +10, STR +10, Bonus +9",
+        "obtainVariants": [
+          {
+            "location": "Def. Rares",
+            "price": "N/A",
+            "priceType": "merge",
+            "sellback": "385 Gold",
+            "requiredItems": "100 Defender's Medal & 1 Ancient Defender Edge V",
+            "daRequired": false,
+            "dmRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21748355",
+        "description": "The ancient soldiers of the Void used these arms to defend the Core!",
+        "element": "???",
+        "resists": "Energy +7, Darkness +7, Fire +6, Wind +6, ??? +3",
+        "rarity": "25"
+      },
+      {
+        "levelNumber": 7,
+        "levelDisplay": "VII",
+        "actualLevel": 80,
+        "variantName": "VII",
+        "name": "Ancient Defender Edge VII",
+        "damage": "78-96",
+        "stats": "Block +1, Dodge +1, Parry +2, Crit +11, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +9, END +9, LUK +6, INT +11, DEX +11, STR +11, Bonus +10",
+        "obtainVariants": [
+          {
+            "location": "Def. Rares",
+            "price": "N/A",
+            "priceType": "merge",
+            "sellback": "395 Gold",
+            "requiredItems": "100 Defender's Medal & 1 Ancient Defender Edge VI",
+            "daRequired": false,
+            "dmRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21748355",
+        "description": "The ancient soldiers of the Void used these arms to defend the Core!",
+        "element": "???",
+        "resists": "Energy +9, Darkness +9, Fire +8, Wind +8, ??? +4",
+        "rarity": "25"
       }
     ],
-    "tags": ["merge"],
-    "daRequired": false,
-    "dmRequired": true
+    "category": "Weapon",
+    "releaseDate": "",
+    "tags": [
+      "???",
+      "merge"
+    ],
+    "hasDA": false,
+    "hasDC": false,
+    "hasDM": true,
+    "hasFree": false,
+    "hasMerge": true,
+    "elements": [
+      "???"
+    ],
+    "levelRange": "I-VII"
   },
   {
-    "id": "weapon-ancient-energy-blade-i-ii-iii",
-    "name": "Ancient Energy Blade (I, II, III)",
-    "slug": "weapon-ancient-energy-blade-i-ii-iii",
+    "id": "weapon-ancient-energy-blade",
+    "familyName": "Ancient Energy Blade",
+    "slug": "weapon-ancient-energy-blade",
+    "aliasSlugs": [
+      "weapon-ancient-energy-blade-i-ii-iii"
+    ],
     "type": "weapon",
     "subtype": "scythe",
-    "description": "In your hands, the weight of this weapon just feels right. Proof of victory over J6 and Twang. (CC: Element)",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22408378",
-    "releaseDate": "",
-    "elements": ["ENE"],
-    "level": "70",
-    "damage": "85-89",
-    "stats": "Block +9, Dodge +9, Parry +9, Crit +7, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +13, END +13, INT +10, DEX +10, STR +10, Bonus +7",
-    "resists": "All +6, Health -6",
-    "rarity": "0",
-    "obtainMethods": [
+    "familyOrigin": "same-thread-multi-post",
+    "familySources": [],
+    "shared": {
+      "description": "In your hands, the weight of this weapon just feels right. Proof of victory over J6 and Twang. (CC: Element)",
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AncientEnergyBlade.png",
+      "alternativeImages": [
+        {
+          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AncientEnergyBlade.png",
+          "caption": "Out of Combat (Default)"
+        },
+        {
+          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AncientEnergyBlade-Combat.png",
+          "caption": "Out of Combat (Clicked) / In Combat"
+        },
+        {
+          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AncientEnergyBlade-ElementalAttunement.png",
+          "caption": "this chart"
+        }
+      ],
+      "notes": "Weapons' appearance is attuned to the player's equipped weapon's element; refer to   for all appearances.\nWhile out of combat, click on the weapon's hilt to change between two appearances; blade appearance is used while in combat."
+    },
+    "levelVariants": [
       {
-        "location": "Passion & Peace (Shop)",
-        "price": "N/A",
-        "priceType": "merge",
-        "sellback": "0 Dragon Coins",
-        "requiredItems": "1 Ancient Data Chip & 1 Repaired Energy Blade",
-        "daRequired": false,
-        "dcRequired": true
+        "levelNumber": 1,
+        "levelDisplay": "I",
+        "actualLevel": 70,
+        "variantName": "I",
+        "name": "Ancient Energy Blade I",
+        "damage": "85-89",
+        "stats": "Block +9, Dodge +9, Parry +9, Crit +7, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +13, END +13, INT +10, DEX +10, STR +10, Bonus +7",
+        "obtainVariants": [
+          {
+            "location": "Passion & Peace (Shop)",
+            "price": "N/A",
+            "priceType": "merge",
+            "sellback": "0 Dragon Coins",
+            "requiredItems": "1 Ancient Data Chip & 1 Repaired Energy Blade",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22408378",
+        "description": "In your hands, the weight of this weapon just feels right. Proof of victory over J6 and Twang. (CC: Element)",
+        "element": "ENE",
+        "resists": "All +6, Health -6",
+        "rarity": "0"
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "II",
+        "actualLevel": 80,
+        "variantName": "II",
+        "name": "Ancient Energy Blade II",
+        "damage": "90-94",
+        "stats": "Block +12, Dodge +12, Parry +12, Crit +8, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +16, END +16, INT +13, DEX +13, STR +13, Bonus +8",
+        "obtainVariants": [
+          {
+            "location": "Passion & Peace (Shop)",
+            "price": "N/A",
+            "priceType": "merge",
+            "sellback": "0 Dragon Coins",
+            "requiredItems": "1 Ancient Data Chip & 1 Repaired Energy Blade",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22408378",
+        "description": "In your hands, the weight of this weapon just feels right. Proof of victory over J6 and Twang. (CC: Element)",
+        "element": "ENE",
+        "resists": "All +8, Health -8",
+        "rarity": "0"
+      },
+      {
+        "levelNumber": 3,
+        "levelDisplay": "III",
+        "actualLevel": 90,
+        "variantName": "III",
+        "name": "Ancient Energy Blade III",
+        "damage": "95-99",
+        "stats": "Block +15, Dodge +15, Parry +15, Crit +12, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +20, END +20, INT +16, DEX +16, STR +16, Bonus +12",
+        "obtainVariants": [
+          {
+            "location": "Passion & Peace (Shop)",
+            "price": "N/A",
+            "priceType": "merge",
+            "sellback": "0 Dragon Coins",
+            "requiredItems": "1 Ancient Data Chip & 1 Repaired Energy Blade",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22408378",
+        "description": "In your hands, the weight of this weapon just feels right. Proof of victory over J6 and Twang. (CC: Element)",
+        "element": "ENE",
+        "resists": "All +10, Health -10",
+        "rarity": "0"
       }
     ],
-    "tags": ["ene", "merge"],
-    "daRequired": false,
-    "dcRequired": true
+    "category": "Weapon",
+    "releaseDate": "",
+    "tags": [
+      "ene",
+      "merge"
+    ],
+    "hasDA": false,
+    "hasDC": true,
+    "hasDM": false,
+    "hasFree": false,
+    "hasMerge": true,
+    "elements": [
+      "ENE"
+    ],
+    "levelRange": "I-III"
   },
   {
     "id": "weapon-ancient-frost-moglin-scepter",
@@ -875,7 +1975,9 @@
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22420153",
     "releaseDate": "",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AncientFrostMoglinScepter.png",
-    "elements": ["ICE"],
+    "elements": [
+      "ICE"
+    ],
     "level": "1",
     "damage": "0-0",
     "stats": "None",
@@ -893,7 +1995,10 @@
         "dmRequired": true
       }
     ],
-    "tags": ["ice", "merge"],
+    "tags": [
+      "ice",
+      "merge"
+    ],
     "daRequired": false,
     "dcRequired": true,
     "dmRequired": true,
@@ -910,7 +2015,9 @@
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22420154",
     "releaseDate": "",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AncientFrostMoglinSword.png",
-    "elements": ["ICE"],
+    "elements": [
+      "ICE"
+    ],
     "level": "1",
     "damage": "0-0",
     "stats": "None",
@@ -928,7 +2035,10 @@
         "dmRequired": true
       }
     ],
-    "tags": ["ice", "merge"],
+    "tags": [
+      "ice",
+      "merge"
+    ],
     "daRequired": false,
     "dcRequired": true,
     "dmRequired": true,
@@ -944,11 +2054,23 @@
     "description": "Nothing can fill the void left behind by this glaive! Visit the Black Market Moglin to upgrade this weapon.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21046303",
     "releaseDate": "",
-    "elements": [],
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/GloomGlaive.png",
+    "elements": [
+      "???"
+    ],
     "level": "75",
     "damage": "80-96",
     "stats": "Dodge +2, Parry +3, Crit +12, Magic Def +8, Pierce Def +8, Melee Def +8, WIS +9, END +6, CHA +5, INT +12, DEX +12, STR +12, Bonus +7",
     "resists": "All +10, Health -15",
+    "weaponSpecial": {
+      "activation": "manual",
+      "trigger": "Activate your weapon's special!",
+      "effect": "1 hit of 500% ??? damage.",
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-%3F%3F%3F.png",
+      "cooldown": "20 - [(Player LUK/50), rounded down]",
+      "chargeTime": "10 - [(Player LUK/100), rounded down]"
+    },
+    "hasSpecial": true,
     "rarity": "25",
     "obtainMethods": [
       {
@@ -961,7 +2083,43 @@
         "dcRequired": true
       }
     ],
-    "tags": ["merge"],
+    "notes": "Special only performed 1 hit of 350% damage during  Arena at the Edge of Time challenges on  January 29th, 2021 before being further reduced to 300% max base damage before damage modifiers (Boost, Resists, etc.) on  September 8th, 2023.\nWeapon previously had All +13, Health -16 resists; these were changed to All +10, Health -15 on  May 20th, 2021.",
+    "alsoSee": [
+      {
+        "name": "Dark Gloom Glaive",
+        "slug": "weapon-dark-gloom-glaive",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21046285"
+      },
+      {
+        "name": "Forgotten Gloom Glaive",
+        "slug": "weapon-forgotten-gloom-glaive",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=22330644"
+      },
+      {
+        "name": "Forlorn Gloom Glaive",
+        "slug": "weapon-forlorn-gloom-glaive",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21046311"
+      },
+      {
+        "name": "Gloom Glaive",
+        "slug": "weapon-gloom-glaive",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21046272"
+      },
+      {
+        "name": "Mournful Gloom Glaive",
+        "slug": "weapon-mournful-gloom-glaive",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21046293"
+      }
+    ],
+    "tags": [
+      "???",
+      "merge"
+    ],
     "daRequired": false,
     "dcRequired": true,
     "isRare": true
@@ -976,7 +2134,9 @@
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22411026",
     "releaseDate": "",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AntiqueBladeofAwe.png",
-    "elements": ["STO"],
+    "elements": [
+      "STO"
+    ],
     "level": "1",
     "damage": "0-0",
     "stats": "None",
@@ -1000,7 +2160,10 @@
         "url": "https://forums2.battleon.com/f/tm.asp?m=22424358"
       }
     ],
-    "tags": ["sto", "dc"],
+    "tags": [
+      "sto",
+      "dc"
+    ],
     "daRequired": false,
     "dcRequired": true,
     "isCosmetic": true
@@ -1015,7 +2178,9 @@
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22411032",
     "releaseDate": "",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AntiqueBladeofChaos.png",
-    "elements": [],
+    "elements": [
+      "???"
+    ],
     "level": "1",
     "damage": "0-0",
     "stats": "None",
@@ -1031,7 +2196,10 @@
         "dcRequired": true
       }
     ],
-    "tags": ["dc"],
+    "tags": [
+      "???",
+      "dc"
+    ],
     "daRequired": false,
     "dcRequired": true,
     "isCosmetic": true
@@ -1046,7 +2214,9 @@
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22411028",
     "releaseDate": "",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AntiqueDragonLord'sRite.png",
-    "elements": ["MET"],
+    "elements": [
+      "MET"
+    ],
     "level": "1",
     "damage": "0-0",
     "stats": "None",
@@ -1063,7 +2233,10 @@
       }
     ],
     "notes": "*Despite not being tagged as DA Required, this weapon does require a Dragon Amulet to obtain.",
-    "tags": ["met", "dc"],
+    "tags": [
+      "met",
+      "dc"
+    ],
     "daRequired": false,
     "dcRequired": true,
     "isCosmetic": true
@@ -1078,11 +2251,18 @@
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22411030",
     "releaseDate": "",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AntiqueStarCaptain'sClaymore.png",
-    "elements": ["ENE"],
+    "elements": [
+      "ENE"
+    ],
     "level": "1",
     "damage": "0-0",
     "stats": "None",
     "resists": "None",
+    "armorCustomization": {
+      "appearance": "Star Captain and Star Captain (CC)",
+      "modifies": "Student"
+    },
+    "hasArmorCustomization": true,
     "rarity": "5",
     "obtainMethods": [
       {
@@ -1095,7 +2275,10 @@
       }
     ],
     "notes": "Own this item to unlock Star Captain and Star Captain (CC)  Armor Customization options for the  Student class; this was implemented on  May 2nd, 2025.",
-    "tags": ["ene", "dc"],
+    "tags": [
+      "ene",
+      "dc"
+    ],
     "daRequired": false,
     "dcRequired": true,
     "isCosmetic": true
@@ -1109,7 +2292,24 @@
     "description": "A basic Infernal blade, crafted from Exalted Forgemetal. Can be upgraded with additional Exalted Forgemetal.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22357170",
     "releaseDate": "",
-    "elements": ["EVI"],
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/ApostateAlpha.png",
+    "alternativeImages": [
+      {
+        "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/ApostateAlpha.png",
+        "caption": "Alpha"
+      },
+      {
+        "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/ApostateOmega.png",
+        "caption": "Omega"
+      },
+      {
+        "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/ApostateUltima.png",
+        "caption": "Ultima"
+      }
+    ],
+    "elements": [
+      "EVI"
+    ],
     "level": "40",
     "damage": "60-72",
     "stats": "Block +2, Dodge +2, Parry +2, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +5, END +5, CHA +2, LUK +2, INT +9, DEX +9, STR +9, Bonus +10",
@@ -1126,7 +2326,10 @@
         "dcRequired": true
       }
     ],
-    "tags": ["evi", "merge"],
+    "tags": [
+      "evi",
+      "merge"
+    ],
     "daRequired": false,
     "dcRequired": true
   },
@@ -1140,7 +2343,9 @@
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22401113",
     "releaseDate": "",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AppliedWeavingforBeginners.png",
-    "elements": ["NAT"],
+    "elements": [
+      "NAT"
+    ],
     "level": "1",
     "damage": "0-0",
     "stats": "None",
@@ -1155,97 +2360,802 @@
         "daRequired": true
       }
     ],
-    "tags": ["nat", "gold"],
+    "tags": [
+      "nat",
+      "gold"
+    ],
     "daRequired": true,
     "isCosmetic": true,
     "isSeasonal": true
   },
   {
-    "id": "weapon-apsaydaaun-harvester-i-ix",
-    "name": "Apsaydaaun Harvester (I-IX)",
-    "slug": "weapon-apsaydaaun-harvester-i-ix",
+    "id": "weapon-apsaydaaun-harvester",
+    "familyName": "Apsaydaaun Harvester",
+    "slug": "weapon-apsaydaaun-harvester",
+    "aliasSlugs": [
+      "weapon-apsaydaaun-harvester-i-ix"
+    ],
     "type": "weapon",
     "subtype": "scythe",
-    "description": "The denizens of Apsaydaaun have never been known for their plant-tending. This prototype garden tool seems to be more practical for culling foes than weeds.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22385160",
-    "releaseDate": "",
-    "elements": ["DAR"],
-    "level": "10",
-    "damage": "20-34",
-    "stats": "Block +1, Dodge +1, Parry +1, Crit +2, Magic Def +1, Pierce Def +1, Melee Def +1, LUK +2, INT +4, DEX +4, STR +4, Bonus +2",
-    "resists": "Nature +5, Ice +5",
-    "rarity": "8",
-    "obtainMethods": [
+    "familyOrigin": "same-thread-multi-post",
+    "familySources": [],
+    "shared": {
+      "description": "The denizens of Apsaydaaun have never been known for their plant-tending. This prototype garden tool seems to be more practical for culling foes than weeds.",
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/ApsaydaaunHarvester.png"
+    },
+    "levelVariants": [
       {
-        "location": "Green Thumbs",
-        "price": "N/A",
-        "priceType": "free",
-        "sellback": "500 Gold",
-        "daRequired": false
+        "levelNumber": 1,
+        "levelDisplay": "I",
+        "actualLevel": 10,
+        "variantName": "I",
+        "name": "Apsaydaaun Harvester I",
+        "damage": "20-34",
+        "stats": "Block +1, Dodge +1, Parry +1, Crit +2, Magic Def +1, Pierce Def +1, Melee Def +1, LUK +2, INT +4, DEX +4, STR +4, Bonus +2",
+        "obtainVariants": [
+          {
+            "location": "Green Thumbs",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "500 Gold",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22385160",
+        "description": "The denizens of Apsaydaaun have never been known for their plant-tending. This prototype garden tool seems to be more practical for culling foes than weeds.",
+        "element": "DAR",
+        "resists": "Nature +5, Ice +5",
+        "rarity": "8"
+      },
+      {
+        "levelNumber": 1,
+        "levelDisplay": "I",
+        "actualLevel": 10,
+        "variantName": "I (DC)",
+        "name": "Apsaydaaun Harvester I",
+        "damage": "20-34",
+        "stats": "Block +1, Dodge +1, Parry +1, Crit +2, Magic Def +1, Pierce Def +1, Melee Def +1, LUK +2, INT +4, DEX +4, STR +4, Bonus +2",
+        "obtainVariants": [
+          {
+            "location": "GT Loot for DCs",
+            "price": "400 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "360 DC (<24 hours) / 100 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22385160",
+        "description": "The denizens of Apsaydaaun have never been known for their plant-tending. This prototype garden tool seems to be more practical for culling foes than weeds.",
+        "element": "DAR",
+        "resists": "Nature +5, Ice +5",
+        "rarity": "8"
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "II",
+        "actualLevel": 20,
+        "variantName": "II",
+        "name": "Apsaydaaun Harvester II",
+        "damage": "33-47",
+        "stats": "Block +2, Dodge +2, Parry +2, Crit +3, Magic Def +2, Pierce Def +2, Melee Def +2, LUK +3, INT +6, DEX +6, STR +6, Bonus +3",
+        "obtainVariants": [
+          {
+            "location": "Green Thumbs",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "500 Gold",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22385160",
+        "description": "The denizens of Apsaydaaun have never been known for their plant-tending. This prototype garden tool seems to be more practical for culling foes than weeds.",
+        "element": "DAR",
+        "resists": "Nature +6, Ice +6",
+        "rarity": "8"
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "II",
+        "actualLevel": 20,
+        "variantName": "II (DC)",
+        "name": "Apsaydaaun Harvester II",
+        "damage": "33-47",
+        "stats": "Block +2, Dodge +2, Parry +2, Crit +3, Magic Def +2, Pierce Def +2, Melee Def +2, LUK +3, INT +6, DEX +6, STR +6, Bonus +3",
+        "obtainVariants": [
+          {
+            "location": "GT Loot for DCs",
+            "price": "400 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "360 DC (<24 hours) / 100 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22385160",
+        "description": "The denizens of Apsaydaaun have never been known for their plant-tending. This prototype garden tool seems to be more practical for culling foes than weeds.",
+        "element": "DAR",
+        "resists": "Nature +6, Ice +6",
+        "rarity": "8"
+      },
+      {
+        "levelNumber": 3,
+        "levelDisplay": "III",
+        "actualLevel": 30,
+        "variantName": "III",
+        "name": "Apsaydaaun Harvester III",
+        "damage": "43-57",
+        "stats": "Block +2, Dodge +2, Parry +2, Crit +4, Magic Def +2, Pierce Def +2, Melee Def +2, LUK +4, INT +8, DEX +8, STR +8, Bonus +4",
+        "obtainVariants": [
+          {
+            "location": "Green Thumbs",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "500 Gold",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22385160",
+        "description": "The denizens of Apsaydaaun have never been known for their plant-tending. This prototype garden tool seems to be more practical for culling foes than weeds.",
+        "element": "DAR",
+        "resists": "Nature +7, Ice +7",
+        "rarity": "8"
+      },
+      {
+        "levelNumber": 3,
+        "levelDisplay": "III",
+        "actualLevel": 30,
+        "variantName": "III (DC)",
+        "name": "Apsaydaaun Harvester III",
+        "damage": "43-57",
+        "stats": "Block +2, Dodge +2, Parry +2, Crit +4, Magic Def +2, Pierce Def +2, Melee Def +2, LUK +4, INT +8, DEX +8, STR +8, Bonus +4",
+        "obtainVariants": [
+          {
+            "location": "GT Loot for DCs",
+            "price": "400 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "360 DC (<24 hours) / 100 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22385160",
+        "description": "The denizens of Apsaydaaun have never been known for their plant-tending. This prototype garden tool seems to be more practical for culling foes than weeds.",
+        "element": "DAR",
+        "resists": "Nature +7, Ice +7",
+        "rarity": "8"
+      },
+      {
+        "levelNumber": 4,
+        "levelDisplay": "IV",
+        "actualLevel": 40,
+        "variantName": "IV",
+        "name": "Apsaydaaun Harvester IV",
+        "damage": "53-67",
+        "stats": "Block +3, Dodge +3, Parry +3, Crit +5, Magic Def +3, Pierce Def +3, Melee Def +3, LUK +5, INT +10, DEX +10, STR +10, Bonus +5",
+        "obtainVariants": [
+          {
+            "location": "Green Thumbs",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "500 Gold",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22385160",
+        "description": "The denizens of Apsaydaaun have never been known for their plant-tending. This prototype garden tool seems to be more practical for culling foes than weeds.",
+        "element": "DAR",
+        "resists": "Nature +8, Ice +8",
+        "rarity": "10"
+      },
+      {
+        "levelNumber": 4,
+        "levelDisplay": "IV",
+        "actualLevel": 40,
+        "variantName": "IV (DC)",
+        "name": "Apsaydaaun Harvester IV",
+        "damage": "53-67",
+        "stats": "Block +3, Dodge +3, Parry +3, Crit +5, Magic Def +3, Pierce Def +3, Melee Def +3, LUK +5, INT +10, DEX +10, STR +10, Bonus +5",
+        "obtainVariants": [
+          {
+            "location": "GT Loot for DCs",
+            "price": "400 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "360 DC (<24 hours) / 100 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22385160",
+        "description": "The denizens of Apsaydaaun have never been known for their plant-tending. This prototype garden tool seems to be more practical for culling foes than weeds.",
+        "element": "DAR",
+        "resists": "Nature +8, Ice +8",
+        "rarity": "10"
+      },
+      {
+        "levelNumber": 5,
+        "levelDisplay": "V",
+        "actualLevel": 50,
+        "variantName": "V",
+        "name": "Apsaydaaun Harvester V",
+        "damage": "60-74",
+        "stats": "Block +4, Dodge +4, Parry +4, Crit +6, Magic Def +4, Pierce Def +4, Melee Def +4, LUK +6, INT +12, DEX +12, STR +12, Bonus +6",
+        "obtainVariants": [
+          {
+            "location": "Green Thumbs",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "500 Gold",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22385160",
+        "description": "The denizens of Apsaydaaun have never been known for their plant-tending. This prototype garden tool seems to be more practical for culling foes than weeds.",
+        "element": "DAR",
+        "resists": "Nature +9, Ice +9",
+        "rarity": "10"
+      },
+      {
+        "levelNumber": 5,
+        "levelDisplay": "V",
+        "actualLevel": 50,
+        "variantName": "V (DC)",
+        "name": "Apsaydaaun Harvester V",
+        "damage": "60-74",
+        "stats": "Block +4, Dodge +4, Parry +4, Crit +6, Magic Def +4, Pierce Def +4, Melee Def +4, LUK +6, INT +12, DEX +12, STR +12, Bonus +6",
+        "obtainVariants": [
+          {
+            "location": "GT Loot for DCs",
+            "price": "400 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "360 DC (<24 hours) / 100 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22385160",
+        "description": "The denizens of Apsaydaaun have never been known for their plant-tending. This prototype garden tool seems to be more practical for culling foes than weeds.",
+        "element": "DAR",
+        "resists": "Nature +9, Ice +9",
+        "rarity": "10"
+      },
+      {
+        "levelNumber": 6,
+        "levelDisplay": "VI",
+        "actualLevel": 60,
+        "variantName": "VI",
+        "name": "Apsaydaaun Harvester VI",
+        "damage": "67-81",
+        "stats": "Block +4, Dodge +4, Parry +4, Crit +7, Magic Def +4, Pierce Def +4, Melee Def +4, LUK +8, INT +14, DEX +14, STR +14, Bonus +7",
+        "obtainVariants": [
+          {
+            "location": "Green Thumbs",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "500 Gold",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22385160",
+        "description": "The denizens of Apsaydaaun have never been known for their plant-tending. This prototype garden tool seems to be more practical for culling foes than weeds.",
+        "element": "DAR",
+        "resists": "Nature +10, Ice +10",
+        "rarity": "15"
+      },
+      {
+        "levelNumber": 6,
+        "levelDisplay": "VI",
+        "actualLevel": 60,
+        "variantName": "VI (DC)",
+        "name": "Apsaydaaun Harvester VI",
+        "damage": "67-81",
+        "stats": "Block +4, Dodge +4, Parry +4, Crit +7, Magic Def +4, Pierce Def +4, Melee Def +4, LUK +8, INT +14, DEX +14, STR +14, Bonus +7",
+        "obtainVariants": [
+          {
+            "location": "GT Loot for DCs",
+            "price": "400 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "360 DC (<24 hours) / 100 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22385160",
+        "description": "The denizens of Apsaydaaun have never been known for their plant-tending. This prototype garden tool seems to be more practical for culling foes than weeds.",
+        "element": "DAR",
+        "resists": "Nature +10, Ice +10",
+        "rarity": "15"
+      },
+      {
+        "levelNumber": 7,
+        "levelDisplay": "VII",
+        "actualLevel": 70,
+        "variantName": "VII",
+        "name": "Apsaydaaun Harvester VII",
+        "damage": "74-88",
+        "stats": "Block +5, Dodge +5, Parry +5, Crit +8, Magic Def +5, Pierce Def +5, Melee Def +5, LUK +10, INT +16, DEX +16, STR +16, Bonus +8",
+        "obtainVariants": [
+          {
+            "location": "Green Thumbs",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "500 Gold",
+            "daRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22385160",
+        "description": "The denizens of Apsaydaaun have never been known for their plant-tending. This prototype garden tool seems to be more practical for culling foes than weeds. This item requires a Dragon Amulet to use.",
+        "element": "DAR",
+        "resists": "Nature +10, Ice +10, Health -1",
+        "rarity": "15"
+      },
+      {
+        "levelNumber": 7,
+        "levelDisplay": "VII",
+        "actualLevel": 70,
+        "variantName": "VII (DC)",
+        "name": "Apsaydaaun Harvester VII",
+        "damage": "74-88",
+        "stats": "Block +5, Dodge +5, Parry +5, Crit +8, Magic Def +5, Pierce Def +5, Melee Def +5, LUK +10, INT +16, DEX +16, STR +16, Bonus +8",
+        "obtainVariants": [
+          {
+            "location": "GT Loot for DCs",
+            "price": "400 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "360 DC (<24 hours) / 100 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22385160",
+        "description": "The denizens of Apsaydaaun have never been known for their plant-tending. This prototype garden tool seems to be more practical for culling foes than weeds. This item requires a Dragon Amulet to use.",
+        "element": "DAR",
+        "resists": "Nature +10, Ice +10, Health -1",
+        "rarity": "15"
+      },
+      {
+        "levelNumber": 8,
+        "levelDisplay": "VIII",
+        "actualLevel": 80,
+        "variantName": "VIII",
+        "name": "Apsaydaaun Harvester VIII",
+        "damage": "80-94",
+        "stats": "Block +6, Dodge +6, Parry +6, Crit +9, Magic Def +6, Pierce Def +6, Melee Def +6, LUK +14, INT +20, DEX +20, STR +20, Bonus +9",
+        "obtainVariants": [
+          {
+            "location": "Green Thumbs",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "500 Gold",
+            "daRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22385160",
+        "description": "The denizens of Apsaydaaun have never been known for their plant-tending. This prototype garden tool seems to be more practical for culling foes than weeds. This item requires a Dragon Amulet to use.",
+        "element": "DAR",
+        "resists": "Nature +10, Ice +10, Health -3",
+        "rarity": "15"
+      },
+      {
+        "levelNumber": 8,
+        "levelDisplay": "VIII",
+        "actualLevel": 80,
+        "variantName": "VIII (DC)",
+        "name": "Apsaydaaun Harvester VIII",
+        "damage": "80-94",
+        "stats": "Block +6, Dodge +6, Parry +6, Crit +9, Magic Def +6, Pierce Def +6, Melee Def +6, LUK +14, INT +20, DEX +20, STR +20, Bonus +9",
+        "obtainVariants": [
+          {
+            "location": "GT Loot for DCs",
+            "price": "400 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "360 DC (<24 hours) / 100 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22385160",
+        "description": "The denizens of Apsaydaaun have never been known for their plant-tending. This prototype garden tool seems to be more practical for culling foes than weeds. This item requires a Dragon Amulet to use.",
+        "element": "DAR",
+        "resists": "Nature +10, Ice +10, Health -3",
+        "rarity": "15"
+      },
+      {
+        "levelNumber": 9,
+        "levelDisplay": "IX",
+        "actualLevel": 90,
+        "variantName": "IX",
+        "name": "Apsaydaaun Harvester IX",
+        "damage": "86-100",
+        "stats": "Block +6, Dodge +6, Parry +6, Crit +10, Magic Def +6, Pierce Def +6, Melee Def +6, LUK +18, INT +24, DEX +24, STR +24, Bonus +10",
+        "obtainVariants": [
+          {
+            "location": "Green Thumbs",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "500 Gold",
+            "daRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22385160",
+        "description": "The denizens of Apsaydaaun have never been known for their plant-tending. This prototype garden tool seems to be more practical for culling foes than weeds. This item requires a Dragon Amulet to use.",
+        "element": "DAR",
+        "resists": "Nature +10, Ice +10, Health -5",
+        "rarity": "25"
+      },
+      {
+        "levelNumber": 9,
+        "levelDisplay": "IX",
+        "actualLevel": 90,
+        "variantName": "IX (DC)",
+        "name": "Apsaydaaun Harvester IX",
+        "damage": "86-100",
+        "stats": "Block +6, Dodge +6, Parry +6, Crit +10, Magic Def +6, Pierce Def +6, Melee Def +6, LUK +18, INT +24, DEX +24, STR +24, Bonus +10",
+        "obtainVariants": [
+          {
+            "location": "GT Loot for DCs",
+            "price": "400 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "360 DC (<24 hours) / 100 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22385160",
+        "description": "The denizens of Apsaydaaun have never been known for their plant-tending. This prototype garden tool seems to be more practical for culling foes than weeds. This item requires a Dragon Amulet to use.",
+        "element": "DAR",
+        "resists": "Nature +10, Ice +10, Health -5",
+        "rarity": "25"
       }
     ],
-    "tags": ["dar", "free"],
-    "daRequired": false,
-    "isSeasonal": true
+    "category": "Weapon",
+    "releaseDate": "",
+    "tags": [
+      "dar",
+      "free",
+      "dc"
+    ],
+    "hasDA": true,
+    "hasDC": true,
+    "hasDM": false,
+    "hasFree": true,
+    "hasMerge": false,
+    "elements": [
+      "DAR"
+    ],
+    "isSeasonal": true,
+    "levelRange": "I-IX"
   },
   {
-    "id": "weapon-apsaydaaun-pumpcake-scepter-all-versions",
-    "name": "Apsaydaaun Pumpcake Scepter (All Versions)",
-    "slug": "weapon-apsaydaaun-pumpcake-scepter-all-versions",
+    "id": "weapon-apsaydaaun-pumpcake-scepter",
+    "familyName": "Apsaydaaun Pumpcake Scepter",
+    "slug": "weapon-apsaydaaun-pumpcake-scepter",
+    "aliasSlugs": [
+      "weapon-apsaydaaun-pumpcake-scepter-all-versions"
+    ],
     "type": "weapon",
     "subtype": "scythe",
-    "description": "A replica of the scepter wielded by Abraca and Dabra, this cake on a stick still retains some of their mysterious magic! It's tasty too! Probably shouldn't eat it, though. Probably.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22187233",
-    "releaseDate": "",
-    "elements": ["GOO"],
-    "level": "10",
-    "damage": "26-41",
-    "stats": "Crit +1, CHA +1, LUK +1, INT +1, DEX +1, STR +1, Bonus +1",
-    "resists": "Fire +1, Ice +1, Darkness +1",
-    "rarity": "0",
-    "obtainMethods": [
+    "familyOrigin": "same-thread-multi-post",
+    "familySources": [],
+    "shared": {
+      "description": "A replica of the scepter wielded by Abraca and Dabra, this cake on a stick still retains some of their mysterious magic! It's tasty too! Probably shouldn't eat it, though. Probably.",
+      "imageUrl": "http://i.imgur.com/zjY7tZN.png",
+      "notes": "The pumpkin's expression at the bottom of the scepter changes each time the weapon is shown."
+    },
+    "levelVariants": [
       {
-        "location": "Pumpcake Scepters",
-        "price": "100 Dragon Coins",
-        "priceType": "dc",
-        "sellback": "90 DC (<24 hours) / 25 DC (>24 hours)",
-        "daRequired": false,
-        "dcRequired": true
+        "levelNumber": 10,
+        "levelDisplay": "10",
+        "actualLevel": 10,
+        "name": "Apsaydaaun Pumpcake Scepter",
+        "damage": "26-41",
+        "stats": "Crit +1, CHA +1, LUK +1, INT +1, DEX +1, STR +1, Bonus +1",
+        "obtainVariants": [
+          {
+            "location": "Pumpcake Scepters",
+            "price": "100 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "90 DC (<24 hours) / 25 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22187233",
+        "description": "A replica of the scepter wielded by Abraca and Dabra, this cake on a stick still retains some of their mysterious magic! It's tasty too! Probably shouldn't eat it, though. Probably.",
+        "element": "GOO",
+        "resists": "Fire +1, Ice +1, Darkness +1",
+        "rarity": "0"
+      },
+      {
+        "levelNumber": 20,
+        "levelDisplay": "20",
+        "actualLevel": 20,
+        "name": "Apsaydaaun Pumpcake Scepter",
+        "damage": "39-54",
+        "stats": "Crit +2, CHA +2, LUK +2, INT +2, DEX +2, STR +2, Bonus +1",
+        "obtainVariants": [
+          {
+            "location": "Pumpcake Scepters",
+            "price": "150 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "135 DC (<24 hours) / 38 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22187233",
+        "description": "A replica of the scepter wielded by Abraca and Dabra, this cake on a stick still retains some of their mysterious magic! It's tasty too! Probably shouldn't eat it, though. Probably.",
+        "element": "GOO",
+        "resists": "Fire +2, Ice +2, Darkness +2",
+        "rarity": "10"
+      },
+      {
+        "levelNumber": 30,
+        "levelDisplay": "30",
+        "actualLevel": 30,
+        "name": "Apsaydaaun Pumpcake Scepter",
+        "damage": "49-64",
+        "stats": "Crit +3, CHA +3, LUK +3, INT +3, DEX +3, STR +3, Bonus +2",
+        "obtainVariants": [
+          {
+            "location": "Pumpcake Scepters",
+            "price": "200 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22187233",
+        "description": "A replica of the scepter wielded by Abraca and Dabra, this cake on a stick still retains some of their mysterious magic! It's tasty too! Probably shouldn't eat it, though. Probably.",
+        "element": "GOO",
+        "resists": "Ice +3, Fire +3, Darkness +3",
+        "rarity": "10"
+      },
+      {
+        "levelNumber": 40,
+        "levelDisplay": "40",
+        "actualLevel": 40,
+        "name": "Apsaydaaun Pumpcake Scepter",
+        "damage": "58-73",
+        "stats": "Crit +4, CHA +4, LUK +4, INT +4, DEX +4, STR +4, Bonus +4",
+        "obtainVariants": [
+          {
+            "location": "Pumpcake Scepters",
+            "price": "240 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "216 DC (<24 hours) / 60 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22187233",
+        "description": "A replica of the scepter wielded by Abraca and Dabra, this cake on a stick still retains some of their mysterious magic! It's tasty too! Probably shouldn't eat it, though. Probably.",
+        "element": "GOO",
+        "resists": "Ice +4, Fire +4, Darkness +4",
+        "rarity": "10"
+      },
+      {
+        "levelNumber": 50,
+        "levelDisplay": "50",
+        "actualLevel": 50,
+        "name": "Apsaydaaun Pumpcake Scepter",
+        "damage": "65-80",
+        "stats": "Crit +5, CHA +6, LUK +6, INT +6, DEX +6, STR +6, Bonus +5",
+        "obtainVariants": [
+          {
+            "location": "Pumpcake Scepters",
+            "price": "280 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "252 DC (<24 hours) / 70 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22187233",
+        "description": "A replica of the scepter wielded by Abraca and Dabra, this cake on a stick still retains some of their mysterious magic! It's tasty too! Probably shouldn't eat it, though. Probably.",
+        "element": "GOO",
+        "resists": "Ice +5, Fire +5, Darkness +5",
+        "rarity": "10"
+      },
+      {
+        "levelNumber": 60,
+        "levelDisplay": "60",
+        "actualLevel": 60,
+        "name": "Apsaydaaun Pumpcake Scepter",
+        "damage": "72-87",
+        "stats": "Crit +6, CHA +7, LUK +7, INT +7, DEX +7, STR +7, Bonus +6",
+        "obtainVariants": [
+          {
+            "location": "Pumpcake Scepters",
+            "price": "320 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "288 DC (<24 hours) / 80 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22187233",
+        "description": "A replica of the scepter wielded by Abraca and Dabra, this cake on a stick still retains some of their mysterious magic! It's tasty too! Probably shouldn't eat it, though. Probably.",
+        "element": "GOO",
+        "resists": "Ice +7, Fire +7, Darkness +7",
+        "rarity": "10"
+      },
+      {
+        "levelNumber": 70,
+        "levelDisplay": "70",
+        "actualLevel": 70,
+        "name": "Apsaydaaun Pumpcake Scepter",
+        "damage": "78-93",
+        "stats": "Crit +9, CHA +10, LUK +10, INT +10, DEX +10, STR +10, Bonus +9",
+        "obtainVariants": [
+          {
+            "location": "Pumpcake Scepters",
+            "price": "360 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "324 DC (<24 hours) / 90 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22187233",
+        "description": "A replica of the scepter wielded by Abraca and Dabra, this cake on a stick still retains some of their mysterious magic! It's tasty too! Probably shouldn't eat it, though. Probably.",
+        "element": "GOO",
+        "resists": "Ice +9, Fire +9, Darkness +9",
+        "rarity": "10"
+      },
+      {
+        "levelNumber": 80,
+        "levelDisplay": "80",
+        "actualLevel": 80,
+        "name": "Apsaydaaun Pumpcake Scepter",
+        "damage": "84-99",
+        "stats": "Crit +11, CHA +13, LUK +13, INT +13, DEX +13, STR +13, Bonus +11",
+        "obtainVariants": [
+          {
+            "location": "Pumpcake Scepters",
+            "price": "425 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "383 DC (<24 hours) / 107 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22187233",
+        "description": "A replica of the scepter wielded by Abraca and Dabra, this cake on a stick still retains some of their mysterious magic! It's tasty too! Probably shouldn't eat it, though. Probably.",
+        "element": "GOO",
+        "resists": "Ice +11, Fire +11, Darkness +11",
+        "rarity": "15"
       }
     ],
-    "tags": ["goo", "dc"],
-    "daRequired": false,
-    "dcRequired": true,
-    "isRare": true
+    "category": "Weapon",
+    "releaseDate": "",
+    "tags": [
+      "goo",
+      "dc"
+    ],
+    "hasDA": false,
+    "hasDC": true,
+    "hasDM": false,
+    "hasFree": false,
+    "hasMerge": false,
+    "elements": [
+      "GOO"
+    ],
+    "isRare": true,
+    "levelRange": "10-80"
   },
   {
-    "id": "weapon-arcanotech-edge-i-ii-iii",
-    "name": "Arcanotech Edge (I, II, III)",
-    "slug": "weapon-arcanotech-edge-i-ii-iii",
+    "id": "weapon-arcanotech-edge",
+    "familyName": "Arcanotech Edge",
+    "slug": "weapon-arcanotech-edge",
+    "aliasSlugs": [
+      "weapon-arcanotech-edge-i-ii-iii"
+    ],
     "type": "weapon",
     "subtype": "scythe",
-    "description": "A precise blade forged from lightning and shadow, it hums with the ticks and whirs of its inner workings, delivering swift and deadly strikes. Proof of victory over Duskbolt, the Tempest.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22409411",
-    "releaseDate": "",
-    "elements": ["WIN"],
-    "level": "50",
-    "damage": "62-86",
-    "stats": "Block +2, Dodge +2, Parry +2, Crit +6, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +3, END +3, LUK +3, INT +10, DEX +10, STR +10, Bonus +6",
-    "resists": "All +6, Health -11",
-    "rarity": "13",
-    "obtainMethods": [
+    "familyOrigin": "same-thread-multi-post",
+    "familySources": [],
+    "shared": {
+      "description": "A precise blade forged from lightning and shadow, it hums with the ticks and whirs of its inner workings, delivering swift and deadly strikes. Proof of victory over Duskbolt, the Tempest.",
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/ArcanotechEdge.png",
+      "notes": "Weapons cannot be destroyed."
+    },
+    "levelVariants": [
       {
-        "location": "Duskbolt, the Tempest",
-        "price": "N/A",
-        "priceType": "free",
-        "sellback": "0 Dragon Coins",
-        "daRequired": false,
-        "dcRequired": true
+        "levelNumber": 1,
+        "levelDisplay": "I",
+        "actualLevel": 50,
+        "variantName": "I",
+        "name": "Arcanotech Edge I",
+        "damage": "62-86",
+        "stats": "Block +2, Dodge +2, Parry +2, Crit +6, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +3, END +3, LUK +3, INT +10, DEX +10, STR +10, Bonus +6",
+        "obtainVariants": [
+          {
+            "location": "Duskbolt, the Tempest",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "0 Dragon Coins",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22409411",
+        "description": "A precise blade forged from lightning and shadow, it hums with the ticks and whirs of its inner workings, delivering swift and deadly strikes. Proof of victory over Duskbolt, the Tempest.",
+        "element": "WIN",
+        "resists": "All +6, Health -11",
+        "rarity": "13"
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "II",
+        "actualLevel": 70,
+        "variantName": "II",
+        "name": "Arcanotech Edge II",
+        "damage": "75-99",
+        "stats": "Block +3, Dodge +3, Parry +3, Crit +8, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +4, LUK +4, INT +16, DEX +16, STR +16, Bonus +8",
+        "obtainVariants": [
+          {
+            "location": "Blades and Bones (Shop)",
+            "price": "N/A",
+            "priceType": "merge",
+            "sellback": "0 Dragon Coins",
+            "requiredItems": "1 Arcanotech Edge I & 1 Artificial Elemental Core",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22409411",
+        "description": "A precise blade forged from lightning and shadow, it hums with the ticks and whirs of its inner workings, delivering swift and deadly strikes. Proof of victory over Blades and Bones.",
+        "element": "WIN",
+        "resists": "All +8, Health -13",
+        "rarity": "13"
+      },
+      {
+        "levelNumber": 3,
+        "levelDisplay": "III",
+        "actualLevel": 90,
+        "variantName": "III",
+        "name": "Arcanotech Edge III",
+        "damage": "86-110",
+        "stats": "Block +5, Dodge +5, Parry +5, Crit +10, Magic Def +5, Pierce Def +5, Melee Def +5, END +6, LUK +6, INT +26, DEX +26, STR +26, Bonus +10",
+        "obtainVariants": [
+          {
+            "location": "Blades and Bones (Shop)",
+            "price": "N/A",
+            "priceType": "merge",
+            "sellback": "0 Dragon Coins",
+            "requiredItems": "1 Arcanotech Edge I & 1 Artificial Elemental Core",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22409411",
+        "description": "A precise blade forged from lightning and shadow, it hums with the ticks and whirs of its inner workings, delivering swift and deadly strikes. Proof of victory over Blades and Bones.",
+        "element": "WIN",
+        "resists": "All +10, Health -15",
+        "rarity": "13"
       }
     ],
-    "tags": ["win", "free"],
-    "daRequired": false,
-    "dcRequired": true
+    "category": "Weapon",
+    "releaseDate": "",
+    "tags": [
+      "win",
+      "free",
+      "merge"
+    ],
+    "hasDA": false,
+    "hasDC": true,
+    "hasDM": false,
+    "hasFree": true,
+    "hasMerge": true,
+    "elements": [
+      "WIN"
+    ],
+    "levelRange": "I-III"
   },
   {
     "id": "weapon-archivist-s-book-of-lore-the",
@@ -1257,7 +3167,9 @@
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22403082",
     "releaseDate": "",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/TheArchivist'sBookofLore.png",
-    "elements": ["NON"],
+    "elements": [
+      "NON"
+    ],
     "level": "1",
     "damage": "0-0",
     "stats": "None",
@@ -1273,7 +3185,10 @@
         "dcRequired": true
       }
     ],
-    "tags": ["non", "dc"],
+    "tags": [
+      "non",
+      "dc"
+    ],
     "daRequired": false,
     "dcRequired": true,
     "isCosmetic": true
@@ -1288,7 +3203,9 @@
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22417697",
     "releaseDate": "",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Ascendant'sPartisan.png",
-    "elements": [],
+    "elements": [
+      "???"
+    ],
     "level": "1",
     "damage": "0-0",
     "stats": "None",
@@ -1313,94 +3230,643 @@
         "url": "https://forums2.battleon.com/f/tm.asp?m=22419998"
       }
     ],
-    "tags": ["merge"],
+    "tags": [
+      "???",
+      "merge"
+    ],
     "daRequired": false,
     "dcRequired": true,
     "isCosmetic": true
   },
   {
-    "id": "weapon-ascended-claymore-all-versions",
-    "name": "Ascended Claymore (All Versions)",
-    "slug": "weapon-ascended-claymore-all-versions",
+    "id": "weapon-ascended-claymore",
+    "familyName": "Ascended Claymore",
+    "slug": "weapon-ascended-claymore",
+    "aliasSlugs": [
+      "weapon-ascended-claymore-all-versions"
+    ],
     "type": "weapon",
     "subtype": "scythe",
-    "description": "This massive blade is used by those that have fully trained in the ways of the Ascended. The blade seems to be able to cut through almost anything!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21952639",
-    "releaseDate": "",
-    "elements": ["BAC"],
-    "level": "20",
-    "damage": "35-47",
-    "stats": "Crit +2, WIS +2, END +2, INT +1, DEX +1, STR +1, Bonus +1",
-    "resists": "Fire +3",
-    "rarity": "25",
-    "obtainMethods": [
+    "familyOrigin": "same-thread-multi-post",
+    "familySources": [],
+    "shared": {
+      "description": "This massive blade is used by those that have fully trained in the ways of the Ascended. The blade seems to be able to cut through almost anything!",
+      "imageUrl": "http://i.imgur.com/79uR4I2.gif"
+    },
+    "levelVariants": [
       {
-        "location": "Ascendant CC",
-        "price": "1,200 Gold",
-        "priceType": "gold",
-        "sellback": "120 Gold",
-        "daRequired": false
+        "levelNumber": 20,
+        "levelDisplay": "20",
+        "actualLevel": 20,
+        "name": "Ascended Claymore",
+        "damage": "35-47",
+        "stats": "Crit +2, WIS +2, END +2, INT +1, DEX +1, STR +1, Bonus +1",
+        "obtainVariants": [
+          {
+            "location": "Ascendant CC",
+            "price": "1,200 Gold",
+            "priceType": "gold",
+            "sellback": "120 Gold",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21952639",
+        "description": "This massive blade is used by those that have fully trained in the ways of the Ascended. The blade seems to be able to cut through almost anything!",
+        "element": "BAC",
+        "resists": "Fire +3",
+        "rarity": "25"
+      },
+      {
+        "levelNumber": 30,
+        "levelDisplay": "30",
+        "actualLevel": 30,
+        "name": "Ascended Claymore",
+        "damage": "45-57",
+        "stats": "Crit +3, Magic Def +1, Pierce Def +1, Melee Def +1, WIS +3, END +3, INT +3, DEX +3, STR +3, Bonus +2",
+        "obtainVariants": [
+          {
+            "location": "Ascendant CC",
+            "price": "3,000 Gold",
+            "priceType": "gold",
+            "sellback": "300 Gold",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21952639",
+        "description": "This massive blade is used by those that have fully trained in the ways of the Ascended. The blade seems to be able to cut through almost anything!",
+        "element": "BAC",
+        "resists": "Water +1, Fire +3",
+        "rarity": "25"
+      },
+      {
+        "levelNumber": 40,
+        "levelDisplay": "40",
+        "actualLevel": 40,
+        "name": "Ascended Claymore",
+        "damage": "54-68",
+        "stats": "Block +1, Dodge +1, Parry +1, Crit +4, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +3, END +3, INT +4, DEX +4, STR +4, Bonus +4",
+        "obtainVariants": [
+          {
+            "location": "Ascendant CC",
+            "price": "4,500 Gold",
+            "priceType": "gold",
+            "sellback": "450 Gold",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21952639",
+        "description": "This massive blade is used by those that have fully trained in the ways of the Ascended. The blade seems to be able to cut through almost anything!",
+        "element": "BAC",
+        "resists": "Water +3, Fire +4",
+        "rarity": "25"
+      },
+      {
+        "levelNumber": 50,
+        "levelDisplay": "50",
+        "actualLevel": 50,
+        "name": "Ascended Claymore",
+        "damage": "60-74",
+        "stats": "Block +1, Dodge +1, Parry +1, Crit +5, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +5, END +5, INT +6, DEX +6, STR +6, Bonus +5",
+        "obtainVariants": [
+          {
+            "location": "Ascendant CC",
+            "price": "6,000 Gold",
+            "priceType": "gold",
+            "sellback": "600 Gold",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21952639",
+        "description": "This massive blade is used by those that have fully trained in the ways of the Ascended. The blade seems to be able to cut through almost anything!",
+        "element": "BAC",
+        "resists": "Health -1, Immobility +2, Water +3, Fire +5",
+        "rarity": "25"
+      },
+      {
+        "levelNumber": 60,
+        "levelDisplay": "60",
+        "actualLevel": 60,
+        "name": "Ascended Claymore",
+        "damage": "68-80",
+        "stats": "Block +2, Dodge +2, Parry +2, Crit +6, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +5, END +5, INT +7, DEX +7, STR +7, Bonus +6",
+        "obtainVariants": [
+          {
+            "location": "Ascendant CC",
+            "price": "8,500 Gold",
+            "priceType": "gold",
+            "sellback": "850 Gold",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21952639",
+        "description": "This massive blade is used by those that have fully trained in the ways of the Ascended. The blade seems to be able to cut through almost anything!",
+        "element": "BAC",
+        "resists": "Health -1, Immobility +2, Water +4, Fire +6",
+        "rarity": "25"
+      },
+      {
+        "levelNumber": 70,
+        "levelDisplay": "70",
+        "actualLevel": 70,
+        "name": "Ascended Claymore",
+        "damage": "74-90",
+        "stats": "Block +2, Dodge +2, Parry +2, Crit +9, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +6, END +6, INT +10, DEX +10, STR +10, Bonus +9",
+        "obtainVariants": [
+          {
+            "location": "Ascendant CC",
+            "price": "10,000 Gold",
+            "priceType": "gold",
+            "sellback": "1,000 Gold",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21952639",
+        "description": "This massive blade is used by those that have fully trained in the ways of the Ascended. The blade seems to be able to cut through almost anything!",
+        "element": "BAC",
+        "resists": "Health -3, Immobility +4, Water +8, Fire +11",
+        "rarity": "25"
+      },
+      {
+        "levelNumber": 80,
+        "levelDisplay": "80",
+        "actualLevel": 80,
+        "name": "Ascended Claymore",
+        "damage": "74-102",
+        "stats": "Block +4, Dodge +4, Parry +4, Crit +10, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +6, END +6, INT +13, DEX +13, STR +13, Bonus +10",
+        "obtainVariants": [
+          {
+            "location": "Ascendant CC",
+            "price": "12,000 Gold",
+            "priceType": "gold",
+            "sellback": "1,200 Gold",
+            "daRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21952639",
+        "description": "This massive blade is used by those that have fully trained in the ways of the Ascended. The blade seems to be able to cut through almost anything! This item requires a Dragon Amulet.",
+        "element": "BAC",
+        "resists": "Health -3, Immobility +4, Bacon +10, Water +11, Fire +12",
+        "rarity": "55"
       }
     ],
-    "tags": ["bac", "gold"],
-    "daRequired": false
+    "category": "Weapon",
+    "releaseDate": "",
+    "tags": [
+      "bac",
+      "gold"
+    ],
+    "hasDA": true,
+    "hasDC": false,
+    "hasDM": false,
+    "hasFree": false,
+    "hasMerge": false,
+    "elements": [
+      "BAC"
+    ],
+    "levelRange": "20-80"
   },
   {
-    "id": "weapon-ascended-spear-all-versions",
-    "name": "Ascended Spear (All Versions)",
-    "slug": "weapon-ascended-spear-all-versions",
+    "id": "weapon-ascended-spear",
+    "familyName": "Ascended Spear",
+    "slug": "weapon-ascended-spear",
+    "aliasSlugs": [
+      "weapon-ascended-spear-all-versions"
+    ],
     "type": "weapon",
     "subtype": "scythe",
-    "description": "Arester has entrusted you with one of his spears, his favored weapon. It is a fearsome and deadly implement.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21953370",
-    "releaseDate": "",
-    "elements": ["BAC"],
-    "level": "20",
-    "damage": "35-57",
-    "stats": "Crit +3, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +2, END +2, CHA +2, INT +3, DEX +3, STR +3, Bonus +3",
-    "resists": "Water +3, Fire +3, Bacon +3, Immobility +1, Health -1",
-    "rarity": "90",
-    "obtainMethods": [
+    "familyOrigin": "same-thread-multi-post",
+    "familySources": [],
+    "shared": {
+      "description": "Arester has entrusted you with one of his spears, his favored weapon. It is a fearsome and deadly implement.",
+      "imageUrl": "http://i.imgur.com/8tIIQPz.png",
+      "alsoSee": [
+        {
+          "name": "Dark Ascended Spear (All Versions)",
+          "slug": "weapon-dark-ascended-spear-all-versions",
+          "type": "weapon",
+          "url": "https://forums2.battleon.com/f/tm.asp?m=22073940"
+        },
+        {
+          "name": "Half Ascended Spear (All Versions)",
+          "slug": "weapon-half-ascended-spear-all-versions",
+          "type": "weapon",
+          "url": "https://forums2.battleon.com/f/tm.asp?m=22073119"
+        }
+      ]
+    },
+    "levelVariants": [
       {
-        "location": "Ascendant CC DC",
-        "price": "250 Dragon Coins",
-        "priceType": "dc",
-        "sellback": "225 DC (<24 hours) / 63 DC (>24 hours)",
-        "daRequired": false,
-        "dcRequired": true
+        "levelNumber": 20,
+        "levelDisplay": "20",
+        "actualLevel": 20,
+        "name": "Ascended Spear",
+        "damage": "35-57",
+        "stats": "Crit +3, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +2, END +2, CHA +2, INT +3, DEX +3, STR +3, Bonus +3",
+        "obtainVariants": [
+          {
+            "location": "Ascendant CC DC",
+            "price": "250 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "225 DC (<24 hours) / 63 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21953370",
+        "description": "Arester has entrusted you with one of his spears, his favored weapon. It is a fearsome and deadly implement.",
+        "element": "BAC",
+        "resists": "Water +3, Fire +3, Bacon +3, Immobility +1, Health -1",
+        "rarity": "90"
+      },
+      {
+        "levelNumber": 30,
+        "levelDisplay": "30",
+        "actualLevel": 30,
+        "name": "Ascended Spear",
+        "damage": "48-64",
+        "stats": "Parry +1, Crit +3, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +2, END +2, CHA +2, INT +4, DEX +4, STR +4, Bonus +3",
+        "obtainVariants": [
+          {
+            "location": "Ascendant CC DC",
+            "price": "300 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "270 DC (<24 hours) / 75 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21953370",
+        "description": "Arester has entrusted you with one of his spears, his favored weapon. It is a fearsome and deadly implement.",
+        "element": "BAC",
+        "resists": "Water +4, Fire +4, Bacon +4, Immobility +1, Health -1",
+        "rarity": "90"
+      },
+      {
+        "levelNumber": 40,
+        "levelDisplay": "40",
+        "actualLevel": 40,
+        "name": "Ascended Spear",
+        "damage": "54-76",
+        "stats": "Parry +1, Crit +4, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +5, END +5, CHA +5, INT +5, DEX +5, STR +5, Bonus +4",
+        "obtainVariants": [
+          {
+            "location": "Ascendant CC DC",
+            "price": "350 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "315 DC (<24 hours) / 88 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21953370",
+        "description": "Arester has entrusted you with one of his spears, his favored weapon. It is a fearsome and deadly implement.",
+        "element": "BAC",
+        "resists": "Water +6, Fire +6, Bacon +6, Immobility +2, Health -2",
+        "rarity": "90"
+      },
+      {
+        "levelNumber": 50,
+        "levelDisplay": "50",
+        "actualLevel": 50,
+        "name": "Ascended Spear",
+        "damage": "65-79",
+        "stats": "Crit +6, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +5, END +5, CHA +5, LUK +1, INT +6, DEX +6, STR +6, Bonus +6",
+        "obtainVariants": [
+          {
+            "location": "Ascendant CC DC",
+            "price": "375 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "338 DC (<24 hours) / 94 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21953370",
+        "description": "Arester has entrusted you with one of his spears, his favored weapon. It is a fearsome and deadly implement.",
+        "element": "BAC",
+        "resists": "Water +6, Fire +6, Bacon +6, Immobility +2, Health -2",
+        "rarity": "90"
+      },
+      {
+        "levelNumber": 60,
+        "levelDisplay": "60",
+        "actualLevel": 60,
+        "name": "Ascended Spear",
+        "damage": "70-88",
+        "stats": "Block +2, Dodge +2, Parry +2, Crit +8, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +6, END +6, CHA +6, LUK +2, INT +7, DEX +7, STR +7, Bonus +8",
+        "obtainVariants": [
+          {
+            "location": "Ascendant CC DC",
+            "price": "400 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "360 DC (<24 hours) / 100 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21953370",
+        "description": "Arester has entrusted you with one of his spears, his favored weapon. It is a fearsome and deadly implement.",
+        "element": "BAC",
+        "resists": "Water +7, Fire +7, Bacon +7, Immobility +3, Health -3",
+        "rarity": "90"
+      },
+      {
+        "levelNumber": 70,
+        "levelDisplay": "70",
+        "actualLevel": 70,
+        "name": "Ascended Spear",
+        "damage": "78-94",
+        "stats": "Block +2, Dodge +2, Parry +2, Crit +10, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +6, END +2, CHA +8, LUK +4, INT +10, DEX +10, STR +10, Bonus +10",
+        "obtainVariants": [
+          {
+            "location": "Ascendant CC DC",
+            "price": "450 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "405 DC (<24 hours) / 113 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21953370",
+        "description": "Arester has entrusted you with one of his spears, his favored weapon. It is a fearsome and deadly implement.",
+        "element": "BAC",
+        "resists": "Water +9, Fire +9, Bacon +9, Immobility +5, Health -5",
+        "rarity": "90"
+      },
+      {
+        "levelNumber": 80,
+        "levelDisplay": "80",
+        "actualLevel": 80,
+        "name": "Ascended Spear",
+        "damage": "82-100",
+        "stats": "Block +4, Dodge +4, Parry +4, Crit +12, Magic Def +9, Pierce Def +9, Melee Def +9, WIS +6, END +6, CHA +9, LUK +6, INT +13, DEX +13, STR +13, Bonus +12",
+        "obtainVariants": [
+          {
+            "location": "Ascendant CC DC",
+            "price": "500 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "450 DC (<24 hours) / 125 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21953370",
+        "description": "Arester has entrusted you with one of his spears, his favored weapon. It is a fearsome and deadly implement.",
+        "element": "BAC",
+        "resists": "Water +13, Fire +13, Bacon +13, Immobility +7, Health -7",
+        "rarity": "90"
       }
     ],
-    "tags": ["bac", "dc"],
-    "daRequired": false,
-    "dcRequired": true
+    "category": "Weapon",
+    "releaseDate": "",
+    "tags": [
+      "bac",
+      "dc"
+    ],
+    "hasDA": false,
+    "hasDC": true,
+    "hasDM": false,
+    "hasFree": false,
+    "hasMerge": false,
+    "elements": [
+      "BAC"
+    ],
+    "levelRange": "20-80"
   },
   {
-    "id": "weapon-ashendal-s-z-blade-all-versions",
-    "name": "Ashendal's Z Blade (All Versions)",
-    "slug": "weapon-ashendal-s-z-blade-all-versions",
+    "id": "weapon-ashendal-s-z-blade",
+    "familyName": "Ashendal's Z Blade",
+    "slug": "weapon-ashendal-s-z-blade",
+    "aliasSlugs": [
+      "weapon-ashendal-s-z-blade-all-versions"
+    ],
     "type": "weapon",
     "subtype": "scythe",
-    "description": "Crafted by Ashendal in a... different time, this blade hums with kinetic energy.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22082907",
-    "releaseDate": "",
-    "elements": ["ENE"],
-    "level": "10",
-    "damage": "21-33",
-    "stats": "Crit +1, WIS +1, END +1, INT +1, DEX +1, STR +1, Bonus +1",
-    "resists": "Health -1, Water +1",
-    "rarity": "50",
-    "obtainMethods": [
+    "familyOrigin": "same-thread-multi-post",
+    "familySources": [],
+    "shared": {
+      "description": "Crafted by Ashendal in a... different time, this blade hums with kinetic energy.",
+      "imageUrl": "http://i.imgur.com/cL2iS9c.png"
+    },
+    "levelVariants": [
       {
-        "location": "Ash's Birthday",
-        "price": "800 Gold",
-        "priceType": "gold",
-        "sellback": "80 Gold",
-        "daRequired": false
+        "levelNumber": 10,
+        "levelDisplay": "10",
+        "actualLevel": 10,
+        "name": "Ashendal's Z Blade",
+        "damage": "21-33",
+        "stats": "Crit +1, WIS +1, END +1, INT +1, DEX +1, STR +1, Bonus +1",
+        "obtainVariants": [
+          {
+            "location": "Ash's Birthday",
+            "price": "800 Gold",
+            "priceType": "gold",
+            "sellback": "80 Gold",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22082907",
+        "description": "Crafted by Ashendal in a... different time, this blade hums with kinetic energy.",
+        "element": "ENE",
+        "resists": "Health -1, Water +1",
+        "rarity": "50"
+      },
+      {
+        "levelNumber": 20,
+        "levelDisplay": "20",
+        "actualLevel": 20,
+        "name": "Ashendal's Z Blade",
+        "damage": "29-51",
+        "stats": "Crit +2, Magic Def +1, Pierce Def +1, Melee Def +1, WIS +1, END +1, CHA +1, LUK +1, INT +1, DEX +1, STR +1, Bonus +1",
+        "obtainVariants": [
+          {
+            "location": "Ash's Birthday",
+            "price": "2,200 Gold",
+            "priceType": "gold",
+            "sellback": "220 Gold",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22082907",
+        "description": "Crafted by Ashendal in a... different time, this blade hums with kinetic energy.",
+        "element": "ENE",
+        "resists": "Health -1, Fire +1, Water +1, Light +1",
+        "rarity": "50"
+      },
+      {
+        "levelNumber": 30,
+        "levelDisplay": "30",
+        "actualLevel": 30,
+        "name": "Ashendal's Z Blade",
+        "damage": "42-58",
+        "stats": "Crit +4, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +1, END +1, CHA +1, LUK +1, INT +3, DEX +3, STR +3, Bonus +3",
+        "obtainVariants": [
+          {
+            "location": "Ash's Birthday",
+            "price": "4,800 Gold",
+            "priceType": "gold",
+            "sellback": "480 Gold",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22082907",
+        "description": "Crafted by Ashendal in a... different time, this blade hums with kinetic energy.",
+        "element": "ENE",
+        "resists": "Health -1, Fire +1, Water +2, Light +2",
+        "rarity": "50"
+      },
+      {
+        "levelNumber": 40,
+        "levelDisplay": "40",
+        "actualLevel": 40,
+        "name": "Ashendal's Z Blade",
+        "damage": "50-70",
+        "stats": "Crit +5, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +2, END +2, CHA +2, LUK +2, INT +4, DEX +4, STR +4, Bonus +4",
+        "obtainVariants": [
+          {
+            "location": "Ash's Birthday",
+            "price": "5,500 Gold",
+            "priceType": "gold",
+            "sellback": "550 Gold",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22082907",
+        "description": "Crafted by Ashendal in a... different time, this blade hums with kinetic energy.",
+        "element": "ENE",
+        "resists": "Health -1, Fire +2, Water +3, Light +3",
+        "rarity": "50"
+      },
+      {
+        "levelNumber": 50,
+        "levelDisplay": "50",
+        "actualLevel": 50,
+        "name": "Ashendal's Z Blade",
+        "damage": "61-73",
+        "stats": "Crit +6, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +4, END +4, CHA +4, LUK +4, INT +6, DEX +6, STR +6, Bonus +5",
+        "obtainVariants": [
+          {
+            "location": "Ash's Birthday",
+            "price": "6,200 Gold",
+            "priceType": "gold",
+            "sellback": "620 Gold",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22082907",
+        "description": "Crafted by Ashendal in a... different time, this blade hums with kinetic energy.",
+        "element": "ENE",
+        "resists": "Health -2, Fire +3, Water +4, Light +4",
+        "rarity": "50"
+      },
+      {
+        "levelNumber": 60,
+        "levelDisplay": "60",
+        "actualLevel": 60,
+        "name": "Ashendal's Z Blade",
+        "damage": "62-86",
+        "stats": "Parry +1, Crit +7, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +5, END +5, CHA +5, LUK +5, INT +8, DEX +8, STR +8, Bonus +6",
+        "obtainVariants": [
+          {
+            "location": "Ash's Birthday",
+            "price": "7,500 Gold",
+            "priceType": "gold",
+            "sellback": "750 Gold",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22082907",
+        "description": "Crafted by Ashendal in a... different time, this blade hums with kinetic energy.",
+        "element": "ENE",
+        "resists": "Health -2, Fire +4, Water +5, Light +5",
+        "rarity": "50"
+      },
+      {
+        "levelNumber": 70,
+        "levelDisplay": "70",
+        "actualLevel": 70,
+        "name": "Ashendal's Z Blade",
+        "damage": "72-88",
+        "stats": "Dodge +1, Parry +1, Crit +9, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +6, END +6, CHA +6, LUK +6, INT +9, DEX +9, STR +9, Bonus +7",
+        "obtainVariants": [
+          {
+            "location": "Ash's Birthday",
+            "price": "9,000 Gold",
+            "priceType": "gold",
+            "sellback": "900 Gold",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22082907",
+        "description": "Crafted by Ashendal in a... different time, this blade hums with kinetic energy.",
+        "element": "ENE",
+        "resists": "Health -3, Fire +5, Water +6, Light +6",
+        "rarity": "50"
+      },
+      {
+        "levelNumber": 75,
+        "levelDisplay": "75",
+        "actualLevel": 75,
+        "name": "Ashendal's Z Blade",
+        "damage": "76-94",
+        "stats": "Block +1, Dodge +1, Parry +1, Crit +9, Magic Def +7, Pierce Def +7, Melee Def +7, WIS +6, END +6, CHA +6, LUK +6, INT +10, DEX +10, STR +10, Bonus +8",
+        "obtainVariants": [
+          {
+            "location": "Ash's Birthday",
+            "price": "9,600 Gold",
+            "priceType": "gold",
+            "sellback": "960 Gold",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22082907",
+        "description": "Crafted by Ashendal in a... different time, this blade hums with kinetic energy.",
+        "element": "ENE",
+        "resists": "Health -4, Fire +6, Water +8, Light +8",
+        "rarity": "50"
+      },
+      {
+        "levelNumber": 80,
+        "levelDisplay": "80",
+        "actualLevel": 80,
+        "name": "Ashendal's Z Blade",
+        "damage": "74-102",
+        "stats": "Block +1, Dodge +1, Parry +2, Crit +11, Magic Def +7, Pierce Def +7, Melee Def +7, WIS +7, END +7, CHA +6, LUK +6, INT +12, DEX +12, STR +12, Bonus +9",
+        "obtainVariants": [
+          {
+            "location": "Ash's Birthday",
+            "price": "10,000 Gold",
+            "priceType": "gold",
+            "sellback": "1,000 Gold",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22082907",
+        "description": "Crafted by Ashendal in a... different time, this blade hums with kinetic energy.",
+        "element": "ENE",
+        "resists": "Health -7, Fire +8, Water +10, Light +10",
+        "rarity": "50"
       }
     ],
-    "tags": ["ene", "gold"],
-    "daRequired": false,
-    "isSeasonal": true
+    "category": "Weapon",
+    "releaseDate": "",
+    "tags": [
+      "ene",
+      "gold"
+    ],
+    "hasDA": false,
+    "hasDC": false,
+    "hasDM": false,
+    "hasFree": false,
+    "hasMerge": false,
+    "elements": [
+      "ENE"
+    ],
+    "isSeasonal": true,
+    "levelRange": "10-80"
   },
   {
     "id": "weapon-ashened-brand",
@@ -1412,7 +3878,9 @@
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22419287",
     "releaseDate": "",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AshenedBrand.png",
-    "elements": ["FIR"],
+    "elements": [
+      "FIR"
+    ],
     "level": "1",
     "damage": "0-0",
     "stats": "None",
@@ -1428,7 +3896,10 @@
         "dcRequired": true
       }
     ],
-    "tags": ["fir", "dc"],
+    "tags": [
+      "fir",
+      "dc"
+    ],
     "daRequired": false,
     "dcRequired": true,
     "isCosmetic": true
@@ -1443,7 +3914,9 @@
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21522258",
     "releaseDate": "",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/HavartiBlade.png",
-    "elements": ["GOO"],
+    "elements": [
+      "GOO"
+    ],
     "level": "76",
     "damage": "74-98",
     "stats": "Dodge +2, Parry +1, Crit +9, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +6, END +4, CHA +9, LUK +6, INT +12, DEX +12, STR +12, Bonus +10",
@@ -1514,7 +3987,10 @@
         "url": "https://forums2.battleon.com/f/tm.asp?m=21522244"
       }
     ],
-    "tags": ["goo", "gold"],
+    "tags": [
+      "goo",
+      "gold"
+    ],
     "daRequired": true
   },
   {
@@ -1526,7 +4002,9 @@
     "description": "Crafted for a special celebration on a distant world, this sword seems to slowly absorb energy from its surroundings.  (Cosmetic)",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22424538",
     "releaseDate": "",
-    "elements": ["EVI"],
+    "elements": [
+      "EVI"
+    ],
     "level": "1",
     "damage": "0-0",
     "stats": "None",
@@ -1542,7 +4020,10 @@
         "dcRequired": true
       }
     ],
-    "tags": ["evi", "dc"],
+    "tags": [
+      "evi",
+      "dc"
+    ],
     "daRequired": false,
     "dcRequired": true,
     "isCosmetic": true,
@@ -1558,7 +4039,9 @@
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22413654",
     "releaseDate": "",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AstravianKey.png",
-    "elements": [],
+    "elements": [
+      "???"
+    ],
     "level": "1",
     "damage": "0-0",
     "stats": "None",
@@ -1575,7 +4058,10 @@
       }
     ],
     "notes": "Weapon is animated; it has many moving, spinning, and rotating components, while the center of the scythe periodically crackles with energy.",
-    "tags": ["dc"],
+    "tags": [
+      "???",
+      "dc"
+    ],
     "daRequired": false,
     "dcRequired": true,
     "isCosmetic": true,
@@ -1591,7 +4077,9 @@
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22413958",
     "releaseDate": "",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AstravianPaladin'sBlade.png",
-    "elements": ["LIG"],
+    "elements": [
+      "LIG"
+    ],
     "level": "1",
     "damage": "0-0",
     "stats": "None",
@@ -1615,7 +4103,10 @@
         "url": "https://forums2.battleon.com/f/tm.asp?m=13524656"
       }
     ],
-    "tags": ["lig", "dc"],
+    "tags": [
+      "lig",
+      "dc"
+    ],
     "daRequired": false,
     "dcRequired": true,
     "isCosmetic": true
@@ -1633,10 +4124,12 @@
     "alternativeImages": [
       {
         "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AtealanCeremonialSpear-ElementalAttunement.png",
-        "caption": "Elemental Attunement"
+        "caption": "this chart"
       }
     ],
-    "elements": ["NON"],
+    "elements": [
+      "NON"
+    ],
     "level": "1",
     "damage": "0-0",
     "stats": "None",
@@ -1653,7 +4146,10 @@
       }
     ],
     "notes": "Weapon is animated; ring at the center of the spearhead revolves and radiates bursts of magic continuously.\nWeapon's appearance is attuned to the player's equipped weapon's element; refer to   for all appearances.\nWood elemental attunement became accessible upon the release of  Spare Chair on  January 28th, 2023.",
-    "tags": ["non", "free"],
+    "tags": [
+      "non",
+      "free"
+    ],
     "daRequired": false,
     "dcRequired": true,
     "isCosmetic": true,
@@ -1671,11 +4167,17 @@
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Atherion.png",
     "alternativeImages": [
       {
+        "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Atherion.png",
+        "caption": "Default"
+      },
+      {
         "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Atherion-Clicked.png",
-        "caption": "Clicked Appearance"
+        "caption": "Clicked"
       }
     ],
-    "elements": ["FEA"],
+    "elements": [
+      "FEA"
+    ],
     "level": "1",
     "damage": "0-0",
     "stats": "None",
@@ -1691,8 +4193,11 @@
         "dcRequired": true
       }
     ],
-    "notes": "Weapon is animated; the sphere of mana on the hammer rotates continuously.\nClick anywhere on the weapon to change between two appearances.\nDefault\nClicked",
-    "tags": ["fea", "dc"],
+    "notes": "Weapon is animated; the sphere of mana on the hammer rotates continuously.\nClick anywhere on the weapon to change between two appearances.",
+    "tags": [
+      "fea",
+      "dc"
+    ],
     "daRequired": false,
     "dcRequired": true,
     "isCosmetic": true
@@ -1707,7 +4212,9 @@
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18663911",
     "releaseDate": "",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AuroraKey.png",
-    "elements": ["LIG"],
+    "elements": [
+      "LIG"
+    ],
     "level": "63",
     "damage": "68-88",
     "stats": "Crit +7, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +6, INT +6, DEX +6, STR +6, Bonus +6",
@@ -1748,7 +4255,10 @@
         "url": "https://forums2.battleon.com/f/tm.asp?m=18665146"
       }
     ],
-    "tags": ["lig", "gold"],
+    "tags": [
+      "lig",
+      "gold"
+    ],
     "daRequired": true
   },
   {
@@ -1763,11 +4273,17 @@
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Aurorice.png",
     "alternativeImages": [
       {
+        "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Aurorice.png",
+        "caption": "Staff (Default)"
+      },
+      {
         "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Aurorice-Clicked.png",
-        "caption": "Clicked Appearance"
+        "caption": "Sword"
       }
     ],
-    "elements": ["ICE"],
+    "elements": [
+      "ICE"
+    ],
     "level": "1",
     "damage": "0-0",
     "stats": "None",
@@ -1783,8 +4299,11 @@
         "dcRequired": true
       }
     ],
-    "notes": "Weapon is animated; the snowflake at the end of the weapon rotates continuously.\nClick anywhere on the weapon to change its appearance between staff (default) and sword.\nStaff (Default)\nSword",
-    "tags": ["ice", "dc"],
+    "notes": "Weapon is animated; the snowflake at the end of the weapon rotates continuously.\nClick anywhere on the weapon to change its appearance between staff (default) and sword.",
+    "tags": [
+      "ice",
+      "dc"
+    ],
     "daRequired": false,
     "dcRequired": true,
     "isCosmetic": true
@@ -1799,7 +4318,9 @@
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22401114",
     "releaseDate": "",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AutoMechaHittingThingsCube.png",
-    "elements": ["MET"],
+    "elements": [
+      "MET"
+    ],
     "level": "1",
     "damage": "0-0",
     "stats": "None",
@@ -1814,40 +4335,275 @@
         "daRequired": true
       }
     ],
-    "tags": ["met", "gold"],
+    "tags": [
+      "met",
+      "gold"
+    ],
     "daRequired": true,
     "isCosmetic": true,
     "isSeasonal": true
   },
   {
-    "id": "weapon-autumn-s-cull-i-ix",
-    "name": "Autumn's Cull (I-IX)",
-    "slug": "weapon-autumn-s-cull-i-ix",
+    "id": "weapon-autumn-s-cull",
+    "familyName": "Autumn's Cull",
+    "slug": "weapon-autumn-s-cull",
+    "aliasSlugs": [
+      "weapon-autumn-s-cull-i-ix"
+    ],
     "type": "weapon",
     "subtype": "scythe",
-    "description": "A weapon embodying nature's passage. Click to shift between Nature and Ice damage. This weapon was forged by Dracelix!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22397687",
-    "releaseDate": "",
-    "elements": ["ICE", "NAT"],
-    "level": "10",
-    "damage": "19-35",
-    "stats": "Crit +2, Magic Def +1, Pierce Def +1, Melee Def +1, WIS +2, END +2, INT +2, DEX +2, STR +2, Bonus +2",
-    "resists": "Darkness +1, Light +1, Health -1",
-    "rarity": "8",
-    "obtainMethods": [
+    "familyOrigin": "same-thread-multi-post",
+    "familySources": [],
+    "shared": {
+      "description": "A weapon embodying nature's passage. Click to shift between Nature and Ice damage. This weapon was forged by Dracelix!",
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Autumn'sCull-Nature.png",
+      "alternativeImages": [
+        {
+          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Autumn'sCull-Nature.png",
+          "caption": "Nature (Default)"
+        },
+        {
+          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Autumn'sCull-Ice.png",
+          "caption": "Ice"
+        }
+      ],
+      "notes": "Click anywhere on the weapon to change between its available elements; this will also change its appearance, and the appearance of any  Helm of Autumn's Call or  Autumn's Grace cape equipped or shown."
+    },
+    "levelVariants": [
       {
-        "location": "Autumn's Call",
-        "price": "500 Dragon Coins",
-        "priceType": "dc",
-        "sellback": "450 DC (<24 hours) / 125 DC (>24 hours)",
-        "daRequired": false,
-        "dcRequired": true
+        "levelNumber": 1,
+        "levelDisplay": "I",
+        "actualLevel": 10,
+        "variantName": "I",
+        "name": "Autumn's Cull I",
+        "damage": "19-35",
+        "stats": "Crit +2, Magic Def +1, Pierce Def +1, Melee Def +1, WIS +2, END +2, INT +2, DEX +2, STR +2, Bonus +2",
+        "obtainVariants": [
+          {
+            "location": "Autumn's Call",
+            "price": "500 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "450 DC (<24 hours) / 125 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22397687",
+        "description": "A weapon embodying nature's passage. Click to shift between Nature and Ice damage. This weapon was forged by Dracelix!",
+        "element": "ICE",
+        "resists": "Darkness +1, Light +1, Health -1",
+        "rarity": "8"
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "II",
+        "actualLevel": 20,
+        "variantName": "II",
+        "name": "Autumn's Cull II",
+        "damage": "32-48",
+        "stats": "Block +1, Dodge +1, Parry +1, Crit +3, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +3, END +3, INT +3, DEX +3, STR +3, Bonus +3",
+        "obtainVariants": [
+          {
+            "location": "Autumn's Call",
+            "price": "500 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "450 DC (<24 hours) / 125 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22397687",
+        "description": "A weapon embodying nature's passage. Click to shift between Nature and Ice damage. This weapon was forged by Dracelix!",
+        "element": "ICE",
+        "resists": "Darkness +2, Light +2, Health -2",
+        "rarity": "8"
+      },
+      {
+        "levelNumber": 3,
+        "levelDisplay": "III",
+        "actualLevel": 30,
+        "variantName": "III",
+        "name": "Autumn's Cull III",
+        "damage": "42-58",
+        "stats": "Block +1, Dodge +1, Parry +1, Crit +4, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +4, END +4, INT +4, DEX +4, STR +4, Bonus +4",
+        "obtainVariants": [
+          {
+            "location": "Autumn's Call",
+            "price": "500 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "450 DC (<24 hours) / 125 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22397687",
+        "description": "A weapon embodying nature's passage. Click to shift between Nature and Ice damage. This weapon was forged by Dracelix!",
+        "element": "ICE",
+        "resists": "Darkness +3, Light +3, Health -3",
+        "rarity": "8"
+      },
+      {
+        "levelNumber": 4,
+        "levelDisplay": "IV",
+        "actualLevel": 40,
+        "variantName": "IV",
+        "name": "Autumn's Cull IV",
+        "damage": "52-68",
+        "stats": "Block +2, Dodge +2, Parry +2, Crit +5, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +5, END +5, INT +5, DEX +5, STR +5, Bonus +5",
+        "obtainVariants": [
+          {
+            "location": "Autumn's Call",
+            "price": "500 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "450 DC (<24 hours) / 125 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22397687",
+        "description": "A weapon embodying nature's passage. Click to shift between Nature and Ice damage. This weapon was forged by Dracelix!",
+        "element": "ICE",
+        "resists": "Darkness +4, Light +4, Health -4",
+        "rarity": "10"
+      },
+      {
+        "levelNumber": 5,
+        "levelDisplay": "V",
+        "actualLevel": 50,
+        "variantName": "V",
+        "name": "Autumn's Cull V",
+        "damage": "59-75",
+        "stats": "Block +2, Dodge +2, Parry +2, Crit +6, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +6, END +6, INT +6, DEX +6, STR +6, Bonus +6",
+        "obtainVariants": [
+          {
+            "location": "Autumn's Call",
+            "price": "500 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "450 DC (<24 hours) / 125 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22397687",
+        "description": "A weapon embodying nature's passage. Click to shift between Nature and Ice damage. This weapon was forged by Dracelix!",
+        "element": "ICE",
+        "resists": "Darkness +5, Light +5, Health -5",
+        "rarity": "10"
+      },
+      {
+        "levelNumber": 6,
+        "levelDisplay": "VI",
+        "actualLevel": 60,
+        "variantName": "VI",
+        "name": "Autumn's Cull VI",
+        "damage": "66-82",
+        "stats": "Block +2, Dodge +2, Parry +2, Crit +7, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +7, END +7, INT +8, DEX +8, STR +8, Bonus +7",
+        "obtainVariants": [
+          {
+            "location": "Autumn's Call",
+            "price": "500 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "450 DC (<24 hours) / 125 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22397687",
+        "description": "A weapon embodying nature's passage. Click to shift between Nature and Ice damage. This weapon was forged by Dracelix!",
+        "element": "ICE",
+        "resists": "Darkness +6, Light +6, Health -6",
+        "rarity": "15"
+      },
+      {
+        "levelNumber": 7,
+        "levelDisplay": "VII",
+        "actualLevel": 70,
+        "variantName": "VII",
+        "name": "Autumn's Cull VII",
+        "damage": "73-89",
+        "stats": "Block +2, Dodge +2, Parry +2, Crit +8, Magic Def +7, Pierce Def +7, Melee Def +7, WIS +8, END +8, INT +10, DEX +10, STR +10, Bonus +8",
+        "obtainVariants": [
+          {
+            "location": "Autumn's Call",
+            "price": "500 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "450 DC (<24 hours) / 125 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22397687",
+        "description": "A weapon embodying nature's passage. Click to shift between Nature and Ice damage. This weapon was forged by Dracelix!",
+        "element": "ICE",
+        "resists": "Darkness +7, Light +7, Health -7",
+        "rarity": "15"
+      },
+      {
+        "levelNumber": 8,
+        "levelDisplay": "VIII",
+        "actualLevel": 80,
+        "variantName": "VIII",
+        "name": "Autumn's Cull VIII",
+        "damage": "79-95",
+        "stats": "Block +3, Dodge +3, Parry +3, Crit +9, Magic Def +9, Pierce Def +9, Melee Def +9, WIS +10, END +10, INT +14, DEX +14, STR +14, Bonus +9",
+        "obtainVariants": [
+          {
+            "location": "Autumn's Call",
+            "price": "500 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "450 DC (<24 hours) / 125 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22397687",
+        "description": "A weapon embodying nature's passage. Click to shift between Nature and Ice damage. This weapon was forged by Dracelix!",
+        "element": "ICE",
+        "resists": "Darkness +8, Light +8, Health -8",
+        "rarity": "25"
+      },
+      {
+        "levelNumber": 9,
+        "levelDisplay": "IX",
+        "actualLevel": 90,
+        "variantName": "IX",
+        "name": "Autumn's Cull IX",
+        "damage": "85-101",
+        "stats": "Block +3, Dodge +3, Parry +3, Crit +10, Magic Def +9, Pierce Def +9, Melee Def +9, WIS +12, END +12, INT +18, DEX +18, STR +18, Bonus +10",
+        "obtainVariants": [
+          {
+            "location": "Autumn's Call",
+            "price": "500 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "450 DC (<24 hours) / 125 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22397687",
+        "description": "A weapon embodying nature's passage. Click to shift between Nature and Ice damage. This weapon was forged by Dracelix!",
+        "element": "ICE",
+        "resists": "Darkness +10, Light +10, Health -10",
+        "rarity": "25"
       }
     ],
-    "tags": ["ice", "nat", "dc"],
-    "daRequired": false,
-    "dcRequired": true,
-    "isSeasonal": true
+    "category": "Weapon",
+    "releaseDate": "",
+    "tags": [
+      "ice",
+      "dc"
+    ],
+    "hasDA": false,
+    "hasDC": true,
+    "hasDM": false,
+    "hasFree": false,
+    "hasMerge": false,
+    "elements": [
+      "ICE"
+    ],
+    "isSeasonal": true,
+    "levelRange": "I-IX"
   },
   {
     "id": "weapon-aware-orchidea",
@@ -1859,7 +4615,9 @@
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20685950",
     "releaseDate": "",
     "imageUrl": "https://i.imgur.com/z4dxAbw.png",
-    "elements": ["GOO"],
+    "elements": [
+      "GOO"
+    ],
     "level": "70",
     "damage": "78-94",
     "stats": "Block +1, Dodge +1, Parry +2, Crit +9, Magic Def +7, Pierce Def +7, Melee Def +7, WIS +8, END +6, CHA +6, LUK +5, INT +10, DEX +10, STR +10, Bonus +7",
@@ -1931,7 +4689,10 @@
         "url": "https://forums2.battleon.com/f/tm.asp?m=20685955"
       }
     ],
-    "tags": ["goo", "dc"],
+    "tags": [
+      "goo",
+      "dc"
+    ],
     "daRequired": false,
     "dcRequired": true,
     "isRare": true
@@ -1946,7 +4707,9 @@
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21122129",
     "releaseDate": "",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/weapons/AwesomeFoamHammer.png",
-    "elements": ["LIG"],
+    "elements": [
+      "LIG"
+    ],
     "level": "51",
     "damage": "64-82",
     "stats": "Parry +1, Crit +3, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +4, LUK +5, INT +7, DEX +7, STR +7, Bonus +6",
@@ -2036,7 +4799,10 @@
         "url": "https://forums2.battleon.com/f/tm.asp?m=21122132"
       }
     ],
-    "tags": ["lig", "dc"],
+    "tags": [
+      "lig",
+      "dc"
+    ],
     "daRequired": false,
     "dcRequired": true,
     "isSeasonal": true
@@ -2051,7 +4817,9 @@
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22419194",
     "releaseDate": "",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AzureGleam.png",
-    "elements": ["WAT"],
+    "elements": [
+      "WAT"
+    ],
     "level": "1",
     "damage": "0-0",
     "stats": "None",
@@ -2068,7 +4836,10 @@
       }
     ],
     "notes": "Weapon is animated; the gem gleams periodically, spokes of light surrounding the gem rotate continuously, and particles float along the blade periodically.",
-    "tags": ["wat", "dc"],
+    "tags": [
+      "wat",
+      "dc"
+    ],
     "daRequired": false,
     "dcRequired": true,
     "isCosmetic": true,

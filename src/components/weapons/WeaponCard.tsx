@@ -34,11 +34,6 @@ export default function WeaponCard({ weapon }: WeaponCardProps) {
           {card.hasMultipleVersions && card.levelRange && (
             <LevelRangeBadge levelRange={card.levelRange} />
           )}
-          {card.isCosmetic && (
-            <span className="text-[10px] text-orange-300 bg-orange-500/15 px-1.5 py-0.5 rounded-full font-medium">
-              Cosmetic
-            </span>
-          )}
           {card.daRequired && (
             <span className="text-[10px] text-orange-400 bg-orange-500/20 px-1.5 py-0.5 rounded-full font-medium">
               DA

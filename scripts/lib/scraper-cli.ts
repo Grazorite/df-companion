@@ -4,6 +4,10 @@ export interface LetterFilterArgs {
   letters?: string[]
 }
 
+export interface NameFilterArgs {
+  names?: string[]
+}
+
 export function getArg(name: string): string | undefined {
   return process.argv
     .slice(2)
@@ -42,6 +46,70 @@ export function getConcurrencyArg(defaultValue = 2): number {
   const concurrency = Number.parseInt(raw, 10)
   if (!Number.isFinite(concurrency) || concurrency < 1) return defaultValue
   return Math.min(concurrency, 4)
+}
+
+export function normalizeNameFilter(name: string): string {
+  return name.trim().replace(/\s+/g, ' ').toLowerCase()
+}
+
+export function stripTrailingParenthetical(name: string): string {
+  return name.replace(/\s*\([^)]+\)\s*$/, '').trim()
+}
+
+export function getNameFilterArgs(): NameFilterArgs {
+  const singleName = getArg('name')
+  const namesArg = getArg('names')
+  const names = [
+    ...(singleName ? [singleName] : []),
+    ...(namesArg
+      ? namesArg
+          .split(namesArg.includes('|') ? '|' : ',')
+          .map((value) => value.trim())
+          .filter(Boolean)
+      : []),
+  ]
+    .map(normalizeNameFilter)
+    .filter(Boolean)
+
+  return {
+    ...(names && names.length > 0 ? { names } : {}),
+  }
+}
+
+export function getFreshArg(): boolean {
+  return process.argv.slice(2).includes('--fresh')
+}
+
+export function matchesNameFilter(
+  value: string,
+  filter: NameFilterArgs,
+  aliases: string[] = []
+): boolean {
+  if (!filter.names || filter.names.length === 0) return true
+
+  const candidates = [value, stripTrailingParenthetical(value), ...aliases]
+    .map(normalizeNameFilter)
+    .filter(Boolean)
+
+  return filter.names.some((name) => candidates.includes(name))
+}
+
+export function applyNameFilter<T>(
+  entries: T[],
+  filter: NameFilterArgs,
+  getName: (entry: T) => string,
+  getAliases: (entry: T) => string[] = () => []
+): { entries: T[]; message?: string } {
+  if (!filter.names || filter.names.length === 0) return { entries }
+
+  const selected = entries.filter((entry) =>
+    matchesNameFilter(getName(entry), filter, getAliases(entry))
+  )
+
+  return {
+    entries: selected,
+    message: `Filtered to selected names: ${selected.length} entries`,
+  }
 }
 
 export function applyLetterFilter<T extends { letter: string }>(

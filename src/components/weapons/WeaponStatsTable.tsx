@@ -8,11 +8,23 @@ import {
 interface WeaponStatsTableProps {
   levels: LevelVariant[]
   familyName?: string
+  forceHideVariantColumn?: boolean
+  forceLevelLabels?: boolean
 }
 
-export default function WeaponStatsTable({ levels, familyName }: WeaponStatsTableProps) {
-  const variantLabels = getLevelVariantLabels(levels, familyName, 'weapon')
-  const showVariantColumn = shouldShowVariantColumn(levels, familyName, 'weapon')
+export default function WeaponStatsTable({
+  levels,
+  familyName,
+  forceHideVariantColumn = false,
+  forceLevelLabels = false,
+}: WeaponStatsTableProps) {
+  const variantLabels = forceLevelLabels
+    ? levels.map((level) => String(level.actualLevel ?? level.levelDisplay))
+    : getLevelVariantLabels(levels, familyName, 'weapon')
+  const showVariantColumn =
+    !forceHideVariantColumn &&
+    !forceLevelLabels &&
+    shouldShowVariantColumn(levels, familyName, 'weapon')
 
   return (
     <div className="overflow-x-auto -mx-4 sm:mx-0">

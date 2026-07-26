@@ -832,7 +832,24 @@
           "notes": []
         }
       ],
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/DracolichPet.png"
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/DracolichPet.png",
+      "alsoSee": [
+        {
+          "name": "Baby Dracolich Pet (All Versions)",
+          "slug": "pet-baby-dracolich-pet",
+          "type": "pet"
+        },
+        {
+          "name": "Bonehead",
+          "slug": "pet-bonehead",
+          "type": "pet"
+        },
+        {
+          "name": "Cuddly Dracolich (All Versions)",
+          "slug": "pet-cuddly-dracolich",
+          "type": "pet"
+        }
+      ]
     },
     "levelVariants": [
       {
@@ -1671,7 +1688,24 @@
           "notes": []
         }
       ],
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/DracolichPet.png"
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/DracolichPet.png",
+      "alsoSee": [
+        {
+          "name": "Adorable Baby Dracolich Pet (All Versions)",
+          "slug": "pet-adorable-baby-dracolich-pet",
+          "type": "pet"
+        },
+        {
+          "name": "Bonehead",
+          "slug": "pet-bonehead",
+          "type": "pet"
+        },
+        {
+          "name": "Cuddly Dracolich (All Versions)",
+          "slug": "pet-cuddly-dracolich",
+          "type": "pet"
+        }
+      ]
     },
     "levelVariants": [
       {
@@ -2451,7 +2485,7 @@
         "stats": "Crit +3, Bonus +1",
         "statsType": "bonuses",
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=20847504",
-        "description": ".githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/BaronCatPetAttack2.png\">Attack Type 2 - Scratches the opponent four times for 4 hits of melee Light damage",
+        "description": "Meow meow meooooooow!",
         "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/BaronCatPetpic.png",
         "alternativeImages": [
           {
@@ -3040,7 +3074,7 @@
       }
     ],
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=7579805",
-    "notes": "Transformed from  Large Dragon Gift Box on  January 1st, 2007.\nAlternative Image",
+    "notes": "Transformed from  Large Dragon Gift Box on  January 1st, 2007.",
     "alsoSee": [],
     "tags": [
       "pet",
@@ -3123,7 +3157,24 @@
         }
       ],
       "notes": "Pet is animated; it moves its tail, wings, head, and other parts of its body periodically.",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Bonehead.png"
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Bonehead.png",
+      "alsoSee": [
+        {
+          "name": "Adorable Baby Dracolich Pet (All Versions)",
+          "slug": "pet-adorable-baby-dracolich-pet",
+          "type": "pet"
+        },
+        {
+          "name": "Baby Dracolich Pet (All Versions)",
+          "slug": "pet-baby-dracolich-pet",
+          "type": "pet"
+        },
+        {
+          "name": "Cuddly Dracolich (All Versions)",
+          "slug": "pet-cuddly-dracolich",
+          "type": "pet"
+        }
+      ]
     },
     "levelVariants": [
       {
@@ -3140,7 +3191,7 @@
             "location": "A Boneheaded Brawl",
             "price": "N/A",
             "priceType": "free",
-            "sellback": "30 Gold This special baby dracolich is here to stay! He has a chance to heal you with the legendary power of turkeys stuffed into small places. (Has a low chance to drop from A Boneheaded Brawl.)",
+            "sellback": "30 Gold",
             "daRequired": true
           }
         ],
@@ -3296,7 +3347,7 @@
         "stats": "Crit +3, Bonus +1",
         "statsType": "bonuses",
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=20850469",
-        "description": "://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/BraveSirRobinCatPetAttack2.png\">Attack Type 2 - Scratches the enemy for 4 hits of melee Silver damage",
+        "description": "Meow meow meooooooow!",
         "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/BraveSirRobinCatPetpic.png",
         "alternativeImages": [
           {
@@ -7512,7 +7563,24 @@
           "notes": []
         }
       ],
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/DracolichPet.png"
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/DracolichPet.png",
+      "alsoSee": [
+        {
+          "name": "Adorable Baby Dracolich Pet (All Versions)",
+          "slug": "pet-adorable-baby-dracolich-pet",
+          "type": "pet"
+        },
+        {
+          "name": "Baby Dracolich Pet (All Versions)",
+          "slug": "pet-baby-dracolich-pet",
+          "type": "pet"
+        },
+        {
+          "name": "Bonehead",
+          "slug": "pet-bonehead",
+          "type": "pet"
+        }
+      ]
     },
     "levelVariants": [
       {
@@ -7904,136 +7972,52 @@
     ]
   },
   {
-    "id": "pet-firehead-daisy",
-    "familyName": "Dandytiger",
-    "slug": "pet-firehead-daisy",
-    "aliasSlugs": [
-      "pet-dandytiger"
-    ],
+    "id": "pet-dandytiger",
+    "name": "Dandytiger",
+    "slug": "pet-dandytiger",
     "type": "pet",
-    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=17505517",
-    "familyOrigin": "cross-post",
-    "familySources": [
-      {
-        "url": "https://forums2.battleon.com/f/fb.asp?m=6129827",
-        "title": "DF Encyclopedia: Dandytiger",
-        "isPrimary": true
-      },
-      {
-        "url": "https://forums2.battleon.com/f/fb.asp?m=17505517",
-        "title": "DF Encyclopedia: Firehead Daisy",
-        "variantLabel": "Firehead Daisy",
-        "isPrimary": false
-      }
-    ],
-    "shared": {
-      "description": "This friendly little flower is one of the several local plants that like to act like they are animals.",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/FireheadDaisy.png",
-      "element": "NAT",
-      "attacks": [
-        {
-          "name": "Attack Type 1",
-          "description": "Approaches target and strikes it for 1 hit of 100% Melee Nature damage.",
-          "images": [],
-          "notes": []
-        }
-      ]
-    },
-    "levelVariants": [
-      {
-        "levelNumber": 1,
-        "levelDisplay": "1",
-        "actualLevel": 1,
-        "name": "Dandytiger",
-        "damage": "1-4",
-        "stats": "None",
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=6129827",
-        "description": "This friendly little flower is one of the several local plants that like to act like they are animals.",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dandytiger.png",
-        "obtainVariants": [
-          {
-            "location": "Grams Pet Shop",
-            "price": "100 Gold",
-            "priceType": "gold",
-            "sellback": "10 Gold",
-            "daRequired": false
-          }
-        ],
-        "element": "NAT",
-        "rarity": "1",
-        "attacks": [
-          {
-            "name": "Attack Type 1",
-            "description": "Approaches target and strikes it for 1 hit of 100% Melee Nature damage.",
-            "images": [],
-            "notes": []
-          }
-        ]
-      },
-      {
-        "levelNumber": 2,
-        "levelDisplay": "40",
-        "actualLevel": 40,
-        "variantName": "DC",
-        "name": "Firehead Daisy (DC)",
-        "damage": "13-19",
-        "stats": "Crit +4, END +3",
-        "statsType": "petStats",
-        "obtainVariants": [
-          {
-            "location": "Transformed from  Bright Pink Egg (D-Coins)",
-            "price": "N/A",
-            "priceType": "dc",
-            "sellback": "19 Dragon Coins",
-            "daRequired": false,
-            "dcRequired": true
-          }
-        ],
-        "element": "NAT",
-        "rarity": "100",
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=17505517"
-      },
-      {
-        "levelNumber": 3,
-        "levelDisplay": "40",
-        "actualLevel": 40,
-        "variantName": "Normal",
-        "name": "Firehead Daisy (Normal)",
-        "damage": "13-19",
-        "stats": "Crit +4, END +3",
-        "statsType": "petStats",
-        "obtainVariants": [
-          {
-            "location": "Transformed from  Bright Pink Egg (Normal)",
-            "price": "N/A",
-            "priceType": "free",
-            "sellback": "100 Gold",
-            "daRequired": false
-          }
-        ],
-        "element": "NAT",
-        "rarity": "100",
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=17505517"
-      }
-    ],
-    "releaseDate": "April 16th, 2010",
-    "tags": [
-      "nat",
-      "pet"
-    ],
-    "hasDA": false,
-    "hasDC": true,
-    "hasDM": false,
-    "hasFree": true,
-    "hasMerge": false,
-    "isTemp": false,
-    "isRare": true,
-    "isSeasonal": false,
-    "isSpecialOffer": false,
-    "retired": false,
-    "levelRange": "1-40",
+    "description": "This friendly little flower is one of the several local plants that like to act like they are animals.",
+    "daRequired": false,
     "elements": [
       "NAT"
+    ],
+    "traits": [],
+    "level": "1",
+    "damage": "1-4",
+    "stats": "None",
+    "resists": "None",
+    "obtainMethods": [
+      {
+        "location": "Grams Pet Shop",
+        "priceType": "gold",
+        "price": "100 Gold",
+        "sellback": "10 Gold",
+        "daRequired": false
+      }
+    ],
+    "attacks": [
+      {
+        "name": "Attack Type 1",
+        "description": "Approaches target and strikes it for 1 hit of 100% Melee Nature damage.",
+        "images": [],
+        "notes": []
+      }
+    ],
+    "rarity": "1",
+    "evolutions": [],
+    "releaseDate": "August 25th, 2006",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dandytiger.png",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=6129827",
+    "alsoSee": [
+      {
+        "name": "Firehead Daisy",
+        "slug": "pet-firehead-daisy",
+        "type": "pet"
+      }
+    ],
+    "tags": [
+      "pet",
+      "nat"
     ]
   },
   {
@@ -8103,7 +8087,7 @@
         "stats": "Crit +3, Bonus +1",
         "statsType": "bonuses",
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=20850561",
-        "description": "://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/DeatharrowsCatPetAttack2.png\">Attack Type 2 - Scratches the enemy for 4 hits of Melee Darkness damage",
+        "description": "Meow meow meooooooow!",
         "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/DeatharrowsCatPetpic.png",
         "alternativeImages": [
           {
@@ -8835,7 +8819,19 @@
           "notes": []
         }
       ],
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dracabbit.png"
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dracabbit.png",
+      "alsoSee": [
+        {
+          "name": "Ostara's Dracobunny",
+          "slug": "pet-ostara-s-dracobunny",
+          "type": "pet"
+        },
+        {
+          "name": "Sir Fluffykins",
+          "slug": "pet-sir-fluffykins",
+          "type": "pet"
+        }
+      ]
     },
     "levelVariants": [
       {
@@ -10843,6 +10839,94 @@
     ]
   },
   {
+    "id": "pet-firehead-daisy",
+    "familyName": "Firehead Daisy",
+    "slug": "pet-firehead-daisy",
+    "type": "pet",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=17505517",
+    "shared": {
+      "description": "April showers bring... April flowers! The Firehead Daisy only grows at the base of volcanoes in the early Spring!",
+      "element": "NAT",
+      "rarity": "100",
+      "attacks": [
+        {
+          "name": "Attack Type 1",
+          "description": "Approaches target and strikes it for 2 hits of 100% Melee Nature damage, amounting to 200% damage.",
+          "images": [],
+          "notes": []
+        }
+      ],
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/FireheadDaisy.png",
+      "alsoSee": [
+        {
+          "name": "Dandytiger",
+          "slug": "pet-dandytiger",
+          "type": "pet"
+        }
+      ]
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
+        "levelDisplay": "40",
+        "actualLevel": 40,
+        "variantName": "Normal",
+        "name": "Firehead Daisy (Normal)",
+        "damage": "13-19",
+        "stats": "Crit +4, END +3",
+        "statsType": "petStats",
+        "obtainVariants": [
+          {
+            "location": "Transformed from  Bright Pink Egg (Normal)",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "100 Gold",
+            "daRequired": false
+          }
+        ],
+        "element": "NAT",
+        "rarity": "100"
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "40",
+        "actualLevel": 40,
+        "variantName": "DC",
+        "name": "Firehead Daisy (DC)",
+        "damage": "13-19",
+        "stats": "Crit +4, END +3",
+        "statsType": "petStats",
+        "obtainVariants": [
+          {
+            "location": "Transformed from  Bright Pink Egg (D-Coins)",
+            "price": "N/A",
+            "priceType": "dc",
+            "sellback": "19 Dragon Coins",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "element": "NAT",
+        "rarity": "100"
+      }
+    ],
+    "releaseDate": "April 16th, 2010",
+    "tags": [
+      "pet",
+      "nat"
+    ],
+    "isRare": true,
+    "hasDA": false,
+    "hasDC": true,
+    "hasDM": false,
+    "hasFree": true,
+    "hasMerge": false,
+    "levelRange": "40",
+    "elements": [
+      "NAT"
+    ]
+  },
+  {
     "id": "pet-fishberry",
     "familyName": "FishBerry",
     "slug": "pet-fishberry",
@@ -11444,8 +11528,7 @@
           "caption": "Alternative Image"
         }
       ],
-      "element": "ICE",
-      "notes": "Transformed from  Yellow Present (2015) on  January 1st, 2016.\nThis pet deals 0 damage unless you have stat points in CHA or LUK.\nAlternative Image"
+      "element": "ICE"
     },
     "levelVariants": [
       {
@@ -11489,7 +11572,7 @@
             "notes": []
           }
         ],
-        "notes": "Transformed from  Yellow Present (2015) on  January 1st, 2016.\nThis pet deals 0 damage unless you have stat points in CHA or LUK.\nAlternative Image"
+        "notes": "Transformed from  Yellow Present (2015) on  January 1st, 2016.\nThis pet deals 0 damage unless you have stat points in CHA or LUK."
       },
       {
         "levelNumber": 2,
@@ -12060,7 +12143,7 @@
       }
     ],
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=7579680",
-    "notes": "Transformed from  Large Gift Box on  January 1st, 2007.\nAlternative Image 1",
+    "notes": "Transformed from  Large Gift Box on  January 1st, 2007.",
     "alsoSee": [],
     "tags": [
       "pet",
@@ -12572,7 +12655,7 @@
             "notes": []
           }
         ],
-        "notes": "Transformed from  Green Present (1) on  December 25th, 2009.\nAlternative Image"
+        "notes": "Transformed from  Green Present (1) on  December 25th, 2009."
       },
       {
         "levelNumber": 2,
@@ -12615,7 +12698,7 @@
             "notes": []
           }
         ],
-        "notes": "Transformed from  Green Present (25) on  December 25th, 2009.\nAlternative Image"
+        "notes": "Transformed from  Green Present (25) on  December 25th, 2009."
       },
       {
         "levelNumber": 3,
@@ -12658,7 +12741,7 @@
             "notes": []
           }
         ],
-        "notes": "Transformed from  Green Present (51) on  December 25th, 2009.\nAlternative Image"
+        "notes": "Transformed from  Green Present (51) on  December 25th, 2009."
       },
       {
         "levelNumber": 4,
@@ -13314,8 +13397,7 @@
           "images": [],
           "notes": []
         }
-      ],
-      "notes": "Pet is animated; it hovers up and down in place."
+      ]
     },
     "levelVariants": [
       {
@@ -13364,7 +13446,8 @@
             "price": "N/A",
             "priceType": "free",
             "sellback": "9 Gold",
-            "daRequired": false
+            "daRequired": false,
+            "dcRequired": true
           },
           {
             "location": "EH Loot for DCs",
@@ -13393,7 +13476,8 @@
             "price": "N/A",
             "priceType": "free",
             "sellback": "11 Gold",
-            "daRequired": false
+            "daRequired": false,
+            "dcRequired": true
           },
           {
             "location": "EH Loot for DCs",
@@ -13422,7 +13506,8 @@
             "price": "N/A",
             "priceType": "free",
             "sellback": "13 Gold",
-            "daRequired": false
+            "daRequired": false,
+            "dcRequired": true
           },
           {
             "location": "EH Loot for DCs",
@@ -13451,14 +13536,15 @@
             "price": "N/A",
             "priceType": "free",
             "sellback": "15 Gold",
-            "daRequired": true
+            "daRequired": true,
+            "dcRequired": true
           },
           {
             "location": "EH Loot for DCs",
             "price": "150 Dragon Coins",
             "priceType": "dc",
             "sellback": "135 DC (<24 hours) / 38 DC (>24 hours)",
-            "daRequired": false,
+            "daRequired": true,
             "dcRequired": true
           }
         ],
@@ -13480,14 +13566,15 @@
             "price": "N/A",
             "priceType": "free",
             "sellback": "17 Gold",
-            "daRequired": true
+            "daRequired": true,
+            "dcRequired": true
           },
           {
             "location": "EH Loot for DCs",
             "price": "150 Dragon Coins",
             "priceType": "dc",
             "sellback": "135 DC (<24 hours) / 38 DC (>24 hours)",
-            "daRequired": false,
+            "daRequired": true,
             "dcRequired": true
           }
         ],
@@ -13509,14 +13596,15 @@
             "price": "N/A",
             "priceType": "free",
             "sellback": "20 Gold",
-            "daRequired": true
+            "daRequired": true,
+            "dcRequired": true
           },
           {
             "location": "EH Loot for DCs",
             "price": "150 Dragon Coins",
             "priceType": "dc",
             "sellback": "135 DC (<24 hours) / 38 DC (>24 hours)",
-            "daRequired": false,
+            "daRequired": true,
             "dcRequired": true
           }
         ],
@@ -13538,14 +13626,15 @@
             "price": "N/A",
             "priceType": "free",
             "sellback": "24 Gold",
-            "daRequired": true
+            "daRequired": true,
+            "dcRequired": true
           },
           {
             "location": "EH Loot for DCs",
             "price": "150 Dragon Coins",
             "priceType": "dc",
             "sellback": "135 DC (<24 hours) / 38 DC (>24 hours)",
-            "daRequired": false,
+            "daRequired": true,
             "dcRequired": true
           }
         ],
@@ -14891,7 +14980,7 @@
         "stats": "Crit +3, Bonus +1",
         "statsType": "bonuses",
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=20850534",
-        "description": "ref=\"https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/JoshCatPetAttack2.png\">Attack Type 2 - Scratches the enemy for 4 hits of melee Water damage",
+        "description": "Meow meow meooooooow!",
         "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/JoshCatPetpic.png",
         "alternativeImages": [
           {
@@ -15106,7 +15195,7 @@
         "stats": "Crit +3, Bonus +1",
         "statsType": "bonuses",
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=20850430",
-        "description": "ef=\"https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/LFALCatPetAttack2.png\">Attack Type 2 - Scratches the enemy for 4 hits of melee Stone damage",
+        "description": "Woof woof wooooooooof!",
         "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/LFALCatPetpic.png",
         "alternativeImages": [
           {
@@ -15675,7 +15764,8 @@
     "shared": {
       "description": "Your tiny penguin pal. He gets confused alot and likes cleaning... but will not do windows!",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Linus.png",
-      "element": "ICE"
+      "element": "ICE",
+      "notes": "Pet is animated; it sways back and forth continuously."
     },
     "levelVariants": [
       {
@@ -15706,8 +15796,7 @@
             "images": [],
             "notes": []
           }
-        ],
-        "notes": "Pet is animated; it sways back and forth continuously."
+        ]
       },
       {
         "levelNumber": 2,
@@ -15750,12 +15839,12 @@
           },
           {
             "name": "Attack Type 2 /  2.1",
-            "description": "Approaches target and uses its shrink ray, reducing both the target's max and current HP to 90% of their previous values, as well as physically reducing the target's size. (Pop-up: Linus uses SHRINK on !)",
+            "description": "Approaches target and uses its shrink ray, reducing both the target's max and current HP to 90% of their previous values, as well as physically reducing the target's size. (Pop-up: Linus uses SHRINK on <target's name>!)",
             "images": [],
             "notes": []
           }
         ],
-        "notes": "Attack Type 2's rate is equal to [(Pet's Crit) + (Player's LUK)/10]: (Pop-up: Need <=  to shrink | Rolled )\n  • If the target has already been shrunken, its HP and size will not be reduced again. (Pop-up: Linus tries... but  is already SHRUNK!)\n  • If the target's Shrink Resist (inclusive of All Resist) is greater than an unknown second roll value, it will resist the shrinking effect. (Pop-up: Linus tries... but  resists!)\nAttack Type 2 previously renamed targets 'Shrunken '; due to its potential to break battle mechanics, this was removed on  July 3rd, 2020.\nDespite requiring a DC item to obtain, the Platinum Penguin Shrink Ray merge version of this pet is not DC tagged, thus ineligible for free storage.\nPet is animated; it sways back and forth continuously."
+        "notes": "Attack Type 2's rate is equal to [(Pet's Crit) + (Player's LUK)/10]: (Pop-up: Need <= <x> to shrink | Rolled <y>)\n  • If the target has already been shrunken, its HP and size will not be reduced again. (Pop-up: Linus tries... but <target's name> is already SHRUNK!)\n  • If the target's Shrink Resist (inclusive of All Resist) is greater than an unknown second roll value, it will resist the shrinking effect. (Pop-up: Linus tries... but <target's name> resists!)\nAttack Type 2 previously renamed targets 'Shrunken <target's name>'; due to its potential to break battle mechanics, this was removed on  July 3rd, 2020.\nDespite requiring a DC item to obtain, the Platinum Penguin Shrink Ray merge version of this pet is not DC tagged, thus ineligible for free storage."
       },
       {
         "levelNumber": 3,
@@ -15798,12 +15887,12 @@
           },
           {
             "name": "Attack Type 2 /  2.1",
-            "description": "Approaches target and uses its shrink ray, reducing both the target's max and current HP to 90% of their previous values, as well as physically reducing the target's size. (Pop-up: Linus uses SHRINK on !)",
+            "description": "Approaches target and uses its shrink ray, reducing both the target's max and current HP to 90% of their previous values, as well as physically reducing the target's size. (Pop-up: Linus uses SHRINK on <target's name>!)",
             "images": [],
             "notes": []
           }
         ],
-        "notes": "Attack Type 2's rate is equal to [(Pet's Crit) + (Player's LUK)/10]: (Pop-up: Need <=  to shrink | Rolled )\n  • If the target has already been shrunken, its HP and size will not be reduced again. (Pop-up: Linus tries... but  is already SHRUNK!)\n  • If the target's Shrink Resist (inclusive of All Resist) is greater than an unknown second roll value, it will resist the shrinking effect. (Pop-up: Linus tries... but  resists!)\nAttack Type 2 previously renamed targets 'Shrunken '; due to its potential to break battle mechanics, this was removed on  July 3rd, 2020.\nDespite requiring a DC item to obtain, the Platinum Penguin Shrink Ray merge version of this pet is not DC tagged, thus ineligible for free storage.\nPet is animated; it sways back and forth continuously."
+        "notes": "Attack Type 2's rate is equal to [(Pet's Crit) + (Player's LUK)/10]: (Pop-up: Need <= <x> to shrink | Rolled <y>)\n  • If the target has already been shrunken, its HP and size will not be reduced again. (Pop-up: Linus tries... but <target's name> is already SHRUNK!)\n  • If the target's Shrink Resist (inclusive of All Resist) is greater than an unknown second roll value, it will resist the shrinking effect. (Pop-up: Linus tries... but <target's name> resists!)\nAttack Type 2 previously renamed targets 'Shrunken <target's name>'; due to its potential to break battle mechanics, this was removed on  July 3rd, 2020.\nDespite requiring a DC item to obtain, the Platinum Penguin Shrink Ray merge version of this pet is not DC tagged, thus ineligible for free storage."
       },
       {
         "levelNumber": 4,
@@ -15846,12 +15935,12 @@
           },
           {
             "name": "Attack Type 2 /  2.1",
-            "description": "Approaches target and uses its shrink ray, reducing both the target's max and current HP to 90% of their previous values, as well as physically reducing the target's size. (Pop-up: Linus uses SHRINK on !)",
+            "description": "Approaches target and uses its shrink ray, reducing both the target's max and current HP to 90% of their previous values, as well as physically reducing the target's size. (Pop-up: Linus uses SHRINK on <target's name>!)",
             "images": [],
             "notes": []
           }
         ],
-        "notes": "Attack Type 2's rate is equal to [(Pet's Crit) + (Player's LUK)/10]: (Pop-up: Need <=  to shrink | Rolled )\n  • If the target has already been shrunken, its HP and size will not be reduced again. (Pop-up: Linus tries... but  is already SHRUNK!)\n  • If the target's Shrink Resist (inclusive of All Resist) is greater than an unknown second roll value, it will resist the shrinking effect. (Pop-up: Linus tries... but  resists!)\nAttack Type 2 previously renamed targets 'Shrunken '; due to its potential to break battle mechanics, this was removed on  July 3rd, 2020.\nDespite requiring a DC item to obtain, the Platinum Penguin Shrink Ray merge version of this pet is not DC tagged, thus ineligible for free storage.\nPet is animated; it sways back and forth continuously."
+        "notes": "Attack Type 2's rate is equal to [(Pet's Crit) + (Player's LUK)/10]: (Pop-up: Need <= <x> to shrink | Rolled <y>)\n  • If the target has already been shrunken, its HP and size will not be reduced again. (Pop-up: Linus tries... but <target's name> is already SHRUNK!)\n  • If the target's Shrink Resist (inclusive of All Resist) is greater than an unknown second roll value, it will resist the shrinking effect. (Pop-up: Linus tries... but <target's name> resists!)\nAttack Type 2 previously renamed targets 'Shrunken <target's name>'; due to its potential to break battle mechanics, this was removed on  July 3rd, 2020.\nDespite requiring a DC item to obtain, the Platinum Penguin Shrink Ray merge version of this pet is not DC tagged, thus ineligible for free storage."
       }
     ],
     "releaseDate": "August 25th, 2006",
@@ -16974,7 +17063,8 @@
             "price": "N/A",
             "priceType": "free",
             "sellback": "5 Gold",
-            "daRequired": false
+            "daRequired": false,
+            "dcRequired": true
           },
           {
             "location": "Box Loot for DCs",
@@ -17003,7 +17093,8 @@
             "price": "N/A",
             "priceType": "free",
             "sellback": "7 Gold",
-            "daRequired": false
+            "daRequired": false,
+            "dcRequired": true
           },
           {
             "location": "Box Loot for DCs",
@@ -17032,7 +17123,8 @@
             "price": "N/A",
             "priceType": "free",
             "sellback": "9 Gold",
-            "daRequired": false
+            "daRequired": false,
+            "dcRequired": true
           },
           {
             "location": "Box Loot for DCs",
@@ -17061,7 +17153,8 @@
             "price": "N/A",
             "priceType": "free",
             "sellback": "11 Gold",
-            "daRequired": false
+            "daRequired": false,
+            "dcRequired": true
           },
           {
             "location": "Box Loot for DCs",
@@ -17090,7 +17183,8 @@
             "price": "N/A",
             "priceType": "free",
             "sellback": "13 Gold",
-            "daRequired": false
+            "daRequired": false,
+            "dcRequired": true
           },
           {
             "location": "Box Loot for DCs",
@@ -17119,7 +17213,8 @@
             "price": "N/A",
             "priceType": "free",
             "sellback": "15 Gold",
-            "daRequired": false
+            "daRequired": false,
+            "dcRequired": true
           },
           {
             "location": "Box Loot for DCs",
@@ -17148,7 +17243,8 @@
             "price": "N/A",
             "priceType": "free",
             "sellback": "17 Gold",
-            "daRequired": false
+            "daRequired": false,
+            "dcRequired": true
           },
           {
             "location": "Box Loot for DCs",
@@ -17177,14 +17273,15 @@
             "price": "N/A",
             "priceType": "free",
             "sellback": "20 Gold This little fellow followed you out of Verlyrus' boxscape. You weren't just imagining things!",
-            "daRequired": true
+            "daRequired": true,
+            "dcRequired": true
           },
           {
             "location": "Box Loot for DCs",
             "price": "200 Dragon Coins",
             "priceType": "dc",
             "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
-            "daRequired": false,
+            "daRequired": true,
             "dcRequired": true
           }
         ],
@@ -17206,14 +17303,15 @@
             "price": "N/A",
             "priceType": "free",
             "sellback": "24 Gold This little fellow followed you out of Verlyrus' boxscape. You weren't just imagining things!",
-            "daRequired": true
+            "daRequired": true,
+            "dcRequired": true
           },
           {
             "location": "Box Loot for DCs",
             "price": "235 Dragon Coins",
             "priceType": "dc",
             "sellback": "212 DC (<24 hours) / 59 DC (>24 hours)",
-            "daRequired": false,
+            "daRequired": true,
             "dcRequired": true
           }
         ],
@@ -22353,8 +22451,7 @@
             "images": [],
             "notes": []
           }
-        ],
-        "notes": "Pet is animated; it hovers up and down in place, while flapping its wings continuously."
+        ]
       },
       {
         "levelNumber": 2,
@@ -22384,8 +22481,7 @@
             "images": [],
             "notes": []
           }
-        ],
-        "notes": "Pet is animated; it hovers up and down in place, while flapping its wings continuously."
+        ]
       }
     ],
     "releaseDate": "July 21st, 2006",
@@ -26075,8 +26171,7 @@
             "images": [],
             "notes": []
           }
-        ],
-        "notes": "Despite requiring a DC-item to merge, this pet is not DC-tagged, and thus is ineligible for free storage at the bank.\nPet is animated; its drill bit tongue rapidly rotates continuously."
+        ]
       },
       {
         "levelNumber": 2,
@@ -26114,8 +26209,7 @@
             "images": [],
             "notes": []
           }
-        ],
-        "notes": "Despite requiring a DC-item to merge, this pet is not DC-tagged, and thus is ineligible for free storage at the bank.\nPet is animated; its drill bit tongue rapidly rotates continuously."
+        ]
       },
       {
         "levelNumber": 3,
@@ -26153,8 +26247,7 @@
             "images": [],
             "notes": []
           }
-        ],
-        "notes": "Despite requiring a DC-item to merge, this pet is not DC-tagged, and thus is ineligible for free storage at the bank.\nPet is animated; its drill bit tongue rapidly rotates continuously."
+        ]
       },
       {
         "levelNumber": 4,
@@ -26192,8 +26285,7 @@
             "images": [],
             "notes": []
           }
-        ],
-        "notes": "Despite requiring a DC-item to merge, this pet is not DC-tagged, and thus is ineligible for free storage at the bank.\nPet is animated; its drill bit tongue rapidly rotates continuously."
+        ]
       }
     ],
     "releaseDate": "September 21st, 2006",
@@ -26894,7 +26986,7 @@
         "stats": "Crit +3, Bonus +1",
         "statsType": "bonuses",
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=20850493",
-        "description": "href=\"https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/PriusCatPetAttack2.png\">Attack Type 2 - Scratches the enemy for 4 hits of melee Ice damage",
+        "description": "Meow meow meooooooow!",
         "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/PriusCatPetpic.png",
         "alternativeImages": [
           {
@@ -27517,8 +27609,7 @@
             "images": [],
             "notes": []
           }
-        ],
-        "notes": "Pet is animated; its drill bit tongue rapidly rotates continuously."
+        ]
       },
       {
         "levelNumber": 2,
@@ -27549,8 +27640,7 @@
             "images": [],
             "notes": []
           }
-        ],
-        "notes": "Pet is animated; its drill bit tongue rapidly rotates continuously."
+        ]
       },
       {
         "levelNumber": 3,
@@ -27581,8 +27671,7 @@
             "images": [],
             "notes": []
           }
-        ],
-        "notes": "Pet is animated; its drill bit tongue rapidly rotates continuously."
+        ]
       },
       {
         "levelNumber": 4,
@@ -27613,8 +27702,7 @@
             "images": [],
             "notes": []
           }
-        ],
-        "notes": "Pet is animated; its drill bit tongue rapidly rotates continuously."
+        ]
       }
     ],
     "releaseDate": "September 21st, 2006",
@@ -27730,8 +27818,7 @@
             "images": [],
             "notes": []
           }
-        ],
-        "notes": "If Attack Type 2 was used again prior to 'Blind' expiring, it will be reapplied to target for 2 turns."
+        ]
       },
       {
         "levelNumber": 2,
@@ -27767,8 +27854,7 @@
             "images": [],
             "notes": []
           }
-        ],
-        "notes": "If Attack Type 2 was used again prior to 'Blind' expiring, it will be reapplied to target for 2 turns."
+        ]
       },
       {
         "levelNumber": 3,
@@ -27804,8 +27890,7 @@
             "images": [],
             "notes": []
           }
-        ],
-        "notes": "If Attack Type 2 was used again prior to 'Blind' expiring, it will be reapplied to target for 2 turns."
+        ]
       },
       {
         "levelNumber": 4,
@@ -27841,8 +27926,7 @@
             "images": [],
             "notes": []
           }
-        ],
-        "notes": "If Attack Type 2 was used again prior to 'Blind' expiring, it will be reapplied to target for 2 turns."
+        ]
       }
     ],
     "releaseDate": "August 14th, 2009",
@@ -28764,7 +28848,19 @@
           "notes": []
         }
       ],
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/SirFluffykins.png"
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/SirFluffykins.png",
+      "alsoSee": [
+        {
+          "name": "Dracabbit",
+          "slug": "pet-dracabbit",
+          "type": "pet"
+        },
+        {
+          "name": "Ostara's Dracobunny",
+          "slug": "pet-ostara-s-dracobunny",
+          "type": "pet"
+        }
+      ]
     },
     "levelVariants": [
       {
@@ -31350,7 +31446,7 @@
     "type": "pet",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=16109630",
     "shared": {
-      "description": "ia/raw/master/pets_guests/Togrider-AttackType1.png\">Attack Type 1 - Charges toward target and strikes it with its spear for 1 hit of 100% Melee Nature damage.",
+      "description": "This togrider commanded a platoon under General Sneevord. He was decorated for bravery and thinks that by staying with you, he'll have more chances to fight.",
       "element": "NAT",
       "rarity": "5",
       "attacks": [
@@ -31373,7 +31469,7 @@
         "stats": "None",
         "statsType": "petStats",
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=16109630",
-        "description": "ia/raw/master/pets_guests/Togrider-AttackType1.png\">Attack Type 1 - Charges toward target and strikes it with its spear for 1 hit of 100% Melee Nature damage.",
+        "description": "This togrider commanded a platoon under General Sneevord. He was decorated for bravery and thinks that by staying with you, he'll have more chances to fight.",
         "obtainVariants": [
           {
             "location": "Def. Rares",
@@ -31405,7 +31501,7 @@
         "stats": "None",
         "statsType": "petStats",
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=16109630",
-        "description": "et and strikes it with its spear for 1 hit of 100% Melee Nature damage.",
+        "description": "General Sneevord the Third was put in charge by his King to command the entire army of Togriders. He is not ready to let his glory days fade away, so has decided to stay with you. This pet requires a Dragon Amulet.",
         "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/TogRider.png",
         "obtainVariants": [
           {

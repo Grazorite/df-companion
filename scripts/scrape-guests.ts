@@ -37,6 +37,7 @@ import type {
 } from '../src/types/pet.ts'
 import type {
   AlternativeImage,
+  FamilySourceRef,
   ItemFamily,
   LevelVariant,
   ObtainVariant,
@@ -77,13 +78,20 @@ import {
 } from './lib/text.ts'
 import {
   applyLetterFilter,
+  applyNameFilter,
   applyLimit,
   getConcurrencyArg,
+  getFreshArg,
   getLetterFilterArgs,
   getLimitArg,
+  getNameFilterArgs,
 } from './lib/scraper-cli.ts'
 import { loadProgressEntries, saveProgressEntries } from './lib/progress.ts'
 import { processWithConcurrency } from './lib/work-queue.ts'
+import {
+  captureGuestCharacterPage,
+  hasGuestCharacterCapture,
+} from './lib/guest-character-capture.ts'
 
 const AZ_PETS_URL = `${FORUM_BASE}/tm.asp?m=22349620&mpage=1` // A-Z Pets & Guests master page
 const CHRONOLOGY_URL = `${FORUM_BASE}/tm.asp?m=10738071`
@@ -97,6 +105,10 @@ const PROGRESS_PATH = path.resolve(import.meta.dirname, '../src/data/guests-prog
 const letterFilter = getLetterFilterArgs()
 const limitArg = getLimitArg()
 const concurrencyArg = getConcurrencyArg()
+const nameFilter = getNameFilterArgs()
+const freshArg = getFreshArg()
+const captureCharPagesArg = process.argv.slice(2).includes('--capture-charpages')
+const shouldCaptureCharPages = captureCharPagesArg && Boolean(nameFilter.names?.length)
 
 function extractReplyPostContent(html: string, messageId: string): string {
   if (html.includes('This message has been deleted or moved')) {
@@ -580,6 +592,19 @@ function extractGuestVariantSections(
   html: string,
   sourcePosts: ThreadPostContent[] = []
 ): GuestVariantSection[] {
+  if (sourcePosts.length > 0) {
+    return collapseGuestSections(
+      sourcePosts.flatMap((post) => extractGuestVariantSectionsFromHtml(post.html, post.sourceUrl))
+    )
+  }
+
+  return collapseGuestSections(extractGuestVariantSectionsFromHtml(html))
+}
+
+function extractGuestVariantSectionsFromHtml(
+  html: string,
+  sourceUrl?: string
+): GuestVariantSection[] {
   const sections: GuestVariantSection[] = []
   const headerRegex =
     /((?:<img[^>]+src=["'][^"']*\/tags\/(?:DA|DC|DM|Temp|Rare|Seasonal|SpecialOffer|Retired)\.(?:png|jpg)["'][^>]*>\s*)*)(?:<b>\s*<font[^>]*size=['"]3['"][^>]*>\s*([^<]+?)\s*<\/font>\s*<\/b>|<font[^>]*size=['"]3['"][^>]*>\s*<b>\s*([^<]+?)\s*<\/b>\s*<\/font>)/gi
@@ -594,9 +619,6 @@ function extractGuestVariantSections(
     const suffix = extractGuestHeaderSuffix(html, start + match[0].length)
     const name = suffix ? `${baseName} ${suffix}` : baseName
     const sectionHtml = html.slice(start, end)
-    const sourceUrl = sourcePosts.find(
-      (post) => post.html.includes(sectionHtml) || sectionHtml.includes(post.html)
-    )?.sourceUrl
 
     if (!name) continue
     if (
@@ -610,7 +632,7 @@ function extractGuestVariantSections(
     sections.push({ name, html: sectionHtml, ...(sourceUrl ? { sourceUrl } : {}) })
   }
 
-  return collapseGuestSections(sections)
+  return sections
 }
 
 // ─── Attack Parsing with Button Image URLs ───────────────────────────────────
@@ -1039,6 +1061,83 @@ function sanitizeGuestMedia<
   return sanitized
 }
 
+function inferGuestMainImageFromAttacks(attacks: GuestAttack[]): string | undefined {
+  for (const attack of attacks) {
+    if (!attack.appearanceUrl) continue
+    const inferredUrl = attack.appearanceUrl.replace(/-[^/-]+(\.[a-z]+)(\?.*)?$/i, '$1$2')
+    if (inferredUrl !== attack.appearanceUrl) return inferredUrl
+  }
+  return undefined
+}
+
+function normalizeDragonFableCharacterPageUrl(url: string): string {
+  const normalized = decodeHTML(url).replace(/&amp;/g, '&').trim()
+  const legacyMatch = normalized.match(/df-chardetail\.asp\?id=(\d+)/i)
+  if (legacyMatch) return `https://account.dragonfable.com/CharPage?id=${legacyMatch[1]}`
+  if (/^https?:\/\//i.test(normalized)) return normalized
+  if (normalized.startsWith('/')) return `https://account.dragonfable.com${normalized}`
+  return `https://account.dragonfable.com/${normalized.replace(/^\/+/, '')}`
+}
+
+function extractGuestCharacterPageUrl(html: string): string | undefined {
+  const decoded = decodeHTML(html).replace(/&amp;/g, '&')
+  const directMatch = decoded.match(
+    /https?:\/\/(?:account\.dragonfable\.com\/CharPage|www\.dragonfable\.com\/df-chardetail\.asp)\?id=\d+/i
+  )
+  if (directMatch) return normalizeDragonFableCharacterPageUrl(directMatch[0])
+
+  const hrefMatch = decoded.match(
+    /href=(["'])(\/?CharPage\?id=\d+|https?:\/\/(?:account\.dragonfable\.com\/CharPage|www\.dragonfable\.com\/df-chardetail\.asp)\?id=\d+)\1/i
+  )
+  return hrefMatch ? normalizeDragonFableCharacterPageUrl(hrefMatch[2]) : undefined
+}
+
+function extractGuestCharacterPageSource(html: string): FamilySourceRef | undefined {
+  const decoded = decodeHTML(html).replace(/&amp;/g, '&')
+  const linkMatch = decoded.match(
+    /href=(["'])(\/?CharPage\?id=\d+|https?:\/\/(?:account\.dragonfable\.com\/CharPage|www\.dragonfable\.com\/df-chardetail\.asp)\?id=\d+)\1[^>]*>([\s\S]*?)<\/a>/i
+  )
+  if (!linkMatch) {
+    const url = extractGuestCharacterPageUrl(html)
+    return url ? { url, title: 'Character Page' } : undefined
+  }
+
+  const title = stripHtml(decodeHTML(linkMatch[3])).trim()
+  return {
+    url: normalizeDragonFableCharacterPageUrl(linkMatch[2]),
+    title: title ? `${title} (Character Page)` : 'Character Page',
+  }
+}
+
+async function maybeCaptureGuestCharacterImage({
+  captureEnabled = false,
+  force = false,
+  html,
+  imageUrl,
+  name,
+  slug,
+  traits,
+}: {
+  captureEnabled?: boolean
+  force?: boolean
+  html: string
+  imageUrl?: string
+  name: string
+  slug: string
+  traits: string[]
+}): Promise<string | undefined> {
+  if (imageUrl || !traits.includes('A/C')) return imageUrl
+
+  const existingCapture = hasGuestCharacterCapture(slug)
+  if (existingCapture && (!force || !captureEnabled)) return existingCapture
+  if (!captureEnabled) return undefined
+
+  const charPageUrl = extractGuestCharacterPageUrl(html)
+  if (!charPageUrl) return undefined
+
+  return captureGuestCharacterPage({ charPageUrl, force, name, slug })
+}
+
 function sanitizeGuestFamilyLevelVariants(family: ItemFamily): ItemFamily {
   if (family.type !== 'guest') return family
 
@@ -1386,7 +1485,7 @@ function parseNotes(html: string, guestName: string): string | undefined {
     const imageCaptionNoise = getImageCaptionNoise(otherInfoHtml)
 
     const trimmedSection = otherInfoHtml
-      .split(/<i>Thanks to|Also See:|<font color='#eeeeee'>/i)[0]
+      .split(/<i>Thanks to|Also See:|Animated preview from Design Notes|<font color='#eeeeee'>/i)[0]
       .replace(
         /<img[^>]+src="[^"]*(?:github\.com\/DF-Pedia|githubusercontent\.com)[^"]*\/pets_guests\/[^"]*\.(?:png|jpg|jpeg|gif|bmp)"[^>]*>/gi,
         ''
@@ -1395,6 +1494,10 @@ function parseNotes(html: string, guestName: string): string | undefined {
     for (const line of normalizeStructuredText(trimmedSection).split('\n')) {
       const trimmed = line.trim()
       if (!trimmed) continue
+      if (
+        /^[•*\-\s]*Current class and equipment can be previewed on this guest's character page:/i.test(trimmed)
+      )
+        continue
       if (isImageCaptionNoiseLine(trimmed, imageCaptionNoise)) continue
       if (/\w+\s+--\s+\d+\/\d+\/\d+\s+\d+:\d+:\d+/.test(line)) continue
       if (
@@ -1810,9 +1913,14 @@ function buildGuestFamilyFromSections(
     const guestStats = parseGuestStats(section.html, section.name)
     const attacks = parseGuestAttacks(section.html, section.name)
     const categoryTags = detectCategoryTags(section.html)
-    const { imageUrl, alternativeImages } = extractGuestImages(section.html, section.name)
+    const { imageUrl: extractedImageUrl, alternativeImages } = extractGuestImages(
+      section.html,
+      section.name
+    )
+    const imageUrl = extractedImageUrl ?? inferGuestMainImageFromAttacks(attacks)
     const obtainMethods = parseObtainMethods(section.html, section.name)
     const notes = parseNotes(section.html, section.name)
+    const characterPageSource = extractGuestCharacterPageSource(section.html)
     const alsoSee = parseAlsoSee(section.html, nameToSlug, section.name)
     const tags = generateTags(section.name, description, stub.elements)
     const daRequired = /<img[^>]+src=["'][^"']*\/tags\/DA\.png["']/i.test(section.html)
@@ -1849,6 +1957,7 @@ function buildGuestFamilyFromSections(
         'Unknown',
       imageUrl,
       forumUrl: section.sourceUrl ?? stub.forumUrl,
+      ...(characterPageSource ? { sourceLinks: [characterPageSource] } : {}),
       notes,
       alsoSee,
       tags,
@@ -1946,6 +2055,13 @@ function buildGuestFamilyFromSections(
       ...(sharedNotes ? { notes: sharedNotes } : {}),
       ...(mergedAlsoSee.length > 0 ? { alsoSee: mergedAlsoSee } : {}),
     },
+    familySources: Array.from(
+      new Map(
+        variants
+          .flatMap((variant) => variant.sourceLinks ?? [])
+          .map((source) => [source.url, source])
+      ).values()
+    ),
     levelVariants,
     releaseDate:
       variants.map((variant) => variant.releaseDate).find((date) => date && date !== 'Unknown') ??
@@ -1969,6 +2085,52 @@ function buildGuestFamilyFromSections(
   }
 
   return computeFamilyFlags(family)
+}
+
+async function enrichGuestFamilyCharacterImages(
+  family: ItemFamily,
+  sections: GuestVariantSection[],
+  traits: string[]
+): Promise<ItemFamily> {
+  if (family.type !== 'guest') return family
+
+  let changed = false
+  const levelVariants: LevelVariant[] = []
+
+  for (const level of family.levelVariants) {
+    const section = sections.find((candidate) => candidate.name === level.name) ?? sections[0]
+    const imageUrl = await maybeCaptureGuestCharacterImage({
+      html: section?.html ?? '',
+      captureEnabled: shouldCaptureCharPages,
+      force: freshArg,
+      imageUrl: level.imageUrl ?? family.shared.imageUrl,
+      name: level.name,
+      slug: prefixedSlug(level.name, 'guest'),
+      traits,
+    })
+
+    if (imageUrl && imageUrl !== level.imageUrl) {
+      changed = true
+      levelVariants.push({ ...level, imageUrl })
+    } else {
+      levelVariants.push(level)
+    }
+  }
+
+  if (!changed) return family
+
+  const sharedImageUrl =
+    family.shared.imageUrl ??
+    [...levelVariants].reverse().find((level) => level.imageUrl)?.imageUrl
+
+  return sanitizeGuestFamilyLevelVariants({
+    ...family,
+    shared: {
+      ...family.shared,
+      ...(sharedImageUrl ? { imageUrl: sharedImageUrl } : {}),
+    },
+    levelVariants,
+  })
 }
 
 function applySupplementalGuestData(
@@ -2044,6 +2206,13 @@ async function main(): Promise<void> {
   if (letterFilter.letter) console.log(`▶  Only scraping letter: ${letterFilter.letter}`)
   if (letterFilter.letters)
     console.log(`▶  Only scraping letters: ${letterFilter.letters.join(', ')}`)
+  if (nameFilter.names && nameFilter.names.length > 0)
+    console.log(`▶  Only scraping names: ${nameFilter.names.join(', ')}`)
+  if (freshArg) console.log('▶  Ignoring matching cached entries')
+  if (captureCharPagesArg && !shouldCaptureCharPages)
+    console.log('▶  CharPage capture requested without --name/--names; skipping slow capture mode')
+  if (shouldCaptureCharPages)
+    console.log('▶  Capturing missing A/C CharPage images with local Playwright/Ruffle')
   if (limitArg) console.log(`▶  Limiting scrape to ${limitArg} entries`)
   console.log(`▶  Detail concurrency: ${concurrencyArg} (entry starts spaced ${DELAY_MS}ms apart)`)
 
@@ -2086,10 +2255,23 @@ async function main(): Promise<void> {
 
   // Apply letter filters
   const filtered = applyLetterFilter(allStubs, letterFilter)
-  const stubs = applyLimit(filtered.entries, limitArg)
+  const nameFiltered = applyNameFilter(
+    filtered.entries,
+    nameFilter,
+    (stub) => normalizeGuestLookupName(stub.name),
+    (stub) => [normalizeGuestLookupName(stripTrailingVariantNumber(stub.name))]
+  )
+  const nameFilteredEntries = nameFiltered.entries
+  const stubs = applyLimit(nameFilteredEntries, limitArg)
   if (filtered.message) console.log(`   ${filtered.message}`)
+  if (nameFiltered.message) console.log(`   ${nameFiltered.message}`)
   if (limitArg) console.log(`   Limited to first ${stubs.length} selected entries`)
   console.log()
+
+  if (stubs.length === 0) {
+    console.log('⚠️  No selected guests matched; leaving guests.json unchanged.')
+    return
+  }
 
   // Build name→slug map for ALL guests (needed for cross-reference resolution)
   const nameToSlug = new Map<string, { slug: string; type: EntryType }>()
@@ -2120,6 +2302,17 @@ async function main(): Promise<void> {
       console.warn('   Starting with empty progress state...\n')
     }
   }
+  if (fs.existsSync(OUTPUT_PATH)) {
+    try {
+      const existingEntries = loadProgressEntries<Guest | ItemFamily>(OUTPUT_PATH)
+      for (const entry of existingEntries.values()) {
+        if (!progressMap.has(entry.slug)) progressMap.set(entry.slug, entry)
+      }
+      console.log(`📚 Merged existing guests dataset (${existingEntries.size} entries)\n`)
+    } catch (err) {
+      console.warn(`⚠️  Could not merge existing guests dataset: ${err}`)
+    }
+  }
 
   // ── Step 4: Scrape guests ──────────────────────────────────────────────────
 
@@ -2136,7 +2329,7 @@ async function main(): Promise<void> {
     const cachedEntry =
       progressMap.get(stub.slug) ??
       Array.from(progressMap.values()).find((entry) => entry.forumUrl === stub.forumUrl)
-    if (cachedEntry) {
+    if (cachedEntry && !freshArg) {
       process.stdout.write(`[${i + 1}/${stubs.length}] ${stub.name}... `)
       console.log('✓ [cached]')
       fromCache++
@@ -2198,12 +2391,16 @@ async function main(): Promise<void> {
         const candidateVariantSections =
           scopedVariantSections.length > 0 ? scopedVariantSections : variantSections
         if (candidateVariantSections.length > 1) {
-          const family = buildGuestFamilyFromSections(
-            stub,
+          const family = await enrichGuestFamilyCharacterImages(
+            buildGuestFamilyFromSections(
+              stub,
+              candidateVariantSections,
+              chronology,
+              nameToSlug,
+              supplementalNotesByForumUrl.get(stub.forumUrl)
+            ),
             candidateVariantSections,
-            chronology,
-            nameToSlug,
-            supplementalNotesByForumUrl.get(stub.forumUrl)
+            stub.traits
           )
           progressMap.set(family.slug, family)
           console.log(`✓ [ItemFamily: ${candidateVariantSections.length} variants]`)
@@ -2219,9 +2416,22 @@ async function main(): Promise<void> {
         const guestStats = parseGuestStats(html, stub.name)
         const attacks = parseGuestAttacks(html, stub.name)
         const categoryTags = detectCategoryTags(html)
-        const { imageUrl, alternativeImages } = extractGuestImages(html, stub.name)
+        const { imageUrl: extractedImageUrl, alternativeImages } = extractGuestImages(
+          html,
+          stub.name
+        )
+        const imageUrl = await maybeCaptureGuestCharacterImage({
+          html,
+          captureEnabled: shouldCaptureCharPages,
+          force: freshArg,
+          imageUrl: extractedImageUrl ?? inferGuestMainImageFromAttacks(attacks),
+          name: stub.name,
+          slug: stub.slug,
+          traits: stub.traits,
+        })
         const obtainMethods = parseObtainMethods(html, stub.name)
         const notes = parseNotes(html, stub.name)
+        const characterPageSource = extractGuestCharacterPageSource(html)
         const alsoSee = parseAlsoSee(html, nameToSlug, stub.name)
         const tags = generateTags(stub.name, description, stub.elements)
 
@@ -2266,6 +2476,7 @@ async function main(): Promise<void> {
             'Unknown',
           imageUrl,
           forumUrl: stub.forumUrl,
+          ...(characterPageSource ? { sourceLinks: [characterPageSource] } : {}),
           notes,
           alsoSee,
           tags,

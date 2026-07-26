@@ -1,5 +1,6 @@
 import type { AlsoSeeRef, ItemFamily, ObtainVariant } from './item'
 import type { GuestAttack } from './pet'
+import type { ArmorCustomizationInfo } from '../utils/armorCustomization'
 
 export type AccessorySubtype =
   'artifact' | 'belt' | 'bracer' | 'cape-wing' | 'helm' | 'necklace' | 'ring' | 'trinket'
@@ -34,6 +35,7 @@ export interface Accessory {
   itemType?: string
   equipSpot?: string
   modifies?: string
+  armorCustomization?: ArmorCustomizationInfo
   category?: string
   obtainMethods: ObtainVariant[]
   notes?: string
@@ -44,6 +46,7 @@ export interface Accessory {
   dmRequired?: boolean
   isTemp?: boolean
   isCosmetic?: boolean
+  hasArmorCustomization?: boolean
   isRare?: boolean
   isSeasonal?: boolean
   isSpecialOffer?: boolean
@@ -54,6 +57,8 @@ export type AccessoryFamily = ItemFamily & {
   type: 'accessory'
   subtype: AccessorySubtype
   modifies?: string
+  armorCustomization?: ArmorCustomizationInfo
+  hasArmorCustomization?: boolean
 }
 
 export type AccessoryEntry = Accessory | AccessoryFamily
@@ -61,7 +66,9 @@ export type AccessoryEntry = Accessory | AccessoryFamily
 export interface AccessoryFilters {
   query?: string
   access?: Array<'multi' | 'free' | 'merge' | 'dc' | 'dm' | 'da'>
-  categories?: Array<'cosmetic' | 'temp' | 'rare' | 'seasonal' | 'special-offer' | 'retired'>
+  categories?: Array<
+    'armor-customization' | 'cosmetic' | 'temp' | 'rare' | 'seasonal' | 'special-offer' | 'retired'
+  >
   elements?: string[]
 }
 

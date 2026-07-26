@@ -139,6 +139,8 @@ function searchWeapons(
       const itemRetired = item.retired === true
       if (filters.categories && filters.categories.length > 0) {
         const hasCategory = filters.categories.some((category) => {
+          if (category === 'armor-customization') return item.hasArmorCustomization === true
+          if (category === 'special') return item.hasSpecial === true
           if (category === 'cosmetic') return item.isCosmetic === true
           if (category === 'temp') return item.isTemp === true
           if (category === 'rare') return item.isRare === true
@@ -271,6 +273,8 @@ export function useWeaponCategoryAvailability(subtype: WeaponSubtype) {
   return useMemo(
     () => ({
       loading,
+      hasArmorCustomization: weapons.some((entry) => entry.hasArmorCustomization === true),
+      hasSpecial: weapons.some((entry) => entry.hasSpecial === true),
       hasCosmetic: weapons.some((entry) => entry.isCosmetic === true),
     }),
     [weapons, loading]
@@ -295,6 +299,8 @@ export function buildWeaponCardData(entry: WeaponEntry) {
       dcRequired: entry.dcRequired ?? false,
       dmRequired: entry.dmRequired ?? false,
       isCosmetic: entry.isCosmetic ?? false,
+      hasSpecial: entry.hasSpecial ?? false,
+      hasArmorCustomization: entry.hasArmorCustomization ?? false,
       hasFree: entry.obtainMethods.some((method) => method.priceType === 'free'),
       hasMultipleVersions: hasVersionSuffix(entry.name),
       levelRange:
@@ -313,6 +319,8 @@ export function buildWeaponCardData(entry: WeaponEntry) {
     dcRequired: entry.hasDC,
     dmRequired: entry.hasDM,
     isCosmetic: entry.isCosmetic ?? false,
+    hasSpecial: entry.hasSpecial ?? false,
+    hasArmorCustomization: entry.hasArmorCustomization ?? false,
     hasFree: entry.hasFree,
     hasMultipleVersions: entry.levelVariants.length > 1,
     levelRange:

@@ -2,6 +2,7 @@ import { lazy, Suspense } from 'react'
 import { BrowserRouter, Navigate, Routes, Route } from 'react-router-dom'
 import Layout from './components/layout/Layout'
 import { BadgeGridSkeleton } from './components/shared/LoadingSkeleton'
+import ScrollToTop from './components/shared/ScrollToTop'
 import { ACCESSORY_SUBTYPES } from './types/accessory'
 import { WEAPON_SUBTYPES } from './types/weapon'
 
@@ -30,6 +31,7 @@ function PageLoader() {
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Layout>
         <Suspense fallback={<PageLoader />}>
           <Routes>

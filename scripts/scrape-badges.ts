@@ -17,6 +17,7 @@
  * 2. Add to .env: FORUM_COOKIE="your_cookie_string"
  * 3. Run: npm run scrape:badges
  *    Smoke test: npm run scrape:badges -- --limit=2
+ *    Targeted refresh: npm run scrape:badges -- --names="Arachnalchemy Mastery"
  *    Sequential debug mode: npm run scrape:badges -- --concurrency=1
  *
  * The A-Z master post URL:
@@ -30,7 +31,13 @@ import { compareTitles } from '../src/utils/displayText.ts'
 import { writeBadgeManifest } from './lib/data-manifests.ts'
 import { FORUM_BASE, fetchForumPage as fetchPage, loadForumCookie } from './lib/forum.ts'
 import { decodeHtml as decodeHTML, slugify, stripSimpleHtml as stripHtml } from './lib/text.ts'
-import { applyLimit, getConcurrencyArg, getLimitArg } from './lib/scraper-cli.ts'
+import {
+  applyLimit,
+  applyNameFilter,
+  getConcurrencyArg,
+  getLimitArg,
+  getNameFilterArgs,
+} from './lib/scraper-cli.ts'
 import { processWithConcurrency } from './lib/work-queue.ts'
 
 const AZ_PAGE_URL = `${FORUM_BASE}/tm.asp?m=22304590&mpage=1&key=`
@@ -43,6 +50,7 @@ const THREAD_URL_OVERRIDES: Record<string, string> = {
 }
 const limitArg = getLimitArg()
 const concurrencyArg = getConcurrencyArg()
+const nameFilter = getNameFilterArgs()
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -119,6 +127,19 @@ function loadBadgeSubcategoryFallbacks(): Map<string, BadgeSubcategoryFallback> 
         },
       ])
   )
+}
+
+function loadExistingBadges(): BadgeData[] {
+  if (!fs.existsSync(OUTPUT_PATH)) return []
+  return JSON.parse(fs.readFileSync(OUTPUT_PATH, 'utf-8')) as BadgeData[]
+}
+
+function mergeScopedBadges(incoming: BadgeData[], shouldMerge: boolean): BadgeData[] {
+  if (!shouldMerge) return incoming
+
+  const incomingSlugs = new Set(incoming.map((badge) => badge.slug))
+  const preserved = loadExistingBadges().filter((badge) => !incomingSlugs.has(badge.slug))
+  return [...preserved, ...incoming]
 }
 
 // ─── Step 1: Parse A-Z master page ───────────────────────────────────────────
@@ -432,15 +453,19 @@ async function main() {
   console.log('📄 Fetching A-Z Badges master page...')
   const azHtml = await fetchPage(AZ_PAGE_URL, cookie)
   const allStubs = parseAZPage(azHtml, fallbackMap)
-  const stubs = applyLimit(allStubs, limitArg)
+  const nameFiltered = applyNameFilter(allStubs, nameFilter, (stub) => stub.name)
+  const stubs = applyLimit(nameFiltered.entries, limitArg)
   console.log(`✅ Found ${allStubs.length} badges in A-Z page`)
+  if (nameFilter.names && nameFilter.names.length > 0)
+    console.log(`   Only scraping names: ${nameFilter.names.join(', ')}`)
+  if (nameFiltered.message) console.log(`   ${nameFiltered.message}`)
   if (limitArg) console.log(`   Limited to first ${stubs.length} badges`)
   console.log(`   Detail concurrency: ${concurrencyArg} (entry starts spaced ${DELAY_MS}ms apart)`)
   console.log()
 
   if (stubs.length === 0) {
-    console.error('❌ No badges found — cookie may have expired. Refresh and retry.')
-    process.exit(1)
+    console.log('⚠️  No selected badges matched; leaving badges.json unchanged.')
+    return
   }
 
   // Step 2: Fetch details for each badge
@@ -521,14 +546,17 @@ async function main() {
   })
 
   // Sort alphabetically
-  badges.sort((a, b) => compareTitles(a.name, b.name))
+  const finalBadges = mergeScopedBadges(
+    badges,
+    Boolean(nameFilter.names && nameFilter.names.length > 0)
+  ).sort((a, b) => compareTitles(a.name, b.name))
 
   console.log('\n' + '─'.repeat(50))
   console.log(`✅ Enriched with full details: ${enriched}`)
   console.log(`⚠️  Name + forum link only:    ${fallback}`)
-  console.log(`📁 Writing ${badges.length} badges to ${OUTPUT_PATH}`)
+  console.log(`📁 Writing ${finalBadges.length} badges to ${OUTPUT_PATH}`)
 
-  fs.writeFileSync(OUTPUT_PATH, JSON.stringify(badges, null, 2) + '\n', 'utf-8')
+  fs.writeFileSync(OUTPUT_PATH, JSON.stringify(finalBadges, null, 2) + '\n', 'utf-8')
   writeBadgeManifest(DATA_DIR)
   console.log('\n🎉 Done!')
 }

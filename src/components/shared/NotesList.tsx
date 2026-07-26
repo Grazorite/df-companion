@@ -3,7 +3,7 @@
  *
  * Handles two formats:
  * - Legacy: notes separated by " • " (flat)
- * - New: notes separated by "\n" with sub-bullets as "\n  • " within a line
+ * - New: notes separated by "\n" with sub-bullets as "\n  • " or "\n  " within a line
  *
  * Reusable across pets, badges, and future sections.
  */
@@ -18,6 +18,14 @@ interface NoteItem {
   text: string
   subItems: string[]
   quoteItems: string[]
+}
+
+function isIndentedSubItem(line: string): boolean {
+  return /^\s{2,}(?:[•\-*]\s*)?\S/.test(line)
+}
+
+function cleanListMarker(text: string): string {
+  return text.trim().replace(/^(?:[•\-*]\s*)+/, '')
 }
 
 function parseNotes(raw: string): NoteItem[] {
@@ -47,29 +55,29 @@ function parseNotes(raw: string): NoteItem[] {
       }
 
       if (activeQuoteItem) {
-        if (/^\s{2,}[•\-*]\s/.test(line)) {
-          activeQuoteItem.subItems.push(trimmed.replace(/^(?:[•\-*]\s*)+/, ''))
+        if (isIndentedSubItem(line)) {
+          activeQuoteItem.subItems.push(cleanListMarker(trimmed))
           continue
         }
 
         if (/^(?:[•\-*]\s+)/.test(trimmed)) {
           activeQuoteItem = null
         } else {
-          activeQuoteItem.quoteItems.push(trimmed.replace(/^(?:[•\-*]\s*)+/, ''))
+          activeQuoteItem.quoteItems.push(cleanListMarker(trimmed))
           continue
         }
       }
 
-      if (/^\s{2,}[•\-*]\s/.test(line)) {
+      if (isIndentedSubItem(line)) {
         // Sub-bullet — attach to previous item
         if (items.length > 0) {
-          items[items.length - 1].subItems.push(trimmed.replace(/^(?:[•\-*]\s*)+/, ''))
+          items[items.length - 1].subItems.push(cleanListMarker(trimmed))
         } else {
-          items.push({ text: trimmed.replace(/^(?:[•\-*]\s*)+/, ''), subItems: [], quoteItems: [] })
+          items.push({ text: cleanListMarker(trimmed), subItems: [], quoteItems: [] })
         }
       } else {
         // Top-level note
-        items.push({ text: trimmed.replace(/^(?:[•\-*]\s*)+/, ''), subItems: [], quoteItems: [] })
+        items.push({ text: cleanListMarker(trimmed), subItems: [], quoteItems: [] })
       }
     }
     return items.filter(item => item.text.length > 0 || item.quoteItems.length > 0)
@@ -79,7 +87,7 @@ function parseNotes(raw: string): NoteItem[] {
   return topLevel
     .map(s => s.trim())
     .filter(s => s.length > 0)
-    .map(text => ({ text: text.replace(/^(?:[•\-*]\s*)+/, ''), subItems: [], quoteItems: [] }))
+    .map(text => ({ text: cleanListMarker(text), subItems: [], quoteItems: [] }))
 }
 
 export default function NotesList({ notes }: NotesListProps) {

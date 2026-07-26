@@ -15,6 +15,7 @@ import {
   loadElements,
 } from '../utils/dataLoaders'
 import { compareTitles, displayTitle } from '../utils/displayText'
+import { parseArmorCustomization } from '../utils/armorCustomization'
 import { getSearchWords } from '../utils/search'
 import { obtainMethodFingerprint, relatedNameScore } from '../utils/relatedItems'
 import {
@@ -158,6 +159,7 @@ function searchAccessories(
       const itemRetired = isAccessoryFamily(item) ? item.retired === true : item.retired === true
       if (filters.categories && filters.categories.length > 0) {
         const hasCategory = filters.categories.some((category) => {
+          if (category === 'armor-customization') return hasAccessoryArmorCustomization(item)
           if (category === 'cosmetic') return item.isCosmetic === true
           if (category === 'temp') return item.isTemp === true
           if (category === 'rare') return item.isRare === true
@@ -417,10 +419,37 @@ export function useAccessoryCategoryAvailability(subtype: AccessorySubtype) {
   return useMemo(
     () => ({
       loading,
+      hasArmorCustomization: accessories.some(hasAccessoryArmorCustomization),
       hasCosmetic: accessories.some((entry) => entry.isCosmetic === true),
     }),
     [accessories, loading]
   )
+}
+
+export function getAccessoryArmorCustomization(entry: AccessoryEntry) {
+  if (isAccessoryFamily(entry)) {
+    return (
+      entry.armorCustomization ??
+      parseArmorCustomization(
+        [
+          entry.shared.notes,
+          entry.shared.description,
+          ...entry.levelVariants.flatMap((level) => [level.notes, level.description]),
+        ]
+          .filter(Boolean)
+          .join(' ')
+      )
+    )
+  }
+
+  return (
+    entry.armorCustomization ??
+    parseArmorCustomization([entry.notes, entry.description].filter(Boolean).join(' '))
+  )
+}
+
+function hasAccessoryArmorCustomization(entry: AccessoryEntry): boolean {
+  return entry.hasArmorCustomization === true || Boolean(getAccessoryArmorCustomization(entry))
 }
 
 export function useTotalAccessoryCount() {
@@ -441,6 +470,7 @@ export function buildAccessoryCardData(entry: AccessoryEntry) {
       dcRequired: entry.dcRequired ?? false,
       dmRequired: entry.dmRequired ?? false,
       isCosmetic: entry.isCosmetic ?? false,
+      hasArmorCustomization: hasAccessoryArmorCustomization(entry),
       hasFree: entry.obtainMethods.some((method) => method.priceType === 'free'),
       hasMultipleVersions: hasMultipleVersionHint(entry.name),
       levelRange: getAccessoryNameRange(entry.name) ?? entry.level ?? '',
@@ -456,6 +486,7 @@ export function buildAccessoryCardData(entry: AccessoryEntry) {
     dcRequired: entry.hasDC,
     dmRequired: entry.hasDM,
     isCosmetic: entry.isCosmetic ?? false,
+    hasArmorCustomization: hasAccessoryArmorCustomization(entry),
     hasFree: entry.hasFree,
     hasMultipleVersions: entry.levelVariants.length > 1,
     levelRange:

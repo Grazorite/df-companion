@@ -1,6 +1,7 @@
 import * as fs from 'node:fs'
 import * as path from 'node:path'
 import elementsData from '../src/data/elements.json' with { type: 'json' }
+import { parseArmorCustomization } from '../src/utils/armorCustomization.ts'
 import {
   computeFamilyFlags,
   computePriceType,
@@ -8,7 +9,7 @@ import {
   obtainVariantHasDC,
 } from '../src/utils/variantHelpers.ts'
 import { compareTitles, titleSortKey } from '../src/utils/displayText.ts'
-import { inferImageCaptionFromUrl } from '../src/utils/imageLabels.ts'
+import { inferImageCaptionFromUrl, normalizeImageCaption } from '../src/utils/imageLabels.ts'
 import {
   ACCESSORY_SUBTYPES,
   isAccessoryFamily,
@@ -906,7 +907,7 @@ function extractAccessoryImages(html: string): AccessoryImageBundle {
       if (candidate.url === imageUrl) continue
       const caption =
         getCaptionOverride(candidate.url) ??
-        candidate.caption?.trim() ??
+        normalizeImageCaption(candidate.caption) ??
         inferImageCaptionFromUrl(candidate.url) ??
         `Alternative ${alternativeImages.length + 1}`
       alternativeImages.push({ url: candidate.url, caption })
@@ -1303,6 +1304,7 @@ function buildAccessoryEntry(
     supportsCosmeticFlag(stub.subtype, equipSpotValue) &&
     (hasCosmeticMarker(description) || hasCosmeticMarker(normalizedText))
   const notes = parseNotes(html)
+  const armorCustomization = parseArmorCustomization([description, notes, normalizedText].filter(Boolean).join(' '))
   const strategy = getAccessorySubtypeStrategy(stub.subtype)
   const images = strategy.shouldExtractImages({
     name: override?.name ?? stub.name,
@@ -1336,6 +1338,7 @@ function buildAccessoryEntry(
     ...(itemTypeValue ? { itemType: itemTypeValue } : {}),
     ...(equipSpotValue ? { equipSpot: equipSpotValue } : {}),
     ...(modifiesValue ? { modifies: modifiesValue } : {}),
+    ...(armorCustomization ? { armorCustomization, hasArmorCustomization: true } : {}),
     ...(categoryValue ? { category: categoryValue } : {}),
     obtainMethods,
     ...(notes ? { notes } : {}),
@@ -1356,6 +1359,7 @@ function buildAccessoryEntry(
       : {}),
     ...(flags.isTemp ? { isTemp: true } : {}),
     ...(isCosmetic ? { isCosmetic: true } : {}),
+    ...(armorCustomization ? { hasArmorCustomization: true } : {}),
     ...(flags.isRare ? { isRare: true } : {}),
     ...(flags.isSeasonal ? { isSeasonal: true } : {}),
     ...(flags.isSpecialOffer ? { isSpecialOffer: true } : {}),
@@ -1415,10 +1419,13 @@ function buildAccessoryFamily(
   const alternativeImages = consolidatedVariants
     .map((variant) => variant.alternativeImages)
     .filter((value): value is NonNullable<Accessory['alternativeImages']> => Boolean(value))
+  const hasVariantSpecificImages = images.length > 1
   const sharedImageUrl =
-    imageOverride ?? fallbackImages.imageUrl ?? (images.length === 1 ? images[0] : undefined)
+    imageOverride ??
+    (!hasVariantSpecificImages ? fallbackImages.imageUrl : undefined) ??
+    (images.length === 1 ? images[0] : undefined)
   const sharedAlternativeImages =
-    fallbackImages.alternativeImages ??
+    (!hasVariantSpecificImages ? fallbackImages.alternativeImages : undefined) ??
     (alternativeImages.length === 1 ? alternativeImages[0] : undefined)
   const rarities = uniqueStrings(
     consolidatedVariants.map((variant) => variant.rarity).filter(Boolean)
@@ -1426,6 +1433,9 @@ function buildAccessoryFamily(
   const modifies = uniqueStrings(
     consolidatedVariants.map((variant) => variant.modifies).filter(Boolean)
   )
+  const armorCustomizations = consolidatedVariants
+    .map((variant) => variant.armorCustomization)
+    .filter((value): value is NonNullable<Accessory['armorCustomization']> => Boolean(value))
   const alsoSee = mergeAccessoryAlsoSee(consolidatedVariants, familySlug)
 
   const levelVariants: LevelVariant[] = consolidatedVariants
@@ -1503,11 +1513,17 @@ function buildAccessoryFamily(
       modifies.length === 1
         ? modifies[0]
         : consolidatedVariants.find((variant) => variant.modifies)?.modifies,
+    armorCustomization:
+      armorCustomizations.length === 1
+        ? armorCustomizations[0]
+        : consolidatedVariants.find((variant) => variant.armorCustomization)?.armorCustomization,
     category: consolidatedVariants.find((variant) => variant.category)?.category,
     releaseDate: consolidatedVariants.find((variant) => variant.releaseDate)?.releaseDate ?? '',
     tags: Array.from(new Set(consolidatedVariants.flatMap((variant) => variant.tags))).sort(),
     isTemp: consolidatedVariants.some((variant) => variant.isTemp) || undefined,
     isCosmetic: consolidatedVariants.some((variant) => variant.isCosmetic) || undefined,
+    hasArmorCustomization:
+      consolidatedVariants.some((variant) => variant.hasArmorCustomization) || undefined,
     isRare: consolidatedVariants.some((variant) => variant.isRare) || undefined,
     isSeasonal: consolidatedVariants.some((variant) => variant.isSeasonal) || undefined,
     isSpecialOffer: consolidatedVariants.some((variant) => variant.isSpecialOffer) || undefined,

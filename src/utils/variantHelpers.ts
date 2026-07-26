@@ -377,6 +377,14 @@ export function getDisplayFamilyName(family: ItemFamily): string {
   return displayTitle(family.familyName)
 }
 
+export function getFamilyCardDescription(family: ItemFamily): string {
+  return (
+    family.shared.description?.trim() ||
+    family.levelVariants.find((level) => level.description?.trim())?.description?.trim() ||
+    ''
+  )
+}
+
 function getParentheticalVariantBaseName(familyName: string): string | undefined {
   return getParentheticalVariantParts(familyName)?.baseName
 }
@@ -510,9 +518,15 @@ function getLevelVariantLabelInfo(
   const normalizedVariantName = level.variantName
     ? normalizeDisplayText(level.variantName)
     : undefined
+  const normalizedAccessVariantName =
+    normalizedVariantName && /^(?:Normal|Base)$/i.test(normalizedVariantName)
+      ? '(Base)'
+      : normalizedVariantName && /^(?:DC|D-Coins?|Dragon Coins?)$/i.test(normalizedVariantName)
+        ? '(DC)'
+        : normalizedVariantName
 
-  if (familyName === 'Harmonized Cowbell' && normalizedVariantName) {
-    return { label: normalizedVariantName, canAddLevelSuffix: false, levelLabel, hasDC, hasDA }
+  if (familyName === 'Harmonized Cowbell' && normalizedAccessVariantName) {
+    return { label: normalizedAccessVariantName, canAddLevelSuffix: false, levelLabel, hasDC, hasDA }
   }
 
   if (itemType === 'guest') {
@@ -520,8 +534,8 @@ function getLevelVariantLabelInfo(
     if (numericFamilyVariant) {
       return { label: numericFamilyVariant, canAddLevelSuffix: false, levelLabel, hasDC, hasDA }
     }
-    if (normalizedVariantName) {
-      return { label: normalizedVariantName, canAddLevelSuffix: true, levelLabel, hasDC, hasDA }
+    if (normalizedAccessVariantName) {
+      return { label: normalizedAccessVariantName, canAddLevelSuffix: true, levelLabel, hasDC, hasDA }
     }
     const normalizedLevelName = normalizeDisplayText(stripAccessVariantSuffix(level.name))
     if (normalizedLevelName) {
@@ -541,11 +555,11 @@ function getLevelVariantLabelInfo(
   }
 
   if (
-    normalizedVariantName &&
-    parseRomanNumeral(normalizedVariantName.trim().toUpperCase()) !== null
+    normalizedAccessVariantName &&
+    parseRomanNumeral(normalizedAccessVariantName.trim().toUpperCase()) !== null
   ) {
     return {
-      label: normalizedVariantName,
+      label: normalizedAccessVariantName,
       canAddLevelSuffix: true,
       levelLabel,
       hasDC,
@@ -616,7 +630,7 @@ function getLevelVariantLabelInfo(
     const normalizedLevelName = normalizeDisplayText(stripAccessVariantSuffix(level.name))
     if (normalizedLevelName === familyName) {
       return {
-        label: normalizedVariantName === '(DC)' ? '(DC)' : '(Base)',
+        label: normalizedAccessVariantName === '(DC)' ? '(DC)' : '(Base)',
         canAddLevelSuffix: true,
         levelLabel,
         hasDC,
@@ -625,9 +639,9 @@ function getLevelVariantLabelInfo(
     }
   }
 
-  if (normalizedVariantName) {
+  if (normalizedAccessVariantName) {
     return {
-      label: normalizedVariantName,
+      label: normalizedAccessVariantName,
       canAddLevelSuffix: true,
       levelLabel,
       hasDC,

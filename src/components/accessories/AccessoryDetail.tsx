@@ -8,7 +8,11 @@ import type {
 import { isAccessoryFamily } from '../../types/accessory'
 import type { LevelVariant, ObtainVariant } from '../../types/item'
 import type { GuestAttack } from '../../types/pet'
-import { useAccessoryRelatedItems, type AccessoryRelatedItem } from '../../hooks/useAccessories'
+import {
+  getAccessoryArmorCustomization,
+  useAccessoryRelatedItems,
+  type AccessoryRelatedItem,
+} from '../../hooks/useAccessories'
 import { displayTitle, normalizeDisplayText } from '../../utils/displayText'
 import { buildDisplayImages } from '../../utils/imageLabels'
 import { getDisplayFamilyName, isSingleVariant } from '../../utils/variantHelpers'
@@ -161,6 +165,40 @@ function ArtifactMetadataStrip({ modifies, equipSpot }: { modifies?: string; equ
   )
 }
 
+function ArmorCustomizationMetadataStrip({
+  modifies,
+  appearance,
+}: {
+  modifies?: string
+  appearance?: string
+}) {
+  const values = [
+    modifies ? { label: 'Modifies', value: modifies } : null,
+    appearance ? { label: 'Appearance', value: appearance } : null,
+  ].filter((entry): entry is { label: string; value: string } => Boolean(entry))
+
+  if (values.length === 0) return null
+
+  return (
+    <section className="mb-8">
+      <div className="bg-bg-surface border border-border-default rounded-lg p-4">
+        <div
+          className={`grid gap-4 text-center ${values.length > 1 ? 'grid-cols-2' : 'grid-cols-1'}`}
+        >
+          {values.map((item) => (
+            <div key={item.label}>
+              <p className="text-xs text-text-muted uppercase tracking-wider mb-1">{item.label}</p>
+              <p className="text-sm font-medium text-text-primary">
+                {normalizeDisplayText(item.value)}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
 export default function AccessoryDetail({ accessory, filterBase }: AccessoryDetailProps) {
   const family = isAccessoryFamily(accessory) ? (accessory as AccessoryFamily) : undefined
   const singleAccessory = family ? undefined : (accessory as Accessory)
@@ -181,11 +219,18 @@ export default function AccessoryDetail({ accessory, filterBase }: AccessoryDeta
   const description = family
     ? (activeLevel?.description ?? family.shared.description)
     : singleAccessory?.description
+  const familyHasVariantImages = Boolean(
+    family?.levelVariants.some((level) => level.imageUrl || level.alternativeImages?.length)
+  )
   const imageUrl = family
-    ? (family.shared.imageUrl ?? activeLevel?.imageUrl)
+    ? familyHasVariantImages
+      ? (activeLevel?.imageUrl ?? family.shared.imageUrl)
+      : (family.shared.imageUrl ?? activeLevel?.imageUrl)
     : singleAccessory?.imageUrl
   const altImages = family
-    ? (family.shared.alternativeImages ?? nonEmptyAlternativeImages(activeLevel?.alternativeImages))
+    ? familyHasVariantImages
+      ? nonEmptyAlternativeImages(activeLevel?.alternativeImages)
+      : (family.shared.alternativeImages ?? nonEmptyAlternativeImages(activeLevel?.alternativeImages))
     : singleAccessory?.alternativeImages
   const shouldShowImages = shouldDisplayAccessoryImages(
     accessory,
@@ -220,6 +265,7 @@ export default function AccessoryDetail({ accessory, filterBase }: AccessoryDeta
   const ability = family ? family.shared.ability : singleAccessory?.ability
   const artifactModifies = family ? family.modifies : singleAccessory?.modifies
   const artifactEquipSpot = family ? family.equipSlot : singleAccessory?.equipSpot
+  const armorCustomization = getAccessoryArmorCustomization(accessory)
   const attacks = family
     ? ((activeLevel?.attacks ?? family.shared.attacks) as GuestAttack[] | undefined)
     : singleAccessory?.attacks
@@ -334,6 +380,18 @@ export default function AccessoryDetail({ accessory, filterBase }: AccessoryDeta
         )}
       </div>
 
+      {family && family.levelVariants.length > 1 && (
+        <section className="mb-8">
+          <LevelSelector
+            levels={family.levelVariants}
+            activeIndex={activeIndex}
+            onChange={setActiveIndex}
+            familyName={family.familyName}
+            itemType="accessory"
+          />
+        </section>
+      )}
+
       {currentImage && (
         <div className="mb-8">
           <AccessoryImage src={currentImage.url} name={currentImage.caption ?? title} />
@@ -357,8 +415,15 @@ export default function AccessoryDetail({ accessory, filterBase }: AccessoryDeta
         </div>
       )}
 
-      {accessory.subtype === 'artifact' && (
+      {accessory.subtype === 'artifact' && !armorCustomization && (
         <ArtifactMetadataStrip modifies={artifactModifies} equipSpot={artifactEquipSpot} />
+      )}
+
+      {armorCustomization && (
+        <ArmorCustomizationMetadataStrip
+          modifies={armorCustomization.modifies}
+          appearance={armorCustomization.appearance}
+        />
       )}
 
       {displayLevels.length > 0 && (
@@ -366,15 +431,6 @@ export default function AccessoryDetail({ accessory, filterBase }: AccessoryDeta
           <CollapsibleSection title="Stats by Level">
             <AccessoryStatsTable levels={displayLevels} familyName={family?.familyName} />
           </CollapsibleSection>
-          {family && family.levelVariants.length > 1 && (
-            <LevelSelector
-              levels={family.levelVariants}
-              activeIndex={activeIndex}
-              onChange={setActiveIndex}
-              familyName={family.familyName}
-              itemType="accessory"
-            />
-          )}
         </section>
       )}
 
@@ -395,7 +451,7 @@ export default function AccessoryDetail({ accessory, filterBase }: AccessoryDeta
 
       <ObtainSection variants={obtainMethods} className="mb-8" />
 
-      {attacks && attacks.length > 0 && <GuestAttacks attacks={attacks} />}
+      {attacks && attacks.length > 0 && <GuestAttacks attacks={attacks} heading="Trinket Skill" />}
 
       <OtherInformationSection
         notes={singleAccessory?.notes}

@@ -63,10 +63,13 @@ import {
 import { decodeHtml as decodeHTML, slugify, stripForumHtml, uniqueStrings } from './lib/text.ts'
 import {
   applyLetterFilter,
+  applyNameFilter,
   applyLimit,
   getConcurrencyArg,
+  getFreshArg,
   getLetterFilterArgs,
   getLimitArg,
+  getNameFilterArgs,
 } from './lib/scraper-cli.ts'
 import { loadProgressEntries, saveProgressEntries } from './lib/progress.ts'
 import { processWithConcurrency } from './lib/work-queue.ts'
@@ -83,6 +86,8 @@ const PROGRESS_PATH = path.resolve(import.meta.dirname, '../src/data/pets-progre
 const letterFilter = getLetterFilterArgs()
 const limitArg = getLimitArg()
 const concurrencyArg = getConcurrencyArg()
+const nameFilter = getNameFilterArgs()
+const freshArg = getFreshArg()
 
 async function fetchThreadHtml(messageId: string, cookie: string): Promise<string> {
   return fetchPage(`${FORUM_BASE}/fb.asp?m=${messageId}`, cookie)
@@ -490,7 +495,8 @@ function buildVariantFamilyFromSinglePost(
   data: ReturnType<typeof parsePetThread>,
   name: string,
   stub: PetStub,
-  chronology: ChronologyData
+  chronology: ChronologyData,
+  nameToSlug: Map<string, { slug: string; type: EntryType }>
 ): ItemFamily | undefined {
   const fallbackVariantLabel = extractExplicitVariantLabel(data.notes ?? '')
   const methodGroups = groupObtainMethodsByVariant(data.obtainMethods, fallbackVariantLabel)
@@ -534,6 +540,17 @@ function buildVariantFamilyFromSinglePost(
   const labels = uniqueStrings(levelVariants.map((level) => level.variantName ?? ''))
   if (labels.length < 2) return undefined
 
+  const alsoSee: AlsoSeeRef[] = data.alsoSeeNames
+    .map((rawName) => {
+      const key = rawName
+        .toLowerCase()
+        .replace(/[.,!?]+$/, '')
+        .trim()
+      const r = nameToSlug.get(key) ?? nameToSlug.get(key.replace(/\s*\([^)]+\)\s*$/, '').trim())
+      return r ? { name: rawName.replace(/[.,!?]+$/, '').trim(), slug: r.slug, type: r.type } : null
+    })
+    .filter((r): r is AlsoSeeRef => r !== null)
+
   return computeFamilyFlags({
     id: prefixedSlug(name, stub.type),
     familyName: name,
@@ -551,6 +568,7 @@ function buildVariantFamilyFromSinglePost(
       ...(data.alternativeImages && data.alternativeImages.length > 0
         ? { alternativeImages: data.alternativeImages }
         : {}),
+      ...(alsoSee.length > 0 ? { alsoSee } : {}),
     },
     levelVariants,
     ...(chronology.datesByMessageId.get(stub.messageId) ||
@@ -614,6 +632,27 @@ function dedupeVariantEntries(items: Array<Pet | ItemFamily>): Array<Pet | ItemF
   }
 
   return Array.from(canonicalByNormalized.values())
+}
+
+function scorePetEntryForSlugDedupe(item: Pet | ItemFamily): number {
+  const variantsScore = 'levelVariants' in item ? Math.min(item.levelVariants.length, 20) : 0
+  const imageScore =
+    ('shared' in item && item.shared.imageUrl) || ('imageUrl' in item && item.imageUrl) ? 1 : 0
+
+  return ('familyName' in item ? 100 : 0) + variantsScore + imageScore
+}
+
+function dedupeEntriesBySlug(items: Array<Pet | ItemFamily>): Array<Pet | ItemFamily> {
+  const canonicalBySlug = new Map<string, Pet | ItemFamily>()
+
+  for (const item of items) {
+    const existing = canonicalBySlug.get(item.slug)
+    if (!existing || scorePetEntryForSlugDedupe(item) > scorePetEntryForSlugDedupe(existing)) {
+      canonicalBySlug.set(item.slug, item)
+    }
+  }
+
+  return Array.from(canonicalBySlug.values())
 }
 
 function parseAZPage(html: string): PetStub[] {
@@ -700,6 +739,20 @@ function parseAZPage(html: string): PetStub[] {
 }
 
 // ─── Individual pet thread parsing ───────────────────────────────────────────
+
+function isInvalidPetDescriptionCandidate(line: string): boolean {
+  const normalized = line.replace(/\s+/g, ' ').trim()
+  if (!normalized) return true
+
+  return (
+    /Message\s+edited\s+by/i.test(normalized) ||
+    /(?:githubusercontent\.com|github\.com\/DF-Pedia|DF-Pedia\/DF-Pedia)/i.test(normalized) ||
+    /(?:PetAttack|AttackType|Attack\d+\.png|-Attack)/i.test(normalized) ||
+    /(?:^|["'>\s])Attack\s+Type\s+[\d./]+\s*-/i.test(normalized) ||
+    /\b(?:for|deals?)\s+\d+\s+hits?\s+of\b/i.test(normalized) ||
+    /<img\b|src=["']/i.test(normalized)
+  )
+}
 
 // ─── Multi-Variant Detection Helpers (Sprint 5) ──────────────────────────────
 
@@ -866,7 +919,43 @@ function hasLevelRange(name: string): boolean {
  *
  * Filters out: Attack images, Button images, tag images
  */
-function extractImages(html: string): {
+function normalizeImageNameToken(value: string): string {
+  return decodeURIComponent(value)
+    .toLowerCase()
+    .replace(/\.(?:png|jpg|jpeg|gif|bmp)(?:\?.*)?$/i, '')
+    .replace(/\bpet(?:pic|image)?\b/g, '')
+    .replace(/[^a-z0-9]+/g, '')
+}
+
+function getImageBasename(url: string): string {
+  return url.split(/[/?#]/).filter(Boolean).at(-1) ?? url
+}
+
+function getNameMatchedImage(candidates: string[], expectedName?: string): string | undefined {
+  if (!expectedName) return undefined
+
+  const expected = normalizeImageNameToken(expectedName)
+  if (!expected) return undefined
+
+  return candidates.find((url) => {
+    const fileToken = normalizeImageNameToken(getImageBasename(url))
+    return Boolean(fileToken && (fileToken.includes(expected) || expected.includes(fileToken)))
+  })
+}
+
+function isDfPediaImage(url: string): boolean {
+  return /(?:github\.com\/DF-Pedia|githubusercontent\.com).*DF-Pedia/i.test(url)
+}
+
+function getForumHostedImage(candidates: string[]): string | undefined {
+  return candidates.find((url) =>
+    /(?:\/f\/upfiles\/|media\.artix\.com\/encyc|battleon\.com\/encyc|imgur\.com|i\.imgur\.com)/i.test(
+      url
+    )
+  )
+}
+
+function extractImages(html: string, expectedName?: string): {
   main?: string
   alternatives: Array<{ url: string; caption: string }>
 } {
@@ -943,7 +1032,17 @@ function extractImages(html: string): {
     }
   }
 
-  const main = candidateImages.at(-1)
+  const nameMatchedImage = getNameMatchedImage(candidateImages, expectedName)
+  const fallbackImage = candidateImages.at(-1)
+  const forumHostedImage = getForumHostedImage(candidateImages)
+  const fallbackMatchesExpected = Boolean(
+    fallbackImage && getNameMatchedImage([fallbackImage], expectedName)
+  )
+  const main =
+    nameMatchedImage ??
+    (expectedName && fallbackImage && isDfPediaImage(fallbackImage) && !fallbackMatchesExpected
+      ? (forumHostedImage ?? fallbackImage)
+      : fallbackImage)
   const alternatives: Array<{ url: string; caption: string }> = []
   if (!main) return { main: undefined, alternatives }
 
@@ -988,8 +1087,10 @@ function parsePriceType(price: string, requiredItems?: string): ObtainMethod['pr
   if (p.includes("defender's medal") || p.includes('defender medal') || p.includes(' dm'))
     return 'dm'
 
-  // Free = explicitly 0 Gold or "Free"
-  if (p === '0 gold' || p === 'free') return 'free'
+  // Free = no listed price and no required items, explicitly 0 Gold, or "Free"
+  if ((p === 'n/a' || p === '0' || p === '0 gold' || p === 'free') && !requiredItems) {
+    return 'free'
+  }
 
   // Merge = N/A price WITH required items
   if ((p === 'n/a' || p === '0') && requiredItems && requiredItems.trim().length > 0) return 'merge'
@@ -1289,7 +1390,7 @@ export async function parsePetThreadMultiVariant(
   // Single-page AND no level indicator AND no multi-post variants → use existing logic (backward compat)
   if (totalPages === 1 && !hasLevelInName && !hasMultiPostVariants) {
     const data = parsePetThread(html, name)
-    const sameLevelFamily = buildVariantFamilyFromSinglePost(data, name, stub, chronology)
+    const sameLevelFamily = buildVariantFamilyFromSinglePost(data, name, stub, chronology, nameToSlug)
     if (sameLevelFamily) return sameLevelFamily
     return convertToPet(data, stub, chronology, nameToSlug)
   }
@@ -1402,6 +1503,8 @@ export async function parsePetThreadMultiVariant(
         }
 
         // Create level variant - only include notes if NOT the first variant (to avoid duplication)
+        const variantDescription = data.description || sharedDescription
+
         levelVariantsMap.set(levelNum, {
           levelNumber: levelNum,
           levelDisplay: variant.variantName, // "Kitten", "Cat"
@@ -1411,7 +1514,7 @@ export async function parsePetThreadMultiVariant(
           stats: data.stats || 'None',
           ...(data.statsType ? { statsType: data.statsType } : {}),
           sourceUrl: stub.forumUrl,
-          description: data.description,
+          description: variantDescription,
           ...(data.imageUrl ? { imageUrl: data.imageUrl } : {}),
           ...(data.alternativeImages && data.alternativeImages.length > 0
             ? { alternativeImages: data.alternativeImages }
@@ -1941,6 +2044,8 @@ export async function parsePetThreadMultiVariant(
           sharedAlsoSeeNames = uniqueStrings([...sharedAlsoSeeNames, ...remainderData.alsoSeeNames])
         }
       }
+
+      sharedAlsoSeeNames = uniqueStrings([...sharedAlsoSeeNames, ...extractAlsoSeeNames(html)])
     }
   } else {
     // Multi-page thread with separate posts per level
@@ -2038,6 +2143,8 @@ export async function parsePetThreadMultiVariant(
     }
     return convertToPet(data, stub, chronology, nameToSlug)
   }
+
+  sharedAlsoSeeNames = uniqueStrings([...sharedAlsoSeeNames, ...extractAlsoSeeNames(html)])
 
   // Extract image from LAST post first (common pattern for multi-post threads)
   let imageUrl: string | undefined
@@ -2506,6 +2613,15 @@ export function parsePetThread(
         activeObtainField = null
         continue
       }
+      if (
+        activeObtainField === 'sellback' &&
+        currentObtain.sellback &&
+        !/^\d[\d,]*\s*(?:Gold|DC|Dragon Coins?|Defender's Medals?)\b/i.test(trimmedLine) &&
+        !/^(?:before|after|<|>|\(|\/)/i.test(trimmedLine)
+      ) {
+        activeObtainField = null
+        continue
+      }
       appendToCurrentObtainField(trimmedLine)
       continue
     }
@@ -2670,6 +2786,9 @@ export function parsePetThread(
       ) {
         continue
       }
+      if (isInvalidPetDescriptionCandidate(trimmedLine)) {
+        continue
+      }
       description = trimmedLine
       continue
     }
@@ -2830,7 +2949,7 @@ export function parsePetThread(
   }
 
   // Extract pet images using extractImages helper
-  const { main: imageUrl, alternatives: alternativeImages } = extractImages(rawBody)
+  const { main: imageUrl, alternatives: alternativeImages } = extractImages(rawBody, name)
   const imageCaptionNoise = getImageCaptionNoise(rawBody)
   const cleanedNoteLines = noteLines.filter((note) => {
     const trimmed = note.trim()
@@ -2942,6 +3061,9 @@ async function main() {
   if (letterFilter.letter) console.log(`▶  Only scraping letter: ${letterFilter.letter}`)
   if (letterFilter.letters)
     console.log(`▶  Only scraping letters: ${letterFilter.letters.join(', ')}`)
+  if (nameFilter.names && nameFilter.names.length > 0)
+    console.log(`▶  Only scraping names: ${nameFilter.names.join(', ')}`)
+  if (freshArg) console.log('▶  Ignoring matching cached entries')
   if (limitArg) console.log(`▶  Limiting scrape to ${limitArg} entries`)
   console.log(`▶  Detail concurrency: ${concurrencyArg} (entry starts spaced ${DELAY_MS}ms apart)`)
   console.log()
@@ -2989,10 +3111,22 @@ async function main() {
 
   // Apply letter filters
   const filtered = applyLetterFilter(allStubs, letterFilter)
-  const stubs = applyLimit(filtered.entries, limitArg)
+  const nameFiltered = applyNameFilter(
+    filtered.entries,
+    nameFilter,
+    (stub) => stub.name,
+    (stub) => [stub.name.replace(/\s*\([^)]+\)\s*$/, '').trim()]
+  )
+  const stubs = applyLimit(nameFiltered.entries, limitArg)
   if (filtered.message) console.log(`   ${filtered.message}`)
+  if (nameFiltered.message) console.log(`   ${nameFiltered.message}`)
   if (limitArg) console.log(`   Limited to first ${stubs.length} selected entries`)
   console.log()
+
+  if (stubs.length === 0) {
+    console.log('⚠️  No selected pets matched; leaving pets.json unchanged.')
+    return
+  }
 
   // Build name→slug map for ALL pets (needed for cross-reference resolution)
   const nameToSlug = new Map<string, { slug: string; type: EntryType }>()
@@ -3017,6 +3151,17 @@ async function main() {
       /* ignore corrupt progress */
     }
   }
+  if (fs.existsSync(OUTPUT_PATH)) {
+    try {
+      const existingEntries = loadProgressEntries<Pet | ItemFamily>(OUTPUT_PATH)
+      for (const entry of existingEntries.values()) {
+        if (!progressMap.has(entry.slug)) progressMap.set(entry.slug, entry)
+      }
+      console.log(`📚 Merged existing pets dataset (${existingEntries.size} entries)`)
+    } catch (err) {
+      console.warn(`⚠️  Could not merge existing pets dataset: ${err}`)
+    }
+  }
 
   // ── Step 4: Fetch each pet/guest thread ────────────────────────────────────
 
@@ -3029,7 +3174,7 @@ async function main() {
   for (let i = 0; i < stubs.length; i++) {
     const stub = stubs[i]
 
-    if (progressMap.has(stub.slug)) {
+    if (progressMap.has(stub.slug) && !freshArg) {
       process.stdout.write(`[${i + 1}/${stubs.length}] ${stub.name} (cached)\n`)
       fromCache++
       continue
@@ -3092,7 +3237,7 @@ async function main() {
         scraped++
 
         // Save progress after every entry
-        const progress = Array.from(progressMap.values())
+        const progress = dedupeEntriesBySlug(Array.from(progressMap.values()))
         saveProgressEntries(PROGRESS_PATH, progress)
 
         // Progress update every 10 pets
@@ -3120,8 +3265,10 @@ async function main() {
 
   // Always write ALL pets from progress map (full dataset)
   const finalPets = repairAccessFlags(
-    canonicalizePromotedRelationships(
-      promoteCrossPostFamilies(dedupeVariantEntries(Array.from(progressMap.values())))
+    dedupeEntriesBySlug(
+      canonicalizePromotedRelationships(
+        promoteCrossPostFamilies(dedupeVariantEntries(Array.from(progressMap.values())))
+      )
     )
   ).sort((a, b) => {
     const aName: string = 'familyName' in a ? a.familyName : a.name

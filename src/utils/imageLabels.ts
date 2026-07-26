@@ -14,10 +14,11 @@ export interface DisplayImage {
   caption: string
 }
 
-function cleanCaption(caption?: string): string | undefined {
+export function normalizeImageCaption(caption?: string): string | undefined {
   const value = caption?.trim()
   if (!value || value.length === 0) return undefined
   if (/^Alternative\s+\d+$/i.test(value)) return undefined
+  if (/^this chart$/i.test(value)) return 'All Appearances'
   return value
 }
 
@@ -55,7 +56,7 @@ export function buildDisplayImages({
     images.push({
       url: image.url,
       caption:
-        cleanCaption(image.caption) ??
+        normalizeImageCaption(image.caption) ??
         inferImageCaptionFromUrl(image.url) ??
         `Alternative ${index + 1}`,
     })

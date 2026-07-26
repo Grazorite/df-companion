@@ -56,8 +56,8 @@ function splitNoteLines(notes: string | undefined): string[] {
   return notes
     ? notes
         .split('\n')
-        .map((line) => line.trim())
-        .filter(Boolean)
+        .map((line) => line.replace(/\s+$/, ''))
+        .filter((line) => line.trim().length > 0)
     : []
 }
 

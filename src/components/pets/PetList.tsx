@@ -3,6 +3,7 @@ import type { Pet } from '../../types/pet'
 import type { ItemFamily } from '../../types/item'
 import PetCard from './PetCard'
 import { BadgeGridSkeleton } from '../shared/LoadingSkeleton'
+import { getFamilyCardDescription } from '../../utils/variantHelpers'
 
 interface PetListProps {
   pets: (Pet | ItemFamily)[]
@@ -48,7 +49,7 @@ export default function PetList({ pets, loading = false }: PetListProps) {
           name: family!.levelVariants[0].name,
           slug: family!.slug,
           type: family!.type as 'pet' | 'guest',
-          description: family!.shared.description,
+          description: getFamilyCardDescription(family!),
           daRequired: family!.hasDA,
           dcRequired: family!.hasDC,
           dmRequired: family!.hasDM,

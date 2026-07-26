@@ -4,14 +4,64 @@ import type { ItemFamily } from '../types/item'
 import type { ElementsData } from '../types/element'
 import { loadElements, loadPetsAndGuests, loadPetsGuestsManifest } from '../utils/dataLoaders'
 import { compareTitles, displayTitle } from '../utils/displayText'
+import { obtainMethodFingerprint, relatedNameScore } from '../utils/relatedItems'
 import { getSearchWords } from '../utils/search'
+import { getDisplayFamilyName, getFamilyCardDescription } from '../utils/variantHelpers'
 
 function isItemFamily(item: Pet | ItemFamily): item is ItemFamily {
   return 'levelVariants' in item && 'familyName' in item
 }
 
 function getDisplayName(item: Pet | ItemFamily): string {
-  return isItemFamily(item) ? item.familyName : item.name
+  return isItemFamily(item) ? getDisplayFamilyName(item) : item.name
+}
+
+function petMatchesSlug(item: Pet | ItemFamily, slug?: string, aliases?: Map<string, string>) {
+  if (!slug) return false
+  const canonicalSlug = aliases?.get(slug) ?? slug
+  if (item.slug === canonicalSlug || item.slug === slug) return true
+  return isItemFamily(item) && (item.aliasSlugs ?? []).includes(slug)
+}
+
+function getPetSlugs(item: Pet | ItemFamily): string[] {
+  return [item.slug, ...(isItemFamily(item) ? (item.aliasSlugs ?? []) : [])]
+}
+
+function getPetObtainFingerprints(item: Pet | ItemFamily): Set<string> {
+  const methods = isItemFamily(item)
+    ? item.levelVariants.flatMap((level) => level.obtainVariants)
+    : item.obtainMethods.map((method) => ({
+        location: method.location,
+        price: method.price ?? 'N/A',
+        priceType: method.priceType,
+        sellback: method.sellback,
+        requirements: method.requirements,
+        daRequired: method.daRequired ?? false,
+        dcRequired: method.dcRequired,
+        dmRequired: method.dmRequired,
+        requiredItems: method.requiredItems,
+      }))
+
+  return new Set(methods.map(obtainMethodFingerprint))
+}
+
+function normalizePetRelatedText(value?: string): string {
+  return (value ?? '').toLowerCase().replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim()
+}
+
+const BROAD_RELATED_LOCATIONS = new Set(['rare pets'])
+
+function getPetObtainLocations(item: Pet | ItemFamily): Set<string> {
+  const methods = isItemFamily(item)
+    ? item.levelVariants.flatMap((level) => level.obtainVariants)
+    : item.obtainMethods
+
+  return new Set(
+    methods
+      .map((method) => normalizePetRelatedText(method.location))
+      .filter(Boolean)
+      .filter((location) => !BROAD_RELATED_LOCATIONS.has(location))
+  )
 }
 
 function normalizeDuplicateVariantName(name: string): string {
@@ -178,7 +228,7 @@ function searchPets(
       const itemElements = isFamily ? family!.elements : pet!.elements
       const itemTraits = isFamily ? [] : pet!.traits // Families don't have traits yet
       const itemName = isFamily ? family!.familyName : pet!.name
-      const itemDescription = isFamily ? family!.shared.description : pet!.description
+      const itemDescription = isFamily ? getFamilyCardDescription(family!) : pet!.description
       const itemTags = isFamily ? family!.tags : pet!.tags
       const itemRetired = isFamily
         ? Boolean(
@@ -371,15 +421,64 @@ export function usePetCounts(filters: Omit<PetFilters, 'type'> = {}): Record<Ent
   }, [allPets, elementMeta, filters])
 }
 
-export function useRelatedPets(alsoSee: { slug: string; name: string; type: string }[]) {
+const INFERRED_RELATED_LIMIT = 8
+const INFERRED_RELATED_NAME_THRESHOLD = 0.55
+const INFERRED_RELATED_LOCATION_NAME_THRESHOLD = 0.63
+
+export function useRelatedPets(
+  item: Pet | ItemFamily,
+  alsoSee: { slug: string; name: string; type: string }[] = []
+) {
   const { allPets, petSlugAliases } = usePetDataset()
-  return useMemo(
-    () =>
-      alsoSee
-        .map((ref) => allPets.find((p) => p.slug === (petSlugAliases.get(ref.slug) ?? ref.slug)))
-        .filter((p): p is Pet | ItemFamily => p !== null && p !== undefined),
-    [allPets, alsoSee, petSlugAliases]
-  )
+  return useMemo(() => {
+    const currentSlugs = new Set(getPetSlugs(item))
+    const explicitSlugSet = new Set(alsoSee.map((ref) => petSlugAliases.get(ref.slug) ?? ref.slug))
+    const explicitRelated = alsoSee
+      .map((ref) => allPets.find((candidate) => petMatchesSlug(candidate, ref.slug, petSlugAliases)))
+      .filter((candidate): candidate is Pet | ItemFamily => Boolean(candidate))
+
+    const currentFingerprints = getPetObtainFingerprints(item)
+    const currentLocations = getPetObtainLocations(item)
+    const currentName = getDisplayName(item)
+    const inferredRelated = allPets
+      .flatMap((candidate) => {
+        if (candidate.type !== item.type) return []
+        if (getPetSlugs(candidate).some((slug) => currentSlugs.has(slug))) return []
+        if (getPetSlugs(candidate).some((slug) => explicitSlugSet.has(slug))) return []
+
+        const hasSharedObtainMethod = [...getPetObtainFingerprints(candidate)].some((fingerprint) =>
+          currentFingerprints.has(fingerprint)
+        )
+        const score = relatedNameScore(currentName, getDisplayName(candidate))
+        const hasSharedMeaningfulLocation = [...getPetObtainLocations(candidate)].some(
+          (location) => currentLocations.has(location)
+        )
+        if (
+          !hasSharedObtainMethod &&
+          (!hasSharedMeaningfulLocation || score < INFERRED_RELATED_LOCATION_NAME_THRESHOLD)
+        ) {
+          return []
+        }
+
+        if (score < INFERRED_RELATED_NAME_THRESHOLD) return []
+
+        return [{ candidate, score }]
+      })
+      .sort(
+        (first, second) =>
+          second.score - first.score ||
+          compareTitles(getDisplayName(first.candidate), getDisplayName(second.candidate))
+      )
+      .slice(0, INFERRED_RELATED_LIMIT)
+      .map(({ candidate }) => candidate)
+
+    const seen = new Set<string>()
+    return [...explicitRelated, ...inferredRelated].filter((candidate) => {
+      if (seen.has(candidate.slug) || currentSlugs.has(candidate.slug)) return false
+      seen.add(candidate.slug)
+      return true
+    })
+  }, [allPets, alsoSee, item, petSlugAliases])
 }
 
 export function useTotalPetCount() {

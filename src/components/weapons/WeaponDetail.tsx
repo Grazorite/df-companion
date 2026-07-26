@@ -1,11 +1,21 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
+import { ImageOff } from 'lucide-react'
 import type { LevelVariant, ObtainVariant } from '../../types/item'
-import type { Weapon, WeaponEntry, WeaponFamily } from '../../types/weapon'
+import type { Weapon, WeaponEntry, WeaponFamily, WeaponSpecial } from '../../types/weapon'
 import { isWeaponFamily } from '../../types/weapon'
 import { useRelatedWeapons } from '../../hooks/useWeapons'
 import { displayTitle, normalizeDisplayText } from '../../utils/displayText'
-import { buildDisplayImages } from '../../utils/imageLabels'
-import { getDisplayFamilyName, isSingleVariant } from '../../utils/variantHelpers'
+import {
+  buildDisplayImages,
+  inferImageCaptionFromUrl,
+  normalizeImageCaption,
+} from '../../utils/imageLabels'
+import {
+  getDisplayFamilyName,
+  getLevelVariantLabels,
+  isSingleVariant,
+  obtainVariantHasDC,
+} from '../../utils/variantHelpers'
 import { getWeaponDisplayName } from '../../hooks/useWeapons'
 import AccessPills from '../shared/AccessPills'
 import CollapsibleSection from '../shared/CollapsibleSection'
@@ -36,6 +46,84 @@ function WeaponImage({ src, name }: { src: string; name: string }) {
       onError={() => setBroken(true)}
       className="max-w-xs w-full mx-auto rounded-xl border border-border-default shadow-medium img-fade"
     />
+  )
+}
+
+function WeaponSpecialButton({ imageUrl, name }: { imageUrl?: string; name: string }) {
+  const [broken, setBroken] = useState(false)
+
+  if (!imageUrl || broken) {
+    return (
+      <div className="w-16 h-20 bg-bg-elevated border border-border-default rounded flex items-center justify-center">
+        <ImageOff className="w-6 h-6 text-text-muted" />
+      </div>
+    )
+  }
+
+  return (
+    <img
+      src={imageUrl}
+      alt={`${name} button`}
+      loading="lazy"
+      onError={() => setBroken(true)}
+      className="w-16 h-20 object-contain rounded border border-border-default shadow-subtle"
+    />
+  )
+}
+
+function WeaponSpecialCard({ special }: { special: WeaponSpecial }) {
+  const title = special.activation === 'manual' ? 'Manual' : 'On Hit'
+
+  return (
+    <section className="mb-5">
+      <h2 className="text-xs font-semibold text-text-muted uppercase tracking-wider mb-3">
+        Weapon Special
+      </h2>
+      <div className="bg-bg-surface border border-border-default rounded-lg overflow-hidden">
+        <div className="w-full flex items-center gap-4 p-4 text-left">
+          <div className="flex-shrink-0">
+            <WeaponSpecialButton imageUrl={special.imageUrl} name={title} />
+          </div>
+          <div className="flex-1 min-w-0">
+            <h3 className="text-sm font-semibold text-text-primary">{title}</h3>
+            {special.trigger && (
+              <p className="text-xs text-text-secondary italic mt-1 line-clamp-3 whitespace-pre-line break-words leading-relaxed">
+                {normalizeDisplayText(special.trigger)}
+              </p>
+            )}
+          </div>
+        </div>
+
+        <div className="px-4 pb-4 pt-0 border-t border-border-default">
+          {special.effect && (
+            <p className="text-text-secondary text-sm leading-relaxed mt-3 mb-4 whitespace-pre-line">
+              {normalizeDisplayText(special.effect)}
+            </p>
+          )}
+
+          {special.activation === 'manual' && (
+            <div className="grid grid-cols-2 gap-2 text-center bg-bg-base rounded-lg p-3">
+              <div>
+                <p className="text-[10px] text-text-muted uppercase tracking-wider mb-0.5">
+                  Cooldown
+                </p>
+                <p className="text-xs font-medium text-text-secondary">
+                  {special.cooldown || '—'}
+                </p>
+              </div>
+              <div>
+                <p className="text-[10px] text-text-muted uppercase tracking-wider mb-0.5">
+                  Charge Time
+                </p>
+                <p className="text-xs font-medium text-text-secondary">
+                  {special.chargeTime || '—'}
+                </p>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+    </section>
   )
 }
 
@@ -86,19 +174,102 @@ function getLevelSourceSuffix(level: LevelVariant): string {
   return `Level ${levelLabel}`
 }
 
+function getDefaultImageIndex(images: Array<{ url: string; caption: string }>): number {
+  const defaultIndex = images.findIndex((image) => /\bdefault\b/i.test(image.caption))
+  return defaultIndex >= 0 ? defaultIndex : 0
+}
+
+function getSelectorSyncLabel(label?: string): string {
+  return normalizeDisplayText(label ?? '')
+    .replace(/\s+\((?:default|clicked|clicked appearance)\)$/i, '')
+    .trim()
+    .toLowerCase()
+}
+
+function getPreferredImageIndexForVariant(
+  images: Array<{ url: string; caption: string }>,
+  variantLabel?: string
+): number | undefined {
+  const syncLabel = getSelectorSyncLabel(variantLabel)
+  if (!syncLabel) return undefined
+
+  const candidateIndexes = images.flatMap((image, index) =>
+    getSelectorSyncLabel(image.caption) === syncLabel ? [index] : []
+  )
+  if (candidateIndexes.length === 0) return undefined
+
+  return (
+    candidateIndexes.find((index) => /\bdefault\b/i.test(images[index].caption)) ??
+    candidateIndexes.find(
+      (index) => normalizeDisplayText(images[index].caption).toLowerCase() === syncLabel
+    ) ??
+    candidateIndexes[0]
+  )
+}
+
+function getStatsIdentity(level: LevelVariant): string {
+  return [level.damage, level.stats, level.resists, level.rarity, level.element].join('|')
+}
+
+function getStatsRowKey(level: LevelVariant): string {
+  const hasDA = level.obtainVariants.some((variant) => variant.daRequired)
+  const hasDC = level.obtainVariants.some(obtainVariantHasDC)
+  const hasDM = level.obtainVariants.some((variant) => variant.dmRequired || variant.priceType === 'dm')
+
+  return [
+    level.levelDisplay,
+    level.actualLevel ?? '',
+    getStatsIdentity(level),
+    hasDA ? 'da' : '',
+    hasDC ? 'dc' : '',
+    hasDM ? 'dm' : '',
+  ].join('|')
+}
+
+function ArmorCustomizationMetadataStrip({
+  modifies,
+  appearance,
+}: {
+  modifies?: string
+  appearance?: string
+}) {
+  const values = [
+    modifies ? { label: 'Modifies', value: modifies } : null,
+    appearance ? { label: 'Appearance', value: appearance } : null,
+  ].filter((entry): entry is { label: string; value: string } => Boolean(entry))
+
+  if (values.length === 0) return null
+
+  return (
+    <section className="mb-8">
+      <div className="bg-bg-surface border border-border-default rounded-lg p-4">
+        <div
+          className={`grid gap-4 text-center ${values.length > 1 ? 'grid-cols-2' : 'grid-cols-1'}`}
+        >
+          {values.map((item) => (
+            <div key={item.label}>
+              <p className="text-xs text-text-muted uppercase tracking-wider mb-1">{item.label}</p>
+              <p className="text-sm font-medium text-text-primary">
+                {normalizeDisplayText(item.value)}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
 export default function WeaponDetail({ weapon, filterBase }: WeaponDetailProps) {
   const family = isWeaponFamily(weapon) ? (weapon as WeaponFamily) : undefined
   const singleWeapon = family ? undefined : (weapon as Weapon)
   const [activeIndex, setActiveIndex] = useState(0)
   const [activeImageIndex, setActiveImageIndex] = useState(0)
+  const initializedEntryKey = useRef<string | undefined>(undefined)
   const isMultiVariant = family && !isSingleVariant(family)
   const activeLevel = family
     ? family.levelVariants[Math.min(activeIndex, family.levelVariants.length - 1)]
     : undefined
-
-  useEffect(() => {
-    setActiveImageIndex(0)
-  }, [activeIndex])
 
   const title = family
     ? getWeaponDisplayName(getDisplayFamilyName(family))
@@ -112,11 +283,77 @@ export default function WeaponDetail({ weapon, filterBase }: WeaponDetailProps) 
   const altImages = family
     ? (family.shared.alternativeImages ?? nonEmptyAlternativeImages(activeLevel?.alternativeImages))
     : singleWeapon?.alternativeImages
-  const allImages = useMemo(
-    () => buildDisplayImages({ imageUrl, alternativeImages: altImages, mainCaption: title }),
-    [altImages, imageUrl, title]
+  const allImages = useMemo(() => {
+    const validAltImages = altImages?.filter((image) => image.url) ?? []
+    if (imageUrl && validAltImages.some((image) => image.url === imageUrl)) {
+      return validAltImages.map((image, index) => ({
+        url: image.url,
+        caption:
+          normalizeImageCaption(image.caption) ??
+          inferImageCaptionFromUrl(image.url) ??
+          `Alternative ${index + 1}`,
+      }))
+    }
+    return buildDisplayImages({ imageUrl, alternativeImages: altImages, mainCaption: title })
+  }, [altImages, imageUrl, title])
+  const defaultImageIndex = useMemo(() => getDefaultImageIndex(allImages), [allImages])
+  const currentImage = allImages[activeImageIndex] ?? allImages[defaultImageIndex]
+  const useLevelOnlyLabels =
+    family !== undefined && family.levelVariants.every((level) => !level.variantName)
+  const variantLabels = useMemo(() => {
+    if (!family) return []
+    if (useLevelOnlyLabels) {
+      return family.levelVariants.map((level) => String(level.actualLevel ?? level.levelDisplay))
+    }
+    return getLevelVariantLabels(family.levelVariants, family.familyName, 'weapon')
+  }, [family, useLevelOnlyLabels])
+  const imageVariantIndexes = useMemo(() => {
+    const labelCounts = new Map<string, number>()
+    for (const label of variantLabels) {
+      const syncLabel = getSelectorSyncLabel(label)
+      if (!syncLabel) continue
+      labelCounts.set(syncLabel, (labelCounts.get(syncLabel) ?? 0) + 1)
+    }
+
+    return allImages.map((image) => {
+      const imageSyncLabel = getSelectorSyncLabel(image.caption)
+      if (!imageSyncLabel || labelCounts.get(imageSyncLabel) !== 1) return undefined
+      const variantIndex = variantLabels.findIndex(
+        (label) => getSelectorSyncLabel(label) === imageSyncLabel
+      )
+      return variantIndex >= 0 ? variantIndex : undefined
+    })
+  }, [allImages, variantLabels])
+  const preferredImageIndexesByVariant = useMemo(
+    () =>
+      variantLabels.map((label) => getPreferredImageIndexForVariant(allImages, label)),
+    [allImages, variantLabels]
   )
-  const currentImage = allImages[activeImageIndex]
+  const entryKey = family?.slug ?? singleWeapon?.slug ?? weapon.slug
+  const defaultVariantIndex = imageVariantIndexes[defaultImageIndex]
+
+  useEffect(() => {
+    if (initializedEntryKey.current === entryKey) return
+    initializedEntryKey.current = entryKey
+    setActiveIndex(defaultVariantIndex ?? 0)
+    setActiveImageIndex(defaultImageIndex)
+  }, [defaultImageIndex, defaultVariantIndex, entryKey])
+
+  useEffect(() => {
+    if (!family || variantLabels.length === 0) return
+    const currentImageVariantIndex = imageVariantIndexes[activeImageIndex]
+    if (currentImageVariantIndex === activeIndex) return
+
+    setActiveImageIndex(preferredImageIndexesByVariant[activeIndex] ?? defaultImageIndex)
+  }, [
+    activeImageIndex,
+    activeIndex,
+    defaultImageIndex,
+    family,
+    imageVariantIndexes,
+    preferredImageIndexesByVariant,
+    variantLabels.length,
+  ])
   const access = family
     ? { da: family.hasDA, dc: family.hasDC, dm: family.hasDM }
     : {
@@ -131,11 +368,28 @@ export default function WeaponDetail({ weapon, filterBase }: WeaponDetailProps) 
       : []
   const rarity = family ? (activeLevel?.rarity ?? family.shared.rarity) : singleWeapon?.rarity
   const ability = family ? family.shared.ability : singleWeapon?.ability
+  const weaponSpecial = family ? family.shared.weaponSpecial : singleWeapon?.weaponSpecial
+  const armorCustomization = family
+    ? family.shared.armorCustomization
+    : singleWeapon?.armorCustomization
   const displayLevels = useMemo(
     () =>
       family ? family.levelVariants : singleWeapon ? [buildSingleWeaponLevel(singleWeapon)] : [],
     [family, singleWeapon]
   )
+  const statsDisplayLevels = useMemo(() => {
+    const statsIdentities = new Set(displayLevels.map(getStatsIdentity))
+    if (statsIdentities.size === 1) return displayLevels.slice(0, 1)
+
+    const seen = new Set<string>()
+    return displayLevels.filter((level) => {
+      const key = getStatsRowKey(level)
+      if (seen.has(key)) return false
+      seen.add(key)
+      return true
+    })
+  }, [displayLevels])
+  const statsRowsWereCollapsed = statsDisplayLevels.length < displayLevels.length
   const sourceLinks = useMemo(() => {
     if (!family) return [{ url: weapon.forumUrl, label: title }]
 
@@ -154,13 +408,15 @@ export default function WeaponDetail({ weapon, filterBase }: WeaponDetailProps) 
     )
     const shouldAppendLevelToSource =
       family.levelVariants.length > 1 &&
-      uniqueBaseSourceLabels.size === 1 &&
+      (useLevelOnlyLabels || uniqueBaseSourceLabels.size === 1) &&
       uniqueLevelLabels.size > 1
     const seen = new Set<string>()
     const links = family.levelVariants.flatMap((level) => {
       const sourceUrl = level.sourceUrl ?? family.forumUrl
       const levelSuffix = getLevelSourceSuffix(level)
-      const baseLabel = normalizeSourceVariantLabel(level.name)
+      const baseLabel = useLevelOnlyLabels
+        ? normalizeSourceVariantLabel(family.familyName)
+        : normalizeSourceVariantLabel(level.name)
       const label =
         shouldAppendLevelToSource && levelSuffix ? `${baseLabel} (${levelSuffix})` : baseLabel
       const key = [sourceUrl, label, String(level.actualLevel ?? level.levelDisplay ?? '')]
@@ -187,7 +443,7 @@ export default function WeaponDetail({ weapon, filterBase }: WeaponDetailProps) 
     }
 
     return links
-  }, [family, title, weapon.forumUrl])
+  }, [family, title, useLevelOnlyLabels, weapon.forumUrl])
   const alsoSeeRefs = useMemo(() => {
     const currentSlugs = new Set(
       family ? [family.slug, ...(family.aliasSlugs ?? [])] : [singleWeapon?.slug ?? weapon.slug]
@@ -231,6 +487,19 @@ export default function WeaponDetail({ weapon, filterBase }: WeaponDetailProps) 
         )}
       </div>
 
+      {family && family.levelVariants.length > 1 && (
+        <section className="mb-8">
+          <LevelSelector
+            levels={family.levelVariants}
+            activeIndex={activeIndex}
+            onChange={setActiveIndex}
+            familyName={family.familyName}
+            itemType="weapon"
+            forceLevelLabels={useLevelOnlyLabels}
+          />
+        </section>
+      )}
+
       {currentImage && (
         <div className="mb-8">
           <WeaponImage src={currentImage.url} name={currentImage.caption ?? title} />
@@ -239,7 +508,11 @@ export default function WeaponDetail({ weapon, filterBase }: WeaponDetailProps) 
               {allImages.map((image, index) => (
                 <button
                   key={`${image.url}-${index}`}
-                  onClick={() => setActiveImageIndex(index)}
+                  onClick={() => {
+                    setActiveImageIndex(index)
+                    const variantIndex = imageVariantIndexes[index]
+                    if (variantIndex !== undefined) setActiveIndex(variantIndex)
+                  }}
                   className={`min-h-11 px-4 py-2 rounded-lg text-sm transition-colors ${
                     activeImageIndex === index
                       ? 'bg-gold text-bg-base'
@@ -254,20 +527,23 @@ export default function WeaponDetail({ weapon, filterBase }: WeaponDetailProps) 
         </div>
       )}
 
+      {armorCustomization && (
+        <ArmorCustomizationMetadataStrip
+          modifies={armorCustomization.modifies}
+          appearance={armorCustomization.appearance}
+        />
+      )}
+
       {displayLevels.length > 0 && (
         <section className="mb-8 space-y-6">
           <CollapsibleSection title="Stats by Level">
-            <WeaponStatsTable levels={displayLevels} familyName={family?.familyName} />
-          </CollapsibleSection>
-          {family && family.levelVariants.length > 1 && (
-            <LevelSelector
-              levels={family.levelVariants}
-              activeIndex={activeIndex}
-              onChange={setActiveIndex}
-              familyName={family.familyName}
-              itemType="weapon"
+            <WeaponStatsTable
+              levels={statsDisplayLevels}
+              familyName={family?.familyName}
+              forceHideVariantColumn={statsRowsWereCollapsed}
+              forceLevelLabels={useLevelOnlyLabels}
             />
-          )}
+          </CollapsibleSection>
         </section>
       )}
 
@@ -285,6 +561,8 @@ export default function WeaponDetail({ weapon, filterBase }: WeaponDetailProps) 
           </div>
         </section>
       )}
+
+      {weaponSpecial && <WeaponSpecialCard special={weaponSpecial} />}
 
       <ObtainSection variants={obtainMethods} className="mb-8" />
 

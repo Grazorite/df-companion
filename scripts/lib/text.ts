@@ -39,6 +39,14 @@ export function stripForumHtml(
 
     if (char === '<' && !inTag) {
       const nextChars = html.slice(i, i + 12)
+      const placeholderMatch = html
+        .slice(i)
+        .match(/^<(?:x|y|target's name|target name|monster name|character name)>/i)
+      if (placeholderMatch) {
+        processed += placeholderMatch[0]
+        i += placeholderMatch[0].length
+        continue
+      }
       if (/^<[a-zA-Z!/]/.test(nextChars)) {
         inTag = true
         tagStart = i

@@ -5,6 +5,7 @@ import type { Pet, Guest } from '../../types/pet'
 import type { ItemFamily, LevelVariant } from '../../types/item'
 import {
   getDisplayFamilyName,
+  getFamilyCardDescription,
   getLevelVariantLabels,
   hasSameLevelVariants,
   hasTitleDrivenVariantNames,
@@ -63,7 +64,7 @@ function buildCardPet(item: Pet | ItemFamily): Pet {
     name: firstLevel?.name ?? item.familyName,
     slug: item.slug,
     type: item.type as 'pet' | 'guest',
-    description: item.shared.description,
+    description: getFamilyCardDescription(item),
     daRequired: item.hasDA,
     dcRequired: item.hasDC,
     dmRequired: item.hasDM,
@@ -92,7 +93,7 @@ function buildCardPet(item: Pet | ItemFamily): Pet {
     imageUrl:
       item.type === 'guest'
         ? (firstLevel?.imageUrl ?? item.shared.imageUrl)
-        : (item.shared.imageUrl ?? firstLevel?.imageUrl),
+        : (firstLevel?.imageUrl ?? item.shared.imageUrl),
     ...(firstLevel?.alternativeImages || item.shared.alternativeImages
       ? {
           alternativeImages:
@@ -104,6 +105,7 @@ function buildCardPet(item: Pet | ItemFamily): Pet {
         }
       : {}),
     forumUrl: item.forumUrl,
+    sourceLinks: item.sourceLinks,
     notes: firstLevel?.notes ?? item.shared.notes,
     alsoSee:
       item.shared.alsoSee?.map((ref) => ({
@@ -157,6 +159,16 @@ function expandDisplayLevelVariants(levels: LevelVariant[]): LevelVariant[] {
       ...level,
       levelNumber: index + 1,
     }))
+}
+
+function inferGuestVariantImageUrl(level?: LevelVariant): string | undefined {
+  const attacks = level?.attacks ?? []
+  for (const attack of attacks) {
+    if (!('appearanceUrl' in attack) || !attack.appearanceUrl) continue
+    const inferredUrl = attack.appearanceUrl.replace(/-[^/-]+(\.[a-z]+)(\?.*)?$/i, '$1$2')
+    if (inferredUrl !== attack.appearanceUrl) return inferredUrl
+  }
+  return undefined
 }
 
 export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
@@ -240,14 +252,14 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
               : (activeLevel?.description ?? family.shared.description),
             imageUrl:
               family.type === 'guest'
-                ? (activeLevel?.imageUrl ?? family.shared.imageUrl)
-                : (family.shared.imageUrl ?? activeLevel?.imageUrl),
+                ? (activeLevel?.imageUrl ?? inferGuestVariantImageUrl(activeLevel) ?? family.shared.imageUrl)
+                : (activeLevel?.imageUrl ?? family.shared.imageUrl),
             alternativeImages:
               family.type === 'guest'
                 ? (nonEmptyAlternativeImages(activeLevel?.alternativeImages) ??
                   family.shared.alternativeImages)
-                : (family.shared.alternativeImages ??
-                  nonEmptyAlternativeImages(activeLevel?.alternativeImages)),
+                : (nonEmptyAlternativeImages(activeLevel?.alternativeImages) ??
+                  family.shared.alternativeImages),
             element: activeLevel?.element ?? family.shared.element,
             resists: activeLevel?.resists ?? family.shared.resists,
             rarity: activeLevel?.rarity ?? family.shared.rarity,
@@ -288,7 +300,7 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
     : []
 
   // Use displayData.alsoSee for related pets (works for both single and multi-variant)
-  const relatedPets = useRelatedPets(displayData.alsoSee ?? [])
+  const relatedPets = useRelatedPets(family ?? pet, displayData.alsoSee ?? [])
 
   const allImages = useMemo(() => {
     return buildDisplayImages({
@@ -378,6 +390,10 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
           url: displayData.sourceUrl,
           label: displayTitle(pet.name),
         },
+        ...(pet.sourceLinks ?? []).map((source) => ({
+          url: source.url,
+          label: source.variantLabel ?? source.title,
+        })),
       ]
     }
 
@@ -448,7 +464,7 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
       })
 
     return [...sourceLinksByVariant, ...unmatchedSources]
-  }, [displayData.sourceUrl, family, pet.name])
+  }, [displayData.sourceUrl, family, pet.name, pet.sourceLinks])
 
   return (
     <main className="px-4 sm:px-6 py-6 max-w-3xl mx-auto">
@@ -481,16 +497,11 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
           </span>
         </div>
 
-        {/* Display family name with level range for multi-variant, regular name for single */}
         <h1 className="text-2xl font-bold text-text-primary mb-2">
           {isMultiVariant && family
             ? isDragonFamily
               ? '<Dragon> (Baby, Toddler, Kid)'
-              : isGuest
-                ? displayFamilyName
-                : family.isMultiPost || sameLevelVariants
-                  ? displayFamilyName
-                  : `${displayFamilyName} (${family.levelRange})`
+              : displayFamilyName
             : displayTitle(pet.name)}
         </h1>
         {displayData.description && (
@@ -503,6 +514,20 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
           <p className="text-text-muted text-xs">Released: {pet.releaseDate}</p>
         )}
       </div>
+
+      {/* Level selector - positioned before variant-specific media */}
+      {isMultiVariant && family && displayLevels.length > 1 && (
+        <section className="mb-5">
+          <LevelSelector
+            levels={displayLevels}
+            activeIndex={activeIndex}
+            onChange={handleLevelChange}
+            familyName={rawFamilyName}
+            itemType={family.type}
+            hideVariantColumn={hideVariantColumn}
+          />
+        </section>
+      )}
 
       {/* Pet image */}
       {currentImage ? (
@@ -619,20 +644,6 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
         </section>
       )}
 
-      {/* Level selector and rarity - only for multi-variant items */}
-      {isMultiVariant && family && displayLevels.length > 1 && (
-        <section className="mb-5">
-          <LevelSelector
-            levels={displayLevels}
-            activeIndex={activeIndex}
-            onChange={handleLevelChange}
-            familyName={rawFamilyName}
-            itemType={family.type}
-            hideVariantColumn={hideVariantColumn}
-          />
-        </section>
-      )}
-
       {/* Rarity - positioned after level selector for multi-variants, after stats for single */}
       {(() => {
         // For multi-variant, use level-specific rarity; for single, use pet rarity
@@ -713,7 +724,7 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
       <OtherInformationSection
         notes={family ? undefined : displayData.notes}
         sharedNotes={family?.shared.notes}
-        activeVariantNotes={isMultiVariant && family ? displayLevels[activeIndex].notes : undefined}
+        activeVariantNotes={isMultiVariant && family ? displayData.notes : undefined}
         allVariantNotes={family?.levelVariants.map((level) => level.notes)}
         showSharedNotes={
           family

@@ -14,8 +14,8 @@
     "isMultiPost": true,
     "shared": {
       "description": "",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Toddler.png",
-      "notes": "• Skill button was updated on  November 24th, 2023, replacing  its old appearance.\nAppearance\nAttack\n1 hit x 100% damage\nPoints in Magic and Fighting give this attack a chance to do extra damage.\nEvery 50 CHA the Hero has reduces the dragon's CD of all skills by 1 (max -4 at 200 CHA)\nRequirements: None\nEffect: Breathes fire at target for 1 hit of 100% Magic damage.\n• If  Kid Dragon has 1 Magic skill point minimum: Has a [Magic skill level / 4]% chance to cast a ball of magic at target for 1 hit of [100 + (Magic skill level / 5)]% Magic damage.\n• If  Kid Dragon has 1 Fighting skill point minimum: Has a [Fighting skill level / 4]% chance to dash at target quickly for 1 hit of [100 + (Fighting skill level / 5)]% Melee damage.\nMana Cost: 0\nCooldown: 0\nDamage Type: Magic/Melee\nElement: As dragon\nDragon's Scales\nHero: +<100-200> Avoidance for 2 turns.\nThis skill requires at least 100 points in Protection.\nRequirements:  Toddler or  Kid Dragon; 100 Protection skill points minimum\nEffect: Applies +[Protection skill level] Melee/Pierce/Magic Avoidance to player for 2 turns. (Pop-up: Avoidance increased!)\nCooldown: 19 - [(Player CHA/50), rounded down]\nDamage Type: N/A\nElement: N/A\nElemental Supernova\n1 hit x +<200-300>% Magic damage\nThis attack has +<100-200> Crit.\nThis skill requires at least 100 points in Magic.\nRequirements:  Toddler or  Kid Dragon; 100 Magic skill points minimum\nEffect: 1 hit of [100 + (Magic skill level)]% damage, with +[Magic skill level] Crit.\nDamage Type: Magic\nElement: Weakness seeks\nAppearance 1 /  1.1\nOutrage\n4 hits x <50-60>% Pierce damage (<200-240>%)\nTarget: (On hit) <x>-<y>DoT for 3 turns.\nThis skill requires at least 100 points in Fighting.\nRequirements:  Toddler or  Kid Dragon; 100 Fighting skill points minimum\nEffect: 4 hits of [40 + (Fighting skill level / 10)]% damage, amounting to [160 + (Fighting skill level / 2.5)]% damage; applies 'Outrage', a Pierce DoT effect equal to [10 + (Fighting skill level / 2) * (Level + 10)% � 5], to target for 3 turns.\nDamage Type: Pierce\nOvercharge\nHero: +<15-25> Boost for the next 2 turns.\nThis skill requires at least 100 points in Assistance.\nRequirements:  Toddler or  Kid Dragon; 100 Assistance skill points minimum\nEffect: Applies +[5 + (Assistance skill level / 10)]% Boost to player for 2 turns. (Pop-up: Damage increased!)\nTickles\nTarget: (Auto) -<10-20> Boost, -<25-50> Crit, -<5-10> All res, +<20-30> Health res for 3 turns.\nThis skill requires at least 100 points in Mischief.\nRequirements:  Toddler or  Kid Dragon; 100 Mischief skill points minimum\nEffect: Applies -[Mischief skill level / 4] Crit, -[Mischief skill level * 0.1]% Boost, -[Mischief skill level * 0.05] All Resist, and +[10 + (Mischief skill level * 0.1)] Health Resist to target for 3 turns. (Pop-up: Your foe deals and heals less damage, takes more damage, and is less likely to land a critical hit!)\nPrimal Fury!\n3 hits x 50% Magic damage (150%)\nThis attack has +200 Crit.\nThe cutest primal fury ever!\nRequirements:  Kid Dragon\nEffect: 3 hits of 50% damage, amounting to 150% damage, with +200 Crit.\nAppearance 1 /  1.1 /  1.2\n• Draco is this guest's default name; to change their name and/or color palette from the default, visit  Dragon Customization.\n• Also known as the Destroyer from various NPCs.\n• Toddler and kid dragons cannot be summoned as a guest while inside of a quest; however, they may still be summoned as a pet.\n• Kid dragons may be equipped with  Kid Dragon Accessories; if the player's dragon's appearance is Baby or Toddler Dragon, the accessories will not be shown.\n• Kid dragons may change their appearance as  Baby or Toddler Dragon via  Dove in  Sunbreeze Grove (Books 3 and 4), but all skills are retained; this was implemented on  June 19th, 2026.\n• All versions of this guest received a major overhaul to their skills on  June 21st, 2019.\n• Initially both toddler and kid dragons were able to use the secondary 'Attack' skills; this was changed to be exclusive for kid dragons on September 7th, 2019.\n• 'Tickles' skill previously applied -[Mischief skill level * 0.3] Bonus to target, and had the tooltip: Lower enemy BtH, Dmg, and All Res!; the Bonus to Hit component was removed on  March 7th, 2020.\n• 'Elemental Supernova' and 'Outrage' skills were bug fixed on  January 1st, 2021.\n• The following changes were implemented on  June 23rd, 2023:\n• Tickles' skill increased its effectiveness from applying +[Mischief skill level * 0.05] Health Resist to target'.\n'Magic', 'Fighting', and 'Outrage' skills were modified.\n• The following changes were implemented on  April 19th, 2024:\n• Tier 1 skills were renamed to their proper names.\n• 'Skip' and 'Primal' skills were moved.\n• Tooltips for Toddler and Kid Dragons were updated."
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-ofDoom.png",
+      "notes": "• Skill button was updated on  November 24th, 2023, replacing  its old appearance.\n1 hit x 100% damage\nPoints in Magic and Fighting give this attack a chance to do extra damage.\nEvery 50 CHA the Hero has reduces the dragon's CD of all skills by 1 (max -4 at 200 CHA)\nRequirements: None\nEffect: Breathes fire at target for 1 hit of 100% Magic damage.\n• If  Kid Dragon has 1 Magic skill point minimum: Has a [Magic skill level / 4]% chance to cast a ball of magic at target for 1 hit of [100 + (Magic skill level / 5)]% Magic damage.\n• If  Kid Dragon has 1 Fighting skill point minimum: Has a [Fighting skill level / 4]% chance to dash at target quickly for 1 hit of [100 + (Fighting skill level / 5)]% Melee damage.\nMana Cost: 0\nCooldown: 0\nDamage Type: Magic/Melee\nElement: As dragon\nDragon's Scales\nHero: +<100-200> Avoidance for 2 turns.\nThis skill requires at least 100 points in Protection.\nRequirements:  Toddler or  Kid Dragon; 100 Protection skill points minimum\nEffect: Applies +[Protection skill level] Melee/Pierce/Magic Avoidance to player for 2 turns. (Pop-up: Avoidance increased!)\nCooldown: 19 - [(Player CHA/50), rounded down]\nDamage Type: N/A\nElement: N/A\nElemental Supernova\n1 hit x +<200-300>% Magic damage\nThis attack has +<100-200> Crit.\nThis skill requires at least 100 points in Magic.\nRequirements:  Toddler or  Kid Dragon; 100 Magic skill points minimum\nEffect: 1 hit of [100 + (Magic skill level)]% damage, with +[Magic skill level] Crit.\nDamage Type: Magic\nElement: Weakness seeks\nAppearance 1 /  1.1\n4 hits x <50-60>% Pierce damage (<200-240>%)\nTarget: (On hit) <x>-<y>DoT for 3 turns.\nThis skill requires at least 100 points in Fighting.\nRequirements:  Toddler or  Kid Dragon; 100 Fighting skill points minimum\nEffect: 4 hits of [40 + (Fighting skill level / 10)]% damage, amounting to [160 + (Fighting skill level / 2.5)]% damage; applies 'Outrage', a Pierce DoT effect equal to [10 + (Fighting skill level / 2) * (Level + 10)% � 5], to target for 3 turns.\nDamage Type: Pierce\nOvercharge\nHero: +<15-25> Boost for the next 2 turns.\nThis skill requires at least 100 points in Assistance.\nRequirements:  Toddler or  Kid Dragon; 100 Assistance skill points minimum\nEffect: Applies +[5 + (Assistance skill level / 10)]% Boost to player for 2 turns. (Pop-up: Damage increased!)\nTarget: (Auto) -<10-20> Boost, -<25-50> Crit, -<5-10> All res, +<20-30> Health res for 3 turns.\nThis skill requires at least 100 points in Mischief.\nRequirements:  Toddler or  Kid Dragon; 100 Mischief skill points minimum\nEffect: Applies -[Mischief skill level / 4] Crit, -[Mischief skill level * 0.1]% Boost, -[Mischief skill level * 0.05] All Resist, and +[10 + (Mischief skill level * 0.1)] Health Resist to target for 3 turns. (Pop-up: Your foe deals and heals less damage, takes more damage, and is less likely to land a critical hit!)\nPrimal Fury!\n3 hits x 50% Magic damage (150%)\nThis attack has +200 Crit.\nThe cutest primal fury ever!\nRequirements:  Kid Dragon\nEffect: 3 hits of 50% damage, amounting to 150% damage, with +200 Crit.\nAppearance 1 /  1.1 /  1.2\n• Draco is this guest's default name; to change their name and/or color palette from the default, visit  Dragon Customization.\n• Also known as the Destroyer from various NPCs.\n• Toddler and kid dragons cannot be summoned as a guest while inside of a quest; however, they may still be summoned as a pet.\n• Kid dragons may be equipped with  Kid Dragon Accessories; if the player's dragon's appearance is Baby or Toddler Dragon, the accessories will not be shown.\n• Kid dragons may change their appearance as  Baby or Toddler Dragon via  Dove in  Sunbreeze Grove (Books 3 and 4), but all skills are retained; this was implemented on  June 19th, 2026.\n• All versions of this guest received a major overhaul to their skills on  June 21st, 2019.\n• Initially both toddler and kid dragons were able to use the secondary 'Attack' skills; this was changed to be exclusive for kid dragons on September 7th, 2019.\n• 'Tickles' skill previously applied -[Mischief skill level * 0.3] Bonus to target, and had the tooltip: Lower enemy BtH, Dmg, and All Res!; the Bonus to Hit component was removed on  March 7th, 2020.\n• 'Elemental Supernova' and 'Outrage' skills were bug fixed on  January 1st, 2021.\n• The following changes were implemented on  June 23rd, 2023:\n• Tickles' skill increased its effectiveness from applying +[Mischief skill level * 0.05] Health Resist to target'.\n'Magic', 'Fighting', and 'Outrage' skills were modified.\n• The following changes were implemented on  April 19th, 2024:\n• Tier 1 skills were renamed to their proper names.\n• 'Skip' and 'Primal' skills were moved.\n• Tooltips for Toddler and Kid Dragons were updated."
     },
     "levelVariants": [
       {
@@ -87,7 +87,7 @@
         "name": "<Dragon> (2)",
         "damage": "Scaled",
         "stats": "See guestStats",
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22231250",
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22231249",
         "description": "Kid Dragon",
         "obtainVariants": [
           {
@@ -140,7 +140,7 @@
             "crit": "0%"
           }
         },
-        "notes": "• Skill button was updated on  November 24th, 2023, replacing  its old appearance. \n  Appearance \n Attack \n 1 hit x 100% damage \n Points in Magic and Fighting give this attack a chance to do extra damage. \n Every 50 CHA the Hero has reduces the dragon's CD of all skills by 1 (max -4 at 200 CHA) \n Requirements: None \n Effect: Breathes fire at target for 1 hit of 100% Magic damage.\n  • If  Kid Dragon has 1 Magic skill point minimum: Has a [Magic skill level / 4]% chance to cast a ball of magic at target for 1 hit of [100 + (Magic skill level / 5)]% Magic damage. \n  • If  Kid Dragon has 1 Fighting skill point minimum: Has a [Fighting skill level / 4]% chance to dash at target quickly for 1 hit of [100 + (Fighting skill level / 5)]% Melee damage.\nMana Cost: 0 \n Cooldown: 0 \n Damage Type: Magic/Melee \n Element: As dragon \n   Dragon's Scales \n Hero: +<100-200> Avoidance for 2 turns. \n This skill requires at least 100 points in Protection. \n Requirements:  Toddler or  Kid Dragon; 100 Protection skill points minimum \n Effect: Applies +[Protection skill level] Melee/Pierce/Magic Avoidance to player for 2 turns. (Pop-up: Avoidance increased!) \n Mana Cost: 0 \n Cooldown: 19 - [(Player CHA/50), rounded down] \n Damage Type: N/A \n Element: N/A \n  Appearance \n   Elemental Supernova \n 1 hit x +<200-300>% Magic damage \n This attack has +<100-200> Crit. \n This skill requires at least 100 points in Magic. \n Requirements:  Toddler or  Kid Dragon; 100 Magic skill points minimum \n Effect: 1 hit of [100 + (Magic skill level)]% damage, with +[Magic skill level] Crit. \n Mana Cost: 0 \n Cooldown: 19 - [(Player CHA/50), rounded down] \n Damage Type: Magic \n Element: Weakness seeks \n  Appearance 1 /  1.1 \n   Outrage \n 4 hits x <50-60>% Pierce damage (<200-240>%) \n Target: (On hit) <x>-<y>DoT for 3 turns. \n This skill requires at least 100 points in Fighting. \n Requirements:  Toddler or  Kid Dragon; 100 Fighting skill points minimum \n Effect: 4 hits of [40 + (Fighting skill level / 10)]% damage, amounting to [160 + (Fighting skill level / 2.5)]% damage; applies 'Outrage', a Pierce DoT effect equal to [10 + (Fighting skill level / 2) * (Level + 10)% � 5], to target for 3 turns. \n Mana Cost: 0 \n Cooldown: 19 - [(Player CHA/50), rounded down] \n Damage Type: Pierce \n Element: As dragon \n  Appearance 1 /  1.1 \n   Overcharge \n Hero: +<15-25> Boost for the next 2 turns. \n This skill requires at least 100 points in Assistance. \n Requirements:  Toddler or  Kid Dragon; 100 Assistance skill points minimum \n Effect: Applies +[5 + (Assistance skill level / 10)]% Boost to player for 2 turns. (Pop-up: Damage increased!) \n Mana Cost: 0 \n Cooldown: 19 - [(Player CHA/50), rounded down] \n Damage Type: N/A \n Element: N/A \n  Appearance \n   Tickles \n Target: (Auto) -<10-20> Boost, -<25-50> Crit, -<5-10> All res, +<20-30> Health res for 3 turns. \n This skill requires at least 100 points in Mischief. \n Requirements:  Toddler or  Kid Dragon; 100 Mischief skill points minimum \n Effect: Applies -[Mischief skill level / 4] Crit, -[Mischief skill level * 0.1]% Boost, -[Mischief skill level * 0.05] All Resist, and +[10 + (Mischief skill level * 0.1)] Health Resist to target for 3 turns. (Pop-up: Your foe deals and heals less damage, takes more damage, and is less likely to land a critical hit!) \n Mana Cost: 0 \n Cooldown: 19 - [(Player CHA/50), rounded down] \n Damage Type: N/A \n Element: N/A \n  Appearance \n   Primal Fury! \n 3 hits x 50% Magic damage (150%) \n This attack has +200 Crit. \n The cutest primal fury ever! \n Requirements:  Kid Dragon \n Effect: 3 hits of 50% damage, amounting to 150% damage, with +200 Crit. \n Mana Cost: 0 \n Cooldown: 19 - [(Player CHA/50), rounded down] \n Damage Type: Magic \n Element: As dragon \n  Appearance 1 /  1.1 /  1.2"
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Kid.png"
       },
       {
         "levelNumber": 3,
@@ -149,14 +149,14 @@
         "name": "<Dragon> (3)",
         "damage": "Scaled",
         "stats": "See guestStats",
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22231252",
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22231251",
         "description": "Dragon of Doom",
         "obtainVariants": [
           {
             "location": "Calamity",
             "price": "N/A",
             "priceType": "free",
-            "daRequired": true
+            "daRequired": false
           }
         ],
         "element": "BAC",
@@ -201,7 +201,7 @@
             "crit": "0%"
           }
         },
-        "notes": "• Draco is this guest's default name; to change their name and/or color palette from the default, visit  Dragon Customization. \n• Also known as the Destroyer from various NPCs. \n• Toddler and kid dragons cannot be summoned as a guest while inside of a quest; however, they may still be summoned as a pet. \n• Kid dragons may be equipped with  Kid Dragon Accessories; if the player's dragon's appearance is Baby or Toddler Dragon, the accessories will not be shown. \n• Kid dragons may change their appearance as  Baby or Toddler Dragon via  Dove in  Sunbreeze Grove (Books 3 and 4), but all skills are retained; this was implemented on  June 19th, 2026. \n• All versions of this guest received a major overhaul to their skills on  June 21st, 2019. \n• Initially both toddler and kid dragons were able to use the secondary 'Attack' skills; this was changed to be exclusive for kid dragons on September 7th, 2019. \n• 'Tickles' skill previously applied -[Mischief skill level * 0.3] Bonus to target, and had the tooltip: Lower enemy BtH, Dmg, and All Res!; the Bonus to Hit component was removed on  March 7th, 2020. \n• 'Elemental Supernova' and 'Outrage' skills were bug fixed on  January 1st, 2021. \n• The following changes were implemented on  June 23rd, 2023:\n  • Tickles' skill increased its effectiveness from applying +[Mischief skill level * 0.05] Health Resist to target'. \n 'Magic', 'Fighting', and 'Outrage' skills were modified.\n• The following changes were implemented on  April 19th, 2024:\n  • Tier 1 skills were renamed to their proper names. \n  • 'Skip' and 'Primal' skills were moved. \n  • Tooltips for Toddler and Kid Dragons were updated."
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-ofDoom.png"
       }
     ],
     "releaseDate": "June 10th, 2009",
@@ -229,7 +229,6 @@
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
-    "isTemp": true,
     "levelRange": "As player-As player",
     "elements": [
       "BAC",
@@ -258,7 +257,7 @@
     "isMultiPost": true,
     "shared": {
       "description": "",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Aegis1.png",
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Aegis2.png",
       "notes": "• During  April Fools' Day 2018, players need to equip the  Fleshweaver class to invite these guests.\n• Prior to  SoulWeaver's rework on  August 23rd, 2024, players needed to equip the  Master SoulWeaver class to invite these guests."
     },
     "levelVariants": [
@@ -515,7 +514,8 @@
             "crit": "0%"
           }
         },
-        "notes": "• During  April Fools' Day 2018, players need to equip the  Fleshweaver class to invite these guests. \n• Prior to  SoulWeaver's rework on  August 23rd, 2024, players needed to equip the  Master SoulWeaver class to invite these guests."
+        "notes": "• *Aegis (2) is only invited with 10 Crit from  Pellow Village (Book 3),  The Last Chapter - War at the Core, and  Through the Door. \n• Aegis (2) has a series of unconventional stats in the quest  Calamity; Pierce: 5, Bonus: 50, Crit: 5.  \n• Players initially required to equip the  SoulWeaver class to invite Aegis (2); this requirement was modified to unlocking the  SoulWeaver class on  August 4th, 2023.",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Aegis2.png"
       }
     ],
     "releaseDate": "February 25th, 2011",
@@ -626,6 +626,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "March 24th, 2023",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alteon.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22409330",
     "notes": "• Alteon has a series of unconventional stats in the quests  Hawk in the Sky,  Crash and Burn,  The Flame Within,  At Fissure's Edge,  The Final Steps, and  Convergence (Part 1): \n  • Alteon gains -10 Immobility,  -60 Health, + 60 All Resists. \n  • Alteon's base damage is increased by 50%.\n• Skip skill was added with the release of  Crash and Burn.",
     "alsoSee": [],
@@ -676,8 +677,7 @@
         "dot": "0%",
         "crit": "0%"
       }
-    },
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alteon.png"
+    }
   },
   {
     "id": "guest-alz-ein-etaos",
@@ -798,6 +798,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "May 15th, 2026",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Etaos.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22426204",
     "alsoSee": [],
     "tags": [
@@ -848,8 +849,7 @@
         "dot": "0%",
         "crit": "0%"
       }
-    },
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Etaos.png"
+    }
   },
   {
     "id": "guest-alz-ein-isiri",
@@ -865,7 +865,7 @@
     "isMultiPost": true,
     "shared": {
       "description": "",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Isiri.png"
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Isiri2.png"
     },
     "levelVariants": [
       {
@@ -1019,7 +1019,8 @@
             "crit": "0%"
           }
         },
-        "notes": "• Tooltips for this guest were updated on  April 25th, 2025."
+        "notes": "• Tooltips for this guest were updated on  April 25th, 2025.",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Isiri.png"
       },
       {
         "levelNumber": 2,
@@ -1028,7 +1029,7 @@
         "name": "Alz'ein & Isiri (2)",
         "damage": "Scaled",
         "stats": "See guestStats",
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22424201",
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22424200",
         "description": "Ateala Riftwalker & Ascendant",
         "obtainVariants": [
           {
@@ -1172,7 +1173,7 @@
             "crit": "0%"
           }
         },
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Isiri.png"
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Isiri2.png"
       }
     ],
     "releaseDate": "October 31st, 2025",
@@ -1191,7 +1192,6 @@
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
-    "isTemp": true,
     "levelRange": "As player-As player",
     "elements": [
       "DAR"
@@ -1316,6 +1316,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "April 25th, 2025",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Nirios.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22421842",
     "notes": "• Alz'ein & Nirios' element was changed from Darkness to ??? on  May 23rd, 2025.",
     "alsoSee": [],
@@ -1367,8 +1368,7 @@
         "dot": "0%",
         "crit": "0%"
       }
-    },
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Nirios.png"
+    }
   },
   {
     "id": "guest-amadeus",
@@ -1479,6 +1479,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "March 24th, 2023",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Amadeus.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22409331",
     "notes": "• Amadeus has a series of unconventional stats in the quests  Hawk in the Sky,  Crash and Burn,  The Flame Within,  At Fissure's Edge,  The Final Steps, and  Convergence (Part 1): \n  • Amadeus gains -10 Immobility,  -60 Health, +60 All Resists. \n  • Amadeus' base damage is increased by 50%.\n• Lost Blade and Skip skills were added with the release of  Crash and Burn. ",
     "alsoSee": [],
@@ -1528,7 +1529,6 @@
         "crit": "0%"
       }
     },
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Amadeus.png",
     "alternativeImages": [
       {
         "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Amadeus-EmpoweredSword.png",
@@ -1551,13 +1551,7 @@
     "isMultiPost": true,
     "shared": {
       "description": "",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Aquella.png",
-      "alternativeImages": [
-        {
-          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Aquella-Book3.png",
-          "caption": "Book 3 Appearance"
-        }
-      ]
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Aquella3.png"
     },
     "levelVariants": [
       {
@@ -1631,7 +1625,8 @@
             "crit": "0%"
           }
         },
-        "notes": "• Aquella will announce how much HP she has left with her turn; if Aquella dies, the battle against Captain Davey will automatically be lost."
+        "notes": "• Aquella will announce how much HP she has left with her turn; if Aquella dies, the battle against Captain Davey will automatically be lost.",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Aquella1.png"
       },
       {
         "levelNumber": 2,
@@ -1641,7 +1636,7 @@
         "name": "Aquella (2)",
         "damage": "8-12",
         "stats": "See guestStats",
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=17452451",
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=17615115",
         "description": "Sea Elf Protector",
         "obtainVariants": [
           {
@@ -1703,7 +1698,8 @@
             "dot": "0%",
             "crit": "0%"
           }
-        }
+        },
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Aquella2.png"
       },
       {
         "levelNumber": 3,
@@ -1712,7 +1708,7 @@
         "name": "Aquella (3)",
         "damage": "Scaled",
         "stats": "See guestStats",
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22426560",
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22426559",
         "description": "Water Elf Protector",
         "obtainVariants": [
           {
@@ -1821,13 +1817,7 @@
             "crit": "0%"
           }
         },
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Aquella.png",
-        "alternativeImages": [
-          {
-            "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Aquella-Book3.png",
-            "caption": "Book 3 Appearance"
-          }
-        ]
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Aquella3.png"
       }
     ],
     "releaseDate": "April 2nd, 2010",
@@ -1846,7 +1836,6 @@
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
-    "isTemp": true,
     "levelRange": "2-As player",
     "elements": [
       "NAT"
@@ -2055,7 +2044,6 @@
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
-    "isTemp": true,
     "levelRange": "2-As player",
     "elements": [
       "NAT"
@@ -2077,21 +2065,7 @@
     "isMultiPost": true,
     "shared": {
       "description": "",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Artix1.png",
-      "alternativeImages": [
-        {
-          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Artix1-ArtixVstheUndead.png",
-          "caption": "Appearance with new weapon in Artix Vs. The Undead"
-        },
-        {
-          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Artix3.png",
-          "caption": "Book 3 Appearance"
-        },
-        {
-          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Artix3-TheUndeadVsArtix.png",
-          "caption": "The Undead Vs Artix Appearance"
-        }
-      ]
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Artix3.png"
     },
     "levelVariants": [
       {
@@ -2177,7 +2151,8 @@
             "crit": "0%"
           }
         },
-        "notes": "• This is the original version of the guest; intended to be completely replaced by a new version, it remains in-game erroneously."
+        "notes": "• This is the original version of the guest; intended to be completely replaced by a new version, it remains in-game erroneously.",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Artix1.png"
       },
       {
         "levelNumber": 2,
@@ -2313,7 +2288,8 @@
             "crit": "0%"
           }
         },
-        "notes": "• Artix (2) equips a new weapon before battling  Edgar in  Artix Vs. The Undead, raising his Bonus to 20 and Crit to 25. \n• The following changes were implemented on  April 11th, 2025: \n  • Artix (2)'s tooltips were updated. \n  • 'Undead Slayer Slash' requires a hit in order for 'Slayer's Strike' to be applied."
+        "notes": "• Artix (2) equips a new weapon before battling  Edgar in  Artix Vs. The Undead, raising his Bonus to 20 and Crit to 25. \n• The following changes were implemented on  April 11th, 2025: \n  • Artix (2)'s tooltips were updated. \n  • 'Undead Slayer Slash' requires a hit in order for 'Slayer's Strike' to be applied.",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Artix2.png"
       },
       {
         "levelNumber": 3,
@@ -2435,21 +2411,7 @@
           }
         },
         "notes": "• *Artix has a complex, level-based scaling damage formula which is not represented by the information panel.",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Artix1.png",
-        "alternativeImages": [
-          {
-            "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Artix1-ArtixVstheUndead.png",
-            "caption": "Appearance with new weapon in Artix Vs. The Undead"
-          },
-          {
-            "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Artix3.png",
-            "caption": "Book 3 Appearance"
-          },
-          {
-            "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Artix3-TheUndeadVsArtix.png",
-            "caption": "The Undead Vs Artix Appearance"
-          }
-        ]
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Artix3.png"
       }
     ],
     "releaseDate": "October 23rd, 2006",
@@ -2805,6 +2767,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "September 21st, 2012",
+    "imageUrl": "https://i.imgur.com/WkHSthH.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=20722177",
     "notes": "• Batoro's stun duration was lowered from 2 turns to 1 turn on February 28th, 2020; more information can be found in the  February 28th, 2020 Design Notes.",
     "alsoSee": [],
@@ -2843,8 +2806,7 @@
         "parry": "0",
         "dodge": "0"
       }
-    },
-    "imageUrl": "https://i.imgur.com/WkHSthH.png"
+    }
   },
   {
     "id": "guest-belle",
@@ -2918,6 +2880,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "July 12th, 2019",
+    "imageUrl": "https://i.imgur.com/x6tFLHZ.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22365227",
     "alsoSee": [],
     "tags": [
@@ -2955,8 +2918,7 @@
         "parry": "15",
         "dodge": "15"
       }
-    },
-    "imageUrl": "https://i.imgur.com/x6tFLHZ.png"
+    }
   },
   {
     "id": "guest-bubble",
@@ -2997,6 +2959,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "October 15th, 2010",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Bubble%20pic.bmp",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=18230081",
     "notes": "• Bubble has a 10% chance to attempt a second attack type which is currently bugged, causing her turn to stick.",
     "alsoSee": [],
@@ -3035,8 +2998,7 @@
         "parry": "0",
         "dodge": "0"
       }
-    },
-    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Bubble%20pic.bmp"
+    }
   },
   {
     "id": "guest-bug-kid",
@@ -3077,6 +3039,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "July 28th, 2023",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/BugKid.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22411019",
     "alsoSee": [],
     "tags": [
@@ -3116,8 +3079,7 @@
         "parry": "0",
         "dodge": "0"
       }
-    },
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/BugKid.png"
+    }
   },
   {
     "id": "guest-captain-lestrad",
@@ -3205,6 +3167,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "August 13th, 2022",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/CaptainLestrad.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22404781",
     "notes": "• Guest is animated; his cape flaps continuously, both while standing and during all skill animations.",
     "alsoSee": [],
@@ -3244,8 +3207,7 @@
         "parry": "0",
         "dodge": "0"
       }
-    },
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/CaptainLestrad.png"
+    }
   },
   {
     "id": "guest-caran",
@@ -3320,6 +3282,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "May 7th, 2010",
+    "imageUrl": "https://i.imgur.com/zW0kwuI.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=20073726",
     "notes": "• *'Multi Strike' skill's tooltip incorrectly states successful usage of a 'Pierce' skill is required to unlock; no such skill exists for this guest.",
     "alsoSee": [
@@ -3366,8 +3329,7 @@
         "parry": "0",
         "dodge": "0"
       }
-    },
-    "imageUrl": "https://i.imgur.com/zW0kwuI.png"
+    }
   },
   {
     "id": "guest-caravaner",
@@ -3407,6 +3369,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "March 25th, 2011",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Caravaner%20pic.bmp",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=18800829",
     "notes": "• Caravaner will remain as a guest if you exit before quest completion. \n• *Caravaner's title is 'Human Merchant - No You're not getting[...]', but is unable to be fully displayed on the information panel.",
     "alsoSee": [],
@@ -3445,8 +3408,7 @@
         "parry": "0",
         "dodge": "0"
       }
-    },
-    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Caravaner%20pic.bmp"
+    }
   },
   {
     "id": "guest-cheese-seller",
@@ -3487,6 +3449,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "March 10th, 2017",
+    "imageUrl": "https://i.imgur.com/BuHhlXR.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22244856",
     "alsoSee": [],
     "tags": [
@@ -3525,8 +3488,7 @@
         "parry": "0",
         "dodge": "0"
       }
-    },
-    "imageUrl": "https://i.imgur.com/BuHhlXR.png"
+    }
   },
   {
     "id": "guest-cranix",
@@ -3557,8 +3519,15 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "August 14th, 2009",
+    "imageUrl": "/generated/guests/charpages/guest-cranix.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=16496517",
-    "notes": "• This guest is linked to a real player's character ID, and as such all variables are subject to change, such as in an  Aeris Minor Tournament. \n• Current class and equipment can be previewed on this guest's character page:  Cranix",
+    "sourceLinks": [
+      {
+        "url": "https://account.dragonfable.com/CharPage?id=10377970",
+        "title": "Cranix (Character Page)"
+      }
+    ],
+    "notes": "• This guest is linked to a real player's character ID, and as such all variables are subject to change, such as in an  Aeris Minor Tournament. ",
     "alsoSee": [],
     "tags": [
       "cranix",
@@ -3622,6 +3591,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "September 9th, 2016",
+    "imageUrl": "https://i.imgur.com/nGGOIrx.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22172801",
     "alsoSee": [],
     "tags": [
@@ -3658,8 +3628,7 @@
         "parry": "0",
         "dodge": "0"
       }
-    },
-    "imageUrl": "https://i.imgur.com/nGGOIrx.png"
+    }
   },
   {
     "id": "guest-dain-lorilann",
@@ -3689,8 +3658,15 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "August 7th, 2009",
+    "imageUrl": "/generated/guests/charpages/guest-dain-lorilann.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=16496479",
-    "notes": "• This guest is linked to a real player's character ID, and as such all variables are subject to change, such as in an  Aeris Minor Tournament. \n• Current class and equipment can be previewed on this guest's character page:  Dain Lorilann",
+    "sourceLinks": [
+      {
+        "url": "https://account.dragonfable.com/CharPage?id=8494",
+        "title": "Dain Lorilann (Character Page)"
+      }
+    ],
+    "notes": "• This guest is linked to a real player's character ID, and as such all variables are subject to change, such as in an  Aeris Minor Tournament. ",
     "alsoSee": [],
     "tags": [
       "dain",
@@ -3766,6 +3742,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "February 20th, 2015",
+    "imageUrl": "https://i.imgur.com/p3M9HyF.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=21927310",
     "alsoSee": [
       {
@@ -3811,8 +3788,7 @@
         "parry": "0",
         "dodge": "0"
       }
-    },
-    "imageUrl": "https://i.imgur.com/p3M9HyF.png"
+    }
   },
   {
     "id": "guest-diawe",
@@ -3887,6 +3863,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "May 7th, 2010",
+    "imageUrl": "https://i.imgur.com/zW0kwuI.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=20073735",
     "notes": "• *'Multi Strike' skill's tooltip incorrectly states successful usage of a 'Pierce' skill is required to unlock; no such skill exists for this guest.",
     "alsoSee": [
@@ -3933,8 +3910,7 @@
         "parry": "0",
         "dodge": "0"
       }
-    },
-    "imageUrl": "https://i.imgur.com/zW0kwuI.png"
+    }
   },
   {
     "id": "guest-donovan",
@@ -3975,6 +3951,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "September 5th, 2010",
+    "imageUrl": "https://i.imgur.com/r5l2L8Q.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=18100396",
     "alsoSee": [],
     "tags": [
@@ -4013,8 +3990,7 @@
         "parry": "5",
         "dodge": "6"
       }
-    },
-    "imageUrl": "https://i.imgur.com/r5l2L8Q.png"
+    }
   },
   {
     "id": "guest-eirn",
@@ -4118,6 +4094,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "April 12th, 2025",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Eirn.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22421691",
     "alsoSee": [],
     "tags": [
@@ -4166,8 +4143,7 @@
         "dot": "0%",
         "crit": "0%"
       }
-    },
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Eirn.png"
+    }
   },
   {
     "id": "guest-elgert",
@@ -4197,8 +4173,15 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "August 7th, 2009",
+    "imageUrl": "/generated/guests/charpages/guest-elgert.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=16460532",
-    "notes": "• This guest is linked to a real player's character ID, and as such all variables are subject to change, such as in an  Aeris Minor Tournament. \n• Current class and equipment can be previewed on this guest's character page:  Elgert",
+    "sourceLinks": [
+      {
+        "url": "https://account.dragonfable.com/CharPage?id=3826275",
+        "title": "Elgert (Character Page)"
+      }
+    ],
+    "notes": "• This guest is linked to a real player's character ID, and as such all variables are subject to change, such as in an  Aeris Minor Tournament. ",
     "alsoSee": [],
     "tags": [
       "elgert",
@@ -4329,6 +4312,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "December 29th, 2023",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Etaos&Nirios.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22413732",
     "notes": "• Tooltips for this guest was updated on  April 25th, 2025.",
     "alsoSee": [],
@@ -4379,8 +4363,7 @@
         "dot": "0%",
         "crit": "0%"
       }
-    },
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Etaos&Nirios.png"
+    }
   },
   {
     "id": "guest-fae",
@@ -4443,7 +4426,7 @@
       {
         "name": "Cheer",
         "description": "Self: Gain +50 Boost/Bonus for 3 turns. \n Hero: Gain +50 Boost/Bonus for 2 turns.",
-        "effect": "Applies 'Fae's Support' (+50% Bonus, +50 Bonus) to herself for 3 turns; applies 'Fae's Support' (+50% Bonus, +50 Bonus) to player for 3 turns.",
+        "effect": "Applies 'Fae's Support' (+50% Boost, +50 Bonus) to herself for 3 turns; applies 'Fae's Support' (+50% Boost, +50 Bonus) to player for 2 turns.",
         "manaCost": "20",
         "cooldown": "1",
         "damageType": "N/A",
@@ -4455,6 +4438,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "July 10th, 2026",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Fae.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22426729",
     "alsoSee": [],
     "tags": [
@@ -4503,8 +4487,7 @@
         "dot": "0%",
         "crit": "0%"
       }
-    },
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Fae.png"
+    }
   },
   {
     "id": "guest-faust",
@@ -4578,6 +4561,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "January 24th, 2020",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Faust.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22374619",
     "alsoSee": [],
     "tags": [
@@ -4614,8 +4598,7 @@
         "parry": "10",
         "dodge": "10"
       }
-    },
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Faust.png"
+    }
   },
   {
     "id": "guest-g-joob",
@@ -4678,6 +4661,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "November 14th, 2008",
+    "imageUrl": "https://i.imgur.com/3ZngqTs.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=15063185",
     "notes": "• G'joob will remain as a guest if you exit before quest completion. \n• *'Fish Slap' skill is currently bugged, causing his turn to stick.",
     "alsoSee": [],
@@ -4716,8 +4700,7 @@
         "parry": "0",
         "dodge": "0"
       }
-    },
-    "imageUrl": "https://i.imgur.com/3ZngqTs.png"
+    }
   },
   {
     "id": "guest-galanoth",
@@ -4734,21 +4717,7 @@
     "isMultiPost": true,
     "shared": {
       "description": "",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Galanoth.png",
-      "alternativeImages": [
-        {
-          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Galanoth-NotSoGreatEscape.png",
-          "caption": "Not So Great Escape Appearance"
-        },
-        {
-          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Galanoth-Book3.png",
-          "caption": "Book 3 Appearance"
-        },
-        {
-          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Galanoth-FFP1.png",
-          "caption": "Fate's Flow (Part 1) Appearance"
-        }
-      ]
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Galanoth2.png"
     },
     "levelVariants": [
       {
@@ -4874,7 +4843,8 @@
             "crit": "0%"
           }
         },
-        "notes": "• Galanoth (2)'s tooltips were updated on  April 11th, 2025."
+        "notes": "• Galanoth (2)'s tooltips were updated on  April 11th, 2025.",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Galanoth2.png"
       },
       {
         "levelNumber": 2,
@@ -5005,7 +4975,8 @@
             "crit": "0%"
           }
         },
-        "notes": "• Galanoth (3) has a series of unconventional stats in the quest  Calamity; Pierce: 5, Crit: 5, Bonus: 50 \n• Galanoth (3) has a series of unconventional stats in the quest  Fate's Flow (Part 1); Crit: 5, Bonus: 100"
+        "notes": "• Galanoth (3) has a series of unconventional stats in the quest  Calamity; Pierce: 5, Crit: 5, Bonus: 50 \n• Galanoth (3) has a series of unconventional stats in the quest  Fate's Flow (Part 1); Crit: 5, Bonus: 100",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Galanoth3.png"
       },
       {
         "levelNumber": 3,
@@ -5015,7 +4986,7 @@
         "name": "Galanoth (1)",
         "damage": "5-30",
         "stats": "See guestStats",
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22404780",
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21929845",
         "description": "Human Dragon Slayer",
         "obtainVariants": [
           {
@@ -5102,21 +5073,7 @@
           }
         },
         "notes": "• Galanoth (1) remained as a guest if you exit before quest completion.",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Galanoth.png",
-        "alternativeImages": [
-          {
-            "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Galanoth-NotSoGreatEscape.png",
-            "caption": "Not So Great Escape Appearance"
-          },
-          {
-            "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Galanoth-Book3.png",
-            "caption": "Book 3 Appearance"
-          },
-          {
-            "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Galanoth-FFP1.png",
-            "caption": "Fate's Flow (Part 1) Appearance"
-          }
-        ]
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Galanoth2.png"
       }
     ],
     "releaseDate": "September 12th, 2008",
@@ -5137,7 +5094,6 @@
     "hasFree": true,
     "hasMerge": false,
     "isTemp": true,
-    "retired": true,
     "levelRange": "As player-20",
     "elements": [
       "MET"
@@ -5204,6 +5160,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "November 14th, 2008",
+    "imageUrl": "https://i.imgur.com/5lbELWV.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=15062918",
     "notes": "• Grrol will remain as a guest if you exit before quest completion.",
     "alsoSee": [],
@@ -5242,8 +5199,7 @@
         "parry": "0",
         "dodge": "0"
       }
-    },
-    "imageUrl": "https://i.imgur.com/5lbELWV.png"
+    }
   },
   {
     "id": "guest-icemaster-yeti",
@@ -5304,6 +5260,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "December 25th, 2007",
+    "imageUrl": "http://i.imgur.com/dZ3OBga.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=12338375",
     "alsoSee": [],
     "tags": [
@@ -5341,8 +5298,7 @@
         "parry": "0",
         "dodge": "0"
       }
-    },
-    "imageUrl": "http://i.imgur.com/dZ3OBga.png"
+    }
   },
   {
     "id": "guest-imaru",
@@ -5454,6 +5410,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "July 27th, 2012",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Imaru%20pic.bmp",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=21187682",
     "notes": "Though the description says that this guest's weapon element is Silver, this guest copies the element, damage type and base damage as the player, enemy or pet which attacked previously before this guest's turn. If the player, enemy or pet which attacked before did not use an attacking move or the attack failed to land, then this guest's attacks will be blocked, dodged, Parried or will miss on that turn. This guest also copies any buff, critical hit or boost which affect the previous attacker's attack.\nAll skill cooldowns for this guest are carried on to the next battle as well.",
     "alsoSee": [],
@@ -5490,8 +5447,7 @@
         "parry": "0",
         "dodge": "0"
       }
-    },
-    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Imaru%20pic.bmp"
+    }
   },
   {
     "id": "guest-irwin",
@@ -5532,6 +5488,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "October 15th, 2010",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Irwin%20pic.bmp",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=18230205",
     "alsoSee": [],
     "tags": [
@@ -5570,8 +5527,7 @@
         "parry": "0",
         "dodge": "0"
       }
-    },
-    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Irwin%20pic.bmp"
+    }
   },
   {
     "id": "guest-kara-sulema",
@@ -5658,6 +5614,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "August 13th, 2022",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/KaraSuLema.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=21290875",
     "notes": "• Kara SuLema was previously attainable from the following retired access point:  Facing Z -> Add Kara \n• Kara has a series of unconventional stats in the quests  Fate's Flow (Part 1) and  Fallen Facade; INT: 0, CHA: 0, LUK: 0, Crit: 5 \n• Kara SuLema's stun duration was lowered from 2 turns to 1 turn on  February 28th, 2020. ",
     "alsoSee": [],
@@ -5709,7 +5666,6 @@
       }
     },
     "retired": true,
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/KaraSuLema.png",
     "alternativeImages": [
       {
         "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/KaraSuLema-FFP1.png",
@@ -5787,6 +5743,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "July 22nd, 2022",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Kassandra.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22404167",
     "notes": "• Seek's MP in  Jungle Adventure was  reduced from 40 to 20 to match with the subsequent quests on  March 8th, 2024; Kassandra's tooltips were also updated on that date. ",
     "alsoSee": [],
@@ -5826,7 +5783,6 @@
         "dodge": "20"
       }
     },
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Kassandra.png",
     "alternativeImages": [
       {
         "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Kassandra-Researcher.png",
@@ -5892,6 +5848,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "November 30th, 2013",
+    "imageUrl": "http://i.imgur.com/VElnQoj.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=21859811",
     "alsoSee": [],
     "tags": [
@@ -5929,8 +5886,7 @@
         "parry": "0",
         "dodge": "0"
       }
-    },
-    "imageUrl": "http://i.imgur.com/VElnQoj.png"
+    }
   },
   {
     "id": "guest-king-linus",
@@ -5993,6 +5949,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "November 14th, 2008",
+    "imageUrl": "https://i.imgur.com/d6DrsPB.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=15063015",
     "notes": "• King Linus will remain as a guest if you exit before quest completion.",
     "alsoSee": [],
@@ -6031,8 +5988,7 @@
         "parry": "0",
         "dodge": "0"
       }
-    },
-    "imageUrl": "https://i.imgur.com/d6DrsPB.png"
+    }
   },
   {
     "id": "guest-konnan",
@@ -6053,7 +6009,7 @@
     "resists": "None",
     "obtainMethods": [
       {
-        "location": "Dreamscape, Master of Puppets, The Merge",
+        "location": "Dreamscape, Master of Puppets, Cooperation, The Merge",
         "priceType": "free",
         "price": "N/A",
         "daRequired": false
@@ -6097,6 +6053,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "June 22nd, 2012",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Konnan.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=20422674",
     "notes": "• #In the quest  The Merge, Konnan's Pierce Avoidance stat will instead be 0. \n• Konnan, named as Apprentice, was previously attainable from the following access points:  Dreamscape,  Nightmares, and  Forging. \n• In the quest  The Merge, his name will instead be Apprentice. \n• Konnan's appearance was updated on  February 20th, 2026. \n• 'Controlled Flames' skill was added on  May 15th, 2026. ",
     "alsoSee": [],
@@ -6148,7 +6105,6 @@
         "crit": "0%"
       }
     },
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Konnan.png",
     "alternativeImages": [
       {
         "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Konnan-Old.png",
@@ -6249,6 +6205,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "May 3rd, 2013",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Maguspic.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22100154",
     "notes": "• Magus Hansa (2) was previously attainable from the following retired access point:  Sands of Eternity -> Add Hansa \n• Hansa has a series of unconventional stats in the quests  Fate's Flow (Part 1) and  Fallen Facade; INT: 0, LUK: 0, END: 0, WIS: 0, Melee: 5, Magic: 5, Crit: 5",
     "alsoSee": [],
@@ -6299,7 +6256,6 @@
         "crit": "0%"
       }
     },
-    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Maguspic.png",
     "alternativeImages": [
       {
         "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/MagusHansa-FFP1.png",
@@ -6400,6 +6356,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "August 13th, 2022",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Maguspic.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=21274402",
     "notes": "• Magus Hansa (2) was previously attainable from the following retired access point:  Sands of Eternity -> Add Hansa \n• Hansa has a series of unconventional stats in the quests  Fate's Flow (Part 1) and  Fallen Facade; INT: 0, LUK: 0, END: 0, WIS: 0, Melee: 5, Magic: 5, Crit: 5",
     "alsoSee": [],
@@ -6451,7 +6408,6 @@
         "crit": "0%"
       }
     },
-    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Maguspic.png",
     "alternativeImages": [
       {
         "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/MagusHansa-FFP1.png",
@@ -6473,17 +6429,7 @@
     "isMultiPost": true,
     "shared": {
       "description": "",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mazurek.png",
-      "alternativeImages": [
-        {
-          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mazurek-Pirate'sRevenge.png",
-          "caption": "A Pirate's Revenge Appearance"
-        },
-        {
-          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mazurek-Admiral.png",
-          "caption": "Admiral Appearance"
-        }
-      ]
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mazurek.png"
     },
     "levelVariants": [
       {
@@ -6654,7 +6600,8 @@
             "crit": "0%"
           }
         },
-        "notes": "• Mazurek (2) has a series of unconventional stats in the access points  The Autumn Wind and  The Quest for More Booty! - Choose a Side /  The Quest for More Booty! - Mazurek; DEX: 5, CHA: 10, LUK: 5, Bonus: 75, Crit: 5, Pierce: 0 \n• Mazurek (2) has a series of unconventional stats in the access point  A Pirate's Revenge; Bonus: 20, Crit: 25, Melee: 15, Pierce: 15"
+        "notes": "• Mazurek (2) has a series of unconventional stats in the access points  The Autumn Wind and  The Quest for More Booty! - Choose a Side /  The Quest for More Booty! - Mazurek; DEX: 5, CHA: 10, LUK: 5, Bonus: 75, Crit: 5, Pierce: 0 \n• Mazurek (2) has a series of unconventional stats in the access point  A Pirate's Revenge; Bonus: 20, Crit: 25, Melee: 15, Pierce: 15",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mazurek.png"
       },
       {
         "levelNumber": 2,
@@ -6663,7 +6610,7 @@
         "name": "Mazurek (1)",
         "damage": "Scaled",
         "stats": "See guestStats",
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22418716",
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22035431",
         "description": "Human Pirate Captain",
         "obtainVariants": [
           {
@@ -6795,17 +6742,7 @@
             "dodge": "0"
           }
         },
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mazurek.png",
-        "alternativeImages": [
-          {
-            "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mazurek-Pirate'sRevenge.png",
-            "caption": "A Pirate's Revenge Appearance"
-          },
-          {
-            "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mazurek-Admiral.png",
-            "caption": "Admiral Appearance"
-          }
-        ]
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mazurek.png"
       }
     ],
     "releaseDate": "September 18th, 2015",
@@ -6826,7 +6763,6 @@
     "hasFree": true,
     "hasMerge": false,
     "isTemp": true,
-    "retired": true,
     "levelRange": "As player-As player",
     "elements": [
       "DIS",
@@ -6862,8 +6798,15 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "August 7th, 2009",
+    "imageUrl": "/generated/guests/charpages/guest-mennace.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=16477813",
-    "notes": "• This guest is linked to a real player's character ID, and as such all variables are subject to change, such as in an  Aeris Minor Tournament. \n• Current class and equipment can be previewed on this guest's character page:  Mennace",
+    "sourceLinks": [
+      {
+        "url": "https://account.dragonfable.com/CharPage?id=16028208",
+        "title": "Mennace (Character Page)"
+      }
+    ],
+    "notes": "• This guest is linked to a real player's character ID, and as such all variables are subject to change, such as in an  Aeris Minor Tournament. ",
     "alsoSee": [],
     "tags": [
       "mennace",
@@ -6875,6 +6818,169 @@
       "element": "As character",
       "hp": "As character",
       "mp": "As character"
+    }
+  },
+  {
+    "id": "guest-mihyun",
+    "name": "Mihyun",
+    "slug": "guest-mihyun",
+    "type": "guest",
+    "description": "Water Elf Hyonite",
+    "daRequired": false,
+    "isTemp": true,
+    "elements": [
+      "NAT",
+      "WAT"
+    ],
+    "traits": [],
+    "level": "As player",
+    "damage": "Scaled",
+    "stats": "See guestStats",
+    "resists": "None",
+    "obtainMethods": [
+      {
+        "location": "The Plain Truth",
+        "priceType": "free",
+        "price": "N/A",
+        "daRequired": false
+      }
+    ],
+    "attacks": [
+      {
+        "name": "Staff Combo",
+        "description": "3 hits x 100% Nature damage (300%)",
+        "effect": "3 hits of 100% damage, amounting to 300% damage.",
+        "manaCost": "20",
+        "cooldown": "2",
+        "damageType": "Magic",
+        "element": "Nature",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mihyun-Button01-Combo.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mihyun-StaffCombo1.0.png"
+      },
+      {
+        "name": "Staff Jab",
+        "description": "1 hit x 150% Nature damage \n This attack has +300 Crit.",
+        "effect": "1 hit of 150% damage, with +300 Crit.",
+        "manaCost": "0",
+        "cooldown": "1",
+        "damageType": "Magic",
+        "element": "Nature",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mihyun-Button02-Jab.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mihyun-StaffJab.png"
+      },
+      {
+        "name": "Attack",
+        "description": "1 hit x 125% Nature damage \n Mihyun's staff has <0-5> charges",
+        "effect": "1 hit of 125% damage.",
+        "manaCost": "0",
+        "cooldown": "0",
+        "damageType": "Magic",
+        "element": "Nature",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mihyun-Attack.png"
+      },
+      {
+        "name": "Reload",
+        "description": "Self: Gain +75 Boost/Bonus for 4 turns. \n Reloads staff charges to 5.",
+        "effect": "Reloads Staff charges to 5; Applies 'Fresh Water' (+75% Boosts, +50 Bonus) to herself for 4 turns.",
+        "manaCost": "20",
+        "cooldown": "4",
+        "damageType": "N/A",
+        "element": "N/A",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mihyun-Button03-Load.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mihyun-Reload.png"
+      },
+      {
+        "name": "Water Shot",
+        "description": "1 hit x 200% Water damage \n Consumes 1 staff charge.",
+        "requirements": "At least 1 Staff charge",
+        "effect": "Consumes 1 Staff charge; 1 hit of 200% damage.",
+        "manaCost": "0",
+        "cooldown": "0",
+        "damageType": "Magic",
+        "element": "Water",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mihyun-Button04-Shot.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mihyun-WaterShot.png"
+      },
+      {
+        "name": "Full Blast",
+        "description": "4 hits x 125% Water damage (500%) \n Consumes all remaining staff charges.",
+        "requirements": "At least 1 Staff charge",
+        "effect": "Consumes all Staff charges; 4 hits of 125% damage, amounting to 500% damage.",
+        "manaCost": "20",
+        "cooldown": "0",
+        "damageType": "Magic",
+        "element": "Water",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mihyun-Button05-Blast.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mihyun-FullBlast.png"
+      },
+      {
+        "name": "Bubble Burst",
+        "description": "5 hits x 20% Water damage (100%) \n Also deals an additional 1 hit x 75% damage to all targets \n Consumes 1 staff charge.",
+        "requirements": "At least 1 Staff charge",
+        "effect": "Consumes 1 Staff charge; 5 hits of 20% damage to current foe, amounting to 100% damage; 1 hit of 75% damage to all foes.",
+        "manaCost": "0",
+        "cooldown": "0",
+        "damageType": "Magic",
+        "element": "Water",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mihyun-Button06-Bubble.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mihyun-BubbleBurst.png"
+      }
+    ],
+    "rarity": "Unknown",
+    "evolutions": [],
+    "releaseDate": "July 17th, 2026",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mihyun.png",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22426774",
+    "notes": "• Mihyun begins the battle with 'Heroic Boon' (+60 All Resist, -60 Health Resist) permanently applied to herself. \n• Mihyun is permanently affected by a stack mechanic called Staff charges. \n  • Staff charges starts at 0 and caps at 5. \n  • Mihyun begins the battle with 5 Staff charges and can be consumed to use 'Water Shot', 'Full Blast', and 'Bubble Burst' skills. \n  • Staff charges can only be gained upon using the 'Reload' skill.",
+    "alsoSee": [],
+    "tags": [
+      "mihyun",
+      "water",
+      "hyonite",
+      "nat",
+      "wat"
+    ],
+    "guestStats": {
+      "level": "As player",
+      "damage": "Scaled",
+      "damageType": "Magic",
+      "element": "Water",
+      "hp": "As player, less END bonus",
+      "mp": "As player, less WIS bonus",
+      "characterStats": {
+        "str": "0",
+        "dex": "0",
+        "int": "0",
+        "cha": "0",
+        "luk": "0",
+        "end": "0",
+        "wis": "0"
+      },
+      "offense": {
+        "boost": "0%",
+        "bonus": "100",
+        "crit": "10"
+      },
+      "damageMultipliers": {
+        "nonCrit": "100%",
+        "dex": "100%",
+        "dot": "100%",
+        "crit": "175%"
+      },
+      "defense": {
+        "melee": "5",
+        "pierce": "5",
+        "magic": "5",
+        "block": "0",
+        "parry": "0",
+        "dodge": "0"
+      },
+      "damageReduction": {
+        "nonCrit": "0%",
+        "dot": "0%",
+        "crit": "0%"
+      }
     }
   },
   {
@@ -6891,13 +6997,7 @@
     "isMultiPost": true,
     "shared": {
       "description": "",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mritha.png",
-      "alternativeImages": [
-        {
-          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mritha-FFP1.png",
-          "caption": "Fate's Flow (Part 1) Appearance"
-        }
-      ]
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mritha.png"
     },
     "levelVariants": [
       {
@@ -7024,7 +7124,8 @@
             "crit": "0%"
           }
         },
-        "notes": "• Mritha (1) was previously attainable from the following retired DA access point:  War of the Dragon Rose - Rose Front -> Rose Camp! -> Invite Mritha as a guest \n• Mritha (1) has a series of unconventional stats in the quest  Saellah; Melee: 25, Pierce: 10, Magic: 30, Block: 50, Bonus: 25"
+        "notes": "• Mritha (1) was previously attainable from the following retired DA access point:  War of the Dragon Rose - Rose Front -> Rose Camp! -> Invite Mritha as a guest \n• Mritha (1) has a series of unconventional stats in the quest  Saellah; Melee: 25, Pierce: 10, Magic: 30, Block: 50, Bonus: 25",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mritha.png"
       },
       {
         "levelNumber": 2,
@@ -7033,7 +7134,7 @@
         "name": "Mritha (2)",
         "damage": "Scaled",
         "stats": "See guestStats",
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22392400",
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22392399",
         "description": "Human DragonLord",
         "obtainVariants": [
           {
@@ -7121,13 +7222,7 @@
             "crit": "0%"
           }
         },
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mritha.png",
-        "alternativeImages": [
-          {
-            "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mritha-FFP1.png",
-            "caption": "Fate's Flow (Part 1) Appearance"
-          }
-        ]
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mritha.png"
       }
     ],
     "releaseDate": "January 26th, 2015",
@@ -7213,6 +7308,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "January 26th, 2023",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Myalos.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22408177",
     "notes": "• Myalos' Charge stacks cap at 100.",
     "alsoSee": [],
@@ -7250,8 +7346,7 @@
         "parry": "0",
         "dodge": "0"
       }
-    },
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Myalos.png"
+    }
   },
   {
     "id": "guest-niki",
@@ -7369,7 +7464,8 @@
             "dodge": "0"
           }
         },
-        "notes": "• Niki (1) was previously attainable from the following retired DA access points:  War of the Dragon Rose - Dragon Front -> Dragon Camp! -> Invite Niki as a guest,  After the War -> Invite Niki as a guest \n• Niki (1) previously had the following stats; Pierce: 5, Bonus: 60, and the 'Barrier' skill previously only provided +140 Parry Defense, with a cooldown of 6 turns."
+        "notes": "• Niki (1) was previously attainable from the following retired DA access points:  War of the Dragon Rose - Dragon Front -> Dragon Camp! -> Invite Niki as a guest,  After the War -> Invite Niki as a guest \n• Niki (1) previously had the following stats; Pierce: 5, Bonus: 60, and the 'Barrier' skill previously only provided +140 Parry Defense, with a cooldown of 6 turns.",
+        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Niki.png"
       },
       {
         "levelNumber": 2,
@@ -7378,7 +7474,7 @@
         "name": "Niki (2)",
         "damage": "Scaled",
         "stats": "See guestStats",
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22392398",
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22392397",
         "description": "Human Mage",
         "obtainVariants": [
           {
@@ -7464,6 +7560,130 @@
     "elements": [
       "NAT"
     ]
+  },
+  {
+    "id": "guest-nirios",
+    "name": "Nirios",
+    "slug": "guest-nirios",
+    "type": "guest",
+    "description": "Ateala Cryptic",
+    "daRequired": false,
+    "isTemp": true,
+    "elements": [
+      "???"
+    ],
+    "traits": [],
+    "level": "As player",
+    "damage": "Scaled",
+    "stats": "See guestStats",
+    "resists": "None",
+    "obtainMethods": [
+      {
+        "location": "Cooperation",
+        "priceType": "free",
+        "price": "N/A",
+        "daRequired": false
+      }
+    ],
+    "attacks": [
+      {
+        "name": "Illusionary Veil",
+        "description": "Self: +200 Crit for 4 turns.",
+        "effect": "Applies 'Illusionary Veil' (+200 Crit) to himself for 4 turns.",
+        "manaCost": "15",
+        "cooldown": "8",
+        "damageType": "N/A",
+        "element": "N/A",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Nirios-Button01-Veil.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Nirios-IllusionaryVeil.png"
+      },
+      {
+        "name": "Nirios' Focus",
+        "description": "Self: +60 Bonus for 4 turns. Hero: +30 Bonus for 4 turns.",
+        "effect": "Applies 'Mind Focused' (+60 Bonus) to themselves for 4 turns; applies 'Mind Focused' (+30 Bonus) to player for 4 turns.",
+        "manaCost": "15",
+        "cooldown": "5",
+        "damageType": "N/A",
+        "element": "N/A",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Nirios-Button02-Nirios.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Nirios-IllusionaryVeil.png"
+      },
+      {
+        "name": "Attack",
+        "description": "1 hit x 100% damage | 1 hit x 200% damage \n Boosts the damage of the next consecutive Attack.",
+        "effect": "1 hit of 100% damage; boosts the damage of the next consecutive 'Attack' to 1 hit of 200% damage.\n  • If another skill was used instead of 'Attack', the damage boost is reverted back to 1 hit of 100% damage.",
+        "manaCost": "0",
+        "cooldown": "0",
+        "damageType": "Pierce",
+        "element": "???",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Nirios-Attack.png"
+      },
+      {
+        "name": "Psychic Cage",
+        "description": "1 hit x 100% damage \n Target: (On hit) Stun for 1 turn.",
+        "effect": "1 hit of 100% damage; applies 'Stun' to target, stunning it for 1 turn.",
+        "manaCost": "20",
+        "cooldown": "14",
+        "damageType": "Pierce",
+        "element": "???",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Nirios-Button03-Cage.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Nirios-PsychicCage.png"
+      }
+    ],
+    "rarity": "Unknown",
+    "evolutions": [],
+    "releaseDate": "July 24th, 2026",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Nirios.png",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22426806",
+    "alsoSee": [],
+    "tags": [
+      "nirios",
+      "ateala",
+      "cryptic",
+      "???"
+    ],
+    "guestStats": {
+      "level": "As player",
+      "damage": "Scaled",
+      "damageType": "Pierce",
+      "element": "???",
+      "hp": "As player, less END bonus",
+      "mp": "As player, less WIS bonus",
+      "characterStats": {
+        "str": "0",
+        "dex": "0",
+        "int": "0",
+        "cha": "0",
+        "luk": "0",
+        "end": "0",
+        "wis": "0"
+      },
+      "offense": {
+        "boost": "0%",
+        "bonus": "50",
+        "crit": "5"
+      },
+      "damageMultipliers": {
+        "nonCrit": "100%",
+        "dex": "100%",
+        "dot": "100%",
+        "crit": "175%"
+      },
+      "defense": {
+        "melee": "5",
+        "pierce": "5",
+        "magic": "5",
+        "block": "0",
+        "parry": "0",
+        "dodge": "0"
+      },
+      "damageReduction": {
+        "nonCrit": "0%",
+        "dot": "0%",
+        "crit": "0%"
+      }
+    }
   },
   {
     "id": "guest-nythera",
@@ -7625,6 +7845,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "January 6th, 2017",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Nythera.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22217923",
     "notes": "• Scaled Mana Cost for this guest is equal to [0.3008*(Level+5)+1.0025]. Each Mana Cost is rounded down to the nearest whole number.",
     "alsoSee": [],
@@ -7678,8 +7899,7 @@
         "dot": "0%",
         "crit": "0%"
       }
-    },
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Nythera.png"
+    }
   },
   {
     "id": "guest-pepper-merchant",
@@ -7719,6 +7939,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "September 15th, 2018",
+    "imageUrl": "https://i.imgur.com/oEZhPmL.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22348084",
     "notes": "• Pepper Merchant was previously attainable from the following retired access point:  An Elegy of Ice and Fire.",
     "alsoSee": [],
@@ -7758,8 +7979,7 @@
         "dodge": "0"
       }
     },
-    "retired": true,
-    "imageUrl": "https://i.imgur.com/oEZhPmL.png"
+    "retired": true
   },
   {
     "id": "guest-princess",
@@ -7775,7 +7995,16 @@
     "isMultiPost": true,
     "shared": {
       "description": "",
-      "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Princesspic.png"
+      "alternativeImages": [
+        {
+          "url": "http://i.imgur.com/6LuPETA.png",
+          "caption": "Appearance 1"
+        },
+        {
+          "url": "http://i.imgur.com/FfAVvI8.png",
+          "caption": "Appearance 2"
+        }
+      ]
     },
     "levelVariants": [
       {
@@ -7855,7 +8084,7 @@
         "name": "Princess (1)",
         "damage": "5-10",
         "stats": "See guestStats",
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21932080",
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21932078",
         "description": "Girl Princess",
         "obtainVariants": [
           {
@@ -7906,7 +8135,16 @@
             "dodge": "0"
           }
         },
-        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Princesspic.png"
+        "alternativeImages": [
+          {
+            "url": "http://i.imgur.com/6LuPETA.png",
+            "caption": "Appearance 1"
+          },
+          {
+            "url": "http://i.imgur.com/FfAVvI8.png",
+            "caption": "Appearance 2"
+          }
+        ]
       }
     ],
     "releaseDate": "March 2nd, 2015",
@@ -7922,8 +8160,6 @@
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
-    "isTemp": true,
-    "isRare": true,
     "levelRange": "Scaled-1",
     "elements": [
       "FIR"
@@ -7968,6 +8204,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "August 3rd, 2012",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Professor.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=20575037",
     "notes": "• Professor was previously attainable from the access point:  Forging.",
     "alsoSee": [],
@@ -8016,8 +8253,7 @@
         "dot": "0%",
         "crit": "0%"
       }
-    },
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Professor.png"
+    }
   },
   {
     "id": "guest-ralon",
@@ -8067,6 +8303,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "December 20th, 2012",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/RalonGuestpic.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=20957863",
     "alsoSee": [],
     "tags": [
@@ -8103,8 +8340,7 @@
         "parry": "0",
         "dodge": "0"
       }
-    },
-    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/RalonGuestpic.png"
+    }
   },
   {
     "id": "guest-raven",
@@ -8121,17 +8357,7 @@
     "isMultiPost": true,
     "shared": {
       "description": "",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Raven.png",
-      "alternativeImages": [
-        {
-          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Raven-Castle.png",
-          "caption": "The Castle in the Woods Appearance"
-        },
-        {
-          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Raven-BlackWinter.png",
-          "caption": "Black Winter/Book of Lore/A Shocking Discovery Appearance"
-        }
-      ]
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Raven.png"
     },
     "levelVariants": [
       {
@@ -8245,7 +8471,8 @@
             "crit": "0%"
           }
         },
-        "notes": "• Raven's stun duration was lowered from 2 turns to 1 turn on  February 28th, 2020."
+        "notes": "• Raven's stun duration was lowered from 2 turns to 1 turn on  February 28th, 2020.",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Raven2.png"
       },
       {
         "levelNumber": 2,
@@ -8254,7 +8481,7 @@
         "name": "Raven (3)",
         "damage": "Scaled",
         "stats": "See guestStats",
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22100690",
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22100689",
         "description": "Human Energizer",
         "obtainVariants": [
           {
@@ -8350,7 +8577,8 @@
             "dot": "0%",
             "crit": "0%"
           }
-        }
+        },
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Raven3.png"
       },
       {
         "levelNumber": 3,
@@ -8453,17 +8681,7 @@
             "dodge": "0"
           }
         },
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Raven.png",
-        "alternativeImages": [
-          {
-            "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Raven-Castle.png",
-            "caption": "The Castle in the Woods Appearance"
-          },
-          {
-            "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Raven-BlackWinter.png",
-            "caption": "Black Winter/Book of Lore/A Shocking Discovery Appearance"
-          }
-        ]
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Raven.png"
       }
     ],
     "releaseDate": "June 13th, 2014",
@@ -8612,6 +8830,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "September 19th, 2014",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Rhubarb.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=21931193",
     "notes": "• Rhubarb has a series of unconventional stats in the zones  The Quest for More Booty! - Choose a Side /  The Quest for More Booty! - Rhubarb; Bonus: 20, Crit: 25, Melee: 15, Pierce: 15, Magic: 0, Parry: 10",
     "alsoSee": [],
@@ -8662,8 +8881,7 @@
         "dot": "0%",
         "crit": "0%"
       }
-    },
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Rhubarb.png"
+    }
   },
   {
     "id": "guest-riadne",
@@ -8679,7 +8897,7 @@
     "isMultiPost": true,
     "shared": {
       "description": "",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Riadne.png"
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Riadne2.png"
     },
     "levelVariants": [
       {
@@ -8794,7 +9012,8 @@
             "crit": "0%"
           }
         },
-        "notes": "• *In the quests  Altar Hill and  At the Gate, her element is erroneously listed as Light. \n• Riadne (2)'s tooltips were updated on  April 11th, 2025."
+        "notes": "• *In the quests  Altar Hill and  At the Gate, her element is erroneously listed as Light. \n• Riadne (2)'s tooltips were updated on  April 11th, 2025.",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Riadne2.png"
       },
       {
         "levelNumber": 2,
@@ -8803,7 +9022,7 @@
         "name": "Riadne (1)",
         "damage": "Scaled",
         "stats": "See guestStats",
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22100075",
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22100074",
         "description": "Human Arachnomancer",
         "obtainVariants": [
           {
@@ -8890,8 +9109,7 @@
             "parry": "0",
             "dodge": "0"
           }
-        },
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Riadne.png"
+        }
       }
     ],
     "releaseDate": "January 14th, 2011",
@@ -8909,7 +9127,6 @@
     "hasFree": true,
     "hasMerge": false,
     "isTemp": true,
-    "retired": true,
     "levelRange": "As player-As player",
     "elements": [
       "LIG"
@@ -9037,7 +9254,7 @@
         "name": "Robina (2)",
         "damage": "Scaled",
         "stats": "See guestStats",
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22409362",
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22277266",
         "description": "Human Princess",
         "obtainVariants": [
           {
@@ -9121,7 +9338,6 @@
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
-    "isTemp": true,
     "retired": true,
     "levelRange": "As player / 2-As player",
     "elements": [
@@ -9142,7 +9358,7 @@
     "isMultiPost": true,
     "shared": {
       "description": "",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Rolith1.png",
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Rolith2.png",
       "notes": "• Rolith's damage was reduced significantly on  March 21st, 2025."
     },
     "levelVariants": [
@@ -9264,7 +9480,7 @@
         "name": "Rolith (2)",
         "damage": "Scaled",
         "stats": "See guestStats",
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22417892",
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22212556",
         "description": "Human Renegade Knight",
         "obtainVariants": [
           {
@@ -9358,7 +9574,7 @@
             "crit": "0%"
           }
         },
-        "notes": "• Rolith's damage was reduced significantly on  March 21st, 2025."
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Rolith2.png"
       }
     ],
     "releaseDate": "September 10th, 2010",
@@ -9421,6 +9637,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "July 22nd, 2011",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Sepulchure%20pic.bmp",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=19342419",
     "alsoSee": [],
     "tags": [
@@ -9458,8 +9675,7 @@
         "parry": "0",
         "dodge": "0"
       }
-    },
-    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Sepulchure%20pic.bmp"
+    }
   },
   {
     "id": "guest-serenity-okami",
@@ -9571,6 +9787,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "July 27th, 2012",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Serenity%20Okami%20pic%203.bmp",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=21187298",
     "notes": "Though the description says that this guest's weapon element is Silver, this guest copies the element, damage type and base damage as the player, enemy or pet which attacked previously before this guest's turn. If the player, enemy or pet which attacked before did not use an attacking move or the attack failed to land, then this guest's attacks will be blocked, dodged, Parried or will miss on that turn. This guest also copies any buff, critical hit or boost which affect the previous attacker's attack.\nAll skill cooldowns for this guest are carried on to the next battle as well.",
     "alsoSee": [],
@@ -9608,8 +9825,7 @@
         "parry": "0",
         "dodge": "0"
       }
-    },
-    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Serenity%20Okami%20pic%203.bmp"
+    }
   },
   {
     "id": "guest-sir-ano",
@@ -9669,6 +9885,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "November 21st, 2008",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/SirAno.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=15093277",
     "notes": "• Sir Ano was previously attainable from the following retired access points:  Nose for Trouble,  Major Mayhem,   There's No Place Like Oaklore, and  Victoria's Secret. \n• The following changes were implemented on  April 11th, 2025: \n  • Tooltips were updated for this guest. \n  • Damage from 'Swordplay' was increased from 100% to 200%.\n• Total damage of 'Swordplay' and 'Attack' was lowered from 200% to 140% on  August 22nd, 2024. \n• Art was updated on  August 29th, 2025. ",
     "alsoSee": [],
@@ -9722,7 +9939,6 @@
       }
     },
     "retired": true,
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/SirAno.png",
     "alternativeImages": [
       {
         "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/SirAno-Old.png",
@@ -9744,13 +9960,7 @@
     "isMultiPost": true,
     "shared": {
       "description": "",
-      "imageUrl": "https://i.imgur.com/sFFV7Le.png",
-      "alternativeImages": [
-        {
-          "url": "https://i.imgur.com/tWfiPVd.png",
-          "caption": "Appearance in Gorillaphant Warfare"
-        }
-      ]
+      "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/SirLeon.png"
     },
     "levelVariants": [
       {
@@ -9760,7 +9970,7 @@
         "name": "Sir Leon (2)",
         "damage": "Scaled",
         "stats": "See guestStats",
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22351864",
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21680820",
         "description": "Human MageKnight",
         "obtainVariants": [
           {
@@ -9979,7 +10189,7 @@
         "name": "Sir Leon (1)",
         "damage": "Scaled",
         "stats": "See guestStats",
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22351865",
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22351864",
         "description": "Human MageKnight",
         "obtainVariants": [
           {
@@ -10202,13 +10412,7 @@
           }
         },
         "notes": "• This version of Sir Leon once dealt Magic as its base damage type. \n• Mana costs on skill button images do not represent the actual mana costs for this version of Sir Leon. \n• A second version of Sir Leon was released on September 26th, 2014 with the quest Shear Destruction; it was again updated on February 3rd, 2015, replacing this version.",
-        "imageUrl": "https://i.imgur.com/sFFV7Le.png",
-        "alternativeImages": [
-          {
-            "url": "https://i.imgur.com/tWfiPVd.png",
-            "caption": "Appearance in Gorillaphant Warfare"
-          }
-        ]
+        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/SirLeon.png"
       }
     ],
     "releaseDate": "April 11th, 2014",
@@ -10227,7 +10431,6 @@
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
-    "isRare": true,
     "levelRange": "As player-As player",
     "elements": [
       "LIG",
@@ -10437,7 +10640,6 @@
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
-    "isTemp": true,
     "levelRange": "Scaled-Scaled",
     "elements": [
       "???",
@@ -10507,6 +10709,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "February 20th, 2015",
+    "imageUrl": "https://i.imgur.com/DAmhng7.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=21927314",
     "alsoSee": [
       {
@@ -10552,8 +10755,7 @@
         "parry": "0",
         "dodge": "0"
       }
-    },
-    "imageUrl": "https://i.imgur.com/DAmhng7.png"
+    }
   },
   {
     "id": "guest-sirius",
@@ -10640,6 +10842,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "April 9th, 2022",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Sirius.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22402145",
     "notes": "• The Emperor skill was added with the release of  Across the Fearscape, but it was locked until the release of  The Aker'varus; Sirius' tooltips were also updated with the release of that quest.",
     "alsoSee": [],
@@ -10679,8 +10882,7 @@
         "parry": "0",
         "dodge": "0"
       }
-    },
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Sirius.png"
+    }
   },
   {
     "id": "guest-symone",
@@ -10783,6 +10985,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "November 5th, 2013",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Symone.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=21850713",
     "notes": "• *Symone is only invited with 0 Pierce Avoidance from  Forest Hunt and  Storming the Castle. \n• A Dragon Amulet is required to invite Symone as a guest at  Serenity Before The Storm and  Dark Night. \n• Symone has a series of unconventional stats in the quest  Calamity; STR: 0, LUK: 0, Bonus: 50, Crit: 5.",
     "alsoSee": [],
@@ -10833,8 +11036,7 @@
         "dot": "0%",
         "crit": "0%"
       }
-    },
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Symone.png"
+    }
   },
   {
     "id": "guest-thom",
@@ -10884,6 +11086,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "December 20th, 2012",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/ThomGuestpic.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=20957804",
     "alsoSee": [],
     "tags": [
@@ -10920,8 +11123,7 @@
         "parry": "0",
         "dodge": "0"
       }
-    },
-    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/ThomGuestpic.png"
+    }
   },
   {
     "id": "guest-toil",
@@ -10962,6 +11164,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "October 15th, 2010",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Toil%20pic.bmp",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=18230148",
     "alsoSee": [],
     "tags": [
@@ -10999,8 +11202,7 @@
         "parry": "0",
         "dodge": "0"
       }
-    },
-    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Toil%20pic.bmp"
+    }
   },
   {
     "id": "guest-tomix",
@@ -11018,17 +11220,7 @@
     "isMultiPost": true,
     "shared": {
       "description": "",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix.png",
-      "alternativeImages": [
-        {
-          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix-Book3.png",
-          "caption": "Book 3 Appearance"
-        },
-        {
-          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix-Synchronized.png",
-          "caption": "Synchronized Appearance"
-        }
-      ]
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix2.png"
     },
     "levelVariants": [
       {
@@ -11038,7 +11230,7 @@
         "name": "Tomix (4)",
         "damage": "Scaled",
         "stats": "See guestStats",
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21930015",
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=16803107",
         "description": "Human Soul Weaver",
         "obtainVariants": [
           {
@@ -11149,7 +11341,7 @@
         "name": "Tomix (2)",
         "damage": "Scaled",
         "stats": "See guestStats",
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21930015",
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21475682",
         "description": "Human SoulWeaver",
         "obtainVariants": [
           {
@@ -11237,7 +11429,8 @@
             "crit": "0%"
           }
         },
-        "notes": "• Tomix (2) has a series of unconventional stats in the quests  Adrift and  The Origins of Aspar; DEX: 0, Bonus: 100, Crit: 5"
+        "notes": "• Tomix (2) has a series of unconventional stats in the quests  Adrift and  The Origins of Aspar; DEX: 0, Bonus: 100, Crit: 5",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix2.png"
       },
       {
         "levelNumber": 3,
@@ -11246,7 +11439,7 @@
         "name": "Tomix (3)",
         "damage": "Scaled",
         "stats": "See guestStats",
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21930015",
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21857591",
         "description": "Human Synchronized",
         "obtainVariants": [
           {
@@ -11354,7 +11547,7 @@
         "name": "Tomix (1)",
         "damage": "25-45",
         "stats": "See guestStats",
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22418816",
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21930015",
         "description": "Human Soul Weaver",
         "obtainVariants": [
           {
@@ -11455,18 +11648,7 @@
             "crit": "0%"
           }
         },
-        "notes": "• This version of Tomix will still be available on your guest slot if you leave in the middle of the quest. \n• This is the original version of the guest; intended to be completely replaced by a new version, it remains in-game erroneously. \n• The following changes were implemented on  April 11th, 2025: \n  • Tomix (4)'s tooltips were updated. \n  • 'Circle of Retribution' was increased from 10 hits of 15% damage (150%) to 10 hits of 25% damage (250%). \n  • Skill icons were updated.",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix.png",
-        "alternativeImages": [
-          {
-            "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix-Book3.png",
-            "caption": "Book 3 Appearance"
-          },
-          {
-            "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix-Synchronized.png",
-            "caption": "Synchronized Appearance"
-          }
-        ]
+        "notes": "• This version of Tomix will still be available on your guest slot if you leave in the middle of the quest. \n• This is the original version of the guest; intended to be completely replaced by a new version, it remains in-game erroneously. \n• The following changes were implemented on  April 11th, 2025: \n  • Tomix (4)'s tooltips were updated. \n  • 'Circle of Retribution' was increased from 10 hits of 15% damage (150%) to 10 hits of 25% damage (250%). \n  • Skill icons were updated."
       }
     ],
     "releaseDate": "October 16th, 2009",
@@ -11488,8 +11670,6 @@
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
-    "isTemp": true,
-    "isSeasonal": true,
     "levelRange": "As player-3",
     "elements": [
       "EVI"
@@ -11565,6 +11745,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "February 25th, 2011",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Tropypic.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=18712530",
     "alsoSee": [],
     "tags": [
@@ -11603,7 +11784,6 @@
         "dodge": "0"
       }
     },
-    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Tropypic.png",
     "alternativeImages": [
       {
         "url": "http://i.imgur.com/XjO0tQn.png",
@@ -11650,6 +11830,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "October 15th, 2010",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Trouble%20pic.bmp",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=18230109",
     "alsoSee": [],
     "tags": [
@@ -11687,8 +11868,7 @@
         "parry": "0",
         "dodge": "0"
       }
-    },
-    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Trouble%20pic.bmp"
+    }
   },
   {
     "id": "guest-uaanta-fayt",
@@ -11781,6 +11961,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "July 18th, 2018",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/UaantaFayt.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22333514",
     "notes": "• In  The Dreamers' Abyss, Uaanta's END stat is instead 100.",
     "alsoSee": [],
@@ -11823,8 +12004,7 @@
         "dot": "0%",
         "crit": "0%"
       }
-    },
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/UaantaFayt.png"
+    }
   },
   {
     "id": "guest-valencia",
@@ -11850,7 +12030,7 @@
         "name": "Valencia (2)",
         "damage": "Scaled",
         "stats": "See guestStats",
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21929555",
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=8534333",
         "description": "Human Rare Item Hunter",
         "obtainVariants": [
           {
@@ -11960,7 +12140,8 @@
             "crit": "0%"
           }
         },
-        "notes": "• Valencia (2)'s tooltips were updated on  April 11th, 2025."
+        "notes": "• Valencia (2)'s tooltips were updated on  April 11th, 2025.",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Valencia.png"
       },
       {
         "levelNumber": 2,
@@ -11970,7 +12151,7 @@
         "name": "Valencia (1)",
         "damage": "8-18",
         "stats": "See guestStats",
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22351721",
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21929555",
         "description": "Human Rare Item Hunter",
         "obtainVariants": [
           {
@@ -12044,7 +12225,6 @@
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
-    "retired": true,
     "levelRange": "As player-8",
     "elements": [
       "MET"
@@ -12146,6 +12326,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "February 14th, 2025",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Valentidus.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22421044",
     "alsoSee": [],
     "tags": [
@@ -12195,8 +12376,7 @@
         "dot": "0%",
         "crit": "0%"
       }
-    },
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Valentidus.png"
+    }
   },
   {
     "id": "guest-vayle",
@@ -12212,13 +12392,7 @@
     "isMultiPost": true,
     "shared": {
       "description": "",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vayle.png",
-      "alternativeImages": [
-        {
-          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vayle-Book3.png",
-          "caption": "Book 3 (Winged Darkness) Appearance"
-        }
-      ]
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vayle.png"
     },
     "levelVariants": [
       {
@@ -12339,7 +12513,8 @@
             "crit": "0%"
           }
         },
-        "notes": "• Vayle (2) has a series of unconventional stats in the zone  Frostval - Winged Darkness; Damage Type: Magic, Melee: 5, Pierce: 0, Magic: 5, Block: 0, Parry: 0, Dodge: 0, Bonus: 100, Crit: 5. \n• Tooltips for this guest was updated on  April 11th, 2025.  "
+        "notes": "• Vayle (2) has a series of unconventional stats in the zone  Frostval - Winged Darkness; Damage Type: Magic, Melee: 5, Pierce: 0, Magic: 5, Block: 0, Parry: 0, Dodge: 0, Bonus: 100, Crit: 5. \n• Tooltips for this guest was updated on  April 11th, 2025.  ",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vayle.png"
       },
       {
         "levelNumber": 2,
@@ -12348,7 +12523,7 @@
         "name": "Vayle (1)",
         "damage": "Scaled",
         "stats": "See guestStats",
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21929892",
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21929891",
         "description": "Human Necromantress",
         "obtainVariants": [
           {
@@ -12411,14 +12586,7 @@
             "parry": "0",
             "dodge": "0"
           }
-        },
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vayle.png",
-        "alternativeImages": [
-          {
-            "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vayle-Book3.png",
-            "caption": "Book 3 (Winged Darkness) Appearance"
-          }
-        ]
+        }
       }
     ],
     "releaseDate": "February 26th, 2015",
@@ -12438,7 +12606,6 @@
     "hasMerge": false,
     "isTemp": true,
     "isSeasonal": true,
-    "retired": true,
     "levelRange": "As player-As player",
     "elements": [
       "DAR"
@@ -12484,6 +12651,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "October 14th, 2016",
+    "imageUrl": "http://i.imgur.com/kbS06mn.jpg",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22181367",
     "alsoSee": [],
     "tags": [
@@ -12518,8 +12686,7 @@
         "parry": "0",
         "dodge": "0"
       }
-    },
-    "imageUrl": "http://i.imgur.com/kbS06mn.jpg"
+    }
   },
   {
     "id": "guest-vilmor",
@@ -12535,13 +12702,7 @@
     "isMultiPost": true,
     "shared": {
       "description": "",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vilmor.png",
-      "alternativeImages": [
-        {
-          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vilmor-Book3.png",
-          "caption": "Book 3 Appearance"
-        }
-      ]
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vilmor2.png"
     },
     "levelVariants": [
       {
@@ -12645,7 +12806,8 @@
             "crit": "0%"
           }
         },
-        "notes": "• The following changes were implemented on  April 11th, 2025: \n  • Tooltips were updated for this guest. \n  • 'Attack' was reduced from 3 hits of 100% damage (300%) to 3 hits of 50% damage (150%).\n• *In the quest  Betrayal, Vilmor gains 0 Pierce Avoidance instead of 5."
+        "notes": "• The following changes were implemented on  April 11th, 2025: \n  • Tooltips were updated for this guest. \n  • 'Attack' was reduced from 3 hits of 100% damage (300%) to 3 hits of 50% damage (150%).\n• *In the quest  Betrayal, Vilmor gains 0 Pierce Avoidance instead of 5.",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vilmor.png"
       },
       {
         "levelNumber": 2,
@@ -12654,7 +12816,7 @@
         "name": "Vilmor (2)",
         "damage": "Scaled",
         "stats": "See guestStats",
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22424203",
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22424202",
         "description": "Human DragonLord",
         "obtainVariants": [
           {
@@ -12764,13 +12926,7 @@
           }
         },
         "notes": "• 'Charged Frost' and 'Cryozen's Boon' skills were added on  A Heart Gone Colder's release.",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vilmor.png",
-        "alternativeImages": [
-          {
-            "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vilmor-Book3.png",
-            "caption": "Book 3 Appearance"
-          }
-        ]
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vilmor2.png"
       }
     ],
     "releaseDate": "September 24th, 2010",
@@ -12817,7 +12973,7 @@
         "name": "Warlic (2)",
         "damage": "Scaled",
         "stats": "See guestStats",
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21929566",
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=10700009",
         "description": "Human Mage",
         "obtainVariants": [
           {
@@ -12904,7 +13060,8 @@
             "crit": "0%"
           }
         },
-        "notes": "• Tooltips were updated on  March 20th, 2026. \n• Warlic (2) was previously attainable in the retired quest  Xan's Volcano Fortress."
+        "notes": "• Tooltips were updated on  March 20th, 2026. \n• Warlic (2) was previously attainable in the retired quest  Xan's Volcano Fortress.",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Warlic.png"
       },
       {
         "levelNumber": 2,
@@ -12914,7 +13071,7 @@
         "name": "Warlic (1)",
         "damage": "15-25",
         "stats": "See guestStats",
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21929568",
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21929566",
         "description": "Human Mage",
         "obtainVariants": [
           {
@@ -12988,8 +13145,7 @@
             "parry": "0",
             "dodge": "0"
           }
-        },
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Warlic.png"
+        }
       }
     ],
     "releaseDate": "August 10th, 2007",
@@ -13007,7 +13163,6 @@
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
-    "isTemp": true,
     "retired": true,
     "levelRange": "As player-11",
     "elements": [
@@ -13044,8 +13199,15 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "August 14th, 2009",
+    "imageUrl": "/generated/guests/charpages/guest-xor-vrailin-ii.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=16496504",
-    "notes": "• This guest is linked to a real player's character ID, and as such all variables are subject to change, such as in an  Aeris Minor Tournament. \n• Current class and equipment can be previewed on this guest's character page:  Xor Vrailin II",
+    "sourceLinks": [
+      {
+        "url": "https://account.dragonfable.com/CharPage?id=149045",
+        "title": "Xor Vrailin II (Character Page)"
+      }
+    ],
+    "notes": "• This guest is linked to a real player's character ID, and as such all variables are subject to change, such as in an  Aeris Minor Tournament. ",
     "alsoSee": [],
     "tags": [
       "xor",
@@ -13163,6 +13325,7 @@
     "rarity": "Unknown",
     "evolutions": [],
     "releaseDate": "May 9th, 2025",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Yashta.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22421962",
     "alsoSee": [],
     "tags": [
@@ -13211,8 +13374,7 @@
         "dot": "0%",
         "crit": "0%"
       }
-    },
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Yashta.png"
+    }
   },
   {
     "id": "guest-zhoom",
@@ -13360,7 +13522,8 @@
             "crit": "0%"
           }
         },
-        "notes": "• This is the original version of the guest; intended to be completely replaced by a new version, it remains in-game erroneously."
+        "notes": "• This is the original version of the guest; intended to be completely replaced by a new version, it remains in-game erroneously.",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Zhoom.png"
       },
       {
         "levelNumber": 2,
@@ -13369,7 +13532,7 @@
         "name": "Zhoom (2)",
         "damage": "Scaled",
         "stats": "See guestStats",
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=13156284",
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22078658",
         "description": "Sand Elf Ranger",
         "obtainVariants": [
           {
@@ -13486,7 +13649,8 @@
             "dodge": "15 + LUK/20"
           }
         },
-        "notes": "• Zhoom (2)'s race was previously 'Human'; this was changed to 'Sand Elf' on  May 24th, 2024. \n• Zhoom (2)'s tooltips were updated on  April 11th, 2025."
+        "notes": "• Zhoom (2)'s race was previously 'Human'; this was changed to 'Sand Elf' on  May 24th, 2024. \n• Zhoom (2)'s tooltips were updated on  April 11th, 2025.",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Zhoom.png"
       },
       {
         "levelNumber": 3,
@@ -13495,7 +13659,7 @@
         "name": "Zhoom (3)",
         "damage": "Scaled",
         "stats": "See guestStats",
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22416718",
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22416717",
         "description": "Sand Elf Ranger",
         "obtainVariants": [
           {
