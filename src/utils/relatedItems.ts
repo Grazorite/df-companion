@@ -35,16 +35,49 @@ function normalizeComparableText(value?: string): string {
   return (value ?? '').toLowerCase().replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim()
 }
 
+/**
+ * Normalize obtain-recipe text (required items / requirements) for related-item
+ * matching by dropping parenthetical variant/version labels such as "(Amalgam)",
+ * "(Destiny)", "(Doom)" or "(I)". This lets sibling variant families that merge
+ * from the same base materials — differing only by their own variant label —
+ * still register as sharing an obtain method (e.g. Exalted Blaster Amalgam /
+ * Destiny / Doom all merge from "Uaanta's Blaster III/IV" in the same shop).
+ * Genuinely different materials remain distinct, so the match stays conservative.
+ */
+function normalizeObtainRecipe(value?: string): string {
+  return normalizeComparableText(value)
+    .replace(/\s*\([^)]*\)/g, '')
+    .replace(/\s+/g, ' ')
+    .trim()
+}
+
 export function obtainMethodFingerprint(method: ObtainVariant): string {
   return [
     normalizeComparableText(method.location),
     normalizeComparableText(method.price),
     method.priceType,
-    normalizeComparableText(method.requiredItems),
-    normalizeComparableText(method.requirements),
+    normalizeObtainRecipe(method.requiredItems),
+    normalizeObtainRecipe(method.requirements),
     String(Boolean(method.daRequired)),
     String(obtainVariantHasDC(method)),
     String(Boolean(method.dmRequired) || method.priceType === 'dm'),
+  ].join('|')
+}
+
+/**
+ * A relaxed fingerprint for inferred related-item matching. It only considers
+ * the shop location, price type, and recipe materials (variant-normalized) —
+ * not the exact price, DA/DC/DM flags, or access requirements. This lets items
+ * sold from the same shop at the same price type (e.g. all "Rare Pets" DC items)
+ * match each other even if their exact costs differ, since the conservative
+ * name-similarity threshold (0.55+) already prevents false positives.
+ */
+export function obtainMethodInferenceFingerprint(method: ObtainVariant): string {
+  return [
+    normalizeComparableText(method.location),
+    method.priceType,
+    normalizeObtainRecipe(method.requiredItems),
+    normalizeObtainRecipe(method.requirements),
   ].join('|')
 }
 

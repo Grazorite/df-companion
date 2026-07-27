@@ -45,7 +45,8 @@ export default function LevelSelector({
   const variantLabels = forceLevelLabels
     ? levels.map((level) => String(level.actualLevel ?? level.levelDisplay))
     : getLevelVariantLabels(levels, familyName, itemType)
-  const getButtonLabel = (_level: LevelVariant, index: number) => variantLabels[index]
+  const getButtonLabel = (level: LevelVariant, index: number) =>
+    level.retired ? `${variantLabels[index]} (Retired)` : variantLabels[index]
   const indexedLevels = levels.map((level, index) => ({ level, index }))
   
   const usesVariantLabels =

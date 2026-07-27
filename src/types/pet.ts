@@ -95,6 +95,7 @@ export interface GuestAttack {
   element: string          // "Energy", "Fire", "???"
   buttonImageUrl?: string  // URL to skill button icon
   appearanceUrl?: string   // URL to appearance/animation image (from hyperlink)
+  notes?: string           // Explicit "Other Information" for the skill (only when the forum labels it as such, separate from the effect's own bullet points)
 }
 
 export interface Evolution {

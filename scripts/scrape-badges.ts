@@ -29,6 +29,7 @@ import * as path from 'node:path'
 import { fetchPrintable, getPostContent } from './lib/printable-parser.ts'
 import { compareTitles } from '../src/utils/displayText.ts'
 import { writeBadgeManifest } from './lib/data-manifests.ts'
+import { hasRetiredTag } from './lib/tags.ts'
 import { FORUM_BASE, fetchForumPage as fetchPage, loadForumCookie } from './lib/forum.ts'
 import { decodeHtml as decodeHTML, slugify, stripSimpleHtml as stripHtml } from './lib/text.ts'
 import {
@@ -291,7 +292,7 @@ async function fetchBadgeDetails(stub: BadgeStub, cookie: string): Promise<Parti
     }
 
     // Detect retired status from image tag
-    const retiredFromTag = /<img[^>]+src=["'][^"']*\/tags\/Retired\.png["']/i.test(rawBody)
+    const retiredFromTag = hasRetiredTag(rawBody)
 
     const escapedName = stub.name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
     const titlePattern = new RegExp(
@@ -393,7 +394,10 @@ async function fetchBadgeDetails(stub: BadgeStub, cookie: string): Promise<Parti
     return {
       description: description || `Badge: ${stub.name}`,
       daRequired,
-      retired: retiredFromTag || undefined,
+      // Bake retired detection fully at scrape time: the Retired tag image, plus
+      // the "badge was retired on ..." note phrase the client used to re-derive.
+      retired:
+        retiredFromTag || /badge was retired on/i.test(noteLines.join(' • ')) || undefined,
       requirements,
       ...(howToObtain.length > 0 ? { howToObtain } : {}),
       category,

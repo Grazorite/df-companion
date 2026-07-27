@@ -60,8 +60,7 @@
         "description": "A bracelet of oddly colored shells and trinkets, this gift is said to promise the reunion of distant lovers after a time apart. This item requires a Dragon Amulet to use.",
         "element": "FEA",
         "resists": "None",
-        "rarity": "0",
-        "notes": "Bracer has a 3.33% drop rate from the quest Coming Home."
+        "rarity": "0"
       },
       {
         "levelNumber": 30,
@@ -85,8 +84,7 @@
         "description": "A bracelet of oddly colored shells and trinkets, this gift is said to promise the reunion of distant lovers after a time apart. This item requires a Dragon Amulet to use.",
         "element": "FEA",
         "resists": "None",
-        "rarity": "0",
-        "notes": "Bracer has a 3.33% drop rate from the quest Coming Home."
+        "rarity": "0"
       },
       {
         "levelNumber": 60,
@@ -109,8 +107,7 @@
         "description": "A bracelet of oddly colored shells and trinkets, this gift is said to promise the reunion of distant lovers after a time apart. This item requires a Dragon Amulet to use.",
         "element": "FEA",
         "resists": "None",
-        "rarity": "0",
-        "notes": "Bracer has a 3.33% drop rate from the quest Coming Home."
+        "rarity": "0"
       },
       {
         "levelNumber": 60,
@@ -134,8 +131,7 @@
         "description": "A bracelet of oddly colored shells and trinkets, this gift is said to promise the reunion of distant lovers after a time apart. This item requires a Dragon Amulet to use.",
         "element": "FEA",
         "resists": "None",
-        "rarity": "0",
-        "notes": "Bracer has a 3.33% drop rate from the quest Coming Home."
+        "rarity": "0"
       },
       {
         "levelNumber": 90,
@@ -158,8 +154,7 @@
         "description": "A bracelet of oddly colored shells and trinkets, this gift is said to promise the reunion of distant lovers after a time apart. This item requires a Dragon Amulet to use.",
         "element": "FEA",
         "resists": "None",
-        "rarity": "0",
-        "notes": "Bracer has a 3.33% drop rate from the quest Coming Home."
+        "rarity": "0"
       },
       {
         "levelNumber": 90,
@@ -183,8 +178,7 @@
         "description": "A bracelet of oddly colored shells and trinkets, this gift is said to promise the reunion of distant lovers after a time apart. This item requires a Dragon Amulet to use.",
         "element": "FEA",
         "resists": "None",
-        "rarity": "0",
-        "notes": "Bracer has a 3.33% drop rate from the quest Coming Home."
+        "rarity": "0"
       }
     ],
     "itemType": "Bracer",
@@ -440,7 +434,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "Bracer was DC tagged on  July 27th, 2022.",
+    "notes": "Bracer was DC tagged on July 27th, 2022.",
     "tags": [
       "evi",
       "free"

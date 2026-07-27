@@ -10,14 +10,58 @@ export function decodeHtml(text: string): string {
     .replace(/&apos;/g, "'")
 }
 
+/**
+ * Remove struck-through content (`<s>`, `<strike>`, `<del>`) from forum HTML.
+ *
+ * The DragonFable encyclopedia strikes out deprecated entries (e.g. removed
+ * obtain locations) rather than deleting them, so struck content must be
+ * omitted from scraped data across every category. Struck hyperlinks are
+ * removed together with an adjacent list separator so comma-joined lists (like
+ * a Location field) do not keep dangling commas.
+ */
+export function stripStrikethrough(html: string): string {
+  return (
+    html
+      // A hyperlink whose entire content is struck through, plus one trailing
+      // separator if present (comma/semicolon/bullet).
+      .replace(
+        /<a\b[^>]*>\s*(?:<(?:s|strike|del)\b[^>]*>[\s\S]*?<\/(?:s|strike|del)>\s*)+<\/a>\s*(?:[,;·•]\s*)?/gi,
+        ''
+      )
+      // Any remaining struck span, plus one trailing separator if present.
+      .replace(/<(s|strike|del)\b[^>]*>[\s\S]*?<\/\1>\s*(?:[,;·•]\s*)?/gi, '')
+  )
+}
+
+/**
+ * Clean up separator artifacts left behind after struck content is removed:
+ * collapse runs of commas and trim stray leading/trailing commas per line.
+ */
+function cleanSeparatorArtifacts(text: string): string {
+  return text
+    .split('\n')
+    .map((line) =>
+      line
+        .replace(/,(?:\s*,)+/g, ',') // collapse consecutive commas
+        .replace(/\s+,/g, ',') // drop space before a comma left by a removal
+        .replace(/^\s*,\s*/, '') // leading comma
+        .replace(/\s*,\s*$/, '') // trailing comma
+        .replace(/[ \t]{2,}/g, ' ')
+        .trimEnd()
+    )
+    .join('\n')
+}
+
 export function stripSimpleHtml(html: string): string {
-  return html
-    .replace(/<br\s*\/?>/gi, '\n')
-    .replace(/<\/p>/gi, '\n')
-    .replace(/<hr[^>]*>/gi, '\n')
-    .replace(/<[^>]+>/g, '')
-    .replace(/\n{3,}/g, '\n\n')
-    .trim()
+  return cleanSeparatorArtifacts(
+    stripStrikethrough(html)
+      .replace(/<br\s*\/?>/gi, '\n')
+      .replace(/<\/p>/gi, '\n')
+      .replace(/<hr[^>]*>/gi, '\n')
+      .replace(/<[^>]+>/g, '')
+      .replace(/\n{3,}/g, '\n\n')
+      .trim()
+  )
 }
 
 export function stripForumHtml(
@@ -25,6 +69,7 @@ export function stripForumHtml(
   warningLabel = 'stripForumHtml',
   options: { includeListItemClosers?: boolean } = {}
 ): string {
+  html = stripStrikethrough(html)
   let depth = 0
   let processed = ''
   let i = 0
@@ -93,10 +138,12 @@ export function stripForumHtml(
     console.warn(`⚠️  ${warningLabel} reached iteration limit`)
   }
 
-  return processed
-    .replace(/\r/g, '')
-    .replace(/\n{3,}/g, '\n\n')
-    .trim()
+  return cleanSeparatorArtifacts(
+    processed
+      .replace(/\r/g, '')
+      .replace(/\n{3,}/g, '\n\n')
+      .trim()
+  )
 }
 
 export function normalizeStructuredText(html: string): string {

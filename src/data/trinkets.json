@@ -263,13 +263,14 @@
         "name": "Beacon of Hope",
         "description": "+80 Defense for 2 turns.",
         "requirements": "Beacon of Hope equipped",
-        "effect": "Applies 'Morale Boosted' (+80 Block/Parry/Dodge Defense) to player for 2 turns inclusive.\n• Previously had the description: 2-turn Shield",
+        "effect": "Applies 'Morale Boosted' (+80 Block/Parry/Dodge Defense) to player for 2 turns inclusive.",
         "manaCost": "10",
         "cooldown": "29 - [(Player LUK/50), rounded down]",
         "damageType": "N/A",
         "element": "N/A",
         "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-BeaconofHope.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-BeaconofHope-Appearance.png"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-BeaconofHope-Appearance.png",
+        "notes": "• Previously had the description: 2-turn Shield"
       }
     ]
   },
@@ -316,13 +317,14 @@
         "name": "Flashbang of Love",
         "description": "Blind them with love!",
         "requirements": "Blinded by Love equipped",
-        "effect": "1 hit of 145% damage; applies 'Blinded' (-50 Bonus) to target for 1 turn inclusive*.\n• *-50 Bonus is applied for 1 turn inclusive, therefore it ticks down before the target has a chance to attack.",
+        "effect": "1 hit of 145% damage; applies 'Blinded' (-50 Bonus) to target for 1 turn inclusive*.",
         "manaCost": "16",
         "cooldown": "29 - [(Player LUK/50), rounded down]",
         "damageType": "As weapon",
         "element": "Good",
         "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-FlashbangofLove.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-FlashbangofLove-Appearance1.0.png"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-FlashbangofLove-Appearance1.0.png",
+        "notes": "• *-50 Bonus is applied for 1 turn inclusive, therefore it ticks down before the target has a chance to attack."
       }
     ]
   },
@@ -368,13 +370,14 @@
           "name": "Blue Box",
           "description": "200% damage strike",
           "requirements": "Blue Box (I, II, III) equipped",
-          "effect": "2 hits of 100% damage, amounting to 200% damage.\n• Skill previously copied the element of the previous attack; this was a bug which was fixed in May 2018.",
+          "effect": "2 hits of 100% damage, amounting to 200% damage.",
           "manaCost": "0",
           "cooldown": "29 - [(Player LUK/50), rounded down]",
           "damageType": "As weapon",
           "element": "Nature",
           "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-BlueBox.png",
-          "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-BlueBox-Appearance1.0.png"
+          "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-BlueBox-Appearance1.0.png",
+          "notes": "• Skill previously copied the element of the previous attack; this was a bug which was fixed in May 2018."
         }
       ],
       "rarity": "25"
@@ -406,13 +409,14 @@
             "name": "Blue Box",
             "description": "200% damage strike",
             "requirements": "Blue Box (I, II, III) equipped",
-            "effect": "2 hits of 100% damage, amounting to 200% damage.\n• Skill previously copied the element of the previous attack; this was a bug which was fixed in May 2018.",
+            "effect": "2 hits of 100% damage, amounting to 200% damage.",
             "manaCost": "0",
             "cooldown": "29 - [(Player LUK/50), rounded down]",
             "damageType": "As weapon",
             "element": "Nature",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-BlueBox.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-BlueBox-Appearance1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-BlueBox-Appearance1.0.png",
+            "notes": "• Skill previously copied the element of the previous attack; this was a bug which was fixed in May 2018."
           }
         ],
         "rarity": "25"
@@ -443,13 +447,14 @@
             "name": "Blue Box",
             "description": "200% damage strike",
             "requirements": "Blue Box (I, II, III) equipped",
-            "effect": "2 hits of 100% damage, amounting to 200% damage.\n• Skill previously copied the element of the previous attack; this was a bug which was fixed in May 2018.",
+            "effect": "2 hits of 100% damage, amounting to 200% damage.",
             "manaCost": "0",
             "cooldown": "29 - [(Player LUK/50), rounded down]",
             "damageType": "As weapon",
             "element": "Nature",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-BlueBox.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-BlueBox-Appearance1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-BlueBox-Appearance1.0.png",
+            "notes": "• Skill previously copied the element of the previous attack; this was a bug which was fixed in May 2018."
           }
         ],
         "rarity": "25"
@@ -480,13 +485,14 @@
             "name": "Blue Box",
             "description": "200% damage strike",
             "requirements": "Blue Box (I, II, III) equipped",
-            "effect": "2 hits of 100% damage, amounting to 200% damage.\n• Skill previously copied the element of the previous attack; this was a bug which was fixed in May 2018.",
+            "effect": "2 hits of 100% damage, amounting to 200% damage.",
             "manaCost": "0",
             "cooldown": "29 - [(Player LUK/50), rounded down]",
             "damageType": "As weapon",
             "element": "Nature",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-BlueBox.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-BlueBox-Appearance1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-BlueBox-Appearance1.0.png",
+            "notes": "• Skill previously copied the element of the previous attack; this was a bug which was fixed in May 2018."
           }
         ],
         "rarity": "25"
@@ -554,13 +560,14 @@
         "name": "Boom Voice Brew",
         "description": "140% Metal Dmg, small chance of stun",
         "requirements": "BOOM-Voice Brew equipped",
-        "effect": "1 hit of 140% damage; 1% chance to apply 'Stun' to target, stunning it for 2 turns.\n• Previously had the description: 140% Dmg, small chance of stun",
+        "effect": "1 hit of 140% damage; 1% chance to apply 'Stun' to target, stunning it for 2 turns.",
         "manaCost": "0",
         "cooldown": "29 - [(Player LUK/50), rounded down]",
         "damageType": "As weapon",
         "element": "Metal",
         "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-BoomVoiceBrew.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-BoomVoiceBrew-Appearance1.0.png"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-BoomVoiceBrew-Appearance1.0.png",
+        "notes": "• Previously had the description: 140% Dmg, small chance of stun"
       }
     ]
   },
@@ -593,7 +600,7 @@
     "shared": {
       "description": "Summon the LSS Booty Sniffer to wash away your foes and leave behind bonus gold! Arr! This trinket be water damage 'n honor o' th' Red Betty!",
       "rarity": "5",
-      "notes": "Having this Trinket in the player's inventory doubled the amount of 'Booty Collected' (waves completed) per wave cleared in  The Quest for More Booty! event for the Mazurek side.\nHaving this Trinket in the player's inventory doubled the amount of 'Booty Collected' (waves completed) per wave cleared in  The Quest for More Booty! event for the Rhubarb side."
+      "notes": "Having this Trinket in the player's inventory doubled the amount of 'Booty Collected' (waves completed) per wave cleared in The Quest for More Booty! event for the Rhubarb side."
     },
     "levelVariants": [
       {
@@ -632,8 +639,7 @@
             "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/BootySniffer_Water_Cast1.png"
           }
         ],
-        "rarity": "5",
-        "notes": "Having this Trinket in the player's inventory doubled the amount of 'Booty Collected' (waves completed) per wave cleared in  The Quest for More Booty! event for the Rhubarb side."
+        "rarity": "5"
       },
       {
         "levelNumber": 5,
@@ -672,7 +678,7 @@
           }
         ],
         "rarity": "5",
-        "notes": "Having this Trinket in the player's inventory doubled the amount of 'Booty Collected' (waves completed) per wave cleared in  The Quest for More Booty! event for the Mazurek side.\nHaving this Trinket in the player's inventory doubled the amount of 'Booty Collected' (waves completed) per wave cleared in  The Quest for More Booty! event for the Rhubarb side."
+        "notes": "Having this Trinket in the player's inventory doubled the amount of 'Booty Collected' (waves completed) per wave cleared in The Quest for More Booty! event for the Mazurek side."
       }
     ],
     "itemType": "Trinket",
@@ -761,7 +767,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "Equipping this trinket displays  .",
+    "notes": "Equipping this trinket displays animated pink bubbles over the player.",
     "tags": [
       "poi",
       "merge"
@@ -773,13 +779,14 @@
         "name": "Bubbles",
         "description": "Pretty Bubbles!",
         "requirements": "Bubble Charm equipped",
-        "effect": "Applies 'Distracted by Bubbles' (-30 Bonus) to target for 4 turns (Pop-up: The excessive amount of bubbles is distracting your foe!).\n• Appearance will display as long as the trinket is equipped, regardless if the skill is used or not, including out of combat.",
+        "effect": "Applies 'Distracted by Bubbles' (-30 Bonus) to target for 4 turns (Pop-up: The excessive amount of bubbles is distracting your foe!).",
         "manaCost": "0",
         "cooldown": "9 - [(Player LUK/50), rounded down]",
         "damageType": "N/A",
         "element": "N/A",
         "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Bubbles2.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Bubbles2-Appearance.png"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Bubbles2-Appearance.png",
+        "notes": "• Appearance will display as long as the trinket is equipped, regardless if the skill is used or not, including out of combat."
       }
     ]
   },
@@ -1131,13 +1138,14 @@
         "name": "Chi Bomb",
         "description": "Up to 25% enemy HP dmg, high MP cost.",
         "requirements": "Chi Blast equipped",
-        "effect": "1 hit of Y damage, with -800 Crit. (Pop-up: You charged your Chi Bomb to <4X>% of it's power, consuming <10X> MP.)\n  • Y is equal to X% of target's current HP before damage modifiers (Boost, Resists, etc.) are applied.\n  • X is equal to quarter of the percentage Chi Bomb is charged to (bounded below 6, capped at 25).\n• Adheres to the global damage cap of SQRT(Level)*100, before damage modifiers (Boost, Resists, etc.) are applied.\n• Previously had the description: Reduces Enemy Health upto 50%\n• Previously was able to charge to 180%; this was fixed on  July 3rd, 2020.\n• Previously consumed twice as much MP as intended; this was fixed on September 28th, 2020.",
+        "effect": "1 hit of Y damage, with -800 Crit. (Pop-up: You charged your Chi Bomb to <4X>% of it's power, consuming <10X> MP.)\n • Y is equal to X% of target's current HP before damage modifiers (Boost, Resists, etc.) are applied.\n • X is equal to quarter of the percentage Chi Bomb is charged to (bounded below 6, capped at 25).",
         "manaCost": "0 + 10X",
         "cooldown": "29 - [(Player LUK/50), rounded down]",
         "damageType": "As weapon",
         "element": "Nature",
         "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-ChiBomb.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-ChiBomb-Appearance1.0.png"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-ChiBomb-Appearance1.0.png",
+        "notes": "• Adheres to the global damage cap of SQRT(Level)*100, before damage modifiers (Boost, Resists, etc.) are applied.\n• Previously had the description: Reduces Enemy Health upto 50%\n• Previously was able to charge to 180%; this was fixed on July 3rd, 2020.\n• Previously consumed twice as much MP as intended; this was fixed on September 28th, 2020."
       }
     ]
   },
@@ -1241,7 +1249,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "Trinket has an uncommon drop rate from the quest Pandora's Gauntlet.\nTrinket initially required 10  Fragment of Ethereal Woe; this was lowered to 5 on  February 14th, 2020.\nTrinket was DC tagged on  July 29th, 2022.",
+    "notes": "Trinket has an uncommon drop rate from the quest Pandora's Gauntlet.\nTrinket initially required 10 Fragment of Ethereal Woe; this was lowered to 5 on February 14th, 2020.\nTrinket was DC tagged on July 29th, 2022.",
     "tags": [
       "evi",
       "free"
@@ -1251,15 +1259,16 @@
     "attacks": [
       {
         "name": "The Corrupted Seven",
-        "description": "34 hits x 5.9% damage (200%) \n Self: +5% Boost for 4 turns. \n This skill deals Poison, Darkness, Energy, Fire, Wind, Nature, and Water damage.",
+        "description": "34 hits x 5.9% damage (200%)\n Self: +5% Boost for 4 turns.\n This skill deals Poison, Darkness, Energy, Fire, Wind, Nature, and Water damage.",
         "requirements": "The Corrupted Seven equipped",
-        "effect": "Applies 'Empowered' (+5% Boost) to player for 4 turns inclusive; 34 hits of ~5.9% damage, amounting to 200% damage.\n• Previously had the tooltip: Summon the Corrupted Seven!\n• The following changes were implemented on  June 20th, 2025:\n  • Tooltip was updated.\n  • Cooldown was lowered from 34 to 19.",
+        "effect": "Applies 'Empowered' (+5% Boost) to player for 4 turns inclusive; 34 hits of ~5.9% damage, amounting to 200% damage.",
         "manaCost": "30",
         "cooldown": "19 - [(Player LUK/50), rounded down]",
         "damageType": "As weapon",
         "element": "Poison / Darkness / Energy / Fire / Wind / Nature / Water",
         "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-CorruptedSeven.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-CorruptedSeven-Appearance1.0.png"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-CorruptedSeven-Appearance1.0.png",
+        "notes": "• Previously had the tooltip: Summon the Corrupted Seven!\n• The following changes were implemented on June 20th, 2025:\n • Tooltip was updated.\n • Cooldown was lowered from 34 to 19."
       }
     ]
   },
@@ -1393,15 +1402,16 @@
       "attacks": [
         {
           "name": "Defender Cannon Bombardment",
-          "description": "20 hits of 20% Metal damage (400%) \n PEW PEW DEFENDER CANNON!!!!",
+          "description": "20 hits of 20% Metal damage (400%)\n PEW PEW DEFENDER CANNON!!!!",
           "requirements": "Defender Cannon Mk. (I-IV) equipped",
-          "effect": "20 hits of 20% damage, amounting to 400% damage.\n• Skill underwent several modifications between  March 26th and April 11th, 2021, including having its  total damage raised to 500% (later reverted), and its  MP cost reduced from 25 to 0.\n• Tooltip was updated on  June 20th, 2025.",
+          "effect": "20 hits of 20% damage, amounting to 400% damage.",
           "manaCost": "0",
           "cooldown": "29 - [(Player LUK/50), rounded down]",
           "damageType": "As weapon",
           "element": "Metal",
           "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-DefenderCannonBombardment.png",
-          "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-DefenderCannonBombardment-Appearance1.0.png"
+          "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-DefenderCannonBombardment-Appearance1.0.png",
+          "notes": "• Skill underwent several modifications between March 26th and April 11th, 2021, including having its total damage raised to 500% (later reverted), and its MP cost reduced from 25 to 0.\n• Tooltip was updated on June 20th, 2025."
         }
       ],
       "rarity": "99"
@@ -1433,15 +1443,16 @@
         "attacks": [
           {
             "name": "Defender Cannon Bombardment",
-            "description": "20 hits of 20% Metal damage (400%) \n PEW PEW DEFENDER CANNON!!!!",
+            "description": "20 hits of 20% Metal damage (400%)\n PEW PEW DEFENDER CANNON!!!!",
             "requirements": "Defender Cannon Mk. (I-IV) equipped",
-            "effect": "20 hits of 20% damage, amounting to 400% damage.\n• Skill underwent several modifications between  March 26th and April 11th, 2021, including having its  total damage raised to 500% (later reverted), and its  MP cost reduced from 25 to 0.\n• Tooltip was updated on  June 20th, 2025.",
+            "effect": "20 hits of 20% damage, amounting to 400% damage.",
             "manaCost": "0",
             "cooldown": "29 - [(Player LUK/50), rounded down]",
             "damageType": "As weapon",
             "element": "Metal",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-DefenderCannonBombardment.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-DefenderCannonBombardment-Appearance1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-DefenderCannonBombardment-Appearance1.0.png",
+            "notes": "• Skill underwent several modifications between March 26th and April 11th, 2021, including having its total damage raised to 500% (later reverted), and its MP cost reduced from 25 to 0.\n• Tooltip was updated on June 20th, 2025."
           }
         ],
         "rarity": "99"
@@ -1472,15 +1483,16 @@
         "attacks": [
           {
             "name": "Defender Cannon Bombardment",
-            "description": "20 hits of 20% Metal damage (400%) \n PEW PEW DEFENDER CANNON!!!!",
+            "description": "20 hits of 20% Metal damage (400%)\n PEW PEW DEFENDER CANNON!!!!",
             "requirements": "Defender Cannon Mk. (I-IV) equipped",
-            "effect": "20 hits of 20% damage, amounting to 400% damage.\n• Skill underwent several modifications between  March 26th and April 11th, 2021, including having its  total damage raised to 500% (later reverted), and its  MP cost reduced from 25 to 0.\n• Tooltip was updated on  June 20th, 2025.",
+            "effect": "20 hits of 20% damage, amounting to 400% damage.",
             "manaCost": "0",
             "cooldown": "29 - [(Player LUK/50), rounded down]",
             "damageType": "As weapon",
             "element": "Metal",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-DefenderCannonBombardment.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-DefenderCannonBombardment-Appearance1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-DefenderCannonBombardment-Appearance1.0.png",
+            "notes": "• Skill underwent several modifications between March 26th and April 11th, 2021, including having its total damage raised to 500% (later reverted), and its MP cost reduced from 25 to 0.\n• Tooltip was updated on June 20th, 2025."
           }
         ],
         "rarity": "99"
@@ -1511,15 +1523,16 @@
         "attacks": [
           {
             "name": "Defender Cannon Bombardment",
-            "description": "20 hits of 20% Metal damage (400%) \n PEW PEW DEFENDER CANNON!!!!",
+            "description": "20 hits of 20% Metal damage (400%)\n PEW PEW DEFENDER CANNON!!!!",
             "requirements": "Defender Cannon Mk. (I-IV) equipped",
-            "effect": "20 hits of 20% damage, amounting to 400% damage.\n• Skill underwent several modifications between  March 26th and April 11th, 2021, including having its  total damage raised to 500% (later reverted), and its  MP cost reduced from 25 to 0.\n• Tooltip was updated on  June 20th, 2025.",
+            "effect": "20 hits of 20% damage, amounting to 400% damage.",
             "manaCost": "0",
             "cooldown": "29 - [(Player LUK/50), rounded down]",
             "damageType": "As weapon",
             "element": "Metal",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-DefenderCannonBombardment.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-DefenderCannonBombardment-Appearance1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-DefenderCannonBombardment-Appearance1.0.png",
+            "notes": "• Skill underwent several modifications between March 26th and April 11th, 2021, including having its total damage raised to 500% (later reverted), and its MP cost reduced from 25 to 0.\n• Tooltip was updated on June 20th, 2025."
           }
         ],
         "rarity": "99"
@@ -1550,15 +1563,16 @@
         "attacks": [
           {
             "name": "Defender Cannon Bombardment",
-            "description": "20 hits of 20% Metal damage (400%) \n PEW PEW DEFENDER CANNON!!!!",
+            "description": "20 hits of 20% Metal damage (400%)\n PEW PEW DEFENDER CANNON!!!!",
             "requirements": "Defender Cannon Mk. (I-IV) equipped",
-            "effect": "20 hits of 20% damage, amounting to 400% damage.\n• Skill underwent several modifications between  March 26th and April 11th, 2021, including having its  total damage raised to 500% (later reverted), and its  MP cost reduced from 25 to 0.\n• Tooltip was updated on  June 20th, 2025.",
+            "effect": "20 hits of 20% damage, amounting to 400% damage.",
             "manaCost": "0",
             "cooldown": "29 - [(Player LUK/50), rounded down]",
             "damageType": "As weapon",
             "element": "Metal",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-DefenderCannonBombardment.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-DefenderCannonBombardment-Appearance1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-DefenderCannonBombardment-Appearance1.0.png",
+            "notes": "• Skill underwent several modifications between March 26th and April 11th, 2021, including having its total damage raised to 500% (later reverted), and its MP cost reduced from 25 to 0.\n• Tooltip was updated on June 20th, 2025."
           }
         ],
         "rarity": "99"
@@ -1611,7 +1625,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "(Can be upgraded... coming soon!) excerpt was replaced by (Can be upgraded) on  June 27th, 2025.",
+    "notes": "(Can be upgraded... coming soon!) excerpt was replaced by (Can be upgraded) on June 27th, 2025.",
     "tags": [
       "evi",
       "free"
@@ -1662,15 +1676,16 @@
     "attacks": [
       {
         "name": "We Have Your Back",
-        "description": "3 hits x 66.7% damage (200%) \n Self: +10 Boost for 10 turns. \n With Flame Claw Scythe equipped: 8 hits x 66.7% damage (533%)",
+        "description": "3 hits x 66.7% damage (200%)\n Self: +10 Boost for 10 turns.\n With Flame Claw Scythe equipped: 8 hits x 66.7% damage (533%)",
         "requirements": "DragonFable Friends equipped",
-        "effect": "Applies 'MAGIC!' (+10% Boost) to player for 10 turns inclusive; 3 hits of 66.7% damage, amounting to 201% damage.\n  • If used with any  Flame Claw Scythe equipped: Applies 'MAGIC!' (+10% Boost) to player for 10 turns inclusive; 8 hits of 66.7% Fire damage, amounting to 533% Fire damage.\n• Previously have the tooltip: We all need somebody to lean on.\n• As extended skill requires any Flame Claw Scythe equipped, it is locked to Fire element, otherwise normal skill will use player's weapon element.\n• Originally applied +100% Boost to player for 1 turn inclusive, with each hit dealing 100% damage; this was later lowered to 34%, before being further adjusted to the current values.\n• Tooltips were updated on  June 20th, 2025.",
+        "effect": "Applies 'MAGIC!' (+10% Boost) to player for 10 turns inclusive; 3 hits of 66.7% damage, amounting to 201% damage.\n • If used with any Flame Claw Scythe equipped: Applies 'MAGIC!' (+10% Boost) to player for 10 turns inclusive; 8 hits of 66.7% Fire damage, amounting to 533% Fire damage.",
         "manaCost": "12",
         "cooldown": "29 - [(Player LUK/50), rounded down]",
         "damageType": "As weapon",
         "element": "As weapon / Fire",
         "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-WeHaveYourBack.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-WeHaveYourBack-Appearance1.0.png"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-WeHaveYourBack-Appearance1.0.png",
+        "notes": "• Previously have the tooltip: We all need somebody to lean on.\n• As extended skill requires any Flame Claw Scythe equipped, it is locked to Fire element, otherwise normal skill will use player's weapon element.\n• Originally applied +100% Boost to player for 1 turn inclusive, with each hit dealing 100% damage; this was later lowered to 34%, before being further adjusted to the current values.\n• Tooltips were updated on June 20th, 2025."
       }
     ]
   },
@@ -1749,13 +1764,14 @@
         "name": "Summon Eggsalted",
         "description": "6 hits x 50% Bacon damage (300%)",
         "requirements": "Eggsalted Remnant equipped",
-        "effect": "6 hits of 50% damage, amounting to 300% damage.\n• Previously had the tooltip: Unleash the wrath of the Eggsalted!\n• Tooltip was updated on  June 20th, 2025.",
+        "effect": "6 hits of 50% damage, amounting to 300% damage.",
         "manaCost": "10",
         "cooldown": "19 - [(Player LUK/50), rounded down]",
         "damageType": "As weapon",
         "element": "Bacon",
         "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-SummonEggsalted.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-SummonEggsalted-Appearance1.0.png"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-SummonEggsalted-Appearance1.0.png",
+        "notes": "• Previously had the tooltip: Unleash the wrath of the Eggsalted!\n• Tooltip was updated on June 20th, 2025."
       }
     ]
   },
@@ -1800,15 +1816,16 @@
     "attacks": [
       {
         "name": "Elemental Unity",
-        "description": "17 hits of 11.8% Good damage (200%) \n Target: (On hit) -30 Bonus for 3 turns.",
+        "description": "17 hits of 11.8% Good damage (200%)\n Target: (On hit) -30 Bonus for 3 turns.",
         "requirements": "Elemental Unity Defender (I-XV) equipped",
-        "effect": "17 hits of ~11.8% damage, amounting to 200% damage; applies 'Blinded' (-30 Bonus) to target for 3 turns.\n• Previously had the tooltip: Unify the Elements!\n• The following changes were implemented on  June 20th, 2025:\n  • Tooltip was updated.\n  • Cooldown was lowered from 29 to 19.",
+        "effect": "17 hits of ~11.8% damage, amounting to 200% damage; applies 'Blinded' (-30 Bonus) to target for 3 turns.",
         "manaCost": "10",
         "cooldown": "19 - [(Player LUK/50), rounded down]",
         "damageType": "As weapon",
         "element": "Good",
         "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-ElementalUnity.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-ElementalUnity-Appearance1.0.png"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-ElementalUnity-Appearance1.0.png",
+        "notes": "• Previously had the tooltip: Unify the Elements!\n• The following changes were implemented on June 20th, 2025:\n • Tooltip was updated.\n • Cooldown was lowered from 29 to 19."
       }
     ]
   },
@@ -1935,19 +1952,19 @@
       "attacks": [
         {
           "name": "Elemental Unity",
-          "description": "17 hits of 11.8% Good damage (200%) \n Target: (On hit) -30 Bonus for 3 turns.",
+          "description": "17 hits of 11.8% Good damage (200%)\n Target: (On hit) -30 Bonus for 3 turns.",
           "requirements": "Elemental Unity Defender (I-XV) equipped",
-          "effect": "17 hits of ~11.8% damage, amounting to 200% damage; applies 'Blinded' (-30 Bonus) to target for 3 turns.\n• Previously had the tooltip: Unify the Elements!\n• The following changes were implemented on  June 20th, 2025:\n  • Tooltip was updated.\n  • Cooldown was lowered from 29 to 19.",
+          "effect": "17 hits of ~11.8% damage, amounting to 200% damage; applies 'Blinded' (-30 Bonus) to target for 3 turns.",
           "manaCost": "10",
           "cooldown": "19 - [(Player LUK/50), rounded down]",
           "damageType": "As weapon",
           "element": "Good",
           "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-ElementalUnity.png",
-          "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-ElementalUnity-Appearance1.0.png"
+          "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-ElementalUnity-Appearance1.0.png",
+          "notes": "• Previously had the tooltip: Unify the Elements!\n• The following changes were implemented on June 20th, 2025:\n • Tooltip was updated.\n • Cooldown was lowered from 29 to 19."
         }
       ],
-      "rarity": "77",
-      "notes": "Defender's Medal costs for these items were lowered from 500 to 100 on  August 2nd, 2024."
+      "rarity": "77"
     },
     "levelVariants": [
       {
@@ -1977,15 +1994,16 @@
         "attacks": [
           {
             "name": "Elemental Unity",
-            "description": "17 hits of 11.8% Good damage (200%) \n Target: (On hit) -30 Bonus for 3 turns.",
+            "description": "17 hits of 11.8% Good damage (200%)\n Target: (On hit) -30 Bonus for 3 turns.",
             "requirements": "Elemental Unity Defender (I-XV) equipped",
-            "effect": "17 hits of ~11.8% damage, amounting to 200% damage; applies 'Blinded' (-30 Bonus) to target for 3 turns.\n• Previously had the tooltip: Unify the Elements!\n• The following changes were implemented on  June 20th, 2025:\n  • Tooltip was updated.\n  • Cooldown was lowered from 29 to 19.",
+            "effect": "17 hits of ~11.8% damage, amounting to 200% damage; applies 'Blinded' (-30 Bonus) to target for 3 turns.",
             "manaCost": "10",
             "cooldown": "19 - [(Player LUK/50), rounded down]",
             "damageType": "As weapon",
             "element": "Good",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-ElementalUnity.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-ElementalUnity-Appearance1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-ElementalUnity-Appearance1.0.png",
+            "notes": "• Previously had the tooltip: Unify the Elements!\n• The following changes were implemented on June 20th, 2025:\n • Tooltip was updated.\n • Cooldown was lowered from 29 to 19."
           }
         ],
         "rarity": "77"
@@ -2017,15 +2035,16 @@
         "attacks": [
           {
             "name": "Elemental Unity",
-            "description": "17 hits of 11.8% Good damage (200%) \n Target: (On hit) -30 Bonus for 3 turns.",
+            "description": "17 hits of 11.8% Good damage (200%)\n Target: (On hit) -30 Bonus for 3 turns.",
             "requirements": "Elemental Unity Defender (I-XV) equipped",
-            "effect": "17 hits of ~11.8% damage, amounting to 200% damage; applies 'Blinded' (-30 Bonus) to target for 3 turns.\n• Previously had the tooltip: Unify the Elements!\n• The following changes were implemented on  June 20th, 2025:\n  • Tooltip was updated.\n  • Cooldown was lowered from 29 to 19.",
+            "effect": "17 hits of ~11.8% damage, amounting to 200% damage; applies 'Blinded' (-30 Bonus) to target for 3 turns.",
             "manaCost": "10",
             "cooldown": "19 - [(Player LUK/50), rounded down]",
             "damageType": "As weapon",
             "element": "Good",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-ElementalUnity.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-ElementalUnity-Appearance1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-ElementalUnity-Appearance1.0.png",
+            "notes": "• Previously had the tooltip: Unify the Elements!\n• The following changes were implemented on June 20th, 2025:\n • Tooltip was updated.\n • Cooldown was lowered from 29 to 19."
           }
         ],
         "rarity": "77"
@@ -2057,15 +2076,16 @@
         "attacks": [
           {
             "name": "Elemental Unity",
-            "description": "17 hits of 11.8% Good damage (200%) \n Target: (On hit) -30 Bonus for 3 turns.",
+            "description": "17 hits of 11.8% Good damage (200%)\n Target: (On hit) -30 Bonus for 3 turns.",
             "requirements": "Elemental Unity Defender (I-XV) equipped",
-            "effect": "17 hits of ~11.8% damage, amounting to 200% damage; applies 'Blinded' (-30 Bonus) to target for 3 turns.\n• Previously had the tooltip: Unify the Elements!\n• The following changes were implemented on  June 20th, 2025:\n  • Tooltip was updated.\n  • Cooldown was lowered from 29 to 19.",
+            "effect": "17 hits of ~11.8% damage, amounting to 200% damage; applies 'Blinded' (-30 Bonus) to target for 3 turns.",
             "manaCost": "10",
             "cooldown": "19 - [(Player LUK/50), rounded down]",
             "damageType": "As weapon",
             "element": "Good",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-ElementalUnity.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-ElementalUnity-Appearance1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-ElementalUnity-Appearance1.0.png",
+            "notes": "• Previously had the tooltip: Unify the Elements!\n• The following changes were implemented on June 20th, 2025:\n • Tooltip was updated.\n • Cooldown was lowered from 29 to 19."
           }
         ],
         "rarity": "77"
@@ -2097,15 +2117,16 @@
         "attacks": [
           {
             "name": "Elemental Unity",
-            "description": "17 hits of 11.8% Good damage (200%) \n Target: (On hit) -30 Bonus for 3 turns.",
+            "description": "17 hits of 11.8% Good damage (200%)\n Target: (On hit) -30 Bonus for 3 turns.",
             "requirements": "Elemental Unity Defender (I-XV) equipped",
-            "effect": "17 hits of ~11.8% damage, amounting to 200% damage; applies 'Blinded' (-30 Bonus) to target for 3 turns.\n• Previously had the tooltip: Unify the Elements!\n• The following changes were implemented on  June 20th, 2025:\n  • Tooltip was updated.\n  • Cooldown was lowered from 29 to 19.",
+            "effect": "17 hits of ~11.8% damage, amounting to 200% damage; applies 'Blinded' (-30 Bonus) to target for 3 turns.",
             "manaCost": "10",
             "cooldown": "19 - [(Player LUK/50), rounded down]",
             "damageType": "As weapon",
             "element": "Good",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-ElementalUnity.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-ElementalUnity-Appearance1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-ElementalUnity-Appearance1.0.png",
+            "notes": "• Previously had the tooltip: Unify the Elements!\n• The following changes were implemented on June 20th, 2025:\n • Tooltip was updated.\n • Cooldown was lowered from 29 to 19."
           }
         ],
         "rarity": "77"
@@ -2137,15 +2158,16 @@
         "attacks": [
           {
             "name": "Elemental Unity",
-            "description": "17 hits of 11.8% Good damage (200%) \n Target: (On hit) -30 Bonus for 3 turns.",
+            "description": "17 hits of 11.8% Good damage (200%)\n Target: (On hit) -30 Bonus for 3 turns.",
             "requirements": "Elemental Unity Defender (I-XV) equipped",
-            "effect": "17 hits of ~11.8% damage, amounting to 200% damage; applies 'Blinded' (-30 Bonus) to target for 3 turns.\n• Previously had the tooltip: Unify the Elements!\n• The following changes were implemented on  June 20th, 2025:\n  • Tooltip was updated.\n  • Cooldown was lowered from 29 to 19.",
+            "effect": "17 hits of ~11.8% damage, amounting to 200% damage; applies 'Blinded' (-30 Bonus) to target for 3 turns.",
             "manaCost": "10",
             "cooldown": "19 - [(Player LUK/50), rounded down]",
             "damageType": "As weapon",
             "element": "Good",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-ElementalUnity.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-ElementalUnity-Appearance1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-ElementalUnity-Appearance1.0.png",
+            "notes": "• Previously had the tooltip: Unify the Elements!\n• The following changes were implemented on June 20th, 2025:\n • Tooltip was updated.\n • Cooldown was lowered from 29 to 19."
           }
         ],
         "rarity": "77"
@@ -2177,15 +2199,16 @@
         "attacks": [
           {
             "name": "Elemental Unity",
-            "description": "17 hits of 11.8% Good damage (200%) \n Target: (On hit) -30 Bonus for 3 turns.",
+            "description": "17 hits of 11.8% Good damage (200%)\n Target: (On hit) -30 Bonus for 3 turns.",
             "requirements": "Elemental Unity Defender (I-XV) equipped",
-            "effect": "17 hits of ~11.8% damage, amounting to 200% damage; applies 'Blinded' (-30 Bonus) to target for 3 turns.\n• Previously had the tooltip: Unify the Elements!\n• The following changes were implemented on  June 20th, 2025:\n  • Tooltip was updated.\n  • Cooldown was lowered from 29 to 19.",
+            "effect": "17 hits of ~11.8% damage, amounting to 200% damage; applies 'Blinded' (-30 Bonus) to target for 3 turns.",
             "manaCost": "10",
             "cooldown": "19 - [(Player LUK/50), rounded down]",
             "damageType": "As weapon",
             "element": "Good",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-ElementalUnity.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-ElementalUnity-Appearance1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-ElementalUnity-Appearance1.0.png",
+            "notes": "• Previously had the tooltip: Unify the Elements!\n• The following changes were implemented on June 20th, 2025:\n • Tooltip was updated.\n • Cooldown was lowered from 29 to 19."
           }
         ],
         "rarity": "77"
@@ -2217,15 +2240,16 @@
         "attacks": [
           {
             "name": "Elemental Unity",
-            "description": "17 hits of 11.8% Good damage (200%) \n Target: (On hit) -30 Bonus for 3 turns.",
+            "description": "17 hits of 11.8% Good damage (200%)\n Target: (On hit) -30 Bonus for 3 turns.",
             "requirements": "Elemental Unity Defender (I-XV) equipped",
-            "effect": "17 hits of ~11.8% damage, amounting to 200% damage; applies 'Blinded' (-30 Bonus) to target for 3 turns.\n• Previously had the tooltip: Unify the Elements!\n• The following changes were implemented on  June 20th, 2025:\n  • Tooltip was updated.\n  • Cooldown was lowered from 29 to 19.",
+            "effect": "17 hits of ~11.8% damage, amounting to 200% damage; applies 'Blinded' (-30 Bonus) to target for 3 turns.",
             "manaCost": "10",
             "cooldown": "19 - [(Player LUK/50), rounded down]",
             "damageType": "As weapon",
             "element": "Good",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-ElementalUnity.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-ElementalUnity-Appearance1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-ElementalUnity-Appearance1.0.png",
+            "notes": "• Previously had the tooltip: Unify the Elements!\n• The following changes were implemented on June 20th, 2025:\n • Tooltip was updated.\n • Cooldown was lowered from 29 to 19."
           }
         ],
         "rarity": "77"
@@ -2257,15 +2281,16 @@
         "attacks": [
           {
             "name": "Elemental Unity",
-            "description": "17 hits of 11.8% Good damage (200%) \n Target: (On hit) -30 Bonus for 3 turns.",
+            "description": "17 hits of 11.8% Good damage (200%)\n Target: (On hit) -30 Bonus for 3 turns.",
             "requirements": "Elemental Unity Defender (I-XV) equipped",
-            "effect": "17 hits of ~11.8% damage, amounting to 200% damage; applies 'Blinded' (-30 Bonus) to target for 3 turns.\n• Previously had the tooltip: Unify the Elements!\n• The following changes were implemented on  June 20th, 2025:\n  • Tooltip was updated.\n  • Cooldown was lowered from 29 to 19.",
+            "effect": "17 hits of ~11.8% damage, amounting to 200% damage; applies 'Blinded' (-30 Bonus) to target for 3 turns.",
             "manaCost": "10",
             "cooldown": "19 - [(Player LUK/50), rounded down]",
             "damageType": "As weapon",
             "element": "Good",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-ElementalUnity.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-ElementalUnity-Appearance1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-ElementalUnity-Appearance1.0.png",
+            "notes": "• Previously had the tooltip: Unify the Elements!\n• The following changes were implemented on June 20th, 2025:\n • Tooltip was updated.\n • Cooldown was lowered from 29 to 19."
           }
         ],
         "rarity": "77"
@@ -2297,15 +2322,16 @@
         "attacks": [
           {
             "name": "Elemental Unity",
-            "description": "17 hits of 11.8% Good damage (200%) \n Target: (On hit) -30 Bonus for 3 turns.",
+            "description": "17 hits of 11.8% Good damage (200%)\n Target: (On hit) -30 Bonus for 3 turns.",
             "requirements": "Elemental Unity Defender (I-XV) equipped",
-            "effect": "17 hits of ~11.8% damage, amounting to 200% damage; applies 'Blinded' (-30 Bonus) to target for 3 turns.\n• Previously had the tooltip: Unify the Elements!\n• The following changes were implemented on  June 20th, 2025:\n  • Tooltip was updated.\n  • Cooldown was lowered from 29 to 19.",
+            "effect": "17 hits of ~11.8% damage, amounting to 200% damage; applies 'Blinded' (-30 Bonus) to target for 3 turns.",
             "manaCost": "10",
             "cooldown": "19 - [(Player LUK/50), rounded down]",
             "damageType": "As weapon",
             "element": "Good",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-ElementalUnity.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-ElementalUnity-Appearance1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-ElementalUnity-Appearance1.0.png",
+            "notes": "• Previously had the tooltip: Unify the Elements!\n• The following changes were implemented on June 20th, 2025:\n • Tooltip was updated.\n • Cooldown was lowered from 29 to 19."
           }
         ],
         "rarity": "77"
@@ -2337,15 +2363,16 @@
         "attacks": [
           {
             "name": "Elemental Unity",
-            "description": "17 hits of 11.8% Good damage (200%) \n Target: (On hit) -30 Bonus for 3 turns.",
+            "description": "17 hits of 11.8% Good damage (200%)\n Target: (On hit) -30 Bonus for 3 turns.",
             "requirements": "Elemental Unity Defender (I-XV) equipped",
-            "effect": "17 hits of ~11.8% damage, amounting to 200% damage; applies 'Blinded' (-30 Bonus) to target for 3 turns.\n• Previously had the tooltip: Unify the Elements!\n• The following changes were implemented on  June 20th, 2025:\n  • Tooltip was updated.\n  • Cooldown was lowered from 29 to 19.",
+            "effect": "17 hits of ~11.8% damage, amounting to 200% damage; applies 'Blinded' (-30 Bonus) to target for 3 turns.",
             "manaCost": "10",
             "cooldown": "19 - [(Player LUK/50), rounded down]",
             "damageType": "As weapon",
             "element": "Good",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-ElementalUnity.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-ElementalUnity-Appearance1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-ElementalUnity-Appearance1.0.png",
+            "notes": "• Previously had the tooltip: Unify the Elements!\n• The following changes were implemented on June 20th, 2025:\n • Tooltip was updated.\n • Cooldown was lowered from 29 to 19."
           }
         ],
         "rarity": "77"
@@ -2377,15 +2404,16 @@
         "attacks": [
           {
             "name": "Elemental Unity",
-            "description": "17 hits of 11.8% Good damage (200%) \n Target: (On hit) -30 Bonus for 3 turns.",
+            "description": "17 hits of 11.8% Good damage (200%)\n Target: (On hit) -30 Bonus for 3 turns.",
             "requirements": "Elemental Unity Defender (I-XV) equipped",
-            "effect": "17 hits of ~11.8% damage, amounting to 200% damage; applies 'Blinded' (-30 Bonus) to target for 3 turns.\n• Previously had the tooltip: Unify the Elements!\n• The following changes were implemented on  June 20th, 2025:\n  • Tooltip was updated.\n  • Cooldown was lowered from 29 to 19.",
+            "effect": "17 hits of ~11.8% damage, amounting to 200% damage; applies 'Blinded' (-30 Bonus) to target for 3 turns.",
             "manaCost": "10",
             "cooldown": "19 - [(Player LUK/50), rounded down]",
             "damageType": "As weapon",
             "element": "Good",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-ElementalUnity.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-ElementalUnity-Appearance1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-ElementalUnity-Appearance1.0.png",
+            "notes": "• Previously had the tooltip: Unify the Elements!\n• The following changes were implemented on June 20th, 2025:\n • Tooltip was updated.\n • Cooldown was lowered from 29 to 19."
           }
         ],
         "rarity": "77"
@@ -2417,15 +2445,16 @@
         "attacks": [
           {
             "name": "Elemental Unity",
-            "description": "17 hits of 11.8% Good damage (200%) \n Target: (On hit) -30 Bonus for 3 turns.",
+            "description": "17 hits of 11.8% Good damage (200%)\n Target: (On hit) -30 Bonus for 3 turns.",
             "requirements": "Elemental Unity Defender (I-XV) equipped",
-            "effect": "17 hits of ~11.8% damage, amounting to 200% damage; applies 'Blinded' (-30 Bonus) to target for 3 turns.\n• Previously had the tooltip: Unify the Elements!\n• The following changes were implemented on  June 20th, 2025:\n  • Tooltip was updated.\n  • Cooldown was lowered from 29 to 19.",
+            "effect": "17 hits of ~11.8% damage, amounting to 200% damage; applies 'Blinded' (-30 Bonus) to target for 3 turns.",
             "manaCost": "10",
             "cooldown": "19 - [(Player LUK/50), rounded down]",
             "damageType": "As weapon",
             "element": "Good",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-ElementalUnity.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-ElementalUnity-Appearance1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-ElementalUnity-Appearance1.0.png",
+            "notes": "• Previously had the tooltip: Unify the Elements!\n• The following changes were implemented on June 20th, 2025:\n • Tooltip was updated.\n • Cooldown was lowered from 29 to 19."
           }
         ],
         "rarity": "77"
@@ -2457,15 +2486,16 @@
         "attacks": [
           {
             "name": "Elemental Unity",
-            "description": "17 hits of 11.8% Good damage (200%) \n Target: (On hit) -30 Bonus for 3 turns.",
+            "description": "17 hits of 11.8% Good damage (200%)\n Target: (On hit) -30 Bonus for 3 turns.",
             "requirements": "Elemental Unity Defender (I-XV) equipped",
-            "effect": "17 hits of ~11.8% damage, amounting to 200% damage; applies 'Blinded' (-30 Bonus) to target for 3 turns.\n• Previously had the tooltip: Unify the Elements!\n• The following changes were implemented on  June 20th, 2025:\n  • Tooltip was updated.\n  • Cooldown was lowered from 29 to 19.",
+            "effect": "17 hits of ~11.8% damage, amounting to 200% damage; applies 'Blinded' (-30 Bonus) to target for 3 turns.",
             "manaCost": "10",
             "cooldown": "19 - [(Player LUK/50), rounded down]",
             "damageType": "As weapon",
             "element": "Good",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-ElementalUnity.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-ElementalUnity-Appearance1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-ElementalUnity-Appearance1.0.png",
+            "notes": "• Previously had the tooltip: Unify the Elements!\n• The following changes were implemented on June 20th, 2025:\n • Tooltip was updated.\n • Cooldown was lowered from 29 to 19."
           }
         ],
         "rarity": "77"
@@ -2497,15 +2527,16 @@
         "attacks": [
           {
             "name": "Elemental Unity",
-            "description": "17 hits of 11.8% Good damage (200%) \n Target: (On hit) -30 Bonus for 3 turns.",
+            "description": "17 hits of 11.8% Good damage (200%)\n Target: (On hit) -30 Bonus for 3 turns.",
             "requirements": "Elemental Unity Defender (I-XV) equipped",
-            "effect": "17 hits of ~11.8% damage, amounting to 200% damage; applies 'Blinded' (-30 Bonus) to target for 3 turns.\n• Previously had the tooltip: Unify the Elements!\n• The following changes were implemented on  June 20th, 2025:\n  • Tooltip was updated.\n  • Cooldown was lowered from 29 to 19.",
+            "effect": "17 hits of ~11.8% damage, amounting to 200% damage; applies 'Blinded' (-30 Bonus) to target for 3 turns.",
             "manaCost": "10",
             "cooldown": "19 - [(Player LUK/50), rounded down]",
             "damageType": "As weapon",
             "element": "Good",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-ElementalUnity.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-ElementalUnity-Appearance1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-ElementalUnity-Appearance1.0.png",
+            "notes": "• Previously had the tooltip: Unify the Elements!\n• The following changes were implemented on June 20th, 2025:\n • Tooltip was updated.\n • Cooldown was lowered from 29 to 19."
           }
         ],
         "rarity": "77"
@@ -2537,15 +2568,16 @@
         "attacks": [
           {
             "name": "Elemental Unity",
-            "description": "17 hits of 11.8% Good damage (200%) \n Target: (On hit) -30 Bonus for 3 turns.",
+            "description": "17 hits of 11.8% Good damage (200%)\n Target: (On hit) -30 Bonus for 3 turns.",
             "requirements": "Elemental Unity Defender (I-XV) equipped",
-            "effect": "17 hits of ~11.8% damage, amounting to 200% damage; applies 'Blinded' (-30 Bonus) to target for 3 turns.\n• Previously had the tooltip: Unify the Elements!\n• The following changes were implemented on  June 20th, 2025:\n  • Tooltip was updated.\n  • Cooldown was lowered from 29 to 19.",
+            "effect": "17 hits of ~11.8% damage, amounting to 200% damage; applies 'Blinded' (-30 Bonus) to target for 3 turns.",
             "manaCost": "10",
             "cooldown": "19 - [(Player LUK/50), rounded down]",
             "damageType": "As weapon",
             "element": "Good",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-ElementalUnity.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-ElementalUnity-Appearance1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-ElementalUnity-Appearance1.0.png",
+            "notes": "• Previously had the tooltip: Unify the Elements!\n• The following changes were implemented on June 20th, 2025:\n • Tooltip was updated.\n • Cooldown was lowered from 29 to 19."
           }
         ],
         "rarity": "77"
@@ -2637,15 +2669,16 @@
       "attacks": [
         {
           "name": "Uaanta's Blaster (Amalgam)",
-          "description": "5 hits x 25% Fear damage (125%) \n Target: (On hit) +<x> Health resistance for 5 turns.",
+          "description": "5 hits x 25% Fear damage (125%)\n Target: (On hit) +<x> Health resistance for 5 turns.",
           "requirements": "Exalted Blaster (I, II) (Amalgam) equipped",
-          "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Amalgam Scar' (+X* Health Resist) to target for 5 turns inclusive.\n• Previously had the tooltip: 5 hits of Fear, +Health res.\n• *X is equal to the equipped Trinket's Level/3, rounded normally; thus, potential Health Resist values are 7, 13, 20, and 30 respectively.\n• Tooltip was updated on  June 20th, 2025.",
+          "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Amalgam Scar' (+X* Health Resist) to target for 5 turns inclusive.",
           "manaCost": "0",
           "cooldown": "19 - [(Player LUK/50), rounded down]",
           "damageType": "As weapon",
           "element": "Fear",
           "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Uaanta'sBlaster.png",
-          "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Uaanta'sBlaster-Appearance1.0.png"
+          "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Uaanta'sBlaster-Appearance1.0.png",
+          "notes": "• Previously had the tooltip: 5 hits of Fear, +Health res.\n• *X is equal to the equipped Trinket's Level/3, rounded normally; thus, potential Health Resist values are 7, 13, 20, and 30 respectively.\n• Tooltip was updated on June 20th, 2025."
         }
       ],
       "rarity": "15"
@@ -2676,15 +2709,16 @@
         "attacks": [
           {
             "name": "Uaanta's Blaster (Amalgam)",
-            "description": "5 hits x 25% Fear damage (125%) \n Target: (On hit) +<x> Health resistance for 5 turns.",
+            "description": "5 hits x 25% Fear damage (125%)\n Target: (On hit) +<x> Health resistance for 5 turns.",
             "requirements": "Exalted Blaster (I, II) (Amalgam) equipped",
-            "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Amalgam Scar' (+X* Health Resist) to target for 5 turns inclusive.\n• Previously had the tooltip: 5 hits of Fear, +Health res.\n• *X is equal to the equipped Trinket's Level/3, rounded normally; thus, potential Health Resist values are 7, 13, 20, and 30 respectively.\n• Tooltip was updated on  June 20th, 2025.",
+            "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Amalgam Scar' (+X* Health Resist) to target for 5 turns inclusive.",
             "manaCost": "0",
             "cooldown": "19 - [(Player LUK/50), rounded down]",
             "damageType": "As weapon",
             "element": "Fear",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Uaanta'sBlaster.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Uaanta'sBlaster-Appearance1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Uaanta'sBlaster-Appearance1.0.png",
+            "notes": "• Previously had the tooltip: 5 hits of Fear, +Health res.\n• *X is equal to the equipped Trinket's Level/3, rounded normally; thus, potential Health Resist values are 7, 13, 20, and 30 respectively.\n• Tooltip was updated on June 20th, 2025."
           }
         ],
         "rarity": "15"
@@ -2714,15 +2748,16 @@
         "attacks": [
           {
             "name": "Uaanta's Blaster (Amalgam)",
-            "description": "5 hits x 25% Fear damage (125%) \n Target: (On hit) +<x> Health resistance for 5 turns.",
+            "description": "5 hits x 25% Fear damage (125%)\n Target: (On hit) +<x> Health resistance for 5 turns.",
             "requirements": "Exalted Blaster (I, II) (Amalgam) equipped",
-            "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Amalgam Scar' (+X* Health Resist) to target for 5 turns inclusive.\n• Previously had the tooltip: 5 hits of Fear, +Health res.\n• *X is equal to the equipped Trinket's Level/3, rounded normally; thus, potential Health Resist values are 7, 13, 20, and 30 respectively.\n• Tooltip was updated on  June 20th, 2025.",
+            "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Amalgam Scar' (+X* Health Resist) to target for 5 turns inclusive.",
             "manaCost": "0",
             "cooldown": "19 - [(Player LUK/50), rounded down]",
             "damageType": "As weapon",
             "element": "Fear",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Uaanta'sBlaster.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Uaanta'sBlaster-Appearance1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Uaanta'sBlaster-Appearance1.0.png",
+            "notes": "• Previously had the tooltip: 5 hits of Fear, +Health res.\n• *X is equal to the equipped Trinket's Level/3, rounded normally; thus, potential Health Resist values are 7, 13, 20, and 30 respectively.\n• Tooltip was updated on June 20th, 2025."
           }
         ],
         "rarity": "15"
@@ -2778,15 +2813,16 @@
       "attacks": [
         {
           "name": "Uaanta's Blaster (Destiny)",
-          "description": "5 hits x 25% Good damage (125%) \n Target: -<x> Bonus for 5 turns.",
+          "description": "5 hits x 25% Good damage (125%)\n Target: -<x> Bonus for 5 turns.",
           "requirements": "Exalted Blaster (I, II) (Destiny) equipped",
-          "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Destiny's Command' (-X* Bonus) to target for 4 turns.\n• Previously had the tooltip: 5 hits of Good, -Bonus.\n• *X is equal to the equipped Trinket's Level/3, rounded normally; thus, potential Bonus values are -7, -13, -20, and -30 respectively.\n• Tooltip was updated on  June 20th, 2025.",
+          "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Destiny's Command' (-X* Bonus) to target for 4 turns.",
           "manaCost": "0",
           "cooldown": "9 - [(Player LUK/50), rounded down]",
           "damageType": "As weapon",
           "element": "Good",
           "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Uaanta'sBlasterDestiny.png",
-          "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Uaanta'sBlasterDestiny-Appearance1.0.png"
+          "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Uaanta'sBlasterDestiny-Appearance1.0.png",
+          "notes": "• Previously had the tooltip: 5 hits of Good, -Bonus.\n• *X is equal to the equipped Trinket's Level/3, rounded normally; thus, potential Bonus values are -7, -13, -20, and -30 respectively.\n• Tooltip was updated on June 20th, 2025."
         }
       ],
       "rarity": "15"
@@ -2817,15 +2853,16 @@
         "attacks": [
           {
             "name": "Uaanta's Blaster (Destiny)",
-            "description": "5 hits x 25% Good damage (125%) \n Target: -<x> Bonus for 5 turns.",
+            "description": "5 hits x 25% Good damage (125%)\n Target: -<x> Bonus for 5 turns.",
             "requirements": "Exalted Blaster (I, II) (Destiny) equipped",
-            "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Destiny's Command' (-X* Bonus) to target for 4 turns.\n• Previously had the tooltip: 5 hits of Good, -Bonus.\n• *X is equal to the equipped Trinket's Level/3, rounded normally; thus, potential Bonus values are -7, -13, -20, and -30 respectively.\n• Tooltip was updated on  June 20th, 2025.",
+            "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Destiny's Command' (-X* Bonus) to target for 4 turns.",
             "manaCost": "0",
             "cooldown": "9 - [(Player LUK/50), rounded down]",
             "damageType": "As weapon",
             "element": "Good",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Uaanta'sBlasterDestiny.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Uaanta'sBlasterDestiny-Appearance1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Uaanta'sBlasterDestiny-Appearance1.0.png",
+            "notes": "• Previously had the tooltip: 5 hits of Good, -Bonus.\n• *X is equal to the equipped Trinket's Level/3, rounded normally; thus, potential Bonus values are -7, -13, -20, and -30 respectively.\n• Tooltip was updated on June 20th, 2025."
           }
         ],
         "rarity": "15"
@@ -2855,15 +2892,16 @@
         "attacks": [
           {
             "name": "Uaanta's Blaster (Destiny)",
-            "description": "5 hits x 25% Good damage (125%) \n Target: -<x> Bonus for 5 turns.",
+            "description": "5 hits x 25% Good damage (125%)\n Target: -<x> Bonus for 5 turns.",
             "requirements": "Exalted Blaster (I, II) (Destiny) equipped",
-            "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Destiny's Command' (-X* Bonus) to target for 4 turns.\n• Previously had the tooltip: 5 hits of Good, -Bonus.\n• *X is equal to the equipped Trinket's Level/3, rounded normally; thus, potential Bonus values are -7, -13, -20, and -30 respectively.\n• Tooltip was updated on  June 20th, 2025.",
+            "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Destiny's Command' (-X* Bonus) to target for 4 turns.",
             "manaCost": "0",
             "cooldown": "9 - [(Player LUK/50), rounded down]",
             "damageType": "As weapon",
             "element": "Good",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Uaanta'sBlasterDestiny.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Uaanta'sBlasterDestiny-Appearance1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Uaanta'sBlasterDestiny-Appearance1.0.png",
+            "notes": "• Previously had the tooltip: 5 hits of Good, -Bonus.\n• *X is equal to the equipped Trinket's Level/3, rounded normally; thus, potential Bonus values are -7, -13, -20, and -30 respectively.\n• Tooltip was updated on June 20th, 2025."
           }
         ],
         "rarity": "15"
@@ -2919,15 +2957,16 @@
       "attacks": [
         {
           "name": "Uaanta's Blaster (Doom)",
-          "description": "5 hits x 25% Evil damage (125%) \n Target: -<x> Avoidance for 5 turns.",
+          "description": "5 hits x 25% Evil damage (125%)\n Target: -<x> Avoidance for 5 turns.",
           "requirements": "Exalted Blaster (I, II) (Doom) equipped",
-          "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Doom's Ambition' (-X* Melee/Pierce/Magic Avoidance) to target for 5 turns inclusive.\n• Previously had the tooltip: 5 hits of Evil, -Avd.\n• *X is equal to the equipped Trinket's Level/3, rounded normally; thus, potential Avoidance values are -7, -13, -20, and -30 respectively.\n• Tooltip was updated on  June 20th, 2025.",
+          "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Doom's Ambition' (-X* Melee/Pierce/Magic Avoidance) to target for 5 turns inclusive.",
           "manaCost": "0",
           "cooldown": "9 - [(Player LUK/50), rounded down]",
           "damageType": "As weapon",
           "element": "Evil",
           "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Uaanta'sBlasterDoom.png",
-          "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Uaanta'sBlasterDoom-Appearance1.0.png"
+          "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Uaanta'sBlasterDoom-Appearance1.0.png",
+          "notes": "• Previously had the tooltip: 5 hits of Evil, -Avd.\n• *X is equal to the equipped Trinket's Level/3, rounded normally; thus, potential Avoidance values are -7, -13, -20, and -30 respectively.\n• Tooltip was updated on June 20th, 2025."
         }
       ],
       "rarity": "15"
@@ -2958,15 +2997,16 @@
         "attacks": [
           {
             "name": "Uaanta's Blaster (Doom)",
-            "description": "5 hits x 25% Evil damage (125%) \n Target: -<x> Avoidance for 5 turns.",
+            "description": "5 hits x 25% Evil damage (125%)\n Target: -<x> Avoidance for 5 turns.",
             "requirements": "Exalted Blaster (I, II) (Doom) equipped",
-            "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Doom's Ambition' (-X* Melee/Pierce/Magic Avoidance) to target for 5 turns inclusive.\n• Previously had the tooltip: 5 hits of Evil, -Avd.\n• *X is equal to the equipped Trinket's Level/3, rounded normally; thus, potential Avoidance values are -7, -13, -20, and -30 respectively.\n• Tooltip was updated on  June 20th, 2025.",
+            "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Doom's Ambition' (-X* Melee/Pierce/Magic Avoidance) to target for 5 turns inclusive.",
             "manaCost": "0",
             "cooldown": "9 - [(Player LUK/50), rounded down]",
             "damageType": "As weapon",
             "element": "Evil",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Uaanta'sBlasterDoom.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Uaanta'sBlasterDoom-Appearance1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Uaanta'sBlasterDoom-Appearance1.0.png",
+            "notes": "• Previously had the tooltip: 5 hits of Evil, -Avd.\n• *X is equal to the equipped Trinket's Level/3, rounded normally; thus, potential Avoidance values are -7, -13, -20, and -30 respectively.\n• Tooltip was updated on June 20th, 2025."
           }
         ],
         "rarity": "15"
@@ -2996,15 +3036,16 @@
         "attacks": [
           {
             "name": "Uaanta's Blaster (Doom)",
-            "description": "5 hits x 25% Evil damage (125%) \n Target: -<x> Avoidance for 5 turns.",
+            "description": "5 hits x 25% Evil damage (125%)\n Target: -<x> Avoidance for 5 turns.",
             "requirements": "Exalted Blaster (I, II) (Doom) equipped",
-            "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Doom's Ambition' (-X* Melee/Pierce/Magic Avoidance) to target for 5 turns inclusive.\n• Previously had the tooltip: 5 hits of Evil, -Avd.\n• *X is equal to the equipped Trinket's Level/3, rounded normally; thus, potential Avoidance values are -7, -13, -20, and -30 respectively.\n• Tooltip was updated on  June 20th, 2025.",
+            "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Doom's Ambition' (-X* Melee/Pierce/Magic Avoidance) to target for 5 turns inclusive.",
             "manaCost": "0",
             "cooldown": "9 - [(Player LUK/50), rounded down]",
             "damageType": "As weapon",
             "element": "Evil",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Uaanta'sBlasterDoom.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Uaanta'sBlasterDoom-Appearance1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Uaanta'sBlasterDoom-Appearance1.0.png",
+            "notes": "• Previously had the tooltip: 5 hits of Evil, -Avd.\n• *X is equal to the equipped Trinket's Level/3, rounded normally; thus, potential Avoidance values are -7, -13, -20, and -30 respectively.\n• Tooltip was updated on June 20th, 2025."
           }
         ],
         "rarity": "15"
@@ -3059,7 +3100,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "Equipping this trinket displays  ,  , and   fireworks above the player.",
+    "notes": "Equipping this trinket displays blue, red, and green fireworks above the player.",
     "tags": [
       "lig",
       "gold"
@@ -3072,13 +3113,14 @@
         "name": "Fireworks!",
         "description": "+30 to Critical for 5 rounds.",
         "requirements": "Fireworks equipped",
-        "effect": "Applies +30 Crit to player for 6 turns inclusive.\n• Appearance will display as long as the trinket is equipped, regardless if the skill is used or not, including out of combat.\n• Previously had the description: +3 to Critical for 5 rounds.",
+        "effect": "Applies +30 Crit to player for 6 turns inclusive.",
         "manaCost": "0",
         "cooldown": "7 - [(Player LUK/50), rounded down]",
         "damageType": "N/A",
         "element": "N/A",
         "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Fireworks.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Fireworks-Appearance1.0.png"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Fireworks-Appearance1.0.png",
+        "notes": "• Appearance will display as long as the trinket is equipped, regardless if the skill is used or not, including out of combat.\n• Previously had the description: +3 to Critical for 5 rounds."
       }
     ]
   },
@@ -3308,13 +3350,14 @@
         "name": "Coffee",
         "description": "+10 Boost",
         "requirements": "Fry's Coffee equipped",
-        "effect": "Applies 'COFFEEEEEE' (+10% Boost) to player for 6 turns inclusive.\n• Previously had the description: +50% Dmg",
+        "effect": "Applies 'COFFEEEEEE' (+10% Boost) to player for 6 turns inclusive.",
         "manaCost": "0",
         "cooldown": "29 - [(Player LUK/50), rounded down]",
         "damageType": "N/A",
         "element": "N/A",
         "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-FrysCoffee.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-FrysCoffee-Appearance1.0.png"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-FrysCoffee-Appearance1.0.png",
+        "notes": "• Previously had the description: +50% Dmg"
       }
     ]
   },
@@ -3417,7 +3460,7 @@
         "daRequired": true
       }
     ],
-    "notes": "The following changes were implemented on  September 1st, 2023:\n  • Previously had the description: The ancient scrolls had a passage on how to summon an illusionary version of the mighty Honda. The illusion is so strong that it will attack and poison your foe! This item requires a Dragon Amulet.\n  • Trinket's name was changed from 'Summon Honda' to 'Honda's Legacy'.\n  • Trinket's Resist was lowered from +25 Poison to +10 Poison.\n  • Trinket's ability was replaced from  Summon Honda to  Summon Kunai (1).",
+    "notes": "The following changes were implemented on September 1st, 2023:\n  • Previously had the description: The ancient scrolls had a passage on how to summon an illusionary version of the mighty Honda. The illusion is so strong that it will attack and poison your foe! This item requires a Dragon Amulet.\n  • Trinket's name was changed from 'Summon Honda' to 'Honda's Legacy'.\n  • Trinket's Resist was lowered from +25 Poison to +10 Poison.\n  • Trinket's ability was replaced from Summon Honda to Summon Kunai (1).",
     "tags": [
       "poi",
       "gold"
@@ -3426,15 +3469,16 @@
     "attacks": [
       {
         "name": "Summon Kunai",
-        "description": "4 hits x 30% damage (120%) \n Target: (On hit) 25% Poison DoT for 8 turns. \n Burst Venom! (Enhances Shadow Seeker)",
+        "description": "4 hits x 30% damage (120%)\n Target: (On hit) 25% Poison DoT for 8 turns.\n Burst Venom! (Enhances Shadow Seeker)",
         "requirements": "Honda's Legacy equipped",
-        "effect": "4 hits of 30% damage, amounting to 120% damage; applies 'Orochi Venom', a 25% Magic Poison DoT effect, to target for 8 turns.\n• This version of Summon Kunai replaced  Summon Honda on  September 1st, 2023.",
+        "effect": "4 hits of 30% damage, amounting to 120% damage; applies 'Orochi Venom', a 25% Magic Poison DoT effect, to target for 8 turns.",
         "manaCost": "0",
         "cooldown": "12 - [(Player LUK/50), rounded down]",
         "damageType": "As weapon",
         "element": "Poison",
         "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-SummonKunai.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-SummonKunai1-Appearance1.0.png"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-SummonKunai1-Appearance1.0.png",
+        "notes": "• This version of Summon Kunai replaced Summon Honda on September 1st, 2023."
       }
     ]
   },
@@ -3476,15 +3520,16 @@
     "attacks": [
       {
         "name": "Ice Gem's Strike",
-        "description": "1 hit of 100% Ice damage \n Target: (On hit) -20 Ice for 10 turns.",
+        "description": "1 hit of 100% Ice damage\n Target: (On hit) -20 Ice for 10 turns.",
         "requirements": "Ice Gem equipped",
-        "effect": "1 hit of 100% damage; applies 'Ice Gem' (-20 Ice Resist) to target for 10 turns inclusive.\n• Previously had the tooltips: -20 To Ice and -20 Ice for 10 turns.\n• The following changes were updated on  June 27th, 2025:\n  • Tooltips were updated.\n  • Cooldown was lowered from 29 to 19.",
+        "effect": "1 hit of 100% damage; applies 'Ice Gem' (-20 Ice Resist) to target for 10 turns inclusive.",
         "manaCost": "50",
         "cooldown": "19 - [(Player LUK/50), rounded down]",
         "damageType": "As weapon",
         "element": "Ice",
         "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-IceGemsStrike.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-IceGemsStrike-Appearance1.0.png"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-IceGemsStrike-Appearance1.0.png",
+        "notes": "• Previously had the tooltips: -20 To Ice and -20 Ice for 10 turns.\n• The following changes were updated on June 27th, 2025:\n • Tooltips were updated.\n • Cooldown was lowered from 29 to 19."
       }
     ]
   },
@@ -3528,13 +3573,14 @@
         "name": "Ice Princess Tear",
         "description": "-20 Fire for 10 turns.",
         "requirements": "Ice Princess Tear equipped",
-        "effect": "1 hit of 100% damage; applies 'Ice Princess Tear' (-20 Fire Resist) to target for 10 turns inclusive.\n• Previously had the description: -20 To Ice",
+        "effect": "1 hit of 100% damage; applies 'Ice Princess Tear' (-20 Fire Resist) to target for 10 turns inclusive.",
         "manaCost": "50",
         "cooldown": "29 - [(Player LUK/50), rounded down]",
         "damageType": "As weapon",
         "element": "Ice",
         "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-IceGemsStrike.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-IcePrincessTear-Appearance1.0.png"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-IcePrincessTear-Appearance1.0.png",
+        "notes": "• Previously had the description: -20 To Ice"
       }
     ]
   },
@@ -3581,13 +3627,14 @@
         "name": "Unexpected Proposal",
         "description": "1 turn stun",
         "requirements": "Indecent Proposal equipped",
-        "effect": "1 hit of 100% stat damage; applies 'Stun' to target, stunning it for 1 turn.\n• The following changes were implemented on  February 3rd, 2024:\n  • Previously had the tooltip: 2 turn stun\n  • Skill was lowered from  automatically  applied 'Stun' to target, stunning it for 2 turns to 1 hit of 100% stat damage, applying 'Stun' to target, stunning it for 1 turn.\n  • A '*Resisted*' message was previously displayed if the target resists stun due to its Immobility value.",
+        "effect": "1 hit of 100% stat damage; applies 'Stun' to target, stunning it for 1 turn.",
         "manaCost": "0",
         "cooldown": "29 - [(Player LUK/50), rounded down]",
         "damageType": "As weapon",
         "element": "Metal",
         "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-UnexpectedProposal.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-UnexpectedProposal-Appearance1.0.png"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-UnexpectedProposal-Appearance1.0.png",
+        "notes": "• The following changes were implemented on February 3rd, 2024:\n • Previously had the tooltip: 2 turn stun\n • Skill was lowered from automatically applied 'Stun' to target, stunning it for 2 turns to 1 hit of 100% stat damage, applying 'Stun' to target, stunning it for 1 turn.\n • A '*Resisted*' message was previously displayed if the target resists stun due to its Immobility value."
       }
     ]
   },
@@ -4059,7 +4106,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "Item was originally a Resource; was upgraded to an equippable Trinket (without an ability) on  April 10th, 2020.",
+    "notes": "Item was originally a Resource; was upgraded to an equippable Trinket (without an ability) on April 10th, 2020.",
     "tags": [
       "dar",
       "merge"
@@ -4310,7 +4357,7 @@
         "dmRequired": true
       }
     ],
-    "notes": "Equipping this trinket displays animated stars over the  , which appear, rise, and disappear with ten different colors.",
+    "notes": "Equipping this trinket displays animated stars over the player, which appear, rise, and disappear with ten different colors.",
     "tags": [
       "ice",
       "merge"
@@ -4477,13 +4524,14 @@
         "name": "Medewwsa's Stare",
         "description": "2-turn stun",
         "requirements": "Medewwsa's Head equipped",
-        "effect": "1 hit of 100% damage; 50% chance to apply 'Stun' to target, stunning it for 2 turns.\n• A '*Resisted*' message will display if the stun chance fails, but not if the target resists a successful stun chance due to its Immobility value.",
+        "effect": "1 hit of 100% damage; 50% chance to apply 'Stun' to target, stunning it for 2 turns.",
         "manaCost": "0",
         "cooldown": "29 - [(Player LUK/50), rounded down]",
         "damageType": "As weapon",
         "element": "Stone",
         "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-MedewwsasStare.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-MedewwsasStare-Appearance1.0.png"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-MedewwsasStare-Appearance1.0.png",
+        "notes": "• A '*Resisted*' message will display if the stun chance fails, but not if the target resists a successful stun chance due to its Immobility value."
       }
     ]
   },
@@ -4527,13 +4575,14 @@
         "name": "Mirror Eye",
         "description": "Use your enemy's power against them!",
         "requirements": "Mirror Eye Trinket equipped, successful attack from foe where the last hit connects to unlock",
-        "effect": "Applies +15% Boost to player for 4 turns inclusive.\n• Previously had the description: Power up after taking damage!",
+        "effect": "Applies +15% Boost to player for 4 turns inclusive.",
         "manaCost": "20",
         "cooldown": "9 - [(Player LUK/50), rounded down]",
         "damageType": "N/A",
         "element": "N/A",
         "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-MirrorEye.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-MirrorEye-Appearance1.0.png"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-MirrorEye-Appearance1.0.png",
+        "notes": "• Previously had the description: Power up after taking damage!"
       }
     ]
   },
@@ -4630,13 +4679,14 @@
         "name": "Bubbles",
         "description": "Pretty Bubbles!",
         "requirements": "Not-So-Tiny Bubbles equipped",
-        "effect": "Applies 'Distracted by bubbles' (-30 Bonus) to target for 4 turns.\n• Bubbles (1) previously applied -50 Bonus to target for 4 turns, with a cooldown of 5 turns.\n• Bubbles (1)'s skill icon's appearance was updated on  November 17th, 2023, replacing its  old appearance.",
+        "effect": "Applies 'Distracted by bubbles' (-30 Bonus) to target for 4 turns.",
         "manaCost": "0",
         "cooldown": "9 - [(Player LUK/50), rounded down]",
         "damageType": "N/A",
         "element": "N/A",
         "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Bubbles2.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Bubbles.png"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Bubbles.png",
+        "notes": "• Bubbles (1) previously applied -50 Bonus to target for 4 turns, with a cooldown of 5 turns.\n• Bubbles (1)'s skill icon's appearance was updated on November 17th, 2023, replacing its old appearance."
       }
     ]
   },
@@ -4906,7 +4956,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "Equipping this trinket displays an animated   over the  , color-custom to the player's trim color.",
+    "notes": "Equipping this trinket displays an animated radiant shimmer over the player, color-custom to the player's trim color.",
     "tags": [
       "lig",
       "dc"
@@ -4919,13 +4969,14 @@
         "name": "Auralight",
         "description": "+25 Boost, -300 Avd, for 5 turns",
         "requirements": "Radiant Shimmer equipped",
-        "effect": "Applies +25% Boost and -300 Melee/Pierce/Magic Avoidance to player for 5 turns inclusive.\n• Appearance will display as long as the trinket is equipped, regardless if the skill is used or not, including out of combat.",
+        "effect": "Applies +25% Boost and -300 Melee/Pierce/Magic Avoidance to player for 5 turns inclusive.",
         "manaCost": "0",
         "cooldown": "29 - [(Player LUK/50), rounded down]",
         "damageType": "N/A",
         "element": "N/A",
         "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Auralight.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Auralight-Appearance1.0.png"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Auralight-Appearance1.0.png",
+        "notes": "• Appearance will display as long as the trinket is equipped, regardless if the skill is used or not, including out of combat."
       }
     ]
   },
@@ -4961,18 +5012,18 @@
       "attacks": [
         {
           "name": "Summon Young Dragon",
-          "description": "3 hits x 75% damage (225%) \n Self: 1% max HP HoT for 5 turns. Target: (On hit) 25% DoT for 5 turns. \n This attack has +50 Bonus and +200 Crit. Damage and DoT element based on dragon's element.",
+          "description": "3 hits x 75% damage (225%)\n Self: 1% max HP HoT for 5 turns. Target: (On hit) 25% DoT for 5 turns.\n This attack has +50 Bonus and +200 Crit. Damage and DoT element based on dragon's element.",
           "requirements": "Relic of When - Draconic Growth (EX) equipped",
-          "effect": "Applies '<Dragon>'s Boon', a HoT equal to 1% of the player's max HP, to player for 5 turns; 3 hits of 75% damage, amounting to 225% damage, with +50 Bonus and +200 Crit; applies '<Dragon>'s Bane', a 25% Melee DoT effect, to target for 5 turns.\n• Draco is the default name for all status names from this trinket skill; they are linked to the player's dragon's name from  Dragon Customization.\n• <Dragon>'s appearance is linked to the player's dragon's Head, Wing, and Tail Styles from  Dragon Customization, as well as their current color palette from  Dragon Customization /  Armor Paint Room.\n• <Dragon>'s attacks (including breath animation and '<Dragon>'s Bane' DoT) and Body (including Primal Tattoos via Dragon Primalization) are color-synchronized to player's dragon's element via  Dragon Elementization; this skill can only have 1 out of 10 available elements (Bacon, Darkness, Energy, Fire, Ice, Light, Nature, Stone, Water, and Wind).\n  • Array of breath attacks:  Bacon,  Darkness,  Energy,  Fire,  Ice,  Light,  Nature,  Stone,  Water,  Wind\n• If <Dragon> was equipped, either as a  pet or a  guest, <Dragon> will temporarily disappear upon using the trinket skill.",
+          "effect": "Applies '<Dragon>'s Boon', a HoT equal to 1% of the player's max HP, to player for 5 turns; 3 hits of 75% damage, amounting to 225% damage, with +50 Bonus and +200 Crit; applies '<Dragon>'s Bane', a 25% Melee DoT effect, to target for 5 turns.",
           "manaCost": "50",
           "cooldown": "19 - [(Player LUK/50), rounded down]",
           "damageType": "As weapon",
           "element": "As dragon",
           "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-SummonYoungDragon.png",
-          "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-SummonYoungDragon-Appearance1.0.png"
+          "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-SummonYoungDragon-Appearance1.0.png",
+          "notes": "• Draco is the default name for all status names from this trinket skill; they are linked to the player's dragon's name from Dragon Customization.\n• <Dragon>'s appearance is linked to the player's dragon's Head, Wing, and Tail Styles from Dragon Customization, as well as their current color palette from Dragon Customization / Armor Paint Room.\n• <Dragon>'s attacks (including breath animation and '<Dragon>'s Bane' DoT) and Body (including Primal Tattoos via Dragon Primalization) are color-synchronized to player's dragon's element via Dragon Elementization; this skill can only have 1 out of 10 available elements (Bacon, Darkness, Energy, Fire, Ice, Light, Nature, Stone, Water, and Wind).\n • Array of breath attacks: Bacon, Darkness, Energy, Fire, Ice, Light, Nature, Stone, Water, Wind\n• If <Dragon> was equipped, either as a pet or a guest, <Dragon> will temporarily disappear upon using the trinket skill."
         }
-      ],
-      "notes": "For a short amount of time on  June 27th, 2025, Relic of When - Draconic Growth was a guaranteed drop from  Artax & Shogun."
+      ]
     },
     "levelVariants": [
       {
@@ -4998,19 +5049,20 @@
         "attacks": [
           {
             "name": "Summon Young Dragon",
-            "description": "3 hits x 75% damage (225%) \n Self: 1% max HP HoT for 5 turns. Target: (On hit) 25% DoT for 5 turns. \n This attack has +50 Bonus and +200 Crit. Damage and DoT element based on dragon's element.",
+            "description": "3 hits x 75% damage (225%)\n Self: 1% max HP HoT for 5 turns. Target: (On hit) 25% DoT for 5 turns.\n This attack has +50 Bonus and +200 Crit. Damage and DoT element based on dragon's element.",
             "requirements": "Relic of When - Draconic Growth (EX) equipped",
-            "effect": "Applies '<Dragon>'s Boon', a HoT equal to 1% of the player's max HP, to player for 5 turns; 3 hits of 75% damage, amounting to 225% damage, with +50 Bonus and +200 Crit; applies '<Dragon>'s Bane', a 25% Melee DoT effect, to target for 5 turns.\n• Draco is the default name for all status names from this trinket skill; they are linked to the player's dragon's name from  Dragon Customization.\n• <Dragon>'s appearance is linked to the player's dragon's Head, Wing, and Tail Styles from  Dragon Customization, as well as their current color palette from  Dragon Customization /  Armor Paint Room.\n• <Dragon>'s attacks (including breath animation and '<Dragon>'s Bane' DoT) and Body (including Primal Tattoos via Dragon Primalization) are color-synchronized to player's dragon's element via  Dragon Elementization; this skill can only have 1 out of 10 available elements (Bacon, Darkness, Energy, Fire, Ice, Light, Nature, Stone, Water, and Wind).\n  • Array of breath attacks:  Bacon,  Darkness,  Energy,  Fire,  Ice,  Light,  Nature,  Stone,  Water,  Wind\n• If <Dragon> was equipped, either as a  pet or a  guest, <Dragon> will temporarily disappear upon using the trinket skill.",
+            "effect": "Applies '<Dragon>'s Boon', a HoT equal to 1% of the player's max HP, to player for 5 turns; 3 hits of 75% damage, amounting to 225% damage, with +50 Bonus and +200 Crit; applies '<Dragon>'s Bane', a 25% Melee DoT effect, to target for 5 turns.",
             "manaCost": "50",
             "cooldown": "19 - [(Player LUK/50), rounded down]",
             "damageType": "As weapon",
             "element": "As dragon",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-SummonYoungDragon.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-SummonYoungDragon-Appearance1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-SummonYoungDragon-Appearance1.0.png",
+            "notes": "• Draco is the default name for all status names from this trinket skill; they are linked to the player's dragon's name from Dragon Customization.\n• <Dragon>'s appearance is linked to the player's dragon's Head, Wing, and Tail Styles from Dragon Customization, as well as their current color palette from Dragon Customization / Armor Paint Room.\n• <Dragon>'s attacks (including breath animation and '<Dragon>'s Bane' DoT) and Body (including Primal Tattoos via Dragon Primalization) are color-synchronized to player's dragon's element via Dragon Elementization; this skill can only have 1 out of 10 available elements (Bacon, Darkness, Energy, Fire, Ice, Light, Nature, Stone, Water, and Wind).\n • Array of breath attacks: Bacon, Darkness, Energy, Fire, Ice, Light, Nature, Stone, Water, Wind\n• If <Dragon> was equipped, either as a pet or a guest, <Dragon> will temporarily disappear upon using the trinket skill."
           }
         ],
         "rarity": "10",
-        "notes": "For a short amount of time on  June 27th, 2025, Relic of When - Draconic Growth was a guaranteed drop from  Artax & Shogun."
+        "notes": "For a short amount of time on June 27th, 2025, Relic of When - Draconic Growth was a guaranteed drop from Artax & Shogun."
       },
       {
         "levelNumber": 70,
@@ -5038,15 +5090,16 @@
         "attacks": [
           {
             "name": "Summon Young Dragon",
-            "description": "3 hits x 75% damage (225%) \n Self: 1% max HP HoT for 5 turns. Target: (On hit) 25% DoT for 5 turns. \n This attack has +50 Bonus and +200 Crit. Damage and DoT element based on dragon's element.",
+            "description": "3 hits x 75% damage (225%)\n Self: 1% max HP HoT for 5 turns. Target: (On hit) 25% DoT for 5 turns.\n This attack has +50 Bonus and +200 Crit. Damage and DoT element based on dragon's element.",
             "requirements": "Relic of When - Draconic Growth (EX) equipped",
-            "effect": "Applies '<Dragon>'s Boon', a HoT equal to 1% of the player's max HP, to player for 5 turns; 3 hits of 75% damage, amounting to 225% damage, with +50 Bonus and +200 Crit; applies '<Dragon>'s Bane', a 25% Melee DoT effect, to target for 5 turns.\n• Draco is the default name for all status names from this trinket skill; they are linked to the player's dragon's name from  Dragon Customization.\n• <Dragon>'s appearance is linked to the player's dragon's Head, Wing, and Tail Styles from  Dragon Customization, as well as their current color palette from  Dragon Customization /  Armor Paint Room.\n• <Dragon>'s attacks (including breath animation and '<Dragon>'s Bane' DoT) and Body (including Primal Tattoos via Dragon Primalization) are color-synchronized to player's dragon's element via  Dragon Elementization; this skill can only have 1 out of 10 available elements (Bacon, Darkness, Energy, Fire, Ice, Light, Nature, Stone, Water, and Wind).\n  • Array of breath attacks:  Bacon,  Darkness,  Energy,  Fire,  Ice,  Light,  Nature,  Stone,  Water,  Wind\n• If <Dragon> was equipped, either as a  pet or a  guest, <Dragon> will temporarily disappear upon using the trinket skill.",
+            "effect": "Applies '<Dragon>'s Boon', a HoT equal to 1% of the player's max HP, to player for 5 turns; 3 hits of 75% damage, amounting to 225% damage, with +50 Bonus and +200 Crit; applies '<Dragon>'s Bane', a 25% Melee DoT effect, to target for 5 turns.",
             "manaCost": "50",
             "cooldown": "19 - [(Player LUK/50), rounded down]",
             "damageType": "As weapon",
             "element": "As dragon",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-SummonYoungDragon.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-SummonYoungDragon-Appearance1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-SummonYoungDragon-Appearance1.0.png",
+            "notes": "• Draco is the default name for all status names from this trinket skill; they are linked to the player's dragon's name from Dragon Customization.\n• <Dragon>'s appearance is linked to the player's dragon's Head, Wing, and Tail Styles from Dragon Customization, as well as their current color palette from Dragon Customization / Armor Paint Room.\n• <Dragon>'s attacks (including breath animation and '<Dragon>'s Bane' DoT) and Body (including Primal Tattoos via Dragon Primalization) are color-synchronized to player's dragon's element via Dragon Elementization; this skill can only have 1 out of 10 available elements (Bacon, Darkness, Energy, Fire, Ice, Light, Nature, Stone, Water, and Wind).\n • Array of breath attacks: Bacon, Darkness, Energy, Fire, Ice, Light, Nature, Stone, Water, Wind\n• If <Dragon> was equipped, either as a pet or a guest, <Dragon> will temporarily disappear upon using the trinket skill."
           }
         ],
         "rarity": "19"
@@ -5132,15 +5185,16 @@
       "attacks": [
         {
           "name": "Runeblast",
-          "description": "10 hits of 30% ??? damage (300%) \n Target: (On hit) 33.3% ??? DoT for 5 turns.",
+          "description": "10 hits of 30% ??? damage (300%)\n Target: (On hit) 33.3% ??? DoT for 5 turns.",
           "requirements": "Runestone (All Versions) equipped",
-          "effect": "10 hits of 30% damage, amounting to 300% damage; applies 'Rune Flare', a 33.3% weapon damage Magic ??? DoT effect, to target for 5 turns.\n• Previously had the tooltip: Blast your enemy!\n• The following changes were implemented on  June 20th, 2025:\n  • Tooltip was updated.\n  • Cooldown was lowered from 98 to 19.",
+          "effect": "10 hits of 30% damage, amounting to 300% damage; applies 'Rune Flare', a 33.3% weapon damage Magic ??? DoT effect, to target for 5 turns.",
           "manaCost": "10",
           "cooldown": "19 - [(Player LUK/50), rounded down]",
           "damageType": "As weapon",
           "element": "???",
           "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Runeblast.png",
-          "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Runeblast-Appearance1.0.png"
+          "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Runeblast-Appearance1.0.png",
+          "notes": "• Previously had the tooltip: Blast your enemy!\n• The following changes were implemented on June 20th, 2025:\n • Tooltip was updated.\n • Cooldown was lowered from 98 to 19."
         }
       ],
       "rarity": "12"
@@ -5169,15 +5223,16 @@
         "attacks": [
           {
             "name": "Runeblast",
-            "description": "10 hits of 30% ??? damage (300%) \n Target: (On hit) 33.3% ??? DoT for 5 turns.",
+            "description": "10 hits of 30% ??? damage (300%)\n Target: (On hit) 33.3% ??? DoT for 5 turns.",
             "requirements": "Runestone (All Versions) equipped",
-            "effect": "10 hits of 30% damage, amounting to 300% damage; applies 'Rune Flare', a 33.3% weapon damage Magic ??? DoT effect, to target for 5 turns.\n• Previously had the tooltip: Blast your enemy!\n• The following changes were implemented on  June 20th, 2025:\n  • Tooltip was updated.\n  • Cooldown was lowered from 98 to 19.",
+            "effect": "10 hits of 30% damage, amounting to 300% damage; applies 'Rune Flare', a 33.3% weapon damage Magic ??? DoT effect, to target for 5 turns.",
             "manaCost": "10",
             "cooldown": "19 - [(Player LUK/50), rounded down]",
             "damageType": "As weapon",
             "element": "???",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Runeblast.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Runeblast-Appearance1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Runeblast-Appearance1.0.png",
+            "notes": "• Previously had the tooltip: Blast your enemy!\n• The following changes were implemented on June 20th, 2025:\n • Tooltip was updated.\n • Cooldown was lowered from 98 to 19."
           }
         ],
         "rarity": "12"
@@ -5205,15 +5260,16 @@
         "attacks": [
           {
             "name": "Runeblast",
-            "description": "10 hits of 30% ??? damage (300%) \n Target: (On hit) 33.3% ??? DoT for 5 turns.",
+            "description": "10 hits of 30% ??? damage (300%)\n Target: (On hit) 33.3% ??? DoT for 5 turns.",
             "requirements": "Runestone (All Versions) equipped",
-            "effect": "10 hits of 30% damage, amounting to 300% damage; applies 'Rune Flare', a 33.3% weapon damage Magic ??? DoT effect, to target for 5 turns.\n• Previously had the tooltip: Blast your enemy!\n• The following changes were implemented on  June 20th, 2025:\n  • Tooltip was updated.\n  • Cooldown was lowered from 98 to 19.",
+            "effect": "10 hits of 30% damage, amounting to 300% damage; applies 'Rune Flare', a 33.3% weapon damage Magic ??? DoT effect, to target for 5 turns.",
             "manaCost": "10",
             "cooldown": "19 - [(Player LUK/50), rounded down]",
             "damageType": "As weapon",
             "element": "???",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Runeblast.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Runeblast-Appearance1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Runeblast-Appearance1.0.png",
+            "notes": "• Previously had the tooltip: Blast your enemy!\n• The following changes were implemented on June 20th, 2025:\n • Tooltip was updated.\n • Cooldown was lowered from 98 to 19."
           }
         ],
         "rarity": "12"
@@ -5241,15 +5297,16 @@
         "attacks": [
           {
             "name": "Runeblast",
-            "description": "10 hits of 30% ??? damage (300%) \n Target: (On hit) 33.3% ??? DoT for 5 turns.",
+            "description": "10 hits of 30% ??? damage (300%)\n Target: (On hit) 33.3% ??? DoT for 5 turns.",
             "requirements": "Runestone (All Versions) equipped",
-            "effect": "10 hits of 30% damage, amounting to 300% damage; applies 'Rune Flare', a 33.3% weapon damage Magic ??? DoT effect, to target for 5 turns.\n• Previously had the tooltip: Blast your enemy!\n• The following changes were implemented on  June 20th, 2025:\n  • Tooltip was updated.\n  • Cooldown was lowered from 98 to 19.",
+            "effect": "10 hits of 30% damage, amounting to 300% damage; applies 'Rune Flare', a 33.3% weapon damage Magic ??? DoT effect, to target for 5 turns.",
             "manaCost": "10",
             "cooldown": "19 - [(Player LUK/50), rounded down]",
             "damageType": "As weapon",
             "element": "???",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Runeblast.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Runeblast-Appearance1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Runeblast-Appearance1.0.png",
+            "notes": "• Previously had the tooltip: Blast your enemy!\n• The following changes were implemented on June 20th, 2025:\n • Tooltip was updated.\n • Cooldown was lowered from 98 to 19."
           }
         ],
         "rarity": "12"
@@ -5277,15 +5334,16 @@
         "attacks": [
           {
             "name": "Runeblast",
-            "description": "10 hits of 30% ??? damage (300%) \n Target: (On hit) 33.3% ??? DoT for 5 turns.",
+            "description": "10 hits of 30% ??? damage (300%)\n Target: (On hit) 33.3% ??? DoT for 5 turns.",
             "requirements": "Runestone (All Versions) equipped",
-            "effect": "10 hits of 30% damage, amounting to 300% damage; applies 'Rune Flare', a 33.3% weapon damage Magic ??? DoT effect, to target for 5 turns.\n• Previously had the tooltip: Blast your enemy!\n• The following changes were implemented on  June 20th, 2025:\n  • Tooltip was updated.\n  • Cooldown was lowered from 98 to 19.",
+            "effect": "10 hits of 30% damage, amounting to 300% damage; applies 'Rune Flare', a 33.3% weapon damage Magic ??? DoT effect, to target for 5 turns.",
             "manaCost": "10",
             "cooldown": "19 - [(Player LUK/50), rounded down]",
             "damageType": "As weapon",
             "element": "???",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Runeblast.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Runeblast-Appearance1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Runeblast-Appearance1.0.png",
+            "notes": "• Previously had the tooltip: Blast your enemy!\n• The following changes were implemented on June 20th, 2025:\n • Tooltip was updated.\n • Cooldown was lowered from 98 to 19."
           }
         ],
         "rarity": "12"
@@ -5313,15 +5371,16 @@
         "attacks": [
           {
             "name": "Runeblast",
-            "description": "10 hits of 30% ??? damage (300%) \n Target: (On hit) 33.3% ??? DoT for 5 turns.",
+            "description": "10 hits of 30% ??? damage (300%)\n Target: (On hit) 33.3% ??? DoT for 5 turns.",
             "requirements": "Runestone (All Versions) equipped",
-            "effect": "10 hits of 30% damage, amounting to 300% damage; applies 'Rune Flare', a 33.3% weapon damage Magic ??? DoT effect, to target for 5 turns.\n• Previously had the tooltip: Blast your enemy!\n• The following changes were implemented on  June 20th, 2025:\n  • Tooltip was updated.\n  • Cooldown was lowered from 98 to 19.",
+            "effect": "10 hits of 30% damage, amounting to 300% damage; applies 'Rune Flare', a 33.3% weapon damage Magic ??? DoT effect, to target for 5 turns.",
             "manaCost": "10",
             "cooldown": "19 - [(Player LUK/50), rounded down]",
             "damageType": "As weapon",
             "element": "???",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Runeblast.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Runeblast-Appearance1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Runeblast-Appearance1.0.png",
+            "notes": "• Previously had the tooltip: Blast your enemy!\n• The following changes were implemented on June 20th, 2025:\n • Tooltip was updated.\n • Cooldown was lowered from 98 to 19."
           }
         ],
         "rarity": "12"
@@ -5349,15 +5408,16 @@
         "attacks": [
           {
             "name": "Runeblast",
-            "description": "10 hits of 30% ??? damage (300%) \n Target: (On hit) 33.3% ??? DoT for 5 turns.",
+            "description": "10 hits of 30% ??? damage (300%)\n Target: (On hit) 33.3% ??? DoT for 5 turns.",
             "requirements": "Runestone (All Versions) equipped",
-            "effect": "10 hits of 30% damage, amounting to 300% damage; applies 'Rune Flare', a 33.3% weapon damage Magic ??? DoT effect, to target for 5 turns.\n• Previously had the tooltip: Blast your enemy!\n• The following changes were implemented on  June 20th, 2025:\n  • Tooltip was updated.\n  • Cooldown was lowered from 98 to 19.",
+            "effect": "10 hits of 30% damage, amounting to 300% damage; applies 'Rune Flare', a 33.3% weapon damage Magic ??? DoT effect, to target for 5 turns.",
             "manaCost": "10",
             "cooldown": "19 - [(Player LUK/50), rounded down]",
             "damageType": "As weapon",
             "element": "???",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Runeblast.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Runeblast-Appearance1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Runeblast-Appearance1.0.png",
+            "notes": "• Previously had the tooltip: Blast your enemy!\n• The following changes were implemented on June 20th, 2025:\n • Tooltip was updated.\n • Cooldown was lowered from 98 to 19."
           }
         ],
         "rarity": "12"
@@ -6206,7 +6266,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "Item was originally a Resource; was upgraded to an equippable Trinket (without an ability) on  April 10th, 2020.",
+    "notes": "Item was originally a Resource; was upgraded to an equippable Trinket (without an ability) on April 10th, 2020.",
     "tags": [
       "ene",
       "free"
@@ -6413,13 +6473,14 @@
         "name": "Purify",
         "description": "Self: Heal 10% max HP, +30 Avoidance for 3 turns.",
         "requirements": "Soul Purifier equipped",
-        "effect": "Heals player for 10% of player's max HP upon use; applies 'Purified Soul' (+30 Melee/Pierce/Magic Avoidance) to player for 3 turns inclusive.\n• Previously had the tooltip: Purify your soul.\n• HP recovery is subject to modification by All Resist and/or Health Resist.\n• Skill button was updated on  November 24th, 2023, replacing  its old appearance.\n• Tooltip was updated. on  June 20th, 2025.",
+        "effect": "Heals player for 10% of player's max HP upon use; applies 'Purified Soul' (+30 Melee/Pierce/Magic Avoidance) to player for 3 turns inclusive.",
         "manaCost": "0",
         "cooldown": "14 - [(Player LUK/50), rounded down]",
         "damageType": "N/A",
         "element": "N/A",
         "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Purify.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Purify-Old.png"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Purify-Old.png",
+        "notes": "• Previously had the tooltip: Purify your soul.\n• HP recovery is subject to modification by All Resist and/or Health Resist.\n• Skill button was updated on November 24th, 2023, replacing its old appearance.\n• Tooltip was updated. on June 20th, 2025."
       }
     ]
   },
@@ -6498,15 +6559,16 @@
     "attacks": [
       {
         "name": "Dragon of Destiny",
-        "description": "3 hits of 50% Good damage (150%) \n Self: +15 Boost, +20 Bonus for 5 turns. This attack has +200 Crit.",
+        "description": "3 hits of 50% Good damage (150%)\n Self: +15 Boost, +20 Bonus for 5 turns. This attack has +200 Crit.",
         "requirements": "Summon Destiny Dragon equipped",
-        "effect": "Applies 'Destiny' (+15% Boost, +20 Bonus) to player for 5 turns inclusive; 15 hits of 10% damage, amounting to 150% damage, with +200 Crit.\n• Previously had the tooltip: Summon the Destiny Dragon!\n• Tooltip was updated on  June 20th, 2025.\n• Cooldown was lowered from 34 to 24 on  June 27th, 2025.",
+        "effect": "Applies 'Destiny' (+15% Boost, +20 Bonus) to player for 5 turns inclusive; 15 hits of 10% damage, amounting to 150% damage, with +200 Crit.",
         "manaCost": "30",
         "cooldown": "24 - [(Player LUK/50), rounded down]",
         "damageType": "As weapon",
         "element": "Good",
         "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-DragonofDestiny.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-DragonofDestiny-Appearance1.0.png"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-DragonofDestiny-Appearance1.0.png",
+        "notes": "• Previously had the tooltip: Summon the Destiny Dragon!\n• Tooltip was updated on June 20th, 2025.\n• Cooldown was lowered from 34 to 24 on June 27th, 2025."
       }
     ]
   },
@@ -6542,7 +6604,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "Resists were added on  June 20th, 2025.",
+    "notes": "Resists were added on June 20th, 2025.",
     "tags": [
       "ene",
       "merge"
@@ -6552,15 +6614,16 @@
     "attacks": [
       {
         "name": "Summon Aya",
-        "description": "11 hits x 20% Energy damage (220%) \n Self: +5 All, -5 Health for 3 turns. This attack has +100 Crit.",
+        "description": "11 hits x 20% Energy damage (220%)\n Self: +5 All, -5 Health for 3 turns. This attack has +100 Crit.",
         "requirements": "Summon Gem - Ayauhnqui EX equipped",
-        "effect": "Applies 'Ayauhnqui's Blessing' (+5 All Resist, -5 Health Resist) to player for 3 turns inclusive; 11 hits of 20% damage, amounting to 220% damage, with +100 Crit.\n• Previously had the tooltip: Ayauhnqui, I choose you!\n• Tooltips were updated on  June 20th, 2025.\n•  Kneel animation from this trinket skill was removed on  July 19th, 2025.",
+        "effect": "Applies 'Ayauhnqui's Blessing' (+5 All Resist, -5 Health Resist) to player for 3 turns inclusive; 11 hits of 20% damage, amounting to 220% damage, with +100 Crit.",
         "manaCost": "12",
         "cooldown": "29 - [(Player LUK/50), rounded down]",
         "damageType": "As weapon",
         "element": "Energy",
         "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-SummonAya.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-SummonAya-Appearance1.0.png"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-SummonAya-Appearance1.0.png",
+        "notes": "• Previously had the tooltip: Ayauhnqui, I choose you!\n• Tooltips were updated on June 20th, 2025.\n• Kneel animation from this trinket skill was removed on July 19th, 2025."
       }
     ]
   },
@@ -6602,15 +6665,16 @@
     "attacks": [
       {
         "name": "Summon Illumina",
-        "description": "2 hits x 50% damage (100%) \n Self: +25 Darkness resistance for 5 turns. Target: -70 Bonus for 1 turn.",
+        "description": "2 hits x 50% damage (100%)\n Self: +25 Darkness resistance for 5 turns. Target: -70 Bonus for 1 turn.",
         "requirements": "Summon Gem - Illumina equipped",
-        "effect": "Applies 'Light over Darkness' (+25 Darkness Resist) to player for 5 turns inclusive; 2 hits of 50% damage, amounting to 100% damage; applies 'Brilliant Light' (-70 Bonus) to target for 1 turn.\n• Previously had the tooltip: Brilliant light!",
+        "effect": "Applies 'Light over Darkness' (+25 Darkness Resist) to player for 5 turns inclusive; 2 hits of 50% damage, amounting to 100% damage; applies 'Brilliant Light' (-70 Bonus) to target for 1 turn.",
         "manaCost": "0",
         "cooldown": "29 - [(Player LUK/50), rounded down]",
         "damageType": "As weapon",
         "element": "Light",
         "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-SummonIllumina.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-SummonIllumina-Appearance1.0.png"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-SummonIllumina-Appearance1.0.png",
+        "notes": "• Previously had the tooltip: Brilliant light!"
       }
     ]
   },
@@ -6623,7 +6687,9 @@
     "description": "The long lost Summon Gem - Intaym! Its special ability will boost your Crit by 50 when used. Proof of victory over Illumina and Intaym!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22381718",
     "releaseDate": "",
-    "elements": [],
+    "elements": [
+      "???"
+    ],
     "level": "25",
     "stats": "Block +5, Dodge +5, Parry +5, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +5, CHA +5, INT +5, DEX +5, STR +5",
     "resists": "??? +5",
@@ -6644,8 +6710,9 @@
         "dcRequired": true
       }
     ],
-    "notes": "Resists were added on  June 20th, 2025.",
+    "notes": "Resists were added on June 20th, 2025.",
     "tags": [
+      "???",
       "merge"
     ],
     "daRequired": true,
@@ -6653,15 +6720,16 @@
     "attacks": [
       {
         "name": "Summon Intaym",
-        "description": "12 hits x 20% damage (240%) \n Self: +50 Crit for 3 turns. This attack has -100 Crit.",
+        "description": "12 hits x 20% damage (240%)\n Self: +50 Crit for 3 turns. This attack has -100 Crit.",
         "requirements": "Summon Gem - Intaym EX equipped",
-        "effect": "Applies 'Intaym's Rebellion' (+50 Crit) to player for 3 turns inclusive; 12 hits of 20% damage, amounting to 240% damage, with -100 Crit*.\n• Previously had the tooltip: Intaym, the Just\n• *-100 Crit effectively becomes -50 Crit due to the 'Intaym's Rebellion' Crit buff applying inclusively.\n• Tooltip was updated on  June 20th, 2025.\n•  Kneel animation from this trinket skill was removed on  July 19th, 2025.",
+        "effect": "Applies 'Intaym's Rebellion' (+50 Crit) to player for 3 turns inclusive; 12 hits of 20% damage, amounting to 240% damage, with -100 Crit*.",
         "manaCost": "12",
         "cooldown": "29 - [(Player LUK/50), rounded down]",
         "damageType": "As weapon",
         "element": "???",
         "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-SummonIntaym.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-SummonIntaym-Appearance1.0.png"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-SummonIntaym-Appearance1.0.png",
+        "notes": "• Previously had the tooltip: Intaym, the Just\n• *-100 Crit effectively becomes -50 Crit due to the 'Intaym's Rebellion' Crit buff applying inclusively.\n• Tooltip was updated on June 20th, 2025.\n• Kneel animation from this trinket skill was removed on July 19th, 2025."
       }
     ]
   },
@@ -6703,15 +6771,16 @@
     "attacks": [
       {
         "name": "Summon Reaver",
-        "description": "5 hits x 50% Darkness damage (250%) \n This attack has +100 Crit.",
+        "description": "5 hits x 50% Darkness damage (250%)\n This attack has +100 Crit.",
         "requirements": "Summon Gem - Reaver equipped",
-        "effect": "5 hits of 50% damage, amounting to 250% damage, with +100 Crit.\n• Previously had the tooltip: I call the Reaper\n• Tooltip was updated on  June 27th, 2025.",
+        "effect": "5 hits of 50% damage, amounting to 250% damage, with +100 Crit.",
         "manaCost": "12",
         "cooldown": "29 - [(Player LUK/50), rounded down]",
         "damageType": "As weapon",
         "element": "Darkness",
         "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-SummonReaver.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-SummonReaver-Appearance1.0.png"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-SummonReaver-Appearance1.0.png",
+        "notes": "• Previously had the tooltip: I call the Reaper\n• Tooltip was updated on June 27th, 2025."
       }
     ]
   },
@@ -6753,15 +6822,16 @@
     "attacks": [
       {
         "name": "Summon Vizalain",
-        "description": "8 hits x 20% Light damage (160%) \n Target: (On hit) -20 Light resistance for 4 turns.",
+        "description": "8 hits x 20% Light damage (160%)\n Target: (On hit) -20 Light resistance for 4 turns.",
         "requirements": "Summon Gem - Ricterild equipped",
-        "effect": "8 hits of 20% damage, amounting to 160% damage; applies 'Purity' (-20 Light Resist) to target for 4 turns inclusive (applied after first hit).\n• Previously had the tooltip: Purity!",
+        "effect": "8 hits of 20% damage, amounting to 160% damage; applies 'Purity' (-20 Light Resist) to target for 4 turns inclusive (applied after first hit).",
         "manaCost": "30",
         "cooldown": "30 - [(Player LUK/50), rounded down]",
         "damageType": "As weapon",
         "element": "Light",
         "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-SummonVizalain.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-SummonVizalain-Appearance1.0.png"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-SummonVizalain-Appearance1.0.png",
+        "notes": "• Previously had the tooltip: Purity!"
       }
     ]
   },
@@ -6803,15 +6873,16 @@
     "attacks": [
       {
         "name": "Summon Roktoru",
-        "description": "3 hits x 80% Stone damage (240%) \n This attack has +100 Bonus and +140 Crit.",
+        "description": "3 hits x 80% Stone damage (240%)\n This attack has +100 Bonus and +140 Crit.",
         "requirements": "Summon Gem - Roktoru equipped",
-        "effect": "3 hits of 80% damage, amounting to 240% damage, with +140 Crit and 100 Bonus.\n• Previously had the tooltip: I call on Roktoru\n• 100 Bonus overwrites player's current Bonus value.",
+        "effect": "3 hits of 80% damage, amounting to 240% damage, with +140 Crit and 100 Bonus.",
         "manaCost": "15",
         "cooldown": "29 - [(Player LUK/50), rounded down]",
         "damageType": "As weapon",
         "element": "Stone",
         "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-SummonRoktoru.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-SummonRoktoru-Appearance1.0.png"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-SummonRoktoru-Appearance1.0.png",
+        "notes": "• Previously had the tooltip: I call on Roktoru\n• 100 Bonus overwrites player's current Bonus value."
       }
     ]
   },
@@ -6856,15 +6927,16 @@
     "attacks": [
       {
         "name": "Young Dragon of Destiny",
-        "description": "3 hits of 50% Good damage (150%) \n Self: +10 Boost, +25 Bonus for 5 turns. This attack has +200 Crit.",
+        "description": "3 hits of 50% Good damage (150%)\n Self: +10 Boost, +25 Bonus for 5 turns. This attack has +200 Crit.",
         "requirements": "Summon Young Destiny Dragon equipped",
-        "effect": "Applies 'Destiny' (+10% Boost, +25 Bonus) to player for 5 turns inclusive; 3 hits of 50% damage, amounting to 150% damage, with +200 Crit.\n• Previously had the tooltip: Summon the Destiny Dragon!\n• Tooltips were updated on  June 20th, 2025.",
+        "effect": "Applies 'Destiny' (+10% Boost, +25 Bonus) to player for 5 turns inclusive; 3 hits of 50% damage, amounting to 150% damage, with +200 Crit.",
         "manaCost": "30",
         "cooldown": "24 - [(Player LUK/50), rounded down]",
         "damageType": "As weapon",
         "element": "Good",
         "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-YoungDragonofDestiny.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-YoungDragonofDestiny-Appearance1.0.png"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-YoungDragonofDestiny-Appearance1.0.png",
+        "notes": "• Previously had the tooltip: Summon the Destiny Dragon!\n• Tooltips were updated on June 20th, 2025."
       }
     ]
   },
@@ -6951,7 +7023,9 @@
     "description": "An ever present reminder of time's flow. Can be activated in combat to heal a small amount of health. Proof of victory over Iadoa. Color Custom to armor trim.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22402638",
     "releaseDate": "",
-    "elements": [],
+    "elements": [
+      "???"
+    ],
     "level": "1",
     "stats": "Crit +5, WIS +2, END +2, CHA +2, LUK +2, INT +2, DEX +2, STR +2, Bonus +5",
     "resists": "None",
@@ -6971,8 +7045,9 @@
         "dcRequired": true
       }
     ],
-    "notes": "Equipping this trinket displays  animated gear cogs over the player, color-custom to the player's trim color.",
+    "notes": "Equipping this trinket displays animated gear cogs over the player, color-custom to the player's trim color.",
     "tags": [
+      "???",
       "free"
     ],
     "daRequired": false,
@@ -6982,13 +7057,14 @@
         "name": "Time's March",
         "description": "Heal 7.5% Max HP over 3 turns!",
         "requirements": "Time's Pursuit equipped",
-        "effect": "Applies 'Time's March', a HoT effect equal to 2.5% of player's maximum HP, to player for 3 turns.\n• Appearance will display as long as the trinket is equipped, regardless if the skill is used or not, including out of combat.",
+        "effect": "Applies 'Time's March', a HoT effect equal to 2.5% of player's maximum HP, to player for 3 turns.",
         "manaCost": "0",
         "cooldown": "30 - [(Player LUK/50), rounded down]",
         "damageType": "As weapon",
         "element": "Heal",
         "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Time'sMarch.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Time'sMarch-Appearance.png"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Time'sMarch-Appearance.png",
+        "notes": "• Appearance will display as long as the trinket is equipped, regardless if the skill is used or not, including out of combat."
       }
     ]
   },
@@ -7112,15 +7188,16 @@
       "attacks": [
         {
           "name": "Uaanta's Blaster (Amalgam)",
-          "description": "5 hits x 25% Fear damage (125%) \n Target: (On hit) +<x> Health resistance for 5 turns.",
+          "description": "5 hits x 25% Fear damage (125%)\n Target: (On hit) +<x> Health resistance for 5 turns.",
           "requirements": "Exalted Blaster (I, II) (Amalgam) equipped",
-          "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Amalgam Scar' (+X* Health Resist) to target for 5 turns inclusive.\n• Previously had the tooltip: 5 hits of Fear, +Health res.\n• *X is equal to the equipped Trinket's Level/3, rounded normally; thus, potential Health Resist values are 7, 13, 20, and 30 respectively.\n• Tooltip was updated on  June 20th, 2025.",
+          "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Amalgam Scar' (+X* Health Resist) to target for 5 turns inclusive.",
           "manaCost": "0",
           "cooldown": "19 - [(Player LUK/50), rounded down]",
           "damageType": "As weapon",
           "element": "Fear",
           "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Uaanta'sBlaster.png",
-          "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Uaanta'sBlaster-Appearance1.0.png"
+          "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Uaanta'sBlaster-Appearance1.0.png",
+          "notes": "• Previously had the tooltip: 5 hits of Fear, +Health res.\n• *X is equal to the equipped Trinket's Level/3, rounded normally; thus, potential Health Resist values are 7, 13, 20, and 30 respectively.\n• Tooltip was updated on June 20th, 2025."
         }
       ],
       "rarity": "15"
@@ -7151,15 +7228,16 @@
         "attacks": [
           {
             "name": "Uaanta's Blaster (Amalgam)",
-            "description": "5 hits x 25% Fear damage (125%) \n Target: (On hit) +<x> Health resistance for 5 turns.",
+            "description": "5 hits x 25% Fear damage (125%)\n Target: (On hit) +<x> Health resistance for 5 turns.",
             "requirements": "Exalted Blaster (I, II) (Amalgam) equipped",
-            "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Amalgam Scar' (+X* Health Resist) to target for 5 turns inclusive.\n• Previously had the tooltip: 5 hits of Fear, +Health res.\n• *X is equal to the equipped Trinket's Level/3, rounded normally; thus, potential Health Resist values are 7, 13, 20, and 30 respectively.\n• Tooltip was updated on  June 20th, 2025.",
+            "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Amalgam Scar' (+X* Health Resist) to target for 5 turns inclusive.",
             "manaCost": "0",
             "cooldown": "19 - [(Player LUK/50), rounded down]",
             "damageType": "As weapon",
             "element": "Fear",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Uaanta'sBlaster.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Uaanta'sBlaster-Appearance1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Uaanta'sBlaster-Appearance1.0.png",
+            "notes": "• Previously had the tooltip: 5 hits of Fear, +Health res.\n• *X is equal to the equipped Trinket's Level/3, rounded normally; thus, potential Health Resist values are 7, 13, 20, and 30 respectively.\n• Tooltip was updated on June 20th, 2025."
           }
         ],
         "rarity": "15"
@@ -7189,15 +7267,16 @@
         "attacks": [
           {
             "name": "Uaanta's Blaster (Amalgam)",
-            "description": "5 hits x 25% Fear damage (125%) \n Target: (On hit) +<x> Health resistance for 5 turns.",
+            "description": "5 hits x 25% Fear damage (125%)\n Target: (On hit) +<x> Health resistance for 5 turns.",
             "requirements": "Exalted Blaster (I, II) (Amalgam) equipped",
-            "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Amalgam Scar' (+X* Health Resist) to target for 5 turns inclusive.\n• Previously had the tooltip: 5 hits of Fear, +Health res.\n• *X is equal to the equipped Trinket's Level/3, rounded normally; thus, potential Health Resist values are 7, 13, 20, and 30 respectively.\n• Tooltip was updated on  June 20th, 2025.",
+            "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Amalgam Scar' (+X* Health Resist) to target for 5 turns inclusive.",
             "manaCost": "0",
             "cooldown": "19 - [(Player LUK/50), rounded down]",
             "damageType": "As weapon",
             "element": "Fear",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Uaanta'sBlaster.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Uaanta'sBlaster-Appearance1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Uaanta'sBlaster-Appearance1.0.png",
+            "notes": "• Previously had the tooltip: 5 hits of Fear, +Health res.\n• *X is equal to the equipped Trinket's Level/3, rounded normally; thus, potential Health Resist values are 7, 13, 20, and 30 respectively.\n• Tooltip was updated on June 20th, 2025."
           }
         ],
         "rarity": "15"
@@ -7227,15 +7306,16 @@
         "attacks": [
           {
             "name": "Uaanta's Blaster (Amalgam)",
-            "description": "5 hits x 25% Fear damage (125%) \n Target: (On hit) +<x> Health resistance for 5 turns.",
+            "description": "5 hits x 25% Fear damage (125%)\n Target: (On hit) +<x> Health resistance for 5 turns.",
             "requirements": "Exalted Blaster (I, II) (Amalgam) equipped",
-            "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Amalgam Scar' (+X* Health Resist) to target for 5 turns inclusive.\n• Previously had the tooltip: 5 hits of Fear, +Health res.\n• *X is equal to the equipped Trinket's Level/3, rounded normally; thus, potential Health Resist values are 7, 13, 20, and 30 respectively.\n• Tooltip was updated on  June 20th, 2025.",
+            "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Amalgam Scar' (+X* Health Resist) to target for 5 turns inclusive.",
             "manaCost": "0",
             "cooldown": "19 - [(Player LUK/50), rounded down]",
             "damageType": "As weapon",
             "element": "Fear",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Uaanta'sBlaster.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Uaanta'sBlaster-Appearance1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Uaanta'sBlaster-Appearance1.0.png",
+            "notes": "• Previously had the tooltip: 5 hits of Fear, +Health res.\n• *X is equal to the equipped Trinket's Level/3, rounded normally; thus, potential Health Resist values are 7, 13, 20, and 30 respectively.\n• Tooltip was updated on June 20th, 2025."
           }
         ],
         "rarity": "15"
@@ -7265,15 +7345,16 @@
         "attacks": [
           {
             "name": "Uaanta's Blaster (Amalgam)",
-            "description": "5 hits x 25% Fear damage (125%) \n Target: (On hit) +<x> Health resistance for 5 turns.",
+            "description": "5 hits x 25% Fear damage (125%)\n Target: (On hit) +<x> Health resistance for 5 turns.",
             "requirements": "Exalted Blaster (I, II) (Amalgam) equipped",
-            "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Amalgam Scar' (+X* Health Resist) to target for 5 turns inclusive.\n• Previously had the tooltip: 5 hits of Fear, +Health res.\n• *X is equal to the equipped Trinket's Level/3, rounded normally; thus, potential Health Resist values are 7, 13, 20, and 30 respectively.\n• Tooltip was updated on  June 20th, 2025.",
+            "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Amalgam Scar' (+X* Health Resist) to target for 5 turns inclusive.",
             "manaCost": "0",
             "cooldown": "19 - [(Player LUK/50), rounded down]",
             "damageType": "As weapon",
             "element": "Fear",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Uaanta'sBlaster.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Uaanta'sBlaster-Appearance1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Uaanta'sBlaster-Appearance1.0.png",
+            "notes": "• Previously had the tooltip: 5 hits of Fear, +Health res.\n• *X is equal to the equipped Trinket's Level/3, rounded normally; thus, potential Health Resist values are 7, 13, 20, and 30 respectively.\n• Tooltip was updated on June 20th, 2025."
           }
         ],
         "rarity": "15"
@@ -7599,15 +7680,16 @@
       "attacks": [
         {
           "name": "Uaanta's Blaster (Destiny)",
-          "description": "5 hits x 25% Good damage (125%) \n Target: -<x> Bonus for 5 turns.",
+          "description": "5 hits x 25% Good damage (125%)\n Target: -<x> Bonus for 5 turns.",
           "requirements": "Exalted Blaster (I, II) (Destiny) equipped",
-          "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Destiny's Command' (-X* Bonus) to target for 4 turns.\n• Previously had the tooltip: 5 hits of Good, -Bonus.\n• *X is equal to the equipped Trinket's Level/3, rounded normally; thus, potential Bonus values are -7, -13, -20, and -30 respectively.\n• Tooltip was updated on  June 20th, 2025.",
+          "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Destiny's Command' (-X* Bonus) to target for 4 turns.",
           "manaCost": "0",
           "cooldown": "9 - [(Player LUK/50), rounded down]",
           "damageType": "As weapon",
           "element": "Good",
           "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Uaanta'sBlasterDestiny.png",
-          "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Uaanta'sBlasterDestiny-Appearance1.0.png"
+          "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Uaanta'sBlasterDestiny-Appearance1.0.png",
+          "notes": "• Previously had the tooltip: 5 hits of Good, -Bonus.\n• *X is equal to the equipped Trinket's Level/3, rounded normally; thus, potential Bonus values are -7, -13, -20, and -30 respectively.\n• Tooltip was updated on June 20th, 2025."
         }
       ],
       "rarity": "15"
@@ -7638,15 +7720,16 @@
         "attacks": [
           {
             "name": "Uaanta's Blaster (Destiny)",
-            "description": "5 hits x 25% Good damage (125%) \n Target: -<x> Bonus for 5 turns.",
+            "description": "5 hits x 25% Good damage (125%)\n Target: -<x> Bonus for 5 turns.",
             "requirements": "Exalted Blaster (I, II) (Destiny) equipped",
-            "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Destiny's Command' (-X* Bonus) to target for 4 turns.\n• Previously had the tooltip: 5 hits of Good, -Bonus.\n• *X is equal to the equipped Trinket's Level/3, rounded normally; thus, potential Bonus values are -7, -13, -20, and -30 respectively.\n• Tooltip was updated on  June 20th, 2025.",
+            "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Destiny's Command' (-X* Bonus) to target for 4 turns.",
             "manaCost": "0",
             "cooldown": "9 - [(Player LUK/50), rounded down]",
             "damageType": "As weapon",
             "element": "Good",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Uaanta'sBlasterDestiny.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Uaanta'sBlasterDestiny-Appearance1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Uaanta'sBlasterDestiny-Appearance1.0.png",
+            "notes": "• Previously had the tooltip: 5 hits of Good, -Bonus.\n• *X is equal to the equipped Trinket's Level/3, rounded normally; thus, potential Bonus values are -7, -13, -20, and -30 respectively.\n• Tooltip was updated on June 20th, 2025."
           }
         ],
         "rarity": "15"
@@ -7676,15 +7759,16 @@
         "attacks": [
           {
             "name": "Uaanta's Blaster (Destiny)",
-            "description": "5 hits x 25% Good damage (125%) \n Target: -<x> Bonus for 5 turns.",
+            "description": "5 hits x 25% Good damage (125%)\n Target: -<x> Bonus for 5 turns.",
             "requirements": "Exalted Blaster (I, II) (Destiny) equipped",
-            "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Destiny's Command' (-X* Bonus) to target for 4 turns.\n• Previously had the tooltip: 5 hits of Good, -Bonus.\n• *X is equal to the equipped Trinket's Level/3, rounded normally; thus, potential Bonus values are -7, -13, -20, and -30 respectively.\n• Tooltip was updated on  June 20th, 2025.",
+            "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Destiny's Command' (-X* Bonus) to target for 4 turns.",
             "manaCost": "0",
             "cooldown": "9 - [(Player LUK/50), rounded down]",
             "damageType": "As weapon",
             "element": "Good",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Uaanta'sBlasterDestiny.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Uaanta'sBlasterDestiny-Appearance1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Uaanta'sBlasterDestiny-Appearance1.0.png",
+            "notes": "• Previously had the tooltip: 5 hits of Good, -Bonus.\n• *X is equal to the equipped Trinket's Level/3, rounded normally; thus, potential Bonus values are -7, -13, -20, and -30 respectively.\n• Tooltip was updated on June 20th, 2025."
           }
         ],
         "rarity": "15"
@@ -7714,15 +7798,16 @@
         "attacks": [
           {
             "name": "Uaanta's Blaster (Destiny)",
-            "description": "5 hits x 25% Good damage (125%) \n Target: -<x> Bonus for 5 turns.",
+            "description": "5 hits x 25% Good damage (125%)\n Target: -<x> Bonus for 5 turns.",
             "requirements": "Exalted Blaster (I, II) (Destiny) equipped",
-            "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Destiny's Command' (-X* Bonus) to target for 4 turns.\n• Previously had the tooltip: 5 hits of Good, -Bonus.\n• *X is equal to the equipped Trinket's Level/3, rounded normally; thus, potential Bonus values are -7, -13, -20, and -30 respectively.\n• Tooltip was updated on  June 20th, 2025.",
+            "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Destiny's Command' (-X* Bonus) to target for 4 turns.",
             "manaCost": "0",
             "cooldown": "9 - [(Player LUK/50), rounded down]",
             "damageType": "As weapon",
             "element": "Good",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Uaanta'sBlasterDestiny.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Uaanta'sBlasterDestiny-Appearance1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Uaanta'sBlasterDestiny-Appearance1.0.png",
+            "notes": "• Previously had the tooltip: 5 hits of Good, -Bonus.\n• *X is equal to the equipped Trinket's Level/3, rounded normally; thus, potential Bonus values are -7, -13, -20, and -30 respectively.\n• Tooltip was updated on June 20th, 2025."
           }
         ],
         "rarity": "15"
@@ -7752,15 +7837,16 @@
         "attacks": [
           {
             "name": "Uaanta's Blaster (Destiny)",
-            "description": "5 hits x 25% Good damage (125%) \n Target: -<x> Bonus for 5 turns.",
+            "description": "5 hits x 25% Good damage (125%)\n Target: -<x> Bonus for 5 turns.",
             "requirements": "Exalted Blaster (I, II) (Destiny) equipped",
-            "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Destiny's Command' (-X* Bonus) to target for 4 turns.\n• Previously had the tooltip: 5 hits of Good, -Bonus.\n• *X is equal to the equipped Trinket's Level/3, rounded normally; thus, potential Bonus values are -7, -13, -20, and -30 respectively.\n• Tooltip was updated on  June 20th, 2025.",
+            "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Destiny's Command' (-X* Bonus) to target for 4 turns.",
             "manaCost": "0",
             "cooldown": "9 - [(Player LUK/50), rounded down]",
             "damageType": "As weapon",
             "element": "Good",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Uaanta'sBlasterDestiny.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Uaanta'sBlasterDestiny-Appearance1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Uaanta'sBlasterDestiny-Appearance1.0.png",
+            "notes": "• Previously had the tooltip: 5 hits of Good, -Bonus.\n• *X is equal to the equipped Trinket's Level/3, rounded normally; thus, potential Bonus values are -7, -13, -20, and -30 respectively.\n• Tooltip was updated on June 20th, 2025."
           }
         ],
         "rarity": "15"
@@ -7830,15 +7916,16 @@
       "attacks": [
         {
           "name": "Uaanta's Blaster (Doom)",
-          "description": "5 hits x 25% Evil damage (125%) \n Target: -<x> Avoidance for 5 turns.",
+          "description": "5 hits x 25% Evil damage (125%)\n Target: -<x> Avoidance for 5 turns.",
           "requirements": "Exalted Blaster (I, II) (Doom) equipped",
-          "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Doom's Ambition' (-X* Melee/Pierce/Magic Avoidance) to target for 5 turns inclusive.\n• Previously had the tooltip: 5 hits of Evil, -Avd.\n• *X is equal to the equipped Trinket's Level/3, rounded normally; thus, potential Avoidance values are -7, -13, -20, and -30 respectively.\n• Tooltip was updated on  June 20th, 2025.",
+          "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Doom's Ambition' (-X* Melee/Pierce/Magic Avoidance) to target for 5 turns inclusive.",
           "manaCost": "0",
           "cooldown": "9 - [(Player LUK/50), rounded down]",
           "damageType": "As weapon",
           "element": "Evil",
           "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Uaanta'sBlasterDoom.png",
-          "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Uaanta'sBlasterDoom-Appearance1.0.png"
+          "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Uaanta'sBlasterDoom-Appearance1.0.png",
+          "notes": "• Previously had the tooltip: 5 hits of Evil, -Avd.\n• *X is equal to the equipped Trinket's Level/3, rounded normally; thus, potential Avoidance values are -7, -13, -20, and -30 respectively.\n• Tooltip was updated on June 20th, 2025."
         }
       ],
       "rarity": "15"
@@ -7869,15 +7956,16 @@
         "attacks": [
           {
             "name": "Uaanta's Blaster (Doom)",
-            "description": "5 hits x 25% Evil damage (125%) \n Target: -<x> Avoidance for 5 turns.",
+            "description": "5 hits x 25% Evil damage (125%)\n Target: -<x> Avoidance for 5 turns.",
             "requirements": "Exalted Blaster (I, II) (Doom) equipped",
-            "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Doom's Ambition' (-X* Melee/Pierce/Magic Avoidance) to target for 5 turns inclusive.\n• Previously had the tooltip: 5 hits of Evil, -Avd.\n• *X is equal to the equipped Trinket's Level/3, rounded normally; thus, potential Avoidance values are -7, -13, -20, and -30 respectively.\n• Tooltip was updated on  June 20th, 2025.",
+            "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Doom's Ambition' (-X* Melee/Pierce/Magic Avoidance) to target for 5 turns inclusive.",
             "manaCost": "0",
             "cooldown": "9 - [(Player LUK/50), rounded down]",
             "damageType": "As weapon",
             "element": "Evil",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Uaanta'sBlasterDoom.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Uaanta'sBlasterDoom-Appearance1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Uaanta'sBlasterDoom-Appearance1.0.png",
+            "notes": "• Previously had the tooltip: 5 hits of Evil, -Avd.\n• *X is equal to the equipped Trinket's Level/3, rounded normally; thus, potential Avoidance values are -7, -13, -20, and -30 respectively.\n• Tooltip was updated on June 20th, 2025."
           }
         ],
         "rarity": "15"
@@ -7907,15 +7995,16 @@
         "attacks": [
           {
             "name": "Uaanta's Blaster (Doom)",
-            "description": "5 hits x 25% Evil damage (125%) \n Target: -<x> Avoidance for 5 turns.",
+            "description": "5 hits x 25% Evil damage (125%)\n Target: -<x> Avoidance for 5 turns.",
             "requirements": "Exalted Blaster (I, II) (Doom) equipped",
-            "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Doom's Ambition' (-X* Melee/Pierce/Magic Avoidance) to target for 5 turns inclusive.\n• Previously had the tooltip: 5 hits of Evil, -Avd.\n• *X is equal to the equipped Trinket's Level/3, rounded normally; thus, potential Avoidance values are -7, -13, -20, and -30 respectively.\n• Tooltip was updated on  June 20th, 2025.",
+            "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Doom's Ambition' (-X* Melee/Pierce/Magic Avoidance) to target for 5 turns inclusive.",
             "manaCost": "0",
             "cooldown": "9 - [(Player LUK/50), rounded down]",
             "damageType": "As weapon",
             "element": "Evil",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Uaanta'sBlasterDoom.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Uaanta'sBlasterDoom-Appearance1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Uaanta'sBlasterDoom-Appearance1.0.png",
+            "notes": "• Previously had the tooltip: 5 hits of Evil, -Avd.\n• *X is equal to the equipped Trinket's Level/3, rounded normally; thus, potential Avoidance values are -7, -13, -20, and -30 respectively.\n• Tooltip was updated on June 20th, 2025."
           }
         ],
         "rarity": "15"
@@ -7945,15 +8034,16 @@
         "attacks": [
           {
             "name": "Uaanta's Blaster (Doom)",
-            "description": "5 hits x 25% Evil damage (125%) \n Target: -<x> Avoidance for 5 turns.",
+            "description": "5 hits x 25% Evil damage (125%)\n Target: -<x> Avoidance for 5 turns.",
             "requirements": "Exalted Blaster (I, II) (Doom) equipped",
-            "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Doom's Ambition' (-X* Melee/Pierce/Magic Avoidance) to target for 5 turns inclusive.\n• Previously had the tooltip: 5 hits of Evil, -Avd.\n• *X is equal to the equipped Trinket's Level/3, rounded normally; thus, potential Avoidance values are -7, -13, -20, and -30 respectively.\n• Tooltip was updated on  June 20th, 2025.",
+            "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Doom's Ambition' (-X* Melee/Pierce/Magic Avoidance) to target for 5 turns inclusive.",
             "manaCost": "0",
             "cooldown": "9 - [(Player LUK/50), rounded down]",
             "damageType": "As weapon",
             "element": "Evil",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Uaanta'sBlasterDoom.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Uaanta'sBlasterDoom-Appearance1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Uaanta'sBlasterDoom-Appearance1.0.png",
+            "notes": "• Previously had the tooltip: 5 hits of Evil, -Avd.\n• *X is equal to the equipped Trinket's Level/3, rounded normally; thus, potential Avoidance values are -7, -13, -20, and -30 respectively.\n• Tooltip was updated on June 20th, 2025."
           }
         ],
         "rarity": "15"
@@ -7983,15 +8073,16 @@
         "attacks": [
           {
             "name": "Uaanta's Blaster (Doom)",
-            "description": "5 hits x 25% Evil damage (125%) \n Target: -<x> Avoidance for 5 turns.",
+            "description": "5 hits x 25% Evil damage (125%)\n Target: -<x> Avoidance for 5 turns.",
             "requirements": "Exalted Blaster (I, II) (Doom) equipped",
-            "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Doom's Ambition' (-X* Melee/Pierce/Magic Avoidance) to target for 5 turns inclusive.\n• Previously had the tooltip: 5 hits of Evil, -Avd.\n• *X is equal to the equipped Trinket's Level/3, rounded normally; thus, potential Avoidance values are -7, -13, -20, and -30 respectively.\n• Tooltip was updated on  June 20th, 2025.",
+            "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Doom's Ambition' (-X* Melee/Pierce/Magic Avoidance) to target for 5 turns inclusive.",
             "manaCost": "0",
             "cooldown": "9 - [(Player LUK/50), rounded down]",
             "damageType": "As weapon",
             "element": "Evil",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Uaanta'sBlasterDoom.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Uaanta'sBlasterDoom-Appearance1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Uaanta'sBlasterDoom-Appearance1.0.png",
+            "notes": "• Previously had the tooltip: 5 hits of Evil, -Avd.\n• *X is equal to the equipped Trinket's Level/3, rounded normally; thus, potential Avoidance values are -7, -13, -20, and -30 respectively.\n• Tooltip was updated on June 20th, 2025."
           }
         ],
         "rarity": "15"
@@ -8191,6 +8282,11 @@
     "rarity": "25",
     "itemType": "Trinket",
     "equipSpot": "Trinket",
+    "armorCustomization": {
+      "appearance": "Vaal",
+      "modifies": "Chaosweaver"
+    },
+    "hasArmorCustomization": true,
     "category": "Armor",
     "obtainMethods": [
       {
@@ -8203,7 +8299,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "Own this item to unlock the Vaal  Armor Customization options for the  Chaosweaver class; this functionality was added on  December 18th, 2020.\nAs of the changes to the DEX stat on  April 16th, 2021, the description's claim that its ability did not affect the DEX damage bonus is outdated, as there is no longer a DEX damage bonus resultant of DoT application. The excerpt Does not affect the DEX damage bonus. would eventually be removed on  October 11th, 2024.\nResists were added on  June 20th, 2025.",
+    "notes": "Own this item to unlock the Vaal Armor Customization options for the Chaosweaver class; this functionality was added on December 18th, 2020.\nAs of the changes to the DEX stat on April 16th, 2021, the description's claim that its ability did not affect the DEX damage bonus is outdated, as there is no longer a DEX damage bonus resultant of DoT application. The excerpt Does not affect the DEX damage bonus. would eventually be removed on October 11th, 2024.\nResists were added on June 20th, 2025.",
     "tags": [
       "fir",
       "merge"
@@ -8213,15 +8309,16 @@
     "attacks": [
       {
         "name": "Vaal's Ego",
-        "description": "1 hit x 100% damage \n Target: (On hit) 33.3% DoT for 99 turns.",
+        "description": "1 hit x 100% damage\n Target: (On hit) 33.3% DoT for 99 turns.",
         "requirements": "Vaal's Ego equipped",
-        "effect": "1 hit of 100% damage; applies 'Ego Burn', a 33.3% damage Magic weapon element DoT effect, to target for 99 turns.\n• Previously had the tooltip: Call upon the power of Vaal.\n• As of the changes to the DEX stat on  April 2nd, 2021, ability's DoT effect is increased by (DEX/4)%.\n• Previously did not affect the DEX damage bonus, which otherwise increased damage against foes affected by DoT effects by 3(DEX/80)%; this DEX damage bonus resultant of DoT application was replaced on  April 16th, 2021.\n• The following changes were implemented on  June 20th, 2025:\n  • Tooltip was updated.\n  • Cooldown was lowered from 99 to 19.",
+        "effect": "1 hit of 100% damage; applies 'Ego Burn', a 33.3% damage Magic weapon element DoT effect, to target for 99 turns.",
         "manaCost": "10",
         "cooldown": "19 - [(Player LUK/50), rounded down]",
         "damageType": "As weapon",
         "element": "As weapon",
         "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-VaalsEgo.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-VaalsEgo-Appearance1.0.png"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-VaalsEgo-Appearance1.0.png",
+        "notes": "• Previously had the tooltip: Call upon the power of Vaal.\n• As of the changes to the DEX stat on April 2nd, 2021, ability's DoT effect is increased by (DEX/4)%.\n• Previously did not affect the DEX damage bonus, which otherwise increased damage against foes affected by DoT effects by 3(DEX/80)%; this DEX damage bonus resultant of DoT application was replaced on April 16th, 2021.\n• The following changes were implemented on June 20th, 2025:\n • Tooltip was updated.\n • Cooldown was lowered from 99 to 19."
       }
     ]
   },
@@ -8263,15 +8360,16 @@
     "attacks": [
       {
         "name": "Winds of Fate",
-        "description": "4 hits x 30% damage (120%) \n Self: (Warrior) +30 Boost/Bonus for 3 turns. | Self: (Mage) +200 Crit for 3 turns. | Target: (Rogue) (On hit) 75% base damage DoT for 3 turns. | Self: +5% all Damage Reduction for 3 turns.",
+        "description": "4 hits x 30% damage (120%)\n Self: (Warrior) +30 Boost/Bonus for 3 turns. | Self: (Mage) +200 Crit for 3 turns. | Target: (Rogue) (On hit) 75% base damage DoT for 3 turns. | Self: +5% all Damage Reduction for 3 turns.",
         "requirements": "Voyager's Charm equipped",
-        "effect": "Applies 'Winds of Fate' (Gain effects depending on the player's class, see below) for 3 turns; 4 hits of 30% damage, amounting to 120% damage.\n  • If the player equipped  Ancient Shadow Warrior,  DragonWarrior,  Shadow Warrior, or  Warrior, 'Winds of Fate' gains +30% Boost, +30 Bonus to player inclusive.\n  • If the player equipped  Ancient Shadow Mage,  DragonMage,  Shadow Mage, or  Mage, 'Winds of Fate' gains +200 Crit to player inclusive.\n  • If the player equipped  Ancient Shadow Rogue,  DragonRogue,  Shadow Rogue, or  Rogue, 'Winds of Fate' inflicts a 75% Magic weapon element DoT effect to target.\n  • If the player equipped any other class, 'Winds of Fate' gains +5% Non-Crit/DoT/Crit Damage Reduction to player.\n• (Ancient) Shadow Base classes gained their base class related effects on  January 17th, 2026.\n• Dragon Base classes gained their base class related effects on  June 27th, 2026.",
+        "effect": "Applies 'Winds of Fate' (Gain effects depending on the player's class, see below) for 3 turns; 4 hits of 30% damage, amounting to 120% damage.\n • If the player equipped Ancient Shadow Warrior, DragonWarrior, Shadow Warrior, or Warrior, 'Winds of Fate' gains +30% Boost, +30 Bonus to player inclusive.\n • If the player equipped Ancient Shadow Mage, DragonMage, Shadow Mage, or Mage, 'Winds of Fate' gains +200 Crit to player inclusive.\n • If the player equipped Ancient Shadow Rogue, DragonRogue, Shadow Rogue, or Rogue, 'Winds of Fate' inflicts a 75% Magic weapon element DoT effect to target.\n • If the player equipped any other class, 'Winds of Fate' gains +5% Non-Crit/DoT/Crit Damage Reduction to player.",
         "manaCost": "0",
         "cooldown": "19 - [(Player LUK/50), rounded down]",
         "damageType": "As weapon",
         "element": "As weapon",
         "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-WindsofFate.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-WindsofFate-Appearance1.0.png"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-WindsofFate-Appearance1.0.png",
+        "notes": "• (Ancient) Shadow Base classes gained their base class related effects on January 17th, 2026.\n• Dragon Base classes gained their base class related effects on June 27th, 2026."
       }
     ]
   },
@@ -8305,7 +8403,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "Equipping this trinket displays an animated Mogbot behind the player.\nClick on the Mogbot to change its light color between  ,  , and   respectively.",
+    "notes": "Equipping this trinket displays an animated Mogbot behind the player.\nClick on the Mogbot to change its light color between green, red, and blue respectively.",
     "tags": [
       "met",
       "merge"
@@ -8322,7 +8420,9 @@
     "description": "The twisted remains of what used to be a Summon Gem. Maybe it can be repaired somehow? Proof of victory over Intaym!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22381705",
     "releaseDate": "",
-    "elements": [],
+    "elements": [
+      "???"
+    ],
     "level": "0",
     "stats": "Block +5, Dodge +5, Parry +5, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +5, END +5, CHA +5, LUK +5",
     "resists": "None",
@@ -8341,6 +8441,7 @@
       }
     ],
     "tags": [
+      "???",
       "free"
     ],
     "daRequired": true,
@@ -8364,6 +8465,11 @@
     "rarity": "0",
     "itemType": "Trinket",
     "equipSpot": "Trinket",
+    "armorCustomization": {
+      "appearance": "Warpfire Customization for Pyromancer. (Cosmetic) Equipping this trinket displays an animated orange runic circles over the player. Own this item to unlock the Warpfire",
+      "modifies": "Pyromancer"
+    },
+    "hasArmorCustomization": true,
     "category": "Armor",
     "obtainMethods": [
       {
@@ -8375,7 +8481,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "Equipping this trinket displays an animated orange runic circles over the  .\nOwn this item to unlock the Warpfire  Armor Customization options for the  Pyromancer class.",
+    "notes": "Equipping this trinket displays an animated orange runic circles over the player.\nOwn this item to unlock the Warpfire Armor Customization options for the Pyromancer class.",
     "tags": [
       "fir",
       "dc"
@@ -8421,7 +8527,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "Equipping this trinket displays   pointing down to the  .",
+    "notes": "Equipping this trinket displays \"YOU ARE HERE\" text with an animated arrow pointing down to the player.",
     "tags": [
       "nat",
       "free"
@@ -8434,13 +8540,14 @@
         "name": "You Are Here",
         "description": "25% damage/5 rnds but easier to hit.",
         "requirements": "You Are Here (D-Amulet/D-Coins) equipped",
-        "effect": "Applies +25% Boost and -300 Melee/Pierce/Magic Avoidance to player for 5 turns inclusive.\n• Appearance will display as long as the trinket is equipped, regardless if the skill is used or not, including out of combat.",
+        "effect": "Applies +25% Boost and -300 Melee/Pierce/Magic Avoidance to player for 5 turns inclusive.",
         "manaCost": "0",
         "cooldown": "29 - [(Player LUK/50), rounded down]",
         "damageType": "N/A",
         "element": "N/A",
         "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-YouAreHere.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-YouAreHere-Appearance1.0.gif"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-YouAreHere-Appearance1.0.gif",
+        "notes": "• Appearance will display as long as the trinket is equipped, regardless if the skill is used or not, including out of combat."
       }
     ]
   }

@@ -1,1 +1,194 @@
-[]
+[
+  {
+    "id": "weapon-13th-staff",
+    "familyName": "13th Staff",
+    "slug": "weapon-13th-staff",
+    "aliasSlugs": [
+      "weapon-13th-staff-all-versions"
+    ],
+    "type": "weapon",
+    "subtype": "staff-wand",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=6706343",
+    "familyOrigin": "same-thread-multi-post",
+    "familySources": [],
+    "shared": {
+      "description": "This staff once belonged to the great and terrible warrior Jaysun. It was said long ago that anyone who holds his power would be impossible to kill.",
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/13thStaff.png",
+      "notes": "Weapon was previously available from the quests Friday the 13th Invasion, Friday the 13th Invasion - Part II, Friday the 13th III, Friday the 13th Invasion - A Ghoulish Attack, and Friday the 13th Invasion Part IV.\nThe following changes were implemented on September 26th, 2025:\nLevel's requirement was raised from 10 to 13.\nDamage range was modified from 26-30 to 28-32.\nCrit was raised from +1 to +5.\nSellback was lowered from 500 to 13 Gold.",
+      "alsoSee": [
+        {
+          "name": "Unlucky 13th Staff (I-VIII)",
+          "slug": "weapon-unlucky-13th-staff-i-viii",
+          "type": "weapon",
+          "url": "https://forums2.battleon.com/f/tm.asp?m=21938727"
+        }
+      ]
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 13,
+        "levelDisplay": "13",
+        "actualLevel": 13,
+        "name": "13th Staff",
+        "damage": "28-32",
+        "stats": "Crit +5",
+        "obtainVariants": [
+          {
+            "location": "Undead Slayer Store",
+            "price": "130 Gold",
+            "priceType": "gold",
+            "sellback": "13 Gold",
+            "daRequired": false
+          },
+          {
+            "location": "The Stakeout",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "13 Gold",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=6706343",
+        "description": "This staff once belonged to the great and terrible warrior Jaysun. It was said long ago that anyone who holds his power would be impossible to kill.",
+        "element": "DAR",
+        "resists": "Darkness +5",
+        "rarity": "8",
+        "notes": "Weapon was previously available from the quests Friday the 13th Invasion, Friday the 13th Invasion - Part II, Friday the 13th III, Friday the 13th Invasion - A Ghoulish Attack, and Friday the 13th Invasion Part IV.\nThe following changes were implemented on September 26th, 2025:\nLevel's requirement was raised from 10 to 13.\nDamage range was modified from 26-30 to 28-32.\nCrit was raised from +1 to +5.\nSellback was lowered from 500 to 13 Gold."
+      },
+      {
+        "levelNumber": 27,
+        "levelDisplay": "27",
+        "actualLevel": 27,
+        "name": "13th Staff",
+        "damage": "42-52",
+        "stats": "Crit +4",
+        "obtainVariants": [
+          {
+            "location": "Friday the 13th Invasion, Friday the 13th Invasion - Part II, Friday the 13th Invasion - Part III, Friday the 13th Invasion - A Ghoulish Attack, Friday the 13th Invasion Part IV",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "800 Gold",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=6706343",
+        "description": "This staff once belonged to the great and terrible warrior Jaysun. It was said long ago that anyone who holds his power would be impossible to kill.",
+        "element": "DAR",
+        "resists": "Darkness +5",
+        "rarity": "8"
+      }
+    ],
+    "category": "Weapon",
+    "releaseDate": "",
+    "tags": [
+      "dar",
+      "gold",
+      "free"
+    ],
+    "hasDA": false,
+    "hasDC": false,
+    "hasDM": false,
+    "hasFree": true,
+    "hasMerge": false,
+    "elements": [
+      "DAR"
+    ],
+    "levelRange": "13-27"
+  },
+  {
+    "id": "weapon-301st-staff",
+    "name": "301st Staff",
+    "slug": "weapon-301st-staff",
+    "type": "weapon",
+    "subtype": "staff-wand",
+    "description": "A weapon from the Swordhaven Armory. Who would abandon it out in the wilds though?",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19862408",
+    "releaseDate": "",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/301stStaff.png",
+    "elements": [
+      "WIN"
+    ],
+    "level": "42",
+    "damage": "53-69",
+    "stats": "Crit +2, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +4, END +4, LUK -1, INT +4, Bonus +2",
+    "resists": "Wind +3, Stone +3",
+    "rarity": "10",
+    "obtainMethods": [
+      {
+        "location": "Swordhaven Forest",
+        "price": "N/A",
+        "priceType": "free",
+        "sellback": "200 Gold",
+        "daRequired": false
+      }
+    ],
+    "alsoSee": [
+      {
+        "name": "Dull 301st Staff",
+        "slug": "weapon-dull-301st-staff",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=19877277"
+      },
+      {
+        "name": "Regal 301st Staff",
+        "slug": "weapon-regal-301st-staff",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=19858895"
+      },
+      {
+        "name": "Royal 301st Staff",
+        "slug": "weapon-royal-301st-staff",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=19857208"
+      }
+    ],
+    "tags": [
+      "win",
+      "free"
+    ],
+    "daRequired": false
+  },
+  {
+    "id": "weapon-9th-flame-the",
+    "name": "9th Flame, The",
+    "slug": "weapon-9th-flame-the",
+    "type": "weapon",
+    "subtype": "staff-wand",
+    "description": "Once there were 12 magical fires set around the kingdom that burned day and night to keep the people of the kingdom surrounded by light and warmth. A flame from the 9th magical fire was used in the creation of this staff.",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=11209153",
+    "releaseDate": "",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/HeartofFire.png",
+    "elements": [
+      "FIR"
+    ],
+    "level": "10",
+    "damage": "26-38",
+    "stats": "INT +2, Bonus +2",
+    "resists": "None",
+    "rarity": "9",
+    "obtainMethods": [
+      {
+        "location": "Cysero's Weapons",
+        "price": "140 Dragon Coins",
+        "priceType": "dc",
+        "sellback": "126 DC (<24 hours) / 35 DC (>24 hours)",
+        "daRequired": false,
+        "dcRequired": true
+      }
+    ],
+    "alsoSee": [
+      {
+        "name": "Heart of Fire",
+        "slug": "weapon-heart-of-fire",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=10700418"
+      }
+    ],
+    "tags": [
+      "fir",
+      "dc"
+    ],
+    "daRequired": false,
+    "dcRequired": true
+  }
+]

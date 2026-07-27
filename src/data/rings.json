@@ -34,7 +34,7 @@
         "daRequired": true
       }
     ],
-    "notes": "The following changes were implemented on  September 26th, 2025:\n  • Previously had the description: This magic ring was found during the undead invasion. It provides 5% resistance against darkness attacks and a 1% chance to crit.\n  • Price and sellback from  Undead Slayer Store was raised from 0 to 130 Gold and 0 to 13 Gold respectively.\n  • Level's requirement was raised from 7 to 13.\n  • Ring initially had Crit +1 stat.\n  • Ring initially had 10 Rarity.",
+    "notes": "The following changes were implemented on September 26th, 2025:\n  • Previously had the description: This magic ring was found during the undead invasion. It provides 5% resistance against darkness attacks and a 1% chance to crit.\n  • Price and sellback from Undead Slayer Store was raised from 0 to 130 Gold and 0 to 13 Gold respectively.\n  • Level's requirement was raised from 7 to 13.\n  • Ring initially had Crit +1 stat.\n  • Ring initially had 10 Rarity.",
     "tags": [
       "dar",
       "gold"
@@ -83,7 +83,7 @@
     "slug": "accessory-a-team-ring",
     "type": "accessory",
     "subtype": "ring",
-    "description": "This is a team ring for only the BEST of heroes.  No B-list adventurers need apply for ownership!",
+    "description": "This is a team ring for only the BEST of heroes. No B-list adventurers need apply for ownership!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18525421",
     "releaseDate": "",
     "elements": [
@@ -1648,7 +1648,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "Ring previously appeared in the retired quest  Nightmares as a Necklace and had the following stats:\nStats: Crit +1, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +4, LUK +4, INT +4, DEX +4, STR +4, Bonus +3\nResists: Water +6, Nature +4",
+    "notes": "Ring previously appeared in the retired quest Nightmares as a Necklace and had the following stats:\nStats: Crit +1, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +4, LUK +4, INT +4, DEX +4, STR +4, Bonus +3\nResists: Water +6, Nature +4",
     "tags": [
       "wat",
       "free"
@@ -2271,7 +2271,7 @@
         "daRequired": false
       }
     ],
-    "notes": "Transformed from  Puzzling Locked Chest (Normal) on  March 17th, 2008.",
+    "notes": "Transformed from Puzzling Locked Chest (Normal) on March 17th, 2008.",
     "tags": [
       "lig",
       "free"
@@ -2321,8 +2321,7 @@
     ],
     "shared": {
       "description": "This ring is crafted from the claw of an unknown feline and plated in silver. Its wicked curvature make it a perfect band.",
-      "rarity": "6",
-      "notes": "These rings went rare on  April 30th, 2021."
+      "rarity": "6"
     },
     "levelVariants": [
       {
@@ -3156,8 +3155,7 @@
       }
     ],
     "shared": {
-      "description": "This ring can only be worn one who bears the DragonAmulet. It was awarded to you by the town of Falconreach for defending it against a terrible threat.",
-      "notes": "Defender's Medal costs for this item were significantly reduced on March 29th, 2021.\nRings were available to merge from  Def. Rings shop until  January 14th, 2023; merge versions from  Defender Item Swap were added on that date."
+      "description": "This ring can only be worn one who bears the DragonAmulet. It was awarded to you by the town of Falconreach for defending it against a terrible threat."
     },
     "levelVariants": [
       {
@@ -3555,7 +3553,7 @@
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=15154122",
-        "description": "This item requires a Dragon Amulet. It was awarded to you by the town of Falconreach  for defending it against a terrible threat.",
+        "description": "This item requires a Dragon Amulet. It was awarded to you by the town of Falconreach for defending it against a terrible threat.",
         "element": "NON",
         "resists": "Fire +4, Water +4",
         "rarity": "0"
@@ -4391,8 +4389,7 @@
       }
     ],
     "shared": {
-      "description": "This ring was awarded to you by the town of Falconreach for defending it against a terrible threat.",
-      "notes": "Defender's Medal costs for this item were significantly reduced on March 29th, 2021.\nWhile Water Resist is listed in all lower case on this item, it still functions as intended."
+      "description": "This ring was awarded to you by the town of Falconreach for defending it against a terrible threat."
     },
     "levelVariants": [
       {
@@ -5953,7 +5950,7 @@
         "daRequired": true
       }
     ],
-    "notes": "The following changes were implemented on  March 28th, 2025:\n  • Previously had the description: THIS RING can only be worn by one who owns a DRAGON AMULET. It was given to you by Sir Valence for your help with some pesky Sneevil troubles. The enchantement of the ring adds +1 END and a bonus to hit, and a +1 to CRIT.\n  • Stats were changed from Crit +1, END +1, Bonus +1 to Crit +4, END +4; description was also updated.",
+    "notes": "The following changes were implemented on March 28th, 2025:\n  • Previously had the description: THIS RING can only be worn by one who owns a DRAGON AMULET. It was given to you by Sir Valence for your help with some pesky Sneevil troubles. The enchantement of the ring adds +1 END and a bonus to hit, and a +1 to CRIT.\n  • Stats were changed from Crit +1, END +1, Bonus +1 to Crit +4, END +4; description was also updated.",
     "tags": [
       "non",
       "free"
@@ -7042,7 +7039,9 @@
     "description": "This ring has been used by mages to seal the letters they send, the ring absorbed some of their powers. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21667897",
     "releaseDate": "",
-    "elements": [],
+    "elements": [
+      "???"
+    ],
     "level": "37",
     "stats": "Block +1, Dodge +2, Parry +1, Crit +5, Magic Def +3, Pierce Def +4, Melee Def +5, WIS +6, END +1, CHA +4, LUK +2, INT +6, DEX +3, STR +1, Bonus +4",
     "resists": "Fire +7, Ice +7, Water +7, Wind +7",
@@ -7060,6 +7059,7 @@
       }
     ],
     "tags": [
+      "???",
       "free"
     ],
     "daRequired": true
@@ -8048,7 +8048,7 @@
     "category": "Armor",
     "obtainMethods": [
       {
-        "location": "Fiery Heart of Mt. Shining Star, The Elemental Cave, Ocean Reef",
+        "location": "The Elemental Cave, Ocean Reef",
         "priceType": "free",
         "price": "N/A",
         "sellback": "30 Gold",
@@ -8241,8 +8241,7 @@
       }
     ],
     "shared": {
-      "description": "A simple silver band, embedded with a tiny clear orange jewel. Given to you by one of the rebel DragonLords. \"I can never go back. Better to leave those memories behind.\"",
-      "notes": "While Ice Resist is listed in all lower case on this item, it still functions as intended."
+      "description": "A simple silver band, embedded with a tiny clear orange jewel. Given to you by one of the rebel DragonLords. \"I can never go back. Better to leave those memories behind.\""
     },
     "levelVariants": [
       {
@@ -10116,7 +10115,7 @@
         "daRequired": false
       }
     ],
-    "notes": "Ring's Nature Resist was listed in all lower case; this was fixed on  July 22nd, 2023.",
+    "notes": "Ring's Nature Resist was listed in all lower case; this was fixed on July 22nd, 2023.",
     "tags": [
       "met",
       "free"
@@ -10840,7 +10839,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "Ring previously appeared in the retired quest  Nightmares as a Necklace and had the following stats:\nStats: Crit +2, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +5, END +3, INT +3\nResists: Fire +6\nDropped version previously had the description: I single, small orb is hung from this chain. It is freezing cold.",
+    "notes": "Ring previously appeared in the retired quest Nightmares as a Necklace and had the following stats:\nStats: Crit +2, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +5, END +3, INT +3\nResists: Fire +6\nDropped version previously had the description: I single, small orb is hung from this chain. It is freezing cold.",
     "tags": [
       "ice",
       "free"
@@ -13962,7 +13961,7 @@
       "description": "It feels as cheap as it looks. It is exactly what you expect for the level 1 warrior wanting to make a name for himself.",
       "resists": "None",
       "rarity": "0",
-      "notes": "Item was previously available in the retired quest  Sneevil Box Fort."
+      "notes": "Item was previously available in the retired quest Sneevil Box Fort."
     },
     "levelVariants": [
       {
@@ -13986,8 +13985,7 @@
         "alternativeImages": [],
         "element": "MET",
         "resists": "None",
-        "rarity": "0",
-        "notes": "Item was previously available in the retired quest  Sneevil Box Fort."
+        "rarity": "0"
       },
       {
         "levelNumber": 1,
@@ -14010,8 +14008,7 @@
         "alternativeImages": [],
         "element": "MET",
         "resists": "None",
-        "rarity": "0",
-        "notes": "Item was previously available in the retired quest  Sneevil Box Fort."
+        "rarity": "0"
       }
     ],
     "itemType": "Ring",
@@ -14526,7 +14523,7 @@
         "daRequired": false
       }
     ],
-    "notes": "Item is a reference to the  One Ring from J. R. R. Tolkien's 'The Lord of the Rings'.\nItem was previously available in the retired quest  Sir Koffagus Sarcophagus.",
+    "notes": "Item is a reference to the One Ring from J. R. R. Tolkien's 'The Lord of the Rings'.\nItem was previously available in the retired quest Sir Koffagus Sarcophagus.",
     "tags": [
       "met",
       "free"
@@ -15621,7 +15618,7 @@
         "daRequired": false
       }
     ],
-    "notes": "Level's requirement was lowered from 11 to 10 on  September 5th, 2025.",
+    "notes": "Level's requirement was lowered from 11 to 10 on September 5th, 2025.",
     "tags": [
       "win",
       "free"
@@ -15656,7 +15653,7 @@
         "daRequired": false
       }
     ],
-    "notes": "Ring's Nature Resist was listed in all lower case; this was fixed on  July 22nd, 2023.",
+    "notes": "Ring's Nature Resist was listed in all lower case; this was fixed on July 22nd, 2023.",
     "tags": [
       "met",
       "free"
@@ -15759,7 +15756,7 @@
         "daRequired": true
       }
     ],
-    "notes": "Ring was initially purchasable at  Gargok's Horde Shop for 50 Gold.",
+    "notes": "Ring was initially purchasable at Gargok's Horde Shop for 50 Gold.",
     "tags": [
       "fir",
       "free"
@@ -16098,6 +16095,7 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22360766",
         "description": "This ring was woven from the fur of the Doomkitten and the hair of Guffer. It's very soft and comfortable. Proof of your victory over the Kerfluffle challenge.",
+        "element": "???",
         "resists": "All -10, Health +10",
         "rarity": "0"
       },
@@ -16122,6 +16120,7 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22360770",
         "description": "This ring was woven from the fur of the Doomkitten and the hair of Guffer. It's very soft and comfortable. Proof of your victory over the Kerfluffle challenge. This item requires a Dragon Amulet.",
+        "element": "???",
         "resists": "All -12, Health +12",
         "rarity": "0"
       },
@@ -16146,6 +16145,7 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22360772",
         "description": "This ring was woven from the fur of the Doomkitten and the hair of Guffer. It's very soft and comfortable. Proof of your victory over the Kerfluffle challenge. This item requires a Dragon Amulet.",
+        "element": "???",
         "resists": "All -15, Health +15",
         "rarity": "6"
       }
@@ -16155,6 +16155,7 @@
     "category": "Armor",
     "releaseDate": "",
     "tags": [
+      "???",
       "merge"
     ],
     "hasDA": true,
@@ -16163,7 +16164,9 @@
     "hasFree": false,
     "hasMerge": true,
     "levelRange": "I-III",
-    "elements": []
+    "elements": [
+      "???"
+    ]
   },
   {
     "id": "accessory-ring-of-recklessness",
@@ -16866,7 +16869,7 @@
         "daRequired": false
       }
     ],
-    "notes": "The following changes were implemented on  March 28th, 2025:\n  • Previously had the description: This ring was given to you by Sir Valence for your help with some pesky Sneevil troubles. The enchantment on the rings adds +1 END and a bonus to hit.\n  • Stats were changed from END +1, Bonus +2 to Crit +3, END +3; description was also updated.",
+    "notes": "The following changes were implemented on March 28th, 2025:\n  • Previously had the description: This ring was given to you by Sir Valence for your help with some pesky Sneevil troubles. The enchantment on the rings adds +1 END and a bonus to hit.\n  • Stats were changed from END +1, Bonus +2 to Crit +3, END +3; description was also updated.",
     "tags": [
       "non",
       "free"
@@ -16913,7 +16916,7 @@
     "slug": "accessory-ring-of-the-lords",
     "type": "accessory",
     "subtype": "ring",
-    "description": "So many desire this precioussssss ring, and now it's fallen into YOUR hands!  What will you do with it? It might just make you walk into more doors.",
+    "description": "So many desire this precioussssss ring, and now it's fallen into YOUR hands! What will you do with it? It might just make you walk into more doors.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18525751",
     "releaseDate": "",
     "elements": [
@@ -16971,7 +16974,7 @@
         "daRequired": false
       }
     ],
-    "notes": "Ring was previously available from the retired quest  Spirits in the Inn.",
+    "notes": "Ring was previously available from the retired quest Spirits in the Inn.",
     "tags": [
       "dar",
       "free"
@@ -17574,7 +17577,7 @@
     "slug": "accessory-ring-of-winds",
     "type": "accessory",
     "subtype": "ring",
-    "description": "This ring was supposed to bring favorable winds  and smooth sailing to any captain who wore it, according to the last journal entry on the sunken ship where it was found.",
+    "description": "This ring was supposed to bring favorable winds and smooth sailing to any captain who wore it, according to the last journal entry on the sunken ship where it was found.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=10485251",
     "releaseDate": "",
     "elements": [
@@ -17596,7 +17599,7 @@
         "daRequired": false
       }
     ],
-    "notes": "The following changes were implemented on  March 20th, 2026:\n  • Item was previously named 'Ring of Four Winds'.\n  • Level's requirement was raised from 10 to 14.\n  • Crit, CHA, LUK, and Wind Resist was raised from +1 to +4.\n  • Pierce/Magic Avoidance and END stats were added.",
+    "notes": "The following changes were implemented on March 20th, 2026:\n  • Item was previously named 'Ring of Four Winds'.\n  • Level's requirement was raised from 10 to 14.\n  • Crit, CHA, LUK, and Wind Resist was raised from +1 to +4.\n  • Pierce/Magic Avoidance and END stats were added.",
     "tags": [
       "win",
       "free"
@@ -18286,7 +18289,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "Ring previously appeared in the retired quest  Nightmares as a Necklace and had the following stats:\nStats: Crit +2, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +2, END +5, INT +6, DEX +6, STR +6, Bonus +5\nResists: Fire +8, Water +4, Immobility +1\nDropped version previously had the description: A vial of cooling salve hangs on this chain.",
+    "notes": "Ring previously appeared in the retired quest Nightmares as a Necklace and had the following stats:\nStats: Crit +2, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +2, END +5, INT +6, DEX +6, STR +6, Bonus +5\nResists: Fire +8, Water +4, Immobility +1\nDropped version previously had the description: A vial of cooling salve hangs on this chain.",
     "tags": [
       "win",
       "free"
@@ -18574,8 +18577,7 @@
       }
     ],
     "shared": {
-      "description": "There is a glittering blue stone on this ring. Staring into it doesn't show you your future, but it does make you feel a little better.",
-      "notes": "Seer's Ring (10-80) were previously available from the retired quest  Timelines, with sellback values of 15, 50, 120, 150, 180, 200, 230, and 290 Gold respectively.\nItems were tiered with Roman numerals on  December 30th, 2022."
+      "description": "There is a glittering blue stone on this ring. Staring into it doesn't show you your future, but it does make you feel a little better."
     },
     "levelVariants": [
       {
@@ -19131,8 +19133,7 @@
     ],
     "shared": {
       "description": "You've infused this ring with shadow energy. As you move your hand it seems to blur, almost as though it was leaving shadows of itself behind.",
-      "rarity": "10",
-      "notes": "II-IV versions previously required 1  DeathKnight Circlet & 2/3/4  Dusk Essence respectively.\nRings were tiered with Roman numerals on  August 25th, 2023; Required Items on II-IV versions were also changed on that date."
+      "rarity": "10"
     },
     "levelVariants": [
       {
@@ -19416,7 +19417,7 @@
         "daRequired": false
       }
     ],
-    "notes": "Item was previously available in the retired quest  Sneevil Box Fort.",
+    "notes": "Item was previously available in the retired quest Sneevil Box Fort.",
     "tags": [
       "met",
       "free"
@@ -19632,6 +19633,7 @@
         "levelNumber": 40,
         "levelDisplay": "40",
         "actualLevel": 40,
+        "variantName": "(Blue)",
         "name": "Soulforged Ring (Blue)",
         "damage": "",
         "stats": "Block +2, Dodge +2, Parry +2, Crit +5, WIS +2, END +2, CHA +2, LUK +2, INT +14, DEX +2, STR +2, Bonus +5",
@@ -19654,6 +19656,7 @@
         "levelNumber": 60,
         "levelDisplay": "60",
         "actualLevel": 60,
+        "variantName": "(Blue)",
         "name": "Soulforged Ring (Blue)",
         "damage": "",
         "stats": "Block +4, Dodge +4, Parry +4, Crit +7, WIS +4, END +4, CHA +4, LUK +4, INT +18, DEX +4, STR +4, Bonus +7",
@@ -19676,6 +19679,7 @@
         "levelNumber": 90,
         "levelDisplay": "90",
         "actualLevel": 90,
+        "variantName": "(Blue)",
         "name": "Soulforged Ring (Blue)",
         "damage": "",
         "stats": "Block +5, Dodge +5, Parry +5, Crit +10, WIS +7, END +7, CHA +7, LUK +7, INT +24, DEX +7, STR +7, Bonus +10",
@@ -19755,6 +19759,7 @@
         "levelNumber": 40,
         "levelDisplay": "40",
         "actualLevel": 40,
+        "variantName": "(Green)",
         "name": "Soulforged Ring (Green)",
         "damage": "",
         "stats": "Block +2, Dodge +2, Parry +2, Crit +5, WIS +2, END +2, CHA +2, LUK +2, INT +2, DEX +14, STR +2, Bonus +5",
@@ -19777,6 +19782,7 @@
         "levelNumber": 60,
         "levelDisplay": "60",
         "actualLevel": 60,
+        "variantName": "(Green)",
         "name": "Soulforged Ring (Green)",
         "damage": "",
         "stats": "Block +4, Dodge +4, Parry +4, Crit +7, WIS +4, END +4, CHA +4, LUK +4, INT +4, DEX +18, STR +4, Bonus +7",
@@ -19799,6 +19805,7 @@
         "levelNumber": 90,
         "levelDisplay": "90",
         "actualLevel": 90,
+        "variantName": "(Green)",
         "name": "Soulforged Ring (Green)",
         "damage": "",
         "stats": "Block +5, Dodge +5, Parry +5, Crit +10, WIS +7, END +7, CHA +7, LUK +7, INT +7, DEX +24, STR +7, Bonus +10",
@@ -19878,6 +19885,7 @@
         "levelNumber": 40,
         "levelDisplay": "40",
         "actualLevel": 40,
+        "variantName": "(Red)",
         "name": "Soulforged Ring (Red)",
         "damage": "",
         "stats": "Block +2, Dodge +2, Parry +2, Crit +5, WIS +2, END +2, CHA +2, LUK +2, INT +2, DEX +2, STR +14, Bonus +5",
@@ -19900,6 +19908,7 @@
         "levelNumber": 60,
         "levelDisplay": "60",
         "actualLevel": 60,
+        "variantName": "(Red)",
         "name": "Soulforged Ring (Red)",
         "damage": "",
         "stats": "Block +4, Dodge +4, Parry +4, Crit +7, WIS +4, END +4, CHA +4, LUK +4, INT +4, DEX +4, STR +18, Bonus +7",
@@ -19922,6 +19931,7 @@
         "levelNumber": 90,
         "levelDisplay": "90",
         "actualLevel": 90,
+        "variantName": "(Red)",
         "name": "Soulforged Ring (Red)",
         "damage": "",
         "stats": "Block +5, Dodge +5, Parry +5, Crit +10, WIS +7, END +7, CHA +7, LUK +7, INT +7, DEX +7, STR +24, Bonus +10",
@@ -20639,7 +20649,7 @@
     "slug": "accessory-sylvan-loop",
     "type": "accessory",
     "subtype": "ring",
-    "description": "This ring is beautifully carved from a single piece of wood.  The pattern of intricate leaves seems to waft across the surface.",
+    "description": "This ring is beautifully carved from a single piece of wood. The pattern of intricate leaves seems to waft across the surface.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=14661181",
     "releaseDate": "",
     "elements": [
@@ -20762,6 +20772,7 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22331541",
         "description": "A tiny tentacle torn from the defeated Simulacrum of Kathool, this ring slithers around your finger. I'm sure it'll be fine. Proof of your victory over the Simulacrum of Kathool.",
+        "element": "???",
         "resists": "All +2",
         "rarity": "0"
       },
@@ -20786,6 +20797,7 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22331542",
         "description": "A tiny tentacle torn from the defeated Simulacrum of Kathool, this ring slithers around your finger. I'm sure it'll be fine. Proof of your victory over the Simulacrum of Kathool.",
+        "element": "???",
         "resists": "All +4",
         "rarity": "0"
       },
@@ -20810,6 +20822,7 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22331543",
         "description": "A tiny tentacle torn from the defeated Simulacrum of Kathool, this ring slithers around your finger. I'm sure it'll be fine. Proof of your victory over the Simulacrum of Kathool.",
+        "element": "???",
         "resists": "All +5",
         "rarity": "0"
       }
@@ -20819,6 +20832,7 @@
     "category": "Armor",
     "releaseDate": "",
     "tags": [
+      "???",
       "free",
       "merge"
     ],
@@ -20828,7 +20842,9 @@
     "hasFree": true,
     "hasMerge": true,
     "levelRange": "I-III",
-    "elements": []
+    "elements": [
+      "???"
+    ]
   },
   {
     "id": "accessory-third-golden-ring",
@@ -21002,7 +21018,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "Ring previously appeared in the retired quest  Nightmares as a Necklace and had the following stats:\nSellback: 0 Gold\nStats: Parry +1, Crit +8, WIS +7, END +10, DEX +9, Bonus +5\nResists: Metal +8, Fire +8, Nature +8, Immobility +3\nDropped version previously had the description: Twisted and broken gears form a chain.",
+    "notes": "Ring previously appeared in the retired quest Nightmares as a Necklace and had the following stats:\nSellback: 0 Gold\nStats: Parry +1, Crit +8, WIS +7, END +10, DEX +9, Bonus +5\nResists: Metal +8, Fire +8, Nature +8, Immobility +3\nDropped version previously had the description: Twisted and broken gears form a chain.",
     "tags": [
       "met",
       "free"
@@ -21088,8 +21104,7 @@
     ],
     "shared": {
       "description": "You've infused this ring with shadow energy. As you move your hand it seems to blur, almost as though it was leaving shadows of itself behind. This item requires a Dragon Amulet.",
-      "rarity": "10",
-      "notes": "II-IV versions previously required 1  DeathKnight Circlet & 2/3/4  Umbral Essence respectively.\nRings were tiered with Roman numerals on  August 25th, 2023; Required Items on II-IV versions were also changed on that date."
+      "rarity": "10"
     },
     "levelVariants": [
       {
@@ -21596,6 +21611,7 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22315795",
         "description": "Carved from the chitinous armor of a primordial being, this ring wraps almost too tightly around your finger. Almost. Proof of your victory over the Simulacrum of Uthuluc.",
+        "element": "???",
         "resists": "All +2",
         "rarity": "0"
       },
@@ -21620,6 +21636,7 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22316050",
         "description": "Carved from the chitinous armor of a primordial being, this ring wraps almost too tightly around your finger. Almost. Proof of your victory over the Simulacrum of Uthuluc.",
+        "element": "???",
         "resists": "All +3",
         "rarity": "0"
       },
@@ -21644,6 +21661,7 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22316051",
         "description": "Carved from the chitinous armor of a primordial being, this ring wraps almost too tightly around your finger. Almost. Proof of your victory over the Simulacrum of Uthuluc.",
+        "element": "???",
         "resists": "All +4",
         "rarity": "0"
       },
@@ -21668,6 +21686,7 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22316052",
         "description": "Carved from the chitinous armor of a primordial being, this ring wraps almost too tightly around your finger. Almost. Proof of your victory over the Simulacrum of Uthuluc.",
+        "element": "???",
         "resists": "All +5",
         "rarity": "6"
       }
@@ -21677,6 +21696,7 @@
     "category": "Armor",
     "releaseDate": "",
     "tags": [
+      "???",
       "free",
       "merge"
     ],
@@ -21686,7 +21706,9 @@
     "hasFree": true,
     "hasMerge": true,
     "levelRange": "I-IV",
-    "elements": []
+    "elements": [
+      "???"
+    ]
   },
   {
     "id": "accessory-volcano-s-heart",
@@ -21867,7 +21889,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "Ring previously appeared in the retired quest  Nightmares as a Necklace and had the following stats:\nStats: Parry +2, Crit +7, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +8, END +2, CHA +5, INT +8, DEX +8, STR +8, Bonus +5\nResists: All +5, Immobility +2\nDropped version previously had the description: A splinter of wood hangs off the end of this chain. You feel magic humming within it. This item requires a Dragon Amulet.",
+    "notes": "Ring previously appeared in the retired quest Nightmares as a Necklace and had the following stats:\nStats: Parry +2, Crit +7, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +8, END +2, CHA +5, INT +8, DEX +8, STR +8, Bonus +5\nResists: All +5, Immobility +2\nDropped version previously had the description: A splinter of wood hangs off the end of this chain. You feel magic humming within it. This item requires a Dragon Amulet.",
     "tags": [
       "nat",
       "free"

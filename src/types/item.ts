@@ -194,11 +194,13 @@ export interface LevelVariant {
   imageUrl?: string
   alternativeImages?: AlternativeImage[]
   element?: string // Only if different from shared.element
+  traits?: string[] // Variant-specific behavioural traits/markers (e.g. base Linus [] vs Prince Linus [SHR]); used to scope trait pills to the selected variant on detail pages
   resists?: string // Only if different from shared.resists
   rarity?: string // Only if different from shared.rarity
   attacks?: VariantAttack[] // Only if attacks differ at this level
   guestStats?: GuestStats
   notes?: string // Level-specific notes
+  retired?: boolean // This specific variant/level was retired (guest Retired tag)
 }
 
 /**
@@ -357,6 +359,18 @@ export interface ItemFamily {
    *
    * Most items have a single element, but this array handles edge cases where
    * element varies by level (would use level-specific override).
+   *
+   * Additive: this is the UNION of every variant's element, so a family whose
+   * base form is one element and later forms add another shows both.
    */
   elements: string[]
+
+  /**
+   * All unique behavioural traits/markers across levels (e.g. SHR = Shrinks).
+   *
+   * Additive like `elements`: the UNION across all variants. Example: Linus's
+   * base form is [ICE] while Prince/King/Emperor Linus are [ICE][SHR], so the
+   * family exposes both ICE and SHR.
+   */
+  traits?: string[]
 }

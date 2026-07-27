@@ -43,16 +43,27 @@ export function buildDisplayImages({
   mainCaption,
 }: BuildDisplayImagesOptions): DisplayImage[] {
   const validAlternatives = (alternativeImages ?? []).filter((image) => image.url)
+  const otherAlternatives = imageUrl
+    ? validAlternatives.filter((image) => image.url !== imageUrl)
+    : validAlternatives
   const images: DisplayImage[] = []
 
   if (imageUrl) {
+    // When the main image also appears in the alternatives list carrying a bold
+    // caption (weapon-style captioned main), prefer that caption over the generic
+    // "Main" label. Otherwise fall back to "Main" (when other images exist) or the
+    // provided mainCaption.
+    const mainMatch = validAlternatives.find((image) => image.url === imageUrl)
+    const mainMatchCaption = mainMatch
+      ? (normalizeImageCaption(mainMatch.caption) ?? inferImageCaptionFromUrl(mainMatch.url))
+      : undefined
     images.push({
       url: imageUrl,
-      caption: validAlternatives.length > 0 ? 'Main' : mainCaption,
+      caption: mainMatchCaption ?? (otherAlternatives.length > 0 ? 'Main' : mainCaption),
     })
   }
 
-  validAlternatives.forEach((image, index) => {
+  otherAlternatives.forEach((image, index) => {
     images.push({
       url: image.url,
       caption:

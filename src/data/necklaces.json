@@ -158,8 +158,7 @@
       }
     ],
     "shared": {
-      "description": "Aegis was so grateful, his emotions manifested into this palpable necklace for you to wear.",
-      "notes": "57-77 versions have Mana flavor resistance."
+      "description": "Aegis was so grateful, his emotions manifested into this palpable necklace for you to wear."
     },
     "levelVariants": [
       {
@@ -530,7 +529,7 @@
         "daRequired": false
       }
     ],
-    "notes": "Item was previously named 'Deathknight Pendant'; this was changed on  August 25th, 2023.",
+    "notes": "Item was previously named 'Deathknight Pendant'; this was changed on August 25th, 2023.",
     "tags": [
       "dar",
       "free"
@@ -1411,7 +1410,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "Canopic Charm was previously available from the retired quest  Face of Death.",
+    "notes": "Canopic Charm was previously available from the retired quest Face of Death.",
     "tags": [
       "sto",
       "free"
@@ -1637,7 +1636,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "Cenotaph Key was previously available from the retired quest  Face of Death.",
+    "notes": "Cenotaph Key was previously available from the retired quest Face of Death.",
     "tags": [
       "sil",
       "free"
@@ -1707,7 +1706,7 @@
         "daRequired": false
       }
     ],
-    "notes": "Item previously appeared in the retired quest  Nose for Trouble.\nThe following changes were implemented on  August 22nd, 2025:\n  • Previously had the description: Found in the gargoyle cavern, when you wipe off the crystal dangling at the end of the chain, it begins to shine brightly, aiding your vision.\n  • LUK stat was increased from +2 to +5.\n  • CHA and Bonus stats were added.",
+    "notes": "Item previously appeared in the retired quest Nose for Trouble.\nThe following changes were implemented on August 22nd, 2025:\n  • Previously had the description: Found in the gargoyle cavern, when you wipe off the crystal dangling at the end of the chain, it begins to shine brightly, aiding your vision.\n  • LUK stat was increased from +2 to +5.\n  • CHA and Bonus stats were added.",
     "tags": [
       "lig",
       "free"
@@ -3030,7 +3029,7 @@
       "WAT"
     ],
     "level": "38",
-    "stats": "Dodge +1, Crit +4, END +5, INT +5, DEX +5, STR +5,",
+    "stats": "Dodge +1, Crit +4, END +5, INT +5, DEX +5, STR +5",
     "resists": "Darkness +2, Light +3, Water +3, Ice +4, Fire +4",
     "rarity": "0",
     "itemType": "Necklace",
@@ -3571,7 +3570,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "Criosphinx Trinket was previously available from the retired quest  Face of Death.",
+    "notes": "Criosphinx Trinket was previously available from the retired quest Face of Death.",
     "tags": [
       "sil",
       "free"
@@ -3650,7 +3649,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "Crystal Necklace was previously available from the retired quest  After the War.",
+    "notes": "Crystal Necklace was previously available from the retired quest After the War.",
     "tags": [
       "nat",
       "free"
@@ -3694,7 +3693,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "Necklace previously appeared in the retired quest  Dreamscape and had the initial stats:\nStats: Block +1, Dodge +1, Crit +5, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +5, END +5, INT +8, DEX +8, STR +8, Bonus +7\nResists: All +5, Immobility +2\nNecklace was previously named 'Crystal Necklace'; this was changed on May 17th, 2021.",
+    "notes": "Necklace previously appeared in the retired quest Dreamscape and had the initial stats:\nStats: Block +1, Dodge +1, Crit +5, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +5, END +5, INT +8, DEX +8, STR +8, Bonus +7\nResists: All +5, Immobility +2\nNecklace was previously named 'Crystal Necklace'; this was changed on May 17th, 2021.",
     "tags": [
       "ene",
       "free"
@@ -4165,8 +4164,7 @@
       }
     ],
     "shared": {
-      "description": "This necklace can only be worn by a DragonAmulet holder. It was awarded to you by the town of Falconreach for your help defending it against an invading force.",
-      "notes": "Defender's Medal costs for this item were significantly reduced on March 29th, 2021.\nNecklaces were available to merge from  Def. Necklaces shop until  January 14th, 2023; merge versions from  Defender Item Swap were added on that date."
+      "description": "This necklace can only be worn by a DragonAmulet holder. It was awarded to you by the town of Falconreach for your help defending it against an invading force."
     },
     "levelVariants": [
       {
@@ -5496,8 +5494,7 @@
       }
     ],
     "shared": {
-      "description": "This shield shaped necklace is a symbol of heroism and bravery. It is worn exclusively by those who protect this world. It increases your resistance to darkness damage (+5).",
-      "notes": "Defender's Medal costs for this item were significantly reduced on March 29th, 2021."
+      "description": "This shield shaped necklace is a symbol of heroism and bravery. It is worn exclusively by those who protect this world. It increases your resistance to darkness damage (+5)."
     },
     "levelVariants": [
       {
@@ -6924,7 +6921,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "Flower Necklace was previously available from the retired quest  After the War.",
+    "notes": "Flower Necklace was previously available from the retired quest After the War.",
     "tags": [
       "nat",
       "free"
@@ -7001,7 +6998,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "Fossil Necklace was previously available from the retired quest  After the War.",
+    "notes": "Fossil Necklace was previously available from the retired quest After the War.",
     "tags": [
       "sto",
       "free"
@@ -7227,7 +7224,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "Necklace previously appeared in the retired quest  Dreamscape and had the initial stats:\nStats: Block +1, Dodge +1, Crit +5, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +4, END +4, INT +3, DEX +3, STR +3, Bonus +3\nResists: Fire +6, Energy +8, Metal +5",
+    "notes": "Necklace previously appeared in the retired quest Dreamscape and had the initial stats:\nStats: Block +1, Dodge +1, Crit +5, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +4, END +4, INT +3, DEX +3, STR +3, Bonus +3\nResists: Fire +6, Energy +8, Metal +5",
     "tags": [
       "ice",
       "free"
@@ -8592,8 +8589,7 @@
     ],
     "shared": {
       "description": "A heart scale from the merged Akriloth, taken by Ashendal after the beast was defeated. It continues to radiate a small amount of warmth and will grant you some of the elemental protection of Akriloth himself!",
-      "rarity": "500",
-      "notes": "40-80 versions of this item has Mana flavor resistance.\nDespite being a permanent item, this item requires a Seasonal item, specifically  Ultra Merged Akriloth Tooth Fragment."
+      "rarity": "500"
     },
     "levelVariants": [
       {
@@ -9358,7 +9354,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "Ieb Weight was previously available from the retired quest  Face of Death.",
+    "notes": "Ieb Weight was previously available from the retired quest Face of Death.",
     "tags": [
       "win",
       "free"
@@ -9600,7 +9596,7 @@
         "daRequired": false
       }
     ],
-    "notes": "The description's excerpt (-Health resistance improves healing, +Health resistance weakens it) was added on  May 9th, 2025.\nLevel's requirement was lowered from 10 to 9 on  September 5th, 2025.",
+    "notes": "The description's excerpt (-Health resistance improves healing, +Health resistance weakens it) was added on May 9th, 2025.\nLevel's requirement was lowered from 10 to 9 on September 5th, 2025.",
     "tags": [
       "non",
       "free"
@@ -10353,7 +10349,7 @@
         "daRequired": false
       }
     ],
-    "notes": "The following changes were implemented on  March 20th, 2026:\n  • Level's requirement was raised from 4 to 14.\n  • DEX and STR stats were raised from +1 and +2 to +5 respectively.\n  • Bonus was raised from +1 to +5.\n  • INT +5 was added.\n  • Wind Resist was raised from +1 to +3.\n  • -1 Stone Resist was removed.",
+    "notes": "The following changes were implemented on March 20th, 2026:\n  • Level's requirement was raised from 4 to 14.\n  • DEX and STR stats were raised from +1 and +2 to +5 respectively.\n  • Bonus was raised from +1 to +5.\n  • INT +5 was added.\n  • Wind Resist was raised from +1 to +3.\n  • -1 Stone Resist was removed.",
     "tags": [
       "win",
       "free"
@@ -10833,7 +10829,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "Necklace previously appeared in the retired quest  Dreamscape and had the initial stats:\nStats: Crit +5, Magic Def +2, Pierce Def +2, Melee Def +2, END +2, LUK +5\nResists: Ice +4, Darkness +3",
+    "notes": "Necklace previously appeared in the retired quest Dreamscape and had the initial stats:\nStats: Crit +5, Magic Def +2, Pierce Def +2, Melee Def +2, END +2, LUK +5\nResists: Ice +4, Darkness +3",
     "tags": [
       "sil",
       "free"
@@ -12118,7 +12114,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "Necklace previously appeared in the retired quest  Dreamscape and had the initial stats:\nStats: Crit +8, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +6, END +4, LUK +6, INT +4, DEX +4, STR +4, Bonus +4\nResists: All +2, Immobility +2\nNecklace's flavor element was previously None; this was changed to Good on  Dreamscape's Reimagined release.",
+    "notes": "Necklace previously appeared in the retired quest Dreamscape and had the initial stats:\nStats: Crit +8, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +6, END +4, LUK +6, INT +4, DEX +4, STR +4, Bonus +4\nResists: All +2, Immobility +2\nNecklace's flavor element was previously None; this was changed to Good on Dreamscape's Reimagined release.",
     "tags": [
       "goo",
       "free"
@@ -12408,7 +12404,9 @@
     "description": "A necklace you've taken from Pandora's cabin. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21737824",
     "releaseDate": "",
-    "elements": [],
+    "elements": [
+      "???"
+    ],
     "level": "77",
     "stats": "Block +1, Dodge +1, Crit +9, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +10, END +9, CHA +5, LUK +5, INT +8, DEX +8, STR +8, Bonus +9",
     "resists": "Fire +10, Water +10, Stone +10, Wind +9, Immobility +5, Health -3",
@@ -12426,6 +12424,7 @@
       }
     ],
     "tags": [
+      "???",
       "free"
     ],
     "daRequired": true
@@ -12507,7 +12506,9 @@
     "description": "A version of the Chaos Amulet from a different timeline. Through devoid of most of its power, shimmering versions of alternate timelines cycle through the amulet's eye. Proof of victory over the 13th Lord of Chaos!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22410697",
     "releaseDate": "",
-    "elements": [],
+    "elements": [
+      "???"
+    ],
     "level": "90",
     "stats": "Block +10, Parry +10, Dodge +10, Crit +13, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +13, END +13, CHA +13, LUK +13, INT +13, DEX +13, STR +13, Bonus +13",
     "resists": "All +10",
@@ -12525,8 +12526,9 @@
         "dcRequired": true
       }
     ],
-    "notes": "Own this item to obtain the  Chaos Slayer badge.",
+    "notes": "Own this item to obtain the Chaos Slayer badge.",
     "tags": [
+      "???",
       "free"
     ],
     "daRequired": false,
@@ -12754,7 +12756,7 @@
         "daRequired": true
       }
     ],
-    "notes": "Necklace previously appeared in the retired quest  Nightmares.",
+    "notes": "Necklace previously appeared in the retired quest Nightmares.",
     "tags": [
       "dar",
       "free"
@@ -13306,7 +13308,7 @@
         "daRequired": true
       }
     ],
-    "notes": "Regolith's Stone Resist was previously Earth Resist, then Nature Resist; this was updated on December 23rd, 2020, then again on  December 24th, 2020.",
+    "notes": "Regolith's Stone Resist was previously Earth Resist, then Nature Resist; this was updated on December 23rd, 2020, then again on December 24th, 2020.",
     "tags": [
       "sto",
       "free"
@@ -14119,7 +14121,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "Seed Spitter Seed was previously available from the retired quest  After the War.",
+    "notes": "Seed Spitter Seed was previously available from the retired quest After the War.",
     "tags": [
       "nat",
       "free"
@@ -14237,8 +14239,7 @@
     ],
     "shared": {
       "description": "You've enhanced your amulet with shadows. Wearing it allows you to make out odd shapes that seem to just barely come into view.",
-      "rarity": "10",
-      "notes": "II-IV versions previously required 1  DeathKnight Amulet & 2/3/4  Dusk Essence respectively.\nNecklaces were tiered with Roman numerals on  August 25th, 2023; Required Items on II-IV versions were also changed on that date."
+      "rarity": "10"
     },
     "levelVariants": [
       {
@@ -15171,8 +15172,7 @@
     ],
     "shared": {
       "description": "You found this slimy necklace inside the shell of the Snail. It seems to have absorbed the defense of the snail.",
-      "rarity": "0",
-      "notes": "I, II, and IV versions were tiered with Roman numerals on February 8th, 2025.\nNecklace was erroneously missing the III Roman numeral; this was fixed on  March 21st, 2025."
+      "rarity": "0"
     },
     "levelVariants": [
       {
@@ -15243,7 +15243,7 @@
         "element": "POI",
         "resists": "Health -20, Immobility +20",
         "rarity": "0",
-        "notes": "Necklace was erroneously missing the III Roman numeral; this was fixed on  March 21st, 2025."
+        "notes": "Necklace was erroneously missing the III Roman numeral; this was fixed on March 21st, 2025."
       },
       {
         "levelNumber": 75,
@@ -15363,6 +15363,7 @@
         "levelNumber": 30,
         "levelDisplay": "30",
         "actualLevel": 30,
+        "variantName": "(Purple)",
         "name": "Soulforged Amulet (Purple)",
         "damage": "",
         "stats": "Block +2, Dodge +2, Parry +2, Crit +5, WIS +1, END +5, CHA +1, LUK +5, INT +1, DEX +1, STR +1, Bonus +5",
@@ -15385,6 +15386,7 @@
         "levelNumber": 60,
         "levelDisplay": "60",
         "actualLevel": 60,
+        "variantName": "(Purple)",
         "name": "Soulforged Amulet (Purple)",
         "damage": "",
         "stats": "Block +6, Dodge +6, Parry +6, Crit +6, WIS +4, END +15, CHA +4, LUK +15, INT +4, DEX +4, STR +4, Bonus +6",
@@ -15407,6 +15409,7 @@
         "levelNumber": 90,
         "levelDisplay": "90",
         "actualLevel": 90,
+        "variantName": "(Purple)",
         "name": "Soulforged Amulet (Purple)",
         "damage": "",
         "stats": "Block +10, Dodge +10, Parry +10, Crit +10, WIS +6, END +20, CHA +6, LUK +20, INT +6, DEX +6, STR +6, Bonus +10",
@@ -15486,6 +15489,7 @@
         "levelNumber": 30,
         "levelDisplay": "30",
         "actualLevel": 30,
+        "variantName": "(Yellow)",
         "name": "Soulforged Amulet (Yellow)",
         "damage": "",
         "stats": "Block +2, Dodge +2, Parry +2, Crit +5, WIS +5, END +1, CHA +5, LUK +1, INT +1, DEX +1, STR +1, Bonus +5",
@@ -15508,6 +15512,7 @@
         "levelNumber": 60,
         "levelDisplay": "60",
         "actualLevel": 60,
+        "variantName": "(Yellow)",
         "name": "Soulforged Amulet (Yellow)",
         "damage": "",
         "stats": "Block +6, Dodge +6, Parry +6, Crit +6, WIS +15, END +4, CHA +15, LUK +4, INT +4, DEX +4, STR +4, Bonus +6",
@@ -15530,6 +15535,7 @@
         "levelNumber": 90,
         "levelDisplay": "90",
         "actualLevel": 90,
+        "variantName": "(Yellow)",
         "name": "Soulforged Amulet (Yellow)",
         "damage": "",
         "stats": "Block +10, Dodge +10, Parry +10, Crit +10, WIS +20, END +6, CHA +20, LUK +6, INT +6, DEX +6, STR +6, Bonus +10",
@@ -16246,7 +16252,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "Stone Bead Necklace was previously available from the retired quest  After the War.",
+    "notes": "Stone Bead Necklace was previously available from the retired quest After the War.",
     "tags": [
       "sto",
       "free"
@@ -16324,8 +16330,7 @@
     ],
     "shared": {
       "description": "An itchy rope collar with a small name tag attached: \"Sugarcube\". Huh.",
-      "rarity": "5",
-      "notes": "Street Tog's Discarded Collar (I-VIII) were previously named 'Scratchy Rope Choker'; this was changed on  July 15th, 2022.\nPreviously had the description: A bit itchy, but also cute and stylish! At least, as cute and stylish as a piece of rope around your neck can be."
+      "rarity": "5"
     },
     "levelVariants": [
       {
@@ -16945,8 +16950,7 @@
     ],
     "shared": {
       "description": "An exquisite polished red gem, enveloped by delicate silver and gold dragon wings, hangs from this pendant. The gem itself is surprisingly cool to the touch.",
-      "rarity": "5",
-      "notes": "Necklaces were tiered with Roman numerals on  June 21st, 2024."
+      "rarity": "5"
     },
     "levelVariants": [
       {
@@ -17779,8 +17783,7 @@
     ],
     "shared": {
       "description": "The water may be where the Tizheruk hides, but the Trees Behind You is where it lurks.",
-      "rarity": "5",
-      "notes": "spoiler:\nDescription for both versions of this item contains an Atbash cipher, which when decoded reads:\nI think the artifact is having some effect on my mind. My thoughts, no, my fears are stronger. I should lock it away, but I can't."
+      "rarity": "5"
     },
     "levelVariants": [
       {
@@ -18372,8 +18375,7 @@
     ],
     "shared": {
       "description": "You've enhanced your amulet with shadows. Wearing it allows you to make out odd shapes that seem to just barely come into view. This item requires a Dragon Amulet.",
-      "rarity": "10",
-      "notes": "II-IV versions previously required 1  DeathKnight Amulet & 2/3/4  Umbral Essence respectively.\nNecklaces were tiered with Roman numerals on  August 25th, 2023; Required Items on II-IV versions were also changed on that date."
+      "rarity": "10"
     },
     "levelVariants": [
       {
@@ -18533,8 +18535,7 @@
     ],
     "shared": {
       "description": "This primitive looking necklace is crafted from huge bear teeth of a variety of sizes.",
-      "rarity": "6",
-      "notes": "These necklaces went rare on  April 30th, 2021."
+      "rarity": "6"
     },
     "levelVariants": [
       {
@@ -18753,7 +18754,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "Necklace previously appeared in the retired quest  Dreamscape and had the initial stats:\nStats: Magic Def +2, WIS +2, INT +2, DEX +2, STR +2, Bonus +2\nResists: Wind +5, Ice +5",
+    "notes": "Necklace previously appeared in the retired quest Dreamscape and had the initial stats:\nStats: Magic Def +2, WIS +2, INT +2, DEX +2, STR +2, Bonus +2\nResists: Wind +5, Ice +5",
     "tags": [
       "win",
       "free"
@@ -19069,7 +19070,7 @@
         "daRequired": false
       }
     ],
-    "notes": "The following changes were implemented on  March 20th, 2026:\n  • Level's requirement was raised from 4 to 14.\n  • INT +2 and Stone -1 were removed.\n  • Bonus stat was raised from +1 to +5.\n  • CHA and LUK stats were added.\n  • Wind Resist was raised from +1 to +4.",
+    "notes": "The following changes were implemented on March 20th, 2026:\n  • Level's requirement was raised from 4 to 14.\n  • INT +2 and Stone -1 were removed.\n  • Bonus stat was raised from +1 to +5.\n  • CHA and LUK stats were added.\n  • Wind Resist was raised from +1 to +4.",
     "tags": [
       "win",
       "free"
@@ -19112,7 +19113,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "Wooden Carved Beads was previously available from the retired quest  After the War.",
+    "notes": "Wooden Carved Beads was previously available from the retired quest After the War.",
     "tags": [
       "nat",
       "free"
@@ -19190,7 +19191,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "Woven Vines was previously available from the retired quest  After the War.",
+    "notes": "Woven Vines was previously available from the retired quest After the War.",
     "tags": [
       "sil",
       "free"

@@ -379,7 +379,13 @@ export default function WeaponDetail({ weapon, filterBase }: WeaponDetailProps) 
   )
   const statsDisplayLevels = useMemo(() => {
     const statsIdentities = new Set(displayLevels.map(getStatsIdentity))
-    if (statsIdentities.size === 1) return displayLevels.slice(0, 1)
+    const levelKeys = new Set(
+      displayLevels.map((level) => String(level.actualLevel ?? level.levelDisplay))
+    )
+    // Collapse to a single row only for a multi-level progression whose stats
+    // never change. Same-level access branches (e.g. | Base / DC) share stats
+    // but must each keep their own row so DA/DC access is visible.
+    if (statsIdentities.size === 1 && levelKeys.size > 1) return displayLevels.slice(0, 1)
 
     const seen = new Set<string>()
     return displayLevels.filter((level) => {

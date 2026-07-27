@@ -17,7 +17,7 @@ import {
 import { compareTitles, displayTitle } from '../utils/displayText'
 import { parseArmorCustomization } from '../utils/armorCustomization'
 import { getSearchWords } from '../utils/search'
-import { obtainMethodFingerprint, relatedNameScore } from '../utils/relatedItems'
+import { obtainMethodInferenceFingerprint, relatedNameScore } from '../utils/relatedItems'
 import {
   getDisplayFamilyName,
   hasParentheticalVariantFamilyName,
@@ -255,7 +255,7 @@ function getAccessoryObtainFingerprints(entry: AccessoryEntry): Set<string> {
     ? entry.levelVariants.flatMap((level) => level.obtainVariants)
     : entry.obtainMethods
 
-  return new Set(methods.map(obtainMethodFingerprint))
+  return new Set(methods.map(obtainMethodInferenceFingerprint))
 }
 
 export function useAccessoryBySlug(subtype: AccessorySubtype, slug?: string) {

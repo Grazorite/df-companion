@@ -349,6 +349,9 @@ function buildVariantFromPet(pet: Pet): LevelVariant {
       ...(method.requiredItems ? { requiredItems: method.requiredItems } : {}),
     })),
     ...(pet.elements[0] ? { element: pet.elements[0] } : {}),
+    // Always set per-variant traits (even when empty) so detail pages can scope
+    // trait pills to the selected variant rather than falling back to the family union.
+    traits: pet.traits,
     ...(pet.resists && pet.resists !== 'None' ? { resists: pet.resists } : {}),
     ...(pet.rarity && pet.rarity !== 'Unknown' ? { rarity: pet.rarity } : {}),
     ...(pet.attacks.length > 0 ? { attacks: pet.attacks as VariantAttack[] } : {}),
@@ -568,9 +571,17 @@ function buildFamilyFromGroup(items: Array<Pet | ItemFamily>): ItemFamily {
     isSpecialOffer: sorted.some((item) => item.isSpecialOffer),
     retired: sorted.some((item) => item.retired === true),
     levelRange: '',
+    // Additive across the merged family: union of every member's elements and
+    // traits (e.g. Linus's base is [ICE] but Prince/King/Emperor add [SHR]).
     elements: Array.from(
       new Set(sorted.flatMap((item) => (isItemFamily(item) ? item.elements : item.elements)))
     ),
+    ...(() => {
+      const mergedTraits = Array.from(
+        new Set(sorted.flatMap((item) => (isItemFamily(item) ? (item.traits ?? []) : item.traits)))
+      )
+      return mergedTraits.length > 0 ? { traits: mergedTraits } : {}
+    })(),
   }
 
   return computeFamilyFlags(mergedFamily)

@@ -54,7 +54,7 @@ export default function PetList({ pets, loading = false }: PetListProps) {
           dcRequired: family!.hasDC,
           dmRequired: family!.hasDM,
           elements: family!.elements,
-          traits: [],
+          traits: family!.traits ?? [],
           level: family!.levelRange,
           damage: family!.levelVariants[0].damage,
           stats: family!.levelVariants[0].stats,

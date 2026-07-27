@@ -15,8 +15,9 @@
     "shared": {
       "description": "",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-ofDoom.png",
-      "notes": "• Skill button was updated on  November 24th, 2023, replacing  its old appearance.\n1 hit x 100% damage\nPoints in Magic and Fighting give this attack a chance to do extra damage.\nEvery 50 CHA the Hero has reduces the dragon's CD of all skills by 1 (max -4 at 200 CHA)\nRequirements: None\nEffect: Breathes fire at target for 1 hit of 100% Magic damage.\n• If  Kid Dragon has 1 Magic skill point minimum: Has a [Magic skill level / 4]% chance to cast a ball of magic at target for 1 hit of [100 + (Magic skill level / 5)]% Magic damage.\n• If  Kid Dragon has 1 Fighting skill point minimum: Has a [Fighting skill level / 4]% chance to dash at target quickly for 1 hit of [100 + (Fighting skill level / 5)]% Melee damage.\nMana Cost: 0\nCooldown: 0\nDamage Type: Magic/Melee\nElement: As dragon\nDragon's Scales\nHero: +<100-200> Avoidance for 2 turns.\nThis skill requires at least 100 points in Protection.\nRequirements:  Toddler or  Kid Dragon; 100 Protection skill points minimum\nEffect: Applies +[Protection skill level] Melee/Pierce/Magic Avoidance to player for 2 turns. (Pop-up: Avoidance increased!)\nCooldown: 19 - [(Player CHA/50), rounded down]\nDamage Type: N/A\nElement: N/A\nElemental Supernova\n1 hit x +<200-300>% Magic damage\nThis attack has +<100-200> Crit.\nThis skill requires at least 100 points in Magic.\nRequirements:  Toddler or  Kid Dragon; 100 Magic skill points minimum\nEffect: 1 hit of [100 + (Magic skill level)]% damage, with +[Magic skill level] Crit.\nDamage Type: Magic\nElement: Weakness seeks\nAppearance 1 /  1.1\n4 hits x <50-60>% Pierce damage (<200-240>%)\nTarget: (On hit) <x>-<y>DoT for 3 turns.\nThis skill requires at least 100 points in Fighting.\nRequirements:  Toddler or  Kid Dragon; 100 Fighting skill points minimum\nEffect: 4 hits of [40 + (Fighting skill level / 10)]% damage, amounting to [160 + (Fighting skill level / 2.5)]% damage; applies 'Outrage', a Pierce DoT effect equal to [10 + (Fighting skill level / 2) * (Level + 10)% � 5], to target for 3 turns.\nDamage Type: Pierce\nOvercharge\nHero: +<15-25> Boost for the next 2 turns.\nThis skill requires at least 100 points in Assistance.\nRequirements:  Toddler or  Kid Dragon; 100 Assistance skill points minimum\nEffect: Applies +[5 + (Assistance skill level / 10)]% Boost to player for 2 turns. (Pop-up: Damage increased!)\nTarget: (Auto) -<10-20> Boost, -<25-50> Crit, -<5-10> All res, +<20-30> Health res for 3 turns.\nThis skill requires at least 100 points in Mischief.\nRequirements:  Toddler or  Kid Dragon; 100 Mischief skill points minimum\nEffect: Applies -[Mischief skill level / 4] Crit, -[Mischief skill level * 0.1]% Boost, -[Mischief skill level * 0.05] All Resist, and +[10 + (Mischief skill level * 0.1)] Health Resist to target for 3 turns. (Pop-up: Your foe deals and heals less damage, takes more damage, and is less likely to land a critical hit!)\nPrimal Fury!\n3 hits x 50% Magic damage (150%)\nThis attack has +200 Crit.\nThe cutest primal fury ever!\nRequirements:  Kid Dragon\nEffect: 3 hits of 50% damage, amounting to 150% damage, with +200 Crit.\nAppearance 1 /  1.1 /  1.2\n• Draco is this guest's default name; to change their name and/or color palette from the default, visit  Dragon Customization.\n• Also known as the Destroyer from various NPCs.\n• Toddler and kid dragons cannot be summoned as a guest while inside of a quest; however, they may still be summoned as a pet.\n• Kid dragons may be equipped with  Kid Dragon Accessories; if the player's dragon's appearance is Baby or Toddler Dragon, the accessories will not be shown.\n• Kid dragons may change their appearance as  Baby or Toddler Dragon via  Dove in  Sunbreeze Grove (Books 3 and 4), but all skills are retained; this was implemented on  June 19th, 2026.\n• All versions of this guest received a major overhaul to their skills on  June 21st, 2019.\n• Initially both toddler and kid dragons were able to use the secondary 'Attack' skills; this was changed to be exclusive for kid dragons on September 7th, 2019.\n• 'Tickles' skill previously applied -[Mischief skill level * 0.3] Bonus to target, and had the tooltip: Lower enemy BtH, Dmg, and All Res!; the Bonus to Hit component was removed on  March 7th, 2020.\n• 'Elemental Supernova' and 'Outrage' skills were bug fixed on  January 1st, 2021.\n• The following changes were implemented on  June 23rd, 2023:\n• Tickles' skill increased its effectiveness from applying +[Mischief skill level * 0.05] Health Resist to target'.\n'Magic', 'Fighting', and 'Outrage' skills were modified.\n• The following changes were implemented on  April 19th, 2024:\n• Tier 1 skills were renamed to their proper names.\n• 'Skip' and 'Primal' skills were moved.\n• Tooltips for Toddler and Kid Dragons were updated."
+      "notes": "• Skill button was updated on November 24th, 2023, replacing its old appearance.\n1 hit x 100% damage\nPoints in Magic and Fighting give this attack a chance to do extra damage.\nEvery 50 CHA the Hero has reduces the dragon's CD of all skills by 1 (max -4 at 200 CHA)\nRequirements: None\nEffect: Breathes fire at target for 1 hit of 100% Magic damage.\n• If Kid Dragon has 1 Magic skill point minimum: Has a [Magic skill level / 4]% chance to cast a ball of magic at target for 1 hit of [100 + (Magic skill level / 5)]% Magic damage.\n• If Kid Dragon has 1 Fighting skill point minimum: Has a [Fighting skill level / 4]% chance to dash at target quickly for 1 hit of [100 + (Fighting skill level / 5)]% Melee damage.\nMana Cost: 0\nCooldown: 0\nDamage Type: Magic/Melee\nElement: As dragon\nDragon's Scales\nHero: +<100-200> Avoidance for 2 turns.\nThis skill requires at least 100 points in Protection.\nRequirements: Toddler or Kid Dragon; 100 Protection skill points minimum\nEffect: Applies +[Protection skill level] Melee/Pierce/Magic Avoidance to player for 2 turns. (Pop-up: Avoidance increased!)\nCooldown: 19 - [(Player CHA/50), rounded down]\nDamage Type: N/A\nElement: N/A\nElemental Supernova\n1 hit x +<200-300>% Magic damage\nThis attack has +<100-200> Crit.\nThis skill requires at least 100 points in Magic.\nRequirements: Toddler or Kid Dragon; 100 Magic skill points minimum\nEffect: 1 hit of [100 + (Magic skill level)]% damage, with +[Magic skill level] Crit.\nDamage Type: Magic\nElement: Weakness seeks\nAppearance 1 / 1.1\n4 hits x <50-60>% Pierce damage (<200-240>%)\nTarget: (On hit) <x>-<y>DoT for 3 turns.\nThis skill requires at least 100 points in Fighting.\nRequirements: Toddler or Kid Dragon; 100 Fighting skill points minimum\nEffect: 4 hits of [40 + (Fighting skill level / 10)]% damage, amounting to [160 + (Fighting skill level / 2.5)]% damage; applies 'Outrage', a Pierce DoT effect equal to [10 + (Fighting skill level / 2) * (Level + 10)% � 5], to target for 3 turns.\nDamage Type: Pierce\nOvercharge\nHero: +<15-25> Boost for the next 2 turns.\nThis skill requires at least 100 points in Assistance.\nRequirements: Toddler or Kid Dragon; 100 Assistance skill points minimum\nEffect: Applies +[5 + (Assistance skill level / 10)]% Boost to player for 2 turns. (Pop-up: Damage increased!)\nTarget: (Auto) -<10-20> Boost, -<25-50> Crit, -<5-10> All res, +<20-30> Health res for 3 turns.\nThis skill requires at least 100 points in Mischief.\nRequirements: Toddler or Kid Dragon; 100 Mischief skill points minimum\nEffect: Applies -[Mischief skill level / 4] Crit, -[Mischief skill level * 0.1]% Boost, -[Mischief skill level * 0.05] All Resist, and +[10 + (Mischief skill level * 0.1)] Health Resist to target for 3 turns. (Pop-up: Your foe deals and heals less damage, takes more damage, and is less likely to land a critical hit!)\nPrimal Fury!\n3 hits x 50% Magic damage (150%)\nThis attack has +200 Crit.\nThe cutest primal fury ever!\nRequirements: Kid Dragon\nEffect: 3 hits of 50% damage, amounting to 150% damage, with +200 Crit.\nAppearance 1 / 1.1 / 1.2\n• Draco is this guest's default name; to change their name and/or color palette from the default, visit Dragon Customization.\n• Also known as the Destroyer from various NPCs.\n• Toddler and kid dragons cannot be summoned as a guest while inside of a quest; however, they may still be summoned as a pet.\n• Kid dragons may be equipped with Kid Dragon Accessories; if the player's dragon's appearance is Baby or Toddler Dragon, the accessories will not be shown.\n• Kid dragons may change their appearance as Baby or Toddler Dragon via Dove in Sunbreeze Grove (Books 3 and 4), but all skills are retained; this was implemented on June 19th, 2026.\n• All versions of this guest received a major overhaul to their skills on June 21st, 2019.\n• Initially both toddler and kid dragons were able to use the secondary 'Attack' skills; this was changed to be exclusive for kid dragons on September 7th, 2019.\n• 'Tickles' skill previously applied -[Mischief skill level * 0.3] Bonus to target, and had the tooltip: Lower enemy BtH, Dmg, and All Res!; the Bonus to Hit component was removed on March 7th, 2020.\n• 'Elemental Supernova' and 'Outrage' skills were bug fixed on January 1st, 2021.\n• The following changes were implemented on June 23rd, 2023:\n• Tickles' skill increased its effectiveness from applying +[Mischief skill level * 0.05] Health Resist to target'.\n'Magic', 'Fighting', and 'Outrage' skills were modified.\n• The following changes were implemented on April 19th, 2024:\n• Tier 1 skills were renamed to their proper names.\n• 'Skip' and 'Primal' skills were moved.\n• Tooltips for Toddler and Kid Dragons were updated."
     },
+    "familySources": [],
     "levelVariants": [
       {
         "levelNumber": 1,
@@ -229,6 +230,7 @@
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
+    "isTemp": true,
     "levelRange": "As player-As player",
     "elements": [
       "BAC",
@@ -241,6 +243,9 @@
       "STO",
       "WAT",
       "WIN"
+    ],
+    "traits": [
+      "W/S"
     ]
   },
   {
@@ -258,8 +263,9 @@
     "shared": {
       "description": "",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Aegis2.png",
-      "notes": "• During  April Fools' Day 2018, players need to equip the  Fleshweaver class to invite these guests.\n• Prior to  SoulWeaver's rework on  August 23rd, 2024, players needed to equip the  Master SoulWeaver class to invite these guests."
+      "notes": "• During April Fools' Day 2018, players need to equip the Fleshweaver class to invite these guests.\n• Prior to SoulWeaver's rework on August 23rd, 2024, players needed to equip the Master SoulWeaver class to invite these guests."
     },
+    "familySources": [],
     "levelVariants": [
       {
         "levelNumber": 1,
@@ -283,7 +289,7 @@
         "attacks": [
           {
             "name": "Shatter",
-            "description": "1 hit x 160% damage \n This attack has +120 Bonus.",
+            "description": "1 hit x 160% damage\n This attack has +120 Bonus.",
             "effect": "1 hit of 160% damage, with +120 Bonus.",
             "manaCost": "20",
             "cooldown": "9",
@@ -294,7 +300,7 @@
           },
           {
             "name": "Ice Domain",
-            "description": "4 hits x 50% damage (200%) \n Target: (On hit) -20 Ice resist for 3 turns.",
+            "description": "4 hits x 50% damage (200%)\n Target: (On hit) -20 Ice resist for 3 turns.",
             "effect": "4 hits of 50% damage, amounting to 200% damage; applies 'Ice Domain' (-20 Ice Resist) to target for 3 turns inclusive.",
             "manaCost": "20",
             "cooldown": "4",
@@ -378,7 +384,7 @@
             "crit": "0%"
           }
         },
-        "notes": "• Players initially required to equip the  SoulWeaver class to invite Aegis (1); this requirement was modified to unlocking the  SoulWeaver class on  February 28th, 2025. \n• The following changes were implemented on  April 11th, 2025: \n  • Aegis (1)'s tooltips were updated. \n  • 'Shatter', 'Ice Domain', and 'Hailstorm' skills were modified.",
+        "notes": "• Players initially required to equip the SoulWeaver class to invite Aegis (1); this requirement was modified to unlocking the SoulWeaver class on February 28th, 2025.\n• The following changes were implemented on April 11th, 2025:\n • Aegis (1)'s tooltips were updated.\n • 'Shatter', 'Ice Domain', and 'Hailstorm' skills were modified.",
         "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Aegis1.png"
       },
       {
@@ -432,13 +438,14 @@
           {
             "name": "Domain of Ice",
             "description": "Weaken the enemy to Ice!",
-            "effect": "Automatically applies -20 Ice Resist to target for 4 turns inclusive; 4 hits of 85% damage, amounting to 340% damage.\n• In  Calamity, skill instead automatically applies 'Inner Chill' (-20 Ice Resist) to target for 10 turns inclusive.",
+            "effect": "Automatically applies -20 Ice Resist to target for 4 turns inclusive; 4 hits of 85% damage, amounting to 340% damage.",
             "manaCost": "20",
             "cooldown": "12",
             "damageType": "Magic",
             "element": "Ice",
             "buttonImageUrl": "https://i.imgur.com/0pPO8OQ.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Aegis2-DomainofIce.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Aegis2-DomainofIce.png",
+            "notes": "• In Calamity, skill instead automatically applies 'Inner Chill' (-20 Ice Resist) to target for 10 turns inclusive."
           },
           {
             "name": "Shield",
@@ -514,7 +521,7 @@
             "crit": "0%"
           }
         },
-        "notes": "• *Aegis (2) is only invited with 10 Crit from  Pellow Village (Book 3),  The Last Chapter - War at the Core, and  Through the Door. \n• Aegis (2) has a series of unconventional stats in the quest  Calamity; Pierce: 5, Bonus: 50, Crit: 5.  \n• Players initially required to equip the  SoulWeaver class to invite Aegis (2); this requirement was modified to unlocking the  SoulWeaver class on  August 4th, 2023.",
+        "notes": "• *Aegis (2) is only invited with 10 Crit from Pellow Village (Book 3), The Last Chapter - War at the Core, and Through the Door.\n• Aegis (2) has a series of unconventional stats in the quest Calamity; Pierce: 5, Bonus: 50, Crit: 5.\n• Players initially required to equip the SoulWeaver class to invite Aegis (2); this requirement was modified to unlocking the SoulWeaver class on August 4th, 2023.",
         "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Aegis2.png"
       }
     ],
@@ -628,7 +635,7 @@
     "releaseDate": "March 24th, 2023",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alteon.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22409330",
-    "notes": "• Alteon has a series of unconventional stats in the quests  Hawk in the Sky,  Crash and Burn,  The Flame Within,  At Fissure's Edge,  The Final Steps, and  Convergence (Part 1): \n  • Alteon gains -10 Immobility,  -60 Health, + 60 All Resists. \n  • Alteon's base damage is increased by 50%.\n• Skip skill was added with the release of  Crash and Burn.",
+    "notes": "• Alteon has a series of unconventional stats in the quests Hawk in the Sky, Crash and Burn, The Flame Within, At Fissure's Edge, The Final Steps, and Convergence (Part 1):\n • Alteon gains -10 Immobility, -60 Health, + 60 All Resists.\n • Alteon's base damage is increased by 50%.\n• Skip skill was added with the release of Crash and Burn.",
     "alsoSee": [],
     "tags": [
       "alteon",
@@ -717,7 +724,7 @@
       },
       {
         "name": "Realm Change",
-        "description": "1 hit x 100% damage \n Self: +180 Avoidance for 2 turns, +50 Boost for 3 turns.",
+        "description": "1 hit x 100% damage\n Self: +180 Avoidance for 2 turns, +50 Boost for 3 turns.",
         "effect": "Applies 'Fade' (+180 Melee/Pierce/Magic Avoidance) to themselves for 2 turns; applies 'Higher Realm' (+50% Boost) to themselves for 3 turns inclusive; 1 hit of 100% damage.",
         "manaCost": "20",
         "cooldown": "4",
@@ -728,7 +735,7 @@
       },
       {
         "name": "Etaos' Precision",
-        "description": "3 hits x 70% damage (210%) \n Target: (On hit) -20 All for 3 turns",
+        "description": "3 hits x 70% damage (210%)\n Target: (On hit) -20 All for 3 turns",
         "effect": "1 hit of 70% damage; applies 'Precision Pierce' (-15 All Resist, +15 Health Resist) to target for 3 turns inclusive.",
         "manaCost": "15",
         "cooldown": "5",
@@ -750,7 +757,7 @@
       },
       {
         "name": "Melee Combo",
-        "description": "5 hits x 40% damage (200%) \n Available after a successful attack.",
+        "description": "5 hits x 40% damage (200%)\n Available after a successful attack.",
         "requirements": "Successful attack where the last hit lands to unlock",
         "effect": "5 hits of 40% damage, amounting to 200% damage.",
         "manaCost": "15",
@@ -762,7 +769,7 @@
       },
       {
         "name": "Rift Effect",
-        "description": "5 hits x 40% damage (200%) \n Available after a successful Combo.",
+        "description": "5 hits x 40% damage (200%)\n Available after a successful Combo.",
         "requirements": "Successful 'Melee Combo' where the last hit lands to unlock",
         "effect": "5 hits of 40% damage, amounting to 200% damage.",
         "manaCost": "20",
@@ -774,7 +781,7 @@
       },
       {
         "name": "Rift Cross",
-        "description": "2 hits x 75% damage (150%) \n Target: (On hit) Stun for 1 turn.",
+        "description": "2 hits x 75% damage (150%)\n Target: (On hit) Stun for 1 turn.",
         "effect": "2 hits of 75% damage, amounting to 150% damage; applies 'Stun' to target, stunning it for 1 turn.",
         "manaCost": "27",
         "cooldown": "14",
@@ -785,7 +792,7 @@
       },
       {
         "name": "Strength Strike",
-        "description": "1 hit x 37.5% damage \n Target: (On hit) -20 Boost for 5 turns.",
+        "description": "1 hit x 37.5% damage\n Target: (On hit) -20 Boost for 5 turns.",
         "effect": "1 hit of 37.5% damage; applies 'Str Strike' (-20% Boost) to target for 5 turns.",
         "manaCost": "25",
         "cooldown": "10",
@@ -865,8 +872,9 @@
     "isMultiPost": true,
     "shared": {
       "description": "",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Isiri2.png"
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Isiri.png"
     },
+    "familySources": [],
     "levelVariants": [
       {
         "levelNumber": 1,
@@ -900,7 +908,7 @@
           },
           {
             "name": "Realm Change",
-            "description": "1 hit x 100% damage \n Self: +180 Avoidance for 2 turns, +50 Boost for 3 turns.",
+            "description": "1 hit x 100% damage\n Self: +180 Avoidance for 2 turns, +50 Boost for 3 turns.",
             "effect": "Applies 'Fade' (+180 Melee/Pierce/Magic Avoidance) to themselves for 2 turns; applies 'Higher Realm' (+50% Boost) to themselves for 3 turns inclusive; 1 hit of 100% damage.",
             "manaCost": "20",
             "cooldown": "4",
@@ -933,7 +941,7 @@
           },
           {
             "name": "Melee Combo",
-            "description": "5 hits x 40% damage (200%) \n Available after a successful attack.",
+            "description": "5 hits x 40% damage (200%)\n Available after a successful attack.",
             "requirements": "Successful attack where the last hit lands to unlock",
             "effect": "5 hits of 40% damage, amounting to 200% damage.",
             "manaCost": "15",
@@ -945,7 +953,7 @@
           },
           {
             "name": "Rift Effect",
-            "description": "5 hits x 40% damage (200%) \n Available after a successful Combo.",
+            "description": "5 hits x 40% damage (200%)\n Available after a successful Combo.",
             "requirements": "Successful 'Melee Combo' where the last hit lands to unlock",
             "effect": "5 hits of 40% damage, amounting to 200% damage.",
             "manaCost": "20",
@@ -957,7 +965,7 @@
           },
           {
             "name": "Rift Cross",
-            "description": "2 hits x 75% damage (150%) \n Target: (On hit) Stun for 1 turn.",
+            "description": "2 hits x 75% damage (150%)\n Target: (On hit) Stun for 1 turn.",
             "effect": "2 hits of 75% damage, amounting to 150% damage; applies 'Stun' to target, stunning it for 1 turn.",
             "manaCost": "27",
             "cooldown": "14",
@@ -968,7 +976,7 @@
           },
           {
             "name": "Strength Strike",
-            "description": "1 hit x 37.5% damage \n Target: (On hit) -20 Boost for 5 turns.",
+            "description": "1 hit x 37.5% damage\n Target: (On hit) -20 Boost for 5 turns.",
             "effect": "1 hit of 37.5% damage; applies 'Str Strike' (-20% Boost) to target for 5 turns.",
             "manaCost": "25",
             "cooldown": "10",
@@ -1019,8 +1027,7 @@
             "crit": "0%"
           }
         },
-        "notes": "• Tooltips for this guest were updated on  April 25th, 2025.",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Isiri.png"
+        "notes": "• Tooltips for this guest were updated on April 25th, 2025."
       },
       {
         "levelNumber": 2,
@@ -1054,7 +1061,7 @@
           },
           {
             "name": "Realm Change",
-            "description": "1 hit x 100% damage \n Self: +180 Avoidance for 2 turns, +50 Boost for 3 turns.",
+            "description": "1 hit x 100% damage\n Self: +180 Avoidance for 2 turns, +50 Boost for 3 turns.",
             "effect": "Applies 'Fade' (+180 Melee/Pierce/Magic Avoidance) to themselves for 2 turns; applies 'Higher Realm' (+50% Boost) to themselves for 3 turns inclusive; 1 hit of 100% damage.",
             "manaCost": "20",
             "cooldown": "4",
@@ -1087,7 +1094,7 @@
           },
           {
             "name": "Melee Combo",
-            "description": "5 hits x 40% damage (200%) \n Available after a successful attack.",
+            "description": "5 hits x 40% damage (200%)\n Available after a successful attack.",
             "requirements": "Successful attack where the last hit lands to unlock",
             "effect": "5 hits of 40% damage, amounting to 200% damage.",
             "manaCost": "15",
@@ -1099,7 +1106,7 @@
           },
           {
             "name": "Rift Effect",
-            "description": "5 hits x 40% damage (200%) \n Available after a successful Combo.",
+            "description": "5 hits x 40% damage (200%)\n Available after a successful Combo.",
             "requirements": "Successful 'Melee Combo' where the last hit lands to unlock",
             "effect": "5 hits of 40% damage, amounting to 200% damage.",
             "manaCost": "20",
@@ -1111,7 +1118,7 @@
           },
           {
             "name": "Rift Cross",
-            "description": "2 hits x 75% damage (150%) \n Target: (On hit) Stun for 1 turn.",
+            "description": "2 hits x 75% damage (150%)\n Target: (On hit) Stun for 1 turn.",
             "effect": "2 hits of 75% damage, amounting to 150% damage; applies 'Stun' to target, stunning it for 1 turn.",
             "manaCost": "27",
             "cooldown": "14",
@@ -1122,7 +1129,7 @@
           },
           {
             "name": "Strength Strike",
-            "description": "1 hit x 37.5% damage \n Target: (On hit) -20 Boost for 5 turns.",
+            "description": "1 hit x 37.5% damage\n Target: (On hit) -20 Boost for 5 turns.",
             "effect": "1 hit of 37.5% damage; applies 'Str Strike' (-20% Boost) to target for 5 turns.",
             "manaCost": "25",
             "cooldown": "10",
@@ -1172,8 +1179,7 @@
             "dot": "0%",
             "crit": "0%"
           }
-        },
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Isiri2.png"
+        }
       }
     ],
     "releaseDate": "October 31st, 2025",
@@ -1192,6 +1198,7 @@
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
+    "isTemp": true,
     "levelRange": "As player-As player",
     "elements": [
       "DAR"
@@ -1268,7 +1275,7 @@
       },
       {
         "name": "Melee Combo",
-        "description": "5 hits x 40% damage (200%) \n Available after a successful attack.",
+        "description": "5 hits x 40% damage (200%)\n Available after a successful attack.",
         "requirements": "Successful attack where the last hit lands to unlock",
         "effect": "5 hits of 40% damage, amounting to 200% damage.",
         "manaCost": "15",
@@ -1280,7 +1287,7 @@
       },
       {
         "name": "Rift Effect",
-        "description": "5 hits x 40% damage (200%) \n Available after a successful Combo.",
+        "description": "5 hits x 40% damage (200%)\n Available after a successful Combo.",
         "requirements": "Successful 'Melee Combo' where the last hit lands to unlock",
         "effect": "5 hits of 40% damage, amounting to 200% damage.",
         "manaCost": "20",
@@ -1292,7 +1299,7 @@
       },
       {
         "name": "Rift Cross",
-        "description": "2 hits x 75% damage (150%) \n Target: (On hit) Stun for 1 turn.",
+        "description": "2 hits x 75% damage (150%)\n Target: (On hit) Stun for 1 turn.",
         "effect": "2 hits of 75% damage, amounting to 150% damage; applies 'Stunned' to target, stunning it for 1 turn.",
         "manaCost": "27",
         "cooldown": "14",
@@ -1303,7 +1310,7 @@
       },
       {
         "name": "Strength Strike",
-        "description": "1 hit x 37.5% damage \n Target: (On hit) -20 Boost for 5 turns.",
+        "description": "1 hit x 37.5% damage\n Target: (On hit) -20 Boost for 5 turns.",
         "effect": "1 hit of 37.5% damage; applies 'Str Strike' (-20% Boost) to target for 5 turns.",
         "manaCost": "25",
         "cooldown": "10",
@@ -1318,7 +1325,7 @@
     "releaseDate": "April 25th, 2025",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Nirios.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22421842",
-    "notes": "• Alz'ein & Nirios' element was changed from Darkness to ??? on  May 23rd, 2025.",
+    "notes": "• Alz'ein & Nirios' element was changed from Darkness to ??? on May 23rd, 2025.",
     "alsoSee": [],
     "tags": [
       "alz'ein",
@@ -1400,7 +1407,7 @@
       {
         "name": "Lost Blade",
         "description": "Swap between Darkness and seeking.",
-        "requirements": "Completion of  Hawk in the Sky to unlock",
+        "requirements": "Completion of Hawk in the Sky to unlock",
         "effect": "Toggles Amadeus' attacks between Darkness damage and weakness seeking damage. (Pop-ups: Amadeus: 'I am not ruled by Darkness!' / Amadeus: 'Back to the shadows...')",
         "manaCost": "0",
         "cooldown": "0",
@@ -1422,7 +1429,7 @@
       {
         "name": "Embrace the Darkness",
         "description": "Unleash a powerful attack.",
-        "effect": "5 hits of 50% damage, amounting to 250% damage.\n  • If Amadeus is empowered, attack will instead perform 17 hits of 50% damage, amounting to 850% damage.",
+        "effect": "5 hits of 50% damage, amounting to 250% damage.\n • If Amadeus is empowered, attack will instead perform 17 hits of 50% damage, amounting to 850% damage.",
         "manaCost": "25",
         "cooldown": "19",
         "damageType": "Melee",
@@ -1467,7 +1474,7 @@
       },
       {
         "name": "Attack",
-        "effect": "1 hit of 120% damage, with +60 Bonus; recovers 5% of Amadeus' maximum HP.\n  • If Amadeus is empowered, the heal effect will not be applied and attack gains an additional +30% damage.",
+        "effect": "1 hit of 120% damage, with +60 Bonus; recovers 5% of Amadeus' maximum HP.\n • If Amadeus is empowered, the heal effect will not be applied and attack gains an additional +30% damage.",
         "manaCost": "0",
         "cooldown": "0",
         "damageType": "Melee",
@@ -1481,7 +1488,7 @@
     "releaseDate": "March 24th, 2023",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Amadeus.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22409331",
-    "notes": "• Amadeus has a series of unconventional stats in the quests  Hawk in the Sky,  Crash and Burn,  The Flame Within,  At Fissure's Edge,  The Final Steps, and  Convergence (Part 1): \n  • Amadeus gains -10 Immobility,  -60 Health, +60 All Resists. \n  • Amadeus' base damage is increased by 50%.\n• Lost Blade and Skip skills were added with the release of  Crash and Burn. ",
+    "notes": "• Amadeus has a series of unconventional stats in the quests Hawk in the Sky, Crash and Burn, The Flame Within, At Fissure's Edge, The Final Steps, and Convergence (Part 1):\n • Amadeus gains -10 Immobility, -60 Health, +60 All Resists.\n • Amadeus' base damage is increased by 50%.\n• Lost Blade and Skip skills were added with the release of Crash and Burn.",
     "alsoSee": [],
     "tags": [
       "amadeus",
@@ -1551,8 +1558,15 @@
     "isMultiPost": true,
     "shared": {
       "description": "",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Aquella3.png"
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Aquella.png",
+      "alternativeImages": [
+        {
+          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Aquella-Book3.png",
+          "caption": "Book 3 Appearance"
+        }
+      ]
     },
+    "familySources": [],
     "levelVariants": [
       {
         "levelNumber": 1,
@@ -1625,8 +1639,7 @@
             "crit": "0%"
           }
         },
-        "notes": "• Aquella will announce how much HP she has left with her turn; if Aquella dies, the battle against Captain Davey will automatically be lost.",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Aquella1.png"
+        "notes": "• Aquella will announce how much HP she has left with her turn; if Aquella dies, the battle against Captain Davey will automatically be lost."
       },
       {
         "levelNumber": 2,
@@ -1698,8 +1711,7 @@
             "dot": "0%",
             "crit": "0%"
           }
-        },
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Aquella2.png"
+        }
       },
       {
         "levelNumber": 3,
@@ -1722,7 +1734,7 @@
         "attacks": [
           {
             "name": "Trident Combo",
-            "description": "4 hits x 60% damage (240%) \n Element changes to Energy against Water resistant foes.",
+            "description": "4 hits x 60% damage (240%)\n Element changes to Energy against Water resistant foes.",
             "effect": "4 hits of 60% damage, amounting to 240% damage.",
             "manaCost": "20",
             "cooldown": "14",
@@ -1733,7 +1745,7 @@
           },
           {
             "name": "Fury of the Depths",
-            "description": "1 hit x 100% damage \n Self: +100 Boost for 4 turns.",
+            "description": "1 hit x 100% damage\n Self: +100 Boost for 4 turns.",
             "effect": "Applies 'Fury of the Depths' (+100% Boost) to herself for next 4 turns.",
             "manaCost": "20",
             "cooldown": "4",
@@ -1755,7 +1767,7 @@
           },
           {
             "name": "Attack",
-            "description": "1 hit x 100% damage \n Element changes to Energy against Water resistant foes.",
+            "description": "1 hit x 100% damage\n Element changes to Energy against Water resistant foes.",
             "effect": "1 hit of 100% damage.",
             "manaCost": "0",
             "cooldown": "0",
@@ -1766,7 +1778,7 @@
           },
           {
             "name": "Trident Toss",
-            "description": "4 hits x 40% damage (160%) \n Element changes to Energy against Water resistant foes.",
+            "description": "4 hits x 40% damage (160%)\n Element changes to Energy against Water resistant foes.",
             "effect": "5 hits of 40% damage, amounting to 200% damage.",
             "manaCost": "15",
             "cooldown": "1",
@@ -1816,8 +1828,7 @@
             "dot": "0%",
             "crit": "0%"
           }
-        },
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Aquella3.png"
+        }
       }
     ],
     "releaseDate": "April 2nd, 2010",
@@ -1836,6 +1847,7 @@
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
+    "isTemp": true,
     "levelRange": "2-As player",
     "elements": [
       "NAT"
@@ -1857,6 +1869,7 @@
       "description": "",
       "imageUrl": "https://i.imgur.com/JhiNyKk.png"
     },
+    "familySources": [],
     "levelVariants": [
       {
         "levelNumber": 1,
@@ -2044,6 +2057,7 @@
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
+    "isTemp": true,
     "levelRange": "2-As player",
     "elements": [
       "NAT"
@@ -2056,8 +2070,7 @@
     "aliasSlugs": [
       "guest-artix-1",
       "guest-artix-2",
-      "guest-artix-3",
-      "guest-artix"
+      "guest-artix-3"
     ],
     "type": "guest",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=6818835",
@@ -2065,8 +2078,23 @@
     "isMultiPost": true,
     "shared": {
       "description": "",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Artix3.png"
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Artix1.png",
+      "alternativeImages": [
+        {
+          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Artix1-ArtixVstheUndead.png",
+          "caption": "Appearance with new weapon in Artix Vs. The Undead"
+        },
+        {
+          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Artix3.png",
+          "caption": "Book 3 Appearance"
+        },
+        {
+          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Artix3-TheUndeadVsArtix.png",
+          "caption": "The Undead Vs Artix Appearance"
+        }
+      ]
     },
+    "familySources": [],
     "levelVariants": [
       {
         "levelNumber": 1,
@@ -2080,7 +2108,7 @@
         "description": "Human Paladin",
         "obtainVariants": [
           {
-            "location": "Well, Well, Well., The Necropolis, Artix Vs. The Undead, Noxus Fumes, Artix Statue",
+            "location": "Well, Well, Well.",
             "price": "N/A",
             "priceType": "free",
             "daRequired": false
@@ -2151,8 +2179,7 @@
             "crit": "0%"
           }
         },
-        "notes": "• This is the original version of the guest; intended to be completely replaced by a new version, it remains in-game erroneously.",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Artix1.png"
+        "notes": "• This is the original version of the guest; intended to be completely replaced by a new version, it remains in-game erroneously."
       },
       {
         "levelNumber": 2,
@@ -2182,8 +2209,8 @@
         "attacks": [
           {
             "name": "Ultimate Light Combo Attack!",
-            "description": "4 hits x 50% damage (200%) | 4 hits x 70% damage (280%) \n This attack has +200 Crit. \n This attack is more effective against Undead foes. | Damage increased due to targeted Undead!",
-            "effect": "4 hits of 50% damage, amounting to 200% damage, with +200 Crit.\n  • If target's race is 'Undead', instead performs 4 hits of 70% damage, amounting to 280% damage, with +200 Crit; after this attack, restores 2% of his max MP.",
+            "description": "4 hits x 50% damage (200%) | 4 hits x 70% damage (280%)\n This attack has +200 Crit.\n This attack is more effective against Undead foes. | Damage increased due to targeted Undead!",
+            "effect": "4 hits of 50% damage, amounting to 200% damage, with +200 Crit.\n • If target's race is 'Undead', instead performs 4 hits of 70% damage, amounting to 280% damage, with +200 Crit; after this attack, restores 2% of his max MP.",
             "manaCost": "30",
             "cooldown": "11 (carries between battles)",
             "damageType": "Melee",
@@ -2204,8 +2231,8 @@
           },
           {
             "name": "Undead Slayer Slash",
-            "description": "4 hits x 40% damage (160%) | 4 hits x 45% damage (180% \n Target: (On hit) -20 Light resistance for 4 turns. | Target: (On hit) -40 Light resistance for 4 turns. \n This attack is more effective against Undead foes. | Damage and effect increased due to targeted Undead!",
-            "effect": "4 hits of 40% damage, amounting to 160% damage; applies 'Slayer's Strike' (-20 Light Resist) to target for 4 turns inclusive.\n  • If target's race is 'Undead', instead performs 4 hits of 45% damage, amounting to 180% damage; applies 'Slayer's Strike' (-40 Light Resist) to target for 4 turns inclusive.",
+            "description": "4 hits x 40% damage (160%) | 4 hits x 45% damage (180%\n Target: (On hit) -20 Light resistance for 4 turns. | Target: (On hit) -40 Light resistance for 4 turns.\n This attack is more effective against Undead foes. | Damage and effect increased due to targeted Undead!",
+            "effect": "4 hits of 40% damage, amounting to 160% damage; applies 'Slayer's Strike' (-20 Light Resist) to target for 4 turns inclusive.\n • If target's race is 'Undead', instead performs 4 hits of 45% damage, amounting to 180% damage; applies 'Slayer's Strike' (-40 Light Resist) to target for 4 turns inclusive.",
             "manaCost": "18",
             "cooldown": "5",
             "damageType": "Melee",
@@ -2215,8 +2242,8 @@
           },
           {
             "name": "Blinding Light",
-            "description": "1 hit x 130% damage | 1 hit x 160% damage \n This attack is more effective against Undead foes. | Damage increased due to targeted Undead!",
-            "effect": "1 hit of 130% damage.\n  • If target's race is 'Undead', instead performs 1 hit of 160% damage.",
+            "description": "1 hit x 130% damage | 1 hit x 160% damage\n This attack is more effective against Undead foes. | Damage increased due to targeted Undead!",
+            "effect": "1 hit of 130% damage.\n • If target's race is 'Undead', instead performs 1 hit of 160% damage.",
             "manaCost": "15",
             "cooldown": "1",
             "damageType": "Melee",
@@ -2226,8 +2253,8 @@
           },
           {
             "name": "Light of JUSTICE!",
-            "description": "1 hit x 140% damage to all targets | 1 hit x 160% damage to all targets \n This attack is more effective against Undead foes. | Damage increased due to targeted Undead!",
-            "effect": "1 hit of 140% damage to all foes.\n  • If target's race is 'Undead', instead performs 1 hit of 160% damage to all foes.",
+            "description": "1 hit x 140% damage to all targets | 1 hit x 160% damage to all targets\n This attack is more effective against Undead foes. | Damage increased due to targeted Undead!",
+            "effect": "1 hit of 140% damage to all foes.\n • If target's race is 'Undead', instead performs 1 hit of 160% damage to all foes.",
             "manaCost": "15",
             "cooldown": "2",
             "damageType": "Melee",
@@ -2237,8 +2264,8 @@
           },
           {
             "name": "Attack",
-            "description": "1 hit x 100% damage | 1 hit x 115% damage \n This attack is more effective against Undead foes. | Damage increased due to targeted Undead!",
-            "effect": "1 hit of 100% damage;\n  • If target's race is 'Undead', instead performs 1 hit of 115% damage.",
+            "description": "1 hit x 100% damage | 1 hit x 115% damage\n This attack is more effective against Undead foes. | Damage increased due to targeted Undead!",
+            "effect": "1 hit of 100% damage;\n • If target's race is 'Undead', instead performs 1 hit of 115% damage.",
             "manaCost": "0",
             "cooldown": "0",
             "damageType": "Melee",
@@ -2288,16 +2315,15 @@
             "crit": "0%"
           }
         },
-        "notes": "• Artix (2) equips a new weapon before battling  Edgar in  Artix Vs. The Undead, raising his Bonus to 20 and Crit to 25. \n• The following changes were implemented on  April 11th, 2025: \n  • Artix (2)'s tooltips were updated. \n  • 'Undead Slayer Slash' requires a hit in order for 'Slayer's Strike' to be applied.",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Artix2.png"
+        "notes": "• Artix (2) equips a new weapon before battling Edgar in Artix Vs. The Undead, raising his Bonus to 20 and Crit to 25.\n• The following changes were implemented on April 11th, 2025:\n • Artix (2)'s tooltips were updated.\n • 'Undead Slayer Slash' requires a hit in order for 'Slayer's Strike' to be applied."
       },
       {
         "levelNumber": 3,
-        "levelDisplay": "Unknown",
+        "levelDisplay": "As player",
         "variantName": "3",
         "name": "Artix (3)",
-        "damage": "Unknown",
-        "stats": "None",
+        "damage": "Scaled",
+        "stats": "See guestStats",
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21932067",
         "description": "Human Paladin",
         "obtainVariants": [
@@ -2307,20 +2333,7 @@
             "priceType": "free",
             "requirements": "Completion of Hydra Boss (Books 3 and 4) (Book of Lore)",
             "daRequired": false
-          }
-        ],
-        "element": "LIG",
-        "guestStats": {}
-      },
-      {
-        "levelNumber": 4,
-        "levelDisplay": "As player",
-        "name": "Artix",
-        "damage": "Scaled",
-        "stats": "See guestStats",
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21932067",
-        "description": "Human Paladin",
-        "obtainVariants": [
+          },
           {
             "location": "Doom Amulet, Calamity, Back to School",
             "price": "N/A",
@@ -2360,7 +2373,7 @@
           },
           {
             "name": "Attack",
-            "effect": "1 hit of 175% damage.\n  • If target's race is 'Undead', instead performs 1 hit of 190% damage.",
+            "effect": "1 hit of 175% damage.\n • If target's race is 'Undead', instead performs 1 hit of 190% damage.",
             "manaCost": "0",
             "cooldown": "0",
             "damageType": "Melee",
@@ -2410,8 +2423,7 @@
             "crit": "0%"
           }
         },
-        "notes": "• *Artix has a complex, level-based scaling damage formula which is not represented by the information panel.",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Artix3.png"
+        "notes": "• *Artix has a complex, level-based scaling damage formula which is not represented by the information panel."
       }
     ],
     "releaseDate": "October 23rd, 2006",
@@ -2454,6 +2466,7 @@
       "description": "",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Ash2.png"
     },
+    "familySources": [],
     "levelVariants": [
       {
         "levelNumber": 1,
@@ -2533,7 +2546,7 @@
             "crit": "0%"
           }
         },
-        "notes": "• Ash (1) was previously attainable from the following retired access point:  Dragon Attack at Willowshire! -> Team up! -> Yes",
+        "notes": "• Ash (1) was previously attainable from the following retired access point: Dragon Attack at Willowshire! -> Team up! -> Yes",
         "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Ash1.png"
       },
       {
@@ -2576,13 +2589,14 @@
           {
             "name": "Holy Slash",
             "description": "Damage your foe and heal your ally!",
-            "effect": "Heals player equal to the value of 300% of Ash's max damage; 2 hits of 50% damage, amounting to 100% damage.\n• Skill button was updated on  November 24th, 2023, replacing",
+            "effect": "Heals player equal to the value of 300% of Ash's max damage; 2 hits of 50% damage, amounting to 100% damage.",
             "manaCost": "25",
             "cooldown": "7",
             "damageType": "Melee",
             "element": "Light",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Ash2-Button02-Holy.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Ash2-Button02-Holy-Old.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Ash2-Button02-Holy-Old.png",
+            "notes": "• Skill button was updated on November 24th, 2023, replacing its old appearance."
           },
           {
             "name": "Enchanted Weapons",
@@ -2669,7 +2683,7 @@
             "crit": "0%"
           }
         },
-        "notes": "• A Dragon Amulet is required to invite Ash during the Friday the 13th Wars. \n• *Ash is only invited with 0 Pierce Def and 1 Bonus from  Falconreach (Book 3) and the  Friday the 13th War.",
+        "notes": "• A Dragon Amulet is required to invite Ash during the Friday the 13th Wars.\n• *Ash is only invited with 0 Pierce Def and 1 Bonus from Falconreach (Book 3) and the Friday the 13th War.",
         "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Ash2.png"
       }
     ],
@@ -2690,7 +2704,6 @@
     "hasFree": true,
     "hasMerge": false,
     "isTemp": true,
-    "retired": true,
     "levelRange": "1-As player",
     "elements": [
       "MET"
@@ -2769,7 +2782,7 @@
     "releaseDate": "September 21st, 2012",
     "imageUrl": "https://i.imgur.com/WkHSthH.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=20722177",
-    "notes": "• Batoro's stun duration was lowered from 2 turns to 1 turn on February 28th, 2020; more information can be found in the  February 28th, 2020 Design Notes.",
+    "notes": "• Batoro's stun duration was lowered from 2 turns to 1 turn on February 28th, 2020; more information can be found in the February 28th, 2020 Design Notes.",
     "alsoSee": [],
     "tags": [
       "batoro",
@@ -3121,13 +3134,14 @@
       {
         "name": "Dragon's Sight",
         "description": "Increase own Crit and Boost.",
-        "effect": "Applies 'Dragon's Sight' (+80 Bonus, +80% Boost) to the player for 5 turns inclusive.\n• Skill erroneously increases the player's Bonus and Boost instead of Captain Lestrad's Crit and Boost.",
+        "effect": "Applies 'Dragon's Sight' (+80 Bonus, +80% Boost) to the player for 5 turns inclusive.",
         "manaCost": "15",
         "cooldown": "11",
         "damageType": "N/A",
         "element": "N/A",
         "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/CaptainLestrad-Button02-Dragon's.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/CaptainLestrad-Dragon'sSight.png"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/CaptainLestrad-Dragon'sSight.png",
+        "notes": "• Skill erroneously increases the player's Bonus and Boost instead of Captain Lestrad's Crit and Boost."
       },
       {
         "name": "Rush",
@@ -3371,7 +3385,7 @@
     "releaseDate": "March 25th, 2011",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Caravaner%20pic.bmp",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=18800829",
-    "notes": "• Caravaner will remain as a guest if you exit before quest completion. \n• *Caravaner's title is 'Human Merchant - No You're not getting[...]', but is unable to be fully displayed on the information panel.",
+    "notes": "• Caravaner will remain as a guest if you exit before quest completion.\n• *Caravaner's title is 'Human Merchant - No You're not getting[...]', but is unable to be fully displayed on the information panel.",
     "alsoSee": [],
     "tags": [
       "caravaner",
@@ -3527,7 +3541,7 @@
         "title": "Cranix (Character Page)"
       }
     ],
-    "notes": "• This guest is linked to a real player's character ID, and as such all variables are subject to change, such as in an  Aeris Minor Tournament. ",
+    "notes": "• This guest is linked to a real player's character ID, and as such all variables are subject to change, such as in an Aeris Minor Tournament.",
     "alsoSee": [],
     "tags": [
       "cranix",
@@ -3666,7 +3680,7 @@
         "title": "Dain Lorilann (Character Page)"
       }
     ],
-    "notes": "• This guest is linked to a real player's character ID, and as such all variables are subject to change, such as in an  Aeris Minor Tournament. ",
+    "notes": "• This guest is linked to a real player's character ID, and as such all variables are subject to change, such as in an Aeris Minor Tournament.",
     "alsoSee": [],
     "tags": [
       "dain",
@@ -4026,7 +4040,7 @@
     "attacks": [
       {
         "name": "Mega Beam",
-        "description": "4 hits x 50% damage (200%) \n This attack has +200 Crit.",
+        "description": "4 hits x 50% damage (200%)\n This attack has +200 Crit.",
         "effect": "4 hits of 50% damage, amounting to 200% damage, with +200 Crit.",
         "manaCost": "20",
         "cooldown": "8",
@@ -4037,7 +4051,7 @@
       },
       {
         "name": "Precise Shot",
-        "description": "1 hit x 200% damage \n This attack has +120 Bonus.",
+        "description": "1 hit x 200% damage\n This attack has +120 Bonus.",
         "effect": "1 hit of 200% damage, with +120 Bonus.",
         "manaCost": "10",
         "cooldown": "3",
@@ -4048,7 +4062,7 @@
       },
       {
         "name": "Stunning Pulse",
-        "description": "3 hits x 50% damage (150%) \n Target: (On hit) Stun for 1 turn.",
+        "description": "3 hits x 50% damage (150%)\n Target: (On hit) Stun for 1 turn.",
         "effect": "3 hits of 50% damage, amounting to 150% damage; applies 'Pulse Stun' to target, stunning it for 1 turn.",
         "manaCost": "16",
         "cooldown": "8",
@@ -4070,7 +4084,7 @@
       },
       {
         "name": "Overdrive",
-        "description": "1 hit x 100% damage \n Self: +50 Boost for 4 turns.",
+        "description": "1 hit x 100% damage\n Self: +50 Boost for 4 turns.",
         "effect": "Applies 'Overdrive' (+50% Boost) to himself for 5 turns inclusive; 1 hit of 100% damage to all foes.",
         "manaCost": "15",
         "cooldown": "5",
@@ -4181,7 +4195,7 @@
         "title": "Elgert (Character Page)"
       }
     ],
-    "notes": "• This guest is linked to a real player's character ID, and as such all variables are subject to change, such as in an  Aeris Minor Tournament. ",
+    "notes": "• This guest is linked to a real player's character ID, and as such all variables are subject to change, such as in an Aeris Minor Tournament.",
     "alsoSee": [],
     "tags": [
       "elgert",
@@ -4266,7 +4280,7 @@
       },
       {
         "name": "Mind Crush",
-        "description": "4 hits x 25% damage (100%) \n Target: (On hit) 50% ??? DoT for 6 turns.",
+        "description": "4 hits x 25% damage (100%)\n Target: (On hit) 50% ??? DoT for 6 turns.",
         "effect": "4 hits of 25% damage, amounting to 100% damage; applies 'Neuron Discharge', a 50% base damage Pierce ??? DoT effect, to target for 6 turns",
         "manaCost": "15",
         "cooldown": "4",
@@ -4277,7 +4291,7 @@
       },
       {
         "name": "Mental Torture",
-        "description": "3 hits x 33.3% damage (100%) \n Target: (On hit) -60 Bonus for 4 turns.",
+        "description": "3 hits x 33.3% damage (100%)\n Target: (On hit) -60 Bonus for 4 turns.",
         "effect": "3 hits of ~33.3% damage, amounting to 100% damage; applies 'Blind' (-60 Bonus) to target for 4 turns.",
         "manaCost": "20",
         "cooldown": "9",
@@ -4288,7 +4302,7 @@
       },
       {
         "name": "Psychic Cage",
-        "description": "1 hit x 100% damage \n Target: (On hit) Stun for 1 turn.",
+        "description": "1 hit x 100% damage\n Target: (On hit) Stun for 1 turn.",
         "effect": "1 hit of 100% damage; applies 'Stunned' to target, stunning it for 1 turn.",
         "manaCost": "27",
         "cooldown": "14",
@@ -4299,8 +4313,8 @@
       },
       {
         "name": "Backstab",
-        "description": "1 hit x 150% damage | 1 hit x 300% damage \n This attack gains +150% base damage when under Illusionary Veil. | (Illusionary Veil) This attack has +150% base damage.",
-        "effect": "1 hit of 150% damage.\n  • While affected by 'Illusion', attack instead performs 1 hit of 300% damage.",
+        "description": "1 hit x 150% damage | 1 hit x 300% damage\n This attack gains +150% base damage when under Illusionary Veil. | (Illusionary Veil) This attack has +150% base damage.",
+        "effect": "1 hit of 150% damage.\n • While affected by 'Illusion', attack instead performs 1 hit of 300% damage.",
         "manaCost": "15",
         "cooldown": "1",
         "damageType": "Pierce",
@@ -4314,7 +4328,7 @@
     "releaseDate": "December 29th, 2023",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Etaos&Nirios.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22413732",
-    "notes": "• Tooltips for this guest was updated on  April 25th, 2025.",
+    "notes": "• Tooltips for this guest was updated on April 25th, 2025.",
     "alsoSee": [],
     "tags": [
       "etaos",
@@ -4392,7 +4406,7 @@
     "attacks": [
       {
         "name": "Sweep",
-        "description": "1 hit x 75% damage \n Also deals an additional 1 hit x 75% damage to all targets.",
+        "description": "1 hit x 75% damage\n Also deals an additional 1 hit x 75% damage to all targets.",
         "effect": "1 hit of 75% damage to current foe; 1 hit of 75% damage to all foes.",
         "manaCost": "20",
         "cooldown": "4",
@@ -4425,7 +4439,7 @@
       },
       {
         "name": "Cheer",
-        "description": "Self: Gain +50 Boost/Bonus for 3 turns. \n Hero: Gain +50 Boost/Bonus for 2 turns.",
+        "description": "Self: Gain +50 Boost/Bonus for 3 turns.\n Hero: Gain +50 Boost/Bonus for 2 turns.",
         "effect": "Applies 'Fae's Support' (+50% Boost, +50 Bonus) to herself for 3 turns; applies 'Fae's Support' (+50% Boost, +50 Bonus) to player for 2 turns.",
         "manaCost": "20",
         "cooldown": "1",
@@ -4663,7 +4677,7 @@
     "releaseDate": "November 14th, 2008",
     "imageUrl": "https://i.imgur.com/3ZngqTs.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=15063185",
-    "notes": "• G'joob will remain as a guest if you exit before quest completion. \n• *'Fish Slap' skill is currently bugged, causing his turn to stick.",
+    "notes": "• G'joob will remain as a guest if you exit before quest completion.\n• *'Fish Slap' skill is currently bugged, causing his turn to stick.",
     "alsoSee": [],
     "tags": [
       "g'joob",
@@ -4717,8 +4731,23 @@
     "isMultiPost": true,
     "shared": {
       "description": "",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Galanoth2.png"
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Galanoth.png",
+      "alternativeImages": [
+        {
+          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Galanoth-NotSoGreatEscape.png",
+          "caption": "Not So Great Escape Appearance"
+        },
+        {
+          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Galanoth-Book3.png",
+          "caption": "Book 3 Appearance"
+        },
+        {
+          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Galanoth-FFP1.png",
+          "caption": "Fate's Flow (Part 1) Appearance"
+        }
+      ]
     },
+    "familySources": [],
     "levelVariants": [
       {
         "levelNumber": 1,
@@ -4748,7 +4777,7 @@
         "attacks": [
           {
             "name": "Slayer's Spirit!",
-            "description": "Self: +15 Boost for 5 turns. | Self: +30 Boost for 5 turns. \n This skill is more effective against Dragon foes. | Effect increased due to targeted Dragon!",
+            "description": "Self: +15 Boost for 5 turns. | Self: +30 Boost for 5 turns.\n This skill is more effective against Dragon foes. | Effect increased due to targeted Dragon!",
             "effect": "Applies 'Slayer's Spirit' (+15% Boost) to himself for 5 turns. If target is a Dragon, applies 'Slayer's Spirit' (+30% Boost) to himself for 5 turns.",
             "manaCost": "15",
             "cooldown": "5",
@@ -4759,7 +4788,7 @@
           },
           {
             "name": "Shin Kick",
-            "description": "1 hit x 120% damage | 1 hit x 130% damage \n Target: (On hit) Stun for 1 turn. | Target: (On hit) Stun for 2 turns. \n This attack is more effective against Dragon foes. | Damage and effect increased due to targeted Dragon!",
+            "description": "1 hit x 120% damage | 1 hit x 130% damage\n Target: (On hit) Stun for 1 turn. | Target: (On hit) Stun for 2 turns.\n This attack is more effective against Dragon foes. | Damage and effect increased due to targeted Dragon!",
             "effect": "1 hit of 120% damage; applies 'Painful Shins!' to target, stunning it for 1 turn. If target is a Dragon, 1 hit of 130% damage; applies 'Painful Shins!' to target, stunning it for 2 turns.",
             "manaCost": "15",
             "cooldown": "14",
@@ -4770,7 +4799,7 @@
           },
           {
             "name": "Dagger Toss",
-            "description": "1 hit x 120% Pierce damage | 1 hit x 140% Pierce damage \n This attack has +50 Bonus. | This attack has +90 Bonus. \n This attack is more effective against Dragon foes. | Damage and effect increased due to targeted Dragon!",
+            "description": "1 hit x 120% Pierce damage | 1 hit x 140% Pierce damage\n This attack has +50 Bonus. | This attack has +90 Bonus.\n This attack is more effective against Dragon foes. | Damage and effect increased due to targeted Dragon!",
             "effect": "1 hit of 120% damage, with +50 Bonus. If target is a Dragon, 1 hit of 140% damage, with +90 Bonus.",
             "manaCost": "8",
             "cooldown": "4",
@@ -4781,7 +4810,7 @@
           },
           {
             "name": "Fierce Spear Stab",
-            "description": "1 hit x 120% damage | 1 hit x 150% damage \n This attack has +100 Crit. | This attack has +200 Crit. \n This attack is more effective against Dragon foes. | Damage increased due to targeted Dragon!",
+            "description": "1 hit x 120% damage | 1 hit x 150% damage\n This attack has +100 Crit. | This attack has +200 Crit.\n This attack is more effective against Dragon foes. | Damage increased due to targeted Dragon!",
             "effect": "1 hit of 120% damage, with +100 Crit. If target is a Dragon, 1 hit of 150% damage, with +200 Crit.",
             "manaCost": "20",
             "cooldown": "10",
@@ -4792,7 +4821,7 @@
           },
           {
             "name": "Attack",
-            "description": "1 hit x 100% damage | 1 hit x 120% damage \n This attack is more effective against Dragon foes. | Damage increased due to targeted Dragon!",
+            "description": "1 hit x 100% damage | 1 hit x 120% damage\n This attack is more effective against Dragon foes. | Damage increased due to targeted Dragon!",
             "effect": "1 hit of 100% damage. If target is a Dragon, 1 hit of 120% damage.",
             "manaCost": "0",
             "cooldown": "0",
@@ -4843,8 +4872,7 @@
             "crit": "0%"
           }
         },
-        "notes": "• Galanoth (2)'s tooltips were updated on  April 11th, 2025.",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Galanoth2.png"
+        "notes": "• Galanoth (2)'s tooltips were updated on April 11th, 2025."
       },
       {
         "levelNumber": 2,
@@ -4975,8 +5003,7 @@
             "crit": "0%"
           }
         },
-        "notes": "• Galanoth (3) has a series of unconventional stats in the quest  Calamity; Pierce: 5, Crit: 5, Bonus: 50 \n• Galanoth (3) has a series of unconventional stats in the quest  Fate's Flow (Part 1); Crit: 5, Bonus: 100",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Galanoth3.png"
+        "notes": "• Galanoth (3) has a series of unconventional stats in the quest Calamity; Pierce: 5, Crit: 5, Bonus: 50\n• Galanoth (3) has a series of unconventional stats in the quest Fate's Flow (Part 1); Crit: 5, Bonus: 100"
       },
       {
         "levelNumber": 3,
@@ -5042,6 +5069,7 @@
             "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Galanoth2-FierceSpearStab.png"
           }
         ],
+        "retired": true,
         "guestStats": {
           "level": "20",
           "damage": "5-30",
@@ -5072,8 +5100,7 @@
             "dodge": "0"
           }
         },
-        "notes": "• Galanoth (1) remained as a guest if you exit before quest completion.",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Galanoth2.png"
+        "notes": "• Galanoth (1) remained as a guest if you exit before quest completion."
       }
     ],
     "releaseDate": "September 12th, 2008",
@@ -5094,6 +5121,7 @@
     "hasFree": true,
     "hasMerge": false,
     "isTemp": true,
+    "retired": true,
     "levelRange": "As player-20",
     "elements": [
       "MET"
@@ -5616,7 +5644,7 @@
     "releaseDate": "August 13th, 2022",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/KaraSuLema.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=21290875",
-    "notes": "• Kara SuLema was previously attainable from the following retired access point:  Facing Z -> Add Kara \n• Kara has a series of unconventional stats in the quests  Fate's Flow (Part 1) and  Fallen Facade; INT: 0, CHA: 0, LUK: 0, Crit: 5 \n• Kara SuLema's stun duration was lowered from 2 turns to 1 turn on  February 28th, 2020. ",
+    "notes": "• Kara SuLema was previously attainable from the following retired access point: Facing Z -> Add Kara\n• Kara has a series of unconventional stats in the quests Fate's Flow (Part 1) and Fallen Facade; INT: 0, CHA: 0, LUK: 0, Crit: 5\n• Kara SuLema's stun duration was lowered from 2 turns to 1 turn on February 28th, 2020.",
     "alsoSee": [],
     "tags": [
       "kara",
@@ -5664,14 +5692,7 @@
         "dot": "0%",
         "crit": "0%"
       }
-    },
-    "retired": true,
-    "alternativeImages": [
-      {
-        "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/KaraSuLema-FFP1.png",
-        "caption": "Fate's Flow (Part 1) Appearance"
-      }
-    ]
+    }
   },
   {
     "id": "guest-kassandra",
@@ -5708,7 +5729,7 @@
     "attacks": [
       {
         "name": "Bind",
-        "description": "5 hits x 50% damage (250%) \n This attack has +30 Bonus. \n Target: (On hit) Stun for 2 turns.",
+        "description": "5 hits x 50% damage (250%)\n This attack has +30 Bonus.\n Target: (On hit) Stun for 2 turns.",
         "effect": "5 hits of 160% damage, amounting to 800% damage, with +30 Bonus; applies 'Cannot attack' to target, stunning it for 2 turns.",
         "manaCost": "80",
         "cooldown": "19",
@@ -5719,7 +5740,7 @@
       },
       {
         "name": "Seek",
-        "description": "5 hits x 50% damage (250%) \n This attack will attempt to weakness seek.",
+        "description": "5 hits x 50% damage (250%)\n This attack will attempt to weakness seek.",
         "effect": "5 hits of 50% weakness seeking damage, amounting to 250% damage.",
         "manaCost": "20",
         "cooldown": "1",
@@ -5730,7 +5751,7 @@
       },
       {
         "name": "Attack",
-        "description": "4 hits x 50% damage (200%) \n Recover 10 MP",
+        "description": "4 hits x 50% damage (200%)\n Recover 10 MP",
         "effect": "4 hits of 50% damage, amounting to 200% damage; recovers 10 MP.",
         "manaCost": "0",
         "cooldown": "0",
@@ -5745,7 +5766,7 @@
     "releaseDate": "July 22nd, 2022",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Kassandra.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22404167",
-    "notes": "• Seek's MP in  Jungle Adventure was  reduced from 40 to 20 to match with the subsequent quests on  March 8th, 2024; Kassandra's tooltips were also updated on that date. ",
+    "notes": "• Seek's MP in Jungle Adventure was reduced from 40 to 20 to match with the subsequent quests on March 8th, 2024; Kassandra's tooltips were also updated on that date.",
     "alsoSee": [],
     "tags": [
       "kassandra",
@@ -6018,8 +6039,8 @@
     "attacks": [
       {
         "name": "Controlled Flames",
-        "description": "2 hits x 100% <Metal/Fire> damage (200%) \n Changes Konnan's attacks to <Metal/Fire> element.",
-        "effect": "2 hits of 100% damage, amounting to 200% damage; changes Konnan's attacks to Metal or Fire element.\n  • Metal will be changed first before Fire and vice versa.",
+        "description": "2 hits x 100% <Metal/Fire> damage (200%)\n Changes Konnan's attacks to <Metal/Fire> element.",
+        "effect": "2 hits of 100% damage, amounting to 200% damage; changes Konnan's attacks to Metal or Fire element.\n • Metal will be changed first before Fire and vice versa.",
         "manaCost": "0",
         "cooldown": "2",
         "damageType": "Melee",
@@ -6029,14 +6050,15 @@
       },
       {
         "name": "Jab",
-        "description": "2 hits x 100% <Fire/Metal> damage (200%) \n This attack has +100 Bonus and +100 Crit",
-        "effect": "2 hits of 100% damage, amounting to 200% damage, with +100 Bonus and +100 Crit.\n• Skill button was updated on  May 15th, 2026, replacing",
+        "description": "2 hits x 100% <Fire/Metal> damage (200%)\n This attack has +100 Bonus and +100 Crit",
+        "effect": "2 hits of 100% damage, amounting to 200% damage, with +100 Bonus and +100 Crit.",
         "manaCost": "0",
         "cooldown": "2",
         "damageType": "Melee",
         "element": "Fire OR Metal",
         "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Konnan-Button02-Jab.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Konnan-Button02-Jab-Old.png"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Konnan-Button02-Jab-Old.png",
+        "notes": "• Skill button was updated on May 15th, 2026, replacing its old appearance."
       },
       {
         "name": "Attack",
@@ -6055,7 +6077,7 @@
     "releaseDate": "June 22nd, 2012",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Konnan.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=20422674",
-    "notes": "• #In the quest  The Merge, Konnan's Pierce Avoidance stat will instead be 0. \n• Konnan, named as Apprentice, was previously attainable from the following access points:  Dreamscape,  Nightmares, and  Forging. \n• In the quest  The Merge, his name will instead be Apprentice. \n• Konnan's appearance was updated on  February 20th, 2026. \n• 'Controlled Flames' skill was added on  May 15th, 2026. ",
+    "notes": "• #In the quest The Merge, Konnan's Pierce Avoidance stat will instead be 0.\n• Konnan, named as Apprentice, was previously attainable from the following access points: Dreamscape, Nightmares, and Forging.\n• In the quest The Merge, his name will instead be Apprentice.\n• Konnan's appearance was updated on February 20th, 2026.\n• 'Controlled Flames' skill was added on May 15th, 2026.",
     "alsoSee": [],
     "tags": [
       "konnan",
@@ -6207,7 +6229,7 @@
     "releaseDate": "May 3rd, 2013",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Maguspic.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22100154",
-    "notes": "• Magus Hansa (2) was previously attainable from the following retired access point:  Sands of Eternity -> Add Hansa \n• Hansa has a series of unconventional stats in the quests  Fate's Flow (Part 1) and  Fallen Facade; INT: 0, LUK: 0, END: 0, WIS: 0, Melee: 5, Magic: 5, Crit: 5",
+    "notes": "• Magus Hansa (2) was previously attainable from the following retired access point: Sands of Eternity -> Add Hansa\n• Hansa has a series of unconventional stats in the quests Fate's Flow (Part 1) and Fallen Facade; INT: 0, LUK: 0, END: 0, WIS: 0, Melee: 5, Magic: 5, Crit: 5",
     "alsoSee": [],
     "tags": [
       "magus",
@@ -6358,7 +6380,7 @@
     "releaseDate": "August 13th, 2022",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Maguspic.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=21274402",
-    "notes": "• Magus Hansa (2) was previously attainable from the following retired access point:  Sands of Eternity -> Add Hansa \n• Hansa has a series of unconventional stats in the quests  Fate's Flow (Part 1) and  Fallen Facade; INT: 0, LUK: 0, END: 0, WIS: 0, Melee: 5, Magic: 5, Crit: 5",
+    "notes": "• Magus Hansa (2) was previously attainable from the following retired access point: Sands of Eternity -> Add Hansa\n• Hansa has a series of unconventional stats in the quests Fate's Flow (Part 1) and Fallen Facade; INT: 0, LUK: 0, END: 0, WIS: 0, Melee: 5, Magic: 5, Crit: 5",
     "alsoSee": [],
     "tags": [
       "magus",
@@ -6429,8 +6451,19 @@
     "isMultiPost": true,
     "shared": {
       "description": "",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mazurek.png"
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mazurek.png",
+      "alternativeImages": [
+        {
+          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mazurek-Pirate'sRevenge.png",
+          "caption": "A Pirate's Revenge Appearance"
+        },
+        {
+          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mazurek-Admiral.png",
+          "caption": "Admiral Appearance"
+        }
+      ]
     },
+    "familySources": [],
     "levelVariants": [
       {
         "levelNumber": 1,
@@ -6600,8 +6633,7 @@
             "crit": "0%"
           }
         },
-        "notes": "• Mazurek (2) has a series of unconventional stats in the access points  The Autumn Wind and  The Quest for More Booty! - Choose a Side /  The Quest for More Booty! - Mazurek; DEX: 5, CHA: 10, LUK: 5, Bonus: 75, Crit: 5, Pierce: 0 \n• Mazurek (2) has a series of unconventional stats in the access point  A Pirate's Revenge; Bonus: 20, Crit: 25, Melee: 15, Pierce: 15",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mazurek.png"
+        "notes": "• Mazurek (2) has a series of unconventional stats in the access points The Autumn Wind and The Quest for More Booty! - Choose a Side / The Quest for More Booty! - Mazurek; DEX: 5, CHA: 10, LUK: 5, Bonus: 75, Crit: 5, Pierce: 0\n• Mazurek (2) has a series of unconventional stats in the access point A Pirate's Revenge; Bonus: 20, Crit: 25, Melee: 15, Pierce: 15"
       },
       {
         "levelNumber": 2,
@@ -6712,6 +6744,7 @@
             "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mazurek-LimeAid.png"
           }
         ],
+        "retired": true,
         "guestStats": {
           "level": "As player",
           "damage": "Scaled",
@@ -6741,8 +6774,7 @@
             "parry": "0",
             "dodge": "0"
           }
-        },
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mazurek.png"
+        }
       }
     ],
     "releaseDate": "September 18th, 2015",
@@ -6763,6 +6795,7 @@
     "hasFree": true,
     "hasMerge": false,
     "isTemp": true,
+    "retired": true,
     "levelRange": "As player-As player",
     "elements": [
       "DIS",
@@ -6806,7 +6839,7 @@
         "title": "Mennace (Character Page)"
       }
     ],
-    "notes": "• This guest is linked to a real player's character ID, and as such all variables are subject to change, such as in an  Aeris Minor Tournament. ",
+    "notes": "• This guest is linked to a real player's character ID, and as such all variables are subject to change, such as in an Aeris Minor Tournament.",
     "alsoSee": [],
     "tags": [
       "mennace",
@@ -6859,7 +6892,7 @@
       },
       {
         "name": "Staff Jab",
-        "description": "1 hit x 150% Nature damage \n This attack has +300 Crit.",
+        "description": "1 hit x 150% Nature damage\n This attack has +300 Crit.",
         "effect": "1 hit of 150% damage, with +300 Crit.",
         "manaCost": "0",
         "cooldown": "1",
@@ -6870,7 +6903,7 @@
       },
       {
         "name": "Attack",
-        "description": "1 hit x 125% Nature damage \n Mihyun's staff has <0-5> charges",
+        "description": "1 hit x 125% Nature damage\n Mihyun's staff has <0-5> charges",
         "effect": "1 hit of 125% damage.",
         "manaCost": "0",
         "cooldown": "0",
@@ -6881,7 +6914,7 @@
       },
       {
         "name": "Reload",
-        "description": "Self: Gain +75 Boost/Bonus for 4 turns. \n Reloads staff charges to 5.",
+        "description": "Self: Gain +75 Boost/Bonus for 4 turns.\n Reloads staff charges to 5.",
         "effect": "Reloads Staff charges to 5; Applies 'Fresh Water' (+75% Boosts, +50 Bonus) to herself for 4 turns.",
         "manaCost": "20",
         "cooldown": "4",
@@ -6892,7 +6925,7 @@
       },
       {
         "name": "Water Shot",
-        "description": "1 hit x 200% Water damage \n Consumes 1 staff charge.",
+        "description": "1 hit x 200% Water damage\n Consumes 1 staff charge.",
         "requirements": "At least 1 Staff charge",
         "effect": "Consumes 1 Staff charge; 1 hit of 200% damage.",
         "manaCost": "0",
@@ -6904,7 +6937,7 @@
       },
       {
         "name": "Full Blast",
-        "description": "4 hits x 125% Water damage (500%) \n Consumes all remaining staff charges.",
+        "description": "4 hits x 125% Water damage (500%)\n Consumes all remaining staff charges.",
         "requirements": "At least 1 Staff charge",
         "effect": "Consumes all Staff charges; 4 hits of 125% damage, amounting to 500% damage.",
         "manaCost": "20",
@@ -6916,7 +6949,7 @@
       },
       {
         "name": "Bubble Burst",
-        "description": "5 hits x 20% Water damage (100%) \n Also deals an additional 1 hit x 75% damage to all targets \n Consumes 1 staff charge.",
+        "description": "5 hits x 20% Water damage (100%)\n Also deals an additional 1 hit x 75% damage to all targets\n Consumes 1 staff charge.",
         "requirements": "At least 1 Staff charge",
         "effect": "Consumes 1 Staff charge; 5 hits of 20% damage to current foe, amounting to 100% damage; 1 hit of 75% damage to all foes.",
         "manaCost": "0",
@@ -6932,7 +6965,7 @@
     "releaseDate": "July 17th, 2026",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mihyun.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22426774",
-    "notes": "• Mihyun begins the battle with 'Heroic Boon' (+60 All Resist, -60 Health Resist) permanently applied to herself. \n• Mihyun is permanently affected by a stack mechanic called Staff charges. \n  • Staff charges starts at 0 and caps at 5. \n  • Mihyun begins the battle with 5 Staff charges and can be consumed to use 'Water Shot', 'Full Blast', and 'Bubble Burst' skills. \n  • Staff charges can only be gained upon using the 'Reload' skill.",
+    "notes": "• Mihyun begins the battle with 'Heroic Boon' (+60 All Resist, -60 Health Resist) permanently applied to herself.\n• Mihyun is permanently affected by a stack mechanic called Staff charges.\n • Staff charges starts at 0 and caps at 5.\n • Mihyun begins the battle with 5 Staff charges and can be consumed to use 'Water Shot', 'Full Blast', and 'Bubble Burst' skills.\n • Staff charges can only be gained upon using the 'Reload' skill.",
     "alsoSee": [],
     "tags": [
       "mihyun",
@@ -6997,8 +7030,15 @@
     "isMultiPost": true,
     "shared": {
       "description": "",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mritha.png"
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mritha.png",
+      "alternativeImages": [
+        {
+          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mritha-FFP1.png",
+          "caption": "Fate's Flow (Part 1) Appearance"
+        }
+      ]
     },
+    "familySources": [],
     "levelVariants": [
       {
         "levelNumber": 1,
@@ -7124,8 +7164,7 @@
             "crit": "0%"
           }
         },
-        "notes": "• Mritha (1) was previously attainable from the following retired DA access point:  War of the Dragon Rose - Rose Front -> Rose Camp! -> Invite Mritha as a guest \n• Mritha (1) has a series of unconventional stats in the quest  Saellah; Melee: 25, Pierce: 10, Magic: 30, Block: 50, Bonus: 25",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mritha.png"
+        "notes": "• Mritha (1) was previously attainable from the following retired DA access point: War of the Dragon Rose - Rose Front -> Rose Camp! -> Invite Mritha as a guest\n• Mritha (1) has a series of unconventional stats in the quest Saellah; Melee: 25, Pierce: 10, Magic: 30, Block: 50, Bonus: 25"
       },
       {
         "levelNumber": 2,
@@ -7181,6 +7220,7 @@
             "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mritha-Attack.png"
           }
         ],
+        "retired": true,
         "guestStats": {
           "level": "As player",
           "damage": "Scaled",
@@ -7221,8 +7261,7 @@
             "dot": "0%",
             "crit": "0%"
           }
-        },
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mritha.png"
+        }
       }
     ],
     "releaseDate": "January 26th, 2015",
@@ -7239,6 +7278,7 @@
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
+    "isTemp": true,
     "retired": true,
     "levelRange": "As player-As player",
     "elements": [
@@ -7364,6 +7404,7 @@
       "description": "",
       "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Niki.png"
     },
+    "familySources": [],
     "levelVariants": [
       {
         "levelNumber": 1,
@@ -7464,8 +7505,7 @@
             "dodge": "0"
           }
         },
-        "notes": "• Niki (1) was previously attainable from the following retired DA access points:  War of the Dragon Rose - Dragon Front -> Dragon Camp! -> Invite Niki as a guest,  After the War -> Invite Niki as a guest \n• Niki (1) previously had the following stats; Pierce: 5, Bonus: 60, and the 'Barrier' skill previously only provided +140 Parry Defense, with a cooldown of 6 turns.",
-        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Niki.png"
+        "notes": "• Niki (1) was previously attainable from the following retired DA access points: War of the Dragon Rose - Dragon Front -> Dragon Camp! -> Invite Niki as a guest, After the War -> Invite Niki as a guest\n• Niki (1) previously had the following stats; Pierce: 5, Bonus: 60, and the 'Barrier' skill previously only provided +140 Parry Defense, with a cooldown of 6 turns."
       },
       {
         "levelNumber": 2,
@@ -7508,6 +7548,7 @@
             "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Niki-Attack.png"
           }
         ],
+        "retired": true,
         "guestStats": {
           "level": "As player",
           "damage": "Scaled",
@@ -7537,8 +7578,7 @@
             "parry": "0",
             "dodge": "0"
           }
-        },
-        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Niki.png"
+        }
       }
     ],
     "releaseDate": "January 28th, 2022",
@@ -7555,6 +7595,7 @@
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
+    "isTemp": true,
     "retired": true,
     "levelRange": "As player-As player",
     "elements": [
@@ -7610,8 +7651,8 @@
       },
       {
         "name": "Attack",
-        "description": "1 hit x 100% damage | 1 hit x 200% damage \n Boosts the damage of the next consecutive Attack.",
-        "effect": "1 hit of 100% damage; boosts the damage of the next consecutive 'Attack' to 1 hit of 200% damage.\n  • If another skill was used instead of 'Attack', the damage boost is reverted back to 1 hit of 100% damage.",
+        "description": "1 hit x 100% damage | 1 hit x 200% damage\n Boosts the damage of the next consecutive Attack.",
+        "effect": "1 hit of 100% damage; boosts the damage of the next consecutive 'Attack' to 1 hit of 200% damage.\n • If another skill was used instead of 'Attack', the damage boost is reverted back to 1 hit of 100% damage.",
         "manaCost": "0",
         "cooldown": "0",
         "damageType": "Pierce",
@@ -7621,7 +7662,7 @@
       },
       {
         "name": "Psychic Cage",
-        "description": "1 hit x 100% damage \n Target: (On hit) Stun for 1 turn.",
+        "description": "1 hit x 100% damage\n Target: (On hit) Stun for 1 turn.",
         "effect": "1 hit of 100% damage; applies 'Stun' to target, stunning it for 1 turn.",
         "manaCost": "20",
         "cooldown": "14",
@@ -7941,7 +7982,7 @@
     "releaseDate": "September 15th, 2018",
     "imageUrl": "https://i.imgur.com/oEZhPmL.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22348084",
-    "notes": "• Pepper Merchant was previously attainable from the following retired access point:  An Elegy of Ice and Fire.",
+    "notes": "• Pepper Merchant was previously attainable from the following retired access point: An Elegy of Ice and Fire.",
     "alsoSee": [],
     "tags": [
       "pepper",
@@ -7978,8 +8019,7 @@
         "parry": "0",
         "dodge": "0"
       }
-    },
-    "retired": true
+    }
   },
   {
     "id": "guest-princess",
@@ -7995,17 +8035,9 @@
     "isMultiPost": true,
     "shared": {
       "description": "",
-      "alternativeImages": [
-        {
-          "url": "http://i.imgur.com/6LuPETA.png",
-          "caption": "Appearance 1"
-        },
-        {
-          "url": "http://i.imgur.com/FfAVvI8.png",
-          "caption": "Appearance 2"
-        }
-      ]
+      "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Princesspic.png"
     },
+    "familySources": [],
     "levelVariants": [
       {
         "levelNumber": 1,
@@ -8064,17 +8096,7 @@
             "parry": "0",
             "dodge": "0"
           }
-        },
-        "alternativeImages": [
-          {
-            "url": "http://i.imgur.com/6LuPETA.png",
-            "caption": "Appearance 1"
-          },
-          {
-            "url": "http://i.imgur.com/FfAVvI8.png",
-            "caption": "Appearance 2"
-          }
-        ]
+        }
       },
       {
         "levelNumber": 2,
@@ -8134,17 +8156,7 @@
             "parry": "0",
             "dodge": "0"
           }
-        },
-        "alternativeImages": [
-          {
-            "url": "http://i.imgur.com/6LuPETA.png",
-            "caption": "Appearance 1"
-          },
-          {
-            "url": "http://i.imgur.com/FfAVvI8.png",
-            "caption": "Appearance 2"
-          }
-        ]
+        }
       }
     ],
     "releaseDate": "March 2nd, 2015",
@@ -8160,6 +8172,8 @@
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
+    "isTemp": true,
+    "isRare": true,
     "levelRange": "Scaled-1",
     "elements": [
       "FIR"
@@ -8192,7 +8206,7 @@
     "attacks": [
       {
         "name": "Attack",
-        "effect": "Performs one of the following attacks, each for 50% chance:\n  • Recovers 10% of player's HP and applies 'Tech Buff (+20% Boost, +20 Melee/Pierce/Magic Avoidance) to player for 3 turns.\n  • 1 hit of 100% damage and applies 'Tech debuff' (-20% boost, -20 Melee/Pierce/Magic Avoidance) for 3 turns inclusive.",
+        "effect": "Performs one of the following attacks, each for 50% chance:\n • Recovers 10% of player's HP and applies 'Tech Buff (+20% Boost, +20 Melee/Pierce/Magic Avoidance) to player for 3 turns.\n • 1 hit of 100% damage and applies 'Tech debuff' (-20% boost, -20 Melee/Pierce/Magic Avoidance) for 3 turns inclusive.",
         "manaCost": "0",
         "cooldown": "0",
         "damageType": "Melee",
@@ -8206,7 +8220,7 @@
     "releaseDate": "August 3rd, 2012",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Professor.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=20575037",
-    "notes": "• Professor was previously attainable from the access point:  Forging.",
+    "notes": "• Professor was previously attainable from the access point: Forging.",
     "alsoSee": [],
     "tags": [
       "professor",
@@ -8357,8 +8371,19 @@
     "isMultiPost": true,
     "shared": {
       "description": "",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Raven.png"
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Raven.png",
+      "alternativeImages": [
+        {
+          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Raven-Castle.png",
+          "caption": "The Castle in the Woods Appearance"
+        },
+        {
+          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Raven-BlackWinter.png",
+          "caption": "Black Winter/Book of Lore/A Shocking Discovery Appearance"
+        }
+      ]
     },
+    "familySources": [],
     "levelVariants": [
       {
         "levelNumber": 1,
@@ -8471,8 +8496,7 @@
             "crit": "0%"
           }
         },
-        "notes": "• Raven's stun duration was lowered from 2 turns to 1 turn on  February 28th, 2020.",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Raven2.png"
+        "notes": "• Raven's stun duration was lowered from 2 turns to 1 turn on February 28th, 2020."
       },
       {
         "levelNumber": 2,
@@ -8577,8 +8601,7 @@
             "dot": "0%",
             "crit": "0%"
           }
-        },
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Raven3.png"
+        }
       },
       {
         "levelNumber": 3,
@@ -8651,6 +8674,7 @@
             "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Raven-Attack1.0.png"
           }
         ],
+        "retired": true,
         "guestStats": {
           "level": "As player",
           "damage": "Scaled",
@@ -8680,8 +8704,7 @@
             "parry": "0",
             "dodge": "0"
           }
-        },
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Raven.png"
+        }
       }
     ],
     "releaseDate": "June 13th, 2014",
@@ -8832,7 +8855,7 @@
     "releaseDate": "September 19th, 2014",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Rhubarb.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=21931193",
-    "notes": "• Rhubarb has a series of unconventional stats in the zones  The Quest for More Booty! - Choose a Side /  The Quest for More Booty! - Rhubarb; Bonus: 20, Crit: 25, Melee: 15, Pierce: 15, Magic: 0, Parry: 10",
+    "notes": "• Rhubarb has a series of unconventional stats in the zones The Quest for More Booty! - Choose a Side / The Quest for More Booty! - Rhubarb; Bonus: 20, Crit: 25, Melee: 15, Pierce: 15, Magic: 0, Parry: 10",
     "alsoSee": [],
     "tags": [
       "rhubarb",
@@ -8897,8 +8920,9 @@
     "isMultiPost": true,
     "shared": {
       "description": "",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Riadne2.png"
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Riadne.png"
     },
+    "familySources": [],
     "levelVariants": [
       {
         "levelNumber": 1,
@@ -8928,47 +8952,51 @@
         "attacks": [
           {
             "name": "Spider's Web",
-            "description": "1 hit x 120% damage \n Target: (On hit) Stun for 1 turn.",
-            "effect": "1 hit of 120% damage; applies 'Webbed' to target, stunning it for 1 turn.\n• The Riadne guest in  At the Gate erroneously uses its old tooltip: Web your foe!",
+            "description": "1 hit x 120% damage\n Target: (On hit) Stun for 1 turn.",
+            "effect": "1 hit of 120% damage; applies 'Webbed' to target, stunning it for 1 turn.",
             "manaCost": "20",
             "cooldown": "15",
             "damageType": "Magic",
             "element": "Poison",
             "buttonImageUrl": "http://i.imgur.com/K5z1cF9.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Riadne2-Spider'sWeb.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Riadne2-Spider'sWeb.png",
+            "notes": "• The Riadne guest in At the Gate erroneously uses its old tooltip: Web your foe!"
           },
           {
             "name": "PoisonPunch",
-            "description": "2 hits x 70% damage (140%) \n Target: (On hit) 10% Poison DoT for 3 turns. \n DoT damage increases with each use, to 10 times.",
-            "effect": "2 hits of 70% damage, amounting to 140% damage; applies 'Spider's Venom', a 10X% Magic Poison DoT effect, to target for 3 turns, where X is equal to the number of times 'Spider's Venom' was applied, capped at 10.\n• The Riadne guest in  At the Gate erroneously uses its old tooltip: Web your foe!",
+            "description": "2 hits x 70% damage (140%)\n Target: (On hit) 10% Poison DoT for 3 turns.\n DoT damage increases with each use, to 10 times.",
+            "effect": "2 hits of 70% damage, amounting to 140% damage; applies 'Spider's Venom', a 10X% Magic Poison DoT effect, to target for 3 turns, where X is equal to the number of times 'Spider's Venom' was applied, capped at 10.",
             "manaCost": "18",
             "cooldown": "3",
             "damageType": "Magic",
             "element": "Poison",
             "buttonImageUrl": "http://i.imgur.com/QLOlCcU.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Riadne2-PoisonPunch.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Riadne2-PoisonPunch.png",
+            "notes": "• The Riadne guest in At the Gate erroneously uses its old tooltip: Web your foe!"
           },
           {
             "name": "ArachnoSlasher",
-            "description": "3 hits x 30% damage (90%) \n Self: +20 Boost for 4 turns. \n Target: (On hit) -20 Boost for 3 turns.",
-            "effect": "3 hits of 30% damage, amounting to 90% damage; applies 'Spider's Fury' (+20% Boost) to herself for 4 turns inclusive; applies 'Spider's Anger' (-20% Boost) to target for 3 turns.\n• The Riadne guest in  At the Gate erroneously uses its old tooltip: Web your foe!",
+            "description": "3 hits x 30% damage (90%)\n Self: +20 Boost for 4 turns.\n Target: (On hit) -20 Boost for 3 turns.",
+            "effect": "3 hits of 30% damage, amounting to 90% damage; applies 'Spider's Fury' (+20% Boost) to herself for 4 turns inclusive; applies 'Spider's Anger' (-20% Boost) to target for 3 turns.",
             "manaCost": "10",
             "cooldown": "11",
             "damageType": "Magic",
             "element": "Poison",
             "buttonImageUrl": "http://i.imgur.com/oxvsqpq.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Riadne2-Attack.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Riadne2-Attack.png",
+            "notes": "• The Riadne guest in At the Gate erroneously uses its old tooltip: Web your foe!"
           },
           {
             "name": "Attack",
             "description": "3 hits x 40% damage (120%)",
-            "effect": "3 hits of 40% damage, amounting to 120% damage.\n• The Riadne guest in  At the Gate does not have a tooltip for this skill.",
+            "effect": "3 hits of 40% damage, amounting to 120% damage.",
             "manaCost": "0",
             "cooldown": "0",
             "damageType": "Magic",
             "element": "Poison",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Riadne2-Attack.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Riadne2-Attack.png",
+            "notes": "• The Riadne guest in At the Gate does not have a tooltip for this skill."
           }
         ],
         "guestStats": {
@@ -9012,8 +9040,7 @@
             "crit": "0%"
           }
         },
-        "notes": "• *In the quests  Altar Hill and  At the Gate, her element is erroneously listed as Light. \n• Riadne (2)'s tooltips were updated on  April 11th, 2025.",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Riadne2.png"
+        "notes": "• *In the quests Altar Hill and At the Gate, her element is erroneously listed as Light.\n• Riadne (2)'s tooltips were updated on April 11th, 2025."
       },
       {
         "levelNumber": 2,
@@ -9080,6 +9107,7 @@
             "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Riadne1-Attack.png"
           }
         ],
+        "retired": true,
         "guestStats": {
           "level": "As player",
           "damage": "Scaled",
@@ -9127,6 +9155,7 @@
     "hasFree": true,
     "hasMerge": false,
     "isTemp": true,
+    "retired": true,
     "levelRange": "As player-As player",
     "elements": [
       "LIG"
@@ -9148,6 +9177,7 @@
       "description": "",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Robina2.png"
     },
+    "familySources": [],
     "levelVariants": [
       {
         "levelNumber": 1,
@@ -9171,7 +9201,7 @@
         "attacks": [
           {
             "name": "Precise Arrow",
-            "description": "1 hits x 200% damage \n This attack has +200 Crit.",
+            "description": "1 hits x 200% damage\n This attack has +200 Crit.",
             "effect": "1 hit of 200% damage, with +200 Crit.",
             "manaCost": "15",
             "cooldown": "12",
@@ -9182,7 +9212,7 @@
           },
           {
             "name": "Piercing Arrow",
-            "description": "1 hit x 25% damage \n Target: (On hit) -75 Block/Parry/Dodge for 3 turns. \n This attack has +200 Crit.",
+            "description": "1 hit x 25% damage\n Target: (On hit) -75 Block/Parry/Dodge for 3 turns.\n This attack has +200 Crit.",
             "effect": "1 hit of 25% damage, with +200 Crit; applies 'Piercing Arrow' (-75 Block/Parry/Dodge Defense) to target for 3 turns inclusive.",
             "manaCost": "10",
             "cooldown": "6",
@@ -9244,7 +9274,7 @@
             "crit": "0%"
           }
         },
-        "notes": "• Robina (1) was previously attainable from the following retired access point:  Dragon Attack at Willowshire! -> Team up! -> Yes \n• Robina (1) in  Surewould Forest (Books 1 and 2) uses the Wood element instead of Nature. \n• The following changes were implemented on  April 11th, 2025: \n  • Tooltips were updated for this guest. \n  • Two new skills were added.",
+        "notes": "• Robina (1) was previously attainable from the following retired access point: Dragon Attack at Willowshire! -> Team up! -> Yes\n• Robina (1) in Surewould Forest (Books 1 and 2) uses the Wood element instead of Nature.\n• The following changes were implemented on April 11th, 2025:\n • Tooltips were updated for this guest.\n • Two new skills were added.",
         "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Robina1.png"
       },
       {
@@ -9318,7 +9348,7 @@
             "crit": "0%"
           }
         },
-        "notes": "• Robina (2) was previously attainable from the following retired access point:  Are Rocks Evil?",
+        "notes": "• Robina (2) was previously attainable from the following retired access point: Are Rocks Evil?",
         "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Robina2.png"
       }
     ],
@@ -9338,7 +9368,7 @@
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
-    "retired": true,
+    "isTemp": true,
     "levelRange": "As player / 2-As player",
     "elements": [
       "NAT"
@@ -9359,8 +9389,9 @@
     "shared": {
       "description": "",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Rolith2.png",
-      "notes": "• Rolith's damage was reduced significantly on  March 21st, 2025."
+      "notes": "• Rolith's damage was reduced significantly on March 21st, 2025."
     },
+    "familySources": [],
     "levelVariants": [
       {
         "levelNumber": 1,
@@ -9390,7 +9421,7 @@
         "attacks": [
           {
             "name": "SLAM!",
-            "description": "2 hits x 25% damage (50%) \n Target: (On hit) Stun for 1 turn.",
+            "description": "2 hits x 25% damage (50%)\n Target: (On hit) Stun for 1 turn.",
             "effect": "2 hits of 25% damage, amounting to 50% damage; applies 'SLAMED' to target, stunning it for 1 turn.",
             "manaCost": "16",
             "cooldown": "8",
@@ -9470,7 +9501,7 @@
             "crit": "0%"
           }
         },
-        "notes": "• Rolith (1) has a series of unconventional stats in the quest  Alina's Answer; STR: 25, DEX: 1, INT: 5, CHA: 15, LUK: 5, END: 15, Crit: 15 \n• Rolith (1)'s tooltips were updated on  April 11th, 2025.",
+        "notes": "• Rolith (1) has a series of unconventional stats in the quest Alina's Answer; STR: 25, DEX: 1, INT: 5, CHA: 15, LUK: 5, END: 15, Crit: 15\n• Rolith (1)'s tooltips were updated on April 11th, 2025.",
         "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Rolith1.png"
       },
       {
@@ -9626,7 +9657,7 @@
     "attacks": [
       {
         "name": "Attack",
-        "effect": "Does one of the following:\n 1) Unleashes a doom bubble for 1 hit of 100% damage and inflicts 'Corrupted' status, reducing the enemy's PowerBoost by 25% for 5 turns.\n 2) Jumps, summons a darkness shroud and downcuts  for 1 hit of 100% damage.\n 3) Cleaves the opponent for one hit of 100% damage which activates a 1-400 DoT for 6 turns (rot, Poison Pierce damage).\n 4) Clenches his fist and deals 4 hits of 100% damage each which deals a DoT and reduces the enemy's immobility resistance by 25 for 5 turns.",
+        "effect": "Does one of the following:\n 1) Unleashes a doom bubble for 1 hit of 100% damage and inflicts 'Corrupted' status, reducing the enemy's PowerBoost by 25% for 5 turns.\n 2) Jumps, summons a darkness shroud and downcuts for 1 hit of 100% damage.\n 3) Cleaves the opponent for one hit of 100% damage which activates a 1-400 DoT for 6 turns (rot, Poison Pierce damage).\n 4) Clenches his fist and deals 4 hits of 100% damage each which deals a DoT and reduces the enemy's immobility resistance by 25 for 5 turns.",
         "manaCost": "0",
         "cooldown": "0",
         "damageType": "Melee",
@@ -9861,7 +9892,7 @@
     "attacks": [
       {
         "name": "Swordplay",
-        "description": "1 hit x 140% damage \n This attack has +200 Crit.",
+        "description": "1 hit x 140% damage\n This attack has +200 Crit.",
         "effect": "1 hit of 140% damage, with +200 Crit.",
         "manaCost": "10",
         "cooldown": "14",
@@ -9887,7 +9918,7 @@
     "releaseDate": "November 21st, 2008",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/SirAno.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=15093277",
-    "notes": "• Sir Ano was previously attainable from the following retired access points:  Nose for Trouble,  Major Mayhem,   There's No Place Like Oaklore, and  Victoria's Secret. \n• The following changes were implemented on  April 11th, 2025: \n  • Tooltips were updated for this guest. \n  • Damage from 'Swordplay' was increased from 100% to 200%.\n• Total damage of 'Swordplay' and 'Attack' was lowered from 200% to 140% on  August 22nd, 2024. \n• Art was updated on  August 29th, 2025. ",
+    "notes": "• Sir Ano was previously attainable from the following retired access points: Nose for Trouble, Major Mayhem, There's No Place Like Oaklore, and Victoria's Secret.\n• The following changes were implemented on April 11th, 2025:\n • Tooltips were updated for this guest.\n • Damage from 'Swordplay' was increased from 100% to 200%.\n• Total damage of 'Swordplay' and 'Attack' was lowered from 200% to 140% on August 22nd, 2024.\n• Art was updated on August 29th, 2025.",
     "alsoSee": [],
     "tags": [
       "sir",
@@ -9937,14 +9968,7 @@
         "dot": "0%",
         "crit": "0%"
       }
-    },
-    "retired": true,
-    "alternativeImages": [
-      {
-        "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/SirAno-Old.png",
-        "caption": "Old Appearance"
-      }
-    ]
+    }
   },
   {
     "id": "guest-sir-leon",
@@ -9960,8 +9984,15 @@
     "isMultiPost": true,
     "shared": {
       "description": "",
-      "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/SirLeon.png"
+      "imageUrl": "https://i.imgur.com/sFFV7Le.png",
+      "alternativeImages": [
+        {
+          "url": "https://i.imgur.com/tWfiPVd.png",
+          "caption": "Appearance in Gorillaphant Warfare"
+        }
+      ]
     },
+    "familySources": [],
     "levelVariants": [
       {
         "levelNumber": 1,
@@ -10180,7 +10211,7 @@
             "dodge": "0"
           }
         },
-        "notes": "• This version of Sir Leon was released on September 26th, 2014 with the quest Shear Destruction; it was again updated on February 3rd, 2015, altering Defensive Stance's animation and Final Blow's damage. \n• Sir Leon's stun duration was lowered from 3 turns to 1 turn on February 28th, 2020; more information can be found in the  February 28th, 2020 Design Notes."
+        "notes": "• This version of Sir Leon was released on September 26th, 2014 with the quest Shear Destruction; it was again updated on February 3rd, 2015, altering Defensive Stance's animation and Final Blow's damage.\n• Sir Leon's stun duration was lowered from 3 turns to 1 turn on February 28th, 2020; more information can be found in the February 28th, 2020 Design Notes."
       },
       {
         "levelNumber": 2,
@@ -10411,8 +10442,7 @@
             "dodge": "0"
           }
         },
-        "notes": "• This version of Sir Leon once dealt Magic as its base damage type. \n• Mana costs on skill button images do not represent the actual mana costs for this version of Sir Leon. \n• A second version of Sir Leon was released on September 26th, 2014 with the quest Shear Destruction; it was again updated on February 3rd, 2015, replacing this version.",
-        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/SirLeon.png"
+        "notes": "• This version of Sir Leon once dealt Magic as its base damage type.\n• Mana costs on skill button images do not represent the actual mana costs for this version of Sir Leon.\n• A second version of Sir Leon was released on September 26th, 2014 with the quest Shear Destruction; it was again updated on February 3rd, 2015, replacing this version."
       }
     ],
     "releaseDate": "April 11th, 2014",
@@ -10431,6 +10461,7 @@
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
+    "isRare": true,
     "levelRange": "As player-As player",
     "elements": [
       "LIG",
@@ -10453,6 +10484,7 @@
       "description": "",
       "imageUrl": "http://i.imgur.com/DM4W7Eq.png"
     },
+    "familySources": [],
     "levelVariants": [
       {
         "levelNumber": 1,
@@ -10640,12 +10672,17 @@
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
+    "isTemp": true,
+    "isSeasonal": true,
     "levelRange": "Scaled-Scaled",
     "elements": [
       "???",
       "LIG",
       "MET",
       "NAT"
+    ],
+    "traits": [
+      "ALA"
     ]
   },
   {
@@ -10784,7 +10821,7 @@
     "attacks": [
       {
         "name": "3 of Swords",
-        "description": "1 hit x 100% damage \n Self: +20 Boost for 5 turns.",
+        "description": "1 hit x 100% damage\n Self: +20 Boost for 5 turns.",
         "effect": "3 hits of 100% damage, amounting to 300% damage; applies 'Swords Up' (+20% Boost) to himself for 5 turns inclusive.",
         "manaCost": "11",
         "cooldown": "4",
@@ -10806,7 +10843,7 @@
       },
       {
         "name": "The Fool",
-        "description": "1 hit x 100% damage \n Target: (On hit) Stun for 1 turn.",
+        "description": "1 hit x 100% damage\n Target: (On hit) Stun for 1 turn.",
         "effect": "1 hit of 100% damage; applies 'Stunned' to target, stunning it for 1 turn.",
         "manaCost": "17",
         "cooldown": "14",
@@ -10828,8 +10865,8 @@
       },
       {
         "name": "The Emperor",
-        "description": "Self: +50 Boost for 1 turn, +90 Avoidance for 2 turns. \n Hero: +25 Boost for 1 turn, +90 Avoidance for 2 turns.",
-        "requirements": "Completion of  Across the Fearscape",
+        "description": "Self: +50 Boost for 1 turn, +90 Avoidance for 2 turns.\n Hero: +25 Boost for 1 turn, +90 Avoidance for 2 turns.",
+        "requirements": "Completion of Across the Fearscape",
         "effect": "Applies 'The Emperor' (+50% Boost, +90 Melee/Pierce/Magic Avoidance) to himself for 2 turns; applies 'The Emperor' (+25% Boost, +90 Melee/Pierce/Magic Avoidance) to player for 2 turns.",
         "manaCost": "5",
         "cooldown": "3",
@@ -10844,7 +10881,7 @@
     "releaseDate": "April 9th, 2022",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Sirius.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22402145",
-    "notes": "• The Emperor skill was added with the release of  Across the Fearscape, but it was locked until the release of  The Aker'varus; Sirius' tooltips were also updated with the release of that quest.",
+    "notes": "• The Emperor skill was added with the release of Across the Fearscape, but it was locked until the release of The Aker'varus; Sirius' tooltips were also updated with the release of that quest.",
     "alsoSee": [],
     "tags": [
       "sirius",
@@ -10941,7 +10978,7 @@
       {
         "name": "Shadow Venom",
         "description": "Weakens enemy healing!",
-        "effect": "4 hits of 30% damage, amounting to 120% damage; applies 'Venom' (+30 Health Resist) to target for 5 turns inclusive. (Pop-up: 'Begone, fiend!')\n  • If 'Venom' was applied to  Valtrith, instead of +30 Health Resist, 'Venom' will apply +100 Health Resist.",
+        "effect": "4 hits of 30% damage, amounting to 120% damage; applies 'Venom' (+30 Health Resist) to target for 5 turns inclusive. (Pop-up: 'Begone, fiend!')\n • If 'Venom' was applied to Valtrith, instead of +30 Health Resist, 'Venom' will apply +100 Health Resist.",
         "manaCost": "12",
         "cooldown": "4",
         "damageType": "Melee",
@@ -10952,13 +10989,14 @@
       {
         "name": "Shared Will",
         "description": "Prevent your ally from being stunned!",
-        "effect": "Applies 'Shared Will' (+25 Immobility Resist) to player for 4 turns. (Pop-up: 'What a horrible night to be immobilized!')\n• Skill was initially called 'Cleanse'.",
+        "effect": "Applies 'Shared Will' (+25 Immobility Resist) to player for 4 turns. (Pop-up: 'What a horrible night to be immobilized!')",
         "manaCost": "0",
         "cooldown": "4",
         "damageType": "N/A",
         "element": "N/A",
         "buttonImageUrl": "http://i.imgur.com/az3PIYM.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Symone-SharedWill.png"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Symone-SharedWill.png",
+        "notes": "• Skill was initially called 'Cleanse'."
       },
       {
         "name": "Sword Combo",
@@ -10987,7 +11025,7 @@
     "releaseDate": "November 5th, 2013",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Symone.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=21850713",
-    "notes": "• *Symone is only invited with 0 Pierce Avoidance from  Forest Hunt and  Storming the Castle. \n• A Dragon Amulet is required to invite Symone as a guest at  Serenity Before The Storm and  Dark Night. \n• Symone has a series of unconventional stats in the quest  Calamity; STR: 0, LUK: 0, Bonus: 50, Crit: 5.",
+    "notes": "• *Symone is only invited with 0 Pierce Avoidance from Forest Hunt and Storming the Castle.\n• A Dragon Amulet is required to invite Symone as a guest at Serenity Before The Storm and Dark Night.\n• Symone has a series of unconventional stats in the quest Calamity; STR: 0, LUK: 0, Bonus: 50, Crit: 5.",
     "alsoSee": [],
     "tags": [
       "symone",
@@ -11220,8 +11258,19 @@
     "isMultiPost": true,
     "shared": {
       "description": "",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix2.png"
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix.png",
+      "alternativeImages": [
+        {
+          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix-Book3.png",
+          "caption": "Book 3 Appearance"
+        },
+        {
+          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix-Synchronized.png",
+          "caption": "Synchronized Appearance"
+        }
+      ]
     },
+    "familySources": [],
     "levelVariants": [
       {
         "levelNumber": 1,
@@ -11245,39 +11294,42 @@
         "attacks": [
           {
             "name": "Circle of Retribution",
-            "description": "10 hits x 25% damage (250%) \n Available after a successful Purification Cross.",
+            "description": "10 hits x 25% damage (250%)\n Available after a successful Purification Cross.",
             "requirements": "Successful 'Purification Cross' where the last hit connects to unlock",
-            "effect": "10 hits of 15% damage, amounting to 150% damage.\n• Skill button was updated on  April 11th, 2025, replacing",
+            "effect": "10 hits of 15% damage, amounting to 150% damage.",
             "manaCost": "50",
             "cooldown": "6",
             "damageType": "Melee",
             "element": "Evil",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix1-Button01-Circle.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix1-Button01-Circle-Old.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix1-Button01-Circle-Old.png",
+            "notes": "• Skill button was updated on April 11th, 2025, replacing its old appearance."
           },
           {
             "name": "Purification Cross",
-            "description": "8 hits x 25% damage (200%) \n Available after a successful attack.",
+            "description": "8 hits x 25% damage (200%)\n Available after a successful attack.",
             "requirements": "Successful attack where the last hit connects to unlock",
-            "effect": "8 hits of 25% damage, amounting to 200% damage.\n• Skill button was updated on  April 11th, 2025, replacing",
+            "effect": "8 hits of 25% damage, amounting to 200% damage.",
             "manaCost": "50",
             "cooldown": "6",
             "damageType": "Melee",
             "element": "Evil",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix1-Button02-Cross.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix1-Button02-Cross-Old.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix1-Button02-Cross-Old.png",
+            "notes": "• Skill button was updated on April 11th, 2025, replacing its old appearance."
           },
           {
             "name": "Soul Thread Cutter",
-            "description": "6 hits x 25% damage (150%) \n Available after a successful attack.",
+            "description": "6 hits x 25% damage (150%)\n Available after a successful attack.",
             "requirements": "Successful attack where the last hit connects to unlock",
-            "effect": "6 hits of 25% damage, amounting to 150% damage.\n• Skill button was updated on  April 11th, 2025, replacing",
+            "effect": "6 hits of 25% damage, amounting to 150% damage.",
             "manaCost": "25",
             "cooldown": "4",
             "damageType": "Melee",
             "element": "Evil",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix1-Button03-Thread.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix1-Button03-Thread-Old.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix1-Button03-Thread-Old.png",
+            "notes": "• Skill button was updated on April 11th, 2025, replacing its old appearance."
           },
           {
             "name": "Attack",
@@ -11332,7 +11384,7 @@
             "crit": "0%"
           }
         },
-        "notes": "• The following changes were implemented on  April 11th, 2025: \n  • Tomix (1)'s tooltips were updated. \n  • 'Circle of Retribution' was increased from 10 hits of 15% damage (150%) to 10 hits of 25% damage (250%). \n  • Skill icons were updated."
+        "notes": "• The following changes were implemented on April 11th, 2025:\n • Tomix (1)'s tooltips were updated.\n • 'Circle of Retribution' was increased from 10 hits of 15% damage (150%) to 10 hits of 25% damage (250%).\n • Skill icons were updated."
       },
       {
         "levelNumber": 2,
@@ -11429,8 +11481,7 @@
             "crit": "0%"
           }
         },
-        "notes": "• Tomix (2) has a series of unconventional stats in the quests  Adrift and  The Origins of Aspar; DEX: 0, Bonus: 100, Crit: 5",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix2.png"
+        "notes": "• Tomix (2) has a series of unconventional stats in the quests Adrift and The Origins of Aspar; DEX: 0, Bonus: 100, Crit: 5"
       },
       {
         "levelNumber": 3,
@@ -11551,7 +11602,7 @@
         "description": "Human Soul Weaver",
         "obtainVariants": [
           {
-            "location": "As the Cauldron Boils..., Share and Share Alike",
+            "location": "Share and Share Alike",
             "price": "N/A",
             "priceType": "free",
             "daRequired": false
@@ -11561,39 +11612,42 @@
         "attacks": [
           {
             "name": "Circle of Retribution",
-            "description": "10 hits x 25% damage (250%) \n Available after a successful Purification Cross.",
+            "description": "10 hits x 25% damage (250%)\n Available after a successful Purification Cross.",
             "requirements": "Successful 'Purification Cross' where the last hit connects to unlock",
-            "effect": "10 hits of 15% damage, amounting to 150% damage.\n• Skill button was updated on  April 11th, 2025, replacing",
+            "effect": "10 hits of 15% damage, amounting to 150% damage.",
             "manaCost": "50",
             "cooldown": "6",
             "damageType": "Melee",
             "element": "Evil",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix1-Button01-Circle.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix1-Button01-Circle-Old.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix1-Button01-Circle-Old.png",
+            "notes": "• Skill button was updated on April 11th, 2025, replacing its old appearance."
           },
           {
             "name": "Purification Cross",
-            "description": "8 hits x 25% damage (200%) \n Available after a successful attack.",
+            "description": "8 hits x 25% damage (200%)\n Available after a successful attack.",
             "requirements": "Successful attack where the last hit connects to unlock",
-            "effect": "8 hits of 25% damage, amounting to 200% damage.\n• Skill button was updated on  April 11th, 2025, replacing",
+            "effect": "8 hits of 25% damage, amounting to 200% damage.",
             "manaCost": "50",
             "cooldown": "6",
             "damageType": "Melee",
             "element": "Evil",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix1-Button02-Cross.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix1-Button02-Cross-Old.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix1-Button02-Cross-Old.png",
+            "notes": "• Skill button was updated on April 11th, 2025, replacing its old appearance."
           },
           {
             "name": "Soul Thread Cutter",
-            "description": "6 hits x 25% damage (150%) \n Available after a successful attack.",
+            "description": "6 hits x 25% damage (150%)\n Available after a successful attack.",
             "requirements": "Successful attack where the last hit connects to unlock",
-            "effect": "6 hits of 25% damage, amounting to 150% damage.\n• Skill button was updated on  April 11th, 2025, replacing",
+            "effect": "6 hits of 25% damage, amounting to 150% damage.",
             "manaCost": "25",
             "cooldown": "4",
             "damageType": "Melee",
             "element": "Evil",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix1-Button03-Thread.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix1-Button03-Thread-Old.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix1-Button03-Thread-Old.png",
+            "notes": "• Skill button was updated on April 11th, 2025, replacing its old appearance."
           },
           {
             "name": "Attack",
@@ -11648,7 +11702,7 @@
             "crit": "0%"
           }
         },
-        "notes": "• This version of Tomix will still be available on your guest slot if you leave in the middle of the quest. \n• This is the original version of the guest; intended to be completely replaced by a new version, it remains in-game erroneously. \n• The following changes were implemented on  April 11th, 2025: \n  • Tomix (4)'s tooltips were updated. \n  • 'Circle of Retribution' was increased from 10 hits of 15% damage (150%) to 10 hits of 25% damage (250%). \n  • Skill icons were updated."
+        "notes": "• This version of Tomix will still be available on your guest slot if you leave in the middle of the quest.\n• This is the original version of the guest; intended to be completely replaced by a new version, it remains in-game erroneously.\n• The following changes were implemented on April 11th, 2025:\n • Tomix (4)'s tooltips were updated.\n • 'Circle of Retribution' was increased from 10 hits of 15% damage (150%) to 10 hits of 25% damage (250%).\n • Skill icons were updated."
       }
     ],
     "releaseDate": "October 16th, 2009",
@@ -11670,6 +11724,8 @@
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
+    "isTemp": true,
+    "isSeasonal": true,
     "levelRange": "As player-3",
     "elements": [
       "EVI"
@@ -11888,42 +11944,42 @@
     "resists": "None",
     "obtainMethods": [
       {
-        "location": "Book of Lore -> Guests (-> Book 3) -> Uaanta - Invite as First Guest/Second Guest,",
+        "location": "Book of Lore -> Guests (-> Book 3) -> Uaanta - Invite as First Guest/Second Guest",
         "priceType": "free",
         "requirements": "Dragon Amulet, Completion of The Firmament (Book of Lore); Completion of Uaanta's Dream (Reawakening)",
         "price": "N/A",
         "daRequired": true
       },
       {
-        "location": "Friday the 13th Sinnocence -> To the War! -> Invite Uaanta,",
+        "location": "Friday the 13th Sinnocence -> To the War! -> Invite Uaanta",
         "priceType": "free",
         "requirements": "Dragon Amulet, Completion of The Firmament (Book of Lore); Completion of Uaanta's Dream (Reawakening)",
         "price": "N/A",
         "daRequired": true
       },
       {
-        "location": "Falconreach (Books 3 and 4) -> Up -> Left -> Uaanta -> Invite as Guest,",
+        "location": "Falconreach (Books 3 and 4) -> Up -> Left -> Uaanta -> Invite as Guest",
         "priceType": "free",
         "requirements": "Dragon Amulet, Completion of The Firmament (Book of Lore); Completion of Uaanta's Dream (Reawakening)",
         "price": "N/A",
         "daRequired": true
       },
       {
-        "location": "Friday the 13th - Mr. Nameless -> To the War! -> Invite Uaanta,",
+        "location": "Friday the 13th - Mr. Nameless -> To the War! -> Invite Uaanta",
         "priceType": "free",
         "requirements": "Dragon Amulet, Completion of The Firmament (Book of Lore); Completion of Uaanta's Dream (Reawakening)",
         "price": "N/A",
         "daRequired": true
       },
       {
-        "location": "Friday the 13th - Remthalas -> To the War! -> Invite Uaanta,",
+        "location": "Friday the 13th - Remthalas -> To the War! -> Invite Uaanta",
         "priceType": "free",
         "requirements": "Dragon Amulet, Completion of The Firmament (Book of Lore); Completion of Uaanta's Dream (Reawakening)",
         "price": "N/A",
         "daRequired": true
       },
       {
-        "location": "Friday the 13th 14th - The Angel of Azaveyr -> To the War! -> Invite Uaanta,",
+        "location": "Friday the 14th - The Angel of Azaveyr -> To the War! -> Invite Uaanta",
         "priceType": "free",
         "requirements": "Dragon Amulet, Completion of The Firmament (Book of Lore); Completion of Uaanta's Dream (Reawakening)",
         "price": "N/A",
@@ -11963,7 +12019,7 @@
     "releaseDate": "July 18th, 2018",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/UaantaFayt.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22333514",
-    "notes": "• In  The Dreamers' Abyss, Uaanta's END stat is instead 100.",
+    "notes": "• In The Dreamers' Abyss, Uaanta's END stat is instead 100.",
     "alsoSee": [],
     "tags": [
       "uaanta",
@@ -12022,6 +12078,7 @@
       "description": "",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Valencia.png"
     },
+    "familySources": [],
     "levelVariants": [
       {
         "levelNumber": 1,
@@ -12056,7 +12113,7 @@
           },
           {
             "name": "Sharpened Blade Toss",
-            "description": "1 hit x 150% Pierce damage \n Target: (On hit) 40% DoT for 4 turns.",
+            "description": "1 hit x 150% Pierce damage\n Target: (On hit) 40% DoT for 4 turns.",
             "effect": "1 hit of 150% damage; applies 'Painful Blade', a 40% Melee None DoT effect, to target for 4 turns.",
             "manaCost": "15",
             "cooldown": "4",
@@ -12067,7 +12124,7 @@
           },
           {
             "name": "High Kick",
-            "description": "1 hit x 160% damage \n This attack has +200 Crit.",
+            "description": "1 hit x 160% damage\n This attack has +200 Crit.",
             "effect": "1 hit of 160% damage, with +200 Crit.",
             "manaCost": "25",
             "cooldown": "5",
@@ -12078,14 +12135,15 @@
           },
           {
             "name": "Eye for Treasure",
-            "description": "Self: Heal 15% max HP, +50 Bonus for 5 turns. \n Hero: +50 Bonus for 5 turns.",
-            "effect": "Recovers 15% of her max HP; applies 'Eye for Treasure' (+50 Bonus) to herself for 5 turns; applies 'Eye for Treasure' (+50 Bonus) to the player for 5 turns.\n• Skill's name was previously called 'Resourceful Hunter' and had its own",
+            "description": "Self: Heal 15% max HP, +50 Bonus for 5 turns.\n Hero: +50 Bonus for 5 turns.",
+            "effect": "Recovers 15% of her max HP; applies 'Eye for Treasure' (+50 Bonus) to herself for 5 turns; applies 'Eye for Treasure' (+50 Bonus) to the player for 5 turns.",
             "manaCost": "0",
             "cooldown": "10",
             "damageType": "N/A",
             "element": "N/A",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Valencia2-Button04-Eye.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Valencia-EyeforTreasure.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Valencia-EyeforTreasure.png",
+            "notes": "• Skill's name was previously called 'Resourceful Hunter' and had its own skill button; this was replaced by 'Eye for Treasure' on May 30th, 2025."
           },
           {
             "name": "Attack",
@@ -12140,8 +12198,7 @@
             "crit": "0%"
           }
         },
-        "notes": "• Valencia (2)'s tooltips were updated on  April 11th, 2025.",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Valencia.png"
+        "notes": "• Valencia (2)'s tooltips were updated on April 11th, 2025."
       },
       {
         "levelNumber": 2,
@@ -12175,6 +12232,7 @@
             "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Valencia-SharpenedBladeToss1.0.png"
           }
         ],
+        "retired": true,
         "guestStats": {
           "level": "8",
           "damage": "8-18",
@@ -12205,8 +12263,7 @@
             "dodge": "0"
           }
         },
-        "notes": "• Valencia was invited with 5 Crit, but it is raised to 7 as soon as it is her turn.",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Valencia.png"
+        "notes": "• Valencia was invited with 5 Crit, but it is raised to 7 as soon as it is her turn."
       }
     ],
     "releaseDate": "March 30th, 2007",
@@ -12225,6 +12282,7 @@
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
+    "retired": true,
     "levelRange": "As player-8",
     "elements": [
       "MET"
@@ -12258,7 +12316,7 @@
     "attacks": [
       {
         "name": "Jump Shot",
-        "description": "1 hits x 200% damage \n Self: +180 Avoidance for 3 turns.",
+        "description": "1 hits x 200% damage\n Self: +180 Avoidance for 3 turns.",
         "effect": "Applies 'Love's Embrace' (+180 Melee/Pierce/Magic Avoidance) to himself for 3 turns; 1 hit of 200% damage.",
         "manaCost": "25",
         "cooldown": "4",
@@ -12291,7 +12349,7 @@
       },
       {
         "name": "Light of Love",
-        "description": "1 hit x 100% damage \n Target: (On hit) Stun for 3 turns.",
+        "description": "1 hit x 100% damage\n Target: (On hit) Stun for 3 turns.",
         "effect": "1 hit of 100% damage; applies 'Light of Love' to target, stunning it for 3 turns.",
         "manaCost": "0",
         "cooldown": "15",
@@ -12302,8 +12360,8 @@
       },
       {
         "name": "Heart Cracker",
-        "description": "1 hit x 75% damage \n Target: (On hit) 34% Good DoT for 10 turns. Stacks up to 5 times (max 170%).",
-        "effect": "1 hit of 75% damage; applies 'Heart Cracks' (a [34Y]% Melee Good DoT effect, where Y is the amount of times this effect has been applied, capped at 170% damage) to target for 10 turns to target.\n  • The duration of 'Heart Cracks' will not refresh each stack.",
+        "description": "1 hit x 75% damage\n Target: (On hit) 34% Good DoT for 10 turns. Stacks up to 5 times (max 170%).",
+        "effect": "1 hit of 75% damage; applies 'Heart Cracks' (a [34Y]% Melee Good DoT effect, where Y is the amount of times this effect has been applied, capped at 170% damage) to target for 10 turns to target.\n • The duration of 'Heart Cracks' will not refresh each stack.",
         "manaCost": "0",
         "cooldown": "2",
         "damageType": "Pierce",
@@ -12313,7 +12371,7 @@
       },
       {
         "name": "Attack",
-        "description": "1 hit x 125% damage \n Recover 15 MP. Grants +200 Crit for Valentidus' next skill. \n This attack has -200 Crit.",
+        "description": "1 hit x 125% damage\n Recover 15 MP. Grants +200 Crit for Valentidus' next skill.\n This attack has -200 Crit.",
         "effect": "Recovers 15 MP; applies 'Love's Sight' (+200 Crit) to himself for 2 turns inclusive; 1 hit of 125% damage, with -200 Crit.",
         "manaCost": "0",
         "cooldown": "0",
@@ -12392,8 +12450,15 @@
     "isMultiPost": true,
     "shared": {
       "description": "",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vayle.png"
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vayle.png",
+      "alternativeImages": [
+        {
+          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vayle-Book3.png",
+          "caption": "Book 3 (Winged Darkness) Appearance"
+        }
+      ]
     },
+    "familySources": [],
     "levelVariants": [
       {
         "levelNumber": 1,
@@ -12429,47 +12494,51 @@
         "attacks": [
           {
             "name": "Dark Drain",
-            "description": "1 hit x 40% damage \n Self: Heal self for 5% of target's max HP. Recover 5% max MP.",
-            "effect": "Recovers 5% of Vayle's max MP; removes target's MP equal to 5% of Vayle's max MP; heals Vayle for 5% of target's max HP; 1 hit of 40% damage.\n• The Vayle guest in  Frostval - Winged Darkness erroneously uses its old tooltip: Drain Health and Mana",
+            "description": "1 hit x 40% damage\n Self: Heal self for 5% of target's max HP. Recover 5% max MP.",
+            "effect": "Recovers 5% of Vayle's max MP; removes target's MP equal to 5% of Vayle's max MP; heals Vayle for 5% of target's max HP; 1 hit of 40% damage.",
             "manaCost": "20",
             "cooldown": "7",
             "damageType": "Melee",
             "element": "Darkness",
             "buttonImageUrl": "http://i.imgur.com/TaFcqkC.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vayle-DarkDrain1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vayle-DarkDrain1.0.png",
+            "notes": "• The Vayle guest in Frostval - Winged Darkness erroneously uses its old tooltip: Drain Health and Mana"
           },
           {
             "name": "Dark Command",
-            "description": "1 hit x 120% damage \n Target: (On hit) Stun for 1 turn. | Target: (On hit) Stun for 2 turns. \n This skill is more effective against Undead foes. | Effect increased due to targeted Undead!",
-            "effect": "1 hit of 120% damage; applies 'Command' to target, stunning it for 1 turn.\n  • If target's race is 'Undead', 'Command' is instead applied for 2 turns.\n• The Vayle guest in  Frostval - Winged Darkness erroneously uses its old tooltip: Command your foe to halt",
+            "description": "1 hit x 120% damage\n Target: (On hit) Stun for 1 turn. | Target: (On hit) Stun for 2 turns.\n This skill is more effective against Undead foes. | Effect increased due to targeted Undead!",
+            "effect": "1 hit of 120% damage; applies 'Command' to target, stunning it for 1 turn.\n • If target's race is 'Undead', 'Command' is instead applied for 2 turns.",
             "manaCost": "18",
             "cooldown": "8",
             "damageType": "Melee",
             "element": "Darkness",
             "buttonImageUrl": "http://i.imgur.com/spv6xyu.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vayle-DarkCommand1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vayle-DarkCommand1.0.png",
+            "notes": "• The Vayle guest in Frostval - Winged Darkness erroneously uses its old tooltip: Command your foe to halt"
           },
           {
             "name": "Summon Undead",
             "description": "2 hits x 75% damage (150%)",
-            "effect": "2 hits of 75% damage, amounting to 150% damage.\n• The Vayle guest in  Frostval - Winged Darkness erroneously uses its old tooltip: Summon undead minions to attack.",
+            "effect": "2 hits of 75% damage, amounting to 150% damage.",
             "manaCost": "15",
             "cooldown": "2",
             "damageType": "Melee",
             "element": "Darkness",
             "buttonImageUrl": "http://i.imgur.com/5MooA4d.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vayle-CommandUndead.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vayle-CommandUndead.png",
+            "notes": "• The Vayle guest in Frostval - Winged Darkness erroneously uses its old tooltip: Summon undead minions to attack."
           },
           {
             "name": "Attack",
-            "description": "1 hit x 115% damage \n Has a 10% chance for 2 hits x 115% damage (230%)",
-            "effect": "1 hit of 115% damage.\n  • Attack has a 10% chance to perform 2 hits of 115% damage, amounting to 230% damage.\n• The Vayle guest in  Frostval - Winged Darkness does not have a tooltip for this skill.",
+            "description": "1 hit x 115% damage\n Has a 10% chance for 2 hits x 115% damage (230%)",
+            "effect": "1 hit of 115% damage.\n • Attack has a 10% chance to perform 2 hits of 115% damage, amounting to 230% damage.",
             "manaCost": "0",
             "cooldown": "0",
             "damageType": "Melee",
             "element": "Darkness",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vayle-Attack1.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vayle-Attack1.png",
+            "notes": "• The Vayle guest in Frostval - Winged Darkness does not have a tooltip for this skill."
           }
         ],
         "guestStats": {
@@ -12513,8 +12582,7 @@
             "crit": "0%"
           }
         },
-        "notes": "• Vayle (2) has a series of unconventional stats in the zone  Frostval - Winged Darkness; Damage Type: Magic, Melee: 5, Pierce: 0, Magic: 5, Block: 0, Parry: 0, Dodge: 0, Bonus: 100, Crit: 5. \n• Tooltips for this guest was updated on  April 11th, 2025.  ",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vayle.png"
+        "notes": "• Vayle (2) has a series of unconventional stats in the zone Frostval - Winged Darkness; Damage Type: Magic, Melee: 5, Pierce: 0, Magic: 5, Block: 0, Parry: 0, Dodge: 0, Bonus: 100, Crit: 5.\n• Tooltips for this guest was updated on April 11th, 2025."
       },
       {
         "levelNumber": 2,
@@ -12548,7 +12616,7 @@
           },
           {
             "name": "Attack",
-            "effect": "1 hit of 100% damage.\n  • Attack has a 10% chance to perform 2 hits of 100% damage, amounting to 200% damage.",
+            "effect": "1 hit of 100% damage.\n • Attack has a 10% chance to perform 2 hits of 100% damage, amounting to 200% damage.",
             "manaCost": "0",
             "cooldown": "0",
             "damageType": "Melee",
@@ -12557,6 +12625,7 @@
             "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vayle-Attack1.png"
           }
         ],
+        "retired": true,
         "guestStats": {
           "level": "As player",
           "damage": "Scaled",
@@ -12606,6 +12675,7 @@
     "hasMerge": false,
     "isTemp": true,
     "isSeasonal": true,
+    "retired": true,
     "levelRange": "As player-As player",
     "elements": [
       "DAR"
@@ -12702,8 +12772,15 @@
     "isMultiPost": true,
     "shared": {
       "description": "",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vilmor2.png"
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vilmor.png",
+      "alternativeImages": [
+        {
+          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vilmor-Book3.png",
+          "caption": "Book 3 Appearance"
+        }
+      ]
     },
+    "familySources": [],
     "levelVariants": [
       {
         "levelNumber": 1,
@@ -12806,8 +12883,7 @@
             "crit": "0%"
           }
         },
-        "notes": "• The following changes were implemented on  April 11th, 2025: \n  • Tooltips were updated for this guest. \n  • 'Attack' was reduced from 3 hits of 100% damage (300%) to 3 hits of 50% damage (150%).\n• *In the quest  Betrayal, Vilmor gains 0 Pierce Avoidance instead of 5.",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vilmor.png"
+        "notes": "• The following changes were implemented on April 11th, 2025:\n • Tooltips were updated for this guest.\n • 'Attack' was reduced from 3 hits of 100% damage (300%) to 3 hits of 50% damage (150%).\n• *In the quest Betrayal, Vilmor gains 0 Pierce Avoidance instead of 5."
       },
       {
         "levelNumber": 2,
@@ -12863,7 +12939,7 @@
           },
           {
             "name": "Charged Frost",
-            "description": "3 hits x 25% damage (75%) \n Self: Gain +90 Boost/Bonus for 3 turns.",
+            "description": "3 hits x 25% damage (75%)\n Self: Gain +90 Boost/Bonus for 3 turns.",
             "effect": "Applies 'Charged Frost' (+90% Boost, +90 Bonus) to herself for 3 turns inclusive; 3 hits of 25% damage, amounting to 75% damage.",
             "manaCost": "20",
             "cooldown": "4",
@@ -12874,7 +12950,7 @@
           },
           {
             "name": "Cryozen's Boon",
-            "description": "3 hits x 50% damage (150%) \n Self: Gain +180 Defenses for 3 turns, heal 25% max HP.",
+            "description": "3 hits x 50% damage (150%)\n Self: Gain +180 Defenses for 3 turns, heal 25% max HP.",
             "effect": "Recovers 25% of her max HP; applies 'Cryozen's Boon' (+180 Block/Parry/Dodge Defense) to herself for 3 turns; 3 hits of 50% damage, amounting to 150% damage. (Pop-up: Cryozen heals and defends Vilmor!)",
             "manaCost": "20",
             "cooldown": "6",
@@ -12925,8 +13001,7 @@
             "crit": "0%"
           }
         },
-        "notes": "• 'Charged Frost' and 'Cryozen's Boon' skills were added on  A Heart Gone Colder's release.",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vilmor2.png"
+        "notes": "• 'Charged Frost' and 'Cryozen's Boon' skills were added on A Heart Gone Colder's release."
       }
     ],
     "releaseDate": "September 24th, 2010",
@@ -12965,6 +13040,7 @@
       "description": "",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Warlic.png"
     },
+    "familySources": [],
     "levelVariants": [
       {
         "levelNumber": 1,
@@ -12987,7 +13063,7 @@
         "attacks": [
           {
             "name": "Zap",
-            "description": "1 hit x 150% Energy damage \n This attack has +200 crit.",
+            "description": "1 hit x 150% Energy damage\n This attack has +200 crit.",
             "effect": "1 hit of 150% damage, with +200 Crit.",
             "manaCost": "15",
             "cooldown": "9",
@@ -13009,14 +13085,15 @@
           },
           {
             "name": "Ice Strike",
-            "description": "1 hit x 140% Ice damage' \n Target: (On hit) Stun for 1 turn.",
-            "effect": "1 hit of 140% Ice damage; applies 'Deep Chill' to target, stunning it for 1 turn.\n• Tooltips were updated on  March 20th, 2026.\n• Warlic (2) was previously attainable in the retired quest  Xan's Volcano Fortress.",
+            "description": "1 hit x 140% Ice damage'\n Target: (On hit) Stun for 1 turn.",
+            "effect": "1 hit of 140% Ice damage; applies 'Deep Chill' to target, stunning it for 1 turn.",
             "manaCost": "12",
             "cooldown": "7",
             "damageType": "Magic",
             "element": "Ice",
             "buttonImageUrl": "http://i.imgur.com/STZRQ1m.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Warlic-IceStrike.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Warlic-IceStrike.png",
+            "notes": "• Tooltips were updated on March 20th, 2026.\n• Warlic (2) was previously attainable in the retired quest Xan's Volcano Fortress."
           }
         ],
         "guestStats": {
@@ -13060,8 +13137,7 @@
             "crit": "0%"
           }
         },
-        "notes": "• Tooltips were updated on  March 20th, 2026. \n• Warlic (2) was previously attainable in the retired quest  Xan's Volcano Fortress.",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Warlic.png"
+        "notes": "• Tooltips were updated on March 20th, 2026.\n• Warlic (2) was previously attainable in the retired quest Xan's Volcano Fortress."
       },
       {
         "levelNumber": 2,
@@ -13116,6 +13192,7 @@
             "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Warlic-IceStrike.png"
           }
         ],
+        "retired": true,
         "guestStats": {
           "level": "11",
           "damage": "15-25",
@@ -13163,6 +13240,7 @@
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
+    "isTemp": true,
     "retired": true,
     "levelRange": "As player-11",
     "elements": [
@@ -13207,7 +13285,7 @@
         "title": "Xor Vrailin II (Character Page)"
       }
     ],
-    "notes": "• This guest is linked to a real player's character ID, and as such all variables are subject to change, such as in an  Aeris Minor Tournament. ",
+    "notes": "• This guest is linked to a real player's character ID, and as such all variables are subject to change, such as in an Aeris Minor Tournament.",
     "alsoSee": [],
     "tags": [
       "xor",
@@ -13255,7 +13333,7 @@
     "attacks": [
       {
         "name": "Rupturing Shockwave",
-        "description": "3 hits x 50% damage (150%) \n Target: (On hit) 50% DoT for 3 turns.",
+        "description": "3 hits x 50% damage (150%)\n Target: (On hit) 50% DoT for 3 turns.",
         "effect": "3 hits of 50% damage, amounting to 150% damage; applies 'Shockwave', a 50% Magic ??? DoT effect, to target for 3 turns.",
         "manaCost": "20",
         "cooldown": "5",
@@ -13266,7 +13344,7 @@
       },
       {
         "name": "Stunning Leap",
-        "description": "1 hit x 100% damage \n Target (On hit) Stun for 1 turn.",
+        "description": "1 hit x 100% damage\n Target (On hit) Stun for 1 turn.",
         "effect": "1 hit of 100% damage; applies 'Stunning Aftershock' to target, stunning it for 1 turn.",
         "manaCost": "25",
         "cooldown": "14",
@@ -13277,7 +13355,7 @@
       },
       {
         "name": "Resilient Flex",
-        "description": "Self: +50% Damage Reduction for 5 turns. \n Hero: +10% Damage Reduction for 3 turns.",
+        "description": "Self: +50% Damage Reduction for 5 turns.\n Hero: +10% Damage Reduction for 3 turns.",
         "effect": "Applies 'Resilient Flex' (+50% Non-Crit/DoT/Crit Damage Reduction) to himself for 5 turns; applies 'Resilient Flex' (+10% Non-Crit/DoT/Crit Damage Reduction) to player for 3 turns.",
         "manaCost": "10",
         "cooldown": "9",
@@ -13299,7 +13377,7 @@
       },
       {
         "name": "Punch Combo",
-        "description": "3 hits x 70% damage (210%) \n Available after a successful attack.",
+        "description": "3 hits x 70% damage (210%)\n Available after a successful attack.",
         "requirements": "Successful attack where the last hit connects to unlock",
         "effect": "3 hits of 70% damage, amounting to 210% damage.",
         "manaCost": "10",
@@ -13311,7 +13389,7 @@
       },
       {
         "name": "Focused Combo",
-        "description": "8 hits x 40% damage (320%) \n Available after a successful Combo.",
+        "description": "8 hits x 40% damage (320%)\n Available after a successful Combo.",
         "requirements": "Successful 'Punch Combo' where the last hit lands to unlock",
         "effect": "8 hits of 40% damage, amounting to 320% damage.",
         "manaCost": "10",
@@ -13393,6 +13471,7 @@
       "description": "",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Zhoom.png"
     },
+    "familySources": [],
     "levelVariants": [
       {
         "levelNumber": 1,
@@ -13522,8 +13601,7 @@
             "crit": "0%"
           }
         },
-        "notes": "• This is the original version of the guest; intended to be completely replaced by a new version, it remains in-game erroneously.",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Zhoom.png"
+        "notes": "• This is the original version of the guest; intended to be completely replaced by a new version, it remains in-game erroneously."
       },
       {
         "levelNumber": 2,
@@ -13558,7 +13636,7 @@
           },
           {
             "name": "Bomb Arrow",
-            "description": "1 hit x 120% Fire damage \n Target: (On hit) Stun for 1 turn.",
+            "description": "1 hit x 120% Fire damage\n Target: (On hit) Stun for 1 turn.",
             "effect": "1 hit of 120% damage; applies 'BOOM Bomb Shot' to target, stunning it for 1 turn.",
             "manaCost": "20",
             "cooldown": "2",
@@ -13569,7 +13647,7 @@
           },
           {
             "name": "Fire Arrow",
-            "description": "1 hit x 130% Fire damage \n Target: (On hit) 50% Fire DoT for 3 turns.",
+            "description": "1 hit x 130% Fire damage\n Target: (On hit) 50% Fire DoT for 3 turns.",
             "effect": "1 hit of 130% Pierce damage; applies 'Burning Arrow', a 50% Melee Fire DoT effect, to target for 3 turns.",
             "manaCost": "18",
             "cooldown": "2",
@@ -13649,8 +13727,7 @@
             "dodge": "15 + LUK/20"
           }
         },
-        "notes": "• Zhoom (2)'s race was previously 'Human'; this was changed to 'Sand Elf' on  May 24th, 2024. \n• Zhoom (2)'s tooltips were updated on  April 11th, 2025.",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Zhoom.png"
+        "notes": "• Zhoom (2)'s race was previously 'Human'; this was changed to 'Sand Elf' on May 24th, 2024.\n• Zhoom (2)'s tooltips were updated on April 11th, 2025."
       },
       {
         "levelNumber": 3,
@@ -13685,7 +13762,7 @@
           },
           {
             "name": "Bomb Arrow",
-            "description": "1 hit x 120% Fire damage \n Target: (On hit) Stun for 1 turn.",
+            "description": "1 hit x 120% Fire damage\n Target: (On hit) Stun for 1 turn.",
             "effect": "1 hit of 120% damage; applies 'BOOM Bomb Shot' to target, stunning it for 1 turn.",
             "manaCost": "20",
             "cooldown": "2",
@@ -13696,7 +13773,7 @@
           },
           {
             "name": "Fire Arrow",
-            "description": "1 hit x 130% Fire damage \n Target: (On hit) 50% Fire DoT for 3 turns.",
+            "description": "1 hit x 130% Fire damage\n Target: (On hit) 50% Fire DoT for 3 turns.",
             "effect": "1 hit of 130% damage; applies 'Burning Arrow', a 50% Melee Fire DoT effect, to target for 3 turns.",
             "manaCost": "18",
             "cooldown": "2",
@@ -13781,8 +13858,7 @@
             "crit": "0%"
           }
         },
-        "notes": "• Zhoom (3)'s race was previously 'Human'; this was changed to 'Sand Elf' on  May 24th, 2024. \n• Zhoom (3)'s tooltips were updated on  April 11th, 2025.",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Zhoom.png"
+        "notes": "• Zhoom (3)'s race was previously 'Human'; this was changed to 'Sand Elf' on May 24th, 2024.\n• Zhoom (3)'s tooltips were updated on April 11th, 2025."
       }
     ],
     "releaseDate": "March 14th, 2008",

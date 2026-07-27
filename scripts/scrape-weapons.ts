@@ -23,8 +23,19 @@ import {
 } from '../src/types/weapon.ts'
 import { extractAlsoSeeRefs, type ParsedAlsoSeeRef } from './lib/also-see.ts'
 import { writeWeaponManifest } from './lib/data-manifests.ts'
-import { FORUM_BASE, fetchForumPage as fetchPage, loadForumCookie, withRetry } from './lib/forum.ts'
-import { getImageCaptionNoise, isImageCaptionNoiseLine } from './lib/note-cleaning.ts'
+import { hasRetiredTag } from './lib/tags.ts'
+import {
+  FORUM_BASE,
+  fetchForumPage as fetchPage,
+  isPostUnavailableError,
+  loadForumCookie,
+  withRetry,
+} from './lib/forum.ts'
+import {
+  getImageCaptionNoise,
+  isImageCaptionNoiseLine,
+  unwrapImageHyperlinks,
+} from './lib/note-cleaning.ts'
 import { rephraseTimedSellback } from './lib/obtain-formatting.ts'
 import { fetchPrintable, getAllPostContent } from './lib/printable-parser.ts'
 import {
@@ -277,13 +288,11 @@ function parseNotes(html: string): string | undefined {
   })
   if (sections.length === 0) return undefined
 
-  const trimmedSection = sections
-    .map((section) => section.split(/<i>Thanks to|Also See:|<font color='#eeeeee'>|<hr/i)[0])
-    .join('\n')
-    .replace(
-      /<a[^>]+href=(["'])([^"']*?\.(?:png|jpg|jpeg|gif|bmp)(?:\?[^"']*)?)\1[^>]*>[\s\S]*?<\/a>/gi,
-      ''
-    )
+  const trimmedSection = unwrapImageHyperlinks(
+    sections
+      .map((section) => section.split(/<i>Thanks to|Also See:|<font color='#eeeeee'>|<hr/i)[0])
+      .join('\n')
+  )
     .replace(/<img[^>]+src="[^"]+\.(?:png|jpg|jpeg|gif|bmp)"[^>]*>/gi, '')
     .replace(/https?:\/\/[^\s"'<>]+\.(?:png|jpg|jpeg|gif|bmp)(?:\?[^\s"'<>]*)?/gi, '')
   const imageCaptionNoise = getImageCaptionNoise(sections.join('\n'))
@@ -333,20 +342,12 @@ function parseTagFlags(html: string) {
     isRare: /\/tags\/Rare\.(?:png|jpg|jpeg|gif)/i.test(leadHtml),
     isSeasonal: /\/tags\/Seasonal\.(?:png|jpg|jpeg|gif)/i.test(leadHtml),
     isSpecialOffer: /\/tags\/SpecialOffer\.(?:png|jpg|jpeg|gif)/i.test(leadHtml),
-    retired: /\/tags\/Retired\.(?:png|jpg|jpeg|gif)/i.test(leadHtml),
+    retired: hasRetiredTag(leadHtml),
   }
 }
 
 function hasCosmeticMarker(text: string): boolean {
   return /\(\s*Cosmetic\s*\)/i.test(text)
-}
-
-function hasVersionRange(name: string): boolean {
-  return /\([IVXLCDM]+(?:\s*(?:,|-)\s*[IVXLCDM]+)+\)$/i.test(name.trim())
-}
-
-function hasAllVersionsSuffix(name: string): boolean {
-  return /\(All Versions\)\s*$/i.test(name.trim())
 }
 
 function getVariantRomanFromName(name: string): string | undefined {
@@ -564,6 +565,54 @@ function extractWeaponImages(html: string) {
   }
 }
 
+function obtainVariantFingerprint(method: ObtainVariant): string {
+  return [
+    method.location,
+    method.price,
+    method.priceType,
+    method.requiredItems ?? '',
+    method.requirements ?? '',
+    method.dcRequired ? 'dc' : '',
+    method.dmRequired ? 'dm' : '',
+    method.daRequired ? 'da' : '',
+  ]
+    .join('|')
+    .toLowerCase()
+}
+
+function dedupeObtainVariants(methods: ObtainVariant[]): ObtainVariant[] {
+  const seen = new Set<string>()
+  const result: ObtainVariant[] = []
+  for (const method of methods) {
+    const key = obtainVariantFingerprint(method)
+    if (seen.has(key)) continue
+    seen.add(key)
+    result.push(method)
+  }
+  return result
+}
+
+/**
+ * Parse every obtain method in a chunk of forum HTML. Forum posts repeat the
+ * item's title block once per obtain method (e.g. a gold shop entry and a free
+ * quest-drop entry, or a base entry and a Dragon Coins entry). Each title block
+ * carries its own Location/Price/Sellback plus preceding DA/DC/DM tag images,
+ * so we parse one method per block. Falls back to whole-chunk parsing when the
+ * post has a single (or no) title block.
+ */
+function parseObtainMethodBlocks(html: string): ObtainVariant[] {
+  const blocks = extractTitleBlocks(html)
+  const methods: ObtainVariant[] = []
+  if (blocks.length > 1) {
+    for (const block of blocks) {
+      const method = parseVariantMethod(block.html)
+      if (method) methods.push(method)
+    }
+  }
+  if (methods.length === 0) return parseObtainMethods(html)
+  return dedupeObtainVariants(methods)
+}
+
 function buildWeaponEntry(
   stub: WeaponStub,
   html: string,
@@ -572,7 +621,7 @@ function buildWeaponEntry(
   const normalizedText = normalizeStructuredText(html)
   const flags = parseTagFlags(html)
   const description = parseDescription(html)
-  const obtainMethods = parseObtainMethods(html).map((method) => ({
+  const obtainMethods = parseObtainMethodBlocks(html).map((method) => ({
     ...method,
     daRequired: method.daRequired || flags.daRequired,
     ...(flags.dcRequired || method.dcRequired || obtainVariantHasDC(method)
@@ -660,7 +709,10 @@ function parseVariantMethod(blockHtml: string) {
   }
 }
 
-function getVariantSpecificNotes(notes: string | undefined, method: ObtainVariant): string | undefined {
+function getVariantSpecificNotes(
+  notes: string | undefined,
+  method: ObtainVariant
+): string | undefined {
   if (!notes) return undefined
 
   const isDc = obtainVariantHasDC(method)
@@ -678,9 +730,6 @@ function buildWeaponFamily(
   html: string,
   resolveAlsoSee: WeaponRefResolver
 ): WeaponFamily | undefined {
-  const isAllVersions = hasAllVersionsSuffix(stub.name)
-  if (!hasVersionRange(stub.name) && !isAllVersions) return undefined
-
   const familyName = stripVersionSuffix(stub.name)
   const familySlug = weaponSlugForName(familyName)
   const threadFlags = parseTagFlags(html)
@@ -691,58 +740,89 @@ function buildWeaponFamily(
   const armorCustomization = parseArmorCustomization(html)
   const allText = normalizeStructuredText(html)
   const posts = splitPrintablePosts(html)
-  const levelVariants: LevelVariant[] = []
   const familySources: FamilySourceRef[] = []
+  const levelVariants: LevelVariant[] = []
 
-  for (const [postIndex, post] of posts.entries()) {
+  for (const post of posts) {
     const titleBlocks = extractTitleBlocks(post)
     if (titleBlocks.length === 0) continue
     const primaryTitle = titleBlocks[0].title
     const roman = getVariantRomanFromName(primaryTitle)
+    const postText = normalizeStructuredText(post)
 
-    const level = parseHtmlField(post, ['Level']) ?? parseFieldValue(normalizeStructuredText(post), ['Level'])
-    const levelLabel = roman ?? (isAllVersions ? (level?.trim() || String(postIndex + 1)) : undefined)
+    const level = parseHtmlField(post, ['Level']) ?? parseFieldValue(postText, ['Level'])
+    const levelLabel = roman ?? level?.trim()
     if (!levelLabel) continue
 
     const normalizedLevel = normalizeLevel(levelLabel)
-    const actualLevel = level && /^\d+$/.test(level.trim()) ? Number.parseInt(level.trim(), 10) : undefined
-    const damage = parseHtmlField(post, ['Damage']) ?? parseFieldValue(normalizeStructuredText(post), ['Damage'])
+    const actualLevel =
+      level && /^\d+$/.test(level.trim()) ? Number.parseInt(level.trim(), 10) : undefined
+    const damage = parseHtmlField(post, ['Damage']) ?? parseFieldValue(postText, ['Damage'])
     const explicitElement =
-      parseHtmlField(post, ['Element']) ?? parseFieldValue(normalizeStructuredText(post), ['Element'])
+      parseHtmlField(post, ['Element']) ?? parseFieldValue(postText, ['Element'])
     const element = parseElementCodes(explicitElement)[0]
     const stats =
-      parseHtmlField(post, ['Stats', 'Bonuses']) ??
-      parseFieldValue(normalizeStructuredText(post), ['Stats', 'Bonuses'])
+      parseHtmlField(post, ['Stats', 'Bonuses']) ?? parseFieldValue(postText, ['Stats', 'Bonuses'])
     const resists =
       parseHtmlField(post, ['Resists', 'Resistances']) ??
-      parseFieldValue(normalizeStructuredText(post), ['Resists', 'Resistances'])
-    const rarity = parseHtmlField(post, ['Rarity']) ?? parseFieldValue(normalizeStructuredText(post), ['Rarity'])
+      parseFieldValue(postText, ['Resists', 'Resistances'])
+    const rarity = parseHtmlField(post, ['Rarity']) ?? parseFieldValue(postText, ['Rarity'])
     const description = parseDescription(post)
     const postNotes = parseNotes(post)
 
-    const hasAccessBranches = titleBlocks.length > 1
-    for (const block of titleBlocks) {
-      const method = parseVariantMethod(block.html)
-      if (!method) continue
-      const isDc = obtainVariantHasDC(method)
-      const variantName = `${roman}${hasAccessBranches && isDc ? ' (DC)' : ''}`
-      const variantNotes = getVariantSpecificNotes(postNotes, method)
-      levelVariants.push({
-        levelNumber: normalizedLevel.number,
-        levelDisplay: normalizedLevel.display,
-        ...(actualLevel !== undefined ? { actualLevel } : {}),
-        ...(!isAllVersions ? { variantName } : {}),
-        name: primaryTitle,
-        damage: damage ?? 'Unknown',
-        stats: stats ?? 'None',
-        obtainVariants: [method],
-        sourceUrl: stub.forumUrl,
-        ...(description ? { description } : {}),
-        ...(element ? { element } : {}),
-        ...(resists ? { resists } : {}),
-        ...(rarity ? { rarity } : {}),
-        ...(variantNotes ? { notes: variantNotes } : {}),
-      })
+    const methods = titleBlocks
+      .map((block) => parseVariantMethod(block.html))
+      .filter((method): method is ObtainVariant => Boolean(method))
+    if (methods.length === 0) continue
+
+    const dcMethods = methods.filter((method) => obtainVariantHasDC(method))
+    const nonDcMethods = methods.filter((method) => !obtainVariantHasDC(method))
+    const hasAccessBranches = dcMethods.length > 0 && nonDcMethods.length > 0
+
+    const buildVariant = (
+      variantMethods: ObtainVariant[],
+      variantName: string | undefined,
+      variantNotes: string | undefined
+    ): LevelVariant => ({
+      levelNumber: normalizedLevel.number,
+      levelDisplay: normalizedLevel.display,
+      ...(actualLevel !== undefined ? { actualLevel } : {}),
+      ...(variantName ? { variantName } : {}),
+      name: primaryTitle,
+      damage: damage ?? 'Unknown',
+      stats: stats ?? 'None',
+      obtainVariants: dedupeObtainVariants(variantMethods),
+      sourceUrl: stub.forumUrl,
+      ...(description ? { description } : {}),
+      ...(element ? { element } : {}),
+      ...(resists ? { resists } : {}),
+      ...(rarity ? { rarity } : {}),
+      ...(variantNotes ? { notes: variantNotes } : {}),
+    })
+
+    if (hasAccessBranches) {
+      // Keep the base and Dragon Coins entries as distinct same-level variants
+      // (e.g. Abyssal Elf Scepter I / I (DC), or | Base / DC). Notes stay scoped
+      // to the branch they explicitly reference.
+      levelVariants.push(
+        buildVariant(
+          nonDcMethods,
+          roman ?? 'Base',
+          getVariantSpecificNotes(postNotes, nonDcMethods[0])
+        )
+      )
+      levelVariants.push(
+        buildVariant(
+          dcMethods,
+          roman ? `${roman} (DC)` : 'DC',
+          getVariantSpecificNotes(postNotes, dcMethods[0])
+        )
+      )
+    } else {
+      // A single access tier: collapse every obtain method for this level into
+      // one variant rendered as Method 1 / Method 2 (e.g. 13th Staff level 13,
+      // where a gold shop entry and a free quest drop are both non-DC).
+      levelVariants.push(buildVariant(methods, roman, postNotes))
     }
   }
 
@@ -954,7 +1034,18 @@ async function main() {
     concurrency,
     startDelayMs: DELAY_MS,
     processItem: async (stub) => {
-      const html = await fetchPostContent(stub.messageId, cookie)
+      let html: string
+      try {
+        html = await fetchPostContent(stub.messageId, cookie)
+      } catch (error) {
+        // A deleted/moved forum post returns a hard HTTP 500. Skip it instead of
+        // aborting the whole run; re-throw anything else so real errors surface.
+        if (isPostUnavailableError(error)) {
+          console.warn(`⚠️  Skipping ${stub.name} — forum post unavailable (deleted/moved)`)
+          return
+        }
+        throw error
+      }
       const entry = buildWeaponEntryOrFamily(stub, html, resolveAlsoSee)
       entriesBySubtype.get(stub.subtype)?.push(entry)
       console.log(`✓ ${stub.name}`)

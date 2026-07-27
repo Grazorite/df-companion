@@ -31,17 +31,20 @@ import {
   getImageCaptionNoise,
   isAttributionNoiseLine,
   isImageCaptionNoiseLine,
+  unwrapImageHyperlinks,
 } from './lib/note-cleaning.ts'
 import { repairAccessFlags } from './lib/access-flag-repair.ts'
 import { getAccessorySubtypeStrategy } from './lib/accessories/index.ts'
 import { promoteAccessoryCrossPostFamilies } from './lib/accessories/cross-post-family.ts'
 import { extractAlsoSeeRefs, type ParsedAlsoSeeRef } from './lib/also-see.ts'
+import { hasRetiredTag } from './lib/tags.ts'
 import type { FamilySourceRef, LevelVariant } from '../src/types/item.ts'
 import type { AlsoSeeRef } from '../src/types/item.ts'
 import type { GuestAttack } from '../src/types/pet.ts'
 import {
   FORUM_BASE,
   fetchForumPage as fetchPage,
+  isPostUnavailableError,
   loadForumCookie,
   sleep,
   withRetry,
@@ -447,12 +450,9 @@ function parseNotes(html: string): string | undefined {
 
   if (otherInfoHtml) {
     const imageCaptionNoise = getImageCaptionNoise(otherInfoHtml)
-    const trimmedSection = otherInfoHtml
-      .split(/<i>Thanks to|Also See:|<font color='#eeeeee'>/i)[0]
-      .replace(
-        /<a[^>]+href=(["'])([^"']*?\.(?:png|jpg|jpeg|gif|bmp)(?:\?[^"']*)?)\1[^>]*>[\s\S]*?<\/a>/gi,
-        ''
-      )
+    const trimmedSection = unwrapImageHyperlinks(
+      otherInfoHtml.split(/<i>Thanks to|Also See:|<font color='#eeeeee'>/i)[0]
+    )
       .replace(/<img[^>]+src="[^"]+\.(?:png|jpg|jpeg|gif|bmp)"[^>]*>/gi, '')
       .replace(/https?:\/\/[^\s"'<>]+\.(?:png|jpg|jpeg|gif|bmp)(?:\?[^\s"'<>]*)?/gi, '')
 
@@ -530,6 +530,9 @@ function buildTrinketAttackFromHtml(html: string, fallbackName: string): GuestAt
         .trim()
     : 'Unknown effect'
 
+  // Only content under an explicit "Other information" heading becomes skill
+  // notes. The effect's own bullet points stay part of the effect.
+  let skillNotes: string | undefined
   const otherInfoHtml = findOtherInformationSection(html)
   if (otherInfoHtml) {
     const inlineOtherInfo = normalizeStructuredText(
@@ -552,7 +555,8 @@ function buildTrinketAttackFromHtml(html: string, fallbackName: string): GuestAt
       .trim()
 
     if (inlineOtherInfo) {
-      effect = effect === 'Unknown effect' ? inlineOtherInfo : `${effect}\n${inlineOtherInfo}`
+      if (effect === 'Unknown effect') effect = inlineOtherInfo
+      else skillNotes = inlineOtherInfo
     }
   }
 
@@ -588,6 +592,7 @@ function buildTrinketAttackFromHtml(html: string, fallbackName: string): GuestAt
     element,
     ...(buttonImageUrl ? { buttonImageUrl } : {}),
     ...(appearanceUrl ? { appearanceUrl } : {}),
+    ...(skillNotes ? { notes: skillNotes } : {}),
   }
 }
 
@@ -931,7 +936,7 @@ function parseTagFlags(html: string) {
     isRare: /\/tags\/Rare\.(?:png|jpg|jpeg|gif)/i.test(leadHtml),
     isSeasonal: /\/tags\/Seasonal\.(?:png|jpg|jpeg|gif)/i.test(leadHtml),
     isSpecialOffer: /\/tags\/SpecialOffer\.(?:png|jpg|jpeg|gif)/i.test(leadHtml),
-    retired: /\/tags\/Retired\.(?:png|jpg|jpeg|gif)/i.test(leadHtml),
+    retired: hasRetiredTag(leadHtml),
   }
 }
 
@@ -1928,7 +1933,18 @@ async function main() {
         entriesBySubtype.get(stub.subtype)?.push(entry)
       } catch (error) {
         const existing = loadExistingAccessoryEntry(stub)
-        if (!existing) throw error
+        if (!existing) {
+          // A deleted/moved forum post returns a hard HTTP 500. With no existing
+          // entry to preserve, skip it instead of aborting the whole run;
+          // re-throw anything else so real errors surface.
+          if (isPostUnavailableError(error)) {
+            console.warn(
+              `⚠️  Skipping ${stub.name} (${stub.subtype}) — forum post unavailable (deleted/moved)`
+            )
+            return
+          }
+          throw error
+        }
         console.warn(
           `⚠️  Keeping existing ${stub.name} after scrape failure: ${
             error instanceof Error ? error.message : String(error)

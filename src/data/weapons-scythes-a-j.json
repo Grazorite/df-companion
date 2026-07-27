@@ -1,5 +1,87 @@
 [
   {
+    "id": "weapon-default",
+    "familyName": "| (| Default)",
+    "slug": "weapon-default",
+    "aliasSlugs": [
+      "weapon-default"
+    ],
+    "type": "weapon",
+    "subtype": "scythe",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22122903",
+    "familyOrigin": "same-thread-multi-post",
+    "familySources": [],
+    "shared": {
+      "description": "|",
+      "notes": "Weapon is not visible."
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
+        "levelDisplay": "1",
+        "actualLevel": 1,
+        "variantName": "Base",
+        "name": "|",
+        "damage": "25-50",
+        "stats": "Crit +5, Bonus +30",
+        "obtainVariants": [
+          {
+            "location": "Default weapon of | (Temp)",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "N/A",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22122903",
+        "description": "|",
+        "element": "???",
+        "resists": "None",
+        "rarity": "0"
+      },
+      {
+        "levelNumber": 1,
+        "levelDisplay": "1",
+        "actualLevel": 1,
+        "variantName": "DC",
+        "name": "|",
+        "damage": "25-50",
+        "stats": "Crit +5, Bonus +30",
+        "obtainVariants": [
+          {
+            "location": "Default weapon of | (D-Coins)",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "N/A",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22122903",
+        "description": "|",
+        "element": "???",
+        "resists": "None",
+        "rarity": "0"
+      }
+    ],
+    "category": "Weapon",
+    "releaseDate": "",
+    "tags": [
+      "???",
+      "free"
+    ],
+    "hasDA": false,
+    "hasDC": true,
+    "hasDM": false,
+    "hasFree": true,
+    "hasMerge": false,
+    "elements": [
+      "???"
+    ],
+    "isTemp": true,
+    "levelRange": "1"
+  },
+  {
     "id": "weapon-abyssal-aureate",
     "name": "Abyssal Aureate",
     "slug": "weapon-abyssal-aureate",

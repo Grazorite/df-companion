@@ -52,6 +52,7 @@ import { rephraseTimedSellback } from './lib/obtain-formatting.ts'
 import { getImageCaptionNoise, isImageCaptionNoiseLine } from './lib/note-cleaning.ts'
 import { repairAccessFlags } from './lib/access-flag-repair.ts'
 import { writePetsGuestsManifest } from './lib/data-manifests.ts'
+import { hasRetiredTag } from './lib/tags.ts'
 import { compareTitles } from '../src/utils/displayText.ts'
 import {
   FORUM_BASE,
@@ -259,7 +260,7 @@ function extractExplicitVariantLabel(text: string): string | undefined {
     ['d-amulet/d-coins', 'DA/DC'],
     ['d-amulet/dc', 'DA/DC'],
     ['da/dc', 'DA/DC'],
-    ['resource', 'Resource'],
+    ['resource', 'Normal'],
   ])
 
   for (const match of matches) {
@@ -491,12 +492,71 @@ function groupObtainMethodsByVariant(
   }))
 }
 
+/**
+ * Build the level variants for a single level, splitting its obtain methods into
+ * access branches (e.g. a free quest drop vs a Dragon Coins purchase) so a level
+ * becomes distinct "I" / "I (DC)" variants. Grouping the methods first keeps DC
+ * flags scoped to the DC branch — otherwise a section-level DC tag leaks onto the
+ * free branch and marks everything DC.
+ *
+ * When a level has only one access tier, a single variant is returned with no
+ * variantName (unchanged behaviour for non-DC families).
+ */
+function buildLevelAccessVariants(
+  data: ReturnType<typeof parsePetThread>,
+  sectionHtml: string,
+  levelInfo: { number: number; display: string; actualLevel?: number },
+  levelName: string,
+  options: { sourceUrl?: string; includeNotes?: boolean } = {}
+): LevelVariant[] {
+  const methodGroups = groupObtainMethodsByVariant(data.obtainMethods)
+  const hasAccessBranches = methodGroups.length > 1
+  const variants: LevelVariant[] = []
+
+  for (const group of methodGroups) {
+    let variantName = group.label
+    if (hasAccessBranches && !variantName) {
+      variantName = inferAccessVariantLabelFromMethods(group.methods)
+    }
+
+    const obtainVariants = buildObtainVariantsFromMethods(
+      group.methods,
+      sectionHtml,
+      { daRequired: data.daRequired, dcRequired: data.dcRequired, dmRequired: data.dmRequired },
+      variantName
+    )
+    if (obtainVariants.length === 0) continue
+
+    variants.push({
+      levelNumber: levelInfo.number,
+      levelDisplay: levelInfo.display,
+      ...(levelInfo.actualLevel !== undefined && !isNaN(levelInfo.actualLevel)
+        ? { actualLevel: levelInfo.actualLevel }
+        : {}),
+      ...(variantName ? { variantName } : {}),
+      name: variantName ? `${levelName} (${variantName})` : levelName,
+      damage: data.damage || 'Unknown',
+      stats: data.stats || 'None',
+      ...(data.statsType ? { statsType: data.statsType } : {}),
+      ...(options.sourceUrl ? { sourceUrl: options.sourceUrl } : {}),
+      obtainVariants,
+      ...(data.elementCodes[0] ? { element: data.elementCodes[0] } : {}),
+      ...(data.resists && data.resists !== 'None' ? { resists: data.resists } : {}),
+      ...(data.rarity && data.rarity !== 'Unknown' ? { rarity: data.rarity } : {}),
+      ...(options.includeNotes && data.notes ? { notes: data.notes } : {}),
+    })
+  }
+
+  return variants
+}
+
 function buildVariantFamilyFromSinglePost(
   data: ReturnType<typeof parsePetThread>,
   name: string,
   stub: PetStub,
   chronology: ChronologyData,
-  nameToSlug: Map<string, { slug: string; type: EntryType }>
+  nameToSlug: Map<string, { slug: string; type: EntryType }>,
+  sourcePosts?: ThreadPostContent[]
 ): ItemFamily | undefined {
   const fallbackVariantLabel = extractExplicitVariantLabel(data.notes ?? '')
   const methodGroups = groupObtainMethodsByVariant(data.obtainMethods, fallbackVariantLabel)
@@ -520,6 +580,19 @@ function buildVariantFamilyFromSinglePost(
       group.label ??
       inferAccessVariantLabelFromObtainVariants(obtainVariants) ??
       `Variant ${index + 1}`
+
+    // Find the source post that contains this group's obtain location so that each
+    // variant links back to its own reply post (e.g. Plushie Ghost DC variant).
+    let sourceUrl: string | undefined
+    if (sourcePosts && sourcePosts.length > 1) {
+      const firstLocation = group.methods[0]?.location ?? ''
+      const locationKey = firstLocation.slice(0, 30).toLowerCase()
+      const matchingPost = sourcePosts.find(
+        (post) => post.html.toLowerCase().includes(locationKey) && locationKey.length > 3
+      )
+      sourceUrl = matchingPost?.sourceUrl
+    }
+
     return {
       levelNumber: index + 1,
       levelDisplay: data.level || 'Unknown',
@@ -530,6 +603,7 @@ function buildVariantFamilyFromSinglePost(
       stats: data.stats || 'None',
       ...(data.statsType ? { statsType: data.statsType } : {}),
       obtainVariants,
+      ...(sourceUrl ? { sourceUrl } : {}),
       ...(elementCodes[0] ? { element: elementCodes[0] } : {}),
       ...(data.resists && data.resists !== 'None' ? { resists: data.resists } : {}),
       ...(data.rarity && data.rarity !== 'Unknown' ? { rarity: data.rarity } : {}),
@@ -1026,9 +1100,13 @@ function extractImages(html: string, expectedName?: string): {
 
   if (labeledImages.length > 0) {
     const [mainImage, ...altImages] = labeledImages
+    const dedupedAlts = altImages.filter((image) => image.url !== mainImage.url)
     return {
       main: mainImage.url,
-      alternatives: altImages.filter((image) => image.url !== mainImage.url),
+      // Keep the main image (with its bold forum caption) in the switcher list so
+      // its caption is preserved instead of defaulting to "Main". buildDisplayImages
+      // dedupes the main URL. Only do this when other images exist to switch to.
+      alternatives: dedupedAlts.length > 0 ? [mainImage, ...dedupedAlts] : [],
     }
   }
 
@@ -1390,7 +1468,7 @@ export async function parsePetThreadMultiVariant(
   // Single-page AND no level indicator AND no multi-post variants → use existing logic (backward compat)
   if (totalPages === 1 && !hasLevelInName && !hasMultiPostVariants) {
     const data = parsePetThread(html, name)
-    const sameLevelFamily = buildVariantFamilyFromSinglePost(data, name, stub, chronology, nameToSlug)
+    const sameLevelFamily = buildVariantFamilyFromSinglePost(data, name, stub, chronology, nameToSlug, sourcePosts)
     if (sameLevelFamily) return sameLevelFamily
     return convertToPet(data, stub, chronology, nameToSlug)
   }
@@ -1602,18 +1680,20 @@ export async function parsePetThreadMultiVariant(
         )
 
         for (const candidate of sortedCandidates) {
-          const obtainVariants = buildObtainVariantsFromMethods(
-            candidate.data.obtainMethods,
+          const isFirstLevel = !sharedDescription
+          const variants = buildLevelAccessVariants(
+            candidate.data,
             candidate.html,
             {
-              daRequired: candidate.data.daRequired,
-              dcRequired: candidate.data.dcRequired,
-              dmRequired: candidate.data.dmRequired,
-            }
+              number: candidate.levelInfo.number,
+              display: candidate.levelInfo.display,
+              ...(candidate.actualLevel ? { actualLevel: candidate.actualLevel } : {}),
+            },
+            `${baseName} ${candidate.levelInfo.display}`,
+            { sourceUrl: candidate.sourceUrl, includeNotes: !isFirstLevel }
           )
-          if (obtainVariants.length === 0) continue
+          if (variants.length === 0) continue
 
-          const isFirstLevel = !sharedDescription
           if (isFirstLevel) {
             sharedDescription = candidate.data.description
             sharedElementCodes = uniqueStrings([
@@ -1628,24 +1708,8 @@ export async function parsePetThreadMultiVariant(
             sharedAlsoSeeNames = candidate.data.alsoSeeNames
           }
 
-          levelVariantsMap.set(candidate.levelInfo.number, {
-            levelNumber: candidate.levelInfo.number,
-            levelDisplay: candidate.levelInfo.display,
-            ...(candidate.actualLevel ? { actualLevel: candidate.actualLevel } : {}),
-            name: `${baseName} ${candidate.levelInfo.display}`,
-            damage: candidate.data.damage || 'Unknown',
-            stats: candidate.data.stats || 'None',
-            ...(candidate.data.statsType ? { statsType: candidate.data.statsType } : {}),
-            sourceUrl: candidate.sourceUrl,
-            obtainVariants,
-            ...(candidate.data.elementCodes[0] ? { element: candidate.data.elementCodes[0] } : {}),
-            ...(candidate.data.resists && candidate.data.resists !== 'None'
-              ? { resists: candidate.data.resists }
-              : {}),
-            ...(candidate.data.rarity && candidate.data.rarity !== 'Unknown'
-              ? { rarity: candidate.data.rarity }
-              : {}),
-            ...(!isFirstLevel && candidate.data.notes ? { notes: candidate.data.notes } : {}),
+          variants.forEach((variant, index) => {
+            levelVariantsMap.set(candidate.levelInfo.number + index * 1000, variant)
           })
         }
 
@@ -1990,15 +2054,21 @@ export async function parsePetThreadMultiVariant(
         const actualLevel =
           data.level && data.level !== 'Unknown' ? parseInt(data.level, 10) : undefined
 
-        const obtainVariants = buildObtainVariantsFromMethods(
-          data.obtainMethods,
+        // Capture shared data from the first level BEFORE creating variants.
+        const isFirstLevel = !sharedDescription
+        const variants = buildLevelAccessVariants(
+          data,
           normalizedSectionHtml,
-          { daRequired: data.daRequired, dcRequired: data.dcRequired, dmRequired: data.dmRequired }
+          {
+            number: section.levelNum,
+            display: section.romanDisplay,
+            ...(actualLevel && !isNaN(actualLevel) ? { actualLevel } : {}),
+          },
+          levelName,
+          { includeNotes: !isFirstLevel }
         )
 
-        if (obtainVariants.length > 0) {
-          // Capture shared data from first level BEFORE creating variant
-          const isFirstLevel = !sharedDescription
+        if (variants.length > 0) {
           if (isFirstLevel) {
             sharedDescription = data.description
             sharedElementCodes = uniqueStrings([...sharedElementCodes, ...data.elementCodes])
@@ -2010,20 +2080,8 @@ export async function parsePetThreadMultiVariant(
             sharedAlsoSeeNames = data.alsoSeeNames
           }
 
-          levelVariantsMap.set(section.levelNum, {
-            levelNumber: section.levelNum,
-            levelDisplay: section.romanDisplay,
-            ...(actualLevel && !isNaN(actualLevel) ? { actualLevel } : {}),
-            name: levelName,
-            damage: data.damage || 'Unknown',
-            stats: data.stats || 'None',
-            ...(data.statsType ? { statsType: data.statsType } : {}),
-            obtainVariants,
-            ...(data.elementCodes[0] ? { element: data.elementCodes[0] } : {}),
-            ...(data.resists && data.resists !== 'None' ? { resists: data.resists } : {}),
-            ...(data.rarity && data.rarity !== 'Unknown' ? { rarity: data.rarity } : {}),
-            // Only include notes if NOT from first level (first level notes go to shared)
-            ...(!isFirstLevel && data.notes ? { notes: data.notes } : {}),
+          variants.forEach((variant, index) => {
+            levelVariantsMap.set(section.levelNum + index * 1000, variant)
           })
         }
       }
@@ -2190,7 +2248,7 @@ export async function parsePetThreadMultiVariant(
   const threadIsRare = /<img[^>]+src=["'][^"']*\/tags\/Rare\.jpg["']/i.test(html)
   const threadIsSeasonal = /<img[^>]+src=["'][^"']*\/tags\/Seasonal\.jpg["']/i.test(html)
   const threadIsSpecialOffer = /<img[^>]+src=["'][^"']*\/tags\/SpecialOffer\.png["']/i.test(html)
-  const threadRetired = /<img[^>]+src=["'][^"']*\/tags\/Retired\.png["']/i.test(html)
+  const threadRetired = hasRetiredTag(html)
 
   // Also check allPosts if multi-page thread
   let isTemp = threadIsTemp
@@ -2207,7 +2265,7 @@ export async function parsePetThreadMultiVariant(
         isSeasonal = /<img[^>]+src=["'][^"']*\/tags\/Seasonal\.jpg["']/i.test(postHtml)
       if (!isSpecialOffer)
         isSpecialOffer = /<img[^>]+src=["'][^"']*\/tags\/SpecialOffer\.png["']/i.test(postHtml)
-      if (!retired) retired = /<img[^>]+src=["'][^"']*\/tags\/Retired\.png["']/i.test(postHtml)
+      if (!retired) retired = hasRetiredTag(postHtml)
     }
   }
 
@@ -2232,6 +2290,17 @@ export async function parsePetThreadMultiVariant(
       .trim()
   }
 
+  // Element/trait tags are additive across the whole family: take the UNION of
+  // every variant's element (plus the A-Z listing) so a family whose base form
+  // is [ICE] and later forms are [ICE][SHR] surfaces both. Traits/markers are
+  // family-level (from the A-Z listing) and unioned the same way.
+  const familyElements = uniqueStrings([
+    ...stub.elements,
+    ...sharedElementCodes,
+    ...levelVariants.flatMap((variant) => (variant.element ? [variant.element] : [])),
+  ])
+  const familyTraits = uniqueStrings(stub.markers)
+
   const family: ItemFamily = {
     id: prefixedSlug(familyName, stub.type),
     familyName,
@@ -2250,8 +2319,8 @@ export async function parsePetThreadMultiVariant(
       : {}),
     tags: [
       stub.type,
-      ...uniqueStrings([...stub.elements, ...sharedElementCodes]).map((e) => e.toLowerCase()),
-      ...stub.markers.map((m) => m.toLowerCase().replace('/', '-')),
+      ...familyElements.map((e) => e.toLowerCase()),
+      ...familyTraits.map((m) => m.toLowerCase().replace('/', '-')),
     ],
     // Category flags from thread-level detection
     ...(isTemp ? { isTemp } : {}),
@@ -2266,7 +2335,8 @@ export async function parsePetThreadMultiVariant(
     hasFree: false,
     hasMerge: false,
     levelRange: '',
-    elements: uniqueStrings([...stub.elements, ...sharedElementCodes]),
+    elements: familyElements,
+    ...(familyTraits.length > 0 ? { traits: familyTraits } : {}),
     // Mark multi-post families for special handling
     ...(isMultiPostFamily ? { isMultiPost: true } : {}),
   }
@@ -2449,7 +2519,7 @@ export function parsePetThread(
   if (/<img[^>]+src=["'][^"']*\/tags\/SpecialOffer\.png["']/i.test(rawBody)) {
     isSpecialOffer = true
   }
-  if (/<img[^>]+src=["'][^"']*\/tags\/Retired\.png["']/i.test(rawBody)) {
+  if (hasRetiredTag(rawBody)) {
     retired = true
   }
 

@@ -72,7 +72,7 @@ function repairMethodGroup(
 
     if (obtainVariantHasDC(repaired)) {
       repaired.dcRequired = true
-      if (hasNonDCMethod && !hasExplicitDAContext(context)) {
+      if (hasNonDCMethod && !method.daRequired && !hasExplicitDAContext(context)) {
         repaired.daRequired = false
       }
     } else if (hasDCMethod && repaired.dcRequired && !hasExplicitDCContext(context)) {
@@ -123,7 +123,11 @@ function repairFamily(entry: ItemFamily): ItemFamily {
 
           if (obtainVariantHasDC(repaired)) {
             repaired.dcRequired = true
-            if (!hasExplicitDAContext(context)) repaired.daRequired = false
+            // Only clear DA if it was NOT explicitly set by the scraper (from a DA
+            // tag on this specific variant's section). When the forum tags both the
+            // base and DC variants with DA (e.g. Plushie Artix), the scraped value
+            // is already true and must be preserved.
+            if (!method.daRequired && !hasExplicitDAContext(context)) repaired.daRequired = false
           } else if (!hasExplicitDCContext(context)) {
             delete repaired.dcRequired
           }

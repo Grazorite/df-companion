@@ -140,7 +140,9 @@ export async function loadBadges(): Promise<Badge[]> {
     badgesPromise = fetchJson<Badge[]>(badgesUrl).then((data) => {
       badgesCache = data.map((badge) => ({
         ...badge,
-        retired: badge.retired || /badge was retired on/i.test(badge.notes ?? ''),
+        // Retired is fully determined at scrape time (tag + listing + note phrase);
+        // the client reads the flag only, consistent with the other categories.
+        retired: badge.retired,
         imageUrl: badge.imageUrl ?? badge.forumImageUrl,
       }))
       return badgesCache

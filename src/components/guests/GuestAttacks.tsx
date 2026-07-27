@@ -36,26 +36,13 @@ function AttackButton({ imageUrl, name }: { imageUrl?: string; name: string }) {
   )
 }
 
-function splitEffectAndOtherInformation(effect: string): {
-  effectText: string
-  otherInformation?: string
-} {
-  const lines = effect.split('\n')
-  const firstBulletIndex = lines.findIndex((line) => /^\s*[•\-*]\s+/.test(line))
-
-  if (firstBulletIndex <= 0) {
-    return { effectText: effect.trim() }
-  }
-
-  return {
-    effectText: lines.slice(0, firstBulletIndex).join('\n').trim(),
-    otherInformation: lines.slice(firstBulletIndex).join('\n').trim(),
-  }
-}
-
 function AttackCard({ attack, defaultOpen = false }: { attack: GuestAttack; defaultOpen?: boolean }) {
   const [isOpen, setIsOpen] = useState(defaultOpen)
-  const { effectText, otherInformation } = splitEffectAndOtherInformation(attack.effect)
+  // The effect (including its own bullet points) is shown as-is. Only an explicit
+  // "Other Information" section (captured separately at scrape time) is split out
+  // into its own block below the stats.
+  const effectText = attack.effect?.trim()
+  const otherInformation = attack.notes?.trim()
   
   return (
     <div className="bg-bg-surface border border-border-default rounded-lg overflow-hidden">

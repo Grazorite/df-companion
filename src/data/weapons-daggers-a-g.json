@@ -1,1 +1,35 @@
-[]
+[
+  {
+    "id": "weapon-6-inch-hero-combo",
+    "name": "6 Inch Hero Combo",
+    "slug": "weapon-6-inch-hero-combo",
+    "type": "weapon",
+    "subtype": "dagger",
+    "description": "This item requires a Dragon Amulet. Stacked high with salami, cheese, lettuce and a WHOLE POUND OF PAIN!",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=12963858",
+    "releaseDate": "",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/6InchHeroCombo.png",
+    "elements": [
+      "NAT"
+    ],
+    "level": "20",
+    "damage": "36-48",
+    "stats": "Crit +2, END +2, DEX +2, Bonus +2",
+    "resists": "None",
+    "rarity": "6",
+    "obtainMethods": [
+      {
+        "location": "The Sandwitch",
+        "price": "N/A",
+        "priceType": "free",
+        "sellback": "0 Gold",
+        "daRequired": true
+      }
+    ],
+    "tags": [
+      "nat",
+      "free"
+    ],
+    "daRequired": true
+  }
+]

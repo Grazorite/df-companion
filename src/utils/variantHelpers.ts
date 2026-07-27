@@ -519,7 +519,7 @@ function getLevelVariantLabelInfo(
     ? normalizeDisplayText(level.variantName)
     : undefined
   const normalizedAccessVariantName =
-    normalizedVariantName && /^(?:Normal|Base)$/i.test(normalizedVariantName)
+    normalizedVariantName && /^(?:Normal|Base|Resource)$/i.test(normalizedVariantName)
       ? '(Base)'
       : normalizedVariantName && /^(?:DC|D-Coins?|Dragon Coins?)$/i.test(normalizedVariantName)
         ? '(DC)'
@@ -860,11 +860,18 @@ export function getLevelVariantLabels(
   )
 
   if (baseLabelIndexes.length > 1 && baseLevelLabels.size > 1) {
+    // Access-only labels like "(Base)" / "(DC)" don't convey the level. When a
+    // family (e.g. an "All Versions" pet) repeats them across multiple levels,
+    // prefix each with its level in parentheses so it reads "(10)", "(10) (DC)",
+    // "(20)", "(20) (DC)" — the parentheses keep the level visually distinct from
+    // a variant name. The (DA) marker is intentionally dropped here: the level
+    // already disambiguates these variants, so DA is only surfaced for the
+    // two-variant DA-vs-DC case (a single-level scenario handled elsewhere).
+    const pureAccessLabel = /^\((?:Base|DA|DC)\)(?:\s*\((?:DA|DC)\))?$/
     return resolvedLabels.map((label, index) => {
-      if (!baseLabelIndexes.includes(index)) return label
-      const levelLabel = String(levels[index].actualLevel ?? levels[index].levelDisplay)
-      if (label.endsWith('(DA)')) return `${levelLabel} (DA)`
-      if (label.endsWith('(DC)')) return `${levelLabel} (DC)`
+      if (!baseLabelIndexes.includes(index) && !pureAccessLabel.test(label)) return label
+      const levelLabel = `(${String(levels[index].actualLevel ?? levels[index].levelDisplay)})`
+      if (label.includes('(DC)')) return `${levelLabel} (DC)`
       return levelLabel
     })
   }

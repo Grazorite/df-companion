@@ -42,7 +42,9 @@
     "description": "This belt is studded with small pieces of the Void. You can feel it emanating strangeness and a sense of foreboding. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17790035",
     "releaseDate": "",
-    "elements": [],
+    "elements": [
+      "???"
+    ],
     "level": "53",
     "stats": "Crit +4, Magic Def +3, Pierce Def +3, Melee Def +3, END +5, INT +4, STR +4, Bonus +3",
     "resists": "Fire +8, Ice +8, Darkness +9, Light +9, Health -5",
@@ -60,6 +62,7 @@
       }
     ],
     "tags": [
+      "???",
       "free"
     ],
     "daRequired": true
@@ -706,7 +709,7 @@
         "daRequired": false
       }
     ],
-    "notes": "Item was previously named 'Deathknight Belt'; this was changed on  August 25th, 2023.",
+    "notes": "Item was previously named 'Deathknight Belt'; this was changed on August 25th, 2023.",
     "tags": [
       "non",
       "free"
@@ -788,7 +791,7 @@
     "slug": "accessory-asmodea-belt",
     "type": "accessory",
     "subtype": "belt",
-    "description": "The darkness rises from the aether trapped in Ravenloss.  This belt soaks it in!",
+    "description": "The darkness rises from the aether trapped in Ravenloss. This belt soaks it in!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17350936",
     "releaseDate": "",
     "elements": [
@@ -1380,7 +1383,7 @@
     "slug": "accessory-bamboo-band",
     "type": "accessory",
     "subtype": "belt",
-    "description": "Strips of thin-cut bamboo are woven together with the plants leaves to form this stylish belt.  A tag is inked on the inner strip.  It reads \"This belt belongs to Jane.\"",
+    "description": "Strips of thin-cut bamboo are woven together with the plants leaves to form this stylish belt. A tag is inked on the inner strip. It reads \"This belt belongs to Jane.\"",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15865737",
     "releaseDate": "",
     "elements": [
@@ -1436,7 +1439,7 @@
         "daRequired": false
       }
     ],
-    "notes": "Belt's Level was lowered from 10 to 9 on  September 5th, 2025.",
+    "notes": "Belt's Level was lowered from 10 to 9 on September 5th, 2025.",
     "tags": [
       "met",
       "free"
@@ -2051,7 +2054,7 @@
         "daRequired": false
       }
     ],
-    "notes": "Belt was previously available on  The Ancient Eyedols quest.\nThe following changes were implemented on  February 27th, 2026:\n  • Previously had the description: Found in the strange temple of The Irismancer, this belt has a large, eye-shaped buckle that seems to watch you, wherever you move.\n  • Belt was previously stylized as 'Belt of Sight'.\n  • Dragon Amulet requirement was removed.\n  • Level's requirement was increased from 4 to 15.\n  • Crit was increased from +3 to +4.\n  • Parry +1 and Dodge +1 stats were removed.\n  • Magic Def +2, Pierce Def +2, Melee Def +2, and Bonus +4 stats were added.",
+    "notes": "Belt was previously available on The Ancient Eyedols quest.\nThe following changes were implemented on February 27th, 2026:\n  • Previously had the description: Found in the strange temple of The Irismancer, this belt has a large, eye-shaped buckle that seems to watch you, wherever you move.\n  • Belt was previously stylized as 'Belt of Sight'.\n  • Dragon Amulet requirement was removed.\n  • Level's requirement was increased from 4 to 15.\n  • Crit was increased from +3 to +4.\n  • Parry +1 and Dodge +1 stats were removed.\n  • Magic Def +2, Pierce Def +2, Melee Def +2, and Bonus +4 stats were added.",
     "tags": [
       "win",
       "free"
@@ -2124,7 +2127,7 @@
         "daRequired": false
       }
     ],
-    "notes": "Belt was previously available from the retired quest  Spirits in the Inn.",
+    "notes": "Belt was previously available from the retired quest Spirits in the Inn.",
     "tags": [
       "dar",
       "free"
@@ -2262,7 +2265,7 @@
         "daRequired": false
       }
     ],
-    "notes": "Belt was retired and replaced by  Technician's Tools IV on  November 21st, 2025.",
+    "notes": "Belt was retired and replaced by Technician's Tools IV on November 21st, 2025.",
     "tags": [
       "sto",
       "free"
@@ -2306,7 +2309,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "Blue Leather Belt was previously available from the retired quest  Rescue of Elanee.",
+    "notes": "Blue Leather Belt was previously available from the retired quest Rescue of Elanee.",
     "tags": [
       "non",
       "free"
@@ -2699,7 +2702,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "Clawkin Vine Belt was previously available from the retired quest  Rescue of Elanee.",
+    "notes": "Clawkin Vine Belt was previously available from the retired quest Rescue of Elanee.",
     "tags": [
       "nat",
       "free"
@@ -2769,7 +2772,7 @@
         "daRequired": false
       }
     ],
-    "notes": "Belt was retired and replaced by  Technician's Tools I on  November 21st, 2025.",
+    "notes": "Belt was retired and replaced by Technician's Tools I on November 21st, 2025.",
     "tags": [
       "met",
       "free"
@@ -3533,8 +3536,7 @@
     ],
     "shared": {
       "description": "This belt was awarded to you by the town of Falconreach for defending it against a terrible threat.",
-      "rarity": "1",
-      "notes": "Defender's Medal costs for this item were significantly reduced on March 29th, 2021."
+      "rarity": "1"
     },
     "levelVariants": [
       {
@@ -4305,8 +4307,7 @@
       }
     ],
     "shared": {
-      "description": "This belt can only be worn by one who bears the DragonAmulet. It was awarded to you by the town of Falconreach for defending it against a terrible threat.",
-      "notes": "Defender's Medal costs for this item were significantly reduced on March 29th, 2021.\nBelts were available to merge from  Def. Belts shop until  January 14th, 2023; merge versions from  Defender Item Swap were added on that date."
+      "description": "This belt can only be worn by one who bears the DragonAmulet. It was awarded to you by the town of Falconreach for defending it against a terrible threat."
     },
     "levelVariants": [
       {
@@ -5056,7 +5057,7 @@
         "daRequired": true
       }
     ],
-    "notes": "Belt was retired and replaced by  Shining Scaled Belt I on  April 25th, 2025.",
+    "notes": "Belt was retired and replaced by Shining Scaled Belt I on April 25th, 2025.",
     "tags": [
       "met",
       "free"
@@ -5717,7 +5718,7 @@
         "daRequired": false
       }
     ],
-    "notes": "Belt was retired and replaced by  Shining Scaled Belt II on  April 25th, 2025.",
+    "notes": "Belt was retired and replaced by Shining Scaled Belt II on April 25th, 2025.",
     "tags": [
       "ene",
       "free"
@@ -5795,7 +5796,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "Enchanted Vind Chain was previously available from the retired quest  Rescue of Elanee.",
+    "notes": "Enchanted Vind Chain was previously available from the retired quest Rescue of Elanee.",
     "tags": [
       "sil",
       "free"
@@ -5812,7 +5813,9 @@
     "description": "A very long sock you found abandoned in Warlic and Cysero's tower. If it can go around your waist and keep your pants up, it's a belt. Stylish and lucky! (Every 10 LUK adds 1 Crit, every 20 LUK adds 1 Avd and Def)",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22422556",
     "releaseDate": "",
-    "elements": [],
+    "elements": [
+      "???"
+    ],
     "level": "10",
     "stats": "Crit +2, LUK +10, Bonus +2",
     "resists": "Darkness +5",
@@ -5829,8 +5832,9 @@
         "daRequired": false
       }
     ],
-    "notes": "Level's requirement was lowered from 11 to 10 on  September 5th, 2025.",
+    "notes": "Level's requirement was lowered from 11 to 10 on September 5th, 2025.",
     "tags": [
+      "???",
       "free"
     ],
     "daRequired": false
@@ -6045,7 +6049,7 @@
     "slug": "accessory-fancy-tie-belt",
     "type": "accessory",
     "subtype": "belt",
-    "description": "Rolith has one of these hanging on the doorknob in the Oaklore Keep. He wears it while tackling knotty problems.  This item requires a Dragon Amulet.",
+    "description": "Rolith has one of these hanging on the doorknob in the Oaklore Keep. He wears it while tackling knotty problems. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18819685",
     "releaseDate": "",
     "elements": [
@@ -6873,7 +6877,7 @@
         "daRequired": false
       }
     ],
-    "notes": "Belt had the initial price of 100 Gold and a sellback of 10 Gold.\nThe following changes were implemented on  April 17th, 2026:\n  • Previously had the description: This belt is made from the wings of an Ice Dragon. It adds +1 DEF to MAGIC, +3 ICE resistance and +1 to INT.\n  • Level's requirement was raised from 5 to 15.\n  • Magic Avoidance was raised from +1 to +2.\n  • INT was raised from +1 to +5.\n  • Block/Parry/Dodge Defense and Melee/Pierce Avoidance stats were added.\n  • Ice Resist was raised from +3 to +5.",
+    "notes": "Belt had the initial price of 100 Gold and a sellback of 10 Gold.\nThe following changes were implemented on April 17th, 2026:\n  • Previously had the description: This belt is made from the wings of an Ice Dragon. It adds +1 DEF to MAGIC, +3 ICE resistance and +1 to INT.\n  • Level's requirement was raised from 5 to 15.\n  • Magic Avoidance was raised from +1 to +2.\n  • INT was raised from +1 to +5.\n  • Block/Parry/Dodge Defense and Melee/Pierce Avoidance stats were added.\n  • Ice Resist was raised from +3 to +5.",
     "tags": [
       "ice",
       "free"
@@ -6908,7 +6912,7 @@
         "daRequired": false
       }
     ],
-    "notes": "Belt had the initial price of 100 Gold and a sellback of 10 Gold.\nThe following changes were implemented on  April 17th, 2026:\n  • Previously had the description: This belt is made from the wings of an Ice Dragon. It adds +1 DEF to MAGIC, +3 ICE resistance and +1 to STR.\n  • Level's requirement was raised from 5 to 15.\n  • Magic Avoidance was raised from +1 to +2.\n  • STR was raised from +1 to +5.\n  • Block/Parry/Dodge Defense and Melee/Pierce Avoidance stats were added.\n  • Ice Resist was raised from +3 to +5.",
+    "notes": "Belt had the initial price of 100 Gold and a sellback of 10 Gold.\nThe following changes were implemented on April 17th, 2026:\n  • Previously had the description: This belt is made from the wings of an Ice Dragon. It adds +1 DEF to MAGIC, +3 ICE resistance and +1 to STR.\n  • Level's requirement was raised from 5 to 15.\n  • Magic Avoidance was raised from +1 to +2.\n  • STR was raised from +1 to +5.\n  • Block/Parry/Dodge Defense and Melee/Pierce Avoidance stats were added.\n  • Ice Resist was raised from +3 to +5.",
     "tags": [
       "ice",
       "free"
@@ -6943,7 +6947,7 @@
         "daRequired": false
       }
     ],
-    "notes": "Belt had the initial price of 100 Gold and a sellback of 10 Gold.\nThe following changes were implemented on  April 17th, 2026:\n  • Previously had the description: This belt is made from the wings of an Ice Dragon. It adds +1 DEF to MAGIC, +3 ICE resistance and +1 to DEX.\n  • Level's requirement was raised from 5 to 15.\n  • Magic Avoidance was raised from +1 to +2.\n  • DEX was raised from +1 to +5.\n  • Block/Parry/Dodge Defense and Melee/Pierce Avoidance stats were added.\n  • Ice Resist was raised from +3 to +5.",
+    "notes": "Belt had the initial price of 100 Gold and a sellback of 10 Gold.\nThe following changes were implemented on April 17th, 2026:\n  • Previously had the description: This belt is made from the wings of an Ice Dragon. It adds +1 DEF to MAGIC, +3 ICE resistance and +1 to DEX.\n  • Level's requirement was raised from 5 to 15.\n  • Magic Avoidance was raised from +1 to +2.\n  • DEX was raised from +1 to +5.\n  • Block/Parry/Dodge Defense and Melee/Pierce Avoidance stats were added.\n  • Ice Resist was raised from +3 to +5.",
     "tags": [
       "ice",
       "free"
@@ -7938,7 +7942,7 @@
         "daRequired": true
       }
     ],
-    "notes": "The following changes were implemented on  March 28th, 2025:\n  • Block was updated from +1 to +4.\n  • Dodge +4, Parry +4, WIS +1, and, LUK +1 stats were added.",
+    "notes": "The following changes were implemented on March 28th, 2025:\n  • Block was updated from +1 to +4.\n  • Dodge +4, Parry +4, WIS +1, and, LUK +1 stats were added.",
     "tags": [
       "met",
       "merge"
@@ -8062,8 +8066,7 @@
     ],
     "shared": {
       "description": "A thick piece of rope that appears to have been soaked in honey! Every time you turn your head you swear you can hear a giant swarm of bees just behind you.",
-      "rarity": "5",
-      "notes": "Honey Laden Girdle (I-V) was previously available in the retired quest  Culture Shock."
+      "rarity": "5"
     },
     "levelVariants": [
       {
@@ -8413,7 +8416,7 @@
         "location": "Potion Help",
         "priceType": "free",
         "price": "N/A",
-        "sellback": "240 0 Gold",
+        "sellback": "0 Gold",
         "daRequired": true
       }
     ],
@@ -8447,7 +8450,7 @@
         "location": "Potion Help",
         "priceType": "free",
         "price": "N/A",
-        "sellback": "723 0 Gold",
+        "sellback": "0 Gold",
         "daRequired": true
       }
     ],
@@ -8481,7 +8484,7 @@
         "location": "Potion Help",
         "priceType": "free",
         "price": "N/A",
-        "sellback": "521 0 Gold",
+        "sellback": "0 Gold",
         "daRequired": false
       }
     ],
@@ -8515,7 +8518,7 @@
         "location": "Potion Help",
         "priceType": "free",
         "price": "N/A",
-        "sellback": "360 0 Gold",
+        "sellback": "0 Gold",
         "daRequired": false
       }
     ],
@@ -8549,7 +8552,7 @@
         "location": "Potion Help",
         "priceType": "free",
         "price": "N/A",
-        "sellback": "410 0 Gold",
+        "sellback": "0 Gold",
         "daRequired": false
       }
     ],
@@ -8583,7 +8586,7 @@
         "location": "Potion Help",
         "priceType": "free",
         "price": "N/A",
-        "sellback": "80 0 Gold",
+        "sellback": "0 Gold",
         "daRequired": false
       }
     ],
@@ -8617,7 +8620,7 @@
         "location": "Potion Help",
         "priceType": "free",
         "price": "N/A",
-        "sellback": "24 0 Gold",
+        "sellback": "0 Gold",
         "daRequired": false
       }
     ],
@@ -8689,7 +8692,7 @@
         "daRequired": false
       }
     ],
-    "notes": "Belt was retired and replaced by  Technician's Tools III on  November 21st, 2025.",
+    "notes": "Belt was retired and replaced by Technician's Tools III on November 21st, 2025.",
     "tags": [
       "fir",
       "free"
@@ -10758,7 +10761,7 @@
         "daRequired": false
       }
     ],
-    "notes": "The following changes were implemented on  March 20th, 2026:\n  • Dragon Amulet requirement was removed.\n  • Level was raised from 10 to 14.\n  • Magic Def +2 was added.\n  • Melee Def, INT, DEX, and STR was raised from +1 to +2.\n  • Sellback was raised from 30 to 300 Gold.\nBelt previously appeared in the retired quest  The River Of Fire.",
+    "notes": "The following changes were implemented on March 20th, 2026:\n  • Dragon Amulet requirement was removed.\n  • Level was raised from 10 to 14.\n  • Magic Def +2 was added.\n  • Melee Def, INT, DEX, and STR was raised from +1 to +2.\n  • Sellback was raised from 30 to 300 Gold.\nBelt previously appeared in the retired quest The River Of Fire.",
     "tags": [
       "fir",
       "free"
@@ -11126,7 +11129,7 @@
         "daRequired": false
       }
     ],
-    "notes": "Belt was retired and replaced by  Shining Scaled Belt III on  April 25th, 2025.",
+    "notes": "Belt was retired and replaced by Shining Scaled Belt III on April 25th, 2025.",
     "tags": [
       "fir",
       "free"
@@ -11175,7 +11178,7 @@
     "slug": "accessory-mushroom-general-s-sash",
     "type": "accessory",
     "subtype": "belt",
-    "description": "You kept this after defeating the Mushroom Major General in the deep woods near Oaklore Keep.  It's soft, has some shiny metal bits, and has made you more able to dodge enemies when you wear it.",
+    "description": "You kept this after defeating the Mushroom Major General in the deep woods near Oaklore Keep. It's soft, has some shiny metal bits, and has made you more able to dodge enemies when you wear it.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15122181",
     "releaseDate": "",
     "elements": [
@@ -11197,7 +11200,7 @@
         "daRequired": true
       }
     ],
-    "notes": "Belt previously appeared in the retired quest  Major Mayhem.",
+    "notes": "Belt previously appeared in the retired quest Major Mayhem.",
     "tags": [
       "nat",
       "free"
@@ -11210,7 +11213,7 @@
     "slug": "accessory-mushroom-guard-s-belt",
     "type": "accessory",
     "subtype": "belt",
-    "description": "One of the mushroom guards dropped this as he fell in battle in the deep woods near Oaklore Keep.  It's a bit musty but seems to have made you a bit quicker and more able to dodge enemies when you wear it.",
+    "description": "One of the mushroom guards dropped this as he fell in battle in the deep woods near Oaklore Keep. It's a bit musty but seems to have made you a bit quicker and more able to dodge enemies when you wear it.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15121099",
     "releaseDate": "",
     "elements": [
@@ -11232,7 +11235,7 @@
         "daRequired": false
       }
     ],
-    "notes": "Belt previously appeared in the retired quest  Major Mayhem.",
+    "notes": "Belt previously appeared in the retired quest Major Mayhem.",
     "tags": [
       "nat",
       "free"
@@ -11245,7 +11248,7 @@
     "slug": "accessory-mushroom-lieutenant-s-strap",
     "type": "accessory",
     "subtype": "belt",
-    "description": "One of the mushroom lieutenants dropped this as he fell in battle in the deep woods near Oaklore Keep.  It's a bit musty but seems to have made you a bit quicker and more able to dodge enemies when you wear it.",
+    "description": "One of the mushroom lieutenants dropped this as he fell in battle in the deep woods near Oaklore Keep. It's a bit musty but seems to have made you a bit quicker and more able to dodge enemies when you wear it.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15122096",
     "releaseDate": "",
     "elements": [
@@ -11267,7 +11270,7 @@
         "daRequired": false
       }
     ],
-    "notes": "Belt previously appeared in the retired quest  Major Mayhem.",
+    "notes": "Belt previously appeared in the retired quest Major Mayhem.",
     "tags": [
       "nat",
       "free"
@@ -11280,7 +11283,7 @@
     "slug": "accessory-mushroom-minion-s-waistwrap",
     "type": "accessory",
     "subtype": "belt",
-    "description": "One of the mushroom minions dropped this as he fell in battle in the deep woods near Oaklore Keep.  It's a bit musty but seems to have made you a bit quicker and more able to dodge enemies when you wear it.",
+    "description": "One of the mushroom minions dropped this as he fell in battle in the deep woods near Oaklore Keep. It's a bit musty but seems to have made you a bit quicker and more able to dodge enemies when you wear it.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15122084",
     "releaseDate": "",
     "elements": [
@@ -11302,7 +11305,7 @@
         "daRequired": false
       }
     ],
-    "notes": "Belt previously appeared in the retired quest  Major Mayhem.",
+    "notes": "Belt previously appeared in the retired quest Major Mayhem.",
     "tags": [
       "nat",
       "free"
@@ -11413,7 +11416,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "Nebu Belt was previously available from the retired quest  Face of Death.",
+    "notes": "Nebu Belt was previously available from the retired quest Face of Death.",
     "tags": [
       "lig",
       "free"
@@ -12161,7 +12164,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "Ostracon Supplies was previously available from the retired quest  Face of Death.",
+    "notes": "Ostracon Supplies was previously available from the retired quest Face of Death.",
     "tags": [
       "sil",
       "free"
@@ -12204,8 +12207,7 @@
     ],
     "shared": {
       "description": "A belt woven of living roots, it glows with purple energy. Wherever the root ends or starts, you cannot tell. Proof of victory over Junipurr and The Adjudicator.",
-      "rarity": "5",
-      "notes": "Item's name misspells Ouroboros as \"Ourobouros\" in-game."
+      "rarity": "5"
     },
     "levelVariants": [
       {
@@ -12331,7 +12333,7 @@
         "daRequired": false
       }
     ],
-    "notes": "Belt previously required 5  Pouch of Sparkling Sand; this was lowered to 1 on  March 21st, 2025.\nThe following changes were implemented on  March 28th, 2025:\n  • The description's excerpt It increases your Block, Parry, and Dodge Defenses, making it slightly more likely for you to Defend against attacks. was added.\n  • Block stat was updated from +1 to +4.\n  • Parry and Dodge stats were added.",
+    "notes": "Belt previously required 5 Pouch of Sparkling Sand; this was lowered to 1 on March 21st, 2025.\nThe following changes were implemented on March 28th, 2025:\n  • The description's excerpt It increases your Block, Parry, and Dodge Defenses, making it slightly more likely for you to Defend against attacks. was added.\n  • Block stat was updated from +1 to +4.\n  • Parry and Dodge stats were added.",
     "tags": [
       "met",
       "merge"
@@ -13296,7 +13298,7 @@
     "slug": "accessory-rings-of-the-eryines",
     "type": "accessory",
     "subtype": "belt",
-    "description": "This belt is made of colored rings sewn to a silk band and signifies that its wearer holds the throne of the united Jungle Fury tribes.  It is said to lend magical aid to its owner.  This item requires a Dragon Amulet.",
+    "description": "This belt is made of colored rings sewn to a silk band and signifies that its wearer holds the throne of the united Jungle Fury tribes. It is said to lend magical aid to its owner. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15865765",
     "releaseDate": "",
     "elements": [
@@ -13719,6 +13721,367 @@
     "daRequired": false
   },
   {
+    "id": "accessory-runed-cinch",
+    "familyName": "Runed Cinch",
+    "slug": "accessory-runed-cinch",
+    "aliasSlugs": [
+      "accessory-runed-cinch-i",
+      "accessory-runed-cinch-ii",
+      "accessory-runed-cinch-iii",
+      "accessory-runed-cinch-iv",
+      "accessory-runed-cinch-v",
+      "accessory-runed-cinch-vi"
+    ],
+    "type": "accessory",
+    "subtype": "belt",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22426796",
+    "familyOrigin": "same-thread-multi-post",
+    "familySources": [
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22426796",
+        "title": "DF Encyclopedia: Runed Cinch I",
+        "variantLabel": "Runed Cinch I",
+        "isPrimary": true
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22426797",
+        "title": "DF Encyclopedia: Runed Cinch II",
+        "variantLabel": "Runed Cinch II",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22426798",
+        "title": "DF Encyclopedia: Runed Cinch III",
+        "variantLabel": "Runed Cinch III",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22426799",
+        "title": "DF Encyclopedia: Runed Cinch IV",
+        "variantLabel": "Runed Cinch IV",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22426800",
+        "title": "DF Encyclopedia: Runed Cinch V",
+        "variantLabel": "Runed Cinch V",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22426801",
+        "title": "DF Encyclopedia: Runed Cinch VI",
+        "variantLabel": "Runed Cinch VI",
+        "isPrimary": false
+      }
+    ],
+    "shared": {
+      "description": "This enchanted rope must have been part of one of Warlic's old attempts to free Jaania. Although it didn't work for that purpose, it still has some use!",
+      "rarity": "5"
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 33,
+        "levelDisplay": "33",
+        "actualLevel": 33,
+        "variantName": "I",
+        "name": "Runed Cinch I",
+        "damage": "",
+        "stats": "Crit +3, WIS +6, END +5, CHA +2, LUK +2, INT +4, DEX +4, STR +4, Bonus +3",
+        "obtainVariants": [
+          {
+            "location": "Cooperation",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "40 Gold",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22426796",
+        "description": "This enchanted rope must have been part of one of Warlic's old attempts to free Jaania. Although it didn't work for that purpose, it still has some use!",
+        "element": "ICE",
+        "resists": "Fire +5, Ice +5, All +2, Immobility +3",
+        "rarity": "5"
+      },
+      {
+        "levelNumber": 33,
+        "levelDisplay": "33",
+        "actualLevel": 33,
+        "variantName": "I",
+        "name": "Runed Cinch I",
+        "damage": "",
+        "stats": "Crit +3, WIS +6, END +5, CHA +2, LUK +2, INT +4, DEX +4, STR +4, Bonus +3",
+        "obtainVariants": [
+          {
+            "location": "Cooperation Loot for DCs",
+            "price": "30 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "27 DC (<24 hours) / 8 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22426796",
+        "description": "This enchanted rope must have been part of one of Warlic's old attempts to free Jaania. Although it didn't work for that purpose, it still has some use!",
+        "element": "ICE",
+        "resists": "Fire +5, Ice +5, All +2, Immobility +3",
+        "rarity": "5"
+      },
+      {
+        "levelNumber": 43,
+        "levelDisplay": "43",
+        "actualLevel": 43,
+        "variantName": "II",
+        "name": "Runed Cinch II",
+        "damage": "",
+        "stats": "Crit +4, WIS +8, END +5, CHA +2, LUK +2, INT +4, DEX +4, STR +4, Bonus +4",
+        "obtainVariants": [
+          {
+            "location": "Cooperation",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "75 Gold",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22426797",
+        "description": "This enchanted rope must have been part of one of Warlic's old attempts to free Jaania. Although it didn't work for that purpose, it still has some use!",
+        "element": "ICE",
+        "resists": "Fire +5, Ice +5, All +3, Immobility +3",
+        "rarity": "5"
+      },
+      {
+        "levelNumber": 43,
+        "levelDisplay": "43",
+        "actualLevel": 43,
+        "variantName": "II",
+        "name": "Runed Cinch II",
+        "damage": "",
+        "stats": "Crit +4, WIS +8, END +5, CHA +2, LUK +2, INT +4, DEX +4, STR +4, Bonus +4",
+        "obtainVariants": [
+          {
+            "location": "Cooperation Loot for DCs",
+            "price": "30 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "27 DC (<24 hours) / 8 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22426797",
+        "description": "This enchanted rope must have been part of one of Warlic's old attempts to free Jaania. Although it didn't work for that purpose, it still has some use!",
+        "element": "ICE",
+        "resists": "Fire +5, Ice +5, All +3, Immobility +3",
+        "rarity": "5"
+      },
+      {
+        "levelNumber": 53,
+        "levelDisplay": "53",
+        "actualLevel": 53,
+        "variantName": "III",
+        "name": "Runed Cinch III",
+        "damage": "",
+        "stats": "Crit +5, WIS +8, END +6, CHA +3, LUK +3, INT +5, DEX +5, STR +5, Bonus +5",
+        "obtainVariants": [
+          {
+            "location": "Cooperation",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "100 Gold",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22426798",
+        "description": "This enchanted rope must have been part of one of Warlic's old attempts to free Jaania. Although it didn't work for that purpose, it still has some use!",
+        "element": "ICE",
+        "resists": "Fire +5, Ice +5, All +3, Immobility +4",
+        "rarity": "5"
+      },
+      {
+        "levelNumber": 53,
+        "levelDisplay": "53",
+        "actualLevel": 53,
+        "variantName": "III",
+        "name": "Runed Cinch III",
+        "damage": "",
+        "stats": "Crit +5, WIS +8, END +6, CHA +3, LUK +3, INT +5, DEX +5, STR +5, Bonus +5",
+        "obtainVariants": [
+          {
+            "location": "Cooperation Loot for DCs",
+            "price": "30 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "27 DC (<24 hours) / 8 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22426798",
+        "description": "This enchanted rope must have been part of one of Warlic's old attempts to free Jaania. Although it didn't work for that purpose, it still has some use!",
+        "element": "ICE",
+        "resists": "Fire +5, Ice +5, All +3, Immobility +4",
+        "rarity": "5"
+      },
+      {
+        "levelNumber": 63,
+        "levelDisplay": "63",
+        "actualLevel": 63,
+        "variantName": "IV",
+        "name": "Runed Cinch IV",
+        "damage": "",
+        "stats": "Crit +7, WIS +10, END +7, CHA +3, LUK +3, INT +6, DEX +6, STR +6, Bonus +7",
+        "obtainVariants": [
+          {
+            "location": "Cooperation",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "150 Gold",
+            "daRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22426799",
+        "description": "This enchanted rope must have been part of one of Warlic's old attempts to free Jaania. Although it didn't work for that purpose, it still has some use!",
+        "element": "ICE",
+        "resists": "Fire +5, Ice +5, All +4, Immobility +4",
+        "rarity": "5"
+      },
+      {
+        "levelNumber": 63,
+        "levelDisplay": "63",
+        "actualLevel": 63,
+        "variantName": "IV",
+        "name": "Runed Cinch IV",
+        "damage": "",
+        "stats": "Crit +7, WIS +10, END +7, CHA +3, LUK +3, INT +6, DEX +6, STR +6, Bonus +7",
+        "obtainVariants": [
+          {
+            "location": "Cooperation Loot for DCs",
+            "price": "30 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "27 DC (<24 hours) / 8 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22426799",
+        "description": "This enchanted rope must have been part of one of Warlic's old attempts to free Jaania. Although it didn't work for that purpose, it still has some use!",
+        "element": "ICE",
+        "resists": "Fire +5, Ice +5, All +4, Immobility +4",
+        "rarity": "5"
+      },
+      {
+        "levelNumber": 73,
+        "levelDisplay": "73",
+        "actualLevel": 73,
+        "variantName": "V",
+        "name": "Runed Cinch V",
+        "damage": "",
+        "stats": "Crit +8, WIS +12, END +9, CHA +4, LUK +4, INT +7, DEX +7, STR +7, Bonus +8",
+        "obtainVariants": [
+          {
+            "location": "Cooperation",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "200 Gold",
+            "daRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22426800",
+        "description": "This enchanted rope must have been part of one of Warlic's old attempts to free Jaania. Although it didn't work for that purpose, it still has some use!",
+        "element": "ICE",
+        "resists": "Fire +5, Ice +5, All +4, Immobility +5",
+        "rarity": "5"
+      },
+      {
+        "levelNumber": 73,
+        "levelDisplay": "73",
+        "actualLevel": 73,
+        "variantName": "V",
+        "name": "Runed Cinch V",
+        "damage": "",
+        "stats": "Crit +8, WIS +12, END +9, CHA +4, LUK +4, INT +7, DEX +7, STR +7, Bonus +8",
+        "obtainVariants": [
+          {
+            "location": "Cooperation Loot for DCs",
+            "price": "30 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "27 DC (<24 hours) / 8 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22426800",
+        "description": "This enchanted rope must have been part of one of Warlic's old attempts to free Jaania. Although it didn't work for that purpose, it still has some use!",
+        "element": "ICE",
+        "resists": "Fire +5, Ice +5, All +4, Immobility +5",
+        "rarity": "5"
+      },
+      {
+        "levelNumber": 86,
+        "levelDisplay": "86",
+        "actualLevel": 86,
+        "variantName": "VI",
+        "name": "Runed Cinch VI",
+        "damage": "",
+        "stats": "Crit +9, WIS +14, END +10, CHA +4, LUK +4, INT +8, DEX +8, STR +8, Bonus +9",
+        "obtainVariants": [
+          {
+            "location": "Cooperation",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "230 Gold",
+            "daRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22426801",
+        "description": "This enchanted rope must have been part of one of Warlic's old attempts to free Jaania. Although it didn't work for that purpose, it still has some use!",
+        "element": "ICE",
+        "resists": "Fire +5, Ice +5, All +5, Immobility +5",
+        "rarity": "5"
+      },
+      {
+        "levelNumber": 86,
+        "levelDisplay": "86",
+        "actualLevel": 86,
+        "variantName": "VI",
+        "name": "Runed Cinch VI",
+        "damage": "",
+        "stats": "Crit +9, WIS +14, END +10, CHA +4, LUK +4, INT +8, DEX +8, STR +8, Bonus +9",
+        "obtainVariants": [
+          {
+            "location": "Cooperation Loot for DCs",
+            "price": "30 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "27 DC (<24 hours) / 8 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22426801",
+        "description": "This enchanted rope must have been part of one of Warlic's old attempts to free Jaania. Although it didn't work for that purpose, it still has some use!",
+        "element": "ICE",
+        "resists": "Fire +5, Ice +5, All +5, Immobility +5",
+        "rarity": "5"
+      }
+    ],
+    "itemType": "Belt",
+    "equipSlot": "Waist",
+    "category": "Armor",
+    "releaseDate": "",
+    "tags": [
+      "dc",
+      "free",
+      "ice"
+    ],
+    "hasDA": true,
+    "hasDC": true,
+    "hasDM": false,
+    "hasFree": true,
+    "hasMerge": false,
+    "levelRange": "I-VI",
+    "elements": [
+      "ICE"
+    ]
+  },
+  {
     "id": "accessory-runed-warrior-belt",
     "name": "Runed Warrior Belt",
     "slug": "accessory-runed-warrior-belt",
@@ -13746,7 +14109,7 @@
         "daRequired": true
       }
     ],
-    "notes": "Belt was retired and replaced by  Technician's Tools V on  November 21st, 2025.",
+    "notes": "Belt was retired and replaced by Technician's Tools V on November 21st, 2025.",
     "tags": [
       "win",
       "free"
@@ -13836,7 +14199,7 @@
     ],
     "level": "49",
     "stats": "Block +5, Dodge +5, Parry +5, Crit +6, WIS +3, END +3, CHA +3, LUK +3, INT +2, DEX +2, STR +2",
-    "resists": "Metal +3, , Water +3, Energy +1, Stone +1",
+    "resists": "Metal +3, Water +3, Energy +1, Stone +1",
     "rarity": "10",
     "itemType": "Belt",
     "equipSpot": "Waist",
@@ -14554,8 +14917,7 @@
     ],
     "shared": {
       "description": "You've enhanced your belt with shadow energy. It feels as though you aren't clasping anything around your waist as you put it on.",
-      "rarity": "10",
-      "notes": "II-IV versions previously required 1  DeathKnight Belt & 2/3/4  Dusk Essence respectively.\nBelts were tiered with Roman numerals on  August 25th, 2023; Required Items on II-IV versions were also changed on that date."
+      "rarity": "10"
     },
     "levelVariants": [
       {
@@ -14838,8 +15200,7 @@
     ],
     "shared": {
       "description": "From afar it looks to be made of silver dragon scales, but they're actually polished metal.",
-      "rarity": "1",
-      "notes": "I-VI versions of this belt replaced  Die Cast Belt,  Electric Chain,  Molten Links,  Stone Cinch,  Shiny Scaled Belt, and  Wonderflonium Belt respectively."
+      "rarity": "1"
     },
     "levelVariants": [
       {
@@ -15050,7 +15411,7 @@
         "daRequired": false
       }
     ],
-    "notes": "Belt was retired and replaced by  Shining Scaled Belt V on  April 25th, 2025.",
+    "notes": "Belt was retired and replaced by Shining Scaled Belt V on April 25th, 2025.",
     "tags": [
       "win",
       "free"
@@ -16297,7 +16658,7 @@
         "daRequired": false
       }
     ],
-    "notes": "Belt was retired and replaced by  Shining Scaled Belt IV on  April 25th, 2025.",
+    "notes": "Belt was retired and replaced by Shining Scaled Belt IV on April 25th, 2025.",
     "tags": [
       "sto",
       "free"
@@ -16505,7 +16866,7 @@
         "daRequired": true
       }
     ],
-    "notes": "Belt was retired and replaced by  Technician's Tools II on  November 21st, 2025.",
+    "notes": "Belt was retired and replaced by Technician's Tools II on November 21st, 2025.",
     "tags": [
       "met",
       "free"
@@ -16569,8 +16930,7 @@
     ],
     "shared": {
       "description": "Full of delicate tools used for intricate machine work.",
-      "rarity": "5",
-      "notes": "These belts replaced  Copper Gears,  Tech Toolbelt,  Imp's Sash,  Blacksmith's Leather Satchel,  Runed Warrior Belt, and  Technician's Tools respectively."
+      "rarity": "5"
     },
     "levelVariants": [
       {
@@ -16903,7 +17263,7 @@
         "daRequired": true
       }
     ],
-    "notes": "Belt was retired and replaced by  Technician's Tools VI on  November 21st, 2025.",
+    "notes": "Belt was retired and replaced by Technician's Tools VI on November 21st, 2025.",
     "tags": [
       "met",
       "free"
@@ -17015,7 +17375,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "Tog Scale Belt was previously available from the retired quest  Rescue of Elanee.",
+    "notes": "Tog Scale Belt was previously available from the retired quest Rescue of Elanee.",
     "tags": [
       "nat",
       "free"
@@ -17403,7 +17763,7 @@
     "slug": "accessory-trixis-tricky-belt",
     "type": "accessory",
     "subtype": "belt",
-    "description": "Leave it to a gnome running a tavern to come up with this. Designed to automatically readjust depending on your size, it has a nasty habit of cutting off the circulation to your lower extremities.  This item requires a Dragon Amulet.",
+    "description": "Leave it to a gnome running a tavern to come up with this. Designed to automatically readjust depending on your size, it has a nasty habit of cutting off the circulation to your lower extremities. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18954097",
     "releaseDate": "",
     "elements": [
@@ -17537,7 +17897,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "Tuat Guide was previously available from the retired quest  Face of Death.",
+    "notes": "Tuat Guide was previously available from the retired quest Face of Death.",
     "tags": [
       "sto",
       "free"
@@ -17551,7 +17911,7 @@
     "slug": "accessory-umbral-tie",
     "type": "accessory",
     "subtype": "belt",
-    "description": "The darkness is pervasive in Ravenloss.  The Chaosweavers sold this belt to celebrate it.  It is a jet black tie which wraps around your waist.  This item requires a Dragon Amulet.",
+    "description": "The darkness is pervasive in Ravenloss. The Chaosweavers sold this belt to celebrate it. It is a jet black tie which wraps around your waist. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17351476",
     "releaseDate": "",
     "elements": [
@@ -17621,8 +17981,7 @@
     ],
     "shared": {
       "description": "You've enhanced your belt with shadow energy. It feels as though you aren't clasping anything around your waist as you put it on. This item requires a Dragon Amulet.",
-      "rarity": "10",
-      "notes": "II-IV versions previously required 1  DeathKnight Belt & 2/3/4  Umbral Essence respectively.\nBelts were tiered with Roman numerals on  August 25th, 2023; Required Items on II-IV versions were also changed on that date."
+      "rarity": "10"
     },
     "levelVariants": [
       {
@@ -17776,7 +18135,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "Ushabti Sash was previously available from the retired quest  Face of Death.",
+    "notes": "Ushabti Sash was previously available from the retired quest Face of Death.",
     "tags": [
       "dar",
       "free"
@@ -17889,7 +18248,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "Vind Trophy Belt was previously available from the retired quest  Rescue of Elanee.",
+    "notes": "Vind Trophy Belt was previously available from the retired quest Rescue of Elanee.",
     "tags": [
       "sil",
       "free"
@@ -18002,6 +18361,7 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21650125",
         "description": "Tomix has made a belt for you from voiding remains.",
+        "element": "???",
         "resists": "Fire +5, Wind +1, Immobility +3",
         "rarity": "5"
       },
@@ -18024,6 +18384,7 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21650126",
         "description": "Tomix has made a belt for you from voiding remains.",
+        "element": "???",
         "resists": "Fire +7, Wind +4, Immobility +3",
         "rarity": "1"
       },
@@ -18046,6 +18407,7 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21650127",
         "description": "Tomix has made a belt for you from voiding remains. This item requires a Dragon Amulet.",
+        "element": "???",
         "resists": "Fire +9, Wind +5, Immobility +3",
         "rarity": "35"
       },
@@ -18068,6 +18430,7 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21650150",
         "description": "Tomix has made a belt for you from voiding remains.",
+        "element": "???",
         "resists": "Fire +9, Wind +5, Immobility +3",
         "rarity": "35"
       },
@@ -18090,6 +18453,7 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21650151",
         "description": "Tomix has made a belt for you from voiding remains. This item requires a Dragon Amulet.",
+        "element": "???",
         "resists": "Fire +10, Wind +6, All +3, Immobility +3",
         "rarity": "6"
       }
@@ -18099,6 +18463,7 @@
     "category": "Armor",
     "releaseDate": "",
     "tags": [
+      "???",
       "free"
     ],
     "hasDA": true,
@@ -18107,7 +18472,9 @@
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-V",
-    "elements": []
+    "elements": [
+      "???"
+    ]
   },
   {
     "id": "accessory-volkenraand-traveler-s-belt",
@@ -18180,6 +18547,7 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22422700",
         "description": "This belt was once worn by travelers of the valleys and mountains of Volkenraand. Now, however, few are brave enough to explore those shattered lands.",
+        "element": "???",
         "resists": "Nature +6, Wind +6, Energy +6, Health -5",
         "rarity": "0"
       },
@@ -18203,6 +18571,7 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22422700",
         "description": "This belt was once worn by travelers of the valleys and mountains of Volkenraand. Now, however, few are brave enough to explore those shattered lands.",
+        "element": "???",
         "resists": "Nature +6, Wind +6, Energy +6, Health -5",
         "rarity": "0"
       },
@@ -18225,6 +18594,7 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22422701",
         "description": "This belt was once worn by travelers of the valleys and mountains of Volkenraand. Now, however, few are brave enough to explore those shattered lands.",
+        "element": "???",
         "resists": "Nature +7, Wind +7, Energy +7, Health -5",
         "rarity": "0"
       },
@@ -18248,6 +18618,7 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22422701",
         "description": "This belt was once worn by travelers of the valleys and mountains of Volkenraand. Now, however, few are brave enough to explore those shattered lands.",
+        "element": "???",
         "resists": "Nature +7, Wind +7, Energy +7, Health -5",
         "rarity": "0"
       },
@@ -18270,6 +18641,7 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22422702",
         "description": "This belt was once worn by travelers of the valleys and mountains of Volkenraand. Now, however, few are brave enough to explore those shattered lands.",
+        "element": "???",
         "resists": "Nature +8, Wind +8, Energy +8, Health -5",
         "rarity": "0"
       },
@@ -18293,6 +18665,7 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22422702",
         "description": "This belt was once worn by travelers of the valleys and mountains of Volkenraand. Now, however, few are brave enough to explore those shattered lands.",
+        "element": "???",
         "resists": "Nature +8, Wind +8, Energy +8, Health -5",
         "rarity": "0"
       },
@@ -18315,6 +18688,7 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22422703",
         "description": "This belt was once worn by travelers of the valleys and mountains of Volkenraand. Now, however, few are brave enough to explore those shattered lands. This item requires a Dragon Amulet.",
+        "element": "???",
         "resists": "Nature +10, Wind +10, Energy +10, Health -5",
         "rarity": "0"
       },
@@ -18338,6 +18712,7 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22422703",
         "description": "This belt was once worn by travelers of the valleys and mountains of Volkenraand. Now, however, few are brave enough to explore those shattered lands. This item requires a Dragon Amulet.",
+        "element": "???",
         "resists": "Nature +10, Wind +10, Energy +10, Health -5",
         "rarity": "0"
       },
@@ -18360,6 +18735,7 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22422704",
         "description": "This belt was once worn by travelers of the valleys and mountains of Volkenraand. Now, however, few are brave enough to explore those shattered lands. This item requires a Dragon Amulet.",
+        "element": "???",
         "resists": "Nature +10, Wind +10, Energy +10, Health -5",
         "rarity": "0"
       },
@@ -18383,6 +18759,7 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22422704",
         "description": "This belt was once worn by travelers of the valleys and mountains of Volkenraand. Now, however, few are brave enough to explore those shattered lands. This item requires a Dragon Amulet.",
+        "element": "???",
         "resists": "Nature +10, Wind +10, Energy +10, Health -5",
         "rarity": "0"
       }
@@ -18392,6 +18769,7 @@
     "category": "Armor",
     "releaseDate": "",
     "tags": [
+      "???",
       "dc",
       "free"
     ],
@@ -18401,7 +18779,9 @@
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-V",
-    "elements": []
+    "elements": [
+      "???"
+    ]
   },
   {
     "id": "accessory-vornian-belt",
@@ -18480,8 +18860,7 @@
     ],
     "shared": {
       "description": "This belt of silver fox fur is said to bestow speed upon it's wearer.",
-      "rarity": "6",
-      "notes": "These belts went rare on  April 30th, 2021."
+      "rarity": "6"
     },
     "levelVariants": [
       {
@@ -18632,7 +19011,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "Warden Belt was previously available from the retired quest  Rescue of Elanee.",
+    "notes": "Warden Belt was previously available from the retired quest Rescue of Elanee.",
     "tags": [
       "met",
       "free"
@@ -19332,7 +19711,7 @@
         "daRequired": false
       }
     ],
-    "notes": "The following changes were implemented on  March 20th, 2026:\n  • Dragon Amulet requirement was removed.\n  • Level's requirement was raised from 5 to 15.\n  • Pierce Def +5 stat was removed.\n  • END was raised from +1 to +5.\n  • Bonus was raised from +1 to +2.",
+    "notes": "The following changes were implemented on March 20th, 2026:\n  • Dragon Amulet requirement was removed.\n  • Level's requirement was raised from 5 to 15.\n  • Pierce Def +5 stat was removed.\n  • END was raised from +1 to +5.\n  • Bonus was raised from +1 to +2.",
     "tags": [
       "win",
       "free"
@@ -19447,7 +19826,7 @@
     "slug": "accessory-winds-of-fury",
     "type": "accessory",
     "subtype": "belt",
-    "description": "Jungle Fury mages, raging against attacks by intruders, wove the strength of the wind into this otherwise plainlooking sash.  It may not look great, but wove, does it let you move quickly.",
+    "description": "Jungle Fury mages, raging against attacks by intruders, wove the strength of the wind into this otherwise plainlooking sash. It may not look great, but wove, does it let you move quickly.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15866858",
     "releaseDate": "",
     "elements": [
@@ -19503,7 +19882,7 @@
         "daRequired": true
       }
     ],
-    "notes": "Belt was retired and replaced by  Shining Scaled Belt VI on  April 25th, 2025.",
+    "notes": "Belt was retired and replaced by Shining Scaled Belt VI on April 25th, 2025.",
     "tags": [
       "dar",
       "free"

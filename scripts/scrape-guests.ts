@@ -59,6 +59,7 @@ import {
   canonicalizePromotedRelationships,
   promoteCrossPostFamilies,
 } from './lib/cross-post-family.ts'
+import { hasRetiredTag } from './lib/tags.ts'
 import { rephraseTimedSellback } from './lib/obtain-formatting.ts'
 import { getImageCaptionNoise, isImageCaptionNoiseLine } from './lib/note-cleaning.ts'
 import { repairAccessFlags } from './lib/access-flag-repair.ts'
@@ -560,9 +561,23 @@ function collapseGuestSections(sections: GuestVariantSection[]): GuestVariantSec
 
   for (const section of sections) {
     const previous = collapsed.at(-1)
-    if (previous && previous.name.trim().toLowerCase() === section.name.trim().toLowerCase()) {
-      previous.html = `${previous.html}<br>${section.html}`
-      continue
+    if (previous) {
+      const sameName = previous.name.trim().toLowerCase() === section.name.trim().toLowerCase()
+      // A section headed with just the bare guest name (no "(N)" suffix) that
+      // follows a variant of the same guest in the same post is an additional
+      // obtain-method block for that variant, not a new variant. Example: Artix
+      // (3) is followed by two bare "Artix" headers that are obtain methods 2 & 3.
+      const sectionHasVariantNumber = /\(\d+\)\s*$/.test(section.name.trim())
+      const sameBase =
+        stripTrailingVariantNumber(previous.name).trim().toLowerCase() ===
+        stripTrailingVariantNumber(section.name).trim().toLowerCase()
+      const sameSource = Boolean(previous.sourceUrl) && previous.sourceUrl === section.sourceUrl
+      const isObtainMethodContinuation = !sectionHasVariantNumber && sameBase && sameSource
+
+      if (sameName || isObtainMethodContinuation) {
+        previous.html = `${previous.html}<br>${section.html}`
+        continue
+      }
     }
 
     collapsed.push({ ...section })
@@ -576,16 +591,6 @@ function extractGuestHeaderSuffix(html: string, headerEndIndex: number): string 
   const suffixMatch = suffixSlice.match(/^\s*(\([^<)]{1,40}\))/)
   if (!suffixMatch) return ''
   return stripHtml(decodeHTML(suffixMatch[1])).trim()
-}
-
-function hasRetiredGuestSignal(...values: Array<string | undefined>): boolean {
-  return values.some((value) =>
-    value
-      ? /previously attainable[\s\S]*retired|retired (?:access point|da access point|quest|version|location|entry)|previously attainable in the retired/i.test(
-          value
-        )
-      : false
-  )
 }
 
 function extractGuestVariantSections(
@@ -618,7 +623,18 @@ function extractGuestVariantSectionsFromHtml(
     const baseName = decodeHTML((match[2] ?? match[3] ?? '').trim())
     const suffix = extractGuestHeaderSuffix(html, start + match[0].length)
     const name = suffix ? `${baseName} ${suffix}` : baseName
-    const sectionHtml = html.slice(start, end)
+    // The header regex only captures tag images (Retired/Temp/etc.) directly
+    // adjacent to the header. A Retired tag placed at the very top of the post
+    // (with other markup before the header) would be missed, so fold any
+    // top-of-post tag images into the first section for tag detection.
+    const preambleTags =
+      i === 0
+        ? (html
+            .slice(0, start)
+            .match(/<img[^>]+src=["'][^"']*\/tags\/[^"']+["'][^>]*>/gi) ?? []
+          ).join('')
+        : ''
+    const sectionHtml = preambleTags + html.slice(start, end)
 
     if (!name) continue
     if (
@@ -738,9 +754,18 @@ function parseGuestAttacks(html: string, guestName: string): GuestAttack[] {
         .trim()
     }
 
+    // Capture the inline "Other information" text up to a standalone image (the
+    // appearance shot) or the end of the block. Do NOT stop at inline
+    // image-hyperlinks: their link text is part of the sentence (e.g. "...had
+    // its own <a href=...png>skill button</a>; replaced on <a>May 30th</a>.")
+    // and stripForumHtml preserves that text.
     const inlineOtherInfoMatch = block.match(
-      /<b><u>Other [Ii]nformation<\/u><\/b>\s*([\s\S]*?)(?=\s*(?:<img|<a[^>]+href="[^"]+\.(?:png|jpg|jpeg|gif|bmp)|$))/i
+      /<b><u>Other [Ii]nformation<\/u><\/b>\s*([\s\S]*?)(?=\s*(?:<img|$))/i
     )
+    // Only content under an explicit "Other information" heading becomes skill
+    // notes. The effect's own bullet points (e.g. "one of the following attacks:")
+    // stay part of the effect and are NOT split out.
+    let attackNotes: string | undefined
     if (inlineOtherInfoMatch) {
       const inlineOtherInfo = normalizeStructuredText(inlineOtherInfoMatch[1])
         .split('\n')
@@ -749,7 +774,8 @@ function parseGuestAttacks(html: string, guestName: string): GuestAttack[] {
         .join('\n')
         .trim()
       if (inlineOtherInfo) {
-        effect = effect === 'Unknown effect' ? inlineOtherInfo : `${effect}\n${inlineOtherInfo}`
+        if (effect === 'Unknown effect') effect = inlineOtherInfo
+        else attackNotes = inlineOtherInfo
       }
     }
 
@@ -820,6 +846,7 @@ function parseGuestAttacks(html: string, guestName: string): GuestAttack[] {
       element,
       buttonImageUrl,
       appearanceUrl,
+      ...(attackNotes ? { notes: attackNotes } : {}),
     })
   }
 
@@ -864,7 +891,7 @@ function detectCategoryTags(html: string): CategoryTags {
     if (DEBUG) console.log(`  Found: SpecialOffer`)
   }
 
-  if (/<img[^>]+src=["'][^"']*\/tags\/Retired\.png["']/i.test(html)) {
+  if (hasRetiredTag(html)) {
     tags.retired = true
     if (DEBUG) console.log(`  Found: Retired`)
   }
@@ -921,9 +948,24 @@ function extractGuestImages(
   // Find main image in "Other information" section - this is the character portrait
   // Pattern: <img src="...pets_guests/GuestName.png" after "Other information"
   const otherInfoHtml = findLastSection(html, /<b><u>Other [Ii]nformation<\/u><\/b>/gi) ?? html
-  const escapedName = guestName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+  // Cross-post variant families pass a suffixed name like "Aquella (1)", but the
+  // forum files the portrait under the base name ("Aquella.png"). Match the exact
+  // name first, then fall back to the variant-stripped base name so we do not miss
+  // the real portrait and resort to guessing one from an attack image.
+  const baseName = guestName
+    .replace(/\s*\((?:\d+|[IVXLCDM]+)\)\s*$/i, '')
+    .replace(/\s+(?:\d+|[IVXLCDM]+)$/i, '')
+    .trim()
+  const nameAlternation = Array.from(new Set([guestName, baseName].filter(Boolean)))
+    .map((name) => name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))
+    .join('|')
+  // Portraits are usually filed as "{name}.png" but the DF-Pedia convention often
+  // appends a "pic"/"Petpic" suffix (e.g. "Princesspic.png", "MiniphagePetpic.png").
+  // Allow that optional suffix so we match the real portrait instead of falling
+  // back to an attack/appearance image.
+  const portraitSuffix = '(?:(?:[Pp]et)?[Pp]ic)?'
   const mainImagePattern = new RegExp(
-    `<img[^>]+src="([^"]*(?:github\\.com\\/DF-Pedia|raw\\.githubusercontent\\.com|githubusercontent\\.com)[^"]*\\/pets_guests\\/${escapedName}(?:\\.(?:png|jpg|jpeg|gif|bmp)|%20pic\\.bmp)[^"]*)"[^>]*>`,
+    `<img[^>]+src="([^"]*(?:github\\.com\\/DF-Pedia|raw\\.githubusercontent\\.com|githubusercontent\\.com)[^"]*\\/pets_guests\\/(?:${nameAlternation})${portraitSuffix}(?:\\.(?:png|jpg|jpeg|gif|bmp)|%20pic\\.bmp)[^"]*)"[^>]*>`,
     'i'
   )
   const mainImageMatch = otherInfoHtml.match(mainImagePattern)
@@ -983,28 +1025,16 @@ function extractGuestImages(
 
     // Find the simple name pattern as fallback
     const simpleNamePattern = new RegExp(
-      `/pets_guests/${escapedName}(?:\\.(?:png|jpg|jpeg|gif|bmp)|%20pic\\.bmp)$`,
+      `/pets_guests/(?:${nameAlternation})${portraitSuffix}(?:\\.(?:png|jpg|jpeg|gif|bmp)|%20pic\\.bmp)$`,
       'i'
     )
     const fallbackMain =
       sectionImages.find((u) => simpleNamePattern.test(u)) ?? sectionImages.at(-1)
 
-    if (fallbackMain) {
-      const fallbackPos = otherInfoHtml.lastIndexOf(fallbackMain)
-      if (fallbackPos >= 0) {
-        const afterMainImage = otherInfoHtml.slice(fallbackPos + fallbackMain.length)
-        const hyperlinkPattern =
-          /<a[^>]+href=(["'])(.*?\.(?:png|jpg|jpeg|gif|bmp))\1[^>]*>([\s\S]*?)<\/a>/gi
-        let match: RegExpExecArray | null
-        while ((match = hyperlinkPattern.exec(afterMainImage)) !== null) {
-          const url = match[2]
-          const caption = stripHtml(decodeHTML(match[3])).trim()
-          if (!caption || !isCandidateMainImage(url)) continue
-          alternativeImages.push({ url, caption })
-        }
-      }
-    }
-
+    // Do NOT harvest hyperlinked "Appearance N" images here. Without a real
+    // name-matched portrait as an anchor, the fallback "main" is often an attack
+    // image, and the nearby hyperlinks are the attack's appearance shots (already
+    // captured as attack.appearanceUrl) — not character alternative images.
     if (DEBUG && fallbackMain) console.log(`  Fallback main image: ${fallbackMain}`)
 
     return {
@@ -1917,7 +1947,11 @@ function buildGuestFamilyFromSections(
       section.html,
       section.name
     )
-    const imageUrl = extractedImageUrl ?? inferGuestMainImageFromAttacks(attacks)
+    // Only trust a real portrait extracted from this section. Guessing a portrait
+    // from an attack image (e.g. "Aquella1-Attack.png" -> "Aquella1.png") produces
+    // URLs that often 404. Inference is applied later as a last resort, below the
+    // supplemental appearance-post portrait (see applySupplementalGuestData).
+    const imageUrl = extractedImageUrl
     const obtainMethods = parseObtainMethods(section.html, section.name)
     const notes = parseNotes(section.html, section.name)
     const characterPageSource = extractGuestCharacterPageSource(section.html)
@@ -1963,7 +1997,9 @@ function buildGuestFamilyFromSections(
       tags,
       guestStats,
       alternativeImages: alternativeImages.length > 0 ? alternativeImages : undefined,
-      retired: categoryTags.retired || hasRetiredGuestSignal(notes) || undefined,
+      // Retired is driven solely by the Retired tag image at the start of the
+      // section; note-text heuristics produced false positives.
+      retired: categoryTags.retired || undefined,
       sourceName: section.name,
     })
   })
@@ -2009,6 +2045,7 @@ function buildGuestFamilyFromSections(
       ...(variant.elements[0] ? { element: variant.elements[0] } : {}),
       ...(variant.rarity && variant.rarity !== 'Unknown' ? { rarity: variant.rarity } : {}),
       ...(variant.attacks.length > 0 ? { attacks: variant.attacks } : {}),
+      ...(variant.retired ? { retired: true } : {}),
       guestStats: variant.guestStats,
       ...(variant.notes ? { notes: variant.notes } : {}),
     }
@@ -2076,12 +2113,14 @@ function buildGuestFamilyFromSections(
     isRare: variants.some((variant) => variant.isRare === true) || undefined,
     isSeasonal: variants.some((variant) => variant.isSeasonal === true) || undefined,
     isSpecialOffer: variants.some((variant) => variant.isSpecialOffer === true) || undefined,
-    retired:
-      variants.some(
-        (variant) => variant.retired === true || hasRetiredGuestSignal(variant.notes)
-      ) || undefined,
+    retired: variants.some((variant) => variant.retired === true) || undefined,
     levelRange: '',
+    // Additive across the family: union of every variant's elements and traits.
     elements: Array.from(new Set(variants.flatMap((variant) => variant.elements))),
+    ...(() => {
+      const familyTraits = Array.from(new Set(variants.flatMap((variant) => variant.traits ?? [])))
+      return familyTraits.length > 0 ? { traits: familyTraits } : {}
+    })(),
   }
 
   return computeFamilyFlags(family)
@@ -2141,12 +2180,30 @@ function applySupplementalGuestData(
     { imageUrl?: string; alternativeImages?: AlternativeImage[] }
   >
 ): Array<Guest | ItemFamily> {
+  // Last-resort portrait guessed from an attack image. Only used when neither a
+  // real extracted portrait nor the supplemental appearance-post image exists.
+  const inferItemImage = (item: Guest | ItemFamily): string | undefined => {
+    if ('levelVariants' in item) {
+      for (const level of item.levelVariants) {
+        const inferred = inferGuestMainImageFromAttacks((level.attacks as GuestAttack[]) ?? [])
+        if (inferred) return inferred
+      }
+      return undefined
+    }
+    return inferGuestMainImageFromAttacks(item.attacks ?? [])
+  }
+
   return items.map((item) => {
     const supplementalNotes = supplementalNotesByForumUrl.get(item.forumUrl)
     const supplementalMedia = supplementalMediaByForumUrl.get(item.forumUrl)
-    if (!supplementalNotes && !supplementalMedia) return item
+    const currentImage = 'levelVariants' in item ? item.shared.imageUrl : item.imageUrl
+    // Nothing to merge and a real image is already present — leave untouched.
+    if (!supplementalNotes && !supplementalMedia && currentImage) return item
 
     if ('levelVariants' in item && item.type === 'guest') {
+      const resolvedImage =
+        item.shared.imageUrl ?? supplementalMedia?.imageUrl ?? inferItemImage(item)
+      const resolvedAltImages = item.shared.alternativeImages ?? supplementalMedia?.alternativeImages
       return sanitizeGuestFamilyLevelVariants({
         ...item,
         shared: {
@@ -2154,29 +2211,20 @@ function applySupplementalGuestData(
           ...(supplementalNotes
             ? { notes: mergeNotesText(item.shared.notes, supplementalNotes) }
             : {}),
-          ...((item.shared.imageUrl ?? supplementalMedia?.imageUrl)
-            ? { imageUrl: item.shared.imageUrl ?? supplementalMedia?.imageUrl }
-            : {}),
-          ...((item.shared.alternativeImages ?? supplementalMedia?.alternativeImages)
-            ? {
-                alternativeImages:
-                  item.shared.alternativeImages ?? supplementalMedia?.alternativeImages,
-              }
-            : {}),
+          ...(resolvedImage ? { imageUrl: resolvedImage } : {}),
+          ...(resolvedAltImages ? { alternativeImages: resolvedAltImages } : {}),
         },
       })
     }
 
     if (!('levelVariants' in item)) {
+      const resolvedImage = item.imageUrl ?? supplementalMedia?.imageUrl ?? inferItemImage(item)
+      const resolvedAltImages = item.alternativeImages ?? supplementalMedia?.alternativeImages
       return sanitizeGuestMedia({
         ...item,
         ...(supplementalNotes ? { notes: mergeNotesText(item.notes, supplementalNotes) } : {}),
-        ...((item.imageUrl ?? supplementalMedia?.imageUrl)
-          ? { imageUrl: item.imageUrl ?? supplementalMedia?.imageUrl }
-          : {}),
-        ...((item.alternativeImages ?? supplementalMedia?.alternativeImages)
-          ? { alternativeImages: item.alternativeImages ?? supplementalMedia?.alternativeImages }
-          : {}),
+        ...(resolvedImage ? { imageUrl: resolvedImage } : {}),
+        ...(resolvedAltImages ? { alternativeImages: resolvedAltImages } : {}),
       })
     }
 
@@ -2424,7 +2472,9 @@ async function main(): Promise<void> {
           html,
           captureEnabled: shouldCaptureCharPages,
           force: freshArg,
-          imageUrl: extractedImageUrl ?? inferGuestMainImageFromAttacks(attacks),
+          // Real portrait only here; attack-inference is a last resort applied in
+          // applySupplementalGuestData, below the supplemental appearance-post image.
+          imageUrl: extractedImageUrl,
           name: stub.name,
           slug: stub.slug,
           traits: stub.traits,
@@ -2481,7 +2531,7 @@ async function main(): Promise<void> {
           alsoSee,
           tags,
           guestStats,
-          retired: categoryTags.retired || hasRetiredGuestSignal(notes) || undefined,
+          retired: categoryTags.retired || undefined,
           alternativeImages: alternativeImages.length > 0 ? alternativeImages : undefined,
         })
 

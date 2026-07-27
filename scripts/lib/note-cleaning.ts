@@ -37,6 +37,23 @@ export function isImageCaptionNoiseLine(line: string, captions: Set<string>): bo
   return captions.has(normalizeNoteLineKey(line))
 }
 
+/**
+ * Unwrap image hyperlinks in "Other Information" text, keeping the link text.
+ *
+ * Some notes link words inline to appearance images, e.g.
+ * `displays an animated <a href=".../Appearance.png">radiant shimmer</a> over
+ * the <a href=".../Appearance.png">player</a>`. Deleting these links wholesale
+ * drops meaningful sentence text; unwrapping preserves it. Standalone caption
+ * links (their own line) are still removed downstream via image-caption noise
+ * filtering, since their text is collected by getImageCaptionNoise.
+ */
+export function unwrapImageHyperlinks(html: string): string {
+  return html.replace(
+    /<a[^>]+href=(["'])([^"']*?\.(?:png|jpg|jpeg|gif|bmp)(?:\?[^"']*)?)\1[^>]*>([\s\S]*?)<\/a>/gi,
+    '$3'
+  )
+}
+
 export function isAttributionNoiseLine(line: string): boolean {
   const normalized = line
     .replace(/^[•*-]\s*/, '')

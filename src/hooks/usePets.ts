@@ -4,7 +4,7 @@ import type { ItemFamily } from '../types/item'
 import type { ElementsData } from '../types/element'
 import { loadElements, loadPetsAndGuests, loadPetsGuestsManifest } from '../utils/dataLoaders'
 import { compareTitles, displayTitle } from '../utils/displayText'
-import { obtainMethodFingerprint, relatedNameScore } from '../utils/relatedItems'
+import { obtainMethodInferenceFingerprint, relatedNameScore } from '../utils/relatedItems'
 import { getSearchWords } from '../utils/search'
 import { getDisplayFamilyName, getFamilyCardDescription } from '../utils/variantHelpers'
 
@@ -42,7 +42,7 @@ function getPetObtainFingerprints(item: Pet | ItemFamily): Set<string> {
         requiredItems: method.requiredItems,
       }))
 
-  return new Set(methods.map(obtainMethodFingerprint))
+  return new Set(methods.map(obtainMethodInferenceFingerprint))
 }
 
 function normalizePetRelatedText(value?: string): string {
@@ -206,14 +206,6 @@ function searchPets(
   elementMeta: ElementsData
 ): (Pet | ItemFamily)[] {
   const queryWords = getSearchWords(filters.query ?? '')
-  const hasRetiredSignal = (...values: Array<string | undefined>): boolean =>
-    values.some((value) =>
-      value
-        ? /previously attainable[\s\S]*retired|retired (?:access point|da access point|quest|version|location|entry)|previously attainable in the retired/i.test(
-            value
-          )
-        : false
-    )
 
   return pets
     .filter((item) => {
@@ -230,28 +222,10 @@ function searchPets(
       const itemName = isFamily ? family!.familyName : pet!.name
       const itemDescription = isFamily ? getFamilyCardDescription(family!) : pet!.description
       const itemTags = isFamily ? family!.tags : pet!.tags
-      const itemRetired = isFamily
-        ? Boolean(
-            family!.retired ||
-            hasRetiredSignal(
-              family!.shared.notes,
-              ...family!.levelVariants.map((level) => level.notes),
-              ...family!.levelVariants.flatMap((level) =>
-                level.obtainVariants.map(
-                  (variant) => `${variant.location} ${variant.requirements ?? ''}`
-                )
-              )
-            )
-          )
-        : Boolean(
-            pet!.retired ||
-            hasRetiredSignal(
-              pet!.notes,
-              ...pet!.obtainMethods.map(
-                (method) => `${method.location} ${method.requirements ?? ''}`
-              )
-            )
-          )
+      // Retired is driven solely by the scraped flag (the Retired tag image),
+      // consistent with the scraper. Note-text heuristics produced false positives
+      // (e.g. "previously attainable from a retired access point").
+      const itemRetired = isFamily ? Boolean(family!.retired) : Boolean(pet!.retired)
 
       // Segment filter — which type(s) are active
       if (filters.type && filters.type.length > 0) {

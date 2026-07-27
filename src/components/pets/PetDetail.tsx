@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect } from 'react'
+import { useState, useMemo, useEffect, useRef } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { Shield, ImageOff } from 'lucide-react'
 import type { Pet, Guest } from '../../types/pet'
@@ -6,7 +6,6 @@ import type { ItemFamily, LevelVariant } from '../../types/item'
 import {
   getDisplayFamilyName,
   getFamilyCardDescription,
-  getLevelVariantLabels,
   hasSameLevelVariants,
   hasTitleDrivenVariantNames,
   isSingleVariant,
@@ -69,7 +68,7 @@ function buildCardPet(item: Pet | ItemFamily): Pet {
     dcRequired: item.hasDC,
     dmRequired: item.hasDM,
     elements: item.elements,
-    traits: [],
+    traits: item.traits ?? [],
     level: item.levelRange,
     damage: firstLevel?.damage ?? 'Unknown',
     stats: firstLevel?.stats ?? 'None',
@@ -105,7 +104,7 @@ function buildCardPet(item: Pet | ItemFamily): Pet {
         }
       : {}),
     forumUrl: item.forumUrl,
-    sourceLinks: item.sourceLinks,
+    sourceLinks: item.familySources,
     notes: firstLevel?.notes ?? item.shared.notes,
     alsoSee:
       item.shared.alsoSee?.map((ref) => ({
@@ -119,6 +118,12 @@ function buildCardPet(item: Pet | ItemFamily): Pet {
 
 function PetImage({ src, name }: { src: string; name: string }) {
   const [broken, setBroken] = useState(false)
+  // Reset the broken state whenever the source changes, otherwise a previously
+  // failed image keeps showing "Image unavailable" even after switching to a
+  // valid src (e.g. variant/alt switch, or a hot-reloaded dataset).
+  useEffect(() => {
+    setBroken(false)
+  }, [src])
   if (broken) {
     return (
       <div className="w-full max-w-xs mx-auto aspect-square bg-bg-elevated border border-border-default rounded-xl flex flex-col items-center justify-center gap-2 text-text-muted">
@@ -238,10 +243,6 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
 
   const activeLevel = isMultiVariant && family ? displayLevels[activeIndex] : undefined
 
-  useEffect(() => {
-    setActiveImageIndex(0)
-  }, [activeIndex])
-
   // Use shared data if available, otherwise fall back to Pet data
   const displayData = useMemo(
     () =>
@@ -252,7 +253,9 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
               : (activeLevel?.description ?? family.shared.description),
             imageUrl:
               family.type === 'guest'
-                ? (activeLevel?.imageUrl ?? inferGuestVariantImageUrl(activeLevel) ?? family.shared.imageUrl)
+                ? (activeLevel?.imageUrl ??
+                  family.shared.imageUrl ??
+                  inferGuestVariantImageUrl(activeLevel))
                 : (activeLevel?.imageUrl ?? family.shared.imageUrl),
             alternativeImages:
               family.type === 'guest'
@@ -282,6 +285,18 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
           },
     [activeLevel, family, isDragonFamily, pet]
   )
+  // Element/trait pills on the detail header are scoped to the selected variant.
+  // Elements come from the active variant's element; traits come from the active
+  // variant's own traits when known (falling back to the family union only when a
+  // variant doesn't carry its own — e.g. same-thread families without per-variant
+  // markers). Single (non-family) entries use their own values.
+  const displayElements = family
+    ? displayData.element
+      ? [displayData.element]
+      : family.elements
+    : pet.elements
+  const displayTraits = family ? (activeLevel?.traits ?? family.traits ?? []) : pet.traits
+
   const displayAccess = family
     ? {
         daRequired: family.hasDA,
@@ -310,48 +325,22 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
     })
   }, [displayData.alternativeImages, displayData.imageUrl, displayFamilyName, pet.name])
 
+  // The image selector is independent from the level/variant selector for pets
+  // and guests: switching variants must not move the image. We only reset the
+  // image to the first one when navigating to a different entry, and clamp the
+  // index if the available image set shrinks. (Weapons intentionally link the two
+  // selectors under their own conditions; pets/guests do not.)
+  const entryKey = family?.slug ?? pet.slug
+  const initializedImageEntryKey = useRef<string | undefined>(undefined)
+
   useEffect(() => {
-    if (allImages.length <= 1) {
+    if (initializedImageEntryKey.current !== entryKey) {
+      initializedImageEntryKey.current = entryKey
       setActiveImageIndex(0)
       return
     }
-
-    const levelLabel = activeLevel?.name ?? ''
-    const normalizedLevelName = levelLabel.replace(/\s+\((?:dc|d-coins?)\)$/i, '').trim()
-    const isBaseFamilyVariant = Boolean(rawFamilyName && normalizedLevelName === rawFamilyName)
-
-    if (isBaseFamilyVariant) {
-      setActiveImageIndex(0)
-      return
-    }
-
-    const variantSelectorLabel =
-      activeLevel && rawFamilyName && family
-        ? getLevelVariantLabels(displayLevels, rawFamilyName, family.type)[activeIndex]
-        : undefined
-    const variantHint =
-      variantSelectorLabel?.replace(/\s*\([^)]*\)\s*$/, '').trim() ||
-      (rawFamilyName
-        ? levelLabel
-            .replace(rawFamilyName, '')
-            .replace(/\(dc\)/i, '')
-            .trim()
-        : levelLabel.replace(/\(dc\)/i, '').trim())
-    const matchingAltIndex = allImages.findIndex(
-      (image, index) =>
-        index > 0 &&
-        ((variantHint && image.caption.toLowerCase().includes(variantHint.toLowerCase())) ||
-          (levelLabel &&
-            image.caption.toLowerCase().includes(
-              levelLabel
-                .toLowerCase()
-                .replace(/\(dc\)/i, '')
-                .trim()
-            )))
-    )
-
-    setActiveImageIndex(matchingAltIndex >= 0 ? matchingAltIndex : 0)
-  }, [activeIndex, activeLevel, allImages, displayLevels, family, rawFamilyName])
+    setActiveImageIndex((current) => (current < allImages.length ? current : 0))
+  }, [entryKey, allImages])
 
   // Currently displayed image
   const currentImage = allImages[activeImageIndex]
@@ -470,12 +459,14 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
     <main className="px-4 sm:px-6 py-6 max-w-3xl mx-auto">
       {/* Header */}
       <div className="mb-6">
-        {/* Meta pills */}
+        {/* Meta pills — scoped to the selected variant on families, so the
+            (Base) variant shows only its own element/traits while other variants
+            show their additional ones. The card gallery still shows the family union. */}
         <div className="flex items-center gap-2 flex-wrap mb-3">
-          {pet.elements.map((code) => (
+          {displayElements.map((code) => (
             <ElementPill key={code} code={code} size="md" clickable filterBase="/pets" />
           ))}
-          {pet.traits.map((code) => (
+          {displayTraits.map((code) => (
             <ElementPill key={code} code={code} size="md" />
           ))}
           <AccessPills

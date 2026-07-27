@@ -50,6 +50,17 @@ export class RetryableHttpError extends Error {
 }
 
 /**
+ * Detect the forum's signature for a post that no longer exists. Deleted or
+ * moved threads make `printable.asp` / `fb.asp` return a hard HTTP 500 (rather
+ * than a friendly "deleted or moved" page), which would otherwise abort a whole
+ * scrape run. Scrapers use this to skip the dead post and keep going.
+ */
+export function isPostUnavailableError(error: unknown): boolean {
+  const message = error instanceof Error ? error.message : String(error)
+  return /^HTTP 500:/i.test(message)
+}
+
+/**
  * Parse an HTTP `Retry-After` header, which is either a number of seconds or an
  * HTTP date. Returns milliseconds, or undefined when absent/unparseable.
  */

@@ -76,7 +76,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "If the  Abyssal Heart VI scythe is equipped or shown, clicking on the heart of the top of the weapon will change between this cape's two appearances when equipped or shown.\nCape is animated between transitions; water also flows continuously through the underside of the cape's transformed appearance.",
+    "notes": "If the Abyssal Heart VI scythe is equipped or shown, clicking on the heart of the top of the weapon will change between this cape's two appearances when equipped or shown.\nCape is animated between transitions; water also flows continuously through the underside of the cape's transformed appearance.",
     "tags": [
       "evi",
       "dc"
@@ -95,7 +95,9 @@
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22424133",
     "releaseDate": "",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/Acatriel'sCloak.png",
-    "elements": [],
+    "elements": [
+      "???"
+    ],
     "level": "1",
     "stats": "None",
     "resists": "None",
@@ -115,6 +117,7 @@
       }
     ],
     "tags": [
+      "???",
       "merge"
     ],
     "daRequired": false,
@@ -236,11 +239,13 @@
     "slug": "accessory-the-adventurefiend-s-tail",
     "type": "accessory",
     "subtype": "cape-wing",
-    "description": "A replica of the vicious tail of The AdventureFiend! \n  \n (Cosmetic)",
+    "description": "A replica of the vicious tail of The AdventureFiend!\n\n (Cosmetic)",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22396564",
     "releaseDate": "",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/TheAdventureFiend'sTail.png",
-    "elements": [],
+    "elements": [
+      "???"
+    ],
     "level": "1",
     "stats": "None",
     "resists": "None",
@@ -260,6 +265,7 @@
       }
     ],
     "tags": [
+      "???",
       "merge"
     ],
     "daRequired": false,
@@ -380,7 +386,7 @@
         "element": "NAT",
         "resists": "Darkness +4, Nature +4",
         "rarity": "10",
-        "notes": "Level's requirement was reduced from 25 to 15 on  November 28th, 2025."
+        "notes": "Level's requirement was reduced from 25 to 15 on November 28th, 2025."
       },
       {
         "levelNumber": 45,
@@ -405,7 +411,7 @@
         "element": "NAT",
         "resists": "Darkness +6, Nature +6",
         "rarity": "10",
-        "notes": "Dodge +1 and Parry +1 stats were added to this cape on  November 28th, 2025."
+        "notes": "Dodge +1 and Parry +1 stats were added to this cape on November 28th, 2025."
       },
       {
         "levelNumber": 65,
@@ -430,7 +436,7 @@
         "element": "NAT",
         "resists": "Darkness +8, Nature +8, Immobility +2, All +1",
         "rarity": "10",
-        "notes": "Parry +1 stat was added to this cape on  November 28th, 2025."
+        "notes": "Parry +1 stat was added to this cape on November 28th, 2025."
       },
       {
         "levelNumber": 75,
@@ -455,7 +461,7 @@
         "element": "NAT",
         "resists": "Darkness +10, Nature +10, Immobility +4, All +2",
         "rarity": "10",
-        "notes": "Parry +2 stat was added to this cape on  November 28th, 2025."
+        "notes": "Parry +2 stat was added to this cape on November 28th, 2025."
       },
       {
         "levelNumber": 85,
@@ -510,7 +516,9 @@
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22405937",
     "releaseDate": "",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/Alaria.png",
-    "elements": [],
+    "elements": [
+      "???"
+    ],
     "level": "1",
     "stats": "None",
     "resists": "None",
@@ -530,6 +538,7 @@
       }
     ],
     "tags": [
+      "???",
       "merge"
     ],
     "daRequired": false,
@@ -772,8 +781,8 @@
         "obtainVariants": [
           {
             "location": "Cinco de Mayo 2010",
-            "priceType": "free",
             "price": "0 Gold",
+            "priceType": "free",
             "sellback": "0 Gold",
             "daRequired": false
           }
@@ -830,7 +839,7 @@
         "daRequired": true
       }
     ],
-    "notes": "Item was previously named 'Deathknight Cloak'; this was changed on  August 25th, 2023.",
+    "notes": "Item was previously named 'Deathknight Cloak'; this was changed on August 25th, 2023.",
     "tags": [
       "dar",
       "free"
@@ -910,6 +919,7 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21748471",
         "description": "It is said that ancient soldiers used these wings to sail on the wild winds of the Void Core.",
+        "element": "???",
         "resists": "Darkness +3, Energy +3",
         "rarity": "5"
       },
@@ -934,6 +944,7 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21748472",
         "description": "It is said that ancient soldiers used these wings to sail on the wild winds of the Void Core.",
+        "element": "???",
         "resists": "Darkness +5, Energy +5",
         "rarity": "20"
       },
@@ -958,6 +969,7 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21748475",
         "description": "It is said that ancient soldiers used these wings to sail on the wild winds of the Void Core.",
+        "element": "???",
         "resists": "Darkness +7, Energy +7",
         "rarity": "9"
       },
@@ -982,6 +994,7 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21748477",
         "description": "It is said that ancient soldiers used these wings to sail on the wild winds of the Void Core.",
+        "element": "???",
         "resists": "Darkness +9, Energy +9, Immobility +4, Health -2",
         "rarity": "10"
       },
@@ -1006,6 +1019,7 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21748480",
         "description": "It is said that ancient soldiers used these wings to sail on the wild winds of the Void Core.",
+        "element": "???",
         "resists": "Darkness +10, Energy +10, Immobility +4, Health -3",
         "rarity": "10"
       }
@@ -1015,6 +1029,7 @@
     "category": "Armor",
     "releaseDate": "",
     "tags": [
+      "???",
       "merge"
     ],
     "hasDA": false,
@@ -1023,177 +1038,8 @@
     "hasFree": false,
     "hasMerge": true,
     "levelRange": "I-V",
-    "elements": []
-  },
-  {
-    "id": "accessory-aphotic-raven-s-wing",
-    "familyName": "Aphotic Raven's Wing",
-    "slug": "accessory-aphotic-raven-s-wing",
-    "aliasSlugs": [
-      "accessory-cimmerian-raven-s-wing",
-      "accessory-dark-raven-s-wing",
-      "accessory-dusk-raven-s-wing"
-    ],
-    "type": "accessory",
-    "subtype": "cape-wing",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21084625",
-    "familyOrigin": "cross-post",
-    "familySources": [
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21084625",
-        "title": "DF Encyclopedia: Aphotic Raven's Wing",
-        "variantLabel": "Aphotic Raven's Wing",
-        "isPrimary": true
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21084528",
-        "title": "DF Encyclopedia: Cimmerian Raven's Wing",
-        "variantLabel": "Cimmerian Raven's Wing",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21084542",
-        "title": "DF Encyclopedia: Dark Raven's Wing",
-        "variantLabel": "Dark Raven's Wing",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21084551",
-        "title": "DF Encyclopedia: Dusk Raven's Wing",
-        "variantLabel": "Dusk Raven's Wing",
-        "isPrimary": false
-      }
-    ],
-    "shared": {
-      "description": "As two titans meet for a battle 47 years in the making... which side will you cheer on?",
-      "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/RavensWingspic.png",
-      "alsoSee": [
-        {
-          "name": "Pitch Raven's Wing",
-          "slug": "accessory-midnight-raven-s-wing",
-          "type": "accessory",
-          "url": "https://forums2.battleon.com/f/tm.asp?m=21084519"
-        }
-      ]
-    },
-    "levelVariants": [
-      {
-        "levelNumber": 1,
-        "levelDisplay": "21",
-        "actualLevel": 21,
-        "variantName": "(Base)",
-        "name": "Aphotic Raven's Wing",
-        "damage": "",
-        "stats": "Dodge +1, Crit +1, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +3, END +3, CHA +2, LUK +2, Bonus +1",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21084625",
-        "description": "As two titans meet for a battle 47 years in the making... which side will you cheer on?",
-        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/RavensWingspic.png",
-        "obtainVariants": [
-          {
-            "location": "SB Shop, Strange Ball Shop",
-            "price": "80 Dragon Coins",
-            "priceType": "dc",
-            "sellback": "72 DC (<24 hours) / 20 DC (>24 hours)",
-            "daRequired": false,
-            "dcRequired": true
-          }
-        ],
-        "element": "DAR",
-        "resists": "Light +3, Immobility +1",
-        "rarity": "7"
-      },
-      {
-        "levelNumber": 2,
-        "levelDisplay": "51",
-        "actualLevel": 51,
-        "variantName": "Dusk",
-        "name": "Dusk Raven's Wing",
-        "damage": "",
-        "stats": "Dodge +1, Crit +4, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +6, END +6, CHA +4, LUK +5, INT +2, DEX +2, STR +2, Bonus +5",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21084551",
-        "description": "As two titans meet for a battle 47 years in the making... which side will you cheer on?",
-        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/RavensWingspic.png",
-        "obtainVariants": [
-          {
-            "location": "SB Shop, Strange Ball Shop",
-            "price": "120 Dragon Coins",
-            "priceType": "dc",
-            "sellback": "108 DC (<24 hours) / 30 DC (>24 hours)",
-            "daRequired": false,
-            "dcRequired": true
-          }
-        ],
-        "element": "DAR",
-        "resists": "Light +6, Immobility +2",
-        "rarity": "9"
-      },
-      {
-        "levelNumber": 3,
-        "levelDisplay": "61",
-        "actualLevel": 61,
-        "variantName": "Dark",
-        "name": "Dark Raven's Wing",
-        "damage": "",
-        "stats": "Dodge +1, Crit +5, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +7, END +7, CHA +5, LUK +6, INT +4, DEX +4, STR +4, Bonus +6",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21084542",
-        "description": "As two titans meet for a battle 47 years in the making... which side will you cheer on?",
-        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/RavensWingspic.png",
-        "obtainVariants": [
-          {
-            "location": "SB Shop, Strange Ball Shop",
-            "price": "140 Dragon Coins",
-            "priceType": "dc",
-            "sellback": "126 DC (<24 hours) / 35 DC (>24 hours)",
-            "daRequired": false,
-            "dcRequired": true
-          }
-        ],
-        "element": "DAR",
-        "resists": "Light +7, Immobility +3",
-        "rarity": "9"
-      },
-      {
-        "levelNumber": 4,
-        "levelDisplay": "71",
-        "actualLevel": 71,
-        "variantName": "Cimmerian",
-        "name": "Cimmerian Raven's Wing",
-        "damage": "",
-        "stats": "Block +1, Dodge +1, Crit +6, Magic Def +7, Pierce Def +7, Melee Def +7, WIS +8, END +8, CHA +6, LUK +7, INT +5, DEX +5, STR +5, Bonus +8",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21084528",
-        "description": "As two titans meet for a battle 47 years in the making... which side will you cheer on?",
-        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/RavensWingspic.png",
-        "obtainVariants": [
-          {
-            "location": "SB Shop, Strange Ball Shop",
-            "price": "160 Dragon Coins",
-            "priceType": "dc",
-            "sellback": "144 DC (<24 hours) / 40 DC (>24 hours)",
-            "daRequired": false,
-            "dcRequired": true
-          }
-        ],
-        "element": "DAR",
-        "resists": "Light +8, Immobility +3",
-        "rarity": "10"
-      }
-    ],
-    "itemType": "Cape",
-    "equipSlot": "Back",
-    "category": "Armor",
-    "tags": [
-      "dar",
-      "dc"
-    ],
-    "isSeasonal": true,
-    "hasDA": false,
-    "hasDC": true,
-    "hasDM": false,
-    "hasFree": false,
-    "hasMerge": false,
-    "levelRange": "21-71",
     "elements": [
-      "DAR"
+      "???"
     ]
   },
   {
@@ -2955,7 +2801,9 @@
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22402628",
     "releaseDate": "",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/AtealanProvidence.png",
-    "elements": [],
+    "elements": [
+      "???"
+    ],
     "level": "1",
     "stats": "None",
     "resists": "None",
@@ -2975,6 +2823,7 @@
     ],
     "notes": "Cape is animated; the runed scarves move continuously, while the runic circles and barrier protecting the shining Trithril rotate continuously, and the barrier expands and shrinks periodically.",
     "tags": [
+      "???",
       "dc"
     ],
     "daRequired": false,
@@ -3026,7 +2875,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "Cape is animated; dark green flames continuously, while bright green loops and sparkles appear periodically, and the runic circles and barrier protecting the shining Trithril rotate continuously,",
+    "notes": "Cape is animated; dark green flames continuously, while bright green loops and sparkles appear periodically, and the runic circles and barrier protecting the shining Trithril rotate continuously",
     "tags": [
       "met",
       "dc"
@@ -3765,7 +3614,7 @@
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=20132178",
-        "description": "These architectural wings were sculpted from paraginium.  This item requires a Dragon Amulet.",
+        "description": "These architectural wings were sculpted from paraginium. This item requires a Dragon Amulet.",
         "element": "DAR",
         "resists": "Darkness +14, Light +14, Silver +14, Immobility +10",
         "rarity": "25"
@@ -6181,7 +6030,7 @@
       "resists": "Light +5",
       "imageUrl": "https://i.imgur.com/DLW7Xv2.jpg",
       "rarity": "0",
-      "notes": "Transformed from  Curious Locked Chest (Normal) on  March 17th, 2008."
+      "notes": "Transformed from Curious Locked Chest (Normal) on March 17th, 2008."
     },
     "levelVariants": [
       {
@@ -6271,6 +6120,11 @@
     "rarity": "5",
     "itemType": "Cape",
     "equipSpot": "Back",
+    "armorCustomization": {
+      "appearance": "Bound",
+      "modifies": "Necromancer"
+    },
+    "hasArmorCustomization": true,
     "category": "Armor",
     "obtainMethods": [
       {
@@ -6282,7 +6136,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "Cape is animated; the coffin and runes float continuously, the runic circle rotates continuously, and the coffin opens and closes periodically.\nOwn this item to unlock the Bound  Armor Customization options for the  Necromancer class.",
+    "notes": "Cape is animated; the coffin and runes float continuously, the runic circle rotates continuously, and the coffin opens and closes periodically.\nOwn this item to unlock the Bound Armor Customization options for the Necromancer class.",
     "tags": [
       "dar",
       "dc"
@@ -6483,283 +6337,6 @@
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-IV",
-    "elements": [
-      "LIG"
-    ]
-  },
-  {
-    "id": "accessory-blooming-oleander-cape",
-    "familyName": "Budding Oleander Cape",
-    "slug": "accessory-blooming-oleander-cape",
-    "aliasSlugs": [
-      "accessory-blossoming-oleander-cape",
-      "accessory-budding-oleander-cape"
-    ],
-    "type": "accessory",
-    "subtype": "cape-wing",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20316514",
-    "familyOrigin": "cross-post",
-    "familySources": [
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20316514",
-        "title": "DF Encyclopedia: Blooming Oleander Cape",
-        "variantLabel": "Blooming Oleander Cape",
-        "isPrimary": true
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20316506",
-        "title": "DF Encyclopedia: Blossoming Oleander Cape",
-        "variantLabel": "Blossoming Oleander Cape",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20316531",
-        "title": "DF Encyclopedia: Budding Oleander Cape",
-        "variantLabel": "Budding Oleander Cape",
-        "isPrimary": false
-      }
-    ],
-    "shared": {
-      "description": "A beautiful cape for Mother's Day! Happy Mother's Day!",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/OleanderCape.png",
-      "rarity": "10",
-      "notes": "Cape's description previously specified Happy Mother's Day 2012!; this was removed alongside its 2015 re-release.",
-      "alsoSee": [
-        {
-          "name": "Flowering Oleander Cape",
-          "slug": "accessory-flourishing-oleander-cape",
-          "type": "accessory",
-          "url": "https://forums2.battleon.com/f/tm.asp?m=20316494"
-        }
-      ]
-    },
-    "levelVariants": [
-      {
-        "levelNumber": 1,
-        "levelDisplay": "12",
-        "actualLevel": 12,
-        "variantName": "(Base)",
-        "name": "Budding Oleander Cape",
-        "damage": "",
-        "stats": "Crit +1, Magic Def +1, Pierce Def +1, Melee Def +1, CHA +1, INT +1, DEX +1, STR +1, Bonus +1",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20316531",
-        "description": "A beautiful cape for Mother's Day! Happy Mother's Day!",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/OleanderCape.png",
-        "obtainVariants": [
-          {
-            "location": "Mother's Day 2012, Mother's Day (Shop)",
-            "price": "0 Gold",
-            "priceType": "free",
-            "sellback": "0 Gold",
-            "daRequired": false
-          }
-        ],
-        "element": "LIG",
-        "resists": "Light +1, Nature +1",
-        "rarity": "10"
-      },
-      {
-        "levelNumber": 2,
-        "levelDisplay": "32",
-        "actualLevel": 32,
-        "variantName": "Blooming",
-        "name": "Blooming Oleander Cape",
-        "damage": "",
-        "stats": "Crit +3, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +4, CHA +4, INT +3, DEX +3, STR +3, Bonus +3",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20316514",
-        "description": "A beautiful cape for Mother's Day! Happy Mother's Day!",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/OleanderCape.png",
-        "obtainVariants": [
-          {
-            "location": "Mother's Day 2012, Mother's Day (Shop)",
-            "price": "0 Gold",
-            "priceType": "free",
-            "sellback": "0 Gold",
-            "daRequired": false
-          }
-        ],
-        "element": "LIG",
-        "resists": "Light +5, Nature +5",
-        "rarity": "10"
-      },
-      {
-        "levelNumber": 3,
-        "levelDisplay": "42",
-        "actualLevel": 42,
-        "variantName": "Blossoming",
-        "name": "Blossoming Oleander Cape",
-        "damage": "",
-        "stats": "Crit +4, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +5, CHA +5, INT +3, DEX +3, STR +3, Bonus +3",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20316506",
-        "description": "A beautiful cape for Mother's Day! Happy Mother's Day!",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/OleanderCape.png",
-        "obtainVariants": [
-          {
-            "location": "Mother's Day 2012, Mother's Day (Shop)",
-            "price": "0 Gold",
-            "priceType": "free",
-            "sellback": "0 Gold",
-            "daRequired": false
-          }
-        ],
-        "element": "LIG",
-        "resists": "Light +6, Nature +6",
-        "rarity": "10",
-        "notes": "Item's Light Resist erroneously has a space preceding its value; resistance still functions as intended."
-      }
-    ],
-    "itemType": "Cape",
-    "equipSlot": "Back",
-    "category": "Armor",
-    "tags": [
-      "free",
-      "lig"
-    ],
-    "isRare": true,
-    "hasDA": false,
-    "hasDC": false,
-    "hasDM": false,
-    "hasFree": true,
-    "hasMerge": false,
-    "levelRange": "12-42",
-    "elements": [
-      "LIG"
-    ]
-  },
-  {
-    "id": "accessory-blooming-sakura-wrap",
-    "familyName": "Budding Sakura Wrap",
-    "slug": "accessory-blooming-sakura-wrap",
-    "aliasSlugs": [
-      "accessory-blossoming-sakura-wrap",
-      "accessory-budding-sakura-wrap"
-    ],
-    "type": "accessory",
-    "subtype": "cape-wing",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18962225",
-    "familyOrigin": "cross-post",
-    "familySources": [
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=18962225",
-        "title": "DF Encyclopedia: Blooming Sakura Wrap",
-        "variantLabel": "Blooming Sakura Wrap",
-        "isPrimary": true
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=18962227",
-        "title": "DF Encyclopedia: Blossoming Sakura Wrap",
-        "variantLabel": "Blossoming Sakura Wrap",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=18962223",
-        "title": "DF Encyclopedia: Budding Sakura Wrap",
-        "variantLabel": "Budding Sakura Wrap",
-        "isPrimary": false
-      }
-    ],
-    "shared": {
-      "description": "A beautiful wrap for Mother's Day! Happy Mother's Day!",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/SakuraWrap.png",
-      "notes": "Cape's description previously specified Happy Mother's Day, 2011!; this was removed alongside its 2015 re-release.",
-      "alsoSee": [
-        {
-          "name": "Flowering Sakura Wrap",
-          "slug": "accessory-flourishing-sakura-wrap",
-          "type": "accessory",
-          "url": "https://forums2.battleon.com/f/tm.asp?m=18960073"
-        }
-      ]
-    },
-    "levelVariants": [
-      {
-        "levelNumber": 1,
-        "levelDisplay": "12",
-        "actualLevel": 12,
-        "variantName": "(Base)",
-        "name": "Budding Sakura Wrap",
-        "damage": "",
-        "stats": "Crit +1, Magic Def +1, Pierce Def +1, Melee Def +1, CHA +1, INT +1, DEX +1, STR +1, Bonus +1",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=18962223",
-        "description": "A beautiful wrap for Mother's Day! Happy Mother's Day!",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/SakuraWrap.png",
-        "obtainVariants": [
-          {
-            "location": "Mother's Day 2011, Mother's Day (Shop)",
-            "price": "0 Gold",
-            "priceType": "free",
-            "sellback": "0 Gold",
-            "daRequired": false
-          }
-        ],
-        "element": "LIG",
-        "resists": "Light +1, Nature +1",
-        "rarity": "9"
-      },
-      {
-        "levelNumber": 2,
-        "levelDisplay": "32",
-        "actualLevel": 32,
-        "variantName": "Blooming",
-        "name": "Blooming Sakura Wrap",
-        "damage": "",
-        "stats": "Crit +3, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +4, CHA +4, INT +3, DEX +3, STR +3, Bonus +3",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=18962225",
-        "description": "A beautiful wrap for Mother's Day! Happy Mother's Day!",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/SakuraWrap.png",
-        "obtainVariants": [
-          {
-            "location": "Mother's Day 2011, Mother's Day (Shop)",
-            "price": "0 Gold",
-            "priceType": "free",
-            "sellback": "0 Gold",
-            "daRequired": false
-          }
-        ],
-        "element": "LIG",
-        "resists": "Light +5, Nature +5",
-        "rarity": "5"
-      },
-      {
-        "levelNumber": 3,
-        "levelDisplay": "42",
-        "actualLevel": 42,
-        "variantName": "Blossoming",
-        "name": "Blossoming Sakura Wrap",
-        "damage": "",
-        "stats": "Crit +4, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +5, CHA +5, INT +3, DEX +3, STR +3, Bonus +3",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=18962227",
-        "description": "A beautiful wrap for Mother's Day! Happy Mother's Day!",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/SakuraWrap.png",
-        "obtainVariants": [
-          {
-            "location": "Mother's Day 2011, Mother's Day (Shop)",
-            "price": "0 Gold",
-            "priceType": "free",
-            "sellback": "0 Gold",
-            "daRequired": false
-          }
-        ],
-        "element": "LIG",
-        "resists": "Light +6, Nature +6",
-        "rarity": "15",
-        "notes": "Item's Light Resist erroneously has a space preceding its value; resistance still functions as intended."
-      }
-    ],
-    "itemType": "Cape",
-    "equipSlot": "Back",
-    "category": "Armor",
-    "tags": [
-      "free",
-      "lig"
-    ],
-    "isRare": true,
-    "hasDA": false,
-    "hasDC": false,
-    "hasDM": false,
-    "hasFree": true,
-    "hasMerge": false,
-    "levelRange": "12-42",
     "elements": [
       "LIG"
     ]
@@ -7256,7 +6833,9 @@
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22405952",
     "releaseDate": "",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/CapeofChaosLordAlteon.png",
-    "elements": [],
+    "elements": [
+      "???"
+    ],
     "level": "1",
     "stats": "None",
     "resists": "None",
@@ -7276,6 +6855,7 @@
       }
     ],
     "tags": [
+      "???",
       "merge"
     ],
     "daRequired": false,
@@ -7334,7 +6914,9 @@
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22405953",
     "releaseDate": "",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/CapeofLionfang.png",
-    "elements": [],
+    "elements": [
+      "???"
+    ],
     "level": "1",
     "stats": "None",
     "resists": "None",
@@ -7354,6 +6936,7 @@
       }
     ],
     "tags": [
+      "???",
       "merge"
     ],
     "daRequired": false,
@@ -7439,7 +7022,7 @@
         "daRequired": true
       }
     ],
-    "notes": "The following changes were implemented on  March 28th, 2025:\n  • Previously had the description: This item requires a Dragon Amulet. This cape made of fine chain links provides super protection in battle.\n  • Magic Def, Pierce Def, and Melee Def stats were updated from +1 (for Magic Def and Pierce Def) and +3 (for Melee Def) to +4 respectively.\n  • WIS +1, END +1, and LUK +1 stats were added.",
+    "notes": "The following changes were implemented on March 28th, 2025:\n  • Previously had the description: This item requires a Dragon Amulet. This cape made of fine chain links provides super protection in battle.\n  • Magic Def, Pierce Def, and Melee Def stats were updated from +1 (for Magic Def and Pierce Def) and +3 (for Melee Def) to +4 respectively.\n  • WIS +1, END +1, and LUK +1 stats were added.",
     "tags": [
       "non",
       "merge"
@@ -7502,7 +7085,9 @@
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22424135",
     "releaseDate": "",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/ChainsofDeimos.png",
-    "elements": [],
+    "elements": [
+      "???"
+    ],
     "level": "1",
     "stats": "None",
     "resists": "None",
@@ -7522,6 +7107,7 @@
       }
     ],
     "tags": [
+      "???",
       "merge"
     ],
     "daRequired": false,
@@ -7574,6 +7160,140 @@
     "daRequired": false,
     "dcRequired": true,
     "isCosmetic": true
+  },
+  {
+    "id": "accessory-chanco-cloak",
+    "familyName": "Chanco Cloak",
+    "slug": "accessory-chanco-cloak",
+    "aliasSlugs": [
+      "accessory-cheddar-cloak",
+      "accessory-colony-cloak"
+    ],
+    "type": "accessory",
+    "subtype": "cape-wing",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21529863",
+    "familyOrigin": "cross-post",
+    "familySources": [
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21529863",
+        "title": "DF Encyclopedia: Chanco Cloak",
+        "isPrimary": true
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21529868",
+        "title": "DF Encyclopedia: Cheddar Cloak",
+        "variantLabel": "Cheddar Cloak",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21529865",
+        "title": "DF Encyclopedia: Colony Cloak",
+        "variantLabel": "Colony Cloak",
+        "isPrimary": false
+      }
+    ],
+    "shared": {
+      "description": "It's gouda for you!",
+      "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/ChancoCloakpic.png",
+      "alsoSee": [
+        {
+          "name": "Roumy Cloak",
+          "slug": "accessory-roumy-cloak",
+          "type": "accessory",
+          "url": "https://forums2.battleon.com/f/tm.asp?m=21529869"
+        }
+      ]
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
+        "levelDisplay": "31",
+        "actualLevel": 31,
+        "variantName": "(Base)",
+        "name": "Chanco Cloak",
+        "damage": "",
+        "stats": "Magic Def +2, Pierce Def +2, Melee Def +2, WIS +3, END +3, CHA +2, LUK +3, Bonus +2",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21529863",
+        "description": "It's gouda for you!",
+        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/ChancoCloakpic.png",
+        "obtainVariants": [
+          {
+            "location": "Cheese Shop",
+            "price": "3,000 Gold",
+            "priceType": "gold",
+            "sellback": "300 Gold",
+            "daRequired": false
+          }
+        ],
+        "element": "GOO",
+        "resists": "Energy +4, Water +1",
+        "rarity": "5"
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "41",
+        "actualLevel": 41,
+        "variantName": "Colony Cloak",
+        "name": "Colony Cloak",
+        "damage": "",
+        "stats": "Crit +1, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +3, END +3, CHA +2, LUK +3, INT +1, DEX +1, STR +1, Bonus +4",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21529865",
+        "description": "It's gouda for you!",
+        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/ChancoCloakpic.png",
+        "obtainVariants": [
+          {
+            "location": "Cheese Shop",
+            "price": "5,000 Gold",
+            "priceType": "gold",
+            "sellback": "500 Gold",
+            "daRequired": false
+          }
+        ],
+        "element": "GOO",
+        "resists": "Energy +5, Water +3",
+        "rarity": "25"
+      },
+      {
+        "levelNumber": 3,
+        "levelDisplay": "61",
+        "actualLevel": 61,
+        "variantName": "Cheddar Cloak",
+        "name": "Cheddar Cloak",
+        "damage": "",
+        "stats": "Dodge +1, Crit +3, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +6, END +6, CHA +5, LUK +6, INT +3, DEX +3, STR +3, Bonus +6",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21529868",
+        "description": "It's gouda for you!",
+        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/ChancoCloakpic.png",
+        "obtainVariants": [
+          {
+            "location": "Cheese Shop",
+            "price": "12,000 Gold",
+            "priceType": "gold",
+            "sellback": "1,200 Gold",
+            "daRequired": false
+          }
+        ],
+        "element": "GOO",
+        "resists": "Energy +9, Water +5",
+        "rarity": "9"
+      }
+    ],
+    "itemType": "Cape",
+    "equipSlot": "Back",
+    "category": "Armor",
+    "tags": [
+      "gold",
+      "goo"
+    ],
+    "hasDA": false,
+    "hasDC": false,
+    "hasDM": false,
+    "hasFree": false,
+    "hasMerge": false,
+    "levelRange": "31-61",
+    "elements": [
+      "GOO"
+    ]
   },
   {
     "id": "accessory-chaos-champion-s-wings",
@@ -7641,6 +7361,7 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22421609",
         "description": "These wings are imbued with the uncontrollable power of Chaos. Gifted to a certain champion by a mysterious entity, these wings fill you with a desire not your own... Proof of victory over Drakath, Champion of Chaos.",
+        "element": "???",
         "resists": "All +13, Health +13",
         "rarity": "1"
       },
@@ -7665,6 +7386,7 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22421609",
         "description": "These wings are imbued with the uncontrollable power of Chaos. Gifted to a certain champion by a mysterious entity, these wings fill you with a desire not your own... Proof of victory over Drakath, Champion of Chaos.",
+        "element": "???",
         "resists": "All +13, Health +13",
         "rarity": "1"
       },
@@ -7689,6 +7411,7 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22421610",
         "description": "These wings are imbued with the uncontrollable power of Chaos. Gifted to a certain champion by a mysterious entity, these wings fill you with a desire not your own... Proof of victory over Drakath, Champion of Chaos.",
+        "element": "???",
         "resists": "All +13, Health +13",
         "rarity": "1"
       },
@@ -7713,6 +7436,7 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22421611",
         "description": "These wings are imbued with the uncontrollable power of Chaos. Gifted to a certain champion by a mysterious entity, these wings fill you with a desire not your own... Proof of victory over Drakath, Champion of Chaos.",
+        "element": "???",
         "resists": "All +13, Health +13",
         "rarity": "1"
       }
@@ -7722,6 +7446,7 @@
     "category": "Armor",
     "releaseDate": "",
     "tags": [
+      "???",
       "free",
       "merge"
     ],
@@ -7731,7 +7456,9 @@
     "hasFree": true,
     "hasMerge": true,
     "levelRange": "I-III",
-    "elements": []
+    "elements": [
+      "???"
+    ]
   },
   {
     "id": "accessory-chaos-sentry-cape",
@@ -8014,7 +7741,8 @@
     "familySources": [
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=17200968",
-        "title": "DF Encyclopedia: Chaosphoenix Wings",
+        "title": "DF Encyclopedia: ChaosPhoenix Wings",
+        "variantLabel": "ChaosPhoenix Wings",
         "isPrimary": true
       },
       {
@@ -8032,7 +7760,8 @@
     ],
     "shared": {
       "description": "These wings come from a bird which only rises out of Chaos! Can you imagine what it feeds its nestlings?!",
-      "rarity": "15"
+      "rarity": "15",
+      "notes": "ChaosPhoenix Wings and Mighty ChaosPhoenix Wings are smaller in size than the Grand ChaosPhoenix Wings."
     },
     "levelVariants": [
       {
@@ -8049,8 +7778,8 @@
         "obtainVariants": [
           {
             "location": "Helms and Capes",
-            "priceType": "dc",
             "price": "150 Dragon Coins",
+            "priceType": "dc",
             "sellback": "135 DC (<24 hours) / 38 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
@@ -8074,8 +7803,8 @@
         "obtainVariants": [
           {
             "location": "Helms and Capes",
-            "priceType": "dc",
             "price": "200 Dragon Coins",
+            "priceType": "dc",
             "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
@@ -8083,8 +7812,7 @@
         ],
         "element": "NON",
         "resists": "Immobility +7, Poison +7",
-        "rarity": "15",
-        "notes": "ChaosPhoenix Wings and Mighty ChaosPhoenix Wings are smaller in size than the Grand ChaosPhoenix Wings."
+        "rarity": "15"
       },
       {
         "levelNumber": 3,
@@ -8110,32 +7838,6 @@
         "element": "NON",
         "resists": "Immobility +9, Poison +9",
         "rarity": "15"
-      },
-      {
-        "levelNumber": 4,
-        "levelDisplay": "50",
-        "actualLevel": 50,
-        "variantName": "Grand",
-        "name": "Grand ChaosPhoenix Wings",
-        "damage": "",
-        "stats": "Crit +4, Magic Def +3, Pierce Def +3, Melee Def +3, END +6, LUK +6, Bonus +3",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=19123276",
-        "description": "These wings come from a bird which only rises out of Chaos! Can you imagine what it feeds its nestlings?!",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/GrandChaosPhoenixWings.png",
-        "obtainVariants": [
-          {
-            "location": "Helms and Capes",
-            "priceType": "dc",
-            "price": "250 Dragon Coins",
-            "sellback": "225 DC (<24 hours) / 63 DC (>24 hours)",
-            "daRequired": false,
-            "dcRequired": true
-          }
-        ],
-        "element": "NON",
-        "resists": "Immobility +9, Poison +9",
-        "rarity": "15",
-        "notes": "ChaosPhoenix Wings and Mighty ChaosPhoenix Wings are smaller in size than the Grand ChaosPhoenix Wings."
       }
     ],
     "itemType": "Wings",
@@ -8295,7 +7997,9 @@
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22412925",
     "releaseDate": "",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/ChaoticCloak.png",
-    "elements": [],
+    "elements": [
+      "???"
+    ],
     "level": "1",
     "stats": "None",
     "resists": "None",
@@ -8315,6 +8019,7 @@
       }
     ],
     "tags": [
+      "???",
       "merge"
     ],
     "daRequired": false,
@@ -8331,7 +8036,9 @@
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22412928",
     "releaseDate": "",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/ChaoticRobes.png",
-    "elements": [],
+    "elements": [
+      "???"
+    ],
     "level": "1",
     "stats": "None",
     "resists": "None",
@@ -8351,6 +8058,7 @@
       }
     ],
     "tags": [
+      "???",
       "merge"
     ],
     "daRequired": false,
@@ -8367,7 +8075,9 @@
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22412926",
     "releaseDate": "",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/ChaoticShroud.png",
-    "elements": [],
+    "elements": [
+      "???"
+    ],
     "level": "1",
     "stats": "None",
     "resists": "None",
@@ -8387,6 +8097,7 @@
       }
     ],
     "tags": [
+      "???",
       "merge"
     ],
     "daRequired": false,
@@ -8403,7 +8114,9 @@
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22412927",
     "releaseDate": "",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/ChaoticSpine.png",
-    "elements": [],
+    "elements": [
+      "???"
+    ],
     "level": "1",
     "stats": "None",
     "resists": "None",
@@ -8423,6 +8136,7 @@
       }
     ],
     "tags": [
+      "???",
       "merge"
     ],
     "daRequired": false,
@@ -8477,7 +8191,9 @@
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22424136",
     "releaseDate": "",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/ChaoticWingsofDrakath.png",
-    "elements": [],
+    "elements": [
+      "???"
+    ],
     "level": "1",
     "stats": "None",
     "resists": "None",
@@ -8497,6 +8213,7 @@
       }
     ],
     "tags": [
+      "???",
       "merge"
     ],
     "daRequired": false,
@@ -8910,13 +8627,6 @@
     "shared": {
       "description": "This mini Pandora will come along for the ride on your adventures. This is the purified version! Pretty cool! Proof of victory over Pandora's Gauntlet.",
       "resists": "All +5",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/ChibiPandoraP.png",
-      "alternativeImages": [
-        {
-          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/ChibiPandoraC.png",
-          "caption": "Alternative 1"
-        }
-      ],
       "rarity": "1"
     },
     "levelVariants": [
@@ -8997,7 +8707,7 @@
     "slug": "accessory-chibi-patroclus",
     "type": "accessory",
     "subtype": "cape-wing",
-    "description": "Also known as Pat. The shady remnants of a Doom spirit, following you around on your back! Just try to ignore the whispers.  (Cosmetic)",
+    "description": "Also known as Pat. The shady remnants of a Doom spirit, following you around on your back! Just try to ignore the whispers. (Cosmetic)",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22401266",
     "releaseDate": "",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/ChibiPatroclus.png",
@@ -9426,7 +9136,7 @@
         "element": "ICE",
         "resists": "None",
         "rarity": "0",
-        "notes": "Transformed from  Green Present (2015) on  January 1st, 2016."
+        "notes": "Transformed from Green Present (2015) on January 1st, 2016."
       },
       {
         "levelNumber": 10,
@@ -10171,19 +9881,13 @@
     "familyOrigin": "cross-post",
     "familySources": [
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21575801",
-        "title": "DF Encyclopedia: Bubbly Cider Keg",
-        "variantLabel": "Bubbly Cider Keg",
-        "isPrimary": true
-      },
-      {
         "url": "https://forums2.battleon.com/f/tm.asp?m=21584534",
         "title": "DF Encyclopedia: Bubbly Void Cider Keg",
         "variantLabel": "Bubbly Void Cider Keg",
-        "isPrimary": false
+        "isPrimary": true
       },
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21577970",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21575801",
         "title": "DF Encyclopedia: Cider Keg",
         "isPrimary": false
       },
@@ -10191,12 +9895,6 @@
         "url": "https://forums2.battleon.com/f/tm.asp?m=21584531",
         "title": "DF Encyclopedia: Foamy Cider Keg",
         "variantLabel": "Foamy Cider Keg",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21575803",
-        "title": "DF Encyclopedia: Moglinberry Cider Keg",
-        "variantLabel": "Moglinberry Cider Keg",
         "isPrimary": false
       },
       {
@@ -10212,9 +9910,33 @@
         "isPrimary": false
       },
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21575801",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21584525",
+        "title": "DF Encyclopedia: Spiced Cider Keg",
+        "variantLabel": "Spiced Cider Keg",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21584521",
+        "title": "DF Encyclopedia: Sweet Void Cider Keg",
+        "variantLabel": "Sweet Void Cider Keg",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21584520",
         "title": "DF Encyclopedia: Void Cider Keg",
         "variantLabel": "Void Cider Keg",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21575794",
+        "title": "DF Encyclopedia: Warm Cider Keg",
+        "variantLabel": "Warm Cider Keg",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21584523",
+        "title": "DF Encyclopedia: Warm Void Cider Keg",
+        "variantLabel": "Warm Void Cider Keg",
         "isPrimary": false
       }
     ],
@@ -10243,33 +9965,9 @@
         "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/CiderKegpic.png",
         "obtainVariants": [
           {
-            "location": "The Navigator",
-            "priceType": "free",
-            "price": "N/A",
-            "sellback": "0 Gold",
-            "daRequired": false
-          }
-        ],
-        "element": "WAT",
-        "resists": "Fire +1",
-        "rarity": "7"
-      },
-      {
-        "levelNumber": 1,
-        "levelDisplay": "20",
-        "actualLevel": 20,
-        "variantName": "(Base)",
-        "name": "Cider Keg",
-        "damage": "",
-        "stats": "END +3, CHA +2, LUK +2, Bonus +1",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21577970",
-        "description": "From Vaal's personal stash, this'll protect you while you still get a nice cider-y scent!",
-        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/CiderKegpic.png",
-        "obtainVariants": [
-          {
             "location": "Cider Loot Shop",
-            "priceType": "dc",
             "price": "20 Dragon Coins",
+            "priceType": "dc",
             "sellback": "18 DC (<24 hours) / 5 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
@@ -10281,6 +9979,104 @@
       },
       {
         "levelNumber": 2,
+        "levelDisplay": "30",
+        "actualLevel": 30,
+        "variantName": "Sweet",
+        "name": "Sweet Cider Keg",
+        "damage": "",
+        "stats": "Crit +1, Magic Def +1, Pierce Def +1, Melee Def +1, WIS +2, END +4, CHA +2, LUK +2, Bonus +2",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21577973",
+        "description": "From Vaal's personal stash, this'll protect you while you still get a nice cider-y scent!",
+        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/CiderKegpic.png",
+        "obtainVariants": [
+          {
+            "location": "The Navigator",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "0 Gold",
+            "daRequired": false
+          }
+        ],
+        "element": "WAT",
+        "resists": "Fire +2",
+        "rarity": "5"
+      },
+      {
+        "levelNumber": 3,
+        "levelDisplay": "30",
+        "actualLevel": 30,
+        "variantName": "Sweet",
+        "name": "Sweet Cider Keg",
+        "damage": "",
+        "stats": "Crit +1, Magic Def +1, Pierce Def +1, Melee Def +1, WIS +2, END +4, CHA +2, LUK +2, Bonus +2",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21577973",
+        "description": "From Vaal's personal stash, this'll protect you while you still get a nice cider-y scent!",
+        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/CiderKegpic.png",
+        "obtainVariants": [
+          {
+            "location": "Cider Loot Shop",
+            "price": "25 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "22 DC (<24 hours) / 6 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "element": "WAT",
+        "resists": "Fire +2",
+        "rarity": "5"
+      },
+      {
+        "levelNumber": 4,
+        "levelDisplay": "40",
+        "actualLevel": 40,
+        "variantName": "Warm",
+        "name": "Warm Cider Keg",
+        "damage": "",
+        "stats": "Crit +2, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +2, END +4, CHA +3, LUK +3, INT +1, DEX +1, STR +1, Bonus +4",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21575794",
+        "description": "From Vaal's personal stash, this'll protect you while you still get a nice cider-y scent!",
+        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/CiderKegpic.png",
+        "obtainVariants": [
+          {
+            "location": "The Navigator",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "0 Gold",
+            "daRequired": false
+          }
+        ],
+        "element": "WAT",
+        "resists": "Fire +3, Darkness +2",
+        "rarity": "25"
+      },
+      {
+        "levelNumber": 4,
+        "levelDisplay": "40",
+        "actualLevel": 40,
+        "variantName": "Warm",
+        "name": "Warm Cider Keg",
+        "damage": "",
+        "stats": "Crit +2, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +2, END +4, CHA +3, LUK +3, INT +1, DEX +1, STR +1, Bonus +4",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21575794",
+        "description": "From Vaal's personal stash, this'll protect you while you still get a nice cider-y scent!",
+        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/CiderKegpic.png",
+        "obtainVariants": [
+          {
+            "location": "Cider Loot Shop",
+            "price": "30 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "27 DC (<24 hours) / 9 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "element": "WAT",
+        "resists": "Fire +3, Darkness +2",
+        "rarity": "25"
+      },
+      {
+        "levelNumber": 5,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "Spiced",
@@ -10293,90 +10089,94 @@
         "obtainVariants": [
           {
             "location": "Void Cider Shop",
-            "priceType": "dc",
             "price": "120 Dragon Coins",
+            "priceType": "dc",
             "sellback": "108 DC (<24 hours) / 30 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
         ],
+        "element": "???",
         "resists": "Fire +7, Water +5, Darkness +3",
         "rarity": "1"
       },
       {
-        "levelNumber": 3,
-        "levelDisplay": "60",
-        "actualLevel": 60,
-        "variantName": "Mulled",
-        "name": "Mulled Cider Keg",
-        "damage": "",
-        "stats": "Block +1, Dodge +2, Crit +7, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +6, END +6, CHA +5, LUK +5, INT +4, DEX +4, STR +4, Bonus +6",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21584528",
-        "description": "From Vaal's personal stash, this'll protect you while you still get a nice cider-y scent!",
-        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/VoidCiderKegpic.png",
-        "obtainVariants": [
-          {
-            "location": "Void Cider Shop",
-            "priceType": "dc",
-            "price": "140 Dragon Coins",
-            "sellback": "126 DC (<24 hours) / 35 DC (>24 hours)",
-            "daRequired": false,
-            "dcRequired": true
-          }
-        ],
-        "resists": "Fire +8, Water +6, Darkness +4",
-        "rarity": "9"
-      },
-      {
-        "levelNumber": 4,
-        "levelDisplay": "60",
-        "actualLevel": 60,
-        "variantName": "Mulled",
-        "name": "Mulled Cider Keg",
-        "damage": "",
-        "stats": "Block +1, Dodge +2, Crit +7, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +6, END +6, CHA +5, LUK +5, INT +4, DEX +4, STR +4, Bonus +6",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21584528",
-        "description": "From Vaal's personal stash, this'll protect you while you still get a nice cider-y scent!",
-        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/VoidCiderKegpic.png",
-        "obtainVariants": [
-          {
-            "location": "Void Cider Shop",
-            "priceType": "dc",
-            "price": "140 Dragon Coins",
-            "sellback": "126 DC (<24 hours) / 35 DC (>24 hours)",
-            "daRequired": false,
-            "dcRequired": true
-          }
-        ],
-        "resists": "Fire +8, Water +6, Darkness +4",
-        "rarity": "9"
-      },
-      {
-        "levelNumber": 5,
-        "levelDisplay": "70",
-        "actualLevel": 70,
-        "variantName": "Foamy",
-        "name": "Foamy Cider Keg",
-        "damage": "",
-        "stats": "Block +2, Dodge +2, Crit +8, Magic Def +7, Pierce Def +7, Melee Def +7, WIS +7, END +7, CHA +6, LUK +6, INT +5, DEX +5, STR +5, Bonus +8",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21584531",
-        "description": "From Vaal's personal stash, this'll protect you while you still get a nice cider-y scent!",
-        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/VoidCiderKegpic.png",
-        "obtainVariants": [
-          {
-            "location": "Void Cider Shop",
-            "priceType": "dc",
-            "price": "160 Dragon Coins",
-            "sellback": "144 DC (<24 hours) / 40 DC (>24 hours)",
-            "daRequired": false,
-            "dcRequired": true
-          }
-        ],
-        "resists": "Fire +9, Water +7, Darkness +5, Immobility +1",
-        "rarity": "10"
-      },
-      {
         "levelNumber": 6,
+        "levelDisplay": "50",
+        "actualLevel": 50,
+        "variantName": "Spiced",
+        "name": "Spiced Cider Keg",
+        "damage": "",
+        "stats": "Block +1, Dodge +1, Crit +6, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +5, END +5, CHA +4, LUK +4, INT +2, DEX +2, STR +2, Bonus +5",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21584525",
+        "description": "From Vaal's personal stash, this'll protect you while you still get a nice cider-y scent!",
+        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/VoidCiderKegpic.png",
+        "obtainVariants": [
+          {
+            "location": "Void Cider Shop",
+            "price": "120 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "108 DC (<24 hours) / 30 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "element": "???",
+        "resists": "Fire +7, Water +5, Darkness +3",
+        "rarity": "1"
+      },
+      {
+        "levelNumber": 7,
+        "levelDisplay": "60",
+        "actualLevel": 60,
+        "variantName": "Mulled",
+        "name": "Mulled Cider Keg",
+        "damage": "",
+        "stats": "Block +1, Dodge +2, Crit +7, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +6, END +6, CHA +5, LUK +5, INT +4, DEX +4, STR +4, Bonus +6",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21584528",
+        "description": "From Vaal's personal stash, this'll protect you while you still get a nice cider-y scent!",
+        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/VoidCiderKegpic.png",
+        "obtainVariants": [
+          {
+            "location": "Void Cider Shop",
+            "price": "140 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "126 DC (<24 hours) / 35 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "element": "???",
+        "resists": "Fire +8, Water +6, Darkness +4",
+        "rarity": "9"
+      },
+      {
+        "levelNumber": 8,
+        "levelDisplay": "60",
+        "actualLevel": 60,
+        "variantName": "Mulled",
+        "name": "Mulled Cider Keg",
+        "damage": "",
+        "stats": "Block +1, Dodge +2, Crit +7, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +6, END +6, CHA +5, LUK +5, INT +4, DEX +4, STR +4, Bonus +6",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21584528",
+        "description": "From Vaal's personal stash, this'll protect you while you still get a nice cider-y scent!",
+        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/VoidCiderKegpic.png",
+        "obtainVariants": [
+          {
+            "location": "Void Cider Shop",
+            "price": "140 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "126 DC (<24 hours) / 35 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "element": "???",
+        "resists": "Fire +8, Water +6, Darkness +4",
+        "rarity": "9"
+      },
+      {
+        "levelNumber": 9,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "Foamy",
@@ -10389,42 +10189,44 @@
         "obtainVariants": [
           {
             "location": "Void Cider Shop",
-            "priceType": "dc",
             "price": "160 Dragon Coins",
+            "priceType": "dc",
             "sellback": "144 DC (<24 hours) / 40 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
         ],
+        "element": "???",
         "resists": "Fire +9, Water +7, Darkness +5, Immobility +1",
         "rarity": "10"
       },
       {
-        "levelNumber": 7,
-        "levelDisplay": "75",
-        "actualLevel": 75,
-        "variantName": "Bubbly",
-        "name": "Bubbly Cider Keg",
+        "levelNumber": 10,
+        "levelDisplay": "70",
+        "actualLevel": 70,
+        "variantName": "Foamy",
+        "name": "Foamy Cider Keg",
         "damage": "",
-        "stats": "Block +1, Dodge +1, Parry +1, Crit +6, Magic Def +7, Pierce Def +7, Melee Def +7, WIS +7, END +9, CHA +7, LUK +7, INT +6, DEX +6, STR +6, Bonus +9",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21575801",
-        "description": "From Vaal's personal stash, this'll protect you while you still get a nice cider-y scent! This item requires a Dragon Amulet.",
-        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/CiderKegpic.png",
+        "stats": "Block +2, Dodge +2, Crit +8, Magic Def +7, Pierce Def +7, Melee Def +7, WIS +7, END +7, CHA +6, LUK +6, INT +5, DEX +5, STR +5, Bonus +8",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21584531",
+        "description": "From Vaal's personal stash, this'll protect you while you still get a nice cider-y scent!",
+        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/VoidCiderKegpic.png",
         "obtainVariants": [
           {
-            "location": "The Navigator",
-            "priceType": "free",
-            "price": "N/A",
-            "sellback": "0 Gold",
-            "daRequired": true
+            "location": "Void Cider Shop",
+            "price": "160 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "144 DC (<24 hours) / 40 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
           }
         ],
-        "element": "WAT",
-        "resists": "Fire +7, Darkness +6, Immobility +3",
+        "element": "???",
+        "resists": "Fire +9, Water +7, Darkness +5, Immobility +1",
         "rarity": "10"
       },
       {
-        "levelNumber": 7,
+        "levelNumber": 11,
         "levelDisplay": "75",
         "actualLevel": 75,
         "variantName": "Bubbly",
@@ -10437,8 +10239,8 @@
         "obtainVariants": [
           {
             "location": "Cider Loot Shop",
-            "priceType": "dc",
             "price": "50 Dragon Coins",
+            "priceType": "dc",
             "sellback": "45 DC (<24 hours) / 13 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
@@ -10449,31 +10251,7 @@
         "rarity": "10"
       },
       {
-        "levelNumber": 8,
-        "levelDisplay": "80",
-        "actualLevel": 80,
-        "variantName": "Moglinberry",
-        "name": "Moglinberry Cider Keg",
-        "damage": "",
-        "stats": "Block +1, Dodge +1, Parry +1, Crit +7, Magic Def +7, Pierce Def +7, Melee Def +7, WIS +7, END +10, CHA +7, LUK +7, INT +6, DEX +6, STR +6, Bonus +9",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21575803",
-        "description": "From Vaal's personal stash, this'll protect you while you still get a nice cider-y scent! This item requires a Dragon Amulet.",
-        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/CiderKegpic.png",
-        "obtainVariants": [
-          {
-            "location": "The Navigator",
-            "priceType": "free",
-            "price": "N/A",
-            "sellback": "0 Gold",
-            "daRequired": true
-          }
-        ],
-        "element": "WAT",
-        "resists": "Fire +8, Darkness +8, Immobility +4",
-        "rarity": "10"
-      },
-      {
-        "levelNumber": 8,
+        "levelNumber": 12,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "Moglinberry",
@@ -10486,8 +10264,8 @@
         "obtainVariants": [
           {
             "location": "Cider Loot Shop",
-            "priceType": "dc",
             "price": "55 Dragon Coins",
+            "priceType": "dc",
             "sellback": "50 DC (<24 hours) / 14 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
@@ -10502,17 +10280,19 @@
     "equipSlot": "Back",
     "category": "Armor",
     "tags": [
+      "???",
       "dc",
       "free",
       "wat"
     ],
-    "hasDA": true,
+    "hasDA": false,
     "hasDC": true,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "20-80",
     "elements": [
+      "???",
       "WAT"
     ]
   },
@@ -10702,7 +10482,7 @@
       }
     ],
     "shared": {
-      "description": "The cape of Deidro, the fabled warrior who slew a Fire Hydra.  Passed down as a family heirloom, this is a precious item.",
+      "description": "The cape of Deidro, the fabled warrior who slew a Fire Hydra. Passed down as a family heirloom, this is a precious item.",
       "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/CloakofDeidropic.jpg",
       "rarity": "15"
     },
@@ -10724,7 +10504,7 @@
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=19966542",
-        "description": "The cape of Deidro, the fabled warrior who slew a Fire Hydra.  Passed down as a family heirloom, this is a precious item.",
+        "description": "The cape of Deidro, the fabled warrior who slew a Fire Hydra. Passed down as a family heirloom, this is a precious item.",
         "element": "LIG",
         "resists": "Light +7, Darkness +7",
         "rarity": "15"
@@ -10746,7 +10526,7 @@
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=19966551",
-        "description": "The cape of Deidro, the fabled warrior who slew a Fire Hydra.  Passed down as a family heirloom, this is a precious item.",
+        "description": "The cape of Deidro, the fabled warrior who slew a Fire Hydra. Passed down as a family heirloom, this is a precious item.",
         "element": "LIG",
         "resists": "Light +12, Darkness +12",
         "rarity": "15"
@@ -10811,7 +10591,7 @@
       }
     ],
     "shared": {
-      "description": "A long sleek black cloak woven from pure darkness.  It reacts strangely to the DragonAmulet become even darker.  Note: This item will be upgradable in the upcoming DoomWood expansion.",
+      "description": "A long sleek black cloak woven from pure darkness. It reacts strangely to the DragonAmulet become even darker. Note: This item will be upgradable in the upcoming DoomWood expansion.",
       "imageUrl": "http://i.imgur.com/Cg5g6K2.jpg"
     },
     "levelVariants": [
@@ -10832,7 +10612,7 @@
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=13275640",
-        "description": "A long sleek black cloak woven from pure darkness.  It reacts strangely to the DragonAmulet become even darker.  Note: This item will be upgradable in the upcoming DoomWood expansion.",
+        "description": "A long sleek black cloak woven from pure darkness. It reacts strangely to the DragonAmulet become even darker. Note: This item will be upgradable in the upcoming DoomWood expansion.",
         "element": "DAR",
         "resists": "Light +3",
         "rarity": "39"
@@ -11079,7 +10859,9 @@
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22420548",
     "releaseDate": "",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/CloakofLament.png",
-    "elements": [],
+    "elements": [
+      "???"
+    ],
     "level": "1",
     "stats": "None",
     "resists": "None",
@@ -11098,6 +10880,7 @@
       }
     ],
     "tags": [
+      "???",
       "dc"
     ],
     "daRequired": false,
@@ -11285,7 +11068,9 @@
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22402643",
     "releaseDate": "",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/CloakoftheArchlord.png",
-    "elements": [],
+    "elements": [
+      "???"
+    ],
     "level": "1",
     "stats": "None",
     "resists": "None",
@@ -11305,6 +11090,7 @@
       }
     ],
     "tags": [
+      "???",
       "merge"
     ],
     "daRequired": false,
@@ -11338,6 +11124,11 @@
     "rarity": "1",
     "itemType": "Cape",
     "equipSpot": "Back",
+    "armorCustomization": {
+      "appearance": "Mortis customization for DoomKnight. (Cosmetic) Own this item to unlock the Mortis",
+      "modifies": "DoomKnight"
+    },
+    "hasArmorCustomization": true,
     "category": "Armor",
     "obtainMethods": [
       {
@@ -11349,7 +11140,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "Own this item to unlock the Mortis  Armor Customization options for the  DoomKnight class.",
+    "notes": "Own this item to unlock the Mortis Armor Customization options for the DoomKnight class.",
     "tags": [
       "evi",
       "dc"
@@ -12237,8 +12028,8 @@
         "obtainVariants": [
           {
             "location": "Donovan",
-            "priceType": "free",
             "price": "N/A",
+            "priceType": "free",
             "sellback": "50 Gold",
             "daRequired": true
           }
@@ -12261,8 +12052,8 @@
         "obtainVariants": [
           {
             "location": "Donovan",
-            "priceType": "free",
             "price": "N/A",
+            "priceType": "free",
             "sellback": "70 Gold",
             "daRequired": true
           }
@@ -12293,7 +12084,8 @@
         ],
         "element": "ICE",
         "resists": "Fire +6",
-        "rarity": "2"
+        "rarity": "2",
+        "notes": "Normal"
       },
       {
         "levelNumber": 4,
@@ -12309,8 +12101,8 @@
         "obtainVariants": [
           {
             "location": "Donovan",
-            "priceType": "free",
             "price": "N/A",
+            "priceType": "free",
             "sellback": "140 Gold",
             "daRequired": true
           }
@@ -12333,15 +12125,16 @@
         "obtainVariants": [
           {
             "location": "Donovan",
-            "priceType": "free",
             "price": "N/A",
+            "priceType": "free",
             "sellback": "180 Gold",
             "daRequired": true
           }
         ],
         "element": "ICE",
         "resists": "Fire +6, Light +3",
-        "rarity": "20"
+        "rarity": "20",
+        "notes": "Normal"
       }
     ],
     "itemType": "Wings",
@@ -12438,8 +12231,8 @@
         "obtainVariants": [
           {
             "location": "Half-Off Shop",
-            "priceType": "gold",
             "price": "250 Gold",
+            "priceType": "gold",
             "sellback": "25 Gold",
             "daRequired": true
           }
@@ -12462,8 +12255,8 @@
         "obtainVariants": [
           {
             "location": "Half-Off Shop",
-            "priceType": "gold",
             "price": "350 Gold",
+            "priceType": "gold",
             "sellback": "35 Gold",
             "daRequired": true
           }
@@ -12494,7 +12287,8 @@
         ],
         "element": "ICE",
         "resists": "Fire +6",
-        "rarity": "2"
+        "rarity": "2",
+        "notes": "Half-off"
       },
       {
         "levelNumber": 4,
@@ -12510,8 +12304,8 @@
         "obtainVariants": [
           {
             "location": "Half-Off Shop",
-            "priceType": "gold",
             "price": "700 Gold",
+            "priceType": "gold",
             "sellback": "70 Gold",
             "daRequired": true
           }
@@ -12534,15 +12328,16 @@
         "obtainVariants": [
           {
             "location": "Half-Off Shop",
-            "priceType": "gold",
             "price": "900 Gold",
+            "priceType": "gold",
             "sellback": "90 Gold",
             "daRequired": true
           }
         ],
         "element": "ICE",
         "resists": "Fire +6, Light +3",
-        "rarity": "20"
+        "rarity": "20",
+        "notes": "Half-off"
       }
     ],
     "itemType": "Wings",
@@ -14013,7 +13808,9 @@
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22405918",
     "releaseDate": "",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/CreatureLimbs.png",
-    "elements": [],
+    "elements": [
+      "???"
+    ],
     "level": "1",
     "stats": "None",
     "resists": "None",
@@ -14033,6 +13830,7 @@
     ],
     "notes": "Cape is animated; the arms move upwards and downwards continuously.",
     "tags": [
+      "???",
       "dc"
     ],
     "daRequired": false,
@@ -14049,7 +13847,9 @@
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22405917",
     "releaseDate": "",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/CreatureTendrils.png",
-    "elements": [],
+    "elements": [
+      "???"
+    ],
     "level": "1",
     "stats": "None",
     "resists": "None",
@@ -14069,6 +13869,7 @@
     ],
     "notes": "Cape is animated; the top and bottom tentacles move continuously.",
     "tags": [
+      "???",
       "dc"
     ],
     "daRequired": false,
@@ -14513,7 +14314,7 @@
     "slug": "accessory-cryozen-s-wings",
     "type": "accessory",
     "subtype": "cape-wing",
-    "description": "A replica of Cryozen's wings! Unfortunately they won't let you fly. \n  \n (Cosmetic)",
+    "description": "A replica of Cryozen's wings! Unfortunately they won't let you fly.\n\n (Cosmetic)",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22396562",
     "releaseDate": "",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/Cryozen'sWings.png",
@@ -14553,7 +14354,10 @@
     "slug": "accessory-current-cape",
     "aliasSlugs": [
       "accessory-neap-current-cape",
-      "accessory-rushing-current-cape"
+      "accessory-rushing-current-cape",
+      "accessory-spring-current-cape",
+      "accessory-swirling-current-cape",
+      "accessory-tidal-current-cape"
     ],
     "type": "accessory",
     "subtype": "cape-wing",
@@ -14566,15 +14370,40 @@
         "isPrimary": true
       },
       {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21617320",
+        "title": "DF Encyclopedia: Neap Current Cape",
+        "variantLabel": "Neap Current Cape",
+        "isPrimary": false
+      },
+      {
         "url": "https://forums2.battleon.com/f/tm.asp?m=21618510",
         "title": "DF Encyclopedia: Rushing Current Cape",
         "variantLabel": "Rushing Current Cape",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21616605",
+        "title": "DF Encyclopedia: Spring Current Cape",
+        "variantLabel": "Spring Current Cape",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21616608",
+        "title": "DF Encyclopedia: Swirling Current Cape",
+        "variantLabel": "Swirling Current Cape",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21616014",
+        "title": "DF Encyclopedia: Tidal Current Cape",
+        "variantLabel": "Tidal Current Cape",
         "isPrimary": false
       }
     ],
     "shared": {
       "description": "Forged in the shadow of the Ocean Gate!",
-      "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/CurrentCapepic.png"
+      "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/CurrentCapepic.png",
+      "notes": "Item's inventory icon is erroneously Wings, despite being a Cape."
     },
     "levelVariants": [
       {
@@ -14591,8 +14420,8 @@
         "obtainVariants": [
           {
             "location": "Dive In",
-            "priceType": "free",
             "price": "N/A",
+            "priceType": "free",
             "sellback": "50 Gold",
             "daRequired": false
           }
@@ -14603,6 +14432,54 @@
       },
       {
         "levelNumber": 2,
+        "levelDisplay": "32",
+        "actualLevel": 32,
+        "variantName": "Swirling",
+        "name": "Swirling Current Cape",
+        "damage": "",
+        "stats": "Crit +1, Magic Def +1, Pierce Def +1, Melee Def +1, END +4, CHA +4, LUK +4, INT +3, DEX +3, STR +3, Bonus +2",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21616608",
+        "description": "Forged in the shadow of the Ocean Gate!",
+        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/CurrentCapepic.png",
+        "obtainVariants": [
+          {
+            "location": "Dive In",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "90 Gold",
+            "daRequired": false
+          }
+        ],
+        "element": "WAT",
+        "resists": "Energy +3, Fire +3",
+        "rarity": "5"
+      },
+      {
+        "levelNumber": 3,
+        "levelDisplay": "47",
+        "actualLevel": 47,
+        "variantName": "Tidal",
+        "name": "Tidal Current Cape",
+        "damage": "",
+        "stats": "Crit +3, Magic Def +2, Pierce Def +2, Melee Def +2, END +5, CHA +5, LUK +5, INT +4, DEX +4, STR +4, Bonus +4",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21616014",
+        "description": "Forged in the shadow of the Ocean Gate!",
+        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/CurrentCapepic.png",
+        "obtainVariants": [
+          {
+            "location": "Dive In",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "100 Gold",
+            "daRequired": false
+          }
+        ],
+        "element": "WAT",
+        "resists": "Energy +5, Fire +5",
+        "rarity": "20"
+      },
+      {
+        "levelNumber": 4,
         "levelDisplay": "62",
         "actualLevel": 62,
         "variantName": "Rushing",
@@ -14615,19 +14492,42 @@
         "obtainVariants": [
           {
             "location": "Dive in",
-            "priceType": "free",
             "price": "N/A",
+            "priceType": "free",
             "sellback": "150 Gold",
             "daRequired": false
           }
         ],
         "element": "WAT",
         "resists": "Energy +7, Fire +7",
-        "rarity": "9",
-        "notes": "Item's inventory icon is erroneously Wings, despite being a Cape."
+        "rarity": "9"
       },
       {
-        "levelNumber": 3,
+        "levelNumber": 5,
+        "levelDisplay": "76",
+        "actualLevel": 76,
+        "variantName": "Spring",
+        "name": "Spring Current Cape",
+        "damage": "",
+        "stats": "Dodge +2, Crit +7, Magic Def +8, Pierce Def +8, Melee Def +8, END +9, CHA +9, LUK +9, INT +7, DEX +7, STR +7, Bonus +8",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21616605",
+        "description": "Forged in the shadow of the Ocean Gate! This item requires a Dragon Amulet.",
+        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/CurrentCapepic.png",
+        "obtainVariants": [
+          {
+            "location": "Dive In",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "200 Gold",
+            "daRequired": true
+          }
+        ],
+        "element": "WAT",
+        "resists": "Energy +9, Fire +9, Immobility +4, Health -2",
+        "rarity": "10"
+      },
+      {
+        "levelNumber": 6,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "Neap",
@@ -16438,7 +16338,7 @@
       }
     ],
     "shared": {
-      "description": "A cape crafted by Yashta from a Glow Tree sapling from Pellow Village.  This one is darker than normal for Black Friday 2014!",
+      "description": "A cape crafted by Yashta from a Glow Tree sapling from Pellow Village. This one is darker than normal for Black Friday 2014!",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/DarkenedTreeBranches.png"
     },
     "levelVariants": [
@@ -16459,7 +16359,7 @@
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21884709",
-        "description": "A cape crafted by Yashta from a Glow Tree sapling from Pellow Village.  This one is darker than normal for Black Friday 2014!",
+        "description": "A cape crafted by Yashta from a Glow Tree sapling from Pellow Village. This one is darker than normal for Black Friday 2014!",
         "element": "NAT",
         "resists": "Fire +1",
         "rarity": "7"
@@ -16771,178 +16671,40 @@
     ]
   },
   {
-    "id": "accessory-shadowed-deathknight-cloak",
-    "familyName": "Deathknight Cloak",
-    "slug": "accessory-shadowed-deathknight-cloak",
-    "aliasSlugs": [
-      "accessory-deathknight-cloak",
-      "accessory-shadowed-deathknight-cloak-i",
-      "accessory-shadowed-deathknight-cloak-ii",
-      "accessory-shadowed-deathknight-cloak-iii",
-      "accessory-shadowed-deathknight-cloak-iv"
-    ],
+    "id": "accessory-deathknight-cloak",
+    "name": "DeathKnight Cloak",
+    "slug": "accessory-deathknight-cloak",
     "type": "accessory",
     "subtype": "cape-wing",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21829906",
-    "familyOrigin": "cross-post",
-    "familySources": [
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21828940",
-        "title": "DF Encyclopedia: DeathKnight Cloak",
-        "variantLabel": "DeathKnight Cloak",
-        "isPrimary": true
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21829906",
-        "title": "DF Encyclopedia: Shadowed DeathKnight Cloak",
-        "variantLabel": "Shadowed DeathKnight Cloak",
-        "isPrimary": false
-      }
-    ],
-    "shared": {
-      "description": "Sir Malifact collected this cloak from a fallen DeathKnight and saved it. While he already has items bound to him, you might be able to make use of it.",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/DeathKnightCloak.png"
-    },
-    "levelVariants": [
-      {
-        "levelNumber": 1,
-        "levelDisplay": "40",
-        "actualLevel": 40,
-        "variantName": "(Base)",
-        "name": "DeathKnight Cloak",
-        "damage": "",
-        "stats": "Crit +2, WIS +2, END +5, INT +2, DEX +2, STR +2, Bonus +2",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21828940",
-        "description": "Sir Malifact collected this cloak from a fallen DeathKnight and saved it. While he already has items bound to him, you might be able to make use of it.",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/DeathKnightCloak.png",
-        "obtainVariants": [
-          {
-            "location": "DeathKnight Items",
-            "priceType": "merge",
-            "price": "N/A",
-            "requiredItems": "1 Undead Slayer Badge",
-            "sellback": "100 Gold",
-            "daRequired": false
-          }
-        ],
-        "element": "DAR",
-        "resists": "Darkness +3, Light +3",
-        "rarity": "10"
-      },
-      {
-        "levelNumber": 2,
-        "levelDisplay": "50",
-        "actualLevel": 50,
-        "variantName": "I",
-        "name": "Shadowed DeathKnight Cloak I",
-        "damage": "",
-        "stats": "Crit +3, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +3, END +5, INT +2, DEX +2, STR +2, Bonus +5",
-        "obtainVariants": [
-          {
-            "location": "DeathKnight Upgrades",
-            "price": "N/A",
-            "priceType": "merge",
-            "sellback": "120 Gold",
-            "requiredItems": "1 DeathKnight Cloak & 1 Dusk Essence",
-            "daRequired": false
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21829906",
-        "description": "You've infused your cloak with shadow energy. It seems to wrap around you like your own shadow, but it no longer keeps you warm.",
-        "element": "DAR",
-        "resists": "Darkness +4, Light +4, Immobility +2",
-        "rarity": "1"
-      },
-      {
-        "levelNumber": 3,
-        "levelDisplay": "60",
-        "actualLevel": 60,
-        "variantName": "II",
-        "name": "Shadowed DeathKnight Cloak II",
-        "damage": "",
-        "stats": "Crit +3, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +4, END +6, INT +4, DEX +4, STR +4, Bonus +6",
-        "obtainVariants": [
-          {
-            "location": "DeathKnight Upgrades",
-            "price": "N/A",
-            "priceType": "merge",
-            "sellback": "145 Gold",
-            "requiredItems": "1 Shadowed DeathKnight Cloak I & 1 Dusk Essence",
-            "daRequired": false
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21829907",
-        "description": "You've infused your cloak with shadow energy. It seems to wrap around you like your own shadow, but it no longer keeps you warm.",
-        "element": "DAR",
-        "resists": "Darkness +5, Light +5, Immobility +3",
-        "rarity": "9"
-      },
-      {
-        "levelNumber": 4,
-        "levelDisplay": "70",
-        "actualLevel": 70,
-        "variantName": "III",
-        "name": "Shadowed DeathKnight Cloak III",
-        "damage": "",
-        "stats": "Crit +4, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +5, END +7, INT +5, DEX +5, STR +5, Bonus +7",
-        "obtainVariants": [
-          {
-            "location": "DeathKnight Upgrades",
-            "price": "N/A",
-            "priceType": "merge",
-            "sellback": "180 Gold",
-            "requiredItems": "1 Shadowed DeathKnight Cloak II & 1 Dusk Essence",
-            "daRequired": false
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21829908",
-        "description": "You've infused your cloak with shadow energy. It seems to wrap around you like your own shadow, but it no longer keeps you warm.",
-        "element": "DAR",
-        "resists": "Darkness +6, Light +6, Immobility +3",
-        "rarity": "10"
-      },
-      {
-        "levelNumber": 5,
-        "levelDisplay": "80",
-        "actualLevel": 80,
-        "variantName": "IV",
-        "name": "Shadowed DeathKnight Cloak IV",
-        "damage": "",
-        "stats": "Crit +4, Magic Def +7, Pierce Def +7, Melee Def +7, WIS +7, END +10, INT +5, DEX +5, STR +5, Bonus +8",
-        "obtainVariants": [
-          {
-            "location": "DeathKnight Upgrades",
-            "price": "N/A",
-            "priceType": "merge",
-            "sellback": "220 Gold",
-            "requiredItems": "1 Shadowed DeathKnight Cloak III & 1 Dusk Essence",
-            "daRequired": false
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21829911",
-        "description": "You've infused your cloak with shadow energy. It seems to wrap around you like your own shadow, but it no longer keeps you warm.",
-        "element": "DAR",
-        "resists": "Darkness +7, Light +7, Immobility +4",
-        "rarity": "10"
-      }
-    ],
-    "itemType": "Cape",
-    "equipSlot": "Back",
-    "category": "Armor",
+    "description": "Sir Malifact collected this cloak from a fallen DeathKnight and saved it. While he already has items bound to him, you might be able to make use of it.",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21828940",
     "releaseDate": "",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/DeathKnightCloak.png",
+    "elements": [
+      "DAR"
+    ],
+    "level": "40",
+    "stats": "Crit +2, WIS +2, END +5, INT +2, DEX +2, STR +2, Bonus +2",
+    "resists": "Darkness +3, Light +3",
+    "rarity": "10",
+    "itemType": "Cape",
+    "equipSpot": "Back",
+    "category": "Armor",
+    "obtainMethods": [
+      {
+        "location": "DeathKnight Items",
+        "priceType": "merge",
+        "price": "N/A",
+        "requiredItems": "1 Undead Slayer Badge",
+        "sellback": "100 Gold",
+        "daRequired": false
+      }
+    ],
     "tags": [
       "dar",
       "merge"
     ],
-    "hasDA": false,
-    "hasDC": false,
-    "hasDM": false,
-    "hasFree": false,
-    "hasMerge": true,
-    "levelRange": "I-IV",
-    "elements": [
-      "DAR"
-    ]
+    "daRequired": false
   },
   {
     "id": "accessory-debris-appendages",
@@ -16957,14 +16719,16 @@
     "alternativeImages": [
       {
         "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/DebrisAppendages-ElementalAttunement.png",
-        "caption": "this chart"
+        "caption": "All Appearances"
       },
       {
         "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/DebrisAppendages-OtherOld.png",
         "caption": "'Other' elemental attunement appearance"
       }
     ],
-    "elements": [],
+    "elements": [
+      "???"
+    ],
     "level": "1",
     "stats": "None",
     "resists": "None",
@@ -16982,8 +16746,9 @@
         "dcRequired": true
       }
     ],
-    "notes": "Cape's appearance is attuned to the player's equipped weapon's element; refer to   for all appearances.\nMetal elemental attunement appearance replaced the   alongside the release of  Debris 2 (I, II, III) on  July 1st, 2022.\nWood elemental attunement became accessible upon the release of  Spare Chair on  January 28th, 2023.",
+    "notes": "Cape's appearance is attuned to the player's equipped weapon's element; refer to this chart for all appearances.\nMetal elemental attunement appearance replaced the 'Other' elemental attunement appearance alongside the release of Debris 2 (I, II, III) on July 1st, 2022.\nWood elemental attunement became accessible upon the release of Spare Chair on January 28th, 2023.",
     "tags": [
+      "???",
       "dc"
     ],
     "daRequired": false,
@@ -17069,6 +16834,7 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21681869",
         "description": "This... is kinda gross.",
+        "element": "???",
         "rarity": "0"
       },
       {
@@ -17090,6 +16856,7 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21681872",
         "description": "This... is kinda gross.",
+        "element": "???",
         "rarity": "5"
       },
       {
@@ -17111,6 +16878,7 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21681873",
         "description": "This... is kinda gross.",
+        "element": "???",
         "rarity": "20"
       },
       {
@@ -17132,6 +16900,7 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21681879",
         "description": "This... is kinda gross.",
+        "element": "???",
         "rarity": "9"
       },
       {
@@ -17153,6 +16922,7 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21681882",
         "description": "This... is kinda gross. This item requires a Dragon Amulet.",
+        "element": "???",
         "rarity": "10"
       },
       {
@@ -17174,6 +16944,7 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21681884",
         "description": "This... is kinda gross. This item requires a Dragon Amulet.",
+        "element": "???",
         "rarity": "10"
       }
     ],
@@ -17182,6 +16953,7 @@
     "category": "Armor",
     "releaseDate": "",
     "tags": [
+      "???",
       "free"
     ],
     "hasDA": true,
@@ -17190,7 +16962,9 @@
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-VI",
-    "elements": []
+    "elements": [
+      "???"
+    ]
   },
   {
     "id": "accessory-depleted-jump-pack",
@@ -17234,7 +17008,8 @@
     "familyName": "Detective Cape",
     "slug": "accessory-junior-detective-cape",
     "aliasSlugs": [
-      "accessory-master-detective-cape"
+      "accessory-master-detective-cape",
+      "accessory-senior-detective-cape"
     ],
     "type": "accessory",
     "subtype": "cape-wing",
@@ -17243,14 +17018,13 @@
     "familySources": [
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=17937940",
-        "title": "DF Encyclopedia: Junior Detective Cape",
-        "variantLabel": "Junior Detective Cape",
+        "title": "DF Encyclopedia: Detective Cape",
         "isPrimary": true
       },
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=17939226",
-        "title": "DF Encyclopedia: Master Detective Cape",
-        "variantLabel": "Master Detective Cape",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=17937948",
+        "title": "DF Encyclopedia: Senior Detective Cape",
+        "variantLabel": "Senior Detective Cape",
         "isPrimary": false
       }
     ],
@@ -17285,6 +17059,30 @@
       },
       {
         "levelNumber": 2,
+        "levelDisplay": "47",
+        "actualLevel": 47,
+        "variantName": "Senior",
+        "name": "Senior Detective Cape",
+        "damage": "",
+        "stats": "Crit +2, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +4, END +5, CHA +2, LUK +1, Bonus +5",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=17937948",
+        "description": "A stylish cape that is sure to keep you warm as you muck about for clues.",
+        "imageUrl": "http://i.imgur.com/VBMuX1A.png",
+        "obtainVariants": [
+          {
+            "location": "The Adventure of the Broken Tower",
+            "priceType": "free",
+            "price": "N/A",
+            "sellback": "230 Gold",
+            "daRequired": true
+          }
+        ],
+        "element": "FIR",
+        "resists": "Immobility +1, Ice +5",
+        "rarity": "25"
+      },
+      {
+        "levelNumber": 3,
         "levelDisplay": "53",
         "actualLevel": 53,
         "variantName": "Master",
@@ -17339,7 +17137,8 @@
     "familySources": [
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=16716103",
-        "title": "DF Encyclopedia: Dewdancer's Wings",
+        "title": "DF Encyclopedia: DewDancer's Wings",
+        "variantLabel": "DewDancer's Wings",
         "isPrimary": true
       },
       {
@@ -17368,8 +17167,8 @@
         "obtainVariants": [
           {
             "location": "Trinki's Wings",
-            "priceType": "gold",
             "price": "7,500 Gold",
+            "priceType": "gold",
             "sellback": "750 Gold",
             "daRequired": true
           }
@@ -17394,30 +17193,6 @@
             "location": "Trinki's Wings",
             "price": "15,000 Gold",
             "priceType": "gold",
-            "sellback": "1,500 Gold",
-            "daRequired": true
-          }
-        ],
-        "element": "ENE",
-        "resists": "Fire +5, Water +5, Immobility +1",
-        "rarity": "20"
-      },
-      {
-        "levelNumber": 3,
-        "levelDisplay": "50",
-        "actualLevel": 50,
-        "variantName": "High",
-        "name": "High DewDancer's Wings",
-        "damage": "",
-        "stats": "Crit +4, Magic Def +2, Pierce Def +2, Melee Def +2, END +5, INT +5, STR +5",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=19162779",
-        "description": "These wings are similar to those of a fairy who flits through the soft light shining through the trees in the early morning.This item requires a Dragon Amulet.",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/DewDancersWings.png",
-        "obtainVariants": [
-          {
-            "location": "Trinki's Wings",
-            "priceType": "gold",
-            "price": "15,000 Gold",
             "sellback": "1,500 Gold",
             "daRequired": true
           }
@@ -17825,8 +17600,14 @@
     "familySources": [
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=19773670",
-        "title": "DF Encyclopedia: Doom Harvester Wings",
+        "title": "DF Encyclopedia: Base Doom Harvester Wings",
+        "variantLabel": "Base Doom Harvester Wings",
         "isPrimary": true
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=19773788",
+        "title": "DF Encyclopedia: Doom Harvester Wings",
+        "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=19775081",
@@ -17908,8 +17689,8 @@
         "obtainVariants": [
           {
             "location": "Origins",
-            "priceType": "free",
             "price": "N/A",
+            "priceType": "free",
             "sellback": "300 Gold",
             "daRequired": false
           }
@@ -17932,8 +17713,8 @@
         "obtainVariants": [
           {
             "location": "Origins",
-            "priceType": "free",
             "price": "N/A",
+            "priceType": "free",
             "sellback": "400 Gold",
             "daRequired": true
           }
@@ -18199,7 +17980,7 @@
       }
     ],
     "shared": {
-      "description": "Can't you just FEEL the doom? \n  \n This item requires a Dragon Amulet.",
+      "description": "Can't you just FEEL the doom?\n\n This item requires a Dragon Amulet.",
       "imageUrl": "https://i.imgur.com/l2oew.png",
       "rarity": "25"
     },
@@ -18222,7 +18003,7 @@
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=16605619",
-        "description": "Can't you just FEEL the doom? \n  \n This item requires a Dragon Amulet.",
+        "description": "Can't you just FEEL the doom?\n\n This item requires a Dragon Amulet.",
         "element": "DAR",
         "resists": "Light +5, Darkness +5",
         "rarity": "25",
@@ -18246,7 +18027,7 @@
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=16624644",
-        "description": "Can't you just FEEL the doom? \n  \n This item requires a Dragon Amulet.",
+        "description": "Can't you just FEEL the doom?\n\n This item requires a Dragon Amulet.",
         "element": "DAR",
         "resists": "Light +8, Darkness +8",
         "rarity": "25",
@@ -18270,7 +18051,7 @@
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=16624645",
-        "description": "Can't you just FEEL the doom? \n  \n This item requires a Dragon Amulet.",
+        "description": "Can't you just FEEL the doom?\n\n This item requires a Dragon Amulet.",
         "element": "DAR",
         "resists": "Light +8, Darkness +8",
         "rarity": "25",
@@ -18294,7 +18075,7 @@
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=16624648",
-        "description": "Can't you just FEEL the doom? \n  \n This item requires a Dragon Amulet.",
+        "description": "Can't you just FEEL the doom?\n\n This item requires a Dragon Amulet.",
         "element": "DAR",
         "resists": "Light +8, Darkness +8, All +1",
         "rarity": "25",
@@ -18318,7 +18099,7 @@
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=16624652",
-        "description": "Can't you just FEEL the doom? \n  \n This item requires a Dragon Amulet.",
+        "description": "Can't you just FEEL the doom?\n\n This item requires a Dragon Amulet.",
         "element": "DAR",
         "resists": "Light +8, Darkness +8, All +2",
         "rarity": "25",
@@ -18342,7 +18123,7 @@
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=16624653",
-        "description": "Can't you just FEEL the doom? \n  \n This item requires a Dragon Amulet.",
+        "description": "Can't you just FEEL the doom?\n\n This item requires a Dragon Amulet.",
         "element": "DAR",
         "resists": "Light +8, Darkness +8, All +3",
         "rarity": "25",
@@ -18366,7 +18147,7 @@
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=16624655",
-        "description": "Can't you just FEEL the doom? \n  \n This item requires a Dragon Amulet.",
+        "description": "Can't you just FEEL the doom?\n\n This item requires a Dragon Amulet.",
         "element": "DAR",
         "resists": "Light +8, Darkness +8, All +4",
         "rarity": "25",
@@ -18390,7 +18171,7 @@
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=17052240",
-        "description": "Can't you just FEEL the doom? \n  \n This item requires a Dragon Amulet.",
+        "description": "Can't you just FEEL the doom?\n\n This item requires a Dragon Amulet.",
         "element": "DAR",
         "resists": "Light +8, Darkness +8, All +5",
         "rarity": "25",
@@ -18414,7 +18195,7 @@
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=18524143",
-        "description": "Can't you just FEEL the doom? \n  \n This item requires a Dragon Amulet.",
+        "description": "Can't you just FEEL the doom?\n\n This item requires a Dragon Amulet.",
         "element": "DAR",
         "resists": "Light +8, Darkness +8, All +6",
         "rarity": "25",
@@ -18438,7 +18219,7 @@
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=20025805",
-        "description": "Can't you just FEEL the doom? \n  \n This item requires a Dragon Amulet.",
+        "description": "Can't you just FEEL the doom?\n\n This item requires a Dragon Amulet.",
         "element": "DAR",
         "resists": "Light +10, Darkness +10, All +7",
         "rarity": "25",
@@ -18518,7 +18299,9 @@
         "caption": "Opened"
       }
     ],
-    "elements": [],
+    "elements": [
+      "???"
+    ],
     "level": "1",
     "stats": "None",
     "resists": "None",
@@ -18538,6 +18321,7 @@
     ],
     "notes": "Cape is color-custom; the wings are linked to the player's dragon horn and dragon wing colors.\nClick on the cape to change between two appearances.",
     "tags": [
+      "???",
       "dc"
     ],
     "daRequired": false,
@@ -18600,7 +18384,7 @@
       }
     ],
     "shared": {
-      "description": "Gold  and gems accents mark these magical wings made from a dragon's molted skin.",
+      "description": "Gold and gems accents mark these magical wings made from a dragon's molted skin.",
       "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/DragonMageWings.png"
     },
     "levelVariants": [
@@ -18623,7 +18407,7 @@
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21360554",
-        "description": "Gold  and gems accents mark these magical wings made from a dragon's molted skin.",
+        "description": "Gold and gems accents mark these magical wings made from a dragon's molted skin.",
         "element": "DIS",
         "resists": "All +2, Evil +1",
         "rarity": "8"
@@ -18647,7 +18431,7 @@
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21360556",
-        "description": "Gold  and gems accents mark these magical wings made from a dragon's molted skin.",
+        "description": "Gold and gems accents mark these magical wings made from a dragon's molted skin.",
         "element": "DIS",
         "resists": "All +3, Evil +2",
         "rarity": "15"
@@ -18671,7 +18455,7 @@
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21360557",
-        "description": "Gold  and gems accents mark these magical wings made from a dragon's molted skin.",
+        "description": "Gold and gems accents mark these magical wings made from a dragon's molted skin.",
         "element": "DIS",
         "resists": "All +4, Evil +3, Immobility +1",
         "rarity": "15"
@@ -18695,7 +18479,7 @@
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21360570",
-        "description": "Gold  and gems accents mark these magical wings made from a dragon's molted skin.",
+        "description": "Gold and gems accents mark these magical wings made from a dragon's molted skin.",
         "element": "DIS",
         "resists": "All +4, Evil +4, Immobility +2",
         "rarity": "25"
@@ -18719,7 +18503,7 @@
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22391645",
-        "description": "Gold  and gems accents mark these magical wings made from a dragon's molted skin.",
+        "description": "Gold and gems accents mark these magical wings made from a dragon's molted skin.",
         "element": "DIS",
         "resists": "All +5, Evil +5, Immobility +4",
         "rarity": "25"
@@ -18743,7 +18527,7 @@
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22391646",
-        "description": "Gold  and gems accents mark these magical wings made from a dragon's molted skin.",
+        "description": "Gold and gems accents mark these magical wings made from a dragon's molted skin.",
         "element": "DIS",
         "resists": "All +5, Evil +5, Immobility +5",
         "rarity": "25"
@@ -19353,7 +19137,7 @@
         "obtainVariants": [
           {
             "location": "Redeem the code received from purchasing the 13 Lords of Chaos Poster or 13 Lords of Chaos Reborn Poster from HeroMart",
-            "price": "$14.00 USD (Unsigned) / $24.00 USD (Signed) $12.95 USD + Postage",
+            "price": "$12.95 USD + Postage",
             "priceType": "gold",
             "sellback": "158 DC (<24 hours) / 44 DC (>24 hours)",
             "daRequired": false,
@@ -19362,6 +19146,7 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21810006",
         "description": "The pride of DragonLord Vath. These wings showed how powerful of a DragonLord he really was. Sadly, he lost the ability to use them when he became chaorrupted.",
+        "element": "???",
         "resists": "All +1",
         "rarity": "25"
       },
@@ -19385,6 +19170,7 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21810008",
         "description": "The pride of DragonLord Vath. These wings showed how powerful of a DragonLord he really was. Sadly, he lost the ability to use them when he became chaorrupted.",
+        "element": "???",
         "resists": "All +1",
         "rarity": "25"
       },
@@ -19408,6 +19194,7 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21810009",
         "description": "The pride of DragonLord Vath. These wings showed how powerful of a DragonLord he really was. Sadly, he lost the ability to use them when he became chaorrupted.",
+        "element": "???",
         "resists": "All +1",
         "rarity": "25"
       },
@@ -19431,6 +19218,7 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21810011",
         "description": "The pride of DragonLord Vath. These wings showed how powerful of a DragonLord he really was. Sadly, he lost the ability to use them when he became chaorrupted.",
+        "element": "???",
         "resists": "All +2",
         "rarity": "25"
       },
@@ -19454,6 +19242,7 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21810015",
         "description": "The pride of DragonLord Vath. These wings showed how powerful of a DragonLord he really was. Sadly, he lost the ability to use them when he became chaorrupted.",
+        "element": "???",
         "resists": "All +2",
         "rarity": "25"
       },
@@ -19477,6 +19266,7 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21810042",
         "description": "The pride of DragonLord Vath. These wings showed how powerful of a DragonLord he really was. Sadly, he lost the ability to use them when he became chaorrupted.",
+        "element": "???",
         "resists": "All +3",
         "rarity": "25"
       },
@@ -19500,6 +19290,7 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21810043",
         "description": "The pride of DragonLord Vath. These wings showed how powerful of a DragonLord he really was. Sadly, he lost the ability to use them when he became chaorrupted.",
+        "element": "???",
         "resists": "All +3",
         "rarity": "25"
       },
@@ -19523,6 +19314,7 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21810045",
         "description": "The pride of DragonLord Vath. These wings showed how powerful of a DragonLord he really was. Sadly, he lost the ability to use them when he became chaorrupted.",
+        "element": "???",
         "resists": "All +4",
         "rarity": "25"
       },
@@ -19546,6 +19338,7 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21810049",
         "description": "The pride of DragonLord Vath. These wings showed how powerful of a DragonLord he really was. Sadly, he lost the ability to use them when he became chaorrupted.",
+        "element": "???",
         "resists": "All +4",
         "rarity": "25"
       }
@@ -19555,6 +19348,7 @@
     "category": "Armor",
     "releaseDate": "",
     "tags": [
+      "???",
       "gold",
       "merge"
     ],
@@ -19565,7 +19359,9 @@
     "hasFree": false,
     "hasMerge": true,
     "levelRange": "10-90",
-    "elements": []
+    "elements": [
+      "???"
+    ]
   },
   {
     "id": "accessory-dragonlord-s-travel-cloak",
@@ -19927,7 +19723,7 @@
         "obtainVariants": [
           {
             "location": "Redeem the code received from purchasing the Champion of Chaos: Drakath Print from HeroMart",
-            "price": "$14.95 USD (Unsigned) / $19.95 USD (Signed) + Postage / $9.95 USD + Postage",
+            "price": "/ $9.95 USD + Postage",
             "priceType": "gold",
             "sellback": "0 Dragon Coins",
             "daRequired": false,
@@ -21553,7 +21349,7 @@
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22390386",
-        "description": "This backpiece was left behind in the upturned earth when Myalos left. It's a little heavy, but still functional!  This item requires a Dragon Amulet.",
+        "description": "This backpiece was left behind in the upturned earth when Myalos left. It's a little heavy, but still functional! This item requires a Dragon Amulet.",
         "element": "MET",
         "resists": "Health -10, Energy +10, Wind +10",
         "rarity": "1"
@@ -21577,7 +21373,7 @@
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22390386",
-        "description": "This backpiece was left behind in the upturned earth when Myalos left. It's a little heavy, but still functional!  This item requires a Dragon Amulet.",
+        "description": "This backpiece was left behind in the upturned earth when Myalos left. It's a little heavy, but still functional! This item requires a Dragon Amulet.",
         "element": "MET",
         "resists": "Health -10, Energy +10, Wind +10",
         "rarity": "1"
@@ -21672,7 +21468,7 @@
         "obtainVariants": [
           {
             "location": "Redeem the code received from purchasing the MechQuest Poster from HeroMart",
-            "price": "$9.95 USD $12.95 USD (Unsigned) / $19.95 USD $20.95 USD (Signed) + Postage",
+            "price": "$12.95 USD (Unsigned) / $20.95 USD (Signed) + Postage",
             "priceType": "gold",
             "sellback": "0 Dragon Coins",
             "daRequired": false,
@@ -22141,7 +21937,7 @@
     "alternativeImages": [
       {
         "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/EdelianBackpack-ElementalAttunement.png",
-        "caption": "this chart"
+        "caption": "All Appearances"
       },
       {
         "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/EdelianBackpack-Full.png",
@@ -22168,7 +21964,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "Cape's vial is attuned to the player's equipped weapon's element; refer to   for all appearances.\nWood elemental attunement became accessible upon the release of  Spare Chair on  January 28th, 2023.",
+    "notes": "Cape's vial is attuned to the player's equipped weapon's element; refer to this chart for all appearances.\nWood elemental attunement became accessible upon the release of Spare Chair on January 28th, 2023.",
     "tags": [
       "fir",
       "dc"
@@ -22411,7 +22207,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "Cape is animated; Elpis' highlights gradually transition between blue, purple, pink, red, orange, yellow, green, mint, and cyan.\nStats were added to this cape on  February 14th, 2020.\nRainbow Appearance(s)",
+    "notes": "Cape is animated; Elpis' highlights gradually transition between blue, purple, pink, red, orange, yellow, green, mint, and cyan.\nStats were added to this cape on February 14th, 2020.\nRainbow Appearance(s)",
     "tags": [
       "goo",
       "merge"
@@ -23341,6 +23137,7 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21766431",
         "description": "As the winds of the world twist around you, this cape provides protection! You can upgrade this weapon at the Black Market Moglin.",
+        "element": "???",
         "resists": "Wind +2",
         "rarity": "25"
       },
@@ -23364,6 +23161,7 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21766438",
         "description": "As the winds of the world twist around you, this cape provides protection! You can upgrade this weapon at the Black Market Moglin.",
+        "element": "???",
         "resists": "Wind +4",
         "rarity": "25"
       },
@@ -23387,6 +23185,7 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21766442",
         "description": "As the winds of the world twist around you, this cape provides protection! You can upgrade this weapon at the Black Market Moglin.",
+        "element": "???",
         "resists": "Wind +6, All +1",
         "rarity": "25"
       },
@@ -23410,6 +23209,7 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21766449",
         "description": "As the winds of the world twist around you, this cape provides protection! You can upgrade this weapon at the Black Market Moglin.",
+        "element": "???",
         "resists": "Wind +10, All +2",
         "rarity": "25"
       },
@@ -23433,6 +23233,7 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21766450",
         "description": "As the winds of the world twist around you, this cape provides protection!",
+        "element": "???",
         "resists": "Wind +12, All +3",
         "rarity": "25"
       },
@@ -23456,6 +23257,7 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21766461",
         "description": "As the winds of the world twist around you, this cape provides protection!",
+        "element": "???",
         "resists": "Wind +12, All +3",
         "rarity": "25"
       }
@@ -23465,6 +23267,7 @@
     "category": "Armor",
     "releaseDate": "",
     "tags": [
+      "???",
       "gold",
       "merge"
     ],
@@ -23476,7 +23279,9 @@
     "hasFree": false,
     "hasMerge": true,
     "levelRange": "10-90",
-    "elements": []
+    "elements": [
+      "???"
+    ]
   },
   {
     "id": "accessory-eternal-cloak",
@@ -23488,7 +23293,9 @@
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22420429",
     "releaseDate": "",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/EternalCloak.png",
-    "elements": [],
+    "elements": [
+      "???"
+    ],
     "level": "1",
     "stats": "None",
     "resists": "None",
@@ -23507,6 +23314,7 @@
       }
     ],
     "tags": [
+      "???",
       "dc"
     ],
     "daRequired": false,
@@ -23897,7 +23705,7 @@
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=20132458",
-        "description": "These architectural wings were sculpted from paraginium.  This item requires a Dragon Amulet.",
+        "description": "These architectural wings were sculpted from paraginium. This item requires a Dragon Amulet.",
         "element": "DAR",
         "resists": "Darkness +14, Light +14, Silver +14, Immobility +10",
         "rarity": "25"
@@ -23960,7 +23768,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "Cape has a low drop rate from  Artax & Shogun.\nCape is animated; the cape moves up and down continuously.",
+    "notes": "Cape has a low drop rate from Artax & Shogun.\nCape is animated; the cape moves up and down continuously.",
     "tags": [
       "lig",
       "free"
@@ -24062,6 +23870,7 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21561112",
         "description": "It's watching you...",
+        "element": "???",
         "resists": "Darkness +3, Immobility +1",
         "rarity": "7"
       },
@@ -24085,6 +23894,7 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21561114",
         "description": "It's watching you...",
+        "element": "???",
         "resists": "Darkness +4, Immobility +1",
         "rarity": "5"
       },
@@ -24108,6 +23918,7 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21561115",
         "description": "It's watching you...",
+        "element": "???",
         "resists": "Darkness +5, Immobility +2",
         "rarity": "25"
       },
@@ -24131,6 +23942,7 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21561119",
         "description": "It's watching you...",
+        "element": "???",
         "resists": "Darkness +6, Immobility +2",
         "rarity": "1"
       },
@@ -24154,6 +23966,7 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21561123",
         "description": "It's watching you...",
+        "element": "???",
         "resists": "Darkness +7, Immobility +3",
         "rarity": "9"
       },
@@ -24177,6 +23990,7 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21561124",
         "description": "It's watching you...",
+        "element": "???",
         "resists": "Darkness +8, Immobility +3, All +1",
         "rarity": "10"
       },
@@ -24200,6 +24014,7 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21561125",
         "description": "It's watching you...",
+        "element": "???",
         "resists": "Darkness +9, Immobility +4, All +2",
         "rarity": "10"
       },
@@ -24223,6 +24038,7 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21561127",
         "description": "It's watching you...",
+        "element": "???",
         "resists": "Darkness +10, Immobility +4, All +3",
         "rarity": "10"
       }
@@ -24232,6 +24048,7 @@
     "category": "Armor",
     "releaseDate": "",
     "tags": [
+      "???",
       "dc"
     ],
     "hasDA": false,
@@ -24240,7 +24057,9 @@
     "hasFree": false,
     "hasMerge": false,
     "levelRange": "I-VIII",
-    "elements": []
+    "elements": [
+      "???"
+    ]
   },
   {
     "id": "accessory-fall-foilage-frock",
@@ -25864,282 +25683,6 @@
     "isSpecialOffer": true
   },
   {
-    "id": "accessory-flourishing-oleander-cape",
-    "familyName": "Flowering Oleander Cape",
-    "slug": "accessory-flourishing-oleander-cape",
-    "aliasSlugs": [
-      "accessory-flowering-oleander-cape",
-      "accessory-fragrant-oleander-cape"
-    ],
-    "type": "accessory",
-    "subtype": "cape-wing",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20316494",
-    "familyOrigin": "cross-post",
-    "familySources": [
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20316494",
-        "title": "DF Encyclopedia: Flourishing Oleander Cape",
-        "variantLabel": "Flourishing Oleander Cape",
-        "isPrimary": true
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20316500",
-        "title": "DF Encyclopedia: Flowering Oleander Cape",
-        "variantLabel": "Flowering Oleander Cape",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20316891",
-        "title": "DF Encyclopedia: Fragrant Oleander Cape",
-        "variantLabel": "Fragrant Oleander Cape",
-        "isPrimary": false
-      }
-    ],
-    "shared": {
-      "description": "A beautiful cape for Mother's Day! Happy Mother's Day!",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/OleanderCape.png",
-      "rarity": "10",
-      "notes": "Cape's description previously specified Happy Mother's Day 2012!; this was removed alongside its 2015 re-release.",
-      "alsoSee": [
-        {
-          "name": "Budding Oleander Cape",
-          "slug": "accessory-blooming-oleander-cape",
-          "type": "accessory",
-          "url": "https://forums2.battleon.com/f/tm.asp?m=20316514"
-        }
-      ]
-    },
-    "levelVariants": [
-      {
-        "levelNumber": 1,
-        "levelDisplay": "52",
-        "actualLevel": 52,
-        "variantName": "(Base)",
-        "name": "Flowering Oleander Cape",
-        "damage": "",
-        "stats": "Crit +5, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +5, CHA +5, INT +4, DEX +4, STR +4, Bonus +4",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20316500",
-        "description": "A beautiful cape for Mother's Day! Happy Mother's Day!",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/OleanderCape.png",
-        "obtainVariants": [
-          {
-            "location": "Mother's Day 2012, Mother's Day (Shop)",
-            "price": "0 Gold",
-            "priceType": "free",
-            "sellback": "0 Gold",
-            "daRequired": false
-          }
-        ],
-        "element": "LIG",
-        "resists": "Light +7, Nature +7, Immobility +1",
-        "rarity": "10"
-      },
-      {
-        "levelNumber": 2,
-        "levelDisplay": "62",
-        "actualLevel": 62,
-        "variantName": "Flourishing",
-        "name": "Flourishing Oleander Cape",
-        "damage": "",
-        "stats": "Crit +6, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +7, CHA +7, INT +4, DEX +4, STR +4, Bonus +5",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20316494",
-        "description": "A beautiful cape for Mother's Day! Happy Mother's Day!",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/OleanderCape.png",
-        "obtainVariants": [
-          {
-            "location": "Mother's Day 2012, Mother's Day (Shop)",
-            "price": "0 Gold",
-            "priceType": "free",
-            "sellback": "0 Gold",
-            "daRequired": false
-          }
-        ],
-        "element": "LIG",
-        "resists": "Light +8, Nature +8, Immobility +2",
-        "rarity": "10"
-      },
-      {
-        "levelNumber": 3,
-        "levelDisplay": "72",
-        "actualLevel": 72,
-        "variantName": "Fragrant",
-        "name": "Fragrant Oleander Cape",
-        "damage": "",
-        "stats": "Crit +8, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +9, CHA +9, INT +6, DEX +6, STR +6, Bonus +7",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20316891",
-        "description": "A beautiful cape for Mother's Day! Happy Mother's Day!",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/OleanderCape.png",
-        "obtainVariants": [
-          {
-            "location": "Mother's Day 2012, Mother's Day (Shop)",
-            "price": "0 Gold",
-            "priceType": "free",
-            "sellback": "0 Gold",
-            "daRequired": true
-          }
-        ],
-        "element": "LIG",
-        "resists": "Light +10, Nature +10, Immobility +4, Health -2",
-        "rarity": "10"
-      }
-    ],
-    "itemType": "Cape",
-    "equipSlot": "Back",
-    "category": "Armor",
-    "tags": [
-      "free",
-      "lig"
-    ],
-    "isRare": true,
-    "hasDA": true,
-    "hasDC": false,
-    "hasDM": false,
-    "hasFree": true,
-    "hasMerge": false,
-    "levelRange": "52-72",
-    "elements": [
-      "LIG"
-    ]
-  },
-  {
-    "id": "accessory-flourishing-sakura-wrap",
-    "familyName": "Flowering Sakura Wrap",
-    "slug": "accessory-flourishing-sakura-wrap",
-    "aliasSlugs": [
-      "accessory-flowering-sakura-wrap",
-      "accessory-fragrant-sakura-wrap"
-    ],
-    "type": "accessory",
-    "subtype": "cape-wing",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18960073",
-    "familyOrigin": "cross-post",
-    "familySources": [
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=18960073",
-        "title": "DF Encyclopedia: Flourishing Sakura Wrap",
-        "variantLabel": "Flourishing Sakura Wrap",
-        "isPrimary": true
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=18962231",
-        "title": "DF Encyclopedia: Flowering Sakura Wrap",
-        "variantLabel": "Flowering Sakura Wrap",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21971922",
-        "title": "DF Encyclopedia: Fragrant Sakura Wrap",
-        "variantLabel": "Fragrant Sakura Wrap",
-        "isPrimary": false
-      }
-    ],
-    "shared": {
-      "description": "A beautiful wrap for Mother's Day! Happy Mother's Day!",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/SakuraWrap.png",
-      "alsoSee": [
-        {
-          "name": "Budding Sakura Wrap",
-          "slug": "accessory-blooming-sakura-wrap",
-          "type": "accessory",
-          "url": "https://forums2.battleon.com/f/tm.asp?m=18962225"
-        }
-      ]
-    },
-    "levelVariants": [
-      {
-        "levelNumber": 1,
-        "levelDisplay": "52",
-        "actualLevel": 52,
-        "variantName": "(Base)",
-        "name": "Flowering Sakura Wrap",
-        "damage": "",
-        "stats": "Crit +5, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +5, CHA +5, INT +4, DEX +4, STR +4, Bonus +4",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=18962231",
-        "description": "A beautiful wrap for Mother's Day! Happy Mother's Day!",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/SakuraWrap.png",
-        "obtainVariants": [
-          {
-            "location": "Mother's Day 2011, Mother's Day (Shop)",
-            "price": "0 Gold",
-            "priceType": "free",
-            "sellback": "0 Gold",
-            "daRequired": false
-          }
-        ],
-        "element": "LIG",
-        "resists": "Light +7, Nature +7, Immobility +1",
-        "rarity": "1",
-        "notes": "Cape's description previously specified Happy Mother's Day, 2011!; this was removed alongside its 2015 re-release."
-      },
-      {
-        "levelNumber": 2,
-        "levelDisplay": "62",
-        "actualLevel": 62,
-        "variantName": "Flourishing",
-        "name": "Flourishing Sakura Wrap",
-        "damage": "",
-        "stats": "Crit +6, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +7, CHA +7, INT +4, DEX +4, STR +4, Bonus +5",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=18960073",
-        "description": "A beautiful wrap for Mother's Day! Happy Mother's Day!",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/SakuraWrap.png",
-        "obtainVariants": [
-          {
-            "location": "Mother's Day 2011, Mother's Day (Shop)",
-            "price": "0 Gold",
-            "priceType": "free",
-            "sellback": "0 Gold",
-            "daRequired": false
-          }
-        ],
-        "element": "LIG",
-        "resists": "Light +10, Nature +10, Immobility +3",
-        "rarity": "0",
-        "notes": "Cape's description previously specified Happy Mother's Day, 2011!, and cape previously required a Dragon Amulet; these were removed alongside its 2015 re-release."
-      },
-      {
-        "levelNumber": 3,
-        "levelDisplay": "72",
-        "actualLevel": 72,
-        "variantName": "Fragrant",
-        "name": "Fragrant Sakura Wrap",
-        "damage": "",
-        "stats": "Crit +8, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +9, CHA +9, INT +6, DEX +6, STR +6, Bonus +7",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21971922",
-        "description": "A beautiful wrap for Mother's Day! Happy Mother's Day!",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/SakuraWrap.png",
-        "obtainVariants": [
-          {
-            "location": "Mother's Day (Shop)",
-            "price": "0 Gold",
-            "priceType": "free",
-            "sellback": "0 Gold",
-            "daRequired": true
-          }
-        ],
-        "element": "LIG",
-        "resists": "Light +12, Nature +12, Immobility +5",
-        "rarity": "10"
-      }
-    ],
-    "itemType": "Cape",
-    "equipSlot": "Back",
-    "category": "Armor",
-    "tags": [
-      "free",
-      "lig"
-    ],
-    "isRare": true,
-    "hasDA": true,
-    "hasDC": false,
-    "hasDM": false,
-    "hasFree": true,
-    "hasMerge": false,
-    "levelRange": "52-72",
-    "elements": [
-      "LIG"
-    ]
-  },
-  {
     "id": "accessory-flutterfly-dragon-wings",
     "familyName": "Flutterfly-dragon Wings",
     "slug": "accessory-flutterfly-dragon-wings",
@@ -26390,7 +25933,9 @@
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22423884",
     "releaseDate": "",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/FracturedDreams.png",
-    "elements": [],
+    "elements": [
+      "???"
+    ],
     "level": "1",
     "stats": "None",
     "resists": "None",
@@ -26411,6 +25956,7 @@
     ],
     "notes": "Wings are animated; the wings shift their color from blue to lavender continuously.",
     "tags": [
+      "???",
       "merge"
     ],
     "daRequired": false,
@@ -27930,11 +27476,15 @@
         "element": "ICE",
         "resists": "All +10, Health -15, Ice +5, Nature +5",
         "rarity": "1",
-        "notes": "Own this item to unlock the Frost  Armor Customization options for  PumpkinLord and  Evolved PumpkinLord classes."
+        "notes": "Own this item to unlock the Frost Armor Customization options for PumpkinLord and Evolved PumpkinLord classes."
       }
     ],
     "itemType": "Cape",
     "equipSlot": "Back",
+    "armorCustomization": {
+      "appearance": "Frost",
+      "modifies": "PumpkinLord and Evolved PumpkinLord"
+    },
     "category": "Armor",
     "releaseDate": "",
     "tags": [
@@ -27942,6 +27492,7 @@
       "merge"
     ],
     "isCosmetic": true,
+    "hasArmorCustomization": true,
     "hasDA": false,
     "hasDC": true,
     "hasDM": false,
@@ -27958,7 +27509,7 @@
     "slug": "accessory-frostscythe-s-cape",
     "type": "accessory",
     "subtype": "cape-wing",
-    "description": "A replica of Dragonmaster Frostscythe's cape! Fashionable! \n  \n (Cosmetic)",
+    "description": "A replica of Dragonmaster Frostscythe's cape! Fashionable!\n\n (Cosmetic)",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22396563",
     "releaseDate": "",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/Frostscythe'sCape.png",
@@ -28074,7 +27625,7 @@
         "element": "ICE",
         "resists": "Ice +3",
         "rarity": "0",
-        "notes": "Transformed from  Red Dragon Gift Box on  December 31st, 2007."
+        "notes": "Transformed from Red Dragon Gift Box on December 31st, 2007."
       },
       {
         "levelNumber": 2,
@@ -28616,7 +28167,7 @@
         "element": "ICE",
         "resists": "Ice +5",
         "rarity": "1",
-        "notes": "Transformed from  Small Gift Box on  January 1st, 2007."
+        "notes": "Transformed from Small Gift Box on January 1st, 2007."
       },
       {
         "levelNumber": 2,
@@ -28641,7 +28192,7 @@
         "element": "ICE",
         "resists": "Ice +5",
         "rarity": "1",
-        "notes": "Transformed from  Small Dragon Gift Box on  January 1st, 2007."
+        "notes": "Transformed from Small Dragon Gift Box on January 1st, 2007."
       }
     ],
     "itemType": "Cape",
@@ -29130,7 +28681,7 @@
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=19992188",
-        "description": "This cloak was pulled across dimensions. It carries the dust of the galaxies on it.  \n  \n This item requires a Dragon Amulet.",
+        "description": "This cloak was pulled across dimensions. It carries the dust of the galaxies on it.\n\n This item requires a Dragon Amulet.",
         "element": "WAT",
         "resists": "Water +10, Darkness +9",
         "rarity": "25"
@@ -29159,6 +28710,9 @@
     "familyName": "Gambler Wings",
     "slug": "accessory-gambler-wings",
     "aliasSlugs": [
+      "accessory-charmed-gambler-wings",
+      "accessory-favored-gambler-wings",
+      "accessory-fortunate-gambler-wings",
       "accessory-golden-gambler-wings",
       "accessory-hopeful-gambler-wings",
       "accessory-hot-gambler-wings",
@@ -29166,13 +28720,31 @@
     ],
     "type": "accessory",
     "subtype": "cape-wing",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21316541",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21316556",
     "familyOrigin": "cross-post",
     "familySources": [
       {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21316556",
+        "title": "DF Encyclopedia: Charmed Gambler Wings",
+        "variantLabel": "Charmed Gambler Wings",
+        "isPrimary": true
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21316551",
+        "title": "DF Encyclopedia: Favored Gambler Wings",
+        "variantLabel": "Favored Gambler Wings",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21316548",
+        "title": "DF Encyclopedia: Fortunate Gambler Wings",
+        "variantLabel": "Fortunate Gambler Wings",
+        "isPrimary": false
+      },
+      {
         "url": "https://forums2.battleon.com/f/tm.asp?m=21316541",
         "title": "DF Encyclopedia: Gambler Wings",
-        "isPrimary": true
+        "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=21316555",
@@ -29242,8 +28814,8 @@
         "obtainVariants": [
           {
             "location": "Gambler Wings (Shop)",
-            "priceType": "gold",
             "price": "1,500 Gold",
+            "priceType": "gold",
             "sellback": "150 Gold",
             "daRequired": false
           }
@@ -29278,6 +28850,54 @@
       },
       {
         "levelNumber": 4,
+        "levelDisplay": "52",
+        "actualLevel": 52,
+        "variantName": "Fortunate",
+        "name": "Fortunate Gambler Wings",
+        "damage": "",
+        "stats": "Dodge +1, Crit +2, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +4, END +4, CHA +4, LUK +5, INT +2, DEX +2, STR +2, Bonus +5",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21316548",
+        "description": "These lucky wings will make battles less of a gamble!",
+        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/GamblerWingspic.png",
+        "obtainVariants": [
+          {
+            "location": "Gambler Wings (Shop)",
+            "price": "3,000 Gold",
+            "priceType": "gold",
+            "sellback": "300 Gold",
+            "daRequired": false
+          }
+        ],
+        "element": "NON",
+        "resists": "Wind +7, Darkness +5",
+        "rarity": "1"
+      },
+      {
+        "levelNumber": 5,
+        "levelDisplay": "62",
+        "actualLevel": 62,
+        "variantName": "Favored",
+        "name": "Favored Gambler Wings",
+        "damage": "",
+        "stats": "Dodge +1, Crit +3, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +5, END +5, CHA +5, LUK +6, INT +3, DEX +3, STR +3, Bonus +6",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21316551",
+        "description": "These lucky wings will make battles less of a gamble!",
+        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/GamblerWingspic.png",
+        "obtainVariants": [
+          {
+            "location": "Gambler Wings (Shop)",
+            "price": "4,000 Gold",
+            "priceType": "gold",
+            "sellback": "400 Gold",
+            "daRequired": false
+          }
+        ],
+        "element": "NON",
+        "resists": "Wind +9, Darkness +5",
+        "rarity": "9"
+      },
+      {
+        "levelNumber": 6,
         "levelDisplay": "72",
         "actualLevel": 72,
         "variantName": "Hopeful",
@@ -29301,7 +28921,7 @@
         "rarity": "10"
       },
       {
-        "levelNumber": 5,
+        "levelNumber": 7,
         "levelDisplay": "76",
         "actualLevel": 76,
         "variantName": "Golden",
@@ -29323,6 +28943,30 @@
         "element": "NON",
         "resists": "Wind +12, Darkness +6, Fire +6, All +2",
         "rarity": "10"
+      },
+      {
+        "levelNumber": 8,
+        "levelDisplay": "80",
+        "actualLevel": 80,
+        "variantName": "Charmed",
+        "name": "Charmed Gambler Wings",
+        "damage": "",
+        "stats": "Block +1, Dodge +1, Parry +2, Crit +7, Magic Def +9, Pierce Def +9, Melee Def +9, WIS +7, END +7, CHA +7, LUK +12, INT +7, DEX +7, STR +7, Bonus +10",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21316556",
+        "description": "These lucky wings will make battles less of a gamble! This item requires a Dragon Amulet.",
+        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/GamblerWingspic.png",
+        "obtainVariants": [
+          {
+            "location": "Gambler Wings (Shop)",
+            "price": "6,400 Gold",
+            "priceType": "gold",
+            "sellback": "640 Gold",
+            "daRequired": true
+          }
+        ],
+        "element": "NON",
+        "resists": "Wind +15, Darkness +9, Fire +9, All +2",
+        "rarity": "10"
       }
     ],
     "itemType": "Wings",
@@ -29337,7 +28981,7 @@
     "hasDM": false,
     "hasFree": false,
     "hasMerge": false,
-    "levelRange": "22-76",
+    "levelRange": "22-80",
     "elements": [
       "NON"
     ]
@@ -30496,13 +30140,6 @@
     "shared": {
       "description": "This gigantic potion matches the color of your dragon's eyes! What effects could it have? Although, finding a way to drink from it while it's strapped to your back is a puzzle yet to be solved. (Cosmetic)",
       "resists": "None",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/GiantCustomPotionBronze.png",
-      "alternativeImages": [
-        {
-          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/GiantCustomPotionSilver.png",
-          "caption": "Alternative 1"
-        }
-      ],
       "rarity": "5"
     },
     "levelVariants": [
@@ -30605,13 +30242,6 @@
     "shared": {
       "description": "This gigantic health potion is still portable! Although, finding a way to drink from it while it's strapped to your back is a puzzle yet to be solved. (Cosmetic)",
       "resists": "None",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/GiantHealthPotionBronze.png",
-      "alternativeImages": [
-        {
-          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/GiantHealthPotionSilver.png",
-          "caption": "Alternative 1"
-        }
-      ],
       "rarity": "5"
     },
     "levelVariants": [
@@ -30714,13 +30344,6 @@
     "shared": {
       "description": "This gigantic mana potion is still portable! Although, finding a way to drink from it while it's strapped to your back is a puzzle yet to be solved. (Cosmetic)",
       "resists": "None",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/GiantManaPotionBronze.png",
-      "alternativeImages": [
-        {
-          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/GiantManaPotionSilver.png",
-          "caption": "Alternative 1"
-        }
-      ],
       "rarity": "5"
     },
     "levelVariants": [
@@ -30793,42 +30416,6 @@
     "elements": [
       "POI"
     ]
-  },
-  {
-    "id": "accessory-glowing-techangel-wings",
-    "name": "Glowing Techangel Wings",
-    "slug": "accessory-glowing-techangel-wings",
-    "type": "accessory",
-    "subtype": "cape-wing",
-    "description": "Crafted from forged brass and gears, these wings will help you defend yourself.  \n  \n This item requires a Dragon Amulet.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20313028",
-    "releaseDate": "",
-    "imageUrl": "http://i.imgur.com/q6Omu.png",
-    "elements": [
-      "LIG"
-    ],
-    "level": "73",
-    "stats": "Block +2, Dodge +2, Parry +2, Crit +5, Magic Def +8, Pierce Def +8, Melee Def +8, WIS +4, END +4, INT +5, DEX +5, STR +5, Bonus +8",
-    "resists": "Metal +10, Light +9, All +3",
-    "rarity": "25",
-    "itemType": "Wings",
-    "equipSpot": "Back",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "Dark Pursuit",
-        "priceType": "free",
-        "price": "N/A",
-        "sellback": "400 Gold",
-        "daRequired": true
-      }
-    ],
-    "notes": "Wings previously appeared in the retired quest  North.",
-    "tags": [
-      "lig",
-      "free"
-    ],
-    "daRequired": true
   },
   {
     "id": "accessory-glowing-tree-branches",
@@ -31094,6 +30681,152 @@
     "hasFree": false,
     "hasMerge": false,
     "levelRange": "20-80",
+    "elements": [
+      "NAT"
+    ]
+  },
+  {
+    "id": "accessory-badly-glued-wings",
+    "familyName": "Glued Wings",
+    "slug": "accessory-badly-glued-wings",
+    "aliasSlugs": [
+      "accessory-carelessly-glued-wings",
+      "accessory-haphazardly-glued-wings",
+      "accessory-poorly-glued-wings"
+    ],
+    "type": "accessory",
+    "subtype": "cape-wing",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21917730",
+    "familyOrigin": "cross-post",
+    "familySources": [
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21917730",
+        "title": "DF Encyclopedia: Glued Wings",
+        "isPrimary": true
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21857469",
+        "title": "DF Encyclopedia: Poorly Glued Wings",
+        "variantLabel": "Poorly Glued Wings",
+        "isPrimary": false
+      }
+    ],
+    "shared": {
+      "description": "You'd think if he was trying to impersonate you he'd try a little harder on the disguise.",
+      "imageUrl": "http://i.imgur.com/Ibe4rHD.png",
+      "rarity": "5"
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
+        "levelDisplay": "50",
+        "actualLevel": 50,
+        "variantName": "Badly",
+        "name": "Badly Glued Wings",
+        "damage": "",
+        "stats": "Crit +3, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +3, END +2, CHA +3, INT +2, DEX +2, STR +2, Bonus +3",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21917730",
+        "description": "You'd think if he was trying to impersonate you he'd try a little harder on the disguise.",
+        "imageUrl": "http://i.imgur.com/Ibe4rHD.png",
+        "obtainVariants": [
+          {
+            "location": "Impersonator",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "130 Gold",
+            "daRequired": false
+          }
+        ],
+        "element": "NAT",
+        "resists": "Water +3, Wind +3",
+        "rarity": "5"
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "60",
+        "actualLevel": 60,
+        "variantName": "Carelessly",
+        "name": "Carelessly Glued Wings",
+        "damage": "",
+        "stats": "Crit +4, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +4, END +3, CHA +4, INT +3, DEX +3, STR +3, Bonus +3",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21856228",
+        "description": "You'd think if he was trying to impersonate you he'd try a little harder on the disguise.",
+        "imageUrl": "http://i.imgur.com/Ibe4rHD.png",
+        "obtainVariants": [
+          {
+            "location": "Impersonator",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "140 Gold",
+            "daRequired": false
+          }
+        ],
+        "element": "NAT",
+        "resists": "Water +4, Wind +4",
+        "rarity": "5"
+      },
+      {
+        "levelNumber": 3,
+        "levelDisplay": "70",
+        "actualLevel": 70,
+        "variantName": "Poorly",
+        "name": "Poorly Glued Wings",
+        "damage": "",
+        "stats": "Crit +4, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +5, END +4, CHA +5, INT +3, DEX +3, STR +3, Bonus +4",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21857469",
+        "description": "You'd think if he was trying to impersonate you he'd try a little harder on the disguise.",
+        "imageUrl": "http://i.imgur.com/Ibe4rHD.png",
+        "obtainVariants": [
+          {
+            "location": "Impersonator",
+            "priceType": "free",
+            "price": "N/A",
+            "sellback": "150 Gold",
+            "daRequired": false
+          }
+        ],
+        "element": "NAT",
+        "resists": "Water +5, Wind +5",
+        "rarity": "5"
+      },
+      {
+        "levelNumber": 4,
+        "levelDisplay": "80",
+        "actualLevel": 80,
+        "variantName": "Haphazardly",
+        "name": "Haphazardly Glued Wings",
+        "damage": "",
+        "stats": "Crit +5, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +6, END +5, CHA +6, INT +4, DEX +4, STR +4, Bonus +4",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21856230",
+        "description": "You'd think if he was trying to impersonate you he'd try a little harder on the disguise.",
+        "imageUrl": "http://i.imgur.com/Ibe4rHD.png",
+        "obtainVariants": [
+          {
+            "location": "Impersonator",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "160 Gold",
+            "daRequired": false
+          }
+        ],
+        "element": "NAT",
+        "resists": "Water +6, Wind +6",
+        "rarity": "5"
+      }
+    ],
+    "itemType": "Wings",
+    "equipSlot": "Back",
+    "category": "Armor",
+    "tags": [
+      "free",
+      "nat"
+    ],
+    "hasDA": false,
+    "hasDC": false,
+    "hasDM": false,
+    "hasFree": true,
+    "hasMerge": false,
+    "levelRange": "50-80",
     "elements": [
       "NAT"
     ]
@@ -31721,29 +31454,62 @@
     ]
   },
   {
-    "id": "accessory-miner-s-golden-cloak",
+    "id": "accessory-argent-golden-cloak",
     "familyName": "Golden Cloak",
-    "slug": "accessory-miner-s-golden-cloak",
+    "slug": "accessory-argent-golden-cloak",
     "aliasSlugs": [
+      "accessory-bright-golden-cloak",
       "accessory-gleaming-golden-cloak",
+      "accessory-lambent-golden-cloak",
+      "accessory-miner-s-golden-cloak",
       "accessory-padded-golden-cloak",
       "accessory-prospector-s-golden-cloak"
     ],
     "type": "accessory",
     "subtype": "cape-wing",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21084680",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21084772",
     "familyOrigin": "cross-post",
     "familySources": [
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21084772",
+        "title": "DF Encyclopedia: Argent Golden Cloak",
+        "variantLabel": "Argent Golden Cloak",
+        "isPrimary": true
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21084869",
+        "title": "DF Encyclopedia: Bright Golden Cloak",
+        "variantLabel": "Bright Golden Cloak",
+        "isPrimary": false
+      },
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=21084844",
         "title": "DF Encyclopedia: Gleaming Golden Cloak",
         "variantLabel": "Gleaming Golden Cloak",
-        "isPrimary": true
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21084832",
+        "title": "DF Encyclopedia: Lambent Golden Cloak",
+        "variantLabel": "Lambent Golden Cloak",
+        "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=21084680",
         "title": "DF Encyclopedia: Miner's Golden Cloak",
         "variantLabel": "Miner's Golden Cloak",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21084861",
+        "title": "DF Encyclopedia: Padded Golden Cloak",
+        "variantLabel": "Padded Golden Cloak",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21084752",
+        "title": "DF Encyclopedia: Prospector's Golden Cloak",
+        "variantLabel": "Prospector's Golden Cloak",
         "isPrimary": false
       }
     ],
@@ -31756,7 +31522,7 @@
         "levelNumber": 1,
         "levelDisplay": "21",
         "actualLevel": 21,
-        "variantName": "(Base)",
+        "variantName": "Miner's",
         "name": "Miner's Golden Cloak",
         "damage": "",
         "stats": "Dodge +1, Crit +1, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +3, END +3, CHA +2, LUK +2, Bonus +1",
@@ -31804,6 +31570,56 @@
       },
       {
         "levelNumber": 3,
+        "levelDisplay": "51",
+        "actualLevel": 51,
+        "variantName": "Argent",
+        "name": "Argent Golden Cloak",
+        "damage": "",
+        "stats": "Dodge +1, Crit +4, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +6, END +6, CHA +4, LUK +5, INT +2, DEX +2, STR +2, Bonus +5",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21084772",
+        "description": "As two titans meet for a battle 47 years in the making... which side will you cheer on?",
+        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/GoldenCloakpic.png",
+        "obtainVariants": [
+          {
+            "location": "SB Shop, Strange Ball Shop",
+            "price": "120 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "108 DC (<24 hours) / 30 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "element": "LIG",
+        "resists": "Darkness +6, Immobility +2",
+        "rarity": "1"
+      },
+      {
+        "levelNumber": 4,
+        "levelDisplay": "61",
+        "actualLevel": 61,
+        "variantName": "Lambent",
+        "name": "Lambent Golden Cloak",
+        "damage": "",
+        "stats": "Dodge +1, Crit +5, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +7, END +7, CHA +5, LUK +6, INT +4, DEX +4, STR +4, Bonus +6",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21084832",
+        "description": "As two titans meet for a battle 47 years in the making... which side will you cheer on?",
+        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/GoldenCloakpic.png",
+        "obtainVariants": [
+          {
+            "location": "SB Shop, Strange Ball Shop",
+            "priceType": "dc",
+            "price": "140 Dragon Coins",
+            "sellback": "126 DC (<24 hours) / 35 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "element": "LIG",
+        "resists": "Darkness +7, Immobility +3",
+        "rarity": "9"
+      },
+      {
+        "levelNumber": 5,
         "levelDisplay": "71",
         "actualLevel": 71,
         "variantName": "Gleaming",
@@ -31816,8 +31632,8 @@
         "obtainVariants": [
           {
             "location": "SB Shop, Strange Ball Shop",
-            "priceType": "dc",
             "price": "160 Dragon Coins",
+            "priceType": "dc",
             "sellback": "144 DC (<24 hours) / 40 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
@@ -31828,7 +31644,7 @@
         "rarity": "10"
       },
       {
-        "levelNumber": 4,
+        "levelNumber": 6,
         "levelDisplay": "76",
         "actualLevel": 76,
         "variantName": "Padded",
@@ -31851,6 +31667,31 @@
         "element": "LIG",
         "resists": "Immobility +4, Darkness +9",
         "rarity": "10"
+      },
+      {
+        "levelNumber": 7,
+        "levelDisplay": "80",
+        "actualLevel": 80,
+        "variantName": "Bright",
+        "name": "Bright Golden Cloak",
+        "damage": "",
+        "stats": "Block +1, Dodge +1, Parry +1, Crit +8, Magic Def +9, Pierce Def +9, Melee Def +9, WIS +10, END +10, CHA +7, LUK +9, INT +6, DEX +6, STR +6, Bonus +9",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21084869",
+        "description": "As two titans meet for a battle 47 years in the making... which side will you cheer on?",
+        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/GoldenCloakpic.png",
+        "obtainVariants": [
+          {
+            "location": "SB Shop, Strange Ball Shop",
+            "price": "180 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "162 DC (<24 hours) / 45 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "element": "LIG",
+        "resists": "Darkness +10, Immobility +4",
+        "rarity": "10"
       }
     ],
     "itemType": "Cape",
@@ -31867,7 +31708,7 @@
     "hasDM": false,
     "hasFree": false,
     "hasMerge": false,
-    "levelRange": "21-76",
+    "levelRange": "21-80",
     "elements": [
       "LIG"
     ]
@@ -32568,7 +32409,7 @@
         "element": "FIR",
         "resists": "Ice +1",
         "rarity": "1",
-        "notes": "Transformed from  Red Present (1) on  December 25th, 2009."
+        "notes": "Transformed from Red Present (1) on December 25th, 2009."
       },
       {
         "levelNumber": 2,
@@ -32593,7 +32434,7 @@
         "element": "FIR",
         "resists": "Ice +5",
         "rarity": "1",
-        "notes": "Transformed from  Red Present (25) on  December 25th, 2009."
+        "notes": "Transformed from Red Present (25) on December 25th, 2009."
       },
       {
         "levelNumber": 3,
@@ -32618,7 +32459,7 @@
         "element": "FIR",
         "resists": "Ice +8, Wind +4",
         "rarity": "1",
-        "notes": "Transformed from  Red Present (51) on  December 25th, 2009."
+        "notes": "Transformed from Red Present (51) on December 25th, 2009."
       },
       {
         "levelNumber": 4,
@@ -32700,23 +32541,32 @@
     "daRequired": false
   },
   {
-    "id": "accessory-ghostly-green-cape",
+    "id": "accessory-extra-spooky-green-cape",
     "familyName": "Green Cape",
-    "slug": "accessory-ghostly-green-cape",
+    "slug": "accessory-extra-spooky-green-cape",
     "aliasSlugs": [
+      "accessory-ghostly-green-cape",
       "accessory-haunted-green-cape",
-      "accessory-really-spooky-green-cape"
+      "accessory-really-spooky-green-cape",
+      "accessory-spooky-green-cape",
+      "accessory-super-spooky-green-cape"
     ],
     "type": "accessory",
     "subtype": "cape-wing",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=11706699",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21855775",
     "familyOrigin": "cross-post",
     "familySources": [
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21855775",
+        "title": "DF Encyclopedia: Extra Spooky Green Cape",
+        "variantLabel": "Extra Spooky Green Cape",
+        "isPrimary": true
+      },
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=11706699",
         "title": "DF Encyclopedia: Ghostly Green Cape",
         "variantLabel": "Ghostly Green Cape",
-        "isPrimary": true
+        "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=21855552",
@@ -32728,6 +32578,18 @@
         "url": "https://forums2.battleon.com/f/tm.asp?m=21855778",
         "title": "DF Encyclopedia: Really Spooky Green Cape",
         "variantLabel": "Really Spooky Green Cape",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21855561",
+        "title": "DF Encyclopedia: Spooky Green Cape",
+        "variantLabel": "Spooky Green Cape",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21855774",
+        "title": "DF Encyclopedia: Super Spooky Green Cape",
+        "variantLabel": "Super Spooky Green Cape",
         "isPrimary": false
       }
     ],
@@ -32786,6 +32648,78 @@
       },
       {
         "levelNumber": 3,
+        "levelDisplay": "45",
+        "actualLevel": 45,
+        "variantName": "Spooky",
+        "name": "Spooky Green Cape",
+        "damage": "",
+        "stats": "Crit +3, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +2, END +3, CHA +3, LUK +2, INT +3, DEX +3, STR +3, Bonus +4",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21855561",
+        "description": "It either fell off a ghost or it is dangerously radioactive. Both options raise too many questions.",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/GreenCape.png",
+        "obtainVariants": [
+          {
+            "location": "Mogloween Capes",
+            "price": "1,500 Gold",
+            "priceType": "gold",
+            "sellback": "150 Gold",
+            "daRequired": false
+          }
+        ],
+        "element": "ENE",
+        "resists": "Nature +4, Energy +5",
+        "rarity": "20"
+      },
+      {
+        "levelNumber": 4,
+        "levelDisplay": "55",
+        "actualLevel": 55,
+        "variantName": "Super Spooky",
+        "name": "Super Spooky Green Cape",
+        "damage": "",
+        "stats": "Crit +4, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +3, END +4, CHA +4, LUK +3, INT +3, DEX +3, STR +3, Bonus +4",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21855774",
+        "description": "It either fell off a ghost or it is dangerously radioactive. Both options raise too many questions.",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/GreenCape.png",
+        "obtainVariants": [
+          {
+            "location": "Mogloween Capes",
+            "price": "2,000 Gold",
+            "priceType": "gold",
+            "sellback": "200 Gold",
+            "daRequired": false
+          }
+        ],
+        "element": "ENE",
+        "resists": "Nature +6, Energy +7",
+        "rarity": "20"
+      },
+      {
+        "levelNumber": 5,
+        "levelDisplay": "65",
+        "actualLevel": 65,
+        "variantName": "Extra Spooky",
+        "name": "Extra Spooky Green Cape",
+        "damage": "",
+        "stats": "Block +1, Dodge +1, Parry +1, Crit +5, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +4, END +4, CHA +7, LUK +7, INT +6, DEX +6, STR +6, Bonus +5",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21855775",
+        "description": "It either fell off a ghost or it is dangerously radioactive. Both options raise too many questions.",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/GreenCape.png",
+        "obtainVariants": [
+          {
+            "location": "Mogloween Capes",
+            "price": "3,000 Gold",
+            "priceType": "gold",
+            "sellback": "300 Gold",
+            "daRequired": false
+          }
+        ],
+        "element": "ENE",
+        "resists": "Nature +8, Energy +8, Immobility +2",
+        "rarity": "20"
+      },
+      {
+        "levelNumber": 6,
         "levelDisplay": "75",
         "actualLevel": 75,
         "variantName": "Really Spooky",
@@ -33922,7 +33856,7 @@
             "location": "Purchase the 5000 DragonCoins + Old Grove Tender Set Package",
             "price": "$19.95 USD",
             "priceType": "gold",
-            "sellback": "0 Dragon Coins N/A",
+            "sellback": "N/A",
             "daRequired": false,
             "dcRequired": true
           }
@@ -33945,7 +33879,7 @@
             "location": "Grove Tender",
             "price": "N/A",
             "priceType": "merge",
-            "sellback": "0 Dragon Coins N/A",
+            "sellback": "N/A",
             "requiredItems": "1 Grove Tender Twigs (10) & 1 Heart of the Forest",
             "daRequired": false,
             "dcRequired": true
@@ -33969,7 +33903,7 @@
             "location": "Grove Tender",
             "price": "N/A",
             "priceType": "merge",
-            "sellback": "0 Dragon Coins N/A",
+            "sellback": "N/A",
             "requiredItems": "1 Grove Tender Twigs (30) & 1 Heart of the Forest",
             "daRequired": false,
             "dcRequired": true
@@ -33993,7 +33927,7 @@
             "location": "Grove Tender",
             "price": "N/A",
             "priceType": "merge",
-            "sellback": "0 Dragon Coins N/A",
+            "sellback": "N/A",
             "requiredItems": "1 Grove Tender Twigs (50) & 1 Heart of the Forest",
             "daRequired": false,
             "dcRequired": true
@@ -34017,7 +33951,7 @@
             "location": "Grove Tender",
             "price": "N/A",
             "priceType": "merge",
-            "sellback": "0 Dragon Coins N/A",
+            "sellback": "N/A",
             "requiredItems": "1 Grove Tender Twigs (70) & 1 Heart of the Forest",
             "daRequired": false,
             "dcRequired": true
@@ -34041,7 +33975,7 @@
             "location": "Grove Tender",
             "price": "N/A",
             "priceType": "merge",
-            "sellback": "0 Dragon Coins N/A",
+            "sellback": "N/A",
             "requiredItems": "1 Grove Tender Twigs (80) & 1 Heart of the Forest",
             "daRequired": false,
             "dcRequired": true
@@ -34314,7 +34248,7 @@
         "daRequired": false
       }
     ],
-    "notes": "The following changes were implemented on  March 20th. 2026:\n  • Dragon Amulet requirement was removed.\n  • Level's requirement was raised from 5 to 15.\n  • Melee/Pierce/Magic Avoidance stats were raised from +1 to +4.\n  • LUK and Bonus stats were raised from +1 to +2.",
+    "notes": "The following changes were implemented on March 20th. 2026:\n  • Dragon Amulet requirement was removed.\n  • Level's requirement was raised from 5 to 15.\n  • Melee/Pierce/Magic Avoidance stats were raised from +1 to +4.\n  • LUK and Bonus stats were raised from +1 to +2.",
     "tags": [
       "win",
       "free"
@@ -34934,39 +34868,135 @@
     ]
   },
   {
-    "id": "accessory-haphazardly-glued-wings",
-    "name": "Haphazardly Glued Wings",
-    "slug": "accessory-haphazardly-glued-wings",
+    "id": "accessory-pitch-harvester-wings",
+    "familyName": "Harvester Wings",
+    "slug": "accessory-pitch-harvester-wings",
+    "aliasSlugs": [
+      "accessory-raven-harvester-wings",
+      "accessory-stygian-harvester-wings"
+    ],
     "type": "accessory",
     "subtype": "cape-wing",
-    "description": "You'd think if he was trying to impersonate you he'd try a little harder on the disguise.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21856230",
-    "releaseDate": "",
-    "imageUrl": "http://i.imgur.com/Ibe4rHD.png",
-    "elements": [
-      "NAT"
-    ],
-    "level": "80",
-    "stats": "Crit +5, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +6, END +5, CHA +6, INT +4, DEX +4, STR +4, Bonus +4",
-    "resists": "Water +6, Wind +6",
-    "rarity": "5",
-    "itemType": "Wings",
-    "equipSpot": "Back",
-    "category": "Armor",
-    "obtainMethods": [
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19833712",
+    "familyOrigin": "cross-post",
+    "familySources": [
       {
-        "location": "Impersonator",
-        "priceType": "free",
-        "price": "N/A",
-        "sellback": "160 Gold",
-        "daRequired": false
+        "url": "https://forums2.battleon.com/f/tm.asp?m=19833712",
+        "title": "DF Encyclopedia: Pitch Harvester Wings",
+        "variantLabel": "Pitch Harvester Wings",
+        "isPrimary": true
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=19833888",
+        "title": "DF Encyclopedia: Raven Harvester Wings",
+        "variantLabel": "Raven Harvester Wings",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=19833877",
+        "title": "DF Encyclopedia: Stygian Harvester Wings",
+        "variantLabel": "Stygian Harvester Wings",
+        "isPrimary": false
       }
     ],
-    "tags": [
-      "nat",
-      "free"
+    "shared": {
+      "description": "Doom surrounds these midnight black wings!",
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/BlackHarvesterWings.png"
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
+        "levelDisplay": "50",
+        "actualLevel": 50,
+        "variantName": "Raven",
+        "name": "Raven Harvester Wings",
+        "damage": "",
+        "stats": "Dodge +1, Crit +9, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +7, END +7, INT +6, DEX +6, STR +6, Bonus +4",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=19833888",
+        "description": "Doom surrounds these midnight black wings!",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/BlackHarvesterWings.png",
+        "obtainVariants": [
+          {
+            "location": "Black Friday Shop, Black Friday",
+            "price": "150 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "135 DC (<24 hours) / 38 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "element": "EVI",
+        "resists": "Darkness +5, Evil +2",
+        "rarity": "15"
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "60",
+        "actualLevel": 60,
+        "variantName": "Pitch",
+        "name": "Pitch Harvester Wings",
+        "damage": "",
+        "stats": "Block +1, Dodge +1, Crit +10, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +8, END +8, INT +7, DEX +7, STR +7, Bonus +5",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=19833712",
+        "description": "Doom surrounds these midnight black wings!",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/BlackHarvesterWings.png",
+        "obtainVariants": [
+          {
+            "location": "Black Friday Shop, Black Friday",
+            "priceType": "dc",
+            "price": "175 Dragon Coins",
+            "sellback": "158 DC (<24 hours) / 44 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "element": "EVI",
+        "resists": "Darkness +6, Evil +3",
+        "rarity": "15"
+      },
+      {
+        "levelNumber": 3,
+        "levelDisplay": "70",
+        "actualLevel": 70,
+        "variantName": "Stygian",
+        "name": "Stygian Harvester Wings",
+        "damage": "",
+        "stats": "Block +1, Dodge +1, Crit +10, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +8, END +8, INT +7, DEX +7, STR +7, Bonus +5",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=19833877",
+        "description": "Doom surrounds these midnight black wings!",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/BlackHarvesterWings.png",
+        "obtainVariants": [
+          {
+            "location": "Black Friday Shop, Black Friday",
+            "price": "200 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "element": "EVI",
+        "resists": "Darkness +6, Evil +3",
+        "rarity": "25"
+      }
     ],
-    "daRequired": false
+    "itemType": "Wings",
+    "equipSlot": "Back",
+    "category": "Armor",
+    "tags": [
+      "dc",
+      "evi"
+    ],
+    "isSeasonal": true,
+    "hasDA": false,
+    "hasDC": true,
+    "hasDM": false,
+    "hasFree": false,
+    "hasMerge": false,
+    "levelRange": "50-70",
+    "elements": [
+      "EVI"
+    ]
   },
   {
     "id": "accessory-headmaster-s-cape",
@@ -34974,7 +35004,7 @@
     "slug": "accessory-headmaster-s-cape",
     "type": "accessory",
     "subtype": "cape-wing",
-    "description": "This long cape doesn't flow as well as you might expect. Maybe it comes with the position?  (Cosmetic)",
+    "description": "This long cape doesn't flow as well as you might expect. Maybe it comes with the position? (Cosmetic)",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22424139",
     "releaseDate": "",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/Headmaster'sCape.png",
@@ -35410,7 +35440,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "Cape is color-custom; dragon shown appearances are linked to the player's dragon horn, dragon skin, dragon eye, and dragon wing colors respectively.\nCape's dragon shown appearances are linked to the player's  dragon growth status and 'Dragon Growth Appearance' from  Dove in  Sunbreeze Grove (Books 3 and 4),\nClick on the backpack to change between manual and automatic states for hiding or showing the player's dragon.\nPop-up headlines upon clicking the backpack:\nquote:\nDragon hidden! (Manual, out of combat)\nDragon shown! (Manual, in combat)\nYou let your dragon decide what to do. (Automatic)\nBaby /  Toddler /  Kid Dragon Shown Appearances",
+    "notes": "Cape is color-custom; dragon shown appearances are linked to the player's dragon horn, dragon skin, dragon eye, and dragon wing colors respectively.\nCape's dragon shown appearances are linked to the player's dragon growth status and 'Dragon Growth Appearance' from Dove in Sunbreeze Grove (Books 3 and 4)\nClick on the backpack to change between manual and automatic states for hiding or showing the player's dragon.\nPop-up headlines upon clicking the backpack:\nquote:\nDragon hidden! (Manual, out of combat)\nDragon shown! (Manual, in combat)\nYou let your dragon decide what to do. (Automatic)\nBaby / Toddler / Kid Dragon Shown Appearances",
     "tags": [
       "evi",
       "dc"
@@ -36339,6 +36369,51 @@
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/HourglassoftheDead.png"
   },
   {
+    "id": "accessory-hourglass-of-timeless-destiny",
+    "name": "Hourglass of Timeless Destiny",
+    "slug": "accessory-hourglass-of-timeless-destiny",
+    "type": "accessory",
+    "subtype": "cape-wing",
+    "description": "Ever turning, ever marching, toward fate's end. (Cosmetic) (CC: Element, Trim)",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22411518",
+    "releaseDate": "",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/HourglassofTimelessDestiny.png",
+    "alternativeImages": [
+      {
+        "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/HourglassofTimelessDestiny-ElementalAttunement.png",
+        "caption": "All Appearances"
+      }
+    ],
+    "elements": [
+      "LIG"
+    ],
+    "level": "1",
+    "stats": "None",
+    "resists": "None",
+    "rarity": "5",
+    "itemType": "Cape",
+    "equipSpot": "Back",
+    "category": "Armor",
+    "obtainMethods": [
+      {
+        "location": "DC Cosmetics, Time Shop",
+        "priceType": "dc",
+        "price": "400 Dragon Coins",
+        "sellback": "360 DC (<24 hours) / 100 DC (>24 hours)",
+        "daRequired": false,
+        "dcRequired": true
+      }
+    ],
+    "notes": "Cape is color-custom; the gears beside the hourglass are linked to the player's trim color.\nCape's appearance is attuned to the player's equipped weapon's element; refer to this chart for all appearances.",
+    "tags": [
+      "dc",
+      "lig"
+    ],
+    "daRequired": false,
+    "dcRequired": true,
+    "isCosmetic": true
+  },
+  {
     "id": "accessory-hovering-rocks",
     "familyName": "Hovering Rocks",
     "slug": "accessory-hovering-rocks",
@@ -36472,7 +36547,7 @@
     "slug": "accessory-ice-elf-cloak",
     "type": "accessory",
     "subtype": "cape-wing",
-    "description": "The discarded cloak of an ice elf ruler. \n  \n (Cosmetic)",
+    "description": "The discarded cloak of an ice elf ruler.\n\n (Cosmetic)",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22398698",
     "releaseDate": "",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/IceElfCloak.png",
@@ -36495,7 +36570,7 @@
         "daRequired": true
       }
     ],
-    "notes": "Cape was DA tagged on  December 17th, 2021.",
+    "notes": "Cape was DA tagged on December 17th, 2021.",
     "tags": [
       "ice",
       "free"
@@ -37775,7 +37850,7 @@
     "slug": "accessory-inferno-bat-wings",
     "type": "accessory",
     "subtype": "cape-wing",
-    "description": "This item  requires a Dragon Amulet. Careful you don't set your hair on fire!",
+    "description": "This item requires a Dragon Amulet. Careful you don't set your hair on fire!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20085647",
     "releaseDate": "",
     "imageUrl": "http://i.imgur.com/0Xo7Y.png",
@@ -38214,7 +38289,9 @@
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22405944",
     "releaseDate": "",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/Intaym'sWrap.png",
-    "elements": [],
+    "elements": [
+      "???"
+    ],
     "level": "1",
     "stats": "None",
     "resists": "None",
@@ -38234,6 +38311,7 @@
       }
     ],
     "tags": [
+      "???",
       "merge"
     ],
     "daRequired": false,
@@ -38432,38 +38510,100 @@
   },
   {
     "id": "accessory-ivy-cloak",
-    "name": "Ivy Cloak",
+    "familyName": "Ivy Cloak",
     "slug": "accessory-ivy-cloak",
+    "aliasSlugs": [
+      "accessory-tended-ivy-cloak"
+    ],
     "type": "accessory",
     "subtype": "cape-wing",
-    "description": "A cloak made entirely of ivy (not the poison kind... we hope.)",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=14817938",
-    "releaseDate": "",
-    "imageUrl": "http://i.imgur.com/xuce6vZ.gif",
-    "elements": [
-      "NAT"
-    ],
-    "level": "20",
-    "stats": "Magic Def +1, Pierce Def +1, Melee Def +1, END +3, CHA +2, LUK +2, DEX +1, Bonus +1",
-    "resists": "Nature +2",
-    "rarity": "0",
-    "itemType": "Cape",
-    "equipSpot": "Back",
-    "category": "Armor",
-    "obtainMethods": [
+    "familyOrigin": "cross-post",
+    "familySources": [
       {
-        "location": "Baby Steps",
-        "priceType": "free",
-        "price": "N/A",
-        "sellback": "80 Gold",
-        "daRequired": true
+        "url": "https://forums2.battleon.com/f/tm.asp?m=14817938",
+        "title": "DF Encyclopedia: Ivy Cloak",
+        "isPrimary": true
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=18070449",
+        "title": "DF Encyclopedia: Tended Ivy Cloak",
+        "variantLabel": "Tended Ivy Cloak",
+        "isPrimary": false
       }
     ],
-    "tags": [
-      "nat",
-      "free"
+    "shared": {
+      "description": "A cloak made entirely of ivy (not the poison kind... we hope.)",
+      "imageUrl": "http://i.imgur.com/xuce6vZ.gif",
+      "rarity": "0"
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
+        "levelDisplay": "20",
+        "actualLevel": 20,
+        "variantName": "(Base)",
+        "name": "Ivy Cloak",
+        "damage": "",
+        "stats": "Magic Def +1, Pierce Def +1, Melee Def +1, END +3, CHA +2, LUK +2, DEX +1, Bonus +1",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=14817938",
+        "description": "A cloak made entirely of ivy (not the poison kind... we hope.)",
+        "imageUrl": "http://i.imgur.com/xuce6vZ.gif",
+        "obtainVariants": [
+          {
+            "location": "Baby Steps",
+            "priceType": "free",
+            "price": "N/A",
+            "sellback": "80 Gold",
+            "daRequired": true
+          }
+        ],
+        "element": "NAT",
+        "resists": "Nature +2",
+        "rarity": "0"
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "50",
+        "actualLevel": 50,
+        "variantName": "Tended",
+        "name": "Tended Ivy Cloak",
+        "damage": "",
+        "stats": "Magic Def +3, Pierce Def +3, Melee Def +3, END +5, CHA +4, LUK +4, Bonus +5",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=18070449",
+        "description": "A spruced-up version of a classic floral cloak. Heh. \"Spruce.\" Get it? It's a tree joke. This item requires a Dragon Amulet.",
+        "imageUrl": "http://i.imgur.com/xuce6vZ.gif",
+        "obtainVariants": [
+          {
+            "location": "Moonridge Knights",
+            "price": "15,000 Gold",
+            "priceType": "gold",
+            "sellback": "1,500 Gold",
+            "daRequired": true
+          }
+        ],
+        "element": "NAT",
+        "resists": "Nature +8",
+        "rarity": "0"
+      }
     ],
-    "daRequired": true
+    "itemType": "Cape",
+    "equipSlot": "Back",
+    "category": "Armor",
+    "tags": [
+      "free",
+      "gold",
+      "nat"
+    ],
+    "hasDA": true,
+    "hasDC": false,
+    "hasDM": false,
+    "hasFree": true,
+    "hasMerge": false,
+    "levelRange": "20-50",
+    "elements": [
+      "NAT"
+    ]
   },
   {
     "id": "accessory-jadesoul-dragon-wings",
@@ -38534,7 +38674,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "Cape is animated; white fireworks continuously appear around the cape.\nCape was temporarily available in the  January DC Specials shop during their annual month of availability between  January 6th, 2023 and  January 3rd, 2025.",
+    "notes": "Cape is animated; white fireworks continuously appear around the cape.\nCape was temporarily available in the January DC Specials shop during their annual month of availability between January 6th, 2023 and January 3rd, 2025.",
     "tags": [
       "nat",
       "dc"
@@ -39104,7 +39244,9 @@
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22424140",
     "releaseDate": "",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/KartheraxWings.png",
-    "elements": [],
+    "elements": [
+      "???"
+    ],
     "level": "1",
     "stats": "None",
     "resists": "None",
@@ -39124,6 +39266,7 @@
       }
     ],
     "tags": [
+      "???",
       "merge"
     ],
     "daRequired": false,
@@ -39255,6 +39398,7 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22156793",
         "description": "Thank you for supporting the AQ3D Kickstarter campaign!",
+        "element": "???",
         "resists": "All +1",
         "rarity": "0"
       },
@@ -39276,6 +39420,7 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22156795",
         "description": "Thank you for supporting the AQ3D Kickstarter campaign!",
+        "element": "???",
         "resists": "All +1",
         "rarity": "7"
       },
@@ -39297,6 +39442,7 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22156914",
         "description": "Thank you for supporting the AQ3D Kickstarter campaign!",
+        "element": "???",
         "resists": "All +3",
         "rarity": "5"
       },
@@ -39318,6 +39464,7 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22156920",
         "description": "Thank you for supporting the AQ3D Kickstarter campaign!",
+        "element": "???",
         "resists": "All +4",
         "rarity": "25"
       },
@@ -39339,6 +39486,7 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22156951",
         "description": "Thank you for supporting the AQ3D Kickstarter campaign!",
+        "element": "???",
         "resists": "All +5",
         "rarity": "1"
       },
@@ -39360,6 +39508,7 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22158064",
         "description": "Thank you for supporting the AQ3D Kickstarter campaign!",
+        "element": "???",
         "resists": "All +6",
         "rarity": "9"
       },
@@ -39381,6 +39530,7 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22158065",
         "description": "Thank you for supporting the AQ3D Kickstarter campaign!",
+        "element": "???",
         "resists": "All +7, Immobility +5",
         "rarity": "10"
       },
@@ -39402,6 +39552,7 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22158066",
         "description": "Thank you for supporting the AQ3D Kickstarter campaign!",
+        "element": "???",
         "resists": "All +7, Immobility +7",
         "rarity": "10"
       }
@@ -39411,6 +39562,7 @@
     "category": "Armor",
     "releaseDate": "",
     "tags": [
+      "???",
       "gold"
     ],
     "hasDA": false,
@@ -39419,7 +39571,9 @@
     "hasFree": false,
     "hasMerge": false,
     "levelRange": "10-80",
-    "elements": []
+    "elements": [
+      "???"
+    ]
   },
   {
     "id": "accessory-kuumba-cloak",
@@ -40169,6 +40323,43 @@
     "daRequired": false,
     "dcRequired": true,
     "isCosmetic": true,
+    "isSeasonal": true
+  },
+  {
+    "id": "accessory-lavish-vampire-cape",
+    "name": "Lavish Vampire Cape",
+    "slug": "accessory-lavish-vampire-cape",
+    "type": "accessory",
+    "subtype": "cape-wing",
+    "description": "This item requires a Dragon Amulet. This cape was found one sunny morning lying in a pile of dust. We can only assume that it belonged to a very stupid vampire.",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21855802",
+    "releaseDate": "",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/VampireCape.png",
+    "elements": [
+      "DAR"
+    ],
+    "level": "80",
+    "stats": "Block +13, Dodge +13, Parry +13, Crit +7, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +9, END +9, CHA +13, INT +6, DEX +6, STR +6, Bonus +9",
+    "resists": "Darkness +9, Nature +9, Light -5, Health -6",
+    "rarity": "12",
+    "itemType": "Cape",
+    "equipSpot": "Back",
+    "category": "Armor",
+    "obtainMethods": [
+      {
+        "location": "Mogloween Capes",
+        "priceType": "gold",
+        "price": "5,000 Gold",
+        "sellback": "500 Gold",
+        "daRequired": true
+      }
+    ],
+    "tags": [
+      "dar",
+      "free",
+      "gold"
+    ],
+    "daRequired": true,
     "isSeasonal": true
   },
   {
@@ -41143,6 +41334,135 @@
     "isCosmetic": true
   },
   {
+    "id": "accessory-glowing-techangel-wings",
+    "familyName": "Lightened Techangel Wings",
+    "slug": "accessory-glowing-techangel-wings",
+    "aliasSlugs": [
+      "accessory-illuminated-techangel-wings",
+      "accessory-lightened-techangel-wings"
+    ],
+    "type": "accessory",
+    "subtype": "cape-wing",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20313028",
+    "familyOrigin": "cross-post",
+    "familySources": [
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20313028",
+        "title": "DF Encyclopedia: Glowing Techangel Wings",
+        "variantLabel": "Glowing Techangel Wings",
+        "isPrimary": true
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20311187",
+        "title": "DF Encyclopedia: Illuminated Techangel Wings",
+        "variantLabel": "Illuminated Techangel Wings",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20313017",
+        "title": "DF Encyclopedia: Lightened Techangel Wings",
+        "variantLabel": "Lightened Techangel Wings",
+        "isPrimary": false
+      }
+    ],
+    "shared": {
+      "description": "Crafted from forged brass and gears, these wings will help you defend yourself.\n\n This item requires a Dragon Amulet.",
+      "imageUrl": "http://i.imgur.com/q6Omu.png",
+      "rarity": "25",
+      "notes": "Wings previously appeared in the retired quest North."
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
+        "levelDisplay": "33",
+        "actualLevel": 33,
+        "variantName": "(Base)",
+        "name": "Lightened Techangel Wings",
+        "damage": "",
+        "stats": "Block +1, Parry +1, Crit +2, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +2, END +2, INT +2, DEX +2, STR +2, Bonus +4",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20313017",
+        "description": "Crafted from forged brass and gears, these wings will help you defend yourself.\n\n This item requires a Dragon Amulet.",
+        "imageUrl": "http://i.imgur.com/q6Omu.png",
+        "obtainVariants": [
+          {
+            "location": "Dark Pursuit",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "200 Gold",
+            "daRequired": true
+          }
+        ],
+        "element": "LIG",
+        "resists": "Metal +4, Light +3, All +1",
+        "rarity": "25"
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "53",
+        "actualLevel": 53,
+        "variantName": "Illuminated",
+        "name": "Illuminated Techangel Wings",
+        "damage": "",
+        "stats": "Block +1, Dodge +1, Parry +1, Crit +4, Magic Def +7, Pierce Def +7, Melee Def +7, WIS +3, END +3, INT +3, DEX +3, STR +3, Bonus +6",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20311187",
+        "description": "Crafted from forged brass and gears, these wings will help you defend yourself.\n\n This item requires a Dragon Amulet.",
+        "imageUrl": "http://i.imgur.com/q6Omu.png",
+        "obtainVariants": [
+          {
+            "location": "Dark Pursuit",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "300 Gold",
+            "daRequired": true
+          }
+        ],
+        "element": "LIG",
+        "resists": "Metal +6, Light +5, All +2",
+        "rarity": "25"
+      },
+      {
+        "levelNumber": 3,
+        "levelDisplay": "73",
+        "actualLevel": 73,
+        "variantName": "Glowing",
+        "name": "Glowing Techangel Wings",
+        "damage": "",
+        "stats": "Block +2, Dodge +2, Parry +2, Crit +5, Magic Def +8, Pierce Def +8, Melee Def +8, WIS +4, END +4, INT +5, DEX +5, STR +5, Bonus +8",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20313028",
+        "description": "Crafted from forged brass and gears, these wings will help you defend yourself.\n\n This item requires a Dragon Amulet.",
+        "imageUrl": "http://i.imgur.com/q6Omu.png",
+        "obtainVariants": [
+          {
+            "location": "Dark Pursuit",
+            "priceType": "free",
+            "price": "N/A",
+            "sellback": "400 Gold",
+            "daRequired": true
+          }
+        ],
+        "element": "LIG",
+        "resists": "Metal +10, Light +9, All +3",
+        "rarity": "25"
+      }
+    ],
+    "itemType": "Wings",
+    "equipSlot": "Back",
+    "category": "Armor",
+    "tags": [
+      "free",
+      "lig"
+    ],
+    "hasDA": true,
+    "hasDC": false,
+    "hasDM": false,
+    "hasFree": true,
+    "hasMerge": false,
+    "levelRange": "33-73",
+    "elements": [
+      "LIG"
+    ]
+  },
+  {
     "id": "accessory-lightguard-pallium",
     "name": "LightGuard Pallium",
     "slug": "accessory-lightguard-pallium",
@@ -41621,7 +41941,9 @@
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22405954",
     "releaseDate": "",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/LostWeaver'sMantle.png",
-    "elements": [],
+    "elements": [
+      "???"
+    ],
     "level": "1",
     "stats": "None",
     "resists": "None",
@@ -41641,6 +41963,7 @@
       }
     ],
     "tags": [
+      "???",
       "merge"
     ],
     "daRequired": false,
