@@ -133,7 +133,8 @@ export default function GuestAttacks({ attacks, heading }: GuestAttacksProps) {
   const filteredAttacks = attacks.filter(a => a.name.toLowerCase() !== 'skip')
   
   if (filteredAttacks.length === 0) return null
-  const sectionHeading = heading ?? `Attacks (${filteredAttacks.length})`
+  const sectionHeading =
+    heading ?? (filteredAttacks.length === 1 ? 'Attack' : `Attacks (${filteredAttacks.length})`)
   
   return (
     <section aria-labelledby="attacks-heading" className="mb-5">

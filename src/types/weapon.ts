@@ -17,6 +17,7 @@ export interface WeaponSpecial {
   imageUrl?: string
   cooldown?: string
   chargeTime?: string
+  notes?: string
 }
 
 export interface ArmorCustomization {
@@ -42,6 +43,7 @@ export interface Weapon {
   resists?: string
   ability?: string
   weaponSpecial?: WeaponSpecial
+  weaponSpecials?: WeaponSpecial[]
   armorCustomization?: ArmorCustomization
   rarity?: string
   obtainMethods: ObtainVariant[]
@@ -66,6 +68,7 @@ export type WeaponFamily = ItemFamily & {
   subtype: WeaponSubtype
   shared: ItemFamily['shared'] & {
     weaponSpecial?: WeaponSpecial
+    weaponSpecials?: WeaponSpecial[]
     armorCustomization?: ArmorCustomization
   }
   hasSpecial?: boolean

@@ -158,7 +158,8 @@
       }
     ],
     "shared": {
-      "description": "Aegis was so grateful, his emotions manifested into this palpable necklace for you to wear."
+      "description": "Aegis was so grateful, his emotions manifested into this palpable necklace for you to wear.",
+      "notes": "57-77 versions have Mana flavor resistance."
     },
     "levelVariants": [
       {
@@ -1406,7 +1407,7 @@
         "priceType": "dc",
         "price": "35 Dragon Coins",
         "sellback": "32 DC (<24 hours) / 9 DC (>24 hours)",
-        "daRequired": false,
+        "daRequired": true,
         "dcRequired": true
       }
     ],
@@ -2054,7 +2055,7 @@
             "price": "90 Dragon Coins",
             "priceType": "dc",
             "sellback": "81 DC (<24 hours) / 23 DC (>24 hours)",
-            "daRequired": false,
+            "daRequired": true,
             "dcRequired": true
           }
         ],
@@ -2101,7 +2102,7 @@
             "price": "90 Dragon Coins",
             "priceType": "dc",
             "sellback": "81 DC (<24 hours) / 23 DC (>24 hours)",
-            "daRequired": false,
+            "daRequired": true,
             "dcRequired": true
           }
         ],
@@ -2148,7 +2149,7 @@
             "price": "90 Dragon Coins",
             "priceType": "dc",
             "sellback": "81 DC (<24 hours) / 23 DC (>24 hours)",
-            "daRequired": false,
+            "daRequired": true,
             "dcRequired": true
           }
         ],
@@ -2556,7 +2557,7 @@
             "price": "170 Dragon Coins",
             "priceType": "dc",
             "sellback": "153 DC (<24 hours) / 43 DC (>24 hours)",
-            "daRequired": false,
+            "daRequired": true,
             "dcRequired": true
           }
         ],
@@ -2601,7 +2602,7 @@
             "price": "200 Dragon Coins",
             "priceType": "dc",
             "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
-            "daRequired": false,
+            "daRequired": true,
             "dcRequired": true
           }
         ],
@@ -3375,7 +3376,7 @@
             "price": "85 Dragon Coins",
             "priceType": "dc",
             "sellback": "77 DC (<24 hours) / 21 DC (>24 hours)",
-            "daRequired": false,
+            "daRequired": true,
             "dcRequired": true
           }
         ],
@@ -3422,7 +3423,7 @@
             "price": "100 Dragon Coins",
             "priceType": "dc",
             "sellback": "90 DC (<24 hours) / 25 DC (>24 hours)",
-            "daRequired": false,
+            "daRequired": true,
             "dcRequired": true
           }
         ],
@@ -3469,7 +3470,7 @@
             "price": "110 Dragon Coins",
             "priceType": "dc",
             "sellback": "99 DC (<24 hours) / 28 DC (>24 hours)",
-            "daRequired": false,
+            "daRequired": true,
             "dcRequired": true
           }
         ],
@@ -3645,7 +3646,7 @@
         "priceType": "dc",
         "price": "35 Dragon Coins",
         "sellback": "32 DC (<24 hours) / 9 DC (>24 hours)",
-        "daRequired": false,
+        "daRequired": true,
         "dcRequired": true
       }
     ],
@@ -3689,7 +3690,7 @@
         "priceType": "dc",
         "price": "30 Dragon Coins",
         "sellback": "27 DC (<24 hours) / 8 DC (>24 hours)",
-        "daRequired": false,
+        "daRequired": true,
         "dcRequired": true
       }
     ],
@@ -4164,7 +4165,8 @@
       }
     ],
     "shared": {
-      "description": "This necklace can only be worn by a DragonAmulet holder. It was awarded to you by the town of Falconreach for your help defending it against an invading force."
+      "description": "This necklace can only be worn by a DragonAmulet holder. It was awarded to you by the town of Falconreach for your help defending it against an invading force.",
+      "notes": "Defender's Medal costs for this item were significantly reduced on March 29th, 2021.\nNecklaces were available to merge from Def. Necklaces shop until January 14th, 2023; merge versions from Defender Item Swap were added on that date."
     },
     "levelVariants": [
       {
@@ -5494,7 +5496,8 @@
       }
     ],
     "shared": {
-      "description": "This shield shaped necklace is a symbol of heroism and bravery. It is worn exclusively by those who protect this world. It increases your resistance to darkness damage (+5)."
+      "description": "This shield shaped necklace is a symbol of heroism and bravery. It is worn exclusively by those who protect this world. It increases your resistance to darkness damage (+5).",
+      "notes": "Defender's Medal costs for this item were significantly reduced on March 29th, 2021."
     },
     "levelVariants": [
       {
@@ -6491,7 +6494,7 @@
         "priceType": "dc",
         "price": "25 Dragon Coins",
         "sellback": "23 DC (<24 hours) / 7 DC (>24 hours)",
-        "daRequired": false,
+        "daRequired": true,
         "dcRequired": true
       }
     ],
@@ -6994,7 +6997,7 @@
         "priceType": "dc",
         "price": "20 Dragon Coins",
         "sellback": "18 DC (<24 hours) / 5 DC (>24 hours)",
-        "daRequired": false,
+        "daRequired": true,
         "dcRequired": true
       }
     ],
@@ -7220,7 +7223,7 @@
         "priceType": "dc",
         "price": "30 Dragon Coins",
         "sellback": "27 DC (<24 hours) / 8 DC (>24 hours)",
-        "daRequired": false,
+        "daRequired": true,
         "dcRequired": true
       }
     ],
@@ -7264,7 +7267,7 @@
         "priceType": "dc",
         "price": "65 Dragon Coins",
         "sellback": "59 DC (<24 hours) / 17 DC (>24 hours)",
-        "daRequired": false,
+        "daRequired": true,
         "dcRequired": true
       }
     ],
@@ -7307,7 +7310,7 @@
         "priceType": "dc",
         "price": "50 Dragon Coins",
         "sellback": "45 DC (<24 hours) / 13 DC (>24 hours)",
-        "daRequired": false,
+        "daRequired": true,
         "dcRequired": true
       }
     ],
@@ -7418,7 +7421,7 @@
         "priceType": "dc",
         "price": "45 Dragon Coins",
         "sellback": "41 DC (<24 hours) / 12 DC (>24 hours)",
-        "daRequired": false,
+        "daRequired": true,
         "dcRequired": true
       }
     ],
@@ -7762,7 +7765,7 @@
             "price": "45 Dragon Coins",
             "priceType": "dc",
             "sellback": "41 DC (<24 hours) / 12 DC (>24 hours)",
-            "daRequired": false,
+            "daRequired": true,
             "dcRequired": true
           }
         ],
@@ -7809,7 +7812,7 @@
             "price": "45 Dragon Coins",
             "priceType": "dc",
             "sellback": "41 DC (<24 hours) / 12 DC (>24 hours)",
-            "daRequired": false,
+            "daRequired": true,
             "dcRequired": true
           }
         ],
@@ -7856,7 +7859,7 @@
             "price": "45 Dragon Coins",
             "priceType": "dc",
             "sellback": "41 DC (<24 hours) / 12 DC (>24 hours)",
-            "daRequired": false,
+            "daRequired": true,
             "dcRequired": true
           }
         ],
@@ -8589,7 +8592,8 @@
     ],
     "shared": {
       "description": "A heart scale from the merged Akriloth, taken by Ashendal after the beast was defeated. It continues to radiate a small amount of warmth and will grant you some of the elemental protection of Akriloth himself!",
-      "rarity": "500"
+      "rarity": "500",
+      "notes": "40-80 versions of this item has Mana flavor resistance.\nDespite being a permanent item, this item requires a Seasonal item, specifically Ultra Merged Akriloth Tooth Fragment."
     },
     "levelVariants": [
       {
@@ -10197,7 +10201,7 @@
             "price": "45 Dragon Coins",
             "priceType": "dc",
             "sellback": "41 DC (<24 hours) / 12 DC (>24 hours)",
-            "daRequired": false,
+            "daRequired": true,
             "dcRequired": true
           }
         ],
@@ -10244,7 +10248,7 @@
             "price": "45 Dragon Coins",
             "priceType": "dc",
             "sellback": "41 DC (<24 hours) / 12 DC (>24 hours)",
-            "daRequired": false,
+            "daRequired": true,
             "dcRequired": true
           }
         ],
@@ -10291,7 +10295,7 @@
             "price": "45 Dragon Coins",
             "priceType": "dc",
             "sellback": "41 DC (<24 hours) / 12 DC (>24 hours)",
-            "daRequired": false,
+            "daRequired": true,
             "dcRequired": true
           }
         ],
@@ -10869,7 +10873,7 @@
         "priceType": "dc",
         "price": "55 Dragon Coins",
         "sellback": "50 DC (<24 hours) / 14 DC (>24 hours)",
-        "daRequired": false,
+        "daRequired": true,
         "dcRequired": true
       }
     ],
@@ -10980,7 +10984,7 @@
         "priceType": "dc",
         "price": "75 Dragon Coins",
         "sellback": "68 DC (<24 hours) / 19 DC (>24 hours)",
-        "daRequired": false,
+        "daRequired": true,
         "dcRequired": true
       }
     ],
@@ -11434,7 +11438,7 @@
             "price": "150 Dragon Coins",
             "priceType": "dc",
             "sellback": "135 DC (<24 hours) / 38 DC (>24 hours)",
-            "daRequired": false,
+            "daRequired": true,
             "dcRequired": true
           }
         ],
@@ -11481,7 +11485,7 @@
             "price": "170 Dragon Coins",
             "priceType": "dc",
             "sellback": "153 DC (<24 hours) / 43 DC (>24 hours)",
-            "daRequired": false,
+            "daRequired": true,
             "dcRequired": true
           }
         ],
@@ -11528,7 +11532,7 @@
             "price": "200 Dragon Coins",
             "priceType": "dc",
             "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
-            "daRequired": false,
+            "daRequired": true,
             "dcRequired": true
           }
         ],
@@ -13156,7 +13160,7 @@
             "price": "150 Dragon Coins",
             "priceType": "dc",
             "sellback": "135 DC (<24 hours) / 38 DC (>24 hours)",
-            "daRequired": false,
+            "daRequired": true,
             "dcRequired": true
           }
         ],
@@ -13203,7 +13207,7 @@
             "price": "170 Dragon Coins",
             "priceType": "dc",
             "sellback": "153 DC (<24 hours) / 43 DC (>24 hours)",
-            "daRequired": false,
+            "daRequired": true,
             "dcRequired": true
           }
         ],
@@ -13250,7 +13254,7 @@
             "price": "200 Dragon Coins",
             "priceType": "dc",
             "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
-            "daRequired": false,
+            "daRequired": true,
             "dcRequired": true
           }
         ],
@@ -13782,7 +13786,7 @@
             "price": "150 Dragon Coins",
             "priceType": "dc",
             "sellback": "135 DC (<24 hours) / 38 DC (>24 hours)",
-            "daRequired": false,
+            "daRequired": true,
             "dcRequired": true
           }
         ],
@@ -13829,7 +13833,7 @@
             "price": "170 Dragon Coins",
             "priceType": "dc",
             "sellback": "153 DC (<24 hours) / 43 DC (>24 hours)",
-            "daRequired": false,
+            "daRequired": true,
             "dcRequired": true
           }
         ],
@@ -13876,7 +13880,7 @@
             "price": "200 Dragon Coins",
             "priceType": "dc",
             "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
-            "daRequired": false,
+            "daRequired": true,
             "dcRequired": true
           }
         ],
@@ -14040,7 +14044,7 @@
         "priceType": "dc",
         "price": "50 Dragon Coins",
         "sellback": "45 DC (<24 hours) / 13 DC (>24 hours)",
-        "daRequired": false,
+        "daRequired": true,
         "dcRequired": true
       }
     ],
@@ -14239,7 +14243,8 @@
     ],
     "shared": {
       "description": "You've enhanced your amulet with shadows. Wearing it allows you to make out odd shapes that seem to just barely come into view.",
-      "rarity": "10"
+      "rarity": "10",
+      "notes": "II-IV versions previously required 1 DeathKnight Amulet & 2/3/4 Dusk Essence respectively.\nNecklaces were tiered with Roman numerals on August 25th, 2023; Required Items on II-IV versions were also changed on that date."
     },
     "levelVariants": [
       {
@@ -14682,7 +14687,7 @@
             "price": "150 Dragon Coins",
             "priceType": "dc",
             "sellback": "135 DC (<24 hours) / 38 DC (>24 hours)",
-            "daRequired": false,
+            "daRequired": true,
             "dcRequired": true
           }
         ],
@@ -14729,7 +14734,7 @@
             "price": "170 Dragon Coins",
             "priceType": "dc",
             "sellback": "153 DC (<24 hours) / 43 DC (>24 hours)",
-            "daRequired": false,
+            "daRequired": true,
             "dcRequired": true
           }
         ],
@@ -14776,7 +14781,7 @@
             "price": "200 Dragon Coins",
             "priceType": "dc",
             "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
-            "daRequired": false,
+            "daRequired": true,
             "dcRequired": true
           }
         ],
@@ -14872,7 +14877,7 @@
         "priceType": "dc",
         "price": "30 Dragon Coins",
         "sellback": "27 DC (<24 hours) / 8 DC (>24 hours)",
-        "daRequired": false,
+        "daRequired": true,
         "dcRequired": true
       }
     ],
@@ -14950,7 +14955,7 @@
         "priceType": "dc",
         "price": "35 Dragon Coins",
         "sellback": "32 DC (<24 hours) / 9 DC (>24 hours)",
-        "daRequired": false,
+        "daRequired": true,
         "dcRequired": true
       }
     ],
@@ -15172,7 +15177,8 @@
     ],
     "shared": {
       "description": "You found this slimy necklace inside the shell of the Snail. It seems to have absorbed the defense of the snail.",
-      "rarity": "0"
+      "rarity": "0",
+      "notes": "I, II, and IV versions were tiered with Roman numerals on February 8th, 2025."
     },
     "levelVariants": [
       {
@@ -15803,7 +15809,7 @@
             "price": "30 Dragon Coins",
             "priceType": "dc",
             "sellback": "27 DC (<24 hours) / 8 DC (>24 hours)",
-            "daRequired": false,
+            "daRequired": true,
             "dcRequired": true
           }
         ],
@@ -15850,7 +15856,7 @@
             "price": "30 Dragon Coins",
             "priceType": "dc",
             "sellback": "27 DC (<24 hours) / 8 DC (>24 hours)",
-            "daRequired": false,
+            "daRequired": true,
             "dcRequired": true
           }
         ],
@@ -16330,7 +16336,8 @@
     ],
     "shared": {
       "description": "An itchy rope collar with a small name tag attached: \"Sugarcube\". Huh.",
-      "rarity": "5"
+      "rarity": "5",
+      "notes": "Street Tog's Discarded Collar (I-VIII) were previously named 'Scratchy Rope Choker'; this was changed on July 15th, 2022.\nPreviously had the description: A bit itchy, but also cute and stylish! At least, as cute and stylish as a piece of rope around your neck can be."
     },
     "levelVariants": [
       {
@@ -16652,7 +16659,7 @@
             "price": "170 Dragon Coins",
             "priceType": "dc",
             "sellback": "153 DC (<24 hours) / 43 DC (>24 hours)",
-            "daRequired": false,
+            "daRequired": true,
             "dcRequired": true
           }
         ],
@@ -16699,7 +16706,7 @@
             "price": "200 Dragon Coins",
             "priceType": "dc",
             "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
-            "daRequired": false,
+            "daRequired": true,
             "dcRequired": true
           }
         ],
@@ -16950,7 +16957,8 @@
     ],
     "shared": {
       "description": "An exquisite polished red gem, enveloped by delicate silver and gold dragon wings, hangs from this pendant. The gem itself is surprisingly cool to the touch.",
-      "rarity": "5"
+      "rarity": "5",
+      "notes": "Necklaces were tiered with Roman numerals on June 21st, 2024."
     },
     "levelVariants": [
       {
@@ -17272,7 +17280,7 @@
             "price": "170 Dragon Coins",
             "priceType": "dc",
             "sellback": "153 DC (<24 hours) / 43 DC (>24 hours)",
-            "daRequired": false,
+            "daRequired": true,
             "dcRequired": true
           }
         ],
@@ -17319,7 +17327,7 @@
             "price": "200 Dragon Coins",
             "priceType": "dc",
             "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
-            "daRequired": false,
+            "daRequired": true,
             "dcRequired": true
           }
         ],
@@ -17366,7 +17374,7 @@
             "price": "200 Dragon Coins",
             "priceType": "dc",
             "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
-            "daRequired": false,
+            "daRequired": true,
             "dcRequired": true
           }
         ],
@@ -18107,7 +18115,7 @@
             "price": "100 Dragon Coins",
             "priceType": "dc",
             "sellback": "90 DC (<24 hours) / 25 DC (>24 hours)",
-            "daRequired": false,
+            "daRequired": true,
             "dcRequired": true
           }
         ],
@@ -18154,7 +18162,7 @@
             "price": "100 Dragon Coins",
             "priceType": "dc",
             "sellback": "90 DC (<24 hours) / 25 DC (>24 hours)",
-            "daRequired": false,
+            "daRequired": true,
             "dcRequired": true
           }
         ],
@@ -18201,7 +18209,7 @@
             "price": "100 Dragon Coins",
             "priceType": "dc",
             "sellback": "90 DC (<24 hours) / 25 DC (>24 hours)",
-            "daRequired": false,
+            "daRequired": true,
             "dcRequired": true
           }
         ],
@@ -18375,7 +18383,8 @@
     ],
     "shared": {
       "description": "You've enhanced your amulet with shadows. Wearing it allows you to make out odd shapes that seem to just barely come into view. This item requires a Dragon Amulet.",
-      "rarity": "10"
+      "rarity": "10",
+      "notes": "II-IV versions previously required 1 DeathKnight Amulet & 2/3/4 Umbral Essence respectively.\nNecklaces were tiered with Roman numerals on August 25th, 2023; Required Items on II-IV versions were also changed on that date."
     },
     "levelVariants": [
       {
@@ -18535,7 +18544,8 @@
     ],
     "shared": {
       "description": "This primitive looking necklace is crafted from huge bear teeth of a variety of sizes.",
-      "rarity": "6"
+      "rarity": "6",
+      "notes": "These necklaces went rare on April 30th, 2021."
     },
     "levelVariants": [
       {

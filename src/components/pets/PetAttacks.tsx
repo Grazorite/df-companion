@@ -91,11 +91,12 @@ export default function PetAttacks({ attacks }: PetAttacksProps) {
     groups.push({ ...(heading ? { heading } : {}), attacks: [normalizedAttack] })
     return groups
   }, [])
+  const attackCount = groupedAttacks.reduce((sum, group) => sum + group.attacks.length, 0)
 
   return (
     <section aria-labelledby="attacks-heading" className="mb-5">
       <h2 id="attacks-heading" className="text-xs font-semibold text-text-muted uppercase tracking-wider mb-3">
-        Attacks
+        {attackCount === 1 ? 'Attack' : `Attacks (${attackCount})`}
       </h2>
       <div className="space-y-4">
         {groupedAttacks.map((group, groupIndex) => (

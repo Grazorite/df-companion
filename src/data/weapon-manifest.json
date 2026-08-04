@@ -1,9 +1,9 @@
 {
-  "total": 59,
+  "total": 390,
   "bySubtype": {
     "sword-axe-mace": 2,
     "staff-wand": 3,
-    "dagger": 1,
-    "scythe": 53
+    "dagger": 3,
+    "scythe": 382
   }
 }

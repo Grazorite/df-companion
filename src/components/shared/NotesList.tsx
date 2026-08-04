@@ -21,7 +21,7 @@ interface NoteItem {
 }
 
 function isIndentedSubItem(line: string): boolean {
-  return /^\s{2,}(?:[•\-*]\s*)?\S/.test(line)
+  return /^\s+(?:[•\-*]\s*)?\S/.test(line)
 }
 
 function cleanListMarker(text: string): string {
@@ -54,18 +54,21 @@ function parseNotes(raw: string): NoteItem[] {
         continue
       }
 
-      if (activeQuoteItem) {
-        if (isIndentedSubItem(line)) {
-          activeQuoteItem.subItems.push(cleanListMarker(trimmed))
-          continue
+      if (isIndentedSubItem(line) && /^quote:$/i.test(cleanListMarker(trimmed))) {
+        if (items.length === 0) {
+          items.push({ text: '', subItems: [], quoteItems: [] })
         }
+        activeQuoteItem = items[items.length - 1]
+        continue
+      }
 
-        if (/^(?:[•\-*]\s+)/.test(trimmed)) {
-          activeQuoteItem = null
-        } else {
+      if (activeQuoteItem) {
+        if (activeQuoteItem.quoteItems.length === 0 || isIndentedSubItem(line)) {
           activeQuoteItem.quoteItems.push(cleanListMarker(trimmed))
           continue
         }
+
+        activeQuoteItem = null
       }
 
       if (isIndentedSubItem(line)) {

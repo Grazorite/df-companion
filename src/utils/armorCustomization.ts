@@ -7,6 +7,12 @@ function normalizeArmorCustomizationValue(value: string): string {
   return value.replace(/\s+/g, ' ').trim()
 }
 
+function normalizeModifiesValue(value: string): string {
+  return normalizeArmorCustomizationValue(value)
+    .replace(/\s+class(?:es)?\b\.?$/i, '')
+    .trim()
+}
+
 export function parseArmorCustomization(text?: string): ArmorCustomizationInfo | undefined {
   if (!text) return undefined
 
@@ -16,7 +22,7 @@ export function parseArmorCustomization(text?: string): ArmorCustomizationInfo |
   )
   if (formerAppearanceMatch) {
     return {
-      modifies: normalizeArmorCustomizationValue(formerAppearanceMatch[1]),
+      modifies: normalizeModifiesValue(formerAppearanceMatch[1]),
       appearance: normalizeArmorCustomizationValue(formerAppearanceMatch[2]),
     }
   }
@@ -34,7 +40,7 @@ export function parseArmorCustomization(text?: string): ArmorCustomizationInfo |
 
     return {
       appearance: normalizeArmorCustomizationValue(match[1]),
-      modifies: normalizeArmorCustomizationValue(match[2]),
+      modifies: normalizeModifiesValue(match[2]),
     }
   }
 

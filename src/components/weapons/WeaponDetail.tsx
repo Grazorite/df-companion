@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { ImageOff } from 'lucide-react'
+import { ChevronDown, ImageOff } from 'lucide-react'
 import type { LevelVariant, ObtainVariant } from '../../types/item'
 import type { Weapon, WeaponEntry, WeaponFamily, WeaponSpecial } from '../../types/weapon'
 import { isWeaponFamily } from '../../types/weapon'
@@ -13,6 +13,7 @@ import {
 import {
   getDisplayFamilyName,
   getLevelVariantLabels,
+  hasParentheticalVariantFamilyName,
   isSingleVariant,
   obtainVariantHasDC,
 } from '../../utils/variantHelpers'
@@ -23,6 +24,7 @@ import ElementPill from '../shared/ElementPill'
 import LevelSelector from '../shared/LevelSelector'
 import MetadataChipSection from '../shared/MetadataChipSection'
 import ObtainSection from '../shared/ObtainSection'
+import NotesList from '../shared/NotesList'
 import OtherInformationSection from '../shared/OtherInformationSection'
 import SourceLinksCard from '../shared/SourceLinksCard'
 import WeaponCard from './WeaponCard'
@@ -71,16 +73,17 @@ function WeaponSpecialButton({ imageUrl, name }: { imageUrl?: string; name: stri
   )
 }
 
-function WeaponSpecialCard({ special }: { special: WeaponSpecial }) {
+function WeaponSpecialCard({ special, defaultOpen = false }: { special: WeaponSpecial; defaultOpen?: boolean }) {
+  const [isOpen, setIsOpen] = useState(defaultOpen)
   const title = special.activation === 'manual' ? 'Manual' : 'On Hit'
 
   return (
-    <section className="mb-5">
-      <h2 className="text-xs font-semibold text-text-muted uppercase tracking-wider mb-3">
-        Weapon Special
-      </h2>
-      <div className="bg-bg-surface border border-border-default rounded-lg overflow-hidden">
-        <div className="w-full flex items-center gap-4 p-4 text-left">
+    <div className="bg-bg-surface border border-border-default rounded-lg overflow-hidden">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full flex items-center gap-4 p-4 text-left hover:bg-bg-elevated/50 transition-colors"
+        aria-expanded={isOpen}
+      >
           <div className="flex-shrink-0">
             <WeaponSpecialButton imageUrl={special.imageUrl} name={title} />
           </div>
@@ -92,8 +95,14 @@ function WeaponSpecialCard({ special }: { special: WeaponSpecial }) {
               </p>
             )}
           </div>
-        </div>
 
+          <ChevronDown
+            className={`w-5 h-5 text-text-muted transition-transform flex-shrink-0 ${isOpen ? 'rotate-180' : ''}`}
+            aria-hidden="true"
+          />
+      </button>
+
+      {isOpen && (
         <div className="px-4 pb-4 pt-0 border-t border-border-default">
           {special.effect && (
             <p className="text-text-secondary text-sm leading-relaxed mt-3 mb-4 whitespace-pre-line">
@@ -121,7 +130,35 @@ function WeaponSpecialCard({ special }: { special: WeaponSpecial }) {
               </div>
             </div>
           )}
+
+          {special.notes && (
+            <div className="mt-4">
+              <NotesList notes={special.notes} />
+            </div>
+          )}
         </div>
+      )}
+    </div>
+  )
+}
+
+function WeaponSpecialsSection({ specials }: { specials: WeaponSpecial[] }) {
+  if (specials.length === 0) return null
+  const heading = specials.length > 1 ? `Weapon Specials (${specials.length})` : 'Weapon Special'
+
+  return (
+    <section className="mb-5">
+      <h2 className="text-xs font-semibold text-text-muted uppercase tracking-wider mb-3">
+        {heading}
+      </h2>
+      <div className="space-y-3">
+        {specials.map((special, index) => (
+          <WeaponSpecialCard
+            key={`${special.activation}-${index}`}
+            special={special}
+            defaultOpen={index === 0}
+          />
+        ))}
       </div>
     </section>
   )
@@ -298,8 +335,12 @@ export default function WeaponDetail({ weapon, filterBase }: WeaponDetailProps) 
   }, [altImages, imageUrl, title])
   const defaultImageIndex = useMemo(() => getDefaultImageIndex(allImages), [allImages])
   const currentImage = allImages[activeImageIndex] ?? allImages[defaultImageIndex]
+  const hasParentheticalVariants =
+    family !== undefined && hasParentheticalVariantFamilyName(family.familyName)
   const useLevelOnlyLabels =
-    family !== undefined && family.levelVariants.every((level) => !level.variantName)
+    family !== undefined &&
+    family.levelVariants.every((level) => !level.variantName) &&
+    !hasParentheticalVariants
   const variantLabels = useMemo(() => {
     if (!family) return []
     if (useLevelOnlyLabels) {
@@ -344,11 +385,16 @@ export default function WeaponDetail({ weapon, filterBase }: WeaponDetailProps) 
     const currentImageVariantIndex = imageVariantIndexes[activeImageIndex]
     if (currentImageVariantIndex === activeIndex) return
 
-    setActiveImageIndex(preferredImageIndexesByVariant[activeIndex] ?? defaultImageIndex)
+    // Only switch image when this variant has a dedicated captioned image that
+    // matches its label. For weapons without per-variant images (e.g. 13th Staff),
+    // the image selector stays independent — the user's selection is preserved.
+    const preferred = preferredImageIndexesByVariant[activeIndex]
+    if (preferred !== undefined) {
+      setActiveImageIndex(preferred)
+    }
   }, [
     activeImageIndex,
     activeIndex,
-    defaultImageIndex,
     family,
     imageVariantIndexes,
     preferredImageIndexesByVariant,
@@ -368,7 +414,11 @@ export default function WeaponDetail({ weapon, filterBase }: WeaponDetailProps) 
       : []
   const rarity = family ? (activeLevel?.rarity ?? family.shared.rarity) : singleWeapon?.rarity
   const ability = family ? family.shared.ability : singleWeapon?.ability
-  const weaponSpecial = family ? family.shared.weaponSpecial : singleWeapon?.weaponSpecial
+  const weaponSpecials = family
+    ? (family.shared.weaponSpecials ??
+      (family.shared.weaponSpecial ? [family.shared.weaponSpecial] : []))
+    : (singleWeapon?.weaponSpecials ??
+      (singleWeapon?.weaponSpecial ? [singleWeapon.weaponSpecial] : []))
   const armorCustomization = family
     ? family.shared.armorCustomization
     : singleWeapon?.armorCustomization
@@ -382,10 +432,22 @@ export default function WeaponDetail({ weapon, filterBase }: WeaponDetailProps) 
     const levelKeys = new Set(
       displayLevels.map((level) => String(level.actualLevel ?? level.levelDisplay))
     )
+    const hasNamedVariants = displayLevels.some((level) => Boolean(level.variantName))
+    const hasParentheticalTitleVariants =
+      family !== undefined && hasParentheticalVariantFamilyName(family.familyName)
     // Collapse to a single row only for a multi-level progression whose stats
     // never change. Same-level access branches (e.g. | Base / DC) share stats
-    // but must each keep their own row so DA/DC access is visible.
-    if (statsIdentities.size === 1 && levelKeys.size > 1) return displayLevels.slice(0, 1)
+    // but must each keep their own row so DA/DC access is visible. Named title
+    // variants (e.g. Exalted Unity / Penultima / Apotheosis) also keep rows so
+    // the variant selector and stats table stay aligned.
+    if (
+      statsIdentities.size === 1 &&
+      levelKeys.size > 1 &&
+      !hasNamedVariants &&
+      !hasParentheticalTitleVariants
+    ) {
+      return displayLevels.slice(0, 1)
+    }
 
     const seen = new Set<string>()
     return displayLevels.filter((level) => {
@@ -394,7 +456,7 @@ export default function WeaponDetail({ weapon, filterBase }: WeaponDetailProps) 
       seen.add(key)
       return true
     })
-  }, [displayLevels])
+  }, [displayLevels, family])
   const statsRowsWereCollapsed = statsDisplayLevels.length < displayLevels.length
   const sourceLinks = useMemo(() => {
     if (!family) return [{ url: weapon.forumUrl, label: title }]
@@ -546,7 +608,7 @@ export default function WeaponDetail({ weapon, filterBase }: WeaponDetailProps) 
             <WeaponStatsTable
               levels={statsDisplayLevels}
               familyName={family?.familyName}
-              forceHideVariantColumn={statsRowsWereCollapsed}
+              forceHideVariantColumn={statsRowsWereCollapsed && useLevelOnlyLabels}
               forceLevelLabels={useLevelOnlyLabels}
             />
           </CollapsibleSection>
@@ -568,9 +630,9 @@ export default function WeaponDetail({ weapon, filterBase }: WeaponDetailProps) 
         </section>
       )}
 
-      {weaponSpecial && <WeaponSpecialCard special={weaponSpecial} />}
-
       <ObtainSection variants={obtainMethods} className="mb-8" />
+
+      <WeaponSpecialsSection specials={weaponSpecials} />
 
       <OtherInformationSection
         notes={singleWeapon?.notes}

@@ -1,5 +1,160 @@
 [
   {
+    "id": "weapon-13th-dagger",
+    "familyName": "13th Dagger",
+    "slug": "weapon-13th-dagger",
+    "aliasSlugs": [
+      "weapon-13th-dagger-all-versions"
+    ],
+    "type": "weapon",
+    "subtype": "dagger",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=6706193",
+    "familyOrigin": "same-thread-multi-post",
+    "familySources": [],
+    "shared": {
+      "description": "This dagger once belonged to Mykel Myarz, squire to the great and terrible warrior Jaysun. It was said long ago that anyone who holds his power would be impossible to kill.",
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Butcher'sKnife.png",
+      "notes": "Weapon was previously available from the quests Friday the 13th Invasion, Friday the 13th Invasion - Part II, Friday the 13th III, Friday the 13th Invasion - A Ghoulish Attack, and Friday the 13th Invasion Part IV.\nThe following changes were implemented on September 26th, 2025:\n  • Level's requirement was raised from 10 to 13.\n  • Damage range was modified from 26-30 to 28-32.\n  • Crit was raised from +1 to +5.\n  • Sellback was lowered from 500 to 13 Gold.",
+      "alsoSee": [
+        {
+          "name": "Butcher's Knife",
+          "slug": "weapon-butcher-s-knife",
+          "type": "weapon",
+          "url": "https://forums2.battleon.com/f/tm.asp?m=4937479"
+        },
+        {
+          "name": "Unlucky 13th Dagger (I-VIII)",
+          "slug": "weapon-unlucky-13th-dagger-i-viii",
+          "type": "weapon",
+          "url": "https://forums2.battleon.com/f/tm.asp?m=21938728"
+        }
+      ]
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 13,
+        "levelDisplay": "13",
+        "actualLevel": 13,
+        "name": "13th Dagger",
+        "damage": "28-32",
+        "stats": "Crit +5",
+        "obtainVariants": [
+          {
+            "location": "Undead Slayer Store",
+            "price": "130 Gold",
+            "priceType": "gold",
+            "sellback": "13 Gold",
+            "daRequired": false
+          },
+          {
+            "location": "The Stakeout",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "13 Gold",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=6706193",
+        "description": "This dagger once belonged to Mykel Myarz, squire to the great and terrible warrior Jaysun. It was said long ago that anyone who holds his power would be impossible to kill.",
+        "element": "DAR",
+        "resists": "Darkness +5",
+        "rarity": "8",
+        "notes": "Weapon was previously available from the quests Friday the 13th Invasion, Friday the 13th Invasion - Part II, Friday the 13th III, Friday the 13th Invasion - A Ghoulish Attack, and Friday the 13th Invasion Part IV.\nThe following changes were implemented on September 26th, 2025:\n  • Level's requirement was raised from 10 to 13.\n  • Damage range was modified from 26-30 to 28-32.\n  • Crit was raised from +1 to +5.\n  • Sellback was lowered from 500 to 13 Gold."
+      },
+      {
+        "levelNumber": 27,
+        "levelDisplay": "27",
+        "actualLevel": 27,
+        "name": "13th Dagger",
+        "damage": "42-52",
+        "stats": "Crit +4",
+        "obtainVariants": [
+          {
+            "location": "Friday the 13th Invasion, Friday the 13th Invasion - Part II, Friday the 13th Invasion - Part III, Friday the 13th Invasion - A Ghoulish Attack, Friday the 13th Invasion Part IV",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "800 Gold",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=6706193",
+        "description": "This dagger once belonged to Mykel Myarz, squire to the great and terrible warrior Jaysun. It was said long ago that anyone who holds his power would be impossible to kill.",
+        "element": "DAR",
+        "resists": "Darkness +5",
+        "rarity": "8"
+      }
+    ],
+    "category": "Weapon",
+    "releaseDate": "",
+    "tags": [
+      "dar",
+      "gold",
+      "free"
+    ],
+    "hasDA": false,
+    "hasDC": false,
+    "hasDM": false,
+    "hasFree": true,
+    "hasMerge": false,
+    "elements": [
+      "DAR"
+    ],
+    "levelRange": "13-27"
+  },
+  {
+    "id": "weapon-301st-dagger",
+    "name": "301st Dagger",
+    "slug": "weapon-301st-dagger",
+    "type": "weapon",
+    "subtype": "dagger",
+    "description": "A weapon from the Swordhaven Armory. Who would abandon it out in the wilds though?",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19856979",
+    "releaseDate": "",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/301stDagger.png",
+    "elements": [
+      "WIN"
+    ],
+    "level": "42",
+    "damage": "53-69",
+    "stats": "Crit +2, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +4, END +4, LUK -1, DEX +4, Bonus +2",
+    "resists": "Wind +3, Stone +3",
+    "rarity": "10",
+    "obtainMethods": [
+      {
+        "location": "Swordhaven Forest",
+        "price": "N/A",
+        "priceType": "free",
+        "sellback": "200 Gold",
+        "daRequired": false
+      }
+    ],
+    "alsoSee": [
+      {
+        "name": "Dull 301st Dagger",
+        "slug": "weapon-dull-301st-dagger",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=19880001"
+      },
+      {
+        "name": "Regal 301st Dagger",
+        "slug": "weapon-regal-301st-dagger",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=19857356"
+      },
+      {
+        "name": "Royal 301st Dagger",
+        "slug": "weapon-royal-301st-dagger",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=19857122"
+      }
+    ],
+    "tags": [
+      "win",
+      "free"
+    ],
+    "daRequired": false
+  },
+  {
     "id": "weapon-6-inch-hero-combo",
     "name": "6 Inch Hero Combo",
     "slug": "weapon-6-inch-hero-combo",

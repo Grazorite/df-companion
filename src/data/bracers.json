@@ -76,7 +76,7 @@
             "price": "100 Dragon Coins",
             "priceType": "dc",
             "sellback": "90 DC (<24 hours) / 25 DC (>24 hours)",
-            "daRequired": false,
+            "daRequired": true,
             "dcRequired": true
           }
         ],
@@ -123,7 +123,7 @@
             "price": "150 Dragon Coins",
             "priceType": "dc",
             "sellback": "135 DC (<24 hours) / 38 DC (>24 hours)",
-            "daRequired": false,
+            "daRequired": true,
             "dcRequired": true
           }
         ],
@@ -170,7 +170,7 @@
             "price": "200 Dragon Coins",
             "priceType": "dc",
             "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
-            "daRequired": false,
+            "daRequired": true,
             "dcRequired": true
           }
         ],

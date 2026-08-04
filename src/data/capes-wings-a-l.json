@@ -10051,7 +10051,7 @@
         "rarity": "25"
       },
       {
-        "levelNumber": 4,
+        "levelNumber": 5,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "Warm",
@@ -10074,31 +10074,6 @@
         "element": "WAT",
         "resists": "Fire +3, Darkness +2",
         "rarity": "25"
-      },
-      {
-        "levelNumber": 5,
-        "levelDisplay": "50",
-        "actualLevel": 50,
-        "variantName": "Spiced",
-        "name": "Spiced Cider Keg",
-        "damage": "",
-        "stats": "Block +1, Dodge +1, Crit +6, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +5, END +5, CHA +4, LUK +4, INT +2, DEX +2, STR +2, Bonus +5",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21584525",
-        "description": "From Vaal's personal stash, this'll protect you while you still get a nice cider-y scent!",
-        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/VoidCiderKegpic.png",
-        "obtainVariants": [
-          {
-            "location": "Void Cider Shop",
-            "price": "120 Dragon Coins",
-            "priceType": "dc",
-            "sellback": "108 DC (<24 hours) / 30 DC (>24 hours)",
-            "daRequired": false,
-            "dcRequired": true
-          }
-        ],
-        "element": "???",
-        "resists": "Fire +7, Water +5, Darkness +3",
-        "rarity": "1"
       },
       {
         "levelNumber": 6,
@@ -10127,28 +10102,28 @@
       },
       {
         "levelNumber": 7,
-        "levelDisplay": "60",
-        "actualLevel": 60,
-        "variantName": "Mulled",
-        "name": "Mulled Cider Keg",
+        "levelDisplay": "50",
+        "actualLevel": 50,
+        "variantName": "Spiced",
+        "name": "Spiced Cider Keg",
         "damage": "",
-        "stats": "Block +1, Dodge +2, Crit +7, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +6, END +6, CHA +5, LUK +5, INT +4, DEX +4, STR +4, Bonus +6",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21584528",
+        "stats": "Block +1, Dodge +1, Crit +6, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +5, END +5, CHA +4, LUK +4, INT +2, DEX +2, STR +2, Bonus +5",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21584525",
         "description": "From Vaal's personal stash, this'll protect you while you still get a nice cider-y scent!",
         "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/VoidCiderKegpic.png",
         "obtainVariants": [
           {
             "location": "Void Cider Shop",
-            "price": "140 Dragon Coins",
+            "price": "120 Dragon Coins",
             "priceType": "dc",
-            "sellback": "126 DC (<24 hours) / 35 DC (>24 hours)",
+            "sellback": "108 DC (<24 hours) / 30 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
         ],
         "element": "???",
-        "resists": "Fire +8, Water +6, Darkness +4",
-        "rarity": "9"
+        "resists": "Fire +7, Water +5, Darkness +3",
+        "rarity": "1"
       },
       {
         "levelNumber": 8,
@@ -10177,28 +10152,28 @@
       },
       {
         "levelNumber": 9,
-        "levelDisplay": "70",
-        "actualLevel": 70,
-        "variantName": "Foamy",
-        "name": "Foamy Cider Keg",
+        "levelDisplay": "60",
+        "actualLevel": 60,
+        "variantName": "Mulled",
+        "name": "Mulled Cider Keg",
         "damage": "",
-        "stats": "Block +2, Dodge +2, Crit +8, Magic Def +7, Pierce Def +7, Melee Def +7, WIS +7, END +7, CHA +6, LUK +6, INT +5, DEX +5, STR +5, Bonus +8",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21584531",
+        "stats": "Block +1, Dodge +2, Crit +7, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +6, END +6, CHA +5, LUK +5, INT +4, DEX +4, STR +4, Bonus +6",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21584528",
         "description": "From Vaal's personal stash, this'll protect you while you still get a nice cider-y scent!",
         "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/VoidCiderKegpic.png",
         "obtainVariants": [
           {
             "location": "Void Cider Shop",
-            "price": "160 Dragon Coins",
+            "price": "140 Dragon Coins",
             "priceType": "dc",
-            "sellback": "144 DC (<24 hours) / 40 DC (>24 hours)",
+            "sellback": "126 DC (<24 hours) / 35 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
           }
         ],
         "element": "???",
-        "resists": "Fire +9, Water +7, Darkness +5, Immobility +1",
-        "rarity": "10"
+        "resists": "Fire +8, Water +6, Darkness +4",
+        "rarity": "9"
       },
       {
         "levelNumber": 10,
@@ -10227,6 +10202,31 @@
       },
       {
         "levelNumber": 11,
+        "levelDisplay": "70",
+        "actualLevel": 70,
+        "variantName": "Foamy",
+        "name": "Foamy Cider Keg",
+        "damage": "",
+        "stats": "Block +2, Dodge +2, Crit +8, Magic Def +7, Pierce Def +7, Melee Def +7, WIS +7, END +7, CHA +6, LUK +6, INT +5, DEX +5, STR +5, Bonus +8",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21584531",
+        "description": "From Vaal's personal stash, this'll protect you while you still get a nice cider-y scent!",
+        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/VoidCiderKegpic.png",
+        "obtainVariants": [
+          {
+            "location": "Void Cider Shop",
+            "price": "160 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "144 DC (<24 hours) / 40 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "element": "???",
+        "resists": "Fire +9, Water +7, Darkness +5, Immobility +1",
+        "rarity": "10"
+      },
+      {
+        "levelNumber": 12,
         "levelDisplay": "75",
         "actualLevel": 75,
         "variantName": "Bubbly",
@@ -10251,7 +10251,7 @@
         "rarity": "10"
       },
       {
-        "levelNumber": 12,
+        "levelNumber": 13,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "Moglinberry",
@@ -11125,7 +11125,7 @@
     "itemType": "Cape",
     "equipSpot": "Back",
     "armorCustomization": {
-      "appearance": "Mortis customization for DoomKnight. (Cosmetic) Own this item to unlock the Mortis",
+      "appearance": "Mortis",
       "modifies": "DoomKnight"
     },
     "hasArmorCustomization": true,
@@ -31463,7 +31463,8 @@
       "accessory-lambent-golden-cloak",
       "accessory-miner-s-golden-cloak",
       "accessory-padded-golden-cloak",
-      "accessory-prospector-s-golden-cloak"
+      "accessory-prospector-s-golden-cloak",
+      "accessory-vivid-golden-cloak"
     ],
     "type": "accessory",
     "subtype": "cape-wing",
@@ -31472,44 +31473,13 @@
     "familySources": [
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=21084772",
-        "title": "DF Encyclopedia: Argent Golden Cloak",
-        "variantLabel": "Argent Golden Cloak",
+        "title": "DF Encyclopedia: Golden Cloak",
         "isPrimary": true
       },
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21084869",
-        "title": "DF Encyclopedia: Bright Golden Cloak",
-        "variantLabel": "Bright Golden Cloak",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21084844",
-        "title": "DF Encyclopedia: Gleaming Golden Cloak",
-        "variantLabel": "Gleaming Golden Cloak",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21084832",
-        "title": "DF Encyclopedia: Lambent Golden Cloak",
-        "variantLabel": "Lambent Golden Cloak",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21084680",
-        "title": "DF Encyclopedia: Miner's Golden Cloak",
-        "variantLabel": "Miner's Golden Cloak",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21084861",
-        "title": "DF Encyclopedia: Padded Golden Cloak",
-        "variantLabel": "Padded Golden Cloak",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21084752",
-        "title": "DF Encyclopedia: Prospector's Golden Cloak",
-        "variantLabel": "Prospector's Golden Cloak",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21084762",
+        "title": "DF Encyclopedia: Vivid Golden Cloak",
+        "variantLabel": "Vivid Golden Cloak",
         "isPrimary": false
       }
     ],
@@ -31570,6 +31540,31 @@
       },
       {
         "levelNumber": 3,
+        "levelDisplay": "41",
+        "actualLevel": 41,
+        "variantName": "Vivid",
+        "name": "Vivid Golden Cloak",
+        "damage": "",
+        "stats": "Crit +3, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +5, END +5, CHA +3, LUK +4, INT +1, DEX +1, STR +1, Bonus +4",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21084762",
+        "description": "As two titans meet for a battle 47 years in the making... which side will you cheer on?",
+        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/GoldenCloakpic.png",
+        "obtainVariants": [
+          {
+            "location": "SB Shop, Strange Ball Shop",
+            "priceType": "dc",
+            "price": "110 Dragon Coins",
+            "sellback": "99 DC (<24 hours) / 28 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "element": "LIG",
+        "resists": "Darkness +5, Immobility +2",
+        "rarity": "25"
+      },
+      {
+        "levelNumber": 4,
         "levelDisplay": "51",
         "actualLevel": 51,
         "variantName": "Argent",
@@ -31594,7 +31589,7 @@
         "rarity": "1"
       },
       {
-        "levelNumber": 4,
+        "levelNumber": 5,
         "levelDisplay": "61",
         "actualLevel": 61,
         "variantName": "Lambent",
@@ -31619,7 +31614,7 @@
         "rarity": "9"
       },
       {
-        "levelNumber": 5,
+        "levelNumber": 6,
         "levelDisplay": "71",
         "actualLevel": 71,
         "variantName": "Gleaming",
@@ -31644,7 +31639,7 @@
         "rarity": "10"
       },
       {
-        "levelNumber": 6,
+        "levelNumber": 7,
         "levelDisplay": "76",
         "actualLevel": 76,
         "variantName": "Padded",
@@ -31669,7 +31664,7 @@
         "rarity": "10"
       },
       {
-        "levelNumber": 7,
+        "levelNumber": 8,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "Bright",

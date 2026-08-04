@@ -31947,52 +31947,6 @@
     "isCosmetic": true
   },
   {
-    "id": "accessory-vivid-golden-cloak",
-    "name": "Vivid Golden Cloak",
-    "slug": "accessory-vivid-golden-cloak",
-    "type": "accessory",
-    "subtype": "cape-wing",
-    "description": "As two titans meet for a battle 47 years in the making... which side will you cheer on?",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21084762",
-    "releaseDate": "",
-    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/GoldenCloakpic.png",
-    "elements": [
-      "LIG"
-    ],
-    "level": "41",
-    "stats": "Crit +3, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +5, END +5, CHA +3, LUK +4, INT +1, DEX +1, STR +1, Bonus +4",
-    "resists": "Darkness +5, Immobility +2",
-    "rarity": "25",
-    "itemType": "Cape",
-    "equipSpot": "Back",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "SB Shop, Strange Ball Shop",
-        "priceType": "dc",
-        "price": "110 Dragon Coins",
-        "sellback": "99 DC (<24 hours) / 28 DC (>24 hours)",
-        "daRequired": false,
-        "dcRequired": true
-      }
-    ],
-    "tags": [
-      "lig",
-      "dc"
-    ],
-    "daRequired": false,
-    "dcRequired": true,
-    "isSeasonal": true,
-    "alsoSee": [
-      {
-        "name": "Golden Cloak",
-        "slug": "accessory-argent-golden-cloak",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21084772"
-      }
-    ]
-  },
-  {
     "id": "accessory-voices-of-those-left-behind",
     "name": "Voices of Those Left Behind",
     "slug": "accessory-voices-of-those-left-behind",

@@ -13,6 +13,7 @@ import type {
 import { compareTitles } from '../../../src/utils/displayText.ts'
 import { computeFamilyFlags, normalizeLevel } from '../../../src/utils/variantHelpers.ts'
 import { shouldPromoteConnectedFamilyGroup } from '../cross-post-family.ts'
+import { dedupeSameSlugPreferFamily } from '../family-merge-guard.ts'
 import { distributeSharedNoteLines } from '../note-cleaning.ts'
 import { slugify } from '../text.ts'
 
@@ -615,7 +616,10 @@ function rewriteRelatedRefsForPromotedFamilies(entries: AccessoryEntry[]): Acces
         return getFamilyRef(family)
       })
       .filter((ref) => !selfSlugs.has(ref.slug) && !selfNames.has(normalizeLookupName(ref.name)))
-      .filter((ref) => knownSlugs.has(ref.slug))
+      // Scoped scrapes often post-process only one subtype. Preserve explicit
+      // cross-subtype forum refs even when the target slug is not in the current
+      // in-memory slice; the UI can resolve them after loading all accessory data.
+      .filter((ref) => knownSlugs.has(ref.slug) || Boolean(ref.url))
 
     return setAlsoSee(entry, refs)
   })
@@ -1128,7 +1132,7 @@ function splitCiderKegFamilies(entries: AccessoryEntry[]): AccessoryEntry[] {
 }
 
 function dedupeEntriesBySlug(entries: AccessoryEntry[]): AccessoryEntry[] {
-  return Array.from(new Map(entries.map((entry) => [entry.slug, entry])).values())
+  return dedupeSameSlugPreferFamily(entries, isAccessoryFamily)
 }
 
 function removeCobaltDragonWingAliasEntries(entries: AccessoryEntry[]): AccessoryEntry[] {

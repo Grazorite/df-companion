@@ -401,8 +401,31 @@ function getParentheticalVariantParts(
     .filter(Boolean)
   if (variants.length === 0) return undefined
 
-  const knownVariantTerms = new Set(['face', 'mask', 'head', 'helm', 'hood', 'cowl'])
-  if (!variants.every((variant) => knownVariantTerms.has(variant.toLowerCase()))) return undefined
+  const disallowedVariantTerms = new Set([
+    'all versions',
+    'base',
+    'clicked',
+    'clicked appearance',
+    'da',
+    'dc',
+    'd-amulet',
+    'd-coins',
+    'default',
+    'normal',
+  ])
+  const versionRangePattern = /^[IVXLCDM]+(?:\s*-\s*[IVXLCDM]+|\s*\/\s*[IVXLCDM]+)*$/i
+  if (
+    variants.some((variant) => {
+      const normalizedVariant = variant.toLowerCase()
+      return (
+        disallowedVariantTerms.has(normalizedVariant) ||
+        versionRangePattern.test(variant) ||
+        variant.split(/\s+/).length > 4
+      )
+    })
+  ) {
+    return undefined
+  }
 
   return {
     baseName: normalizeDisplayText(match[1]),

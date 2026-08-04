@@ -24,7 +24,7 @@
         "priceType": "free",
         "price": "N/A",
         "sellback": "19 Dragon Coins",
-        "daRequired": true,
+        "daRequired": false,
         "dcRequired": true
       }
     ],
@@ -32,7 +32,7 @@
       "dar",
       "free"
     ],
-    "daRequired": true,
+    "daRequired": false,
     "dcRequired": true,
     "isRare": true
   },
@@ -301,7 +301,7 @@
         "priceType": "dc",
         "price": "200 Dragon Coins",
         "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
-        "daRequired": true,
+        "daRequired": false,
         "dcRequired": true
       }
     ],
@@ -309,7 +309,7 @@
       "fir",
       "dc"
     ],
-    "daRequired": true,
+    "daRequired": false,
     "dcRequired": true,
     "isSeasonal": true,
     "attacks": [
@@ -1123,7 +1123,7 @@
         "priceType": "dc",
         "price": "200 Dragon Coins",
         "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
-        "daRequired": true,
+        "daRequired": false,
         "dcRequired": true
       }
     ],
@@ -1131,7 +1131,7 @@
       "win",
       "dc"
     ],
-    "daRequired": true,
+    "daRequired": false,
     "dcRequired": true,
     "attacks": [
       {
@@ -1183,7 +1183,7 @@
         "priceType": "free",
         "price": "N/A",
         "sellback": "19 Dragon Coins",
-        "daRequired": true,
+        "daRequired": false,
         "dcRequired": true
       }
     ],
@@ -1964,7 +1964,8 @@
           "notes": "• Previously had the tooltip: Unify the Elements!\n• The following changes were implemented on June 20th, 2025:\n • Tooltip was updated.\n • Cooldown was lowered from 29 to 19."
         }
       ],
-      "rarity": "77"
+      "rarity": "77",
+      "notes": "Defender's Medal costs for these items were lowered from 500 to 100 on August 2nd, 2024."
     },
     "levelVariants": [
       {
@@ -3096,7 +3097,7 @@
         "priceType": "gold",
         "price": "400 Gold",
         "sellback": "40 Gold",
-        "daRequired": true,
+        "daRequired": false,
         "dcRequired": true
       }
     ],
@@ -3105,7 +3106,7 @@
       "lig",
       "gold"
     ],
-    "daRequired": true,
+    "daRequired": false,
     "dcRequired": true,
     "isSeasonal": true,
     "attacks": [
@@ -3334,7 +3335,7 @@
         "priceType": "dc",
         "price": "200 Dragon Coins",
         "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
-        "daRequired": true,
+        "daRequired": false,
         "dcRequired": true
       }
     ],
@@ -3342,7 +3343,7 @@
       "ene",
       "dc"
     ],
-    "daRequired": true,
+    "daRequired": false,
     "dcRequired": true,
     "isSeasonal": true,
     "attacks": [
@@ -3611,7 +3612,7 @@
         "priceType": "dc",
         "price": "200 Dragon Coins",
         "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
-        "daRequired": true,
+        "daRequired": false,
         "dcRequired": true
       }
     ],
@@ -3619,7 +3620,7 @@
       "fir",
       "dc"
     ],
-    "daRequired": true,
+    "daRequired": false,
     "dcRequired": true,
     "isSeasonal": true,
     "attacks": [
@@ -4613,7 +4614,7 @@
         "priceType": "dc",
         "price": "400 Dragon Coins",
         "sellback": "360 DC (<24 hours) / 100 DC (>24 hours)",
-        "daRequired": true,
+        "daRequired": false,
         "dcRequired": true
       }
     ],
@@ -4621,7 +4622,7 @@
       "lig",
       "dc"
     ],
-    "daRequired": true,
+    "daRequired": false,
     "dcRequired": true,
     "isSeasonal": true,
     "attacks": [
@@ -4952,7 +4953,7 @@
         "priceType": "dc",
         "price": "250 Dragon Coins",
         "sellback": "N/A",
-        "daRequired": true,
+        "daRequired": false,
         "dcRequired": true
       }
     ],
@@ -4961,7 +4962,7 @@
       "lig",
       "dc"
     ],
-    "daRequired": true,
+    "daRequired": false,
     "dcRequired": true,
     "isSeasonal": true,
     "attacks": [
@@ -8466,7 +8467,7 @@
     "itemType": "Trinket",
     "equipSpot": "Trinket",
     "armorCustomization": {
-      "appearance": "Warpfire Customization for Pyromancer. (Cosmetic) Equipping this trinket displays an animated orange runic circles over the player. Own this item to unlock the Warpfire",
+      "appearance": "Warpfire",
       "modifies": "Pyromancer"
     },
     "hasArmorCustomization": true,
@@ -8523,7 +8524,7 @@
         "priceType": "free",
         "price": "N/A",
         "sellback": "19 Dragon Coins",
-        "daRequired": true,
+        "daRequired": false,
         "dcRequired": true
       }
     ],

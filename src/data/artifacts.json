@@ -105,7 +105,28 @@
     "shared": {
       "description": "This helm once belonged to Baltael, the first SoulWeaver. The power it bestows shows you how to fully Synchronize with Aegis, enhancing your Soul Aegis's defensive power, SoulSynch's number of hits, and Retribution's damage.",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/Baltael'sAventail.png",
-      "rarity": "100"
+      "rarity": "100",
+      "notes": "Items occupy the player's helm slot when equipped.\nArtifact helms are animated; the soul piece crackles with energy periodically in its Energy elemental attunement appearance, and part of the soul piece spirals continuously in its Poison elemental attunement appearance.\nArtifact helms are color-custom; the aventail is linked to the player's base color.\nArtifact helms' soul piece is attuned to the player's equipped weapon's element; refer to this chart for all appearances.\nDuring April Fools' Day 2018, the level 60 and 80 versions modified the Fleshweaver class.\nLevel 60 and 80 versions' names were differentiated with stat indicators and tiered with Roman numerals on July 1st, 2023.\nThe following changes were implemented on August 23rd, 2024:\n  • Level 60 and 80 versions previously had the description: This helm once belonged to Baltael, the first SoulWeaver. The power it bestows shows you how to fully Synchronize with Aegis, enhancing your Soul Aegis's defensive power, Valour Impact's number of hits, and SoulSync's damage.\n  • Level 60 and 80 versions' Resists were updated.\n  • Skilled and Master versions were released, balancing the benefits of their precursors, but requiring a Dragon Amulet to equip.\nSynched version was released as a direct upgrade to the Skilled and Master versions, also requiring a Dragon Amulet to equip, on September 6th, 2024.",
+      "alsoSee": [
+        {
+          "name": "Baltael's Ancient Helm",
+          "slug": "accessory-baltael-s-ancient-helm",
+          "type": "accessory",
+          "url": "https://forums2.battleon.com/f/tm.asp?m=22418323"
+        },
+        {
+          "name": "Baltael's Visor",
+          "slug": "accessory-baltael-s-visor",
+          "type": "accessory",
+          "url": "https://forums2.battleon.com/f/tm.asp?m=22418322"
+        },
+        {
+          "name": "Retroclear Aventail",
+          "slug": "accessory-retroclear-aventail",
+          "type": "accessory",
+          "url": "https://forums2.battleon.com/f/tm.asp?m=22413357"
+        }
+      ]
     },
     "levelVariants": [
       {
@@ -602,7 +623,7 @@
         "price": "N/A",
         "requiredItems": "1 Dragon's Patience (D-Amulet/D-Coins) & 1 Dragoncore Crystal OR 1 Dragon's Patience (D-Amulet/D-Coins) & 1 Dragoncore Stone",
         "sellback": "0 Dragon Coins",
-        "daRequired": true,
+        "daRequired": false,
         "dcRequired": true
       }
     ],
@@ -790,7 +811,7 @@
         "price": "N/A",
         "requiredItems": "1 Dragon's Rage (D-Amulet/D-Coins) & 1 Dragoncore Crystal OR 1 Dragon's Rage (D-Amulet/D-Coins) & 1 Dragoncore Stone",
         "sellback": "0 Dragon Coins",
-        "daRequired": true,
+        "daRequired": false,
         "dcRequired": true
       }
     ],
@@ -880,7 +901,7 @@
       {
         "location": "Redeem the code received from purchasing the AE 2020 Calendar from HeroMart",
         "priceType": "gold",
-        "price": "$19.95 USD (Standard) / $29.95 USD (Collector's Edition) + Postage",
+        "price": "$19.95 USD (Standard - 2020) / $24.95 USD (Standard - 2026) / $29.95 USD (Collector's Edition) + Postage",
         "sellback": "N/A",
         "daRequired": false,
         "dcRequired": true
@@ -893,7 +914,6 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isRare": true,
     "isSpecialOffer": true
   },
   {
@@ -1007,7 +1027,8 @@
     "shared": {
       "description": "The warm and magically infused cloak of the Frost Moglin Knights! Equip this item with the Frost Moglin Knight's Helm to upgrade the Frost Moglin Armor!",
       "imageUrl": "https://i.imgur.com/StWTUCm.png",
-      "rarity": "0"
+      "rarity": "0",
+      "notes": "Items occupy the player's cape slot when equipped."
     },
     "levelVariants": [
       {
@@ -1294,7 +1315,8 @@
     "shared": {
       "description": "The helm of the legendary order of Frost Moglin Knights! An artifact for Frost Moglin Armor along with the Frost Moglin Knight's Cape.",
       "imageUrl": "https://i.imgur.com/UWUlCbM.png",
-      "rarity": "5"
+      "rarity": "5",
+      "notes": "Items occupy the player's helm slot when equipped."
     },
     "levelVariants": [
       {
@@ -1587,7 +1609,8 @@
     ],
     "shared": {
       "description": "This shining gold cowbell smells faintly of fresh bacon. If you wanted, you could wear it around your neck. But... why? An Artifact for the Evolved ChickenCow armor.",
-      "rarity": "5"
+      "rarity": "5",
+      "notes": "Numerals associated with each Harmonized Cowbell represent the numbers 1-9 in binary.\nItems occupy the player's necklace slot when equipped."
     },
     "levelVariants": [
       {
@@ -1919,7 +1942,8 @@
           "caption": "Alternative 1"
         }
       ],
-      "rarity": "5"
+      "rarity": "5",
+      "notes": "Dragon Coin versions were only available during Talk Like a Pirate Day 2018; permanent low drop rate versions are available from any random encounter quest in The Pale Sea or The Pasgur Ocean (excluding Treasure!).\nItems occupy the player's helm slot when equipped.\nArtifact helms are color-custom; the hair, the hat, the trim and emblem, and the feathers and bandana are linked to the player's hair, base, trim, and dragon skin colors respectively.\nArtifact helms' color-custom hair was added on October 26th, 2018, while all components were made color-custom on September 24th, 2021.\nPreviously equipping any Navigator's Hat artifact helm was required to modify the appearance of the Pirate class; they were updated to unlock Navigator Armor Customization options on September 17th, 2021."
     },
     "levelVariants": [
       {
@@ -2207,6 +2231,10 @@
     ],
     "itemType": "Artifact",
     "equipSlot": "Head",
+    "armorCustomization": {
+      "modifies": "Pirate",
+      "appearance": "Navigator"
+    },
     "category": "Armor",
     "releaseDate": "",
     "tags": [
@@ -2214,6 +2242,7 @@
       "free",
       "wat"
     ],
+    "hasArmorCustomization": true,
     "hasDA": true,
     "hasDC": true,
     "hasDM": false,

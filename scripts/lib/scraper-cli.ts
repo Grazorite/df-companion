@@ -9,10 +9,11 @@ export interface NameFilterArgs {
 }
 
 export function getArg(name: string): string | undefined {
+  const prefix = `--${name}=`
   return process.argv
     .slice(2)
-    .find((arg) => arg.startsWith(`--${name}=`))
-    ?.split('=')[1]
+    .find((arg) => arg.startsWith(prefix))
+    ?.slice(prefix.length)
 }
 
 export function getLetterFilterArgs(): LetterFilterArgs {

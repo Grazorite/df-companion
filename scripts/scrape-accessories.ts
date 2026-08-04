@@ -1,7 +1,7 @@
 import * as fs from 'node:fs'
 import * as path from 'node:path'
 import elementsData from '../src/data/elements.json' with { type: 'json' }
-import { parseArmorCustomization } from '../src/utils/armorCustomization.ts'
+import { parseArmorCustomization, type ArmorCustomizationInfo } from '../src/utils/armorCustomization.ts'
 import {
   computeFamilyFlags,
   computePriceType,
@@ -37,6 +37,7 @@ import { repairAccessFlags } from './lib/access-flag-repair.ts'
 import { getAccessorySubtypeStrategy } from './lib/accessories/index.ts'
 import { promoteAccessoryCrossPostFamilies } from './lib/accessories/cross-post-family.ts'
 import { extractAlsoSeeRefs, type ParsedAlsoSeeRef } from './lib/also-see.ts'
+import { dedupeSameSlugPreferFamily } from './lib/family-merge-guard.ts'
 import { hasRetiredTag } from './lib/tags.ts'
 import type { FamilySourceRef, LevelVariant } from '../src/types/item.ts'
 import type { AlsoSeeRef } from '../src/types/item.ts'
@@ -1032,6 +1033,21 @@ function mergeAccessoryAlsoSee(variants: Accessory[], familySlug: string): AlsoS
   return Array.from(refs.values()).sort((a, b) => compareTitles(a.name, b.name))
 }
 
+function mergeFamilyAlsoSeeRefs(
+  existing: AlsoSeeRef[] = [],
+  extra: AlsoSeeRef[] = [],
+  familySlug: string
+): AlsoSeeRef[] {
+  const refs = new Map<string, AlsoSeeRef>()
+
+  for (const ref of [...existing, ...extra]) {
+    if (ref.slug === familySlug) continue
+    refs.set(`${ref.type}:${ref.slug}:${ref.url ?? ''}`, ref)
+  }
+
+  return Array.from(refs.values()).sort((a, b) => compareTitles(a.name, b.name))
+}
+
 function mergeAlternativeImages(
   first?: Array<{ url: string; caption: string }>,
   second?: Array<{ url: string; caption: string }>
@@ -1273,7 +1289,12 @@ function buildAccessoryEntry(
   }
   const obtainMethods = parseObtainMethods(html).map((method) => ({
     ...method,
-    daRequired: method.daRequired || flags.daRequired || textSignals.daRequired,
+    // Apply section-level DA only to non-DC methods. When a post has both a DA
+    // base variant and a DC variant, the DA tag precedes only the base title block
+    // and should not bleed onto the DC method (e.g. Carved Dragon Scale II-V).
+    daRequired:
+      method.daRequired ||
+      (method.dcRequired ? false : flags.daRequired || textSignals.daRequired),
     ...(flags.dcRequired || method.dcRequired ? { dcRequired: true } : {}),
     ...(flags.dmRequired || method.dmRequired ? { dmRequired: true } : {}),
   }))
@@ -1309,7 +1330,15 @@ function buildAccessoryEntry(
     supportsCosmeticFlag(stub.subtype, equipSpotValue) &&
     (hasCosmeticMarker(description) || hasCosmeticMarker(normalizedText))
   const notes = parseNotes(html)
-  const armorCustomization = parseArmorCustomization([description, notes, normalizedText].filter(Boolean).join(' '))
+  // Parse armor customization from notes first (cleanest source — the explicit
+  // "Other information" section), then fall back to description, then full text.
+  // Combining all three into one blob caused regex over-matching on items like
+  // Cloak of the Beast where the description repeats a shorter version of the
+  // customization phrase.
+  const armorCustomization =
+    parseArmorCustomization(notes) ??
+    parseArmorCustomization(description) ??
+    parseArmorCustomization(normalizedText)
   const strategy = getAccessorySubtypeStrategy(stub.subtype)
   const images = strategy.shouldExtractImages({
     name: override?.name ?? stub.name,
@@ -1612,7 +1641,42 @@ async function buildAccessoryOrFamily(
     }
 
     if (variants.length > 1) {
-      return buildAccessoryFamily(stub, variants, fallbackImages)
+      // Check non-variant posts (e.g. trailing "Other information" + credits post)
+      // for shared notes and armor customization that apply to the whole family.
+      const variantMessageIds = new Set(variants.map((v) => {
+        const m = v.forumUrl?.match(/[?&]m=(\d+)/)?.[1]
+        return m
+      }).filter(Boolean))
+      let supplementalNotes: string | undefined
+      let supplementalArmorCustomization: ArmorCustomizationInfo | undefined
+      const supplementalAlsoSee: AlsoSeeRef[] = []
+      for (const post of threadPosts) {
+        if (variantMessageIds.has(post.messageId)) continue
+        const postNotes = parseNotes(post.html)
+        if (postNotes && !supplementalNotes) supplementalNotes = postNotes
+        supplementalAlsoSee.push(...resolveAlsoSee(extractAlsoSeeRefs(post.html)))
+        if (!supplementalArmorCustomization) {
+          supplementalArmorCustomization =
+            parseArmorCustomization(postNotes) ?? parseArmorCustomization(post.html)
+        }
+      }
+      const family = buildAccessoryFamily(stub, variants, fallbackImages)
+      if (supplementalNotes && !family.shared.notes) {
+        family.shared.notes = supplementalNotes
+      }
+      if (supplementalArmorCustomization && !family.armorCustomization) {
+        family.armorCustomization = supplementalArmorCustomization
+        family.hasArmorCustomization = true
+      }
+      const mergedAlsoSee = mergeFamilyAlsoSeeRefs(
+        family.shared.alsoSee,
+        supplementalAlsoSee,
+        family.slug
+      )
+      if (mergedAlsoSee.length > 0) {
+        family.shared.alsoSee = mergedAlsoSee
+      }
+      return family
     }
   }
 
@@ -1812,7 +1876,7 @@ function writeDatasets(
 
     entries = repairAccessFlags(
       promoteAccessoryCrossPostFamilies(
-        Array.from(new Map(entries.map((entry) => [entry.slug, entry])).values())
+        dedupeSameSlugPreferFamily(entries, isAccessoryFamily)
       )
     )
 

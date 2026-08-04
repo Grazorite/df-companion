@@ -65951,7 +65951,7 @@
     "itemType": "Helm",
     "equipSpot": "Head",
     "armorCustomization": {
-      "appearance": "Full Synch customization for DragonLord. Own this item to unlock the Full Synch",
+      "appearance": "Full Synch",
       "modifies": "DragonLord"
     },
     "hasArmorCustomization": true,

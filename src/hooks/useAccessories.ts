@@ -250,6 +250,10 @@ function getAccessorySlugs(entry: AccessoryEntry): string[] {
   return [entry.slug, ...(isAccessoryFamily(entry) ? (entry.aliasSlugs ?? []) : [])]
 }
 
+function getAccessoryAlsoSeeRefs(entry: AccessoryEntry): AlsoSeeRef[] {
+  return isAccessoryFamily(entry) ? (entry.shared.alsoSee ?? []) : (entry.alsoSee ?? [])
+}
+
 function getAccessoryObtainFingerprints(entry: AccessoryEntry): Set<string> {
   const methods = isAccessoryFamily(entry)
     ? entry.levelVariants.flatMap((level) => level.obtainVariants)
@@ -359,6 +363,28 @@ export function useAccessoryRelatedItems(accessory: AccessoryEntry, alsoSee: Als
             : ('same-subtype' as const),
       }
     })
+    const reverseExplicitRelated = allAccessories.flatMap((candidate) => {
+      const candidateSlugs = getAccessorySlugs(candidate)
+      if (candidateSlugs.some((slug) => currentSlugs.has(slug))) return []
+      if (candidateSlugs.some((slug) => explicitSlugSet.has(slug))) return []
+
+      const linksToCurrent = getAccessoryAlsoSeeRefs(candidate).some((ref) =>
+        currentSlugs.has(ref.slug)
+      )
+      if (!linksToCurrent) return []
+
+      return [
+        {
+          ref: undefined,
+          entry: candidate,
+          relation: 'explicit' as const,
+          scope:
+            candidate.subtype !== accessory.subtype
+              ? ('cross-subtype' as const)
+              : ('same-subtype' as const),
+        },
+      ]
+    })
 
     const currentFingerprints = getAccessoryObtainFingerprints(accessory)
     const currentName = getAccessoryDisplayName(accessory)
@@ -398,7 +424,7 @@ export function useAccessoryRelatedItems(accessory: AccessoryEntry, alsoSee: Als
       .map(({ score: _score, ...item }) => item)
 
     const seen = new Set<string>()
-    return [...explicitRelated, ...inferredRelated].filter((item) => {
+    return [...explicitRelated, ...reverseExplicitRelated, ...inferredRelated].filter((item) => {
       const slug = item.entry?.slug ?? item.ref?.slug
       if (!slug || seen.has(slug)) return false
       seen.add(slug)

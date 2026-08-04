@@ -8,6 +8,7 @@ function decodeHtml(text: string): string {
     .replace(/&amp;/g, '&')
     .replace(/&quot;/g, '"')
     .replace(/&#39;/g, "'")
+    .replace(/&apos;/g, "'")
     .replace(/&nbsp;/g, ' ')
 }
 
@@ -20,10 +21,11 @@ function stripHtml(html: string): string {
 }
 
 export function extractAlsoSeeRefs(html: string): ParsedAlsoSeeRef[] {
+  const labelPattern =
+    String.raw`Also(?:\s|&nbsp;|<[^>]+>)+See(?:\s*<[^>]+>\s*)*(?:\s*\([^)]*\))?(?:\s|&nbsp;|<[^>]+>)*:`
+  const endPattern = String.raw`(?=<br\s*\/?>\s*<br\s*\/?>|<i>\s*Thanks\s+to|Thanks\s+to|<font\s+color=['"]#eeeeee['"]|$)`
   const matches = [
-    ...html.matchAll(
-      /Also\s+See(?:\s*\([^)]*\))?\s*:\s*([\s\S]*?)(?=<br\s*\/?>\s*<br\s*\/?>|<i>\s*Thanks\s+to|Thanks\s+to|<font\s+color=['"]#eeeeee['"]|$)/gi
-    ),
+    ...html.matchAll(new RegExp(`${labelPattern}\\s*([\\s\\S]*?)${endPattern}`, 'gi')),
   ]
   if (matches.length === 0) return []
 

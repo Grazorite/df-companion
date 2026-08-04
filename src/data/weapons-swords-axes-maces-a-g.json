@@ -14,7 +14,7 @@
     "shared": {
       "description": "This sword once belonged to the great and terrible warrior Jaysun. It was said long ago that anyone who holds his power would be impossible to kill.",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/13thSword.png",
-      "notes": "Weapon was previously available from the quests Friday the 13th Invasion, Friday the 13th Invasion - Part II, Friday the 13th III, Friday the 13th Invasion - A Ghoulish Attack, and Friday the 13th Invasion Part IV.\nThe following changes were implemented on September 26th, 2025:\nLevel's requirement was raised from 10 to 13.\nDamage range was modified from 21-35 to 28-32.\nCrit was raised from +1 to +5.\nSellback was lowered from 500 to 13 Gold.",
+      "notes": "Weapon was previously available from the quests Friday the 13th Invasion, Friday the 13th Invasion - Part II, Friday the 13th III, Friday the 13th Invasion - A Ghoulish Attack, and Friday the 13th Invasion Part IV.\nThe following changes were implemented on September 26th, 2025:\n  • Level's requirement was raised from 10 to 13.\n  • Damage range was modified from 21-35 to 28-32.\n  • Crit was raised from +1 to +5.\n  • Sellback was lowered from 500 to 13 Gold.",
       "alsoSee": [
         {
           "name": "Unlucky 13th Sword (I-VIII)",
@@ -53,7 +53,7 @@
         "element": "DAR",
         "resists": "Darkness +5",
         "rarity": "8",
-        "notes": "Weapon was previously available from the quests Friday the 13th Invasion, Friday the 13th Invasion - Part II, Friday the 13th III, Friday the 13th Invasion - A Ghoulish Attack, and Friday the 13th Invasion Part IV.\nThe following changes were implemented on September 26th, 2025:\nLevel's requirement was raised from 10 to 13.\nDamage range was modified from 21-35 to 28-32.\nCrit was raised from +1 to +5.\nSellback was lowered from 500 to 13 Gold."
+        "notes": "Weapon was previously available from the quests Friday the 13th Invasion, Friday the 13th Invasion - Part II, Friday the 13th III, Friday the 13th Invasion - A Ghoulish Attack, and Friday the 13th Invasion Part IV.\nThe following changes were implemented on September 26th, 2025:\n  • Level's requirement was raised from 10 to 13.\n  • Damage range was modified from 21-35 to 28-32.\n  • Crit was raised from +1 to +5.\n  • Sellback was lowered from 500 to 13 Gold."
       },
       {
         "levelNumber": 27,

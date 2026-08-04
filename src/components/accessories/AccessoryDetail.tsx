@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import type {
   Accessory,
   AccessoryEntry,
@@ -209,9 +209,13 @@ export default function AccessoryDetail({ accessory, filterBase }: AccessoryDeta
     ? family.levelVariants[Math.min(activeIndex, family.levelVariants.length - 1)]
     : undefined
 
-  useEffect(() => {
-    setActiveImageIndex(0)
-  }, [activeIndex])
+  // The image selector is independent from the level/variant selector for
+  // accessories: switching variants must not move the image. Only reset the image
+  // to the first one when navigating to a different entry, and clamp the index if
+  // the available image set shrinks. (Weapons intentionally link the two selectors
+  // under their own conditions; accessories do not.)
+  const entryKey = family?.slug ?? singleAccessory?.slug ?? accessory.slug
+  const initializedImageEntryKey = useRef<string | undefined>(undefined)
 
   const title = family
     ? getDisplayFamilyName(family)
@@ -246,6 +250,18 @@ export default function AccessoryDetail({ accessory, filterBase }: AccessoryDeta
       mainCaption: title,
     })
   }, [altImages, imageUrl, shouldShowImages, title])
+
+  useEffect(() => {
+    if (initializedImageEntryKey.current !== entryKey) {
+      initializedImageEntryKey.current = entryKey
+      setActiveImageIndex(0)
+      setActiveIndex(0)
+      return
+    }
+    // Clamp if the image set shrank (e.g. variant-specific images changed)
+    setActiveImageIndex((current) => (current < allImages.length ? current : 0))
+  }, [entryKey, allImages.length])
+
   const currentImage = allImages[activeImageIndex]
 
   const access = family
@@ -269,6 +285,8 @@ export default function AccessoryDetail({ accessory, filterBase }: AccessoryDeta
   const attacks = family
     ? ((activeLevel?.attacks ?? family.shared.attacks) as GuestAttack[] | undefined)
     : singleAccessory?.attacks
+  const trinketSkillHeading =
+    attacks && attacks.length > 1 ? `Trinket Skills (${attacks.length})` : 'Trinket Skill'
   const displayLevels = useMemo(
     () =>
       family
@@ -451,7 +469,9 @@ export default function AccessoryDetail({ accessory, filterBase }: AccessoryDeta
 
       <ObtainSection variants={obtainMethods} className="mb-8" />
 
-      {attacks && attacks.length > 0 && <GuestAttacks attacks={attacks} heading="Trinket Skill" />}
+      {attacks && attacks.length > 0 && (
+        <GuestAttacks attacks={attacks} heading={trinketSkillHeading} />
+      )}
 
       <OtherInformationSection
         notes={singleAccessory?.notes}
