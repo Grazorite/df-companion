@@ -10,7 +10,21 @@
     "subtype": "sword-axe-mace",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=6749570",
     "familyOrigin": "same-thread-multi-post",
-    "familySources": [],
+    "familySources": [
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=6749570",
+        "title": "DF Encyclopedia: 13th Sword",
+        "variantLabel": "13th Sword",
+        "isPrimary": true
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=15686485",
+        "title": "DF Encyclopedia: 13th Sword",
+        "variantLabel": "13th Sword",
+        "isPrimary": false
+      }
+    ],
+    "itemType": "Sword",
     "shared": {
       "description": "This sword once belonged to the great and terrible warrior Jaysun. It was said long ago that anyone who holds his power would be impossible to kill.",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/13thSword.png",
@@ -48,11 +62,12 @@
             "daRequired": false
           }
         ],
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=6749570",
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=6749570",
         "description": "This sword once belonged to the great and terrible warrior Jaysun. It was said long ago that anyone who holds his power would be impossible to kill.",
         "element": "DAR",
         "resists": "Darkness +5",
         "rarity": "8",
+        "itemType": "Sword",
         "notes": "Weapon was previously available from the quests Friday the 13th Invasion, Friday the 13th Invasion - Part II, Friday the 13th III, Friday the 13th Invasion - A Ghoulish Attack, and Friday the 13th Invasion Part IV.\nThe following changes were implemented on September 26th, 2025:\n  • Level's requirement was raised from 10 to 13.\n  • Damage range was modified from 21-35 to 28-32.\n  • Crit was raised from +1 to +5.\n  • Sellback was lowered from 500 to 13 Gold."
       },
       {
@@ -71,11 +86,12 @@
             "daRequired": false
           }
         ],
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=6749570",
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=15686485",
         "description": "This sword once belonged to the great and terrible warrior Jaysun. It was said long ago that anyone who holds his power would be impossible to kill.",
         "element": "DAR",
         "resists": "Darkness +5",
-        "rarity": "8"
+        "rarity": "8",
+        "itemType": "Sword"
       }
     ],
     "category": "Weapon",
@@ -113,6 +129,7 @@
     "stats": "Crit +2, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +4, END +4, LUK -1, STR +4, Bonus +2",
     "resists": "Wind +3, Stone +3",
     "rarity": "10",
+    "itemType": "Sword",
     "obtainMethods": [
       {
         "location": "Swordhaven Forest",

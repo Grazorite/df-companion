@@ -59,7 +59,7 @@ export default function WeaponCard({ weapon }: WeaponCardProps) {
         <h3 className="font-semibold text-text-primary text-sm leading-snug mb-1 line-clamp-1">
           {card.name}
         </h3>
-        <p className="text-text-secondary text-xs leading-relaxed line-clamp-2">
+        <p className="text-text-secondary text-xs leading-relaxed line-clamp-2 break-words [overflow-wrap:anywhere]">
           {card.description || 'No description yet.'}
         </p>
       </div>

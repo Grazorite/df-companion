@@ -7,7 +7,11 @@ import type {
   LevelVariant,
   VariantAttack,
 } from '../../src/types/item.ts'
-import { computeFamilyFlags, normalizeLevel } from '../../src/utils/variantHelpers.ts'
+import {
+  computeFamilyFlags,
+  normalizeLevel,
+  normalizeRomanDisplay,
+} from '../../src/utils/variantHelpers.ts'
 import { compareTitles } from '../../src/utils/displayText.ts'
 import { distributeSharedNoteLines } from './note-cleaning.ts'
 
@@ -117,7 +121,9 @@ function getLongestCommonPrefix(tokensList: string[][]): string[] {
 }
 
 function titleCaseFromTokens(tokens: string[]): string {
-  return tokens.map((token) => token.replace(/\b\w/g, (char) => char.toUpperCase())).join(' ')
+  return tokens
+    .map((token) => normalizeRomanDisplay(token.replace(/\b\w/g, (char) => char.toUpperCase())))
+    .join(' ')
 }
 
 function trimNumericQualifierFromSuffix(suffix: string[], tokenSets: string[][]): string[] {
@@ -267,7 +273,12 @@ function canCrossMerge(a: ScrapedEntry, b: ScrapedEntry): boolean {
   const hasNumericVariantBase = sharesNumericVariantBase(a, b)
   const hasGuestVariantOverlap = sharesGuestFamilyVariantOverlap(a, b)
   const hasPetEvolutionChain = sharesPetEvolutionChain(a, b)
-  if (!hasExplicitReference && !hasNumericVariantBase && !hasGuestVariantOverlap && !hasPetEvolutionChain) {
+  if (
+    !hasExplicitReference &&
+    !hasNumericVariantBase &&
+    !hasGuestVariantOverlap &&
+    !hasPetEvolutionChain
+  ) {
     return false
   }
 
@@ -723,9 +734,7 @@ function getCanonicalAlsoSeeRefs(item: ScrapedEntry): AlsoSeeRef[] {
 function withCanonicalAlsoSeeRefs(item: ScrapedEntry, refs: AlsoSeeRef[]): ScrapedEntry {
   const dedupedRefs = Array.from(
     new Map(
-      refs
-        .filter((ref) => ref.slug !== item.slug)
-        .map((ref) => [`${ref.type}:${ref.slug}`, ref])
+      refs.filter((ref) => ref.slug !== item.slug).map((ref) => [`${ref.type}:${ref.slug}`, ref])
     ).values()
   ).sort((a, b) => compareTitles(a.name, b.name))
 

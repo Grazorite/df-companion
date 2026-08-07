@@ -25,5 +25,5 @@ export default function WeaponDetailPage() {
     )
   }
 
-  return <WeaponDetail weapon={weapon} filterBase="/weapons" />
+  return <WeaponDetail weapon={weapon} filterBase={`/weapons?type=${activeSubtype}`} />
 }

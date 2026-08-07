@@ -1,9 +1,10 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { ChevronDown, ImageOff } from 'lucide-react'
 import type { LevelVariant, ObtainVariant } from '../../types/item'
 import type { Weapon, WeaponEntry, WeaponFamily, WeaponSpecial } from '../../types/weapon'
 import { isWeaponFamily } from '../../types/weapon'
-import { useRelatedWeapons } from '../../hooks/useWeapons'
+import { useWeaponRelatedItems } from '../../hooks/useWeapons'
 import { displayTitle, normalizeDisplayText } from '../../utils/displayText'
 import {
   buildDisplayImages,
@@ -15,7 +16,9 @@ import {
   getLevelVariantLabels,
   hasParentheticalVariantFamilyName,
   isSingleVariant,
+  normalizeRomanDisplay,
   obtainVariantHasDC,
+  stripVersionSuffix,
 } from '../../utils/variantHelpers'
 import { getWeaponDisplayName } from '../../hooks/useWeapons'
 import AccessPills from '../shared/AccessPills'
@@ -26,6 +29,10 @@ import MetadataChipSection from '../shared/MetadataChipSection'
 import ObtainSection from '../shared/ObtainSection'
 import NotesList from '../shared/NotesList'
 import OtherInformationSection from '../shared/OtherInformationSection'
+import PopupText, { PopupQuoteBlocks } from '../shared/PopupText'
+import DetailTypePill from '../shared/DetailTypePill'
+import { buildFilterLink } from '../../utils/filterLinks'
+import { splitPopupText } from '../../utils/popupText'
 import SourceLinksCard from '../shared/SourceLinksCard'
 import WeaponCard from './WeaponCard'
 import WeaponStatsTable from './WeaponStatsTable'
@@ -33,6 +40,13 @@ import WeaponStatsTable from './WeaponStatsTable'
 interface WeaponDetailProps {
   weapon: WeaponEntry
   filterBase: string
+}
+
+const WEAPON_SUBTYPE_FALLBACK_LABELS: Record<WeaponEntry['subtype'], string> = {
+  'sword-axe-mace': 'Sword/Axe/Mace',
+  'staff-wand': 'Staff/Wand',
+  dagger: 'Dagger',
+  scythe: 'Scythe',
 }
 
 function WeaponImage({ src, name }: { src: string; name: string }) {
@@ -73,9 +87,76 @@ function WeaponSpecialButton({ imageUrl, name }: { imageUrl?: string; name: stri
   )
 }
 
-function WeaponSpecialCard({ special, defaultOpen = false }: { special: WeaponSpecial; defaultOpen?: boolean }) {
+function extractRateFromEffect(effect?: string): { effectText?: string; rate?: string } {
+  if (!effect) return {}
+
+  const rateMatches = [...effect.matchAll(/(?:\[|\()Rate:\s*([^\])]+)(?:\]|\))/gi)]
+  const rate = rateMatches.at(-1)?.[1]?.trim()
+  if (!rate) return { effectText: effect }
+
+  const effectText = effect
+    .replace(/\s*(?:\[|\()Rate:\s*[^\])]+(?:\]|\))/gi, '')
+    .split('\n')
+    .map((line) => {
+      const leadingWhitespace = line.match(/^\s*/)?.[0] ?? ''
+      const body = line.slice(leadingWhitespace.length)
+      return `${leadingWhitespace}${body
+        .replace(/[^\S\n]{2,}/g, ' ')
+        .replace(/[^\S\n]+([;,.!?])/g, '$1')}`.trimEnd()
+    })
+    .join('\n')
+    .trim()
+
+  return { effectText, rate }
+}
+
+function WeaponSpecialMetricStrip({
+  metrics,
+}: {
+  metrics: Array<{ label: string; value?: string }>
+}) {
+  if (metrics.length === 0) return null
+
+  return (
+    <div
+      className={`grid gap-2 text-center bg-bg-base rounded-lg p-3 ${
+        metrics.length > 1 ? 'grid-cols-2' : 'grid-cols-1'
+      }`}
+    >
+      {metrics.map((metric) => (
+        <div key={metric.label}>
+          <p className="text-[10px] text-text-muted uppercase tracking-wider mb-0.5">
+            {metric.label}
+          </p>
+          <p className="text-xs font-medium text-text-secondary">{metric.value || '—'}</p>
+        </div>
+      ))}
+    </div>
+  )
+}
+
+function WeaponSpecialCard({
+  special,
+  defaultOpen = false,
+}: {
+  special: WeaponSpecial
+  defaultOpen?: boolean
+}) {
   const [isOpen, setIsOpen] = useState(defaultOpen)
   const title = special.activation === 'manual' ? 'Manual' : 'On Hit'
+  const { effectText, rate } = extractRateFromEffect(special.effect)
+  const effectPopups = effectText ? splitPopupText(effectText).popupGroups : []
+  const notesPopups = special.notes ? splitPopupText(special.notes).popupGroups : []
+  const popupGroups = [...effectPopups, ...notesPopups]
+  const metrics =
+    special.activation === 'manual'
+      ? [
+          { label: 'Cooldown', value: special.cooldown },
+          { label: 'Charge Time', value: special.chargeTime },
+        ]
+      : rate
+        ? [{ label: 'Rate', value: rate }]
+        : []
 
   return (
     <div className="bg-bg-surface border border-border-default rounded-lg overflow-hidden">
@@ -84,58 +165,46 @@ function WeaponSpecialCard({ special, defaultOpen = false }: { special: WeaponSp
         className="w-full flex items-center gap-4 p-4 text-left hover:bg-bg-elevated/50 transition-colors"
         aria-expanded={isOpen}
       >
-          <div className="flex-shrink-0">
-            <WeaponSpecialButton imageUrl={special.imageUrl} name={title} />
-          </div>
-          <div className="flex-1 min-w-0">
-            <h3 className="text-sm font-semibold text-text-primary">{title}</h3>
-            {special.trigger && (
-              <p className="text-xs text-text-secondary italic mt-1 line-clamp-3 whitespace-pre-line break-words leading-relaxed">
-                {normalizeDisplayText(special.trigger)}
-              </p>
-            )}
-          </div>
+        <div className="flex-shrink-0">
+          <WeaponSpecialButton imageUrl={special.imageUrl} name={title} />
+        </div>
+        <div className="flex-1 min-w-0">
+          <h3 className="text-sm font-semibold text-text-primary">{title}</h3>
+          {special.trigger && (
+            <p className="text-xs text-text-secondary italic mt-1 line-clamp-3 whitespace-pre-line break-words leading-relaxed">
+              {normalizeDisplayText(special.trigger)}
+            </p>
+          )}
+        </div>
 
-          <ChevronDown
-            className={`w-5 h-5 text-text-muted transition-transform flex-shrink-0 ${isOpen ? 'rotate-180' : ''}`}
-            aria-hidden="true"
-          />
+        <ChevronDown
+          className={`w-5 h-5 text-text-muted transition-transform flex-shrink-0 ${isOpen ? 'rotate-180' : ''}`}
+          aria-hidden="true"
+        />
       </button>
 
       {isOpen && (
         <div className="px-4 pb-4 pt-0 border-t border-border-default">
-          {special.effect && (
-            <p className="text-text-secondary text-sm leading-relaxed mt-3 mb-4 whitespace-pre-line">
-              {normalizeDisplayText(special.effect)}
-            </p>
-          )}
+          <div className="mt-4 space-y-4">
+            {effectText && (
+              <PopupText
+                text={effectText}
+                className="text-text-secondary text-sm leading-relaxed whitespace-pre-line"
+                quoteClassName="mt-3 mb-4"
+                showPopups={false}
+              />
+            )}
 
-          {special.activation === 'manual' && (
-            <div className="grid grid-cols-2 gap-2 text-center bg-bg-base rounded-lg p-3">
-              <div>
-                <p className="text-[10px] text-text-muted uppercase tracking-wider mb-0.5">
-                  Cooldown
-                </p>
-                <p className="text-xs font-medium text-text-secondary">
-                  {special.cooldown || '—'}
-                </p>
-              </div>
-              <div>
-                <p className="text-[10px] text-text-muted uppercase tracking-wider mb-0.5">
-                  Charge Time
-                </p>
-                <p className="text-xs font-medium text-text-secondary">
-                  {special.chargeTime || '—'}
-                </p>
-              </div>
-            </div>
-          )}
+            <WeaponSpecialMetricStrip metrics={metrics} />
+          </div>
 
           {special.notes && (
             <div className="mt-4">
-              <NotesList notes={special.notes} />
+              <NotesList notes={special.notes} showPopups={false} />
             </div>
           )}
+
+          <PopupQuoteBlocks groups={popupGroups} className="mt-4" />
         </div>
       )}
     </div>
@@ -186,6 +255,7 @@ function buildSingleWeaponLevel(entry: Weapon): LevelVariant {
     ...(entry.alternativeImages ? { alternativeImages: entry.alternativeImages } : {}),
     ...(entry.elements[0] ? { element: entry.elements[0] } : {}),
     ...(entry.rarity ? { rarity: entry.rarity } : {}),
+    ...(entry.itemType ? { itemType: entry.itemType } : {}),
     ...(entry.notes ? { notes: entry.notes } : {}),
   }
 }
@@ -197,11 +267,15 @@ function nonEmptyAlternativeImages(
 }
 
 function normalizeSourceVariantLabel(label: string) {
-  return displayTitle(
-    normalizeDisplayText(label)
-      .replace(/^DF Encyclopedia:\s*/i, '')
-      .replace(/\s+\((?:DA|DC|D-Amulet|D-Coins?|Normal)\)$/i, '')
-      .trim()
+  return normalizeRomanDisplay(
+    displayTitle(
+      stripVersionSuffix(
+        normalizeDisplayText(label)
+          .replace(/^DF Encyclopedia:\s*/i, '')
+          .replace(/\s+\((?:DA|DC|D-Amulet|D-Coins?|Normal)\)$/i, '')
+          .trim()
+      )
+    )
   )
 }
 
@@ -248,12 +322,17 @@ function getStatsIdentity(level: LevelVariant): string {
   return [level.damage, level.stats, level.resists, level.rarity, level.element].join('|')
 }
 
-function getStatsRowKey(level: LevelVariant): string {
+function getStatsRowKey(level: LevelVariant, variantLabel?: string): string {
   const hasDA = level.obtainVariants.some((variant) => variant.daRequired)
   const hasDC = level.obtainVariants.some(obtainVariantHasDC)
-  const hasDM = level.obtainVariants.some((variant) => variant.dmRequired || variant.priceType === 'dm')
+  const hasDM = level.obtainVariants.some(
+    (variant) => variant.dmRequired || variant.priceType === 'dm'
+  )
 
   return [
+    variantLabel ?? '',
+    level.variantName ?? '',
+    level.name,
     level.levelDisplay,
     level.actualLevel ?? '',
     getStatsIdentity(level),
@@ -366,8 +445,7 @@ export default function WeaponDetail({ weapon, filterBase }: WeaponDetailProps) 
     })
   }, [allImages, variantLabels])
   const preferredImageIndexesByVariant = useMemo(
-    () =>
-      variantLabels.map((label) => getPreferredImageIndexForVariant(allImages, label)),
+    () => variantLabels.map((label) => getPreferredImageIndexForVariant(allImages, label)),
     [allImages, variantLabels]
   )
   const entryKey = family?.slug ?? singleWeapon?.slug ?? weapon.slug
@@ -414,6 +492,11 @@ export default function WeaponDetail({ weapon, filterBase }: WeaponDetailProps) 
       : []
   const rarity = family ? (activeLevel?.rarity ?? family.shared.rarity) : singleWeapon?.rarity
   const ability = family ? family.shared.ability : singleWeapon?.ability
+  const detailTypeLabel =
+    activeLevel?.itemType ??
+    family?.itemType ??
+    singleWeapon?.itemType ??
+    WEAPON_SUBTYPE_FALLBACK_LABELS[weapon.subtype]
   const weaponSpecials = family
     ? (family.shared.weaponSpecials ??
       (family.shared.weaponSpecial ? [family.shared.weaponSpecial] : []))
@@ -450,13 +533,13 @@ export default function WeaponDetail({ weapon, filterBase }: WeaponDetailProps) 
     }
 
     const seen = new Set<string>()
-    return displayLevels.filter((level) => {
-      const key = getStatsRowKey(level)
+    return displayLevels.filter((level, index) => {
+      const key = getStatsRowKey(level, variantLabels[index])
       if (seen.has(key)) return false
       seen.add(key)
       return true
     })
-  }, [displayLevels, family])
+  }, [displayLevels, family, variantLabels])
   const statsRowsWereCollapsed = statsDisplayLevels.length < displayLevels.length
   const sourceLinks = useMemo(() => {
     if (!family) return [{ url: weapon.forumUrl, label: title }]
@@ -478,13 +561,17 @@ export default function WeaponDetail({ weapon, filterBase }: WeaponDetailProps) 
       family.levelVariants.length > 1 &&
       (useLevelOnlyLabels || uniqueBaseSourceLabels.size === 1) &&
       uniqueLevelLabels.size > 1
+    const sourceByUrl = new Map(
+      (family.familySources ?? []).map((source) => [source.url, source] as const)
+    )
     const seen = new Set<string>()
     const links = family.levelVariants.flatMap((level) => {
       const sourceUrl = level.sourceUrl ?? family.forumUrl
       const levelSuffix = getLevelSourceSuffix(level)
+      const sourceVariantLabel = sourceByUrl.get(sourceUrl)?.variantLabel
       const baseLabel = useLevelOnlyLabels
         ? normalizeSourceVariantLabel(family.familyName)
-        : normalizeSourceVariantLabel(level.name)
+        : normalizeSourceVariantLabel(sourceVariantLabel ?? level.name)
       const label =
         shouldAppendLevelToSource && levelSuffix ? `${baseLabel} (${levelSuffix})` : baseLabel
       const key = [sourceUrl, label, String(level.actualLevel ?? level.levelDisplay ?? '')]
@@ -519,7 +606,7 @@ export default function WeaponDetail({ weapon, filterBase }: WeaponDetailProps) 
     const refs = family ? (family.shared.alsoSee ?? []) : (singleWeapon?.alsoSee ?? [])
     return refs.filter((ref) => !currentSlugs.has(ref.slug))
   }, [family, singleWeapon, weapon.slug])
-  const { relatedWeapons } = useRelatedWeapons(alsoSeeRefs)
+  const { relatedWeapons } = useWeaponRelatedItems(weapon, alsoSeeRefs)
   const resolvedRelatedWeapons = relatedWeapons.flatMap((related) =>
     related.entry ? [{ ref: related.ref, entry: related.entry }] : []
   )
@@ -538,15 +625,19 @@ export default function WeaponDetail({ weapon, filterBase }: WeaponDetailProps) 
             filterBase={filterBase}
           />
           {isMultiVariant && (
-            <span className="inline-block text-xs font-semibold px-3 py-1.5 rounded-full bg-gold-bright text-bg-base cursor-default">
+            <Link
+              to={buildFilterLink(filterBase, 'access', 'multi')}
+              className="inline-block text-xs font-semibold px-3 py-1.5 rounded-full bg-gold-bright text-bg-base transition-opacity hover:opacity-80"
+            >
               Multiple Versions
-            </span>
+            </Link>
           )}
+          <DetailTypePill label={detailTypeLabel} />
         </div>
 
         <h1 className="text-3xl font-bold text-text-primary mb-3">{title}</h1>
         {description && (
-          <p className="text-text-secondary italic leading-relaxed mb-3">
+          <p className="text-text-secondary italic leading-relaxed mb-3 break-words [overflow-wrap:anywhere]">
             {normalizeDisplayText(description)}
           </p>
         )}
@@ -655,7 +746,7 @@ export default function WeaponDetail({ weapon, filterBase }: WeaponDetailProps) 
           </h2>
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
             {resolvedRelatedWeapons.map(({ ref, entry }) => (
-              <li key={`${entry.slug}-${ref.url ?? 'route'}`}>
+              <li key={`${entry.slug}-${ref?.url ?? 'route'}`}>
                 <WeaponCard weapon={entry} />
               </li>
             ))}

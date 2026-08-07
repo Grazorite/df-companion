@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
+import { Link } from 'react-router-dom'
 import type {
   Accessory,
   AccessoryEntry,
@@ -15,7 +16,11 @@ import {
 } from '../../hooks/useAccessories'
 import { displayTitle, normalizeDisplayText } from '../../utils/displayText'
 import { buildDisplayImages } from '../../utils/imageLabels'
-import { getDisplayFamilyName, isSingleVariant } from '../../utils/variantHelpers'
+import {
+  getDisplayFamilyName,
+  isSingleVariant,
+  normalizeRomanDisplay,
+} from '../../utils/variantHelpers'
 import ElementPill from '../shared/ElementPill'
 import AccessPills from '../shared/AccessPills'
 import LevelSelector from '../shared/LevelSelector'
@@ -24,6 +29,8 @@ import SourceLinksCard from '../shared/SourceLinksCard'
 import CollapsibleSection from '../shared/CollapsibleSection'
 import MetadataChipSection from '../shared/MetadataChipSection'
 import OtherInformationSection from '../shared/OtherInformationSection'
+import DetailTypePill from '../shared/DetailTypePill'
+import { buildFilterLink } from '../../utils/filterLinks'
 import AccessoryStatsTable from './AccessoryStatsTable'
 import AccessoryCard from './AccessoryCard'
 import GuestAttacks from '../guests/GuestAttacks'
@@ -32,7 +39,7 @@ const ACCESSORY_SUBTYPE_LABELS: Record<AccessorySubtype, string> = {
   artifact: 'Artifact',
   belt: 'Belt',
   bracer: 'Bracer',
-  'cape-wing': 'Cape & Wings',
+  'cape-wing': 'Cape/Wing',
   helm: 'Helm',
   necklace: 'Necklace',
   ring: 'Ring',
@@ -88,6 +95,7 @@ function buildSingleAccessoryLevel(entry: Accessory): LevelVariant {
     ...(entry.alternativeImages ? { alternativeImages: entry.alternativeImages } : {}),
     ...(entry.elements[0] ? { element: entry.elements[0] } : {}),
     ...(entry.attacks ? { attacks: entry.attacks } : {}),
+    ...(entry.itemType ? { itemType: entry.itemType } : {}),
     ...(entry.rarity ? { rarity: entry.rarity } : {}),
     ...(entry.notes ? { notes: entry.notes } : {}),
   }
@@ -101,11 +109,13 @@ function isCapeOrHelmLike(value?: string): boolean {
 }
 
 function normalizeSourceVariantLabel(label: string) {
-  return displayTitle(
-    normalizeDisplayText(label)
-      .replace(/^DF Encyclopedia:\s*/i, '')
-      .replace(/\s+\((?:DA|DC|D-Amulet|D-Coins?|Normal)\)$/i, '')
-      .trim()
+  return normalizeRomanDisplay(
+    displayTitle(
+      normalizeDisplayText(label)
+        .replace(/^DF Encyclopedia:\s*/i, '')
+        .replace(/\s+\((?:DA|DC|D-Amulet|D-Coins?|Normal)\)$/i, '')
+        .trim()
+    )
   )
 }
 
@@ -234,7 +244,8 @@ export default function AccessoryDetail({ accessory, filterBase }: AccessoryDeta
   const altImages = family
     ? familyHasVariantImages
       ? nonEmptyAlternativeImages(activeLevel?.alternativeImages)
-      : (family.shared.alternativeImages ?? nonEmptyAlternativeImages(activeLevel?.alternativeImages))
+      : (family.shared.alternativeImages ??
+        nonEmptyAlternativeImages(activeLevel?.alternativeImages))
     : singleAccessory?.alternativeImages
   const shouldShowImages = shouldDisplayAccessoryImages(
     accessory,
@@ -281,6 +292,11 @@ export default function AccessoryDetail({ accessory, filterBase }: AccessoryDeta
   const ability = family ? family.shared.ability : singleAccessory?.ability
   const artifactModifies = family ? family.modifies : singleAccessory?.modifies
   const artifactEquipSpot = family ? family.equipSlot : singleAccessory?.equipSpot
+  const detailTypeLabel =
+    activeLevel?.itemType ??
+    family?.itemType ??
+    singleAccessory?.itemType ??
+    ACCESSORY_SUBTYPE_LABELS[accessory.subtype]
   const armorCustomization = getAccessoryArmorCustomization(accessory)
   const attacks = family
     ? ((activeLevel?.attacks ?? family.shared.attacks) as GuestAttack[] | undefined)
@@ -381,10 +397,14 @@ export default function AccessoryDetail({ accessory, filterBase }: AccessoryDeta
             filterBase={filterBase}
           />
           {isMultiVariant && (
-            <span className="inline-block text-xs font-semibold px-3 py-1.5 rounded-full bg-gold-bright text-bg-base cursor-default">
+            <Link
+              to={buildFilterLink(filterBase, 'access', 'multi')}
+              className="inline-block text-xs font-semibold px-3 py-1.5 rounded-full bg-gold-bright text-bg-base transition-opacity hover:opacity-80"
+            >
               Multiple Versions
-            </span>
+            </Link>
           )}
+          <DetailTypePill label={detailTypeLabel} />
         </div>
 
         <h1 className="text-3xl font-bold text-text-primary mb-3">{title}</h1>

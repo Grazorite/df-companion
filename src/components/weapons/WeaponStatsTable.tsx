@@ -1,6 +1,7 @@
 import type { LevelVariant } from '../../types/item'
 import {
   getLevelVariantLabels,
+  normalizeRomanDisplay,
   obtainVariantHasDC,
   shouldShowVariantColumn,
 } from '../../utils/variantHelpers'
@@ -19,7 +20,7 @@ export default function WeaponStatsTable({
   forceLevelLabels = false,
 }: WeaponStatsTableProps) {
   const variantLabels = forceLevelLabels
-    ? levels.map((level) => String(level.actualLevel ?? level.levelDisplay))
+    ? levels.map((level) => normalizeRomanDisplay(String(level.actualLevel ?? level.levelDisplay)))
     : getLevelVariantLabels(levels, familyName, 'weapon')
   const showVariantColumn =
     !forceHideVariantColumn &&

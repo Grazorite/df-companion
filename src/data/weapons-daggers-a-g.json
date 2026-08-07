@@ -10,7 +10,21 @@
     "subtype": "dagger",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=6706193",
     "familyOrigin": "same-thread-multi-post",
-    "familySources": [],
+    "familySources": [
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=6706193",
+        "title": "DF Encyclopedia: 13th Dagger",
+        "variantLabel": "13th Dagger",
+        "isPrimary": true
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=15685671",
+        "title": "DF Encyclopedia: 13th Dagger",
+        "variantLabel": "13th Dagger",
+        "isPrimary": false
+      }
+    ],
+    "itemType": "Dagger",
     "shared": {
       "description": "This dagger once belonged to Mykel Myarz, squire to the great and terrible warrior Jaysun. It was said long ago that anyone who holds his power would be impossible to kill.",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Butcher'sKnife.png",
@@ -54,11 +68,12 @@
             "daRequired": false
           }
         ],
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=6706193",
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=6706193",
         "description": "This dagger once belonged to Mykel Myarz, squire to the great and terrible warrior Jaysun. It was said long ago that anyone who holds his power would be impossible to kill.",
         "element": "DAR",
         "resists": "Darkness +5",
         "rarity": "8",
+        "itemType": "Dagger",
         "notes": "Weapon was previously available from the quests Friday the 13th Invasion, Friday the 13th Invasion - Part II, Friday the 13th III, Friday the 13th Invasion - A Ghoulish Attack, and Friday the 13th Invasion Part IV.\nThe following changes were implemented on September 26th, 2025:\n  • Level's requirement was raised from 10 to 13.\n  • Damage range was modified from 26-30 to 28-32.\n  • Crit was raised from +1 to +5.\n  • Sellback was lowered from 500 to 13 Gold."
       },
       {
@@ -77,11 +92,12 @@
             "daRequired": false
           }
         ],
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=6706193",
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=15685671",
         "description": "This dagger once belonged to Mykel Myarz, squire to the great and terrible warrior Jaysun. It was said long ago that anyone who holds his power would be impossible to kill.",
         "element": "DAR",
         "resists": "Darkness +5",
-        "rarity": "8"
+        "rarity": "8",
+        "itemType": "Dagger"
       }
     ],
     "category": "Weapon",
@@ -119,6 +135,7 @@
     "stats": "Crit +2, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +4, END +4, LUK -1, DEX +4, Bonus +2",
     "resists": "Wind +3, Stone +3",
     "rarity": "10",
+    "itemType": "Dagger",
     "obtainMethods": [
       {
         "location": "Swordhaven Forest",
@@ -172,6 +189,7 @@
     "stats": "Crit +2, END +2, DEX +2, Bonus +2",
     "resists": "None",
     "rarity": "6",
+    "itemType": "Dagger",
     "obtainMethods": [
       {
         "location": "The Sandwitch",
@@ -186,5 +204,108 @@
       "free"
     ],
     "daRequired": true
+  },
+  {
+    "id": "weapon-eternal-drumstick-s",
+    "familyName": "Eternal Drumstick (S)",
+    "slug": "weapon-eternal-drumstick-s",
+    "aliasSlugs": [
+      "weapon-eternal-drumstick-s-all-versions"
+    ],
+    "type": "weapon",
+    "subtype": "dagger",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22424947",
+    "familyOrigin": "same-thread-multi-post",
+    "familySources": [],
+    "itemType": "Dagger",
+    "shared": {
+      "description": "Blessed by the Lord of the Air, these drumsticks hold deep fried power within... But the magic that keeps it fresh also makes it extra unhealthy! On hit, heals 5 HP and recovers 5 MP, but suffer permanent stacking -1 END/WIS. (Special)(Cosmetic)",
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/EternalDrumstick.png",
+      "notes": "Weapon's inventory icon is erroneously a Scythe, despite being a Dagger.\nWhile this weapon's item type is Dagger, its damage type is erroneously Melee instead of Pierce.\nWeapons' size are varied for each weapon, signified by its weapon's version. (S - Small, L - Large, XL - Extra Large)\n  • Eternal Drumstick (S) is approximately 200% smaller than the normal version of Eternal Drumstick.\n  • Eternal Drumstick (L) is approximately 100% larger than the normal version of Eternal Drumstick.\n  • Eternal Drumstick (XL) is approximately 25% larger than Eternal Drumstick (L).",
+      "alsoSee": [
+        {
+          "name": "Eternal Drumstick",
+          "slug": "weapon-eternal-drumstick",
+          "type": "weapon",
+          "url": "https://forums2.battleon.com/f/fb.asp?m=22424948"
+        }
+      ],
+      "weaponSpecial": {
+        "activation": "on-hit",
+        "trigger": "Your weapon special activates on hit.",
+        "effect": "Recovers 5 HP and 5 MP to player, unaffected by Health and/or All Resists; permanently applies 'Deep Fried' (-1X END/WIS) to player, where X is the number of hits have landed to target. (Rate: 100%)",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-OnHit.png"
+      }
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
+        "levelDisplay": "1",
+        "actualLevel": 1,
+        "variantName": "(Base)",
+        "name": "Eternal Drumstick (S)",
+        "damage": "0-0",
+        "stats": "None",
+        "obtainVariants": [
+          {
+            "location": "A Fowl Feast",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "500 Gold",
+            "daRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22424947",
+        "description": "Blessed by the Lord of the Air, these drumsticks hold deep fried power within... But the magic that keeps it fresh also makes it extra unhealthy! On hit, heals 5 HP and recovers 5 MP, but suffer permanent stacking -1 END/WIS. (Special)(Cosmetic)",
+        "element": "BAC",
+        "resists": "None",
+        "rarity": "0",
+        "itemType": "Dagger"
+      },
+      {
+        "levelNumber": 1,
+        "levelDisplay": "1",
+        "actualLevel": 1,
+        "variantName": "(Base)",
+        "name": "Eternal Drumstick (S)",
+        "damage": "0-0",
+        "stats": "None",
+        "obtainVariants": [
+          {
+            "location": "AFF Loot for DCs",
+            "price": "90 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "81 DC (<24 hours) / 23 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22424947",
+        "description": "Blessed by the Lord of the Air, these drumsticks hold deep fried power within... But the magic that keeps it fresh also makes it extra unhealthy! On hit, heals 5 HP and recovers 5 MP, but suffer permanent stacking -1 END/WIS. (Special)(Cosmetic)",
+        "element": "BAC",
+        "resists": "None",
+        "rarity": "0",
+        "itemType": "Dagger"
+      }
+    ],
+    "category": "Weapon",
+    "releaseDate": "",
+    "tags": [
+      "bac",
+      "free",
+      "dc",
+      "special"
+    ],
+    "hasDA": true,
+    "hasDC": true,
+    "hasDM": false,
+    "hasFree": true,
+    "hasMerge": false,
+    "elements": [
+      "BAC"
+    ],
+    "hasSpecial": true,
+    "isCosmetic": true,
+    "levelRange": "1"
   }
 ]

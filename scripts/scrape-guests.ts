@@ -54,6 +54,7 @@ import {
   computeFamilyFlags,
   computePriceType,
   normalizeLevel,
+  normalizeRomanDisplay,
 } from '../src/utils/variantHelpers.ts'
 import {
   canonicalizePromotedRelationships,
@@ -523,7 +524,9 @@ function getLongestCommonSuffix(tokensList: string[][]): string[] {
 }
 
 function toTitleCase(tokens: string[]): string {
-  return tokens.map((token) => token.replace(/\b\w/g, (char) => char.toUpperCase())).join(' ')
+  return tokens
+    .map((token) => normalizeRomanDisplay(token.replace(/\b\w/g, (char) => char.toUpperCase())))
+    .join(' ')
 }
 
 function deriveGuestFamilyName(sectionNames: string[]): string {
@@ -629,9 +632,8 @@ function extractGuestVariantSectionsFromHtml(
     // top-of-post tag images into the first section for tag detection.
     const preambleTags =
       i === 0
-        ? (html
-            .slice(0, start)
-            .match(/<img[^>]+src=["'][^"']*\/tags\/[^"']+["'][^>]*>/gi) ?? []
+        ? (
+            html.slice(0, start).match(/<img[^>]+src=["'][^"']*\/tags\/[^"']+["'][^>]*>/gi) ?? []
           ).join('')
         : ''
     const sectionHtml = preambleTags + html.slice(start, end)
@@ -723,7 +725,7 @@ function parseGuestAttacks(html: string, guestName: string): GuestAttack[] {
 
     // Extract Requirements
     const reqMatch = block.match(
-      /(?:Requirements|Level\/Quest\/Items required):\s*([\s\S]*?)(?=\s*<br>\s*(?:<br>\s*)?(?:Effect:|Mana Cost:|Cooldown:|(?:Damage|Attack) Type:|Element:|<img|<b><u>Other [Ii]nformation<\/u><\/b>|$))/i
+      /(?:Requirements|Level\/Quest\/Items required):\s*([\s\S]*?)(?=\s*<br>\s*(?:<br>\s*)?(?:Effect:|Mana Cost:|Cooldown:|(?:Damage|Attack) Type:|Element:|<img|<b><u>Other [Ii]nformations?<\/u><\/b>|$))/i
     )
     let requirements: string | undefined
     if (reqMatch) {
@@ -760,7 +762,7 @@ function parseGuestAttacks(html: string, guestName: string): GuestAttack[] {
     // its own <a href=...png>skill button</a>; replaced on <a>May 30th</a>.")
     // and stripForumHtml preserves that text.
     const inlineOtherInfoMatch = block.match(
-      /<b><u>Other [Ii]nformation<\/u><\/b>\s*([\s\S]*?)(?=\s*(?:<img|$))/i
+      /<b><u>Other [Ii]nformations?<\/u><\/b>\s*([\s\S]*?)(?=\s*(?:<img|$))/i
     )
     // Only content under an explicit "Other information" heading becomes skill
     // notes. The effect's own bullet points (e.g. "one of the following attacks:")
@@ -947,7 +949,7 @@ function extractGuestImages(
 
   // Find main image in "Other information" section - this is the character portrait
   // Pattern: <img src="...pets_guests/GuestName.png" after "Other information"
-  const otherInfoHtml = findLastSection(html, /<b><u>Other [Ii]nformation<\/u><\/b>/gi) ?? html
+  const otherInfoHtml = findLastSection(html, /<b><u>Other [Ii]nformations?<\/u><\/b>/gi) ?? html
   // Cross-post variant families pass a suffixed name like "Aquella (1)", but the
   // forum files the portrait under the base name ("Aquella.png"). Match the exact
   // name first, then fall back to the variant-stripped base name so we do not miss
@@ -1508,7 +1510,7 @@ function parseNotes(html: string, guestName: string): string | undefined {
   if (DEBUG) console.log(`\n[DEBUG] Parsing notes for ${guestName}`)
 
   const noteLines: string[] = []
-  const otherInfoHtml = findLastSection(html, /<b><u>Other [Ii]nformation<\/u><\/b>/gi)
+  const otherInfoHtml = findLastSection(html, /<b><u>Other [Ii]nformations?<\/u><\/b>/gi)
 
   if (otherInfoHtml) {
     if (DEBUG) console.log(`  Found Other Information section`)
@@ -1525,7 +1527,9 @@ function parseNotes(html: string, guestName: string): string | undefined {
       const trimmed = line.trim()
       if (!trimmed) continue
       if (
-        /^[•*\-\s]*Current class and equipment can be previewed on this guest's character page:/i.test(trimmed)
+        /^[•*\-\s]*Current class and equipment can be previewed on this guest's character page:/i.test(
+          trimmed
+        )
       )
         continue
       if (isImageCaptionNoiseLine(trimmed, imageCaptionNoise)) continue
@@ -1850,7 +1854,7 @@ function extractSupplementalGuestThreadNotes(html: string): string | undefined {
 
   const supplemental: string[] = []
   for (const block of blocks.slice(1)) {
-    if (!/<b><u>Other [Ii]nformation<\/u><\/b>/i.test(block)) continue
+    if (!/<b><u>Other [Ii]nformations?<\/u><\/b>/i.test(block)) continue
     if (/(?:<b>\s*<font[^>]*size=['"]3['"]|<font[^>]*size=['"]3['"][^>]*>\s*<b>)/i.test(block))
       continue
     const notes = parseNotes(block, 'shared')
@@ -2159,8 +2163,7 @@ async function enrichGuestFamilyCharacterImages(
   if (!changed) return family
 
   const sharedImageUrl =
-    family.shared.imageUrl ??
-    [...levelVariants].reverse().find((level) => level.imageUrl)?.imageUrl
+    family.shared.imageUrl ?? [...levelVariants].reverse().find((level) => level.imageUrl)?.imageUrl
 
   return sanitizeGuestFamilyLevelVariants({
     ...family,
@@ -2203,7 +2206,8 @@ function applySupplementalGuestData(
     if ('levelVariants' in item && item.type === 'guest') {
       const resolvedImage =
         item.shared.imageUrl ?? supplementalMedia?.imageUrl ?? inferItemImage(item)
-      const resolvedAltImages = item.shared.alternativeImages ?? supplementalMedia?.alternativeImages
+      const resolvedAltImages =
+        item.shared.alternativeImages ?? supplementalMedia?.alternativeImages
       return sanitizeGuestFamilyLevelVariants({
         ...item,
         shared: {

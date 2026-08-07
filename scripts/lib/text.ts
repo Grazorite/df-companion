@@ -37,18 +37,18 @@ export function stripStrikethrough(html: string): string {
  * Clean up separator artifacts left behind after struck content is removed:
  * collapse runs of commas and trim stray leading/trailing commas per line.
  */
-function cleanSeparatorArtifacts(text: string): string {
+function cleanSeparatorArtifacts(text: string, preserveIndentation = false): string {
   return text
     .split('\n')
-    .map((line) =>
-      line
+    .map((line) => {
+      const cleaned = line
         .replace(/,(?:\s*,)+/g, ',') // collapse consecutive commas
         .replace(/\s+,/g, ',') // drop space before a comma left by a removal
         .replace(/^\s*,\s*/, '') // leading comma
         .replace(/\s*,\s*$/, '') // trailing comma
-        .replace(/[ \t]{2,}/g, ' ')
         .trimEnd()
-    )
+      return preserveIndentation ? cleaned : cleaned.replace(/[ \t]{2,}/g, ' ')
+    })
     .join('\n')
 }
 
@@ -67,7 +67,7 @@ export function stripSimpleHtml(html: string): string {
 export function stripForumHtml(
   html: string,
   warningLabel = 'stripForumHtml',
-  options: { includeListItemClosers?: boolean } = {}
+  options: { includeListItemClosers?: boolean; preserveIndentation?: boolean } = {}
 ): string {
   html = stripStrikethrough(html)
   let depth = 0
@@ -142,7 +142,8 @@ export function stripForumHtml(
     processed
       .replace(/\r/g, '')
       .replace(/\n{3,}/g, '\n\n')
-      .trim()
+      .trim(),
+    options.preserveIndentation
   )
 }
 

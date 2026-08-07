@@ -27,5 +27,5 @@ export default function AccessoryDetailPage() {
     )
   }
 
-  return <AccessoryDetail accessory={accessory} filterBase="/accessories" />
+  return <AccessoryDetail accessory={accessory} filterBase={`/accessories?type=${activeSubtype}`} />
 }

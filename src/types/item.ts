@@ -199,6 +199,7 @@ export interface LevelVariant {
   rarity?: string // Only if different from shared.rarity
   attacks?: VariantAttack[] // Only if attacks differ at this level
   guestStats?: GuestStats
+  itemType?: string // Variant-specific equipment type when a family can differ
   notes?: string // Level-specific notes
   retired?: boolean // This specific variant/level was retired (guest Retired tag)
 }

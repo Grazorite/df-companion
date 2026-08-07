@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { ChevronDown, ImageOff } from 'lucide-react'
 import type { GuestAttack } from '../../types/pet'
 import NotesList from '../shared/NotesList'
+import PopupText from '../shared/PopupText'
 
 interface GuestAttacksProps {
   attacks: GuestAttack[]
@@ -10,21 +11,23 @@ interface GuestAttacksProps {
 
 function AttackButton({ imageUrl, name }: { imageUrl?: string; name: string }) {
   const [broken, setBroken] = useState(false)
-  
+
   // "Attack" gets horizontal rectangle treatment, others get vertical
   const isAttackButton = name.toLowerCase() === 'attack'
-  const sizeClasses = isAttackButton 
-    ? 'w-24 h-16'  // Horizontal rectangle for "Attack"
-    : 'w-16 h-20'  // Vertical rectangle for skill buttons
-  
+  const sizeClasses = isAttackButton
+    ? 'w-24 h-16' // Horizontal rectangle for "Attack"
+    : 'w-16 h-20' // Vertical rectangle for skill buttons
+
   if (!imageUrl || broken) {
     return (
-      <div className={`${sizeClasses} bg-bg-elevated border border-border-default rounded flex items-center justify-center`}>
+      <div
+        className={`${sizeClasses} bg-bg-elevated border border-border-default rounded flex items-center justify-center`}
+      >
         <ImageOff className="w-6 h-6 text-text-muted" />
       </div>
     )
   }
-  
+
   return (
     <img
       src={imageUrl}
@@ -36,14 +39,20 @@ function AttackButton({ imageUrl, name }: { imageUrl?: string; name: string }) {
   )
 }
 
-function AttackCard({ attack, defaultOpen = false }: { attack: GuestAttack; defaultOpen?: boolean }) {
+function AttackCard({
+  attack,
+  defaultOpen = false,
+}: {
+  attack: GuestAttack
+  defaultOpen?: boolean
+}) {
   const [isOpen, setIsOpen] = useState(defaultOpen)
   // The effect (including its own bullet points) is shown as-is. Only an explicit
   // "Other Information" section (captured separately at scrape time) is split out
   // into its own block below the stats.
   const effectText = attack.effect?.trim()
   const otherInformation = attack.notes?.trim()
-  
+
   return (
     <div className="bg-bg-surface border border-border-default rounded-lg overflow-hidden">
       {/* Header - clickable to expand */}
@@ -56,26 +65,24 @@ function AttackCard({ attack, defaultOpen = false }: { attack: GuestAttack; defa
         <div className="flex-shrink-0">
           <AttackButton imageUrl={attack.buttonImageUrl} name={attack.name} />
         </div>
-        
+
         {/* Attack name and description preview */}
         <div className="flex-1 min-w-0">
-          <h3 className="text-sm font-semibold text-text-primary">
-            {attack.name}
-          </h3>
+          <h3 className="text-sm font-semibold text-text-primary">{attack.name}</h3>
           {attack.description && (
             <p className="text-xs text-text-secondary italic mt-1 line-clamp-3 whitespace-pre-line break-words leading-relaxed">
               {attack.description}
             </p>
           )}
         </div>
-        
+
         {/* Expand icon */}
         <ChevronDown
           className={`w-5 h-5 text-text-muted transition-transform flex-shrink-0 ${isOpen ? 'rotate-180' : ''}`}
           aria-hidden="true"
         />
       </button>
-      
+
       {/* Expanded content */}
       {isOpen && (
         <div className="px-4 pb-4 pt-0 border-t border-border-default">
@@ -85,14 +92,16 @@ function AttackCard({ attack, defaultOpen = false }: { attack: GuestAttack; defa
               <span className="font-medium">Requires:</span> {attack.requirements}
             </p>
           )}
-          
+
           {/* Effect - highlighted */}
           {effectText && (
-            <p className="text-text-secondary text-sm leading-relaxed mt-3 mb-4 whitespace-pre-line">
-              {effectText}
-            </p>
+            <PopupText
+              text={effectText}
+              className="text-text-secondary text-sm leading-relaxed mt-3 mb-4 whitespace-pre-line"
+              quoteClassName="mt-3 mb-4"
+            />
           )}
-          
+
           {/* Stats table */}
           <div className="grid grid-cols-4 gap-2 text-center bg-bg-base rounded-lg p-3">
             <div>
@@ -128,17 +137,20 @@ function AttackCard({ attack, defaultOpen = false }: { attack: GuestAttack; defa
 
 export default function GuestAttacks({ attacks, heading }: GuestAttacksProps) {
   if (!attacks || attacks.length === 0) return null
-  
+
   // Filter out "Skip" attack
-  const filteredAttacks = attacks.filter(a => a.name.toLowerCase() !== 'skip')
-  
+  const filteredAttacks = attacks.filter((a) => a.name.toLowerCase() !== 'skip')
+
   if (filteredAttacks.length === 0) return null
   const sectionHeading =
     heading ?? (filteredAttacks.length === 1 ? 'Attack' : `Attacks (${filteredAttacks.length})`)
-  
+
   return (
     <section aria-labelledby="attacks-heading" className="mb-5">
-      <h2 id="attacks-heading" className="text-xs font-semibold text-text-muted uppercase tracking-wider mb-3">
+      <h2
+        id="attacks-heading"
+        className="text-xs font-semibold text-text-muted uppercase tracking-wider mb-3"
+      >
         {sectionHeading}
       </h2>
       <div className="space-y-3">

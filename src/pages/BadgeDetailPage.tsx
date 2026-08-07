@@ -7,6 +7,7 @@ import { displayTitle, normalizeDisplayText } from '../utils/displayText'
 import AccessPills from '../components/shared/AccessPills'
 import SourceLinksCard from '../components/shared/SourceLinksCard'
 import { DetailPageSkeleton } from '../components/shared/LoadingSkeleton'
+import DetailTypePill from '../components/shared/DetailTypePill'
 
 export default function BadgeDetailPage() {
   const { slug } = useParams<{ slug: string }>()
@@ -98,6 +99,7 @@ export default function BadgeDetailPage() {
               Retired
             </Link>
           )}
+          <DetailTypePill label={badge.subcategory ?? badge.category.replace(/-/g, ' ')} />
         </div>
 
         <h1 className="text-2xl font-bold text-text-primary mb-2">{displayTitle(badge.name)}</h1>

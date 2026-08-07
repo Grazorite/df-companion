@@ -1,5 +1,5 @@
 import { useState, useMemo, useEffect, useRef } from 'react'
-import { useSearchParams } from 'react-router-dom'
+import { Link, useSearchParams } from 'react-router-dom'
 import { Shield, ImageOff } from 'lucide-react'
 import type { Pet, Guest } from '../../types/pet'
 import type { ItemFamily, LevelVariant } from '../../types/item'
@@ -9,6 +9,7 @@ import {
   hasSameLevelVariants,
   hasTitleDrivenVariantNames,
   isSingleVariant,
+  normalizeRomanDisplay,
 } from '../../utils/variantHelpers'
 import { displayTitle, normalizeDisplayText } from '../../utils/displayText'
 import { buildDisplayImages } from '../../utils/imageLabels'
@@ -21,6 +22,8 @@ import SourceLinksCard from '../shared/SourceLinksCard'
 import CollapsibleSection from '../shared/CollapsibleSection'
 import MetadataChipSection from '../shared/MetadataChipSection'
 import OtherInformationSection from '../shared/OtherInformationSection'
+import DetailTypePill from '../shared/DetailTypePill'
+import { buildFilterLink } from '../../utils/filterLinks'
 import PetAttacks from './PetAttacks'
 import GuestAttacks from '../guests/GuestAttacks'
 import GuestStatsSection from '../guests/GuestStatsSection'
@@ -46,10 +49,12 @@ function isItemFamily(item: Pet | ItemFamily): item is ItemFamily {
 }
 
 function normalizeSourceVariantLabel(label: string) {
-  return displayTitle(
-    normalizeDisplayText(label)
-      .replace(/\s+\((?:DA|DC|D-Amulet|D-Coins?|Normal)\)$/i, '')
-      .trim()
+  return normalizeRomanDisplay(
+    displayTitle(
+      normalizeDisplayText(label)
+        .replace(/\s+\((?:DA|DC|D-Amulet|D-Coins?|Normal)\)$/i, '')
+        .trim()
+    )
   )
 }
 
@@ -181,6 +186,7 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
 
   // Check if this is a guest
   const isGuest = pet.type === 'guest'
+  const filterBase = `/pets?type=${pet.type}`
   const guest = isGuest ? (pet as unknown as Guest) : undefined
 
   // Alternative image toggle state
@@ -464,7 +470,7 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
             show their additional ones. The card gallery still shows the family union. */}
         <div className="flex items-center gap-2 flex-wrap mb-3">
           {displayElements.map((code) => (
-            <ElementPill key={code} code={code} size="md" clickable filterBase="/pets" />
+            <ElementPill key={code} code={code} size="md" clickable filterBase={filterBase} />
           ))}
           {displayTraits.map((code) => (
             <ElementPill key={code} code={code} size="md" />
@@ -473,19 +479,20 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
             daRequired={displayAccess.daRequired}
             dcRequired={displayAccess.dcRequired}
             dmRequired={displayAccess.dmRequired}
-            filterBase="/pets"
+            filterBase={filterBase}
           />
 
           {/* Multiple Versions pill for multi-variant items */}
           {isMultiVariant && family && (
-            <span className="inline-block text-xs font-semibold px-3 py-1.5 rounded-full bg-gold-bright text-bg-base cursor-default">
+            <Link
+              to={buildFilterLink(filterBase, 'access', 'multi')}
+              className="inline-block text-xs font-semibold px-3 py-1.5 rounded-full bg-gold-bright text-bg-base transition-opacity hover:opacity-80"
+            >
               Multiple Versions
-            </span>
+            </Link>
           )}
 
-          <span className="inline-block text-xs font-medium px-2.5 py-1 rounded-full bg-bg-overlay text-text-muted capitalize ml-auto">
-            {pet.type}
-          </span>
+          <DetailTypePill label={pet.type} />
         </div>
 
         <h1 className="text-2xl font-bold text-text-primary mb-2">

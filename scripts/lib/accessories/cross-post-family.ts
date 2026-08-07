@@ -11,7 +11,11 @@ import type {
   LevelVariant,
 } from '../../../src/types/item.ts'
 import { compareTitles } from '../../../src/utils/displayText.ts'
-import { computeFamilyFlags, normalizeLevel } from '../../../src/utils/variantHelpers.ts'
+import {
+  computeFamilyFlags,
+  normalizeLevel,
+  normalizeRomanDisplay,
+} from '../../../src/utils/variantHelpers.ts'
 import { shouldPromoteConnectedFamilyGroup } from '../cross-post-family.ts'
 import { dedupeSameSlugPreferFamily } from '../family-merge-guard.ts'
 import { distributeSharedNoteLines } from '../note-cleaning.ts'
@@ -215,7 +219,9 @@ function titleCaseFromTokens(tokens: string[]): string {
     .map((token) => {
       if (token.toLowerCase() === "'o") return "'o"
       if (/^oogabooga$/i.test(token)) return 'OogaBooga'
-      return token.replace(/\b\w/g, (char) => char.toUpperCase()).replace(/'S\b/g, "'s")
+      return normalizeRomanDisplay(
+        token.replace(/\b\w/g, (char) => char.toUpperCase()).replace(/'S\b/g, "'s")
+      )
     })
     .join(' ')
 }
@@ -1265,7 +1271,9 @@ export function linkSharedAliasSiblingFamilies(entries: AccessoryEntry[]): Acces
     const drop = ambiguousAliases.get(entry.slug) ?? new Set<string>()
     const filteredAliases = (entry.aliasSlugs ?? []).filter((alias) => !drop.has(alias))
     const { aliasSlugs: _aliasSlugs, ...withoutAliases } = withRefs
-    return filteredAliases.length ? { ...withoutAliases, aliasSlugs: filteredAliases } : withoutAliases
+    return filteredAliases.length
+      ? { ...withoutAliases, aliasSlugs: filteredAliases }
+      : withoutAliases
   })
 }
 

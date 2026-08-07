@@ -46,6 +46,7 @@ export interface Weapon {
   weaponSpecials?: WeaponSpecial[]
   armorCustomization?: ArmorCustomization
   rarity?: string
+  itemType?: string
   obtainMethods: ObtainVariant[]
   notes?: string
   alsoSee?: AlsoSeeRef[]

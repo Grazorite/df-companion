@@ -9,9 +9,11 @@
  */
 
 import { normalizeDisplayText } from '../../utils/displayText'
+import PopupText from './PopupText'
 
 interface NotesListProps {
   notes: string
+  showPopups?: boolean
 }
 
 interface NoteItem {
@@ -28,12 +30,26 @@ function cleanListMarker(text: string): string {
   return text.trim().replace(/^(?:[•\-*]\s*)+/, '')
 }
 
+function isLikelyNewTopLevelNoteAfterQuote(line: string): boolean {
+  return /^(?:Pet|Weapon(?:'s|s)?|Guest|Skill(?:'s)?|Special(?:'s)?|Attack|Nature Resist)\b.*\b(?:is|are|was|were|has|have|cannot|can|initially|previously|will)\b/i.test(
+    line
+  )
+}
+
+function isLikelyQuoteContinuation(line: string, parentText: string): boolean {
+  if (/^["'*]/.test(line)) return true
+  if (/\b(?:pop[- ]?up|headline|message)s?\b/i.test(parentText)) {
+    return !isLikelyNewTopLevelNoteAfterQuote(line)
+  }
+  return /^(?:If you have|If enemy|Increases|These stack|Average damage formula:)/i.test(line)
+}
+
 function parseNotes(raw: string): NoteItem[] {
   // Split on newlines first — if there are newlines, use them as delimiters
   // Otherwise fall back to " • " as the legacy separator
   const hasNewlines = raw.includes('\n')
   const topLevel = hasNewlines
-    ? raw.split('\n').filter(line => !line.startsWith('  • '))
+    ? raw.split('\n').filter((line) => !line.startsWith('  • '))
     : raw.split(' • ')
 
   if (hasNewlines) {
@@ -63,7 +79,11 @@ function parseNotes(raw: string): NoteItem[] {
       }
 
       if (activeQuoteItem) {
-        if (activeQuoteItem.quoteItems.length === 0 || isIndentedSubItem(line)) {
+        if (
+          activeQuoteItem.quoteItems.length === 0 ||
+          isIndentedSubItem(line) ||
+          isLikelyQuoteContinuation(trimmed, activeQuoteItem.text)
+        ) {
           activeQuoteItem.quoteItems.push(cleanListMarker(trimmed))
           continue
         }
@@ -83,17 +103,17 @@ function parseNotes(raw: string): NoteItem[] {
         items.push({ text: cleanListMarker(trimmed), subItems: [], quoteItems: [] })
       }
     }
-    return items.filter(item => item.text.length > 0 || item.quoteItems.length > 0)
+    return items.filter((item) => item.text.length > 0 || item.quoteItems.length > 0)
   }
 
   // Legacy flat format — all top-level, no sub-bullets
   return topLevel
-    .map(s => s.trim())
-    .filter(s => s.length > 0)
-    .map(text => ({ text: cleanListMarker(text), subItems: [], quoteItems: [] }))
+    .map((s) => s.trim())
+    .filter((s) => s.length > 0)
+    .map((text) => ({ text: cleanListMarker(text), subItems: [], quoteItems: [] }))
 }
 
-export default function NotesList({ notes }: NotesListProps) {
+export default function NotesList({ notes, showPopups = true }: NotesListProps) {
   const items = parseNotes(notes)
   if (items.length === 0) return null
 
@@ -104,7 +124,14 @@ export default function NotesList({ notes }: NotesListProps) {
           {item.text && (
             <div className="flex gap-2 text-sm text-text-secondary leading-relaxed">
               <span className="text-text-muted mt-0.5 flex-shrink-0">•</span>
-              <span>{normalizeDisplayText(item.text)}</span>
+              <div className="min-w-0 flex-1">
+                <PopupText
+                  text={item.text}
+                  as="span"
+                  quoteClassName="mt-2"
+                  showPopups={showPopups}
+                />
+              </div>
             </div>
           )}
           {item.subItems.length > 0 && (
@@ -112,13 +139,17 @@ export default function NotesList({ notes }: NotesListProps) {
               {item.subItems.map((sub, j) => (
                 <li key={j} className="flex gap-2 text-sm text-text-secondary leading-relaxed">
                   <span className="text-text-muted mt-0.5 flex-shrink-0">•</span>
-                  <span>{normalizeDisplayText(sub)}</span>
+                  <div className="min-w-0 flex-1">
+                    <PopupText text={sub} as="span" quoteClassName="mt-2" showPopups={showPopups} />
+                  </div>
                 </li>
               ))}
             </ul>
           )}
           {item.quoteItems.length > 0 && (
-            <div className={`${item.text ? 'ml-5 mt-2' : ''} rounded-md border border-border-default bg-bg-elevated px-3 py-2`}>
+            <div
+              className={`${item.text ? 'ml-5 mt-2' : ''} rounded-md border border-border-default bg-bg-elevated px-3 py-2`}
+            >
               <ul className="space-y-1">
                 {item.quoteItems.map((quote, j) => (
                   <li key={j} className="text-sm text-text-secondary leading-relaxed italic">

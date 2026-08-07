@@ -1,12 +1,13 @@
 import { Link } from 'react-router-dom'
 import elementsData from '../../data/elements.json'
 import type { ElementsData } from '../../types/element'
+import { buildFilterLink } from '../../utils/filterLinks'
 
 const { elements, traits } = elementsData as ElementsData
 
 // Build lookup maps once
-const elementMap = new Map(elements.map(e => [e.code, e]))
-const traitMap = new Map(traits.map(t => [t.code, t]))
+const elementMap = new Map(elements.map((e) => [e.code, e]))
+const traitMap = new Map(traits.map((t) => [t.code, t]))
 
 interface ElementPillProps {
   code: string
@@ -31,10 +32,10 @@ export default function ElementPill({
   if (clickable) {
     return (
       <Link
-        to={`${filterBase}?element=${encodeURIComponent(code)}`}
+        to={buildFilterLink(filterBase, 'element', code)}
         className={classes}
         title={entry?.name ?? code}
-        onClick={e => e.stopPropagation()}
+        onClick={(e) => e.stopPropagation()}
       >
         {code}
       </Link>

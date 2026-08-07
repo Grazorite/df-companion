@@ -10,6 +10,7 @@ import {
   loadWeaponsForSubtype,
 } from '../utils/dataLoaders'
 import { compareTitles, displayTitle } from '../utils/displayText'
+import { obtainMethodInferenceFingerprint, relatedNameScore } from '../utils/relatedItems'
 import { getSearchWords } from '../utils/search'
 import {
   getDisplayFamilyName,
@@ -155,7 +156,7 @@ function searchWeapons(
         } else if (!hasCategory || itemRetired) {
           return false
         }
-      } else if (itemRetired) {
+      } else if (itemRetired && queryWords.length === 0) {
         return false
       }
 
@@ -170,11 +171,13 @@ function searchWeapons(
         const variantNames = isWeaponFamily(item)
           ? item.levelVariants.map((level) => level.name)
           : []
+        const aliases = isWeaponFamily(item) ? (item.aliasSlugs ?? []) : []
         const searchableText = [
           itemName,
           displayTitle(itemName),
           description,
           ...variantNames,
+          ...aliases,
           ...tags,
           ...item.elements.map(
             (code) =>
@@ -213,6 +216,28 @@ function weaponMatchesSlug(entry: WeaponEntry, slug?: string): boolean {
   if (!slug) return false
   if (entry.slug === slug) return true
   return isWeaponFamily(entry) && (entry.aliasSlugs ?? []).includes(slug)
+}
+
+function getWeaponRelatedDisplayName(entry: WeaponEntry): string {
+  return isWeaponFamily(entry)
+    ? getWeaponDisplayName(getDisplayFamilyName(entry))
+    : getWeaponDisplayName(entry.name)
+}
+
+function getWeaponSlugs(entry: WeaponEntry): string[] {
+  return [entry.slug, ...(isWeaponFamily(entry) ? (entry.aliasSlugs ?? []) : [])]
+}
+
+function getWeaponAlsoSeeRefs(entry: WeaponEntry): AlsoSeeRef[] {
+  return isWeaponFamily(entry) ? (entry.shared.alsoSee ?? []) : (entry.alsoSee ?? [])
+}
+
+function getWeaponObtainFingerprints(entry: WeaponEntry): Set<string> {
+  const methods = isWeaponFamily(entry)
+    ? entry.levelVariants.flatMap((level) => level.obtainVariants)
+    : entry.obtainMethods
+
+  return new Set(methods.map(obtainMethodInferenceFingerprint))
 }
 
 export function useWeaponBySlug(subtype: WeaponSubtype, slug?: string) {
@@ -263,6 +288,128 @@ export function useRelatedWeapons(alsoSee: AlsoSeeRef[] = []) {
       })),
     [allWeapons, alsoSee]
   )
+
+  return { relatedWeapons, loading }
+}
+
+export interface WeaponRelatedItem {
+  ref?: AlsoSeeRef
+  entry?: WeaponEntry
+  relation: 'explicit' | 'same-obtain-near-name'
+  scope: 'same-subtype' | 'cross-subtype'
+}
+
+const INFERRED_WEAPON_RELATED_LIMIT = 8
+const INFERRED_WEAPON_RELATED_NAME_THRESHOLD = 0.7
+
+export function useWeaponRelatedItems(weapon: WeaponEntry, alsoSee: AlsoSeeRef[] = []) {
+  const [allWeapons, setAllWeapons] = useState<WeaponEntry[]>([])
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    let active = true
+    setLoading(true)
+    loadWeaponsBySubtype()
+      .then((data) => {
+        if (!active) return
+        setAllWeapons(WEAPON_SUBTYPES.flatMap((meta) => data[meta.subtype]))
+        setLoading(false)
+      })
+      .catch(() => {
+        if (!active) return
+        setAllWeapons([])
+        setLoading(false)
+      })
+
+    return () => {
+      active = false
+    }
+  }, [])
+
+  const relatedWeapons = useMemo<WeaponRelatedItem[]>(() => {
+    const currentSlugs = new Set(getWeaponSlugs(weapon))
+    const explicitSlugSet = new Set(alsoSee.map((ref) => ref.slug))
+    const explicitRelated = alsoSee.map((ref) => {
+      const entry = allWeapons.find((item) => weaponMatchesSlug(item, ref.slug))
+      return {
+        ref,
+        entry,
+        relation: 'explicit' as const,
+        scope:
+          entry && entry.subtype !== weapon.subtype
+            ? ('cross-subtype' as const)
+            : ('same-subtype' as const),
+      }
+    })
+    const reverseExplicitRelated = allWeapons.flatMap((candidate) => {
+      const candidateSlugs = getWeaponSlugs(candidate)
+      if (candidateSlugs.some((slug) => currentSlugs.has(slug))) return []
+      if (candidateSlugs.some((slug) => explicitSlugSet.has(slug))) return []
+
+      const linksToCurrent = getWeaponAlsoSeeRefs(candidate).some((ref) =>
+        currentSlugs.has(ref.slug)
+      )
+      if (!linksToCurrent) return []
+
+      return [
+        {
+          ref: undefined,
+          entry: candidate,
+          relation: 'explicit' as const,
+          scope:
+            candidate.subtype !== weapon.subtype
+              ? ('cross-subtype' as const)
+              : ('same-subtype' as const),
+        },
+      ]
+    })
+
+    const currentFingerprints = getWeaponObtainFingerprints(weapon)
+    const currentName = getWeaponRelatedDisplayName(weapon)
+    const inferredRelated = allWeapons
+      .flatMap((candidate) => {
+        if (candidate.subtype !== weapon.subtype) return []
+        const candidateSlugs = getWeaponSlugs(candidate)
+        if (candidateSlugs.some((slug) => currentSlugs.has(slug))) return []
+        if (candidateSlugs.some((slug) => explicitSlugSet.has(slug))) return []
+
+        const hasSharedObtainMethod = [...getWeaponObtainFingerprints(candidate)].some(
+          (fingerprint) => currentFingerprints.has(fingerprint)
+        )
+        if (!hasSharedObtainMethod) return []
+
+        const score = relatedNameScore(currentName, getWeaponRelatedDisplayName(candidate))
+        if (score < INFERRED_WEAPON_RELATED_NAME_THRESHOLD) return []
+
+        return [
+          {
+            ref: undefined,
+            entry: candidate,
+            relation: 'same-obtain-near-name' as const,
+            scope: 'same-subtype' as const,
+            score,
+          },
+        ]
+      })
+      .sort(
+        (first, second) =>
+          second.score - first.score ||
+          compareTitles(
+            getWeaponRelatedDisplayName(first.entry),
+            getWeaponRelatedDisplayName(second.entry)
+          )
+      )
+      .slice(0, INFERRED_WEAPON_RELATED_LIMIT)
+      .map(({ score: _score, ...item }) => item)
+
+    const seen = new Set<string>()
+    return [...explicitRelated, ...reverseExplicitRelated, ...inferredRelated].filter((item) => {
+      const slug = item.entry?.slug ?? item.ref?.slug
+      if (!slug || seen.has(slug)) return false
+      seen.add(slug)
+      return true
+    })
+  }, [allWeapons, alsoSee, weapon])
 
   return { relatedWeapons, loading }
 }

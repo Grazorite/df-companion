@@ -1,7 +1,10 @@
 import * as fs from 'node:fs'
 import * as path from 'node:path'
 import elementsData from '../src/data/elements.json' with { type: 'json' }
-import { parseArmorCustomization, type ArmorCustomizationInfo } from '../src/utils/armorCustomization.ts'
+import {
+  parseArmorCustomization,
+  type ArmorCustomizationInfo,
+} from '../src/utils/armorCustomization.ts'
 import {
   computeFamilyFlags,
   computePriceType,
@@ -198,10 +201,10 @@ function familyVariantToAccessory(family: AccessoryFamily, variant: LevelVariant
     description: variant.description ?? family.shared.description,
     forumUrl: variant.sourceUrl ?? family.forumUrl,
     releaseDate: family.releaseDate ?? '',
-    ...(variant.imageUrl ?? family.shared.imageUrl
+    ...((variant.imageUrl ?? family.shared.imageUrl)
       ? { imageUrl: variant.imageUrl ?? family.shared.imageUrl }
       : {}),
-    ...(variant.alternativeImages ?? family.shared.alternativeImages
+    ...((variant.alternativeImages ?? family.shared.alternativeImages)
       ? { alternativeImages: variant.alternativeImages ?? family.shared.alternativeImages }
       : {}),
     elements: element ? [element] : family.elements,
@@ -328,14 +331,14 @@ function findLastSection(html: string, sectionRegex: RegExp): string | undefined
 
 function findOtherInformationSection(html: string): string | undefined {
   return (
-    findLastSection(html, /<b>\s*<u>\s*Other [Ii]nformation\s*<\/u>\s*<\/b>/gi) ??
-    findLastSection(html, /<u>\s*Other [Ii]nformation\s*<\/u>/gi) ??
-    findLastSection(html, /(?:<b>\s*)?Other [Ii]nformation\s*:(?:\s*<\/b>)?/gi) ??
+    findLastSection(html, /<b>\s*<u>\s*Other [Ii]nformations?\s*<\/u>\s*<\/b>/gi) ??
+    findLastSection(html, /<u>\s*Other [Ii]nformations?\s*<\/u>/gi) ??
+    findLastSection(html, /(?:<b>\s*)?Other [Ii]nformations?\s*:(?:\s*<\/b>)?/gi) ??
     findLastSection(
       html,
-      /(?:<b>\s*)?Other [Ii]nformation\s*(?:<\/b>)?(?=\s*(?:<br\s*\/?>|\n))/gi
+      /(?:<b>\s*)?Other [Ii]nformations?\s*(?:<\/b>)?(?=\s*(?:<br\s*\/?>|\n))/gi
     ) ??
-    findLastSection(html, /\bOther [Ii]nformation\b/gi)
+    findLastSection(html, /\bOther [Ii]nformations?\b/gi)
   )
 }
 
@@ -347,10 +350,10 @@ function getAccessoryLeadHtml(html: string): string {
       /(?:<b>)?Location:(?:<\/b>)?/i,
       /(?:<b>)?Stats:(?:<\/b>)?/i,
       /(?:<b>)?Resists:(?:<\/b>)?/i,
-      /<u>\s*Other [Ii]nformation\s*<\/u>/i,
-      /(?:<b>\s*)?Other [Ii]nformation\s*:/i,
-      /(?:<b>\s*)?Other [Ii]nformation\s*(?:<\/b>)?(?=\s*(?:<br\s*\/?>|\n))/i,
-      /\bOther [Ii]nformation\b/i,
+      /<u>\s*Other [Ii]nformations?\s*<\/u>/i,
+      /(?:<b>\s*)?Other [Ii]nformations?\s*:/i,
+      /(?:<b>\s*)?Other [Ii]nformations?\s*(?:<\/b>)?(?=\s*(?:<br\s*\/?>|\n))/i,
+      /\bOther [Ii]nformations?\b/i,
     ]
       .map((pattern) => html.search(pattern))
       .filter((index) => index >= 0)
@@ -1293,8 +1296,7 @@ function buildAccessoryEntry(
     // base variant and a DC variant, the DA tag precedes only the base title block
     // and should not bleed onto the DC method (e.g. Carved Dragon Scale II-V).
     daRequired:
-      method.daRequired ||
-      (method.dcRequired ? false : flags.daRequired || textSignals.daRequired),
+      method.daRequired || (method.dcRequired ? false : flags.daRequired || textSignals.daRequired),
     ...(flags.dcRequired || method.dcRequired ? { dcRequired: true } : {}),
     ...(flags.dmRequired || method.dmRequired ? { dmRequired: true } : {}),
   }))
@@ -1503,6 +1505,7 @@ function buildAccessoryFamily(
         ...(variant.resists ? { resists: variant.resists } : {}),
         ...(variant.attacks ? { attacks: variant.attacks } : {}),
         ...(variant.rarity ? { rarity: variant.rarity } : {}),
+        ...(variant.itemType ? { itemType: variant.itemType } : {}),
         ...(variant.notes ? { notes: variant.notes } : {}),
       }
     })
@@ -1643,10 +1646,14 @@ async function buildAccessoryOrFamily(
     if (variants.length > 1) {
       // Check non-variant posts (e.g. trailing "Other information" + credits post)
       // for shared notes and armor customization that apply to the whole family.
-      const variantMessageIds = new Set(variants.map((v) => {
-        const m = v.forumUrl?.match(/[?&]m=(\d+)/)?.[1]
-        return m
-      }).filter(Boolean))
+      const variantMessageIds = new Set(
+        variants
+          .map((v) => {
+            const m = v.forumUrl?.match(/[?&]m=(\d+)/)?.[1]
+            return m
+          })
+          .filter(Boolean)
+      )
       let supplementalNotes: string | undefined
       let supplementalArmorCustomization: ArmorCustomizationInfo | undefined
       const supplementalAlsoSee: AlsoSeeRef[] = []
@@ -1875,9 +1882,7 @@ function writeDatasets(
     }
 
     entries = repairAccessFlags(
-      promoteAccessoryCrossPostFamilies(
-        dedupeSameSlugPreferFamily(entries, isAccessoryFamily)
-      )
+      promoteAccessoryCrossPostFamilies(dedupeSameSlugPreferFamily(entries, isAccessoryFamily))
     )
 
     entries.sort((a, b) => {

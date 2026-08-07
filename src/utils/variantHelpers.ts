@@ -61,11 +61,17 @@ export function hasVersionSuffix(name: string): boolean {
 function normalizeRomanRange(value: string): string {
   const romanParts = value
     .split(/\s*(?:,|-)\s*/)
-    .map((part) => part.trim())
+    .map((part) => part.trim().toUpperCase())
     .filter(Boolean)
 
   if (romanParts.length <= 1) return value
   return `${romanParts[0]}-${romanParts[romanParts.length - 1]}`
+}
+
+export function normalizeRomanDisplay(value: string): string {
+  return value.replace(/\b[ivxlcdm]+\b/gi, (match) =>
+    parseRomanNumeral(match.toUpperCase()) !== null ? match.toUpperCase() : match
+  )
 }
 
 export function getVersionSuffixRange(name: string): string | undefined {
@@ -265,7 +271,7 @@ export function normalizeLevel(level: string): { number: number; display: string
   // Try roman numeral first
   const romanValue = parseRomanNumeral(upper)
   if (romanValue !== null) {
-    return { number: romanValue, display: trimmed }
+    return { number: romanValue, display: upper }
   }
 
   // Try numeric
@@ -294,7 +300,13 @@ export function normalizeLevel(level: string): { number: number; display: string
  * parseRomanNumeral("ABC") // null
  */
 export function parseRomanNumeral(s: string): number | null {
-  if (!/^[IVXLCDM]+$/.test(s)) return null
+  const upper = s.toUpperCase()
+  if (
+    upper.length === 0 ||
+    !/^(?:M{0,4}(?:CM|CD|D?C{0,3})(?:XC|XL|L?X{0,3})(?:IX|IV|V?I{0,3}))$/.test(upper)
+  ) {
+    return null
+  }
 
   const romanValues: Record<string, number> = {
     I: 1,
@@ -309,8 +321,8 @@ export function parseRomanNumeral(s: string): number | null {
   let total = 0
 
   for (let index = 0; index < s.length; index += 1) {
-    const current = romanValues[s[index]]
-    const next = romanValues[s[index + 1]]
+    const current = romanValues[upper[index]]
+    const next = romanValues[upper[index + 1]]
 
     if (!current) return null
     if (next && current < next) {
@@ -535,7 +547,7 @@ function getLevelVariantLabelInfo(
   useTitleLabels: boolean = false,
   itemType?: ItemType
 ): LevelVariantLabelInfo {
-  const levelLabel = String(level.actualLevel ?? level.levelDisplay)
+  const levelLabel = normalizeRomanDisplay(String(level.actualLevel ?? level.levelDisplay))
   const hasDC = level.obtainVariants.some(obtainVariantHasDC)
   const hasDA = level.obtainVariants.some((variant) => variant.daRequired)
   const normalizedVariantName = level.variantName
@@ -549,7 +561,13 @@ function getLevelVariantLabelInfo(
         : normalizedVariantName
 
   if (familyName === 'Harmonized Cowbell' && normalizedAccessVariantName) {
-    return { label: normalizedAccessVariantName, canAddLevelSuffix: false, levelLabel, hasDC, hasDA }
+    return {
+      label: normalizeRomanDisplay(normalizedAccessVariantName),
+      canAddLevelSuffix: false,
+      levelLabel,
+      hasDC,
+      hasDA,
+    }
   }
 
   if (itemType === 'guest') {
@@ -558,16 +576,28 @@ function getLevelVariantLabelInfo(
       return { label: numericFamilyVariant, canAddLevelSuffix: false, levelLabel, hasDC, hasDA }
     }
     if (normalizedAccessVariantName) {
-      return { label: normalizedAccessVariantName, canAddLevelSuffix: true, levelLabel, hasDC, hasDA }
+      return {
+        label: normalizeRomanDisplay(normalizedAccessVariantName),
+        canAddLevelSuffix: true,
+        levelLabel,
+        hasDC,
+        hasDA,
+      }
     }
     const normalizedLevelName = normalizeDisplayText(stripAccessVariantSuffix(level.name))
     if (normalizedLevelName) {
       if (levelLabel.toLowerCase() === 'unknown' || levelLabel.toLowerCase() === 'as player') {
-        return { label: normalizedLevelName, canAddLevelSuffix: false, levelLabel, hasDC, hasDA }
+        return {
+          label: normalizeRomanDisplay(normalizedLevelName),
+          canAddLevelSuffix: false,
+          levelLabel,
+          hasDC,
+          hasDA,
+        }
       }
       if (normalizedLevelName !== familyName) {
         return {
-          label: normalizedLevelName,
+          label: normalizeRomanDisplay(normalizedLevelName),
           canAddLevelSuffix: true,
           levelLabel,
           hasDC,
@@ -582,7 +612,7 @@ function getLevelVariantLabelInfo(
     parseRomanNumeral(normalizedAccessVariantName.trim().toUpperCase()) !== null
   ) {
     return {
-      label: normalizedAccessVariantName,
+      label: normalizeRomanDisplay(normalizedAccessVariantName),
       canAddLevelSuffix: true,
       levelLabel,
       hasDC,
@@ -596,7 +626,7 @@ function getLevelVariantLabelInfo(
       const normalizedLevelName = normalizeDisplayText(stripAccessVariantSuffix(level.name))
       if (normalizedLevelName === parentheticalVariant.baseName) {
         return {
-          label: hasDC ? '(DC)' : parentheticalVariant.variants[0],
+          label: hasDC ? '(DC)' : normalizeRomanDisplay(parentheticalVariant.variants[0]),
           canAddLevelSuffix: false,
           levelLabel,
           hasDC,
@@ -612,7 +642,7 @@ function getLevelVariantLabelInfo(
       )
       if (matchingVariant) {
         return {
-          label: matchingVariant,
+          label: normalizeRomanDisplay(matchingVariant),
           canAddLevelSuffix: false,
           levelLabel,
           hasDC,
@@ -625,7 +655,7 @@ function getLevelVariantLabelInfo(
     if (condensedTitle) {
       if (levelLabel.toLowerCase() === 'as player') {
         return {
-          label: normalizeDisplayText(condensedTitle),
+          label: normalizeRomanDisplay(normalizeDisplayText(condensedTitle)),
           canAddLevelSuffix: false,
           levelLabel,
           hasDC,
@@ -634,7 +664,7 @@ function getLevelVariantLabelInfo(
       }
       if (parseRomanNumeral(condensedTitle.toUpperCase()) !== null) {
         return {
-          label: normalizeDisplayText(condensedTitle),
+          label: condensedTitle.toUpperCase(),
           canAddLevelSuffix: true,
           levelLabel,
           hasDC,
@@ -642,7 +672,7 @@ function getLevelVariantLabelInfo(
         }
       }
       return {
-        label: normalizeDisplayText(condensedTitle),
+        label: normalizeRomanDisplay(normalizeDisplayText(condensedTitle)),
         canAddLevelSuffix: true,
         levelLabel,
         hasDC,
@@ -664,7 +694,7 @@ function getLevelVariantLabelInfo(
 
   if (normalizedAccessVariantName) {
     return {
-      label: normalizedAccessVariantName,
+      label: normalizeRomanDisplay(normalizedAccessVariantName),
       canAddLevelSuffix: true,
       levelLabel,
       hasDC,
@@ -673,7 +703,7 @@ function getLevelVariantLabelInfo(
   }
 
   return {
-    label: normalizeDisplayText(level.levelDisplay),
+    label: normalizeRomanDisplay(normalizeDisplayText(level.levelDisplay)),
     canAddLevelSuffix: true,
     levelLabel,
     hasDC,

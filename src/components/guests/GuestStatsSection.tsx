@@ -4,20 +4,22 @@ interface GuestStatsSectionProps {
   stats: GuestStats
 }
 
+interface StatCategory {
+  title: string
+  stats: Array<{ label: string; value: string }>
+}
+
 // Helper to check if a value is non-zero/non-none
 function isNonZero(value: string | undefined): boolean {
   if (!value) return false
   const normalized = value.toLowerCase().trim()
-  return normalized !== '0' && 
-         normalized !== '0%' && 
-         normalized !== 'none' &&
-         normalized !== 'n/a'
+  return normalized !== '0' && normalized !== '0%' && normalized !== 'none' && normalized !== 'n/a'
 }
 
 // Helper to check if any stat in a record is non-zero
 function hasNonZeroStats(stats: Record<string, string | undefined> | undefined): boolean {
   if (!stats) return false
-  return Object.values(stats).some(v => isNonZero(v))
+  return Object.values(stats).some((v) => isNonZero(v))
 }
 
 // Stat display row component
@@ -35,11 +37,24 @@ function StatRow({ label, value }: { label: string; value: string | undefined })
 function filterNonZeroStats(stats: Record<string, string | undefined>): Record<string, string> {
   const result: Record<string, string> = {}
   for (const [key, value] of Object.entries(stats)) {
-    if (isNonZero(value)) {
-      result[key] = value!
+    if (value !== undefined && isNonZero(value)) {
+      result[key] = value
     }
   }
   return result
+}
+
+function orderStatCategories(categories: StatCategory[]): StatCategory[] {
+  const offense = categories.find((category) => category.title === 'Offense')
+  const defense = categories.find((category) => category.title === 'Defense')
+  if (!offense || !defense) return categories
+
+  const pairedTitles = new Set(['Offense', 'Defense'])
+  return [offense, defense, ...categories.filter((category) => !pairedTitles.has(category.title))]
+}
+
+function getCategoryCardClass(index: number, categoryCount: number): string {
+  return categoryCount === 3 && index === 2 ? 'sm:col-span-2' : ''
 }
 
 export default function GuestStatsSection({ stats }: GuestStatsSectionProps) {
@@ -50,13 +65,13 @@ export default function GuestStatsSection({ stats }: GuestStatsSectionProps) {
   ].filter((entry): entry is { label: string; value: string } => Boolean(entry))
 
   // Build stat category cards that have at least one non-zero value
-  const categories: Array<{
-    title: string
-    stats: Array<{ label: string; value: string }>
-  }> = []
-  
+  const categories: StatCategory[] = []
+
   // Stats (STR, DEX, etc.) - show if any non-zero
-  if (stats.characterStats && hasNonZeroStats(stats.characterStats as Record<string, string | undefined>)) {
+  if (
+    stats.characterStats &&
+    hasNonZeroStats(stats.characterStats as Record<string, string | undefined>)
+  ) {
     const filtered = filterNonZeroStats(stats.characterStats as Record<string, string | undefined>)
     categories.push({
       title: 'Stats',
@@ -66,7 +81,7 @@ export default function GuestStatsSection({ stats }: GuestStatsSectionProps) {
       })),
     })
   }
-  
+
   // Offense - show if any non-zero
   if (stats.offense && hasNonZeroStats(stats.offense as Record<string, string | undefined>)) {
     const filtered = filterNonZeroStats(stats.offense as Record<string, string | undefined>)
@@ -79,7 +94,7 @@ export default function GuestStatsSection({ stats }: GuestStatsSectionProps) {
       })),
     })
   }
-  
+
   // Damage Multipliers - show if any non-100% (base) or non-zero
   if (stats.damageMultipliers) {
     // For damage multipliers, filter out 100% (base value) as well as 0%
@@ -91,7 +106,12 @@ export default function GuestStatsSection({ stats }: GuestStatsSectionProps) {
       }
     }
     if (Object.keys(filtered).length > 0) {
-      const labelMap: Record<string, string> = { nonCrit: 'Non-Crit', dex: 'Dex', dot: 'DoT', crit: 'Crit' }
+      const labelMap: Record<string, string> = {
+        nonCrit: 'Non-Crit',
+        dex: 'Dex',
+        dot: 'DoT',
+        crit: 'Crit',
+      }
       categories.push({
         title: 'Damage Multipliers',
         stats: Object.entries(filtered).map(([key, value]) => ({
@@ -101,13 +121,17 @@ export default function GuestStatsSection({ stats }: GuestStatsSectionProps) {
       })
     }
   }
-  
+
   // Defense - show if any non-zero
   if (stats.defense && hasNonZeroStats(stats.defense as Record<string, string | undefined>)) {
     const filtered = filterNonZeroStats(stats.defense as Record<string, string | undefined>)
-    const labelMap: Record<string, string> = { 
-      melee: 'Melee', pierce: 'Pierce', magic: 'Magic', 
-      block: 'Block', parry: 'Parry', dodge: 'Dodge' 
+    const labelMap: Record<string, string> = {
+      melee: 'Melee',
+      pierce: 'Pierce',
+      magic: 'Magic',
+      block: 'Block',
+      parry: 'Parry',
+      dodge: 'Dodge',
     }
     categories.push({
       title: 'Defense',
@@ -117,9 +141,12 @@ export default function GuestStatsSection({ stats }: GuestStatsSectionProps) {
       })),
     })
   }
-  
+
   // Damage Reduction - show if any non-zero
-  if (stats.damageReduction && hasNonZeroStats(stats.damageReduction as Record<string, string | undefined>)) {
+  if (
+    stats.damageReduction &&
+    hasNonZeroStats(stats.damageReduction as Record<string, string | undefined>)
+  ) {
     const filtered = filterNonZeroStats(stats.damageReduction as Record<string, string | undefined>)
     const labelMap: Record<string, string> = { nonCrit: 'Non-Crit', dot: 'DoT', crit: 'Crit' }
     categories.push({
@@ -130,10 +157,10 @@ export default function GuestStatsSection({ stats }: GuestStatsSectionProps) {
       })),
     })
   }
-  
+
   // Resistances - show if not "None"
   if (stats.resistances && Object.keys(stats.resistances).length > 0) {
-    const hasNonNone = Object.values(stats.resistances).some(v => v.toLowerCase() !== 'none')
+    const hasNonNone = Object.values(stats.resistances).some((v) => v.toLowerCase() !== 'none')
     if (hasNonNone) {
       categories.push({
         title: 'Resistances',
@@ -146,35 +173,44 @@ export default function GuestStatsSection({ stats }: GuestStatsSectionProps) {
       })
     }
   }
-  
+
+  const orderedCategories = orderStatCategories(categories)
+
   // If no categories have data, don't render
   if (categories.length === 0 && !stats.level && !stats.damage && !stats.damageType) {
     return null
   }
-  
+
   return (
     <section className="mb-5">
       {/* Basic Info - Level, Damage, Damage Type */}
       {basicStats.length > 0 && (
         <div className="bg-bg-surface border border-border-default rounded-lg p-4 mb-3">
-          <div className={`grid gap-4 text-center ${basicStats.length >= 3 ? 'grid-cols-3' : 'grid-cols-2'}`}>
-            {basicStats.map(stat => (
+          <div
+            className={`grid gap-4 text-center ${basicStats.length >= 3 ? 'grid-cols-3' : 'grid-cols-2'}`}
+          >
+            {basicStats.map((stat) => (
               <div key={stat.label}>
-                <p className="text-xs text-text-muted uppercase tracking-wider mb-1">{stat.label}</p>
+                <p className="text-xs text-text-muted uppercase tracking-wider mb-1">
+                  {stat.label}
+                </p>
                 <p className="text-sm font-medium text-text-primary">{stat.value}</p>
               </div>
             ))}
           </div>
         </div>
       )}
-      
+
       {/* Stat Categories - 2-column grid */}
-      {categories.length > 0 && (
+      {orderedCategories.length > 0 && (
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          {categories.map((category) => (
-            <div 
-              key={category.title} 
-              className="bg-bg-surface border border-border-default rounded-lg p-4"
+          {orderedCategories.map((category, index) => (
+            <div
+              key={category.title}
+              className={`bg-bg-surface border border-border-default rounded-lg p-4 ${getCategoryCardClass(
+                index,
+                orderedCategories.length
+              )}`}
             >
               <h3 className="text-xs font-semibold text-text-muted uppercase tracking-wider mb-2">
                 {category.title}

@@ -7,11 +7,12 @@ import {
   computeFamilyFlags,
   computePriceType,
   normalizeLevel,
+  normalizeRomanDisplay,
   obtainVariantHasDC,
   parseRomanNumeral,
   stripVersionSuffix,
 } from '../src/utils/variantHelpers.ts'
-import { compareTitles, titleSortKey } from '../src/utils/displayText.ts'
+import { compareTitles, displayTitle, titleSortKey } from '../src/utils/displayText.ts'
 import { inferImageCaptionFromUrl, normalizeImageCaption } from '../src/utils/imageLabels.ts'
 import {
   type Weapon,
@@ -23,12 +24,11 @@ import {
 } from '../src/types/weapon.ts'
 import { extractAlsoSeeRefs, type ParsedAlsoSeeRef } from './lib/also-see.ts'
 import { writeWeaponManifest } from './lib/data-manifests.ts'
-import {
-  shouldPreserveFamilyForSameSlugIncoming,
-} from './lib/family-merge-guard.ts'
+import { shouldPreserveFamilyForSameSlugIncoming } from './lib/family-merge-guard.ts'
 import { hasRetiredTag } from './lib/tags.ts'
 import {
   FORUM_BASE,
+  directForumPostUrl,
   fetchForumPage as fetchPage,
   isPostUnavailableError,
   loadForumCookie,
@@ -40,7 +40,12 @@ import {
   unwrapImageHyperlinks,
 } from './lib/note-cleaning.ts'
 import { rephraseTimedSellback } from './lib/obtain-formatting.ts'
-import { fetchPrintable, getAllPostContent } from './lib/printable-parser.ts'
+import {
+  extractThreadPostContents,
+  fetchPrintable,
+  fetchThreadPages,
+  getAllPostContent,
+} from './lib/printable-parser.ts'
 import {
   applyLimit,
   applyNameFilter,
@@ -71,6 +76,16 @@ interface WeaponStub {
 }
 
 type WeaponRefResolver = (refs: ParsedAlsoSeeRef[]) => AlsoSeeRef[]
+type CrossSubtypeThreadContext = Map<
+  string,
+  Map<
+    WeaponSubtype,
+    {
+      representative: WeaponStub
+      names: string[]
+    }
+  >
+>
 
 const WEAPON_DATA_FILES: Record<WeaponSubtype, string[]> = {
   'sword-axe-mace': [
@@ -146,6 +161,16 @@ function inferSubtypeFromHeading(text: string): WeaponSubtype | undefined {
   return undefined
 }
 
+function inferSubtypeFromItemType(itemType: string | undefined): WeaponSubtype | undefined {
+  if (!itemType) return undefined
+  const normalized = itemType.toLowerCase().replace(/\s+/g, ' ').trim()
+  if (/\b(?:sword|axe|mace)\b/.test(normalized)) return 'sword-axe-mace'
+  if (/\b(?:staff|wand)\b/.test(normalized)) return 'staff-wand'
+  if (/\bdagger\b/.test(normalized)) return 'dagger'
+  if (/\bscythe\b/.test(normalized)) return 'scythe'
+  return undefined
+}
+
 function parseIndexStubs(html: string): WeaponStub[] {
   const stubs: WeaponStub[] = []
   const seen = new Set<string>()
@@ -193,6 +218,130 @@ function getWeaponTitleFromHtml(html: string): string | undefined {
   return extractTitleBlocks(html)[0]?.title
 }
 
+function normalizeWeaponTitleKey(name: string): string {
+  return normalizeStructuredText(name).replace(/\s+/g, ' ').trim().toLowerCase()
+}
+
+function getWeaponThreadGroupKey(stub: WeaponStub): string {
+  return normalizeWeaponTitleKey(
+    stripVersionSuffix(stub.name).replace(/\s+\((?:[A-Z]{1,3}|Base)\)\s*$/i, '')
+  )
+}
+
+function isPlainThreadStubName(name: string): boolean {
+  return !/\([^)]+\)\s*$/.test(stripVersionSuffix(name))
+}
+
+function chooseRepresentativeWeaponStub(stubs: WeaponStub[]): WeaponStub {
+  return (
+    stubs.find((stub) => isPlainThreadStubName(stub.name)) ??
+    [...stubs].sort((a, b) => a.name.length - b.name.length || compareTitles(a.name, b.name))[0]
+  )
+}
+
+function buildCrossSubtypeThreadContext(stubs: WeaponStub[]): CrossSubtypeThreadContext {
+  const byGroupAndSubtype = new Map<string, Map<WeaponSubtype, WeaponStub[]>>()
+  for (const stub of stubs) {
+    const groupKey = getWeaponThreadGroupKey(stub)
+    const subtypeMap = byGroupAndSubtype.get(groupKey) ?? new Map()
+    subtypeMap.set(stub.subtype, [...(subtypeMap.get(stub.subtype) ?? []), stub])
+    byGroupAndSubtype.set(groupKey, subtypeMap)
+  }
+
+  const context: CrossSubtypeThreadContext = new Map()
+  for (const [groupKey, subtypeMap] of byGroupAndSubtype) {
+    const subtypeStubCount = Array.from(subtypeMap.values()).reduce(
+      (count, subtypeStubs) => count + subtypeStubs.length,
+      0
+    )
+    if (subtypeMap.size <= 1 && subtypeStubCount <= 1) continue
+    const scoped = new Map<WeaponSubtype, { representative: WeaponStub; names: string[] }>()
+    for (const [subtype, subtypeStubs] of subtypeMap) {
+      scoped.set(subtype, {
+        representative: chooseRepresentativeWeaponStub(subtypeStubs),
+        names: Array.from(new Set(subtypeStubs.map((stub) => stub.name))),
+      })
+    }
+    context.set(groupKey, scoped)
+  }
+
+  return context
+}
+
+function dedupeCrossSubtypeSelectedStubs(
+  stubs: WeaponStub[],
+  context: CrossSubtypeThreadContext
+): WeaponStub[] {
+  const selectedKeys = new Set<string>()
+  const selected: WeaponStub[] = []
+
+  for (const stub of stubs) {
+    const scoped = context.get(getWeaponThreadGroupKey(stub))?.get(stub.subtype)
+    if (!scoped) {
+      selected.push(stub)
+      continue
+    }
+
+    const key = `${getWeaponThreadGroupKey(stub)}:${stub.subtype}`
+    if (selectedKeys.has(key)) continue
+    selectedKeys.add(key)
+    selected.push(scoped.representative)
+  }
+
+  return selected.sort((a, b) => compareTitles(a.name, b.name))
+}
+
+function scopeWeaponHtmlToSubtypeTitles(html: string, allowedTitles?: string[]): string {
+  if (!allowedTitles || allowedTitles.length === 0) return html
+  const allowed = new Set(allowedTitles.map(normalizeWeaponTitleKey))
+  const matchingPosts = splitPrintablePosts(html).filter((post) => {
+    const titleBlocks = extractTitleBlocks(post)
+    return (
+      titleBlocks.some((block) => allowed.has(normalizeWeaponTitleKey(block.title))) ||
+      isDedicatedWeaponSpecialPost(post)
+    )
+  })
+
+  return matchingPosts.length > 0 ? matchingPosts.join('\n<hr>\n') : html
+}
+
+function isDedicatedWeaponSpecialPost(html: string): boolean {
+  const titles = [
+    ...html.matchAll(/<font\s+size=['"]?3['"]?\s*>\s*<b>([\s\S]*?)<\/b>\s*<\/font>/gi),
+  ]
+    .map((match) => normalizeStructuredText(match[1]).trim())
+    .filter(Boolean)
+  return titles.length > 0 && titles.every((title) => /^Special$/i.test(title))
+}
+
+function getCrossSubtypeAlsoSeeRefs(
+  stub: WeaponStub,
+  context: CrossSubtypeThreadContext
+): AlsoSeeRef[] {
+  const scoped = context.get(getWeaponThreadGroupKey(stub))
+  if (!scoped) return []
+
+  return Array.from(scoped.entries())
+    .filter(([subtype]) => subtype !== stub.subtype)
+    .map(([, sibling]) => ({
+      name: sibling.representative.name,
+      slug: weaponSlugForName(sibling.representative.name),
+      type: 'weapon' as const,
+      url: sibling.representative.forumUrl,
+    }))
+    .sort((a, b) => compareTitles(a.name, b.name))
+}
+
+function mergeAlsoSeeRefs(...groups: AlsoSeeRef[][]): AlsoSeeRef[] {
+  const refs = new Map<string, AlsoSeeRef>()
+  for (const group of groups) {
+    for (const ref of group) {
+      refs.set(`${ref.type}:${ref.slug}:${ref.url ?? ''}`.toLowerCase(), ref)
+    }
+  }
+  return Array.from(refs.values()).sort((a, b) => compareTitles(a.name, b.name))
+}
+
 function getUrlFilterArgs(): string[] | undefined {
   const url = getArg('url')
   const urls = getArg('urls')
@@ -237,10 +386,10 @@ function findLastSection(html: string, sectionRegex: RegExp): string | undefined
 
 function findOtherInformationSection(html: string): string | undefined {
   return (
-    findLastSection(html, /<b>\s*<u>\s*Other [Ii]nformation\s*<\/u>\s*<\/b>/gi) ??
-    findLastSection(html, /<u>\s*Other [Ii]nformation\s*<\/u>/gi) ??
-    findLastSection(html, /(?:<b>\s*)?Other [Ii]nformation\s*:(?:\s*<\/b>)?/gi) ??
-    findLastSection(html, /\bOther [Ii]nformation\b/gi)
+    findLastSection(html, /<b>\s*<u>\s*Other [Ii]nformations?\s*<\/u>\s*<\/b>/gi) ??
+    findLastSection(html, /<u>\s*Other [Ii]nformations?\s*<\/u>/gi) ??
+    findLastSection(html, /(?:<b>\s*)?Other [Ii]nformations?\s*:(?:\s*<\/b>)?/gi) ??
+    findLastSection(html, /\bOther [Ii]nformations?\b/gi)
   )
 }
 
@@ -251,9 +400,9 @@ function getLeadHtml(html: string): string {
       /(?:<b>)?Element:(?:<\/b>)?/i,
       /(?:<b>)?Damage:(?:<\/b>)?/i,
       /(?:<b>)?Location:(?:<\/b>)?/i,
-      /<u>\s*Other [Ii]nformation\s*<\/u>/i,
-      /(?:<b>\s*)?Other [Ii]nformation\s*:/i,
-      /\bOther [Ii]nformation\b/i,
+      /<u>\s*Other [Ii]nformations?\s*<\/u>/i,
+      /(?:<b>\s*)?Other [Ii]nformations?\s*:/i,
+      /\bOther [Ii]nformations?\b/i,
     ]
       .map((pattern) => html.search(pattern))
       .filter((index) => index >= 0)
@@ -291,6 +440,29 @@ function parseHtmlField(html: string, labels: string[]): string | undefined {
   return undefined
 }
 
+function parseWeaponSpecialEffect(section: string): string | undefined {
+  const match = section.match(
+    /(?:<b>\s*)?Effect:(?:\s*<\/b>)?\s*([\s\S]*?)(?=(?:<br\s*\/?>\s*)*(?:Cooldown:|CD:|Charge Time:|CT:|(?:<b>\s*)?<u>\s*Other [Ii]nformations?\s*<\/u>|<font\s+size=['"]?3['"]?\s*>\s*<b>\s*Special\s*<\/b>\s*<\/font>|<hr|<img\b|$))/i
+  )
+  const rawEffect = match?.[1]
+  if (!rawEffect) return undefined
+
+  return decodeHtml(
+    stripForumHtml(rawEffect, 'weapon special effect', { preserveIndentation: true })
+  )
+    .split('\n')
+    .map((line) => {
+      const indent = line.match(/^\s*/)?.[0] ?? ''
+      return `${indent}${line
+        .slice(indent.length)
+        .replace(/[ \t]{2,}/g, ' ')
+        .trimEnd()}`
+    })
+    .filter((line) => line.trim())
+    .join('\n')
+    .trim()
+}
+
 function parseDescription(html: string): string {
   const italicMatches = [...getLeadHtml(html).matchAll(/<i>([\s\S]*?)<\/i>/gi)]
   for (const match of italicMatches) {
@@ -303,7 +475,7 @@ function parseDescription(html: string): string {
 
 function parseNotes(html: string): string | undefined {
   const sectionPattern =
-    /(?:<b>\s*)?<u>\s*Other [Ii]nformation\s*<\/u>\s*(?:<\/b>)?|(?:<b>\s*)?Other [Ii]nformation\s*:(?:\s*<\/b>)?/gi
+    /(?:<b>\s*)?<u>\s*Other [Ii]nformations?\s*<\/u>\s*(?:<\/b>)?|(?:<b>\s*)?Other [Ii]nformations?\s*:(?:\s*<\/b>)?/gi
   const sections = [...html.matchAll(sectionPattern)].map((match, index, matches) => {
     const start = (match.index ?? 0) + match[0].length
     const end = matches[index + 1]?.index ?? html.length
@@ -347,6 +519,9 @@ function parseNotes(html: string): string | undefined {
     if (/\w+\s+--\s+\d+\/\d+\/\d+\s+\d+:\d+:\d+/.test(trimmed)) continue
     if (/^[\s/|\\-]+$/.test(trimmed)) continue
     if (isImageCaptionNoiseLine(trimmed, imageCaptionNoise)) continue
+    if (/^Click\s+here\s+on\s+the\s+weapon\s+to\s+change\s+its\s+appearance\b/i.test(trimmed)) {
+      continue
+    }
     if (
       /^(?:clicked appearance|alternative image|alt(?:ernative)? appearance|appearance(?:\s+\d.*)?)$/i.test(
         trimmed
@@ -363,6 +538,39 @@ function parseNotes(html: string): string | undefined {
   }
 
   return noteLines.length > 0 ? noteLines.join('\n') : undefined
+}
+
+function combineNoteBlocks(...notes: Array<string | undefined>): string | undefined {
+  const blocks = notes.map((note) => note?.trim()).filter((note): note is string => Boolean(note))
+  if (blocks.length === 0) return undefined
+
+  const seen = new Set<string>()
+  const result: string[] = []
+  for (const block of blocks) {
+    const key = block.toLowerCase()
+    if (seen.has(key)) continue
+    seen.add(key)
+    result.push(block)
+  }
+
+  return result.join('\n')
+}
+
+function parseSharedWeaponNotes(html: string): string | undefined {
+  const regularNotes = parseNotes(stripWeaponSpecialSections(html))
+  const dedicatedSpecialNotes = splitPrintablePosts(html)
+    .filter(isDedicatedWeaponSpecialPost)
+    .map((post) => parseNotes(post))
+
+  return combineNoteBlocks(regularNotes, ...dedicatedSpecialNotes)
+}
+
+function normalizeWeaponImageCaption(caption: string | undefined, url: string): string | undefined {
+  const normalizedCaption = normalizeImageCaption(caption)
+  if (normalizedCaption?.toLowerCase() === 'here' && /\b(?:guide|click[-_ ]?zone)\b/i.test(url)) {
+    return 'Click zone to toggle appearance'
+  }
+  return normalizedCaption
 }
 
 function parseTagFlags(html: string) {
@@ -399,7 +607,10 @@ function getParentheticalFamilyForms(name: string): string[] {
     .filter(Boolean)
 }
 
-function getParentheticalFamilyVariantName(itemName: string, familyName: string): string | undefined {
+function getParentheticalFamilyVariantName(
+  itemName: string,
+  familyName: string
+): string | undefined {
   const forms = getParentheticalFamilyForms(familyName)
   if (forms.length === 0) return undefined
   const familyBase = familyName.replace(/\s*\([^)]+\)\s*$/, '').trim()
@@ -411,6 +622,21 @@ function getParentheticalFamilyVariantName(itemName: string, familyName: string)
   }
 
   return undefined
+}
+
+function getTrailingParentheticalVariantName(
+  itemName: string,
+  familyName: string
+): string | undefined {
+  const familyBase = stripVersionSuffix(familyName)
+    .replace(/\s*\([^)]+\)\s*$/, '')
+    .trim()
+  if (!familyBase) return undefined
+  const match = itemName.match(
+    new RegExp(`^${familyBase.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\s*\\(([^)]+)\\)$`, 'i')
+  )
+  const value = match?.[1]?.trim()
+  return value ? `(${value})` : undefined
 }
 
 function inferParentheticalFamilyNameFromTitles(names: string[]): string | undefined {
@@ -441,6 +667,9 @@ function inferParentheticalFamilyNameFromTitles(names: string[]): string | undef
 }
 
 function splitPrintablePosts(html: string): string[] {
+  if (/<hr\s+data-post-break=/i.test(html)) {
+    return html.split(/<hr\s+data-post-break=["']?true["']?\s*\/?>/i).filter((post) => post.trim())
+  }
   if (/<hr>/i.test(html)) return html.split(/<hr>/i).filter((post) => post.trim())
   const posts = [...html.matchAll(/<span\s+class=["']?msg["']?[^>]*>([\s\S]*?)<\/span>/gi)].map(
     (match) => match[1]
@@ -448,8 +677,16 @@ function splitPrintablePosts(html: string): string[] {
   return posts.length > 0 ? posts : [html]
 }
 
+function getPrintablePostSourceUrl(postHtml: string, fallbackUrl: string): string {
+  const sourceMatch = postHtml.match(/<!--\s*source-url:\s*([^>]+?)\s*-->/i)
+  return sourceMatch?.[1]?.trim() || fallbackUrl
+}
+
 function extractTitleBlocks(html: string): Array<{ title: string; html: string }> {
-  const matches = [...html.matchAll(/<font\s+size=['"]?3['"]?\s*>\s*<b>([\s\S]*?)<\/b>\s*<\/font>/gi)]
+  const matches = [
+    ...html.matchAll(/<font\s+size=['"]?3['"]?\s*>\s*<b>([\s\S]*?)<\/b>\s*<\/font>/gi),
+    ...html.matchAll(/<b>\s*<font\s+size=['"]?3['"]?\s*>([\s\S]*?)<\/font>\s*<\/b>/gi),
+  ].sort((a, b) => (a.index ?? 0) - (b.index ?? 0))
   return matches
     .map((match, index) => {
       const start = match.index ?? 0
@@ -457,14 +694,12 @@ function extractTitleBlocks(html: string): Array<{ title: string; html: string }
       const trailingNextPrefix =
         html
           .slice(Math.max(0, rawEnd - 250), rawEnd)
-          .match(/(?:<img[^>]+\/tags\/(?:DA|DC|DM)\.(?:png|jpg|jpeg|gif)[^>]*>\s*)+$/i)?.[0] ??
-        ''
+          .match(/(?:<img[^>]+\/tags\/(?:DA|DC|DM)\.(?:png|jpg|jpeg|gif)[^>]*>\s*)+$/i)?.[0] ?? ''
       const end = rawEnd - trailingNextPrefix.length
       const prefix =
         html
           .slice(Math.max(0, start - 250), start)
-          .match(/(?:<img[^>]+\/tags\/(?:DA|DC|DM)\.(?:png|jpg|jpeg|gif)[^>]*>\s*)+$/i)?.[0] ??
-        ''
+          .match(/(?:<img[^>]+\/tags\/(?:DA|DC|DM)\.(?:png|jpg|jpeg|gif)[^>]*>\s*)+$/i)?.[0] ?? ''
       return {
         title: normalizeStructuredText(match[1]).trim(),
         html: `${prefix}${html.slice(start, end)}`,
@@ -504,7 +739,7 @@ function splitWeaponSpecialSections(html: string): string[] {
 
 function trimWeaponSpecialSection(section: string): string {
   const finalOtherInfo = [
-    ...section.matchAll(/(?:<b>\s*)?<u>\s*Other [Ii]nformation\s*<\/u>\s*(?:<\/b>)?/gi),
+    ...section.matchAll(/(?:<b>\s*)?<u>\s*Other [Ii]nformations?\s*<\/u>\s*(?:<\/b>)?/gi),
   ].at(-1)
   if (!finalOtherInfo || finalOtherInfo.index === undefined) return section
 
@@ -527,8 +762,11 @@ function parseWeaponSpecialFromSection(
 
   const trigger = normalizeStructuredText(section.match(/<i>([\s\S]*?)<\/i>/i)?.[1] ?? '').trim()
   const rawEffect =
+    parseWeaponSpecialEffect(section) ??
     parseHtmlField(section, ['Effect']) ??
-    normalizeStructuredText(section).match(/Effect:\s*([^\n]+)/i)?.[1]?.trim()
+    normalizeStructuredText(section)
+      .match(/Effect:\s*([^\n]+)/i)?.[1]
+      ?.trim()
   const effect = rawEffect
     ?.replace(/\s+Cooldown:\s*[\s\S]*$/i, '')
     .replace(/\s+Charge Time:\s*[\s\S]*$/i, '')
@@ -678,7 +916,7 @@ function extractWeaponImages(html: string) {
         .map((candidate, index) => ({
           url: candidate.url,
           caption:
-            normalizeImageCaption(candidate.caption) ??
+            normalizeWeaponImageCaption(candidate.caption, candidate.url) ??
             inferImageCaptionFromUrl(candidate.url) ??
             `Alternative ${index + 1}`,
         }))
@@ -741,7 +979,8 @@ function parseObtainMethodBlocks(html: string): ObtainVariant[] {
 function buildWeaponEntry(
   stub: WeaponStub,
   html: string,
-  resolveAlsoSee: WeaponRefResolver
+  resolveAlsoSee: WeaponRefResolver,
+  extraAlsoSee: AlsoSeeRef[] = []
 ): Weapon {
   const normalizedText = normalizeStructuredText(html)
   const flags = parseTagFlags(html)
@@ -767,8 +1006,10 @@ function buildWeaponEntry(
     parseFieldValue(normalizedText, ['Resists', 'Resistances'])
   const rarity = parseHtmlField(html, ['Rarity']) ?? parseFieldValue(normalizedText, ['Rarity'])
   const ability = parseHtmlField(html, ['Ability']) ?? parseFieldValue(normalizedText, ['Ability'])
-  const notes = parseNotes(stripWeaponSpecialSections(html))
-  const alsoSee = resolveAlsoSee(extractAlsoSeeRefs(html))
+  const itemType =
+    parseHtmlField(html, ['Item Type']) ?? parseFieldValue(normalizedText, ['Item Type'])
+  const notes = parseSharedWeaponNotes(html)
+  const alsoSee = mergeAlsoSeeRefs(resolveAlsoSee(extractAlsoSeeRefs(html)), extraAlsoSee)
   const images = extractWeaponImages(html)
   const weaponSpecials = parseWeaponSpecials(html)
   const weaponSpecial = weaponSpecials[0]
@@ -796,6 +1037,7 @@ function buildWeaponEntry(
     ...(weaponSpecials.length > 1 ? { weaponSpecials } : {}),
     ...(armorCustomization ? { armorCustomization, hasArmorCustomization: true } : {}),
     ...(rarity ? { rarity } : {}),
+    ...(itemType ? { itemType } : {}),
     obtainMethods,
     ...(notes ? { notes } : {}),
     ...(alsoSee.length > 0 ? { alsoSee } : {}),
@@ -855,13 +1097,14 @@ function getVariantSpecificNotes(
 function buildWeaponFamily(
   stub: WeaponStub,
   html: string,
-  resolveAlsoSee: WeaponRefResolver
+  resolveAlsoSee: WeaponRefResolver,
+  extraAlsoSee: AlsoSeeRef[] = []
 ): WeaponFamily | undefined {
   const familyName = stripVersionSuffix(stub.name)
   const threadFlags = parseTagFlags(html)
   const images = extractWeaponImages(html)
-  const notes = parseNotes(stripWeaponSpecialSections(html))
-  const alsoSee = resolveAlsoSee(extractAlsoSeeRefs(html))
+  const notes = parseSharedWeaponNotes(html)
+  const alsoSee = mergeAlsoSeeRefs(resolveAlsoSee(extractAlsoSeeRefs(html)), extraAlsoSee)
   const weaponSpecials = parseWeaponSpecials(html)
   const weaponSpecial = weaponSpecials[0]
   const armorCustomization = parseArmorCustomization(html)
@@ -871,11 +1114,17 @@ function buildWeaponFamily(
   const levelVariants: LevelVariant[] = []
 
   for (const post of posts) {
+    const postSourceUrl = getPrintablePostSourceUrl(post, directForumPostUrl(stub.messageId))
     const titleBlocks = extractTitleBlocks(post)
     if (titleBlocks.length === 0) continue
     const primaryTitle = titleBlocks[0].title
     const roman = getVariantRomanFromName(primaryTitle)
-    const familyForm = getParentheticalFamilyVariantName(primaryTitle, familyName)
+    const isFamilyTitle =
+      normalizeWeaponTitleKey(primaryTitle) === normalizeWeaponTitleKey(familyName)
+    const familyForm = isFamilyTitle
+      ? undefined
+      : (getParentheticalFamilyVariantName(primaryTitle, familyName) ??
+        getTrailingParentheticalVariantName(primaryTitle, familyName))
     const postText = normalizeStructuredText(post)
 
     const level = parseHtmlField(post, ['Level']) ?? parseFieldValue(postText, ['Level'])
@@ -895,6 +1144,9 @@ function buildWeaponFamily(
       parseHtmlField(post, ['Resists', 'Resistances']) ??
       parseFieldValue(postText, ['Resists', 'Resistances'])
     const rarity = parseHtmlField(post, ['Rarity']) ?? parseFieldValue(postText, ['Rarity'])
+    const itemType = parseHtmlField(post, ['Item Type']) ?? parseFieldValue(postText, ['Item Type'])
+    const postSubtype = inferSubtypeFromItemType(itemType)
+    if (postSubtype && postSubtype !== stub.subtype) continue
     const description = parseDescription(post)
     const postNotes = parseNotes(stripWeaponSpecialSections(post))
 
@@ -920,11 +1172,12 @@ function buildWeaponFamily(
       damage: damage ?? 'Unknown',
       stats: stats ?? 'None',
       obtainVariants: dedupeObtainVariants(variantMethods),
-      sourceUrl: stub.forumUrl,
+      sourceUrl: postSourceUrl,
       ...(description ? { description } : {}),
       ...(element ? { element } : {}),
       ...(resists ? { resists } : {}),
       ...(rarity ? { rarity } : {}),
+      ...(itemType ? { itemType } : {}),
       ...(variantNotes ? { notes: variantNotes } : {}),
     })
 
@@ -935,14 +1188,14 @@ function buildWeaponFamily(
       levelVariants.push(
         buildVariant(
           nonDcMethods,
-          familyForm ?? roman ?? 'Base',
+          familyForm ?? roman ?? '(Base)',
           getVariantSpecificNotes(postNotes, nonDcMethods[0])
         )
       )
       levelVariants.push(
         buildVariant(
           dcMethods,
-          familyForm ? `${familyForm} (DC)` : roman ? `${roman} (DC)` : 'DC',
+          familyForm ? `${familyForm} (DC)` : roman ? `${roman} (DC)` : '(Base) (DC)',
           getVariantSpecificNotes(postNotes, dcMethods[0])
         )
       )
@@ -977,6 +1230,13 @@ function buildWeaponFamily(
         .filter((value): value is string => Boolean(value))
     )
   )
+  const itemTypes = Array.from(
+    new Set(
+      finalLevelVariants
+        .map((variant) => variant.itemType)
+        .filter((value): value is string => Boolean(value))
+    )
+  )
   const tags = Array.from(
     new Set([
       ...elements.map((code) => code.toLowerCase()),
@@ -996,7 +1256,18 @@ function buildWeaponFamily(
     subtype: stub.subtype,
     forumUrl: stub.forumUrl,
     familyOrigin: 'same-thread-multi-post',
-    familySources,
+    familySources:
+      familySources.length > 0
+        ? familySources
+        : dedupeWeaponFamilySources(
+            finalLevelVariants.map((level, index) => ({
+              url: level.sourceUrl ?? directForumPostUrl(stub.messageId),
+              title: `DF Encyclopedia: ${level.name}`,
+              variantLabel: level.name,
+              isPrimary: index === 0,
+            }))
+          ),
+    ...(itemTypes.length === 1 ? { itemType: itemTypes[0] } : {}),
     shared: {
       description: finalLevelVariants[0].description ?? parseDescription(html),
       ...images,
@@ -1033,9 +1304,13 @@ function buildWeaponFamily(
 function buildWeaponEntryOrFamily(
   stub: WeaponStub,
   html: string,
-  resolveAlsoSee: WeaponRefResolver
+  resolveAlsoSee: WeaponRefResolver,
+  extraAlsoSee: AlsoSeeRef[] = []
 ): WeaponEntry {
-  return buildWeaponFamily(stub, html, resolveAlsoSee) ?? buildWeaponEntry(stub, html, resolveAlsoSee)
+  return (
+    buildWeaponFamily(stub, html, resolveAlsoSee, extraAlsoSee) ??
+    buildWeaponEntry(stub, html, resolveAlsoSee, extraAlsoSee)
+  )
 }
 
 function isWeaponFamilyEntry(entry: WeaponEntry): entry is WeaponFamily {
@@ -1056,7 +1331,7 @@ function normalizeWeaponLookupName(name: string): string {
   const cached = weaponLookupNameCache.get(name)
   if (cached !== undefined) return cached
 
-  const normalized = name
+  const normalized = normalizeWeaponFamilyName(name)
     .toLowerCase()
     .replace(/\s+\((?:all versions|[ivxlcdm]+(?:-[ivxlcdm]+)?|\d+)\)$/i, '')
     .replace(/[^\w\s']+/g, ' ')
@@ -1064,6 +1339,10 @@ function normalizeWeaponLookupName(name: string): string {
     .trim()
   weaponLookupNameCache.set(name, normalized)
   return normalized
+}
+
+function normalizeWeaponComparableTitle(name: string): string {
+  return normalizeWeaponLookupName(name).replace(/^the\s+/i, '')
 }
 
 function tokenizeWeaponName(name: string): string[] {
@@ -1106,10 +1385,30 @@ function getCommonWeaponSuffix(tokensList: string[][]): string[] {
 function titleCaseWeaponTokens(tokens: string[]): string {
   return tokens
     .map((token) => token.replace(/\b\w/g, (char) => char.toUpperCase()).replace(/'S\b/g, "'s"))
+    .map(normalizeRomanDisplay)
     .join(' ')
 }
 
-function getWeaponSharedTitleParts(entries: WeaponEntry[]) {
+function normalizeWeaponFamilyName(name: string): string {
+  if (name === 'Half Foam Hammer') return 'Half of a Foam Hammer'
+  if (/\bKey,\s*The$/i.test(name)) return name.replace(/,\s*The$/i, '').trim()
+  return displayTitle(stripVersionSuffix(name))
+}
+
+function normalizeWeaponVariantDisplayName(name: string, familyName: string): string {
+  if (normalizeWeaponLookupName(name) === normalizeWeaponLookupName(familyName)) return familyName
+  if (/\bKey,\s*The$/i.test(name)) return name.replace(/,\s*The$/i, '').trim()
+  return name
+}
+
+function normalizeWeaponSourceVariantLabel(name: string): string {
+  return displayTitle(stripVersionSuffix(name))
+}
+
+function getWeaponSharedTitleParts(
+  entries: WeaponEntry[],
+  options: { allowSingleTokenSuffix?: boolean } = {}
+) {
   const tokenSets = entries.map((entry) => tokenizeWeaponName(getWeaponEntryName(entry)))
   const prefix = getCommonWeaponPrefix(tokenSets)
   const suffix = getCommonWeaponSuffix(tokenSets)
@@ -1121,17 +1420,30 @@ function getWeaponSharedTitleParts(entries: WeaponEntry[]) {
     if (hasVariantMiddle) return { prefix, suffix }
   }
   if (suffix.length >= 2) return { prefix: [] as string[], suffix }
+  if (options.allowSingleTokenSuffix && suffix.length === 1) {
+    const hasVariantPrefix = tokenSets.some((tokens) => tokens.length > suffix.length)
+    if (hasVariantPrefix && !/^(?:base|default)$/i.test(suffix[0])) {
+      return { prefix: [] as string[], suffix }
+    }
+  }
   if (prefix.length >= 2) return { prefix, suffix: [] as string[] }
   return undefined
 }
 
-function deriveWeaponCrossPostFamilyName(entries: WeaponEntry[]): string {
-  const parts = getWeaponSharedTitleParts(entries)
-  if (!parts) return getWeaponEntryName(entries[0])
-  return titleCaseWeaponTokens([...parts.prefix, ...parts.suffix])
+function deriveWeaponCrossPostFamilyName(
+  entries: WeaponEntry[],
+  options: { allowSingleTokenSuffix?: boolean } = {}
+): string {
+  const parts = getWeaponSharedTitleParts(entries, options)
+  if (!parts) return normalizeWeaponFamilyName(getWeaponEntryName(entries[0]))
+  return normalizeWeaponFamilyName(titleCaseWeaponTokens([...parts.prefix, ...parts.suffix]))
 }
 
 function deriveWeaponCrossPostVariantName(name: string, familyName: string): string | undefined {
+  if (normalizeWeaponLookupName(name) === normalizeWeaponLookupName(familyName)) {
+    return '(Base)'
+  }
+
   const nameTokens = tokenizeWeaponName(name)
   const familyTokens = tokenizeWeaponName(familyName)
   const prefix = getCommonWeaponPrefix([nameTokens, familyTokens])
@@ -1152,6 +1464,14 @@ function sharesWeaponExplicitReference(a: WeaponEntry, b: WeaponEntry): boolean 
   return aRefs.has(bName) || bRefs.has(aName)
 }
 
+function sharesWeaponMutualExplicitReference(a: WeaponEntry, b: WeaponEntry): boolean {
+  const aName = normalizeWeaponLookupName(getWeaponEntryName(a))
+  const bName = normalizeWeaponLookupName(getWeaponEntryName(b))
+  const aRefs = new Set(getWeaponEntryRefs(a).map((ref) => normalizeWeaponLookupName(ref.name)))
+  const bRefs = new Set(getWeaponEntryRefs(b).map((ref) => normalizeWeaponLookupName(ref.name)))
+  return aRefs.has(bName) && bRefs.has(aName)
+}
+
 function hasWeaponAliasOwnership(a: WeaponEntry, b: WeaponEntry): boolean {
   return (
     (isWeaponFamilyEntry(a) && Boolean(a.aliasSlugs?.includes(b.slug))) ||
@@ -1159,23 +1479,64 @@ function hasWeaponAliasOwnership(a: WeaponEntry, b: WeaponEntry): boolean {
   )
 }
 
+function isFoamHammerFamilyMemberName(name: string): boolean {
+  return (
+    /\bFoam Hammer(?:\s+\(All Versions\))?$/i.test(name) &&
+    !/^Half of a\b/i.test(name) &&
+    !/^Foam Rolith's Hammer$/i.test(name)
+  )
+}
+
+function isFoamHammerConsolidationPair(a: WeaponEntry, b: WeaponEntry): boolean {
+  if (a.subtype !== 'scythe' || b.subtype !== 'scythe') return false
+  return [a, b].every((entry) => {
+    if (isWeaponFamilyEntry(entry)) return entry.familyName === 'Foam Hammer'
+    return isFoamHammerFamilyMemberName(entry.name)
+  })
+}
+
 function canPromoteWeaponCrossPost(a: WeaponEntry, b: WeaponEntry): boolean {
   if (a.type !== b.type || a.subtype !== b.subtype) return false
   if (isWeaponFamilyEntry(a) && isWeaponFamilyEntry(b)) return false
   if (hasWeaponAliasOwnership(a, b)) return true
   if (!sharesWeaponExplicitReference(a, b)) return false
-  if (!getWeaponSharedTitleParts([a, b])) return false
+  const standardParts = getWeaponSharedTitleParts([a, b])
+  const singleSuffixParts = getWeaponSharedTitleParts([a, b], { allowSingleTokenSuffix: true })
+  if (!standardParts && !singleSuffixParts) return false
+  if (!standardParts && !sharesWeaponMutualExplicitReference(a, b)) return false
 
   const aDescription = isWeaponFamilyEntry(a) ? a.shared.description : a.description
   const bDescription = isWeaponFamilyEntry(b) ? b.shared.description : b.description
-  const aImage = isWeaponFamilyEntry(a) ? a.shared.imageUrl : a.imageUrl
-  const bImage = isWeaponFamilyEntry(b) ? b.shared.imageUrl : b.imageUrl
+  const descriptionsAreSame =
+    normalizeWeaponLookupName(aDescription) === normalizeWeaponLookupName(bDescription)
 
-  return (
-    normalizeWeaponLookupName(aDescription) === normalizeWeaponLookupName(bDescription) ||
-    Boolean(aImage && bImage && aImage === bImage) ||
-    Boolean(getWeaponSharedTitleParts([a, b]))
-  )
+  if (isFoamHammerConsolidationPair(a, b)) return true
+  if (descriptionsAreSame) return Boolean(standardParts) || Boolean(singleSuffixParts)
+  return Boolean(singleSuffixParts && sharesWeaponMutualExplicitReference(a, b))
+}
+
+function isSingleTokenSharedFamilyGroup(group: WeaponEntry[]): boolean {
+  const parts = getWeaponSharedTitleParts(group, { allowSingleTokenSuffix: true })
+  return Boolean(parts && parts.prefix.length + parts.suffix.length === 1)
+}
+
+function shouldPromoteDenseSingleTokenExplicitGroup(group: WeaponEntry[]): boolean {
+  if (group.length < 3) return false
+
+  const names = new Set(group.map((entry) => normalizeWeaponLookupName(getWeaponEntryName(entry))))
+  let internalRefCount = 0
+  const entriesWithInternalRefs = new Set<string>()
+
+  for (const entry of group) {
+    const entryName = normalizeWeaponLookupName(getWeaponEntryName(entry))
+    for (const ref of getWeaponEntryRefs(entry)) {
+      if (!names.has(normalizeWeaponLookupName(ref.name))) continue
+      internalRefCount += 1
+      entriesWithInternalRefs.add(entryName)
+    }
+  }
+
+  return entriesWithInternalRefs.size === group.length && internalRefCount >= group.length * 2
 }
 
 function allWeaponValuesSame<T>(values: T[]): boolean {
@@ -1219,9 +1580,26 @@ function dedupeWeaponFamilySources(sources: FamilySourceRef[]): FamilySourceRef[
   return result
 }
 
+function buildWeaponFamilyAliasSlugs(
+  familyName: string,
+  levels: LevelVariant[],
+  existingAliases: string[] = []
+): string[] {
+  const canonicalSlug = weaponSlugForName(familyName)
+  return Array.from(
+    new Set([
+      ...existingAliases,
+      ...(levels.length > 1 ? [weaponSlugForName(`${familyName} (All Versions)`)] : []),
+      ...levels.map((level) => weaponSlugForName(level.name)),
+    ])
+  ).filter((slug) => slug && slug !== canonicalSlug)
+}
+
 function dedupeWeaponFamilyEntry(family: WeaponFamily): WeaponFamily {
+  const levelVariants = dedupeWeaponLevelVariants(family.levelVariants)
   return computeFamilyFlags({
     ...family,
+    aliasSlugs: buildWeaponFamilyAliasSlugs(family.familyName, levelVariants, family.aliasSlugs),
     familySources: family.familySources ? dedupeWeaponFamilySources(family.familySources) : [],
     shared: {
       ...family.shared,
@@ -1236,7 +1614,7 @@ function dedupeWeaponFamilyEntry(family: WeaponFamily): WeaponFamily {
           )
         : undefined,
     },
-    levelVariants: dedupeWeaponLevelVariants(family.levelVariants),
+    levelVariants,
     hasDA: false,
     hasDC: false,
     hasDM: false,
@@ -1286,6 +1664,10 @@ function mergeSameSlugWeaponFamilies(entries: WeaponEntry[]): WeaponEntry[] {
     return [
       computeFamilyFlags({
         ...family,
+        aliasSlugs: buildWeaponFamilyAliasSlugs(family.familyName, mergedLevels, [
+          ...(family.aliasSlugs ?? []),
+          ...standalones.map((entry) => entry.slug),
+        ]),
         familySources,
         shared: {
           ...family.shared,
@@ -1300,6 +1682,158 @@ function mergeSameSlugWeaponFamilies(entries: WeaponEntry[]): WeaponEntry[] {
       }),
     ]
   })
+}
+
+function mergeFoamHammerStandaloneMembers(entries: WeaponEntry[]): WeaponEntry[] {
+  const family = entries.find(
+    (entry): entry is WeaponFamily =>
+      isWeaponFamilyEntry(entry) && entry.familyName === 'Foam Hammer'
+  )
+  if (!family) return entries
+
+  const standalones = entries.filter(
+    (entry): entry is Weapon =>
+      !isWeaponFamilyEntry(entry) && isFoamHammerFamilyMemberName(entry.name)
+  )
+  if (standalones.length === 0) return entries
+
+  const mergedLevels = dedupeWeaponLevelVariants([
+    ...family.levelVariants,
+    ...standalones.map((entry) => buildLevelVariantFromWeapon(entry, family.familyName)),
+  ]).sort((a, b) => {
+    const levelCompare = (a.actualLevel ?? a.levelNumber) - (b.actualLevel ?? b.levelNumber)
+    return levelCompare || compareTitles(a.variantName ?? a.name, b.variantName ?? b.name)
+  })
+  const familySources = dedupeWeaponFamilySources([
+    ...(family.familySources ?? []),
+    ...standalones.map((entry, index) => ({
+      url: entry.forumUrl,
+      title: `DF Encyclopedia: ${entry.name}`,
+      variantLabel: entry.name,
+      isPrimary: family.familySources?.length ? false : index === 0,
+    })),
+  ])
+  const externalRefs = gatherWeaponExternalRefs(
+    [family, ...standalones],
+    new Set([
+      family.slug,
+      ...(family.aliasSlugs ?? []),
+      ...mergedLevels.map((level) => weaponSlugForName(level.name)),
+      ...standalones.map((entry) => entry.slug),
+    ])
+  )
+  const mergedFamily = computeFamilyFlags({
+    ...family,
+    aliasSlugs: buildWeaponFamilyAliasSlugs(family.familyName, mergedLevels, [
+      ...(family.aliasSlugs ?? []),
+      ...standalones.map((entry) => entry.slug),
+    ]),
+    familySources,
+    shared: {
+      ...family.shared,
+      ...(externalRefs.length > 0 ? { alsoSee: externalRefs } : { alsoSee: undefined }),
+    },
+    levelVariants: mergedLevels,
+    hasDA: false,
+    hasDC: false,
+    hasDM: false,
+    hasFree: false,
+    hasMerge: false,
+  })
+
+  const standaloneSlugs = new Set(standalones.map((entry) => entry.slug))
+  return entries
+    .map((entry) => (entry.slug === family.slug ? mergedFamily : entry))
+    .filter((entry) => isWeaponFamilyEntry(entry) || !standaloneSlugs.has(entry.slug))
+}
+
+function splitFoamRolithStandaloneEntry(entries: WeaponEntry[]): WeaponEntry[] {
+  const family = entries.find(
+    (entry): entry is WeaponFamily =>
+      isWeaponFamilyEntry(entry) && entry.familyName === 'Foam Hammer'
+  )
+  if (!family) return entries
+  if (entries.some((entry) => entry.slug === 'weapon-foam-rolith-s-hammer')) return entries
+
+  const foamRolithLevels = family.levelVariants.filter((level) =>
+    /^Foam Rolith's Hammer$/i.test(level.name)
+  )
+  if (foamRolithLevels.length === 0) return entries
+
+  const foamRolithLevel = foamRolithLevels[0]
+  const foamRolith = buildWeaponFromLevelVariant(foamRolithLevel, family)
+  const foamRolithUrls = new Set(foamRolithLevels.map((level) => level.sourceUrl).filter(Boolean))
+  const remainingLevels = family.levelVariants.filter(
+    (level) => !/^Foam Rolith's Hammer$/i.test(level.name)
+  )
+  const repairedFamily = computeFamilyFlags({
+    ...family,
+    aliasSlugs: buildWeaponFamilyAliasSlugs(
+      family.familyName,
+      remainingLevels,
+      (family.aliasSlugs ?? []).filter((slug) => slug !== 'weapon-foam-rolith-s-hammer')
+    ),
+    familySources: family.familySources
+      ? dedupeWeaponFamilySources(
+          family.familySources.filter((source) => !foamRolithUrls.has(source.url))
+        )
+      : [],
+    levelVariants: remainingLevels,
+  })
+
+  return entries.flatMap((entry) =>
+    entry.slug === family.slug ? [repairedFamily, foamRolith] : [entry]
+  )
+}
+
+function addFoamHammerSiblingRefs(entries: WeaponEntry[]): WeaponEntry[] {
+  const clusterSlugs = new Set([
+    'weapon-foam-hammer',
+    'weapon-half-of-a-foam-hammer',
+    'weapon-foam-rolith-s-hammer',
+    'weapon-hammer-rolith-s-dress-uniform-default',
+    'weapon-rolith-s-hammer-of-protection',
+  ])
+  const clusterEntries = entries.filter((entry) => clusterSlugs.has(entry.slug))
+  if (clusterEntries.length < 2) return entries
+
+  const refForEntry = (entry: WeaponEntry): AlsoSeeRef => ({
+    name: isWeaponFamilyEntry(entry) ? entry.familyName : entry.name,
+    slug: entry.slug,
+    type: 'weapon',
+    url: entry.forumUrl,
+  })
+  const clusterRefs = clusterEntries.map(refForEntry)
+  const addRefs = (entry: WeaponEntry) => {
+    const existingRefs = isWeaponFamilyEntry(entry)
+      ? (entry.shared.alsoSee ?? [])
+      : (entry.alsoSee ?? [])
+    const mergedRefs = Array.from(
+      new Map(
+        [...existingRefs, ...clusterRefs.filter((ref) => ref.slug !== entry.slug)].map((ref) => [
+          `${ref.type}:${ref.slug}`.toLowerCase(),
+          ref,
+        ])
+      ).values()
+    ).sort((a, b) => compareTitles(a.name, b.name))
+
+    if (isWeaponFamilyEntry(entry)) {
+      return {
+        ...entry,
+        shared: {
+          ...entry.shared,
+          alsoSee: mergedRefs,
+        },
+      }
+    }
+
+    return {
+      ...entry,
+      alsoSee: mergedRefs,
+    }
+  }
+
+  return entries.map((entry) => (clusterSlugs.has(entry.slug) ? addRefs(entry) : entry))
 }
 
 function buildLevelVariantFromWeapon(weapon: Weapon, familyName: string): LevelVariant {
@@ -1330,9 +1864,76 @@ function buildLevelVariantFromWeapon(weapon: Weapon, familyName: string): LevelV
     ...(weapon.elements[0] ? { element: weapon.elements[0] } : {}),
     ...(weapon.resists ? { resists: weapon.resists } : {}),
     ...(weapon.rarity ? { rarity: weapon.rarity } : {}),
+    ...(weapon.itemType ? { itemType: weapon.itemType } : {}),
     ...(weapon.notes ? { notes: weapon.notes } : {}),
     ...(weapon.retired ? { retired: true } : {}),
   }
+}
+
+function buildWeaponFromLevelVariant(level: LevelVariant, family: WeaponFamily): Weapon {
+  const obtainMethods = level.obtainVariants
+  const elements = [
+    level.element ?? family.shared.element,
+    ...family.elements.filter((element) => element !== (level.element ?? family.shared.element)),
+  ].filter((value): value is string => Boolean(value))
+  const hasDA = obtainMethods.some((method) => method.daRequired)
+  const hasDC = obtainMethods.some(obtainVariantHasDC)
+  const hasDM = obtainMethods.some((method) => method.dmRequired || method.priceType === 'dm')
+  const hasFree = obtainMethods.some((method) => method.priceType === 'free')
+  const hasMerge = obtainMethods.some((method) => method.priceType === 'merge')
+
+  return {
+    id: weaponSlugForName(level.name),
+    name: level.name,
+    slug: weaponSlugForName(level.name),
+    type: 'weapon',
+    subtype: family.subtype,
+    description: level.description ?? family.shared.description,
+    forumUrl: level.sourceUrl ?? family.forumUrl,
+    releaseDate: family.releaseDate ?? '',
+    ...((level.imageUrl ?? family.shared.imageUrl)
+      ? { imageUrl: level.imageUrl ?? family.shared.imageUrl }
+      : {}),
+    ...((level.alternativeImages ?? family.shared.alternativeImages)
+      ? { alternativeImages: level.alternativeImages ?? family.shared.alternativeImages }
+      : {}),
+    elements,
+    level: String(level.actualLevel ?? level.levelDisplay),
+    damage: level.damage,
+    stats: level.stats,
+    ...((level.resists ?? family.shared.resists)
+      ? { resists: level.resists ?? family.shared.resists }
+      : {}),
+    ...((level.rarity ?? family.shared.rarity)
+      ? { rarity: level.rarity ?? family.shared.rarity }
+      : {}),
+    ...((level.itemType ?? family.itemType) ? { itemType: level.itemType ?? family.itemType } : {}),
+    obtainMethods,
+    tags: family.tags,
+    daRequired: hasDA,
+    dcRequired: hasDC,
+    dmRequired: hasDM,
+    ...(hasFree ? { hasFree: true } : {}),
+    ...(hasMerge ? { hasMerge: true } : {}),
+    ...(level.notes ? { notes: level.notes } : {}),
+    ...(family.shared.alsoSee ? { alsoSee: family.shared.alsoSee } : {}),
+    ...(level.retired || family.retired ? { retired: true } : {}),
+    ...(family.isTemp ? { isTemp: true } : {}),
+    ...(family.isRare ? { isRare: true } : {}),
+    ...(family.isSeasonal ? { isSeasonal: true } : {}),
+    ...(family.isSpecialOffer ? { isSpecialOffer: true } : {}),
+    ...(family.isCosmetic ? { isCosmetic: true } : {}),
+    ...(family.hasSpecial ? { hasSpecial: true } : {}),
+    ...(family.hasArmorCustomization ? { hasArmorCustomization: true } : {}),
+  }
+}
+
+function splitInvalidGenericWeaponFamilies(entries: WeaponEntry[]): WeaponEntry[] {
+  return entries.flatMap((entry): WeaponEntry[] => {
+    if (!isWeaponFamilyEntry(entry)) return [entry]
+    if (!/^(?:base|default)$/i.test(entry.familyName)) return [entry]
+    return entry.levelVariants.map((level) => buildWeaponFromLevelVariant(level, entry))
+  })
 }
 
 function gatherWeaponExternalRefs(items: WeaponEntry[], internalSlugs: Set<string>): AlsoSeeRef[] {
@@ -1355,12 +1956,15 @@ function getSpecialWeaponVariantName(name: string, familyName: string): string |
   if (familyName === 'Half Orchidea') {
     return name.replace(/^Half[-\s]*/i, '').replace(/\s+Orchidea$/i, '') || '(Base)'
   }
-  if (familyName === 'Half Foam Hammer') {
-    return name.replace(/^Half of a\s+/i, '').replace(/\s+Foam Hammer$/i, '') || '(Base)'
+  if (familyName === 'Half of a Foam Hammer') {
+    const stripped = name
+      .replace(/^Half of a\s+/i, '')
+      .replace(/\s+Foam Hammer$/i, '')
+      .trim()
+    return !stripped || stripped === 'Foam Hammer' ? '(Base)' : stripped
   }
   if (familyName === 'Foam Hammer') {
     if (/^Foam Hammer(?:\s+\(|$)/i.test(name)) return '(Base)'
-    if (/^Foam Rolith's Hammer$/i.test(name)) return "Rolith's"
     return name.replace(/\s+Foam Hammer$/i, '') || '(Base)'
   }
   if (familyName === "Rolith's Hammer") {
@@ -1368,6 +1972,71 @@ function getSpecialWeaponVariantName(name: string, familyName: string): string |
     if (/Protection/i.test(name)) return 'Protection'
   }
   return undefined
+}
+
+function getSpecialWeaponLevelVariantName(
+  level: LevelVariant,
+  familyName: string
+): string | undefined {
+  if (familyName === 'Eternal Drumstick') {
+    const messageId = level.sourceUrl ? getMessageIdFromForumUrl(level.sourceUrl) : undefined
+    const sizeByMessageId: Record<string, string> = {
+      '22424948': '(Base)',
+      '22424949': '(L)',
+      '22424950': '(XL)',
+    }
+    const size = messageId ? sizeByMessageId[messageId] : undefined
+    if (!size) return undefined
+    return level.obtainVariants.some(obtainVariantHasDC) ? `${size} (DC)` : size
+  }
+
+  return getSpecialWeaponVariantName(level.name, familyName)
+}
+
+function getWeaponFamilySourceVariantLabel(level: LevelVariant, familyName: string): string {
+  if (familyName === 'Eternal Drumstick') {
+    const baseVariant = level.variantName?.replace(/\s+\(DC\)$/i, '').trim()
+    if (baseVariant === '(L)' || baseVariant === '(XL)') {
+      return `${familyName} ${baseVariant}`
+    }
+    return familyName
+  }
+
+  return level.variantName === '(Base)'
+    ? `The ${familyName}`
+    : level.variantName &&
+        normalizeWeaponComparableTitle(level.name) === normalizeWeaponComparableTitle(familyName)
+      ? `${familyName} ${level.variantName}`
+      : normalizeWeaponSourceVariantLabel(level.name)
+}
+
+function getSourceTitleVariantName(
+  sourceTitle: string | undefined,
+  familyName: string
+): string | undefined {
+  if (!sourceTitle) return undefined
+  const title = sourceTitle.replace(/^DF Encyclopedia:\s*/i, '').trim()
+  const match = title.match(/\(([^)]+)\)\s*$/)
+  if (!match) return undefined
+  const titleBase = stripVersionSuffix(title.replace(/\s+\([^)]+\)\s*$/, '').trim())
+  if (normalizeWeaponComparableTitle(titleBase) !== normalizeWeaponComparableTitle(familyName)) {
+    return undefined
+  }
+  const value = match[1]?.trim()
+  if (!value || /^All Versions$/i.test(value)) return undefined
+  return `(${normalizeRomanDisplay(value)})`
+}
+
+function normalizeRedundantBaseVariantNames(levels: LevelVariant[]): LevelVariant[] {
+  if (levels.length <= 1) return levels
+  if (!levels.every((level) => level.variantName === '(Base)')) return levels
+  const levelKeys = new Set(levels.map((level) => String(level.actualLevel ?? level.levelDisplay)))
+  if (levelKeys.size !== levels.length) return levels
+
+  return levels.map((level) => {
+    const { variantName: _variantName, ...rest } = level
+    return rest
+  })
 }
 
 function buildWeaponCrossPostFamily(
@@ -1378,7 +2047,11 @@ function buildWeaponCrossPostFamily(
     compareTitles(getWeaponEntryName(a), getWeaponEntryName(b))
   )
   const familyAnchor = sorted.find(isWeaponFamilyEntry)
-  const familyName = familyNameOverride ?? deriveWeaponCrossPostFamilyName(sorted)
+  const familyName =
+    familyNameOverride ??
+    deriveWeaponCrossPostFamilyName(sorted, {
+      allowSingleTokenSuffix: isSingleTokenSharedFamilyGroup(sorted),
+    })
   const familySlug = familyAnchor?.slug ?? weaponSlugForName(familyName)
   const internalSlugs = new Set(sorted.map((entry) => entry.slug))
   const levelVariants = dedupeWeaponLevelVariants(
@@ -1387,7 +2060,7 @@ function buildWeaponCrossPostFamily(
         ? entry.levelVariants.map((variant) => ({
             ...variant,
             variantName:
-              getSpecialWeaponVariantName(variant.name, familyName) ?? variant.variantName,
+              getSpecialWeaponLevelVariantName(variant, familyName) ?? variant.variantName,
             sourceUrl: variant.sourceUrl ?? entry.forumUrl,
           }))
         : (() => {
@@ -1402,11 +2075,10 @@ function buildWeaponCrossPostFamily(
             ]
           })()
     )
-  )
-    .sort((a, b) => {
-      const levelCompare = (a.actualLevel ?? a.levelNumber) - (b.actualLevel ?? b.levelNumber)
-      return levelCompare || compareTitles(a.variantName ?? a.name, b.variantName ?? b.name)
-    })
+  ).sort((a, b) => {
+    const levelCompare = (a.actualLevel ?? a.levelNumber) - (b.actualLevel ?? b.levelNumber)
+    return levelCompare || compareTitles(a.variantName ?? a.name, b.variantName ?? b.name)
+  })
   const descriptions = levelVariants
     .map((variant) => variant.description)
     .filter((value): value is string => Boolean(value))
@@ -1420,7 +2092,9 @@ function buildWeaponCrossPostFamily(
     )
   const elements = Array.from(
     new Set(
-      levelVariants.map((variant) => variant.element).filter((value): value is string => Boolean(value))
+      levelVariants
+        .map((variant) => variant.element)
+        .filter((value): value is string => Boolean(value))
     )
   )
   const resists = levelVariants
@@ -1429,6 +2103,13 @@ function buildWeaponCrossPostFamily(
   const rarities = levelVariants
     .map((variant) => variant.rarity)
     .filter((value): value is string => Boolean(value))
+  const itemTypes = Array.from(
+    new Set(
+      levelVariants
+        .map((variant) => variant.itemType)
+        .filter((value): value is string => Boolean(value))
+    )
+  )
   const notes = levelVariants
     .map((variant) => variant.notes)
     .filter((value): value is string => Boolean(value))
@@ -1468,6 +2149,7 @@ function buildWeaponCrossPostFamily(
     forumUrl: familyAnchor?.forumUrl ?? sorted[0].forumUrl,
     familyOrigin: 'cross-post',
     familySources,
+    ...(itemTypes.length === 1 ? { itemType: itemTypes[0] } : {}),
     shared: {
       description:
         descriptions.length > 0 && allWeaponValuesSame(descriptions)
@@ -1481,7 +2163,9 @@ function buildWeaponCrossPostFamily(
       ...(resists.length > 0 && allWeaponValuesSame(resists) ? { resists: resists[0] } : {}),
       ...(rarities.length > 0 && allWeaponValuesSame(rarities) ? { rarity: rarities[0] } : {}),
       ...(notes.length > 0 && allWeaponValuesSame(notes) ? { notes: notes[0] } : {}),
-      ...(specials.length > 0 && allWeaponValuesSame(specials) ? { weaponSpecial: specials[0] } : {}),
+      ...(specials.length > 0 && allWeaponValuesSame(specials)
+        ? { weaponSpecial: specials[0] }
+        : {}),
       ...(armorCustomizations.length > 0 && allWeaponValuesSame(armorCustomizations)
         ? { armorCustomization: armorCustomizations[0] }
         : {}),
@@ -1516,7 +2200,9 @@ function buildWeaponCrossPostFamily(
   })
 }
 
-function splitSpecialWeaponGroup(group: WeaponEntry[]): Array<{ familyName?: string; entries: WeaponEntry[] }> {
+function splitSpecialWeaponGroup(
+  group: WeaponEntry[]
+): Array<{ familyName?: string; entries: WeaponEntry[] }> {
   const names = group.map(getWeaponEntryName)
   const hasAny = (pattern: RegExp) => names.some((name) => pattern.test(name))
 
@@ -1538,11 +2224,14 @@ function splitSpecialWeaponGroup(group: WeaponEntry[]): Array<{ familyName?: str
     )
     const foam = group.filter((entry) => {
       const name = getWeaponEntryName(entry)
-      return !/^Half of a\b/i.test(name) && !/^(?:Hammer \(Rolith's Dress Uniform Default\)|Rolith's Hammer of Protection)/i.test(name)
+      return (
+        !/^Half of a\b/i.test(name) &&
+        !/^(?:Hammer \(Rolith's Dress Uniform Default\)|Rolith's Hammer of Protection)/i.test(name)
+      )
     })
     return [
       ...(foam.length > 0 ? [{ familyName: 'Foam Hammer', entries: foam }] : []),
-      ...(half.length > 0 ? [{ familyName: 'Half Foam Hammer', entries: half }] : []),
+      ...(half.length > 0 ? [{ familyName: 'Half of a Foam Hammer', entries: half }] : []),
       ...(rolith.length > 0 ? [{ familyName: "Rolith's Hammer", entries: rolith }] : []),
     ]
   }
@@ -1558,10 +2247,14 @@ function cloneWeaponFamilyWithLevels(
   const slug = weaponSlugForName(familyName)
   const adjustedLevels = levels.map((level) => ({
     ...level,
-    variantName: getSpecialWeaponVariantName(level.name, familyName) ?? level.variantName,
+    variantName: getSpecialWeaponLevelVariantName(level, familyName) ?? level.variantName,
   }))
   const elements = Array.from(
-    new Set(adjustedLevels.map((level) => level.element).filter((value): value is string => Boolean(value)))
+    new Set(
+      adjustedLevels
+        .map((level) => level.element)
+        .filter((value): value is string => Boolean(value))
+    )
   )
   const refs = (family.shared.alsoSee ?? []).filter(
     (ref) => !adjustedLevels.some((level) => weaponSlugForName(level.name) === ref.slug)
@@ -1608,7 +2301,9 @@ function splitExistingSpecialWeaponFamilies(entries: WeaponEntry[]): WeaponEntry
     const normalizedEntry = dedupeWeaponFamilyEntry(entry)
 
     if (normalizedEntry.levelVariants.some((level) => /\bOrchidea$/i.test(level.name))) {
-      const normal = normalizedEntry.levelVariants.filter((level) => !/^Half[-\s]/i.test(level.name))
+      const normal = normalizedEntry.levelVariants.filter(
+        (level) => !/^Half[-\s]/i.test(level.name)
+      )
       const half = normalizedEntry.levelVariants.filter((level) => /^Half[-\s]/i.test(level.name))
       if (normal.length > 0 && half.length > 0) {
         return [
@@ -1634,8 +2329,12 @@ function splitExistingSpecialWeaponFamilies(entries: WeaponEntry[]): WeaponEntry
       )
       if ([foam, half, rolith].filter((group) => group.length > 0).length > 1) {
         return [
-          ...(foam.length > 0 ? [cloneWeaponFamilyWithLevels(normalizedEntry, 'Foam Hammer', foam)] : []),
-          ...(half.length > 0 ? [cloneWeaponFamilyWithLevels(normalizedEntry, 'Half Foam Hammer', half)] : []),
+          ...(foam.length > 0
+            ? [cloneWeaponFamilyWithLevels(normalizedEntry, 'Foam Hammer', foam)]
+            : []),
+          ...(half.length > 0
+            ? [cloneWeaponFamilyWithLevels(normalizedEntry, 'Half of a Foam Hammer', half)]
+            : []),
           ...(rolith.length > 0
             ? [cloneWeaponFamilyWithLevels(normalizedEntry, "Rolith's Hammer", rolith)]
             : []),
@@ -1648,6 +2347,7 @@ function splitExistingSpecialWeaponFamilies(entries: WeaponEntry[]): WeaponEntry
 }
 
 export function promoteWeaponCrossPostFamilies(entries: WeaponEntry[]): WeaponEntry[] {
+  entries = splitInvalidGenericWeaponFamilies(entries)
   entries = splitExistingSpecialWeaponFamilies(entries)
   const visited = new Set<string>()
   const groups: WeaponEntry[][] = []
@@ -1677,6 +2377,12 @@ export function promoteWeaponCrossPostFamilies(entries: WeaponEntry[]): WeaponEn
     const hasStandalone = group.some((entry) => !isWeaponFamilyEntry(entry))
     const familyCount = group.filter(isWeaponFamilyEntry).length
     if (group.length <= 1 || !hasStandalone || familyCount > 1) return group
+    if (
+      isSingleTokenSharedFamilyGroup(group) &&
+      !shouldPromoteDenseSingleTokenExplicitGroup(group)
+    ) {
+      return group
+    }
     return splitSpecialWeaponGroup(group).flatMap(({ familyName, entries }) =>
       entries.length > 1 ? [buildWeaponCrossPostFamily(entries, familyName)] : entries
     )
@@ -1684,15 +2390,54 @@ export function promoteWeaponCrossPostFamilies(entries: WeaponEntry[]): WeaponEn
 }
 
 async function fetchPostContent(messageId: string, cookie: string): Promise<string> {
-  return getAllPostContent(
+  return `<!-- source-url:${directForumPostUrl(messageId)} -->\n${getAllPostContent(
     await withRetry(`printable ${messageId}`, () => fetchPrintable(messageId, cookie))
+  )}`
+}
+
+async function fetchThreadPostContent(messageId: string, cookie: string): Promise<string> {
+  const threadHtml = await withRetry(`thread ${messageId}`, () =>
+    fetchThreadPages(messageId, cookie)
   )
+  const posts = extractThreadPostContents(threadHtml)
+  if (posts.length === 0) throw new Error(`Could not find thread posts for ${messageId}`)
+  return posts
+    .map((post) => `<!-- source-url:${post.sourceUrl} -->\n${post.html}`)
+    .join('\n<hr data-post-break="true">\n')
+}
+
+async function fetchStubContent(
+  stub: WeaponStub,
+  cookie: string,
+  preferThread = false
+): Promise<string> {
+  if (preferThread) {
+    try {
+      return await fetchThreadPostContent(stub.messageId, cookie)
+    } catch {
+      // Fall back to the direct printable post below; some old entries do not
+      // expose a complete thread page even when their printable post works.
+    }
+  }
+
+  try {
+    return await fetchPostContent(stub.messageId, cookie)
+  } catch (error) {
+    if (!isPostUnavailableError(error) || !/\bfb\.asp\?/i.test(stub.forumUrl)) throw error
+    return fetchThreadPostContent(stub.messageId, cookie)
+  }
 }
 
 function entryMatchesSelectedLetters(entry: WeaponEntry, selectedLetters?: string[]): boolean {
   if (!selectedLetters || selectedLetters.length === 0) return false
   const name = 'familyName' in entry ? entry.familyName : entry.name
   return selectedLetters.includes(getInitialForName(name))
+}
+
+function familyOwnsIncomingAlias(entry: WeaponEntry, incomingSlugs: Set<string>): boolean {
+  return (
+    isWeaponFamilyEntry(entry) && entry.aliasSlugs?.some((slug) => incomingSlugs.has(slug)) === true
+  )
 }
 
 function readExistingEntries(file: string): WeaponEntry[] {
@@ -1710,28 +2455,173 @@ export function canonicalizeWeaponAlsoSeeRefs(entries: WeaponEntry[]): WeaponEnt
     }
   }
 
-  return entries.map((entry) => {
-    const rewriteRefs = (refs?: AlsoSeeRef[]) =>
-      refs?.map((ref) => {
-        const canonical = aliasToCanonical.get(ref.slug)
-        return canonical ? { ...ref, slug: canonical.slug, name: canonical.name } : ref
-      })
+  const dedupeRefs = (refs?: AlsoSeeRef[]) => {
+    const rewritten = refs?.map((ref) => {
+      const canonical = aliasToCanonical.get(ref.slug)
+      return canonical ? { ...ref, slug: canonical.slug, name: canonical.name } : ref
+    })
+    if (!rewritten) return undefined
 
+    return Array.from(
+      new Map(rewritten.map((ref) => [`${ref.type}:${ref.slug}`.toLowerCase(), ref])).values()
+    )
+  }
+
+  return entries.map((entry) => {
     if ('levelVariants' in entry) {
       return {
         ...entry,
         shared: {
           ...entry.shared,
-          alsoSee: rewriteRefs(entry.shared.alsoSee)?.filter((ref) => ref.slug !== entry.slug),
+          alsoSee: dedupeRefs(entry.shared.alsoSee)?.filter((ref) => ref.slug !== entry.slug),
         },
       }
     }
 
     return {
       ...entry,
-      alsoSee: rewriteRefs(entry.alsoSee)?.filter((ref) => ref.slug !== entry.slug),
+      alsoSee: dedupeRefs(entry.alsoSee)?.filter((ref) => ref.slug !== entry.slug),
     }
   })
+}
+
+export function normalizeWeaponFamilyDisplayLabels(entries: WeaponEntry[]): WeaponEntry[] {
+  return entries.map((entry) => {
+    if (!isWeaponFamilyEntry(entry)) return entry
+
+    const familyName = normalizeWeaponFamilyName(entry.familyName)
+    const sourceByUrl = new Map((entry.familySources ?? []).map((source) => [source.url, source]))
+    const sourceVariantByUrl = new Map(
+      (entry.familySources ?? [])
+        .map((source) => [
+          source.url,
+          getSourceTitleVariantName(source.title, familyName) ??
+            getSourceTitleVariantName(source.variantLabel, familyName),
+        ])
+        .filter((value): value is [string, string] => Boolean(value[1]))
+    )
+    const hasSourceTitleVariants = sourceVariantByUrl.size > 0
+    const levelVariants = normalizeRedundantBaseVariantNames(
+      dedupeWeaponLevelVariants(
+        entry.levelVariants.map((level) => {
+          const name = normalizeWeaponVariantDisplayName(level.name, familyName)
+          const sourceVariantName = level.sourceUrl
+            ? sourceVariantByUrl.get(level.sourceUrl)
+            : undefined
+          const exactSourceTitle =
+            level.sourceUrl && sourceByUrl.has(level.sourceUrl)
+              ? stripVersionSuffix(
+                  (sourceByUrl.get(level.sourceUrl)?.title ?? '')
+                    .replace(/^DF Encyclopedia:\s*/i, '')
+                    .trim()
+                )
+              : undefined
+          const isExactSourceFamily =
+            exactSourceTitle !== undefined &&
+            normalizeWeaponComparableTitle(exactSourceTitle) ===
+              normalizeWeaponComparableTitle(familyName)
+          return {
+            ...level,
+            name,
+            variantName:
+              sourceVariantName ??
+              (hasSourceTitleVariants && isExactSourceFamily ? '(Base)' : undefined) ??
+              getSpecialWeaponLevelVariantName({ ...level, name }, familyName) ??
+              deriveWeaponCrossPostVariantName(name, familyName) ??
+              level.variantName,
+          }
+        })
+      )
+    )
+    const sourceLabelByUrl = new Map(
+      levelVariants
+        .filter((level) => level.sourceUrl)
+        .map((level) => [level.sourceUrl!, getWeaponFamilySourceVariantLabel(level, familyName)])
+    )
+    return {
+      ...entry,
+      id: entry.id === entry.slug ? weaponSlugForName(familyName) : entry.id,
+      familyName,
+      slug: weaponSlugForName(familyName),
+      aliasSlugs: buildWeaponFamilyAliasSlugs(
+        familyName,
+        [...entry.levelVariants, ...levelVariants],
+        [...(entry.aliasSlugs ?? []), entry.slug]
+      ),
+      familySources: entry.familySources
+        ? dedupeWeaponFamilySources(
+            entry.familySources.map((source) => {
+              const sourceVariantLabel =
+                sourceLabelByUrl.get(source.url) ??
+                (source.variantLabel
+                  ? normalizeWeaponSourceVariantLabel(source.variantLabel)
+                  : undefined)
+              return {
+                ...source,
+                ...(sourceVariantLabel ? { variantLabel: sourceVariantLabel } : {}),
+              }
+            })
+          )
+        : undefined,
+      levelVariants,
+    }
+  })
+}
+
+export function removeWeaponAliasStandaloneEntries(entries: WeaponEntry[]): WeaponEntry[] {
+  const aliasSlugs = new Set(
+    entries
+      .filter(isWeaponFamilyEntry)
+      .flatMap((entry) => entry.aliasSlugs ?? [])
+      .filter(Boolean)
+  )
+
+  if (aliasSlugs.size === 0) return entries
+
+  return entries.filter((entry) => isWeaponFamilyEntry(entry) || !aliasSlugs.has(entry.slug))
+}
+
+function dedupeWeaponEntriesBySlug(entries: WeaponEntry[]): WeaponEntry[] {
+  const bySlug = new Map<string, WeaponEntry>()
+
+  for (const entry of entries) {
+    const existing = bySlug.get(entry.slug)
+    if (!existing) {
+      bySlug.set(entry.slug, entry)
+      continue
+    }
+
+    if (isWeaponFamilyEntry(existing) && isWeaponFamilyEntry(entry)) {
+      bySlug.set(
+        entry.slug,
+        dedupeWeaponFamilyEntry({
+          ...existing,
+          aliasSlugs: Array.from(
+            new Set([...(existing.aliasSlugs ?? []), ...(entry.aliasSlugs ?? [])])
+          ),
+          familySources: dedupeWeaponFamilySources([
+            ...(existing.familySources ?? []),
+            ...(entry.familySources ?? []),
+          ]),
+          shared: {
+            ...existing.shared,
+            alsoSee: [...(existing.shared.alsoSee ?? []), ...(entry.shared.alsoSee ?? [])],
+          },
+          levelVariants: dedupeWeaponLevelVariants([
+            ...existing.levelVariants,
+            ...entry.levelVariants,
+          ]),
+        })
+      )
+      continue
+    }
+
+    if (!isWeaponFamilyEntry(existing) && isWeaponFamilyEntry(entry)) {
+      bySlug.set(entry.slug, entry)
+    }
+  }
+
+  return Array.from(bySlug.values())
 }
 
 function writeDatasets(
@@ -1743,53 +2633,66 @@ function writeDatasets(
 ) {
   for (const subtype of selectedSubtypes) {
     const incoming = entriesBySubtype.get(subtype) ?? []
-    for (const file of WEAPON_DATA_FILES[subtype]) {
-      const existing = readExistingEntries(file)
-      const incomingForFile = incoming.filter((entry) => dataFileForEntry(entry) === file)
-      const incomingSlugs = new Set(incomingForFile.map((entry) => entry.slug))
-      const preserved = existing.filter((entry) => {
-        const displayName = 'familyName' in entry ? entry.familyName : entry.name
-        if (incomingSlugs.has(entry.slug)) {
-          const incomingSameSlug = incomingForFile.filter(
-            (incomingEntry) => incomingEntry.slug === entry.slug
-          )
-          if (
-            shouldPreserveFamilyForSameSlugIncoming(
-              entry,
-              incomingSameSlug,
-              isWeaponFamilyEntry
-            )
-          ) {
-            return true
-          }
-          return false
-        }
-        const entryMessageId = getMessageIdFromForumUrl(entry.forumUrl)
-        if (entryMessageId && selectedMessageIds?.has(entryMessageId)) return false
-        if (selectedNames && matchesNameFilter(displayName, { names: selectedNames })) {
-          return false
-        }
-        if (
-          'aliasSlugs' in entry &&
-          entry.aliasSlugs?.some((slug) => selectedNames?.includes(slug.replace(/^weapon-/, '')))
-        ) {
-          return false
-        }
-        if (entryMatchesSelectedLetters(entry, selectedLetters)) return false
-        return true
-      })
-      const merged = canonicalizeWeaponAlsoSeeRefs(
-        promoteWeaponCrossPostFamilies(
-          mergeSameSlugWeaponFamilies([...preserved, ...incomingForFile])
+    const files = WEAPON_DATA_FILES[subtype]
+    const existingByFile = new Map(files.map((file) => [file, readExistingEntries(file)]))
+    const existing = Array.from(existingByFile.values()).flat()
+    const incomingSlugs = new Set(incoming.map((entry) => entry.slug))
+    const preserved = existing.filter((entry) => {
+      const displayName = 'familyName' in entry ? entry.familyName : entry.name
+      if (familyOwnsIncomingAlias(entry, incomingSlugs)) return true
+      if (incomingSlugs.has(entry.slug)) {
+        const incomingSameSlug = incoming.filter(
+          (incomingEntry) => incomingEntry.slug === entry.slug
         )
-      ).sort((a, b) =>
-        compareTitles(
-          'familyName' in a ? a.familyName : a.name,
-          'familyName' in b ? b.familyName : b.name
+        if (shouldPreserveFamilyForSameSlugIncoming(entry, incomingSameSlug, isWeaponFamilyEntry)) {
+          return true
+        }
+        return false
+      }
+      const entryMessageId = getMessageIdFromForumUrl(entry.forumUrl)
+      if (entryMessageId && selectedMessageIds?.has(entryMessageId)) return false
+      if (selectedNames && matchesNameFilter(displayName, { names: selectedNames })) {
+        return false
+      }
+      if (
+        'aliasSlugs' in entry &&
+        entry.aliasSlugs?.some((slug) => selectedNames?.includes(slug.replace(/^weapon-/, '')))
+      ) {
+        return false
+      }
+      if (entryMatchesSelectedLetters(entry, selectedLetters)) return false
+      return true
+    })
+    const merged = removeWeaponAliasStandaloneEntries(
+      addFoamHammerSiblingRefs(
+        canonicalizeWeaponAlsoSeeRefs(
+          dedupeWeaponEntriesBySlug(
+            splitFoamRolithStandaloneEntry(
+              normalizeWeaponFamilyDisplayLabels(
+                mergeFoamHammerStandaloneMembers(
+                  promoteWeaponCrossPostFamilies(
+                    mergeSameSlugWeaponFamilies([...preserved, ...incoming])
+                  )
+                )
+              )
+            )
+          )
         )
       )
-      fs.writeFileSync(path.resolve(OUTPUT_DIR, file), `${JSON.stringify(merged, null, 2)}\n`)
-      console.log(`Wrote ${merged.length} entries to ${file}`)
+    ).sort((a, b) =>
+      compareTitles(
+        'familyName' in a ? a.familyName : a.name,
+        'familyName' in b ? b.familyName : b.name
+      )
+    )
+
+    for (const file of files) {
+      const entriesForFile = merged.filter((entry) => dataFileForEntry(entry) === file)
+      fs.writeFileSync(
+        path.resolve(OUTPUT_DIR, file),
+        `${JSON.stringify(entriesForFile, null, 2)}\n`
+      )
+      console.log(`Wrote ${entriesForFile.length} entries to ${file}`)
     }
   }
   writeWeaponManifest(OUTPUT_DIR)
@@ -1838,7 +2741,9 @@ async function main() {
       }
       const subtype = selectedSubtypes.length === 1 ? selectedSubtypes[0] : undefined
       if (!subtype) {
-        console.warn(`⚠️  Skipping direct weapon URL because exactly one subtype is required: ${url}`)
+        console.warn(
+          `⚠️  Skipping direct weapon URL because exactly one subtype is required: ${url}`
+        )
         continue
       }
       if (!allStubs.some((stub) => stub.messageId === messageId && stub.subtype === subtype)) {
@@ -1851,22 +2756,22 @@ async function main() {
       }
     }
   }
+  const crossSubtypeContext = buildCrossSubtypeThreadContext(allStubs)
   const resolveAlsoSee = createWeaponRefResolver(allStubs)
   const scopedStubs = allStubs.filter((stub) => {
-      if (!selectedSubtypes.includes(stub.subtype)) return false
-      if (directMessageIds.size > 0 && !directMessageIds.has(stub.messageId)) return false
-      if (
-        lettersArg &&
-        lettersArg.length > 0 &&
-        !lettersArg.includes(getInitialForName(stub.name))
-      ) {
-        return false
-      }
-      return true
-    })
+    if (!selectedSubtypes.includes(stub.subtype)) return false
+    if (directMessageIds.size > 0 && !directMessageIds.has(stub.messageId)) return false
+    if (lettersArg && lettersArg.length > 0 && !lettersArg.includes(getInitialForName(stub.name))) {
+      return false
+    }
+    return true
+  })
   const namedStubs = applyNameFilter(scopedStubs, nameFilter, (stub) => stub.name)
   if (namedStubs.message) console.log(namedStubs.message)
-  const selectedStubs = applyLimit(namedStubs.entries, limit)
+  const selectedStubs = applyLimit(
+    dedupeCrossSubtypeSelectedStubs(namedStubs.entries, crossSubtypeContext),
+    limit
+  )
   if (selectedStubs.length === 0) {
     console.log('No selected weapons matched; leaving weapon data unchanged.')
     return
@@ -1876,14 +2781,19 @@ async function main() {
   const entriesBySubtype = new Map<WeaponSubtype, WeaponEntry[]>(
     selectedSubtypes.map((subtype) => [subtype, []])
   )
+  const parsedMessageIds = new Set<string>()
+  const parsedNames: string[] = []
   await processWithConcurrency({
     items: selectedStubs,
     concurrency,
     startDelayMs: DELAY_MS,
     processItem: async (stub) => {
+      const scopedContext = crossSubtypeContext
+        .get(getWeaponThreadGroupKey(stub))
+        ?.get(stub.subtype)
       let html: string
       try {
-        html = await fetchPostContent(stub.messageId, cookie)
+        html = await fetchStubContent(stub, cookie, true)
       } catch (error) {
         // A deleted/moved forum post returns a hard HTTP 500. Skip it instead of
         // aborting the whole run; re-throw anything else so real errors surface.
@@ -1893,13 +2803,23 @@ async function main() {
         }
         throw error
       }
-      const entry = buildWeaponEntryOrFamily(stub, html, resolveAlsoSee)
+      const scopedHtml = scopeWeaponHtmlToSubtypeTitles(html, scopedContext?.names)
+      const extraAlsoSee = getCrossSubtypeAlsoSeeRefs(stub, crossSubtypeContext)
+      const entry = buildWeaponEntryOrFamily(stub, scopedHtml, resolveAlsoSee, extraAlsoSee)
       entriesBySubtype.get(stub.subtype)?.push(entry)
+      parsedMessageIds.add(stub.messageId)
+      parsedNames.push(...(scopedContext?.names ?? [stub.name]))
       console.log(`✓ ${stub.name}`)
     },
   })
 
-  writeDatasets(entriesBySubtype, selectedSubtypes, lettersArg, namesArg, directMessageIds)
+  writeDatasets(
+    entriesBySubtype,
+    selectedSubtypes,
+    lettersArg,
+    namesArg && parsedNames.length > 0 ? parsedNames.map(normalizeWeaponTitleKey) : undefined,
+    directMessageIds.size > 0 ? parsedMessageIds : undefined
+  )
 }
 
 if (process.argv[1] && path.basename(process.argv[1]) === 'scrape-weapons.ts') {

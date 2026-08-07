@@ -1,21 +1,25 @@
 /**
  * LevelSelector Component
- * 
+ *
  * Horizontal pill buttons for selecting which level to view in detail sections.
  * Used when obtain methods or attacks vary by level.
- * 
+ *
  * Features:
  * - Pill buttons [I] [II] [III▼] for each level
  * - Active level has gold highlight
  * - Horizontal scroll on mobile
  * - Minimum 44px touch targets
  * - Only renders when levels.length > 1
- * 
+ *
  * Example: Goldfish Knight level selector with 7 buttons (I through VII)
  */
 
 import type { LevelVariant } from '../../types/item'
-import { getLevelVariantLabels, shouldShowVariantColumn } from '../../utils/variantHelpers'
+import {
+  getLevelVariantLabels,
+  normalizeRomanDisplay,
+  shouldShowVariantColumn,
+} from '../../utils/variantHelpers'
 import type { ItemType } from '../../types/item'
 
 interface LevelSelectorProps {
@@ -43,12 +47,12 @@ export default function LevelSelector({
   }
 
   const variantLabels = forceLevelLabels
-    ? levels.map((level) => String(level.actualLevel ?? level.levelDisplay))
+    ? levels.map((level) => normalizeRomanDisplay(String(level.actualLevel ?? level.levelDisplay)))
     : getLevelVariantLabels(levels, familyName, itemType)
   const getButtonLabel = (level: LevelVariant, index: number) =>
     level.retired ? `${variantLabels[index]} (Retired)` : variantLabels[index]
   const indexedLevels = levels.map((level, index) => ({ level, index }))
-  
+
   const usesVariantLabels =
     !forceLevelLabels && shouldShowVariantColumn(levels, familyName, itemType, hideVariantColumn)
   const useDropdown = levels.length > 12
@@ -64,7 +68,7 @@ export default function LevelSelector({
       {useDropdown ? (
         <select
           value={String(activeIndex)}
-          onChange={event => onChange(Number.parseInt(event.target.value, 10))}
+          onChange={(event) => onChange(Number.parseInt(event.target.value, 10))}
           className="w-full sm:max-w-sm min-h-11 rounded-lg bg-bg-surface border border-border-default px-3 py-2 text-sm font-medium text-text-primary focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 focus:ring-offset-bg-base"
           aria-label={`Select ${usesVariantLabels ? 'variant' : 'level'}`}
         >
@@ -100,7 +104,7 @@ export default function LevelSelector({
           </div>
         </div>
       )}
-      
+
       {useDropdown && activeLevel && (
         <p className="text-xs text-text-muted">
           Showing {getButtonLabel(activeLevel, activeIndex)}

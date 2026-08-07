@@ -104,7 +104,7 @@ function stripHtml(html: string): string {
 
 function extractOtherInfoBulletLines(html: string): string[] {
   const match = html.match(
-    /<b>\s*<u>\s*Other\s+information\s*<\/u>\s*<\/b>([\s\S]*?)(?:Also\s+See:|<i>\s*Thanks\s+to|Thanks\s+to|<font color=['"]#eeeeee['"]|$)/i
+    /<b>\s*<u>\s*Other\s+informations?\s*<\/u>\s*<\/b>([\s\S]*?)(?:Also\s+See:|<i>\s*Thanks\s+to|Thanks\s+to|<font color=['"]#eeeeee['"]|$)/i
   )
   if (!match) return []
 
@@ -116,6 +116,56 @@ function extractOtherInfoBulletLines(html: string): string[] {
   ]
 
   if (bulletMatches.length === 0) return []
+
+  return bulletMatches
+    .map((match) => stripHtml(decodeHTML(match[1] ?? '')).trim())
+    .filter((line) => line.length > 0)
+}
+
+function extractStandaloneQuoteNoteLines(html: string): string[] {
+  const quoteBlocks = [
+    ...html.matchAll(/<blockquote[^>]*class=["']quote["'][^>]*>([\s\S]*?)<\/blockquote>/gi),
+  ]
+
+  if (quoteBlocks.length === 0) return []
+
+  const lines = quoteBlocks.flatMap((match) =>
+    stripHtml(decodeHTML(match[1] ?? ''))
+      .split('\n')
+      .map((line) => line.trim())
+      .filter((line) => line.length > 0 && !/^quote:\s*$/i.test(line))
+  )
+
+  if (lines.length === 0) return []
+
+  return ['quote:', lines[0], ...lines.slice(1).map((line) => `  ${line}`)]
+}
+
+function extractStandaloneQuoteFollowupBulletLines(html: string): string[] {
+  const quoteBlocks = [
+    ...html.matchAll(/<blockquote[^>]*class=["']quote["'][^>]*>[\s\S]*?<\/blockquote>/gi),
+  ]
+
+  if (quoteBlocks.length === 0) return []
+
+  const lastQuote = quoteBlocks[quoteBlocks.length - 1]
+  const lastQuoteHtml = lastQuote[0] ?? ''
+  const quoteIndex = lastQuote.index ?? -1
+  if (quoteIndex < 0) return []
+
+  const trailingHtml = html.slice(quoteIndex + lastQuoteHtml.length)
+  const boundaryMatch = trailingHtml.match(
+    /(?:Also\s+See:|<b>\s*<u>\s*Other\s+informations?\s*<\/u>\s*<\/b>|<i>\s*Thanks\s+to|Thanks\s+to|<font color=['"]#eeeeee['"])/i
+  )
+  const segment = boundaryMatch
+    ? trailingHtml.slice(0, boundaryMatch.index ?? trailingHtml.length)
+    : trailingHtml
+
+  const bulletMatches = [
+    ...segment.matchAll(
+      /<li>\s*(?:<i>)?\s*([\s\S]*?)(?:<\/i>)?\s*(?=(?:<br>\s*<li>)|(?:<li>)|$)/gi
+    ),
+  ]
 
   return bulletMatches
     .map((match) => stripHtml(decodeHTML(match[1] ?? '')).trim())
@@ -1029,7 +1079,10 @@ function getForumHostedImage(candidates: string[]): string | undefined {
   )
 }
 
-function extractImages(html: string, expectedName?: string): {
+function extractImages(
+  html: string,
+  expectedName?: string
+): {
   main?: string
   alternatives: Array<{ url: string; caption: string }>
 } {
@@ -1468,7 +1521,14 @@ export async function parsePetThreadMultiVariant(
   // Single-page AND no level indicator AND no multi-post variants → use existing logic (backward compat)
   if (totalPages === 1 && !hasLevelInName && !hasMultiPostVariants) {
     const data = parsePetThread(html, name)
-    const sameLevelFamily = buildVariantFamilyFromSinglePost(data, name, stub, chronology, nameToSlug, sourcePosts)
+    const sameLevelFamily = buildVariantFamilyFromSinglePost(
+      data,
+      name,
+      stub,
+      chronology,
+      nameToSlug,
+      sourcePosts
+    )
     if (sameLevelFamily) return sameLevelFamily
     return convertToPet(data, stub, chronology, nameToSlug)
   }
@@ -2580,7 +2640,7 @@ export function parsePetThread(
     } else {
       const nextFieldOffsets = [
         forwardHtml.search(/(?:<br>\s*)?Level:/i),
-        forwardHtml.search(/(?:<br>\s*)?<b><u>Other information<\/u><\/b>/i),
+        forwardHtml.search(/(?:<br>\s*)?<b><u>Other informations?<\/u><\/b>/i),
       ].filter((offset) => offset >= 0)
 
       if (nextFieldOffsets.length > 0) {
@@ -2925,6 +2985,8 @@ export function parsePetThread(
   if (currentAttack?.name) attacks.push(currentAttack as Attack)
 
   const recoveredOtherInfoLines = extractOtherInfoBulletLines(rawBody)
+  const recoveredQuoteNoteLines = extractStandaloneQuoteNoteLines(rawBody)
+  const recoveredQuoteFollowupBulletLines = extractStandaloneQuoteFollowupBulletLines(rawBody)
   const parsedNotesLookTruncated =
     noteLines.length > 0 &&
     recoveredOtherInfoLines.length > 0 &&
@@ -2936,6 +2998,26 @@ export function parsePetThread(
   } else if (parsedNotesLookTruncated) {
     noteLines.length = 0
     noteLines.push(...recoveredOtherInfoLines)
+  }
+
+  if (
+    recoveredQuoteNoteLines.length > 0 &&
+    !noteLines.some((line) => /^quote:\s*$/i.test(line.trim()))
+  ) {
+    noteLines.push(...recoveredQuoteNoteLines)
+  }
+
+  for (const line of recoveredQuoteFollowupBulletLines) {
+    if (!noteLines.includes(line)) {
+      noteLines.push(line)
+    }
+  }
+
+  if (recoveredQuoteFollowupBulletLines.length > 0) {
+    for (const attack of attacks) {
+      if (!attack.notes?.length) continue
+      attack.notes = attack.notes.filter((note) => !recoveredQuoteFollowupBulletLines.includes(note))
+    }
   }
 
   if (obtainMethods.length <= 1) {
