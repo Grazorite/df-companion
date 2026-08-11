@@ -3,6 +3,7 @@ import { ChevronDown, ImageOff } from 'lucide-react'
 import type { GuestAttack } from '../../types/pet'
 import NotesList from '../shared/NotesList'
 import PopupText from '../shared/PopupText'
+import ExpandableImageList from '../shared/ExpandableImageList'
 
 interface GuestAttacksProps {
   attacks: GuestAttack[]
@@ -52,6 +53,11 @@ function AttackCard({
   // into its own block below the stats.
   const effectText = attack.effect?.trim()
   const otherInformation = attack.notes?.trim()
+  const appearanceImages = attack.appearanceUrls?.length
+    ? attack.appearanceUrls
+    : attack.appearanceUrl
+      ? [attack.appearanceUrl]
+      : []
 
   return (
     <div className="bg-bg-surface border border-border-default rounded-lg overflow-hidden">
@@ -85,10 +91,10 @@ function AttackCard({
 
       {/* Expanded content */}
       {isOpen && (
-        <div className="px-4 pb-4 pt-0 border-t border-border-default">
+        <div className="border-t border-border-default p-4 sm:p-5 space-y-4">
           {/* Requirements - only show if not "None" */}
           {attack.requirements && attack.requirements.toLowerCase() !== 'none' && (
-            <p className="text-xs text-text-muted mt-3 mb-2">
+            <p className="text-xs text-text-muted">
               <span className="font-medium">Requires:</span> {attack.requirements}
             </p>
           )}
@@ -97,8 +103,8 @@ function AttackCard({
           {effectText && (
             <PopupText
               text={effectText}
-              className="text-text-secondary text-sm leading-relaxed mt-3 mb-4 whitespace-pre-line"
-              quoteClassName="mt-3 mb-4"
+              className="text-text-secondary text-sm leading-relaxed whitespace-pre-line"
+              quoteClassName="my-3"
             />
           )}
 
@@ -125,9 +131,17 @@ function AttackCard({
           </div>
 
           {otherInformation && (
-            <div className="mt-4 border-t border-border-default pt-4">
+            <div className="border-t border-border-default pt-4">
               <NotesList notes={otherInformation} />
             </div>
+          )}
+
+          {appearanceImages.length > 0 && (
+            <ExpandableImageList
+              images={appearanceImages}
+              captions={attack.appearanceCaptions}
+              altPrefix={`${attack.name} appearance`}
+            />
           )}
         </div>
       )}

@@ -43,10 +43,6 @@
     "id": "accessory-abomination-mask",
     "familyName": "Abomination Mask",
     "slug": "accessory-abomination-mask",
-    "aliasSlugs": [
-      "accessory-abomination-mask",
-      "accessory-abomination-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19748460",
@@ -145,13 +141,6 @@
     "id": "accessory-abraca-mask",
     "familyName": "Abraca Mask",
     "slug": "accessory-abraca-mask",
-    "aliasSlugs": [
-      "accessory-abraca-mask",
-      "accessory-abraca-mask",
-      "accessory-abraca-mask",
-      "accessory-abraca-mask",
-      "accessory-abraca-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22186450",
@@ -505,10 +494,6 @@
     "id": "accessory-acatriel-mask",
     "familyName": "Acatriel Mask",
     "slug": "accessory-acatriel-mask",
-    "aliasSlugs": [
-      "accessory-acatriel-mask",
-      "accessory-acatriel-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22423765",
@@ -879,13 +864,6 @@
     "id": "accessory-admiral-mazurek-mask",
     "familyName": "Admiral Mazurek Mask",
     "slug": "accessory-admiral-mazurek-mask",
-    "aliasSlugs": [
-      "accessory-admiral-mazurek-mask",
-      "accessory-admiral-mazurek-mask",
-      "accessory-admiral-mazurek-mask",
-      "accessory-admiral-mazurek-mask",
-      "accessory-admiral-mazurek-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22186444",
@@ -1071,10 +1049,6 @@
     "id": "accessory-adventure-mask",
     "familyName": "Adventure Mask",
     "slug": "accessory-adventure-mask",
-    "aliasSlugs": [
-      "accessory-adventure-mask",
-      "accessory-adventure-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21503003",
@@ -1588,10 +1562,6 @@
     "id": "accessory-aius-mask",
     "familyName": "Aius Mask",
     "slug": "accessory-aius-mask",
-    "aliasSlugs": [
-      "accessory-aius-mask",
-      "accessory-aius-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22418931",
@@ -1691,10 +1661,6 @@
     "id": "accessory-alchemy-armor-mask",
     "familyName": "Alchemy Armor Mask",
     "slug": "accessory-alchemy-armor-mask",
-    "aliasSlugs": [
-      "accessory-alchemy-armor-mask",
-      "accessory-alchemy-armor-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=16870881",
@@ -1837,12 +1803,6 @@
     "id": "accessory-alina-s-wedding-wreath",
     "familyName": "Alina's Wedding Wreath",
     "slug": "accessory-alina-s-wedding-wreath",
-    "aliasSlugs": [
-      "accessory-alina-s-wedding-wreath",
-      "accessory-alina-s-wedding-wreath",
-      "accessory-alina-s-wedding-wreath",
-      "accessory-alina-s-wedding-wreath"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20784003",
@@ -2047,10 +2007,6 @@
     "id": "accessory-alz-ein-mask",
     "familyName": "Alz'Ein Mask",
     "slug": "accessory-alz-ein-mask",
-    "aliasSlugs": [
-      "accessory-alz-ein-mask",
-      "accessory-alz-ein-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22406381",
@@ -2373,10 +2329,6 @@
     "id": "accessory-ancient-atealan-mask",
     "familyName": "Ancient Atealan Mask",
     "slug": "accessory-ancient-atealan-mask",
-    "aliasSlugs": [
-      "accessory-ancient-atealan-mask",
-      "accessory-ancient-atealan-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20846948",
@@ -3102,10 +3054,6 @@
     "id": "accessory-apsaydaaun-bubble-mask",
     "familyName": "Apsaydaaun Bubble Mask",
     "slug": "accessory-apsaydaaun-bubble-mask",
-    "aliasSlugs": [
-      "accessory-apsaydaaun-bubble-mask",
-      "accessory-apsaydaaun-bubble-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22370238",
@@ -3205,10 +3153,6 @@
     "id": "accessory-aquella-mask",
     "familyName": "Aquella Mask",
     "slug": "accessory-aquella-mask",
-    "aliasSlugs": [
-      "accessory-aquella-mask",
-      "accessory-aquella-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18283978",
@@ -3814,15 +3758,6 @@
     "id": "accessory-ascended-cover",
     "familyName": "Ascended Cover",
     "slug": "accessory-ascended-cover",
-    "aliasSlugs": [
-      "accessory-ascended-cover",
-      "accessory-ascended-cover",
-      "accessory-ascended-cover",
-      "accessory-ascended-cover",
-      "accessory-ascended-cover",
-      "accessory-ascended-cover",
-      "accessory-ascended-cover"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21952233",
@@ -4061,15 +3996,6 @@
     "id": "accessory-ascended-crest",
     "familyName": "Ascended Crest",
     "slug": "accessory-ascended-crest",
-    "aliasSlugs": [
-      "accessory-ascended-crest",
-      "accessory-ascended-crest",
-      "accessory-ascended-crest",
-      "accessory-ascended-crest",
-      "accessory-ascended-crest",
-      "accessory-ascended-crest",
-      "accessory-ascended-crest"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21953573",
@@ -4340,10 +4266,6 @@
     "id": "accessory-aspar-mask",
     "familyName": "Aspar Mask",
     "slug": "accessory-aspar-mask",
-    "aliasSlugs": [
-      "accessory-aspar-mask",
-      "accessory-aspar-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21855351",
@@ -4443,10 +4365,6 @@
     "id": "accessory-aspect-of-order-mask",
     "familyName": "Aspect of Order Mask",
     "slug": "accessory-aspect-of-order-mask",
-    "aliasSlugs": [
-      "accessory-aspect-of-order-mask",
-      "accessory-aspect-of-order-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22418926",
@@ -5101,10 +5019,6 @@
     "id": "accessory-atealan-star-warrior-mask",
     "familyName": "Atealan Star Warrior Mask",
     "slug": "accessory-atealan-star-warrior-mask",
-    "aliasSlugs": [
-      "accessory-atealan-star-warrior-mask",
-      "accessory-atealan-star-warrior-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22423772",
@@ -5204,16 +5118,6 @@
     "id": "accessory-atgno-infused-rose-helm",
     "familyName": "Atgno Infused Rose Helm",
     "slug": "accessory-atgno-infused-rose-helm",
-    "aliasSlugs": [
-      "accessory-atgno-infused-rose-helm",
-      "accessory-atgno-infused-rose-helm",
-      "accessory-atgno-infused-rose-helm",
-      "accessory-atgno-infused-rose-helm",
-      "accessory-atgno-infused-rose-helm",
-      "accessory-atgno-infused-rose-helm",
-      "accessory-atgno-infused-rose-helm",
-      "accessory-atgno-infused-rose-helm"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22259963",
@@ -6393,10 +6297,6 @@
     "id": "accessory-avatars-mask",
     "familyName": "Avatars Mask",
     "slug": "accessory-avatars-mask",
-    "aliasSlugs": [
-      "accessory-avatars-mask",
-      "accessory-avatars-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22397452",
@@ -7291,10 +7191,6 @@
     "id": "accessory-baby-twilly-mask",
     "familyName": "Baby Twilly Mask",
     "slug": "accessory-baby-twilly-mask",
-    "aliasSlugs": [
-      "accessory-baby-twilly-mask",
-      "accessory-baby-twilly-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22385603",
@@ -7394,14 +7290,6 @@
     "id": "accessory-bad-time-mask",
     "familyName": "Bad Time Mask",
     "slug": "accessory-bad-time-mask",
-    "aliasSlugs": [
-      "accessory-bad-time-mask",
-      "accessory-bad-time-mask",
-      "accessory-bad-time-mask",
-      "accessory-bad-time-mask",
-      "accessory-bad-time-mask",
-      "accessory-bad-time-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22053096",
@@ -7622,14 +7510,6 @@
     "id": "accessory-baltael-mask",
     "familyName": "Baltael Mask",
     "slug": "accessory-baltael-mask",
-    "aliasSlugs": [
-      "accessory-baltael-mask",
-      "accessory-baltael-mask",
-      "accessory-baltael-mask",
-      "accessory-baltael-mask",
-      "accessory-baltael-mask",
-      "accessory-baltael-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22053084",
@@ -7999,9 +7879,6 @@
     "id": "accessory-baron-cat-mask",
     "familyName": "Baron Cat Mask",
     "slug": "accessory-baron-cat-mask",
-    "aliasSlugs": [
-      "accessory-fierce-baron-cat-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20827848",
@@ -8011,17 +7888,19 @@
         "url": "https://forums2.battleon.com/f/tm.asp?m=20827848",
         "title": "DF Encyclopedia: Baron Cat Mask",
         "isPrimary": true
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20847532",
-        "title": "DF Encyclopedia: Fierce Baron Cat Mask",
-        "variantLabel": "Fierce Baron Cat Mask",
-        "isPrimary": false
       }
     ],
     "shared": {
       "description": "For Mogloween.",
-      "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/BaronCatMaskpic.jpg"
+      "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/BaronCatMaskpic.jpg",
+      "alsoSee": [
+        {
+          "name": "Fierce Baron Cat Mask",
+          "slug": "accessory-fierce-baron-cat-mask",
+          "type": "accessory",
+          "url": "https://forums2.battleon.com/f/tm.asp?m=20827848"
+        }
+      ]
     },
     "levelVariants": [
       {
@@ -8046,7 +7925,8 @@
         "element": "NON",
         "resists": "None",
         "rarity": "1",
-        "notes": "Prevents moglins from becoming Moglinsters and provides a 56% Candy bonus when equipped while Trick or Treating."
+        "notes": "Prevents moglins from becoming Moglinsters and provides a 56% Candy bonus when equipped while Trick or Treating.",
+        "variantName": "(Base)"
       },
       {
         "levelNumber": 2,
@@ -8069,10 +7949,66 @@
         "description": "Happy Mogloween, 2012!",
         "element": "LIG",
         "resists": "Darkness +6, Light +6, Immobility +2, Health -1",
-        "rarity": "25"
-      },
+        "rarity": "25",
+        "variantName": "(Base) (DC)"
+      }
+    ],
+    "itemType": "Helm",
+    "equipSlot": "Head",
+    "category": "Armor",
+    "releaseDate": "",
+    "tags": [
+      "dc",
+      "lig",
+      "merge",
+      "non"
+    ],
+    "isTemp": true,
+    "isSeasonal": true,
+    "hasDA": false,
+    "hasDC": true,
+    "hasDM": false,
+    "hasFree": false,
+    "hasMerge": true,
+    "levelRange": "1-50",
+    "elements": [
+      "NON",
+      "LIG"
+    ]
+  },
+  {
+    "id": "accessory-fierce-baron-cat-mask",
+    "familyName": "Fierce Baron Cat Mask",
+    "slug": "accessory-fierce-baron-cat-mask",
+    "type": "accessory",
+    "subtype": "helm",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20827848",
+    "familyOrigin": "cross-post",
+    "familySources": [
       {
-        "levelNumber": 3,
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20847532",
+        "title": "DF Encyclopedia: Fierce Baron Cat Mask",
+        "variantLabel": "Fierce Baron Cat Mask",
+        "isPrimary": false
+      }
+    ],
+    "shared": {
+      "description": "Happy Mogloween, 2012!",
+      "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/BaronCatMaskpic.jpg",
+      "resists": "Darkness +15, Light +15, Immobility +3, Health -2",
+      "rarity": "12",
+      "alsoSee": [
+        {
+          "name": "Baron Cat Mask",
+          "slug": "accessory-baron-cat-mask",
+          "type": "accessory",
+          "url": "https://forums2.battleon.com/f/tm.asp?m=20827848"
+        }
+      ]
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
         "levelDisplay": "79",
         "actualLevel": 79,
         "variantName": "Fierce",
@@ -8113,8 +8049,8 @@
     "hasDC": true,
     "hasDM": false,
     "hasFree": false,
-    "hasMerge": true,
-    "levelRange": "1-79",
+    "hasMerge": false,
+    "levelRange": "79",
     "elements": [
       "NON",
       "LIG"
@@ -8569,10 +8505,6 @@
     "id": "accessory-bart-mask",
     "familyName": "Bart Mask",
     "slug": "accessory-bart-mask",
-    "aliasSlugs": [
-      "accessory-bart-mask",
-      "accessory-bart-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22406364",
@@ -9439,15 +9371,6 @@
     "id": "accessory-bearded-pirate-treasure-hat",
     "familyName": "Bearded Pirate Treasure Hat",
     "slug": "accessory-bearded-pirate-treasure-hat",
-    "aliasSlugs": [
-      "accessory-bearded-pirate-treasure-hat",
-      "accessory-bearded-pirate-treasure-hat",
-      "accessory-bearded-pirate-treasure-hat",
-      "accessory-bearded-pirate-treasure-hat",
-      "accessory-bearded-pirate-treasure-hat",
-      "accessory-bearded-pirate-treasure-hat",
-      "accessory-bearded-pirate-treasure-hat"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21820801",
@@ -9979,10 +9902,6 @@
     "id": "accessory-beez-mask",
     "familyName": "Beez Mask",
     "slug": "accessory-beez-mask",
-    "aliasSlugs": [
-      "accessory-beez-mask",
-      "accessory-beez-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18284621",
@@ -10079,10 +9998,6 @@
     "id": "accessory-belial-s-armored-visage",
     "familyName": "Belial's Armored Visage",
     "slug": "accessory-belial-s-armored-visage",
-    "aliasSlugs": [
-      "accessory-belial-s-armored-visage",
-      "accessory-belial-s-armored-visage"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19380426",
@@ -10263,10 +10178,6 @@
     "id": "accessory-big-bad-luchadore-mask",
     "familyName": "Big Bad Luchadore Mask",
     "slug": "accessory-big-bad-luchadore-mask",
-    "aliasSlugs": [
-      "accessory-big-bad-luchadore-mask",
-      "accessory-big-bad-luchadore-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=16870603",
@@ -10409,10 +10320,6 @@
     "id": "accessory-biomechanical-mask",
     "familyName": "BioMechanical Mask",
     "slug": "accessory-biomechanical-mask",
-    "aliasSlugs": [
-      "accessory-biomechanical-mask",
-      "accessory-biomechanical-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20827973",
@@ -10517,14 +10424,6 @@
     "id": "accessory-bit-o-wax-helm",
     "familyName": "Bit-O-Wax Helm",
     "slug": "accessory-bit-o-wax-helm",
-    "aliasSlugs": [
-      "accessory-bit-o-wax-helm",
-      "accessory-bit-o-wax-helm",
-      "accessory-bit-o-wax-helm",
-      "accessory-bit-o-wax-helm",
-      "accessory-bit-o-wax-helm",
-      "accessory-bit-o-wax-helm"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=16760794",
@@ -10729,11 +10628,6 @@
     "id": "accessory-black-chaosweaver-guard-helm",
     "familyName": "Black ChaosWeaver Guard Helm",
     "slug": "accessory-black-chaosweaver-guard-helm",
-    "aliasSlugs": [
-      "accessory-black-chaosweaver-guard-helm",
-      "accessory-black-chaosweaver-guard-helm",
-      "accessory-black-chaosweaver-guard-helm"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18135936",
@@ -11269,10 +11163,6 @@
     "id": "accessory-black-matey-s-cap",
     "familyName": "Black Matey's Cap",
     "slug": "accessory-black-matey-s-cap",
-    "aliasSlugs": [
-      "accessory-black-matey-s-cap",
-      "accessory-black-matey-s-cap"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18137086",
@@ -11365,11 +11255,6 @@
     "id": "accessory-black-spy-hat",
     "familyName": "Black Spy Hat",
     "slug": "accessory-black-spy-hat",
-    "aliasSlugs": [
-      "accessory-black-spy-hat",
-      "accessory-black-spy-hat",
-      "accessory-black-spy-hat"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17673296",
@@ -11492,10 +11377,6 @@
     "id": "accessory-blast-test-dummy-mask",
     "familyName": "Blast Test Dummy (Mask)",
     "slug": "accessory-blast-test-dummy-mask",
-    "aliasSlugs": [
-      "accessory-blast-test-dummy-mask",
-      "accessory-blast-test-dummy-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=16870639",
@@ -13102,14 +12983,6 @@
     "id": "accessory-blue-head",
     "familyName": "Blue Head",
     "slug": "accessory-blue-head",
-    "aliasSlugs": [
-      "accessory-blue-head",
-      "accessory-blue-head",
-      "accessory-blue-head",
-      "accessory-blue-head",
-      "accessory-blue-head",
-      "accessory-blue-head"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21759230",
@@ -13313,10 +13186,6 @@
     "id": "accessory-blue-matey-s-cap",
     "familyName": "Blue Matey's Cap",
     "slug": "accessory-blue-matey-s-cap",
-    "aliasSlugs": [
-      "accessory-blue-matey-s-cap",
-      "accessory-blue-matey-s-cap"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18137094",
@@ -13452,7 +13321,6 @@
     "familyName": "Bonded DragonLord Helm",
     "slug": "accessory-bonded-dragonlord-helm",
     "aliasSlugs": [
-      "accessory-bonded-dragonlord-helm",
       "accessory-bonded-dragonlord-helm-cc"
     ],
     "type": "accessory",
@@ -13715,14 +13583,6 @@
     "id": "accessory-borowik-mask",
     "familyName": "Borowik Mask",
     "slug": "accessory-borowik-mask",
-    "aliasSlugs": [
-      "accessory-borowik-mask",
-      "accessory-borowik-mask",
-      "accessory-borowik-mask",
-      "accessory-borowik-mask",
-      "accessory-borowik-mask",
-      "accessory-borowik-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22053030",
@@ -13937,14 +13797,6 @@
     "id": "accessory-boulder-mask",
     "familyName": "Boulder Mask",
     "slug": "accessory-boulder-mask",
-    "aliasSlugs": [
-      "accessory-boulder-mask",
-      "accessory-boulder-mask",
-      "accessory-boulder-mask",
-      "accessory-boulder-mask",
-      "accessory-boulder-mask",
-      "accessory-boulder-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22053024",
@@ -14198,10 +14050,6 @@
     "id": "accessory-bound-terror-mask",
     "familyName": "Bound Terror Mask",
     "slug": "accessory-bound-terror-mask",
-    "aliasSlugs": [
-      "accessory-bound-terror-mask",
-      "accessory-bound-terror-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22370286",
@@ -14301,10 +14149,6 @@
     "id": "accessory-bounty-hunter-mask",
     "familyName": "Bounty Hunter Mask",
     "slug": "accessory-bounty-hunter-mask",
-    "aliasSlugs": [
-      "accessory-bounty-hunter-mask",
-      "accessory-bounty-hunter-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22385612",
@@ -14712,11 +14556,6 @@
     "id": "accessory-boxhelm",
     "familyName": "Boxhelm",
     "slug": "accessory-boxhelm",
-    "aliasSlugs": [
-      "accessory-boxhelm",
-      "accessory-boxhelm",
-      "accessory-boxhelm"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18179571",
@@ -15445,10 +15284,6 @@
     "id": "accessory-braytes-san-mask",
     "familyName": "Braytes San Mask",
     "slug": "accessory-braytes-san-mask",
-    "aliasSlugs": [
-      "accessory-braytes-san-mask",
-      "accessory-braytes-san-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22385609",
@@ -15548,10 +15383,6 @@
     "id": "accessory-breathtaking-mask",
     "familyName": "Breathtaking Mask",
     "slug": "accessory-breathtaking-mask",
-    "aliasSlugs": [
-      "accessory-breathtaking-mask",
-      "accessory-breathtaking-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22397416",
@@ -16069,10 +15900,6 @@
     "id": "accessory-broken-king-mask",
     "familyName": "Broken King Mask",
     "slug": "accessory-broken-king-mask",
-    "aliasSlugs": [
-      "accessory-broken-king-mask",
-      "accessory-broken-king-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22423763",
@@ -16492,10 +16319,6 @@
     "id": "accessory-brutalcorn-mask",
     "familyName": "Brutalcorn Mask",
     "slug": "accessory-brutalcorn-mask",
-    "aliasSlugs": [
-      "accessory-brutalcorn-mask",
-      "accessory-brutalcorn-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21503016",
@@ -16595,13 +16418,6 @@
     "id": "accessory-bubble-mask",
     "familyName": "Bubble Mask",
     "slug": "accessory-bubble-mask",
-    "aliasSlugs": [
-      "accessory-bubble-mask",
-      "accessory-bubble-mask",
-      "accessory-bubble-mask",
-      "accessory-bubble-mask",
-      "accessory-bubble-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22186446",
@@ -16787,10 +16603,6 @@
     "id": "accessory-bucket-mask",
     "familyName": "Bucket Mask",
     "slug": "accessory-bucket-mask",
-    "aliasSlugs": [
-      "accessory-bucket-mask",
-      "accessory-bucket-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=11625876",
@@ -17720,10 +17532,6 @@
     "id": "accessory-bunny-mask",
     "familyName": "Bunny Mask",
     "slug": "accessory-bunny-mask",
-    "aliasSlugs": [
-      "accessory-bunny-mask",
-      "accessory-bunny-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=11623686",
@@ -18335,13 +18143,6 @@
     "id": "accessory-caitiff-mask",
     "familyName": "Caitiff Mask",
     "slug": "accessory-caitiff-mask",
-    "aliasSlugs": [
-      "accessory-caitiff-mask",
-      "accessory-caitiff-mask",
-      "accessory-caitiff-mask",
-      "accessory-caitiff-mask",
-      "accessory-caitiff-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22186449",
@@ -18590,7 +18391,6 @@
     "slug": "accessory-candybucket-mask-head",
     "aliasSlugs": [
       "accessory-candybucket-mask",
-      "accessory-candybucket-mask",
       "accessory-candy-bucket-head"
     ],
     "type": "accessory",
@@ -18795,10 +18595,6 @@
     "id": "accessory-celestial-hood-mask",
     "familyName": "Celestial Hood Mask",
     "slug": "accessory-celestial-hood-mask",
-    "aliasSlugs": [
-      "accessory-celestial-hood-mask",
-      "accessory-celestial-hood-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22412885",
@@ -18898,10 +18694,6 @@
     "id": "accessory-centocor-mask",
     "familyName": "Centocor Mask",
     "slug": "accessory-centocor-mask",
-    "aliasSlugs": [
-      "accessory-centocor-mask",
-      "accessory-centocor-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19748594",
@@ -19000,10 +18792,6 @@
     "id": "accessory-chainsaw-mask",
     "familyName": "Chainsaw Mask",
     "slug": "accessory-chainsaw-mask",
-    "aliasSlugs": [
-      "accessory-chainsaw-mask",
-      "accessory-chainsaw-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22406379",
@@ -19103,10 +18891,6 @@
     "id": "accessory-chairman-mask",
     "familyName": "Chairman Mask",
     "slug": "accessory-chairman-mask",
-    "aliasSlugs": [
-      "accessory-chairman-mask",
-      "accessory-chairman-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20207122",
@@ -19137,6 +18921,29 @@
         "actualLevel": 1,
         "name": "Chairman Mask",
         "damage": "",
+        "stats": "None",
+        "obtainVariants": [
+          {
+            "location": "Entering Falconreach on April 1st, 2012",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "N/A",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=20207236",
+        "description": "MWHAHAHAHAHAHAHAHAHAHA!",
+        "alternativeImages": [],
+        "element": "NON",
+        "resists": "None",
+        "rarity": "1"
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "1",
+        "actualLevel": 1,
+        "name": "Chairman Mask",
+        "damage": "",
         "stats": "Crit +2, WIS +2, INT +2, DEX +2, STR +2",
         "obtainVariants": [
           {
@@ -19154,29 +18961,6 @@
         "element": "NON",
         "resists": "None",
         "rarity": "99"
-      },
-      {
-        "levelNumber": 1,
-        "levelDisplay": "1",
-        "actualLevel": 1,
-        "name": "Chairman Mask",
-        "damage": "",
-        "stats": "None",
-        "obtainVariants": [
-          {
-            "location": "Entering Falconreach on April 1st, 2012",
-            "price": "N/A",
-            "priceType": "free",
-            "sellback": "N/A",
-            "daRequired": false
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=20207236",
-        "description": "MWHAHAHAHAHAHAHAHAHAHA!",
-        "alternativeImages": [],
-        "element": "NON",
-        "resists": "None",
-        "rarity": "1"
       }
     ],
     "itemType": "Helm",
@@ -19239,10 +19023,6 @@
     "id": "accessory-chaos-drakath-mask",
     "familyName": "Chaos Drakath Mask",
     "slug": "accessory-chaos-drakath-mask",
-    "aliasSlugs": [
-      "accessory-chaos-drakath-mask",
-      "accessory-chaos-drakath-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22423775",
@@ -19532,10 +19312,6 @@
     "id": "accessory-chaosweaver-guard-helm",
     "familyName": "ChaosWeaver Guard Helm",
     "slug": "accessory-chaosweaver-guard-helm",
-    "aliasSlugs": [
-      "accessory-chaosweaver-guard-helm",
-      "accessory-chaosweaver-guard-helm"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18139489",
@@ -20389,10 +20165,6 @@
     "id": "accessory-cherry-blossom-glorious-spring-mask",
     "familyName": "Cherry Blossom & Glorious Spring Mask",
     "slug": "accessory-cherry-blossom-glorious-spring-mask",
-    "aliasSlugs": [
-      "accessory-cherry-blossom-glorious-spring-mask",
-      "accessory-cherry-blossom-glorious-spring-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22423766",
@@ -20530,7 +20302,6 @@
     "familyName": "Chickencow's Penance",
     "slug": "accessory-chickencow-s-penance",
     "aliasSlugs": [
-      "accessory-chickencow-s-penance",
       "accessory-chickencow-s-penance-eggsalted"
     ],
     "type": "accessory",
@@ -20630,16 +20401,6 @@
     "id": "accessory-chilly-s-glorious-visage",
     "familyName": "Chilly's Glorious Visage",
     "slug": "accessory-chilly-s-glorious-visage",
-    "aliasSlugs": [
-      "accessory-chilly-s-glorious-visage",
-      "accessory-chilly-s-glorious-visage",
-      "accessory-chilly-s-glorious-visage",
-      "accessory-chilly-s-glorious-visage",
-      "accessory-chilly-s-glorious-visage",
-      "accessory-chilly-s-glorious-visage",
-      "accessory-chilly-s-glorious-visage",
-      "accessory-chilly-s-glorious-visage"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22200847",
@@ -21131,16 +20892,6 @@
     "id": "accessory-chocolate-chip-cookiehelm",
     "familyName": "Chocolate Chip Cookiehelm",
     "slug": "accessory-chocolate-chip-cookiehelm",
-    "aliasSlugs": [
-      "accessory-chocolate-chip-cookiehelm",
-      "accessory-chocolate-chip-cookiehelm",
-      "accessory-chocolate-chip-cookiehelm",
-      "accessory-chocolate-chip-cookiehelm",
-      "accessory-chocolate-chip-cookiehelm",
-      "accessory-chocolate-chip-cookiehelm",
-      "accessory-chocolate-chip-cookiehelm",
-      "accessory-chocolate-chip-cookiehelm"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22186392",
@@ -22143,15 +21894,6 @@
     "id": "accessory-chronocorrupted-visage",
     "familyName": "Chronocorrupted Visage",
     "slug": "accessory-chronocorrupted-visage",
-    "aliasSlugs": [
-      "accessory-chronocorrupted-visage",
-      "accessory-chronocorrupted-visage",
-      "accessory-chronocorrupted-visage",
-      "accessory-chronocorrupted-visage",
-      "accessory-chronocorrupted-visage",
-      "accessory-chronocorrupted-visage",
-      "accessory-chronocorrupted-visage"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21621377",
@@ -22484,13 +22226,6 @@
     "id": "accessory-chronovisage",
     "familyName": "Chronovisage",
     "slug": "accessory-chronovisage",
-    "aliasSlugs": [
-      "accessory-chronovisage",
-      "accessory-chronovisage",
-      "accessory-chronovisage",
-      "accessory-chronovisage",
-      "accessory-chronovisage"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18495129",
@@ -22671,15 +22406,6 @@
     "id": "accessory-chronoz-visor-version-f-0",
     "familyName": "ChronoZ Visor Version F.0",
     "slug": "accessory-chronoz-visor-version-f-0",
-    "aliasSlugs": [
-      "accessory-chronoz-visor-version-f-0",
-      "accessory-chronoz-visor-version-f-0",
-      "accessory-chronoz-visor-version-f-0",
-      "accessory-chronoz-visor-version-f-0",
-      "accessory-chronoz-visor-version-f-0",
-      "accessory-chronoz-visor-version-f-0",
-      "accessory-chronoz-visor-version-f-0"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21885890",
@@ -22918,15 +22644,6 @@
     "id": "accessory-chronoz-visor-version-h-0",
     "familyName": "ChronoZ Visor Version H.0",
     "slug": "accessory-chronoz-visor-version-h-0",
-    "aliasSlugs": [
-      "accessory-chronoz-visor-version-h-0",
-      "accessory-chronoz-visor-version-h-0",
-      "accessory-chronoz-visor-version-h-0",
-      "accessory-chronoz-visor-version-h-0",
-      "accessory-chronoz-visor-version-h-0",
-      "accessory-chronoz-visor-version-h-0",
-      "accessory-chronoz-visor-version-h-0"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21876695",
@@ -23165,15 +22882,6 @@
     "id": "accessory-chronoz-visor-version-m-0",
     "familyName": "ChronoZ Visor Version M.0",
     "slug": "accessory-chronoz-visor-version-m-0",
-    "aliasSlugs": [
-      "accessory-chronoz-visor-version-m-0",
-      "accessory-chronoz-visor-version-m-0",
-      "accessory-chronoz-visor-version-m-0",
-      "accessory-chronoz-visor-version-m-0",
-      "accessory-chronoz-visor-version-m-0",
-      "accessory-chronoz-visor-version-m-0",
-      "accessory-chronoz-visor-version-m-0"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21885921",
@@ -23412,15 +23120,6 @@
     "id": "accessory-chronoz-visor-version-tk-0",
     "familyName": "ChronoZ Visor Version TK.0",
     "slug": "accessory-chronoz-visor-version-tk-0",
-    "aliasSlugs": [
-      "accessory-chronoz-visor-version-tk-0",
-      "accessory-chronoz-visor-version-tk-0",
-      "accessory-chronoz-visor-version-tk-0",
-      "accessory-chronoz-visor-version-tk-0",
-      "accessory-chronoz-visor-version-tk-0",
-      "accessory-chronoz-visor-version-tk-0",
-      "accessory-chronoz-visor-version-tk-0"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21876433",
@@ -24303,17 +24002,6 @@
     "id": "accessory-cinco-de-mayo-sombrero",
     "familyName": "Cinco de Mayo Sombrero",
     "slug": "accessory-cinco-de-mayo-sombrero",
-    "aliasSlugs": [
-      "accessory-cinco-de-mayo-sombrero",
-      "accessory-cinco-de-mayo-sombrero",
-      "accessory-cinco-de-mayo-sombrero",
-      "accessory-cinco-de-mayo-sombrero",
-      "accessory-cinco-de-mayo-sombrero",
-      "accessory-cinco-de-mayo-sombrero",
-      "accessory-cinco-de-mayo-sombrero",
-      "accessory-cinco-de-mayo-sombrero",
-      "accessory-cinco-de-mayo-sombrero"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21263796",
@@ -24610,17 +24298,6 @@
     "id": "accessory-cinco-de-mayo-sombrero-scarf",
     "familyName": "Cinco de Mayo Sombrero Scarf",
     "slug": "accessory-cinco-de-mayo-sombrero-scarf",
-    "aliasSlugs": [
-      "accessory-cinco-de-mayo-sombrero-scarf",
-      "accessory-cinco-de-mayo-sombrero-scarf",
-      "accessory-cinco-de-mayo-sombrero-scarf",
-      "accessory-cinco-de-mayo-sombrero-scarf",
-      "accessory-cinco-de-mayo-sombrero-scarf",
-      "accessory-cinco-de-mayo-sombrero-scarf",
-      "accessory-cinco-de-mayo-sombrero-scarf",
-      "accessory-cinco-de-mayo-sombrero-scarf",
-      "accessory-cinco-de-mayo-sombrero-scarf"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21264353",
@@ -24917,14 +24594,6 @@
     "id": "accessory-classic-rock-mask",
     "familyName": "Classic Rock Mask",
     "slug": "accessory-classic-rock-mask",
-    "aliasSlugs": [
-      "accessory-classic-rock-mask",
-      "accessory-classic-rock-mask",
-      "accessory-classic-rock-mask",
-      "accessory-classic-rock-mask",
-      "accessory-classic-rock-mask",
-      "accessory-classic-rock-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22053002",
@@ -25139,14 +24808,6 @@
     "id": "accessory-closed-guardian-armet",
     "familyName": "Closed Guardian Armet",
     "slug": "accessory-closed-guardian-armet",
-    "aliasSlugs": [
-      "accessory-closed-guardian-armet",
-      "accessory-closed-guardian-armet",
-      "accessory-closed-guardian-armet",
-      "accessory-closed-guardian-armet",
-      "accessory-closed-guardian-armet",
-      "accessory-closed-guardian-armet"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21975695",
@@ -25793,10 +25454,6 @@
     "id": "accessory-codex-mask",
     "familyName": "Codex Mask",
     "slug": "accessory-codex-mask",
-    "aliasSlugs": [
-      "accessory-codex-mask",
-      "accessory-codex-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21855290",
@@ -25896,15 +25553,6 @@
     "id": "accessory-comedy-mask",
     "familyName": "Comedy Mask",
     "slug": "accessory-comedy-mask",
-    "aliasSlugs": [
-      "accessory-comedy-mask",
-      "accessory-comedy-mask",
-      "accessory-comedy-mask",
-      "accessory-comedy-mask",
-      "accessory-comedy-mask",
-      "accessory-comedy-mask",
-      "accessory-comedy-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21564848",
@@ -26474,7 +26122,6 @@
     "familyName": "Commemorative Birthday Helm",
     "slug": "accessory-commemorative-birthday-helm",
     "aliasSlugs": [
-      "accessory-commemorative-birthday-helm",
       "accessory-commemorative-birthday-helm-ii",
       "accessory-commemorative-birthday-helm-iii",
       "accessory-commemorative-birthday-helm-iv",
@@ -26720,11 +26367,6 @@
     "id": "accessory-conehead-mask",
     "familyName": "Conehead Mask",
     "slug": "accessory-conehead-mask",
-    "aliasSlugs": [
-      "accessory-conehead-mask",
-      "accessory-conehead-mask",
-      "accessory-conehead-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=14961282",
@@ -26855,10 +26497,6 @@
     "id": "accessory-construction-helm",
     "familyName": "Construction Helm",
     "slug": "accessory-construction-helm",
-    "aliasSlugs": [
-      "accessory-construction-helm",
-      "accessory-construction-helm"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=12812523",
@@ -26952,10 +26590,6 @@
     "id": "accessory-corvak-mask",
     "familyName": "Corvak Mask",
     "slug": "accessory-corvak-mask",
-    "aliasSlugs": [
-      "accessory-corvak-mask",
-      "accessory-corvak-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22406365",
@@ -27055,10 +26689,6 @@
     "id": "accessory-countess-mask",
     "familyName": "Countess Mask",
     "slug": "accessory-countess-mask",
-    "aliasSlugs": [
-      "accessory-countess-mask",
-      "accessory-countess-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22397432",
@@ -27254,10 +26884,6 @@
     "id": "accessory-cowl-of-deidro",
     "familyName": "Cowl of Deidro",
     "slug": "accessory-cowl-of-deidro",
-    "aliasSlugs": [
-      "accessory-cowl-of-deidro",
-      "accessory-cowl-of-deidro"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19966565",
@@ -27399,10 +27025,6 @@
     "id": "accessory-crafter-mask",
     "familyName": "Crafter Mask",
     "slug": "accessory-crafter-mask",
-    "aliasSlugs": [
-      "accessory-crafter-mask",
-      "accessory-crafter-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22423762",
@@ -27502,10 +27124,6 @@
     "id": "accessory-creature-83-mask",
     "familyName": "Creature 83 Mask",
     "slug": "accessory-creature-83-mask",
-    "aliasSlugs": [
-      "accessory-creature-83-mask",
-      "accessory-creature-83-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22412891",
@@ -27640,10 +27258,6 @@
     "id": "accessory-crossbones-cap",
     "familyName": "Crossbones Cap",
     "slug": "accessory-crossbones-cap",
-    "aliasSlugs": [
-      "accessory-crossbones-cap",
-      "accessory-crossbones-cap"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=11034287",
@@ -27675,29 +27289,6 @@
         "actualLevel": 1,
         "name": "Crossbones Cap",
         "damage": "",
-        "stats": "Crit +3, INT +3, Bonus +5",
-        "obtainVariants": [
-          {
-            "location": "DragonLord Shop",
-            "price": "300 Gold",
-            "priceType": "gold",
-            "sellback": "30 Gold",
-            "daRequired": true
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=11034287",
-        "description": "This magical cap once belonged to the legendary and brutal pirate Captain Crossbone! This hat give you an additional 5% to your crit stat!",
-        "alternativeImages": [],
-        "element": "FIR",
-        "resists": "Metal +2, Darkness +2",
-        "rarity": "1"
-      },
-      {
-        "levelNumber": 1,
-        "levelDisplay": "1",
-        "actualLevel": 1,
-        "name": "Crossbones Cap",
-        "damage": "",
         "stats": "Crit +5, INT +3, Bonus +5",
         "obtainVariants": [
           {
@@ -27712,6 +27303,29 @@
         "description": "This magical cap once belonged to the legendary and brutal pirate Captain Crossbone! This hat give you an additional 5% to your crit stat!",
         "alternativeImages": [],
         "element": "NON",
+        "resists": "Metal +2, Darkness +2",
+        "rarity": "1"
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "1",
+        "actualLevel": 1,
+        "name": "Crossbones Cap",
+        "damage": "",
+        "stats": "Crit +3, INT +3, Bonus +5",
+        "obtainVariants": [
+          {
+            "location": "DragonLord Shop",
+            "price": "300 Gold",
+            "priceType": "gold",
+            "sellback": "30 Gold",
+            "daRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=11034287",
+        "description": "This magical cap once belonged to the legendary and brutal pirate Captain Crossbone! This hat give you an additional 5% to your crit stat!",
+        "alternativeImages": [],
+        "element": "FIR",
         "resists": "Metal +2, Darkness +2",
         "rarity": "1"
       }
@@ -27743,14 +27357,6 @@
     "id": "accessory-crossbones-captain-hat",
     "familyName": "Crossbones Captain Hat",
     "slug": "accessory-crossbones-captain-hat",
-    "aliasSlugs": [
-      "accessory-crossbones-captain-hat",
-      "accessory-crossbones-captain-hat",
-      "accessory-crossbones-captain-hat",
-      "accessory-crossbones-captain-hat",
-      "accessory-crossbones-captain-hat",
-      "accessory-crossbones-captain-hat"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21954172",
@@ -27954,12 +27560,6 @@
     "id": "accessory-crossbones-cover",
     "familyName": "Crossbones Cover",
     "slug": "accessory-crossbones-cover",
-    "aliasSlugs": [
-      "accessory-crossbones-cover",
-      "accessory-crossbones-cover",
-      "accessory-crossbones-cover",
-      "accessory-crossbones-cover"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21953975",
@@ -28107,10 +27707,6 @@
     "id": "accessory-crossbones-hat",
     "familyName": "Crossbones Hat",
     "slug": "accessory-crossbones-hat",
-    "aliasSlugs": [
-      "accessory-crossbones-hat",
-      "accessory-crossbones-hat"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=11034262",
@@ -29291,10 +28887,6 @@
     "id": "accessory-cryptic-eye-mask",
     "familyName": "Cryptic Eye Mask",
     "slug": "accessory-cryptic-eye-mask",
-    "aliasSlugs": [
-      "accessory-cryptic-eye-mask",
-      "accessory-cryptic-eye-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21855285",
@@ -29708,16 +29300,6 @@
     "id": "accessory-cursed-overgourd-cover",
     "familyName": "Cursed Overgourd Cover",
     "slug": "accessory-cursed-overgourd-cover",
-    "aliasSlugs": [
-      "accessory-cursed-overgourd-cover",
-      "accessory-cursed-overgourd-cover",
-      "accessory-cursed-overgourd-cover",
-      "accessory-cursed-overgourd-cover",
-      "accessory-cursed-overgourd-cover",
-      "accessory-cursed-overgourd-cover",
-      "accessory-cursed-overgourd-cover",
-      "accessory-cursed-overgourd-cover"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22055727",
@@ -31111,10 +30693,6 @@
     "id": "accessory-cysero-s-wedding-tophat",
     "familyName": "Cysero's Wedding Tophat",
     "slug": "accessory-cysero-s-wedding-tophat",
-    "aliasSlugs": [
-      "accessory-cysero-s-wedding-tophat",
-      "accessory-cysero-s-wedding-tophat"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17732149",
@@ -31216,13 +30794,6 @@
     "id": "accessory-dabra-mask",
     "familyName": "Dabra Mask",
     "slug": "accessory-dabra-mask",
-    "aliasSlugs": [
-      "accessory-dabra-mask",
-      "accessory-dabra-mask",
-      "accessory-dabra-mask",
-      "accessory-dabra-mask",
-      "accessory-dabra-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22186452",
@@ -31598,10 +31169,6 @@
     "id": "accessory-dardarayu-mask",
     "familyName": "Dardarayu Mask",
     "slug": "accessory-dardarayu-mask",
-    "aliasSlugs": [
-      "accessory-dardarayu-mask",
-      "accessory-dardarayu-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22418923",
@@ -31871,15 +31438,6 @@
     "id": "accessory-dark-legion-helm",
     "familyName": "Dark Legion Helm",
     "slug": "accessory-dark-legion-helm",
-    "aliasSlugs": [
-      "accessory-dark-legion-helm",
-      "accessory-dark-legion-helm",
-      "accessory-dark-legion-helm",
-      "accessory-dark-legion-helm",
-      "accessory-dark-legion-helm",
-      "accessory-dark-legion-helm",
-      "accessory-dark-legion-helm"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21531401",
@@ -32119,14 +31677,6 @@
     "id": "accessory-dark-mask",
     "familyName": "Dark Mask",
     "slug": "accessory-dark-mask",
-    "aliasSlugs": [
-      "accessory-dark-mask",
-      "accessory-dark-mask",
-      "accessory-dark-mask",
-      "accessory-dark-mask",
-      "accessory-dark-mask",
-      "accessory-dark-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22053069",
@@ -32341,17 +31891,6 @@
     "id": "accessory-dark-noble-helm",
     "familyName": "Dark Noble Helm",
     "slug": "accessory-dark-noble-helm",
-    "aliasSlugs": [
-      "accessory-dark-noble-helm",
-      "accessory-dark-noble-helm",
-      "accessory-dark-noble-helm",
-      "accessory-dark-noble-helm",
-      "accessory-dark-noble-helm",
-      "accessory-dark-noble-helm",
-      "accessory-dark-noble-helm",
-      "accessory-dark-noble-helm",
-      "accessory-dark-noble-helm"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20883183",
@@ -32649,15 +32188,6 @@
     "id": "accessory-dark-sandsea-helm",
     "familyName": "Dark Sandsea Helm",
     "slug": "accessory-dark-sandsea-helm",
-    "aliasSlugs": [
-      "accessory-dark-sandsea-helm",
-      "accessory-dark-sandsea-helm",
-      "accessory-dark-sandsea-helm",
-      "accessory-dark-sandsea-helm",
-      "accessory-dark-sandsea-helm",
-      "accessory-dark-sandsea-helm",
-      "accessory-dark-sandsea-helm"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21532465",
@@ -32897,15 +32427,6 @@
     "id": "accessory-dark-sepulchure-helm",
     "familyName": "Dark Sepulchure Helm",
     "slug": "accessory-dark-sepulchure-helm",
-    "aliasSlugs": [
-      "accessory-dark-sepulchure-helm",
-      "accessory-dark-sepulchure-helm",
-      "accessory-dark-sepulchure-helm",
-      "accessory-dark-sepulchure-helm",
-      "accessory-dark-sepulchure-helm",
-      "accessory-dark-sepulchure-helm",
-      "accessory-dark-sepulchure-helm"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21531432",
@@ -33145,13 +32666,6 @@
     "id": "accessory-darkened-tree-helm",
     "familyName": "Darkened Tree Helm",
     "slug": "accessory-darkened-tree-helm",
-    "aliasSlugs": [
-      "accessory-darkened-tree-helm",
-      "accessory-darkened-tree-helm",
-      "accessory-darkened-tree-helm",
-      "accessory-darkened-tree-helm",
-      "accessory-darkened-tree-helm"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21884688",
@@ -33328,10 +32842,6 @@
     "id": "accessory-darkness-the-moglin-mask",
     "familyName": "Darkness the Moglin Mask",
     "slug": "accessory-darkness-the-moglin-mask",
-    "aliasSlugs": [
-      "accessory-darkness-the-moglin-mask",
-      "accessory-darkness-the-moglin-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22418933",
@@ -33431,10 +32941,6 @@
     "id": "accessory-darkon-mask",
     "familyName": "Darkon Mask",
     "slug": "accessory-darkon-mask",
-    "aliasSlugs": [
-      "accessory-darkon-mask",
-      "accessory-darkon-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22406385",
@@ -34840,10 +34346,6 @@
     "id": "accessory-decadere-mask",
     "familyName": "Decadere Mask",
     "slug": "accessory-decadere-mask",
-    "aliasSlugs": [
-      "accessory-decadere-mask",
-      "accessory-decadere-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18284422",
@@ -34940,10 +34442,6 @@
     "id": "accessory-deceased-friend-mask",
     "familyName": "Deceased Friend Mask",
     "slug": "accessory-deceased-friend-mask",
-    "aliasSlugs": [
-      "accessory-deceased-friend-mask",
-      "accessory-deceased-friend-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21855530",
@@ -35245,7 +34743,6 @@
     "slug": "accessory-dessert-mask-helm",
     "aliasSlugs": [
       "accessory-dessert-mask",
-      "accessory-dessert-mask",
       "accessory-dessert-helm"
     ],
     "type": "accessory",
@@ -35381,10 +34878,6 @@
     "id": "accessory-destiny-phoenix-mask",
     "familyName": "Destiny Phoenix Mask",
     "slug": "accessory-destiny-phoenix-mask",
-    "aliasSlugs": [
-      "accessory-destiny-phoenix-mask",
-      "accessory-destiny-phoenix-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18283827",
@@ -35484,11 +34977,6 @@
     "familyName": "Destroyer Mask , The",
     "slug": "accessory-destroyer-mask-the",
     "aliasSlugs": [
-      "accessory-the-destroyer-mask",
-      "accessory-the-destroyer-mask",
-      "accessory-the-destroyer-mask",
-      "accessory-the-destroyer-mask",
-      "accessory-the-destroyer-mask",
       "accessory-the-destroyer-mask"
     ],
     "type": "accessory",
@@ -35832,10 +35320,6 @@
     "id": "accessory-devil-mask",
     "familyName": "Devil Mask",
     "slug": "accessory-devil-mask",
-    "aliasSlugs": [
-      "accessory-devil-mask",
-      "accessory-devil-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=11621418",
@@ -35934,10 +35418,6 @@
     "id": "accessory-discordia-mask",
     "familyName": "Discordia Mask",
     "slug": "accessory-discordia-mask",
-    "aliasSlugs": [
-      "accessory-discordia-mask",
-      "accessory-discordia-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22397436",
@@ -36171,14 +35651,6 @@
     "id": "accessory-dola-mask",
     "familyName": "Dola Mask",
     "slug": "accessory-dola-mask",
-    "aliasSlugs": [
-      "accessory-dola-mask",
-      "accessory-dola-mask",
-      "accessory-dola-mask",
-      "accessory-dola-mask",
-      "accessory-dola-mask",
-      "accessory-dola-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22053074",
@@ -36393,10 +35865,6 @@
     "id": "accessory-doom-phoenix-mask",
     "familyName": "Doom Phoenix Mask",
     "slug": "accessory-doom-phoenix-mask",
-    "aliasSlugs": [
-      "accessory-doom-phoenix-mask",
-      "accessory-doom-phoenix-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18283842",
@@ -36699,18 +36167,6 @@
     "id": "accessory-doomed-dragon-helm",
     "familyName": "Doomed Dragon Helm",
     "slug": "accessory-doomed-dragon-helm",
-    "aliasSlugs": [
-      "accessory-doomed-dragon-helm",
-      "accessory-doomed-dragon-helm",
-      "accessory-doomed-dragon-helm",
-      "accessory-doomed-dragon-helm",
-      "accessory-doomed-dragon-helm",
-      "accessory-doomed-dragon-helm",
-      "accessory-doomed-dragon-helm",
-      "accessory-doomed-dragon-helm",
-      "accessory-doomed-dragon-helm",
-      "accessory-doomed-dragon-helm"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22151613",
@@ -37025,18 +36481,6 @@
     "id": "accessory-doomknight-helm",
     "familyName": "DoomKnight Helm",
     "slug": "accessory-doomknight-helm",
-    "aliasSlugs": [
-      "accessory-doomknight-helm",
-      "accessory-doomknight-helm",
-      "accessory-doomknight-helm",
-      "accessory-doomknight-helm",
-      "accessory-doomknight-helm",
-      "accessory-doomknight-helm",
-      "accessory-doomknight-helm",
-      "accessory-doomknight-helm",
-      "accessory-doomknight-helm",
-      "accessory-doomknight-helm"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=16604965",
@@ -37545,10 +36989,6 @@
     "id": "accessory-dovahlord-mask",
     "familyName": "Dovahlord Mask",
     "slug": "accessory-dovahlord-mask",
-    "aliasSlugs": [
-      "accessory-dovahlord-mask",
-      "accessory-dovahlord-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20828020",
@@ -37653,10 +37093,6 @@
     "id": "accessory-dove-mask",
     "familyName": "Dove Mask",
     "slug": "accessory-dove-mask",
-    "aliasSlugs": [
-      "accessory-dove-mask",
-      "accessory-dove-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22297234",
@@ -37756,10 +37192,6 @@
     "id": "accessory-dr-mysterious-mask",
     "familyName": "Dr. Mysterious Mask",
     "slug": "accessory-dr-mysterious-mask",
-    "aliasSlugs": [
-      "accessory-dr-mysterious-mask",
-      "accessory-dr-mysterious-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=16870920",
@@ -39300,11 +38732,6 @@
     "id": "accessory-dragondance",
     "familyName": "Dragondance",
     "slug": "accessory-dragondance",
-    "aliasSlugs": [
-      "accessory-dragondance",
-      "accessory-dragondance",
-      "accessory-dragondance"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18619655",
@@ -39897,17 +39324,6 @@
     "id": "accessory-dragonlord-vath-helm",
     "familyName": "DragonLord Vath Helm",
     "slug": "accessory-dragonlord-vath-helm",
-    "aliasSlugs": [
-      "accessory-dragonlord-vath-helm",
-      "accessory-dragonlord-vath-helm",
-      "accessory-dragonlord-vath-helm",
-      "accessory-dragonlord-vath-helm",
-      "accessory-dragonlord-vath-helm",
-      "accessory-dragonlord-vath-helm",
-      "accessory-dragonlord-vath-helm",
-      "accessory-dragonlord-vath-helm",
-      "accessory-dragonlord-vath-helm"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21808784",
@@ -40251,10 +39667,6 @@
     "id": "accessory-dragonoid-mask",
     "familyName": "Dragonoid Mask",
     "slug": "accessory-dragonoid-mask",
-    "aliasSlugs": [
-      "accessory-dragonoid-mask",
-      "accessory-dragonoid-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22297222",
@@ -40355,7 +39767,6 @@
     "familyName": "DragonRider's Guard",
     "slug": "accessory-dragonrider-s-guard",
     "aliasSlugs": [
-      "accessory-dragonrider-s-guard",
       "accessory-dragonrider-s-guard-cc"
     ],
     "type": "accessory",
@@ -40490,17 +39901,6 @@
     "id": "accessory-drakonnan-s-doom",
     "familyName": "Drakonnan's Doom",
     "slug": "accessory-drakonnan-s-doom",
-    "aliasSlugs": [
-      "accessory-drakonnan-s-doom",
-      "accessory-drakonnan-s-doom",
-      "accessory-drakonnan-s-doom",
-      "accessory-drakonnan-s-doom",
-      "accessory-drakonnan-s-doom",
-      "accessory-drakonnan-s-doom",
-      "accessory-drakonnan-s-doom",
-      "accessory-drakonnan-s-doom",
-      "accessory-drakonnan-s-doom"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=16605095",
@@ -41292,19 +40692,438 @@
       "accessory-dravir-warhelm-v",
       "accessory-dravir-warhelm-vi",
       "accessory-dravir-warhelm-vii",
-      "accessory-dravir-warhelm-viii",
-      "accessory-radiant-dravir-warhelm"
+      "accessory-dravir-warhelm-viii"
     ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22389622",
     "familyOrigin": "cross-post",
-    "familySources": [
+    "shared": {
+      "description": "Impressed with the bond you share with your dragon, the dravir smiths refitted this helm for you. It's a little uncomfortable, but very functional!",
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/RadiantDravirWarhelm.png",
+      "alternativeImages": [
+        {
+          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/RadiantDravirWarhelm-ElementalAttunement.png",
+          "caption": "All Appearances"
+        }
+      ],
+      "rarity": "5",
+      "alsoSee": [
+        {
+          "name": "Radiant Dravir Warhelm",
+          "slug": "accessory-radiant-dravir-warhelm",
+          "type": "accessory",
+          "url": "https://forums2.battleon.com/f/tm.asp?m=22389622"
+        }
+      ]
+    },
+    "levelVariants": [
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=22389622",
-        "title": "DF Encyclopedia: Dravir Warhelm",
-        "isPrimary": true
+        "levelNumber": 1,
+        "levelDisplay": "15",
+        "actualLevel": 15,
+        "variantName": "I",
+        "name": "Dravir Warhelm I",
+        "damage": "",
+        "stats": "END +2, CHA +2, INT +1, DEX +1, STR +1",
+        "obtainVariants": [
+          {
+            "location": "Caught in a Vise",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "5 Gold",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389622",
+        "description": "Impressed with the bond you share with your dragon, the dravir smiths refitted this helm for you. It's a little uncomfortable, but very functional!",
+        "element": "MET",
+        "resists": "Fire +5",
+        "rarity": "5"
       },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "15",
+        "actualLevel": 15,
+        "variantName": "I",
+        "name": "Dravir Warhelm I",
+        "damage": "",
+        "stats": "END +2, CHA +2, INT +1, DEX +1, STR +1",
+        "obtainVariants": [
+          {
+            "location": "CiaV Loot for DCs",
+            "price": "100 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "90 DC (<24 hours) / 25 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389622",
+        "description": "Impressed with the bond you share with your dragon, the dravir smiths refitted this helm for you. It's a little uncomfortable, but very functional!",
+        "element": "MET",
+        "resists": "Fire +5",
+        "rarity": "5"
+      },
+      {
+        "levelNumber": 3,
+        "levelDisplay": "25",
+        "actualLevel": 25,
+        "variantName": "II",
+        "name": "Dravir Warhelm II",
+        "damage": "",
+        "stats": "END +2, CHA +2, INT +2, DEX +2, STR +2",
+        "obtainVariants": [
+          {
+            "location": "Caught in a Vise",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "7 Gold",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389623",
+        "description": "Impressed with the bond you share with your dragon, the dravir smiths refitted this helm for you. It's a little uncomfortable, but very functional!",
+        "element": "MET",
+        "resists": "Fire +6",
+        "rarity": "5"
+      },
+      {
+        "levelNumber": 4,
+        "levelDisplay": "25",
+        "actualLevel": 25,
+        "variantName": "II",
+        "name": "Dravir Warhelm II",
+        "damage": "",
+        "stats": "END +2, CHA +2, INT +2, DEX +2, STR +2",
+        "obtainVariants": [
+          {
+            "location": "CiaV Loot for DCs",
+            "price": "100 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "90 DC (<24 hours) / 25 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389623",
+        "description": "Impressed with the bond you share with your dragon, the dravir smiths refitted this helm for you. It's a little uncomfortable, but very functional!",
+        "element": "MET",
+        "resists": "Fire +6",
+        "rarity": "5"
+      },
+      {
+        "levelNumber": 5,
+        "levelDisplay": "35",
+        "actualLevel": 35,
+        "variantName": "III",
+        "name": "Dravir Warhelm III",
+        "damage": "",
+        "stats": "Block +1, Dodge +1, Parry +1, END +3, CHA +3, INT +4, DEX +4, STR +4",
+        "obtainVariants": [
+          {
+            "location": "Caught in a Vise",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "9 Gold",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389624",
+        "description": "Impressed with the bond you share with your dragon, the dravir smiths refitted this helm for you. It's a little uncomfortable, but very functional!",
+        "element": "MET",
+        "resists": "Fire +7",
+        "rarity": "5"
+      },
+      {
+        "levelNumber": 6,
+        "levelDisplay": "35",
+        "actualLevel": 35,
+        "variantName": "III",
+        "name": "Dravir Warhelm III",
+        "damage": "",
+        "stats": "Block +1, Dodge +1, Parry +1, END +3, CHA +3, INT +4, DEX +4, STR +4",
+        "obtainVariants": [
+          {
+            "location": "CiaV Loot for DCs",
+            "price": "100 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "90 DC (<24 hours) / 25 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389624",
+        "description": "Impressed with the bond you share with your dragon, the dravir smiths refitted this helm for you. It's a little uncomfortable, but very functional!",
+        "element": "MET",
+        "resists": "Fire +7",
+        "rarity": "5"
+      },
+      {
+        "levelNumber": 7,
+        "levelDisplay": "45",
+        "actualLevel": 45,
+        "variantName": "IV",
+        "name": "Dravir Warhelm IV",
+        "damage": "",
+        "stats": "Block +2, Dodge +2, Parry +2, Crit +1, END +3, CHA +3, INT +5, DEX +5, STR +5, Bonus +1",
+        "obtainVariants": [
+          {
+            "location": "Caught in a Vise",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "11 Gold",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389625",
+        "description": "Impressed with the bond you share with your dragon, the dravir smiths refitted this helm for you. It's a little uncomfortable, but very functional!",
+        "element": "MET",
+        "resists": "Fire +8",
+        "rarity": "5"
+      },
+      {
+        "levelNumber": 8,
+        "levelDisplay": "45",
+        "actualLevel": 45,
+        "variantName": "IV",
+        "name": "Dravir Warhelm IV",
+        "damage": "",
+        "stats": "Block +2, Dodge +2, Parry +2, Crit +1, END +3, CHA +3, INT +5, DEX +5, STR +5, Bonus +1",
+        "obtainVariants": [
+          {
+            "location": "CiaV Loot for DCs",
+            "price": "100 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "90 DC (<24 hours) / 25 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389625",
+        "description": "Impressed with the bond you share with your dragon, the dravir smiths refitted this helm for you. It's a little uncomfortable, but very functional!",
+        "element": "MET",
+        "resists": "Fire +8",
+        "rarity": "5"
+      },
+      {
+        "levelNumber": 9,
+        "levelDisplay": "55",
+        "actualLevel": 55,
+        "variantName": "V",
+        "name": "Dravir Warhelm V",
+        "damage": "",
+        "stats": "Block +3, Dodge +3, Parry +3, Crit +2, END +4, CHA +4, INT +8, DEX +8, STR +8, Bonus +2",
+        "obtainVariants": [
+          {
+            "location": "Caught in a Vise",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "12 Gold",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389626",
+        "description": "Impressed with the bond you share with your dragon, the dravir smiths refitted this helm for you. It's a little uncomfortable, but very functional!",
+        "element": "MET",
+        "resists": "Fire +9",
+        "rarity": "5"
+      },
+      {
+        "levelNumber": 10,
+        "levelDisplay": "55",
+        "actualLevel": 55,
+        "variantName": "V",
+        "name": "Dravir Warhelm V",
+        "damage": "",
+        "stats": "Block +3, Dodge +3, Parry +3, Crit +2, END +4, CHA +4, INT +8, DEX +8, STR +8, Bonus +2",
+        "obtainVariants": [
+          {
+            "location": "CiaV Loot for DCs",
+            "price": "100 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "90 DC (<24 hours) / 25 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389626",
+        "description": "Impressed with the bond you share with your dragon, the dravir smiths refitted this helm for you. It's a little uncomfortable, but very functional!",
+        "element": "MET",
+        "resists": "Fire +9",
+        "rarity": "5"
+      },
+      {
+        "levelNumber": 11,
+        "levelDisplay": "65",
+        "actualLevel": 65,
+        "variantName": "VI",
+        "name": "Dravir Warhelm VI",
+        "damage": "",
+        "stats": "Block +4, Dodge +4, Parry +4, Crit +3, END +6, CHA +6, INT +10, DEX +10, STR +10, Bonus +3",
+        "obtainVariants": [
+          {
+            "location": "Caught in a Vise",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "14 Gold",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389627",
+        "description": "Impressed with the bond you share with your dragon, the dravir smiths refitted this helm for you. It's a little uncomfortable, but very functional!",
+        "element": "MET",
+        "resists": "Fire +10",
+        "rarity": "5"
+      },
+      {
+        "levelNumber": 12,
+        "levelDisplay": "65",
+        "actualLevel": 65,
+        "variantName": "VI",
+        "name": "Dravir Warhelm VI",
+        "damage": "",
+        "stats": "Block +4, Dodge +4, Parry +4, Crit +3, END +6, CHA +6, INT +10, DEX +10, STR +10, Bonus +3",
+        "obtainVariants": [
+          {
+            "location": "CiaV Loot for DCs",
+            "price": "100 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "90 DC (<24 hours) / 25 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389627",
+        "description": "Impressed with the bond you share with your dragon, the dravir smiths refitted this helm for you. It's a little uncomfortable, but very functional!",
+        "element": "MET",
+        "resists": "Fire +10",
+        "rarity": "5"
+      },
+      {
+        "levelNumber": 13,
+        "levelDisplay": "75",
+        "actualLevel": 75,
+        "variantName": "VII",
+        "name": "Dravir Warhelm VII",
+        "damage": "",
+        "stats": "Block +5, Dodge +5, Parry +5, Crit +4, END +8, CHA +8, LUK +3, INT +12, DEX +12, STR +12, Bonus +4",
+        "obtainVariants": [
+          {
+            "location": "Caught in a Vise",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "18 Gold",
+            "daRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389628",
+        "description": "Impressed with the bond you share with your dragon, the dravir smiths refitted this helm for you. It's a little uncomfortable, but very functional! This item requires a Dragon Amulet.",
+        "element": "MET",
+        "resists": "Fire +10, Health -3",
+        "rarity": "5"
+      },
+      {
+        "levelNumber": 14,
+        "levelDisplay": "75",
+        "actualLevel": 75,
+        "variantName": "VII",
+        "name": "Dravir Warhelm VII",
+        "damage": "",
+        "stats": "Block +5, Dodge +5, Parry +5, Crit +4, END +8, CHA +8, LUK +3, INT +12, DEX +12, STR +12, Bonus +4",
+        "obtainVariants": [
+          {
+            "location": "CiaV Loot for DCs",
+            "price": "100 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "90 DC (<24 hours) / 25 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389628",
+        "description": "Impressed with the bond you share with your dragon, the dravir smiths refitted this helm for you. It's a little uncomfortable, but very functional! This item requires a Dragon Amulet.",
+        "element": "MET",
+        "resists": "Fire +10, Health -3",
+        "rarity": "5"
+      },
+      {
+        "levelNumber": 15,
+        "levelDisplay": "85",
+        "actualLevel": 85,
+        "variantName": "VIII",
+        "name": "Dravir Warhelm VIII",
+        "damage": "",
+        "stats": "Block +6, Dodge +6, Parry +6, Crit +5, END +10, CHA +10, LUK +5, INT +14, DEX +14, STR +14, Bonus +5",
+        "obtainVariants": [
+          {
+            "location": "Caught in a Vise",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "22 Gold",
+            "daRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389629",
+        "description": "Impressed with the bond you share with your dragon, the dravir smiths refitted this helm for you. It's a little uncomfortable, but very functional! This item requires a Dragon Amulet.",
+        "element": "MET",
+        "resists": "Fire +10, Health -5",
+        "rarity": "5"
+      },
+      {
+        "levelNumber": 16,
+        "levelDisplay": "85",
+        "actualLevel": 85,
+        "variantName": "VIII",
+        "name": "Dravir Warhelm VIII",
+        "damage": "",
+        "stats": "Block +6, Dodge +6, Parry +6, Crit +5, END +10, CHA +10, LUK +5, INT +14, DEX +14, STR +14, Bonus +5",
+        "obtainVariants": [
+          {
+            "location": "CiaV Loot for DCs",
+            "price": "100 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "90 DC (<24 hours) / 25 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389629",
+        "description": "Impressed with the bond you share with your dragon, the dravir smiths refitted this helm for you. It's a little uncomfortable, but very functional! This item requires a Dragon Amulet.",
+        "element": "MET",
+        "resists": "Fire +10, Health -5",
+        "rarity": "5"
+      }
+    ],
+    "itemType": "Helm",
+    "equipSlot": "Head",
+    "category": "Armor",
+    "releaseDate": "",
+    "tags": [
+      "dc",
+      "free",
+      "met"
+    ],
+    "isCosmetic": true,
+    "hasDA": true,
+    "hasDC": true,
+    "hasDM": false,
+    "hasFree": true,
+    "hasMerge": false,
+    "levelRange": "I-VIII",
+    "elements": [
+      "MET"
+    ]
+  },
+  {
+    "id": "accessory-radiant-dravir-warhelm",
+    "familyName": "Radiant Dravir Warhelm",
+    "slug": "accessory-radiant-dravir-warhelm",
+    "type": "accessory",
+    "subtype": "helm",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22389622",
+    "familyOrigin": "cross-post",
+    "familySources": [
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=22389631",
         "title": "DF Encyclopedia: Radiant Dravir Warhelm",
@@ -41321,7 +41140,16 @@
           "caption": "All Appearances"
         }
       ],
-      "rarity": "5"
+      "rarity": "5",
+      "resists": "None",
+      "alsoSee": [
+        {
+          "name": "Dravir Warhelm",
+          "slug": "accessory-dravir-warhelm",
+          "type": "accessory",
+          "url": "https://forums2.battleon.com/f/tm.asp?m=22389622"
+        }
+      ]
     },
     "levelVariants": [
       {
@@ -41363,382 +41191,6 @@
         "resists": "None",
         "rarity": "5",
         "notes": "Helm has a low drop rate from the quest Caught in a Vise.\nHelm is color-custom to the player's base and trim colors.\nHelm's eye is attuned to the player's equipped weapon's element; refer to this chart for all appearances.\nWood elemental attunement became accessible upon the release of Spare Chair on January 28th, 2023."
-      },
-      {
-        "levelNumber": 2,
-        "levelDisplay": "15",
-        "actualLevel": 15,
-        "variantName": "I",
-        "name": "Dravir Warhelm I",
-        "damage": "",
-        "stats": "END +2, CHA +2, INT +1, DEX +1, STR +1",
-        "obtainVariants": [
-          {
-            "location": "Caught in a Vise",
-            "price": "N/A",
-            "priceType": "free",
-            "sellback": "5 Gold",
-            "daRequired": false
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389622",
-        "description": "Impressed with the bond you share with your dragon, the dravir smiths refitted this helm for you. It's a little uncomfortable, but very functional!",
-        "element": "MET",
-        "resists": "Fire +5",
-        "rarity": "5"
-      },
-      {
-        "levelNumber": 3,
-        "levelDisplay": "15",
-        "actualLevel": 15,
-        "variantName": "I",
-        "name": "Dravir Warhelm I",
-        "damage": "",
-        "stats": "END +2, CHA +2, INT +1, DEX +1, STR +1",
-        "obtainVariants": [
-          {
-            "location": "CiaV Loot for DCs",
-            "price": "100 Dragon Coins",
-            "priceType": "dc",
-            "sellback": "90 DC (<24 hours) / 25 DC (>24 hours)",
-            "daRequired": false,
-            "dcRequired": true
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389622",
-        "description": "Impressed with the bond you share with your dragon, the dravir smiths refitted this helm for you. It's a little uncomfortable, but very functional!",
-        "element": "MET",
-        "resists": "Fire +5",
-        "rarity": "5"
-      },
-      {
-        "levelNumber": 4,
-        "levelDisplay": "25",
-        "actualLevel": 25,
-        "variantName": "II",
-        "name": "Dravir Warhelm II",
-        "damage": "",
-        "stats": "END +2, CHA +2, INT +2, DEX +2, STR +2",
-        "obtainVariants": [
-          {
-            "location": "Caught in a Vise",
-            "price": "N/A",
-            "priceType": "free",
-            "sellback": "7 Gold",
-            "daRequired": false
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389623",
-        "description": "Impressed with the bond you share with your dragon, the dravir smiths refitted this helm for you. It's a little uncomfortable, but very functional!",
-        "element": "MET",
-        "resists": "Fire +6",
-        "rarity": "5"
-      },
-      {
-        "levelNumber": 5,
-        "levelDisplay": "25",
-        "actualLevel": 25,
-        "variantName": "II",
-        "name": "Dravir Warhelm II",
-        "damage": "",
-        "stats": "END +2, CHA +2, INT +2, DEX +2, STR +2",
-        "obtainVariants": [
-          {
-            "location": "CiaV Loot for DCs",
-            "price": "100 Dragon Coins",
-            "priceType": "dc",
-            "sellback": "90 DC (<24 hours) / 25 DC (>24 hours)",
-            "daRequired": false,
-            "dcRequired": true
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389623",
-        "description": "Impressed with the bond you share with your dragon, the dravir smiths refitted this helm for you. It's a little uncomfortable, but very functional!",
-        "element": "MET",
-        "resists": "Fire +6",
-        "rarity": "5"
-      },
-      {
-        "levelNumber": 6,
-        "levelDisplay": "35",
-        "actualLevel": 35,
-        "variantName": "III",
-        "name": "Dravir Warhelm III",
-        "damage": "",
-        "stats": "Block +1, Dodge +1, Parry +1, END +3, CHA +3, INT +4, DEX +4, STR +4",
-        "obtainVariants": [
-          {
-            "location": "Caught in a Vise",
-            "price": "N/A",
-            "priceType": "free",
-            "sellback": "9 Gold",
-            "daRequired": false
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389624",
-        "description": "Impressed with the bond you share with your dragon, the dravir smiths refitted this helm for you. It's a little uncomfortable, but very functional!",
-        "element": "MET",
-        "resists": "Fire +7",
-        "rarity": "5"
-      },
-      {
-        "levelNumber": 7,
-        "levelDisplay": "35",
-        "actualLevel": 35,
-        "variantName": "III",
-        "name": "Dravir Warhelm III",
-        "damage": "",
-        "stats": "Block +1, Dodge +1, Parry +1, END +3, CHA +3, INT +4, DEX +4, STR +4",
-        "obtainVariants": [
-          {
-            "location": "CiaV Loot for DCs",
-            "price": "100 Dragon Coins",
-            "priceType": "dc",
-            "sellback": "90 DC (<24 hours) / 25 DC (>24 hours)",
-            "daRequired": false,
-            "dcRequired": true
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389624",
-        "description": "Impressed with the bond you share with your dragon, the dravir smiths refitted this helm for you. It's a little uncomfortable, but very functional!",
-        "element": "MET",
-        "resists": "Fire +7",
-        "rarity": "5"
-      },
-      {
-        "levelNumber": 8,
-        "levelDisplay": "45",
-        "actualLevel": 45,
-        "variantName": "IV",
-        "name": "Dravir Warhelm IV",
-        "damage": "",
-        "stats": "Block +2, Dodge +2, Parry +2, Crit +1, END +3, CHA +3, INT +5, DEX +5, STR +5, Bonus +1",
-        "obtainVariants": [
-          {
-            "location": "Caught in a Vise",
-            "price": "N/A",
-            "priceType": "free",
-            "sellback": "11 Gold",
-            "daRequired": false
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389625",
-        "description": "Impressed with the bond you share with your dragon, the dravir smiths refitted this helm for you. It's a little uncomfortable, but very functional!",
-        "element": "MET",
-        "resists": "Fire +8",
-        "rarity": "5"
-      },
-      {
-        "levelNumber": 9,
-        "levelDisplay": "45",
-        "actualLevel": 45,
-        "variantName": "IV",
-        "name": "Dravir Warhelm IV",
-        "damage": "",
-        "stats": "Block +2, Dodge +2, Parry +2, Crit +1, END +3, CHA +3, INT +5, DEX +5, STR +5, Bonus +1",
-        "obtainVariants": [
-          {
-            "location": "CiaV Loot for DCs",
-            "price": "100 Dragon Coins",
-            "priceType": "dc",
-            "sellback": "90 DC (<24 hours) / 25 DC (>24 hours)",
-            "daRequired": false,
-            "dcRequired": true
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389625",
-        "description": "Impressed with the bond you share with your dragon, the dravir smiths refitted this helm for you. It's a little uncomfortable, but very functional!",
-        "element": "MET",
-        "resists": "Fire +8",
-        "rarity": "5"
-      },
-      {
-        "levelNumber": 10,
-        "levelDisplay": "55",
-        "actualLevel": 55,
-        "variantName": "V",
-        "name": "Dravir Warhelm V",
-        "damage": "",
-        "stats": "Block +3, Dodge +3, Parry +3, Crit +2, END +4, CHA +4, INT +8, DEX +8, STR +8, Bonus +2",
-        "obtainVariants": [
-          {
-            "location": "Caught in a Vise",
-            "price": "N/A",
-            "priceType": "free",
-            "sellback": "12 Gold",
-            "daRequired": false
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389626",
-        "description": "Impressed with the bond you share with your dragon, the dravir smiths refitted this helm for you. It's a little uncomfortable, but very functional!",
-        "element": "MET",
-        "resists": "Fire +9",
-        "rarity": "5"
-      },
-      {
-        "levelNumber": 11,
-        "levelDisplay": "55",
-        "actualLevel": 55,
-        "variantName": "V",
-        "name": "Dravir Warhelm V",
-        "damage": "",
-        "stats": "Block +3, Dodge +3, Parry +3, Crit +2, END +4, CHA +4, INT +8, DEX +8, STR +8, Bonus +2",
-        "obtainVariants": [
-          {
-            "location": "CiaV Loot for DCs",
-            "price": "100 Dragon Coins",
-            "priceType": "dc",
-            "sellback": "90 DC (<24 hours) / 25 DC (>24 hours)",
-            "daRequired": false,
-            "dcRequired": true
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389626",
-        "description": "Impressed with the bond you share with your dragon, the dravir smiths refitted this helm for you. It's a little uncomfortable, but very functional!",
-        "element": "MET",
-        "resists": "Fire +9",
-        "rarity": "5"
-      },
-      {
-        "levelNumber": 12,
-        "levelDisplay": "65",
-        "actualLevel": 65,
-        "variantName": "VI",
-        "name": "Dravir Warhelm VI",
-        "damage": "",
-        "stats": "Block +4, Dodge +4, Parry +4, Crit +3, END +6, CHA +6, INT +10, DEX +10, STR +10, Bonus +3",
-        "obtainVariants": [
-          {
-            "location": "Caught in a Vise",
-            "price": "N/A",
-            "priceType": "free",
-            "sellback": "14 Gold",
-            "daRequired": false
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389627",
-        "description": "Impressed with the bond you share with your dragon, the dravir smiths refitted this helm for you. It's a little uncomfortable, but very functional!",
-        "element": "MET",
-        "resists": "Fire +10",
-        "rarity": "5"
-      },
-      {
-        "levelNumber": 13,
-        "levelDisplay": "65",
-        "actualLevel": 65,
-        "variantName": "VI",
-        "name": "Dravir Warhelm VI",
-        "damage": "",
-        "stats": "Block +4, Dodge +4, Parry +4, Crit +3, END +6, CHA +6, INT +10, DEX +10, STR +10, Bonus +3",
-        "obtainVariants": [
-          {
-            "location": "CiaV Loot for DCs",
-            "price": "100 Dragon Coins",
-            "priceType": "dc",
-            "sellback": "90 DC (<24 hours) / 25 DC (>24 hours)",
-            "daRequired": false,
-            "dcRequired": true
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389627",
-        "description": "Impressed with the bond you share with your dragon, the dravir smiths refitted this helm for you. It's a little uncomfortable, but very functional!",
-        "element": "MET",
-        "resists": "Fire +10",
-        "rarity": "5"
-      },
-      {
-        "levelNumber": 14,
-        "levelDisplay": "75",
-        "actualLevel": 75,
-        "variantName": "VII",
-        "name": "Dravir Warhelm VII",
-        "damage": "",
-        "stats": "Block +5, Dodge +5, Parry +5, Crit +4, END +8, CHA +8, LUK +3, INT +12, DEX +12, STR +12, Bonus +4",
-        "obtainVariants": [
-          {
-            "location": "Caught in a Vise",
-            "price": "N/A",
-            "priceType": "free",
-            "sellback": "18 Gold",
-            "daRequired": true
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389628",
-        "description": "Impressed with the bond you share with your dragon, the dravir smiths refitted this helm for you. It's a little uncomfortable, but very functional! This item requires a Dragon Amulet.",
-        "element": "MET",
-        "resists": "Fire +10, Health -3",
-        "rarity": "5"
-      },
-      {
-        "levelNumber": 15,
-        "levelDisplay": "75",
-        "actualLevel": 75,
-        "variantName": "VII",
-        "name": "Dravir Warhelm VII",
-        "damage": "",
-        "stats": "Block +5, Dodge +5, Parry +5, Crit +4, END +8, CHA +8, LUK +3, INT +12, DEX +12, STR +12, Bonus +4",
-        "obtainVariants": [
-          {
-            "location": "CiaV Loot for DCs",
-            "price": "100 Dragon Coins",
-            "priceType": "dc",
-            "sellback": "90 DC (<24 hours) / 25 DC (>24 hours)",
-            "daRequired": false,
-            "dcRequired": true
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389628",
-        "description": "Impressed with the bond you share with your dragon, the dravir smiths refitted this helm for you. It's a little uncomfortable, but very functional! This item requires a Dragon Amulet.",
-        "element": "MET",
-        "resists": "Fire +10, Health -3",
-        "rarity": "5"
-      },
-      {
-        "levelNumber": 16,
-        "levelDisplay": "85",
-        "actualLevel": 85,
-        "variantName": "VIII",
-        "name": "Dravir Warhelm VIII",
-        "damage": "",
-        "stats": "Block +6, Dodge +6, Parry +6, Crit +5, END +10, CHA +10, LUK +5, INT +14, DEX +14, STR +14, Bonus +5",
-        "obtainVariants": [
-          {
-            "location": "Caught in a Vise",
-            "price": "N/A",
-            "priceType": "free",
-            "sellback": "22 Gold",
-            "daRequired": true
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389629",
-        "description": "Impressed with the bond you share with your dragon, the dravir smiths refitted this helm for you. It's a little uncomfortable, but very functional! This item requires a Dragon Amulet.",
-        "element": "MET",
-        "resists": "Fire +10, Health -5",
-        "rarity": "5"
-      },
-      {
-        "levelNumber": 17,
-        "levelDisplay": "85",
-        "actualLevel": 85,
-        "variantName": "VIII",
-        "name": "Dravir Warhelm VIII",
-        "damage": "",
-        "stats": "Block +6, Dodge +6, Parry +6, Crit +5, END +10, CHA +10, LUK +5, INT +14, DEX +14, STR +14, Bonus +5",
-        "obtainVariants": [
-          {
-            "location": "CiaV Loot for DCs",
-            "price": "100 Dragon Coins",
-            "priceType": "dc",
-            "sellback": "90 DC (<24 hours) / 25 DC (>24 hours)",
-            "daRequired": false,
-            "dcRequired": true
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389629",
-        "description": "Impressed with the bond you share with your dragon, the dravir smiths refitted this helm for you. It's a little uncomfortable, but very functional! This item requires a Dragon Amulet.",
-        "element": "MET",
-        "resists": "Fire +10, Health -5",
-        "rarity": "5"
       }
     ],
     "itemType": "Helm",
@@ -41751,12 +41203,12 @@
       "met"
     ],
     "isCosmetic": true,
-    "hasDA": true,
+    "hasDA": false,
     "hasDC": true,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
-    "levelRange": "I-VIII",
+    "levelRange": "1",
     "elements": [
       "MET"
     ]
@@ -42082,10 +41534,6 @@
     "id": "accessory-dread-pirate-helm",
     "familyName": "Dread Pirate Helm",
     "slug": "accessory-dread-pirate-helm",
-    "aliasSlugs": [
-      "accessory-dread-pirate-helm",
-      "accessory-dread-pirate-helm"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18326867",
@@ -42539,16 +41987,6 @@
     "id": "accessory-dreamer-beast-helm",
     "familyName": "Dreamer Beast Helm",
     "slug": "accessory-dreamer-beast-helm",
-    "aliasSlugs": [
-      "accessory-dreamer-beast-helm",
-      "accessory-dreamer-beast-helm",
-      "accessory-dreamer-beast-helm",
-      "accessory-dreamer-beast-helm",
-      "accessory-dreamer-beast-helm",
-      "accessory-dreamer-beast-helm",
-      "accessory-dreamer-beast-helm",
-      "accessory-dreamer-beast-helm"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21962836",
@@ -43975,17 +43413,6 @@
     "id": "accessory-eagle-of-freedom-helm",
     "familyName": "Eagle of Freedom Helm",
     "slug": "accessory-eagle-of-freedom-helm",
-    "aliasSlugs": [
-      "accessory-eagle-of-freedom-helm",
-      "accessory-eagle-of-freedom-helm",
-      "accessory-eagle-of-freedom-helm",
-      "accessory-eagle-of-freedom-helm",
-      "accessory-eagle-of-freedom-helm",
-      "accessory-eagle-of-freedom-helm",
-      "accessory-eagle-of-freedom-helm",
-      "accessory-eagle-of-freedom-helm",
-      "accessory-eagle-of-freedom-helm"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17819486",
@@ -44273,14 +43700,6 @@
     "id": "accessory-earth-mask",
     "familyName": "Earth Mask",
     "slug": "accessory-earth-mask",
-    "aliasSlugs": [
-      "accessory-earth-mask",
-      "accessory-earth-mask",
-      "accessory-earth-mask",
-      "accessory-earth-mask",
-      "accessory-earth-mask",
-      "accessory-earth-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22053037",
@@ -44495,10 +43914,6 @@
     "id": "accessory-ebil-artix-mask",
     "familyName": "Ebil Artix Mask",
     "slug": "accessory-ebil-artix-mask",
-    "aliasSlugs": [
-      "accessory-ebil-artix-mask",
-      "accessory-ebil-artix-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22406378",
@@ -44718,10 +44133,6 @@
     "id": "accessory-elder-witch-mask",
     "familyName": "Elder Witch Mask",
     "slug": "accessory-elder-witch-mask",
-    "aliasSlugs": [
-      "accessory-elder-witch-mask",
-      "accessory-elder-witch-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22406383",
@@ -44859,12 +44270,6 @@
         "slug": "accessory-shocking-hair",
         "type": "accessory",
         "url": "https://forums2.battleon.com/f/tm.asp?m=21528733"
-      },
-      {
-        "name": "Shockingly Hair",
-        "slug": "accessory-shockingly-amazing-hair",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21528478"
       }
     ]
   },
@@ -44948,10 +44353,6 @@
     "id": "accessory-elite-pactogonal-helm",
     "familyName": "Elite Pactogonal Helm",
     "slug": "accessory-elite-pactogonal-helm",
-    "aliasSlugs": [
-      "accessory-elite-pactogonal-helm",
-      "accessory-elite-pactogonal-helm"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22097081",
@@ -45156,7 +44557,6 @@
     "familyName": "Empress Mask , The",
     "slug": "accessory-empress-mask-the",
     "aliasSlugs": [
-      "accessory-the-empress-mask",
       "accessory-the-empress-mask"
     ],
     "type": "accessory",
@@ -45258,10 +44658,6 @@
     "id": "accessory-empty-warrior-mask",
     "familyName": "Empty Warrior Mask",
     "slug": "accessory-empty-warrior-mask",
-    "aliasSlugs": [
-      "accessory-empty-warrior-mask",
-      "accessory-empty-warrior-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22385620",
@@ -45822,12 +45218,6 @@
     "id": "accessory-enchanted-lightguard-helm",
     "familyName": "Enchanted Lightguard Helm",
     "slug": "accessory-enchanted-lightguard-helm",
-    "aliasSlugs": [
-      "accessory-enchanted-lightguard-helm",
-      "accessory-enchanted-lightguard-helm",
-      "accessory-enchanted-lightguard-helm",
-      "accessory-enchanted-lightguard-helm"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21976507",
@@ -45979,12 +45369,6 @@
     "id": "accessory-energetic-ninja-headband",
     "familyName": "Energetic Ninja Headband",
     "slug": "accessory-energetic-ninja-headband",
-    "aliasSlugs": [
-      "accessory-energetic-ninja-headband",
-      "accessory-energetic-ninja-headband",
-      "accessory-energetic-ninja-headband",
-      "accessory-energetic-ninja-headband"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21926751",
@@ -46136,14 +45520,6 @@
     "id": "accessory-energy-mask",
     "familyName": "Energy Mask",
     "slug": "accessory-energy-mask",
-    "aliasSlugs": [
-      "accessory-energy-mask",
-      "accessory-energy-mask",
-      "accessory-energy-mask",
-      "accessory-energy-mask",
-      "accessory-energy-mask",
-      "accessory-energy-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22053062",
@@ -46359,7 +45735,6 @@
     "familyName": "Engineer Mask , The",
     "slug": "accessory-engineer-mask-the",
     "aliasSlugs": [
-      "accessory-the-engineer-mask",
       "accessory-the-engineer-mask"
     ],
     "type": "accessory",
@@ -46461,10 +45836,6 @@
     "id": "accessory-enigmato-mask",
     "familyName": "Enigmato Mask",
     "slug": "accessory-enigmato-mask",
-    "aliasSlugs": [
-      "accessory-enigmato-mask",
-      "accessory-enigmato-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22370251",
@@ -46564,10 +45935,6 @@
     "id": "accessory-ennwen-mask",
     "familyName": "Ennwen Mask",
     "slug": "accessory-ennwen-mask",
-    "aliasSlugs": [
-      "accessory-ennwen-mask",
-      "accessory-ennwen-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22418922",
@@ -47496,15 +46863,6 @@
     "id": "accessory-escherion-hood",
     "familyName": "Escherion Hood",
     "slug": "accessory-escherion-hood",
-    "aliasSlugs": [
-      "accessory-escherion-hood",
-      "accessory-escherion-hood",
-      "accessory-escherion-hood",
-      "accessory-escherion-hood",
-      "accessory-escherion-hood",
-      "accessory-escherion-hood",
-      "accessory-escherion-hood"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21766370",
@@ -47752,10 +47110,6 @@
     "id": "accessory-escherion-mask",
     "familyName": "Escherion Mask",
     "slug": "accessory-escherion-mask",
-    "aliasSlugs": [
-      "accessory-escherion-mask",
-      "accessory-escherion-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22385606",
@@ -48137,10 +47491,6 @@
     "id": "accessory-etaos-mask",
     "familyName": "Etaos Mask",
     "slug": "accessory-etaos-mask",
-    "aliasSlugs": [
-      "accessory-etaos-mask",
-      "accessory-etaos-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22406369",
@@ -48472,10 +47822,6 @@
     "id": "accessory-eulin-mask",
     "familyName": "Eulin Mask",
     "slug": "accessory-eulin-mask",
-    "aliasSlugs": [
-      "accessory-eulin-mask",
-      "accessory-eulin-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22397418",
@@ -48673,7 +48019,6 @@
     "slug": "accessory-evil-pumpkin-head-mask",
     "aliasSlugs": [
       "accessory-evil-pumpkin-head",
-      "accessory-evil-pumpkin-head",
       "accessory-evil-pumpkin-mask"
     ],
     "type": "accessory",
@@ -48814,10 +48159,6 @@
     "id": "accessory-evolved-quadtech-mask",
     "familyName": "Evolved QuadTech Mask",
     "slug": "accessory-evolved-quadtech-mask",
-    "aliasSlugs": [
-      "accessory-evolved-quadtech-mask",
-      "accessory-evolved-quadtech-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22423776",
@@ -49715,10 +49056,6 @@
     "id": "accessory-ezrajal-mask",
     "familyName": "Ezrajal Mask",
     "slug": "accessory-ezrajal-mask",
-    "aliasSlugs": [
-      "accessory-ezrajal-mask",
-      "accessory-ezrajal-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22370273",
@@ -50067,14 +49404,6 @@
     "id": "accessory-faerie-floss-helm",
     "familyName": "Faerie Floss Helm",
     "slug": "accessory-faerie-floss-helm",
-    "aliasSlugs": [
-      "accessory-faerie-floss-helm",
-      "accessory-faerie-floss-helm",
-      "accessory-faerie-floss-helm",
-      "accessory-faerie-floss-helm",
-      "accessory-faerie-floss-helm",
-      "accessory-faerie-floss-helm"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=16760878",
@@ -50557,10 +49886,6 @@
     "id": "accessory-fallen-king-mask",
     "familyName": "Fallen King Mask",
     "slug": "accessory-fallen-king-mask",
-    "aliasSlugs": [
-      "accessory-fallen-king-mask",
-      "accessory-fallen-king-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22397448",
@@ -50707,13 +50032,6 @@
     "id": "accessory-falwynn-mask",
     "familyName": "Falwynn Mask",
     "slug": "accessory-falwynn-mask",
-    "aliasSlugs": [
-      "accessory-falwynn-mask",
-      "accessory-falwynn-mask",
-      "accessory-falwynn-mask",
-      "accessory-falwynn-mask",
-      "accessory-falwynn-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22186395",
@@ -51163,13 +50481,6 @@
     "id": "accessory-fangblade-mask",
     "familyName": "Fangblade Mask",
     "slug": "accessory-fangblade-mask",
-    "aliasSlugs": [
-      "accessory-fangblade-mask",
-      "accessory-fangblade-mask",
-      "accessory-fangblade-mask",
-      "accessory-fangblade-mask",
-      "accessory-fangblade-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22186397",
@@ -51355,10 +50666,6 @@
     "id": "accessory-faunus-dragon-helm",
     "familyName": "Faunus Dragon Helm",
     "slug": "accessory-faunus-dragon-helm",
-    "aliasSlugs": [
-      "accessory-faunus-dragon-helm",
-      "accessory-faunus-dragon-helm"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18327414",
@@ -51626,13 +50933,6 @@
     "id": "accessory-faust-mask",
     "familyName": "Faust Mask",
     "slug": "accessory-faust-mask",
-    "aliasSlugs": [
-      "accessory-faust-mask",
-      "accessory-faust-mask",
-      "accessory-faust-mask",
-      "accessory-faust-mask",
-      "accessory-faust-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22186400",
@@ -51818,10 +51118,6 @@
     "id": "accessory-fear-sirius-mask",
     "familyName": "Fear Sirius Mask",
     "slug": "accessory-fear-sirius-mask",
-    "aliasSlugs": [
-      "accessory-fear-sirius-mask",
-      "accessory-fear-sirius-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22418930",
@@ -51963,7 +51259,6 @@
     "familyName": "Female Frost Moglin Helm",
     "slug": "accessory-female-frost-moglin-helm",
     "aliasSlugs": [
-      "accessory-female-frost-moglin-helm",
       "accessory-female-frost-moglin-helm-ii",
       "accessory-female-frost-moglin-helm-iii",
       "accessory-female-frost-moglin-helm-iv",
@@ -52427,7 +51722,7 @@
     "slug": "accessory-female-highland-headwear",
     "type": "accessory",
     "subtype": "helm",
-    "description": "Lim does love plaid. This was a gift from one of his friends, and he�s selling an imitation of it. This item requires a Dragon Amulet.",
+    "description": "Lim does love plaid. This was a gift from one of his friends, and he's selling an imitation of it. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=16699067",
     "releaseDate": "",
     "imageUrl": "http://i.imgur.com/3uQdyty.png",
@@ -52460,12 +51755,6 @@
     "id": "accessory-female-lightguard",
     "familyName": "Female Lightguard",
     "slug": "accessory-female-lightguard",
-    "aliasSlugs": [
-      "accessory-female-lightguard",
-      "accessory-female-lightguard",
-      "accessory-female-lightguard",
-      "accessory-female-lightguard"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21975555",
@@ -52816,10 +52105,6 @@
     "id": "accessory-ferrous-dude-mach-1-mask",
     "familyName": "Ferrous Dude Mach 1 Mask",
     "slug": "accessory-ferrous-dude-mach-1-mask",
-    "aliasSlugs": [
-      "accessory-ferrous-dude-mach-1-mask",
-      "accessory-ferrous-dude-mach-1-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18284552",
@@ -52916,10 +52201,6 @@
     "id": "accessory-ferrous-dude-mach-2-mask",
     "familyName": "Ferrous Dude Mach 2 Mask",
     "slug": "accessory-ferrous-dude-mach-2-mask",
-    "aliasSlugs": [
-      "accessory-ferrous-dude-mach-2-mask",
-      "accessory-ferrous-dude-mach-2-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18283767",
@@ -53053,15 +52334,6 @@
     "id": "accessory-fierce-dragonlord-helm",
     "familyName": "Fierce DragonLord Helm",
     "slug": "accessory-fierce-dragonlord-helm",
-    "aliasSlugs": [
-      "accessory-fierce-dragonlord-helm",
-      "accessory-fierce-dragonlord-helm",
-      "accessory-fierce-dragonlord-helm",
-      "accessory-fierce-dragonlord-helm",
-      "accessory-fierce-dragonlord-helm",
-      "accessory-fierce-dragonlord-helm",
-      "accessory-fierce-dragonlord-helm"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20422564",
@@ -53423,14 +52695,6 @@
     "id": "accessory-fire-mask",
     "familyName": "Fire Mask",
     "slug": "accessory-fire-mask",
-    "aliasSlugs": [
-      "accessory-fire-mask",
-      "accessory-fire-mask",
-      "accessory-fire-mask",
-      "accessory-fire-mask",
-      "accessory-fire-mask",
-      "accessory-fire-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22053042",
@@ -53828,10 +53092,6 @@
     "id": "accessory-fishy-mask",
     "familyName": "Fishy Mask",
     "slug": "accessory-fishy-mask",
-    "aliasSlugs": [
-      "accessory-fishy-mask",
-      "accessory-fishy-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=11621739",
@@ -54089,10 +53349,6 @@
     "id": "accessory-foreman-s-helm",
     "familyName": "Foreman's Helm",
     "slug": "accessory-foreman-s-helm",
-    "aliasSlugs": [
-      "accessory-foreman-s-helm",
-      "accessory-foreman-s-helm"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=12812745",
@@ -54261,10 +53517,6 @@
     "id": "accessory-fourth-wall-mask",
     "familyName": "Fourth Wall Mask",
     "slug": "accessory-fourth-wall-mask",
-    "aliasSlugs": [
-      "accessory-fourth-wall-mask",
-      "accessory-fourth-wall-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22418937",
@@ -54399,16 +53651,6 @@
     "id": "accessory-frost-moglin-defender-helm",
     "familyName": "Frost Moglin Defender Helm",
     "slug": "accessory-frost-moglin-defender-helm",
-    "aliasSlugs": [
-      "accessory-frost-moglin-defender-helm",
-      "accessory-frost-moglin-defender-helm",
-      "accessory-frost-moglin-defender-helm",
-      "accessory-frost-moglin-defender-helm",
-      "accessory-frost-moglin-defender-helm",
-      "accessory-frost-moglin-defender-helm",
-      "accessory-frost-moglin-defender-helm",
-      "accessory-frost-moglin-defender-helm"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21905440",
@@ -54669,15 +53911,6 @@
     "id": "accessory-frost-moglin-slayer-helm",
     "familyName": "Frost Moglin Slayer Helm",
     "slug": "accessory-frost-moglin-slayer-helm",
-    "aliasSlugs": [
-      "accessory-frost-moglin-slayer-helm",
-      "accessory-frost-moglin-slayer-helm",
-      "accessory-frost-moglin-slayer-helm",
-      "accessory-frost-moglin-slayer-helm",
-      "accessory-frost-moglin-slayer-helm",
-      "accessory-frost-moglin-slayer-helm",
-      "accessory-frost-moglin-slayer-helm"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21905483",
@@ -55225,14 +54458,6 @@
     "id": "accessory-frost-queen-mask",
     "familyName": "Frost Queen Mask",
     "slug": "accessory-frost-queen-mask",
-    "aliasSlugs": [
-      "accessory-frost-queen-mask",
-      "accessory-frost-queen-mask",
-      "accessory-frost-queen-mask",
-      "accessory-frost-queen-mask",
-      "accessory-frost-queen-mask",
-      "accessory-frost-queen-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21855291",
@@ -56323,14 +55548,6 @@
     "id": "accessory-frydae-mask",
     "familyName": "Frydae Mask",
     "slug": "accessory-frydae-mask",
-    "aliasSlugs": [
-      "accessory-frydae-mask",
-      "accessory-frydae-mask",
-      "accessory-frydae-mask",
-      "accessory-frydae-mask",
-      "accessory-frydae-mask",
-      "accessory-frydae-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22053077",
@@ -56545,10 +55762,6 @@
     "id": "accessory-gaelan-mask",
     "familyName": "Gaelan Mask",
     "slug": "accessory-gaelan-mask",
-    "aliasSlugs": [
-      "accessory-gaelan-mask",
-      "accessory-gaelan-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22297213",
@@ -56648,10 +55861,6 @@
     "id": "accessory-gala-jaania-mask",
     "familyName": "Gala Jaania Mask",
     "slug": "accessory-gala-jaania-mask",
-    "aliasSlugs": [
-      "accessory-gala-jaania-mask",
-      "accessory-gala-jaania-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22297231",
@@ -56751,13 +55960,6 @@
     "id": "accessory-galanoth-mask",
     "familyName": "Galanoth Mask",
     "slug": "accessory-galanoth-mask",
-    "aliasSlugs": [
-      "accessory-galanoth-mask",
-      "accessory-galanoth-mask",
-      "accessory-galanoth-mask",
-      "accessory-galanoth-mask",
-      "accessory-galanoth-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22186380",
@@ -56944,7 +56146,6 @@
     "familyName": "Galaxy Cowl",
     "slug": "accessory-galaxy-cowl",
     "aliasSlugs": [
-      "accessory-galaxy-cowl",
       "accessory-galaxy-cowl-ii",
       "accessory-galaxy-cowl-iii",
       "accessory-galaxy-cowl-iv"
@@ -57251,8 +56452,7 @@
     "slug": "accessory-gargoyle-mask-helm",
     "aliasSlugs": [
       "accessory-gargoyle-mask",
-      "accessory-gargoyle-helm",
-      "accessory-gargoyle-mask"
+      "accessory-gargoyle-helm"
     ],
     "type": "accessory",
     "subtype": "helm",
@@ -57550,10 +56750,6 @@
     "id": "accessory-gelunguis-mask",
     "familyName": "Gelunguis Mask",
     "slug": "accessory-gelunguis-mask",
-    "aliasSlugs": [
-      "accessory-gelunguis-mask",
-      "accessory-gelunguis-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22297229",
@@ -57653,10 +56849,6 @@
     "id": "accessory-general-varax-mask",
     "familyName": "General Varax Mask",
     "slug": "accessory-general-varax-mask",
-    "aliasSlugs": [
-      "accessory-general-varax-mask",
-      "accessory-general-varax-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=16870408",
@@ -57755,10 +56947,6 @@
     "id": "accessory-generous-mask",
     "familyName": "Generous Mask",
     "slug": "accessory-generous-mask",
-    "aliasSlugs": [
-      "accessory-generous-mask",
-      "accessory-generous-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22385599",
@@ -57858,14 +57046,6 @@
     "id": "accessory-glable-mask",
     "familyName": "Glable Mask",
     "slug": "accessory-glable-mask",
-    "aliasSlugs": [
-      "accessory-glable-mask",
-      "accessory-glable-mask",
-      "accessory-glable-mask",
-      "accessory-glable-mask",
-      "accessory-glable-mask",
-      "accessory-glable-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21855286",
@@ -58376,7 +57556,6 @@
       "accessory-the-glory-of-twilly-iv",
       "accessory-the-glory-of-twilly-v",
       "accessory-the-glory-of-twilly-vi",
-      "accessory-the-glory-of-twilly",
       "accessory-the-glory-of-twilly"
     ],
     "type": "accessory",
@@ -58918,13 +58097,6 @@
     "id": "accessory-glowing-tree-helm",
     "familyName": "Glowing Tree Helm",
     "slug": "accessory-glowing-tree-helm",
-    "aliasSlugs": [
-      "accessory-glowing-tree-helm",
-      "accessory-glowing-tree-helm",
-      "accessory-glowing-tree-helm",
-      "accessory-glowing-tree-helm",
-      "accessory-glowing-tree-helm"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21631205",
@@ -59100,10 +58272,6 @@
     "id": "accessory-gluttony-mask",
     "familyName": "Gluttony Mask",
     "slug": "accessory-gluttony-mask",
-    "aliasSlugs": [
-      "accessory-gluttony-mask",
-      "accessory-gluttony-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19748611",
@@ -60509,10 +59677,6 @@
     "id": "accessory-golden-helm-of-nobility",
     "familyName": "Golden Helm of Nobility",
     "slug": "accessory-golden-helm-of-nobility",
-    "aliasSlugs": [
-      "accessory-golden-helm-of-nobility",
-      "accessory-golden-helm-of-nobility"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=9475528",
@@ -60653,10 +59817,6 @@
     "id": "accessory-goose-mask",
     "familyName": "Goose Mask",
     "slug": "accessory-goose-mask",
-    "aliasSlugs": [
-      "accessory-goose-mask",
-      "accessory-goose-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22370289",
@@ -60893,29 +60053,23 @@
     "aliasSlugs": [
       "accessory-greedy-greedling-helm-i",
       "accessory-greedy-greedling-helm-ii",
-      "accessory-greedy-greedling-helm-iii",
-      "accessory-super-greedy-greedling-helm"
+      "accessory-greedy-greedling-helm-iii"
     ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=16872316",
     "familyOrigin": "cross-post",
-    "familySources": [
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=16872316",
-        "title": "DF Encyclopedia: Greedy Greedling Helm",
-        "isPrimary": true
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19166177",
-        "title": "DF Encyclopedia: Super Greedy Greedling Helm",
-        "variantLabel": "Super Greedy Greedling Helm",
-        "isPrimary": false
-      }
-    ],
     "shared": {
       "description": "A trophy from Mogloween 2009! Wearing it makes you feel slightly stingy...",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/GreedyGreedlingHelm.png"
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/GreedyGreedlingHelm.png",
+      "alsoSee": [
+        {
+          "name": "Super Greedy Greedling Helm",
+          "slug": "accessory-super-greedy-greedling-helm",
+          "type": "accessory",
+          "url": "https://forums2.battleon.com/f/tm.asp?m=16872316"
+        }
+      ]
     },
     "levelVariants": [
       {
@@ -60986,9 +60140,60 @@
         "element": "DAR",
         "resists": "Metal +5, Charity -10",
         "rarity": "7"
-      },
+      }
+    ],
+    "itemType": "Helm",
+    "equipSlot": "Head",
+    "category": "Armor",
+    "releaseDate": "",
+    "tags": [
+      "dar",
+      "free"
+    ],
+    "isSeasonal": true,
+    "hasDA": false,
+    "hasDC": false,
+    "hasDM": false,
+    "hasFree": true,
+    "hasMerge": false,
+    "levelRange": "I-III",
+    "elements": [
+      "DAR"
+    ]
+  },
+  {
+    "id": "accessory-super-greedy-greedling-helm",
+    "familyName": "Super Greedy Greedling Helm",
+    "slug": "accessory-super-greedy-greedling-helm",
+    "type": "accessory",
+    "subtype": "helm",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=16872316",
+    "familyOrigin": "cross-post",
+    "familySources": [
       {
-        "levelNumber": 4,
+        "url": "https://forums2.battleon.com/f/tm.asp?m=19166177",
+        "title": "DF Encyclopedia: Super Greedy Greedling Helm",
+        "variantLabel": "Super Greedy Greedling Helm",
+        "isPrimary": false
+      }
+    ],
+    "shared": {
+      "description": "This item requires a Dragon Amulet. A trophy from Mogloween 2009! Wearing it makes you feel slightly stingy...",
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/GreedyGreedlingHelm.png",
+      "resists": "Metal +8, Charity -100",
+      "rarity": "25",
+      "alsoSee": [
+        {
+          "name": "Greedy Greedling Helm",
+          "slug": "accessory-greedy-greedling-helm",
+          "type": "accessory",
+          "url": "https://forums2.battleon.com/f/tm.asp?m=16872316"
+        }
+      ]
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "Super",
@@ -61027,7 +60232,7 @@
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
-    "levelRange": "I-III",
+    "levelRange": "50",
     "elements": [
       "DAR"
     ]
@@ -61036,14 +60241,6 @@
     "id": "accessory-green-head",
     "familyName": "Green Head",
     "slug": "accessory-green-head",
-    "aliasSlugs": [
-      "accessory-green-head",
-      "accessory-green-head",
-      "accessory-green-head",
-      "accessory-green-head",
-      "accessory-green-head",
-      "accessory-green-head"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21759428",
@@ -61247,10 +60444,6 @@
     "id": "accessory-green-matey-s-cap",
     "familyName": "Green Matey's Cap",
     "slug": "accessory-green-matey-s-cap",
-    "aliasSlugs": [
-      "accessory-green-matey-s-cap",
-      "accessory-green-matey-s-cap"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18137151",
@@ -61422,14 +60615,6 @@
     "id": "accessory-greena-mask",
     "familyName": "Greena Mask",
     "slug": "accessory-greena-mask",
-    "aliasSlugs": [
-      "accessory-greena-mask",
-      "accessory-greena-mask",
-      "accessory-greena-mask",
-      "accessory-greena-mask",
-      "accessory-greena-mask",
-      "accessory-greena-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21855293",
@@ -61644,10 +60829,6 @@
     "id": "accessory-greetings-feline-mask",
     "familyName": "Greetings Feline Mask",
     "slug": "accessory-greetings-feline-mask",
-    "aliasSlugs": [
-      "accessory-greetings-feline-mask",
-      "accessory-greetings-feline-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=16871099",
@@ -61744,10 +60925,6 @@
     "id": "accessory-greg-mask",
     "familyName": "Greg Mask",
     "slug": "accessory-greg-mask",
-    "aliasSlugs": [
-      "accessory-greg-mask",
-      "accessory-greg-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22397426",
@@ -62228,14 +61405,6 @@
     "id": "accessory-grove-tender-visage",
     "familyName": "Grove Tender Visage",
     "slug": "accessory-grove-tender-visage",
-    "aliasSlugs": [
-      "accessory-grove-tender-visage",
-      "accessory-grove-tender-visage",
-      "accessory-grove-tender-visage",
-      "accessory-grove-tender-visage",
-      "accessory-grove-tender-visage",
-      "accessory-grove-tender-visage"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22014615",
@@ -62452,14 +61621,6 @@
     "id": "accessory-guardian-armet",
     "familyName": "Guardian Armet",
     "slug": "accessory-guardian-armet",
-    "aliasSlugs": [
-      "accessory-guardian-armet",
-      "accessory-guardian-armet",
-      "accessory-guardian-armet",
-      "accessory-guardian-armet",
-      "accessory-guardian-armet",
-      "accessory-guardian-armet"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21976513",
@@ -63561,14 +62722,6 @@
     "id": "accessory-guber-mask",
     "familyName": "Guber Mask",
     "slug": "accessory-guber-mask",
-    "aliasSlugs": [
-      "accessory-guber-mask",
-      "accessory-guber-mask",
-      "accessory-guber-mask",
-      "accessory-guber-mask",
-      "accessory-guber-mask",
-      "accessory-guber-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22053091",
@@ -63783,10 +62936,6 @@
     "id": "accessory-gud-wun",
     "familyName": "Gud Wun",
     "slug": "accessory-gud-wun",
-    "aliasSlugs": [
-      "accessory-gud-wun",
-      "accessory-gud-wun"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18179488",
@@ -63917,12 +63066,6 @@
     "id": "accessory-guise-of-the-unchained",
     "familyName": "Guise of the Unchained",
     "slug": "accessory-guise-of-the-unchained",
-    "aliasSlugs": [
-      "accessory-guise-of-the-unchained",
-      "accessory-guise-of-the-unchained",
-      "accessory-guise-of-the-unchained",
-      "accessory-guise-of-the-unchained"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21960301",
@@ -64175,10 +63318,6 @@
     "id": "accessory-hansa-mask",
     "familyName": "Hansa Mask",
     "slug": "accessory-hansa-mask",
-    "aliasSlugs": [
-      "accessory-hansa-mask",
-      "accessory-hansa-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22406362",
@@ -64319,10 +63458,6 @@
     "id": "accessory-harpy-mask",
     "familyName": "Harpy Mask",
     "slug": "accessory-harpy-mask",
-    "aliasSlugs": [
-      "accessory-harpy-mask",
-      "accessory-harpy-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21503002",
@@ -64422,10 +63557,6 @@
     "id": "accessory-harrowing-rose-mask",
     "familyName": "Harrowing Rose Mask",
     "slug": "accessory-harrowing-rose-mask",
-    "aliasSlugs": [
-      "accessory-harrowing-rose-mask",
-      "accessory-harrowing-rose-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21503006",
@@ -65677,14 +64808,6 @@
     "id": "accessory-heavy-rock-mask",
     "familyName": "Heavy Rock Mask",
     "slug": "accessory-heavy-rock-mask",
-    "aliasSlugs": [
-      "accessory-heavy-rock-mask",
-      "accessory-heavy-rock-mask",
-      "accessory-heavy-rock-mask",
-      "accessory-heavy-rock-mask",
-      "accessory-heavy-rock-mask",
-      "accessory-heavy-rock-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22053026",
@@ -66564,7 +65687,6 @@
     "familyName": "Helm of Hyonix",
     "slug": "accessory-helm-of-hyonix",
     "aliasSlugs": [
-      "accessory-helm-of-hyonix",
       "accessory-helm-of-hyonix-dragonsoul"
     ],
     "type": "accessory",
@@ -67688,10 +66810,6 @@
     "id": "accessory-hesperrhodos-mask",
     "familyName": "Hesperrhodos Mask",
     "slug": "accessory-hesperrhodos-mask",
-    "aliasSlugs": [
-      "accessory-hesperrhodos-mask",
-      "accessory-hesperrhodos-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22406382",
@@ -67890,10 +67008,6 @@
     "id": "accessory-hidebehind-mask",
     "familyName": "Hidebehind Mask",
     "slug": "accessory-hidebehind-mask",
-    "aliasSlugs": [
-      "accessory-hidebehind-mask",
-      "accessory-hidebehind-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22297217",
@@ -67993,13 +67107,6 @@
     "id": "accessory-high-commander-helm",
     "familyName": "High Commander Helm",
     "slug": "accessory-high-commander-helm",
-    "aliasSlugs": [
-      "accessory-high-commander-helm",
-      "accessory-high-commander-helm",
-      "accessory-high-commander-helm",
-      "accessory-high-commander-helm",
-      "accessory-high-commander-helm"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21705756",
@@ -68293,7 +67400,7 @@
     "slug": "accessory-highland-headwear",
     "type": "accessory",
     "subtype": "helm",
-    "description": "Lim does love plaid. This was a gift from one of his friends, and he�s selling an imitation of it. This item requires a Dragon Amulet.",
+    "description": "Lim does love plaid. This was a gift from one of his friends, and he's selling an imitation of it. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=16696354",
     "releaseDate": "",
     "imageUrl": "http://i.imgur.com/qcQuczg.png",
@@ -68626,7 +67733,6 @@
     "familyName": "Horned Greedling Mask",
     "slug": "accessory-horned-greedling-mask",
     "aliasSlugs": [
-      "accessory-horned-greedling-mask",
       "accessory-horned-greedling-mask-ii",
       "accessory-horned-greedling-mask-iii",
       "accessory-horned-greedling-mask-iv"
@@ -69329,10 +68435,6 @@
     "id": "accessory-iadoa-mask",
     "familyName": "Iadoa Mask",
     "slug": "accessory-iadoa-mask",
-    "aliasSlugs": [
-      "accessory-iadoa-mask",
-      "accessory-iadoa-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22406374",
@@ -69432,14 +68534,6 @@
     "id": "accessory-ice-mask",
     "familyName": "Ice Mask",
     "slug": "accessory-ice-mask",
-    "aliasSlugs": [
-      "accessory-ice-mask",
-      "accessory-ice-mask",
-      "accessory-ice-mask",
-      "accessory-ice-mask",
-      "accessory-ice-mask",
-      "accessory-ice-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22053061",
@@ -69724,11 +68818,6 @@
     "id": "accessory-ice-tusk-helm",
     "familyName": "Ice Tusk Helm",
     "slug": "accessory-ice-tusk-helm",
-    "aliasSlugs": [
-      "accessory-ice-tusk-helm",
-      "accessory-ice-tusk-helm",
-      "accessory-ice-tusk-helm"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15167830",
@@ -69851,13 +68940,6 @@
     "id": "accessory-icebound-crown",
     "familyName": "Icebound Crown",
     "slug": "accessory-icebound-crown",
-    "aliasSlugs": [
-      "accessory-icebound-crown",
-      "accessory-icebound-crown",
-      "accessory-icebound-crown",
-      "accessory-icebound-crown",
-      "accessory-icebound-crown"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21757594",
@@ -70038,13 +69120,6 @@
     "id": "accessory-icebound-hood",
     "familyName": "Icebound Hood",
     "slug": "accessory-icebound-hood",
-    "aliasSlugs": [
-      "accessory-icebound-hood",
-      "accessory-icebound-hood",
-      "accessory-icebound-hood",
-      "accessory-icebound-hood",
-      "accessory-icebound-hood"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21757514",
@@ -70225,12 +69300,6 @@
     "id": "accessory-icemaster-yeti-dragon-helm",
     "familyName": "Icemaster Yeti Dragon Helm",
     "slug": "accessory-icemaster-yeti-dragon-helm",
-    "aliasSlugs": [
-      "accessory-icemaster-yeti-dragon-helm",
-      "accessory-icemaster-yeti-dragon-helm",
-      "accessory-icemaster-yeti-dragon-helm",
-      "accessory-icemaster-yeti-dragon-helm"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=7439786",
@@ -71444,10 +70513,6 @@
     "id": "accessory-impermanence-mask",
     "familyName": "Impermanence Mask",
     "slug": "accessory-impermanence-mask",
-    "aliasSlugs": [
-      "accessory-impermanence-mask",
-      "accessory-impermanence-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22423767",
@@ -71662,16 +70727,6 @@
     "id": "accessory-insane-pumpkin-stack",
     "familyName": "Insane Pumpkin Stack",
     "slug": "accessory-insane-pumpkin-stack",
-    "aliasSlugs": [
-      "accessory-insane-pumpkin-stack",
-      "accessory-insane-pumpkin-stack",
-      "accessory-insane-pumpkin-stack",
-      "accessory-insane-pumpkin-stack",
-      "accessory-insane-pumpkin-stack",
-      "accessory-insane-pumpkin-stack",
-      "accessory-insane-pumpkin-stack",
-      "accessory-insane-pumpkin-stack"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22189156",
@@ -71950,10 +71005,6 @@
     "id": "accessory-intaym-mask",
     "familyName": "Intaym Mask",
     "slug": "accessory-intaym-mask",
-    "aliasSlugs": [
-      "accessory-intaym-mask",
-      "accessory-intaym-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22385601",
@@ -72053,11 +71104,6 @@
     "id": "accessory-invisible-helm",
     "familyName": "Invisible Helm",
     "slug": "accessory-invisible-helm",
-    "aliasSlugs": [
-      "accessory-invisible-helm",
-      "accessory-invisible-helm",
-      "accessory-invisible-helm"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17705654",
@@ -72083,7 +71129,8 @@
       }
     ],
     "shared": {
-      "description": "All of the stats, none of the art!"
+      "description": "All of the stats, none of the art!",
+      "notes": "Helm appears invisible when equipped."
     },
     "levelVariants": [
       {
@@ -72565,10 +71612,6 @@
     "id": "accessory-isiri-mask",
     "familyName": "Isiri Mask",
     "slug": "accessory-isiri-mask",
-    "aliasSlugs": [
-      "accessory-isiri-mask",
-      "accessory-isiri-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22406380",
@@ -72668,10 +71711,6 @@
     "id": "accessory-island-maid-headdress",
     "familyName": "Island Maid Headdress",
     "slug": "accessory-island-maid-headdress",
-    "aliasSlugs": [
-      "accessory-island-maid-headdress",
-      "accessory-island-maid-headdress"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=16609397",
@@ -72764,7 +71803,6 @@
     "familyName": "Itchi's Mask",
     "slug": "accessory-itchi-s-mask",
     "aliasSlugs": [
-      "accessory-itchi-s-mask",
       "accessory-itchi-mask"
     ],
     "type": "accessory",
@@ -73115,10 +72153,6 @@
     "id": "accessory-jack-crescent-mask",
     "familyName": "Jack Crescent Mask",
     "slug": "accessory-jack-crescent-mask",
-    "aliasSlugs": [
-      "accessory-jack-crescent-mask",
-      "accessory-jack-crescent-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22297260",
@@ -73379,10 +72413,6 @@
     "id": "accessory-jellyfish-faceguard",
     "familyName": "Jellyfish Faceguard",
     "slug": "accessory-jellyfish-faceguard",
-    "aliasSlugs": [
-      "accessory-jellyfish-faceguard",
-      "accessory-jellyfish-faceguard"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=16608626",
@@ -73474,14 +72504,6 @@
     "id": "accessory-joker-s-madness",
     "familyName": "Joker's Madness",
     "slug": "accessory-joker-s-madness",
-    "aliasSlugs": [
-      "accessory-joker-s-madness",
-      "accessory-joker-s-madness",
-      "accessory-joker-s-madness",
-      "accessory-joker-s-madness",
-      "accessory-joker-s-madness",
-      "accessory-joker-s-madness"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21313058",
@@ -73685,10 +72707,6 @@
     "id": "accessory-josh-cat-mask",
     "familyName": "Josh Cat Mask",
     "slug": "accessory-josh-cat-mask",
-    "aliasSlugs": [
-      "accessory-josh-cat-mask",
-      "accessory-josh-cat-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20827744",
@@ -73824,14 +72842,6 @@
     "id": "accessory-kakarrot-mask",
     "familyName": "Kakarrot Mask",
     "slug": "accessory-kakarrot-mask",
-    "aliasSlugs": [
-      "accessory-kakarrot-mask",
-      "accessory-kakarrot-mask",
-      "accessory-kakarrot-mask",
-      "accessory-kakarrot-mask",
-      "accessory-kakarrot-mask",
-      "accessory-kakarrot-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21855283",
@@ -74046,10 +73056,6 @@
     "id": "accessory-kara-mask",
     "familyName": "Kara Mask",
     "slug": "accessory-kara-mask",
-    "aliasSlugs": [
-      "accessory-kara-mask",
-      "accessory-kara-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22397424",
@@ -74149,10 +73155,6 @@
     "id": "accessory-kathool-mask",
     "familyName": "Kathool Mask",
     "slug": "accessory-kathool-mask",
-    "aliasSlugs": [
-      "accessory-kathool-mask",
-      "accessory-kathool-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18283694",
@@ -74423,10 +73425,6 @@
     "id": "accessory-killguin-faceguard",
     "familyName": "Killguin Faceguard",
     "slug": "accessory-killguin-faceguard",
-    "aliasSlugs": [
-      "accessory-killguin-faceguard",
-      "accessory-killguin-faceguard"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15167718",
@@ -74817,10 +73815,6 @@
     "id": "accessory-kittypillar-mask",
     "familyName": "Kittypillar Mask",
     "slug": "accessory-kittypillar-mask",
-    "aliasSlugs": [
-      "accessory-kittypillar-mask",
-      "accessory-kittypillar-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22412884",
@@ -74997,10 +73991,6 @@
     "id": "accessory-kord-mask",
     "familyName": "Kord Mask",
     "slug": "accessory-kord-mask",
-    "aliasSlugs": [
-      "accessory-kord-mask",
-      "accessory-kord-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22406360",
@@ -75657,7 +74647,6 @@
     "familyName": "Lector's Mask",
     "slug": "accessory-lector-s-mask",
     "aliasSlugs": [
-      "accessory-lector-s-mask",
       "accessory-lector-mask"
     ],
     "type": "accessory",
@@ -75756,10 +74745,6 @@
     "id": "accessory-ledgermayne-mask",
     "familyName": "Ledgermayne Mask",
     "slug": "accessory-ledgermayne-mask",
-    "aliasSlugs": [
-      "accessory-ledgermayne-mask",
-      "accessory-ledgermayne-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22397438",
@@ -75898,10 +74883,6 @@
     "id": "accessory-lestrad-mask",
     "familyName": "Lestrad Mask",
     "slug": "accessory-lestrad-mask",
-    "aliasSlugs": [
-      "accessory-lestrad-mask",
-      "accessory-lestrad-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22406361",
@@ -76007,10 +74988,6 @@
     "id": "accessory-lfal-cat-mask",
     "familyName": "LFAL Cat Mask",
     "slug": "accessory-lfal-cat-mask",
-    "aliasSlugs": [
-      "accessory-lfal-cat-mask",
-      "accessory-lfal-cat-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20827717",
@@ -76109,10 +75086,6 @@
     "id": "accessory-liar-mask",
     "familyName": "Liar Mask",
     "slug": "accessory-liar-mask",
-    "aliasSlugs": [
-      "accessory-liar-mask",
-      "accessory-liar-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22423768",
@@ -76212,14 +75185,6 @@
     "id": "accessory-light-mask",
     "familyName": "Light Mask",
     "slug": "accessory-light-mask",
-    "aliasSlugs": [
-      "accessory-light-mask",
-      "accessory-light-mask",
-      "accessory-light-mask",
-      "accessory-light-mask",
-      "accessory-light-mask",
-      "accessory-light-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22053065",
@@ -76479,14 +75444,6 @@
     "id": "accessory-lightguard-helm",
     "familyName": "Lightguard Helm",
     "slug": "accessory-lightguard-helm",
-    "aliasSlugs": [
-      "accessory-lightguard-helm",
-      "accessory-lightguard-helm",
-      "accessory-lightguard-helm",
-      "accessory-lightguard-helm",
-      "accessory-lightguard-helm",
-      "accessory-lightguard-helm"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21976490",
@@ -77328,10 +76285,6 @@
     "id": "accessory-lionfang-mask",
     "familyName": "Lionfang Mask",
     "slug": "accessory-lionfang-mask",
-    "aliasSlugs": [
-      "accessory-lionfang-mask",
-      "accessory-lionfang-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22406366",
@@ -77524,7 +76477,6 @@
     "familyName": "Loki's Mask",
     "slug": "accessory-loki-s-mask",
     "aliasSlugs": [
-      "accessory-loki-s-mask",
       "accessory-loki-mask"
     ],
     "type": "accessory",
@@ -78804,16 +77756,6 @@
     "id": "accessory-lunar-monkey-king",
     "familyName": "Lunar Monkey King",
     "slug": "accessory-lunar-monkey-king",
-    "aliasSlugs": [
-      "accessory-lunar-monkey-king",
-      "accessory-lunar-monkey-king",
-      "accessory-lunar-monkey-king",
-      "accessory-lunar-monkey-king",
-      "accessory-lunar-monkey-king",
-      "accessory-lunar-monkey-king",
-      "accessory-lunar-monkey-king",
-      "accessory-lunar-monkey-king"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22104002",
@@ -79082,10 +78024,6 @@
     "id": "accessory-lust-mask",
     "familyName": "Lust Mask",
     "slug": "accessory-lust-mask",
-    "aliasSlugs": [
-      "accessory-lust-mask",
-      "accessory-lust-mask"
-    ],
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22385602",

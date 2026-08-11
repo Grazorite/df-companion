@@ -6,6 +6,8 @@ export function normalizeDisplayText(text?: string): string {
     .replace(/\bD-Amulet\/DC\b/g, 'DA/DC')
     .replace(/\bD-Amulet\b/g, 'DA')
     .replace(/\bD-Coins?\b/g, 'DC')
+    .replace(/([.!?])\1+$/g, '$1')
+    .replace(/([!?])\.$/g, '$1')
 }
 
 export function displayTitle(text?: string): string {

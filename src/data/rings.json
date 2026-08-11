@@ -8,9 +8,7 @@
     "description": "This ring once belonged to the great and terrible warrior Jaysun. It was said long ago that anyone who holds his power would be impossible to kill.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=6735355",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "13",
     "stats": "Crit +2, END +4, LUK -5, Bonus +2",
     "resists": "Darkness +5",
@@ -35,10 +33,7 @@
       }
     ],
     "notes": "The following changes were implemented on September 26th, 2025:\n  • Previously had the description: This magic ring was found during the undead invasion. It provides 5% resistance against darkness attacks and a 1% chance to crit.\n  • Price and sellback from Undead Slayer Store was raised from 0 to 130 Gold and 0 to 13 Gold respectively.\n  • Level's requirement was raised from 7 to 13.\n  • Ring initially had Crit +1 stat.\n  • Ring initially had 10 Rarity.",
-    "tags": [
-      "dar",
-      "gold"
-    ],
+    "tags": ["dar", "gold"],
     "daRequired": true
   },
   {
@@ -50,9 +45,7 @@
     "description": "This ring was found at the bottom of a hold dug five feet into the ground. It smells faintly of peaches. Is it cursed, or is it good luck? You decide!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18525479",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "50",
     "stats": "Block +2, Dodge +4, Parry +2, Crit +7, Magic Def +7, Pierce Def +7, Melee Def +7, WIS +9, END +9, INT +3, Bonus +5",
     "resists": "Darkness +6, Light +6, Immobility +4",
@@ -70,10 +63,7 @@
         "dcRequired": true
       }
     ],
-    "tags": [
-      "lig",
-      "dc"
-    ],
+    "tags": ["lig", "dc"],
     "daRequired": false,
     "dcRequired": true
   },
@@ -86,9 +76,7 @@
     "description": "This is a team ring for only the BEST of heroes. No B-list adventurers need apply for ownership!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18525421",
     "releaseDate": "",
-    "elements": [
-      "WAT"
-    ],
+    "elements": ["WAT"],
     "level": "40",
     "stats": "Dodge +2, Crit +6, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +6, END +7, Bonus +6",
     "resists": "Fire +6, Water +6, Ice +6",
@@ -106,10 +94,7 @@
         "dcRequired": true
       }
     ],
-    "tags": [
-      "wat",
-      "dc"
-    ],
+    "tags": ["wat", "dc"],
     "daRequired": false,
     "dcRequired": true
   },
@@ -405,20 +390,14 @@
     "equipSlot": "Finger",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dc",
-      "free",
-      "met"
-    ],
+    "tags": ["dc", "free", "met"],
     "hasDA": true,
     "hasDC": true,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-V",
-    "elements": [
-      "MET"
-    ]
+    "elements": ["MET"]
   },
   {
     "id": "accessory-adamantium-loop",
@@ -429,9 +408,7 @@
     "description": "Forged from a super hard metal, this ring adds to your defensive stats.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=14567265",
     "releaseDate": "",
-    "elements": [
-      "MET"
-    ],
+    "elements": ["MET"],
     "level": "15",
     "stats": "Magic Def +2, Pierce Def +2, Melee Def +2, END +2, DEX +2",
     "resists": "Immobility +3",
@@ -448,10 +425,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "met",
-      "free"
-    ],
+    "tags": ["met", "free"],
     "daRequired": true
   },
   {
@@ -962,11 +936,7 @@
     "equipSlot": "Finger",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dc",
-      "free",
-      "poi"
-    ],
+    "tags": ["dc", "free", "poi"],
     "isSeasonal": true,
     "hasDA": true,
     "hasDC": true,
@@ -974,9 +944,7 @@
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-IX",
-    "elements": [
-      "POI"
-    ]
+    "elements": ["POI"]
   },
   {
     "id": "accessory-al-nold-s-ring",
@@ -1324,11 +1292,7 @@
     "equipSlot": "Finger",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dc",
-      "free",
-      "poi"
-    ],
+    "tags": ["dc", "free", "poi"],
     "isSeasonal": true,
     "hasDA": true,
     "hasDC": true,
@@ -1336,9 +1300,7 @@
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-VI",
-    "elements": [
-      "POI"
-    ]
+    "elements": ["POI"]
   },
   {
     "id": "accessory-amber-ring",
@@ -1349,9 +1311,7 @@
     "description": "A bug is trapped within the amber the ring is carved from! This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20403711",
     "releaseDate": "",
-    "elements": [
-      "ENE"
-    ],
+    "elements": ["ENE"],
     "level": "66",
     "stats": "Block +1, Crit +6, Magic Def +8, Pierce Def +8, Melee Def +8, WIS +7, END +5, CHA +2, LUK +2, INT +6, DEX +6, STR +6, Bonus +9",
     "resists": "Light +8, Stone +8, Nature +6, Poison +6",
@@ -1368,10 +1328,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "ene",
-      "free"
-    ],
+    "tags": ["ene", "free"],
     "daRequired": true
   },
   {
@@ -1383,9 +1340,7 @@
     "description": "The ring of Emperor Kuron, an ancient ruler in the city of Sil.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19794956",
     "releaseDate": "",
-    "elements": [
-      "ICE"
-    ],
+    "elements": ["ICE"],
     "level": "27",
     "stats": "Magic Def +2, Pierce Def +2, Melee Def +2, WIS +2, INT +3, DEX +3, STR +3, Bonus +1",
     "resists": "Light +2",
@@ -1402,10 +1357,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "ice",
-      "free"
-    ],
+    "tags": ["ice", "free"],
     "daRequired": false
   },
   {
@@ -1417,9 +1369,7 @@
     "description": "The ring of Emperor Kuron, an ancient ruler in the city of Sil.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19794970",
     "releaseDate": "",
-    "elements": [
-      "ICE"
-    ],
+    "elements": ["ICE"],
     "level": "36",
     "stats": "Crit +1, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +3, CHA +1, LUK +1, INT +3, DEX +3, STR +3, Bonus +2",
     "resists": "Light +4, Ice +2",
@@ -1436,10 +1386,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "ice",
-      "free"
-    ],
+    "tags": ["ice", "free"],
     "daRequired": false
   },
   {
@@ -1451,9 +1398,7 @@
     "description": "You're pretty sure that skeleton won't miss this...",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18136114",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "34",
     "stats": "Dodge +1, Magic Def +3, WIS +3, END +5",
     "resists": "Darkness +5, Wind +5, Fire +5, Stone +3",
@@ -1470,10 +1415,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "dar",
-      "free"
-    ],
+    "tags": ["dar", "free"],
     "daRequired": false
   },
   {
@@ -1485,9 +1427,7 @@
     "description": "You're pretty sure that skeleton won't miss this... This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18138533",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "44",
     "stats": "Dodge +1, Crit +2, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +7, END +7, INT +2, DEX +2, STR +2, Bonus +2",
     "resists": "Darkness +7, Wind +7, Stone +7, Fire +7, Immobility +4",
@@ -1504,10 +1444,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "dar",
-      "free"
-    ],
+    "tags": ["dar", "free"],
     "daRequired": true
   },
   {
@@ -1519,9 +1456,7 @@
     "description": "A golden scarab adorns this ring.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21227011",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "24",
     "stats": "Magic Def +1, Pierce Def +1, Melee Def +1, WIS +3, END +3",
     "resists": "Wind +5, Darkness +5, Fire +3, Light +3",
@@ -1538,10 +1473,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "lig",
-      "gold"
-    ],
+    "tags": ["lig", "gold"],
     "daRequired": false
   },
   {
@@ -1553,9 +1485,7 @@
     "description": "You're pretty sure that skeleton won't miss this...",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18136081",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "9",
     "stats": "Magic Def +2, END +2",
     "resists": "Wind +5, Darkness +2",
@@ -1572,10 +1502,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "dar",
-      "free"
-    ],
+    "tags": ["dar", "free"],
     "daRequired": false
   },
   {
@@ -1587,9 +1514,7 @@
     "description": "You're pretty sure that skeleton won't miss this...",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18136096",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "24",
     "stats": "Magic Def +2, WIS +2, END +4",
     "resists": "Wind +5, Darkness +5, Fire +3",
@@ -1606,10 +1531,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "dar",
-      "free"
-    ],
+    "tags": ["dar", "free"],
     "daRequired": false
   },
   {
@@ -1621,9 +1543,7 @@
     "description": "Now you just need to figure out the question....",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20444534",
     "releaseDate": "",
-    "elements": [
-      "WAT"
-    ],
+    "elements": ["WAT"],
     "level": "42",
     "stats": "Block +3, Dodge +3, Parry +3, Crit +5, Magic Def +3, Pierce Def +3, Melee Def +3, CHA +6, LUK +4, INT +4, DEX +4, STR +4, Bonus +5",
     "resists": "Fire +4",
@@ -1649,10 +1569,7 @@
       }
     ],
     "notes": "Ring previously appeared in the retired quest Nightmares as a Necklace and had the following stats:\nStats: Crit +1, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +4, LUK +4, INT +4, DEX +4, STR +4, Bonus +3\nResists: Water +6, Nature +4",
-    "tags": [
-      "wat",
-      "free"
-    ],
+    "tags": ["wat", "free"],
     "daRequired": false,
     "dcRequired": true
   },
@@ -1665,9 +1582,7 @@
     "description": "This item requires a Dragon Amulet. It is a ring which is perfect for the all-out, front assualt type of person. It adds to Crit, bonus to hit and endurance as well as sightly boosting the wearer's strength and intelligence!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=13447081",
     "releaseDate": "",
-    "elements": [
-      "NON"
-    ],
+    "elements": ["NON"],
     "level": "35",
     "stats": "Crit +2, END +2, INT +3, STR +2, Bonus +3",
     "resists": "Fire -2, Darkness -2",
@@ -1684,10 +1599,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "non",
-      "free"
-    ],
+    "tags": ["non", "free"],
     "daRequired": true
   },
   {
@@ -1699,9 +1611,7 @@
     "description": "This ring is so big and sparkly that people ask where your finger went.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=11323192",
     "releaseDate": "",
-    "elements": [
-      "ICE"
-    ],
+    "elements": ["ICE"],
     "level": "6",
     "stats": "Pierce Def +1, END +1, CHA +1",
     "resists": "None",
@@ -1718,10 +1628,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "ice",
-      "free"
-    ],
+    "tags": ["ice", "free"],
     "daRequired": false
   },
   {
@@ -1733,9 +1640,7 @@
     "description": "This item requires a Dragon Amulet. This ring looks like it was crafted from the light of the Aurora itself.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17091911",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "40",
     "stats": "Crit +4, Magic Def +5, Pierce Def +5, Melee Def +5, END +7, INT +3, DEX +6, STR +3, Bonus +4",
     "resists": "Ice +5",
@@ -1752,10 +1657,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "lig",
-      "free"
-    ],
+    "tags": ["lig", "free"],
     "daRequired": true,
     "isSeasonal": true
   },
@@ -1768,9 +1670,7 @@
     "description": "This ring can help you slip out of the stickiest situations, adding 2 to your dodge rating!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=13447182",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "15",
     "stats": "Dodge +2, Magic Def +5, Melee Def +2, END +1, LUK +3, DEX +2",
     "resists": "None",
@@ -1787,10 +1687,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "lig",
-      "free"
-    ],
+    "tags": ["lig", "free"],
     "daRequired": false
   },
   {
@@ -1802,9 +1699,7 @@
     "description": "Putting this on will make you feel smarter! And the strange light pulsing from the gem increases your resistances!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=16715897",
     "releaseDate": "",
-    "elements": [
-      "MET"
-    ],
+    "elements": ["MET"],
     "level": "10",
     "stats": "Dodge +1, INT +3",
     "resists": "Wind +2, Stone +2, Fire +2, Ice +2",
@@ -1821,10 +1716,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "met",
-      "gold"
-    ],
+    "tags": ["met", "gold"],
     "daRequired": false
   },
   {
@@ -1836,9 +1728,7 @@
     "description": "Though the loop was once huge, sharp dragon teeth have bent it enough to make it fit your finger.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21920256",
     "releaseDate": "",
-    "elements": [
-      "SIL"
-    ],
+    "elements": ["SIL"],
     "level": "7",
     "stats": "Block +1, Crit +1, Melee Def +2, INT +2",
     "resists": "Metal +6, Poison +5",
@@ -1855,10 +1745,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "sil",
-      "free"
-    ],
+    "tags": ["sil", "free"],
     "daRequired": false
   },
   {
@@ -1870,9 +1757,7 @@
     "description": "Necromancers use the power in this ring to control their undead servants.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=4153015",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "1",
     "stats": "Melee Def +1",
     "resists": "Darkness +5",
@@ -1890,10 +1775,7 @@
       }
     ],
     "notes": "Previously had the description: This is the type of ring that a necromancer wears to bind it's undead servents to.",
-    "tags": [
-      "dar",
-      "free"
-    ],
+    "tags": ["dar", "free"],
     "daRequired": false
   },
   {
@@ -1905,9 +1787,7 @@
     "description": "This ring was carved from a floe of sea ice in the far north. Gives you +3 resist to Ice and -2 to Health.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=12539497",
     "releaseDate": "",
-    "elements": [
-      "ICE"
-    ],
+    "elements": ["ICE"],
     "level": "1",
     "stats": "None",
     "resists": "Ice +3, Health -2",
@@ -1924,10 +1804,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "ice",
-      "gold"
-    ],
+    "tags": ["ice", "gold"],
     "daRequired": false
   },
   {
@@ -1939,9 +1816,7 @@
     "description": "This stone holds a single drop of an ancient vampire's blood.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21859764",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "18",
     "stats": "Block +1, Crit +1, Pierce Def +1, Melee Def +1, WIS +2, END +2, CHA +2, LUK +2, Bonus +1",
     "resists": "Darkness +4, Fire +3",
@@ -1958,10 +1833,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "dar",
-      "free"
-    ],
+    "tags": ["dar", "free"],
     "daRequired": false
   },
   {
@@ -1973,9 +1845,7 @@
     "description": "The stone for this ring was carved out of the sea floor. A bluefin's scale was carved into it to imbue it with the legendary racing fish's speed.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17329883",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "8",
     "stats": "Block +1, DEX +2",
     "resists": "Energy +5, Fire +2",
@@ -1992,10 +1862,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "lig",
-      "gold"
-    ],
+    "tags": ["lig", "gold"],
     "daRequired": false
   },
   {
@@ -2007,9 +1874,7 @@
     "description": "This ring was found in a Sneevil camp...and it still smells like it.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=4157467",
     "releaseDate": "",
-    "elements": [
-      "MET"
-    ],
+    "elements": ["MET"],
     "level": "1",
     "stats": "Melee Def +2",
     "resists": "None",
@@ -2033,10 +1898,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "met",
-      "free"
-    ],
+    "tags": ["met", "free"],
     "daRequired": false
   },
   {
@@ -2048,9 +1910,7 @@
     "description": "This is a replica of a ring worn by someone of great power and influence.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=4153078",
     "releaseDate": "",
-    "elements": [
-      "MET"
-    ],
+    "elements": ["MET"],
     "level": "1",
     "stats": "Crit +1, Melee Def +2",
     "resists": "None",
@@ -2067,10 +1927,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "met",
-      "free"
-    ],
+    "tags": ["met", "free"],
     "daRequired": false
   },
   {
@@ -2082,9 +1939,7 @@
     "description": "This stone holds a single drop of an ancient vampire's blood. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21859783",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "78",
     "stats": "Block +2, Dodge +2, Parry +2, Crit +6, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +9, END +9, CHA +8, LUK +8, INT +5, DEX +5, STR +5, Bonus +8",
     "resists": "Darkness +8, Fire +7, Health -10, Immobility +4",
@@ -2101,10 +1956,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "dar",
-      "free"
-    ],
+    "tags": ["dar", "free"],
     "daRequired": true
   },
   {
@@ -2116,9 +1968,7 @@
     "description": "A ring crafted from the finest of materials by San Robin in thanks for your help. It's big, kind of gaudy, and... smells a little weird. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22130805",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "41",
     "stats": "Crit +4, Magic Def +5, Melee Def +5, WIS +4, END +8, INT +2, DEX +4, STR +2, Bonus +4",
     "resists": "Wind +7, Poison +7, Bacon +7",
@@ -2135,10 +1985,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": true
   },
   {
@@ -2150,9 +1997,7 @@
     "description": "This ring will PUMP you UP!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=16715915",
     "releaseDate": "",
-    "elements": [
-      "WAT"
-    ],
+    "elements": ["WAT"],
     "level": "20",
     "stats": "END +3, INT +3, DEX +3, STR +3",
     "resists": "Fire +1, Water +1",
@@ -2169,10 +2014,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "wat",
-      "gold"
-    ],
+    "tags": ["wat", "gold"],
     "daRequired": false
   },
   {
@@ -2184,9 +2026,7 @@
     "description": "One link from the ship's anchor chain works pretty well as a ring for you! They must have magicked the chain to make the ship go faster, because it enhances your battle abilities, too!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17330130",
     "releaseDate": "",
-    "elements": [
-      "MET"
-    ],
+    "elements": ["MET"],
     "level": "37",
     "stats": "Crit +3, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +5, END +5",
     "resists": "Energy +7, Light +5",
@@ -2203,10 +2043,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "met",
-      "gold"
-    ],
+    "tags": ["met", "gold"],
     "daRequired": false
   },
   {
@@ -2218,9 +2055,7 @@
     "description": "This ring has a pocket on it! I wonder what the Chaosweavers would have used it for?",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17643242",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "33",
     "stats": "END +3, INT +3, DEX +3, STR +3",
     "resists": "Darkness +5, Light +5, Stone +5, Wind +5",
@@ -2237,10 +2072,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "dar",
-      "free"
-    ],
+    "tags": ["dar", "free"],
     "daRequired": false
   },
   {
@@ -2252,9 +2084,7 @@
     "description": "The inscription inside this ring says \"To my fair -haired Slayer ~Angel\".",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=13178381",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "15",
     "stats": "Crit +2, Melee Def +2, END +2, LUK +3, INT +1, DEX +2, STR +1, Bonus +2",
     "resists": "None",
@@ -2272,10 +2102,7 @@
       }
     ],
     "notes": "Transformed from Puzzling Locked Chest (Normal) on March 17th, 2008.",
-    "tags": [
-      "lig",
-      "free"
-    ],
+    "tags": ["lig", "free"],
     "daRequired": false,
     "isSeasonal": true
   },
@@ -2422,10 +2249,7 @@
     "equipSlot": "Finger",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "free",
-      "nat"
-    ],
+    "tags": ["free", "nat"],
     "isRare": true,
     "hasDA": true,
     "hasDC": false,
@@ -2433,9 +2257,7 @@
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-IV",
-    "elements": [
-      "NAT"
-    ]
+    "elements": ["NAT"]
   },
   {
     "id": "accessory-clay-ring",
@@ -2446,9 +2268,7 @@
     "description": "This ring is made of a dark red clay. There are no markings or decorations of any kind on it.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=4153509",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "1",
     "stats": "Dodge +1, Melee Def +2",
     "resists": "Fire +3",
@@ -2465,10 +2285,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "sto",
-      "free"
-    ],
+    "tags": ["sto", "free"],
     "daRequired": false
   },
   {
@@ -2480,9 +2297,7 @@
     "description": "This is one of those kitschy rings that has a clock on it. Handy for telling time, unless you're wearing a gauntlet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17151743",
     "releaseDate": "",
-    "elements": [
-      "NON"
-    ],
+    "elements": ["NON"],
     "level": "15",
     "stats": "Crit +2, Magic Def +2, Pierce Def +2, Melee Def +2, END +4",
     "resists": "Poison +5",
@@ -2499,10 +2314,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "non",
-      "free"
-    ],
+    "tags": ["non", "free"],
     "daRequired": false,
     "isRare": true
   },
@@ -2515,9 +2327,7 @@
     "description": "The teensy clock set into this ring will keep you on track and on time as you battle your way through opponents!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18525227",
     "releaseDate": "",
-    "elements": [
-      "MET"
-    ],
+    "elements": ["MET"],
     "level": "5",
     "stats": "Block +1, Crit +2, END +1",
     "resists": "Fire +1",
@@ -2535,10 +2345,7 @@
         "dcRequired": true
       }
     ],
-    "tags": [
-      "met",
-      "dc"
-    ],
+    "tags": ["met", "dc"],
     "daRequired": false,
     "dcRequired": true
   },
@@ -2551,9 +2358,7 @@
     "description": "A soft, white stone that seems to almost be made of trapped moonlight sits atop this ring.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21844136",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "27",
     "stats": "Block +1, Parry +1, Crit +1, Magic Def +1, Pierce Def +1, Melee Def +1, WIS +4, END +4, CHA +3, LUK +3, Bonus +2",
     "resists": "Fire +5, Light +4",
@@ -2570,10 +2375,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "sto",
-      "free"
-    ],
+    "tags": ["sto", "free"],
     "daRequired": false
   },
   {
@@ -2585,9 +2387,7 @@
     "description": "This ring is made of tiny shell pieces... scratchy!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=10901299",
     "releaseDate": "",
-    "elements": [
-      "WAT"
-    ],
+    "elements": ["WAT"],
     "level": "8",
     "stats": "Melee Def +1",
     "resists": "Water +2",
@@ -2604,10 +2404,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "wat",
-      "free"
-    ],
+    "tags": ["wat", "free"],
     "daRequired": false
   },
   {
@@ -2619,9 +2416,7 @@
     "description": "A masterfully forged magical ring to ward off evil.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17850182",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "33",
     "stats": "Magic Def +3, Melee Def +3, WIS +2, END +2, INT +3, STR +3",
     "resists": "Energy +5, Light +5, Immobility +5",
@@ -2639,10 +2434,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "lig",
-      "merge"
-    ],
+    "tags": ["lig", "merge"],
     "daRequired": false
   },
   {
@@ -2654,9 +2446,7 @@
     "description": "This ring gives off a malevolent glow. It has a tiny carved skull set in it... at least you think it's carved... better not think about it actually.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=10902215",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "25",
     "stats": "Crit +1, LUK -5",
     "resists": "Darkness +3, Poison +3",
@@ -2673,10 +2463,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "dar",
-      "free"
-    ],
+    "tags": ["dar", "free"],
     "daRequired": false
   },
   {
@@ -2688,9 +2475,7 @@
     "description": "A soft, white stone that seems to almost be made of trapped moonlight sits atop this ring.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21844226",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "57",
     "stats": "Block +1, Dodge +1, Parry +1, Crit +4, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +7, END +7, CHA +5, LUK +5, INT +3, DEX +3, STR +3, Bonus +6",
     "resists": "Fire +6, Light +5, Water +5, Darkness +3",
@@ -2707,10 +2492,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "sto",
-      "free"
-    ],
+    "tags": ["sto", "free"],
     "daRequired": false
   },
   {
@@ -2722,9 +2504,7 @@
     "description": "This ring is very pretty, very feminine and extremely powerful.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17987624",
     "releaseDate": "",
-    "elements": [
-      "MET"
-    ],
+    "elements": ["MET"],
     "level": "31",
     "stats": "Block +2, Melee Def +8, CHA +6, LUK +4",
     "resists": "Nature +10",
@@ -2741,10 +2521,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "met",
-      "gold"
-    ],
+    "tags": ["met", "gold"],
     "daRequired": false
   },
   {
@@ -2756,9 +2533,7 @@
     "description": "A ring crafted from the finest of materials by San Robin in thanks for your help. It's big, kind of gaudy, and... smells a little weird.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22131834",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "17",
     "stats": "Block +1, Crit +1, Pierce Def +1, Melee Def +1, WIS +2, END +2, CHA +1, LUK +3, Bonus +1",
     "resists": "Fire +4, Metal +3",
@@ -2775,10 +2550,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false
   },
   {
@@ -2790,9 +2562,7 @@
     "description": "Sir Malifact collected this ring from a fallen DeathKnight and saved it. While he already has items bound to him, you might be able to make use of it.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21828917",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "40",
     "stats": "Crit +1, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +3, END +2, INT +4, DEX +4, STR +4, Bonus +3",
     "resists": "Evil +1, Good +1",
@@ -2810,10 +2580,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "dar",
-      "merge"
-    ],
+    "tags": ["dar", "merge"],
     "daRequired": false
   },
   {
@@ -2825,9 +2592,7 @@
     "description": "Whoever this tooth came from, didn't take good care of them.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21303350",
     "releaseDate": "",
-    "elements": [
-      "DIS"
-    ],
+    "elements": ["DIS"],
     "level": "41",
     "stats": "Crit +4, Magic Def +5, Melee Def +5, WIS +2, END +10, DEX +6, STR +2, Bonus +4",
     "resists": "Water +7, Disease +7, Bacon +7",
@@ -2845,10 +2610,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "dis",
-      "merge"
-    ],
+    "tags": ["dis", "merge"],
     "daRequired": true
   },
   {
@@ -2860,9 +2622,7 @@
     "description": "This ring appears to be platinum, but its actually white gold. The ring is carved with graceful lines, but somehow still appears disturbing. For some reason when you wear it you feel the urge to alter the truth a little.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18957192",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "26",
     "stats": "Magic Def +2, Pierce Def +2, Melee Def +2, WIS +4, CHA +2, LUK +2, Bonus +2",
     "resists": "Darkness +5, Poison +5, Immobility +1",
@@ -2879,10 +2639,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "dar",
-      "free"
-    ],
+    "tags": ["dar", "free"],
     "daRequired": false
   },
   {
@@ -2894,9 +2651,7 @@
     "description": "You can hear the sound of the ocean when you hold this ring up to your ear. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18953381",
     "releaseDate": "",
-    "elements": [
-      "WAT"
-    ],
+    "elements": ["WAT"],
     "level": "3",
     "stats": "Melee Def +5",
     "resists": "Water +5",
@@ -2913,10 +2668,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "wat",
-      "gold"
-    ],
+    "tags": ["wat", "gold"],
     "daRequired": true
   },
   {
@@ -4140,19 +3892,14 @@
     "equipSlot": "Finger",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "merge",
-      "non"
-    ],
+    "tags": ["merge", "non"],
     "hasDA": true,
     "hasDC": false,
     "hasDM": true,
     "hasFree": false,
     "hasMerge": true,
     "levelRange": "I-XXXII",
-    "elements": [
-      "NON"
-    ]
+    "elements": ["NON"]
   },
   {
     "id": "accessory-defender-s-ring",
@@ -4409,7 +4156,7 @@
             "price": "N/A",
             "priceType": "merge",
             "sellback": "0 Gold",
-            "requiredItems": "10 Defender�s Medal",
+            "requiredItems": "10 Defender's Medal",
             "daRequired": false,
             "dmRequired": true
           }
@@ -4434,7 +4181,7 @@
             "price": "N/A",
             "priceType": "merge",
             "sellback": "0 Gold",
-            "requiredItems": "20 Defender�s Medal & 1 Defender's Ring I",
+            "requiredItems": "20 Defender's Medal & 1 Defender's Ring I",
             "daRequired": false,
             "dmRequired": true
           }
@@ -4459,7 +4206,7 @@
             "price": "N/A",
             "priceType": "merge",
             "sellback": "0 Gold",
-            "requiredItems": "25 Defender�s Medal & 1 Defender's Ring II",
+            "requiredItems": "25 Defender's Medal & 1 Defender's Ring II",
             "daRequired": false,
             "dmRequired": true
           }
@@ -4484,7 +4231,7 @@
             "price": "N/A",
             "priceType": "merge",
             "sellback": "0 Gold",
-            "requiredItems": "25 Defender�s Medal & 1 Defender's Ring III",
+            "requiredItems": "25 Defender's Medal & 1 Defender's Ring III",
             "daRequired": false,
             "dmRequired": true
           }
@@ -4509,7 +4256,7 @@
             "price": "N/A",
             "priceType": "merge",
             "sellback": "0 Gold",
-            "requiredItems": "1 Defender's Ring IV & 25 Defender�s Medal",
+            "requiredItems": "1 Defender's Ring IV & 25 Defender's Medal",
             "daRequired": false,
             "dmRequired": true
           }
@@ -5204,19 +4951,14 @@
     "equipSlot": "Finger",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "merge",
-      "non"
-    ],
+    "tags": ["merge", "non"],
     "hasDA": false,
     "hasDC": false,
     "hasDM": true,
     "hasFree": false,
     "hasMerge": true,
     "levelRange": "I-XXXII",
-    "elements": [
-      "NON"
-    ]
+    "elements": ["NON"]
   },
   {
     "id": "accessory-despicable-ring",
@@ -5227,9 +4969,7 @@
     "description": "Not quite as good as a freeze ray, and the ring isn't at all fluffy, but it IS pretty good at helping you attack!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18525391",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "35",
     "stats": "Dodge +3, Crit +3, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +2, END +3, INT +3, DEX +3, STR +3, Bonus +3",
     "resists": "Wind +6, Stone +6, Immobility +3",
@@ -5247,10 +4987,7 @@
         "dcRequired": true
       }
     ],
-    "tags": [
-      "sto",
-      "dc"
-    ],
+    "tags": ["sto", "dc"],
     "daRequired": false,
     "dcRequired": true
   },
@@ -5263,9 +5000,7 @@
     "description": "The ring of Emperor Kuron, an ancient ruler in the city of Sil. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19795045",
     "releaseDate": "",
-    "elements": [
-      "ICE"
-    ],
+    "elements": ["ICE"],
     "level": "68",
     "stats": "Dodge +1, Crit +5, Magic Def +7, Pierce Def +7, Melee Def +7, WIS +7, END +3, CHA +3, LUK +3, INT +6, DEX +6, STR +6, Bonus +6",
     "resists": "Light +10, Ice +8, Silver +6, Water +4, Immobility +2, Health -2",
@@ -5282,10 +5017,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "ice",
-      "free"
-    ],
+    "tags": ["ice", "free"],
     "daRequired": true
   },
   {
@@ -5634,11 +5366,7 @@
     "equipSlot": "Finger",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dc",
-      "free",
-      "ice"
-    ],
+    "tags": ["dc", "free", "ice"],
     "isSeasonal": true,
     "hasDA": true,
     "hasDC": true,
@@ -5646,9 +5374,7 @@
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-VI",
-    "elements": [
-      "ICE"
-    ]
+    "elements": ["ICE"]
   },
   {
     "id": "accessory-dola-tooth",
@@ -5911,19 +5637,14 @@
     "equipSlot": "Finger",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "free",
-      "sto"
-    ],
+    "tags": ["free", "sto"],
     "hasDA": true,
     "hasDC": false,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "9-79",
-    "elements": [
-      "STO"
-    ]
+    "elements": ["STO"]
   },
   {
     "id": "accessory-dragon-ring-of-the-keep",
@@ -5934,9 +5655,7 @@
     "description": "THIS RING can only be worn by one who owns a DRAGON AMULET. It was given to you by Sir Valence for your help with some pesky Sneevil troubles. The enchantment of the ring adds +4 END and Crit, increasing your HP, and chance to critically hit!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=7001408",
     "releaseDate": "",
-    "elements": [
-      "NON"
-    ],
+    "elements": ["NON"],
     "level": "3",
     "stats": "Crit +4, END +4",
     "resists": "None",
@@ -5954,10 +5673,7 @@
       }
     ],
     "notes": "The following changes were implemented on March 28th, 2025:\n  • Previously had the description: THIS RING can only be worn by one who owns a DRAGON AMULET. It was given to you by Sir Valence for your help with some pesky Sneevil troubles. The enchantement of the ring adds +1 END and a bonus to hit, and a +1 to CRIT.\n  • Stats were changed from Crit +1, END +1, Bonus +1 to Crit +4, END +4; description was also updated.",
-    "tags": [
-      "non",
-      "free"
-    ],
+    "tags": ["non", "free"],
     "daRequired": true
   },
   {
@@ -6359,20 +6075,14 @@
     "equipSlot": "Finger",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dar",
-      "dc",
-      "free"
-    ],
+    "tags": ["dar", "dc", "free"],
     "hasDA": true,
     "hasDC": true,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-VII",
-    "elements": [
-      "DAR"
-    ]
+    "elements": ["DAR"]
   },
   {
     "id": "accessory-dragon-tooth-ring",
@@ -6383,9 +6093,7 @@
     "description": "A dragon tooth is set in this ring... or a dragon lost a tooth biting it. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21920276",
     "releaseDate": "",
-    "elements": [
-      "FIR"
-    ],
+    "elements": ["FIR"],
     "level": "37",
     "stats": "Block +1, Dodge +2, Parry +1, Crit +5, Magic Def +3, Pierce Def +4, Melee Def +5, WIS +1, END +6, CHA +4, LUK +2, INT +1, DEX +3, STR +6, Bonus +4",
     "resists": "Fire +7, Stone +7, Light +7, Wind +7",
@@ -6402,10 +6110,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "fir",
-      "free"
-    ],
+    "tags": ["fir", "free"],
     "daRequired": true
   },
   {
@@ -6916,20 +6621,14 @@
     "equipSlot": "Finger",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dc",
-      "fea",
-      "free"
-    ],
+    "tags": ["dc", "fea", "free"],
     "hasDA": true,
     "hasDC": true,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-IX",
-    "elements": [
-      "FEA"
-    ]
+    "elements": ["FEA"]
   },
   {
     "id": "accessory-dripping-ring",
@@ -6940,9 +6639,7 @@
     "description": "Ewwwwwww... it's covered with drool!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21920352",
     "releaseDate": "",
-    "elements": [
-      "WAT"
-    ],
+    "elements": ["WAT"],
     "level": "56",
     "stats": "Crit +1, Magic Def +4, Pierce Def +4, Melee Def +4, WIS -1, END +6, CHA -2, INT +6, DEX +6, STR +6, Bonus +5",
     "resists": "Poison +6, Water +6, Ice +4, Immobility +1",
@@ -6959,10 +6656,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "wat",
-      "free"
-    ],
+    "tags": ["wat", "free"],
     "daRequired": false
   },
   {
@@ -6974,9 +6668,7 @@
     "description": "Someone blended fire and ice into this one small ring. So pretty! This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=16715879",
     "releaseDate": "",
-    "elements": [
-      "WIN"
-    ],
+    "elements": ["WIN"],
     "level": "35",
     "stats": "Crit +4, Magic Def +3, Pierce Def +3, Melee Def +3, END +5, INT +2, DEX +2, STR +2",
     "resists": "Fire +4, Ice +4",
@@ -6993,10 +6685,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "win",
-      "gold"
-    ],
+    "tags": ["win", "gold"],
     "daRequired": true
   },
   {
@@ -7008,9 +6697,7 @@
     "description": "Someone, somehow, molded the energy of a wisp into a ring.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=14661113",
     "releaseDate": "",
-    "elements": [
-      "NON"
-    ],
+    "elements": ["NON"],
     "level": "27",
     "stats": "Crit +4, Magic Def +4, Pierce Def +3, Melee Def +3, END +5, DEX +5",
     "resists": "Energy +4, Water -2",
@@ -7027,10 +6714,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "non",
-      "free"
-    ],
+    "tags": ["non", "free"],
     "daRequired": true
   },
   {
@@ -7042,9 +6726,7 @@
     "description": "This ring has been used by mages to seal the letters they send, the ring absorbed some of their powers. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21667897",
     "releaseDate": "",
-    "elements": [
-      "???"
-    ],
+    "elements": ["???"],
     "level": "37",
     "stats": "Block +1, Dodge +2, Parry +1, Crit +5, Magic Def +3, Pierce Def +4, Melee Def +5, WIS +6, END +1, CHA +4, LUK +2, INT +6, DEX +3, STR +1, Bonus +4",
     "resists": "Fire +7, Ice +7, Water +7, Wind +7",
@@ -7061,10 +6743,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "???",
-      "free"
-    ],
+    "tags": ["???", "free"],
     "daRequired": true
   },
   {
@@ -7076,9 +6755,7 @@
     "description": "This ring has been used by mages to seal the letters they send, the ring absorbed some of their powers.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21667890",
     "releaseDate": "",
-    "elements": [
-      "SIL"
-    ],
+    "elements": ["SIL"],
     "level": "27",
     "stats": "Parry +1, Crit +3, Magic Def +2, Pierce Def +3, Melee Def +4, WIS +2, CHA +2, INT +6, DEX +1, Bonus +1",
     "resists": "Darkness +8, Ice +5",
@@ -7095,10 +6772,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "sil",
-      "free"
-    ],
+    "tags": ["sil", "free"],
     "daRequired": false
   },
   {
@@ -7110,9 +6784,7 @@
     "description": "Carved from a pure blue stone, this is a focus for an Energizer's magic.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21642159",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "49",
     "stats": "Dodge +1, Crit +4, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +8, END +5, CHA +5, INT +4, DEX +4, STR +4, Bonus +4",
     "resists": "Light +7, Darkness +7, Energy +5",
@@ -7129,10 +6801,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "sto",
-      "free"
-    ],
+    "tags": ["sto", "free"],
     "daRequired": false
   },
   {
@@ -7643,11 +7312,7 @@
     "equipSlot": "Finger",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dc",
-      "free",
-      "win"
-    ],
+    "tags": ["dc", "free", "win"],
     "isSeasonal": true,
     "hasDA": true,
     "hasDC": true,
@@ -7655,9 +7320,7 @@
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-IX",
-    "elements": [
-      "WIN"
-    ]
+    "elements": ["WIN"]
   },
   {
     "id": "accessory-esrom-ring",
@@ -7668,9 +7331,7 @@
     "description": "A ring crafted from the finest of materials by San Robin in thanks for your help. It's big, kind of gaudy, and... smells a little weird.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22129993",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "6",
     "stats": "Melee Def +1, END +1, LUK +1",
     "resists": "None",
@@ -7687,10 +7348,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false
   },
   {
@@ -7702,9 +7360,7 @@
     "description": "Fine lines cover this ring but they're in no discernable pattern. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21920501",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "78",
     "stats": "Block +2, Dodge +2, Parry +2, Crit +7, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +9, END +9, CHA +4, LUK +4, INT +5, DEX +5, STR +5, Bonus +8",
     "resists": "Darkness +8, Water +7, Health -10, Immobility +4",
@@ -7721,10 +7377,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "dar",
-      "free"
-    ],
+    "tags": ["dar", "free"],
     "daRequired": true
   },
   {
@@ -7845,19 +7498,14 @@
     "equipSlot": "Finger",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "ene",
-      "merge"
-    ],
+    "tags": ["ene", "merge"],
     "hasDA": false,
     "hasDC": true,
     "hasDM": false,
     "hasFree": false,
     "hasMerge": true,
     "levelRange": "I-III",
-    "elements": [
-      "ENE"
-    ]
+    "elements": ["ENE"]
   },
   {
     "id": "accessory-explorer-s-band",
@@ -7868,9 +7516,7 @@
     "description": "This ring is a must-have for the dedicated Adventurer. A built-in compass will guide you in the densest of fogs or darkest of nights.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15648758",
     "releaseDate": "",
-    "elements": [
-      "MET"
-    ],
+    "elements": ["MET"],
     "level": "10",
     "stats": "LUK +3, INT +2",
     "resists": "None",
@@ -7888,10 +7534,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "met",
-      "merge"
-    ],
+    "tags": ["met", "merge"],
     "daRequired": false
   },
   {
@@ -7903,9 +7546,7 @@
     "description": "This ring has been used by mages to seal the letters they send, the ring absorbed some of their powers.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21666410",
     "releaseDate": "",
-    "elements": [
-      "SIL"
-    ],
+    "elements": ["SIL"],
     "level": "57",
     "stats": "Crit +6, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +7, END +2, CHA +5, LUK +3, INT +7, DEX +4, STR +3, Bonus +4",
     "resists": "Metal +10, Light +7, Nature +6",
@@ -7922,10 +7563,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "sil",
-      "free"
-    ],
+    "tags": ["sil", "free"],
     "daRequired": false
   },
   {
@@ -7937,9 +7575,7 @@
     "description": "This ring adds a +12 to Defense Against Being Hit On.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=4152882",
     "releaseDate": "",
-    "elements": [
-      "MET"
-    ],
+    "elements": ["MET"],
     "level": "1",
     "stats": "Melee Def +2",
     "resists": "None",
@@ -7956,10 +7592,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "met",
-      "free"
-    ],
+    "tags": ["met", "free"],
     "daRequired": false
   },
   {
@@ -7971,9 +7604,7 @@
     "description": "Careful or this ring will float away!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20404253",
     "releaseDate": "",
-    "elements": [
-      "WIN"
-    ],
+    "elements": ["WIN"],
     "level": "36",
     "stats": "Crit +1, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +3, CHA +2, INT +3, DEX +3, STR +3, Bonus +2",
     "resists": "Light +4, Wind +2",
@@ -7990,10 +7621,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "win",
-      "free"
-    ],
+    "tags": ["win", "free"],
     "daRequired": false
   },
   {
@@ -8005,9 +7633,7 @@
     "description": "The moglins have made five golden rings as mementos of this year's Frostval. This one aids your endurance.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15262900",
     "releaseDate": "",
-    "elements": [
-      "NON"
-    ],
+    "elements": ["NON"],
     "level": "1",
     "stats": "END +5, Bonus +4",
     "rarity": "10",
@@ -8023,10 +7649,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "non",
-      "free"
-    ],
+    "tags": ["non", "free"],
     "daRequired": false,
     "isSeasonal": true
   },
@@ -8039,9 +7662,7 @@
     "description": "Made of hard-fired black ceramic, this ring helps you slightly resist fiery attacks.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=4152985",
     "releaseDate": "",
-    "elements": [
-      "FIR"
-    ],
+    "elements": ["FIR"],
     "level": "1",
     "stats": "Block +1, Crit +1",
     "resists": "Fire +5",
@@ -8065,10 +7686,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "fir",
-      "free"
-    ],
+    "tags": ["fir", "free"],
     "daRequired": false
   },
   {
@@ -8080,9 +7698,7 @@
     "description": "The moglins have made five golden rings as mementos of this year's Frostval. This one's luckier than the others.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15262881",
     "releaseDate": "",
-    "elements": [
-      "NON"
-    ],
+    "elements": ["NON"],
     "level": "1",
     "stats": "END +2, CHA +2, LUK +2, INT +2, DEX +2, STR +2",
     "rarity": "10",
@@ -8098,10 +7714,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "non",
-      "free"
-    ],
+    "tags": ["non", "free"],
     "daRequired": false,
     "isSeasonal": true
   },
@@ -8114,9 +7727,7 @@
     "description": "You think one of the Taster Zards dropped this... it's covered with drool!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20406069",
     "releaseDate": "",
-    "elements": [
-      "WAT"
-    ],
+    "elements": ["WAT"],
     "level": "56",
     "stats": "Crit +1, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +5, END +1, CHA -2, INT +6, DEX +6, STR +6, Bonus +5",
     "resists": "Fire +6, Water +6, Ice +4, Immobility +1",
@@ -8133,10 +7744,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "wat",
-      "free"
-    ],
+    "tags": ["wat", "free"],
     "daRequired": false
   },
   {
@@ -8148,9 +7756,7 @@
     "description": "This broken shard of Konnan's dream armor was polished and set into a ring by the Professor. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22425442",
     "releaseDate": "",
-    "elements": [
-      "FIR"
-    ],
+    "elements": ["FIR"],
     "level": "83",
     "stats": "Block +5, Dodge +5, Parry +5, Crit +7, Magic Def +5, Pierce Def +5, Melee Def +5, CHA +12, LUK +8, INT +8, DEX +8, STR +8, Bonus +7",
     "resists": "All +4, Fire +4",
@@ -8175,10 +7781,7 @@
         "dcRequired": true
       }
     ],
-    "tags": [
-      "fir",
-      "free"
-    ],
+    "tags": ["fir", "free"],
     "daRequired": true,
     "dcRequired": true
   },
@@ -8583,20 +8186,14 @@
     "equipSlot": "Finger",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dc",
-      "fir",
-      "free"
-    ],
+    "tags": ["dc", "fir", "free"],
     "hasDA": true,
     "hasDC": true,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-VII",
-    "elements": [
-      "FIR"
-    ]
+    "elements": ["FIR"]
   },
   {
     "id": "accessory-fossil-ring",
@@ -8607,9 +8204,7 @@
     "description": "A tiny fossil is the centerpiece of this ring.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21227061",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "57",
     "stats": "Crit +2, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +5, END +5, INT +5, DEX +5, STR +5, Bonus +5",
     "resists": "Stone +6, Water +4, Ice +4, Immobility +1",
@@ -8626,10 +8221,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "gold"
-    ],
+    "tags": ["nat", "gold"],
     "daRequired": false
   },
   {
@@ -8641,9 +8233,7 @@
     "description": "The moglins have made five golden rings as mementos of this years Frostval. This one enhances your intelligence.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15262895",
     "releaseDate": "",
-    "elements": [
-      "NON"
-    ],
+    "elements": ["NON"],
     "level": "1",
     "stats": "INT +10",
     "rarity": "10",
@@ -8659,10 +8249,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "non",
-      "free"
-    ],
+    "tags": ["non", "free"],
     "daRequired": false,
     "isSeasonal": true
   },
@@ -8675,9 +8262,7 @@
     "description": "This ring is so cold it's stuck to your finger now.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17091967",
     "releaseDate": "",
-    "elements": [
-      "ICE"
-    ],
+    "elements": ["ICE"],
     "level": "7",
     "stats": "Pierce Def +1, END +1, CHA +1, Bonus +1",
     "rarity": "0",
@@ -8693,10 +8278,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "ice",
-      "free"
-    ],
+    "tags": ["ice", "free"],
     "daRequired": false,
     "isSeasonal": true
   },
@@ -8991,20 +8573,14 @@
     "equipSlot": "Finger",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dc",
-      "free",
-      "ice"
-    ],
+    "tags": ["dc", "free", "ice"],
     "hasDA": true,
     "hasDC": true,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-V",
-    "elements": [
-      "ICE"
-    ]
+    "elements": ["ICE"]
   },
   {
     "id": "accessory-frostsilver-ring",
@@ -9015,9 +8591,7 @@
     "description": "This metal ring has been polished to a bright, mirror finish and feels cold to the touch no matter how long you hold or wear it.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=4744164",
     "releaseDate": "",
-    "elements": [
-      "ICE"
-    ],
+    "elements": ["ICE"],
     "level": "1",
     "stats": "Melee Def +5",
     "resists": "Ice +5",
@@ -9034,10 +8608,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "ice",
-      "free"
-    ],
+    "tags": ["ice", "free"],
     "daRequired": false
   },
   {
@@ -9049,9 +8620,7 @@
     "description": "This ring is freezing cold!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19880085",
     "releaseDate": "",
-    "elements": [
-      "ICE"
-    ],
+    "elements": ["ICE"],
     "level": "4",
     "stats": "Melee Def +5",
     "resists": "Ice +5",
@@ -9068,10 +8637,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "ice",
-      "gold"
-    ],
+    "tags": ["ice", "gold"],
     "daRequired": false
   },
   {
@@ -9083,9 +8649,7 @@
     "description": "A drop of liquid, magically frozen, it has been carved to fit your hand...",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20412082",
     "releaseDate": "",
-    "elements": [
-      "ICE"
-    ],
+    "elements": ["ICE"],
     "level": "46",
     "stats": "Crit +2, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +4, END +2, CHA +2, LUK +2, INT +3, DEX +3, STR +3, Bonus +3",
     "resists": "Light +6, Ice +6, Silver +2",
@@ -9102,10 +8666,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "ice",
-      "free"
-    ],
+    "tags": ["ice", "free"],
     "daRequired": false
   },
   {
@@ -9507,20 +9068,14 @@
     "equipSlot": "Finger",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dc",
-      "ene",
-      "free"
-    ],
+    "tags": ["dc", "ene", "free"],
     "hasDA": true,
     "hasDC": true,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-VII",
-    "elements": [
-      "ENE"
-    ]
+    "elements": ["ENE"]
   },
   {
     "id": "accessory-fynbo-ring",
@@ -9531,9 +9086,7 @@
     "description": "A ring crafted from the finest of materials by San Robin in thanks for your help. It's big, kind of gaudy, and... smells a little weird.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22129818",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "28",
     "stats": "Block +1, Parry +1, Crit +1, Magic Def +1, Pierce Def +1, Melee Def +1, WIS +4, END +4, CHA +2, LUK +4, Bonus +2",
     "resists": "Poison +5, Fire +4",
@@ -9550,10 +9103,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false
   },
   {
@@ -9565,9 +9115,7 @@
     "description": "This favoured item is something that a gargoyle would give to its soft-bellied ally. It's a grey stone ring, set with a large quartz. +1 Dexterity and Defense.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=6793491",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "2",
     "stats": "Melee Def +2, DEX +1",
     "resists": "None",
@@ -9584,10 +9132,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "sto",
-      "free"
-    ],
+    "tags": ["sto", "free"],
     "daRequired": false,
     "isRare": true
   },
@@ -9600,9 +9145,7 @@
     "description": "This metallic ring was highly polished and heavily machined. It probably fell from a mechagryphon. Hopefully not the one you are leaving on. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18953394",
     "releaseDate": "",
-    "elements": [
-      "ENE"
-    ],
+    "elements": ["ENE"],
     "level": "55",
     "stats": "Block +1, Crit +6, Magic Def +5, Pierce Def +5, Melee Def +5, END +8, LUK +3, INT +6, DEX +6, STR +6, Bonus +5",
     "resists": "Energy +8, Water +8, Metal +4",
@@ -9619,10 +9162,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "ene",
-      "free"
-    ],
+    "tags": ["ene", "free"],
     "daRequired": true
   },
   {
@@ -9634,9 +9174,7 @@
     "description": "Treasure golem bling-bling!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17403123",
     "releaseDate": "",
-    "elements": [
-      "ICE"
-    ],
+    "elements": ["ICE"],
     "level": "18",
     "stats": "Pierce Def +2, END +2, CHA +2",
     "rarity": "0",
@@ -9652,10 +9190,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "ice",
-      "free"
-    ],
+    "tags": ["ice", "free"],
     "daRequired": false
   },
   {
@@ -9667,9 +9202,7 @@
     "description": "This impressive ring is missing it's stone. It looks like the setting was bit off?",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21920315",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "18",
     "stats": "Block +1, Crit +1, Pierce Def +1, Melee Def +1, WIS +2, END +3, Bonus +2",
     "resists": "Darkness +4, Fire +3",
@@ -9686,10 +9219,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "lig",
-      "free"
-    ],
+    "tags": ["lig", "free"],
     "daRequired": false
   },
   {
@@ -9701,9 +9231,7 @@
     "description": "You've never heard of a gemerald, but the shopkeeper assures you it's just very rare.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21227045",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "52",
     "stats": "Dodge +1, Crit +4, Magic Def +5, Pierce Def +5, Melee Def +5, END +5, INT +4, DEX +4, STR +4, Bonus +3",
     "resists": "Darkness +7",
@@ -9720,10 +9248,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "sto",
-      "gold"
-    ],
+    "tags": ["sto", "gold"],
     "daRequired": false
   },
   {
@@ -9735,9 +9260,7 @@
     "description": "This cold white band appears to be of elfin make, exquisitely carven, and engraved with runes dedicated to the frozen north. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18953222",
     "releaseDate": "",
-    "elements": [
-      "ICE"
-    ],
+    "elements": ["ICE"],
     "level": "44",
     "stats": "Dodge +1, Crit +4, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +6, END +5, INT +3, DEX +3, STR +3, Bonus +2",
     "resists": "Ice +7, Fire +7, Immobility +3",
@@ -9754,10 +9277,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "ice",
-      "free"
-    ],
+    "tags": ["ice", "free"],
     "daRequired": true
   },
   {
@@ -9769,9 +9289,7 @@
     "description": "This ring is made of bright clear glass but it's stronger than it appears.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=4153344",
     "releaseDate": "",
-    "elements": [
-      "MET"
-    ],
+    "elements": ["MET"],
     "level": "1",
     "resists": "Fire +2",
     "rarity": "2",
@@ -9788,10 +9306,7 @@
       }
     ],
     "notes": "Item's Fire Resist is erroneously written in lower case; resistance still functions as intended.",
-    "tags": [
-      "met",
-      "free"
-    ],
+    "tags": ["met", "free"],
     "daRequired": false
   },
   {
@@ -9803,9 +9318,7 @@
     "description": "This stone holds a single drop of an ancient vampire's blood.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21859774",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "48",
     "stats": "Block +1, Dodge +1, Parry +1, Crit +4, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +6, END +6, CHA +5, LUK +5, INT +2, DEX +2, STR +2, Bonus +5",
     "resists": "Darkness +6, Fire +5, Health -4",
@@ -9822,10 +9335,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "dar",
-      "free"
-    ],
+    "tags": ["dar", "free"],
     "daRequired": false
   },
   {
@@ -9837,9 +9347,7 @@
     "description": "This stone holds a single drop of an ancient vampire's blood.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21859769",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "28",
     "stats": "Block +1, Parry +1, Crit +1, Magic Def +1, Pierce Def +1, Melee Def +1, WIS +4, END +4, CHA +3, LUK +3, Bonus +2",
     "resists": "Darkness +5, Fire +4",
@@ -9856,10 +9364,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "dar",
-      "free"
-    ],
+    "tags": ["dar", "free"],
     "daRequired": false
   },
   {
@@ -9871,9 +9376,7 @@
     "description": "This stone holds a single drop of an ancient vampire's blood.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21859770",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "38",
     "stats": "Block +1, Dodge +1, Parry +1, Crit +3, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +5, END +5, CHA +4, LUK +4, INT +2, DEX +2, STR +2, Bonus +4",
     "resists": "Darkness +6, Fire +5, Health -2",
@@ -9890,10 +9393,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "dar",
-      "free"
-    ],
+    "tags": ["dar", "free"],
     "daRequired": false
   },
   {
@@ -9905,9 +9405,7 @@
     "description": "This must have been made by a yaga with a taste for shiny things! This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17039888",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "35",
     "stats": "Dodge +1, Crit +1, Magic Def +2, Pierce Def +2, Melee Def +2, END +2, INT +2, STR +2, Bonus +1, Darkness +3, Fire +4",
     "rarity": "5",
@@ -9923,10 +9421,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "dar",
-      "free"
-    ],
+    "tags": ["dar", "free"],
     "daRequired": true
   },
   {
@@ -9938,9 +9433,7 @@
     "description": "A soft, white stone that seems to almost be made of trapped moonlight sits atop this ring.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21853668",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "17",
     "stats": "Block +1, Crit +1, Pierce Def +1, Melee Def +1, WIS +2, END +2, CHA +2, LUK +2, Bonus +1",
     "resists": "Fire +4, Light +3",
@@ -9957,10 +9450,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "sto",
-      "free"
-    ],
+    "tags": ["sto", "free"],
     "daRequired": false
   },
   {
@@ -9972,9 +9462,7 @@
     "description": "Now if you could only find the other four....",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17092034",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "30",
     "stats": "Crit +2, Magic Def +3, Pierce Def +3, Melee Def +2, END +5, CHA +2, DEX +4, Bonus +2, Silver +3",
     "rarity": "0",
@@ -9990,10 +9478,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "lig",
-      "free"
-    ],
+    "tags": ["lig", "free"],
     "daRequired": false,
     "isSeasonal": true
   },
@@ -10001,10 +9486,6 @@
     "id": "accessory-golden-wedding-ring",
     "familyName": "Golden Wedding Ring",
     "slug": "accessory-golden-wedding-ring",
-    "aliasSlugs": [
-      "accessory-golden-wedding-ring",
-      "accessory-golden-wedding-ring"
-    ],
     "type": "accessory",
     "subtype": "ring",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20779678",
@@ -10075,10 +9556,7 @@
     "equipSlot": "Finger",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "gold",
-      "non"
-    ],
+    "tags": ["gold", "non"],
     "isRare": true,
     "hasDA": false,
     "hasDC": false,
@@ -10086,9 +9564,7 @@
     "hasFree": false,
     "hasMerge": false,
     "levelRange": "1-25",
-    "elements": [
-      "NON"
-    ]
+    "elements": ["NON"]
   },
   {
     "id": "accessory-gorillaphant-ivory-ring",
@@ -10099,9 +9575,7 @@
     "description": "This exotic ring is made of highly polished Gorillaphant Ivory.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=4229144",
     "releaseDate": "",
-    "elements": [
-      "MET"
-    ],
+    "elements": ["MET"],
     "level": "1",
     "stats": "Melee Def +1, Bonus +2",
     "resists": "Nature +2",
@@ -10119,10 +9593,7 @@
       }
     ],
     "notes": "Ring's Nature Resist was listed in all lower case; this was fixed on July 22nd, 2023.",
-    "tags": [
-      "met",
-      "free"
-    ],
+    "tags": ["met", "free"],
     "daRequired": false
   },
   {
@@ -10134,9 +9605,7 @@
     "description": "Carrying this HUGE ring around your finger builds muscle and adds endurance!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18958347",
     "releaseDate": "",
-    "elements": [
-      "NON"
-    ],
+    "elements": ["NON"],
     "level": "35",
     "stats": "Crit +4, Magic Def +3, Pierce Def +3, Melee Def +3, END +6, STR +3",
     "resists": "Fire +7, Poison +7",
@@ -10153,10 +9622,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "non",
-      "free"
-    ],
+    "tags": ["non", "free"],
     "daRequired": false,
     "isRare": true
   },
@@ -10169,9 +9635,7 @@
     "description": "The ring looks to be carved from a single emerald. Sitting atop it is a tiny obsidian skull, which is menacinly beautiful. I wouldn't look to hard into the skulls ruby eyes.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15676649",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "25",
     "stats": "Block +1, Melee Def +2, END +1, LUK +3, Bonus +3, Fire +1, Darkness +3",
     "rarity": "0",
@@ -10187,10 +9651,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "dar",
-      "gold"
-    ],
+    "tags": ["dar", "gold"],
     "daRequired": false,
     "isRare": true
   },
@@ -10203,9 +9664,7 @@
     "description": "Bleeeghhh, it's turning your finger green. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19812563",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "68",
     "stats": "Dodge +1, Crit +4, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +3, END +6, CHA -1, INT +6, DEX +6, STR +6, Bonus +6",
     "resists": "Nature +10, Water +8, Disease +6, Poison +6, Immobility +2, Health -2",
@@ -10222,10 +9681,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": true
   },
   {
@@ -10682,11 +10138,7 @@
     "equipSlot": "Finger",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dc",
-      "free",
-      "goo"
-    ],
+    "tags": ["dc", "free", "goo"],
     "isSeasonal": true,
     "hasDA": true,
     "hasDC": true,
@@ -10694,9 +10146,7 @@
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-VIII",
-    "elements": [
-      "GOO"
-    ]
+    "elements": ["GOO"]
   },
   {
     "id": "accessory-heavy-ring",
@@ -10707,9 +10157,7 @@
     "description": "No idea what this ring is made of but it weighs as much as a brick.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=4152864",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "1",
     "stats": "Pierce Def +5, Melee Def +5",
     "resists": "Darkness +5",
@@ -10733,10 +10181,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "sto",
-      "free"
-    ],
+    "tags": ["sto", "free"],
     "daRequired": false
   },
   {
@@ -10748,9 +10193,7 @@
     "description": "A ring crafted from the finest of materials by San Robin in thanks for your help. It's big, kind of gaudy, and... smells a little weird. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22130568",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "72",
     "stats": "Block +2, Dodge +2, Parry +1, Crit +8, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +2, END +7, CHA +1, LUK +3, INT +8, DEX +8, STR +8, Bonus +7",
     "resists": "Fire +8, Wind +7, Metal +5, Immobility +2",
@@ -10767,10 +10210,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": true
   },
   {
@@ -10782,9 +10222,7 @@
     "description": "Revenge is best served cold... the perfect ring for an up and coming cyromancer. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20203579",
     "releaseDate": "",
-    "elements": [
-      "ICE"
-    ],
+    "elements": ["ICE"],
     "level": "5",
     "stats": "Crit +2, WIS +1, Ice +4, Fire +4",
     "rarity": "2",
@@ -10800,10 +10238,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "ice",
-      "free"
-    ],
+    "tags": ["ice", "free"],
     "daRequired": true
   },
   {
@@ -10815,9 +10250,7 @@
     "description": "A single, small orb is embedded in this ring. It is freezing cold.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20441659",
     "releaseDate": "",
-    "elements": [
-      "ICE"
-    ],
+    "elements": ["ICE"],
     "level": "36",
     "stats": "Block +3, Dodge +3, Parry +3, Crit +4, Magic Def +3, Pierce Def +3, Melee Def +3, CHA +5, LUK +3, INT +3, DEX +3, STR +3, Bonus +4",
     "resists": "Fire +4",
@@ -10843,10 +10276,7 @@
       }
     ],
     "notes": "Ring previously appeared in the retired quest Nightmares as a Necklace and had the following stats:\nStats: Crit +2, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +5, END +3, INT +3\nResists: Fire +6\nDropped version previously had the description: I single, small orb is hung from this chain. It is freezing cold.",
-    "tags": [
-      "ice",
-      "free"
-    ],
+    "tags": ["ice", "free"],
     "daRequired": false,
     "dcRequired": true
   },
@@ -10859,9 +10289,7 @@
     "description": "This tarnished ring is an unhealthy yellow-green color, and when you hold it the ring seems to cause your hand to itch.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=4153455",
     "releaseDate": "",
-    "elements": [
-      "MET"
-    ],
+    "elements": ["MET"],
     "level": "1",
     "stats": "Melee Def +1",
     "resists": "Fire +1",
@@ -10878,10 +10306,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "met",
-      "free"
-    ],
+    "tags": ["met", "free"],
     "daRequired": false
   },
   {
@@ -10893,9 +10318,7 @@
     "description": "Heavy carved, this ring is covered with crazy patterns.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21308933",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "24",
     "stats": "Magic Def +1, Pierce Def +1, Melee Def +1, WIS +3, END +3, CHA +3",
     "resists": "Darkness +5, Nature +3, Light +3",
@@ -10913,10 +10336,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "lig",
-      "merge"
-    ],
+    "tags": ["lig", "merge"],
     "daRequired": false
   },
   {
@@ -10928,9 +10348,7 @@
     "description": "This ring is so green and pretty... and itchy... uh oh, what kind of ivy is it made of?!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17092050",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "20",
     "stats": "Crit +1, END +3, INT +2, DEX +2, STR +2, Bonus +1, Fire +2",
     "rarity": "0",
@@ -10946,10 +10364,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false,
     "isSeasonal": true
   },
@@ -10962,9 +10377,7 @@
     "description": "This ring has been used by mages to seal the letters they send, the ring absorbed some of their powers. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21666800",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "67",
     "stats": "Block +1, Dodge +1, Parry +1, Crit +8, Magic Def +6, Pierce Def +7, Melee Def +5, WIS +9, END +7, CHA +3, LUK +8, INT +7, DEX +7, STR +4, Bonus +2",
     "resists": "Immobility +5, Wind -7, Fire +10, Energy +10",
@@ -10981,10 +10394,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "sto",
-      "free"
-    ],
+    "tags": ["sto", "free"],
     "daRequired": true
   },
   {
@@ -10996,9 +10406,7 @@
     "description": "A ring crafted from the finest of materials by San Robin in thanks for your help. It's big, kind of gaudy, and... smells a little weird. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22130569",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "66",
     "stats": "Block +1, Crit +6, Magic Def +8, Pierce Def +8, Melee Def +8, WIS +5, END +7, CHA +2, LUK +2, INT +6, DEX +6, STR +6, Bonus +9",
     "resists": "Light +8, Wind +8, Nature +6, Poison +6",
@@ -11015,10 +10423,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": true
   },
   {
@@ -11030,9 +10435,7 @@
     "description": "A cat's head graces the top of this obsidian ring. Two brilliant emeralds shine as the carved cat's eyes. When you hold it to your ear, you hear a hissing, as if you've angered the doomkitty!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18525262",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "15",
     "stats": "Block +1, Crit +3, END +2, LUK +2",
     "resists": "Darkness +3",
@@ -11050,10 +10453,7 @@
         "dcRequired": true
       }
     ],
-    "tags": [
-      "dar",
-      "dc"
-    ],
+    "tags": ["dar", "dc"],
     "daRequired": false,
     "dcRequired": true
   },
@@ -11066,9 +10466,7 @@
     "description": "Some enterprising mermaid took strands of kelp and twisted them into jewelry. The magical kelp protects you from fire AND boosts your health!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17329854",
     "releaseDate": "",
-    "elements": [
-      "WAT"
-    ],
+    "elements": ["WAT"],
     "level": "5",
     "stats": "Crit +2, END +1",
     "resists": "Fire +5, Health -2",
@@ -11085,10 +10483,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "wat",
-      "gold"
-    ],
+    "tags": ["wat", "gold"],
     "daRequired": false
   },
   {
@@ -11100,9 +10495,7 @@
     "description": "A soft, white stone that seems to almost be made of trapped moonlight sits atop this ring. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21844166",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "77",
     "stats": "Block +2, Dodge +2, Parry +2, Crit +6, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +9, END +9, CHA +8, LUK +8, INT +5, DEX +5, STR +5, Bonus +8",
     "resists": "Fire +8, Light +7, Water +6, Darkness +6, Immobility +3",
@@ -11119,10 +10512,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "sto",
-      "free"
-    ],
+    "tags": ["sto", "free"],
     "daRequired": true
   },
   {
@@ -11134,9 +10524,7 @@
     "description": "This ring is made of a smooth green metal, and glows faintly green with internal power.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=4157510",
     "releaseDate": "",
-    "elements": [
-      "MET"
-    ],
+    "elements": ["MET"],
     "level": "1",
     "stats": "Crit +2, Pierce Def +2, Melee Def +1",
     "resists": "Fire +2",
@@ -11154,26 +10542,13 @@
       }
     ],
     "notes": "Item is a reference to the Green Lantern Ring from DC Comics' Green Lantern.",
-    "tags": [
-      "met",
-      "gold"
-    ],
+    "tags": ["met", "gold"],
     "daRequired": false
   },
   {
     "id": "accessory-layla-s-ring",
     "familyName": "Layla's Ring",
     "slug": "accessory-layla-s-ring",
-    "aliasSlugs": [
-      "accessory-layla-s-ring",
-      "accessory-layla-s-ring",
-      "accessory-layla-s-ring",
-      "accessory-layla-s-ring",
-      "accessory-layla-s-ring",
-      "accessory-layla-s-ring",
-      "accessory-layla-s-ring",
-      "accessory-layla-s-ring"
-    ],
     "type": "accessory",
     "subtype": "ring",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22253840",
@@ -11581,20 +10956,14 @@
     "equipSlot": "Finger",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dc",
-      "free",
-      "lig"
-    ],
+    "tags": ["dc", "free", "lig"],
     "hasDA": true,
     "hasDC": true,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "10-80",
-    "elements": [
-      "LIG"
-    ]
+    "elements": ["LIG"]
   },
   {
     "id": "accessory-leather-ring",
@@ -11605,9 +10974,7 @@
     "description": "Made of hand-stitched leather hide, this ring is very comfortable but not flashy.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=4590600",
     "releaseDate": "",
-    "elements": [
-      "MET"
-    ],
+    "elements": ["MET"],
     "level": "1",
     "stats": "Dodge +1",
     "resists": "None",
@@ -11624,10 +10991,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "met",
-      "free"
-    ],
+    "tags": ["met", "free"],
     "daRequired": false
   },
   {
@@ -12138,20 +11502,14 @@
     "equipSlot": "Finger",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dc",
-      "free",
-      "met"
-    ],
+    "tags": ["dc", "free", "met"],
     "hasDA": true,
     "hasDC": true,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-IX",
-    "elements": [
-      "MET"
-    ]
+    "elements": ["MET"]
   },
   {
     "id": "accessory-lost-ring",
@@ -12162,9 +11520,7 @@
     "description": "You found it! It appears that a string of numbers are carved into this stone ring, but they've been mostly worn away by the waves of the sea.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18525244",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "10",
     "stats": "Crit +1, Magic Def +2, Pierce Def +2, Melee Def +2, END +3",
     "resists": "Darkness +2",
@@ -12182,10 +11538,7 @@
         "dcRequired": true
       }
     ],
-    "tags": [
-      "lig",
-      "dc"
-    ],
+    "tags": ["lig", "dc"],
     "daRequired": false,
     "dcRequired": true
   },
@@ -12327,10 +11680,7 @@
     "equipSlot": "Finger",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dar",
-      "free"
-    ],
+    "tags": ["dar", "free"],
     "isSeasonal": true,
     "hasDA": true,
     "hasDC": false,
@@ -12338,9 +11688,7 @@
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-IV",
-    "elements": [
-      "DAR"
-    ]
+    "elements": ["DAR"]
   },
   {
     "id": "accessory-lucky-ring",
@@ -12351,9 +11699,7 @@
     "description": "Well... do you feel lucky?",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19880083",
     "releaseDate": "",
-    "elements": [
-      "ICE"
-    ],
+    "elements": ["ICE"],
     "level": "4",
     "stats": "Melee Def +5, LUK +5",
     "resists": "None",
@@ -12370,10 +11716,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "ice",
-      "gold"
-    ],
+    "tags": ["ice", "gold"],
     "daRequired": false
   },
   {
@@ -12385,9 +11728,7 @@
     "description": "This small ring has a hidden compartment for storing poison. Great for betrayal on the sly.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19297967",
     "releaseDate": "",
-    "elements": [
-      "POI"
-    ],
+    "elements": ["POI"],
     "level": "35",
     "stats": "Crit +3, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +3, LUK +3, INT +2, DEX +2, STR +2",
     "resists": "Silver +4, Ice +4",
@@ -12404,10 +11745,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "poi",
-      "free"
-    ],
+    "tags": ["poi", "free"],
     "daRequired": false
   },
   {
@@ -12419,9 +11757,7 @@
     "description": "Kind cheap, but pretty.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19876811",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "3",
     "stats": "Stone +5",
     "rarity": "1",
@@ -12437,10 +11773,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "lig",
-      "gold"
-    ],
+    "tags": ["lig", "gold"],
     "daRequired": false
   },
   {
@@ -12452,9 +11785,7 @@
     "description": "This ring once belonged to the terrible Deathknight, Sir Malifact! The skull on the front has been cracked down the middle. If it held any power before it is now greatly reduced.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=10595081",
     "releaseDate": "",
-    "elements": [
-      "NON"
-    ],
+    "elements": ["NON"],
     "level": "5",
     "stats": "Block -1, Dodge -1, Parry -1, Crit +1, Magic Def -1, Pierce Def -1, Melee Def -1, END +2, CHA -1, LUK -1, INT +2, STR +2, Bonus +3",
     "resists": "Darkness +10, Light -10",
@@ -12471,10 +11802,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "non",
-      "free"
-    ],
+    "tags": ["non", "free"],
     "daRequired": false
   },
   {
@@ -12486,9 +11814,7 @@
     "description": "A jolt of electricity runs through your hand when you put the ring on.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20203589",
     "releaseDate": "",
-    "elements": [
-      "ENE"
-    ],
+    "elements": ["ENE"],
     "level": "8",
     "stats": "Magic Def +1, Pierce Def +1, Melee Def +1, WIS +1, LUK +1, INT +2, Bonus +1",
     "rarity": "8",
@@ -12504,10 +11830,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "ene",
-      "free"
-    ],
+    "tags": ["ene", "free"],
     "daRequired": false
   },
   {
@@ -12519,9 +11842,7 @@
     "description": "Maz has given you one of the rings off her fingers for your help against the ninjas!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21460266",
     "releaseDate": "",
-    "elements": [
-      "WAT"
-    ],
+    "elements": ["WAT"],
     "level": "57",
     "stats": "Magic Def +4, Pierce Def +4, Melee Def +4, WIS +5, CHA +1, INT +6, DEX +6, STR +6, Bonus +5",
     "resists": "Fire +6, Energy +4, Ice +4, Immobility +1",
@@ -12538,10 +11859,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "wat",
-      "free"
-    ],
+    "tags": ["wat", "free"],
     "daRequired": false
   },
   {
@@ -12553,9 +11871,7 @@
     "description": "Maz has given you one of the rings off her fingers for your help against the ninjas!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21460302",
     "releaseDate": "",
-    "elements": [
-      "WAT"
-    ],
+    "elements": ["WAT"],
     "level": "27",
     "stats": "Magic Def +2, Pierce Def +2, Melee Def +2, WIS +2, CHA +1, INT +3, DEX +3, STR +3",
     "resists": "Fire +1",
@@ -12572,10 +11888,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "wat",
-      "free"
-    ],
+    "tags": ["wat", "free"],
     "daRequired": false
   },
   {
@@ -12587,9 +11900,7 @@
     "description": "Maz has given you one of the rings off her fingers for your help against the ninjas! This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21460145",
     "releaseDate": "",
-    "elements": [
-      "WAT"
-    ],
+    "elements": ["WAT"],
     "level": "71",
     "stats": "Block +1, Crit +4, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +7, END +1, CHA +1, INT +8, DEX +8, STR +8, Bonus +7",
     "resists": "Fire +8, Energy +7, Ice +5 Immobility +2",
@@ -12606,10 +11917,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "wat",
-      "free"
-    ],
+    "tags": ["wat", "free"],
     "daRequired": true
   },
   {
@@ -12621,9 +11929,7 @@
     "description": "Maz has given you one of the rings off her fingers for your help against the ninjas!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21460089",
     "releaseDate": "",
-    "elements": [
-      "WAT"
-    ],
+    "elements": ["WAT"],
     "level": "42",
     "stats": "Magic Def +3, Pierce Def +3, Melee Def +3, WIS +3, CHA +1, INT +4, DEX +4, STR +4, Bonus +3",
     "resists": "Fire +4, Energy +3",
@@ -12640,10 +11946,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "wat",
-      "free"
-    ],
+    "tags": ["wat", "free"],
     "daRequired": false
   },
   {
@@ -12655,9 +11958,7 @@
     "description": "Maz has given you one of the rings off her fingers for your help against the ninjas! This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21460133",
     "releaseDate": "",
-    "elements": [
-      "WAT"
-    ],
+    "elements": ["WAT"],
     "level": "80",
     "stats": "Block +2, Dodge +1, Crit +5, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +7, END +2, CHA +2, INT +9, DEX +9, STR +9, Bonus +7",
     "resists": "Fire +8, Energy +7, Ice +5, Wind +5, Immobility +2",
@@ -12674,10 +11975,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "wat",
-      "free"
-    ],
+    "tags": ["wat", "free"],
     "daRequired": true
   },
   {
@@ -13079,20 +12377,14 @@
     "equipSlot": "Finger",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dc",
-      "free",
-      "met"
-    ],
+    "tags": ["dc", "free", "met"],
     "hasDA": true,
     "hasDC": true,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-VII",
-    "elements": [
-      "MET"
-    ]
+    "elements": ["MET"]
   },
   {
     "id": "accessory-mega-deathly-hollow",
@@ -13103,9 +12395,7 @@
     "description": "Your finger goes through the hollow part of this metal band. It MAY, some stories say, help you defeat MegaDeath down in the Underworld.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18525521",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "60",
     "stats": "Crit +7, Magic Def +7, Pierce Def +7, Melee Def +7, WIS +9, END +9, INT +5, DEX +5, STR +5, Bonus +7",
     "resists": "Light +9, Fire +9, Water +9, Immobility +5",
@@ -13123,10 +12413,7 @@
         "dcRequired": true
       }
     ],
-    "tags": [
-      "dar",
-      "dc"
-    ],
+    "tags": ["dar", "dc"],
     "daRequired": false,
     "dcRequired": true
   },
@@ -13139,9 +12426,7 @@
     "description": "This ring is incredibly tiny, it won't even fit on your finger.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=14661440",
     "releaseDate": "",
-    "elements": [
-      "NON"
-    ],
+    "elements": ["NON"],
     "level": "8",
     "stats": "Magic Def +1, Pierce Def +1, Melee Def +1, LUK +2, DEX +2, Bonus +1",
     "resists": "None",
@@ -13158,10 +12443,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "non",
-      "free"
-    ],
+    "tags": ["non", "free"],
     "daRequired": true
   },
   {
@@ -13173,9 +12455,7 @@
     "description": "This huge ring was carved from a gorillaphant molar. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21310448",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "74",
     "stats": "Block +2, Crit +5, WIS +5, END +10, CHA +3, LUK +3, INT +6, DEX +6, STR +6, Bonus +2",
     "resists": "Darkness +5, Nature +5, All +2",
@@ -13193,10 +12473,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "nat",
-      "merge"
-    ],
+    "tags": ["nat", "merge"],
     "daRequired": true
   },
   {
@@ -13653,30 +12930,20 @@
     "equipSlot": "Finger",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dc",
-      "fir",
-      "free"
-    ],
+    "tags": ["dc", "fir", "free"],
     "hasDA": true,
     "hasDC": true,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-VIII",
-    "elements": [
-      "FIR"
-    ]
+    "elements": ["FIR"]
   },
   {
     "id": "accessory-monster-hunter-ring",
     "familyName": "Monster Hunter Ring",
     "slug": "accessory-monster-hunter-ring",
-    "aliasSlugs": [
-      "accessory-monster-hunter-ring",
-      "accessory-monster-hunter-ring-ii",
-      "accessory-monster-hunter-ring-iii"
-    ],
+    "aliasSlugs": ["accessory-monster-hunter-ring-ii", "accessory-monster-hunter-ring-iii"],
     "type": "accessory",
     "subtype": "ring",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17762527",
@@ -13782,21 +13049,14 @@
     "equipSlot": "Finger",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "merge",
-      "met",
-      "nat"
-    ],
+    "tags": ["merge", "met", "nat"],
     "hasDA": false,
     "hasDC": false,
     "hasDM": false,
     "hasFree": false,
     "hasMerge": true,
     "levelRange": "I-III",
-    "elements": [
-      "MET",
-      "NAT"
-    ]
+    "elements": ["MET", "NAT"]
   },
   {
     "id": "accessory-moonstone-ring",
@@ -13807,9 +13067,7 @@
     "description": "A soft, white stone that seems to almost be made of trapped moonlight sits atop this ring.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21844193",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "7",
     "stats": "Block +1, Melee Def +1, WIS +1, END +1, CHA +1, LUK +1, Bonus +1",
     "resists": "Fire +2, Light +2",
@@ -13826,10 +13084,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "sto",
-      "free"
-    ],
+    "tags": ["sto", "free"],
     "daRequired": false
   },
   {
@@ -13841,9 +13096,7 @@
     "description": "The ring of Emperor Kuron, an ancient ruler in the city of Sil.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19794948",
     "releaseDate": "",
-    "elements": [
-      "ICE"
-    ],
+    "elements": ["ICE"],
     "level": "19",
     "stats": "Magic Def +1, Pierce Def +1, Melee Def +1, INT +2, DEX +2, STR +2",
     "resists": "Light +1",
@@ -13860,10 +13113,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "ice",
-      "free"
-    ],
+    "tags": ["ice", "free"],
     "daRequired": false
   },
   {
@@ -13875,9 +13125,7 @@
     "description": "This ring is cold to the touch and glassy. It provides additional protection against Darkness attacks.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19880093",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "4",
     "stats": "None",
     "resists": "Darkness +5",
@@ -13894,10 +13142,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "dar",
-      "gold"
-    ],
+    "tags": ["dar", "gold"],
     "daRequired": false
   },
   {
@@ -13909,9 +13154,7 @@
     "description": "Sure to impress that max level trainer, this ring shows you're a newbie no more.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17985999",
     "releaseDate": "",
-    "elements": [
-      "MET"
-    ],
+    "elements": ["MET"],
     "level": "50",
     "stats": "Dodge +1, Crit +3, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +7, END +7, CHA +5, INT +4, DEX +4, STR +4, Bonus +4",
     "resists": "Light +7, Darkness +7, Poison +5",
@@ -13928,20 +13171,13 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "met",
-      "gold"
-    ],
+    "tags": ["met", "gold"],
     "daRequired": false
   },
   {
     "id": "accessory-newbie-ring",
     "familyName": "Newbie Ring",
     "slug": "accessory-newbie-ring",
-    "aliasSlugs": [
-      "accessory-newbie-ring",
-      "accessory-newbie-ring"
-    ],
     "type": "accessory",
     "subtype": "ring",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=4152903",
@@ -14018,20 +13254,14 @@
     "equipSlot": "Finger",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "free",
-      "gold",
-      "met"
-    ],
+    "tags": ["free", "gold", "met"],
     "hasDA": false,
     "hasDC": false,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "1",
-    "elements": [
-      "MET"
-    ]
+    "elements": ["MET"]
   },
   {
     "id": "accessory-nommer-horn",
@@ -14175,19 +13405,14 @@
     "equipSlot": "Finger",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "free",
-      "nat"
-    ],
+    "tags": ["free", "nat"],
     "hasDA": true,
     "hasDC": false,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "25-55",
-    "elements": [
-      "NAT"
-    ]
+    "elements": ["NAT"]
   },
   {
     "id": "accessory-o-ring",
@@ -14198,9 +13423,7 @@
     "description": "This ring is made of a flexible black material. You can replace it but it will cost you an arm and a leg.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=4590122",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "1",
     "stats": "Melee Def +3",
     "resists": "None",
@@ -14217,26 +13440,13 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "dar",
-      "free"
-    ],
+    "tags": ["dar", "free"],
     "daRequired": false
   },
   {
     "id": "accessory-obsidian-band",
     "familyName": "Obsidian Band",
     "slug": "accessory-obsidian-band",
-    "aliasSlugs": [
-      "accessory-obsidian-band",
-      "accessory-obsidian-band",
-      "accessory-obsidian-band",
-      "accessory-obsidian-band",
-      "accessory-obsidian-band",
-      "accessory-obsidian-band",
-      "accessory-obsidian-band",
-      "accessory-obsidian-band"
-    ],
     "type": "accessory",
     "subtype": "ring",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22025783",
@@ -14484,19 +13694,14 @@
     "equipSlot": "Finger",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "merge",
-      "sto"
-    ],
+    "tags": ["merge", "sto"],
     "hasDA": false,
     "hasDC": false,
     "hasDM": false,
     "hasFree": false,
     "hasMerge": true,
     "levelRange": "10-80",
-    "elements": [
-      "STO"
-    ]
+    "elements": ["STO"]
   },
   {
     "id": "accessory-one-ring",
@@ -14507,9 +13712,7 @@
     "description": "This ring feels warm to the touch. There is a partial elven inscription on the ring that reads: \"If lost please return to Sau...\" The rest is obscured.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=4153496",
     "releaseDate": "",
-    "elements": [
-      "MET"
-    ],
+    "elements": ["MET"],
     "level": "1",
     "stats": "Magic Def +5",
     "resists": "Nature +2",
@@ -14527,10 +13730,7 @@
       }
     ],
     "notes": "Item is a reference to the One Ring from J. R. R. Tolkien's 'The Lord of the Rings'.\nItem was previously available in the retired quest Sir Koffagus Sarcophagus.",
-    "tags": [
-      "met",
-      "free"
-    ],
+    "tags": ["met", "free"],
     "daRequired": false
   },
   {
@@ -14542,9 +13742,7 @@
     "description": "The ring of Emperor Kuron, an ancient ruler in the city of Sil.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19795005",
     "releaseDate": "",
-    "elements": [
-      "ICE"
-    ],
+    "elements": ["ICE"],
     "level": "46",
     "stats": "Crit +2, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +4, CHA +2, LUK +2, INT +4, DEX +4, STR +4, Bonus +3",
     "resists": "Light +6, Ice +4, Silver +2",
@@ -14561,10 +13759,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "ice",
-      "free"
-    ],
+    "tags": ["ice", "free"],
     "daRequired": false
   },
   {
@@ -14576,9 +13771,7 @@
     "description": "A ring crafted from the finest of materials by San Robin in thanks for your help. It's big, kind of gaudy, and... smells a little weird.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22129819",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "58",
     "stats": "Block +1, Dodge +1, Parry +1, Crit +4, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +7, END +7, CHA +4, LUK +6, INT +3, DEX +3, STR +3, Bonus +6",
     "resists": "Bacon +6, Fire +5, Health -6",
@@ -14595,10 +13788,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false
   },
   {
@@ -14610,9 +13800,7 @@
     "description": "Papermancers are using this ring to seal the most important letters in the history of Lore. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21666408",
     "releaseDate": "",
-    "elements": [
-      "GOO"
-    ],
+    "elements": ["GOO"],
     "level": "77",
     "stats": "Block +2, Dodge +1, Crit +8, Magic Def +3, Pierce Def +4, Melee Def +5, WIS +8, END +9, CHA +5, LUK +8, INT +10, DEX +9, STR +8, Bonus +4",
     "resists": "Metal +10, Silver +10, Evil +10",
@@ -14629,10 +13817,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "goo",
-      "free"
-    ],
+    "tags": ["goo", "free"],
     "daRequired": true
   },
   {
@@ -15034,20 +14219,14 @@
     "equipSlot": "Finger",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dc",
-      "free",
-      "nat"
-    ],
+    "tags": ["dc", "free", "nat"],
     "hasDA": true,
     "hasDC": true,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-VII",
-    "elements": [
-      "NAT"
-    ]
+    "elements": ["NAT"]
   },
   {
     "id": "accessory-pandora-s-cube-ring",
@@ -15058,9 +14237,7 @@
     "description": "Stylized versions of Pandora's Cube are etched into the silver band of this ring. The carvings glow a faint green. Do you really want this thing around your finger? This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17643577",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "43",
     "stats": "Crit +4, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +7, END +7, INT +4, DEX +4, STR +4, Bonus +4",
     "resists": "Darkness +7, Light +7, Ice +7, Fire +7",
@@ -15077,10 +14254,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "dar",
-      "free"
-    ],
+    "tags": ["dar", "free"],
     "daRequired": true
   },
   {
@@ -15092,9 +14266,7 @@
     "description": "This ring is made of a thin, brittle metal. If you're not careful it will shatter.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=14661126",
     "releaseDate": "",
-    "elements": [
-      "NON"
-    ],
+    "elements": ["NON"],
     "level": "23",
     "stats": "LUK +3, INT +3, Bonus +3",
     "resists": "Metal +5",
@@ -15111,10 +14283,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "non",
-      "free"
-    ],
+    "tags": ["non", "free"],
     "daRequired": true
   },
   {
@@ -15126,9 +14295,7 @@
     "description": "A ring crafted from the finest of materials by San Robin in thanks for your help. It's big, kind of gaudy, and... smells a little weird.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22131836",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "48",
     "stats": "Block +1, Dodge +1, Parry +1, Crit +4, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +5, END +7, CHA +5, LUK +5, INT +2, DEX +2, STR +2, Bonus +5",
     "resists": "Metal +6, Fire +5, Health -4",
@@ -15145,10 +14312,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false
   },
   {
@@ -15160,9 +14324,7 @@
     "description": "A young wanderer named Scott found this and sold it to Cysero, who discovered that it has magical properties. He hasn't yet discovered what they are beyond emitting a pretty smell and a chime like bells.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18525301",
     "releaseDate": "",
-    "elements": [
-      "WIN"
-    ],
+    "elements": ["WIN"],
     "level": "25",
     "stats": "Crit +4, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +3, END +5, Bonus +4",
     "resists": "Stone +4, Ice +4, Darkness +4",
@@ -15180,10 +14342,7 @@
         "dcRequired": true
       }
     ],
-    "tags": [
-      "win",
-      "dc"
-    ],
+    "tags": ["win", "dc"],
     "daRequired": false,
     "dcRequired": true
   },
@@ -15191,16 +14350,6 @@
     "id": "accessory-pineapple-ring",
     "familyName": "Pineapple Ring",
     "slug": "accessory-pineapple-ring",
-    "aliasSlugs": [
-      "accessory-pineapple-ring",
-      "accessory-pineapple-ring",
-      "accessory-pineapple-ring",
-      "accessory-pineapple-ring",
-      "accessory-pineapple-ring",
-      "accessory-pineapple-ring",
-      "accessory-pineapple-ring",
-      "accessory-pineapple-ring"
-    ],
     "type": "accessory",
     "subtype": "ring",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22190653",
@@ -15440,10 +14589,7 @@
     "equipSlot": "Finger",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "bac",
-      "free"
-    ],
+    "tags": ["bac", "free"],
     "isSeasonal": true,
     "hasDA": true,
     "hasDC": false,
@@ -15451,9 +14597,7 @@
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "10-80",
-    "elements": [
-      "BAC"
-    ]
+    "elements": ["BAC"]
   },
   {
     "id": "accessory-pirate-bling",
@@ -15464,9 +14608,7 @@
     "description": "This rock on this ring is huuuuuuuge! It must come from some pirate cache...",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=10901820",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "25",
     "stats": "Crit +1, CHA +5, Bonus +2",
     "resists": "Light +3",
@@ -15483,10 +14625,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "lig",
-      "free"
-    ],
+    "tags": ["lig", "free"],
     "daRequired": false
   },
   {
@@ -15498,9 +14637,7 @@
     "description": "This ring has been used by mages to seal the letters they send, the ring absorbed some of their powers.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21666415",
     "releaseDate": "",
-    "elements": [
-      "SIL"
-    ],
+    "elements": ["SIL"],
     "level": "7",
     "stats": "Block +1, Crit +1, Melee Def +2, INT +2",
     "resists": "Metal +6, Water +5",
@@ -15517,10 +14654,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "sil",
-      "free"
-    ],
+    "tags": ["sil", "free"],
     "daRequired": false
   },
   {
@@ -15532,9 +14666,7 @@
     "description": "A hole is bored right through the center of this tooth.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21308932",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "13",
     "stats": "INT +1, DEX +1, STR +1",
     "resists": "Stone +1, Nature +1",
@@ -15553,10 +14685,7 @@
       }
     ],
     "notes": "Item erroneously has no inventory icon, despite being a Ring.",
-    "tags": [
-      "nat",
-      "merge"
-    ],
+    "tags": ["nat", "merge"],
     "daRequired": false
   },
   {
@@ -15568,9 +14697,7 @@
     "description": "Elemental Forces swirl within the stone of this ring.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=14567002",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "15",
     "stats": "Crit +2, Bonus +2",
     "resists": "Water +10, Wind +10, Fire +10",
@@ -15587,10 +14714,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": true
   },
   {
@@ -15602,9 +14726,7 @@
     "description": "Looks like giant birds CAN carry rings up mountains, after all. There appears to be an inscription inside the band that promises sight and wisdom, but it might just be vulture scratches. (Every 10 WIS gives +1 Bonus, every 20 gives -1 Health resist)",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22422167",
     "releaseDate": "",
-    "elements": [
-      "WIN"
-    ],
+    "elements": ["WIN"],
     "level": "10",
     "stats": "WIS +10, Bonus +5",
     "resists": "None",
@@ -15622,10 +14744,7 @@
       }
     ],
     "notes": "Level's requirement was lowered from 11 to 10 on September 5th, 2025.",
-    "tags": [
-      "win",
-      "free"
-    ],
+    "tags": ["win", "free"],
     "daRequired": false
   },
   {
@@ -15637,9 +14756,7 @@
     "description": "This ring is very pretty, very feminine and extremely powerful.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=4229826",
     "releaseDate": "",
-    "elements": [
-      "MET"
-    ],
+    "elements": ["MET"],
     "level": "1",
     "stats": "Block +1, Melee Def +5",
     "resists": "Nature +10",
@@ -15657,10 +14774,7 @@
       }
     ],
     "notes": "Ring's Nature Resist was listed in all lower case; this was fixed on July 22nd, 2023.",
-    "tags": [
-      "met",
-      "free"
-    ],
+    "tags": ["met", "free"],
     "daRequired": false
   },
   {
@@ -15672,9 +14786,7 @@
     "description": "A beautiful rainbow reflects through the crystal on this ring.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21226995",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "16",
     "stats": "Magic Def +3, Pierce Def +3, Melee Def +3, CHA +1, LUK +1",
     "resists": "Light +5",
@@ -15691,10 +14803,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "sto",
-      "gold"
-    ],
+    "tags": ["sto", "gold"],
     "daRequired": false
   },
   {
@@ -15706,9 +14815,7 @@
     "description": "This ring was found in a Sneevil camp...and it still smells like it.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18179583",
     "releaseDate": "",
-    "elements": [
-      "NON"
-    ],
+    "elements": ["NON"],
     "level": "55",
     "stats": "Block +1, Crit +2, Magic Def +7, Pierce Def +7, Melee Def +7, END +5, LUK +10, INT +4, DEX +4, STR +4, Bonus +6, Health -3, Nature +5",
     "rarity": "1",
@@ -15724,10 +14831,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "non",
-      "free"
-    ],
+    "tags": ["non", "free"],
     "daRequired": true,
     "isSeasonal": true
   },
@@ -15740,9 +14844,7 @@
     "description": "This magic ring was found in the treasure horde of the dragon Gorgok. It provides the wearer with 9% resistance against fire based attacks.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=5153749",
     "releaseDate": "",
-    "elements": [
-      "FIR"
-    ],
+    "elements": ["FIR"],
     "level": "1",
     "stats": "None",
     "resists": "Fire +9",
@@ -15760,10 +14862,7 @@
       }
     ],
     "notes": "Ring was initially purchasable at Gargok's Horde Shop for 50 Gold.",
-    "tags": [
-      "fir",
-      "free"
-    ],
+    "tags": ["fir", "free"],
     "daRequired": true
   },
   {
@@ -15775,9 +14874,7 @@
     "description": "The circlet of this ring crackles with contained energy. Gives you +3 resist to Energy and -2 to Health.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=12539574",
     "releaseDate": "",
-    "elements": [
-      "ENE"
-    ],
+    "elements": ["ENE"],
     "level": "1",
     "stats": "None",
     "resists": "Energy +3, Health -2",
@@ -15794,10 +14891,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "ene",
-      "gold"
-    ],
+    "tags": ["ene", "gold"],
     "daRequired": false
   },
   {
@@ -15809,9 +14903,7 @@
     "description": "On an island deep in the middle of the sea, frozen purple rain sometimes falls. The island's mage managed to solidify one of the droplets and set it into this ring. It gives a huge boost to your mana!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17330054",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "40",
     "stats": "Crit +4, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +10, END +4, INT +6, Bonus +4",
     "resists": "Water +7, Ice +7, Fire +7",
@@ -15828,10 +14920,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "lig",
-      "gold"
-    ],
+    "tags": ["lig", "gold"],
     "daRequired": true
   },
   {
@@ -15843,9 +14932,7 @@
     "description": "This ring is a must-have for the dedicated scholar. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20203180",
     "releaseDate": "",
-    "elements": [
-      "NON"
-    ],
+    "elements": ["NON"],
     "level": "10",
     "stats": "Magic Def +2, WIS +4, INT +2, Bonus +2, Light +2",
     "rarity": "1",
@@ -15861,10 +14948,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "non",
-      "free"
-    ],
+    "tags": ["non", "free"],
     "daRequired": true
   },
   {
@@ -15876,9 +14960,7 @@
     "description": "Does anyone actually use Wood to attack?",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19876809",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "3",
     "stats": "Nature +5",
     "rarity": "1",
@@ -15894,10 +14976,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "lig",
-      "gold"
-    ],
+    "tags": ["lig", "gold"],
     "daRequired": false
   },
   {
@@ -15909,9 +14988,7 @@
     "description": "You've infused this ring with shadow energy. As you move your hand it seems to blur, almost as though it was leaving shadows of itself behind. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22387780",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "90",
     "stats": "Block +8, Dodge +8, Parry +8, Crit +10, Magic Def +9, Pierce Def +9, Melee Def +9, WIS +11, END +11, INT +10, DEX +10, STR +10, Bonus +10",
     "resists": "Evil +15, Good +15, Light +5, Darkness +5, Health -6",
@@ -15930,10 +15007,7 @@
         "dcRequired": true
       }
     ],
-    "tags": [
-      "dar",
-      "merge"
-    ],
+    "tags": ["dar", "merge"],
     "daRequired": true,
     "dcRequired": true
   },
@@ -15946,9 +15020,7 @@
     "description": "This ring is a must-have for the dedicated Adventurer. A built-in compass will guide you in the densest of fogs or darkest of nights.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17434686",
     "releaseDate": "",
-    "elements": [
-      "MET"
-    ],
+    "elements": ["MET"],
     "level": "10",
     "stats": "Crit +2, CHA +1, LUK +3, INT +2",
     "resists": "Ice +2",
@@ -15966,10 +15038,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "met",
-      "merge"
-    ],
+    "tags": ["met", "merge"],
     "daRequired": true
   },
   {
@@ -15981,9 +15050,7 @@
     "description": "You feel smarter already!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19880097",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "5",
     "stats": "WIS +2, INT +2",
     "resists": "None",
@@ -16000,10 +15067,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "lig",
-      "gold"
-    ],
+    "tags": ["lig", "gold"],
     "daRequired": false
   },
   {
@@ -16015,9 +15079,7 @@
     "description": "A soft, pulsing glow is emitted by this ring. It warms your heart to look into it. Best used in deep, dark forest to keep the bandits away! This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18953368",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "1",
     "stats": "Melee Def +3",
     "resists": "None",
@@ -16034,10 +15096,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "lig",
-      "gold"
-    ],
+    "tags": ["lig", "gold"],
     "daRequired": true
   },
   {
@@ -16157,19 +15216,14 @@
     "equipSlot": "Finger",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "???",
-      "merge"
-    ],
+    "tags": ["???", "merge"],
     "hasDA": true,
     "hasDC": true,
     "hasDM": false,
     "hasFree": false,
     "hasMerge": true,
     "levelRange": "I-III",
-    "elements": [
-      "???"
-    ]
+    "elements": ["???"]
   },
   {
     "id": "accessory-ring-of-recklessness",
@@ -16180,9 +15234,7 @@
     "description": "This ring has a magical effect on the wearer, increasing their strength and resistance to fire and ice, but decreasing their endurance!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=13447420",
     "releaseDate": "",
-    "elements": [
-      "NON"
-    ],
+    "elements": ["NON"],
     "level": "25",
     "stats": "Block +1, Magic Def +1, Pierce Def +1, Melee Def +1, END -3, STR +3, Bonus +4",
     "resists": "Fire +2, Ice +2",
@@ -16199,10 +15251,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "non",
-      "free"
-    ],
+    "tags": ["non", "free"],
     "daRequired": false
   },
   {
@@ -16214,9 +15263,7 @@
     "description": "It's said this ring will guide you back to the path of your destiny. Gives you +3 resist to Light and -2 to Health.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=12539594",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "1",
     "stats": "None",
     "resists": "Light +3, Health -2",
@@ -16233,10 +15280,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "lig",
-      "gold"
-    ],
+    "tags": ["lig", "gold"],
     "daRequired": false
   },
   {
@@ -16248,9 +15292,7 @@
     "description": "A filigreed gold band with intricate carvings and a large pearl inset. The inscription on the band reads E. Flynn.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18953617",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "50",
     "stats": "Dodge +1, Crit +3, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +4, END +6, CHA +5, LUK +5, INT +4, DEX +4, STR +4, Bonus +4",
     "resists": "Light +7, Wind +7, Poison +5",
@@ -16267,10 +15309,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "lig",
-      "free"
-    ],
+    "tags": ["lig", "free"],
     "daRequired": false
   },
   {
@@ -16282,9 +15321,7 @@
     "description": "This ring was originally crafted by a master golemicist to hold power over her minions. Gives you +3 resist to Stone and -2 to Health.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=12539421",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "5",
     "stats": "Crit +2",
     "resists": "Stone +3, Health -2",
@@ -16301,10 +15338,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "sto",
-      "gold"
-    ],
+    "tags": ["sto", "gold"],
     "daRequired": true
   },
   {
@@ -16316,9 +15350,7 @@
     "description": "This ring was forged in the depths of Mt. Shining Star. Gives you +3 resist to Fire and -2 to Health.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=12539270",
     "releaseDate": "",
-    "elements": [
-      "FIR"
-    ],
+    "elements": ["FIR"],
     "level": "5",
     "stats": "Crit +2",
     "resists": "Fire +3, Health -2",
@@ -16335,10 +15367,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "fir",
-      "gold"
-    ],
+    "tags": ["fir", "gold"],
     "daRequired": true
   },
   {
@@ -16795,20 +15824,14 @@
     "equipSlot": "Finger",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dc",
-      "free",
-      "win"
-    ],
+    "tags": ["dc", "free", "win"],
     "hasDA": true,
     "hasDC": true,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-VIII",
-    "elements": [
-      "WIN"
-    ]
+    "elements": ["WIN"]
   },
   {
     "id": "accessory-ring-of-the-grove",
@@ -16819,9 +15842,7 @@
     "description": "This ring was imbued with the power of an ancient oak grove. Gives you +3 resist to Nature and -2 to Health.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=12539629",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "1",
     "stats": "None",
     "resists": "Nature +3, Health -2",
@@ -16838,10 +15859,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "gold"
-    ],
+    "tags": ["nat", "gold"],
     "daRequired": false
   },
   {
@@ -16853,9 +15871,7 @@
     "description": "This ring was given to you by Sir Valence for your help with some pesky Sneevil troubles. The enchantment on the rings adds +3 END and Crit, increasing your HP, and chance to critically hit!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18016645",
     "releaseDate": "",
-    "elements": [
-      "NON"
-    ],
+    "elements": ["NON"],
     "level": "3",
     "stats": "Crit +3, END +3",
     "resists": "None",
@@ -16873,10 +15889,7 @@
       }
     ],
     "notes": "The following changes were implemented on March 28th, 2025:\n  • Previously had the description: This ring was given to you by Sir Valence for your help with some pesky Sneevil troubles. The enchantment on the rings adds +1 END and a bonus to hit.\n  • Stats were changed from END +1, Bonus +2 to Crit +3, END +3; description was also updated.",
-    "tags": [
-      "non",
-      "free"
-    ],
+    "tags": ["non", "free"],
     "daRequired": false
   },
   {
@@ -16888,9 +15901,7 @@
     "description": "This ring was borne by the rulers of a long disappeared race of undersea creatures. Gives you +3 resist to Water and -2 to Health.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=12539463",
     "releaseDate": "",
-    "elements": [
-      "WAT"
-    ],
+    "elements": ["WAT"],
     "level": "1",
     "stats": "None",
     "resists": "Water +3, Health -2",
@@ -16907,10 +15918,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "wat",
-      "gold"
-    ],
+    "tags": ["wat", "gold"],
     "daRequired": false
   },
   {
@@ -16922,9 +15930,7 @@
     "description": "So many desire this precioussssss ring, and now it's fallen into YOUR hands! What will you do with it? It might just make you walk into more doors.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18525751",
     "releaseDate": "",
-    "elements": [
-      "WAT"
-    ],
+    "elements": ["WAT"],
     "level": "20",
     "stats": "Crit +2, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +2, END +1, Bonus +1",
     "resists": "Fire +3, Ice +3, Light +3",
@@ -16942,10 +15948,7 @@
         "dcRequired": true
       }
     ],
-    "tags": [
-      "wat",
-      "dc"
-    ],
+    "tags": ["wat", "dc"],
     "daRequired": false,
     "dcRequired": true
   },
@@ -16958,9 +15961,7 @@
     "description": "This ring is cold to the touch and made of a ghostly white material. It provides additional protection against Darkness attacks.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=5628549",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "4",
     "stats": "None",
     "resists": "Darkness +5",
@@ -16978,10 +15979,7 @@
       }
     ],
     "notes": "Ring was previously available from the retired quest Spirits in the Inn.",
-    "tags": [
-      "dar",
-      "free"
-    ],
+    "tags": ["dar", "free"],
     "daRequired": false
   },
   {
@@ -16993,9 +15991,7 @@
     "description": "This is a wide gold band with engravings reminiscent of a stormy sea. Inside the engraving reads E. Flynn this guy REALLY gets around!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18953293",
     "releaseDate": "",
-    "elements": [
-      "WIN"
-    ],
+    "elements": ["WIN"],
     "level": "34",
     "stats": "Dodge +1, Crit +2, Magic Def +3, Pierce Def +1, Melee Def +1, WIS +3, END +4",
     "resists": "Darkness +5, Wind +5, Water +5, Energy +5",
@@ -17013,10 +16009,7 @@
       }
     ],
     "notes": "Item has no inventory icon.",
-    "tags": [
-      "win",
-      "free"
-    ],
+    "tags": ["win", "free"],
     "daRequired": false
   },
   {
@@ -17028,9 +16021,7 @@
     "description": "This ring is warm to the touch, and provides excellent protection against ice. It was crafted by a very talented, very, very short elemental ice mage. I mean...REALLY short.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15031330",
     "releaseDate": "",
-    "elements": [
-      "NON"
-    ],
+    "elements": ["NON"],
     "level": "27",
     "stats": "Crit +1, Magic Def +1, Pierce Def +1, Melee Def +1, INT +3, DEX +5, STR +3, Ice +7",
     "rarity": "0",
@@ -17046,10 +16037,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "non",
-      "free"
-    ],
+    "tags": ["non", "free"],
     "daRequired": true
   },
   {
@@ -17559,20 +16547,14 @@
     "equipSlot": "Finger",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dc",
-      "free",
-      "met"
-    ],
+    "tags": ["dc", "free", "met"],
     "hasDA": true,
     "hasDC": true,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-IX",
-    "elements": [
-      "MET"
-    ]
+    "elements": ["MET"]
   },
   {
     "id": "accessory-ring-of-winds",
@@ -17583,9 +16565,7 @@
     "description": "This ring was supposed to bring favorable winds and smooth sailing to any captain who wore it, according to the last journal entry on the sunken ship where it was found.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=10485251",
     "releaseDate": "",
-    "elements": [
-      "WIN"
-    ],
+    "elements": ["WIN"],
     "level": "14",
     "stats": "Crit +4, Magic Def +1, Pierce Def +1, Melee Def +1, END +4, CHA +4, LUK +4",
     "resists": "Wind +4",
@@ -17603,10 +16583,7 @@
       }
     ],
     "notes": "The following changes were implemented on March 20th, 2026:\n  • Item was previously named 'Ring of Four Winds'.\n  • Level's requirement was raised from 10 to 14.\n  • Crit, CHA, LUK, and Wind Resist was raised from +1 to +4.\n  • Pierce/Magic Avoidance and END stats were added.",
-    "tags": [
-      "win",
-      "free"
-    ],
+    "tags": ["win", "free"],
     "daRequired": false
   },
   {
@@ -17901,20 +16878,14 @@
     "equipSlot": "Finger",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dc",
-      "free",
-      "ice"
-    ],
+    "tags": ["dc", "free", "ice"],
     "hasDA": true,
     "hasDC": true,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-V",
-    "elements": [
-      "ICE"
-    ]
+    "elements": ["ICE"]
   },
   {
     "id": "accessory-ring-worm",
@@ -17925,9 +16896,7 @@
     "description": "This ring is actually a coiled metallic looking worm. It provides amazing armor but as the worm feeds off of your energy you become more vulnerable to the elements.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=4155599",
     "releaseDate": "",
-    "elements": [
-      "MET"
-    ],
+    "elements": ["MET"],
     "level": "1",
     "stats": "Block -2, Dodge -1, Melee Def +10",
     "resists": "Wind -100, Fire -100, Water -100, Stone -100",
@@ -17944,10 +16913,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "met",
-      "free"
-    ],
+    "tags": ["met", "free"],
     "daRequired": false
   },
   {
@@ -17959,9 +16925,7 @@
     "description": "A ring crafted from the finest of materials by San Robin in thanks for your help. It's big, kind of gaudy, and... smells a little weird.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22153540",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "38",
     "stats": "Block +1, Dodge +1, Parry +1, Crit +3, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +5, END +5, CHA +4, LUK +4, INT +2, DEX +2, STR +2, Bonus +4",
     "resists": "Wind +6, Fire +5, Health -2",
@@ -17978,10 +16942,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false
   },
   {
@@ -17993,9 +16954,7 @@
     "description": "This ring is a small band of jade with a raised rose carved from a ruby. Inside, the name Iva Toguri is engraved. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19296942",
     "releaseDate": "",
-    "elements": [
-      "ENE"
-    ],
+    "elements": ["ENE"],
     "level": "66",
     "stats": "Block +1, Dodge +1, Crit +5, Magic Def +8, Pierce Def +8, Melee Def +8, WIS +7, END +7, LUK +2, INT +6, DEX +6, STR +6, Bonus +9",
     "resists": "Darkness +8, Energy +8, Nature +6, Poison +6",
@@ -18012,10 +16971,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "ene",
-      "free"
-    ],
+    "tags": ["ene", "free"],
     "daRequired": true
   },
   {
@@ -18027,9 +16983,7 @@
     "description": "A Rose insignia is prominently displayed on this metallic ring.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21642115",
     "releaseDate": "",
-    "elements": [
-      "MET"
-    ],
+    "elements": ["MET"],
     "level": "59",
     "stats": "Crit +3, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +5, CHA +3, LUK +3, INT +5, DEX +5, STR +5, Bonus +4",
     "resists": "Water +8, Ice +6, Silver +4, Nature +2",
@@ -18046,10 +17000,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "met",
-      "free"
-    ],
+    "tags": ["met", "free"],
     "daRequired": false
   },
   {
@@ -18061,9 +17012,7 @@
     "description": "Worn by low rank soldiers in the Rose battalions.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21640809",
     "releaseDate": "",
-    "elements": [
-      "MET"
-    ],
+    "elements": ["MET"],
     "level": "19",
     "stats": "Crit +2, Magic Def +2, Pierce Def +1, Melee Def +1, WIS +2, END +2, INT +2, DEX +4",
     "resists": "Fire +1, Energy +1, Light +1, Bacon +1",
@@ -18080,10 +17029,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "met",
-      "free"
-    ],
+    "tags": ["met", "free"],
     "daRequired": false
   },
   {
@@ -18095,9 +17041,7 @@
     "description": "Carved in the shape of a Rose... including it's thorns! This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21644301",
     "releaseDate": "",
-    "elements": [
-      "MET"
-    ],
+    "elements": ["MET"],
     "level": "79",
     "stats": "Block +2, Dodge +1, Crit +5, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +7, END +2, CHA +2, INT +9, DEX +9, STR +9, Bonus +7",
     "resists": "Fire +8, Energy +7, Ice +5, Wind +5, All +2, Immobility +2",
@@ -18114,10 +17058,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "met",
-      "free"
-    ],
+    "tags": ["met", "free"],
     "daRequired": true
   },
   {
@@ -18129,9 +17070,7 @@
     "description": "A ring of intertwined metal and stone, these rings are used as foci for the most powerful of the Rose Magi. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21642075",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "69",
     "stats": "Dodge +1, Crit +5, Magic Def +7, Pierce Def +7, Melee Def +7, WIS +9, END +3, CHA +4, INT +6, DEX +6, STR +6, Bonus +6",
     "resists": "Energy +10, Poison +8, Silver +6, Water +4, Immobility +2, Health -2",
@@ -18148,10 +17087,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "sto",
-      "free"
-    ],
+    "tags": ["sto", "free"],
     "daRequired": true
   },
   {
@@ -18163,9 +17099,7 @@
     "description": "A plain, almost unadorned band this ring only has the insignia of a soldier's unit engraved into it.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21643155",
     "releaseDate": "",
-    "elements": [
-      "MET"
-    ],
+    "elements": ["MET"],
     "level": "9",
     "stats": "Magic Def +2, END +2",
     "resists": "Light +5, Darkness +2",
@@ -18182,10 +17116,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "met",
-      "free"
-    ],
+    "tags": ["met", "free"],
     "daRequired": false
   },
   {
@@ -18197,9 +17128,7 @@
     "description": "Anti-magic runes have been crudely carved into this simple metal band.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21642111",
     "releaseDate": "",
-    "elements": [
-      "MET"
-    ],
+    "elements": ["MET"],
     "level": "29",
     "stats": "Crit +2, Magic Def +4, Pierce Def +1, Melee Def +1, END +4, CHA +1, DEX +2, STR +2, Bonus +2",
     "resists": "Silver +3, Fire +1, Energy +1, Darkness +1, Ice +1",
@@ -18216,10 +17145,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "met",
-      "free"
-    ],
+    "tags": ["met", "free"],
     "daRequired": false
   },
   {
@@ -18231,9 +17157,7 @@
     "description": "This ring has been used by mages to seal the letters they send, the ring absorbed some of their powers.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21666796",
     "releaseDate": "",
-    "elements": [
-      "MET"
-    ],
+    "elements": ["MET"],
     "level": "47",
     "stats": "Dodge +1, Crit +5, Magic Def +1, Pierce Def +4, Melee Def +5, WIS +4, END +1, CHA +3, LUK +1, INT +7, DEX +2, STR +1, Bonus +2",
     "resists": "Silver +8",
@@ -18250,10 +17174,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "met",
-      "free"
-    ],
+    "tags": ["met", "free"],
     "daRequired": false
   },
   {
@@ -18265,9 +17186,7 @@
     "description": "A tiny ampoule of a sparkling liquid is set into this ring.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20442532",
     "releaseDate": "",
-    "elements": [
-      "WIN"
-    ],
+    "elements": ["WIN"],
     "level": "57",
     "stats": "Block +4, Dodge +4, Parry +4, Crit +5, Magic Def +4, Pierce Def +4, Melee Def +4, CHA +7, LUK +5, INT +5, DEX +5, STR +5, Bonus +5",
     "resists": "All +1, Fire +4",
@@ -18293,10 +17212,7 @@
       }
     ],
     "notes": "Ring previously appeared in the retired quest Nightmares as a Necklace and had the following stats:\nStats: Crit +2, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +2, END +5, INT +6, DEX +6, STR +6, Bonus +5\nResists: Fire +8, Water +4, Immobility +1\nDropped version previously had the description: A vial of cooling salve hangs on this chain.",
-    "tags": [
-      "win",
-      "free"
-    ],
+    "tags": ["win", "free"],
     "daRequired": false,
     "dcRequired": true
   },
@@ -18309,9 +17225,7 @@
     "description": "This ring is seriously gritty... in a not good way. It'll harden your hand up though!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21227032",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "41",
     "stats": "Crit +4, Pierce Def +5, Melee Def +5, WIS +2, END +10, DEX +2, STR +6, Bonus +4",
     "resists": "Water +7, Wind +7, Stone +7",
@@ -18328,10 +17242,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "sto",
-      "gold"
-    ],
+    "tags": ["sto", "gold"],
     "daRequired": true
   },
   {
@@ -18343,9 +17254,7 @@
     "description": "The ring of Emperor Kuron, an ancient ruler in the city of Sil.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19795015",
     "releaseDate": "",
-    "elements": [
-      "ICE"
-    ],
+    "elements": ["ICE"],
     "level": "59",
     "stats": "Crit +3, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +5, CHA +3, LUK +3, INT +5, DEX +5, STR +5, Bonus +4",
     "resists": "Light +8, Ice +6, Silver +4, Water +2",
@@ -18362,10 +17271,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "ice",
-      "free"
-    ],
+    "tags": ["ice", "free"],
     "daRequired": false
   },
   {
@@ -18377,9 +17283,7 @@
     "description": "A ring carved from an iridescent scarab shell! This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21227079",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "67",
     "stats": "Block +1, Crit +7, Magic Def +7, Pierce Def +7, Melee Def +7, WIS +5, END +5, CHA +2, LUK +2, INT +5, DEX +5, STR +5, Bonus +7",
     "resists": "Light +8, Stone +8, Nature +6, Poison +6",
@@ -18396,10 +17300,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "nat",
-      "gold"
-    ],
+    "tags": ["nat", "gold"],
     "daRequired": true
   },
   {
@@ -18411,9 +17312,7 @@
     "description": "This heavy ring was once used to seal official documents for Sek Duat! This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21227096",
     "releaseDate": "",
-    "elements": [
-      "SIL"
-    ],
+    "elements": ["SIL"],
     "level": "75",
     "stats": "Block +2, Crit +5, WIS +5, END +10, CHA +3, LUK +3, INT +6, DEX +6, STR +6, Bonus +2",
     "resists": "Darkness +5, Light +5, All +2",
@@ -18430,10 +17329,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "sil",
-      "gold"
-    ],
+    "tags": ["sil", "gold"],
     "daRequired": true
   },
   {
@@ -18445,9 +17341,7 @@
     "description": "This ring has been used by mages to seal the letters they send, the ring absorbed some of their powers.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21666806",
     "releaseDate": "",
-    "elements": [
-      "SIL"
-    ],
+    "elements": ["SIL"],
     "level": "17",
     "stats": "Block +1, Crit +2, Pierce Def +2, Melee Def +3, INT +4",
     "resists": "Fire +5, Light +3",
@@ -18464,10 +17358,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "sil",
-      "free"
-    ],
+    "tags": ["sil", "free"],
     "daRequired": false
   },
   {
@@ -18479,9 +17370,7 @@
     "description": "The moglins have made five golden rings as mementos of this year's Frostval. This one seems to make others find you more charismatic.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15262862",
     "releaseDate": "",
-    "elements": [
-      "NON"
-    ],
+    "elements": ["NON"],
     "level": "1",
     "stats": "Crit +5, CHA +2",
     "rarity": "10",
@@ -18497,10 +17386,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "non",
-      "free"
-    ],
+    "tags": ["non", "free"],
     "daRequired": false,
     "isSeasonal": true
   },
@@ -19012,20 +17898,14 @@
     "equipSlot": "Finger",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dc",
-      "free",
-      "wat"
-    ],
+    "tags": ["dc", "free", "wat"],
     "hasDA": true,
     "hasDC": true,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-IX",
-    "elements": [
-      "WAT"
-    ]
+    "elements": ["WAT"]
   },
   {
     "id": "accessory-sergeant-major-maaike-s-ring",
@@ -19036,9 +17916,7 @@
     "description": "Engraved with the name Maaike, this ring is battered and worn from battle. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21640830",
     "releaseDate": "",
-    "elements": [
-      "MET"
-    ],
+    "elements": ["MET"],
     "level": "39",
     "stats": "Crit +4, Magic Def +5, Pierce Def +5, Melee Def +5, END +7, INT +3, DEX +6, STR +3, Bonus +4",
     "resists": "Ice +5, Nature +2",
@@ -19055,10 +17933,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "met",
-      "free"
-    ],
+    "tags": ["met", "free"],
     "daRequired": true
   },
   {
@@ -19070,9 +17945,7 @@
     "description": "Carved from the claw of a rampaging zard!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20403843",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "26",
     "stats": "Crit +2, Magic Def +2, Pierce Def +2, Melee Def +2, END +4, LUK +2, Bonus +1",
     "resists": "Darkness +5, Poison +5, Immobility +1",
@@ -19089,10 +17962,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "dar",
-      "free"
-    ],
+    "tags": ["dar", "free"],
     "daRequired": false
   },
   {
@@ -19242,19 +18112,14 @@
     "equipSlot": "Finger",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dar",
-      "merge"
-    ],
+    "tags": ["dar", "merge"],
     "hasDA": false,
     "hasDC": false,
     "hasDM": false,
     "hasFree": false,
     "hasMerge": true,
     "levelRange": "I-IV",
-    "elements": [
-      "DAR"
-    ]
+    "elements": ["DAR"]
   },
   {
     "id": "accessory-sharp-ring",
@@ -19265,9 +18130,7 @@
     "description": "This ring is dangerous! This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21305747",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "67",
     "stats": "Block +1, Crit +8, Magic Def +7, Pierce Def +7, Melee Def +7, WIS +4, END +6, CHA +2, LUK +2, INT +5, DEX +5, STR +5, Bonus +6",
     "resists": "Light +8, Stone +8, Nature +6, Poison +6",
@@ -19285,10 +18148,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "nat",
-      "merge"
-    ],
+    "tags": ["nat", "merge"],
     "daRequired": true
   },
   {
@@ -19300,9 +18160,7 @@
     "description": "This beautiful rainbow ring will keep you safe from harm.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17849698",
     "releaseDate": "",
-    "elements": [
-      "WAT"
-    ],
+    "elements": ["WAT"],
     "level": "16",
     "stats": "Magic Def +4, Pierce Def +4, Melee Def +4",
     "resists": "Water +5",
@@ -19320,10 +18178,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "wat",
-      "merge"
-    ],
+    "tags": ["wat", "merge"],
     "daRequired": false
   },
   {
@@ -19335,9 +18190,7 @@
     "description": "This stone holds a single drop of an ancient vampire's blood.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21859981",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "58",
     "stats": "Block +1, Dodge +1, Parry +1, Crit +4, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +7, END +7, CHA +5, LUK +5, INT +3, DEX +3, STR +3, Bonus +6",
     "resists": "Darkness +6, Fire +5, Health -6",
@@ -19354,10 +18207,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "dar",
-      "free"
-    ],
+    "tags": ["dar", "free"],
     "daRequired": false
   },
   {
@@ -19369,9 +18219,7 @@
     "description": "A soft, white stone that seems to almost be made of trapped moonlight sits atop this ring. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21844192",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "37",
     "stats": "Block +2, Dodge +1, Parry +1, Crit +4, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +6, END +6, CHA +5, LUK +5, INT +2, DEX +2, STR +2, Bonus +5",
     "resists": "Fire +6, Light +5, Water +4, Darkness +4",
@@ -19388,10 +18236,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "sto",
-      "free"
-    ],
+    "tags": ["sto", "free"],
     "daRequired": true
   },
   {
@@ -19403,9 +18248,7 @@
     "description": "Monsters will be dazzled by their own reflection in your shiny, shiny ring.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=4153980",
     "releaseDate": "",
-    "elements": [
-      "MET"
-    ],
+    "elements": ["MET"],
     "level": "1",
     "stats": "Magic Def +2, Pierce Def +2, Melee Def +2",
     "resists": "None",
@@ -19423,10 +18266,7 @@
       }
     ],
     "notes": "Item was previously available in the retired quest Sneevil Box Fort.",
-    "tags": [
-      "met",
-      "free"
-    ],
+    "tags": ["met", "free"],
     "daRequired": false
   },
   {
@@ -19438,9 +18278,7 @@
     "description": "This ring belonged to an ogre king, who then gave it to his bride! It is green and covered in slime, but it is still pretty effective at helping you in battle.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18525461",
     "releaseDate": "",
-    "elements": [
-      "ENE"
-    ],
+    "elements": ["ENE"],
     "level": "45",
     "stats": "Crit +5, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +5, END +5, INT +2, DEX +2, STR +2, Bonus +3",
     "resists": "Water +7, Ice +7, Immobility +4",
@@ -19458,10 +18296,7 @@
         "dcRequired": true
       }
     ],
-    "tags": [
-      "ene",
-      "dc"
-    ],
+    "tags": ["ene", "dc"],
     "daRequired": false,
     "dcRequired": true
   },
@@ -19581,30 +18416,19 @@
     "equipSlot": "Finger",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dar",
-      "free",
-      "merge"
-    ],
+    "tags": ["dar", "free", "merge"],
     "hasDA": true,
     "hasDC": true,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": true,
     "levelRange": "I-III",
-    "elements": [
-      "DAR"
-    ]
+    "elements": ["DAR"]
   },
   {
     "id": "accessory-soulforged-ring-blue",
     "familyName": "Soulforged Ring (Blue)",
     "slug": "accessory-soulforged-ring-blue",
-    "aliasSlugs": [
-      "accessory-soulforged-ring-blue",
-      "accessory-soulforged-ring-blue",
-      "accessory-soulforged-ring-blue"
-    ],
     "type": "accessory",
     "subtype": "ring",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22339821",
@@ -19708,29 +18532,19 @@
     "equipSlot": "Finger",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "gold",
-      "ice"
-    ],
+    "tags": ["gold", "ice"],
     "hasDA": true,
     "hasDC": false,
     "hasDM": false,
     "hasFree": false,
     "hasMerge": false,
     "levelRange": "40-90",
-    "elements": [
-      "ICE"
-    ]
+    "elements": ["ICE"]
   },
   {
     "id": "accessory-soulforged-ring-green",
     "familyName": "Soulforged Ring (Green)",
     "slug": "accessory-soulforged-ring-green",
-    "aliasSlugs": [
-      "accessory-soulforged-ring-green",
-      "accessory-soulforged-ring-green",
-      "accessory-soulforged-ring-green"
-    ],
     "type": "accessory",
     "subtype": "ring",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22339824",
@@ -19834,29 +18648,19 @@
     "equipSlot": "Finger",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "gold",
-      "nat"
-    ],
+    "tags": ["gold", "nat"],
     "hasDA": true,
     "hasDC": false,
     "hasDM": false,
     "hasFree": false,
     "hasMerge": false,
     "levelRange": "40-90",
-    "elements": [
-      "NAT"
-    ]
+    "elements": ["NAT"]
   },
   {
     "id": "accessory-soulforged-ring-red",
     "familyName": "Soulforged Ring (Red)",
     "slug": "accessory-soulforged-ring-red",
-    "aliasSlugs": [
-      "accessory-soulforged-ring-red",
-      "accessory-soulforged-ring-red",
-      "accessory-soulforged-ring-red"
-    ],
     "type": "accessory",
     "subtype": "ring",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22339799",
@@ -19960,19 +18764,14 @@
     "equipSlot": "Finger",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "fir",
-      "gold"
-    ],
+    "tags": ["fir", "gold"],
     "hasDA": true,
     "hasDC": false,
     "hasDM": false,
     "hasFree": false,
     "hasMerge": false,
     "levelRange": "40-90",
-    "elements": [
-      "FIR"
-    ]
+    "elements": ["FIR"]
   },
   {
     "id": "accessory-sparkling-moonstone-ring",
@@ -19983,9 +18782,7 @@
     "description": "A soft, white stone that seems to almost be made of trapped moonlight sits atop this ring.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21844205",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "47",
     "stats": "Block +1, Dodge +1, Parry +1, Crit +3, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +5, END +5, CHA +4, LUK +4, INT +2, DEX +2, STR +2, Bonus +4",
     "resists": "Fire +6, Light +5, Water +4",
@@ -20002,10 +18799,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "sto",
-      "free"
-    ],
+    "tags": ["sto", "free"],
     "daRequired": false
   },
   {
@@ -20017,9 +18811,7 @@
     "description": "Wicked spikes poke out from this ring! Be careful! This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20404161",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "73",
     "stats": "Block +1, Crit +4, Magic Def +6, Pierce Def +6, Melee Def +6, END +7, LUK +2, INT +8, DEX +8, STR +8, Bonus +7",
     "resists": "Poison +8, Disease +8, Ice +5, Immobility +2",
@@ -20036,10 +18828,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": true
   },
   {
@@ -20051,9 +18840,7 @@
     "description": "This looks to be some kind of ancient class ring.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=12037227",
     "releaseDate": "",
-    "elements": [
-      "ENE"
-    ],
+    "elements": ["ENE"],
     "level": "11",
     "stats": "INT +1, STR +1",
     "resists": "Energy +1",
@@ -20070,10 +18857,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "ene",
-      "free"
-    ],
+    "tags": ["ene", "free"],
     "daRequired": false
   },
   {
@@ -20085,9 +18869,7 @@
     "description": "This looks to be some kind of ancient class ring.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21904333",
     "releaseDate": "",
-    "elements": [
-      "ENE"
-    ],
+    "elements": ["ENE"],
     "level": "31",
     "stats": "INT +3, STR +3",
     "resists": "Energy +3",
@@ -20104,10 +18886,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "ene",
-      "free"
-    ],
+    "tags": ["ene", "free"],
     "daRequired": false
   },
   {
@@ -20564,20 +19343,14 @@
     "equipSlot": "Finger",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dar",
-      "dc",
-      "free"
-    ],
+    "tags": ["dar", "dc", "free"],
     "hasDA": true,
     "hasDC": true,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-VIII",
-    "elements": [
-      "DAR"
-    ]
+    "elements": ["DAR"]
   },
   {
     "id": "accessory-starry-ring",
@@ -20588,9 +19361,7 @@
     "description": "This looks to be some kind of ancient class ring.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21904331",
     "releaseDate": "",
-    "elements": [
-      "ENE"
-    ],
+    "elements": ["ENE"],
     "level": "21",
     "stats": "INT +2, STR +2",
     "resists": "Energy +2",
@@ -20607,10 +19378,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "ene",
-      "free"
-    ],
+    "tags": ["ene", "free"],
     "daRequired": false
   },
   {
@@ -20622,9 +19390,7 @@
     "description": "The tooth this ring is carved from was exceptionally strong.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21310381",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "56",
     "stats": "Crit +5, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +1, END +5, INT +6, DEX +6, STR +8, Bonus +1",
     "resists": "Stone +6, Water +6, Ice +4, Immobility +1",
@@ -20642,10 +19408,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "sto",
-      "merge"
-    ],
+    "tags": ["sto", "merge"],
     "daRequired": false
   },
   {
@@ -20657,9 +19420,7 @@
     "description": "This ring is beautifully carved from a single piece of wood. The pattern of intricate leaves seems to waft across the surface.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=14661181",
     "releaseDate": "",
-    "elements": [
-      "MET"
-    ],
+    "elements": ["MET"],
     "level": "15",
     "stats": "Magic Def +2, Pierce Def +2, Melee Def +2, END +4",
     "resists": "Nature +3",
@@ -20676,10 +19437,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "met",
-      "free"
-    ],
+    "tags": ["met", "free"],
     "daRequired": true
   },
   {
@@ -20691,9 +19449,7 @@
     "description": "You've infused this ring with shadow energy. As you move your hand it seems to blur, almost as though it was leaving shadows of itself behind.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22388553",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "90",
     "stats": "Block +8, Dodge +8, Parry +8, Crit +10, Magic Def +9, Pierce Def +9, Melee Def +9, WIS +11, END +11, INT +10, DEX +10, STR +10, Bonus +10",
     "resists": "Evil +15, Good +15, Light +5, Darkness +5, Health -6",
@@ -20712,10 +19468,7 @@
         "dcRequired": true
       }
     ],
-    "tags": [
-      "dar",
-      "merge"
-    ],
+    "tags": ["dar", "merge"],
     "daRequired": false,
     "dcRequired": true
   },
@@ -20836,20 +19589,14 @@
     "equipSlot": "Finger",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "???",
-      "free",
-      "merge"
-    ],
+    "tags": ["???", "free", "merge"],
     "hasDA": false,
     "hasDC": true,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": true,
     "levelRange": "I-III",
-    "elements": [
-      "???"
-    ]
+    "elements": ["???"]
   },
   {
     "id": "accessory-third-golden-ring",
@@ -20860,9 +19607,7 @@
     "description": "The moglins have made five golden rings as mementos of this year's Frostval. This one lends you strength.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15262886",
     "releaseDate": "",
-    "elements": [
-      "NON"
-    ],
+    "elements": ["NON"],
     "level": "1",
     "stats": "STR +10",
     "rarity": "10",
@@ -20878,10 +19623,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "non",
-      "free"
-    ],
+    "tags": ["non", "free"],
     "daRequired": false,
     "isSeasonal": true
   },
@@ -20894,9 +19636,7 @@
     "description": "You're starting to wonder...who is Togslayer X?!?",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15277693",
     "releaseDate": "",
-    "elements": [
-      "NON"
-    ],
+    "elements": ["NON"],
     "level": "35",
     "stats": "Magic Def +3, Pierce Def +3, Melee Def +3, END +1, CHA +4, LUK +4, Nature +3",
     "rarity": "0",
@@ -20912,10 +19652,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "non",
-      "free"
-    ],
+    "tags": ["non", "free"],
     "daRequired": false
   },
   {
@@ -20927,9 +19664,7 @@
     "description": "It looks like a miniature tusk!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21310333",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "36",
     "stats": "Crit +1, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +3, CHA +2, INT +3, DEX +3, STR +3, Bonus +2",
     "resists": "Light +4, Wind +2",
@@ -20947,10 +19682,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "merge"
-    ],
+    "tags": ["nat", "merge"],
     "daRequired": false
   },
   {
@@ -20962,9 +19694,7 @@
     "description": "The signet ring of long lost cult of dark faeries, this was found while gathering herbs in the Enchanted Grove. Gives you +3 resist to Darkness and -2 to Health.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=12539359",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "5",
     "stats": "Crit +2",
     "resists": "Darkness +3, Health -2",
@@ -20981,10 +19711,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "dar",
-      "gold"
-    ],
+    "tags": ["dar", "gold"],
     "daRequired": true
   },
   {
@@ -20996,9 +19723,7 @@
     "description": "These gears have been twisted into an uncomfortable ring.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20442625",
     "releaseDate": "",
-    "elements": [
-      "MET"
-    ],
+    "elements": ["MET"],
     "level": "65",
     "stats": "Block +4, Dodge +4, Parry +4, Crit +6, Magic Def +4, Pierce Def +4, Melee Def +4, CHA +8, LUK +6, INT +6, DEX +6, STR +6, Bonus +6",
     "resists": "All +2, Fire +4",
@@ -21024,10 +19749,7 @@
       }
     ],
     "notes": "Ring previously appeared in the retired quest Nightmares as a Necklace and had the following stats:\nSellback: 0 Gold\nStats: Parry +1, Crit +8, WIS +7, END +10, DEX +9, Bonus +5\nResists: Metal +8, Fire +8, Nature +8, Immobility +3\nDropped version previously had the description: Twisted and broken gears form a chain.",
-    "tags": [
-      "met",
-      "free"
-    ],
+    "tags": ["met", "free"],
     "daRequired": false,
     "dcRequired": true
   },
@@ -21040,9 +19762,7 @@
     "description": "The band on this ring is carved to symbolize two doors. One with a white rose on it, and one with a red rose on it. Wear it well, for it is the ring of kings!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18525503",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "55",
     "stats": "Crit +6, Magic Def +7, Pierce Def +7, Melee Def +7, WIS +7, END +7, INT +6, DEX +6, STR +6, Bonus +6",
     "resists": "Fire +9, Immobility +5, Water +9",
@@ -21060,10 +19780,7 @@
         "dcRequired": true
       }
     ],
-    "tags": [
-      "nat",
-      "dc"
-    ],
+    "tags": ["nat", "dc"],
     "daRequired": false,
     "dcRequired": true
   },
@@ -21214,19 +19931,14 @@
     "equipSlot": "Finger",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dar",
-      "merge"
-    ],
+    "tags": ["dar", "merge"],
     "hasDA": true,
     "hasDC": false,
     "hasDM": false,
     "hasFree": false,
     "hasMerge": true,
     "levelRange": "I-IV",
-    "elements": [
-      "DAR"
-    ]
+    "elements": ["DAR"]
   },
   {
     "id": "accessory-uwe-championship-ring",
@@ -21400,11 +20112,7 @@
     "equipSlot": "Finger",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "free",
-      "non",
-      "sil"
-    ],
+    "tags": ["free", "non", "sil"],
     "isSeasonal": true,
     "hasDA": true,
     "hasDC": false,
@@ -21412,10 +20120,7 @@
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-V",
-    "elements": [
-      "SIL",
-      "NON"
-    ]
+    "elements": ["SIL", "NON"]
   },
   {
     "id": "accessory-venom-band",
@@ -21426,9 +20131,7 @@
     "description": "This ring glows with a sickly green light. It kinda makes your finger itch too.... Gives you +3 resist to Poison and -2 to Health.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=12539610",
     "releaseDate": "",
-    "elements": [
-      "POI"
-    ],
+    "elements": ["POI"],
     "level": "1",
     "stats": "None",
     "resists": "Poison +3, Health -2",
@@ -21445,10 +20148,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "poi",
-      "gold"
-    ],
+    "tags": ["poi", "gold"],
     "daRequired": false
   },
   {
@@ -21460,9 +20160,7 @@
     "description": "This vertebrae from an ancient Ravenloss animal fits perfectly on your index finger!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17644142",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "23",
     "stats": "INT +3, DEX +3, STR +3",
     "resists": "Darkness +3, Light +3, Fire +3, Water +3",
@@ -21479,10 +20177,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "dar",
-      "free"
-    ],
+    "tags": ["dar", "free"],
     "daRequired": false
   },
   {
@@ -21494,9 +20189,7 @@
     "description": "This stone holds a single drop of an ancient vampire's blood.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21859781",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "68",
     "stats": "Block +2, Dodge +2, Parry +1, Crit +5, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +8, END +8, CHA +7, LUK +7, INT +4, DEX +4, STR +4, Bonus +8",
     "resists": "Darkness +7, Fire +6, Health -8, Immobility +2",
@@ -21513,10 +20206,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "dar",
-      "free"
-    ],
+    "tags": ["dar", "free"],
     "daRequired": false
   },
   {
@@ -21528,9 +20218,7 @@
     "description": "A soft, white stone that seems to almost be made of trapped moonlight sits atop this ring. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21844288",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "67",
     "stats": "Block +2, Dodge +2, Parry +1, Crit +5, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +8, END +8, CHA +7, LUK +7, INT +4, DEX +4, STR +4, Bonus +8",
     "resists": "Fire +7, Light +6, Water +5, Darkness +5, Immobility +2",
@@ -21547,10 +20235,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "sto",
-      "free"
-    ],
+    "tags": ["sto", "free"],
     "daRequired": true
   },
   {
@@ -21701,20 +20386,14 @@
     "equipSlot": "Finger",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "???",
-      "free",
-      "merge"
-    ],
+    "tags": ["???", "free", "merge"],
     "hasDA": false,
     "hasDC": true,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": true,
     "levelRange": "I-IV",
-    "elements": [
-      "???"
-    ]
+    "elements": ["???"]
   },
   {
     "id": "accessory-volcano-s-heart",
@@ -21725,9 +20404,7 @@
     "description": "The stone in this ring was pulled from the depths of a volcano then frozen by a master cryomancer This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=16715890",
     "releaseDate": "",
-    "elements": [
-      "FIR"
-    ],
+    "elements": ["FIR"],
     "level": "5",
     "stats": "Crit +2",
     "resists": "Fire +4, Ice +4",
@@ -21744,10 +20421,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "fir",
-      "gold"
-    ],
+    "tags": ["fir", "gold"],
     "daRequired": true
   },
   {
@@ -21759,9 +20433,7 @@
     "description": "The origins of this ring are shrouded in mystery, but it is whispered in certain circles that it was once a bauble of an all-powerful being. Gives you +3 resist to Wind and -2 to Health.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=12539530",
     "releaseDate": "",
-    "elements": [
-      "WIN"
-    ],
+    "elements": ["WIN"],
     "level": "1",
     "stats": "None",
     "resists": "Wind +3, Health -2",
@@ -21778,10 +20450,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "win",
-      "gold"
-    ],
+    "tags": ["win", "gold"],
     "daRequired": false
   },
   {
@@ -21793,9 +20462,7 @@
     "description": "This simple, engraved band, has a flag design engraved on the outer surface, and has the name William Joyce engraved on the inside.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19299110",
     "releaseDate": "",
-    "elements": [
-      "MET"
-    ],
+    "elements": ["MET"],
     "level": "50",
     "stats": "Dodge +1, Crit +3, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +5, END +5, INT +4, DEX +4, STR +4, Bonus +4",
     "resists": "Darkness +7, Poison +5, Metal +3",
@@ -21812,10 +20479,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "met",
-      "free"
-    ],
+    "tags": ["met", "free"],
     "daRequired": false
   },
   {
@@ -21827,9 +20491,7 @@
     "description": "This ring was lovingly carved from a single piece of wood and stained a warm amber color. It still smells faintly of rich exotic elven spices.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=4152918",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "1",
     "stats": "Dodge +1, Melee Def +1",
     "resists": "Nature +2",
@@ -21853,10 +20515,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false
   },
   {
@@ -21868,9 +20527,7 @@
     "description": "A splinter of wood is embedded into this ring. You feel magic humming within it. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20441311",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "72",
     "stats": "Block +4, Dodge +4, Parry +4, Crit +7, Magic Def +4, Pierce Def +4, Melee Def +4, CHA +10, LUK +7, INT +7, DEX +7, STR +7, Bonus +6",
     "resists": "All +3, Fire +4",
@@ -21896,10 +20553,7 @@
       }
     ],
     "notes": "Ring previously appeared in the retired quest Nightmares as a Necklace and had the following stats:\nStats: Parry +2, Crit +7, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +8, END +2, CHA +5, INT +8, DEX +8, STR +8, Bonus +5\nResists: All +5, Immobility +2\nDropped version previously had the description: A splinter of wood hangs off the end of this chain. You feel magic humming within it. This item requires a Dragon Amulet.",
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": true,
     "dcRequired": true
   },
@@ -21912,9 +20566,7 @@
     "description": "This woody ring was taken off a plushie. Oh, the stories that toy could tell!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18525315",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "30",
     "stats": "Dodge +4, Crit +4, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +4, END +5, Bonus +5",
     "resists": "Fire +5, Water +5, Ice +5, Nature +5",
@@ -21932,10 +20584,7 @@
         "dcRequired": true
       }
     ],
-    "tags": [
-      "nat",
-      "dc"
-    ],
+    "tags": ["nat", "dc"],
     "daRequired": false,
     "dcRequired": true
   },
@@ -21948,9 +20597,7 @@
     "description": "A ring to go on your finger, made of fingers! This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17039219",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "18",
     "stats": "Crit +2, END +2, INT +2, Fire +1, Darkness +1",
     "rarity": "5",
@@ -21966,22 +20613,13 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "dar",
-      "free"
-    ],
+    "tags": ["dar", "free"],
     "daRequired": true
   },
   {
     "id": "accessory-zeclem-s-band",
     "familyName": "Zeclem's Band",
     "slug": "accessory-zeclem-s-band",
-    "aliasSlugs": [
-      "accessory-zeclem-s-band",
-      "accessory-zeclem-s-band",
-      "accessory-zeclem-s-band",
-      "accessory-zeclem-s-band"
-    ],
     "type": "accessory",
     "subtype": "ring",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21824185",
@@ -22114,19 +20752,14 @@
     "equipSlot": "Finger",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dar",
-      "dc"
-    ],
+    "tags": ["dar", "dc"],
     "hasDA": false,
     "hasDC": true,
     "hasDM": false,
     "hasFree": false,
     "hasMerge": false,
     "levelRange": "50-80",
-    "elements": [
-      "DAR"
-    ]
+    "elements": ["DAR"]
   },
   {
     "id": "accessory-zeclem-s-relic-band",
@@ -22137,9 +20770,7 @@
     "description": "V. As Zeclem held the crown that belonged to his former king, a whisper crept into his thoughts. He turned and saw the mass of undead staring at him. The whisper told him that they were his to command.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22387767",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "90",
     "stats": "Block +8, Dodge +8, Parry +8, Crit +10, Magic Def +9, Pierce Def +9, Melee Def +9, WIS +11, END +11, INT +10, DEX +10, STR +10, Bonus +10",
     "resists": "Evil +15, Good +15, Light +5, Darkness +5, Health -6",
@@ -22158,10 +20789,7 @@
         "dcRequired": true
       }
     ],
-    "tags": [
-      "dar",
-      "merge"
-    ],
+    "tags": ["dar", "merge"],
     "daRequired": false,
     "dcRequired": true
   }

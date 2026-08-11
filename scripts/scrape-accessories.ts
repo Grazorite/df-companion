@@ -71,8 +71,16 @@ const ACCESSORY_IMAGE_OVERRIDES: Record<string, string> = {
     "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/Baltael'sAventail.png",
   "Frost Moglin Knight's Cloak": 'https://i.imgur.com/StWTUCm.png',
   "Frost Moglin Knight's Helm": 'https://i.imgur.com/UWUlCbM.png',
+  'Necromancer Cloak': 'https://i.imgur.com/1GBj8yH.jpg',
   "Navigator's Hat":
     "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/Navigator'sHat-CC.png",
+}
+const ACCESSORY_NOTES_OVERRIDES: Record<string, string> = {
+  'Cloak of Shadows': 'Cape appears invisible when equipped.',
+  'Invisible Cape': 'Cape appears invisible when equipped.',
+  'Invisible Helm': 'Helm appears invisible when equipped.',
+  'Mantle of Shadows': 'Cape appears invisible when equipped.',
+  'Wrap of Shadows': 'Cape appears invisible when equipped.',
 }
 
 type PriceType = Accessory['obtainMethods'][number]['priceType']
@@ -148,6 +156,12 @@ function preserveStubVariantSuffix(stubName: string, title?: string): string | u
 function getAccessoryImageOverride(name: string): string | undefined {
   return (
     ACCESSORY_IMAGE_OVERRIDES[normalizeAccessoryFamilyName(name)] ?? ACCESSORY_IMAGE_OVERRIDES[name]
+  )
+}
+
+function getAccessoryNotesOverride(name: string): string | undefined {
+  return (
+    ACCESSORY_NOTES_OVERRIDES[normalizeAccessoryFamilyName(name)] ?? ACCESSORY_NOTES_OVERRIDES[name]
   )
 }
 
@@ -1351,6 +1365,7 @@ function buildAccessoryEntry(
     ? extractAccessoryImages(html)
     : {}
   const imageOverride = getAccessoryImageOverride(override?.name ?? stub.name)
+  const notesOverride = getAccessoryNotesOverride(override?.name ?? stub.name)
   const alsoSee = resolveAlsoSee(extractAlsoSeeRefs(html))
 
   return {
@@ -1377,7 +1392,7 @@ function buildAccessoryEntry(
     ...(armorCustomization ? { armorCustomization, hasArmorCustomization: true } : {}),
     ...(categoryValue ? { category: categoryValue } : {}),
     obtainMethods,
-    ...(notes ? { notes } : {}),
+    ...((notesOverride ?? notes) ? { notes: notesOverride ?? notes } : {}),
     ...(alsoSee.length > 0 ? { alsoSee } : {}),
     tags: [
       ...parsedElements.map((code) => code.toLowerCase()),
@@ -1436,6 +1451,7 @@ function buildAccessoryFamily(
   const familyName = normalizeAccessoryFamilyName(stub.name)
   const familySlug = accessorySlugForName(familyName)
   const imageOverride = getAccessoryImageOverride(familyName)
+  const notesOverride = getAccessoryNotesOverride(familyName)
   const expectedRomanVariants = getExpectedRomanVariants(stub.name)
   const descriptions = uniqueStrings(
     consolidatedVariants.map((variant) => variant.description).filter(Boolean)
@@ -1521,12 +1537,15 @@ function buildAccessoryFamily(
     variantLabel: variant.name,
     isPrimary: index === 0,
   }))
+  const aliasSlugs = Array.from(new Set(variants.map((variant) => variant.slug))).filter(
+    (slug) => slug !== familySlug
+  )
 
   const family = computeFamilyFlags({
     id: familySlug,
     familyName,
     slug: familySlug,
-    aliasSlugs: variants.map((variant) => variant.slug),
+    ...(aliasSlugs.length > 0 ? { aliasSlugs } : {}),
     type: 'accessory',
     subtype: stub.subtype,
     forumUrl: stub.forumUrl,
@@ -1540,7 +1559,7 @@ function buildAccessoryFamily(
       ...(sharedImageUrl ? { imageUrl: sharedImageUrl } : {}),
       ...(sharedAlternativeImages ? { alternativeImages: sharedAlternativeImages } : {}),
       ...(rarities.length === 1 ? { rarity: rarities[0] } : {}),
-      ...(sharedNotes ? { notes: sharedNotes } : {}),
+      ...((notesOverride ?? sharedNotes) ? { notes: notesOverride ?? sharedNotes } : {}),
       ...(alsoSee.length > 0 ? { alsoSee } : {}),
     },
     levelVariants,

@@ -20,6 +20,46 @@ export function obtainVariantHasDC(variant: ObtainVariant): boolean {
   )
 }
 
+function variantAccessSortRank(level: LevelVariant): number {
+  const hasDC = level.obtainVariants.some(obtainVariantHasDC)
+  if (hasDC) return 2
+
+  const hasDA = level.obtainVariants.some((variant) => variant.daRequired)
+  if (hasDA) return 1
+
+  return 0
+}
+
+function normalizedVariantOrderGroupKey(level: LevelVariant): string {
+  return [
+    String(level.actualLevel ?? level.levelDisplay ?? '').toLowerCase(),
+    stripAccessVariantSuffix(level.name).toLowerCase(),
+  ].join('|')
+}
+
+export function orderLevelVariantsByAccess<T extends LevelVariant>(levels: T[]): T[] {
+  const groupedIndexes = new Map<string, number[]>()
+  levels.forEach((level, index) => {
+    const key = normalizedVariantOrderGroupKey(level)
+    groupedIndexes.set(key, [...(groupedIndexes.get(key) ?? []), index])
+  })
+
+  const ordered = [...levels]
+  for (const indexes of groupedIndexes.values()) {
+    if (indexes.length <= 1) continue
+
+    const sortedGroup = indexes
+      .map((index) => levels[index])
+      .sort((first, second) => variantAccessSortRank(first) - variantAccessSortRank(second))
+
+    indexes.forEach((targetIndex, groupIndex) => {
+      ordered[targetIndex] = sortedGroup[groupIndex]
+    })
+  }
+
+  return ordered
+}
+
 export function splitMixedAccessObtainVariantRows<T extends ItemFamily>(family: T): T {
   let didSplit = false
   const levelVariants = family.levelVariants.flatMap((level) => {
@@ -85,6 +125,13 @@ export function getVersionSuffixRange(name: string): string | undefined {
 }
 
 export function stripVersionSuffix(name: string): string {
+  const trailingArticleMatch = name.trim().match(/^(.+?)\s*,\s*(The)$/i)
+
+  if (trailingArticleMatch) {
+    const [, title, article] = trailingArticleMatch
+    return `${stripVersionSuffix(title)}, ${article}`.trim()
+  }
+
   return name
     .replace(
       /\s+\((?:All Versions|[IVXLCDM]+(?:\s*(?:,|-)\s*[IVXLCDM]+)+|\d+\s*-\s*\d+)\)\s*$/i,
@@ -177,6 +224,7 @@ export function computePriceType(price: string, requiredItems?: string): PriceTy
  * // updated.hasFree = true (free variant exists)
  */
 export function computeFamilyFlags<T extends ItemFamily>(family: T): T {
+  const levelVariants = orderLevelVariantsByAccess(family.levelVariants)
   let hasDA = false
   let hasDC = false
   let hasDM = false
@@ -185,7 +233,7 @@ export function computeFamilyFlags<T extends ItemFamily>(family: T): T {
   const elementSet = new Set<string>(family.elements)
 
   // Scan all level variants and their obtain variants
-  for (const levelVariant of family.levelVariants) {
+  for (const levelVariant of levelVariants) {
     // Check element (use level-specific or fallback to shared)
     const element = levelVariant.element ?? family.shared.element
     if (element) {
@@ -203,8 +251,8 @@ export function computeFamilyFlags<T extends ItemFamily>(family: T): T {
   }
 
   // Compute level range
-  const firstVariant = family.levelVariants[0]
-  const lastVariant = family.levelVariants.at(-1)
+  const firstVariant = levelVariants[0]
+  const lastVariant = levelVariants.at(-1)
   const firstLevel = firstVariant
     ? String(firstVariant.actualLevel ?? firstVariant.levelDisplay)
     : 'Unknown'
@@ -214,7 +262,7 @@ export function computeFamilyFlags<T extends ItemFamily>(family: T): T {
 
   const romanVariantRange = Array.from(
     new Set(
-      family.levelVariants
+      levelVariants
         .map((levelVariant) => levelVariant.variantName?.trim())
         .filter((variantName): variantName is string => Boolean(variantName))
         .filter((variantName) => parseRomanNumeral(variantName.toUpperCase()) !== null)
@@ -241,6 +289,7 @@ export function computeFamilyFlags<T extends ItemFamily>(family: T): T {
 
   return {
     ...family,
+    levelVariants,
     hasDA,
     hasDC,
     hasDM,
@@ -392,7 +441,7 @@ export function getDisplayFamilyName(family: ItemFamily): string {
 export function getFamilyCardDescription(family: ItemFamily): string {
   return (
     family.shared.description?.trim() ||
-    family.levelVariants.find((level) => level.description?.trim())?.description?.trim() ||
+    family.levelVariants[0]?.description?.trim() ||
     ''
   )
 }
@@ -570,6 +619,23 @@ function getLevelVariantLabelInfo(
     }
   }
 
+  if (familyName && useTitleLabels) {
+    const condensedVariant =
+      normalizedAccessVariantName &&
+      !/^\((?:Base|DA|DC)\)(?:\s*\((?:DA|DC)\))?$/i.test(normalizedAccessVariantName)
+        ? getCondensedTitleVariant(normalizedAccessVariantName, familyName)
+        : undefined
+    if (condensedVariant) {
+      return {
+        label: normalizeRomanDisplay(normalizeDisplayText(condensedVariant)),
+        canAddLevelSuffix: false,
+        levelLabel,
+        hasDC,
+        hasDA,
+      }
+    }
+  }
+
   if (itemType === 'guest') {
     const numericFamilyVariant = extractNumericFamilyVariant(level.name, familyName)
     if (numericFamilyVariant) {
@@ -610,6 +676,19 @@ function getLevelVariantLabelInfo(
   if (
     normalizedAccessVariantName &&
     parseRomanNumeral(normalizedAccessVariantName.trim().toUpperCase()) !== null
+  ) {
+    return {
+      label: normalizeRomanDisplay(normalizedAccessVariantName),
+      canAddLevelSuffix: true,
+      levelLabel,
+      hasDC,
+      hasDA,
+    }
+  }
+
+  if (
+    normalizedAccessVariantName &&
+    !/^\((?:Base|DA|DC)\)(?:\s*\((?:DA|DC)\))?$/i.test(normalizedAccessVariantName)
   ) {
     return {
       label: normalizeRomanDisplay(normalizedAccessVariantName),
@@ -822,7 +901,7 @@ function shouldUseCompactDcOnlyLabel(
 function shouldUsePlainLevelLabels(levels: LevelVariant[], familyName?: string): boolean {
   if (!familyName || levels.length <= 1) return false
 
-  const familyLabel = normalizeDisplayText(familyName).toLowerCase()
+  const familyLabel = displayTitle(normalizeDisplayText(familyName)).toLowerCase()
   const levelLabels = levels.map((level) => String(level.actualLevel ?? level.levelDisplay))
 
   return (
@@ -830,7 +909,8 @@ function shouldUsePlainLevelLabels(levels: LevelVariant[], familyName?: string):
     levels.every((level) => {
       if (level.variantName) return false
       return (
-        normalizeDisplayText(stripAccessVariantSuffix(level.name)).toLowerCase() === familyLabel
+        displayTitle(normalizeDisplayText(stripAccessVariantSuffix(level.name))).toLowerCase() ===
+        familyLabel
       )
     })
   )
@@ -949,6 +1029,9 @@ export function shouldHideVariantColumn(
   if (levels.length === 0) return true
 
   const variantLabels = getLevelVariantLabels(levels, familyName, itemType)
+  const accessOnlyLabels = variantLabels.every((label) =>
+    /^(?:\(Base\)(?: \(DC\))?|\(\d+\)(?: \(DC\))?|\(DC\)|DA|DC|Normal|Base)$/i.test(label)
+  )
 
   const redundantExact = variantLabels.every((label, index) => {
     const level = levels[index]
@@ -959,6 +1042,7 @@ export function shouldHideVariantColumn(
     levels.length
 
   if (redundantExact && !hasDuplicateLevels) return true
+  if (accessOnlyLabels && !hasDuplicateLevels) return true
 
   return false
 }
@@ -969,6 +1053,8 @@ export function shouldShowVariantColumn(
   itemType?: ItemType,
   hideVariantColumn: boolean = false
 ): boolean {
+  if (levels.length <= 1) return false
+
   const hasVariantNames = levels.some((level) => Boolean(level.variantName))
   const useTitleLabels = familyName ? hasTitleDrivenVariantNames(levels, familyName) : false
   const hasRedundantVariantColumn = shouldHideVariantColumn(levels, familyName, itemType)

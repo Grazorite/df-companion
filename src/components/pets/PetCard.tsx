@@ -5,6 +5,7 @@ import type { ItemFamily } from '../../types/item'
 import { displayTitle } from '../../utils/displayText'
 import {
   getDisplayFamilyName,
+  getFamilyCardDescription,
   hasSameLevelVariants,
   isSingleVariant,
 } from '../../utils/variantHelpers'
@@ -36,6 +37,7 @@ export default function PetCard({ pet, toUrl, replace, family }: PetCardProps) {
   const displayName = displayTitle(
     isMultiVariant && family ? getDisplayFamilyName(family) : pet.name
   )
+  const displayDescription = family ? getFamilyCardDescription(family) : pet.description
 
   // Use family flags if available, otherwise fall back to Pet flags
   const displayFlags = family
@@ -53,6 +55,38 @@ export default function PetCard({ pet, toUrl, replace, family }: PetCardProps) {
         hasFree: pet.obtainMethods.some((m) => m.priceType === 'free'),
         levelRange: pet.level,
       }
+  const showLevelRange =
+    isMultiVariant && pet.type !== 'guest' && !family?.isMultiPost && !sameLevelVariants
+  const metadataPillCount = visibleCodes.length + (overflow > 0 ? 1 : 0) + (showLevelRange ? 1 : 0)
+  const maxAccessPills = Math.max(0, 5 - metadataPillCount)
+  const accessPills = [
+    {
+      key: 'da',
+      label: 'DA',
+      show: displayFlags.hasDA,
+      className: 'text-orange-400 bg-orange-500/20',
+    },
+    {
+      key: 'dc',
+      label: 'DC',
+      show: displayFlags.hasDC,
+      className: 'text-gold bg-amber-500/20',
+    },
+    {
+      key: 'dm',
+      label: 'DM',
+      show: displayFlags.hasDM,
+      className: 'text-slate-300 bg-slate-500/20',
+    },
+    {
+      key: 'free',
+      label: 'Free',
+      show: pet.type !== 'guest' && displayFlags.hasFree,
+      className: 'text-green-400 bg-green-500/20',
+    },
+  ]
+    .filter((pill) => pill.show)
+    .slice(0, maxAccessPills)
 
   return (
     <Link
@@ -62,42 +96,30 @@ export default function PetCard({ pet, toUrl, replace, family }: PetCardProps) {
     >
       <div className="flex-1 min-w-0">
         {/* Element pills + access pills + level range + type badge */}
-        <div className="flex items-center gap-1.5 flex-wrap mb-1.5">
-          {visibleCodes.map((code) => (
-            <ElementPill key={code} code={code} size="sm" />
-          ))}
-          {overflow > 0 && (
-            <span className="text-[10px] text-text-muted bg-bg-overlay px-1.5 py-0.5 rounded-full">
-              +{overflow}
-            </span>
-          )}
+        <div className="flex items-start justify-between gap-2 mb-1.5">
+          <div className="min-w-0 flex flex-wrap items-center gap-1.5">
+            {visibleCodes.map((code) => (
+              <ElementPill key={code} code={code} size="sm" />
+            ))}
+            {overflow > 0 && (
+              <span className="text-[10px] text-text-muted bg-bg-overlay px-1.5 py-0.5 rounded-full">
+                +{overflow}
+              </span>
+            )}
 
-          {/* Multi-variant indicators */}
-          {isMultiVariant && pet.type !== 'guest' && !family?.isMultiPost && !sameLevelVariants && (
-            <LevelRangeBadge levelRange={displayFlags.levelRange} />
-          )}
-          {displayFlags.hasDA && (
-            <span className="text-[10px] text-orange-400 bg-orange-500/20 px-1.5 py-0.5 rounded-full font-medium">
-              DA
-            </span>
-          )}
-          {displayFlags.hasDC && (
-            <span className="text-[10px] text-gold bg-amber-500/20 px-1.5 py-0.5 rounded-full font-medium">
-              DC
-            </span>
-          )}
-          {displayFlags.hasDM && (
-            <span className="text-[10px] text-slate-300 bg-slate-500/20 px-1.5 py-0.5 rounded-full font-medium">
-              DM
-            </span>
-          )}
-          {pet.type !== 'guest' && displayFlags.hasFree && (
-            <span className="text-[10px] text-green-400 bg-green-500/20 px-1.5 py-0.5 rounded-full font-medium">
-              Free
-            </span>
-          )}
+            {/* Multi-variant indicators */}
+            {showLevelRange && <LevelRangeBadge levelRange={displayFlags.levelRange} />}
+            {accessPills.map((pill) => (
+              <span
+                key={pill.key}
+                className={`text-[10px] px-1.5 py-0.5 rounded-full font-medium ${pill.className}`}
+              >
+                {pill.label}
+              </span>
+            ))}
+          </div>
 
-          <span className="ml-auto text-[10px] text-text-muted bg-bg-overlay px-1.5 py-0.5 rounded-full capitalize flex-shrink-0">
+          <span className="text-[10px] text-text-muted bg-bg-overlay px-1.5 py-0.5 rounded-full capitalize flex-shrink-0">
             {pet.type}
           </span>
         </div>
@@ -106,7 +128,7 @@ export default function PetCard({ pet, toUrl, replace, family }: PetCardProps) {
           {displayName}
         </h3>
         <p className="text-text-secondary text-xs leading-relaxed line-clamp-2">
-          {pet.description}
+          {displayDescription}
         </p>
       </div>
       <ChevronRight

@@ -1,11 +1,12 @@
 [
   {
     "id": "weapon-default",
-    "familyName": "| (| Default)",
+    "familyName": "|",
     "slug": "weapon-default",
     "aliasSlugs": [
       "weapon-default-all-versions",
-      "weapon-"
+      "weapon-",
+      "weapon-all-versions"
     ],
     "type": "weapon",
     "subtype": "scythe",
@@ -22,14 +23,15 @@
     "itemType": "Scythe",
     "shared": {
       "description": "|",
-      "notes": "Weapon is not visible."
+      "notes": "Weapon is not visible.",
+      "alsoSee": []
     },
     "levelVariants": [
       {
         "levelNumber": 1,
         "levelDisplay": "1",
         "actualLevel": 1,
-        "variantName": "|",
+        "variantName": "(Base)",
         "name": "|",
         "damage": "25-50",
         "stats": "Crit +5, Bonus +30",
@@ -53,7 +55,7 @@
         "levelNumber": 1,
         "levelDisplay": "1",
         "actualLevel": 1,
-        "variantName": "|",
+        "variantName": "(Base)",
         "name": "|",
         "damage": "25-50",
         "stats": "Crit +5, Bonus +30",
@@ -113,7 +115,7 @@
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=21452376",
         "title": "DF Encyclopedia: 13th 13th Scythe",
-        "variantLabel": "The 13th 13th Scythe",
+        "variantLabel": "13th 13th Scythe",
         "isPrimary": true
       },
       {
@@ -158,7 +160,8 @@
       "description": "Souls or spirits... something is screaming to escape! Visit the Black Market Moglin to upgrade this weapon.",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/13th13thScythe.png",
       "element": "EVI",
-      "notes": "Weapon cannot be destroyed.\nWeapon is animated; souls or spirits escape from the scythe periodically."
+      "notes": "Weapon cannot be destroyed.\nWeapon is animated; souls or spirits escape from the scythe periodically.",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -407,7 +410,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isCosmetic": true
+    "isCosmetic": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-abyssal-aureate",
@@ -550,7 +554,8 @@
     "shared": {
       "description": "You found this curious scepter under your bed after you woke up. It has \"Property of Remthalas\" scribbled on the handle. I'm sure it's perfectly safe to use. Definitely not a trap.",
       "imageUrl": "https://i.imgur.com/vX94CkN.png",
-      "notes": "DC version's name is erroneously 'Abyssa Elf Scepter VI' instead of 'Abyssal Elf Scepter VI'; DA version's name was fixed in early 2021.\nWeapons are animated; yellow lights spin in a circular motion at the tip of the scepter."
+      "notes": "DC version's name is erroneously 'Abyssa Elf Scepter VI' instead of 'Abyssal Elf Scepter VI'; DA version's name was fixed in early 2021.\nWeapons are animated; yellow lights spin in a circular motion at the tip of the scepter.",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -1013,7 +1018,11 @@
           "type": "weapon",
           "url": "https://forums2.battleon.com/f/tm.asp?m=22408271"
         }
-      ]
+      ],
+      "armorCustomization": {
+        "appearance": "Abyssal",
+        "modifies": "Kathool Adept"
+      }
     },
     "levelVariants": [
       {
@@ -1181,8 +1190,9 @@
     "category": "Weapon",
     "releaseDate": "",
     "tags": [
-      "evi",
+      "armor-customization",
       "dc",
+      "evi",
       "merge"
     ],
     "hasDA": false,
@@ -1194,7 +1204,8 @@
       "EVI"
     ],
     "isCosmetic": true,
-    "levelRange": "I-VI"
+    "levelRange": "I-VI",
+    "hasArmorCustomization": true
   },
   {
     "id": "weapon-abyssal-swordfish",
@@ -1234,7 +1245,8 @@
     "daRequired": false,
     "dcRequired": true,
     "dmRequired": true,
-    "isCosmetic": true
+    "isCosmetic": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-adept-s-spear",
@@ -1274,7 +1286,8 @@
     "daRequired": false,
     "dcRequired": true,
     "dmRequired": true,
-    "isCosmetic": true
+    "isCosmetic": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-adventurer-s-spear",
@@ -1317,7 +1330,8 @@
       "met",
       "merge"
     ],
-    "daRequired": false
+    "daRequired": false,
+    "alsoSee": []
   },
   {
     "id": "weapon-aeonrend",
@@ -1354,7 +1368,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isCosmetic": true
+    "isCosmetic": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-akriloth-s-bane",
@@ -1408,7 +1423,8 @@
     "shared": {
       "description": "The blades of this scythe were forged from the teeth of the great fire dragon!",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Akriloth'sFervidBane.png",
-      "element": "FIR"
+      "element": "FIR",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -1589,7 +1605,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isCosmetic": true
+    "isCosmetic": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-alina-s-battle-bouquet-staff",
@@ -1631,7 +1648,8 @@
     "itemType": "Scythe",
     "shared": {
       "description": "Don't be fooled by this floral weapon; defend the ones you love! Crafted by Ghost in honor of Alina's Wedding to Rolith.",
-      "imageUrl": "http://i.imgur.com/EBtFJ.jpg"
+      "imageUrl": "http://i.imgur.com/EBtFJ.jpg",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -1791,7 +1809,8 @@
     "daRequired": false,
     "dcRequired": true,
     "isCosmetic": true,
-    "isSpecialOffer": true
+    "isSpecialOffer": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-alz-ein-s-riftblade",
@@ -1829,21 +1848,21 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isCosmetic": true
+    "isCosmetic": true,
+    "alsoSee": []
   },
   {
-    "id": "weapon-amaterasu",
+    "id": "weapon-amaterasu-i-ii",
     "familyName": "Amaterasu",
-    "slug": "weapon-amaterasu",
+    "slug": "weapon-amaterasu-i-ii",
     "aliasSlugs": [
-      "weapon-amaterasu-all-versions",
       "weapon-amaterasu-i",
       "weapon-amaterasu-ii",
-      "weapon-amaterasu-omikami"
+      "weapon-amaterasu-all-versions"
     ],
     "type": "weapon",
     "subtype": "scythe",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17244436",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=17244436",
     "familyOrigin": "same-thread-multi-post",
     "familySources": [
       {
@@ -1856,12 +1875,6 @@
         "url": "https://forums2.battleon.com/f/fb.asp?m=17244455",
         "title": "DF Encyclopedia: Amaterasu II",
         "variantLabel": "Amaterasu II",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/fb.asp?m=17244480",
-        "title": "DF Encyclopedia: Amaterasu-Omikami",
-        "variantLabel": "Amaterasu-Omikami",
         "isPrimary": false
       }
     ],
@@ -1876,10 +1889,18 @@
         },
         {
           "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Amaterasu-Fire.png",
-          "caption": "Fire"
+          "caption": "Element: Light / Fire"
         }
       ],
-      "notes": "Weapons are animated; an orb of light or fire (dependant on selected weapon element) spirals around the blade of the scythe continuously.\nClick anywhere on the weapon to change between its available elements; this will also change its appearance."
+      "notes": "Weapons are animated; an orb of light or fire (dependant on selected weapon element) spirals around the blade of the scythe continuously.\nClick anywhere on the weapon to change between its available elements; this will also change its appearance.",
+      "alsoSee": [
+        {
+          "name": "Amaterasu-Omikami",
+          "slug": "weapon-amaterasu-omikami",
+          "type": "weapon",
+          "url": "https://forums2.battleon.com/f/fb.asp?m=17244480"
+        }
+      ]
     },
     "levelVariants": [
       {
@@ -1931,7 +1952,69 @@
         "resists": "Darkness +7, Light +7, Immobility +7",
         "rarity": "10",
         "itemType": "Scythe"
-      },
+      }
+    ],
+    "category": "Weapon",
+    "releaseDate": "",
+    "tags": [
+      "fir",
+      "dc"
+    ],
+    "hasDA": false,
+    "hasDC": true,
+    "hasDM": false,
+    "hasFree": false,
+    "hasMerge": false,
+    "elements": [
+      "FIR"
+    ],
+    "isRare": true,
+    "levelRange": "I-II"
+  },
+  {
+    "id": "weapon-amaterasu-omikami",
+    "familyName": "Amaterasu-Omikami",
+    "slug": "weapon-amaterasu-omikami",
+    "aliasSlugs": [
+      "weapon-amaterasu-omikami-all-versions"
+    ],
+    "type": "weapon",
+    "subtype": "scythe",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=17244480",
+    "familyOrigin": "same-thread-multi-post",
+    "familySources": [
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=17244480",
+        "title": "DF Encyclopedia: Amaterasu-Omikami",
+        "variantLabel": "Amaterasu-Omikami",
+        "isPrimary": true
+      }
+    ],
+    "itemType": "Scythe",
+    "shared": {
+      "description": "A powerful sun spirit infused this one-of-a-kind scythe with her majestic aura. Harness the power of both Light and Fire as you slice through your foes with the glory of the sun!",
+      "alternativeImages": [
+        {
+          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Amaterasu-Light.png",
+          "caption": "Light"
+        },
+        {
+          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Amaterasu-Fire.png",
+          "caption": "Fire"
+        }
+      ],
+      "notes": "Weapons are animated; an orb of light or fire (dependant on selected weapon element) spirals around the blade of the scythe continuously.\nClick anywhere on the weapon to change between its available elements; this will also change its appearance.",
+      "alsoSee": [
+        {
+          "name": "Amaterasu (I-II)",
+          "slug": "weapon-amaterasu-i-ii",
+          "type": "weapon",
+          "url": "https://forums2.battleon.com/f/fb.asp?m=17244436"
+        }
+      ],
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Amaterasu-Light.png"
+    },
+    "levelVariants": [
       {
         "levelNumber": 56,
         "levelDisplay": "56",
@@ -1955,7 +2038,7 @@
         "resists": "Darkness +9, Light +9, Immobility +9",
         "rarity": "10",
         "itemType": "Scythe",
-        "variantName": "Omikami"
+        "variantName": "(Base)"
       }
     ],
     "category": "Weapon",
@@ -1973,7 +2056,7 @@
       "FIR"
     ],
     "isRare": true,
-    "levelRange": "I-II"
+    "levelRange": "56"
   },
   {
     "id": "weapon-anagenesis",
@@ -2012,7 +2095,8 @@
     "daRequired": false,
     "dcRequired": true,
     "isCosmetic": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-ancient-ceremonial-scythe-of-hawks",
@@ -2049,7 +2133,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isCosmetic": true
+    "isCosmetic": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-ancient-ceremonial-scythe-of-ravens",
@@ -2086,7 +2171,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isCosmetic": true
+    "isCosmetic": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-ancient-ceremonial-scythe-of-wolves",
@@ -2123,7 +2209,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isCosmetic": true
+    "isCosmetic": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-ancient-defender-edge",
@@ -2202,7 +2289,8 @@
           "caption": "Clicked"
         }
       ],
-      "notes": "Click on the weapon's blade to change between two appearances."
+      "notes": "Click on the weapon's blade to change between two appearances.",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -3321,7 +3409,8 @@
           "caption": "All Appearances"
         }
       ],
-      "notes": "Weapons' appearance is attuned to the player's equipped weapon's element; refer to this chart for all appearances.\nWhile out of combat, click on the weapon's hilt to change between two appearances; blade appearance is used while in combat."
+      "notes": "Weapons' appearance is attuned to the player's equipped weapon's element; refer to this chart for all appearances.\nWhile out of combat, click on the weapon's hilt to change between two appearances; blade appearance is used while in combat.",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -3458,7 +3547,8 @@
     "dcRequired": true,
     "dmRequired": true,
     "isCosmetic": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-ancient-frost-moglin-sword",
@@ -3499,7 +3589,8 @@
     "dcRequired": true,
     "dmRequired": true,
     "isCosmetic": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-antique-blade-of-chaos",
@@ -3536,7 +3627,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isCosmetic": true
+    "isCosmetic": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-antique-dragonlord-s-rite",
@@ -3574,7 +3666,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isCosmetic": true
+    "isCosmetic": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-antique-knight-dagger",
@@ -3618,7 +3711,8 @@
       "lig",
       "free"
     ],
-    "daRequired": false
+    "daRequired": false,
+    "alsoSee": []
   },
   {
     "id": "weapon-antique-knight-staff",
@@ -3662,7 +3756,8 @@
       "lig",
       "free"
     ],
-    "daRequired": false
+    "daRequired": false,
+    "alsoSee": []
   },
   {
     "id": "weapon-antique-knight-sword",
@@ -3706,7 +3801,8 @@
       "lig",
       "free"
     ],
-    "daRequired": false
+    "daRequired": false,
+    "alsoSee": []
   },
   {
     "id": "weapon-antique-star-captain-s-claymore",
@@ -3739,12 +3835,19 @@
     ],
     "notes": "Own this item to unlock Star Captain and Star Captain (CC) Armor Customization options for the Student class; this was implemented on May 2nd, 2025.",
     "tags": [
-      "ene",
-      "dc"
+      "armor-customization",
+      "dc",
+      "ene"
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isCosmetic": true
+    "isCosmetic": true,
+    "alsoSee": [],
+    "armorCustomization": {
+      "appearance": "Star Captain and Star Captain (CC)",
+      "modifies": "Student"
+    },
+    "hasArmorCustomization": true
   },
   {
     "id": "weapon-apostate-alpha-omega-ultima",
@@ -3797,14 +3900,15 @@
           "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/ApostateUltima.png",
           "caption": "Ultima"
         }
-      ]
+      ],
+      "alsoSee": []
     },
     "levelVariants": [
       {
         "levelNumber": 40,
         "levelDisplay": "40",
         "actualLevel": 40,
-        "variantName": "Apostate Alpha",
+        "variantName": "Alpha",
         "name": "Apostate Alpha",
         "damage": "60-72",
         "stats": "Block +2, Dodge +2, Parry +2, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +5, END +5, CHA +2, LUK +2, INT +9, DEX +9, STR +9, Bonus +10",
@@ -3856,7 +3960,7 @@
         "levelNumber": 80,
         "levelDisplay": "80",
         "actualLevel": 80,
-        "variantName": "Apostate Ultima",
+        "variantName": "Ultima",
         "name": "Apostate Ultima",
         "damage": "85-97",
         "stats": "Block +5, Dodge +5, Parry +5, Crit +5, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +14, END +14, CHA +4, LUK +4, INT +18, DEX +18, STR +18, Bonus +15",
@@ -3929,7 +4033,8 @@
     ],
     "daRequired": true,
     "isCosmetic": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-apsaydaaun-harvester",
@@ -4011,7 +4116,8 @@
     "itemType": "Scythe",
     "shared": {
       "description": "The denizens of Apsaydaaun have never been known for their plant-tending. This prototype garden tool seems to be more practical for culling foes than weeds.",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/ApsaydaaunHarvester.png"
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/ApsaydaaunHarvester.png",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -4539,7 +4645,8 @@
     "shared": {
       "description": "A replica of the scepter wielded by Abraca and Dabra, this cake on a stick still retains some of their mysterious magic! It's tasty too! Probably shouldn't eat it, though. Probably.",
       "imageUrl": "http://i.imgur.com/zjY7tZN.png",
-      "notes": "The pumpkin's expression at the bottom of the scepter changes each time the weapon is shown."
+      "notes": "The pumpkin's expression at the bottom of the scepter changes each time the weapon is shown.",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -4791,7 +4898,8 @@
     "shared": {
       "description": "A precise blade forged from lightning and shadow, it hums with the ticks and whirs of its inner workings, delivering swift and deadly strikes. Proof of victory over Duskbolt, the Tempest.",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/ArcanotechEdge.png",
-      "notes": "Weapons cannot be destroyed."
+      "notes": "Weapons cannot be destroyed.",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -4924,7 +5032,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isCosmetic": true
+    "isCosmetic": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-ascendant-s-partisan",
@@ -5030,7 +5139,8 @@
     "itemType": "Scythe",
     "shared": {
       "description": "This massive blade is used by those that have fully trained in the ways of the Ascended. The blade seems to be able to cut through almost anything!",
-      "imageUrl": "http://i.imgur.com/79uR4I2.gif"
+      "imageUrl": "http://i.imgur.com/79uR4I2.gif",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -5541,7 +5651,8 @@
     "itemType": "Scythe",
     "shared": {
       "description": "Crafted by Ashendal in a... different time, this blade hums with kinetic energy.",
-      "imageUrl": "http://i.imgur.com/cL2iS9c.png"
+      "imageUrl": "http://i.imgur.com/cL2iS9c.png",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -5804,7 +5915,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isCosmetic": true
+    "isCosmetic": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-asteraceae",
@@ -5888,7 +6000,8 @@
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Asteraceae.png",
       "element": "GOO",
       "rarity": "60",
-      "notes": "Weapon cannot be destroyed.\nWeapon has Mana flavor resistance."
+      "notes": "Weapon cannot be destroyed.\nWeapon has Mana flavor resistance.",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -6184,7 +6297,8 @@
     "daRequired": false,
     "dcRequired": true,
     "isCosmetic": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-astravian-key",
@@ -6223,7 +6337,8 @@
     "daRequired": false,
     "dcRequired": true,
     "isCosmetic": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-astravian-paladin-s-blade",
@@ -6313,7 +6428,8 @@
     "daRequired": false,
     "dcRequired": true,
     "isCosmetic": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-atherion",
@@ -6361,7 +6477,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isCosmetic": true
+    "isCosmetic": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-aurora-key",
@@ -6383,7 +6500,7 @@
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=18663911",
         "title": "DF Encyclopedia: Aurora Key, The",
-        "variantLabel": "The Aurora Key",
+        "variantLabel": "Aurora Key, The",
         "isPrimary": true
       },
       {
@@ -6415,7 +6532,8 @@
     "shared": {
       "description": "A key to the Equilibrium Gate, a key to victory against your opponents.",
       "element": "LIG",
-      "rarity": "10"
+      "rarity": "10",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -6606,7 +6724,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isCosmetic": true
+    "isCosmetic": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-auto-mecha-hitting-things-cube",
@@ -6642,7 +6761,8 @@
     ],
     "daRequired": true,
     "isCosmetic": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-autumn-s-cull",
@@ -6735,7 +6855,8 @@
           "caption": "Ice"
         }
       ],
-      "notes": "Click anywhere on the weapon to change between its available elements; this will also change its appearance, and the appearance of any Helm of Autumn's Call or Autumn's Grace cape equipped or shown."
+      "notes": "Click anywhere on the weapon to change between its available elements; this will also change its appearance, and the appearance of any Helm of Autumn's Call or Autumn's Grace cape equipped or shown.",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -7033,7 +7154,8 @@
     "shared": {
       "description": "This light, swift scythe was blessed by the Avatar's themselves!",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Avatar'sWingedScythe.png",
-      "element": "WIN"
+      "element": "WIN",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -7216,7 +7338,8 @@
     "daRequired": false,
     "dcRequired": true,
     "isCosmetic": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-battle-worn-doom-blade",
@@ -7289,7 +7412,8 @@
         "trigger": "Your weapon special activates on hit.",
         "effect": "Applies 'Doomed' (-25% Boost) to target for 2 turns. (Pop-up: Your foe cowers before your power!) (Rate: 5%)",
         "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-OnHit.png"
-      }
+      },
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -7540,7 +7664,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isCosmetic": true
+    "isCosmetic": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-best-scythe",
@@ -7583,7 +7708,8 @@
     "shared": {
       "description": "This scythe is the best around!",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/BestScythe.png",
-      "notes": "Weapon is automatically upgraded to the highest level a player can use; once a new level threshold has been reached, players must relog to obtain the new version."
+      "notes": "Weapon is automatically upgraded to the highest level a player can use; once a new level threshold has been reached, players must relog to obtain the new version.",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -7733,7 +7859,8 @@
     "daRequired": false,
     "dcRequired": true,
     "isCosmetic": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-black-ice",
@@ -7776,7 +7903,8 @@
       "ice",
       "free"
     ],
-    "daRequired": true
+    "daRequired": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-blade",
@@ -8015,7 +8143,7 @@
   },
   {
     "id": "weapon-blade-of-awe",
-    "familyName": "Blade Of Awe",
+    "familyName": "Blade of Awe",
     "slug": "weapon-blade-of-awe",
     "aliasSlugs": [
       "weapon-antique-blade-of-awe",
@@ -8044,7 +8172,8 @@
     "shared": {
       "description": "Could this be the real thing?! Reforged from the past, this certainly looks like the Blade of Awe from legend. (Cosmetic)",
       "resists": "None",
-      "notes": "Weapon is animated; the green circle on the hilt rotates continuously and data scrolls downwards through the weapon."
+      "notes": "Weapon is animated; the green circle on the hilt rotates continuously and data scrolls downwards through the weapon.",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -8157,7 +8286,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isCosmetic": true
+    "isCosmetic": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-blade-of-destiny",
@@ -8253,7 +8383,8 @@
           "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-OnHit.png",
           "notes": "The On-Demand skill button overrides the On-Hit skill button.\nWeapon's On-Hit special is only exclusive to its Level 90 version.\nBlade of Destiny's On-Hit special is able to to activate alongside its On-Demand special.\nWeapons are animated; the Elemental Spirit part of the blade glows periodically.\nThe following changes were implemented to Blade of Destiny (50-80) on January 28th, 2019:\n  • Special's damage was increased from 3 hits of 100% damage (300%) to 3 hits of 200% damage (600%).\n  • Rate was lowered from 20% to 10%.\nThe following changes were implemented to Blade of Destiny (50-80) on February 5th, 2021:\n  • Special's damage was lowered from 3 hits of 200% damage (600%) to 3 hits of 75% damage (225%).\n  • Activation rate was increased from 10% to 20%.\n  • A 'Weaken' effect that applied -30 Light Resist to target for 5 turns inclusive was added.\nA Level 90 version was released as a direct upgrade to Blade of Destiny (80) on June 3rd, 2022.\nThe following changes were implemented to Blade of Destiny (90) on July 8th, 2022:\n  • Previously had the description: You have helped Ash complete his quest to become a Knight! The Blade of Destiny is yours.\n  • An On-Hit special that applied 'Overwhelming Light' (-30 Light Resist) to target for 3 turns inclusive on a 7% chance was added.\n  • On-Attack special's activation rate was modified from 20% to 7%.\nThe following changes were implemented to Blade of Destiny (50-90) on September 1st, 2023:\n  • Level 90 version previously had the description: You have helped Ash complete his quest to become a Knight! The Blade of Destiny is yours. Has a chance on hit to reduce foe's Light resistance by 30 for 3 turns.\n  • 'Weaken' effect was removed from its On-Attack Special.\n  • Special's damage was increased from 3 hits of 75% damage (225%) to 3 hits of 100% damage (300%).\n  • 'Overwhelming Light' was replaced by a Non-Crit/Crit Damage Reduction effect called 'Destiny's Light Guard'.\n  • On-Hit special's activation rate was increased from 7% to 10%, which can also be increased to 20% if player attacks with the Light element.\n  • On-Attack special's activation rate was increased from 7% to 20% for the Level 90 version.\nOn-Demand special's damage was reduced from 3 hits of 100% damage (300%) to 3 hits of 67% Light damage (201%) on September 8th, 2023."
         }
-      ]
+      ],
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -8445,7 +8576,8 @@
     "itemType": "Scythe",
     "shared": {
       "description": "This is the kind of weapon that is only mentioned as a whisper. Cursed by evil deeds, it seems to have a will of its own. Or is that the influence of a hero turned evil?",
-      "imageUrl": "http://i.imgur.com/nARTx6c.png"
+      "imageUrl": "http://i.imgur.com/nARTx6c.png",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -8546,7 +8678,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isCosmetic": true
+    "isCosmetic": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-blade-of-glory",
@@ -8576,7 +8709,8 @@
     "itemType": "Scythe",
     "shared": {
       "description": "Even when you are gone, this blade will carry your name and legend into the future. The blade of a true hero, molded by their actions.",
-      "imageUrl": "http://i.imgur.com/G4ld4jE.png"
+      "imageUrl": "http://i.imgur.com/G4ld4jE.png",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -8670,7 +8804,8 @@
     "itemType": "Scythe",
     "shared": {
       "description": "A perfect sword for the hero-to-be.",
-      "imageUrl": "http://i.imgur.com/OpfafDD.png"
+      "imageUrl": "http://i.imgur.com/OpfafDD.png",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -8764,7 +8899,8 @@
     "itemType": "Scythe",
     "shared": {
       "description": "For the hero who has been driven to evil. Once on a proud and righteous path, this blade has been modified to suit the needs of an infamous villain.",
-      "imageUrl": "http://i.imgur.com/qn3MLqV.png"
+      "imageUrl": "http://i.imgur.com/qn3MLqV.png",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -8906,7 +9042,8 @@
     "itemType": "Scythe",
     "shared": {
       "description": "This blade once belonged to Janus. Be careful it doesn't turn on you like the previous owner turned on his comrades!",
-      "imageUrl": "http://i.imgur.com/3O5UUkg.png"
+      "imageUrl": "http://i.imgur.com/3O5UUkg.png",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -9210,7 +9347,8 @@
     "daRequired": false,
     "dcRequired": true,
     "isCosmetic": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-blade-of-legends",
@@ -9240,7 +9378,8 @@
     "itemType": "Scythe",
     "shared": {
       "description": "Known across the land, the hero who wields this blade will be a legend. It glows with the righteous power of its wielder!",
-      "imageUrl": "http://i.imgur.com/n4yaVUV.png"
+      "imageUrl": "http://i.imgur.com/n4yaVUV.png",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -9380,7 +9519,8 @@
     "shared": {
       "description": "Gifted to Valentidus by Love herself to use against the spiteful Odium, this weapon of love now finds its way into your grasp. Many have tried, but none have forged its match in craftsmanship!",
       "imageUrl": "https://i.imgur.com/ebk9rG3.png",
-      "notes": "Weapons are animated; pink flames flickers continuously and hearts appear periodically."
+      "notes": "Weapons are animated; pink flames flickers continuously and hearts appear periodically.",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -9629,7 +9769,8 @@
     "itemType": "Scythe",
     "shared": {
       "description": "For the hero who is becoming known around the land- an upgraded version of the Blade of Heroism!",
-      "imageUrl": "http://i.imgur.com/FHBKjk3.png"
+      "imageUrl": "http://i.imgur.com/FHBKjk3.png",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -9718,7 +9859,8 @@
     "itemType": "Scythe",
     "shared": {
       "description": "This weapon will serve you well as you show how powerful you are!",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Default-BladeoftheAscended.png"
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Default-BladeoftheAscended.png",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -9867,55 +10009,55 @@
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=21968675",
         "title": "DF Encyclopedia: Blade of the Dark One",
-        "variantLabel": "The Blade of the Dark One",
+        "variantLabel": "Blade of the Dark One",
         "isPrimary": true
       },
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=21968676",
         "title": "DF Encyclopedia: Blade of the Dark One",
-        "variantLabel": "The Blade of the Dark One",
+        "variantLabel": "Blade of the Dark One",
         "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=21968678",
         "title": "DF Encyclopedia: Blade of the Dark One",
-        "variantLabel": "The Blade of the Dark One",
+        "variantLabel": "Blade of the Dark One",
         "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=21968680",
         "title": "DF Encyclopedia: Blade of the Dark One",
-        "variantLabel": "The Blade of the Dark One",
+        "variantLabel": "Blade of the Dark One",
         "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=21968681",
         "title": "DF Encyclopedia: Blade of the Dark One",
-        "variantLabel": "The Blade of the Dark One",
+        "variantLabel": "Blade of the Dark One",
         "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=21968684",
         "title": "DF Encyclopedia: Blade of the Dark One",
-        "variantLabel": "The Blade of the Dark One",
+        "variantLabel": "Blade of the Dark One",
         "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=21968687",
         "title": "DF Encyclopedia: Blade of the Dark One",
-        "variantLabel": "The Blade of the Dark One",
+        "variantLabel": "Blade of the Dark One",
         "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=21968688",
         "title": "DF Encyclopedia: Blade of the Dark One",
-        "variantLabel": "The Blade of the Dark One",
+        "variantLabel": "Blade of the Dark One",
         "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=21968691",
         "title": "DF Encyclopedia: Blade of the Dark One",
-        "variantLabel": "The Blade of the Dark One",
+        "variantLabel": "Blade of the Dark One",
         "isPrimary": false
       }
     ],
@@ -10445,7 +10587,8 @@
     "shared": {
       "description": "A sinister cutlass with a gilded blade, said to have been forged from the wreckage of the infamous lost ship: The Golden Keel. Proof of victory over Keelhaul, the Sunken.",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/BladeoftheGoldenKeel.png",
-      "notes": "Weapons are animated; the pommel pulsates with an aquamarine glow."
+      "notes": "Weapons are animated; the pommel pulsates with an aquamarine glow.",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -10565,7 +10708,7 @@
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=22425252",
         "title": "DF Encyclopedia: Blade of the Lost Plain",
-        "variantLabel": "The Blade of the Lost Plain",
+        "variantLabel": "Blade of the Lost Plain",
         "isPrimary": false
       }
     ],
@@ -10579,7 +10722,8 @@
         "trigger": "Your weapon special activates on hit.",
         "effect": "Gains +100 Crit to every 3rd hit, but gains -100 Crit otherwise. (Rate: 100%)",
         "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-OnHit.png"
-      }
+      },
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -10699,7 +10843,8 @@
       "merge"
     ],
     "daRequired": true,
-    "isCosmetic": true
+    "isCosmetic": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-blades-of-the-great-one-gold",
@@ -10757,7 +10902,8 @@
           "caption": "Nature"
         }
       ],
-      "notes": "Click on the weapon's hilt to change between its available elements; this will also change its appearance; weapons are animated between transitions.\nII-IV versions previously required 1 Blades of The Great One & 1 Golden Hand Expertise; this was changed to require the previous version on October 4th, 2022.\nWeapons' default element became Stone on October 28th, 2022.\nWeapons were tiered with Roman numerals on December 3rd, 2022."
+      "notes": "Click on the weapon's hilt to change between its available elements; this will also change its appearance; weapons are animated between transitions.\nII-IV versions previously required 1 Blades of The Great One & 1 Golden Hand Expertise; this was changed to require the previous version on October 4th, 2022.\nWeapons' default element became Stone on October 28th, 2022.\nWeapons were tiered with Roman numerals on December 3rd, 2022.",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -10933,7 +11079,8 @@
           "caption": "Nature"
         }
       ],
-      "notes": "Click on the weapon's hilt to change between its available elements; this will also change its appearance; weapons are animated between transitions.\nII-IV versions previously required 1 Blades of The Great One & 1 Rose Expertise; this was changed to require the previous version on October 4th, 2022.\nWeapons' default element became Stone on October 28th, 2022.\nWeapons were tiered with Roman numerals on December 3rd, 2022."
+      "notes": "Click on the weapon's hilt to change between its available elements; this will also change its appearance; weapons are animated between transitions.\nII-IV versions previously required 1 Blades of The Great One & 1 Rose Expertise; this was changed to require the previous version on October 4th, 2022.\nWeapons' default element became Stone on October 28th, 2022.\nWeapons were tiered with Roman numerals on December 3rd, 2022.",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -11109,7 +11256,8 @@
           "caption": "Nature"
         }
       ],
-      "notes": "Click on the weapon's hilt to change between its available elements; this will also change its appearance; weapons are animated between transitions.\nII-IV versions previously required 1 Blades of The Great One & 1 Vind Expertise; this was changed to require the previous version on October 4th, 2022.\nWeapons' default element became Stone on October 28th, 2022.\nWeapons were tiered with Roman numerals on December 3rd, 2022."
+      "notes": "Click on the weapon's hilt to change between its available elements; this will also change its appearance; weapons are animated between transitions.\nII-IV versions previously required 1 Blades of The Great One & 1 Vind Expertise; this was changed to require the previous version on October 4th, 2022.\nWeapons' default element became Stone on October 28th, 2022.\nWeapons were tiered with Roman numerals on December 3rd, 2022.",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -11326,7 +11474,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isCosmetic": true
+    "isCosmetic": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-blood-of-the-hero",
@@ -11398,7 +11547,8 @@
     "itemType": "Scythe",
     "shared": {
       "description": "This cursed blade is infused with the corrupted blood of heroes harvested by Caitiff itself.",
-      "imageUrl": "http://i.imgur.com/IlwZK3f.png"
+      "imageUrl": "http://i.imgur.com/IlwZK3f.png",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -11670,7 +11820,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isCosmetic": true
+    "isCosmetic": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-bloody-point",
@@ -11761,7 +11912,8 @@
     "shared": {
       "description": "The essences of all the monster hearts you collected illuminate the blade!",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/BloodyPoint.png",
-      "notes": "Weapons are animated; the red chainsaw teeth move rapidly, while the skull's eyes glow red, and bats periodically appear and disappear from behind it."
+      "notes": "Weapons are animated; the red chainsaw teeth move rapidly, while the skull's eyes glow red, and bats periodically appear and disappear from behind it.",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -12105,7 +12257,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isCosmetic": true
+    "isCosmetic": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-blue-dahlia-reaper",
@@ -12180,7 +12333,8 @@
     "itemType": "Scythe",
     "shared": {
       "description": "An elegant weapon infused with the power of blue dahlias and the love of a mother. It makes no sound when it swings through the air.",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/BlueDahliaReaper.png"
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/BlueDahliaReaper.png",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -12495,7 +12649,8 @@
     "itemType": "Scythe",
     "shared": {
       "description": "Bite into deliciousness!",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/BlueGummyandApplePop.png"
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/BlueGummyandApplePop.png",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -12800,7 +12955,7 @@
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=18661659",
         "title": "DF Encyclopedia: Bolt Key, The",
-        "variantLabel": "The Bolt Key",
+        "variantLabel": "Bolt Key, The",
         "isPrimary": true
       },
       {
@@ -12832,7 +12987,8 @@
     "shared": {
       "description": "A key to the Equilibrium Gate, a key to victory against your opponents.",
       "element": "ENE",
-      "rarity": "10"
+      "rarity": "10",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -13013,7 +13169,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isCosmetic": true
+    "isCosmetic": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-breakfastmancer-s-staff",
@@ -13052,7 +13209,8 @@
     "daRequired": false,
     "dcRequired": true,
     "isCosmetic": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-breath-of-life",
@@ -13124,7 +13282,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isCosmetic": true
+    "isCosmetic": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-brilliance",
@@ -13161,7 +13320,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isCosmetic": true
+    "isCosmetic": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-bronze-lorelympic-torch",
@@ -13215,7 +13375,8 @@
     "itemType": "Scythe",
     "shared": {
       "description": "Celebrate the 2012 Lorelympics with this fiery bronze torch!",
-      "imageUrl": "http://i.imgur.com/2aDRs.jpg"
+      "imageUrl": "http://i.imgur.com/2aDRs.jpg",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -13398,7 +13559,8 @@
     "daRequired": false,
     "dcRequired": true,
     "isCosmetic": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-bullseye-spear",
@@ -13667,7 +13829,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isCosmetic": true
+    "isCosmetic": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-butter-knife-unbread-default",
@@ -13749,7 +13912,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isCosmetic": true
+    "isCosmetic": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-caged-soul",
@@ -13788,7 +13952,8 @@
     "daRequired": false,
     "dcRequired": true,
     "isCosmetic": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-can-tdle",
@@ -13837,7 +14002,8 @@
     "daRequired": false,
     "dcRequired": true,
     "dmRequired": true,
-    "isCosmetic": true
+    "isCosmetic": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-candled-cane",
@@ -13875,7 +14041,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isCosmetic": true
+    "isCosmetic": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-captain-s-cutlass",
@@ -14082,7 +14249,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isCosmetic": true
+    "isCosmetic": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-carnax-devotee-s-battleaxe",
@@ -14120,7 +14288,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isCosmetic": true
+    "isCosmetic": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-cat-s-eye-reaper",
@@ -14181,7 +14350,8 @@
     "itemType": "Scythe",
     "shared": {
       "description": "Ebony, iron, amber, and obsidian come together to form this wickedly sharp scythe, guaranteed to reap your way through your enemies. The blade bears a cat's eye, enchanted by the light of a full moon.",
-      "imageUrl": "http://i760.photobucket.com/albums/xx245/True_Mortal/m12reaper.png"
+      "imageUrl": "http://i760.photobucket.com/albums/xx245/True_Mortal/m12reaper.png",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -14405,7 +14575,8 @@
     "itemType": "Scythe",
     "shared": {
       "description": "The power of light flows from the intricate celtic knot adorning this scythe.",
-      "imageUrl": "http://i202.photobucket.com/albums/aa185/gmill711/Dragon%20Fable/CelticRainbow.jpg"
+      "imageUrl": "http://i202.photobucket.com/albums/aa185/gmill711/Dragon%20Fable/CelticRainbow.jpg",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -14668,7 +14839,8 @@
           "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-OnHit.png",
           "notes": "The On-Demand skill button overrides the On-Hit skill button.\nChaosRager's On-Hit special is able to to activate alongside its On-Demand special, however this has a very low chance of occurring.\nWeapons are animated; magic appears to flow beneath the surface of the magenta crystalline blade of the scythe.\nOn-Demand special's cooldown was lowered from 50 to 5 and On-Hit proc rate was raised from 2% to 20% on September 8th, 2023."
         }
-      ]
+      ],
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -14926,7 +15098,8 @@
       "imageUrl": "http://i202.photobucket.com/albums/aa185/gmill711/Dragon%20Fable/ChaosWeaverDefenderScythe.jpg",
       "element": "FIR",
       "rarity": "15",
-      "notes": "Weapon is animated; the scythe's chains moves continuously and the blue flame at the top of the scythe flicks continuously."
+      "notes": "Weapon is animated; the scythe's chains moves continuously and the blue flame at the top of the scythe flicks continuously.",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -15184,7 +15357,8 @@
           "caption": "Clicked"
         }
       ],
-      "notes": "Click anywhere on the weapon to change between two appearances."
+      "notes": "Click anywhere on the weapon to change between two appearances.",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -15318,7 +15492,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isCosmetic": true
+    "isCosmetic": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-chaotic-longsword",
@@ -15356,7 +15531,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isCosmetic": true
+    "isCosmetic": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-chaotic-threadhook",
@@ -15400,7 +15576,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isCosmetic": true
+    "isCosmetic": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-chaotic-twiststaff",
@@ -15438,7 +15615,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isCosmetic": true
+    "isCosmetic": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-charisong",
@@ -15504,7 +15682,8 @@
     "itemType": "Scythe",
     "shared": {
       "description": "The partner to Ghost's Blade of Spooky Hotness, Charisong holds the soul of a certain princess that Ghost is trying to free.",
-      "imageUrl": "http://i.imgur.com/vW08L52.png"
+      "imageUrl": "http://i.imgur.com/vW08L52.png",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -15724,56 +15903,57 @@
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=22243111",
         "title": "DF Encyclopedia: Cheese Slicer",
-        "variantLabel": "The Cheese Slicer",
+        "variantLabel": "Cheese Slicer",
         "isPrimary": true
       },
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=22243112",
         "title": "DF Encyclopedia: Cheese Slicer",
-        "variantLabel": "The Cheese Slicer",
+        "variantLabel": "Cheese Slicer",
         "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=22243114",
         "title": "DF Encyclopedia: Cheese Slicer",
-        "variantLabel": "The Cheese Slicer",
+        "variantLabel": "Cheese Slicer",
         "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=22243115",
         "title": "DF Encyclopedia: Cheese Slicer",
-        "variantLabel": "The Cheese Slicer",
+        "variantLabel": "Cheese Slicer",
         "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=22243117",
         "title": "DF Encyclopedia: Cheese Slicer",
-        "variantLabel": "The Cheese Slicer",
+        "variantLabel": "Cheese Slicer",
         "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=22243118",
         "title": "DF Encyclopedia: Cheese Slicer",
-        "variantLabel": "The Cheese Slicer",
+        "variantLabel": "Cheese Slicer",
         "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=22243119",
         "title": "DF Encyclopedia: Cheese Slicer",
-        "variantLabel": "The Cheese Slicer",
+        "variantLabel": "Cheese Slicer",
         "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=22243120",
         "title": "DF Encyclopedia: Cheese Slicer",
-        "variantLabel": "The Cheese Slicer",
+        "variantLabel": "Cheese Slicer",
         "isPrimary": false
       }
     ],
     "itemType": "Scythe",
     "shared": {
       "description": "A grate way to slice up dinner... or your opponents!",
-      "imageUrl": "http://i.imgur.com/dujqGFl.png"
+      "imageUrl": "http://i.imgur.com/dujqGFl.png",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -16372,56 +16552,57 @@
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=22193322",
         "title": "DF Encyclopedia: Chicken On A Stick",
-        "variantLabel": "The Chicken On A Stick",
+        "variantLabel": "Chicken On A Stick",
         "isPrimary": true
       },
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=22193324",
         "title": "DF Encyclopedia: Chicken On A Stick",
-        "variantLabel": "The Chicken On A Stick",
+        "variantLabel": "Chicken On A Stick",
         "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=22193325",
         "title": "DF Encyclopedia: Chicken On A Stick",
-        "variantLabel": "The Chicken On A Stick",
+        "variantLabel": "Chicken On A Stick",
         "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=22193327",
         "title": "DF Encyclopedia: Chicken On A Stick",
-        "variantLabel": "The Chicken On A Stick",
+        "variantLabel": "Chicken On A Stick",
         "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=22193328",
         "title": "DF Encyclopedia: Chicken On A Stick",
-        "variantLabel": "The Chicken On A Stick",
+        "variantLabel": "Chicken On A Stick",
         "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=22193329",
         "title": "DF Encyclopedia: Chicken On A Stick",
-        "variantLabel": "The Chicken On A Stick",
+        "variantLabel": "Chicken On A Stick",
         "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=22193331",
         "title": "DF Encyclopedia: Chicken On A Stick",
-        "variantLabel": "The Chicken On A Stick",
+        "variantLabel": "Chicken On A Stick",
         "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=22193333",
         "title": "DF Encyclopedia: Chicken On A Stick",
-        "variantLabel": "The Chicken On A Stick",
+        "variantLabel": "Chicken On A Stick",
         "isPrimary": false
       }
     ],
     "itemType": "Scythe",
     "shared": {
       "description": "A piece of fried chicken speared onto a stick. It seems that some magic is keeping it piping hot and tasty! Don't eat too much of it, though.",
-      "imageUrl": "http://i.imgur.com/pi8MJsB.png"
+      "imageUrl": "http://i.imgur.com/pi8MJsB.png",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -16918,7 +17099,8 @@
     "shared": {
       "description": "Give yourself an edge in a time of chaos!",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/ChronocorrupterEdge.png",
-      "notes": "Weapon cannot be destroyed.\nWeapons are animated; eyes on the scythe appear to look around rapidly."
+      "notes": "Weapon cannot be destroyed.\nWeapons are animated; eyes on the scythe appear to look around rapidly.",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -17934,7 +18116,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isCosmetic": true
+    "isCosmetic": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-claws-cat-default",
@@ -17970,7 +18153,8 @@
     ],
     "daRequired": false,
     "isTemp": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-claws-fae-default",
@@ -18005,7 +18189,8 @@
       "free"
     ],
     "daRequired": false,
-    "isTemp": true
+    "isTemp": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-cloud-key",
@@ -18027,7 +18212,7 @@
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=18661680",
         "title": "DF Encyclopedia: Cloud Key, The",
-        "variantLabel": "The Cloud Key",
+        "variantLabel": "Cloud Key, The",
         "isPrimary": true
       },
       {
@@ -18059,7 +18244,8 @@
     "shared": {
       "description": "A key to the Equilibrium Gate, a key to victory against your opponents.",
       "element": "WIN",
-      "rarity": "10"
+      "rarity": "10",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -18239,7 +18425,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isCosmetic": true
+    "isCosmetic": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-company-parasol",
@@ -18279,7 +18466,8 @@
     "itemType": "Scythe",
     "shared": {
       "description": "A strange company logo is embroidered into this umbrella. What could it mean?",
-      "imageUrl": "http://i202.photobucket.com/albums/aa185/gmill711/Dragon%20Fable/CompanyParasol.png"
+      "imageUrl": "http://i202.photobucket.com/albums/aa185/gmill711/Dragon%20Fable/CompanyParasol.png",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -18423,7 +18611,8 @@
     "daRequired": false,
     "dcRequired": true,
     "isCosmetic": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-convenient-gravestone",
@@ -18463,7 +18652,8 @@
     "daRequired": false,
     "dcRequired": true,
     "isCosmetic": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-cool-sword-the",
@@ -18502,7 +18692,8 @@
     "daRequired": false,
     "dcRequired": true,
     "isCosmetic": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-core-key",
@@ -18545,7 +18736,8 @@
     "shared": {
       "description": "A mysterious key that emanates pure magic power. Could it have come from the Mana Core itself? Not to be confused with a corgi.",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/CoreKey.png",
-      "notes": "Weapons are animated; it has many moving, spinning, and rotating components, while the scythe itself periodically crackles with energy, and the stem buzzes with mana continuously."
+      "notes": "Weapons are animated; it has many moving, spinning, and rotating components, while the scythe itself periodically crackles with energy, and the stem buzzes with mana continuously.",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -18709,7 +18901,8 @@
         "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-%3F%3F%3F.png",
         "cooldown": "3 - [(Player LUK/50), rounded down], floored at 2",
         "chargeTime": "2 - [(Player LUK/100), rounded down], floored at 1"
-      }
+      },
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -19013,7 +19206,8 @@
     "daRequired": false,
     "dcRequired": true,
     "isCosmetic": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-crossbow-apprentice-hero-default",
@@ -19049,7 +19243,8 @@
       "free"
     ],
     "daRequired": false,
-    "isTemp": true
+    "isTemp": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-crymson-tear",
@@ -19090,7 +19285,8 @@
     "shared": {
       "description": "Shimmering with splendor.\n\n Coagulated life.\n\n Eternal crescendo.",
       "imageUrl": "https://i.imgur.com/5FDFUFR.png",
-      "notes": "Weapons were DC tagged on July 29th, 2022."
+      "notes": "Weapons were DC tagged on July 29th, 2022.",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -19290,7 +19486,8 @@
     "shared": {
       "description": "Crafted by Dracelix, this crystal sword celebrates the New Year ALL year with fireworks! Happy 2014!",
       "imageUrl": "https://i.imgur.com/YnvzIrU.png",
-      "notes": "Weapon cannot be destroyed.\nWeapons are animated; red, blue, or green fireworks appears on the blade periodically."
+      "notes": "Weapon cannot be destroyed.\nWeapons are animated; red, blue, or green fireworks appears on the blade periodically.",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -19714,7 +19911,8 @@
     "shared": {
       "description": "The crystal of the blade itself sings as you swing it! Happy Frostval, 2012!",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/CrystalFrostvalScythe.png",
-      "notes": "Transformed from Purple Gift Box on January 1st, 2013.\nWeapons are animated; the crystal blade shimmers continuously, while a gold pattern runs along the stem periodically."
+      "notes": "Transformed from Purple Gift Box on January 1st, 2013.\nWeapons are animated; the crystal blade shimmers continuously, while a gold pattern runs along the stem periodically.",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -20106,7 +20304,8 @@
     "itemType": "Scythe",
     "shared": {
       "description": "This blade is half of an ancient blade once guarded by the Vizalain. Its other half was lost to Darkness, but this weapon will help you to fight against evil!",
-      "imageUrl": "http://i.imgur.com/Y8dxOtr.png"
+      "imageUrl": "http://i.imgur.com/Y8dxOtr.png",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -20369,7 +20568,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isCosmetic": true
+    "isCosmetic": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-cysero-s-hand-sock",
@@ -20408,7 +20608,8 @@
     "daRequired": false,
     "dcRequired": true,
     "isCosmetic": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-cysero-s-portable-anvil",
@@ -20448,7 +20649,8 @@
     "daRequired": false,
     "dcRequired": true,
     "isCosmetic": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-cysero-s-spare-hammer",
@@ -20515,7 +20717,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isCosmetic": true
+    "isCosmetic": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-cysero-s-splatula",
@@ -20626,7 +20829,8 @@
         "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-Fire.png",
         "cooldown": "10 - [(Player LUK/50), rounded down]",
         "chargeTime": "5 - [(Player LUK/100), rounded down]"
-      }
+      },
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -21032,7 +21236,8 @@
     "daRequired": false,
     "dcRequired": true,
     "isCosmetic": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-dage-s-desolation",
@@ -21080,7 +21285,8 @@
     "itemType": "Scythe",
     "shared": {
       "description": "A legendary shining blade from another time and place. It feels... evil.",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Dage'sDesolation.png"
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Dage'sDesolation.png",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -22246,7 +22452,8 @@
     "daRequired": false,
     "dcRequired": true,
     "isCosmetic": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-dark-dragonlord-s-edge",
@@ -23560,7 +23767,8 @@
     "shared": {
       "description": "Discovered in the depths of a frozen cave, the Frostcythe has been reforged in darkness for Black Friday, 2013!",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/DarkFrostscythe.png",
-      "notes": "Weapon cannot be destroyed.\nWeapons are animated; the eye on the scythe blinks periodically."
+      "notes": "Weapon cannot be destroyed.\nWeapons are animated; the eye on the scythe blinks periodically.",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -23976,7 +24184,8 @@
     "itemType": "Scythe",
     "shared": {
       "description": "Bite into deliciousness!",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/DarkGummyandRaspberryPop.png"
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/DarkGummyandRaspberryPop.png",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -25266,7 +25475,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isCosmetic": true
+    "isCosmetic": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-darkscale-scourge",
@@ -25303,7 +25513,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isCosmetic": true
+    "isCosmetic": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-death-s-scythe",
@@ -25357,7 +25568,8 @@
     "shared": {
       "description": "Touched by the hand of Death himself, this void scythe is bound with the strings of fate.",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Death'sRoyalScythe.png",
-      "element": "???"
+      "element": "???",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -25523,7 +25735,7 @@
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=21830012",
         "title": "DF Encyclopedia: DeathKnight Blade",
-        "variantLabel": "The Deathknight Blade",
+        "variantLabel": "DeathKnight Blade",
         "isPrimary": true
       },
       {
@@ -25757,7 +25969,8 @@
           "caption": "All Appearances"
         }
       ],
-      "notes": "Weapons' appearance is attuned to the player's equipped weapon's element; refer to this chart for all appearances.\nWood elemental attunement became accessible upon the release of Spare Chair on January 28th, 2023."
+      "notes": "Weapons' appearance is attuned to the player's equipped weapon's element; refer to this chart for all appearances.\nWood elemental attunement became accessible upon the release of Spare Chair on January 28th, 2023.",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -25956,7 +26169,8 @@
     "dcRequired": true,
     "dmRequired": true,
     "isCosmetic": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-dekanor-s-will",
@@ -25993,7 +26207,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isCosmetic": true
+    "isCosmetic": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-delicious-apple",
@@ -26031,7 +26246,8 @@
     "daRequired": false,
     "dcRequired": true,
     "isCosmetic": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-delta-star-saber",
@@ -26075,7 +26291,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isCosmetic": true
+    "isCosmetic": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-demnra-s-deception",
@@ -26168,7 +26385,8 @@
           "caption": "In Combat"
         }
       ],
-      "notes": "Weapons cannot be destroyed.\nWeapons are color-custom; the elemental spirit core and scythe blade are linked to the player's trim color.\nWeapons appear to be a spear out of combat, but deceptively become a scythe in combat, hence their name."
+      "notes": "Weapons cannot be destroyed.\nWeapons are color-custom; the elemental spirit core and scythe blade are linked to the player's trim color.\nWeapons appear to be a spear out of combat, but deceptively become a scythe in combat, hence their name.",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -26478,7 +26696,8 @@
     "itemType": "Scythe",
     "shared": {
       "description": "This blade seems to shift in and out of view slightly just like the dimensional shard. Are they connected somehow?",
-      "imageUrl": "http://i.imgur.com/2pNgVQ4.jpg"
+      "imageUrl": "http://i.imgur.com/2pNgVQ4.jpg",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -26753,7 +26972,8 @@
         "trigger": "Your weapon special activates on hit.",
         "effect": "Applies 'Doomed' (-25% Boost) to target for 2 turns. (Pop-up: Your foe cowers before your power!) (Rate: 5%)",
         "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-OnHit.png"
-      }
+      },
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -27054,7 +27274,8 @@
         "trigger": "Your weapon special activates on hit.",
         "effect": "Applies 'Corruption', a 20% Magic Evil weapon damage effect, to target for 5 turns. (Pop-up: The Doom Dragon Scythe is sapping your opponent's strength!) (Rate: 5%)",
         "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-OnHit.png"
-      }
+      },
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -27478,7 +27699,8 @@
       "free"
     ],
     "daRequired": false,
-    "isTemp": true
+    "isTemp": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-doomed-dragon-amulet-scythe-of-elementals",
@@ -29416,14 +29638,15 @@
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=22383401",
         "title": "DF Encyclopedia: Doomed Longsword",
-        "variantLabel": "The Doomed Longsword",
+        "variantLabel": "Doomed Longsword",
         "isPrimary": true
       }
     ],
     "itemType": "Scythe",
     "shared": {
       "description": "This cosmetic weapon will let your weapon take on the appearance of a Possessed Hero's Longsword!",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/DoomedLongsword.png"
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/DoomedLongsword.png",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -29508,14 +29731,15 @@
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=22383402",
         "title": "DF Encyclopedia: Doomed Poleaxe",
-        "variantLabel": "The Doomed Poleaxe",
+        "variantLabel": "Doomed Poleaxe",
         "isPrimary": true
       }
     ],
     "itemType": "Scythe",
     "shared": {
       "description": "This cosmetic weapon will let your weapon take on the appearance of a Possessed Warrior's poleaxe!",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/DoomedPoleaxe.png"
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/DoomedPoleaxe.png",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -29775,7 +29999,8 @@
     "daRequired": false,
     "dcRequired": true,
     "isCosmetic": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-dracogrenwog-slayer-spear",
@@ -29813,7 +30038,8 @@
     "daRequired": false,
     "dcRequired": true,
     "isCosmetic": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-draconic-brightspark",
@@ -30521,7 +30747,8 @@
     "daRequired": false,
     "dcRequired": true,
     "isCosmetic": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-draegon-scythe",
@@ -30575,7 +30802,8 @@
     "itemType": "Scythe",
     "shared": {
       "description": "Thank you for supporting us for 10 amazing years! You can upgrade this weapon at the Black Market Moglin.",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/DrAEgonScythe.png"
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/DrAEgonScythe.png",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -31284,7 +31512,8 @@
         "trigger": "Your weapon special activates on hit.",
         "effect": "Triggers on targets of 'Dragon' and 'Reptilian' race;\n  • +5 Bonus and +10% damage on targets of 'Reptilian' race. (Rate: 100%)\n    • During Arena at the Edge of Time challenges, damage bonus is reduced to +5%.\n  • +10 Bonus and +15% damage on targets of 'Dragon' race. (Rate: 100%)\n    • During Arena at the Edge of Time challenges, damage bonus is reduced to +10%.",
         "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-OnHit.png"
-      }
+      },
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -31562,7 +31791,8 @@
     "itemType": "Scythe",
     "shared": {
       "description": "Dragon Clan Ice Giants were noted for carrying these wicked blades into battle. Traditionally, those of the Dragon Clan were buried with these magnificent weapons.",
-      "imageUrl": "http://i.imgur.com/qaZQJtB.png"
+      "imageUrl": "http://i.imgur.com/qaZQJtB.png",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -32288,7 +32518,8 @@
           "caption": "Clicked"
         }
       ],
-      "notes": "Weapons are animated; the blade crackles with energy in its clicked appearance.\nClick on the base of the blade above the hilt to change between two appearances."
+      "notes": "Weapons are animated; the blade crackles with energy in its clicked appearance.\nClick on the base of the blade above the hilt to change between two appearances.",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -33450,7 +33681,8 @@
         "trigger": "Your weapon special activates on hit.",
         "effect": "Triggers on targets of 'Dragon' and 'Reptilian' race;\n  • +15% damage on targets of 'Reptilian' race. (Rate: 100%)\n    • During Arena at the Edge of Time challenges, damage bonus is reduced to +5%.\n  • +30% damage on targets of 'Dragon' race. (Rate: 100%)\n    • During Arena at the Edge of Time challenges, damage bonus is reduced to +10%.",
         "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-OnHit.png"
-      }
+      },
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -33714,7 +33946,8 @@
     "itemType": "Scythe",
     "shared": {
       "description": "A stolen scimitar that once belonged to one of Volgritian's great treasure hordes. Enchanted with dravir magic, each swing of this blade brings with it the flames of volcanoes.",
-      "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/weapons/DragonbornFlameScimitar.png"
+      "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/weapons/DragonbornFlameScimitar.png",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -34008,7 +34241,8 @@
     "itemType": "Scythe",
     "shared": {
       "description": "A stolen scimitar that once belonged to one of Volgritian's great treasure hordes. Enchanted with dravir magic, each swing of this blade brings with it the fury of the skies.",
-      "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/weapons/DragonbornThunderScimitar.png"
+      "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/weapons/DragonbornThunderScimitar.png",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -34264,7 +34498,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isCosmetic": true
+    "isCosmetic": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-dragoncrest",
@@ -34339,7 +34574,8 @@
           "caption": "Alternative 6"
         }
       ],
-      "notes": "Click on the weapon's gem(s) to change between six appearances."
+      "notes": "Click on the weapon's gem(s) to change between six appearances.",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -34508,7 +34744,8 @@
     "daRequired": false,
     "dcRequired": true,
     "isCosmetic": true,
-    "isSpecialOffer": true
+    "isSpecialOffer": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-dragonkeeper-s-drive",
@@ -34541,13 +34778,20 @@
     ],
     "notes": "Own this item to unlock the DragonKeeper Armor Customization options for Warrior, Mage, and Rogue classes.\nWeapon is animated; yellow shimmers on the blade appear, rise, and disappear continuously at random intervals.",
     "tags": [
-      "goo",
-      "gold"
+      "armor-customization",
+      "gold",
+      "goo"
     ],
     "daRequired": false,
     "dcRequired": true,
     "isCosmetic": true,
-    "isSpecialOffer": true
+    "isSpecialOffer": true,
+    "alsoSee": [],
+    "armorCustomization": {
+      "appearance": "DragonKeeper",
+      "modifies": "Warrior, Mage, and Rogue"
+    },
+    "hasArmorCustomization": true
   },
   {
     "id": "weapon-dragonlord-vath-sword",
@@ -34910,7 +35154,8 @@
     "daRequired": false,
     "dcRequired": true,
     "isCosmetic": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-dragonpoint",
@@ -34964,7 +35209,8 @@
     "itemType": "Scythe",
     "shared": {
       "description": "This spear's blade was treated with ice dragon scales, and enchanted to be a numbing cold.",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Dragonpoint.png"
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Dragonpoint.png",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -35724,7 +35970,7 @@
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=22426103",
         "title": "DF Encyclopedia: Dragonslayer's Spear",
-        "variantLabel": "The Dragonslayer's Spear",
+        "variantLabel": "Dragonslayer's Spear",
         "isPrimary": false
       }
     ],
@@ -35738,7 +35984,8 @@
         "trigger": "Your weapon special activates on hit.",
         "effect": "Triggers on targets of 'Dragon' and 'Reptilian' race;\n  • +15 Bonus and +15% damage on targets of 'Reptilian' race. (Rate: 100%)\n    • During Arena at the Edge of Time challenges, damage bonus is reduced to +10%.\n  • +15 Bonus and +30% damage on targets of 'Dragon' race. (Rate: 100%)\n    • During Arena at the Edge of Time challenges, damage bonus is reduced to +10%.",
         "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-OnHit.png"
-      }
+      },
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -35894,7 +36141,8 @@
     "shared": {
       "description": "A plush dragon, made for you by your dragon, with the help of the people of Falconreach! Perfect for hugging, squishing, and destroying your foes.",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Drahaj.png",
-      "notes": "Weapons have Marketability flavor resistance.\nWeapons are a reference to both the 'IKEA BL�HAJ Shark' and 'Don't Turn Me Into Marketable Plushies' memes.\nWeapons are color-custom; the plushie is linked to the player's dragon skin color, and the eye is linked to the player's dragon eye color.\nClick anywhere on the weapon to reposition it through a total of 3 different positions; this functionality was added on June 23rd, 2023."
+      "notes": "Weapons have Marketability flavor resistance.\nWeapons are a reference to both the 'IKEA BLAHAJ Shark' and 'Don't Turn Me Into Marketable Plushies' memes.\nWeapons are color-custom; the plushie is linked to the player's dragon skin color, and the eye is linked to the player's dragon eye color.\nClick anywhere on the weapon to reposition it through a total of 3 different positions; this functionality was added on June 23rd, 2023.",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -36371,13 +36619,13 @@
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=18326936",
         "title": "DF Encyclopedia: Dread Scythe",
-        "variantLabel": "The Dread Scythe",
+        "variantLabel": "Dread Scythe",
         "isPrimary": true
       },
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=21984901",
         "title": "DF Encyclopedia: Dread Scythe",
-        "variantLabel": "The Dread Scythe",
+        "variantLabel": "Dread Scythe",
         "isPrimary": false
       }
     ],
@@ -36536,7 +36784,8 @@
     "itemType": "Scythe",
     "shared": {
       "description": "This mystical weapon was only ever fired once. Charged with the might of Fire and Darkness elementals, that one shot was used by a pirate captain to vanquish an entire fleet of foes. Although out of energy, some residual magic still remains.",
-      "imageUrl": "http://i.imgur.com/XuYZXy8.png"
+      "imageUrl": "http://i.imgur.com/XuYZXy8.png",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -36789,7 +37038,8 @@
     "itemType": "Scythe",
     "shared": {
       "description": "This cursed blade was once kept safe by the Ice Elves... until it was stolen by a knight who would stop at nothing to save his people.",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Dreadblight.png"
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Dreadblight.png",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -36933,7 +37183,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isCosmetic": true
+    "isCosmetic": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-dreadwyrm-katana",
@@ -36988,7 +37239,8 @@
     "shared": {
       "description": "Rewarded for defeating the mighty three headed dragon Trigoras, this katana was once used to slay the legendary Dreadwyrm, scourge of the far southern plains.",
       "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/weapons/DreadWyrmKatana.png",
-      "notes": "Weapons were DC tagged and tiered with Roman numerals on July 27th, 2022."
+      "notes": "Weapons were DC tagged and tiered with Roman numerals on July 27th, 2022.",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -37241,7 +37493,8 @@
           "caption": "Click zone to toggle appearance"
         }
       ],
-      "notes": "Click here on the weapon to change its appearance between scythe (default), sword, staff, and dagger."
+      "notes": "Click here on the weapon to change its appearance between scythe (default), sword, staff, and dagger.",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -37743,7 +37996,8 @@
     "dcRequired": true,
     "dmRequired": true,
     "isCosmetic": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-ebil-claw",
@@ -37785,7 +38039,8 @@
     "dcRequired": true,
     "dmRequired": true,
     "isCosmetic": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-ebil-spear",
@@ -37827,7 +38082,8 @@
     "dcRequired": true,
     "dmRequired": true,
     "isCosmetic": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-ebony-and-roses",
@@ -38103,7 +38359,8 @@
     "daRequired": false,
     "dcRequired": true,
     "isCosmetic": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-edelian-carryall",
@@ -38141,7 +38398,8 @@
     "daRequired": false,
     "dcRequired": true,
     "isCosmetic": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-edge-of-disillusion",
@@ -38181,7 +38439,8 @@
     "daRequired": false,
     "dcRequired": true,
     "isCosmetic": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-elvgorian-glacier",
@@ -38248,7 +38507,8 @@
     "shared": {
       "description": "Legendary keepers of time, the ancient Elvgorians would chant to ring in each new year as they carved magic blades from the glacier on which they lived. True Mortal modeled this scythe after their weapons to help ring in the New Year! Happy 2016!",
       "imageUrl": "http://i.imgur.com/PUp1tTf.png",
-      "notes": "Weapons are animated; ice runs across the scythe continuously."
+      "notes": "Weapons are animated; ice runs across the scythe continuously.",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -38493,7 +38753,7 @@
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=18661666",
         "title": "DF Encyclopedia: Ember Key, The",
-        "variantLabel": "The Ember Key",
+        "variantLabel": "Ember Key, The",
         "isPrimary": false
       },
       {
@@ -38513,7 +38773,8 @@
     "shared": {
       "description": "A key to the Equilibrium Gate, a key to victory against your opponents.",
       "element": "FIR",
-      "rarity": "10"
+      "rarity": "10",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -38722,7 +38983,8 @@
     "itemType": "Scythe",
     "shared": {
       "description": "This scythe was carved from a solid chunk of pure Emerald. It symbolizes your commitment to fight the darkness in whatever form it takes!",
-      "imageUrl": "http://i.imgur.com/uG5Ls6X.jpg"
+      "imageUrl": "http://i.imgur.com/uG5Ls6X.jpg",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -39111,7 +39373,7 @@
   },
   {
     "id": "weapon-equilibrium-key-of",
-    "familyName": "Equilibrium Key Of",
+    "familyName": "Equilibrium Key of",
     "slug": "weapon-equilibrium-key-of",
     "aliasSlugs": [
       "weapon-equilibrium-key-of-creation",
@@ -39140,7 +39402,8 @@
     "shared": {
       "description": "This mysterious key was discovered by intrepid explorers deep in the Void. Though none of them returned, this weapon did. (Cosmetic)",
       "resists": "None",
-      "rarity": "5"
+      "rarity": "5",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -39277,7 +39540,8 @@
     "shared": {
       "description": "Known by many names, this Staff of Inversion seems to have a mind of its own! You can upgrade this weapon at the Black Market Moglin.",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Escherion'sStaff.png",
-      "notes": "Weapons are animated; the flame atop the scythe flickers, while the eye looks around and blinks periodically, emitting a pulse."
+      "notes": "Weapons are animated; the flame atop the scythe flickers, while the eye looks around and blinks periodically, emitting a pulse.",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -39769,7 +40033,55 @@
         "itemType": "Scythe"
       },
       {
-        "levelNumber": 1,
+        "levelNumber": 2,
+        "levelDisplay": "1",
+        "actualLevel": 1,
+        "variantName": "(L)",
+        "name": "Eternal Drumstick",
+        "damage": "0-0",
+        "stats": "None",
+        "obtainVariants": [
+          {
+            "location": "A Fowl Feast",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "500 Gold",
+            "daRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22424949",
+        "description": "Blessed by the Lord of the Air, these drumsticks hold deep fried power within... But the magic that keeps it fresh also makes it extra unhealthy! On hit, heals 5 HP and recovers 5 MP, but suffer permanent stacking -1 END/WIS. (Special)(Cosmetic)",
+        "element": "BAC",
+        "resists": "None",
+        "rarity": "0",
+        "itemType": "Scythe"
+      },
+      {
+        "levelNumber": 3,
+        "levelDisplay": "1",
+        "actualLevel": 1,
+        "variantName": "(XL)",
+        "name": "Eternal Drumstick",
+        "damage": "0-0",
+        "stats": "None",
+        "obtainVariants": [
+          {
+            "location": "A Fowl Feast",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "500 Gold",
+            "daRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22424950",
+        "description": "Blessed by the Lord of the Air, these drumsticks hold deep fried power within... But the magic that keeps it fresh also makes it extra unhealthy! On hit, heals 5 HP and recovers 5 MP, but suffer permanent stacking -1 END/WIS. (Special)(Cosmetic)",
+        "element": "BAC",
+        "resists": "None",
+        "rarity": "0",
+        "itemType": "Scythe"
+      },
+      {
+        "levelNumber": 4,
         "levelDisplay": "1",
         "actualLevel": 1,
         "variantName": "(Base)",
@@ -39794,31 +40106,7 @@
         "itemType": "Scythe"
       },
       {
-        "levelNumber": 1,
-        "levelDisplay": "1",
-        "actualLevel": 1,
-        "variantName": "(L)",
-        "name": "Eternal Drumstick",
-        "damage": "0-0",
-        "stats": "None",
-        "obtainVariants": [
-          {
-            "location": "A Fowl Feast",
-            "price": "N/A",
-            "priceType": "free",
-            "sellback": "500 Gold",
-            "daRequired": true
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22424949",
-        "description": "Blessed by the Lord of the Air, these drumsticks hold deep fried power within... But the magic that keeps it fresh also makes it extra unhealthy! On hit, heals 5 HP and recovers 5 MP, but suffer permanent stacking -1 END/WIS. (Special)(Cosmetic)",
-        "element": "BAC",
-        "resists": "None",
-        "rarity": "0",
-        "itemType": "Scythe"
-      },
-      {
-        "levelNumber": 1,
+        "levelNumber": 5,
         "levelDisplay": "1",
         "actualLevel": 1,
         "variantName": "(L)",
@@ -39843,31 +40131,7 @@
         "itemType": "Scythe"
       },
       {
-        "levelNumber": 1,
-        "levelDisplay": "1",
-        "actualLevel": 1,
-        "variantName": "(XL)",
-        "name": "Eternal Drumstick",
-        "damage": "0-0",
-        "stats": "None",
-        "obtainVariants": [
-          {
-            "location": "A Fowl Feast",
-            "price": "N/A",
-            "priceType": "free",
-            "sellback": "500 Gold",
-            "daRequired": true
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22424950",
-        "description": "Blessed by the Lord of the Air, these drumsticks hold deep fried power within... But the magic that keeps it fresh also makes it extra unhealthy! On hit, heals 5 HP and recovers 5 MP, but suffer permanent stacking -1 END/WIS. (Special)(Cosmetic)",
-        "element": "BAC",
-        "resists": "None",
-        "rarity": "0",
-        "itemType": "Scythe"
-      },
-      {
-        "levelNumber": 1,
+        "levelNumber": 6,
         "levelDisplay": "1",
         "actualLevel": 1,
         "variantName": "(XL)",
@@ -39938,7 +40202,7 @@
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=21555555",
         "title": "DF Encyclopedia: Eternity Joy",
-        "variantLabel": "The Eternity Joy",
+        "variantLabel": "Eternity Joy",
         "isPrimary": false
       },
       {
@@ -40177,7 +40441,7 @@
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=20883025",
         "title": "DF Encyclopedia: Eternity Key",
-        "variantLabel": "The Eternity Key",
+        "variantLabel": "Eternity Key",
         "isPrimary": true
       },
       {
@@ -40474,7 +40738,7 @@
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=21114587",
         "title": "DF Encyclopedia: Eternity Love",
-        "variantLabel": "The Eternity Love",
+        "variantLabel": "Eternity Love",
         "isPrimary": true
       },
       {
@@ -40758,7 +41022,8 @@
           "caption": "Clicked"
         }
       ],
-      "notes": "Weapons have Mana flavor resistance.\nClick on the skull at the center of the weapon while equipped to swap its Bonus and Crit stats; this will also change its appearance."
+      "notes": "Weapons have Mana flavor resistance.\nClick on the skull at the center of the weapon while equipped to swap its Bonus and Crit stats; this will also change its appearance.",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -41563,7 +41828,8 @@
     "itemType": "Scythe",
     "shared": {
       "description": "This scythe was left behind after a nasty break-up. All the love was gone by the time this weapon got left behind.",
-      "imageUrl": "http://i.imgur.com/zrbHb1I.png"
+      "imageUrl": "http://i.imgur.com/zrbHb1I.png",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -41811,14 +42077,15 @@
           "caption": "Apotheosis"
         }
       ],
-      "notes": "Weapon cannot be destroyed.\nClick anywhere on the weapon to change between its available elements. (Pop-up: <Unity/Penultima/Apotheosis> element aligned to <Element>.)\nExalted Unity and Exalted Penultima's specials previously alternated element on hit; this was changed to on click on August 25th, 2023.\nPreviously had the descriptions:\n  • A powerful blade of Exalted design, used in a long forgotten war. Switches between Good and Evil damage per hit. Can be upgraded. (Exalted Unity)\n  • An ancient blade of Exalted design, used in a long forgotten war. Upgraded from the Exalted Unity. Switches between Good and Evil damage per hit. Can be upgraded. (Exalted Penultima)"
+      "notes": "Weapon cannot be destroyed.\nClick anywhere on the weapon to change between its available elements. (Pop-up: <Unity/Penultima/Apotheosis> element aligned to <Element>.)\nExalted Unity and Exalted Penultima's specials previously alternated element on hit; this was changed to on click on August 25th, 2023.\nPreviously had the descriptions:\n  • A powerful blade of Exalted design, used in a long forgotten war. Switches between Good and Evil damage per hit. Can be upgraded. (Exalted Unity)\n  • An ancient blade of Exalted design, used in a long forgotten war. Upgraded from the Exalted Unity. Switches between Good and Evil damage per hit. Can be upgraded. (Exalted Penultima)",
+      "alsoSee": []
     },
     "levelVariants": [
       {
         "levelNumber": 85,
         "levelDisplay": "85",
         "actualLevel": 85,
-        "variantName": "Exalted Unity",
+        "variantName": "Unity",
         "name": "Exalted Unity",
         "damage": "88-100",
         "stats": "Block +5, Dodge +5, Parry +5, Crit +10, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +10, END +10, CHA +10, LUK +10, INT +20, DEX +20, STR +20, Bonus +10",
@@ -41871,7 +42138,7 @@
         "levelNumber": 90,
         "levelDisplay": "90",
         "actualLevel": 90,
-        "variantName": "Exalted Apotheosis",
+        "variantName": "Apotheosis",
         "name": "Exalted Apotheosis",
         "damage": "94-106",
         "stats": "Block +6, Dodge +6, Parry +6, Crit +15, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +15, END +15, CHA +15, LUK +15, INT +24, DEX +24, STR +24, Bonus +15",
@@ -41945,7 +42212,8 @@
       "merge"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-experimental-captain-s-rifle",
@@ -41962,56 +42230,57 @@
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=22174627",
         "title": "DF Encyclopedia: Experimental Captain's Rifle",
-        "variantLabel": "The Experimental Captain's Rifle",
+        "variantLabel": "Experimental Captain's Rifle",
         "isPrimary": true
       },
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=22174628",
         "title": "DF Encyclopedia: Experimental Captain's Rifle",
-        "variantLabel": "The Experimental Captain's Rifle",
+        "variantLabel": "Experimental Captain's Rifle",
         "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=22174629",
         "title": "DF Encyclopedia: Experimental Captain's Rifle",
-        "variantLabel": "The Experimental Captain's Rifle",
+        "variantLabel": "Experimental Captain's Rifle",
         "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=22174630",
         "title": "DF Encyclopedia: Experimental Captain's Rifle",
-        "variantLabel": "The Experimental Captain's Rifle",
+        "variantLabel": "Experimental Captain's Rifle",
         "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=22174631",
         "title": "DF Encyclopedia: Experimental Captain's Rifle",
-        "variantLabel": "The Experimental Captain's Rifle",
+        "variantLabel": "Experimental Captain's Rifle",
         "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=22174632",
         "title": "DF Encyclopedia: Experimental Captain's Rifle",
-        "variantLabel": "The Experimental Captain's Rifle",
+        "variantLabel": "Experimental Captain's Rifle",
         "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=22174633",
         "title": "DF Encyclopedia: Experimental Captain's Rifle",
-        "variantLabel": "The Experimental Captain's Rifle",
+        "variantLabel": "Experimental Captain's Rifle",
         "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=22174634",
         "title": "DF Encyclopedia: Experimental Captain's Rifle",
-        "variantLabel": "The Experimental Captain's Rifle",
+        "variantLabel": "Experimental Captain's Rifle",
         "isPrimary": false
       }
     ],
     "itemType": "Scythe",
     "shared": {
       "description": "A pirate captain commissioned this rifle from a famous inventor. Pleased with the prototype, the captain threw the inventor overboard... and ran out of its custom made bullets in a week.",
-      "imageUrl": "http://i.imgur.com/zOnkGqr.png"
+      "imageUrl": "http://i.imgur.com/zOnkGqr.png",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -42505,7 +42774,8 @@
     "shared": {
       "description": "An ancient aspect of great craftsmanship.\n\n A prismatic exhibit of skill.\n\n An ornament of unseen potential.",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/FacetofHyonix.png",
-      "notes": "Weapons cannot be destroyed.\nWeapons are color-custom to the player's base and trim colors."
+      "notes": "Weapons cannot be destroyed.\nWeapons are color-custom to the player's base and trim colors.",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -42789,7 +43059,8 @@
     "daRequired": false,
     "dcRequired": true,
     "isCosmetic": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-fallcon-s-guitar",
@@ -42806,56 +43077,57 @@
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=22029692",
         "title": "DF Encyclopedia: Fallcon's Guitar",
-        "variantLabel": "The Fallcon's Guitar",
+        "variantLabel": "Fallcon's Guitar",
         "isPrimary": true
       },
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=22029693",
         "title": "DF Encyclopedia: Fallcon's Guitar",
-        "variantLabel": "The Fallcon's Guitar",
+        "variantLabel": "Fallcon's Guitar",
         "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=22029694",
         "title": "DF Encyclopedia: Fallcon's Guitar",
-        "variantLabel": "The Fallcon's Guitar",
+        "variantLabel": "Fallcon's Guitar",
         "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=22029696",
         "title": "DF Encyclopedia: Fallcon's Guitar",
-        "variantLabel": "The Fallcon's Guitar",
+        "variantLabel": "Fallcon's Guitar",
         "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=22029697",
         "title": "DF Encyclopedia: Fallcon's Guitar",
-        "variantLabel": "The Fallcon's Guitar",
+        "variantLabel": "Fallcon's Guitar",
         "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=22029698",
         "title": "DF Encyclopedia: Fallcon's Guitar",
-        "variantLabel": "The Fallcon's Guitar",
+        "variantLabel": "Fallcon's Guitar",
         "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=22029701",
         "title": "DF Encyclopedia: Fallcon's Guitar",
-        "variantLabel": "The Fallcon's Guitar",
+        "variantLabel": "Fallcon's Guitar",
         "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=22029703",
         "title": "DF Encyclopedia: Fallcon's Guitar",
-        "variantLabel": "The Fallcon's Guitar",
+        "variantLabel": "Fallcon's Guitar",
         "isPrimary": false
       }
     ],
     "itemType": "Scythe",
     "shared": {
       "description": "Left behind after the Fight for Late Night, this acoustic guitar can make sure your battles are filled with sick riffs and heavy hits!",
-      "imageUrl": "http://i.imgur.com/AUhQQHX.png"
+      "imageUrl": "http://i.imgur.com/AUhQQHX.png",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -43305,7 +43577,8 @@
     "daRequired": false,
     "dcRequired": true,
     "isCosmetic": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-festive-gift-opener",
@@ -43322,56 +43595,57 @@
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=22208181",
         "title": "DF Encyclopedia: Festive Gift Opener",
-        "variantLabel": "The Festive Gift Opener",
+        "variantLabel": "Festive Gift Opener",
         "isPrimary": true
       },
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=22208192",
         "title": "DF Encyclopedia: Festive Gift Opener",
-        "variantLabel": "The Festive Gift Opener",
+        "variantLabel": "Festive Gift Opener",
         "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=22208193",
         "title": "DF Encyclopedia: Festive Gift Opener",
-        "variantLabel": "The Festive Gift Opener",
+        "variantLabel": "Festive Gift Opener",
         "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=22208194",
         "title": "DF Encyclopedia: Festive Gift Opener",
-        "variantLabel": "The Festive Gift Opener",
+        "variantLabel": "Festive Gift Opener",
         "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=22208195",
         "title": "DF Encyclopedia: Festive Gift Opener",
-        "variantLabel": "The Festive Gift Opener",
+        "variantLabel": "Festive Gift Opener",
         "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=22208196",
         "title": "DF Encyclopedia: Festive Gift Opener",
-        "variantLabel": "The Festive Gift Opener",
+        "variantLabel": "Festive Gift Opener",
         "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=22208197",
         "title": "DF Encyclopedia: Festive Gift Opener",
-        "variantLabel": "The Festive Gift Opener",
+        "variantLabel": "Festive Gift Opener",
         "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=22208199",
         "title": "DF Encyclopedia: Festive Gift Opener",
-        "variantLabel": "The Festive Gift Opener",
+        "variantLabel": "Festive Gift Opener",
         "isPrimary": false
       }
     ],
     "itemType": "Scythe",
     "shared": {
       "description": "A very useful tool for opening gifts. Multiple gifts at a time. Your friends' gifts. Enemies. Just swing at something and it will open.",
-      "imageUrl": "http://i.imgur.com/Ot0tNfR.png"
+      "imageUrl": "http://i.imgur.com/Ot0tNfR.png",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -43827,7 +44101,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isCosmetic": true
+    "isCosmetic": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-field-coils-ancient-exosuit-default",
@@ -43863,7 +44138,8 @@
       "free"
     ],
     "daRequired": false,
-    "dcRequired": true
+    "dcRequired": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-fiery-gummy-and-cinnamon-pop",
@@ -43959,7 +44235,8 @@
     "itemType": "Scythe",
     "shared": {
       "description": "Bite into deliciousness!",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/FieryGummyandCinnamonPop.png"
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/FieryGummyandCinnamonPop.png",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -44648,7 +44925,8 @@
     "shared": {
       "description": "The sole treasure of an ancient long-forgotten dragon. With it in your hands, dawn shall break upon all of Lore.",
       "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/weapons/TheFinalSunrise.png",
-      "notes": "Weapons are animated; the blade and rune at the hilt pulsate continuously while glowing light particles periodically enter the rune at the hilt and pommel."
+      "notes": "Weapons are animated; the blade and rune at the hilt pulsate continuously while glowing light particles periodically enter the rune at the hilt and pommel.",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -44787,7 +45065,7 @@
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=20517135",
         "title": "DF Encyclopedia: Fire Soul",
-        "variantLabel": "The Fire Soul",
+        "variantLabel": "Fire Soul",
         "isPrimary": true
       },
       {
@@ -44836,7 +45114,8 @@
     "itemType": "Scythe",
     "shared": {
       "description": "Your soul burns for revenge! This item requires a Dragon Amulet.",
-      "imageUrl": "https://i.imgur.com/A7Kd0NE.png"
+      "imageUrl": "https://i.imgur.com/A7Kd0NE.png",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -45084,7 +45363,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isCosmetic": true
+    "isCosmetic": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-first-mate-s-cutlass",
@@ -45592,7 +45872,8 @@
       "free"
     ],
     "daRequired": false,
-    "isTemp": true
+    "isTemp": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-fists-of-fire-xan-default",
@@ -45627,7 +45908,8 @@
       "free"
     ],
     "daRequired": false,
-    "isTemp": true
+    "isTemp": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-flame-claw-scythe",
@@ -45661,7 +45943,7 @@
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=20315834",
         "title": "DF Encyclopedia: Flame Claw Scythe",
-        "variantLabel": "The Flame Claw Scythe",
+        "variantLabel": "Flame Claw Scythe",
         "isPrimary": false
       },
       {
@@ -45922,7 +46204,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isCosmetic": true
+    "isCosmetic": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-flamestop",
@@ -45977,7 +46260,8 @@
     "shared": {
       "description": "Get more power as you stop fire in its tracks! You can upgrade this weapon at the Black Market Moglin.",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Flamestop.png",
-      "notes": "Weapons are animated; a flare runs down the blade, while the midsection and base of the weapon radiates an icy glow."
+      "notes": "Weapons are animated; a flare runs down the blade, while the midsection and base of the weapon radiates an icy glow.",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -46181,7 +46465,7 @@
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=18661623",
         "title": "DF Encyclopedia: Flax Key, The",
-        "variantLabel": "The Flax Key",
+        "variantLabel": "Flax Key, The",
         "isPrimary": false
       },
       {
@@ -46201,7 +46485,8 @@
     "shared": {
       "description": "A key to the Equilibrium Gate, a key to victory against your opponents.",
       "element": "NAT",
-      "rarity": "10"
+      "rarity": "10",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -46388,13 +46673,13 @@
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=21122117",
         "title": "DF Encyclopedia: Foam Hammer",
-        "variantLabel": "The Foam Hammer",
+        "variantLabel": "Foam Hammer",
         "isPrimary": true
       },
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=21122119",
         "title": "DF Encyclopedia: Foam Hammer",
-        "variantLabel": "The Foam Hammer",
+        "variantLabel": "Foam Hammer",
         "isPrimary": false
       },
       {
@@ -46903,7 +47188,8 @@
     "itemType": "Scythe",
     "shared": {
       "description": "A warped and twisted looking axe that appears to be consumed by chaos! However, it's only an illusion. The axe actually emanates a powerful aura of Darkness. Proof of victory over the Chaos Twins.",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/ForcedReflection.png"
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/ForcedReflection.png",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -47141,7 +47427,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isCosmetic": true
+    "isCosmetic": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-forgotten-skull-sword",
@@ -47177,7 +47464,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isCosmetic": true
+    "isCosmetic": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-forgotten-spear",
@@ -47195,7 +47483,7 @@
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=22393279",
         "title": "DF Encyclopedia: Forgotten Spear",
-        "variantLabel": "The Forgotten Spear",
+        "variantLabel": "Forgotten Spear",
         "isPrimary": true
       },
       {
@@ -47218,7 +47506,8 @@
       "element": "MET",
       "resists": "None",
       "rarity": "0",
-      "notes": "Weapon had a temporary artwork until June 25th, 2021.\nWeapon's description excerpt, (Scythe-type weapons can be used with any stat type, STR, DEX, or INT.), was added to the description on May 24th, 2024."
+      "notes": "Weapon had a temporary artwork until June 25th, 2021.\nWeapon's description excerpt, (Scythe-type weapons can be used with any stat type, STR, DEX, or INT.), was added to the description on May 24th, 2024.",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -47338,7 +47627,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isCosmetic": true
+    "isCosmetic": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-frost-moglin-knight-s-glaive",
@@ -47413,7 +47703,8 @@
     "itemType": "Scythe",
     "shared": {
       "description": "The preferred weapon of the Frost Moglin Knights! It's been magically enlarged so you can wield it properly.",
-      "imageUrl": "https://i.imgur.com/PY7kcKt.png"
+      "imageUrl": "https://i.imgur.com/PY7kcKt.png",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -47686,7 +47977,8 @@
         "trigger": "Your weapon special activates on hit.",
         "effect": "Recovers 5% of player's max HP. (Pop-up: The souls trapped in your blade drain some of your foes health!) (Rate: 5%)",
         "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-OnHit.png"
-      }
+      },
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -47996,7 +48288,7 @@
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=16349909",
         "title": "DF Encyclopedia: Frozen Claymore",
-        "variantLabel": "The Frozen Claymore",
+        "variantLabel": "Frozen Claymore",
         "isPrimary": true
       },
       {
@@ -48066,7 +48358,8 @@
         "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-Ice.png",
         "cooldown": "5 - [(Player LUK/50), rounded down], floored at 2",
         "chargeTime": "3 - [(Player LUK/100), rounded down], floored at 1"
-      }
+      },
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -48354,56 +48647,57 @@
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=22042415",
         "title": "DF Encyclopedia: Frydae's Regal Cane",
-        "variantLabel": "The Frydae's Regal Cane",
+        "variantLabel": "Frydae's Regal Cane",
         "isPrimary": true
       },
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=22042416",
         "title": "DF Encyclopedia: Frydae's Regal Cane",
-        "variantLabel": "The Frydae's Regal Cane",
+        "variantLabel": "Frydae's Regal Cane",
         "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=22042417",
         "title": "DF Encyclopedia: Frydae's Regal Cane",
-        "variantLabel": "The Frydae's Regal Cane",
+        "variantLabel": "Frydae's Regal Cane",
         "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=22042418",
         "title": "DF Encyclopedia: Frydae's Regal Cane",
-        "variantLabel": "The Frydae's Regal Cane",
+        "variantLabel": "Frydae's Regal Cane",
         "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=22042420",
         "title": "DF Encyclopedia: Frydae's Regal Cane",
-        "variantLabel": "The Frydae's Regal Cane",
+        "variantLabel": "Frydae's Regal Cane",
         "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=22042421",
         "title": "DF Encyclopedia: Frydae's Regal Cane",
-        "variantLabel": "The Frydae's Regal Cane",
+        "variantLabel": "Frydae's Regal Cane",
         "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=22042423",
         "title": "DF Encyclopedia: Frydae's Regal Cane",
-        "variantLabel": "The Frydae's Regal Cane",
+        "variantLabel": "Frydae's Regal Cane",
         "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=22042424",
         "title": "DF Encyclopedia: Frydae's Regal Cane",
-        "variantLabel": "The Frydae's Regal Cane",
+        "variantLabel": "Frydae's Regal Cane",
         "isPrimary": false
       }
     ],
     "itemType": "Scythe",
     "shared": {
       "description": "He probably won't miss this at all...",
-      "imageUrl": "http://i.imgur.com/TKVD8Gr.png"
+      "imageUrl": "http://i.imgur.com/TKVD8Gr.png",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -48898,7 +49192,8 @@
     "itemType": "Scythe",
     "shared": {
       "description": "Howl at the moon after slicing through your foes with this light enchanted scythe!",
-      "imageUrl": "http://i.imgur.com/sQQhnKx.jpg"
+      "imageUrl": "http://i.imgur.com/sQQhnKx.jpg",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -49218,7 +49513,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isCosmetic": true
+    "isCosmetic": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-furious-scythe",
@@ -49281,7 +49577,8 @@
         "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-Wind.png",
         "cooldown": "10 - [(Player LUK/50), rounded down]",
         "chargeTime": "5 - [(Player LUK/100), rounded down]"
-      }
+      },
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -49476,7 +49773,8 @@
       "free"
     ],
     "daRequired": false,
-    "isTemp": true
+    "isTemp": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-galaxy-scythe",
@@ -49497,7 +49795,7 @@
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=19990722",
         "title": "DF Encyclopedia: Galaxy Scythe",
-        "variantLabel": "The Galaxy Scythe",
+        "variantLabel": "Galaxy Scythe",
         "isPrimary": true
       },
       {
@@ -49522,7 +49820,8 @@
     "itemType": "Scythe",
     "shared": {
       "description": "You can see stars and galaxies swirling within the infinite depths of this weapon.",
-      "imageUrl": "http://i202.photobucket.com/albums/aa185/gmill711/Dragon%20Fable/GalaxyScythe.png"
+      "imageUrl": "http://i202.photobucket.com/albums/aa185/gmill711/Dragon%20Fable/GalaxyScythe.png",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -49682,7 +49981,8 @@
     "daRequired": false,
     "dcRequired": true,
     "isCosmetic": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-ghost-of-a-sword",
@@ -49720,7 +50020,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isCosmetic": true
+    "isCosmetic": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-giant-sugar-cube",
@@ -49757,7 +50058,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isCosmetic": true
+    "isCosmetic": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-gift-from-beyond",
@@ -49807,7 +50109,8 @@
     "dcRequired": true,
     "isCosmetic": true,
     "isRare": true,
-    "isSpecialOffer": true
+    "isSpecialOffer": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-gingerbread-cookie-blade",
@@ -49980,7 +50283,8 @@
     "itemType": "Scythe",
     "shared": {
       "description": "As thanks for your help and friendship, Gingkage made this weapon for you, a sibling of her own special staff. Its intricate design burns with the fire of adventure.",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Gingkage'sGift.png"
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Gingkage'sGift.png",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -50388,7 +50692,8 @@
     "daRequired": false,
     "dcRequired": true,
     "isCosmetic": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-glaive-of-eternal-peace",
@@ -50442,7 +50747,8 @@
         "trigger": "Your weapon special activates on hit.",
         "effect": "Applies 'Eternal Peace' (-10 Ice/Metal Resist) to target for 3 turns inclusive. (Pop-up: The Glaive of Eternal Peace shatters your foe!) (Rate: 20%)",
         "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-OnHit.png"
-      }
+      },
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -51031,7 +51337,8 @@
     "itemType": "Scythe",
     "shared": {
       "description": "This glaive was crafted from shards of the Key Orb that True Mortal carried in honor of his birthday.",
-      "imageUrl": "http://i202.photobucket.com/albums/aa185/gmill711/Dragon%20Fable/GlaiveoftheOrb.png"
+      "imageUrl": "http://i202.photobucket.com/albums/aa185/gmill711/Dragon%20Fable/GlaiveoftheOrb.png",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -51288,7 +51595,8 @@
     "itemType": "Scythe",
     "shared": {
       "description": "A light-infused glaive crafted by the paladin, Dracelix, in honor of his birthday.",
-      "imageUrl": "https://i.imgur.com/o6Krva5.png"
+      "imageUrl": "https://i.imgur.com/o6Krva5.png",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -51494,7 +51802,8 @@
     "daRequired": false,
     "dcRequired": true,
     "dmRequired": true,
-    "isCosmetic": true
+    "isCosmetic": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-glimmerwing",
@@ -51564,7 +51873,8 @@
         "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-Nature.png",
         "cooldown": "10 - [(Player LUK/50), rounded down]",
         "chargeTime": "5 - [(Player LUK/100), rounded down]"
-      }
+      },
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -51925,7 +52235,7 @@
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=21046272",
         "title": "DF Encyclopedia: Gloom Glaive",
-        "variantLabel": "The Gloom Glaive",
+        "variantLabel": "Gloom Glaive",
         "isPrimary": false
       },
       {
@@ -52172,7 +52482,8 @@
     "daRequired": false,
     "dcRequired": true,
     "isCosmetic": true,
-    "isSpecialOffer": true
+    "isSpecialOffer": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-glowing-tree-scythe",
@@ -52554,7 +52865,12 @@
     "shared": {
       "description": "The one, the only, Gnarly Guitar of Doom! An artifact for the DoomKnight class. Much like Jack Crescent, looks pretty, but doesn't do much else. At least it comes with a jacket!",
       "imageUrl": "https://i.imgur.com/WxDDmIn.png",
-      "notes": "Weapons have a low drop rate from the quest The Show Mustn't Go On!.\nOwning any of these weapons unlocks the Rocker Armor Customization options for the DoomKnight class.\n  • Prior to unlocking an Armor Customization option on November 27th, 2020, equipping any of these weapons modifies the appearance of the DoomKnight class by changing its shoulder plates."
+      "notes": "Weapons have a low drop rate from the quest The Show Mustn't Go On!.\nOwning any of these weapons unlocks the Rocker Armor Customization options for the DoomKnight class.\n  • Prior to unlocking an Armor Customization option on November 27th, 2020, equipping any of these weapons modifies the appearance of the DoomKnight class by changing its shoulder plates.",
+      "alsoSee": [],
+      "armorCustomization": {
+        "appearance": "Rocker",
+        "modifies": "DoomKnight"
+      }
     },
     "levelVariants": [
       {
@@ -52689,6 +53005,7 @@
     "category": "Weapon",
     "releaseDate": "",
     "tags": [
+      "armor-customization",
       "dar",
       "free",
       "merge"
@@ -52702,7 +53019,8 @@
       "DAR"
     ],
     "isSeasonal": true,
-    "levelRange": "I-IV"
+    "levelRange": "I-IV",
+    "hasArmorCustomization": true
   },
   {
     "id": "weapon-gnomish-glory",
@@ -52756,7 +53074,8 @@
     "itemType": "Scythe",
     "shared": {
       "description": "A gorgeous example of gnomish science... or is it magic?",
-      "imageUrl": "http://i.imgur.com/GZ8a5.png"
+      "imageUrl": "http://i.imgur.com/GZ8a5.png",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -53155,7 +53474,8 @@
     "itemType": "Scythe",
     "shared": {
       "description": "Celebrate the 2012 Lorelympics with this fiery gold torch!",
-      "imageUrl": "http://i.imgur.com/4PCnJ.jpg"
+      "imageUrl": "http://i.imgur.com/4PCnJ.jpg",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -54014,7 +54334,8 @@
     "shared": {
       "description": "A scythe worthy of the noble North, eh? Happy Canada Day!",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/GoldenMapleScythe.png",
-      "notes": "Weapon cannot be destroyed.\nPreviously had the description: A scythe worthy of the noble North, eh? Happy Canada Day, 2013!"
+      "notes": "Weapon cannot be destroyed.\nPreviously had the description: A scythe worthy of the noble North, eh? Happy Canada Day, 2013!",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -54374,7 +54695,8 @@
     "itemType": "Scythe",
     "shared": {
       "description": "An ancient relic of Maar, said to have been forged from a claw of the Great Dragon Akriloth. Proof of victory over the Fang and the Scales.",
-      "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/weapons/GreatDragon'sClaw.png"
+      "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/weapons/GreatDragon'sClaw.png",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -54507,7 +54829,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isCosmetic": true
+    "isCosmetic": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-the-great-grey-one",
@@ -54562,9 +54885,10 @@
     ],
     "itemType": "Scythe",
     "shared": {
-      "description": "Rewarded for defeating the pure dragon Oratath, a heavy scythe forged by vengeful Dragon Slayers that is said to allows the owner to turn insubstantia. It�s merely a legend, though.",
+      "description": "Rewarded for defeating the pure dragon Oratath, a heavy scythe forged by vengeful Dragon Slayers that is said to allows the owner to turn insubstantia. It's merely a legend, though.",
       "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/weapons/GreatGreyOne-The.png",
-      "notes": "Weapons were DC tagged and tiered with Roman numerals on July 27th, 2022."
+      "notes": "Weapons were DC tagged and tiered with Roman numerals on July 27th, 2022.",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -54586,7 +54910,7 @@
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22272792",
-        "description": "Rewarded for defeating the pure dragon Oratath, a heavy scythe forged by vengeful Dragon Slayers that is said to allows the owner to turn insubstantia. It�s merely a legend, though.",
+        "description": "Rewarded for defeating the pure dragon Oratath, a heavy scythe forged by vengeful Dragon Slayers that is said to allows the owner to turn insubstantia. It's merely a legend, though.",
         "element": "GOO",
         "resists": "All +3",
         "rarity": "100",
@@ -54612,7 +54936,7 @@
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22272793",
-        "description": "Rewarded for defeating the pure dragon Oratath, a heavy scythe forged by vengeful Dragon Slayers that is said to allows the owner to turn insubstantia. It�s merely a legend, though.",
+        "description": "Rewarded for defeating the pure dragon Oratath, a heavy scythe forged by vengeful Dragon Slayers that is said to allows the owner to turn insubstantia. It's merely a legend, though.",
         "element": "GOO",
         "resists": "All +4",
         "rarity": "100",
@@ -54638,7 +54962,7 @@
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22272794",
-        "description": "Rewarded for defeating the pure dragon Oratath, a heavy scythe forged by vengeful Dragon Slayers that is said to allows the owner to turn insubstantia. It�s merely a legend, though.",
+        "description": "Rewarded for defeating the pure dragon Oratath, a heavy scythe forged by vengeful Dragon Slayers that is said to allows the owner to turn insubstantia. It's merely a legend, though.",
         "element": "GOO",
         "resists": "All +5",
         "rarity": "100",
@@ -54664,7 +54988,7 @@
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22272795",
-        "description": "Rewarded for defeating the pure dragon Oratath, a heavy scythe forged by vengeful Dragon Slayers that is said to allows the owner to turn insubstantia. It�s merely a legend, though.",
+        "description": "Rewarded for defeating the pure dragon Oratath, a heavy scythe forged by vengeful Dragon Slayers that is said to allows the owner to turn insubstantia. It's merely a legend, though.",
         "element": "GOO",
         "resists": "All +5",
         "rarity": "100",
@@ -54690,7 +55014,7 @@
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22272797",
-        "description": "Rewarded for defeating the pure dragon Oratath, a heavy scythe forged by vengeful Dragon Slayers that is said to allows the owner to turn insubstantia. It�s merely a legend, though.",
+        "description": "Rewarded for defeating the pure dragon Oratath, a heavy scythe forged by vengeful Dragon Slayers that is said to allows the owner to turn insubstantia. It's merely a legend, though.",
         "element": "GOO",
         "resists": "All +7",
         "rarity": "200",
@@ -54859,7 +55183,8 @@
       "free"
     ],
     "daRequired": false,
-    "isTemp": true
+    "isTemp": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-green-gummy-and-lemon-pop",
@@ -54955,7 +55280,8 @@
     "itemType": "Scythe",
     "shared": {
       "description": "Bite into deliciousness!",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/GreenGummyandLemonPop.png"
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/GreenGummyandLemonPop.png",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -55276,7 +55602,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isCosmetic": true
+    "isCosmetic": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-grenberge-blade",
@@ -55366,7 +55693,8 @@
     "shared": {
       "description": "An expensive blade with a very intricately decorated Grenberge Egg featured in its hilt. Happy Grenwog '14!",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/GrenbergeBlade.png",
-      "notes": "Weapon cannot be destroyed."
+      "notes": "Weapon cannot be destroyed.",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -55956,7 +56284,8 @@
     "itemType": "Scythe",
     "shared": {
       "description": "The traditional weapon of the guards that protect those in the Sandsea. The obsidian used to make them is used as a base along with sandstone and other materials.",
-      "imageUrl": "http://i.imgur.com/DyfarSy.png"
+      "imageUrl": "http://i.imgur.com/DyfarSy.png",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -56159,109 +56488,109 @@
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=5526440",
         "title": "DF Encyclopedia: Guardian Blade",
-        "variantLabel": "The Guardian Blade",
+        "variantLabel": "Guardian Blade",
         "isPrimary": true
       },
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=12156332",
         "title": "DF Encyclopedia: Guardian Blade",
-        "variantLabel": "The Guardian Blade",
+        "variantLabel": "Guardian Blade",
         "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=12156347",
         "title": "DF Encyclopedia: Guardian Blade",
-        "variantLabel": "The Guardian Blade",
+        "variantLabel": "Guardian Blade",
         "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=12156351",
         "title": "DF Encyclopedia: Guardian Blade",
-        "variantLabel": "The Guardian Blade",
+        "variantLabel": "Guardian Blade",
         "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=18136242",
         "title": "DF Encyclopedia: Guardian Blade",
-        "variantLabel": "The Guardian Blade",
+        "variantLabel": "Guardian Blade",
         "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=18136243",
         "title": "DF Encyclopedia: Guardian Blade",
-        "variantLabel": "The Guardian Blade",
+        "variantLabel": "Guardian Blade",
         "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=18136245",
         "title": "DF Encyclopedia: Guardian Blade",
-        "variantLabel": "The Guardian Blade",
+        "variantLabel": "Guardian Blade",
         "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=21975595",
         "title": "DF Encyclopedia: Guardian Blade",
-        "variantLabel": "The Guardian Blade",
+        "variantLabel": "Guardian Blade",
         "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=21975597",
         "title": "DF Encyclopedia: Guardian Blade",
-        "variantLabel": "The Guardian Blade",
+        "variantLabel": "Guardian Blade",
         "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=21975602",
         "title": "DF Encyclopedia: Guardian Blade",
-        "variantLabel": "The Guardian Blade",
+        "variantLabel": "Guardian Blade",
         "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=21975603",
         "title": "DF Encyclopedia: Guardian Blade",
-        "variantLabel": "The Guardian Blade",
+        "variantLabel": "Guardian Blade",
         "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=21975611",
         "title": "DF Encyclopedia: Guardian Blade",
-        "variantLabel": "The Guardian Blade",
+        "variantLabel": "Guardian Blade",
         "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=21975613",
         "title": "DF Encyclopedia: Guardian Blade",
-        "variantLabel": "The Guardian Blade",
+        "variantLabel": "Guardian Blade",
         "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=21975614",
         "title": "DF Encyclopedia: Guardian Blade",
-        "variantLabel": "The Guardian Blade",
+        "variantLabel": "Guardian Blade",
         "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=21975617",
         "title": "DF Encyclopedia: Guardian Blade",
-        "variantLabel": "The Guardian Blade",
+        "variantLabel": "Guardian Blade",
         "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=21975618",
         "title": "DF Encyclopedia: Guardian Blade",
-        "variantLabel": "The Guardian Blade",
+        "variantLabel": "Guardian Blade",
         "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=21975619",
         "title": "DF Encyclopedia: Guardian Blade",
-        "variantLabel": "The Guardian Blade",
+        "variantLabel": "Guardian Blade",
         "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=21975620",
         "title": "DF Encyclopedia: Guardian Blade",
-        "variantLabel": "The Guardian Blade",
+        "variantLabel": "Guardian Blade",
         "isPrimary": false
       }
     ],
@@ -56772,7 +57101,8 @@
     "daRequired": false,
     "dcRequired": true,
     "isCosmetic": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-half-ascended-spear",
@@ -57371,7 +57701,7 @@
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=21530487",
         "title": "DF Encyclopedia: Half of a Foam Hammer",
-        "variantLabel": "The Half of a Foam Hammer",
+        "variantLabel": "Half of a Foam Hammer",
         "isPrimary": false
       },
       {
@@ -58037,7 +58367,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isCosmetic": true
+    "isCosmetic": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-hanzamune-dragon-koi-blade",
@@ -58074,7 +58405,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isCosmetic": true
+    "isCosmetic": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-harrowing-hammer",
@@ -58165,7 +58497,8 @@
     "shared": {
       "description": "Made of pumpkin vines and hardened wood, this harrowing weapon will strike fear into the hearts of your enemies!",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/HarrowingHammer.png",
-      "notes": "Weapons are animated; the flame atop the scythe continuously burns, while the pumpkin head's eyes flare sporadically and its mouth moves slightly."
+      "notes": "Weapons are animated; the flame atop the scythe continuously burns, while the pumpkin head's eyes flare sporadically and its mouth moves slightly.",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -58551,7 +58884,8 @@
           "caption": "Nature"
         }
       ],
-      "notes": "Click on the weapon's jack-o'-lantern to change between its available elements; this will also change its appearance."
+      "notes": "Click on the weapon's jack-o'-lantern to change between its available elements; this will also change its appearance.",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -58780,7 +59114,8 @@
       "free"
     ],
     "daRequired": false,
-    "isTemp": true
+    "isTemp": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-haunting-harvest",
@@ -58818,7 +59153,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isCosmetic": true
+    "isCosmetic": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-heart-inquisitor-s-glaive",
@@ -58884,7 +59220,8 @@
     "itemType": "Scythe",
     "shared": {
       "description": "The preferred weapon of the Heart Inquisitors: Secret Defenders of Big Daddy, Love, and Harmony. Now it can be yours, for a limited time only!",
-      "imageUrl": "http://i.imgur.com/5Vjlx4d.png"
+      "imageUrl": "http://i.imgur.com/5Vjlx4d.png",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -59597,7 +59934,8 @@
         "trigger": "Your weapon special activates on hit.",
         "effect": "Applies 'Heart's Pull' (-50 Melee/Pierce/Magic Avoidance) to both player and target for 3 turns inclusive. (Pop-up: Hearts have been entwined.) (Rate: 5%)",
         "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-OnHit.png"
-      }
+      },
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -59886,7 +60224,8 @@
       "met",
       "merge"
     ],
-    "daRequired": false
+    "daRequired": false,
+    "alsoSee": []
   },
   {
     "id": "weapon-high-res-moglin-staff",
@@ -59924,7 +60263,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isCosmetic": true
+    "isCosmetic": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-high-tech-turducken-carver",
@@ -60006,7 +60346,8 @@
         "trigger": "Your weapon special activates on hit.",
         "effect": "Applies 'Carved' (-3 All Resist, +3 Health Resist, +10% Boost) to target for 3 turns inclusive. (Pop-up: The Turducken Carver carves into your foe and makes them angry!) (Rate: 20%)\n  • The on-hit rate is increased to 60% if player attacks with the Energy element.",
         "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-OnHit.png"
-      }
+      },
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -60468,7 +60809,8 @@
     "daRequired": false,
     "dcRequired": true,
     "isCosmetic": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-holy-mechanical-blade",
@@ -60506,7 +60848,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isCosmetic": true
+    "isCosmetic": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-holy-wasabi",
@@ -60547,7 +60890,8 @@
     "dcRequired": true,
     "dmRequired": true,
     "isCosmetic": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-honed-funny-bone",
@@ -60613,7 +60957,8 @@
     "itemType": "Scythe",
     "shared": {
       "description": "For those who want to wield razor sharp wit, this scythe from Cysero will help you cut down your enemies during DF's 10th Anniversary with levity!",
-      "imageUrl": "http://i.imgur.com/09TQTAR.png"
+      "imageUrl": "http://i.imgur.com/09TQTAR.png",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -60851,7 +61196,7 @@
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=20129229",
         "title": "DF Encyclopedia: Hunger Blossom Scythe",
-        "variantLabel": "The Hunger Blossom Scythe",
+        "variantLabel": "Hunger Blossom Scythe",
         "isPrimary": false
       },
       {
@@ -61063,7 +61408,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isCosmetic": true
+    "isCosmetic": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-ice-cream-swordfish",
@@ -61316,7 +61662,8 @@
         "trigger": "Your weapon special activates on hit.",
         "effect": "Applies 'Icy Chill' (-10 Ice Resist) to target for 3 turns inclusive. (Pop-up: The power locked inside the scythe chills your foe!) (Rate: 15%)",
         "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-OnHit.png"
-      }
+      },
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -61576,7 +61923,8 @@
     "itemType": "Scythe",
     "shared": {
       "description": "This massive axe was found in a cave in the far north. The cursed metal it's forged from seems to draw cold to it.",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/IceboundAxe.png"
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/IceboundAxe.png",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -61783,7 +62131,8 @@
         "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-Ice.png",
         "cooldown": "50 - [(Player LUK/50), rounded down]",
         "chargeTime": "25 - [(Player LUK/100), rounded down]"
-      }
+      },
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -62001,7 +62350,7 @@
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=18663938",
         "title": "DF Encyclopedia: Icicle Key, The",
-        "variantLabel": "The Icicle Key",
+        "variantLabel": "Icicle Key, The",
         "isPrimary": false
       },
       {
@@ -62021,7 +62370,8 @@
     "shared": {
       "description": "A key to the Equilibrium Gate, a key to victory against your opponents.",
       "element": "ICE",
-      "rarity": "10"
+      "rarity": "10",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -62409,7 +62759,8 @@
     "itemType": "Scythe",
     "shared": {
       "description": "This scythe burns brightly!",
-      "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/weapons/Imaru'sEmber.png"
+      "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/weapons/Imaru'sEmber.png",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -62612,7 +62963,8 @@
     "shared": {
       "description": "The runes on this wicked gunblade glow with the heat from the barrel.",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Imaru'sPride.png",
-      "notes": "Weapon is designed and named after forum user Imaru."
+      "notes": "Weapon is designed and named after forum user Imaru.",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -62753,7 +63105,8 @@
     "daRequired": false,
     "dcRequired": true,
     "isCosmetic": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-infected-megabytes",
@@ -62972,7 +63325,8 @@
     "dcRequired": true,
     "isCosmetic": true,
     "isRare": true,
-    "isSpecialOffer": true
+    "isSpecialOffer": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-ink-spire",
@@ -63013,7 +63367,8 @@
     "shared": {
       "description": "It is said that this sword was pulled out from an ordinary book of fairy tales and the child who wielded it became a legendary hero. However, no one can remember their name.",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/InkSpire.png",
-      "notes": "Weapons were DC tagged on July 29th, 2022."
+      "notes": "Weapons were DC tagged on July 29th, 2022.",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -63191,7 +63546,8 @@
         "trigger": "Your weapon special activates on hit.",
         "effect": "Applies 'Irismancer's Vision!' (+25 Bonus) to player for 2 turns. (Pop-up: The Irismancer's Vision enhances your own!) (Rate: 5%)",
         "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-OnHit.png"
-      }
+      },
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -63458,7 +63814,8 @@
     "shared": {
       "description": "Rewarded for defeating the murky ice dragon Gelunguis. It had three previous owners, each of them dying under questionable circumstances. It craves glory, you can hear it sing to you.",
       "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/weapons/Isandel.png",
-      "notes": "Weapons were DC tagged and tiered with Roman numerals on July 27th, 2022."
+      "notes": "Weapons were DC tagged and tiered with Roman numerals on July 27th, 2022.",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -63644,7 +64001,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isCosmetic": true
+    "isCosmetic": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-j6-s-carver",
@@ -63682,7 +64040,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isCosmetic": true
+    "isCosmetic": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-jack-o-boy",
@@ -63757,7 +64116,8 @@
     "itemType": "Scythe",
     "shared": {
       "description": "A scythe crafted from the remains of the dread PumpkinLord Jack, it still pulses with power- attracting all sorts of creepy things!",
-      "imageUrl": "https://i.imgur.com/lTaLv2r.png"
+      "imageUrl": "https://i.imgur.com/lTaLv2r.png",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -64007,14 +64367,15 @@
     "itemType": "Scythe",
     "shared": {
       "description": "This majestic jade axe fits well in your hands, as though it were made for you. Mid-swing, you swear you can sometimes hear a voice calling out, as if from far away. Probably nothing to worry about. Proof of victory over Yalla and Braytes San.",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/JadeCleaver.png"
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/JadeCleaver.png",
+      "alsoSee": []
     },
     "levelVariants": [
       {
         "levelNumber": 50,
         "levelDisplay": "50",
         "actualLevel": 50,
-        "variantName": "Jade Cleaver of the Wild",
+        "variantName": "Wild",
         "name": "Jade Cleaver of the Wild",
         "damage": "62-86",
         "stats": "Block +2, Dodge +2, Parry +2, Crit +6, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +3, END +3, LUK +3, INT +10, DEX +10, STR +10, Bonus +6",
@@ -64066,7 +64427,7 @@
         "levelNumber": 90,
         "levelDisplay": "90",
         "actualLevel": 90,
-        "variantName": "Jade Cleaver of the Lone Tree",
+        "variantName": "Lone Tree",
         "name": "Jade Cleaver of the Lone Tree",
         "damage": "86-110",
         "stats": "Block +5, Dodge +5, Parry +5, Crit +10, Magic Def +5, Pierce Def +5, Melee Def +5, END +6, LUK +6, INT +26, DEX +26, STR +26, Bonus +10",
@@ -64141,7 +64502,8 @@
     "daRequired": false,
     "dcRequired": true,
     "isCosmetic": true,
-    "isSeasonal": true
+    "isSeasonal": true,
+    "alsoSee": []
   },
   {
     "id": "weapon-judgement-wheel",
@@ -64214,7 +64576,8 @@
         "trigger": "Your weapon special activates on hit.",
         "effect": "Applies 'Crushing Guilt', a 33.3% Magic Evil weapon damage DoT effect, to target for 3 turns. (Pop-up: The guilty will receive what they deserve!) (Rate: 5%)",
         "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-OnHit.png"
-      }
+      },
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -64488,7 +64851,8 @@
     "shared": {
       "description": "Together with the Innocence half of the Judgement Wheel, the Guilt half judges your wish and passes sentence on you. However, since this is only a copy made by Cysero, the only wish you'll be granted is that you spent your Dragon Coins wiisely!",
       "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/weapons/JudgementWheelGuilt.png",
-      "notes": "Weapon's inventory icon is erroneously a Sword, despite being a Scythe."
+      "notes": "Weapon's inventory icon is erroneously a Sword, despite being a Scythe.",
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -64736,7 +65100,8 @@
     "shared": {
       "description": "Together with the Guilt half of the Judgement Wheel, the Innocence half judges your wish and passes sentence on you. However, since this is only a copy made by Cysero, the only wish you'll be granted is that you spent your Dragon Coins wiisely!",
       "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/weapons/JudgementWheelInnocence.png",
-      "notes": "Weapon's inventory icon is erroneously a Sword, despite being a Scythe."
+      "notes": "Weapon's inventory icon is erroneously a Sword, despite being a Scythe.",
+      "alsoSee": []
     },
     "levelVariants": [
       {

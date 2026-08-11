@@ -1,6 +1,5 @@
 import { useState, useMemo, useEffect, useRef } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
-import { Shield, ImageOff } from 'lucide-react'
 import type { Pet, Guest } from '../../types/pet'
 import type { ItemFamily, LevelVariant } from '../../types/item'
 import {
@@ -23,6 +22,7 @@ import CollapsibleSection from '../shared/CollapsibleSection'
 import MetadataChipSection from '../shared/MetadataChipSection'
 import OtherInformationSection from '../shared/OtherInformationSection'
 import DetailTypePill from '../shared/DetailTypePill'
+import ItemImage from '../shared/ItemImage'
 import { buildFilterLink } from '../../utils/filterLinks'
 import PetAttacks from './PetAttacks'
 import GuestAttacks from '../guests/GuestAttacks'
@@ -119,33 +119,6 @@ function buildCardPet(item: Pet | ItemFamily): Pet {
       })) ?? [],
     tags: item.tags,
   }
-}
-
-function PetImage({ src, name }: { src: string; name: string }) {
-  const [broken, setBroken] = useState(false)
-  // Reset the broken state whenever the source changes, otherwise a previously
-  // failed image keeps showing "Image unavailable" even after switching to a
-  // valid src (e.g. variant/alt switch, or a hot-reloaded dataset).
-  useEffect(() => {
-    setBroken(false)
-  }, [src])
-  if (broken) {
-    return (
-      <div className="w-full max-w-xs mx-auto aspect-square bg-bg-elevated border border-border-default rounded-xl flex flex-col items-center justify-center gap-2 text-text-muted">
-        <ImageOff className="w-10 h-10" />
-        <span className="text-xs">Image unavailable</span>
-      </div>
-    )
-  }
-  return (
-    <img
-      src={src}
-      alt={`${name}`}
-      loading="lazy"
-      onError={() => setBroken(true)}
-      className="max-w-xs w-full mx-auto rounded-xl border border-border-default shadow-medium img-fade"
-    />
-  )
 }
 
 function shouldSplitObtainVariantRows(level: LevelVariant): boolean {
@@ -528,33 +501,31 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
       )}
 
       {/* Pet image */}
-      {currentImage ? (
-        <div className="mb-6">
-          <PetImage src={currentImage.url} name={displayTitle(pet.name)} />
-          {/* Image toggle - only show if multiple images exist */}
-          {allImages.length > 1 && (
-            <div className="mt-4 flex flex-wrap gap-2 justify-center">
-              {allImages.map((image, idx) => (
-                <button
-                  key={`${image.url}-${idx}`}
-                  onClick={() => setActiveImageIndex(idx)}
-                  className={`min-h-11 px-4 py-2 rounded-lg text-sm transition-colors ${
-                    idx === activeImageIndex
-                      ? 'bg-gold text-bg-base'
-                      : 'bg-bg-surface border border-border-default text-text-secondary hover:text-text-primary hover:border-border-hover'
-                  }`}
-                >
-                  {image.caption}
-                </button>
-              ))}
-            </div>
-          )}
-        </div>
-      ) : (
-        <div className="mb-6 w-full max-w-xs mx-auto aspect-square bg-bg-elevated border border-border-default rounded-xl flex items-center justify-center">
-          <Shield className="w-16 h-16 text-border-hover" aria-hidden="true" />
-        </div>
-      )}
+      <div className="mb-6">
+        <ItemImage
+          src={currentImage?.url}
+          alt={currentImage?.caption ?? displayTitle(pet.name)}
+          showPlaceholder
+        />
+        {/* Image toggle - only show if multiple images exist */}
+        {allImages.length > 1 && (
+          <div className="mt-4 flex flex-wrap gap-2 justify-center">
+            {allImages.map((image, idx) => (
+              <button
+                key={`${image.url}-${idx}`}
+                onClick={() => setActiveImageIndex(idx)}
+                className={`min-h-11 px-4 py-2 rounded-lg text-sm transition-colors ${
+                  idx === activeImageIndex
+                    ? 'bg-gold text-bg-base'
+                    : 'bg-bg-surface border border-border-default text-text-secondary hover:text-text-primary hover:border-border-hover'
+                }`}
+              >
+                {image.caption}
+              </button>
+            ))}
+          </div>
+        )}
+      </div>
 
       {/* Stats - show for single-variant items in table format (Pets only) */}
       {!isMultiVariant && !isGuest && stats.length > 0 && (

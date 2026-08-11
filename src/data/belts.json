@@ -8,9 +8,7 @@
     "description": "A light-weight belt made of linked stones, it seemed to have once been owned by a page named Kevin.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21079184",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "54",
     "stats": "Block +1, Crit +6, Pierce Def +6, Melee Def +6, END +3, CHA +7, LUK +7, Bonus +4",
     "resists": "Metal +6, Water +6, Nature +6, Bacon +3, Immobility +3",
@@ -27,10 +25,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "sto",
-      "gold"
-    ],
+    "tags": ["sto", "gold"],
     "daRequired": false
   },
   {
@@ -42,9 +37,7 @@
     "description": "This belt is studded with small pieces of the Void. You can feel it emanating strangeness and a sense of foreboding. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17790035",
     "releaseDate": "",
-    "elements": [
-      "???"
-    ],
+    "elements": ["???"],
     "level": "53",
     "stats": "Crit +4, Magic Def +3, Pierce Def +3, Melee Def +3, END +5, INT +4, STR +4, Bonus +3",
     "resists": "Fire +8, Ice +8, Darkness +9, Light +9, Health -5",
@@ -61,10 +54,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "???",
-      "free"
-    ],
+    "tags": ["???", "free"],
     "daRequired": true
   },
   {
@@ -359,20 +349,14 @@
     "equipSlot": "Waist",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dc",
-      "free",
-      "ice"
-    ],
+    "tags": ["dc", "free", "ice"],
     "hasDA": true,
     "hasDC": true,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-V",
-    "elements": [
-      "ICE"
-    ]
+    "elements": ["ICE"]
   },
   {
     "id": "accessory-altered-vine",
@@ -666,20 +650,14 @@
     "equipSlot": "Waist",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dc",
-      "fea",
-      "free"
-    ],
+    "tags": ["dc", "fea", "free"],
     "hasDA": true,
     "hasDC": true,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-V",
-    "elements": [
-      "FEA"
-    ]
+    "elements": ["FEA"]
   },
   {
     "id": "accessory-ancient-deathknight-belt",
@@ -690,9 +668,7 @@
     "description": "This belt once belonged to the terrible Deathknight, Sir Malifact! I has a large skull belt buckle and It was one of the items required to unlock his undead powers.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=10941783",
     "releaseDate": "",
-    "elements": [
-      "NON"
-    ],
+    "elements": ["NON"],
     "level": "5",
     "stats": "Crit +1, Magic Def +1, END +1, CHA -1, LUK -1, INT +2, Bonus +1",
     "resists": "Light +1",
@@ -710,10 +686,7 @@
       }
     ],
     "notes": "Item was previously named 'Deathknight Belt'; this was changed on August 25th, 2023.",
-    "tags": [
-      "non",
-      "free"
-    ],
+    "tags": ["non", "free"],
     "daRequired": false
   },
   {
@@ -725,9 +698,7 @@
     "description": "Sturdy, through plain. It has loops for tools.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18393190",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "23",
     "stats": "Crit +2, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +2, END +3",
     "resists": "Stone +3, Metal +3",
@@ -744,10 +715,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "sto",
-      "free"
-    ],
+    "tags": ["sto", "free"],
     "daRequired": false
   },
   {
@@ -759,9 +727,7 @@
     "description": "This belt is made of the sleek scales from an Aqueevil hide. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22148031",
     "releaseDate": "",
-    "elements": [
-      "WAT"
-    ],
+    "elements": ["WAT"],
     "level": "51",
     "stats": "Block +6, Dodge +6, Parry +6, Crit +5, WIS +3, END +3, CHA +3, LUK +3, INT +2, DEX +2, STR +2",
     "resists": "Ice +3, Water +3, Energy +2, Stone +2",
@@ -779,10 +745,7 @@
       }
     ],
     "notes": "This item does not require a Dragon Amulet, despite the description claiming so.",
-    "tags": [
-      "wat",
-      "free"
-    ],
+    "tags": ["wat", "free"],
     "daRequired": true
   },
   {
@@ -794,9 +757,7 @@
     "description": "The darkness rises from the aether trapped in Ravenloss. This belt soaks it in!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17350936",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "50",
     "stats": "Crit +5, WIS +5, END +5, Bonus +5",
     "resists": "Fire +9, Light +9",
@@ -813,10 +774,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "dar",
-      "free"
-    ],
+    "tags": ["dar", "free"],
     "daRequired": true
   },
   {
@@ -1327,11 +1285,7 @@
     "equipSlot": "Waist",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dc",
-      "free",
-      "ice"
-    ],
+    "tags": ["dc", "free", "ice"],
     "isSeasonal": true,
     "hasDA": true,
     "hasDC": true,
@@ -1339,9 +1293,7 @@
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-IX",
-    "elements": [
-      "ICE"
-    ]
+    "elements": ["ICE"]
   },
   {
     "id": "accessory-bacon-bits",
@@ -1352,9 +1304,7 @@
     "description": "Crispy and delicious! This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19590535",
     "releaseDate": "",
-    "elements": [
-      "BAC"
-    ],
+    "elements": ["BAC"],
     "level": "68",
     "stats": "Block +1, Crit +7, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +6, CHA +5, LUK +5, Bonus +6",
     "resists": "Bacon +10, Fire +7, Immobility +4",
@@ -1371,10 +1321,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "bac",
-      "free"
-    ],
+    "tags": ["bac", "free"],
     "daRequired": true
   },
   {
@@ -1386,9 +1333,7 @@
     "description": "Strips of thin-cut bamboo are woven together with the plants leaves to form this stylish belt. A tag is inked on the inner strip. It reads \"This belt belongs to Jane.\"",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15865737",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "25",
     "stats": "Dodge +1, Melee Def +2, END +2",
     "resists": "Light +1, Darkness +1, Immobility +1",
@@ -1405,10 +1350,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false
   },
   {
@@ -1420,9 +1362,7 @@
     "description": "Fashioned from the shed skin of a basilisk (ethically sourced!), this belt offers slight protection from Immobility effects, like Stuns! (Every 5 END also increases Immobility resistance by 1)",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22421758",
     "releaseDate": "",
-    "elements": [
-      "MET"
-    ],
+    "elements": ["MET"],
     "level": "9",
     "stats": "END +5, Bonus +2",
     "resists": "Immobility +10",
@@ -1440,10 +1380,7 @@
       }
     ],
     "notes": "Belt's Level was lowered from 10 to 9 on September 5th, 2025.",
-    "tags": [
-      "met",
-      "free"
-    ],
+    "tags": ["met", "free"],
     "daRequired": false
   },
   {
@@ -1455,9 +1392,7 @@
     "description": "This belt must have belonged to a yaga apprentice. It's nothing but a cord knotted together and strung with bat skulls. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17039684",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "28",
     "stats": "Crit +2, Magic Def +2, Pierce Def +2, Melee Def +2, END +2, INT +2, STR +2, Bonus +1",
     "resists": "Fire +3, Darkness +3",
@@ -1474,10 +1409,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "dar",
-      "free"
-    ],
+    "tags": ["dar", "free"],
     "daRequired": true
   },
   {
@@ -1489,9 +1421,7 @@
     "description": "This waist wrap was once used to hold Spare parts together at the seams. It's really creepy to think about where it came from but the protection is worth it.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=13612956",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "18",
     "stats": "Magic Def +4, Pierce Def +3, Melee Def +2, Bonus +1",
     "resists": "Fire +2, Darkness +2, =Light +2",
@@ -1508,10 +1438,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "dar",
-      "free"
-    ],
+    "tags": ["dar", "free"],
     "daRequired": false
   },
   {
@@ -1523,9 +1450,7 @@
     "description": "One of the student belts that denotes rank in Edelia.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21392313",
     "releaseDate": "",
-    "elements": [
-      "ICE"
-    ],
+    "elements": ["ICE"],
     "level": "25",
     "stats": "Crit +1, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +3, END +1, INT +1, DEX +1, STR +1, Bonus +3",
     "resists": "Fire +3",
@@ -1550,10 +1475,7 @@
         "dcRequired": true
       }
     ],
-    "tags": [
-      "ice",
-      "free"
-    ],
+    "tags": ["ice", "free"],
     "daRequired": false,
     "dcRequired": true
   },
@@ -1566,9 +1488,7 @@
     "description": "Darkness emanates from this dingy belt; you can feel the power of the aether which resides at the bottom of Ravenloss as it rises off the fabric.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17351495",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "40",
     "stats": "Crit +3, WIS +3, END +5, Bonus +3",
     "resists": "Light +7, Fire +6",
@@ -1585,21 +1505,14 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "dar",
-      "free"
-    ],
+    "tags": ["dar", "free"],
     "daRequired": false
   },
   {
     "id": "accessory-belt-of-falconreach",
     "familyName": "Belt of Falconreach",
     "slug": "accessory-belt-of-falconreach",
-    "aliasSlugs": [
-      "accessory-belt-of-falconreach",
-      "accessory-belt-of-falconreach-ii",
-      "accessory-belt-of-falconreach-iii"
-    ],
+    "aliasSlugs": ["accessory-belt-of-falconreach-ii", "accessory-belt-of-falconreach-iii"],
     "type": "accessory",
     "subtype": "belt",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=8515621",
@@ -1706,19 +1619,14 @@
     "equipSlot": "Waist",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "merge",
-      "non"
-    ],
+    "tags": ["merge", "non"],
     "hasDA": false,
     "hasDC": false,
     "hasDM": false,
     "hasFree": false,
     "hasMerge": true,
     "levelRange": "I-III",
-    "elements": [
-      "NON"
-    ]
+    "elements": ["NON"]
   },
   {
     "id": "accessory-belt-of-golden-sand",
@@ -2012,19 +1920,14 @@
     "equipSlot": "Waist",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "gold",
-      "lig"
-    ],
+    "tags": ["gold", "lig"],
     "hasDA": true,
     "hasDC": false,
     "hasDM": false,
     "hasFree": false,
     "hasMerge": false,
     "levelRange": "I-IX",
-    "elements": [
-      "LIG"
-    ]
+    "elements": ["LIG"]
   },
   {
     "id": "accessory-belt-of-sight",
@@ -2035,9 +1938,7 @@
     "description": "Found in the strange temple of The Irismancer, this belt has a large, eye-shaped buckle that seems to look around on its own.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=8144889",
     "releaseDate": "",
-    "elements": [
-      "WIN"
-    ],
+    "elements": ["WIN"],
     "level": "15",
     "stats": "Crit +4, Magic Def +2, Pierce Def +2, Melee Def +2, Bonus +4",
     "resists": "None",
@@ -2055,10 +1956,7 @@
       }
     ],
     "notes": "Belt was previously available on The Ancient Eyedols quest.\nThe following changes were implemented on February 27th, 2026:\n  • Previously had the description: Found in the strange temple of The Irismancer, this belt has a large, eye-shaped buckle that seems to watch you, wherever you move.\n  • Belt was previously stylized as 'Belt of Sight'.\n  • Dragon Amulet requirement was removed.\n  • Level's requirement was increased from 4 to 15.\n  • Crit was increased from +3 to +4.\n  • Parry +1 and Dodge +1 stats were removed.\n  • Magic Def +2, Pierce Def +2, Melee Def +2, and Bonus +4 stats were added.",
-    "tags": [
-      "win",
-      "free"
-    ],
+    "tags": ["win", "free"],
     "daRequired": false
   },
   {
@@ -2070,9 +1968,7 @@
     "description": "This magical belt was discovered in the nest of a great stone wyrm. It was meant to be the hatchling's first piece of treasure.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=14295566",
     "releaseDate": "",
-    "elements": [
-      "NON"
-    ],
+    "elements": ["NON"],
     "level": "25",
     "stats": "Melee Def +1, DEX +3",
     "resists": "Light +1, Darkness +1, Water +1, Wind +1, Fire +2",
@@ -2091,10 +1987,7 @@
         "dmRequired": true
       }
     ],
-    "tags": [
-      "non",
-      "merge"
-    ],
+    "tags": ["non", "merge"],
     "daRequired": false,
     "dmRequired": true,
     "isRare": true
@@ -2108,9 +2001,7 @@
     "description": "This belt is cold to touch and is made of a ghostly white material. It provides additional protection against Darkness attacks.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=5628276",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "4",
     "stats": "None",
     "resists": "Darkness +5",
@@ -2128,10 +2019,7 @@
       }
     ],
     "notes": "Belt was previously available from the retired quest Spirits in the Inn.",
-    "tags": [
-      "dar",
-      "free"
-    ],
+    "tags": ["dar", "free"],
     "daRequired": false
   },
   {
@@ -2143,9 +2031,7 @@
     "description": "A belt made entirely of water! So, basically, your waist is just a little wetter?",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17452108",
     "releaseDate": "",
-    "elements": [
-      "WAT"
-    ],
+    "elements": ["WAT"],
     "level": "34",
     "stats": "Magic Def +2, Pierce Def +2, Melee Def +2, WIS +1, END +3, INT +1, DEX +1, STR +1, Bonus +2",
     "resists": "Water +4",
@@ -2162,10 +2048,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "wat",
-      "free"
-    ],
+    "tags": ["wat", "free"],
     "daRequired": false
   },
   {
@@ -2177,9 +2060,7 @@
     "description": "This stylish, and sticky, belt will ensure that no one will pry any of your Bit's O'Wax away from you!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=16801705",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "36",
     "stats": "Crit +1, Magic Def +2, Pierce Def +2, Melee Def +2, END +3, CHA +2, INT +1, STR +1, Bonus +2",
     "resists": "Light -2, Darkness +3",
@@ -2196,10 +2077,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false,
     "isSeasonal": true
   },
@@ -2212,9 +2090,7 @@
     "description": "This handsome belt is made from the feathers of a heron.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17878097",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "17",
     "stats": "Crit +1, WIS +1, END +1, INT +2, DEX +2, STR +2, Bonus +1",
     "resists": "Water +2, Immobility +1",
@@ -2231,10 +2107,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": true
   },
   {
@@ -2246,9 +2119,7 @@
     "description": "A sturdy satchel, it has loops and pouches for all the tools a blacksmith might need. It's empty though...",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20343885",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "53",
     "stats": "Block +1, Crit +6, Pierce Def +6, Melee Def +6, WIS +5, END +7, Bonus +4",
     "resists": "Metal +6, Stone +6, Water +6, Immobility +3",
@@ -2266,10 +2137,7 @@
       }
     ],
     "notes": "Belt was retired and replaced by Technician's Tools IV on November 21st, 2025.",
-    "tags": [
-      "sto",
-      "free"
-    ],
+    "tags": ["sto", "free"],
     "daRequired": false,
     "retired": true
   },
@@ -2282,9 +2150,7 @@
     "description": "A worn piece of blue leather with a rose shaped buckle.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21281358",
     "releaseDate": "",
-    "elements": [
-      "NON"
-    ],
+    "elements": ["NON"],
     "level": "45",
     "stats": "Crit +5, Magic Def +4, Pierce Def +4, Melee Def +4, END +5, INT +2, DEX +2, STR +2, Bonus +4",
     "resists": "Bacon +5, Immobility +3",
@@ -2310,10 +2176,7 @@
       }
     ],
     "notes": "Blue Leather Belt was previously available from the retired quest Rescue of Elanee.",
-    "tags": [
-      "non",
-      "free"
-    ],
+    "tags": ["non", "free"],
     "daRequired": false,
     "dcRequired": true
   },
@@ -2326,9 +2189,7 @@
     "description": "This belt was made from the leather of a Boardrake; one of the monsters produced in the necropolis. It smells faintly of bacon.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=13613091",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "12",
     "stats": "Magic Def +3, Pierce Def +2, Melee Def +1, INT +1, DEX +1, STR +1, Bonus +2",
     "resists": "Energy +1, Darkness +1, Fire +1, Light +1, Poison +1",
@@ -2345,10 +2206,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "dar",
-      "free"
-    ],
+    "tags": ["dar", "free"],
     "daRequired": false
   },
   {
@@ -2360,9 +2218,7 @@
     "description": "It's tough, leathery, and smells like a fresh bog! Ew. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21638900",
     "releaseDate": "",
-    "elements": [
-      "POI"
-    ],
+    "elements": ["POI"],
     "level": "28",
     "stats": "Crit +2, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +2, END +2, INT +1, DEX +1, STR +1, Bonus +2",
     "resists": "Silver +3, Darkness +3, All +1",
@@ -2379,10 +2235,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "poi",
-      "free"
-    ],
+    "tags": ["poi", "free"],
     "daRequired": true
   },
   {
@@ -2394,9 +2247,7 @@
     "description": "This belt is interwoven with carved and broken bits of bone.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22148036",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "27",
     "stats": "Block +3, Dodge +3, Parry +3, Crit +3, WIS +2, END +2, CHA +2, LUK +2, INT +1, DEX +1, STR +1",
     "resists": "Wind +1, Water +1, Fire +1, Stone +1",
@@ -2413,10 +2264,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false
   },
   {
@@ -2428,9 +2276,7 @@
     "description": "Once lined with sharp focusing crystals, they've all since been shattered and now salt grows among them. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21980683",
     "releaseDate": "",
-    "elements": [
-      "WAT"
-    ],
+    "elements": ["WAT"],
     "level": "68",
     "stats": "Block +1, Dodge +1, Crit +6, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +3, END +5, LUK +5, Bonus +7",
     "resists": "Water +10, Light +9, Fire +7, Immobility +4",
@@ -2447,10 +2293,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "wat",
-      "gold"
-    ],
+    "tags": ["wat", "gold"],
     "daRequired": true
   },
   {
@@ -2462,9 +2305,7 @@
     "description": "The links of this belt are heavy but have started to crack and brake.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21934133",
     "releaseDate": "",
-    "elements": [
-      "MET"
-    ],
+    "elements": ["MET"],
     "level": "27",
     "stats": "Crit +1, Magic Def +2, Pierce Def +2, Melee Def +2, END +2",
     "resists": "Metal +1, Immobility +1",
@@ -2481,10 +2322,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "met",
-      "free"
-    ],
+    "tags": ["met", "free"],
     "daRequired": false
   },
   {
@@ -2496,9 +2334,7 @@
     "description": "The once fine mesh of this belt is now torn and shattered with shells caught in the remaining mesh. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21980684",
     "releaseDate": "",
-    "elements": [
-      "WAT"
-    ],
+    "elements": ["WAT"],
     "level": "74",
     "stats": "Block +2, Dodge +1, Parry +2, Crit +7, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +4, END +6, CHA +2, LUK +2, INT +3, DEX +3, STR +3, Bonus +6",
     "resists": "Water +2, All +3, Immobility +2",
@@ -2515,10 +2351,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "wat",
-      "gold"
-    ],
+    "tags": ["wat", "gold"],
     "daRequired": true
   },
   {
@@ -2530,9 +2363,7 @@
     "description": "This jaunty belt looks like part of a uniform set.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=12036909",
     "releaseDate": "",
-    "elements": [
-      "ENE"
-    ],
+    "elements": ["ENE"],
     "level": "11",
     "stats": "Magic Def +1, Pierce Def +1, Melee Def +1",
     "resists": "Energy +1, Water -1",
@@ -2549,10 +2380,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "ene",
-      "free"
-    ],
+    "tags": ["ene", "free"],
     "daRequired": false
   },
   {
@@ -2564,9 +2392,7 @@
     "description": "The finely wrought links of this belt have been charred and scorched by dragon's breath.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22148039",
     "releaseDate": "",
-    "elements": [
-      "FIR"
-    ],
+    "elements": ["FIR"],
     "level": "59",
     "stats": "Block +7, Dodge +7, Parry +7, Crit +6, WIS +3, END +3, CHA +3, LUK +3, INT +3, DEX +3, STR +3",
     "resists": "Ice +4, Water +4, Fire +3, Stone +3",
@@ -2583,10 +2409,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "fir",
-      "free"
-    ],
+    "tags": ["fir", "free"],
     "daRequired": false
   },
   {
@@ -2598,9 +2421,7 @@
     "description": "This chocolate belt goes straight to your hips.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15865289",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "5",
     "stats": "Crit +1, Melee Def +6, END +2, Bonus +3",
     "resists": "Ice +5, Metal +5, Darkness +5",
@@ -2625,10 +2446,7 @@
         "dcRequired": true
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false,
     "dcRequired": true,
     "isRare": true
@@ -2642,9 +2460,7 @@
     "description": "This item requires a Dragon Amulet. This well balanced piece affords excellent protection against melee and magic attacks, but only for your waist.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=13446899",
     "releaseDate": "",
-    "elements": [
-      "NON"
-    ],
+    "elements": ["NON"],
     "level": "25",
     "stats": "Crit +1, Magic Def +5, Melee Def +5, INT +1, DEX +1, STR +1, Bonus +2, Light +2, Darkness +3",
     "rarity": "6",
@@ -2660,10 +2476,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "non",
-      "free"
-    ],
+    "tags": ["non", "free"],
     "daRequired": true
   },
   {
@@ -2675,9 +2488,7 @@
     "description": "A strong belt of woven vines harvested from deep inside Betrubung.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21281363",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "55",
     "stats": "Block +1, Crit +6, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +3, CHA +7, LUK +7, Bonus +4",
     "resists": "Wind +6, Water +6, Nature +6, Poison +3, Immobility +3",
@@ -2703,10 +2514,7 @@
       }
     ],
     "notes": "Clawkin Vine Belt was previously available from the retired quest Rescue of Elanee.",
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false,
     "dcRequired": true
   },
@@ -2719,9 +2527,7 @@
     "description": "This belt is made from the skin of an ancient, deep-sea fish. For untold years it watched as the Deep One slept, as cultures rose and fell... as things blinked out of existence.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17588463",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "43",
     "stats": "Magic Def +3, WIS +5, CHA +2, LUK +2, INT +3, STR +3, Bonus +3",
     "resists": "Water +6, Darkness +4, Poison +3",
@@ -2738,10 +2544,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "dar",
-      "free"
-    ],
+    "tags": ["dar", "free"],
     "daRequired": false
   },
   {
@@ -2753,9 +2556,7 @@
     "description": "Linked copper gears, this looks like a cast-off from one of the Professor's projects.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20343716",
     "releaseDate": "",
-    "elements": [
-      "MET"
-    ],
+    "elements": ["MET"],
     "level": "23",
     "stats": "Magic Def +2, Pierce Def +2, Melee Def +2, WIS +3, END +2, Bonus +2",
     "resists": "Metal +3, Energy +3",
@@ -2773,10 +2574,7 @@
       }
     ],
     "notes": "Belt was retired and replaced by Technician's Tools I on November 21st, 2025.",
-    "tags": [
-      "met",
-      "free"
-    ],
+    "tags": ["met", "free"],
     "daRequired": false,
     "retired": true
   },
@@ -2789,9 +2587,7 @@
     "description": "The royal sash of Emperor Kuron, an ancient ruler in the city of Sil.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19795117",
     "releaseDate": "",
-    "elements": [
-      "SIL"
-    ],
+    "elements": ["SIL"],
     "level": "24",
     "stats": "Crit +1, Magic Def +1, Pierce Def +1, Melee Def +1, WIS +2, CHA +1, Bonus +1",
     "resists": "Water +2",
@@ -2808,10 +2604,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "sil",
-      "free"
-    ],
+    "tags": ["sil", "free"],
     "daRequired": false
   },
   {
@@ -2823,9 +2616,7 @@
     "description": "Imbued with the peace and tranquility of the Creatioux clearing, this belt adds to your endurance and wisdom!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17788307",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "33",
     "stats": "Crit +2, WIS +3, END +5, Bonus +2",
     "resists": "Stone +3, Wind +3, Immobility +1",
@@ -2842,10 +2633,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "lig",
-      "free"
-    ],
+    "tags": ["lig", "free"],
     "daRequired": false
   },
   {
@@ -2857,9 +2645,7 @@
     "description": "This belt is full of pockets filled with coarsely crushed trithril.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21793310",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "32",
     "stats": "Magic Def +1, Pierce Def +1, Melee Def +1, END +3",
     "resists": "Stone +3, Water +2, Metal +1",
@@ -2876,10 +2662,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "sto",
-      "free"
-    ],
+    "tags": ["sto", "free"],
     "daRequired": false
   },
   {
@@ -3174,20 +2957,14 @@
     "equipSlot": "Waist",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dc",
-      "free",
-      "nat"
-    ],
+    "tags": ["dc", "free", "nat"],
     "hasDA": true,
     "hasDC": true,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-V",
-    "elements": [
-      "NAT"
-    ]
+    "elements": ["NAT"]
   },
   {
     "id": "accessory-crystalised-trithril-belt",
@@ -3198,9 +2975,7 @@
     "description": "Sharp crystals of trithril cover this belt. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21793300",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "68",
     "stats": "Block +1, Dodge +1, Crit +7, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +2, END +6, LUK +5, Bonus +6",
     "resists": "Stone +10, Metal +9, Fire +7, Immobility +4",
@@ -3217,10 +2992,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "sto",
-      "free"
-    ],
+    "tags": ["sto", "free"],
     "daRequired": true
   },
   {
@@ -3232,9 +3004,7 @@
     "description": "The royal sash of Emperor Kuron, an ancient ruler in the city of Sil. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19795193",
     "releaseDate": "",
-    "elements": [
-      "SIL"
-    ],
+    "elements": ["SIL"],
     "level": "66",
     "stats": "Block +2, Crit +6, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +7, CHA +5, INT +5, DEX +5, STR +5, Bonus +6",
     "resists": "Water +8, Ice +8, Light +6, Immobility +3, Health -2",
@@ -3251,10 +3021,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "sil",
-      "free"
-    ],
+    "tags": ["sil", "free"],
     "daRequired": true
   },
   {
@@ -3266,9 +3033,7 @@
     "description": "The dark runes that were once inscribed on this cloth have all but faded away from being soaked in the waters of the Bay.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21980665",
     "releaseDate": "",
-    "elements": [
-      "WAT"
-    ],
+    "elements": ["WAT"],
     "level": "44",
     "stats": "Dodge +1, Crit +1, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +5, END +3, INT +2, DEX +2, STR +2, Bonus +2",
     "resists": "Water +6, Fire +4, Darkness +1",
@@ -3285,10 +3050,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "wat",
-      "gold"
-    ],
+    "tags": ["wat", "gold"],
     "daRequired": false
   },
   {
@@ -3300,9 +3062,7 @@
     "description": "This belt was woven from Dragon Leather, and plated with shards from an dark dragons scales. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22148035",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "19",
     "stats": "Block +3, Dodge +3, Parry +3, Crit +3, WIS +1, END +1, CHA +1, LUK +1, INT +1, DEX +1, STR +1",
     "resists": "Light +1, Darkness +1, Energy +1, Stone +1",
@@ -3320,10 +3080,7 @@
       }
     ],
     "notes": "A typo exists on description \"an dark dragons scales\".",
-    "tags": [
-      "dar",
-      "free"
-    ],
+    "tags": ["dar", "free"],
     "daRequired": true
   },
   {
@@ -3335,9 +3092,7 @@
     "description": "Sir Malifact collected this belt from a fallen DeathKnight and saved it. While he already has items bound to him, you might be able to make use of it.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21828923",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "40",
     "stats": "Crit +3, WIS +3, END +3, Bonus +3",
     "resists": "Darkness +2, Light +2",
@@ -3355,10 +3110,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "dar",
-      "merge"
-    ],
+    "tags": ["dar", "merge"],
     "daRequired": false
   },
   {
@@ -4120,19 +3872,14 @@
     "equipSlot": "Waist",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "merge",
-      "non"
-    ],
+    "tags": ["merge", "non"],
     "hasDA": false,
     "hasDC": false,
     "hasDM": true,
     "hasFree": false,
     "hasMerge": true,
     "levelRange": "I-XXIII",
-    "elements": [
-      "NON"
-    ]
+    "elements": ["NON"]
   },
   {
     "id": "accessory-defender-s-dragon-belt",
@@ -5017,19 +4764,14 @@
     "equipSlot": "Waist",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "merge",
-      "non"
-    ],
+    "tags": ["merge", "non"],
     "hasDA": true,
     "hasDC": false,
     "hasDM": true,
     "hasFree": false,
     "hasMerge": true,
     "levelRange": "I-XXIII",
-    "elements": [
-      "NON"
-    ]
+    "elements": ["NON"]
   },
   {
     "id": "accessory-die-cast-belt",
@@ -5040,9 +4782,7 @@
     "description": "This item requires a Dragon Amulet. This must have fallen from Popsprocket.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20277325",
     "releaseDate": "",
-    "elements": [
-      "MET"
-    ],
+    "elements": ["MET"],
     "level": "25",
     "stats": "Crit +1, Pierce Def +5, Melee Def +5, INT +1, DEX +1, STR +1, Bonus +2",
     "resists": "Energy +2, Stone +3, Metal +1",
@@ -5060,10 +4800,7 @@
       }
     ],
     "notes": "Belt was retired and replaced by Shining Scaled Belt I on April 25th, 2025.",
-    "tags": [
-      "met",
-      "free"
-    ],
+    "tags": ["met", "free"],
     "daRequired": true,
     "retired": true
   },
@@ -5505,20 +5242,14 @@
     "equipSlot": "Waist",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dc",
-      "free",
-      "nat"
-    ],
+    "tags": ["dc", "free", "nat"],
     "hasDA": true,
     "hasDC": true,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-VIII",
-    "elements": [
-      "NAT"
-    ]
+    "elements": ["NAT"]
   },
   {
     "id": "accessory-dirty-sock-chain",
@@ -5529,9 +5260,7 @@
     "description": "There is no Pactoganol Knight to do laundry, so all Rolith socks are dirty. Someone needs to come up with a Sir name related to cleaning.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18819709",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "25",
     "stats": "Crit +3, END +3",
     "resists": "Darkness +5, Dirt +5",
@@ -5549,10 +5278,7 @@
       }
     ],
     "notes": "Item has Dirt flavor resistance.",
-    "tags": [
-      "nat",
-      "gold"
-    ],
+    "tags": ["nat", "gold"],
     "daRequired": false,
     "isSeasonal": true
   },
@@ -5565,9 +5291,7 @@
     "description": "Ewwww. Gross.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19682983",
     "releaseDate": "",
-    "elements": [
-      "DIS"
-    ],
+    "elements": ["DIS"],
     "level": "20",
     "stats": "Crit +2, Magic Def +1, Melee Def +1, END +3, CHA -2, Bonus +2",
     "resists": "Disease +6",
@@ -5584,10 +5308,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "dis",
-      "free"
-    ],
+    "tags": ["dis", "free"],
     "daRequired": false,
     "isSeasonal": true
   },
@@ -5600,9 +5321,7 @@
     "description": "This belt is very heavy. At least it provides a good workout!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17455525",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "44",
     "stats": "Crit +3, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +3, END +5, INT +3, DEX -1, STR +3",
     "resists": "Water +6, Metal +4",
@@ -5619,10 +5338,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "dar",
-      "free"
-    ],
+    "tags": ["dar", "free"],
     "daRequired": false
   },
   {
@@ -5634,9 +5350,7 @@
     "description": "This item requires a Dragon Amulet. This strand of dragon scales must have been lost when the growing dragon lost its seasonal skin. See? There's more than one way to skin a dragon?",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=14567019",
     "releaseDate": "",
-    "elements": [
-      "NON"
-    ],
+    "elements": ["NON"],
     "level": "19",
     "stats": "Crit +1, Magic Def +5, Pierce Def +2, END +2, LUK +1, INT +2, Fire +10",
     "rarity": "6",
@@ -5652,10 +5366,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "non",
-      "free"
-    ],
+    "tags": ["non", "free"],
     "daRequired": true
   },
   {
@@ -5667,9 +5378,7 @@
     "description": "A belt of linked dragons scales, it looks like it has been examined and inspected... everything short of turned into magic dust.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21079240",
     "releaseDate": "",
-    "elements": [
-      "FIR"
-    ],
+    "elements": ["FIR"],
     "level": "34",
     "stats": "Crit +4, Magic Def +5, WIS +5, INT +2, DEX +2, STR +2, Bonus +5",
     "resists": "Ice +5, Water +4, Immobility +3",
@@ -5686,10 +5395,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "fir",
-      "gold"
-    ],
+    "tags": ["fir", "gold"],
     "daRequired": true
   },
   {
@@ -5701,9 +5407,7 @@
     "description": "Shocking! Are you sure you want to wear this?",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20277400",
     "releaseDate": "",
-    "elements": [
-      "ENE"
-    ],
+    "elements": ["ENE"],
     "level": "35",
     "stats": "Dodge +1, Crit +3, Magic Def +3, Pierce Def +1, Melee Def +1, WIS -1, LUK +3, INT +2, DEX +2, STR +2",
     "resists": "Energy +5, Light +3, Water -1",
@@ -5721,10 +5425,7 @@
       }
     ],
     "notes": "Belt was retired and replaced by Shining Scaled Belt II on April 25th, 2025.",
-    "tags": [
-      "ene",
-      "free"
-    ],
+    "tags": ["ene", "free"],
     "daRequired": false,
     "retired": true
   },
@@ -5737,9 +5438,7 @@
     "description": "Elucidas gives this to young friends of the Creatioux. It symbolizes trust, faith, and goodwill.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17788425",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "23",
     "stats": "Crit +2, WIS +2, END +2, Bonus +2",
     "resists": "Stone +1, Wind +1",
@@ -5756,10 +5455,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "lig",
-      "free"
-    ],
+    "tags": ["lig", "free"],
     "daRequired": false
   },
   {
@@ -5771,9 +5467,7 @@
     "description": "A delicate string on Vind worked silver chain.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21281376",
     "releaseDate": "",
-    "elements": [
-      "SIL"
-    ],
+    "elements": ["SIL"],
     "level": "35",
     "stats": "Crit +4, Magic Def +5, WIS +5, INT +2, DEX +2, STR +2, Bonus +5",
     "resists": "Stone +5, Wind +5, Immobility +3",
@@ -5799,10 +5493,7 @@
       }
     ],
     "notes": "Enchanted Vind Chain was previously available from the retired quest Rescue of Elanee.",
-    "tags": [
-      "sil",
-      "free"
-    ],
+    "tags": ["sil", "free"],
     "daRequired": true,
     "dcRequired": true
   },
@@ -5815,9 +5506,7 @@
     "description": "A very long sock you found abandoned in Warlic and Cysero's tower. If it can go around your waist and keep your pants up, it's a belt. Stylish and lucky! (Every 10 LUK adds 1 Crit, every 20 LUK adds 1 Avd and Def)",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22422556",
     "releaseDate": "",
-    "elements": [
-      "???"
-    ],
+    "elements": ["???"],
     "level": "10",
     "stats": "Crit +2, LUK +10, Bonus +2",
     "resists": "Darkness +5",
@@ -5835,10 +5524,7 @@
       }
     ],
     "notes": "Level's requirement was lowered from 11 to 10 on September 5th, 2025.",
-    "tags": [
-      "???",
-      "free"
-    ],
+    "tags": ["???", "free"],
     "daRequired": false
   },
   {
@@ -5850,9 +5536,7 @@
     "description": "This amulet was found gripped in Captain Davey's tentacles. It exudes an aura of power... and of confusion, darkness. It makes your skin crawl, but you can't quite make yourself throw it into the ocean. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17588734",
     "releaseDate": "",
-    "elements": [
-      "WAT"
-    ],
+    "elements": ["WAT"],
     "level": "55",
     "stats": "Block +1, Crit +4, Magic Def +5, WIS +3, END +3, CHA +2, INT +3, DEX +3, STR +3, Bonus +6",
     "resists": "Immobility +5, Water +8, Darkness +8",
@@ -5869,10 +5553,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "wat",
-      "free"
-    ],
+    "tags": ["wat", "free"],
     "daRequired": true
   },
   {
@@ -5884,9 +5565,7 @@
     "description": "The inscribed runes on this plated belt are now home to tiny corals, rust, and salt crystals. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21980681",
     "releaseDate": "",
-    "elements": [
-      "WAT"
-    ],
+    "elements": ["WAT"],
     "level": "63",
     "stats": "Block +1, Dodge +1, Parry +2, Crit +6, Magic Def +6, Pierce Def +6, Melee Def +6, END +6, INT +2, DEX +2, STR +2, Bonus +6",
     "resists": "Water +10, Fire +10, Darkness +2",
@@ -5903,10 +5582,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "wat",
-      "gold"
-    ],
+    "tags": ["wat", "gold"],
     "daRequired": true
   },
   {
@@ -5918,9 +5594,7 @@
     "description": "Woven from candied faerie floss, no one will suspect your belt is also a delicious snack!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=16801887",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "27",
     "stats": "Magic Def +2, Pierce Def +2, Melee Def +2, END +2, LUK +2, INT +1, STR +1",
     "resists": "Darkness -1, Immobility +1",
@@ -5937,10 +5611,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "lig",
-      "free"
-    ],
+    "tags": ["lig", "free"],
     "daRequired": false,
     "isSeasonal": true
   },
@@ -5953,9 +5624,7 @@
     "description": "Small lights blink and shift over the surface of the belt. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21934091",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "77",
     "stats": "Crit +6, Magic Def +10, WIS +8, CHA +5, INT +5, DEX +5, STR +5, Bonus +8",
     "resists": "Light +10, Wind +8, Water +8, Darkness +6, Fire +3, Energy +3, Stone -2",
@@ -5972,10 +5641,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "lig",
-      "free"
-    ],
+    "tags": ["lig", "free"],
     "daRequired": true
   },
   {
@@ -5987,9 +5653,7 @@
     "description": "This item requires a Dragon Amulet. This belt's magical properties have kept it polished and dust free for many years while the rest of the fallen hero's armor has rusted away to dust.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=14566772",
     "releaseDate": "",
-    "elements": [
-      "NON"
-    ],
+    "elements": ["NON"],
     "level": "15",
     "stats": "Magic Def +2, Pierce Def +1, Melee Def +1, END +2, CHA +2, STR +1, Bonus +2, Poison +2, Darkness +2",
     "rarity": "7",
@@ -6005,10 +5669,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "non",
-      "free"
-    ],
+    "tags": ["non", "free"],
     "daRequired": true
   },
   {
@@ -6020,9 +5681,7 @@
     "description": "Whatever dark magic forged this belt is now the only thing tenuously keeping it together... This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21980676",
     "releaseDate": "",
-    "elements": [
-      "WAT"
-    ],
+    "elements": ["WAT"],
     "level": "15",
     "stats": "Block +1, Magic Def +1, Pierce Def +1, Melee Def +1, WIS +1, END +2, CHA +2, Bonus +2",
     "resists": "Darkness +2, Water +2",
@@ -6039,10 +5698,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "wat",
-      "gold"
-    ],
+    "tags": ["wat", "gold"],
     "daRequired": true
   },
   {
@@ -6054,9 +5710,7 @@
     "description": "Rolith has one of these hanging on the doorknob in the Oaklore Keep. He wears it while tackling knotty problems. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18819685",
     "releaseDate": "",
-    "elements": [
-      "WIN"
-    ],
+    "elements": ["WIN"],
     "level": "65",
     "stats": "Crit +6, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +6, END +6, Bonus +6",
     "resists": "Stone +12",
@@ -6074,10 +5728,7 @@
       }
     ],
     "notes": "Item previously had +20 Stone Resist; this was lowered to +12 Stone Resist on 2026's re-release.",
-    "tags": [
-      "win",
-      "gold"
-    ],
+    "tags": ["win", "gold"],
     "daRequired": true,
     "isSeasonal": true
   },
@@ -6090,9 +5741,7 @@
     "description": "One feather was added to this sash for each year the Keeper of the Perch held her office.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15866021",
     "releaseDate": "",
-    "elements": [
-      "WIN"
-    ],
+    "elements": ["WIN"],
     "level": "35",
     "stats": "Dodge +1, Crit +2, Magic Def +2, Pierce Def +1, Melee Def +3, END +2, INT +2",
     "resists": "Light +3, Darkness +3, Wind +1",
@@ -6109,10 +5758,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "win",
-      "free"
-    ],
+    "tags": ["win", "free"],
     "daRequired": false
   },
   {
@@ -6124,9 +5770,7 @@
     "description": "A nice little bag of treats!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21237797",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "17",
     "stats": "Crit +1, Magic Def +1, Pierce Def +1, Melee Def +1, WIS +1, CHA +1, LUK +1, Bonus +1",
     "resists": "Nature +1, Fire +1",
@@ -6143,10 +5787,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "lig",
-      "gold"
-    ],
+    "tags": ["lig", "gold"],
     "daRequired": false
   },
   {
@@ -6158,9 +5799,7 @@
     "description": "You HOPE those fingerbone-looking thing ornaments are carved from ivory. The belt was dropped in battle and a scavenger tossed it into this shop.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15676703",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "10",
     "stats": "Magic Def +3, Pierce Def +2, Melee Def +1, DEX +3, Bonus +2, Fire +1, Darkness +3",
     "rarity": "4",
@@ -6176,10 +5815,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "dar",
-      "gold"
-    ],
+    "tags": ["dar", "gold"],
     "daRequired": false,
     "isRare": true
   },
@@ -6192,9 +5828,7 @@
     "description": "Surprisingly supple and stretchy! This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21619686",
     "releaseDate": "",
-    "elements": [
-      "WAT"
-    ],
+    "elements": ["WAT"],
     "level": "78",
     "stats": "Block +1, Dodge +1, Crit +7, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +5, END +5, CHA +5, LUK +1, INT +7, DEX +7, STR +7, Bonus +7",
     "resists": "Water +8, Fire +8, Nature +6, All +1, Immobility +2",
@@ -6211,10 +5845,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "wat",
-      "free"
-    ],
+    "tags": ["wat", "free"],
     "daRequired": true
   },
   {
@@ -6226,9 +5857,7 @@
     "description": "Strap this belt on and hold on tight. If you're not careful you'll be sent hurtling through time. Happy New Year! This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17151725",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "51",
     "stats": "Crit +4, Magic Def +4, Pierce Def +4, Melee Def +4, END +5, INT +4, Bonus +5",
     "resists": "Immobility +3, Poison +5, Fire +8",
@@ -6245,10 +5874,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "dar",
-      "free"
-    ],
+    "tags": ["dar", "free"],
     "daRequired": true,
     "isRare": true
   },
@@ -6261,9 +5887,7 @@
     "description": "This belt is made of stuff and things, and when you stare at it for too long, you imagine you're seeing into space and time. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17156784",
     "releaseDate": "",
-    "elements": [
-      "NON"
-    ],
+    "elements": ["NON"],
     "level": "50",
     "stats": "Crit +5, END +5, INT +5, Bonus +5, Ice +9, Fire +9",
     "rarity": "5",
@@ -6279,10 +5903,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "non",
-      "gold"
-    ],
+    "tags": ["non", "gold"],
     "daRequired": true
   },
   {
@@ -6793,20 +6414,14 @@
     "equipSlot": "Waist",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dc",
-      "free",
-      "met"
-    ],
+    "tags": ["dc", "free", "met"],
     "hasDA": true,
     "hasDC": true,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-IX",
-    "elements": [
-      "MET"
-    ]
+    "elements": ["MET"]
   },
   {
     "id": "accessory-freshman-soulthread-loop",
@@ -6817,9 +6432,7 @@
     "description": "One of the student belts that denotes rank in Edelia.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21392331",
     "releaseDate": "",
-    "elements": [
-      "ICE"
-    ],
+    "elements": ["ICE"],
     "level": "45",
     "stats": "Crit +3, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +4, END +2, INT +2, DEX +2, STR +2, Bonus +5",
     "resists": "Immobility +3, Wind +1, Fire +5",
@@ -6844,10 +6457,7 @@
         "dcRequired": true
       }
     ],
-    "tags": [
-      "ice",
-      "free"
-    ],
+    "tags": ["ice", "free"],
     "daRequired": false,
     "dcRequired": true
   },
@@ -6860,9 +6470,7 @@
     "description": "This belt is made from the scales of an Ice Dragon. Its enchantment provides strong defenses. This one is ideal for Mages!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=7094689",
     "releaseDate": "",
-    "elements": [
-      "ICE"
-    ],
+    "elements": ["ICE"],
     "level": "15",
     "stats": "Block +4, Dodge +4, Parry +4, Magic Def +2, Pierce Def +2, Melee Def +2, INT +5",
     "resists": "Ice +5",
@@ -6880,10 +6488,7 @@
       }
     ],
     "notes": "Belt had the initial price of 100 Gold and a sellback of 10 Gold.\nThe following changes were implemented on April 17th, 2026:\n  • Previously had the description: This belt is made from the wings of an Ice Dragon. It adds +1 DEF to MAGIC, +3 ICE resistance and +1 to INT.\n  • Level's requirement was raised from 5 to 15.\n  • Magic Avoidance was raised from +1 to +2.\n  • INT was raised from +1 to +5.\n  • Block/Parry/Dodge Defense and Melee/Pierce Avoidance stats were added.\n  • Ice Resist was raised from +3 to +5.",
-    "tags": [
-      "ice",
-      "free"
-    ],
+    "tags": ["ice", "free"],
     "daRequired": false
   },
   {
@@ -6895,9 +6500,7 @@
     "description": "This belt is made from the scales of an Ice Dragon. Its enchantment provides strong defenses. This one is ideal for Warriors!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=7094218",
     "releaseDate": "",
-    "elements": [
-      "ICE"
-    ],
+    "elements": ["ICE"],
     "level": "15",
     "stats": "Block +5, Dodge +5, Parry +5, Magic Def +2, Pierce Def +2, Melee Def +2, STR +5",
     "resists": "Ice +5",
@@ -6915,10 +6518,7 @@
       }
     ],
     "notes": "Belt had the initial price of 100 Gold and a sellback of 10 Gold.\nThe following changes were implemented on April 17th, 2026:\n  • Previously had the description: This belt is made from the wings of an Ice Dragon. It adds +1 DEF to MAGIC, +3 ICE resistance and +1 to STR.\n  • Level's requirement was raised from 5 to 15.\n  • Magic Avoidance was raised from +1 to +2.\n  • STR was raised from +1 to +5.\n  • Block/Parry/Dodge Defense and Melee/Pierce Avoidance stats were added.\n  • Ice Resist was raised from +3 to +5.",
-    "tags": [
-      "ice",
-      "free"
-    ],
+    "tags": ["ice", "free"],
     "daRequired": false
   },
   {
@@ -6930,9 +6530,7 @@
     "description": "This belt is made from the scales of an Ice Dragon. Its enchantment provides strong defenses. This one is ideal for Rogues!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=7094175",
     "releaseDate": "",
-    "elements": [
-      "ICE"
-    ],
+    "elements": ["ICE"],
     "level": "15",
     "stats": "Block +5, Dodge +5, Parry +5, Magic Def +2, Pierce Def +2, Melee Def +2, DEX +5",
     "resists": "Ice +5",
@@ -6950,10 +6548,7 @@
       }
     ],
     "notes": "Belt had the initial price of 100 Gold and a sellback of 10 Gold.\nThe following changes were implemented on April 17th, 2026:\n  • Previously had the description: This belt is made from the wings of an Ice Dragon. It adds +1 DEF to MAGIC, +3 ICE resistance and +1 to DEX.\n  • Level's requirement was raised from 5 to 15.\n  • Magic Avoidance was raised from +1 to +2.\n  • DEX was raised from +1 to +5.\n  • Block/Parry/Dodge Defense and Melee/Pierce Avoidance stats were added.\n  • Ice Resist was raised from +3 to +5.",
-    "tags": [
-      "ice",
-      "free"
-    ],
+    "tags": ["ice", "free"],
     "daRequired": false
   },
   {
@@ -6965,9 +6560,7 @@
     "description": "Ice dragon scales are woven into the fabric.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19881983",
     "releaseDate": "",
-    "elements": [
-      "ICE"
-    ],
+    "elements": ["ICE"],
     "level": "5",
     "stats": "Crit +1, Magic Def +1, WIS +1, INT +1, Ice +3",
     "rarity": "5",
@@ -6983,10 +6576,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "ice",
-      "gold"
-    ],
+    "tags": ["ice", "gold"],
     "daRequired": false
   },
   {
@@ -6998,9 +6588,7 @@
     "description": "This belt was scavenged from a long dead adventurer who succumbed to the cold hand of death long ago.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22148075",
     "releaseDate": "",
-    "elements": [
-      "ICE"
-    ],
+    "elements": ["ICE"],
     "level": "62",
     "stats": "Block +7, Dodge +7, Parry +7, Crit +6, END +4, CHA +4, LUK +4, INT +2, DEX +2, STR +2",
     "resists": "Ice +4, Water +4, Fire +3, Stone +3",
@@ -7017,10 +6605,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "ice",
-      "free"
-    ],
+    "tags": ["ice", "free"],
     "daRequired": false
   },
   {
@@ -7032,9 +6617,7 @@
     "description": "The leather seems to be covered with the sprouts and mold of a poisonous fungus.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22148012",
     "releaseDate": "",
-    "elements": [
-      "POI"
-    ],
+    "elements": ["POI"],
     "level": "42",
     "stats": "Block +4, Dodge +4, Parry +4, Crit +5, WIS +2, END +2, CHA +2, LUK +2, INT +2, DEX +2, STR +2",
     "resists": "Silver +2, Poison +2, Fire +2, Stone +2",
@@ -7051,10 +6634,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "poi",
-      "free"
-    ],
+    "tags": ["poi", "free"],
     "daRequired": false
   },
   {
@@ -7066,9 +6646,7 @@
     "description": "Gemstone quality trithril has been set into the stone faces of this handsome belt!!This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21801841",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "52",
     "stats": "Crit +5, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +3, END +5, CHA +4, Bonus +4",
     "resists": "Immobility +3, Stone +8, Fire +8",
@@ -7085,10 +6663,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "sto",
-      "free"
-    ],
+    "tags": ["sto", "free"],
     "daRequired": true
   },
   {
@@ -7100,9 +6675,7 @@
     "description": "This magical belt was once the shoestring of a very well dressed and very large giant. It seems to give you a bit of the giant's strength and stupidity.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=14566921",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "12",
     "stats": "END +1, INT -3, STR +4, Bonus +1, Shrink +4, Stone +2",
     "rarity": "1",
@@ -7118,10 +6691,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "dar",
-      "free"
-    ],
+    "tags": ["dar", "free"],
     "daRequired": false
   },
   {
@@ -7632,20 +7202,14 @@
     "equipSlot": "Waist",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dc",
-      "free",
-      "met"
-    ],
+    "tags": ["dc", "free", "met"],
     "hasDA": true,
     "hasDC": true,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-IX",
-    "elements": [
-      "MET"
-    ]
+    "elements": ["MET"]
   },
   {
     "id": "accessory-golden-sash",
@@ -7656,9 +7220,7 @@
     "description": "A sash of golden cloth, it looks like it was torn from a banner.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21079176",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "44",
     "stats": "Crit +4, Magic Def +4, Pierce Def +4, Melee Def +4, END +5, CHA +5, LUK +1, Bonus +5",
     "resists": "Fire +5, Darkness +5, Immobility +3",
@@ -7675,10 +7237,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "lig",
-      "gold"
-    ],
+    "tags": ["lig", "gold"],
     "daRequired": false
   },
   {
@@ -7690,9 +7249,7 @@
     "description": "The only way you're getting this off is by cutting it..",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=10901224",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "25",
     "stats": "Crit +1, INT +2, Bonus +2",
     "resists": "Water +3",
@@ -7709,10 +7266,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false
   },
   {
@@ -7724,9 +7278,7 @@
     "description": "A finely woven belt! It smells like... well, it smells. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21237815",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "56",
     "stats": "Dodge +1, Crit +4, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +4, END +3, CHA -1, Bonus +1",
     "resists": "Nature +9, Wind +5, Disease +5",
@@ -7743,10 +7295,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "lig",
-      "gold"
-    ],
+    "tags": ["lig", "gold"],
     "daRequired": true
   },
   {
@@ -7867,19 +7416,14 @@
     "equipSlot": "Waist",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dar",
-      "merge"
-    ],
+    "tags": ["dar", "merge"],
     "hasDA": false,
     "hasDC": true,
     "hasDM": false,
     "hasFree": false,
     "hasMerge": true,
     "levelRange": "I-III",
-    "elements": [
-      "DAR"
-    ]
+    "elements": ["DAR"]
   },
   {
     "id": "accessory-hadal-wrap",
@@ -7890,9 +7434,7 @@
     "description": "It's almost as though no light or warmth reaches this belt at all. It's freezing to the touch.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17588674",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "33",
     "stats": "Crit +2, WIS +2, END +3, INT +2, DEX +1, STR +2, Bonus +2",
     "resists": "Water +4, Darkness +5, Light +5",
@@ -7909,10 +7451,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "dar",
-      "free"
-    ],
+    "tags": ["dar", "free"],
     "daRequired": false
   },
   {
@@ -7924,9 +7463,7 @@
     "description": "This item requires a Dragon Amulet. It is constructed of a heavy iron and boasts excellent defense for a starting hero.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=8284181",
     "releaseDate": "",
-    "elements": [
-      "MET"
-    ],
+    "elements": ["MET"],
     "level": "1",
     "stats": "Block +4, Dodge +4, Parry +4, Crit +1, WIS +1, END +1, LUK +1",
     "resists": "None",
@@ -7945,10 +7482,7 @@
       }
     ],
     "notes": "The following changes were implemented on March 28th, 2025:\n  • Block was updated from +1 to +4.\n  • Dodge +4, Parry +4, WIS +1, and, LUK +1 stats were added.",
-    "tags": [
-      "met",
-      "merge"
-    ],
+    "tags": ["met", "merge"],
     "daRequired": true
   },
   {
@@ -7960,9 +7494,7 @@
     "description": "This sturdy belt was made from a ship's rigging.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=10901237",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "25",
     "stats": "Crit +1, STR +2, Bonus +2",
     "resists": "Water +3",
@@ -7979,10 +7511,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false
   },
   {
@@ -7994,9 +7523,7 @@
     "description": "Imbued with the peace and tranquility of the Creatioux clearing, this belt adds to your endurance and wisdom!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17786571",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "43",
     "stats": "Crit +3, WIS +4, END +6, Bonus +3",
     "resists": "Stone +6, Wind +6, Immobility +3",
@@ -8013,10 +7540,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "lig",
-      "free"
-    ],
+    "tags": ["lig", "free"],
     "daRequired": false
   },
   {
@@ -8312,20 +7836,14 @@
     "equipSlot": "Waist",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dc",
-      "free",
-      "nat"
-    ],
+    "tags": ["dc", "free", "nat"],
     "hasDA": true,
     "hasDC": true,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-V",
-    "elements": [
-      "NAT"
-    ]
+    "elements": ["NAT"]
   },
   {
     "id": "accessory-howling-horn",
@@ -8336,9 +7854,7 @@
     "description": "Used by wind elves to communicate across vast distances.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21934116",
     "releaseDate": "",
-    "elements": [
-      "WIN"
-    ],
+    "elements": ["WIN"],
     "level": "57",
     "stats": "Crit +5, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +3, END +5, CHA +3, LUK +3, Bonus +5",
     "resists": "Stone +5, Energy +3, Wind +3, Immobility +2",
@@ -8355,10 +7871,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "win",
-      "free"
-    ],
+    "tags": ["win", "free"],
     "daRequired": false
   },
   {
@@ -8370,9 +7883,7 @@
     "description": "This belt radiates a terrible feeling of dread. When you close your eyes you suddenly get the feeling that something... big... and snarling... is behind you!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17878926",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "33",
     "stats": "Crit +5, END +3, CHA -1, LUK -2, INT +2, DEX +2, STR +2, Bonus +3",
     "resists": "Darkness +5, Immobility +3",
@@ -8389,10 +7900,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "dar",
-      "free"
-    ],
+    "tags": ["dar", "free"],
     "daRequired": true
   },
   {
@@ -8404,9 +7912,7 @@
     "description": "Your reward for helping Gingkage! This makes a nice belt and it fits just right. Not too tight, not too loose. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22021706",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "36",
     "stats": "Block +5, Dodge +5, Parry +5, Crit +2, WIS +3, END +3, CHA +2, INT +2, DEX +2, STR +2, Bonus +2",
     "resists": "Water +4, Nature +4",
@@ -8423,10 +7929,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": true
   },
   {
@@ -8438,9 +7941,7 @@
     "description": "Your reward for helping Gingkage! This makes a nice belt and it fits just right. Not too tight, not too loose. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22021716",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "80",
     "stats": "Block +12, Dodge +12, Parry +12, Crit +7, WIS +5, END +5, CHA +5, INT +6, DEX +6, STR +6, Bonus +7",
     "resists": "Water +8, Nature +8, Stone +6",
@@ -8457,10 +7958,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": true
   },
   {
@@ -8472,9 +7970,7 @@
     "description": "Your reward for helping Gingkage! This makes a nice belt and it fits just right. Not too tight, not too loose.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22021714",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "66",
     "stats": "Block +11, Dodge +11, Parry +11, Crit +6, WIS +4, END +4, CHA +4, INT +5, DEX +5, STR +5, Bonus +4",
     "resists": "Water +7, Nature +7, Stone +6",
@@ -8491,10 +7987,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false
   },
   {
@@ -8506,9 +7999,7 @@
     "description": "Your reward for helping Gingkage! This makes a nice belt and it fits just right. Not too tight, not too loose.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22021708",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "46",
     "stats": "Block +7, Dodge +7, Parry +7, Crit +2, WIS +3, END +3, CHA +3, INT +3, DEX +3, STR +3, Bonus +4",
     "resists": "Nature +5, Water +5",
@@ -8525,10 +8016,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false
   },
   {
@@ -8540,9 +8028,7 @@
     "description": "Your reward for helping Gingkage! This makes a nice belt and it fits just right. Not too tight, not too loose.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22021711",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "56",
     "stats": "Block +9, Dodge +9, Parry +9, Crit +4, WIS +4, END +4, CHA +3, INT +3, DEX +3, STR +3, Bonus +4",
     "resists": "Water +6, Nature +6, Stone +4",
@@ -8559,10 +8045,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false
   },
   {
@@ -8574,9 +8057,7 @@
     "description": "Your reward for helping Gingkage! This makes a nice belt and it fits just right. Not too tight, not too loose.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22021703",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "26",
     "stats": "Block +4, Dodge +4, Parry +4, Crit +2, WIS +2, END +2, CHA +1, INT +1, DEX +1, STR +1, Bonus +2",
     "resists": "Water +3, Nature +3",
@@ -8593,10 +8074,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false
   },
   {
@@ -8608,9 +8086,7 @@
     "description": "Your reward for helping Gingkage! This makes a nice belt and it fits just right. Not too tight, not too loose.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22021700",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "16",
     "stats": "Block +2, Dodge +2, Parry +2, Crit +1, WIS +1, END +1, CHA +1, Bonus +2",
     "resists": "Water +2, Nature +2",
@@ -8627,10 +8103,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false
   },
   {
@@ -8642,9 +8115,7 @@
     "description": "This belt was woven from Dragon Leather, and plated with chips from an ice dragons scales. Originally commissioned by Galanoth for some classy evening wear, but it didnt go with the armor. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18953418",
     "releaseDate": "",
-    "elements": [
-      "ICE"
-    ],
+    "elements": ["ICE"],
     "level": "19",
     "stats": "Crit +1, Pierce Def +2, Melee Def +5, END +2, CHA +1, INT +2, DEX +2, STR +2",
     "resists": "Fire +5, Ice +3",
@@ -8661,10 +8132,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "ice",
-      "free"
-    ],
+    "tags": ["ice", "free"],
     "daRequired": true
   },
   {
@@ -8676,9 +8144,7 @@
     "description": "A brightly colored swath of cloth, it's still warm.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20343701",
     "releaseDate": "",
-    "elements": [
-      "FIR"
-    ],
+    "elements": ["FIR"],
     "level": "43",
     "stats": "Crit +5, Magic Def +4, Pierce Def +4, Melee Def +4, END +6, CHA +5, Bonus +3",
     "resists": "Fire +5, Darkness +5, Immobility +3",
@@ -8696,10 +8162,7 @@
       }
     ],
     "notes": "Belt was retired and replaced by Technician's Tools III on November 21st, 2025.",
-    "tags": [
-      "fir",
-      "free"
-    ],
+    "tags": ["fir", "free"],
     "daRequired": false,
     "retired": true
   },
@@ -8712,9 +8175,7 @@
     "description": "You really shouldn't wear this.... This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19683599",
     "releaseDate": "",
-    "elements": [
-      "WIN"
-    ],
+    "elements": ["WIN"],
     "level": "65",
     "stats": "Block +1, Crit +6, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +6, END +6, CHA -2, INT +4, DEX +4, STR +4, Bonus +6",
     "resists": "Disease +10, Fire +10, Immobility +4",
@@ -8731,10 +8192,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "win",
-      "free"
-    ],
+    "tags": ["win", "free"],
     "daRequired": true,
     "isSeasonal": true
   },
@@ -8747,9 +8205,7 @@
     "description": "Trithril inlaid with trithril... double the trithril! This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21797296",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "76",
     "stats": "Magic Def +12, Pierce Def +12, Melee Def +12",
     "resists": "None",
@@ -8766,10 +8222,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "sto",
-      "free"
-    ],
+    "tags": ["sto", "free"],
     "daRequired": true
   },
   {
@@ -8781,9 +8234,7 @@
     "description": "This belt is made of Unicornal Horn that shimmer as you move! This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21237822",
     "releaseDate": "",
-    "elements": [
-      "SIL"
-    ],
+    "elements": ["SIL"],
     "level": "76",
     "stats": "Block +1, Crit +6, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +5, END +3, CHA +5, LUK +1, INT +5, DEX +5, STR +5, Bonus +5",
     "resists": "All +1, Immobility +2",
@@ -8800,10 +8251,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "sil",
-      "gold"
-    ],
+    "tags": ["sil", "gold"],
     "daRequired": true
   },
   {
@@ -8815,9 +8263,7 @@
     "description": "The pouches in this belt contain maps, a hunting knife, a toy plane and some weird piece of paper with numbers on it. Everything you'd need to entertain yourself if you got lost. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17452043",
     "releaseDate": "",
-    "elements": [
-      "WAT"
-    ],
+    "elements": ["WAT"],
     "level": "54",
     "stats": "Magic Def +3, Pierce Def +3, Melee Def +3, WIS +3, END +5, LUK -3, INT +4, STR +4, Bonus +4",
     "resists": "Fire +8, Water +8, Darkness +8, Health -4",
@@ -8834,10 +8280,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "wat",
-      "free"
-    ],
+    "tags": ["wat", "free"],
     "daRequired": true
   },
   {
@@ -8849,9 +8292,7 @@
     "description": "This belt seems really small... then you think about how tiny some of the tunnels in the mine are... you don't want to think about that actually.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18393222",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "13",
     "stats": "Magic Def +2, Pierce Def +2, Melee Def +2, END +3",
     "resists": "Metal +1",
@@ -8868,10 +8309,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "sto",
-      "free"
-    ],
+    "tags": ["sto", "free"],
     "daRequired": false
   },
   {
@@ -8883,9 +8321,7 @@
     "description": "One of the student belts that denotes rank in Edelia. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21392343",
     "releaseDate": "",
-    "elements": [
-      "ICE"
-    ],
+    "elements": ["ICE"],
     "level": "65",
     "stats": "Block +1, Dodge +1, Crit +5, Magic Def +7, Pierce Def +7, Melee Def +7, WIS +7, END +4, LUK +4, INT +4, DEX +4, STR +4, Bonus +7",
     "resists": "Immobility +3, Wind +5, Fire +9",
@@ -8910,10 +8346,7 @@
         "dcRequired": true
       }
     ],
-    "tags": [
-      "ice",
-      "free"
-    ],
+    "tags": ["ice", "free"],
     "daRequired": true,
     "dcRequired": true
   },
@@ -8926,9 +8359,7 @@
     "description": "Some enterprising mermaid took strands of kelp and turned them into jewlery. The magical kelp protects you from fire AND boosts your health! This requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17330014",
     "releaseDate": "",
-    "elements": [
-      "WAT"
-    ],
+    "elements": ["WAT"],
     "level": "52",
     "stats": "Crit +5, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +5, END +5, CHA +4, Bonus +4",
     "resists": "Immobility +5, Fire +8, Energy +8",
@@ -8945,10 +8376,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "wat",
-      "gold"
-    ],
+    "tags": ["wat", "gold"],
     "daRequired": true
   },
   {
@@ -8960,9 +8388,7 @@
     "description": "A sturdy piece of leather, entirely unmagical!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21079169",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "24",
     "stats": "Magic Def +4, Pierce Def +2, Melee Def +2, WIS +1, END +3, Bonus +2",
     "resists": "Metal +3",
@@ -8979,10 +8405,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "gold"
-    ],
+    "tags": ["nat", "gold"],
     "daRequired": false
   },
   {
@@ -9385,20 +8808,14 @@
     "equipSlot": "Waist",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dc",
-      "free",
-      "lig"
-    ],
+    "tags": ["dc", "free", "lig"],
     "hasDA": true,
     "hasDC": true,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-VII",
-    "elements": [
-      "LIG"
-    ]
+    "elements": ["LIG"]
   },
   {
     "id": "accessory-leorilla-mane-belt",
@@ -9549,20 +8966,14 @@
     "equipSlot": "Waist",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "free",
-      "merge",
-      "nat"
-    ],
+    "tags": ["free", "merge", "nat"],
     "hasDA": false,
     "hasDC": true,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": true,
     "levelRange": "I-IV",
-    "elements": [
-      "NAT"
-    ]
+    "elements": ["NAT"]
   },
   {
     "id": "accessory-lock-o-way-safe-belt",
@@ -9573,9 +8984,7 @@
     "description": "Keep your gold and other valuables safe with Lock-o-way!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=16801528",
     "releaseDate": "",
-    "elements": [
-      "SIL"
-    ],
+    "elements": ["SIL"],
     "level": "17",
     "stats": "Crit +1, Magic Def +3, Pierce Def +3, Melee Def +3, END +1, Bonus +1",
     "resists": "Immobility +1",
@@ -9592,10 +9001,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "sil",
-      "free"
-    ],
+    "tags": ["sil", "free"],
     "daRequired": true,
     "isSeasonal": true
   },
@@ -9608,9 +9014,7 @@
     "description": "This belt looks to be handmade, with indecipherable writing stitched all across it. This must have been a very personal item. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22378904",
     "releaseDate": "",
-    "elements": [
-      "SIL"
-    ],
+    "elements": ["SIL"],
     "level": "90",
     "stats": "Block +2, Dodge +2, Parry +2, Crit +8, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +10, END +4, CHA +4, LUK +8, INT +8, DEX +8, STR +8, Bonus +10",
     "resists": "All +5, Immobility +5",
@@ -9635,10 +9039,7 @@
         "dcRequired": true
       }
     ],
-    "tags": [
-      "sil",
-      "free"
-    ],
+    "tags": ["sil", "free"],
     "daRequired": true,
     "dcRequired": true
   },
@@ -9934,20 +9335,14 @@
     "equipSlot": "Waist",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dc",
-      "free",
-      "ice"
-    ],
+    "tags": ["dc", "free", "ice"],
     "hasDA": true,
     "hasDC": true,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-V",
-    "elements": [
-      "ICE"
-    ]
+    "elements": ["ICE"]
   },
   {
     "id": "accessory-machined-belt",
@@ -9958,9 +9353,7 @@
     "description": "This belt is made up of heavy interlocking links of metal and apparently came from the Ruins of Kordana. Its a bit greasy though.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18953589",
     "releaseDate": "",
-    "elements": [
-      "WIN"
-    ],
+    "elements": ["WIN"],
     "level": "34",
     "stats": "Crit +1, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +1, END +4, INT +2, DEX +2, STR +2, Bonus +2",
     "resists": "Wind +4, Stone +4, Metal +4",
@@ -9977,10 +9370,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "win",
-      "free"
-    ],
+    "tags": ["win", "free"],
     "daRequired": false
   },
   {
@@ -10491,20 +9881,14 @@
     "equipSlot": "Waist",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dc",
-      "free",
-      "lig"
-    ],
+    "tags": ["dc", "free", "lig"],
     "hasDA": true,
     "hasDC": true,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-IX",
-    "elements": [
-      "LIG"
-    ]
+    "elements": ["LIG"]
   },
   {
     "id": "accessory-mage-s-challenger-belt",
@@ -10688,19 +10072,14 @@
     "equipSlot": "Waist",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "merge",
-      "met"
-    ],
+    "tags": ["merge", "met"],
     "hasDA": false,
     "hasDC": true,
     "hasDM": false,
     "hasFree": false,
     "hasMerge": true,
     "levelRange": "I-V",
-    "elements": [
-      "MET"
-    ]
+    "elements": ["MET"]
   },
   {
     "id": "accessory-magic-lasso",
@@ -10711,9 +10090,7 @@
     "description": "This magic rope is said to make your enemies tell only the truth... but do you really want to hear that bandit's darkest secrets?",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21934111",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "47",
     "stats": "Block +1, Crit +3, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +3, CHA +3, INT +2, DEX +2, STR +2, Bonus +3",
     "resists": "Nature +6, Metal +4, Wind +2",
@@ -10730,10 +10107,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false
   },
   {
@@ -10745,9 +10119,7 @@
     "description": "It is a belt constructed of enchanted plates of cooled lava. It's heavy but stylish.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=9323839",
     "releaseDate": "",
-    "elements": [
-      "FIR"
-    ],
+    "elements": ["FIR"],
     "level": "14",
     "stats": "Magic Def +2, Pierce Def +2, Melee Def +2, INT +2, DEX +2, STR +2, Bonus +2",
     "resists": "Fire +5",
@@ -10765,10 +10137,7 @@
       }
     ],
     "notes": "The following changes were implemented on March 20th, 2026:\n  • Dragon Amulet requirement was removed.\n  • Level was raised from 10 to 14.\n  • Magic Def +2 was added.\n  • Melee Def, INT, DEX, and STR was raised from +1 to +2.\n  • Sellback was raised from 30 to 300 Gold.\nBelt previously appeared in the retired quest The River Of Fire.",
-    "tags": [
-      "fir",
-      "free"
-    ],
+    "tags": ["fir", "free"],
     "daRequired": false
   },
   {
@@ -10780,9 +10149,7 @@
     "description": "This does not taste good. At all.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21619676",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "58",
     "stats": "Block +1, Dodge +1, Crit +4, Magic Def +5, Pierce Def +6, Melee Def +6, WIS +1, END +5, INT +3, DEX +3, STR +3, Bonus +4",
     "resists": "Stone +6, Nature +6, Metal +4, Immobility +2",
@@ -10799,10 +10166,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false
   },
   {
@@ -10814,9 +10178,7 @@
     "description": "You'll never be late wearing this stylish belt!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17156801",
     "releaseDate": "",
-    "elements": [
-      "NON"
-    ],
+    "elements": ["NON"],
     "level": "15",
     "stats": "Crit +2, END +2, Fire +5",
     "rarity": "5",
@@ -10832,10 +10194,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "non",
-      "gold"
-    ],
+    "tags": ["non", "gold"],
     "daRequired": false
   },
   {
@@ -10987,20 +10346,14 @@
     "equipSlot": "Waist",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "fea",
-      "free",
-      "merge"
-    ],
+    "tags": ["fea", "free", "merge"],
     "hasDA": false,
     "hasDC": true,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": true,
     "levelRange": "I-IV",
-    "elements": [
-      "FEA"
-    ]
+    "elements": ["FEA"]
   },
   {
     "id": "accessory-mine-foreman-s-belt",
@@ -11011,9 +10364,7 @@
     "description": "A sturdy belt, covered with loops and various tools and lenses to find, test and study the ore in the mine.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18393216",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "53",
     "stats": "Dodge +1, Crit +6, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +5, END +7, LUK +2, Bonus +4",
     "resists": "Metal +6, Stone +6, Immobility +3",
@@ -11030,10 +10381,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "sto",
-      "free"
-    ],
+    "tags": ["sto", "free"],
     "daRequired": false
   },
   {
@@ -11045,9 +10393,7 @@
     "description": "A basic belt, worn well with time. It survived much longer then it's original owner....",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18393243",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "33",
     "stats": "Crit +3, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +3, END +4, Bonus +2",
     "resists": "Stone +3, Metal +3, Immobility +1",
@@ -11064,10 +10410,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "sto",
-      "free"
-    ],
+    "tags": ["sto", "free"],
     "daRequired": false
   },
   {
@@ -11079,9 +10422,7 @@
     "description": "This belt is woven from silk and is incredibly strong. But its not really a belt at all. Its a rope with a small grappling hook as a belt buckle.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18957163",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "46",
     "stats": "Dodge +1, Crit +4, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +5, LUK +3, INT +3, DEX +3, STR +3",
     "resists": "Light +5, Darkness +5, Immobility +1",
@@ -11098,10 +10439,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "dar",
-      "free"
-    ],
+    "tags": ["dar", "free"],
     "daRequired": false
   },
   {
@@ -11113,9 +10451,7 @@
     "description": "The links of this belt look melted... some fire monster must have stepped on it!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20277785",
     "releaseDate": "",
-    "elements": [
-      "FIR"
-    ],
+    "elements": ["FIR"],
     "level": "45",
     "stats": "Block +1, Crit +4, Melee Def +5, END +5, INT +3, DEX +3, STR +3, Bonus +4",
     "resists": "Fire +8",
@@ -11133,10 +10469,7 @@
       }
     ],
     "notes": "Belt was retired and replaced by Shining Scaled Belt III on April 25th, 2025.",
-    "tags": [
-      "fir",
-      "free"
-    ],
+    "tags": ["fir", "free"],
     "daRequired": false,
     "retired": true
   },
@@ -11149,9 +10482,7 @@
     "description": "Wear this belt to show the world you are a serious monster hunter.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18351153",
     "releaseDate": "",
-    "elements": [
-      "MET"
-    ],
+    "elements": ["MET"],
     "level": "26",
     "stats": "Crit +4, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +3, END +3, CHA +1, LUK +1",
     "resists": "Wind +5, Poison +5, Nature +3",
@@ -11169,10 +10500,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "met",
-      "merge"
-    ],
+    "tags": ["met", "merge"],
     "daRequired": false
   },
   {
@@ -11184,9 +10512,7 @@
     "description": "You kept this after defeating the Mushroom Major General in the deep woods near Oaklore Keep. It's soft, has some shiny metal bits, and has made you more able to dodge enemies when you wear it.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15122181",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "40",
     "stats": "Dodge +1, Parry +1, Crit +2, Magic Def +1, Melee Def +3, END +3",
     "resists": "Nature +4, Immobility +1",
@@ -11204,10 +10530,7 @@
       }
     ],
     "notes": "Belt previously appeared in the retired quest Major Mayhem.",
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": true
   },
   {
@@ -11219,9 +10542,7 @@
     "description": "One of the mushroom guards dropped this as he fell in battle in the deep woods near Oaklore Keep. It's a bit musty but seems to have made you a bit quicker and more able to dodge enemies when you wear it.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15121099",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "20",
     "stats": "Dodge +1, Crit +1, Magic Def +1, Melee Def +1, END +1",
     "resists": "Nature +2",
@@ -11239,10 +10560,7 @@
       }
     ],
     "notes": "Belt previously appeared in the retired quest Major Mayhem.",
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false
   },
   {
@@ -11254,9 +10572,7 @@
     "description": "One of the mushroom lieutenants dropped this as he fell in battle in the deep woods near Oaklore Keep. It's a bit musty but seems to have made you a bit quicker and more able to dodge enemies when you wear it.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15122096",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "30",
     "stats": "Dodge +1, Crit +1, Magic Def +1, Melee Def +1, END +2",
     "resists": "Nature +3, Immobility +1",
@@ -11274,10 +10590,7 @@
       }
     ],
     "notes": "Belt previously appeared in the retired quest Major Mayhem.",
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false
   },
   {
@@ -11289,9 +10602,7 @@
     "description": "One of the mushroom minions dropped this as he fell in battle in the deep woods near Oaklore Keep. It's a bit musty but seems to have made you a bit quicker and more able to dodge enemies when you wear it.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15122084",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "10",
     "stats": "Melee Def +1, END +1, DEX +1",
     "resists": "Nature +5",
@@ -11309,10 +10620,7 @@
       }
     ],
     "notes": "Belt previously appeared in the retired quest Major Mayhem.",
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false
   },
   {
@@ -11324,9 +10632,7 @@
     "description": "A surprisingly strong mesh infused with swamp yaga magic. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21619681",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "73",
     "stats": "Block +1, Crit +6, Magic Def +8, Pierce Def +7, Melee Def +7, WIS +8, LUK +2, INT +5, DEX +5, STR +5, Bonus +7",
     "resists": "All +4, Immobility +2",
@@ -11343,10 +10649,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": true
   },
   {
@@ -11358,9 +10661,7 @@
     "description": "The initials F.C. are carved into this leather cinch... you briefly wonder if the previous owner is still alive and if they have some sort of bounty for the belt's return.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17588373",
     "releaseDate": "",
-    "elements": [
-      "WAT"
-    ],
+    "elements": ["WAT"],
     "level": "13",
     "stats": "Magic Def +2, Pierce Def +2, Melee Def +2, WIS -1, END +3, LUK -1",
     "resists": "Metal +1",
@@ -11377,10 +10678,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "wat",
-      "free"
-    ],
+    "tags": ["wat", "free"],
     "daRequired": false
   },
   {
@@ -11392,9 +10690,7 @@
     "description": "The gold coins that line this belt glimmer in the sunlight.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21216176",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "16",
     "stats": "Magic Def +1, Pierce Def +1, Melee Def +1, WIS +1, END +1, CHA +1",
     "resists": "Light +1, Energy +1",
@@ -11420,10 +10716,7 @@
       }
     ],
     "notes": "Nebu Belt was previously available from the retired quest Face of Death.",
-    "tags": [
-      "lig",
-      "free"
-    ],
+    "tags": ["lig", "free"],
     "daRequired": false,
     "dcRequired": true
   },
@@ -11436,9 +10729,7 @@
     "description": "This belt is one wore by the graduating students of Necro U. You're pretty sure they're not going to need it anymore...",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=14057382",
     "releaseDate": "",
-    "elements": [
-      "NON"
-    ],
+    "elements": ["NON"],
     "level": "7",
     "stats": "END +1, Bonus +1",
     "rarity": "1",
@@ -11454,10 +10745,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "non",
-      "free"
-    ],
+    "tags": ["non", "free"],
     "daRequired": false
   },
   {
@@ -11469,9 +10757,7 @@
     "description": "This belt is one worn by one of the top-ranked graduating students of Necro U. You're pretty sure he's not going to need it anymore.....",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19916435",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "18",
     "stats": "Magic Def +4, Pierce Def +3, Melee Def +2, CHA -2, END +2, INT +1, Bonus +2, Fire +2, Darkness +2",
     "rarity": "6",
@@ -11487,10 +10773,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "dar",
-      "free"
-    ],
+    "tags": ["dar", "free"],
     "daRequired": false
   },
   {
@@ -11502,9 +10785,7 @@
     "description": "This belt is one worn by one of the top-ranked graduating students of Necro U. You're pretty sure she's not going to need it anymore....",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19916428",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "36",
     "stats": "Crit +2, Magic Def +5, Pierce Def +4, Melee Def +3, END +3, CHA -2, INT +2, Bonus +2, Darkness +4, Fire +3",
     "rarity": "6",
@@ -11520,10 +10801,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "dar",
-      "free"
-    ],
+    "tags": ["dar", "free"],
     "daRequired": false
   },
   {
@@ -11535,9 +10813,7 @@
     "description": "A leather cord created from the strongest of sinews.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15939844",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "40",
     "stats": "Melee Def +2, END +6, STR +5",
     "resists": "Immobility +3",
@@ -11555,10 +10831,7 @@
         "dcRequired": true
       }
     ],
-    "tags": [
-      "nat",
-      "dc"
-    ],
+    "tags": ["nat", "dc"],
     "daRequired": false,
     "dcRequired": true
   },
@@ -11571,9 +10844,7 @@
     "description": "Hungry, hungry darkness! Favorite game of Chaosweaver children everywhere!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17351458",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "30",
     "stats": "Crit +3, WIS +2, END +3, Bonus +2",
     "resists": "Darkness +5, Ice +5",
@@ -11590,10 +10861,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "lig",
-      "free"
-    ],
+    "tags": ["lig", "free"],
     "daRequired": false
   },
   {
@@ -11605,9 +10873,7 @@
     "description": "Is this thing covered in newt tales?! Gross. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17038289",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "38",
     "stats": "Crit +2, Magic Def +2, Pierce Def +2, Melee Def +2, END +3, CHA -2, INT +3, STR +3, Bonus +1",
     "rarity": "5",
@@ -11623,10 +10889,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "dar",
-      "free"
-    ],
+    "tags": ["dar", "free"],
     "daRequired": true
   },
   {
@@ -11638,9 +10901,7 @@
     "description": "This black belt must have been left behind by one of the ninja spies.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=10901243",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "8",
     "stats": "Bonus +1",
     "resists": "Darkness +1",
@@ -11657,10 +10918,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "dar",
-      "free"
-    ],
+    "tags": ["dar", "free"],
     "daRequired": false
   },
   {
@@ -11672,9 +10930,7 @@
     "description": "This hide is sprinkled with star-dust. The puce color is very becoming!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18232125",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "36",
     "stats": "Crit +2, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +1, END +4, INT +1, DEX +1, STR +1, Bonus +2",
     "resists": "Light +3, Darkness +3",
@@ -11691,10 +10947,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false
   },
   {
@@ -11706,9 +10959,7 @@
     "description": "One of the student belts that denotes rank in Edelia. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21392320",
     "releaseDate": "",
-    "elements": [
-      "ICE"
-    ],
+    "elements": ["ICE"],
     "level": "35",
     "stats": "Crit +2, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +4, END +2, LUK +2, INT +2, DEX +2, STR +2, Bonus +4",
     "resists": "Immobility +3, Wind +3, Fire +5",
@@ -11733,10 +10984,7 @@
         "dcRequired": true
       }
     ],
-    "tags": [
-      "ice",
-      "free"
-    ],
+    "tags": ["ice", "free"],
     "daRequired": true,
     "dcRequired": true
   },
@@ -11749,9 +10997,7 @@
     "description": "This clockwork belt is overloaded on gadgets! Will all the pincers, alarms, bells and whistles, you'll always be alert to thieves around you!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=16802009",
     "releaseDate": "",
-    "elements": [
-      "MET"
-    ],
+    "elements": ["MET"],
     "level": "46",
     "stats": "Parry +1, Crit +2, Magic Def +3, Pierce Def +3, Melee Def +3, END +3, CHA +2, INT +2, STR +2, Bonus +2",
     "resists": "Immobility +3",
@@ -11768,10 +11014,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "met",
-      "free"
-    ],
+    "tags": ["met", "free"],
     "daRequired": true,
     "isSeasonal": true
   },
@@ -11784,9 +11027,7 @@
     "description": "Ogorek gave this small carved wooden keepsake to hang from your belt for good luck. Despite your protests, he insisted it would help you find Elanee. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22384420",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "90",
     "stats": "Block +6, Dodge +6, Parry +6, Crit +8, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +5, END +7, LUK +7, INT +7, DEX +7, STR +7, Bonus +10",
     "resists": "All +5, Immobility +5, Health -10",
@@ -11811,10 +11052,7 @@
         "dcRequired": true
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": true,
     "dcRequired": true
   },
@@ -11827,9 +11065,7 @@
     "description": "Interlinked pieces of opalescent trithril provide great armor! This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21793319",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "37",
     "stats": "Block +1, Crit +5, Magic Def +3, Pierce Def +3, Melee Def +3, END +4, INT +1, DEX +1, STR +1, Bonus +4",
     "resists": "Stone +5, Metal +4, Immobility +3",
@@ -11846,10 +11082,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "sto",
-      "free"
-    ],
+    "tags": ["sto", "free"],
     "daRequired": true
   },
   {
@@ -11861,9 +11094,7 @@
     "description": "As thanks for your help Orion has given you one of his many belts.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21953497",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "18",
     "stats": "Crit +1, Magic Def +1, Pierce Def +1, Melee Def +1, WIS +1, END +2, CHA +1, INT +1, DEX +1, STR +1, Bonus +2",
     "resists": "Nature +2, Water +2",
@@ -11880,10 +11111,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "lig",
-      "free"
-    ],
+    "tags": ["lig", "free"],
     "daRequired": false,
     "isRare": true
   },
@@ -11896,9 +11124,7 @@
     "description": "As thanks for your help Orion has given you one of his many belts. This one seems to be able to hold hundreds of tiny eggs. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21953533",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "48",
     "stats": "Crit +2, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +4, END +4, CHA +4, INT +4, DEX +4, STR +4, Bonus +4",
     "resists": "Nature +3, Water +3, Energy +1",
@@ -11915,10 +11141,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "lig",
-      "free"
-    ],
+    "tags": ["lig", "free"],
     "daRequired": true,
     "isRare": true
   },
@@ -11931,9 +11154,7 @@
     "description": "As thanks for your help Orion has given you one of his many belts. It has a few egg pouches sewn into the sides.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21953501",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "68",
     "stats": "Crit +4, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +6, END +6, CHA +5, INT +7, DEX +7, STR +7, Bonus +6",
     "resists": "Nature +6, Water +6, Energy +4, Mana -2",
@@ -11950,10 +11171,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "lig",
-      "free"
-    ],
+    "tags": ["lig", "free"],
     "daRequired": false,
     "isRare": true
   },
@@ -11966,9 +11184,7 @@
     "description": "As thanks for your help Orion has given you one of his many belts. This one has a really big egg pouch on the front.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21953498",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "58",
     "stats": "Crit +3, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +5, END +5, CHA +5, INT +5, DEX +5, STR +5, Bonus +5",
     "resists": "Nature +4, Water +4, Energy +2, Mana -1",
@@ -11985,10 +11201,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "lig",
-      "free"
-    ],
+    "tags": ["lig", "free"],
     "daRequired": false,
     "isRare": true
   },
@@ -12001,9 +11214,7 @@
     "description": "As thanks for your help Orion has given you one of his many belts. This one doesn't seem like it will hold any eggs.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21953502",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "28",
     "stats": "Crit +2, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +2, END +2, CHA +2, INT +2, DEX +2, STR +2, Bonus +2",
     "resists": "Nature +2, Water +2",
@@ -12020,10 +11231,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "lig",
-      "free"
-    ],
+    "tags": ["lig", "free"],
     "daRequired": false,
     "isRare": true
   },
@@ -12036,9 +11244,7 @@
     "description": "As thanks for your help Orion has given you one of his many belts. This one looks like it holds a dozen or so.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21953512",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "38",
     "stats": "Crit +2, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +3, END +3, CHA +3, INT +3, DEX +3, STR +3, Bonus +2",
     "resists": "Nature +3, Water +3",
@@ -12055,10 +11261,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "lig",
-      "free"
-    ],
+    "tags": ["lig", "free"],
     "daRequired": false,
     "isRare": true
   },
@@ -12071,9 +11274,7 @@
     "description": "This belt does not seem like the others. It has a strange hollow orb attached. When you look inside you can see what looks like a universe! Is that? No, it cannot be. Drakath does not have wings. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21953504",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "80",
     "stats": "Crit +5, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +7, END +7, CHA +6, INT +7, DEX +7, STR +7, Bonus +7",
     "resists": "Nature +7, Water +7, Energy +6, Mana -3",
@@ -12090,10 +11291,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "lig",
-      "free"
-    ],
+    "tags": ["lig", "free"],
     "daRequired": true,
     "isRare": true
   },
@@ -12106,9 +11304,7 @@
     "description": "Anti-magic runes are carved all over the inside of this belt. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21934101",
     "releaseDate": "",
-    "elements": [
-      "SIL"
-    ],
+    "elements": ["SIL"],
     "level": "67",
     "stats": "Block +2, Crit +6, Magic Def +9, Pierce Def +3, Melee Def +3, END +7, LUK +5, INT +5, DEX +5, STR +5, Bonus +6",
     "resists": "Wind +8, Water +8, Light +6, Immobility +3, Health -2",
@@ -12125,10 +11321,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "sil",
-      "free"
-    ],
+    "tags": ["sil", "free"],
     "daRequired": true
   },
   {
@@ -12140,9 +11333,7 @@
     "description": "This leather belt has many pouches and slots of writing implements. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21216182",
     "releaseDate": "",
-    "elements": [
-      "SIL"
-    ],
+    "elements": ["SIL"],
     "level": "76",
     "stats": "Block +1, Crit +6, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +8, END +2, CHA +2, LUK +2, INT +5, DEX +5, STR +5, Bonus +7",
     "resists": "All +4, Immobility +2",
@@ -12168,10 +11359,7 @@
       }
     ],
     "notes": "Ostracon Supplies was previously available from the retired quest Face of Death.",
-    "tags": [
-      "sil",
-      "free"
-    ],
+    "tags": ["sil", "free"],
     "daRequired": true,
     "dcRequired": true
   },
@@ -12294,19 +11482,14 @@
     "equipSlot": "Waist",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "merge",
-      "nat"
-    ],
+    "tags": ["merge", "nat"],
     "hasDA": false,
     "hasDC": true,
     "hasDM": false,
     "hasFree": false,
     "hasMerge": true,
     "levelRange": "I-III",
-    "elements": [
-      "NAT"
-    ]
+    "elements": ["NAT"]
   },
   {
     "id": "accessory-pactogonal-knight-belt",
@@ -12317,9 +11500,7 @@
     "description": "This sturdy belt is the same kind worn by the Knights of the Pactogonal Table. It increases your Block, Parry, and Dodge Defenses, making it slightly more likely for you to Defend against attacks.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=8001601",
     "releaseDate": "",
-    "elements": [
-      "MET"
-    ],
+    "elements": ["MET"],
     "level": "1",
     "stats": "Block +4, Dodge +4, Parry +4, Crit +1",
     "resists": "None",
@@ -12338,10 +11519,7 @@
       }
     ],
     "notes": "Belt previously required 5 Pouch of Sparkling Sand; this was lowered to 1 on March 21st, 2025.\nThe following changes were implemented on March 28th, 2025:\n  • The description's excerpt It increases your Block, Parry, and Dodge Defenses, making it slightly more likely for you to Defend against attacks. was added.\n  • Block stat was updated from +1 to +4.\n  • Parry and Dodge stats were added.",
-    "tags": [
-      "met",
-      "merge"
-    ],
+    "tags": ["met", "merge"],
     "daRequired": false
   },
   {
@@ -12353,9 +11531,7 @@
     "description": "Crispy and delicious! This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19590609",
     "releaseDate": "",
-    "elements": [
-      "BAC"
-    ],
+    "elements": ["BAC"],
     "level": "60",
     "stats": "Block +1, Crit +6, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +6, CHA +4, LUK +4, Bonus +5",
     "resists": "Bacon +8, Fire +5, Immobility +3",
@@ -12372,10 +11548,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "bac",
-      "free"
-    ],
+    "tags": ["bac", "free"],
     "daRequired": true
   },
   {
@@ -12387,9 +11560,7 @@
     "description": "You're starting to feel hot and clammy at the same time... and growl.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19682728",
     "releaseDate": "",
-    "elements": [
-      "DIS"
-    ],
+    "elements": ["DIS"],
     "level": "50",
     "stats": "Crit +4, Magic Def +3, Pierce Def +3, Melee Def +3, END +5, LUK +1, INT +4, DEX +4, STR +4, Bonus +5",
     "resists": "Immobility +3, Disease +8, Fire +6",
@@ -12406,10 +11577,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "dis",
-      "free"
-    ],
+    "tags": ["dis", "free"],
     "daRequired": false,
     "isSeasonal": true
   },
@@ -12417,11 +11585,7 @@
     "id": "accessory-paper-coil",
     "familyName": "Paper Coil",
     "slug": "accessory-paper-coil",
-    "aliasSlugs": [
-      "accessory-paper-coil-i",
-      "accessory-paper-coil-ii",
-      "accessory-paper-coil-iii"
-    ],
+    "aliasSlugs": ["accessory-paper-coil-i", "accessory-paper-coil-ii", "accessory-paper-coil-iii"],
     "type": "accessory",
     "subtype": "belt",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22414404",
@@ -12531,19 +11695,14 @@
     "equipSlot": "Waist",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "merge",
-      "nat"
-    ],
+    "tags": ["merge", "nat"],
     "hasDA": false,
     "hasDC": true,
     "hasDM": false,
     "hasFree": false,
     "hasMerge": true,
     "levelRange": "I-III",
-    "elements": [
-      "NAT"
-    ]
+    "elements": ["NAT"]
   },
   {
     "id": "accessory-plague-girdle",
@@ -12554,9 +11713,7 @@
     "description": "It's smelly and dirty and... do you really want this?",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19682686",
     "releaseDate": "",
-    "elements": [
-      "DIS"
-    ],
+    "elements": ["DIS"],
     "level": "40",
     "stats": "Crit +4, WIS +3, END +5, LUK -2, INT +2, DEX +2, STR +2, Bonus +3",
     "resists": "Disease +7, Fire +6",
@@ -12573,10 +11730,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "dis",
-      "free"
-    ],
+    "tags": ["dis", "free"],
     "daRequired": false,
     "isSeasonal": true
   },
@@ -12589,9 +11743,7 @@
     "description": "The pockets of this belt are filled with fish roe... time for sushi?",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21980666",
     "releaseDate": "",
-    "elements": [
-      "WAT"
-    ],
+    "elements": ["WAT"],
     "level": "51",
     "stats": "Parry +1, Crit +5, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +4, END +1, INT +2, DEX +2, STR +2, Bonus +4",
     "resists": "Immobility +3, Poison +5, Water +8",
@@ -12608,10 +11760,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "wat",
-      "gold"
-    ],
+    "tags": ["wat", "gold"],
     "daRequired": false
   },
   {
@@ -12623,9 +11772,7 @@
     "description": "Rolith must have borrowed this powercord from Yix. But why? Oaklore Keep doesn't have any electricity.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18819701",
     "releaseDate": "",
-    "elements": [
-      "ENE"
-    ],
+    "elements": ["ENE"],
     "level": "45",
     "stats": "Crit +3, Magic Def +3, Pierce Def +3, Melee Def +3, END +4, CHA +4, Bonus +3",
     "resists": "Immobility +5",
@@ -12642,10 +11789,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "ene",
-      "gold"
-    ],
+    "tags": ["ene", "gold"],
     "daRequired": false,
     "isSeasonal": true
   },
@@ -12658,9 +11802,7 @@
     "description": "Crispy and delicious! This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19590736",
     "releaseDate": "",
-    "elements": [
-      "BAC"
-    ],
+    "elements": ["BAC"],
     "level": "40",
     "stats": "Crit +2, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +3, CHA +3, LUK +3, Bonus +1",
     "resists": "Bacon +4, Fire +3, Immobility +1",
@@ -12677,10 +11819,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "bac",
-      "free"
-    ],
+    "tags": ["bac", "free"],
     "daRequired": true
   },
   {
@@ -12692,9 +11831,7 @@
     "description": "Crispy and delicious! This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19590474",
     "releaseDate": "",
-    "elements": [
-      "BAC"
-    ],
+    "elements": ["BAC"],
     "level": "50",
     "stats": "Crit +4, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +5, CHA +3, LUK +3, Bonus +3",
     "resists": "Bacon +6, Fire +3, Immobility +2",
@@ -12711,10 +11848,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "bac",
-      "free"
-    ],
+    "tags": ["bac", "free"],
     "daRequired": true
   },
   {
@@ -12726,9 +11860,7 @@
     "description": "The shackles attached to these chains rattle as you run.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22148038",
     "releaseDate": "",
-    "elements": [
-      "MET"
-    ],
+    "elements": ["MET"],
     "level": "66",
     "stats": "Block +8, Dodge +8, Parry +8, Crit +7, WIS +5, END +5, CHA +5, LUK +5, INT +3, DEX +3, STR +3",
     "resists": "Metal +5, Nature +5, Darkness +3, Stone +3",
@@ -12745,20 +11877,13 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "met",
-      "free"
-    ],
+    "tags": ["met", "free"],
     "daRequired": false
   },
   {
     "id": "accessory-protectorate-belt",
     "familyName": "Protectorate Belt",
     "slug": "accessory-protectorate-belt",
-    "aliasSlugs": [
-      "accessory-protectorate-belt",
-      "accessory-protectorate-belt"
-    ],
     "type": "accessory",
     "subtype": "belt",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=10237715",
@@ -12835,10 +11960,7 @@
     "equipSlot": "Waist",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "free",
-      "wat"
-    ],
+    "tags": ["free", "wat"],
     "isRare": true,
     "hasDA": false,
     "hasDC": true,
@@ -12846,9 +11968,7 @@
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "2",
-    "elements": [
-      "WAT"
-    ]
+    "elements": ["WAT"]
   },
   {
     "id": "accessory-pyromancer-cord",
@@ -12859,9 +11979,7 @@
     "description": "A belt of woven cloth of flame... it burns in your hand. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21079259",
     "releaseDate": "",
-    "elements": [
-      "FIR"
-    ],
+    "elements": ["FIR"],
     "level": "64",
     "stats": "Block +1, Dodge +1, Crit +6, Magic Def +7, Pierce Def +7, Melee Def +7, WIS +6, INT +2, DEX +2, STR +2, Bonus +6",
     "resists": "Ice +10, Water +10",
@@ -12878,10 +11996,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "fir",
-      "gold"
-    ],
+    "tags": ["fir", "gold"],
     "daRequired": true
   },
   {
@@ -12893,9 +12008,7 @@
     "description": "The royal sash of Emperor Kuron, an ancient ruler in the city of Sil.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19795145",
     "releaseDate": "",
-    "elements": [
-      "SIL"
-    ],
+    "elements": ["SIL"],
     "level": "47",
     "stats": "Crit +3, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +4, CHA +3, INT +2, DEX +2, STR +2, Bonus +3",
     "resists": "Water +6, Ice +4, Light +2",
@@ -12912,10 +12025,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "sil",
-      "free"
-    ],
+    "tags": ["sil", "free"],
     "daRequired": false
   },
   {
@@ -12927,9 +12037,7 @@
     "description": "This belt looks like it has been laying on the forest floor for a few months.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=4153982",
     "releaseDate": "",
-    "elements": [
-      "MET"
-    ],
+    "elements": ["MET"],
     "level": "1",
     "stats": "Block +1, Melee Def +5",
     "resists": "None",
@@ -12946,10 +12054,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "met",
-      "free"
-    ],
+    "tags": ["met", "free"],
     "daRequired": false
   },
   {
@@ -12961,9 +12066,7 @@
     "description": "You've enhanced your belt with shadow energy. It feels as though you aren't clasping anything around your waist as you put it on. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22387776",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "90",
     "stats": "Crit +10, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +13, END +13, LUK +12, INT +9, DEX +9, STR +9, Bonus +8",
     "resists": "Light +11, Darkness +11, Good +2, Evil +2, Immobility +10",
@@ -12982,10 +12085,7 @@
         "dcRequired": true
       }
     ],
-    "tags": [
-      "dar",
-      "merge"
-    ],
+    "tags": ["dar", "merge"],
     "daRequired": true,
     "dcRequired": true
   },
@@ -13281,20 +12381,14 @@
     "equipSlot": "Waist",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dc",
-      "free",
-      "goo"
-    ],
+    "tags": ["dc", "free", "goo"],
     "hasDA": true,
     "hasDC": true,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-V",
-    "elements": [
-      "GOO"
-    ]
+    "elements": ["GOO"]
   },
   {
     "id": "accessory-rings-of-the-eryines",
@@ -13305,9 +12399,7 @@
     "description": "This belt is made of colored rings sewn to a silk band and signifies that its wearer holds the throne of the united Jungle Fury tribes. It is said to lend magical aid to its owner. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15865765",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "45",
     "stats": "Block +1, Dodge +1, Crit +3, Magic Def +2, Pierce Def +1, Melee Def +3, END +3, INT +2",
     "resists": "Immobility +2, Fire +1, Ice +1",
@@ -13324,10 +12416,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": true
   },
   {
@@ -13512,19 +12601,14 @@
     "equipSlot": "Waist",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "merge",
-      "met"
-    ],
+    "tags": ["merge", "met"],
     "hasDA": false,
     "hasDC": true,
     "hasDM": false,
     "hasFree": false,
     "hasMerge": true,
     "levelRange": "I-V",
-    "elements": [
-      "MET"
-    ]
+    "elements": ["MET"]
   },
   {
     "id": "accessory-rose-s-chaotic-flux-sash",
@@ -13535,9 +12619,7 @@
     "description": "When you wear this, time spins out of control!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19918898",
     "releaseDate": "",
-    "elements": [
-      "NON"
-    ],
+    "elements": ["NON"],
     "level": "35",
     "stats": "Crit +4, END +4, INT +2, Bonus +2, Ice +5, Fire +7",
     "rarity": "5",
@@ -13553,10 +12635,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "non",
-      "gold"
-    ],
+    "tags": ["non", "gold"],
     "daRequired": false
   },
   {
@@ -13568,9 +12647,7 @@
     "description": "You kept this after defeating the Mushroom Major General in the deep woods near Oaklore Keep. It's soft, has some shiny metal bits, and has made you more able to dodge enemies when you wear it.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19918881",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "40",
     "stats": "Crit +4, END +5, INT +2, Bonus +3, Ice +6, Fire +7",
     "rarity": "5",
@@ -13586,10 +12663,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "gold"
-    ],
+    "tags": ["nat", "gold"],
     "daRequired": false
   },
   {
@@ -13601,9 +12675,7 @@
     "description": "This belt goes GREAT with time travel. It makes you look slimming in a timely manner.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17157719",
     "releaseDate": "",
-    "elements": [
-      "NON"
-    ],
+    "elements": ["NON"],
     "level": "5",
     "stats": "END +2",
     "rarity": "5",
@@ -13619,10 +12691,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "non",
-      "gold"
-    ],
+    "tags": ["non", "gold"],
     "daRequired": false
   },
   {
@@ -13634,9 +12703,7 @@
     "description": "Shiny AND temporal! This belt has it all!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19918901",
     "releaseDate": "",
-    "elements": [
-      "NON"
-    ],
+    "elements": ["NON"],
     "level": "20",
     "stats": "Dodge +1, Crit +2, END +3, Magic Def +1, Melee Def +1, Fire +6",
     "rarity": "5",
@@ -13652,10 +12719,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "non",
-      "gold"
-    ],
+    "tags": ["non", "gold"],
     "daRequired": false
   },
   {
@@ -13667,9 +12731,7 @@
     "description": "Time keeps on slipping into the future. Time is golden. So by some transitive property of math, gold keeps on slipping into the future. Is there any way to make money of that?",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17157740",
     "releaseDate": "",
-    "elements": [
-      "NON"
-    ],
+    "elements": ["NON"],
     "level": "25",
     "stats": "Crit +3, END +3, Fire +7",
     "rarity": "5",
@@ -13685,10 +12747,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "non",
-      "gold"
-    ],
+    "tags": ["non", "gold"],
     "daRequired": false
   },
   {
@@ -13700,9 +12759,7 @@
     "description": "Numbers run along the edge of this sash. As you approach your original spacetime location, the numbers glow brighter.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17157713",
     "releaseDate": "",
-    "elements": [
-      "NON"
-    ],
+    "elements": ["NON"],
     "level": "10",
     "stats": "Crit +1, END +2, Fire +3",
     "rarity": "5",
@@ -13718,10 +12775,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "non",
-      "gold"
-    ],
+    "tags": ["non", "gold"],
     "daRequired": false
   },
   {
@@ -14070,20 +13124,14 @@
     "equipSlot": "Waist",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dc",
-      "free",
-      "ice"
-    ],
+    "tags": ["dc", "free", "ice"],
     "hasDA": true,
     "hasDC": true,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-VI",
-    "elements": [
-      "ICE"
-    ]
+    "elements": ["ICE"]
   },
   {
     "id": "accessory-runed-warrior-belt",
@@ -14094,9 +13142,7 @@
     "description": "An ancient belt from one of the skeletons in the Professor's cave. Soldier's must have once used the cave as shelter. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20343684",
     "releaseDate": "",
-    "elements": [
-      "WIN"
-    ],
+    "elements": ["WIN"],
     "level": "63",
     "stats": "Block +1, Dodge +1, Crit +6, Magic Def +7, Pierce Def +7, Melee Def +7, END +6, INT +2, DEX +2, STR +2, Bonus +6",
     "resists": "Stone +10, Fire +10",
@@ -14114,10 +13160,7 @@
       }
     ],
     "notes": "Belt was retired and replaced by Technician's Tools V on November 21st, 2025.",
-    "tags": [
-      "win",
-      "free"
-    ],
+    "tags": ["win", "free"],
     "daRequired": true,
     "retired": true
   },
@@ -14130,9 +13173,7 @@
     "description": "The dark dragon scales are now coated in rust. Gross. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21980678",
     "releaseDate": "",
-    "elements": [
-      "WAT"
-    ],
+    "elements": ["WAT"],
     "level": "38",
     "stats": "Parry +1, Crit +2, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +1, END +3, CHA -1, INT +1, DEX +1, STR +1, Bonus +1",
     "resists": "Fire +4, Darkness +4, Water +1",
@@ -14149,10 +13190,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "wat",
-      "gold"
-    ],
+    "tags": ["wat", "gold"],
     "daRequired": true
   },
   {
@@ -14164,9 +13202,7 @@
     "description": "this was forged from a shiny, black metal that has since rusted in the waters of the Bay.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21980662",
     "releaseDate": "",
-    "elements": [
-      "WAT"
-    ],
+    "elements": ["WAT"],
     "level": "14",
     "stats": "Block +1, END +1",
     "resists": "Darkness +1",
@@ -14183,10 +13219,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "wat",
-      "gold"
-    ],
+    "tags": ["wat", "gold"],
     "daRequired": false
   },
   {
@@ -14198,9 +13231,7 @@
     "description": "Long abandoned, this set of cogs is covered with a fine layer of rust. This requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22148030",
     "releaseDate": "",
-    "elements": [
-      "ENE"
-    ],
+    "elements": ["ENE"],
     "level": "49",
     "stats": "Block +5, Dodge +5, Parry +5, Crit +6, WIS +3, END +3, CHA +3, LUK +3, INT +2, DEX +2, STR +2",
     "resists": "Metal +3, Water +3, Energy +1, Stone +1",
@@ -14217,10 +13248,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "ene",
-      "free"
-    ],
+    "tags": ["ene", "free"],
     "daRequired": true
   },
   {
@@ -14232,9 +13260,7 @@
     "description": "Pulled from the waters of the Bay, this belt is soaked through with salt from the waters. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21980679",
     "releaseDate": "",
-    "elements": [
-      "WAT"
-    ],
+    "elements": ["WAT"],
     "level": "48",
     "stats": "Block +1, Dodge +1, Crit +3, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +3, END +5, LUK +1, INT +4, DEX +4, STR +4, Bonus +3",
     "resists": "Nature +3, Water +3, Fire +1",
@@ -14251,10 +13277,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "wat",
-      "gold"
-    ],
+    "tags": ["wat", "gold"],
     "daRequired": true
   },
   {
@@ -14266,9 +13289,7 @@
     "description": "This dashing silk sash is worn by the princes of the dessert. Both stylish and functional, it looks good and is an excellent place to put your weapon.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18953460",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "26",
     "stats": "Crit +4, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +3, END +3, CHA +4, LUK +1, DEX +1",
     "resists": "Wind +3, Light +3, Nature +3",
@@ -14285,10 +13306,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "lig",
-      "free"
-    ],
+    "tags": ["lig", "free"],
     "daRequired": false
   },
   {
@@ -14300,9 +13318,7 @@
     "description": "This belt is made of some sort of fire-resistant scale. you didn't bother to ask what kind.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=4153780",
     "releaseDate": "",
-    "elements": [
-      "FIR"
-    ],
+    "elements": ["FIR"],
     "level": "1",
     "stats": "Parry +5, Pierce Def +5",
     "resists": "Fire +5",
@@ -14320,10 +13336,7 @@
       }
     ],
     "notes": "Item's Fire Resist is erroneously written in lower case; resistance still functions as intended.",
-    "tags": [
-      "fir",
-      "free"
-    ],
+    "tags": ["fir", "free"],
     "daRequired": false
   },
   {
@@ -14335,9 +13348,7 @@
     "description": "This belt looks like it's been lying in the forest floor for a few months.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=4229142",
     "releaseDate": "",
-    "elements": [
-      "MET"
-    ],
+    "elements": ["MET"],
     "level": "1",
     "stats": "Block +1, Melee Def +5",
     "resists": "None",
@@ -14354,10 +13365,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "met",
-      "free"
-    ],
+    "tags": ["met", "free"],
     "daRequired": false
   },
   {
@@ -14369,9 +13377,7 @@
     "description": "Small bioluminescent creatures blink and shift over the surface of the belt. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21980685",
     "releaseDate": "",
-    "elements": [
-      "WAT"
-    ],
+    "elements": ["WAT"],
     "level": "77",
     "stats": "Dodge +2, Crit +6, Magic Def +8, WIS +7, END +1, CHA +5, INT +5, DEX +5, STR +5, Bonus +8",
     "resists": "Wind +8, Water +8, Darkness +6, Fire +3, Energy +3, Stone -2",
@@ -14388,10 +13394,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "wat",
-      "gold"
-    ],
+    "tags": ["wat", "gold"],
     "daRequired": true
   },
   {
@@ -14403,9 +13406,7 @@
     "description": "The wide links are hopelessly tangled with seaweed.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21980668",
     "releaseDate": "",
-    "elements": [
-      "WAT"
-    ],
+    "elements": ["WAT"],
     "level": "58",
     "stats": "Parry +1, Crit +3, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +4, END +6, INT +5, DEX +5, STR +5, Bonus +5",
     "resists": "Nature +4, Water +4, Fire +2",
@@ -14422,10 +13423,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "wat",
-      "gold"
-    ],
+    "tags": ["wat", "gold"],
     "daRequired": false
   },
   {
@@ -14720,20 +13718,14 @@
     "equipSlot": "Waist",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dc",
-      "free",
-      "sil"
-    ],
+    "tags": ["dc", "free", "sil"],
     "hasDA": true,
     "hasDC": true,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-V",
-    "elements": [
-      "SIL"
-    ]
+    "elements": ["SIL"]
   },
   {
     "id": "accessory-senior-miner-s-belt",
@@ -14744,9 +13736,7 @@
     "description": "This belt is cracked and worn, but still useful.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18393206",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "43",
     "stats": "Crit +5, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +4, END +6, Bonus +3",
     "resists": "Stone +5, Metal +5, Immobility +3",
@@ -14763,10 +13753,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "sto",
-      "free"
-    ],
+    "tags": ["sto", "free"],
     "daRequired": false
   },
   {
@@ -14778,9 +13765,7 @@
     "description": "One of the student belts that denotes rank in Edelia. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21392350",
     "releaseDate": "",
-    "elements": [
-      "ICE"
-    ],
+    "elements": ["ICE"],
     "level": "75",
     "stats": "Block +1, Dodge +1, Parry +1, Crit +6, Magic Def +7, Pierce Def +7, Melee Def +7, WIS +8, END +5, LUK +5, INT +5, DEX +5, STR +5, Bonus +8",
     "resists": "Immobility +3, All +3, Wind +6, Fire +10",
@@ -14805,10 +13790,7 @@
         "dcRequired": true
       }
     ],
-    "tags": [
-      "ice",
-      "free"
-    ],
+    "tags": ["ice", "free"],
     "daRequired": true,
     "dcRequired": true
   },
@@ -14821,9 +13803,7 @@
     "description": "This belt seems to be made of woven shadows... as you touch it, it seems to pull all the heat out of your hand.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22148033",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "34",
     "stats": "Block +4, Dodge +4, Parry +4, Crit +4, WIS +2, END +2, CHA +2, LUK +2, INT +1, DEX +1, STR +1",
     "resists": "Light +2, Darkness +2, Energy +2, Fire +2",
@@ -14840,10 +13820,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "dar",
-      "free"
-    ],
+    "tags": ["dar", "free"],
     "daRequired": true
   },
   {
@@ -14855,9 +13832,7 @@
     "description": "This belt appears to be made of solidified shadow! It's a great belt because black goes well with everything.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=13446926",
     "releaseDate": "",
-    "elements": [
-      "NON"
-    ],
+    "elements": ["NON"],
     "level": "15",
     "stats": "Magic Def +1, Melee Def +1, STR +1, Light +5",
     "rarity": "6",
@@ -14873,10 +13848,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "non",
-      "free"
-    ],
+    "tags": ["non", "free"],
     "daRequired": false
   },
   {
@@ -15026,19 +13998,14 @@
     "equipSlot": "Waist",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dar",
-      "merge"
-    ],
+    "tags": ["dar", "merge"],
     "hasDA": false,
     "hasDC": false,
     "hasDM": false,
     "hasFree": false,
     "hasMerge": true,
     "levelRange": "I-IV",
-    "elements": [
-      "DAR"
-    ]
+    "elements": ["DAR"]
   },
   {
     "id": "accessory-sharkskin-belt",
@@ -15049,9 +14016,7 @@
     "description": "With this belt you can pretend you're a shark, you're a shaaaaark, YOU'RE A SHAAAAAARRRK!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17452001",
     "releaseDate": "",
-    "elements": [
-      "WAT"
-    ],
+    "elements": ["WAT"],
     "level": "24",
     "stats": "Crit +2, Magic Def +1, Pierce Def +1, Melee Def +1, END +2, CHA +1",
     "resists": "Water +2",
@@ -15068,10 +14033,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "wat",
-      "free"
-    ],
+    "tags": ["wat", "free"],
     "daRequired": false
   },
   {
@@ -15083,9 +14045,7 @@
     "description": "Once worn by Sepulchure's minions, it former owner was likely lost in the fall of the Fortress. It's now soaked with the waters of the Bay.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21980673",
     "releaseDate": "",
-    "elements": [
-      "WAT"
-    ],
+    "elements": ["WAT"],
     "level": "70",
     "stats": "Dodge +1, Crit +7, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +7, END +7, INT +4, DEX +4, STR +4, Bonus +5",
     "resists": "Water +6, Darkness +6, Immobility +3",
@@ -15102,10 +14062,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "wat",
-      "gold"
-    ],
+    "tags": ["wat", "gold"],
     "daRequired": false
   },
   {
@@ -15117,9 +14074,7 @@
     "description": "This belt is forged from tough steel and pure gold. If the old saying is true...\"You can judge a hero by the belt that they are wearing\"... this belt will let everyone know that you stand strong in the face of evil.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=13613218",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "29",
     "stats": "Magic Def +4, Pierce Def +4, Melee Def +3, CHA +2, Bonus +2",
     "resists": "Fire +3, Darkness +3, Poison +2, Disease +1",
@@ -15136,10 +14091,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "lig",
-      "free"
-    ],
+    "tags": ["lig", "free"],
     "daRequired": true
   },
   {
@@ -15375,19 +14327,14 @@
     "equipSlot": "Waist",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "free",
-      "met"
-    ],
+    "tags": ["free", "met"],
     "hasDA": true,
     "hasDC": false,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-VII",
-    "elements": [
-      "MET"
-    ]
+    "elements": ["MET"]
   },
   {
     "id": "accessory-shiny-scaled-belt",
@@ -15398,9 +14345,7 @@
     "description": "From afar it looks to be made of lizard scales, but they're really polished metal.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20277366",
     "releaseDate": "",
-    "elements": [
-      "WIN"
-    ],
+    "elements": ["WIN"],
     "level": "65",
     "stats": "Parry +1, Crit +5, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +5, END +5, CHA +2, INT +4, DEX +4, STR +4, Bonus +5",
     "resists": "Metal +8, Fire +8, Energy +5, Immobility +2",
@@ -15418,10 +14363,7 @@
       }
     ],
     "notes": "Belt was retired and replaced by Shining Scaled Belt V on April 25th, 2025.",
-    "tags": [
-      "win",
-      "free"
-    ],
+    "tags": ["win", "free"],
     "daRequired": false,
     "retired": true
   },
@@ -15434,9 +14376,7 @@
     "description": "This belt is commonly worn by all manner of rogues and ninjas.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=4152899",
     "releaseDate": "",
-    "elements": [
-      "MET"
-    ],
+    "elements": ["MET"],
     "level": "1",
     "stats": "Block +1, Parry +3, Pierce Def +5",
     "resists": "None",
@@ -15453,10 +14393,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "met",
-      "free"
-    ],
+    "tags": ["met", "free"],
     "daRequired": false
   },
   {
@@ -15468,9 +14405,7 @@
     "description": "The royal sash of Emperor Kuron, an ancient ruler in the city of Sil.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19795160",
     "releaseDate": "",
-    "elements": [
-      "SIL"
-    ],
+    "elements": ["SIL"],
     "level": "58",
     "stats": "Block +1, Crit +4, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +5, CHA +4, INT +3, DEX +3, STR +3, Bonus +4",
     "resists": "Water +6, Ice +6, Light +4, Immobility +2",
@@ -15487,10 +14422,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "sil",
-      "free"
-    ],
+    "tags": ["sil", "free"],
     "daRequired": false
   },
   {
@@ -15502,9 +14434,7 @@
     "description": "It's a pretty nice belt.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19880003",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "3",
     "stats": "Magic Def +3, Melee Def +3, WIS +1",
     "rarity": "1",
@@ -15520,10 +14450,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "gold"
-    ],
+    "tags": ["nat", "gold"],
     "daRequired": false
   },
   {
@@ -15535,9 +14462,7 @@
     "description": "Crafted specifically to help in the fight against the creatures of the Doomwood. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22151280",
     "releaseDate": "",
-    "elements": [
-      "SIL"
-    ],
+    "elements": ["SIL"],
     "level": "72",
     "stats": "Block +9, Dodge +9, Parry +9, Crit +7, Magic Def +1, Pierce Def +1, Melee Def +1, WIS +6, END +6, CHA +6, LUK +6, INT +3, DEX +3, STR +3",
     "resists": "Silver +5, Poison +5, Darkness +4, Fire +4",
@@ -15554,10 +14479,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "sil",
-      "free"
-    ],
+    "tags": ["sil", "free"],
     "daRequired": true
   },
   {
@@ -15569,9 +14491,7 @@
     "description": "The delicate workmanship of this belt looks elvish. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21079273",
     "releaseDate": "",
-    "elements": [
-      "SIL"
-    ],
+    "elements": ["SIL"],
     "level": "74",
     "stats": "Block +1, Crit +5, Magic Def +8, Pierce Def +5, Melee Def +5, WIS +8, END +2, CHA +2, LUK +2, INT +5, DEX +5, STR +5, Bonus +8",
     "resists": "All +4, Immobility +2",
@@ -15588,10 +14508,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "sil",
-      "gold"
-    ],
+    "tags": ["sil", "gold"],
     "daRequired": true
   },
   {
@@ -15603,9 +14520,7 @@
     "description": "You're pretty sure that pieces of hip bones are still attached to this belt...",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21980663",
     "releaseDate": "",
-    "elements": [
-      "WAT"
-    ],
+    "elements": ["WAT"],
     "level": "24",
     "stats": "Block +1, Crit +1, Magic Def +2, Pierce Def +1, Melee Def +1, END +3, Bonus +2",
     "resists": "Metal +3, Darkness +1",
@@ -15622,10 +14537,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "wat",
-      "gold"
-    ],
+    "tags": ["wat", "gold"],
     "daRequired": false
   },
   {
@@ -15637,9 +14549,7 @@
     "description": "The once pristine black scales of this belt are now covered with slime and lichen.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21980669",
     "releaseDate": "",
-    "elements": [
-      "WAT"
-    ],
+    "elements": ["WAT"],
     "level": "65",
     "stats": "Parry +1, Crit +5, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +4, END +5, INT +4, DEX +4, STR +4, Bonus +6",
     "resists": "Metal +8, Fire +8, Water +5, Immobility +2, Darkness +1",
@@ -15656,10 +14566,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "wat",
-      "gold"
-    ],
+    "tags": ["wat", "gold"],
     "daRequired": false
   },
   {
@@ -15671,9 +14578,7 @@
     "description": "Made from the shed skin of Zoo's reptiles! Ew....",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21237807",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "37",
     "stats": "Parry +1, Crit +5, Magic Def +2, Pierce Def +2, Melee Def +2, END +5, INT +2, DEX +2, STR +2, Bonus +4",
     "resists": "Poison +5, Nature +4, Immobility +3",
@@ -15690,10 +14595,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "lig",
-      "gold"
-    ],
+    "tags": ["lig", "gold"],
     "daRequired": true
   },
   {
@@ -15705,9 +14607,7 @@
     "description": "A braided cord of ferns soaked in water! At least it won't catch fire...",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21620184",
     "releaseDate": "",
-    "elements": [
-      "WAT"
-    ],
+    "elements": ["WAT"],
     "level": "48",
     "stats": "Crit +2, Magic Def +4, Pierce Def +3, Melee Def +3, WIS +4, CHA +3, INT +2, DEX +2, STR +2, Bonus +4",
     "resists": "Fire +6, Water +4, Light +2",
@@ -15724,10 +14624,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "wat",
-      "free"
-    ],
+    "tags": ["wat", "free"],
     "daRequired": false
   },
   {
@@ -15739,9 +14636,7 @@
     "description": "It smells like dragon morning breath! Ew. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21920354",
     "releaseDate": "",
-    "elements": [
-      "POI"
-    ],
+    "elements": ["POI"],
     "level": "28",
     "stats": "Crit +3, Magic Def +2, Pierce Def +2, Melee Def +2, END +3, CHA -1, INT +1, DEX +1, STR +1, Bonus +2",
     "resists": "Poison +3, Fire +3, All +1",
@@ -15758,10 +14653,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "poi",
-      "free"
-    ],
+    "tags": ["poi", "free"],
     "daRequired": true
   },
   {
@@ -15773,9 +14665,7 @@
     "description": "One of the student belts that denotes rank in Edelia.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21392338",
     "releaseDate": "",
-    "elements": [
-      "ICE"
-    ],
+    "elements": ["ICE"],
     "level": "55",
     "stats": "Block +1, Crit +4, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +5, END +3, LUK +1, INT +3, DEX +3, STR +3, Bonus +6",
     "resists": "Immobility +3, Wind +4, Fire +7",
@@ -15800,10 +14690,7 @@
         "dcRequired": true
       }
     ],
-    "tags": [
-      "ice",
-      "free"
-    ],
+    "tags": ["ice", "free"],
     "daRequired": false,
     "dcRequired": true
   },
@@ -15816,9 +14703,7 @@
     "description": "Good things come in 2s, and there are a lot of 2s on this belt.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=13446757",
     "releaseDate": "",
-    "elements": [
-      "NON"
-    ],
+    "elements": ["NON"],
     "level": "35",
     "stats": "Crit +2, Pierce Def +2, CHA +2, LUK +2, INT +2, STR +2, Bonus +2, Stone +2, Water +2, Wind +2, Fire +2",
     "rarity": "6",
@@ -15834,10 +14719,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "non",
-      "free"
-    ],
+    "tags": ["non", "free"],
     "daRequired": false
   },
   {
@@ -15849,9 +14731,7 @@
     "description": "This belt seems to have been extended a bit. Whoever owned it probably should have hit the G.E.A.R.S. gym a bit more often. This requires a Sta...erm...Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22013364",
     "releaseDate": "",
-    "elements": [
-      "ENE"
-    ],
+    "elements": ["ENE"],
     "level": "18",
     "stats": "Block +2, Dodge +2, Parry +2, Crit +1, WIS +1, END +2, CHA +1, INT +1, DEX +1, STR +1, Bonus +2",
     "resists": "Wind +2, Water +2",
@@ -15876,10 +14756,7 @@
         "dcRequired": true
       }
     ],
-    "tags": [
-      "ene",
-      "gold"
-    ],
+    "tags": ["ene", "gold"],
     "daRequired": true,
     "dcRequired": true
   },
@@ -15892,9 +14769,7 @@
     "description": "This belt seems to be overly fancy. Sorry Starbuck, you aren't getting this one back.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22013369",
     "releaseDate": "",
-    "elements": [
-      "ENE"
-    ],
+    "elements": ["ENE"],
     "level": "58",
     "stats": "Block +8, Dodge +8, Parry +8, Crit +3, WIS +5, END +5, CHA +5, INT +5, DEX +5, STR +5, Bonus +5",
     "resists": "Wind +4, Water +4, Energy +2, Mana -1",
@@ -15920,10 +14795,7 @@
       }
     ],
     "notes": "Item has Mana flavor resistance.",
-    "tags": [
-      "ene",
-      "gold"
-    ],
+    "tags": ["ene", "gold"],
     "daRequired": false,
     "dcRequired": true
   },
@@ -15936,9 +14808,7 @@
     "description": "This belt was found folded at the bottom of the trunk. Obviously it was cared for very well if the person who put it in there took the time to fold a belt. This requires a Sta...erm...Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22013367",
     "releaseDate": "",
-    "elements": [
-      "ENE"
-    ],
+    "elements": ["ENE"],
     "level": "48",
     "stats": "Block +7, Dodge +7, Parry +7, Crit +2, WIS +4, END +4, CHA +4, INT +4, DEX +4, STR +4, Bonus +4",
     "resists": "Wind +3, Water +3, Energy +1",
@@ -15963,10 +14833,7 @@
         "dcRequired": true
       }
     ],
-    "tags": [
-      "ene",
-      "gold"
-    ],
+    "tags": ["ene", "gold"],
     "daRequired": true,
     "dcRequired": true
   },
@@ -15979,9 +14846,7 @@
     "description": "This belt has been awarded to *write name in here* for outstanding valor in the fight against the Shadowscythe Armada. This requires a Sta...erm...Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22013378",
     "releaseDate": "",
-    "elements": [
-      "ENE"
-    ],
+    "elements": ["ENE"],
     "level": "78",
     "stats": "Block +11, Dodge +11, Parry +11, Crit +5, Magic Def +1, Pierce Def +1, Melee Def +1, WIS +7, END +7, CHA +6, INT +6, DEX +6, STR +6, Bonus +7",
     "resists": "Wind +7, Water +7, Energy +5, Mana -4",
@@ -16007,10 +14872,7 @@
       }
     ],
     "notes": "Item has Mana flavor resistance.",
-    "tags": [
-      "ene",
-      "gold"
-    ],
+    "tags": ["ene", "gold"],
     "daRequired": true,
     "dcRequired": true
   },
@@ -16023,9 +14885,7 @@
     "description": "This belt seems to have belonged to someone very important. It looks really familiar though...have you seen it before somehow?",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22013375",
     "releaseDate": "",
-    "elements": [
-      "ENE"
-    ],
+    "elements": ["ENE"],
     "level": "68",
     "stats": "Block +10, Dodge +10, Parry +10, Crit +4, WIS +6, END +6, CHA +5, INT +5, DEX +5, STR +5, Bonus +6",
     "resists": "Wind +6, Water +6, Energy +4, Mana -2",
@@ -16051,10 +14911,7 @@
       }
     ],
     "notes": "Item has Mana flavor resistance.",
-    "tags": [
-      "ene",
-      "gold"
-    ],
+    "tags": ["ene", "gold"],
     "daRequired": false,
     "dcRequired": true
   },
@@ -16067,9 +14924,7 @@
     "description": "Some of the symbols on this belt seem to match some of the things inside the ship hidden at the center of the castle.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22013360",
     "releaseDate": "",
-    "elements": [
-      "ENE"
-    ],
+    "elements": ["ENE"],
     "level": "8",
     "stats": "Block +1, Dodge +1, Parry +1, WIS +1, END +1",
     "resists": "Water +1",
@@ -16094,10 +14949,7 @@
         "dcRequired": true
       }
     ],
-    "tags": [
-      "ene",
-      "gold"
-    ],
+    "tags": ["ene", "gold"],
     "daRequired": false,
     "dcRequired": true
   },
@@ -16110,9 +14962,7 @@
     "description": "This belt seems really stretched out. Maybe whoever owned it finally hit the gym...",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22013366",
     "releaseDate": "",
-    "elements": [
-      "ENE"
-    ],
+    "elements": ["ENE"],
     "level": "38",
     "stats": "Block +6, Dodge +6, Parry +6, Crit +2, WIS +3, END +3, CHA +3, INT +3, DEX +3, STR +3, Bonus +2",
     "resists": "Wind +3, Water +3",
@@ -16137,10 +14987,7 @@
         "dcRequired": true
       }
     ],
-    "tags": [
-      "ene",
-      "gold"
-    ],
+    "tags": ["ene", "gold"],
     "daRequired": false,
     "dcRequired": true
   },
@@ -16153,9 +15000,7 @@
     "description": "This belt was worn quite a bit. Whoever owned it before really needed to rotate through their collection more.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22013365",
     "releaseDate": "",
-    "elements": [
-      "ENE"
-    ],
+    "elements": ["ENE"],
     "level": "28",
     "stats": "Block +4, Dodge +4, Parry +4, Crit +2, WIS +2, END +2, CHA +2, INT +2, DEX +2, STR +2, Bonus +2",
     "resists": "Wind +2, Water +2",
@@ -16180,10 +15025,7 @@
         "dcRequired": true
       }
     ],
-    "tags": [
-      "ene",
-      "gold"
-    ],
+    "tags": ["ene", "gold"],
     "daRequired": false,
     "dcRequired": true
   },
@@ -16196,9 +15038,7 @@
     "description": "The light from shooting stars is captured in the mirrored plates on this belt. Ooooh, so pretty! This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18229820",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "56",
     "stats": "Crit +6, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +6, END +6, Bonus +5",
     "resists": "Darkness +10, Ice +10, Energy +10",
@@ -16215,10 +15055,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "lig",
-      "free"
-    ],
+    "tags": ["lig", "free"],
     "daRequired": true
   },
   {
@@ -16621,20 +15458,14 @@
     "equipSlot": "Waist",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dc",
-      "ene",
-      "free"
-    ],
+    "tags": ["dc", "ene", "free"],
     "hasDA": true,
     "hasDC": true,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-VII",
-    "elements": [
-      "ENE"
-    ]
+    "elements": ["ENE"]
   },
   {
     "id": "accessory-stone-cinch",
@@ -16645,9 +15476,7 @@
     "description": "A heavily armored belt made of stone.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20277299",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "55",
     "stats": "Block +3, Dodge +1, Crit +3, Magic Def +7, Pierce Def +7, Melee Def +7, END +5, Bonus +2",
     "resists": "Stone +9, Energy +9, Metal +5",
@@ -16665,10 +15494,7 @@
       }
     ],
     "notes": "Belt was retired and replaced by Shining Scaled Belt IV on April 25th, 2025.",
-    "tags": [
-      "sto",
-      "free"
-    ],
+    "tags": ["sto", "free"],
     "daRequired": false,
     "retired": true
   },
@@ -16681,9 +15507,7 @@
     "description": "This style of belt seems to be preferred by people who want to look tough.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=4153937",
     "releaseDate": "",
-    "elements": [
-      "MET"
-    ],
+    "elements": ["MET"],
     "level": "1",
     "stats": "Dodge +3, Crit +1",
     "resists": "None",
@@ -16700,10 +15524,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "met",
-      "free"
-    ],
+    "tags": ["met", "free"],
     "daRequired": false
   },
   {
@@ -16715,9 +15536,7 @@
     "description": "A cinch infused with swampy moss and natural ingredients!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21619746",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "18",
     "stats": "Crit +1, Magic Def +1, Pierce Def +1, Melee Def +2, WIS +1, END +2, INT +1, Bonus +2",
     "resists": "Fire +2, Metal +2",
@@ -16734,10 +15553,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false
   },
   {
@@ -16749,9 +15565,7 @@
     "description": "You've enhanced your belt with shadow energy. It feels as though you aren't clasping anything around your waist as you put it on.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22388555",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "90",
     "stats": "Crit +10, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +13, END +13, LUK +12, INT +9, DEX +9, STR +9, Bonus +8",
     "resists": "Light +11, Darkness +11, Good +2, Evil +2, Immobility +10",
@@ -16770,10 +15584,7 @@
         "dcRequired": true
       }
     ],
-    "tags": [
-      "dar",
-      "merge"
-    ],
+    "tags": ["dar", "merge"],
     "daRequired": false,
     "dcRequired": true
   },
@@ -16786,9 +15597,7 @@
     "description": "This tartan has holly-green and berry-red stripes on it. It is worn by the Queen of Tart's elite skele-guards!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=16311328",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "22",
     "stats": "Crit +2, END +1, INT +1, STR +1, Water +2, Fire +2",
     "rarity": "6",
@@ -16804,10 +15613,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "dar",
-      "free"
-    ],
+    "tags": ["dar", "free"],
     "daRequired": false
   },
   {
@@ -16819,9 +15625,7 @@
     "description": "The leather of this belt has been heavily chewed and looks like it's about to fall apart at any second.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21920337",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "47",
     "stats": "Block +1, Crit +3, Magic Def +4, Pierce Def +4, Melee Def +4, END +3, LUK +3, INT +2, DEX +2, STR +2, Bonus +3",
     "resists": "Nature +6, Metal +4, Wind +2",
@@ -16838,10 +15642,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false
   },
   {
@@ -16853,9 +15654,7 @@
     "description": "Stocked with any tool you might need to work on machine turrets, experimental portal devices, mechanical limbs and more!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20344000",
     "releaseDate": "",
-    "elements": [
-      "MET"
-    ],
+    "elements": ["MET"],
     "level": "33",
     "stats": "Crit +5, Magic Def +5, WIS +5, INT +2, DEX +2, STR +2, Bonus +3",
     "resists": "Energy +5, Metal +3, Immobility +3",
@@ -16873,10 +15672,7 @@
       }
     ],
     "notes": "Belt was retired and replaced by Technician's Tools II on November 21st, 2025.",
-    "tags": [
-      "met",
-      "free"
-    ],
+    "tags": ["met", "free"],
     "daRequired": true,
     "retired": true
   },
@@ -17227,20 +16023,14 @@
     "equipSlot": "Waist",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dc",
-      "free",
-      "met"
-    ],
+    "tags": ["dc", "free", "met"],
     "hasDA": true,
     "hasDC": true,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-VI",
-    "elements": [
-      "MET"
-    ]
+    "elements": ["MET"]
   },
   {
     "id": "accessory-technician-s-tools-retired",
@@ -17251,9 +16041,7 @@
     "description": "Full of delicate tools used for intricate machine work. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20343897",
     "releaseDate": "",
-    "elements": [
-      "MET"
-    ],
+    "elements": ["MET"],
     "level": "73",
     "stats": "Block +1, Crit +5, Magic Def +8, Pierce Def +8, Melee Def +6, WIS +8, LUK +2, INT +5, DEX +5, STR +5, Bonus +8",
     "resists": "All +4, Immobility +2",
@@ -17271,10 +16059,7 @@
       }
     ],
     "notes": "Belt was retired and replaced by Technician's Tools VI on November 21st, 2025.",
-    "tags": [
-      "met",
-      "free"
-    ],
+    "tags": ["met", "free"],
     "daRequired": true,
     "retired": true
   },
@@ -17287,9 +16072,7 @@
     "description": "This belt was made by Thursday. It provides defence against darkness and a +1 to hit.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=7631483",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "5",
     "stats": "Bonus +1, Darkness +3",
     "rarity": "5",
@@ -17306,10 +16089,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "lig",
-      "merge"
-    ],
+    "tags": ["lig", "merge"],
     "daRequired": false
   },
   {
@@ -17321,9 +16101,7 @@
     "description": "This belt requires a Dragon Amluet. It was handmade by Thursday. It provides defense against darkness, a +1 to hit, and +1 to critical strike.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19810777",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "5",
     "stats": "Crit +1, Bonus +1, Darkness +3",
     "rarity": "5",
@@ -17340,10 +16118,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "lig",
-      "merge"
-    ],
+    "tags": ["lig", "merge"],
     "daRequired": true
   },
   {
@@ -17355,9 +16130,7 @@
     "description": "A sturdy piece of green tog-skin leather.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21281352",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "25",
     "stats": "Crit +2, Magic Def +2, Pierce Def +4, Melee Def +2, END +3",
     "resists": "Nature +3",
@@ -17383,10 +16156,7 @@
       }
     ],
     "notes": "Tog Scale Belt was previously available from the retired quest Rescue of Elanee.",
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false,
     "dcRequired": true
   },
@@ -17399,9 +16169,7 @@
     "description": "Rolith says since I didn't give him pie, I had to make him a belt out of this tog-hide. Enjoy it! - Alac",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=16881741",
     "releaseDate": "",
-    "elements": [
-      "NON"
-    ],
+    "elements": ["NON"],
     "level": "30",
     "stats": "Crit +1, Magic Def +2, Pierce Def +2, Melee Def +2, CHA +4",
     "resists": "Immobility +2",
@@ -17418,10 +16186,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "non",
-      "free"
-    ],
+    "tags": ["non", "free"],
     "daRequired": false
   },
   {
@@ -17433,9 +16198,7 @@
     "description": "Woven by the wind elves these belts are renowned for their strength and lightness.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21934086",
     "releaseDate": "",
-    "elements": [
-      "WIN"
-    ],
+    "elements": ["WIN"],
     "level": "17",
     "stats": "Dodge +1, Magic Def +1, WIS +1, CHA +1, LUK +1, Bonus +1",
     "resists": "Wind +1, Stone +1",
@@ -17452,10 +16215,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "win",
-      "free"
-    ],
+    "tags": ["win", "free"],
     "daRequired": false
   },
   {
@@ -17467,9 +16227,7 @@
     "description": "A beaded belt made by one of the nomadic tribes of the Sandsea!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17987636",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "27",
     "stats": "Magic Def +2, Pierce Def +2, Melee Def +2, WIS +3, END +3, INT +2, DEX +2, STR +2, Bonus +1",
     "resists": "Fire +3, Immobility +1",
@@ -17486,10 +16244,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "lig",
-      "gold"
-    ],
+    "tags": ["lig", "gold"],
     "daRequired": false
   },
   {
@@ -17501,9 +16256,7 @@
     "description": "Plates of trithril covered in void fire by Yashta! This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21793303",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "78",
     "stats": "Block +2, Dodge +1, Parry +1, Crit +8, Magic Def +7, Pierce Def +7, Melee Def +7, WIS +2, END +9, CHA +2, LUK +2, INT +3, DEX +3, STR +3, Bonus +6",
     "resists": "Stone +8, Metal +8, Nature +6, All +1, Immobility +2",
@@ -17520,10 +16273,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "sto",
-      "free"
-    ],
+    "tags": ["sto", "free"],
     "daRequired": true
   },
   {
@@ -17535,9 +16285,7 @@
     "description": "Polished pieces of crushed trithril have been strung together to create this defensive belt.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21793327",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "47",
     "stats": "Block +1, Crit +3, Magic Def +4, Pierce Def +4, Melee Def +4, END +4, CHA +3, INT +2, DEX +2, STR +2, Bonus +3",
     "resists": "Stone +6, Metal +4, Light +2",
@@ -17554,10 +16302,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "sto",
-      "free"
-    ],
+    "tags": ["sto", "free"],
     "daRequired": false
   },
   {
@@ -17569,9 +16314,7 @@
     "description": "Cobbles of trithril hang off this belt... it's kinda heavy.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21801837",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "62",
     "stats": "Block +1, Dodge +1, Crit +6, Magic Def +6, Pierce Def +6, Melee Def +6, END +8, Bonus +5",
     "resists": "Metal +9, Stone +9, Nature +9, Poison +9",
@@ -17588,10 +16331,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "sto",
-      "free"
-    ],
+    "tags": ["sto", "free"],
     "daRequired": false
   },
   {
@@ -17603,9 +16343,7 @@
     "description": "The cloth of his belt is covered with trithril dust! Hope you're not allergic...",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21793314",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "57",
     "stats": "Crit +5, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +3, END +5, LUK +6, Bonus +5",
     "resists": "Stone +5, Metal +5, Wind -3, Immobility +3",
@@ -17622,10 +16360,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "sto",
-      "free"
-    ],
+    "tags": ["sto", "free"],
     "daRequired": false
   },
   {
@@ -17637,9 +16372,7 @@
     "description": "Pieces of crushed trithril are interwoven in the magic fabric of this belt.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21793539",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "42",
     "stats": "Crit +2, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +3, Bonus +3",
     "resists": "Stone +3, Immobility +2",
@@ -17656,10 +16389,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "sto",
-      "free"
-    ],
+    "tags": ["sto", "free"],
     "daRequired": false
   },
   {
@@ -17671,9 +16401,7 @@
     "description": "Trithril links forged by Yashta himself. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21793581",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "72",
     "stats": "Block +2, Dodge +1, Crit +7, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +2, END +7, INT +2, DEX +2, STR +2, CHA +8, Bonus +5",
     "resists": "All +4, Immobility +2",
@@ -17690,10 +16418,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "sto",
-      "free"
-    ],
+    "tags": ["sto", "free"],
     "daRequired": true
   },
   {
@@ -17705,9 +16430,7 @@
     "description": "Fine links of trithril make up this strong belt. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21801833",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "74",
     "stats": "Block +2, Dodge +1, Crit +8, Magic Def +7, Pierce Def +7, Melee Def +7, WIS +2, END +8, CHA +2, LUK +2, INT +3, DEX +3, STR +3, Bonus +5",
     "resists": "All +4, Immobility +2",
@@ -17724,10 +16447,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "sto",
-      "free"
-    ],
+    "tags": ["sto", "free"],
     "daRequired": true
   },
   {
@@ -17739,9 +16459,7 @@
     "description": "The cloth on this belt is covered with tons of trithril dust! Hope you're not allergic... This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21801839",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "57",
     "stats": "Block +1, Crit +6, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +5, END +5, LUK +6, Bonus +5",
     "resists": "Stone +6, Metal +5, Wind -2, Immobility +3",
@@ -17758,10 +16476,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "sto",
-      "free"
-    ],
+    "tags": ["sto", "free"],
     "daRequired": true
   },
   {
@@ -17773,9 +16488,7 @@
     "description": "Leave it to a gnome running a tavern to come up with this. Designed to automatically readjust depending on your size, it has a nasty habit of cutting off the circulation to your lower extremities. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18954097",
     "releaseDate": "",
-    "elements": [
-      "ENE"
-    ],
+    "elements": ["ENE"],
     "level": "56",
     "stats": "Block +1, Crit +6, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +6, END +6, LUK +3, Bonus +5",
     "resists": "Energy +10, Metal +6",
@@ -17792,10 +16505,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "ene",
-      "free"
-    ],
+    "tags": ["ene", "free"],
     "daRequired": true
   },
   {
@@ -17807,9 +16517,7 @@
     "description": "A simple belt made from tanned troglomite hide.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17761865",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "16",
     "stats": "Crit +2, WIS +1, END +1",
     "resists": "Wind +5",
@@ -17827,10 +16535,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "sto",
-      "merge"
-    ],
+    "tags": ["sto", "merge"],
     "daRequired": false
   },
   {
@@ -17842,9 +16547,7 @@
     "description": "A very sturdy belt made from tanned troglomite hide and enchanted with helpful magic.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17767092",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "36",
     "stats": "Crit +4, Magic Def +2, WIS +3, END +3, CHA +1",
     "resists": "Stone +3, Wind +5",
@@ -17862,10 +16565,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "sto",
-      "merge"
-    ],
+    "tags": ["sto", "merge"],
     "daRequired": false
   },
   {
@@ -17877,9 +16577,7 @@
     "description": "This belt is intricately engraved with a map to the Land of the Dead.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21216234",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "56",
     "stats": "Block +3, Dodge +1, Crit +3, Magic Def +7, Pierce Def +7, Melee Def +7, WIS +5, END +3, Bonus +2",
     "resists": "Stone +9, Darkness +9, Poison +5, Disease +5",
@@ -17905,10 +16603,7 @@
       }
     ],
     "notes": "Tuat Guide was previously available from the retired quest Face of Death.",
-    "tags": [
-      "sto",
-      "free"
-    ],
+    "tags": ["sto", "free"],
     "daRequired": false,
     "dcRequired": true
   },
@@ -17921,9 +16616,7 @@
     "description": "The darkness is pervasive in Ravenloss. The Chaosweavers sold this belt to celebrate it. It is a jet black tie which wraps around your waist. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17351476",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "55",
     "stats": "Crit +5, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +5, END +5, Bonus +5",
     "resists": "Light +10, Fire +10",
@@ -17940,10 +16633,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "dar",
-      "free"
-    ],
+    "tags": ["dar", "free"],
     "daRequired": true
   },
   {
@@ -18093,19 +16783,14 @@
     "equipSlot": "Waist",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dar",
-      "merge"
-    ],
+    "tags": ["dar", "merge"],
     "hasDA": true,
     "hasDC": false,
     "hasDM": false,
     "hasFree": false,
     "hasMerge": true,
     "levelRange": "I-IV",
-    "elements": [
-      "DAR"
-    ]
+    "elements": ["DAR"]
   },
   {
     "id": "accessory-ushabti-sash",
@@ -18116,9 +16801,7 @@
     "description": "A small mummiform figure hangs off this belt.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21216200",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "36",
     "stats": "Crit +5, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +5, INT +2, DEX +2, STR +2, Bonus +4",
     "resists": "Darkness +5, Stone +4, Immobility +3",
@@ -18144,10 +16827,7 @@
       }
     ],
     "notes": "Ushabti Sash was previously available from the retired quest Face of Death.",
-    "tags": [
-      "dar",
-      "free"
-    ],
+    "tags": ["dar", "free"],
     "daRequired": true,
     "dcRequired": true
   },
@@ -18160,9 +16840,7 @@
     "description": "Comes equipped with many pockets to keep your stuff, and your candy, safe from prying fingers.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=16801932",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "13",
     "stats": "Magic Def +2, Pierce Def +2, Melee Def +2",
     "resists": "None",
@@ -18179,10 +16857,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false,
     "isSeasonal": true
   },
@@ -18195,9 +16870,7 @@
     "description": "Keep the hungry darkness at bay with this shiny gold belt!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17351137",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "20",
     "stats": "Dodge +1, Crit +2, WIS +1, END +3, Bonus +1",
     "resists": "Darkness +3",
@@ -18214,10 +16887,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "lig",
-      "free"
-    ],
+    "tags": ["lig", "free"],
     "daRequired": false
   },
   {
@@ -18229,9 +16899,7 @@
     "description": "Tarnished, broken, rose-shaped buckles adorn this trophy belt. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21281403",
     "releaseDate": "",
-    "elements": [
-      "SIL"
-    ],
+    "elements": ["SIL"],
     "level": "75",
     "stats": "Block +1, Dodge +1, Parry +1, Crit +6, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +4, END +6, LUK +5, INT +5, DEX +5, STR +5, Bonus +8",
     "resists": "All +3, Immobility +2, Health -6",
@@ -18257,10 +16925,7 @@
       }
     ],
     "notes": "Vind Trophy Belt was previously available from the retired quest Rescue of Elanee.",
-    "tags": [
-      "sil",
-      "free"
-    ],
+    "tags": ["sil", "free"],
     "daRequired": true,
     "dcRequired": true
   },
@@ -18273,9 +16938,7 @@
     "description": "Make sure to get inoculated....",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19683184",
     "releaseDate": "",
-    "elements": [
-      "NON"
-    ],
+    "elements": ["NON"],
     "level": "30",
     "stats": "Crit +2, WIS +3, INT +1, DEX +1, STR +1, Bonus +2",
     "resists": "Disease +7, Fire +3",
@@ -18292,10 +16955,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "non",
-      "free"
-    ],
+    "tags": ["non", "free"],
     "daRequired": false,
     "isSeasonal": true
   },
@@ -18470,19 +17130,14 @@
     "equipSlot": "Waist",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "???",
-      "free"
-    ],
+    "tags": ["???", "free"],
     "hasDA": true,
     "hasDC": false,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-V",
-    "elements": [
-      "???"
-    ]
+    "elements": ["???"]
   },
   {
     "id": "accessory-volkenraand-traveler-s-belt",
@@ -18776,20 +17431,14 @@
     "equipSlot": "Waist",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "???",
-      "dc",
-      "free"
-    ],
+    "tags": ["???", "dc", "free"],
     "hasDA": true,
     "hasDC": true,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-V",
-    "elements": [
-      "???"
-    ]
+    "elements": ["???"]
   },
   {
     "id": "accessory-vornian-belt",
@@ -18800,9 +17449,7 @@
     "description": "A Vornian tribal belt. Very few people have ever heard of them, but Teral has learned their ways in his travels.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19642131",
     "releaseDate": "",
-    "elements": [
-      "MET"
-    ],
+    "elements": ["MET"],
     "level": "34",
     "stats": "Crit +4, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +4, END +3, CHA +1, LUK +1, INT +2, DEX +2, STR +2, Bonus +2",
     "resists": "Wind +6, Poison +6, Nature +4",
@@ -18820,10 +17467,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "met",
-      "merge"
-    ],
+    "tags": ["met", "merge"],
     "daRequired": false
   },
   {
@@ -18969,10 +17613,7 @@
     "equipSlot": "Waist",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "free",
-      "nat"
-    ],
+    "tags": ["free", "nat"],
     "isRare": true,
     "hasDA": true,
     "hasDC": false,
@@ -18980,9 +17621,7 @@
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-IV",
-    "elements": [
-      "NAT"
-    ]
+    "elements": ["NAT"]
   },
   {
     "id": "accessory-warden-belt",
@@ -18993,9 +17632,7 @@
     "description": "A strong, plated belt made for prison guards and wardens. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21281384",
     "releaseDate": "",
-    "elements": [
-      "MET"
-    ],
+    "elements": ["MET"],
     "level": "65",
     "stats": "Block +1, Dodge +1, Crit +7, Magic Def +7, Pierce Def +7, Melee Def +7, END +6, INT +2, DEX +2, STR +2, Bonus +5",
     "resists": "Metal +10, Bacon +5, Immobility +3",
@@ -19021,10 +17658,7 @@
       }
     ],
     "notes": "Warden Belt was previously available from the retired quest Rescue of Elanee.",
-    "tags": [
-      "met",
-      "free"
-    ],
+    "tags": ["met", "free"],
     "daRequired": true,
     "dcRequired": true
   },
@@ -19032,16 +17666,6 @@
     "id": "accessory-warding-girdle",
     "familyName": "Warding Girdle",
     "slug": "accessory-warding-girdle",
-    "aliasSlugs": [
-      "accessory-warding-girdle",
-      "accessory-warding-girdle",
-      "accessory-warding-girdle",
-      "accessory-warding-girdle",
-      "accessory-warding-girdle",
-      "accessory-warding-girdle",
-      "accessory-warding-girdle",
-      "accessory-warding-girdle"
-    ],
     "type": "accessory",
     "subtype": "belt",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22249209",
@@ -19450,10 +18074,7 @@
     "equipSlot": "Waist",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dc",
-      "free"
-    ],
+    "tags": ["dc", "free"],
     "hasDA": true,
     "hasDC": true,
     "hasDM": false,
@@ -19644,19 +18265,14 @@
     "equipSlot": "Waist",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "merge",
-      "met"
-    ],
+    "tags": ["merge", "met"],
     "hasDA": false,
     "hasDC": true,
     "hasDM": false,
     "hasFree": false,
     "hasMerge": true,
     "levelRange": "I-V",
-    "elements": [
-      "MET"
-    ]
+    "elements": ["MET"]
   },
   {
     "id": "accessory-water-logged-leather-belt",
@@ -19667,9 +18283,7 @@
     "description": "It's squishy and kind of smells... but the leather might dry out. Someday.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21980664",
     "releaseDate": "",
-    "elements": [
-      "WAT"
-    ],
+    "elements": ["WAT"],
     "level": "37",
     "stats": "Parry +1, Crit +1, Magic Def +1, Pierce Def +1, Melee Def +1, WIS +3, END +2, INT +1, DEX +1, STR +1, Bonus +1",
     "resists": "Water +4, Fire +2",
@@ -19686,10 +18300,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "wat",
-      "gold"
-    ],
+    "tags": ["wat", "gold"],
     "daRequired": false
   },
   {
@@ -19701,9 +18312,7 @@
     "description": "This light fabric cinch will rotate around the wearer's waist to indicate the direction of the blowing wind.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=10485291",
     "releaseDate": "",
-    "elements": [
-      "WIN"
-    ],
+    "elements": ["WIN"],
     "level": "15",
     "stats": "Block +4, Dodge +4, Parry +4, Crit +1, END +5, Bonus +2",
     "resists": "Wind +3",
@@ -19721,10 +18330,7 @@
       }
     ],
     "notes": "The following changes were implemented on March 20th, 2026:\n  • Dragon Amulet requirement was removed.\n  • Level's requirement was raised from 5 to 15.\n  • Pierce Def +5 stat was removed.\n  • END was raised from +1 to +5.\n  • Bonus was raised from +1 to +2.",
-    "tags": [
-      "win",
-      "free"
-    ],
+    "tags": ["win", "free"],
     "daRequired": false
   },
   {
@@ -19736,9 +18342,7 @@
     "description": "The fangs of a werewolf are woven into the links of this belt. This requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22147698",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "78",
     "stats": "Block +11, Dodge +11, Parry +11, Crit +8, Magic Def +1, Pierce Def +1, Melee Def +1, WIS +7, END +7, CHA +6, LUK +8, INT +4, DEX +4, STR +4",
     "resists": "Wind +7, Water +7, Nature +5, Fire +5",
@@ -19755,10 +18359,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": true
   },
   {
@@ -19770,9 +18371,7 @@
     "description": "Strong but a little rusted.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21619752",
     "releaseDate": "",
-    "elements": [
-      "MET"
-    ],
+    "elements": ["MET"],
     "level": "68",
     "stats": "Dodge +3, Crit +6, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +2, END +4, STR +7, Bonus +4",
     "resists": "Metal +9, Stone +7, Wind +7, Poison +5, Nature +1",
@@ -19789,10 +18388,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "met",
-      "free"
-    ],
+    "tags": ["met", "free"],
     "daRequired": false
   },
   {
@@ -19804,9 +18400,7 @@
     "description": "A personal pouch of fairy dust! It won't make you fly but it'll blind your enemies in a pinch.This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21934100",
     "releaseDate": "",
-    "elements": [
-      "WIN"
-    ],
+    "elements": ["WIN"],
     "level": "37",
     "stats": "Block +1, Crit +3, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +2, LUK +4, INT +1, DEX +1, STR +1, Bonus +6",
     "resists": "Wind +5, Metal +4, Immobility +3",
@@ -19823,10 +18417,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "win",
-      "free"
-    ],
+    "tags": ["win", "free"],
     "daRequired": true
   },
   {
@@ -19838,9 +18429,7 @@
     "description": "Jungle Fury mages, raging against attacks by intruders, wove the strength of the wind into this otherwise plainlooking sash. It may not look great, but wove, does it let you move quickly.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15866858",
     "releaseDate": "",
-    "elements": [
-      "WIN"
-    ],
+    "elements": ["WIN"],
     "level": "15",
     "stats": "Dodge +1, Melee Def +1, END +1",
     "resists": "Immobility +1, Wind +1",
@@ -19857,10 +18446,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "win",
-      "free"
-    ],
+    "tags": ["win", "free"],
     "daRequired": false
   },
   {
@@ -19872,9 +18458,7 @@
     "description": "Put this on and work on your evil laugh. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20277281",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "72",
     "stats": "Block +1, Crit +5, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +7, CHA +8, INT +5, DEX +5, STR +5, Bonus +7",
     "resists": "All +4, Immobility +2",
@@ -19892,10 +18476,7 @@
       }
     ],
     "notes": "Belt was retired and replaced by Shining Scaled Belt VI on April 25th, 2025.",
-    "tags": [
-      "dar",
-      "free"
-    ],
+    "tags": ["dar", "free"],
     "daRequired": true,
     "retired": true
   },
@@ -19908,9 +18489,7 @@
     "description": "The royal sash of Emperor Kuron, an ancient ruler in the city of Sil.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19795135",
     "releaseDate": "",
-    "elements": [
-      "SIL"
-    ],
+    "elements": ["SIL"],
     "level": "37",
     "stats": "Crit +2, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +3, CHA +2, INT +1, DEX +1, STR +1, Bonus +2",
     "resists": "Water +4, Ice +2",
@@ -19927,10 +18506,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "sil",
-      "free"
-    ],
+    "tags": ["sil", "free"],
     "daRequired": false
   },
   {
@@ -19942,9 +18518,7 @@
     "description": "Despite heavy denting and scratches covering the plates, this belt has held together well! This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21920339",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "78",
     "stats": "Block +2, Dodge +1, Parry +1, Crit +8, Magic Def +7, Pierce Def +7, Melee Def +7, WIS +2, END +9, LUK +4, INT +4, DEX +4, STR +4, Bonus +6",
     "resists": "Stone +8, Metal +8, Nature +6, All +1, Immobility +2",
@@ -19961,10 +18535,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "sto",
-      "free"
-    ],
+    "tags": ["sto", "free"],
     "daRequired": true
   },
   {
@@ -19976,9 +18547,7 @@
     "description": "A weave of steely tree roots to protect your midsection.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21619674",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "38",
     "stats": "Crit +2, Magic Def +2, Pierce Def +2, Melee Def +2, END +3, LUK +2, INT +1, DEX +1, STR +1, Bonus +2",
     "resists": "Water +4, Nature +2",
@@ -19995,10 +18564,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false
   },
   {
@@ -20010,9 +18576,7 @@
     "description": "Set with glowing green gemstones, this girdle is surprisingly stylish, considering that it came from a yaga. Increases charisma +1.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=6793516",
     "releaseDate": "",
-    "elements": [
-      "NON"
-    ],
+    "elements": ["NON"],
     "level": "1",
     "stats": "CHA +1",
     "resists": "None",
@@ -20029,10 +18593,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "non",
-      "free"
-    ],
+    "tags": ["non", "free"],
     "daRequired": false,
     "isRare": true
   },
@@ -20045,9 +18606,7 @@
     "description": "You grabbed this on your way out of the Yaga cave. It's a bit slimy, but you can feel the power it holds! This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17038175",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "48",
     "stats": "Parry +1, Crit +4, Magic Def +3, Pierce Def +3, Melee Def +3, END +3, INT +2, STR +2, Bonus +4, Immobility +2, Light +7, Fire +7",
     "rarity": "5",
@@ -20063,10 +18622,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "dar",
-      "free"
-    ],
+    "tags": ["dar", "free"],
     "daRequired": true
   },
   {
@@ -20078,9 +18634,7 @@
     "description": "This belt from a supposed rogue restoration shaman...",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15939827",
     "releaseDate": "",
-    "elements": [
-      "ENE"
-    ],
+    "elements": ["ENE"],
     "level": "40",
     "stats": "Crit +2, Magic Def +3, CHA +5, INT +3, STR +3, Bonus +2",
     "resists": "Energy +5",
@@ -20098,10 +18652,7 @@
         "dcRequired": true
       }
     ],
-    "tags": [
-      "ene",
-      "dc"
-    ],
+    "tags": ["ene", "dc"],
     "daRequired": false,
     "dcRequired": true
   },
@@ -20109,12 +18660,6 @@
     "id": "accessory-zeclem-s-belt",
     "familyName": "Zeclem's Belt",
     "slug": "accessory-zeclem-s-belt",
-    "aliasSlugs": [
-      "accessory-zeclem-s-belt",
-      "accessory-zeclem-s-belt",
-      "accessory-zeclem-s-belt",
-      "accessory-zeclem-s-belt"
-    ],
     "type": "accessory",
     "subtype": "belt",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21824168",
@@ -20247,19 +18792,14 @@
     "equipSlot": "Waist",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dar",
-      "dc"
-    ],
+    "tags": ["dar", "dc"],
     "hasDA": false,
     "hasDC": true,
     "hasDM": false,
     "hasFree": false,
     "hasMerge": false,
     "levelRange": "50-80",
-    "elements": [
-      "DAR"
-    ]
+    "elements": ["DAR"]
   },
   {
     "id": "accessory-zeclem-s-relic-belt",
@@ -20270,9 +18810,7 @@
     "description": "IV. His thoughts become clouded with darkness, unable to stop himself he turned around and cut a path through the defenders. He didn't stop until he had destroyed all of Veneldra's defenses.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22387772",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "90",
     "stats": "Crit +10, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +13, END +13, LUK +12, INT +9, DEX +9, STR +9, Bonus +8",
     "resists": "Light +11, Darkness +11, Good +2, Evil +2, Immobility +10",
@@ -20291,10 +18829,7 @@
         "dcRequired": true
       }
     ],
-    "tags": [
-      "dar",
-      "merge"
-    ],
+    "tags": ["dar", "merge"],
     "daRequired": false,
     "dcRequired": true
   },
@@ -20307,9 +18842,7 @@
     "description": "This is disturbing....",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22148037",
     "releaseDate": "",
-    "elements": [
-      "DIS"
-    ],
+    "elements": ["DIS"],
     "level": "7",
     "stats": "Block +2, Dodge +2, Parry +2, Crit +2, WIS +1, END +1, CHA +1, LUK +1",
     "resists": "Nature +1, Water +1",
@@ -20326,10 +18859,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "dis",
-      "free"
-    ],
+    "tags": ["dis", "free"],
     "daRequired": false
   }
 ]

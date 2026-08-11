@@ -179,6 +179,20 @@ Weapon families follow the same base/DC split pattern as Pets and Accessories:
 
 The scraper detects families structurally (multiple title blocks across posts) — no name-based gate like `(I-VIII)` or `(All Versions)` is required.
 
+### Mixed Variant Group Splits
+
+Some weapon threads mix fundamentally different variant groups inside one forum family. In those cases, split the data into separate item families and connect them through `Also See` rather than showing one selector with Roman/level variants mixed with named variants. Current targeted split sets include:
+- Batwing Blade/Broom/Hatchet progression variants split from their `Dark` variants.
+- Wavecrest, High Tide, and Deluge Roman/base progressions split from named variants such as `Missed`, `Lost`, `Stray`, and `Wayward`.
+- Sea's Blessing/Favor/Bounty split into `'09`, `'10`, and modern progressions.
+- Amaterasu/Tsukuyomi progressions split from `Omikami`/`no-Mikoto`; Threadcutter/Time's Harvest split `Alpha` from Roman progressions; The Massive Axe splits `XL` from `I-IV`.
+
+Weapon targeted refreshes support `--fresh`; use it when the selected family should replace existing local entries and aliases instead of merging into them. The fresh matcher intentionally preserves explicit named parenthetical siblings, so refreshing `Wavecrest (I-V)` does not delete `Wavecrest (Missed, Lost, Stray, Wayward)`.
+
+### Special Classification Exceptions
+
+- **CorDemi Codex** (`Basic CorDemiCodex`, `Advanced CorDemi Codex`, `Master CorDemi Codex`) is canonicalized under `sword-axe-mace` only. Although the weapon can switch into sword, dagger, and staff forms, the key form acts as a Sword and damage type is locked to Melee. Staff/dagger scraper runs must skip CorDemi stubs rather than duplicating the family into those subtype datasets.
+
 ## Glossary
 
 ### Currency & Access Abbreviations
@@ -233,6 +247,10 @@ Family-level flags are computed from ALL obtain variants across ALL level varian
 - `hasMerge` = ANY obtain variant has `priceType='merge'`
 
 Note: A single item can have multiple flags simultaneously. Example: Goldfish Knight has hasDA=true (free option at IV-VII requires DA), hasDC=true (DC purchase option exists), AND hasFree=true (free option exists at I-III without DA and IV-VII with DA). This is because different obtain methods exist across its level variants.
+
+### Shared Variant Ordering
+
+When a family has multiple variants at the same displayed level with the same stripped name, order the rows and selector labels by access branch: base/no special access first, DA-only second, DC last. Examples: `(Base)`, `(DC)` for unnamed access splits; `II`, `II (DC)` for Roman families. This ordering is shared across pets/guests, accessories, and weapons, and current JSON assets are normalized so the displayed table and selector order match the scraper output.
 
 ## Coding Standards
 
@@ -300,11 +318,19 @@ All item-family detail pages should use a consistent information order unless a 
 
 **Image selector independence:** On pets and guests, the image selector is independent from the level/variant selector — switching variants does not move the image. The image only resets when navigating to a different entry. Weapons intentionally link the two selectors under their own conditions (variant-specific images); pets/guests do not.
 
+**Image expectation and placeholders:** Badges, pets/guests, weapons, and image-bearing accessory subtypes should display the shared missing-image placeholder when an expected image is absent or fails to load. For accessories, this requirement applies to capes/wings and helms, plus artifacts that are helm/cape-like by item type or equip spot. Do not apply this placeholder rule to belts, bracers, necklaces, rings, trinkets, or non-helm/cape artifacts. Some items are intentionally invisible and should not show the placeholder; document these as hardcoded exceptions and preserve their Other Information notes instead (for example: Cloak of Shadows, Invisible Cape, Invisible Helm, Mantle of Shadows, Wrap of Shadows). For every future category, ask whether images are expected before implementing the detail image section or placeholder behavior.
+
 `Also See` must appear below `Sources` and should use the same related-card section treatment as Pets/Guests: top border, compact uppercase heading, and a responsive two-column card grid.
 
-`Also See` may combine explicit forum refs with conservative inferred refs. Inferred refs are category-scoped and should require a normalized obtain-method match plus high name similarity. Cross-subtype inferred refs are allowed only inside a top-level category that can load all subtype JSON together (currently Accessories); visually distinguish cross-subtype cards with a small subtype chip. Weapons currently infer related items only within the same weapon subtype, which keeps partially scraped weapon sections from linking across incomplete datasets.
+**Expandable attack/skill cards:** Expanded attack content should use one consistent padded content shell (`p-4 sm:p-5`) with vertical spacing between blocks. Avoid mixing per-child top/bottom margins for effect text, stats tables, notes, and attack images; this keeps guest attacks, pet attacks, trinket skills, and weapon specials visually aligned.
+
+`Also See` may combine explicit forum refs with conservative inferred refs. Inferred refs are category-scoped and should require a normalized obtain-method match plus high name similarity. Cross-subtype inferred refs are allowed only inside a top-level category that can load all subtype JSON together (currently Accessories and Weapons); visually distinguish cross-subtype cards with a small subtype chip where the card design supports it. Pets/Guests, Accessories, and Weapons share `src/hooks/useRelatedItems.ts` for explicit refs, reverse explicit refs, and inferred refs; category hooks should provide adapters instead of duplicating that algorithm. Future family-capable categories should use this shared hook first, then add category-specific inference through its optional extension points only when the existing obtain-fingerprint rule is insufficient.
 
 **Inferred Also See matching** uses `obtainMethodInferenceFingerprint` (location + priceType + variant-normalized recipe) — a relaxed fingerprint that ignores exact prices, DA/DC flags, and access requirements. This lets items from the same shop at the same price type (e.g. all "Rare Pets" DC items, or merge recipes differing only by variant label) link to each other. The conservative name-similarity threshold (Jaccard + prefix scoring ≥ 0.55) prevents false positives. Examples: all 12 Plushie pets link; Exalted Blaster (Amalgam/Destiny/Doom) trinkets link.
+
+Weapons additionally infer exact-name cross-subtype siblings when the displayed name is specific enough and at least one obtain price type overlaps. This covers same-named sword/scythe/staff/dagger counterparts without merging them into one family.
+
+For subtype-heavy datasets, alias/canonical checks must be scoped to the subtype when slugs can validly repeat across subtypes. A family alias should never point at another canonical entry in the same subtype; scraper cleanup should drop that alias rather than deleting the canonical entry. Alias lists should be unique and should not include the family’s own canonical slug; same-thread families often generate repeated slug candidates and must dedupe them before writing JSON.
 
 ### Styling (Tailwind CSS)
 - Mobile-first: write mobile styles first, then add `sm:`, `md:`, `lg:` for larger breakpoints
@@ -378,6 +404,14 @@ URL query params supported by `/pets`:
 - **Level 2**: `Cosmetic` when the loaded subtype dataset contains cosmetic entries; then `Temp`, `Rare`, `Seasonal`, `Special Offer`, `Retired` where present
 - **Level 3**: Element filters
 - **Detail pages**: shared accessory detail layout with family switching, obtain cards, and trinket skill rendering when linked ability posts exist
+
+Accessory consolidation defaults to keeping same-thread or explicitly connected level/access variants together as one item family. Split related accessories into separate entries only when they are meaningfully different items and the forum relationship should be represented as `Also See` instead of a selector. Example: Necromancer Cape and Necromancer Cloak are separate entries with mutual Also See links, while same-name level/DC branches normally remain one family with clear variant labels.
+
+Some helm families are intentionally split even when they are same-thread or explicitly linked, because mixing Roman/numeric progressions with named sibling items makes the selector harder to read. These are handled as hardcoded accessory post-processing exceptions and linked back together through `Also See`: Baron Cat Mask / Fierce Baron Cat Mask, Dravir Warhelm / Radiant Dravir Warhelm, Greedy Greedling Helm / Super Greedy Greedling Helm, Royal Doom / Retroclear Royal Doom, and Tyrant Hood / Magical Tyrant Hood.
+
+Before promoting that split rule broadly, audit all family-capable datasets for mixed progression labels (Roman/numeric levels plus named siblings) and spot check candidates with the user. Do not auto-split broad candidates without review, because some mixed labels are intentional progression names. Separately, Shocking Hair is a cross-post helm family that consolidates Shocking Hair, Shockingly Good/Nice/Swiped/Amazing/Fantastic/Awesome Hair; Electric Hair stays standalone and links through `Also See`.
+
+Stats tables and selectors should avoid redundant variant columns. A one-row family never needs a Variant column. If all variant labels are only access labels like `(Base)` / `(Base) (DC)` and the levels are unique, treat the selector/table as level-driven instead of variant-driven; same-level access branches can still show variant labels where needed.
 
 On detail pages, metadata is split into distinct types:
 
@@ -517,11 +551,15 @@ Retired badges (Party On, Olaf!, Idle Heroes, etc.) are included in the dataset 
 
 ## Pets Section
 
+### Mixed Variant Group Splits
+
+Pets usually keep same-thread or linked variants together, including normal/DC access branches and level progressions. Split a pet family only when one family mixes a named progression group with a distinct named sibling item that is clearer as its own entry. Current targeted split set: Baron/BraveSirRobin/Deatharrows/Josh/LFAL/Prius `(Kitten, Cat)` pets are separate from their `Fierce ... Cat` pets, `Goldfish` is separate from `Goldfish Knight`, `Steam Tog` is separate from `PowerTog`, and `Extra Fluffy Tog Extreme` is separate from `Extra Fluffy Tog I-III`; split siblings receive mutual `Also See` links.
+
 ### Data
 
 **Pets and guests are stored in separate files:**
 
-- **`src/data/pets.json`** — Pet entries only (`type: "pet"`) - 218 entries
+- **`src/data/pets.json`** — Pet entries only (`type: "pet"`) - 221 entries
 - **`src/data/guests.json`** — Guest entries only (`type: "guest"`) - 83 entries  
 - **`src/data/badges.json`** — Badge entries - 161 entries
 - **`src/data/elements.json`** — 22 elements + 5 traits (A/C, ALA, N/A, SHR, W/S)
@@ -591,7 +629,7 @@ Sprint 5 adds support for multi-variant pets (like Goldfish Knight I-VII). See `
 - Both flags are set at scrape time by checking for image tags in the raw HTML
 - An entry can be both DA and DC/DM
 - For multi-variant families, DA/DC are detected per-title-block: a DA tag before the base title block does NOT bleed onto the DC variant unless the DC block also has its own DA tag
-- Access-flag-repair preserves explicitly-scraped `daRequired=true` values and will not clear them
+- Access-flag-repair preserves explicitly-scraped `daRequired=true` values and will not clear them. Narrow item-specific repairs may override this only where the forum pattern is known; Goldfish Knight levels IV-VII are `Normal` DA-only plus `DC` DC-only.
 
 **Multi-Variant Access Branches (Pets):**
 When a pet thread has both a free/base variant and a DC variant, the scraper splits them into separate level variants using `buildLevelAccessVariants`:
@@ -599,6 +637,11 @@ When a pet thread has both a free/base variant and a DC variant, the scraper spl
 - `variantName: 'DC'` → displays as `(DC)` in the UI
 - Forum label `(Resource)` is mapped to `Normal` (same as base tier)
 - For "(All Versions)" families where the same labels repeat across levels, the UI prefixes with the level in parentheses: `(10)`, `(10) (DC)`, `(20)`, `(20) (DC)`, etc.
+
+**Attack Images:**
+Pet attack image links should be retained when the forum hotlinks attack labels (for example Goldfish Knight's `Attack Type 1` / `Attack Type 2`). Combined attack labels such as `Attack Type 1 / 1.1` should inherit images from matching sublabels, and sparse family variants should inherit attack images from siblings with the same attack name and description. Attack image URL parsing must allow apostrophes inside quoted DF-Pedia URLs, such as `Ostara'sDracobunny-AttackType1.0.png`. Detail pages must keep attack images hidden by default behind an explicit image toggle, after the attack description, rate strip, and any attack-specific notes. Multi-image attacks should display each image with its sub-attack caption when the label count matches the image count, such as `Attack Type 1` and `Attack Type 1.1`. Pet attack rates in `(Rate: X)` / `[Rate: X]` text use the same shared metric-strip display as weapon specials, with the rate removed from the prose. Use the shared expandable image list when extending this pattern to guest appearances, trinket skills, and weapon specials.
+
+`<Dragon>` pet skills are a targeted scraper special case. Only the current `Pet Dragon Skills (2019-Present)` block is parsed; retired 2015-2019 and 2007-2015 skill sections are ignored and must not mark the pet retired. Dragon skill cooldowns are stored on the attack and rendered through the same metric strip as rates. The Noxious Fumes images are stage-specific and use the explicit `Dragon-Stun-{Baby|Toddler|Kid}1.0/1.1.png` DF-Pedia URLs when the forum's combined appearance label cannot be split into normal hotlinks.
 
 **Family Elements and Traits (Additive):**
 Family-level `elements` and `traits` are the UNION across all variants. Example: Linus's base form is `[ICE]` while Prince/King/Emperor Linus are `[ICE][SHR]`, so the family exposes both. Per-variant `traits` are stored on each `LevelVariant` to scope element/trait pills on detail pages to the selected variant. The card gallery shows the family-level union.
@@ -632,6 +675,11 @@ Family-level `elements` and `traits` are the UNION across all variants. Example:
 - Recommended local refresh command: `npm run scrape:guests -- --fresh --concurrency=1`.
 - Recommended targeted capture command: `npm run scrape:guests -- --names="Cranix|Dain Lorilann|Elgert|Mennace|Xor Vrailin II" --fresh --concurrency=1 --capture-charpages`.
 - If Ruffle changes or the CDN is unavailable, set `RUFFLE_SCRIPT_URL` to a local/self-hosted Ruffle script URL before running the scraper.
+
+**Dragon guest special case:**
+- `<Dragon>` guest is sourced from `https://forums2.battleon.com/f/tm.asp?m=16130782`, but the current A-Z guest list does not expose a canonical `guest-dragon` row. The guest scraper injects a synthetic `guest-dragon` stub so full and targeted guest scrapes keep this as its own guest itemfamily.
+- Variant posts: `16130782` = Toddler, `22231249` = Kid, `22231251` = Dragon of Doom. Skill posts: `22231250` = current Toddler/Kid skills, `22231252` = Dragon of Doom skills. Shared notes come from the thread's final Other Information post.
+- Guest attack appearance parsing supports multiple appearance images per skill through `appearanceUrls`, displayed behind the existing collapsed attack panels.
 
 **Python Environment:**
 - Image scripts automatically create and use a Python virtual environment (`.venv/`)

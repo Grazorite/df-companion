@@ -1,5 +1,5 @@
 import { useParams, useLocation, Link } from 'react-router-dom'
-import { ArrowLeft, Shield } from 'lucide-react'
+import { ArrowLeft } from 'lucide-react'
 import { useBadgeBySlug, useBadgesByCategory } from '../hooks/useBadges'
 import BadgeCard from '../components/badges/BadgeCard'
 import NotesList from '../components/shared/NotesList'
@@ -8,6 +8,7 @@ import AccessPills from '../components/shared/AccessPills'
 import SourceLinksCard from '../components/shared/SourceLinksCard'
 import { DetailPageSkeleton } from '../components/shared/LoadingSkeleton'
 import DetailTypePill from '../components/shared/DetailTypePill'
+import ItemImage from '../components/shared/ItemImage'
 
 export default function BadgeDetailPage() {
   const { slug } = useParams<{ slug: string }>()
@@ -113,17 +114,13 @@ export default function BadgeDetailPage() {
             <span className="text-gold text-2xl font-bold">32</span>
             <span className="text-text-muted text-sm leading-tight">variants</span>
           </div>
-        ) : badge.imageUrl ? (
-          <img
+        ) : (
+          <ItemImage
             src={badge.imageUrl}
             alt={`${displayTitle(badge.name)} badge icon`}
-            loading="lazy"
+            showPlaceholder
             className="max-w-xs w-full mx-auto rounded-xl object-contain bg-bg-elevated border border-border-default p-6 shadow-medium img-fade"
           />
-        ) : (
-          <div className="w-full max-w-xs mx-auto aspect-square bg-bg-elevated border border-border-default rounded-xl flex items-center justify-center shadow-medium">
-            <Shield className="w-16 h-16 text-border-hover" aria-hidden="true" />
-          </div>
         )}
       </div>
 

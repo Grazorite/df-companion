@@ -34,6 +34,43 @@ const DRAGONLION_MANE_FAMILY_NAMES = [
   "Timid DragonLion's Mane",
   "Timid DragonLion's Flowing Mane",
 ]
+const NAMED_SIBLING_SPLIT_SPECS = [
+  {
+    sourceFamilyName: 'Baron Cat Mask',
+    groups: [
+      { familyName: 'Baron Cat Mask', namePattern: /^baron cat mask$/i },
+      { familyName: 'Fierce Baron Cat Mask', namePattern: /^fierce baron cat mask$/i },
+    ],
+  },
+  {
+    sourceFamilyName: 'Dravir Warhelm',
+    groups: [
+      { familyName: 'Dravir Warhelm', namePattern: /^dravir warhelm\b/i },
+      { familyName: 'Radiant Dravir Warhelm', namePattern: /^radiant dravir warhelm$/i },
+    ],
+  },
+  {
+    sourceFamilyName: 'Greedy Greedling Helm',
+    groups: [
+      { familyName: 'Greedy Greedling Helm', namePattern: /^greedy greedling helm\b/i },
+      { familyName: 'Super Greedy Greedling Helm', namePattern: /^super greedy greedling helm$/i },
+    ],
+  },
+  {
+    sourceFamilyName: 'Royal Doom',
+    groups: [
+      { familyName: 'Royal Doom', namePattern: /^royal doom$/i },
+      { familyName: 'Retroclear Royal Doom', namePattern: /^retroclear royal doom$/i },
+    ],
+  },
+  {
+    sourceFamilyName: 'Tyrant Hood',
+    groups: [
+      { familyName: 'Tyrant Hood', namePattern: /^tyrant hood$/i },
+      { familyName: 'Magical Tyrant Hood', namePattern: /^magical tyrant hood$/i },
+    ],
+  },
+]
 
 interface SpecialFamilySpec {
   familyName: string
@@ -52,6 +89,19 @@ const SPECIAL_FAMILY_SPECS: SpecialFamilySpec[] = [
     familyName: 'Deatharrows Cat Mask',
     names: ['Deatharrows Cat Mask', 'Fierce Deatharrows Cat Mask'],
     variantNames: ['(Base)', '(DC)', 'Fierce'],
+  },
+  {
+    familyName: 'Shocking Hair',
+    names: [
+      'Shocking Hair',
+      'Shockingly Good Hair',
+      'Shockingly Nice Hair',
+      'Shockingly Swiped Hair',
+      'Shockingly Amazing Hair',
+      'Shockingly Fantastic Hair',
+      'Shockingly Awesome Hair',
+    ],
+    variantNames: ['(Base)', 'Good', 'Nice', 'Swiped', 'Amazing', 'Fantastic', 'Awesome'],
   },
   {
     familyName: "Timid Lion's Head",
@@ -413,6 +463,14 @@ function sharesExplicitReference(a: AccessoryEntry, b: AccessoryEntry): boolean 
   return aRefs.has(bName) || bRefs.has(aName)
 }
 
+function shouldKeepAsLinkedSeparateAccessories(a: AccessoryEntry, b: AccessoryEntry): boolean {
+  const names = new Set([
+    normalizeLookupName(getDisplayName(a)),
+    normalizeLookupName(getDisplayName(b)),
+  ])
+  return names.has('necromancer cape') && names.has('necromancer cloak')
+}
+
 function metadataCompatible(a: AccessoryEntry, b: AccessoryEntry): boolean {
   if (a.type !== b.type) return false
   if (a.subtype !== b.subtype) return false
@@ -457,6 +515,7 @@ function hasNonTitleContentEvidence(a: AccessoryEntry, b: AccessoryEntry): boole
 
 function canCrossMerge(a: AccessoryEntry, b: AccessoryEntry): boolean {
   if (!metadataCompatible(a, b)) return false
+  if (shouldKeepAsLinkedSeparateAccessories(a, b)) return false
   if (isAccessoryFamily(a) && isAccessoryFamily(b)) return false
   if (
     DEFERRED_CROSS_POST_FAMILY_PATTERNS.some(
@@ -958,6 +1017,16 @@ function sourceMatchesVariant(source: FamilySourceRef, variant: LevelVariant): b
   return sourceLabel.includes(normalizeLookupName(variant.name))
 }
 
+function sourceStrictlyMatchesVariant(source: FamilySourceRef, variant: LevelVariant): boolean {
+  const sourceUrl = variant.sourceUrl
+  if (sourceUrl && source.url === sourceUrl) return true
+
+  const sourceLabel = normalizeLookupName(
+    (source.variantLabel ?? source.title).replace(/^DF Encyclopedia:\s*/i, '')
+  )
+  return sourceLabel === normalizeLookupName(variant.name)
+}
+
 function buildCiderKegSplitFamily(
   baseFamily: AccessoryFamily,
   familyName: string,
@@ -995,6 +1064,99 @@ function buildCiderKegSplitFamily(
     familySources: sources,
     shared: baseFamily.shared,
     levelVariants: renumberedVariants,
+  })
+}
+
+function accessorySlugForFamilyName(familyName: string): string {
+  return `accessory-${slugify(familyName)}`
+}
+
+function buildNamedSiblingSplitFamily(
+  baseFamily: AccessoryFamily,
+  familyName: string,
+  variants: LevelVariant[]
+): AccessoryFamily {
+  const slug = accessorySlugForFamilyName(familyName)
+  const renumberedVariants = variants.map((variant, index) => ({
+    ...variant,
+    levelNumber: index + 1,
+  }))
+  const sources = (baseFamily.familySources ?? []).filter((source) =>
+    renumberedVariants.some((variant) => sourceStrictlyMatchesVariant(source, variant))
+  )
+  const descriptions = renumberedVariants
+    .map((variant) => variant.description)
+    .filter((value): value is string => Boolean(value))
+  const images = renumberedVariants
+    .map((variant) => variant.imageUrl)
+    .filter((value): value is string => Boolean(value))
+  const alternativeImages = renumberedVariants
+    .map((variant) => variant.alternativeImages)
+    .filter((value): value is AlternativeImage[] => Boolean(value?.length))
+  const rarities = renumberedVariants
+    .map((variant) => variant.rarity)
+    .filter((value): value is string => Boolean(value))
+  const resists = renumberedVariants
+    .map((variant) => variant.resists)
+    .filter((value): value is string => Boolean(value))
+  const { alsoSee: _alsoSee, ...sharedWithoutAlsoSee } = baseFamily.shared
+  const aliasSlugs = Array.from(
+    new Set(renumberedVariants.map((variant) => `accessory-${slugify(variant.name)}`))
+  ).filter((aliasSlug) => aliasSlug !== slug)
+  const { aliasSlugs: _aliasSlugs, ...baseWithoutAliases } = baseFamily
+
+  return computeFamilyFlags({
+    ...baseWithoutAliases,
+    id: slug,
+    familyName,
+    slug,
+    ...(aliasSlugs.length ? { aliasSlugs } : {}),
+    familySources: sources,
+    shared: {
+      ...sharedWithoutAlsoSee,
+      description: allSame(descriptions)
+        ? (descriptions[0] ?? sharedWithoutAlsoSee.description)
+        : (descriptions[0] ?? sharedWithoutAlsoSee.description),
+      ...(allSame(images) && images[0] ? { imageUrl: images[0] } : {}),
+      ...(allSame(alternativeImages) && alternativeImages[0]
+        ? { alternativeImages: alternativeImages[0] }
+        : {}),
+      ...(allSame(rarities) && rarities[0] ? { rarity: rarities[0] } : {}),
+      ...(allSame(resists) && resists[0] ? { resists: resists[0] } : {}),
+    },
+    levelVariants: renumberedVariants,
+  })
+}
+
+function splitNamedSiblingFamilies(entries: AccessoryEntry[]): AccessoryEntry[] {
+  return entries.flatMap((entry) => {
+    if (!isAccessoryFamily(entry) || entry.subtype !== 'helm') return [entry]
+
+    const spec = NAMED_SIBLING_SPLIT_SPECS.find(
+      (candidate) =>
+        normalizeLookupName(candidate.sourceFamilyName) === normalizeLookupName(entry.familyName)
+    )
+    if (!spec) return [entry]
+
+    const splitFamilies = spec.groups
+      .map((group) => ({
+        ...group,
+        variants: entry.levelVariants.filter((variant) => group.namePattern.test(variant.name)),
+      }))
+      .filter((group) => group.variants.length > 0)
+      .map((group) => buildNamedSiblingSplitFamily(entry, group.familyName, group.variants))
+
+    if (splitFamilies.length <= 1) return [entry]
+
+    const externalRefs = getAlsoSee(entry).filter(
+      (ref) => !splitFamilies.some((family) => family.slug === ref.slug)
+    )
+    return splitFamilies.map((family) => {
+      const siblingRefs = splitFamilies
+        .filter((sibling) => sibling.slug !== family.slug)
+        .map(getFamilyRef)
+      return setAlsoSee(family, [...externalRefs, ...siblingRefs]) as AccessoryFamily
+    })
   })
 }
 
@@ -1313,8 +1475,10 @@ export function promoteAccessoryCrossPostFamilies(entries: AccessoryEntry[]): Ac
 
   const consolidated = removeCobaltDragonWingAliasEntries(
     linkSiblingFamilies(
-      splitCobaltDragonWingsFamilies(
-        splitCiderKegFamilies(disambiguateDuplicateFamilyNames(applySpecialFamilies(promoted)))
+      splitNamedSiblingFamilies(
+        splitCobaltDragonWingsFamilies(
+          splitCiderKegFamilies(disambiguateDuplicateFamilyNames(applySpecialFamilies(promoted)))
+        )
       )
     )
   )

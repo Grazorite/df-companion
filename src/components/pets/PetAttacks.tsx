@@ -1,39 +1,45 @@
 import { useState } from 'react'
-import { ChevronDown, ChevronUp, ImageOff } from 'lucide-react'
+import { ChevronDown, ChevronUp } from 'lucide-react'
 import type { Attack } from '../../types/pet'
 import NotesList from '../shared/NotesList'
 import PopupText from '../shared/PopupText'
+import ExpandableImageList from '../shared/ExpandableImageList'
+import MetricStrip from '../shared/MetricStrip'
+import { extractRateFromEffect } from '../../utils/effectFormatting'
 
 interface PetAttacksProps {
   attacks: Attack[]
 }
 
-function AttackImage({ src, alt }: { src: string; alt: string }) {
-  const [broken, setBroken] = useState(false)
-  if (broken) {
-    return (
-      <div className="flex items-center gap-1.5 text-text-muted text-xs bg-bg-elevated border border-border-default rounded px-2 py-1.5">
-        <ImageOff className="w-3.5 h-3.5 flex-shrink-0" />
-        <span>Image unavailable</span>
-      </div>
-    )
-  }
-  return (
-    <img
-      src={src}
-      alt={alt}
-      loading="lazy"
-      onError={() => setBroken(true)}
-      className="max-w-full rounded border border-border-default"
-    />
-  )
+function getAttackImageCaptions(attackName: string, imageCount: number): string[] | undefined {
+  const match = attackName.match(/^Attack\s+Type\s+(.+)$/i)
+  if (!match) return undefined
+
+  const parts = match[1]
+    .split('/')
+    .map((part) => part.trim())
+    .filter(Boolean)
+
+  if (parts.length !== imageCount || parts.length <= 1) return undefined
+
+  return parts.map((part) => `Attack Type ${part}`)
 }
 
 function AttackCard({ attack, index }: { attack: Attack; index: number }) {
   const [open, setOpen] = useState(index === 0)
   const requirementsNote = attack.notes?.find((note) => note.startsWith('Requirements:'))
-  const extraNotes = attack.notes?.filter((note) => !note.startsWith('Requirements:')) ?? []
+  const cooldownNote = attack.notes?.find((note) => note.startsWith('Cooldown:'))
+  const extraNotes =
+    attack.notes?.filter(
+      (note) => !note.startsWith('Requirements:') && !note.startsWith('Cooldown:')
+    ) ?? []
   const requirementsText = requirementsNote?.replace(/^Requirements:\s*/i, '').trim()
+  const cooldownText = attack.cooldown ?? cooldownNote?.replace(/^Cooldown:\s*/i, '').trim()
+  const { effectText, rate } = extractRateFromEffect(attack.description)
+  const metrics = [
+    ...(rate ? [{ label: 'Rate', value: rate }] : []),
+    ...(cooldownText ? [{ label: 'Cooldown', value: cooldownText }] : []),
+  ]
 
   return (
     <div className="bg-bg-surface border border-border-default rounded-lg overflow-hidden">
@@ -60,20 +66,26 @@ function AttackCard({ attack, index }: { attack: Attack; index: number }) {
             </p>
           )}
 
-          <PopupText
-            text={attack.description}
-            className="text-text-secondary text-sm leading-relaxed"
-            quoteClassName="mt-2"
-          />
+          {effectText && (
+            <PopupText
+              text={effectText}
+              className="text-text-secondary text-sm leading-relaxed"
+              quoteClassName="mt-2"
+            />
+          )}
+
+          <MetricStrip metrics={metrics} />
 
           {extraNotes.length > 0 && <NotesList notes={extraNotes.join('\n')} />}
 
           {attack.images && attack.images.length > 0 && (
-            <div className="space-y-2">
-              {attack.images.map((src, i) => (
-                <AttackImage key={i} src={src} alt={`${attack.name} animation ${i + 1}`} />
-              ))}
-            </div>
+            <ExpandableImageList
+              images={attack.images}
+              captions={
+                attack.imageCaptions ?? getAttackImageCaptions(attack.name, attack.images.length)
+              }
+              altPrefix={`${attack.name} animation`}
+            />
           )}
         </div>
       )}

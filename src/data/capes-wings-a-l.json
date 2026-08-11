@@ -1163,16 +1163,6 @@
     "id": "accessory-artix-s-cape",
     "familyName": "Artix's Cape",
     "slug": "accessory-artix-s-cape",
-    "aliasSlugs": [
-      "accessory-artix-s-cape",
-      "accessory-artix-s-cape",
-      "accessory-artix-s-cape",
-      "accessory-artix-s-cape",
-      "accessory-artix-s-cape",
-      "accessory-artix-s-cape",
-      "accessory-artix-s-cape",
-      "accessory-artix-s-cape"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22172444",
@@ -1617,15 +1607,6 @@
     "id": "accessory-ascended-cloak",
     "familyName": "Ascended Cloak",
     "slug": "accessory-ascended-cloak",
-    "aliasSlugs": [
-      "accessory-ascended-cloak",
-      "accessory-ascended-cloak",
-      "accessory-ascended-cloak",
-      "accessory-ascended-cloak",
-      "accessory-ascended-cloak",
-      "accessory-ascended-cloak",
-      "accessory-ascended-cloak"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21952953",
@@ -1856,15 +1837,6 @@
     "id": "accessory-ascended-wings",
     "familyName": "Ascended Wings",
     "slug": "accessory-ascended-wings",
-    "aliasSlugs": [
-      "accessory-ascended-wings",
-      "accessory-ascended-wings",
-      "accessory-ascended-wings",
-      "accessory-ascended-wings",
-      "accessory-ascended-wings",
-      "accessory-ascended-wings",
-      "accessory-ascended-wings"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21952138",
@@ -2202,7 +2174,6 @@
     "familyName": "Aspenvale Backpack",
     "slug": "accessory-aspenvale-backpack",
     "aliasSlugs": [
-      "accessory-aspenvale-backpack",
       "accessory-aspenvale-backpack-aegis",
       "accessory-aspenvale-backpack-alz-ein",
       "accessory-aspenvale-backpack-aria",
@@ -5699,12 +5670,6 @@
     "id": "accessory-blue-minx-wings",
     "familyName": "Blue Minx Wings",
     "slug": "accessory-blue-minx-wings",
-    "aliasSlugs": [
-      "accessory-blue-minx-wings",
-      "accessory-blue-minx-wings",
-      "accessory-blue-minx-wings",
-      "accessory-blue-minx-wings"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18802102",
@@ -5859,7 +5824,6 @@
     "familyName": "Bonded DragonLord Cape",
     "slug": "accessory-bonded-dragonlord-cape",
     "aliasSlugs": [
-      "accessory-bonded-dragonlord-cape",
       "accessory-bonded-dragonlord-cape-cc"
     ],
     "type": "accessory",
@@ -6003,10 +5967,6 @@
     "id": "accessory-boondock-s-saintly-cloak",
     "familyName": "Boondock's Saintly Cloak",
     "slug": "accessory-boondock-s-saintly-cloak",
-    "aliasSlugs": [
-      "accessory-boondock-s-saintly-cloak",
-      "accessory-boondock-s-saintly-cloak"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=13178303",
@@ -6345,16 +6305,6 @@
     "id": "accessory-candy-pail",
     "familyName": "Candy Pail",
     "slug": "accessory-candy-pail",
-    "aliasSlugs": [
-      "accessory-candy-pail",
-      "accessory-candy-pail",
-      "accessory-candy-pail",
-      "accessory-candy-pail",
-      "accessory-candy-pail",
-      "accessory-candy-pail",
-      "accessory-candy-pail",
-      "accessory-candy-pail"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22187304",
@@ -9032,18 +8982,6 @@
     "id": "accessory-chilly-on-your-back",
     "familyName": "Chilly On Your Back",
     "slug": "accessory-chilly-on-your-back",
-    "aliasSlugs": [
-      "accessory-chilly-on-your-back",
-      "accessory-chilly-on-your-back",
-      "accessory-chilly-on-your-back",
-      "accessory-chilly-on-your-back",
-      "accessory-chilly-on-your-back",
-      "accessory-chilly-on-your-back",
-      "accessory-chilly-on-your-back",
-      "accessory-chilly-on-your-back",
-      "accessory-chilly-on-your-back",
-      "accessory-chilly-on-your-back"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22085682",
@@ -9370,13 +9308,6 @@
     "id": "accessory-chronocape",
     "familyName": "Chronocape",
     "slug": "accessory-chronocape",
-    "aliasSlugs": [
-      "accessory-chronocape",
-      "accessory-chronocape",
-      "accessory-chronocape",
-      "accessory-chronocape",
-      "accessory-chronocape"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18495151",
@@ -9559,14 +9490,6 @@
     "id": "accessory-chronocorrupted-wings",
     "familyName": "Chronocorrupted Wings",
     "slug": "accessory-chronocorrupted-wings",
-    "aliasSlugs": [
-      "accessory-chronocorrupted-wings",
-      "accessory-chronocorrupted-wings",
-      "accessory-chronocorrupted-wings",
-      "accessory-chronocorrupted-wings",
-      "accessory-chronocorrupted-wings",
-      "accessory-chronocorrupted-wings"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21622413",
@@ -10459,10 +10382,6 @@
     "id": "accessory-cloak-of-deidro",
     "familyName": "Cloak of Deidro",
     "slug": "accessory-cloak-of-deidro",
-    "aliasSlugs": [
-      "accessory-cloak-of-deidro",
-      "accessory-cloak-of-deidro"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19966542",
@@ -10554,12 +10473,6 @@
     "id": "accessory-cloak-of-doom",
     "familyName": "Cloak of Doom",
     "slug": "accessory-cloak-of-doom",
-    "aliasSlugs": [
-      "accessory-cloak-of-doom",
-      "accessory-cloak-of-doom",
-      "accessory-cloak-of-doom",
-      "accessory-cloak-of-doom"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=13275640",
@@ -10715,7 +10628,6 @@
     "familyName": "Cloak of Hyonix",
     "slug": "accessory-cloak-of-hyonix",
     "aliasSlugs": [
-      "accessory-cloak-of-hyonix",
       "accessory-cloak-of-hyonix-dragonsoul"
     ],
     "type": "accessory",
@@ -10891,12 +10803,6 @@
     "id": "accessory-cloak-of-shadows",
     "familyName": "Cloak of Shadows",
     "slug": "accessory-cloak-of-shadows",
-    "aliasSlugs": [
-      "accessory-cloak-of-shadows",
-      "accessory-cloak-of-shadows",
-      "accessory-cloak-of-shadows",
-      "accessory-cloak-of-shadows"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21920504",
@@ -10948,7 +10854,8 @@
           "type": "accessory",
           "url": "https://forums2.battleon.com/f/tm.asp?m=21926777"
         }
-      ]
+      ],
+      "notes": "Cape appears invisible when equipped."
     },
     "levelVariants": [
       {
@@ -12363,16 +12270,6 @@
     "id": "accessory-comedy-cloak",
     "familyName": "Comedy Cloak",
     "slug": "accessory-comedy-cloak",
-    "aliasSlugs": [
-      "accessory-comedy-cloak",
-      "accessory-comedy-cloak",
-      "accessory-comedy-cloak",
-      "accessory-comedy-cloak",
-      "accessory-comedy-cloak",
-      "accessory-comedy-cloak",
-      "accessory-comedy-cloak",
-      "accessory-comedy-cloak"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21564828",
@@ -12816,16 +12713,6 @@
     "id": "accessory-comte-cape",
     "familyName": "Comte Cape",
     "slug": "accessory-comte-cape",
-    "aliasSlugs": [
-      "accessory-comte-cape",
-      "accessory-comte-cape",
-      "accessory-comte-cape",
-      "accessory-comte-cape",
-      "accessory-comte-cape",
-      "accessory-comte-cape",
-      "accessory-comte-cape",
-      "accessory-comte-cape"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22177620",
@@ -13495,15 +13382,6 @@
     "id": "accessory-count-s-cape",
     "familyName": "Count's Cape",
     "slug": "accessory-count-s-cape",
-    "aliasSlugs": [
-      "accessory-count-s-cape",
-      "accessory-count-s-cape",
-      "accessory-count-s-cape",
-      "accessory-count-s-cape",
-      "accessory-count-s-cape",
-      "accessory-count-s-cape",
-      "accessory-count-s-cape"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21844212",
@@ -14611,11 +14489,6 @@
     "id": "accessory-custom-bat-wings",
     "familyName": "Custom Bat Wings",
     "slug": "accessory-custom-bat-wings",
-    "aliasSlugs": [
-      "accessory-custom-bat-wings",
-      "accessory-custom-bat-wings",
-      "accessory-custom-bat-wings"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17705590",
@@ -15214,15 +15087,6 @@
     "id": "accessory-dark-ascended-wings",
     "familyName": "Dark Ascended Wings",
     "slug": "accessory-dark-ascended-wings",
-    "aliasSlugs": [
-      "accessory-dark-ascended-wings",
-      "accessory-dark-ascended-wings",
-      "accessory-dark-ascended-wings",
-      "accessory-dark-ascended-wings",
-      "accessory-dark-ascended-wings",
-      "accessory-dark-ascended-wings",
-      "accessory-dark-ascended-wings"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22069404",
@@ -15501,16 +15365,6 @@
     "id": "accessory-dark-legion-cape",
     "familyName": "Dark Legion Cape",
     "slug": "accessory-dark-legion-cape",
-    "aliasSlugs": [
-      "accessory-dark-legion-cape",
-      "accessory-dark-legion-cape",
-      "accessory-dark-legion-cape",
-      "accessory-dark-legion-cape",
-      "accessory-dark-legion-cape",
-      "accessory-dark-legion-cape",
-      "accessory-dark-legion-cape",
-      "accessory-dark-legion-cape"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21530146",
@@ -15778,16 +15632,6 @@
     "id": "accessory-dark-sandwarrior-wings",
     "familyName": "Dark SandWarrior Wings",
     "slug": "accessory-dark-sandwarrior-wings",
-    "aliasSlugs": [
-      "accessory-dark-sandwarrior-wings",
-      "accessory-dark-sandwarrior-wings",
-      "accessory-dark-sandwarrior-wings",
-      "accessory-dark-sandwarrior-wings",
-      "accessory-dark-sandwarrior-wings",
-      "accessory-dark-sandwarrior-wings",
-      "accessory-dark-sandwarrior-wings",
-      "accessory-dark-sandwarrior-wings"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21530454",
@@ -16055,14 +15899,6 @@
     "id": "accessory-dark-vampire-wings",
     "familyName": "Dark Vampire Wings",
     "slug": "accessory-dark-vampire-wings",
-    "aliasSlugs": [
-      "accessory-dark-vampire-wings",
-      "accessory-dark-vampire-wings",
-      "accessory-dark-vampire-wings",
-      "accessory-dark-vampire-wings",
-      "accessory-dark-vampire-wings",
-      "accessory-dark-vampire-wings"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22069419",
@@ -16273,16 +16109,6 @@
     "id": "accessory-darkened-tree-branches",
     "familyName": "Darkened Tree Branches",
     "slug": "accessory-darkened-tree-branches",
-    "aliasSlugs": [
-      "accessory-darkened-tree-branches",
-      "accessory-darkened-tree-branches",
-      "accessory-darkened-tree-branches",
-      "accessory-darkened-tree-branches",
-      "accessory-darkened-tree-branches",
-      "accessory-darkened-tree-branches",
-      "accessory-darkened-tree-branches",
-      "accessory-darkened-tree-branches"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21884709",
@@ -17262,18 +17088,6 @@
     "id": "accessory-doom-dragon-wings",
     "familyName": "Doom Dragon Wings",
     "slug": "accessory-doom-dragon-wings",
-    "aliasSlugs": [
-      "accessory-doom-dragon-wings",
-      "accessory-doom-dragon-wings",
-      "accessory-doom-dragon-wings",
-      "accessory-doom-dragon-wings",
-      "accessory-doom-dragon-wings",
-      "accessory-doom-dragon-wings",
-      "accessory-doom-dragon-wings",
-      "accessory-doom-dragon-wings",
-      "accessory-doom-dragon-wings",
-      "accessory-doom-dragon-wings"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22155183",
@@ -17901,18 +17715,6 @@
     "id": "accessory-doomknight-cloak",
     "familyName": "DoomKnight Cloak",
     "slug": "accessory-doomknight-cloak",
-    "aliasSlugs": [
-      "accessory-doomknight-cloak",
-      "accessory-doomknight-cloak",
-      "accessory-doomknight-cloak",
-      "accessory-doomknight-cloak",
-      "accessory-doomknight-cloak",
-      "accessory-doomknight-cloak",
-      "accessory-doomknight-cloak",
-      "accessory-doomknight-cloak",
-      "accessory-doomknight-cloak",
-      "accessory-doomknight-cloak"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=16605619",
@@ -19050,17 +18852,6 @@
     "id": "accessory-dragonlord-vath-wings",
     "familyName": "DragonLord Vath Wings",
     "slug": "accessory-dragonlord-vath-wings",
-    "aliasSlugs": [
-      "accessory-dragonlord-vath-wings",
-      "accessory-dragonlord-vath-wings",
-      "accessory-dragonlord-vath-wings",
-      "accessory-dragonlord-vath-wings",
-      "accessory-dragonlord-vath-wings",
-      "accessory-dragonlord-vath-wings",
-      "accessory-dragonlord-vath-wings",
-      "accessory-dragonlord-vath-wings",
-      "accessory-dragonlord-vath-wings"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21810006",
@@ -19524,10 +19315,6 @@
     "id": "accessory-dragonlord-s-wings",
     "familyName": "DragonLord's Wings",
     "slug": "accessory-dragonlord-s-wings",
-    "aliasSlugs": [
-      "accessory-dragonlord-s-wings",
-      "accessory-dragonlord-s-wings"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=16716093",
@@ -19657,14 +19444,6 @@
     "id": "accessory-drakath-s-wings",
     "familyName": "Drakath's Wings",
     "slug": "accessory-drakath-s-wings",
-    "aliasSlugs": [
-      "accessory-drakath-s-wings",
-      "accessory-drakath-s-wings",
-      "accessory-drakath-s-wings",
-      "accessory-drakath-s-wings",
-      "accessory-drakath-s-wings",
-      "accessory-drakath-s-wings"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21768088",
@@ -20492,10 +20271,6 @@
     "id": "accessory-dread-wings",
     "familyName": "Dread Wings",
     "slug": "accessory-dread-wings",
-    "aliasSlugs": [
-      "accessory-dread-wings",
-      "accessory-dread-wings"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18326899",
@@ -20631,15 +20406,6 @@
     "id": "accessory-dreamer-beast-tail",
     "familyName": "Dreamer Beast Tail",
     "slug": "accessory-dreamer-beast-tail",
-    "aliasSlugs": [
-      "accessory-dreamer-beast-tail",
-      "accessory-dreamer-beast-tail",
-      "accessory-dreamer-beast-tail",
-      "accessory-dreamer-beast-tail",
-      "accessory-dreamer-beast-tail",
-      "accessory-dreamer-beast-tail",
-      "accessory-dreamer-beast-tail"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21963740",
@@ -21402,14 +21168,6 @@
     "id": "accessory-drones-on-your-back",
     "familyName": "Drones On Your Back",
     "slug": "accessory-drones-on-your-back",
-    "aliasSlugs": [
-      "accessory-drones-on-your-back",
-      "accessory-drones-on-your-back",
-      "accessory-drones-on-your-back",
-      "accessory-drones-on-your-back",
-      "accessory-drones-on-your-back",
-      "accessory-drones-on-your-back"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21433987",
@@ -22022,12 +21780,6 @@
     "id": "accessory-elite-pactogonal-cape",
     "familyName": "Elite Pactogonal Cape",
     "slug": "accessory-elite-pactogonal-cape",
-    "aliasSlugs": [
-      "accessory-elite-pactogonal-cape",
-      "accessory-elite-pactogonal-cape",
-      "accessory-elite-pactogonal-cape",
-      "accessory-elite-pactogonal-cape"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22096839",
@@ -22064,7 +21816,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 2,
+        "levelNumber": 1,
         "levelDisplay": "2",
         "actualLevel": 2,
         "name": "Elite Pactogonal Cape",
@@ -22086,7 +21838,31 @@
         "rarity": "2"
       },
       {
-        "levelNumber": 4,
+        "levelNumber": 2,
+        "levelDisplay": "4",
+        "actualLevel": 4,
+        "name": "Elite Pactogonal Cape",
+        "damage": "",
+        "stats": "Bonus +1",
+        "obtainVariants": [
+          {
+            "location": "Oaklore Forest",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "3 Gold",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22097070",
+        "description": "The official cape of the Pactogonal Knights! This item requies a Dragon Amulet.",
+        "alternativeImages": [],
+        "element": "WAT",
+        "resists": "Water +2",
+        "rarity": "2",
+        "notes": "Cape's description erroneously includes 'requies', a typo of 'requires'."
+      },
+      {
+        "levelNumber": 3,
         "levelDisplay": "4",
         "actualLevel": 4,
         "name": "Elite Pactogonal Cape",
@@ -22111,30 +21887,6 @@
       },
       {
         "levelNumber": 4,
-        "levelDisplay": "4",
-        "actualLevel": 4,
-        "name": "Elite Pactogonal Cape",
-        "damage": "",
-        "stats": "Bonus +1",
-        "obtainVariants": [
-          {
-            "location": "Oaklore Forest",
-            "price": "N/A",
-            "priceType": "free",
-            "sellback": "3 Gold",
-            "daRequired": false
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22097070",
-        "description": "The official cape of the Pactogonal Knights! This item requies a Dragon Amulet.",
-        "alternativeImages": [],
-        "element": "WAT",
-        "resists": "Water +2",
-        "rarity": "2",
-        "notes": "Cape's description erroneously includes 'requies', a typo of 'requires'."
-      },
-      {
-        "levelNumber": 7,
         "levelDisplay": "7",
         "actualLevel": 7,
         "name": "Elite Pactogonal Cape",
@@ -23062,14 +22814,6 @@
     "id": "accessory-escherion-cape",
     "familyName": "Escherion Cape",
     "slug": "accessory-escherion-cape",
-    "aliasSlugs": [
-      "accessory-escherion-cape",
-      "accessory-escherion-cape",
-      "accessory-escherion-cape",
-      "accessory-escherion-cape",
-      "accessory-escherion-cape",
-      "accessory-escherion-cape"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21766431",
@@ -24192,14 +23936,6 @@
     "id": "accessory-fallen-ice-dragon-wings",
     "familyName": "Fallen Ice Dragon Wings",
     "slug": "accessory-fallen-ice-dragon-wings",
-    "aliasSlugs": [
-      "accessory-fallen-ice-dragon-wings",
-      "accessory-fallen-ice-dragon-wings",
-      "accessory-fallen-ice-dragon-wings",
-      "accessory-fallen-ice-dragon-wings",
-      "accessory-fallen-ice-dragon-wings",
-      "accessory-fallen-ice-dragon-wings"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21208434",
@@ -25026,7 +24762,6 @@
     "familyName": "Feathers of Pride",
     "slug": "accessory-feathers-of-pride",
     "aliasSlugs": [
-      "accessory-feathers-of-pride",
       "accessory-feathers-of-pride-l",
       "accessory-feathers-of-pride-b",
       "accessory-feathers-of-pride-nb",
@@ -25306,16 +25041,6 @@
     "id": "accessory-fishyfish",
     "familyName": "FishyFish",
     "slug": "accessory-fishyfish",
-    "aliasSlugs": [
-      "accessory-fishyfish",
-      "accessory-fishyfish",
-      "accessory-fishyfish",
-      "accessory-fishyfish",
-      "accessory-fishyfish",
-      "accessory-fishyfish",
-      "accessory-fishyfish",
-      "accessory-fishyfish"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21411886",
@@ -25686,15 +25411,6 @@
     "id": "accessory-flutterfly-dragon-wings",
     "familyName": "Flutterfly-dragon Wings",
     "slug": "accessory-flutterfly-dragon-wings",
-    "aliasSlugs": [
-      "accessory-flutterfly-dragon-wings",
-      "accessory-flutterfly-dragon-wings",
-      "accessory-flutterfly-dragon-wings",
-      "accessory-flutterfly-dragon-wings",
-      "accessory-flutterfly-dragon-wings",
-      "accessory-flutterfly-dragon-wings",
-      "accessory-flutterfly-dragon-wings"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18755158",
@@ -26493,16 +26209,6 @@
     "id": "accessory-frost-moglin-defender-tail",
     "familyName": "Frost Moglin Defender Tail",
     "slug": "accessory-frost-moglin-defender-tail",
-    "aliasSlugs": [
-      "accessory-frost-moglin-defender-tail",
-      "accessory-frost-moglin-defender-tail",
-      "accessory-frost-moglin-defender-tail",
-      "accessory-frost-moglin-defender-tail",
-      "accessory-frost-moglin-defender-tail",
-      "accessory-frost-moglin-defender-tail",
-      "accessory-frost-moglin-defender-tail",
-      "accessory-frost-moglin-defender-tail"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21906009",
@@ -26762,16 +26468,6 @@
     "id": "accessory-frost-moglin-slayer-tail",
     "familyName": "Frost Moglin Slayer Tail",
     "slug": "accessory-frost-moglin-slayer-tail",
-    "aliasSlugs": [
-      "accessory-frost-moglin-slayer-tail",
-      "accessory-frost-moglin-slayer-tail",
-      "accessory-frost-moglin-slayer-tail",
-      "accessory-frost-moglin-slayer-tail",
-      "accessory-frost-moglin-slayer-tail",
-      "accessory-frost-moglin-slayer-tail",
-      "accessory-frost-moglin-slayer-tail",
-      "accessory-frost-moglin-slayer-tail"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21901600",
@@ -27401,8 +27097,7 @@
     "familyName": "Frosted Death Spikes",
     "slug": "accessory-frosted-death-spikes",
     "aliasSlugs": [
-      "accessory-frosted-death-spikes-c",
-      "accessory-frosted-death-spikes"
+      "accessory-frosted-death-spikes-c"
     ],
     "type": "accessory",
     "subtype": "cape-wing",
@@ -28311,15 +28006,6 @@
     "id": "accessory-fur-coat",
     "familyName": "Fur Coat",
     "slug": "accessory-fur-coat",
-    "aliasSlugs": [
-      "accessory-fur-coat",
-      "accessory-fur-coat",
-      "accessory-fur-coat",
-      "accessory-fur-coat",
-      "accessory-fur-coat",
-      "accessory-fur-coat",
-      "accessory-fur-coat"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21844207",
@@ -28545,7 +28231,6 @@
     "familyName": "Galaxy Cloak",
     "slug": "accessory-galaxy-cloak",
     "aliasSlugs": [
-      "accessory-galaxy-cloak",
       "accessory-galaxy-cloak-ii",
       "accessory-galaxy-cloak-iii",
       "accessory-galaxy-cloak-iv"
@@ -29573,14 +29258,6 @@
     "id": "accessory-ghost-s-blade-of-spooky-hotness",
     "familyName": "Ghost's Blade of Spooky Hotness",
     "slug": "accessory-ghost-s-blade-of-spooky-hotness",
-    "aliasSlugs": [
-      "accessory-ghost-s-blade-of-spooky-hotness",
-      "accessory-ghost-s-blade-of-spooky-hotness",
-      "accessory-ghost-s-blade-of-spooky-hotness",
-      "accessory-ghost-s-blade-of-spooky-hotness",
-      "accessory-ghost-s-blade-of-spooky-hotness",
-      "accessory-ghost-s-blade-of-spooky-hotness"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22073030",
@@ -29778,14 +29455,6 @@
     "id": "accessory-giant-bat-wings",
     "familyName": "Giant Bat Wings",
     "slug": "accessory-giant-bat-wings",
-    "aliasSlugs": [
-      "accessory-giant-bat-wings",
-      "accessory-giant-bat-wings",
-      "accessory-giant-bat-wings",
-      "accessory-giant-bat-wings",
-      "accessory-giant-bat-wings",
-      "accessory-giant-bat-wings"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22007529",
@@ -30421,16 +30090,6 @@
     "id": "accessory-glowing-tree-branches",
     "familyName": "Glowing Tree Branches",
     "slug": "accessory-glowing-tree-branches",
-    "aliasSlugs": [
-      "accessory-glowing-tree-branches",
-      "accessory-glowing-tree-branches",
-      "accessory-glowing-tree-branches",
-      "accessory-glowing-tree-branches",
-      "accessory-glowing-tree-branches",
-      "accessory-glowing-tree-branches",
-      "accessory-glowing-tree-branches",
-      "accessory-glowing-tree-branches"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21631229",
@@ -31120,14 +30779,6 @@
     "id": "accessory-golden-bat-wings",
     "familyName": "Golden Bat Wings",
     "slug": "accessory-golden-bat-wings",
-    "aliasSlugs": [
-      "accessory-golden-bat-wings",
-      "accessory-golden-bat-wings",
-      "accessory-golden-bat-wings",
-      "accessory-golden-bat-wings",
-      "accessory-golden-bat-wings",
-      "accessory-golden-bat-wings"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22007558",
@@ -31712,10 +31363,6 @@
     "id": "accessory-golden-condor-wings",
     "familyName": "Golden Condor Wings",
     "slug": "accessory-golden-condor-wings",
-    "aliasSlugs": [
-      "accessory-golden-condor-wings",
-      "accessory-golden-condor-wings"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=9475621",
@@ -32066,16 +31713,6 @@
     "id": "accessory-goldfish",
     "familyName": "Goldfish",
     "slug": "accessory-goldfish",
-    "aliasSlugs": [
-      "accessory-goldfish",
-      "accessory-goldfish",
-      "accessory-goldfish",
-      "accessory-goldfish",
-      "accessory-goldfish",
-      "accessory-goldfish",
-      "accessory-goldfish",
-      "accessory-goldfish"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21408893",
@@ -32760,12 +32397,6 @@
     "id": "accessory-green-minx-wings",
     "familyName": "Green Minx Wings",
     "slug": "accessory-green-minx-wings",
-    "aliasSlugs": [
-      "accessory-green-minx-wings",
-      "accessory-green-minx-wings",
-      "accessory-green-minx-wings",
-      "accessory-green-minx-wings"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18802082",
@@ -32915,7 +32546,6 @@
     "familyName": "Green Silk Spy Cloak",
     "slug": "accessory-green-silk-spy-cloak",
     "aliasSlugs": [
-      "accessory-green-silk-spy-cloak",
       "accessory-green-silk-spy-cloak-ii",
       "accessory-green-silk-spy-cloak-iii",
       "accessory-green-silk-spy-cloak-iv",
@@ -33107,16 +32737,6 @@
     "id": "accessory-grenwog-basket",
     "familyName": "Grenwog Basket",
     "slug": "accessory-grenwog-basket",
-    "aliasSlugs": [
-      "accessory-grenwog-basket",
-      "accessory-grenwog-basket",
-      "accessory-grenwog-basket",
-      "accessory-grenwog-basket",
-      "accessory-grenwog-basket",
-      "accessory-grenwog-basket",
-      "accessory-grenwog-basket",
-      "accessory-grenwog-basket"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21953508",
@@ -33783,14 +33403,6 @@
     "id": "accessory-grove-tender-twigs",
     "familyName": "Grove Tender Twigs",
     "slug": "accessory-grove-tender-twigs",
-    "aliasSlugs": [
-      "accessory-grove-tender-twigs",
-      "accessory-grove-tender-twigs",
-      "accessory-grove-tender-twigs",
-      "accessory-grove-tender-twigs",
-      "accessory-grove-tender-twigs",
-      "accessory-grove-tender-twigs"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22014633",
@@ -34007,14 +33619,6 @@
     "id": "accessory-guardian-cloak",
     "familyName": "Guardian Cloak",
     "slug": "accessory-guardian-cloak",
-    "aliasSlugs": [
-      "accessory-guardian-cloak",
-      "accessory-guardian-cloak",
-      "accessory-guardian-cloak",
-      "accessory-guardian-cloak",
-      "accessory-guardian-cloak",
-      "accessory-guardian-cloak"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21976311",
@@ -34312,16 +33916,6 @@
     "id": "accessory-half-of-a-goldfish",
     "familyName": "Half of a Goldfish",
     "slug": "accessory-half-of-a-goldfish",
-    "aliasSlugs": [
-      "accessory-half-of-a-goldfish",
-      "accessory-half-of-a-goldfish",
-      "accessory-half-of-a-goldfish",
-      "accessory-half-of-a-goldfish",
-      "accessory-half-of-a-goldfish",
-      "accessory-half-of-a-goldfish",
-      "accessory-half-of-a-goldfish",
-      "accessory-half-of-a-goldfish"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21532437",
@@ -34589,16 +34183,6 @@
     "id": "accessory-half-of-a-stonefish",
     "familyName": "Half of a Stonefish",
     "slug": "accessory-half-of-a-stonefish",
-    "aliasSlugs": [
-      "accessory-half-of-a-stonefish",
-      "accessory-half-of-a-stonefish",
-      "accessory-half-of-a-stonefish",
-      "accessory-half-of-a-stonefish",
-      "accessory-half-of-a-stonefish",
-      "accessory-half-of-a-stonefish",
-      "accessory-half-of-a-stonefish",
-      "accessory-half-of-a-stonefish"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21532460",
@@ -35036,16 +34620,6 @@
     "id": "accessory-heart-inquisitor-s-cloak",
     "familyName": "Heart Inquisitor's Cloak",
     "slug": "accessory-heart-inquisitor-s-cloak",
-    "aliasSlugs": [
-      "accessory-heart-inquisitor-s-cloak",
-      "accessory-heart-inquisitor-s-cloak",
-      "accessory-heart-inquisitor-s-cloak",
-      "accessory-heart-inquisitor-s-cloak",
-      "accessory-heart-inquisitor-s-cloak",
-      "accessory-heart-inquisitor-s-cloak",
-      "accessory-heart-inquisitor-s-cloak",
-      "accessory-heart-inquisitor-s-cloak"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22236796",
@@ -35449,7 +35023,6 @@
     "familyName": "Hide Cape",
     "slug": "accessory-hide-cape",
     "aliasSlugs": [
-      "accessory-hide-cape",
       "accessory-hide-cape-ii",
       "accessory-hide-cape-iii",
       "accessory-hide-cape-iv",
@@ -36577,13 +36150,6 @@
     "id": "accessory-icebound-wings",
     "familyName": "Icebound Wings",
     "slug": "accessory-icebound-wings",
-    "aliasSlugs": [
-      "accessory-icebound-wings",
-      "accessory-icebound-wings",
-      "accessory-icebound-wings",
-      "accessory-icebound-wings",
-      "accessory-icebound-wings"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21770006",
@@ -37877,15 +37443,6 @@
     "id": "accessory-infused-sheathed-rose-blade",
     "familyName": "Infused Sheathed Rose Blade",
     "slug": "accessory-infused-sheathed-rose-blade",
-    "aliasSlugs": [
-      "accessory-infused-sheathed-rose-blade",
-      "accessory-infused-sheathed-rose-blade",
-      "accessory-infused-sheathed-rose-blade",
-      "accessory-infused-sheathed-rose-blade",
-      "accessory-infused-sheathed-rose-blade",
-      "accessory-infused-sheathed-rose-blade",
-      "accessory-infused-sheathed-rose-blade"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22270615",
@@ -38317,11 +37874,6 @@
     "id": "accessory-invisible-cape",
     "familyName": "Invisible Cape",
     "slug": "accessory-invisible-cape",
-    "aliasSlugs": [
-      "accessory-invisible-cape",
-      "accessory-invisible-cape",
-      "accessory-invisible-cape"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17705523",
@@ -38368,7 +37920,8 @@
           "type": "accessory",
           "url": "https://forums2.battleon.com/f/tm.asp?m=21926777"
         }
-      ]
+      ],
+      "notes": "Cape appears invisible when equipped."
     },
     "levelVariants": [
       {
@@ -39306,16 +38859,6 @@
     "id": "accessory-kickstarter-cape",
     "familyName": "Kickstarter Cape",
     "slug": "accessory-kickstarter-cape",
-    "aliasSlugs": [
-      "accessory-kickstarter-cape",
-      "accessory-kickstarter-cape",
-      "accessory-kickstarter-cape",
-      "accessory-kickstarter-cape",
-      "accessory-kickstarter-cape",
-      "accessory-kickstarter-cape",
-      "accessory-kickstarter-cape",
-      "accessory-kickstarter-cape"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22156793",
@@ -40597,22 +40140,6 @@
     "id": "accessory-liberty-wings",
     "familyName": "Liberty Wings",
     "slug": "accessory-liberty-wings",
-    "aliasSlugs": [
-      "accessory-liberty-wings",
-      "accessory-liberty-wings",
-      "accessory-liberty-wings",
-      "accessory-liberty-wings",
-      "accessory-liberty-wings",
-      "accessory-liberty-wings",
-      "accessory-liberty-wings",
-      "accessory-liberty-wings",
-      "accessory-liberty-wings",
-      "accessory-liberty-wings",
-      "accessory-liberty-wings",
-      "accessory-liberty-wings",
-      "accessory-liberty-wings",
-      "accessory-liberty-wings"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19226589",
@@ -41538,7 +41065,6 @@
     "familyName": "Lion's Pelt Cape",
     "slug": "accessory-lion-s-pelt-cape",
     "aliasSlugs": [
-      "accessory-lion-s-pelt-cape",
       "accessory-lion-s-pelt-cape-ii",
       "accessory-lion-s-pelt-cape-iii",
       "accessory-lion-s-pelt-cape-iv"
@@ -41689,15 +41215,6 @@
     "id": "accessory-lonely-lover-wings",
     "familyName": "Lonely Lover Wings",
     "slug": "accessory-lonely-lover-wings",
-    "aliasSlugs": [
-      "accessory-lonely-lover-wings",
-      "accessory-lonely-lover-wings",
-      "accessory-lonely-lover-wings",
-      "accessory-lonely-lover-wings",
-      "accessory-lonely-lover-wings",
-      "accessory-lonely-lover-wings",
-      "accessory-lonely-lover-wings"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22105555",
@@ -42703,15 +42220,6 @@
     "id": "accessory-lunar-coins",
     "familyName": "Lunar Coins",
     "slug": "accessory-lunar-coins",
-    "aliasSlugs": [
-      "accessory-lunar-coins",
-      "accessory-lunar-coins",
-      "accessory-lunar-coins",
-      "accessory-lunar-coins",
-      "accessory-lunar-coins",
-      "accessory-lunar-coins",
-      "accessory-lunar-coins"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22103888",

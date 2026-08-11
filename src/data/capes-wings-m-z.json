@@ -2222,14 +2222,6 @@
     "id": "accessory-mantle-of-shadows",
     "familyName": "Mantle of Shadows",
     "slug": "accessory-mantle-of-shadows",
-    "aliasSlugs": [
-      "accessory-mantle-of-shadows",
-      "accessory-mantle-of-shadows",
-      "accessory-mantle-of-shadows",
-      "accessory-mantle-of-shadows",
-      "accessory-mantle-of-shadows",
-      "accessory-mantle-of-shadows"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21920514",
@@ -2293,7 +2285,8 @@
           "type": "accessory",
           "url": "https://forums2.battleon.com/f/tm.asp?m=21926777"
         }
-      ]
+      ],
+      "notes": "Cape appears invisible when equipped."
     },
     "levelVariants": [
       {
@@ -2451,22 +2444,6 @@
     "id": "accessory-maple-cloak",
     "familyName": "Maple Cloak",
     "slug": "accessory-maple-cloak",
-    "aliasSlugs": [
-      "accessory-maple-cloak",
-      "accessory-maple-cloak",
-      "accessory-maple-cloak",
-      "accessory-maple-cloak",
-      "accessory-maple-cloak",
-      "accessory-maple-cloak",
-      "accessory-maple-cloak",
-      "accessory-maple-cloak",
-      "accessory-maple-cloak",
-      "accessory-maple-cloak",
-      "accessory-maple-cloak",
-      "accessory-maple-cloak",
-      "accessory-maple-cloak",
-      "accessory-maple-cloak"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19226492",
@@ -3847,10 +3824,6 @@
     "id": "accessory-mighty-dread-wings",
     "familyName": "Mighty Dread Wings",
     "slug": "accessory-mighty-dread-wings",
-    "aliasSlugs": [
-      "accessory-mighty-dread-wings",
-      "accessory-mighty-dread-wings"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18326956",
@@ -4005,11 +3978,6 @@
     "id": "accessory-mirrored-dragonlord-s-wings",
     "familyName": "Mirrored DragonLord's Wings",
     "slug": "accessory-mirrored-dragonlord-s-wings",
-    "aliasSlugs": [
-      "accessory-mirrored-dragonlord-s-wings",
-      "accessory-mirrored-dragonlord-s-wings",
-      "accessory-mirrored-dragonlord-s-wings"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17421750",
@@ -4754,20 +4722,6 @@
     "id": "accessory-monkey-on-yer-back",
     "familyName": "Monkey On Yer Back",
     "slug": "accessory-monkey-on-yer-back",
-    "aliasSlugs": [
-      "accessory-monkey-on-yer-back",
-      "accessory-monkey-on-yer-back",
-      "accessory-monkey-on-yer-back",
-      "accessory-monkey-on-yer-back",
-      "accessory-monkey-on-yer-back",
-      "accessory-monkey-on-yer-back",
-      "accessory-monkey-on-yer-back",
-      "accessory-monkey-on-yer-back",
-      "accessory-monkey-on-yer-back",
-      "accessory-monkey-on-yer-back",
-      "accessory-monkey-on-yer-back",
-      "accessory-monkey-on-yer-back"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=11034217",
@@ -5918,62 +5872,159 @@
     ]
   },
   {
-    "id": "accessory-necromancer-cloak",
-    "familyName": "Necromancer (Cape, Cloak)",
-    "slug": "accessory-necromancer-cloak",
-    "aliasSlugs": [
-      "accessory-necromancer-cape"
+    "id": "accessory-necromancer-cape",
+    "name": "Necromancer Cape",
+    "slug": "accessory-necromancer-cape",
+    "type": "accessory",
+    "subtype": "cape-wing",
+    "description": "This dusky cape is the official wear for Necromancers everywhere.",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=14090567",
+    "releaseDate": "",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/Necromancer%20Cape%20pic.bmp",
+    "elements": [
+      "DAR"
     ],
+    "level": "10",
+    "stats": "CHA -2, INT +2, DEX +2, STR +3, Bonus +4",
+    "resists": "Light +3, Darkness +3",
+    "rarity": "9",
+    "itemType": "Cape",
+    "equipSpot": "Back",
+    "category": "Armor",
+    "obtainMethods": [
+      {
+        "location": "Helms and Capes",
+        "priceType": "dc",
+        "price": "120 Dragon Coins",
+        "sellback": "108 DC (<24 hours) / 30 DC (>24 hours)",
+        "daRequired": false,
+        "dcRequired": true
+      }
+    ],
+    "tags": [
+      "dar",
+      "dc"
+    ],
+    "daRequired": false,
+    "dcRequired": true,
+    "alsoSee": [
+      {
+        "name": "Necromancer Cloak",
+        "slug": "accessory-necromancer-cloak",
+        "type": "accessory",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21747287"
+      }
+    ]
+  },
+  {
+    "id": "accessory-necromancer-cloak",
+    "familyName": "Necromancer Cloak",
+    "slug": "accessory-necromancer-cloak",
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21747287",
-    "familyOrigin": "cross-post",
+    "familyOrigin": "same-thread-multi-post",
     "familySources": [
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=14090567",
-        "title": "DF Encyclopedia: Necromancer Cape",
-        "variantLabel": "Necromancer Cape",
+        "url": "https://forums2.battleon.com/f/fb.asp?m=21747287",
+        "title": "DF Encyclopedia: Necromancer Cloak",
+        "variantLabel": "Necromancer Cloak",
         "isPrimary": true
       },
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21747287",
+        "url": "https://forums2.battleon.com/f/fb.asp?m=21747290",
+        "title": "DF Encyclopedia: Necromancer Cloak",
+        "variantLabel": "Necromancer Cloak",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=21747292",
+        "title": "DF Encyclopedia: Necromancer Cloak",
+        "variantLabel": "Necromancer Cloak",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=21747293",
+        "title": "DF Encyclopedia: Necromancer Cloak",
+        "variantLabel": "Necromancer Cloak",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=21747298",
+        "title": "DF Encyclopedia: Necromancer Cloak",
+        "variantLabel": "Necromancer Cloak",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=21747299",
+        "title": "DF Encyclopedia: Necromancer Cloak",
+        "variantLabel": "Necromancer Cloak",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=21747300",
+        "title": "DF Encyclopedia: Necromancer Cloak",
+        "variantLabel": "Necromancer Cloak",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=21747301",
+        "title": "DF Encyclopedia: Necromancer Cloak",
+        "variantLabel": "Necromancer Cloak",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=21747304",
+        "title": "DF Encyclopedia: Necromancer Cloak",
+        "variantLabel": "Necromancer Cloak",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=21747305",
+        "title": "DF Encyclopedia: Necromancer Cloak",
+        "variantLabel": "Necromancer Cloak",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=21747307",
+        "title": "DF Encyclopedia: Necromancer Cloak",
+        "variantLabel": "Necromancer Cloak",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=21747308",
+        "title": "DF Encyclopedia: Necromancer Cloak",
+        "variantLabel": "Necromancer Cloak",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=21747309",
+        "title": "DF Encyclopedia: Necromancer Cloak",
+        "variantLabel": "Necromancer Cloak",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=21747313",
         "title": "DF Encyclopedia: Necromancer Cloak",
         "variantLabel": "Necromancer Cloak",
         "isPrimary": false
       }
     ],
     "shared": {
-      "description": "This dusky cape is the official wear for Necromancers everywhere.",
-      "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/Necromancer%20Cape%20pic.bmp"
+      "description": "This cloak will keep you warm in any crypt or graveyard.",
+      "imageUrl": "https://i.imgur.com/1GBj8yH.jpg",
+      "alsoSee": [
+        {
+          "name": "Necromancer Cape",
+          "slug": "accessory-necromancer-cape",
+          "type": "accessory",
+          "url": "https://forums2.battleon.com/f/tm.asp?m=14090567"
+        }
+      ]
     },
     "levelVariants": [
       {
-        "levelNumber": 1,
-        "levelDisplay": "10",
-        "actualLevel": 10,
-        "variantName": "Cape",
-        "name": "Necromancer Cape",
-        "damage": "",
-        "stats": "CHA -2, INT +2, DEX +2, STR +3, Bonus +4",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=14090567",
-        "description": "This dusky cape is the official wear for Necromancers everywhere.",
-        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/Necromancer%20Cape%20pic.bmp",
-        "obtainVariants": [
-          {
-            "location": "Helms and Capes",
-            "price": "120 Dragon Coins",
-            "priceType": "dc",
-            "sellback": "108 DC (<24 hours) / 30 DC (>24 hours)",
-            "daRequired": false,
-            "dcRequired": true
-          }
-        ],
-        "element": "DAR",
-        "resists": "Light +3, Darkness +3",
-        "rarity": "9"
-      },
-      {
-        "levelNumber": 2,
+        "levelNumber": 21,
         "levelDisplay": "21",
         "actualLevel": 21,
         "name": "Necromancer Cloak",
@@ -5990,13 +6041,15 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21747287",
         "description": "This cloak will keep you warm in any crypt or graveyard.",
+        "imageUrl": "https://i.imgur.com/1GBj8yH.jpg",
         "alternativeImages": [],
         "element": "DAR",
         "resists": "Darkness +3, Light +3, Immobility +1",
-        "rarity": "7"
+        "rarity": "7",
+        "itemType": "Cape"
       },
       {
-        "levelNumber": 3,
+        "levelNumber": 21,
         "levelDisplay": "21",
         "actualLevel": 21,
         "name": "Necromancer Cloak",
@@ -6014,13 +6067,15 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21747290",
         "description": "This cloak will keep you warm in any crypt or graveyard.",
+        "imageUrl": "https://i.imgur.com/1GBj8yH.jpg",
         "alternativeImages": [],
         "element": "DAR",
         "resists": "Darkness +3, Light +3, Immobility +1",
-        "rarity": "7"
+        "rarity": "7",
+        "itemType": "Cape"
       },
       {
-        "levelNumber": 4,
+        "levelNumber": 30,
         "levelDisplay": "30",
         "actualLevel": 30,
         "name": "Necromancer Cloak",
@@ -6037,12 +6092,14 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21747292",
         "description": "This cloak will keep you warm in any crypt or graveyard. This item requires a Dragon Amulet.",
+        "imageUrl": "https://i.imgur.com/1GBj8yH.jpg",
         "element": "DAR",
         "resists": "Darkness +3, Light +3, Immobility +1",
-        "rarity": "5"
+        "rarity": "5",
+        "itemType": "Cape"
       },
       {
-        "levelNumber": 5,
+        "levelNumber": 40,
         "levelDisplay": "40",
         "actualLevel": 40,
         "name": "Necromancer Cloak",
@@ -6059,12 +6116,14 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21747293",
         "description": "This cloak will keep you warm in any crypt or graveyard. This item requires a Dragon Amulet.",
+        "imageUrl": "https://i.imgur.com/1GBj8yH.jpg",
         "element": "DAR",
         "resists": "Darkness +4, Light +4, Immobility +2",
-        "rarity": "25"
+        "rarity": "25",
+        "itemType": "Cape"
       },
       {
-        "levelNumber": 6,
+        "levelNumber": 41,
         "levelDisplay": "41",
         "actualLevel": 41,
         "name": "Necromancer Cloak",
@@ -6081,13 +6140,15 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21747298",
         "description": "This cloak will keep you warm in any crypt or graveyard.",
+        "imageUrl": "https://i.imgur.com/1GBj8yH.jpg",
         "alternativeImages": [],
         "element": "DAR",
         "resists": "Darkness +4, Light +4, Immobility +1",
-        "rarity": "25"
+        "rarity": "25",
+        "itemType": "Cape"
       },
       {
-        "levelNumber": 7,
+        "levelNumber": 41,
         "levelDisplay": "41",
         "actualLevel": 41,
         "name": "Necromancer Cloak",
@@ -6105,13 +6166,15 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21747299",
         "description": "This cloak will keep you warm in any crypt or graveyard.",
+        "imageUrl": "https://i.imgur.com/1GBj8yH.jpg",
         "alternativeImages": [],
         "element": "DAR",
         "resists": "Darkness +5, Light +5, Immobility +2",
-        "rarity": "25"
+        "rarity": "25",
+        "itemType": "Cape"
       },
       {
-        "levelNumber": 8,
+        "levelNumber": 50,
         "levelDisplay": "50",
         "actualLevel": 50,
         "name": "Necromancer Cloak",
@@ -6128,12 +6191,14 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21747300",
         "description": "This cloak will keep you warm in any crypt or graveyard. This item requires a Dragon Amulet.",
+        "imageUrl": "https://i.imgur.com/1GBj8yH.jpg",
         "element": "DAR",
         "resists": "Darkness +5, Light +5, Immobility +2",
-        "rarity": "1"
+        "rarity": "1",
+        "itemType": "Cape"
       },
       {
-        "levelNumber": 9,
+        "levelNumber": 60,
         "levelDisplay": "60",
         "actualLevel": 60,
         "name": "Necromancer Cloak",
@@ -6150,12 +6215,14 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21747301",
         "description": "This cloak will keep you warm in any crypt or graveyard. This item requires a Dragon Amulet.",
+        "imageUrl": "https://i.imgur.com/1GBj8yH.jpg",
         "element": "DAR",
         "resists": "Darkness +6, Light +6, Immobility +3",
-        "rarity": "9"
+        "rarity": "9",
+        "itemType": "Cape"
       },
       {
-        "levelNumber": 10,
+        "levelNumber": 61,
         "levelDisplay": "61",
         "actualLevel": 61,
         "name": "Necromancer Cloak",
@@ -6172,13 +6239,15 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21747304",
         "description": "This cloak will keep you warm in any crypt or graveyard.",
+        "imageUrl": "https://i.imgur.com/1GBj8yH.jpg",
         "alternativeImages": [],
         "element": "DAR",
         "resists": "Darkness +5, Light +5, Immobility +2",
-        "rarity": "9"
+        "rarity": "9",
+        "itemType": "Cape"
       },
       {
-        "levelNumber": 11,
+        "levelNumber": 61,
         "levelDisplay": "61",
         "actualLevel": 61,
         "name": "Necromancer Cloak",
@@ -6196,13 +6265,15 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21747305",
         "description": "This cloak will keep you warm in any crypt or graveyard.",
+        "imageUrl": "https://i.imgur.com/1GBj8yH.jpg",
         "alternativeImages": [],
         "element": "DAR",
         "resists": "Darkness +7, Light +7, Immobility +3",
-        "rarity": "9"
+        "rarity": "9",
+        "itemType": "Cape"
       },
       {
-        "levelNumber": 12,
+        "levelNumber": 70,
         "levelDisplay": "70",
         "actualLevel": 70,
         "name": "Necromancer Cloak",
@@ -6219,12 +6290,14 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21747307",
         "description": "This cloak will keep you warm in any crypt or graveyard. This item requires a Dragon Amulet.",
+        "imageUrl": "https://i.imgur.com/1GBj8yH.jpg",
         "element": "DAR",
         "resists": "Darkness +7, Light +7, Immobility +3",
-        "rarity": "10"
+        "rarity": "10",
+        "itemType": "Cape"
       },
       {
-        "levelNumber": 13,
+        "levelNumber": 71,
         "levelDisplay": "71",
         "actualLevel": 71,
         "name": "Necromancer Cloak",
@@ -6241,13 +6314,15 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21747308",
         "description": "This cloak will keep you warm in any crypt or graveyard.",
+        "imageUrl": "https://i.imgur.com/1GBj8yH.jpg",
         "alternativeImages": [],
         "element": "DAR",
         "resists": "Darkness +6, Light +6, Immobility +3",
-        "rarity": "10"
+        "rarity": "10",
+        "itemType": "Cape"
       },
       {
-        "levelNumber": 14,
+        "levelNumber": 71,
         "levelDisplay": "71",
         "actualLevel": 71,
         "name": "Necromancer Cloak",
@@ -6265,13 +6340,15 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21747309",
         "description": "This cloak will keep you warm in any crypt or graveyard.",
+        "imageUrl": "https://i.imgur.com/1GBj8yH.jpg",
         "alternativeImages": [],
         "element": "DAR",
         "resists": "Darkness +8, Light +8, Immobility +4",
-        "rarity": "10"
+        "rarity": "10",
+        "itemType": "Cape"
       },
       {
-        "levelNumber": 15,
+        "levelNumber": 80,
         "levelDisplay": "80",
         "actualLevel": 80,
         "name": "Necromancer Cloak",
@@ -6288,9 +6365,11 @@
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21747313",
         "description": "This cloak will keep you warm in any crypt or graveyard. This item requires a Dragon Amulet.",
+        "imageUrl": "https://i.imgur.com/1GBj8yH.jpg",
         "element": "DAR",
         "resists": "Darkness +8, Light +8, Immobility +4",
-        "rarity": "10"
+        "rarity": "10",
+        "itemType": "Cape"
       }
     ],
     "itemType": "Cape",
@@ -6307,7 +6386,7 @@
     "hasDM": false,
     "hasFree": false,
     "hasMerge": false,
-    "levelRange": "10-80",
+    "levelRange": "21-80",
     "elements": [
       "DAR"
     ]
@@ -6316,14 +6395,6 @@
     "id": "accessory-neo-grove-tender-s-cloak",
     "familyName": "Neo Grove Tender's Cloak",
     "slug": "accessory-neo-grove-tender-s-cloak",
-    "aliasSlugs": [
-      "accessory-neo-grove-tender-s-cloak",
-      "accessory-neo-grove-tender-s-cloak",
-      "accessory-neo-grove-tender-s-cloak",
-      "accessory-neo-grove-tender-s-cloak",
-      "accessory-neo-grove-tender-s-cloak",
-      "accessory-neo-grove-tender-s-cloak"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22395607",
@@ -6540,16 +6611,6 @@
     "id": "accessory-neutral-cloak",
     "familyName": "Neutral Cloak",
     "slug": "accessory-neutral-cloak",
-    "aliasSlugs": [
-      "accessory-neutral-cloak",
-      "accessory-neutral-cloak",
-      "accessory-neutral-cloak",
-      "accessory-neutral-cloak",
-      "accessory-neutral-cloak",
-      "accessory-neutral-cloak",
-      "accessory-neutral-cloak",
-      "accessory-neutral-cloak"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21521233",
@@ -7610,12 +7671,6 @@
     "id": "accessory-nightlocke-backstaff",
     "familyName": "Nightlocke Backstaff",
     "slug": "accessory-nightlocke-backstaff",
-    "aliasSlugs": [
-      "accessory-nightlocke-backstaff",
-      "accessory-nightlocke-backstaff",
-      "accessory-nightlocke-backstaff",
-      "accessory-nightlocke-backstaff"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22186028",
@@ -8466,14 +8521,6 @@
     "id": "accessory-obsidian-dragon-wings",
     "familyName": "Obsidian Dragon Wings",
     "slug": "accessory-obsidian-dragon-wings",
-    "aliasSlugs": [
-      "accessory-obsidian-dragon-wings",
-      "accessory-obsidian-dragon-wings",
-      "accessory-obsidian-dragon-wings",
-      "accessory-obsidian-dragon-wings",
-      "accessory-obsidian-dragon-wings",
-      "accessory-obsidian-dragon-wings"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21718014",
@@ -9075,14 +9122,6 @@
     "id": "accessory-on-wings-of-bacon",
     "familyName": "On Wings Of Bacon",
     "slug": "accessory-on-wings-of-bacon",
-    "aliasSlugs": [
-      "accessory-on-wings-of-bacon",
-      "accessory-on-wings-of-bacon",
-      "accessory-on-wings-of-bacon",
-      "accessory-on-wings-of-bacon",
-      "accessory-on-wings-of-bacon",
-      "accessory-on-wings-of-bacon"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21248183",
@@ -9591,12 +9630,6 @@
     "id": "accessory-orange-minx-wings",
     "familyName": "Orange Minx Wings",
     "slug": "accessory-orange-minx-wings",
-    "aliasSlugs": [
-      "accessory-orange-minx-wings",
-      "accessory-orange-minx-wings",
-      "accessory-orange-minx-wings",
-      "accessory-orange-minx-wings"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18802011",
@@ -9937,10 +9970,6 @@
     "id": "accessory-phantom-roc-wings",
     "familyName": "Phantom Roc Wings",
     "slug": "accessory-phantom-roc-wings",
-    "aliasSlugs": [
-      "accessory-phantom-roc-wings",
-      "accessory-phantom-roc-wings"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=9475628",
@@ -10862,12 +10891,6 @@
     "id": "accessory-pink-minx-wings",
     "familyName": "Pink Minx Wings",
     "slug": "accessory-pink-minx-wings",
-    "aliasSlugs": [
-      "accessory-pink-minx-wings",
-      "accessory-pink-minx-wings",
-      "accessory-pink-minx-wings",
-      "accessory-pink-minx-wings"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18802048",
@@ -11016,16 +11039,6 @@
     "id": "accessory-pirate-wyvern-on-yer-back",
     "familyName": "Pirate Wyvern on Yer Back",
     "slug": "accessory-pirate-wyvern-on-yer-back",
-    "aliasSlugs": [
-      "accessory-pirate-wyvern-on-yer-back",
-      "accessory-pirate-wyvern-on-yer-back",
-      "accessory-pirate-wyvern-on-yer-back",
-      "accessory-pirate-wyvern-on-yer-back",
-      "accessory-pirate-wyvern-on-yer-back",
-      "accessory-pirate-wyvern-on-yer-back",
-      "accessory-pirate-wyvern-on-yer-back",
-      "accessory-pirate-wyvern-on-yer-back"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21819238",
@@ -11813,10 +11826,6 @@
     "id": "accessory-protectorate-shell",
     "familyName": "Protectorate Shell",
     "slug": "accessory-protectorate-shell",
-    "aliasSlugs": [
-      "accessory-protectorate-shell",
-      "accessory-protectorate-shell"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=10237647",
@@ -11951,7 +11960,6 @@
     "familyName": "Purple Dragon Wings",
     "slug": "accessory-purple-dragon-wings",
     "aliasSlugs": [
-      "accessory-purple-dragon-wings",
       "accessory-purple-dragon-wings-ii",
       "accessory-purple-dragon-wings-iii"
     ],
@@ -12077,7 +12085,6 @@
     "familyName": "Purple DragonLord Wings",
     "slug": "accessory-purple-dragonlord-wings",
     "aliasSlugs": [
-      "accessory-purple-dragonlord-wings",
       "accessory-purple-dragonlord-wings-ii",
       "accessory-purple-dragonlord-wings-iii"
     ],
@@ -12202,12 +12209,6 @@
     "id": "accessory-purple-minx-wings",
     "familyName": "Purple Minx Wings",
     "slug": "accessory-purple-minx-wings",
-    "aliasSlugs": [
-      "accessory-purple-minx-wings",
-      "accessory-purple-minx-wings",
-      "accessory-purple-minx-wings",
-      "accessory-purple-minx-wings"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18802039",
@@ -12677,22 +12678,6 @@
     "id": "accessory-ranger-s-cloak",
     "familyName": "Ranger's Cloak",
     "slug": "accessory-ranger-s-cloak",
-    "aliasSlugs": [
-      "accessory-ranger-s-cloak",
-      "accessory-ranger-s-cloak",
-      "accessory-ranger-s-cloak",
-      "accessory-ranger-s-cloak",
-      "accessory-ranger-s-cloak",
-      "accessory-ranger-s-cloak",
-      "accessory-ranger-s-cloak",
-      "accessory-ranger-s-cloak",
-      "accessory-ranger-s-cloak",
-      "accessory-ranger-s-cloak",
-      "accessory-ranger-s-cloak",
-      "accessory-ranger-s-cloak",
-      "accessory-ranger-s-cloak",
-      "accessory-ranger-s-cloak"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22031367",
@@ -14478,7 +14463,6 @@
     "familyName": "Retroclear Soulcloak",
     "slug": "accessory-retroclear-soulcloak",
     "aliasSlugs": [
-      "accessory-retroclear-soulcloak",
       "accessory-retroclear-soulcloak-cc"
     ],
     "type": "accessory",
@@ -17496,7 +17480,6 @@
     "familyName": "Scarf of Pride",
     "slug": "accessory-scarf-of-pride",
     "aliasSlugs": [
-      "accessory-scarf-of-pride",
       "accessory-scarf-of-pride-l",
       "accessory-scarf-of-pride-b",
       "accessory-scarf-of-pride-nb",
@@ -18778,14 +18761,6 @@
     "id": "accessory-shadowscythe-bane",
     "familyName": "Shadowscythe Bane",
     "slug": "accessory-shadowscythe-bane",
-    "aliasSlugs": [
-      "accessory-shadowscythe-bane",
-      "accessory-shadowscythe-bane",
-      "accessory-shadowscythe-bane",
-      "accessory-shadowscythe-bane",
-      "accessory-shadowscythe-bane",
-      "accessory-shadowscythe-bane"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21248152",
@@ -19002,15 +18977,6 @@
     "id": "accessory-shamrockin-emerald-wings",
     "familyName": "Shamrockin' Emerald Wings",
     "slug": "accessory-shamrockin-emerald-wings",
-    "aliasSlugs": [
-      "accessory-shamrockin-emerald-wings",
-      "accessory-shamrockin-emerald-wings",
-      "accessory-shamrockin-emerald-wings",
-      "accessory-shamrockin-emerald-wings",
-      "accessory-shamrockin-emerald-wings",
-      "accessory-shamrockin-emerald-wings",
-      "accessory-shamrockin-emerald-wings"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18776555",
@@ -19236,15 +19202,6 @@
     "id": "accessory-shamrockin-golden-wings",
     "familyName": "Shamrockin' Golden Wings",
     "slug": "accessory-shamrockin-golden-wings",
-    "aliasSlugs": [
-      "accessory-shamrockin-golden-wings",
-      "accessory-shamrockin-golden-wings",
-      "accessory-shamrockin-golden-wings",
-      "accessory-shamrockin-golden-wings",
-      "accessory-shamrockin-golden-wings",
-      "accessory-shamrockin-golden-wings",
-      "accessory-shamrockin-golden-wings"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18776557",
@@ -20985,14 +20942,6 @@
     "id": "accessory-sofist-cape",
     "familyName": "Sofist Cape",
     "slug": "accessory-sofist-cape",
-    "aliasSlugs": [
-      "accessory-sofist-cape",
-      "accessory-sofist-cape",
-      "accessory-sofist-cape",
-      "accessory-sofist-cape",
-      "accessory-sofist-cape",
-      "accessory-sofist-cape"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21705771",
@@ -21937,14 +21886,6 @@
     "id": "accessory-sovereign-wings",
     "familyName": "Sovereign Wings",
     "slug": "accessory-sovereign-wings",
-    "aliasSlugs": [
-      "accessory-sovereign-wings",
-      "accessory-sovereign-wings",
-      "accessory-sovereign-wings",
-      "accessory-sovereign-wings",
-      "accessory-sovereign-wings",
-      "accessory-sovereign-wings"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22007492",
@@ -22369,11 +22310,6 @@
     "id": "accessory-spider-web-cape",
     "familyName": "Spider Web Cape",
     "slug": "accessory-spider-web-cape",
-    "aliasSlugs": [
-      "accessory-spider-web-cape",
-      "accessory-spider-web-cape",
-      "accessory-spider-web-cape"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=11706797",
@@ -22534,16 +22470,6 @@
     "id": "accessory-stonefish",
     "familyName": "StoneFish",
     "slug": "accessory-stonefish",
-    "aliasSlugs": [
-      "accessory-stonefish",
-      "accessory-stonefish",
-      "accessory-stonefish",
-      "accessory-stonefish",
-      "accessory-stonefish",
-      "accessory-stonefish",
-      "accessory-stonefish",
-      "accessory-stonefish"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21411320",
@@ -23475,14 +23401,6 @@
     "id": "accessory-sun-god-cape",
     "familyName": "Sun God Cape",
     "slug": "accessory-sun-god-cape",
-    "aliasSlugs": [
-      "accessory-sun-god-cape",
-      "accessory-sun-god-cape",
-      "accessory-sun-god-cape",
-      "accessory-sun-god-cape",
-      "accessory-sun-god-cape",
-      "accessory-sun-god-cape"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21404876",
@@ -24001,7 +23919,6 @@
     "familyName": "Surewould Camo Cloak",
     "slug": "accessory-surewould-camo-cloak",
     "aliasSlugs": [
-      "accessory-surewould-camo-cloak",
       "accessory-surewould-camo-cloak-i",
       "accessory-surewould-camo-cloak-ii",
       "accessory-surewould-camo-cloak-iii",
@@ -26130,8 +26047,7 @@
     "familyName": "Timeblades of Shadow",
     "slug": "accessory-timeblades-of-shadow",
     "aliasSlugs": [
-      "accessory-timeblades-of-shadow-c",
-      "accessory-timeblades-of-shadow"
+      "accessory-timeblades-of-shadow-c"
     ],
     "type": "accessory",
     "subtype": "cape-wing",
@@ -26231,8 +26147,7 @@
     "familyName": "Timeblades of the Avatar",
     "slug": "accessory-timeblades-of-the-avatar",
     "aliasSlugs": [
-      "accessory-timeblades-of-the-avatar-c",
-      "accessory-timeblades-of-the-avatar"
+      "accessory-timeblades-of-the-avatar-c"
     ],
     "type": "accessory",
     "subtype": "cape-wing",
@@ -26440,16 +26355,6 @@
     "id": "accessory-timeshift-cape",
     "familyName": "TimeShift Cape",
     "slug": "accessory-timeshift-cape",
-    "aliasSlugs": [
-      "accessory-timeshift-cape",
-      "accessory-timeshift-cape",
-      "accessory-timeshift-cape",
-      "accessory-timeshift-cape",
-      "accessory-timeshift-cape",
-      "accessory-timeshift-cape",
-      "accessory-timeshift-cape",
-      "accessory-timeshift-cape"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21393008",
@@ -27430,16 +27335,6 @@
     "id": "accessory-tragic-cloak",
     "familyName": "Tragic Cloak",
     "slug": "accessory-tragic-cloak",
-    "aliasSlugs": [
-      "accessory-tragic-cloak",
-      "accessory-tragic-cloak",
-      "accessory-tragic-cloak",
-      "accessory-tragic-cloak",
-      "accessory-tragic-cloak",
-      "accessory-tragic-cloak",
-      "accessory-tragic-cloak",
-      "accessory-tragic-cloak"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21564731",
@@ -28478,17 +28373,6 @@
     "id": "accessory-twig-on-your-back",
     "familyName": "Twig On Your Back",
     "slug": "accessory-twig-on-your-back",
-    "aliasSlugs": [
-      "accessory-twig-on-your-back",
-      "accessory-twig-on-your-back",
-      "accessory-twig-on-your-back",
-      "accessory-twig-on-your-back",
-      "accessory-twig-on-your-back",
-      "accessory-twig-on-your-back",
-      "accessory-twig-on-your-back",
-      "accessory-twig-on-your-back",
-      "accessory-twig-on-your-back"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22085705",
@@ -28776,15 +28660,6 @@
     "id": "accessory-twig-s-ascended-wings",
     "familyName": "Twig's Ascended Wings",
     "slug": "accessory-twig-s-ascended-wings",
-    "aliasSlugs": [
-      "accessory-twig-s-ascended-wings",
-      "accessory-twig-s-ascended-wings",
-      "accessory-twig-s-ascended-wings",
-      "accessory-twig-s-ascended-wings",
-      "accessory-twig-s-ascended-wings",
-      "accessory-twig-s-ascended-wings",
-      "accessory-twig-s-ascended-wings"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22069385",
@@ -31174,14 +31049,6 @@
     "id": "accessory-vampire-wings",
     "familyName": "Vampire Wings",
     "slug": "accessory-vampire-wings",
-    "aliasSlugs": [
-      "accessory-vampire-wings",
-      "accessory-vampire-wings",
-      "accessory-vampire-wings",
-      "accessory-vampire-wings",
-      "accessory-vampire-wings",
-      "accessory-vampire-wings"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21916924",
@@ -31423,16 +31290,6 @@
     "id": "accessory-vineblade-carapace",
     "familyName": "Vineblade Carapace",
     "slug": "accessory-vineblade-carapace",
-    "aliasSlugs": [
-      "accessory-vineblade-carapace",
-      "accessory-vineblade-carapace",
-      "accessory-vineblade-carapace",
-      "accessory-vineblade-carapace",
-      "accessory-vineblade-carapace",
-      "accessory-vineblade-carapace",
-      "accessory-vineblade-carapace",
-      "accessory-vineblade-carapace"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22182144",
@@ -31494,7 +31351,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 10,
+        "levelNumber": 1,
         "levelDisplay": "10",
         "actualLevel": 10,
         "name": "Vineblade Carapace",
@@ -31515,7 +31372,7 @@
         "rarity": "10"
       },
       {
-        "levelNumber": 10,
+        "levelNumber": 2,
         "levelDisplay": "10",
         "actualLevel": 10,
         "name": "Vineblade Carapace",
@@ -31537,7 +31394,7 @@
         "rarity": "10"
       },
       {
-        "levelNumber": 20,
+        "levelNumber": 3,
         "levelDisplay": "20",
         "actualLevel": 20,
         "name": "Vineblade Carapace",
@@ -31558,7 +31415,7 @@
         "rarity": "10"
       },
       {
-        "levelNumber": 20,
+        "levelNumber": 4,
         "levelDisplay": "20",
         "actualLevel": 20,
         "name": "Vineblade Carapace",
@@ -31580,7 +31437,7 @@
         "rarity": "10"
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 5,
         "levelDisplay": "30",
         "actualLevel": 30,
         "name": "Vineblade Carapace",
@@ -31601,7 +31458,7 @@
         "rarity": "10"
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 6,
         "levelDisplay": "30",
         "actualLevel": 30,
         "name": "Vineblade Carapace",
@@ -31623,7 +31480,7 @@
         "rarity": "10"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 7,
         "levelDisplay": "40",
         "actualLevel": 40,
         "name": "Vineblade Carapace",
@@ -31644,7 +31501,7 @@
         "rarity": "10"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 8,
         "levelDisplay": "40",
         "actualLevel": 40,
         "name": "Vineblade Carapace",
@@ -31666,7 +31523,7 @@
         "rarity": "10"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 9,
         "levelDisplay": "50",
         "actualLevel": 50,
         "name": "Vineblade Carapace",
@@ -31687,7 +31544,7 @@
         "rarity": "10"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 10,
         "levelDisplay": "50",
         "actualLevel": 50,
         "name": "Vineblade Carapace",
@@ -31709,7 +31566,7 @@
         "rarity": "10"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 11,
         "levelDisplay": "70",
         "actualLevel": 70,
         "name": "Vineblade Carapace",
@@ -31731,7 +31588,29 @@
         "rarity": "10"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 12,
+        "levelDisplay": "70",
+        "actualLevel": 70,
+        "name": "Vineblade Carapace",
+        "damage": "",
+        "stats": "Block +5, Dodge +5, Parry +5, WIS -4, END -4, CHA -4, INT +7, DEX +7, STR +7, Bonus +7, Light +6, Water +6",
+        "obtainVariants": [
+          {
+            "location": "Apsaydaaun",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "18 Gold",
+            "daRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22183301",
+        "description": "The magic of Apsaydaaun has mutated this pumpkin plant into a mass of twisted vine and compressed pumpkin. It's lighter than it looks, and... wait, did it just move? This item requires a Dragon Amulet.",
+        "alternativeImages": [],
+        "element": "LIG",
+        "rarity": "10"
+      },
+      {
+        "levelNumber": 13,
         "levelDisplay": "70",
         "actualLevel": 70,
         "name": "Vineblade Carapace",
@@ -31754,29 +31633,7 @@
         "rarity": "10"
       },
       {
-        "levelNumber": 70,
-        "levelDisplay": "70",
-        "actualLevel": 70,
-        "name": "Vineblade Carapace",
-        "damage": "",
-        "stats": "Block +5, Dodge +5, Parry +5, WIS -4, END -4, CHA -4, INT +7, DEX +7, STR +7, Bonus +7, Light +6, Water +6",
-        "obtainVariants": [
-          {
-            "location": "Apsaydaaun",
-            "price": "N/A",
-            "priceType": "free",
-            "sellback": "18 Gold",
-            "daRequired": true
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22183301",
-        "description": "The magic of Apsaydaaun has mutated this pumpkin plant into a mass of twisted vine and compressed pumpkin. It's lighter than it looks, and... wait, did it just move? This item requires a Dragon Amulet.",
-        "alternativeImages": [],
-        "element": "LIG",
-        "rarity": "10"
-      },
-      {
-        "levelNumber": 70,
+        "levelNumber": 14,
         "levelDisplay": "70",
         "actualLevel": 70,
         "name": "Vineblade Carapace",
@@ -31799,7 +31656,7 @@
         "rarity": "10"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 15,
         "levelDisplay": "80",
         "actualLevel": 80,
         "name": "Vineblade Carapace",
@@ -31820,7 +31677,7 @@
         "rarity": "10"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 16,
         "levelDisplay": "80",
         "actualLevel": 80,
         "name": "Vineblade Carapace",
@@ -32361,16 +32218,6 @@
     "id": "accessory-void-rift-wings",
     "familyName": "Void Rift Wings",
     "slug": "accessory-void-rift-wings",
-    "aliasSlugs": [
-      "accessory-void-rift-wings",
-      "accessory-void-rift-wings",
-      "accessory-void-rift-wings",
-      "accessory-void-rift-wings",
-      "accessory-void-rift-wings",
-      "accessory-void-rift-wings",
-      "accessory-void-rift-wings",
-      "accessory-void-rift-wings"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21648459",
@@ -33792,10 +33639,6 @@
     "id": "accessory-wicked-nightraptor-wings",
     "familyName": "Wicked Nightraptor Wings",
     "slug": "accessory-wicked-nightraptor-wings",
-    "aliasSlugs": [
-      "accessory-wicked-nightraptor-wings",
-      "accessory-wicked-nightraptor-wings"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=9475367",
@@ -34336,7 +34179,6 @@
     "familyName": "Wings of Eternal Light",
     "slug": "accessory-wings-of-eternal-light",
     "aliasSlugs": [
-      "accessory-wings-of-eternal-light",
       "accessory-wings-of-eternal-light-reforged"
     ],
     "type": "accessory",
@@ -35414,15 +35256,6 @@
     "id": "accessory-wings-of-the-unchained",
     "familyName": "Wings of the Unchained",
     "slug": "accessory-wings-of-the-unchained",
-    "aliasSlugs": [
-      "accessory-wings-of-the-unchained",
-      "accessory-wings-of-the-unchained",
-      "accessory-wings-of-the-unchained",
-      "accessory-wings-of-the-unchained",
-      "accessory-wings-of-the-unchained",
-      "accessory-wings-of-the-unchained",
-      "accessory-wings-of-the-unchained"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21960291",
@@ -39327,18 +39160,6 @@
     "id": "accessory-world-destroyer-wings",
     "familyName": "World Destroyer Wings",
     "slug": "accessory-world-destroyer-wings",
-    "aliasSlugs": [
-      "accessory-world-destroyer-wings",
-      "accessory-world-destroyer-wings",
-      "accessory-world-destroyer-wings",
-      "accessory-world-destroyer-wings",
-      "accessory-world-destroyer-wings",
-      "accessory-world-destroyer-wings",
-      "accessory-world-destroyer-wings",
-      "accessory-world-destroyer-wings",
-      "accessory-world-destroyer-wings",
-      "accessory-world-destroyer-wings"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22070406",
@@ -39726,12 +39547,6 @@
     "id": "accessory-wrap-of-shadows",
     "familyName": "Wrap of Shadows",
     "slug": "accessory-wrap-of-shadows",
-    "aliasSlugs": [
-      "accessory-wrap-of-shadows",
-      "accessory-wrap-of-shadows",
-      "accessory-wrap-of-shadows",
-      "accessory-wrap-of-shadows"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21926777",
@@ -39783,7 +39598,8 @@
           "type": "accessory",
           "url": "https://forums2.battleon.com/f/tm.asp?m=21920514"
         }
-      ]
+      ],
+      "notes": "Cape appears invisible when equipped."
     },
     "levelVariants": [
       {
@@ -40341,12 +40157,6 @@
     "id": "accessory-yellow-minx-wings",
     "familyName": "Yellow Minx Wings",
     "slug": "accessory-yellow-minx-wings",
-    "aliasSlugs": [
-      "accessory-yellow-minx-wings",
-      "accessory-yellow-minx-wings",
-      "accessory-yellow-minx-wings",
-      "accessory-yellow-minx-wings"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18801992",
@@ -40495,12 +40305,6 @@
     "id": "accessory-zeclem-s-cloak",
     "familyName": "Zeclem's Cloak",
     "slug": "accessory-zeclem-s-cloak",
-    "aliasSlugs": [
-      "accessory-zeclem-s-cloak",
-      "accessory-zeclem-s-cloak",
-      "accessory-zeclem-s-cloak",
-      "accessory-zeclem-s-cloak"
-    ],
     "type": "accessory",
     "subtype": "cape-wing",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21854299",

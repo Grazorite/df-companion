@@ -103,6 +103,14 @@ function loadEntries(files) {
   return loaded
 }
 
+function scopeForEntry(label, entry) {
+  return label === 'weapons' ? (entry.subtype ?? 'unknown') : 'global'
+}
+
+function scopedKey(scope, slug) {
+  return `${scope}:${slug}`
+}
+
 function verifyCategory({ label, files }) {
   const errors = []
   const warnings = []
@@ -119,7 +127,8 @@ function verifyCategory({ label, files }) {
   if (loaded.length === 0) return { label, count: 0, errors, warnings }
 
   const canonicalSlugs = new Set()
-  const aliasToFamily = new Map() // aliasSlug -> family slug that owns it
+  const allCanonicalSlugs = new Set()
+  const aliasToFamily = new Map() // scoped aliasSlug -> family slug that owns it
 
   // Pass 1: canonical slugs.
   for (const { file, entry } of loaded) {
@@ -128,10 +137,13 @@ function verifyCategory({ label, files }) {
       errors.push(`${prefix}: entry is missing a slug`)
       continue
     }
-    if (canonicalSlugs.has(entry.slug)) {
+    const scope = scopeForEntry(label, entry)
+    const key = scopedKey(scope, entry.slug)
+    if (canonicalSlugs.has(key)) {
       errors.push(`${prefix}: duplicate canonical slug "${entry.slug}"`)
     }
-    canonicalSlugs.add(entry.slug)
+    canonicalSlugs.add(key)
+    allCanonicalSlugs.add(entry.slug)
   }
 
   // Pass 2: alias ownership.
@@ -139,24 +151,27 @@ function verifyCategory({ label, files }) {
     if (!isFamily(entry)) continue
     const prefix = `${label} · ${file} · "${displayName(entry)}"`
     const aliasSlugs = Array.isArray(entry.aliasSlugs) ? entry.aliasSlugs : []
+    const scope = scopeForEntry(label, entry)
 
     for (const alias of aliasSlugs) {
       // A family listing its own slug as an alias is intentional (self-canonicalizing).
       if (alias === entry.slug) continue
-      const owner = aliasToFamily.get(alias)
+      const key = scopedKey(scope, alias)
+      const owner = aliasToFamily.get(key)
       if (owner && owner !== entry.slug) {
         warnings.push(
           `${prefix}: aliasSlug "${alias}" is also claimed by family "${owner}" (ambiguous canonicalization — likely same base name across releases)`
         )
         continue
       }
-      aliasToFamily.set(alias, entry.slug)
+      aliasToFamily.set(key, entry.slug)
     }
   }
 
   // An alias slug must never surface as a standalone entry's canonical slug.
-  for (const [alias, owner] of aliasToFamily) {
-    if (canonicalSlugs.has(alias)) {
+  for (const [key, owner] of aliasToFamily) {
+    if (canonicalSlugs.has(key)) {
+      const alias = key.split(':').slice(1).join(':')
       warnings.push(
         `${label}: aliasSlug "${alias}" (owned by family "${owner}") is also emitted as a standalone entry — promotion did not absorb the duplicate`
       )
@@ -166,6 +181,7 @@ function verifyCategory({ label, files }) {
   // Pass 3: Also See + evolution canonicalization.
   for (const { file, entry } of loaded) {
     const prefix = `${label} · ${file} · "${displayName(entry)}"`
+    const scope = scopeForEntry(label, entry)
     const selfSlugs = new Set([
       entry.slug,
       ...(Array.isArray(entry.aliasSlugs) ? entry.aliasSlugs : []),
@@ -181,13 +197,14 @@ function verifyCategory({ label, files }) {
         errors.push(`${prefix}: alsoSee ref "${refName}" links back to itself`)
         continue
       }
-      if (aliasToFamily.has(ref.slug)) {
+      const aliasKey = scopedKey(scope, ref.slug)
+      if (aliasToFamily.has(aliasKey)) {
         errors.push(
-          `${prefix}: alsoSee ref "${refName}" points to alias slug "${ref.slug}" — it should point to canonical family slug "${aliasToFamily.get(ref.slug)}"`
+          `${prefix}: alsoSee ref "${refName}" points to alias slug "${ref.slug}" — it should point to canonical family slug "${aliasToFamily.get(aliasKey)}"`
         )
         continue
       }
-      if (!canonicalSlugs.has(ref.slug) && typeof ref.url !== 'string') {
+      if (!allCanonicalSlugs.has(ref.slug) && typeof ref.url !== 'string') {
         errors.push(
           `${prefix}: alsoSee ref "${refName}" ("${ref.slug}") has no local target and no url`
         )
@@ -198,9 +215,10 @@ function verifyCategory({ label, files }) {
       for (const evolution of entry.evolutions) {
         const slug = evolution?.resultSlug
         if (typeof slug !== 'string' || slug.length === 0) continue
-        if (aliasToFamily.has(slug)) {
+        const aliasKey = scopedKey(scope, slug)
+        if (aliasToFamily.has(aliasKey)) {
           errors.push(
-            `${prefix}: evolution "${evolution.resultName ?? slug}" points to alias slug "${slug}" — it should point to canonical family slug "${aliasToFamily.get(slug)}"`
+            `${prefix}: evolution "${evolution.resultName ?? slug}" points to alias slug "${slug}" — it should point to canonical family slug "${aliasToFamily.get(aliasKey)}"`
           )
         }
       }

@@ -38,7 +38,7 @@ try {
 }
 
 const errors = []
-const slugSet = new Set()
+const slugSetsBySubtype = Object.fromEntries(subtypeFiles.map(([subtype]) => [subtype, new Set()]))
 const entriesBySubtype = Object.fromEntries(subtypeFiles.map(([subtype]) => [subtype, 0]))
 let totalEntries = 0
 
@@ -74,10 +74,10 @@ for (const [expectedSubtype, filenames] of subtypeFiles) {
       }
       if (typeof entry.slug !== 'string' || entry.slug.trim().length === 0) {
         errors.push(`${prefix}: missing slug`)
-      } else if (slugSet.has(entry.slug)) {
-        errors.push(`${prefix}: duplicate slug "${entry.slug}"`)
+      } else if (slugSetsBySubtype[expectedSubtype].has(entry.slug)) {
+        errors.push(`${prefix}: duplicate slug "${entry.slug}" within ${expectedSubtype}`)
       } else {
-        slugSet.add(entry.slug)
+        slugSetsBySubtype[expectedSubtype].add(entry.slug)
       }
       if (typeof entry.forumUrl !== 'string' || !entry.forumUrl.startsWith('http')) {
         errors.push(`${prefix}: invalid forumUrl`)

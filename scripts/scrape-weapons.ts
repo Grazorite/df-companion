@@ -2,7 +2,13 @@ import * as fs from 'node:fs'
 import * as path from 'node:path'
 import elementsData from '../src/data/elements.json' with { type: 'json' }
 import { parseArmorCustomization } from '../src/utils/armorCustomization.ts'
-import type { AlsoSeeRef, FamilySourceRef, LevelVariant, ObtainVariant } from '../src/types/item.ts'
+import type {
+  AlsoSeeRef,
+  AlternativeImage,
+  FamilySourceRef,
+  LevelVariant,
+  ObtainVariant,
+} from '../src/types/item.ts'
 import {
   computeFamilyFlags,
   computePriceType,
@@ -13,7 +19,11 @@ import {
   stripVersionSuffix,
 } from '../src/utils/variantHelpers.ts'
 import { compareTitles, displayTitle, titleSortKey } from '../src/utils/displayText.ts'
-import { inferImageCaptionFromUrl, normalizeImageCaption } from '../src/utils/imageLabels.ts'
+import {
+  expandSlashCaptionFromText,
+  inferImageCaptionFromUrl,
+  normalizeImageCaption,
+} from '../src/utils/imageLabels.ts'
 import {
   type Weapon,
   type WeaponEntry,
@@ -51,9 +61,11 @@ import {
   applyNameFilter,
   getArg,
   getConcurrencyArg,
+  getFreshArg,
   getLimitArg,
   getNameFilterArgs,
   matchesNameFilter,
+  stripTrailingParenthetical,
 } from './lib/scraper-cli.ts'
 import {
   decodeHtml,
@@ -67,6 +79,8 @@ import { processWithConcurrency } from './lib/work-queue.ts'
 const WEAPONS_INDEX_URL = `${FORUM_BASE}/printable.asp?m=22094733`
 const OUTPUT_DIR = path.resolve(import.meta.dirname, '../src/data')
 const DELAY_MS = 900
+const INFERRED_ON_HIT_SPECIAL_IMAGE_URL =
+  'https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-OnHit.png'
 
 interface WeaponStub {
   name: string
@@ -128,7 +142,8 @@ function loadCookie(): string {
 }
 
 function weaponSlugForName(name: string): string {
-  return `weapon-${slugify(name)}`
+  const slug = slugify(name)
+  return `weapon-${slug || 'default'}`
 }
 
 function getInitialForName(name: string): string {
@@ -220,6 +235,14 @@ function getWeaponTitleFromHtml(html: string): string | undefined {
 
 function normalizeWeaponTitleKey(name: string): string {
   return normalizeStructuredText(name).replace(/\s+/g, ' ').trim().toLowerCase()
+}
+
+function isCorDemiCodexName(name: string): boolean {
+  return /\bCorDemi\s*Codex\b/i.test(name)
+}
+
+function shouldSkipWeaponStubForSubtype(stub: WeaponStub): boolean {
+  return stub.subtype !== 'sword-axe-mace' && isCorDemiCodexName(stub.name)
 }
 
 function getWeaponThreadGroupKey(stub: WeaponStub): string {
@@ -530,8 +553,9 @@ function parseNotes(html: string): string | undefined {
       continue
     }
     const cleanedText = trimmed.replace(/^[•*-]\s*/, '')
-    if (/^\s+/.test(line) && noteLines.length > 0) {
-      noteLines.push(`  • ${cleanedText}`)
+    const indentLength = line.match(/^\s*/)?.[0].length ?? 0
+    if (indentLength > 0 && noteLines.length > 0) {
+      noteLines.push(`${' '.repeat(indentLength)}• ${cleanedText}`)
     } else {
       noteLines.push(cleanedText)
     }
@@ -540,8 +564,32 @@ function parseNotes(html: string): string | undefined {
   return noteLines.length > 0 ? noteLines.join('\n') : undefined
 }
 
+function repairWeaponNoteNesting(notes: string | undefined): string | undefined {
+  if (!notes) return undefined
+  if (
+    !/Special'?s DoT became mutually exclusive|Weapons'? special became mutually exclusive/i.test(
+      notes
+    )
+  ) {
+    return notes
+  }
+
+  return notes
+    .split('\n')
+    .map((line) =>
+      /^\s{2}•\s+(?:'(?:DOOM|Destiny|Destroyer's Spirit|Spirit of (?:Ice|Light))|All 'Spirit' effects)/i.test(
+        line
+      )
+        ? `  ${line}`
+        : line
+    )
+    .join('\n')
+}
+
 function combineNoteBlocks(...notes: Array<string | undefined>): string | undefined {
-  const blocks = notes.map((note) => note?.trim()).filter((note): note is string => Boolean(note))
+  const blocks = notes
+    .map((note) => repairWeaponNoteNesting(note)?.trim())
+    .filter((note): note is string => Boolean(note))
   if (blocks.length === 0) return undefined
 
   const seen = new Set<string>()
@@ -798,6 +846,31 @@ function parseWeaponSpecials(html: string): WeaponSpecial[] {
     .filter((special): special is WeaponSpecial => Boolean(special))
 }
 
+function inferOnHitWeaponSpecialFromNotes(notes?: string): WeaponSpecial | undefined {
+  if (!notes) return undefined
+  if (!/Special'?s DoT/i.test(notes)) return undefined
+  if (!/Activation rate/i.test(notes) && !/\b\d+%\s+chance\b/i.test(notes)) return undefined
+
+  const rate =
+    notes.match(/Activation rate was increased from \d+% to (\d+%)/i)?.[1] ??
+    notes.match(/Activation rate[^.\n]*?(\d+%)/i)?.[1] ??
+    notes.match(/\b(\d+%)\s+chance\b/i)?.[1]
+  const damage =
+    notes.match(/Special'?s DoT damage was increased from \d+% to (\d+%)/i)?.[1] ??
+    notes.match(/Special'?s DoT damage[^.\n]*?(\d+%)/i)?.[1]
+  const effectParts = [
+    damage ? `Applies a ${damage} on-hit DoT effect.` : 'Applies an on-hit DoT effect.',
+    rate ? `Activation rate: ${rate}.` : undefined,
+  ].filter(Boolean)
+
+  return {
+    activation: 'on-hit',
+    trigger: 'Weapon special activates on hit.',
+    effect: effectParts.join(' '),
+    imageUrl: INFERRED_ON_HIT_SPECIAL_IMAGE_URL,
+  }
+}
+
 function stripWeaponSpecialSections(html: string): string {
   return html.replace(
     /<font\s+size=['"]?3['"]?\s*>\s*<b>\s*Special\s*<\/b>\s*<\/font>[\s\S]*?(?=<font\s+size=['"]?3['"]?\s*>\s*<b>\s*Special\s*<\/b>\s*<\/font>|<hr>|$)/gi,
@@ -867,6 +940,7 @@ function extractWeaponImages(html: string) {
   const imageHtml = stripWeaponSpecialSections(html)
   const otherInfoHtml = findOtherInformationSection(imageHtml)
   const scanHtml = otherInfoHtml ? `${otherInfoHtml}\n${imageHtml}` : imageHtml
+  const imageCaptionText = normalizeStructuredText(scanHtml)
   const captionedImages = [
     ...scanHtml.matchAll(
       /<b>\s*([^<]+?)\s*<\/b>\s*(?:<br\s*\/?>|\s)*\s*<img[^>]+src=(["'])(.*?)\2[^>]*>/gi
@@ -916,10 +990,16 @@ function extractWeaponImages(html: string) {
         .map((candidate, index) => ({
           url: candidate.url,
           caption:
+            expandSlashCaptionFromText(
+              normalizeWeaponImageCaption(candidate.caption, candidate.url) ??
+                inferImageCaptionFromUrl(candidate.url),
+              imageCaptionText
+            ) ??
             normalizeWeaponImageCaption(candidate.caption, candidate.url) ??
             inferImageCaptionFromUrl(candidate.url) ??
             `Alternative ${index + 1}`,
         }))
+        .filter((candidate) => !/^weapon'?s artwork$/i.test(candidate.caption))
     : []
 
   return {
@@ -1013,7 +1093,11 @@ function buildWeaponEntry(
   const images = extractWeaponImages(html)
   const weaponSpecials = parseWeaponSpecials(html)
   const weaponSpecial = weaponSpecials[0]
-  const armorCustomization = parseArmorCustomization(html)
+  const armorCustomization =
+    parseArmorCustomization(notes) ??
+    parseArmorCustomization(description) ??
+    parseArmorCustomization(normalizedText) ??
+    parseArmorCustomization(html)
   const primaryPriceType = obtainMethods[0]?.priceType
   const isCosmetic = hasCosmeticMarker(description) || hasCosmeticMarker(normalizedText)
 
@@ -1107,7 +1191,11 @@ function buildWeaponFamily(
   const alsoSee = mergeAlsoSeeRefs(resolveAlsoSee(extractAlsoSeeRefs(html)), extraAlsoSee)
   const weaponSpecials = parseWeaponSpecials(html)
   const weaponSpecial = weaponSpecials[0]
-  const armorCustomization = parseArmorCustomization(html)
+  const armorCustomization =
+    parseArmorCustomization(notes) ??
+    parseArmorCustomization(parseDescription(html)) ??
+    parseArmorCustomization(normalizeStructuredText(html)) ??
+    parseArmorCustomization(html)
   const allText = normalizeStructuredText(html)
   const posts = splitPrintablePosts(html)
   const familySources: FamilySourceRef[] = []
@@ -1195,7 +1283,7 @@ function buildWeaponFamily(
       levelVariants.push(
         buildVariant(
           dcMethods,
-          familyForm ? `${familyForm} (DC)` : roman ? `${roman} (DC)` : '(Base) (DC)',
+          familyForm ? `${familyForm} (DC)` : roman ? `${roman} (DC)` : '(DC)',
           getVariantSpecificNotes(postNotes, dcMethods[0])
         )
       )
@@ -1390,19 +1478,45 @@ function titleCaseWeaponTokens(tokens: string[]): string {
 }
 
 function normalizeWeaponFamilyName(name: string): string {
+  const normalizeParticles = (value: string) => value.replace(/\bOf\b/g, 'of')
   if (name === 'Half Foam Hammer') return 'Half of a Foam Hammer'
   if (/\bKey,\s*The$/i.test(name)) return name.replace(/,\s*The$/i, '').trim()
-  return displayTitle(stripVersionSuffix(name))
+  if (/^(?:.+)\s+\((?:Aria In Wanderland|Card Shoppe|\d+)\)$/i.test(name)) {
+    return normalizeParticles(
+      displayTitle(stripVersionSuffix(name.replace(/\s+\([^)]+\)\s*$/, '').trim()))
+    )
+  }
+  const repeatedDefaultMatch = name.match(/^(.*?)\s+\((.*?)\s+Default\)$/i)
+  if (
+    repeatedDefaultMatch &&
+    normalizeWeaponLookupName(repeatedDefaultMatch[1] ?? '') ===
+      normalizeWeaponLookupName(repeatedDefaultMatch[2] ?? '')
+  ) {
+    return normalizeParticles(displayTitle(stripVersionSuffix(repeatedDefaultMatch[1] ?? '')))
+  }
+  return normalizeParticles(displayTitle(stripVersionSuffix(name)))
 }
 
 function normalizeWeaponVariantDisplayName(name: string, familyName: string): string {
+  const displayName = name
+    .replace(/\s+\([12]\)\s*$/i, '')
+    .trim()
+    .replace(/\bOf\b/g, 'of')
   if (normalizeWeaponLookupName(name) === normalizeWeaponLookupName(familyName)) return familyName
-  if (/\bKey,\s*The$/i.test(name)) return name.replace(/,\s*The$/i, '').trim()
-  return name
+  if (/\bKey,\s*The$/i.test(displayName)) return displayName.replace(/,\s*The$/i, '').trim()
+  return displayName
 }
 
 function normalizeWeaponSourceVariantLabel(name: string): string {
   return displayTitle(stripVersionSuffix(name))
+}
+
+function normalizeWeaponSourceLabelForFamily(label: string, familyName: string): string {
+  const normalizedLabel = normalizeWeaponSourceVariantLabel(label)
+  return normalizeWeaponComparableTitle(normalizedLabel) ===
+    normalizeWeaponComparableTitle(`The ${familyName}`)
+    ? familyName
+    : normalizedLabel
 }
 
 function getWeaponSharedTitleParts(
@@ -1444,6 +1558,9 @@ function deriveWeaponCrossPostVariantName(name: string, familyName: string): str
     return '(Base)'
   }
 
+  const parentheticalVariant = getWeaponParentheticalVariantName(name, familyName)
+  if (parentheticalVariant) return parentheticalVariant
+
   const nameTokens = tokenizeWeaponName(name)
   const familyTokens = tokenizeWeaponName(familyName)
   const prefix = getCommonWeaponPrefix([nameTokens, familyTokens])
@@ -1454,6 +1571,32 @@ function deriveWeaponCrossPostVariantName(name: string, familyName: string): str
   const middle = nameTokens.slice(prefix.length, nameTokens.length - suffix.length)
   if (middle.length > 0) return titleCaseWeaponTokens(middle)
   return name === familyName ? undefined : name
+}
+
+function getWeaponParentheticalVariantName(name: string, familyName: string): string | undefined {
+  const match = familyName.match(/^(.*?)\s*\(([^)]+)\)\s*$/)
+  if (!match) return undefined
+
+  const baseName = (match[1] ?? '').trim()
+  const variants = (match[2] ?? '')
+    .split(',')
+    .map((value) => value.trim())
+    .filter(Boolean)
+  if (!baseName || variants.length === 0) return undefined
+
+  const normalizedName = normalizeWeaponLookupName(name)
+  const normalizedBase = normalizeWeaponLookupName(baseName)
+
+  for (const variant of variants) {
+    const normalizedVariant = normalizeWeaponLookupName(variant)
+    const candidateNames = [
+      `${normalizedBase} ${normalizedVariant}`,
+      `${normalizedBase}${normalizedVariant}`,
+    ]
+    if (candidateNames.includes(normalizedName)) return displayTitle(variant)
+  }
+
+  return undefined
 }
 
 function sharesWeaponExplicitReference(a: WeaponEntry, b: WeaponEntry): boolean {
@@ -1546,20 +1689,38 @@ function allWeaponValuesSame<T>(values: T[]): boolean {
 }
 
 function dedupeWeaponLevelVariants(levels: LevelVariant[]): LevelVariant[] {
-  const seen = new Set<string>()
+  const seen = new Map<string, number>()
   const result: LevelVariant[] = []
 
   for (const level of levels) {
     const key = [
-      level.name,
-      level.variantName ?? '',
+      normalizeWeaponComparableTitle(level.name),
       level.actualLevel ?? '',
       level.levelDisplay,
       level.sourceUrl ?? '',
       JSON.stringify(level.obtainVariants),
     ].join('|')
-    if (seen.has(key)) continue
-    seen.add(key)
+
+    const existingIndex = seen.get(key)
+    if (existingIndex !== undefined) {
+      const existing = result[existingIndex]
+      const existingExplicitBranch =
+        existing.variantName && /^(?:\(Base\)|\(DC\)|.+\s\(DC\))$/i.test(existing.variantName)
+      const incomingExplicitBranch =
+        level.variantName && /^(?:\(Base\)|\(DC\)|.+\s\(DC\))$/i.test(level.variantName)
+      const incomingShouldReplace =
+        Boolean(incomingExplicitBranch) &&
+        (!existingExplicitBranch ||
+          (level.obtainVariants.some(obtainVariantHasDC) &&
+            !existing.obtainVariants.some(obtainVariantHasDC)))
+
+      if (incomingShouldReplace) {
+        result[existingIndex] = level
+      }
+      continue
+    }
+
+    seen.set(key, result.length)
     result.push(level)
   }
 
@@ -1583,9 +1744,9 @@ function dedupeWeaponFamilySources(sources: FamilySourceRef[]): FamilySourceRef[
 function buildWeaponFamilyAliasSlugs(
   familyName: string,
   levels: LevelVariant[],
-  existingAliases: string[] = []
+  existingAliases: string[] = [],
+  canonicalSlug: string = weaponSlugForName(familyName)
 ): string[] {
-  const canonicalSlug = weaponSlugForName(familyName)
   return Array.from(
     new Set([
       ...existingAliases,
@@ -1599,7 +1760,12 @@ function dedupeWeaponFamilyEntry(family: WeaponFamily): WeaponFamily {
   const levelVariants = dedupeWeaponLevelVariants(family.levelVariants)
   return computeFamilyFlags({
     ...family,
-    aliasSlugs: buildWeaponFamilyAliasSlugs(family.familyName, levelVariants, family.aliasSlugs),
+    aliasSlugs: buildWeaponFamilyAliasSlugs(
+      family.familyName,
+      levelVariants,
+      family.aliasSlugs,
+      family.slug
+    ),
     familySources: family.familySources ? dedupeWeaponFamilySources(family.familySources) : [],
     shared: {
       ...family.shared,
@@ -1664,10 +1830,12 @@ function mergeSameSlugWeaponFamilies(entries: WeaponEntry[]): WeaponEntry[] {
     return [
       computeFamilyFlags({
         ...family,
-        aliasSlugs: buildWeaponFamilyAliasSlugs(family.familyName, mergedLevels, [
-          ...(family.aliasSlugs ?? []),
-          ...standalones.map((entry) => entry.slug),
-        ]),
+        aliasSlugs: buildWeaponFamilyAliasSlugs(
+          family.familyName,
+          mergedLevels,
+          [...(family.aliasSlugs ?? []), ...standalones.map((entry) => entry.slug)],
+          family.slug
+        ),
         familySources,
         shared: {
           ...family.shared,
@@ -1724,10 +1892,12 @@ function mergeFoamHammerStandaloneMembers(entries: WeaponEntry[]): WeaponEntry[]
   )
   const mergedFamily = computeFamilyFlags({
     ...family,
-    aliasSlugs: buildWeaponFamilyAliasSlugs(family.familyName, mergedLevels, [
-      ...(family.aliasSlugs ?? []),
-      ...standalones.map((entry) => entry.slug),
-    ]),
+    aliasSlugs: buildWeaponFamilyAliasSlugs(
+      family.familyName,
+      mergedLevels,
+      [...(family.aliasSlugs ?? []), ...standalones.map((entry) => entry.slug)],
+      family.slug
+    ),
     familySources,
     shared: {
       ...family.shared,
@@ -1950,6 +2120,7 @@ function gatherWeaponExternalRefs(items: WeaponEntry[], internalSlugs: Set<strin
 }
 
 function getSpecialWeaponVariantName(name: string, familyName: string): string | undefined {
+  const cleanName = name.replace(/\s+\([12]\)\s*$/i, '').trim()
   if (familyName === 'Orchidea') {
     return name.replace(/\s+Orchidea$/i, '') || '(Base)'
   }
@@ -1970,6 +2141,36 @@ function getSpecialWeaponVariantName(name: string, familyName: string): string |
   if (familyName === "Rolith's Hammer") {
     if (/Dress Uniform Default/i.test(name)) return 'Dress Uniform Default'
     if (/Protection/i.test(name)) return 'Protection'
+  }
+  if (familyName === 'Under Current') {
+    if (/^Under Current$/i.test(cleanName)) return '(Base)'
+    if (/^Rip Tide$/i.test(cleanName)) return 'Rip Tide'
+    if (/^Swift Under Current$/i.test(cleanName)) return 'Swift'
+  }
+  if (familyName === 'Rip Tide') {
+    const match = cleanName.match(
+      /^(Intense|Sharp|Fierce|Killer|Roiling|Swift|Deadly|Fast|Strong)\s+Rip Tide$/i
+    )
+    if (match?.[1]) return titleCaseWeaponTokens([match[1]])
+  }
+  const cardStaffMatch = familyName.match(/^Staff of (Clubs|Diamonds|Hearts|Spades)$/i)
+  if (
+    cardStaffMatch &&
+    /\b(?:Ace of|Staff of|Great|Greater|High|Elite|Knave|Queen|King)\b/i.test(cleanName)
+  ) {
+    const suit = cardStaffMatch[1]
+    if (new RegExp(`^Ace of ${suit} Staff$`, 'i').test(cleanName)) return `Ace of ${suit} Staff`
+    if (new RegExp(`^Staff of ${suit}$`, 'i').test(cleanName)) return '(Base)'
+    const match = cleanName.match(/^(Great|Greater|High|Elite|Knave|Queen|King)\s+Staff\s+of\s+/i)
+    if (match?.[1]) return titleCaseWeaponTokens([match[1]])
+  }
+  if (familyName === 'Dirk of Spades') {
+    if (/^Ace of Spades Dirk$/i.test(cleanName)) return 'Ace of Spades Dirk'
+    if (/^Dirk of Spades$/i.test(cleanName)) return '(Base)'
+    const match = cleanName.match(
+      /^(Great|Greater|High|Elite|Knave|Queen|King|Ultimate)\s+Dirk\s+of\s+Spades$/i
+    )
+    if (match?.[1]) return titleCaseWeaponTokens([match[1]])
   }
   return undefined
 }
@@ -1993,7 +2194,17 @@ function getSpecialWeaponLevelVariantName(
   return getSpecialWeaponVariantName(level.name, familyName)
 }
 
-function getWeaponFamilySourceVariantLabel(level: LevelVariant, familyName: string): string {
+function getSourceDisplayTitle(sourceTitle: string | undefined): string | undefined {
+  if (!sourceTitle) return undefined
+  const title = stripVersionSuffix(sourceTitle.replace(/^DF Encyclopedia:\s*/i, '').trim())
+  return title || undefined
+}
+
+function getWeaponFamilySourceVariantLabel(
+  level: LevelVariant,
+  familyName: string,
+  sourceTitle?: string
+): string {
   if (familyName === 'Eternal Drumstick') {
     const baseVariant = level.variantName?.replace(/\s+\(DC\)$/i, '').trim()
     if (baseVariant === '(L)' || baseVariant === '(XL)') {
@@ -2003,7 +2214,7 @@ function getWeaponFamilySourceVariantLabel(level: LevelVariant, familyName: stri
   }
 
   return level.variantName === '(Base)'
-    ? `The ${familyName}`
+    ? (getSourceDisplayTitle(sourceTitle) ?? familyName)
     : level.variantName &&
         normalizeWeaponComparableTitle(level.name) === normalizeWeaponComparableTitle(familyName)
       ? `${familyName} ${level.variantName}`
@@ -2039,9 +2250,28 @@ function normalizeRedundantBaseVariantNames(levels: LevelVariant[]): LevelVarian
   })
 }
 
+function getEllialSuitStaffImageUrl(family: WeaponFamily): string | undefined {
+  const match = family.familyName.match(/^Staff of (Clubs|Diamonds|Hearts|Spades)$/i)
+  if (!match?.[1] || family.slug.includes('card-shoppe') || family.slug.includes('aria')) {
+    return undefined
+  }
+  const locations = family.levelVariants.flatMap((level) =>
+    level.obtainVariants.map((method) => method.location)
+  )
+  if (
+    locations.length === 0 ||
+    locations.some((location) => !/(?:Ellial's Weapon Shop|Best of 2010 shop)/i.test(location))
+  ) {
+    return undefined
+  }
+  const suit = titleCaseWeaponTokens([match[1]])
+  return `https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/StaffOf${suit}-2.png`
+}
+
 function buildWeaponCrossPostFamily(
   group: WeaponEntry[],
-  familyNameOverride?: string
+  familyNameOverride?: string,
+  familySlugOverride?: string
 ): WeaponFamily {
   const sorted = [...group].sort((a, b) =>
     compareTitles(getWeaponEntryName(a), getWeaponEntryName(b))
@@ -2052,7 +2282,7 @@ function buildWeaponCrossPostFamily(
     deriveWeaponCrossPostFamilyName(sorted, {
       allowSingleTokenSuffix: isSingleTokenSharedFamilyGroup(sorted),
     })
-  const familySlug = familyAnchor?.slug ?? weaponSlugForName(familyName)
+  const familySlug = familySlugOverride ?? familyAnchor?.slug ?? weaponSlugForName(familyName)
   const internalSlugs = new Set(sorted.map((entry) => entry.slug))
   const levelVariants = dedupeWeaponLevelVariants(
     sorted.flatMap((entry) =>
@@ -2113,9 +2343,24 @@ function buildWeaponCrossPostFamily(
   const notes = levelVariants
     .map((variant) => variant.notes)
     .filter((value): value is string => Boolean(value))
-  const specials = sorted
-    .map((entry) => (isWeaponFamilyEntry(entry) ? entry.shared.weaponSpecial : entry.weaponSpecial))
+  const inferredSpecials = levelVariants
+    .map((variant) => inferOnHitWeaponSpecialFromNotes(variant.notes))
     .filter((value): value is WeaponSpecial => Boolean(value))
+  const specials = [
+    ...sorted
+      .map((entry) =>
+        isWeaponFamilyEntry(entry) ? entry.shared.weaponSpecial : entry.weaponSpecial
+      )
+      .filter((value): value is WeaponSpecial => Boolean(value)),
+    ...inferredSpecials,
+  ]
+  const specialKeys = new Set<string>()
+  const dedupedSpecials = specials.filter((special) => {
+    const key = JSON.stringify(special)
+    if (specialKeys.has(key)) return false
+    specialKeys.add(key)
+    return true
+  })
   const armorCustomizations = sorted
     .map((entry) =>
       isWeaponFamilyEntry(entry) ? entry.shared.armorCustomization : entry.armorCustomization
@@ -2163,8 +2408,8 @@ function buildWeaponCrossPostFamily(
       ...(resists.length > 0 && allWeaponValuesSame(resists) ? { resists: resists[0] } : {}),
       ...(rarities.length > 0 && allWeaponValuesSame(rarities) ? { rarity: rarities[0] } : {}),
       ...(notes.length > 0 && allWeaponValuesSame(notes) ? { notes: notes[0] } : {}),
-      ...(specials.length > 0 && allWeaponValuesSame(specials)
-        ? { weaponSpecial: specials[0] }
+      ...(dedupedSpecials.length > 0 && allWeaponValuesSame(dedupedSpecials)
+        ? { weaponSpecial: dedupedSpecials[0] }
         : {}),
       ...(armorCustomizations.length > 0 && allWeaponValuesSame(armorCustomizations)
         ? { armorCustomization: armorCustomizations[0] }
@@ -2188,7 +2433,7 @@ function buildWeaponCrossPostFamily(
     hasFree: false,
     hasMerge: false,
     elements,
-    hasSpecial: specials.length > 0 || undefined,
+    hasSpecial: dedupedSpecials.length > 0 || undefined,
     hasArmorCustomization: armorCustomizations.length > 0 || undefined,
     isCosmetic: sorted.some((entry) => entry.isCosmetic) || undefined,
     isTemp: sorted.some((entry) => entry.isTemp) || undefined,
@@ -2280,9 +2525,13 @@ function cloneWeaponFamilyWithLevels(
         const imageUrls = adjustedLevels
           .map((level) => level.imageUrl)
           .filter((value): value is string => Boolean(value))
-        return imageUrls.length > 0 && allWeaponValuesSame(imageUrls)
-          ? { imageUrl: imageUrls[0] }
-          : { imageUrl: undefined }
+        if (imageUrls.length > 0 && allWeaponValuesSame(imageUrls)) {
+          return { imageUrl: imageUrls[0] }
+        }
+        if (imageUrls.length === 0 && family.shared.imageUrl) {
+          return { imageUrl: family.shared.imageUrl }
+        }
+        return { imageUrl: undefined }
       })(),
     },
     levelVariants: adjustedLevels,
@@ -2292,6 +2541,332 @@ function cloneWeaponFamilyWithLevels(
     hasDM: false,
     hasFree: false,
     hasMerge: false,
+  })
+}
+
+interface MixedVariantWeaponSplitGroup {
+  familyName: string
+  matches: (level: LevelVariant) => boolean
+  getVariantName?: (level: LevelVariant) => string | undefined
+}
+
+interface MixedVariantWeaponSplitSpec {
+  sourceFamilyNames: string[]
+  groups: MixedVariantWeaponSplitGroup[]
+}
+
+function getRomanVariantFromLevel(level: LevelVariant): string | undefined {
+  return (
+    getVariantRomanFromName(level.variantName ?? '') ??
+    getVariantRomanFromName(level.name) ??
+    getVariantRomanFromName(String(level.levelDisplay ?? ''))
+  )
+}
+
+function hasRomanVariantInRange(level: LevelVariant, min: number, max: number): boolean {
+  const roman = getRomanVariantFromLevel(level)
+  const value = roman ? parseRomanNumeral(roman) : null
+  return value !== null && value >= min && value <= max
+}
+
+function isBaseOrRomanProgressionVariant(level: LevelVariant, maxRoman: number): boolean {
+  if (level.variantName === '(Base)') return true
+  return hasRomanVariantInRange(level, 1, maxRoman)
+}
+
+function isYearVariant(level: LevelVariant, year: '09' | '10'): boolean {
+  return new RegExp(`(?:^|\\s)'?${year}$`, 'i').test(level.variantName ?? level.name)
+}
+
+function isModernSeaVariant(level: LevelVariant): boolean {
+  return !isYearVariant(level, '09') && !isYearVariant(level, '10')
+}
+
+function getRomanOrExistingVariantName(level: LevelVariant): string | undefined {
+  return getRomanVariantFromLevel(level) ?? level.variantName
+}
+
+const MIXED_VARIANT_WEAPON_SPLIT_SPECS: MixedVariantWeaponSplitSpec[] = [
+  {
+    sourceFamilyNames: ['Batwing Blade'],
+    groups: [
+      {
+        familyName: 'Batwing Blade (I, II, III)',
+        matches: (level) => /^Batwing Blade (?:I|II|III)$/i.test(level.name),
+      },
+      {
+        familyName: 'Dark Batwing Blade',
+        matches: (level) => /^Dark Batwing Blade$/i.test(level.name),
+      },
+    ],
+  },
+  {
+    sourceFamilyNames: ['Batwing Broom'],
+    groups: [
+      {
+        familyName: 'Batwing Broom (I, II, III)',
+        matches: (level) => /^Batwing Broom (?:I|II|III)$/i.test(level.name),
+      },
+      {
+        familyName: 'Dark Batwing Broom',
+        matches: (level) => /^Dark Batwing Broom$/i.test(level.name),
+      },
+    ],
+  },
+  {
+    sourceFamilyNames: ['Batwing Hatchet'],
+    groups: [
+      {
+        familyName: 'Batwing Hatchet (I, II, III)',
+        matches: (level) => /^Batwing Hatchet (?:I|II|III)$/i.test(level.name),
+      },
+      {
+        familyName: 'Dark Batwing Hatchet',
+        matches: (level) => /^Dark Batwing Hatchet$/i.test(level.name),
+      },
+    ],
+  },
+  {
+    sourceFamilyNames: ["ShadowWalker's Chakram"],
+    groups: [
+      {
+        familyName: "ShadowWalker's Chakram (I-IV)",
+        matches: (level) => /^ShadowWalker's Chakram (?:I|II|III|IV)$/i.test(level.name),
+      },
+      {
+        familyName: "Reforged ShadowWalker's Chakram",
+        matches: (level) => /^Reforged ShadowWalker's Chakram$/i.test(level.name),
+      },
+    ],
+  },
+  {
+    sourceFamilyNames: ['Wavecrest'],
+    groups: [
+      {
+        familyName: 'Wavecrest (I-V)',
+        matches: (level) => isBaseOrRomanProgressionVariant(level, 5),
+      },
+      {
+        familyName: 'Wavecrest (Missed, Lost, Stray, Wayward)',
+        matches: (level) => /^(?:Missed|Lost|Stray|Wayward)\s+Wavecrest$/i.test(level.name),
+        getVariantName: (level) =>
+          level.name.match(/^(Missed|Lost|Stray|Wayward)\s+Wavecrest$/i)?.[1],
+      },
+    ],
+  },
+  {
+    sourceFamilyNames: ['High Tide'],
+    groups: [
+      {
+        familyName: 'High Tide (I-V)',
+        matches: (level) => isBaseOrRomanProgressionVariant(level, 5),
+      },
+      {
+        familyName: 'High Tide (Misplaced, Missed, Lost, Stray, Wayward)',
+        matches: (level) =>
+          /^(?:Misplaced|Missed|Lost|Stray|Wayward)\s+High Tide$/i.test(level.name),
+        getVariantName: (level) =>
+          level.name.match(/^(Misplaced|Missed|Lost|Stray|Wayward)\s+High Tide$/i)?.[1],
+      },
+    ],
+  },
+  {
+    sourceFamilyNames: ['Deluge'],
+    groups: [
+      {
+        familyName: 'Deluge (I-V)',
+        matches: (level) => isBaseOrRomanProgressionVariant(level, 5),
+      },
+      {
+        familyName: 'Deluge (Misplaced, Missed, Lost, Stray, Wayward)',
+        matches: (level) => /^(?:Misplaced|Missed|Lost|Stray|Wayward)\s+Deluge$/i.test(level.name),
+        getVariantName: (level) =>
+          level.name.match(/^(Misplaced|Missed|Lost|Stray|Wayward)\s+Deluge$/i)?.[1],
+      },
+    ],
+  },
+  ...(["Sea's Blessing", "Sea's Favor", "Sea's Bounty"] as const).map((familyName) => ({
+    sourceFamilyNames: [familyName],
+    groups: [
+      {
+        familyName: `${familyName} '09`,
+        matches: (level: LevelVariant) => isYearVariant(level, '09'),
+      },
+      {
+        familyName: `${familyName} '10`,
+        matches: (level: LevelVariant) => isYearVariant(level, '10'),
+      },
+      {
+        familyName,
+        matches: isModernSeaVariant,
+      },
+    ],
+  })),
+  {
+    sourceFamilyNames: ['Amaterasu'],
+    groups: [
+      {
+        familyName: 'Amaterasu (I-II)',
+        matches: (level) => hasRomanVariantInRange(level, 1, 2),
+      },
+      {
+        familyName: 'Amaterasu-Omikami',
+        matches: (level) => /^Amaterasu-Omikami$/i.test(level.name),
+      },
+    ],
+  },
+  {
+    sourceFamilyNames: ['Tsukuyomi'],
+    groups: [
+      {
+        familyName: 'Tsukuyomi (I-II)',
+        matches: (level) => hasRomanVariantInRange(level, 1, 2),
+      },
+      {
+        familyName: 'Tsukuyomi-no-Mikoto',
+        matches: (level) => /^Tsukuyomi-no-Mikoto$/i.test(level.name),
+      },
+    ],
+  },
+  {
+    sourceFamilyNames: ['The Threadcutter (Alpha, I-IX)', 'The Threadcutter'],
+    groups: [
+      {
+        familyName: 'The Threadcutter Alpha',
+        matches: (level) => /\bAlpha$/i.test(level.name),
+      },
+      {
+        familyName: 'The Threadcutter (I-IX)',
+        matches: (level) => hasRomanVariantInRange(level, 1, 9),
+        getVariantName: getRomanOrExistingVariantName,
+      },
+    ],
+  },
+  {
+    sourceFamilyNames: ["Time's Harvest (Alpha, I-IX)", "Time's Harvest"],
+    groups: [
+      {
+        familyName: "Time's Harvest Alpha",
+        matches: (level) => /\bAlpha$/i.test(level.name),
+      },
+      {
+        familyName: "Time's Harvest (I-IX)",
+        matches: (level) => hasRomanVariantInRange(level, 1, 9),
+        getVariantName: getRomanOrExistingVariantName,
+      },
+    ],
+  },
+  {
+    sourceFamilyNames: ['The Massive Axe'],
+    groups: [
+      {
+        familyName: 'The Massive Axe (I-IV)',
+        matches: (level) => hasRomanVariantInRange(level, 1, 4),
+      },
+      {
+        familyName: 'The Massive Axe XL',
+        matches: (level) => /\bXL$/i.test(level.name),
+      },
+    ],
+  },
+]
+
+function getMixedVariantWeaponSplitSpec(
+  familyName: string
+): MixedVariantWeaponSplitSpec | undefined {
+  const normalizedName = normalizeWeaponComparableTitle(familyName)
+  return MIXED_VARIANT_WEAPON_SPLIT_SPECS.find((spec) =>
+    spec.sourceFamilyNames.some(
+      (sourceName) => normalizeWeaponComparableTitle(sourceName) === normalizedName
+    )
+  )
+}
+
+function getWeaponFamilyRef(family: WeaponFamily): AlsoSeeRef {
+  return {
+    name: family.familyName,
+    slug: family.slug,
+    type: 'weapon',
+    url: family.forumUrl,
+  }
+}
+
+function addWeaponSplitSiblingRefs(families: WeaponFamily[]): WeaponFamily[] {
+  const siblingSlugs = new Set(families.map((family) => family.slug))
+
+  return families.map((family) => {
+    const siblingRefs = families
+      .filter((sibling) => sibling.slug !== family.slug)
+      .map(getWeaponFamilyRef)
+    const existingRefs = (family.shared.alsoSee ?? []).filter(
+      (ref) => !siblingSlugs.has(ref.slug) && ref.slug !== family.slug
+    )
+    const alsoSee = Array.from(
+      new Map(
+        [...existingRefs, ...siblingRefs].map((ref) => [
+          `${ref.type}:${ref.slug}`.toLowerCase(),
+          ref,
+        ])
+      ).values()
+    )
+
+    return {
+      ...family,
+      shared: {
+        ...family.shared,
+        ...(alsoSee.length > 0 ? { alsoSee } : { alsoSee: undefined }),
+      },
+    }
+  })
+}
+
+function cloneMixedVariantWeaponFamilyGroup(
+  family: WeaponFamily,
+  group: MixedVariantWeaponSplitGroup,
+  levels: LevelVariant[]
+): WeaponFamily {
+  const adjustedLevels = group.getVariantName
+    ? levels.map((level) => ({
+        ...level,
+        variantName: group.getVariantName?.(level) ?? level.variantName,
+      }))
+    : levels
+  return cloneWeaponFamilyWithLevels(family, group.familyName, adjustedLevels)
+}
+
+export function splitApprovedMixedVariantWeaponFamilies(entries: WeaponEntry[]): WeaponEntry[] {
+  return entries.flatMap<WeaponEntry>((entry) => {
+    if (!isWeaponFamilyEntry(entry)) return [entry]
+    const normalizedEntry = dedupeWeaponFamilyEntry(entry)
+    const spec = getMixedVariantWeaponSplitSpec(normalizedEntry.familyName)
+    if (!spec) return [normalizedEntry]
+
+    const matchedLevelNames = new Set<string>()
+    const splitFamilies = spec.groups
+      .map((group) => {
+        const levels = normalizedEntry.levelVariants.filter((level) => {
+          const matched = group.matches(level)
+          if (matched) matchedLevelNames.add(level.name)
+          return matched
+        })
+        return levels.length > 0
+          ? cloneMixedVariantWeaponFamilyGroup(normalizedEntry, group, levels)
+          : undefined
+      })
+      .filter((family): family is WeaponFamily => Boolean(family))
+
+    if (splitFamilies.length <= 1) return [normalizedEntry]
+
+    const unmatchedLevels = normalizedEntry.levelVariants.filter(
+      (level) => !matchedLevelNames.has(level.name)
+    )
+    if (unmatchedLevels.length > 0) {
+      splitFamilies.push(
+        cloneWeaponFamilyWithLevels(normalizedEntry, normalizedEntry.familyName, unmatchedLevels)
+      )
+    }
+
+    return addWeaponSplitSiblingRefs(splitFamilies)
   })
 }
 
@@ -2343,6 +2918,656 @@ function splitExistingSpecialWeaponFamilies(entries: WeaponEntry[]): WeaponEntry
     }
 
     return [normalizedEntry]
+  })
+}
+
+function buildStandaloneWeaponFromLevelVariant(
+  level: LevelVariant,
+  subtype: WeaponSubtype
+): Weapon {
+  const methods = dedupeObtainVariants(level.obtainVariants)
+  const hasDA = methods.some((method) => method.daRequired)
+  const hasDC = methods.some((method) => obtainVariantHasDC(method))
+  const hasDM = methods.some((method) => method.dmRequired)
+
+  return {
+    id: weaponSlugForName(level.name),
+    name: level.name,
+    slug: weaponSlugForName(level.name),
+    type: 'weapon',
+    subtype,
+    description: level.description ?? '',
+    forumUrl: level.sourceUrl ?? '',
+    releaseDate: '',
+    ...(level.imageUrl ? { imageUrl: level.imageUrl } : {}),
+    ...(level.alternativeImages ? { alternativeImages: level.alternativeImages } : {}),
+    elements: level.element ? [level.element] : [],
+    level: String(level.actualLevel ?? level.levelDisplay),
+    damage: level.damage,
+    stats: level.stats,
+    ...(level.resists ? { resists: level.resists } : {}),
+    ...(level.rarity ? { rarity: level.rarity } : {}),
+    ...(level.itemType ? { itemType: level.itemType } : {}),
+    obtainMethods: methods,
+    tags: Array.from(new Set(methods.map((method) => method.priceType))),
+    daRequired: Boolean(hasDA),
+    ...(hasDC ? { dcRequired: true } : {}),
+    ...(hasDM ? { dmRequired: true } : {}),
+    ...(level.notes ? { notes: level.notes } : {}),
+  }
+}
+
+type PlayingCardSuit = 'Clubs' | 'Hearts' | 'Diamonds' | 'Spades'
+type PlayingCardSuitKind = 'Sword' | 'Blade' | 'Staff' | 'Dagger' | 'Dirk'
+type PlayingCardSuitSeries = 'ellial' | 'card' | 'dragon-card'
+
+interface PlayingCardSuitSeriesMatch {
+  kind: PlayingCardSuitKind
+  suit: PlayingCardSuit
+  series: PlayingCardSuitSeries
+}
+
+function getFirstObtainLocation(methods?: ObtainVariant[]): string {
+  return methods?.[0]?.location ?? ''
+}
+
+function getPlayingCardSuitSeriesMatch(
+  name: string,
+  methods?: ObtainVariant[]
+): PlayingCardSuitSeriesMatch | undefined {
+  const normalizedName = name.replace(/\s+\(\d+\)\s*$/, '').trim()
+  const rankPattern = '(?:Great|Greater|High|Elite|Knave|Queen|King)'
+  const suitPattern = '(Clubs|Hearts|Diamonds|Spades)'
+  const simpleMatch = normalizedName.match(
+    new RegExp(
+      `^(?:High\\s+|Elite\\s+(?:High\\s+)?|)(Sword|Staff|Dagger)\\s+of\\s+${suitPattern}$`,
+      'i'
+    )
+  )
+  if (simpleMatch) {
+    const kind = titleCaseWeaponTokens([simpleMatch[1]]) as 'Sword' | 'Staff' | 'Dagger'
+    const suit = titleCaseWeaponTokens([simpleMatch[2]]) as PlayingCardSuit
+    const location = getFirstObtainLocation(methods)
+    if (kind === 'Staff' && /Card Shoppe/i.test(location)) {
+      return { kind, suit, series: 'card' }
+    }
+    if (location && !/(?:Ellial's Weapon Shop|Best of 2010 shop)/i.test(location)) {
+      return undefined
+    }
+    return { kind, suit, series: 'ellial' }
+  }
+
+  const cardMatch = normalizedName.match(
+    new RegExp(
+      `^(?:Ace of ${suitPattern} (Blade|Staff|Dirk)|(Blade|Staff|Dirk) of ${suitPattern}|${rankPattern}\\s+(Blade|Staff|Dirk)\\s+of\\s+${suitPattern})$`,
+      'i'
+    )
+  )
+  if (cardMatch) {
+    const kind = titleCaseWeaponTokens([cardMatch[2] ?? cardMatch[3] ?? cardMatch[5]]) as
+      'Blade' | 'Staff' | 'Dirk'
+    const suit = titleCaseWeaponTokens([
+      cardMatch[1] ?? cardMatch[4] ?? cardMatch[6],
+    ]) as PlayingCardSuit
+    const location = getFirstObtainLocation(methods)
+    if (location && !/Card Shoppe/i.test(location)) return undefined
+    return { kind, suit, series: 'card' }
+  }
+
+  const dragonMatch = normalizedName.match(
+    new RegExp(
+      `^(?:Dragon Ace of ${suitPattern} (Blade|Staff|Dirk)|Dragon (Blade|Staff|Dirk) of ${suitPattern}|${rankPattern}\\s+Dragon\\s+(Blade|Staff|Dirk)\\s+of\\s+${suitPattern})$`,
+      'i'
+    )
+  )
+  if (!dragonMatch) return undefined
+
+  return {
+    kind: titleCaseWeaponTokens([dragonMatch[2] ?? dragonMatch[3] ?? dragonMatch[5]]) as
+      'Blade' | 'Staff' | 'Dirk',
+    suit: titleCaseWeaponTokens([
+      dragonMatch[1] ?? dragonMatch[4] ?? dragonMatch[6],
+    ]) as PlayingCardSuit,
+    series: 'dragon-card',
+  }
+}
+
+function getPlayingCardSuitFamilyName(
+  spec: { kind: PlayingCardSuitKind; series: PlayingCardSuitSeries; familyKind: string },
+  suit: PlayingCardSuit
+): string {
+  return `${spec.familyKind} of ${suit}`
+}
+
+function getPlayingCardSuitFamilySlug(
+  spec: { kind: PlayingCardSuitKind; series: PlayingCardSuitSeries },
+  familyName: string
+): string | undefined {
+  if (spec.kind === 'Staff' && spec.series === 'card') {
+    return weaponSlugForName(`${familyName} (Card Shoppe)`)
+  }
+  return undefined
+}
+
+function splitPlayingCardSuitWeaponFamilies(entries: WeaponEntry[]): WeaponEntry[] {
+  const replacements = new Map<string, WeaponEntry[]>()
+  const appendReplacement = (slug: string, replacement: WeaponEntry) => {
+    replacements.set(slug, [...(replacements.get(slug) ?? []), replacement])
+  }
+  const suits: PlayingCardSuit[] = ['Clubs', 'Hearts', 'Diamonds', 'Spades']
+  const specs: Array<{
+    kind: PlayingCardSuitKind
+    series: PlayingCardSuitSeries
+    subtype: WeaponSubtype
+    familyKind: string
+  }> = [
+    { kind: 'Sword', series: 'ellial', subtype: 'sword-axe-mace', familyKind: 'Sword' },
+    { kind: 'Blade', series: 'card', subtype: 'sword-axe-mace', familyKind: 'Blade' },
+    { kind: 'Blade', series: 'dragon-card', subtype: 'sword-axe-mace', familyKind: 'Dragon Blade' },
+    { kind: 'Staff', series: 'ellial', subtype: 'staff-wand', familyKind: 'Staff' },
+    { kind: 'Staff', series: 'card', subtype: 'staff-wand', familyKind: 'Staff' },
+    { kind: 'Staff', series: 'dragon-card', subtype: 'staff-wand', familyKind: 'Dragon Staff' },
+    { kind: 'Dagger', series: 'ellial', subtype: 'dagger', familyKind: 'Dagger' },
+    { kind: 'Dirk', series: 'card', subtype: 'dagger', familyKind: 'Dirk' },
+    { kind: 'Dirk', series: 'dragon-card', subtype: 'dagger', familyKind: 'Dragon Dirk' },
+  ]
+
+  for (const spec of specs) {
+    for (const suit of suits) {
+      const sourceEntries = entries.filter((entry) => {
+        if (entry.subtype !== spec.subtype) return false
+        if (entryHasObtainLocation(entry, /Aria In Wanderland/i)) return false
+        if (!isWeaponFamilyEntry(entry)) {
+          const entryMatch = getPlayingCardSuitSeriesMatch(entry.name, entry.obtainMethods)
+          return (
+            entryMatch?.kind === spec.kind &&
+            entryMatch.suit === suit &&
+            entryMatch.series === spec.series
+          )
+        }
+        return entry.levelVariants.some((level) => {
+          const match = getPlayingCardSuitSeriesMatch(level.name, level.obtainVariants)
+          return match?.kind === spec.kind && match.suit === suit && match.series === spec.series
+        })
+      })
+
+      const matchedLevels = sourceEntries.flatMap((entry) =>
+        isWeaponFamilyEntry(entry)
+          ? entry.levelVariants
+              .filter((level) => {
+                const match = getPlayingCardSuitSeriesMatch(level.name, level.obtainVariants)
+                return (
+                  match?.kind === spec.kind && match.suit === suit && match.series === spec.series
+                )
+              })
+              .map((level) => ({ ...level, sourceUrl: level.sourceUrl ?? entry.forumUrl }))
+          : (() => {
+              const match = getPlayingCardSuitSeriesMatch(entry.name, entry.obtainMethods)
+              return match?.kind === spec.kind &&
+                match.suit === suit &&
+                match.series === spec.series
+                ? [buildLevelVariantFromWeapon(entry, entry.name)]
+                : []
+            })()
+      )
+
+      if (matchedLevels.length < 2) continue
+
+      const familyName = getPlayingCardSuitFamilyName(spec, suit)
+      const familySlug = getPlayingCardSuitFamilySlug(spec, familyName)
+      const family = buildWeaponCrossPostFamily(
+        matchedLevels.map((level) => buildStandaloneWeaponFromLevelVariant(level, spec.subtype)),
+        familyName,
+        familySlug
+      )
+
+      const internalSlugs = new Set([
+        ...sourceEntries.map((entry) => entry.slug),
+        ...matchedLevels.map((level) => weaponSlugForName(level.name)),
+      ])
+      const externalRefs = gatherWeaponExternalRefs(sourceEntries, internalSlugs)
+      const patchedFamily = {
+        ...family,
+        shared: {
+          ...family.shared,
+          ...(externalRefs.length > 0
+            ? {
+                alsoSee: Array.from(
+                  new Map(
+                    [...(family.shared.alsoSee ?? []), ...externalRefs].map((ref) => [
+                      `${ref.type}:${ref.slug}:${ref.url ?? ''}`.toLowerCase(),
+                      ref,
+                    ])
+                  ).values()
+                ).sort((a, b) => compareTitles(a.name, b.name)),
+              }
+            : {}),
+        },
+      }
+
+      appendReplacement(sourceEntries[0].slug, patchedFamily)
+      for (const entry of sourceEntries.slice(1)) {
+        if (!replacements.has(entry.slug)) replacements.set(entry.slug, [])
+      }
+    }
+  }
+
+  if (replacements.size === 0) return entries
+  return entries.flatMap((entry) => replacements.get(entry.slug) ?? [entry])
+}
+
+function isAriaSuitWeaponEntry(entry: WeaponEntry): entry is Weapon {
+  if (isWeaponFamilyEntry(entry)) return false
+  if (!entry.obtainMethods.some((method) => /Aria In Wanderland/i.test(method.location))) {
+    return false
+  }
+  return /^(?:Greater\s+|Ultimate\s+|)?(?:Staff|Dirk)\s+of\s+(?:Hearts|Spades)(?:\s+\(\d+\))?$/i.test(
+    entry.name
+  )
+}
+
+function disambiguateAriaSuitWeaponEntries(entries: WeaponEntry[]): WeaponEntry[] {
+  return entries.map((entry) => {
+    if (!isAriaSuitWeaponEntry(entry)) return entry
+    const name = entry.name.replace(/\s+\(\d+\)\s*$/, '').trim()
+    const slug = weaponSlugForName(`${name} (Aria In Wanderland)`)
+    return {
+      ...entry,
+      id: slug,
+      name,
+      slug,
+    }
+  })
+}
+
+function entryHasObtainLocation(entry: WeaponEntry, pattern: RegExp): boolean {
+  const methods = isWeaponFamilyEntry(entry)
+    ? entry.levelVariants.flatMap((level) => level.obtainVariants)
+    : entry.obtainMethods
+  return methods.some((method) => pattern.test(method.location))
+}
+
+function mergeHardcodedWeaponFamily(
+  entries: WeaponEntry[],
+  familyName: string,
+  familySlug: string,
+  isMember: (entry: WeaponEntry) => boolean
+): WeaponEntry[] {
+  const members = entries.filter(isMember)
+  if (members.length < 2) return entries
+  const memberSlugs = new Set(members.map((entry) => entry.slug))
+  const family = buildWeaponCrossPostFamily(members, familyName, familySlug)
+  return [family, ...entries.filter((entry) => !memberSlugs.has(entry.slug))]
+}
+
+function mergeCorDemiCodexFamily(entries: WeaponEntry[]): WeaponEntry[] {
+  const tierOrder = ['Basic CorDemi Codex', 'Advanced CorDemi Codex', 'Master CorDemi Codex']
+  const tierIndexes = new Map(
+    tierOrder.map((name, index) => [normalizeWeaponLookupName(name), index])
+  )
+  const getTierLabel = (name: string): string =>
+    stripVersionSuffix(name)
+      .replace(/\s+CorDemi\s+Codex$/i, '')
+      .trim()
+  const members = entries.filter(
+    (entry) =>
+      entry.subtype === 'sword-axe-mace' &&
+      tierIndexes.has(normalizeWeaponLookupName(getWeaponEntryName(entry)))
+  )
+
+  if (members.length < 2) return entries
+
+  const memberSlugs = new Set(members.map((entry) => entry.slug))
+  const sortedMembers = [...members].sort(
+    (first, second) =>
+      (tierIndexes.get(normalizeWeaponLookupName(getWeaponEntryName(first))) ?? 99) -
+      (tierIndexes.get(normalizeWeaponLookupName(getWeaponEntryName(second))) ?? 99)
+  )
+  const internalSlugs = new Set(sortedMembers.map((entry) => entry.slug))
+  const levelVariants = dedupeWeaponLevelVariants(
+    sortedMembers.flatMap((entry) => {
+      const tierName = getWeaponEntryName(entry)
+      const tierLabel = getTierLabel(tierName)
+      const shared = isWeaponFamilyEntry(entry) ? entry.shared : undefined
+      const levels = isWeaponFamilyEntry(entry)
+        ? entry.levelVariants.map((level) => ({
+            ...level,
+            sourceUrl: level.sourceUrl ?? entry.forumUrl,
+            imageUrl: level.imageUrl ?? shared?.imageUrl,
+            alternativeImages: level.alternativeImages ?? shared?.alternativeImages,
+            notes: level.notes ?? shared?.notes,
+          }))
+        : [buildLevelVariantFromWeapon(entry, 'CorDemi Codex')]
+
+      return levels.map((level) => ({
+        ...level,
+        variantName: level.obtainVariants.some(obtainVariantHasDC)
+          ? `${tierLabel} (DC)`
+          : tierLabel,
+      }))
+    })
+  ).sort((first, second) => {
+    const firstTier =
+      tierIndexes.get(normalizeWeaponLookupName(first.name)) ??
+      tierIndexes.get(normalizeWeaponLookupName(first.variantName ?? '')) ??
+      99
+    const secondTier =
+      tierIndexes.get(normalizeWeaponLookupName(second.name)) ??
+      tierIndexes.get(normalizeWeaponLookupName(second.variantName ?? '')) ??
+      99
+    return (
+      firstTier - secondTier ||
+      Number(first.obtainVariants.some(obtainVariantHasDC)) -
+        Number(second.obtainVariants.some(obtainVariantHasDC))
+    )
+  })
+  const descriptions = levelVariants
+    .map((variant) => variant.description)
+    .filter((value): value is string => Boolean(value))
+  const imageUrls = levelVariants
+    .map((variant) => variant.imageUrl)
+    .filter((value): value is string => Boolean(value))
+  const alternativeImages = levelVariants
+    .map((variant) => variant.alternativeImages)
+    .filter((value): value is NonNullable<LevelVariant['alternativeImages']> =>
+      Boolean(value?.length)
+    )
+  const sharedImageUrls = sortedMembers
+    .map((entry) => (isWeaponFamilyEntry(entry) ? entry.shared.imageUrl : entry.imageUrl))
+    .filter((value): value is string => Boolean(value))
+  const sharedAlternativeImages = sortedMembers
+    .flatMap((entry) =>
+      isWeaponFamilyEntry(entry)
+        ? (entry.shared.alternativeImages ?? [])
+        : (entry.alternativeImages ?? [])
+    )
+    .filter((value): value is AlternativeImage => Boolean(value?.url))
+  const elements = Array.from(
+    new Set(
+      levelVariants
+        .map((variant) => variant.element)
+        .filter((value): value is string => Boolean(value))
+    )
+  )
+  const notes = levelVariants
+    .map((variant) => variant.notes)
+    .filter((value): value is string => Boolean(value))
+  const familySources = dedupeWeaponFamilySources(
+    sortedMembers.flatMap((entry) =>
+      isWeaponFamilyEntry(entry) && entry.familySources?.length
+        ? entry.familySources.map((source) => ({
+            ...source,
+            variantLabel: getSourceDisplayTitle(source.title) ?? source.variantLabel,
+          }))
+        : [
+            {
+              url: entry.forumUrl,
+              title: `DF Encyclopedia: ${getWeaponEntryName(entry)}`,
+              variantLabel: getWeaponEntryName(entry),
+              isPrimary: false,
+            },
+          ]
+    )
+  ).map((source, index) => ({ ...source, isPrimary: index === 0 }))
+  const family: WeaponFamily = computeFamilyFlags({
+    id: 'weapon-cordemi-codex',
+    familyName: 'CorDemi Codex',
+    slug: 'weapon-cordemi-codex',
+    aliasSlugs: Array.from(
+      new Set([
+        ...internalSlugs,
+        ...sortedMembers.flatMap((entry) =>
+          isWeaponFamilyEntry(entry) ? (entry.aliasSlugs ?? []) : []
+        ),
+      ])
+    ).filter((slug) => slug !== 'weapon-cordemi-codex'),
+    type: 'weapon',
+    subtype: 'sword-axe-mace' as WeaponSubtype,
+    forumUrl: sortedMembers[0].forumUrl,
+    familyOrigin: 'cross-post',
+    familySources,
+    itemType: 'Sword',
+    shared: {
+      description: descriptions[0] ?? '',
+      ...(sharedImageUrls.length > 0
+        ? { imageUrl: sharedImageUrls[0] }
+        : imageUrls.length > 0 && allWeaponValuesSame(imageUrls)
+          ? { imageUrl: imageUrls[0] }
+          : {}),
+      ...(sharedAlternativeImages.length > 0
+        ? { alternativeImages: sharedAlternativeImages }
+        : alternativeImages.length > 0 && allWeaponValuesSame(alternativeImages)
+          ? { alternativeImages: alternativeImages[0] }
+          : {}),
+      ...(elements.length === 1 ? { element: elements[0] } : {}),
+      ...(notes.length > 0 && allWeaponValuesSame(notes) ? { notes: notes[0] } : {}),
+      alsoSee: [],
+    },
+    levelVariants,
+    category: 'Weapon',
+    releaseDate: '',
+    tags: Array.from(
+      new Set([
+        ...sortedMembers.flatMap((entry) => entry.tags ?? []),
+        ...levelVariants.flatMap((variant) =>
+          variant.obtainVariants.map((method) => method.priceType)
+        ),
+      ])
+    ).sort(),
+    hasDA: false,
+    hasDC: false,
+    hasDM: false,
+    hasFree: false,
+    hasMerge: false,
+    elements,
+    levelRange: '',
+  })
+
+  return [family, ...entries.filter((entry) => !memberSlugs.has(entry.slug))]
+}
+
+function mergeHardcodedWeaponFamilies(entries: WeaponEntry[]): WeaponEntry[] {
+  let merged = entries
+
+  merged = mergeCorDemiCodexFamily(merged)
+
+  merged = mergeHardcodedWeaponFamily(
+    merged,
+    'Staff of Hearts',
+    'weapon-staff-of-hearts-aria-in-wanderland',
+    (entry) =>
+      entry.subtype === 'staff-wand' &&
+      entryHasObtainLocation(entry, /Aria In Wanderland/i) &&
+      /^(?:Greater\s+|Ultimate\s+|)?Staff of Hearts(?:\s+\(\d+\))?$/i.test(
+        getWeaponEntryName(entry)
+      )
+  )
+
+  merged = mergeHardcodedWeaponFamily(
+    merged,
+    'Dirk of Spades',
+    'weapon-dirk-of-spades-aria-in-wanderland',
+    (entry) =>
+      entry.subtype === 'dagger' &&
+      entryHasObtainLocation(entry, /Aria In Wanderland/i) &&
+      /^(?:Greater\s+|Ultimate\s+|)?Dirk of Spades(?:\s+\(\d+\))?$/i.test(getWeaponEntryName(entry))
+  )
+
+  merged = mergeHardcodedWeaponFamily(
+    merged,
+    'Under Current',
+    'weapon-under-current',
+    (entry) =>
+      entry.subtype === 'dagger' &&
+      (entry.slug === 'weapon-under-current' ||
+        entry.slug === 'weapon-rip-tide-2' ||
+        /^Swift Under Current$/i.test(getWeaponEntryName(entry)))
+  )
+
+  merged = mergeHardcodedWeaponFamily(
+    merged,
+    'Rip Tide',
+    'weapon-rip-tide',
+    (entry) =>
+      entry.subtype === 'sword-axe-mace' &&
+      entryHasObtainLocation(entry, /^Rip Tide Shop$/i) &&
+      /^(?:Intense|Sharp|Fierce|Killer|Roiling|Swift|Deadly|Fast|Strong)\s+Rip Tide$/i.test(
+        getWeaponEntryName(entry)
+      )
+  )
+
+  return merged
+}
+
+function levelHasObtainLocation(level: LevelVariant, pattern: RegExp): boolean {
+  return level.obtainVariants.some((method) => pattern.test(method.location))
+}
+
+function splitAriaSuitLevelsFromMixedWeaponFamilies(entries: WeaponEntry[]): WeaponEntry[] {
+  return entries.flatMap<WeaponEntry>((entry): WeaponEntry[] => {
+    if (!isWeaponFamilyEntry(entry)) return [entry]
+
+    const normalizedFamilyName = normalizeWeaponFamilyName(entry.familyName)
+    const ariaSlug =
+      /^Staff of Hearts$/i.test(normalizedFamilyName) && entry.subtype === 'staff-wand'
+        ? 'weapon-staff-of-hearts-aria-in-wanderland'
+        : /^Dirk of Spades$/i.test(normalizedFamilyName) && entry.subtype === 'dagger'
+          ? 'weapon-dirk-of-spades-aria-in-wanderland'
+          : undefined
+    if (!ariaSlug) return [entry]
+
+    const ariaLevels = entry.levelVariants.filter((level) =>
+      levelHasObtainLocation(level, /Aria In Wanderland/i)
+    )
+    const otherLevels = entry.levelVariants.filter(
+      (level) => !levelHasObtainLocation(level, /Aria In Wanderland/i)
+    )
+    if (ariaLevels.length === 0 || otherLevels.length === 0) return [entry]
+
+    const ariaFamily = buildWeaponCrossPostFamily(
+      ariaLevels.map((level) => buildStandaloneWeaponFromLevelVariant(level, entry.subtype)),
+      normalizedFamilyName,
+      ariaSlug
+    )
+
+    const sourceUrlsToRemove = new Set(ariaLevels.map((level) => level.sourceUrl).filter(Boolean))
+    const otherFamily = computeFamilyFlags({
+      ...entry,
+      familyName: normalizedFamilyName,
+      levelVariants: otherLevels,
+      familySources: entry.familySources?.filter((source) => !sourceUrlsToRemove.has(source.url)),
+      aliasSlugs: entry.aliasSlugs?.filter((slug) => !ariaFamily.aliasSlugs?.includes(slug)),
+      hasDA: false,
+      hasDC: false,
+      hasDM: false,
+      hasFree: false,
+      hasMerge: false,
+    })
+
+    return [otherFamily, ariaFamily]
+  })
+}
+
+function applyInferredWeaponSpecials(entries: WeaponEntry[]): WeaponEntry[] {
+  const repairInferredOnHitImage = (special: WeaponSpecial): WeaponSpecial => {
+    if (special.imageUrl || special.activation !== 'on-hit') return special
+    if (!/on-hit DoT effect/i.test(special.effect)) return special
+    return { ...special, imageUrl: INFERRED_ON_HIT_SPECIAL_IMAGE_URL }
+  }
+
+  return entries.map((entry) => {
+    if (isWeaponFamilyEntry(entry) && (entry.shared.weaponSpecial || entry.shared.weaponSpecials)) {
+      const weaponSpecial = entry.shared.weaponSpecial
+        ? repairInferredOnHitImage(entry.shared.weaponSpecial)
+        : undefined
+      const weaponSpecials = entry.shared.weaponSpecials?.map(repairInferredOnHitImage)
+      const changed =
+        (weaponSpecial && weaponSpecial !== entry.shared.weaponSpecial) ||
+        weaponSpecials?.some((special, index) => special !== entry.shared.weaponSpecials?.[index])
+      if (!changed) return entry
+      return {
+        ...entry,
+        shared: {
+          ...entry.shared,
+          ...(weaponSpecial ? { weaponSpecial } : {}),
+          ...(weaponSpecials ? { weaponSpecials } : {}),
+        },
+      }
+    }
+
+    if (!isWeaponFamilyEntry(entry) || entry.shared.weaponSpecial || entry.shared.weaponSpecials) {
+      return entry
+    }
+
+    const specialKeys = new Set<string>()
+    const specials = entry.levelVariants
+      .map((variant) => inferOnHitWeaponSpecialFromNotes(variant.notes))
+      .filter((special): special is WeaponSpecial => Boolean(special))
+      .filter((special) => {
+        const key = JSON.stringify(special)
+        if (specialKeys.has(key)) return false
+        specialKeys.add(key)
+        return true
+      })
+
+    if (specials.length === 0) return entry
+
+    return computeFamilyFlags({
+      ...entry,
+      shared: {
+        ...entry.shared,
+        weaponSpecial: specials[0],
+        ...(specials.length > 1 ? { weaponSpecials: specials } : {}),
+      },
+      hasSpecial: true,
+      tags: Array.from(new Set([...(entry.tags ?? []), 'special'])).sort(),
+      hasDA: false,
+      hasDC: false,
+      hasDM: false,
+      hasFree: false,
+      hasMerge: false,
+    })
+  })
+}
+
+function applyParsedArmorCustomizations(entries: WeaponEntry[]): WeaponEntry[] {
+  return entries.map((entry) => {
+    if (isWeaponFamilyEntry(entry)) {
+      const armorCustomization =
+        entry.shared.armorCustomization ??
+        parseArmorCustomization(
+          [
+            entry.shared.notes,
+            entry.shared.description,
+            ...entry.levelVariants.flatMap((variant) => [variant.notes, variant.description]),
+          ]
+            .filter(Boolean)
+            .join('\n')
+        )
+      if (!armorCustomization) return entry
+
+      return {
+        ...entry,
+        shared: {
+          ...entry.shared,
+          armorCustomization,
+        },
+        hasArmorCustomization: true,
+        tags: Array.from(new Set([...(entry.tags ?? []), 'armor-customization'])).sort(),
+      }
+    }
+
+    const armorCustomization =
+      entry.armorCustomization ??
+      parseArmorCustomization([entry.notes, entry.description].filter(Boolean).join('\n'))
+    if (!armorCustomization) return entry
+
+    return {
+      ...entry,
+      armorCustomization,
+      hasArmorCustomization: true,
+      tags: Array.from(new Set([...(entry.tags ?? []), 'armor-customization'])).sort(),
+    }
   })
 }
 
@@ -2406,6 +3631,15 @@ async function fetchThreadPostContent(messageId: string, cookie: string): Promis
     .join('\n<hr data-post-break="true">\n')
 }
 
+function getPostContentForMessageId(html: string, messageId: string): string {
+  return (
+    splitPrintablePosts(html).find((post) => {
+      const sourceUrl = getPrintablePostSourceUrl(post, '')
+      return getMessageIdFromForumUrl(sourceUrl) === messageId
+    }) ?? html
+  )
+}
+
 async function fetchStubContent(
   stub: WeaponStub,
   cookie: string,
@@ -2446,6 +3680,46 @@ function readExistingEntries(file: string): WeaponEntry[] {
   return JSON.parse(fs.readFileSync(filePath, 'utf-8')) as WeaponEntry[]
 }
 
+function normalizedSelectedWeaponNameCandidates(value: string): string[] {
+  const preserveParentheticalList =
+    /\([^)]*,[^)]*\)\s*$/i.test(value) &&
+    !/\((?:[ivxlcdm]+(?:\s*[-,]\s*[ivxlcdm]+|\s*,\s*[ivxlcdm]+)*)\)\s*$/i.test(value)
+  const parentheticalStripped = preserveParentheticalList
+    ? value
+    : stripTrailingParenthetical(value)
+  return Array.from(
+    new Set([
+      normalizeWeaponTitleKey(value),
+      normalizeWeaponTitleKey(parentheticalStripped),
+      normalizeWeaponTitleKey(stripVersionSuffix(value)),
+      normalizeWeaponTitleKey(
+        stripTrailingParenthetical(stripVersionSuffix(parentheticalStripped))
+      ),
+    ])
+  ).filter(Boolean)
+}
+
+function weaponEntryMatchesSelectedNames(
+  entry: WeaponEntry,
+  selectedNames: string[] | undefined
+): boolean {
+  if (!selectedNames || selectedNames.length === 0) return false
+  const selected = new Set(selectedNames.flatMap(normalizedSelectedWeaponNameCandidates))
+  const values = [
+    getWeaponEntryName(entry),
+    ...('aliasSlugs' in entry
+      ? (entry.aliasSlugs ?? []).map((slug) => slug.replace(/^weapon-/, ''))
+      : []),
+    ...('familySources' in entry
+      ? (entry.familySources ?? []).flatMap((source) => [source.title, source.variantLabel])
+      : []),
+  ].filter((value): value is string => Boolean(value))
+
+  return values.some((value) =>
+    normalizedSelectedWeaponNameCandidates(value).some((candidate) => selected.has(candidate))
+  )
+}
+
 export function canonicalizeWeaponAlsoSeeRefs(entries: WeaponEntry[]): WeaponEntry[] {
   const aliasToCanonical = new Map<string, { slug: string; name: string }>()
   for (const entry of entries) {
@@ -2467,20 +3741,88 @@ export function canonicalizeWeaponAlsoSeeRefs(entries: WeaponEntry[]): WeaponEnt
     )
   }
 
+  const getEntryRefs = (entry: WeaponEntry) =>
+    isWeaponFamilyEntry(entry) ? entry.shared.alsoSee : entry.alsoSee
+
+  const patchWeaponRefs = (entry: WeaponEntry, refs?: AlsoSeeRef[]) => {
+    let patched = refs ?? []
+    if (entry.slug === 'weapon-staff-of-hearts-aria-in-wanderland') {
+      patched = []
+    } else {
+      patched = patched.filter((ref) => ref.slug !== 'weapon-staff-of-hearts-aria-in-wanderland')
+    }
+
+    if (entry.slug === 'weapon-rip-tide') {
+      patched = [
+        ...patched,
+        {
+          name: 'Rip Current',
+          slug: 'weapon-rip-current',
+          type: 'weapon',
+          url: 'https://forums2.battleon.com/f/tm.asp?m=21615021',
+        },
+      ]
+      patched = patched.filter((ref) => ref.slug !== 'weapon-under-current')
+    } else if (entry.slug === 'weapon-rip-current') {
+      patched = [
+        ...patched,
+        {
+          name: 'Rip Tide',
+          slug: 'weapon-rip-tide',
+          type: 'weapon',
+          url: 'https://forums2.battleon.com/f/tm.asp?m=21615107',
+        },
+      ]
+    } else if (entry.slug === 'weapon-under-current') {
+      patched = patched.filter((ref) => ref.slug !== 'weapon-rip-current')
+    }
+
+    const destinyRefs: AlsoSeeRef[] = [
+      {
+        name: 'Blinding Light of Destiny',
+        slug: 'weapon-blinding-light-of-destiny',
+        type: 'weapon',
+        url: 'https://forums2.battleon.com/f/tm.asp?m=17778584',
+      },
+      {
+        name: 'Dragonstaff of Destiny',
+        slug: 'weapon-dragonstaff-of-destiny',
+        type: 'weapon',
+        url: 'https://forums2.battleon.com/f/tm.asp?m=17778651',
+      },
+      {
+        name: 'Twin Blades of Destiny',
+        slug: 'weapon-twin-blades-of-destiny',
+        type: 'weapon',
+        url: 'https://forums2.battleon.com/f/tm.asp?m=17778632',
+      },
+    ]
+    if (destinyRefs.some((ref) => ref.slug === entry.slug)) {
+      patched = [...patched, ...destinyRefs.filter((ref) => ref.slug !== entry.slug)]
+    }
+
+    return Array.from(
+      new Map(patched.map((ref) => [`${ref.type}:${ref.slug}`.toLowerCase(), ref])).values()
+    )
+  }
+
   return entries.map((entry) => {
+    const alsoSee = patchWeaponRefs(entry, dedupeRefs(getEntryRefs(entry)))?.filter(
+      (ref) => ref.slug !== entry.slug
+    )
     if ('levelVariants' in entry) {
       return {
         ...entry,
         shared: {
           ...entry.shared,
-          alsoSee: dedupeRefs(entry.shared.alsoSee)?.filter((ref) => ref.slug !== entry.slug),
+          alsoSee,
         },
       }
     }
 
     return {
       ...entry,
-      alsoSee: dedupeRefs(entry.alsoSee)?.filter((ref) => ref.slug !== entry.slug),
+      alsoSee,
     }
   })
 }
@@ -2505,6 +3847,10 @@ export function normalizeWeaponFamilyDisplayLabels(entries: WeaponEntry[]): Weap
       dedupeWeaponLevelVariants(
         entry.levelVariants.map((level) => {
           const name = normalizeWeaponVariantDisplayName(level.name, familyName)
+          const explicitBranchVariantName =
+            level.variantName && /^(?:\(Base\)|\(DC\)|.+\s\(DC\))$/i.test(level.variantName)
+              ? level.variantName
+              : undefined
           const sourceVariantName = level.sourceUrl
             ? sourceVariantByUrl.get(level.sourceUrl)
             : undefined
@@ -2524,6 +3870,7 @@ export function normalizeWeaponFamilyDisplayLabels(entries: WeaponEntry[]): Weap
             ...level,
             name,
             variantName:
+              explicitBranchVariantName ??
               sourceVariantName ??
               (hasSourceTitleVariants && isExactSourceFamily ? '(Base)' : undefined) ??
               getSpecialWeaponLevelVariantName({ ...level, name }, familyName) ??
@@ -2536,17 +3883,30 @@ export function normalizeWeaponFamilyDisplayLabels(entries: WeaponEntry[]): Weap
     const sourceLabelByUrl = new Map(
       levelVariants
         .filter((level) => level.sourceUrl)
-        .map((level) => [level.sourceUrl!, getWeaponFamilySourceVariantLabel(level, familyName)])
+        .map((level) => [
+          level.sourceUrl!,
+          getWeaponFamilySourceVariantLabel(
+            level,
+            familyName,
+            level.sourceUrl ? sourceByUrl.get(level.sourceUrl)?.title : undefined
+          ),
+        ])
     )
+    const ellialSuitStaffImageUrl = getEllialSuitStaffImageUrl({
+      ...entry,
+      familyName,
+      levelVariants,
+    })
     return {
       ...entry,
-      id: entry.id === entry.slug ? weaponSlugForName(familyName) : entry.id,
+      id: entry.id === entry.slug ? entry.slug : entry.id,
       familyName,
-      slug: weaponSlugForName(familyName),
+      slug: entry.slug,
       aliasSlugs: buildWeaponFamilyAliasSlugs(
         familyName,
         [...entry.levelVariants, ...levelVariants],
-        [...(entry.aliasSlugs ?? []), entry.slug]
+        [...(entry.aliasSlugs ?? []), entry.slug],
+        entry.slug
       ),
       familySources: entry.familySources
         ? dedupeWeaponFamilySources(
@@ -2554,7 +3914,7 @@ export function normalizeWeaponFamilyDisplayLabels(entries: WeaponEntry[]): Weap
               const sourceVariantLabel =
                 sourceLabelByUrl.get(source.url) ??
                 (source.variantLabel
-                  ? normalizeWeaponSourceVariantLabel(source.variantLabel)
+                  ? normalizeWeaponSourceLabelForFamily(source.variantLabel, familyName)
                   : undefined)
               return {
                 ...source,
@@ -2563,6 +3923,12 @@ export function normalizeWeaponFamilyDisplayLabels(entries: WeaponEntry[]): Weap
             })
           )
         : undefined,
+      shared: {
+        ...entry.shared,
+        ...(ellialSuitStaffImageUrl && !entry.shared.imageUrl
+          ? { imageUrl: ellialSuitStaffImageUrl }
+          : {}),
+      },
       levelVariants,
     }
   })
@@ -2579,6 +3945,62 @@ export function removeWeaponAliasStandaloneEntries(entries: WeaponEntry[]): Weap
   if (aliasSlugs.size === 0) return entries
 
   return entries.filter((entry) => isWeaponFamilyEntry(entry) || !aliasSlugs.has(entry.slug))
+}
+
+export function removeConflictingWeaponAliasSlugs(entries: WeaponEntry[]): WeaponEntry[] {
+  const canonicalBySubtype = new Set(entries.map((entry) => `${entry.subtype}:${entry.slug}`))
+
+  return entries.map((entry) => {
+    if (!isWeaponFamilyEntry(entry) || !entry.aliasSlugs?.length) return entry
+
+    const aliasSlugs = entry.aliasSlugs.filter((aliasSlug) => {
+      if (aliasSlug === entry.slug) return true
+      return !canonicalBySubtype.has(`${entry.subtype}:${aliasSlug}`)
+    })
+
+    return aliasSlugs.length > 0 ? { ...entry, aliasSlugs } : { ...entry, aliasSlugs: undefined }
+  })
+}
+
+export function removeMisleadingCrossSubtypeWeaponAliases(entries: WeaponEntry[]): WeaponEntry[] {
+  return entries.map((entry) => {
+    if (!isWeaponFamilyEntry(entry) || entry.slug !== 'weapon-under-current') return entry
+    const aliasSlugs = entry.aliasSlugs?.filter((slug) => slug !== 'weapon-rip-tide')
+    return aliasSlugs && aliasSlugs.length > 0
+      ? { ...entry, aliasSlugs }
+      : { ...entry, aliasSlugs: undefined }
+  })
+}
+
+export function removeDuplicateWeaponAliasClaims(entries: WeaponEntry[]): WeaponEntry[] {
+  const claimCounts = new Map<string, number>()
+  for (const entry of entries) {
+    if (!isWeaponFamilyEntry(entry) || !entry.aliasSlugs?.length) continue
+    for (const aliasSlug of entry.aliasSlugs) {
+      const key = `${entry.subtype}:${aliasSlug}`
+      claimCounts.set(key, (claimCounts.get(key) ?? 0) + 1)
+    }
+  }
+
+  return entries.map((entry) => {
+    if (!isWeaponFamilyEntry(entry) || !entry.aliasSlugs?.length) return entry
+    const aliasSlugs = entry.aliasSlugs.filter(
+      (aliasSlug) => (claimCounts.get(`${entry.subtype}:${aliasSlug}`) ?? 0) <= 1
+    )
+    return aliasSlugs.length > 0 ? { ...entry, aliasSlugs } : { ...entry, aliasSlugs: undefined }
+  })
+}
+
+export function normalizeDisambiguatedStandaloneWeaponNames(entries: WeaponEntry[]): WeaponEntry[] {
+  return entries.map((entry) => {
+    if (isWeaponFamilyEntry(entry)) return entry
+    const cleanName = entry.name.replace(/\s+\([12]\)\s*$/i, '').trim()
+    if (cleanName === entry.name) return entry
+    return {
+      ...entry,
+      name: cleanName,
+    }
+  })
 }
 
 function dedupeWeaponEntriesBySlug(entries: WeaponEntry[]): WeaponEntry[] {
@@ -2629,10 +4051,11 @@ function writeDatasets(
   selectedSubtypes: WeaponSubtype[],
   selectedLetters?: string[],
   selectedNames?: string[],
-  selectedMessageIds?: Set<string>
+  selectedMessageIds?: Set<string>,
+  fresh = false
 ) {
   for (const subtype of selectedSubtypes) {
-    const incoming = entriesBySubtype.get(subtype) ?? []
+    const incoming = disambiguateAriaSuitWeaponEntries(entriesBySubtype.get(subtype) ?? [])
     const files = WEAPON_DATA_FILES[subtype]
     const existingByFile = new Map(files.map((file) => [file, readExistingEntries(file)]))
     const existing = Array.from(existingByFile.values()).flat()
@@ -2651,7 +4074,10 @@ function writeDatasets(
       }
       const entryMessageId = getMessageIdFromForumUrl(entry.forumUrl)
       if (entryMessageId && selectedMessageIds?.has(entryMessageId)) return false
-      if (selectedNames && matchesNameFilter(displayName, { names: selectedNames })) {
+      if (fresh && weaponEntryMatchesSelectedNames(entry, selectedNames)) {
+        return false
+      }
+      if (!fresh && selectedNames && matchesNameFilter(displayName, { names: selectedNames })) {
         return false
       }
       if (
@@ -2663,23 +4089,27 @@ function writeDatasets(
       if (entryMatchesSelectedLetters(entry, selectedLetters)) return false
       return true
     })
-    const merged = removeWeaponAliasStandaloneEntries(
-      addFoamHammerSiblingRefs(
-        canonicalizeWeaponAlsoSeeRefs(
-          dedupeWeaponEntriesBySlug(
-            splitFoamRolithStandaloneEntry(
-              normalizeWeaponFamilyDisplayLabels(
-                mergeFoamHammerStandaloneMembers(
-                  promoteWeaponCrossPostFamilies(
-                    mergeSameSlugWeaponFamilies([...preserved, ...incoming])
-                  )
-                )
-              )
-            )
-          )
-        )
-      )
-    ).sort((a, b) =>
+    let merged = disambiguateAriaSuitWeaponEntries([...preserved, ...incoming])
+    merged = mergeSameSlugWeaponFamilies(merged)
+    merged = promoteWeaponCrossPostFamilies(merged)
+    merged = mergeHardcodedWeaponFamilies(merged)
+    merged = splitPlayingCardSuitWeaponFamilies(merged)
+    merged = splitAriaSuitLevelsFromMixedWeaponFamilies(merged)
+    merged = splitApprovedMixedVariantWeaponFamilies(merged)
+    merged = mergeHardcodedWeaponFamilies(merged)
+    merged = mergeFoamHammerStandaloneMembers(merged)
+    merged = normalizeWeaponFamilyDisplayLabels(merged)
+    merged = applyInferredWeaponSpecials(merged)
+    merged = applyParsedArmorCustomizations(merged)
+    merged = splitFoamRolithStandaloneEntry(merged)
+    merged = dedupeWeaponEntriesBySlug(merged)
+    merged = removeDuplicateWeaponAliasClaims(merged)
+    merged = removeConflictingWeaponAliasSlugs(merged)
+    merged = removeMisleadingCrossSubtypeWeaponAliases(merged)
+    merged = canonicalizeWeaponAlsoSeeRefs(merged)
+    merged = addFoamHammerSiblingRefs(merged)
+    merged = normalizeDisambiguatedStandaloneWeaponNames(merged)
+    merged = removeWeaponAliasStandaloneEntries(merged).sort((a, b) =>
       compareTitles(
         'familyName' in a ? a.familyName : a.name,
         'familyName' in b ? b.familyName : b.name
@@ -2712,6 +4142,7 @@ async function main() {
   const urlArgs = getUrlFilterArgs()
   const limit = getLimitArg()
   const concurrency = getConcurrencyArg(2)
+  const fresh = getFreshArg()
   const selectedSubtypes = (
     subtypesArg
       ? subtypesArg.split(',').map((value) => value.trim())
@@ -2733,7 +4164,9 @@ async function main() {
         continue
       }
       directMessageIds.add(messageId)
-      const html = await fetchPostContent(messageId, cookie)
+      const html = /\bfb\.asp\?/i.test(url)
+        ? getPostContentForMessageId(await fetchThreadPostContent(messageId, cookie), messageId)
+        : await fetchPostContent(messageId, cookie)
       const title = getWeaponTitleFromHtml(html)
       if (!title) {
         console.warn(`⚠️  Skipping direct weapon URL without title block: ${url}`)
@@ -2760,6 +4193,7 @@ async function main() {
   const resolveAlsoSee = createWeaponRefResolver(allStubs)
   const scopedStubs = allStubs.filter((stub) => {
     if (!selectedSubtypes.includes(stub.subtype)) return false
+    if (shouldSkipWeaponStubForSubtype(stub)) return false
     if (directMessageIds.size > 0 && !directMessageIds.has(stub.messageId)) return false
     if (lettersArg && lettersArg.length > 0 && !lettersArg.includes(getInitialForName(stub.name))) {
       return false
@@ -2769,7 +4203,9 @@ async function main() {
   const namedStubs = applyNameFilter(scopedStubs, nameFilter, (stub) => stub.name)
   if (namedStubs.message) console.log(namedStubs.message)
   const selectedStubs = applyLimit(
-    dedupeCrossSubtypeSelectedStubs(namedStubs.entries, crossSubtypeContext),
+    directMessageIds.size > 0
+      ? namedStubs.entries
+      : dedupeCrossSubtypeSelectedStubs(namedStubs.entries, crossSubtypeContext),
     limit
   )
   if (selectedStubs.length === 0) {
@@ -2818,7 +4254,8 @@ async function main() {
     selectedSubtypes,
     lettersArg,
     namesArg && parsedNames.length > 0 ? parsedNames.map(normalizeWeaponTitleKey) : undefined,
-    directMessageIds.size > 0 ? parsedMessageIds : undefined
+    directMessageIds.size > 0 ? parsedMessageIds : undefined,
+    fresh
   )
 }
 

@@ -34,7 +34,7 @@ import weaponsStavesWandsOZUrl from '../data/weapons-staves-wands-o-z.json?url'
 import weaponsSwordsAxesMacesAGUrl from '../data/weapons-swords-axes-maces-a-g.json?url'
 import weaponsSwordsAxesMacesHNUrl from '../data/weapons-swords-axes-maces-h-n.json?url'
 import weaponsSwordsAxesMacesOZUrl from '../data/weapons-swords-axes-maces-o-z.json?url'
-import { splitMixedAccessObtainVariantRows } from './variantHelpers'
+import { orderLevelVariantsByAccess, splitMixedAccessObtainVariantRows } from './variantHelpers'
 
 let badgesCache: Badge[] | null = null
 let badgesPromise: Promise<Badge[]> | null = null
@@ -126,6 +126,13 @@ function isLoadedFamily(
   return 'levelVariants' in entry
 }
 
+function normalizeLoadedFamily<T extends ItemFamily>(family: T): T {
+  return splitMixedAccessObtainVariantRows({
+    ...family,
+    levelVariants: orderLevelVariantsByAccess(family.levelVariants),
+  })
+}
+
 async function fetchJson<T>(url: string): Promise<T> {
   const response = await fetch(url)
   if (!response.ok) {
@@ -182,10 +189,10 @@ export async function loadPetsAndGuests(): Promise<Array<Pet | ItemFamily>> {
       fetchJson<LoadedPetEntry[]>(guestsUrl),
     ]).then(([petsData, guestsData]) => {
       const pets = petsData.map((entry) =>
-        isLoadedFamily(entry) ? splitMixedAccessObtainVariantRows(entry) : normalizeLoadedPet(entry)
+        isLoadedFamily(entry) ? normalizeLoadedFamily(entry) : normalizeLoadedPet(entry)
       )
       const guests = guestsData.map((entry) =>
-        isLoadedFamily(entry) ? splitMixedAccessObtainVariantRows(entry) : normalizeLoadedPet(entry)
+        isLoadedFamily(entry) ? normalizeLoadedFamily(entry) : normalizeLoadedPet(entry)
       )
       petsCache = [...pets, ...guests] as Array<Pet | ItemFamily>
       return petsCache
@@ -239,7 +246,7 @@ export async function loadAccessoriesForSubtype(
     ).then((datasets) => {
       const entries = datasets
         .flat()
-        .map((entry) => (isLoadedFamily(entry) ? splitMixedAccessObtainVariantRows(entry) : entry))
+        .map((entry) => (isLoadedFamily(entry) ? normalizeLoadedFamily(entry) : entry))
       accessorySubtypeCache[subtype] = entries
       return entries
     })
@@ -293,7 +300,7 @@ export async function loadWeaponsForSubtype(subtype: WeaponSubtype): Promise<Wea
     ).then((datasets) => {
       const entries = datasets
         .flat()
-        .map((entry) => (isLoadedFamily(entry) ? splitMixedAccessObtainVariantRows(entry) : entry))
+        .map((entry) => (isLoadedFamily(entry) ? normalizeLoadedFamily(entry) : entry))
       weaponSubtypeCache[subtype] = entries
       return entries
     })

@@ -81,6 +81,8 @@ export interface Attack {
   name: string             // "Attack Type 1", "Attack Type 2 / 2.1"
   description: string      // Full description text
   images?: string[]        // URLs to attack animation images
+  imageCaptions?: string[] // Captions from the forum's hotlinked attack image labels
+  cooldown?: string        // Optional cooldown metric for special attack formats like pet dragon skills
   notes?: string[]         // Sub-bullet mechanic notes
 }
 
@@ -95,6 +97,8 @@ export interface GuestAttack {
   element: string          // "Energy", "Fire", "???"
   buttonImageUrl?: string  // URL to skill button icon
   appearanceUrl?: string   // URL to appearance/animation image (from hyperlink)
+  appearanceUrls?: string[] // Multiple appearance/animation images when a skill links variants
+  appearanceCaptions?: string[] // Captions from the forum's hotlinked appearance labels
   notes?: string           // Explicit "Other Information" for the skill (only when the forum labels it as such, separate from the effect's own bullet points)
 }
 

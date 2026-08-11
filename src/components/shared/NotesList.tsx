@@ -18,12 +18,13 @@ interface NotesListProps {
 
 interface NoteItem {
   text: string
-  subItems: string[]
+  subItems: NoteItem[]
   quoteItems: string[]
 }
 
-function isIndentedSubItem(line: string): boolean {
-  return /^\s+(?:[•\-*]\s*)?\S/.test(line)
+function getIndentLevel(line: string): number {
+  const spaces = line.match(/^\s*/)?.[0].length ?? 0
+  return Math.floor(spaces / 2)
 }
 
 function cleanListMarker(text: string): string {
@@ -57,10 +58,30 @@ function parseNotes(raw: string): NoteItem[] {
     const items: NoteItem[] = []
     const lines = raw.split('\n')
     let activeQuoteItem: NoteItem | null = null
+    const stack: Array<{ level: number; item: NoteItem }> = []
+
+    const addItem = (level: number, item: NoteItem) => {
+      if (level === 0 || stack.length === 0) {
+        items.push(item)
+      } else {
+        const parent = [...stack].reverse().find((entry) => entry.level < level)?.item
+        if (parent) {
+          parent.subItems.push(item)
+        } else {
+          items.push(item)
+        }
+      }
+
+      while (stack.length > 0 && stack[stack.length - 1].level >= level) {
+        stack.pop()
+      }
+      stack.push({ level, item })
+    }
 
     for (const line of lines) {
       const trimmed = line.trim()
       if (!trimmed) continue
+      const level = getIndentLevel(line)
 
       if (/^quote:$/i.test(trimmed)) {
         if (items.length === 0) {
@@ -70,7 +91,7 @@ function parseNotes(raw: string): NoteItem[] {
         continue
       }
 
-      if (isIndentedSubItem(line) && /^quote:$/i.test(cleanListMarker(trimmed))) {
+      if (level > 0 && /^quote:$/i.test(cleanListMarker(trimmed))) {
         if (items.length === 0) {
           items.push({ text: '', subItems: [], quoteItems: [] })
         }
@@ -81,7 +102,7 @@ function parseNotes(raw: string): NoteItem[] {
       if (activeQuoteItem) {
         if (
           activeQuoteItem.quoteItems.length === 0 ||
-          isIndentedSubItem(line) ||
+          level > 0 ||
           isLikelyQuoteContinuation(trimmed, activeQuoteItem.text)
         ) {
           activeQuoteItem.quoteItems.push(cleanListMarker(trimmed))
@@ -91,17 +112,7 @@ function parseNotes(raw: string): NoteItem[] {
         activeQuoteItem = null
       }
 
-      if (isIndentedSubItem(line)) {
-        // Sub-bullet — attach to previous item
-        if (items.length > 0) {
-          items[items.length - 1].subItems.push(cleanListMarker(trimmed))
-        } else {
-          items.push({ text: cleanListMarker(trimmed), subItems: [], quoteItems: [] })
-        }
-      } else {
-        // Top-level note
-        items.push({ text: cleanListMarker(trimmed), subItems: [], quoteItems: [] })
-      }
+      addItem(level, { text: cleanListMarker(trimmed), subItems: [], quoteItems: [] })
     }
     return items.filter((item) => item.text.length > 0 || item.quoteItems.length > 0)
   }
@@ -113,12 +124,9 @@ function parseNotes(raw: string): NoteItem[] {
     .map((text) => ({ text: cleanListMarker(text), subItems: [], quoteItems: [] }))
 }
 
-export default function NotesList({ notes, showPopups = true }: NotesListProps) {
-  const items = parseNotes(notes)
-  if (items.length === 0) return null
-
+function renderNoteItems(items: NoteItem[], showPopups: boolean) {
   return (
-    <ul className="space-y-2">
+    <ul className="space-y-1">
       {items.map((item, i) => (
         <li key={i}>
           {item.text && (
@@ -135,16 +143,7 @@ export default function NotesList({ notes, showPopups = true }: NotesListProps) 
             </div>
           )}
           {item.subItems.length > 0 && (
-            <ul className="ml-5 mt-1 space-y-1">
-              {item.subItems.map((sub, j) => (
-                <li key={j} className="flex gap-2 text-sm text-text-secondary leading-relaxed">
-                  <span className="text-text-muted mt-0.5 flex-shrink-0">•</span>
-                  <div className="min-w-0 flex-1">
-                    <PopupText text={sub} as="span" quoteClassName="mt-2" showPopups={showPopups} />
-                  </div>
-                </li>
-              ))}
-            </ul>
+            <div className="ml-5 mt-1">{renderNoteItems(item.subItems, showPopups)}</div>
           )}
           {item.quoteItems.length > 0 && (
             <div
@@ -163,4 +162,11 @@ export default function NotesList({ notes, showPopups = true }: NotesListProps) 
       ))}
     </ul>
   )
+}
+
+export default function NotesList({ notes, showPopups = true }: NotesListProps) {
+  const items = parseNotes(notes)
+  if (items.length === 0) return null
+
+  return <div className="[&>ul]:space-y-2">{renderNoteItems(items, showPopups)}</div>
 }

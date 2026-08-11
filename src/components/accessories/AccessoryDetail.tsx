@@ -30,6 +30,7 @@ import CollapsibleSection from '../shared/CollapsibleSection'
 import MetadataChipSection from '../shared/MetadataChipSection'
 import OtherInformationSection from '../shared/OtherInformationSection'
 import DetailTypePill from '../shared/DetailTypePill'
+import ItemImage from '../shared/ItemImage'
 import { buildFilterLink } from '../../utils/filterLinks'
 import AccessoryStatsTable from './AccessoryStatsTable'
 import AccessoryCard from './AccessoryCard'
@@ -46,25 +47,17 @@ const ACCESSORY_SUBTYPE_LABELS: Record<AccessorySubtype, string> = {
   trinket: 'Trinket',
 }
 
+const INTENTIONALLY_IMAGELESS_ACCESSORY_SLUGS = new Set([
+  'accessory-cloak-of-shadows',
+  'accessory-invisible-cape',
+  'accessory-invisible-helm',
+  'accessory-mantle-of-shadows',
+  'accessory-wrap-of-shadows',
+])
+
 interface AccessoryDetailProps {
   accessory: AccessoryEntry
   filterBase: string
-}
-
-function AccessoryImage({ src, name }: { src: string; name: string }) {
-  const [broken, setBroken] = useState(false)
-
-  if (!src || broken) return null
-
-  return (
-    <img
-      src={src}
-      alt={name}
-      loading="lazy"
-      onError={() => setBroken(true)}
-      className="max-w-xs w-full mx-auto rounded-xl border border-border-default shadow-medium img-fade"
-    />
-  )
 }
 
 function buildSingleVariant(entry: Accessory): ObtainVariant[] {
@@ -125,6 +118,10 @@ function getLevelSourceSuffix(level: LevelVariant): string {
   return levelLabel.toLowerCase() === 'as player' ? 'As player' : `Level ${levelLabel}`
 }
 
+function getForumMessageId(url: string): string | undefined {
+  return url.match(/[?&]m=(\d+)/i)?.[1]
+}
+
 function shouldDisplayAccessoryImages(
   accessory: AccessoryEntry,
   family: AccessoryFamily | undefined,
@@ -145,6 +142,14 @@ function shouldDisplayAccessoryImages(
     singleAccessory?.equipSpot,
     singleAccessory?.category,
   ].some(isCapeOrHelmLike)
+}
+
+function shouldSuppressMissingImagePlaceholder(accessory: AccessoryEntry): boolean {
+  const slugs = [
+    accessory.slug,
+    ...(isAccessoryFamily(accessory) ? (accessory.aliasSlugs ?? []) : []),
+  ]
+  return slugs.some((slug) => INTENTIONALLY_IMAGELESS_ACCESSORY_SLUGS.has(slug))
 }
 
 function ArtifactMetadataStrip({ modifies, equipSpot }: { modifies?: string; equipSpot?: string }) {
@@ -274,6 +279,8 @@ export default function AccessoryDetail({ accessory, filterBase }: AccessoryDeta
   }, [entryKey, allImages.length])
 
   const currentImage = allImages[activeImageIndex]
+  const showMissingImagePlaceholder =
+    shouldShowImages && allImages.length === 0 && !shouldSuppressMissingImagePlaceholder(accessory)
 
   const access = family
     ? { da: family.hasDA, dc: family.hasDC, dm: family.hasDM }
@@ -358,6 +365,15 @@ export default function AccessoryDetail({ accessory, filterBase }: AccessoryDeta
     for (const source of family.familySources ?? []) {
       if (family.levelVariants.some((level) => (level.sourceUrl ?? family.forumUrl) === source.url))
         continue
+      const sourceMessageId = getForumMessageId(source.url)
+      if (
+        sourceMessageId &&
+        family.levelVariants.some(
+          (level) => getForumMessageId(level.sourceUrl ?? family.forumUrl) === sourceMessageId
+        )
+      ) {
+        continue
+      }
 
       const label = normalizeSourceVariantLabel(source.variantLabel ?? source.title)
       const key = `${source.url}|${label}`.toLowerCase()
@@ -430,9 +446,13 @@ export default function AccessoryDetail({ accessory, filterBase }: AccessoryDeta
         </section>
       )}
 
-      {currentImage && (
+      {(currentImage || showMissingImagePlaceholder) && (
         <div className="mb-8">
-          <AccessoryImage src={currentImage.url} name={currentImage.caption ?? title} />
+          <ItemImage
+            src={currentImage?.url}
+            alt={currentImage?.caption ?? title}
+            showPlaceholder={showMissingImagePlaceholder}
+          />
           {allImages.length > 1 && (
             <div className="mt-4 flex flex-wrap gap-2 justify-center">
               {allImages.map((image, index) => (

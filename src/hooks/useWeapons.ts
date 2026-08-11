@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import type { ElementsData } from '../types/element'
 import type { AlsoSeeRef } from '../types/item'
-import type { WeaponEntry, WeaponFilters, WeaponSubtype } from '../types/weapon'
+import type { WeaponEntry, WeaponFamily, WeaponFilters, WeaponSubtype } from '../types/weapon'
 import { isWeaponFamily, WEAPON_SUBTYPES } from '../types/weapon'
 import {
   loadElements,
@@ -10,16 +10,17 @@ import {
   loadWeaponsForSubtype,
 } from '../utils/dataLoaders'
 import { compareTitles, displayTitle } from '../utils/displayText'
-import { obtainMethodInferenceFingerprint, relatedNameScore } from '../utils/relatedItems'
+import { getRelatedNameTokens, obtainMethodInferenceFingerprint } from '../utils/relatedItems'
 import { getSearchWords } from '../utils/search'
 import {
-  getDisplayFamilyName,
+  getFamilyCardDescription,
   getVersionSuffixRange,
   hasParentheticalVariantFamilyName,
   hasVersionSuffix,
   hasSameLevelVariants,
   stripVersionSuffix,
 } from '../utils/variantHelpers'
+import { useRelatedItems, type RelatedItemResult } from './useRelatedItems'
 
 const EMPTY_WEAPON_COUNTS = Object.fromEntries(
   WEAPON_SUBTYPES.map((meta) => [meta.subtype, 0])
@@ -104,6 +105,14 @@ function useWeaponCountsDataset() {
 
 export function getWeaponDisplayName(name: string): string {
   return displayTitle(stripVersionSuffix(name))
+}
+
+function compactParentheticalWeaponFamilyName(family: WeaponFamily): string {
+  return stripVersionSuffix(family.familyName)
+}
+
+export function getWeaponFamilyDisplayName(family: WeaponFamily): string {
+  return getWeaponDisplayName(compactParentheticalWeaponFamilyName(family))
 }
 
 function searchWeapons(
@@ -220,7 +229,7 @@ function weaponMatchesSlug(entry: WeaponEntry, slug?: string): boolean {
 
 function getWeaponRelatedDisplayName(entry: WeaponEntry): string {
   return isWeaponFamily(entry)
-    ? getWeaponDisplayName(getDisplayFamilyName(entry))
+    ? getWeaponFamilyDisplayName(entry)
     : getWeaponDisplayName(entry.name)
 }
 
@@ -228,8 +237,87 @@ function getWeaponSlugs(entry: WeaponEntry): string[] {
   return [entry.slug, ...(isWeaponFamily(entry) ? (entry.aliasSlugs ?? []) : [])]
 }
 
+function isSameWeaponEntry(candidate: WeaponEntry, item: WeaponEntry): boolean {
+  return (
+    candidate.subtype === item.subtype &&
+    getWeaponSlugs(candidate).some((slug) => slug === item.slug)
+  )
+}
+
 function getWeaponAlsoSeeRefs(entry: WeaponEntry): AlsoSeeRef[] {
-  return isWeaponFamily(entry) ? (entry.shared.alsoSee ?? []) : (entry.alsoSee ?? [])
+  const refs = isWeaponFamily(entry) ? (entry.shared.alsoSee ?? []) : (entry.alsoSee ?? [])
+  if (entry.slug === 'weapon-staff-of-hearts-aria-in-wanderland') return refs
+  return refs.filter((ref) => ref.slug !== 'weapon-staff-of-hearts-aria-in-wanderland')
+}
+
+function getWeaponSourceUrls(entry: WeaponEntry): string[] {
+  return [
+    entry.forumUrl,
+    ...(isWeaponFamily(entry) ? (entry.familySources ?? []).map((source) => source.url) : []),
+  ].filter(Boolean)
+}
+
+function getWeaponPriceTypes(entry: WeaponEntry): Set<string> {
+  const methods = isWeaponFamily(entry)
+    ? entry.levelVariants.flatMap((level) => level.obtainVariants)
+    : entry.obtainMethods
+
+  return new Set(methods.map((method) => method.priceType))
+}
+
+function normalizeRelatedWeaponName(entry: WeaponEntry): string {
+  return stripVersionSuffix(getWeaponRelatedDisplayName(entry)).toLowerCase()
+}
+
+function isExcludedWeaponRelatedPair(candidate: WeaponEntry, item: WeaponEntry): boolean {
+  const staffOfHeartsSlugs = new Set([
+    'weapon-staff-of-hearts',
+    'weapon-staff-of-hearts-card-shoppe',
+    'weapon-staff-of-hearts-aria-in-wanderland',
+  ])
+  const currentSlugs = new Set(getWeaponSlugs(item))
+  const candidateSlugs = new Set(getWeaponSlugs(candidate))
+  const currentIsAria = currentSlugs.has('weapon-staff-of-hearts-aria-in-wanderland')
+  const candidateIsAria = candidateSlugs.has('weapon-staff-of-hearts-aria-in-wanderland')
+  const currentIsStaffOfHearts = [...currentSlugs].some((slug) => staffOfHeartsSlugs.has(slug))
+  const candidateIsStaffOfHearts = [...candidateSlugs].some((slug) => staffOfHeartsSlugs.has(slug))
+
+  if (currentIsStaffOfHearts && candidateIsStaffOfHearts && currentIsAria !== candidateIsAria) {
+    return true
+  }
+
+  const pairSlugs = new Set([...currentSlugs, ...candidateSlugs])
+  return pairSlugs.has('weapon-under-current') && pairSlugs.has('weapon-rip-current')
+}
+
+function isSpecificExactWeaponSibling(candidate: WeaponEntry, item: WeaponEntry): boolean {
+  if (candidate.subtype === item.subtype) return false
+  if (isExcludedWeaponRelatedPair(candidate, item)) return false
+  if (normalizeRelatedWeaponName(candidate) !== normalizeRelatedWeaponName(item)) return false
+  if (getRelatedNameTokens(getWeaponRelatedDisplayName(item)).length < 2) return false
+
+  const currentPriceTypes = getWeaponPriceTypes(item)
+  return [...getWeaponPriceTypes(candidate)].some((priceType) => currentPriceTypes.has(priceType))
+}
+
+function hasContainedMeaningfulWeaponName(candidate: WeaponEntry, item: WeaponEntry): boolean {
+  if (candidate.subtype !== item.subtype) return false
+  const currentName = normalizeRelatedWeaponName(item)
+  const candidateName = normalizeRelatedWeaponName(candidate)
+  if (currentName === candidateName) return false
+  const shorter = currentName.length <= candidateName.length ? currentName : candidateName
+  const longer = currentName.length > candidateName.length ? currentName : candidateName
+  if (getRelatedNameTokens(shorter).length < 4) return false
+  return longer.includes(shorter)
+}
+
+function isDeathKnightBladeSibling(candidate: WeaponEntry, item: WeaponEntry): boolean {
+  if (candidate.subtype !== item.subtype) return false
+  const currentName = normalizeRelatedWeaponName(item)
+  const candidateName = normalizeRelatedWeaponName(candidate)
+  if (!/\bdeathknight blade\b/i.test(currentName)) return false
+  if (!/\bdeathknight blade\b/i.test(candidateName)) return false
+  return !/\bdefault\b/i.test(currentName) && !/\bdefault\b/i.test(candidateName)
 }
 
 function getWeaponObtainFingerprints(entry: WeaponEntry): Set<string> {
@@ -238,6 +326,12 @@ function getWeaponObtainFingerprints(entry: WeaponEntry): Set<string> {
     : entry.obtainMethods
 
   return new Set(methods.map(obtainMethodInferenceFingerprint))
+}
+
+function loadAllWeapons() {
+  return loadWeaponsBySubtype().then((data) =>
+    WEAPON_SUBTYPES.flatMap((meta) => data[meta.subtype])
+  )
 }
 
 export function useWeaponBySlug(subtype: WeaponSubtype, slug?: string) {
@@ -250,168 +344,49 @@ export function useWeaponBySlug(subtype: WeaponSubtype, slug?: string) {
   return { weapon, loading }
 }
 
-export function useRelatedWeapons(alsoSee: AlsoSeeRef[] = []) {
-  const [allWeapons, setAllWeapons] = useState<WeaponEntry[]>([])
-  const [loading, setLoading] = useState(alsoSee.length > 0)
-
-  useEffect(() => {
-    if (alsoSee.length === 0) {
-      setAllWeapons([])
-      setLoading(false)
-      return
-    }
-
-    let active = true
-    setLoading(true)
-    loadWeaponsBySubtype()
-      .then((data) => {
-        if (!active) return
-        setAllWeapons(WEAPON_SUBTYPES.flatMap((meta) => data[meta.subtype]))
-        setLoading(false)
-      })
-      .catch(() => {
-        if (!active) return
-        setAllWeapons([])
-        setLoading(false)
-      })
-
-    return () => {
-      active = false
-    }
-  }, [alsoSee.length])
-
-  const relatedWeapons = useMemo(
-    () =>
-      alsoSee.map((ref) => ({
-        ref,
-        entry: allWeapons.find((item) => weaponMatchesSlug(item, ref.slug)),
-      })),
-    [allWeapons, alsoSee]
-  )
-
-  return { relatedWeapons, loading }
-}
-
-export interface WeaponRelatedItem {
-  ref?: AlsoSeeRef
-  entry?: WeaponEntry
-  relation: 'explicit' | 'same-obtain-near-name'
-  scope: 'same-subtype' | 'cross-subtype'
-}
+export type WeaponRelatedItem = RelatedItemResult<WeaponEntry, AlsoSeeRef>
 
 const INFERRED_WEAPON_RELATED_LIMIT = 8
 const INFERRED_WEAPON_RELATED_NAME_THRESHOLD = 0.7
 
 export function useWeaponRelatedItems(weapon: WeaponEntry, alsoSee: AlsoSeeRef[] = []) {
-  const [allWeapons, setAllWeapons] = useState<WeaponEntry[]>([])
-  const [loading, setLoading] = useState(true)
-
-  useEffect(() => {
-    let active = true
-    setLoading(true)
-    loadWeaponsBySubtype()
-      .then((data) => {
-        if (!active) return
-        setAllWeapons(WEAPON_SUBTYPES.flatMap((meta) => data[meta.subtype]))
-        setLoading(false)
-      })
-      .catch(() => {
-        if (!active) return
-        setAllWeapons([])
-        setLoading(false)
-      })
-
-    return () => {
-      active = false
-    }
-  }, [])
-
-  const relatedWeapons = useMemo<WeaponRelatedItem[]>(() => {
-    const currentSlugs = new Set(getWeaponSlugs(weapon))
-    const explicitSlugSet = new Set(alsoSee.map((ref) => ref.slug))
-    const explicitRelated = alsoSee.map((ref) => {
-      const entry = allWeapons.find((item) => weaponMatchesSlug(item, ref.slug))
-      return {
-        ref,
-        entry,
-        relation: 'explicit' as const,
-        scope:
-          entry && entry.subtype !== weapon.subtype
-            ? ('cross-subtype' as const)
-            : ('same-subtype' as const),
+  const filteredAlsoSee = alsoSee.filter((ref) => {
+    if (weapon.slug !== 'weapon-staff-of-hearts-aria-in-wanderland') return true
+    return ref.slug !== 'weapon-staff-of-hearts'
+  })
+  const { relatedItems, loading } = useRelatedItems({
+    item: weapon,
+    alsoSee: filteredAlsoSee,
+    loadAll: loadAllWeapons,
+    getSlugs: getWeaponSlugs,
+    getRefs: getWeaponAlsoSeeRefs,
+    getDisplayName: getWeaponRelatedDisplayName,
+    getFingerprints: getWeaponObtainFingerprints,
+    getScope: (entry) => entry.subtype,
+    getSourceUrls: getWeaponSourceUrls,
+    matchesRef: (entry, ref) =>
+      ref.slug === 'weapon-rip-tide' ? entry.slug === ref.slug : weaponMatchesSlug(entry, ref.slug),
+    refTargetsItem: (ref, _item, currentSlugs) => {
+      const refIsAriaStaff = ref.slug === 'weapon-staff-of-hearts-aria-in-wanderland'
+      const itemIsAriaStaff = currentSlugs.has('weapon-staff-of-hearts-aria-in-wanderland')
+      if (refIsAriaStaff !== itemIsAriaStaff && ref.slug.includes('staff-of-hearts')) {
+        return false
       }
-    })
-    const reverseExplicitRelated = allWeapons.flatMap((candidate) => {
-      const candidateSlugs = getWeaponSlugs(candidate)
-      if (candidateSlugs.some((slug) => currentSlugs.has(slug))) return []
-      if (candidateSlugs.some((slug) => explicitSlugSet.has(slug))) return []
+      return currentSlugs.has(ref.slug)
+    },
+    isSameItem: isSameWeaponEntry,
+    dedupeKey: (entry, slug) => `${entry.subtype}:${slug}`,
+    hasInferredRelation: (candidate, currentItem, { hasSharedFingerprint }) =>
+      !isExcludedWeaponRelatedPair(candidate, currentItem) &&
+      (hasSharedFingerprint ||
+        isSpecificExactWeaponSibling(candidate, currentItem) ||
+        hasContainedMeaningfulWeaponName(candidate, currentItem) ||
+        isDeathKnightBladeSibling(candidate, currentItem)),
+    limit: INFERRED_WEAPON_RELATED_LIMIT,
+    nameThreshold: INFERRED_WEAPON_RELATED_NAME_THRESHOLD,
+  })
 
-      const linksToCurrent = getWeaponAlsoSeeRefs(candidate).some((ref) =>
-        currentSlugs.has(ref.slug)
-      )
-      if (!linksToCurrent) return []
-
-      return [
-        {
-          ref: undefined,
-          entry: candidate,
-          relation: 'explicit' as const,
-          scope:
-            candidate.subtype !== weapon.subtype
-              ? ('cross-subtype' as const)
-              : ('same-subtype' as const),
-        },
-      ]
-    })
-
-    const currentFingerprints = getWeaponObtainFingerprints(weapon)
-    const currentName = getWeaponRelatedDisplayName(weapon)
-    const inferredRelated = allWeapons
-      .flatMap((candidate) => {
-        if (candidate.subtype !== weapon.subtype) return []
-        const candidateSlugs = getWeaponSlugs(candidate)
-        if (candidateSlugs.some((slug) => currentSlugs.has(slug))) return []
-        if (candidateSlugs.some((slug) => explicitSlugSet.has(slug))) return []
-
-        const hasSharedObtainMethod = [...getWeaponObtainFingerprints(candidate)].some(
-          (fingerprint) => currentFingerprints.has(fingerprint)
-        )
-        if (!hasSharedObtainMethod) return []
-
-        const score = relatedNameScore(currentName, getWeaponRelatedDisplayName(candidate))
-        if (score < INFERRED_WEAPON_RELATED_NAME_THRESHOLD) return []
-
-        return [
-          {
-            ref: undefined,
-            entry: candidate,
-            relation: 'same-obtain-near-name' as const,
-            scope: 'same-subtype' as const,
-            score,
-          },
-        ]
-      })
-      .sort(
-        (first, second) =>
-          second.score - first.score ||
-          compareTitles(
-            getWeaponRelatedDisplayName(first.entry),
-            getWeaponRelatedDisplayName(second.entry)
-          )
-      )
-      .slice(0, INFERRED_WEAPON_RELATED_LIMIT)
-      .map(({ score: _score, ...item }) => item)
-
-    const seen = new Set<string>()
-    return [...explicitRelated, ...reverseExplicitRelated, ...inferredRelated].filter((item) => {
-      const slug = item.entry?.slug ?? item.ref?.slug
-      if (!slug || seen.has(slug)) return false
-      seen.add(slug)
-      return true
-    })
-  }, [allWeapons, alsoSee, weapon])
-
-  return { relatedWeapons, loading }
+  return { relatedWeapons: relatedItems, loading }
 }
 
 export function useWeaponCategoryAvailability(subtype: WeaponSubtype) {
@@ -459,8 +434,8 @@ export function buildWeaponCardData(entry: WeaponEntry) {
   }
 
   return {
-    name: getWeaponDisplayName(getDisplayFamilyName(entry)),
-    description: entry.shared.description,
+    name: getWeaponFamilyDisplayName(entry),
+    description: getFamilyCardDescription(entry),
     elements: entry.elements,
     daRequired: entry.hasDA,
     dcRequired: entry.hasDC,

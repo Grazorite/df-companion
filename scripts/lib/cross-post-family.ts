@@ -674,10 +674,16 @@ export function canonicalizePromotedRelationships(items: Array<ScrapedEntry>): A
     }
   }
 
-  const resolveRef = (name: string, fallbackSlug: string, fallbackType: EntryType) =>
-    slugToCanonical.get(fallbackSlug) ??
-    nameToCanonical.get(name.toLowerCase()) ??
-    nameToCanonical.get(normalizeRefLookupName(name)) ?? { slug: fallbackSlug, type: fallbackType }
+  const resolveRef = (name: string, fallbackSlug: string, fallbackType: EntryType) => {
+    const slugResolved = slugToCanonical.get(fallbackSlug)
+    if (slugResolved) return slugResolved
+
+    const nameResolved =
+      nameToCanonical.get(name.toLowerCase()) ?? nameToCanonical.get(normalizeRefLookupName(name))
+    if (nameResolved?.type === fallbackType) return nameResolved
+
+    return { slug: fallbackSlug, type: fallbackType }
+  }
 
   const canonicalized = items.map((item) => {
     if (isItemFamily(item)) {

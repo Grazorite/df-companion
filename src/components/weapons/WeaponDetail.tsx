@@ -4,7 +4,11 @@ import { ChevronDown, ImageOff } from 'lucide-react'
 import type { LevelVariant, ObtainVariant } from '../../types/item'
 import type { Weapon, WeaponEntry, WeaponFamily, WeaponSpecial } from '../../types/weapon'
 import { isWeaponFamily } from '../../types/weapon'
-import { useWeaponRelatedItems } from '../../hooks/useWeapons'
+import {
+  getWeaponDisplayName,
+  getWeaponFamilyDisplayName,
+  useWeaponRelatedItems,
+} from '../../hooks/useWeapons'
 import { displayTitle, normalizeDisplayText } from '../../utils/displayText'
 import {
   buildDisplayImages,
@@ -12,7 +16,6 @@ import {
   normalizeImageCaption,
 } from '../../utils/imageLabels'
 import {
-  getDisplayFamilyName,
   getLevelVariantLabels,
   hasParentheticalVariantFamilyName,
   isSingleVariant,
@@ -20,7 +23,6 @@ import {
   obtainVariantHasDC,
   stripVersionSuffix,
 } from '../../utils/variantHelpers'
-import { getWeaponDisplayName } from '../../hooks/useWeapons'
 import AccessPills from '../shared/AccessPills'
 import CollapsibleSection from '../shared/CollapsibleSection'
 import ElementPill from '../shared/ElementPill'
@@ -32,8 +34,11 @@ import OtherInformationSection from '../shared/OtherInformationSection'
 import PopupText, { PopupQuoteBlocks } from '../shared/PopupText'
 import DetailTypePill from '../shared/DetailTypePill'
 import { buildFilterLink } from '../../utils/filterLinks'
+import { extractRateFromEffect } from '../../utils/effectFormatting'
 import { splitPopupText } from '../../utils/popupText'
 import SourceLinksCard from '../shared/SourceLinksCard'
+import ItemImage from '../shared/ItemImage'
+import MetricStrip from '../shared/MetricStrip'
 import WeaponCard from './WeaponCard'
 import WeaponStatsTable from './WeaponStatsTable'
 
@@ -47,22 +52,6 @@ const WEAPON_SUBTYPE_FALLBACK_LABELS: Record<WeaponEntry['subtype'], string> = {
   'staff-wand': 'Staff/Wand',
   dagger: 'Dagger',
   scythe: 'Scythe',
-}
-
-function WeaponImage({ src, name }: { src: string; name: string }) {
-  const [broken, setBroken] = useState(false)
-
-  if (!src || broken) return null
-
-  return (
-    <img
-      src={src}
-      alt={name}
-      loading="lazy"
-      onError={() => setBroken(true)}
-      className="max-w-xs w-full mx-auto rounded-xl border border-border-default shadow-medium img-fade"
-    />
-  )
 }
 
 function WeaponSpecialButton({ imageUrl, name }: { imageUrl?: string; name: string }) {
@@ -84,54 +73,6 @@ function WeaponSpecialButton({ imageUrl, name }: { imageUrl?: string; name: stri
       onError={() => setBroken(true)}
       className="w-16 h-20 object-contain rounded border border-border-default shadow-subtle"
     />
-  )
-}
-
-function extractRateFromEffect(effect?: string): { effectText?: string; rate?: string } {
-  if (!effect) return {}
-
-  const rateMatches = [...effect.matchAll(/(?:\[|\()Rate:\s*([^\])]+)(?:\]|\))/gi)]
-  const rate = rateMatches.at(-1)?.[1]?.trim()
-  if (!rate) return { effectText: effect }
-
-  const effectText = effect
-    .replace(/\s*(?:\[|\()Rate:\s*[^\])]+(?:\]|\))/gi, '')
-    .split('\n')
-    .map((line) => {
-      const leadingWhitespace = line.match(/^\s*/)?.[0] ?? ''
-      const body = line.slice(leadingWhitespace.length)
-      return `${leadingWhitespace}${body
-        .replace(/[^\S\n]{2,}/g, ' ')
-        .replace(/[^\S\n]+([;,.!?])/g, '$1')}`.trimEnd()
-    })
-    .join('\n')
-    .trim()
-
-  return { effectText, rate }
-}
-
-function WeaponSpecialMetricStrip({
-  metrics,
-}: {
-  metrics: Array<{ label: string; value?: string }>
-}) {
-  if (metrics.length === 0) return null
-
-  return (
-    <div
-      className={`grid gap-2 text-center bg-bg-base rounded-lg p-3 ${
-        metrics.length > 1 ? 'grid-cols-2' : 'grid-cols-1'
-      }`}
-    >
-      {metrics.map((metric) => (
-        <div key={metric.label}>
-          <p className="text-[10px] text-text-muted uppercase tracking-wider mb-0.5">
-            {metric.label}
-          </p>
-          <p className="text-xs font-medium text-text-secondary">{metric.value || '—'}</p>
-        </div>
-      ))}
-    </div>
   )
 }
 
@@ -195,7 +136,7 @@ function WeaponSpecialCard({
               />
             )}
 
-            <WeaponSpecialMetricStrip metrics={metrics} />
+            <MetricStrip metrics={metrics} />
           </div>
 
           {special.notes && (
@@ -388,7 +329,7 @@ export default function WeaponDetail({ weapon, filterBase }: WeaponDetailProps) 
     : undefined
 
   const title = family
-    ? getWeaponDisplayName(getDisplayFamilyName(family))
+    ? getWeaponFamilyDisplayName(family)
     : getWeaponDisplayName(singleWeapon?.name ?? 'Weapon')
   const description = family
     ? (activeLevel?.description ?? family.shared.description)
@@ -600,12 +541,8 @@ export default function WeaponDetail({ weapon, filterBase }: WeaponDetailProps) 
     return links
   }, [family, title, useLevelOnlyLabels, weapon.forumUrl])
   const alsoSeeRefs = useMemo(() => {
-    const currentSlugs = new Set(
-      family ? [family.slug, ...(family.aliasSlugs ?? [])] : [singleWeapon?.slug ?? weapon.slug]
-    )
-    const refs = family ? (family.shared.alsoSee ?? []) : (singleWeapon?.alsoSee ?? [])
-    return refs.filter((ref) => !currentSlugs.has(ref.slug))
-  }, [family, singleWeapon, weapon.slug])
+    return family ? (family.shared.alsoSee ?? []) : (singleWeapon?.alsoSee ?? [])
+  }, [family, singleWeapon])
   const { relatedWeapons } = useWeaponRelatedItems(weapon, alsoSeeRefs)
   const resolvedRelatedWeapons = relatedWeapons.flatMap((related) =>
     related.entry ? [{ ref: related.ref, entry: related.entry }] : []
@@ -659,32 +596,30 @@ export default function WeaponDetail({ weapon, filterBase }: WeaponDetailProps) 
         </section>
       )}
 
-      {currentImage && (
-        <div className="mb-8">
-          <WeaponImage src={currentImage.url} name={currentImage.caption ?? title} />
-          {allImages.length > 1 && (
-            <div className="mt-4 flex flex-wrap gap-2 justify-center">
-              {allImages.map((image, index) => (
-                <button
-                  key={`${image.url}-${index}`}
-                  onClick={() => {
-                    setActiveImageIndex(index)
-                    const variantIndex = imageVariantIndexes[index]
-                    if (variantIndex !== undefined) setActiveIndex(variantIndex)
-                  }}
-                  className={`min-h-11 px-4 py-2 rounded-lg text-sm transition-colors ${
-                    activeImageIndex === index
-                      ? 'bg-gold text-bg-base'
-                      : 'bg-bg-surface border border-border-default text-text-secondary hover:text-text-primary hover:border-border-hover'
-                  }`}
-                >
-                  {image.caption}
-                </button>
-              ))}
-            </div>
-          )}
-        </div>
-      )}
+      <div className="mb-8">
+        <ItemImage src={currentImage?.url} alt={currentImage?.caption ?? title} showPlaceholder />
+        {allImages.length > 1 && (
+          <div className="mt-4 flex flex-wrap gap-2 justify-center">
+            {allImages.map((image, index) => (
+              <button
+                key={`${image.url}-${index}`}
+                onClick={() => {
+                  setActiveImageIndex(index)
+                  const variantIndex = imageVariantIndexes[index]
+                  if (variantIndex !== undefined) setActiveIndex(variantIndex)
+                }}
+                className={`min-h-11 px-4 py-2 rounded-lg text-sm transition-colors ${
+                  activeImageIndex === index
+                    ? 'bg-gold text-bg-base'
+                    : 'bg-bg-surface border border-border-default text-text-secondary hover:text-text-primary hover:border-border-hover'
+                }`}
+              >
+                {image.caption}
+              </button>
+            ))}
+          </div>
+        )}
+      </div>
 
       {armorCustomization && (
         <ArmorCustomizationMetadataStrip
@@ -747,7 +682,14 @@ export default function WeaponDetail({ weapon, filterBase }: WeaponDetailProps) 
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
             {resolvedRelatedWeapons.map(({ ref, entry }) => (
               <li key={`${entry.slug}-${ref?.url ?? 'route'}`}>
-                <WeaponCard weapon={entry} />
+                <WeaponCard
+                  weapon={entry}
+                  badgeLabel={
+                    entry.subtype !== weapon.subtype
+                      ? WEAPON_SUBTYPE_FALLBACK_LABELS[entry.subtype]
+                      : undefined
+                  }
+                />
               </li>
             ))}
           </ul>

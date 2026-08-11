@@ -4,9 +4,10 @@ import type { ItemFamily } from '../types/item'
 import type { ElementsData } from '../types/element'
 import { loadElements, loadPetsAndGuests, loadPetsGuestsManifest } from '../utils/dataLoaders'
 import { compareTitles, displayTitle } from '../utils/displayText'
-import { obtainMethodInferenceFingerprint, relatedNameScore } from '../utils/relatedItems'
+import { obtainMethodInferenceFingerprint } from '../utils/relatedItems'
 import { getSearchWords } from '../utils/search'
 import { getDisplayFamilyName, getFamilyCardDescription } from '../utils/variantHelpers'
+import { useRelatedItems, type RelatedItemRef } from './useRelatedItems'
 
 function isItemFamily(item: Pet | ItemFamily): item is ItemFamily {
   return 'levelVariants' in item && 'familyName' in item
@@ -45,6 +46,12 @@ function getPetObtainFingerprints(item: Pet | ItemFamily): Set<string> {
   return new Set(methods.map(obtainMethodInferenceFingerprint))
 }
 
+type PetRelatedRef = RelatedItemRef
+
+function getPetAlsoSeeRefs(item: Pet | ItemFamily): PetRelatedRef[] {
+  return (isItemFamily(item) ? (item.shared.alsoSee ?? []) : item.alsoSee) as PetRelatedRef[]
+}
+
 function normalizePetRelatedText(value?: string): string {
   return (value ?? '').toLowerCase().replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim()
 }
@@ -75,10 +82,14 @@ function dedupeVariantEntries(items: Array<Pet | ItemFamily>) {
   for (const item of items) {
     const displayName = getDisplayName(item)
     const normalizedName = normalizeDuplicateVariantName(displayName)
-    const existing = canonicalByNormalized.get(normalizedName)
+    // Pets and guests may intentionally share display names, especially
+    // <Dragon>. Dedupe only within the same entry type so cross-type Also See
+    // refs do not collapse into self-links.
+    const normalizedKey = `${item.type}:${normalizedName}`
+    const existing = canonicalByNormalized.get(normalizedKey)
 
     if (!existing) {
-      canonicalByNormalized.set(normalizedName, item)
+      canonicalByNormalized.set(normalizedKey, item)
       continue
     }
 
@@ -99,7 +110,7 @@ function dedupeVariantEntries(items: Array<Pet | ItemFamily>) {
       if (isItemFamily(existing)) {
         existing.aliasSlugs?.forEach((alias) => aliasToCanonicalSlug.set(alias, item.slug))
       }
-      canonicalByNormalized.set(normalizedName, item)
+      canonicalByNormalized.set(normalizedKey, item)
     } else {
       aliasToCanonicalSlug.set(item.slug, existing.slug)
     }
@@ -399,60 +410,36 @@ const INFERRED_RELATED_LIMIT = 8
 const INFERRED_RELATED_NAME_THRESHOLD = 0.55
 const INFERRED_RELATED_LOCATION_NAME_THRESHOLD = 0.63
 
-export function useRelatedPets(
-  item: Pet | ItemFamily,
-  alsoSee: { slug: string; name: string; type: string }[] = []
-) {
+export function useRelatedPets(item: Pet | ItemFamily, alsoSee: PetRelatedRef[] = []) {
   const { allPets, petSlugAliases } = usePetDataset()
-  return useMemo(() => {
-    const currentSlugs = new Set(getPetSlugs(item))
-    const explicitSlugSet = new Set(alsoSee.map((ref) => petSlugAliases.get(ref.slug) ?? ref.slug))
-    const explicitRelated = alsoSee
-      .map((ref) => allPets.find((candidate) => petMatchesSlug(candidate, ref.slug, petSlugAliases)))
-      .filter((candidate): candidate is Pet | ItemFamily => Boolean(candidate))
-
-    const currentFingerprints = getPetObtainFingerprints(item)
-    const currentLocations = getPetObtainLocations(item)
-    const currentName = getDisplayName(item)
-    const inferredRelated = allPets
-      .flatMap((candidate) => {
-        if (candidate.type !== item.type) return []
-        if (getPetSlugs(candidate).some((slug) => currentSlugs.has(slug))) return []
-        if (getPetSlugs(candidate).some((slug) => explicitSlugSet.has(slug))) return []
-
-        const hasSharedObtainMethod = [...getPetObtainFingerprints(candidate)].some((fingerprint) =>
-          currentFingerprints.has(fingerprint)
-        )
-        const score = relatedNameScore(currentName, getDisplayName(candidate))
-        const hasSharedMeaningfulLocation = [...getPetObtainLocations(candidate)].some(
-          (location) => currentLocations.has(location)
-        )
-        if (
-          !hasSharedObtainMethod &&
-          (!hasSharedMeaningfulLocation || score < INFERRED_RELATED_LOCATION_NAME_THRESHOLD)
-        ) {
-          return []
-        }
-
-        if (score < INFERRED_RELATED_NAME_THRESHOLD) return []
-
-        return [{ candidate, score }]
-      })
-      .sort(
-        (first, second) =>
-          second.score - first.score ||
-          compareTitles(getDisplayName(first.candidate), getDisplayName(second.candidate))
+  const currentLocations = useMemo(() => getPetObtainLocations(item), [item])
+  const { relatedItems } = useRelatedItems({
+    item,
+    alsoSee,
+    items: allPets,
+    loadAll: loadPetsAndGuests,
+    getSlugs: getPetSlugs,
+    getRefs: getPetAlsoSeeRefs,
+    getDisplayName,
+    getFingerprints: getPetObtainFingerprints,
+    getScope: (entry) => entry.type,
+    getRefSlug: (ref) => petSlugAliases.get(ref.slug) ?? ref.slug,
+    matchesRef: (entry, ref) => petMatchesSlug(entry, ref.slug, petSlugAliases),
+    refTargetsItem: (ref, _currentItem, currentSlugs) =>
+      currentSlugs.has(petSlugAliases.get(ref.slug) ?? ref.slug),
+    inferCandidate: (candidate, currentItem) => candidate.type === currentItem.type,
+    hasInferredRelation: (candidate, _currentItem, { hasSharedFingerprint, score }) => {
+      if (hasSharedFingerprint) return true
+      const hasSharedMeaningfulLocation = [...getPetObtainLocations(candidate)].some((location) =>
+        currentLocations.has(location)
       )
-      .slice(0, INFERRED_RELATED_LIMIT)
-      .map(({ candidate }) => candidate)
+      return hasSharedMeaningfulLocation && score >= INFERRED_RELATED_LOCATION_NAME_THRESHOLD
+    },
+    limit: INFERRED_RELATED_LIMIT,
+    nameThreshold: INFERRED_RELATED_NAME_THRESHOLD,
+  })
 
-    const seen = new Set<string>()
-    return [...explicitRelated, ...inferredRelated].filter((candidate) => {
-      if (seen.has(candidate.slug) || currentSlugs.has(candidate.slug)) return false
-      seen.add(candidate.slug)
-      return true
-    })
-  }, [allPets, alsoSee, item, petSlugAliases])
+  return relatedItems.flatMap((related) => (related.entry ? [related.entry] : []))
 }
 
 export function useTotalPetCount() {

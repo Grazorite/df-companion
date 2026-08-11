@@ -17,12 +17,14 @@ import {
 import { compareTitles, displayTitle } from '../utils/displayText'
 import { parseArmorCustomization } from '../utils/armorCustomization'
 import { getSearchWords } from '../utils/search'
-import { obtainMethodInferenceFingerprint, relatedNameScore } from '../utils/relatedItems'
+import { obtainMethodInferenceFingerprint } from '../utils/relatedItems'
 import {
   getDisplayFamilyName,
+  getFamilyCardDescription,
   hasParentheticalVariantFamilyName,
   hasSameLevelVariants,
 } from '../utils/variantHelpers'
+import { useRelatedItems, type RelatedItemResult } from './useRelatedItems'
 
 const EMPTY_ACCESSORY_COUNTS = Object.fromEntries(
   ACCESSORY_SUBTYPES.map((meta) => [meta.subtype, 0])
@@ -262,6 +264,12 @@ function getAccessoryObtainFingerprints(entry: AccessoryEntry): Set<string> {
   return new Set(methods.map(obtainMethodInferenceFingerprint))
 }
 
+function loadAllAccessories() {
+  return loadAccessoriesBySubtype().then((data) =>
+    ACCESSORY_SUBTYPES.flatMap((meta) => data[meta.subtype])
+  )
+}
+
 export function useAccessoryBySlug(subtype: AccessorySubtype, slug?: string) {
   const { accessories, loading } = useAccessorySubtypeDataset(subtype)
   const accessory = useMemo(() => {
@@ -272,167 +280,27 @@ export function useAccessoryBySlug(subtype: AccessorySubtype, slug?: string) {
   return { accessory, loading }
 }
 
-export function useRelatedAccessories(alsoSee: AlsoSeeRef[] = []) {
-  const [allAccessories, setAllAccessories] = useState<AccessoryEntry[]>([])
-  const [loading, setLoading] = useState(alsoSee.length > 0)
-
-  useEffect(() => {
-    if (alsoSee.length === 0) {
-      setAllAccessories([])
-      setLoading(false)
-      return
-    }
-
-    let active = true
-    setLoading(true)
-    loadAccessoriesBySubtype()
-      .then((data) => {
-        if (!active) return
-        setAllAccessories(ACCESSORY_SUBTYPES.flatMap((meta) => data[meta.subtype]))
-        setLoading(false)
-      })
-      .catch(() => {
-        if (!active) return
-        setAllAccessories([])
-        setLoading(false)
-      })
-
-    return () => {
-      active = false
-    }
-  }, [alsoSee.length])
-
-  const relatedAccessories = useMemo(
-    () =>
-      alsoSee.map((ref) => ({
-        ref,
-        entry: allAccessories.find((item) => accessoryMatchesSlug(item, ref.slug)),
-      })),
-    [allAccessories, alsoSee]
-  )
-
-  return { relatedAccessories, loading }
-}
-
-export interface AccessoryRelatedItem {
-  ref?: AlsoSeeRef
-  entry?: AccessoryEntry
-  relation: 'explicit' | 'same-obtain-near-name'
-  scope: 'same-subtype' | 'cross-subtype'
-}
+export type AccessoryRelatedItem = RelatedItemResult<AccessoryEntry, AlsoSeeRef>
 
 const INFERRED_RELATED_LIMIT = 8
 const INFERRED_RELATED_NAME_THRESHOLD = 0.55
 
 export function useAccessoryRelatedItems(accessory: AccessoryEntry, alsoSee: AlsoSeeRef[] = []) {
-  const [allAccessories, setAllAccessories] = useState<AccessoryEntry[]>([])
-  const [loading, setLoading] = useState(true)
+  const { relatedItems, loading } = useRelatedItems({
+    item: accessory,
+    alsoSee,
+    loadAll: loadAllAccessories,
+    getSlugs: getAccessorySlugs,
+    getRefs: getAccessoryAlsoSeeRefs,
+    getDisplayName: getAccessoryDisplayName,
+    getFingerprints: getAccessoryObtainFingerprints,
+    getScope: (entry) => entry.subtype,
+    matchesRef: (entry, ref) => accessoryMatchesSlug(entry, ref.slug),
+    limit: INFERRED_RELATED_LIMIT,
+    nameThreshold: INFERRED_RELATED_NAME_THRESHOLD,
+  })
 
-  useEffect(() => {
-    let active = true
-    setLoading(true)
-    loadAccessoriesBySubtype()
-      .then((data) => {
-        if (!active) return
-        setAllAccessories(ACCESSORY_SUBTYPES.flatMap((meta) => data[meta.subtype]))
-        setLoading(false)
-      })
-      .catch(() => {
-        if (!active) return
-        setAllAccessories([])
-        setLoading(false)
-      })
-
-    return () => {
-      active = false
-    }
-  }, [])
-
-  const relatedAccessories = useMemo<AccessoryRelatedItem[]>(() => {
-    const currentSlugs = new Set(getAccessorySlugs(accessory))
-    const explicitSlugSet = new Set(alsoSee.map((ref) => ref.slug))
-    const explicitRelated = alsoSee.map((ref) => {
-      const entry = allAccessories.find((item) => accessoryMatchesSlug(item, ref.slug))
-      return {
-        ref,
-        entry,
-        relation: 'explicit' as const,
-        scope:
-          entry && entry.subtype !== accessory.subtype
-            ? ('cross-subtype' as const)
-            : ('same-subtype' as const),
-      }
-    })
-    const reverseExplicitRelated = allAccessories.flatMap((candidate) => {
-      const candidateSlugs = getAccessorySlugs(candidate)
-      if (candidateSlugs.some((slug) => currentSlugs.has(slug))) return []
-      if (candidateSlugs.some((slug) => explicitSlugSet.has(slug))) return []
-
-      const linksToCurrent = getAccessoryAlsoSeeRefs(candidate).some((ref) =>
-        currentSlugs.has(ref.slug)
-      )
-      if (!linksToCurrent) return []
-
-      return [
-        {
-          ref: undefined,
-          entry: candidate,
-          relation: 'explicit' as const,
-          scope:
-            candidate.subtype !== accessory.subtype
-              ? ('cross-subtype' as const)
-              : ('same-subtype' as const),
-        },
-      ]
-    })
-
-    const currentFingerprints = getAccessoryObtainFingerprints(accessory)
-    const currentName = getAccessoryDisplayName(accessory)
-    const inferredRelated = allAccessories
-      .flatMap((candidate) => {
-        if (getAccessorySlugs(candidate).some((slug) => currentSlugs.has(slug))) return []
-        if (getAccessorySlugs(candidate).some((slug) => explicitSlugSet.has(slug))) return []
-
-        const hasSharedObtainMethod = [...getAccessoryObtainFingerprints(candidate)].some(
-          (fingerprint) => currentFingerprints.has(fingerprint)
-        )
-        if (!hasSharedObtainMethod) return []
-
-        const score = relatedNameScore(currentName, getAccessoryDisplayName(candidate))
-        if (score < INFERRED_RELATED_NAME_THRESHOLD) return []
-
-        return [
-          {
-            ref: undefined,
-            entry: candidate,
-            relation: 'same-obtain-near-name' as const,
-            scope:
-              candidate.subtype !== accessory.subtype
-                ? ('cross-subtype' as const)
-                : ('same-subtype' as const),
-            score,
-          },
-        ]
-      })
-      .sort(
-        (first, second) =>
-          second.score - first.score ||
-          Number(first.scope === 'cross-subtype') - Number(second.scope === 'cross-subtype') ||
-          compareTitles(getAccessoryDisplayName(first.entry), getAccessoryDisplayName(second.entry))
-      )
-      .slice(0, INFERRED_RELATED_LIMIT)
-      .map(({ score: _score, ...item }) => item)
-
-    const seen = new Set<string>()
-    return [...explicitRelated, ...reverseExplicitRelated, ...inferredRelated].filter((item) => {
-      const slug = item.entry?.slug ?? item.ref?.slug
-      if (!slug || seen.has(slug)) return false
-      seen.add(slug)
-      return !currentSlugs.has(slug)
-    })
-  }, [accessory, allAccessories, alsoSee])
-
-  return { relatedAccessories, loading }
+  return { relatedAccessories: relatedItems, loading }
 }
 
 export function useAccessoryCounts() {
@@ -506,7 +374,7 @@ export function buildAccessoryCardData(entry: AccessoryEntry) {
 
   return {
     name: displayTitle(getDisplayFamilyName(entry)),
-    description: entry.shared.description,
+    description: getFamilyCardDescription(entry),
     elements: entry.elements,
     daRequired: entry.hasDA,
     dcRequired: entry.hasDC,

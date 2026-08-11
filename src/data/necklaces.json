@@ -8,9 +8,7 @@
     "description": "You can scarce conceive what twisted mind created this much less how it was fitted into a necklace. Strangely, simply knowing you can endure the horrible stench and sight makes you feel stronger.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21807440",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "70",
     "stats": "Dodge +1, Crit +6, Magic Def +4, Pierce Def +4, Melee Def +4, WIS -1, END +9, INT +6, DEX +6, STR +6, Bonus +3",
     "resists": "Fire +9, Nature +9, Bacon +5",
@@ -27,10 +25,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false
   },
   {
@@ -42,9 +37,7 @@
     "description": "Every adventurer needs a bit of charm to get out of those tight spots in strange cities. Wearing this, you'll feel your confidence increase!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18586906",
     "releaseDate": "",
-    "elements": [
-      "MET"
-    ],
+    "elements": ["MET"],
     "level": "15",
     "stats": "Crit +2, END +1, CHA +3, STR +2",
     "resists": "Fire +2",
@@ -62,10 +55,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "met",
-      "merge"
-    ],
+    "tags": ["met", "merge"],
     "daRequired": true
   },
   {
@@ -77,9 +67,7 @@
     "description": "Every adventurer needs a bit of charm to get out of those tight spots in strange cities. Wearing this, you'll feel your confidence increase!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15648717",
     "releaseDate": "",
-    "elements": [
-      "MET"
-    ],
+    "elements": ["MET"],
     "level": "15",
     "stats": "CHA +2, STR +3",
     "resists": "None",
@@ -97,24 +85,13 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "met",
-      "merge"
-    ],
+    "tags": ["met", "merge"],
     "daRequired": false
   },
   {
     "id": "accessory-aegis-gratitude",
     "familyName": "Aegis' Gratitude",
     "slug": "accessory-aegis-gratitude",
-    "aliasSlugs": [
-      "accessory-aegis-gratitude",
-      "accessory-aegis-gratitude",
-      "accessory-aegis-gratitude",
-      "accessory-aegis-gratitude",
-      "accessory-aegis-gratitude",
-      "accessory-aegis-gratitude"
-    ],
     "type": "accessory",
     "subtype": "necklace",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22150262",
@@ -299,19 +276,14 @@
     "equipSlot": "Neck",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "free",
-      "ice"
-    ],
+    "tags": ["free", "ice"],
     "hasDA": true,
     "hasDC": false,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "27-77",
-    "elements": [
-      "ICE"
-    ]
+    "elements": ["ICE"]
   },
   {
     "id": "accessory-agate-beads",
@@ -322,9 +294,7 @@
     "description": "The colorful lines within the agate stones arch in rainbows of earthen colors. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18731733",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "56",
     "stats": "Dodge +1, Crit +6, WIS +4, END +4, CHA +2, LUK +2, INT +5, DEX +5, STR +5, Bonus +3",
     "resists": "Wind +10, Stone +10",
@@ -341,10 +311,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "sto",
-      "free"
-    ],
+    "tags": ["sto", "free"],
     "daRequired": true
   },
   {
@@ -488,19 +455,14 @@
     "equipSlot": "Neck",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "fir",
-      "free"
-    ],
+    "tags": ["fir", "free"],
     "hasDA": true,
     "hasDC": false,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-IV",
-    "elements": [
-      "FIR"
-    ]
+    "elements": ["FIR"]
   },
   {
     "id": "accessory-ancient-deathknight-pendant",
@@ -511,9 +473,7 @@
     "description": "This necklace once belonged to the terrible Deathknight, Sir Malifact! It has a large skull grining wickedly on it. It was one of the items required to unlock his undead powers.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=10595159",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "5",
     "stats": "Crit +1, Pierce Def +1, END +1, CHA -1, LUK -1, INT +1, DEX +2, STR +1, Bonus +1",
     "resists": "Light +1",
@@ -531,10 +491,7 @@
       }
     ],
     "notes": "Item was previously named 'Deathknight Pendant'; this was changed on August 25th, 2023.",
-    "tags": [
-      "dar",
-      "free"
-    ],
+    "tags": ["dar", "free"],
     "daRequired": false
   },
   {
@@ -546,9 +503,7 @@
     "description": "Grateful to you for fighting for his hometown, he gave you this family heirloom to honor your bravery. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18954488",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "58",
     "stats": "Dodge +1, Crit +6, WIS +6, END +6, CHA +7, LUK +7, INT +3, DEX +3, STR +3, Bonus +3",
     "resists": "Wind +10, Water +10, Stone +10, Nature +10",
@@ -565,10 +520,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "sto",
-      "gold"
-    ],
+    "tags": ["sto", "gold"],
     "daRequired": true
   },
   {
@@ -580,9 +532,7 @@
     "description": "This stones of this necklace are scarred and pitted from their violent flow down a mountainside.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18157365",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "28",
     "stats": "Crit +3, END +5, CHA +3, LUK +3",
     "resists": "Wind +4, Stone +5, Fire +1",
@@ -599,10 +549,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "sto",
-      "free"
-    ],
+    "tags": ["sto", "free"],
     "daRequired": false
   },
   {
@@ -614,9 +561,7 @@
     "description": "At first glance, this necklace resembles your common cheapskate. Yet when you eye it closer, the necklace's gem possesses a strange, unusual depth to it. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21728945",
     "releaseDate": "",
-    "elements": [
-      "WAT"
-    ],
+    "elements": ["WAT"],
     "level": "76",
     "stats": "Block +1, Parry +1, Crit +8, Magic Def +6, Pierce Def +1, Melee Def +1, WIS +9, END +9, CHA +3, LUK +8, INT +9, DEX +9, STR +9, Bonus +10",
     "resists": "Ice +11, Water +11, Stone +11, Immobility +5, Health -3",
@@ -633,10 +578,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "wat",
-      "free"
-    ],
+    "tags": ["wat", "free"],
     "daRequired": true
   },
   {
@@ -648,9 +590,7 @@
     "description": "A rather large incisor from an angry bear.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21971363",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "11",
     "stats": "Crit +1, WIS -1, END +3, INT +1, DEX +1, STR +1",
     "resists": "Water +1, Nature +2, Fire +2",
@@ -667,10 +607,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false
   },
   {
@@ -682,9 +619,7 @@
     "description": "This necklace features a large heavy stone of enigmatic beauty.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17878516",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "25",
     "stats": "Crit +2, WIS +4, CHA +2, INT +4, STR +4, Bonus +5",
     "resists": "Wind +5, Nature +3",
@@ -701,10 +636,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "sto",
-      "free"
-    ],
+    "tags": ["sto", "free"],
     "daRequired": true
   },
   {
@@ -716,9 +648,7 @@
     "description": "This magical amulet will protect you if you're in a situation where you're covered in poisonous Togtog bile... or just poison. You'd be lucky to have it on you at least.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19895689",
     "releaseDate": "",
-    "elements": [
-      "POI"
-    ],
+    "elements": ["POI"],
     "level": "15",
     "stats": "END +1, LUK +5",
     "resists": "Poison +5",
@@ -735,10 +665,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "poi",
-      "free"
-    ],
+    "tags": ["poi", "free"],
     "daRequired": false,
     "isSeasonal": true
   },
@@ -751,9 +678,7 @@
     "description": "All those black pearls you gathered from Osprey Cove turned to be good for something beyond armor training!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15970753",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "20",
     "stats": "Crit +1, END +2, CHA +2, LUK +1",
     "resists": "Light +5, Darkness +5",
@@ -770,10 +695,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "gold"
-    ],
+    "tags": ["nat", "gold"],
     "daRequired": false,
     "isRare": true
   },
@@ -786,9 +708,7 @@
     "description": "A rather large incisor from an angry bear.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21970849",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "61",
     "stats": "Crit +5, Magic Def +2, Pierce Def +2, Melee Def +2, WIS -1, END +8, INT +5, DEX +5, STR +5, Bonus +3",
     "resists": "Water +6, Nature +7, Fire +7",
@@ -805,10 +725,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false
   },
   {
@@ -820,9 +737,7 @@
     "description": "Wearing this necklace will make you COLD! But it will also increase your ability to dodge and defend. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=16715886",
     "releaseDate": "",
-    "elements": [
-      "ICE"
-    ],
+    "elements": ["ICE"],
     "level": "5",
     "stats": "Dodge +1, Magic Def +1, Pierce Def +1, Melee Def +1",
     "resists": "Fire +4, Ice +4",
@@ -839,10 +754,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "ice",
-      "gold"
-    ],
+    "tags": ["ice", "gold"],
     "daRequired": true
   },
   {
@@ -854,9 +766,7 @@
     "description": "The blood soaked links of this chain were once proudly worn.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21990273",
     "releaseDate": "",
-    "elements": [
-      "MET"
-    ],
+    "elements": ["MET"],
     "level": "73",
     "stats": "Block +1, Crit +8, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +7, END +7, INT +5, DEX +5, STR +5, Bonus +6",
     "resists": "Darkness +9, Silver +9, Water +9, Immobility +4",
@@ -881,10 +791,7 @@
         "dcRequired": true
       }
     ],
-    "tags": [
-      "met",
-      "free"
-    ],
+    "tags": ["met", "free"],
     "daRequired": false,
     "dcRequired": true
   },
@@ -897,9 +804,7 @@
     "description": "A sigil necklace looted from an ancient minion of the Frydae clan.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21990248",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "41",
     "stats": "Crit +4, Magic Def +1, Pierce Def +1, Melee Def +1, END +5, INT +4, DEX +4, STR +4, Bonus +2",
     "resists": "Fire +5, Light +5, Water +4",
@@ -924,10 +829,7 @@
         "dcRequired": true
       }
     ],
-    "tags": [
-      "dar",
-      "free"
-    ],
+    "tags": ["dar", "free"],
     "daRequired": false,
     "dcRequired": true
   },
@@ -940,9 +842,7 @@
     "description": "A rather large incisor from an angry bear.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21970784",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "41",
     "stats": "Crit +4, Magic Def +1, Pierce Def +1, Melee Def +1, WIS -1, END +6, INT +4, DEX +4, STR +4, Bonus +2",
     "resists": "Water +4, Nature +5, Fire +5",
@@ -959,10 +859,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false
   },
   {
@@ -974,9 +871,7 @@
     "description": "Tattered and torn, the owner was very proud of this award. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21591094",
     "releaseDate": "",
-    "elements": [
-      "NON"
-    ],
+    "elements": ["NON"],
     "level": "77",
     "stats": "Dodge +2, Crit +8, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +10, END +9, CHA +10, LUK +3, INT +10, DEX +10, STR +10, Bonus +10",
     "resists": "Fire +11, Water +11, Stone +11, Nature +8, Immobility +5, Health -3",
@@ -993,10 +888,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "non",
-      "free"
-    ],
+    "tags": ["non", "free"],
     "daRequired": true
   },
   {
@@ -1111,19 +1003,14 @@
     "equipSlot": "Neck",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "free",
-      "win"
-    ],
+    "tags": ["free", "win"],
     "hasDA": false,
     "hasDC": false,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-III",
-    "elements": [
-      "WIN"
-    ]
+    "elements": ["WIN"]
   },
   {
     "id": "accessory-braced-teeth",
@@ -1134,9 +1021,7 @@
     "description": "This necklace is pretty rigid, but the teeth line up beautifully.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21310202",
     "releaseDate": "",
-    "elements": [
-      "SIL"
-    ],
+    "elements": ["SIL"],
     "level": "66",
     "stats": "Parry +1, Crit +6, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +4, END +4, INT +5, DEX +5, STR +5, Bonus +8",
     "resists": "Poison +5, Stone +5, Metal +5, Immobility +3",
@@ -1154,10 +1039,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "sil",
-      "merge"
-    ],
+    "tags": ["sil", "merge"],
     "daRequired": false
   },
   {
@@ -1169,9 +1051,7 @@
     "description": "Twig made this handwoven necklace in thanks for finding him new fwends!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22094374",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "51",
     "stats": "Block +2, Dodge +2, Parry +2, Crit +2, Magic Def +1, Pierce Def +1, Melee Def +1, CHA +5, Bonus +1",
     "resists": "Water +6, Darkness +7, Ice +7",
@@ -1188,10 +1068,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "lig",
-      "free"
-    ],
+    "tags": ["lig", "free"],
     "daRequired": false,
     "isSeasonal": true
   },
@@ -1204,9 +1081,7 @@
     "description": "A rather large incisor from an angry bear. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21970773",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "76",
     "stats": "Dodge +1, Parry +1, Crit +7, Magic Def +3, Pierce Def +3, Melee Def +3, WIS -1, END +10, CHA +2, LUK +2, INT +8, DEX +8, STR +8, Bonus +5",
     "resists": "Water +9, Nature +10, Fire +10",
@@ -1223,10 +1098,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": true
   },
   {
@@ -1238,9 +1110,7 @@
     "description": "A small, intricate initial made out of fine gold wire, it's twisted almost beyond recognition now. You think it was originally a D.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21990264",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "64",
     "stats": "Parry +1, Crit +6, Magic Def +2, Pierce Def +1, Melee Def +2, WIS +7, END +5, INT +3, DEX +3, STR +3, Bonus +6",
     "resists": "Metal +8, Water +8, Wind +8, Immobility +3",
@@ -1265,10 +1135,7 @@
         "dcRequired": true
       }
     ],
-    "tags": [
-      "lig",
-      "free"
-    ],
+    "tags": ["lig", "free"],
     "daRequired": false,
     "dcRequired": true
   },
@@ -1281,9 +1148,7 @@
     "description": "The clasp and several links look like they've been chewed on. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21920324",
     "releaseDate": "",
-    "elements": [
-      "MET"
-    ],
+    "elements": ["MET"],
     "level": "24",
     "stats": "Block +1, Crit +2, Magic Def +1, Pierce Def +1, Melee Def +1, END +2, INT +2, DEX +2, STR +2, Bonus +1",
     "resists": "Stone +3, Darkness +3",
@@ -1300,10 +1165,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "met",
-      "free"
-    ],
+    "tags": ["met", "free"],
     "daRequired": true
   },
   {
@@ -1315,9 +1177,7 @@
     "description": "This is a small necklace with cube shaped charms that are lettered... Et Tu?",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19297093",
     "releaseDate": "",
-    "elements": [
-      "MET"
-    ],
+    "elements": ["MET"],
     "level": "30",
     "stats": "Crit +3, WIS -1, END +3, LUK +2, INT +3, DEX +3, STR +3",
     "resists": "Metal +3, Immobility +1",
@@ -1334,10 +1194,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "met",
-      "free"
-    ],
+    "tags": ["met", "free"],
     "daRequired": false
   },
   {
@@ -1349,9 +1206,7 @@
     "description": "Twig made this handwoven necklace in thanks for finding him new fwends!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22094375",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "64",
     "stats": "Parry +1, Crit +6, Magic Def +2, Pierce Def +1, Melee Def +2, WIS +3, END +5, CHA +4, INT +3, DEX +3, STR +3, Bonus +6",
     "resists": "Water +8, Darkness +8, Ice +8, Immobility +3",
@@ -1368,10 +1223,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "lig",
-      "free"
-    ],
+    "tags": ["lig", "free"],
     "daRequired": false,
     "isSeasonal": true
   },
@@ -1384,9 +1236,7 @@
     "description": "The charm is said to contain a villians' heart. It is very tiny. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21216232",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "76",
     "stats": "Block +1, Dodge +1, Parry +1, Crit +8, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +9, END +9, CHA +2, LUK +2, INT +8, DEX +5, STR +5, Bonus +7",
     "resists": "Poison +11, Stone +11, Wind +11, Darkness +8, Immobility +5, Health -3",
@@ -1412,10 +1262,7 @@
       }
     ],
     "notes": "Canopic Charm was previously available from the retired quest Face of Death.",
-    "tags": [
-      "sto",
-      "free"
-    ],
+    "tags": ["sto", "free"],
     "daRequired": true,
     "dcRequired": true
   },
@@ -1586,10 +1433,7 @@
     "equipSlot": "Neck",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "free",
-      "non"
-    ],
+    "tags": ["free", "non"],
     "isSeasonal": true,
     "hasDA": true,
     "hasDC": false,
@@ -1597,9 +1441,7 @@
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-V",
-    "elements": [
-      "NON"
-    ]
+    "elements": ["NON"]
   },
   {
     "id": "accessory-cenotaph-key",
@@ -1610,9 +1452,7 @@
     "description": "This ornate key glitters whenever light touches it.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21216255",
     "releaseDate": "",
-    "elements": [
-      "SIL"
-    ],
+    "elements": ["SIL"],
     "level": "66",
     "stats": "Parry +1, Crit +6, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +4, END +4, INT +5, DEX +5, STR +5, Bonus +8",
     "resists": "Poison +5, Light +5, Metal +5, Immobility +3",
@@ -1638,10 +1478,7 @@
       }
     ],
     "notes": "Cenotaph Key was previously available from the retired quest Face of Death.",
-    "tags": [
-      "sil",
-      "free"
-    ],
+    "tags": ["sil", "free"],
     "daRequired": false,
     "dcRequired": true
   },
@@ -1654,9 +1491,7 @@
     "description": "A collar of thick but pliant chain.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22397512",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "63",
     "stats": "Parry +1, Crit +6, Magic Def +1, Pierce Def +1, Melee Def +2, WIS +5, END +7, INT +3, DEX +3, STR +3, Bonus +5",
     "resists": "Metal +8, Stone +8, Wind +8, Immobility +3, Water -2",
@@ -1673,10 +1508,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false
   },
   {
@@ -1688,9 +1520,7 @@
     "description": "Found in a gargoyle's cavern. When you wipe off the crystal dangling at the end of the chain, it begins to shine brightly. At the very least, it draws attention to you! (Every 10 CHA increases pet/guest damage by 1)",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15095332",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "10",
     "stats": "CHA +10, LUK +5, Bonus +3",
     "resists": "None",
@@ -1708,10 +1538,7 @@
       }
     ],
     "notes": "Item previously appeared in the retired quest Nose for Trouble.\nThe following changes were implemented on August 22nd, 2025:\n  • Previously had the description: Found in the gargoyle cavern, when you wipe off the crystal dangling at the end of the chain, it begins to shine brightly, aiding your vision.\n  • LUK stat was increased from +2 to +5.\n  • CHA and Bonus stats were added.",
-    "tags": [
-      "lig",
-      "free"
-    ],
+    "tags": ["lig", "free"],
     "daRequired": false
   },
   {
@@ -1723,9 +1550,7 @@
     "description": "Putting this on will make you feel stronger! And the strange light pulsing from the gem increases your resistances!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=16715900",
     "releaseDate": "",
-    "elements": [
-      "MET"
-    ],
+    "elements": ["MET"],
     "level": "10",
     "stats": "Dodge +1, END +3",
     "resists": "Darkness +2, Light +2, Fire +2, Ice +2",
@@ -1742,10 +1567,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "met",
-      "gold"
-    ],
+    "tags": ["met", "gold"],
     "daRequired": false
   },
   {
@@ -1757,9 +1579,7 @@
     "description": "Spiky and sharp. Be really careful with this.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21303824",
     "releaseDate": "",
-    "elements": [
-      "MET"
-    ],
+    "elements": ["MET"],
     "level": "10",
     "stats": "Dodge +1, END +3, LUK +1",
     "resists": "Darkness +2, Nature +2, Bacon +2",
@@ -1777,10 +1597,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "met",
-      "merge"
-    ],
+    "tags": ["met", "merge"],
     "daRequired": false
   },
   {
@@ -1792,9 +1609,7 @@
     "description": "A chain of charged cogs. Well, surely you were wondering what Yix was planning to do with all those charged cogs, werent you? Admit it. Of course you were.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18953434",
     "releaseDate": "",
-    "elements": [
-      "ENE"
-    ],
+    "elements": ["ENE"],
     "level": "22",
     "stats": "Parry +1, Crit +3, WIS +2, END +2, INT +2, DEX +2, STR +2",
     "resists": "Energy +5, Metal +5",
@@ -1811,10 +1626,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "ene",
-      "free"
-    ],
+    "tags": ["ene", "free"],
     "daRequired": false
   },
   {
@@ -2164,35 +1976,19 @@
     "equipSlot": "Neck",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dar",
-      "dc",
-      "free"
-    ],
+    "tags": ["dar", "dc", "free"],
     "hasDA": true,
     "hasDC": true,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-VI",
-    "elements": [
-      "DAR"
-    ]
+    "elements": ["DAR"]
   },
   {
     "id": "accessory-cheesemonger-s-gratitude",
     "familyName": "Cheesemonger's Gratitude",
     "slug": "accessory-cheesemonger-s-gratitude",
-    "aliasSlugs": [
-      "accessory-cheesemonger-s-gratitude",
-      "accessory-cheesemonger-s-gratitude",
-      "accessory-cheesemonger-s-gratitude",
-      "accessory-cheesemonger-s-gratitude",
-      "accessory-cheesemonger-s-gratitude",
-      "accessory-cheesemonger-s-gratitude",
-      "accessory-cheesemonger-s-gratitude",
-      "accessory-cheesemonger-s-gratitude"
-    ],
     "type": "accessory",
     "subtype": "necklace",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22244898",
@@ -2617,20 +2413,14 @@
     "equipSlot": "Neck",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dc",
-      "free",
-      "nat"
-    ],
+    "tags": ["dc", "free", "nat"],
     "hasDA": true,
     "hasDC": true,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "15-85",
-    "elements": [
-      "NAT"
-    ]
+    "elements": ["NAT"]
   },
   {
     "id": "accessory-cheesy-fwendship-necklace",
@@ -2641,9 +2431,7 @@
     "description": "Twig made this handwoven necklace in thanks for finding him new fwends!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22094371",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "34",
     "stats": "Crit +5, END +2, CHA +2, LUK +5",
     "resists": "Water +2, Darkness +3, Ice +4",
@@ -2660,10 +2448,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false,
     "isSeasonal": true
   },
@@ -2676,9 +2461,7 @@
     "description": "A fire resist neck dropped by the famous dragon chef, Char.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15030714",
     "releaseDate": "",
-    "elements": [
-      "FIR"
-    ],
+    "elements": ["FIR"],
     "level": "0",
     "stats": "None",
     "resists": "Fire +10",
@@ -2695,10 +2478,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "fir",
-      "free"
-    ],
+    "tags": ["fir", "free"],
     "daRequired": false
   },
   {
@@ -3002,10 +2782,7 @@
     "equipSlot": "Neck",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "merge",
-      "poi"
-    ],
+    "tags": ["merge", "poi"],
     "isSeasonal": true,
     "hasDA": true,
     "hasDC": false,
@@ -3013,9 +2790,7 @@
     "hasFree": false,
     "hasMerge": true,
     "levelRange": "I-IX",
-    "elements": [
-      "POI"
-    ]
+    "elements": ["POI"]
   },
   {
     "id": "accessory-circle-of-nature",
@@ -3026,9 +2801,7 @@
     "description": "Nature spirits wear these necklaces to show allegiance to their clan. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=16715872",
     "releaseDate": "",
-    "elements": [
-      "WAT"
-    ],
+    "elements": ["WAT"],
     "level": "38",
     "stats": "Dodge +1, Crit +4, END +5, INT +5, DEX +5, STR +5",
     "resists": "Darkness +2, Light +3, Water +3, Ice +4, Fire +4",
@@ -3045,10 +2818,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "wat",
-      "gold"
-    ],
+    "tags": ["wat", "gold"],
     "daRequired": true
   },
   {
@@ -3060,9 +2830,7 @@
     "description": "The little emerald clover that danges off this choker pulses with a brilliant light and gives off an aura of charm and luck. You feel better just wearing it! This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15676297",
     "releaseDate": "",
-    "elements": [
-      "NON"
-    ],
+    "elements": ["NON"],
     "level": "30",
     "stats": "Crit +3, Magic Def +1, Pierce Def +1, Melee Def +1, END +3, CHA +6, LUK +6, Nature +3, Light +3, Darkness +6",
     "rarity": "10",
@@ -3078,10 +2846,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "non",
-      "gold"
-    ],
+    "tags": ["non", "gold"],
     "daRequired": true,
     "isRare": true
   },
@@ -3485,20 +3250,14 @@
     "equipSlot": "Neck",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dc",
-      "free",
-      "nat"
-    ],
+    "tags": ["dc", "free", "nat"],
     "hasDA": true,
     "hasDC": true,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-VII",
-    "elements": [
-      "NAT"
-    ]
+    "elements": ["NAT"]
   },
   {
     "id": "accessory-cloth-collar",
@@ -3509,9 +3268,7 @@
     "description": "This colorful strip of cloth has frayed edges and a knot tied into one end.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22397511",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "14",
     "stats": "Melee Def +1, END +1",
     "resists": "Light +1, Metal +2",
@@ -3529,10 +3286,7 @@
       }
     ],
     "notes": "Item has no inventory icon despite being a Necklace.",
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false
   },
   {
@@ -3544,9 +3298,7 @@
     "description": "A pendulous rams head charms hangs from this necklace.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21216216",
     "releaseDate": "",
-    "elements": [
-      "SIL"
-    ],
+    "elements": ["SIL"],
     "level": "46",
     "stats": "Crit +3, Magic Def +1, Pierce Def +1, Melee Def +1, WIS +3, END +3, INT +2, DEX +2, STR +2, Bonus +4",
     "resists": "Stone +2, Metal +2, Silver +2, Immobility +2",
@@ -3572,10 +3324,7 @@
       }
     ],
     "notes": "Criosphinx Trinket was previously available from the retired quest Face of Death.",
-    "tags": [
-      "sil",
-      "free"
-    ],
+    "tags": ["sil", "free"],
     "daRequired": false,
     "dcRequired": true
   },
@@ -3588,9 +3337,7 @@
     "description": "Twig made this handwoven necklace in thanks for finding him new fwends!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22094376",
     "releaseDate": "",
-    "elements": [
-      "NON"
-    ],
+    "elements": ["NON"],
     "level": "73",
     "stats": "Block +1, Crit +8, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +7, END +3, CHA +4, INT +5, DEX +5, STR +5, Bonus +6",
     "resists": "Water +9, Ice +9, Darkness +9, Immobility +4",
@@ -3607,10 +3354,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "non",
-      "free"
-    ],
+    "tags": ["non", "free"],
     "daRequired": false,
     "isSeasonal": true
   },
@@ -3623,9 +3367,7 @@
     "description": "A beautiful, clear crystal hangs on this necklace. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21372610",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "77",
     "stats": "Dodge +2, Crit +8, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +10, END +9, CHA +10, LUK +3, INT +10, DEX +10, STR +10, Bonus +10",
     "resists": "Light +11, Water +11, Stone +11, Nature +8, Immobility +5, Health -3",
@@ -3651,10 +3393,7 @@
       }
     ],
     "notes": "Crystal Necklace was previously available from the retired quest After the War.",
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": true,
     "dcRequired": true
   },
@@ -3667,9 +3406,7 @@
     "description": "Made of crystallized mana fragments, power flows through this necklace. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20422712",
     "releaseDate": "",
-    "elements": [
-      "ENE"
-    ],
+    "elements": ["ENE"],
     "level": "72",
     "stats": "Block +1, Dodge +1, Parry +1, Crit +5, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +7, END +7, INT +10, DEX +10, STR +10, Bonus +7",
     "resists": "All +5, Immobility +3",
@@ -3695,10 +3432,7 @@
       }
     ],
     "notes": "Necklace previously appeared in the retired quest Dreamscape and had the initial stats:\nStats: Block +1, Dodge +1, Crit +5, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +5, END +5, INT +8, DEX +8, STR +8, Bonus +7\nResists: All +5, Immobility +2\nNecklace was previously named 'Crystal Necklace'; this was changed on May 17th, 2021.",
-    "tags": [
-      "ene",
-      "free"
-    ],
+    "tags": ["ene", "free"],
     "daRequired": true,
     "dcRequired": true
   },
@@ -3711,9 +3445,7 @@
     "description": "The runes on this necklace detect light magic.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21728980",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "67",
     "stats": "Parry +1, Crit +7, Magic Def +6, WIS +4, END +4, INT +5, DEX +5, STR +5, Bonus +7",
     "resists": "Light +8, Energy +5, Fire +5, Immobility +3",
@@ -3730,10 +3462,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "lig",
-      "free"
-    ],
+    "tags": ["lig", "free"],
     "daRequired": false
   },
   {
@@ -3745,9 +3474,7 @@
     "description": "Dropped by the mastermind of the dragon catering ring, this neck seems to absorb darkness. The crystal is almost perfect except for a tiny missing shard.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15031049",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "0",
     "stats": "None",
     "resists": "Darkness +10",
@@ -3765,10 +3492,7 @@
       }
     ],
     "notes": "Item was previously named 'Dark Crystal'.",
-    "tags": [
-      "dar",
-      "free"
-    ],
+    "tags": ["dar", "free"],
     "daRequired": false
   },
   {
@@ -3780,9 +3504,7 @@
     "description": "A black tie to help you blend into the shadows!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20203032",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "10",
     "stats": "Crit +2, Magic Def +3, Pierce Def +3, Melee Def +3, END +2, LUK +3, INT +2, Bonus +1, Light +1, Darkness +2",
     "rarity": "5",
@@ -3798,10 +3520,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "dar",
-      "free"
-    ],
+    "tags": ["dar", "free"],
     "daRequired": false
   },
   {
@@ -3813,9 +3532,7 @@
     "description": "A dense fog swirls within a magically sealed vial. Staring into the fog you can almost hear the wind howling, see eyes glowing... you suddenly feel the need to run.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17878034",
     "releaseDate": "",
-    "elements": [
-      "WAT"
-    ],
+    "elements": ["WAT"],
     "level": "39",
     "stats": "Dodge +1, Parry +1, Crit +5, Magic Def +3, Pierce Def +3, Melee Def +3, END +5, CHA +3, LUK +6, Bonus +3",
     "resists": "Darkness +4, Wind +3, Water +3, Immobility +4",
@@ -3832,10 +3549,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "wat",
-      "free"
-    ],
+    "tags": ["wat", "free"],
     "daRequired": true
   },
   {
@@ -3847,9 +3561,7 @@
     "description": "Sir Malifact collected this necklace from a fallen DeathKnight and saved it. While he already has items bound to him, you might be able to make use of it.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21828909",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "40",
     "stats": "Block +2, Dodge +2, Parry +2, Crit +2, WIS +3, END +3, INT +3, DEX +3, STR +3, Bonus +2",
     "resists": "Darkness +2, Light +2, Immobility +1",
@@ -3867,10 +3579,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "dar",
-      "merge"
-    ],
+    "tags": ["dar", "merge"],
     "daRequired": false
   },
   {
@@ -3882,9 +3591,7 @@
     "description": "The giant gem that hangs from this necklace seems to absorb light.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17397295",
     "releaseDate": "",
-    "elements": [
-      "WAT"
-    ],
+    "elements": ["WAT"],
     "level": "38",
     "stats": "Crit +4, Magic Def +2, Melee Def +2, WIS +3, END +3, INT +5, STR +5, Bonus +1",
     "resists": "Light +4, Water +3",
@@ -3901,10 +3608,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "wat",
-      "free"
-    ],
+    "tags": ["wat", "free"],
     "daRequired": false
   },
   {
@@ -5224,19 +4928,14 @@
     "equipSlot": "Neck",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "merge",
-      "non"
-    ],
+    "tags": ["merge", "non"],
     "hasDA": true,
     "hasDC": false,
     "hasDM": true,
     "hasFree": false,
     "hasMerge": true,
     "levelRange": "I-XXXV",
-    "elements": [
-      "NON"
-    ]
+    "elements": ["NON"]
   },
   {
     "id": "accessory-defender-s-necklace",
@@ -5514,7 +5213,7 @@
             "price": "N/A",
             "priceType": "merge",
             "sellback": "0 Gold",
-            "requiredItems": "10 Defender�s Medal",
+            "requiredItems": "10 Defender's Medal",
             "daRequired": false,
             "dmRequired": true
           }
@@ -5539,7 +5238,7 @@
             "price": "N/A",
             "priceType": "merge",
             "sellback": "0 Gold",
-            "requiredItems": "20 Defender�s Medal & 1 Defender's Necklace I",
+            "requiredItems": "20 Defender's Medal & 1 Defender's Necklace I",
             "daRequired": false,
             "dmRequired": true
           }
@@ -5564,7 +5263,7 @@
             "price": "N/A",
             "priceType": "merge",
             "sellback": "0 Gold",
-            "requiredItems": "25 Defender�s Medal & 1 Defender's Necklace II",
+            "requiredItems": "25 Defender's Medal & 1 Defender's Necklace II",
             "daRequired": false,
             "dmRequired": true
           }
@@ -5589,7 +5288,7 @@
             "price": "N/A",
             "priceType": "merge",
             "sellback": "0 Gold",
-            "requiredItems": "25 Defender�s Medal & 1 Defender's Necklace III",
+            "requiredItems": "25 Defender's Medal & 1 Defender's Necklace III",
             "daRequired": false,
             "dmRequired": true
           }
@@ -5614,7 +5313,7 @@
             "price": "N/A",
             "priceType": "merge",
             "sellback": "0 Gold",
-            "requiredItems": "1 Defender's Necklace IV & 25 Defender�s Medal",
+            "requiredItems": "1 Defender's Necklace IV & 25 Defender's Medal",
             "daRequired": false,
             "dmRequired": true
           }
@@ -6380,19 +6079,14 @@
     "equipSlot": "Neck",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "merge",
-      "non"
-    ],
+    "tags": ["merge", "non"],
     "hasDA": false,
     "hasDC": false,
     "hasDM": true,
     "hasFree": false,
     "hasMerge": true,
     "levelRange": "I-XXXV",
-    "elements": [
-      "NON"
-    ]
+    "elements": ["NON"]
   },
   {
     "id": "accessory-dishwashing-towel",
@@ -6403,9 +6097,7 @@
     "description": "A piece of cloth to help soak up water.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15030815",
     "releaseDate": "",
-    "elements": [
-      "WAT"
-    ],
+    "elements": ["WAT"],
     "level": "0",
     "stats": "None",
     "resists": "Water +10",
@@ -6422,10 +6114,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "wat",
-      "free"
-    ],
+    "tags": ["wat", "free"],
     "daRequired": false
   },
   {
@@ -6437,9 +6126,7 @@
     "description": "A small dragon's horn. Was this a shedding? Broken in a fight? You're not sure...",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21079640",
     "releaseDate": "",
-    "elements": [
-      "ICE"
-    ],
+    "elements": ["ICE"],
     "level": "36",
     "stats": "Crit +3, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +1, END +5, LUK +1, INT +3, DEX +3, STR +3",
     "resists": "Fire +6",
@@ -6456,10 +6143,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "ice",
-      "gold"
-    ],
+    "tags": ["ice", "gold"],
     "daRequired": false
   },
   {
@@ -6471,9 +6155,7 @@
     "description": "This item requires a Dragon Amulet. The tooth looks like one of the Valtrith's pulled it directly from a dragon's skull!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21990292",
     "releaseDate": "",
-    "elements": [
-      "FIR"
-    ],
+    "elements": ["FIR"],
     "level": "23",
     "stats": "Crit +3, Magic Def +1, Pierce Def +1, Melee Def +1, END +2, LUK +3, INT +3, DEX +3, STR +3",
     "resists": "Fire +3, Ice +3",
@@ -6498,10 +6180,7 @@
         "dcRequired": true
       }
     ],
-    "tags": [
-      "fir",
-      "free"
-    ],
+    "tags": ["fir", "free"],
     "daRequired": true,
     "dcRequired": true
   },
@@ -6514,9 +6193,7 @@
     "description": "Worn by the ancient warriors that served the Drakath clan, the sigil was looted in battle and hoarded in Valtrith's tomb.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21990244",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "32",
     "stats": "Crit +3, WIS +1, END +2, INT +3, DEX +3, STR +3, Bonus +1",
     "resists": "Darkness +6, Poison +6, Immobility +3",
@@ -6541,10 +6218,7 @@
         "dcRequired": true
       }
     ],
-    "tags": [
-      "dar",
-      "free"
-    ],
+    "tags": ["dar", "free"],
     "daRequired": false,
     "dcRequired": true
   },
@@ -6557,9 +6231,7 @@
     "description": "This protective amulet is said to ward off nightmares.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17397340",
     "releaseDate": "",
-    "elements": [
-      "ENE"
-    ],
+    "elements": ["ENE"],
     "level": "21",
     "stats": "Crit +2, Magic Def +2, WIS +2, INT +2, DEX +2, STR +2",
     "resists": "Energy +5, Fire +5",
@@ -6576,10 +6248,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "ene",
-      "free"
-    ],
+    "tags": ["ene", "free"],
     "daRequired": false
   },
   {
@@ -6591,9 +6260,7 @@
     "description": "An ancient dwarven artifact gifted to you by Alteon in thanks for helping to deliver his Ancient Scrolls.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19796270",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "18",
     "stats": "Crit +1, WIS +3, CHA +2, LUK +2",
     "resists": "Stone +3, Fire +3",
@@ -6610,10 +6277,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "sto",
-      "free"
-    ],
+    "tags": ["sto", "free"],
     "daRequired": false
   },
   {
@@ -6625,9 +6289,7 @@
     "description": "This thin, delicate chain carries the power of an earth elemental in it's links.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18157391",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "8",
     "stats": "END +2, LUK +2",
     "resists": "Wind +1, Stone +1",
@@ -6644,10 +6306,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "sto",
-      "free"
-    ],
+    "tags": ["sto", "free"],
     "daRequired": true
   },
   {
@@ -6659,9 +6318,7 @@
     "description": "Nature magics cause this gem to glow.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21728962",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "57",
     "stats": "Crit +2, Magic Def +6, Pierce Def +3, Melee Def +3, WIS +2, END +5, INT +6, DEX +6, STR +6, Bonus +5",
     "resists": "Nature +12, Water +4, Immobility +1",
@@ -6678,10 +6335,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false
   },
   {
@@ -6693,9 +6347,7 @@
     "description": "This little round object was left on the floor after you banished the Doomkitten. Shaking it causes it to ring with an otherworldly lack of sound. (Every 10 STR/DEX/INT increases your damage by 1)",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22422563",
     "releaseDate": "",
-    "elements": [
-      "EVI"
-    ],
+    "elements": ["EVI"],
     "level": "12",
     "stats": "INT +5, DEX +5, STR +5",
     "resists": "Darkness +10",
@@ -6712,10 +6364,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "evi",
-      "free"
-    ],
+    "tags": ["evi", "free"],
     "daRequired": false
   },
   {
@@ -6727,9 +6376,7 @@
     "description": "Dropped by the dragon event planner, this neck has a tiny crystal ball charged with energy to keep you gogogoing!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15030891",
     "releaseDate": "",
-    "elements": [
-      "ENE"
-    ],
+    "elements": ["ENE"],
     "level": "0",
     "stats": "None",
     "resists": "Energy +10",
@@ -6746,10 +6393,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "ene",
-      "free"
-    ],
+    "tags": ["ene", "free"],
     "daRequired": false
   },
   {
@@ -6761,9 +6405,7 @@
     "description": "This necklace is a cats eye agate set in a golden pendant dedicated to the cat goddess. Platinum and gold with agate, its a prize worthy of a Pharaoh.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18953338",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "42",
     "stats": "Crit +3, END +4, INT +4, DEX +4, STR +4, Bonus +3",
     "resists": "Darkness +4, Silver +4, Immobility +1",
@@ -6780,10 +6422,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "lig",
-      "free"
-    ],
+    "tags": ["lig", "free"],
     "daRequired": false
   },
   {
@@ -6795,9 +6434,7 @@
     "description": "A vial of fairy dust. You hoped whatever fairy made it... parted with it willingly.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21079678",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "56",
     "stats": "Parry +2, Crit +2, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +3, CHA +3, INT +4, DEX +4, STR +4, Bonus +3",
     "resists": "Darkness +5, Immobility +3",
@@ -6814,10 +6451,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "lig",
-      "gold"
-    ],
+    "tags": ["lig", "gold"],
     "daRequired": false
   },
   {
@@ -6829,9 +6463,7 @@
     "description": "This old collar still has a bright, fancy bow attached to it.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21882725",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "67",
     "stats": "Parry +1, Crit +7, Magic Def +1, Pierce Def +1, Melee Def +2, WIS +5, END +7, INT +5, DEX +5, STR +5, Bonus +6",
     "resists": "Light +8, Darkness +5, Fire +5, Immobility +3",
@@ -6848,10 +6480,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false
   },
   {
@@ -6863,9 +6492,7 @@
     "description": "This cloth is soaked in something that gives it a pungent odor... but at least it will keep the bugs away!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21884963",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "73",
     "stats": "Parry +1, Crit +8, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +7, END +7, INT +5, DEX +5, STR +5, Bonus +6",
     "resists": "Darkness +9, Nature +9, Water +9, Immobility +4",
@@ -6882,10 +6509,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false
   },
   {
@@ -6897,9 +6521,7 @@
     "description": "A lei of beautiful flowers makes up this necklace.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21372576",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "56",
     "stats": "Parry +1, Crit +2, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +3, END +1, CHA +2, INT +4, DEX +4, STR +4, Bonus +3",
     "resists": "Darkness +5, Immobility +3",
@@ -6925,10 +6547,7 @@
       }
     ],
     "notes": "Flower Necklace was previously available from the retired quest After the War.",
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false,
     "dcRequired": true
   },
@@ -6941,9 +6560,7 @@
     "description": "An ugly, old piece of costume jewelry. That thing is going to turn your neck green...",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19895862",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "1",
     "stats": "CHA -50, LUK -50",
     "rarity": "4",
@@ -6959,10 +6576,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false
   },
   {
@@ -6974,9 +6588,7 @@
     "description": "A fossil of some strange sea creature is hung on this necklace. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21372532",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "47",
     "stats": "Block +1, Crit +5, WIS +4, END +7, LUK +6, INT +3, DEX +3, STR +3, Bonus +3",
     "resists": "Stone +10, Water +7",
@@ -7002,10 +6614,7 @@
       }
     ],
     "notes": "Fossil Necklace was previously available from the retired quest After the War.",
-    "tags": [
-      "sto",
-      "free"
-    ],
+    "tags": ["sto", "free"],
     "daRequired": true,
     "dcRequired": true
   },
@@ -7018,9 +6627,7 @@
     "description": "The name Sek is inscribed along the carapace.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21990254",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "51",
     "stats": "Block +2, Dodge +2, Parry +2, Magic Def +1, Pierce Def +1, Melee Def +1, Bonus +1",
     "resists": "Fire +5, Light +5, Energy +2, Immobility +2",
@@ -7045,10 +6652,7 @@
         "dcRequired": true
       }
     ],
-    "tags": [
-      "lig",
-      "free"
-    ],
+    "tags": ["lig", "free"],
     "daRequired": false,
     "dcRequired": true
   },
@@ -7061,9 +6665,7 @@
     "description": "A pretty little necklace made by the moglins in thanks for you saving them.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17119304",
     "releaseDate": "",
-    "elements": [
-      "ICE"
-    ],
+    "elements": ["ICE"],
     "level": "33",
     "stats": "Crit +2, Magic Def +1, Pierce Def +1, Melee Def +1, END +3, CHA +3, LUK +3, Bonus +2",
     "resists": "Ice +5, Healing +1",
@@ -7081,10 +6683,7 @@
       }
     ],
     "notes": "Healing Resist does not actually impact player's healing, as it is not Health Resist.",
-    "tags": [
-      "ice",
-      "free"
-    ],
+    "tags": ["ice", "free"],
     "daRequired": false,
     "isSeasonal": true
   },
@@ -7097,9 +6696,7 @@
     "description": "... ewwwwwww!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17119258",
     "releaseDate": "",
-    "elements": [
-      "ICE"
-    ],
+    "elements": ["ICE"],
     "level": "17",
     "stats": "Magic Def +2, END +1, INT +2, STR +2, Bonus +2, Ice +2",
     "rarity": "1",
@@ -7115,10 +6712,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "ice",
-      "free"
-    ],
+    "tags": ["ice", "free"],
     "daRequired": false,
     "isSeasonal": true
   },
@@ -7131,9 +6725,7 @@
     "description": "You can scarce conceive what twisted mind created this much less how it was fitted into a necklace. Strangely, simply knowing you can endure the horrible stench and sight makes you feel stronger.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21808594",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "60",
     "stats": "Crit +5, Magic Def +3, Pierce Def +3, Melee Def +3, WIS -1, END +8, INT +5, DEX +5, STR +5, Bonus +2",
     "resists": "Fire +7, Nature +7, Bacon +4",
@@ -7150,10 +6742,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false
   },
   {
@@ -7165,9 +6754,7 @@
     "description": "Twig made this handwoven necklace in thanks for finding him new fwends!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22094368",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "16",
     "stats": "WIS +2, END +2, CHA +2, Bonus +1",
     "resists": "Darkness +2, Ice +2",
@@ -7184,10 +6771,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false,
     "isSeasonal": true
   },
@@ -7200,9 +6784,7 @@
     "description": "A broken gear on a chain, it's freezing to the touch. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20427793",
     "releaseDate": "",
-    "elements": [
-      "ICE"
-    ],
+    "elements": ["ICE"],
     "level": "49",
     "stats": "Block +1, Dodge +1, Parry +1, Crit +3, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +4, END +4, INT +7, DEX +7, STR +7, Bonus +5",
     "resists": "All +4",
@@ -7228,10 +6810,7 @@
       }
     ],
     "notes": "Necklace previously appeared in the retired quest Dreamscape and had the initial stats:\nStats: Block +1, Dodge +1, Crit +5, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +4, END +4, INT +3, DEX +3, STR +3, Bonus +3\nResists: Fire +6, Energy +8, Metal +5",
-    "tags": [
-      "ice",
-      "free"
-    ],
+    "tags": ["ice", "free"],
     "daRequired": true,
     "dcRequired": true
   },
@@ -7244,9 +6823,7 @@
     "description": "Spoils from some ancient battle, this ruby has lain in the darkness for 600 years. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21990308",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "69",
     "stats": "Block +1, Dodge +1, Crit +9, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +8, END +8, CHA +9, LUK +9, INT +7, DEX +7, STR +7, Bonus +7",
     "resists": "Darkness +10, Wind +10, Fire +10, Immobility +4, Health -3",
@@ -7271,10 +6848,7 @@
         "dcRequired": true
       }
     ],
-    "tags": [
-      "sto",
-      "free"
-    ],
+    "tags": ["sto", "free"],
     "daRequired": true,
     "dcRequired": true
   },
@@ -7287,9 +6861,7 @@
     "description": "A dazzling crystal hangs on this necklace that was left behind by the fairies. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22392413",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "87",
     "stats": "Block +2, Dodge +2, Parry +2, Crit +10, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +10, END +10, CHA +12, LUK +5, INT +13, DEX +13, STR +13, Bonus +10",
     "resists": "Light +13, Water +13, Stone +13, Nature +10, Immobility +7, Health -5",
@@ -7314,10 +6886,7 @@
         "dcRequired": true
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": true,
     "dcRequired": true
   },
@@ -7330,9 +6899,7 @@
     "description": "Hermes, god of speedy travel, is also Lore's Necktie Diety. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=16192380",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "30",
     "stats": "Magic Def +1, Pierce Def +1, Melee Def +1, END +3, CHA +2, LUK +2, INT +3, DEX +3, STR +3, Immobility +1, Stone +3",
     "rarity": "10",
@@ -7348,10 +6915,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "nat",
-      "gold"
-    ],
+    "tags": ["nat", "gold"],
     "daRequired": true,
     "isRare": true
   },
@@ -7364,9 +6928,7 @@
     "description": "Once won by the hunter who brought down the biggest scorpiac ever seen.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21591771",
     "releaseDate": "",
-    "elements": [
-      "POI"
-    ],
+    "elements": ["POI"],
     "level": "67",
     "stats": "Parry +1, Crit +7, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +4, END +4, INT +5, DEX +5, STR +5, Bonus +7",
     "resists": "Poison +5, Stone +5, Nature +5, Immobility +3",
@@ -7383,10 +6945,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "poi",
-      "free"
-    ],
+    "tags": ["poi", "free"],
     "daRequired": false
   },
   {
@@ -7398,9 +6957,7 @@
     "description": "A tooth pulled from a conquered foe. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21990300",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "47",
     "stats": "Block +1, Dodge +1, Crit +5, WIS +4, END +7, INT +3, DEX +3, STR +3, Bonus +3",
     "resists": "Stone +10, Water +7",
@@ -7425,10 +6982,7 @@
         "dcRequired": true
       }
     ],
-    "tags": [
-      "sto",
-      "free"
-    ],
+    "tags": ["sto", "free"],
     "daRequired": true,
     "dcRequired": true
   },
@@ -7441,9 +6995,7 @@
     "description": "Rough links of gold ore create the chain of this necklace.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18731570",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "36",
     "stats": "Magic Def +2, Pierce Def +2, Melee Def +2, END +3, CHA +2, LUK +5",
     "resists": "Wind +6",
@@ -7460,10 +7012,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "sto",
-      "free"
-    ],
+    "tags": ["sto", "free"],
     "daRequired": false
   },
   {
@@ -7475,9 +7024,7 @@
     "description": "A magic tool on a chain. It allows you to highlight passages in whatever you read.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19896822",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "5",
     "stats": "WIS +1, END +1, CHA +1, LUK +1, INT +1, DEX +1, STR +1, Immobility +1, Light +1",
     "rarity": "10",
@@ -7493,10 +7040,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "lig",
-      "free"
-    ],
+    "tags": ["lig", "free"],
     "daRequired": false
   },
   {
@@ -7508,9 +7052,7 @@
     "description": "Embroidered with the initials J.A. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21591459",
     "releaseDate": "",
-    "elements": [
-      "MET"
-    ],
+    "elements": ["MET"],
     "level": "37",
     "stats": "Crit +5, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +3, END +3, LUK +5, INT +5, DEX +5, STR +5, Bonus +3",
     "resists": "Fire +5, Ice +5, Immobility +3, Health -1",
@@ -7527,10 +7069,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "met",
-      "free"
-    ],
+    "tags": ["met", "free"],
     "daRequired": true
   },
   {
@@ -7542,9 +7081,7 @@
     "description": "This swanky tie seems to be covered in... goo?! Yuck!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=16192825",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "5",
     "stats": "END +1, CHA +1, LUK +1, INT +1, DEX +1, STR +1, Immobility +1, Light +1",
     "rarity": "10",
@@ -7560,10 +7097,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "dar",
-      "gold"
-    ],
+    "tags": ["dar", "gold"],
     "daRequired": false,
     "isRare": true
   },
@@ -7576,9 +7110,7 @@
     "description": "This necklace dropped off of the nature dragon Gorgok after you defeated it. Why was it already on a chain? You could go back and ask Gorgok if you REALLY want to...",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=11535598",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "25",
     "stats": "Crit +3, INT +3, STR +3, Bonus +1",
     "resists": "Nature +7, Stone +2, Fire +2",
@@ -7595,10 +7127,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": true
   },
   {
@@ -7610,9 +7139,7 @@
     "description": "Twig made this handwoven necklace in thanks for finding him new fwends! This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22094379",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "78",
     "stats": "Block +7, Dodge +7, Parry +7, Crit +7, WIS +3, END +7, CHA +6, LUK +2, INT +7, DEX +7, STR +7, Bonus +5",
     "resists": "Water +9, Darkness +10, Ice +10",
@@ -7629,10 +7156,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": true,
     "isSeasonal": true
   },
@@ -7874,20 +7398,14 @@
     "equipSlot": "Neck",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dc",
-      "free",
-      "ice"
-    ],
+    "tags": ["dc", "free", "ice"],
     "hasDA": true,
     "hasDC": true,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-IV",
-    "elements": [
-      "ICE"
-    ]
+    "elements": ["ICE"]
   },
   {
     "id": "accessory-green-pearl-necklace",
@@ -7898,9 +7416,7 @@
     "description": "A poisonous oyster living deep in the trenches secretes these pearls every 100 years. These are very rare, but give you excellent protection from poison if you wear one.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17329963",
     "releaseDate": "",
-    "elements": [
-      "POI"
-    ],
+    "elements": ["POI"],
     "level": "15",
     "stats": "Crit +2, WIS +4, END +5, Bonus +2",
     "resists": "Poison +8",
@@ -7917,10 +7433,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "poi",
-      "gold"
-    ],
+    "tags": ["poi", "gold"],
     "daRequired": false
   },
   {
@@ -7932,9 +7445,7 @@
     "description": "This necklace reminds you to brush your teeth. This items requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21310200",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "53",
     "stats": "Crit +6, WIS +6, END +5, CHA -2, INT +5, DEX +5, STR +5, Bonus +4",
     "resists": "Poison +10, Disease +9, Stone +10",
@@ -7952,10 +7463,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "sto",
-      "merge"
-    ],
+    "tags": ["sto", "merge"],
     "daRequired": true
   },
   {
@@ -7967,9 +7475,7 @@
     "description": "A rather large incisor from an angry bear.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21970750",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "21",
     "stats": "Crit +2, Magic Def +2, WIS -1, END +4, INT +2, DEX +2, STR +2",
     "resists": "Water +2, Nature +2, Fire +3",
@@ -7986,10 +7492,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false
   },
   {
@@ -8159,10 +7662,7 @@
     "equipSlot": "Neck",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "free",
-      "nat"
-    ],
+    "tags": ["free", "nat"],
     "isRare": true,
     "hasDA": true,
     "hasDC": false,
@@ -8170,9 +7670,7 @@
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-V",
-    "elements": [
-      "NAT"
-    ]
+    "elements": ["NAT"]
   },
   {
     "id": "accessory-grub-necklace",
@@ -8346,19 +7844,14 @@
     "equipSlot": "Neck",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "free",
-      "nat"
-    ],
+    "tags": ["free", "nat"],
     "hasDA": true,
     "hasDC": false,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-V",
-    "elements": [
-      "NAT"
-    ]
+    "elements": ["NAT"]
   },
   {
     "id": "accessory-hairy-chain",
@@ -8369,9 +7862,7 @@
     "description": "Hair is woven and tangled through all the links!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21920317",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "63",
     "stats": "Parry +1, Crit +5, Magic Def +1, Pierce Def +1, Melee Def +2, WIS +5, END +7, INT +3, DEX +3, STR +3, Bonus +6",
     "resists": "Metal +8, Water +8, Wind +8, Immobility +3",
@@ -8388,10 +7879,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false
   },
   {
@@ -8403,9 +7891,7 @@
     "description": "This strange necklace shaped item seems to be made from moss that has grown together and hardened. A very odd growth for it to have happened without outside interference.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22003675",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "65",
     "stats": "Block +12, Dodge +12, Parry +12, WIS +8, END +8, CHA +12, Bonus +7",
     "resists": "Darkness +7, Fire +7, Mana -5, Health -3, Immobility +5",
@@ -8422,10 +7908,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false
   },
   {
@@ -8437,9 +7920,7 @@
     "description": "You can just fell the cool green light trapped inside this necklace gem. It will bring you luck, you're sure!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15676557",
     "releaseDate": "",
-    "elements": [
-      "NON"
-    ],
+    "elements": ["NON"],
     "level": "30",
     "stats": "Crit +1, END +1, CHA +1, LUK +3, DEX +1, Light +1, Nature +2",
     "rarity": "15",
@@ -8455,10 +7936,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "non",
-      "gold"
-    ],
+    "tags": ["non", "gold"],
     "daRequired": false,
     "isRare": true
   },
@@ -8471,9 +7949,7 @@
     "description": "This titanic sized necklace got caught on the tow of the treasure golem as he was wading past a shipwreck.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=11323121",
     "releaseDate": "",
-    "elements": [
-      "ICE"
-    ],
+    "elements": ["ICE"],
     "level": "14",
     "stats": "Magic Def +1, LUK +1, Water +2, Ice +2",
     "rarity": "0",
@@ -8489,10 +7965,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "ice",
-      "free"
-    ],
+    "tags": ["ice", "free"],
     "daRequired": false
   },
   {
@@ -8504,9 +7977,7 @@
     "description": "At the very center of tidal waves, a little sea sprite sometimes can be found dancing with glee. The stone on this necklace was carved to resemble it.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17329664",
     "releaseDate": "",
-    "elements": [
-      "ENE"
-    ],
+    "elements": ["ENE"],
     "level": "22",
     "stats": "Dodge +2, Crit +2, WIS +2, END +2, INT +2, DEX +2, STR +2",
     "resists": "Energy +5, Water +5, Ice +5",
@@ -8523,25 +7994,13 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "ene",
-      "gold"
-    ],
+    "tags": ["ene", "gold"],
     "daRequired": false
   },
   {
     "id": "accessory-heart-scale",
     "familyName": "Heart Scale",
     "slug": "accessory-heart-scale",
-    "aliasSlugs": [
-      "accessory-heart-scale",
-      "accessory-heart-scale",
-      "accessory-heart-scale",
-      "accessory-heart-scale",
-      "accessory-heart-scale",
-      "accessory-heart-scale",
-      "accessory-heart-scale"
-    ],
     "type": "accessory",
     "subtype": "necklace",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21960420",
@@ -8761,20 +8220,14 @@
     "equipSlot": "Neck",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "free",
-      "merge",
-      "non"
-    ],
+    "tags": ["free", "merge", "non"],
     "hasDA": false,
     "hasDC": false,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": true,
     "levelRange": "30-80",
-    "elements": [
-      "NON"
-    ]
+    "elements": ["NON"]
   },
   {
     "id": "accessory-heart-shaped-locket",
@@ -8785,9 +8238,7 @@
     "description": "Your mother will love the picture of you and your dragon that you've put inside! If you wear it until you give it to her, you'll gain a bit of extra protection. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15970722",
     "releaseDate": "",
-    "elements": [
-      "NON"
-    ],
+    "elements": ["NON"],
     "level": "30",
     "stats": "Crit +1, Magic Def +1, Pierce Def +1, Melee Def +1, END +3, CHA +2, LUK +2, Bonus +1, Light +2, Darkness +2, Metal +5",
     "rarity": "15",
@@ -8803,10 +8254,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "non",
-      "gold"
-    ],
+    "tags": ["non", "gold"],
     "daRequired": true,
     "isRare": true
   },
@@ -8819,9 +8267,7 @@
     "description": "Last place in the Duck Hunt competition.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21591384",
     "releaseDate": "",
-    "elements": [
-      "WAT"
-    ],
+    "elements": ["WAT"],
     "level": "17",
     "stats": "Magic Def +2, END +1, CHA +1, INT +1, DEX +1, STR +1, Bonus +2",
     "resists": "Energy +2",
@@ -8838,10 +8284,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "wat",
-      "free"
-    ],
+    "tags": ["wat", "free"],
     "daRequired": false
   },
   {
@@ -8853,9 +8296,7 @@
     "description": "This necklace was abandoned at the gateway of H-E-double hockey sticks!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=11323717",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "26",
     "stats": "END +2, LUK +2, Bonus +2, Poison +2",
     "rarity": "0",
@@ -8871,10 +8312,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "lig",
-      "free"
-    ],
+    "tags": ["lig", "free"],
     "daRequired": false
   },
   {
@@ -8886,9 +8324,7 @@
     "description": "You can scarce conceive what twisted mind created this much less how it was fitted into a necklace. Strangely, simply knowing you can endure the horrible stench and sight makes you feel stronger. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21807600",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "50",
     "stats": "Dodge +1, Crit +4, Magic Def +3, Pierce Def +3, Melee Def +3, WIS -1, END +7, INT +5, DEX +5, STR +5, Bonus +2",
     "resists": "Fire +7, Nature +7, Bacon +4, Immobility +1",
@@ -8905,10 +8341,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": true
   },
   {
@@ -9173,19 +8606,14 @@
     "equipSlot": "Neck",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "free",
-      "nat"
-    ],
+    "tags": ["free", "nat"],
     "hasDA": true,
     "hasDC": false,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "12-78",
-    "elements": [
-      "NAT"
-    ]
+    "elements": ["NAT"]
   },
   {
     "id": "accessory-ice-crystal",
@@ -9196,9 +8624,7 @@
     "description": "A crystal of perfect ice, it seems to absorb heat.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19895618",
     "releaseDate": "",
-    "elements": [
-      "ICE"
-    ],
+    "elements": ["ICE"],
     "level": "0",
     "stats": "Ice +5, Fire +5",
     "rarity": "0",
@@ -9214,10 +8640,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "ice",
-      "free"
-    ],
+    "tags": ["ice", "free"],
     "daRequired": false
   },
   {
@@ -9229,9 +8652,7 @@
     "description": "Really, really, realllllllly cooooold!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17119259",
     "releaseDate": "",
-    "elements": [
-      "ICE"
-    ],
+    "elements": ["ICE"],
     "level": "29",
     "stats": "Crit +1, Magic Def +1, Pierce Def +1, Melee Def +1, END +2, LUK +3, STR +2, Bonus +2, Ice +5",
     "rarity": "7",
@@ -9247,10 +8668,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "ice",
-      "free"
-    ],
+    "tags": ["ice", "free"],
     "daRequired": false,
     "isSeasonal": true
   },
@@ -9263,9 +8681,7 @@
     "description": "Cold AND prickly.... This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18821736",
     "releaseDate": "",
-    "elements": [
-      "ICE"
-    ],
+    "elements": ["ICE"],
     "level": "48",
     "stats": "Crit +5, WIS +7, END +4, CHA +6, LUK +6, INT +2, DEX +2, STR +2, Bonus +2",
     "resists": "Fire +6, Water +8",
@@ -9282,10 +8698,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "ice",
-      "free"
-    ],
+    "tags": ["ice", "free"],
     "daRequired": true
   },
   {
@@ -9297,9 +8710,7 @@
     "description": "The stones of this necklace are as cold as ice... in fact... I think they are ice!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18821282",
     "releaseDate": "",
-    "elements": [
-      "ICE"
-    ],
+    "elements": ["ICE"],
     "level": "28",
     "stats": "Crit +3, WIS +5, CHA +3, LUK +3",
     "resists": "Fire +4, Water +5",
@@ -9316,10 +8727,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "ice",
-      "free"
-    ],
+    "tags": ["ice", "free"],
     "daRequired": false
   },
   {
@@ -9331,9 +8739,7 @@
     "description": "It is very light....",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21216188",
     "releaseDate": "",
-    "elements": [
-      "WIN"
-    ],
+    "elements": ["WIN"],
     "level": "26",
     "stats": "Crit +1, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +2, END +2, INT +2, DEX +2, STR +2, Bonus +2",
     "resists": "Wind +2, Stone +2, Immobility +1",
@@ -9359,10 +8765,7 @@
       }
     ],
     "notes": "Ieb Weight was previously available from the retired quest Face of Death.",
-    "tags": [
-      "win",
-      "free"
-    ],
+    "tags": ["win", "free"],
     "daRequired": false,
     "dcRequired": true
   },
@@ -9375,9 +8778,7 @@
     "description": "This tooth is huge, it must be lucky! This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21308558",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "47",
     "stats": "Crit +5, WIS +4, END +7, CHA +2, LUK +8, INT +3, DEX +3, STR +3, Bonus +2",
     "resists": "Stone +6, Water +10",
@@ -9395,10 +8796,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "sto",
-      "merge"
-    ],
+    "tags": ["sto", "merge"],
     "daRequired": true
   },
   {
@@ -9410,9 +8808,7 @@
     "description": "The glowing runes on this necklace detect ice magic! This item requires a Dragon Amulet..",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21728978",
     "releaseDate": "",
-    "elements": [
-      "ICE"
-    ],
+    "elements": ["ICE"],
     "level": "29",
     "stats": "Crit +3, Magic Def +3, WIS +2, END +1, LUK +4, INT +4, DEX +4, STR +4",
     "resists": "Ice +5, Immobility +5",
@@ -9429,10 +8825,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "ice",
-      "free"
-    ],
+    "tags": ["ice", "free"],
     "daRequired": true
   },
   {
@@ -9444,9 +8837,7 @@
     "description": "Intricately carved pieces of ivory enamel make up the beads of this necklace.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21308153",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "28",
     "stats": "Crit +3, WIS +5, END +2, LUK +3",
     "resists": "Nature +4, Water +5",
@@ -9464,10 +8855,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "merge"
-    ],
+    "tags": ["nat", "merge"],
     "daRequired": false
   },
   {
@@ -9479,9 +8867,7 @@
     "description": "This necklace seems to have been formed entirely of ivy. The strange thing is it seems to have happened naturally.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22003750",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "39",
     "stats": "Block +6, Dodge +6, Parry +6, WIS +5, END +5, CHA +7, Bonus +4",
     "resists": "Darkness +5, Fire +6, Mana -3",
@@ -9498,10 +8884,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false
   },
   {
@@ -9513,9 +8896,7 @@
     "description": "A little boy named Mark made this tie for his father out of wood and ribbon. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=16192799",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "45",
     "stats": "END +3, CHA +2, LUK +2, INT +4, DEX +4, STR +4, Immobility +1, Wind +4",
     "rarity": "10",
@@ -9531,10 +8912,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "nat",
-      "gold"
-    ],
+    "tags": ["nat", "gold"],
     "daRequired": true,
     "isRare": true
   },
@@ -9547,9 +8925,7 @@
     "description": "A rather large incisor from an angry bear. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21970848",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "51",
     "stats": "Parry +1, Crit +5, Magic Def +1, Pierce Def +1, Melee Def +1, WIS -1, END +8, INT +5, DEX +5, STR +5, Bonus +3",
     "resists": "Water +6, Nature +7, Fire +7",
@@ -9566,10 +8942,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": true
   },
   {
@@ -9581,9 +8954,7 @@
     "description": "A small purple gemstone attached to a silver chain; Drakath dropped this necklace when he made his escape. The enchantment on it makes your healing a little more effective! (-Health resistance improves healing, +Health resistance weakens it)",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22421776",
     "releaseDate": "",
-    "elements": [
-      "NON"
-    ],
+    "elements": ["NON"],
     "level": "9",
     "stats": "Crit +3, CHA +5, Bonus +3",
     "resists": "Health -5",
@@ -9601,10 +8972,7 @@
       }
     ],
     "notes": "The description's excerpt (-Health resistance improves healing, +Health resistance weakens it) was added on May 9th, 2025.\nLevel's requirement was lowered from 10 to 9 on September 5th, 2025.",
-    "tags": [
-      "non",
-      "free"
-    ],
+    "tags": ["non", "free"],
     "daRequired": false
   },
   {
@@ -9616,9 +8984,7 @@
     "description": "This necklace has a little pixie contained in a bottle which hangs off the golden chain. If you break the bottle and free the pixie, it will grant you a wish, stories claim!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18392215",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "33",
     "stats": "Crit +4, END +3, CHA +3, LUK +6, Bonus +2",
     "resists": "Wind +5, Health -5",
@@ -9635,10 +9001,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "sto",
-      "free"
-    ],
+    "tags": ["sto", "free"],
     "daRequired": false
   },
   {
@@ -9650,9 +9013,7 @@
     "description": "This necklace is adorned with thirty silver coins.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19297391",
     "releaseDate": "",
-    "elements": [
-      "SIL"
-    ],
+    "elements": ["SIL"],
     "level": "45",
     "stats": "Dodge +1, Crit +5, Magic Def +2, Pierce Def +2, Melee Def +2, WIS -2, END +4, INT +4, DEX +4, STR +4, Bonus +2",
     "resists": "Silver +5, Light +2, Health -2",
@@ -9669,10 +9030,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "sil",
-      "free"
-    ],
+    "tags": ["sil", "free"],
     "daRequired": false
   },
   {
@@ -9684,9 +9042,7 @@
     "description": "Eight Kanji charms grace this gold chain, each charm corresponding with one of the eight elemental orbs. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18953474",
     "releaseDate": "",
-    "elements": [
-      "WIN"
-    ],
+    "elements": ["WIN"],
     "level": "58",
     "stats": "Parry +1, Crit +6, WIS +6, END +6, CHA +4, LUK +4, INT +5, DEX +5, STR +5, Bonus +4",
     "resists": "Stone +8, Wind +8, All +2",
@@ -9703,10 +9059,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "win",
-      "free"
-    ],
+    "tags": ["win", "free"],
     "daRequired": true
   },
   {
@@ -9718,9 +9071,7 @@
     "description": "The glowing runes on this chain detect fire magic.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21728939",
     "releaseDate": "",
-    "elements": [
-      "POI"
-    ],
+    "elements": ["POI"],
     "level": "45",
     "stats": "Crit +2, Magic Def +5, WIS +5, END +5, LUK +2",
     "resists": "Fire +10",
@@ -9737,10 +9088,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "poi",
-      "free"
-    ],
+    "tags": ["poi", "free"],
     "daRequired": false
   },
   {
@@ -9862,19 +9210,14 @@
     "equipSlot": "Neck",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "merge",
-      "sil"
-    ],
+    "tags": ["merge", "sil"],
     "hasDA": false,
     "hasDC": true,
     "hasDM": false,
     "hasFree": false,
     "hasMerge": true,
     "levelRange": "I-III",
-    "elements": [
-      "SIL"
-    ]
+    "elements": ["SIL"]
   },
   {
     "id": "accessory-klein-bottle-tie",
@@ -9885,9 +9228,7 @@
     "description": "You try and you try to figure out how to put this tie on, but you can't seem to find the inside or outside in order to tie the knot!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=16192821",
     "releaseDate": "",
-    "elements": [
-      "NON"
-    ],
+    "elements": ["NON"],
     "level": "15",
     "stats": "END +2, CHA +2, LUK +2, INT +2, DEX +2, STR +2, Immobility +1, Metal +2",
     "rarity": "10",
@@ -9903,10 +9244,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "non",
-      "gold"
-    ],
+    "tags": ["non", "gold"],
     "daRequired": false,
     "isRare": true
   },
@@ -10310,20 +9648,14 @@
     "equipSlot": "Neck",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dc",
-      "free",
-      "woo"
-    ],
+    "tags": ["dc", "free", "woo"],
     "hasDA": true,
     "hasDC": true,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-VII",
-    "elements": [
-      "WOO"
-    ]
+    "elements": ["WOO"]
   },
   {
     "id": "accessory-last-breath",
@@ -10334,9 +9666,7 @@
     "description": "This amazing magical necklace holds a small bottle around the wearer's neck. It's said that you can breathe into the bottle and it will hold your last breath, allowing you to return from the dead (with 1 hp, at the start of the quest).",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=10485215",
     "releaseDate": "",
-    "elements": [
-      "WIN"
-    ],
+    "elements": ["WIN"],
     "level": "14",
     "stats": "INT +5, DEX +5, STR +5, Bonus +5",
     "resists": "Wind +3",
@@ -10354,10 +9684,7 @@
       }
     ],
     "notes": "The following changes were implemented on March 20th, 2026:\n  • Level's requirement was raised from 4 to 14.\n  • DEX and STR stats were raised from +1 and +2 to +5 respectively.\n  • Bonus was raised from +1 to +5.\n  • INT +5 was added.\n  • Wind Resist was raised from +1 to +3.\n  • -1 Stone Resist was removed.",
-    "tags": [
-      "win",
-      "free"
-    ],
+    "tags": ["win", "free"],
     "daRequired": false
   },
   {
@@ -10477,20 +9804,14 @@
     "equipSlot": "Neck",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "free",
-      "merge",
-      "nat"
-    ],
+    "tags": ["free", "merge", "nat"],
     "hasDA": false,
     "hasDC": true,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": true,
     "levelRange": "I-III",
-    "elements": [
-      "NAT"
-    ]
+    "elements": ["NAT"]
   },
   {
     "id": "accessory-leafy-circlet",
@@ -10501,9 +9822,7 @@
     "description": "A myriad of colorful leaves encircle your neck.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18731517",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "46",
     "stats": "Crit +2, WIS +5, END +5, INT +3, DEX +3, STR +3",
     "resists": "Nature +6, Fire +4",
@@ -10520,10 +9839,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false
   },
   {
@@ -10535,9 +9851,7 @@
     "description": "A strip of rugged leather makes up this rough collar. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21884790",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "52",
     "stats": "Crit +4, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +4, END +7, INT +5, DEX +5, STR +5, Bonus +4",
     "resists": "Immobility +8, Darkness +10, Metal +5, Fire +7",
@@ -10554,10 +9868,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": true
   },
   {
@@ -10569,9 +9880,7 @@
     "description": "One of the magical lightstones that the frost moglins use to decorate their town. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19895673",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "70",
     "stats": "Dodge +2, Crit +9, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +8, END +8, CHA +9, LUK +9, INT +7, DEX +7, STR +7, Bonus +7, Health -3, Immobility +4, Darkness +10, Ice +10, Fire +10",
     "rarity": "7",
@@ -10587,10 +9896,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "lig",
-      "free"
-    ],
+    "tags": ["lig", "free"],
     "daRequired": true,
     "isSeasonal": true
   },
@@ -10603,9 +9909,7 @@
     "description": "This necklace is made of bands of ivy, moss, and oak bark. It seems to radiate the power of nature. Someone had to have made this, but who? This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22003760",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "77",
     "stats": "Block +20, Dodge +20, Parry +20, WIS +12, END +12, CHA +15, Bonus +15",
     "resists": "Darkness +8, Fire +10, Mana -8, Health -5, Immobility +6",
@@ -10622,10 +9926,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": true
   },
   {
@@ -10637,9 +9938,7 @@
     "description": "Several pieces of oak bark are looped together into a chain. Why would anyone do that?",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22003693",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "28",
     "stats": "Block +2, Dodge +2, Parry +2, WIS +3, END +3, CHA +3, Bonus +3",
     "resists": "Darkness +4, Fire +5, Mana -2",
@@ -10656,10 +9955,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false
   },
   {
@@ -10671,9 +9967,7 @@
     "description": "A jeweler has embedded one of the Somean lion's fangs in a polished metal collar for you. He engraved copies of the lion's tattoos there, as well, but made you pay extra for it.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15430479",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "5",
     "stats": "Crit +2, END +1, CHA +1, STR +2, Immobility +1, Nature +1",
     "rarity": "5",
@@ -10689,10 +9983,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false
   },
   {
@@ -10704,9 +9995,7 @@
     "description": "Though beautiful wrought, this necklace sends shiver's down your spine",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17397153",
     "releaseDate": "",
-    "elements": [
-      "ICE"
-    ],
+    "elements": ["ICE"],
     "level": "7",
     "stats": "Dodge +1, Magic Def +1, Pierce Def +1, Melee Def +1",
     "resists": "Darkness +4, Ice +4",
@@ -10723,10 +10012,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "ice",
-      "free"
-    ],
+    "tags": ["ice", "free"],
     "daRequired": false
   },
   {
@@ -10738,9 +10024,7 @@
     "description": "For heroes who are just starting out, this is a perfect way to show your mother you're grateful for all the times she put up with you punting chickens in the yard and leaving weapons in the bathroom. Gives +3 to pasta!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15970780",
     "releaseDate": "",
-    "elements": [
-      "NON"
-    ],
+    "elements": ["NON"],
     "level": "10",
     "stats": "CHA +3, Light +1, Darkness +1",
     "rarity": "10",
@@ -10756,10 +10040,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "non",
-      "gold"
-    ],
+    "tags": ["non", "gold"],
     "daRequired": false,
     "isRare": true
   },
@@ -10772,9 +10053,7 @@
     "description": "This is worth about a cow. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21079313",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "76",
     "stats": "Block +1, Parry +1, Crit +8, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +9, END +9, CHA +2, LUK +15, INT +10, DEX +10, STR +10, Bonus +10",
     "resists": "Light +11, Water +11, Wind +11, Nature +8, Immobility +5, Health -3",
@@ -10791,10 +10070,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "nat",
-      "gold"
-    ],
+    "tags": ["nat", "gold"],
     "daRequired": true
   },
   {
@@ -10806,9 +10082,7 @@
     "description": "An essence of pure mana caught in a bottle, for some reason, it fills you with dread.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20422498",
     "releaseDate": "",
-    "elements": [
-      "SIL"
-    ],
+    "elements": ["SIL"],
     "level": "34",
     "stats": "Crit +2, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +2, END +2, INT +5, DEX +5, STR +5, Bonus +5",
     "resists": "All +3",
@@ -10834,10 +10108,7 @@
       }
     ],
     "notes": "Necklace previously appeared in the retired quest Dreamscape and had the initial stats:\nStats: Crit +5, Magic Def +2, Pierce Def +2, Melee Def +2, END +2, LUK +5\nResists: Ice +4, Darkness +3",
-    "tags": [
-      "sil",
-      "free"
-    ],
+    "tags": ["sil", "free"],
     "daRequired": false,
     "dcRequired": true
   },
@@ -10850,9 +10121,7 @@
     "description": "A small shard of a Valtrith mask broken in battle. Every mask broken on the field added to the family honor. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21990304",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "58",
     "stats": "Block +1, Parry +1, Crit +6, WIS +6, END +6, LUK +5, INT +5, DEX +5, STR +5, Bonus +4",
     "resists": "Stone +8, Fire +8, All +2",
@@ -10877,10 +10146,7 @@
         "dcRequired": true
       }
     ],
-    "tags": [
-      "dar",
-      "free"
-    ],
+    "tags": ["dar", "free"],
     "daRequired": true,
     "dcRequired": true
   },
@@ -10893,9 +10159,7 @@
     "description": "Filled with a secret hunter remedy, it's both fiery and icy.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21591248",
     "releaseDate": "",
-    "elements": [
-      "FIR"
-    ],
+    "elements": ["FIR"],
     "level": "57",
     "stats": "Crit +2, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +2, END +5, INT +6, DEX +6, STR +6, Bonus +5",
     "resists": "Fire +8, Ice +4, Immobility +1",
@@ -10912,10 +10176,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "fir",
-      "free"
-    ],
+    "tags": ["fir", "free"],
     "daRequired": false
   },
   {
@@ -10927,9 +10188,7 @@
     "description": "Decidedly un-magical.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21079616",
     "releaseDate": "",
-    "elements": [
-      "MET"
-    ],
+    "elements": ["MET"],
     "level": "16",
     "stats": "Crit +1, Magic Def +2, END +1, INT +1, DEX +1, STR +1, Bonus +1",
     "resists": "Nature +2, Fire +2",
@@ -10946,10 +10205,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "met",
-      "gold"
-    ],
+    "tags": ["met", "gold"],
     "daRequired": false
   },
   {
@@ -10961,9 +10217,7 @@
     "description": "The tip of a metallic claw, broken from some weapon, now decorates this chain as a deadly charm. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21990314",
     "releaseDate": "",
-    "elements": [
-      "MET"
-    ],
+    "elements": ["MET"],
     "level": "78",
     "stats": "Block +1, Dodge +1, Crit +7, Magic Def +4, Pierce Def +4, Melee Def +4, END +9, INT +8, DEX +8, STR +8, Bonus +6",
     "resists": "Fire +10, Silver +10, Stone +6, Immobility +3",
@@ -10988,10 +10242,7 @@
         "dcRequired": true
       }
     ],
-    "tags": [
-      "met",
-      "free"
-    ],
+    "tags": ["met", "free"],
     "daRequired": true,
     "dcRequired": true
   },
@@ -11004,9 +10255,7 @@
     "description": "Edy found this shiny, shiny mirror lure inside a bait and tackle box. When he held it up to the light, it sparkled and gleamed!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17329720",
     "releaseDate": "",
-    "elements": [
-      "WAT"
-    ],
+    "elements": ["WAT"],
     "level": "45",
     "stats": "Crit +4, WIS +4, END +4, INT +3, DEX +3, STR +3, Bonus +3",
     "resists": "Energy +5, Light +5, Fire +5",
@@ -11023,10 +10272,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "wat",
-      "gold"
-    ],
+    "tags": ["wat", "gold"],
     "daRequired": false
   },
   {
@@ -11038,9 +10284,7 @@
     "description": "This items requires a Dragon Amulet. A little piece of the juicing machine. Better to keep this safe and out of evil hands!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17119232",
     "releaseDate": "",
-    "elements": [
-      "ICE"
-    ],
+    "elements": ["ICE"],
     "level": "45",
     "stats": "END +4, CHA +4, LUK +4, INT +4, DEX +4, STR +4, Health -2, Ice +2, Darkness +2",
     "rarity": "10",
@@ -11056,10 +10300,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "ice",
-      "free"
-    ],
+    "tags": ["ice", "free"],
     "daRequired": true,
     "isSeasonal": true
   },
@@ -11072,9 +10313,7 @@
     "description": "A strand of moglinberries. The smell is amazing... if you had some fire you could brew up a cup of moglinberry juice! This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19895803",
     "releaseDate": "",
-    "elements": [
-      "POI"
-    ],
+    "elements": ["POI"],
     "level": "45",
     "stats": "WIS +4, END +4, CHA +4, LUK +4, INT +4, DEX +4, STR +4, Health -2, Immobility +2, Wind +2, Ice +2",
     "rarity": "10",
@@ -11090,10 +10329,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "poi",
-      "free"
-    ],
+    "tags": ["poi", "free"],
     "daRequired": true,
     "isSeasonal": true
   },
@@ -11106,9 +10342,7 @@
     "description": "This necklace is made up of hundred of stones carved into monkees, crazily twirling about. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19795905",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "65",
     "stats": "Dodge +1, Parry +1, Crit +6, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +7, CHA +7, LUK +7, INT +6, DEX +6, STR +6, Bonus +7",
     "resists": "Nature +10, Darkness +10, Ice +10, Immobility +3, Health -3",
@@ -11125,10 +10359,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": true
   },
   {
@@ -11140,9 +10371,7 @@
     "description": "Show the world you are a monster hunter! Enhances your critical hit chance.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17569650",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "34",
     "stats": "Crit +5, CHA +5, LUK +5",
     "resists": "Ice +4",
@@ -11160,10 +10389,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "merge"
-    ],
+    "tags": ["nat", "merge"],
     "daRequired": false
   },
   {
@@ -11175,9 +10401,7 @@
     "description": "It smells kinda funny! Enchanes your critical hit chance.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21308186",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "34",
     "stats": "Crit +5, END +2, CHA -2, LUK +5",
     "resists": "Disease +4",
@@ -11195,10 +10419,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "merge"
-    ],
+    "tags": ["nat", "merge"],
     "daRequired": false
   },
   {
@@ -11547,20 +10768,14 @@
     "equipSlot": "Neck",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dc",
-      "free",
-      "nat"
-    ],
+    "tags": ["dc", "free", "nat"],
     "hasDA": true,
     "hasDC": true,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-VI",
-    "elements": [
-      "NAT"
-    ]
+    "elements": ["NAT"]
   },
   {
     "id": "accessory-musty-vial",
@@ -11571,9 +10786,7 @@
     "description": "A small vial filled with knowledge... well, as much knowledge as it can hold. It smells like old books though.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19895854",
     "releaseDate": "",
-    "elements": [
-      "WIN"
-    ],
+    "elements": ["WIN"],
     "level": "4",
     "stats": "Magic Def +1, WIS +1, INT +2, Bonus +1, Nature +1",
     "rarity": "1",
@@ -11589,10 +10802,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "win",
-      "free"
-    ],
+    "tags": ["win", "free"],
     "daRequired": false
   },
   {
@@ -11865,19 +11075,14 @@
     "equipSlot": "Neck",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "fea",
-      "merge"
-    ],
+    "tags": ["fea", "merge"],
     "hasDA": true,
     "hasDC": false,
     "hasDM": false,
     "hasFree": false,
     "hasMerge": true,
     "levelRange": "I-VIII",
-    "elements": [
-      "FEA"
-    ]
+    "elements": ["FEA"]
   },
   {
     "id": "accessory-natural-loops",
@@ -11888,9 +11093,7 @@
     "description": "These plain loops make a beautiful necklace.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22003626",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "16",
     "stats": "WIS +2, END +2, CHA +2, Bonus +1",
     "resists": "Darkness +2, Fire +2",
@@ -11907,10 +11110,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false
   },
   {
@@ -11922,9 +11122,7 @@
     "description": "You can scarce conceive what twisted mind created this much less how it was fitted into a necklace. Strangely, simply knowing you can endure the horrible stench and sight makes you feel stronger. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21807443",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "78",
     "stats": "Block +1, Dodge +1, Crit +8, Magic Def +4, Pierce Def +4, Melee Def +4, WIS -1, END +10, INT +8, DEX +8, STR +8, Bonus +5",
     "resists": "Fire +10, Nature +10, Bacon +6, Immobility +3",
@@ -11941,10 +11139,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": true
   },
   {
@@ -11956,9 +11151,7 @@
     "description": "This metallic chain is covered in runes and hums slightly.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19796231",
     "releaseDate": "",
-    "elements": [
-      "MET"
-    ],
+    "elements": ["MET"],
     "level": "43",
     "stats": "Crit +3, Magic Def +2, Pierce Def +2, Melee Def +2, END +8, INT +2, DEX +2, STR +2, Bonus +3",
     "resists": "Wind +4, Stone +4, Metal +4, Immobility +4",
@@ -11975,10 +11168,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "met",
-      "free"
-    ],
+    "tags": ["met", "free"],
     "daRequired": false
   },
   {
@@ -11990,9 +11180,7 @@
     "description": "A piece of wood hung from a chain of ivy. It seems to occasionally pulse, as though it is beating. A tree does not have a heart though...",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22003638",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "47",
     "stats": "Block +8, Dodge +8, Parry +8, WIS +7, END +7, CHA +10, Bonus +5",
     "resists": "Darkness +7, Fire +7, Mana -4, Health -2",
@@ -12009,10 +11197,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false
   },
   {
@@ -12024,9 +11209,7 @@
     "description": "A large black stone hangs from the chain. It seems to absorb light.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18731497",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "26",
     "resists": "Light +2",
     "rarity": "0",
@@ -12042,10 +11225,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "sto",
-      "free"
-    ],
+    "tags": ["sto", "free"],
     "daRequired": false
   },
   {
@@ -12057,9 +11237,7 @@
     "description": "This necklace is a gold chain with a white gold setting and is mounted with a rare Dragons Eye gem. He found it in the back yard by the pool after your battle with Aisha.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18953446",
     "releaseDate": "",
-    "elements": [
-      "ICE"
-    ],
+    "elements": ["ICE"],
     "level": "36",
     "stats": "Crit +2, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +3, END +3, CHA +2, LUK +5",
     "resists": "Fire +5",
@@ -12076,10 +11254,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "ice",
-      "free"
-    ],
+    "tags": ["ice", "free"],
     "daRequired": false
   },
   {
@@ -12091,9 +11266,7 @@
     "description": "A necklace made of tiny glass orbs... they look very familiar....",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20422467",
     "releaseDate": "",
-    "elements": [
-      "GOO"
-    ],
+    "elements": ["GOO"],
     "level": "60",
     "stats": "Block +1, Dodge +1, Parry +1, Crit +4, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +6, END +6, INT +8, DEX +8, STR +8, Bonus +7",
     "resists": "All +5, Immobility +2",
@@ -12119,10 +11292,7 @@
       }
     ],
     "notes": "Necklace previously appeared in the retired quest Dreamscape and had the initial stats:\nStats: Crit +8, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +6, END +4, LUK +6, INT +4, DEX +4, STR +4, Bonus +4\nResists: All +2, Immobility +2\nNecklace's flavor element was previously None; this was changed to Good on Dreamscape's Reimagined release.",
-    "tags": [
-      "goo",
-      "free"
-    ],
+    "tags": ["goo", "free"],
     "daRequired": false,
     "dcRequired": true
   },
@@ -12135,9 +11305,7 @@
     "description": "This necklace is made of pack ice, which is frozen seawater!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18821321",
     "releaseDate": "",
-    "elements": [
-      "ICE"
-    ],
+    "elements": ["ICE"],
     "level": "38",
     "stats": "Crit +4, WIS +5, END +3, CHA +5, LUK +5",
     "resists": "Fire +5, Water +6",
@@ -12154,10 +11322,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "ice",
-      "free"
-    ],
+    "tags": ["ice", "free"],
     "daRequired": false
   },
   {
@@ -12169,9 +11334,7 @@
     "description": "A necklace you've taken from Pandora's cabin.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21739201",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "73",
     "stats": "Parry +1, Crit +8, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +7, END +7, CHA +4, LUK +4, INT +4, DEX +4, STR +4, Bonus +6",
     "resists": "Darkness +9, Ice +9, Stone +9, Immobility +4",
@@ -12188,10 +11351,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "dar",
-      "free"
-    ],
+    "tags": ["dar", "free"],
     "daRequired": false
   },
   {
@@ -12203,9 +11363,7 @@
     "description": "A necklace you've taken from Pandora's cabin.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21737848",
     "releaseDate": "",
-    "elements": [
-      "WAT"
-    ],
+    "elements": ["WAT"],
     "level": "14",
     "stats": "Magic Def +1, WIS +1, LUK +1",
     "resists": "Ice +1, Water +2",
@@ -12223,10 +11381,7 @@
       }
     ],
     "notes": "Item's inventory icon is erroneously a Bluegem, despite being a Necklace.",
-    "tags": [
-      "wat",
-      "free"
-    ],
+    "tags": ["wat", "free"],
     "daRequired": false
   },
   {
@@ -12238,9 +11393,7 @@
     "description": "Stylized versions of Pandora's Cube are etched into the silver band of this choker. The carvings glow a faint green. Do you really want this thing around your neck? This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17643670",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "52",
     "stats": "Crit +4, WIS +5, END +5, INT +5, DEX +5, STR +5, Bonus +2",
     "resists": "Immobility +8, Darkness +10, Light +5, Fire +7",
@@ -12257,10 +11410,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "dar",
-      "free"
-    ],
+    "tags": ["dar", "free"],
     "daRequired": true
   },
   {
@@ -12272,9 +11422,7 @@
     "description": "A necklace you've taken from Pandora's cabin.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21738588",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "63",
     "stats": "Parry +1, Crit +8, Magic Def +1, Pierce Def +1, Melee Def +1, WIS +7, END +5, CHA +3, LUK +3, INT +3, DEX +3, STR +3, Bonus +5",
     "resists": "Water +8, Ice +8, Wind +8, Immobility +3",
@@ -12291,10 +11439,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "lig",
-      "free"
-    ],
+    "tags": ["lig", "free"],
     "daRequired": false
   },
   {
@@ -12306,9 +11451,7 @@
     "description": "A necklace you've taken from Pandora's cabin.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21737820",
     "releaseDate": "",
-    "elements": [
-      "ENE"
-    ],
+    "elements": ["ENE"],
     "level": "43",
     "stats": "Crit +3, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +6, END +2, INT +2, DEX +2, STR +2, Bonus +3",
     "resists": "Water +4, Light +4, Metal +4, Immobility +4",
@@ -12325,10 +11468,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "ene",
-      "free"
-    ],
+    "tags": ["ene", "free"],
     "daRequired": false
   },
   {
@@ -12340,9 +11480,7 @@
     "description": "A necklace you've taken from Pandora's cabin.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21738599",
     "releaseDate": "",
-    "elements": [
-      "ICE"
-    ],
+    "elements": ["ICE"],
     "level": "33",
     "stats": "Crit +4, WIS +3, CHA +1, LUK +1, INT +1, DEX +1, STR +1, Bonus +2",
     "resists": "Fire +5, Health -5",
@@ -12359,10 +11497,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "ice",
-      "free"
-    ],
+    "tags": ["ice", "free"],
     "daRequired": false
   },
   {
@@ -12374,9 +11509,7 @@
     "description": "A necklace you've taken from Pandora's cabin. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21737878",
     "releaseDate": "",
-    "elements": [
-      "FIR"
-    ],
+    "elements": ["FIR"],
     "level": "52",
     "stats": "Crit +4, WIS +7, END +4, INT +5, DEX +5, STR +5, Bonus +2",
     "resists": "Immobility +8, Darkness +10, Ice +5, Fire +7",
@@ -12393,10 +11526,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "fir",
-      "free"
-    ],
+    "tags": ["fir", "free"],
     "daRequired": true
   },
   {
@@ -12408,9 +11538,7 @@
     "description": "A necklace you've taken from Pandora's cabin. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21737824",
     "releaseDate": "",
-    "elements": [
-      "???"
-    ],
+    "elements": ["???"],
     "level": "77",
     "stats": "Block +1, Dodge +1, Crit +9, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +10, END +9, CHA +5, LUK +5, INT +8, DEX +8, STR +8, Bonus +9",
     "resists": "Fire +10, Water +10, Stone +10, Wind +9, Immobility +5, Health -3",
@@ -12427,10 +11555,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "???",
-      "free"
-    ],
+    "tags": ["???", "free"],
     "daRequired": true
   },
   {
@@ -12442,9 +11567,7 @@
     "description": "A necklace you've taken from Pandora's cabin.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21737805",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "67",
     "stats": "Parry +1, Crit +7, Magic Def +4, Pierce Def +1, Melee Def +1, WIS +6, END +2, INT +5, DEX +5, STR +5, Bonus +7",
     "resists": "Light +8, Darkness +5, Fire +5, Immobility +3",
@@ -12461,10 +11584,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "lig",
-      "free"
-    ],
+    "tags": ["lig", "free"],
     "daRequired": false
   },
   {
@@ -12476,9 +11596,7 @@
     "description": "A necklace you've taken from Pandora's cabin. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21737845",
     "releaseDate": "",
-    "elements": [
-      "WIN"
-    ],
+    "elements": ["WIN"],
     "level": "24",
     "stats": "Crit +3, Magic Def +1, Pierce Def +1, Melee Def +1, WIS +2, INT +3, DEX +3, STR +3",
     "resists": "Stone +3, Energy +3",
@@ -12495,10 +11613,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "win",
-      "free"
-    ],
+    "tags": ["win", "free"],
     "daRequired": true
   },
   {
@@ -12510,9 +11625,7 @@
     "description": "A version of the Chaos Amulet from a different timeline. Through devoid of most of its power, shimmering versions of alternate timelines cycle through the amulet's eye. Proof of victory over the 13th Lord of Chaos!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22410697",
     "releaseDate": "",
-    "elements": [
-      "???"
-    ],
+    "elements": ["???"],
     "level": "90",
     "stats": "Block +10, Parry +10, Dodge +10, Crit +13, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +13, END +13, CHA +13, LUK +13, INT +13, DEX +13, STR +13, Bonus +13",
     "resists": "All +10",
@@ -12531,10 +11644,7 @@
       }
     ],
     "notes": "Own this item to obtain the Chaos Slayer badge.",
-    "tags": [
-      "???",
-      "free"
-    ],
+    "tags": ["???", "free"],
     "daRequired": false,
     "dcRequired": true
   },
@@ -12547,9 +11657,7 @@
     "description": "A strip of cloth ripped from a shirt or robe.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21882842",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "33",
     "stats": "Crit +3, Melee Def +1, END +3, INT +2, DEX +2, STR +2, Bonus +2",
     "resists": "Nature +5, Water +2",
@@ -12566,10 +11674,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false
   },
   {
@@ -12577,7 +11682,6 @@
     "familyName": "Poison Ward Amulet",
     "slug": "accessory-poison-ward-amulet",
     "aliasSlugs": [
-      "accessory-poison-ward-amulet",
       "accessory-poison-ward-amulet-ii",
       "accessory-poison-ward-amulet-iii",
       "accessory-poison-ward-amulet-iv"
@@ -12718,19 +11822,14 @@
     "equipSlot": "Neck",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "merge",
-      "poi"
-    ],
+    "tags": ["merge", "poi"],
     "hasDA": false,
     "hasDC": false,
     "hasDM": false,
     "hasFree": false,
     "hasMerge": true,
     "levelRange": "I-IV",
-    "elements": [
-      "POI"
-    ]
+    "elements": ["POI"]
   },
   {
     "id": "accessory-psychosis-bag",
@@ -12741,9 +11840,7 @@
     "description": "A tiny bags hangs from this necklace. You do not want to look inside of it.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20442468",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "24",
     "stats": "Crit +3, Magic Def +1, Pierce Def +1, Melee Def +1, END +2, CHA -1, INT +3, DEX +3, STR +3",
     "resists": "Light +3, Darkness +3",
@@ -12761,10 +11858,7 @@
       }
     ],
     "notes": "Necklace previously appeared in the retired quest Nightmares.",
-    "tags": [
-      "dar",
-      "free"
-    ],
+    "tags": ["dar", "free"],
     "daRequired": true
   },
   {
@@ -12776,9 +11870,7 @@
     "description": "The glassy slivers of this necklace came from a powerful volcanic explosion.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18157446",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "18",
     "stats": "Crit +1, END +3, CHA +2, LUK +2",
     "resists": "Wind +3, Stone +3",
@@ -12795,10 +11887,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "sto",
-      "free"
-    ],
+    "tags": ["sto", "free"],
     "daRequired": false
   },
   {
@@ -12810,9 +11899,7 @@
     "description": "You'll strike fast and hot when you wear this necklace!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=16715896",
     "releaseDate": "",
-    "elements": [
-      "FIR"
-    ],
+    "elements": ["FIR"],
     "level": "20",
     "stats": "Dodge +1, Crit +3, Magic Def +3, Pierce Def +3, Melee Def +3, DEX +2",
     "resists": "Fire +5",
@@ -12829,10 +11916,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "fir",
-      "gold"
-    ],
+    "tags": ["fir", "gold"],
     "daRequired": false
   },
   {
@@ -12844,9 +11928,7 @@
     "description": "Second place in some kind of Ravenous Games. It's stained with berry juice.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21593477",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "46",
     "stats": "Crit +3, Magic Def +1, Pierce Def +1, Melee Def +1, WIS +3, END +3, INT +2, DEX +2, STR +2, Bonus +4",
     "resists": "Fire +2, Metal +2, Silver +2, Immobility +2",
@@ -12863,10 +11945,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false
   },
   {
@@ -13269,20 +12348,14 @@
     "equipSlot": "Neck",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dc",
-      "free",
-      "ice"
-    ],
+    "tags": ["dc", "free", "ice"],
     "hasDA": true,
     "hasDC": true,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-VII",
-    "elements": [
-      "ICE"
-    ]
+    "elements": ["ICE"]
   },
   {
     "id": "accessory-regolith",
@@ -13293,9 +12366,7 @@
     "description": "This necklace is created from very deep, ancient rocks that have weathered out of the earth.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18157279",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "48",
     "stats": "Crit +5, WIS +4, END +7, CHA +6, LUK +6, INT +3, DEX +3, STR +3, Bonus +2",
     "resists": "Wind +6, Stone +10",
@@ -13313,10 +12384,7 @@
       }
     ],
     "notes": "Regolith's Stone Resist was previously Earth Resist, then Nature Resist; this was updated on December 23rd, 2020, then again on December 24th, 2020.",
-    "tags": [
-      "sto",
-      "free"
-    ],
+    "tags": ["sto", "free"],
     "daRequired": true
   },
   {
@@ -13328,9 +12396,7 @@
     "description": "You've enhanced your amulet with shadows. Wearing it allows you to make out odd shapes that seem to just barely come into view. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22387778",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "90",
     "stats": "Block +15, Dodge +15, Parry +15, Crit +10, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +16, END +16, INT +12, DEX +12, STR +12, Bonus +10",
     "resists": "Darkness +13, Light +13, Immobility +10, Health -3",
@@ -13349,10 +12415,7 @@
         "dcRequired": true
       }
     ],
-    "tags": [
-      "dar",
-      "merge"
-    ],
+    "tags": ["dar", "merge"],
     "daRequired": true,
     "dcRequired": true
   },
@@ -13365,9 +12428,7 @@
     "description": "You can scarce conceive what twisted mind created this much less how it was fitted into a necklace. Strangely, simply knowing you can endure the horrible stench and sight makes you feel stronger.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21807753",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "30",
     "stats": "Crit +2, Magic Def +1, Pierce Def +1, Melee Def +1, WIS -1, END +5, INT +3, DEX +3, STR +3",
     "resists": "Fire +4, Nature +4, Bacon +2",
@@ -13385,10 +12446,7 @@
       }
     ],
     "notes": "Item's name misspells 'Rataouille' instead of 'Ratatouille'.",
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false
   },
   {
@@ -13400,9 +12458,7 @@
     "description": "The dark ribbon of this collar is old but well cared for. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21882748",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "77",
     "stats": "Dodge +1, Parry +1, Crit +9, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +8, END +9, CHA +2, LUK +2, INT +8, DEX +8, STR +8, Bonus +9",
     "resists": "Light +10, Water +10, Stone +10, Darkness +9, Immobility +5, Health -3",
@@ -13419,10 +12475,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": true
   },
   {
@@ -13434,9 +12487,7 @@
     "description": "This gear strung on some oily chain must have been blessed by some Luck god, because not only do you feel luckier, but more able to tinker with gears and gadgets and doohickeys of all types!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=16187267",
     "releaseDate": "",
-    "elements": [
-      "NON"
-    ],
+    "elements": ["NON"],
     "level": "13",
     "stats": "LUK +3, INT +3, Bonus +1",
     "resists": "Metal +3",
@@ -13453,10 +12504,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "non",
-      "gold"
-    ],
+    "tags": ["non", "gold"],
     "daRequired": false,
     "isRare": true
   },
@@ -13469,9 +12517,7 @@
     "description": "While the beads of this necklace were once fully frozen, they're ow losing their shape as they melt. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18828638",
     "releaseDate": "",
-    "elements": [
-      "ICE"
-    ],
+    "elements": ["ICE"],
     "level": "58",
     "stats": "Dodge +1, Crit +6, WIS +8, END +5, CHA +7, LUK +7, INT +3, DEX +3, STR +3, Bonus +3",
     "resists": "Fire +10, Water +10",
@@ -13489,10 +12535,7 @@
       }
     ],
     "notes": "Necklace's description erroneously includes 'ow', a typo of 'now'.",
-    "tags": [
-      "ice",
-      "free"
-    ],
+    "tags": ["ice", "free"],
     "daRequired": true
   },
   {
@@ -13895,20 +12938,14 @@
     "equipSlot": "Neck",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dc",
-      "free",
-      "nat"
-    ],
+    "tags": ["dc", "free", "nat"],
     "hasDA": true,
     "hasDC": true,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-VII",
-    "elements": [
-      "NAT"
-    ]
+    "elements": ["NAT"]
   },
   {
     "id": "accessory-rune-necklace",
@@ -13919,9 +12956,7 @@
     "description": "A carved replica of an ancient Chaosweaver rune dangles off this necklace. You're not sure what it means, but it pulses with a dark power.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17643557",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "32",
     "stats": "Crit +3, END +3, INT +3, DEX +3, STR +3, Bonus +1",
     "resists": "Darkness +6, Ice +6, Immobility +3",
@@ -13938,10 +12973,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "dar",
-      "free"
-    ],
+    "tags": ["dar", "free"],
     "daRequired": false
   },
   {
@@ -13953,9 +12985,7 @@
     "description": "It looks like this came from the Museum Gift Shop, but it looks REALLY old and used. It seems to help you a little, though!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17643703",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "22",
     "stats": "Dodge +2, Crit +2, END +2, INT +2, DEX +2, STR +2",
     "resists": "Darkness +3, Light +3, Fire +3, Water +3",
@@ -13972,10 +13002,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "dar",
-      "free"
-    ],
+    "tags": ["dar", "free"],
     "daRequired": false
   },
   {
@@ -13987,9 +13014,7 @@
     "description": "The blue stone pulses when magic is near.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21942455",
     "releaseDate": "",
-    "elements": [
-      "MET"
-    ],
+    "elements": ["MET"],
     "level": "16",
     "stats": "Magic Def +2, END +1, INT +1, DEX +1, STR +1, Bonus +2",
     "resists": "Ice +2, Water +2",
@@ -14006,10 +13031,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "met",
-      "free"
-    ],
+    "tags": ["met", "free"],
     "daRequired": false
   },
   {
@@ -14021,9 +13043,7 @@
     "description": "A small crystal said to be the solidified soul of a scarab beetle. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22378923",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "90",
     "stats": "Block +1, Dodge +1, Parry +1, Crit +10, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +10, END +10, CHA +4, LUK +4, INT +12, DEX +12, STR +12, Bonus +12",
     "resists": "Poison +11, Stone +11, Wind +11, Darkness +11, Immobility +5, Health -5",
@@ -14048,10 +13068,7 @@
         "dcRequired": true
       }
     ],
-    "tags": [
-      "sto",
-      "free"
-    ],
+    "tags": ["sto", "free"],
     "daRequired": true,
     "dcRequired": true
   },
@@ -14064,9 +13081,7 @@
     "description": "A braid of seaweed that is still magically alive.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19795858",
     "releaseDate": "",
-    "elements": [
-      "WAT"
-    ],
+    "elements": ["WAT"],
     "level": "39",
     "stats": "Parry +1, Crit +5, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +5, END +5, CHA +5, Bonus +3",
     "resists": "Wind +3, Water +3, Immobility +4",
@@ -14083,10 +13098,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "wat",
-      "free"
-    ],
+    "tags": ["wat", "free"],
     "daRequired": true
   },
   {
@@ -14098,9 +13110,7 @@
     "description": "A seed spitter seed makes up the pendant of this necklace.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21372565",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "36",
     "stats": "Crit +2, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +2, END +3, INT +3, DEX +3, STR +3, Bonus +2",
     "resists": "Fire +6",
@@ -14126,10 +13136,7 @@
       }
     ],
     "notes": "Seed Spitter Seed was previously available from the retired quest After the War.",
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false,
     "dcRequired": true
   },
@@ -14142,9 +13149,7 @@
     "description": "Made up of links painted the color of the deadly yet hypnotic V'rapsik serpent, this band lends the wearer charm and endurance!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18392168",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "43",
     "stats": "Crit +4, Magic Def +2, Pierce Def +2, Melee Def +2, END +7, CHA +5, Bonus +2",
     "resists": "Wind +4, Immobility +4, Stone +4",
@@ -14161,10 +13166,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "sto",
-      "free"
-    ],
+    "tags": ["sto", "free"],
     "daRequired": false
   },
   {
@@ -14176,9 +13178,7 @@
     "description": "A rather large incisor from an angry bear.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21970853",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "71",
     "stats": "Parry +1, Crit +5, Magic Def +2, Pierce Def +2, Melee Def +2, WIS -1, END +9, CHA +1, LUK +1, INT +6, DEX +6, STR +6, Bonus +4",
     "resists": "Water +6, Nature +8, Fire +8",
@@ -14195,10 +13195,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false
   },
   {
@@ -14348,19 +13345,14 @@
     "equipSlot": "Neck",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dar",
-      "merge"
-    ],
+    "tags": ["dar", "merge"],
     "hasDA": false,
     "hasDC": false,
     "hasDM": false,
     "hasFree": false,
     "hasMerge": true,
     "levelRange": "I-IV",
-    "elements": [
-      "DAR"
-    ]
+    "elements": ["DAR"]
   },
   {
     "id": "accessory-sharp-bear-tooth-necklace",
@@ -14371,9 +13363,7 @@
     "description": "A rather large incisor from an angry bear.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21970846",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "31",
     "stats": "Crit +3, WIS -1, END +5, INT +3, DEX +3, STR +3, Bonus +1",
     "resists": "Water +3, Nature +4, Fire +4",
@@ -14390,10 +13380,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false
   },
   {
@@ -14796,20 +13783,14 @@
     "equipSlot": "Neck",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dc",
-      "free",
-      "sto"
-    ],
+    "tags": ["dc", "free", "sto"],
     "hasDA": true,
     "hasDC": true,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-VII",
-    "elements": [
-      "STO"
-    ]
+    "elements": ["STO"]
   },
   {
     "id": "accessory-shattered-ice-golem-crystals",
@@ -14820,9 +13801,7 @@
     "description": "The crystals vibrate, like they still have a little life left in them yet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19895762",
     "releaseDate": "",
-    "elements": [
-      "NON"
-    ],
+    "elements": ["NON"],
     "level": "30",
     "stats": "WIS +2, END +3, LUK +2, INT +3, DEX +3, STR +3, Bonus +3, Immobility +1, Ice +5",
     "rarity": "10",
@@ -14838,10 +13817,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "non",
-      "free"
-    ],
+    "tags": ["non", "free"],
     "daRequired": false,
     "isSeasonal": true
   },
@@ -14854,9 +13830,7 @@
     "description": "This tiny piece of dream seems to look back at you with different eyes. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22425133",
     "releaseDate": "",
-    "elements": [
-      "EVI"
-    ],
+    "elements": ["EVI"],
     "level": "83",
     "stats": "Block +3, Dodge +3, Parry +3, Crit +8, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +8, END +8, INT +13, DEX +13, STR +13, Bonus +10",
     "resists": "All +5, Immobility +5",
@@ -14881,10 +13855,7 @@
         "dcRequired": true
       }
     ],
-    "tags": [
-      "evi",
-      "free"
-    ],
+    "tags": ["evi", "free"],
     "daRequired": true,
     "dcRequired": true
   },
@@ -14897,9 +13868,7 @@
     "description": "The teeth are sparkling white. This items requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21310203",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "76",
     "stats": "Block +1, Parry +1, Crit +8, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +9, END +9, CHA +10, LUK +3, INT +10, DEX +10, STR +10, Bonus +10",
     "resists": "Light +11, Water +11, Stone +11, Nature +8, Immobility +5, Health -3",
@@ -14917,10 +13886,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "nat",
-      "merge"
-    ],
+    "tags": ["nat", "merge"],
     "daRequired": true
   },
   {
@@ -14932,9 +13898,7 @@
     "description": "A tiny sigil on still polished chain... there are no dents, cracks, or scratches. This belonged to a Valtrith who didn't like to fight. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21990299",
     "releaseDate": "",
-    "elements": [
-      "MET"
-    ],
+    "elements": ["MET"],
     "level": "37",
     "stats": "Crit +3, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +3, END +3, LUK +5, INT +5, DEX +5, STR +5, Bonus +5",
     "resists": "Fire +5, Ice +5, Immobility +3, Health -1",
@@ -14959,10 +13923,7 @@
         "dcRequired": true
       }
     ],
-    "tags": [
-      "met",
-      "free"
-    ],
+    "tags": ["met", "free"],
     "daRequired": true,
     "dcRequired": true
   },
@@ -14975,9 +13936,7 @@
     "description": "This silk cravat has the name B. Arnold stitched into the seam. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19297281",
     "releaseDate": "",
-    "elements": [
-      "ICE"
-    ],
+    "elements": ["ICE"],
     "level": "65",
     "stats": "Block +1, Dodge +1, Crit +8, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +7, END +7, LUK +3, INT +8, DEX +8, STR +8, Bonus +7",
     "resists": "Darkness +10, Ice +10, Immobility +3, Health -3",
@@ -14994,10 +13953,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "ice",
-      "free"
-    ],
+    "tags": ["ice", "free"],
     "daRequired": true
   },
   {
@@ -15009,9 +13965,7 @@
     "description": "Just in case you need to mark your place!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19895552",
     "releaseDate": "",
-    "elements": [
-      "WIN"
-    ],
+    "elements": ["WIN"],
     "level": "0",
     "stats": "WIS +1, INT +1",
     "rarity": "0",
@@ -15027,10 +13981,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "win",
-      "free"
-    ],
+    "tags": ["win", "free"],
     "daRequired": false
   },
   {
@@ -15042,9 +13993,7 @@
     "description": "Plucked from the cloud's of Lore's stratosphere, this breezy neck keeps you moving.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15030951",
     "releaseDate": "",
-    "elements": [
-      "WIN"
-    ],
+    "elements": ["WIN"],
     "level": "0",
     "stats": "None",
     "resists": "Wind +10",
@@ -15061,10 +14010,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "win",
-      "free"
-    ],
+    "tags": ["win", "free"],
     "daRequired": false
   },
   {
@@ -15076,9 +14022,7 @@
     "description": "The tusk of a great boar, inlaid with silver.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21591348",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "29",
     "stats": "Crit +1, Magic Def +1, Pierce Def +1, Melee Def +1, END +4, INT +1, DEX +1, STR +1, Bonus +2",
     "resists": "Nature +5",
@@ -15095,10 +14039,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false
   },
   {
@@ -15110,9 +14051,7 @@
     "description": "The teeth of some kind of animal... you think. They're dipped in silver.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21591053",
     "releaseDate": "",
-    "elements": [
-      "SIL"
-    ],
+    "elements": ["SIL"],
     "level": "72",
     "stats": "Parry +1, Crit +8, Magic Def +1, Pierce Def +1, Melee Def +1, WIS +7, END +6, CHA +6, LUK +9, STR +9, Bonus +5",
     "resists": "Darkness +9, Ice +9, Poison +9, Immobility +4",
@@ -15129,10 +14068,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "sil",
-      "free"
-    ],
+    "tags": ["sil", "free"],
     "daRequired": false
   },
   {
@@ -15279,19 +14215,14 @@
     "equipSlot": "Neck",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "free",
-      "poi"
-    ],
+    "tags": ["free", "poi"],
     "hasDA": false,
     "hasDC": false,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-IV",
-    "elements": [
-      "POI"
-    ]
+    "elements": ["POI"]
   },
   {
     "id": "accessory-snow-elf-chain",
@@ -15302,9 +14233,7 @@
     "description": "A beautiful antique chain of enchanted ice.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19795847",
     "releaseDate": "",
-    "elements": [
-      "ICE"
-    ],
+    "elements": ["ICE"],
     "level": "29",
     "stats": "Crit +1, Magic Def +1, Pierce Def +1, Melee Def +1, WIS +2, END +2, INT +1, DEX +1, STR +1, Bonus +2",
     "resists": "Ice +5",
@@ -15321,21 +14250,13 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "ice",
-      "free"
-    ],
+    "tags": ["ice", "free"],
     "daRequired": false
   },
   {
     "id": "accessory-soulforged-amulet-purple",
     "familyName": "Soulforged Amulet (Purple)",
     "slug": "accessory-soulforged-amulet-purple",
-    "aliasSlugs": [
-      "accessory-soulforged-amulet-purple",
-      "accessory-soulforged-amulet-purple",
-      "accessory-soulforged-amulet-purple"
-    ],
     "type": "accessory",
     "subtype": "necklace",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22339833",
@@ -15439,29 +14360,19 @@
     "equipSlot": "Neck",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dar",
-      "gold"
-    ],
+    "tags": ["dar", "gold"],
     "hasDA": true,
     "hasDC": false,
     "hasDM": false,
     "hasFree": false,
     "hasMerge": false,
     "levelRange": "30-90",
-    "elements": [
-      "DAR"
-    ]
+    "elements": ["DAR"]
   },
   {
     "id": "accessory-soulforged-amulet-yellow",
     "familyName": "Soulforged Amulet (Yellow)",
     "slug": "accessory-soulforged-amulet-yellow",
-    "aliasSlugs": [
-      "accessory-soulforged-amulet-yellow",
-      "accessory-soulforged-amulet-yellow",
-      "accessory-soulforged-amulet-yellow"
-    ],
     "type": "accessory",
     "subtype": "necklace",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22339828",
@@ -15565,19 +14476,14 @@
     "equipSlot": "Neck",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "ene",
-      "gold"
-    ],
+    "tags": ["ene", "gold"],
     "hasDA": true,
     "hasDC": false,
     "hasDM": false,
     "hasFree": false,
     "hasMerge": false,
     "levelRange": "30-90",
-    "elements": [
-      "ENE"
-    ]
+    "elements": ["ENE"]
   },
   {
     "id": "accessory-soulsilk-cord",
@@ -15871,20 +14777,14 @@
     "equipSlot": "Neck",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dc",
-      "fea",
-      "free"
-    ],
+    "tags": ["dc", "fea", "free"],
     "hasDA": true,
     "hasDC": true,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-V",
-    "elements": [
-      "FEA"
-    ]
+    "elements": ["FEA"]
   },
   {
     "id": "accessory-sour-sous-vide",
@@ -15895,9 +14795,7 @@
     "description": "You can scarce conceive what twisted mind created this much less how it was fitted into a necklace. Strangely, simply knowing you can endure the horrible stench and sight makes you feel stronger.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21808876",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "10",
     "stats": "WIS -1, END +3, INT +1, DEX +1, STR +1",
     "resists": "Fire +2, Nature +2, Bacon +2",
@@ -15914,10 +14812,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false
   },
   {
@@ -15929,9 +14824,7 @@
     "description": "This tight necklace is studded with small teeth. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21882740",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "24",
     "stats": "Parry +1, Crit +3, Magic Def +1, Pierce Def +1, Melee Def +1, END +2, INT +2, DEX +2, STR +2",
     "resists": "Stone +3, Darkness +3",
@@ -15948,10 +14841,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": true
   },
   {
@@ -15963,9 +14853,7 @@
     "description": "Twig made this handwoven necklace in thanks for finding him new fwends! This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22094378",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "76",
     "stats": "Dodge +1, Parry +1, Crit +7, Magic Def +3, Pierce Def +3, Melee Def +3, WIS -1, END +6, CHA +6, LUK +2, INT +8, DEX +8, STR +8, Bonus +5",
     "resists": "Water +9, Darkness +10, Ice +10",
@@ -15982,10 +14870,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": true,
     "isSeasonal": true
   },
@@ -16138,20 +15023,14 @@
     "equipSlot": "Neck",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "free",
-      "goo",
-      "merge"
-    ],
+    "tags": ["free", "goo", "merge"],
     "hasDA": false,
     "hasDC": true,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": true,
     "levelRange": "I-IV",
-    "elements": [
-      "GOO"
-    ]
+    "elements": ["GOO"]
   },
   {
     "id": "accessory-star-s-spawn",
@@ -16162,9 +15041,7 @@
     "description": "Your dreams are filled with darkness. Stars explode. Fires burn. The Great One waits.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17397133",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "51",
     "stats": "Dodge +1, Crit +3, Magic Def -2, Melee Def +2, WIS +5, END +3, CHA +4, INT +5, DEX +3, STR +5, Bonus +3",
     "resists": "Darkness +6, Ice +6, Water +3, Fire +3",
@@ -16181,10 +15058,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": true
   },
   {
@@ -16196,9 +15070,7 @@
     "description": "Twig made this handwoven necklace in thanks for finding him new fwends!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22094369",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "23",
     "stats": "Block +3, Dodge +3, Parry +2, Crit +1, WIS +3, END +3, CHA +2, INT +2, DEX +2, STR +2",
     "resists": "Water +2, Darkness +3, Ice +3",
@@ -16215,10 +15087,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false,
     "isSeasonal": true
   },
@@ -16231,9 +15100,7 @@
     "description": "The colorful beads that the clawkin use to make wind chimes also make up this necklace.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21372604",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "66",
     "stats": "Parry +1, Crit +7, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +4, END +4, INT +5, DEX +5, STR +5, Bonus +7",
     "resists": "Poison +5, Stone +5, Metal +5, Immobility +3",
@@ -16259,10 +15126,7 @@
       }
     ],
     "notes": "Stone Bead Necklace was previously available from the retired quest After the War.",
-    "tags": [
-      "sto",
-      "free"
-    ],
+    "tags": ["sto", "free"],
     "daRequired": false,
     "dcRequired": true
   },
@@ -16721,20 +15585,14 @@
     "equipSlot": "Neck",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dc",
-      "free",
-      "nat"
-    ],
+    "tags": ["dc", "free", "nat"],
     "hasDA": true,
     "hasDC": true,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-VIII",
-    "elements": [
-      "NAT"
-    ]
+    "elements": ["NAT"]
   },
   {
     "id": "accessory-student-tie",
@@ -16745,9 +15603,7 @@
     "description": "This tie is an awful plaid color...",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20203056",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "8",
     "stats": "Melee Def +1, WIS +2, END +2, CHA -1, LUK +2, Bonus +2, Light +1, Wind +1",
     "rarity": "5",
@@ -16763,10 +15619,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "lig",
-      "free"
-    ],
+    "tags": ["lig", "free"],
     "daRequired": false
   },
   {
@@ -16778,9 +15631,7 @@
     "description": "The rocks that make up this necklace were displaced a great distance from their origin.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18157344",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "38",
     "stats": "Crit +4, END +5, CHA +5, LUK +5",
     "resists": "Wind +5, Stone +6",
@@ -16797,10 +15648,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "sto",
-      "free"
-    ],
+    "tags": ["sto", "free"],
     "daRequired": false
   },
   {
@@ -16812,9 +15660,7 @@
     "description": "This necklace is a very thin chain. Its surprisingly resilient and strong though, and the two connecting bits suggest other uses of a less than savory nature. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18957243",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "51",
     "stats": "Dodge +1, Crit +3, Magic Def +2, Pierce Def +4, Melee Def +2, WIS +3, END +3, LUK +4, INT +5, DEX +5, STR +5, Bonus +3",
     "resists": "Darkness +6, Light +6, Poison +3, Immobility +2",
@@ -16831,10 +15677,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "dar",
-      "free"
-    ],
+    "tags": ["dar", "free"],
     "daRequired": true
   },
   {
@@ -16846,9 +15689,7 @@
     "description": "An ancient crystal, it was cracked during battle and the wind inside escaped hundreds of years ago.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21990236",
     "releaseDate": "",
-    "elements": [
-      "WIN"
-    ],
+    "elements": ["WIN"],
     "level": "17",
     "stats": "Magic Def +2, WIS +1, CHA +1, INT +1, DEX +1, STR +1, Bonus +2",
     "resists": "Stone +2",
@@ -16873,10 +15714,7 @@
         "dcRequired": true
       }
     ],
-    "tags": [
-      "win",
-      "free"
-    ],
+    "tags": ["win", "free"],
     "daRequired": false,
     "dcRequired": true
   },
@@ -17389,20 +16227,14 @@
     "equipSlot": "Neck",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dc",
-      "free",
-      "sil"
-    ],
+    "tags": ["dc", "free", "sil"],
     "hasDA": true,
     "hasDC": true,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-IX",
-    "elements": [
-      "SIL"
-    ]
+    "elements": ["SIL"]
   },
   {
     "id": "accessory-sweet-fwendship-necklace",
@@ -17413,9 +16245,7 @@
     "description": "Twig made this handwoven necklace in thanks for finding him new fwends!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22094373",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "47",
     "stats": "Block +8, Dodge +8, Parry +8, WIS +7, END +7, CHA +10, Bonus +5",
     "resists": "Water +4, Darkness +7, Ice +7",
@@ -17432,10 +16262,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false,
     "isSeasonal": true
   },
@@ -17448,9 +16275,7 @@
     "description": "This fine chain is tangled in knots!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21920257",
     "releaseDate": "",
-    "elements": [
-      "MET"
-    ],
+    "elements": ["MET"],
     "level": "43",
     "stats": "Crit +3, Magic Def +1, Pierce Def +1, Melee Def +2, WIS +3, END +5, INT +2, DEX +2, STR +3, Bonus +3",
     "resists": "Silver +4, Light +4, Metal +4, Immobility +4",
@@ -17467,10 +16292,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "met",
-      "free"
-    ],
+    "tags": ["met", "free"],
     "daRequired": false
   },
   {
@@ -17482,9 +16304,7 @@
     "description": "An ugly, old piece of costume jewelry. Who would want to wear this? At least the metal is worth something...",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=14663134",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "1",
     "stats": "CHA -50, LUK -50",
     "resists": "None",
@@ -17501,10 +16321,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false
   },
   {
@@ -17516,9 +16333,7 @@
     "description": "You've enhanced your amulet with shadows. Wearing it allows you to make out odd shapes that seem to just barely come into view.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22388554",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "90",
     "stats": "Block +15, Dodge +15, Parry +15, Crit +10, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +16, END +16, INT +12, DEX +12, STR +12, Bonus +10",
     "resists": "Darkness +13, Light +13, Immobility +10, Health -3",
@@ -17537,10 +16352,7 @@
         "dcRequired": true
       }
     ],
-    "tags": [
-      "dar",
-      "merge"
-    ],
+    "tags": ["dar", "merge"],
     "daRequired": false,
     "dcRequired": true
   },
@@ -17553,9 +16365,7 @@
     "description": "Arrrr! This ratty old neck scarf sure didn't bring it's wearer luck or beauty. But stories say that he felt smarter, stronger, and faster while wearing it!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17330396",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "35",
     "stats": "Crit +4, END +5, CHA -2, LUK -2, INT +3, DEX +3, STR +3, Bonus +1",
     "resists": "Fire +5, Darkness +5",
@@ -17572,10 +16382,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "gold"
-    ],
+    "tags": ["nat", "gold"],
     "daRequired": false
   },
   {
@@ -17587,9 +16394,7 @@
     "description": "Thorny vines twist around your neck.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18731840",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "16",
     "stats": "Crit +1, Magic Def +2, WIS +1, END +1, INT +1, DEX +1, STR +1, Bonus +1",
     "resists": "Nature +2",
@@ -17606,10 +16411,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false
   },
   {
@@ -17621,9 +16423,7 @@
     "description": "This necklace requires a Dragon Amulet. It was handmade by Thursday. It provides defence against darkness, a +1 to Luck, and a +1 to Dodge.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19810779",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "5",
     "stats": "Dodge +1, LUK +1, Darkness +2",
     "rarity": "5",
@@ -17640,10 +16440,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "lig",
-      "merge"
-    ],
+    "tags": ["lig", "merge"],
     "daRequired": true
   },
   {
@@ -17655,9 +16452,7 @@
     "description": "This necklace was handmade by Thursday. It provides defence against darkness and a +1 to Luck.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=7631531",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "5",
     "stats": "LUK +1, Darkness +2",
     "rarity": "5",
@@ -17674,10 +16469,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "lig",
-      "merge"
-    ],
+    "tags": ["lig", "merge"],
     "daRequired": false
   },
   {
@@ -17689,9 +16481,7 @@
     "description": "The stone at the end of this necklace is carved into a beautiful rendition of a tiger-like woman.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19795863",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "55",
     "stats": "Dodge +1, Crit +6, WIS +5, CHA +8, INT +4, DEX +4, STR +4",
     "resists": "Fire +8, Nature +8, Darkness +6, Immobility +1",
@@ -17708,10 +16498,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false
   },
   {
@@ -18224,20 +17011,14 @@
     "equipSlot": "Neck",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dc",
-      "fea",
-      "free"
-    ],
+    "tags": ["dc", "fea", "free"],
     "hasDA": true,
     "hasDC": true,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-IX",
-    "elements": [
-      "FEA"
-    ]
+    "elements": ["FEA"]
   },
   {
     "id": "accessory-tog-innards",
@@ -18248,9 +17029,7 @@
     "description": "Oh, by the Avatars...the smell is terrible! They'll keep you warm at least...but ugh!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19895682",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "60",
     "stats": "Crit +8, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +6, END +4, CHA -2, LUK +6, INT +4, DEX +4, STR +4, Bonus +4, Immobility +2, Wind +8, Ice +8, Darkness +8",
     "rarity": "7",
@@ -18266,10 +17045,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false,
     "isSeasonal": true
   },
@@ -18282,9 +17058,7 @@
     "description": "You're starting to wonder.. who is Togslayer X?!?",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15592628",
     "releaseDate": "",
-    "elements": [
-      "NON"
-    ],
+    "elements": ["NON"],
     "level": "35",
     "stats": "END +1, CHA +4, LUK +4, Nature +3",
     "rarity": "0",
@@ -18300,10 +17074,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "non",
-      "free"
-    ],
+    "tags": ["non", "free"],
     "daRequired": false
   },
   {
@@ -18315,9 +17086,7 @@
     "description": "A tiny trap hides behind the row of teeth on this necklace. Watch your fingers!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21310201",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "56",
     "stats": "Parry +1, Crit +2, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +4, END +2, LUK +3, INT +4, DEX +4, STR +4, Bonus +4",
     "resists": "Darkness +5, Immobility -1",
@@ -18335,10 +17104,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "lig",
-      "merge"
-    ],
+    "tags": ["lig", "merge"],
     "daRequired": false
   },
   {
@@ -18488,19 +17254,14 @@
     "equipSlot": "Neck",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dar",
-      "merge"
-    ],
+    "tags": ["dar", "merge"],
     "hasDA": true,
     "hasDC": false,
     "hasDM": false,
     "hasFree": false,
     "hasMerge": true,
     "levelRange": "I-IV",
-    "elements": [
-      "DAR"
-    ]
+    "elements": ["DAR"]
   },
   {
     "id": "accessory-ursine-necklace",
@@ -18645,10 +17406,7 @@
     "equipSlot": "Neck",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "free",
-      "nat"
-    ],
+    "tags": ["free", "nat"],
     "isRare": true,
     "hasDA": true,
     "hasDC": false,
@@ -18656,9 +17414,7 @@
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-IV",
-    "elements": [
-      "NAT"
-    ]
+    "elements": ["NAT"]
   },
   {
     "id": "accessory-viridian-circle",
@@ -18669,9 +17425,7 @@
     "description": "The gem in the center of this necklace pulses a malevolent, glowing green. If it weren't so hypnotic, I'd tell you to throw it away RIGHT NOW! This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18392223",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "53",
     "stats": "Crit +6, WIS +5, END +5, INT +5, DEX +5, STR +5, Bonus +3",
     "resists": "Light +10, Wind +9, Stone +10",
@@ -18688,10 +17442,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "sto",
-      "free"
-    ],
+    "tags": ["sto", "free"],
     "daRequired": true
   },
   {
@@ -18703,9 +17454,7 @@
     "description": "Someone copied the plans of the Judgment Wheel and made a charm shaped like it. Even the shape is powerful, and this charm will add to your endurance!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17644032",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "42",
     "stats": "Crit +3, END +7, INT +4, DEX +4, STR +4",
     "resists": "Wind +4, Immobility +1, Stone +4",
@@ -18722,10 +17471,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false
   },
   {
@@ -18737,9 +17483,7 @@
     "description": "A wisp of magic on a chain... it's like someone is trying to tell you... something....",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20422476",
     "releaseDate": "",
-    "elements": [
-      "WIN"
-    ],
+    "elements": ["WIN"],
     "level": "21",
     "stats": "Magic Def +2, Pierce Def +2, Melee Def +2, WIS +2, END +2, INT +2, DEX +2, STR +2, Bonus +2",
     "resists": "All +2",
@@ -18765,10 +17509,7 @@
       }
     ],
     "notes": "Necklace previously appeared in the retired quest Dreamscape and had the initial stats:\nStats: Magic Def +2, WIS +2, INT +2, DEX +2, STR +2, Bonus +2\nResists: Wind +5, Ice +5",
-    "tags": [
-      "win",
-      "free"
-    ],
+    "tags": ["win", "free"],
     "daRequired": false,
     "dcRequired": true
   },
@@ -18776,12 +17517,7 @@
     "id": "accessory-wiches-neklaec",
     "familyName": "wiches neklaec",
     "slug": "accessory-wiches-neklaec",
-    "aliasSlugs": [
-      "accessory-wiches-nekclaec",
-      "accessory-wiches-nekclaec",
-      "accessory-wiches-nekclaec",
-      "accessory-wiches-nekclaec"
-    ],
+    "aliasSlugs": ["accessory-wiches-nekclaec"],
     "type": "accessory",
     "subtype": "necklace",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21677423",
@@ -18906,19 +17642,14 @@
     "equipSlot": "Neck",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "free",
-      "lig"
-    ],
+    "tags": ["free", "lig"],
     "hasDA": true,
     "hasDC": false,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "20-65",
-    "elements": [
-      "LIG"
-    ]
+    "elements": ["LIG"]
   },
   {
     "id": "accessory-wild-beast-necklace",
@@ -18929,9 +17660,7 @@
     "description": "A braided length of supple tree bark, the necklace brings you comfort in the darkness of the thickest wood.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20105967",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "57",
     "stats": "Crit +2, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +3, END +3, INT +6, DEX +6, STR +6, Bonus +5, Immobility +1, Nature +4, Water +4, Fire +6",
     "rarity": "6",
@@ -18947,10 +17676,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false
   },
   {
@@ -18962,9 +17688,7 @@
     "description": "A braided length of supple tree bark, the necklace brings you comfort in the darkness of the thickest wood. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20105855",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "71",
     "stats": "Block +1, Crit +5, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +5, END +5, INT +8, DEX +8, STR +8, Bonus +7, Immobility +2, Nature +5, Water +7, Fire +8",
     "rarity": "6",
@@ -18980,10 +17704,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": true
   },
   {
@@ -18995,9 +17716,7 @@
     "description": "A braided length of supple tree bark, the necklace brings you comfort in the darkness of the thickest wood.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20105979",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "27",
     "stats": "Magic Def +2, Pierce Def +2, Melee Def +2, WIS +1, END +1, INT +3, DEX +3, STR +3, Nature +1, Fire +1",
     "rarity": "6",
@@ -19013,10 +17732,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false
   },
   {
@@ -19028,9 +17744,7 @@
     "description": "A braided length of supple tree bark, the necklace brings you comfort in the darkness of the thickest wood.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20105958",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "42",
     "stats": "Crit +1, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +2, END +2, INT +4, DEX +4, STR +4, Bonus +3, Nature +3, Water +3, Fire +4",
     "rarity": "6",
@@ -19046,10 +17760,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false
   },
   {
@@ -19061,9 +17772,7 @@
     "description": "This cleverly designed pendant is covered in tiny holes that make whispering and whisteling sounds when the slightest gust of wind blows across it.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=10485398",
     "releaseDate": "",
-    "elements": [
-      "WIN"
-    ],
+    "elements": ["WIN"],
     "level": "14",
     "stats": "CHA +10, LUK +10, Bonus +5",
     "resists": "Wind +4",
@@ -19081,10 +17790,7 @@
       }
     ],
     "notes": "The following changes were implemented on March 20th, 2026:\n  • Level's requirement was raised from 4 to 14.\n  • INT +2 and Stone -1 were removed.\n  • Bonus stat was raised from +1 to +5.\n  • CHA and LUK stats were added.\n  • Wind Resist was raised from +1 to +4.",
-    "tags": [
-      "win",
-      "free"
-    ],
+    "tags": ["win", "free"],
     "daRequired": false
   },
   {
@@ -19096,9 +17802,7 @@
     "description": "Intricately carved pieces of oak that look like seeds and animals.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21372544",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "28",
     "stats": "Crit +2, Magic Def +1, Pierce Def +1, Melee Def +1, WIS +5, END +2, Bonus +1",
     "resists": "Nature +4, Fire +5",
@@ -19124,10 +17828,7 @@
       }
     ],
     "notes": "Wooden Carved Beads was previously available from the retired quest After the War.",
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false,
     "dcRequired": true
   },
@@ -19140,9 +17841,7 @@
     "description": "Several strips of cloth have been woven together to create this thick collar.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21883882",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "43",
     "stats": "Crit +3, Magic Def +1, Pierce Def +1, Melee Def +2, WIS +2, END +6, INT +2, DEX +2, STR +2, Bonus +3",
     "resists": "Wind +4, Light +4, Metal +4, Immobility +4",
@@ -19159,10 +17858,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": false
   },
   {
@@ -19174,9 +17870,7 @@
     "description": "Braided vines made by clawkin.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21372536",
     "releaseDate": "",
-    "elements": [
-      "SIL"
-    ],
+    "elements": ["SIL"],
     "level": "16",
     "stats": "Crit +1, Magic Def +2, INT +1, DEX +1, STR +1, Bonus +2",
     "resists": "Nature +2, Fire +2",
@@ -19202,10 +17896,7 @@
       }
     ],
     "notes": "Woven Vines was previously available from the retired quest After the War.",
-    "tags": [
-      "sil",
-      "free"
-    ],
+    "tags": ["sil", "free"],
     "daRequired": false,
     "dcRequired": true
   },
@@ -19213,12 +17904,6 @@
     "id": "accessory-zeclem-s-heirloom",
     "familyName": "Zeclem's Heirloom",
     "slug": "accessory-zeclem-s-heirloom",
-    "aliasSlugs": [
-      "accessory-zeclem-s-heirloom",
-      "accessory-zeclem-s-heirloom",
-      "accessory-zeclem-s-heirloom",
-      "accessory-zeclem-s-heirloom"
-    ],
     "type": "accessory",
     "subtype": "necklace",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21824218",
@@ -19351,19 +18036,14 @@
     "equipSlot": "Neck",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dar",
-      "dc"
-    ],
+    "tags": ["dar", "dc"],
     "hasDA": false,
     "hasDC": true,
     "hasDM": false,
     "hasFree": false,
     "hasMerge": false,
     "levelRange": "50-80",
-    "elements": [
-      "DAR"
-    ]
+    "elements": ["DAR"]
   },
   {
     "id": "accessory-zeclem-s-relic-heirloom",
@@ -19374,9 +18054,7 @@
     "description": "VI. Zeclem walked outside and looked upon his assembled army of undead. The whisper in his mind told him where he must go next and he obeyed. He set off, his old life gone, he was now a DeathKnight and only the whisper mattered.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22387769",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "90",
     "stats": "Block +15, Dodge +15, Parry +15, Crit +10, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +16, END +16, INT +12, DEX +12, STR +12, Bonus +10",
     "resists": "Darkness +13, Light +13, Immobility +10, Health -3",
@@ -19395,10 +18073,7 @@
         "dcRequired": true
       }
     ],
-    "tags": [
-      "dar",
-      "merge"
-    ],
+    "tags": ["dar", "merge"],
     "daRequired": false,
     "dcRequired": true
   },
@@ -19411,9 +18086,7 @@
     "description": "This seems to be a necklace made of rotting zombie teeth and stinky zombie sinew. This thing is foul. It grants +1 Luck and -5 Light.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=6793595",
     "releaseDate": "",
-    "elements": [
-      "NON"
-    ],
+    "elements": ["NON"],
     "level": "1",
     "stats": "LUK +1",
     "resists": "Light -5",
@@ -19430,10 +18103,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "non",
-      "free"
-    ],
+    "tags": ["non", "free"],
     "daRequired": false,
     "isRare": true
   }

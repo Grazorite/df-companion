@@ -7,11 +7,12 @@ import LevelRangeBadge from '../shared/LevelRangeBadge'
 
 interface WeaponCardProps {
   weapon: WeaponEntry
+  badgeLabel?: string
 }
 
 const MAX_PILLS = 3
 
-export default function WeaponCard({ weapon }: WeaponCardProps) {
+export default function WeaponCard({ weapon, badgeLabel }: WeaponCardProps) {
   const card = buildWeaponCardData(weapon)
   const visibleCodes = card.elements.slice(0, MAX_PILLS)
   const overflow = card.elements.length - MAX_PILLS
@@ -29,6 +30,11 @@ export default function WeaponCard({ weapon }: WeaponCardProps) {
           {overflow > 0 && (
             <span className="text-[10px] text-text-muted bg-bg-overlay px-1.5 py-0.5 rounded-full">
               +{overflow}
+            </span>
+          )}
+          {badgeLabel && (
+            <span className="text-[10px] text-sky-300 bg-sky-500/15 px-1.5 py-0.5 rounded-full font-medium">
+              {badgeLabel}
             </span>
           )}
           {card.hasMultipleVersions && card.levelRange && (

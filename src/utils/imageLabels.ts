@@ -22,6 +22,45 @@ export function normalizeImageCaption(caption?: string): string | undefined {
   return value
 }
 
+function normalizeCaptionComparable(value: string): string {
+  return value.replace(/[\\/]/g, '/').replace(/\s+/g, ' ').trim().toLowerCase()
+}
+
+export function normalizeSlashCaption(value: string): string {
+  return value
+    .split(/[\\/]/)
+    .map((part) => part.trim())
+    .filter(Boolean)
+    .join(' / ')
+}
+
+export function expandSlashCaptionFromText(caption?: string, text?: string): string | undefined {
+  const normalizedCaption = caption ? normalizeCaptionComparable(caption) : undefined
+  if (!normalizedCaption || !text) return undefined
+
+  const candidateGroups = text
+    .split('\n')
+    .flatMap((line) => {
+      const trimmed = line.replace(/^[\s•-]+/, '').trim()
+      const alsoSeeMatch = trimmed.match(/^Also See\s*\(([^)]+)\)\s*:/i)
+      return [alsoSeeMatch?.[1], trimmed].filter((value): value is string => Boolean(value))
+    })
+    .filter((value) => /[\\/]/.test(value))
+
+  for (const group of candidateGroups) {
+    const normalizedGroup = normalizeSlashCaption(group)
+    const groupParts = normalizedGroup.split(' / ').map(normalizeCaptionComparable)
+    if (
+      normalizeCaptionComparable(normalizedGroup) === normalizedCaption ||
+      groupParts.includes(normalizedCaption)
+    ) {
+      return normalizedGroup
+    }
+  }
+
+  return undefined
+}
+
 export function inferImageCaptionFromUrl(url: string): string | undefined {
   const fileName = decodeURIComponent(url.split('/').at(-1) ?? '').replace(/\?.*$/, '')
   const stem = fileName.replace(/\.(?:png|jpg|jpeg|gif|bmp)$/i, '')

@@ -77,6 +77,7 @@ import {
   normalizeStructuredText,
   slugify,
   stripForumHtml,
+  uniqueStrings,
 } from './lib/text.ts'
 import {
   applyLetterFilter,
@@ -101,6 +102,10 @@ const DELAY_MS = 1000
 const DATA_DIR = path.resolve(import.meta.dirname, '../src/data')
 const OUTPUT_PATH = path.resolve(import.meta.dirname, '../src/data/guests.json')
 const PROGRESS_PATH = path.resolve(import.meta.dirname, '../src/data/guests-progress.json')
+const DRAGON_GUEST_MESSAGE_ID = '16130782'
+const DRAGON_GUEST_VARIANT_POST_IDS = new Set(['16130782', '22231249', '22231251'])
+const DRAGON_GUEST_CURRENT_SKILLS_POST_ID = '22231250'
+const DRAGON_GUEST_DOOM_SKILLS_POST_ID = '22231252'
 
 // ─── CLI args ─────────────────────────────────────────────────────────────────
 
@@ -173,6 +178,23 @@ interface GuestStub {
   elements: string[]
   traits: string[]
   letter: string
+}
+
+function buildDragonGuestStub(): GuestStub {
+  return {
+    name: '<Dragon>',
+    slug: 'guest-dragon',
+    type: 'guest',
+    forumUrl: directForumPostUrl(DRAGON_GUEST_MESSAGE_ID),
+    messageId: DRAGON_GUEST_MESSAGE_ID,
+    elements: ['BAC', 'DAR', 'ENE', 'FIR', 'ICE', 'LIG', 'NAT', 'STO', 'WAT', 'WIN'],
+    traits: [],
+    letter: 'D',
+  }
+}
+
+function isDragonGuestStub(stub: GuestStub): boolean {
+  return stub.messageId === DRAGON_GUEST_MESSAGE_ID || stub.slug === 'guest-dragon'
 }
 
 type GuestFamilyVariant = Guest & {
@@ -655,6 +677,32 @@ function extractGuestVariantSectionsFromHtml(
 
 // ─── Attack Parsing with Button Image URLs ───────────────────────────────────
 
+function normalizeLinkedImageUrl(url: string): string {
+  const normalized = decodeHTML(url).replace(/&amp;/g, '&').trim()
+  const imgurPageMatch = normalized.match(
+    /^https?:\/\/(?:www\.)?imgur\.com\/(?!a\/|gallery\/)([A-Za-z0-9]+)(?:[?#].*)?$/i
+  )
+  if (imgurPageMatch) return `https://i.imgur.com/${imgurPageMatch[1]}.png`
+  return normalized
+}
+
+function isLikelyLinkedImageUrl(url: string): boolean {
+  return (
+    /\.(?:png|jpg|jpeg|gif|bmp)(?:[?#].*)?$/i.test(url) ||
+    /(?:i\.)?imgur\.com\/(?!a\/|gallery\/)/i.test(url) ||
+    /\/f\/upfiles\//i.test(url)
+  )
+}
+
+function normalizeAppearanceCaption(rawCaption: string): string {
+  const caption = stripHtml(decodeHTML(rawCaption))
+    .replace(/\s+/g, ' ')
+    .replace(/\s*:\s*$/, '')
+    .trim()
+
+  return caption.replace(/^Appearance\s*/i, '').trim() || 'Appearance'
+}
+
 function parseGuestAttacks(html: string, guestName: string): GuestAttack[] {
   const DEBUG = process.env.DEBUG_ATTACKS === '1'
   const attacks: GuestAttack[] = []
@@ -668,12 +716,18 @@ function parseGuestAttacks(html: string, guestName: string): GuestAttack[] {
     /(?:<b><u>Resistances<\/u><\/b>|(?:<b>)?<u>Resistances<\/u>(?:<\/b>)?|Resistances:\s*[^<\n]+)(?:[\s\S]*?)<hr>/i
   )
 
-  if (!attacksStartMatch || attacksStartMatch.index === undefined) {
+  if (
+    (!attacksStartMatch || attacksStartMatch.index === undefined) &&
+    !/(?:Effect:|Mana Cost:|Cooldown:)/i.test(html)
+  ) {
     if (DEBUG) console.log(`  No attacks section found`)
     return attacks
   }
 
-  const sectionStart = attacksStartMatch.index + attacksStartMatch[0].length
+  const sectionStart =
+    attacksStartMatch && attacksStartMatch.index !== undefined
+      ? attacksStartMatch.index + attacksStartMatch[0].length
+      : 0
   const sectionEnd = sectionEndMatch?.index ?? html.length
   const retiredIndex = html
     .slice(sectionStart, sectionEnd)
@@ -820,12 +874,33 @@ function parseGuestAttacks(html: string, guestName: string): GuestAttack[] {
       }
     }
 
-    // Extract appearance URL from hyperlinked "Appearance" text
-    let appearanceUrl: string | undefined
-    const appearanceMatch = block.match(/<a[^>]+href="([^"]+)"[^>]*>([^<]*Appearance[^<]*)<\/a>/i)
-    if (appearanceMatch) {
-      appearanceUrl = appearanceMatch[1]
+    // Extract appearance URL(s) from image links grouped around an "Appearance"
+    // label. Some forum posts link "Appearance" directly; others list "1 /
+    // 1.1 / 1.2" image links immediately before the word "Appearance".
+    const lastButtonImageMatch = [...block.matchAll(/<img[^>]+src=(["'])(.*?)\1[^>]*>/gi)]
+      .filter((match) => /(?:Button|button|Attack\.png)/i.test(match[2] ?? ''))
+      .at(-1)
+    const appearanceSearchStart =
+      lastButtonImageMatch?.index !== undefined
+        ? lastButtonImageMatch.index + lastButtonImageMatch[0].length
+        : 0
+    const appearanceHtml = block.slice(appearanceSearchStart)
+    const appearanceEntries: Array<{ url: string; caption: string }> = []
+    for (const match of appearanceHtml.matchAll(
+      /<a[^>]+href=(["'])(.*?)\1[^>]*>([\s\S]*?)<\/a>/gi
+    )) {
+      const url = normalizeLinkedImageUrl(match[2] ?? '')
+      if (!isLikelyLinkedImageUrl(url)) continue
+      if (appearanceEntries.some((entry) => entry.url === url)) continue
+
+      appearanceEntries.push({
+        url,
+        caption: normalizeAppearanceCaption(match[3] ?? ''),
+      })
     }
+    const appearanceUrls = appearanceEntries.map((entry) => entry.url)
+    const appearanceCaptions = appearanceEntries.map((entry) => entry.caption)
+    const appearanceUrl = appearanceUrls[0]
 
     if (DEBUG) {
       console.log(`  Attack: ${name}`)
@@ -834,7 +909,7 @@ function parseGuestAttacks(html: string, guestName: string): GuestAttack[] {
       console.log(`    Effect: ${effect.slice(0, 50)}...`)
       console.log(`    Mana: ${manaCost}, CD: ${cooldown}, Type: ${damageType}, Elem: ${element}`)
       console.log(`    Button URL: ${buttonImageUrl || 'none'}`)
-      console.log(`    Appearance URL: ${appearanceUrl || 'none'}`)
+      console.log(`    Appearance URL: ${appearanceUrls.join(', ') || 'none'}`)
     }
 
     attacks.push({
@@ -848,6 +923,10 @@ function parseGuestAttacks(html: string, guestName: string): GuestAttack[] {
       element,
       buttonImageUrl,
       appearanceUrl,
+      ...(appearanceUrls.length > 1 ? { appearanceUrls } : {}),
+      ...(appearanceCaptions.some((caption) => caption !== 'Appearance')
+        ? { appearanceCaptions }
+        : {}),
       ...(attackNotes ? { notes: attackNotes } : {}),
     })
   }
@@ -1070,7 +1149,7 @@ function sanitizeGuestMedia<
 >(entry: T): T {
   const attackMediaUrls = new Set(
     (entry.attacks ?? [])
-      .flatMap((attack) => [attack.buttonImageUrl, attack.appearanceUrl])
+      .flatMap((attack) => [attack.buttonImageUrl, attack.appearanceUrl, ...(attack.appearanceUrls ?? [])])
       .filter(Boolean)
   )
   const alternativeImages = entry.alternativeImages?.filter((image) => {
@@ -1095,9 +1174,11 @@ function sanitizeGuestMedia<
 
 function inferGuestMainImageFromAttacks(attacks: GuestAttack[]): string | undefined {
   for (const attack of attacks) {
-    if (!attack.appearanceUrl) continue
-    const inferredUrl = attack.appearanceUrl.replace(/-[^/-]+(\.[a-z]+)(\?.*)?$/i, '$1$2')
-    if (inferredUrl !== attack.appearanceUrl) return inferredUrl
+    for (const appearanceUrl of [attack.appearanceUrl, ...(attack.appearanceUrls ?? [])]) {
+      if (!appearanceUrl) continue
+      const inferredUrl = appearanceUrl.replace(/-[^/-]+(\.[a-z]+)(\?.*)?$/i, '$1$2')
+      if (inferredUrl !== appearanceUrl) return inferredUrl
+    }
   }
   return undefined
 }
@@ -1178,7 +1259,11 @@ function sanitizeGuestFamilyLevelVariants(family: ItemFamily): ItemFamily {
       (level.attacks ?? [])
         .flatMap((attack) => {
           const typedAttack = attack as GuestAttack
-          return [typedAttack.buttonImageUrl, typedAttack.appearanceUrl]
+          return [
+            typedAttack.buttonImageUrl,
+            typedAttack.appearanceUrl,
+            ...(typedAttack.appearanceUrls ?? []),
+          ]
         })
         .filter(Boolean)
     )
@@ -2130,6 +2215,102 @@ function buildGuestFamilyFromSections(
   return computeFamilyFlags(family)
 }
 
+function getDragonGuestVariantInfo(level: LevelVariant): { label: string; description: string } {
+  const sourceUrl = level.sourceUrl ?? ''
+  if (sourceUrl.includes(DRAGON_GUEST_MESSAGE_ID)) {
+    return { label: '(1)', description: 'Toddler Dragon' }
+  }
+  if (sourceUrl.includes('22231249')) return { label: '(2)', description: 'Kid Dragon' }
+  if (sourceUrl.includes('22231251')) {
+    return { label: '(3)', description: 'Dragon of Doom' }
+  }
+  if (/Dragon of Doom/i.test(level.description ?? level.name)) {
+    return { label: '(3)', description: 'Dragon of Doom' }
+  }
+  if (/Kid Dragon/i.test(level.description ?? level.name)) {
+    return { label: '(2)', description: 'Kid Dragon' }
+  }
+  return { label: '(1)', description: 'Toddler Dragon' }
+}
+
+function buildDragonGuestFamilyFromThread(
+  stub: GuestStub,
+  sourcePosts: ThreadPostContent[],
+  chronology: ChronologyData,
+  nameToSlug: Map<string, { slug: string; type: EntryType }>
+): ItemFamily | undefined {
+  const variantSections = sourcePosts.flatMap((post) =>
+    DRAGON_GUEST_VARIANT_POST_IDS.has(post.messageId)
+      ? extractGuestVariantSectionsFromHtml(post.html, post.sourceUrl)
+      : []
+  )
+
+  if (variantSections.length < 3) return undefined
+
+  const currentSkillPost = sourcePosts.find(
+    (post) => post.messageId === DRAGON_GUEST_CURRENT_SKILLS_POST_ID
+  )
+  const doomSkillPost = sourcePosts.find(
+    (post) => post.messageId === DRAGON_GUEST_DOOM_SKILLS_POST_ID
+  )
+  const currentSkillAttacks = currentSkillPost
+    ? parseGuestAttacks(currentSkillPost.html, '<Dragon> current skills')
+    : []
+  const doomSkillAttacks = doomSkillPost
+    ? parseGuestAttacks(doomSkillPost.html, '<Dragon> of Doom skills')
+    : []
+
+  const family = buildGuestFamilyFromSections(
+    stub,
+    variantSections,
+    chronology,
+    nameToSlug,
+    DRAGON_GUEST_SHARED_NOTES
+  )
+
+  const levelVariants = family.levelVariants.map((level) => {
+    const variantInfo = getDragonGuestVariantInfo(level)
+    const attacks = variantInfo.label === '(3)' ? doomSkillAttacks : currentSkillAttacks
+
+    return {
+      ...level,
+      variantName: variantInfo.label,
+      name: `<Dragon> ${variantInfo.label}`,
+      description: variantInfo.description,
+      ...(attacks.length > 0 ? { attacks } : {}),
+    }
+  })
+
+  return computeFamilyFlags(
+    sanitizeGuestFamilyLevelVariants({
+      ...family,
+      id: 'guest-dragon',
+      familyName: '<Dragon>',
+      slug: 'guest-dragon',
+      aliasSlugs: uniqueStrings([
+        ...(family.aliasSlugs ?? []),
+        'guest-dragon-1',
+        'guest-dragon-2',
+        'guest-dragon-3',
+      ]),
+      shared: {
+        ...family.shared,
+        notes: DRAGON_GUEST_SHARED_NOTES,
+        alsoSee: [{ name: '<Dragon>', slug: 'pet-dragon', type: 'pet' }],
+      },
+      levelVariants,
+      tags: uniqueStrings([
+        'dragon',
+        'toddler',
+        'kid',
+        'doom',
+        ...family.tags.filter((tag) => !/^\(\d+\)$/.test(tag)),
+      ]).sort(),
+      retired: undefined,
+    })
+  )
+}
+
 async function enrichGuestFamilyCharacterImages(
   family: ItemFamily,
   sections: GuestVariantSection[],
@@ -2250,6 +2431,40 @@ function sanitizePromotedGuestEntries(items: Array<Guest | ItemFamily>): Array<G
   })
 }
 
+const DRAGON_GUEST_SHARED_NOTES = [
+  "Draco is this guest's default name; to change their name and/or color palette from the default, visit Dragon Customization.",
+  'Also known as the Destroyer from various NPCs.',
+  'Toddler and kid dragons cannot be summoned as a guest while inside of a quest; however, they may still be summoned as a pet.',
+  "Kid dragons may be equipped with Kid Dragon Accessories; if the player's dragon's appearance is Baby or Toddler Dragon, the accessories will not be shown.",
+  'Kid dragons may change their appearance as Baby or Toddler Dragon via Dove in Sunbreeze Grove (Books 3 and 4), but all skills are retained; this was implemented on June 19th, 2026.',
+  'All versions of this guest received a major overhaul to their skills on June 21st, 2019.',
+  "Initially both toddler and kid dragons were able to use the secondary 'Attack' skills; this was changed to be exclusive for kid dragons on September 7th, 2019.",
+  "'Tickles' skill previously applied -[Mischief skill level * 0.3] Bonus to target, and had the tooltip: Lower enemy BtH, Dmg, and All Res!; the Bonus to Hit component was removed on March 7th, 2020.",
+  "'Elemental Supernova' and 'Outrage' skills were bug fixed on January 1st, 2021.",
+  'The following changes were implemented on June 23rd, 2023:',
+  "  • Tickles' skill increased its effectiveness from applying +[Mischief skill level * 0.05] Health Resist to target.",
+  "  • 'Magic', 'Fighting', and 'Outrage' skills were modified.",
+  'The following changes were implemented on April 19th, 2024:',
+  '  • Tier 1 skills were renamed to their proper names.',
+  "  • 'Skip' and 'Primal' skills were moved.",
+  '  • Tooltips for Toddler and Kid Dragons were updated.',
+].join('\n')
+
+function repairDragonGuestRelationships(items: Array<Guest | ItemFamily>): Array<Guest | ItemFamily> {
+  return items.map((item) => {
+    if (item.slug !== 'guest-dragon' || !('levelVariants' in item)) return item
+
+    return {
+      ...item,
+      shared: {
+        ...item.shared,
+        notes: DRAGON_GUEST_SHARED_NOTES,
+        alsoSee: [{ name: '<Dragon>', slug: 'pet-dragon', type: 'pet' }],
+      },
+    }
+  })
+}
+
 // ─── Main ─────────────────────────────────────────────────────────────────────
 
 async function main(): Promise<void> {
@@ -2297,6 +2512,9 @@ async function main(): Promise<void> {
   }
 
   let allStubs = parseAZPage(azHtml, chronology)
+  if (!allStubs.some((stub) => stub.slug === 'guest-dragon')) {
+    allStubs = [...allStubs, buildDragonGuestStub()]
+  }
   if (allStubs.length === 0) {
     console.error('❌ No guests found in A-Z page')
     const preview = stripHtml(decodeHTML(azHtml)).slice(0, 200)
@@ -2311,7 +2529,7 @@ async function main(): Promise<void> {
     filtered.entries,
     nameFilter,
     (stub) => normalizeGuestLookupName(stub.name),
-    (stub) => [normalizeGuestLookupName(stripTrailingVariantNumber(stub.name))]
+    (stub) => [stub.name, normalizeGuestLookupName(stripTrailingVariantNumber(stub.name))]
   )
   const nameFilteredEntries = nameFiltered.entries
   const stubs = applyLimit(nameFilteredEntries, limitArg)
@@ -2321,6 +2539,22 @@ async function main(): Promise<void> {
   console.log()
 
   if (stubs.length === 0) {
+    const requestedDragonGuest = nameFilter.names?.some((name) =>
+      ['<dragon>', '<dragon> (all versions)', 'dragon'].includes(name)
+    )
+
+    if (requestedDragonGuest && fs.existsSync(OUTPUT_PATH)) {
+      const existingGuests = JSON.parse(fs.readFileSync(OUTPUT_PATH, 'utf-8')) as Array<
+        Guest | ItemFamily
+      >
+      const repairedGuests = repairDragonGuestRelationships(existingGuests)
+      fs.writeFileSync(OUTPUT_PATH, JSON.stringify(repairedGuests, null, 2) + '\n', 'utf-8')
+      writePetsGuestsManifest(DATA_DIR)
+      console.log('⚠️  Dragon guest is not exposed by the current A-Z guest scrape.')
+      console.log('✅ Repaired existing guest-dragon data in guests.json.')
+      return
+    }
+
     console.log('⚠️  No selected guests matched; leaving guests.json unchanged.')
     return
   }
@@ -2416,6 +2650,28 @@ async function main(): Promise<void> {
         if (!html) {
           console.log('⚠️  deleted — skipping')
           skipped++
+          return
+        }
+
+        if (isDragonGuestStub(stub)) {
+          const dragonFamily = buildDragonGuestFamilyFromThread(
+            stub,
+            sourcePosts,
+            chronology,
+            nameToSlug
+          )
+          if (!dragonFamily) {
+            console.log('⚠️  could not parse Dragon guest thread — skipping')
+            skipped++
+            return
+          }
+
+          progressMap.set(dragonFamily.slug, dragonFamily)
+          console.log(`✓ [Dragon ItemFamily: ${dragonFamily.levelVariants.length} variants]`)
+          scraped++
+
+          const progress = Array.from(progressMap.values())
+          saveProgressEntries(PROGRESS_PATH, progress)
           return
         }
 
@@ -2576,9 +2832,11 @@ async function main(): Promise<void> {
     supplementalMediaByForumUrl
   )
   const promotedGuests = applySupplementalGuestData(
-    repairAccessFlags(
-      sanitizePromotedGuestEntries(
-        canonicalizePromotedRelationships(promoteCrossPostFamilies(hydratedGuests))
+    repairDragonGuestRelationships(
+      repairAccessFlags(
+        sanitizePromotedGuestEntries(
+          canonicalizePromotedRelationships(promoteCrossPostFamilies(hydratedGuests))
+        )
       )
     ),
     supplementalNotesByForumUrl,

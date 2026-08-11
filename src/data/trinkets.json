@@ -8,9 +8,7 @@
     "description": "Wishbones are supposed to be lucky... right? This item requires a Dragon Amulet. Visit the Black Market Moglin to upgrade this item.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19281951",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "1",
     "stats": "Crit +1, LUK +3",
     "resists": "None",
@@ -28,10 +26,7 @@
         "dcRequired": true
       }
     ],
-    "tags": [
-      "dar",
-      "free"
-    ],
+    "tags": ["dar", "free"],
     "daRequired": false,
     "dcRequired": true,
     "isRare": true
@@ -45,9 +40,7 @@
     "description": "This gold-edged card has magical powers! It's a wonder the Card Masters are willing to sell you any of them!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17759289",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "50",
     "stats": "Dodge +5, Crit +4, Bonus +6",
     "resists": "Wind +10",
@@ -64,10 +57,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "sto",
-      "gold"
-    ],
+    "tags": ["sto", "gold"],
     "daRequired": true
   },
   {
@@ -79,9 +69,7 @@
     "description": "This gold-edged card has magical powers! It's a wonder the Card Masters are willing to sell you any of them!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17759276",
     "releaseDate": "",
-    "elements": [
-      "WIN"
-    ],
+    "elements": ["WIN"],
     "level": "50",
     "stats": "Dodge +5, WIS +10",
     "resists": "Stone +10",
@@ -98,10 +86,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "win",
-      "gold"
-    ],
+    "tags": ["win", "gold"],
     "daRequired": true
   },
   {
@@ -113,9 +98,7 @@
     "description": "This gold-edged card has magical powers! It's a wonder the Card Masters are willing to sell you any of them!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17759259",
     "releaseDate": "",
-    "elements": [
-      "FIR"
-    ],
+    "elements": ["FIR"],
     "level": "50",
     "stats": "Dodge +5, Crit +6, Bonus +4",
     "resists": "Ice +10",
@@ -132,10 +115,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "fir",
-      "gold"
-    ],
+    "tags": ["fir", "gold"],
     "daRequired": true
   },
   {
@@ -147,9 +127,7 @@
     "description": "This gold-edged card has magical powers! It's a wonder the Card Masters are willing to sell you any of them!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17759255",
     "releaseDate": "",
-    "elements": [
-      "WAT"
-    ],
+    "elements": ["WAT"],
     "level": "50",
     "stats": "Dodge +5, END +10",
     "resists": "Energy +10",
@@ -166,10 +144,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "wat",
-      "gold"
-    ],
+    "tags": ["wat", "gold"],
     "daRequired": true
   },
   {
@@ -181,9 +156,7 @@
     "description": "Bacon raining down from the sky? Someone up there must like you! The smell of the bacon rain distracts the monsters, making them miss more! This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15998241",
     "releaseDate": "",
-    "elements": [
-      "BAC"
-    ],
+    "elements": ["BAC"],
     "level": "25",
     "stats": "Magic Def +1, Pierce Def +1, Melee Def +1, LUK +3",
     "resists": "None",
@@ -202,10 +175,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "bac",
-      "gold"
-    ],
+    "tags": ["bac", "gold"],
     "daRequired": true,
     "attacks": [
       {
@@ -231,9 +201,7 @@
     "description": "Yix gave this to you in recognition of your valiant efforts to save Popsprocket and the Energy Orb. Each of the four colored orbs represents one of the four pillars of hope: Light, Water, Mastery, and Balance. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=16140842",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "10",
     "stats": "Magic Def +1, Pierce Def +1, Melee Def +1",
     "resists": "None",
@@ -252,10 +220,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "lig",
-      "free"
-    ],
+    "tags": ["lig", "free"],
     "daRequired": true,
     "isRare": true,
     "attacks": [
@@ -283,9 +248,7 @@
     "description": "\"Can't see... so many hearts!\" This trinket blinds your opponent, giving -50 to the hit rate. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17285912",
     "releaseDate": "",
-    "elements": [
-      "FIR"
-    ],
+    "elements": ["FIR"],
     "level": "5",
     "stats": "Crit +2",
     "resists": "None",
@@ -305,10 +268,7 @@
         "dcRequired": true
       }
     ],
-    "tags": [
-      "fir",
-      "dc"
-    ],
+    "tags": ["fir", "dc"],
     "daRequired": false,
     "dcRequired": true,
     "isSeasonal": true,
@@ -332,11 +292,7 @@
     "id": "accessory-blue-box",
     "familyName": "Blue Box",
     "slug": "accessory-blue-box",
-    "aliasSlugs": [
-      "accessory-blue-box-i",
-      "accessory-blue-box-ii",
-      "accessory-blue-box-iii"
-    ],
+    "aliasSlugs": ["accessory-blue-box-i", "accessory-blue-box-ii", "accessory-blue-box-iii"],
     "type": "accessory",
     "subtype": "trinket",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18824753",
@@ -502,10 +458,7 @@
     "equipSlot": "Trinket",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "ene",
-      "gold"
-    ],
+    "tags": ["ene", "gold"],
     "isSeasonal": true,
     "hasDA": true,
     "hasDC": false,
@@ -513,9 +466,7 @@
     "hasFree": false,
     "hasMerge": false,
     "levelRange": "I-III",
-    "elements": [
-      "ENE"
-    ]
+    "elements": ["ENE"]
   },
   {
     "id": "accessory-boom-voice-brew",
@@ -526,9 +477,7 @@
     "description": "Knock out your enemies with the power of your voice! This trinket gives 140% dmg and a 1% chance to stun! This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18992185",
     "releaseDate": "",
-    "elements": [
-      "ENE"
-    ],
+    "elements": ["ENE"],
     "level": "30",
     "stats": "Crit +4, Magic Def +4, Pierce Def +4, Melee Def +4, END +3, INT +2, DEX +2, STR +2",
     "resists": "None",
@@ -549,10 +498,7 @@
         "dmRequired": true
       }
     ],
-    "tags": [
-      "ene",
-      "merge"
-    ],
+    "tags": ["ene", "merge"],
     "daRequired": true,
     "dmRequired": true,
     "attacks": [
@@ -575,10 +521,6 @@
     "id": "accessory-booty-sniffer",
     "familyName": "Booty Sniffer",
     "slug": "accessory-booty-sniffer",
-    "aliasSlugs": [
-      "accessory-booty-sniffer",
-      "accessory-booty-sniffer"
-    ],
     "type": "accessory",
     "subtype": "trinket",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21818652",
@@ -685,21 +627,14 @@
     "equipSlot": "Trinket",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dc",
-      "wat",
-      "win"
-    ],
+    "tags": ["dc", "wat", "win"],
     "hasDA": false,
     "hasDC": true,
     "hasDM": false,
     "hasFree": false,
     "hasMerge": false,
     "levelRange": "5",
-    "elements": [
-      "WAT",
-      "WIN"
-    ]
+    "elements": ["WAT", "WIN"]
   },
   {
     "id": "accessory-bottled-wind",
@@ -710,9 +645,7 @@
     "description": "The gusting winds in this bottle makes it harder for your enemies to hit you.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15387140",
     "releaseDate": "",
-    "elements": [
-      "WIN"
-    ],
+    "elements": ["WIN"],
     "level": "15",
     "stats": "Dodge +1",
     "resists": "None",
@@ -729,10 +662,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "win",
-      "free"
-    ],
+    "tags": ["win", "free"],
     "daRequired": true
   },
   {
@@ -744,9 +674,7 @@
     "description": "This trinket causes bubbles to form around you wherever you go! Side effects of breathing in so much bubble vapor are currently unknown, but it's probably fine. Those bubbles sure are distracting, though... Proof of victory over \"In Wanderland\".",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22407688",
     "releaseDate": "",
-    "elements": [
-      "POI"
-    ],
+    "elements": ["POI"],
     "level": "1",
     "stats": "Crit +5, WIS +2, END +2, CHA +2, LUK +2, INT +2, DEX +2, STR +2, Bonus +5",
     "resists": "None",
@@ -768,10 +696,7 @@
       }
     ],
     "notes": "Equipping this trinket displays animated pink bubbles over the player.",
-    "tags": [
-      "poi",
-      "merge"
-    ],
+    "tags": ["poi", "merge"],
     "daRequired": true,
     "dcRequired": true,
     "attacks": [
@@ -1081,20 +1006,14 @@
     "equipSlot": "Trinket",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dar",
-      "dc",
-      "free"
-    ],
+    "tags": ["dar", "dc", "free"],
     "hasDA": true,
     "hasDC": true,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-V",
-    "elements": [
-      "DAR"
-    ]
+    "elements": ["DAR"]
   },
   {
     "id": "accessory-chi-blast",
@@ -1105,9 +1024,7 @@
     "description": "There isn't any hero more spirited than you are!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15676451",
     "releaseDate": "",
-    "elements": [
-      "WIN"
-    ],
+    "elements": ["WIN"],
     "level": "5",
     "stats": "None",
     "resists": "None",
@@ -1127,10 +1044,7 @@
         "dcRequired": true
       }
     ],
-    "tags": [
-      "win",
-      "dc"
-    ],
+    "tags": ["win", "dc"],
     "daRequired": false,
     "dcRequired": true,
     "attacks": [
@@ -1158,9 +1072,7 @@
     "description": "This item requires a Dragon Amulet. Using the power of this trinket, you can summon a small army of chocolate bunnies to attack your foe for 125% of you weapon's base damage!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15865167",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "5",
     "stats": "Crit +2, CHA +5, DEX +7",
     "resists": "None",
@@ -1187,10 +1099,7 @@
         "dcRequired": true
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": true,
     "dcRequired": true,
     "isRare": true,
@@ -1218,9 +1127,7 @@
     "description": "Summon the Seven Corrupted elemental spirits to attack your foe! Increases your Boost by 5 on use as well. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22375031",
     "releaseDate": "",
-    "elements": [
-      "EVI"
-    ],
+    "elements": ["EVI"],
     "level": "60",
     "stats": "Crit +5, WIS +5, END +5, CHA +5, LUK +5, INT +8, DEX +8, STR +8, Bonus +5",
     "resists": "All +4, Health -4",
@@ -1250,10 +1157,7 @@
       }
     ],
     "notes": "Trinket has an uncommon drop rate from the quest Pandora's Gauntlet.\nTrinket initially required 10 Fragment of Ethereal Woe; this was lowered to 5 on February 14th, 2020.\nTrinket was DC tagged on July 29th, 2022.",
-    "tags": [
-      "evi",
-      "free"
-    ],
+    "tags": ["evi", "free"],
     "daRequired": true,
     "dcRequired": true,
     "attacks": [
@@ -1281,9 +1185,7 @@
     "description": "Use this magical amulet in battle to unleash holy protection magic! This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17767187",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "40",
     "stats": "Magic Def +4, Pierce Def +4, Melee Def +4, WIS +3, END +3",
     "resists": "None",
@@ -1303,10 +1205,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "nat",
-      "merge"
-    ],
+    "tags": ["nat", "merge"],
     "daRequired": true,
     "attacks": [
       {
@@ -1332,9 +1231,7 @@
     "description": "May your aim be true.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15387100",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "15",
     "stats": "Bonus +1",
     "rarity": "12",
@@ -1350,10 +1247,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "lig",
-      "free"
-    ],
+    "tags": ["lig", "free"],
     "daRequired": true
   },
   {
@@ -1582,19 +1476,14 @@
     "equipSlot": "Trinket",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "merge",
-      "met"
-    ],
+    "tags": ["merge", "met"],
     "hasDA": true,
     "hasDC": false,
     "hasDM": true,
     "hasFree": false,
     "hasMerge": true,
     "levelRange": "I-IV",
-    "elements": [
-      "MET"
-    ]
+    "elements": ["MET"]
   },
   {
     "id": "accessory-dragon-s-ethereal-scale",
@@ -1605,9 +1494,7 @@
     "description": "This dragon scale was shed by your dragon after you defeated them in the Arena at the Edge of Time. It radiates with an unknown power; perhaps the magic of the Inn itself? Proof of victory over \"Your Dragon!\". (Can be upgraded)",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22422253",
     "releaseDate": "",
-    "elements": [
-      "EVI"
-    ],
+    "elements": ["EVI"],
     "level": "70",
     "stats": "Block +5, Dodge +5, Parry +5, Crit +5, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +5, END +5, CHA +10, LUK +10, INT +5, DEX +5, STR +5, Bonus +5",
     "resists": "All +5, Health -5",
@@ -1626,10 +1513,7 @@
       }
     ],
     "notes": "(Can be upgraded... coming soon!) excerpt was replaced by (Can be upgraded) on June 27th, 2025.",
-    "tags": [
-      "evi",
-      "free"
-    ],
+    "tags": ["evi", "free"],
     "daRequired": true,
     "dcRequired": true
   },
@@ -1642,9 +1526,7 @@
     "description": "Call upon your friends to help you in battle!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20323184",
     "releaseDate": "",
-    "elements": [
-      "GOO"
-    ],
+    "elements": ["GOO"],
     "level": "1",
     "stats": "Crit +1, LUK +3",
     "resists": "None",
@@ -1665,10 +1547,7 @@
       }
     ],
     "notes": "Item cannot be destroyed.",
-    "tags": [
-      "goo",
-      "gold"
-    ],
+    "tags": ["goo", "gold"],
     "daRequired": false,
     "dcRequired": true,
     "isRare": true,
@@ -1698,9 +1577,7 @@
     "description": "Draw fortitude from the earth itself and increase your health.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15386834",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "15",
     "stats": "END +2",
     "rarity": "12",
@@ -1716,10 +1593,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "sto",
-      "free"
-    ],
+    "tags": ["sto", "free"],
     "daRequired": true
   },
   {
@@ -1731,9 +1605,7 @@
     "description": "A shard of power from a (hopefully forever) lost reality. Focusing your will into it summons... well, you'll see.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22401934",
     "releaseDate": "",
-    "elements": [
-      "BAC"
-    ],
+    "elements": ["BAC"],
     "level": "60",
     "stats": "Block +4, Dodge +4, Parry +4, Crit +10, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +10, END +10, CHA +10, LUK +10, INT +10, DEX +10, STR +10, Bonus +10",
     "resists": "Nature +10, Fire +10, Bacon +5",
@@ -1753,10 +1625,7 @@
         "dcRequired": true
       }
     ],
-    "tags": [
-      "bac",
-      "free"
-    ],
+    "tags": ["bac", "free"],
     "daRequired": false,
     "dcRequired": true,
     "attacks": [
@@ -1784,9 +1653,7 @@
     "description": "Celebrate the end of Book One! The world of Lore needs elemental unity and balance between the planes for peace.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19679011",
     "releaseDate": "",
-    "elements": [
-      "GOO"
-    ],
+    "elements": ["GOO"],
     "level": "5",
     "stats": "Crit +2, CHA +5, INT +7, DEX +7, STR +7",
     "resists": "None",
@@ -1806,10 +1673,7 @@
         "dcRequired": true
       }
     ],
-    "tags": [
-      "goo",
-      "gold"
-    ],
+    "tags": ["goo", "gold"],
     "daRequired": false,
     "dcRequired": true,
     "isSpecialOffer": true,
@@ -2588,10 +2452,7 @@
     "equipSlot": "Trinket",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "goo",
-      "merge"
-    ],
+    "tags": ["goo", "merge"],
     "isSpecialOffer": true,
     "hasDA": false,
     "hasDC": true,
@@ -2599,9 +2460,7 @@
     "hasFree": false,
     "hasMerge": true,
     "levelRange": "I-XV",
-    "elements": [
-      "GOO"
-    ]
+    "elements": ["GOO"]
   },
   {
     "id": "accessory-embroidered-guard-tunic",
@@ -2612,9 +2471,7 @@
     "description": "This magical tunic provides even more protection from stun attacks. It pulsates lightly with a golden glow.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19642068",
     "releaseDate": "",
-    "elements": [
-      "ENE"
-    ],
+    "elements": ["ENE"],
     "level": "15",
     "stats": "None",
     "resists": "Immobility +4",
@@ -2632,20 +2489,14 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "ene",
-      "merge"
-    ],
+    "tags": ["ene", "merge"],
     "daRequired": true
   },
   {
     "id": "accessory-exalted-blaster-amalgam",
     "familyName": "Exalted Blaster (Amalgam)",
     "slug": "accessory-exalted-blaster-amalgam",
-    "aliasSlugs": [
-      "accessory-exalted-blaster-i-amalgam",
-      "accessory-exalted-blaster-ii-amalgam"
-    ],
+    "aliasSlugs": ["accessory-exalted-blaster-i-amalgam", "accessory-exalted-blaster-ii-amalgam"],
     "type": "accessory",
     "subtype": "trinket",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22403195",
@@ -2768,28 +2619,20 @@
     "equipSlot": "Trinket",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "fea",
-      "merge"
-    ],
+    "tags": ["fea", "merge"],
     "hasDA": true,
     "hasDC": false,
     "hasDM": false,
     "hasFree": false,
     "hasMerge": true,
     "levelRange": "I-II",
-    "elements": [
-      "FEA"
-    ]
+    "elements": ["FEA"]
   },
   {
     "id": "accessory-exalted-blaster-destiny",
     "familyName": "Exalted Blaster (Destiny)",
     "slug": "accessory-exalted-blaster-destiny",
-    "aliasSlugs": [
-      "accessory-exalted-blaster-i-destiny",
-      "accessory-exalted-blaster-ii-destiny"
-    ],
+    "aliasSlugs": ["accessory-exalted-blaster-i-destiny", "accessory-exalted-blaster-ii-destiny"],
     "type": "accessory",
     "subtype": "trinket",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22403191",
@@ -2912,28 +2755,20 @@
     "equipSlot": "Trinket",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "goo",
-      "merge"
-    ],
+    "tags": ["goo", "merge"],
     "hasDA": true,
     "hasDC": false,
     "hasDM": false,
     "hasFree": false,
     "hasMerge": true,
     "levelRange": "I-II",
-    "elements": [
-      "GOO"
-    ]
+    "elements": ["GOO"]
   },
   {
     "id": "accessory-exalted-blaster-doom",
     "familyName": "Exalted Blaster (Doom)",
     "slug": "accessory-exalted-blaster-doom",
-    "aliasSlugs": [
-      "accessory-exalted-blaster-i-doom",
-      "accessory-exalted-blaster-ii-doom"
-    ],
+    "aliasSlugs": ["accessory-exalted-blaster-i-doom", "accessory-exalted-blaster-ii-doom"],
     "type": "accessory",
     "subtype": "trinket",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22403193",
@@ -3056,19 +2891,14 @@
     "equipSlot": "Trinket",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "evi",
-      "merge"
-    ],
+    "tags": ["evi", "merge"],
     "hasDA": true,
     "hasDC": false,
     "hasDM": false,
     "hasFree": false,
     "hasMerge": true,
     "levelRange": "I-II",
-    "elements": [
-      "EVI"
-    ]
+    "elements": ["EVI"]
   },
   {
     "id": "accessory-fireworks",
@@ -3079,9 +2909,7 @@
     "description": "Ooooh! Aaaaah! So pretty! It's always a celebration when you're around but you WILL be able to be seen before you're close! This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=16265631",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "5",
     "stats": "Magic Def -3, Pierce Def -3, Melee Def -3, INT +2, DEX +2, STR +2, Bonus +2",
     "resists": "None",
@@ -3102,10 +2930,7 @@
       }
     ],
     "notes": "Equipping this trinket displays blue, red, and green fireworks above the player.",
-    "tags": [
-      "lig",
-      "gold"
-    ],
+    "tags": ["lig", "gold"],
     "daRequired": false,
     "dcRequired": true,
     "isSeasonal": true,
@@ -3134,9 +2959,7 @@
     "description": "Wishbones are supposed to be lucky... right? This item requires a Dragon Amulet. Visit the Black Market Moglin to upgrade this item.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21732705",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "70",
     "stats": "Block +4, Dodge +4, Crit +8, LUK +14, INT +6, DEX +6, STR +6, Bonus +8",
     "resists": "Light +12",
@@ -3155,10 +2978,7 @@
         "dcRequired": true
       }
     ],
-    "tags": [
-      "dar",
-      "merge"
-    ],
+    "tags": ["dar", "merge"],
     "daRequired": true,
     "dcRequired": true,
     "isRare": true
@@ -3172,9 +2992,7 @@
     "description": "Wishbones are supposed to be lucky... right? This item requires a Dragon Amulet. Visit the Black Market Moglin to upgrade this item.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21732710",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "70",
     "stats": "Block +4, Dodge +4, Crit +8, LUK +14, INT +6, DEX +6, STR +6, Bonus +8",
     "resists": "Light +12",
@@ -3192,10 +3010,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "dar",
-      "merge"
-    ],
+    "tags": ["dar", "merge"],
     "daRequired": true,
     "isRare": true
   },
@@ -3208,9 +3023,7 @@
     "description": "Wishbones are supposed to be lucky... right? This item requires a Dragon Amulet. Visit the Black Market Moglin to upgrade this item.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19281767",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "1",
     "stats": "Crit +1, LUK +3",
     "resists": "None",
@@ -3227,10 +3040,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "dar",
-      "free"
-    ],
+    "tags": ["dar", "free"],
     "daRequired": true,
     "isRare": true
   },
@@ -3243,9 +3053,7 @@
     "description": "Wishbones are supposed to be lucky... right? This item requires a Dragon Amulet. Visit the Black Market Moglin to upgrade this item.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19281978",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "60",
     "stats": "Block +2, Dodge +2, Crit +6, LUK +10, INT +4, DEX +4, STR +4, Bonus +6",
     "resists": "Light +10",
@@ -3264,10 +3072,7 @@
         "dcRequired": true
       }
     ],
-    "tags": [
-      "dar",
-      "merge"
-    ],
+    "tags": ["dar", "merge"],
     "daRequired": true,
     "dcRequired": true,
     "isRare": true
@@ -3281,9 +3086,7 @@
     "description": "Wishbones are supposed to be lucky... right? This item requires a Dragon Amulet. Visit the Black Market Moglin to upgrade this item.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19281956",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "60",
     "stats": "Block +2, Dodge +2, Parry +2, Crit +6, LUK +10, INT +4, DEX +4, STR +4, Bonus +6",
     "resists": "Light +10",
@@ -3301,10 +3104,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "dar",
-      "merge"
-    ],
+    "tags": ["dar", "merge"],
     "daRequired": true,
     "isRare": true
   },
@@ -3317,9 +3117,7 @@
     "description": "So much coffee... You have transcended! This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18822144",
     "releaseDate": "",
-    "elements": [
-      "ENE"
-    ],
+    "elements": ["ENE"],
     "level": "15",
     "stats": "Crit +2, Bonus +2",
     "resists": "None",
@@ -3339,10 +3137,7 @@
         "dcRequired": true
       }
     ],
-    "tags": [
-      "ene",
-      "dc"
-    ],
+    "tags": ["ene", "dc"],
     "daRequired": false,
     "dcRequired": true,
     "isSeasonal": true,
@@ -3371,9 +3166,7 @@
     "description": "This magical tunic provides protection from stun attacks. It pulsates lightly with a golden glow.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19642024",
     "releaseDate": "",
-    "elements": [
-      "ENE"
-    ],
+    "elements": ["ENE"],
     "level": "15",
     "stats": "None",
     "resists": "Immobility +2",
@@ -3391,10 +3184,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "ene",
-      "merge"
-    ],
+    "tags": ["ene", "merge"],
     "daRequired": true
   },
   {
@@ -3406,9 +3196,7 @@
     "description": "A large scale shed by the Guardian Dragon. It's covered in dozens of cuts and scars... May have some use in the future!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22426726",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "10",
     "stats": "WIS +10, END +10, LUK +5, Bonus +5",
     "resists": "All +4",
@@ -3425,10 +3213,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "sto",
-      "free"
-    ],
+    "tags": ["sto", "free"],
     "daRequired": true
   },
   {
@@ -3440,9 +3225,7 @@
     "description": "An ancient technique developed by the legendary Honda. Summon four kunai to fly at your foe and poison them! This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21920623",
     "releaseDate": "",
-    "elements": [
-      "POI"
-    ],
+    "elements": ["POI"],
     "level": "20",
     "stats": "Block +5, Dodge +5, Parry +5, WIS +5, INT +2, DEX +2, STR +2",
     "resists": "Poison +10",
@@ -3462,10 +3245,7 @@
       }
     ],
     "notes": "The following changes were implemented on September 1st, 2023:\n  • Previously had the description: The ancient scrolls had a passage on how to summon an illusionary version of the mighty Honda. The illusion is so strong that it will attack and poison your foe! This item requires a Dragon Amulet.\n  • Trinket's name was changed from 'Summon Honda' to 'Honda's Legacy'.\n  • Trinket's Resist was lowered from +25 Poison to +10 Poison.\n  • Trinket's ability was replaced from Summon Honda to Summon Kunai (1).",
-    "tags": [
-      "poi",
-      "gold"
-    ],
+    "tags": ["poi", "gold"],
     "daRequired": true,
     "attacks": [
       {
@@ -3492,9 +3272,7 @@
     "description": "Cysero popped back in and did something to this Ice Gem...said you might find it useful",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=16504693",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "5",
     "stats": "Magic Def -3, Pierce Def -3, Melee Def -3, INT +2, DEX +2, STR +2, Bonus +2",
     "resists": "None",
@@ -3513,10 +3291,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "lig",
-      "free"
-    ],
+    "tags": ["lig", "free"],
     "daRequired": true,
     "attacks": [
       {
@@ -3543,9 +3318,7 @@
     "description": "Blast your foes with icy wrath and increase their weakness to fire.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=16726625",
     "releaseDate": "",
-    "elements": [
-      "ICE"
-    ],
+    "elements": ["ICE"],
     "level": "10",
     "stats": "None",
     "resists": "None",
@@ -3564,10 +3337,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "ice",
-      "free"
-    ],
+    "tags": ["ice", "free"],
     "daRequired": true,
     "attacks": [
       {
@@ -3594,9 +3364,7 @@
     "description": "\"So... What do you say?\" This trinket stuns your enemy for 2 rounds!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15543874",
     "releaseDate": "",
-    "elements": [
-      "FIR"
-    ],
+    "elements": ["FIR"],
     "level": "5",
     "stats": "Crit +1",
     "resists": "None",
@@ -3616,10 +3384,7 @@
         "dcRequired": true
       }
     ],
-    "tags": [
-      "fir",
-      "dc"
-    ],
+    "tags": ["fir", "dc"],
     "daRequired": false,
     "dcRequired": true,
     "isSeasonal": true,
@@ -3643,15 +3408,6 @@
     "id": "accessory-inert-mana-gem",
     "familyName": "Inert Mana Gem",
     "slug": "accessory-inert-mana-gem",
-    "aliasSlugs": [
-      "accessory-inert-mana-gem",
-      "accessory-inert-mana-gem",
-      "accessory-inert-mana-gem",
-      "accessory-inert-mana-gem",
-      "accessory-inert-mana-gem",
-      "accessory-inert-mana-gem",
-      "accessory-inert-mana-gem"
-    ],
     "type": "accessory",
     "subtype": "trinket",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22257261",
@@ -4025,20 +3781,14 @@
     "equipSlot": "Trinket",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dc",
-      "free",
-      "non"
-    ],
+    "tags": ["dc", "free", "non"],
     "hasDA": true,
     "hasDC": true,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "30-85",
-    "elements": [
-      "NON"
-    ]
+    "elements": ["NON"]
   },
   {
     "id": "accessory-inert-summon-gem-illumina-ex",
@@ -4049,9 +3799,7 @@
     "description": "A Summon Gem Illumina, placed into its setting. It doesn't seem to be able to activate, though. Maybe it's missing something? Proof of victory over Illumina!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22381716",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "0",
     "stats": "Crit +10, WIS +5, END +5, INT +5, DEX +5, STR +5, Bonus +10",
     "resists": "None",
@@ -4070,10 +3818,7 @@
         "dcRequired": true
       }
     ],
-    "tags": [
-      "lig",
-      "merge"
-    ],
+    "tags": ["lig", "merge"],
     "daRequired": true,
     "dcRequired": true
   },
@@ -4086,9 +3831,7 @@
     "description": "A Summon Gem Reaver, placed into its setting. It doesn't seem to be able to activate, though. Maybe it's missing something? Proof of victory over Reaver!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22376518",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "0",
     "stats": "Crit +10, WIS +5, END +5, INT +5, DEX +5, STR +5, Bonus +10",
     "resists": "None",
@@ -4108,10 +3851,7 @@
       }
     ],
     "notes": "Item was originally a Resource; was upgraded to an equippable Trinket (without an ability) on April 10th, 2020.",
-    "tags": [
-      "dar",
-      "merge"
-    ],
+    "tags": ["dar", "merge"],
     "daRequired": true,
     "dcRequired": true
   },
@@ -4124,9 +3864,7 @@
     "description": "A Summon Gem Ricterild, placed into its setting. It doesn't seem to be able to activate, though. Maybe it's missing something? Proof of victory over Ricterild!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22378349",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "0",
     "stats": "Crit +5, Magic Def +5, Pierce Def +5, Melee Def +5, LUK +5, INT +10, DEX +10, STR +10, Bonus +5",
     "resists": "None",
@@ -4145,10 +3883,7 @@
         "dcRequired": true
       }
     ],
-    "tags": [
-      "lig",
-      "merge"
-    ],
+    "tags": ["lig", "merge"],
     "daRequired": true,
     "dcRequired": true
   },
@@ -4161,9 +3896,7 @@
     "description": "A Summon Gem Roktoru, placed into its setting. It doesn't seem to be able to activate, though. Maybe it's missing something? Proof of victory over Roktoru!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22378347",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "0",
     "stats": "Block +5, Dodge +5, Parry +5, END +15",
     "resists": "None",
@@ -4182,10 +3915,7 @@
         "dcRequired": true
       }
     ],
-    "tags": [
-      "sto",
-      "merge"
-    ],
+    "tags": ["sto", "merge"],
     "daRequired": true,
     "dcRequired": true
   },
@@ -4198,9 +3928,7 @@
     "description": "These gauntlets are made of hardened leather, and come with a lifetime warranty. Or so Teral says, anyway. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17562778",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "30",
     "stats": "Dodge +2, Magic Def +4, Pierce Def +4, Melee Def +4, END +5, INT +2, DEX +2, STR +2",
     "resists": "None",
@@ -4218,10 +3946,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "nat",
-      "merge"
-    ],
+    "tags": ["nat", "merge"],
     "daRequired": true
   },
   {
@@ -4233,9 +3958,7 @@
     "description": "Tough leather gloves that will withstand the wear and tear of the lifestyle of a monster hunter. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17563944",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "18",
     "stats": "Dodge +1, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +1, END +2, INT +1, DEX +2, STR +1",
     "resists": "None",
@@ -4253,10 +3976,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "nat",
-      "merge"
-    ],
+    "tags": ["nat", "merge"],
     "daRequired": true
   },
   {
@@ -4268,9 +3988,7 @@
     "description": "These gloves have been imbued with crit-boosting magic. The best defense is a good offense! This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17763407",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "40",
     "stats": "Dodge +2, Crit +6, Magic Def +4, Pierce Def +4, Melee Def +4, END +5, INT +2, DEX +2, STR +2",
     "resists": "None",
@@ -4288,10 +4006,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "nat",
-      "merge"
-    ],
+    "tags": ["nat", "merge"],
     "daRequired": true
   },
   {
@@ -4303,9 +4018,7 @@
     "description": "Add some charge to your crits!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15386542",
     "releaseDate": "",
-    "elements": [
-      "ENE"
-    ],
+    "elements": ["ENE"],
     "level": "15",
     "stats": "Crit +1",
     "rarity": "12",
@@ -4321,10 +4034,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "ene",
-      "free"
-    ],
+    "tags": ["ene", "free"],
     "daRequired": true
   },
   {
@@ -4336,9 +4046,7 @@
     "description": "After emerging from the blizzard, you found these glittering lights attached to you! They're probably safe, right? (Cosmetic)",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22419996",
     "releaseDate": "",
-    "elements": [
-      "ICE"
-    ],
+    "elements": ["ICE"],
     "level": "1",
     "stats": "None",
     "resists": "None",
@@ -4359,10 +4067,7 @@
       }
     ],
     "notes": "Equipping this trinket displays animated stars over the player, which appear, rise, and disappear with ten different colors.",
-    "tags": [
-      "ice",
-      "merge"
-    ],
+    "tags": ["ice", "merge"],
     "daRequired": false,
     "dcRequired": true,
     "dmRequired": true,
@@ -4377,9 +4082,7 @@
     "description": "Lime was so thankful for your help he gave you some of the fireworks you made! Use them on your foes! This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21906073",
     "releaseDate": "",
-    "elements": [
-      "FIR"
-    ],
+    "elements": ["FIR"],
     "level": "5",
     "stats": "None",
     "resists": "None",
@@ -4398,10 +4101,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "fir",
-      "free"
-    ],
+    "tags": ["fir", "free"],
     "daRequired": true,
     "attacks": [
       {
@@ -4427,9 +4127,7 @@
     "description": "Weighted to make your Luck even better! Made by the famous trinket-maker, Eric Ravenwing!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17423015",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "5",
     "stats": "Crit +3, LUK +10",
     "rarity": "15",
@@ -4445,10 +4143,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": true
   },
   {
@@ -4460,9 +4155,7 @@
     "description": "Awww, it's in the shape of a puppy!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17878078",
     "releaseDate": "",
-    "elements": [
-      "BAC"
-    ],
+    "elements": ["BAC"],
     "level": "20",
     "stats": "CHA +5, LUK +5",
     "resists": "Nature +5, Bacon -20",
@@ -4479,10 +4172,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "bac",
-      "gold"
-    ],
+    "tags": ["bac", "gold"],
     "daRequired": true
   },
   {
@@ -4494,9 +4184,7 @@
     "description": "Make sure you point her face AWAY from you! This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15939927",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "15",
     "stats": "Bonus +2",
     "resists": "None",
@@ -4515,10 +4203,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "sto",
-      "free"
-    ],
+    "tags": ["sto", "free"],
     "daRequired": true,
     "attacks": [
       {
@@ -4545,9 +4230,7 @@
     "description": "This Trinket gives you the ancient power of the mirror eye, it will use the foes power against it. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21767332",
     "releaseDate": "",
-    "elements": [
-      "SIL"
-    ],
+    "elements": ["SIL"],
     "level": "20",
     "stats": "None",
     "resists": "Wind +10, Stone +10, Fire +10",
@@ -4566,10 +4249,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "sil",
-      "free"
-    ],
+    "tags": ["sil", "free"],
     "daRequired": true,
     "attacks": [
       {
@@ -4596,9 +4276,7 @@
     "description": "Call in the Moonridge Archers! This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18013842",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "20",
     "stats": "Magic Def +1, Pierce Def +1, Melee Def +1, LUK +3",
     "resists": "None",
@@ -4618,10 +4296,7 @@
         "dcRequired": true
       }
     ],
-    "tags": [
-      "lig",
-      "dc"
-    ],
+    "tags": ["lig", "dc"],
     "daRequired": false,
     "dcRequired": true,
     "isSeasonal": true,
@@ -4649,9 +4324,7 @@
     "description": "The Kittypillar's bubbles have floated away! Use them to distract monsters. This item requires Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=16670969",
     "releaseDate": "",
-    "elements": [
-      "WIN"
-    ],
+    "elements": ["WIN"],
     "level": "25",
     "stats": "END +2",
     "resists": "None",
@@ -4670,10 +4343,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "win",
-      "free"
-    ],
+    "tags": ["win", "free"],
     "daRequired": true,
     "attacks": [
       {
@@ -4700,9 +4370,7 @@
     "description": "Dodge questions and other attacks, both physical and intellectual with this trinket. This item requires Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=16667561",
     "releaseDate": "",
-    "elements": [
-      "WIN"
-    ],
+    "elements": ["WIN"],
     "level": "15",
     "stats": "Dodge +1, Magic Def +3, Pierce Def +3, Melee Def +3, END +1, INT +1, DEX +1, STR +1",
     "rarity": "15",
@@ -4718,10 +4386,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "win",
-      "free"
-    ],
+    "tags": ["win", "free"],
     "daRequired": true
   },
   {
@@ -4733,9 +4398,7 @@
     "description": "With this trinket attached to your armor, time will speed, slow, and race away in battle, allowing you to execute moves you wouldn't be able to otherwise! This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17151769",
     "releaseDate": "",
-    "elements": [
-      "MET"
-    ],
+    "elements": ["MET"],
     "level": "20",
     "stats": "Crit +3, END +3",
     "resists": "None",
@@ -4752,10 +4415,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "met",
-      "free"
-    ],
+    "tags": ["met", "free"],
     "daRequired": true,
     "isRare": true
   },
@@ -4768,9 +4428,7 @@
     "description": "Down in the dark depths of Ravenloss, the Pillar of Light shines steadily from the Beacon of Hope. This trinket was given to you during the Ravenloss War! This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18639842",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "30",
     "stats": "Crit +5, Magic Def +1, Pierce Def +1, Melee Def +1, Bonus +3",
     "resists": "None",
@@ -4789,10 +4447,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "lig",
-      "free"
-    ],
+    "tags": ["lig", "free"],
     "daRequired": true,
     "attacks": [
       {
@@ -4816,9 +4471,7 @@
     "description": "It's a treasure shaped like a...boot? But not just any boot! Footwear encrusted with powerful magic gems to help you in your battles! This item requires a Dragon Amulet",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17329887",
     "releaseDate": "",
-    "elements": [
-      "MET"
-    ],
+    "elements": ["MET"],
     "level": "27",
     "stats": "Dodge +2, Crit +4, Magic Def +3, Pierce Def +3, Melee Def +3",
     "resists": "Health -7, Poison +5",
@@ -4835,10 +4488,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "met",
-      "gold"
-    ],
+    "tags": ["met", "gold"],
     "daRequired": true
   },
   {
@@ -4850,9 +4500,7 @@
     "description": "This was a VERY lucky pirate. All the way up until his ship sank. But don't let that discourage you from using his curse against your enemies! This item requires a Dragon Amulet",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17330203",
     "releaseDate": "",
-    "elements": [
-      "ICE"
-    ],
+    "elements": ["ICE"],
     "level": "10",
     "stats": "Dodge +2, Crit +3, Magic Def +3, Pierce Def +3, Melee Def +3, LUK -1",
     "resists": "Health -3",
@@ -4869,10 +4517,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "ice",
-      "gold"
-    ],
+    "tags": ["ice", "gold"],
     "daRequired": true
   },
   {
@@ -4884,9 +4529,7 @@
     "description": "The essence of the Elemental Lord's is contained in this trinket. Gives +1 to dodge for 5 turns on use.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15469382",
     "releaseDate": "",
-    "elements": [
-      "NON"
-    ],
+    "elements": ["NON"],
     "level": "25",
     "stats": "END +2",
     "resists": "None",
@@ -4905,10 +4548,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "non",
-      "free"
-    ],
+    "tags": ["non", "free"],
     "daRequired": true,
     "isRare": true,
     "attacks": [
@@ -4935,9 +4575,7 @@
     "description": "Shine with aura of brilliance! Allows you to empower yourself for 5 turns, at the cost of your Avoidance.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22396536",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "1",
     "stats": "Crit +5, WIS +2, END +2, CHA +2, LUK +2, INT +2, DEX +2, STR +2, Bonus +5",
     "resists": "None",
@@ -4958,10 +4596,7 @@
       }
     ],
     "notes": "Equipping this trinket displays an animated radiant shimmer over the player, color-custom to the player's trim color.",
-    "tags": [
-      "lig",
-      "dc"
-    ],
+    "tags": ["lig", "dc"],
     "daRequired": false,
     "dcRequired": true,
     "isSeasonal": true,
@@ -4985,10 +4620,7 @@
     "id": "accessory-relic-of-when-draconic-growth",
     "familyName": "Relic of When - Draconic Growth",
     "slug": "accessory-relic-of-when-draconic-growth",
-    "aliasSlugs": [
-      "accessory-relic-of-when-draconic-growth",
-      "accessory-relic-of-when-draconic-growth-ex"
-    ],
+    "aliasSlugs": ["accessory-relic-of-when-draconic-growth-ex"],
     "type": "accessory",
     "subtype": "trinket",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22422527",
@@ -5110,33 +4742,19 @@
     "equipSlot": "Trinket",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "evi",
-      "free",
-      "merge"
-    ],
+    "tags": ["evi", "free", "merge"],
     "hasDA": true,
     "hasDC": true,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": true,
     "levelRange": "40-70",
-    "elements": [
-      "EVI"
-    ]
+    "elements": ["EVI"]
   },
   {
     "id": "accessory-runestone",
     "familyName": "Runestone",
     "slug": "accessory-runestone",
-    "aliasSlugs": [
-      "accessory-runestone",
-      "accessory-runestone",
-      "accessory-runestone",
-      "accessory-runestone",
-      "accessory-runestone",
-      "accessory-runestone"
-    ],
     "type": "accessory",
     "subtype": "trinket",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21825775",
@@ -5428,19 +5046,14 @@
     "equipSlot": "Trinket",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "free",
-      "non"
-    ],
+    "tags": ["free", "non"],
     "hasDA": true,
     "hasDC": false,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "30-80",
-    "elements": [
-      "NON"
-    ]
+    "elements": ["NON"]
   },
   {
     "id": "accessory-sanctuary-s-promise",
@@ -5842,20 +5455,14 @@
     "equipSlot": "Trinket",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dc",
-      "free",
-      "win"
-    ],
+    "tags": ["dc", "free", "win"],
     "hasDA": true,
     "hasDC": true,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-VII",
-    "elements": [
-      "WIN"
-    ]
+    "elements": ["WIN"]
   },
   {
     "id": "accessory-seven-lucky-wishbones",
@@ -5866,9 +5473,7 @@
     "description": "Wishbones are supposed to be lucky... right? This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22331546",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "90",
     "stats": "Block +6, Dodge +6, Parry +6, Crit +10, LUK +17, INT +10, DEX +10, STR +10, Bonus +10",
     "resists": "Light +14",
@@ -5887,10 +5492,7 @@
         "dcRequired": true
       }
     ],
-    "tags": [
-      "dar",
-      "merge"
-    ],
+    "tags": ["dar", "merge"],
     "daRequired": true,
     "dcRequired": true,
     "isRare": true
@@ -5904,9 +5506,7 @@
     "description": "Wishbones are supposed to be lucky... right? This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22331547",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "90",
     "stats": "Block +6, Dodge +6, Parry +6, Crit +10, LUK +17, INT +10, DEX +10, STR +10, Bonus +10",
     "resists": "Light +14",
@@ -5924,10 +5524,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "dar",
-      "merge"
-    ],
+    "tags": ["dar", "merge"],
     "daRequired": true,
     "isRare": true
   },
@@ -6223,20 +5820,14 @@
     "equipSlot": "Trinket",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "dc",
-      "fea",
-      "free"
-    ],
+    "tags": ["dc", "fea", "free"],
     "hasDA": true,
     "hasDC": true,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-V",
-    "elements": [
-      "FEA"
-    ]
+    "elements": ["FEA"]
   },
   {
     "id": "accessory-shattered-summon-gem-ayauhnqui",
@@ -6247,9 +5838,7 @@
     "description": "The powdery remains of what used to be a Summon Gem. Maybe it can be repaired somehow? Proof of victory over Ayauhnqui!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22376517",
     "releaseDate": "",
-    "elements": [
-      "ENE"
-    ],
+    "elements": ["ENE"],
     "level": "0",
     "stats": "Block +5, Dodge +5, Parry +5, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +5, END +5, CHA +5, LUK +5",
     "resists": "None",
@@ -6268,10 +5857,7 @@
       }
     ],
     "notes": "Item was originally a Resource; was upgraded to an equippable Trinket (without an ability) on April 10th, 2020.",
-    "tags": [
-      "ene",
-      "free"
-    ],
+    "tags": ["ene", "free"],
     "daRequired": true,
     "dcRequired": true
   },
@@ -6284,9 +5870,7 @@
     "description": "Wishbones are supposed to be lucky... right? This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21732708",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "80",
     "stats": "Block +6, Dodge +6, Crit +9, LUK +15, INT +9, DEX +9, STR +9, Bonus +10",
     "resists": "Light +14",
@@ -6305,10 +5889,7 @@
         "dcRequired": true
       }
     ],
-    "tags": [
-      "dar",
-      "merge"
-    ],
+    "tags": ["dar", "merge"],
     "daRequired": true,
     "dcRequired": true,
     "isRare": true
@@ -6322,9 +5903,7 @@
     "description": "Wishbones are supposed to be lucky... right? This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21732713",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "80",
     "stats": "Block +6, Dodge +6, Crit +9, LUK +15, INT +9, DEX +9, STR +9, Bonus +10",
     "resists": "Light +14",
@@ -6342,10 +5921,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "dar",
-      "merge"
-    ],
+    "tags": ["dar", "merge"],
     "daRequired": true,
     "isRare": true
   },
@@ -6358,9 +5934,7 @@
     "description": "This item requires a Dragon Amulet. Salvaged from Kordana's wreckage this mechanical skull shoots lasers! Shark not included.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19113358",
     "releaseDate": "",
-    "elements": [
-      "FIR"
-    ],
+    "elements": ["FIR"],
     "level": "35",
     "stats": "Crit +3, Bonus +3",
     "resists": "None",
@@ -6379,10 +5953,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "fir",
-      "gold"
-    ],
+    "tags": ["fir", "gold"],
     "daRequired": true,
     "attacks": [
       {
@@ -6408,9 +5979,7 @@
     "description": "This magical eyepiece will enhance your ability to perform critical hits and boost your damage!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19641976",
     "releaseDate": "",
-    "elements": [
-      "ENE"
-    ],
+    "elements": ["ENE"],
     "level": "15",
     "stats": "Crit +1, INT +1, DEX +1, STR +1",
     "resists": "None",
@@ -6428,10 +5997,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "ene",
-      "merge"
-    ],
+    "tags": ["ene", "merge"],
     "daRequired": true
   },
   {
@@ -6443,9 +6009,7 @@
     "description": "Is something casting a shadow over YOUR soul? The Soul Purifier will help with that! This trinket will raise your defenses for three turns while healing some of your health! This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18393098",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "20",
     "stats": "Crit +3, WIS +3, END +3",
     "resists": "Darkness +10",
@@ -6464,10 +6028,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "lig",
-      "free"
-    ],
+    "tags": ["lig", "free"],
     "daRequired": true,
     "attacks": [
       {
@@ -6494,9 +6055,7 @@
     "description": "Made with hardened leather, imbued with crit-boosting magic, and adorned with cruel spikes. FEEL MY WRATH! This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19639760",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "60",
     "stats": "Dodge +2, Crit +9, Magic Def +4, Pierce Def +4, Melee Def +4, END +5, LUK -3, INT +3, DEX +3, STR +3",
     "resists": "None",
@@ -6514,10 +6073,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "nat",
-      "merge"
-    ],
+    "tags": ["nat", "merge"],
     "daRequired": true
   },
   {
@@ -6529,9 +6085,7 @@
     "description": "Summon a simulacrum of the Destiny Dragon! This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21988987",
     "releaseDate": "",
-    "elements": [
-      "GOO"
-    ],
+    "elements": ["GOO"],
     "level": "1",
     "stats": "None",
     "resists": "None",
@@ -6551,10 +6105,7 @@
       }
     ],
     "notes": "Item previously had a price of 2,500 Gold, with a sellback of 250 Gold; this was changed alongside its 2023 re-release.",
-    "tags": [
-      "goo",
-      "gold"
-    ],
+    "tags": ["goo", "gold"],
     "daRequired": true,
     "isSeasonal": true,
     "attacks": [
@@ -6582,9 +6133,7 @@
     "description": "The long lost Summon Gem - Ayauhnqui! Its special ability will boost your All resist by 5 when used. Proof of victory over Ayauhnqui and Reaver!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22376498",
     "releaseDate": "",
-    "elements": [
-      "ENE"
-    ],
+    "elements": ["ENE"],
     "level": "25",
     "stats": "Block +5, Dodge +5, Parry +5, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +5, END +5, CHA +5, LUK +5",
     "resists": "Energy +8, Nature +8",
@@ -6606,10 +6155,7 @@
       }
     ],
     "notes": "Resists were added on June 20th, 2025.",
-    "tags": [
-      "ene",
-      "merge"
-    ],
+    "tags": ["ene", "merge"],
     "daRequired": true,
     "dcRequired": true,
     "attacks": [
@@ -6637,9 +6183,7 @@
     "description": "Carry on my wayward sun.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19380568",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "25",
     "stats": "Block +1",
     "resists": "None",
@@ -6658,10 +6202,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "lig",
-      "free"
-    ],
+    "tags": ["lig", "free"],
     "daRequired": true,
     "attacks": [
       {
@@ -6688,9 +6229,7 @@
     "description": "The long lost Summon Gem - Intaym! Its special ability will boost your Crit by 50 when used. Proof of victory over Illumina and Intaym!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22381718",
     "releaseDate": "",
-    "elements": [
-      "???"
-    ],
+    "elements": ["???"],
     "level": "25",
     "stats": "Block +5, Dodge +5, Parry +5, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +5, CHA +5, INT +5, DEX +5, STR +5",
     "resists": "??? +5",
@@ -6712,10 +6251,7 @@
       }
     ],
     "notes": "Resists were added on June 20th, 2025.",
-    "tags": [
-      "???",
-      "merge"
-    ],
+    "tags": ["???", "merge"],
     "daRequired": true,
     "dcRequired": true,
     "attacks": [
@@ -6743,9 +6279,7 @@
     "description": "Seasons don't fear the Reaver",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17329606",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "25",
     "stats": "Dodge +1",
     "resists": "None",
@@ -6764,10 +6298,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "dar",
-      "free"
-    ],
+    "tags": ["dar", "free"],
     "daRequired": true,
     "attacks": [
       {
@@ -6794,9 +6325,7 @@
     "description": "Never forget those that Darkness has claimed! This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22036820",
     "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
+    "elements": ["LIG"],
     "level": "5",
     "stats": "None",
     "resists": "None",
@@ -6815,10 +6344,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "lig",
-      "gold"
-    ],
+    "tags": ["lig", "gold"],
     "daRequired": true,
     "attacks": [
       {
@@ -6845,9 +6371,7 @@
     "description": "Roktoru like a hurricane!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17644800",
     "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
+    "elements": ["STO"],
     "level": "25",
     "stats": "Dodge +1",
     "resists": "None",
@@ -6866,10 +6390,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "sto",
-      "free"
-    ],
+    "tags": ["sto", "free"],
     "daRequired": true,
     "attacks": [
       {
@@ -6896,9 +6417,7 @@
     "description": "Summon a simulacrum of the Destiny Dragon when it was young!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21989012",
     "releaseDate": "",
-    "elements": [
-      "GOO"
-    ],
+    "elements": ["GOO"],
     "level": "1",
     "stats": "None",
     "resists": "None",
@@ -6918,10 +6437,7 @@
         "dcRequired": true
       }
     ],
-    "tags": [
-      "goo",
-      "dc"
-    ],
+    "tags": ["goo", "dc"],
     "daRequired": false,
     "dcRequired": true,
     "isSeasonal": true,
@@ -6950,9 +6466,7 @@
     "description": "Wishbones are supposed to be lucky... right? This item requires a Dragon Amulet. Visit the Black Market Moglin to upgrade this item.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19281936",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "40",
     "stats": "Block +2, Dodge +2, Crit +6, LUK +5, INT +2, DEX +2, STR +2, Bonus +3",
     "resists": "Light +5",
@@ -6971,10 +6485,7 @@
         "dcRequired": true
       }
     ],
-    "tags": [
-      "dar",
-      "merge"
-    ],
+    "tags": ["dar", "merge"],
     "daRequired": true,
     "dcRequired": true,
     "isRare": true
@@ -6988,9 +6499,7 @@
     "description": "Wishbones are supposed to be lucky... right? This item requires a Dragon Amulet. Visit the Black Market Moglin to upgrade this item.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19281796",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "40",
     "stats": "Block +2, Dodge +2, Crit +6, LUK +5, INT +2, DEX +2, STR +2, Bonus +3",
     "resists": "Light +5",
@@ -7008,10 +6517,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "dar",
-      "merge"
-    ],
+    "tags": ["dar", "merge"],
     "daRequired": true,
     "isRare": true
   },
@@ -7024,9 +6530,7 @@
     "description": "An ever present reminder of time's flow. Can be activated in combat to heal a small amount of health. Proof of victory over Iadoa. Color Custom to armor trim.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22402638",
     "releaseDate": "",
-    "elements": [
-      "???"
-    ],
+    "elements": ["???"],
     "level": "1",
     "stats": "Crit +5, WIS +2, END +2, CHA +2, LUK +2, INT +2, DEX +2, STR +2, Bonus +5",
     "resists": "None",
@@ -7047,10 +6551,7 @@
       }
     ],
     "notes": "Equipping this trinket displays animated gear cogs over the player, color-custom to the player's trim color.",
-    "tags": [
-      "???",
-      "free"
-    ],
+    "tags": ["???", "free"],
     "daRequired": false,
     "dcRequired": true,
     "attacks": [
@@ -7078,9 +6579,7 @@
     "description": "Wishbones are supposed to be lucky... right? This item requires a Dragon Amulet. Visit the Black Market Moglin to upgrade this item.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19281940",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "20",
     "stats": "Crit +3, LUK +3, INT +1, DEX +1, STR +1",
     "resists": "Light +3",
@@ -7099,10 +6598,7 @@
         "dcRequired": true
       }
     ],
-    "tags": [
-      "dar",
-      "merge"
-    ],
+    "tags": ["dar", "merge"],
     "daRequired": true,
     "dcRequired": true,
     "isRare": true
@@ -7116,9 +6612,7 @@
     "description": "Wishbones are supposed to be lucky... right? This item requires a Dragon Amulet. Visit the Black Market Moglin to upgrade this item.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19281784",
     "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
+    "elements": ["DAR"],
     "level": "20",
     "stats": "Crit +3, LUK +3, INT +1, DEX +1, STR +1",
     "resists": "Light +3",
@@ -7136,10 +6630,7 @@
         "daRequired": true
       }
     ],
-    "tags": [
-      "dar",
-      "merge"
-    ],
+    "tags": ["dar", "merge"],
     "daRequired": true,
     "isRare": true
   },
@@ -7365,19 +6856,14 @@
     "equipSlot": "Trinket",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "fea",
-      "merge"
-    ],
+    "tags": ["fea", "merge"],
     "hasDA": true,
     "hasDC": false,
     "hasDM": false,
     "hasFree": false,
     "hasMerge": true,
     "levelRange": "I-IV",
-    "elements": [
-      "FEA"
-    ]
+    "elements": ["FEA"]
   },
   {
     "id": "accessory-uaanta-s-blaster-charging",
@@ -7621,19 +7107,14 @@
     "equipSlot": "Trinket",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "merge",
-      "win"
-    ],
+    "tags": ["merge", "win"],
     "hasDA": true,
     "hasDC": false,
     "hasDM": false,
     "hasFree": false,
     "hasMerge": true,
     "levelRange": "I-IV",
-    "elements": [
-      "WIN"
-    ]
+    "elements": ["WIN"]
   },
   {
     "id": "accessory-uaanta-s-blaster-destiny",
@@ -7857,19 +7338,14 @@
     "equipSlot": "Trinket",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "goo",
-      "merge"
-    ],
+    "tags": ["goo", "merge"],
     "hasDA": true,
     "hasDC": false,
     "hasDM": false,
     "hasFree": false,
     "hasMerge": true,
     "levelRange": "I-IV",
-    "elements": [
-      "GOO"
-    ]
+    "elements": ["GOO"]
   },
   {
     "id": "accessory-uaanta-s-blaster-doom",
@@ -8093,19 +7569,14 @@
     "equipSlot": "Trinket",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "evi",
-      "merge"
-    ],
+    "tags": ["evi", "merge"],
     "hasDA": true,
     "hasDC": false,
     "hasDM": false,
     "hasFree": false,
     "hasMerge": true,
     "levelRange": "I-IV",
-    "elements": [
-      "EVI"
-    ]
+    "elements": ["EVI"]
   },
   {
     "id": "accessory-uaanta-s-blaster-uncharged",
@@ -8249,19 +7720,14 @@
     "equipSlot": "Trinket",
     "category": "Armor",
     "releaseDate": "",
-    "tags": [
-      "free",
-      "win"
-    ],
+    "tags": ["free", "win"],
     "hasDA": true,
     "hasDC": false,
     "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-IV",
-    "elements": [
-      "WIN"
-    ]
+    "elements": ["WIN"]
   },
   {
     "id": "accessory-vaal-s-ego",
@@ -8272,9 +7738,7 @@
     "description": "Call upon Vaal's Ego in battle. Proof of your victory over the Egomaniacs challenge.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22342750",
     "releaseDate": "",
-    "elements": [
-      "FIR"
-    ],
+    "elements": ["FIR"],
     "level": "1",
     "stats": "Crit +10, WIS +6, END +6, CHA +6, LUK +6, INT +6, DEX +6, STR +6, Bonus +10",
     "resists": "Fire +8",
@@ -8301,10 +7765,7 @@
       }
     ],
     "notes": "Own this item to unlock the Vaal Armor Customization options for the Chaosweaver class; this functionality was added on December 18th, 2020.\nAs of the changes to the DEX stat on April 16th, 2021, the description's claim that its ability did not affect the DEX damage bonus is outdated, as there is no longer a DEX damage bonus resultant of DoT application. The excerpt Does not affect the DEX damage bonus. would eventually be removed on October 11th, 2024.\nResists were added on June 20th, 2025.",
-    "tags": [
-      "fir",
-      "merge"
-    ],
+    "tags": ["fir", "merge"],
     "daRequired": false,
     "dcRequired": true,
     "attacks": [
@@ -8332,9 +7793,7 @@
     "description": "Crafted by the Wind Elves of the Dreamwood, this enchanted charm is said to bring its bearer favorable winds toward home. This trinket has a skill that enhances the power of your base class!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22424819",
     "releaseDate": "",
-    "elements": [
-      "WIN"
-    ],
+    "elements": ["WIN"],
     "level": "10",
     "stats": "END +2, INT +2, DEX +2, STR +2",
     "resists": "Fire +2, Darkness +2, Light +2, Wind +2",
@@ -8353,10 +7812,7 @@
         "daRequired": false
       }
     ],
-    "tags": [
-      "win",
-      "free"
-    ],
+    "tags": ["win", "free"],
     "daRequired": false,
     "attacks": [
       {
@@ -8383,9 +7839,7 @@
     "description": "This little mogbot has decided to follow you around! Click to change its color! (Cosmetic)",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22417711",
     "releaseDate": "",
-    "elements": [
-      "MET"
-    ],
+    "elements": ["MET"],
     "level": "1",
     "stats": "None",
     "resists": "None",
@@ -8405,10 +7859,7 @@
       }
     ],
     "notes": "Equipping this trinket displays an animated Mogbot behind the player.\nClick on the Mogbot to change its light color between green, red, and blue respectively.",
-    "tags": [
-      "met",
-      "merge"
-    ],
+    "tags": ["met", "merge"],
     "daRequired": false,
     "dcRequired": true
   },
@@ -8421,9 +7872,7 @@
     "description": "The twisted remains of what used to be a Summon Gem. Maybe it can be repaired somehow? Proof of victory over Intaym!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22381705",
     "releaseDate": "",
-    "elements": [
-      "???"
-    ],
+    "elements": ["???"],
     "level": "0",
     "stats": "Block +5, Dodge +5, Parry +5, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +5, END +5, CHA +5, LUK +5",
     "resists": "None",
@@ -8441,10 +7890,7 @@
         "dcRequired": true
       }
     ],
-    "tags": [
-      "???",
-      "free"
-    ],
+    "tags": ["???", "free"],
     "daRequired": true,
     "dcRequired": true
   },
@@ -8457,9 +7903,7 @@
     "description": "Imbued with an excess of Fire, Riftwalkers on Lore developed techniques to use it in myriad ways, defensive and offensive. Unlocks the Warpfire Customization for Pyromancer. (Cosmetic)",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22425153",
     "releaseDate": "",
-    "elements": [
-      "FIR"
-    ],
+    "elements": ["FIR"],
     "level": "1",
     "stats": "None",
     "resists": "None",
@@ -8483,10 +7927,7 @@
       }
     ],
     "notes": "Equipping this trinket displays an animated orange runic circles over the player.\nOwn this item to unlock the Warpfire Armor Customization options for the Pyromancer class.",
-    "tags": [
-      "fir",
-      "dc"
-    ],
+    "tags": ["fir", "dc"],
     "daRequired": false,
     "dcRequired": true
   },
@@ -8499,9 +7940,7 @@
     "description": "This item requires a Dragon Amulet. Never get lost again! Use this powerful trinket to add damage power to your attack for 5 rounds but be careful, that big arrow makes it eaiser for monster to hit you!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15865056",
     "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
+    "elements": ["NAT"],
     "level": "5",
     "stats": "Block -1, Dodge -1, Parry -1, Crit +4, Magic Def -5, Pierce Def -5, Melee Def -5, INT +2, STR +2, Bonus +4",
     "resists": "None",
@@ -8529,10 +7968,7 @@
       }
     ],
     "notes": "Equipping this trinket displays \"YOU ARE HERE\" text with an animated arrow pointing down to the player.",
-    "tags": [
-      "nat",
-      "free"
-    ],
+    "tags": ["nat", "free"],
     "daRequired": true,
     "dcRequired": true,
     "isRare": true,

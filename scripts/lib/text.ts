@@ -1,13 +1,36 @@
-export function decodeHtml(text: string): string {
+export function normalizeTextEncodingArtifacts(text: string): string {
   return text
-    .replace(/&amp;/g, '&')
-    .replace(/&lt;/g, '<')
-    .replace(/&gt;/g, '>')
-    .replace(/&quot;/g, '"')
-    .replace(/&#39;/g, "'")
-    .replace(/&#(\d+);/g, (_, n) => String.fromCharCode(Number(n)))
-    .replace(/&nbsp;/g, ' ')
-    .replace(/&apos;/g, "'")
+    .replace(/(\d+(?:st|nd|rd|th)?)\uFFFD(\d+(?:st|nd|rd|th)?)/gi, '$1-$2')
+    .replace(/(\d)\uFFFD(\d)/g, '$1-$2')
+    .replace(/(\d)(?:–|—)(\d)/g, '$1-$2')
+    .replace(/([A-Za-z])\uFFFDs\b/g, "$1's")
+    .replace(/\bDefender\uFFFDs\b/g, "Defender's")
+    .replace(/\bYulgar\uFFFDs\b/g, "Yulgar's")
+    .replace(/Dragon Coins\uFFFDor/g, 'Dragon Coins or')
+    .replace(/time frame\uFFFDwould/g, 'time frame would')
+    .replace(/used\uFFFDtwice/g, 'used twice')
+    .replace(/succession\uFFFDon/g, 'succession on')
+    .replace(/\uFFFD(\d[\d,]*\s+Gold)\uFFFD/g, '$1')
+    .replace(/%\s*\uFFFD\s*(\d+)/g, '% +/- $1')
+    .replace(/(\d+)\uFFFD(?=$|[\s",])/g, '$1')
+    .replace(/\bB\uFFFDthory\b/g, 'Bathory')
+    .replace(/\bBL\uFFFDHAJ\b/g, 'BLAHAJ')
+    .replace(/\bVala\uFFFDka\b/g, 'Valaska')
+    .replace(/atham\uFFFD/g, 'athame')
+}
+
+export function decodeHtml(text: string): string {
+  return normalizeTextEncodingArtifacts(
+    text
+      .replace(/&amp;/g, '&')
+      .replace(/&lt;/g, '<')
+      .replace(/&gt;/g, '>')
+      .replace(/&quot;/g, '"')
+      .replace(/&#39;/g, "'")
+      .replace(/&#(\d+);/g, (_, n) => String.fromCharCode(Number(n)))
+      .replace(/&nbsp;/g, ' ')
+      .replace(/&apos;/g, "'")
+  )
 }
 
 /**

@@ -15,14 +15,21 @@
     "shared": {
       "description": "",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-ofDoom.png",
-      "notes": "• Skill button was updated on November 24th, 2023, replacing its old appearance.\n1 hit x 100% damage\nPoints in Magic and Fighting give this attack a chance to do extra damage.\nEvery 50 CHA the Hero has reduces the dragon's CD of all skills by 1 (max -4 at 200 CHA)\nRequirements: None\nEffect: Breathes fire at target for 1 hit of 100% Magic damage.\n• If Kid Dragon has 1 Magic skill point minimum: Has a [Magic skill level / 4]% chance to cast a ball of magic at target for 1 hit of [100 + (Magic skill level / 5)]% Magic damage.\n• If Kid Dragon has 1 Fighting skill point minimum: Has a [Fighting skill level / 4]% chance to dash at target quickly for 1 hit of [100 + (Fighting skill level / 5)]% Melee damage.\nMana Cost: 0\nCooldown: 0\nDamage Type: Magic/Melee\nElement: As dragon\nDragon's Scales\nHero: +<100-200> Avoidance for 2 turns.\nThis skill requires at least 100 points in Protection.\nRequirements: Toddler or Kid Dragon; 100 Protection skill points minimum\nEffect: Applies +[Protection skill level] Melee/Pierce/Magic Avoidance to player for 2 turns. (Pop-up: Avoidance increased!)\nCooldown: 19 - [(Player CHA/50), rounded down]\nDamage Type: N/A\nElement: N/A\nElemental Supernova\n1 hit x +<200-300>% Magic damage\nThis attack has +<100-200> Crit.\nThis skill requires at least 100 points in Magic.\nRequirements: Toddler or Kid Dragon; 100 Magic skill points minimum\nEffect: 1 hit of [100 + (Magic skill level)]% damage, with +[Magic skill level] Crit.\nDamage Type: Magic\nElement: Weakness seeks\nAppearance 1 / 1.1\n4 hits x <50-60>% Pierce damage (<200-240>%)\nTarget: (On hit) <x>-<y>DoT for 3 turns.\nThis skill requires at least 100 points in Fighting.\nRequirements: Toddler or Kid Dragon; 100 Fighting skill points minimum\nEffect: 4 hits of [40 + (Fighting skill level / 10)]% damage, amounting to [160 + (Fighting skill level / 2.5)]% damage; applies 'Outrage', a Pierce DoT effect equal to [10 + (Fighting skill level / 2) * (Level + 10)% � 5], to target for 3 turns.\nDamage Type: Pierce\nOvercharge\nHero: +<15-25> Boost for the next 2 turns.\nThis skill requires at least 100 points in Assistance.\nRequirements: Toddler or Kid Dragon; 100 Assistance skill points minimum\nEffect: Applies +[5 + (Assistance skill level / 10)]% Boost to player for 2 turns. (Pop-up: Damage increased!)\nTarget: (Auto) -<10-20> Boost, -<25-50> Crit, -<5-10> All res, +<20-30> Health res for 3 turns.\nThis skill requires at least 100 points in Mischief.\nRequirements: Toddler or Kid Dragon; 100 Mischief skill points minimum\nEffect: Applies -[Mischief skill level / 4] Crit, -[Mischief skill level * 0.1]% Boost, -[Mischief skill level * 0.05] All Resist, and +[10 + (Mischief skill level * 0.1)] Health Resist to target for 3 turns. (Pop-up: Your foe deals and heals less damage, takes more damage, and is less likely to land a critical hit!)\nPrimal Fury!\n3 hits x 50% Magic damage (150%)\nThis attack has +200 Crit.\nThe cutest primal fury ever!\nRequirements: Kid Dragon\nEffect: 3 hits of 50% damage, amounting to 150% damage, with +200 Crit.\nAppearance 1 / 1.1 / 1.2\n• Draco is this guest's default name; to change their name and/or color palette from the default, visit Dragon Customization.\n• Also known as the Destroyer from various NPCs.\n• Toddler and kid dragons cannot be summoned as a guest while inside of a quest; however, they may still be summoned as a pet.\n• Kid dragons may be equipped with Kid Dragon Accessories; if the player's dragon's appearance is Baby or Toddler Dragon, the accessories will not be shown.\n• Kid dragons may change their appearance as Baby or Toddler Dragon via Dove in Sunbreeze Grove (Books 3 and 4), but all skills are retained; this was implemented on June 19th, 2026.\n• All versions of this guest received a major overhaul to their skills on June 21st, 2019.\n• Initially both toddler and kid dragons were able to use the secondary 'Attack' skills; this was changed to be exclusive for kid dragons on September 7th, 2019.\n• 'Tickles' skill previously applied -[Mischief skill level * 0.3] Bonus to target, and had the tooltip: Lower enemy BtH, Dmg, and All Res!; the Bonus to Hit component was removed on March 7th, 2020.\n• 'Elemental Supernova' and 'Outrage' skills were bug fixed on January 1st, 2021.\n• The following changes were implemented on June 23rd, 2023:\n• Tickles' skill increased its effectiveness from applying +[Mischief skill level * 0.05] Health Resist to target'.\n'Magic', 'Fighting', and 'Outrage' skills were modified.\n• The following changes were implemented on April 19th, 2024:\n• Tier 1 skills were renamed to their proper names.\n• 'Skip' and 'Primal' skills were moved.\n• Tooltips for Toddler and Kid Dragons were updated."
+      "notes": "Draco is this guest's default name; to change their name and/or color palette from the default, visit Dragon Customization.\nAlso known as the Destroyer from various NPCs.\nToddler and kid dragons cannot be summoned as a guest while inside of a quest; however, they may still be summoned as a pet.\nKid dragons may be equipped with Kid Dragon Accessories; if the player's dragon's appearance is Baby or Toddler Dragon, the accessories will not be shown.\nKid dragons may change their appearance as Baby or Toddler Dragon via Dove in Sunbreeze Grove (Books 3 and 4), but all skills are retained; this was implemented on June 19th, 2026.\nAll versions of this guest received a major overhaul to their skills on June 21st, 2019.\nInitially both toddler and kid dragons were able to use the secondary 'Attack' skills; this was changed to be exclusive for kid dragons on September 7th, 2019.\n'Tickles' skill previously applied -[Mischief skill level * 0.3] Bonus to target, and had the tooltip: Lower enemy BtH, Dmg, and All Res!; the Bonus to Hit component was removed on March 7th, 2020.\n'Elemental Supernova' and 'Outrage' skills were bug fixed on January 1st, 2021.\nThe following changes were implemented on June 23rd, 2023:\n  • Tickles' skill increased its effectiveness from applying +[Mischief skill level * 0.05] Health Resist to target.\n  • 'Magic', 'Fighting', and 'Outrage' skills were modified.\nThe following changes were implemented on April 19th, 2024:\n  • Tier 1 skills were renamed to their proper names.\n  • 'Skip' and 'Primal' skills were moved.\n  • Tooltips for Toddler and Kid Dragons were updated.",
+      "alsoSee": [
+        {
+          "name": "<Dragon>",
+          "slug": "pet-dragon",
+          "type": "pet"
+        }
+      ]
     },
     "familySources": [],
     "levelVariants": [
       {
         "levelNumber": 1,
         "levelDisplay": "As player",
-        "variantName": "1",
+        "variantName": "(1)",
         "name": "<Dragon> (1)",
         "damage": "Scaled",
         "stats": "See guestStats",
@@ -79,12 +86,223 @@
             "crit": "0%"
           }
         },
+        "attacks": [
+          {
+            "name": "Noxious Fumes",
+            "description": "1 hit x 100% Magic damage\n Target: (Auto) -<0-100> Immobility res for 1 turn.\n This skill requires at least 1 point in Mischief. | Target: (On hit) Stun for 1 turn.",
+            "requirements": "1 Mischief skill point minimum",
+            "effect": "1 hit of 100% damage; applies 'Noxious Fumes' (-[Mischief skill level / 2] Immobility Resist) to target for 1 turn inclusive; applies 'Dragon Fumes' to target, stunning it for 1 turn.",
+            "manaCost": "0",
+            "cooldown": "19 - [(Player CHA/50), rounded down]",
+            "damageType": "Magic",
+            "element": "As dragon",
+            "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Button02-Stun.png",
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Stun-Baby1.0.png",
+            "appearanceUrls": [
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Stun-Baby1.0.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Stun-Baby1.1.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Stun-Toddler1.0.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Stun-Toddler1.1.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Stun-Kid1.0.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Stun-Kid1.1.png"
+            ],
+            "appearanceCaptions": [
+              "Baby 1",
+              "1.1",
+              "Toddler 1",
+              "1.1",
+              "Kid 1",
+              "1.1"
+            ]
+          },
+          {
+            "name": "Dragon Scout",
+            "description": "Hero: +<0-100> Bonus for the next 4 turns.\n This skill requires at least 1 point in Assistance.",
+            "requirements": "1 Assistance skill point minimum",
+            "effect": "Applies 'Dragon Scout' (+[Assistance skill level / 2] Bonus) to player for 4 turns. (Pop-up: Bonus increased!)",
+            "manaCost": "0",
+            "cooldown": "8 - [(Player CHA/50), rounded down]",
+            "damageType": "N/A",
+            "element": "N/A",
+            "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Button03-Scout.png",
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Scout.png"
+          },
+          {
+            "name": "Tail Lash",
+            "description": "1 hit x <100-150>% Melee damage\n Target: (On hit) <x>-<y> DoT for 3 turns.\n This skill requires at least 1 point in Fighting.",
+            "requirements": "1 Fighting skill point minimum",
+            "effect": "1 hit of [100 + (Fighting skill level / 4)]% damage; applies 'Tail Lash', a Melee DoT effect equal to [10 + (Fighting skill level / 4) * (Level + 10)% +/- 5], to target for 3 turns.",
+            "manaCost": "0",
+            "cooldown": "4 - [(Player CHA/50), rounded down]",
+            "damageType": "Melee",
+            "element": "As dragon",
+            "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Button04-Lash.png",
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Lash1.0.png",
+            "appearanceUrls": [
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Lash1.0.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Lash1.1.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "1.1"
+            ]
+          },
+          {
+            "name": "Magic Beam",
+            "description": "1 hit x <100-250>% Magic damage\n This attack has +<0-50> Bonus.\n This skill requires at least 1 point in Magic.",
+            "requirements": "1 Magic skill point minimum",
+            "effect": "1 hit of [100 + (Magic skill level * 0.75)]% Magic damage, with +[Magic skill level / 2] Bonus.",
+            "manaCost": "0",
+            "cooldown": "4 - [(Player CHA/50), rounded down]",
+            "damageType": "Magic",
+            "element": "As dragon",
+            "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Button05-Beam.png",
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Beam.png",
+            "notes": "• Skill label was previously named 'Blast' before it was updated to 'Beam' on April 19th, 2024."
+          },
+          {
+            "name": "Heal Ally",
+            "description": "Hero: Heals <4.12-12.08>% max HP.\n This skill requires at least 1 point in Protection.",
+            "requirements": "1 Protection skill point minimum",
+            "effect": "Recovers [4 + 0.04 * (2 + Protection skill level)]% of player's maximum HP.",
+            "manaCost": "0",
+            "cooldown": "14 - [(Player CHA/50), rounded down]",
+            "damageType": "N/A",
+            "element": "N/A",
+            "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Button06-Heal.png",
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Heal.png",
+            "notes": "• Skill button was updated on November 24th, 2023, replacing its old appearance."
+          },
+          {
+            "name": "Attack",
+            "description": "1 hit x 100% damage\n Points in Magic and Fighting give this attack a chance to do extra damage.\n Every 50 CHA the Hero has reduces the dragon's CD of all skills by 1 (max -4 at 200 CHA)",
+            "effect": "Breathes fire at target for 1 hit of 100% Magic damage.\n • If Kid Dragon has 1 Magic skill point minimum: Has a [Magic skill level / 4]% chance to cast a ball of magic at target for 1 hit of [100 + (Magic skill level / 5)]% Magic damage.\n • If Kid Dragon has 1 Fighting skill point minimum: Has a [Fighting skill level / 4]% chance to dash at target quickly for 1 hit of [100 + (Fighting skill level / 5)]% Melee damage.",
+            "manaCost": "0",
+            "cooldown": "0",
+            "damageType": "Magic/Melee",
+            "element": "As dragon",
+            "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png",
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Attack.png",
+            "appearanceUrls": [
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Attack.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Attack-Magic1.0.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Attack-Magic1.1.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Attack-Fighting1.0.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Attack-Fighting1.1.png"
+            ],
+            "appearanceCaptions": [
+              "Normal",
+              "Magic 1",
+              "1.1",
+              "Fighting 1",
+              "1.1"
+            ]
+          },
+          {
+            "name": "Dragon's Scales",
+            "description": "Hero: +<100-200> Avoidance for 2 turns.\n This skill requires at least 100 points in Protection.",
+            "requirements": "Toddler or Kid Dragon; 100 Protection skill points minimum",
+            "effect": "Applies +[Protection skill level] Melee/Pierce/Magic Avoidance to player for 2 turns. (Pop-up: Avoidance increased!)",
+            "manaCost": "0",
+            "cooldown": "19 - [(Player CHA/50), rounded down]",
+            "damageType": "N/A",
+            "element": "N/A",
+            "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Button07-Scale.png",
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Scale.png"
+          },
+          {
+            "name": "Elemental Supernova",
+            "description": "1 hit x +<200-300>% Magic damage\n This attack has +<100-200> Crit.\n This skill requires at least 100 points in Magic.",
+            "requirements": "Toddler or Kid Dragon; 100 Magic skill points minimum",
+            "effect": "1 hit of [100 + (Magic skill level)]% damage, with +[Magic skill level] Crit.",
+            "manaCost": "0",
+            "cooldown": "19 - [(Player CHA/50), rounded down]",
+            "damageType": "Magic",
+            "element": "Weakness seeks",
+            "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Button08-Nova.png",
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Nova1.0.png",
+            "appearanceUrls": [
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Nova1.0.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Nova1.1.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "1.1"
+            ]
+          },
+          {
+            "name": "Outrage",
+            "description": "4 hits x <50-60>% Pierce damage (<200-240>%)\n Target: (On hit) <x>-<y>DoT for 3 turns.\n This skill requires at least 100 points in Fighting.",
+            "requirements": "Toddler or Kid Dragon; 100 Fighting skill points minimum",
+            "effect": "4 hits of [40 + (Fighting skill level / 10)]% damage, amounting to [160 + (Fighting skill level / 2.5)]% damage; applies 'Outrage', a Pierce DoT effect equal to [10 + (Fighting skill level / 2) * (Level + 10)% +/- 5], to target for 3 turns.",
+            "manaCost": "0",
+            "cooldown": "19 - [(Player CHA/50), rounded down]",
+            "damageType": "Pierce",
+            "element": "As dragon",
+            "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Button09-Outrage.png",
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Outrage1.0.png",
+            "appearanceUrls": [
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Outrage1.0.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Outrage1.1.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "1.1"
+            ]
+          },
+          {
+            "name": "Overcharge",
+            "description": "Hero: +<15-25> Boost for the next 2 turns.\n This skill requires at least 100 points in Assistance.",
+            "requirements": "Toddler or Kid Dragon; 100 Assistance skill points minimum",
+            "effect": "Applies +[5 + (Assistance skill level / 10)]% Boost to player for 2 turns. (Pop-up: Damage increased!)",
+            "manaCost": "0",
+            "cooldown": "19 - [(Player CHA/50), rounded down]",
+            "damageType": "N/A",
+            "element": "N/A",
+            "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Button10-Boost.png",
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Boost.png"
+          },
+          {
+            "name": "Tickles",
+            "description": "Target: (Auto) -<10-20> Boost, -<25-50> Crit, -<5-10> All res, +<20-30> Health res for 3 turns.\n This skill requires at least 100 points in Mischief.",
+            "requirements": "Toddler or Kid Dragon; 100 Mischief skill points minimum",
+            "effect": "Applies -[Mischief skill level / 4] Crit, -[Mischief skill level * 0.1]% Boost, -[Mischief skill level * 0.05] All Resist, and +[10 + (Mischief skill level * 0.1)] Health Resist to target for 3 turns. (Pop-up: Your foe deals and heals less damage, takes more damage, and is less likely to land a critical hit!)",
+            "manaCost": "0",
+            "cooldown": "19 - [(Player CHA/50), rounded down]",
+            "damageType": "N/A",
+            "element": "N/A",
+            "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Button11-Tickles.png",
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Tickles.png"
+          },
+          {
+            "name": "Primal Fury!",
+            "description": "3 hits x 50% Magic damage (150%)\n This attack has +200 Crit.\n The cutest primal fury ever!",
+            "requirements": "Kid Dragon",
+            "effect": "3 hits of 50% damage, amounting to 150% damage, with +200 Crit.",
+            "manaCost": "0",
+            "cooldown": "19 - [(Player CHA/50), rounded down]",
+            "damageType": "Magic",
+            "element": "As dragon",
+            "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Button12-Fury.png",
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Fury1.0.png",
+            "appearanceUrls": [
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Fury1.0.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Fury1.1.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Fury1.2.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "1.1",
+              "1.2"
+            ]
+          }
+        ],
         "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Toddler.png"
       },
       {
         "levelNumber": 2,
         "levelDisplay": "As player",
-        "variantName": "2",
+        "variantName": "(2)",
         "name": "<Dragon> (2)",
         "damage": "Scaled",
         "stats": "See guestStats",
@@ -141,12 +359,223 @@
             "crit": "0%"
           }
         },
+        "attacks": [
+          {
+            "name": "Noxious Fumes",
+            "description": "1 hit x 100% Magic damage\n Target: (Auto) -<0-100> Immobility res for 1 turn.\n This skill requires at least 1 point in Mischief. | Target: (On hit) Stun for 1 turn.",
+            "requirements": "1 Mischief skill point minimum",
+            "effect": "1 hit of 100% damage; applies 'Noxious Fumes' (-[Mischief skill level / 2] Immobility Resist) to target for 1 turn inclusive; applies 'Dragon Fumes' to target, stunning it for 1 turn.",
+            "manaCost": "0",
+            "cooldown": "19 - [(Player CHA/50), rounded down]",
+            "damageType": "Magic",
+            "element": "As dragon",
+            "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Button02-Stun.png",
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Stun-Baby1.0.png",
+            "appearanceUrls": [
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Stun-Baby1.0.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Stun-Baby1.1.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Stun-Toddler1.0.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Stun-Toddler1.1.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Stun-Kid1.0.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Stun-Kid1.1.png"
+            ],
+            "appearanceCaptions": [
+              "Baby 1",
+              "1.1",
+              "Toddler 1",
+              "1.1",
+              "Kid 1",
+              "1.1"
+            ]
+          },
+          {
+            "name": "Dragon Scout",
+            "description": "Hero: +<0-100> Bonus for the next 4 turns.\n This skill requires at least 1 point in Assistance.",
+            "requirements": "1 Assistance skill point minimum",
+            "effect": "Applies 'Dragon Scout' (+[Assistance skill level / 2] Bonus) to player for 4 turns. (Pop-up: Bonus increased!)",
+            "manaCost": "0",
+            "cooldown": "8 - [(Player CHA/50), rounded down]",
+            "damageType": "N/A",
+            "element": "N/A",
+            "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Button03-Scout.png",
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Scout.png"
+          },
+          {
+            "name": "Tail Lash",
+            "description": "1 hit x <100-150>% Melee damage\n Target: (On hit) <x>-<y> DoT for 3 turns.\n This skill requires at least 1 point in Fighting.",
+            "requirements": "1 Fighting skill point minimum",
+            "effect": "1 hit of [100 + (Fighting skill level / 4)]% damage; applies 'Tail Lash', a Melee DoT effect equal to [10 + (Fighting skill level / 4) * (Level + 10)% +/- 5], to target for 3 turns.",
+            "manaCost": "0",
+            "cooldown": "4 - [(Player CHA/50), rounded down]",
+            "damageType": "Melee",
+            "element": "As dragon",
+            "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Button04-Lash.png",
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Lash1.0.png",
+            "appearanceUrls": [
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Lash1.0.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Lash1.1.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "1.1"
+            ]
+          },
+          {
+            "name": "Magic Beam",
+            "description": "1 hit x <100-250>% Magic damage\n This attack has +<0-50> Bonus.\n This skill requires at least 1 point in Magic.",
+            "requirements": "1 Magic skill point minimum",
+            "effect": "1 hit of [100 + (Magic skill level * 0.75)]% Magic damage, with +[Magic skill level / 2] Bonus.",
+            "manaCost": "0",
+            "cooldown": "4 - [(Player CHA/50), rounded down]",
+            "damageType": "Magic",
+            "element": "As dragon",
+            "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Button05-Beam.png",
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Beam.png",
+            "notes": "• Skill label was previously named 'Blast' before it was updated to 'Beam' on April 19th, 2024."
+          },
+          {
+            "name": "Heal Ally",
+            "description": "Hero: Heals <4.12-12.08>% max HP.\n This skill requires at least 1 point in Protection.",
+            "requirements": "1 Protection skill point minimum",
+            "effect": "Recovers [4 + 0.04 * (2 + Protection skill level)]% of player's maximum HP.",
+            "manaCost": "0",
+            "cooldown": "14 - [(Player CHA/50), rounded down]",
+            "damageType": "N/A",
+            "element": "N/A",
+            "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Button06-Heal.png",
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Heal.png",
+            "notes": "• Skill button was updated on November 24th, 2023, replacing its old appearance."
+          },
+          {
+            "name": "Attack",
+            "description": "1 hit x 100% damage\n Points in Magic and Fighting give this attack a chance to do extra damage.\n Every 50 CHA the Hero has reduces the dragon's CD of all skills by 1 (max -4 at 200 CHA)",
+            "effect": "Breathes fire at target for 1 hit of 100% Magic damage.\n • If Kid Dragon has 1 Magic skill point minimum: Has a [Magic skill level / 4]% chance to cast a ball of magic at target for 1 hit of [100 + (Magic skill level / 5)]% Magic damage.\n • If Kid Dragon has 1 Fighting skill point minimum: Has a [Fighting skill level / 4]% chance to dash at target quickly for 1 hit of [100 + (Fighting skill level / 5)]% Melee damage.",
+            "manaCost": "0",
+            "cooldown": "0",
+            "damageType": "Magic/Melee",
+            "element": "As dragon",
+            "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png",
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Attack.png",
+            "appearanceUrls": [
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Attack.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Attack-Magic1.0.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Attack-Magic1.1.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Attack-Fighting1.0.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Attack-Fighting1.1.png"
+            ],
+            "appearanceCaptions": [
+              "Normal",
+              "Magic 1",
+              "1.1",
+              "Fighting 1",
+              "1.1"
+            ]
+          },
+          {
+            "name": "Dragon's Scales",
+            "description": "Hero: +<100-200> Avoidance for 2 turns.\n This skill requires at least 100 points in Protection.",
+            "requirements": "Toddler or Kid Dragon; 100 Protection skill points minimum",
+            "effect": "Applies +[Protection skill level] Melee/Pierce/Magic Avoidance to player for 2 turns. (Pop-up: Avoidance increased!)",
+            "manaCost": "0",
+            "cooldown": "19 - [(Player CHA/50), rounded down]",
+            "damageType": "N/A",
+            "element": "N/A",
+            "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Button07-Scale.png",
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Scale.png"
+          },
+          {
+            "name": "Elemental Supernova",
+            "description": "1 hit x +<200-300>% Magic damage\n This attack has +<100-200> Crit.\n This skill requires at least 100 points in Magic.",
+            "requirements": "Toddler or Kid Dragon; 100 Magic skill points minimum",
+            "effect": "1 hit of [100 + (Magic skill level)]% damage, with +[Magic skill level] Crit.",
+            "manaCost": "0",
+            "cooldown": "19 - [(Player CHA/50), rounded down]",
+            "damageType": "Magic",
+            "element": "Weakness seeks",
+            "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Button08-Nova.png",
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Nova1.0.png",
+            "appearanceUrls": [
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Nova1.0.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Nova1.1.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "1.1"
+            ]
+          },
+          {
+            "name": "Outrage",
+            "description": "4 hits x <50-60>% Pierce damage (<200-240>%)\n Target: (On hit) <x>-<y>DoT for 3 turns.\n This skill requires at least 100 points in Fighting.",
+            "requirements": "Toddler or Kid Dragon; 100 Fighting skill points minimum",
+            "effect": "4 hits of [40 + (Fighting skill level / 10)]% damage, amounting to [160 + (Fighting skill level / 2.5)]% damage; applies 'Outrage', a Pierce DoT effect equal to [10 + (Fighting skill level / 2) * (Level + 10)% +/- 5], to target for 3 turns.",
+            "manaCost": "0",
+            "cooldown": "19 - [(Player CHA/50), rounded down]",
+            "damageType": "Pierce",
+            "element": "As dragon",
+            "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Button09-Outrage.png",
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Outrage1.0.png",
+            "appearanceUrls": [
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Outrage1.0.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Outrage1.1.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "1.1"
+            ]
+          },
+          {
+            "name": "Overcharge",
+            "description": "Hero: +<15-25> Boost for the next 2 turns.\n This skill requires at least 100 points in Assistance.",
+            "requirements": "Toddler or Kid Dragon; 100 Assistance skill points minimum",
+            "effect": "Applies +[5 + (Assistance skill level / 10)]% Boost to player for 2 turns. (Pop-up: Damage increased!)",
+            "manaCost": "0",
+            "cooldown": "19 - [(Player CHA/50), rounded down]",
+            "damageType": "N/A",
+            "element": "N/A",
+            "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Button10-Boost.png",
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Boost.png"
+          },
+          {
+            "name": "Tickles",
+            "description": "Target: (Auto) -<10-20> Boost, -<25-50> Crit, -<5-10> All res, +<20-30> Health res for 3 turns.\n This skill requires at least 100 points in Mischief.",
+            "requirements": "Toddler or Kid Dragon; 100 Mischief skill points minimum",
+            "effect": "Applies -[Mischief skill level / 4] Crit, -[Mischief skill level * 0.1]% Boost, -[Mischief skill level * 0.05] All Resist, and +[10 + (Mischief skill level * 0.1)] Health Resist to target for 3 turns. (Pop-up: Your foe deals and heals less damage, takes more damage, and is less likely to land a critical hit!)",
+            "manaCost": "0",
+            "cooldown": "19 - [(Player CHA/50), rounded down]",
+            "damageType": "N/A",
+            "element": "N/A",
+            "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Button11-Tickles.png",
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Tickles.png"
+          },
+          {
+            "name": "Primal Fury!",
+            "description": "3 hits x 50% Magic damage (150%)\n This attack has +200 Crit.\n The cutest primal fury ever!",
+            "requirements": "Kid Dragon",
+            "effect": "3 hits of 50% damage, amounting to 150% damage, with +200 Crit.",
+            "manaCost": "0",
+            "cooldown": "19 - [(Player CHA/50), rounded down]",
+            "damageType": "Magic",
+            "element": "As dragon",
+            "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Button12-Fury.png",
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Fury1.0.png",
+            "appearanceUrls": [
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Fury1.0.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Fury1.1.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Fury1.2.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "1.1",
+              "1.2"
+            ]
+          }
+        ],
         "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Kid.png"
       },
       {
         "levelNumber": 3,
         "levelDisplay": "As player",
-        "variantName": "3",
+        "variantName": "(3)",
         "name": "<Dragon> (3)",
         "damage": "Scaled",
         "stats": "See guestStats",
@@ -202,14 +631,253 @@
             "crit": "0%"
           }
         },
+        "attacks": [
+          {
+            "name": "Mischief",
+            "description": "Torment your foe!",
+            "requirements": "1 Mischief skill point minimum",
+            "effect": "Performs one of the following skills at random;\n • 1. Applies -x% Boost to target for 3 turns. (Pop-up: Hehehe! Enemey Damage lowered!)\n • 2. Applies -x Bonus to target for 3 turns. (Pop-up: Hehehe! Enemey BtH lowered!)\n • 3. Applies -x All Resist to target for 3 turns. (Pop-up: Hehehe! Enemey resistance to All elements lowered!)\n • 4. Has x% chance to stun target for 1 turn, bypassing any Immobility resistance. (Pop-up: Hehehe! Can he still move?)\n • 5. 1 hit of 100% Magic damage; has x% chance to shrink target (-10% target HP). (Pop-ups: Hehehe! Look how tiny!, <Monster> resists Shrink!, <Monster> is already SHRUNK!)",
+            "manaCost": "Level*3/10",
+            "cooldown": "5 (skills 1, 2, 4) / 6 (skills 3, 5)",
+            "damageType": "N/A (skills 1-4) / Magic (skill 5)",
+            "element": "N/A (skills 1-4) / As dragon (skill 5)",
+            "buttonImageUrl": "https://i.imgur.com/oc3T4uZ.png",
+            "appearanceUrl": "https://i.imgur.com/aa9e9IJ.png",
+            "appearanceUrls": [
+              "https://i.imgur.com/aa9e9IJ.png",
+              "https://i.imgur.com/lcZAfWZ.png",
+              "https://i.imgur.com/0yHOLpY.png",
+              "https://i.imgur.com/Lp8gDEY.png",
+              "https://i.imgur.com/ukBrphQ.png",
+              "https://i.imgur.com/pTGcZLf.jpg",
+              "https://i.imgur.com/mXunakD.png"
+            ],
+            "appearanceCaptions": [
+              "-x",
+              "-x",
+              "-x",
+              "x",
+              "x",
+              "1",
+              "5"
+            ]
+          },
+          {
+            "name": "Assistance",
+            "description": "Assist your friend!",
+            "requirements": "1 Assistance skill point minimum",
+            "effect": "Performs one of the following skills at random;\n • 1. Applies +x Bonus to player for 2 turns. (Pop-up: Your BtH increased by <x>!)\n • 2. Applies +x END to player for 10 turns. (Pop-up: Your Endurance increased by <x>!)\n • 3. Applies +x WIS to player for 10 turns. (Pop-up: Your Wisdom increased by <x>!)\n • 4. Applies +x% Boost to player for 3 turns. (Pop-up: Your Damage increased by <x>%!)\n • 5. Applies +x Crit to player for 3 turns. (Pop-up: Your Critical chance increased by <x>%!)",
+            "manaCost": "Level*3/10",
+            "cooldown": "5 (skill 1) / 10 (skills 2, 3) / 8 (skills 4, 5)",
+            "damageType": "N/A",
+            "element": "N/A",
+            "buttonImageUrl": "https://i.imgur.com/XwnYGyk.png",
+            "appearanceUrl": "https://i.imgur.com/TteGrHu.png",
+            "appearanceUrls": [
+              "https://i.imgur.com/TteGrHu.png",
+              "https://i.imgur.com/aBapqk5.png",
+              "https://i.imgur.com/DzNtT1U.png",
+              "https://i.imgur.com/tcOS2PD.png",
+              "https://i.imgur.com/gsDuN45.png"
+            ],
+            "appearanceCaptions": [
+              "+x",
+              "+x",
+              "+x",
+              "+x",
+              "Appearance"
+            ]
+          },
+          {
+            "name": "Fighting",
+            "description": "Smack your foe around!",
+            "requirements": "1 Fighting skill point minimum",
+            "effect": "Performs one of the following skills at random;\n • 1. Bites target for 1 hit of x% damage.\n • 2. Claws at target for 1 hit of 110% damage; applies a x - y Melee DoT effect to target for 3 turns. (Pop-up: I bet it wishes I didn't have sharp claws! DoT!)\n • 3. Headbutts target for 1 hit of x% damage; has y% chance to stun target for 1 turn. (Pop-up: *SMACK!* And don't you move!)\n • 4. Smacks target with its tail for 1 hit of 130% damage; applies a x - y Melee DoT effect to target for 3 turns. (Pop-up: *THWAP* Take that! DoT!)\n • 5. Goes on a rampage, clawing target for 6 hits amounting to x% damage.",
+            "manaCost": "Level*3/10",
+            "cooldown": "1 (skill 1) / 4 (skills 2-4) / 8 (skill 5)",
+            "damageType": "Melee",
+            "element": "As dragon",
+            "buttonImageUrl": "https://i.imgur.com/pditn23.png",
+            "appearanceUrl": "https://i.imgur.com/Ebd1SB5.png",
+            "appearanceUrls": [
+              "https://i.imgur.com/Ebd1SB5.png",
+              "https://i.imgur.com/PAnIhpF.png",
+              "https://i.imgur.com/5uNpMF4.png",
+              "https://i.imgur.com/D2743Fz.png",
+              "https://i.imgur.com/8qi0j7I.png",
+              "https://i.imgur.com/aaXfzSU.png",
+              "https://i.imgur.com/nphRX0H.png",
+              "https://i.imgur.com/2VXQj4H.png"
+            ],
+            "appearanceCaptions": [
+              "x",
+              "x - y",
+              "x",
+              "x - y",
+              "x",
+              "1",
+              "2",
+              "3"
+            ]
+          },
+          {
+            "name": "Elemental Magic",
+            "description": "Use Magic against your foe!",
+            "requirements": "1 Magic skill point minimum",
+            "effect": "Performs one of the following skills at random;\n • 1. Casts a ball of magic at target for 1 hit of x% damage.\n • 2. Bites target for 1 hit of 120% damage; applies -x resistance to dragon's current element to target for 3 turns. (Pop-up: *CHOMP* Now you take more damage from <element>!)\n • 3. Launches a powerful beam attack at target for 1 hit of x% damage; has y% chance to stun target for 1 turn. (Pop-up: KABOOM! Magical Immobility!)\n • 4. Breathes fire at target for 1 hit of 100% damage; applies a x - y Magic DoT effect to target for 3 turns. (Pop-up: Burninate! Damage over Time!)\n • 5. Launches a powerful blast at target for 1 hit of x% damage, with y% chance to Crit.",
+            "manaCost": "Level*3/10",
+            "cooldown": "1 (skill 1) / 4 (skills 2, 3) / 5 (skill 4) / 9 (skill 5)",
+            "damageType": "Magic",
+            "element": "As dragon",
+            "buttonImageUrl": "https://i.imgur.com/N9rMFcr.png",
+            "appearanceUrl": "https://i.imgur.com/uXpllFl.png",
+            "appearanceUrls": [
+              "https://i.imgur.com/uXpllFl.png",
+              "https://i.imgur.com/8OwYUTC.png",
+              "https://i.imgur.com/dKjI3Gr.png",
+              "https://i.imgur.com/i7Ce3Lg.png",
+              "https://i.imgur.com/6zw0ejI.png",
+              "https://i.imgur.com/CrM19nK.png",
+              "https://i.imgur.com/T4GM0JQ.png",
+              "https://i.imgur.com/Egfg8JX.png",
+              "https://i.imgur.com/5hQkhqc.png",
+              "https://i.imgur.com/OZotwTN.png"
+            ],
+            "appearanceCaptions": [
+              "x",
+              "-x",
+              "x",
+              "x - y",
+              "x",
+              "1",
+              "2",
+              "3",
+              "4",
+              "5"
+            ]
+          },
+          {
+            "name": "Protection",
+            "description": "Protect your friend!",
+            "requirements": "1 Protection skill point minimum",
+            "effect": "Performs one of the following skills at random;\n • 1. Applies -x Health Resist to player for 3 turns. (Pop-up: HP healing effects increased by <x>%!)\n • 2. Applies +x Block/Parry/Dodge Defenses to player for 3 turns. (Pop-up: Your Parry increased by <x>!)\n • 3. Recovers x% of player's maximum MP. (Pop-up: Your mana is healed by <x>!)\n • 4. Recovers x% of player's maximum HP. (Pop-up: Your Health is healed by <x>!)\n • 5. Recovers x% of player's maximum HP and MP. (Pop-up: You are healed for <x> HP and <y> MP!)",
+            "manaCost": "Level*3/10",
+            "cooldown": "2 (skill 1) / 4 (skill 2) / 5 (skills 3, 4) / 7 (skill 5)",
+            "damageType": "N/A",
+            "element": "N/A",
+            "buttonImageUrl": "https://i.imgur.com/EE6SMp8.png",
+            "appearanceUrl": "https://i.imgur.com/7gUkV1P.png",
+            "appearanceUrls": [
+              "https://i.imgur.com/7gUkV1P.png",
+              "https://i.imgur.com/QCBZKO5.png",
+              "https://i.imgur.com/CcsdKRW.png",
+              "https://i.imgur.com/8YSIzv4.png",
+              "https://i.imgur.com/gsDuN45.png"
+            ],
+            "appearanceCaptions": [
+              "-x",
+              "+x",
+              "x",
+              "x",
+              "Appearance"
+            ]
+          },
+          {
+            "name": "Attack",
+            "effect": "Breathes fire at target for 1 hit of 100% damage.",
+            "manaCost": "0",
+            "cooldown": "0",
+            "damageType": "Magic",
+            "element": "As dragon",
+            "buttonImageUrl": "https://i.imgur.com/MWb3liE.png",
+            "appearanceUrl": "https://i.imgur.com/5hQkhqc.png"
+          },
+          {
+            "name": "Over Heal",
+            "description": "Heal and shield for you and Friend!",
+            "requirements": "200 Protection skill points",
+            "effect": "Applies +100 Block/Parry/Dodge Defense to both player and dragon; recovers 10% of both player's and dragon's max HP and MP.",
+            "manaCost": "Level*3/10",
+            "cooldown": "14",
+            "damageType": "N/A",
+            "element": "N/A",
+            "buttonImageUrl": "https://i.imgur.com/RcAGiQa.png",
+            "appearanceUrl": "https://i.imgur.com/QKxxeMY.png"
+          },
+          {
+            "name": "Elemental Supernova",
+            "description": "Large Critical Damage!",
+            "requirements": "200 Magic skill points",
+            "effect": "Launches a powerful blast at target for 1 hit of 165% damage, guaranteed to Crit.",
+            "manaCost": "Level*3/10",
+            "cooldown": "14",
+            "damageType": "Magic",
+            "element": "As dragon",
+            "buttonImageUrl": "https://i.imgur.com/lwyxlib.png",
+            "appearanceUrl": "https://i.imgur.com/1zY8blB.png"
+          },
+          {
+            "name": "Outrage",
+            "description": "Damage and inflict DoT!",
+            "requirements": "200 Fighting skill points",
+            "effect": "Goes on a rampage, clawing target for 5 hits of 40% damage; applies 'Outrage', a 105-115 Melee DoT effect, to target for 3 turns.",
+            "manaCost": "Level*3/10",
+            "cooldown": "12",
+            "damageType": "Melee",
+            "element": "As dragon",
+            "buttonImageUrl": "https://i.imgur.com/KHUYkCX.png",
+            "appearanceUrl": "https://i.imgur.com/RlYDVU4.png"
+          },
+          {
+            "name": "Overcharge",
+            "description": "Increased Damage and Crit for Friend!",
+            "requirements": "200 Assistance skill points",
+            "effect": "Applies +10% Boost and +15 Crit to player for 3 turns. (Pop-up: Damage and Crit chance increased!)",
+            "manaCost": "Level*3/10",
+            "cooldown": "9",
+            "damageType": "N/A",
+            "element": "N/A",
+            "buttonImageUrl": "https://i.imgur.com/LMa180x.png",
+            "appearanceUrl": "https://i.imgur.com/S0Rex3n.png"
+          },
+          {
+            "name": "Tickles",
+            "description": "Lower enemy BtH, Dmg, and Ele Res!",
+            "requirements": "200 Mischief skill points",
+            "effect": "Applies -30 Bonus, -20% Boost, and -10 All Resist to target for 3 turns. (Pop-up: Hehehe! Your foe deals less damage, hits less and take more damage!)",
+            "manaCost": "Level*3/10",
+            "cooldown": "8",
+            "damageType": "N/A",
+            "element": "N/A",
+            "buttonImageUrl": "https://i.imgur.com/Q9iFRDV.png",
+            "appearanceUrl": "https://i.imgur.com/6DG0wPe.png"
+          },
+          {
+            "name": "Primal Fury!",
+            "description": "The cutest primal fury ever!",
+            "requirements": "Dragon Amulet; Kid Dragon",
+            "effect": "Furiously strikes target for 3 hits of 200% damage, guaranteed to Crit.",
+            "manaCost": "25",
+            "cooldown": "16 (carries between battles)",
+            "damageType": "Magic",
+            "element": "As dragon",
+            "buttonImageUrl": "https://i.imgur.com/C2Xs4up.png",
+            "appearanceUrl": "https://i.imgur.com/GqFbRcZ.png",
+            "appearanceUrls": [
+              "https://i.imgur.com/GqFbRcZ.png",
+              "https://i.imgur.com/DSUStyD.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "1.1"
+            ]
+          }
+        ],
         "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-ofDoom.png"
       }
     ],
     "releaseDate": "June 10th, 2009",
     "tags": [
-      "(1)",
-      "(2)",
-      "(3)",
       "<dragon>",
       "bac",
       "dar",
@@ -218,6 +886,7 @@
       "ene",
       "fir",
       "ice",
+      "kid",
       "lig",
       "nat",
       "sto",
@@ -243,9 +912,6 @@
       "STO",
       "WAT",
       "WIN"
-    ],
-    "traits": [
-      "W/S"
     ]
   },
   {
@@ -1558,13 +2224,7 @@
     "isMultiPost": true,
     "shared": {
       "description": "",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Aquella.png",
-      "alternativeImages": [
-        {
-          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Aquella-Book3.png",
-          "caption": "Book 3 Appearance"
-        }
-      ]
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Aquella1.png"
     },
     "familySources": [],
     "levelVariants": [
@@ -2078,21 +2738,7 @@
     "isMultiPost": true,
     "shared": {
       "description": "",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Artix1.png",
-      "alternativeImages": [
-        {
-          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Artix1-ArtixVstheUndead.png",
-          "caption": "Appearance with new weapon in Artix Vs. The Undead"
-        },
-        {
-          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Artix3.png",
-          "caption": "Book 3 Appearance"
-        },
-        {
-          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Artix3-TheUndeadVsArtix.png",
-          "caption": "The Undead Vs Artix Appearance"
-        }
-      ]
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Artix1.png"
     },
     "familySources": [],
     "levelVariants": [
@@ -4731,21 +5377,7 @@
     "isMultiPost": true,
     "shared": {
       "description": "",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Galanoth.png",
-      "alternativeImages": [
-        {
-          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Galanoth-NotSoGreatEscape.png",
-          "caption": "Not So Great Escape Appearance"
-        },
-        {
-          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Galanoth-Book3.png",
-          "caption": "Book 3 Appearance"
-        },
-        {
-          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Galanoth-FFP1.png",
-          "caption": "Fate's Flow (Part 1) Appearance"
-        }
-      ]
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Galanoth2.png"
     },
     "familySources": [],
     "levelVariants": [
@@ -6429,13 +7061,7 @@
         "dot": "0%",
         "crit": "0%"
       }
-    },
-    "alternativeImages": [
-      {
-        "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/MagusHansa-FFP1.png",
-        "caption": "Fate's Flow (Part 1) Appearance"
-      }
-    ]
+    }
   },
   {
     "id": "guest-mazurek",
@@ -6451,17 +7077,7 @@
     "isMultiPost": true,
     "shared": {
       "description": "",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mazurek.png",
-      "alternativeImages": [
-        {
-          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mazurek-Pirate'sRevenge.png",
-          "caption": "A Pirate's Revenge Appearance"
-        },
-        {
-          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mazurek-Admiral.png",
-          "caption": "Admiral Appearance"
-        }
-      ]
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mazurek.png"
     },
     "familySources": [],
     "levelVariants": [
@@ -7030,13 +7646,7 @@
     "isMultiPost": true,
     "shared": {
       "description": "",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mritha.png",
-      "alternativeImages": [
-        {
-          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mritha-FFP1.png",
-          "caption": "Fate's Flow (Part 1) Appearance"
-        }
-      ]
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mritha.png"
     },
     "familySources": [],
     "levelVariants": [
@@ -8034,8 +8644,7 @@
     "familyOrigin": "single-thread",
     "isMultiPost": true,
     "shared": {
-      "description": "",
-      "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Princesspic.png"
+      "description": ""
     },
     "familySources": [],
     "levelVariants": [
@@ -8371,17 +8980,7 @@
     "isMultiPost": true,
     "shared": {
       "description": "",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Raven.png",
-      "alternativeImages": [
-        {
-          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Raven-Castle.png",
-          "caption": "The Castle in the Woods Appearance"
-        },
-        {
-          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Raven-BlackWinter.png",
-          "caption": "Black Winter/Book of Lore/A Shocking Discovery Appearance"
-        }
-      ]
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Raven2.png"
     },
     "familySources": [],
     "levelVariants": [
@@ -8920,7 +9519,7 @@
     "isMultiPost": true,
     "shared": {
       "description": "",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Riadne.png"
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Riadne2.png"
     },
     "familySources": [],
     "levelVariants": [
@@ -9984,13 +10583,7 @@
     "isMultiPost": true,
     "shared": {
       "description": "",
-      "imageUrl": "https://i.imgur.com/sFFV7Le.png",
-      "alternativeImages": [
-        {
-          "url": "https://i.imgur.com/tWfiPVd.png",
-          "caption": "Appearance in Gorillaphant Warfare"
-        }
-      ]
+      "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/SirLeon.png"
     },
     "familySources": [],
     "levelVariants": [
@@ -11258,17 +11851,7 @@
     "isMultiPost": true,
     "shared": {
       "description": "",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix.png",
-      "alternativeImages": [
-        {
-          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix-Book3.png",
-          "caption": "Book 3 Appearance"
-        },
-        {
-          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix-Synchronized.png",
-          "caption": "Synchronized Appearance"
-        }
-      ]
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix1-Button01-Circle.png"
     },
     "familySources": [],
     "levelVariants": [
@@ -12450,13 +13033,7 @@
     "isMultiPost": true,
     "shared": {
       "description": "",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vayle.png",
-      "alternativeImages": [
-        {
-          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vayle-Book3.png",
-          "caption": "Book 3 (Winged Darkness) Appearance"
-        }
-      ]
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vayle.png"
     },
     "familySources": [],
     "levelVariants": [
@@ -12772,13 +13349,7 @@
     "isMultiPost": true,
     "shared": {
       "description": "",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vilmor.png",
-      "alternativeImages": [
-        {
-          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vilmor-Book3.png",
-          "caption": "Book 3 Appearance"
-        }
-      ]
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vilmor.png"
     },
     "familySources": [],
     "levelVariants": [

@@ -31,11 +31,19 @@ import type {
   AlsoSeeRef,
   EntryType,
 } from '../src/types/pet.ts'
-import type { ItemFamily, ObtainVariant, LevelVariant, SharedData } from '../src/types/item.ts'
+import type {
+  ItemFamily,
+  ObtainVariant,
+  LevelVariant,
+  SharedData,
+  VariantAttack,
+} from '../src/types/item.ts'
 import {
   computePriceType,
   computeFamilyFlags,
   normalizeLevel,
+  normalizeRomanDisplay,
+  stripVersionSuffix,
 } from '../src/utils/variantHelpers.ts'
 import {
   extractThreadPostContents,
@@ -53,7 +61,7 @@ import { getImageCaptionNoise, isImageCaptionNoiseLine } from './lib/note-cleani
 import { repairAccessFlags } from './lib/access-flag-repair.ts'
 import { writePetsGuestsManifest } from './lib/data-manifests.ts'
 import { hasRetiredTag } from './lib/tags.ts'
-import { compareTitles } from '../src/utils/displayText.ts'
+import { compareTitles, displayTitle } from '../src/utils/displayText.ts'
 import {
   FORUM_BASE,
   directForumPostUrl,
@@ -724,7 +732,25 @@ function buildVariantFamilyFromSinglePost(
 }
 
 function normalizeDuplicateVariantName(name: string): string {
-  return name.replace(/\s+\((All Versions|[IVX]+-[IVX]+)\)$/i, '').trim()
+  return stripVersionSuffix(name).trim()
+}
+
+function normalizePetHeadingCandidate(value: string): string {
+  return displayTitle(stripVersionSuffix(value)).replace(/\s+/g, ' ').trim().toLowerCase()
+}
+
+function isRepeatedPetHeading(line: string, name: string): boolean {
+  if (line.length >= 80) return false
+
+  const normalizedLine = normalizePetHeadingCandidate(line)
+  const titleCandidates = [
+    name,
+    displayTitle(name),
+    stripVersionSuffix(name),
+    displayTitle(stripVersionSuffix(name)),
+  ].map(normalizePetHeadingCandidate)
+
+  return titleCandidates.includes(normalizedLine)
 }
 
 function dedupeVariantEntries(items: Array<Pet | ItemFamily>): Array<Pet | ItemFamily> {
@@ -777,6 +803,567 @@ function dedupeEntriesBySlug(items: Array<Pet | ItemFamily>): Array<Pet | ItemFa
   }
 
   return Array.from(canonicalBySlug.values())
+}
+
+function repairTogriderFamily(items: Array<Pet | ItemFamily>): Array<Pet | ItemFamily> {
+  const family = items.find(
+    (item): item is ItemFamily =>
+      'familyName' in item &&
+      /^(?:Togrider|Togrider \(Lieutenant, General\))$/i.test(item.familyName)
+  )
+  if (!family) return items
+  if (family.levelVariants.some((variant) => variant.name === 'Togrider')) {
+    return items.map((item) =>
+      item === family
+        ? computeFamilyFlags({
+            ...family,
+            familyName: 'Togrider',
+            levelRange: '15-35',
+          })
+        : item
+    )
+  }
+
+  const attackDescription =
+    'Charges toward target and strikes it with its spear for 1 hit of 100% Melee Nature damage.'
+  const baseVariant: LevelVariant = {
+    levelNumber: 1,
+    levelDisplay: '(Base)',
+    actualLevel: 15,
+    variantName: '(Base)',
+    name: 'Togrider',
+    damage: '5-16',
+    stats: 'Crit +2',
+    statsType: 'petStats',
+    sourceUrl: 'https://forums2.battleon.com/f/fb.asp?m=16109630',
+    description:
+      'This togrider decided it would stay with you once the assault on Popsprocket ends.',
+    obtainVariants: [
+      {
+        location: 'Def. Rares',
+        price: 'N/A',
+        priceType: 'merge',
+        sellback: '10 Gold',
+        daRequired: false,
+        dmRequired: true,
+        requiredItems: "10 Gears of War & 15 Defender's Medal",
+      },
+    ],
+    element: 'NAT',
+    rarity: '5',
+    attacks: [
+      {
+        name: 'Attack Type 1',
+        description: attackDescription,
+        images: [],
+        notes: [],
+      },
+    ],
+  }
+
+  const repairedFamily: ItemFamily = {
+    ...family,
+    familyName: 'Togrider',
+    shared: {
+      ...family.shared,
+      description: baseVariant.description ?? family.shared.description,
+      attacks: (family.shared.attacks ?? []).map((attack) =>
+        attack.name === 'Attack Type 1' ? { ...attack, description: attackDescription } : attack
+      ),
+      notes:
+        family.shared.notes ??
+        "Despite these pets' elements being Nature, their attack previously dealt Wood damage; this was fixed on April 2nd, 2021.",
+    },
+    levelVariants: [
+      baseVariant,
+      ...family.levelVariants.map((variant, index) => {
+        const { notes: _notes, ...variantWithoutNotes } = variant
+        return {
+          ...variantWithoutNotes,
+          levelNumber: index + 2,
+          attacks: variant.attacks?.map((attack) =>
+            attack.name === 'Attack Type 1' ? { ...attack, description: attackDescription } : attack
+          ),
+        }
+      }),
+    ],
+    levelRange: '15-35',
+  }
+
+  return items.map((item) => (item === family ? computeFamilyFlags(repairedFamily) : item))
+}
+
+function normalizeAttackImageInheritanceKey(attack: Attack): string {
+  return [
+    attack.name.toLowerCase().replace(/\s+/g, ' ').trim(),
+    attack.description.toLowerCase().replace(/\s+/g, ' ').trim(),
+  ].join('|')
+}
+
+function isPetAttack(attack: VariantAttack): attack is Attack {
+  const candidate = attack as { description?: unknown; effect?: unknown }
+  return typeof candidate.description === 'string' && candidate.effect === undefined
+}
+
+function inheritFamilyAttackImages(items: Array<Pet | ItemFamily>): Array<Pet | ItemFamily> {
+  return items.map((item) => {
+    if (!('levelVariants' in item)) return item
+
+    const imagesByAttack = new Map<string, PetAttackImageLink[]>()
+    for (const variant of item.levelVariants) {
+      for (const attack of variant.attacks ?? []) {
+        if (!isPetAttack(attack)) continue
+        if (!attack.images?.length) continue
+        const key = normalizeAttackImageInheritanceKey(attack)
+        const imageLinks = attack.images.map((url, index) => ({
+          url,
+          caption: attack.imageCaptions?.[index] ?? '',
+        }))
+        imagesByAttack.set(
+          key,
+          [...(imagesByAttack.get(key) ?? []), ...imageLinks].filter(
+            (entry, index, allEntries) =>
+              allEntries.findIndex((candidate) => candidate.url === entry.url) === index
+          )
+        )
+      }
+    }
+
+    if (imagesByAttack.size === 0) return item
+
+    let changed = false
+    const levelVariants = item.levelVariants.map((variant) => {
+      if (!variant.attacks?.length) return variant
+
+      const attacks = variant.attacks.map((attack) => {
+        if (!isPetAttack(attack)) return attack
+        if (attack.images?.length) return attack
+        const inheritedImageLinks = imagesByAttack.get(normalizeAttackImageInheritanceKey(attack))
+        if (!inheritedImageLinks?.length) return attack
+        changed = true
+        return {
+          ...attack,
+          images: inheritedImageLinks.map((entry) => entry.url),
+          imageCaptions: inheritedImageLinks.map((entry) => entry.caption),
+        }
+      })
+
+      return attacks === variant.attacks ? variant : { ...variant, attacks }
+    })
+
+    return changed ? computeFamilyFlags({ ...item, levelVariants }) : item
+  })
+}
+
+function petFamilyRef(family: ItemFamily): AlsoSeeRef {
+  return {
+    name: family.familyName,
+    slug: family.slug,
+    type: 'pet',
+  }
+}
+
+function toPetAlsoSeeRefs(
+  refs: Array<{ name: string; slug: string; type: string }> | undefined
+): AlsoSeeRef[] {
+  return (refs ?? [])
+    .filter((ref) => ref.type === 'pet' || ref.type === 'guest')
+    .map((ref) => ({
+      name: ref.name,
+      slug: ref.slug,
+      type: ref.type as EntryType,
+    }))
+}
+
+function splitCatPetFamilies(items: Array<Pet | ItemFamily>): Array<Pet | ItemFamily> {
+  return items.flatMap((item) => {
+    if (!('levelVariants' in item) || !item.familySources?.length) return [item]
+
+    const baseSource = item.familySources.find((source) =>
+      /\(Kitten,\s*Cat\)$/i.test(source.variantLabel ?? source.title)
+    )
+    const fierceSource = item.familySources.find(
+      (source) =>
+        /^DF Encyclopedia:\s*Fierce .+ Cat$/i.test(source.title) ||
+        /^Fierce .+ Cat$/i.test(source.variantLabel ?? '')
+    )
+    if (!baseSource || !fierceSource) return [item]
+
+    const baseTitle = (baseSource.variantLabel ?? baseSource.title)
+      .replace(/^DF Encyclopedia:\s*/i, '')
+      .trim()
+    const fierceTitle = (fierceSource.variantLabel ?? fierceSource.title)
+      .replace(/^DF Encyclopedia:\s*/i, '')
+      .trim()
+    const baseName = baseTitle.replace(/\s*\(Kitten,\s*Cat\)\s*$/i, '').trim()
+    if (!baseName || !fierceTitle) return [item]
+
+    const baseLevels = item.levelVariants
+      .filter((level) => !/^Fierce\b/i.test(level.name))
+      .map((level) => ({
+        ...level,
+        variantName: level.name.replace(new RegExp(`^${baseName}\\s*`, 'i'), '').trim(),
+      }))
+    const fierceLevels = item.levelVariants
+      .filter((level) => /^Fierce\b/i.test(level.name))
+      .map((level) => ({
+        ...level,
+        variantName: '(Base)',
+      }))
+    if (baseLevels.length === 0 || fierceLevels.length === 0) return [item]
+
+    const baseSlug = prefixedSlug(baseTitle, 'pet')
+    const fierceSlug = prefixedSlug(fierceTitle, 'pet')
+    const baseFamily = computeFamilyFlags({
+      ...item,
+      id: baseSlug,
+      familyName: baseTitle,
+      slug: baseSlug,
+      aliasSlugs: Array.from(new Set([item.slug, ...(item.aliasSlugs ?? [])])).filter(
+        (slug) => slug !== baseSlug && slug !== fierceSlug
+      ),
+      forumUrl: baseSource.url,
+      familySources: [{ ...baseSource, isPrimary: true }],
+      shared: {
+        ...item.shared,
+        alsoSee: [{ name: fierceTitle, slug: fierceSlug, type: 'pet' }],
+      },
+      levelVariants: baseLevels,
+      levelRange: '',
+    })
+    const fierceFamily = computeFamilyFlags({
+      ...item,
+      id: fierceSlug,
+      familyName: fierceTitle,
+      slug: fierceSlug,
+      aliasSlugs: [],
+      forumUrl: fierceSource.url,
+      familySources: [{ ...fierceSource, isPrimary: true }],
+      shared: {
+        ...item.shared,
+        alsoSee: [petFamilyRef(baseFamily)],
+      },
+      levelVariants: fierceLevels,
+      levelRange: '',
+    })
+
+    return [baseFamily, fierceFamily]
+  })
+}
+
+function splitGoldfishPetFamily(items: Array<Pet | ItemFamily>): Array<Pet | ItemFamily> {
+  return items.flatMap((item) => {
+    if (!('levelVariants' in item) || item.familyName !== 'Goldfish') return [item]
+
+    const goldfishLevels = item.levelVariants.filter((level) => /^Goldfish$/i.test(level.name))
+    const knightLevels = item.levelVariants.filter((level) =>
+      /^Goldfish Knight\b/i.test(level.name)
+    )
+    if (goldfishLevels.length === 0 || knightLevels.length === 0) return [item]
+
+    const goldfishSource =
+      item.familySources?.find((source) =>
+        /Goldfish$/i.test(source.variantLabel ?? source.title)
+      ) ?? item.familySources?.[0]
+    const knightSource =
+      item.familySources?.find((source) =>
+        /Goldfish Knight$/i.test(source.variantLabel ?? source.title)
+      ) ?? item.familySources?.[1]
+
+    const goldfishSlug = prefixedSlug('Goldfish', 'pet')
+    const knightSlug = prefixedSlug('Goldfish Knight', 'pet')
+    const sharedAlsoSee = toPetAlsoSeeRefs(item.shared.alsoSee)
+    const goldfishKnightDescription =
+      "You found this other completely different fish in a bowl in the mayor's house! The Fish Lord says it's his loyal knight, but the Knight just says \"blub\". Can recover your mana based on item's level and your CHA!"
+    const goldfishKnightImageUrl =
+      'https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Goldfish.png'
+    const goldfishKnightAttacks: Attack[] = [
+      {
+        name: 'Attack Type 1',
+        description:
+          'Approaches target and projects a stream of water at it for 1 hit of 100% Magic Water damage.',
+        images: [
+          'https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/GoldfishKnight-AttackType1.png',
+        ],
+        notes: [],
+      },
+      {
+        name: 'Attack Type 2',
+        description:
+          "Flips around in its fishbowl which emits a red aura to recover X of player's MP, where X is equal to [(Pet's level * Player's CHA) / 200], rounded normally (Pop-up: Recovered <x> Mana with the power of fish!).",
+        images: [
+          'https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/GoldfishKnight-AttackType2.png',
+        ],
+        notes: [],
+      },
+    ]
+
+    const goldfishFamily = {
+      ...computeFamilyFlags({
+        ...item,
+        id: goldfishSlug,
+        familyName: 'Goldfish',
+        slug: goldfishSlug,
+        aliasSlugs: Array.from(new Set([...(item.aliasSlugs ?? [])])).filter(
+          (slug) => slug !== goldfishSlug && slug !== knightSlug
+        ),
+        forumUrl: goldfishSource?.url ?? goldfishLevels[0].sourceUrl ?? item.forumUrl,
+        familySources: goldfishSource ? [{ ...goldfishSource, isPrimary: true }] : undefined,
+        shared: {
+          ...item.shared,
+          alsoSee: [
+            ...sharedAlsoSee.filter(
+              (ref) => ref.slug !== knightSlug && ref.name !== 'Goldfish Knight'
+            ),
+            { name: 'Goldfish Knight', slug: knightSlug, type: 'pet' },
+          ],
+        },
+        levelVariants: goldfishLevels.map((level, index) => ({
+          ...level,
+          levelNumber: index + 1,
+        })),
+        levelRange: '',
+      }),
+      levelRange: '',
+    }
+
+    const {
+      description: _description,
+      imageUrl: _imageUrl,
+      alternativeImages: _alternativeImages,
+      attacks: _attacks,
+      ...sharedBase
+    } = item.shared
+    const sortedKnightLevels = knightLevels
+      .map((level) => ({
+        ...level,
+        description: level.description || goldfishKnightDescription,
+        imageUrl: level.imageUrl || goldfishKnightImageUrl,
+        attacks: level.attacks?.length ? level.attacks : goldfishKnightAttacks,
+        obtainVariants: level.obtainVariants.map((method) =>
+          method.dcRequired || method.priceType === 'dc'
+            ? { ...method, daRequired: false, dcRequired: true }
+            : method
+        ),
+      }))
+      .sort((first, second) => {
+        const firstLevel = (first.actualLevel ?? Number.parseInt(first.levelDisplay, 10)) || 0
+        const secondLevel = (second.actualLevel ?? Number.parseInt(second.levelDisplay, 10)) || 0
+        if (firstLevel !== secondLevel) return firstLevel - secondLevel
+        const firstIsDc = first.obtainVariants.some(
+          (method) => method.dcRequired || method.priceType === 'dc'
+        )
+        const secondIsDc = second.obtainVariants.some(
+          (method) => method.dcRequired || method.priceType === 'dc'
+        )
+        return Number(firstIsDc) - Number(secondIsDc)
+      })
+
+    const knightFamily = {
+      ...computeFamilyFlags({
+        ...item,
+        id: knightSlug,
+        familyName: 'Goldfish Knight',
+        slug: knightSlug,
+        aliasSlugs: [item.slug].filter((slug) => slug !== knightSlug),
+        forumUrl: knightSource?.url ?? knightLevels[0].sourceUrl ?? item.forumUrl,
+        familySources: knightSource ? [{ ...knightSource, isPrimary: true }] : undefined,
+        shared: {
+          description: goldfishKnightDescription,
+          imageUrl: goldfishKnightImageUrl,
+          attacks: goldfishKnightAttacks,
+          ...sharedBase,
+          alsoSee: [
+            ...sharedAlsoSee.filter((ref) => ref.slug !== goldfishSlug && ref.name !== 'Goldfish'),
+            petFamilyRef(goldfishFamily),
+          ],
+        },
+        levelVariants: sortedKnightLevels.map((level, index) => ({
+          ...level,
+          levelNumber: index + 1,
+        })),
+        levelRange: 'I-VII',
+      }),
+      levelRange: 'I-VII',
+    }
+
+    return [goldfishFamily, knightFamily]
+  })
+}
+
+function splitPowerTogPetFamily(items: Array<Pet | ItemFamily>): Array<Pet | ItemFamily> {
+  return items.flatMap((item) => {
+    if (!('levelVariants' in item) || item.familyName !== 'PowerTog') return [item]
+
+    const steamLevels = item.levelVariants.filter((level) => /\bSteam Tog$/i.test(level.name))
+    const powerLevels = item.levelVariants.filter((level) => /\bPowerTog$/i.test(level.name))
+    if (steamLevels.length === 0 || powerLevels.length === 0) return [item]
+
+    const steamDescription =
+      steamLevels.find((level) => level.description?.trim())?.description ??
+      item.shared.description ??
+      ''
+    const powerDescription =
+      powerLevels.find((level) => /^PowerTog$/i.test(level.name) && level.description?.trim())
+        ?.description ??
+      powerLevels.find((level) => level.description?.trim())?.description ??
+      item.shared.description ??
+      ''
+    const steamSlug = prefixedSlug('Steam Tog', 'pet')
+    const powerSlug = prefixedSlug('PowerTog', 'pet')
+    const sharedAlsoSee = toPetAlsoSeeRefs(item.shared.alsoSee)
+
+    const buildFamily = ({
+      familyName,
+      slug,
+      levels,
+      description,
+      alsoSee,
+    }: {
+      familyName: string
+      slug: string
+      levels: LevelVariant[]
+      description: string
+      alsoSee: AlsoSeeRef[]
+    }): ItemFamily => {
+      const sortedLevels = [...levels].sort((first, second) => {
+        const firstRare = /^Rare\b/i.test(first.name)
+        const secondRare = /^Rare\b/i.test(second.name)
+        return Number(firstRare) - Number(secondRare)
+      })
+      const familySources = sortedLevels.map((level, index) => {
+        const source = item.familySources?.find((familySource) => familySource.url === level.sourceUrl)
+        return {
+          url: level.sourceUrl ?? source?.url ?? item.forumUrl,
+          title: source?.title ?? `DF Encyclopedia: ${level.name}`,
+          variantLabel: source?.variantLabel ?? level.name,
+          isPrimary: index === 0,
+        }
+      })
+
+      return computeFamilyFlags({
+        ...item,
+        id: slug,
+        familyName,
+        slug,
+        aliasSlugs: sortedLevels
+          .map((level) => prefixedSlug(level.name, 'pet'))
+          .filter((alias) => alias !== slug),
+        forumUrl: sortedLevels[0]?.sourceUrl ?? item.forumUrl,
+        familySources,
+        shared: {
+          ...item.shared,
+          description,
+          alsoSee,
+        },
+        levelVariants: sortedLevels.map((level, index) => ({
+          ...level,
+          levelNumber: index + 1,
+          levelDisplay: level.actualLevel ? String(level.actualLevel) : level.levelDisplay,
+          variantName: /^Rare\b/i.test(level.name) ? 'Rare' : '(Base)',
+          description: level.description || description,
+        })),
+        levelRange: '',
+      })
+    }
+
+    return [
+      buildFamily({
+        familyName: 'Steam Tog',
+        slug: steamSlug,
+        levels: steamLevels,
+        description: steamDescription,
+        alsoSee: [
+          ...sharedAlsoSee.filter((ref) => ref.slug !== powerSlug && ref.name !== 'PowerTog'),
+          { name: 'PowerTog', slug: powerSlug, type: 'pet' },
+        ],
+      }),
+      buildFamily({
+        familyName: 'PowerTog',
+        slug: powerSlug,
+        levels: powerLevels,
+        description: powerDescription,
+        alsoSee: [
+          ...sharedAlsoSee.filter((ref) => ref.slug !== steamSlug && ref.name !== 'Steam Tog'),
+          { name: 'Steam Tog', slug: steamSlug, type: 'pet' },
+        ],
+      }),
+    ]
+  })
+}
+
+function splitExtraFluffyTogPetFamily(items: Array<Pet | ItemFamily>): Array<Pet | ItemFamily> {
+  return items.flatMap((item) => {
+    if (!('levelVariants' in item) || item.familyName !== 'Extra Fluffy Tog') return [item]
+
+    const extremeLevels = item.levelVariants.filter((level) => /\(Extreme\)/i.test(level.name))
+    const romanLevels = item.levelVariants.filter((level) => !/\(Extreme\)/i.test(level.name))
+    if (extremeLevels.length === 0 || romanLevels.length === 0) return [item]
+
+    const romanSlug = prefixedSlug('Extra Fluffy Tog', 'pet')
+    const extremeSlug = prefixedSlug('Extra Fluffy Tog Extreme', 'pet')
+    const romanSource =
+      item.familySources?.find((source) => !/\(Extreme\)/i.test(source.variantLabel ?? source.title)) ??
+      item.familySources?.[0]
+    const extremeSource =
+      item.familySources?.find((source) => /\(Extreme\)/i.test(source.variantLabel ?? source.title)) ??
+      item.familySources?.[1]
+    const extremeDescription =
+      extremeLevels.find((level) => level.description?.trim())?.description ??
+      item.shared.description ??
+      ''
+
+    const romanFamily = computeFamilyFlags({
+      ...item,
+      id: romanSlug,
+      familyName: 'Extra Fluffy Tog',
+      slug: romanSlug,
+      aliasSlugs: (item.aliasSlugs ?? []).filter((slug) => slug !== extremeSlug),
+      forumUrl: romanSource?.url ?? romanLevels[0]?.sourceUrl ?? item.forumUrl,
+      familySources: romanSource ? [{ ...romanSource, isPrimary: true }] : undefined,
+      shared: {
+        ...item.shared,
+        attacks: [],
+        alsoSee: [{ name: 'Extra Fluffy Tog Extreme', slug: extremeSlug, type: 'pet' }],
+      },
+      levelVariants: romanLevels.map((level, index) => ({
+        ...level,
+        levelNumber: index + 1,
+      })),
+      levelRange: 'I-III',
+    })
+
+    const { attacks: _sharedAttacks, ...sharedBase } = item.shared
+    const extremeFamily = computeFamilyFlags({
+      ...item,
+      id: extremeSlug,
+      familyName: 'Extra Fluffy Tog Extreme',
+      slug: extremeSlug,
+      aliasSlugs: [prefixedSlug('Extra Fluffy Tog (Extreme)', 'pet')].filter(
+        (slug) => slug !== extremeSlug
+      ),
+      forumUrl: extremeSource?.url ?? extremeLevels[0]?.sourceUrl ?? item.forumUrl,
+      familySources: extremeSource ? [{ ...extremeSource, isPrimary: true }] : undefined,
+      shared: {
+        ...sharedBase,
+        description: extremeDescription,
+        imageUrl: extremeLevels[0]?.imageUrl ?? item.shared.imageUrl,
+        attacks: extremeLevels[0]?.attacks ?? [],
+        notes: extremeLevels[0]?.notes ?? item.shared.notes,
+        alsoSee: [petFamilyRef(romanFamily)],
+      },
+      levelVariants: extremeLevels.map((level, index) => ({
+        ...level,
+        levelNumber: index + 1,
+        levelDisplay: level.actualLevel ? String(level.actualLevel) : level.levelDisplay,
+        variantName: '(Base)',
+        description: level.description || extremeDescription,
+      })),
+      levelRange: '',
+    })
+
+    return [romanFamily, extremeFamily]
+  })
 }
 
 function parseAZPage(html: string): PetStub[] {
@@ -1194,6 +1781,209 @@ function extractImages(
   return { main, alternatives }
 }
 
+function normalizeAttackImageLabel(label: string): string {
+  return normalizeRomanDisplay(label)
+    .replace(/\s+/g, ' ')
+    .replace(/\s+-\s+.*$/i, '')
+    .trim()
+    .toLowerCase()
+}
+
+interface PetAttackImageLink {
+  url: string
+  caption: string
+}
+
+function extractPetAttackImageLinks(html: string): Map<string, PetAttackImageLink[]> {
+  const imageLinksByLabel = new Map<string, PetAttackImageLink[]>()
+  const imageLinkRegex =
+    /<a[^>]+href=(["'])(.*?)\1[^>]*>([\s\S]*?)<\/a>/gi
+  let match: RegExpExecArray | null
+
+  while ((match = imageLinkRegex.exec(html)) !== null) {
+    const url = decodeHTML(match[2] ?? '').trim()
+    const rawLabel = stripHtml(decodeHTML(match[3] ?? '')).trim()
+    const label = /^[\d.]+$/.test(rawLabel) ? `Attack Type ${rawLabel}` : rawLabel
+    if (!url || !/\.(?:jpg|jpeg|png|gif|bmp)(?:\?[^"'<>]*)?$/i.test(url)) continue
+    if (!/^Attack\s+Type\s+[\d./]+/i.test(label)) continue
+    if (/\/tags\/|\/f\/image\/|button/i.test(url)) continue
+
+    const key = normalizeAttackImageLabel(label)
+    const existing = imageLinksByLabel.get(key) ?? []
+    if (!existing.some((entry) => entry.url === url)) {
+      imageLinksByLabel.set(key, [...existing, { url, caption: label }])
+    }
+  }
+
+  return imageLinksByLabel
+}
+
+function extractDragonAppearanceLinks(block: string, variantName?: string): PetAttackImageLink[] {
+  const links: PetAttackImageLink[] = []
+  const normalizedVariant = variantName?.toLowerCase()
+  const linkRegex = /<a[^>]+href=(["'])(.*?)\1[^>]*>([\s\S]*?)<\/a>/gi
+  let match: RegExpExecArray | null
+  let currentVariantContext: string | undefined
+
+  while ((match = linkRegex.exec(block)) !== null) {
+    const url = decodeHTML(match[2] ?? '').trim()
+    const label = stripHtml(decodeHTML(match[3] ?? '')).replace(/\s+/g, ' ').trim()
+    const variantMatch = label.match(/\b(Baby|Toddler|Kid)\b/i)
+    if (/^Appearance(?:\s+|$)/i.test(label)) currentVariantContext = undefined
+    if (variantMatch) currentVariantContext = variantMatch[1]
+
+    const numericLabel = label.match(/^\d+(?:\.\d+)?$/i)?.[0]
+    const caption =
+      numericLabel && currentVariantContext
+        ? `${currentVariantContext} ${numericLabel}`
+        : label.replace(/^Appearance\s+/i, '').trim() || 'Appearance'
+    if (!url || !/\.(?:jpg|jpeg|png|gif|bmp)(?:\?[^"'<>]*)?$/i.test(url)) continue
+    if (
+      !/^Appearance(?:\s+|$)/i.test(label) &&
+      !variantMatch &&
+      !/^\d+(?:\.\d+)?$/i.test(label)
+    ) {
+      continue
+    }
+
+    if (normalizedVariant) {
+      const scopedVariant = variantMatch?.[1] ?? currentVariantContext
+      if (scopedVariant && scopedVariant.toLowerCase() !== normalizedVariant) continue
+    }
+
+    if (!links.some((entry) => entry.url === url)) links.push({ url, caption })
+  }
+
+  return links
+}
+
+function getDragonNoxiousFumesImages(variantName: string): PetAttackImageLink[] {
+  const variant = variantName.toLowerCase()
+  if (!['baby', 'toddler', 'kid'].includes(variant)) return []
+
+  const displayVariant = variant[0].toUpperCase() + variant.slice(1)
+  return ['1.0', '1.1'].map(
+    (suffix) => ({
+      url: `https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Dragon-Stun-${displayVariant}${suffix}.png`,
+      caption: `${displayVariant} ${suffix}`,
+    })
+  )
+}
+
+function getDragonAttackImageKey(attack: Attack): string {
+  return [
+    attack.name.toLowerCase().replace(/\s+/g, ' ').trim(),
+    attack.description.toLowerCase().replace(/\s+/g, ' ').trim(),
+    attack.notes
+      ?.find((note) => note.startsWith('Requirements:'))
+      ?.toLowerCase()
+      .replace(/\s+/g, ' ')
+      .trim() ?? '',
+  ].join('|')
+}
+
+function assignDragonAttackImages(
+  attacks: Attack[],
+  imagesByAttack: Map<string, PetAttackImageLink[]>,
+  variantName: string
+): Attack[] {
+  return attacks.map((attack) => {
+    const images =
+      imagesByAttack.get(`${variantName.toLowerCase()}|${getDragonAttackImageKey(attack)}`) ??
+      imagesByAttack.get(`all|${getDragonAttackImageKey(attack)}`)
+    const fallbackImages = /noxious fumes/i.test(attack.name)
+      ? getDragonNoxiousFumesImages(variantName)
+      : []
+
+    const mergedImageLinks = [...(images ?? []), ...fallbackImages].filter(
+      (entry, index, allEntries) =>
+        allEntries.findIndex((candidate) => candidate.url === entry.url) === index
+    )
+    return mergedImageLinks.length
+      ? {
+          ...attack,
+          images: mergedImageLinks.map((entry) => entry.url),
+          imageCaptions: mergedImageLinks.map((entry) => entry.caption),
+        }
+      : attack
+  })
+}
+
+function extractDragonSharedNotes(currentSkillsHtml: string): string {
+  const startMatch = currentSkillsHtml.match(/<b>\s*Skill proc rate\s*<\/b>/i)
+  if (!startMatch || startMatch.index === undefined) return DRAGON_SHARED_NOTES
+
+  const afterStart = currentSkillsHtml.slice(startMatch.index)
+  const endMatch = afterStart.match(/Also See:|<b>\s*2015[^<]*Skills<\/b>|<b>\s*2007[^<]*Skills<\/b>/i)
+  const notesHtml = endMatch?.index !== undefined ? afterStart.slice(0, endMatch.index) : afterStart
+  const notes = normalizeDragonSharedNotes(
+    stripForumHtml(notesHtml, 'dragon shared notes', { preserveIndentation: true })
+  )
+
+  return notes || DRAGON_SHARED_NOTES
+}
+
+function normalizeDragonSharedNotes(notes: string): string {
+  const lines = notes
+    .replace(/^Skill proc rate\s*/i, 'Skill proc rate\n')
+    .replace(/\nOther information\s*/i, '\nOther information\n')
+    .split('\n')
+    .map((line) => line.trimEnd())
+    .filter((line) => line.trim())
+
+  const skillIndex = lines.findIndex((line) => /^Skill proc rate$/i.test(line.trim()))
+  if (skillIndex < 0) return notes.trim()
+
+  const otherIndex = lines.findIndex((line) => /^Other information$/i.test(line.trim()))
+  const skillLines = lines
+    .slice(skillIndex + 1, otherIndex >= 0 ? otherIndex : undefined)
+    .map((line) => line.trim().replace(/^[•\-*]\s*/, ''))
+    .filter(Boolean)
+    .map((line) => `  • ${line}`)
+  const otherLines = (otherIndex >= 0 ? lines.slice(otherIndex + 1) : [])
+    .map((line) => {
+      if (/^\s+/.test(line)) return line
+      return line.trim().replace(/^[•\-*]\s*/, '')
+    })
+    .filter(Boolean)
+
+  return ['Skill proc rate', ...skillLines, ...otherLines].join('\n').trim()
+}
+
+function getPetAttackImages(
+  label: string,
+  imageLinksByLabel: Map<string, PetAttackImageLink[]>
+): { images: string[]; imageCaptions?: string[] } {
+  const imageLinks = [...(imageLinksByLabel.get(normalizeAttackImageLabel(label)) ?? [])]
+
+  const labelMatch = label.match(/^Attack\s+Type\s+(.+)$/i)
+  if (!labelMatch) {
+    return {
+      images: uniqueStrings(imageLinks.map((entry) => entry.url)),
+      imageCaptions: imageLinks.map((entry) => entry.caption),
+    }
+  }
+
+  const prefixes = labelMatch[1]
+    .split('/')
+    .map((part) => part.trim())
+    .filter(Boolean)
+    .map((part) => `Attack Type ${part}`)
+
+  imageLinks.push(
+    ...prefixes.flatMap((part) => imageLinksByLabel.get(normalizeAttackImageLabel(part)) ?? [])
+  )
+  const uniqueLinks = imageLinks.filter(
+    (entry, index, allEntries) =>
+      allEntries.findIndex((candidate) => candidate.url === entry.url) === index
+  )
+
+  return {
+    images: uniqueLinks.map((entry) => entry.url),
+    imageCaptions: uniqueLinks.map((entry) => entry.caption),
+  }
+}
+
 function hasRequiredItemImage(item: Pet | ItemFamily): boolean {
   if ('levelVariants' in item) {
     return Boolean(
@@ -1258,12 +2048,44 @@ function extractDragonVariantSections(html: string): Array<{ variantName: string
   return sections
 }
 
-function parseDragonSkillAttacks(postHtml: string): Attack[] {
+const DRAGON_SHARED_NOTES = [
+  'Skill proc rate',
+  '  • A random integer between 0 and 100 (inclusive), R, is rolled each turn.',
+  "  • A variable reliant on trained dragon skill points and player CHA/LUK, S, is determined by the formula: (0.1 * <Dragon's skill points> + [Player's CHA + Player's LUK] / 10) + 10, rounded up.",
+  '  • When R <= S, pet dragons will use a skill; otherwise, pet dragons will use a standard attack (Magic/Fighting alternate attack chance inclusive).',
+  '  • To eliminate the skill proc rate and have more control over which skills pet dragons use, enable Manual Pet Actions.',
+  "Draco is this pet's default name; to change their name and/or color palette from the default, visit Dragon Customization.",
+  'Also known as the Destroyer from various NPCs.',
+  "Quests and zones that feature <Dragon> as a character may use their current growth status and their dialogue may change if the player has a Dragon Amulet or not.",
+  'In order to make pet dragons stronger, players can feed them (maximum once per day) to gain skill points. Pet dragons can then be trained with these skill points to unlock unique abilities (see Pet Dragon Skills). More information on feeding and training pet dragons can be found in-game at Sunbreeze Grove, or in the Complete Dragon Guide.',
+  '  • Growing pet dragons to the toddler and kid stages provides +100 free skill points each, amounting to +200 free skill points; this functionality was implemented on June 20th, 2023.',
+  "Kid dragons may be equipped with Kid Dragon Accessories; if the player's dragon's appearance is Baby or Toddler Dragon, the accessories will not be shown.",
+  'Kid dragons may change their appearance as Baby or Toddler Dragon via Dove in Sunbreeze Grove (Books 3 and 4), but the secondary Tier 0 skills, all Tier 2 skills, and Primal Fury! are retained; this was implemented on June 19th, 2026.',
+  'Pet dragons received a major overhaul to their skills on June 21st, 2019.',
+  'Initially, all pet dragons were able to use the secondary Tier 0 skills; this was changed to be exclusive for kid dragons on September 7th, 2019.',
+  "'Tickles' skill previously also applied -[Mischief skill level * 0.3] Bonus to target; the Bonus to Hit component was removed on March 7th, 2020.",
+  'The following changes were implemented on January 1st, 2021:',
+  "  • Kid dragons' damage, Crit, and Bonus were increased.",
+  "  • 'Elemental Supernova' and 'Outrage' skills were bug fixed.",
+  'The following changes were implemented on June 23rd, 2023:',
+  "  • 'Tickles' skill increased its effectiveness from applying +[Mischief skill level * 0.05] Health Resist to target.",
+  "  • 'Magic', 'Fighting', and 'Outrage' skills were modified.",
+  'The following changes were implemented on April 19th, 2024:',
+  '  • Tier 1 skills were renamed to their proper names.',
+  '  • Tooltips for <Dragon> were updated.',
+].join('\n')
+
+function parseDragonSkillAttacks(postHtml: string): {
+  attacks: Attack[]
+  imagesByAttack: Map<string, PetAttackImageLink[]>
+  sharedNotes?: string
+} {
   const currentSectionMatch = postHtml.match(
     /<div[^>]*align=["']center["'][^>]*>[\s\S]*?<font[^>]*size=['"]3['"][^>]*><b>Pet Dragon Skills<\/b><\/font>\s*\(2019[\s\S]*?Present\)[\s\S]*?(?=<b>\s*2015[^<]*Skills<\/b>|<b>\s*2007[^<]*Skills<\/b>|<img[^>]+src=["'][^"']*\/tags\/Retired\.png["'][^>]*>|$)/i
   )
   const currentSkillsHtml = currentSectionMatch?.[0] ?? postHtml
   const attacks: Attack[] = []
+  const imagesByAttack = new Map<string, PetAttackImageLink[]>()
   const tierHeadingRegex =
     /<div[^>]*align=["']center["'][^>]*>[\s\S]*?<font[^>]*size=['"]2['"][^>]*><b>Tier\s+(\d+)<\/b><\/font>[\s\S]*?<\/div>/gi
   const tierSections: Array<{ tier: string; start: number; end: number }> = []
@@ -1314,18 +2136,38 @@ function parseDragonSkillAttacks(postHtml: string): Attack[] {
         ? stripHtml(decodeHTML(cooldownMatch[1])).replace(/\s+/g, ' ').trim()
         : undefined
 
-      attacks.push({
+      const attack: Attack = {
         name: `Tier ${current.tier}: ${rawName}`,
         description: effect,
+        ...(cooldown ? { cooldown } : {}),
         notes: [
           ...(requirements && requirements !== 'None' ? [`Requirements: ${requirements}`] : []),
-          ...(cooldown ? [`Cooldown: ${cooldown}`] : []),
         ],
-      })
+      }
+      attacks.push(attack)
+
+      const defaultImages = extractDragonAppearanceLinks(block)
+      if (defaultImages.length > 0) {
+        imagesByAttack.set(`all|${getDragonAttackImageKey(attack)}`, defaultImages)
+      }
+
+      for (const variantName of ['Baby', 'Toddler', 'Kid']) {
+        const variantImages = extractDragonAppearanceLinks(block, variantName)
+        if (variantImages.length > 0) {
+          imagesByAttack.set(
+            `${variantName.toLowerCase()}|${getDragonAttackImageKey(attack)}`,
+            variantImages
+          )
+        }
+      }
     }
   }
 
-  return attacks
+  return {
+    attacks,
+    imagesByAttack,
+    sharedNotes: extractDragonSharedNotes(currentSkillsHtml),
+  }
 }
 
 function extractDragonObtainVariants(sectionHtml: string): ObtainVariant[] {
@@ -1420,9 +2262,14 @@ async function tryBuildDragonFamily(
   const skillPostId = '21927215'
 
   let dragonSkillAttacks: Attack[] = []
+  let dragonSkillImagesByAttack = new Map<string, PetAttackImageLink[]>()
+  let dragonSharedNotes = DRAGON_SHARED_NOTES
   try {
     const skillThreadHtml = await fetchThreadHtml(skillPostId, cookie)
-    dragonSkillAttacks = parseDragonSkillAttacks(skillThreadHtml)
+    const parsedDragonSkills = parseDragonSkillAttacks(skillThreadHtml)
+    dragonSkillAttacks = parsedDragonSkills.attacks
+    dragonSkillImagesByAttack = parsedDragonSkills.imagesByAttack
+    dragonSharedNotes = parsedDragonSkills.sharedNotes ?? DRAGON_SHARED_NOTES
   } catch {
     // Fall back to no attacks if the linked skill post cannot be parsed.
   }
@@ -1437,6 +2284,7 @@ async function tryBuildDragonFamily(
       levelDisplay: displayLevel,
       variantName: section.variantName,
       name: `<Dragon> (${section.variantName})`,
+      description: `${section.variantName} Dragon`,
       damage: data.damage || 'Unknown',
       stats: data.stats || 'None',
       ...(data.statsType ? { statsType: data.statsType } : {}),
@@ -1446,7 +2294,13 @@ async function tryBuildDragonFamily(
       ...(data.resists && data.resists !== 'None' ? { resists: data.resists } : {}),
       rarity: 'Element: Chosen via Dragon Elementization',
       ...(dragonSkillAttacks.length > 0
-        ? { attacks: filterDragonAttacksForVariant(dragonSkillAttacks, section.variantName) }
+        ? {
+            attacks: assignDragonAttackImages(
+              filterDragonAttacksForVariant(dragonSkillAttacks, section.variantName),
+              dragonSkillImagesByAttack,
+              section.variantName
+            ),
+          }
         : {}),
     }
   })
@@ -1460,6 +2314,8 @@ async function tryBuildDragonFamily(
     shared: {
       description: '',
       rarity: 'Element: Chosen via Dragon Elementization',
+      notes: dragonSharedNotes,
+      alsoSee: [{ name: '<Dragon>', slug: 'guest-dragon', type: 'guest' }],
     },
     levelVariants,
     releaseDate:
@@ -1469,7 +2325,9 @@ async function tryBuildDragonFamily(
     tags: [
       stub.type,
       ...stub.elements.map((element) => element.toLowerCase()),
-      ...stub.markers.map((marker) => marker.toLowerCase().replace('/', '-')),
+      ...stub.markers
+        .filter((marker) => marker.toLowerCase() !== 'retired')
+        .map((marker) => marker.toLowerCase().replace('/', '-')),
     ],
     hasDA: false,
     hasDC: false,
@@ -2342,11 +3200,9 @@ export async function parsePetThreadMultiVariant(
     isMultiPostFamily = true
   } else {
     // Roman numeral or "All Versions" ranges: strip the suffix
-    familyName = name
+    familyName = stripVersionSuffix(name)
       .replace(/\s+[IVX]+$/i, '')
       .replace(/\s+Level\s+\d+$/i, '')
-      .replace(/\s*\([IVX]+(?:[-,\s]+[IVX]+)+\)$/i, '')
-      .replace(/\s+\(All Versions\)$/i, '')
       .trim()
   }
 
@@ -2524,6 +3380,7 @@ export function parsePetThread(
   // Strategy: Remove <font color='#eeeeee'> tags and everything that follows them
   // These tags wrap edit timestamps that shouldn't be part of the content
   const cleanedBody = rawBody.replace(/<font color=['"]#eeeeee['"]>.*?(<\/font>|$)/gis, '')
+  const attackImageLinks = extractPetAttackImageLinks(rawBody)
 
   const text = stripHtml(decodeHTML(cleanedBody))
   const lines = text.split('\n').filter((l) => l.length > 0) // DON'T trim — preserve indentation!
@@ -2820,16 +3677,20 @@ export function parsePetThread(
         continue
       }
       if (currentAttack?.name) attacks.push(currentAttack as Attack)
-      const dashIdx = trimmedLine.indexOf(' - ')
-      currentAttack =
-        dashIdx > -1
-          ? {
-              name: trimmedLine.slice(0, dashIdx).trim(),
-              description: trimmedLine.slice(dashIdx + 3).trim(),
-              images: [],
-              notes: [],
-            }
-          : { name: trimmedLine.trim(), description: '', images: [], notes: [] }
+      const attackLineMatch = trimmedLine.match(/^(Attack\s+Type\s+[\d./\s]+?)(?:\s*-\s*(.*))?$/i)
+      const attackName = attackLineMatch?.[1]?.trim() ?? trimmedLine.trim()
+      const attackDescription = attackLineMatch?.[2]?.trim() ?? ''
+      const { images: attackImages, imageCaptions } = getPetAttackImages(
+        attackName,
+        attackImageLinks
+      )
+      currentAttack = {
+        name: attackName,
+        description: attackDescription,
+        images: attackImages,
+        ...(imageCaptions?.length ? { imageCaptions } : {}),
+        notes: [],
+      }
       continue
     }
 
@@ -2906,7 +3767,10 @@ export function parsePetThread(
 
     if (!description && !inNotes && !currentAttack && trimmedLine.length > 5) {
       // Check if this line is just the pet's name repeated as a heading
-      if (name.toLowerCase().includes(trimmedLine.toLowerCase()) && trimmedLine.length < 50) {
+      if (
+        (name.toLowerCase().includes(trimmedLine.toLowerCase()) && trimmedLine.length < 50) ||
+        isRepeatedPetHeading(trimmedLine, name)
+      ) {
         continue
       }
       if (
@@ -3016,7 +3880,9 @@ export function parsePetThread(
   if (recoveredQuoteFollowupBulletLines.length > 0) {
     for (const attack of attacks) {
       if (!attack.notes?.length) continue
-      attack.notes = attack.notes.filter((note) => !recoveredQuoteFollowupBulletLines.includes(note))
+      attack.notes = attack.notes.filter(
+        (note) => !recoveredQuoteFollowupBulletLines.includes(note)
+      )
     }
   }
 
@@ -3417,9 +4283,21 @@ async function main() {
 
   // Always write ALL pets from progress map (full dataset)
   const finalPets = repairAccessFlags(
-    dedupeEntriesBySlug(
-      canonicalizePromotedRelationships(
-        promoteCrossPostFamilies(dedupeVariantEntries(Array.from(progressMap.values())))
+    inheritFamilyAttackImages(
+      splitExtraFluffyTogPetFamily(
+        splitPowerTogPetFamily(
+          splitGoldfishPetFamily(
+            splitCatPetFamilies(
+              repairTogriderFamily(
+                dedupeEntriesBySlug(
+                  canonicalizePromotedRelationships(
+                    promoteCrossPostFamilies(dedupeVariantEntries(Array.from(progressMap.values())))
+                  )
+                )
+              )
+            )
+          )
+        )
       )
     )
   ).sort((a, b) => {

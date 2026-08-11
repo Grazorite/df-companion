@@ -50,6 +50,7 @@ export interface Attack {
   name: string // "Attack Type 1", "Attack Type 2 / 2.1"
   description: string // Full description text
   images?: string[] // URLs to attack animation images
+  cooldown?: string // Optional cooldown metric for special attack formats like pet dragon skills
   notes?: string[] // Sub-bullet mechanic notes
 }
 

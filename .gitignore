@@ -39,3 +39,4 @@ src/data/*-progress.json.tmp
 src/data/backup/
 src/data/*.html
 temp.json
+.tmp/

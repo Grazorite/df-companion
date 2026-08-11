@@ -46,15 +46,15 @@ export default function LevelSelector({
     return null
   }
 
-  const variantLabels = forceLevelLabels
-    ? levels.map((level) => normalizeRomanDisplay(String(level.actualLevel ?? level.levelDisplay)))
-    : getLevelVariantLabels(levels, familyName, itemType)
+  const usesVariantLabels =
+    !forceLevelLabels && shouldShowVariantColumn(levels, familyName, itemType, hideVariantColumn)
+  const variantLabels = usesVariantLabels
+    ? getLevelVariantLabels(levels, familyName, itemType)
+    : levels.map((level) => normalizeRomanDisplay(String(level.actualLevel ?? level.levelDisplay)))
   const getButtonLabel = (level: LevelVariant, index: number) =>
     level.retired ? `${variantLabels[index]} (Retired)` : variantLabels[index]
   const indexedLevels = levels.map((level, index) => ({ level, index }))
 
-  const usesVariantLabels =
-    !forceLevelLabels && shouldShowVariantColumn(levels, familyName, itemType, hideVariantColumn)
   const useDropdown = levels.length > 12
   const activeLevel = levels[activeIndex]
   const compactButtons = levels.length > 8
