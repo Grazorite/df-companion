@@ -108,11 +108,11 @@
             ],
             "appearanceCaptions": [
               "Baby 1",
-              "1.1",
+              "Baby 1.1",
               "Toddler 1",
-              "1.1",
+              "Toddler 1.1",
               "Kid 1",
-              "1.1"
+              "Kid 1.1"
             ]
           },
           {
@@ -381,11 +381,11 @@
             ],
             "appearanceCaptions": [
               "Baby 1",
-              "1.1",
+              "Baby 1.1",
               "Toddler 1",
-              "1.1",
+              "Toddler 1.1",
               "Kid 1",
-              "1.1"
+              "Kid 1.1"
             ]
           },
           {
@@ -642,22 +642,12 @@
             "damageType": "N/A (skills 1-4) / Magic (skill 5)",
             "element": "N/A (skills 1-4) / As dragon (skill 5)",
             "buttonImageUrl": "https://i.imgur.com/oc3T4uZ.png",
-            "appearanceUrl": "https://i.imgur.com/aa9e9IJ.png",
+            "appearanceUrl": "https://i.imgur.com/pTGcZLf.jpg",
             "appearanceUrls": [
-              "https://i.imgur.com/aa9e9IJ.png",
-              "https://i.imgur.com/lcZAfWZ.png",
-              "https://i.imgur.com/0yHOLpY.png",
-              "https://i.imgur.com/Lp8gDEY.png",
-              "https://i.imgur.com/ukBrphQ.png",
               "https://i.imgur.com/pTGcZLf.jpg",
               "https://i.imgur.com/mXunakD.png"
             ],
             "appearanceCaptions": [
-              "-x",
-              "-x",
-              "-x",
-              "x",
-              "x",
               "1",
               "5"
             ]
@@ -672,21 +662,7 @@
             "damageType": "N/A",
             "element": "N/A",
             "buttonImageUrl": "https://i.imgur.com/XwnYGyk.png",
-            "appearanceUrl": "https://i.imgur.com/TteGrHu.png",
-            "appearanceUrls": [
-              "https://i.imgur.com/TteGrHu.png",
-              "https://i.imgur.com/aBapqk5.png",
-              "https://i.imgur.com/DzNtT1U.png",
-              "https://i.imgur.com/tcOS2PD.png",
-              "https://i.imgur.com/gsDuN45.png"
-            ],
-            "appearanceCaptions": [
-              "+x",
-              "+x",
-              "+x",
-              "+x",
-              "Appearance"
-            ]
+            "appearanceUrl": "https://i.imgur.com/gsDuN45.png"
           },
           {
             "name": "Fighting",
@@ -698,23 +674,13 @@
             "damageType": "Melee",
             "element": "As dragon",
             "buttonImageUrl": "https://i.imgur.com/pditn23.png",
-            "appearanceUrl": "https://i.imgur.com/Ebd1SB5.png",
+            "appearanceUrl": "https://i.imgur.com/aaXfzSU.png",
             "appearanceUrls": [
-              "https://i.imgur.com/Ebd1SB5.png",
-              "https://i.imgur.com/PAnIhpF.png",
-              "https://i.imgur.com/5uNpMF4.png",
-              "https://i.imgur.com/D2743Fz.png",
-              "https://i.imgur.com/8qi0j7I.png",
               "https://i.imgur.com/aaXfzSU.png",
               "https://i.imgur.com/nphRX0H.png",
               "https://i.imgur.com/2VXQj4H.png"
             ],
             "appearanceCaptions": [
-              "x",
-              "x - y",
-              "x",
-              "x - y",
-              "x",
               "1",
               "2",
               "3"
@@ -730,13 +696,8 @@
             "damageType": "Magic",
             "element": "As dragon",
             "buttonImageUrl": "https://i.imgur.com/N9rMFcr.png",
-            "appearanceUrl": "https://i.imgur.com/uXpllFl.png",
+            "appearanceUrl": "https://i.imgur.com/CrM19nK.png",
             "appearanceUrls": [
-              "https://i.imgur.com/uXpllFl.png",
-              "https://i.imgur.com/8OwYUTC.png",
-              "https://i.imgur.com/dKjI3Gr.png",
-              "https://i.imgur.com/i7Ce3Lg.png",
-              "https://i.imgur.com/6zw0ejI.png",
               "https://i.imgur.com/CrM19nK.png",
               "https://i.imgur.com/T4GM0JQ.png",
               "https://i.imgur.com/Egfg8JX.png",
@@ -744,11 +705,6 @@
               "https://i.imgur.com/OZotwTN.png"
             ],
             "appearanceCaptions": [
-              "x",
-              "-x",
-              "x",
-              "x - y",
-              "x",
               "1",
               "2",
               "3",
@@ -766,21 +722,7 @@
             "damageType": "N/A",
             "element": "N/A",
             "buttonImageUrl": "https://i.imgur.com/EE6SMp8.png",
-            "appearanceUrl": "https://i.imgur.com/7gUkV1P.png",
-            "appearanceUrls": [
-              "https://i.imgur.com/7gUkV1P.png",
-              "https://i.imgur.com/QCBZKO5.png",
-              "https://i.imgur.com/CcsdKRW.png",
-              "https://i.imgur.com/8YSIzv4.png",
-              "https://i.imgur.com/gsDuN45.png"
-            ],
-            "appearanceCaptions": [
-              "-x",
-              "+x",
-              "x",
-              "x",
-              "Appearance"
-            ]
+            "appearanceUrl": "https://i.imgur.com/gsDuN45.png"
           },
           {
             "name": "Attack",

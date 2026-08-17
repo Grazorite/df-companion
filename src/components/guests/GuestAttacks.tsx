@@ -8,6 +8,7 @@ import ExpandableImageList from '../shared/ExpandableImageList'
 interface GuestAttacksProps {
   attacks: GuestAttack[]
   heading?: string
+  imageLabel?: string
 }
 
 function AttackButton({ imageUrl, name }: { imageUrl?: string; name: string }) {
@@ -43,9 +44,11 @@ function AttackButton({ imageUrl, name }: { imageUrl?: string; name: string }) {
 function AttackCard({
   attack,
   defaultOpen = false,
+  imageLabel,
 }: {
   attack: GuestAttack
   defaultOpen?: boolean
+  imageLabel: string
 }) {
   const [isOpen, setIsOpen] = useState(defaultOpen)
   // The effect (including its own bullet points) is shown as-is. Only an explicit
@@ -140,6 +143,7 @@ function AttackCard({
             <ExpandableImageList
               images={appearanceImages}
               captions={attack.appearanceCaptions}
+              label={imageLabel}
               altPrefix={`${attack.name} appearance`}
             />
           )}
@@ -149,7 +153,11 @@ function AttackCard({
   )
 }
 
-export default function GuestAttacks({ attacks, heading }: GuestAttacksProps) {
+export default function GuestAttacks({
+  attacks,
+  heading,
+  imageLabel = 'Attack Image',
+}: GuestAttacksProps) {
   if (!attacks || attacks.length === 0) return null
 
   // Filter out "Skip" attack
@@ -169,7 +177,12 @@ export default function GuestAttacks({ attacks, heading }: GuestAttacksProps) {
       </h2>
       <div className="space-y-3">
         {filteredAttacks.map((attack, index) => (
-          <AttackCard key={index} attack={attack} defaultOpen={index === 0} />
+          <AttackCard
+            key={index}
+            attack={attack}
+            defaultOpen={index === 0}
+            imageLabel={imageLabel}
+          />
         ))}
       </div>
     </section>

@@ -176,8 +176,11 @@ Weapon families follow the same base/DC split pattern as Pets and Accessories:
 - **Base + DC access branches** (e.g. Abyssal Elf Scepter): kept as separate same-level variants (`I` / `I (DC)`), each with its own obtain method. The DC variant gets `dcRequired: true`.
 - **Multiple non-DC methods** at the same level (e.g. 13th Staff level 13: Undead Slayer Store for Gold + The Stakeout for free): consolidated into ONE variant with multiple `obtainVariants` (rendered as Method 1/2). Notes are scoped per-level.
 - **Single-level threads with base + DC** (e.g. `|` weapon): become a family with `(Base)` and `(DC)` variant labels.
+- **Default weapons** are identified by source/forum titles containing a parenthetical default marker such as `(Rogue Default)` or `(Shadow Rogue Default)`. They get `isDefault: true`, a `default` tag, and must not be consolidated with other default weapons even when names/descriptions are similar. Example: `Dagger (Rogue Default)` and `Shadowdagger (Shadow Rogue Default)` stay separate. The current hardcoded exception is `Longsword (ArchKnight Default)`, which may consolidate the closely related bare `Longsword` posts into one family.
 
 The scraper detects families structurally (multiple title blocks across posts) — no name-based gate like `(I-VIII)` or `(All Versions)` is required.
+
+Explicitly linked `Minor`/`Major` weapon pairs may consolidate under the shared base name only when removing the rank prefix leaves the exact same normalized title. Example: `Minor Sunsabre` + `Major Sunsabre` become the `Sunsabre` family with `Minor`/`Major` variants. Do not apply this to loose single-word suffix matches where the base titles differ, such as `Minor Bronze Blade` / `Major Bronzed Blade`.
 
 ### Mixed Variant Group Splits
 
@@ -186,8 +189,11 @@ Some weapon threads mix fundamentally different variant groups inside one forum 
 - Wavecrest, High Tide, and Deluge Roman/base progressions split from named variants such as `Missed`, `Lost`, `Stray`, and `Wayward`.
 - Sea's Blessing/Favor/Bounty split into `'09`, `'10`, and modern progressions.
 - Amaterasu/Tsukuyomi progressions split from `Omikami`/`no-Mikoto`; Threadcutter/Time's Harvest split `Alpha` from Roman progressions; The Massive Axe splits `XL` from `I-IV`.
+- Fidelitas/Decus/Ferocitas split into three sibling families each: the `Fourth of July Rares` `I-V` progression, the named `Rufus`/`Albus`/`Azureus`/`Aurus` family, and the `Fourth of July Weapons` `I-VIII` progression. Keep these as hardcoded split exceptions because the two Roman groups reuse the same source titles and differ by obtain era.
 
 Weapon targeted refreshes support `--fresh`; use it when the selected family should replace existing local entries and aliases instead of merging into them. The fresh matcher intentionally preserves explicit named parenthetical siblings, so refreshing `Wavecrest (I-V)` does not delete `Wavecrest (Missed, Lost, Stray, Wayward)`.
+
+Weapon specials can be refreshed without a full weapon scrape by using the current JSON as the target list: `npm run scrape:weapons -- --special-only --fresh --concurrency=1`. This collects every source post for existing special-bearing entries/families before scraping, so cross-post families such as the Destiny weapons stay intact. For a narrower pass, `--missing-special-images-only` may be combined with `--special-only` to skip entries that already have `specialImageUrls`.
 
 ### Special Classification Exceptions
 
@@ -318,11 +324,17 @@ All item-family detail pages should use a consistent information order unless a 
 
 **Image selector independence:** On pets and guests, the image selector is independent from the level/variant selector — switching variants does not move the image. The image only resets when navigating to a different entry. Weapons intentionally link the two selectors under their own conditions (variant-specific images); pets/guests do not.
 
-**Image expectation and placeholders:** Badges, pets/guests, weapons, and image-bearing accessory subtypes should display the shared missing-image placeholder when an expected image is absent or fails to load. For accessories, this requirement applies to capes/wings and helms, plus artifacts that are helm/cape-like by item type or equip spot. Do not apply this placeholder rule to belts, bracers, necklaces, rings, trinkets, or non-helm/cape artifacts. Some items are intentionally invisible and should not show the placeholder; document these as hardcoded exceptions and preserve their Other Information notes instead (for example: Cloak of Shadows, Invisible Cape, Invisible Helm, Mantle of Shadows, Wrap of Shadows). For every future category, ask whether images are expected before implementing the detail image section or placeholder behavior.
+**Image expectation and placeholders:** Badges, pets/guests, weapons, and image-bearing accessory subtypes should display the shared missing-image placeholder when an expected image is absent or fails to load. For accessories, this requirement applies to capes/wings and helms, plus artifacts that are helm/cape-like by item type or equip spot. Do not apply this placeholder rule to belts, bracers, necklaces, rings, trinkets, or non-helm/cape artifacts. Some items are intentionally invisible and should not show the placeholder; prefer suppressing from Other Information/notes text such as "Weapon is not visible." or "Cape appears invisible" before adding hardcoded exceptions, and preserve those notes instead. Existing hardcoded exceptions cover known invisible accessory entries where needed (for example: Cloak of Shadows, Invisible Cape, Invisible Helm, Mantle of Shadows, Wrap of Shadows). For every future category, ask whether images are expected before implementing the detail image section or placeholder behavior.
 
 `Also See` must appear below `Sources` and should use the same related-card section treatment as Pets/Guests: top border, compact uppercase heading, and a responsive two-column card grid.
 
 **Expandable attack/skill cards:** Expanded attack content should use one consistent padded content shell (`p-4 sm:p-5`) with vertical spacing between blocks. Avoid mixing per-child top/bottom margins for effect text, stats tables, notes, and attack images; this keeps guest attacks, pet attacks, trinket skills, and weapon specials visually aligned.
+
+When attack/skill/special images are hidden behind an expandable image toggle, keep the label category-specific and count-aware: guests and pets use `Attack Image` / `Attack Images (x)`, trinket abilities use `Ability Image` / `Ability Images (x)`, and weapon specials use `Effect Image` / `Effect Images (x)`. Preserve forum hotlink captions when present (`Normal`, `Magic 1`, `1.1`, etc.) and filter out calculation/table-value links such as `+x`, `-x`, `x`, `y`, and `x - y`; those are not animation images.
+
+Weapon special effect images are optional. Some weapon specials only have the special button/icon and text effect details, with no separate hotlinked appearance/effect image. Missing `specialImageUrls` must not be treated as a scraper or validation failure unless the forum clearly provides a relevant appearance/effect image link.
+
+Accessory Other Information should preserve nested forum bullet indentation. If nested bullets appear flattened in JSON, treat it as a parser/stale-data issue and prefer a targeted scraper fix using indentation-preserving forum text parsing plus a narrow rescrape/compare, rather than manually editing broad JSON output.
 
 `Also See` may combine explicit forum refs with conservative inferred refs. Inferred refs are category-scoped and should require a normalized obtain-method match plus high name similarity. Cross-subtype inferred refs are allowed only inside a top-level category that can load all subtype JSON together (currently Accessories and Weapons); visually distinguish cross-subtype cards with a small subtype chip where the card design supports it. Pets/Guests, Accessories, and Weapons share `src/hooks/useRelatedItems.ts` for explicit refs, reverse explicit refs, and inferred refs; category hooks should provide adapters instead of duplicating that algorithm. Future family-capable categories should use this shared hook first, then add category-specific inference through its optional extension points only when the existing obtain-fingerprint rule is insufficient.
 
@@ -342,6 +354,10 @@ For subtype-heavy datasets, alias/canonical checks must be scoped to the subtype
 ### Filter Pills Pattern (applies to all content sections)
 
 **Universal Filter Hierarchy** (all pages follow this pattern):
+
+Filter pills below dataset/segment selectors are tri-state by default: neutral → include → exclude → neutral. Included filters use that level's active colour; excluded filters use the shared muted red treatment and a leading minus icon. URL params keep includes in the existing keys (`access`, `category`, `element`) and put exclusions in parallel keys (`excludeAccess`, `excludeCategory`, `excludeElement`). Keep clear-filter controls visible whenever either include or exclude filters are active, and echo exclusions in result-count text as "excluding ...".
+
+Dataset selectors are not tri-state filters. Accessory and weapon subtype selectors must remain single-select (`type=...`) so the page lazy-loads only one subtype/shard group at a time. Do not allow combined accessory or weapon subtype browsing unless the data-loading strategy has been explicitly redesigned for it.
 
 **Level 1 (Highest): Access filters** — Universal across all pages
 - Styling: `bg-gold-bright text-bg-base` when active, `text-xs px-3 py-1.5` sizing
@@ -404,6 +420,13 @@ URL query params supported by `/pets`:
 - **Level 2**: `Cosmetic` when the loaded subtype dataset contains cosmetic entries; then `Temp`, `Rare`, `Seasonal`, `Special Offer`, `Retired` where present
 - **Level 3**: Element filters
 - **Detail pages**: shared accessory detail layout with family switching, obtain cards, and trinket skill rendering when linked ability posts exist
+
+**Weapons Page** — Filter levels applied:
+- **Level 1**: `Multiple Versions`, `DA Required`, `Merge Required`, `Free`, `DC`, `DM`, `Default`
+- **Level 2**: `Armor Customization`, `Special`, `Cosmetic`, `Temp`, `Rare`, `Seasonal`, `Special Offer`, `Retired`
+- **Level 3**: Element filters
+
+Accessory scraper runs for trinkets and ability-bearing artifacts should enrich parsed trinket skills with `trinketSkillEffectTypes` from the forum effect index (`A-Z Trinket Skills`). Render these as `Effect Type(s): ...` on detail pages only, below the description/release-date area. This applies to artifact entries that behave like trinkets (for example Dragon's Bulwark-style entries) as well as the trinket subtype itself.
 
 Accessory consolidation defaults to keeping same-thread or explicitly connected level/access variants together as one item family. Split related accessories into separate entries only when they are meaningfully different items and the forum relationship should be represented as `Also See` instead of a selector. Example: Necromancer Cape and Necromancer Cloak are separate entries with mutual Also See links, while same-name level/DC branches normally remain one family with clear variant labels.
 

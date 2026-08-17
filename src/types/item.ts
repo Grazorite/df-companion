@@ -30,6 +30,7 @@
  *   Example: "75 Defender's Medals"
  */
 import type { GuestAttack, GuestStats } from './pet'
+import type { WeaponSpecial } from './weapon'
 
 export type PriceType = 'gold' | 'dc' | 'dm' | 'free' | 'merge'
 
@@ -199,6 +200,8 @@ export interface LevelVariant {
   resists?: string // Only if different from shared.resists
   rarity?: string // Only if different from shared.rarity
   attacks?: VariantAttack[] // Only if attacks differ at this level
+  weaponSpecial?: WeaponSpecial // Weapon-only: preserves parsed specials through family consolidation
+  weaponSpecials?: WeaponSpecial[] // Weapon-only: preserves multiple parsed specials through family consolidation
   guestStats?: GuestStats
   itemType?: string // Variant-specific equipment type when a family can differ
   notes?: string // Level-specific notes

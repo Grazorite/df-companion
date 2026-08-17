@@ -36,9 +36,11 @@ import DetailTypePill from '../shared/DetailTypePill'
 import { buildFilterLink } from '../../utils/filterLinks'
 import { extractRateFromEffect } from '../../utils/effectFormatting'
 import { splitPopupText } from '../../utils/popupText'
+import { notesIndicateInvisibleItem } from '../../utils/imageVisibility'
 import SourceLinksCard from '../shared/SourceLinksCard'
 import ItemImage from '../shared/ItemImage'
 import MetricStrip from '../shared/MetricStrip'
+import ExpandableImageList from '../shared/ExpandableImageList'
 import WeaponCard from './WeaponCard'
 import WeaponStatsTable from './WeaponStatsTable'
 
@@ -89,6 +91,7 @@ function WeaponSpecialCard({
   const effectPopups = effectText ? splitPopupText(effectText).popupGroups : []
   const notesPopups = special.notes ? splitPopupText(special.notes).popupGroups : []
   const popupGroups = [...effectPopups, ...notesPopups]
+  const specialImages = special.specialImageUrls ?? []
   const metrics =
     special.activation === 'manual'
       ? [
@@ -146,6 +149,17 @@ function WeaponSpecialCard({
           )}
 
           <PopupQuoteBlocks groups={popupGroups} className="mt-4" />
+
+          {specialImages.length > 0 && (
+            <div className="mt-4">
+              <ExpandableImageList
+                images={specialImages}
+                captions={special.specialImageCaptions}
+                label="Effect Image"
+                altPrefix={`${title} special`}
+              />
+            </div>
+          )}
         </div>
       )}
     </div>
@@ -355,6 +369,12 @@ export default function WeaponDetail({ weapon, filterBase }: WeaponDetailProps) 
   }, [altImages, imageUrl, title])
   const defaultImageIndex = useMemo(() => getDefaultImageIndex(allImages), [allImages])
   const currentImage = allImages[activeImageIndex] ?? allImages[defaultImageIndex]
+  const suppressMissingImagePlaceholder = notesIndicateInvisibleItem(
+    family?.shared.notes,
+    activeLevel?.notes,
+    singleWeapon?.notes
+  )
+  const showImageSection = Boolean(currentImage) || !suppressMissingImagePlaceholder
   const hasParentheticalVariants =
     family !== undefined && hasParentheticalVariantFamilyName(family.familyName)
   const useLevelOnlyLabels =
@@ -596,30 +616,36 @@ export default function WeaponDetail({ weapon, filterBase }: WeaponDetailProps) 
         </section>
       )}
 
-      <div className="mb-8">
-        <ItemImage src={currentImage?.url} alt={currentImage?.caption ?? title} showPlaceholder />
-        {allImages.length > 1 && (
-          <div className="mt-4 flex flex-wrap gap-2 justify-center">
-            {allImages.map((image, index) => (
-              <button
-                key={`${image.url}-${index}`}
-                onClick={() => {
-                  setActiveImageIndex(index)
-                  const variantIndex = imageVariantIndexes[index]
-                  if (variantIndex !== undefined) setActiveIndex(variantIndex)
-                }}
-                className={`min-h-11 px-4 py-2 rounded-lg text-sm transition-colors ${
-                  activeImageIndex === index
-                    ? 'bg-gold text-bg-base'
-                    : 'bg-bg-surface border border-border-default text-text-secondary hover:text-text-primary hover:border-border-hover'
-                }`}
-              >
-                {image.caption}
-              </button>
-            ))}
-          </div>
-        )}
-      </div>
+      {showImageSection && (
+        <div className="mb-8">
+          <ItemImage
+            src={currentImage?.url}
+            alt={currentImage?.caption ?? title}
+            showPlaceholder={!suppressMissingImagePlaceholder}
+          />
+          {allImages.length > 1 && (
+            <div className="mt-4 flex flex-wrap gap-2 justify-center">
+              {allImages.map((image, index) => (
+                <button
+                  key={`${image.url}-${index}`}
+                  onClick={() => {
+                    setActiveImageIndex(index)
+                    const variantIndex = imageVariantIndexes[index]
+                    if (variantIndex !== undefined) setActiveIndex(variantIndex)
+                  }}
+                  className={`min-h-11 px-4 py-2 rounded-lg text-sm transition-colors ${
+                    activeImageIndex === index
+                      ? 'bg-gold text-bg-base'
+                      : 'bg-bg-surface border border-border-default text-text-secondary hover:text-text-primary hover:border-border-hover'
+                  }`}
+                >
+                  {image.caption}
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
+      )}
 
       {armorCustomization && (
         <ArmorCustomizationMetadataStrip

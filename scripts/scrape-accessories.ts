@@ -64,6 +64,7 @@ import { applyLimit, getArg, getConcurrencyArg, getLimitArg } from './lib/scrape
 import { processWithConcurrency } from './lib/work-queue.ts'
 
 const ACCESSORIES_INDEX_URL = `${FORUM_BASE}/printable.asp?m=20985110`
+const TRINKET_SKILL_EFFECTS_URL = `${FORUM_BASE}/fb.asp?m=22371941`
 const OUTPUT_DIR = path.resolve(import.meta.dirname, '../src/data')
 const DELAY_MS = 900
 const ACCESSORY_IMAGE_OVERRIDES: Record<string, string> = {
@@ -130,6 +131,129 @@ function loadCookie(): string {
 
 function accessorySlugForName(name: string): string {
   return `accessory-${slugify(normalizeAccessoryFamilyName(name))}`
+}
+
+function normalizeSkillEffectLookupName(name: string): string {
+  const normalized = normalizeAccessoryFamilyName(name)
+    .replace(/[’‘]/g, "'")
+    .replace(/\s+\((?:with|lasts|requires)\b[^)]*\)\s*$/i, '')
+    .replace(/\s+\((?:D-Amulet|D-Coins|D-Medal|Normal|Rare|Seasonal|S-Offer|Retired|ArchKnight|Free|Gold|Merge|Temp|Special Offer|DM|DC|DA)(?:[;/,\s-]+(?:D-Amulet|D-Coins|D-Medal|Normal|Rare|Seasonal|S-Offer|Retired|ArchKnight|Free|Gold|Merge|Temp|Special Offer|DM|DC|DA))*\)\s*$/i, '')
+    .trim()
+
+  const articleMatch = normalized.match(/^(.*),\s*The$/i)
+  const displayName = articleMatch ? `The ${articleMatch[1]}` : normalized
+
+  return displayName
+    .replace(/^The\s+/i, '')
+    .replace(/[^a-z0-9]+/gi, ' ')
+    .trim()
+    .toLowerCase()
+}
+
+function addSkillEffectMapEntry(
+  effectTypesBySkill: Map<string, string[]>,
+  skillName: string,
+  effectType: string
+) {
+  const keys = new Set([normalizeSkillEffectLookupName(skillName)])
+  const numberedVariantBase = skillName.replace(/\s+\(\d+\)\s*$/i, '').trim()
+  if (numberedVariantBase !== skillName) {
+    keys.add(normalizeSkillEffectLookupName(numberedVariantBase))
+  }
+
+  for (const key of keys) {
+    if (!key) continue
+    const existing = effectTypesBySkill.get(key) ?? []
+    if (!existing.includes(effectType)) {
+      effectTypesBySkill.set(key, [...existing, effectType])
+    }
+  }
+}
+
+function parseTrinketSkillEffectTypes(html: string): Map<string, string[]> {
+  const effectTypesBySkill = new Map<string, string[]>()
+  const text = normalizeStructuredText(html)
+  const marker = 'Trinket Skills Sorted by Effects'
+  const firstMarkerIndex = text.indexOf(marker)
+  const secondMarkerIndex =
+    firstMarkerIndex >= 0 ? text.indexOf(marker, firstMarkerIndex + marker.length) : -1
+  if (secondMarkerIndex < 0) return effectTypesBySkill
+
+  const effectText = text
+    .slice(secondMarkerIndex + marker.length)
+    .split(/< Message edited|Post #:/i)[0]
+  const validEffectTypes = new Set([
+    'Damage',
+    'DoT',
+    'Stats',
+    'Boost',
+    'Bonus',
+    'Crit',
+    'Avoidance',
+    'Defense',
+    'Damage Reduction',
+    'Resists',
+    'Immobility',
+    'Heal',
+    'Stun',
+    'Gold',
+    'Utility',
+  ])
+  let currentEffectType: string | undefined
+
+  for (const rawLine of effectText.split('\n')) {
+    const line = rawLine.trim()
+    if (!line) continue
+    if (validEffectTypes.has(line)) {
+      currentEffectType = line
+      continue
+    }
+    if (!currentEffectType || !line.includes(':')) continue
+
+    const skillText = line
+      .slice(line.lastIndexOf(':') + 1)
+      .replace(/\s+\((?:with|lasts|requires)\b[^)]*\)\s*$/i, '')
+      .trim()
+    if (!skillText) continue
+
+    addSkillEffectMapEntry(effectTypesBySkill, skillText, currentEffectType)
+  }
+
+  return effectTypesBySkill
+}
+
+async function fetchTrinketSkillEffectTypes(cookie: string): Promise<Map<string, string[]>> {
+  try {
+    const html = await fetchPage(TRINKET_SKILL_EFFECTS_URL, cookie)
+    return parseTrinketSkillEffectTypes(html)
+  } catch (error) {
+    console.warn(
+      `⚠️  Could not fetch trinket skill effect types: ${
+        error instanceof Error ? error.message : String(error)
+      }`
+    )
+    return new Map()
+  }
+}
+
+function resolveTrinketSkillEffectTypes(
+  entry: Accessory,
+  effectTypesBySkill: Map<string, string[]>
+): string[] {
+  const names = [
+    entry.ability,
+    entry.name,
+    ...(entry.attacks ?? []).map((attack) => attack.name),
+  ].filter((value): value is string => Boolean(value))
+  const effectTypes = new Set<string>()
+
+  for (const name of names) {
+    for (const effectType of effectTypesBySkill.get(normalizeSkillEffectLookupName(name)) ?? []) {
+      effectTypes.add(effectType)
+    }
+  }
+
+  return Array.from(effectTypes)
 }
 
 function preserveStubVariantSuffix(stubName: string, title?: string): string | undefined {
@@ -229,6 +353,9 @@ function familyVariantToAccessory(family: AccessoryFamily, variant: LevelVariant
     itemType: family.itemType,
     equipSpot: family.equipSlot,
     modifies: family.modifies,
+    ...(family.trinketSkillEffectTypes
+      ? { trinketSkillEffectTypes: family.trinketSkillEffectTypes }
+      : {}),
     category: family.category,
     obtainMethods,
     notes: variant.notes ?? family.shared.notes,
@@ -522,6 +649,54 @@ function parseNotes(html: string): string | undefined {
   return noteLines.length > 0 ? noteLines.join('\n') : undefined
 }
 
+function normalizeLinkedImageUrl(url: string): string {
+  const normalized = decodeHtml(url).replace(/&amp;/g, '&').trim()
+  const imgurPageMatch = normalized.match(
+    /^https?:\/\/(?:www\.)?imgur\.com\/(?!a\/|gallery\/)([A-Za-z0-9]+)(?:[?#].*)?$/i
+  )
+  if (imgurPageMatch) return `https://i.imgur.com/${imgurPageMatch[1]}.png`
+  return normalized
+}
+
+function isLikelyLinkedImageUrl(url: string): boolean {
+  return (
+    /\.(?:png|jpg|jpeg|gif|bmp)(?:[?#].*)?$/i.test(url) ||
+    /(?:i\.)?imgur\.com\/(?!a\/|gallery\/)/i.test(url) ||
+    /\/f\/upfiles\//i.test(url)
+  )
+}
+
+function normalizeAppearanceCaption(rawCaption: string): string {
+  const caption = stripHtml(decodeHtml(rawCaption))
+    .replace(/\s+/g, ' ')
+    .replace(/\s*:\s*$/, '')
+    .trim()
+
+  return caption.replace(/^Appearance\s*/i, '').trim() || 'Appearance'
+}
+
+function extractTrinketSkillAppearanceLinks(html: string): {
+  urls: string[]
+  captions: string[]
+} {
+  const entries: Array<{ url: string; caption: string }> = []
+  for (const match of html.matchAll(/<a[^>]+href=(["'])(.*?)\1[^>]*>([\s\S]*?)<\/a>/gi)) {
+    const url = normalizeLinkedImageUrl(match[2] ?? '')
+    if (!isLikelyLinkedImageUrl(url)) continue
+
+    const label = stripHtml(decodeHtml(match[3] ?? '')).replace(/\s+/g, ' ').trim()
+    if (!/^Appearance(?:\s+|$)/i.test(label) && !/^\d+(?:\.\d+)?$/i.test(label)) continue
+    if (entries.some((entry) => entry.url === url)) continue
+
+    entries.push({ url, caption: normalizeAppearanceCaption(label) })
+  }
+
+  return {
+    urls: entries.map((entry) => entry.url),
+    captions: entries.map((entry) => entry.caption),
+  }
+}
+
 function buildTrinketAttackFromHtml(html: string, fallbackName: string): GuestAttack {
   const title = parseAccessoryTitle(html) ?? fallbackName
   const description = parseDescription(html) || undefined
@@ -597,7 +772,8 @@ function buildTrinketAttackFromHtml(html: string, fallbackName: string): GuestAt
         !/Appearance/i.test(src)
     )
 
-  const appearanceUrl = html.match(/<a[^>]+href="([^"]+)"[^>]*>([^<]*Appearance[^<]*)<\/a>/i)?.[1]
+  const appearanceLinks = extractTrinketSkillAppearanceLinks(html)
+  const appearanceUrl = appearanceLinks.urls[0]
 
   return {
     name: title,
@@ -610,6 +786,10 @@ function buildTrinketAttackFromHtml(html: string, fallbackName: string): GuestAt
     element,
     ...(buttonImageUrl ? { buttonImageUrl } : {}),
     ...(appearanceUrl ? { appearanceUrl } : {}),
+    ...(appearanceLinks.urls.length > 1 ? { appearanceUrls: appearanceLinks.urls } : {}),
+    ...(appearanceLinks.captions.some((caption) => caption !== 'Appearance')
+      ? { appearanceCaptions: appearanceLinks.captions }
+      : {}),
     ...(skillNotes ? { notes: skillNotes } : {}),
   }
 }
@@ -1038,6 +1218,25 @@ function deriveAccessoryVariantName(name: string, familyName: string): string | 
   return undefined
 }
 
+function deriveAccessorySkillRequirementVariantName(
+  variant: Accessory,
+  familyName: string
+): string | undefined {
+  if (normalizeAccessoryFamilyName(variant.name) !== normalizeAccessoryFamilyName(familyName)) {
+    return undefined
+  }
+
+  const escapedFamilyName = familyName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+  for (const attack of variant.attacks ?? []) {
+    const match = attack.requirements?.match(
+      new RegExp(`^${escapedFamilyName}\\s*(\\([^)]*\\))\\s+equipped$`, 'i')
+    )
+    if (match?.[1]) return match[1].trim()
+  }
+
+  return undefined
+}
+
 function mergeAccessoryAlsoSee(variants: Accessory[], familySlug: string): AlsoSeeRef[] {
   const variantSlugs = new Set(variants.map((variant) => variant.slug))
   const refs = new Map<string, AlsoSeeRef>()
@@ -1418,26 +1617,40 @@ function buildAccessoryEntry(
   }
 }
 
-async function enrichAccessoryAbility(entry: Accessory, cookie: string): Promise<Accessory> {
+async function enrichAccessoryAbility(
+  entry: Accessory,
+  cookie: string,
+  effectTypesBySkill: Map<string, string[]>
+): Promise<Accessory> {
   const strategy = getAccessorySubtypeStrategy(entry.subtype)
   if (!strategy.shouldEnrichAbility(entry)) return entry
 
   const abilityUrl = entry.abilityUrl
-  if (!abilityUrl) return entry
+  if (!abilityUrl) {
+    const effectTypes = resolveTrinketSkillEffectTypes(entry, effectTypesBySkill)
+    return effectTypes.length > 0 ? { ...entry, trinketSkillEffectTypes: effectTypes } : entry
+  }
 
   const abilityMessageId = abilityUrl.match(/m=(\d+)/i)?.[1]
-  if (!abilityMessageId) return entry
+  if (!abilityMessageId) {
+    const effectTypes = resolveTrinketSkillEffectTypes(entry, effectTypesBySkill)
+    return effectTypes.length > 0 ? { ...entry, trinketSkillEffectTypes: effectTypes } : entry
+  }
 
   try {
     const abilityHtml = await fetchPostContent(abilityMessageId, cookie)
     const attacks = parseTrinketAttacks(abilityHtml, entry.ability ?? entry.name, entry.name)
-    if (attacks.length === 0) return entry
-    return {
-      ...entry,
-      attacks,
-    }
+    const enrichedEntry = attacks.length > 0 ? { ...entry, attacks } : entry
+    const effectTypes = resolveTrinketSkillEffectTypes(enrichedEntry, effectTypesBySkill)
+    return effectTypes.length > 0
+      ? {
+          ...enrichedEntry,
+          trinketSkillEffectTypes: effectTypes,
+        }
+      : enrichedEntry
   } catch {
-    return entry
+    const effectTypes = resolveTrinketSkillEffectTypes(entry, effectTypesBySkill)
+    return effectTypes.length > 0 ? { ...entry, trinketSkillEffectTypes: effectTypes } : entry
   }
 }
 
@@ -1461,6 +1674,9 @@ function buildAccessoryFamily(
   )
   const abilities = uniqueStrings(
     consolidatedVariants.map((variant) => variant.ability).filter(Boolean)
+  )
+  const trinketSkillEffectTypes = uniqueStrings(
+    consolidatedVariants.flatMap((variant) => variant.trinketSkillEffectTypes ?? [])
   )
   const attacks = consolidatedVariants
     .map((variant) => variant.attacks)
@@ -1494,7 +1710,15 @@ function buildAccessoryFamily(
     .map((variant, index) => {
       const normalizedLevel = normalizeLevel(variant.level ?? String(index + 1))
       const actualLevel = parseNumericLevel(variant.level)
-      const derivedVariantName = deriveAccessoryVariantName(variant.name, familyName)
+      const skillRequirementVariantName = deriveAccessorySkillRequirementVariantName(
+        variant,
+        familyName
+      )
+      const sourceName = skillRequirementVariantName
+        ? `${familyName} ${skillRequirementVariantName}`
+        : variant.name
+      const derivedVariantName =
+        skillRequirementVariantName ?? deriveAccessoryVariantName(variant.name, familyName)
       const variantName =
         derivedVariantName ??
         (expectedRomanVariants[0] === 'I' && variant.name.trim() === familyName ? 'I' : undefined)
@@ -1509,7 +1733,7 @@ function buildAccessoryFamily(
         levelDisplay: normalizedLevel.display,
         ...(actualLevel !== undefined ? { actualLevel } : {}),
         ...(resolvedVariantName ? { variantName: resolvedVariantName } : {}),
-        name: variant.name,
+        name: sourceName,
         damage: '',
         stats: variant.stats ?? 'None',
         obtainVariants: variant.obtainMethods,
@@ -1531,12 +1755,21 @@ function buildAccessoryFamily(
       return aLevel - bLevel || compareTitles(a.name, b.name)
     })
 
-  const familySources: FamilySourceRef[] = variants.map((variant, index) => ({
-    url: variant.forumUrl,
-    title: `DF Encyclopedia: ${variant.name}`,
-    variantLabel: variant.name,
-    isPrimary: index === 0,
-  }))
+  const familySources: FamilySourceRef[] = variants.map((variant, index) => {
+    const skillRequirementVariantName = deriveAccessorySkillRequirementVariantName(
+      variant,
+      familyName
+    )
+    const sourceName = skillRequirementVariantName
+      ? `${familyName} ${skillRequirementVariantName}`
+      : variant.name
+    return {
+      url: variant.forumUrl,
+      title: `DF Encyclopedia: ${sourceName}`,
+      variantLabel: sourceName,
+      isPrimary: index === 0,
+    }
+  })
   const aliasSlugs = Array.from(new Set(variants.map((variant) => variant.slug))).filter(
     (slug) => slug !== familySlug
   )
@@ -1574,6 +1807,7 @@ function buildAccessoryFamily(
         ? armorCustomizations[0]
         : consolidatedVariants.find((variant) => variant.armorCustomization)?.armorCustomization,
     category: consolidatedVariants.find((variant) => variant.category)?.category,
+    ...(trinketSkillEffectTypes.length > 0 ? { trinketSkillEffectTypes } : {}),
     releaseDate: consolidatedVariants.find((variant) => variant.releaseDate)?.releaseDate ?? '',
     tags: Array.from(new Set(consolidatedVariants.flatMap((variant) => variant.tags))).sort(),
     isTemp: consolidatedVariants.some((variant) => variant.isTemp) || undefined,
@@ -1616,7 +1850,8 @@ function buildAccessoryFamily(
 async function buildAccessoryOrFamily(
   stub: AccessoryStub,
   cookie: string,
-  resolveAlsoSee: AccessoryRefResolver
+  resolveAlsoSee: AccessoryRefResolver,
+  effectTypesBySkill: Map<string, string[]>
 ): Promise<AccessoryEntry> {
   const hasExplicitThreadHint = hasMultipleVersionHint(stub.name)
   const shouldInspectThread = hasExplicitThreadHint || shouldInspectThreadForSubtype(stub.subtype)
@@ -1648,7 +1883,8 @@ async function buildAccessoryOrFamily(
           name: title,
           forumUrl: post.sourceUrl,
         }),
-        cookie
+        cookie,
+        effectTypesBySkill
       )
 
       if (!variant.level && !variant.stats && variant.obtainMethods.length === 0) continue
@@ -1719,7 +1955,8 @@ async function buildAccessoryOrFamily(
       resolveAlsoSee,
       resolvedTitle ? { name: resolvedTitle } : undefined
     ),
-    cookie
+    cookie,
+    effectTypesBySkill
   )
   const strategy = getAccessorySubtypeStrategy(stub.subtype)
   if (
@@ -1980,6 +2217,11 @@ async function main() {
     : subtypeArg
       ? new Set<AccessorySubtype>([subtypeArg])
       : new Set<AccessorySubtype>(ACCESSORY_SUBTYPES.map((meta) => meta.subtype))
+  const shouldLoadTrinketSkillEffects =
+    selectedSubtypes.has('trinket') || selectedSubtypes.has('artifact')
+  const trinketSkillEffectTypes = shouldLoadTrinketSkillEffects
+    ? await fetchTrinketSkillEffectTypes(cookie)
+    : new Map<string, string[]>()
   const allStubs: AccessoryStub[] = []
 
   for (const ref of subtypeRefs) {
@@ -2017,7 +2259,12 @@ async function main() {
     processItem: async (stub, index) => {
       console.log(`[${index + 1}/${filteredStubs.length}] ${stub.name} (${stub.subtype})`)
       try {
-        const entry = await buildAccessoryOrFamily(stub, cookie, resolveAlsoSee)
+        const entry = await buildAccessoryOrFamily(
+          stub,
+          cookie,
+          resolveAlsoSee,
+          trinketSkillEffectTypes
+        )
         entriesBySubtype.get(stub.subtype)?.push(entry)
       } catch (error) {
         const existing = loadExistingAccessoryEntry(stub)

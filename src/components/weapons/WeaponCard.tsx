@@ -55,6 +55,11 @@ export default function WeaponCard({ weapon, badgeLabel }: WeaponCardProps) {
               DM
             </span>
           )}
+          {card.isDefault && (
+            <span className="text-[10px] text-sky-300 bg-sky-500/20 px-1.5 py-0.5 rounded-full font-medium">
+              Default
+            </span>
+          )}
           {card.hasFree && (
             <span className="text-[10px] text-green-400 bg-green-500/20 px-1.5 py-0.5 rounded-full font-medium">
               Free

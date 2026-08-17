@@ -5,8 +5,10 @@ import { useDebounce } from '../hooks/useDebounce'
 import SearchBar from '../components/shared/SearchBar'
 import SegmentToggle from '../components/shared/SegmentToggle'
 import ElementLegend from '../components/shared/ElementLegend'
+import TriStateFilterPill from '../components/shared/TriStateFilterPill'
 import PetList from '../components/pets/PetList'
 import type { EntryType } from '../types/pet'
+import { cycleTriState, getTriState, parseFilterParam } from '../utils/triStateFilters'
 
 const ACCESS_OPTIONS = [
   { id: 'multi', label: 'Multiple Versions', petsOnly: false },
@@ -15,7 +17,7 @@ const ACCESS_OPTIONS = [
   { id: 'free', label: 'Free', petsOnly: true },
   { id: 'dc', label: 'DC', petsOnly: true },
   { id: 'dm', label: 'DM', petsOnly: true },
-]
+] as const
 
 const CATEGORY_OPTIONS = [
   { id: 'temp', label: 'Temp' },
@@ -23,7 +25,10 @@ const CATEGORY_OPTIONS = [
   { id: 'seasonal', label: 'Seasonal' },
   { id: 'special-offer', label: 'Special Offer' },
   { id: 'retired', label: 'Retired' },
-]
+] as const
+
+type AccessFilterId = (typeof ACCESS_OPTIONS)[number]['id']
+type CategoryFilterId = (typeof CATEGORY_OPTIONS)[number]['id']
 
 export default function PetsPage() {
   const [searchParams, setSearchParams] = useSearchParams()
@@ -33,28 +38,32 @@ export default function PetsPage() {
   // Parse URL params
   const typeParam = searchParams.get('type') // "pets", "guests", or null (both)
   const elementParam = searchParams.get('element') // comma-separated codes
+  const excludeElementParam = searchParams.get('excludeElement')
   const accessParam = searchParams.get('access') // comma-separated: "da,free" or null (all)
+  const excludeAccessParam = searchParams.get('excludeAccess')
   const categoryParam = searchParams.get('category') // comma-separated: "temp,rare"
+  const excludeCategoryParam = searchParams.get('excludeCategory')
 
   const activeTypes: EntryType[] = typeParam
     ? typeParam.split(',').filter((t): t is EntryType => t === 'pet' || t === 'guest')
     : [] // empty = both
 
   const activeElements = elementParam ? elementParam.split(',').filter(Boolean) : []
-  const activeAccess = accessParam
-    ? accessParam
-        .split(',')
-        .filter((a): a is 'multi' | 'free' | 'merge' | 'dc' | 'dm' | 'da' =>
-          ['multi', 'free', 'merge', 'dc', 'dm', 'da'].includes(a)
-        )
-    : []
-  const activeCategories = categoryParam
-    ? categoryParam
-        .split(',')
-        .filter((c): c is 'temp' | 'rare' | 'seasonal' | 'special-offer' | 'retired' =>
-          ['temp', 'rare', 'seasonal', 'special-offer', 'retired'].includes(c)
-        )
-    : []
+  const excludedElements = excludeElementParam ? excludeElementParam.split(',').filter(Boolean) : []
+  const activeAccess = parseFilterParam(accessParam, (value): value is AccessFilterId =>
+    ACCESS_OPTIONS.some((option) => option.id === value)
+  )
+  const excludedAccess = parseFilterParam(excludeAccessParam, (value): value is AccessFilterId =>
+    ACCESS_OPTIONS.some((option) => option.id === value)
+  )
+  const activeCategories = parseFilterParam(
+    categoryParam,
+    (value): value is CategoryFilterId => CATEGORY_OPTIONS.some((option) => option.id === value)
+  )
+  const excludedCategories = parseFilterParam(
+    excludeCategoryParam,
+    (value): value is CategoryFilterId => CATEGORY_OPTIONS.some((option) => option.id === value)
+  )
 
   const { elements, traits } = useElements()
   const filterEntries = [...elements, ...traits]
@@ -80,26 +89,45 @@ export default function PetsPage() {
     if (debouncedQuery) params.q = debouncedQuery
     if (activeTypes.length > 0) params.type = activeTypes.join(',')
     if (activeElements.length > 0) params.element = activeElements.join(',')
+    if (excludedElements.length > 0) params.excludeElement = excludedElements.join(',')
     if (activeAccess.length > 0) params.access = activeAccess.join(',')
+    if (excludedAccess.length > 0) params.excludeAccess = excludedAccess.join(',')
     if (activeCategories.length > 0) params.category = activeCategories.join(',')
+    if (excludedCategories.length > 0) params.excludeCategory = excludedCategories.join(',')
     setSearchParams(params, { replace: true })
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [debouncedQuery, typeParam, elementParam, accessParam, categoryParam, setSearchParams])
+  }, [
+    debouncedQuery,
+    typeParam,
+    elementParam,
+    excludeElementParam,
+    accessParam,
+    excludeAccessParam,
+    categoryParam,
+    excludeCategoryParam,
+    setSearchParams,
+  ])
 
   const filters = {
     query: debouncedQuery,
     type: activeTypes.length > 0 ? activeTypes : undefined,
     elements: activeElements.length > 0 ? activeElements : undefined,
+    excludeElements: excludedElements.length > 0 ? excludedElements : undefined,
     access: activeAccess.length > 0 ? activeAccess : undefined,
+    excludeAccess: excludedAccess.length > 0 ? excludedAccess : undefined,
     categories: activeCategories.length > 0 ? activeCategories : undefined,
+    excludeCategories: excludedCategories.length > 0 ? excludedCategories : undefined,
   }
 
   const { pets, total } = usePets(filters)
   const counts = usePetCounts({
     query: debouncedQuery,
     elements: filters.elements,
+    excludeElements: filters.excludeElements,
     access: filters.access,
+    excludeAccess: filters.excludeAccess,
     categories: filters.categories,
+    excludeCategories: filters.excludeCategories,
   })
 
   // Determine if we're showing guests only (for conditional filter display)
@@ -117,49 +145,55 @@ export default function PetsPage() {
     if (debouncedQuery) params.q = debouncedQuery
     if (next.length > 0) params.type = next.join(',')
     if (activeElements.length > 0) params.element = activeElements.join(',')
+    if (excludedElements.length > 0) params.excludeElement = excludedElements.join(',')
     if (activeAccess.length > 0) params.access = activeAccess.join(',')
+    if (excludedAccess.length > 0) params.excludeAccess = excludedAccess.join(',')
     if (activeCategories.length > 0) params.category = activeCategories.join(',')
+    if (excludedCategories.length > 0) params.excludeCategory = excludedCategories.join(',')
     setSearchParams(params, { replace: true })
   }
 
   function toggleElement(code: string) {
-    const next = activeElements.includes(code)
-      ? activeElements.filter((e) => e !== code)
-      : [...activeElements, code]
+    const next = cycleTriState(code, { include: activeElements, exclude: excludedElements })
     const params: Record<string, string> = {}
     if (debouncedQuery) params.q = debouncedQuery
     if (activeTypes.length > 0) params.type = activeTypes.join(',')
-    if (next.length > 0) params.element = next.join(',')
+    if (next.include.length > 0) params.element = next.include.join(',')
+    if (next.exclude.length > 0) params.excludeElement = next.exclude.join(',')
     if (activeAccess.length > 0) params.access = activeAccess.join(',')
+    if (excludedAccess.length > 0) params.excludeAccess = excludedAccess.join(',')
     if (activeCategories.length > 0) params.category = activeCategories.join(',')
+    if (excludedCategories.length > 0) params.excludeCategory = excludedCategories.join(',')
     setSearchParams(params, { replace: true })
   }
 
   function toggleAccess(id: string) {
-    const accessType = id as 'multi' | 'free' | 'merge' | 'dc' | 'dm' | 'da'
-    const next = activeAccess.includes(accessType)
-      ? activeAccess.filter((a) => a !== accessType)
-      : [...activeAccess, accessType]
+    const accessType = id as AccessFilterId
+    const next = cycleTriState(accessType, { include: activeAccess, exclude: excludedAccess })
     const params: Record<string, string> = {}
     if (debouncedQuery) params.q = debouncedQuery
     if (activeTypes.length > 0) params.type = activeTypes.join(',')
     if (activeElements.length > 0) params.element = activeElements.join(',')
-    if (next.length > 0) params.access = next.join(',')
+    if (excludedElements.length > 0) params.excludeElement = excludedElements.join(',')
+    if (next.include.length > 0) params.access = next.include.join(',')
+    if (next.exclude.length > 0) params.excludeAccess = next.exclude.join(',')
     if (activeCategories.length > 0) params.category = activeCategories.join(',')
+    if (excludedCategories.length > 0) params.excludeCategory = excludedCategories.join(',')
     setSearchParams(params, { replace: true })
   }
 
   function toggleCategory(id: string) {
-    const cat = id as 'temp' | 'rare' | 'seasonal' | 'special-offer' | 'retired'
-    const next = activeCategories.includes(cat)
-      ? activeCategories.filter((c) => c !== cat)
-      : [...activeCategories, cat]
+    const cat = id as CategoryFilterId
+    const next = cycleTriState(cat, { include: activeCategories, exclude: excludedCategories })
     const params: Record<string, string> = {}
     if (debouncedQuery) params.q = debouncedQuery
     if (activeTypes.length > 0) params.type = activeTypes.join(',')
     if (activeElements.length > 0) params.element = activeElements.join(',')
+    if (excludedElements.length > 0) params.excludeElement = excludedElements.join(',')
     if (activeAccess.length > 0) params.access = activeAccess.join(',')
-    if (next.length > 0) params.category = next.join(',')
+    if (excludedAccess.length > 0) params.excludeAccess = excludedAccess.join(',')
+    if (next.include.length > 0) params.category = next.include.join(',')
+    if (next.exclude.length > 0) params.excludeCategory = next.exclude.join(',')
     setSearchParams(params, { replace: true })
   }
 
@@ -207,35 +241,32 @@ export default function PetsPage() {
           // Hide pet-only filters when showing guests only
           if (opt.petsOnly && isGuestsOnly) return null
 
-          const isActive = activeAccess.includes(opt.id as any)
+          const state = getTriState(opt.id, { include: activeAccess, exclude: excludedAccess })
           const isDisabled = opt.petsOnly && isGuestsOnly
 
           return (
-            <button
+            <TriStateFilterPill
               key={opt.id}
+              label={opt.label}
+              state={state}
               onClick={() => toggleAccess(opt.id)}
               disabled={isDisabled}
-              aria-pressed={isActive}
-              className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors duration-150 min-h-[36px] ${
-                isActive
-                  ? 'bg-gold-bright text-bg-base font-semibold'
-                  : isDisabled
-                    ? 'bg-bg-overlay text-text-muted opacity-40 cursor-not-allowed'
-                    : 'bg-bg-overlay text-text-secondary hover:bg-border-hover hover:text-text-primary'
-              }`}
-            >
-              {opt.label}
-            </button>
+              size="access"
+            />
           )
         })}
-        {activeAccess.length > 0 && (
+        {(activeAccess.length > 0 || excludedAccess.length > 0) && (
           <button
             onClick={() => {
               const params: Record<string, string> = {}
               if (debouncedQuery) params.q = debouncedQuery
               if (activeTypes.length > 0) params.type = activeTypes.join(',')
               if (activeElements.length > 0) params.element = activeElements.join(',')
+              if (excludedElements.length > 0) params.excludeElement = excludedElements.join(',')
               if (activeCategories.length > 0) params.category = activeCategories.join(',')
+              if (excludedCategories.length > 0) {
+                params.excludeCategory = excludedCategories.join(',')
+              }
               setSearchParams(params, { replace: true })
             }}
             className="text-xs text-text-muted hover:text-text-primary underline underline-offset-2 ml-1"
@@ -252,28 +283,29 @@ export default function PetsPage() {
             if (isGuestsOnly && opt.id === 'special-offer') return null
 
             return (
-              <button
+              <TriStateFilterPill
                 key={opt.id}
+                label={opt.label}
+                state={getTriState(opt.id, {
+                  include: activeCategories,
+                  exclude: excludedCategories,
+                })}
                 onClick={() => toggleCategory(opt.id)}
-                aria-pressed={activeCategories.includes(opt.id as any)}
-                className={`px-2.5 py-1 rounded-full text-[11px] font-medium transition-colors duration-150 ${
-                  activeCategories.includes(opt.id as any)
-                    ? 'bg-orange-500/80 text-white font-semibold'
-                    : 'bg-bg-overlay text-text-secondary hover:bg-border-hover hover:text-text-primary'
-                }`}
-              >
-                {opt.label}
-              </button>
+                size="category"
+                activeClassName="bg-orange-500/80 text-white"
+              />
             )
           })}
-          {activeCategories.length > 0 && (
+          {(activeCategories.length > 0 || excludedCategories.length > 0) && (
             <button
               onClick={() => {
                 const params: Record<string, string> = {}
                 if (debouncedQuery) params.q = debouncedQuery
                 if (activeTypes.length > 0) params.type = activeTypes.join(',')
                 if (activeElements.length > 0) params.element = activeElements.join(',')
+                if (excludedElements.length > 0) params.excludeElement = excludedElements.join(',')
                 if (activeAccess.length > 0) params.access = activeAccess.join(',')
+                if (excludedAccess.length > 0) params.excludeAccess = excludedAccess.join(',')
                 setSearchParams(params, { replace: true })
               }}
               className="text-[11px] text-text-muted hover:text-text-primary underline underline-offset-2 ml-1"
@@ -288,34 +320,36 @@ export default function PetsPage() {
       <div className="mb-2">
         <div className="flex flex-wrap gap-1.5">
           {allCodes.map((code) => {
-            const isActive = activeElements.includes(code)
+            const state = getTriState(code, {
+              include: activeElements,
+              exclude: excludedElements,
+            })
             const colour =
               filterEntries.find((e) => e.code === code)?.colour ?? 'bg-bg-overlay text-text-muted'
             return (
-              <button
+              <TriStateFilterPill
                 key={code}
+                label={code}
+                state={state}
                 onClick={() => toggleElement(code)}
-                aria-pressed={isActive}
-                className="transition-all duration-150"
-              >
-                <span
-                  className={`inline-flex items-center text-[10px] font-medium px-1.5 py-0.5 rounded-full ${colour} ${
-                    isActive ? 'ring-2 ring-gold' : 'opacity-60 hover:opacity-100'
-                  }`}
-                >
-                  {code}
-                </span>
-              </button>
+                size="element"
+                activeClassName={`${colour} ring-2 ring-gold`}
+                inactiveClassName={`${colour} opacity-60 hover:opacity-100`}
+              />
             )
           })}
-          {activeElements.length > 0 && (
+          {(activeElements.length > 0 || excludedElements.length > 0) && (
             <button
               onClick={() => {
                 const params: Record<string, string> = {}
                 if (debouncedQuery) params.q = debouncedQuery
                 if (activeTypes.length > 0) params.type = activeTypes.join(',')
                 if (activeAccess.length > 0) params.access = activeAccess.join(',')
+                if (excludedAccess.length > 0) params.excludeAccess = excludedAccess.join(',')
                 if (activeCategories.length > 0) params.category = activeCategories.join(',')
+                if (excludedCategories.length > 0) {
+                  params.excludeCategory = excludedCategories.join(',')
+                }
                 setSearchParams(params, { replace: true })
               }}
               className="text-[10px] text-text-muted hover:text-text-primary underline underline-offset-2 ml-1"
@@ -336,6 +370,9 @@ export default function PetsPage() {
         {activeElements.length > 0 && (
           <span className="text-gold"> · {activeElements.join(', ')}</span>
         )}
+        {excludedElements.length > 0 && (
+          <span className="text-red-300"> · excluding {excludedElements.join(', ')}</span>
+        )}
         {activeAccess.length > 0 && (
           <span className="text-orange-400">
             {' '}
@@ -345,11 +382,29 @@ export default function PetsPage() {
               .join(', ')}
           </span>
         )}
+        {excludedAccess.length > 0 && (
+          <span className="text-red-300">
+            {' '}
+            · excluding{' '}
+            {excludedAccess
+              .map((a) => ACCESS_OPTIONS.find((opt) => opt.id === a)?.label ?? a)
+              .join(', ')}
+          </span>
+        )}
         {activeCategories.length > 0 && (
           <span className="text-orange-400">
             {' '}
             ·{' '}
             {activeCategories
+              .map((c) => CATEGORY_OPTIONS.find((opt) => opt.id === c)?.label ?? c)
+              .join(', ')}
+          </span>
+        )}
+        {excludedCategories.length > 0 && (
+          <span className="text-red-300">
+            {' '}
+            · excluding{' '}
+            {excludedCategories
               .map((c) => CATEGORY_OPTIONS.find((opt) => opt.id === c)?.label ?? c)
               .join(', ')}
           </span>

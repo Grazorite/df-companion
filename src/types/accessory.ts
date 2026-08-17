@@ -31,6 +31,7 @@ export interface Accessory {
   ability?: string
   abilityUrl?: string
   attacks?: GuestAttack[]
+  trinketSkillEffectTypes?: string[]
   rarity?: string
   itemType?: string
   equipSpot?: string
@@ -59,6 +60,7 @@ export type AccessoryFamily = ItemFamily & {
   modifies?: string
   armorCustomization?: ArmorCustomizationInfo
   hasArmorCustomization?: boolean
+  trinketSkillEffectTypes?: string[]
 }
 
 export type AccessoryEntry = Accessory | AccessoryFamily
@@ -66,10 +68,15 @@ export type AccessoryEntry = Accessory | AccessoryFamily
 export interface AccessoryFilters {
   query?: string
   access?: Array<'multi' | 'free' | 'merge' | 'dc' | 'dm' | 'da'>
+  excludeAccess?: Array<'multi' | 'free' | 'merge' | 'dc' | 'dm' | 'da'>
   categories?: Array<
     'armor-customization' | 'cosmetic' | 'temp' | 'rare' | 'seasonal' | 'special-offer' | 'retired'
   >
+  excludeCategories?: Array<
+    'armor-customization' | 'cosmetic' | 'temp' | 'rare' | 'seasonal' | 'special-offer' | 'retired'
+  >
   elements?: string[]
+  excludeElements?: string[]
 }
 
 export const ACCESSORY_SUBTYPES: AccessorySubtypeMeta[] = [

@@ -157,19 +157,24 @@ function searchAccessories(
           if (!hasAccess(flag)) return false
         }
       }
+      if (filters.excludeAccess?.some((flag) => hasAccess(flag))) return false
 
       const itemRetired = isAccessoryFamily(item) ? item.retired === true : item.retired === true
+      const hasCategoryFlag = (
+        category: NonNullable<AccessoryFilters['categories']>[number]
+      ): boolean => {
+        if (category === 'armor-customization') return hasAccessoryArmorCustomization(item)
+        if (category === 'cosmetic') return item.isCosmetic === true
+        if (category === 'temp') return item.isTemp === true
+        if (category === 'rare') return item.isRare === true
+        if (category === 'seasonal') return item.isSeasonal === true
+        if (category === 'special-offer') return item.isSpecialOffer === true
+        if (category === 'retired') return itemRetired
+        return false
+      }
+      if (filters.excludeCategories?.some((category) => hasCategoryFlag(category))) return false
       if (filters.categories && filters.categories.length > 0) {
-        const hasCategory = filters.categories.some((category) => {
-          if (category === 'armor-customization') return hasAccessoryArmorCustomization(item)
-          if (category === 'cosmetic') return item.isCosmetic === true
-          if (category === 'temp') return item.isTemp === true
-          if (category === 'rare') return item.isRare === true
-          if (category === 'seasonal') return item.isSeasonal === true
-          if (category === 'special-offer') return item.isSpecialOffer === true
-          if (category === 'retired') return itemRetired
-          return false
-        })
+        const hasCategory = filters.categories.some((category) => hasCategoryFlag(category))
 
         if (filters.categories.includes('retired')) {
           if (!itemRetired) return false
@@ -183,6 +188,10 @@ function searchAccessories(
       if (filters.elements && filters.elements.length > 0) {
         const itemElements = isAccessoryFamily(item) ? item.elements : item.elements
         if (!filters.elements.some((code) => itemElements.includes(code))) return false
+      }
+      if (filters.excludeElements && filters.excludeElements.length > 0) {
+        const itemElements = isAccessoryFamily(item) ? item.elements : item.elements
+        if (filters.excludeElements.some((code) => itemElements.includes(code))) return false
       }
 
       if (queryWords.length > 0) {

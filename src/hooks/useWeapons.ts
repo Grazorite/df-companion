@@ -134,6 +134,7 @@ function searchWeapons(
         if (flag === 'da') return isWeaponFamily(item) ? item.hasDA : item.daRequired
         if (flag === 'dc') return isWeaponFamily(item) ? item.hasDC : Boolean(item.dcRequired)
         if (flag === 'dm') return isWeaponFamily(item) ? item.hasDM : Boolean(item.dmRequired)
+        if (flag === 'default') return item.isDefault === true
         if (flag === 'free') {
           return isWeaponFamily(item)
             ? item.hasFree
@@ -145,20 +146,25 @@ function searchWeapons(
       }
 
       if (filters.access && filters.access.some((flag) => !hasAccess(flag))) return false
+      if (filters.excludeAccess?.some((flag) => hasAccess(flag))) return false
 
       const itemRetired = item.retired === true
+      const hasCategoryFlag = (
+        category: NonNullable<WeaponFilters['categories']>[number]
+      ): boolean => {
+        if (category === 'armor-customization') return item.hasArmorCustomization === true
+        if (category === 'special') return item.hasSpecial === true
+        if (category === 'cosmetic') return item.isCosmetic === true
+        if (category === 'temp') return item.isTemp === true
+        if (category === 'rare') return item.isRare === true
+        if (category === 'seasonal') return item.isSeasonal === true
+        if (category === 'special-offer') return item.isSpecialOffer === true
+        if (category === 'retired') return itemRetired
+        return false
+      }
+      if (filters.excludeCategories?.some((category) => hasCategoryFlag(category))) return false
       if (filters.categories && filters.categories.length > 0) {
-        const hasCategory = filters.categories.some((category) => {
-          if (category === 'armor-customization') return item.hasArmorCustomization === true
-          if (category === 'special') return item.hasSpecial === true
-          if (category === 'cosmetic') return item.isCosmetic === true
-          if (category === 'temp') return item.isTemp === true
-          if (category === 'rare') return item.isRare === true
-          if (category === 'seasonal') return item.isSeasonal === true
-          if (category === 'special-offer') return item.isSpecialOffer === true
-          if (category === 'retired') return itemRetired
-          return false
-        })
+        const hasCategory = filters.categories.some((category) => hasCategoryFlag(category))
 
         if (filters.categories.includes('retired')) {
           if (!itemRetired) return false
@@ -172,6 +178,7 @@ function searchWeapons(
       if (filters.elements && filters.elements.length > 0) {
         if (!filters.elements.some((code) => item.elements.includes(code))) return false
       }
+      if (filters.excludeElements?.some((code) => item.elements.includes(code))) return false
 
       if (queryWords.length > 0) {
         const itemName = isWeaponFamily(item) ? item.familyName : item.name
@@ -421,6 +428,7 @@ export function buildWeaponCardData(entry: WeaponEntry) {
       dcRequired: entry.dcRequired ?? false,
       dmRequired: entry.dmRequired ?? false,
       isCosmetic: entry.isCosmetic ?? false,
+      isDefault: entry.isDefault ?? false,
       hasSpecial: entry.hasSpecial ?? false,
       hasArmorCustomization: entry.hasArmorCustomization ?? false,
       hasFree: entry.obtainMethods.some((method) => method.priceType === 'free'),
@@ -441,6 +449,7 @@ export function buildWeaponCardData(entry: WeaponEntry) {
     dcRequired: entry.hasDC,
     dmRequired: entry.hasDM,
     isCosmetic: entry.isCosmetic ?? false,
+    isDefault: entry.isDefault ?? false,
     hasSpecial: entry.hasSpecial ?? false,
     hasArmorCustomization: entry.hasArmorCustomization ?? false,
     hasFree: entry.hasFree,

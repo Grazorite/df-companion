@@ -21,10 +21,18 @@ export function searchBadges(badges: Badge[], filters: BadgeFilters): Badge[] {
     .filter((badge) => {
       // Category filter
       if (filters.category && badge.category !== filters.category) return false
+      if (filters.excludeCategory === 'retired' && badge.retired) return false
+      if (filters.excludeCategory && filters.excludeCategory !== 'retired') {
+        if (badge.category === filters.excludeCategory) return false
+      }
       // Subcategory filter
       if (filters.subcategory && badge.subcategory !== filters.subcategory) return false
+      if (filters.excludeSubcategory && badge.subcategory === filters.excludeSubcategory) {
+        return false
+      }
       // DA Required filter
       if (filters.daRequired === true && !badge.daRequired) return false
+      if (filters.daRequiredExcluded === true && badge.daRequired) return false
       // Retired filter — when not explicitly filtering for retired, hide them by default
       if (filters.retired === true && !badge.retired) return false
       if (filters.retired !== true && badge.retired) return false

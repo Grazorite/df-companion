@@ -248,66 +248,53 @@ function searchPets(
         const itemCodes = [...itemElements, ...itemTraits]
         if (!filters.elements.some((e) => itemCodes.includes(e))) return false
       }
+      if (filters.excludeElements && filters.excludeElements.length > 0) {
+        const itemCodes = [...itemElements, ...itemTraits]
+        if (filters.excludeElements.some((e) => itemCodes.includes(e))) return false
+      }
+
+      const hasAccess = (
+        accessType: NonNullable<PetFilters['access']>[number]
+      ): boolean => {
+        if (accessType === 'multi') return isFamily && family!.levelVariants.length > 1
+        if (accessType === 'da') return isFamily ? family!.hasDA : pet!.daRequired
+
+        const entryType = isFamily ? family!.type : pet!.type
+        const isGuest = entryType === 'guest'
+        if (isGuest) return false
+
+        if (accessType === 'dc') return isFamily ? family!.hasDC : (pet!.dcRequired ?? false)
+        if (accessType === 'dm') return isFamily ? family!.hasDM : (pet!.dmRequired ?? false)
+        if (accessType === 'free') {
+          return isFamily ? family!.hasFree : pet!.obtainMethods.some((m) => m.priceType === 'free')
+        }
+        return isFamily ? family!.hasMerge : pet!.obtainMethods.some((m) => m.priceType === 'merge')
+      }
 
       // Access filter (Level 1) — multi-select with AND logic
       if (filters.access && filters.access.length > 0) {
         for (const accessType of filters.access) {
-          if (accessType === 'multi') {
-            // Multiple Versions: show only ItemFamily with more than 1 level variant
-            if (!isFamily || family!.levelVariants.length <= 1) return false
-          }
-          if (accessType === 'da') {
-            const hasDA = isFamily ? family!.hasDA : pet!.daRequired
-            if (!hasDA) return false
-          }
-
-          // Guests are never purchased - skip Free/DC/DM/Merge filters for guests
-          const entryType = isFamily ? family!.type : pet!.type
-          const isGuest = entryType === 'guest'
-
-          if (accessType === 'dc') {
-            // Guests can't be DC purchased, always exclude
-            if (isGuest) return false
-            const hasDC = isFamily ? family!.hasDC : (pet!.dcRequired ?? false)
-            if (!hasDC) return false
-          }
-          if (accessType === 'dm') {
-            // Guests can't be DM purchased, always exclude
-            if (isGuest) return false
-            const hasDM = isFamily ? family!.hasDM : (pet!.dmRequired ?? false)
-            if (!hasDM) return false
-          }
-          if (accessType === 'free') {
-            // Guests are always "free" (invited), skip this filter for guests
-            if (isGuest) return false
-            const hasFree = isFamily
-              ? family!.hasFree
-              : pet!.obtainMethods.some((m) => m.priceType === 'free')
-            if (!hasFree) return false
-          }
-          if (accessType === 'merge') {
-            // Guests can't be merged, always exclude
-            if (isGuest) return false
-            const hasMerge = isFamily
-              ? family!.hasMerge
-              : pet!.obtainMethods.some((m) => m.priceType === 'merge')
-            if (!hasMerge) return false
-          }
+          if (!hasAccess(accessType)) return false
         }
       }
+      if (filters.excludeAccess?.some((accessType) => hasAccess(accessType))) return false
 
       // Category filter (Level 2) — multi-select with OR logic
+      const hasCategoryFlag = (
+        cat: NonNullable<PetFilters['categories']>[number]
+      ): boolean => {
+        if (cat === 'temp') return isFamily ? family!.isTemp === true : pet!.isTemp === true
+        if (cat === 'rare') return isFamily ? family!.isRare === true : pet!.isRare === true
+        if (cat === 'seasonal')
+          return isFamily ? family!.isSeasonal === true : pet!.isSeasonal === true
+        if (cat === 'special-offer')
+          return isFamily ? family!.isSpecialOffer === true : pet!.isSpecialOffer === true
+        if (cat === 'retired') return itemRetired === true
+        return false
+      }
+      if (filters.excludeCategories?.some((cat) => hasCategoryFlag(cat))) return false
       if (filters.categories && filters.categories.length > 0) {
-        const hasCategory = filters.categories.some((cat) => {
-          if (cat === 'temp') return isFamily ? family!.isTemp === true : pet!.isTemp === true
-          if (cat === 'rare') return isFamily ? family!.isRare === true : pet!.isRare === true
-          if (cat === 'seasonal')
-            return isFamily ? family!.isSeasonal === true : pet!.isSeasonal === true
-          if (cat === 'special-offer')
-            return isFamily ? family!.isSpecialOffer === true : pet!.isSpecialOffer === true
-          if (cat === 'retired') return itemRetired === true
-          return false
-        })
+        const hasCategory = filters.categories.some((cat) => hasCategoryFlag(cat))
 
         // Special handling for retired: when selected, ONLY show retired; otherwise exclude retired
         if (filters.categories.includes('retired')) {

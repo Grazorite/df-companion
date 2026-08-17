@@ -173,8 +173,11 @@ export interface PetFilters {
   query?: string
   type?: EntryType[]       // Which segment(s) are active
   elements?: string[]      // Multi-select element codes (OR logic)
+  excludeElements?: string[]
   access?: ('multi' | 'free' | 'dc' | 'dm' | 'da' | 'merge')[]  // Level 1 multi-select access filters
+  excludeAccess?: ('multi' | 'free' | 'dc' | 'dm' | 'da' | 'merge')[]
   categories?: ('temp' | 'rare' | 'seasonal' | 'special-offer' | 'retired')[]  // Level 2 multi-select
+  excludeCategories?: ('temp' | 'rare' | 'seasonal' | 'special-offer' | 'retired')[]
 }
 
 // ─── Guest Type (extends Pet with structured stats) ──────────────────────────

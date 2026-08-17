@@ -375,6 +375,92 @@ function getUrlFilterArgs(): string[] | undefined {
   return values.length > 0 ? values : undefined
 }
 
+function getBooleanArg(name: string): boolean {
+  return process.argv.slice(2).includes(`--${name}`)
+}
+
+function getWeaponSpecialsFromEntry(entry: WeaponEntry): WeaponSpecial[] {
+  if (isWeaponFamilyEntry(entry)) {
+    return [
+      ...(entry.shared.weaponSpecial ? [entry.shared.weaponSpecial] : []),
+      ...(entry.shared.weaponSpecials ?? []),
+      ...entry.levelVariants.flatMap((level) => [
+        ...(level.weaponSpecial ? [level.weaponSpecial] : []),
+        ...(level.weaponSpecials ?? []),
+      ]),
+    ]
+  }
+
+  return [...(entry.weaponSpecial ? [entry.weaponSpecial] : []), ...(entry.weaponSpecials ?? [])]
+}
+
+function weaponEntryHasSpecial(entry: WeaponEntry): boolean {
+  return Boolean(entry.hasSpecial || getWeaponSpecialsFromEntry(entry).length > 0)
+}
+
+function weaponEntryHasSpecialEffectImage(entry: WeaponEntry): boolean {
+  return getWeaponSpecialsFromEntry(entry).some((special) => special.specialImageUrls?.length)
+}
+
+function addSpecialRefreshName(names: Set<string>, name?: string) {
+  const normalized = name?.replace(/^DF Encyclopedia:\s*/i, '').trim()
+  if (normalized) names.add(normalized)
+}
+
+function collectSpecialWeaponRefreshTargets(
+  selectedSubtypes: WeaponSubtype[],
+  options: { missingEffectImagesOnly?: boolean } = {}
+): { messageIds: Set<string>; names: Set<string>; entryCount: number } {
+  const messageIds = new Set<string>()
+  const names = new Set<string>()
+  let entryCount = 0
+
+  for (const subtype of selectedSubtypes) {
+    for (const file of WEAPON_DATA_FILES[subtype]) {
+      for (const entry of readExistingEntries(file)) {
+        if (!weaponEntryHasSpecial(entry)) continue
+        if (options.missingEffectImagesOnly && weaponEntryHasSpecialEffectImage(entry)) continue
+        entryCount += 1
+
+        addSpecialRefreshName(names, getWeaponEntryName(entry))
+
+        const entryMessageId = getMessageIdFromForumUrl(entry.forumUrl)
+        if (entryMessageId) messageIds.add(entryMessageId)
+
+        if (isWeaponFamilyEntry(entry)) {
+          for (const source of entry.familySources ?? []) {
+            const sourceMessageId = getMessageIdFromForumUrl(source.url)
+            if (sourceMessageId) messageIds.add(sourceMessageId)
+            addSpecialRefreshName(names, source.title)
+            addSpecialRefreshName(names, source.variantLabel)
+          }
+
+          for (const level of entry.levelVariants) {
+            const sourceMessageId = level.sourceUrl
+              ? getMessageIdFromForumUrl(level.sourceUrl)
+              : undefined
+            if (sourceMessageId) messageIds.add(sourceMessageId)
+            addSpecialRefreshName(names, level.name)
+          }
+        }
+      }
+    }
+  }
+
+  return { messageIds, names, entryCount }
+}
+
+function weaponStubMatchesSpecialTargets(
+  stub: WeaponStub,
+  targets: { messageIds: Set<string>; names: Set<string> }
+): boolean {
+  if (targets.messageIds.has(stub.messageId)) return true
+  const selected = new Set(Array.from(targets.names).flatMap(normalizedSelectedWeaponNameCandidates))
+  return normalizedSelectedWeaponNameCandidates(stub.name).some((candidate) =>
+    selected.has(candidate)
+  )
+}
+
 function createWeaponRefResolver(stubs: WeaponStub[]): WeaponRefResolver {
   const stubByMessageId = new Map(stubs.map((stub) => [stub.messageId, stub]))
   const stubByName = new Map(stubs.map((stub) => [stub.name.toLowerCase(), stub]))
@@ -576,13 +662,20 @@ function repairWeaponNoteNesting(notes: string | undefined): string | undefined 
 
   return notes
     .split('\n')
-    .map((line) =>
-      /^\s{2}•\s+(?:'(?:DOOM|Destiny|Destroyer's Spirit|Spirit of (?:Ice|Light))|All 'Spirit' effects)/i.test(
-        line
-      )
-        ? `  ${line}`
-        : line
-    )
+    .map((line) => {
+      const text = line.trim().replace(/^[•*-]\s*/, '')
+      if (/^Weapons'? special became mutually exclusive\b/i.test(text)) {
+        return `  • ${text}`
+      }
+      if (
+        /^(?:'(?:DOOM|Destiny|Destroyer's Spirit|Spirit of (?:Ice|Light))|All 'Spirit' effects)/i.test(
+          text
+        )
+      ) {
+        return `    • ${text}`
+      }
+      return line
+    })
     .join('\n')
 }
 
@@ -802,6 +895,43 @@ function trimWeaponSpecialSection(section: string): string {
   return section
 }
 
+function normalizeLinkedImageUrl(url: string): string {
+  return decodeHtml(url).replace(/&amp;/g, '&').trim().replace(/\s/g, '%20')
+}
+
+function isLikelySpecialImageUrl(url: string): boolean {
+  return (
+    /\.(?:png|jpg|jpeg|gif|bmp)(?:[?#].*)?$/i.test(url) ||
+    /(?:i\.)?imgur\.com\/(?!a\/|gallery\/)/i.test(url) ||
+    /\/f\/upfiles\//i.test(url)
+  )
+}
+
+function parseWeaponSpecialImageLinks(
+  section: string,
+  buttonImageUrl?: string
+): { urls: string[]; captions: string[] } {
+  const imageLinks: Array<{ url: string; caption: string }> = []
+  for (const match of section.matchAll(/<a[^>]+href=(["'])(.*?)\1[^>]*>([\s\S]*?)<\/a>/gi)) {
+    const url = normalizeLinkedImageUrl(match[2] ?? '')
+    if (!isLikelySpecialImageUrl(url)) continue
+    if (buttonImageUrl && url === buttonImageUrl) continue
+    if (/\/tags\/|\/f\/image\/|button/i.test(url)) continue
+
+    const caption =
+      normalizeImageCaption(normalizeStructuredText(match[3] ?? '')) ||
+      inferImageCaptionFromUrl(url) ||
+      'Special'
+    if (imageLinks.some((entry) => entry.url === url)) continue
+    imageLinks.push({ url, caption })
+  }
+
+  return {
+    urls: imageLinks.map((entry) => entry.url),
+    captions: imageLinks.map((entry) => entry.caption),
+  }
+}
+
 function parseWeaponSpecialFromSection(
   rawSection: string,
   includeNotes: boolean = true
@@ -820,6 +950,8 @@ function parseWeaponSpecialFromSection(
     .replace(/\s+Charge Time:\s*[\s\S]*$/i, '')
     .trim()
   const imageUrl = section.match(/<img[^>]+src=(["'])(.*?)\1[^>]*>/i)?.[2]
+  const normalizedImageUrl = imageUrl ? normalizeLinkedImageUrl(imageUrl) : undefined
+  const specialImages = parseWeaponSpecialImageLinks(section, normalizedImageUrl)
   const activation = /activates?\s+on\s+hit/i.test(trigger) ? 'on-hit' : 'manual'
   const cooldown = activation === 'manual' ? parseHtmlField(section, ['Cooldown', 'CD']) : undefined
   const chargeTime =
@@ -831,19 +963,84 @@ function parseWeaponSpecialFromSection(
     activation,
     trigger,
     effect: effect ?? '',
-    ...(imageUrl ? { imageUrl: decodeHtml(imageUrl).trim().replace(/\s/g, '%20') } : {}),
+    ...(normalizedImageUrl ? { imageUrl: normalizedImageUrl } : {}),
+    ...(specialImages.urls.length > 0 ? { specialImageUrls: specialImages.urls } : {}),
+    ...(specialImages.captions.length > 0
+      ? { specialImageCaptions: specialImages.captions }
+      : {}),
     ...(cooldown ? { cooldown } : {}),
     ...(chargeTime ? { chargeTime } : {}),
     ...(notes ? { notes } : {}),
   }
 }
 
+function parseWeaponSpecialAppearanceFallbacks(html: string): WeaponSpecial[] {
+  const specials: WeaponSpecial[] = []
+  const buttonMatches = [...html.matchAll(/Special-Button[^"'<>\s]*\.(?:png|jpg|jpeg|gif)/gi)]
+  if (process.env.DEBUG_WEAPON_SPECIAL_IMAGES === '1') {
+    console.log(`[special-images] button matches: ${buttonMatches.length}`)
+  }
+
+  for (const match of buttonMatches) {
+    const buttonIndex = match.index ?? 0
+    const start = Math.max(
+      html.lastIndexOf('<hr', buttonIndex),
+      html.lastIndexOf('<font', buttonIndex),
+      0
+    )
+    const nextHr = html.indexOf('<hr', buttonIndex + match[0].length)
+    const end = nextHr >= 0 ? nextHr : Math.min(html.length, buttonIndex + 2500)
+    const section = html.slice(start, end)
+    const imageUrlMatch = section.match(/<img[^>]+src=(["'])([^"']*Special-Button[^"']*)\1/i)
+    const imageUrl = imageUrlMatch ? normalizeLinkedImageUrl(imageUrlMatch[2] ?? '') : undefined
+    const specialImages = parseWeaponSpecialImageLinks(section, imageUrl)
+    if (process.env.DEBUG_WEAPON_SPECIAL_IMAGES === '1') {
+      console.log('[special-images]', {
+        imageUrl,
+        urls: specialImages.urls,
+        captions: specialImages.captions,
+      })
+    }
+    if (!specialImages.urls.length) continue
+
+    specials.push({
+      activation: 'on-hit',
+      trigger:
+        normalizeStructuredText(section.match(/<i>([\s\S]*?)<\/i>/i)?.[1] ?? '') ||
+        'Weapon special activates on hit.',
+      effect: parseWeaponSpecialEffect(section) ?? '',
+      ...(imageUrl ? { imageUrl } : {}),
+      specialImageUrls: specialImages.urls,
+      ...(specialImages.captions.length > 0
+        ? { specialImageCaptions: specialImages.captions }
+        : {}),
+    })
+  }
+
+  return specials
+}
+
 function parseWeaponSpecials(html: string): WeaponSpecial[] {
   const sections = splitWeaponSpecialSections(html)
   const includeSectionNotes = sections.length > 1
-  return sections
+  const parsed = sections
     .map((section) => parseWeaponSpecialFromSection(section, includeSectionNotes))
     .filter((special): special is WeaponSpecial => Boolean(special))
+  const fallbackSpecials = parseWeaponSpecialAppearanceFallbacks(html)
+  if (parsed.length === 0) return fallbackSpecials
+  if (fallbackSpecials.length === 0) return parsed
+
+  const fallbackImages = mergeWeaponSpecialImages(fallbackSpecials)
+  if (!fallbackImages.specialImageUrls?.length) return parsed
+
+  return parsed.map((special) =>
+    special.specialImageUrls?.length
+      ? special
+      : {
+          ...special,
+          ...fallbackImages,
+        }
+  )
 }
 
 function inferOnHitWeaponSpecialFromNotes(notes?: string): WeaponSpecial | undefined {
@@ -868,6 +1065,47 @@ function inferOnHitWeaponSpecialFromNotes(notes?: string): WeaponSpecial | undef
     trigger: 'Weapon special activates on hit.',
     effect: effectParts.join(' '),
     imageUrl: INFERRED_ON_HIT_SPECIAL_IMAGE_URL,
+  }
+}
+
+function mergeWeaponSpecialImages(specials: WeaponSpecial[]): Pick<
+  WeaponSpecial,
+  'specialImageUrls' | 'specialImageCaptions'
+> {
+  const imageByUrl = new Map<string, string | undefined>()
+
+  for (const special of specials) {
+    for (const [index, url] of (special.specialImageUrls ?? []).entries()) {
+      if (!imageByUrl.has(url)) {
+        imageByUrl.set(url, special.specialImageCaptions?.[index])
+      }
+    }
+  }
+
+  const specialImageUrls = Array.from(imageByUrl.keys())
+  const specialImageCaptions = specialImageUrls
+    .map((url) => imageByUrl.get(url))
+    .filter((caption): caption is string => Boolean(caption))
+
+  return {
+    ...(specialImageUrls.length > 0 ? { specialImageUrls } : {}),
+    ...(specialImageCaptions.length === specialImageUrls.length ? { specialImageCaptions } : {}),
+  }
+}
+
+function mergeWeaponSpecialsForFamily(specials: WeaponSpecial[]): WeaponSpecial | undefined {
+  if (specials.length === 0) return undefined
+  if (allWeaponValuesSame(specials)) return specials[0]
+
+  const imageFields = mergeWeaponSpecialImages(specials)
+  const preferredSpecial =
+    specials.find((special) => special.specialImageUrls?.length) ??
+    specials.find((special) => special.imageUrl) ??
+    specials[0]
+
+  return {
+    ...preferredSpecial,
+    ...imageFields,
   }
 }
 
@@ -1100,6 +1338,7 @@ function buildWeaponEntry(
     parseArmorCustomization(html)
   const primaryPriceType = obtainMethods[0]?.priceType
   const isCosmetic = hasCosmeticMarker(description) || hasCosmeticMarker(normalizedText)
+  const isDefault = isDefaultWeaponTitle(stub.name)
 
   return {
     id: weaponSlugForName(stub.name),
@@ -1128,6 +1367,7 @@ function buildWeaponEntry(
     tags: [
       ...elements.map((code) => code.toLowerCase()),
       ...(primaryPriceType ? [primaryPriceType] : []),
+      ...(isDefault ? ['default'] : []),
     ],
     daRequired: flags.daRequired || obtainMethods.some((method) => method.daRequired),
     ...(flags.dcRequired || obtainMethods.some((method) => method.dcRequired)
@@ -1140,6 +1380,7 @@ function buildWeaponEntry(
     ...(weaponSpecial ? { hasSpecial: true } : {}),
     ...(armorCustomization ? { hasArmorCustomization: true } : {}),
     ...(isCosmetic ? { isCosmetic: true } : {}),
+    ...(isDefault ? { isDefault: true } : {}),
     ...(flags.isRare ? { isRare: true } : {}),
     ...(flags.isSeasonal ? { isSeasonal: true } : {}),
     ...(flags.isSpecialOffer ? { isSpecialOffer: true } : {}),
@@ -1311,6 +1552,10 @@ function buildWeaponFamily(
           variantName:
             getParentheticalFamilyVariantName(level.name, finalFamilyName) ?? level.variantName,
         }))
+  const isDefault =
+    isDefaultWeaponTitle(finalFamilyName) ||
+    isDefaultWeaponTitle(stub.name) ||
+    finalLevelVariants.some((level) => isDefaultWeaponTitle(level.name))
   const elements = Array.from(
     new Set(
       finalLevelVariants
@@ -1333,6 +1578,7 @@ function buildWeaponFamily(
       ),
       ...(weaponSpecial ? ['special'] : []),
       ...(armorCustomization ? ['armor-customization'] : []),
+      ...(isDefault ? ['default'] : []),
     ])
   )
   const family: WeaponFamily = {
@@ -1379,6 +1625,7 @@ function buildWeaponFamily(
     ...(weaponSpecial ? { hasSpecial: true } : {}),
     ...(armorCustomization ? { hasArmorCustomization: true } : {}),
     ...(hasCosmeticMarker(allText) ? { isCosmetic: true } : {}),
+    ...(isDefault ? { isDefault: true } : {}),
     ...(threadFlags.isRare ? { isRare: true } : {}),
     ...(threadFlags.isSeasonal ? { isSeasonal: true } : {}),
     ...(threadFlags.isSpecialOffer ? { isSpecialOffer: true } : {}),
@@ -1497,6 +1744,26 @@ function normalizeWeaponFamilyName(name: string): string {
   return normalizeParticles(displayTitle(stripVersionSuffix(name)))
 }
 
+function isDefaultWeaponTitle(name: string | undefined): boolean {
+  if (!name) return false
+  return /\([^)]*\bDefault\)/i.test(name)
+}
+
+function weaponEntryIsDefault(entry: WeaponEntry): boolean {
+  if (isWeaponFamilyEntry(entry)) {
+    return (
+      isDefaultWeaponTitle(entry.familyName) ||
+      entry.familySources?.some(
+        (source) => isDefaultWeaponTitle(source.title) || isDefaultWeaponTitle(source.variantLabel)
+      ) ||
+      entry.levelVariants.some(
+        (level) => isDefaultWeaponTitle(level.name) || isDefaultWeaponTitle(level.variantName)
+      )
+    )
+  }
+  return isDefaultWeaponTitle(entry.name)
+}
+
 function normalizeWeaponVariantDisplayName(name: string, familyName: string): string {
   const displayName = name
     .replace(/\s+\([12]\)\s*$/i, '')
@@ -1592,6 +1859,7 @@ function getWeaponParentheticalVariantName(name: string, familyName: string): st
     const candidateNames = [
       `${normalizedBase} ${normalizedVariant}`,
       `${normalizedBase}${normalizedVariant}`,
+      `${normalizedVariant} ${normalizedBase}`,
     ]
     if (candidateNames.includes(normalizedName)) return displayTitle(variant)
   }
@@ -1641,6 +1909,7 @@ function isFoamHammerConsolidationPair(a: WeaponEntry, b: WeaponEntry): boolean 
 function canPromoteWeaponCrossPost(a: WeaponEntry, b: WeaponEntry): boolean {
   if (a.type !== b.type || a.subtype !== b.subtype) return false
   if (isWeaponFamilyEntry(a) && isWeaponFamilyEntry(b)) return false
+  if (weaponEntryIsDefault(a) || weaponEntryIsDefault(b)) return false
   if (hasWeaponAliasOwnership(a, b)) return true
   if (!sharesWeaponExplicitReference(a, b)) return false
   const standardParts = getWeaponSharedTitleParts([a, b])
@@ -1664,6 +1933,7 @@ function isSingleTokenSharedFamilyGroup(group: WeaponEntry[]): boolean {
 }
 
 function shouldPromoteDenseSingleTokenExplicitGroup(group: WeaponEntry[]): boolean {
+  if (isRankedWeaponPairWithSameBase(group)) return true
   if (group.length < 3) return false
 
   const names = new Set(group.map((entry) => normalizeWeaponLookupName(getWeaponEntryName(entry))))
@@ -1680,6 +1950,19 @@ function shouldPromoteDenseSingleTokenExplicitGroup(group: WeaponEntry[]): boole
   }
 
   return entriesWithInternalRefs.size === group.length && internalRefCount >= group.length * 2
+}
+
+function getRankedWeaponBaseName(name: string): string | undefined {
+  const match = normalizeWeaponLookupName(name).match(/^(minor|major)\s+(.+)$/i)
+  return match?.[2]?.trim()
+}
+
+function isRankedWeaponPairWithSameBase(group: WeaponEntry[]): boolean {
+  if (group.length !== 2) return false
+  if (!sharesWeaponMutualExplicitReference(group[0], group[1])) return false
+
+  const bases = group.map((entry) => getRankedWeaponBaseName(getWeaponEntryName(entry)))
+  return Boolean(bases[0] && bases[1] && bases[0] === bases[1])
 }
 
 function allWeaponValuesSame<T>(values: T[]): boolean {
@@ -1741,17 +2024,47 @@ function dedupeWeaponFamilySources(sources: FamilySourceRef[]): FamilySourceRef[
   return result
 }
 
+function orderWeaponFamilySourcesByLevelVariants(
+  sources: FamilySourceRef[],
+  levels: LevelVariant[]
+): FamilySourceRef[] {
+  const orderByUrl = new Map<string, number>()
+  for (const [index, level] of levels.entries()) {
+    if (!level.sourceUrl || orderByUrl.has(level.sourceUrl)) continue
+    orderByUrl.set(level.sourceUrl, index)
+  }
+
+  return [...sources].sort((a, b) => {
+    const aOrder = orderByUrl.get(a.url) ?? Number.MAX_SAFE_INTEGER
+    const bOrder = orderByUrl.get(b.url) ?? Number.MAX_SAFE_INTEGER
+    return aOrder - bOrder || compareTitles(a.variantLabel ?? a.title, b.variantLabel ?? b.title)
+  })
+}
+
 function buildWeaponFamilyAliasSlugs(
   familyName: string,
   levels: LevelVariant[],
   existingAliases: string[] = [],
   canonicalSlug: string = weaponSlugForName(familyName)
 ): string[] {
+  const familyBase = familyName.replace(/\s+\([^)]+\)\s*$/i, '').trim()
+  const familyBaseSlug = slugify(familyBase)
+  const cleanExistingAliases = existingAliases.filter(
+    (aliasSlug) => !aliasSlug.endsWith(`-${familyBaseSlug}-${familyBaseSlug}`)
+  )
   return Array.from(
     new Set([
-      ...existingAliases,
+      ...cleanExistingAliases,
       ...(levels.length > 1 ? [weaponSlugForName(`${familyName} (All Versions)`)] : []),
       ...levels.map((level) => weaponSlugForName(level.name)),
+      ...levels
+        .map((level) => level.variantName)
+        .filter((variantName): variantName is string => Boolean(variantName))
+        .map((variantName) =>
+          normalizeWeaponComparableTitle(variantName).includes(normalizeWeaponComparableTitle(familyBase))
+            ? weaponSlugForName(variantName)
+            : weaponSlugForName(`${variantName} ${familyBase}`)
+        ),
     ])
   ).filter((slug) => slug && slug !== canonicalSlug)
 }
@@ -1836,7 +2149,7 @@ function mergeSameSlugWeaponFamilies(entries: WeaponEntry[]): WeaponEntry[] {
           [...(family.aliasSlugs ?? []), ...standalones.map((entry) => entry.slug)],
           family.slug
         ),
-        familySources,
+        familySources: orderWeaponFamilySourcesByLevelVariants(familySources, mergedLevels),
         shared: {
           ...family.shared,
           ...(externalRefs.length > 0 ? { alsoSee: externalRefs } : { alsoSee: undefined }),
@@ -1898,7 +2211,7 @@ function mergeFoamHammerStandaloneMembers(entries: WeaponEntry[]): WeaponEntry[]
       [...(family.aliasSlugs ?? []), ...standalones.map((entry) => entry.slug)],
       family.slug
     ),
-    familySources,
+    familySources: orderWeaponFamilySourcesByLevelVariants(familySources, mergedLevels),
     shared: {
       ...family.shared,
       ...(externalRefs.length > 0 ? { alsoSee: externalRefs } : { alsoSee: undefined }),
@@ -2035,6 +2348,8 @@ function buildLevelVariantFromWeapon(weapon: Weapon, familyName: string): LevelV
     ...(weapon.resists ? { resists: weapon.resists } : {}),
     ...(weapon.rarity ? { rarity: weapon.rarity } : {}),
     ...(weapon.itemType ? { itemType: weapon.itemType } : {}),
+    ...(weapon.weaponSpecial ? { weaponSpecial: weapon.weaponSpecial } : {}),
+    ...(weapon.weaponSpecials ? { weaponSpecials: weapon.weaponSpecials } : {}),
     ...(weapon.notes ? { notes: weapon.notes } : {}),
     ...(weapon.retired ? { retired: true } : {}),
   }
@@ -2078,8 +2393,14 @@ function buildWeaponFromLevelVariant(level: LevelVariant, family: WeaponFamily):
       ? { rarity: level.rarity ?? family.shared.rarity }
       : {}),
     ...((level.itemType ?? family.itemType) ? { itemType: level.itemType ?? family.itemType } : {}),
+    ...((level.weaponSpecial ?? family.shared.weaponSpecial)
+      ? { weaponSpecial: level.weaponSpecial ?? family.shared.weaponSpecial }
+      : {}),
+    ...((level.weaponSpecials ?? family.shared.weaponSpecials)
+      ? { weaponSpecials: level.weaponSpecials ?? family.shared.weaponSpecials }
+      : {}),
     obtainMethods,
-    tags: family.tags,
+    tags: Array.from(new Set([...(family.tags ?? []), ...(family.isDefault ? ['default'] : [])])),
     daRequired: hasDA,
     dcRequired: hasDC,
     dmRequired: hasDM,
@@ -2093,6 +2414,7 @@ function buildWeaponFromLevelVariant(level: LevelVariant, family: WeaponFamily):
     ...(family.isSeasonal ? { isSeasonal: true } : {}),
     ...(family.isSpecialOffer ? { isSpecialOffer: true } : {}),
     ...(family.isCosmetic ? { isCosmetic: true } : {}),
+    ...(family.isDefault ? { isDefault: true } : {}),
     ...(family.hasSpecial ? { hasSpecial: true } : {}),
     ...(family.hasArmorCustomization ? { hasArmorCustomization: true } : {}),
   }
@@ -2348,8 +2670,17 @@ function buildWeaponCrossPostFamily(
     .filter((value): value is WeaponSpecial => Boolean(value))
   const specials = [
     ...sorted
-      .map((entry) =>
-        isWeaponFamilyEntry(entry) ? entry.shared.weaponSpecial : entry.weaponSpecial
+      .flatMap((entry) =>
+        isWeaponFamilyEntry(entry)
+          ? [
+              ...(entry.shared.weaponSpecial ? [entry.shared.weaponSpecial] : []),
+              ...(entry.shared.weaponSpecials ?? []),
+              ...entry.levelVariants.flatMap((level) => [
+                ...(level.weaponSpecial ? [level.weaponSpecial] : []),
+                ...(level.weaponSpecials ?? []),
+              ]),
+            ]
+          : [...(entry.weaponSpecial ? [entry.weaponSpecial] : []), ...(entry.weaponSpecials ?? [])]
       )
       .filter((value): value is WeaponSpecial => Boolean(value)),
     ...inferredSpecials,
@@ -2383,6 +2714,12 @@ function buildWeaponCrossPostFamily(
     )
   )
   const externalRefs = gatherWeaponExternalRefs(sorted, internalSlugs)
+  const isDefault =
+    isDefaultWeaponTitle(familyName) ||
+    sorted.some((entry) => weaponEntryIsDefault(entry)) ||
+    familySources.some(
+      (source) => isDefaultWeaponTitle(source.title) || isDefaultWeaponTitle(source.variantLabel)
+    )
 
   return computeFamilyFlags({
     id: familySlug,
@@ -2393,7 +2730,7 @@ function buildWeaponCrossPostFamily(
     subtype: sorted[0].subtype,
     forumUrl: familyAnchor?.forumUrl ?? sorted[0].forumUrl,
     familyOrigin: 'cross-post',
-    familySources,
+    familySources: orderWeaponFamilySourcesByLevelVariants(familySources, levelVariants),
     ...(itemTypes.length === 1 ? { itemType: itemTypes[0] } : {}),
     shared: {
       description:
@@ -2408,8 +2745,8 @@ function buildWeaponCrossPostFamily(
       ...(resists.length > 0 && allWeaponValuesSame(resists) ? { resists: resists[0] } : {}),
       ...(rarities.length > 0 && allWeaponValuesSame(rarities) ? { rarity: rarities[0] } : {}),
       ...(notes.length > 0 && allWeaponValuesSame(notes) ? { notes: notes[0] } : {}),
-      ...(dedupedSpecials.length > 0 && allWeaponValuesSame(dedupedSpecials)
-        ? { weaponSpecial: dedupedSpecials[0] }
+      ...(mergeWeaponSpecialsForFamily(dedupedSpecials)
+        ? { weaponSpecial: mergeWeaponSpecialsForFamily(dedupedSpecials) }
         : {}),
       ...(armorCustomizations.length > 0 && allWeaponValuesSame(armorCustomizations)
         ? { armorCustomization: armorCustomizations[0] }
@@ -2425,6 +2762,7 @@ function buildWeaponCrossPostFamily(
         ...levelVariants.flatMap((variant) =>
           variant.obtainVariants.map((method) => method.priceType)
         ),
+        ...(isDefault ? ['default'] : []),
       ])
     ).sort(),
     hasDA: false,
@@ -2436,6 +2774,7 @@ function buildWeaponCrossPostFamily(
     hasSpecial: dedupedSpecials.length > 0 || undefined,
     hasArmorCustomization: armorCustomizations.length > 0 || undefined,
     isCosmetic: sorted.some((entry) => entry.isCosmetic) || undefined,
+    isDefault: isDefault || undefined,
     isTemp: sorted.some((entry) => entry.isTemp) || undefined,
     isRare: sorted.some((entry) => entry.isRare) || undefined,
     isSeasonal: sorted.some((entry) => entry.isSeasonal) || undefined,
@@ -2544,8 +2883,132 @@ function cloneWeaponFamilyWithLevels(
   })
 }
 
+function getSourceDisplayName(title: string | undefined): string | undefined {
+  return title?.replace(/^DF Encyclopedia:\s*/i, '').trim()
+}
+
+function getDefaultLevelFamilyName(level: LevelVariant, family: WeaponFamily): string {
+  const matchingSource = family.familySources?.find(
+    (source) => source.url === level.sourceUrl && isDefaultWeaponTitle(source.title)
+  )
+  const sourceName = getSourceDisplayName(matchingSource?.title)
+  if (sourceName && isDefaultWeaponTitle(sourceName)) return sourceName
+  if (isDefaultWeaponTitle(level.name)) return level.name
+  if (isDefaultWeaponTitle(family.familyName) && /\([^)]*\bDefault\)/i.test(family.familyName)) {
+    return family.familyName
+  }
+  return level.name
+}
+
+function tagDefaultWeaponFamily(family: WeaponFamily): WeaponFamily {
+  return {
+    ...family,
+    isDefault: true,
+    tags: Array.from(new Set([...(family.tags ?? []), 'default'])).sort(),
+  }
+}
+
+function clearDefaultWeaponFlag<T extends WeaponEntry>(entry: T): T {
+  const { isDefault: _isDefault, ...rest } = entry
+  return {
+    ...rest,
+    tags: (entry.tags ?? []).filter((tag) => tag !== 'default'),
+  } as T
+}
+
+export function splitDefaultWeaponFamilies(entries: WeaponEntry[]): WeaponEntry[] {
+  return entries.flatMap<WeaponEntry>((entry) => {
+    if (!isWeaponFamilyEntry(entry)) {
+      if (!weaponEntryIsDefault(entry)) return [clearDefaultWeaponFlag(entry)]
+      return [
+        {
+          ...entry,
+          isDefault: true,
+          tags: Array.from(new Set([...(entry.tags ?? []), 'default'])).sort(),
+        },
+      ]
+    }
+
+    if (!weaponEntryIsDefault(entry)) return [clearDefaultWeaponFlag(entry)]
+
+    const groups = new Map<string, LevelVariant[]>()
+    for (const level of entry.levelVariants) {
+      const familyName = getDefaultLevelFamilyName(level, entry)
+      groups.set(familyName, [...(groups.get(familyName) ?? []), level])
+    }
+
+    if (groups.size <= 1) return [tagDefaultWeaponFamily(entry)]
+
+    return Array.from(groups, ([familyName, levels]) =>
+      tagDefaultWeaponFamily(cloneWeaponFamilyWithLevels(entry, familyName, levels))
+    )
+  })
+}
+
+export function mergeArchKnightDefaultLongsword(entries: WeaponEntry[]): WeaponEntry[] {
+  const bareLongsword = entries.find(
+    (entry): entry is WeaponFamily =>
+      isWeaponFamilyEntry(entry) && entry.slug === 'weapon-longsword-longsword-default'
+  )
+  const archKnight = entries.find(
+    (entry): entry is WeaponFamily =>
+      isWeaponFamilyEntry(entry) && entry.slug === 'weapon-longsword-archknight-default'
+  )
+  if (!bareLongsword || !archKnight) return entries
+
+  const mergedLevels = dedupeWeaponLevelVariants([
+    ...archKnight.levelVariants,
+    ...bareLongsword.levelVariants,
+  ])
+  const mergedSources = orderWeaponFamilySourcesByLevelVariants(
+    dedupeWeaponFamilySources([...(archKnight.familySources ?? []), ...(bareLongsword.familySources ?? [])]),
+    mergedLevels
+  )
+  const mergedAlsoSee = Array.from(
+    new Map(
+      [
+        ...(archKnight.shared.alsoSee ?? []),
+        ...(bareLongsword.shared.alsoSee ?? []),
+      ]
+        .filter((ref) => ref.slug !== archKnight.slug && ref.slug !== bareLongsword.slug)
+        .map((ref) => [`${ref.type}:${ref.slug}`.toLowerCase(), ref])
+    ).values()
+  ).sort((a, b) => compareTitles(a.name, b.name))
+
+  const merged = computeFamilyFlags({
+    ...archKnight,
+    aliasSlugs: Array.from(
+      new Set([
+        ...(archKnight.aliasSlugs ?? []),
+        bareLongsword.slug,
+        ...(bareLongsword.aliasSlugs ?? []),
+      ])
+    ).filter((slug) => slug !== archKnight.slug),
+    familySources: mergedSources,
+    shared: {
+      ...archKnight.shared,
+      ...(mergedAlsoSee.length > 0 ? { alsoSee: mergedAlsoSee } : { alsoSee: undefined }),
+    },
+    levelVariants: mergedLevels,
+    isDefault: true,
+    tags: Array.from(new Set([...(archKnight.tags ?? []), ...(bareLongsword.tags ?? []), 'default'])).sort(),
+    hasDA: false,
+    hasDC: false,
+    hasDM: false,
+    hasFree: false,
+    hasMerge: false,
+  })
+
+  return entries.flatMap((entry) => {
+    if (entry.slug === archKnight.slug) return [merged]
+    if (entry.slug === bareLongsword.slug) return []
+    return [entry]
+  })
+}
+
 interface MixedVariantWeaponSplitGroup {
   familyName: string
+  familySlug?: string
   matches: (level: LevelVariant) => boolean
   getVariantName?: (level: LevelVariant) => string | undefined
 }
@@ -2584,6 +3047,14 @@ function isModernSeaVariant(level: LevelVariant): boolean {
 
 function getRomanOrExistingVariantName(level: LevelVariant): string | undefined {
   return getRomanVariantFromLevel(level) ?? level.variantName
+}
+
+function isPatrioticNamedWeaponVariant(level: LevelVariant, familyName: string): boolean {
+  return new RegExp(`^${familyName}\\s+(?:Rufus|Albus|Azureus|Aurus)$`, 'i').test(level.name)
+}
+
+function getPatrioticNamedWeaponVariant(level: LevelVariant): string | undefined {
+  return level.name.match(/\b(Rufus|Albus|Azureus|Aurus)$/i)?.[1]
 }
 
 const MIXED_VARIANT_WEAPON_SPLIT_SPECS: MixedVariantWeaponSplitSpec[] = [
@@ -2769,6 +3240,30 @@ const MIXED_VARIANT_WEAPON_SPLIT_SPECS: MixedVariantWeaponSplitSpec[] = [
       },
     ],
   },
+  ...(['Fidelitas', 'Decus', 'Ferocitas'] as const).map((familyName) => ({
+    sourceFamilyNames: [familyName],
+    groups: [
+      {
+        familyName: `${familyName} (I-V)`,
+        matches: (level: LevelVariant) =>
+          hasRomanVariantInRange(level, 1, 5) &&
+          levelHasObtainLocation(level, /Fourth of July Rares/i),
+        getVariantName: getRomanOrExistingVariantName,
+      },
+      {
+        familyName: `${familyName} (Rufus, Albus, Azureus, Aurus)`,
+        matches: (level: LevelVariant) => isPatrioticNamedWeaponVariant(level, familyName),
+        getVariantName: getPatrioticNamedWeaponVariant,
+      },
+      {
+        familyName: `${familyName} (I-VIII)`,
+        matches: (level: LevelVariant) =>
+          hasRomanVariantInRange(level, 1, 8) &&
+          levelHasObtainLocation(level, /Fourth of July Weapons/i),
+        getVariantName: getRomanOrExistingVariantName,
+      },
+    ],
+  })),
 ]
 
 function getMixedVariantWeaponSplitSpec(
@@ -2831,7 +3326,14 @@ function cloneMixedVariantWeaponFamilyGroup(
         variantName: group.getVariantName?.(level) ?? level.variantName,
       }))
     : levels
-  return cloneWeaponFamilyWithLevels(family, group.familyName, adjustedLevels)
+  const cloned = cloneWeaponFamilyWithLevels(family, group.familyName, adjustedLevels)
+  if (!group.familySlug) return cloned
+  return {
+    ...cloned,
+    id: group.familySlug,
+    slug: group.familySlug,
+    aliasSlugs: cloned.aliasSlugs?.filter((slug) => slug !== group.familySlug),
+  }
 }
 
 export function splitApprovedMixedVariantWeaponFamilies(entries: WeaponEntry[]): WeaponEntry[] {
@@ -2948,6 +3450,8 @@ function buildStandaloneWeaponFromLevelVariant(
     ...(level.resists ? { resists: level.resists } : {}),
     ...(level.rarity ? { rarity: level.rarity } : {}),
     ...(level.itemType ? { itemType: level.itemType } : {}),
+    ...(level.weaponSpecial ? { weaponSpecial: level.weaponSpecial } : {}),
+    ...(level.weaponSpecials ? { weaponSpecials: level.weaponSpecials } : {}),
     obtainMethods: methods,
     tags: Array.from(new Set(methods.map((method) => method.priceType))),
     daRequired: Boolean(hasDA),
@@ -3325,7 +3829,7 @@ function mergeCorDemiCodexFamily(entries: WeaponEntry[]): WeaponEntry[] {
     subtype: 'sword-axe-mace' as WeaponSubtype,
     forumUrl: sortedMembers[0].forumUrl,
     familyOrigin: 'cross-post',
-    familySources,
+    familySources: orderWeaponFamilySourcesByLevelVariants(familySources, levelVariants),
     itemType: 'Sword',
     shared: {
       description: descriptions[0] ?? '',
@@ -3707,11 +4211,18 @@ function weaponEntryMatchesSelectedNames(
   const selected = new Set(selectedNames.flatMap(normalizedSelectedWeaponNameCandidates))
   const values = [
     getWeaponEntryName(entry),
+    ...(isWeaponFamilyEntry(entry)
+      ? entry.levelVariants.flatMap((level) => [level.name, level.variantName])
+      : []),
     ...('aliasSlugs' in entry
       ? (entry.aliasSlugs ?? []).map((slug) => slug.replace(/^weapon-/, ''))
       : []),
     ...('familySources' in entry
-      ? (entry.familySources ?? []).flatMap((source) => [source.title, source.variantLabel])
+      ? (entry.familySources ?? []).flatMap((source) => [
+          source.title,
+          source.title.replace(/^DF Encyclopedia:\s*/i, ''),
+          source.variantLabel,
+        ])
       : []),
   ].filter((value): value is string => Boolean(value))
 
@@ -3851,6 +4362,11 @@ export function normalizeWeaponFamilyDisplayLabels(entries: WeaponEntry[]): Weap
             level.variantName && /^(?:\(Base\)|\(DC\)|.+\s\(DC\))$/i.test(level.variantName)
               ? level.variantName
               : undefined
+          const explicitVariantName =
+            level.variantName && !/^(?:[ivxlcdm]+|\([^)]+\))$/i.test(level.variantName)
+              ? level.variantName
+              : undefined
+          const parentheticalVariantName = getWeaponParentheticalVariantName(name, familyName)
           const sourceVariantName = level.sourceUrl
             ? sourceVariantByUrl.get(level.sourceUrl)
             : undefined
@@ -3871,6 +4387,8 @@ export function normalizeWeaponFamilyDisplayLabels(entries: WeaponEntry[]): Weap
             name,
             variantName:
               explicitBranchVariantName ??
+              parentheticalVariantName ??
+              explicitVariantName ??
               sourceVariantName ??
               (hasSourceTitleVariants && isExactSourceFamily ? '(Base)' : undefined) ??
               getSpecialWeaponLevelVariantName({ ...level, name }, familyName) ??
@@ -3909,18 +4427,21 @@ export function normalizeWeaponFamilyDisplayLabels(entries: WeaponEntry[]): Weap
         entry.slug
       ),
       familySources: entry.familySources
-        ? dedupeWeaponFamilySources(
-            entry.familySources.map((source) => {
-              const sourceVariantLabel =
-                sourceLabelByUrl.get(source.url) ??
-                (source.variantLabel
-                  ? normalizeWeaponSourceLabelForFamily(source.variantLabel, familyName)
-                  : undefined)
-              return {
-                ...source,
-                ...(sourceVariantLabel ? { variantLabel: sourceVariantLabel } : {}),
-              }
-            })
+        ? orderWeaponFamilySourcesByLevelVariants(
+            dedupeWeaponFamilySources(
+              entry.familySources.map((source) => {
+                const sourceVariantLabel =
+                  sourceLabelByUrl.get(source.url) ??
+                  (source.variantLabel
+                    ? normalizeWeaponSourceLabelForFamily(source.variantLabel, familyName)
+                    : undefined)
+                return {
+                  ...source,
+                  ...(sourceVariantLabel ? { variantLabel: sourceVariantLabel } : {}),
+                }
+              })
+            ),
+            levelVariants
           )
         : undefined,
       shared: {
@@ -4062,6 +4583,9 @@ function writeDatasets(
     const incomingSlugs = new Set(incoming.map((entry) => entry.slug))
     const preserved = existing.filter((entry) => {
       const displayName = 'familyName' in entry ? entry.familyName : entry.name
+      if (fresh && weaponEntryMatchesSelectedNames(entry, selectedNames)) {
+        return false
+      }
       if (familyOwnsIncomingAlias(entry, incomingSlugs)) return true
       if (incomingSlugs.has(entry.slug)) {
         const incomingSameSlug = incoming.filter(
@@ -4074,9 +4598,6 @@ function writeDatasets(
       }
       const entryMessageId = getMessageIdFromForumUrl(entry.forumUrl)
       if (entryMessageId && selectedMessageIds?.has(entryMessageId)) return false
-      if (fresh && weaponEntryMatchesSelectedNames(entry, selectedNames)) {
-        return false
-      }
       if (!fresh && selectedNames && matchesNameFilter(displayName, { names: selectedNames })) {
         return false
       }
@@ -4102,7 +4623,10 @@ function writeDatasets(
     merged = applyInferredWeaponSpecials(merged)
     merged = applyParsedArmorCustomizations(merged)
     merged = splitFoamRolithStandaloneEntry(merged)
+    merged = splitDefaultWeaponFamilies(merged)
+    merged = mergeArchKnightDefaultLongsword(merged)
     merged = dedupeWeaponEntriesBySlug(merged)
+    merged = removeWeaponAliasStandaloneEntries(merged)
     merged = removeDuplicateWeaponAliasClaims(merged)
     merged = removeConflictingWeaponAliasSlugs(merged)
     merged = removeMisleadingCrossSubtypeWeaponAliases(merged)
@@ -4143,6 +4667,8 @@ async function main() {
   const limit = getLimitArg()
   const concurrency = getConcurrencyArg(2)
   const fresh = getFreshArg()
+  const specialOnly = getBooleanArg('special-only')
+  const missingSpecialImagesOnly = getBooleanArg('missing-special-images-only')
   const selectedSubtypes = (
     subtypesArg
       ? subtypesArg.split(',').map((value) => value.trim())
@@ -4191,10 +4717,22 @@ async function main() {
   }
   const crossSubtypeContext = buildCrossSubtypeThreadContext(allStubs)
   const resolveAlsoSee = createWeaponRefResolver(allStubs)
+  const specialTargets = specialOnly
+    ? collectSpecialWeaponRefreshTargets(selectedSubtypes, {
+        missingEffectImagesOnly: missingSpecialImagesOnly,
+      })
+    : undefined
+  if (specialTargets) {
+    console.log(
+      `Filtered to ${specialTargets.entryCount} current special-bearing weapon entries/families ` +
+        `(${specialTargets.messageIds.size} source posts)`
+    )
+  }
   const scopedStubs = allStubs.filter((stub) => {
     if (!selectedSubtypes.includes(stub.subtype)) return false
     if (shouldSkipWeaponStubForSubtype(stub)) return false
     if (directMessageIds.size > 0 && !directMessageIds.has(stub.messageId)) return false
+    if (specialTargets && !weaponStubMatchesSpecialTargets(stub, specialTargets)) return false
     if (lettersArg && lettersArg.length > 0 && !lettersArg.includes(getInitialForName(stub.name))) {
       return false
     }
@@ -4253,7 +4791,11 @@ async function main() {
     entriesBySubtype,
     selectedSubtypes,
     lettersArg,
-    namesArg && parsedNames.length > 0 ? parsedNames.map(normalizeWeaponTitleKey) : undefined,
+    specialTargets
+      ? Array.from(specialTargets.names)
+      : namesArg && parsedNames.length > 0
+        ? parsedNames.map(normalizeWeaponTitleKey)
+        : undefined,
     directMessageIds.size > 0 ? parsedMessageIds : undefined,
     fresh
   )

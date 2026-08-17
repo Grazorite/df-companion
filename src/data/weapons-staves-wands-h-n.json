@@ -63,7 +63,11 @@
       "weapon-half-fractured-staff-i",
       "weapon-half-fractured-staff-ii",
       "weapon-half-fractured-staff-iii",
-      "weapon-half-fractured-staff-iv"
+      "weapon-half-fractured-staff-iv",
+      "weapon-i-half-fractured-staff",
+      "weapon-ii-half-fractured-staff",
+      "weapon-iii-half-fractured-staff",
+      "weapon-iv-half-fractured-staff"
     ],
     "type": "weapon",
     "subtype": "staff-wand",
@@ -234,7 +238,12 @@
       "weapon-half-gear-staff-ii",
       "weapon-half-gear-staff-iii",
       "weapon-half-gear-staff-iv",
-      "weapon-half-gear-staff-v"
+      "weapon-half-gear-staff-v",
+      "weapon-i-half-gear-staff",
+      "weapon-ii-half-gear-staff",
+      "weapon-iii-half-gear-staff",
+      "weapon-iv-half-gear-staff",
+      "weapon-v-half-gear-staff"
     ],
     "type": "weapon",
     "subtype": "staff-wand",
@@ -600,7 +609,9 @@
     "slug": "weapon-half-off-boreas",
     "aliasSlugs": [
       "weapon-half-off-elite-boreas",
-      "weapon-half-off-boreas-all-versions"
+      "weapon-half-off-boreas-all-versions",
+      "weapon-base-half-off-boreas",
+      "weapon-elite-half-off-boreas"
     ],
     "type": "weapon",
     "subtype": "staff-wand",
@@ -710,7 +721,9 @@
     "aliasSlugs": [
       "weapon-half-off-high-staff-of-clubs",
       "weapon-half-off-higher-staff-of-clubs",
-      "weapon-half-off-staff-of-clubs-all-versions"
+      "weapon-half-off-staff-of-clubs-all-versions",
+      "weapon-high-half-off-staff-of-clubs",
+      "weapon-higher-half-off-staff-of-clubs"
     ],
     "type": "weapon",
     "subtype": "staff-wand",
@@ -748,6 +761,12 @@
           "slug": "weapon-high-staff-of-clubs-all-versions",
           "type": "weapon",
           "url": "https://forums2.battleon.com/f/tm.asp?m=17760066"
+        },
+        {
+          "name": "Staff of Clubs (All Versions)",
+          "slug": "weapon-staff-of-clubs-all-versions",
+          "type": "weapon",
+          "url": "https://forums2.battleon.com/f/tm.asp?m=17760075"
         },
         {
           "name": "Staff of Clubs (Card Shoppe)",
@@ -837,7 +856,12 @@
       "weapon-half-half-gear-staff-ii",
       "weapon-half-half-gear-staff-iii",
       "weapon-half-half-gear-staff-iv",
-      "weapon-half-half-gear-staff-v"
+      "weapon-half-half-gear-staff-v",
+      "weapon-i-half-half-gear-staff",
+      "weapon-ii-half-half-gear-staff",
+      "weapon-iii-half-half-gear-staff",
+      "weapon-iv-half-half-gear-staff",
+      "weapon-v-half-half-gear-staff"
     ],
     "type": "weapon",
     "subtype": "staff-wand",
@@ -1044,7 +1068,12 @@
       "weapon-half-off-frostvale-fir-ii",
       "weapon-half-off-frostvale-fir-iii",
       "weapon-half-off-frostvale-fir-iv",
-      "weapon-half-off-frostvale-fir-v"
+      "weapon-half-off-frostvale-fir-v",
+      "weapon-i-half-off-frostvale-fir",
+      "weapon-ii-half-off-frostvale-fir",
+      "weapon-iii-half-off-frostvale-fir",
+      "weapon-iv-half-off-frostvale-fir",
+      "weapon-v-half-off-frostvale-fir"
     ],
     "type": "weapon",
     "subtype": "staff-wand",
@@ -1240,15 +1269,16 @@
     "familyName": "Hallow'D Staff",
     "slug": "weapon-hallow-d-staff",
     "aliasSlugs": [
+      "weapon-elevated-hallow-d-staff",
+      "weapon-glorious-hallow-d-staff",
+      "weapon-high-hallow-d-staff",
       "weapon-magnificent-hallow-d-staff",
       "weapon-marvelous-hallow-d-staff",
       "weapon-noble-hallow-d-staff",
       "weapon-potent-hallow-d-staff",
       "weapon-pristine-hallow-d-staff",
       "weapon-hallow-d-staff-all-versions",
-      "weapon-high-hallow-d-staff",
-      "weapon-elevated-hallow-d-staff",
-      "weapon-glorious-hallow-d-staff"
+      "weapon-base-hallow-d-staff"
     ],
     "type": "weapon",
     "subtype": "staff-wand",
@@ -1256,21 +1286,15 @@
     "familyOrigin": "cross-post",
     "familySources": [
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21844328",
-        "title": "DF Encyclopedia: Elevated Hallow'd Staff",
-        "variantLabel": "Elevated Hallow'd Staff",
-        "isPrimary": true
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21844344",
-        "title": "DF Encyclopedia: Glorious Hallow'd Staff",
-        "variantLabel": "Glorious Hallow'd Staff",
-        "isPrimary": false
-      },
-      {
         "url": "https://forums2.battleon.com/f/tm.asp?m=11699728",
         "title": "DF Encyclopedia: Hallow'd Staff",
         "variantLabel": "Hallow'd Staff",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=17741711",
+        "title": "DF Encyclopedia: Potent Hallow'd Staff",
+        "variantLabel": "Potent Hallow'd Staff",
         "isPrimary": false
       },
       {
@@ -1280,9 +1304,9 @@
         "isPrimary": false
       },
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21844337",
-        "title": "DF Encyclopedia: Magnificent Hallow'd Staff",
-        "variantLabel": "Magnificent Hallow'd Staff",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21844313",
+        "title": "DF Encyclopedia: Noble Hallow'd Staff",
+        "variantLabel": "Noble Hallow'd Staff",
         "isPrimary": false
       },
       {
@@ -1292,15 +1316,21 @@
         "isPrimary": false
       },
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21844313",
-        "title": "DF Encyclopedia: Noble Hallow'd Staff",
-        "variantLabel": "Noble Hallow'd Staff",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21844328",
+        "title": "DF Encyclopedia: Elevated Hallow'd Staff",
+        "variantLabel": "Elevated Hallow'd Staff",
+        "isPrimary": true
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21844337",
+        "title": "DF Encyclopedia: Magnificent Hallow'd Staff",
+        "variantLabel": "Magnificent Hallow'd Staff",
         "isPrimary": false
       },
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=17741711",
-        "title": "DF Encyclopedia: Potent Hallow'd Staff",
-        "variantLabel": "Potent Hallow'd Staff",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21844344",
+        "title": "DF Encyclopedia: Glorious Hallow'd Staff",
+        "variantLabel": "Glorious Hallow'd Staff",
         "isPrimary": false
       },
       {
@@ -2035,7 +2065,18 @@
       "weapon-harvest-staff-viii",
       "weapon-harvest-staff-ix",
       "weapon-harvest-staff-x",
-      "weapon-harvest-staff-xi"
+      "weapon-harvest-staff-xi",
+      "weapon-base-harvest-staff",
+      "weapon-ii-harvest-staff",
+      "weapon-iii-harvest-staff",
+      "weapon-iv-harvest-staff",
+      "weapon-v-harvest-staff",
+      "weapon-vi-harvest-staff",
+      "weapon-vii-harvest-staff",
+      "weapon-viii-harvest-staff",
+      "weapon-ix-harvest-staff",
+      "weapon-x-harvest-staff",
+      "weapon-xi-harvest-staff"
     ],
     "type": "weapon",
     "subtype": "staff-wand",
@@ -2505,6 +2546,140 @@
     "alsoSee": []
   },
   {
+    "id": "weapon-heart-of-the-void",
+    "familyName": "Heart of The Void",
+    "slug": "weapon-heart-of-the-void",
+    "aliasSlugs": [
+      "weapon-beating-heart-of-the-void",
+      "weapon-broken-heart-of-the-void",
+      "weapon-empty-heart-of-the-void",
+      "weapon-heart-of-the-void-all-versions"
+    ],
+    "type": "weapon",
+    "subtype": "staff-wand",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18072241",
+    "familyOrigin": "cross-post",
+    "familySources": [
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=18069809",
+        "title": "DF Encyclopedia: Broken Heart of the Void",
+        "variantLabel": "Broken Heart of the Void",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=18075376",
+        "title": "DF Encyclopedia: Empty Heart of the Void",
+        "variantLabel": "Empty Heart of the Void",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=18072241",
+        "title": "DF Encyclopedia: Beating Heart of the Void",
+        "variantLabel": "Beating Heart of the Void",
+        "isPrimary": true
+      }
+    ],
+    "itemType": "Wand",
+    "shared": {
+      "description": "Lim managed to craft this wand using the power of SCIENCE and a leftover node of Void energy.",
+      "element": "???",
+      "rarity": "1",
+      "alsoSee": []
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 45,
+        "levelDisplay": "45",
+        "actualLevel": 45,
+        "variantName": "Broken",
+        "name": "Broken Heart of the Void",
+        "damage": "57-70",
+        "stats": "Dodge +1, Crit +3, END +4, INT +6, Bonus +3",
+        "obtainVariants": [
+          {
+            "location": "Embrace Your Destiny",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "125 Gold",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=18069809",
+        "description": "Lim managed to craft this wand using the power of SCIENCE and a leftover node of Void energy.",
+        "imageUrl": "http://i.imgur.com/DefA43o.png",
+        "element": "???",
+        "resists": "Immobility +4, Darkness +4",
+        "rarity": "1",
+        "itemType": "Wand"
+      },
+      {
+        "levelNumber": 55,
+        "levelDisplay": "55",
+        "actualLevel": 55,
+        "variantName": "Empty",
+        "name": "Empty Heart of the Void",
+        "damage": "67-75",
+        "stats": "Crit +4, Magic Def +1, Pierce Def +1, Melee Def +1, WIS +6, END +6, INT +8, Bonus +4",
+        "obtainVariants": [
+          {
+            "location": "Embrace Your Destiny",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "210 Gold",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=18075376",
+        "description": "Lim managed to craft this wand using the power of SCIENCE and a leftover node of Void energy.",
+        "imageUrl": "http://i.imgur.com/DefA43o.png",
+        "element": "???",
+        "resists": "Immobility +6, Darkness +6",
+        "rarity": "1",
+        "itemType": "Wand"
+      },
+      {
+        "levelNumber": 60,
+        "levelDisplay": "60",
+        "actualLevel": 60,
+        "variantName": "Beating",
+        "name": "Beating Heart of the Void",
+        "damage": "71-79",
+        "stats": "Dodge +2, Crit +5, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +7, END +6, INT +10, Bonus +4",
+        "obtainVariants": [
+          {
+            "location": "Embrace Your Destiny",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "300 Gold",
+            "daRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=18072241",
+        "description": "Lim managed to craft this wand using the power of SCIENCE and a leftover node of Void energy. This item requires a Dragon Amulet.",
+        "imageUrl": "https://i.imgur.com/Ss824FJ.png",
+        "element": "???",
+        "resists": "Immobility +6, Darkness +9",
+        "rarity": "1",
+        "itemType": "Wand"
+      }
+    ],
+    "category": "Weapon",
+    "releaseDate": "",
+    "tags": [
+      "???",
+      "free"
+    ],
+    "hasDA": true,
+    "hasDC": false,
+    "hasDM": false,
+    "hasFree": true,
+    "hasMerge": false,
+    "elements": [
+      "???"
+    ],
+    "levelRange": "45-60"
+  },
+  {
     "id": "weapon-heartache-staff",
     "name": "Heartache (Staff)",
     "slug": "weapon-heartache-staff",
@@ -2706,31 +2881,18 @@
       "weapon-hero-s-platinum-essence",
       "weapon-hero-s-shining-essence",
       "weapon-hero-s-splendid-essence",
-      "weapon-hero-s-essence-all-versions"
+      "weapon-hero-s-essence-all-versions",
+      "weapon-shining-hero-s-essence",
+      "weapon-splendid-hero-s-essence",
+      "weapon-beautiful-hero-s-essence",
+      "weapon-platinum-hero-s-essence",
+      "weapon-glorious-hero-s-essence"
     ],
     "type": "weapon",
     "subtype": "staff-wand",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21656874",
     "familyOrigin": "cross-post",
     "familySources": [
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21656874",
-        "title": "DF Encyclopedia: Hero's Beautiful Essence",
-        "variantLabel": "Hero's Beautiful Essence",
-        "isPrimary": true
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21655133",
-        "title": "DF Encyclopedia: Hero's Glorious Essence",
-        "variantLabel": "Hero's Glorious Essence",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21657915",
-        "title": "DF Encyclopedia: Hero's Platinum Essence",
-        "variantLabel": "Hero's Platinum Essence",
-        "isPrimary": false
-      },
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=21655136",
         "title": "DF Encyclopedia: Hero's Shining Essence",
@@ -2741,6 +2903,24 @@
         "url": "https://forums2.battleon.com/f/tm.asp?m=21656860",
         "title": "DF Encyclopedia: Hero's Splendid Essence",
         "variantLabel": "Hero's Splendid Essence",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21656874",
+        "title": "DF Encyclopedia: Hero's Beautiful Essence",
+        "variantLabel": "Hero's Beautiful Essence",
+        "isPrimary": true
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21657915",
+        "title": "DF Encyclopedia: Hero's Platinum Essence",
+        "variantLabel": "Hero's Platinum Essence",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21655133",
+        "title": "DF Encyclopedia: Hero's Glorious Essence",
+        "variantLabel": "Hero's Glorious Essence",
         "isPrimary": false
       }
     ],
@@ -3250,21 +3430,26 @@
     "daRequired": true
   },
   {
-    "id": "weapon-high-tide-i-v",
+    "id": "weapon-high-tide",
     "familyName": "High Tide",
-    "slug": "weapon-high-tide-i-v",
+    "slug": "weapon-high-tide",
     "aliasSlugs": [
-      "weapon-high-tide",
+      "weapon-high-tide-i-v",
+      "weapon-high-tide-all-versions",
       "weapon-high-tide-ii",
       "weapon-high-tide-iii",
       "weapon-high-tide-iv",
       "weapon-high-tide-v",
-      "weapon-high-tide-all-versions"
+      "weapon-base-high-tide",
+      "weapon-ii-high-tide",
+      "weapon-iii-high-tide",
+      "weapon-iv-high-tide",
+      "weapon-v-high-tide"
     ],
     "type": "weapon",
     "subtype": "staff-wand",
-    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=8929174",
-    "familyOrigin": "cross-post",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=8929174",
+    "familyOrigin": "same-thread-multi-post",
     "familySources": [
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=8929174",
@@ -3301,14 +3486,13 @@
     "shared": {
       "description": "This item requires a Dragon Amulet. This water weapon was forged from the scales dropped by Cave Hydra during molting.",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/HighTide.png",
-      "element": "WAT",
-      "notes": "Weapon is animated; cyan orb near the top of the staff emits a spark and a pulse continuously.",
+      "notes": "Weapons are animated; cyan orb near the top of the staff emits a spark and a pulse continuously.",
       "alsoSee": [
         {
           "name": "High Tide (Misplaced, Missed, Lost, Stray, Wayward)",
           "slug": "weapon-high-tide-misplaced-missed-lost-stray-wayward",
           "type": "weapon",
-          "url": "https://forums2.battleon.com/f/tm.asp?m=19878131"
+          "url": "https://forums2.battleon.com/f/tm.asp?m=19857706"
         }
       ]
     },
@@ -3437,8 +3621,8 @@
     "category": "Weapon",
     "releaseDate": "",
     "tags": [
-      "free",
-      "wat"
+      "wat",
+      "free"
     ],
     "hasDA": true,
     "hasDC": false,
@@ -3455,12 +3639,12 @@
     "familyName": "High Tide (Misplaced, Missed, Lost, Stray, Wayward)",
     "slug": "weapon-high-tide-misplaced-missed-lost-stray-wayward",
     "aliasSlugs": [
+      "weapon-high-tide-misplaced-missed-lost-stray-wayward-all-versions",
+      "weapon-lost-high-tide",
       "weapon-misplaced-high-tide",
       "weapon-missed-high-tide",
-      "weapon-lost-high-tide",
       "weapon-stray-high-tide",
-      "weapon-wayward-high-tide",
-      "weapon-high-tide-misplaced-missed-lost-stray-wayward-all-versions"
+      "weapon-wayward-high-tide"
     ],
     "type": "weapon",
     "subtype": "staff-wand",
@@ -3506,8 +3690,8 @@
       "notes": "Weapon is animated; cyan orb near the top of the staff emits a spark and a pulse continuously.",
       "alsoSee": [
         {
-          "name": "High Tide (I-V)",
-          "slug": "weapon-high-tide-i-v",
+          "name": "High Tide",
+          "slug": "weapon-high-tide",
           "type": "weapon",
           "url": "https://forums2.battleon.com/f/fb.asp?m=8929174"
         }
@@ -3703,7 +3887,9 @@
     "aliasSlugs": [
       "weapon-hunter-s-rage-conflagration-all-versions",
       "weapon-hunter-s-rage",
-      "weapon-hunter-s-conflagration"
+      "weapon-hunter-s-conflagration",
+      "weapon-rage-hunter-s",
+      "weapon-conflagration-hunter-s"
     ],
     "type": "weapon",
     "subtype": "staff-wand",
@@ -3931,11 +4117,13 @@
       }
     ],
     "tags": [
-      "ice",
-      "free"
+      "default",
+      "free",
+      "ice"
     ],
     "daRequired": true,
-    "alsoSee": []
+    "alsoSee": [],
+    "isDefault": true
   },
   {
     "id": "weapon-ice-reign",
@@ -3980,7 +4168,11 @@
       "weapon-ice-rose-staff-all-versions",
       "weapon-ice-rose-staff-a",
       "weapon-ice-rose-staff-i",
-      "weapon-ice-rose-staff-ii"
+      "weapon-ice-rose-staff-ii",
+      "weapon-a-ice-rose-staff",
+      "weapon-i-ice-rose-staff",
+      "weapon-ii-ice-rose-staff",
+      "weapon-base-ice-rose-staff"
     ],
     "type": "weapon",
     "subtype": "staff-wand",
@@ -4016,7 +4208,7 @@
     "shared": {
       "description": "The flowers on this staff are created from elemental essences.",
       "imageUrl": "http://i.imgur.com/vblr6.png",
-      "notes": "The following changes were implemented on February 28th, 2025:\n  • The Level 15 version was updated with an Alexander indicator.\n  • 29-69 versions were updated with Roman numerals.",
+      "notes": "The following changes were implemented on February 28th, 2025:\n • The Level 15 version was updated with an Alexander indicator.\n • 29-69 versions were updated with Roman numerals.",
       "alsoSee": []
     },
     "levelVariants": [
@@ -4691,7 +4883,15 @@
       "weapon-invader-s-pool-noodle-v",
       "weapon-invader-s-pool-noodle-vi",
       "weapon-invader-s-pool-noodle-vii",
-      "weapon-invader-s-pool-noodle-viii"
+      "weapon-invader-s-pool-noodle-viii",
+      "weapon-i-invader-s-pool-noodle",
+      "weapon-ii-invader-s-pool-noodle",
+      "weapon-iii-invader-s-pool-noodle",
+      "weapon-iv-invader-s-pool-noodle",
+      "weapon-v-invader-s-pool-noodle",
+      "weapon-vi-invader-s-pool-noodle",
+      "weapon-vii-invader-s-pool-noodle",
+      "weapon-viii-invader-s-pool-noodle"
     ],
     "type": "weapon",
     "subtype": "staff-wand",
@@ -5077,11 +5277,12 @@
     "familyName": "Ishrva",
     "slug": "weapon-ishrva",
     "aliasSlugs": [
+      "weapon-absent-ishrva",
+      "weapon-icy-ishrva",
       "weapon-lost-ishrva",
       "weapon-missed-ishrva",
       "weapon-ishrva-all-versions",
-      "weapon-icy-ishrva",
-      "weapon-absent-ishrva"
+      "weapon-base-ishrva"
     ],
     "type": "weapon",
     "subtype": "staff-wand",
@@ -5089,21 +5290,15 @@
     "familyOrigin": "cross-post",
     "familySources": [
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19660696",
-        "title": "DF Encyclopedia: Absent Ishrva",
-        "variantLabel": "Absent Ishrva",
-        "isPrimary": true
+        "url": "https://forums2.battleon.com/f/tm.asp?m=19662368",
+        "title": "DF Encyclopedia: Ishrva",
+        "variantLabel": "Ishrva",
+        "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=19664666",
         "title": "DF Encyclopedia: Icy Ishrva",
         "variantLabel": "Icy Ishrva",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19662368",
-        "title": "DF Encyclopedia: Ishrva",
-        "variantLabel": "Ishrva",
         "isPrimary": false
       },
       {
@@ -5117,6 +5312,12 @@
         "title": "DF Encyclopedia: Missed Ishrva",
         "variantLabel": "Missed Ishrva",
         "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=19660696",
+        "title": "DF Encyclopedia: Absent Ishrva",
+        "variantLabel": "Absent Ishrva",
+        "isPrimary": true
       }
     ],
     "itemType": "Staff",
@@ -5352,7 +5553,10 @@
       "weapon-itsuru-all-versions",
       "weapon-itsuru-i",
       "weapon-itsuru-ii",
-      "weapon-itsuru-iii"
+      "weapon-itsuru-iii",
+      "weapon-i-itsuru",
+      "weapon-ii-itsuru",
+      "weapon-iii-itsuru"
     ],
     "type": "weapon",
     "subtype": "staff-wand",
@@ -5382,7 +5586,7 @@
     "shared": {
       "description": "The ingredients of the poisons coating this ninja weapon were collected during a winter freeze.",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Itsuru.png",
-      "notes": "The following changes were implemented on May 29th, 2026:\n  • Sellback was reduced from 30 to 20 Gold.\n  • Level's requirement was raised from 11 to 15.\n  • Damage range was modified from 20-38 to 31-39.\n  • Stats were added.\nThe following changes were implemented on May 29th, 2026:\n  • Dragon Amulet requirement was removed.\n  • Level's requirement was reduced from 21 to 20.\n  • Sellback was reduced from 60 to 40 Gold.\n  • Damage range was modified from 30-56 to 37-43.\n  • Crit +3, WIS +3, END +3, and Bonus +3 stats were added.\n  • INT was raised from +1 to +6.\nThe following changes were implemented on May 29th, 2026:\n  • Sellback was reduced from 100 to 60 Gold.\n  • Level's requirement was reduced from 31 to 25.\n  • Damage range was modified from 40-68 to 42-48.\n  • Crit +4, WIS +4, END +4, and Bonus +4 stats were added.\n  • INT was raised from +2 to +7.\nWeapons were previously available from the quests Attack of the Ninjas! and Rhubarb's Request! as 'Itsuru', 'Yosamu', and 'Susamaji' respectively.\nWeapons' names were renamed to Itsuru and were tiered to Roman numerals on May 29th, 2026.",
+      "notes": "The following changes were implemented on May 29th, 2026:\n • Sellback was reduced from 30 to 20 Gold.\n • Level's requirement was raised from 11 to 15.\n • Damage range was modified from 20-38 to 31-39.\n • Stats were added.\nThe following changes were implemented on May 29th, 2026:\n • Dragon Amulet requirement was removed.\n • Level's requirement was reduced from 21 to 20.\n • Sellback was reduced from 60 to 40 Gold.\n • Damage range was modified from 30-56 to 37-43.\n • Crit +3, WIS +3, END +3, and Bonus +3 stats were added.\n • INT was raised from +1 to +6.\nThe following changes were implemented on May 29th, 2026:\n • Sellback was reduced from 100 to 60 Gold.\n • Level's requirement was reduced from 31 to 25.\n • Damage range was modified from 40-68 to 42-48.\n • Crit +4, WIS +4, END +4, and Bonus +4 stats were added.\n • INT was raised from +2 to +7.\nWeapons were previously available from the quests Attack of the Ninjas! and Rhubarb's Request! as 'Itsuru', 'Yosamu', and 'Susamaji' respectively.\nWeapons' names were renamed to Itsuru and were tiered to Roman numerals on May 29th, 2026.",
       "alsoSee": []
     },
     "levelVariants": [
@@ -5409,7 +5613,7 @@
         "resists": "None",
         "rarity": "5",
         "itemType": "Staff",
-        "notes": "The following changes were implemented on May 29th, 2026:\n  • Sellback was reduced from 30 to 20 Gold.\n  • Level's requirement was raised from 11 to 15.\n  • Damage range was modified from 20-38 to 31-39.\n  • Stats were added."
+        "notes": "The following changes were implemented on May 29th, 2026:\n • Sellback was reduced from 30 to 20 Gold.\n • Level's requirement was raised from 11 to 15.\n • Damage range was modified from 20-38 to 31-39.\n • Stats were added."
       },
       {
         "levelNumber": 2,
@@ -5434,7 +5638,7 @@
         "resists": "None",
         "rarity": "5",
         "itemType": "Staff",
-        "notes": "The following changes were implemented on May 29th, 2026:\n  • Dragon Amulet requirement was removed.\n  • Level's requirement was reduced from 21 to 20.\n  • Sellback was reduced from 60 to 40 Gold.\n  • Damage range was modified from 30-56 to 37-43.\n  • Crit +3, WIS +3, END +3, and Bonus +3 stats were added.\n  • INT was raised from +1 to +6."
+        "notes": "The following changes were implemented on May 29th, 2026:\n • Dragon Amulet requirement was removed.\n • Level's requirement was reduced from 21 to 20.\n • Sellback was reduced from 60 to 40 Gold.\n • Damage range was modified from 30-56 to 37-43.\n • Crit +3, WIS +3, END +3, and Bonus +3 stats were added.\n • INT was raised from +1 to +6."
       },
       {
         "levelNumber": 3,
@@ -5459,7 +5663,7 @@
         "resists": "None",
         "rarity": "5",
         "itemType": "Staff",
-        "notes": "The following changes were implemented on May 29th, 2026:\n  • Sellback was reduced from 100 to 60 Gold.\n  • Level's requirement was reduced from 31 to 25.\n  • Damage range was modified from 40-68 to 42-48.\n  • Crit +4, WIS +4, END +4, and Bonus +4 stats were added.\n  • INT was raised from +2 to +7."
+        "notes": "The following changes were implemented on May 29th, 2026:\n • Sellback was reduced from 100 to 60 Gold.\n • Level's requirement was reduced from 31 to 25.\n • Damage range was modified from 40-68 to 42-48.\n • Crit +4, WIS +4, END +4, and Bonus +4 stats were added.\n • INT was raised from +2 to +7."
       }
     ],
     "category": "Weapon",
@@ -5496,7 +5700,19 @@
       "weapon-jack-o-staff-ix",
       "weapon-jack-o-staff-x",
       "weapon-jack-o-staff-xi",
-      "weapon-jack-o-staff-xii"
+      "weapon-jack-o-staff-xii",
+      "weapon-i-jack-o-staff",
+      "weapon-ii-jack-o-staff",
+      "weapon-iii-jack-o-staff",
+      "weapon-iv-jack-o-staff",
+      "weapon-v-jack-o-staff",
+      "weapon-vi-jack-o-staff",
+      "weapon-vii-jack-o-staff",
+      "weapon-viii-jack-o-staff",
+      "weapon-ix-jack-o-staff",
+      "weapon-x-jack-o-staff",
+      "weapon-xi-jack-o-staff",
+      "weapon-xii-jack-o-staff"
     ],
     "type": "weapon",
     "subtype": "staff-wand",
@@ -5906,7 +6122,9 @@
     "familyName": "Jack's Spire",
     "slug": "weapon-jack-s-spire",
     "aliasSlugs": [
-      "weapon-jack-s-spire-all-versions"
+      "weapon-jack-s-spire-all-versions",
+      "weapon-base-jack-s-spire",
+      "weapon-dc-jack-s-spire"
     ],
     "type": "weapon",
     "subtype": "staff-wand",
@@ -6469,7 +6687,9 @@
     "aliasSlugs": [
       "weapon-jester-s-baton-2010-all-versions",
       "weapon-jester-s-baton",
-      "weapon-jester-s-baton-all-versions"
+      "weapon-jester-s-baton-all-versions",
+      "weapon-base-jester-s-baton",
+      "weapon-2010-jester-s-baton"
     ],
     "type": "weapon",
     "subtype": "staff-wand",
@@ -6616,30 +6836,14 @@
     "familyName": "Jing's Staff",
     "slug": "weapon-jing-s-staff",
     "aliasSlugs": [
-      "weapon-resident-jing-s-staff",
-      "weapon-sir-jing-s-staff",
       "weapon-jing-s-staff-all-versions",
-      "weapon-sir-jing-s-staff-i",
-      "weapon-sir-jing-s-staff-ii",
-      "weapon-sir-jing-s-staff-iii",
-      "weapon-sir-jing-s-staff-iv",
-      "weapon-sir-jing-s-staff-v",
-      "weapon-sir-jing-s-staff-vi",
-      "weapon-sir-jing-s-staff-vii",
-      "weapon-sir-jing-s-staff-viii",
-      "weapon-sir-jing-s-staff-ix"
+      "weapon-resident-jing-s-staff"
     ],
     "type": "weapon",
     "subtype": "staff-wand",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=6698566",
     "familyOrigin": "cross-post",
     "familySources": [
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19876946",
-        "title": "DF Encyclopedia: Resident Jing's Staff",
-        "variantLabel": "Resident Jing's Staff",
-        "isPrimary": true
-      },
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=6698566",
         "title": "DF Encyclopedia: Sir Jing's Staff",
@@ -6651,6 +6855,12 @@
         "title": "DF Encyclopedia: Sir Jing's Staff I",
         "variantLabel": "Sir Jing's Staff I",
         "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=19876946",
+        "title": "DF Encyclopedia: Resident Jing's Staff",
+        "variantLabel": "Resident Jing's Staff",
+        "isPrimary": true
       },
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=22312617",
@@ -6709,8 +6919,8 @@
       "notes": "Weapon previously required Level 2 to equip; this was raised to Level 5 on March 21st, 2025.",
       "alsoSee": [
         {
-          "name": "Sir Jing's Staff (I-IX)",
-          "slug": "weapon-sir-jing-s-staff-i-ix",
+          "name": "Sir Jing's Staff",
+          "slug": "weapon-sir-jing-s-staff",
           "type": "weapon",
           "url": "https://forums2.battleon.com/f/tm.asp?m=6698566"
         }
@@ -7065,7 +7275,13 @@
         "activation": "on-hit",
         "trigger": "Your weapon special activates on hit.",
         "effect": "+30% damage on targets of 'Reptilian' race. [Pop-up: Jova's spirit enraged! (Damage bonus)] (Rate: 100%)\n  • During Arena at the Edge of Time challenges, damage bonus is reduced to +10%.",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-OnHit.png"
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-OnHit.png",
+        "specialImageUrls": [
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Jova'sWrath-Special.png"
+        ],
+        "specialImageCaptions": [
+          "Appearance"
+        ]
       },
       "alsoSee": []
     },
@@ -7313,7 +7529,8 @@
     "slug": "weapon-kaaros-xera-avi",
     "aliasSlugs": [
       "weapon-kaaros-xera-avi-all-versions",
-      "weapon-kaaros-xera"
+      "weapon-kaaros-xera",
+      "weapon-base-kaaros-xera"
     ],
     "type": "weapon",
     "subtype": "staff-wand",
@@ -7413,7 +7630,10 @@
       "weapon-karon-s-paddle-i-ii-iii",
       "weapon-karon-s-paddle-all-versions",
       "weapon-karon-s-paddle-ii",
-      "weapon-karon-s-paddle-iii"
+      "weapon-karon-s-paddle-iii",
+      "weapon-base-karon-s-paddle",
+      "weapon-ii-karon-s-paddle",
+      "weapon-iii-karon-s-paddle"
     ],
     "type": "weapon",
     "subtype": "staff-wand",
@@ -8200,7 +8420,8 @@
     "aliasSlugs": [
       "weapon-arista-labyrinthic",
       "weapon-stabilized-arista-labyrinthic",
-      "weapon-labyrinthic-all-versions"
+      "weapon-labyrinthic-all-versions",
+      "weapon-base-labyrinthic"
     ],
     "type": "weapon",
     "subtype": "staff-wand",
@@ -8208,16 +8429,16 @@
     "familyOrigin": "cross-post",
     "familySources": [
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=15614514",
-        "title": "DF Encyclopedia: Arista Labyrinthic",
-        "variantLabel": "Arista Labyrinthic",
-        "isPrimary": true
-      },
-      {
         "url": "https://forums2.battleon.com/f/tm.asp?m=18079390",
         "title": "DF Encyclopedia: Labyrinthic",
         "variantLabel": "Labyrinthic",
         "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=15614514",
+        "title": "DF Encyclopedia: Arista Labyrinthic",
+        "variantLabel": "Arista Labyrinthic",
+        "isPrimary": true
       },
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=18072340",
@@ -8334,6 +8555,141 @@
     "levelRange": "31-56"
   },
   {
+    "id": "weapon-lance-of-doom",
+    "familyName": "Lance of Doom",
+    "slug": "weapon-lance-of-doom",
+    "aliasSlugs": [
+      "weapon-baconated-lance-of-doom",
+      "weapon-extra-crispy-lance-of-doom",
+      "weapon-sizzling-lance-of-doom",
+      "weapon-lance-of-doom-all-versions"
+    ],
+    "type": "weapon",
+    "subtype": "staff-wand",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19495165",
+    "familyOrigin": "cross-post",
+    "familySources": [
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=19495165",
+        "title": "DF Encyclopedia: Baconated Lance of Doom",
+        "variantLabel": "Baconated Lance of Doom",
+        "isPrimary": true
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=19495435",
+        "title": "DF Encyclopedia: Sizzling Lance of Doom",
+        "variantLabel": "Sizzling Lance of Doom",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=19495455",
+        "title": "DF Encyclopedia: Extra Crispy Lance of Doom",
+        "variantLabel": "Extra Crispy Lance of Doom",
+        "isPrimary": false
+      }
+    ],
+    "itemType": "Staff",
+    "shared": {
+      "description": "Lim's opus! A perfect merger of bacon and SCIENCE, brimming with breakfast-flavored energies (and just a pinch of DOOM)!",
+      "imageUrl": "http://i.imgur.com/4Tnfuqd.png",
+      "element": "BAC",
+      "rarity": "100",
+      "alsoSee": []
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 40,
+        "levelDisplay": "40",
+        "actualLevel": 40,
+        "variantName": "Baconated",
+        "name": "Baconated Lance of Doom",
+        "damage": "62-64",
+        "stats": "Crit +3, Magic Def +1, Pierce Def +1, Melee Def +1, WIS +3, CHA +3, INT +4, Bonus +3",
+        "obtainVariants": [
+          {
+            "location": "When",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "100 Gold",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=19495165",
+        "description": "Lim's opus! A perfect merger of bacon and SCIENCE, brimming with breakfast-flavored energies (and just a pinch of DOOM)!",
+        "imageUrl": "http://i.imgur.com/4Tnfuqd.png",
+        "element": "BAC",
+        "resists": "All +2",
+        "rarity": "100",
+        "itemType": "Staff"
+      },
+      {
+        "levelNumber": 60,
+        "levelDisplay": "60",
+        "actualLevel": 60,
+        "variantName": "Sizzling",
+        "name": "Sizzling Lance of Doom",
+        "damage": "76-80",
+        "stats": "Parry +1, Crit +6, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +6, CHA +6, INT +6, Bonus +6",
+        "obtainVariants": [
+          {
+            "location": "When",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "150 Gold",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=19495435",
+        "description": "Lim's opus! A perfect merger of bacon and SCIENCE, brimming with breakfast-flavored energies (and just a pinch of DOOM)!",
+        "imageUrl": "http://i.imgur.com/4Tnfuqd.png",
+        "element": "BAC",
+        "resists": "All +5",
+        "rarity": "100",
+        "itemType": "Staff"
+      },
+      {
+        "levelNumber": 70,
+        "levelDisplay": "70",
+        "actualLevel": 70,
+        "variantName": "Extra Crispy",
+        "name": "Extra Crispy Lance of Doom",
+        "damage": "82-88",
+        "stats": "Parry +4, Crit +8, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +8, CHA +8, INT +10, Bonus +8",
+        "obtainVariants": [
+          {
+            "location": "When",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "300 Gold",
+            "daRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=19495455",
+        "description": "Lim's opus! A perfect merger of bacon and SCIENCE, brimming with breakfast-flavored energies (and just a pinch of DOOM)! This item requires a Dragon Amulet.",
+        "imageUrl": "http://i.imgur.com/4Tnfuqd.png",
+        "element": "BAC",
+        "resists": "All +10",
+        "rarity": "100",
+        "itemType": "Staff"
+      }
+    ],
+    "category": "Weapon",
+    "releaseDate": "",
+    "tags": [
+      "bac",
+      "free"
+    ],
+    "hasDA": true,
+    "hasDC": false,
+    "hasDM": false,
+    "hasFree": true,
+    "hasMerge": false,
+    "elements": [
+      "BAC"
+    ],
+    "levelRange": "40-70"
+  },
+  {
     "id": "weapon-lapis-lazuli",
     "name": "Lapis Lazuli",
     "slug": "weapon-lapis-lazuli",
@@ -8391,6 +8747,12 @@
       "trigger": "Activate your weapon's special!",
       "effect": "5 hits of 30% Ice damage, amounting to 150% damage; applies 'Larimar Freeze' to target, stunning it for 1 turn.",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-Ice.png",
+      "specialImageUrls": [
+        "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/LarimarGembinder-Special.gif"
+      ],
+      "specialImageCaptions": [
+        "Appearance"
+      ],
       "cooldown": "20 - [(Player LUK/50), rounded down]",
       "chargeTime": "10 - [(Player LUK/100), rounded down]"
     },
@@ -8477,7 +8839,17 @@
       "weapon-leftover-staff-mk-vii",
       "weapon-leftover-staff-mk-viii",
       "weapon-leftover-staff-mk-ix",
-      "weapon-leftover-staff-mk-x"
+      "weapon-leftover-staff-mk-x",
+      "weapon-i-leftover-staff-mk",
+      "weapon-ii-leftover-staff-mk",
+      "weapon-iii-leftover-staff-mk",
+      "weapon-iv-leftover-staff-mk",
+      "weapon-v-leftover-staff-mk",
+      "weapon-vi-leftover-staff-mk",
+      "weapon-vii-leftover-staff-mk",
+      "weapon-viii-leftover-staff-mk",
+      "weapon-ix-leftover-staff-mk",
+      "weapon-x-leftover-staff-mk"
     ],
     "type": "weapon",
     "subtype": "staff-wand",
@@ -8825,7 +9197,8 @@
     "familyName": "Legendary Magma Staff",
     "slug": "weapon-legendary-magma-staff",
     "aliasSlugs": [
-      "weapon-legendary-magma-staff-all-versions"
+      "weapon-legendary-magma-staff-all-versions",
+      "weapon-base-legendary-magma-staff"
     ],
     "type": "weapon",
     "subtype": "staff-wand",
@@ -8942,7 +9315,8 @@
     "familyName": "Liberty",
     "slug": "weapon-liberty",
     "aliasSlugs": [
-      "weapon-liberty-all-versions"
+      "weapon-liberty-all-versions",
+      "weapon-base-liberty"
     ],
     "type": "weapon",
     "subtype": "staff-wand",
@@ -9049,7 +9423,17 @@
         "activation": "on-hit",
         "trigger": "Your weapon special activates on hit.",
         "effect": "Applies 'Spirit of Fire', 'Spirit of Ice', or 'Spirit of Water' at random, a 40% Magic Fire/Ice/Water weapon damage DoT effect, to target for 5 turns. (Pop-up: Spirit of Independence!) (Rate: 10%)",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-OnHit.png"
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-OnHit.png",
+        "specialImageUrls": [
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Liberty-SpecialFire.png",
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Liberty-SpecialIce.png",
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Liberty-SpecialWater.png"
+        ],
+        "specialImageCaptions": [
+          "Spirit of Fire",
+          "Spirit of Ice",
+          "Spirit of Water"
+        ]
       },
       "alsoSee": []
     },
@@ -9440,7 +9824,8 @@
     "familyName": "Liberty Candle Wand",
     "slug": "weapon-liberty-candle-wand",
     "aliasSlugs": [
-      "weapon-liberty-candle-wand-all-versions"
+      "weapon-liberty-candle-wand-all-versions",
+      "weapon-base-liberty-candle-wand"
     ],
     "type": "weapon",
     "subtype": "staff-wand",
@@ -9478,7 +9863,7 @@
         "isPrimary": false
       },
       {
-        "url": "https://forums2.battleon.com/f/fb.asp?m=17820039",
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22002628",
         "title": "DF Encyclopedia: Liberty Candle Wand",
         "variantLabel": "Liberty Candle Wand",
         "isPrimary": false
@@ -9514,7 +9899,7 @@
         "isPrimary": false
       },
       {
-        "url": "https://forums2.battleon.com/f/fb.asp?m=22002628",
+        "url": "https://forums2.battleon.com/f/fb.asp?m=17820039",
         "title": "DF Encyclopedia: Liberty Candle Wand",
         "variantLabel": "Liberty Candle Wand",
         "isPrimary": false
@@ -9551,7 +9936,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 1,
+        "levelNumber": 10,
         "levelDisplay": "10",
         "actualLevel": 10,
         "name": "Liberty Candle Wand",
@@ -9575,7 +9960,7 @@
         "variantName": "(Base)"
       },
       {
-        "levelNumber": 2,
+        "levelNumber": 20,
         "levelDisplay": "20",
         "actualLevel": 20,
         "name": "Liberty Candle Wand",
@@ -9599,7 +9984,7 @@
         "variantName": "(Base)"
       },
       {
-        "levelNumber": 3,
+        "levelNumber": 30,
         "levelDisplay": "30",
         "actualLevel": 30,
         "name": "Liberty Candle Wand",
@@ -9623,7 +10008,7 @@
         "variantName": "(Base)"
       },
       {
-        "levelNumber": 4,
+        "levelNumber": 40,
         "levelDisplay": "40",
         "actualLevel": 40,
         "name": "Liberty Candle Wand",
@@ -9647,7 +10032,7 @@
         "variantName": "(Base)"
       },
       {
-        "levelNumber": 5,
+        "levelNumber": 50,
         "levelDisplay": "50",
         "actualLevel": 50,
         "name": "Liberty Candle Wand",
@@ -9671,7 +10056,7 @@
         "variantName": "(Base)"
       },
       {
-        "levelNumber": 6,
+        "levelNumber": 60,
         "levelDisplay": "60",
         "actualLevel": 60,
         "name": "Liberty Candle Wand",
@@ -9695,7 +10080,7 @@
         "variantName": "(Base)"
       },
       {
-        "levelNumber": 7,
+        "levelNumber": 10,
         "levelDisplay": "10",
         "actualLevel": 10,
         "name": "Liberty Candle Wand",
@@ -9719,7 +10104,7 @@
         "variantName": "(Base)"
       },
       {
-        "levelNumber": 8,
+        "levelNumber": 20,
         "levelDisplay": "20",
         "actualLevel": 20,
         "name": "Liberty Candle Wand",
@@ -9743,7 +10128,7 @@
         "variantName": "(Base)"
       },
       {
-        "levelNumber": 9,
+        "levelNumber": 30,
         "levelDisplay": "30",
         "actualLevel": 30,
         "name": "Liberty Candle Wand",
@@ -9767,7 +10152,7 @@
         "variantName": "(Base)"
       },
       {
-        "levelNumber": 10,
+        "levelNumber": 40,
         "levelDisplay": "40",
         "actualLevel": 40,
         "name": "Liberty Candle Wand",
@@ -9791,7 +10176,7 @@
         "variantName": "(Base)"
       },
       {
-        "levelNumber": 11,
+        "levelNumber": 50,
         "levelDisplay": "50",
         "actualLevel": 50,
         "name": "Liberty Candle Wand",
@@ -9815,7 +10200,7 @@
         "variantName": "(Base)"
       },
       {
-        "levelNumber": 12,
+        "levelNumber": 60,
         "levelDisplay": "60",
         "actualLevel": 60,
         "name": "Liberty Candle Wand",
@@ -9839,7 +10224,7 @@
         "variantName": "(Base)"
       },
       {
-        "levelNumber": 13,
+        "levelNumber": 70,
         "levelDisplay": "70",
         "actualLevel": 70,
         "name": "Liberty Candle Wand",
@@ -9863,7 +10248,7 @@
         "variantName": "(Base)"
       },
       {
-        "levelNumber": 14,
+        "levelNumber": 80,
         "levelDisplay": "80",
         "actualLevel": 80,
         "name": "Liberty Candle Wand",
@@ -9949,7 +10334,11 @@
       "weapon-lifenel-wand-i",
       "weapon-lifenel-wand-ii",
       "weapon-lifenel-wand-iii",
-      "weapon-lifenel-wand-iv"
+      "weapon-lifenel-wand-iv",
+      "weapon-i-lifenel-wand",
+      "weapon-ii-lifenel-wand",
+      "weapon-iii-lifenel-wand",
+      "weapon-iv-lifenel-wand"
     ],
     "type": "weapon",
     "subtype": "staff-wand",
@@ -10129,7 +10518,7 @@
         "daRequired": false
       }
     ],
-    "notes": "Formula for temporary weapon damage:\n  • quote:\nAverage damage formula: SQRT(Level)*10, rounded down; min/max damage values are generated randomly by subtracting/adding a value between 1 and 4 inclusive.",
+    "notes": "Formula for temporary weapon damage:\n • quote:\nAverage damage formula: SQRT(Level)*10, rounded down; min/max damage values are generated randomly by subtracting/adding a value between 1 and 4 inclusive.",
     "tags": [
       "wat",
       "free"
@@ -10143,6 +10532,11 @@
     "familyName": "Lights Staff",
     "slug": "weapon-lights-staff",
     "aliasSlugs": [
+      "weapon-azure-lights-staff",
+      "weapon-cobalt-lights-staff",
+      "weapon-crimson-lights-staff",
+      "weapon-emerald-lights-staff",
+      "weapon-golden-lights-staff",
       "weapon-platinum-lights-staff",
       "weapon-silver-lights-staff",
       "weapon-violet-lights-staff",
@@ -10154,10 +10548,28 @@
     "familyOrigin": "cross-post",
     "familySources": [
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21881923",
-        "title": "DF Encyclopedia: Platinum Lights Staff",
-        "variantLabel": "Platinum Lights Staff",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=18967974",
+        "title": "DF Encyclopedia: Crimson Lights Staff",
+        "variantLabel": "Crimson Lights Staff",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=18967976",
+        "title": "DF Encyclopedia: Emerald Lights Staff",
+        "variantLabel": "Emerald Lights Staff",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=18967977",
+        "title": "DF Encyclopedia: Azure Lights Staff",
+        "variantLabel": "Azure Lights Staff",
         "isPrimary": true
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=18967978",
+        "title": "DF Encyclopedia: Violet Lights Staff",
+        "variantLabel": "Violet Lights Staff",
+        "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=18967981",
@@ -10166,9 +10578,21 @@
         "isPrimary": false
       },
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=18967978",
-        "title": "DF Encyclopedia: Violet Lights Staff",
-        "variantLabel": "Violet Lights Staff",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=17123041",
+        "title": "DF Encyclopedia: Golden Lights Staff",
+        "variantLabel": "Golden Lights Staff",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21881923",
+        "title": "DF Encyclopedia: Platinum Lights Staff",
+        "variantLabel": "Platinum Lights Staff",
+        "isPrimary": true
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21883948",
+        "title": "DF Encyclopedia: Cobalt Lights Staff",
+        "variantLabel": "Cobalt Lights Staff",
         "isPrimary": false
       }
     ],
@@ -10185,40 +10609,105 @@
         "effect": "Recovers 5% of player's max HP. (Rate: 5%)",
         "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-OnHit.png"
       },
-      "alsoSee": [
-        {
-          "name": "Azure Lights Staff",
-          "slug": "weapon-azure-lights-staff",
-          "type": "weapon",
-          "url": "https://forums2.battleon.com/f/tm.asp?m=18967977"
-        },
-        {
-          "name": "Cobalt Lights Staff",
-          "slug": "weapon-cobalt-lights-staff",
-          "type": "weapon",
-          "url": "https://forums2.battleon.com/f/tm.asp?m=21883948"
-        },
-        {
-          "name": "Crimson Lights Staff",
-          "slug": "weapon-crimson-lights-staff",
-          "type": "weapon",
-          "url": "https://forums2.battleon.com/f/tm.asp?m=18967974"
-        },
-        {
-          "name": "Emerald Lights Staff",
-          "slug": "weapon-emerald-lights-staff",
-          "type": "weapon",
-          "url": "https://forums2.battleon.com/f/tm.asp?m=18967976"
-        },
-        {
-          "name": "Golden Lights Staff",
-          "slug": "weapon-golden-lights-staff",
-          "type": "weapon",
-          "url": "https://forums2.battleon.com/f/tm.asp?m=17123041"
-        }
-      ]
+      "alsoSee": []
     },
     "levelVariants": [
+      {
+        "levelNumber": 10,
+        "levelDisplay": "10",
+        "actualLevel": 10,
+        "variantName": "Crimson",
+        "name": "Crimson Lights Staff",
+        "damage": "20-32",
+        "stats": "Crit +1, INT +1, Bonus +1",
+        "obtainVariants": [
+          {
+            "location": "Frostval 2009 Presents",
+            "price": "0 Gold",
+            "priceType": "free",
+            "sellback": "0 Gold",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=18967974",
+        "description": "Ding dong merrily on high, in Lore the lights are gleaming! Ding dong verily the sky, is filled with moglin singing! Moglin magic gives this staff a chance to heal you 5% on a successful hit!",
+        "imageUrl": "https://i.imgur.com/WPtVimI.png",
+        "element": "SIL",
+        "resists": "Fire +1",
+        "rarity": "15",
+        "itemType": "Staff",
+        "weaponSpecial": {
+          "activation": "on-hit",
+          "trigger": "Your weapon special activates on hit.",
+          "effect": "Recovers 5% of player's max HP. (Rate: 5%)",
+          "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-OnHit.png"
+        },
+        "notes": "Weapon is animated; the lights on the weapon flash red/blue/yellow/green."
+      },
+      {
+        "levelNumber": 20,
+        "levelDisplay": "20",
+        "actualLevel": 20,
+        "variantName": "Emerald",
+        "name": "Emerald Lights Staff",
+        "damage": "34-44",
+        "stats": "Crit +2, END +1, INT +2, Bonus +1",
+        "obtainVariants": [
+          {
+            "location": "Frostval 2009 Presents",
+            "price": "0 Gold",
+            "priceType": "free",
+            "sellback": "0 Gold",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=18967976",
+        "description": "Ding dong merrily on high, in Lore the lights are gleaming! Ding dong verily the sky, is filled with moglin singing! Moglin magic gives this staff a chance to heal you 5% on a successful hit!",
+        "imageUrl": "https://i.imgur.com/WPtVimI.png",
+        "element": "SIL",
+        "resists": "Fire +3",
+        "rarity": "15",
+        "itemType": "Staff",
+        "weaponSpecial": {
+          "activation": "on-hit",
+          "trigger": "Your weapon special activates on hit.",
+          "effect": "Recovers 5% of player's max HP. (Rate: 5%)",
+          "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-OnHit.png"
+        },
+        "notes": "Weapon is animated; the lights on the weapon flash red/blue/yellow/green."
+      },
+      {
+        "levelNumber": 30,
+        "levelDisplay": "30",
+        "actualLevel": 30,
+        "variantName": "Azure",
+        "name": "Azure Lights Staff",
+        "damage": "40-58",
+        "stats": "Crit +3, END +3, INT +2, Bonus +3",
+        "obtainVariants": [
+          {
+            "location": "Frostval 2009 Presents",
+            "price": "0 Gold",
+            "priceType": "free",
+            "sellback": "0 Gold",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=18967977",
+        "description": "Ding dong merrily on high, in Lore the lights are gleaming! Ding dong verily the sky, is filled with moglin singing! Moglin magic gives this staff a chance to heal you 5% on a successful hit!",
+        "imageUrl": "https://i.imgur.com/WPtVimI.png",
+        "element": "SIL",
+        "resists": "Fire +5",
+        "rarity": "15",
+        "itemType": "Staff",
+        "weaponSpecial": {
+          "activation": "on-hit",
+          "trigger": "Your weapon special activates on hit.",
+          "effect": "Recovers 5% of player's max HP. (Rate: 5%)",
+          "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-OnHit.png"
+        },
+        "notes": "Weapon is animated; the lights on the weapon flash red/blue/yellow/green."
+      },
       {
         "levelNumber": 40,
         "levelDisplay": "40",
@@ -10243,6 +10732,12 @@
         "resists": "Fire +7",
         "rarity": "15",
         "itemType": "Staff",
+        "weaponSpecial": {
+          "activation": "on-hit",
+          "trigger": "Your weapon special activates on hit.",
+          "effect": "Recovers 5% of player's max HP. (Rate: 5%)",
+          "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-OnHit.png"
+        },
         "notes": "Weapon is animated; the lights on the weapon flash red/blue/yellow/green."
       },
       {
@@ -10269,6 +10764,44 @@
         "resists": "Fire +9",
         "rarity": "15",
         "itemType": "Staff",
+        "weaponSpecial": {
+          "activation": "on-hit",
+          "trigger": "Your weapon special activates on hit.",
+          "effect": "Recovers 5% of player's max HP. (Rate: 5%)",
+          "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-OnHit.png"
+        },
+        "notes": "Weapon is animated; the lights on the weapon flash red/blue/yellow/green."
+      },
+      {
+        "levelNumber": 60,
+        "levelDisplay": "60",
+        "actualLevel": 60,
+        "variantName": "Golden",
+        "name": "Golden Lights Staff",
+        "damage": "62-82",
+        "stats": "Crit +5, END +6, CHA +5, INT +6, Bonus +5",
+        "obtainVariants": [
+          {
+            "location": "Frostval 2009 Presents",
+            "price": "0 Gold",
+            "priceType": "free",
+            "sellback": "0 Gold",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=17123041",
+        "description": "Ding dong merrily on high, in Lore the lights are gleaming! Ding dong verily the sky, is filled with moglin singing! Moglin magic gives this staff a chance to heal you 5% on a successful hit!",
+        "imageUrl": "https://i.imgur.com/WPtVimI.png",
+        "element": "SIL",
+        "resists": "Fire +11",
+        "rarity": "15",
+        "itemType": "Staff",
+        "weaponSpecial": {
+          "activation": "on-hit",
+          "trigger": "Your weapon special activates on hit.",
+          "effect": "Recovers 5% of player's max HP. (Rate: 5%)",
+          "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-OnHit.png"
+        },
         "notes": "Weapon is animated; the lights on the weapon flash red/blue/yellow/green."
       },
       {
@@ -10295,6 +10828,44 @@
         "resists": "Fire +12, Light +6",
         "rarity": "15",
         "itemType": "Staff",
+        "weaponSpecial": {
+          "activation": "on-hit",
+          "trigger": "Your weapon special activates on hit.",
+          "effect": "Recovers 5% of player's max HP. (Rate: 5%)",
+          "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-OnHit.png"
+        },
+        "notes": "Weapon is animated; the lights on the weapon flash red/blue/yellow/green."
+      },
+      {
+        "levelNumber": 80,
+        "levelDisplay": "80",
+        "actualLevel": 80,
+        "variantName": "Cobalt",
+        "name": "Cobalt Lights Staff",
+        "damage": "72-100",
+        "stats": "Crit +8, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +9, END +9, CHA +10, INT +11, Bonus +8",
+        "obtainVariants": [
+          {
+            "location": "Frostval 2009 Presents",
+            "price": "0 Gold",
+            "priceType": "free",
+            "sellback": "0 Gold",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21883948",
+        "description": "Ding dong merrily on high, in Lore the lights are gleaming! Ding dong verily the sky, is filled with moglin singing! Moglin magic gives this staff a chance to heal you 5% on a successful hit!",
+        "imageUrl": "https://i.imgur.com/WPtVimI.png",
+        "element": "SIL",
+        "resists": "Fire +13, Light +7, Health -2",
+        "rarity": "15",
+        "itemType": "Staff",
+        "weaponSpecial": {
+          "activation": "on-hit",
+          "trigger": "Your weapon special activates on hit.",
+          "effect": "Recovers 5% of player's max HP. (Rate: 5%)",
+          "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-OnHit.png"
+        },
         "notes": "Weapon is animated; the lights on the weapon flash red/blue/yellow/green."
       }
     ],
@@ -10314,7 +10885,7 @@
     ],
     "hasSpecial": true,
     "isSeasonal": true,
-    "levelRange": "40-70"
+    "levelRange": "10-80"
   },
   {
     "id": "weapon-lim-s-hydrocombustion-vane",
@@ -10376,7 +10947,7 @@
         },
         {
           "url": "http://i202.photobucket.com/albums/aa185/gmill711/Dragon%20Fable/LimsHydrocombustionVane2.png",
-          "caption": "Water"
+          "caption": "Element: Fire / Water"
         }
       ],
       "notes": "Click anywhere on this staff while equipped or shown to shift its appearance between Fire and Water.",
@@ -10705,7 +11276,9 @@
       "weapon-love-at-first-scythe-mark-2-mark-3-all-versions",
       "weapon-love-at-first-scythe",
       "weapon-love-at-first-scythe-mark-2",
-      "weapon-love-at-first-scythe-mark-3"
+      "weapon-love-at-first-scythe-mark-3",
+      "weapon-mark-2-love-at-first-scythe",
+      "weapon-mark-3-love-at-first-scythe"
     ],
     "type": "weapon",
     "subtype": "staff-wand",
@@ -10847,7 +11420,17 @@
       "weapon-lovely-time-tome-vii",
       "weapon-lovely-time-tome-viii",
       "weapon-lovely-time-tome-ix",
-      "weapon-lovely-time-tome-x"
+      "weapon-lovely-time-tome-x",
+      "weapon-i-lovely-time-tome",
+      "weapon-ii-lovely-time-tome",
+      "weapon-iii-lovely-time-tome",
+      "weapon-iv-lovely-time-tome",
+      "weapon-v-lovely-time-tome",
+      "weapon-vi-lovely-time-tome",
+      "weapon-vii-lovely-time-tome",
+      "weapon-viii-lovely-time-tome",
+      "weapon-ix-lovely-time-tome",
+      "weapon-x-lovely-time-tome"
     ],
     "type": "weapon",
     "subtype": "staff-wand",
@@ -11244,10 +11827,11 @@
     "familyName": "Luck O' The Sneevish Staff",
     "slug": "weapon-luck-o-the-sneevish-staff",
     "aliasSlugs": [
+      "weapon-fortunate-luck-o-the-sneevish-staff",
+      "weapon-kismet-luck-o-the-sneevish-staff",
       "weapon-winning-luck-o-the-sneevish-staff",
       "weapon-luck-o-the-sneevish-staff-all-versions",
-      "weapon-kismet-luck-o-the-sneevish-staff",
-      "weapon-fortunate-luck-o-the-sneevish-staff"
+      "weapon-base-luck-o-the-sneevish-staff"
     ],
     "type": "weapon",
     "subtype": "staff-wand",
@@ -11255,10 +11839,10 @@
     "familyOrigin": "cross-post",
     "familySources": [
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20171334",
-        "title": "DF Encyclopedia: Fortunate Luck O' the Sneevish Staff",
-        "variantLabel": "Fortunate Luck O' the Sneevish Staff",
-        "isPrimary": true
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20171366",
+        "title": "DF Encyclopedia: Luck O' the Sneevish Staff",
+        "variantLabel": "Luck O' the Sneevish Staff",
+        "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=20171359",
@@ -11267,10 +11851,10 @@
         "isPrimary": false
       },
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20171366",
-        "title": "DF Encyclopedia: Luck O' the Sneevish Staff",
-        "variantLabel": "Luck O' the Sneevish Staff",
-        "isPrimary": false
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20171334",
+        "title": "DF Encyclopedia: Fortunate Luck O' the Sneevish Staff",
+        "variantLabel": "Fortunate Luck O' the Sneevish Staff",
+        "isPrimary": true
       },
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=20169922",
@@ -11420,7 +12004,11 @@
       "weapon-lucky-naginata-i",
       "weapon-lucky-naginata-ii",
       "weapon-lucky-naginata-iii",
-      "weapon-lucky-naginata-iv"
+      "weapon-lucky-naginata-iv",
+      "weapon-i-lucky-naginata",
+      "weapon-ii-lucky-naginata",
+      "weapon-iii-lucky-naginata",
+      "weapon-iv-lucky-naginata"
     ],
     "type": "weapon",
     "subtype": "staff-wand",
@@ -11616,7 +12204,10 @@
       "weapon-lucky-s-walking-stick-i-ii-iii",
       "weapon-lucky-s-walking-stick-all-versions",
       "weapon-lucky-s-walking-stick-ii",
-      "weapon-lucky-s-walking-stick-iii"
+      "weapon-lucky-s-walking-stick-iii",
+      "weapon-base-lucky-s-walking-stick",
+      "weapon-ii-lucky-s-walking-stick",
+      "weapon-iii-lucky-s-walking-stick"
     ],
     "type": "weapon",
     "subtype": "staff-wand",
@@ -11917,7 +12508,18 @@
       "weapon-luminous-whiff-viii",
       "weapon-luminous-whiff-ix",
       "weapon-luminous-whiff-x",
-      "weapon-luminous-whiff-xi"
+      "weapon-luminous-whiff-xi",
+      "weapon-i-luminous-whiff",
+      "weapon-ii-luminous-whiff",
+      "weapon-iii-luminous-whiff",
+      "weapon-iv-luminous-whiff",
+      "weapon-v-luminous-whiff",
+      "weapon-vi-luminous-whiff",
+      "weapon-vii-luminous-whiff",
+      "weapon-viii-luminous-whiff",
+      "weapon-ix-luminous-whiff",
+      "weapon-x-luminous-whiff",
+      "weapon-xi-luminous-whiff"
     ],
     "type": "weapon",
     "subtype": "staff-wand",
@@ -12599,13 +13201,20 @@
       "weapon-strong-luster",
       "weapon-superior-luster",
       "weapon-weak-luster",
-      "weapon-luster-all-versions"
+      "weapon-luster-all-versions",
+      "weapon-base-luster"
     ],
     "type": "weapon",
     "subtype": "staff-wand",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19123237",
     "familyOrigin": "cross-post",
     "familySources": [
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=5940943",
+        "title": "DF Encyclopedia: Weak Luster",
+        "variantLabel": "Weak Luster",
+        "isPrimary": false
+      },
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=19123237",
         "title": "DF Encyclopedia: Luster",
@@ -12622,12 +13231,6 @@
         "url": "https://forums2.battleon.com/f/tm.asp?m=19123215",
         "title": "DF Encyclopedia: Superior Luster",
         "variantLabel": "Superior Luster",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=5940943",
-        "title": "DF Encyclopedia: Weak Luster",
-        "variantLabel": "Weak Luster",
         "isPrimary": false
       }
     ],
@@ -12762,118 +13365,6 @@
       "LIG"
     ],
     "levelRange": "3-20"
-  },
-  {
-    "id": "weapon-mage-default",
-    "familyName": "Mage Default",
-    "slug": "weapon-mage-default",
-    "aliasSlugs": [
-      "weapon-shadowstaff-shadow-mage-default",
-      "weapon-staff-mage-default",
-      "weapon-mage-default-all-versions"
-    ],
-    "type": "weapon",
-    "subtype": "staff-wand",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22160779",
-    "familyOrigin": "cross-post",
-    "familySources": [
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=22160779",
-        "title": "DF Encyclopedia: Shadowstaff (Shadow Mage Default)",
-        "variantLabel": "Shadowstaff (Shadow Mage Default)",
-        "isPrimary": true
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=4545731",
-        "title": "DF Encyclopedia: Staff (Mage Default)",
-        "variantLabel": "Staff (Mage Default)",
-        "isPrimary": false
-      }
-    ],
-    "itemType": "Staff",
-    "shared": {
-      "description": "A sturdy staff which channels Magic energy.",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/DefaultStaff.png",
-      "element": "NAT",
-      "resists": "None",
-      "rarity": "0",
-      "alsoSee": [
-        {
-          "name": "Default Staff",
-          "slug": "weapon-default-staff",
-          "type": "weapon",
-          "url": "https://forums2.battleon.com/f/tm.asp?m=22424120"
-        }
-      ]
-    },
-    "levelVariants": [
-      {
-        "levelNumber": 1,
-        "levelDisplay": "1",
-        "actualLevel": 1,
-        "variantName": "Shadowstaff Shadow",
-        "name": "Shadowstaff (Shadow Mage Default)",
-        "damage": "5-10",
-        "stats": "Bonus +1",
-        "obtainVariants": [
-          {
-            "location": "Default weapon of Shadow Mage",
-            "price": "N/A",
-            "priceType": "free",
-            "sellback": "N/A",
-            "daRequired": false,
-            "dcRequired": true
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22160779",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/DefaultStaff.png",
-        "element": "NAT",
-        "resists": "None",
-        "rarity": "0",
-        "itemType": "Staff"
-      },
-      {
-        "levelNumber": 1,
-        "levelDisplay": "1",
-        "actualLevel": 1,
-        "variantName": "Staff",
-        "name": "Staff (Mage Default)",
-        "damage": "5-10",
-        "stats": "Bonus +1",
-        "obtainVariants": [
-          {
-            "location": "Default weapon of Mage",
-            "price": "N/A",
-            "priceType": "free",
-            "sellback": "N/A",
-            "daRequired": false
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=4545731",
-        "description": "A sturdy staff which channels Magic energy.",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/DefaultStaff.png",
-        "element": "NAT",
-        "resists": "None",
-        "rarity": "0",
-        "itemType": "Staff"
-      }
-    ],
-    "category": "Weapon",
-    "releaseDate": "",
-    "tags": [
-      "free",
-      "nat"
-    ],
-    "hasDA": false,
-    "hasDC": true,
-    "hasDM": false,
-    "hasFree": true,
-    "hasMerge": false,
-    "elements": [
-      "NAT"
-    ],
-    "isSpecialOffer": true,
-    "levelRange": "1"
   },
   {
     "id": "weapon-mage-s-gift",
@@ -13518,7 +14009,12 @@
       "weapon-maize-staff-ii",
       "weapon-maize-staff-iii",
       "weapon-maize-staff-iv",
-      "weapon-maize-staff-v"
+      "weapon-maize-staff-v",
+      "weapon-i-maize-staff",
+      "weapon-ii-maize-staff",
+      "weapon-iii-maize-staff",
+      "weapon-iv-maize-staff",
+      "weapon-v-maize-staff"
     ],
     "type": "weapon",
     "subtype": "staff-wand",
@@ -13759,7 +14255,12 @@
       "weapon-manawood-staff-ii",
       "weapon-manawood-staff-iii",
       "weapon-manawood-staff-iv",
-      "weapon-manawood-staff-v"
+      "weapon-manawood-staff-v",
+      "weapon-i-manawood-staff",
+      "weapon-ii-manawood-staff",
+      "weapon-iii-manawood-staff",
+      "weapon-iv-manawood-staff",
+      "weapon-v-manawood-staff"
     ],
     "type": "weapon",
     "subtype": "staff-wand",
@@ -13808,7 +14309,7 @@
         },
         {
           "url": "https://i.imgur.com/Ij5vwjh.png",
-          "caption": "Nature"
+          "caption": "Element: Water / Nature"
         }
       ],
       "alsoSee": []
@@ -13961,10 +14462,10 @@
     "familyName": "Maracas",
     "slug": "weapon-maracas",
     "aliasSlugs": [
-      "weapon-clattering-maracas",
+      "weapon-maracas-all-versions",
       "weapon-rattling-maracas",
-      "weapon-shaking-maracas",
-      "weapon-maracas-all-versions"
+      "weapon-clattering-maracas",
+      "weapon-shaking-maracas"
     ],
     "type": "weapon",
     "subtype": "staff-wand",
@@ -13972,16 +14473,16 @@
     "familyOrigin": "cross-post",
     "familySources": [
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=17587123",
-        "title": "DF Encyclopedia: Clattering Maracas",
-        "variantLabel": "Clattering Maracas",
-        "isPrimary": true
-      },
-      {
         "url": "https://forums2.battleon.com/f/tm.asp?m=17587113",
         "title": "DF Encyclopedia: Rattling Maracas",
         "variantLabel": "Rattling Maracas",
         "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=17587123",
+        "title": "DF Encyclopedia: Clattering Maracas",
+        "variantLabel": "Clattering Maracas",
+        "isPrimary": true
       },
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=17587132",
@@ -14097,9 +14598,10 @@
     "familyName": "Mark of The Eclipse",
     "slug": "weapon-mark-of-the-eclipse",
     "aliasSlugs": [
+      "weapon-high-mark-of-the-eclipse",
       "weapon-waning-mark-of-the-eclipse",
       "weapon-mark-of-the-eclipse-all-versions",
-      "weapon-high-mark-of-the-eclipse"
+      "weapon-base-mark-of-the-eclipse"
     ],
     "type": "weapon",
     "subtype": "staff-wand",
@@ -14107,10 +14609,10 @@
     "familyOrigin": "cross-post",
     "familySources": [
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19463810",
-        "title": "DF Encyclopedia: High Mark of the Eclipse",
-        "variantLabel": "High Mark of the Eclipse",
-        "isPrimary": true
+        "url": "https://forums2.battleon.com/f/tm.asp?m=19470338",
+        "title": "DF Encyclopedia: Waning Mark of the Eclipse",
+        "variantLabel": "Waning Mark of the Eclipse",
+        "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=19470321",
@@ -14119,10 +14621,10 @@
         "isPrimary": false
       },
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19470338",
-        "title": "DF Encyclopedia: Waning Mark of the Eclipse",
-        "variantLabel": "Waning Mark of the Eclipse",
-        "isPrimary": false
+        "url": "https://forums2.battleon.com/f/tm.asp?m=19463810",
+        "title": "DF Encyclopedia: High Mark of the Eclipse",
+        "variantLabel": "High Mark of the Eclipse",
+        "isPrimary": true
       }
     ],
     "itemType": "Staff",
@@ -14136,7 +14638,7 @@
         },
         {
           "url": "http://i202.photobucket.com/albums/aa185/gmill711/Dragon%20Fable/MarkoftheEclipsedark.jpg",
-          "caption": "Darkness"
+          "caption": "Element: Light / Darkness"
         }
       ],
       "element": "DAR",
@@ -14171,7 +14673,7 @@
           },
           {
             "url": "http://i202.photobucket.com/albums/aa185/gmill711/Dragon%20Fable/MarkoftheEclipsedark.jpg",
-            "caption": "Darkness"
+            "caption": "Element: Light / Darkness"
           }
         ],
         "element": "DAR",
@@ -14207,7 +14709,7 @@
           },
           {
             "url": "http://i202.photobucket.com/albums/aa185/gmill711/Dragon%20Fable/MarkoftheEclipsedark.jpg",
-            "caption": "Darkness"
+            "caption": "Element: Light / Darkness"
           }
         ],
         "element": "DAR",
@@ -14243,7 +14745,7 @@
           },
           {
             "url": "http://i202.photobucket.com/albums/aa185/gmill711/Dragon%20Fable/MarkoftheEclipsedark.jpg",
-            "caption": "Darkness"
+            "caption": "Element: Light / Darkness"
           }
         ],
         "element": "DAR",
@@ -14397,48 +14899,6 @@
     "alsoSee": []
   },
   {
-    "id": "weapon-melting-arctic-staff",
-    "name": "Melting Arctic Staff",
-    "slug": "weapon-melting-arctic-staff",
-    "type": "weapon",
-    "subtype": "staff-wand",
-    "description": "Although this icy staff is melting a little, it is still frosty enough to channel magic! This item requires a Dragon Amulet.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18074386",
-    "releaseDate": "",
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/GelidStaff.png",
-    "elements": [
-      "ICE"
-    ],
-    "level": "25",
-    "damage": "38-58",
-    "stats": "Crit +6, LUK +2, INT +2, Bonus +2",
-    "resists": "Ice +4",
-    "rarity": "4",
-    "itemType": "Staff",
-    "obtainMethods": [
-      {
-        "location": "Moonridge Knights",
-        "price": "9,000 Gold",
-        "priceType": "gold",
-        "sellback": "900 Gold",
-        "daRequired": true
-      }
-    ],
-    "alsoSee": [
-      {
-        "name": "Staff",
-        "slug": "weapon-staff",
-        "type": "weapon",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=17563451"
-      }
-    ],
-    "tags": [
-      "ice",
-      "gold"
-    ],
-    "daRequired": true
-  },
-  {
     "id": "weapon-memory-staff",
     "name": "Memory Staff",
     "slug": "weapon-memory-staff",
@@ -14487,7 +14947,13 @@
       "weapon-metatron-s-voice",
       "weapon-metatron-s-grace",
       "weapon-metatron-s-wisdom",
-      "weapon-metatron-s-wrath"
+      "weapon-metatron-s-wrath",
+      "weapon-stave-metatron-s",
+      "weapon-sight-metatron-s",
+      "weapon-voice-metatron-s",
+      "weapon-grace-metatron-s",
+      "weapon-wisdom-metatron-s",
+      "weapon-wrath-metatron-s"
     ],
     "type": "weapon",
     "subtype": "staff-wand",
@@ -14739,6 +15205,9 @@
     "familyName": "Miasmal Staff",
     "slug": "weapon-miasmal-staff",
     "aliasSlugs": [
+      "weapon-eerie-miasmal-staff",
+      "weapon-ghostly-miasmal-staff",
+      "weapon-haunted-miasmal-staff",
       "weapon-spectral-miasmal-staff",
       "weapon-vexed-miasmal-staff",
       "weapon-miasmal-staff-all-versions"
@@ -14749,16 +15218,34 @@
     "familyOrigin": "cross-post",
     "familySources": [
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=22346339",
-        "title": "DF Encyclopedia: Spectral Miasmal Staff",
-        "variantLabel": "Spectral Miasmal Staff",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=18980815",
+        "title": "DF Encyclopedia: Eerie Miasmal Staff",
+        "variantLabel": "Eerie Miasmal Staff",
         "isPrimary": true
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=18980920",
+        "title": "DF Encyclopedia: Haunted Miasmal Staff",
+        "variantLabel": "Haunted Miasmal Staff",
+        "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=18980981",
         "title": "DF Encyclopedia: Vexed Miasmal Staff",
         "variantLabel": "Vexed Miasmal Staff",
         "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21733316",
+        "title": "DF Encyclopedia: Ghostly Miasmal Staff",
+        "variantLabel": "Ghostly Miasmal Staff",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=22346339",
+        "title": "DF Encyclopedia: Spectral Miasmal Staff",
+        "variantLabel": "Spectral Miasmal Staff",
+        "isPrimary": true
       }
     ],
     "itemType": "Staff",
@@ -14768,28 +15255,64 @@
       "element": "EVI",
       "rarity": "5",
       "notes": "Weapon is animated; spirits swirl around within the weapon, while the surrounding purple spirits wiggle continuously.",
-      "alsoSee": [
-        {
-          "name": "Eerie Miasmal Staff",
-          "slug": "weapon-eerie-miasmal-staff",
-          "type": "weapon",
-          "url": "https://forums2.battleon.com/f/tm.asp?m=18980815"
-        },
-        {
-          "name": "Ghostly Miasmal Staff",
-          "slug": "weapon-ghostly-miasmal-staff",
-          "type": "weapon",
-          "url": "https://forums2.battleon.com/f/tm.asp?m=21733316"
-        },
-        {
-          "name": "Haunted Miasmal Staff",
-          "slug": "weapon-haunted-miasmal-staff",
-          "type": "weapon",
-          "url": "https://forums2.battleon.com/f/tm.asp?m=18980920"
-        }
-      ]
+      "alsoSee": []
     },
     "levelVariants": [
+      {
+        "levelNumber": 25,
+        "levelDisplay": "25",
+        "actualLevel": 25,
+        "variantName": "Eerie",
+        "name": "Eerie Miasmal Staff",
+        "damage": "44-58",
+        "stats": "Block +1, Crit +4, Magic Def +1, Pierce Def +1, Melee Def +1, WIS +2, END +3, LUK -1, INT +3, Bonus +2",
+        "obtainVariants": [
+          {
+            "location": "LQS",
+            "price": "333 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "300 DC (<24 hours) / 84 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=18980815",
+        "description": "Made entirely from the residue of evil spirits, this weapon is one of the most unlucky artifacts in all of Lore. Visit the Black Market Moglin to upgrade this weapon.",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/MiasmalStaff.png",
+        "element": "EVI",
+        "resists": "Darkness +3, Light +3, Immobility +1, All +1",
+        "rarity": "5",
+        "itemType": "Staff",
+        "notes": "Weapon is animated; spirits swirl around within the weapon, while the surrounding purple spirits wiggle continuously."
+      },
+      {
+        "levelNumber": 45,
+        "levelDisplay": "45",
+        "actualLevel": 45,
+        "variantName": "Haunted",
+        "name": "Haunted Miasmal Staff",
+        "damage": "61-77",
+        "stats": "Block +1, Dodge +1, Crit +6, Magic Def +1, Pierce Def +1, Melee Def +1, WIS +4, END +5, LUK -2, INT +5, Bonus +6",
+        "obtainVariants": [
+          {
+            "location": "Miasmal Weapons",
+            "price": "N/A",
+            "priceType": "merge",
+            "sellback": "300 DC (<24 hours) / 84 DC (>24 hours)",
+            "requiredItems": "1 Eerie Miasmal Staff & 1 Miasmal Essence",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=18980920",
+        "description": "Made entirely from the residue of evil spirits, this weapon is one of the most unlucky artifacts in all of Lore. Visit the Black Market Moglin to upgrade this weapon.",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/MiasmalStaff.png",
+        "element": "EVI",
+        "resists": "Darkness +6, Light +6, Immobility +3, All +2",
+        "rarity": "5",
+        "itemType": "Staff",
+        "notes": "Weapon is animated; spirits swirl around within the weapon, while the surrounding purple spirits wiggle continuously."
+      },
       {
         "levelNumber": 67,
         "levelDisplay": "67",
@@ -14814,6 +15337,34 @@
         "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/MiasmalStaff.png",
         "element": "EVI",
         "resists": "Darkness +12, Light +12, Immobility +6, All +3",
+        "rarity": "5",
+        "itemType": "Staff",
+        "notes": "Weapon is animated; spirits swirl around within the weapon, while the surrounding purple spirits wiggle continuously."
+      },
+      {
+        "levelNumber": 78,
+        "levelDisplay": "78",
+        "actualLevel": 78,
+        "variantName": "Ghostly",
+        "name": "Ghostly Miasmal Staff",
+        "damage": "80-99",
+        "stats": "Block +2, Dodge +4, Crit +12, Magic Def +8, Pierce Def +8, Melee Def +8, WIS +10, END +7, LUK -5, INT +13, Bonus +9",
+        "obtainVariants": [
+          {
+            "location": "Miasmal Weapons",
+            "price": "N/A",
+            "priceType": "merge",
+            "sellback": "500 DC (<24 hours) / 139 DC (>24 hours)",
+            "requiredItems": "1 Vexed Miasmal Staff & 1 Miasmal Essence",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21733316",
+        "description": "Made entirely from the residue of evil spirits, this weapon is one of the most unlucky artifacts in all of Lore.",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/MiasmalStaff.png",
+        "element": "EVI",
+        "resists": "Darkness +13, Light +13, Immobility +8, All +6",
         "rarity": "5",
         "itemType": "Staff",
         "notes": "Weapon is animated; spirits swirl around within the weapon, while the surrounding purple spirits wiggle continuously."
@@ -14850,6 +15401,7 @@
     "category": "Weapon",
     "releaseDate": "",
     "tags": [
+      "dc",
       "evi",
       "merge"
     ],
@@ -14862,7 +15414,7 @@
       "EVI"
     ],
     "isRare": true,
-    "levelRange": "67-88"
+    "levelRange": "25-88"
   },
   {
     "id": "weapon-midnight-dream",
@@ -14878,7 +15430,15 @@
       "weapon-midnight-dream-v",
       "weapon-midnight-dream-vi",
       "weapon-midnight-dream-vii",
-      "weapon-midnight-dream-viii"
+      "weapon-midnight-dream-viii",
+      "weapon-i-midnight-dream",
+      "weapon-ii-midnight-dream",
+      "weapon-iii-midnight-dream",
+      "weapon-iv-midnight-dream",
+      "weapon-v-midnight-dream",
+      "weapon-vi-midnight-dream",
+      "weapon-vii-midnight-dream",
+      "weapon-viii-midnight-dream"
     ],
     "type": "weapon",
     "subtype": "staff-wand",
@@ -15179,7 +15739,13 @@
       "weapon-midsummer-wizard-s-wand-iii",
       "weapon-midsummer-wizard-wand-iv",
       "weapon-midsummer-wizard-s-wand-v",
-      "weapon-midsummer-wizard-wand-vi"
+      "weapon-midsummer-wizard-wand-vi",
+      "weapon-i-midsummer-wizard-s-wand",
+      "weapon-ii-midsummer-wizard-s-wand",
+      "weapon-iii-midsummer-wizard-s-wand",
+      "weapon-wizard-wand-iv-midsummer-wizard-s-wand",
+      "weapon-v-midsummer-wizard-s-wand",
+      "weapon-wizard-wand-vi-midsummer-wizard-s-wand"
     ],
     "type": "weapon",
     "subtype": "staff-wand",
@@ -15535,7 +16101,13 @@
         "activation": "on-hit",
         "trigger": "Your weapon special activates on hit.",
         "effect": "Applies 'Light', a 5-5 Magic Light DoT effect, to target for 5 turns. (Pop-up: Oh! Glowy!) (Rate: 10%)",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-OnHit.png"
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-OnHit.png",
+        "specialImageUrls": [
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/MindVision-Special.png"
+        ],
+        "specialImageCaptions": [
+          "Appearance"
+        ]
       }
     },
     "levelVariants": [
@@ -15672,7 +16244,10 @@
       "weapon-mini-lava-staff-i-ii-iii",
       "weapon-mini-lava-staff-all-versions",
       "weapon-mini-lava-staff-ii",
-      "weapon-mini-lava-staff-iii"
+      "weapon-mini-lava-staff-iii",
+      "weapon-base-mini-lava-staff",
+      "weapon-ii-mini-lava-staff",
+      "weapon-iii-mini-lava-staff"
     ],
     "type": "weapon",
     "subtype": "staff-wand",
@@ -15802,7 +16377,10 @@
       "weapon-minimalist-mayo-mechanism-i-ii-iii",
       "weapon-minimalist-mayo-mechanism-all-versions",
       "weapon-minimalist-mayo-mechanism-ii",
-      "weapon-minimalist-mayo-mechanism-iii"
+      "weapon-minimalist-mayo-mechanism-iii",
+      "weapon-base-minimalist-mayo-mechanism",
+      "weapon-ii-minimalist-mayo-mechanism",
+      "weapon-iii-minimalist-mayo-mechanism"
     ],
     "type": "weapon",
     "subtype": "staff-wand",
@@ -15939,7 +16517,25 @@
       "weapon-mint-cream-staff-vi",
       "weapon-mint-cream-staff-vii",
       "weapon-mint-cream-staff-viii",
-      "weapon-mint-cream-staff-ix"
+      "weapon-mint-cream-staff-ix",
+      "weapon-i-mint-cream-staff",
+      "weapon-i-dc-mint-cream-staff",
+      "weapon-ii-mint-cream-staff",
+      "weapon-ii-dc-mint-cream-staff",
+      "weapon-iii-mint-cream-staff",
+      "weapon-iii-dc-mint-cream-staff",
+      "weapon-iv-mint-cream-staff",
+      "weapon-iv-dc-mint-cream-staff",
+      "weapon-v-mint-cream-staff",
+      "weapon-v-dc-mint-cream-staff",
+      "weapon-vi-mint-cream-staff",
+      "weapon-vi-dc-mint-cream-staff",
+      "weapon-vii-mint-cream-staff",
+      "weapon-vii-dc-mint-cream-staff",
+      "weapon-viii-mint-cream-staff",
+      "weapon-viii-dc-mint-cream-staff",
+      "weapon-ix-mint-cream-staff",
+      "weapon-ix-dc-mint-cream-staff"
     ],
     "type": "weapon",
     "subtype": "staff-wand",
@@ -16469,18 +17065,19 @@
     "levelRange": "I-IX"
   },
   {
-    "id": "weapon-the-minute-hand",
+    "id": "weapon-minute-hand-the",
     "familyName": "The Minute Hand",
-    "slug": "weapon-the-minute-hand",
+    "slug": "weapon-minute-hand-the",
     "aliasSlugs": [
-      "weapon-minute-hand-i-ii-iii-the-all-versions",
+      "weapon-minute-hand-i-ii-iii-the",
+      "weapon-minute-hand-the-all-versions",
       "weapon-the-minute-hand-i",
       "weapon-the-minute-hand-ii",
       "weapon-the-minute-hand-iii",
-      "weapon-minute-hand-i-ii-iii-the",
-      "weapon-the-minute-hand-i-ii-iii-all-versions",
-      "weapon-the-minute-hand-i-ii-iii",
-      "weapon-the-minute-hand-all-versions"
+      "weapon-the-minute-hand-all-versions",
+      "weapon-i-the-minute-hand",
+      "weapon-ii-the-minute-hand",
+      "weapon-iii-the-minute-hand"
     ],
     "type": "weapon",
     "subtype": "staff-wand",
@@ -16719,13 +17316,20 @@
     "aliasSlugs": [
       "weapon-hyetal-monolith-staff",
       "weapon-limnal-monolith-staff",
-      "weapon-monolith-staff-all-versions"
+      "weapon-monolith-staff-all-versions",
+      "weapon-base-monolith-staff"
     ],
     "type": "weapon",
     "subtype": "staff-wand",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19834092",
     "familyOrigin": "cross-post",
     "familySources": [
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=19834095",
+        "title": "DF Encyclopedia: Monolith Staff",
+        "variantLabel": "Monolith Staff",
+        "isPrimary": false
+      },
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=19834092",
         "title": "DF Encyclopedia: Hyetal Monolith Staff",
@@ -16736,12 +17340,6 @@
         "url": "https://forums2.battleon.com/f/tm.asp?m=19834090",
         "title": "DF Encyclopedia: Limnal Monolith Staff",
         "variantLabel": "Limnal Monolith Staff",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19834095",
-        "title": "DF Encyclopedia: Monolith Staff",
-        "variantLabel": "Monolith Staff",
         "isPrimary": false
       }
     ],
@@ -17127,7 +17725,8 @@
     "slug": "weapon-mooncalling-staff",
     "aliasSlugs": [
       "weapon-crescent-mooncalling-staff",
-      "weapon-mooncalling-staff-all-versions"
+      "weapon-mooncalling-staff-all-versions",
+      "weapon-base-mooncalling-staff"
     ],
     "type": "weapon",
     "subtype": "staff-wand",
@@ -17135,16 +17734,16 @@
     "familyOrigin": "cross-post",
     "familySources": [
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=17988286",
-        "title": "DF Encyclopedia: Crescent Mooncalling Staff",
-        "variantLabel": "Crescent Mooncalling Staff",
-        "isPrimary": true
-      },
-      {
         "url": "https://forums2.battleon.com/f/tm.asp?m=4545998",
         "title": "DF Encyclopedia: Mooncalling Staff",
         "variantLabel": "Mooncalling Staff",
         "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=17988286",
+        "title": "DF Encyclopedia: Crescent Mooncalling Staff",
+        "variantLabel": "Crescent Mooncalling Staff",
+        "isPrimary": true
       }
     ],
     "itemType": "Staff",
@@ -17153,7 +17752,7 @@
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/MooncallingStaff.png",
       "element": "LIG",
       "rarity": "2",
-      "notes": "Weapon was previously available in the retired quest Sir Koffagus Sarcophagus.\nThe following changes were implemented on September 5th, 2025:\n  • Weapon was initially purchasable on Yulgar's Shop for 260 Gold, with a sellback of 26 Gold.\n  • Level was increased from 5 to 8.\n  • Damage range was modified from 6-30 to 21-29.",
+      "notes": "Weapon was previously available in the retired quest Sir Koffagus Sarcophagus.\nThe following changes were implemented on September 5th, 2025:\n • Weapon was initially purchasable on Yulgar's Shop for 260 Gold, with a sellback of 26 Gold.\n • Level was increased from 5 to 8.\n • Damage range was modified from 6-30 to 21-29.",
       "alsoSee": []
     },
     "levelVariants": [
@@ -17188,7 +17787,7 @@
         "resists": "None",
         "rarity": "2",
         "itemType": "Staff",
-        "notes": "Weapon was previously available in the retired quest Sir Koffagus Sarcophagus.\nThe following changes were implemented on September 5th, 2025:\n  • Weapon was initially purchasable on Yulgar's Shop for 260 Gold, with a sellback of 26 Gold.\n  • Level was increased from 5 to 8.\n  • Damage range was modified from 6-30 to 21-29."
+        "notes": "Weapon was previously available in the retired quest Sir Koffagus Sarcophagus.\nThe following changes were implemented on September 5th, 2025:\n • Weapon was initially purchasable on Yulgar's Shop for 260 Gold, with a sellback of 26 Gold.\n • Level was increased from 5 to 8.\n • Damage range was modified from 6-30 to 21-29."
       },
       {
         "levelNumber": 19,
@@ -17286,7 +17885,12 @@
       "weapon-moonridge-honorstaff-ii",
       "weapon-moonridge-honorstaff-iii",
       "weapon-moonridge-honorstaff-iv",
-      "weapon-moonridge-honorstaff-v"
+      "weapon-moonridge-honorstaff-v",
+      "weapon-base-moonridge-honorstaff",
+      "weapon-ii-moonridge-honorstaff",
+      "weapon-iii-moonridge-honorstaff",
+      "weapon-iv-moonridge-honorstaff",
+      "weapon-v-moonridge-honorstaff"
     ],
     "type": "weapon",
     "subtype": "staff-wand",
@@ -17760,6 +18364,12 @@
       "trigger": "Activate your weapon's special!",
       "effect": "5 hits of 30% Wind damage, amounting to 150% damage; applies 'Morganite Winds' (+5X Melee/Pierce/Magic Avoidance, +5X Block/Parry/Dodge Defense, where X is the number of hits landed, capped at +25) to player for 5 turns.",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-Wind.png",
+      "specialImageUrls": [
+        "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/MorganiteGembinder-Special.gif"
+      ],
+      "specialImageCaptions": [
+        "Appearance"
+      ],
       "cooldown": "10 - [(Player LUK/50), rounded down]",
       "chargeTime": "5 - [(Player LUK/100), rounded down]"
     },
@@ -17834,7 +18444,11 @@
       "weapon-motherlove-i",
       "weapon-motherlove-ii",
       "weapon-motherlove-iii",
-      "weapon-motherlove-iv"
+      "weapon-motherlove-iv",
+      "weapon-i-motherlove",
+      "weapon-ii-motherlove",
+      "weapon-iii-motherlove",
+      "weapon-iv-motherlove"
     ],
     "type": "weapon",
     "subtype": "staff-wand",
@@ -18031,7 +18645,9 @@
     "aliasSlugs": [
       "weapon-mummy-s-torment-curse-all-versions",
       "weapon-mummy-s-torment",
-      "weapon-mummy-s-curse"
+      "weapon-mummy-s-curse",
+      "weapon-torment-mummy-s",
+      "weapon-curse-mummy-s"
     ],
     "type": "weapon",
     "subtype": "staff-wand",
@@ -18183,7 +18799,18 @@
       "weapon-nature-dragon-s-power-viii",
       "weapon-nature-dragon-s-power-ix",
       "weapon-nature-dragon-s-power-x",
-      "weapon-nature-dragon-s-power-xi"
+      "weapon-nature-dragon-s-power-xi",
+      "weapon-i-nature-dragon-s-power",
+      "weapon-ii-nature-dragon-s-power",
+      "weapon-iii-nature-dragon-s-power",
+      "weapon-iv-nature-dragon-s-power",
+      "weapon-v-nature-dragon-s-power",
+      "weapon-vi-nature-dragon-s-power",
+      "weapon-vii-nature-dragon-s-power",
+      "weapon-viii-nature-dragon-s-power",
+      "weapon-ix-nature-dragon-s-power",
+      "weapon-x-nature-dragon-s-power",
+      "weapon-xi-nature-dragon-s-power"
     ],
     "type": "weapon",
     "subtype": "staff-wand",
@@ -18658,7 +19285,18 @@
       "weapon-nature-s-power-viii",
       "weapon-nature-s-power-ix",
       "weapon-nature-s-power-x",
-      "weapon-nature-s-power-xi"
+      "weapon-nature-s-power-xi",
+      "weapon-i-nature-s-power",
+      "weapon-ii-nature-s-power",
+      "weapon-iii-nature-s-power",
+      "weapon-iv-nature-s-power",
+      "weapon-v-nature-s-power",
+      "weapon-vi-nature-s-power",
+      "weapon-vii-nature-s-power",
+      "weapon-viii-nature-s-power",
+      "weapon-ix-nature-s-power",
+      "weapon-x-nature-s-power",
+      "weapon-xi-nature-s-power"
     ],
     "type": "weapon",
     "subtype": "staff-wand",
@@ -19225,10 +19863,12 @@
     "alsoSee": [],
     "tags": [
       "dar",
+      "default",
       "free"
     ],
     "daRequired": false,
-    "retired": true
+    "retired": true,
+    "isDefault": true
   },
   {
     "id": "weapon-neela-paani-staff",
@@ -19242,7 +19882,13 @@
       "weapon-neela-paani-staff-iii",
       "weapon-neela-paani-staff-iv",
       "weapon-neela-paani-staff-v",
-      "weapon-neela-paani-staff-vi"
+      "weapon-neela-paani-staff-vi",
+      "weapon-i-neela-paani-staff",
+      "weapon-ii-neela-paani-staff",
+      "weapon-iii-neela-paani-staff",
+      "weapon-iv-neela-paani-staff",
+      "weapon-v-neela-paani-staff",
+      "weapon-vi-neela-paani-staff"
     ],
     "type": "weapon",
     "subtype": "staff-wand",
@@ -19581,54 +20227,14 @@
     "alsoSee": []
   },
   {
-    "id": "weapon-night-annex-stave",
-    "name": "Night Annex Stave",
-    "slug": "weapon-night-annex-stave",
-    "type": "weapon",
-    "subtype": "staff-wand",
-    "description": "A lithe weapon, orbs play along the edge of the blades of the Night Annex.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20131552",
-    "releaseDate": "",
-    "imageUrl": "http://i.imgur.com/PhV7C.png",
-    "elements": [
-      "DAR"
-    ],
-    "level": "30",
-    "damage": "42-58",
-    "stats": "Crit +2, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +1, END +1, INT +3, Bonus +2",
-    "resists": "Energy +4, Light +4, Darkness +2, Metal +1",
-    "rarity": "6",
-    "itemType": "Staff",
-    "obtainMethods": [
-      {
-        "location": "Desert Thugs",
-        "price": "N/A",
-        "priceType": "free",
-        "sellback": "150 Gold",
-        "daRequired": false
-      }
-    ],
-    "alsoSee": [
-      {
-        "name": "Stave",
-        "slug": "weapon-stave",
-        "type": "weapon",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20131579"
-      }
-    ],
-    "tags": [
-      "dar",
-      "free"
-    ],
-    "daRequired": false
-  },
-  {
-    "id": "weapon-night-vision",
+    "id": "weapon-spectral-night-vision",
     "familyName": "Night Vision",
-    "slug": "weapon-night-vision",
+    "slug": "weapon-spectral-night-vision",
     "aliasSlugs": [
-      "weapon-spectral-night-vision",
-      "weapon-night-vision-all-versions"
+      "weapon-night-vision",
+      "weapon-night-vision-all-versions",
+      "weapon-base-night-vision",
+      "weapon-dc-night-vision"
     ],
     "type": "weapon",
     "subtype": "staff-wand",
@@ -20193,7 +20799,15 @@
       "weapon-noon-oath-v",
       "weapon-noon-oath-vi",
       "weapon-noon-oath-vii",
-      "weapon-noon-oath-viii"
+      "weapon-noon-oath-viii",
+      "weapon-i-noon-oath",
+      "weapon-ii-noon-oath",
+      "weapon-iii-noon-oath",
+      "weapon-iv-noon-oath",
+      "weapon-v-noon-oath",
+      "weapon-vi-noon-oath",
+      "weapon-vii-noon-oath",
+      "weapon-viii-noon-oath"
     ],
     "type": "weapon",
     "subtype": "staff-wand",
@@ -20648,7 +21262,9 @@
     "familyName": "Novenary Frost Spectre",
     "slug": "weapon-novenary-frost-spectre",
     "aliasSlugs": [
-      "weapon-novenary-frost-spectre-all-versions"
+      "weapon-novenary-frost-spectre-all-versions",
+      "weapon-base-novenary-frost-spectre",
+      "weapon-dc-novenary-frost-spectre"
     ],
     "type": "weapon",
     "subtype": "staff-wand",
@@ -20740,6 +21356,12 @@
         "trigger": "Activate your weapon's special!",
         "effect": "1 hit of 300% damage.",
         "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-Ice.png",
+        "specialImageUrls": [
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/FrostSpectre-Special.png"
+        ],
+        "specialImageCaptions": [
+          "Appearance"
+        ],
         "cooldown": "10 - [(Player LUK/50), rounded down]",
         "chargeTime": "5 - [(Player LUK/100), rounded down]"
       }

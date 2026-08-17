@@ -32,6 +32,7 @@ import OtherInformationSection from '../shared/OtherInformationSection'
 import DetailTypePill from '../shared/DetailTypePill'
 import ItemImage from '../shared/ItemImage'
 import { buildFilterLink } from '../../utils/filterLinks'
+import { notesIndicateInvisibleItem } from '../../utils/imageVisibility'
 import AccessoryStatsTable from './AccessoryStatsTable'
 import AccessoryCard from './AccessoryCard'
 import GuestAttacks from '../guests/GuestAttacks'
@@ -144,12 +145,18 @@ function shouldDisplayAccessoryImages(
   ].some(isCapeOrHelmLike)
 }
 
-function shouldSuppressMissingImagePlaceholder(accessory: AccessoryEntry): boolean {
+function shouldSuppressMissingImagePlaceholder(
+  accessory: AccessoryEntry,
+  notes: Array<string | undefined> = []
+): boolean {
   const slugs = [
     accessory.slug,
     ...(isAccessoryFamily(accessory) ? (accessory.aliasSlugs ?? []) : []),
   ]
-  return slugs.some((slug) => INTENTIONALLY_IMAGELESS_ACCESSORY_SLUGS.has(slug))
+  return (
+    slugs.some((slug) => INTENTIONALLY_IMAGELESS_ACCESSORY_SLUGS.has(slug)) ||
+    notesIndicateInvisibleItem(...notes)
+  )
 }
 
 function ArtifactMetadataStrip({ modifies, equipSpot }: { modifies?: string; equipSpot?: string }) {
@@ -280,7 +287,13 @@ export default function AccessoryDetail({ accessory, filterBase }: AccessoryDeta
 
   const currentImage = allImages[activeImageIndex]
   const showMissingImagePlaceholder =
-    shouldShowImages && allImages.length === 0 && !shouldSuppressMissingImagePlaceholder(accessory)
+    shouldShowImages &&
+    allImages.length === 0 &&
+    !shouldSuppressMissingImagePlaceholder(accessory, [
+      family?.shared.notes,
+      activeLevel?.notes,
+      singleAccessory?.notes,
+    ])
 
   const access = family
     ? { da: family.hasDA, dc: family.hasDC, dm: family.hasDM }
@@ -299,6 +312,9 @@ export default function AccessoryDetail({ accessory, filterBase }: AccessoryDeta
   const ability = family ? family.shared.ability : singleAccessory?.ability
   const artifactModifies = family ? family.modifies : singleAccessory?.modifies
   const artifactEquipSpot = family ? family.equipSlot : singleAccessory?.equipSpot
+  const trinketSkillEffectTypes = family
+    ? family.trinketSkillEffectTypes
+    : singleAccessory?.trinketSkillEffectTypes
   const detailTypeLabel =
     activeLevel?.itemType ??
     family?.itemType ??
@@ -432,6 +448,12 @@ export default function AccessoryDetail({ accessory, filterBase }: AccessoryDeta
         {!!accessory.releaseDate && (
           <p className="text-sm text-text-muted">Released: {accessory.releaseDate}</p>
         )}
+        {trinketSkillEffectTypes && trinketSkillEffectTypes.length > 0 && (
+          <p className="text-xs text-text-muted mt-2">
+            Effect Type{trinketSkillEffectTypes.length === 1 ? '' : 's'}:{' '}
+            {trinketSkillEffectTypes.join(', ')}
+          </p>
+        )}
       </div>
 
       {family && family.levelVariants.length > 1 && (
@@ -510,7 +532,11 @@ export default function AccessoryDetail({ accessory, filterBase }: AccessoryDeta
       <ObtainSection variants={obtainMethods} className="mb-8" />
 
       {attacks && attacks.length > 0 && (
-        <GuestAttacks attacks={attacks} heading={trinketSkillHeading} />
+        <GuestAttacks
+          attacks={attacks}
+          heading={trinketSkillHeading}
+          imageLabel="Ability Image"
+        />
       )}
 
       <OtherInformationSection

@@ -703,6 +703,17 @@ function normalizeAppearanceCaption(rawCaption: string): string {
   return caption.replace(/^Appearance\s*/i, '').trim() || 'Appearance'
 }
 
+function isTableValueAppearanceCaption(caption: string): boolean {
+  return /^[+-]?[xy](?:\s*-\s*[xy])?$/i.test(caption.trim())
+}
+
+function applyAppearanceCaptionContext(caption: string, context?: string): string {
+  if (!context) return caption
+  if (!/^\d+(?:\.\d+)?$/i.test(caption)) return caption
+  if (!/^(Baby|Toddler|Kid)$/i.test(context)) return caption
+  return `${context} ${caption}`
+}
+
 function parseGuestAttacks(html: string, guestName: string): GuestAttack[] {
   const DEBUG = process.env.DEBUG_ATTACKS === '1'
   const attacks: GuestAttack[] = []
@@ -886,16 +897,24 @@ function parseGuestAttacks(html: string, guestName: string): GuestAttack[] {
         : 0
     const appearanceHtml = block.slice(appearanceSearchStart)
     const appearanceEntries: Array<{ url: string; caption: string }> = []
+    let appearanceCaptionContext: string | undefined
     for (const match of appearanceHtml.matchAll(
       /<a[^>]+href=(["'])(.*?)\1[^>]*>([\s\S]*?)<\/a>/gi
     )) {
       const url = normalizeLinkedImageUrl(match[2] ?? '')
       if (!isLikelyLinkedImageUrl(url)) continue
+      const caption = normalizeAppearanceCaption(match[3] ?? '')
+      if (isTableValueAppearanceCaption(caption)) continue
       if (appearanceEntries.some((entry) => entry.url === url)) continue
+
+      const contextMatch = caption.match(/^([A-Za-z][A-Za-z\s'-]*?)\s+\d+(?:\.\d+)?$/)
+      if (contextMatch) {
+        appearanceCaptionContext = contextMatch[1]?.trim()
+      }
 
       appearanceEntries.push({
         url,
-        caption: normalizeAppearanceCaption(match[3] ?? ''),
+        caption: applyAppearanceCaptionContext(caption, appearanceCaptionContext),
       })
     }
     const appearanceUrls = appearanceEntries.map((entry) => entry.url)

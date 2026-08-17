@@ -15,6 +15,8 @@ export interface WeaponSpecial {
   trigger: string
   effect: string
   imageUrl?: string
+  specialImageUrls?: string[]
+  specialImageCaptions?: string[]
   cooldown?: string
   chargeTime?: string
   notes?: string
@@ -58,6 +60,7 @@ export interface Weapon {
   hasSpecial?: boolean
   hasArmorCustomization?: boolean
   isCosmetic?: boolean
+  isDefault?: boolean
   isRare?: boolean
   isSeasonal?: boolean
   isSpecialOffer?: boolean
@@ -74,13 +77,15 @@ export type WeaponFamily = ItemFamily & {
   }
   hasSpecial?: boolean
   hasArmorCustomization?: boolean
+  isDefault?: boolean
 }
 
 export type WeaponEntry = Weapon | WeaponFamily
 
 export interface WeaponFilters {
   query?: string
-  access?: Array<'multi' | 'free' | 'merge' | 'dc' | 'dm' | 'da'>
+  access?: Array<'multi' | 'free' | 'merge' | 'dc' | 'dm' | 'da' | 'default'>
+  excludeAccess?: Array<'multi' | 'free' | 'merge' | 'dc' | 'dm' | 'da' | 'default'>
   categories?: Array<
     | 'armor-customization'
     | 'special'
@@ -91,7 +96,18 @@ export interface WeaponFilters {
     | 'special-offer'
     | 'retired'
   >
+  excludeCategories?: Array<
+    | 'armor-customization'
+    | 'special'
+    | 'cosmetic'
+    | 'temp'
+    | 'rare'
+    | 'seasonal'
+    | 'special-offer'
+    | 'retired'
+  >
   elements?: string[]
+  excludeElements?: string[]
 }
 
 export const WEAPON_SUBTYPES: WeaponSubtypeMeta[] = [

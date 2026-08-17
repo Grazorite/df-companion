@@ -88,7 +88,11 @@
       "weapon-half-fractured-blade-i",
       "weapon-half-fractured-blade-ii",
       "weapon-half-fractured-blade-iii",
-      "weapon-half-fractured-blade-iv"
+      "weapon-half-fractured-blade-iv",
+      "weapon-i-half-fractured-blade",
+      "weapon-ii-half-fractured-blade",
+      "weapon-iii-half-fractured-blade",
+      "weapon-iv-half-fractured-blade"
     ],
     "type": "weapon",
     "subtype": "sword-axe-mace",
@@ -259,7 +263,12 @@
       "weapon-half-gear-blade-ii",
       "weapon-half-gear-blade-iii",
       "weapon-half-gear-blade-iv",
-      "weapon-half-gear-blade-v"
+      "weapon-half-gear-blade-v",
+      "weapon-i-half-gear-blade",
+      "weapon-ii-half-gear-blade",
+      "weapon-iii-half-gear-blade",
+      "weapon-iv-half-gear-blade",
+      "weapon-v-half-gear-blade"
     ],
     "type": "weapon",
     "subtype": "sword-axe-mace",
@@ -460,7 +469,9 @@
     "slug": "weapon-half-off-notas",
     "aliasSlugs": [
       "weapon-half-off-elite-notas",
-      "weapon-half-off-notas-all-versions"
+      "weapon-half-off-notas-all-versions",
+      "weapon-base-half-off-notas",
+      "weapon-elite-half-off-notas"
     ],
     "type": "weapon",
     "subtype": "sword-axe-mace",
@@ -468,16 +479,16 @@
     "familyOrigin": "cross-post",
     "familySources": [
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=18369022",
-        "title": "DF Encyclopedia: Half-off Elite Notas",
-        "variantLabel": "Half-off Elite Notas",
-        "isPrimary": true
-      },
-      {
         "url": "https://forums2.battleon.com/f/tm.asp?m=18368996",
         "title": "DF Encyclopedia: Half-off Notas",
         "variantLabel": "Half-off Notas",
         "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=18369022",
+        "title": "DF Encyclopedia: Half-off Elite Notas",
+        "variantLabel": "Half-off Elite Notas",
+        "isPrimary": true
       }
     ],
     "itemType": "Sword",
@@ -570,7 +581,9 @@
     "aliasSlugs": [
       "weapon-half-off-high-sword-of-clubs",
       "weapon-half-off-higher-sword-of-clubs",
-      "weapon-half-off-sword-of-clubs-all-versions"
+      "weapon-half-off-sword-of-clubs-all-versions",
+      "weapon-high-half-off-sword-of-clubs",
+      "weapon-higher-half-off-sword-of-clubs"
     ],
     "type": "weapon",
     "subtype": "sword-axe-mace",
@@ -685,7 +698,12 @@
       "weapon-half-half-gear-blade-ii",
       "weapon-half-half-gear-blade-iii",
       "weapon-half-half-gear-blade-iv",
-      "weapon-half-half-gear-blade-v"
+      "weapon-half-half-gear-blade-v",
+      "weapon-i-half-half-gear-blade",
+      "weapon-ii-half-half-gear-blade",
+      "weapon-iii-half-half-gear-blade",
+      "weapon-iv-half-half-gear-blade",
+      "weapon-v-half-half-gear-blade"
     ],
     "type": "weapon",
     "subtype": "sword-axe-mace",
@@ -892,7 +910,12 @@
       "weapon-half-off-frostvale-pine-ii",
       "weapon-half-off-frostvale-pine-iii",
       "weapon-half-off-frostvale-pine-iv",
-      "weapon-half-off-frostvale-pine-v"
+      "weapon-half-off-frostvale-pine-v",
+      "weapon-i-half-off-frostvale-pine",
+      "weapon-ii-half-off-frostvale-pine",
+      "weapon-iii-half-off-frostvale-pine",
+      "weapon-iv-half-off-frostvale-pine",
+      "weapon-v-half-off-frostvale-pine"
     ],
     "type": "weapon",
     "subtype": "sword-axe-mace",
@@ -1088,15 +1111,16 @@
     "familyName": "Hallow'D Edge",
     "slug": "weapon-hallow-d-edge",
     "aliasSlugs": [
+      "weapon-elevated-hallow-d-edge",
+      "weapon-glorious-hallow-d-edge",
+      "weapon-high-hallow-d-edge",
       "weapon-magnificent-hallow-d-edge",
       "weapon-marvelous-hallow-d-edge",
       "weapon-noble-hallow-d-edge",
       "weapon-potent-hallow-d-edge",
       "weapon-pristine-hallow-d-edge",
       "weapon-hallow-d-edge-all-versions",
-      "weapon-high-hallow-d-edge",
-      "weapon-elevated-hallow-d-edge",
-      "weapon-glorious-hallow-d-edge"
+      "weapon-base-hallow-d-edge"
     ],
     "type": "weapon",
     "subtype": "sword-axe-mace",
@@ -1104,21 +1128,15 @@
     "familyOrigin": "cross-post",
     "familySources": [
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21844330",
-        "title": "DF Encyclopedia: Elevated Hallow'd Edge",
-        "variantLabel": "Elevated Hallow'd Edge",
-        "isPrimary": true
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21844347",
-        "title": "DF Encyclopedia: Glorious Hallow'd Edge",
-        "variantLabel": "Glorious Hallow'd Edge",
-        "isPrimary": false
-      },
-      {
         "url": "https://forums2.battleon.com/f/tm.asp?m=11697076",
         "title": "DF Encyclopedia: Hallow'd Edge",
         "variantLabel": "Hallow'd Edge",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=17741701",
+        "title": "DF Encyclopedia: Potent Hallow'd Edge",
+        "variantLabel": "Potent Hallow'd Edge",
         "isPrimary": false
       },
       {
@@ -1128,9 +1146,9 @@
         "isPrimary": false
       },
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21844340",
-        "title": "DF Encyclopedia: Magnificent Hallow'd Edge",
-        "variantLabel": "Magnificent Hallow'd Edge",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21844315",
+        "title": "DF Encyclopedia: Noble Hallow'd Edge",
+        "variantLabel": "Noble Hallow'd Edge",
         "isPrimary": false
       },
       {
@@ -1140,15 +1158,21 @@
         "isPrimary": false
       },
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21844315",
-        "title": "DF Encyclopedia: Noble Hallow'd Edge",
-        "variantLabel": "Noble Hallow'd Edge",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21844330",
+        "title": "DF Encyclopedia: Elevated Hallow'd Edge",
+        "variantLabel": "Elevated Hallow'd Edge",
+        "isPrimary": true
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21844340",
+        "title": "DF Encyclopedia: Magnificent Hallow'd Edge",
+        "variantLabel": "Magnificent Hallow'd Edge",
         "isPrimary": false
       },
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=17741701",
-        "title": "DF Encyclopedia: Potent Hallow'd Edge",
-        "variantLabel": "Potent Hallow'd Edge",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21844347",
+        "title": "DF Encyclopedia: Glorious Hallow'd Edge",
+        "variantLabel": "Glorious Hallow'd Edge",
         "isPrimary": false
       },
       {
@@ -1502,7 +1526,8 @@
     "slug": "weapon-harbinger-of-sorrow",
     "aliasSlugs": [
       "weapon-harbinger-of-sorrow-all-versions",
-      "weapon-harbinger"
+      "weapon-harbinger",
+      "weapon-base-harbinger"
     ],
     "type": "weapon",
     "subtype": "sword-axe-mace",
@@ -2036,7 +2061,18 @@
       "weapon-harvest-edge-viii",
       "weapon-harvest-edge-ix",
       "weapon-harvest-edge-x",
-      "weapon-harvest-edge-xi"
+      "weapon-harvest-edge-xi",
+      "weapon-base-harvest-edge",
+      "weapon-ii-harvest-edge",
+      "weapon-iii-harvest-edge",
+      "weapon-iv-harvest-edge",
+      "weapon-v-harvest-edge",
+      "weapon-vi-harvest-edge",
+      "weapon-vii-harvest-edge",
+      "weapon-viii-harvest-edge",
+      "weapon-ix-harvest-edge",
+      "weapon-x-harvest-edge",
+      "weapon-xi-harvest-edge"
     ],
     "type": "weapon",
     "subtype": "sword-axe-mace",
@@ -2960,7 +2996,12 @@
       "weapon-hero-s-glowing-essence",
       "weapon-hero-s-silvery-essence",
       "weapon-hero-s-vibrant-essence",
-      "weapon-hero-s-essence-all-versions"
+      "weapon-hero-s-essence-all-versions",
+      "weapon-glowing-hero-s-essence",
+      "weapon-vibrant-hero-s-essence",
+      "weapon-bright-hero-s-essence",
+      "weapon-silvery-hero-s-essence",
+      "weapon-awesome-hero-s-essence"
     ],
     "type": "weapon",
     "subtype": "sword-axe-mace",
@@ -2968,21 +3009,21 @@
     "familyOrigin": "cross-post",
     "familySources": [
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21655521",
-        "title": "DF Encyclopedia: Hero's Awesome Essence",
-        "variantLabel": "Hero's Awesome Essence",
-        "isPrimary": true
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21655135",
+        "title": "DF Encyclopedia: Hero's Glowing Essence",
+        "variantLabel": "Hero's Glowing Essence",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21656922",
+        "title": "DF Encyclopedia: Hero's Vibrant Essence",
+        "variantLabel": "Hero's Vibrant Essence",
+        "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=21656917",
         "title": "DF Encyclopedia: Hero's Bright Essence",
         "variantLabel": "Hero's Bright Essence",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21655135",
-        "title": "DF Encyclopedia: Hero's Glowing Essence",
-        "variantLabel": "Hero's Glowing Essence",
         "isPrimary": false
       },
       {
@@ -2992,10 +3033,10 @@
         "isPrimary": false
       },
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21656922",
-        "title": "DF Encyclopedia: Hero's Vibrant Essence",
-        "variantLabel": "Hero's Vibrant Essence",
-        "isPrimary": false
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21655521",
+        "title": "DF Encyclopedia: Hero's Awesome Essence",
+        "variantLabel": "Hero's Awesome Essence",
+        "isPrimary": true
       }
     ],
     "itemType": "Axe",
@@ -3543,41 +3584,24 @@
     "familyName": "Hobgoblin Axe",
     "slug": "weapon-hobgoblin-axe",
     "aliasSlugs": [
+      "weapon-blistering-hobgoblin-axe",
+      "weapon-burning-hobgoblin-axe",
+      "weapon-fiery-hobgoblin-axe",
+      "weapon-hot-hobgoblin-axe",
+      "weapon-ignited-hobgoblin-axe",
+      "weapon-kindled-hobgoblin-axe",
       "weapon-red-hot-hobgoblin-axe",
       "weapon-scorching-hobgoblin-axe",
       "weapon-sizzling-hobgoblin-axe",
       "weapon-smoldering-hobgoblin-axe",
       "weapon-hobgoblin-axe-all-versions",
-      "weapon-hot-hobgoblin-axe",
-      "weapon-burning-hobgoblin-axe",
-      "weapon-ignited-hobgoblin-axe",
-      "weapon-blistering-hobgoblin-axe",
-      "weapon-kindled-hobgoblin-axe",
-      "weapon-fiery-hobgoblin-axe"
+      "weapon-base-hobgoblin-axe"
     ],
     "type": "weapon",
     "subtype": "sword-axe-mace",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20014502",
     "familyOrigin": "cross-post",
     "familySources": [
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20014504",
-        "title": "DF Encyclopedia: Fiery Hobgoblin Axe",
-        "variantLabel": "Fiery Hobgoblin Axe",
-        "isPrimary": true
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20014502",
-        "title": "DF Encyclopedia: Blistering Hobgoblin Axe",
-        "variantLabel": "Blistering Hobgoblin Axe",
-        "isPrimary": true
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20014403",
-        "title": "DF Encyclopedia: Burning Hobgoblin Axe",
-        "variantLabel": "Burning Hobgoblin Axe",
-        "isPrimary": false
-      },
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=20014387",
         "title": "DF Encyclopedia: Hobgoblin Axe",
@@ -3591,15 +3615,27 @@
         "isPrimary": false
       },
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20014478",
-        "title": "DF Encyclopedia: Ignited Hobgoblin Axe",
-        "variantLabel": "Ignited Hobgoblin Axe",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20014465",
+        "title": "DF Encyclopedia: Sizzling Hobgoblin Axe",
+        "variantLabel": "Sizzling Hobgoblin Axe",
         "isPrimary": false
       },
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20014419",
-        "title": "DF Encyclopedia: Kindled Hobgoblin Axe",
-        "variantLabel": "Kindled Hobgoblin Axe",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20014397",
+        "title": "DF Encyclopedia: Smoldering Hobgoblin Axe",
+        "variantLabel": "Smoldering Hobgoblin Axe",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20014403",
+        "title": "DF Encyclopedia: Burning Hobgoblin Axe",
+        "variantLabel": "Burning Hobgoblin Axe",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20014478",
+        "title": "DF Encyclopedia: Ignited Hobgoblin Axe",
+        "variantLabel": "Ignited Hobgoblin Axe",
         "isPrimary": false
       },
       {
@@ -3615,15 +3651,21 @@
         "isPrimary": false
       },
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20014465",
-        "title": "DF Encyclopedia: Sizzling Hobgoblin Axe",
-        "variantLabel": "Sizzling Hobgoblin Axe",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20014502",
+        "title": "DF Encyclopedia: Blistering Hobgoblin Axe",
+        "variantLabel": "Blistering Hobgoblin Axe",
+        "isPrimary": true
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20014419",
+        "title": "DF Encyclopedia: Kindled Hobgoblin Axe",
+        "variantLabel": "Kindled Hobgoblin Axe",
         "isPrimary": false
       },
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20014397",
-        "title": "DF Encyclopedia: Smoldering Hobgoblin Axe",
-        "variantLabel": "Smoldering Hobgoblin Axe",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20014504",
+        "title": "DF Encyclopedia: Fiery Hobgoblin Axe",
+        "variantLabel": "Fiery Hobgoblin Axe",
         "isPrimary": false
       }
     ],
@@ -4012,8 +4054,8 @@
         "url": "https://forums2.battleon.com/f/tm.asp?m=4152747"
       },
       {
-        "name": "Fishcaliber (All Versions)",
-        "slug": "weapon-fishcaliber-all-versions",
+        "name": "Fishcaliber",
+        "slug": "weapon-fishcaliber",
         "type": "weapon",
         "url": "https://forums2.battleon.com/f/tm.asp?m=22052085"
       },
@@ -4085,8 +4127,8 @@
         "url": "https://forums2.battleon.com/f/tm.asp?m=4152747"
       },
       {
-        "name": "Fishcaliber (All Versions)",
-        "slug": "weapon-fishcaliber-all-versions",
+        "name": "Fishcaliber",
+        "slug": "weapon-fishcaliber",
         "type": "weapon",
         "url": "https://forums2.battleon.com/f/tm.asp?m=22052085"
       },
@@ -4187,18 +4229,19 @@
     "alsoSee": []
   },
   {
-    "id": "weapon-the-hour-hand",
+    "id": "weapon-hour-hand-the",
     "familyName": "The Hour Hand",
-    "slug": "weapon-the-hour-hand",
+    "slug": "weapon-hour-hand-the",
     "aliasSlugs": [
-      "weapon-hour-hand-i-ii-iii-the-all-versions",
+      "weapon-hour-hand-i-ii-iii-the",
+      "weapon-hour-hand-the-all-versions",
       "weapon-the-hour-hand-i",
       "weapon-the-hour-hand-ii",
       "weapon-the-hour-hand-iii",
-      "weapon-hour-hand-i-ii-iii-the",
-      "weapon-the-hour-hand-i-ii-iii-all-versions",
-      "weapon-the-hour-hand-i-ii-iii",
-      "weapon-the-hour-hand-all-versions"
+      "weapon-the-hour-hand-all-versions",
+      "weapon-i-the-hour-hand",
+      "weapon-ii-the-hour-hand",
+      "weapon-iii-the-hour-hand"
     ],
     "type": "weapon",
     "subtype": "sword-axe-mace",
@@ -4329,7 +4372,9 @@
     "aliasSlugs": [
       "weapon-high-huntari",
       "weapon-mighty-huntari",
-      "weapon-huntari-all-versions"
+      "weapon-supreme-huntari",
+      "weapon-huntari-all-versions",
+      "weapon-base-huntari"
     ],
     "type": "weapon",
     "subtype": "sword-axe-mace",
@@ -4337,21 +4382,27 @@
     "familyOrigin": "cross-post",
     "familySources": [
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19345333",
-        "title": "DF Encyclopedia: High Huntari",
-        "variantLabel": "High Huntari",
-        "isPrimary": true
-      },
-      {
         "url": "https://forums2.battleon.com/f/tm.asp?m=16665123",
         "title": "DF Encyclopedia: Huntari",
         "variantLabel": "Huntari",
         "isPrimary": false
       },
       {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=19345333",
+        "title": "DF Encyclopedia: High Huntari",
+        "variantLabel": "High Huntari",
+        "isPrimary": true
+      },
+      {
         "url": "https://forums2.battleon.com/f/tm.asp?m=19345326",
         "title": "DF Encyclopedia: Mighty Huntari",
         "variantLabel": "Mighty Huntari",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=19345318",
+        "title": "DF Encyclopedia: Supreme Huntari",
+        "variantLabel": "Supreme Huntari",
         "isPrimary": false
       }
     ],
@@ -4360,14 +4411,7 @@
       "description": "When an aeromancer wound a length of ribbon around a wind elemental, she liked the shape it took on, so kept it like that. This item requires a Dragon Amulet.",
       "imageUrl": "https://i.imgur.com/RFLdKNd.png",
       "element": "WIN",
-      "alsoSee": [
-        {
-          "name": "Supreme Huntari",
-          "slug": "weapon-supreme-huntari",
-          "type": "weapon",
-          "url": "https://forums2.battleon.com/f/tm.asp?m=19345318"
-        }
-      ]
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -4444,6 +4488,31 @@
         "resists": "Nature +2, Energy +5",
         "rarity": "7",
         "itemType": "Sword"
+      },
+      {
+        "levelNumber": 50,
+        "levelDisplay": "50",
+        "actualLevel": 50,
+        "variantName": "Supreme",
+        "name": "Supreme Huntari",
+        "damage": "65-71",
+        "stats": "Crit +3, Magic Def +2, Pierce Def +2, Melee Def +2, END +4, LUK +4, STR +4",
+        "obtainVariants": [
+          {
+            "location": "Questions",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "135 Gold",
+            "daRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=19345318",
+        "description": "When an aeromancer wound a length of ribbon around a wind elemental, she liked the shape it took on, so kept it like that. This item requires a Dragon Amulet.",
+        "imageUrl": "https://i.imgur.com/RFLdKNd.png",
+        "element": "WIN",
+        "resists": "Fire +4, Immobility +1",
+        "rarity": "6",
+        "itemType": "Sword"
       }
     ],
     "category": "Weapon",
@@ -4460,7 +4529,7 @@
     "elements": [
       "WIN"
     ],
-    "levelRange": "23-43"
+    "levelRange": "23-50"
   },
   {
     "id": "weapon-hunter-s-vengeance-fury",
@@ -4469,7 +4538,9 @@
     "aliasSlugs": [
       "weapon-hunter-s-vengeance-fury-all-versions",
       "weapon-hunter-s-vengeance",
-      "weapon-hunter-s-fury"
+      "weapon-hunter-s-fury",
+      "weapon-vengeance-hunter-s",
+      "weapon-fury-hunter-s"
     ],
     "type": "weapon",
     "subtype": "sword-axe-mace",
@@ -4993,7 +5064,10 @@
       "weapon-ill-fortune-s-edge-end-gain-all-versions",
       "weapon-ill-fortune-s-edge",
       "weapon-ill-fortune-s-end",
-      "weapon-ill-fortune-s-gain"
+      "weapon-ill-fortune-s-gain",
+      "weapon-edge-ill-fortune-s",
+      "weapon-end-ill-fortune-s",
+      "weapon-gain-ill-fortune-s"
     ],
     "type": "weapon",
     "subtype": "sword-axe-mace",
@@ -5222,7 +5296,7 @@
         "daRequired": false
       }
     ],
-    "notes": "Formula for temporary weapon damage:\n  • quote:\nAverage damage formula: SQRT(Level)*10, rounded down; min/max damage values are generated randomly by subtracting/adding a value between 1 and 4 inclusive.",
+    "notes": "Formula for temporary weapon damage:\n • quote:\nAverage damage formula: SQRT(Level)*10, rounded down; min/max damage values are generated randomly by subtracting/adding a value between 1 and 4 inclusive.",
     "tags": [
       "poi",
       "free"
@@ -5533,7 +5607,9 @@
     "aliasSlugs": [
       "weapon-inlaid-blade-edge-all-versions",
       "weapon-inlaid-blade",
-      "weapon-inlaid-edge"
+      "weapon-inlaid-edge",
+      "weapon-blade-inlaid",
+      "weapon-edge-inlaid"
     ],
     "type": "weapon",
     "subtype": "sword-axe-mace",
@@ -5639,7 +5715,15 @@
       "weapon-invader-s-beach-umbrella-v",
       "weapon-invader-s-beach-umbrella-vi",
       "weapon-invader-s-beach-umbrella-vii",
-      "weapon-invader-s-beach-umbrella-viii"
+      "weapon-invader-s-beach-umbrella-viii",
+      "weapon-i-invader-s-beach-umbrella",
+      "weapon-ii-invader-s-beach-umbrella",
+      "weapon-iii-invader-s-beach-umbrella",
+      "weapon-iv-invader-s-beach-umbrella",
+      "weapon-v-invader-s-beach-umbrella",
+      "weapon-vi-invader-s-beach-umbrella",
+      "weapon-vii-invader-s-beach-umbrella",
+      "weapon-viii-invader-s-beach-umbrella"
     ],
     "type": "weapon",
     "subtype": "sword-axe-mace",
@@ -6131,7 +6215,9 @@
     "familyName": "Jack's Rage",
     "slug": "weapon-jack-s-rage",
     "aliasSlugs": [
-      "weapon-jack-s-rage-all-versions"
+      "weapon-jack-s-rage-all-versions",
+      "weapon-base-jack-s-rage",
+      "weapon-dc-jack-s-rage"
     ],
     "type": "weapon",
     "subtype": "sword-axe-mace",
@@ -6812,7 +6898,13 @@
         "activation": "on-hit",
         "trigger": "Your weapon special activates on hit.",
         "effect": "+30% damage on targets of 'Reptilian' race. [Pop-up: Jova's spirit enraged! (Damage bonus)] (Rate: 100%)\n  • During Arena at the Edge of Time challenges, damage bonus is reduced to +10%.",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-OnHit.png"
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-OnHit.png",
+        "specialImageUrls": [
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Jova'sFury-Special.png"
+        ],
+        "specialImageCaptions": [
+          "Appearance"
+        ]
       },
       "alsoSee": []
     },
@@ -7286,7 +7378,8 @@
     "slug": "weapon-kaaros-garada-avi",
     "aliasSlugs": [
       "weapon-kaaros-garada-avi-all-versions",
-      "weapon-kaaros-garada"
+      "weapon-kaaros-garada",
+      "weapon-base-kaaros-garada"
     ],
     "type": "weapon",
     "subtype": "sword-axe-mace",
@@ -7421,7 +7514,10 @@
       "weapon-karon-s-blade-i-ii-iii",
       "weapon-karon-s-blade-all-versions",
       "weapon-karon-s-blade-ii",
-      "weapon-karon-s-blade-iii"
+      "weapon-karon-s-blade-iii",
+      "weapon-base-karon-s-blade",
+      "weapon-ii-karon-s-blade",
+      "weapon-iii-karon-s-blade"
     ],
     "type": "weapon",
     "subtype": "sword-axe-mace",
@@ -7549,7 +7645,9 @@
     "slug": "weapon-katana-ninja-monkey-default",
     "aliasSlugs": [
       "weapon-katana-ninja-monkey-default-all-versions",
-      "weapon-katana"
+      "weapon-katana",
+      "weapon-base-katana",
+      "weapon-dc-katana"
     ],
     "type": "weapon",
     "subtype": "sword-axe-mace",
@@ -7623,8 +7721,9 @@
     "category": "Weapon",
     "releaseDate": "",
     "tags": [
-      "met",
-      "free"
+      "default",
+      "free",
+      "met"
     ],
     "hasDA": false,
     "hasDC": true,
@@ -7634,7 +7733,8 @@
     "elements": [
       "MET"
     ],
-    "levelRange": "1"
+    "levelRange": "1",
+    "isDefault": true
   },
   {
     "id": "weapon-kessel-sword",
@@ -8191,7 +8291,10 @@
       "weapon-kingfisher-cutlass-all-versions",
       "weapon-kingfisher-cutlass-i",
       "weapon-kingfisher-cutlass-ii",
-      "weapon-kingfisher-cutlass-iii"
+      "weapon-kingfisher-cutlass-iii",
+      "weapon-i-kingfisher-cutlass",
+      "weapon-ii-kingfisher-cutlass",
+      "weapon-iii-kingfisher-cutlass"
     ],
     "type": "weapon",
     "subtype": "sword-axe-mace",
@@ -8221,7 +8324,7 @@
     "shared": {
       "description": "The calls of seabirds can be heard as this sword cuts down your targets.",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/KingfisherCutlass.png",
-      "notes": "The following changes were implemented on May 29th, 2026:\n  • Sellback was reduced from 30 to 20 Gold.\n  • Level's requirement was raised from 11 to 15.\n  • Damage range was modified from 22-36 to 31-39.\n  • Stats were added.\nThe following changes were implemented on May 29th, 2026:\n  • Dragon Amulet requirement was removed.\n  • Sellback was reduced from 60 to 40 Gold.\n  • Level's requirement was reduced from 21 to 20.\n  • Damage range was modified from 31-55 to 37-43.\n  • Crit +3, WIS +3, END +3, and Bonus +3 stats were added.\n  • STR was raised from +1 to +6.\nThe following changes were implemented on May 29th, 2026:\n  • Sellback was reduced from 100 to 60 Gold.\n  • Level's requirement was reduced from 31 to 30.\n  • Damage range was modified from 40-66 to 42-48.\n  • Crit +4, WIS +4, END +4, and Bonus +4 stats were added.\n  • STR was raised from +2 to +7.\nWeapons were previously available from the quests Attack of the Pirates! and Thyton's Request! as 'Kingfisher Cutlass', 'Alcyone Cutlass', and 'Sea Cutlass' respectively.\nThe following changes were implemented on May 29th, 2026:\n  • Weapons' names were renamed to Kingfisher Cutlass and were tiered to Roman numerals.\n  • Weapons' element were changed from Wind to Water.",
+      "notes": "The following changes were implemented on May 29th, 2026:\n • Sellback was reduced from 30 to 20 Gold.\n • Level's requirement was raised from 11 to 15.\n • Damage range was modified from 22-36 to 31-39.\n • Stats were added.\nThe following changes were implemented on May 29th, 2026:\n • Dragon Amulet requirement was removed.\n • Sellback was reduced from 60 to 40 Gold.\n • Level's requirement was reduced from 21 to 20.\n • Damage range was modified from 31-55 to 37-43.\n • Crit +3, WIS +3, END +3, and Bonus +3 stats were added.\n • STR was raised from +1 to +6.\nThe following changes were implemented on May 29th, 2026:\n • Sellback was reduced from 100 to 60 Gold.\n • Level's requirement was reduced from 31 to 30.\n • Damage range was modified from 40-66 to 42-48.\n • Crit +4, WIS +4, END +4, and Bonus +4 stats were added.\n • STR was raised from +2 to +7.\nWeapons were previously available from the quests Attack of the Pirates! and Thyton's Request! as 'Kingfisher Cutlass', 'Alcyone Cutlass', and 'Sea Cutlass' respectively.\nThe following changes were implemented on May 29th, 2026:\n • Weapons' names were renamed to Kingfisher Cutlass and were tiered to Roman numerals.\n • Weapons' element were changed from Wind to Water.",
       "alsoSee": []
     },
     "levelVariants": [
@@ -8248,7 +8351,7 @@
         "resists": "None",
         "rarity": "5",
         "itemType": "Sword",
-        "notes": "The following changes were implemented on May 29th, 2026:\n  • Sellback was reduced from 30 to 20 Gold.\n  • Level's requirement was raised from 11 to 15.\n  • Damage range was modified from 22-36 to 31-39.\n  • Stats were added."
+        "notes": "The following changes were implemented on May 29th, 2026:\n • Sellback was reduced from 30 to 20 Gold.\n • Level's requirement was raised from 11 to 15.\n • Damage range was modified from 22-36 to 31-39.\n • Stats were added."
       },
       {
         "levelNumber": 2,
@@ -8273,7 +8376,7 @@
         "resists": "None",
         "rarity": "5",
         "itemType": "Sword",
-        "notes": "The following changes were implemented on May 29th, 2026:\n  • Dragon Amulet requirement was removed.\n  • Sellback was reduced from 60 to 40 Gold.\n  • Level's requirement was reduced from 21 to 20.\n  • Damage range was modified from 31-55 to 37-43.\n  • Crit +3, WIS +3, END +3, and Bonus +3 stats were added.\n  • STR was raised from +1 to +6."
+        "notes": "The following changes were implemented on May 29th, 2026:\n • Dragon Amulet requirement was removed.\n • Sellback was reduced from 60 to 40 Gold.\n • Level's requirement was reduced from 21 to 20.\n • Damage range was modified from 31-55 to 37-43.\n • Crit +3, WIS +3, END +3, and Bonus +3 stats were added.\n • STR was raised from +1 to +6."
       },
       {
         "levelNumber": 3,
@@ -8298,7 +8401,7 @@
         "resists": "None",
         "rarity": "5",
         "itemType": "Sword",
-        "notes": "The following changes were implemented on May 29th, 2026:\n  • Sellback was reduced from 100 to 60 Gold.\n  • Level's requirement was reduced from 31 to 30.\n  • Damage range was modified from 40-66 to 42-48.\n  • Crit +4, WIS +4, END +4, and Bonus +4 stats were added.\n  • STR was raised from +2 to +7."
+        "notes": "The following changes were implemented on May 29th, 2026:\n • Sellback was reduced from 100 to 60 Gold.\n • Level's requirement was reduced from 31 to 30.\n • Damage range was modified from 40-66 to 42-48.\n • Crit +4, WIS +4, END +4, and Bonus +4 stats were added.\n • STR was raised from +2 to +7."
       }
     ],
     "category": "Weapon",
@@ -8586,6 +8689,12 @@
       "trigger": "Activate your weapon's special!",
       "effect": "5 hits of 30% Ice damage, amounting to 150% damage; applies 'Larimar Freeze' to target, stunning it for 1 turn.",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-Ice.png",
+      "specialImageUrls": [
+        "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/LarimarGembuster-Special.gif"
+      ],
+      "specialImageCaptions": [
+        "Appearance"
+      ],
       "cooldown": "20 - [(Player LUK/50), rounded down]",
       "chargeTime": "10 - [(Player LUK/100), rounded down]"
     },
@@ -8641,11 +8750,13 @@
       }
     ],
     "tags": [
-      "lig",
-      "free"
+      "default",
+      "free",
+      "lig"
     ],
     "daRequired": false,
-    "alsoSee": []
+    "alsoSee": [],
+    "isDefault": true
   },
   {
     "id": "weapon-lazer-blade-of-time-chronoz-default",
@@ -8702,13 +8813,15 @@
       }
     ],
     "tags": [
-      "ice",
-      "free"
+      "default",
+      "free",
+      "ice"
     ],
     "daRequired": false,
     "dcRequired": true,
     "isRare": true,
-    "isSpecialOffer": true
+    "isSpecialOffer": true,
+    "isDefault": true
   },
   {
     "id": "weapon-lazulite-blade",
@@ -8768,7 +8881,17 @@
       "weapon-leftover-sword-mk-vii",
       "weapon-leftover-sword-mk-viii",
       "weapon-leftover-sword-mk-ix",
-      "weapon-leftover-sword-mk-x"
+      "weapon-leftover-sword-mk-x",
+      "weapon-i-leftover-sword-mk",
+      "weapon-ii-leftover-sword-mk",
+      "weapon-iii-leftover-sword-mk",
+      "weapon-iv-leftover-sword-mk",
+      "weapon-v-leftover-sword-mk",
+      "weapon-vi-leftover-sword-mk",
+      "weapon-vii-leftover-sword-mk",
+      "weapon-viii-leftover-sword-mk",
+      "weapon-ix-leftover-sword-mk",
+      "weapon-x-leftover-sword-mk"
     ],
     "type": "weapon",
     "subtype": "sword-axe-mace",
@@ -9200,7 +9323,8 @@
     "familyName": "Liberty Candle Blade",
     "slug": "weapon-liberty-candle-blade",
     "aliasSlugs": [
-      "weapon-liberty-candle-blade-all-versions"
+      "weapon-liberty-candle-blade-all-versions",
+      "weapon-base-liberty-candle-blade"
     ],
     "type": "weapon",
     "subtype": "sword-axe-mace",
@@ -9238,7 +9362,7 @@
         "isPrimary": false
       },
       {
-        "url": "https://forums2.battleon.com/f/fb.asp?m=17822592",
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22002607",
         "title": "DF Encyclopedia: Liberty Candle Blade",
         "variantLabel": "Liberty Candle Blade",
         "isPrimary": false
@@ -9274,7 +9398,7 @@
         "isPrimary": false
       },
       {
-        "url": "https://forums2.battleon.com/f/fb.asp?m=22002607",
+        "url": "https://forums2.battleon.com/f/fb.asp?m=17822592",
         "title": "DF Encyclopedia: Liberty Candle Blade",
         "variantLabel": "Liberty Candle Blade",
         "isPrimary": false
@@ -9311,7 +9435,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 1,
+        "levelNumber": 10,
         "levelDisplay": "10",
         "actualLevel": 10,
         "name": "Liberty Candle Blade",
@@ -9335,7 +9459,7 @@
         "variantName": "(Base)"
       },
       {
-        "levelNumber": 2,
+        "levelNumber": 20,
         "levelDisplay": "20",
         "actualLevel": 20,
         "name": "Liberty Candle Blade",
@@ -9359,7 +9483,7 @@
         "variantName": "(Base)"
       },
       {
-        "levelNumber": 3,
+        "levelNumber": 30,
         "levelDisplay": "30",
         "actualLevel": 30,
         "name": "Liberty Candle Blade",
@@ -9383,7 +9507,7 @@
         "variantName": "(Base)"
       },
       {
-        "levelNumber": 4,
+        "levelNumber": 40,
         "levelDisplay": "40",
         "actualLevel": 40,
         "name": "Liberty Candle Blade",
@@ -9407,7 +9531,7 @@
         "variantName": "(Base)"
       },
       {
-        "levelNumber": 5,
+        "levelNumber": 50,
         "levelDisplay": "50",
         "actualLevel": 50,
         "name": "Liberty Candle Blade",
@@ -9431,7 +9555,7 @@
         "variantName": "(Base)"
       },
       {
-        "levelNumber": 6,
+        "levelNumber": 60,
         "levelDisplay": "60",
         "actualLevel": 60,
         "name": "Liberty Candle Blade",
@@ -9455,7 +9579,7 @@
         "variantName": "(Base)"
       },
       {
-        "levelNumber": 7,
+        "levelNumber": 10,
         "levelDisplay": "10",
         "actualLevel": 10,
         "name": "Liberty Candle Blade",
@@ -9479,7 +9603,7 @@
         "variantName": "(Base)"
       },
       {
-        "levelNumber": 8,
+        "levelNumber": 20,
         "levelDisplay": "20",
         "actualLevel": 20,
         "name": "Liberty Candle Blade",
@@ -9503,7 +9627,7 @@
         "variantName": "(Base)"
       },
       {
-        "levelNumber": 9,
+        "levelNumber": 30,
         "levelDisplay": "30",
         "actualLevel": 30,
         "name": "Liberty Candle Blade",
@@ -9527,7 +9651,7 @@
         "variantName": "(Base)"
       },
       {
-        "levelNumber": 10,
+        "levelNumber": 40,
         "levelDisplay": "40",
         "actualLevel": 40,
         "name": "Liberty Candle Blade",
@@ -9551,7 +9675,7 @@
         "variantName": "(Base)"
       },
       {
-        "levelNumber": 11,
+        "levelNumber": 50,
         "levelDisplay": "50",
         "actualLevel": 50,
         "name": "Liberty Candle Blade",
@@ -9575,7 +9699,7 @@
         "variantName": "(Base)"
       },
       {
-        "levelNumber": 12,
+        "levelNumber": 60,
         "levelDisplay": "60",
         "actualLevel": 60,
         "name": "Liberty Candle Blade",
@@ -9599,7 +9723,7 @@
         "variantName": "(Base)"
       },
       {
-        "levelNumber": 13,
+        "levelNumber": 70,
         "levelDisplay": "70",
         "actualLevel": 70,
         "name": "Liberty Candle Blade",
@@ -9623,7 +9747,7 @@
         "variantName": "(Base)"
       },
       {
-        "levelNumber": 14,
+        "levelNumber": 80,
         "levelDisplay": "80",
         "actualLevel": 80,
         "name": "Liberty Candle Blade",
@@ -9709,7 +9833,11 @@
       "weapon-lifenel-axe-i",
       "weapon-lifenel-axe-ii",
       "weapon-lifenel-axe-iii",
-      "weapon-lifenel-axe-iv"
+      "weapon-lifenel-axe-iv",
+      "weapon-i-lifenel-axe",
+      "weapon-ii-lifenel-axe",
+      "weapon-iii-lifenel-axe",
+      "weapon-iv-lifenel-axe"
     ],
     "type": "weapon",
     "subtype": "sword-axe-mace",
@@ -9955,7 +10083,13 @@
         "activation": "on-hit",
         "trigger": "Your weapon special activates on hit.",
         "effect": "Applies 'Light', a 5-5 Magic Light DoT effect, to target for 5 turns. (Pop-up: Oh! Glowy!) (Rate: 10%)",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-OnHit.png"
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-OnHit.png",
+        "specialImageUrls": [
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Lightfall-Special.png"
+        ],
+        "specialImageCaptions": [
+          "Appearance"
+        ]
       }
     },
     "levelVariants": [
@@ -10096,6 +10230,11 @@
     "familyName": "Lights Blade",
     "slug": "weapon-lights-blade",
     "aliasSlugs": [
+      "weapon-azure-lights-blade",
+      "weapon-cobalt-lights-blade",
+      "weapon-crimson-lights-blade",
+      "weapon-emerald-lights-blade",
+      "weapon-golden-lights-blade",
       "weapon-platinum-lights-blade",
       "weapon-silver-lights-blade",
       "weapon-violet-lights-blade",
@@ -10107,10 +10246,28 @@
     "familyOrigin": "cross-post",
     "familySources": [
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21881914",
-        "title": "DF Encyclopedia: Platinum Lights Blade",
-        "variantLabel": "Platinum Lights Blade",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=18967946",
+        "title": "DF Encyclopedia: Crimson Lights Blade",
+        "variantLabel": "Crimson Lights Blade",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=18967947",
+        "title": "DF Encyclopedia: Emerald Lights Blade",
+        "variantLabel": "Emerald Lights Blade",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=18967949",
+        "title": "DF Encyclopedia: Azure Lights Blade",
+        "variantLabel": "Azure Lights Blade",
         "isPrimary": true
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=18967951",
+        "title": "DF Encyclopedia: Violet Lights Blade",
+        "variantLabel": "Violet Lights Blade",
+        "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=18967955",
@@ -10119,9 +10276,21 @@
         "isPrimary": false
       },
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=18967951",
-        "title": "DF Encyclopedia: Violet Lights Blade",
-        "variantLabel": "Violet Lights Blade",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=17122977",
+        "title": "DF Encyclopedia: Golden Lights Blade",
+        "variantLabel": "Golden Lights Blade",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21881914",
+        "title": "DF Encyclopedia: Platinum Lights Blade",
+        "variantLabel": "Platinum Lights Blade",
+        "isPrimary": true
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21882544",
+        "title": "DF Encyclopedia: Cobalt Lights Blade",
+        "variantLabel": "Cobalt Lights Blade",
         "isPrimary": false
       }
     ],
@@ -10138,40 +10307,105 @@
         "effect": "Recovers 5% of player's max HP. (Rate: 5%)",
         "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-OnHit.png"
       },
-      "alsoSee": [
-        {
-          "name": "Azure Lights Blade",
-          "slug": "weapon-azure-lights-blade",
-          "type": "weapon",
-          "url": "https://forums2.battleon.com/f/tm.asp?m=18967949"
-        },
-        {
-          "name": "Cobalt Lights Blade",
-          "slug": "weapon-cobalt-lights-blade",
-          "type": "weapon",
-          "url": "https://forums2.battleon.com/f/tm.asp?m=21882544"
-        },
-        {
-          "name": "Crimson Lights Blade",
-          "slug": "weapon-crimson-lights-blade",
-          "type": "weapon",
-          "url": "https://forums2.battleon.com/f/tm.asp?m=18967946"
-        },
-        {
-          "name": "Emerald Lights Blade",
-          "slug": "weapon-emerald-lights-blade",
-          "type": "weapon",
-          "url": "https://forums2.battleon.com/f/tm.asp?m=18967947"
-        },
-        {
-          "name": "Golden Lights Blade",
-          "slug": "weapon-golden-lights-blade",
-          "type": "weapon",
-          "url": "https://forums2.battleon.com/f/tm.asp?m=17122977"
-        }
-      ]
+      "alsoSee": []
     },
     "levelVariants": [
+      {
+        "levelNumber": 10,
+        "levelDisplay": "10",
+        "actualLevel": 10,
+        "variantName": "Crimson",
+        "name": "Crimson Lights Blade",
+        "damage": "20-32",
+        "stats": "Crit +1, STR +1, Bonus +1",
+        "obtainVariants": [
+          {
+            "location": "Frostval 2009 Presents",
+            "price": "0 Gold",
+            "priceType": "free",
+            "sellback": "0 Gold",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=18967946",
+        "description": "Ding dong merrily on high, in Lore the lights are gleaming! Ding dong verily the sky, is filled with moglin singing! Moglin magic gives this blade a chance to heal you 5% on a successful hit!",
+        "imageUrl": "http://i.imgur.com/IiIpqg5.png",
+        "element": "SIL",
+        "resists": "Fire +1",
+        "rarity": "15",
+        "itemType": "Sword",
+        "weaponSpecial": {
+          "activation": "on-hit",
+          "trigger": "Your weapon special activates on hit.",
+          "effect": "Recovers 5% of player's max HP. (Rate: 5%)",
+          "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-OnHit.png"
+        },
+        "notes": "Weapon is animated; the lights on the weapon flash red/blue/yellow/green."
+      },
+      {
+        "levelNumber": 20,
+        "levelDisplay": "20",
+        "actualLevel": 20,
+        "variantName": "Emerald",
+        "name": "Emerald Lights Blade",
+        "damage": "34-44",
+        "stats": "Crit +2, END +1, STR +2, Bonus +1",
+        "obtainVariants": [
+          {
+            "location": "Frostval 2009 Presents",
+            "price": "0 Gold",
+            "priceType": "free",
+            "sellback": "0 Gold",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=18967947",
+        "description": "Ding dong merrily on high, in Lore the lights are gleaming! Ding dong verily the sky, is filled with moglin singing! Moglin magic gives this blade a chance to heal you 5% on a successful hit!",
+        "imageUrl": "http://i.imgur.com/IiIpqg5.png",
+        "element": "SIL",
+        "resists": "Fire +3",
+        "rarity": "15",
+        "itemType": "Sword",
+        "weaponSpecial": {
+          "activation": "on-hit",
+          "trigger": "Your weapon special activates on hit.",
+          "effect": "Recovers 5% of player's max HP. (Rate: 5%)",
+          "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-OnHit.png"
+        },
+        "notes": "Weapon is animated; the lights on the weapon flash red/blue/yellow/green."
+      },
+      {
+        "levelNumber": 30,
+        "levelDisplay": "30",
+        "actualLevel": 30,
+        "variantName": "Azure",
+        "name": "Azure Lights Blade",
+        "damage": "40-58",
+        "stats": "Crit +3, END +3, STR +2, Bonus +3",
+        "obtainVariants": [
+          {
+            "location": "Frostval 2009 Presents",
+            "price": "0 Gold",
+            "priceType": "free",
+            "sellback": "0 Gold",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=18967949",
+        "description": "Ding dong merrily on high, in Lore the lights are gleaming! Ding dong verily the sky, is filled with moglin singing! Moglin magic gives this blade a chance to heal you 5% on a successful hit!",
+        "imageUrl": "http://i.imgur.com/IiIpqg5.png",
+        "element": "SIL",
+        "resists": "Fire +5",
+        "rarity": "15",
+        "itemType": "Sword",
+        "weaponSpecial": {
+          "activation": "on-hit",
+          "trigger": "Your weapon special activates on hit.",
+          "effect": "Recovers 5% of player's max HP. (Rate: 5%)",
+          "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-OnHit.png"
+        },
+        "notes": "Weapon is animated; the lights on the weapon flash red/blue/yellow/green."
+      },
       {
         "levelNumber": 40,
         "levelDisplay": "40",
@@ -10196,6 +10430,12 @@
         "resists": "Fire +7",
         "rarity": "15",
         "itemType": "Sword",
+        "weaponSpecial": {
+          "activation": "on-hit",
+          "trigger": "Your weapon special activates on hit.",
+          "effect": "Recovers 5% of player's max HP. (Rate: 5%)",
+          "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-OnHit.png"
+        },
         "notes": "Weapon is animated; the lights on the weapon flash red/blue/yellow/green."
       },
       {
@@ -10222,6 +10462,44 @@
         "resists": "Fire +9",
         "rarity": "15",
         "itemType": "Sword",
+        "weaponSpecial": {
+          "activation": "on-hit",
+          "trigger": "Your weapon special activates on hit.",
+          "effect": "Recovers 5% of player's max HP. (Rate: 5%)",
+          "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-OnHit.png"
+        },
+        "notes": "Weapon is animated; the lights on the weapon flash red/blue/yellow/green."
+      },
+      {
+        "levelNumber": 60,
+        "levelDisplay": "60",
+        "actualLevel": 60,
+        "variantName": "Golden",
+        "name": "Golden Lights Blade",
+        "damage": "62-82",
+        "stats": "Crit +5, END +6, CHA +5, STR +6, Bonus +5",
+        "obtainVariants": [
+          {
+            "location": "Frostval 2009 Presents",
+            "price": "0 Gold",
+            "priceType": "free",
+            "sellback": "0 Gold",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=17122977",
+        "description": "Ding dong merrily on high, in Lore the lights are gleaming! Ding dong verily the sky, is filled with moglin singing! Moglin magic gives this blade a chance to heal you 5% on a successful hit!",
+        "imageUrl": "http://i.imgur.com/IiIpqg5.png",
+        "element": "SIL",
+        "resists": "Fire +11",
+        "rarity": "15",
+        "itemType": "Sword",
+        "weaponSpecial": {
+          "activation": "on-hit",
+          "trigger": "Your weapon special activates on hit.",
+          "effect": "Recovers 5% of player's max HP. (Rate: 5%)",
+          "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-OnHit.png"
+        },
         "notes": "Weapon is animated; the lights on the weapon flash red/blue/yellow/green."
       },
       {
@@ -10248,6 +10526,44 @@
         "resists": "Fire +12, Light +6",
         "rarity": "15",
         "itemType": "Sword",
+        "weaponSpecial": {
+          "activation": "on-hit",
+          "trigger": "Your weapon special activates on hit.",
+          "effect": "Recovers 5% of player's max HP. (Rate: 5%)",
+          "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-OnHit.png"
+        },
+        "notes": "Weapon is animated; the lights on the weapon flash red/blue/yellow/green."
+      },
+      {
+        "levelNumber": 80,
+        "levelDisplay": "80",
+        "actualLevel": 80,
+        "variantName": "Cobalt",
+        "name": "Cobalt Lights Blade",
+        "damage": "72-100",
+        "stats": "Crit +8, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +9, END +9, CHA +10, STR +11, Bonus +8",
+        "obtainVariants": [
+          {
+            "location": "Frostval 2009 Presents",
+            "price": "0 Gold",
+            "priceType": "free",
+            "sellback": "0 Gold",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21882544",
+        "description": "Ding dong merrily on high, in Lore the lights are gleaming! Ding dong verily the sky, is filled with moglin singing! Moglin magic gives this blade a chance to heal you 5% on a successful hit!",
+        "imageUrl": "http://i.imgur.com/IiIpqg5.png",
+        "element": "SIL",
+        "resists": "Fire +13, Light +7, Health -2",
+        "rarity": "15",
+        "itemType": "Sword",
+        "weaponSpecial": {
+          "activation": "on-hit",
+          "trigger": "Your weapon special activates on hit.",
+          "effect": "Recovers 5% of player's max HP. (Rate: 5%)",
+          "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-OnHit.png"
+        },
         "notes": "Weapon is animated; the lights on the weapon flash red/blue/yellow/green."
       }
     ],
@@ -10267,7 +10583,7 @@
     ],
     "hasSpecial": true,
     "isSeasonal": true,
-    "levelRange": "40-70"
+    "levelRange": "10-80"
   },
   {
     "id": "weapon-lightsplitter",
@@ -10335,7 +10651,13 @@
       "weapon-lim-s-hybrid-hammer-iii",
       "weapon-lim-s-hybrid-hammer-iv",
       "weapon-lim-s-hybrid-hammer-v",
-      "weapon-lim-s-hybrid-hammer-vi"
+      "weapon-lim-s-hybrid-hammer-vi",
+      "weapon-i-lim-s-hybrid-hammer",
+      "weapon-ii-lim-s-hybrid-hammer",
+      "weapon-iii-lim-s-hybrid-hammer",
+      "weapon-iv-lim-s-hybrid-hammer",
+      "weapon-v-lim-s-hybrid-hammer",
+      "weapon-vi-lim-s-hybrid-hammer"
     ],
     "type": "weapon",
     "subtype": "sword-axe-mace",
@@ -10389,6 +10711,12 @@
         "trigger": "Activate your weapon's special!",
         "effect": "3 hits of 200% Energy damage, amounting to 600% damage. (Pop-up: Chronoblast! Your timeline is moving at a faster pace!)",
         "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-Energy.png",
+        "specialImageUrls": [
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Lim'sHybridHammer-Special.png"
+        ],
+        "specialImageCaptions": [
+          "Appearance"
+        ],
         "cooldown": "20 - [(Player LUK/50), rounded down]",
         "chargeTime": "10 - [(Player LUK/100), rounded down]"
       },
@@ -10624,7 +10952,7 @@
         },
         {
           "url": "https://i.imgur.com/tQn2k8m.png",
-          "caption": "Water"
+          "caption": "Element: Fire / Water"
         }
       ],
       "notes": "Click anywhere on this sword while equipped or shown to shift its appearance between Fire and Water.",
@@ -11207,7 +11535,7 @@
         "daRequired": false
       }
     ],
-    "notes": "Selecting certain Arms Armor Customization options changes this weapon's appearance for the Paladin class; this functionality was added on January 12th, 2024.\nWeapon was previously the default weapon of the retired Retro Paladin class, with its own weapon's artwork.\n  • Original / Risen / Ancient\n  • Astravian / Tactical / Ancient Star\n  • Retro / Polished Retro\n  • Also See (Original/Risen): Paladin's Blade\n  • Also See (Ornate): Ornate Paladin's Blade\n  • Also See (Astravian/Tactical/Ancient Star): Astravian Paladin's Blade\n  • Also See (Artix): Academy Sword (Student Default), Adept Blade (Kathool Adept Default), Baneblade (DragonSlayer Default), ChickenBlade (ChickenCow Default), Commemorative Birthday Sword (I-XII), Default Blade, Doom Sword (DoomKnight Default), DOOOOOM (DOOOOOOOOM Default), DragonBlade (DragonLord Default), Firesteel Blade (Pyromancer Default), Longsword (ArchKnight Default) (All Versions), Longsword (Warrior Default), Necroblade (Necromancer Default), Pumpkin Blade (PumpkinLord Default) (All Versions), Shadowsword (Shadow Warrior Default), Snuggleblade (Snugglemech Default), sword (DoomKnight V1 Default), Sword (Edd Disguise Default) (All Versions), Sword (Frost Moglin Default)\n  • Also See (Retro/Polished Retro): Retro Paladin's Blade",
+    "notes": "Selecting certain Arms Armor Customization options changes this weapon's appearance for the Paladin class; this functionality was added on January 12th, 2024.\nWeapon was previously the default weapon of the retired Retro Paladin class, with its own weapon's artwork.\n • Original / Risen / Ancient\n • Astravian / Tactical / Ancient Star\n • Retro / Polished Retro\n • Also See (Original/Risen): Paladin's Blade\n • Also See (Ornate): Ornate Paladin's Blade\n • Also See (Astravian/Tactical/Ancient Star): Astravian Paladin's Blade\n • Also See (Artix): Academy Sword (Student Default), Adept Blade (Kathool Adept Default), Baneblade (DragonSlayer Default), ChickenBlade (ChickenCow Default), Commemorative Birthday Sword (I-XII), Default Blade, Doom Sword (DoomKnight Default), DOOOOOM (DOOOOOOOOM Default), DragonBlade (DragonLord Default), Firesteel Blade (Pyromancer Default), Longsword (ArchKnight Default) (All Versions), Longsword (Warrior Default), Necroblade (Necromancer Default), Pumpkin Blade (PumpkinLord Default) (All Versions), Shadowsword (Shadow Warrior Default), Snuggleblade (Snugglemech Default), sword (DoomKnight V1 Default), Sword (Edd Disguise Default) (All Versions), Sword (Frost Moglin Default)\n • Also See (Retro/Polished Retro): Retro Paladin's Blade",
     "alsoSee": [
       {
         "name": "Academy Sword (Student Default)",
@@ -11276,8 +11604,8 @@
         "url": "https://forums2.battleon.com/f/tm.asp?m=20860496"
       },
       {
-        "name": "Longsword (ArchKnight Default) (All Versions)",
-        "slug": "weapon-longsword-archknight-default-all-versions",
+        "name": "Longsword (ArchKnight Default)",
+        "slug": "weapon-longsword-archknight-default",
         "type": "weapon",
         "url": "https://forums2.battleon.com/f/tm.asp?m=22366822"
       },
@@ -11343,10 +11671,12 @@
       }
     ],
     "tags": [
-      "met",
-      "free"
+      "default",
+      "free",
+      "met"
     ],
-    "daRequired": false
+    "daRequired": false,
+    "isDefault": true
   },
   {
     "id": "weapon-longshore-blade",
@@ -11384,6 +11714,217 @@
     "alsoSee": []
   },
   {
+    "id": "weapon-longsword-archknight-default",
+    "familyName": "Longsword (ArchKnight Default)",
+    "slug": "weapon-longsword-archknight-default",
+    "aliasSlugs": [
+      "weapon-longsword-archknight-default-all-versions",
+      "weapon-longsword",
+      "weapon-longsword-longsword-default",
+      "weapon-longsword-all-versions"
+    ],
+    "type": "weapon",
+    "subtype": "sword-axe-mace",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22366822",
+    "familyOrigin": "same-thread-multi-post",
+    "familySources": [
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22366822",
+        "title": "DF Encyclopedia: Longsword",
+        "variantLabel": "Longsword",
+        "isPrimary": true
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22366823",
+        "title": "DF Encyclopedia: Longsword",
+        "variantLabel": "Longsword",
+        "isPrimary": false
+      }
+    ],
+    "itemType": "Sword",
+    "shared": {
+      "description": "A two handed long sword... of justice!",
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/DefaultBlade.png",
+      "alsoSee": [
+        {
+          "name": "Academy Sword (Student Default)",
+          "slug": "weapon-academy-sword-student-default",
+          "type": "weapon",
+          "url": "https://forums2.battleon.com/f/tm.asp?m=22389514"
+        },
+        {
+          "name": "Adept Blade (Kathool Adept Default)",
+          "slug": "weapon-adept-blade-kathool-adept-default",
+          "type": "weapon",
+          "url": "https://forums2.battleon.com/f/tm.asp?m=17643826"
+        },
+        {
+          "name": "Baneblade (DragonSlayer Default)",
+          "slug": "weapon-baneblade-dragonslayer-default",
+          "type": "weapon",
+          "url": "https://forums2.battleon.com/f/tm.asp?m=16745992"
+        },
+        {
+          "name": "ChickenBlade (ChickenCow Default)",
+          "slug": "weapon-chickenblade-chickencow-default",
+          "type": "weapon",
+          "url": "https://forums2.battleon.com/f/tm.asp?m=8617285"
+        },
+        {
+          "name": "Commemorative Birthday Sword",
+          "slug": "weapon-commemorative-birthday-sword",
+          "type": "weapon",
+          "url": "https://forums2.battleon.com/f/tm.asp?m=16637023"
+        },
+        {
+          "name": "Default Blade",
+          "slug": "weapon-default-blade",
+          "type": "weapon",
+          "url": "https://forums2.battleon.com/f/tm.asp?m=22424118"
+        },
+        {
+          "name": "Doom Sword (DoomKnight Default)",
+          "slug": "weapon-doom-sword-doomknight-default",
+          "type": "weapon",
+          "url": "https://forums2.battleon.com/f/tm.asp?m=22109881"
+        },
+        {
+          "name": "DOOOOOM (DOOOOOOOOM Default)",
+          "slug": "weapon-dooooom-doooooooom-default",
+          "type": "weapon",
+          "url": "https://forums2.battleon.com/f/tm.asp?m=21952592"
+        },
+        {
+          "name": "DragonBlade (DragonLord Default)",
+          "slug": "weapon-dragonblade-dragonlord-default",
+          "type": "weapon",
+          "url": "https://forums2.battleon.com/f/tm.asp?m=9769559"
+        },
+        {
+          "name": "Firesteel Blade (Pyromancer Default)",
+          "slug": "weapon-firesteel-blade-pyromancer-default",
+          "type": "weapon",
+          "url": "https://forums2.battleon.com/f/tm.asp?m=20860496"
+        },
+        {
+          "name": "Long Sword (Paladin Default)",
+          "slug": "weapon-long-sword-paladin-default",
+          "type": "weapon",
+          "url": "https://forums2.battleon.com/f/tm.asp?m=13524656"
+        },
+        {
+          "name": "Longsword Default",
+          "slug": "weapon-longsword-default",
+          "type": "weapon",
+          "url": "https://forums2.battleon.com/f/tm.asp?m=4351533"
+        },
+        {
+          "name": "Necroblade (Necromancer Default)",
+          "slug": "weapon-necroblade-necromancer-default",
+          "type": "weapon",
+          "url": "https://forums2.battleon.com/f/tm.asp?m=14091568"
+        },
+        {
+          "name": "Pumpkin Blade (PumpkinLord Default)",
+          "slug": "weapon-pumpkin-blade-pumpkinlord-default",
+          "type": "weapon",
+          "url": "https://forums2.battleon.com/f/tm.asp?m=16017520"
+        },
+        {
+          "name": "Shadowsword (Shadow Warrior Default)",
+          "slug": "weapon-shadowsword-shadow-warrior-default",
+          "type": "weapon",
+          "url": "https://forums2.battleon.com/f/tm.asp?m=22160782"
+        },
+        {
+          "name": "Snuggleblade (Snugglemech Default)",
+          "slug": "weapon-snuggleblade-snugglemech-default",
+          "type": "weapon",
+          "url": "https://forums2.battleon.com/f/tm.asp?m=22414837"
+        },
+        {
+          "name": "Sword (Edd Disguise Default) (All Versions)",
+          "slug": "weapon-sword-edd-disguise-default-all-versions",
+          "type": "weapon",
+          "url": "https://forums2.battleon.com/f/tm.asp?m=22366817"
+        },
+        {
+          "name": "Sword Default",
+          "slug": "weapon-sword-default",
+          "type": "weapon",
+          "url": "https://forums2.battleon.com/f/tm.asp?m=15240014"
+        }
+      ]
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
+        "levelDisplay": "1",
+        "actualLevel": 1,
+        "name": "Longsword",
+        "damage": "5-10",
+        "stats": "Bonus +1",
+        "obtainVariants": [
+          {
+            "location": "Default weapon of Boy Wonder and Young Hero",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "N/A",
+            "daRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22366822",
+        "description": "A two handed long sword... of justice!",
+        "element": "MET",
+        "resists": "None",
+        "rarity": "0",
+        "itemType": "Sword",
+        "variantName": "Longsword"
+      },
+      {
+        "levelNumber": 1,
+        "levelDisplay": "1",
+        "actualLevel": 1,
+        "name": "Longsword",
+        "damage": "5-10",
+        "stats": "Crit +4, Bonus +1",
+        "obtainVariants": [
+          {
+            "location": "Default weapon of Knight Lite",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "N/A",
+            "daRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22366823",
+        "description": "A two handed long sword... of justice!",
+        "element": "MET",
+        "resists": "None",
+        "rarity": "0",
+        "itemType": "Sword",
+        "variantName": "Longsword"
+      }
+    ],
+    "category": "Weapon",
+    "releaseDate": "",
+    "tags": [
+      "default",
+      "free",
+      "met"
+    ],
+    "hasDA": true,
+    "hasDC": false,
+    "hasDM": false,
+    "hasFree": true,
+    "hasMerge": false,
+    "elements": [
+      "MET"
+    ],
+    "levelRange": "1",
+    "isDefault": true
+  },
+  {
     "id": "weapon-longsword-dragonwarrior-default",
     "name": "Longsword (DragonWarrior Default)",
     "slug": "weapon-longsword-dragonwarrior-default",
@@ -11419,11 +11960,13 @@
     ],
     "notes": "Weapon was previously color-custom to the player's base and trim colors before being redesigned.",
     "tags": [
-      "met",
-      "free"
+      "default",
+      "free",
+      "met"
     ],
     "daRequired": true,
-    "alsoSee": []
+    "alsoSee": [],
+    "isDefault": true
   },
   {
     "id": "weapon-longsword-guardian-default",
@@ -11455,17 +11998,19 @@
     ],
     "alsoSee": [
       {
-        "name": "Guardian Blade (All Versions)",
-        "slug": "weapon-guardian-blade-all-versions",
+        "name": "Guardian Blade",
+        "slug": "weapon-guardian-blade",
         "type": "weapon",
         "url": "https://forums2.battleon.com/f/fb.asp?m=21975602"
       }
     ],
     "tags": [
-      "met",
-      "free"
+      "default",
+      "free",
+      "met"
     ],
-    "daRequired": false
+    "daRequired": false,
+    "isDefault": true
   },
   {
     "id": "weapon-longsword-ranger-default",
@@ -11504,50 +12049,39 @@
     "notes": "While this weapon's item type is Sword, its damage type is Pierce instead of Melee.",
     "alsoSee": [
       {
-        "name": "Ranger Blade (All Versions)",
-        "slug": "weapon-ranger-blade-all-versions",
+        "name": "Ranger Blade",
+        "slug": "weapon-ranger-blade",
         "type": "weapon",
         "url": "https://forums2.battleon.com/f/tm.asp?m=22033489"
       }
     ],
     "tags": [
-      "met",
-      "free"
+      "default",
+      "free",
+      "met"
     ],
-    "daRequired": false
+    "daRequired": false,
+    "isDefault": true
   },
   {
-    "id": "weapon-longsword-default",
-    "familyName": "Longsword Default",
-    "slug": "weapon-longsword-default",
+    "id": "weapon-longsword-warrior-default",
+    "familyName": "Longsword (Warrior Default)",
+    "slug": "weapon-longsword-warrior-default",
     "aliasSlugs": [
-      "weapon-longsword-warrior-default",
-      "weapon-longsword-archknight-default",
-      "weapon-longsword-default-all-versions",
-      "weapon-longsword"
+      "weapon-longsword-warrior-default-all-versions",
+      "weapon-warrior-longsword",
+      "weapon-warrior-default-longsword"
     ],
     "type": "weapon",
     "subtype": "sword-axe-mace",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22366822",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=4351533",
     "familyOrigin": "cross-post",
     "familySources": [
       {
-        "url": "https://forums2.battleon.com/f/fb.asp?m=22366822",
-        "title": "DF Encyclopedia: Longsword",
-        "variantLabel": "Longsword",
-        "isPrimary": true
-      },
-      {
-        "url": "https://forums2.battleon.com/f/fb.asp?m=22366823",
-        "title": "DF Encyclopedia: Longsword",
-        "variantLabel": "Longsword",
-        "isPrimary": false
-      },
-      {
         "url": "https://forums2.battleon.com/f/tm.asp?m=4351533",
         "title": "DF Encyclopedia: Longsword (Warrior Default)",
-        "variantLabel": "Longsword (Warrior Default)",
-        "isPrimary": false
+        "variantLabel": "Longsword (Warrior Default) Warrior Default",
+        "isPrimary": true
       }
     ],
     "itemType": "Sword",
@@ -11625,8 +12159,8 @@
           "url": "https://forums2.battleon.com/f/tm.asp?m=13524656"
         },
         {
-          "name": "Longsword (ArchKnight Default) (All Versions)",
-          "slug": "weapon-longsword-archknight-default-all-versions",
+          "name": "Longsword (ArchKnight Default)",
+          "slug": "weapon-longsword-archknight-default",
           "type": "weapon",
           "url": "https://forums2.battleon.com/f/tm.asp?m=22366822"
         },
@@ -11673,55 +12207,7 @@
         "levelNumber": 1,
         "levelDisplay": "1",
         "actualLevel": 1,
-        "name": "Longsword",
-        "damage": "5-10",
-        "stats": "Bonus +1",
-        "obtainVariants": [
-          {
-            "location": "Default weapon of Boy Wonder and Young Hero",
-            "price": "N/A",
-            "priceType": "free",
-            "sellback": "N/A",
-            "daRequired": true
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22366822",
-        "description": "A two handed long sword... of justice!",
-        "element": "MET",
-        "resists": "None",
-        "rarity": "0",
-        "itemType": "Sword",
-        "variantName": "Longsword"
-      },
-      {
-        "levelNumber": 1,
-        "levelDisplay": "1",
-        "actualLevel": 1,
-        "name": "Longsword",
-        "damage": "5-10",
-        "stats": "Crit +4, Bonus +1",
-        "obtainVariants": [
-          {
-            "location": "Default weapon of Knight Lite",
-            "price": "N/A",
-            "priceType": "free",
-            "sellback": "N/A",
-            "daRequired": true
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22366823",
-        "description": "A two handed long sword... of justice!",
-        "element": "MET",
-        "resists": "None",
-        "rarity": "0",
-        "itemType": "Sword",
-        "variantName": "Longsword"
-      },
-      {
-        "levelNumber": 1,
-        "levelDisplay": "1",
-        "actualLevel": 1,
-        "variantName": "Warrior",
+        "variantName": "Warrior Default",
         "name": "Longsword (Warrior Default)",
         "damage": "5-10",
         "stats": "Bonus +1",
@@ -11746,10 +12232,11 @@
     "category": "Weapon",
     "releaseDate": "",
     "tags": [
+      "default",
       "free",
       "met"
     ],
-    "hasDA": true,
+    "hasDA": false,
     "hasDC": false,
     "hasDM": false,
     "hasFree": true,
@@ -11757,7 +12244,8 @@
     "elements": [
       "MET"
     ],
-    "levelRange": "1"
+    "levelRange": "1",
+    "isDefault": true
   },
   {
     "id": "weapon-loser-s-club",
@@ -11774,7 +12262,25 @@
       "weapon-loser-s-club-vi",
       "weapon-loser-s-club-vii",
       "weapon-loser-s-club-viii",
-      "weapon-loser-s-club-ix"
+      "weapon-loser-s-club-ix",
+      "weapon-i-loser-s-club",
+      "weapon-i-dc-loser-s-club",
+      "weapon-ii-loser-s-club",
+      "weapon-ii-dc-loser-s-club",
+      "weapon-iii-loser-s-club",
+      "weapon-iii-dc-loser-s-club",
+      "weapon-iv-loser-s-club",
+      "weapon-iv-dc-loser-s-club",
+      "weapon-v-loser-s-club",
+      "weapon-v-dc-loser-s-club",
+      "weapon-vi-loser-s-club",
+      "weapon-vi-dc-loser-s-club",
+      "weapon-vii-loser-s-club",
+      "weapon-vii-dc-loser-s-club",
+      "weapon-viii-loser-s-club",
+      "weapon-viii-dc-loser-s-club",
+      "weapon-ix-loser-s-club",
+      "weapon-ix-dc-loser-s-club"
     ],
     "type": "weapon",
     "subtype": "sword-axe-mace",
@@ -12311,7 +12817,9 @@
     "aliasSlugs": [
       "weapon-lost-starsword-of-destiny",
       "weapon-lost-starsword-of-doom",
-      "weapon-lost-starsword-of-all-versions"
+      "weapon-lost-starsword-of-all-versions",
+      "weapon-destiny-lost-starsword-of",
+      "weapon-doom-lost-starsword-of"
     ],
     "type": "weapon",
     "subtype": "sword-axe-mace",
@@ -12336,6 +12844,20 @@
       "description": "It's unknown from where or when this mysterious magical weapon originated, but it radiates warmly with the power of Light all the same.\n\n Special: DoT on Hit\n\n (Cosmetic item. Provides no combat stats.)",
       "resists": "None",
       "rarity": "0",
+      "weaponSpecial": {
+        "activation": "on-hit",
+        "trigger": "Your weapon special activates on hit.",
+        "effect": "Applies 'Destiny', a 50% Magic Light DoT effect, to target for 3 turns. (Pop-up: Your foe is infused with Light!) (Rate: 5%)",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-OnHit.png",
+        "specialImageUrls": [
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/LostStarswordofDestiny-Special.png",
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/LostStarswordofDoom-Special.png"
+        ],
+        "specialImageCaptions": [
+          "Appearance",
+          "Appearance"
+        ]
+      },
       "alsoSee": []
     },
     "levelVariants": [
@@ -12364,6 +12886,18 @@
         "resists": "None",
         "rarity": "0",
         "itemType": "Sword",
+        "weaponSpecial": {
+          "activation": "on-hit",
+          "trigger": "Your weapon special activates on hit.",
+          "effect": "Applies 'Destiny', a 50% Magic Light DoT effect, to target for 3 turns. (Pop-up: Your foe is infused with Light!) (Rate: 5%)",
+          "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-OnHit.png",
+          "specialImageUrls": [
+            "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/LostStarswordofDestiny-Special.png"
+          ],
+          "specialImageCaptions": [
+            "Appearance"
+          ]
+        },
         "notes": "While this weapon's item type is Sword, its damage type is erroneously Magic instead of Melee.\nWeapon's inventory icon is erroneously a Scythe, despite being a Sword.\nWeapon is animated; the blade vibrates rapidly, while spikes appear and disappear from the base of the blade cyclically, and the Blade of Destiny piece glows continuously.\nWeapon's special activation was updated from On-Attack to On-Hit in February 2021.\nWeapon's special activation rate was lowered from 30% to 5% on April 3rd, 2021."
       },
       {
@@ -12391,6 +12925,18 @@
         "resists": "None",
         "rarity": "0",
         "itemType": "Sword",
+        "weaponSpecial": {
+          "activation": "on-hit",
+          "trigger": "Your weapon special activates on hit.",
+          "effect": "Applies 'Doooom', a 50% Magic Darkness DoT effect, to target for 3 turns. (Pop-up: Your foe is engulfed by Darkness!) (Rate: 5%)",
+          "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-OnHit.png",
+          "specialImageUrls": [
+            "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/LostStarswordofDoom-Special.png"
+          ],
+          "specialImageCaptions": [
+            "Appearance"
+          ]
+        },
         "notes": "While this weapon's item type is Sword, its damage type is erroneously Magic instead of Melee.\nWeapon's inventory icon is erroneously a Scythe, despite being a Sword.\nWeapon is animated; the blade vibrates rapidly, while spikes appear and disappear from the base of the blade cyclically.\nWeapon's special activation was updated from On-Attack to On-Hit in February 2021.\nWeapon's special activation rate was lowered from 30% to 5% on April 3rd, 2021."
       }
     ],
@@ -12466,7 +13012,11 @@
       "weapon-love-s-edge-i",
       "weapon-love-s-edge-ii",
       "weapon-love-s-edge-iii",
-      "weapon-love-s-edge-iv"
+      "weapon-love-s-edge-iv",
+      "weapon-i-love-s-edge",
+      "weapon-ii-love-s-edge",
+      "weapon-iii-love-s-edge",
+      "weapon-iv-love-s-edge"
     ],
     "type": "weapon",
     "subtype": "sword-axe-mace",
@@ -12639,7 +13189,17 @@
       "weapon-lovely-time-sword-vii",
       "weapon-lovely-time-sword-viii",
       "weapon-lovely-time-sword-ix",
-      "weapon-lovely-time-sword-x"
+      "weapon-lovely-time-sword-x",
+      "weapon-i-lovely-time-sword",
+      "weapon-ii-lovely-time-sword",
+      "weapon-iii-lovely-time-sword",
+      "weapon-iv-lovely-time-sword",
+      "weapon-v-lovely-time-sword",
+      "weapon-vi-lovely-time-sword",
+      "weapon-vii-lovely-time-sword",
+      "weapon-viii-lovely-time-sword",
+      "weapon-ix-lovely-time-sword",
+      "weapon-x-lovely-time-sword"
     ],
     "type": "weapon",
     "subtype": "sword-axe-mace",
@@ -13036,10 +13596,11 @@
     "familyName": "Luck O' The Sneevish",
     "slug": "weapon-luck-o-the-sneevish",
     "aliasSlugs": [
+      "weapon-fortunate-luck-o-the-sneevish",
+      "weapon-kismet-luck-o-the-sneevish",
       "weapon-winning-luck-o-the-sneevish",
       "weapon-luck-o-the-sneevish-all-versions",
-      "weapon-kismet-luck-o-the-sneevish",
-      "weapon-fortunate-luck-o-the-sneevish"
+      "weapon-base-luck-o-the-sneevish"
     ],
     "type": "weapon",
     "subtype": "sword-axe-mace",
@@ -13047,10 +13608,10 @@
     "familyOrigin": "cross-post",
     "familySources": [
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20172833",
-        "title": "DF Encyclopedia: Fortunate Luck O' the Sneevish",
-        "variantLabel": "Fortunate Luck O' the Sneevish",
-        "isPrimary": true
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20172793",
+        "title": "DF Encyclopedia: Luck O' the Sneevish",
+        "variantLabel": "Luck O' the Sneevish",
+        "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=20172797",
@@ -13059,10 +13620,10 @@
         "isPrimary": false
       },
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20172793",
-        "title": "DF Encyclopedia: Luck O' the Sneevish",
-        "variantLabel": "Luck O' the Sneevish",
-        "isPrimary": false
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20172833",
+        "title": "DF Encyclopedia: Fortunate Luck O' the Sneevish",
+        "variantLabel": "Fortunate Luck O' the Sneevish",
+        "isPrimary": true
       },
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=20169513",
@@ -13212,7 +13773,11 @@
       "weapon-lucky-katana-i",
       "weapon-lucky-katana-ii",
       "weapon-lucky-katana-iii",
-      "weapon-lucky-katana-iv"
+      "weapon-lucky-katana-iv",
+      "weapon-i-lucky-katana",
+      "weapon-ii-lucky-katana",
+      "weapon-iii-lucky-katana",
+      "weapon-iv-lucky-katana"
     ],
     "type": "weapon",
     "subtype": "sword-axe-mace",
@@ -13782,7 +14347,16 @@
       "weapon-mace-of-the-north-vi",
       "weapon-mace-of-the-north-vii",
       "weapon-mace-of-the-north-viii",
-      "weapon-mace-of-the-north-ix"
+      "weapon-mace-of-the-north-ix",
+      "weapon-i-mace-of-the-north",
+      "weapon-ii-mace-of-the-north",
+      "weapon-iii-mace-of-the-north",
+      "weapon-iv-mace-of-the-north",
+      "weapon-v-mace-of-the-north",
+      "weapon-vi-mace-of-the-north",
+      "weapon-vii-mace-of-the-north",
+      "weapon-viii-mace-of-the-north",
+      "weapon-ix-mace-of-the-north"
     ],
     "type": "weapon",
     "subtype": "sword-axe-mace",
@@ -13848,12 +14422,22 @@
     "shared": {
       "description": "This finely crafted mace was created for a celebration in a far off land.",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/MaceoftheNorth.png",
-      "notes": "Weapons cannot be destroyed.\nWeapons' special will cause a red, white, or blue outline to appear around the target when activated, respective to the element of the DoT effect applied.\nWeapons' special has a 10% chance to activate, thus a special of a specific element effectively has a ~3.33% chance to apply.\nThese weapons' specials previously had one active at any time, preventing its DoT effects to not stack; this was changed on October 21st, 2022, where weapons' special now activate multiple times in a single turn, however specials will overwrite one another, and do not stack; only the most recently applied DoT will remain active.\n  • All 'Spirit' DoT effects can also be overwritten by the following On-Hit DoT specials from the following weapons; this was implemented on September 8th, 2023:\n  • 'DOOM': Corrupt ShadowReaper of Doom, Corrupt Skullstaff of Doom, Corrupt Twin Blades of Doom, Unreal ShadowReaper of Doom, Unreal Skullstaff of Doom, Unreal Twin Blades of Doom\n  • 'Destiny': Penultimate Blinding Light of Destiny, Penultimate DragonStaff of Destiny, Penultimate Twin Blades of Destiny, Ultimate Blinding Light of Destiny, Ultimate DragonStaff of Destiny, Ultimate Twin Blades of Destiny\n  • 'Destroyer's Spirit': Var'Dolaas\n  • 'Spirit of Light' (and thus all 'Spirit' effects): Decus, Ferocitas, Fidelitas, Wheel of Greed and Envy",
+      "notes": "Weapons cannot be destroyed.\nWeapons' special will cause a red, white, or blue outline to appear around the target when activated, respective to the element of the DoT effect applied.\nWeapons' special has a 10% chance to activate, thus a special of a specific element effectively has a ~3.33% chance to apply.\nThese weapons' specials previously had one active at any time, preventing its DoT effects to not stack; this was changed on October 21st, 2022, where weapons' special now activate multiple times in a single turn, however specials will overwrite one another, and do not stack; only the most recently applied DoT will remain active.\n • All 'Spirit' DoT effects can also be overwritten by the following On-Hit DoT specials from the following weapons; this was implemented on September 8th, 2023:\n • 'DOOM': Corrupt ShadowReaper of Doom, Corrupt Skullstaff of Doom, Corrupt Twin Blades of Doom, Unreal ShadowReaper of Doom, Unreal Skullstaff of Doom, Unreal Twin Blades of Doom\n • 'Destiny': Penultimate Blinding Light of Destiny, Penultimate DragonStaff of Destiny, Penultimate Twin Blades of Destiny, Ultimate Blinding Light of Destiny, Ultimate DragonStaff of Destiny, Ultimate Twin Blades of Destiny\n • 'Destroyer's Spirit': Var'Dolaas\n • 'Spirit of Light' (and thus all 'Spirit' effects): Decus, Ferocitas, Fidelitas, Wheel of Greed and Envy",
       "weaponSpecial": {
         "activation": "on-hit",
         "trigger": "Your weapon special activates on hit.",
         "effect": "Applies 'Spirit of Fire', 'Spirit of Ice', or 'Spirit of Water' at random, a 40% Magic Fire/Ice/Water weapon damage DoT effect, to target for 5 turns. (Pop-up: Spirit of Independence!) (Rate: 10%)",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-OnHit.png"
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-OnHit.png",
+        "specialImageUrls": [
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/MaceoftheNorth-SpecialFire.png",
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/MaceoftheNorth-SpecialIce.png",
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/MaceoftheNorth-SpecialWater.png"
+        ],
+        "specialImageCaptions": [
+          "Spirit of Fire",
+          "Spirit of Ice",
+          "Spirit of Water"
+        ]
       },
       "alsoSee": []
     },
@@ -14110,7 +14694,9 @@
     "aliasSlugs": [
       "weapon-madcap-s-mace-2010-all-versions",
       "weapon-madcap-s-mace",
-      "weapon-madcap-s-mace-all-versions"
+      "weapon-madcap-s-mace-all-versions",
+      "weapon-base-madcap-s-mace",
+      "weapon-2010-madcap-s-mace"
     ],
     "type": "weapon",
     "subtype": "sword-axe-mace",
@@ -14217,49 +14803,6 @@
     "levelRange": "25"
   },
   {
-    "id": "weapon-major-brokenblade",
-    "name": "Major Brokenblade",
-    "slug": "weapon-major-brokenblade",
-    "type": "weapon",
-    "subtype": "sword-axe-mace",
-    "description": "This blade was made when a rogue aeromancer summoned cyclonic winds so fierce that the rocks littering the Sandsea were shattered. A patient armorer pieced the shards together to form this weapon.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19046784",
-    "releaseDate": "",
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Brokenblade.png",
-    "elements": [
-      "WIN"
-    ],
-    "level": "34",
-    "damage": "50-62",
-    "stats": "Crit +3, Bonus +2",
-    "resists": "Wind +2",
-    "rarity": "5",
-    "itemType": "Sword",
-    "obtainMethods": [
-      {
-        "location": "Three Roses",
-        "price": "0 Gold",
-        "priceType": "free",
-        "sellback": "0 Gold",
-        "daRequired": false
-      }
-    ],
-    "notes": "Weapon is animated; a small shard revolves around the center of the weapon.",
-    "alsoSee": [
-      {
-        "name": "Minor Brokenblade",
-        "slug": "weapon-minor-brokenblade",
-        "type": "weapon",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=14889500"
-      }
-    ],
-    "tags": [
-      "win",
-      "free"
-    ],
-    "daRequired": false
-  },
-  {
     "id": "weapon-major-bronzed-blade",
     "name": "Major Bronzed Blade",
     "slug": "weapon-major-bronzed-blade",
@@ -14293,48 +14836,6 @@
         "slug": "weapon-minor-bronze-blade",
         "type": "weapon",
         "url": "https://forums2.battleon.com/f/tm.asp?m=14889177"
-      }
-    ],
-    "tags": [
-      "win",
-      "free"
-    ],
-    "daRequired": false
-  },
-  {
-    "id": "weapon-major-sunsabre",
-    "name": "Major Sunsabre",
-    "slug": "weapon-major-sunsabre",
-    "type": "weapon",
-    "subtype": "sword-axe-mace",
-    "description": "This blade was left outside for an entire season to absorb sunlight by the priests of a sun-worshiping clan deep in the heart of a faraway desert. The intense glow of its shine demonstrates the blessings given by their gods.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19102015",
-    "releaseDate": "",
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Sunsabre.png",
-    "elements": [
-      "WIN"
-    ],
-    "level": "34",
-    "damage": "50-64",
-    "stats": "Crit +3, STR +4, Bonus +3",
-    "resists": "Wind +2",
-    "rarity": "5",
-    "itemType": "Sword",
-    "obtainMethods": [
-      {
-        "location": "Four Roses",
-        "price": "0 Gold",
-        "priceType": "free",
-        "sellback": "0 Gold",
-        "daRequired": false
-      }
-    ],
-    "alsoSee": [
-      {
-        "name": "Minor Sunsabre",
-        "slug": "weapon-minor-sunsabre",
-        "type": "weapon",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=14887608"
       }
     ],
     "tags": [
@@ -14431,7 +14932,12 @@
       "weapon-manawood-sword-ii",
       "weapon-manawood-sword-iii",
       "weapon-manawood-sword-iv",
-      "weapon-manawood-sword-v"
+      "weapon-manawood-sword-v",
+      "weapon-i-manawood-sword",
+      "weapon-ii-manawood-sword",
+      "weapon-iii-manawood-sword",
+      "weapon-iv-manawood-sword",
+      "weapon-v-manawood-sword"
     ],
     "type": "weapon",
     "subtype": "sword-axe-mace",
@@ -14480,7 +14986,7 @@
         },
         {
           "url": "http://i.imgur.com/oYx1f.jpg",
-          "caption": "Nature"
+          "caption": "Element: Water / Nature"
         }
       ],
       "alsoSee": []
@@ -14633,10 +15139,10 @@
     "familyName": "Maracas",
     "slug": "weapon-maracas",
     "aliasSlugs": [
-      "weapon-clattering-maracas",
+      "weapon-maracas-all-versions",
       "weapon-rattling-maracas",
-      "weapon-shaking-maracas",
-      "weapon-maracas-all-versions"
+      "weapon-clattering-maracas",
+      "weapon-shaking-maracas"
     ],
     "type": "weapon",
     "subtype": "sword-axe-mace",
@@ -14644,16 +15150,16 @@
     "familyOrigin": "cross-post",
     "familySources": [
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=17587691",
-        "title": "DF Encyclopedia: Clattering Maracas",
-        "variantLabel": "Clattering Maracas",
-        "isPrimary": true
-      },
-      {
         "url": "https://forums2.battleon.com/f/tm.asp?m=17587688",
         "title": "DF Encyclopedia: Rattling Maracas",
         "variantLabel": "Rattling Maracas",
         "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=17587691",
+        "title": "DF Encyclopedia: Clattering Maracas",
+        "variantLabel": "Clattering Maracas",
+        "isPrimary": true
       },
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=17587694",
@@ -14843,64 +15349,13 @@
     "alsoSee": []
   },
   {
-    "id": "weapon-melting-arctic-blade",
-    "name": "Melting Arctic Blade",
-    "slug": "weapon-melting-arctic-blade",
-    "type": "weapon",
-    "subtype": "sword-axe-mace",
-    "description": "You can feel the chill permeating off of this blade, forged entirely from an unforgiving frost. This item requires a Dragon Amulet.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18075182",
-    "releaseDate": "",
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/ArcticBlade.png",
-    "elements": [
-      "ICE"
-    ],
-    "level": "25",
-    "damage": "38-58",
-    "stats": "Crit +2, LUK +2, STR +2, Bonus +2",
-    "resists": "Ice +4",
-    "rarity": "4",
-    "itemType": "Sword",
-    "obtainMethods": [
-      {
-        "location": "Moodridge Knights",
-        "price": "9,000 Gold",
-        "priceType": "gold",
-        "sellback": "900 Gold",
-        "daRequired": true
-      }
-    ],
-    "alsoSee": [
-      {
-        "name": "Blade",
-        "slug": "weapon-blade",
-        "type": "weapon",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=17402733"
-      },
-      {
-        "name": "Golden Arctic",
-        "slug": "weapon-golden-arctic",
-        "type": "weapon",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21176153"
-      },
-      {
-        "name": "Pure Golden Arctic",
-        "slug": "weapon-pure-golden-arctic",
-        "type": "weapon",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21178610"
-      }
-    ],
-    "tags": [
-      "ice",
-      "gold"
-    ],
-    "daRequired": true
-  },
-  {
     "id": "weapon-miasmal-axe",
     "familyName": "Miasmal Axe",
     "slug": "weapon-miasmal-axe",
     "aliasSlugs": [
+      "weapon-eerie-miasmal-axe",
+      "weapon-ghostly-miasmal-axe",
+      "weapon-haunted-miasmal-axe",
       "weapon-spectral-miasmal-axe",
       "weapon-vexed-miasmal-axe",
       "weapon-miasmal-axe-all-versions"
@@ -14911,16 +15366,34 @@
     "familyOrigin": "cross-post",
     "familySources": [
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=22346338",
-        "title": "DF Encyclopedia: Spectral Miasmal Axe",
-        "variantLabel": "Spectral Miasmal Axe",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=18980858",
+        "title": "DF Encyclopedia: Eerie Miasmal Axe",
+        "variantLabel": "Eerie Miasmal Axe",
         "isPrimary": true
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=18980950",
+        "title": "DF Encyclopedia: Haunted Miasmal Axe",
+        "variantLabel": "Haunted Miasmal Axe",
+        "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=18980959",
         "title": "DF Encyclopedia: Vexed Miasmal Axe",
         "variantLabel": "Vexed Miasmal Axe",
         "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21733310",
+        "title": "DF Encyclopedia: Ghostly Miasmal Axe",
+        "variantLabel": "Ghostly Miasmal Axe",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=22346338",
+        "title": "DF Encyclopedia: Spectral Miasmal Axe",
+        "variantLabel": "Spectral Miasmal Axe",
+        "isPrimary": true
       }
     ],
     "itemType": "Axe",
@@ -14930,28 +15403,64 @@
       "element": "EVI",
       "rarity": "5",
       "notes": "Weapon is animated; spirits swirl around within the weapon, while the surrounding purple spirits wiggle continuously.",
-      "alsoSee": [
-        {
-          "name": "Eerie Miasmal Axe",
-          "slug": "weapon-eerie-miasmal-axe",
-          "type": "weapon",
-          "url": "https://forums2.battleon.com/f/tm.asp?m=18980858"
-        },
-        {
-          "name": "Ghostly Miasmal Axe",
-          "slug": "weapon-ghostly-miasmal-axe",
-          "type": "weapon",
-          "url": "https://forums2.battleon.com/f/tm.asp?m=21733310"
-        },
-        {
-          "name": "Haunted Miasmal Axe",
-          "slug": "weapon-haunted-miasmal-axe",
-          "type": "weapon",
-          "url": "https://forums2.battleon.com/f/tm.asp?m=18980950"
-        }
-      ]
+      "alsoSee": []
     },
     "levelVariants": [
+      {
+        "levelNumber": 25,
+        "levelDisplay": "25",
+        "actualLevel": 25,
+        "variantName": "Eerie",
+        "name": "Eerie Miasmal Axe",
+        "damage": "44-58",
+        "stats": "Block +1, Crit +4, Magic Def +1, Pierce Def +1, Melee Def +1, WIS +2, END +3, LUK -1, STR +3, Bonus +2",
+        "obtainVariants": [
+          {
+            "location": "LQS",
+            "price": "333 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "300 DC (<24 hours) / 84 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=18980858",
+        "description": "Made entirely from the residue of evil spirits, this weapon is one of the most unlucky artifacts in all of Lore. Visit the Black Market Moglin to upgrade this weapon.",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/MiasmalAxe.png",
+        "element": "EVI",
+        "resists": "Darkness +3, Light +3, Immobility +1, All +1",
+        "rarity": "5",
+        "itemType": "Axe",
+        "notes": "Weapon is animated; spirits swirl around within the weapon, while the surrounding purple spirits wiggle continuously."
+      },
+      {
+        "levelNumber": 45,
+        "levelDisplay": "45",
+        "actualLevel": 45,
+        "variantName": "Haunted",
+        "name": "Haunted Miasmal Axe",
+        "damage": "61-77",
+        "stats": "Block +1, Dodge +1, Crit +6, Magic Def +1, Pierce Def +1, Melee Def +1, WIS +4, END +5, LUK -2, STR +5, Bonus +6",
+        "obtainVariants": [
+          {
+            "location": "Miasmal Weapons",
+            "price": "N/A",
+            "priceType": "merge",
+            "sellback": "300 DC (<24 hours) / 84 DC (>24 hours)",
+            "requiredItems": "1 Eerie Miasmal Axe & 1 Miasmal Essence",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=18980950",
+        "description": "Made entirely from the residue of evil spirits, this weapon is one of the most unlucky artifacts in all of Lore. Visit the Black Market Moglin to upgrade this weapon.",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/MiasmalAxe.png",
+        "element": "EVI",
+        "resists": "Darkness +6, Light +6, Immobility +3, All +2",
+        "rarity": "5",
+        "itemType": "Axe",
+        "notes": "Weapon is animated; spirits swirl around within the weapon, while the surrounding purple spirits wiggle continuously."
+      },
       {
         "levelNumber": 67,
         "levelDisplay": "67",
@@ -14976,6 +15485,34 @@
         "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/MiasmalAxe.png",
         "element": "EVI",
         "resists": "Darkness +12, Light +12, Immobility +6, All +3",
+        "rarity": "5",
+        "itemType": "Axe",
+        "notes": "Weapon is animated; spirits swirl around within the weapon, while the surrounding purple spirits wiggle continuously."
+      },
+      {
+        "levelNumber": 78,
+        "levelDisplay": "78",
+        "actualLevel": 78,
+        "variantName": "Ghostly",
+        "name": "Ghostly Miasmal Axe",
+        "damage": "80-99",
+        "stats": "Block +2, Dodge +4, Crit +12, Magic Def +8, Pierce Def +8, Melee Def +8, WIS +10, END +7, LUK -5, STR +13, Bonus +9",
+        "obtainVariants": [
+          {
+            "location": "Miasmal Weapons",
+            "price": "N/A",
+            "priceType": "merge",
+            "sellback": "500 DC (<24 hours) / 139 DC (>24 hours)",
+            "requiredItems": "1 Vexed Miasmal Axe & 1 Miasmal Essence",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21733310",
+        "description": "Made entirely from the residue of evil spirits, this weapon is one of the most unlucky artifacts in all of Lore.",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/MiasmalAxe.png",
+        "element": "EVI",
+        "resists": "Darkness +13, Light +13, Immobility +8, All +6",
         "rarity": "5",
         "itemType": "Axe",
         "notes": "Weapon is animated; spirits swirl around within the weapon, while the surrounding purple spirits wiggle continuously."
@@ -15012,6 +15549,7 @@
     "category": "Weapon",
     "releaseDate": "",
     "tags": [
+      "dc",
       "evi",
       "merge"
     ],
@@ -15024,7 +15562,7 @@
       "EVI"
     ],
     "isRare": true,
-    "levelRange": "67-88"
+    "levelRange": "25-88"
   },
   {
     "id": "weapon-midnight-talon",
@@ -15075,7 +15613,15 @@
       "weapon-midnight-wish-v",
       "weapon-midnight-wish-vi",
       "weapon-midnight-wish-vii",
-      "weapon-midnight-wish-viii"
+      "weapon-midnight-wish-viii",
+      "weapon-i-midnight-wish",
+      "weapon-ii-midnight-wish",
+      "weapon-iii-midnight-wish",
+      "weapon-iv-midnight-wish",
+      "weapon-v-midnight-wish",
+      "weapon-vi-midnight-wish",
+      "weapon-vii-midnight-wish",
+      "weapon-viii-midnight-wish"
     ],
     "type": "weapon",
     "subtype": "sword-axe-mace",
@@ -15369,7 +15915,13 @@
       "weapon-midsummer-knight-s-blade-iii",
       "weapon-midsummer-knight-s-blade-iv",
       "weapon-midsummer-knight-s-blade-v",
-      "weapon-midsummer-knight-s-blade-vi"
+      "weapon-midsummer-knight-s-blade-vi",
+      "weapon-i-midsummer-knight-s-blade",
+      "weapon-ii-midsummer-knight-s-blade",
+      "weapon-iii-midsummer-knight-s-blade",
+      "weapon-iv-midsummer-knight-s-blade",
+      "weapon-v-midsummer-knight-s-blade",
+      "weapon-vi-midsummer-knight-s-blade"
     ],
     "type": "weapon",
     "subtype": "sword-axe-mace",
@@ -15637,7 +16189,10 @@
       "weapon-mini-lava-sword-i-ii-iii",
       "weapon-mini-lava-sword-all-versions",
       "weapon-mini-lava-sword-ii",
-      "weapon-mini-lava-sword-iii"
+      "weapon-mini-lava-sword-iii",
+      "weapon-base-mini-lava-sword",
+      "weapon-ii-mini-lava-sword",
+      "weapon-iii-mini-lava-sword"
     ],
     "type": "weapon",
     "subtype": "sword-axe-mace",
@@ -15760,49 +16315,6 @@
     "levelRange": "II-III"
   },
   {
-    "id": "weapon-minor-brokenblade",
-    "name": "Minor Brokenblade",
-    "slug": "weapon-minor-brokenblade",
-    "type": "weapon",
-    "subtype": "sword-axe-mace",
-    "description": "Made when a bitter aeromancer sent hurricane-force winds to blast apart the walls of a town which refused to hire him, resourceful villagers collected the shards and glued them together to form this blade.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=14889500",
-    "releaseDate": "",
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Brokenblade.png",
-    "elements": [
-      "WIN"
-    ],
-    "level": "16",
-    "damage": "27-45",
-    "stats": "Crit +2, INT +2",
-    "resists": "None",
-    "rarity": "0",
-    "itemType": "Sword",
-    "obtainMethods": [
-      {
-        "location": "Three Roses",
-        "price": "0 Gold",
-        "priceType": "free",
-        "sellback": "0 Gold",
-        "daRequired": false
-      }
-    ],
-    "notes": "Weapon is animated; a small shard revolves around the center of the weapon.",
-    "alsoSee": [
-      {
-        "name": "Major Brokenblade",
-        "slug": "weapon-major-brokenblade",
-        "type": "weapon",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19046784"
-      }
-    ],
-    "tags": [
-      "win",
-      "free"
-    ],
-    "daRequired": false
-  },
-  {
     "id": "weapon-minor-bronze-blade",
     "name": "Minor Bronze Blade",
     "slug": "weapon-minor-bronze-blade",
@@ -15845,48 +16357,6 @@
     "daRequired": false
   },
   {
-    "id": "weapon-minor-sunsabre",
-    "name": "Minor Sunsabre",
-    "slug": "weapon-minor-sunsabre",
-    "type": "weapon",
-    "subtype": "sword-axe-mace",
-    "description": "Deep in the heart of a faraway desert lives a clan of sun-worshippers. This blade incorporates one of their holy symbols to demonstrate the devotion and trust they place in their gods.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=14887608",
-    "releaseDate": "",
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Sunsabre.png",
-    "elements": [
-      "WIN"
-    ],
-    "level": "16",
-    "damage": "27-47",
-    "stats": "Crit +2, STR +2, Bonus +1",
-    "resists": "Stone +1",
-    "rarity": "0",
-    "itemType": "Sword",
-    "obtainMethods": [
-      {
-        "location": "Four Roses",
-        "price": "0 Gold",
-        "priceType": "free",
-        "sellback": "0 Gold",
-        "daRequired": false
-      }
-    ],
-    "alsoSee": [
-      {
-        "name": "Major Sunsabre",
-        "slug": "weapon-major-sunsabre",
-        "type": "weapon",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19102015"
-      }
-    ],
-    "tags": [
-      "win",
-      "free"
-    ],
-    "daRequired": false
-  },
-  {
     "id": "weapon-mint-cream-slasher",
     "familyName": "Mint Cream Slasher",
     "slug": "weapon-mint-cream-slasher",
@@ -15901,7 +16371,25 @@
       "weapon-mint-cream-slasher-vi",
       "weapon-mint-cream-slasher-vii",
       "weapon-mint-cream-slasher-viii",
-      "weapon-mint-cream-slasher-ix"
+      "weapon-mint-cream-slasher-ix",
+      "weapon-i-mint-cream-slasher",
+      "weapon-i-dc-mint-cream-slasher",
+      "weapon-ii-mint-cream-slasher",
+      "weapon-ii-dc-mint-cream-slasher",
+      "weapon-iii-mint-cream-slasher",
+      "weapon-iii-dc-mint-cream-slasher",
+      "weapon-iv-mint-cream-slasher",
+      "weapon-iv-dc-mint-cream-slasher",
+      "weapon-v-mint-cream-slasher",
+      "weapon-v-dc-mint-cream-slasher",
+      "weapon-vi-mint-cream-slasher",
+      "weapon-vi-dc-mint-cream-slasher",
+      "weapon-vii-mint-cream-slasher",
+      "weapon-vii-dc-mint-cream-slasher",
+      "weapon-viii-mint-cream-slasher",
+      "weapon-viii-dc-mint-cream-slasher",
+      "weapon-ix-mint-cream-slasher",
+      "weapon-ix-dc-mint-cream-slasher"
     ],
     "type": "weapon",
     "subtype": "sword-axe-mace",
@@ -16472,13 +16960,27 @@
     "aliasSlugs": [
       "weapon-heavy-mjolnir",
       "weapon-icy-mjolnir",
-      "weapon-mjolnir-all-versions"
+      "weapon-sturdy-mjolnir",
+      "weapon-mjolnir-all-versions",
+      "weapon-base-mjolnir"
     ],
     "type": "weapon",
     "subtype": "sword-axe-mace",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19618756",
     "familyOrigin": "cross-post",
     "familySources": [
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=19615611",
+        "title": "DF Encyclopedia: Mjolnir",
+        "variantLabel": "Mjolnir",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=19616883",
+        "title": "DF Encyclopedia: Sturdy Mjolnir",
+        "variantLabel": "Sturdy Mjolnir",
+        "isPrimary": false
+      },
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=19618756",
         "title": "DF Encyclopedia: Heavy Mjolnir",
@@ -16490,12 +16992,6 @@
         "title": "DF Encyclopedia: Icy Mjolnir",
         "variantLabel": "Icy Mjolnir",
         "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19615611",
-        "title": "DF Encyclopedia: Mjolnir",
-        "variantLabel": "Mjolnir",
-        "isPrimary": false
       }
     ],
     "itemType": "Mace",
@@ -16503,14 +16999,7 @@
       "description": "This hammer is the favorite of the Thunder God, Thor. It occasionally will let loose with a blast of thunder, calling out the praise of the original wielder.",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Mjolnir.png",
       "element": "ICE",
-      "alsoSee": [
-        {
-          "name": "Sturdy Mjolnir",
-          "slug": "weapon-sturdy-mjolnir",
-          "type": "weapon",
-          "url": "https://forums2.battleon.com/f/tm.asp?m=19616883"
-        }
-      ]
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -16536,6 +17025,31 @@
         "element": "ICE",
         "resists": "Energy +4",
         "rarity": "9",
+        "itemType": "Mace"
+      },
+      {
+        "levelNumber": 45,
+        "levelDisplay": "45",
+        "actualLevel": 45,
+        "variantName": "Sturdy",
+        "name": "Sturdy Mjolnir",
+        "damage": "60-72",
+        "stats": "Crit +7, Magic Def +4, Melee Def +4, WIS +5, END +6, STR +6, Bonus +4",
+        "obtainVariants": [
+          {
+            "location": "Ice Cave",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "140 Gold",
+            "daRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=19616883",
+        "description": "This hammer is the favorite of the Thunder God, Thor. It occasionally will let loose with a blast of thunder, calling out the praise of the original wielder.",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Mjolnir.png",
+        "element": "ICE",
+        "resists": "Energy +6",
+        "rarity": "5",
         "itemType": "Mace"
       },
       {
@@ -16613,7 +17127,10 @@
       "weapon-modular-mayo-mallet-i-ii-iii",
       "weapon-modular-mayo-mallet-all-versions",
       "weapon-modular-mayo-mallet-ii",
-      "weapon-modular-mayo-mallet-iii"
+      "weapon-modular-mayo-mallet-iii",
+      "weapon-base-modular-mayo-mallet",
+      "weapon-ii-modular-mayo-mallet",
+      "weapon-iii-modular-mayo-mallet"
     ],
     "type": "weapon",
     "subtype": "sword-axe-mace",
@@ -16832,13 +17349,20 @@
     "aliasSlugs": [
       "weapon-hyetal-monolith-mace",
       "weapon-limnal-monolith-mace",
-      "weapon-monolith-mace-all-versions"
+      "weapon-monolith-mace-all-versions",
+      "weapon-base-monolith-mace"
     ],
     "type": "weapon",
     "subtype": "sword-axe-mace",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19834063",
     "familyOrigin": "cross-post",
     "familySources": [
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=19834075",
+        "title": "DF Encyclopedia: Monolith Mace",
+        "variantLabel": "Monolith Mace",
+        "isPrimary": false
+      },
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=19834063",
         "title": "DF Encyclopedia: Hyetal Monolith Mace",
@@ -16849,12 +17373,6 @@
         "url": "https://forums2.battleon.com/f/tm.asp?m=19834051",
         "title": "DF Encyclopedia: Limnal Monolith Mace",
         "variantLabel": "Limnal Monolith Mace",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19834075",
-        "title": "DF Encyclopedia: Monolith Mace",
-        "variantLabel": "Monolith Mace",
         "isPrimary": false
       }
     ],
@@ -16975,7 +17493,15 @@
       "weapon-moonbane-bloom-i",
       "weapon-moonbane-bloom-ii",
       "weapon-moonbane-bloom-iii",
-      "weapon-moonbane-bloom-iv"
+      "weapon-moonbane-bloom-iv",
+      "weapon-i-moonbane-bloom",
+      "weapon-i-dc-moonbane-bloom",
+      "weapon-ii-moonbane-bloom",
+      "weapon-ii-dc-moonbane-bloom",
+      "weapon-iii-moonbane-bloom",
+      "weapon-iii-dc-moonbane-bloom",
+      "weapon-iv-moonbane-bloom",
+      "weapon-iv-dc-moonbane-bloom"
     ],
     "type": "weapon",
     "subtype": "sword-axe-mace",
@@ -17507,7 +18033,12 @@
       "weapon-moonridge-greatsword-ii",
       "weapon-moonridge-greatsword-iii",
       "weapon-moonridge-greatsword-iv",
-      "weapon-moonridge-greatsword-v"
+      "weapon-moonridge-greatsword-v",
+      "weapon-base-moonridge-greatsword",
+      "weapon-ii-moonridge-greatsword",
+      "weapon-iii-moonridge-greatsword",
+      "weapon-iv-moonridge-greatsword",
+      "weapon-v-moonridge-greatsword"
     ],
     "type": "weapon",
     "subtype": "sword-axe-mace",
@@ -18024,6 +18555,12 @@
       "trigger": "Activate your weapon's special!",
       "effect": "5 hits of 30% Wind damage, amounting to 150% damage; applies 'Morganite Winds' (+5X Melee/Pierce/Magic Avoidance, +5X Block/Parry/Dodge Defense, where X is the number of hits landed, capped at +25) to player for 5 turns.",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-Wind.png",
+      "specialImageUrls": [
+        "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/MorganiteGembuster-Special.gif"
+      ],
+      "specialImageCaptions": [
+        "Appearance"
+      ],
       "cooldown": "10 - [(Player LUK/50), rounded down]",
       "chargeTime": "5 - [(Player LUK/100), rounded down]"
     },
@@ -18437,7 +18974,12 @@
       "weapon-nalmir-s-paramount-gift",
       "weapon-nalmir-s-refined-gift",
       "weapon-nalmir-s-true-gift",
-      "weapon-nalmir-s-gift-all-versions"
+      "weapon-nalmir-s-gift-all-versions",
+      "weapon-final-nalmir-s-gift",
+      "weapon-refined-nalmir-s-gift",
+      "weapon-paramount-nalmir-s-gift",
+      "weapon-true-nalmir-s-gift",
+      "weapon-consummate-nalmir-s-gift"
     ],
     "type": "weapon",
     "subtype": "sword-axe-mace",
@@ -18445,21 +18987,9 @@
     "familyOrigin": "cross-post",
     "familySources": [
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19855392",
-        "title": "DF Encyclopedia: Nalmir's Consummate Gift",
-        "variantLabel": "Nalmir's Consummate Gift",
-        "isPrimary": true
-      },
-      {
         "url": "https://forums2.battleon.com/f/tm.asp?m=5026416",
         "title": "DF Encyclopedia: Nalmir's Final Gift",
         "variantLabel": "Nalmir's Final Gift",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19857332",
-        "title": "DF Encyclopedia: Nalmir's Paramount Gift",
-        "variantLabel": "Nalmir's Paramount Gift",
         "isPrimary": false
       },
       {
@@ -18469,10 +18999,22 @@
         "isPrimary": false
       },
       {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=19857332",
+        "title": "DF Encyclopedia: Nalmir's Paramount Gift",
+        "variantLabel": "Nalmir's Paramount Gift",
+        "isPrimary": false
+      },
+      {
         "url": "https://forums2.battleon.com/f/tm.asp?m=19855395",
         "title": "DF Encyclopedia: Nalmir's True Gift",
         "variantLabel": "Nalmir's True Gift",
         "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=19855392",
+        "title": "DF Encyclopedia: Nalmir's Consummate Gift",
+        "variantLabel": "Nalmir's Consummate Gift",
+        "isPrimary": true
       }
     ],
     "itemType": "Sword",
@@ -18643,7 +19185,14 @@
       "weapon-naner-four",
       "weapon-naner-five",
       "weapon-naner-six",
-      "weapon-naner-seven"
+      "weapon-naner-seven",
+      "weapon-one-naner",
+      "weapon-two-naner",
+      "weapon-three-naner",
+      "weapon-four-naner",
+      "weapon-five-naner",
+      "weapon-six-naner",
+      "weapon-seven-naner"
     ],
     "type": "weapon",
     "subtype": "sword-axe-mace",
@@ -19025,8 +19574,8 @@
         "url": "https://forums2.battleon.com/f/tm.asp?m=13524656"
       },
       {
-        "name": "Longsword (ArchKnight Default) (All Versions)",
-        "slug": "weapon-longsword-archknight-default-all-versions",
+        "name": "Longsword (ArchKnight Default)",
+        "slug": "weapon-longsword-archknight-default",
         "type": "weapon",
         "url": "https://forums2.battleon.com/f/tm.asp?m=22366822"
       },
@@ -19069,10 +19618,12 @@
     ],
     "tags": [
       "dar",
+      "default",
       "free"
     ],
     "daRequired": false,
-    "retired": true
+    "retired": true,
+    "isDefault": true
   },
   {
     "id": "weapon-neela-paani-blade",
@@ -19086,7 +19637,13 @@
       "weapon-neela-paani-blade-iii",
       "weapon-neela-paani-blade-iv",
       "weapon-neela-paani-blade-v",
-      "weapon-neela-paani-blade-vi"
+      "weapon-neela-paani-blade-vi",
+      "weapon-i-neela-paani-blade",
+      "weapon-ii-neela-paani-blade",
+      "weapon-iii-neela-paani-blade",
+      "weapon-iv-neela-paani-blade",
+      "weapon-v-neela-paani-blade",
+      "weapon-vi-neela-paani-blade"
     ],
     "type": "weapon",
     "subtype": "sword-axe-mace",
@@ -19311,7 +19868,8 @@
     "slug": "weapon-nereid-sagaris-aquis",
     "aliasSlugs": [
       "weapon-nereid-sagaris-aquis-all-versions",
-      "weapon-nereid-sagaris"
+      "weapon-nereid-sagaris",
+      "weapon-base-nereid-sagaris"
     ],
     "type": "weapon",
     "subtype": "sword-axe-mace",
@@ -19487,13 +20045,26 @@
       "weapon-corona-night-annex-blades",
       "weapon-flowing-night-annex-blades",
       "weapon-gyre-night-annex-blades",
-      "weapon-night-annex-blades-all-versions"
+      "weapon-night-annex-blades-all-versions",
+      "weapon-base-night-annex-blades"
     ],
     "type": "weapon",
     "subtype": "sword-axe-mace",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20132086",
     "familyOrigin": "cross-post",
     "familySources": [
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20128087",
+        "title": "DF Encyclopedia: Night Annex Blades",
+        "variantLabel": "Night Annex Blades",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20132081",
+        "title": "DF Encyclopedia: Gyre Night Annex Blades",
+        "variantLabel": "Gyre Night Annex Blades",
+        "isPrimary": false
+      },
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=20132086",
         "title": "DF Encyclopedia: Corona Night Annex Blades",
@@ -19505,23 +20076,11 @@
         "title": "DF Encyclopedia: Flowing Night Annex Blades",
         "variantLabel": "Flowing Night Annex Blades",
         "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20132081",
-        "title": "DF Encyclopedia: Gyre Night Annex Blades",
-        "variantLabel": "Gyre Night Annex Blades",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20128087",
-        "title": "DF Encyclopedia: Night Annex Blades",
-        "variantLabel": "Night Annex Blades",
-        "isPrimary": false
       }
     ],
     "itemType": "Sword",
     "shared": {
-      "description": "A lithe weapon, orbs play along the edge of the blades of the Night Annex.",
+      "description": "A lithe weapon, orbs play along the edge of the blade of the Night Annex.",
       "imageUrl": "https://i.imgur.com/ZbuTYAM.png",
       "element": "DAR",
       "rarity": "6",
@@ -19770,7 +20329,11 @@
       "weapon-nikemorya-blade-of-rebellion-i",
       "weapon-nikemorya-blade-of-rebellion-ii",
       "weapon-nikemorya-blade-of-rebellion-iii",
-      "weapon-nikemorya-blade-of-rebellion-iv"
+      "weapon-nikemorya-blade-of-rebellion-iv",
+      "weapon-i-nikemorya-blade-of-rebellion",
+      "weapon-ii-nikemorya-blade-of-rebellion",
+      "weapon-iii-nikemorya-blade-of-rebellion",
+      "weapon-iv-nikemorya-blade-of-rebellion"
     ],
     "type": "weapon",
     "subtype": "sword-axe-mace",
@@ -19963,10 +20526,12 @@
     ],
     "tags": [
       "dar",
+      "default",
       "free"
     ],
     "daRequired": false,
-    "alsoSee": []
+    "alsoSee": [],
+    "isDefault": true
   },
   {
     "id": "weapon-ninja-to-sword",
@@ -20018,7 +20583,15 @@
       "weapon-noon-promise-v",
       "weapon-noon-promise-vi",
       "weapon-noon-promise-vii",
-      "weapon-noon-promise-viii"
+      "weapon-noon-promise-viii",
+      "weapon-i-noon-promise",
+      "weapon-ii-noon-promise",
+      "weapon-iii-noon-promise",
+      "weapon-iv-noon-promise",
+      "weapon-v-noon-promise",
+      "weapon-vi-noon-promise",
+      "weapon-vii-noon-promise",
+      "weapon-viii-noon-promise"
     ],
     "type": "weapon",
     "subtype": "sword-axe-mace",
@@ -20342,7 +20915,8 @@
     "aliasSlugs": [
       "weapon-elite-notas",
       "weapon-reforged-notas",
-      "weapon-notas-all-versions"
+      "weapon-notas-all-versions",
+      "weapon-base-notas"
     ],
     "type": "weapon",
     "subtype": "sword-axe-mace",
@@ -20350,16 +20924,16 @@
     "familyOrigin": "cross-post",
     "familySources": [
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=18199406",
-        "title": "DF Encyclopedia: Elite Notas",
-        "variantLabel": "Elite Notas",
-        "isPrimary": true
-      },
-      {
         "url": "https://forums2.battleon.com/f/tm.asp?m=16107942",
         "title": "DF Encyclopedia: Notas",
         "variantLabel": "Notas",
         "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=18199406",
+        "title": "DF Encyclopedia: Elite Notas",
+        "variantLabel": "Elite Notas",
+        "isPrimary": true
       },
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=17717692",
@@ -20561,7 +21135,9 @@
     "familyName": "Novenary Frost Giant",
     "slug": "weapon-novenary-frost-giant",
     "aliasSlugs": [
-      "weapon-novenary-frost-giant-all-versions"
+      "weapon-novenary-frost-giant-all-versions",
+      "weapon-base-novenary-frost-giant",
+      "weapon-dc-novenary-frost-giant"
     ],
     "type": "weapon",
     "subtype": "sword-axe-mace",
@@ -20652,6 +21228,12 @@
         "trigger": "Activate your weapon's special!",
         "effect": "1 hit of 300% damage.",
         "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-Ice.png",
+        "specialImageUrls": [
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/FrostGiant-Special.png"
+        ],
+        "specialImageCaptions": [
+          "Appearance"
+        ],
         "cooldown": "10 - [(Player LUK/50), rounded down]",
         "chargeTime": "5 - [(Player LUK/100), rounded down]"
       }
@@ -20791,10 +21373,12 @@
     "notes": "While this weapon's item type is Sword, its damage type is Magic instead of Melee.\nWeapon's Crit and Bonus were increased from +3 and +1 respectively on January 31st, 2021.\nWeapon is not visible.",
     "tags": [
       "dar",
+      "default",
       "free"
     ],
     "daRequired": false,
     "isTemp": true,
-    "alsoSee": []
+    "alsoSee": [],
+    "isDefault": true
   }
 ]

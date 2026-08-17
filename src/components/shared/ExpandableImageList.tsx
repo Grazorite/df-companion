@@ -34,12 +34,15 @@ function PreviewImage({ src, alt }: { src: string; alt: string }) {
 export default function ExpandableImageList({
   images,
   captions,
-  label = images.length === 1 ? 'Attack Image' : `Attack Images (${images.length})`,
+  label = 'Attack Image',
   altPrefix,
 }: ExpandableImageListProps) {
   const [open, setOpen] = useState(false)
 
   if (images.length === 0) return null
+
+  const displayLabel =
+    images.length === 1 ? label : `${label.replace(/\bImage$/i, 'Images')} (${images.length})`
 
   return (
     <div className="space-y-2">
@@ -50,7 +53,7 @@ export default function ExpandableImageList({
         aria-expanded={open}
       >
         <ImageIcon className="h-3.5 w-3.5" aria-hidden="true" />
-        <span>{open ? `Hide ${label}` : `Show ${label}`}</span>
+        <span>{open ? `Hide ${displayLabel}` : `Show ${displayLabel}`}</span>
         <ChevronDown
           className={`h-3.5 w-3.5 transition-transform ${open ? 'rotate-180' : ''}`}
           aria-hidden="true"

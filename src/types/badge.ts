@@ -55,8 +55,11 @@ export interface ContentSection {
 
 export interface BadgeFilters {
   category?: BadgeCategory
+  excludeCategory?: BadgeCategory | 'retired'
   subcategory?: string
+  excludeSubcategory?: string
   query?: string
   daRequired?: boolean
+  daRequiredExcluded?: boolean
   retired?: boolean
 }

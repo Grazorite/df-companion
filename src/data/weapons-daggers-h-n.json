@@ -9,7 +9,11 @@
       "weapon-half-fractured-dagger-i",
       "weapon-half-fractured-dagger-ii",
       "weapon-half-fractured-dagger-iii",
-      "weapon-half-fractured-dagger-iv"
+      "weapon-half-fractured-dagger-iv",
+      "weapon-i-half-fractured-dagger",
+      "weapon-ii-half-fractured-dagger",
+      "weapon-iii-half-fractured-dagger",
+      "weapon-iv-half-fractured-dagger"
     ],
     "type": "weapon",
     "subtype": "dagger",
@@ -180,7 +184,12 @@
       "weapon-half-gear-gun-ii",
       "weapon-half-gear-gun-iii",
       "weapon-half-gear-gun-iv",
-      "weapon-half-gear-gun-v"
+      "weapon-half-gear-gun-v",
+      "weapon-i-half-gear-gun",
+      "weapon-ii-half-gear-gun",
+      "weapon-iii-half-gear-gun",
+      "weapon-iv-half-gear-gun",
+      "weapon-v-half-gear-gun"
     ],
     "type": "weapon",
     "subtype": "dagger",
@@ -382,7 +391,9 @@
     "aliasSlugs": [
       "weapon-half-off-high-dagger-of-clubs",
       "weapon-half-off-higher-dagger-of-clubs",
-      "weapon-half-off-dagger-of-clubs-all-versions"
+      "weapon-half-off-dagger-of-clubs-all-versions",
+      "weapon-high-half-off-dagger-of-clubs",
+      "weapon-higher-half-off-dagger-of-clubs"
     ],
     "type": "weapon",
     "subtype": "dagger",
@@ -410,7 +421,7 @@
       "rarity": "5",
       "alsoSee": [
         {
-          "name": "Dagger Of Clubs",
+          "name": "Dagger of Clubs",
           "slug": "weapon-dagger-of-clubs",
           "type": "weapon",
           "url": "https://forums2.battleon.com/f/tm.asp?m=17760015"
@@ -492,7 +503,9 @@
     "slug": "weapon-half-off-zephyrus",
     "aliasSlugs": [
       "weapon-half-off-elite-zephyrus",
-      "weapon-half-off-zephyrus-all-versions"
+      "weapon-half-off-zephyrus-all-versions",
+      "weapon-base-half-off-zephyrus",
+      "weapon-elite-half-off-zephyrus"
     ],
     "type": "weapon",
     "subtype": "dagger",
@@ -500,16 +513,16 @@
     "familyOrigin": "cross-post",
     "familySources": [
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=18369007",
-        "title": "DF Encyclopedia: Half-off Elite Zephyrus",
-        "variantLabel": "Half-off Elite Zephyrus",
-        "isPrimary": true
-      },
-      {
         "url": "https://forums2.battleon.com/f/tm.asp?m=18368990",
         "title": "DF Encyclopedia: Half-off Zephyrus",
         "variantLabel": "Half-off Zephyrus",
         "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=18369007",
+        "title": "DF Encyclopedia: Half-off Elite Zephyrus",
+        "variantLabel": "Half-off Elite Zephyrus",
+        "isPrimary": true
       }
     ],
     "itemType": "Dagger",
@@ -771,7 +784,12 @@
       "weapon-half-half-gear-gun-ii",
       "weapon-half-half-gear-gun-iii",
       "weapon-half-half-gear-gun-iv",
-      "weapon-half-half-gear-gun-v"
+      "weapon-half-half-gear-gun-v",
+      "weapon-i-half-half-gear-gun",
+      "weapon-ii-half-half-gear-gun",
+      "weapon-iii-half-half-gear-gun",
+      "weapon-iv-half-half-gear-gun",
+      "weapon-v-half-half-gear-gun"
     ],
     "type": "weapon",
     "subtype": "dagger",
@@ -978,7 +996,12 @@
       "weapon-half-off-frostvale-spruce-ii",
       "weapon-half-off-frostvale-spruce-iii",
       "weapon-half-off-frostvale-spruce-iv",
-      "weapon-half-off-frostvale-spruce-v"
+      "weapon-half-off-frostvale-spruce-v",
+      "weapon-i-half-off-frostvale-spruce",
+      "weapon-ii-half-off-frostvale-spruce",
+      "weapon-iii-half-off-frostvale-spruce",
+      "weapon-iv-half-off-frostvale-spruce",
+      "weapon-v-half-off-frostvale-spruce"
     ],
     "type": "weapon",
     "subtype": "dagger",
@@ -1177,46 +1200,23 @@
       "weapon-elevated-hallow-d-dagger",
       "weapon-glorious-hallow-d-dagger",
       "weapon-high-hallow-d-dagger",
-      "weapon-hallow-d-dagger-all-versions",
-      "weapon-potent-hallow-d-dagger",
-      "weapon-noble-hallow-d-dagger",
-      "weapon-marvelous-hallow-d-dagger",
       "weapon-magnificent-hallow-d-dagger",
-      "weapon-pristine-hallow-d-dagger"
+      "weapon-marvelous-hallow-d-dagger",
+      "weapon-noble-hallow-d-dagger",
+      "weapon-potent-hallow-d-dagger",
+      "weapon-pristine-hallow-d-dagger",
+      "weapon-hallow-d-dagger-all-versions",
+      "weapon-base-hallow-d-dagger"
     ],
     "type": "weapon",
     "subtype": "dagger",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21843810",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21843787",
     "familyOrigin": "cross-post",
     "familySources": [
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21843787",
-        "title": "DF Encyclopedia: Elevated Hallow'd Dagger",
-        "variantLabel": "Elevated Hallow'd Dagger",
-        "isPrimary": true
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21843815",
-        "title": "DF Encyclopedia: Glorious Hallow'd Dagger",
-        "variantLabel": "Glorious Hallow'd Dagger",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21843810",
-        "title": "DF Encyclopedia: Magnificent Hallow'd Dagger",
-        "variantLabel": "Magnificent Hallow'd Dagger",
-        "isPrimary": true
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21842105",
-        "title": "DF Encyclopedia: Marvelous Hallow'd Dagger",
-        "variantLabel": "Marvelous Hallow'd Dagger",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21842096",
-        "title": "DF Encyclopedia: Noble Hallow'd Dagger",
-        "variantLabel": "Noble Hallow'd Dagger",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=11684151",
+        "title": "DF Encyclopedia: Hallow'd Dagger",
+        "variantLabel": "Hallow'd Dagger",
         "isPrimary": false
       },
       {
@@ -1226,21 +1226,45 @@
         "isPrimary": false
       },
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=22412910",
-        "title": "DF Encyclopedia: Pristine Hallow'd Dagger",
-        "variantLabel": "Pristine Hallow'd Dagger",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=11684151",
-        "title": "DF Encyclopedia: Hallow'd Dagger",
-        "variantLabel": "Hallow'd Dagger",
-        "isPrimary": false
-      },
-      {
         "url": "https://forums2.battleon.com/f/tm.asp?m=17741689",
         "title": "DF Encyclopedia: High Hallow'd Dagger",
         "variantLabel": "High Hallow'd Dagger",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21842096",
+        "title": "DF Encyclopedia: Noble Hallow'd Dagger",
+        "variantLabel": "Noble Hallow'd Dagger",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21842105",
+        "title": "DF Encyclopedia: Marvelous Hallow'd Dagger",
+        "variantLabel": "Marvelous Hallow'd Dagger",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21843787",
+        "title": "DF Encyclopedia: Elevated Hallow'd Dagger",
+        "variantLabel": "Elevated Hallow'd Dagger",
+        "isPrimary": true
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21843810",
+        "title": "DF Encyclopedia: Magnificent Hallow'd Dagger",
+        "variantLabel": "Magnificent Hallow'd Dagger",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21843815",
+        "title": "DF Encyclopedia: Glorious Hallow'd Dagger",
+        "variantLabel": "Glorious Hallow'd Dagger",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=22412910",
+        "title": "DF Encyclopedia: Pristine Hallow'd Dagger",
+        "variantLabel": "Pristine Hallow'd Dagger",
         "isPrimary": false
       }
     ],
@@ -1966,7 +1990,18 @@
       "weapon-harvest-ripper-viii",
       "weapon-harvest-ripper-ix",
       "weapon-harvest-ripper-x",
-      "weapon-harvest-ripper-xi"
+      "weapon-harvest-ripper-xi",
+      "weapon-base-harvest-ripper",
+      "weapon-ii-harvest-ripper",
+      "weapon-iii-harvest-ripper",
+      "weapon-iv-harvest-ripper",
+      "weapon-v-harvest-ripper",
+      "weapon-vi-harvest-ripper",
+      "weapon-vii-harvest-ripper",
+      "weapon-viii-harvest-ripper",
+      "weapon-ix-harvest-ripper",
+      "weapon-x-harvest-ripper",
+      "weapon-xi-harvest-ripper"
     ],
     "type": "weapon",
     "subtype": "dagger",
@@ -2521,7 +2556,12 @@
       "weapon-hero-s-lambent-essence",
       "weapon-hero-s-triumphant-essence",
       "weapon-hero-s-vivid-essence",
-      "weapon-hero-s-essence-all-versions"
+      "weapon-hero-s-essence-all-versions",
+      "weapon-gleaming-hero-s-essence",
+      "weapon-vivid-hero-s-essence",
+      "weapon-lambent-hero-s-essence",
+      "weapon-golden-hero-s-essence",
+      "weapon-triumphant-hero-s-essence"
     ],
     "type": "weapon",
     "subtype": "dagger",
@@ -2535,9 +2575,9 @@
         "isPrimary": true
       },
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21655520",
-        "title": "DF Encyclopedia: Hero's Golden Essence",
-        "variantLabel": "Hero's Golden Essence",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21656908",
+        "title": "DF Encyclopedia: Hero's Vivid Essence",
+        "variantLabel": "Hero's Vivid Essence",
         "isPrimary": false
       },
       {
@@ -2547,15 +2587,15 @@
         "isPrimary": false
       },
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21656881",
-        "title": "DF Encyclopedia: Hero's Triumphant Essence",
-        "variantLabel": "Hero's Triumphant Essence",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21655520",
+        "title": "DF Encyclopedia: Hero's Golden Essence",
+        "variantLabel": "Hero's Golden Essence",
         "isPrimary": false
       },
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21656908",
-        "title": "DF Encyclopedia: Hero's Vivid Essence",
-        "variantLabel": "Hero's Vivid Essence",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21656881",
+        "title": "DF Encyclopedia: Hero's Triumphant Essence",
+        "variantLabel": "Hero's Triumphant Essence",
         "isPrimary": false
       }
     ],
@@ -3143,7 +3183,9 @@
     "aliasSlugs": [
       "weapon-hunter-s-ferocity-wrath-all-versions",
       "weapon-hunter-s-ferocity",
-      "weapon-hunter-s-wrath"
+      "weapon-hunter-s-wrath",
+      "weapon-ferocity-hunter-s",
+      "weapon-wrath-hunter-s"
     ],
     "type": "weapon",
     "subtype": "dagger",
@@ -3263,7 +3305,7 @@
         "daRequired": false
       }
     ],
-    "notes": "The following changes were implemented on September 5th, 2025:\n  • Weapon was initially purchasable on Yulgar's Shop.\n  • Damage range was modified from 7-23 to 21-29.\n  • Level was increased from 4 to 8.\n  • Weapon's element was changed from Metal to Light.\n  • Crit +1 stat was added.",
+    "notes": "The following changes were implemented on September 5th, 2025:\n • Weapon was initially purchasable on Yulgar's Shop.\n • Damage range was modified from 7-23 to 21-29.\n • Level was increased from 4 to 8.\n • Weapon's element was changed from Metal to Light.\n • Crit +1 stat was added.",
     "tags": [
       "lig",
       "gold"
@@ -3572,48 +3614,6 @@
     "alsoSee": []
   },
   {
-    "id": "weapon-icy-eshrva",
-    "name": "Icy Eshrva",
-    "slug": "weapon-icy-eshrva",
-    "type": "weapon",
-    "subtype": "dagger",
-    "description": "Eshrva was a brilliant Rogue and was highly skilled with the daggers. Together with his brothers, he went missing while exploring the frozen mountains north of Dragesvard.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19664638",
-    "releaseDate": "",
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Eshrva.png",
-    "elements": [
-      "ICE"
-    ],
-    "level": "36",
-    "damage": "50-60",
-    "stats": "Crit +6, Magic Def +1, Pierce Def +1, Melee Def +1, WIS +5, LUK +3, DEX +4, Bonus +2",
-    "resists": "Water +4, Ice +6",
-    "rarity": "5",
-    "itemType": "Dagger",
-    "obtainMethods": [
-      {
-        "location": "KhyRhian Outpost",
-        "price": "N/A",
-        "priceType": "free",
-        "sellback": "150 Gold",
-        "daRequired": false
-      }
-    ],
-    "alsoSee": [
-      {
-        "name": "Eshrva",
-        "slug": "weapon-eshrva",
-        "type": "weapon",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19660733"
-      }
-    ],
-    "tags": [
-      "ice",
-      "free"
-    ],
-    "daRequired": false
-  },
-  {
     "id": "weapon-icy-heart-s-blade",
     "name": "Icy Heart's Blade",
     "slug": "weapon-icy-heart-s-blade",
@@ -3690,7 +3690,8 @@
     "familyName": "Independence",
     "slug": "weapon-independence",
     "aliasSlugs": [
-      "weapon-independence-all-versions"
+      "weapon-independence-all-versions",
+      "weapon-base-independence"
     ],
     "type": "weapon",
     "subtype": "dagger",
@@ -3797,7 +3798,17 @@
         "activation": "on-hit",
         "trigger": "Your weapon special activates on hit.",
         "effect": "Applies 'Spirit of Fire', 'Spirit of Ice', or 'Spirit of Water' at random, a 40% Magic Fire/Ice/Water weapon damage DoT effect, to target for 5 turns. (Pop-up: Spirit of Independence!) (Rate: 10%)",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-OnHit.png"
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-OnHit.png",
+        "specialImageUrls": [
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Liberty-SpecialFire.png",
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Liberty-SpecialIce.png",
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Liberty-SpecialWater.png"
+        ],
+        "specialImageCaptions": [
+          "Spirit of Fire",
+          "Spirit of Ice",
+          "Spirit of Water"
+        ]
       },
       "alsoSee": []
     },
@@ -4215,8 +4226,8 @@
     "notes": "Infected Megabits is approximately 200% smaller than Infected Megabytes.",
     "alsoSee": [
       {
-        "name": "Infected Megabytes (All Versions)",
-        "slug": "weapon-infected-megabytes-all-versions",
+        "name": "Infected Megabytes",
+        "slug": "weapon-infected-megabytes",
         "type": "weapon",
         "url": "https://forums2.battleon.com/f/tm.asp?m=22425871"
       }
@@ -4483,7 +4494,15 @@
       "weapon-invader-s-beach-ball-v",
       "weapon-invader-s-beach-ball-vi",
       "weapon-invader-s-beach-ball-vii",
-      "weapon-invader-s-beach-ball-viii"
+      "weapon-invader-s-beach-ball-viii",
+      "weapon-i-invader-s-beach-ball",
+      "weapon-ii-invader-s-beach-ball",
+      "weapon-iii-invader-s-beach-ball",
+      "weapon-iv-invader-s-beach-ball",
+      "weapon-v-invader-s-beach-ball",
+      "weapon-vi-invader-s-beach-ball",
+      "weapon-vii-invader-s-beach-ball",
+      "weapon-viii-invader-s-beach-ball"
     ],
     "type": "weapon",
     "subtype": "dagger",
@@ -4895,7 +4914,19 @@
       "weapon-jack-o-daggers-ix",
       "weapon-jack-o-daggers-x",
       "weapon-jack-o-daggers-xi",
-      "weapon-jack-o-daggers-xii"
+      "weapon-jack-o-daggers-xii",
+      "weapon-i-jack-o-daggers",
+      "weapon-ii-jack-o-daggers",
+      "weapon-iii-jack-o-daggers",
+      "weapon-iv-jack-o-daggers",
+      "weapon-v-jack-o-daggers",
+      "weapon-vi-jack-o-daggers",
+      "weapon-vii-jack-o-daggers",
+      "weapon-viii-jack-o-daggers",
+      "weapon-ix-jack-o-daggers",
+      "weapon-x-jack-o-daggers",
+      "weapon-xi-jack-o-daggers",
+      "weapon-xii-jack-o-daggers"
     ],
     "type": "weapon",
     "subtype": "dagger",
@@ -5305,7 +5336,9 @@
     "familyName": "Jack's Carver",
     "slug": "weapon-jack-s-carver",
     "aliasSlugs": [
-      "weapon-jack-s-carver-all-versions"
+      "weapon-jack-s-carver-all-versions",
+      "weapon-base-jack-s-carver",
+      "weapon-dc-jack-s-carver"
     ],
     "type": "weapon",
     "subtype": "dagger",
@@ -5933,7 +5966,17 @@
       "weapon-jawbreaker-ii",
       "weapon-jawbreaker-iii",
       "weapon-jawbreaker-iv",
-      "weapon-jawbreaker-v"
+      "weapon-jawbreaker-v",
+      "weapon-i-jawbreaker",
+      "weapon-i-dc-jawbreaker",
+      "weapon-ii-jawbreaker",
+      "weapon-ii-dc-jawbreaker",
+      "weapon-iii-jawbreaker",
+      "weapon-iii-dc-jawbreaker",
+      "weapon-iv-jawbreaker",
+      "weapon-iv-dc-jawbreaker",
+      "weapon-v-jawbreaker",
+      "weapon-v-dc-jawbreaker"
     ],
     "type": "weapon",
     "subtype": "dagger",
@@ -6250,54 +6293,6 @@
     "levelRange": "I-V"
   },
   {
-    "id": "weapon-jet-altar-dagger",
-    "name": "Jet Altar Dagger",
-    "slug": "weapon-jet-altar-dagger",
-    "type": "weapon",
-    "subtype": "dagger",
-    "description": "Hewn from the Stone around the ChaosWeaver temple altar, this dagger will slice through the strongest of enemies!",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18551061",
-    "releaseDate": "",
-    "imageUrl": "http://i202.photobucket.com/albums/aa185/gmill711/Dragon%20Fable/AlterDagger.png",
-    "elements": [
-      "STO"
-    ],
-    "level": "51",
-    "damage": "62-74",
-    "stats": "Crit +4, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +4, DEX +5, Bonus +4",
-    "resists": "Wind +7, Stone +7, Immobility +4",
-    "rarity": "5",
-    "itemType": "Dagger",
-    "obtainMethods": [
-      {
-        "location": "Altar Hill",
-        "price": "N/A",
-        "priceType": "free",
-        "sellback": "100 Gold",
-        "daRequired": false
-      }
-    ],
-    "alsoSee": [
-      {
-        "name": "Obsidian Altar Dagger",
-        "slug": "weapon-obsidian-altar-dagger",
-        "type": "weapon",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=18551075"
-      },
-      {
-        "name": "Onyx Altar Dagger",
-        "slug": "weapon-onyx-altar-dagger",
-        "type": "weapon",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=18551054"
-      }
-    ],
-    "tags": [
-      "sto",
-      "free"
-    ],
-    "daRequired": false
-  },
-  {
     "id": "weapon-jib",
     "name": "Jib",
     "slug": "weapon-jib",
@@ -6337,30 +6332,14 @@
     "familyName": "Jing's Dagger",
     "slug": "weapon-jing-s-dagger",
     "aliasSlugs": [
-      "weapon-resident-jing-s-dagger",
-      "weapon-sir-jing-s-dagger",
       "weapon-jing-s-dagger-all-versions",
-      "weapon-sir-jing-s-dagger-i",
-      "weapon-sir-jing-s-dagger-ii",
-      "weapon-sir-jing-s-dagger-iii",
-      "weapon-sir-jing-s-dagger-iv",
-      "weapon-sir-jing-s-dagger-v",
-      "weapon-sir-jing-s-dagger-vi",
-      "weapon-sir-jing-s-dagger-vii",
-      "weapon-sir-jing-s-dagger-viii",
-      "weapon-sir-jing-s-dagger-ix"
+      "weapon-resident-jing-s-dagger"
     ],
     "type": "weapon",
     "subtype": "dagger",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=6698589",
     "familyOrigin": "cross-post",
     "familySources": [
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19876530",
-        "title": "DF Encyclopedia: Resident Jing's Dagger",
-        "variantLabel": "Resident Jing's Dagger",
-        "isPrimary": true
-      },
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=6698589",
         "title": "DF Encyclopedia: Sir Jing's Dagger",
@@ -6372,6 +6351,12 @@
         "title": "DF Encyclopedia: Sir Jing's Dagger I",
         "variantLabel": "Sir Jing's Dagger I",
         "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=19876530",
+        "title": "DF Encyclopedia: Resident Jing's Dagger",
+        "variantLabel": "Resident Jing's Dagger",
+        "isPrimary": true
       },
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=22311686",
@@ -6430,8 +6415,8 @@
       "notes": "Weapon previously required Level 2 to equip; this was raised to Level 5 on March 21st, 2025.",
       "alsoSee": [
         {
-          "name": "Sir Jing's Dagger (I-IX)",
-          "slug": "weapon-sir-jing-s-dagger-i-ix",
+          "name": "Sir Jing's Dagger",
+          "slug": "weapon-sir-jing-s-dagger",
           "type": "weapon",
           "url": "https://forums2.battleon.com/f/tm.asp?m=6698589"
         }
@@ -6786,7 +6771,13 @@
         "activation": "on-hit",
         "trigger": "Your weapon special activates on hit.",
         "effect": "+30% damage on targets of 'Reptilian' race. [Pop-up: Jova's spirit enraged! (Damage bonus)] (Rate: 100%)\n  • During Arena at the Edge of Time challenges, damage bonus is reduced to +10%.",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-OnHit.png"
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-OnHit.png",
+        "specialImageUrls": [
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Jova'sRage-Special.png"
+        ],
+        "specialImageCaptions": [
+          "Appearance"
+        ]
       },
       "alsoSee": []
     },
@@ -7035,7 +7026,9 @@
       "weapon-juliet-s-dagger-mark-2-mark-3-all-versions",
       "weapon-juliet-s-dagger",
       "weapon-juliet-s-dagger-mark-2",
-      "weapon-juliet-s-dagger-mark-3"
+      "weapon-juliet-s-dagger-mark-3",
+      "weapon-mark-2-juliet-s-dagger",
+      "weapon-mark-3-juliet-s-dagger"
     ],
     "type": "weapon",
     "subtype": "dagger",
@@ -7167,7 +7160,8 @@
     "slug": "weapon-kaaros-alleri-avi",
     "aliasSlugs": [
       "weapon-kaaros-alleri-avi-all-versions",
-      "weapon-kaaros-alleri"
+      "weapon-kaaros-alleri",
+      "weapon-base-kaaros-alleri"
     ],
     "type": "weapon",
     "subtype": "dagger",
@@ -7266,7 +7260,9 @@
     "aliasSlugs": [
       "weapon-high-kaavi",
       "weapon-mighty-kaavi",
-      "weapon-kaavi-all-versions"
+      "weapon-supreme-kaavi",
+      "weapon-kaavi-all-versions",
+      "weapon-base-kaavi"
     ],
     "type": "weapon",
     "subtype": "dagger",
@@ -7274,21 +7270,27 @@
     "familyOrigin": "cross-post",
     "familySources": [
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19345356",
-        "title": "DF Encyclopedia: High Kaavi",
-        "variantLabel": "High Kaavi",
-        "isPrimary": true
-      },
-      {
         "url": "https://forums2.battleon.com/f/tm.asp?m=16665198",
         "title": "DF Encyclopedia: Kaavi",
         "variantLabel": "Kaavi",
         "isPrimary": false
       },
       {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=19345356",
+        "title": "DF Encyclopedia: High Kaavi",
+        "variantLabel": "High Kaavi",
+        "isPrimary": true
+      },
+      {
         "url": "https://forums2.battleon.com/f/tm.asp?m=19345350",
         "title": "DF Encyclopedia: Mighty Kaavi",
         "variantLabel": "Mighty Kaavi",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=19345342",
+        "title": "DF Encyclopedia: Supreme Kaavi",
+        "variantLabel": "Supreme Kaavi",
         "isPrimary": false
       }
     ],
@@ -7297,14 +7299,7 @@
       "description": "An aeromancer took a short length of ribbon and gave it to a small wind elemental to play with. When she saw what a pretty shape it made, she kept it that way. This item requires a Dragon Amulet.",
       "imageUrl": "http://i202.photobucket.com/albums/aa185/gmill711/Dragon%20Fable/Kaavi.png",
       "element": "WIN",
-      "alsoSee": [
-        {
-          "name": "Supreme Kaavi",
-          "slug": "weapon-supreme-kaavi",
-          "type": "weapon",
-          "url": "https://forums2.battleon.com/f/tm.asp?m=19345342"
-        }
-      ]
+      "alsoSee": []
     },
     "levelVariants": [
       {
@@ -7381,6 +7376,31 @@
         "resists": "Nature +2, Energy +5",
         "rarity": "7",
         "itemType": "Dagger"
+      },
+      {
+        "levelNumber": 50,
+        "levelDisplay": "50",
+        "actualLevel": 50,
+        "variantName": "Supreme",
+        "name": "Supreme Kaavi",
+        "damage": "65-71",
+        "stats": "Crit +3, Magic Def +2, Pierce Def +2, Melee Def +2, END +4, LUK +4, DEX +4",
+        "obtainVariants": [
+          {
+            "location": "Questions",
+            "price": "N/A",
+            "priceType": "free",
+            "sellback": "135 Gold",
+            "daRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=19345342",
+        "description": "An aeromancer took a short length of ribbon and gave it to a small wind elemental to play with. When she saw what a pretty shape it made, she kept it that way. This item requires a Dragon Amulet.",
+        "imageUrl": "http://i202.photobucket.com/albums/aa185/gmill711/Dragon%20Fable/Kaavi.png",
+        "element": "WIN",
+        "resists": "Fire +4, Immobility +1",
+        "rarity": "7",
+        "itemType": "Dagger"
       }
     ],
     "category": "Weapon",
@@ -7397,7 +7417,7 @@
     "elements": [
       "WIN"
     ],
-    "levelRange": "23-43"
+    "levelRange": "23-50"
   },
   {
     "id": "weapon-karon-s-dagger",
@@ -7407,7 +7427,10 @@
       "weapon-karon-s-dagger-i-ii-iii",
       "weapon-karon-s-dagger-all-versions",
       "weapon-karon-s-dagger-ii",
-      "weapon-karon-s-dagger-iii"
+      "weapon-karon-s-dagger-iii",
+      "weapon-base-karon-s-dagger",
+      "weapon-ii-karon-s-dagger",
+      "weapon-iii-karon-s-dagger"
     ],
     "type": "weapon",
     "subtype": "dagger",
@@ -8379,28 +8402,29 @@
     "familyName": "Kilhoh Blade",
     "slug": "weapon-kilhoh-blade",
     "aliasSlugs": [
+      "weapon-blistering-kilhoh-blade",
+      "weapon-burning-kilhoh-blade",
+      "weapon-fiery-kilhoh-blade",
+      "weapon-hot-kilhoh-blade",
+      "weapon-ignited-kilhoh-blade",
+      "weapon-kindled-kilhoh-blade",
       "weapon-red-hot-kilhoh-blade",
       "weapon-scorching-kilhoh-blade",
       "weapon-sizzling-kilhoh-blade",
       "weapon-smoldering-kilhoh-blade",
       "weapon-kilhoh-blade-all-versions",
-      "weapon-hot-kilhoh-blade",
-      "weapon-burning-kilhoh-blade",
-      "weapon-ignited-kilhoh-blade",
-      "weapon-blistering-kilhoh-blade",
-      "weapon-kindled-kilhoh-blade",
-      "weapon-fiery-kilhoh-blade"
+      "weapon-base-kilhoh-blade"
     ],
     "type": "weapon",
     "subtype": "dagger",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20014398",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20014476",
     "familyOrigin": "cross-post",
     "familySources": [
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20014588",
-        "title": "DF Encyclopedia: Fiery Kilhoh Blade",
-        "variantLabel": "Fiery Kilhoh Blade",
-        "isPrimary": true
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20014398",
+        "title": "DF Encyclopedia: Kilhoh Blade",
+        "variantLabel": "Kilhoh Blade",
+        "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=20014645",
@@ -8409,16 +8433,16 @@
         "isPrimary": false
       },
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20014620",
-        "title": "DF Encyclopedia: Ignited Kilhoh Blade",
-        "variantLabel": "Ignited Kilhoh Blade",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20014706",
+        "title": "DF Encyclopedia: Sizzling Kilhoh Blade",
+        "variantLabel": "Sizzling Kilhoh Blade",
         "isPrimary": false
       },
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20014476",
-        "title": "DF Encyclopedia: Blistering Kilhoh Blade",
-        "variantLabel": "Blistering Kilhoh Blade",
-        "isPrimary": true
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20015180",
+        "title": "DF Encyclopedia: Smoldering Kilhoh Blade",
+        "variantLabel": "Smoldering Kilhoh Blade",
+        "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=20015174",
@@ -8427,15 +8451,9 @@
         "isPrimary": false
       },
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20014398",
-        "title": "DF Encyclopedia: Kilhoh Blade",
-        "variantLabel": "Kilhoh Blade",
-        "isPrimary": true
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20015142",
-        "title": "DF Encyclopedia: Kindled Kilhoh Blade",
-        "variantLabel": "Kindled Kilhoh Blade",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20014620",
+        "title": "DF Encyclopedia: Ignited Kilhoh Blade",
+        "variantLabel": "Ignited Kilhoh Blade",
         "isPrimary": false
       },
       {
@@ -8451,15 +8469,21 @@
         "isPrimary": false
       },
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20014706",
-        "title": "DF Encyclopedia: Sizzling Kilhoh Blade",
-        "variantLabel": "Sizzling Kilhoh Blade",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20014476",
+        "title": "DF Encyclopedia: Blistering Kilhoh Blade",
+        "variantLabel": "Blistering Kilhoh Blade",
+        "isPrimary": true
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20015142",
+        "title": "DF Encyclopedia: Kindled Kilhoh Blade",
+        "variantLabel": "Kindled Kilhoh Blade",
         "isPrimary": false
       },
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20015180",
-        "title": "DF Encyclopedia: Smoldering Kilhoh Blade",
-        "variantLabel": "Smoldering Kilhoh Blade",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20014588",
+        "title": "DF Encyclopedia: Fiery Kilhoh Blade",
+        "variantLabel": "Fiery Kilhoh Blade",
         "isPrimary": false
       }
     ],
@@ -9008,7 +9032,7 @@
         "daRequired": false
       }
     ],
-    "notes": "Weapon was previously available from the quest War At See!.\nThe following changes were implemented on February 27th, 2026:\n  • Previously had the description: This mighty wind dagger is the latest in elemental magic. The mighty gusts that come from swinging it cause your enemies eyes to tear up making it harder for them to hit you.\n  • Sellback was lowered from 200 Gold to 0 Gold\n  • Level's requirement was lowered from 22 to 15.\n  • Damage range was modified from 38-46 to 34-40.\n  • Block +1 and Parry +1 stats were added.",
+    "notes": "Weapon was previously available from the quest War At See!.\nThe following changes were implemented on February 27th, 2026:\n • Previously had the description: This mighty wind dagger is the latest in elemental magic. The mighty gusts that come from swinging it cause your enemies eyes to tear up making it harder for them to hit you.\n • Sellback was lowered from 200 Gold to 0 Gold\n • Level's requirement was lowered from 22 to 15.\n • Damage range was modified from 38-46 to 34-40.\n • Block +1 and Parry +1 stats were added.",
     "tags": [
       "win",
       "free"
@@ -9504,6 +9528,7 @@
     "description": "This magical dagger was once used by the mercenary Krasya. A talented mage who escaped the sight of The Rose, she enchanted this dagger herself! (Cosmetic)",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22426299",
     "releaseDate": "",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Krasya'sFang.png",
     "elements": [
       "POI"
     ],
@@ -9568,7 +9593,7 @@
         "daRequired": false
       }
     ],
-    "notes": "Formula for temporary weapon damage:\n  • quote:\nAverage damage formula: SQRT(Level)*10, rounded down; min/max damage values are generated randomly by subtracting/adding a value between 1 and 4 inclusive.\nWhile this weapon's item type is Dagger, its damage type is Melee instead of Pierce.\nIf obtained via a DA chest, weapon's Pierce Def will not be displayed on the Item Detail panel, however it will still be applied.",
+    "notes": "Formula for temporary weapon damage:\n • quote:\nAverage damage formula: SQRT(Level)*10, rounded down; min/max damage values are generated randomly by subtracting/adding a value between 1 and 4 inclusive.\nWhile this weapon's item type is Dagger, its damage type is Melee instead of Pierce.\nIf obtained via a DA chest, weapon's Pierce Def will not be displayed on the Item Detail panel, however it will still be applied.",
     "tags": [
       "ene",
       "free"
@@ -9599,6 +9624,12 @@
       "trigger": "Activate your weapon's special!",
       "effect": "5 hits of 30% Ice damage, amounting to 150% damage; applies 'Larimar Freeze' to target, stunning it for 1 turn.",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-Ice.png",
+      "specialImageUrls": [
+        "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/LarimarGemcutter-Special.gif"
+      ],
+      "specialImageCaptions": [
+        "Appearance"
+      ],
       "cooldown": "20 - [(Player LUK/50), rounded down]",
       "chargeTime": "10 - [(Player LUK/100), rounded down]"
     },
@@ -9684,7 +9715,17 @@
       "weapon-leftover-dagger-mk-vii",
       "weapon-leftover-dagger-mk-viii",
       "weapon-leftover-dagger-mk-ix",
-      "weapon-leftover-dagger-mk-x"
+      "weapon-leftover-dagger-mk-x",
+      "weapon-i-leftover-dagger-mk",
+      "weapon-ii-leftover-dagger-mk",
+      "weapon-iii-leftover-dagger-mk",
+      "weapon-iv-leftover-dagger-mk",
+      "weapon-v-leftover-dagger-mk",
+      "weapon-vi-leftover-dagger-mk",
+      "weapon-vii-leftover-dagger-mk",
+      "weapon-viii-leftover-dagger-mk",
+      "weapon-ix-leftover-dagger-mk",
+      "weapon-x-leftover-dagger-mk"
     ],
     "type": "weapon",
     "subtype": "dagger",
@@ -10074,41 +10115,35 @@
     "familyName": "Leg Bone",
     "slug": "weapon-leg-bone",
     "aliasSlugs": [
+      "weapon-crispy-leg-bone",
+      "weapon-deep-fried-leg-bone",
+      "weapon-delectable-leg-bone",
+      "weapon-delicious-leg-bone",
+      "weapon-greasy-leg-bone",
+      "weapon-hearty-leg-bone",
+      "weapon-juicy-leg-bone",
+      "weapon-leftover-leg-bone",
+      "weapon-oven-baked-leg-bone",
       "weapon-savory-leg-bone",
       "weapon-tasty-leg-bone",
       "weapon-yummy-leg-bone",
-      "weapon-leg-bone-all-versions",
-      "weapon-greasy-leg-bone",
-      "weapon-leftover-leg-bone",
-      "weapon-crispy-leg-bone",
-      "weapon-delicious-leg-bone",
-      "weapon-juicy-leg-bone",
-      "weapon-hearty-leg-bone",
-      "weapon-delectable-leg-bone",
-      "weapon-deep-fried-leg-bone",
-      "weapon-oven-baked-leg-bone"
+      "weapon-leg-bone-all-versions"
     ],
     "type": "weapon",
     "subtype": "dagger",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18113306",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18113314",
     "familyOrigin": "cross-post",
     "familySources": [
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=11934710",
         "title": "DF Encyclopedia: Greasy Leg Bone",
         "variantLabel": "Greasy Leg Bone",
-        "isPrimary": true
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=18113328",
-        "title": "DF Encyclopedia: Hearty Leg Bone",
-        "variantLabel": "Hearty Leg Bone",
         "isPrimary": false
       },
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=18113324",
-        "title": "DF Encyclopedia: Juicy Leg Bone",
-        "variantLabel": "Juicy Leg Bone",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=18113306",
+        "title": "DF Encyclopedia: Leftover Leg Bone",
+        "variantLabel": "Leftover Leg Bone",
         "isPrimary": false
       },
       {
@@ -10118,15 +10153,9 @@
         "isPrimary": true
       },
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21862332",
-        "title": "DF Encyclopedia: Deep Fried Leg Bone",
-        "variantLabel": "Deep Fried Leg Bone",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=18113330",
-        "title": "DF Encyclopedia: Delectable Leg Bone",
-        "variantLabel": "Delectable Leg Bone",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=18113318",
+        "title": "DF Encyclopedia: Yummy Leg Bone",
+        "variantLabel": "Yummy Leg Bone",
         "isPrimary": false
       },
       {
@@ -10136,21 +10165,21 @@
         "isPrimary": false
       },
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=18113306",
-        "title": "DF Encyclopedia: Leftover Leg Bone",
-        "variantLabel": "Leftover Leg Bone",
-        "isPrimary": true
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21862334",
-        "title": "DF Encyclopedia: Oven Baked Leg Bone",
-        "variantLabel": "Oven Baked Leg Bone",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=18113324",
+        "title": "DF Encyclopedia: Juicy Leg Bone",
+        "variantLabel": "Juicy Leg Bone",
         "isPrimary": false
       },
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=18113335",
-        "title": "DF Encyclopedia: Savory Leg Bone",
-        "variantLabel": "Savory Leg Bone",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=18113328",
+        "title": "DF Encyclopedia: Hearty Leg Bone",
+        "variantLabel": "Hearty Leg Bone",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=18113330",
+        "title": "DF Encyclopedia: Delectable Leg Bone",
+        "variantLabel": "Delectable Leg Bone",
         "isPrimary": false
       },
       {
@@ -10160,9 +10189,21 @@
         "isPrimary": false
       },
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=18113318",
-        "title": "DF Encyclopedia: Yummy Leg Bone",
-        "variantLabel": "Yummy Leg Bone",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=18113335",
+        "title": "DF Encyclopedia: Savory Leg Bone",
+        "variantLabel": "Savory Leg Bone",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21862332",
+        "title": "DF Encyclopedia: Deep Fried Leg Bone",
+        "variantLabel": "Deep Fried Leg Bone",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21862334",
+        "title": "DF Encyclopedia: Oven Baked Leg Bone",
+        "variantLabel": "Oven Baked Leg Bone",
         "isPrimary": false
       }
     ],
@@ -10540,7 +10581,8 @@
     "familyName": "Legendary Magma Dagger",
     "slug": "weapon-legendary-magma-dagger",
     "aliasSlugs": [
-      "weapon-legendary-magma-dagger-all-versions"
+      "weapon-legendary-magma-dagger-all-versions",
+      "weapon-base-legendary-magma-dagger"
     ],
     "type": "weapon",
     "subtype": "dagger",
@@ -10657,7 +10699,8 @@
     "familyName": "Liberty Candle Dagger",
     "slug": "weapon-liberty-candle-dagger",
     "aliasSlugs": [
-      "weapon-liberty-candle-dagger-all-versions"
+      "weapon-liberty-candle-dagger-all-versions",
+      "weapon-base-liberty-candle-dagger"
     ],
     "type": "weapon",
     "subtype": "dagger",
@@ -10695,7 +10738,7 @@
         "isPrimary": false
       },
       {
-        "url": "https://forums2.battleon.com/f/fb.asp?m=17824640",
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22001331",
         "title": "DF Encyclopedia: Liberty Candle Dagger",
         "variantLabel": "Liberty Candle Dagger",
         "isPrimary": false
@@ -10731,7 +10774,7 @@
         "isPrimary": false
       },
       {
-        "url": "https://forums2.battleon.com/f/fb.asp?m=22001331",
+        "url": "https://forums2.battleon.com/f/fb.asp?m=17824640",
         "title": "DF Encyclopedia: Liberty Candle Dagger",
         "variantLabel": "Liberty Candle Dagger",
         "isPrimary": false
@@ -10768,7 +10811,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 1,
+        "levelNumber": 10,
         "levelDisplay": "10",
         "actualLevel": 10,
         "name": "Liberty Candle Dagger",
@@ -10792,7 +10835,7 @@
         "variantName": "(Base)"
       },
       {
-        "levelNumber": 2,
+        "levelNumber": 20,
         "levelDisplay": "20",
         "actualLevel": 20,
         "name": "Liberty Candle Dagger",
@@ -10816,7 +10859,7 @@
         "variantName": "(Base)"
       },
       {
-        "levelNumber": 3,
+        "levelNumber": 30,
         "levelDisplay": "30",
         "actualLevel": 30,
         "name": "Liberty Candle Dagger",
@@ -10840,7 +10883,7 @@
         "variantName": "(Base)"
       },
       {
-        "levelNumber": 4,
+        "levelNumber": 40,
         "levelDisplay": "40",
         "actualLevel": 40,
         "name": "Liberty Candle Dagger",
@@ -10864,7 +10907,7 @@
         "variantName": "(Base)"
       },
       {
-        "levelNumber": 5,
+        "levelNumber": 50,
         "levelDisplay": "50",
         "actualLevel": 50,
         "name": "Liberty Candle Dagger",
@@ -10888,7 +10931,7 @@
         "variantName": "(Base)"
       },
       {
-        "levelNumber": 6,
+        "levelNumber": 60,
         "levelDisplay": "60",
         "actualLevel": 60,
         "name": "Liberty Candle Dagger",
@@ -10912,7 +10955,7 @@
         "variantName": "(Base)"
       },
       {
-        "levelNumber": 7,
+        "levelNumber": 10,
         "levelDisplay": "10",
         "actualLevel": 10,
         "name": "Liberty Candle Dagger",
@@ -10936,7 +10979,7 @@
         "variantName": "(Base)"
       },
       {
-        "levelNumber": 8,
+        "levelNumber": 20,
         "levelDisplay": "20",
         "actualLevel": 20,
         "name": "Liberty Candle Dagger",
@@ -10960,7 +11003,7 @@
         "variantName": "(Base)"
       },
       {
-        "levelNumber": 9,
+        "levelNumber": 30,
         "levelDisplay": "30",
         "actualLevel": 30,
         "name": "Liberty Candle Dagger",
@@ -10984,7 +11027,7 @@
         "variantName": "(Base)"
       },
       {
-        "levelNumber": 10,
+        "levelNumber": 40,
         "levelDisplay": "40",
         "actualLevel": 40,
         "name": "Liberty Candle Dagger",
@@ -11008,7 +11051,7 @@
         "variantName": "(Base)"
       },
       {
-        "levelNumber": 11,
+        "levelNumber": 50,
         "levelDisplay": "50",
         "actualLevel": 50,
         "name": "Liberty Candle Dagger",
@@ -11032,7 +11075,7 @@
         "variantName": "(Base)"
       },
       {
-        "levelNumber": 12,
+        "levelNumber": 60,
         "levelDisplay": "60",
         "actualLevel": 60,
         "name": "Liberty Candle Dagger",
@@ -11056,7 +11099,7 @@
         "variantName": "(Base)"
       },
       {
-        "levelNumber": 13,
+        "levelNumber": 70,
         "levelDisplay": "70",
         "actualLevel": 70,
         "name": "Liberty Candle Dagger",
@@ -11080,7 +11123,7 @@
         "variantName": "(Base)"
       },
       {
-        "levelNumber": 14,
+        "levelNumber": 80,
         "levelDisplay": "80",
         "actualLevel": 80,
         "name": "Liberty Candle Dagger",
@@ -11166,7 +11209,11 @@
       "weapon-lifenel-daggers-i",
       "weapon-lifenel-daggers-ii",
       "weapon-lifenel-daggers-iii",
-      "weapon-lifenel-daggers-iv"
+      "weapon-lifenel-daggers-iv",
+      "weapon-i-lifenel-daggers",
+      "weapon-ii-lifenel-daggers",
+      "weapon-iii-lifenel-daggers",
+      "weapon-iv-lifenel-daggers"
     ],
     "type": "weapon",
     "subtype": "dagger",
@@ -11323,15 +11370,15 @@
     "familyName": "Lights Knife",
     "slug": "weapon-lights-knife",
     "aliasSlugs": [
-      "weapon-silver-lights-knife",
-      "weapon-violet-lights-knife",
-      "weapon-lights-knife-all-versions",
+      "weapon-azure-lights-knife",
+      "weapon-cobalt-lights-knife",
       "weapon-crimson-lights-knife",
       "weapon-emerald-lights-knife",
-      "weapon-azure-lights-knife",
       "weapon-golden-lights-knife",
       "weapon-platinum-lights-knife",
-      "weapon-cobalt-lights-knife"
+      "weapon-silver-lights-knife",
+      "weapon-violet-lights-knife",
+      "weapon-lights-knife-all-versions"
     ],
     "type": "weapon",
     "subtype": "dagger",
@@ -11339,15 +11386,15 @@
     "familyOrigin": "cross-post",
     "familySources": [
       {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=18967994",
+        "title": "DF Encyclopedia: Crimson Lights Knife",
+        "variantLabel": "Crimson Lights Knife",
+        "isPrimary": false
+      },
+      {
         "url": "https://forums2.battleon.com/f/tm.asp?m=18967996",
         "title": "DF Encyclopedia: Emerald Lights Knife",
         "variantLabel": "Emerald Lights Knife",
-        "isPrimary": true
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=17123055",
-        "title": "DF Encyclopedia: Golden Lights Knife",
-        "variantLabel": "Golden Lights Knife",
         "isPrimary": false
       },
       {
@@ -11357,21 +11404,9 @@
         "isPrimary": true
       },
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21882502",
-        "title": "DF Encyclopedia: Cobalt Lights Knife",
-        "variantLabel": "Cobalt Lights Knife",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=18967994",
-        "title": "DF Encyclopedia: Crimson Lights Knife",
-        "variantLabel": "Crimson Lights Knife",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21881936",
-        "title": "DF Encyclopedia: Platinum Lights Knife",
-        "variantLabel": "Platinum Lights Knife",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=18967999",
+        "title": "DF Encyclopedia: Violet Lights Knife",
+        "variantLabel": "Violet Lights Knife",
         "isPrimary": false
       },
       {
@@ -11381,9 +11416,21 @@
         "isPrimary": false
       },
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=18967999",
-        "title": "DF Encyclopedia: Violet Lights Knife",
-        "variantLabel": "Violet Lights Knife",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=17123055",
+        "title": "DF Encyclopedia: Golden Lights Knife",
+        "variantLabel": "Golden Lights Knife",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21881936",
+        "title": "DF Encyclopedia: Platinum Lights Knife",
+        "variantLabel": "Platinum Lights Knife",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21882502",
+        "title": "DF Encyclopedia: Cobalt Lights Knife",
+        "variantLabel": "Cobalt Lights Knife",
         "isPrimary": false
       }
     ],
@@ -11427,6 +11474,12 @@
         "resists": "Fire +1",
         "rarity": "15",
         "itemType": "Dagger",
+        "weaponSpecial": {
+          "activation": "on-hit",
+          "trigger": "Your weapon special activates on hit.",
+          "effect": "Recovers 5% of player's max HP. (Rate: 5%)",
+          "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-OnHit.png"
+        },
         "notes": "Weapon is animated; the lights on the weapon flash red/blue/yellow/green."
       },
       {
@@ -11453,6 +11506,12 @@
         "resists": "Fire +3",
         "rarity": "15",
         "itemType": "Dagger",
+        "weaponSpecial": {
+          "activation": "on-hit",
+          "trigger": "Your weapon special activates on hit.",
+          "effect": "Recovers 5% of player's max HP. (Rate: 5%)",
+          "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-OnHit.png"
+        },
         "notes": "Weapon is animated; the lights on the weapon flash red/blue/yellow/green."
       },
       {
@@ -11479,6 +11538,12 @@
         "resists": "Fire +5",
         "rarity": "15",
         "itemType": "Dagger",
+        "weaponSpecial": {
+          "activation": "on-hit",
+          "trigger": "Your weapon special activates on hit.",
+          "effect": "Recovers 5% of player's max HP. (Rate: 5%)",
+          "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-OnHit.png"
+        },
         "notes": "Weapon is animated; the lights on the weapon flash red/blue/yellow/green."
       },
       {
@@ -11505,6 +11570,12 @@
         "resists": "Fire +7",
         "rarity": "15",
         "itemType": "Dagger",
+        "weaponSpecial": {
+          "activation": "on-hit",
+          "trigger": "Your weapon special activates on hit.",
+          "effect": "Recovers 5% of player's max HP. (Rate: 5%)",
+          "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-OnHit.png"
+        },
         "notes": "Weapon is animated; the lights on the weapon flash red/blue/yellow/green."
       },
       {
@@ -11531,6 +11602,12 @@
         "resists": "Fire +9",
         "rarity": "15",
         "itemType": "Dagger",
+        "weaponSpecial": {
+          "activation": "on-hit",
+          "trigger": "Your weapon special activates on hit.",
+          "effect": "Recovers 5% of player's max HP. (Rate: 5%)",
+          "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-OnHit.png"
+        },
         "notes": "Weapon is animated; the lights on the weapon flash red/blue/yellow/green."
       },
       {
@@ -11557,6 +11634,12 @@
         "resists": "Fire +11",
         "rarity": "15",
         "itemType": "Dagger",
+        "weaponSpecial": {
+          "activation": "on-hit",
+          "trigger": "Your weapon special activates on hit.",
+          "effect": "Recovers 5% of player's max HP. (Rate: 5%)",
+          "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-OnHit.png"
+        },
         "notes": "Weapon is animated; the lights on the weapon flash red/blue/yellow/green."
       },
       {
@@ -11583,6 +11666,12 @@
         "resists": "Fire +12, Light +6",
         "rarity": "15",
         "itemType": "Dagger",
+        "weaponSpecial": {
+          "activation": "on-hit",
+          "trigger": "Your weapon special activates on hit.",
+          "effect": "Recovers 5% of player's max HP. (Rate: 5%)",
+          "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-OnHit.png"
+        },
         "notes": "Weapon is animated; the lights on the weapon flash red/blue/yellow/green."
       },
       {
@@ -11609,6 +11698,12 @@
         "resists": "Fire +13, Light +7, Health -2",
         "rarity": "15",
         "itemType": "Dagger",
+        "weaponSpecial": {
+          "activation": "on-hit",
+          "trigger": "Your weapon special activates on hit.",
+          "effect": "Recovers 5% of player's max HP. (Rate: 5%)",
+          "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-OnHit.png"
+        },
         "notes": "Weapon is animated; the lights on the weapon flash red/blue/yellow/green."
       }
     ],
@@ -11690,7 +11785,7 @@
         },
         {
           "url": "https://i.imgur.com/X2xde7e.png",
-          "caption": "Water"
+          "caption": "Element: Fire / Water"
         }
       ],
       "notes": "Click anywhere on this dagger while equipped or shown to shift its appearance between Fire and Water.",
@@ -11939,7 +12034,8 @@
     "slug": "weapon-lizard-dagger",
     "aliasSlugs": [
       "weapon-royal-lizard-dagger",
-      "weapon-lizard-dagger-all-versions"
+      "weapon-lizard-dagger-all-versions",
+      "weapon-base-lizard-dagger"
     ],
     "type": "weapon",
     "subtype": "dagger",
@@ -12121,7 +12217,17 @@
       "weapon-lovely-time-daggers-vii",
       "weapon-lovely-time-daggers-viii",
       "weapon-lovely-time-daggers-ix",
-      "weapon-lovely-time-daggers-x"
+      "weapon-lovely-time-daggers-x",
+      "weapon-i-lovely-time-daggers",
+      "weapon-ii-lovely-time-daggers",
+      "weapon-iii-lovely-time-daggers",
+      "weapon-iv-lovely-time-daggers",
+      "weapon-v-lovely-time-daggers",
+      "weapon-vi-lovely-time-daggers",
+      "weapon-vii-lovely-time-daggers",
+      "weapon-viii-lovely-time-daggers",
+      "weapon-ix-lovely-time-daggers",
+      "weapon-x-lovely-time-daggers"
     ],
     "type": "weapon",
     "subtype": "dagger",
@@ -12518,33 +12624,34 @@
     "familyName": "Luck O' The Sneevish Blade",
     "slug": "weapon-luck-o-the-sneevish-blade",
     "aliasSlugs": [
+      "weapon-fortunate-luck-o-the-sneevish-blade",
+      "weapon-kismet-luck-o-the-sneevish-blade",
       "weapon-winning-luck-o-the-sneevish-blade",
       "weapon-luck-o-the-sneevish-blade-all-versions",
-      "weapon-kismet-luck-o-the-sneevish-blade",
-      "weapon-fortunate-luck-o-the-sneevish-blade"
+      "weapon-base-luck-o-the-sneevish-blade"
     ],
     "type": "weapon",
     "subtype": "dagger",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20172841",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20172838",
     "familyOrigin": "cross-post",
     "familySources": [
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20172838",
-        "title": "DF Encyclopedia: Fortunate Luck O' the Sneevish Blade",
-        "variantLabel": "Fortunate Luck O' the Sneevish Blade",
-        "isPrimary": true
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20172841",
-        "title": "DF Encyclopedia: Kismet Luck O' the Sneevish Blade",
-        "variantLabel": "Kismet Luck O' the Sneevish Blade",
-        "isPrimary": true
-      },
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=20172843",
         "title": "DF Encyclopedia: Luck O' the Sneevish Blade",
         "variantLabel": "Luck O' the Sneevish Blade",
         "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20172841",
+        "title": "DF Encyclopedia: Kismet Luck O' the Sneevish Blade",
+        "variantLabel": "Kismet Luck O' the Sneevish Blade",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20172838",
+        "title": "DF Encyclopedia: Fortunate Luck O' the Sneevish Blade",
+        "variantLabel": "Fortunate Luck O' the Sneevish Blade",
+        "isPrimary": true
       },
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=20169466",
@@ -12694,7 +12801,11 @@
       "weapon-lucky-wakizashi-i",
       "weapon-lucky-wakizashi-ii",
       "weapon-lucky-wakizashi-iii",
-      "weapon-lucky-wakizashi-iv"
+      "weapon-lucky-wakizashi-iv",
+      "weapon-i-lucky-wakizashi",
+      "weapon-ii-lucky-wakizashi",
+      "weapon-iii-lucky-wakizashi",
+      "weapon-iv-lucky-wakizashi"
     ],
     "type": "weapon",
     "subtype": "dagger",
@@ -12855,7 +12966,10 @@
       "weapon-lucky-s-strike-i-ii-iii",
       "weapon-lucky-s-strike-all-versions",
       "weapon-lucky-s-strike-ii",
-      "weapon-lucky-s-strike-iii"
+      "weapon-lucky-s-strike-iii",
+      "weapon-base-lucky-s-strike",
+      "weapon-ii-lucky-s-strike",
+      "weapon-iii-lucky-s-strike"
     ],
     "type": "weapon",
     "subtype": "dagger",
@@ -13022,7 +13136,9 @@
       "weapon-lulub32",
       "weapon-lulub52",
       "weapon-lulub62",
-      "weapon-lulub72"
+      "weapon-lulub72",
+      "weapon-base-lulub",
+      "weapon-dc-lulub"
     ],
     "type": "weapon",
     "subtype": "dagger",
@@ -13894,7 +14010,12 @@
       "weapon-manawood-dagger-ii",
       "weapon-manawood-dagger-iii",
       "weapon-manawood-dagger-iv",
-      "weapon-manawood-dagger-v"
+      "weapon-manawood-dagger-v",
+      "weapon-i-manawood-dagger",
+      "weapon-ii-manawood-dagger",
+      "weapon-iii-manawood-dagger",
+      "weapon-iv-manawood-dagger",
+      "weapon-v-manawood-dagger"
     ],
     "type": "weapon",
     "subtype": "dagger",
@@ -13943,7 +14064,7 @@
         },
         {
           "url": "https://i.imgur.com/WgLCvYu.png",
-          "caption": "Nature"
+          "caption": "Element: Water / Nature"
         }
       ],
       "alsoSee": []
@@ -14096,10 +14217,10 @@
     "familyName": "Maracas",
     "slug": "weapon-maracas",
     "aliasSlugs": [
-      "weapon-clattering-maracas",
+      "weapon-maracas-all-versions",
       "weapon-rattling-maracas",
-      "weapon-shaking-maracas",
-      "weapon-maracas-all-versions"
+      "weapon-clattering-maracas",
+      "weapon-shaking-maracas"
     ],
     "type": "weapon",
     "subtype": "dagger",
@@ -14107,16 +14228,16 @@
     "familyOrigin": "cross-post",
     "familySources": [
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=17587642",
-        "title": "DF Encyclopedia: Clattering Maracas",
-        "variantLabel": "Clattering Maracas",
-        "isPrimary": true
-      },
-      {
         "url": "https://forums2.battleon.com/f/tm.asp?m=17587634",
         "title": "DF Encyclopedia: Rattling Maracas",
         "variantLabel": "Rattling Maracas",
         "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=17587642",
+        "title": "DF Encyclopedia: Clattering Maracas",
+        "variantLabel": "Clattering Maracas",
+        "isPrimary": true
       },
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=17587645",
@@ -14249,6 +14370,12 @@
       "trigger": "Activate your weapon's special!",
       "effect": "1 hit of 150% Metal damage.",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-Metal.png",
+      "specialImageUrls": [
+        "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/MephiticDagger-Special.png"
+      ],
+      "specialImageCaptions": [
+        "Appearance"
+      ],
       "cooldown": "4 - [(Player LUK/50), rounded down], floored at 2",
       "chargeTime": "2 - [(Player LUK/100), rounded down], floored at 1"
     },
@@ -14280,7 +14407,9 @@
     "slug": "weapon-mermaid-s-hunting-knife",
     "aliasSlugs": [
       "weapon-mermaid-s-sharp-hunting-knife",
-      "weapon-mermaid-s-hunting-knife-all-versions"
+      "weapon-mermaid-s-hunting-knife-all-versions",
+      "weapon-base-mermaid-s-hunting-knife",
+      "weapon-sharp-mermaid-s-hunting-knife"
     ],
     "type": "weapon",
     "subtype": "dagger",
@@ -14381,12 +14510,12 @@
     "familyName": "Miasmal Knife",
     "slug": "weapon-miasmal-knife",
     "aliasSlugs": [
+      "weapon-eerie-miasmal-knife",
+      "weapon-ghostly-miasmal-knife",
+      "weapon-haunted-miasmal-knife",
       "weapon-spectral-miasmal-knife",
       "weapon-vexed-miasmal-knife",
-      "weapon-miasmal-knife-all-versions",
-      "weapon-eerie-miasmal-knife",
-      "weapon-haunted-miasmal-knife",
-      "weapon-ghostly-miasmal-knife"
+      "weapon-miasmal-knife-all-versions"
     ],
     "type": "weapon",
     "subtype": "dagger",
@@ -14400,27 +14529,27 @@
         "isPrimary": true
       },
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21733328",
-        "title": "DF Encyclopedia: Ghostly Miasmal Knife",
-        "variantLabel": "Ghostly Miasmal Knife",
-        "isPrimary": false
-      },
-      {
         "url": "https://forums2.battleon.com/f/tm.asp?m=18980977",
         "title": "DF Encyclopedia: Haunted Miasmal Knife",
         "variantLabel": "Haunted Miasmal Knife",
         "isPrimary": false
       },
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=22346340",
-        "title": "DF Encyclopedia: Spectral Miasmal Knife",
-        "variantLabel": "Spectral Miasmal Knife",
-        "isPrimary": false
-      },
-      {
         "url": "https://forums2.battleon.com/f/tm.asp?m=18980991",
         "title": "DF Encyclopedia: Vexed Miasmal Knife",
         "variantLabel": "Vexed Miasmal Knife",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21733328",
+        "title": "DF Encyclopedia: Ghostly Miasmal Knife",
+        "variantLabel": "Ghostly Miasmal Knife",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=22346340",
+        "title": "DF Encyclopedia: Spectral Miasmal Knife",
+        "variantLabel": "Spectral Miasmal Knife",
         "isPrimary": false
       }
     ],
@@ -14649,7 +14778,13 @@
         "activation": "on-hit",
         "trigger": "Your weapon special activates on hit.",
         "effect": "Applies 'Light', a 5-5 Magic Light DoT effect, to target for 5 turns. (Pop-up: Oh! Glowy!) (Rate: 10%)",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-OnHit.png"
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-OnHit.png",
+        "specialImageUrls": [
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Midday-Special.png"
+        ],
+        "specialImageCaptions": [
+          "Appearance"
+        ]
       }
     },
     "levelVariants": [
@@ -14747,28 +14882,17 @@
     "familyName": "Midgard Serpent Chakram",
     "slug": "weapon-midgard-serpent-chakram",
     "aliasSlugs": [
+      "weapon-heavy-midgard-serpent-chakram",
+      "weapon-icy-midgard-serpent-chakram",
       "weapon-sturdy-midgard-serpent-chakram",
       "weapon-midgard-serpent-chakram-all-versions",
-      "weapon-heavy-midgard-serpent-chakram",
-      "weapon-icy-midgard-serpent-chakram"
+      "weapon-base-midgard-serpent-chakram"
     ],
     "type": "weapon",
     "subtype": "dagger",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19619972",
     "familyOrigin": "cross-post",
     "familySources": [
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19619972",
-        "title": "DF Encyclopedia: Heavy Midgard Serpent Chakram",
-        "variantLabel": "Heavy Midgard Serpent Chakram",
-        "isPrimary": true
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19619803",
-        "title": "DF Encyclopedia: Icy Midgard Serpent Chakram",
-        "variantLabel": "Icy Midgard Serpent Chakram",
-        "isPrimary": false
-      },
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=19620858",
         "title": "DF Encyclopedia: Midgard Serpent Chakram",
@@ -14779,6 +14903,18 @@
         "url": "https://forums2.battleon.com/f/tm.asp?m=19621201",
         "title": "DF Encyclopedia: Sturdy Midgard Serpent Chakram",
         "variantLabel": "Sturdy Midgard Serpent Chakram",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=19619972",
+        "title": "DF Encyclopedia: Heavy Midgard Serpent Chakram",
+        "variantLabel": "Heavy Midgard Serpent Chakram",
+        "isPrimary": true
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=19619803",
+        "title": "DF Encyclopedia: Icy Midgard Serpent Chakram",
+        "variantLabel": "Icy Midgard Serpent Chakram",
         "isPrimary": false
       }
     ],
@@ -14964,7 +15100,15 @@
       "weapon-midnight-hope-v",
       "weapon-midnight-hope-vi",
       "weapon-midnight-hope-vii",
-      "weapon-midnight-hope-viii"
+      "weapon-midnight-hope-viii",
+      "weapon-i-midnight-hope",
+      "weapon-ii-midnight-hope",
+      "weapon-iii-midnight-hope",
+      "weapon-iv-midnight-hope",
+      "weapon-v-midnight-hope",
+      "weapon-vi-midnight-hope",
+      "weapon-vii-midnight-hope",
+      "weapon-viii-midnight-hope"
     ],
     "type": "weapon",
     "subtype": "dagger",
@@ -15265,7 +15409,13 @@
       "weapon-midsummer-rogue-s-claw-iii",
       "weapon-midsummer-rogue-s-claw-iv",
       "weapon-midsummer-rogue-s-claw-v",
-      "weapon-midsummer-rogue-s-claw-vi"
+      "weapon-midsummer-rogue-s-claw-vi",
+      "weapon-wizard-s-wand-i-midsummer-rogue-s-claw",
+      "weapon-ii-midsummer-rogue-s-claw",
+      "weapon-iii-midsummer-rogue-s-claw",
+      "weapon-iv-midsummer-rogue-s-claw",
+      "weapon-v-midsummer-rogue-s-claw",
+      "weapon-vi-midsummer-rogue-s-claw"
     ],
     "type": "weapon",
     "subtype": "dagger",
@@ -15534,7 +15684,10 @@
       "weapon-mini-lava-dagger-i-ii-iii",
       "weapon-mini-lava-dagger-all-versions",
       "weapon-mini-lava-dagger-ii",
-      "weapon-mini-lava-dagger-iii"
+      "weapon-mini-lava-dagger-iii",
+      "weapon-base-mini-lava-dagger",
+      "weapon-ii-mini-lava-dagger",
+      "weapon-iii-mini-lava-dagger"
     ],
     "type": "weapon",
     "subtype": "dagger",
@@ -15707,7 +15860,25 @@
       "weapon-mint-cream-cutter-vi",
       "weapon-mint-cream-cutter-vii",
       "weapon-mint-cream-cutter-viii",
-      "weapon-mint-cream-cutter-ix"
+      "weapon-mint-cream-cutter-ix",
+      "weapon-i-mint-cream-cutter",
+      "weapon-i-dc-mint-cream-cutter",
+      "weapon-ii-mint-cream-cutter",
+      "weapon-ii-dc-mint-cream-cutter",
+      "weapon-iii-mint-cream-cutter",
+      "weapon-iii-dc-mint-cream-cutter",
+      "weapon-iv-mint-cream-cutter",
+      "weapon-iv-dc-mint-cream-cutter",
+      "weapon-v-mint-cream-cutter",
+      "weapon-v-dc-mint-cream-cutter",
+      "weapon-vi-mint-cream-cutter",
+      "weapon-vi-dc-mint-cream-cutter",
+      "weapon-vii-mint-cream-cutter",
+      "weapon-vii-dc-mint-cream-cutter",
+      "weapon-viii-mint-cream-cutter",
+      "weapon-viii-dc-mint-cream-cutter",
+      "weapon-ix-mint-cream-cutter",
+      "weapon-ix-dc-mint-cream-cutter"
     ],
     "type": "weapon",
     "subtype": "dagger",
@@ -16296,7 +16467,8 @@
     "slug": "weapon-mirror-sheen",
     "aliasSlugs": [
       "weapon-shining-mirror-sheen",
-      "weapon-mirror-sheen-all-versions"
+      "weapon-mirror-sheen-all-versions",
+      "weapon-base-mirror-sheen"
     ],
     "type": "weapon",
     "subtype": "dagger",
@@ -16472,7 +16644,10 @@
       "weapon-molecular-mayo-misericorde-i-ii-iii",
       "weapon-molecular-mayo-misericorde-all-versions",
       "weapon-molecular-mayo-misericorde-ii",
-      "weapon-molecular-mayo-misericorde-iii"
+      "weapon-molecular-mayo-misericorde-iii",
+      "weapon-base-molecular-mayo-misericorde",
+      "weapon-ii-molecular-mayo-misericorde",
+      "weapon-iii-molecular-mayo-misericorde"
     ],
     "type": "weapon",
     "subtype": "dagger",
@@ -16636,14 +16811,21 @@
     "slug": "weapon-monolith-dagger",
     "aliasSlugs": [
       "weapon-hyetal-monolith-dagger",
+      "weapon-limnal-monolith-dagger",
       "weapon-monolith-dagger-all-versions",
-      "weapon-limnal-monolith-dagger"
+      "weapon-base-monolith-dagger"
     ],
     "type": "weapon",
     "subtype": "dagger",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19833939",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19833931",
     "familyOrigin": "cross-post",
     "familySources": [
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=19833043",
+        "title": "DF Encyclopedia: Monolith Dagger",
+        "variantLabel": "Monolith Dagger",
+        "isPrimary": false
+      },
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=19833931",
         "title": "DF Encyclopedia: Hyetal Monolith Dagger",
@@ -16654,12 +16836,6 @@
         "url": "https://forums2.battleon.com/f/tm.asp?m=19833939",
         "title": "DF Encyclopedia: Limnal Monolith Dagger",
         "variantLabel": "Limnal Monolith Dagger",
-        "isPrimary": true
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19833043",
-        "title": "DF Encyclopedia: Monolith Dagger",
-        "variantLabel": "Monolith Dagger",
         "isPrimary": false
       }
     ],
@@ -16709,7 +16885,7 @@
         "resists": "Water +4, Energy +4, Ice +4, Fire +1, All +1",
         "rarity": "8",
         "itemType": "Dagger",
-        "notes": "Weapon cannot be destroyed.\nWeapon is animated; blue stars and orbs flitter within and along the dagger respectively.\n  • Also See (Normal): Hyetal Monolith Dagger, Limnal Monolith Dagger\n  • Also See (Golden): Golden Monolith (I-XI), Pure Golden Monolith (I-XI)"
+        "notes": "Weapon cannot be destroyed.\nWeapon is animated; blue stars and orbs flitter within and along the dagger respectively.\n • Also See (Normal): Hyetal Monolith Dagger, Limnal Monolith Dagger\n • Also See (Golden): Golden Monolith (I-XI), Pure Golden Monolith (I-XI)"
       },
       {
         "levelNumber": 50,
@@ -16736,7 +16912,7 @@
         "resists": "Water +7, Energy +7, Ice +7, Fire +4, All +2",
         "rarity": "10",
         "itemType": "Dagger",
-        "notes": "Weapon cannot be destroyed.\nWeapon is animated; blue stars and orbs flitter within and along the dagger respectively.\n  • Also See (Normal): Monolith Dagger, Limnal Monolith Dagger\n  • Also See (Golden): Golden Monolith (I-XI), Pure Golden Monolith (I-XI)"
+        "notes": "Weapon cannot be destroyed.\nWeapon is animated; blue stars and orbs flitter within and along the dagger respectively.\n • Also See (Normal): Monolith Dagger, Limnal Monolith Dagger\n • Also See (Golden): Golden Monolith (I-XI), Pure Golden Monolith (I-XI)"
       },
       {
         "levelNumber": 70,
@@ -16763,7 +16939,7 @@
         "resists": "Water +10, Energy +10, Ice +10, Fire +6, All +3",
         "rarity": "15",
         "itemType": "Dagger",
-        "notes": "Weapon is animated; blue stars and orbs flitter within and along the dagger respectively.\n  • Also See (Normal): Monolith Dagger, Hyetal Monolith Dagger\n  • Also See (Golden): Golden Monolith (I-XI), Pure Golden Monolith (I-XI)"
+        "notes": "Weapon is animated; blue stars and orbs flitter within and along the dagger respectively.\n • Also See (Normal): Monolith Dagger, Hyetal Monolith Dagger\n • Also See (Golden): Golden Monolith (I-XI), Pure Golden Monolith (I-XI)"
       }
     ],
     "category": "Weapon",
@@ -17105,7 +17281,12 @@
       "weapon-moonridge-cutters-ii",
       "weapon-moonridge-cutters-iii",
       "weapon-moonridge-cutters-iv",
-      "weapon-moonridge-cutters-v"
+      "weapon-moonridge-cutters-v",
+      "weapon-base-moonridge-cutters",
+      "weapon-ii-moonridge-cutters",
+      "weapon-iii-moonridge-cutters",
+      "weapon-iv-moonridge-cutters",
+      "weapon-v-moonridge-cutters"
     ],
     "type": "weapon",
     "subtype": "dagger",
@@ -17579,6 +17760,12 @@
       "trigger": "Activate your weapon's special!",
       "effect": "5 hits of 30% Wind damage, amounting to 150% damage; applies 'Morganite Winds' (+5X Melee/Pierce/Magic Avoidance, +5X Block/Parry/Dodge Defense, where X is the number of hits landed, capped at +25) to player for for 5 turns.",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-Wind.png",
+      "specialImageUrls": [
+        "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/MorganiteGemcutter-Special.gif"
+      ],
+      "specialImageCaptions": [
+        "Appearance"
+      ],
       "cooldown": "10 - [(Player LUK/50), rounded down]",
       "chargeTime": "5 - [(Player LUK/100), rounded down]"
     },
@@ -17618,7 +17805,13 @@
       "weapon-moss-green-crystal-blade-iii",
       "weapon-moss-green-crystal-blade-iv",
       "weapon-moss-green-crystal-blade-v",
-      "weapon-moss-green-crystal-blade-vi"
+      "weapon-moss-green-crystal-blade-vi",
+      "weapon-i-moss-green-crystal-blade",
+      "weapon-ii-moss-green-crystal-blade",
+      "weapon-iii-moss-green-crystal-blade",
+      "weapon-iv-moss-green-crystal-blade",
+      "weapon-v-moss-green-crystal-blade",
+      "weapon-vi-moss-green-crystal-blade"
     ],
     "type": "weapon",
     "subtype": "dagger",
@@ -17883,15 +18076,22 @@
     "familyName": "Naturaus",
     "slug": "weapon-naturaus",
     "aliasSlugs": [
+      "weapon-naturaus-all-versions",
       "weapon-great-naturaus",
       "weapon-greater-naturaus",
-      "weapon-naturaus-all-versions"
+      "weapon-base-naturaus"
     ],
     "type": "weapon",
     "subtype": "dagger",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19862626",
     "familyOrigin": "cross-post",
     "familySources": [
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=16350657",
+        "title": "DF Encyclopedia: Naturaus",
+        "variantLabel": "Naturaus",
+        "isPrimary": false
+      },
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=19862626",
         "title": "DF Encyclopedia: Great Naturaus",
@@ -17902,12 +18102,6 @@
         "url": "https://forums2.battleon.com/f/tm.asp?m=19862628",
         "title": "DF Encyclopedia: Greater Naturaus",
         "variantLabel": "Greater Naturaus",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=16350657",
-        "title": "DF Encyclopedia: Naturaus",
-        "variantLabel": "Naturaus",
         "isPrimary": false
       }
     ],
@@ -17921,6 +18115,12 @@
         "trigger": "Activate your weapon's special!",
         "effect": "1 hit of 200% damage.",
         "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-Nature.png",
+        "specialImageUrls": [
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Naturaus-Special.png"
+        ],
+        "specialImageCaptions": [
+          "Appearance"
+        ],
         "cooldown": "10 - [(Player LUK/50), rounded down]",
         "chargeTime": "5 - [(Player LUK/100), rounded down]"
       },
@@ -17950,7 +18150,21 @@
         "element": "NAT",
         "resists": "Fire +1",
         "rarity": "5",
-        "itemType": "Dagger"
+        "itemType": "Dagger",
+        "weaponSpecial": {
+          "activation": "manual",
+          "trigger": "Activate your weapon's special!",
+          "effect": "1 hit of 200% damage.",
+          "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-Nature.png",
+          "specialImageUrls": [
+            "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Naturaus-Special.png"
+          ],
+          "specialImageCaptions": [
+            "Appearance"
+          ],
+          "cooldown": "10 - [(Player LUK/50), rounded down]",
+          "chargeTime": "5 - [(Player LUK/100), rounded down]"
+        }
       },
       {
         "levelNumber": 32,
@@ -17975,7 +18189,21 @@
         "element": "NAT",
         "resists": "Fire +3",
         "rarity": "1",
-        "itemType": "Dagger"
+        "itemType": "Dagger",
+        "weaponSpecial": {
+          "activation": "manual",
+          "trigger": "Activate your weapon's special!",
+          "effect": "1 hit of 200% damage.",
+          "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-Nature.png",
+          "specialImageUrls": [
+            "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Naturaus-Special.png"
+          ],
+          "specialImageCaptions": [
+            "Appearance"
+          ],
+          "cooldown": "10 - [(Player LUK/50), rounded down]",
+          "chargeTime": "5 - [(Player LUK/100), rounded down]"
+        }
       },
       {
         "levelNumber": 46,
@@ -18000,7 +18228,21 @@
         "element": "NAT",
         "resists": "Fire +5",
         "rarity": "1",
-        "itemType": "Dagger"
+        "itemType": "Dagger",
+        "weaponSpecial": {
+          "activation": "manual",
+          "trigger": "Activate your weapon's special!",
+          "effect": "1 hit of 200% damage.",
+          "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-Nature.png",
+          "specialImageUrls": [
+            "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Naturaus-Special.png"
+          ],
+          "specialImageCaptions": [
+            "Appearance"
+          ],
+          "cooldown": "10 - [(Player LUK/50), rounded down]",
+          "chargeTime": "5 - [(Player LUK/100), rounded down]"
+        }
       }
     ],
     "category": "Weapon",
@@ -18103,7 +18345,13 @@
       "weapon-neela-paani-dagger-iii",
       "weapon-neela-paani-dagger-iv",
       "weapon-neela-paani-dagger-v",
-      "weapon-neela-paani-dagger-vi"
+      "weapon-neela-paani-dagger-vi",
+      "weapon-i-neela-paani-dagger",
+      "weapon-ii-neela-paani-dagger",
+      "weapon-iii-neela-paani-dagger",
+      "weapon-iv-neela-paani-dagger",
+      "weapon-v-neela-paani-dagger",
+      "weapon-vi-neela-paani-dagger"
     ],
     "type": "weapon",
     "subtype": "dagger",
@@ -18404,10 +18652,11 @@
     "familyName": "Night Annex Daggers",
     "slug": "weapon-night-annex-daggers",
     "aliasSlugs": [
+      "weapon-corona-night-annex-daggers",
       "weapon-flowing-night-annex-daggers",
       "weapon-gyre-night-annex-daggers",
       "weapon-night-annex-daggers-all-versions",
-      "weapon-corona-night-annex-daggers"
+      "weapon-base-night-annex-daggers"
     ],
     "type": "weapon",
     "subtype": "dagger",
@@ -18415,10 +18664,10 @@
     "familyOrigin": "cross-post",
     "familySources": [
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20132000",
-        "title": "DF Encyclopedia: Flowing Night Annex Daggers",
-        "variantLabel": "Flowing Night Annex Daggers",
-        "isPrimary": true
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20131987",
+        "title": "DF Encyclopedia: Night Annex Daggers",
+        "variantLabel": "Night Annex Daggers",
+        "isPrimary": false
       },
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=20131992",
@@ -18433,9 +18682,9 @@
         "isPrimary": true
       },
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20131987",
-        "title": "DF Encyclopedia: Night Annex Daggers",
-        "variantLabel": "Night Annex Daggers",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20132000",
+        "title": "DF Encyclopedia: Flowing Night Annex Daggers",
+        "variantLabel": "Flowing Night Annex Daggers",
         "isPrimary": false
       }
     ],
@@ -18616,7 +18865,15 @@
       "weapon-noon-vow-v",
       "weapon-noon-vow-vi",
       "weapon-noon-vow-vii",
-      "weapon-noon-vow-viii"
+      "weapon-noon-vow-viii",
+      "weapon-i-noon-vow",
+      "weapon-ii-noon-vow",
+      "weapon-iii-noon-vow",
+      "weapon-iv-noon-vow",
+      "weapon-v-noon-vow",
+      "weapon-vi-noon-vow",
+      "weapon-vii-noon-vow",
+      "weapon-viii-noon-vow"
     ],
     "type": "weapon",
     "subtype": "dagger",
@@ -18907,6 +19164,7 @@
     "description": "An enchanted hilt that manifests an elemental blade. Excellent for dealing with vicious surprises when climbing in the Northlands. (Cosmetic)",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22425943",
     "releaseDate": "",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/NorthscaleBlade.png",
     "elements": [
       "ICE"
     ],
@@ -19036,7 +19294,9 @@
     "familyName": "Novenary Frost Devil",
     "slug": "weapon-novenary-frost-devil",
     "aliasSlugs": [
-      "weapon-novenary-frost-devil-all-versions"
+      "weapon-novenary-frost-devil-all-versions",
+      "weapon-base-novenary-frost-devil",
+      "weapon-dc-novenary-frost-devil"
     ],
     "type": "weapon",
     "subtype": "dagger",
@@ -19127,6 +19387,12 @@
         "trigger": "Activate your weapon's special!",
         "effect": "1 hit of 300% damage.",
         "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Special-Button-Ice.png",
+        "specialImageUrls": [
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/FrostDevil-Special.png"
+        ],
+        "specialImageCaptions": [
+          "Appearance"
+        ],
         "cooldown": "10 - [(Player LUK/50), rounded down]",
         "chargeTime": "5 - [(Player LUK/100), rounded down]"
       }
