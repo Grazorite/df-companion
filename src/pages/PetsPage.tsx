@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import { useSearchParams } from 'react-router-dom'
-import { usePets, usePetCounts, useElements } from '../hooks/usePets'
+import { usePets, usePetCategoryAvailability, usePetCounts, useElements } from '../hooks/usePets'
 import { useDebounce } from '../hooks/useDebounce'
 import SearchBar from '../components/shared/SearchBar'
 import SegmentToggle from '../components/shared/SegmentToggle'
@@ -8,6 +8,11 @@ import ElementLegend from '../components/shared/ElementLegend'
 import TriStateFilterPill from '../components/shared/TriStateFilterPill'
 import PetList from '../components/pets/PetList'
 import type { EntryType } from '../types/pet'
+import {
+  filterAccessOptionsByAvailability,
+  filterCategoryOptionsByAvailability,
+  filterElementOptionsByAvailability,
+} from '../utils/filterVisibility'
 import { cycleTriState, getTriState, parseFilterParam } from '../utils/triStateFilters'
 
 const ACCESS_OPTIONS = [
@@ -44,30 +49,113 @@ export default function PetsPage() {
   const categoryParam = searchParams.get('category') // comma-separated: "temp,rare"
   const excludeCategoryParam = searchParams.get('excludeCategory')
 
-  const activeTypes: EntryType[] = typeParam
-    ? typeParam.split(',').filter((t): t is EntryType => t === 'pet' || t === 'guest')
-    : [] // empty = both
+  const activeTypes: EntryType[] = useMemo(
+    () =>
+      typeParam
+        ? typeParam.split(',').filter((t): t is EntryType => t === 'pet' || t === 'guest')
+        : [],
+    [typeParam]
+  )
+  const isGuestsOnly = activeTypes.length === 1 && activeTypes[0] === 'guest'
 
-  const activeElements = elementParam ? elementParam.split(',').filter(Boolean) : []
-  const excludedElements = excludeElementParam ? excludeElementParam.split(',').filter(Boolean) : []
-  const activeAccess = parseFilterParam(accessParam, (value): value is AccessFilterId =>
-    ACCESS_OPTIONS.some((option) => option.id === value)
+  const rawActiveElements = useMemo(
+    () => (elementParam ? elementParam.split(',').filter(Boolean) : []),
+    [elementParam]
   )
-  const excludedAccess = parseFilterParam(excludeAccessParam, (value): value is AccessFilterId =>
-    ACCESS_OPTIONS.some((option) => option.id === value)
+  const rawExcludedElements = useMemo(
+    () => (excludeElementParam ? excludeElementParam.split(',').filter(Boolean) : []),
+    [excludeElementParam]
   )
-  const activeCategories = parseFilterParam(
-    categoryParam,
-    (value): value is CategoryFilterId => CATEGORY_OPTIONS.some((option) => option.id === value)
+  const rawActiveAccess = useMemo(
+    () =>
+      parseFilterParam(accessParam, (value): value is AccessFilterId =>
+        ACCESS_OPTIONS.some((option) => option.id === value)
+      ),
+    [accessParam]
   )
-  const excludedCategories = parseFilterParam(
-    excludeCategoryParam,
-    (value): value is CategoryFilterId => CATEGORY_OPTIONS.some((option) => option.id === value)
+  const rawExcludedAccess = useMemo(
+    () =>
+      parseFilterParam(excludeAccessParam, (value): value is AccessFilterId =>
+        ACCESS_OPTIONS.some((option) => option.id === value)
+      ),
+    [excludeAccessParam]
+  )
+  const activeCategories = useMemo(
+    () =>
+      parseFilterParam(categoryParam, (value): value is CategoryFilterId =>
+        CATEGORY_OPTIONS.some((option) => option.id === value)
+      ),
+    [categoryParam]
+  )
+  const excludedCategories = useMemo(
+    () =>
+      parseFilterParam(excludeCategoryParam, (value): value is CategoryFilterId =>
+        CATEGORY_OPTIONS.some((option) => option.id === value)
+      ),
+    [excludeCategoryParam]
   )
 
   const { elements, traits } = useElements()
-  const filterEntries = [...elements, ...traits]
-  const allCodes = filterEntries.map((e) => e.code)
+  const categoryAvailability = usePetCategoryAvailability(activeTypes)
+  const visibleAccessOptions = useMemo(
+    () =>
+      filterAccessOptionsByAvailability(
+        ACCESS_OPTIONS,
+        categoryAvailability,
+        (option) => !(isGuestsOnly && option.petsOnly)
+      ),
+    [categoryAvailability, isGuestsOnly]
+  )
+  const visibleAccessIds = useMemo(
+    () => new Set(visibleAccessOptions.map((option) => option.id)),
+    [visibleAccessOptions]
+  )
+  const visibleCategoryOptions = useMemo(
+    () =>
+      filterCategoryOptionsByAvailability(
+        CATEGORY_OPTIONS,
+        categoryAvailability,
+        (option) => !(isGuestsOnly && option.id === 'special-offer')
+      ),
+    [categoryAvailability, isGuestsOnly]
+  )
+  const visibleCategoryIds = useMemo(
+    () => new Set(visibleCategoryOptions.map((option) => option.id)),
+    [visibleCategoryOptions]
+  )
+  const visibleActiveCategories = useMemo(
+    () => activeCategories.filter((category) => visibleCategoryIds.has(category)),
+    [activeCategories, visibleCategoryIds]
+  )
+  const visibleExcludedCategories = useMemo(
+    () => excludedCategories.filter((category) => visibleCategoryIds.has(category)),
+    [excludedCategories, visibleCategoryIds]
+  )
+  const filterEntries = useMemo(() => [...elements, ...traits], [elements, traits])
+  const visibleFilterEntries = useMemo(
+    () => filterElementOptionsByAvailability(filterEntries, categoryAvailability),
+    [categoryAvailability, filterEntries]
+  )
+  const visibleElementIds = useMemo(
+    () => new Set(visibleFilterEntries.map((entry) => entry.code)),
+    [visibleFilterEntries]
+  )
+  const activeElements = useMemo(
+    () => rawActiveElements.filter((code) => visibleElementIds.has(code)),
+    [rawActiveElements, visibleElementIds]
+  )
+  const excludedElements = useMemo(
+    () => rawExcludedElements.filter((code) => visibleElementIds.has(code)),
+    [rawExcludedElements, visibleElementIds]
+  )
+  const activeAccess = useMemo(
+    () => rawActiveAccess.filter((access) => visibleAccessIds.has(access)),
+    [rawActiveAccess, visibleAccessIds]
+  )
+  const excludedAccess = useMemo(
+    () => rawExcludedAccess.filter((access) => visibleAccessIds.has(access)),
+    [rawExcludedAccess, visibleAccessIds]
+  )
   const activeTypeLabel =
     activeTypes.length === 1
       ? activeTypes[0] === 'pet'
@@ -88,23 +176,25 @@ export default function PetsPage() {
     const params: Record<string, string> = {}
     if (debouncedQuery) params.q = debouncedQuery
     if (activeTypes.length > 0) params.type = activeTypes.join(',')
-    if (activeElements.length > 0) params.element = activeElements.join(',')
-    if (excludedElements.length > 0) params.excludeElement = excludedElements.join(',')
-    if (activeAccess.length > 0) params.access = activeAccess.join(',')
-    if (excludedAccess.length > 0) params.excludeAccess = excludedAccess.join(',')
+    if (rawActiveElements.length > 0) params.element = rawActiveElements.join(',')
+    if (rawExcludedElements.length > 0) params.excludeElement = rawExcludedElements.join(',')
+    if (rawActiveAccess.length > 0) params.access = rawActiveAccess.join(',')
+    if (rawExcludedAccess.length > 0) params.excludeAccess = rawExcludedAccess.join(',')
     if (activeCategories.length > 0) params.category = activeCategories.join(',')
-    if (excludedCategories.length > 0) params.excludeCategory = excludedCategories.join(',')
+    if (excludedCategories.length > 0) {
+      params.excludeCategory = excludedCategories.join(',')
+    }
     setSearchParams(params, { replace: true })
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
     debouncedQuery,
     typeParam,
-    elementParam,
-    excludeElementParam,
-    accessParam,
-    excludeAccessParam,
-    categoryParam,
-    excludeCategoryParam,
+    rawActiveElements,
+    rawExcludedElements,
+    rawActiveAccess,
+    rawExcludedAccess,
+    activeCategories,
+    excludedCategories,
     setSearchParams,
   ])
 
@@ -115,8 +205,8 @@ export default function PetsPage() {
     excludeElements: excludedElements.length > 0 ? excludedElements : undefined,
     access: activeAccess.length > 0 ? activeAccess : undefined,
     excludeAccess: excludedAccess.length > 0 ? excludedAccess : undefined,
-    categories: activeCategories.length > 0 ? activeCategories : undefined,
-    excludeCategories: excludedCategories.length > 0 ? excludedCategories : undefined,
+    categories: visibleActiveCategories.length > 0 ? visibleActiveCategories : undefined,
+    excludeCategories: visibleExcludedCategories.length > 0 ? visibleExcludedCategories : undefined,
   }
 
   const { pets, total } = usePets(filters)
@@ -130,9 +220,6 @@ export default function PetsPage() {
     excludeCategories: filters.excludeCategories,
   })
 
-  // Determine if we're showing guests only (for conditional filter display)
-  const isGuestsOnly = activeTypes.length === 1 && activeTypes[0] === 'guest'
-
   function toggleType(id: string) {
     const type = id as EntryType
     let next: EntryType[]
@@ -144,54 +231,63 @@ export default function PetsPage() {
     const params: Record<string, string> = {}
     if (debouncedQuery) params.q = debouncedQuery
     if (next.length > 0) params.type = next.join(',')
-    if (activeElements.length > 0) params.element = activeElements.join(',')
-    if (excludedElements.length > 0) params.excludeElement = excludedElements.join(',')
-    if (activeAccess.length > 0) params.access = activeAccess.join(',')
-    if (excludedAccess.length > 0) params.excludeAccess = excludedAccess.join(',')
+    if (rawActiveElements.length > 0) params.element = rawActiveElements.join(',')
+    if (rawExcludedElements.length > 0) params.excludeElement = rawExcludedElements.join(',')
+    if (rawActiveAccess.length > 0) params.access = rawActiveAccess.join(',')
+    if (rawExcludedAccess.length > 0) params.excludeAccess = rawExcludedAccess.join(',')
     if (activeCategories.length > 0) params.category = activeCategories.join(',')
-    if (excludedCategories.length > 0) params.excludeCategory = excludedCategories.join(',')
+    if (excludedCategories.length > 0) {
+      params.excludeCategory = excludedCategories.join(',')
+    }
     setSearchParams(params, { replace: true })
   }
 
   function toggleElement(code: string) {
-    const next = cycleTriState(code, { include: activeElements, exclude: excludedElements })
+    const next = cycleTriState(code, { include: rawActiveElements, exclude: rawExcludedElements })
     const params: Record<string, string> = {}
     if (debouncedQuery) params.q = debouncedQuery
     if (activeTypes.length > 0) params.type = activeTypes.join(',')
     if (next.include.length > 0) params.element = next.include.join(',')
     if (next.exclude.length > 0) params.excludeElement = next.exclude.join(',')
-    if (activeAccess.length > 0) params.access = activeAccess.join(',')
-    if (excludedAccess.length > 0) params.excludeAccess = excludedAccess.join(',')
+    if (rawActiveAccess.length > 0) params.access = rawActiveAccess.join(',')
+    if (rawExcludedAccess.length > 0) params.excludeAccess = rawExcludedAccess.join(',')
     if (activeCategories.length > 0) params.category = activeCategories.join(',')
-    if (excludedCategories.length > 0) params.excludeCategory = excludedCategories.join(',')
+    if (excludedCategories.length > 0) {
+      params.excludeCategory = excludedCategories.join(',')
+    }
     setSearchParams(params, { replace: true })
   }
 
   function toggleAccess(id: string) {
     const accessType = id as AccessFilterId
-    const next = cycleTriState(accessType, { include: activeAccess, exclude: excludedAccess })
+    const next = cycleTriState(accessType, { include: rawActiveAccess, exclude: rawExcludedAccess })
     const params: Record<string, string> = {}
     if (debouncedQuery) params.q = debouncedQuery
     if (activeTypes.length > 0) params.type = activeTypes.join(',')
-    if (activeElements.length > 0) params.element = activeElements.join(',')
-    if (excludedElements.length > 0) params.excludeElement = excludedElements.join(',')
+    if (rawActiveElements.length > 0) params.element = rawActiveElements.join(',')
+    if (rawExcludedElements.length > 0) params.excludeElement = rawExcludedElements.join(',')
     if (next.include.length > 0) params.access = next.include.join(',')
     if (next.exclude.length > 0) params.excludeAccess = next.exclude.join(',')
     if (activeCategories.length > 0) params.category = activeCategories.join(',')
-    if (excludedCategories.length > 0) params.excludeCategory = excludedCategories.join(',')
+    if (excludedCategories.length > 0) {
+      params.excludeCategory = excludedCategories.join(',')
+    }
     setSearchParams(params, { replace: true })
   }
 
   function toggleCategory(id: string) {
     const cat = id as CategoryFilterId
-    const next = cycleTriState(cat, { include: activeCategories, exclude: excludedCategories })
+    const next = cycleTriState(cat, {
+      include: activeCategories,
+      exclude: excludedCategories,
+    })
     const params: Record<string, string> = {}
     if (debouncedQuery) params.q = debouncedQuery
     if (activeTypes.length > 0) params.type = activeTypes.join(',')
-    if (activeElements.length > 0) params.element = activeElements.join(',')
-    if (excludedElements.length > 0) params.excludeElement = excludedElements.join(',')
-    if (activeAccess.length > 0) params.access = activeAccess.join(',')
-    if (excludedAccess.length > 0) params.excludeAccess = excludedAccess.join(',')
+    if (rawActiveElements.length > 0) params.element = rawActiveElements.join(',')
+    if (rawExcludedElements.length > 0) params.excludeElement = rawExcludedElements.join(',')
+    if (rawActiveAccess.length > 0) params.access = rawActiveAccess.join(',')
+    if (rawExcludedAccess.length > 0) params.excludeAccess = rawExcludedAccess.join(',')
     if (next.include.length > 0) params.category = next.include.join(',')
     if (next.exclude.length > 0) params.excludeCategory = next.exclude.join(',')
     setSearchParams(params, { replace: true })
@@ -237,12 +333,8 @@ export default function PetsPage() {
 
       {/* Level 1: Access filter */}
       <div className="flex gap-2 flex-wrap mb-3" role="group" aria-label="Filter by access">
-        {ACCESS_OPTIONS.map((opt) => {
-          // Hide pet-only filters when showing guests only
-          if (opt.petsOnly && isGuestsOnly) return null
-
+        {visibleAccessOptions.map((opt) => {
           const state = getTriState(opt.id, { include: activeAccess, exclude: excludedAccess })
-          const isDisabled = opt.petsOnly && isGuestsOnly
 
           return (
             <TriStateFilterPill
@@ -250,7 +342,6 @@ export default function PetsPage() {
               label={opt.label}
               state={state}
               onClick={() => toggleAccess(opt.id)}
-              disabled={isDisabled}
               size="access"
             />
           )
@@ -261,12 +352,10 @@ export default function PetsPage() {
               const params: Record<string, string> = {}
               if (debouncedQuery) params.q = debouncedQuery
               if (activeTypes.length > 0) params.type = activeTypes.join(',')
-              if (activeElements.length > 0) params.element = activeElements.join(',')
-              if (excludedElements.length > 0) params.excludeElement = excludedElements.join(',')
+              if (rawActiveElements.length > 0) params.element = rawActiveElements.join(',')
+              if (rawExcludedElements.length > 0) params.excludeElement = rawExcludedElements.join(',')
               if (activeCategories.length > 0) params.category = activeCategories.join(',')
-              if (excludedCategories.length > 0) {
-                params.excludeCategory = excludedCategories.join(',')
-              }
+              if (excludedCategories.length > 0) params.excludeCategory = excludedCategories.join(',')
               setSearchParams(params, { replace: true })
             }}
             className="text-xs text-text-muted hover:text-text-primary underline underline-offset-2 ml-1"
@@ -279,16 +368,14 @@ export default function PetsPage() {
       {/* Level 2: Category filter (multi-select) */}
       <div className="mb-3">
         <div className="flex flex-wrap gap-2">
-          {CATEGORY_OPTIONS.map((opt) => {
-            if (isGuestsOnly && opt.id === 'special-offer') return null
-
+          {visibleCategoryOptions.map((opt) => {
             return (
               <TriStateFilterPill
                 key={opt.id}
                 label={opt.label}
                 state={getTriState(opt.id, {
-                  include: activeCategories,
-                  exclude: excludedCategories,
+                  include: visibleActiveCategories,
+                  exclude: visibleExcludedCategories,
                 })}
                 onClick={() => toggleCategory(opt.id)}
                 size="category"
@@ -296,16 +383,16 @@ export default function PetsPage() {
               />
             )
           })}
-          {(activeCategories.length > 0 || excludedCategories.length > 0) && (
+          {(visibleActiveCategories.length > 0 || visibleExcludedCategories.length > 0) && (
             <button
               onClick={() => {
                 const params: Record<string, string> = {}
                 if (debouncedQuery) params.q = debouncedQuery
                 if (activeTypes.length > 0) params.type = activeTypes.join(',')
-                if (activeElements.length > 0) params.element = activeElements.join(',')
-                if (excludedElements.length > 0) params.excludeElement = excludedElements.join(',')
-                if (activeAccess.length > 0) params.access = activeAccess.join(',')
-                if (excludedAccess.length > 0) params.excludeAccess = excludedAccess.join(',')
+                if (rawActiveElements.length > 0) params.element = rawActiveElements.join(',')
+                if (rawExcludedElements.length > 0) params.excludeElement = rawExcludedElements.join(',')
+                if (rawActiveAccess.length > 0) params.access = rawActiveAccess.join(',')
+                if (rawExcludedAccess.length > 0) params.excludeAccess = rawExcludedAccess.join(',')
                 setSearchParams(params, { replace: true })
               }}
               className="text-[11px] text-text-muted hover:text-text-primary underline underline-offset-2 ml-1"
@@ -319,13 +406,13 @@ export default function PetsPage() {
       {/* Level 3: Element/Trait filter — select/deselect element pills */}
       <div className="mb-2">
         <div className="flex flex-wrap gap-1.5">
-          {allCodes.map((code) => {
+          {visibleFilterEntries.map((entry) => {
+            const code = entry.code
             const state = getTriState(code, {
               include: activeElements,
               exclude: excludedElements,
             })
-            const colour =
-              filterEntries.find((e) => e.code === code)?.colour ?? 'bg-bg-overlay text-text-muted'
+            const colour = entry.colour ?? 'bg-bg-overlay text-text-muted'
             return (
               <TriStateFilterPill
                 key={code}
@@ -344,12 +431,10 @@ export default function PetsPage() {
                 const params: Record<string, string> = {}
                 if (debouncedQuery) params.q = debouncedQuery
                 if (activeTypes.length > 0) params.type = activeTypes.join(',')
-                if (activeAccess.length > 0) params.access = activeAccess.join(',')
-                if (excludedAccess.length > 0) params.excludeAccess = excludedAccess.join(',')
+                if (rawActiveAccess.length > 0) params.access = rawActiveAccess.join(',')
+                if (rawExcludedAccess.length > 0) params.excludeAccess = rawExcludedAccess.join(',')
                 if (activeCategories.length > 0) params.category = activeCategories.join(',')
-                if (excludedCategories.length > 0) {
-                  params.excludeCategory = excludedCategories.join(',')
-                }
+                if (excludedCategories.length > 0) params.excludeCategory = excludedCategories.join(',')
                 setSearchParams(params, { replace: true })
               }}
               className="text-[10px] text-text-muted hover:text-text-primary underline underline-offset-2 ml-1"
@@ -391,20 +476,20 @@ export default function PetsPage() {
               .join(', ')}
           </span>
         )}
-        {activeCategories.length > 0 && (
+        {visibleActiveCategories.length > 0 && (
           <span className="text-orange-400">
             {' '}
             ·{' '}
-            {activeCategories
+            {visibleActiveCategories
               .map((c) => CATEGORY_OPTIONS.find((opt) => opt.id === c)?.label ?? c)
               .join(', ')}
           </span>
         )}
-        {excludedCategories.length > 0 && (
+        {visibleExcludedCategories.length > 0 && (
           <span className="text-red-300">
             {' '}
             · excluding{' '}
-            {excludedCategories
+            {visibleExcludedCategories
               .map((c) => CATEGORY_OPTIONS.find((opt) => opt.id === c)?.label ?? c)
               .join(', ')}
           </span>

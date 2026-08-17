@@ -1,15 +1,16 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { ChevronDown, ImageOff } from 'lucide-react'
+import { ArrowLeft, ChevronDown, ImageOff } from 'lucide-react'
 import type { LevelVariant, ObtainVariant } from '../../types/item'
 import type { Weapon, WeaponEntry, WeaponFamily, WeaponSpecial } from '../../types/weapon'
 import { isWeaponFamily } from '../../types/weapon'
 import {
+  buildWeaponCardData,
   getWeaponDisplayName,
   getWeaponFamilyDisplayName,
   useWeaponRelatedItems,
 } from '../../hooks/useWeapons'
-import { displayTitle, normalizeDisplayText } from '../../utils/displayText'
+import { displayTitle, normalizeDescriptionText, normalizeDisplayText } from '../../utils/displayText'
 import {
   buildDisplayImages,
   inferImageCaptionFromUrl,
@@ -37,6 +38,7 @@ import { buildFilterLink } from '../../utils/filterLinks'
 import { extractRateFromEffect } from '../../utils/effectFormatting'
 import { splitPopupText } from '../../utils/popupText'
 import { notesIndicateInvisibleItem } from '../../utils/imageVisibility'
+import { detailUrlWithFrom } from '../../utils/navigationContext'
 import SourceLinksCard from '../shared/SourceLinksCard'
 import ItemImage from '../shared/ItemImage'
 import MetricStrip from '../shared/MetricStrip'
@@ -47,6 +49,7 @@ import WeaponStatsTable from './WeaponStatsTable'
 interface WeaponDetailProps {
   weapon: WeaponEntry
   filterBase: string
+  backUrl: string
 }
 
 const WEAPON_SUBTYPE_FALLBACK_LABELS: Record<WeaponEntry['subtype'], string> = {
@@ -331,7 +334,7 @@ function ArmorCustomizationMetadataStrip({
   )
 }
 
-export default function WeaponDetail({ weapon, filterBase }: WeaponDetailProps) {
+export default function WeaponDetail({ weapon, filterBase, backUrl }: WeaponDetailProps) {
   const family = isWeaponFamily(weapon) ? (weapon as WeaponFamily) : undefined
   const singleWeapon = family ? undefined : (weapon as Weapon)
   const [activeIndex, setActiveIndex] = useState(0)
@@ -570,6 +573,15 @@ export default function WeaponDetail({ weapon, filterBase }: WeaponDetailProps) 
 
   return (
     <main className="px-4 sm:px-6 py-6 max-w-3xl mx-auto">
+      <Link
+        to={backUrl}
+        className="flex items-center gap-1.5 text-text-secondary hover:text-text-primary text-sm mb-6 transition-colors duration-150 min-h-[44px] -ml-1 px-1"
+        aria-label="Back to weapon list"
+      >
+        <ArrowLeft className="w-4 h-4" aria-hidden="true" />
+        Back to Weapons
+      </Link>
+
       <div className="mb-6">
         <div className="flex items-center gap-2 flex-wrap mb-3">
           {weapon.elements.map((code) => (
@@ -595,7 +607,7 @@ export default function WeaponDetail({ weapon, filterBase }: WeaponDetailProps) 
         <h1 className="text-3xl font-bold text-text-primary mb-3">{title}</h1>
         {description && (
           <p className="text-text-secondary italic leading-relaxed mb-3 break-words [overflow-wrap:anywhere]">
-            {normalizeDisplayText(description)}
+            {normalizeDescriptionText(description)}
           </p>
         )}
         {!!weapon.releaseDate && (
@@ -710,6 +722,7 @@ export default function WeaponDetail({ weapon, filterBase }: WeaponDetailProps) 
               <li key={`${entry.slug}-${ref?.url ?? 'route'}`}>
                 <WeaponCard
                   weapon={entry}
+                  toUrl={detailUrlWithFrom(buildWeaponCardData(entry).route, backUrl)}
                   badgeLabel={
                     entry.subtype !== weapon.subtype
                       ? WEAPON_SUBTYPE_FALLBACK_LABELS[entry.subtype]

@@ -1,0 +1,1001 @@
+[
+  {
+    "id": "housing-dragonlord-castle",
+    "name": "DragonLord Castle",
+    "slug": "housing-dragonlord-castle",
+    "type": "housing",
+    "subtype": "house",
+    "description": "Castle for DragonLords",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=20422730",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302540",
+    "tags": [
+      "house",
+      "houses",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://i.imgur.com/TvnaUp7.jpg",
+    "location": "DragonLord Keep",
+    "price": "1,000 Dragon Coins",
+    "sellback": "900 Dragon Coins before 24 hours, 250 Dragon Coins after 24 hours",
+    "obtainMethods": [
+      {
+        "location": "DragonLord Keep",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=20423769",
+        "price": "1,000 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "900 Dragon Coins before 24 hours, 250 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "1",
+    "itemType": "House",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-dragonsgrasp-house",
+    "name": "Dragonsgrasp House",
+    "slug": "housing-dragonsgrasp-house",
+    "type": "housing",
+    "subtype": "house",
+    "description": "An elegant house constructed in the Dragonsgrasp style",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=19855242",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302540",
+    "tags": [
+      "house",
+      "houses"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": false,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "http://i.imgur.com/0JHxO.jpg",
+    "alternativeImages": [
+      {
+        "url": "http://i.imgur.com/KnYLxUE.png",
+        "caption": "House Design"
+      }
+    ],
+    "location": "Dragonsgrasp House Shop",
+    "price": "100,000 Gold",
+    "sellback": "10,000 Gold",
+    "obtainMethods": [
+      {
+        "location": "Dragonsgrasp House Shop",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=19855201",
+        "price": "100,000 Gold",
+        "priceType": "gold",
+        "daRequired": true,
+        "sellback": "10,000 Gold"
+      }
+    ],
+    "rarity": "1",
+    "itemType": "House",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-edelia-house",
+    "name": "Edelia House",
+    "slug": "housing-edelia-house",
+    "type": "housing",
+    "subtype": "house",
+    "description": "Edelia House",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=20203513",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302540",
+    "tags": [
+      "house",
+      "houses"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": false,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/housing/EdeliaHousepic.png",
+    "location": "Ravenloss House Shop",
+    "price": "6,000 Gold",
+    "sellback": "600 Gold",
+    "obtainMethods": [
+      {
+        "location": "Ravenloss House Shop",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=20188446",
+        "price": "6,000 Gold",
+        "priceType": "gold",
+        "daRequired": true,
+        "sellback": "600 Gold"
+      }
+    ],
+    "rarity": "1",
+    "itemType": "House",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-fish-style",
+    "name": "Fish Style",
+    "slug": "housing-fish-style",
+    "type": "housing",
+    "subtype": "house",
+    "description": "It's a FISH!",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=14318482",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302540",
+    "tags": [
+      "house",
+      "houses"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": false,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://i.imgur.com/9g3hTDX.jpg",
+    "location": "Fish Shop",
+    "price": "1,000 Gold",
+    "sellback": "100 Gold",
+    "obtainMethods": [
+      {
+        "location": "Fish Shop",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=19448675",
+        "price": "1,000 Gold",
+        "priceType": "gold",
+        "daRequired": true,
+        "sellback": "100 Gold"
+      }
+    ],
+    "rarity": "",
+    "itemType": "House",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-frostvale-style",
+    "familyName": "Frostvale Style",
+    "slug": "housing-frostvale-style",
+    "aliasSlugs": [
+      "housing-frostvale-style-ii"
+    ],
+    "type": "housing",
+    "subtype": "house",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=15306090",
+    "familyOrigin": "same-thread-multi-post",
+    "familySources": [
+      {
+        "title": "Frostvale Style",
+        "url": "https://forums2.battleon.com/f/fb.asp?m=15306090",
+        "variantLabel": "Frostvale Style",
+        "isPrimary": true
+      },
+      {
+        "title": "Frostvale Style II",
+        "url": "https://forums2.battleon.com/f/fb.asp?m=15306090",
+        "variantLabel": "Frostvale Style II",
+        "isPrimary": false
+      }
+    ],
+    "shared": {
+      "description": "It's a house!",
+      "rarity": "1",
+      "alsoSee": []
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
+        "levelDisplay": "1",
+        "name": "Frostvale Style",
+        "damage": "",
+        "stats": "27",
+        "obtainVariants": [
+          {
+            "location": "Frostval Houses",
+            "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=15304954",
+            "price": "1,000 Gold",
+            "priceType": "gold",
+            "daRequired": true,
+            "sellback": "100 Gold"
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=15306090",
+        "description": "It's a house!",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/housing/Frostvale.png",
+        "alternativeImages": [
+          {
+            "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/housing/Frostvale-Internal1.png",
+            "caption": "Room 1"
+          },
+          {
+            "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/housing/Frostvale-Internal2.png",
+            "caption": "Room 2"
+          },
+          {
+            "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/housing/Frostvale-Internal3.png",
+            "caption": "Room 3"
+          }
+        ],
+        "rarity": "1",
+        "itemType": "House",
+        "capacity": "27",
+        "furnishingSlots": "Backgrounds: 1, Floors: 1, Rugs: 3, Shrubs: 5, Stuff: 9, Wall Items: 8"
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "2",
+        "name": "Frostvale Style II",
+        "damage": "",
+        "stats": "40",
+        "obtainVariants": [
+          {
+            "location": "Frostval Houses",
+            "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=15304954",
+            "price": "2,000 Gold",
+            "priceType": "gold",
+            "daRequired": true,
+            "sellback": "200 Gold"
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=15306090",
+        "description": "It's a house!",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/housing/FrostvaleII.png",
+        "alternativeImages": [
+          {
+            "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/housing/Frostvale-Internal1.png",
+            "caption": "Room 1"
+          },
+          {
+            "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/housing/Frostvale-Internal2.png",
+            "caption": "Rooms 2 & 3"
+          },
+          {
+            "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/housing/Frostvale-Internal3.png",
+            "caption": "Rooms 4 & 5"
+          }
+        ],
+        "rarity": "1",
+        "itemType": "House",
+        "capacity": "40",
+        "furnishingSlots": "Backgrounds: 1, Floors: 1, Rugs: 4, Shrubs: 5, Stuff: 15, Wall Items: 14"
+      }
+    ],
+    "itemType": "House",
+    "tags": [
+      "house",
+      "houses",
+      "seasonal",
+      "multiple-versions"
+    ],
+    "hasDA": true,
+    "hasDC": false,
+    "hasDM": false,
+    "hasFree": false,
+    "hasMerge": false,
+    "levelRange": "",
+    "elements": [],
+    "isRare": false,
+    "isSeasonal": true,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "housing-gothic-style",
+    "familyName": "Gothic Style",
+    "slug": "housing-gothic-style",
+    "aliasSlugs": [
+      "housing-gothic-style-ii"
+    ],
+    "type": "housing",
+    "subtype": "house",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=16294447",
+    "familyOrigin": "same-thread-multi-post",
+    "familySources": [
+      {
+        "title": "Gothic Style",
+        "url": "https://forums2.battleon.com/f/fb.asp?m=16294447",
+        "variantLabel": "Gothic Style",
+        "isPrimary": true
+      },
+      {
+        "title": "Gothic Style II",
+        "url": "https://forums2.battleon.com/f/fb.asp?m=16294447",
+        "variantLabel": "Gothic Style II",
+        "isPrimary": false
+      }
+    ],
+    "shared": {
+      "description": "A gothic style house.",
+      "rarity": "1",
+      "alsoSee": []
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
+        "levelDisplay": "1",
+        "name": "Gothic Style",
+        "damage": "",
+        "stats": "27",
+        "obtainVariants": [
+          {
+            "location": "House Shop",
+            "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14237126",
+            "price": "1,000 Gold",
+            "priceType": "gold",
+            "daRequired": true,
+            "sellback": "100 Gold"
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=16294447",
+        "description": "A gothic style house.",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/housing/Gothic.png",
+        "alternativeImages": [
+          {
+            "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/housing/Gothic-Internal1.png",
+            "caption": "Room 1"
+          },
+          {
+            "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/housing/Gothic-Internal2.png",
+            "caption": "Room 2"
+          },
+          {
+            "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/housing/Gothic-Internal3.png",
+            "caption": "Room 3"
+          }
+        ],
+        "rarity": "1",
+        "itemType": "House",
+        "capacity": "27",
+        "furnishingSlots": "Backgrounds: 1, Floors: 1, Rugs: 3, Shrubs: 5, Stuff: 9, Wall Items: 8",
+        "notes": "• Previously had the description: It's A Gothic Style house ; this was updated on January 29th, 2021 .\n• Internal Appearances: Room 1 , Room 2 , Room 3\n• Previously had the description: It's a house! ; this was updated on January 29th, 2021 .\n• Internal Appearances: Room 1 , Rooms 2 & 3 , Rooms 4 & 5"
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "2",
+        "name": "Gothic Style II",
+        "damage": "",
+        "stats": "39",
+        "obtainVariants": [
+          {
+            "location": "House Shop",
+            "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14237126",
+            "price": "2,000 Gold",
+            "priceType": "gold",
+            "daRequired": true,
+            "sellback": "200 Gold"
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=16294447",
+        "description": "It's a gothic style house.",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/housing/GothicII.png",
+        "alternativeImages": [
+          {
+            "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/housing/Gothic-Internal1.png",
+            "caption": "Room 1"
+          },
+          {
+            "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/housing/Gothic-Internal2.png",
+            "caption": "Rooms 2 & 3"
+          },
+          {
+            "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/housing/Gothic-Internal3.png",
+            "caption": "Rooms 4 & 5"
+          }
+        ],
+        "rarity": "1",
+        "itemType": "House",
+        "capacity": "39",
+        "furnishingSlots": "Backgrounds: 1, Floors: 1, Rugs: 3, Shrubs: 5, Stuff: 15, Wall Items: 14",
+        "notes": "• Previously had the description: It's a house! ; this was updated on January 29th, 2021 .\n• Internal Appearances: Room 1 , Rooms 2 & 3 , Rooms 4 & 5\n• Previously had the description: It's A Gothic Style house ; this was updated on January 29th, 2021 .\n• Internal Appearances: Room 1 , Room 2 , Room 3"
+      }
+    ],
+    "itemType": "House",
+    "tags": [
+      "house",
+      "houses",
+      "multiple-versions"
+    ],
+    "hasDA": true,
+    "hasDC": false,
+    "hasDM": false,
+    "hasFree": false,
+    "hasMerge": false,
+    "levelRange": "",
+    "elements": [],
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "housing-grenwog-cave",
+    "name": "Grenwog Cave",
+    "slug": "housing-grenwog-cave",
+    "type": "housing",
+    "subtype": "house",
+    "description": "It's a HOUSE!",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=18902304",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302540",
+    "tags": [
+      "house",
+      "houses",
+      "rare"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": false,
+    "isRare": true,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/housing/GrenwogCave.png",
+    "alternativeImages": [
+      {
+        "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/housing/GrenwogCave-Internal1.png",
+        "caption": "Room 1"
+      },
+      {
+        "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/housing/GrenwogCave-Internal2.png",
+        "caption": "Room 2"
+      },
+      {
+        "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/housing/GrenwogCave-Internal3.png",
+        "caption": "Room 3"
+      }
+    ],
+    "location": "Grenwog House Shop",
+    "price": "10,000 Gold",
+    "sellback": "1,000 Gold",
+    "capacity": "27",
+    "furnishingSlots": "Backgrounds: 1, Floors: 1, Rugs: 3, Shrubs: 5, Stuff: 9, Wall Items: 8",
+    "obtainMethods": [
+      {
+        "location": "Grenwog House Shop",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=18902229",
+        "price": "10,000 Gold",
+        "priceType": "gold",
+        "daRequired": true,
+        "sellback": "1,000 Gold"
+      }
+    ],
+    "rarity": "1",
+    "itemType": "House",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-hamelin-style",
+    "familyName": "Hamelin Style",
+    "slug": "housing-hamelin-style",
+    "aliasSlugs": [
+      "housing-hamelin-style-ii"
+    ],
+    "type": "housing",
+    "subtype": "house",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=16633846",
+    "familyOrigin": "same-thread-multi-post",
+    "familySources": [
+      {
+        "title": "Hamelin Style",
+        "url": "https://forums2.battleon.com/f/fb.asp?m=16633846",
+        "variantLabel": "Hamelin Style",
+        "isPrimary": true
+      },
+      {
+        "title": "Hamelin Style II",
+        "url": "https://forums2.battleon.com/f/fb.asp?m=16633846",
+        "variantLabel": "Hamelin Style II",
+        "isPrimary": false
+      }
+    ],
+    "shared": {
+      "description": "A Falconreach style hut.",
+      "rarity": "1",
+      "alsoSee": []
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
+        "levelDisplay": "1",
+        "name": "Hamelin Style",
+        "damage": "",
+        "stats": "27",
+        "obtainVariants": [
+          {
+            "location": "House Shop",
+            "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14237126",
+            "price": "1,000 Gold",
+            "priceType": "gold",
+            "daRequired": true,
+            "sellback": "100 Gold"
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=16633846",
+        "description": "A Falconreach style hut.",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/housing/Hamelin.png",
+        "alternativeImages": [
+          {
+            "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/housing/Hamelin-Internal1.png",
+            "caption": "Room 1"
+          },
+          {
+            "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/housing/Hamelin-Internal2.png",
+            "caption": "Room 2"
+          },
+          {
+            "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/housing/Hamelin-Internal3.png",
+            "caption": "Room 3"
+          }
+        ],
+        "rarity": "1",
+        "itemType": "House",
+        "capacity": "27",
+        "furnishingSlots": "Backgrounds: 1, Floors: 1, Rugs: 3, Shrubs: 5, Stuff: 9, Wall Items: 8",
+        "notes": "• Previously had the description: It's a hut...in Falconreach ; this was updated on January 29th, 2021 .\n• Internal Appearances: Room 1 , Room 2 , Room 3\n• Previously had the description: It's a house! ; this was updated on January 29th, 2021 .\n• Internal Appearances: Room 1 , Rooms 2 & 3 , Rooms 4 & 5"
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "2",
+        "name": "Hamelin Style II",
+        "damage": "",
+        "stats": "40",
+        "obtainVariants": [
+          {
+            "location": "House Shop",
+            "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14237126",
+            "price": "2,000 Gold",
+            "priceType": "gold",
+            "daRequired": true,
+            "sellback": "200 Gold"
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=16633846",
+        "description": "It's a house in the style of Falconreach.",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/housing/HamelinII.png",
+        "alternativeImages": [
+          {
+            "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/housing/Hamelin-Internal1.png",
+            "caption": "Room 1"
+          },
+          {
+            "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/housing/Hamelin-Internal2.png",
+            "caption": "Rooms 2 & 3"
+          },
+          {
+            "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/housing/Hamelin-Internal3.png",
+            "caption": "Rooms 4 & 5"
+          }
+        ],
+        "rarity": "1",
+        "itemType": "House",
+        "capacity": "40",
+        "furnishingSlots": "Backgrounds: 1, Floors: 1, Rugs: 4, Shrubs: 5, Stuff: 15, Wall Items: 14",
+        "notes": "• Previously had the description: It's a house! ; this was updated on January 29th, 2021 .\n• Internal Appearances: Room 1 , Rooms 2 & 3 , Rooms 4 & 5\n• Previously had the description: It's a hut...in Falconreach ; this was updated on January 29th, 2021 .\n• Internal Appearances: Room 1 , Room 2 , Room 3"
+      }
+    ],
+    "itemType": "House",
+    "tags": [
+      "house",
+      "houses",
+      "multiple-versions"
+    ],
+    "hasDA": true,
+    "hasDC": false,
+    "hasDM": false,
+    "hasFree": false,
+    "hasMerge": false,
+    "levelRange": "",
+    "elements": [],
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "housing-nieboheim-house",
+    "name": "Nieboheim House",
+    "slug": "housing-nieboheim-house",
+    "type": "housing",
+    "subtype": "house",
+    "description": "A classic Nieboheim house. Does not have the option to change backgrounds.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22358111",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302540",
+    "tags": [
+      "house",
+      "houses"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": false,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "location": "Azaveyran Houses",
+    "price": "100,000 Gold",
+    "sellback": "10,000 Gold",
+    "obtainMethods": [
+      {
+        "location": "Azaveyran Houses",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=22357119",
+        "price": "100,000 Gold",
+        "priceType": "gold",
+        "daRequired": true,
+        "sellback": "10,000 Gold"
+      }
+    ],
+    "rarity": "1",
+    "itemType": "House",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-obsidian-home",
+    "name": "Obsidian Home",
+    "slug": "housing-obsidian-home",
+    "type": "housing",
+    "subtype": "house",
+    "description": "A house turned to obsidian!",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22358110",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302540",
+    "tags": [
+      "house",
+      "houses"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": false,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "location": "Azaveyran Houses",
+    "price": "10,000 Gold",
+    "sellback": "1,000 Gold",
+    "obtainMethods": [
+      {
+        "location": "Azaveyran Houses",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=22357119",
+        "price": "10,000 Gold",
+        "priceType": "gold",
+        "daRequired": true,
+        "sellback": "1,000 Gold"
+      }
+    ],
+    "rarity": "1",
+    "itemType": "House",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-popsprocket-house",
+    "name": "Popsprocket House",
+    "slug": "housing-popsprocket-house",
+    "type": "housing",
+    "subtype": "house",
+    "description": "Its a House!",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=16266029",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302540",
+    "tags": [
+      "house",
+      "houses"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": false,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/housing/PopsprocketHousepic.png",
+    "location": "Popsprocket House Shop",
+    "price": "5,000 Gold",
+    "sellback": "500 Gold",
+    "obtainMethods": [
+      {
+        "location": "Popsprocket House Shop",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=16265984",
+        "price": "5,000 Gold",
+        "priceType": "gold",
+        "daRequired": true,
+        "sellback": "500 Gold"
+      }
+    ],
+    "rarity": "1",
+    "itemType": "House",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-ravenloss-house",
+    "name": "Ravenloss House",
+    "slug": "housing-ravenloss-house",
+    "type": "housing",
+    "subtype": "house",
+    "description": "Creepy!",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=20188381",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302540",
+    "tags": [
+      "house",
+      "houses"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": false,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/housing/RavenlossHousepic.png",
+    "location": "Ravenloss House Shop",
+    "price": "5,000 Gold",
+    "sellback": "500 Gold",
+    "obtainMethods": [
+      {
+        "location": "Ravenloss House Shop",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=20188446",
+        "price": "5,000 Gold",
+        "priceType": "gold",
+        "daRequired": true,
+        "sellback": "500 Gold"
+      }
+    ],
+    "rarity": "1",
+    "itemType": "House",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-sandsea-tower",
+    "name": "Sandsea Tower",
+    "slug": "housing-sandsea-tower",
+    "type": "housing",
+    "subtype": "house",
+    "description": "Tower sweet Tower!",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=21227038",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302540",
+    "tags": [
+      "house",
+      "houses",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://i.imgur.com/aGZqLVT.png",
+    "location": "Sandsea Houses",
+    "price": "1,000 Dragon Coins",
+    "sellback": "900 Dragon Coins before 24 hours, 250 Dragon Coins after 24 hours",
+    "obtainMethods": [
+      {
+        "location": "Sandsea Houses",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=21227387",
+        "price": "1,000 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "900 Dragon Coins before 24 hours, 250 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "1",
+    "itemType": "House",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-togtog",
+    "name": "TogTog",
+    "slug": "housing-togtog",
+    "type": "housing",
+    "subtype": "house",
+    "description": "It's a House? Ew!",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=19911757",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302540",
+    "tags": [
+      "house",
+      "houses",
+      "seasonal"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": false,
+    "isRare": false,
+    "isSeasonal": true,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/housing/TogTogHouseOutsidepic.png",
+    "alternativeImages": [
+      {
+        "url": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/housing/TogTogHouseInsidepic.png",
+        "caption": "Image Inside"
+      }
+    ],
+    "location": "TogTog House Shop",
+    "price": "20,000 Gold",
+    "sellback": "2,000 Gold",
+    "obtainMethods": [
+      {
+        "location": "TogTog House Shop",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=19911568",
+        "price": "20,000 Gold",
+        "priceType": "gold",
+        "daRequired": true,
+        "sellback": "2,000 Gold"
+      }
+    ],
+    "rarity": "1",
+    "itemType": "House",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-villager-style",
+    "familyName": "Villager Style",
+    "slug": "housing-villager-style",
+    "aliasSlugs": [
+      "housing-villager-style-ii"
+    ],
+    "type": "housing",
+    "subtype": "house",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=15166794",
+    "familyOrigin": "same-thread-multi-post",
+    "familySources": [
+      {
+        "title": "Villager Style",
+        "url": "https://forums2.battleon.com/f/fb.asp?m=15166794",
+        "variantLabel": "Villager Style",
+        "isPrimary": true
+      },
+      {
+        "title": "Villager Style II",
+        "url": "https://forums2.battleon.com/f/fb.asp?m=15166794",
+        "variantLabel": "Villager Style II",
+        "isPrimary": false
+      }
+    ],
+    "shared": {
+      "description": "A Doomwood style hut.",
+      "rarity": "1",
+      "alsoSee": []
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
+        "levelDisplay": "1",
+        "name": "Villager Style",
+        "damage": "",
+        "stats": "27",
+        "obtainVariants": [
+          {
+            "location": "House Shop",
+            "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14237126",
+            "price": "1,000 Gold",
+            "priceType": "gold",
+            "daRequired": true,
+            "sellback": "100 Gold"
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=15166794",
+        "description": "A Doomwood style hut.",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/housing/Villager.png",
+        "alternativeImages": [
+          {
+            "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/housing/Villager-Internal1.png",
+            "caption": "Room 1"
+          },
+          {
+            "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/housing/Villager-Internal2.png",
+            "caption": "Room 2"
+          },
+          {
+            "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/housing/Villager-Internal3.png",
+            "caption": "Room 3"
+          }
+        ],
+        "rarity": "1",
+        "itemType": "House",
+        "capacity": "27",
+        "furnishingSlots": "Backgrounds: 1, Floors: 1, Rugs: 3, Shrubs: 5, Stuff: 9, Wall Items: 8",
+        "notes": "• Previously had the description: It's a hut...in Doomwood ; this was updated on January 29th, 2021 .\n• Internal Appearances: Room 1 , Room 2 , Room 3\n• Previously had the description: It's a house! ; this was updated on January 29th, 2021 .\n• Internal Appearances: Room 1 , Rooms 2 & 3 , Rooms 4 & 5"
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "2",
+        "name": "Villager Style II",
+        "damage": "",
+        "stats": "39",
+        "obtainVariants": [
+          {
+            "location": "House Shop",
+            "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14237126",
+            "price": "2,000 Gold",
+            "priceType": "gold",
+            "daRequired": true,
+            "sellback": "200 Gold"
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=15166794",
+        "description": "It's a house in the style of Doomwood.",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/housing/VillagerII.png",
+        "alternativeImages": [
+          {
+            "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/housing/Villager-Internal1.png",
+            "caption": "Room 1"
+          },
+          {
+            "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/housing/Villager-Internal2.png",
+            "caption": "Rooms 2 & 3"
+          },
+          {
+            "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/housing/Villager-Internal3.png",
+            "caption": "Rooms 4 & 5"
+          }
+        ],
+        "rarity": "1",
+        "itemType": "House",
+        "capacity": "39",
+        "furnishingSlots": "Backgrounds: 1, Floors: 1, Rugs: 3, Shrubs: 5, Stuff: 15, Wall Items: 14",
+        "notes": "• Previously had the description: It's a house! ; this was updated on January 29th, 2021 .\n• Internal Appearances: Room 1 , Rooms 2 & 3 , Rooms 4 & 5\n• Previously had the description: It's a hut...in Doomwood ; this was updated on January 29th, 2021 .\n• Internal Appearances: Room 1 , Room 2 , Room 3"
+      }
+    ],
+    "itemType": "House",
+    "tags": [
+      "house",
+      "houses",
+      "multiple-versions"
+    ],
+    "hasDA": true,
+    "hasDC": false,
+    "hasDM": false,
+    "hasFree": false,
+    "hasMerge": false,
+    "levelRange": "",
+    "elements": [],
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "housing-waterelf-house",
+    "name": "Waterelf House",
+    "slug": "housing-waterelf-house",
+    "type": "housing",
+    "subtype": "house",
+    "description": "Its a House!",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=17643914",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302540",
+    "tags": [
+      "house",
+      "houses"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": false,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/housing/WaterElfHousepic.png",
+    "location": "WaterElf House Shop",
+    "price": "5,000 Gold",
+    "sellback": "500 Gold",
+    "obtainMethods": [
+      {
+        "location": "WaterElf House Shop",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=17681910",
+        "price": "5,000 Gold",
+        "priceType": "gold",
+        "daRequired": true,
+        "sellback": "500 Gold"
+      }
+    ],
+    "rarity": "1",
+    "itemType": "House",
+    "hasSpecialEffect": false
+  }
+]

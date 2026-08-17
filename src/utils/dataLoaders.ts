@@ -4,6 +4,7 @@ import type { ElementsData } from '../types/element'
 import type { ItemFamily } from '../types/item'
 import type { Pet } from '../types/pet'
 import type { WeaponEntry, WeaponSubtype } from '../types/weapon'
+import type { HousingEntry, HousingSubtype } from '../types/housing'
 import accessoryManifestUrl from '../data/accessory-manifest.json?url'
 import badgesManifestUrl from '../data/badges-manifest.json?url'
 import artifactsUrl from '../data/artifacts.json?url'
@@ -15,6 +16,14 @@ import capesWingsMZUrl from '../data/capes-wings-m-z.json?url'
 import categoriesUrl from '../data/categories.json?url'
 import elementsUrl from '../data/elements.json?url'
 import guestsUrl from '../data/guests.json?url'
+import housingBackgroundsUrl from '../data/housing-backgrounds.json?url'
+import housingFloorsUrl from '../data/housing-floors.json?url'
+import housingHousesUrl from '../data/housing-houses.json?url'
+import housingManifestUrl from '../data/housing-manifest.json?url'
+import housingRugsUrl from '../data/housing-rugs.json?url'
+import housingShrubsUrl from '../data/housing-shrubs.json?url'
+import housingStuffUrl from '../data/housing-stuff.json?url'
+import housingWallItemsUrl from '../data/housing-wall-items.json?url'
 import helmsALUrl from '../data/helms-a-l.json?url'
 import helmsMZUrl from '../data/helms-m-z.json?url'
 import necklacesUrl from '../data/necklaces.json?url'
@@ -76,6 +85,11 @@ export interface WeaponManifest {
   bySubtype: Record<WeaponSubtype, number>
 }
 
+export interface HousingManifest {
+  total: number
+  bySubtype: Record<HousingSubtype, number>
+}
+
 const accessoryDataUrls: Record<AccessorySubtype, string[]> = {
   artifact: [artifactsUrl],
   belt: [beltsUrl],
@@ -98,6 +112,16 @@ const weaponDataUrls: Record<WeaponSubtype, string[]> = {
   scythe: [weaponsScythesAJUrl, weaponsScythesKZUrl],
 }
 
+const housingDataUrls: Record<HousingSubtype, string[]> = {
+  house: [housingHousesUrl],
+  background: [housingBackgroundsUrl],
+  floor: [housingFloorsUrl],
+  rug: [housingRugsUrl],
+  shrub: [housingShrubsUrl],
+  stuff: [housingStuffUrl],
+  'wall-item': [housingWallItemsUrl],
+}
+
 let accessoryManifestCache: AccessoryManifest | null = null
 let accessoryManifestPromise: Promise<AccessoryManifest> | null = null
 const accessorySubtypeCache: Partial<Record<AccessorySubtype, AccessoryEntry[]>> = {}
@@ -110,6 +134,12 @@ const weaponSubtypeCache: Partial<Record<WeaponSubtype, WeaponEntry[]>> = {}
 const weaponSubtypePromises: Partial<Record<WeaponSubtype, Promise<WeaponEntry[]>>> = {}
 let weaponsPromise: Promise<Record<WeaponSubtype, WeaponEntry[]>> | null = null
 
+let housingManifestCache: HousingManifest | null = null
+let housingManifestPromise: Promise<HousingManifest> | null = null
+const housingSubtypeCache: Partial<Record<HousingSubtype, HousingEntry[]>> = {}
+const housingSubtypePromises: Partial<Record<HousingSubtype, Promise<HousingEntry[]>>> = {}
+let housingPromise: Promise<Record<HousingSubtype, HousingEntry[]>> | null = null
+
 function normalizeLoadedPet<T extends Pet & { specialMarkers?: string[] }>(pet: T): Pet {
   const normalized = { ...pet } as Pet & { specialMarkers?: string[] }
   if (!normalized.traits && normalized.specialMarkers) {
@@ -121,7 +151,7 @@ function normalizeLoadedPet<T extends Pet & { specialMarkers?: string[] }>(pet: 
 }
 
 function isLoadedFamily(
-  entry: Pet | ItemFamily | AccessoryEntry | WeaponEntry
+  entry: Pet | ItemFamily | AccessoryEntry | WeaponEntry | HousingEntry
 ): entry is ItemFamily {
   return 'levelVariants' in entry
 }
@@ -323,4 +353,54 @@ export async function loadWeaponsBySubtype(): Promise<Record<WeaponSubtype, Weap
     }))
   }
   return weaponsPromise
+}
+
+export async function loadHousingManifest(): Promise<HousingManifest> {
+  if (housingManifestCache) return housingManifestCache
+  if (!housingManifestPromise) {
+    housingManifestPromise = fetchJson<HousingManifest>(housingManifestUrl).then((data) => {
+      housingManifestCache = data
+      return housingManifestCache
+    })
+  }
+  return housingManifestPromise
+}
+
+export async function loadHousingForSubtype(subtype: HousingSubtype): Promise<HousingEntry[]> {
+  if (housingSubtypeCache[subtype]) return housingSubtypeCache[subtype]
+  if (!housingSubtypePromises[subtype]) {
+    housingSubtypePromises[subtype] = Promise.all(
+      housingDataUrls[subtype].map((url) => fetchJson<HousingEntry[]>(url))
+    ).then((datasets) => {
+      const entries = datasets
+        .flat()
+        .map((entry) => (isLoadedFamily(entry) ? normalizeLoadedFamily(entry) : entry))
+      housingSubtypeCache[subtype] = entries
+      return entries
+    })
+  }
+  return housingSubtypePromises[subtype]
+}
+
+export async function loadHousingBySubtype(): Promise<Record<HousingSubtype, HousingEntry[]>> {
+  if (!housingPromise) {
+    housingPromise = Promise.all([
+      loadHousingForSubtype('house'),
+      loadHousingForSubtype('background'),
+      loadHousingForSubtype('floor'),
+      loadHousingForSubtype('rug'),
+      loadHousingForSubtype('shrub'),
+      loadHousingForSubtype('stuff'),
+      loadHousingForSubtype('wall-item'),
+    ]).then(([house, background, floor, rug, shrub, stuff, wallItem]) => ({
+      house,
+      background,
+      floor,
+      rug,
+      shrub,
+      stuff,
+      'wall-item': wallItem,
+    }))
+  }
+  return housingPromise
 }

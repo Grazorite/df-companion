@@ -20,6 +20,7 @@
  */
 
 import type { ObtainVariant } from '../../types/item'
+import { accessPillClass } from '../../utils/accessPillStyles'
 import { normalizeDisplayText } from '../../utils/displayText'
 import { getCurrencyTextClass, getSeparatedObtainLines } from '../../utils/obtainFormatting'
 
@@ -28,6 +29,7 @@ interface ObtainVariantCardProps {
   label?: string  // "Free Option", "DC Option", "Method 1"
   isGuest?: boolean  // If true, hide price/sellback fields (badge-style)
   locationOnly?: boolean
+  showCurrencyAccessPills?: boolean
 }
 
 function ObtainTextLines({
@@ -58,6 +60,7 @@ export default function ObtainVariantCard({
   label,
   isGuest = false,
   locationOnly = false,
+  showCurrencyAccessPills = true,
 }: ObtainVariantCardProps) {
   const headingText = label ? `How to Obtain (${label})` : 'How to Obtain'
   
@@ -89,12 +92,19 @@ export default function ObtainVariantCard({
           )}
         </div>
         
-        {/* DA Required pill (non-clickable in obtain context) */}
-        {variant.daRequired && (
-          <span className="inline-flex items-center justify-center whitespace-nowrap min-w-[92px] text-xs font-medium px-3 py-1 rounded-full bg-orange-500/20 text-orange-400">
-            DA Required
-          </span>
-        )}
+        <div className="flex flex-wrap justify-end gap-2">
+          {/* Access pills are non-clickable in obtain context. */}
+          {variant.daRequired && (
+            <span className={`inline-flex items-center justify-center whitespace-nowrap min-w-[92px] ${accessPillClass('da', 'obtain')}`}>
+              DA Required
+            </span>
+          )}
+          {showCurrencyAccessPills && (variant.dcRequired || variant.priceType === 'dc') && (
+            <span className={`inline-flex items-center justify-center whitespace-nowrap ${accessPillClass('dc', 'obtain')}`}>
+              DC
+            </span>
+          )}
+        </div>
       </div>
       
       {!locationOnly && (showRequirements || showRequiredItems || showPriceFields) && (

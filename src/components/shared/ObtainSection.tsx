@@ -6,6 +6,7 @@ interface ObtainSectionProps {
   isGuest?: boolean
   locationOnly?: boolean
   className?: string
+  showCurrencyAccessPills?: boolean
 }
 
 export default function ObtainSection({
@@ -13,6 +14,7 @@ export default function ObtainSection({
   isGuest = false,
   locationOnly = false,
   className = 'mb-5',
+  showCurrencyAccessPills = true,
 }: ObtainSectionProps) {
   if (variants.length === 0) return null
 
@@ -26,6 +28,7 @@ export default function ObtainSection({
             label={variants.length > 1 ? `Method ${index + 1}` : undefined}
             isGuest={isGuest}
             locationOnly={locationOnly}
+            showCurrencyAccessPills={showCurrencyAccessPills}
           />
         ))}
       </div>

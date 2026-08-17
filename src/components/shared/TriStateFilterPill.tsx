@@ -29,9 +29,13 @@ export default function TriStateFilterPill({
   disabled = false,
 }: TriStateFilterPillProps) {
   const isExcluded = state === 'exclude'
+  const includeClassName =
+    size === 'access' && label === 'DC' && activeClassName === 'bg-gold-bright text-bg-base'
+      ? 'bg-amber-500/20 text-gold'
+      : activeClassName
   const className =
     state === 'include'
-      ? (elementClassName ?? activeClassName)
+      ? (elementClassName ?? includeClassName)
       : isExcluded
         ? 'bg-red-950/70 text-red-200 border border-red-700/70'
         : inactiveClassName

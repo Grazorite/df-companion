@@ -40,7 +40,14 @@ export type PriceType = 'gold' | 'dc' | 'dm' | 'free' | 'merge'
  * Used to identify what category an item belongs to across the application.
  * Extensible to support future content sections.
  */
-export type ItemType = 'pet' | 'guest' | 'weapon' | 'armor' | 'trinket' | 'accessory'
+export type ItemType =
+  | 'pet'
+  | 'guest'
+  | 'weapon'
+  | 'armor'
+  | 'trinket'
+  | 'accessory'
+  | 'housing'
 
 /**
  * Attack interface (shared between Pet and ItemFamily)
@@ -199,6 +206,9 @@ export interface LevelVariant {
   traits?: string[] // Variant-specific behavioural traits/markers (e.g. base Linus [] vs Prince Linus [SHR]); used to scope trait pills to the selected variant on detail pages
   resists?: string // Only if different from shared.resists
   rarity?: string // Only if different from shared.rarity
+  capacity?: string // Housing-only: total item capacity
+  furnishingSlots?: string // Housing-only: Background/Floor/Rug/Shrub/Stuff/Wall Item slot counts
+  effect?: string // Housing-only: special furnishing effect
   attacks?: VariantAttack[] // Only if attacks differ at this level
   weaponSpecial?: WeaponSpecial // Weapon-only: preserves parsed specials through family consolidation
   weaponSpecials?: WeaponSpecial[] // Weapon-only: preserves multiple parsed specials through family consolidation

@@ -100,15 +100,16 @@ function parseNotes(raw: string): NoteItem[] {
       }
 
       if (activeQuoteItem) {
-        if (
-          activeQuoteItem.quoteItems.length === 0 ||
-          level > 0 ||
-          isLikelyQuoteContinuation(trimmed, activeQuoteItem.text)
-        ) {
+        const startsTopLevelListItem = level === 0 && /^(?:[•\-*]\s*)+/.test(trimmed)
+        const continuesQuote =
+          !startsTopLevelListItem &&
+          (activeQuoteItem.quoteItems.length === 0 ||
+            level > 0 ||
+            isLikelyQuoteContinuation(trimmed, activeQuoteItem.text))
+        if (continuesQuote) {
           activeQuoteItem.quoteItems.push(cleanListMarker(trimmed))
           continue
         }
-
         activeQuoteItem = null
       }
 

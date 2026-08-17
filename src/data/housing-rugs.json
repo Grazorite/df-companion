@@ -1,0 +1,1320 @@
+[
+  {
+    "id": "housing-bamboo-mat",
+    "name": "Bamboo Mat",
+    "slug": "housing-bamboo-mat",
+    "type": "housing",
+    "subtype": "rug",
+    "description": "Made in the Shadow of the Wind Village.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=14296161",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302552",
+    "tags": [
+      "rug",
+      "rugs",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/housing/BambooMat.png",
+    "location": "DC Rugs",
+    "price": "50 Dragon Coins",
+    "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "DC Rugs",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14296777",
+        "price": "50 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Rug",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-blue-round-rug",
+    "name": "Blue Round Rug",
+    "slug": "housing-blue-round-rug",
+    "type": "housing",
+    "subtype": "rug",
+    "description": "A nice blue rug.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=14296391",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302552",
+    "tags": [
+      "rug",
+      "rugs",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/housing/RoundBlueRug.png",
+    "location": "DC Rugs",
+    "price": "50 Dragon Coins",
+    "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "DC Rugs",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14296777",
+        "price": "50 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Rug",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-broken-healing-pad",
+    "name": "Broken Healing Pad",
+    "slug": "housing-broken-healing-pad",
+    "type": "housing",
+    "subtype": "rug",
+    "description": "Free hurts!",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=14301377",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302552",
+    "tags": [
+      "rug",
+      "rugs",
+      "special-effect"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": false,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/housing/HealingPad.png",
+    "location": "Gold Rugs",
+    "price": "500,000 Gold",
+    "sellback": "50,000 Gold",
+    "effect": "Reduces your current HP and MP gradually.",
+    "obtainMethods": [
+      {
+        "location": "Gold Rugs",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14297357",
+        "price": "500,000 Gold",
+        "priceType": "gold",
+        "daRequired": true,
+        "sellback": "50,000 Gold"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Rug",
+    "alsoSee": [
+      {
+        "name": "Healing Pad",
+        "slug": "housing-healing-pad",
+        "type": "housing",
+        "url": "https://forums2.battleon.com/f/fb.asp?m=14296470"
+      }
+    ],
+    "hasSpecialEffect": true
+  },
+  {
+    "id": "housing-brown-rug",
+    "name": "Brown Rug",
+    "slug": "housing-brown-rug",
+    "type": "housing",
+    "subtype": "rug",
+    "description": "A brown rug",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=14301349",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302552",
+    "tags": [
+      "rug",
+      "rugs"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": false,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/housing/BrownRug.png",
+    "location": "Gold Rugs",
+    "price": "500 Gold",
+    "sellback": "50 Gold",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Gold Rugs",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14297357",
+        "price": "500 Gold",
+        "priceType": "gold",
+        "daRequired": true,
+        "sellback": "50 Gold"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Rug",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-checked-rug",
+    "name": "Checked Rug",
+    "slug": "housing-checked-rug",
+    "type": "housing",
+    "subtype": "rug",
+    "description": "Now we just need giant checkers!",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=14296175",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302552",
+    "tags": [
+      "rug",
+      "rugs",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/housing/CheckedRug.png",
+    "location": "DC Rugs",
+    "price": "50 Dragon Coins",
+    "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "DC Rugs",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14296777",
+        "price": "50 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Rug",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-curious-stain",
+    "name": "Curious Stain",
+    "slug": "housing-curious-stain",
+    "type": "housing",
+    "subtype": "rug",
+    "description": "It just won't come out! Unless you unequip it.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=14296369",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302552",
+    "tags": [
+      "rug",
+      "rugs",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/housing/CuriousStain.png",
+    "location": "DC Rugs",
+    "price": "50 Dragon Coins",
+    "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "DC Rugs",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14296777",
+        "price": "50 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Rug",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-dragon-amulet-rug",
+    "name": "Dragon Amulet Rug",
+    "slug": "housing-dragon-amulet-rug",
+    "type": "housing",
+    "subtype": "rug",
+    "description": "DragonLord certified!",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=14296203",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302552",
+    "tags": [
+      "rug",
+      "rugs",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/housing/DragonAmuletRug.png",
+    "location": "DC Rugs",
+    "price": "50 Dragon Coins",
+    "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "DC Rugs",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14296777",
+        "price": "50 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Rug",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-dragonscale-rug",
+    "name": "Dragonscale Rug",
+    "slug": "housing-dragonscale-rug",
+    "type": "housing",
+    "subtype": "rug",
+    "description": "It's always warm!",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=14296187",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302552",
+    "tags": [
+      "rug",
+      "rugs",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/housing/DragonscaleRug.png",
+    "location": "DC Rugs",
+    "price": "50 Dragon Coins",
+    "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "DC Rugs",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14296777",
+        "price": "50 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Rug",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-dragonsgrasp-rug",
+    "name": "Dragonsgrasp Rug",
+    "slug": "housing-dragonsgrasp-rug",
+    "type": "housing",
+    "subtype": "rug",
+    "description": "Solid and grey, very good for lots of foot traffic.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=19855550",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302552",
+    "tags": [
+      "rug",
+      "rugs",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "http://i.imgur.com/C1lg1.png",
+    "location": "Dragonsgrasp House Items",
+    "price": "25 Dragon Coins",
+    "sellback": "23 Dragon Coins before 24 hours, 6 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Dragonsgrasp House Items",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=19855209",
+        "price": "25 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "23 Dragon Coins before 24 hours, 6 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Rug",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-elegant-rug",
+    "name": "Elegant Rug",
+    "slug": "housing-elegant-rug",
+    "type": "housing",
+    "subtype": "rug",
+    "description": "Crafted by the people of the Sandsea.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=21244806",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302552",
+    "tags": [
+      "rug",
+      "rugs",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "http://i.imgur.com/kDfdTjm.jpg",
+    "location": "SandSea DC",
+    "price": "50 Dragon Coins",
+    "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "SandSea DC",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=21227395",
+        "price": "50 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Rug",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-gorillaphant-rug",
+    "name": "Gorillaphant Rug",
+    "slug": "housing-gorillaphant-rug",
+    "type": "housing",
+    "subtype": "rug",
+    "description": "Nice and furry.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=14296447",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302552",
+    "tags": [
+      "rug",
+      "rugs",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/housing/GorillaphantRug.png",
+    "location": "DC Rugs",
+    "price": "75 Dragon Coins",
+    "sellback": "68 Dragon Coins before 24 hours, 19 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "DC Rugs",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14296777",
+        "price": "75 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "68 Dragon Coins before 24 hours, 19 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Rug",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-guardian-rug",
+    "name": "Guardian Rug",
+    "slug": "housing-guardian-rug",
+    "type": "housing",
+    "subtype": "rug",
+    "description": "Carries the symbol of the Guardians.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=14296288",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302552",
+    "tags": [
+      "rug",
+      "rugs",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/housing/GuardianRug.png",
+    "location": "DC Rugs",
+    "price": "50 Dragon Coins",
+    "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "DC Rugs",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14296777",
+        "price": "50 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Rug",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-healing-pad",
+    "name": "Healing Pad",
+    "slug": "housing-healing-pad",
+    "type": "housing",
+    "subtype": "rug",
+    "description": "Free heals!",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=14296470",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302552",
+    "tags": [
+      "rug",
+      "rugs",
+      "d-coins",
+      "special-effect"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/housing/HealingPad.png",
+    "location": "DC Rugs",
+    "price": "100 Dragon Coins",
+    "sellback": "90 Dragon Coins before 24 hours, 25 Dragon Coins after 24 hours",
+    "effect": "Recovers your current HP and MP.",
+    "obtainMethods": [
+      {
+        "location": "DC Rugs",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14296777",
+        "price": "100 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "90 Dragon Coins before 24 hours, 25 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Rugs",
+    "alsoSee": [
+      {
+        "name": "Broken Healing Pad",
+        "slug": "housing-broken-healing-pad",
+        "type": "housing",
+        "url": "https://forums2.battleon.com/f/fb.asp?m=14301377"
+      }
+    ],
+    "hasSpecialEffect": true
+  },
+  {
+    "id": "housing-large-gray-area-rug",
+    "name": "Large Grey Area Rug",
+    "slug": "housing-large-gray-area-rug",
+    "type": "housing",
+    "subtype": "rug",
+    "description": "It covers the floor.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=14301358",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302552",
+    "tags": [
+      "rug",
+      "rugs"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": false,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/housing/LargeGreyAreaRug.png",
+    "location": "Gold Rugs",
+    "price": "600 Gold",
+    "sellback": "60 Gold",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Gold Rugs",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14297357",
+        "price": "600 Gold",
+        "priceType": "gold",
+        "daRequired": true,
+        "sellback": "60 Gold"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Rug",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-large-light-gray-area-rug",
+    "name": "Large Light Grey Area Rug",
+    "slug": "housing-large-light-gray-area-rug",
+    "type": "housing",
+    "subtype": "rug",
+    "description": "It covers the floor.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=14301366",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302552",
+    "tags": [
+      "rug",
+      "rugs"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": false,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/housing/LargeLightGreyAreaRug.png",
+    "location": "Gold Rugs",
+    "price": "600 Gold",
+    "sellback": "60 Gold",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Gold Rugs",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14297357",
+        "price": "600 Gold",
+        "priceType": "gold",
+        "daRequired": true,
+        "sellback": "60 Gold"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Rug",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-magic-rug",
+    "name": "Magic Rug",
+    "slug": "housing-magic-rug",
+    "type": "housing",
+    "subtype": "rug",
+    "description": "Note: this magic rug is unable to fly.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=14296304",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302552",
+    "tags": [
+      "rug",
+      "rugs",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/housing/MagicRug.png",
+    "location": "DC Rugs",
+    "price": "50 Dragon Coins",
+    "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "DC Rugs",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14296777",
+        "price": "50 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Rug",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-pellow-clearing-stone-rug",
+    "name": "Pellow Clearing Stone",
+    "slug": "housing-pellow-clearing-stone-rug",
+    "type": "housing",
+    "subtype": "rug",
+    "description": "An ancient decorative circle found in Pellow Village.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22094594",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302552",
+    "tags": [
+      "rug",
+      "rugs",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/housing/Pellow%20Clearing%20Stone%20pic.png",
+    "location": "Pellow Village (Shop)",
+    "price": "50 Dragon Coins",
+    "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Pellow Village (Shop)",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=22093489",
+        "price": "50 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Rug",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-purple-rug-the",
+    "name": "The Purple Rug",
+    "slug": "housing-purple-rug-the",
+    "type": "housing",
+    "subtype": "rug",
+    "description": "Yes, its a purple rug. The mad paint room fairy even got into the fabric weaving rooms, and painted the looms and all the available thread purple",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=19421748",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302552",
+    "tags": [
+      "rug",
+      "rugs",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "http://i.imgur.com/3BZCI.png",
+    "location": "Purple",
+    "price": "50 Dragon Coins",
+    "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Purple",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=19421354",
+        "price": "50 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Rug",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-pvp-rug",
+    "name": "PvP Rug",
+    "slug": "housing-pvp-rug",
+    "type": "housing",
+    "subtype": "rug",
+    "description": "Officially Licensed Battlespire Rug",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=14296316",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302552",
+    "tags": [
+      "rug",
+      "rugs",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/housing/PvPRug.png",
+    "location": "DC Rugs",
+    "price": "50 Dragon Coins",
+    "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "DC Rugs",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14296777",
+        "price": "50 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Rug",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-ragged-round-rug",
+    "name": "Ragged Round Rug",
+    "slug": "housing-ragged-round-rug",
+    "type": "housing",
+    "subtype": "rug",
+    "description": "A ragged, round rug.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=14297407",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302552",
+    "tags": [
+      "rug",
+      "rugs"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": false,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/housing/RaggedRoundRug.png",
+    "location": "Gold Rugs",
+    "price": "200 Gold",
+    "sellback": "20 Gold",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Gold Rugs",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14297357",
+        "price": "200 Gold",
+        "priceType": "gold",
+        "daRequired": true,
+        "sellback": "20 Gold"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Rug",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-round-arena-rug",
+    "name": "Round Arena Rug",
+    "slug": "housing-round-arena-rug",
+    "type": "housing",
+    "subtype": "rug",
+    "description": "No fighting in the house!",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=14296227",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302552",
+    "tags": [
+      "rug",
+      "rugs",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/housing/ArenaRug.png",
+    "location": "DC Rugs",
+    "price": "50 Dragon Coins",
+    "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "DC Rugs",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14296777",
+        "price": "50 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Rug",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-round-chickencow-rug",
+    "name": "Round Chickcow Rug",
+    "slug": "housing-round-chickencow-rug",
+    "type": "housing",
+    "subtype": "rug",
+    "description": "No actual chickencows were harmed in the making of this rug.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=14296237",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302552",
+    "tags": [
+      "rug",
+      "rugs",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/housing/ChickencowRug.png",
+    "location": "DC Rugs",
+    "price": "50 Dragon Coins",
+    "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "DC Rugs",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14296777",
+        "price": "50 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Rug",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-round-galaxy-rug",
+    "name": "Round Galaxy Rug",
+    "slug": "housing-round-galaxy-rug",
+    "type": "housing",
+    "subtype": "rug",
+    "description": "Out of this world.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=14296274",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302552",
+    "tags": [
+      "rug",
+      "rugs",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/housing/GalaxyRug.png",
+    "location": "DC Rugs",
+    "price": "50 Dragon Coins",
+    "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "DC Rugs",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14296777",
+        "price": "50 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Rug",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-round-red-rug",
+    "name": "Round Red Rug",
+    "slug": "housing-round-red-rug",
+    "type": "housing",
+    "subtype": "rug",
+    "description": "A red rug.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=14296325",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302552",
+    "tags": [
+      "rug",
+      "rugs",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/housing/RoundRedRug.png",
+    "location": "DC Rugs",
+    "price": "50 Dragon Coins",
+    "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "DC Rugs",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14296777",
+        "price": "50 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Rug",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-sepulchure-rug",
+    "name": "Sepulchure Rug",
+    "slug": "housing-sepulchure-rug",
+    "type": "housing",
+    "subtype": "rug",
+    "description": "DOOM! (He's going to be mad when he finds out you have this.)",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=14296352",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302552",
+    "tags": [
+      "rug",
+      "rugs",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/housing/SepulchureRug.png",
+    "location": "DC Rugs",
+    "price": "50 Dragon Coins",
+    "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "DC Rugs",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14296777",
+        "price": "50 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Rug",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-small-grey-area-rug",
+    "name": "Small Grey Area Rug",
+    "slug": "housing-small-grey-area-rug",
+    "type": "housing",
+    "subtype": "rug",
+    "description": "It covers the floor.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=14297635",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302552",
+    "tags": [
+      "rug",
+      "rugs"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": false,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/housing/SmallGreyAreaRug.png",
+    "location": "Gold Rugs",
+    "price": "300 Gold",
+    "sellback": "30 Gold",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Gold Rugs",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14297357",
+        "price": "300 Gold",
+        "priceType": "gold",
+        "daRequired": true,
+        "sellback": "30 Gold"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Rug",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-small-light-grey-area-rug",
+    "name": "Small Light Grey Area Rug",
+    "slug": "housing-small-light-grey-area-rug",
+    "type": "housing",
+    "subtype": "rug",
+    "description": "It covers the floor.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=14297655",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302552",
+    "tags": [
+      "rug",
+      "rugs"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": false,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/housing/SmallLightGreyAreaRug.png",
+    "location": "Gold Rugs",
+    "price": "300 Gold",
+    "sellback": "30 Gold",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Gold Rugs",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14297357",
+        "price": "300 Gold",
+        "priceType": "gold",
+        "daRequired": true,
+        "sellback": "30 Gold"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Rug",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-snowy-tog-rug",
+    "name": "Snowy Tog Rug",
+    "slug": "housing-snowy-tog-rug",
+    "type": "housing",
+    "subtype": "rug",
+    "description": "You like togs, so you put a tog in your TogTog.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=19911707",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302552",
+    "tags": [
+      "rug",
+      "rugs",
+      "d-coins",
+      "seasonal"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": true,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/housing/SnowyTogRugpic.png",
+    "location": "TogTog's Remains Shop",
+    "price": "50 Dragon Coins",
+    "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "TogTog's Remains Shop",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=19911576",
+        "price": "50 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Rug",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-spilled-salt",
+    "name": "Spilled Salt",
+    "slug": "housing-spilled-salt",
+    "type": "housing",
+    "subtype": "rug",
+    "description": "Hopefully you're not superstitious!",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22358081",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302552",
+    "tags": [
+      "rug",
+      "rugs",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://i.imgur.com/CWJ1Xnw.png",
+    "location": "Azaveyran House Items",
+    "price": "75 Dragon Coins",
+    "sellback": "68 Dragon Coins before 24 hours, 19 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Azaveyran House Items",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=22357118",
+        "price": "75 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "68 Dragon Coins before 24 hours, 19 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Rug",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-tog-rug",
+    "name": "Tog Rug",
+    "slug": "housing-tog-rug",
+    "type": "housing",
+    "subtype": "rug",
+    "description": "You like togs, so you put a tog in your TogTog.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=19911701",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302552",
+    "tags": [
+      "rug",
+      "rugs",
+      "d-coins",
+      "seasonal"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": true,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/housing/TogRugpic.png",
+    "location": "TogTog's Remains Shop",
+    "price": "50 Dragon Coins",
+    "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "TogTog's Remains Shop",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=19911576",
+        "price": "50 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Rug",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-unicougar-rug",
+    "name": "Unicougar Rug",
+    "slug": "housing-unicougar-rug",
+    "type": "housing",
+    "subtype": "rug",
+    "description": "Watch out for the horn!",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=14296458",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302552",
+    "tags": [
+      "rug",
+      "rugs",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/housing/UnicougarRug.png",
+    "location": "DC Rugs",
+    "price": "75 Dragon Coins",
+    "sellback": "68 Dragon Coins before 24 hours, 19 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "DC Rugs",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14296777",
+        "price": "75 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "68 Dragon Coins before 24 hours, 19 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Rug",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-vaekan-rug",
+    "name": "Vaekan Rug",
+    "slug": "housing-vaekan-rug",
+    "type": "housing",
+    "subtype": "rug",
+    "description": "A beautifully woven rug.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=20670567",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302552",
+    "tags": [
+      "rug",
+      "rugs",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/housing/VaekanRugpic.jpg",
+    "location": "Purple",
+    "price": "50 Dragon Coins",
+    "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Purple",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=19421354",
+        "price": "50 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Rug",
+    "hasSpecialEffect": false
+  }
+]

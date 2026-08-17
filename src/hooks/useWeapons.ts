@@ -10,6 +10,7 @@ import {
   loadWeaponsForSubtype,
 } from '../utils/dataLoaders'
 import { compareTitles, displayTitle } from '../utils/displayText'
+import { hasRetiredEntry } from '../utils/filterVisibility'
 import { getRelatedNameTokens, obtainMethodInferenceFingerprint } from '../utils/relatedItems'
 import { getSearchWords } from '../utils/search'
 import {
@@ -103,6 +104,17 @@ function useWeaponCountsDataset() {
   return { bySubtype: counts, total, loading }
 }
 
+function getWeaponEntryElements(entry: WeaponEntry): string[] {
+  if (!isWeaponFamily(entry)) return entry.elements
+
+  const elements = new Set(entry.elements)
+  if (entry.shared.element) elements.add(entry.shared.element)
+  for (const variant of entry.levelVariants) {
+    if (variant.element) elements.add(variant.element)
+  }
+  return [...elements]
+}
+
 export function getWeaponDisplayName(name: string): string {
   return displayTitle(stripVersionSuffix(name))
 }
@@ -175,10 +187,11 @@ function searchWeapons(
         return false
       }
 
+      const itemElements = getWeaponEntryElements(item)
       if (filters.elements && filters.elements.length > 0) {
-        if (!filters.elements.some((code) => item.elements.includes(code))) return false
+        if (!filters.elements.some((code) => itemElements.includes(code))) return false
       }
-      if (filters.excludeElements?.some((code) => item.elements.includes(code))) return false
+      if (filters.excludeElements?.some((code) => itemElements.includes(code))) return false
 
       if (queryWords.length > 0) {
         const itemName = isWeaponFamily(item) ? item.familyName : item.name
@@ -195,7 +208,7 @@ function searchWeapons(
           ...variantNames,
           ...aliases,
           ...tags,
-          ...item.elements.map(
+          ...itemElements.map(
             (code) =>
               elementMeta.elements.find((element) => element.code === code)?.shortName ?? code
           ),
@@ -400,12 +413,51 @@ export function useWeaponCategoryAvailability(subtype: WeaponSubtype) {
   const { weapons, loading } = useWeaponSubtypeDataset(subtype)
 
   return useMemo(
-    () => ({
-      loading,
-      hasArmorCustomization: weapons.some((entry) => entry.hasArmorCustomization === true),
-      hasSpecial: weapons.some((entry) => entry.hasSpecial === true),
-      hasCosmetic: weapons.some((entry) => entry.isCosmetic === true),
-    }),
+    () => {
+      const access = new Set<string>()
+      const categories = new Set<string>()
+      const elements = new Set<string>()
+
+      for (const entry of weapons) {
+        if (isWeaponFamily(entry)) {
+          if (entry.levelVariants.length > 1) access.add('multi')
+          if (entry.hasDA) access.add('da')
+          if (entry.hasDC) access.add('dc')
+          if (entry.hasDM) access.add('dm')
+          if (entry.hasFree) access.add('free')
+          if (entry.hasMerge) access.add('merge')
+        } else {
+          if (hasVersionSuffix(entry.name)) access.add('multi')
+          if (entry.daRequired) access.add('da')
+          if (entry.dcRequired) access.add('dc')
+          if (entry.dmRequired) access.add('dm')
+          if (entry.obtainMethods.some((method) => method.priceType === 'free')) access.add('free')
+          if (entry.obtainMethods.some((method) => method.priceType === 'merge')) access.add('merge')
+        }
+        if (entry.isDefault) access.add('default')
+
+        for (const element of getWeaponEntryElements(entry)) elements.add(element)
+        if (entry.hasArmorCustomization) categories.add('armor-customization')
+        if (entry.hasSpecial) categories.add('special')
+        if (entry.isCosmetic) categories.add('cosmetic')
+        if (entry.isTemp) categories.add('temp')
+        if (entry.isRare) categories.add('rare')
+        if (entry.isSeasonal) categories.add('seasonal')
+        if (entry.isSpecialOffer) categories.add('special-offer')
+        if (entry.retired) categories.add('retired')
+      }
+
+      return {
+        loading,
+        access,
+        categories,
+        elements,
+        hasArmorCustomization: categories.has('armor-customization'),
+        hasSpecial: categories.has('special'),
+        hasCosmetic: categories.has('cosmetic'),
+        hasRetired: hasRetiredEntry(weapons),
+      }
+    },
     [weapons, loading]
   )
 }

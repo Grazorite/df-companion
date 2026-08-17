@@ -1,17 +1,21 @@
-import { useParams, useSearchParams } from 'react-router-dom'
+import { useLocation, useParams, useSearchParams } from 'react-router-dom'
 import AccessoryDetail from '../components/accessories/AccessoryDetail'
 import { DetailPageSkeleton } from '../components/shared/LoadingSkeleton'
 import { useAccessoryBySlug } from '../hooks/useAccessories'
 import { ACCESSORY_SUBTYPES, type AccessorySubtype } from '../types/accessory'
+import { backUrlFromSearch } from '../utils/navigationContext'
 
 export default function AccessoryDetailPage() {
   const { slug } = useParams()
+  const location = useLocation()
   const [searchParams] = useSearchParams()
   const typeParam = searchParams.get('type')
   const activeSubtype = ACCESSORY_SUBTYPES.some((meta) => meta.subtype === typeParam)
     ? (typeParam as AccessorySubtype)
     : 'artifact'
   const { accessory, loading } = useAccessoryBySlug(activeSubtype, slug)
+  const filterBase = `/accessories?type=${activeSubtype}`
+  const backUrl = backUrlFromSearch(location.search, filterBase)
 
   if (loading) {
     return <DetailPageSkeleton />
@@ -27,5 +31,5 @@ export default function AccessoryDetailPage() {
     )
   }
 
-  return <AccessoryDetail accessory={accessory} filterBase={`/accessories?type=${activeSubtype}`} />
+  return <AccessoryDetail accessory={accessory} filterBase={filterBase} backUrl={backUrl} />
 }

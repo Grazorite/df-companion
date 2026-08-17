@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { ChevronRight } from 'lucide-react'
 import type { Badge } from '../../types/badge'
-import { displayTitle } from '../../utils/displayText'
+import { displayTitle, normalizeDescriptionText } from '../../utils/displayText'
 
 interface BadgeCardProps {
   badge: Badge
@@ -38,7 +38,7 @@ export default function BadgeCard({ badge, toUrl, replace }: BadgeCardProps) {
           {displayTitle(badge.name)}
         </h3>
         <p className="text-text-secondary text-xs leading-relaxed line-clamp-2">
-          {badge.description}
+          {normalizeDescriptionText(badge.description)}
         </p>
       </div>
       <ChevronRight

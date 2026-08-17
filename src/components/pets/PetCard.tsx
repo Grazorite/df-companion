@@ -2,7 +2,8 @@ import { Link } from 'react-router-dom'
 import { ChevronRight } from 'lucide-react'
 import type { Pet } from '../../types/pet'
 import type { ItemFamily } from '../../types/item'
-import { displayTitle } from '../../utils/displayText'
+import { accessPillClass } from '../../utils/accessPillStyles'
+import { displayTitle, normalizeDescriptionText } from '../../utils/displayText'
 import {
   getDisplayFamilyName,
   getFamilyCardDescription,
@@ -37,7 +38,9 @@ export default function PetCard({ pet, toUrl, replace, family }: PetCardProps) {
   const displayName = displayTitle(
     isMultiVariant && family ? getDisplayFamilyName(family) : pet.name
   )
-  const displayDescription = family ? getFamilyCardDescription(family) : pet.description
+  const displayDescription = normalizeDescriptionText(
+    family ? getFamilyCardDescription(family) : pet.description
+  )
 
   // Use family flags if available, otherwise fall back to Pet flags
   const displayFlags = family
@@ -64,19 +67,19 @@ export default function PetCard({ pet, toUrl, replace, family }: PetCardProps) {
       key: 'da',
       label: 'DA',
       show: displayFlags.hasDA,
-      className: 'text-orange-400 bg-orange-500/20',
+      className: accessPillClass('da', 'card'),
     },
     {
       key: 'dc',
       label: 'DC',
       show: displayFlags.hasDC,
-      className: 'text-gold bg-amber-500/20',
+      className: accessPillClass('dc', 'card'),
     },
     {
       key: 'dm',
       label: 'DM',
       show: displayFlags.hasDM,
-      className: 'text-slate-300 bg-slate-500/20',
+      className: accessPillClass('dm', 'card'),
     },
     {
       key: 'free',
@@ -110,10 +113,7 @@ export default function PetCard({ pet, toUrl, replace, family }: PetCardProps) {
             {/* Multi-variant indicators */}
             {showLevelRange && <LevelRangeBadge levelRange={displayFlags.levelRange} />}
             {accessPills.map((pill) => (
-              <span
-                key={pill.key}
-                className={`text-[10px] px-1.5 py-0.5 rounded-full font-medium ${pill.className}`}
-              >
+              <span key={pill.key} className={pill.className}>
                 {pill.label}
               </span>
             ))}

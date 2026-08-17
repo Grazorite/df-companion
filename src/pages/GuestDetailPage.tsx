@@ -6,6 +6,7 @@ import type { Pet } from '../types/pet'
 import type { ItemFamily } from '../types/item'
 import PetDetail from '../components/pets/PetDetail'
 import { DetailPageSkeleton } from '../components/shared/LoadingSkeleton'
+import { backUrlFromSearch } from '../utils/navigationContext'
 
 function isItemFamily(item: Pet | ItemFamily): item is ItemFamily {
   return 'levelVariants' in item && 'familyName' in item
@@ -15,8 +16,7 @@ export default function GuestDetailPage() {
   const { slug } = useParams<{ slug: string }>()
   const location = useLocation()
 
-  const searchParams = new URLSearchParams(location.search)
-  const backUrl = searchParams.get('from') ?? '/pets'
+  const backUrl = backUrlFromSearch(location.search, '/pets')
 
   const fullSlug = slug?.startsWith('guest-') ? slug : `guest-${slug ?? ''}`
   const result = usePetBySlug(fullSlug)
@@ -30,7 +30,7 @@ export default function GuestDetailPage() {
       <main className="px-4 py-8 max-w-3xl mx-auto text-center">
         <p className="text-text-secondary text-lg mb-4">Guest not found.</p>
         <Link
-          to="/pets"
+          to={backUrl}
           className="text-gold underline underline-offset-2 text-sm hover:text-gold-bright"
         >
           ← Back to Pets & Guests

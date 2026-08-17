@@ -9,6 +9,7 @@
  * DM: links to filter by Defender's Medal access
  */
 import { Link } from 'react-router-dom'
+import { accessPillClass } from '../../utils/accessPillStyles'
 import { buildFilterLink } from '../../utils/filterLinks'
 
 interface AccessPillsProps {
@@ -32,7 +33,7 @@ export default function AccessPills({
       {daRequired && (
         <Link
           to={buildFilterLink(filterBase, 'access', 'da')}
-          className="inline-flex items-center text-xs font-medium px-2.5 py-1 rounded-full bg-orange-500/20 text-orange-400 transition-colors hover:bg-orange-500/30"
+          className={`inline-flex items-center transition-colors hover:bg-orange-500/30 ${accessPillClass('da', 'detail')}`}
           title="Filter: DA Required"
           onClick={(e) => e.stopPropagation()}
         >
@@ -42,7 +43,7 @@ export default function AccessPills({
       {dcRequired && (
         <Link
           to={buildFilterLink(filterBase, 'access', 'dc')}
-          className="inline-flex items-center text-xs font-medium px-2.5 py-1 rounded-full bg-amber-500/20 text-amber-300 transition-colors hover:bg-amber-500/30"
+          className={`inline-flex items-center transition-colors hover:bg-amber-500/30 ${accessPillClass('dc', 'detail')}`}
           title="Filter: Dragon Coins required"
           onClick={(e) => e.stopPropagation()}
         >
@@ -52,7 +53,7 @@ export default function AccessPills({
       {dmRequired && (
         <Link
           to={buildFilterLink(filterBase, 'access', 'dm')}
-          className="inline-flex items-center text-xs font-medium px-2.5 py-1 rounded-full bg-slate-500/20 text-slate-300 transition-colors hover:bg-slate-500/30"
+          className={`inline-flex items-center transition-colors hover:bg-slate-500/30 ${accessPillClass('dm', 'detail')}`}
           title="Filter: Defender's Medals required"
           onClick={(e) => e.stopPropagation()}
         >

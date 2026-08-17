@@ -1,0 +1,3124 @@
+[
+  {
+    "id": "housing-artix-statue",
+    "name": "Artix Statue",
+    "slug": "housing-artix-statue",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "A giant gold paladin! Loads The Artix guest.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=14296964",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs",
+      "d-coins",
+      "special-effect"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/housing/ArtixStatuepic.png",
+    "location": "DC Shrubs",
+    "price": "100 Dragon Coins",
+    "sellback": "90 Dragon Coins before 24 hours, 25 Dragon Coins after 24 hours",
+    "effect": "Click to request Artix join you as Guest A.",
+    "obtainMethods": [
+      {
+        "location": "DC Shrubs",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14296200",
+        "price": "100 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "90 Dragon Coins before 24 hours, 25 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "hasSpecialEffect": true
+  },
+  {
+    "id": "housing-big-snowy-bush",
+    "name": "Big Snowy Bush",
+    "slug": "housing-big-snowy-bush",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "This bush is cold.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=21911548",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs",
+      "d-coins",
+      "seasonal"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": true,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "http://i.imgur.com/5XiDQhp.png",
+    "location": "Frostval 14",
+    "price": "50 Dragon Coins",
+    "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Frostval 14",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=21904197",
+        "price": "50 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-blue-bench",
+    "name": "Blue Bench",
+    "slug": "housing-blue-bench",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "A bench carved from blue wood.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=21301634",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/housing/BlueBenchpic.png",
+    "location": "Dakarai House Items",
+    "price": "60 Dragon Coins",
+    "sellback": "54 Dragon Coins before 24 hours, 15 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Dakarai House Items",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=21301721",
+        "price": "60 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "54 Dragon Coins before 24 hours, 15 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-bush-a",
+    "name": "A Bush",
+    "slug": "housing-bush-a",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "Some nice shrubbery.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=14296127",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": false,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://i.imgur.com/yAbjBqW.jpg",
+    "location": "Gold Shrubs",
+    "price": "500 Gold",
+    "sellback": "50 Gold",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Gold Shrubs",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14296142",
+        "price": "500 Gold",
+        "priceType": "gold",
+        "daRequired": true,
+        "sellback": "50 Gold"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-cabbage",
+    "name": "Cabbage",
+    "slug": "housing-cabbage",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "Hopefully, you won't get another crop of kids this year.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=14296517",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://i.imgur.com/s5WUnw8.jpg",
+    "location": "DC Shrubs",
+    "price": "50 Dragon Coins",
+    "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "DC Shrubs",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14296200",
+        "price": "50 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-carrots",
+    "name": "Carrots",
+    "slug": "housing-carrots",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "You're nowhere near Albuquerque, so these should be safe.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=14296524",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://i.imgur.com/VSTLDm0.jpg",
+    "alternativeImages": [
+      {
+        "url": "https://i.imgur.com/FOFWkKl.jpg",
+        "caption": "Alternative Image"
+      }
+    ],
+    "location": "DC Shrubs",
+    "price": "50 Dragon Coins",
+    "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "DC Shrubs",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14296200",
+        "price": "50 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-chickencow-statue",
+    "name": "ChickenCow Statue",
+    "slug": "housing-chickencow-statue",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "Now you can have a piece of Zeuster's temple in your very own yard!",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=15680496",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://i.imgur.com/fryAqFZ.png",
+    "location": "Holiday House Item Shop , DC Shrubs",
+    "price": "50 Dragon Coins",
+    "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Holiday House Item Shop , DC Shrubs",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=15680339",
+        "price": "50 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-dancing-mushroom",
+    "name": "Dancing Mushroom",
+    "slug": "housing-dancing-mushroom",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "Oogachucka minion of the Mushroom Major General.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=15202609",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "http://i.imgur.com/1uwILgV.png",
+    "alternativeImages": [
+      {
+        "url": "http://i.imgur.com/kB3Ebby.png",
+        "caption": "Alternative Image"
+      }
+    ],
+    "location": "Ikea DC",
+    "price": "100 Dragon Coins",
+    "sellback": "90 Dragon Coins before 24 hours, 25 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Ikea DC",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14441053",
+        "price": "100 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "90 Dragon Coins before 24 hours, 25 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-dragonsgrasp-copper-fountain",
+    "name": "Dragonsgrasp Copper Fountain",
+    "slug": "housing-dragonsgrasp-copper-fountain",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "The intricate carvings of this fountain are skillfully done.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=19855353",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "http://i.imgur.com/l3w9F.png",
+    "location": "Dragonsgrasp House Items",
+    "price": "80 Dragon Coins",
+    "sellback": "72 Dragon Coins before 24 hours, 20 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Dragonsgrasp House Items",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=19855209",
+        "price": "80 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "72 Dragon Coins before 24 hours, 20 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-dragonsgrasp-fountain",
+    "name": "Dragonsgrasp Fountain",
+    "slug": "housing-dragonsgrasp-fountain",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "The intricate carvings of this fountain are skillfully done.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=19855338",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "http://i.imgur.com/Ydchg.png",
+    "location": "Dragonsgrasp House Items",
+    "price": "80 Dragon Coins",
+    "sellback": "72 Dragon Coins before 24 hours, 20 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Dragonsgrasp House Items",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=19855209",
+        "price": "80 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "72 Dragon Coins before 24 hours, 20 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-fallen-water-torch",
+    "name": "Fallen Water Torch",
+    "slug": "housing-fallen-water-torch",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "An ancient Tethyian torch for outside.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=17648750",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://i.imgur.com/sjvxhAu.png",
+    "location": "Crazy Harry's (Dragon Coin Shop)",
+    "price": "75 Dragon Coins",
+    "sellback": "68 Dragon Coins before 24 hours, 19 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Crazy Harry's (Dragon Coin Shop)",
+        "locationUrl": "https://forums2.battleon.com/f/fb.asp?m=17645394",
+        "price": "75 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "68 Dragon Coins before 24 hours, 19 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-flower-garden",
+    "name": "Flower Garden",
+    "slug": "housing-flower-garden",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "How pretty!",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=14296536",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/housing/FlowerGardenpic.png",
+    "location": "DC Shrubs",
+    "price": "50 Dragon Coins",
+    "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "DC Shrubs",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14296200",
+        "price": "50 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-galanoth-ice-sculpture",
+    "name": "Galanoth Ice Sculpture",
+    "slug": "housing-galanoth-ice-sculpture",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "Shrub: Magically crafted ice sculpture of the dragonslayer, Galanoth.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=14441032",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/housing/GalanothStatuepic.png",
+    "location": "Ikea DC",
+    "price": "100 Dragon Coins",
+    "sellback": "90 Dragon Coins before 24 hours, 25 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Ikea DC",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14441053",
+        "price": "100 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "90 Dragon Coins before 24 hours, 25 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-gargoyle-statue",
+    "name": "Gargoyle Statue",
+    "slug": "housing-gargoyle-statue",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "Bring a bit of Amityvale atmosphere into your yard.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=15202941",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "http://i.imgur.com/QWqQH1U.png",
+    "location": "Ikea DC",
+    "price": "75 Dragon Coins",
+    "sellback": "68 Dragon Coins before 24 hours, 19 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Ikea DC",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14441053",
+        "price": "75 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "68 Dragon Coins before 24 hours, 19 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-geopebble",
+    "name": "Geopebble",
+    "slug": "housing-geopebble",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "Awesome. Loads the Geopetal pet!",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=14296981",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs",
+      "d-coins",
+      "special-effect"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/housing/Geopebblepic.png",
+    "location": "DC Shrubs",
+    "price": "100 Dragon Coins",
+    "sellback": "90 Dragon Coins before 24 hours, 25 Dragon Coins after 24 hours",
+    "effect": "Loads Geo as a pet",
+    "obtainMethods": [
+      {
+        "location": "DC Shrubs",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14296200",
+        "price": "100 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "90 Dragon Coins before 24 hours, 25 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "hasSpecialEffect": true
+  },
+  {
+    "id": "housing-glowing-togstone",
+    "name": "Glowing Togstone",
+    "slug": "housing-glowing-togstone",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "Starts Togicide's Revenge Part 2! MWHAHAHAHAHA",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=21398807",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs",
+      "special-effect"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": false,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://i.imgur.com/MhYHqhc.jpg",
+    "location": "Togicide",
+    "price": "100 Gold",
+    "sellback": "10 Gold",
+    "effect": "Teleports player to the Toxic Togvenger quest.",
+    "obtainMethods": [
+      {
+        "location": "Togicide",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=19435751",
+        "price": "100 Gold",
+        "priceType": "gold",
+        "daRequired": true,
+        "sellback": "10 Gold"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "alsoSee": [
+      {
+        "name": "Togstone",
+        "slug": "housing-togstone",
+        "type": "housing",
+        "url": "https://forums2.battleon.com/f/fb.asp?m=15199928"
+      },
+      {
+        "name": "Really Glowing Togstone",
+        "slug": "housing-really-glowing-togstone",
+        "type": "housing",
+        "url": "https://forums2.battleon.com/f/fb.asp?m=21398815"
+      }
+    ],
+    "hasSpecialEffect": true
+  },
+  {
+    "id": "housing-glowy-mushrooms",
+    "name": "Glowy Mushrooms",
+    "slug": "housing-glowy-mushrooms",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "The main ingredient for Mushroom Cider!",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=21301654",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/housing/GlowyMushroomspic.png",
+    "location": "Dakarai House Items",
+    "price": "75 Dragon Coins",
+    "sellback": "68 Dragon Coins before 24 hours, 19 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Dakarai House Items",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=21301721",
+        "price": "75 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "68 Dragon Coins before 24 hours, 19 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-golden-slide-portal",
+    "name": "Golden Slide Portal",
+    "slug": "housing-golden-slide-portal",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "Are you brave enough?",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=20180776",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs",
+      "d-coins",
+      "seasonal"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": true,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/housing/GoldenSlidePortalpic.jpg",
+    "location": "Lucky Day Outside",
+    "price": "75 Dragon Coins",
+    "sellback": "68 Dragon Coins before 24 hours, 19 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Lucky Day Outside",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=20167520",
+        "price": "75 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "68 Dragon Coins before 24 hours, 19 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-golden-slide-simple-portal",
+    "name": "Golden Slide Simple Portal",
+    "slug": "housing-golden-slide-simple-portal",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "Are you brave enough?",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=20180778",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs",
+      "d-coins",
+      "seasonal"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": true,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/housing/GoldenSlideSimplePortalpic.jpg",
+    "location": "Lucky Day Outside",
+    "price": "75 Dragon Coins",
+    "sellback": "68 Dragon Coins before 24 hours, 19 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Lucky Day Outside",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=20167520",
+        "price": "75 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "68 Dragon Coins before 24 hours, 19 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-guard-sneevil",
+    "name": "Guard Sneevil",
+    "slug": "housing-guard-sneevil",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "Mess with this Sneevil and you're in for a fight. Keep an eye on him, guard duty is boring.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=15202692",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs",
+      "d-coins",
+      "special-effect"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "http://i.imgur.com/fUJEjb1.png",
+    "location": "Ikea DC",
+    "price": "100 Dragon Coins",
+    "sellback": "90 Dragon Coins before 24 hours, 25 Dragon Coins after 24 hours",
+    "effect": "Has an animation in which he uses his spear as a guitar, and then starts to dance",
+    "obtainMethods": [
+      {
+        "location": "Ikea DC",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14441053",
+        "price": "100 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "90 Dragon Coins before 24 hours, 25 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "hasSpecialEffect": true
+  },
+  {
+    "id": "housing-hole-in-the-ground",
+    "name": "Hole in the ground",
+    "slug": "housing-hole-in-the-ground",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "Pop goes the groundhog!",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=17255929",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs",
+      "d-coins",
+      "rare",
+      "special-effect"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": true,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "http://i.imgur.com/CS4FB5G.png",
+    "alternativeImages": [
+      {
+        "url": "http://i.imgur.com/CS4FB5G.png",
+        "caption": "Hole"
+      },
+      {
+        "url": "http://i.imgur.com/m3X1bMZ.png",
+        "caption": "Bill Furray"
+      }
+    ],
+    "location": "Groundhog's Housing",
+    "price": "50 Dragon Coins",
+    "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+    "effect": "When you watch the hole for a while, a little groundhog (named Bill Furray according to the Design Notes) will come out and look around",
+    "obtainMethods": [
+      {
+        "location": "Groundhog's Housing",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=17255890",
+        "price": "50 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "hasSpecialEffect": true
+  },
+  {
+    "id": "housing-ice-crystal",
+    "name": "Ice Crystal",
+    "slug": "housing-ice-crystal",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "Ice cold!",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=21904489",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs",
+      "d-coins",
+      "seasonal"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": true,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "http://i.imgur.com/HabZFge.png",
+    "location": "Frostval 14",
+    "price": "50 Dragon Coins",
+    "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Frostval 14",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=21904197",
+        "price": "50 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-inn-at-the-edge-of-time-portal-outside",
+    "name": "Inn at the Edge of Time Portal (Outside)",
+    "slug": "housing-inn-at-the-edge-of-time-portal-outside",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "A portal leading directly to the Inn at the Edge of Time! Can be placed outdoors.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22405972",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs",
+      "special-effect"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/housing/InnattheEdgeofTimePortal-Outdoors.png",
+    "alternativeImages": [],
+    "location": "Timewarped Veteran (House)",
+    "price": "50,000 Gold",
+    "sellback": "5,000 Gold",
+    "effect": "Teleports player to the Arena at the Edge of Time zone.",
+    "obtainMethods": [
+      {
+        "location": "Timewarped Veteran (House)",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=22405934",
+        "price": "50,000 Gold",
+        "priceType": "gold",
+        "daRequired": true,
+        "sellback": "5,000 Gold"
+      },
+      {
+        "location": "House Utility Items",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=22302486",
+        "price": "500 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "450 Dragon Coins before 24 hours, 125 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "notes": "• Items initially teleported the player to The Inn at the Edge of Time when clicked; this was changed to Arena at the Edge of Time on January 31st, 2026 .",
+    "alsoSee": [
+      {
+        "name": "Inn at the Edge of Time Portal (Indoors)",
+        "slug": "housing-inn-at-the-edge-of-time-portal-indoors",
+        "type": "housing",
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22405972"
+      }
+    ],
+    "hasSpecialEffect": true
+  },
+  {
+    "id": "housing-ivy-ravenloss-light",
+    "name": "Ivy Ravenloss Light",
+    "slug": "housing-ivy-ravenloss-light",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "A light used to illuminate the streets of Ravenloss.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=21301667",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/housing/IvyRvenlossLightpic.png",
+    "location": "Dakarai House Items",
+    "price": "75 Dragon Coins",
+    "sellback": "68 Dragon Coins before 24 hours, 19 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Dakarai House Items",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=21301721",
+        "price": "75 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "68 Dragon Coins before 24 hours, 19 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-landscape-scene-1",
+    "name": "Landscape Scene 1",
+    "slug": "housing-landscape-scene-1",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "Trees add to your property value.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=16269222",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs",
+      "rare"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": false,
+    "isRare": true,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "http://i.imgur.com/YDl98xq.png",
+    "location": "Summer Housing",
+    "price": "750 Gold",
+    "sellback": "75 Gold",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Summer Housing",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=16265581",
+        "price": "750 Gold",
+        "priceType": "gold",
+        "daRequired": true,
+        "sellback": "75 Gold"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-landscape-scene-2",
+    "name": "Landscape Scene 2",
+    "slug": "housing-landscape-scene-2",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "So bucolic!",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=16269132",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs",
+      "rare"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": false,
+    "isRare": true,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "http://i.imgur.com/B6kvW7e.png",
+    "location": "Summer Housing",
+    "price": "1,000 Gold",
+    "sellback": "100 Gold",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Summer Housing",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=16265581",
+        "price": "1,000 Gold",
+        "priceType": "gold",
+        "daRequired": true,
+        "sellback": "100 Gold"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-large-outdoor-dragon-gargoyle",
+    "name": "Large Outdoor Dragon Gargoyle",
+    "slug": "housing-large-outdoor-dragon-gargoyle",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "A decorative statue of a dragon gargoyle.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=20544287",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": false,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://i.imgur.com/Cei5bzt.png",
+    "location": "DragonLord Items",
+    "price": "4,000 Gold",
+    "sellback": "400 Gold",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "DragonLord Items",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=20423790",
+        "price": "4,000 Gold",
+        "priceType": "gold",
+        "daRequired": true,
+        "sellback": "400 Gold"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-lawn-sneevil",
+    "name": "Lawn Sneevil",
+    "slug": "housing-lawn-sneevil",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "...you could swear it's watching you...",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=14295792",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/housing/LawnSneevilpic.png",
+    "location": "DC Shrubs",
+    "price": "50 Dragon Coins",
+    "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "DC Shrubs",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14296200",
+        "price": "50 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-leafy-bush",
+    "name": "Leafy Bush",
+    "slug": "housing-leafy-bush",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "You can buy this or cut down the tallest tree in the forest with a fish in trade.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=14296547",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/housing/LeafyBushpic.png",
+    "location": "DC Shrubs",
+    "price": "50 Dragon Coins",
+    "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "DC Shrubs",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14296200",
+        "price": "50 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-left-golden-zorbak",
+    "name": "Left Golden Zorbak",
+    "slug": "housing-left-golden-zorbak",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "It's... breathtaking!",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=20180790",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs",
+      "d-coins",
+      "seasonal"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": true,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/housing/LeftGoldenZorbakpic.jpg",
+    "location": "Lucky Day Outside",
+    "price": "100 Dragon Coins",
+    "sellback": "90 Dragon Coins before 24 hours, 25 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Lucky Day Outside",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=20167520",
+        "price": "100 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "90 Dragon Coins before 24 hours, 25 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-left-guardian-gryphon",
+    "name": "Left Guardian Gryphon",
+    "slug": "housing-left-guardian-gryphon",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "This gryphon never learned how to fly, so he's taken on guard duty.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=16266266",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/housing/Left%20Guardian%20Gryphon%20pic.bmp",
+    "alternativeImages": [
+      {
+        "url": "http://i.imgur.com/Gwf3BBI.png",
+        "caption": "Alternative Image"
+      }
+    ],
+    "location": "Lowe DC",
+    "price": "50 Dragon Coins",
+    "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Lowe DC",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=16266368",
+        "price": "50 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-left-side-creepy-birds",
+    "name": "Left-side Creepy Birds",
+    "slug": "housing-left-side-creepy-birds",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "Did you take these from Sepulchure's palace?!",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=16266298",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/housing/Left-side%20Creepy%20Birds%20pic.bmp",
+    "alternativeImages": [
+      {
+        "url": "http://i.imgur.com/R4w0ZZL.png",
+        "caption": "Alternative Image"
+      }
+    ],
+    "location": "Lowe DC",
+    "price": "50 Dragon Coins",
+    "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Lowe DC",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=16266368",
+        "price": "50 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-little-water-fountain",
+    "name": "Little Water Fountain",
+    "slug": "housing-little-water-fountain",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "Is this safe to drink from?",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22358097",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://i.imgur.com/flyX4mh.png",
+    "location": "Azaveyran House Items",
+    "price": "75 Dragon Coins",
+    "sellback": "68 Dragon Coins before 24 hours, 19 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Azaveyran House Items",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=22357118",
+        "price": "75 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "68 Dragon Coins before 24 hours, 19 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-mini-giant-cysero-statue",
+    "name": "Mini Giant-Cysero Statue",
+    "slug": "housing-mini-giant-cysero-statue",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "DF's Mad Weaponsmith",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=14296245",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs",
+      "d-coins",
+      "special-effect"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/housing/MiniGiantCyseroStatuepic.png",
+    "location": "DC Shrubs",
+    "price": "100 Dragon Coins",
+    "sellback": "95 Dragon Coins before 24 hours, 25 Dragon Coins after 24 hours",
+    "effect": "When you click it, one of the following pops up: quote:, Quit poking me., Pssst... I'm made of gold., Hey, can you scratch my nose?, Don't laugh! It's YOUR turn to stand here next, pal!, Yo, taxi!, Back off man, i'm a scientist!, This is harder than it looks., If your dragon pees on my leg ONE MORE TIME..., Ow, quit it!, My arm is getting tired., Seriously... look up",
+    "obtainMethods": [
+      {
+        "location": "DC Shrubs",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14296200",
+        "price": "100 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "95 Dragon Coins before 24 hours, 25 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "hasSpecialEffect": true
+  },
+  {
+    "id": "housing-moglin-tree",
+    "name": "Moglin Tree",
+    "slug": "housing-moglin-tree",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "Oh, moglin tree!",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=21904958",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs",
+      "d-coins",
+      "seasonal"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": true,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "http://i.imgur.com/jnTwu5b.jpg",
+    "alternativeImages": [
+      {
+        "url": "http://i.imgur.com/0jZX0MQ.jpg",
+        "caption": "Alternative Image"
+      }
+    ],
+    "location": "Frostval 14",
+    "price": "75 Dragon Coins",
+    "sellback": "68 Dragon Coins before 24 hours, 19 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Frostval 14",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=21904197",
+        "price": "75 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "68 Dragon Coins before 24 hours, 19 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-mutant-pumpkin",
+    "name": "Mutant Pumpkin",
+    "slug": "housing-mutant-pumpkin",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "It'll either turn into a carriage or eat you.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=15203183",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "http://i.imgur.com/8j0giu7.png",
+    "alternativeImages": [
+      {
+        "url": "http://i.imgur.com/tpKM21R.png",
+        "caption": "Alternative Image"
+      }
+    ],
+    "location": "Ikea DC",
+    "price": "50 Dragon Coins",
+    "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Ikea DC",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14441053",
+        "price": "50 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-odiums-bane-outdoor-display-set",
+    "name": "Odium's Bane Outdoor Display Set",
+    "slug": "housing-odiums-bane-outdoor-display-set",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "A replica set of the Odium's Bane items, forged by Love! Does not contain functioning equipment, but looks great in a house.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22313810",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs",
+      "d-coins",
+      "seasonal"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": true,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://i.imgur.com/5Uu39VI.jpg",
+    "location": "Odium's Bane Deco",
+    "price": "150 Dragon Coins",
+    "sellback": "135 Dragon Coins before 24 hours, 37 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Odium's Bane Deco",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=22313759",
+        "price": "150 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "135 Dragon Coins before 24 hours, 37 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-outdoor-dragon-gargoyle",
+    "name": "Outdoor Dragon Gargoyle",
+    "slug": "housing-outdoor-dragon-gargoyle",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "A decorative statue of a dragon gargoyle.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=20425627",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": false,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/housing/Dragon Gargoyle pic.bmp",
+    "location": "DragonLord Items",
+    "price": "3,000 Gold",
+    "sellback": "300 Gold",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "DragonLord Items",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=20423790",
+        "price": "3,000 Gold",
+        "priceType": "gold",
+        "daRequired": true,
+        "sellback": "300 Gold"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-outdoor-firepot",
+    "name": "Outdoor Firepot",
+    "slug": "housing-outdoor-firepot",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "A golden bowl holds fire to light your house.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=21231646",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/housing/IndoorFirepotpic.png",
+    "location": "SandSea DC",
+    "price": "60 Dragon Coins",
+    "sellback": "54 Dragon Coins before 24 hours, 14 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "SandSea DC",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=21227395",
+        "price": "60 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "54 Dragon Coins before 24 hours, 14 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-outdoor-pots",
+    "name": "Outdoor Pots",
+    "slug": "housing-outdoor-pots",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "Colorful pots to plant things in!",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=21231643",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/housing/IndoorPotspic.png",
+    "location": "SandSea DC",
+    "price": "50 Dragon Coins",
+    "sellback": "45 Dragon Coins before 24 hours, 12 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "SandSea DC",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=21227395",
+        "price": "50 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "45 Dragon Coins before 24 hours, 12 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-outhouse",
+    "name": "Outhouse",
+    "slug": "housing-outhouse",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "Do not place on top of hill.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=14296502",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs",
+      "d-coins",
+      "special-effect"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/housing/Outhousepic.png",
+    "location": "DC Shrubs",
+    "price": "50 Dragon Coins",
+    "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+    "effect": "Clicking on it sends you to the The Worst Prank Ever quest.",
+    "obtainMethods": [
+      {
+        "location": "DC Shrubs",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14296200",
+        "price": "50 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "hasSpecialEffect": true
+  },
+  {
+    "id": "housing-pellow-clearing-stone-shrub",
+    "name": "Pellow Clearing Stone",
+    "slug": "housing-pellow-clearing-stone-shrub",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "An ancient decorative circle found in Pellow Village.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22094593",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/housing/Pellow%20Clearing%20Stone%20pic.png",
+    "location": "Pellow Village (Shop)",
+    "price": "50 Dragon Coins",
+    "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Pellow Village (Shop)",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=22093489",
+        "price": "50 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-pellow-column-left-shrub",
+    "name": "Pellow Column Left",
+    "slug": "housing-pellow-column-left-shrub",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "A column from Pellow Village on the edge of the Void.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22100107",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "http://i.imgur.com/3HLNFEL.png",
+    "location": "Pellow Village (Shop)",
+    "price": "50 Dragon Coins",
+    "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Pellow Village (Shop)",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=22093489",
+        "price": "50 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-pellow-column-right-shrub",
+    "name": "Pellow Column Right",
+    "slug": "housing-pellow-column-right-shrub",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "A column from Pellow Village on the edge of the Void.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22100109",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "http://i.imgur.com/Rzr5TGX.png",
+    "location": "Pellow Village (Shop)",
+    "price": "50 Dragon Coins",
+    "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Pellow Village (Shop)",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=22093489",
+        "price": "50 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-pellow-floating-rocks-shrub",
+    "name": "Pellow Floating Rocks",
+    "slug": "housing-pellow-floating-rocks-shrub",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "Rocks that float on the edge of the Void!",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22099305",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "http://i.imgur.com/ZGwGNjT.png",
+    "location": "Pellow Village (Shop)",
+    "price": "40 Dragon Coins",
+    "sellback": "36 Dragon Coins before 24 hours, 10 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Pellow Village (Shop)",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=22093489",
+        "price": "40 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "36 Dragon Coins before 24 hours, 10 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-picnic-on-the-lawn",
+    "name": "Picnic on the lawn",
+    "slug": "housing-picnic-on-the-lawn",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "Ants not invited.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=16269086",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs",
+      "rare"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": false,
+    "isRare": true,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "http://i.imgur.com/GJJQO2Q.png",
+    "location": "Summer Housing",
+    "price": "300 Gold",
+    "sellback": "30 Gold",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Summer Housing",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=16265581",
+        "price": "300 Gold",
+        "priceType": "gold",
+        "daRequired": true,
+        "sellback": "30 Gold"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-picnic-table",
+    "name": "Picnic Table",
+    "slug": "housing-picnic-table",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "Complete with a pic-a-nic basket! 'Eyy Booboo!",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=16269065",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs",
+      "rare"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": false,
+    "isRare": true,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "http://i.imgur.com/r3aRsFF.png",
+    "location": "Summer Housing",
+    "price": "300 Gold",
+    "sellback": "30 Gold",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Summer Housing",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=16265581",
+        "price": "300 Gold",
+        "priceType": "gold",
+        "daRequired": true,
+        "sellback": "30 Gold"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-pink-coral",
+    "name": "Pink Coral",
+    "slug": "housing-pink-coral",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "Pink staghorn coral.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=17648815",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/housing/Pink%20Coral%20pic.bmp",
+    "location": "Crazy Harry's (Dragon Coin Shop)",
+    "price": "80 Dragon Coins",
+    "sellback": "72 Dragon Coins before 24 hours, 20 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Crazy Harry's (Dragon Coin Shop)",
+        "locationUrl": "https://forums2.battleon.com/f/fb.asp?m=17645394",
+        "price": "80 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "72 Dragon Coins before 24 hours, 20 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-pot-o-gold",
+    "name": "Pot O' Gold",
+    "slug": "housing-pot-o-gold",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "MINE! So preeecioooouuuusssss......",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=20180796",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs",
+      "d-coins",
+      "seasonal"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": true,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/housing/PotOGoldpic.jpg",
+    "alternativeImages": [
+      {
+        "url": "http://i.imgur.com/FA2Zx88.png",
+        "caption": "Alternative Image"
+      }
+    ],
+    "location": "Lucky Day Outside",
+    "price": "100 Dragon Coins",
+    "sellback": "90 Dragon Coins before 24 hours, 25 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Lucky Day Outside",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=20167520",
+        "price": "100 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "90 Dragon Coins before 24 hours, 25 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-purple-bush",
+    "name": "Purple Bush",
+    "slug": "housing-purple-bush",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "Grown in the depths of the underground city of Ravenloss.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=21301623",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/housing/PurpleBushpic.png",
+    "location": "Dakarai House Items",
+    "price": "50 Dragon Coins",
+    "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Dakarai House Items",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=21301721",
+        "price": "50 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-ravenloss-light-shrub",
+    "name": "Ravenloss Light",
+    "slug": "housing-ravenloss-light-shrub",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "A light used to illuminate the streets of Ravenloss.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=21301663",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/housing/RavenlossLightpic.png",
+    "location": "Dakarai House Items",
+    "price": "75 Dragon Coins",
+    "sellback": "68 Dragon Coins before 24 hours, 19 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Dakarai House Items",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=21301721",
+        "price": "75 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "68 Dragon Coins before 24 hours, 19 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-ravenloss-light-left",
+    "name": "Ravenloss Light Left",
+    "slug": "housing-ravenloss-light-left",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "A glowing streetlight from Pellow Village.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22094600",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/housing/Ravenloss%20Left%20Light%20pic.png",
+    "location": "Pellow Village (Shop)",
+    "price": "75 Dragon Coins",
+    "sellback": "68 Dragon Coins before 24 hours, 23 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Pellow Village (Shop)",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=22093489",
+        "price": "75 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "68 Dragon Coins before 24 hours, 23 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-ravenloss-light-right",
+    "name": "Ravenloss Light Right",
+    "slug": "housing-ravenloss-light-right",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "A glowing streetlight from Pellow Village.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22094602",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/housing/Ravenloss%20Right%20Light%20pic.png",
+    "location": "Pellow Village (Shop)",
+    "price": "75 Dragon Coins",
+    "sellback": "68 Dragon Coins before 24 hours, 23 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Pellow Village (Shop)",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=22093489",
+        "price": "75 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "68 Dragon Coins before 24 hours, 23 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-really-glowing-togstone",
+    "name": "Really Glowing Togstone",
+    "slug": "housing-really-glowing-togstone",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "Starts Togicide's Revenge Part 3! (Last one I promise!)",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=21398815",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs",
+      "special-effect"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": false,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://i.imgur.com/ebu1drK.png",
+    "location": "Togicide Shop 2",
+    "price": "100 Gold",
+    "sellback": "10 Gold",
+    "effect": "Teleports player to the Rolith Is A Bad Man quest.",
+    "obtainMethods": [
+      {
+        "location": "Togicide Shop 2",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=19435846",
+        "price": "100 Gold",
+        "priceType": "gold",
+        "daRequired": true,
+        "sellback": "10 Gold"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "alsoSee": [
+      {
+        "name": "Togstone",
+        "slug": "housing-togstone",
+        "type": "housing",
+        "url": "https://forums2.battleon.com/f/fb.asp?m=15199928"
+      },
+      {
+        "name": "Glowing Togstone",
+        "slug": "housing-glowing-togstone",
+        "type": "housing",
+        "url": "https://forums2.battleon.com/f/fb.asp?m=21398807"
+      }
+    ],
+    "hasSpecialEffect": true
+  },
+  {
+    "id": "housing-sand-dune",
+    "name": "Sand Dune",
+    "slug": "housing-sand-dune",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "Now you can build sand castles!",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=21231629",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": false,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/housing/SandDunepic.png",
+    "location": "SandSea (Shop)",
+    "price": "200 Gold",
+    "sellback": "20 Gold",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "SandSea (Shop)",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=21227401",
+        "price": "200 Gold",
+        "priceType": "gold",
+        "daRequired": true,
+        "sellback": "20 Gold"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-sandcastle",
+    "name": "Sandcastle",
+    "slug": "housing-sandcastle",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "Who wouldn't want to own a sandcastle?",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22358084",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://i.imgur.com/KXqjuCS.png",
+    "location": "Azaveyran House Items",
+    "price": "50 Dragon Coins",
+    "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Azaveyran House Items",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=22357118",
+        "price": "50 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-sneak-attack-landscape",
+    "name": "Sneak Attack Landscape",
+    "slug": "housing-sneak-attack-landscape",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "Calm duckies. Wait for it... Doo doo! Doo doo! OH NO!",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=16271386",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs",
+      "d-coins",
+      "rare",
+      "special-effect"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": true,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "http://i.imgur.com/sXcJ2D8.png",
+    "alternativeImages": [
+      {
+        "url": "http://i.imgur.com/NoyuzUp.jpg",
+        "caption": "Alternative Image"
+      }
+    ],
+    "location": "Summer Housing",
+    "price": "50 Dragon Coins",
+    "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+    "effect": "Sneak attack from below (takes about 1 min to occur)",
+    "obtainMethods": [
+      {
+        "location": "Summer Housing",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=16265581",
+        "price": "50 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "hasSpecialEffect": true
+  },
+  {
+    "id": "housing-snowy-bush",
+    "name": "Snowy Bush",
+    "slug": "housing-snowy-bush",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "This bush is cold.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=21904960",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs",
+      "d-coins",
+      "seasonal"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": true,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "http://i.imgur.com/dKguSy6.jpg",
+    "location": "Frostval 14",
+    "price": "50 Dragon Coins",
+    "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+    "effect": "N/A",
+    "obtainMethods": [
+      {
+        "location": "Frostval 14",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=21904197",
+        "price": "50 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-snowy-tree",
+    "name": "Snowy Tree",
+    "slug": "housing-snowy-tree",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "A snow covered tree with lights!",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=21911549",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs",
+      "d-coins",
+      "seasonal"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": true,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "http://i.imgur.com/Q0ptog3.png",
+    "alternativeImages": [
+      {
+        "url": "http://i.imgur.com/dcFD2Yf.png",
+        "caption": "Alternative Image"
+      }
+    ],
+    "location": "Frostval 14",
+    "price": "75 Dragon Coins",
+    "sellback": "68 Dragon Coins before 24 hours, 19 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Frostval 14",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=21904197",
+        "price": "75 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "68 Dragon Coins before 24 hours, 19 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-standing-golden-zorbak",
+    "name": "Standing Golden Zorbak",
+    "slug": "housing-standing-golden-zorbak",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "It's... breathtaking!",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=20180785",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs",
+      "d-coins",
+      "seasonal"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": true,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/housing/StandingGoldenZorbakpic.jpg",
+    "location": "Lucky Day Outside",
+    "price": "100 Dragon Coins",
+    "sellback": "90 Dragon Coins before 24 hours, 25 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Lucky Day Outside",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=20167520",
+        "price": "100 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "90 Dragon Coins before 24 hours, 25 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-statue-of-pandora",
+    "name": "Statue of Pandora",
+    "slug": "housing-statue-of-pandora",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "You saw this down in Silkwood Park in Ravenloss and just had to have one for yourself!",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=17550054",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "http://i.imgur.com/7IX6kZt.png",
+    "location": "DC Shrubs , Kajap's , Pellow Village (Shop)",
+    "price": "50 Dragon Coins",
+    "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "DC Shrubs , Kajap's , Pellow Village (Shop)",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14296200",
+        "price": "50 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-stone-rubble",
+    "name": "Stone Rubble",
+    "slug": "housing-stone-rubble",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "Rubble from the fall of Tethy's.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=17644114",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": false,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://i.imgur.com/DJpna2r.png",
+    "location": "Crazy Harry's (Gold Shop)",
+    "price": "800 Gold",
+    "sellback": "80 Gold",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Crazy Harry's (Gold Shop)",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=17329818",
+        "price": "800 Gold",
+        "priceType": "gold",
+        "daRequired": true,
+        "sellback": "80 Gold"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-stump",
+    "name": "Stump",
+    "slug": "housing-stump",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "A stump.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=14296561",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/housing/Stumppic.png",
+    "location": "DC Shrubs",
+    "price": "50 Dragon Coins",
+    "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "DC Shrubs",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14296200",
+        "price": "50 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-time-travel-fairy-time-tours-statue",
+    "name": "Time Travel Fairy Time Tours statue",
+    "slug": "housing-time-travel-fairy-time-tours-statue",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "This statue is sold by the Time Travel Fairies! It will look great in your garden!",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=17159036",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": false,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/housing/TimeTravelFairyTimeToursstatuepic.png",
+    "location": "War Memento Shop",
+    "price": "750 Gold",
+    "sellback": "75 Gold",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "War Memento Shop",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=17158999",
+        "price": "750 Gold",
+        "priceType": "gold",
+        "daRequired": true,
+        "sellback": "75 Gold"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-togstone",
+    "name": "Togstone",
+    "slug": "housing-togstone",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "Tombstone for Togs! RIP! Starts Togicides's Revenge Part 1!",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=15199928",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs",
+      "special-effect"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": false,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://i.imgur.com/TKVmTCY.jpg",
+    "location": "Togicide",
+    "price": "100 Gold",
+    "sellback": "10 Gold",
+    "effect": "Teleports player to the Togicide Revenge quest.",
+    "obtainMethods": [
+      {
+        "location": "Togicide",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=19435751",
+        "price": "100 Gold",
+        "priceType": "gold",
+        "daRequired": true,
+        "sellback": "10 Gold"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "alsoSee": [
+      {
+        "name": "Glowing Togstone",
+        "slug": "housing-glowing-togstone",
+        "type": "housing",
+        "url": "https://forums2.battleon.com/f/fb.asp?m=21398807"
+      },
+      {
+        "name": "Really Glowing Togstone",
+        "slug": "housing-really-glowing-togstone",
+        "type": "housing",
+        "url": "https://forums2.battleon.com/f/fb.asp?m=21398815"
+      }
+    ],
+    "hasSpecialEffect": true
+  },
+  {
+    "id": "housing-tomato-plant",
+    "name": "Tomato Plant",
+    "slug": "housing-tomato-plant",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "Nutritious and excellent for flinging at bad comedians.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=15198622",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": false,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/housing/Tomato%20Plant%20pic.bmp",
+    "location": "Ikea Gold",
+    "price": "250 Gold",
+    "sellback": "25 Gold",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Ikea Gold",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14441087",
+        "price": "250 Gold",
+        "priceType": "gold",
+        "daRequired": true,
+        "sellback": "25 Gold"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-travelers-gryphon-statue",
+    "name": "Traveler's Gryphon Statue",
+    "slug": "housing-travelers-gryphon-statue",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "Its a little difficult to ride, but it'll get you where you need to go!",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=17422161",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs",
+      "d-coins",
+      "special-effect"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://i.imgur.com/ir91qdp.png",
+    "location": "DC Shrubs",
+    "price": "250 Dragon Coins",
+    "sellback": "225 Dragon Coins before 24 hours, 63 Dragon Coins after 24 hours",
+    "effect": "Click to travel to any of the following destinations (Books 1 and 2, unless otherwise stated)\nAeris Battlespire PvP, 100 Room Dungeon, Lady Celestia (Sunbreeze Grove), Osprey Cove, The Sandsea, The Necropolis, Battleon, Falconreach (Book 1), Falconreach (Book 3), Oaklore, Amityvale, Shadow of the Wind Village, Lymcrest, Dragesvard, Popsprocket, East Village, DragonsGrasp (DA required)",
+    "obtainMethods": [
+      {
+        "location": "DC Shrubs",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14296200",
+        "price": "250 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "225 Dragon Coins before 24 hours, 63 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "hasSpecialEffect": true,
+    "notes": "• You do not need to own this item to use this item. If you visit another player's house with this item, you may also travel to the above destinations via clicking on it."
+  },
+  {
+    "id": "housing-twilly-statue",
+    "name": "Twilly Statue",
+    "slug": "housing-twilly-statue",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "Warning: Will not heal you. Will stare at you without blinking, though.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=15202952",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "http://i.imgur.com/aUPVc6A.png",
+    "location": "Ikea DC",
+    "price": "75 Dragon Coins",
+    "sellback": "68 Dragon Coins before 24 hours, 19 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Ikea DC",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14441053",
+        "price": "75 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "68 Dragon Coins before 24 hours, 19 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-water-rug",
+    "name": "Water Rug",
+    "slug": "housing-water-rug",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "You don't know how this works, but it does.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=21301656",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "http://i.imgur.com/VE024kG.jpg",
+    "location": "Dakarai House Items",
+    "price": "75 Dragon Coins",
+    "sellback": "68 Dragon Coins before 24 hours, 19 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Dakarai House Items",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=21301721",
+        "price": "75 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "68 Dragon Coins before 24 hours, 19 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-water-torch",
+    "name": "Water Torch",
+    "slug": "housing-water-torch",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "An ancient Tethyian torch to be placed outside",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=17648764",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://i.imgur.com/xynRMCc.png",
+    "location": "Crazy Harry's (Dragon Coin Shop)",
+    "price": "75 Dragon Coins",
+    "sellback": "68 Dragon Coins before 24 hours, 19 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Crazy Harry's (Dragon Coin Shop)",
+        "locationUrl": "https://forums2.battleon.com/f/fb.asp?m=17645394",
+        "price": "75 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "68 Dragon Coins before 24 hours, 19 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-white-bush",
+    "name": "White Bush",
+    "slug": "housing-white-bush",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "Pretty Azaveyran foliage.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22358079",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://i.imgur.com/9c2IHcK.png",
+    "location": "Azaveyran House Items",
+    "price": "40 Dragon Coins",
+    "sellback": "36 Dragon Coins before 24 hours, 10 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Azaveyran House Items",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=22357118",
+        "price": "40 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "36 Dragon Coins before 24 hours, 10 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-yix-statue",
+    "name": "Yix statue",
+    "slug": "housing-yix-statue",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "Awww, a gnome for your garden! Where's his red hat?",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=16266109",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": false,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/housing/Yix%20Statue%20pic.bmp",
+    "alternativeImages": [
+      {
+        "url": "http://i.imgur.com/DNcIZBS.png",
+        "caption": "Alternative Image"
+      }
+    ],
+    "location": "Lowe Gold",
+    "price": "500 Gold",
+    "sellback": "50 Gold",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Lowe Gold",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=16266087",
+        "price": "500 Gold",
+        "priceType": "gold",
+        "daRequired": true,
+        "sellback": "50 Gold"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-zhoom-statue",
+    "name": "Zhoom Statue",
+    "slug": "housing-zhoom-statue",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "This is definitely not a sandelf we turned into stone... we swear.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=14296625",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/housing/ZhoomStatuepic.png",
+    "location": "DC Shrubs",
+    "price": "100 Dragon Coins",
+    "sellback": "90 Dragon Coins before 24 hours, 25 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "DC Shrubs",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14296200",
+        "price": "100 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "90 Dragon Coins before 24 hours, 25 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "hasSpecialEffect": false
+  }
+]

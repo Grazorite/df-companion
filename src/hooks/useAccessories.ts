@@ -16,6 +16,7 @@ import {
 } from '../utils/dataLoaders'
 import { compareTitles, displayTitle } from '../utils/displayText'
 import { parseArmorCustomization } from '../utils/armorCustomization'
+import { hasRetiredEntry } from '../utils/filterVisibility'
 import { getSearchWords } from '../utils/search'
 import { obtainMethodInferenceFingerprint } from '../utils/relatedItems'
 import {
@@ -110,6 +111,17 @@ function useAccessoryCountsDataset() {
   return { bySubtype: counts, total, loading }
 }
 
+function getAccessoryEntryElements(entry: AccessoryEntry): string[] {
+  if (!isAccessoryFamily(entry)) return entry.elements
+
+  const elements = new Set(entry.elements)
+  if (entry.shared.element) elements.add(entry.shared.element)
+  for (const variant of entry.levelVariants) {
+    if (variant.element) elements.add(variant.element)
+  }
+  return [...elements]
+}
+
 function hasMultipleVersionHint(name: string): boolean {
   return /\((?:All Versions|[IVX]+(?:\s*[-,]\s*[IVX]+)+|[IVX]+-[IVX]+)\)/i.test(name)
 }
@@ -185,12 +197,11 @@ function searchAccessories(
         return false
       }
 
+      const itemElements = getAccessoryEntryElements(item)
       if (filters.elements && filters.elements.length > 0) {
-        const itemElements = isAccessoryFamily(item) ? item.elements : item.elements
         if (!filters.elements.some((code) => itemElements.includes(code))) return false
       }
       if (filters.excludeElements && filters.excludeElements.length > 0) {
-        const itemElements = isAccessoryFamily(item) ? item.elements : item.elements
         if (filters.excludeElements.some((code) => itemElements.includes(code))) return false
       }
 
@@ -208,7 +219,7 @@ function searchAccessories(
           description,
           ...variantNames,
           ...tags,
-          ...item.elements.map(
+          ...itemElements.map(
             (code) =>
               elementMeta.elements.find((element) => element.code === code)?.shortName ?? code
           ),
@@ -320,11 +331,48 @@ export function useAccessoryCategoryAvailability(subtype: AccessorySubtype) {
   const { accessories, loading } = useAccessorySubtypeDataset(subtype)
 
   return useMemo(
-    () => ({
-      loading,
-      hasArmorCustomization: accessories.some(hasAccessoryArmorCustomization),
-      hasCosmetic: accessories.some((entry) => entry.isCosmetic === true),
-    }),
+    () => {
+      const access = new Set<string>()
+      const categories = new Set<string>()
+      const elements = new Set<string>()
+
+      for (const entry of accessories) {
+        if (isAccessoryFamily(entry)) {
+          if (entry.levelVariants.length > 1) access.add('multi')
+          if (entry.hasDA) access.add('da')
+          if (entry.hasDC) access.add('dc')
+          if (entry.hasDM) access.add('dm')
+          if (entry.hasFree) access.add('free')
+          if (entry.hasMerge) access.add('merge')
+        } else {
+          if (hasMultipleVersionHint(entry.name)) access.add('multi')
+          if (entry.daRequired) access.add('da')
+          if (entry.dcRequired) access.add('dc')
+          if (entry.dmRequired) access.add('dm')
+          if (entry.obtainMethods.some((method) => method.priceType === 'free')) access.add('free')
+          if (entry.obtainMethods.some((method) => method.priceType === 'merge')) access.add('merge')
+        }
+
+        for (const element of getAccessoryEntryElements(entry)) elements.add(element)
+        if (hasAccessoryArmorCustomization(entry)) categories.add('armor-customization')
+        if (entry.isCosmetic) categories.add('cosmetic')
+        if (entry.isTemp) categories.add('temp')
+        if (entry.isRare) categories.add('rare')
+        if (entry.isSeasonal) categories.add('seasonal')
+        if (entry.isSpecialOffer) categories.add('special-offer')
+        if (entry.retired) categories.add('retired')
+      }
+
+      return {
+        loading,
+        access,
+        categories,
+        elements,
+        hasArmorCustomization: categories.has('armor-customization'),
+        hasCosmetic: categories.has('cosmetic'),
+        hasRetired: hasRetiredEntry(accessories),
+      }
+    },
     [accessories, loading]
   )
 }

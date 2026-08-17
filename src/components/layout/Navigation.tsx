@@ -16,6 +16,7 @@ import { useTotalBadgeCount } from '../../hooks/useBadges'
 import { useTotalPetCount } from '../../hooks/usePets'
 import { useTotalAccessoryCount } from '../../hooks/useAccessories'
 import { useTotalWeaponCount } from '../../hooks/useWeapons'
+import { useTotalHousingCount } from '../../hooks/useHousing'
 
 // Mirrors the DF Encyclopedia forum structure exactly:
 // https://forums2.battleon.com/f/tt.asp?forumid=256
@@ -24,7 +25,7 @@ const NAV_ITEMS = [
   { to: '/accessories', icon: Shirt, label: 'Accessories', exact: false, available: true },
   { to: '/badges', icon: Trophy, label: 'Badges', exact: false, available: true },
   { to: '/classes', icon: Sparkles, label: 'Classes / Abilities', exact: false, available: false },
-  { to: '/housing', icon: House, label: 'Housing', exact: false, available: false },
+  { to: '/housing', icon: House, label: 'Housing', exact: false, available: true },
   { to: '/locations', icon: Map, label: 'Locations / Quests', exact: false, available: false },
   { to: '/monsters', icon: Skull, label: 'Monsters', exact: false, available: false },
   { to: '/npcs', icon: Users, label: 'NPCs', exact: false, available: false },
@@ -39,6 +40,7 @@ export default function Navigation() {
   const petCount = useTotalPetCount()
   const accessoryCount = useTotalAccessoryCount()
   const weaponCount = useTotalWeaponCount()
+  const housingCount = useTotalHousingCount()
 
   const isNavItemActive = (to: string, exact: boolean) => {
     if (to === '/accessories') {
@@ -53,6 +55,21 @@ export default function Navigation() {
           '/necklaces',
           '/rings',
           '/trinkets',
+        ].some((route) => location.pathname === route || location.pathname.startsWith(`${route}/`))
+      )
+    }
+
+    if (to === '/housing') {
+      return (
+        location.pathname === '/housing' ||
+        [
+          '/houses',
+          '/backgrounds',
+          '/floors',
+          '/rugs',
+          '/shrubs',
+          '/stuff',
+          '/wall-items',
         ].some((route) => location.pathname === route || location.pathname.startsWith(`${route}/`))
       )
     }
@@ -108,6 +125,9 @@ export default function Navigation() {
                   {to === '/weapons' && (
                     <span className="text-xs text-text-muted tabular-nums">{weaponCount}</span>
                   )}
+                  {to === '/housing' && (
+                    <span className="text-xs text-text-muted tabular-nums">{housingCount}</span>
+                  )}
                 </NavLink>
               ) : (
                 <div
@@ -153,6 +173,7 @@ export default function Navigation() {
               item.to === '/' ||
               item.to === '/accessories' ||
               item.to === '/badges' ||
+              item.to === '/housing' ||
               item.to === '/pets' ||
               item.to === '/weapons'
           ).map(({ to, icon: Icon, label, exact, available }) => (

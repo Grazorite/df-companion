@@ -1,0 +1,12 @@
+{
+  "total": 608,
+  "bySubtype": {
+    "house": 16,
+    "background": 13,
+    "floor": 7,
+    "rug": 32,
+    "shrub": 73,
+    "stuff": 276,
+    "wall-item": 191
+  }
+}

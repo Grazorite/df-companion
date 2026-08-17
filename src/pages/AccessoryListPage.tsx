@@ -14,6 +14,11 @@ import {
 import { ACCESSORY_SUBTYPES, type AccessorySubtype } from '../types/accessory'
 import elementsData from '../data/elements.json'
 import type { ElementsData } from '../types/element'
+import {
+  filterAccessOptionsByAvailability,
+  filterCategoryOptionsByAvailability,
+  filterElementOptionsByAvailability,
+} from '../utils/filterVisibility'
 import { cycleTriState, getTriState, parseFilterParam } from '../utils/triStateFilters'
 
 const ACCESS_OPTIONS = [
@@ -53,33 +58,54 @@ export default function AccessoryListPage() {
   const excludeCategoryParam = searchParams.get('excludeCategory')
   const categoryAvailability = useAccessoryCategoryAvailability(activeSubtype)
   const showArmorCustomizationFilter =
-    categoryAvailability.loading || categoryAvailability.hasArmorCustomization
-  const showCosmeticFilter = categoryAvailability.loading || categoryAvailability.hasCosmetic
+    !categoryAvailability.loading && categoryAvailability.hasArmorCustomization
+  const showCosmeticFilter = !categoryAvailability.loading && categoryAvailability.hasCosmetic
+  const { elements } = elementsData as ElementsData
+  const visibleElements = useMemo(
+    () => filterElementOptionsByAvailability(elements, categoryAvailability),
+    [categoryAvailability, elements]
+  )
+  const visibleElementIds = useMemo(
+    () => new Set(visibleElements.map((element) => element.code)),
+    [visibleElements]
+  )
+  const visibleAccessOptions = useMemo(
+    () => filterAccessOptionsByAvailability(ACCESS_OPTIONS, categoryAvailability),
+    [categoryAvailability]
+  )
+  const visibleAccessIds = useMemo(
+    () => new Set(visibleAccessOptions.map((option) => option.id)),
+    [visibleAccessOptions]
+  )
   const visibleCategoryOptions = useMemo(
     () =>
-      CATEGORY_OPTIONS.filter((option) => {
+      filterCategoryOptionsByAvailability(CATEGORY_OPTIONS, categoryAvailability, (option) => {
         if (option.id === 'armor-customization') return showArmorCustomizationFilter
         if (option.id === 'cosmetic') return showCosmeticFilter
         return true
       }),
-    [showArmorCustomizationFilter, showCosmeticFilter]
+    [categoryAvailability, showArmorCustomizationFilter, showCosmeticFilter]
   )
-  const activeElements = useMemo(
+  const visibleCategoryIds = useMemo(
+    () => new Set(visibleCategoryOptions.map((option) => option.id)),
+    [visibleCategoryOptions]
+  )
+  const rawActiveElements = useMemo(
     () => (elementParam ? elementParam.split(',').filter(Boolean) : []),
     [elementParam]
   )
-  const excludedElements = useMemo(
+  const rawExcludedElements = useMemo(
     () => (excludeElementParam ? excludeElementParam.split(',').filter(Boolean) : []),
     [excludeElementParam]
   )
-  const activeAccess = useMemo(
+  const rawActiveAccess = useMemo(
     () =>
       parseFilterParam(accessParam, (value): value is (typeof ACCESS_OPTIONS)[number]['id'] =>
         ACCESS_OPTIONS.some((option) => option.id === value)
       ),
     [accessParam]
   )
-  const excludedAccess = useMemo(
+  const rawExcludedAccess = useMemo(
     () =>
       parseFilterParam(
         excludeAccessParam,
@@ -88,50 +114,81 @@ export default function AccessoryListPage() {
       ),
     [excludeAccessParam]
   )
-  const activeCategories = useMemo(
+  const rawActiveCategories = useMemo(
     () =>
       parseFilterParam(categoryParam, (value): value is (typeof CATEGORY_OPTIONS)[number]['id'] =>
         CATEGORY_OPTIONS.some((option) => option.id === value)
-      )
-        .filter((value) => value !== 'cosmetic' || showCosmeticFilter)
-        .filter((value) => value !== 'armor-customization' || showArmorCustomizationFilter),
-    [categoryParam, showArmorCustomizationFilter, showCosmeticFilter]
+      ),
+    [categoryParam]
   )
-  const excludedCategories = useMemo(
+  const rawExcludedCategories = useMemo(
     () =>
       parseFilterParam(
         excludeCategoryParam,
         (value): value is (typeof CATEGORY_OPTIONS)[number]['id'] =>
           CATEGORY_OPTIONS.some((option) => option.id === value)
-      )
+      ),
+    [excludeCategoryParam]
+  )
+  const activeElements = useMemo(
+    () => (elementParam ? elementParam.split(',').filter((code) => visibleElementIds.has(code)) : []),
+    [elementParam, visibleElementIds]
+  )
+  const excludedElements = useMemo(
+    () =>
+      excludeElementParam
+        ? excludeElementParam.split(',').filter((code) => visibleElementIds.has(code))
+        : [],
+    [excludeElementParam, visibleElementIds]
+  )
+  const activeAccess = useMemo(
+    () => rawActiveAccess.filter((value) => visibleAccessIds.has(value)),
+    [rawActiveAccess, visibleAccessIds]
+  )
+  const excludedAccess = useMemo(
+    () => rawExcludedAccess.filter((value) => visibleAccessIds.has(value)),
+    [rawExcludedAccess, visibleAccessIds]
+  )
+  const activeCategories = useMemo(
+    () =>
+      rawActiveCategories
+        .filter((value) => visibleCategoryIds.has(value))
         .filter((value) => value !== 'cosmetic' || showCosmeticFilter)
         .filter((value) => value !== 'armor-customization' || showArmorCustomizationFilter),
-    [excludeCategoryParam, showArmorCustomizationFilter, showCosmeticFilter]
+    [rawActiveCategories, showArmorCustomizationFilter, showCosmeticFilter, visibleCategoryIds]
   )
-
-  const { elements } = elementsData as ElementsData
+  const excludedCategories = useMemo(
+    () =>
+      rawExcludedCategories
+        .filter((value) => visibleCategoryIds.has(value))
+        .filter((value) => value !== 'cosmetic' || showCosmeticFilter)
+        .filter((value) => value !== 'armor-customization' || showArmorCustomizationFilter),
+    [rawExcludedCategories, showArmorCustomizationFilter, showCosmeticFilter, visibleCategoryIds]
+  )
   const { bySubtype, loading: countsLoading } = useAccessoryCounts()
 
   const canonicalQueryString = useMemo(() => {
     const params = new URLSearchParams()
     params.set('type', activeSubtype)
     if (debouncedQuery) params.set('q', debouncedQuery)
-    if (activeElements.length > 0) params.set('element', activeElements.join(','))
-    if (excludedElements.length > 0) params.set('excludeElement', excludedElements.join(','))
-    if (activeAccess.length > 0) params.set('access', activeAccess.join(','))
-    if (excludedAccess.length > 0) params.set('excludeAccess', excludedAccess.join(','))
-    if (activeCategories.length > 0) params.set('category', activeCategories.join(','))
-    if (excludedCategories.length > 0) params.set('excludeCategory', excludedCategories.join(','))
+    if (rawActiveElements.length > 0) params.set('element', rawActiveElements.join(','))
+    if (rawExcludedElements.length > 0) params.set('excludeElement', rawExcludedElements.join(','))
+    if (rawActiveAccess.length > 0) params.set('access', rawActiveAccess.join(','))
+    if (rawExcludedAccess.length > 0) params.set('excludeAccess', rawExcludedAccess.join(','))
+    if (rawActiveCategories.length > 0) params.set('category', rawActiveCategories.join(','))
+    if (rawExcludedCategories.length > 0) {
+      params.set('excludeCategory', rawExcludedCategories.join(','))
+    }
     return params.toString()
   }, [
     activeSubtype,
     debouncedQuery,
-    activeElements,
-    excludedElements,
-    activeAccess,
-    excludedAccess,
-    activeCategories,
-    excludedCategories,
+    rawActiveElements,
+    rawExcludedElements,
+    rawActiveAccess,
+    rawExcludedAccess,
+    rawActiveCategories,
+    rawExcludedCategories,
   ])
 
   useEffect(() => {
@@ -171,17 +228,17 @@ export default function AccessoryListPage() {
   function baseParams(): Record<string, string> {
     const params: Record<string, string> = { type: activeSubtype }
     if (debouncedQuery) params.q = debouncedQuery
-    if (activeElements.length > 0) params.element = activeElements.join(',')
-    if (excludedElements.length > 0) params.excludeElement = excludedElements.join(',')
-    if (activeAccess.length > 0) params.access = activeAccess.join(',')
-    if (excludedAccess.length > 0) params.excludeAccess = excludedAccess.join(',')
-    if (activeCategories.length > 0) params.category = activeCategories.join(',')
-    if (excludedCategories.length > 0) params.excludeCategory = excludedCategories.join(',')
+    if (rawActiveElements.length > 0) params.element = rawActiveElements.join(',')
+    if (rawExcludedElements.length > 0) params.excludeElement = rawExcludedElements.join(',')
+    if (rawActiveAccess.length > 0) params.access = rawActiveAccess.join(',')
+    if (rawExcludedAccess.length > 0) params.excludeAccess = rawExcludedAccess.join(',')
+    if (rawActiveCategories.length > 0) params.category = rawActiveCategories.join(',')
+    if (rawExcludedCategories.length > 0) params.excludeCategory = rawExcludedCategories.join(',')
     return params
   }
 
   function toggleAccess(id: (typeof ACCESS_OPTIONS)[number]['id']) {
-    const next = cycleTriState(id, { include: activeAccess, exclude: excludedAccess })
+    const next = cycleTriState(id, { include: rawActiveAccess, exclude: rawExcludedAccess })
     const params = baseParams()
     delete params.access
     delete params.excludeAccess
@@ -191,7 +248,10 @@ export default function AccessoryListPage() {
   }
 
   function toggleCategory(id: (typeof CATEGORY_OPTIONS)[number]['id']) {
-    const next = cycleTriState(id, { include: activeCategories, exclude: excludedCategories })
+    const next = cycleTriState(id, {
+      include: rawActiveCategories,
+      exclude: rawExcludedCategories,
+    })
     const params = baseParams()
     delete params.category
     delete params.excludeCategory
@@ -201,7 +261,7 @@ export default function AccessoryListPage() {
   }
 
   function toggleElement(code: string) {
-    const next = cycleTriState(code, { include: activeElements, exclude: excludedElements })
+    const next = cycleTriState(code, { include: rawActiveElements, exclude: rawExcludedElements })
     const params = baseParams()
     delete params.element
     delete params.excludeElement
@@ -245,7 +305,7 @@ export default function AccessoryListPage() {
       </div>
 
       <div className="flex gap-2 flex-wrap mb-3" role="group" aria-label="Filter by access">
-        {ACCESS_OPTIONS.map((option) => {
+        {visibleAccessOptions.map((option) => {
           return (
             <TriStateFilterPill
               key={option.id}
@@ -306,7 +366,7 @@ export default function AccessoryListPage() {
 
       <div className="mb-2">
         <div className="flex flex-wrap gap-1.5">
-          {elements.map((element) => {
+          {visibleElements.map((element) => {
             const state = getTriState(element.code, {
               include: activeElements,
               exclude: excludedElements,

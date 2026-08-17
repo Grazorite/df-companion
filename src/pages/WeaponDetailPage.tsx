@@ -1,17 +1,21 @@
-import { useParams, useSearchParams } from 'react-router-dom'
+import { useLocation, useParams, useSearchParams } from 'react-router-dom'
 import WeaponDetail from '../components/weapons/WeaponDetail'
 import { DetailPageSkeleton } from '../components/shared/LoadingSkeleton'
 import { useWeaponBySlug } from '../hooks/useWeapons'
 import { WEAPON_SUBTYPES, type WeaponSubtype } from '../types/weapon'
+import { backUrlFromSearch } from '../utils/navigationContext'
 
 export default function WeaponDetailPage() {
   const { slug } = useParams()
+  const location = useLocation()
   const [searchParams] = useSearchParams()
   const typeParam = searchParams.get('type')
   const activeSubtype = WEAPON_SUBTYPES.some((meta) => meta.subtype === typeParam)
     ? (typeParam as WeaponSubtype)
     : 'sword-axe-mace'
   const { weapon, loading } = useWeaponBySlug(activeSubtype, slug)
+  const filterBase = `/weapons?type=${activeSubtype}`
+  const backUrl = backUrlFromSearch(location.search, filterBase)
 
   if (loading) return <DetailPageSkeleton />
 
@@ -25,5 +29,5 @@ export default function WeaponDetailPage() {
     )
   }
 
-  return <WeaponDetail weapon={weapon} filterBase={`/weapons?type=${activeSubtype}`} />
+  return <WeaponDetail weapon={weapon} filterBase={filterBase} backUrl={backUrl} />
 }

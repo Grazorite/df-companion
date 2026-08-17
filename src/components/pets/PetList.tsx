@@ -4,6 +4,7 @@ import type { ItemFamily } from '../../types/item'
 import PetCard from './PetCard'
 import { BadgeGridSkeleton } from '../shared/LoadingSkeleton'
 import { getFamilyCardDescription } from '../../utils/variantHelpers'
+import { currentListUrl, detailUrlWithFrom } from '../../utils/navigationContext'
 
 interface PetListProps {
   pets: (Pet | ItemFamily)[]
@@ -16,7 +17,7 @@ function isItemFamily(item: Pet | ItemFamily): item is ItemFamily {
 
 export default function PetList({ pets, loading = false }: PetListProps) {
   const location = useLocation()
-  const fromUrl = location.pathname + location.search
+  const fromUrl = currentListUrl(location)
 
   if (loading) return <BadgeGridSkeleton count={6} />
 
@@ -86,7 +87,7 @@ export default function PetList({ pets, loading = false }: PetListProps) {
             <PetCard
               pet={displayPet}
               family={isFamily ? family! : undefined}
-              toUrl={`/${section}/${slug}?from=${encodeURIComponent(fromUrl)}`}
+              toUrl={detailUrlWithFrom(`/${section}/${slug}`, fromUrl)}
             />
           </li>
         )

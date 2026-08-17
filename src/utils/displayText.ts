@@ -10,6 +10,14 @@ export function normalizeDisplayText(text?: string): string {
     .replace(/([!?])\.$/g, '$1')
 }
 
+export function normalizeDescriptionText(text?: string): string {
+  return normalizeDisplayText(text)
+    .replace(/\s*\((?:DA\s+required|DC\s+item)\)\s*/gi, ' ')
+    .replace(/\s+([.,;:!?])/g, '$1')
+    .replace(/\s{2,}/g, ' ')
+    .trim()
+}
+
 export function displayTitle(text?: string): string {
   const normalized = normalizeDisplayText(text).replace(/\s+,/g, ',').trim()
   const trailingArticleMatch = normalized.match(/^(.+?),\s*The$/i)

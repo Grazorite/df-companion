@@ -4,6 +4,7 @@ import type { ItemFamily } from '../types/item'
 import type { ElementsData } from '../types/element'
 import { loadElements, loadPetsAndGuests, loadPetsGuestsManifest } from '../utils/dataLoaders'
 import { compareTitles, displayTitle } from '../utils/displayText'
+import { hasRetiredEntry } from '../utils/filterVisibility'
 import { obtainMethodInferenceFingerprint } from '../utils/relatedItems'
 import { getSearchWords } from '../utils/search'
 import { getDisplayFamilyName, getFamilyCardDescription } from '../utils/variantHelpers'
@@ -26,6 +27,29 @@ function petMatchesSlug(item: Pet | ItemFamily, slug?: string, aliases?: Map<str
 
 function getPetSlugs(item: Pet | ItemFamily): string[] {
   return [item.slug, ...(isItemFamily(item) ? (item.aliasSlugs ?? []) : [])]
+}
+
+function getPetEntryFilterCodes(item: Pet | ItemFamily): { elements: string[]; traits: string[] } {
+  if (!isItemFamily(item)) {
+    return {
+      elements: item.elements,
+      traits: item.traits,
+    }
+  }
+
+  const elements = new Set(item.elements)
+  const traits = new Set(item.traits ?? [])
+
+  if (item.shared.element) elements.add(item.shared.element)
+  for (const variant of item.levelVariants) {
+    if (variant.element) elements.add(variant.element)
+    for (const trait of variant.traits ?? []) traits.add(trait)
+  }
+
+  return {
+    elements: [...elements],
+    traits: [...traits],
+  }
 }
 
 function getPetObtainFingerprints(item: Pet | ItemFamily): Set<string> {
@@ -228,8 +252,7 @@ function searchPets(
 
       const itemType = isFamily ? family!.type : pet!.type
       const isGuestEntry = itemType === 'guest'
-      const itemElements = isFamily ? family!.elements : pet!.elements
-      const itemTraits = isFamily ? [] : pet!.traits // Families don't have traits yet
+      const { elements: itemElements, traits: itemTraits } = getPetEntryFilterCodes(item)
       const itemName = isFamily ? family!.familyName : pet!.name
       const itemDescription = isFamily ? getFamilyCardDescription(family!) : pet!.description
       const itemTags = isFamily ? family!.tags : pet!.tags
@@ -391,6 +414,69 @@ export function usePetCounts(filters: Omit<PetFilters, 'type'> = {}): Record<Ent
       guest: all.filter((p) => p.type === 'guest').length,
     }
   }, [allPets, elementMeta, filters])
+}
+
+export function usePetCategoryAvailability(types?: EntryType[]) {
+  const { allPets, loading } = usePetDataset()
+
+  return useMemo(() => {
+    const scopedPets =
+      types && types.length > 0
+        ? allPets.filter(
+            (entry) =>
+              (entry.type === 'pet' || entry.type === 'guest') && types.includes(entry.type)
+          )
+        : allPets
+    const access = new Set<string>()
+    const categories = new Set<string>()
+    const elements = new Set<string>()
+
+    for (const entry of scopedPets) {
+      const isFamily = isItemFamily(entry)
+      const entryType = entry.type
+      const isGuest = entryType === 'guest'
+
+      if (isFamily) {
+        if (entry.levelVariants.length > 1) access.add('multi')
+        if (entry.hasDA) access.add('da')
+        if (!isGuest) {
+          if (entry.hasDC) access.add('dc')
+          if (entry.hasDM) access.add('dm')
+          if (entry.hasFree) access.add('free')
+          if (entry.hasMerge) access.add('merge')
+        }
+      } else {
+        if (entry.daRequired) access.add('da')
+        if (!isGuest) {
+          if (entry.dcRequired) access.add('dc')
+          if (entry.dmRequired) access.add('dm')
+          if (entry.obtainMethods.some((method) => method.priceType === 'free')) {
+            access.add('free')
+          }
+          if (entry.obtainMethods.some((method) => method.priceType === 'merge')) {
+            access.add('merge')
+          }
+        }
+      }
+
+      const filterCodes = getPetEntryFilterCodes(entry)
+      for (const element of filterCodes.elements) elements.add(element)
+      for (const trait of filterCodes.traits) elements.add(trait)
+      if (entry.isTemp) categories.add('temp')
+      if (entry.isRare) categories.add('rare')
+      if (entry.isSeasonal) categories.add('seasonal')
+      if (entry.isSpecialOffer && !isGuest) categories.add('special-offer')
+      if (entry.retired) categories.add('retired')
+    }
+
+    return {
+      loading,
+      access,
+      categories,
+      elements,
+      hasRetired: hasRetiredEntry(scopedPets),
+    }
+  }, [allPets, loading, types])
 }
 
 const INFERRED_RELATED_LIMIT = 8

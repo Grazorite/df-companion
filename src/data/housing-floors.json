@@ -1,0 +1,285 @@
+[
+  {
+    "id": "housing-granite-floor",
+    "name": "Granite Floor",
+    "slug": "housing-granite-floor",
+    "type": "housing",
+    "subtype": "floor",
+    "description": "It's a good, sturdy floor",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=14232191",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302550",
+    "tags": [
+      "floor",
+      "floors",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://s14.postimg.org/wxk55l0pt/Granite_Floor.jpg",
+    "location": "DC Floors",
+    "price": "50 Dragon Coins",
+    "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "DC Floors",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14237082",
+        "price": "50 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Floor",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-guardian-tile",
+    "name": "Guardian Tile",
+    "slug": "housing-guardian-tile",
+    "type": "housing",
+    "subtype": "floor",
+    "description": "The very same manson laid the tile in the Guardian Tower",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=14231608",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302550",
+    "tags": [
+      "floor",
+      "floors"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": false,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://s14.postimg.org/n094cj0tt/tile.png",
+    "location": "Gold Floors",
+    "price": "500 Gold",
+    "sellback": "50 Gold",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Gold Floors",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14236407",
+        "price": "500 Gold",
+        "priceType": "gold",
+        "daRequired": true,
+        "sellback": "50 Gold"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Floor",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-marble-floor",
+    "name": "Marble Floor",
+    "slug": "housing-marble-floor",
+    "type": "housing",
+    "subtype": "floor",
+    "description": "From the finest Lymcrest quarries.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=14295746",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302550",
+    "tags": [
+      "floor",
+      "floors",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "http://i.imgur.com/MoCbiGH.jpg",
+    "location": "DC Floors",
+    "price": "50 Dragon Coins",
+    "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "DC Floors",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14237082",
+        "price": "50 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Floor",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-old-checkered-floor",
+    "name": "Old Checkered Floor",
+    "slug": "housing-old-checkered-floor",
+    "type": "housing",
+    "subtype": "floor",
+    "description": "Geez, mop your floor already!",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=14297033",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302550",
+    "tags": [
+      "floor",
+      "floors"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": false,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "http://i.imgur.com/DP5cZlv.jpg",
+    "location": "Gold Floors",
+    "price": "400 Gold",
+    "sellback": "40 Gold",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Gold Floors",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14236407",
+        "price": "400 Gold",
+        "priceType": "gold",
+        "daRequired": true,
+        "sellback": "40 Gold"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Floor",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-sandsea-tile",
+    "name": "Sandsea Tile",
+    "slug": "housing-sandsea-tile",
+    "type": "housing",
+    "subtype": "floor",
+    "description": "Imported from the desert!",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=14232294",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302550",
+    "tags": [
+      "floor",
+      "floors",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://s14.postimg.org/7ersskwld/Sandsea_Tile.jpg",
+    "location": "DC Floors",
+    "price": "50 Dragon Coins",
+    "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "DC Floors",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14237082",
+        "price": "50 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Floor",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-sandstone-floor",
+    "name": "Sandstone Floor",
+    "slug": "housing-sandstone-floor",
+    "type": "housing",
+    "subtype": "floor",
+    "description": "Very hard to sweep",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=14231497",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302550",
+    "tags": [
+      "floor",
+      "floors",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "http://i.imgur.com/SrsElo5.jpg",
+    "location": "DC Floors",
+    "price": "50 Dragon Coins",
+    "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "DC Floors",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14237082",
+        "price": "50 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Floor",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-shiny-checkered-floor",
+    "name": "Shiny Checkered Floor",
+    "slug": "housing-shiny-checkered-floor",
+    "type": "housing",
+    "subtype": "floor",
+    "description": "Now we just need some giant pwns.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=14295769",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302550",
+    "tags": [
+      "floor",
+      "floors",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "http://i.imgur.com/HDZJEKB.jpg",
+    "location": "DC Floors",
+    "price": "50 Dragon Coins",
+    "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "DC Floors",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14237082",
+        "price": "50 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Floor",
+    "hasSpecialEffect": false
+  }
+]

@@ -10,7 +10,7 @@ import {
   isSingleVariant,
   normalizeRomanDisplay,
 } from '../../utils/variantHelpers'
-import { displayTitle, normalizeDisplayText } from '../../utils/displayText'
+import { displayTitle, normalizeDescriptionText, normalizeDisplayText } from '../../utils/displayText'
 import { buildDisplayImages } from '../../utils/imageLabels'
 import ElementPill from '../shared/ElementPill'
 import AccessPills from '../shared/AccessPills'
@@ -30,6 +30,7 @@ import GuestStatsSection from '../guests/GuestStatsSection'
 import PetEvolutions from './PetEvolutions'
 import PetCard from './PetCard'
 import { useRelatedPets } from '../../hooks/usePets'
+import { detailUrlWithFrom } from '../../utils/navigationContext'
 
 interface PetDetailProps {
   pet: Pet
@@ -477,7 +478,7 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
         </h1>
         {displayData.description && (
           <p className="text-text-secondary text-sm italic leading-relaxed mb-2">
-            {normalizeDisplayText(displayData.description)}
+            {normalizeDescriptionText(displayData.description)}
           </p>
         )}
 
@@ -729,7 +730,7 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
                   <PetCard
                     pet={buildCardPet(related)}
                     family={relatedFamily}
-                    toUrl={`/${section}/${related.slug}?from=${encodeURIComponent(backUrl)}`}
+                    toUrl={detailUrlWithFrom(`/${section}/${related.slug}`, backUrl)}
                     replace
                   />
                 </li>

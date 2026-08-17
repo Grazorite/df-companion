@@ -5,6 +5,7 @@ import { BadgeGridSkeleton } from './components/shared/LoadingSkeleton'
 import ScrollToTop from './components/shared/ScrollToTop'
 import { ACCESSORY_SUBTYPES } from './types/accessory'
 import { WEAPON_SUBTYPES } from './types/weapon'
+import { HOUSING_SUBTYPES } from './types/housing'
 
 const HomePage = lazy(() => import('./pages/HomePage'))
 const BadgesPage = lazy(() => import('./pages/BadgesPage'))
@@ -16,6 +17,8 @@ const AccessoryListPage = lazy(() => import('./pages/AccessoryListPage'))
 const AccessoryDetailPage = lazy(() => import('./pages/AccessoryDetailPage'))
 const WeaponListPage = lazy(() => import('./pages/WeaponListPage'))
 const WeaponDetailPage = lazy(() => import('./pages/WeaponDetailPage'))
+const HousingListPage = lazy(() => import('./pages/HousingListPage'))
+const HousingDetailPage = lazy(() => import('./pages/HousingDetailPage'))
 const ComingSoonPage = lazy(() => import('./pages/ComingSoonPage'))
 
 function PageLoader() {
@@ -52,6 +55,17 @@ export default function App() {
                 }
               />
             ))}
+            <Route path="/housing" element={<HousingListPage />} />
+            <Route path="/housing/:slug" element={<HousingDetailPage />} />
+            {HOUSING_SUBTYPES.map((meta) => (
+              <Route
+                key={meta.route}
+                path={meta.route}
+                element={
+                  <Navigate to={`/housing?type=${encodeURIComponent(meta.subtype)}`} replace />
+                }
+              />
+            ))}
             <Route path="/weapons" element={<WeaponListPage />} />
             <Route path="/weapons/:slug" element={<WeaponDetailPage />} />
             {WEAPON_SUBTYPES.map((meta) => (
@@ -64,7 +78,6 @@ export default function App() {
               />
             ))}
             <Route path="/classes" element={<ComingSoonPage />} />
-            <Route path="/housing" element={<ComingSoonPage />} />
             <Route path="/locations" element={<ComingSoonPage />} />
             <Route path="/monsters" element={<ComingSoonPage />} />
             <Route path="/npcs" element={<ComingSoonPage />} />

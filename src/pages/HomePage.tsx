@@ -15,6 +15,7 @@ import { useTotalBadgeCount } from '../hooks/useBadges'
 import { useTotalPetCount } from '../hooks/usePets'
 import { useTotalAccessoryCount } from '../hooks/useAccessories'
 import { useTotalWeaponCount } from '../hooks/useWeapons'
+import { useTotalHousingCount } from '../hooks/useHousing'
 
 // All sections in forum order — each as its own card, uniform grid
 const SECTIONS = [
@@ -44,7 +45,7 @@ const SECTIONS = [
     icon: House,
     label: 'Housing & House Items',
     desc: 'Home is where the monsters are. Better get some stuff to make it more comfy.',
-    available: false,
+    available: true,
   },
   {
     to: '/locations',
@@ -95,6 +96,7 @@ export default function HomePage() {
   const badgeCount = useTotalBadgeCount()
   const petCount = useTotalPetCount()
   const weaponCount = useTotalWeaponCount()
+  const housingCount = useTotalHousingCount()
 
   return (
     <main className="px-4 sm:px-6 py-8 max-w-2xl mx-auto">
@@ -151,6 +153,11 @@ export default function HomePage() {
                   {to === '/weapons' && (
                     <span className="ml-1.5 text-xs font-normal text-text-muted">
                       ({weaponCount})
+                    </span>
+                  )}
+                  {to === '/housing' && (
+                    <span className="ml-1.5 text-xs font-normal text-text-muted">
+                      ({housingCount})
                     </span>
                   )}
                 </div>

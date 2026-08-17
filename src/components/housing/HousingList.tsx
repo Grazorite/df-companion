@@ -1,16 +1,15 @@
 import { useLocation } from 'react-router-dom'
-import type { WeaponEntry } from '../../types/weapon'
 import { CardGridSkeleton } from '../shared/LoadingSkeleton'
-import { buildWeaponCardData } from '../../hooks/useWeapons'
+import type { HousingEntry } from '../../types/housing'
+import HousingCard from './HousingCard'
 import { currentListUrl, detailUrlWithFrom } from '../../utils/navigationContext'
-import WeaponCard from './WeaponCard'
 
-interface WeaponListProps {
-  weapons: WeaponEntry[]
+interface HousingListProps {
+  housing: HousingEntry[]
   loading?: boolean
 }
 
-export default function WeaponList({ weapons, loading = false }: WeaponListProps) {
+export default function HousingList({ housing, loading = false }: HousingListProps) {
   const location = useLocation()
   const fromUrl = currentListUrl(location)
 
@@ -24,21 +23,21 @@ export default function WeaponList({ weapons, loading = false }: WeaponListProps
     )
   }
 
-  if (weapons.length === 0) {
+  if (housing.length === 0) {
     return (
       <div className="bg-bg-surface border border-border-default rounded-lg p-6 text-sm text-text-secondary">
-        No weapons found for the current filters yet.
+        No housing entries found for the current filters yet.
       </div>
     )
   }
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3">
-      {weapons.map((weapon) => (
-        <WeaponCard
-          key={weapon.slug}
-          weapon={weapon}
-          toUrl={detailUrlWithFrom(buildWeaponCardData(weapon).route, fromUrl)}
+      {housing.map((item) => (
+        <HousingCard
+          key={item.slug}
+          item={item}
+          toUrl={detailUrlWithFrom(`/housing/${item.slug}?type=${encodeURIComponent(item.subtype)}`, fromUrl)}
         />
       ))}
     </div>

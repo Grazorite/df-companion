@@ -2,6 +2,7 @@ import { useLocation } from 'react-router-dom'
 import type { Badge } from '../../types/badge'
 import BadgeCard from './BadgeCard'
 import { BadgeGridSkeleton } from '../shared/LoadingSkeleton'
+import { currentListUrl, detailUrlWithFrom } from '../../utils/navigationContext'
 
 interface BadgeListProps {
   badges: Badge[]
@@ -11,7 +12,7 @@ interface BadgeListProps {
 export default function BadgeList({ badges, loading = false }: BadgeListProps) {
   // Capture the current list URL so badge detail pages can link back to it exactly
   const location = useLocation()
-  const fromUrl = location.pathname + location.search
+  const fromUrl = currentListUrl(location)
 
   if (loading) {
     return <BadgeGridSkeleton count={6} />
@@ -35,7 +36,7 @@ export default function BadgeList({ badges, loading = false }: BadgeListProps) {
         <li key={badge.id}>
           <BadgeCard
             badge={badge}
-            toUrl={`/badges/${badge.slug}?from=${encodeURIComponent(fromUrl)}`}
+            toUrl={detailUrlWithFrom(`/badges/${badge.slug}`, fromUrl)}
           />
         </li>
       ))}

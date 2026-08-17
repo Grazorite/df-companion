@@ -1,6 +1,9 @@
+import { useLocation } from 'react-router-dom'
 import type { AccessoryEntry } from '../../types/accessory'
 import AccessoryCard from './AccessoryCard'
 import { CardGridSkeleton } from '../shared/LoadingSkeleton'
+import { buildAccessoryCardData } from '../../hooks/useAccessories'
+import { currentListUrl, detailUrlWithFrom } from '../../utils/navigationContext'
 
 interface AccessoryListProps {
   accessories: AccessoryEntry[]
@@ -8,6 +11,9 @@ interface AccessoryListProps {
 }
 
 export default function AccessoryList({ accessories, loading = false }: AccessoryListProps) {
+  const location = useLocation()
+  const fromUrl = currentListUrl(location)
+
   if (loading) {
     return (
       <CardGridSkeleton
@@ -29,7 +35,11 @@ export default function AccessoryList({ accessories, loading = false }: Accessor
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3">
       {accessories.map((accessory) => (
-        <AccessoryCard key={accessory.slug} accessory={accessory} />
+        <AccessoryCard
+          key={accessory.slug}
+          accessory={accessory}
+          toUrl={detailUrlWithFrom(buildAccessoryCardData(accessory).route, fromUrl)}
+        />
       ))}
     </div>
   )

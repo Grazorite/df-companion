@@ -1,0 +1,531 @@
+[
+  {
+    "id": "housing-doomwood",
+    "name": "Doomwood",
+    "slug": "housing-doomwood",
+    "type": "housing",
+    "subtype": "background",
+    "description": "Spoooky!",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=14231822",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302544",
+    "tags": [
+      "background",
+      "backgrounds",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "http://i.imgur.com/gDFbP.jpg",
+    "location": "DC Locations",
+    "price": "75 Dragon Coins",
+    "sellback": "68 Dragon Coins before 24 hours, 19 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "DC Locations",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14237091",
+        "price": "75 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "68 Dragon Coins before 24 hours, 19 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Background",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-dragesvard",
+    "name": "Dragesvard",
+    "slug": "housing-dragesvard",
+    "type": "housing",
+    "subtype": "background",
+    "description": "Move your house to cozy Dragesvard!",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=14441144",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302544",
+    "tags": [
+      "background",
+      "backgrounds",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "http://i.imgur.com/aRGeT.jpg",
+    "location": "Ikea DC",
+    "price": "50 Dragon Coins",
+    "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Ikea DC",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14441053",
+        "price": "50 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Background",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-frostvale",
+    "name": "Frostvale",
+    "slug": "housing-frostvale",
+    "type": "housing",
+    "subtype": "background",
+    "description": "Oooooh, chilly!",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22085716",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302544",
+    "tags": [
+      "background",
+      "backgrounds",
+      "d-coins",
+      "seasonal"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": true,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "http://i.imgur.com/JZ2UxkA.png",
+    "location": "Twigsmas",
+    "price": "50 Dragon Coins",
+    "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Twigsmas",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=22085223",
+        "price": "50 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Background",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-golden-slide",
+    "name": "Golden Slide",
+    "slug": "housing-golden-slide",
+    "type": "housing",
+    "subtype": "background",
+    "description": "Wheeeee!",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=20180801",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302544",
+    "tags": [
+      "background",
+      "backgrounds",
+      "d-coins",
+      "seasonal"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": true,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "http://i.imgur.com/tfxXm.jpg",
+    "location": "Lucky Day Outside",
+    "price": "50 Dragon Coins",
+    "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Lucky Day Outside",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=20167520",
+        "price": "50 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Background",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-lava-lakes",
+    "name": "Lava Lakes",
+    "slug": "housing-lava-lakes",
+    "type": "housing",
+    "subtype": "background",
+    "description": "A fiery place to live and work!",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=14231845",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302544",
+    "tags": [
+      "background",
+      "backgrounds",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "http://i.imgur.com/SjQcP.jpg",
+    "location": "DC Locations",
+    "price": "50 Dragon Coins",
+    "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "DC Locations",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14237091",
+        "price": "50 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Background",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-lymcrest",
+    "name": "Lymcrest",
+    "slug": "housing-lymcrest",
+    "type": "housing",
+    "subtype": "background",
+    "description": "Dirt, rocks and dwarves! Oh my!",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=14300267",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302544",
+    "tags": [
+      "background",
+      "backgrounds",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "http://i.imgur.com/ftu87.jpg",
+    "location": "DC Locations",
+    "price": "50 Dragon Coins",
+    "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "DC Locations",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14237091",
+        "price": "50 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Background",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-oaklore",
+    "name": "Oaklore",
+    "slug": "housing-oaklore",
+    "type": "housing",
+    "subtype": "background",
+    "description": "Sir Prize!",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=14333846",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302544",
+    "tags": [
+      "background",
+      "backgrounds",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "http://i.imgur.com/fxb4j.jpg",
+    "location": "DC Locations",
+    "price": "50 Dragon Coins",
+    "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "DC Locations",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14237091",
+        "price": "50 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Background",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-osprey-cove",
+    "name": "Osprey Cove",
+    "slug": "housing-osprey-cove",
+    "type": "housing",
+    "subtype": "background",
+    "description": "Sea spray and pie!",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=14243184",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302544",
+    "tags": [
+      "background",
+      "backgrounds"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": false,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "http://i.imgur.com/3NqUc.jpg",
+    "location": "Gold Locations",
+    "price": "1000 Gold",
+    "sellback": "100 Gold",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Gold Locations",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14236596",
+        "price": "1000 Gold",
+        "priceType": "gold",
+        "daRequired": true,
+        "sellback": "100 Gold"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Background",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-pellow-village",
+    "name": "Pellow Village",
+    "slug": "housing-pellow-village",
+    "type": "housing",
+    "subtype": "background",
+    "description": "The edge of the Void!",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22100110",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302544",
+    "tags": [
+      "background",
+      "backgrounds",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "http://i.imgur.com/WjfC24I.png",
+    "location": "Pellow Village (Shop)",
+    "price": "50 Dragon Coins",
+    "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Pellow Village (Shop)",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=22093489",
+        "price": "50 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Background",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-popsprocket",
+    "name": "Popsprocket",
+    "slug": "housing-popsprocket",
+    "type": "housing",
+    "subtype": "background",
+    "description": "This piece of real estate won't ever fall short of expectations!",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=16266819",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302544",
+    "tags": [
+      "background",
+      "backgrounds",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "http://i.imgur.com/5p7s8.jpg",
+    "location": "Lowe DC",
+    "price": "50 Dragon Coins",
+    "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Lowe DC",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=16266368",
+        "price": "50 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Background",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-sandsea",
+    "name": "Sandsea",
+    "slug": "housing-sandsea",
+    "type": "housing",
+    "subtype": "background",
+    "description": "Windy Dunes",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=14231775",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302544",
+    "tags": [
+      "background",
+      "backgrounds"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": false,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "http://i.imgur.com/hcauX.jpg",
+    "location": "Gold Locations",
+    "price": "1,000 Gold",
+    "sellback": "100 Gold",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Gold Locations",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14236596",
+        "price": "1,000 Gold",
+        "priceType": "gold",
+        "daRequired": true,
+        "sellback": "100 Gold"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Background",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-shadow-of-the-wind-village",
+    "name": "Shadow of the Wind Village",
+    "slug": "housing-shadow-of-the-wind-village",
+    "type": "housing",
+    "subtype": "background",
+    "description": "A quiet view.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=14231433",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302544",
+    "tags": [
+      "background",
+      "backgrounds"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": false,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "http://i.imgur.com/qz72l.jpg",
+    "location": "Gold Locations",
+    "price": "1,000 Gold",
+    "sellback": "100 Gold",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Gold Locations",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14236596",
+        "price": "1,000 Gold",
+        "priceType": "gold",
+        "daRequired": true,
+        "sellback": "100 Gold"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Background",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-undersea",
+    "name": "Undersea",
+    "slug": "housing-undersea",
+    "type": "housing",
+    "subtype": "background",
+    "description": "Watery!",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=17644708",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302544",
+    "tags": [
+      "background",
+      "backgrounds",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "http://i.imgur.com/yzSSv.jpg",
+    "location": "Crazy Harry's (Dragon Coin Shop)",
+    "price": "75 Dragon Coins",
+    "sellback": "68 Dragon Coins before 24 hours, 23 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Crazy Harry's (Dragon Coin Shop)",
+        "locationUrl": "https://forums2.battleon.com/f/fb.asp?m=17645394",
+        "price": "75 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "68 Dragon Coins before 24 hours, 23 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Background",
+    "hasSpecialEffect": false
+  }
+]

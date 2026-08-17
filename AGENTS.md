@@ -54,10 +54,12 @@ dragonfable-companion/
 │   ├── scrape-guests.ts    # Scrapes guests data from DF forums
 │   ├── scrape-accessories.ts # Scrapes accessory subtype data from DF forums
 │   ├── scrape-weapons.ts   # Scrapes weapon subtype data from DF forums
+│   ├── scrape-housing.ts   # Starter scraper for Housing A-Z subtype listings
 │   ├── validate-badges.mjs # Build-time validation for badges dataset
 │   ├── validate-pets.mjs   # Build-time validation for pets/guests datasets
 │   ├── validate-accessories.mjs # Build-time validation for accessory subtype datasets
 │   ├── validate-weapons.mjs # Build-time validation for weapon subtype datasets
+│   ├── validate-housing.mjs # Build-time validation for housing subtype datasets
 │   ├── verify-datasets.mjs # Cross-post-family invariant checks
 │   ├── add_images.py       # Adds imageUrl from DF-Pedia GitHub to badges.json
 │   └── add_subcategories.py # Maps badges to subcategories from forum groupings
@@ -67,6 +69,7 @@ dragonfable-companion/
 │   │   ├── pets/           # Pet/Guest cards, detail components
 │   │   ├── accessories/    # Accessory cards, list, detail, stats table
 │   │   ├── weapons/        # WeaponCard, WeaponDetail, WeaponList, WeaponStatsTable
+│   │   ├── housing/        # Housing cards, list, detail components
 │   │   ├── layout/         # Navigation, Layout
 │   │   └── shared/         # SearchBar, LoadingSkeleton, ObtainSection, ElementPill, etc.
 │   ├── data/
@@ -95,6 +98,14 @@ dragonfable-companion/
 │   │   ├── weapons-scythes-a-j.json # Weapon subtype shard
 │   │   ├── weapons-scythes-k-z.json
 │   │   ├── weapon-manifest.json # Weapon counts per subtype/shard
+│   │   ├── housing-houses.json # Housing subtype dataset
+│   │   ├── housing-backgrounds.json # Housing subtype dataset
+│   │   ├── housing-floors.json # Housing subtype dataset
+│   │   ├── housing-rugs.json # Housing subtype dataset
+│   │   ├── housing-shrubs.json # Housing subtype dataset
+│   │   ├── housing-stuff.json # Housing subtype dataset
+│   │   ├── housing-wall-items.json # Housing subtype dataset
+│   │   ├── housing-manifest.json # Housing counts per subtype
 │   │   ├── elements.json   # Shared element and trait metadata
 │   │   └── categories.json # 5 top-level category definitions
 │   ├── hooks/
@@ -102,6 +113,7 @@ dragonfable-companion/
 │   │   ├── usePets.ts      # Pet/guest data access and filtering
 │   │   ├── useAccessories.ts # Accessory data access and filtering
 │   │   ├── useWeapons.ts   # Weapon data access and filtering
+│   │   ├── useHousing.ts   # Housing data access and filtering
 │   │   └── useDebounce.ts
 │   ├── types/
 │   │   ├── badge.ts        # Badge, ForumLink, ObtainStep, BadgeFilters, etc.
@@ -120,6 +132,8 @@ dragonfable-companion/
 │   │   ├── AccessoryDetailPage.tsx # Accessory detail page
 │   │   ├── WeaponListPage.tsx   # Weapon subtype browse page
 │   │   ├── WeaponDetailPage.tsx # Weapon detail page
+│   │   ├── HousingListPage.tsx  # Housing subtype browse page
+│   │   ├── HousingDetailPage.tsx # Housing detail page
 │   │   └── ComingSoonPage.tsx
 │   ├── utils/
 │   │   ├── search.ts       # Word-prefix search + category/subcategory filtering
@@ -161,7 +175,7 @@ Based on the DF Encyclopedia forum structure (https://forums2.battleon.com/f/tt.
 | Pets / Guests | `/pets`, `/pets/:slug`, `/guests/:slug` | ✅ Active (218 pets, 83 guests) | Pets / Guests |
 | Accessories | `/accessories`, `/accessories/:slug` | ✅ Active (accessories across 8 subtypes, with split assets for image-heavy subtypes) | Accessories |
 | Classes / Abilities | `/classes` | Planned | Classes / Abilities |
-| Housing | `/housing` | Planned | Housing and House Items |
+| Housing | `/housing`, `/housing/:slug` | ✅ Active (Houses, Backgrounds, Floors, Rugs, Shrubs, Stuff, Wall Items) | Housing and House Items |
 | Locations & Quests | `/locations` | Planned | Locations / Quests / Events / Shops |
 | Monsters | `/monsters` | Planned | Monsters |
 | NPCs | `/npcs` | Planned | NPCs |
@@ -198,6 +212,20 @@ Weapon specials can be refreshed without a full weapon scrape by using the curre
 ### Special Classification Exceptions
 
 - **CorDemi Codex** (`Basic CorDemiCodex`, `Advanced CorDemi Codex`, `Master CorDemi Codex`) is canonicalized under `sword-axe-mace` only. Although the weapon can switch into sword, dagger, and staff forms, the key form acts as a Sword and damage type is locked to Melee. Staff/dagger scraper runs must skip CorDemi stubs rather than duplicating the family into those subtype datasets.
+
+## Housing Section
+
+Housing follows the Accessories/Weapons subtype-page template with a single-select subtype segment so only one subtype dataset lazy-loads at a time. Current subtypes are Houses, Backgrounds, Floors, Rugs, Shrubs, Stuff, and Wall Items. All Housing entries are Dragon Amulet content by default; show this as a subtle gallery-level note and a detail-page access pill rather than forcing a redundant filter.
+
+Housing filters are category-wide for now: Level 1 shows `Multiple Versions` and `DC`; Level 2 shows data-driven `Effect`, `Rare`, `Seasonal`, and `Retired`. Do not show `Free` unless a Housing subtype later proves to contain genuinely free entries.
+
+The Housing scraper (`npm run scrape:housing -- --subtype=house`, with optional `--limit` for samples and `--fresh` for replacing the selected subtype file) parses A-Z listing entries and enriches detail posts with description, main/alternative images, obtain methods, price/sellback, rarity, capacity, furnishing slot counts, effect text, explicit Also See links, and Other Information. Normal full subtype runs are additive by slug and merge into the existing subtype JSON; `--limit` runs stay dry-run unless `--fresh` is explicitly passed. This additive-by-default, fresh-by-selected-scope model should be the default scraper design for current and future categories, adapted to each category's safe merge scope. Same-thread multi-post house entries such as `Gothic Style` / `Gothic Style II` become item families with variant-specific images and details; variant labels should use the shared compact form, e.g. `(Base)` and `II`, while source links retain full forum titles. Printable forum pages may return 500 for some duplicate listing links; fall back to the direct forum post before keeping a listing-only entry.
+
+Housing furnishings from Rugs onward may have `Effect:` text. Render the effect in its own detail card below the image section. Use the label `Effect` consistently for the filter pill, card/list pill, detail metadata pill, and detail card heading. Keep Also See below Sources using the shared related-card treatment. Housing can infer Also See across subtypes through the shared related-item hook when names and obtain methods are close, but must not consolidate entries across different housing subtypes. If one forum thread contains different item types (for example `Inn at the Edge of Time Portal (Indoors)` as Stuff and `(Outside)` as Shrub), split them into separate subtype entries and link via Also See. Known forum listing/detail classification mismatches should be kept as scoped Housing overrides; current overrides place `Light Bowl` and `Mysterious Candle` under Wall Items.
+
+Housing scraper writes must update `src/data/housing-manifest.json` automatically. Use `--limit` for small parser samples before running a full subtype scrape.
+
+All current and future scrapers should preserve forum note structure in generated note/Other Information fields. The shared `OtherInformationSection` / `NotesList` renderer already understands newline-delimited bullets with two-space nested indentation (`•`, `  •`, etc.), forum quote blocks as a bare `quote:` line followed by indented quote lines, and popup text markers consumed by `PopupText`; scraper code should emit those structures instead of flattening nested forum `<ul>/<li>`, `<blockquote class="quote">`, or popup content into one plain list.
 
 ## Glossary
 
@@ -297,6 +325,7 @@ All list view cards must follow this pattern:
 - **Layout**: Flex with metadata row, title, description, chevron icon
 - **Interaction**: Hover lift (`hover:-translate-y-0.5`), border highlight, shadow increase
 - Examples: `BadgeCard.tsx`, `PetCard.tsx`
+- Cards that navigate to detail pages should carry the current browse URL with the shared navigation-context helper. Detail pages should read that `from` context for their top back link, so filters/search/subtype state are preserved when returning to the category list. Related/Also See cards should preserve the same original `from` context when chaining between detail pages.
 
 **Obtain Cards (Detail Pages):**
 All "How to Obtain" sections must follow this unified pattern:
@@ -307,7 +336,8 @@ All "How to Obtain" sections must follow this unified pattern:
 - **Content-specific fields**:
   - **Badges/Guests**: Location/instruction only
   - **Pets**: Location + divider + price/required items/sellback fields
-- **Implementation**: Inline styling in detail pages for flexibility (not a shared component)
+- **Access/currency method pills**: shared obtain cards show per-method `DA Required` and `DC` pills when the method requires DA or uses Dragon Coins. The label is `DC`, not `DC Required`, because the meaning is already scoped to the obtain method.
+- **Implementation**: Use shared obtain-card components for item-family categories where possible; avoid duplicating obtain-card styling in detail pages.
 - Examples: `BadgeDetailPage.tsx`, `PetDetail.tsx` (handles both pets and guests)
 
 **Detail Page Section Order:**
@@ -321,6 +351,8 @@ All item-family detail pages should use a consistent information order unless a 
 7. Other Information
 8. Sources
 9. Also See
+
+Item descriptions should be rendered through the shared description normalizer. Forum/source-only access markers such as `(DA required)` and `(DC item)` belong in access pills and obtain-method metadata, not in the italic description prose.
 
 **Image selector independence:** On pets and guests, the image selector is independent from the level/variant selector — switching variants does not move the image. The image only resets when navigating to a different entry. Weapons intentionally link the two selectors under their own conditions (variant-specific images); pets/guests do not.
 
@@ -358,6 +390,10 @@ For subtype-heavy datasets, alias/canonical checks must be scoped to the subtype
 Filter pills below dataset/segment selectors are tri-state by default: neutral → include → exclude → neutral. Included filters use that level's active colour; excluded filters use the shared muted red treatment and a leading minus icon. URL params keep includes in the existing keys (`access`, `category`, `element`) and put exclusions in parallel keys (`excludeAccess`, `excludeCategory`, `excludeElement`). Keep clear-filter controls visible whenever either include or exclude filters are active, and echo exclusions in result-count text as "excluding ...".
 
 Dataset selectors are not tri-state filters. Accessory and weapon subtype selectors must remain single-select (`type=...`) so the page lazy-loads only one subtype/shard group at a time. Do not allow combined accessory or weapon subtype browsing unless the data-loading strategy has been explicitly redesigned for it.
+
+Filter visibility should be data-driven at the shared UI level. Show access, category, element, and trait filter pills only when the currently loaded dataset, subtype, or active segment contains at least one matching entry. When switching subtypes or segments within the same top-level category page, preserve hidden/unavailable filter params in the URL but apply only filters that are available in the current loaded dataset; this lets a filter such as `Armor Customization` survive a temporary switch to a subtype where it has no effect. Top-level category navigation should not carry filter params across pages. Dataset/segment selectors remain visible and category-specific validity rules still apply, e.g. guest-only browsing hides pet-only purchase filters, and Housing omits `DA Required` as a filter because every Housing entry is DA-required. Use the shared filter-visibility helpers rather than hardcoding this per page.
+
+Element and trait filters must match the full item family, including variant-specific elements and traits. Do not rely solely on a family-level summary field when filtering, searching, or deciding whether a filter pill is available; derive from variants as a fallback so entries like Linus still match `SHR` even when only later variants have that trait.
 
 **Level 1 (Highest): Access filters** — Universal across all pages
 - Styling: `bg-gold-bright text-bg-base` when active, `text-xs px-3 py-1.5` sizing
@@ -444,6 +480,8 @@ On detail pages, metadata is split into distinct types:
 - **DC pill** → links to `/[section]?access=dc` (shows DC logo on Pets/Weapons, not on Badges)
 - **Retired pill** (Badges) → links to `/badges?category=retired`
 - Style: Level 1 filters use gold styling, Level 2 use orange/custom colours, cursor pointer, hover opacity
+
+**Access/status pill colour rule:** DA/DC/DM metadata pills must use the shared access pill tones from `src/utils/accessPillStyles.ts` wherever they appear as item metadata, detail header tags, or obtain-method tags. Filter-state pills are the exception: include/exclude filter styling may differ because it communicates filter state rather than item metadata.
 
 **Non-clickable tags** (raw search keywords for the search index, not a filter):
 - Displayed in a "Tags" section with a label making the distinction clear

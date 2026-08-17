@@ -3,12 +3,13 @@ import { ArrowLeft } from 'lucide-react'
 import { useBadgeBySlug, useBadgesByCategory } from '../hooks/useBadges'
 import BadgeCard from '../components/badges/BadgeCard'
 import NotesList from '../components/shared/NotesList'
-import { displayTitle, normalizeDisplayText } from '../utils/displayText'
+import { displayTitle, normalizeDescriptionText, normalizeDisplayText } from '../utils/displayText'
 import AccessPills from '../components/shared/AccessPills'
 import SourceLinksCard from '../components/shared/SourceLinksCard'
 import { DetailPageSkeleton } from '../components/shared/LoadingSkeleton'
 import DetailTypePill from '../components/shared/DetailTypePill'
 import ItemImage from '../components/shared/ItemImage'
+import { backUrlFromSearch, detailUrlWithFrom } from '../utils/navigationContext'
 
 export default function BadgeDetailPage() {
   const { slug } = useParams<{ slug: string }>()
@@ -19,16 +20,13 @@ export default function BadgeDetailPage() {
   // The URL to return to when pressing "Back to Badges"
   // - If we arrived from the badge list (or via a related badge), the `from` param tracks the original list URL
   // - Falls back to /badges if no `from` is present
-  const searchParams = new URLSearchParams(location.search)
-  const backUrl = searchParams.get('from') ?? '/badges'
+  const backUrl = backUrlFromSearch(location.search, '/badges')
 
   // When navigating to a related badge, we REPLACE the current history entry
   // so clicking back always goes to the badge list, not the previous badge.
   // We also carry the `from` param forward so it persists through the chain.
   function relatedBadgeUrl(relatedSlug: string) {
-    const params = new URLSearchParams()
-    params.set('from', backUrl)
-    return `/badges/${relatedSlug}?${params.toString()}`
+    return detailUrlWithFrom(`/badges/${relatedSlug}`, backUrl)
   }
 
   if (loading) {
@@ -81,15 +79,7 @@ export default function BadgeDetailPage() {
             {badge.category.replace(/-/g, ' ')}
           </Link>
           {/* DA Required pill — clickable, links to DA Required filter */}
-          {badge.daRequired && (
-            <Link
-              to="/badges?access=da"
-              className="inline-block text-xs font-medium px-2.5 py-1 rounded-full bg-orange-500/20 text-orange-400 transition-colors hover:bg-orange-500/30"
-              title="Browse all DA Required badges"
-            >
-              DA Required
-            </Link>
-          )}
+          {badge.daRequired && <AccessPills daRequired filterBase="/badges" />}
           {/* Retired — clickable filter */}
           {badge.retired && (
             <Link
@@ -104,7 +94,9 @@ export default function BadgeDetailPage() {
         </div>
 
         <h1 className="text-2xl font-bold text-text-primary mb-2">{displayTitle(badge.name)}</h1>
-        <p className="text-text-secondary leading-relaxed text-sm italic">{badge.description}</p>
+        <p className="text-text-secondary leading-relaxed text-sm italic">
+          {normalizeDescriptionText(badge.description)}
+        </p>
       </div>
 
       {/* Badge image */}

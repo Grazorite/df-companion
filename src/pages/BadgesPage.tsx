@@ -138,6 +138,29 @@ export default function BadgesPage() {
     setSearchParams(params, { replace: true })
   }
 
+  function clearAccessFilters() {
+    const params = baseParams()
+    delete params.access
+    delete params.excludeAccess
+    setSearchParams(params, { replace: true })
+  }
+
+  function clearCategoryFilters() {
+    const params = baseParams()
+    delete params.category
+    delete params.excludeCategory
+    delete params.sub
+    delete params.excludeSub
+    setSearchParams(params, { replace: true })
+  }
+
+  function clearSubcategoryFilters() {
+    const params = baseParams()
+    delete params.sub
+    delete params.excludeSub
+    setSearchParams(params, { replace: true })
+  }
+
   const accessFilterSet: TriStateFilterSet<'da'> = {
     include: accessParam === 'da' ? ['da'] : [],
     exclude: excludeAccessParam === 'da' ? ['da'] : [],
@@ -184,6 +207,14 @@ export default function BadgesPage() {
           onClick={() => cycleAccess('da')}
           size="access"
         />
+        {(accessParam !== 'all' || excludeAccessParam === 'da') && (
+          <button
+            onClick={clearAccessFilters}
+            className="text-xs text-text-muted hover:text-text-primary underline underline-offset-2 ml-1"
+          >
+            Clear filters
+          </button>
+        )}
       </div>
 
       {/* Level 2: Category filters */}
@@ -216,6 +247,14 @@ export default function BadgesPage() {
           size="category"
           activeClassName="bg-orange-500/80 text-white"
         />
+        {(activeCategory || excludedCategory) && (
+          <button
+            onClick={clearCategoryFilters}
+            className="text-[11px] text-text-muted hover:text-text-primary underline underline-offset-2 ml-1"
+          >
+            Clear filters
+          </button>
+        )}
       </div>
 
       {/* Level 3: Subcategory filters */}
@@ -241,6 +280,14 @@ export default function BadgesPage() {
               {excludedSubcategory === sub ? `− ${sub}` : sub}
             </button>
           ))}
+          {(activeSubcategory || excludedSubcategory) && (
+            <button
+              onClick={clearSubcategoryFilters}
+              className="text-[10px] text-text-muted hover:text-text-primary underline underline-offset-2 ml-1"
+            >
+              Clear filters
+            </button>
+          )}
         </div>
       )}
 

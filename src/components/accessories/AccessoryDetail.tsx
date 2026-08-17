@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { ArrowLeft } from 'lucide-react'
 import type {
   Accessory,
   AccessoryEntry,
@@ -10,11 +11,12 @@ import { isAccessoryFamily } from '../../types/accessory'
 import type { LevelVariant, ObtainVariant } from '../../types/item'
 import type { GuestAttack } from '../../types/pet'
 import {
+  buildAccessoryCardData,
   getAccessoryArmorCustomization,
   useAccessoryRelatedItems,
   type AccessoryRelatedItem,
 } from '../../hooks/useAccessories'
-import { displayTitle, normalizeDisplayText } from '../../utils/displayText'
+import { displayTitle, normalizeDescriptionText, normalizeDisplayText } from '../../utils/displayText'
 import { buildDisplayImages } from '../../utils/imageLabels'
 import {
   getDisplayFamilyName,
@@ -33,6 +35,7 @@ import DetailTypePill from '../shared/DetailTypePill'
 import ItemImage from '../shared/ItemImage'
 import { buildFilterLink } from '../../utils/filterLinks'
 import { notesIndicateInvisibleItem } from '../../utils/imageVisibility'
+import { detailUrlWithFrom } from '../../utils/navigationContext'
 import AccessoryStatsTable from './AccessoryStatsTable'
 import AccessoryCard from './AccessoryCard'
 import GuestAttacks from '../guests/GuestAttacks'
@@ -59,6 +62,7 @@ const INTENTIONALLY_IMAGELESS_ACCESSORY_SLUGS = new Set([
 interface AccessoryDetailProps {
   accessory: AccessoryEntry
   filterBase: string
+  backUrl: string
 }
 
 function buildSingleVariant(entry: Accessory): ObtainVariant[] {
@@ -221,7 +225,7 @@ function ArmorCustomizationMetadataStrip({
   )
 }
 
-export default function AccessoryDetail({ accessory, filterBase }: AccessoryDetailProps) {
+export default function AccessoryDetail({ accessory, filterBase, backUrl }: AccessoryDetailProps) {
   const family = isAccessoryFamily(accessory) ? (accessory as AccessoryFamily) : undefined
   const singleAccessory = family ? undefined : (accessory as Accessory)
   const [activeIndex, setActiveIndex] = useState(0)
@@ -417,6 +421,15 @@ export default function AccessoryDetail({ accessory, filterBase }: AccessoryDeta
 
   return (
     <main className="px-4 sm:px-6 py-6 max-w-3xl mx-auto">
+      <Link
+        to={backUrl}
+        className="flex items-center gap-1.5 text-text-secondary hover:text-text-primary text-sm mb-6 transition-colors duration-150 min-h-[44px] -ml-1 px-1"
+        aria-label="Back to accessory list"
+      >
+        <ArrowLeft className="w-4 h-4" aria-hidden="true" />
+        Back to Accessories
+      </Link>
+
       <div className="mb-6">
         <div className="flex items-center gap-2 flex-wrap mb-3">
           {accessory.elements.map((code) => (
@@ -442,7 +455,7 @@ export default function AccessoryDetail({ accessory, filterBase }: AccessoryDeta
         <h1 className="text-3xl font-bold text-text-primary mb-3">{title}</h1>
         {description && (
           <p className="text-text-secondary italic leading-relaxed mb-3">
-            {normalizeDisplayText(description)}
+            {normalizeDescriptionText(description)}
           </p>
         )}
         {!!accessory.releaseDate && (
@@ -563,6 +576,7 @@ export default function AccessoryDetail({ accessory, filterBase }: AccessoryDeta
               <li key={`${entry.slug}-${ref?.url ?? relation}`}>
                 <AccessoryCard
                   accessory={entry}
+                  toUrl={detailUrlWithFrom(buildAccessoryCardData(entry).route, backUrl)}
                   badgeLabel={
                     scope === 'cross-subtype' ? ACCESSORY_SUBTYPE_LABELS[entry.subtype] : undefined
                   }
