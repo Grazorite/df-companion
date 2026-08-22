@@ -26,7 +26,11 @@
 ## 📊 Active Project Status
 
 **Last updated:** 2026-08-21
-**Branch:** `main` · **HEAD:** `1dd13d8` (2 commits ahead of `origin/main`, unpushed) · **Deploy:** Vercel auto-deploy on `main`
+**Branch:** `main` · **Last substantive commit:** `1dd13d8` · **Unpushed:** yes, `origin/main` is still at
+`003f01b` · **Deploy:** Vercel auto-deploy on `main`
+
+> Read the live HEAD with `git log --oneline -1` rather than trusting a SHA pinned here; commits that
+> only sync this file would otherwise invalidate their own status line.
 **Build gate:** `npm run build` = `npm run validate && tsc -b && vite build`
 
 ### Milestone: M5 — Content Breadth (in progress)
