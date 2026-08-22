@@ -25,8 +25,8 @@
 
 ## 📊 Active Project Status
 
-**Last updated:** 2026-08-20
-**Branch:** `main` · **HEAD:** `003f01b` · **Deploy:** Vercel auto-deploy on `main`
+**Last updated:** 2026-08-21
+**Branch:** `main` · **HEAD:** `1dd13d8` (2 commits ahead of `origin/main`, unpushed) · **Deploy:** Vercel auto-deploy on `main`
 **Build gate:** `npm run build` = `npm run validate && tsc -b && vite build`
 
 ### Milestone: M5 — Content Breadth (in progress)
@@ -221,7 +221,7 @@ An incoming agent must be able to resume with **no verbal briefing**. Follow thi
 
 ### 2026-08-21 — Scrape execution hardened into a hard rule
 
-**Agent:** orchestrator (Claude Opus 5) · **Commit(s):** `uncommitted`
+**Agent:** orchestrator (Claude Opus 5) · **Commit(s):** `755bf96`, `1dd13d8`
 **Kanban moved:** none — policy change, not a board item
 
 **Changed:**
@@ -249,21 +249,20 @@ An incoming agent must be able to resume with **no verbal briefing**. Follow thi
 **Not verified / known gaps:**
 
 - Docs/policy only. No code, scraper, or dataset behaviour touched, and no scrape was run.
-- `docs/` is still **untracked** (`?? docs/`). Until it is committed, these rules do not reach a clone
-  or a different client, and the Context Map links in this file resolve only on this machine.
-- `.kiro/` is gitignored, so `.kiro/skills/project-tracker/SKILL.md` never travels either. Any
-  non-Kiro agent needs the protocol inlined from this file rather than loaded from a skill.
-- Pre-existing uncommitted work from the 2026-08-20 documentation modularization is still in the tree
-  (`M AGENTS.md`, `?? docs/`, two deleted `.kiro/specs/accessories-section/` files).
+- `.kiro/` is gitignored, so `.kiro/skills/project-tracker/SKILL.md` never travels to a clone or
+  another client. Any non-Kiro agent needs the protocol inlined from this file rather than loaded from
+  a skill. `AGENTS.md` and `docs/context/` are now both tracked, so the rules themselves are portable.
+- `755bf96` also swept up the previously uncommitted 2026-08-20 documentation modularization; that
+  entry's `uncommitted` marker has been corrected to the same SHA.
+- Both commits are **unpushed**. `origin/main` is still at `003f01b`.
 
 **Next agent should:**
 
-- Commit `docs/` and `AGENTS.md` so the rules and Context Map become portable, then pick up the bug-fix
-  work the user is handing over.
+- Pick up the bug-fix work the user is handing over, taking scope from the Kanban board.
 
 ### 2026-08-20 — Documentation modularization: AGENTS.md → orchestrator + docs/context
 
-**Agent:** Principal Systems Engineer (Claude Opus 4.8) · **Commit(s):** `uncommitted`
+**Agent:** Principal Systems Engineer (Claude Opus 4.8) · **Commit(s):** `755bf96`
 **Kanban moved:** Documentation modularization → In Progress → Done
 
 **Changed:**
