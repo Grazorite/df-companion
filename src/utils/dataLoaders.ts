@@ -5,6 +5,7 @@ import type { ItemFamily } from '../types/item'
 import type { Pet } from '../types/pet'
 import type { WeaponEntry, WeaponSubtype } from '../types/weapon'
 import type { HousingEntry, HousingSubtype } from '../types/housing'
+import { normalizeHousingEntries } from './housingNormalization'
 import accessoryManifestUrl from '../data/accessory-manifest.json?url'
 import badgesManifestUrl from '../data/badges-manifest.json?url'
 import artifactsUrl from '../data/artifacts.json?url'
@@ -372,9 +373,11 @@ export async function loadHousingForSubtype(subtype: HousingSubtype): Promise<Ho
     housingSubtypePromises[subtype] = Promise.all(
       housingDataUrls[subtype].map((url) => fetchJson<HousingEntry[]>(url))
     ).then((datasets) => {
-      const entries = datasets
-        .flat()
-        .map((entry) => (isLoadedFamily(entry) ? normalizeLoadedFamily(entry) : entry))
+      const entries = normalizeHousingEntries(
+        datasets
+          .flat()
+          .map((entry) => (isLoadedFamily(entry) ? normalizeLoadedFamily(entry) : entry))
+      )
       housingSubtypeCache[subtype] = entries
       return entries
     })

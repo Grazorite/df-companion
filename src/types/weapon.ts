@@ -64,6 +64,7 @@ export interface Weapon {
   isRare?: boolean
   isSeasonal?: boolean
   isSpecialOffer?: boolean
+  isWar?: boolean
   retired?: boolean
 }
 
@@ -94,6 +95,7 @@ export interface WeaponFilters {
     | 'rare'
     | 'seasonal'
     | 'special-offer'
+    | 'war'
     | 'retired'
   >
   excludeCategories?: Array<
@@ -104,6 +106,7 @@ export interface WeaponFilters {
     | 'rare'
     | 'seasonal'
     | 'special-offer'
+    | 'war'
     | 'retired'
   >
   elements?: string[]

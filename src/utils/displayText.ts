@@ -2,6 +2,10 @@ export function normalizeDisplayText(text?: string): string {
   if (!text) return ''
 
   return text
+    .replace(/\uFFFD/g, '—')
+    .replace(/\u0096/g, '–')
+    .replace(/\u0097/g, '—')
+    .replace(/\u0099/g, '™')
     .replace(/\bD-Amulet\/D-Coins\b/g, 'DA/DC')
     .replace(/\bD-Amulet\/DC\b/g, 'DA/DC')
     .replace(/\bD-Amulet\b/g, 'DA')

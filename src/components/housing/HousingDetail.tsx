@@ -14,7 +14,7 @@ import { buildDisplayImages } from '../../utils/imageLabels'
 import { useHousingRelatedItems } from '../../hooks/useHousing'
 import { detailUrlWithFrom } from '../../utils/navigationContext'
 import { accessPillClass } from '../../utils/accessPillStyles'
-import { normalizeDescriptionText } from '../../utils/displayText'
+import { normalizeDescriptionText, normalizeDisplayText } from '../../utils/displayText'
 import HousingCard from './HousingCard'
 
 interface HousingDetailProps {
@@ -83,6 +83,8 @@ function withoutLocationUrl(obtain: ObtainVariant): ObtainVariant {
 
 function HousingEffectCard({ effect }: { effect?: string }) {
   if (!effect || /^(?:none|n\/?a)$/i.test(effect.trim())) return null
+  const normalizedEffect = normalizeLegacyQuoteEffect(normalizeDisplayText(effect))
+  const quoteParts = splitEffectQuote(normalizedEffect)
 
   return (
     <section className="mb-5">
@@ -90,10 +92,59 @@ function HousingEffectCard({ effect }: { effect?: string }) {
         <h2 className="text-xs font-semibold text-text-muted uppercase tracking-wider mb-3">
           Effect
         </h2>
-        <p className="text-sm text-text-secondary leading-relaxed whitespace-pre-line">{effect}</p>
+        {quoteParts ? (
+          <div className="space-y-3">
+            {quoteParts.intro && (
+              <p className="text-sm text-text-secondary leading-relaxed">{quoteParts.intro}</p>
+            )}
+            <div className="rounded-md border border-border-default bg-bg-elevated px-3 py-2">
+              <ul className="space-y-1">
+                {quoteParts.quotes.map((quote, index) => (
+                  <li key={`${quote}-${index}`} className="text-sm text-text-secondary italic">
+                    {quote}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ) : (
+          <p className="text-sm text-text-secondary leading-relaxed whitespace-pre-line">
+            {normalizedEffect}
+          </p>
+        )}
       </div>
     </section>
   )
+}
+
+function normalizeLegacyQuoteEffect(effect: string): string {
+  if (!/quote\s*:/i.test(effect)) return effect
+  const normalized = effect.replace(/quote\s*:\s*,\s*/i, 'quote:\n')
+  if (/\n\s*quote:\s*\n/i.test(normalized)) return normalized
+
+  const match = normalized.match(/^([\s\S]*?)\bquote:\s*([\s\S]*)$/i)
+  if (!match) return effect
+  const intro = match[1].trim().replace(/\s+([.,;:!?])/g, '$1')
+  const quoteText = match[2].trim()
+  const quoteLines = quoteText
+    .split(/,\s*(?=(?:\*blip\*|\*flash\*|Quit|Pssst|Hey|Don't|Yo|Back|This|If|Ow|My|Seriously)\b)/i)
+    .map((line) => line.trim())
+    .filter(Boolean)
+  return [intro, 'quote:', ...quoteLines.map((line) => `  ${line}`)].filter(Boolean).join('\n')
+}
+
+function splitEffectQuote(effect: string): { intro: string; quotes: string[] } | undefined {
+  const match = effect.match(/^([\s\S]*?)\n?quote:\n([\s\S]+)$/i)
+  if (!match) return undefined
+  const quotes = match[2]
+    .split('\n')
+    .map((line) => normalizeDisplayText(line).trim())
+    .filter(Boolean)
+  if (quotes.length === 0) return undefined
+  return {
+    intro: normalizeDisplayText(match[1]).trim(),
+    quotes,
+  }
 }
 
 export default function HousingDetail({ item, subtypeLabel, backUrl }: HousingDetailProps) {
@@ -129,7 +180,8 @@ export default function HousingDetail({ item, subtypeLabel, backUrl }: HousingDe
   const capacity = family ? activeVariant?.capacity : singleItem?.capacity
   const furnishingSlots = family ? activeVariant?.furnishingSlots : singleItem?.furnishingSlots
   const effect = family ? activeVariant?.effect : singleItem?.effect
-  const notes = family ? activeVariant?.notes : singleItem?.notes
+  const effectType = family ? activeVariant?.effectType : singleItem?.effectType
+  const notes = singleItem?.notes
   const { relatedHousing } = useHousingRelatedItems(item)
   const sourceLinks = family?.familySources?.length
     ? family.familySources.map((source) => ({ label: source.title, url: source.url }))
@@ -180,6 +232,9 @@ export default function HousingDetail({ item, subtypeLabel, backUrl }: HousingDe
         <h1 className="text-3xl font-bold text-text-primary mb-3">{name}</h1>
         {description && (
           <p className="text-text-secondary italic leading-relaxed">{description}</p>
+        )}
+        {effectType && (
+          <p className="text-xs text-text-muted mt-2">Effect Type: {effectType}</p>
         )}
       </header>
 
@@ -234,7 +289,12 @@ export default function HousingDetail({ item, subtypeLabel, backUrl }: HousingDe
 
       <ObtainSection variants={obtainMethods} showCurrencyAccessPills />
 
-      {notes && <OtherInformationSection notes={notes} />}
+      <OtherInformationSection
+        notes={notes}
+        sharedNotes={family?.shared.notes}
+        activeVariantNotes={family ? activeVariant?.notes : undefined}
+        allVariantNotes={family ? family.levelVariants.map((variant) => variant.notes) : undefined}
+      />
 
       <SourceLinksCard links={sourceLinks} />
 

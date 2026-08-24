@@ -85,7 +85,7 @@ export default function PetCard({ pet, toUrl, replace, family }: PetCardProps) {
       key: 'free',
       label: 'Free',
       show: pet.type !== 'guest' && displayFlags.hasFree,
-      className: 'text-green-400 bg-green-500/20',
+      className: accessPillClass('free', 'card'),
     },
   ]
     .filter((pill) => pill.show)

@@ -611,7 +611,7 @@ function parseNotes(html: string): string | undefined {
   }
   const noteLines: string[] = []
 
-  const structuredLines = decodeHtml(stripForumHtml(trimmedSection))
+  const structuredLines = decodeHtml(stripForumHtml(trimmedSection, 'weapon notes', { preserveIndentation: true }))
     .split('\n')
     .map((line) => line.replace(/\s+$/, ''))
   const bulletIndents = structuredLines
@@ -725,6 +725,7 @@ function parseTagFlags(html: string) {
     isRare: /\/tags\/Rare\.(?:png|jpg|jpeg|gif)/i.test(leadHtml),
     isSeasonal: /\/tags\/Seasonal\.(?:png|jpg|jpeg|gif)/i.test(leadHtml),
     isSpecialOffer: /\/tags\/SpecialOffer\.(?:png|jpg|jpeg|gif)/i.test(leadHtml),
+    isWar: /\/tags\/WarLoot\.(?:png|jpg|jpeg|gif)/i.test(leadHtml),
     retired: hasRetiredTag(leadHtml),
   }
 }
@@ -1368,6 +1369,7 @@ function buildWeaponEntry(
       ...elements.map((code) => code.toLowerCase()),
       ...(primaryPriceType ? [primaryPriceType] : []),
       ...(isDefault ? ['default'] : []),
+      ...(flags.isWar ? ['war'] : []),
     ],
     daRequired: flags.daRequired || obtainMethods.some((method) => method.daRequired),
     ...(flags.dcRequired || obtainMethods.some((method) => method.dcRequired)
@@ -1384,6 +1386,7 @@ function buildWeaponEntry(
     ...(flags.isRare ? { isRare: true } : {}),
     ...(flags.isSeasonal ? { isSeasonal: true } : {}),
     ...(flags.isSpecialOffer ? { isSpecialOffer: true } : {}),
+    ...(flags.isWar ? { isWar: true } : {}),
     ...(flags.retired ? { retired: true } : {}),
   }
 }
@@ -1579,6 +1582,7 @@ function buildWeaponFamily(
       ...(weaponSpecial ? ['special'] : []),
       ...(armorCustomization ? ['armor-customization'] : []),
       ...(isDefault ? ['default'] : []),
+      ...(threadFlags.isWar ? ['war'] : []),
     ])
   )
   const family: WeaponFamily = {
@@ -1629,6 +1633,7 @@ function buildWeaponFamily(
     ...(threadFlags.isRare ? { isRare: true } : {}),
     ...(threadFlags.isSeasonal ? { isSeasonal: true } : {}),
     ...(threadFlags.isSpecialOffer ? { isSpecialOffer: true } : {}),
+    ...(threadFlags.isWar ? { isWar: true } : {}),
     ...(threadFlags.retired ? { retired: true } : {}),
     levelRange: '',
   }
@@ -2413,6 +2418,7 @@ function buildWeaponFromLevelVariant(level: LevelVariant, family: WeaponFamily):
     ...(family.isRare ? { isRare: true } : {}),
     ...(family.isSeasonal ? { isSeasonal: true } : {}),
     ...(family.isSpecialOffer ? { isSpecialOffer: true } : {}),
+    ...(family.isWar ? { isWar: true } : {}),
     ...(family.isCosmetic ? { isCosmetic: true } : {}),
     ...(family.isDefault ? { isDefault: true } : {}),
     ...(family.hasSpecial ? { hasSpecial: true } : {}),
@@ -2779,6 +2785,7 @@ function buildWeaponCrossPostFamily(
     isRare: sorted.some((entry) => entry.isRare) || undefined,
     isSeasonal: sorted.some((entry) => entry.isSeasonal) || undefined,
     isSpecialOffer: sorted.some((entry) => entry.isSpecialOffer) || undefined,
+    isWar: sorted.some((entry) => entry.isWar) || undefined,
     retired: sorted.some((entry) => entry.retired) || undefined,
     levelRange: '',
   })

@@ -1,5 +1,45 @@
 [
   {
+    "id": "housing-gold-fish-table-a",
+    "name": "A Gold Fish Table",
+    "slug": "housing-gold-fish-table-a",
+    "type": "housing",
+    "subtype": "stuff",
+    "description": "Fish!",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=14232377",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302554",
+    "tags": [
+      "stuff",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/housing/AGoldFishTablepic.png",
+    "location": "DC Stuff",
+    "price": "50 Dragon Coins",
+    "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "DC Stuff",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14236802",
+        "price": "50 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Stuff",
+    "hasSpecialEffect": false
+  },
+  {
     "id": "housing-alchemy-lab",
     "name": "Alchemy Lab",
     "slug": "housing-alchemy-lab",
@@ -76,6 +116,107 @@
     "rarity": "0",
     "itemType": "Stuff",
     "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-anubis-lying",
+    "familyName": "Anubis Lying",
+    "slug": "housing-anubis-lying",
+    "aliasSlugs": [
+      "housing-anubis-lying-left",
+      "housing-anubis-lying-right"
+    ],
+    "type": "housing",
+    "subtype": "stuff",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=21267248",
+    "familyOrigin": "cross-post",
+    "familySources": [
+      {
+        "title": "Anubis Lying Left",
+        "url": "https://forums2.battleon.com/f/fb.asp?m=21267248",
+        "variantLabel": "Left",
+        "isPrimary": true
+      },
+      {
+        "title": "Anubis Lying Right",
+        "url": "https://forums2.battleon.com/f/fb.asp?m=21267246",
+        "variantLabel": "Right",
+        "isPrimary": false
+      }
+    ],
+    "shared": {
+      "description": "A carved statue from the Sandsea.",
+      "rarity": "0",
+      "alsoSee": []
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
+        "levelDisplay": "Left",
+        "variantName": "Left",
+        "name": "Anubis Lying Left",
+        "damage": "",
+        "stats": "",
+        "obtainVariants": [
+          {
+            "location": "SandSea DC",
+            "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=21227395",
+            "price": "75 Dragon Coins",
+            "priceType": "dc",
+            "daRequired": true,
+            "dcRequired": true,
+            "sellback": "68 Dragon Coins before 24 hours, 19 Dragon Coins after 24 hours"
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21267248",
+        "description": "A carved statue from the Sandsea.",
+        "imageUrl": "http://i.imgur.com/D0I6KuN.png",
+        "rarity": "0",
+        "itemType": "Stuff",
+        "effect": "None"
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "Right",
+        "variantName": "Right",
+        "name": "Anubis Lying Right",
+        "damage": "",
+        "stats": "",
+        "obtainVariants": [
+          {
+            "location": "SandSea DC",
+            "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=21227395",
+            "price": "75 Dragon Coins",
+            "priceType": "dc",
+            "daRequired": true,
+            "dcRequired": true,
+            "sellback": "68 Dragon Coins before 24 hours, 19 Dragon Coins after 24 hours"
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21267246",
+        "description": "A carved statue from the Sandsea.",
+        "imageUrl": "http://i.imgur.com/dUUwrAH.png",
+        "rarity": "0",
+        "itemType": "Stuff",
+        "effect": "None"
+      }
+    ],
+    "itemType": "Stuff",
+    "tags": [
+      "stuff",
+      "d-coins",
+      "multiple-versions"
+    ],
+    "hasDA": true,
+    "hasDC": true,
+    "hasDM": false,
+    "hasFree": false,
+    "hasMerge": false,
+    "levelRange": "",
+    "elements": [],
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
   },
   {
     "id": "housing-anubis-lying-left",
@@ -156,6 +297,107 @@
     "rarity": "0",
     "itemType": "Stuff",
     "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-anubis-sitting",
+    "familyName": "Anubis Sitting",
+    "slug": "housing-anubis-sitting",
+    "aliasSlugs": [
+      "housing-anubis-sitting-left",
+      "housing-anubis-sitting-right"
+    ],
+    "type": "housing",
+    "subtype": "stuff",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=21271873",
+    "familyOrigin": "cross-post",
+    "familySources": [
+      {
+        "title": "Anubis Sitting Left",
+        "url": "https://forums2.battleon.com/f/fb.asp?m=21271873",
+        "variantLabel": "Left",
+        "isPrimary": true
+      },
+      {
+        "title": "Anubis Sitting Right",
+        "url": "https://forums2.battleon.com/f/fb.asp?m=21271877",
+        "variantLabel": "Right",
+        "isPrimary": false
+      }
+    ],
+    "shared": {
+      "description": "A carved statue from the Sandsea.",
+      "rarity": "0",
+      "alsoSee": []
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
+        "levelDisplay": "Left",
+        "variantName": "Left",
+        "name": "Anubis Sitting Left",
+        "damage": "",
+        "stats": "",
+        "obtainVariants": [
+          {
+            "location": "SandSea DC",
+            "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=21227395",
+            "price": "75 Dragon Coins",
+            "priceType": "dc",
+            "daRequired": true,
+            "dcRequired": true,
+            "sellback": "68 Dragon Coins before 24 hours, 23 Dragon Coins after 24 hours"
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21271873",
+        "description": "A carved statue from the Sandsea.",
+        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/housing/AnubisSittingLeftpic.png",
+        "rarity": "0",
+        "itemType": "Stuff",
+        "effect": "None"
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "Right",
+        "variantName": "Right",
+        "name": "Anubis Sitting Right",
+        "damage": "",
+        "stats": "",
+        "obtainVariants": [
+          {
+            "location": "SandSea DC",
+            "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=21227395",
+            "price": "75 Dragon Coins",
+            "priceType": "dc",
+            "daRequired": true,
+            "dcRequired": true,
+            "sellback": "68 Dragon Coins before 24 hours, 23 Dragon Coins after 24 hours"
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21271877",
+        "description": "A carved statue from the Sandsea.",
+        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/housing/AnubisSittingRightpic.png",
+        "rarity": "0",
+        "itemType": "Stuff",
+        "effect": "None"
+      }
+    ],
+    "itemType": "Stuff",
+    "tags": [
+      "stuff",
+      "d-coins",
+      "multiple-versions"
+    ],
+    "hasDA": true,
+    "hasDC": true,
+    "hasDM": false,
+    "hasFree": false,
+    "hasMerge": false,
+    "levelRange": "",
+    "elements": [],
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
   },
   {
     "id": "housing-anubis-sitting-left",
@@ -263,6 +505,7 @@
     "price": "500 Dragon Coins",
     "sellback": "450 Dragon Coins before 24 hours, 125 Dragon Coins after 24 hours",
     "effect": "Allows player to access the Arachnalchemy interface.",
+    "effectType": "Utility",
     "obtainMethods": [
       {
         "location": "Arachnalchemy Lab (Shop)",
@@ -306,6 +549,7 @@
     "price": "1,000 Dragon Coins",
     "sellback": "900 Dragon Coins before 24 hours, 250 Dragon Coins after 24 hours",
     "effect": "Allows player to search, equip, favorite, or save any armor they own or have unlocked;\nAncient Exosuit, Ancient Shadow Mage, Ancient Shadow Rogue, Ancient Shadow Warrior, Archivist, Ascended ChickenCow, Atealan Base Class: Riftwalker / Ascendant / Cryptic, Avatar of Time, Base Class: Warrior / Mage / Rogue, Chaosweaver, ChickenCow, ChronoZ, Chronocorruptor, Chronomancer, DeathKnight, DoomKnight, DoomKnight V1, Dragon Base Class: DragonWarrior / DragonMage / DragonRogue, DragonLord, DragonSlayer, Dreaming Togslayer, Epoch, Evolved ChickenCow, Evolved PumpkinLord, Frost Moglin, GPS, GPS Vr 1.0, Guardian, Icebound Revenant, Kathool Adept, Necro Paragon, Necromancer, Ninja, Ninja Monkey, Paladin, Pirate, Pirate Monkey, PumpkinLord, Pyromancer, Ranger, Reforged Archivist, Reforged Avatar of Time, Reforged ChronoZ, Reforged Chronocorruptor, Reforged Chronomancer, Reforged ShadowWalker of Time, Reforged TimeKiller, Retro Base Class: Warrior / Mage / Rogue, Shadow Mage, Shadow Rogue, Shadow Warrior, ShadowHunter, ShadowWalker of Time, SnuggleBear, SnugglePanda, SoulWeaver, Student, Technomancer, TimeKiller, Togslayer, Zardbie, enTropy, |",
+    "effectType": "Utility",
     "obtainMethods": [
       {
         "location": "DC Stuff , Ikea DC",
@@ -328,7 +572,7 @@
     ],
     "rarity": "0",
     "itemType": "Stuff",
-    "notes": "• Previously had the description: Contains Armors... It's inside is bigger than it looks. This item can also save an armor as your default class!\n• Armors linked to the player's base class will only load one of the three corresponding armors.\n• Ancient Shadow Base Classes, Dreaming Togslayer, DoomKnight V1, GPS Vr 1.0, SnugglePanda, and all calendar class armors (including Reforged) are not visible unless owned.\n• The following options were removed from the Armor Closet after becoming Armor Customization options, or after being folded into another class:\n  • DragonLord Color, Evolved DragonLord, Evolved DragonLord Color, and CC SoulWeaver became DragonLord or SoulWeaver customizations on December 24th, 2020 .\n  • Atealan CC became Riftwalker, Ascendant, or Cryptic customizations on December 3rd, 2022 .\n  • Dread Pirate became a Pirate customization on April 21st, 2023 .\n  • Old Ninja and Ninja CC became Ninja customizations on April 21st, 2023 and May 6th, 2023 respectively.\n  • Master SoulWeaver was folded into SoulWeaver as part of its rework on August 23rd, 2024 , and was removed from the Armor Closet on August 30th, 2024 .\n• Saving an armor previously saved the player's currently equipped gear; this functionality was removed in February 2021.\n• Armor Closet received a major UX and UI overhaulincluding a search featurefrom 133spider, Dracelix, and Verlyrus on December 31st, 2021 .\n• Armor Closet was given a 50% discount during the 2024-2025 Black Friday events; if purchased at the discounted price, the sellback values will remain permanently discounted.",
+    "notes": "• Previously had the description: Contains Armors... It's inside is bigger than it looks. This item can also save an armor as your default class!\n• Armors linked to the player's base class will only load one of the three corresponding armors.\n• Ancient Shadow Base Classes, Dreaming Togslayer, DoomKnight V1, GPS Vr 1.0, SnugglePanda, and all calendar class armors (including Reforged) are not visible unless owned.\n• The following options were removed from the Armor Closet after becoming Armor Customization options, or after being folded into another class:\n  • DragonLord Color, Evolved DragonLord, Evolved DragonLord Color, and CC SoulWeaver became DragonLord or SoulWeaver customizations on December 24th, 2020 .\n  • Atealan CC became Riftwalker, Ascendant, or Cryptic customizations on December 3rd, 2022 .\n  • Dread Pirate became a Pirate customization on April 21st, 2023 .\n  • Old Ninja and Ninja CC became Ninja customizations on April 21st, 2023 and May 6th, 2023 respectively.\n  • Master SoulWeaver was folded into SoulWeaver as part of its rework on August 23rd, 2024 , and was removed from the Armor Closet on August 30th, 2024 .\n• Saving an armor previously saved the player's currently equipped gear; this functionality was removed in February 2021.\n• Armor Closet received a major UX and UI overhaul—including a search feature—from 133spider, Dracelix, and Verlyrus on December 31st, 2021 .\n• Armor Closet was given a 50% discount during the 2024-2025 Black Friday events; if purchased at the discounted price, the sellback values will remain permanently discounted.",
     "alsoSee": [
       {
         "name": "Base Armor Closet",
@@ -376,6 +620,7 @@
     "price": "1,000 Dragon Coins",
     "sellback": "900 Dragon Coins before 24 hours, 250 Dragon Coins after 24 hours",
     "effect": "Teleports player to either the Armor Paint Room or Armor Customization zones.",
+    "effectType": "Locations",
     "obtainMethods": [
       {
         "location": "House Utility Items",
@@ -510,6 +755,7 @@
     "price": "500 Dragon Coins",
     "sellback": "450 Dragon Coins before 24 hours, 125 Dragon Coins after 24 hours",
     "effect": "Grants 5 HP and MP potions to players for free upon clicking the Health and Mana potions x5 button.",
+    "effectType": "Utility",
     "obtainMethods": [
       {
         "location": "Potion Vending Machine",
@@ -554,6 +800,7 @@
     "price": "4,000 Dragon Coins",
     "sellback": "3,600 Dragon Coins before 24 hours, 1,000 Dragon Coins after 24 hours",
     "effect": "Allows player to search, equip, favorite, or save any base armor they have unlocked;\nRiftwalker, Ascendant, Cryptic, DragonWarrior, DragonMage, DragonRogue, Warrior, Mage, Rogue",
+    "effectType": "Utility",
     "obtainMethods": [
       {
         "location": "House Utility Items",
@@ -1043,6 +1290,7 @@
     "price": "50 Dragon Coins",
     "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
     "effect": "Clicking on it sends you to Run of the Kessel! quest.",
+    "effectType": "Quests",
     "obtainMethods": [
       {
         "location": "DC Stuff",
@@ -1084,6 +1332,7 @@
     "price": "100 Dragon Coins",
     "sellback": "90 Dragon Coins before 24 hours, 25 Dragon Coins after 24 hours",
     "effect": "Animated; play Frostvale theme when clicked.",
+    "effectType": "Misc",
     "obtainMethods": [
       {
         "location": "DC Stuff",
@@ -2227,6 +2476,7 @@
     "price": "250 Dragon Coins",
     "sellback": "225 Dragon Coins before 24 hours, 63 Dragon Coins after 24 hours",
     "effect": "Allows player to untrain and/or train their stats.\nIncrease your stats with your unlocked stat points, paying 20 Gold to allocate each point, or untrain all of your stats for 1,000 Gold. For players with a Dragon Amulet, all stat modification is free.",
+    "effectType": "Utility",
     "obtainMethods": [
       {
         "location": "DC Stuff",
@@ -2481,6 +2731,7 @@
     "price": "100 Dragon Coins",
     "sellback": "90 Dragon Coins before 24 hours, 25 Dragon Coins after 24 hours",
     "effect": "Cysero runs by every so often, and tries to get the sock",
+    "effectType": "Misc",
     "obtainMethods": [
       {
         "location": "Ikea DC",
@@ -2563,6 +2814,7 @@
     "price": "500 Dragon Coins",
     "sellback": "450 Dragon Coins before 24 hours, 125 Dragon Coins after 24 hours",
     "effect": "Clicking on it opens the Fish Shop",
+    "effectType": "Shops",
     "obtainMethods": [
       {
         "location": "DC Stuff",
@@ -2979,6 +3231,107 @@
     "hasSpecialEffect": false
   },
   {
+    "id": "housing-dragonsgrasp-arch",
+    "familyName": "Dragonsgrasp Arch",
+    "slug": "housing-dragonsgrasp-arch",
+    "aliasSlugs": [
+      "housing-dragonsgrasp-left-arch",
+      "housing-dragonsgrasp-right-arch"
+    ],
+    "type": "housing",
+    "subtype": "stuff",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=19855447",
+    "familyOrigin": "cross-post",
+    "familySources": [
+      {
+        "title": "Dragonsgrasp Left Arch",
+        "url": "https://forums2.battleon.com/f/fb.asp?m=19855447",
+        "variantLabel": "Left",
+        "isPrimary": true
+      },
+      {
+        "title": "Dragonsgrasp Right Arch",
+        "url": "https://forums2.battleon.com/f/fb.asp?m=19855449",
+        "variantLabel": "Right",
+        "isPrimary": false
+      }
+    ],
+    "shared": {
+      "description": "A solid pillar, hewn from the same stone as the city of Dragonsgrasp.",
+      "rarity": "0",
+      "alsoSee": []
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
+        "levelDisplay": "Left",
+        "variantName": "Left",
+        "name": "Dragonsgrasp Left Arch",
+        "damage": "",
+        "stats": "",
+        "obtainVariants": [
+          {
+            "location": "Dragonsgrasp House Items",
+            "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=19855209",
+            "price": "50 Dragon Coins",
+            "priceType": "dc",
+            "daRequired": true,
+            "dcRequired": true,
+            "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=19855447",
+        "description": "A solid pillar, hewn from the same stone as the city of Dragonsgrasp.",
+        "imageUrl": "http://i.imgur.com/t0QA0.png",
+        "rarity": "0",
+        "itemType": "Stuff",
+        "effect": "None"
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "Right",
+        "variantName": "Right",
+        "name": "Dragonsgrasp Right Arch",
+        "damage": "",
+        "stats": "",
+        "obtainVariants": [
+          {
+            "location": "Dragonsgrasp House Items",
+            "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=19855209",
+            "price": "50 Dragon Coins",
+            "priceType": "dc",
+            "daRequired": true,
+            "dcRequired": true,
+            "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=19855449",
+        "description": "A solid pillar, hewn from the same stone as the city of Dragonsgrasp.",
+        "imageUrl": "http://i.imgur.com/aCJOa.png",
+        "rarity": "0",
+        "itemType": "Stuff",
+        "effect": "None"
+      }
+    ],
+    "itemType": "Stuff",
+    "tags": [
+      "stuff",
+      "d-coins",
+      "multiple-versions"
+    ],
+    "hasDA": true,
+    "hasDC": true,
+    "hasDM": false,
+    "hasFree": false,
+    "hasMerge": false,
+    "levelRange": "",
+    "elements": [],
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
     "id": "housing-dragonsgrasp-bed",
     "name": "Dragonsgrasp Bed",
     "slug": "housing-dragonsgrasp-bed",
@@ -3364,6 +3717,7 @@
     "price": "100 Dragon Coins",
     "sellback": "90 Dragon Coins before 24 hours, 25 Dragon Coins after 24 hours",
     "effect": "Takes you to your aquarium from the Fishing minigame (Falconreach Dock)",
+    "effectType": "Misc",
     "obtainMethods": [
       {
         "location": "DC Stuff",
@@ -3922,6 +4276,7 @@
     "price": "50 Dragon Coins",
     "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
     "effect": "Clicking on it sends you to Run of The Kessel! quest.",
+    "effectType": "Quests",
     "obtainMethods": [
       {
         "location": "DC Stuff",
@@ -3969,6 +4324,7 @@
     "price": "100 Dragon Coins",
     "sellback": "90 Dragon Coins before 24 hours, 25 Dragon Coins after 24 hours",
     "effect": "Plays Frostvale music when clicked.",
+    "effectType": "Misc",
     "obtainMethods": [
       {
         "location": "DC Stuff",
@@ -4586,46 +4942,6 @@
     "hasSpecialEffect": false
   },
   {
-    "id": "housing-gold-fish-table-a",
-    "name": "A Gold Fish Table",
-    "slug": "housing-gold-fish-table-a",
-    "type": "housing",
-    "subtype": "stuff",
-    "description": "Fish!",
-    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=14232377",
-    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302554",
-    "tags": [
-      "stuff",
-      "d-coins"
-    ],
-    "daRequired": true,
-    "hasFree": false,
-    "dcRequired": true,
-    "isRare": false,
-    "isSeasonal": false,
-    "isSpecialOffer": false,
-    "retired": false,
-    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/housing/AGoldFishTablepic.png",
-    "location": "DC Stuff",
-    "price": "50 Dragon Coins",
-    "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
-    "effect": "None",
-    "obtainMethods": [
-      {
-        "location": "DC Stuff",
-        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14236802",
-        "price": "50 Dragon Coins",
-        "priceType": "dc",
-        "daRequired": true,
-        "dcRequired": true,
-        "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
-      }
-    ],
-    "rarity": "0",
-    "itemType": "Stuff",
-    "hasSpecialEffect": false
-  },
-  {
     "id": "housing-gold-table-with-roses",
     "name": "Gold Table with Roses",
     "slug": "housing-gold-table-with-roses",
@@ -4689,6 +5005,7 @@
     "price": "50 Dragon Coins",
     "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
     "effect": "Takes you to Run of the Kessel quest.",
+    "effectType": "Quests",
     "obtainMethods": [
       {
         "location": "DC Stuff",
@@ -4730,6 +5047,7 @@
     "price": "100 Dragon Coins",
     "sellback": "90 Dragon Coins before 24 hours, 25 Dragon Coins after 24 hours",
     "effect": "When clicked, plays the Frostvale music.",
+    "effectType": "Misc",
     "obtainMethods": [
       {
         "location": "DC Stuff",
@@ -5024,6 +5342,108 @@
     "rarity": "0",
     "itemType": "Stuff",
     "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-golden-zorbak",
+    "familyName": "Golden Zorbak",
+    "slug": "housing-golden-zorbak",
+    "aliasSlugs": [
+      "housing-left-golden-zorbak",
+      "housing-right-golden-zorbak"
+    ],
+    "type": "housing",
+    "subtype": "stuff",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=20180720",
+    "familyOrigin": "cross-post",
+    "familySources": [
+      {
+        "title": "Left Golden Zorbak",
+        "url": "https://forums2.battleon.com/f/fb.asp?m=20180720",
+        "variantLabel": "Left",
+        "isPrimary": true
+      },
+      {
+        "title": "Right Golden Zorbak",
+        "url": "https://forums2.battleon.com/f/fb.asp?m=20180722",
+        "variantLabel": "Right",
+        "isPrimary": false
+      }
+    ],
+    "shared": {
+      "description": "It's... breathtaking!",
+      "rarity": "0",
+      "alsoSee": []
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
+        "levelDisplay": "Left",
+        "variantName": "Left",
+        "name": "Left Golden Zorbak",
+        "damage": "",
+        "stats": "",
+        "obtainVariants": [
+          {
+            "location": "Lucky Day Inside",
+            "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=20167517",
+            "price": "100 Dragon Coins",
+            "priceType": "dc",
+            "daRequired": true,
+            "dcRequired": true,
+            "sellback": "90 Dragon Coins before 24 hours, 25 Dragon Coins after 24 hours"
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=20180720",
+        "description": "It's... breathtaking!",
+        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/housing/LeftGoldenZorbakpic.jpg",
+        "rarity": "0",
+        "itemType": "Stuff",
+        "effect": "None"
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "Right",
+        "variantName": "Right",
+        "name": "Right Golden Zorbak",
+        "damage": "",
+        "stats": "",
+        "obtainVariants": [
+          {
+            "location": "Lucky Day Inside",
+            "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=20167517",
+            "price": "100 Dragon Coins",
+            "priceType": "dc",
+            "daRequired": true,
+            "dcRequired": true,
+            "sellback": "90 Dragon Coins before 24 hours, 25 Dragon Coins after 24 hours"
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=20180722",
+        "description": "It's... breathtaking!",
+        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/housing/RightGoldenZorbakpic.jpg",
+        "rarity": "0",
+        "itemType": "Stuff",
+        "effect": "None"
+      }
+    ],
+    "itemType": "Stuff",
+    "tags": [
+      "stuff",
+      "d-coins",
+      "seasonal",
+      "multiple-versions"
+    ],
+    "hasDA": true,
+    "hasDC": true,
+    "hasDM": false,
+    "hasFree": false,
+    "hasMerge": false,
+    "levelRange": "",
+    "elements": [],
+    "isRare": false,
+    "isSeasonal": true,
+    "isSpecialOffer": false,
+    "retired": false
   },
   {
     "id": "housing-green-fiery-sconse",
@@ -6367,6 +6787,7 @@
     "price": "75 Dragon Coins",
     "sellback": "68 Dragon Coins before 24 hours, 19 Dragon Coins after 24 hours",
     "effect": "Takes you to the quest Heart of Gold.",
+    "effectType": "Quests",
     "obtainMethods": [
       {
         "location": "Holiday House Item Shop , DC Stuff , DC Walls",
@@ -6408,6 +6829,7 @@
     "price": "100 Dragon Coins",
     "sellback": "90 Dragon Coins before 24 hours, 25 Dragon Coins after 24 hours",
     "effect": "Loads The Minotaur II: The Bludgeoning.",
+    "effectType": "Quests",
     "obtainMethods": [
       {
         "location": "Holiday House Item Shop , DC Walls",
@@ -6864,6 +7286,231 @@
     "hasSpecialEffect": false
   },
   {
+    "id": "housing-npc-plushie-etagere",
+    "familyName": "NPC Plushie Etagere",
+    "slug": "housing-npc-plushie-etagere",
+    "aliasSlugs": [
+      "housing-lefthand-npc-plushie-etagere",
+      "housing-rightside-npc-plushie-etagere"
+    ],
+    "type": "housing",
+    "subtype": "stuff",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=15202649",
+    "familyOrigin": "cross-post",
+    "familySources": [
+      {
+        "title": "Lefthand NPC Plushie Etagere",
+        "url": "https://forums2.battleon.com/f/fb.asp?m=15202649",
+        "variantLabel": "Lefthand",
+        "isPrimary": true
+      },
+      {
+        "title": "Righthand NPC Plushie Etagere",
+        "url": "https://forums2.battleon.com/f/fb.asp?m=15202630",
+        "variantLabel": "Righthand",
+        "isPrimary": false
+      }
+    ],
+    "shared": {
+      "description": "Be sure to collect the plushies in the righthand etagere, too!",
+      "rarity": "0",
+      "alsoSee": []
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
+        "levelDisplay": "Lefthand",
+        "variantName": "Lefthand",
+        "name": "Lefthand NPC Plushie Etagere",
+        "damage": "",
+        "stats": "",
+        "obtainVariants": [
+          {
+            "location": "Ikea DC",
+            "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14441053",
+            "price": "100 Dragon Coins",
+            "priceType": "dc",
+            "daRequired": true,
+            "dcRequired": true,
+            "sellback": "90 Dragon Coins before 24 hours, 25 Dragon Coins after 24 hours"
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=15202649",
+        "description": "Be sure to collect the plushies in the righthand etagere, too!",
+        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/housing/LefthandNPCPlushieEtagerepic.png",
+        "alternativeImages": [
+          {
+            "url": "http://i.imgur.com/SAriFLB.png",
+            "caption": "Old Design"
+          },
+          {
+            "url": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/housing/LefthandNPCPlushieEtagerepic.jpg",
+            "caption": "During Frostval 2010"
+          }
+        ],
+        "rarity": "0",
+        "itemType": "Stuff",
+        "effect": "None",
+        "notes": "• During Frostval 2010, the plushies on the cabinet are empty, and allows you to access the quest Attacked!"
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "Righthand",
+        "variantName": "Righthand",
+        "name": "Righthand NPC Plushie Etagere",
+        "damage": "",
+        "stats": "",
+        "obtainVariants": [
+          {
+            "location": "Ikea DC",
+            "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14441053",
+            "price": "100 Dragon Coins",
+            "priceType": "dc",
+            "daRequired": true,
+            "dcRequired": true,
+            "sellback": "90 Dragon Coins before 24 hours, 25 Dragon Coins after 24 hours"
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=15202630",
+        "description": "Be sure to collect the NPC plushies in the lefthand etagere, too!",
+        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/housing/RighthandNPCPlushieEtagerepic.png",
+        "alternativeImages": [
+          {
+            "url": "http://i.imgur.com/Yvom9cv.png",
+            "caption": "Old Design"
+          },
+          {
+            "url": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/housing/RightsideNPCPlushieEtagerepic.jpg",
+            "caption": "During Frostval 2010"
+          }
+        ],
+        "rarity": "0",
+        "itemType": "Stuff",
+        "effect": "None",
+        "notes": "• During Frostval 2010, the plushies on the cabinet are empty, and allows you to access the quest Attacked!"
+      }
+    ],
+    "itemType": "Stuff",
+    "tags": [
+      "stuff",
+      "d-coins",
+      "multiple-versions"
+    ],
+    "hasDA": true,
+    "hasDC": true,
+    "hasDM": false,
+    "hasFree": false,
+    "hasMerge": false,
+    "levelRange": "",
+    "elements": [],
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "housing-obsidian-family",
+    "familyName": "Obsidian Family",
+    "slug": "housing-obsidian-family",
+    "aliasSlugs": [
+      "housing-obsidian-family-l-r",
+      "housing-obsidian-family-l",
+      "housing-obsidian-family-r"
+    ],
+    "type": "housing",
+    "subtype": "stuff",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22358092",
+    "familyOrigin": "same-thread-multi-post",
+    "familySources": [
+      {
+        "title": "Obsidian Family L",
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22358092",
+        "variantLabel": "Obsidian Family L",
+        "isPrimary": true
+      },
+      {
+        "title": "Obsidian Family R",
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22358092",
+        "variantLabel": "Obsidian Family R",
+        "isPrimary": false
+      }
+    ],
+    "shared": {
+      "description": "This is just a statue, right?",
+      "rarity": "0",
+      "alsoSee": []
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
+        "levelDisplay": "L",
+        "variantName": "L",
+        "name": "Obsidian Family L",
+        "damage": "",
+        "stats": "",
+        "obtainVariants": [
+          {
+            "location": "Azaveyran House Items",
+            "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=22357118",
+            "price": "65 Dragon Coins",
+            "priceType": "dc",
+            "daRequired": true,
+            "dcRequired": true,
+            "sellback": "59 Dragon Coins before 24 hours, 17 Dragon Coins after 24 hours"
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22358092",
+        "description": "This is just a statue, right?",
+        "imageUrl": "https://i.imgur.com/xqLQ34Z.png",
+        "rarity": "0",
+        "itemType": "Stuff",
+        "effect": "None"
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "R",
+        "variantName": "R",
+        "name": "Obsidian Family R",
+        "damage": "",
+        "stats": "",
+        "obtainVariants": [
+          {
+            "location": "Azaveyran House Items",
+            "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=22357118",
+            "price": "65 Dragon Coins",
+            "priceType": "dc",
+            "daRequired": true,
+            "dcRequired": true,
+            "sellback": "59 Dragon Coins before 24 hours, 17 Dragon Coins after 24 hours"
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22358092",
+        "description": "This is just a statue, right?",
+        "imageUrl": "https://i.imgur.com/KuZnfo1.png",
+        "rarity": "0",
+        "itemType": "Stuff",
+        "effect": "None"
+      }
+    ],
+    "itemType": "Stuff",
+    "tags": [
+      "stuff",
+      "d-coins",
+      "multiple-versions"
+    ],
+    "hasDA": true,
+    "hasDC": true,
+    "hasDM": false,
+    "hasFree": false,
+    "hasMerge": false,
+    "levelRange": "",
+    "elements": [],
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
     "id": "housing-obsidian-family-l",
     "familyName": "Obsidian Family L",
     "slug": "housing-obsidian-family-l",
@@ -6963,6 +7610,108 @@
     "retired": false
   },
   {
+    "id": "housing-obsidian-female-villager",
+    "familyName": "Obsidian Female Villager",
+    "slug": "housing-obsidian-female-villager",
+    "aliasSlugs": [
+      "housing-obsidian-female-villager-l-r",
+      "housing-obsidian-female-villager-l",
+      "housing-obsidian-female-villager-r"
+    ],
+    "type": "housing",
+    "subtype": "stuff",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22358090",
+    "familyOrigin": "same-thread-multi-post",
+    "familySources": [
+      {
+        "title": "Obsidian Female Villager L",
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22358090",
+        "variantLabel": "Obsidian Female Villager L",
+        "isPrimary": true
+      },
+      {
+        "title": "Obsidian Female Villager R",
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22358090",
+        "variantLabel": "Obsidian Female Villager R",
+        "isPrimary": false
+      }
+    ],
+    "shared": {
+      "description": "This is just a statue, right?",
+      "rarity": "0",
+      "alsoSee": []
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
+        "levelDisplay": "L",
+        "variantName": "L",
+        "name": "Obsidian Female Villager L",
+        "damage": "",
+        "stats": "",
+        "obtainVariants": [
+          {
+            "location": "Azaveyran House Items",
+            "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=22357118",
+            "price": "65 Dragon Coins",
+            "priceType": "dc",
+            "daRequired": true,
+            "dcRequired": true,
+            "sellback": "59 Dragon Coins before 24 hours, 17 Dragon Coins after 24 hours"
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22358090",
+        "description": "This is just a statue, right?",
+        "imageUrl": "https://i.imgur.com/NOnB2cg.png",
+        "rarity": "0",
+        "itemType": "Stuff",
+        "effect": "None"
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "R",
+        "variantName": "R",
+        "name": "Obsidian Female Villager R",
+        "damage": "",
+        "stats": "",
+        "obtainVariants": [
+          {
+            "location": "Azaveyran House Items",
+            "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=22357118",
+            "price": "65 Dragon Coins",
+            "priceType": "dc",
+            "daRequired": true,
+            "dcRequired": true,
+            "sellback": "59 Dragon Coins before 24 hours, 17 Dragon Coins after 24 hours"
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22358090",
+        "description": "This is just a statue, right?",
+        "imageUrl": "https://i.imgur.com/kx5LPNj.png",
+        "rarity": "0",
+        "itemType": "Stuff",
+        "effect": "None"
+      }
+    ],
+    "itemType": "Stuff",
+    "tags": [
+      "stuff",
+      "d-coins",
+      "multiple-versions"
+    ],
+    "hasDA": true,
+    "hasDC": true,
+    "hasDM": false,
+    "hasFree": false,
+    "hasMerge": false,
+    "levelRange": "",
+    "elements": [],
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
     "id": "housing-obsidian-female-villager-l",
     "familyName": "Obsidian Female Villager L",
     "slug": "housing-obsidian-female-villager-l",
@@ -7038,6 +7787,108 @@
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22358090",
         "description": "This is just a statue, right?",
         "imageUrl": "https://i.imgur.com/kx5LPNj.png",
+        "rarity": "0",
+        "itemType": "Stuff",
+        "effect": "None"
+      }
+    ],
+    "itemType": "Stuff",
+    "tags": [
+      "stuff",
+      "d-coins",
+      "multiple-versions"
+    ],
+    "hasDA": true,
+    "hasDC": true,
+    "hasDM": false,
+    "hasFree": false,
+    "hasMerge": false,
+    "levelRange": "",
+    "elements": [],
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "housing-obsidian-male-villager",
+    "familyName": "Obsidian Male Villager",
+    "slug": "housing-obsidian-male-villager",
+    "aliasSlugs": [
+      "housing-obsidian-male-villager-l-r",
+      "housing-obsidian-male-villager-l",
+      "housing-obsidian-male-villager-r"
+    ],
+    "type": "housing",
+    "subtype": "stuff",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22358088",
+    "familyOrigin": "same-thread-multi-post",
+    "familySources": [
+      {
+        "title": "Obsidian Male Villager L",
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22358088",
+        "variantLabel": "Obsidian Male Villager L",
+        "isPrimary": true
+      },
+      {
+        "title": "Obsidian Male Villager R",
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22358088",
+        "variantLabel": "Obsidian Male Villager R",
+        "isPrimary": false
+      }
+    ],
+    "shared": {
+      "description": "This is just a statue, right?",
+      "rarity": "0",
+      "alsoSee": []
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
+        "levelDisplay": "L",
+        "variantName": "L",
+        "name": "Obsidian Male Villager L",
+        "damage": "",
+        "stats": "",
+        "obtainVariants": [
+          {
+            "location": "Azaveyran House Items",
+            "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=22357118",
+            "price": "65 Dragon Coins",
+            "priceType": "dc",
+            "daRequired": true,
+            "dcRequired": true,
+            "sellback": "59 Dragon Coins before 24 hours, 17 Dragon Coins after 24 hours"
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22358088",
+        "description": "This is just a statue, right?",
+        "imageUrl": "https://i.imgur.com/XWWDNgz.png",
+        "rarity": "0",
+        "itemType": "Stuff",
+        "effect": "None"
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "R",
+        "variantName": "R",
+        "name": "Obsidian Male Villager R",
+        "damage": "",
+        "stats": "",
+        "obtainVariants": [
+          {
+            "location": "Azaveyran House Items",
+            "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=22357118",
+            "price": "65 Dragon Coins",
+            "priceType": "dc",
+            "daRequired": true,
+            "dcRequired": true,
+            "sellback": "59 Dragon Coins before 24 hours, 17 Dragon Coins after 24 hours"
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22358088",
+        "description": "This is just a statue, right?",
+        "imageUrl": "https://i.imgur.com/0270kRk.png",
         "rarity": "0",
         "itemType": "Stuff",
         "effect": "None"
@@ -7310,6 +8161,7 @@
     "price": "20,000 Gold",
     "sellback": "2,000 Gold",
     "effect": "Allows the player to save their current class for 7,000 Gold; can also load player's base class for free.",
+    "effectType": "Utility",
     "obtainMethods": [
       {
         "location": "Gold Stuff , Ikea Gold",
@@ -7524,6 +8376,107 @@
     "rarity": "0",
     "itemType": "Stuff",
     "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-pellow-column",
+    "familyName": "Pellow Column",
+    "slug": "housing-pellow-column",
+    "aliasSlugs": [
+      "housing-pellow-column-left-stuff",
+      "housing-pellow-column-right-stuff"
+    ],
+    "type": "housing",
+    "subtype": "stuff",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22100106",
+    "familyOrigin": "cross-post",
+    "familySources": [
+      {
+        "title": "Pellow Column Left",
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22100106",
+        "variantLabel": "Left",
+        "isPrimary": true
+      },
+      {
+        "title": "Pellow Column Right",
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22100108",
+        "variantLabel": "Right",
+        "isPrimary": false
+      }
+    ],
+    "shared": {
+      "description": "A column from Pellow Village on the edge of the Void.",
+      "rarity": "0",
+      "alsoSee": []
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
+        "levelDisplay": "Left",
+        "variantName": "Left",
+        "name": "Pellow Column Left",
+        "damage": "",
+        "stats": "",
+        "obtainVariants": [
+          {
+            "location": "Pellow Village (Shop)",
+            "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=22093489",
+            "price": "50 Dragon Coins",
+            "priceType": "dc",
+            "daRequired": true,
+            "dcRequired": true,
+            "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22100106",
+        "description": "A column from Pellow Village on the edge of the Void.",
+        "imageUrl": "http://i.imgur.com/3HLNFEL.png",
+        "rarity": "0",
+        "itemType": "Stuff",
+        "effect": "None"
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "Right",
+        "variantName": "Right",
+        "name": "Pellow Column Right",
+        "damage": "",
+        "stats": "",
+        "obtainVariants": [
+          {
+            "location": "Pellow Village (Shop)",
+            "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=22093489",
+            "price": "50 Dragon Coins",
+            "priceType": "dc",
+            "daRequired": true,
+            "dcRequired": true,
+            "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22100108",
+        "description": "A column from Pellow Village on the edge of the Void.",
+        "imageUrl": "http://i.imgur.com/Rzr5TGX.png",
+        "rarity": "0",
+        "itemType": "Stuff",
+        "effect": "None"
+      }
+    ],
+    "itemType": "Stuff",
+    "tags": [
+      "stuff",
+      "d-coins",
+      "multiple-versions"
+    ],
+    "hasDA": true,
+    "hasDC": true,
+    "hasDM": false,
+    "hasFree": false,
+    "hasMerge": false,
+    "levelRange": "",
+    "elements": [],
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
   },
   {
     "id": "housing-pellow-column-left-stuff",
@@ -7802,6 +8755,7 @@
     "price": "100 Dragon Coins",
     "sellback": "90 Dragon Coins before 24 hours, 25 Dragon Coins after 24 hours",
     "effect": "Teleports player to the Titans of BattleOn! quest.",
+    "effectType": "Quests",
     "obtainMethods": [
       {
         "location": "DC Stuff",
@@ -7905,6 +8859,7 @@
     "price": "150 Dragon Coins",
     "sellback": "135 Dragon Coins before 24 hours, 38 Dragon Coins after 24 hours",
     "effect": "Changes appearance based on the player's current Dragon Coins value.",
+    "effectType": "Misc",
     "obtainMethods": [
       {
         "location": "Piles of Currency",
@@ -7970,6 +8925,7 @@
     "price": "150 Dragon Coins",
     "sellback": "135 Dragon Coins before 24 hours, 38 Dragon Coins after 24 hours",
     "effect": "Changes appearance based on the player's current Gold value.",
+    "effectType": "Misc",
     "obtainMethods": [
       {
         "location": "Piles of Currency",
@@ -8077,6 +9033,7 @@
     ],
     "rarity": "0",
     "itemType": "Stuff",
+    "notes": "• During Frostval 2010, the plushies on the cabinet are empty, and allows you to access the quest Attacked!",
     "hasSpecialEffect": false
   },
   {
@@ -8145,6 +9102,7 @@
     "price": "100 Dragon Coins",
     "sellback": "90 Dragon Coins before 24 hours, 25 Dragon Coins after 24 hours",
     "effect": "Refills potions when clicked.",
+    "effectType": "Heal",
     "obtainMethods": [
       {
         "location": "DC Stuff",
@@ -8269,6 +9227,7 @@
     "price": "20,000 Gold",
     "sellback": "2,000 Gold",
     "effect": "Grants player year-round access to PumpkinLord and Evolved PumpkinLord classes, along with their unlocking and training.",
+    "effectType": "Utility",
     "obtainMethods": [
       {
         "location": "House Utility Items",
@@ -8283,252 +9242,6 @@
     "itemType": "Stuff",
     "notes": "• PumpkinLord and Evolved PumpkinLord classes can be unlocked and trained by using Moonglow .\n  • Unlocking those classes each requires 1 Moonglow.\n  • Training with Moonglow unlocks 2 skills for those classes.\n  • The Moonglow requirements are skipped if the player unlocked and trained the PumpkinLord classes via giving Candy to the Cauldron Sisters in Mogloween.\n• Only players that own the PumpkinLord Chest may access the PumpkinLord classes year-round, and from their own house.",
     "hasSpecialEffect": true
-  },
-  {
-    "id": "housing-purple-bookshelf-the",
-    "name": "The Purple Bookshelf",
-    "slug": "housing-purple-bookshelf-the",
-    "type": "housing",
-    "subtype": "stuff",
-    "description": "When a mad paint room fairy with an ever filling bucket of purple paint decided that everything needed to be painted purple, she wasn't kidding. Even most of the books ended up purple.",
-    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=19422485",
-    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302554",
-    "tags": [
-      "stuff",
-      "d-coins"
-    ],
-    "daRequired": true,
-    "hasFree": false,
-    "dcRequired": true,
-    "isRare": false,
-    "isSeasonal": false,
-    "isSpecialOffer": false,
-    "retired": false,
-    "imageUrl": "http://i.imgur.com/g04Nq.png",
-    "location": "Purple",
-    "price": "75 Dragon Coins",
-    "sellback": "68 Dragon Coins before 24 hours, 19 Dragon Coins after 24 hours",
-    "effect": "None",
-    "obtainMethods": [
-      {
-        "location": "Purple",
-        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=19421354",
-        "price": "75 Dragon Coins",
-        "priceType": "dc",
-        "daRequired": true,
-        "dcRequired": true,
-        "sellback": "68 Dragon Coins before 24 hours, 19 Dragon Coins after 24 hours"
-      }
-    ],
-    "rarity": "0",
-    "itemType": "Stuff",
-    "hasSpecialEffect": false
-  },
-  {
-    "id": "housing-purple-chair-the",
-    "name": "The Purple Chair",
-    "slug": "housing-purple-chair-the",
-    "type": "housing",
-    "subtype": "stuff",
-    "description": "Yep, you guessed it, Purple. It still really is a cozy chair for reading a purplified book though!",
-    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=19422280",
-    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302554",
-    "tags": [
-      "stuff",
-      "d-coins"
-    ],
-    "daRequired": true,
-    "hasFree": false,
-    "dcRequired": true,
-    "isRare": false,
-    "isSeasonal": false,
-    "isSpecialOffer": false,
-    "retired": false,
-    "imageUrl": "http://i.imgur.com/Yp4q5.png",
-    "location": "Purple",
-    "price": "50 Dragon Coins",
-    "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
-    "effect": "None",
-    "obtainMethods": [
-      {
-        "location": "Purple",
-        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=19421354",
-        "price": "50 Dragon Coins",
-        "priceType": "dc",
-        "daRequired": true,
-        "dcRequired": true,
-        "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
-      }
-    ],
-    "rarity": "0",
-    "itemType": "Stuff",
-    "hasSpecialEffect": false
-  },
-  {
-    "id": "housing-purple-dragonbed-the",
-    "name": "The Purple Dragonbed",
-    "slug": "housing-purple-dragonbed-the",
-    "type": "housing",
-    "subtype": "stuff",
-    "description": "Not even the pet beds were safe from the mad purple fairy. Fancy script at the foot of this dragon bed reads Melissa4Bella Could it be a designer tag?",
-    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=19422316",
-    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302554",
-    "tags": [
-      "stuff",
-      "d-coins"
-    ],
-    "daRequired": true,
-    "hasFree": false,
-    "dcRequired": true,
-    "isRare": false,
-    "isSeasonal": false,
-    "isSpecialOffer": false,
-    "retired": false,
-    "imageUrl": "http://i.imgur.com/mZlk0.png",
-    "location": "Purple",
-    "price": "50 Dragon Coins",
-    "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
-    "effect": "None",
-    "obtainMethods": [
-      {
-        "location": "Purple",
-        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=19421354",
-        "price": "50 Dragon Coins",
-        "priceType": "dc",
-        "daRequired": true,
-        "dcRequired": true,
-        "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
-      }
-    ],
-    "rarity": "0",
-    "itemType": "Stuff",
-    "hasSpecialEffect": false
-  },
-  {
-    "id": "housing-purple-fireplace-the",
-    "name": "The Purple Fireplace",
-    "slug": "housing-purple-fireplace-the",
-    "type": "housing",
-    "subtype": "stuff",
-    "description": "Thanks to the special talents of the mad paint room fairy, even the flame in the fireplace burns a pale purplish color. Scratched into the fireplace, near the bottom is this M,M4B",
-    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=19422510",
-    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302554",
-    "tags": [
-      "stuff",
-      "d-coins"
-    ],
-    "daRequired": true,
-    "hasFree": false,
-    "dcRequired": true,
-    "isRare": false,
-    "isSeasonal": false,
-    "isSpecialOffer": false,
-    "retired": false,
-    "imageUrl": "http://i.imgur.com/TLa2v.png",
-    "alternativeImages": [
-      {
-        "url": "http://i.imgur.com/UQqWqu1.jpg",
-        "caption": "Alternative Image"
-      }
-    ],
-    "location": "Purple",
-    "price": "100 Dragon Coins",
-    "sellback": "90 Dragon Coins before 24 hours, 25 Dragon Coins after 24 hours",
-    "effect": "None",
-    "obtainMethods": [
-      {
-        "location": "Purple",
-        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=19421354",
-        "price": "100 Dragon Coins",
-        "priceType": "dc",
-        "daRequired": true,
-        "dcRequired": true,
-        "sellback": "90 Dragon Coins before 24 hours, 25 Dragon Coins after 24 hours"
-      }
-    ],
-    "rarity": "0",
-    "itemType": "Stuff",
-    "hasSpecialEffect": false
-  },
-  {
-    "id": "housing-purple-pillar-the",
-    "name": "The Purple Pillar",
-    "slug": "housing-purple-pillar-the",
-    "type": "housing",
-    "subtype": "stuff",
-    "description": "Apparently the mad paint room fairy had an accomplice. Scrawled in purple letters at the base of the pillar the words I swore I would paint Lore purple! Mritha.",
-    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=19421787",
-    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302554",
-    "tags": [
-      "stuff",
-      "d-coins"
-    ],
-    "daRequired": true,
-    "hasFree": false,
-    "dcRequired": true,
-    "isRare": false,
-    "isSeasonal": false,
-    "isSpecialOffer": false,
-    "retired": false,
-    "imageUrl": "http://i.imgur.com/NAfne.png",
-    "location": "Purple",
-    "price": "50 Dragon Coins",
-    "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
-    "effect": "None",
-    "obtainMethods": [
-      {
-        "location": "Purple",
-        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=19421354",
-        "price": "50 Dragon Coins",
-        "priceType": "dc",
-        "daRequired": true,
-        "dcRequired": true,
-        "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
-      }
-    ],
-    "rarity": "0",
-    "itemType": "Stuff",
-    "hasSpecialEffect": false
-  },
-  {
-    "id": "housing-purple-sofa-the",
-    "name": "The Purple Sofa",
-    "slug": "housing-purple-sofa-the",
-    "type": "housing",
-    "subtype": "stuff",
-    "description": "Its plush, its soft, its cozy to take a nap on. Yeah, and its purple, courtesy of the mad paint room fairy.",
-    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=19422452",
-    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302554",
-    "tags": [
-      "stuff",
-      "d-coins"
-    ],
-    "daRequired": true,
-    "hasFree": false,
-    "dcRequired": true,
-    "isRare": false,
-    "isSeasonal": false,
-    "isSpecialOffer": false,
-    "retired": false,
-    "imageUrl": "http://i.imgur.com/2mtGa.png",
-    "location": "Purple",
-    "price": "75 Dragon Coins",
-    "sellback": "68 Dragon Coins before 24 hours, 19 Dragon Coins after 24 hours",
-    "effect": "None",
-    "obtainMethods": [
-      {
-        "location": "Purple",
-        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=19421354",
-        "price": "75 Dragon Coins",
-        "priceType": "dc",
-        "daRequired": true,
-        "dcRequired": true,
-        "sellback": "68 Dragon Coins before 24 hours, 19 Dragon Coins after 24 hours"
-      }
-    ],
-    "rarity": "0",
-    "itemType": "Stuff",
-    "hasSpecialEffect": false
   },
   {
     "id": "housing-pwny",
@@ -8730,43 +9443,104 @@
   },
   {
     "id": "housing-ravenloss-window",
-    "name": "Ravenloss Window",
+    "familyName": "Ravenloss Window",
     "slug": "housing-ravenloss-window",
+    "aliasSlugs": [
+      "housing-ravenloss-window-left",
+      "housing-ravenloss-window-right"
+    ],
     "type": "housing",
     "subtype": "stuff",
-    "description": "This window provides a view of the city of Ravenloss.",
-    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=20192952",
-    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302554",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=20194519",
+    "familyOrigin": "cross-post",
+    "familySources": [
+      {
+        "title": "Ravenloss Window Left",
+        "url": "https://forums2.battleon.com/f/fb.asp?m=20194519",
+        "variantLabel": "Left",
+        "isPrimary": true
+      },
+      {
+        "title": "Ravenloss Window Right",
+        "url": "https://forums2.battleon.com/f/fb.asp?m=20207722",
+        "variantLabel": "Right",
+        "isPrimary": false
+      }
+    ],
+    "shared": {
+      "description": "This window provides a view of the city of Ravenloss.",
+      "rarity": "0",
+      "alsoSee": []
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
+        "levelDisplay": "Left",
+        "variantName": "Left",
+        "name": "Ravenloss Window Left",
+        "damage": "",
+        "stats": "",
+        "obtainVariants": [
+          {
+            "location": "Kajap's",
+            "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=20188892",
+            "price": "50 Dragon Coins",
+            "priceType": "dc",
+            "daRequired": true,
+            "dcRequired": true,
+            "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=20194519",
+        "description": "This window provides a view of the city of Ravenloss.",
+        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/housing/RavenlossWindowLeftpic.png",
+        "rarity": "0",
+        "itemType": "Stuff",
+        "effect": "None"
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "Right",
+        "variantName": "Right",
+        "name": "Ravenloss Window Right",
+        "damage": "",
+        "stats": "",
+        "obtainVariants": [
+          {
+            "location": "Kajap's",
+            "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=20188892",
+            "price": "50 Dragon Coins",
+            "priceType": "dc",
+            "daRequired": true,
+            "dcRequired": true,
+            "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=20207722",
+        "description": "This window provides a view of the city of Ravenloss.",
+        "imageUrl": "http://i.imgur.com/fWjxK.png",
+        "rarity": "0",
+        "itemType": "Stuff",
+        "effect": "None"
+      }
+    ],
+    "itemType": "Stuff",
     "tags": [
       "stuff",
-      "d-coins"
+      "d-coins",
+      "multiple-versions"
     ],
-    "daRequired": true,
+    "hasDA": true,
+    "hasDC": true,
+    "hasDM": false,
     "hasFree": false,
-    "dcRequired": true,
+    "hasMerge": false,
+    "levelRange": "",
+    "elements": [],
     "isRare": false,
     "isSeasonal": false,
     "isSpecialOffer": false,
-    "retired": false,
-    "imageUrl": "http://i.imgur.com/RJkRs.jpg",
-    "location": "Kajap's",
-    "price": "60 Dragon Coins",
-    "sellback": "54 Dragon Coins before 24 hours, 15 Dragon Coins after 24 hours",
-    "effect": "None",
-    "obtainMethods": [
-      {
-        "location": "Kajap's",
-        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=20188892",
-        "price": "60 Dragon Coins",
-        "priceType": "dc",
-        "daRequired": true,
-        "dcRequired": true,
-        "sellback": "54 Dragon Coins before 24 hours, 15 Dragon Coins after 24 hours"
-      }
-    ],
-    "rarity": "0",
-    "itemType": "Stuff",
-    "hasSpecialEffect": false
+    "retired": false
   },
   {
     "id": "housing-ravenloss-window-left",
@@ -9300,6 +10074,108 @@
     "hasSpecialEffect": false
   },
   {
+    "id": "housing-shapeless-statue",
+    "familyName": "Shapeless Statue",
+    "slug": "housing-shapeless-statue",
+    "aliasSlugs": [
+      "housing-shapeless-statue-l-r",
+      "housing-shapeless-statue-l",
+      "housing-shapeless-statue-r"
+    ],
+    "type": "housing",
+    "subtype": "stuff",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22358082",
+    "familyOrigin": "same-thread-multi-post",
+    "familySources": [
+      {
+        "title": "Shapeless Statue L",
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22358082",
+        "variantLabel": "Shapeless Statue L",
+        "isPrimary": true
+      },
+      {
+        "title": "Shapeless Statue R",
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22358082",
+        "variantLabel": "Shapeless Statue R",
+        "isPrimary": false
+      }
+    ],
+    "shared": {
+      "description": "A status of the Azaveyran god. What is it made of?",
+      "rarity": "0",
+      "alsoSee": []
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
+        "levelDisplay": "L",
+        "variantName": "L",
+        "name": "Shapeless Statue L",
+        "damage": "",
+        "stats": "",
+        "obtainVariants": [
+          {
+            "location": "Azaveyran House Items",
+            "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=22357118",
+            "price": "75 Dragon Coins",
+            "priceType": "dc",
+            "daRequired": true,
+            "dcRequired": true,
+            "sellback": "68 Dragon Coins before 24 hours, 19 Dragon Coins after 24 hours"
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22358082",
+        "description": "A status of the Azaveyran god. What is it made of?",
+        "imageUrl": "https://i.imgur.com/KF8pzrU.png",
+        "rarity": "0",
+        "itemType": "Stuff",
+        "effect": "None"
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "R",
+        "variantName": "R",
+        "name": "Shapeless Statue R",
+        "damage": "",
+        "stats": "",
+        "obtainVariants": [
+          {
+            "location": "Azaveyran House Items",
+            "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=22357118",
+            "price": "75 Dragon Coins",
+            "priceType": "dc",
+            "daRequired": true,
+            "dcRequired": true,
+            "sellback": "68 Dragon Coins before 24 hours, 19 Dragon Coins after 24 hours"
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22358082",
+        "description": "A status of the Azaveyran god. What is it made of?",
+        "imageUrl": "https://i.imgur.com/oS63v0B.png",
+        "rarity": "0",
+        "itemType": "Stuff",
+        "effect": "None"
+      }
+    ],
+    "itemType": "Stuff",
+    "tags": [
+      "stuff",
+      "d-coins",
+      "multiple-versions"
+    ],
+    "hasDA": true,
+    "hasDC": true,
+    "hasDM": false,
+    "hasFree": false,
+    "hasMerge": false,
+    "levelRange": "",
+    "elements": [],
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
     "id": "housing-shapeless-statue-l",
     "familyName": "Shapeless Statue L",
     "slug": "housing-shapeless-statue-l",
@@ -9516,6 +10392,106 @@
     "rarity": "0",
     "itemType": "Stuff",
     "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-snake",
+    "familyName": "Snake",
+    "slug": "housing-snake",
+    "aliasSlugs": [
+      "housing-left-snake",
+      "housing-right-snake"
+    ],
+    "type": "housing",
+    "subtype": "stuff",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=14232945",
+    "familyOrigin": "cross-post",
+    "familySources": [
+      {
+        "title": "Left Snake",
+        "url": "https://forums2.battleon.com/f/fb.asp?m=14232945",
+        "variantLabel": "Left",
+        "isPrimary": true
+      },
+      {
+        "title": "Right Snake",
+        "url": "https://forums2.battleon.com/f/fb.asp?m=14232954",
+        "variantLabel": "Right",
+        "isPrimary": false
+      }
+    ],
+    "shared": {
+      "description": "Hissss",
+      "rarity": "0",
+      "alsoSee": []
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
+        "levelDisplay": "Left",
+        "variantName": "Left",
+        "name": "Left Snake",
+        "damage": "",
+        "stats": "",
+        "obtainVariants": [
+          {
+            "location": "DC Stuff",
+            "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14236802",
+            "price": "50 Dragon Coins",
+            "priceType": "dc",
+            "daRequired": true,
+            "dcRequired": true,
+            "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=14232945",
+        "description": "Hissss",
+        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/housing/LeftSnakepic.png",
+        "rarity": "0",
+        "itemType": "Stuff"
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "Right",
+        "variantName": "Right",
+        "name": "Right Snake",
+        "damage": "",
+        "stats": "",
+        "obtainVariants": [
+          {
+            "location": "DC Stuff",
+            "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14236802",
+            "price": "50 Dragon Coins",
+            "priceType": "dc",
+            "daRequired": true,
+            "dcRequired": true,
+            "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=14232954",
+        "description": "Hisssss",
+        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/housing/RightSnakepic.png",
+        "rarity": "0",
+        "itemType": "Stuff",
+        "effect": "None"
+      }
+    ],
+    "itemType": "Stuff",
+    "tags": [
+      "stuff",
+      "d-coins",
+      "multiple-versions"
+    ],
+    "hasDA": true,
+    "hasDC": true,
+    "hasDM": false,
+    "hasFree": false,
+    "hasMerge": false,
+    "levelRange": "",
+    "elements": [],
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
   },
   {
     "id": "housing-sneevtv",
@@ -9787,7 +10763,8 @@
     "location": "DC Stuff",
     "price": "75 Dragon Coins",
     "sellback": "68 Dragon Coins before 24 hours, 19 Dragon Coins after 24 hours",
-    "effect": "Random pop-up message when you click on the orb: quote:, *blip* MAGICAL ENERGY DETE...oh nevermind. It's just you., *blip* Orbs dream like Gnomevision with poor pixel quality. You're never quite sure what you saw afterwards., *blip* I had an uncle who worked for Cysero... WORKED for Cysero..., *blip* Stan the ScanOrb is brought you by the Intel(lect) (Magi)Core 4th Generation Processor., *blip* Everyone expects the Stan-ish Inquisition., *blip* I dreeeeam of a white Frostvaaal... No really! Haven't you ever noticed how it NEVER snows in Swordhaven??, *blip* Do you think your dragon pal there would volunteer as our Pong ball? Or would it burn us alive first?, *blip* The real question is... Where is Waldo?",
+    "effect": "Random pop-up message when you click on the orb:\nquote:\n*blip* MAGICAL ENERGY DETE...oh nevermind. It's just you.\n*blip* Orbs dream like Gnomevision with poor pixel quality. You're never quite sure what you saw afterwards.\n*blip* I had an uncle who worked for Cysero... WORKED for Cysero...\n*blip* Stan the ScanOrb™ is brought you by the Intel(lect) (Magi)Core 4th Generation Processor.\n*blip* Everyone expects the Stan-ish Inquisition.\n*blip* I dreeeeam of a white Frostvaaal... No really! Haven't you ever noticed how it NEVER snows in Swordhaven??\n*blip* Do you think your dragon pal there would volunteer as our Pong ball? Or would it burn us alive first?\n*blip* The real question is... Where is Waldo?",
+    "effectType": "Misc",
     "obtainMethods": [
       {
         "location": "DC Stuff",
@@ -9972,6 +10949,7 @@
     "price": "5,000 Dragon Coins",
     "sellback": "4,500 Dragon Coins before 24 hours, 1,250 Dragon Coins after 24 hours",
     "effect": "Grants player year-round access to the Hero's Heart Day Storybook, Lucky Day Storybook, Mogloween Storybook, Thankstaking Storybook, and Frostval Storybook.",
+    "effectType": "Locations",
     "obtainMethods": [
       {
         "location": "House Utility Items",
@@ -10476,51 +11454,6 @@
     "hasSpecialEffect": false
   },
   {
-    "id": "housing-timewarped-trophy-cabinet",
-    "name": "Timewarped Trophy Cabinet",
-    "slug": "housing-timewarped-trophy-cabinet",
-    "type": "housing",
-    "subtype": "stuff",
-    "description": "A cabinet for you to display your Timewarped Trophies.",
-    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22405977",
-    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302554",
-    "tags": [
-      "stuff",
-      "special-effect"
-    ],
-    "daRequired": true,
-    "hasFree": false,
-    "dcRequired": false,
-    "isRare": false,
-    "isSeasonal": false,
-    "isSpecialOffer": false,
-    "retired": false,
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/housing/TimewarpedTrophyCabinet.png",
-    "alternativeImages": [
-      {
-        "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/housing/TimewarpedTrophyCabinet-Full.png",
-        "caption": "Alternative 1"
-      }
-    ],
-    "location": "Timewarped Veteran (House)",
-    "price": "10,000 Gold",
-    "sellback": "1,000 Gold",
-    "effect": "Displays the Timewarped Trophies the player has.",
-    "obtainMethods": [
-      {
-        "location": "Timewarped Veteran (House)",
-        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=22405934",
-        "price": "10,000 Gold",
-        "priceType": "gold",
-        "daRequired": true,
-        "sellback": "1,000 Gold"
-      }
-    ],
-    "rarity": "0",
-    "itemType": "Stuff",
-    "hasSpecialEffect": true
-  },
-  {
     "id": "housing-thanksgiving-feast",
     "name": "Thanksgiving Feast",
     "slug": "housing-thanksgiving-feast",
@@ -10554,6 +11487,252 @@
         "daRequired": true,
         "dcRequired": true,
         "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Stuff",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-purple-bookshelf-the",
+    "name": "The Purple Bookshelf",
+    "slug": "housing-purple-bookshelf-the",
+    "type": "housing",
+    "subtype": "stuff",
+    "description": "When a mad paint room fairy with an ever filling bucket of purple paint decided that everything needed to be painted purple, she wasn't kidding. Even most of the books ended up purple.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=19422485",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302554",
+    "tags": [
+      "stuff",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "http://i.imgur.com/g04Nq.png",
+    "location": "Purple",
+    "price": "75 Dragon Coins",
+    "sellback": "68 Dragon Coins before 24 hours, 19 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Purple",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=19421354",
+        "price": "75 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "68 Dragon Coins before 24 hours, 19 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Stuff",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-purple-chair-the",
+    "name": "The Purple Chair",
+    "slug": "housing-purple-chair-the",
+    "type": "housing",
+    "subtype": "stuff",
+    "description": "Yep, you guessed it, Purple. It still really is a cozy chair for reading a purplified book though!",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=19422280",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302554",
+    "tags": [
+      "stuff",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "http://i.imgur.com/Yp4q5.png",
+    "location": "Purple",
+    "price": "50 Dragon Coins",
+    "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Purple",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=19421354",
+        "price": "50 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Stuff",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-purple-dragonbed-the",
+    "name": "The Purple Dragonbed",
+    "slug": "housing-purple-dragonbed-the",
+    "type": "housing",
+    "subtype": "stuff",
+    "description": "Not even the pet beds were safe from the mad purple fairy. Fancy script at the foot of this dragon bed reads Melissa4Bella Could it be a designer tag?",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=19422316",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302554",
+    "tags": [
+      "stuff",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "http://i.imgur.com/mZlk0.png",
+    "location": "Purple",
+    "price": "50 Dragon Coins",
+    "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Purple",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=19421354",
+        "price": "50 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Stuff",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-purple-fireplace-the",
+    "name": "The Purple Fireplace",
+    "slug": "housing-purple-fireplace-the",
+    "type": "housing",
+    "subtype": "stuff",
+    "description": "Thanks to the special talents of the mad paint room fairy, even the flame in the fireplace burns a pale purplish color. Scratched into the fireplace, near the bottom is this M,M4B",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=19422510",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302554",
+    "tags": [
+      "stuff",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "http://i.imgur.com/TLa2v.png",
+    "alternativeImages": [
+      {
+        "url": "http://i.imgur.com/UQqWqu1.jpg",
+        "caption": "Alternative Image"
+      }
+    ],
+    "location": "Purple",
+    "price": "100 Dragon Coins",
+    "sellback": "90 Dragon Coins before 24 hours, 25 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Purple",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=19421354",
+        "price": "100 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "90 Dragon Coins before 24 hours, 25 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Stuff",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-purple-pillar-the",
+    "name": "The Purple Pillar",
+    "slug": "housing-purple-pillar-the",
+    "type": "housing",
+    "subtype": "stuff",
+    "description": "Apparently the mad paint room fairy had an accomplice. Scrawled in purple letters at the base of the pillar the words I swore I would paint Lore purple! Mritha.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=19421787",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302554",
+    "tags": [
+      "stuff",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "http://i.imgur.com/NAfne.png",
+    "location": "Purple",
+    "price": "50 Dragon Coins",
+    "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Purple",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=19421354",
+        "price": "50 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Stuff",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-purple-sofa-the",
+    "name": "The Purple Sofa",
+    "slug": "housing-purple-sofa-the",
+    "type": "housing",
+    "subtype": "stuff",
+    "description": "Its plush, its soft, its cozy to take a nap on. Yeah, and its purple, courtesy of the mad paint room fairy.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=19422452",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302554",
+    "tags": [
+      "stuff",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "http://i.imgur.com/2mtGa.png",
+    "location": "Purple",
+    "price": "75 Dragon Coins",
+    "sellback": "68 Dragon Coins before 24 hours, 19 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Purple",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=19421354",
+        "price": "75 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "68 Dragon Coins before 24 hours, 19 Dragon Coins after 24 hours"
       }
     ],
     "rarity": "0",
@@ -10600,6 +11779,52 @@
     "hasSpecialEffect": false
   },
   {
+    "id": "housing-timewarped-trophy-cabinet",
+    "name": "Timewarped Trophy Cabinet",
+    "slug": "housing-timewarped-trophy-cabinet",
+    "type": "housing",
+    "subtype": "stuff",
+    "description": "A cabinet for you to display your Timewarped Trophies.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22405977",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302554",
+    "tags": [
+      "stuff",
+      "special-effect"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": false,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/housing/TimewarpedTrophyCabinet.png",
+    "alternativeImages": [
+      {
+        "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/housing/TimewarpedTrophyCabinet-Full.png",
+        "caption": "Alternative 1"
+      }
+    ],
+    "location": "Timewarped Veteran (House)",
+    "price": "10,000 Gold",
+    "sellback": "1,000 Gold",
+    "effect": "Displays the Timewarped Trophies the player has.",
+    "effectType": "Misc",
+    "obtainMethods": [
+      {
+        "location": "Timewarped Veteran (House)",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=22405934",
+        "price": "10,000 Gold",
+        "priceType": "gold",
+        "daRequired": true,
+        "sellback": "1,000 Gold"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Stuff",
+    "hasSpecialEffect": true
+  },
+  {
     "id": "housing-tog-snow-globe",
     "name": "Tog Snow Globe",
     "slug": "housing-tog-snow-globe",
@@ -10624,6 +11849,7 @@
     "price": "100 Gold",
     "sellback": "10 Gold",
     "effect": "Teleports player to the Oh Hole-y Togicide quest.",
+    "effectType": "Quests",
     "obtainMethods": [
       {
         "location": "Togicide Shop 2 , House ID #4424530",
@@ -10743,6 +11969,7 @@
     "price": "500 Dragon Coins",
     "sellback": "450 Dragon Coins before 24 hours, 125 Dragon Coins after 24 hours",
     "effect": "Teleports player to the Greenscreen Dummy quest.",
+    "effectType": "Quests",
     "obtainMethods": [
       {
         "location": "DC Stuff",

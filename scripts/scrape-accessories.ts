@@ -373,6 +373,7 @@ function familyVariantToAccessory(family: AccessoryFamily, variant: LevelVariant
     ...(family.isRare ? { isRare: true } : {}),
     ...(family.isSeasonal ? { isSeasonal: true } : {}),
     ...(family.isSpecialOffer ? { isSpecialOffer: true } : {}),
+    ...(family.isWar ? { isWar: true } : {}),
     ...(family.retired ? { retired: true } : {}),
   }
 }
@@ -601,7 +602,7 @@ function parseNotes(html: string): string | undefined {
       .replace(/<img[^>]+src="[^"]+\.(?:png|jpg|jpeg|gif|bmp)"[^>]*>/gi, '')
       .replace(/https?:\/\/[^\s"'<>]+\.(?:png|jpg|jpeg|gif|bmp)(?:\?[^\s"'<>]*)?/gi, '')
 
-    const lines = normalizeStructuredText(trimmedSection).split('\n')
+    const lines = normalizeStructuredText(trimmedSection, { preserveIndentation: true }).split('\n')
     const bulletIndents = lines
       .map((line) => line.match(/^(\s*)[•*-]\s+/)?.[1].length)
       .filter((value): value is number => value !== undefined)
@@ -1134,6 +1135,7 @@ function parseTagFlags(html: string) {
     isRare: /\/tags\/Rare\.(?:png|jpg|jpeg|gif)/i.test(leadHtml),
     isSeasonal: /\/tags\/Seasonal\.(?:png|jpg|jpeg|gif)/i.test(leadHtml),
     isSpecialOffer: /\/tags\/SpecialOffer\.(?:png|jpg|jpeg|gif)/i.test(leadHtml),
+    isWar: /\/tags\/WarLoot\.(?:png|jpg|jpeg|gif)/i.test(leadHtml),
     retired: hasRetiredTag(leadHtml),
   }
 }
@@ -1459,6 +1461,7 @@ function enrichAccessorySiblingVariants(variants: Accessory[]): Accessory[] {
       ...(variant.isRare || primary.isRare ? { isRare: true } : {}),
       ...(variant.isSeasonal || primary.isSeasonal ? { isSeasonal: true } : {}),
       ...(variant.isSpecialOffer || primary.isSpecialOffer ? { isSpecialOffer: true } : {}),
+      ...(variant.isWar || primary.isWar ? { isWar: true } : {}),
       ...(variant.retired || primary.retired ? { retired: true } : {}),
       obtainMethods: mergeObtainMethods(variant.obtainMethods),
     }))
@@ -1596,6 +1599,7 @@ function buildAccessoryEntry(
     tags: [
       ...parsedElements.map((code) => code.toLowerCase()),
       ...(primaryPriceType ? [primaryPriceType] : []),
+      ...(flags.isWar ? ['war'] : []),
     ],
     daRequired:
       flags.daRequired ||
@@ -1613,6 +1617,7 @@ function buildAccessoryEntry(
     ...(flags.isRare ? { isRare: true } : {}),
     ...(flags.isSeasonal ? { isSeasonal: true } : {}),
     ...(flags.isSpecialOffer ? { isSpecialOffer: true } : {}),
+    ...(flags.isWar ? { isWar: true } : {}),
     ...(flags.retired ? { retired: true } : {}),
   }
 }
@@ -1817,6 +1822,7 @@ function buildAccessoryFamily(
     isRare: consolidatedVariants.some((variant) => variant.isRare) || undefined,
     isSeasonal: consolidatedVariants.some((variant) => variant.isSeasonal) || undefined,
     isSpecialOffer: consolidatedVariants.some((variant) => variant.isSpecialOffer) || undefined,
+    isWar: consolidatedVariants.some((variant) => variant.isWar) || undefined,
     retired: consolidatedVariants.some((variant) => variant.retired) || undefined,
     hasDA: false,
     hasDC: false,

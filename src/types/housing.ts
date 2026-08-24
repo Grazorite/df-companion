@@ -35,6 +35,7 @@ export interface HousingItem {
   capacity?: string
   furnishingSlots?: string
   effect?: string
+  effectType?: string
   obtainMethods?: ObtainVariant[]
   rarity?: string
   itemType?: string

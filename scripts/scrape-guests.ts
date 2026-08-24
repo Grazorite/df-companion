@@ -962,6 +962,7 @@ interface CategoryTags {
   isRare?: boolean
   isSeasonal?: boolean
   isSpecialOffer?: boolean
+  isWar?: boolean
   retired?: boolean
 }
 
@@ -989,6 +990,11 @@ function detectCategoryTags(html: string): CategoryTags {
   if (/<img[^>]+src=["'][^"']*\/tags\/SpecialOffer\.png["']/i.test(html)) {
     tags.isSpecialOffer = true
     if (DEBUG) console.log(`  Found: SpecialOffer`)
+  }
+
+  if (/<img[^>]+src=["'][^"']*\/tags\/WarLoot\.jpg["']/i.test(html)) {
+    tags.isWar = true
+    if (DEBUG) console.log(`  Found: WarLoot`)
   }
 
   if (hasRetiredTag(html)) {
@@ -1627,7 +1633,7 @@ function parseNotes(html: string, guestName: string): string | undefined {
         ''
       )
 
-    for (const line of normalizeStructuredText(trimmedSection).split('\n')) {
+    for (const line of normalizeStructuredText(trimmedSection, { preserveIndentation: true }).split('\n')) {
       const trimmed = line.trim()
       if (!trimmed) continue
       if (
@@ -1651,13 +1657,13 @@ function parseNotes(html: string, guestName: string): string | undefined {
   const seenNotes = new Set(noteLines.map((line) => line.trim()))
   const rawNoteMatches = html.matchAll(/<li>\s*<i>\s*Note:\s*([\s\S]*?)<\/i>/gi)
   for (const match of rawNoteMatches) {
-    const note = normalizeStructuredText(match[1]).trim()
+    const note = normalizeStructuredText(match[1], { preserveIndentation: true }).trim()
     if (!note || seenNotes.has(note)) continue
     seenNotes.add(note)
     noteLines.push(note)
   }
 
-  for (const line of normalizeStructuredText(html).split('\n')) {
+  for (const line of normalizeStructuredText(html, { preserveIndentation: true }).split('\n')) {
     const trimmed = line.trim()
     if (!/^Note:/i.test(trimmed)) continue
     const note = trimmed.replace(/^Note:\s*/i, '').trim()
@@ -2064,7 +2070,10 @@ function buildGuestFamilyFromSections(
     const notes = parseNotes(section.html, section.name)
     const characterPageSource = extractGuestCharacterPageSource(section.html)
     const alsoSee = parseAlsoSee(section.html, nameToSlug, section.name)
-    const tags = generateTags(section.name, description, stub.elements)
+    const tags = [
+      ...generateTags(section.name, description, stub.elements),
+      ...(categoryTags.isWar ? ['war'] : []),
+    ]
     const daRequired = /<img[^>]+src=["'][^"']*\/tags\/DA\.png["']/i.test(section.html)
     const dcRequired = /<img[^>]+src=["'][^"']*\/tags\/DC\.png["']/i.test(section.html)
     const dmRequired = /<img[^>]+src=["'][^"']*\/tags\/DM\.png["']/i.test(section.html)
@@ -2221,6 +2230,7 @@ function buildGuestFamilyFromSections(
     isRare: variants.some((variant) => variant.isRare === true) || undefined,
     isSeasonal: variants.some((variant) => variant.isSeasonal === true) || undefined,
     isSpecialOffer: variants.some((variant) => variant.isSpecialOffer === true) || undefined,
+    isWar: variants.some((variant) => variant.isWar === true) || undefined,
     retired: variants.some((variant) => variant.retired === true) || undefined,
     levelRange: '',
     // Additive across the family: union of every variant's elements and traits.
@@ -2762,7 +2772,10 @@ async function main(): Promise<void> {
         const notes = parseNotes(html, stub.name)
         const characterPageSource = extractGuestCharacterPageSource(html)
         const alsoSee = parseAlsoSee(html, nameToSlug, stub.name)
-        const tags = generateTags(stub.name, description, stub.elements)
+        const tags = [
+          ...generateTags(stub.name, description, stub.elements),
+          ...(categoryTags.isWar ? ['war'] : []),
+        ]
 
         // Detect DA/DC/DM requirements at thread level
         const daRequired = /<img[^>]+src=["'][^"']*\/tags\/DA\.png["']/i.test(html)

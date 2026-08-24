@@ -107,6 +107,7 @@
     "price": "500,000 Gold",
     "sellback": "50,000 Gold",
     "effect": "Reduces your current HP and MP gradually.",
+    "effectType": "Heal",
     "obtainMethods": [
       {
         "location": "Gold Rugs",
@@ -523,6 +524,7 @@
     "price": "100 Dragon Coins",
     "sellback": "90 Dragon Coins before 24 hours, 25 Dragon Coins after 24 hours",
     "effect": "Recovers your current HP and MP.",
+    "effectType": "Heal",
     "obtainMethods": [
       {
         "location": "DC Rugs",
@@ -695,47 +697,6 @@
       {
         "location": "Pellow Village (Shop)",
         "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=22093489",
-        "price": "50 Dragon Coins",
-        "priceType": "dc",
-        "daRequired": true,
-        "dcRequired": true,
-        "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
-      }
-    ],
-    "rarity": "0",
-    "itemType": "Rug",
-    "hasSpecialEffect": false
-  },
-  {
-    "id": "housing-purple-rug-the",
-    "name": "The Purple Rug",
-    "slug": "housing-purple-rug-the",
-    "type": "housing",
-    "subtype": "rug",
-    "description": "Yes, its a purple rug. The mad paint room fairy even got into the fabric weaving rooms, and painted the looms and all the available thread purple",
-    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=19421748",
-    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302552",
-    "tags": [
-      "rug",
-      "rugs",
-      "d-coins"
-    ],
-    "daRequired": true,
-    "hasFree": false,
-    "dcRequired": true,
-    "isRare": false,
-    "isSeasonal": false,
-    "isSpecialOffer": false,
-    "retired": false,
-    "imageUrl": "http://i.imgur.com/3BZCI.png",
-    "location": "Purple",
-    "price": "50 Dragon Coins",
-    "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
-    "effect": "None",
-    "obtainMethods": [
-      {
-        "location": "Purple",
-        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=19421354",
         "price": "50 Dragon Coins",
         "priceType": "dc",
         "daRequired": true,
@@ -1187,6 +1148,47 @@
         "daRequired": true,
         "dcRequired": true,
         "sellback": "68 Dragon Coins before 24 hours, 19 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Rug",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-purple-rug-the",
+    "name": "The Purple Rug",
+    "slug": "housing-purple-rug-the",
+    "type": "housing",
+    "subtype": "rug",
+    "description": "Yes, its a purple rug. The mad paint room fairy even got into the fabric weaving rooms, and painted the looms and all the available thread purple",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=19421748",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302552",
+    "tags": [
+      "rug",
+      "rugs",
+      "d-coins"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "http://i.imgur.com/3BZCI.png",
+    "location": "Purple",
+    "price": "50 Dragon Coins",
+    "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Purple",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=19421354",
+        "price": "50 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
       }
     ],
     "rarity": "0",

@@ -133,6 +133,7 @@ export interface Pet {
   isRare?: boolean         // Rare item
   isSeasonal?: boolean     // Seasonal item
   isSpecialOffer?: boolean // Special offer item
+  isWar?: boolean          // War reward / War Loot item
   retired?: boolean        // Retired/unavailable
 
   // Elements — array since a pet can have multiple
@@ -176,8 +177,8 @@ export interface PetFilters {
   excludeElements?: string[]
   access?: ('multi' | 'free' | 'dc' | 'dm' | 'da' | 'merge')[]  // Level 1 multi-select access filters
   excludeAccess?: ('multi' | 'free' | 'dc' | 'dm' | 'da' | 'merge')[]
-  categories?: ('temp' | 'rare' | 'seasonal' | 'special-offer' | 'retired')[]  // Level 2 multi-select
-  excludeCategories?: ('temp' | 'rare' | 'seasonal' | 'special-offer' | 'retired')[]
+  categories?: ('temp' | 'rare' | 'seasonal' | 'special-offer' | 'war' | 'retired')[]  // Level 2 multi-select
+  excludeCategories?: ('temp' | 'rare' | 'seasonal' | 'special-offer' | 'war' | 'retired')[]
 }
 
 // ─── Guest Type (extends Pet with structured stats) ──────────────────────────

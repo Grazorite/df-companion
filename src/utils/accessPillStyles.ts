@@ -2,6 +2,7 @@ export const ACCESS_PILL_TONES = {
   da: 'bg-orange-500/20 text-orange-400',
   dc: 'bg-amber-500/20 text-gold',
   dm: 'bg-slate-500/20 text-slate-300',
+  free: 'bg-green-500/20 text-green-400',
 } as const
 
 export const ACCESS_PILL_SIZES = {

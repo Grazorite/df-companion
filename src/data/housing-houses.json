@@ -841,18 +841,18 @@
     ],
     "type": "housing",
     "subtype": "house",
-    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=15166794",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=14238467",
     "familyOrigin": "same-thread-multi-post",
     "familySources": [
       {
         "title": "Villager Style",
-        "url": "https://forums2.battleon.com/f/fb.asp?m=15166794",
+        "url": "https://forums2.battleon.com/f/fb.asp?m=14238467",
         "variantLabel": "Villager Style",
         "isPrimary": true
       },
       {
         "title": "Villager Style II",
-        "url": "https://forums2.battleon.com/f/fb.asp?m=15166794",
+        "url": "https://forums2.battleon.com/f/fb.asp?m=14238467",
         "variantLabel": "Villager Style II",
         "isPrimary": false
       }
@@ -879,7 +879,7 @@
             "sellback": "100 Gold"
           }
         ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=15166794",
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=14238467",
         "description": "A Doomwood style hut.",
         "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/housing/Villager.png",
         "alternativeImages": [
@@ -900,7 +900,7 @@
         "itemType": "House",
         "capacity": "27",
         "furnishingSlots": "Backgrounds: 1, Floors: 1, Rugs: 3, Shrubs: 5, Stuff: 9, Wall Items: 8",
-        "notes": "• Previously had the description: It's a hut...in Doomwood ; this was updated on January 29th, 2021 .\n• Internal Appearances: Room 1 , Room 2 , Room 3\n• Previously had the description: It's a house! ; this was updated on January 29th, 2021 .\n• Internal Appearances: Room 1 , Rooms 2 & 3 , Rooms 4 & 5"
+        "notes": "• Previously had the description: It's a hut...in Doomwood ; this was updated on January 29th, 2021 ."
       },
       {
         "levelNumber": 2,
@@ -918,7 +918,7 @@
             "sellback": "200 Gold"
           }
         ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=15166794",
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=14238467",
         "description": "It's a house in the style of Doomwood.",
         "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/housing/VillagerII.png",
         "alternativeImages": [
@@ -939,7 +939,7 @@
         "itemType": "House",
         "capacity": "39",
         "furnishingSlots": "Backgrounds: 1, Floors: 1, Rugs: 3, Shrubs: 5, Stuff: 15, Wall Items: 14",
-        "notes": "• Previously had the description: It's a house! ; this was updated on January 29th, 2021 .\n• Internal Appearances: Room 1 , Rooms 2 & 3 , Rooms 4 & 5\n• Previously had the description: It's a hut...in Doomwood ; this was updated on January 29th, 2021 .\n• Internal Appearances: Room 1 , Room 2 , Room 3"
+        "notes": "• Previously had the description: It's a house! ; this was updated on January 29th, 2021 ."
       }
     ],
     "itemType": "House",

@@ -44,6 +44,7 @@ export function searchBadges(badges: Badge[], filters: BadgeFilters): Badge[] {
           displayTitle(badge.name),
           badge.description,
           badge.requirements,
+          badge.notes,
           ...badge.tags,
           ...badge.howToObtain.map((s) => s.instruction),
         ]

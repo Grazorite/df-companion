@@ -1,5 +1,44 @@
 [
   {
+    "id": "housing-bush-a",
+    "name": "A Bush",
+    "slug": "housing-bush-a",
+    "type": "housing",
+    "subtype": "shrub",
+    "description": "Some nice shrubbery.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=14296127",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
+    "tags": [
+      "shrub",
+      "shrubs"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": false,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://i.imgur.com/yAbjBqW.jpg",
+    "location": "Gold Shrubs",
+    "price": "500 Gold",
+    "sellback": "50 Gold",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Gold Shrubs",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14296142",
+        "price": "500 Gold",
+        "priceType": "gold",
+        "daRequired": true,
+        "sellback": "50 Gold"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Shrub",
+    "hasSpecialEffect": false
+  },
+  {
     "id": "housing-artix-statue",
     "name": "Artix Statue",
     "slug": "housing-artix-statue",
@@ -26,6 +65,7 @@
     "price": "100 Dragon Coins",
     "sellback": "90 Dragon Coins before 24 hours, 25 Dragon Coins after 24 hours",
     "effect": "Click to request Artix join you as Guest A.",
+    "effectType": "Guests",
     "obtainMethods": [
       {
         "location": "DC Shrubs",
@@ -118,45 +158,6 @@
         "daRequired": true,
         "dcRequired": true,
         "sellback": "54 Dragon Coins before 24 hours, 15 Dragon Coins after 24 hours"
-      }
-    ],
-    "rarity": "0",
-    "itemType": "Shrub",
-    "hasSpecialEffect": false
-  },
-  {
-    "id": "housing-bush-a",
-    "name": "A Bush",
-    "slug": "housing-bush-a",
-    "type": "housing",
-    "subtype": "shrub",
-    "description": "Some nice shrubbery.",
-    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=14296127",
-    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
-    "tags": [
-      "shrub",
-      "shrubs"
-    ],
-    "daRequired": true,
-    "hasFree": false,
-    "dcRequired": false,
-    "isRare": false,
-    "isSeasonal": false,
-    "isSpecialOffer": false,
-    "retired": false,
-    "imageUrl": "https://i.imgur.com/yAbjBqW.jpg",
-    "location": "Gold Shrubs",
-    "price": "500 Gold",
-    "sellback": "50 Gold",
-    "effect": "None",
-    "obtainMethods": [
-      {
-        "location": "Gold Shrubs",
-        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=14296142",
-        "price": "500 Gold",
-        "priceType": "gold",
-        "daRequired": true,
-        "sellback": "50 Gold"
       }
     ],
     "rarity": "0",
@@ -337,6 +338,7 @@
     ],
     "rarity": "0",
     "itemType": "Shrub",
+    "notes": "• The flames on the woods burn continuously.",
     "hasSpecialEffect": false
   },
   {
@@ -612,6 +614,7 @@
     "price": "100 Dragon Coins",
     "sellback": "90 Dragon Coins before 24 hours, 25 Dragon Coins after 24 hours",
     "effect": "Loads Geo as a pet",
+    "effectType": "Pets",
     "obtainMethods": [
       {
         "location": "DC Shrubs",
@@ -653,6 +656,7 @@
     "price": "100 Gold",
     "sellback": "10 Gold",
     "effect": "Teleports player to the Toxic Togvenger quest.",
+    "effectType": "Quests",
     "obtainMethods": [
       {
         "location": "Togicide",
@@ -1447,7 +1451,8 @@
     "location": "DC Shrubs",
     "price": "100 Dragon Coins",
     "sellback": "95 Dragon Coins before 24 hours, 25 Dragon Coins after 24 hours",
-    "effect": "When you click it, one of the following pops up: quote:, Quit poking me., Pssst... I'm made of gold., Hey, can you scratch my nose?, Don't laugh! It's YOUR turn to stand here next, pal!, Yo, taxi!, Back off man, i'm a scientist!, This is harder than it looks., If your dragon pees on my leg ONE MORE TIME..., Ow, quit it!, My arm is getting tired., Seriously... look up",
+    "effect": "When you click it, one of the following pops up:\nquote:\nQuit poking me.\nPssst... I'm made of gold.\nHey, can you scratch my nose?\nDon't laugh! It's YOUR turn to stand here next, pal!\nYo, taxi!\nBack off man, i'm a scientist!\nThis is harder than it looks.\nIf your dragon pees on my leg ONE MORE TIME...\nOw, quit it!\nMy arm is getting tired.\nSeriously... look up",
+    "effectType": "Misc",
     "obtainMethods": [
       {
         "location": "DC Shrubs",
@@ -1556,6 +1561,7 @@
     ],
     "rarity": "0",
     "itemType": "Shrub",
+    "notes": "• The pumpkin glows brightly within the shell.",
     "hasSpecialEffect": false
   },
   {
@@ -1748,6 +1754,7 @@
     "price": "50 Dragon Coins",
     "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
     "effect": "Clicking on it sends you to the The Worst Prank Ever quest.",
+    "effectType": "Quests",
     "obtainMethods": [
       {
         "location": "DC Shrubs",
@@ -1803,6 +1810,108 @@
     "rarity": "0",
     "itemType": "Shrub",
     "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-pellow-column",
+    "familyName": "Pellow Column",
+    "slug": "housing-pellow-column",
+    "aliasSlugs": [
+      "housing-pellow-column-left-shrub",
+      "housing-pellow-column-right-shrub"
+    ],
+    "type": "housing",
+    "subtype": "shrub",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22100107",
+    "familyOrigin": "cross-post",
+    "familySources": [
+      {
+        "title": "Pellow Column Left",
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22100107",
+        "variantLabel": "Left",
+        "isPrimary": true
+      },
+      {
+        "title": "Pellow Column Right",
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22100109",
+        "variantLabel": "Right",
+        "isPrimary": false
+      }
+    ],
+    "shared": {
+      "description": "A column from Pellow Village on the edge of the Void.",
+      "rarity": "0",
+      "alsoSee": []
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
+        "levelDisplay": "Left",
+        "variantName": "Left",
+        "name": "Pellow Column Left",
+        "damage": "",
+        "stats": "",
+        "obtainVariants": [
+          {
+            "location": "Pellow Village (Shop)",
+            "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=22093489",
+            "price": "50 Dragon Coins",
+            "priceType": "dc",
+            "daRequired": true,
+            "dcRequired": true,
+            "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22100107",
+        "description": "A column from Pellow Village on the edge of the Void.",
+        "imageUrl": "http://i.imgur.com/3HLNFEL.png",
+        "rarity": "0",
+        "itemType": "Shrub",
+        "effect": "None"
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "Right",
+        "variantName": "Right",
+        "name": "Pellow Column Right",
+        "damage": "",
+        "stats": "",
+        "obtainVariants": [
+          {
+            "location": "Pellow Village (Shop)",
+            "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=22093489",
+            "price": "50 Dragon Coins",
+            "priceType": "dc",
+            "daRequired": true,
+            "dcRequired": true,
+            "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22100109",
+        "description": "A column from Pellow Village on the edge of the Void.",
+        "imageUrl": "http://i.imgur.com/Rzr5TGX.png",
+        "rarity": "0",
+        "itemType": "Shrub",
+        "effect": "None"
+      }
+    ],
+    "itemType": "Shrub",
+    "tags": [
+      "shrub",
+      "shrubs",
+      "d-coins",
+      "multiple-versions"
+    ],
+    "hasDA": true,
+    "hasDC": true,
+    "hasDM": false,
+    "hasFree": false,
+    "hasMerge": false,
+    "levelRange": "",
+    "elements": [],
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
   },
   {
     "id": "housing-pellow-column-left-shrub",
@@ -2179,6 +2288,108 @@
     "hasSpecialEffect": false
   },
   {
+    "id": "housing-ravenloss-light",
+    "familyName": "Ravenloss Light",
+    "slug": "housing-ravenloss-light",
+    "aliasSlugs": [
+      "housing-ravenloss-light-left",
+      "housing-ravenloss-light-right"
+    ],
+    "type": "housing",
+    "subtype": "shrub",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22094600",
+    "familyOrigin": "cross-post",
+    "familySources": [
+      {
+        "title": "Ravenloss Light Left",
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22094600",
+        "variantLabel": "Left",
+        "isPrimary": true
+      },
+      {
+        "title": "Ravenloss Light Right",
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22094602",
+        "variantLabel": "Right",
+        "isPrimary": false
+      }
+    ],
+    "shared": {
+      "description": "A glowing streetlight from Pellow Village.",
+      "rarity": "0",
+      "alsoSee": []
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
+        "levelDisplay": "Left",
+        "variantName": "Left",
+        "name": "Ravenloss Light Left",
+        "damage": "",
+        "stats": "",
+        "obtainVariants": [
+          {
+            "location": "Pellow Village (Shop)",
+            "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=22093489",
+            "price": "75 Dragon Coins",
+            "priceType": "dc",
+            "daRequired": true,
+            "dcRequired": true,
+            "sellback": "68 Dragon Coins before 24 hours, 23 Dragon Coins after 24 hours"
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22094600",
+        "description": "A glowing streetlight from Pellow Village.",
+        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/housing/Ravenloss%20Left%20Light%20pic.png",
+        "rarity": "0",
+        "itemType": "Shrub",
+        "effect": "None"
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "Right",
+        "variantName": "Right",
+        "name": "Ravenloss Light Right",
+        "damage": "",
+        "stats": "",
+        "obtainVariants": [
+          {
+            "location": "Pellow Village (Shop)",
+            "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=22093489",
+            "price": "75 Dragon Coins",
+            "priceType": "dc",
+            "daRequired": true,
+            "dcRequired": true,
+            "sellback": "68 Dragon Coins before 24 hours, 23 Dragon Coins after 24 hours"
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22094602",
+        "description": "A glowing streetlight from Pellow Village.",
+        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/housing/Ravenloss%20Right%20Light%20pic.png",
+        "rarity": "0",
+        "itemType": "Shrub",
+        "effect": "None"
+      }
+    ],
+    "itemType": "Shrub",
+    "tags": [
+      "shrub",
+      "shrubs",
+      "d-coins",
+      "multiple-versions"
+    ],
+    "hasDA": true,
+    "hasDC": true,
+    "hasDM": false,
+    "hasFree": false,
+    "hasMerge": false,
+    "levelRange": "",
+    "elements": [],
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
     "id": "housing-ravenloss-light-left",
     "name": "Ravenloss Light Left",
     "slug": "housing-ravenloss-light-left",
@@ -2286,6 +2497,7 @@
     "price": "100 Gold",
     "sellback": "10 Gold",
     "effect": "Teleports player to the Rolith Is A Bad Man quest.",
+    "effectType": "Quests",
     "obtainMethods": [
       {
         "location": "Togicide Shop 2",
@@ -2400,7 +2612,7 @@
     "slug": "housing-sneak-attack-landscape",
     "type": "housing",
     "subtype": "shrub",
-    "description": "Calm duckies. Wait for it... Doo doo! Doo doo! OH NO!",
+    "description": "Calm duckies. Wait for it... Doo doo! Doo doo! OH NO! (DC item)",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=16271386",
     "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302553",
     "tags": [
@@ -2761,6 +2973,7 @@
     "price": "100 Gold",
     "sellback": "10 Gold",
     "effect": "Teleports player to the Togicide Revenge quest.",
+    "effectType": "Quests",
     "obtainMethods": [
       {
         "location": "Togicide",
@@ -2855,6 +3068,7 @@
     "price": "250 Dragon Coins",
     "sellback": "225 Dragon Coins before 24 hours, 63 Dragon Coins after 24 hours",
     "effect": "Click to travel to any of the following destinations (Books 1 and 2, unless otherwise stated)\nAeris Battlespire PvP, 100 Room Dungeon, Lady Celestia (Sunbreeze Grove), Osprey Cove, The Sandsea, The Necropolis, Battleon, Falconreach (Book 1), Falconreach (Book 3), Oaklore, Amityvale, Shadow of the Wind Village, Lymcrest, Dragesvard, Popsprocket, East Village, DragonsGrasp (DA required)",
+    "effectType": "Locations",
     "obtainMethods": [
       {
         "location": "DC Shrubs",
@@ -2868,8 +3082,8 @@
     ],
     "rarity": "0",
     "itemType": "Shrub",
-    "hasSpecialEffect": true,
-    "notes": "• You do not need to own this item to use this item. If you visit another player's house with this item, you may also travel to the above destinations via clicking on it."
+    "notes": "• You do not need to own this item to use this item. If you visit another player's house with this item, you may also travel to the above destinations via clicking on it.",
+    "hasSpecialEffect": true
   },
   {
     "id": "housing-twilly-statue",

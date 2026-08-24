@@ -624,7 +624,8 @@
       },
       {
         "levelNumber": 4,
-        "levelDisplay": "4",
+        "levelDisplay": "L",
+        "variantName": "L",
         "name": "Banner of Pride L",
         "damage": "",
         "stats": "",
@@ -2030,6 +2031,106 @@
     "hasSpecialEffect": false
   },
   {
+    "id": "housing-dragon-statue",
+    "familyName": "Dragon Statue",
+    "slug": "housing-dragon-statue",
+    "aliasSlugs": [
+      "housing-left-dragon-statue",
+      "housing-right-dragon-statue"
+    ],
+    "type": "housing",
+    "subtype": "wall-item",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=20425615",
+    "familyOrigin": "cross-post",
+    "familySources": [
+      {
+        "title": "Left Dragon Statue",
+        "url": "https://forums2.battleon.com/f/fb.asp?m=20425615",
+        "variantLabel": "Left",
+        "isPrimary": true
+      },
+      {
+        "title": "Right Dragon Statue",
+        "url": "https://forums2.battleon.com/f/fb.asp?m=20425619",
+        "variantLabel": "Right",
+        "isPrimary": false
+      }
+    ],
+    "shared": {
+      "description": "A decorative wall statue of a dragon",
+      "rarity": "0",
+      "alsoSee": []
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
+        "levelDisplay": "Left",
+        "variantName": "Left",
+        "name": "Left Dragon Statue",
+        "damage": "",
+        "stats": "",
+        "obtainVariants": [
+          {
+            "location": "DragonLord Items",
+            "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=20423790",
+            "price": "2,000 Gold",
+            "priceType": "gold",
+            "daRequired": true,
+            "sellback": "200 Gold"
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=20425615",
+        "description": "A decorative wall statue of a dragon",
+        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/housing/LeftDragonStatuepic.jpg",
+        "rarity": "0",
+        "itemType": "Wall",
+        "effect": "None"
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "Right",
+        "variantName": "Right",
+        "name": "Right Dragon Statue",
+        "damage": "",
+        "stats": "",
+        "obtainVariants": [
+          {
+            "location": "DragonLord Items",
+            "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=20423790",
+            "price": "2,000 Gold",
+            "priceType": "gold",
+            "daRequired": true,
+            "sellback": "200 Gold"
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=20425619",
+        "description": "A decorative wall statue of a dragon",
+        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/housing/RightDragonStatuepic.jpg",
+        "rarity": "0",
+        "itemType": "Wall",
+        "effect": "None"
+      }
+    ],
+    "itemType": "Wall",
+    "tags": [
+      "wall-item",
+      "wall items",
+      "wall",
+      "multiple-versions"
+    ],
+    "hasDA": true,
+    "hasDC": false,
+    "hasDM": false,
+    "hasFree": false,
+    "hasMerge": false,
+    "levelRange": "",
+    "elements": [],
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
     "id": "housing-dragonkeep-banner",
     "name": "Dragonkeep Banner",
     "slug": "housing-dragonkeep-banner",
@@ -2231,6 +2332,7 @@
     ],
     "rarity": "0",
     "itemType": "Wall",
+    "notes": "• Item is currently bugged; it should be equipped as a stuff instead of wall.",
     "hasSpecialEffect": false
   },
   {
@@ -2872,48 +2974,6 @@
     "hasSpecialEffect": false
   },
   {
-    "id": "housing-glory-of-goober-the",
-    "name": "The Glory of Goober",
-    "slug": "housing-glory-of-goober-the",
-    "type": "housing",
-    "subtype": "wall-item",
-    "description": "The most eloquent of the mischievous spirits in Death's Realm, he lets you know what exactly he thinks of you. After goo'ing you up.",
-    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=15680487",
-    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302557",
-    "tags": [
-      "wall-item",
-      "wall items",
-      "d-coins",
-      "wall"
-    ],
-    "daRequired": true,
-    "hasFree": false,
-    "dcRequired": true,
-    "isRare": false,
-    "isSeasonal": false,
-    "isSpecialOffer": false,
-    "retired": false,
-    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/housing/TheGloryofGooberpic.png",
-    "location": "Holiday House Item Shop , DC Walls",
-    "price": "50 Dragon Coins",
-    "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
-    "effect": "None",
-    "obtainMethods": [
-      {
-        "location": "Holiday House Item Shop , DC Walls",
-        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=15680339",
-        "price": "50 Dragon Coins",
-        "priceType": "dc",
-        "daRequired": true,
-        "dcRequired": true,
-        "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
-      }
-    ],
-    "rarity": "0",
-    "itemType": "Wall",
-    "hasSpecialEffect": false
-  },
-  {
     "id": "housing-gluttony-banner",
     "name": "Gluttony Banner",
     "slug": "housing-gluttony-banner",
@@ -3526,6 +3586,7 @@
     "price": "500 Dragon Coins",
     "sellback": "450 Dragon Coins before 24 hours, 125 Dragon Coins after 24 hours",
     "effect": "Teleports player to the Green Screen zone.",
+    "effectType": "Locations",
     "obtainMethods": [
       {
         "location": "House Utility Items",
@@ -3927,6 +3988,7 @@
     "price": "75 Dragon Coins",
     "sellback": "68 Dragon Coins before 24 hours, 19 Dragon Coins after 24 hours",
     "effect": "Takes you to the quest Outnumbered",
+    "effectType": "Quests",
     "obtainMethods": [
       {
         "location": "Holiday House Item Shop , DC Walls",
@@ -4147,48 +4209,6 @@
     "hasSpecialEffect": false
   },
   {
-    "id": "housing-lady-and-kensai-plushies-the",
-    "name": "The Lady and Kensai Plushies",
-    "slug": "housing-lady-and-kensai-plushies-the",
-    "type": "housing",
-    "subtype": "wall-item",
-    "description": "The Lady and her husband.",
-    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=19590714",
-    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302557",
-    "tags": [
-      "wall-item",
-      "wall items",
-      "d-coins",
-      "wall"
-    ],
-    "daRequired": true,
-    "hasFree": false,
-    "dcRequired": true,
-    "isRare": false,
-    "isSeasonal": false,
-    "isSpecialOffer": false,
-    "retired": false,
-    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/housing/TheLadyandKensaiPlushiespic.jpg",
-    "location": "Purple",
-    "price": "75 Dragon Coins",
-    "sellback": "68 Dragon Coins before 24 hours, 19 Dragon Coins after 24 hours",
-    "effect": "None",
-    "obtainMethods": [
-      {
-        "location": "Purple",
-        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=19421354",
-        "price": "75 Dragon Coins",
-        "priceType": "dc",
-        "daRequired": true,
-        "dcRequired": true,
-        "sellback": "68 Dragon Coins before 24 hours, 19 Dragon Coins after 24 hours"
-      }
-    ],
-    "rarity": "0",
-    "itemType": "Wall",
-    "hasSpecialEffect": false
-  },
-  {
     "id": "housing-left-dragon-statue",
     "name": "Left Dragon Statue",
     "slug": "housing-left-dragon-statue",
@@ -4226,6 +4246,43 @@
     ],
     "rarity": "0",
     "itemType": "Wall",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-light-bowl",
+    "name": "Light Bowl",
+    "slug": "housing-light-bowl",
+    "type": "housing",
+    "subtype": "wall-item",
+    "description": "A magic bowl to hold light!",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=21231651",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302557",
+    "tags": [
+      "wall-item",
+      "wall items",
+      "wall"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/housing/LightBowlpic.png",
+    "location": "SandSea DC",
+    "price": "60 Dragon Coins",
+    "sellback": "54 Dragon Coins before 24 hours, 14 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "SandSea DC",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=21227395",
+        "price": "60 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "54 Dragon Coins before 24 hours, 14 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Wall",
+    "dcRequired": true,
     "hasSpecialEffect": false
   },
   {
@@ -4478,6 +4535,7 @@
     "price": "575 Gold",
     "sellback": "58 Gold",
     "effect": "His eye appears larger when clicked on",
+    "effectType": "Misc",
     "obtainMethods": [
       {
         "location": "Holiday House Item Shop , Gold Walls",
@@ -4567,6 +4625,7 @@
     "price": "500 Gold",
     "sellback": "50 Gold",
     "effect": "Teleports player to the Mirror, Mirror quest.",
+    "effectType": "Quests",
     "obtainMethods": [
       {
         "location": "Ikea Gold",
@@ -4649,6 +4708,7 @@
     "price": "1 Gold",
     "sellback": "1 Gold",
     "effect": "Loads Ultra Meltface Merged Akriloth Challenge.",
+    "effectType": "Quests",
     "obtainMethods": [
       {
         "location": "Tooth Fragments",
@@ -4691,6 +4751,7 @@
     "price": "100 Dragon Coins",
     "sellback": "90 Dragon Coins before 24 hours, 25 Dragon Coins after 24 hours",
     "effect": "Click to do The Cold Hand of Death quest",
+    "effectType": "Quests",
     "obtainMethods": [
       {
         "location": "Holiday House Item Shop , DC Walls",
@@ -5039,6 +5100,7 @@
     "price": "100 Dragon Coins",
     "sellback": "95 Dragon Coins before 24 hours, 25 Dragon Coins after 24 hours",
     "effect": "When clicked, it plays \"War Cry Of The Paladin\"",
+    "effectType": "Misc",
     "obtainMethods": [
       {
         "location": "DC Walls",
@@ -5431,6 +5493,7 @@
     "price": "50 Dragon Coins",
     "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
     "effect": "Takes you to an infinite version of the Potion Mastery quest.",
+    "effectType": "Quests",
     "obtainMethods": [
       {
         "location": "Ikea DC",
@@ -5904,48 +5967,6 @@
     "hasSpecialEffect": false
   },
   {
-    "id": "housing-purple-sconse-the",
-    "name": "The Purple Sconse",
-    "slug": "housing-purple-sconse-the",
-    "type": "housing",
-    "subtype": "wall-item",
-    "description": "This light source has been treated with some fairy dust to burn people purple like the fireplace. The mad paint room fairy has been awfully busy.",
-    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=19421807",
-    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302557",
-    "tags": [
-      "wall-item",
-      "wall items",
-      "d-coins",
-      "wall"
-    ],
-    "daRequired": true,
-    "hasFree": false,
-    "dcRequired": true,
-    "isRare": false,
-    "isSeasonal": false,
-    "isSpecialOffer": false,
-    "retired": false,
-    "imageUrl": "http://i.imgur.com/kucJn.png",
-    "location": "Purple",
-    "price": "50 Dragon Coins",
-    "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
-    "effect": "None",
-    "obtainMethods": [
-      {
-        "location": "Purple",
-        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=19421354",
-        "price": "50 Dragon Coins",
-        "priceType": "dc",
-        "daRequired": true,
-        "dcRequired": true,
-        "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
-      }
-    ],
-    "rarity": "0",
-    "itemType": "Wall",
-    "hasSpecialEffect": false
-  },
-  {
     "id": "housing-pvp-banner",
     "name": "PVP Banner",
     "slug": "housing-pvp-banner",
@@ -5972,6 +5993,7 @@
     "price": "200 Gold",
     "sellback": "20 Gold",
     "effect": "Click for the option to be teleported to the Aeris Battlespire (Books 1 and 2)",
+    "effectType": "Locations",
     "obtainMethods": [
       {
         "location": "Gold Walls",
@@ -6806,6 +6828,7 @@
     "price": "75 Dragon Coins",
     "sellback": "68 Dragon Coins before 24 hours, 19 Dragon Coins after 24 hours",
     "effect": "Takes you to the quest He's (a) Lyin'.",
+    "effectType": "Quests",
     "obtainMethods": [
       {
         "location": "Holiday House Item Shop , DC Walls",
@@ -7027,6 +7050,7 @@
     "price": "75 Dragon Coins",
     "sellback": "68 Dragon Coins before 24 hours, 19 Dragon Coins after 24 hours",
     "effect": "Clock is based on the current time of your computer.",
+    "effectType": "Misc",
     "obtainMethods": [
       {
         "location": "Ikea DC",
@@ -7295,6 +7319,132 @@
     "hasSpecialEffect": false
   },
   {
+    "id": "housing-glory-of-goober-the",
+    "name": "The Glory of Goober",
+    "slug": "housing-glory-of-goober-the",
+    "type": "housing",
+    "subtype": "wall-item",
+    "description": "The most eloquent of the mischievous spirits in Death's Realm, he lets you know what exactly he thinks of you. After goo'ing you up.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=15680487",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302557",
+    "tags": [
+      "wall-item",
+      "wall items",
+      "d-coins",
+      "wall"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/housing/TheGloryofGooberpic.png",
+    "location": "Holiday House Item Shop , DC Walls",
+    "price": "50 Dragon Coins",
+    "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Holiday House Item Shop , DC Walls",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=15680339",
+        "price": "50 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Wall",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-lady-and-kensai-plushies-the",
+    "name": "The Lady and Kensai Plushies",
+    "slug": "housing-lady-and-kensai-plushies-the",
+    "type": "housing",
+    "subtype": "wall-item",
+    "description": "The Lady and her husband.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=19590714",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302557",
+    "tags": [
+      "wall-item",
+      "wall items",
+      "d-coins",
+      "wall"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/housing/TheLadyandKensaiPlushiespic.jpg",
+    "location": "Purple",
+    "price": "75 Dragon Coins",
+    "sellback": "68 Dragon Coins before 24 hours, 19 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Purple",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=19421354",
+        "price": "75 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "68 Dragon Coins before 24 hours, 19 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Wall",
+    "hasSpecialEffect": false
+  },
+  {
+    "id": "housing-purple-sconse-the",
+    "name": "The Purple Sconse",
+    "slug": "housing-purple-sconse-the",
+    "type": "housing",
+    "subtype": "wall-item",
+    "description": "This light source has been treated with some fairy dust to burn people purple like the fireplace. The mad paint room fairy has been awfully busy.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=19421807",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302557",
+    "tags": [
+      "wall-item",
+      "wall items",
+      "d-coins",
+      "wall"
+    ],
+    "daRequired": true,
+    "hasFree": false,
+    "dcRequired": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false,
+    "imageUrl": "http://i.imgur.com/kucJn.png",
+    "location": "Purple",
+    "price": "50 Dragon Coins",
+    "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours",
+    "effect": "None",
+    "obtainMethods": [
+      {
+        "location": "Purple",
+        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=19421354",
+        "price": "50 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": true,
+        "dcRequired": true,
+        "sellback": "45 Dragon Coins before 24 hours, 13 Dragon Coins after 24 hours"
+      }
+    ],
+    "rarity": "0",
+    "itemType": "Wall",
+    "hasSpecialEffect": false
+  },
+  {
     "id": "housing-timewarped-medal-frame",
     "name": "Timewarped Medal Frame",
     "slug": "housing-timewarped-medal-frame",
@@ -7321,6 +7471,7 @@
     "price": "10,000 Gold",
     "sellback": "1,000 Gold",
     "effect": "Displays the Timewarped Medals the player has, up to 5 medals.",
+    "effectType": "Misc",
     "obtainMethods": [
       {
         "location": "Timewarped Veteran (House)",
@@ -7953,6 +8104,109 @@
     "hasSpecialEffect": false
   },
   {
+    "id": "housing-vaekan-candle",
+    "familyName": "Vaekan Candle",
+    "slug": "housing-vaekan-candle",
+    "aliasSlugs": [
+      "housing-vaekan-candle-left",
+      "housing-vaekan-candle-right"
+    ],
+    "type": "housing",
+    "subtype": "wall-item",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=20670578",
+    "familyOrigin": "cross-post",
+    "familySources": [
+      {
+        "title": "Vaekan Candle Left",
+        "url": "https://forums2.battleon.com/f/fb.asp?m=20670578",
+        "variantLabel": "Left",
+        "isPrimary": true
+      },
+      {
+        "title": "Vaekan Candle Right",
+        "url": "https://forums2.battleon.com/f/fb.asp?m=20670587",
+        "variantLabel": "Right",
+        "isPrimary": false
+      }
+    ],
+    "shared": {
+      "description": "A purple flame burns brightly in the Orb.",
+      "rarity": "0",
+      "alsoSee": []
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
+        "levelDisplay": "Left",
+        "variantName": "Left",
+        "name": "Vaekan Candle Left",
+        "damage": "",
+        "stats": "",
+        "obtainVariants": [
+          {
+            "location": "Purple",
+            "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=19421354",
+            "price": "60 Dragon Coins",
+            "priceType": "dc",
+            "daRequired": true,
+            "dcRequired": true,
+            "sellback": "54 Dragon Coins before 24 hours, 15 Dragon Coins after 24 hours"
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=20670578",
+        "description": "A purple flame burns brightly in the Orb.",
+        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/housing/VaekanCandleLeftpic.jpg",
+        "rarity": "0",
+        "itemType": "Wall",
+        "effect": "None"
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "Right",
+        "variantName": "Right",
+        "name": "Vaekan Candle Right",
+        "damage": "",
+        "stats": "",
+        "obtainVariants": [
+          {
+            "location": "Purple",
+            "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=19421354",
+            "price": "60 Dragon Coins",
+            "priceType": "dc",
+            "daRequired": true,
+            "dcRequired": true,
+            "sellback": "54 Dragon Coins before 24 hours, 15 Dragon Coins after 24 hours"
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=20670587",
+        "description": "A purple flame burns brightly in the Orb.",
+        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/housing/VaekanCandleRightpic.jpg",
+        "rarity": "0",
+        "itemType": "Wall",
+        "effect": "None"
+      }
+    ],
+    "itemType": "Wall",
+    "tags": [
+      "wall-item",
+      "wall items",
+      "d-coins",
+      "wall",
+      "multiple-versions"
+    ],
+    "hasDA": true,
+    "hasDC": true,
+    "hasDM": false,
+    "hasFree": false,
+    "hasMerge": false,
+    "levelRange": "",
+    "elements": [],
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
     "id": "housing-vaekan-candle-left",
     "name": "Vaekan Candle Left",
     "slug": "housing-vaekan-candle-left",
@@ -8259,6 +8513,7 @@
         "rarity": "0",
         "itemType": "Wall",
         "effect": "Allows player to access the Falconreach Bank.",
+        "effectType": "Utility",
         "notes": "• Previously had the description: NOTE: This item will give you access to your own personal bank vault in a future release!"
       },
       {
@@ -8283,8 +8538,7 @@
         "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/housing/VaultModern.png",
         "rarity": "0",
         "itemType": "Wall",
-        "effect": "Allows player to access the Falconreach Bank.",
-        "notes": "• Previously had the description: NOTE: This item will give you access to your own personal bank vault in a future release!"
+        "effect": "Allows player to access the Falconreach Bank."
       }
     ],
     "itemType": "Wall",
@@ -8770,43 +9024,6 @@
     ],
     "rarity": "0",
     "itemType": "Wall",
-    "hasSpecialEffect": false
-  },
-  {
-    "id": "housing-light-bowl",
-    "name": "Light Bowl",
-    "slug": "housing-light-bowl",
-    "type": "housing",
-    "subtype": "wall-item",
-    "description": "A magic bowl to hold light!",
-    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=21231651",
-    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302557",
-    "tags": [
-      "wall-item",
-      "wall items",
-      "wall"
-    ],
-    "daRequired": true,
-    "hasFree": false,
-    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/housing/LightBowlpic.png",
-    "location": "SandSea DC",
-    "price": "60 Dragon Coins",
-    "sellback": "54 Dragon Coins before 24 hours, 14 Dragon Coins after 24 hours",
-    "effect": "None",
-    "obtainMethods": [
-      {
-        "location": "SandSea DC",
-        "locationUrl": "https://forums2.battleon.com/f/tm.asp?m=21227395",
-        "price": "60 Dragon Coins",
-        "priceType": "dc",
-        "daRequired": true,
-        "dcRequired": true,
-        "sellback": "54 Dragon Coins before 24 hours, 14 Dragon Coins after 24 hours"
-      }
-    ],
-    "rarity": "0",
-    "itemType": "Wall",
-    "dcRequired": true,
     "hasSpecialEffect": false
   }
 ]

@@ -130,7 +130,8 @@ When a family has multiple variants at the same displayed level with the same st
   - `merge` = Price is "N/A" AND has requiredItems field
 - `AlsoSeeRef` — `{ name, slug, type }` for typed cross-references
 - `Trait` — behavioural markers (A/C=As Character, SHR=Shrinks, etc.)
-- Category flags — `dmRequired`, `isTemp`, `isRare`, `isSeasonal`, `isSpecialOffer`, `retired` (all optional booleans)
+- Category flags — `dmRequired`, `isTemp`, `isRare`, `isSeasonal`, `isSpecialOffer`, `isWar`,
+  `retired` (all optional booleans)
 
 ### Slug convention
 
@@ -186,3 +187,8 @@ Retired badges (Party On, Olaf!, Idle Heroes, etc.) are included in the dataset 
 | `ItemImage` | Image with shared missing-image placeholder | Badges, Pets, Weapons, image-bearing accessories |
 
 **Note**: All content types (Badges, Pets, Guests) use unified obtain card styling with gold left border. The heading "How to Obtain" is positioned INSIDE the card. Pets show additional price/sellback fields below a divider; Badges and Guests show location only.
+
+Housing entries may include `effectType`, a compact category from the `House Items Sorted by Effects`
+forum post and displayed as `Effect Type: <type>`. This is separate from `effect`, which stores the
+item-specific effect description shown in the larger detail card. `effectType` is optional even when
+`effect` exists; do not force or infer it for items that are absent from the sorted effect-type list.

@@ -312,6 +312,7 @@ function searchPets(
           return isFamily ? family!.isSeasonal === true : pet!.isSeasonal === true
         if (cat === 'special-offer')
           return isFamily ? family!.isSpecialOffer === true : pet!.isSpecialOffer === true
+        if (cat === 'war') return isFamily ? family!.isWar === true : pet!.isWar === true
         if (cat === 'retired') return itemRetired === true
         return false
       }
@@ -339,12 +340,27 @@ function searchPets(
       // For families, search matches familyName, all variant names, and description
       if (queryWords.length > 0) {
         const variantNames = isFamily ? family!.levelVariants.map((lv) => lv.name) : []
+        const variantDescriptions = isFamily
+          ? family!.levelVariants.map((lv) => lv.description)
+          : []
+        const variantNotes = isFamily ? family!.levelVariants.map((lv) => lv.notes) : []
+        const attackText = isFamily
+          ? [
+              ...(family!.shared.attacks ?? []),
+              ...family!.levelVariants.flatMap((lv) => lv.attacks ?? []),
+            ].flatMap((attack) => [attack.name, attack.description])
+          : pet!.attacks.flatMap((attack) => [attack.name, attack.description])
 
         const searchableText = [
           itemName,
           displayTitle(itemName),
           ...variantNames,
+          ...variantDescriptions,
           itemDescription,
+          isFamily ? family!.shared.notes : pet!.notes,
+          ...(isFamily ? [family!.releaseDate] : [pet!.releaseDate]),
+          ...variantNotes,
+          ...attackText,
           ...itemElements.map(
             (e) => elementMeta.elements.find((el) => el.code === e)?.shortName ?? e
           ),
@@ -466,6 +482,7 @@ export function usePetCategoryAvailability(types?: EntryType[]) {
       if (entry.isRare) categories.add('rare')
       if (entry.isSeasonal) categories.add('seasonal')
       if (entry.isSpecialOffer && !isGuest) categories.add('special-offer')
+      if (entry.isWar) categories.add('war')
       if (entry.retired) categories.add('retired')
     }
 

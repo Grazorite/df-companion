@@ -21,6 +21,11 @@ All list view cards must follow this pattern:
   navigation-context helper. Detail pages should read that `from` context for their top back link,
   so filters/search/subtype state are preserved when returning to the category list. Related/Also
   See cards should preserve the same original `from` context when chaining between detail pages.
+- Card-gallery search should index the detail-page text users naturally expect: base and variant
+  descriptions, notes/Other Information, obtain locations, release dates where present, housing
+  effects and furnishing-slot text, trinket effect types, attacks, and weapon special text. Keep
+  matching word-prefix based through `getSearchWords` so apostrophes and punctuation remain
+  search-friendly.
 
 ### Obtain Cards (Detail Pages)
 
@@ -238,7 +243,8 @@ is set.
   - Note: An entry can be both DA Required AND Free/Merge/DC/DM
   - Pet-only filters (Merge Required, Free, DC, DM) are hidden when Guests only is selected
   - No label text (pills displayed directly, consistent with Badges page)
-- **Level 2**: Multi-select categories — Temp, Rare, Seasonal, Special Offer, Retired (OR logic)
+- **Level 2**: Multi-select categories — Temp, Rare, Seasonal, Special Offer, War, Retired (OR
+  logic)
   - Works like badges: when Retired selected, only show retired; otherwise exclude retired
   - No label text (pills displayed directly, consistent with Badges page)
 - **Level 3**: Element/Trait filters (multi-select pills, OR logic, custom colours)
@@ -250,7 +256,7 @@ URL query params supported by `/pets`:
 - `type` — `pet`, `guest`, or comma-separated `pet,guest` (default: both)
 - `access` — comma-separated: `da`, `free`, `merge`, `dc`, `dm` (e.g., `da,free` for DA Required AND
   Free)
-- `category` — comma-separated: `temp`, `rare`, `seasonal`, `special-offer`, `retired`
+- `category` — comma-separated: `temp`, `rare`, `seasonal`, `special-offer`, `war`, `retired`
 - `element` — comma-separated element/trait codes (e.g. `ICE,FIR,SHR`)
 - `q` — text search
 
@@ -260,7 +266,7 @@ URL query params supported by `/pets`:
   `/accessories?type=artifact|belt|bracer|cape-wing|helm|necklace|ring|trinket`
 - **Level 1**: `Multiple Versions`, `DA Required`, `Merge Required`, `Free`, `DC`, `DM`
 - **Level 2**: `Cosmetic` when the loaded subtype dataset contains cosmetic entries; then `Temp`,
-  `Rare`, `Seasonal`, `Special Offer`, `Retired` where present
+  `Rare`, `Seasonal`, `Special Offer`, `War`, `Retired` where present
 - **Level 3**: Element filters
 - **Detail pages**: shared accessory detail layout with family switching, obtain cards, and trinket
   skill rendering when linked ability posts exist
@@ -269,7 +275,7 @@ URL query params supported by `/pets`:
 
 - **Level 1**: `Multiple Versions`, `DA Required`, `Merge Required`, `Free`, `DC`, `DM`, `Default`
 - **Level 2**: `Armor Customization`, `Special`, `Cosmetic`, `Temp`, `Rare`, `Seasonal`,
-  `Special Offer`, `Retired`
+  `Special Offer`, `War`, `Retired`
 - **Level 3**: Element filters
 
 ### Housing Page
@@ -279,6 +285,10 @@ URL query params supported by `/pets`:
 - **Level 2**: data-driven `Effect`, `Rare`, `Seasonal`, `Retired`
 - Do not show `Free` unless a Housing subtype later proves to contain genuinely free entries
 - `DA Required` is omitted as a filter because every Housing entry is DA content
+- Housing entries with sorted effect metadata render a compact `Effect Type: <type>` line below the
+  description, matching the trinket `Effect Type(s):` typography and placement.
+- Housing effect cards use the same typography and panel spacing as other detail cards. Effects with
+  forum quote blocks should render quotes as quote blocks, not inline comma-separated text.
 
 ## Detail Page Metadata
 

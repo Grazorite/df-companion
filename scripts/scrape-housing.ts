@@ -2,11 +2,13 @@ import { readFile, writeFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
 import {
   HOUSING_SUBTYPES,
+  isHousingFamily,
   type HousingEntry,
   type HousingFamily,
   type HousingItem,
   type HousingSubtype,
 } from '../src/types/housing'
+import { getHousingSideVariant, normalizeHousingEntries } from '../src/utils/housingNormalization'
 import type {
   AlsoSeeRef,
   AlternativeImage,
@@ -19,6 +21,7 @@ interface ScrapeOptions {
   subtype: HousingSubtype
   limit?: number
   fresh: boolean
+  names?: string[]
 }
 
 interface ParsedHousingDetail {
@@ -32,16 +35,19 @@ interface ParsedHousingDetail {
   capacity?: string
   furnishingSlots?: string
   effect?: string
+  effectType?: string
   rarity?: string
   itemType?: string
   imageUrl?: string
   alternativeImages?: AlternativeImage[]
   notes?: string
+  sharedNotes?: string
   alsoSee?: AlsoSeeRef[]
   obtainVariants?: ObtainVariant[]
 }
 
 const ROOT_URL = 'https://forums2.battleon.com/f/fb.asp?m=21302540'
+const EFFECT_TYPES_URL = 'https://forums2.battleon.com/f/fb.asp?m=21302559'
 const FORUM_TEXT_DECODER = new TextDecoder('windows-1252')
 
 const SUBTYPE_END_MARKERS: Record<HousingSubtype, string | undefined> = {
@@ -89,10 +95,16 @@ function parseArgs(): ScrapeOptions {
     : 'house'
   const limitArg = process.argv.find((arg) => arg.startsWith('--limit='))?.split('=')[1]
   const limit = limitArg ? Number.parseInt(limitArg, 10) : undefined
+  const namesArg = process.argv.find((arg) => arg.startsWith('--names='))?.split('=')[1]
+  const names = namesArg
+    ?.split(',')
+    .map((name) => name.trim())
+    .filter(Boolean)
   return {
     subtype,
     limit: Number.isFinite(limit) ? limit : undefined,
     fresh: process.argv.includes('--fresh'),
+    names,
   }
 }
 
@@ -123,6 +135,15 @@ function stripTags(text: string): string {
 
 function cleanHousingName(name: string): string {
   return name.replace(/^[.\s]+/, '').trim()
+}
+
+function normalizeEffectTypeLookupName(name: string): string {
+  return cleanHousingName(name)
+    .replace(/\s+\((?:All Versions|Base|I|II|III|IV|V|VI|VII|VIII|IX|X)\)\s*$/i, '')
+    .replace(/\s+(?:I|II|III|IV|V|VI|VII|VIII|IX|X)$/i, '')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .toLowerCase()
 }
 
 function slugify(value: string): string {
@@ -256,7 +277,9 @@ function readFieldBlock(html: string, label: string): string | undefined {
     )
   )
   if (!match) return undefined
-  const lines = htmlToLines(match[1])
+  const lines = /(?:<blockquote|<ul|<li\b)/i.test(match[1])
+    ? htmlToIndentedLines(match[1])
+    : htmlToLines(match[1])
   if (lines.length === 0) return undefined
   return lines.join('\n')
 }
@@ -271,11 +294,15 @@ function cleanEffectText(value: string | undefined): string | undefined {
         .replace(/^•\s*/, '')
         .replace(/\(\s*Link to image\s*\)/gi, '')
         .replace(/\s+([.,;:!?])/g, '$1')
-        .replace(/\s+/g, ' ')
+        .replace(/^quote:\s*$/i, 'quote:')
+        .replace(/[ \t]+/g, ' ')
         .trim()
     )
     .filter((line) => line && !/^(?:Level|Rarity|Item Type):/i.test(line))
   if (lines.length === 0) return undefined
+  if (lines.some((line) => /^quote:$/i.test(line))) {
+    return lines.join('\n')
+  }
   if (/^Click to travel to any of the following destinations\b/i.test(lines[0]) && lines.length > 1) {
     return `${lines[0]}\n${lines.slice(1).join(', ')}`
   }
@@ -297,6 +324,102 @@ function cleanEffectText(value: string | undefined): string | undefined {
 
 function hasMeaningfulEffect(effect: string | undefined): boolean {
   return Boolean(effect && !/^(?:none|n\/?a)$/i.test(effect.trim()))
+}
+
+function isEffectTypeHeading(value: string): boolean {
+  return (
+    value.length > 1 &&
+    !/^(?:House Items Sorted by Effects?|Special Effects?|Other information|Also See|Thanks to)$/i.test(value) &&
+    /^[A-Z][A-Za-z /&-]*$/.test(value)
+  )
+}
+
+function extractEffectTypeSections(html: string): Array<{ effectType: string; html: string }> {
+  const headingRegex =
+    /<(?:b|strong)>\s*<u>([\s\S]*?)<\/u>\s*<\/(?:b|strong)>|<u>\s*<(?:b|strong)>([\s\S]*?)<\/(?:b|strong)>\s*<\/u>/gi
+  const headings = [...html.matchAll(headingRegex)]
+    .map((match) => {
+      const index = match.index ?? 0
+      const effectType = stripTags(match[1] ?? match[2] ?? '').replace(/:$/, '').trim()
+      return {
+        index,
+        end: index + match[0].length,
+        effectType,
+      }
+    })
+    .filter(({ effectType }) => isEffectTypeHeading(effectType))
+
+  return headings.map((heading, index) => ({
+    effectType: heading.effectType,
+    html: html.slice(heading.end, headings[index + 1]?.index ?? html.length),
+  }))
+}
+
+function cleanSortedEffectItemName(name: string): string {
+  return name
+    .replace(/^•\s*/, '')
+    .replace(/\s*\((?:lasts|requires|when|while|clicks?|only if|if )[^)]*\)\s*$/i, '')
+    .trim()
+}
+
+function isLikelySortedEffectItemName(name: string): boolean {
+  return (
+    Boolean(name) &&
+    name.length <= 90 &&
+    !/^(?:none|n\/?a|effect|location|price|sellback|rarity|item type)$/i.test(name) &&
+    /^[A-Z0-9<][A-Za-z0-9 '<>’().,&/-]+$/.test(name)
+  )
+}
+
+function extractEffectItemNamesFromHtml(html: string): string[] {
+  return [...html.matchAll(/<a\b[^>]*>([\s\S]*?)<\/a>/gi)]
+    .map((match) => cleanSortedEffectItemName(stripTags(match[1])))
+    .filter(isLikelySortedEffectItemName)
+}
+
+function extractEffectItemNamesFromLine(line: string): string[] {
+  const cleaned = cleanSortedEffectItemName(line.trim())
+  if (!cleaned || /^(?:Also See|Thanks to|Page:|Post #:)/i.test(cleaned)) return []
+  if (!cleaned.includes(':')) return []
+  const itemList = cleaned.slice(cleaned.lastIndexOf(':') + 1).trim()
+  if (!itemList || itemList.length > 180) return []
+  return itemList
+    .split(/\s*,\s*|\s+and\s+/i)
+    .map(cleanSortedEffectItemName)
+    .filter(isLikelySortedEffectItemName)
+}
+
+function parseHousingEffectTypes(html: string): Map<string, string> {
+  const effectTypesByItem = new Map<string, string>()
+  for (const section of extractEffectTypeSections(html)) {
+    const itemNames = new Set<string>(extractEffectItemNamesFromHtml(section.html))
+    for (const line of htmlToLines(section.html)) {
+      for (const itemName of extractEffectItemNamesFromLine(line)) {
+        itemNames.add(itemName)
+      }
+    }
+    for (const itemName of itemNames) {
+      effectTypesByItem.set(normalizeEffectTypeLookupName(itemName), section.effectType)
+    }
+  }
+
+  return effectTypesByItem
+}
+
+async function fetchHousingEffectTypes(): Promise<Map<string, string>> {
+  const response = await fetchForumHtml(EFFECT_TYPES_URL)
+  if (!response.ok) {
+    console.warn(`Could not fetch housing effect types: ${response.status}`)
+    return new Map()
+  }
+  return parseHousingEffectTypes(response.html ?? '')
+}
+
+function resolveHousingEffectType(
+  name: string,
+  effectTypesByItem: Map<string, string>
+): string | undefined {
+  return effectTypesByItem.get(normalizeEffectTypeLookupName(name))
 }
 
 function classifyPrice(price: string): PriceType {
@@ -538,6 +661,7 @@ function mergeRepeatedDetails(details: ParsedHousingDetail[]): ParsedHousingDeta
       capacity: chooseDetailValue(existing.capacity, detail.capacity),
       furnishingSlots: chooseDetailValue(existing.furnishingSlots, detail.furnishingSlots),
       effect: chooseDetailValue(existing.effect, detail.effect),
+      effectType: chooseDetailValue(existing.effectType, detail.effectType),
       rarity: chooseDetailValue(existing.rarity, detail.rarity),
       itemType: chooseDetailValue(existing.itemType, detail.itemType),
       imageUrl: chooseDetailValue(existing.imageUrl, detail.imageUrl),
@@ -548,6 +672,7 @@ function mergeRepeatedDetails(details: ParsedHousingDetail[]): ParsedHousingDeta
         (image, index, images) => images.findIndex((candidate) => candidate.url === image.url) === index
       ),
       notes: mergeNotes(existing.notes, detail.notes),
+      sharedNotes: mergeNotes(existing.sharedNotes, detail.sharedNotes),
       alsoSee: Array.from(
         new Map([...(existing.alsoSee ?? []), ...(detail.alsoSee ?? [])].map((ref) => [ref.slug, ref]))
           .values()
@@ -567,8 +692,13 @@ function mergeRepeatedDetails(details: ParsedHousingDetail[]): ParsedHousingDeta
 }
 
 function parseDetailBlocks(html: string, sourceUrl: string): ParsedHousingDetail[] {
-  const threadNotes = mergeNotes(...extractMessageBlocks(html).map(extractOtherInfo))
-  const parsed = extractMessageBlocks(html)
+  const messageBlocks = extractMessageBlocks(html)
+  const supplementalNotes = mergeNotes(
+    ...messageBlocks
+      .filter((block) => titleMatches(block).length === 0)
+      .map((block) => normalizeHousingNotes('', extractOtherInfo(block)))
+  )
+  const parsed = messageBlocks
     .flatMap(splitDetailSections)
     .map((block): ParsedHousingDetail | undefined => {
       const name = extractTitle(block)
@@ -593,7 +723,7 @@ function parseDetailBlocks(html: string, sourceUrl: string): ParsedHousingDetail
         imageUrl
       )
       const effect = cleanEffectText(readFieldBlock(block, 'Effect') ?? readField(lines, 'Effect'))
-      const notes = normalizeHousingNotes(name, mergeNotes(extractOtherInfo(block), threadNotes))
+      const notes = normalizeHousingNotes(name, extractOtherInfo(block))
       const alsoSee = extractAlsoSee(block)
 
       return {
@@ -611,6 +741,7 @@ function parseDetailBlocks(html: string, sourceUrl: string): ParsedHousingDetail
         ...(imageUrl ? { imageUrl } : {}),
         ...(alternativeImages.length > 0 ? { alternativeImages } : {}),
         ...(notes ? { notes } : {}),
+        ...(supplementalNotes ? { sharedNotes: supplementalNotes } : {}),
         ...(alsoSee.length > 0 ? { alsoSee } : {}),
       }
     })
@@ -750,6 +881,15 @@ function parseListingEntries(html: string, subtype: HousingSubtype): HousingItem
 
 function familyNameForDetails(details: ParsedHousingDetail[]): string {
   const names = details.map((detail) => detail.name)
+  const sideInfos = names.map(getHousingSideVariant)
+  if (sideInfos.every(Boolean)) {
+    const presentInfos = sideInfos.filter((info): info is NonNullable<typeof info> => Boolean(info))
+    const familyNames = new Set(presentInfos.map((info) => info.familyName.toLowerCase()))
+    const sides = new Set(presentInfos.map((info) => info.side))
+    if (familyNames.size === 1 && sides.has('left') && sides.has('right')) {
+      return presentInfos[0].familyName
+    }
+  }
   const stripped = names.map((name) => name.replace(/\s+(?:I|II|III|IV|V|VI|VII|VIII|IX|X)$/i, ''))
   const first = stripped[0]
   if (stripped.every((name) => name === first)) return first
@@ -783,10 +923,11 @@ function buildSingleEntry(
     capacity: detail.capacity,
     furnishingSlots: detail.furnishingSlots,
     effect: detail.effect,
+    effectType: detail.effectType,
     obtainMethods: obtainVariants,
     rarity: detail.rarity,
     itemType,
-    notes: detail.notes,
+    notes: mergeNotes(detail.notes, detail.sharedNotes),
     alsoSee: detail.alsoSee,
     dcRequired: obtainVariants.some((obtain) => obtain.priceType === 'dc') || listing.dcRequired,
     hasFree: obtainVariants.some((obtain) => obtain.priceType === 'free'),
@@ -813,9 +954,11 @@ function buildFamilyEntry(
   const slug = `housing-${slugify(familyName)}`
   const variants: LevelVariant[] = details.map((detail, index) => {
     const obtainVariants = detail.obtainVariants ?? [buildObtain(detail)]
+    const sideVariant = getHousingSideVariant(detail.name)
     return {
       levelNumber: index + 1,
-      levelDisplay: String(index + 1),
+      levelDisplay: sideVariant?.variantName ?? String(index + 1),
+      ...(sideVariant ? { variantName: sideVariant.variantName } : {}),
       name: detail.name,
       damage: '',
       stats: detail.capacity ?? '',
@@ -829,6 +972,7 @@ function buildFamilyEntry(
       capacity: detail.capacity,
       furnishingSlots: detail.furnishingSlots,
       effect: detail.effect,
+      effectType: detail.effectType,
       notes: detail.notes,
     }
   })
@@ -857,6 +1001,7 @@ function buildFamilyEntry(
     shared: {
       description: details[0]?.description || listing.description,
       rarity: details[0]?.rarity,
+      notes: mergeNotes(...details.map((detail) => detail.sharedNotes)),
       alsoSee: details.flatMap((detail) => detail.alsoSee ?? []),
     },
     levelVariants: variants,
@@ -885,7 +1030,22 @@ function buildFamilyEntry(
   }
 }
 
-async function enrichEntries(entries: HousingItem[], subtype: HousingSubtype): Promise<HousingEntry[]> {
+function applyHousingEffectTypes(
+  details: ParsedHousingDetail[],
+  effectTypesByItem: Map<string, string>
+): ParsedHousingDetail[] {
+  if (effectTypesByItem.size === 0) return details
+  return details.map((detail) => ({
+    ...detail,
+    effectType: detail.effectType ?? resolveHousingEffectType(detail.name, effectTypesByItem),
+  }))
+}
+
+async function enrichEntries(
+  entries: HousingItem[],
+  subtype: HousingSubtype,
+  effectTypesByItem: Map<string, string>
+): Promise<HousingEntry[]> {
   const bySlug = new Map<string, HousingEntry>()
   const detailCache = new Map<string, ParsedHousingDetail[]>()
 
@@ -901,11 +1061,20 @@ async function enrichEntries(entries: HousingItem[], subtype: HousingSubtype): P
         } else {
           detailCache.set(
             printableUrl,
-            parseDetailBlocks(directResponse.html ?? '', listing.forumUrl)
+            applyHousingEffectTypes(
+              parseDetailBlocks(directResponse.html ?? '', listing.forumUrl),
+              effectTypesByItem
+            )
           )
         }
       } else {
-        detailCache.set(printableUrl, parseDetailBlocks(response.html ?? '', listing.forumUrl))
+        detailCache.set(
+          printableUrl,
+          applyHousingEffectTypes(
+            parseDetailBlocks(response.html ?? '', listing.forumUrl),
+            effectTypesByItem
+          )
+        )
       }
     }
 
@@ -926,7 +1095,7 @@ async function enrichEntries(entries: HousingItem[], subtype: HousingSubtype): P
     bySlug.set(entry.slug, entry)
   }
 
-  return [...bySlug.values()]
+  return normalizeHousingEntries([...bySlug.values()])
 }
 
 async function readExistingEntriesForSubtype(subtype: HousingSubtype): Promise<HousingEntry[]> {
@@ -944,13 +1113,39 @@ function entryName(entry: HousingEntry): string {
 async function mergeSubtypeEntries(
   subtype: HousingSubtype,
   incoming: HousingEntry[],
-  fresh: boolean
+  fresh: boolean,
+  names?: string[]
 ): Promise<HousingEntry[]> {
-  if (fresh) return incoming
+  if (fresh && !names?.length) return incoming
 
   const bySlug = new Map<string, HousingEntry>()
   for (const entry of await readExistingEntriesForSubtype(subtype)) {
     bySlug.set(entry.slug, entry)
+  }
+  if (names?.length) {
+    const requestedNames = new Set(names.map((name) => name.toLowerCase()))
+    const incomingSlugs = new Set(
+      incoming.flatMap((entry) => [
+        entry.slug,
+        ...(isHousingFamily(entry) ? (entry.aliasSlugs ?? []) : []),
+      ])
+    )
+    for (const [slug, entry] of bySlug) {
+      const currentNames = [
+        entryName(entry),
+        slug,
+        ...(isHousingFamily(entry)
+          ? [
+              ...(entry.aliasSlugs ?? []),
+              ...entry.levelVariants.map((variant) => variant.name),
+              ...(entry.familySources ?? []).map((source) => source.title),
+            ]
+          : []),
+      ].map((name) => name.toLowerCase())
+      if (incomingSlugs.has(slug) || currentNames.some((name) => requestedNames.has(name))) {
+        bySlug.delete(slug)
+      }
+    }
   }
   for (const entry of incoming) {
     bySlug.set(entry.slug, entry)
@@ -972,11 +1167,20 @@ async function main() {
   if (!response.ok) throw new Error(`Failed to fetch housing listing: ${response.status}`)
   const html = response.html ?? ''
   const parsed = parseListingEntries(html, options.subtype)
-  const listingEntries = options.limit ? parsed.slice(0, options.limit) : parsed
-  const entries = await enrichEntries(listingEntries, options.subtype)
+  const filtered = options.names?.length
+    ? parsed.filter((entry) =>
+        options.names!.some((name) => entry.name.toLowerCase() === name.toLowerCase())
+      )
+    : parsed
+  const listingEntries = options.limit ? filtered.slice(0, options.limit) : filtered
+  const effectSubtypes = new Set<HousingSubtype>(['rug', 'shrub', 'stuff', 'wall-item'])
+  const effectTypesByItem = effectSubtypes.has(options.subtype)
+    ? await fetchHousingEffectTypes()
+    : new Map<string, string>()
+  const entries = await enrichEntries(listingEntries, options.subtype, effectTypesByItem)
 
   console.log(
-    `Parsed ${entries.length}${options.limit ? `/${parsed.length}` : ''} ${options.subtype} entries`
+    `Parsed ${entries.length}${options.limit ? `/${filtered.length}` : ''} ${options.subtype} entries`
   )
   for (const entry of entries.slice(0, 8)) {
     const entryName = 'familyName' in entry ? entry.familyName : entry.name
@@ -989,7 +1193,12 @@ async function main() {
     return
   }
 
-  const outputEntries = await mergeSubtypeEntries(options.subtype, entries, options.fresh)
+  const outputEntries = await mergeSubtypeEntries(
+    options.subtype,
+    entries,
+    options.fresh,
+    options.names
+  )
   await writeFile(outputPathForSubtype(options.subtype), `${JSON.stringify(outputEntries, null, 2)}\n`)
   await updateManifest()
   console.log(`Wrote ${outputPathForSubtype(options.subtype)}`)

@@ -209,6 +209,7 @@ export interface LevelVariant {
   capacity?: string // Housing-only: total item capacity
   furnishingSlots?: string // Housing-only: Background/Floor/Rug/Shrub/Stuff/Wall Item slot counts
   effect?: string // Housing-only: special furnishing effect
+  effectType?: string // Housing-only: forum sorted-by-effects category label
   attacks?: VariantAttack[] // Only if attacks differ at this level
   weaponSpecial?: WeaponSpecial // Weapon-only: preserves parsed specials through family consolidation
   weaponSpecials?: WeaponSpecial[] // Weapon-only: preserves multiple parsed specials through family consolidation
@@ -350,6 +351,7 @@ export interface ItemFamily {
   isRare?: boolean // Rare item
   isSeasonal?: boolean // Seasonal item
   isSpecialOffer?: boolean // Special offer item
+  isWar?: boolean // War reward / War Loot item
   retired?: boolean // Retired/unavailable
 
   /**

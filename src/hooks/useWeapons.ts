@@ -171,6 +171,7 @@ function searchWeapons(
         if (category === 'rare') return item.isRare === true
         if (category === 'seasonal') return item.isSeasonal === true
         if (category === 'special-offer') return item.isSpecialOffer === true
+        if (category === 'war') return item.isWar === true
         if (category === 'retired') return itemRetired
         return false
       }
@@ -200,12 +201,37 @@ function searchWeapons(
         const variantNames = isWeaponFamily(item)
           ? item.levelVariants.map((level) => level.name)
           : []
+        const variantDescriptions = isWeaponFamily(item)
+          ? item.levelVariants.map((level) => level.description)
+          : []
+        const variantNotes = isWeaponFamily(item)
+          ? item.levelVariants.map((level) => level.notes)
+          : []
+        const specialText = isWeaponFamily(item)
+          ? [
+              item.shared.weaponSpecial,
+              ...(item.shared.weaponSpecials ?? []),
+              ...item.levelVariants.flatMap((level) => [
+                level.weaponSpecial,
+                ...(level.weaponSpecials ?? []),
+              ]),
+            ].flatMap((special) =>
+              special ? [special.trigger, special.effect, special.cooldown, special.chargeTime, special.notes] : []
+            )
+          : [item.weaponSpecial, ...(item.weaponSpecials ?? [])].flatMap((special) =>
+              special ? [special.trigger, special.effect, special.cooldown, special.chargeTime, special.notes] : []
+            )
         const aliases = isWeaponFamily(item) ? (item.aliasSlugs ?? []) : []
         const searchableText = [
           itemName,
           displayTitle(itemName),
           description,
+          isWeaponFamily(item) ? item.shared.notes : item.notes,
+          item.releaseDate,
           ...variantNames,
+          ...variantDescriptions,
+          ...variantNotes,
+          ...specialText,
           ...aliases,
           ...tags,
           ...itemElements.map(
@@ -444,6 +470,7 @@ export function useWeaponCategoryAvailability(subtype: WeaponSubtype) {
         if (entry.isRare) categories.add('rare')
         if (entry.isSeasonal) categories.add('seasonal')
         if (entry.isSpecialOffer) categories.add('special-offer')
+        if (entry.isWar) categories.add('war')
         if (entry.retired) categories.add('retired')
       }
 

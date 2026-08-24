@@ -397,13 +397,13 @@ async function fetchBadgeDetails(stub: BadgeStub, cookie: string): Promise<Parti
       // Bake retired detection fully at scrape time: the Retired tag image, plus
       // the "badge was retired on ..." note phrase the client used to re-derive.
       retired:
-        retiredFromTag || /badge was retired on/i.test(noteLines.join(' • ')) || undefined,
+        retiredFromTag || /badge was retired on/i.test(noteLines.join('\n')) || undefined,
       requirements,
       ...(howToObtain.length > 0 ? { howToObtain } : {}),
       category,
       subcategory,
       forumImageUrl,
-      notes: noteLines.length > 0 ? noteLines.join(' • ') : undefined,
+      notes: noteLines.length > 0 ? noteLines.join('\n') : undefined,
     }
   } catch (err) {
     console.warn(`   ⚠️  Could not fetch details for "${stub.name}": ${err}`)

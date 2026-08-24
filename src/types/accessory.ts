@@ -51,6 +51,7 @@ export interface Accessory {
   isRare?: boolean
   isSeasonal?: boolean
   isSpecialOffer?: boolean
+  isWar?: boolean
   retired?: boolean
 }
 
@@ -70,10 +71,24 @@ export interface AccessoryFilters {
   access?: Array<'multi' | 'free' | 'merge' | 'dc' | 'dm' | 'da'>
   excludeAccess?: Array<'multi' | 'free' | 'merge' | 'dc' | 'dm' | 'da'>
   categories?: Array<
-    'armor-customization' | 'cosmetic' | 'temp' | 'rare' | 'seasonal' | 'special-offer' | 'retired'
+    | 'armor-customization'
+    | 'cosmetic'
+    | 'temp'
+    | 'rare'
+    | 'seasonal'
+    | 'special-offer'
+    | 'war'
+    | 'retired'
   >
   excludeCategories?: Array<
-    'armor-customization' | 'cosmetic' | 'temp' | 'rare' | 'seasonal' | 'special-offer' | 'retired'
+    | 'armor-customization'
+    | 'cosmetic'
+    | 'temp'
+    | 'rare'
+    | 'seasonal'
+    | 'special-offer'
+    | 'war'
+    | 'retired'
   >
   elements?: string[]
   excludeElements?: string[]

@@ -871,7 +871,7 @@
     "shared": {
       "description": "",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Aegis2.png",
-      "notes": "• During April Fools' Day 2018, players need to equip the Fleshweaver class to invite these guests.\n• Prior to SoulWeaver's rework on August 23rd, 2024, players needed to equip the Master SoulWeaver class to invite these guests."
+      "notes": "• During  April Fools' Day 2018, players need to equip the  Fleshweaver class to invite these guests.\n• Prior to  SoulWeaver's rework on  August 23rd, 2024, players needed to equip the  Master SoulWeaver class to invite these guests."
     },
     "familySources": [],
     "levelVariants": [
@@ -992,7 +992,7 @@
             "crit": "0%"
           }
         },
-        "notes": "• Players initially required to equip the SoulWeaver class to invite Aegis (1); this requirement was modified to unlocking the SoulWeaver class on February 28th, 2025.\n• The following changes were implemented on April 11th, 2025:\n • Aegis (1)'s tooltips were updated.\n • 'Shatter', 'Ice Domain', and 'Hailstorm' skills were modified.",
+        "notes": "• Players initially required to equip the  SoulWeaver class to invite Aegis (1); this requirement was modified to unlocking the  SoulWeaver class on  February 28th, 2025.\n• The following changes were implemented on  April 11th, 2025:\n  • Aegis (1)'s tooltips were updated.\n  • 'Shatter', 'Ice Domain', and 'Hailstorm' skills were modified.",
         "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Aegis1.png"
       },
       {
@@ -1129,7 +1129,7 @@
             "crit": "0%"
           }
         },
-        "notes": "• *Aegis (2) is only invited with 10 Crit from Pellow Village (Book 3), The Last Chapter - War at the Core, and Through the Door.\n• Aegis (2) has a series of unconventional stats in the quest Calamity; Pierce: 5, Bonus: 50, Crit: 5.\n• Players initially required to equip the SoulWeaver class to invite Aegis (2); this requirement was modified to unlocking the SoulWeaver class on August 4th, 2023.",
+        "notes": "• *Aegis (2) is only invited with 10 Crit from  Pellow Village (Book 3),  The Last Chapter - War at the Core, and  Through the Door.\n• Aegis (2) has a series of unconventional stats in the quest  Calamity; Pierce: 5, Bonus: 50, Crit: 5.\n• Players initially required to equip the  SoulWeaver class to invite Aegis (2); this requirement was modified to unlocking the  SoulWeaver class on  August 4th, 2023.",
         "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Aegis2.png"
       }
     ],
@@ -1243,7 +1243,7 @@
     "releaseDate": "March 24th, 2023",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alteon.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22409330",
-    "notes": "• Alteon has a series of unconventional stats in the quests Hawk in the Sky, Crash and Burn, The Flame Within, At Fissure's Edge, The Final Steps, and Convergence (Part 1):\n • Alteon gains -10 Immobility, -60 Health, + 60 All Resists.\n • Alteon's base damage is increased by 50%.\n• Skip skill was added with the release of Crash and Burn.",
+    "notes": "• Alteon has a series of unconventional stats in the quests  Hawk in the Sky,  Crash and Burn,  The Flame Within,  At Fissure's Edge,  The Final Steps, and  Convergence (Part 1):\n  • Alteon gains -10 Immobility,  -60 Health, + 60 All Resists.\n  • Alteon's base damage is increased by 50%.\n• Skip skill was added with the release of  Crash and Burn.",
     "alsoSee": [],
     "tags": [
       "alteon",
@@ -1328,7 +1328,15 @@
         "damageType": "Melee",
         "element": "???",
         "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Etaos-Button01-Final.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Etaos-FinalBlow1.0.png"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Etaos-FinalBlow1.0.png",
+        "appearanceUrls": [
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Etaos-FinalBlow1.0.png",
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Etaos-FinalBlow1.1.png"
+        ],
+        "appearanceCaptions": [
+          "1",
+          "1.1"
+        ]
       },
       {
         "name": "Realm Change",
@@ -1339,7 +1347,15 @@
         "damageType": "Melee",
         "element": "???",
         "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Etaos-Button02-Fade.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Etaos-RealmChange1.0.png"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Etaos-RealmChange1.0.png",
+        "appearanceUrls": [
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Etaos-RealmChange1.0.png",
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Etaos-RealmChange1.1.png"
+        ],
+        "appearanceCaptions": [
+          "1",
+          "1.1"
+        ]
       },
       {
         "name": "Etaos' Precision",
@@ -1373,7 +1389,15 @@
         "damageType": "Melee",
         "element": "???",
         "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Etaos-Button04-Combo.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Etaos-Attack.png"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Etaos-Attack.png",
+        "appearanceUrls": [
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Etaos-Attack.png",
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Etaos-MeleeCombo1.1.png"
+        ],
+        "appearanceCaptions": [
+          "1",
+          "1.1"
+        ]
       },
       {
         "name": "Rift Effect",
@@ -1512,7 +1536,15 @@
             "damageType": "Melee",
             "element": "Darkness",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Isiri-Button01-Final.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Isiri-FinalBlow1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Isiri-FinalBlow1.0.png",
+            "appearanceUrls": [
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Isiri-FinalBlow1.0.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Isiri-FinalBlow1.1.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "1.1"
+            ]
           },
           {
             "name": "Realm Change",
@@ -1523,7 +1555,15 @@
             "damageType": "Melee",
             "element": "Darkness",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Isiri-Button02-Fade.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Isiri-RealmChange1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Isiri-RealmChange1.0.png",
+            "appearanceUrls": [
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Isiri-RealmChange1.0.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Isiri-RealmChange1.1.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "1.1"
+            ]
           },
           {
             "name": "Isiri's Sight",
@@ -1557,7 +1597,15 @@
             "damageType": "Melee",
             "element": "Darkness",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Isiri-Button04-Combo.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Isiri-Attack.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Isiri-Attack.png",
+            "appearanceUrls": [
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Isiri-Attack.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Isiri-MeleeCombo1.1.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "1.1"
+            ]
           },
           {
             "name": "Rift Effect",
@@ -1635,7 +1683,7 @@
             "crit": "0%"
           }
         },
-        "notes": "• Tooltips for this guest were updated on April 25th, 2025."
+        "notes": "• Tooltips for this guest were updated on  April 25th, 2025."
       },
       {
         "levelNumber": 2,
@@ -1665,7 +1713,15 @@
             "damageType": "Melee",
             "element": "???",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Isiri-Button01-Final.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Isiri2-FinalBlow1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Isiri2-FinalBlow1.0.png",
+            "appearanceUrls": [
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Isiri2-FinalBlow1.0.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Isiri2-FinalBlow1.1.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "1.1"
+            ]
           },
           {
             "name": "Realm Change",
@@ -1676,7 +1732,15 @@
             "damageType": "Melee",
             "element": "???",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Isiri-Button02-Fade.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Isiri2-RealmChange1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Isiri2-RealmChange1.0.png",
+            "appearanceUrls": [
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Isiri2-RealmChange1.0.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Isiri2-RealmChange1.1.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "1.1"
+            ]
           },
           {
             "name": "Isiri's Sight",
@@ -1710,7 +1774,15 @@
             "damageType": "Melee",
             "element": "???",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Isiri-Button04-Combo.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Isiri2-Attack.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Isiri2-Attack.png",
+            "appearanceUrls": [
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Isiri2-Attack.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Isiri2-MeleeCombo1.1.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "1.1"
+            ]
           },
           {
             "name": "Rift Effect",
@@ -1846,7 +1918,15 @@
         "damageType": "Melee",
         "element": "???",
         "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Nirios-Button01-Final.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Nirios-FinalBlow1.0.png"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Nirios-FinalBlow1.0.png",
+        "appearanceUrls": [
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Nirios-FinalBlow1.0.png",
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Nirios-FinalBlow1.1.png"
+        ],
+        "appearanceCaptions": [
+          "1",
+          "1.1"
+        ]
       },
       {
         "name": "Illusionary Veil",
@@ -1891,7 +1971,15 @@
         "damageType": "Melee",
         "element": "???",
         "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Nirios-Button04-Combo.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Nirios-Attack.png"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Nirios-Attack.png",
+        "appearanceUrls": [
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Nirios-Attack.png",
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alzein&Nirios-MeleeCombo1.1.png"
+        ],
+        "appearanceCaptions": [
+          "1",
+          "1.1"
+        ]
       },
       {
         "name": "Rift Effect",
@@ -1933,7 +2021,7 @@
     "releaseDate": "April 25th, 2025",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Alz'ein&Nirios.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22421842",
-    "notes": "• Alz'ein & Nirios' element was changed from Darkness to ??? on May 23rd, 2025.",
+    "notes": "• Alz'ein & Nirios' element was changed from Darkness to ??? on  May 23rd, 2025.",
     "alsoSee": [],
     "tags": [
       "alz'ein",
@@ -2021,7 +2109,16 @@
         "cooldown": "0",
         "damageType": "N/A",
         "element": "N/A",
-        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Amadeus-Button01-Seek.png"
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Amadeus-Button01-Seek.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Amadeus-Seek-WeaknessSeek.png",
+        "appearanceUrls": [
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Amadeus-Seek-WeaknessSeek.png",
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Amadeus-Seek-Darkness.png"
+        ],
+        "appearanceCaptions": [
+          "Weakness Seeking",
+          "Darkness"
+        ]
       },
       {
         "name": "Hold Nothing Back",
@@ -2043,7 +2140,19 @@
         "damageType": "Melee",
         "element": "Darkness/Weakness seeks",
         "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Amadeus-Button03-Unleash.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Amadeus-EmbracetheDarkness1.0.png"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Amadeus-EmbracetheDarkness1.0.png",
+        "appearanceUrls": [
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Amadeus-EmbracetheDarkness1.0.png",
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Amadeus-EmbracetheDarkness1.1.png",
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Amadeus-EmbracetheDarkness1.2.png",
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Amadeus-EmbracetheDarkness2.2.png"
+        ],
+        "appearanceCaptions": [
+          "1",
+          "1.1",
+          "1.2",
+          "2.1"
+        ]
       },
       {
         "name": "Heartcleaver",
@@ -2054,7 +2163,15 @@
         "damageType": "Melee",
         "element": "Darkness/Weakness seeks",
         "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Amadeus-Button04-Cleave.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Amadeus-Heartcleaver1.0.png"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Amadeus-Heartcleaver1.0.png",
+        "appearanceUrls": [
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Amadeus-Heartcleaver1.0.png",
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Amadeus-Heartcleaver1.1.png"
+        ],
+        "appearanceCaptions": [
+          "1",
+          "1.1"
+        ]
       },
       {
         "name": "Rush",
@@ -2066,7 +2183,17 @@
         "damageType": "Melee",
         "element": "Darkness/Weakness seeks",
         "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Amadeus-Button05-Rush.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Amadeus-Rush1.0.png"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Amadeus-Rush1.0.png",
+        "appearanceUrls": [
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Amadeus-Rush1.0.png",
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Amadeus-Rush1.1.png",
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Amadeus-Rush1.2.png"
+        ],
+        "appearanceCaptions": [
+          "1",
+          "1.1",
+          "1.2"
+        ]
       },
       {
         "name": "Pierce",
@@ -2096,7 +2223,7 @@
     "releaseDate": "March 24th, 2023",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Amadeus.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22409331",
-    "notes": "• Amadeus has a series of unconventional stats in the quests Hawk in the Sky, Crash and Burn, The Flame Within, At Fissure's Edge, The Final Steps, and Convergence (Part 1):\n • Amadeus gains -10 Immobility, -60 Health, +60 All Resists.\n • Amadeus' base damage is increased by 50%.\n• Lost Blade and Skip skills were added with the release of Crash and Burn.",
+    "notes": "• Amadeus has a series of unconventional stats in the quests  Hawk in the Sky,  Crash and Burn,  The Flame Within,  At Fissure's Edge,  The Final Steps, and  Convergence (Part 1):\n  • Amadeus gains -10 Immobility,  -60 Health, +60 All Resists.\n  • Amadeus' base damage is increased by 50%.\n• Lost Blade and Skip skills were added with the release of  Crash and Burn.",
     "alsoSee": [],
     "tags": [
       "amadeus",
@@ -2598,7 +2725,15 @@
             "damageType": "Melee",
             "element": "Nature",
             "buttonImageUrl": "https://i.imgur.com/Y1HCxVs.png",
-            "appearanceUrl": "https://i.imgur.com/jx0A071.png"
+            "appearanceUrl": "https://i.imgur.com/jx0A071.png",
+            "appearanceUrls": [
+              "https://i.imgur.com/jx0A071.png",
+              "https://i.imgur.com/12QnptX.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "2"
+            ]
           },
           {
             "name": "Attack",
@@ -2713,7 +2848,15 @@
             "damageType": "Melee",
             "element": "Light",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Artix1-Button01-Holy.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Artix1-HolyStrike1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Artix1-HolyStrike1.0.png",
+            "appearanceUrls": [
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Artix1-HolyStrike1.0.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Artix1-HolyStrike1.1.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "1.1"
+            ]
           },
           {
             "name": "Attack",
@@ -2723,7 +2866,17 @@
             "damageType": "Melee",
             "element": "Metal",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Artix1-Attack.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Artix1-Attack.png",
+            "appearanceUrls": [
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Artix1-Attack.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Artix1-HolyStrike1.0.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Artix1-HolyStrike1.1.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "2",
+              "2.1"
+            ]
           }
         ],
         "guestStats": {
@@ -2804,7 +2957,15 @@
             "damageType": "Melee",
             "element": "Light",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Artix2-Button01-Combo.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Artix2-RestoringLight.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Artix2-RestoringLight.png",
+            "appearanceUrls": [
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Artix2-RestoringLight.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Artix2-UltimateLightComboAttack!1.1.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "1.1"
+            ]
           },
           {
             "name": "Restoring Light",
@@ -2903,7 +3064,7 @@
             "crit": "0%"
           }
         },
-        "notes": "• Artix (2) equips a new weapon before battling Edgar in Artix Vs. The Undead, raising his Bonus to 20 and Crit to 25.\n• The following changes were implemented on April 11th, 2025:\n • Artix (2)'s tooltips were updated.\n • 'Undead Slayer Slash' requires a hit in order for 'Slayer's Strike' to be applied."
+        "notes": "• Artix (2) equips a new weapon before battling  Edgar in  Artix Vs. The Undead, raising his Bonus to 20 and Crit to 25.\n• The following changes were implemented on  April 11th, 2025:\n  • Artix (2)'s tooltips were updated.\n  • 'Undead Slayer Slash' requires a hit in order for 'Slayer's Strike' to be applied."
       },
       {
         "levelNumber": 3,
@@ -3090,7 +3251,17 @@
             "damageType": "Melee",
             "element": "Metal",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Ash1-Attack1.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Ash1-Attack1.png",
+            "appearanceUrls": [
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Ash1-Attack1.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Ash1-Attack2.0.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Ash1-Attack2.1.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "2",
+              "2.1"
+            ]
           }
         ],
         "guestStats": {
@@ -3134,7 +3305,7 @@
             "crit": "0%"
           }
         },
-        "notes": "• Ash (1) was previously attainable from the following retired access point: Dragon Attack at Willowshire! -> Team up! -> Yes",
+        "notes": "• Ash (1) was previously attainable from the following retired access point:  Dragon Attack at Willowshire! -> Team up! -> Yes",
         "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Ash1.png"
       },
       {
@@ -3183,7 +3354,7 @@
             "damageType": "Melee",
             "element": "Light",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Ash2-Button02-Holy.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Ash2-Button02-Holy-Old.png",
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Ash2-HolySlash.png",
             "notes": "• Skill button was updated on November 24th, 2023, replacing its old appearance."
           },
           {
@@ -3227,7 +3398,15 @@
             "damageType": "Melee",
             "element": "Light",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Ash2-Attack1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Ash2-Attack1.0.png",
+            "appearanceUrls": [
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Ash2-Attack1.0.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Ash2-Attack1.1.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "1.1"
+            ]
           }
         ],
         "guestStats": {
@@ -3271,7 +3450,7 @@
             "crit": "0%"
           }
         },
-        "notes": "• A Dragon Amulet is required to invite Ash during the Friday the 13th Wars.\n• *Ash is only invited with 0 Pierce Def and 1 Bonus from Falconreach (Book 3) and the Friday the 13th War.",
+        "notes": "• A Dragon Amulet is required to invite Ash during the Friday the 13th Wars.\n• *Ash is only invited with 0 Pierce Def and 1 Bonus from  Falconreach (Book 3) and the  Friday the 13th War.",
         "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Ash2.png"
       }
     ],
@@ -3330,7 +3509,21 @@
         "damageType": "Melee",
         "element": "Darkness",
         "buttonImageUrl": "https://i.imgur.com/OrjlrpG.png",
-        "appearanceUrl": "https://i.imgur.com/ozbfcxx.png"
+        "appearanceUrl": "https://i.imgur.com/ozbfcxx.png",
+        "appearanceUrls": [
+          "https://i.imgur.com/ozbfcxx.png",
+          "https://i.imgur.com/JcJ2D8M.png",
+          "https://i.imgur.com/U6wF779.png",
+          "https://i.imgur.com/Q4pKJsb.png",
+          "https://i.imgur.com/HHmcGAE.png"
+        ],
+        "appearanceCaptions": [
+          "1",
+          "1.1",
+          "1.2",
+          "1.3",
+          "1.4"
+        ]
       },
       {
         "name": "OOOOOFF!",
@@ -3341,7 +3534,15 @@
         "damageType": "Melee",
         "element": "Darkness",
         "buttonImageUrl": "https://i.imgur.com/jetil97.png",
-        "appearanceUrl": "https://i.imgur.com/U6wF779.png"
+        "appearanceUrl": "https://i.imgur.com/U6wF779.png",
+        "appearanceUrls": [
+          "https://i.imgur.com/U6wF779.png",
+          "https://i.imgur.com/Q4pKJsb.png"
+        ],
+        "appearanceCaptions": [
+          "1",
+          "1.1"
+        ]
       },
       {
         "name": "BAM!",
@@ -3352,7 +3553,15 @@
         "damageType": "Melee",
         "element": "Darkness",
         "buttonImageUrl": "https://i.imgur.com/p1ChAFH.png",
-        "appearanceUrl": "https://i.imgur.com/wvykwps.png"
+        "appearanceUrl": "https://i.imgur.com/wvykwps.png",
+        "appearanceUrls": [
+          "https://i.imgur.com/wvykwps.png",
+          "https://i.imgur.com/jUZXFuT.png"
+        ],
+        "appearanceCaptions": [
+          "1",
+          "1.1"
+        ]
       },
       {
         "name": "Attack",
@@ -3370,7 +3579,7 @@
     "releaseDate": "September 21st, 2012",
     "imageUrl": "https://i.imgur.com/WkHSthH.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=20722177",
-    "notes": "• Batoro's stun duration was lowered from 2 turns to 1 turn on February 28th, 2020; more information can be found in the February 28th, 2020 Design Notes.",
+    "notes": "• Batoro's stun duration was lowered from 2 turns to 1 turn on February 28th, 2020; more information can be found in the  February 28th, 2020 Design Notes.",
     "alsoSee": [],
     "tags": [
       "batoro",
@@ -3454,7 +3663,15 @@
         "damageType": "Pierce",
         "element": "Fear",
         "buttonImageUrl": "https://i.imgur.com/HIust3s.png",
-        "appearanceUrl": "https://i.imgur.com/1t5N9HS.png"
+        "appearanceUrl": "https://i.imgur.com/1t5N9HS.png",
+        "appearanceUrls": [
+          "https://i.imgur.com/1t5N9HS.png",
+          "https://i.imgur.com/ChD0P9p.png"
+        ],
+        "appearanceCaptions": [
+          "1",
+          "1.1"
+        ]
       },
       {
         "name": "Soul Piercer",
@@ -3465,7 +3682,15 @@
         "damageType": "Pierce",
         "element": "Fear",
         "buttonImageUrl": "https://i.imgur.com/ZXth7sT.png",
-        "appearanceUrl": "https://i.imgur.com/Hp3szbu.png"
+        "appearanceUrl": "https://i.imgur.com/Hp3szbu.png",
+        "appearanceUrls": [
+          "https://i.imgur.com/Hp3szbu.png",
+          "https://i.imgur.com/6AqHP1m.png"
+        ],
+        "appearanceCaptions": [
+          "1",
+          "1.1"
+        ]
       },
       {
         "name": "Attack",
@@ -3475,7 +3700,15 @@
         "damageType": "Pierce",
         "element": "Fear",
         "buttonImageUrl": "https://i.imgur.com/CTnLIC6.png",
-        "appearanceUrl": "https://i.imgur.com/W4nI2hG.png"
+        "appearanceUrl": "https://i.imgur.com/W4nI2hG.png",
+        "appearanceUrls": [
+          "https://i.imgur.com/W4nI2hG.png",
+          "https://i.imgur.com/tsBOyIr.png"
+        ],
+        "appearanceCaptions": [
+          "1",
+          "1.1"
+        ]
       }
     ],
     "rarity": "Unknown",
@@ -3634,7 +3867,15 @@
         "damageType": "Pierce",
         "element": "Nature",
         "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/BugKid-Attack1.0.png"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/BugKid-Attack1.0.png",
+        "appearanceUrls": [
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/BugKid-Attack1.0.png",
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/BugKid-Attack1.1.png"
+        ],
+        "appearanceCaptions": [
+          "1",
+          "1.1"
+        ]
       }
     ],
     "rarity": "Unknown",
@@ -3717,7 +3958,17 @@
         "damageType": "Melee",
         "element": "Metal",
         "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/CaptainLestrad-Button01-Channel.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/CaptainLestrad-ChannelHemlock1.0.png"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/CaptainLestrad-ChannelHemlock1.0.png",
+        "appearanceUrls": [
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/CaptainLestrad-ChannelHemlock1.0.png",
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/CaptainLestrad-ChannelHemlock1.1.png",
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/CaptainLestrad-ChannelHemlock1.2.png"
+        ],
+        "appearanceCaptions": [
+          "1",
+          "1.1",
+          "1.2"
+        ]
       },
       {
         "name": "Dragon's Sight",
@@ -3741,7 +3992,17 @@
         "damageType": "Melee",
         "element": "Metal",
         "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/CaptainLestrad-Button03-Rush.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/CaptainLestrad-Rush1.0.png"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/CaptainLestrad-Rush1.0.png",
+        "appearanceUrls": [
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/CaptainLestrad-Rush1.0.png",
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/CaptainLestrad-Rush1.1.png",
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/CaptainLestrad-Rush1.2.png"
+        ],
+        "appearanceCaptions": [
+          "1",
+          "1.1",
+          "1.2"
+        ]
       },
       {
         "name": "Pierce",
@@ -4129,7 +4390,7 @@
         "title": "Cranix (Character Page)"
       }
     ],
-    "notes": "• This guest is linked to a real player's character ID, and as such all variables are subject to change, such as in an Aeris Minor Tournament.",
+    "notes": "• This guest is linked to a real player's character ID, and as such all variables are subject to change, such as in an  Aeris Minor Tournament.",
     "alsoSee": [],
     "tags": [
       "cranix",
@@ -4268,7 +4529,7 @@
         "title": "Dain Lorilann (Character Page)"
       }
     ],
-    "notes": "• This guest is linked to a real player's character ID, and as such all variables are subject to change, such as in an Aeris Minor Tournament.",
+    "notes": "• This guest is linked to a real player's character ID, and as such all variables are subject to change, such as in an  Aeris Minor Tournament.",
     "alsoSee": [],
     "tags": [
       "dain",
@@ -4328,7 +4589,17 @@
         "damageType": "Magic",
         "element": "Metal",
         "buttonImageUrl": "https://i.imgur.com/wC69Rla.png",
-        "appearanceUrl": "https://i.imgur.com/Kg9dInG.png"
+        "appearanceUrl": "https://i.imgur.com/Kg9dInG.png",
+        "appearanceUrls": [
+          "https://i.imgur.com/Kg9dInG.png",
+          "https://i.imgur.com/908DLRl.png",
+          "https://i.imgur.com/EmlvatH.png"
+        ],
+        "appearanceCaptions": [
+          "1",
+          "1.1",
+          "1.2"
+        ]
       },
       {
         "name": "Attack",
@@ -4679,7 +4950,15 @@
         "damageType": "Magic",
         "element": "Energy",
         "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Eirn-Button05-Drive.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Eirn-Overdrive1.0.png"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Eirn-Overdrive1.0.png",
+        "appearanceUrls": [
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Eirn-Overdrive1.0.png",
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Eirn-Attack.png"
+        ],
+        "appearanceCaptions": [
+          "1",
+          "1.1"
+        ]
       },
       {
         "name": "Attack",
@@ -4783,7 +5062,7 @@
         "title": "Elgert (Character Page)"
       }
     ],
-    "notes": "• This guest is linked to a real player's character ID, and as such all variables are subject to change, such as in an Aeris Minor Tournament.",
+    "notes": "• This guest is linked to a real player's character ID, and as such all variables are subject to change, such as in an  Aeris Minor Tournament.",
     "alsoSee": [],
     "tags": [
       "elgert",
@@ -4916,7 +5195,7 @@
     "releaseDate": "December 29th, 2023",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Etaos&Nirios.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22413732",
-    "notes": "• Tooltips for this guest was updated on April 25th, 2025.",
+    "notes": "• Tooltips for this guest was updated on  April 25th, 2025.",
     "alsoSee": [],
     "tags": [
       "etaos",
@@ -5012,7 +5291,17 @@
         "damageType": "Melee",
         "element": "Nature",
         "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Fae-Button02-Acro.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Fae-Acrobatics1.0.png"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Fae-Acrobatics1.0.png",
+        "appearanceUrls": [
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Fae-Acrobatics1.0.png",
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Fae-Acrobatics1.1.png",
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Fae-Acrobatics1.2.png"
+        ],
+        "appearanceCaptions": [
+          "1",
+          "1.1",
+          "1.2"
+        ]
       },
       {
         "name": "Attack",
@@ -5135,7 +5424,15 @@
         "damageType": "As weapon",
         "element": "As weapon",
         "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Faust-Attack1.0.png"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Faust-Attack1.0.png",
+        "appearanceUrls": [
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Faust-Attack1.0.png",
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Faust-Attack1.1.png"
+        ],
+        "appearanceCaptions": [
+          "1",
+          "1.1"
+        ]
       },
       {
         "name": "Overlimit",
@@ -5146,7 +5443,17 @@
         "damageType": "As weapon",
         "element": "As weapon",
         "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Faust-Button02-Over.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Faust-Overlimit1.0.png"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Faust-Overlimit1.0.png",
+        "appearanceUrls": [
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Faust-Overlimit1.0.png",
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Faust-Overlimit1.1.png",
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Faust-Overlimit1.2.png"
+        ],
+        "appearanceCaptions": [
+          "1",
+          "1.1",
+          "1.2"
+        ]
       },
       {
         "name": "The Bargain",
@@ -5257,7 +5564,15 @@
         "damageType": "Melee",
         "element": "Metal",
         "buttonImageUrl": "https://i.imgur.com/3MygmU6.png",
-        "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/GjoobDouble1pic.png"
+        "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/GjoobDouble1pic.png",
+        "appearanceUrls": [
+          "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/GjoobDouble1pic.png",
+          "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/GjoobDouble2pic.png"
+        ],
+        "appearanceCaptions": [
+          "1",
+          "1.1"
+        ]
       }
     ],
     "rarity": "Unknown",
@@ -5380,7 +5695,15 @@
             "damageType": "Melee",
             "element": "Metal",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Galanoth2-Button03-Dagger.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Galanoth2-DaggerToss1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Galanoth2-DaggerToss1.0.png",
+            "appearanceUrls": [
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Galanoth2-DaggerToss1.0.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Galanoth2-DaggerToss1.1.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "1.1"
+            ]
           },
           {
             "name": "Fierce Spear Stab",
@@ -5391,7 +5714,15 @@
             "damageType": "Melee",
             "element": "Metal",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Galanoth2-Button04-Spear.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Galanoth2-Slayer'sSpirit.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Galanoth2-Slayer'sSpirit.png",
+            "appearanceUrls": [
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Galanoth2-Slayer'sSpirit.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Galanoth2-FierceSpearStab.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "1.1"
+            ]
           },
           {
             "name": "Attack",
@@ -5446,7 +5777,7 @@
             "crit": "0%"
           }
         },
-        "notes": "• Galanoth (2)'s tooltips were updated on April 11th, 2025."
+        "notes": "• Galanoth (2)'s tooltips were updated on  April 11th, 2025."
       },
       {
         "levelNumber": 2,
@@ -5512,7 +5843,15 @@
             "damageType": "Melee",
             "element": "Metal",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Galanoth3-Button03-Dagger.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Galanoth3-DaggerToss1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Galanoth3-DaggerToss1.0.png",
+            "appearanceUrls": [
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Galanoth3-DaggerToss1.0.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Galanoth3-DaggerToss1.1.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "1.1"
+            ]
           },
           {
             "name": "Fierce Sword Stab",
@@ -5523,7 +5862,15 @@
             "damageType": "Melee",
             "element": "Metal",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Galanoth3-Button04-Sword.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Galanoth3-Slayer'sSpirit.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Galanoth3-Slayer'sSpirit.png",
+            "appearanceUrls": [
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Galanoth3-Slayer'sSpirit.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Galanoth3-FierceSwordStab.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "1.1"
+            ]
           },
           {
             "name": "Attack",
@@ -5577,7 +5924,7 @@
             "crit": "0%"
           }
         },
-        "notes": "• Galanoth (3) has a series of unconventional stats in the quest Calamity; Pierce: 5, Crit: 5, Bonus: 50\n• Galanoth (3) has a series of unconventional stats in the quest Fate's Flow (Part 1); Crit: 5, Bonus: 100"
+        "notes": "• Galanoth (3) has a series of unconventional stats in the quest  Calamity; Pierce: 5, Crit: 5, Bonus: 50\n• Galanoth (3) has a series of unconventional stats in the quest  Fate's Flow (Part 1); Crit: 5, Bonus: 100"
       },
       {
         "levelNumber": 3,
@@ -5619,7 +5966,15 @@
             "damageType": "Melee",
             "element": "Metal",
             "buttonImageUrl": "https://imgur.com/1kW3bIi.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Galanoth2-DaggerToss1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Galanoth2-DaggerToss1.0.png",
+            "appearanceUrls": [
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Galanoth2-DaggerToss1.0.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Galanoth2-DaggerToss1.1.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "1.1"
+            ]
           },
           {
             "name": "Spear",
@@ -5756,7 +6111,15 @@
         "damageType": "Melee",
         "element": "Metal",
         "buttonImageUrl": "https://i.imgur.com/3MygmU6.png",
-        "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/GrrolDouble1pic.png"
+        "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/GrrolDouble1pic.png",
+        "appearanceUrls": [
+          "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/GrrolDouble1pic.png",
+          "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/GrrolDouble2pic.png"
+        ],
+        "appearanceCaptions": [
+          "1",
+          "1.1"
+        ]
       }
     ],
     "rarity": "Unknown",
@@ -5837,7 +6200,8 @@
         "cooldown": "0",
         "damageType": "Melee",
         "element": "Ice",
-        "buttonImageUrl": "http://i.imgur.com/e46zW.png"
+        "buttonImageUrl": "http://i.imgur.com/e46zW.png",
+        "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/IcemasterYetiAvalanche.jpg"
       },
       {
         "name": "Snowball",
@@ -5847,7 +6211,8 @@
         "cooldown": "0",
         "damageType": "Melee",
         "element": "Ice",
-        "buttonImageUrl": "http://i.imgur.com/X4tVu.png"
+        "buttonImageUrl": "http://i.imgur.com/X4tVu.png",
+        "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/IcemasterYetiSnow.jpg"
       },
       {
         "name": "Attack",
@@ -5856,7 +6221,8 @@
         "cooldown": "0",
         "damageType": "Melee",
         "element": "Ice",
-        "buttonImageUrl": "http://i.imgur.com/MTcDrk1.png"
+        "buttonImageUrl": "http://i.imgur.com/MTcDrk1.png",
+        "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/IcemasterYetiAttack.jpg"
       }
     ],
     "rarity": "Unknown",
@@ -5935,7 +6301,8 @@
         "cooldown": "4",
         "damageType": "As last attack",
         "element": "As last attack",
-        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/PirateR1-Button05-Quick.png"
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/PirateR1-Button05-Quick.png",
+        "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Imaru%20Quick%20Shot%20pic.bmp"
       },
       {
         "name": "Shield",
@@ -5945,7 +6312,8 @@
         "cooldown": "4",
         "damageType": "As last attack",
         "element": "As last attack",
-        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/PirateR1-Button07-Shield.png"
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/PirateR1-Button07-Shield.png",
+        "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Imaru%20Shield%20pic.bmp"
       },
       {
         "name": "Attack",
@@ -5954,7 +6322,8 @@
         "cooldown": "0",
         "damageType": "As last attack",
         "element": "As last attack",
-        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png"
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png",
+        "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Imaru%20Attack%20pic.bmp"
       },
       {
         "name": "Scurvy",
@@ -5964,7 +6333,8 @@
         "cooldown": "9",
         "damageType": "As last attack",
         "element": "As last attack",
-        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/PirateR1-Button08-Scurvy.png"
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/PirateR1-Button08-Scurvy.png",
+        "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Imaru%20Scurvy%20pic.bmp"
       },
       {
         "name": "Sneaky",
@@ -5975,7 +6345,8 @@
         "cooldown": "4",
         "damageType": "As last attack",
         "element": "As last attack",
-        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/PirateR1-Button09-Sneaky.png"
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/PirateR1-Button09-Sneaky.png",
+        "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Imaru%20Sneaky%20pic.bmp"
       },
       {
         "name": "1st Mate Aid",
@@ -5986,7 +6357,8 @@
         "cooldown": "9",
         "damageType": "N/A",
         "element": "N/A",
-        "buttonImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/PirateR1-Button10-Aid.png"
+        "buttonImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/PirateR1-Button10-Aid.png",
+        "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/PirateR1-1stMateAid.png"
       },
       {
         "name": "Shout",
@@ -5996,7 +6368,8 @@
         "cooldown": "9",
         "damageType": "N/A",
         "element": "N/A",
-        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/PirateR1-Button11-Shout.png"
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/PirateR1-Button11-Shout.png",
+        "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Imaru%20Shout%20pic.bmp"
       },
       {
         "name": "LimeAid",
@@ -6006,7 +6379,8 @@
         "cooldown": "9",
         "damageType": "N/A",
         "element": "N/A",
-        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/PirateR1-Button12-LimeAid.png"
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/PirateR1-Button12-LimeAid.png",
+        "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Imaru%20LimeAid%20pic.bmp"
       }
     ],
     "rarity": "Unknown",
@@ -6178,7 +6552,15 @@
         "damageType": "Magic",
         "element": "Wind",
         "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/KaraSuLema-Button01-Stun.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/KaraSuLema-Stun1.0.png"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/KaraSuLema-Stun1.0.png",
+        "appearanceUrls": [
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/KaraSuLema-Stun1.0.png",
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/KaraSuLema-Stun1.1.png"
+        ],
+        "appearanceCaptions": [
+          "1",
+          "1.1"
+        ]
       },
       {
         "name": "Nature's Wonder",
@@ -6189,7 +6571,17 @@
         "damageType": "Magic",
         "element": "Wind",
         "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/KaraSuLema-Button02-Wonder.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/KaraSuLema-NaturesWonder1.0.png"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/KaraSuLema-NaturesWonder1.0.png",
+        "appearanceUrls": [
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/KaraSuLema-NaturesWonder1.0.png",
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/KaraSuLema-NaturesWonder1.1.png",
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/KaraSuLema-NaturesWonder1.2.png"
+        ],
+        "appearanceCaptions": [
+          "1",
+          "1.1",
+          "1.2"
+        ]
       },
       {
         "name": "Breeze",
@@ -6218,7 +6610,7 @@
     "releaseDate": "August 13th, 2022",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/KaraSuLema.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=21290875",
-    "notes": "• Kara SuLema was previously attainable from the following retired access point: Facing Z -> Add Kara\n• Kara has a series of unconventional stats in the quests Fate's Flow (Part 1) and Fallen Facade; INT: 0, CHA: 0, LUK: 0, Crit: 5\n• Kara SuLema's stun duration was lowered from 2 turns to 1 turn on February 28th, 2020.",
+    "notes": "• Kara SuLema was previously attainable from the following retired access point:  Facing Z -> Add Kara\n• Kara has a series of unconventional stats in the quests  Fate's Flow (Part 1) and  Fallen Facade; INT: 0, CHA: 0, LUK: 0, Crit: 5\n• Kara SuLema's stun duration was lowered from 2 turns to 1 turn on  February 28th, 2020.",
     "alsoSee": [],
     "tags": [
       "kara",
@@ -6340,7 +6732,7 @@
     "releaseDate": "July 22nd, 2022",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Kassandra.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22404167",
-    "notes": "• Seek's MP in Jungle Adventure was reduced from 40 to 20 to match with the subsequent quests on March 8th, 2024; Kassandra's tooltips were also updated on that date.",
+    "notes": "• Seek's MP in  Jungle Adventure was  reduced from 40 to 20 to match with the subsequent quests on  March 8th, 2024; Kassandra's tooltips were also updated on that date.",
     "alsoSee": [],
     "tags": [
       "kassandra",
@@ -6418,7 +6810,8 @@
         "cooldown": "0",
         "damageType": "Melee",
         "element": "Metal",
-        "buttonImageUrl": "http://i.imgur.com/v3RnhRG.png"
+        "buttonImageUrl": "http://i.imgur.com/v3RnhRG.png",
+        "appearanceUrl": "http://i.imgur.com/LmxXKia.png"
       },
       {
         "name": "Smack",
@@ -6428,7 +6821,8 @@
         "cooldown": "0",
         "damageType": "Melee",
         "element": "Metal",
-        "buttonImageUrl": "http://i.imgur.com/ZsqS3wl.png"
+        "buttonImageUrl": "http://i.imgur.com/ZsqS3wl.png",
+        "appearanceUrl": "http://i.imgur.com/lQXYYEF.png"
       },
       {
         "name": "Attack",
@@ -6437,7 +6831,8 @@
         "cooldown": "0",
         "damageType": "Melee",
         "element": "Metal",
-        "buttonImageUrl": "http://i.imgur.com/uSKSqoU.png"
+        "buttonImageUrl": "http://i.imgur.com/uSKSqoU.png",
+        "appearanceUrl": "http://i.imgur.com/IcClYk5.png"
       }
     ],
     "rarity": "Unknown",
@@ -6538,7 +6933,15 @@
         "damageType": "Melee",
         "element": "Metal",
         "buttonImageUrl": "https://i.imgur.com/3MygmU6.png",
-        "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/KingLinusDouble1pic.png"
+        "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/KingLinusDouble1pic.png",
+        "appearanceUrls": [
+          "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/KingLinusDouble1pic.png",
+          "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/KingLinusDouble2pic.png"
+        ],
+        "appearanceCaptions": [
+          "1",
+          "1.1"
+        ]
       }
     ],
     "rarity": "Unknown",
@@ -6631,7 +7034,7 @@
         "damageType": "Melee",
         "element": "Fire OR Metal",
         "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Konnan-Button02-Jab.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Konnan-Button02-Jab-Old.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Konnan-Jab.png",
         "notes": "• Skill button was updated on May 15th, 2026, replacing its old appearance."
       },
       {
@@ -6651,7 +7054,7 @@
     "releaseDate": "June 22nd, 2012",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Konnan.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=20422674",
-    "notes": "• #In the quest The Merge, Konnan's Pierce Avoidance stat will instead be 0.\n• Konnan, named as Apprentice, was previously attainable from the following access points: Dreamscape, Nightmares, and Forging.\n• In the quest The Merge, his name will instead be Apprentice.\n• Konnan's appearance was updated on February 20th, 2026.\n• 'Controlled Flames' skill was added on May 15th, 2026.",
+    "notes": "• #In the quest  The Merge, Konnan's Pierce Avoidance stat will instead be 0.\n• Konnan, named as Apprentice, was previously attainable from the following access points:  Dreamscape,  Nightmares, and  Forging.\n• In the quest  The Merge, his name will instead be Apprentice.\n• Konnan's appearance was updated on  February 20th, 2026.\n• 'Controlled Flames' skill was added on  May 15th, 2026.",
     "alsoSee": [],
     "tags": [
       "konnan",
@@ -6803,7 +7206,7 @@
     "releaseDate": "May 3rd, 2013",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Maguspic.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22100154",
-    "notes": "• Magus Hansa (2) was previously attainable from the following retired access point: Sands of Eternity -> Add Hansa\n• Hansa has a series of unconventional stats in the quests Fate's Flow (Part 1) and Fallen Facade; INT: 0, LUK: 0, END: 0, WIS: 0, Melee: 5, Magic: 5, Crit: 5",
+    "notes": "• Magus Hansa (2) was previously attainable from the following retired access point:  Sands of Eternity -> Add Hansa\n• Hansa has a series of unconventional stats in the quests  Fate's Flow (Part 1) and  Fallen Facade; INT: 0, LUK: 0, END: 0, WIS: 0, Melee: 5, Magic: 5, Crit: 5",
     "alsoSee": [],
     "tags": [
       "magus",
@@ -6954,7 +7357,7 @@
     "releaseDate": "August 13th, 2022",
     "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Maguspic.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=21274402",
-    "notes": "• Magus Hansa (2) was previously attainable from the following retired access point: Sands of Eternity -> Add Hansa\n• Hansa has a series of unconventional stats in the quests Fate's Flow (Part 1) and Fallen Facade; INT: 0, LUK: 0, END: 0, WIS: 0, Melee: 5, Magic: 5, Crit: 5",
+    "notes": "• Magus Hansa (2) was previously attainable from the following retired access point:  Sands of Eternity -> Add Hansa\n• Hansa has a series of unconventional stats in the quests  Fate's Flow (Part 1) and  Fallen Facade; INT: 0, LUK: 0, END: 0, WIS: 0, Melee: 5, Magic: 5, Crit: 5",
     "alsoSee": [],
     "tags": [
       "magus",
@@ -7191,7 +7594,7 @@
             "crit": "0%"
           }
         },
-        "notes": "• Mazurek (2) has a series of unconventional stats in the access points The Autumn Wind and The Quest for More Booty! - Choose a Side / The Quest for More Booty! - Mazurek; DEX: 5, CHA: 10, LUK: 5, Bonus: 75, Crit: 5, Pierce: 0\n• Mazurek (2) has a series of unconventional stats in the access point A Pirate's Revenge; Bonus: 20, Crit: 25, Melee: 15, Pierce: 15"
+        "notes": "• Mazurek (2) has a series of unconventional stats in the access points  The Autumn Wind and  The Quest for More Booty! - Choose a Side /  The Quest for More Booty! - Mazurek; DEX: 5, CHA: 10, LUK: 5, Bonus: 75, Crit: 5, Pierce: 0\n• Mazurek (2) has a series of unconventional stats in the access point  A Pirate's Revenge; Bonus: 20, Crit: 25, Melee: 15, Pierce: 15"
       },
       {
         "levelNumber": 2,
@@ -7397,7 +7800,7 @@
         "title": "Mennace (Character Page)"
       }
     ],
-    "notes": "• This guest is linked to a real player's character ID, and as such all variables are subject to change, such as in an Aeris Minor Tournament.",
+    "notes": "• This guest is linked to a real player's character ID, and as such all variables are subject to change, such as in an  Aeris Minor Tournament.",
     "alsoSee": [],
     "tags": [
       "mennace",
@@ -7446,7 +7849,17 @@
         "damageType": "Magic",
         "element": "Nature",
         "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mihyun-Button01-Combo.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mihyun-StaffCombo1.0.png"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mihyun-StaffCombo1.0.png",
+        "appearanceUrls": [
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mihyun-StaffCombo1.0.png",
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mihyun-StaffCombo1.1.png",
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mihyun-StaffCombo1.2.png"
+        ],
+        "appearanceCaptions": [
+          "1",
+          "1.1",
+          "1.2"
+        ]
       },
       {
         "name": "Staff Jab",
@@ -7523,7 +7936,7 @@
     "releaseDate": "July 17th, 2026",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mihyun.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22426774",
-    "notes": "• Mihyun begins the battle with 'Heroic Boon' (+60 All Resist, -60 Health Resist) permanently applied to herself.\n• Mihyun is permanently affected by a stack mechanic called Staff charges.\n • Staff charges starts at 0 and caps at 5.\n • Mihyun begins the battle with 5 Staff charges and can be consumed to use 'Water Shot', 'Full Blast', and 'Bubble Burst' skills.\n • Staff charges can only be gained upon using the 'Reload' skill.",
+    "notes": "• Mihyun begins the battle with 'Heroic Boon' (+60 All Resist, -60 Health Resist) permanently applied to herself.\n• Mihyun is permanently affected by a stack mechanic called Staff charges.\n  • Staff charges starts at 0 and caps at 5.\n  • Mihyun begins the battle with 5 Staff charges and can be consumed to use 'Water Shot', 'Full Blast', and 'Bubble Burst' skills.\n  • Staff charges can only be gained upon using the 'Reload' skill.",
     "alsoSee": [],
     "tags": [
       "mihyun",
@@ -7650,7 +8063,17 @@
             "damageType": "Melee",
             "element": "Metal",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mritha-Button03-Rush.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mritha-Rush1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mritha-Rush1.0.png",
+            "appearanceUrls": [
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mritha-Rush1.0.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mritha-Rush1.1.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mritha-Rush1.2.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "1.1",
+              "1.2"
+            ]
           },
           {
             "name": "Pierce",
@@ -7716,7 +8139,7 @@
             "crit": "0%"
           }
         },
-        "notes": "• Mritha (1) was previously attainable from the following retired DA access point: War of the Dragon Rose - Rose Front -> Rose Camp! -> Invite Mritha as a guest\n• Mritha (1) has a series of unconventional stats in the quest Saellah; Melee: 25, Pierce: 10, Magic: 30, Block: 50, Bonus: 25"
+        "notes": "• Mritha (1) was previously attainable from the following retired DA access point:  War of the Dragon Rose - Rose Front -> Rose Camp! -> Invite Mritha as a guest\n• Mritha (1) has a series of unconventional stats in the quest  Saellah; Melee: 25, Pierce: 10, Magic: 30, Block: 50, Bonus: 25"
       },
       {
         "levelNumber": 2,
@@ -7747,7 +8170,17 @@
             "damageType": "Melee",
             "element": "Metal",
             "buttonImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Mritha2-Button01-Rush.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mritha-Rush1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mritha-Rush1.0.png",
+            "appearanceUrls": [
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mritha-Rush1.0.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mritha-Rush1.1.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mritha-Rush1.2.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "1.1",
+              "1.2"
+            ]
           },
           {
             "name": "Pierce",
@@ -8057,7 +8490,7 @@
             "dodge": "0"
           }
         },
-        "notes": "• Niki (1) was previously attainable from the following retired DA access points: War of the Dragon Rose - Dragon Front -> Dragon Camp! -> Invite Niki as a guest, After the War -> Invite Niki as a guest\n• Niki (1) previously had the following stats; Pierce: 5, Bonus: 60, and the 'Barrier' skill previously only provided +140 Parry Defense, with a cooldown of 6 turns."
+        "notes": "• Niki (1) was previously attainable from the following retired DA access points:  War of the Dragon Rose - Dragon Front -> Dragon Camp! -> Invite Niki as a guest,  After the War -> Invite Niki as a guest\n• Niki (1) previously had the following stats; Pierce: 5, Bonus: 60, and the 'Barrier' skill previously only provided +140 Parry Defense, with a cooldown of 6 turns."
       },
       {
         "levelNumber": 2,
@@ -8421,7 +8854,15 @@
         "damageType": "Magic",
         "element": "???",
         "buttonImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/NytheraRapturepic.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Nythera-Rapture1.0.png"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Nythera-Rapture1.0.png",
+        "appearanceUrls": [
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Nythera-Rapture1.0.png",
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Nythera-Rapture1.1.png"
+        ],
+        "appearanceCaptions": [
+          "1",
+          "1.1"
+        ]
       },
       {
         "name": "Syphon",
@@ -8526,7 +8967,8 @@
         "cooldown": "0",
         "damageType": "Melee",
         "element": "Nature",
-        "buttonImageUrl": "http://i.imgur.com/MTcDrk1.png"
+        "buttonImageUrl": "http://i.imgur.com/MTcDrk1.png",
+        "appearanceUrl": "https://i.imgur.com/xzCx1ik.png"
       }
     ],
     "rarity": "Unknown",
@@ -8534,7 +8976,7 @@
     "releaseDate": "September 15th, 2018",
     "imageUrl": "https://i.imgur.com/oEZhPmL.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22348084",
-    "notes": "• Pepper Merchant was previously attainable from the following retired access point: An Elegy of Ice and Fire.",
+    "notes": "• Pepper Merchant was previously attainable from the following retired access point:  An Elegy of Ice and Fire.",
     "alsoSee": [],
     "tags": [
       "pepper",
@@ -8616,7 +9058,16 @@
             "cooldown": "0",
             "damageType": "Magic",
             "element": "Fire",
-            "buttonImageUrl": "http://i.imgur.com/MTcDrk1.png"
+            "buttonImageUrl": "http://i.imgur.com/MTcDrk1.png",
+            "appearanceUrl": "http://i.imgur.com/6LuPETA.png",
+            "appearanceUrls": [
+              "http://i.imgur.com/6LuPETA.png",
+              "http://i.imgur.com/FfAVvI8.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "2"
+            ]
           }
         ],
         "guestStats": {
@@ -8676,7 +9127,16 @@
             "cooldown": "0",
             "damageType": "Magic",
             "element": "Fire",
-            "buttonImageUrl": "http://i.imgur.com/MTcDrk1.png"
+            "buttonImageUrl": "http://i.imgur.com/MTcDrk1.png",
+            "appearanceUrl": "http://i.imgur.com/6LuPETA.png",
+            "appearanceUrls": [
+              "http://i.imgur.com/6LuPETA.png",
+              "http://i.imgur.com/FfAVvI8.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "2"
+            ]
           }
         ],
         "guestStats": {
@@ -8763,7 +9223,15 @@
         "damageType": "Melee",
         "element": "Metal",
         "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Professor-Attack1.png"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Professor-Attack1.png",
+        "appearanceUrls": [
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Professor-Attack1.png",
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Professor-Attack2.png"
+        ],
+        "appearanceCaptions": [
+          "1",
+          "2"
+        ]
       }
     ],
     "rarity": "Unknown",
@@ -8771,7 +9239,7 @@
     "releaseDate": "August 3rd, 2012",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Professor.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=20575037",
-    "notes": "• Professor was previously attainable from the access point: Forging.",
+    "notes": "• Professor was previously attainable from the access point:  Forging.",
     "alsoSee": [],
     "tags": [
       "professor",
@@ -8853,7 +9321,8 @@
         "cooldown": "15",
         "damageType": "Melee",
         "element": "Metal",
-        "buttonImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/RalonBoppic.png"
+        "buttonImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/RalonBoppic.png",
+        "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/RalonStrikepic.png"
       },
       {
         "name": "Attack!",
@@ -8862,7 +9331,8 @@
         "cooldown": "0",
         "damageType": "Melee",
         "element": "Metal",
-        "buttonImageUrl": "https://i.imgur.com/MWb3liE.png"
+        "buttonImageUrl": "https://i.imgur.com/MWb3liE.png",
+        "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/RalonAttackpic.png"
       }
     ],
     "rarity": "Unknown",
@@ -8961,7 +9431,15 @@
             "damageType": "Magic",
             "element": "Energy",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Raven2-Button01-Shock.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Raven2-ShockingDash1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Raven2-ShockingDash1.0.png",
+            "appearanceUrls": [
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Raven2-ShockingDash1.0.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Raven2-ShockingDash1.1.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "1.1"
+            ]
           },
           {
             "name": "Charged Attack",
@@ -8972,7 +9450,15 @@
             "damageType": "Magic",
             "element": "Energy",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Raven2-Button02-Charged.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Raven2-ChargedAttack1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Raven2-ChargedAttack1.0.png",
+            "appearanceUrls": [
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Raven2-ChargedAttack1.0.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Raven2-ChargedAttack1.1.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "1.1"
+            ]
           },
           {
             "name": "Energy Shield",
@@ -8993,7 +9479,15 @@
             "damageType": "Magic",
             "element": "Energy",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Raven2-Attack1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Raven2-Attack1.0.png",
+            "appearanceUrls": [
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Raven2-Attack1.0.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Raven2-Attack1.1.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "1.1"
+            ]
           }
         ],
         "guestStats": {
@@ -9037,7 +9531,7 @@
             "crit": "0%"
           }
         },
-        "notes": "• Raven's stun duration was lowered from 2 turns to 1 turn on February 28th, 2020."
+        "notes": "• Raven's stun duration was lowered from 2 turns to 1 turn on  February 28th, 2020."
       },
       {
         "levelNumber": 2,
@@ -9067,7 +9561,15 @@
             "damageType": "Magic",
             "element": "Light",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Raven2-Button01-Shock.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Raven3-ShockingDash1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Raven3-ShockingDash1.0.png",
+            "appearanceUrls": [
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Raven3-ShockingDash1.0.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Raven3-ShockingDash1.1.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "1.1"
+            ]
           },
           {
             "name": "Charged Attack",
@@ -9078,7 +9580,15 @@
             "damageType": "Magic",
             "element": "Light",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Raven2-Button02-Charged.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Raven3-ChargedAttack1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Raven3-ChargedAttack1.0.png",
+            "appearanceUrls": [
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Raven3-ChargedAttack1.0.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Raven3-ChargedAttack1.1.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "1.1"
+            ]
           },
           {
             "name": "Energy Shield",
@@ -9099,7 +9609,15 @@
             "damageType": "Magic",
             "element": "Light",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Raven3-Attack1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Raven3-Attack1.0.png",
+            "appearanceUrls": [
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Raven3-Attack1.0.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Raven3-Attack1.1.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "1.1"
+            ]
           }
         ],
         "guestStats": {
@@ -9178,7 +9696,15 @@
             "damageType": "Magic",
             "element": "Energy",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Raven-Button01-Waltz.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Raven-BlackWidowWaltz1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Raven-BlackWidowWaltz1.0.png",
+            "appearanceUrls": [
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Raven-BlackWidowWaltz1.0.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Raven-BlackWidowWaltz1.1.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "1.1"
+            ]
           },
           {
             "name": "Charged Attack",
@@ -9212,7 +9738,15 @@
             "damageType": "Magic",
             "element": "Energy",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Raven-Attack1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Raven-Attack1.0.png",
+            "appearanceUrls": [
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Raven-Attack1.0.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Raven-Attack1.1.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "1.1"
+            ]
           }
         ],
         "retired": true,
@@ -9396,7 +9930,7 @@
     "releaseDate": "September 19th, 2014",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Rhubarb.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=21931193",
-    "notes": "• Rhubarb has a series of unconventional stats in the zones The Quest for More Booty! - Choose a Side / The Quest for More Booty! - Rhubarb; Bonus: 20, Crit: 25, Melee: 15, Pierce: 15, Magic: 0, Parry: 10",
+    "notes": "• Rhubarb has a series of unconventional stats in the zones  The Quest for More Booty! - Choose a Side /  The Quest for More Booty! - Rhubarb; Bonus: 20, Crit: 25, Melee: 15, Pierce: 15, Magic: 0, Parry: 10",
     "alsoSee": [],
     "tags": [
       "rhubarb",
@@ -9581,7 +10115,7 @@
             "crit": "0%"
           }
         },
-        "notes": "• *In the quests Altar Hill and At the Gate, her element is erroneously listed as Light.\n• Riadne (2)'s tooltips were updated on April 11th, 2025."
+        "notes": "• *In the quests  Altar Hill and  At the Gate, her element is erroneously listed as Light.\n• Riadne (2)'s tooltips were updated on  April 11th, 2025."
       },
       {
         "levelNumber": 2,
@@ -9749,7 +10283,15 @@
             "damageType": "Pierce",
             "element": "Nature",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Robina1-Button01-Precise.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Robina1-Attack1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Robina1-Attack1.0.png",
+            "appearanceUrls": [
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Robina1-Attack1.0.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Robina1-Attack1.1.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "1.1"
+            ]
           },
           {
             "name": "Piercing Arrow",
@@ -9760,7 +10302,15 @@
             "damageType": "Pierce",
             "element": "Nature",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Robina1-Button02-Pierce.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Robina1-Attack1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Robina1-Attack1.0.png",
+            "appearanceUrls": [
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Robina1-Attack1.0.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Robina1-Attack1.1.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "1.1"
+            ]
           },
           {
             "name": "Attack",
@@ -9771,7 +10321,15 @@
             "damageType": "Pierce",
             "element": "Nature",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Robina1-Attack1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Robina1-Attack1.0.png",
+            "appearanceUrls": [
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Robina1-Attack1.0.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Robina1-Attack1.1.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "1.1"
+            ]
           }
         ],
         "guestStats": {
@@ -9815,7 +10373,7 @@
             "crit": "0%"
           }
         },
-        "notes": "• Robina (1) was previously attainable from the following retired access point: Dragon Attack at Willowshire! -> Team up! -> Yes\n• Robina (1) in Surewould Forest (Books 1 and 2) uses the Wood element instead of Nature.\n• The following changes were implemented on April 11th, 2025:\n • Tooltips were updated for this guest.\n • Two new skills were added.",
+        "notes": "• Robina (1) was previously attainable from the following retired access point:  Dragon Attack at Willowshire! -> Team up! -> Yes\n• Robina (1) in  Surewould Forest (Books 1 and 2) uses the Wood element instead of Nature.\n• The following changes were implemented on  April 11th, 2025:\n  • Tooltips were updated for this guest.\n  • Two new skills were added.",
         "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Robina1.png"
       },
       {
@@ -9845,7 +10403,15 @@
             "damageType": "Pierce",
             "element": "Nature",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Robina2-Attack1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Robina2-Attack1.0.png",
+            "appearanceUrls": [
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Robina2-Attack1.0.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Robina2-Attack1.1.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "1.1"
+            ]
           }
         ],
         "guestStats": {
@@ -9889,7 +10455,7 @@
             "crit": "0%"
           }
         },
-        "notes": "• Robina (2) was previously attainable from the following retired access point: Are Rocks Evil?",
+        "notes": "• Robina (2) was previously attainable from the following retired access point:  Are Rocks Evil?",
         "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Robina2.png"
       }
     ],
@@ -9930,7 +10496,7 @@
     "shared": {
       "description": "",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Rolith2.png",
-      "notes": "• Rolith's damage was reduced significantly on March 21st, 2025."
+      "notes": "• Rolith's damage was reduced significantly on  March 21st, 2025."
     },
     "familySources": [],
     "levelVariants": [
@@ -9968,7 +10534,8 @@
             "cooldown": "8",
             "damageType": "Melee",
             "element": "Metal",
-            "buttonImageUrl": "http://i.imgur.com/wJ7kWOH.png"
+            "buttonImageUrl": "http://i.imgur.com/wJ7kWOH.png",
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Rolith1-SLAM!.png"
           },
           {
             "name": "Crushing Attack",
@@ -9978,7 +10545,8 @@
             "cooldown": "12",
             "damageType": "Melee",
             "element": "Metal",
-            "buttonImageUrl": "http://i.imgur.com/oevlJ9P.png"
+            "buttonImageUrl": "http://i.imgur.com/oevlJ9P.png",
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Rolith1-AttackCrushHeavy.png"
           },
           {
             "name": "Heavy Attack",
@@ -9988,7 +10556,8 @@
             "cooldown": "4",
             "damageType": "Melee",
             "element": "Metal",
-            "buttonImageUrl": "http://i.imgur.com/dGVD18Q.png"
+            "buttonImageUrl": "http://i.imgur.com/dGVD18Q.png",
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Rolith1-AttackCrushHeavy.png"
           },
           {
             "name": "Attack",
@@ -9998,7 +10567,8 @@
             "cooldown": "0",
             "damageType": "Melee",
             "element": "Metal",
-            "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png"
+            "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png",
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Rolith1-AttackCrushHeavy.png"
           }
         ],
         "guestStats": {
@@ -10042,7 +10612,7 @@
             "crit": "0%"
           }
         },
-        "notes": "• Rolith (1) has a series of unconventional stats in the quest Alina's Answer; STR: 25, DEX: 1, INT: 5, CHA: 15, LUK: 5, END: 15, Crit: 15\n• Rolith (1)'s tooltips were updated on April 11th, 2025.",
+        "notes": "• Rolith (1) has a series of unconventional stats in the quest  Alina's Answer; STR: 25, DEX: 1, INT: 5, CHA: 15, LUK: 5, END: 15, Crit: 15\n• Rolith (1)'s tooltips were updated on  April 11th, 2025.",
         "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Rolith1.png"
       },
       {
@@ -10073,7 +10643,8 @@
             "cooldown": "8",
             "damageType": "Melee",
             "element": "Metal",
-            "buttonImageUrl": "http://i.imgur.com/wJ7kWOH.png"
+            "buttonImageUrl": "http://i.imgur.com/wJ7kWOH.png",
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Rolith2-SLAM!.png"
           },
           {
             "name": "Crushing Attack",
@@ -10083,7 +10654,8 @@
             "cooldown": "12",
             "damageType": "Melee",
             "element": "Metal",
-            "buttonImageUrl": "http://i.imgur.com/oevlJ9P.png"
+            "buttonImageUrl": "http://i.imgur.com/oevlJ9P.png",
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Rolith2-AttackCrushHeavy.png"
           },
           {
             "name": "Heavy Attack",
@@ -10093,7 +10665,8 @@
             "cooldown": "4",
             "damageType": "Melee",
             "element": "Metal",
-            "buttonImageUrl": "http://i.imgur.com/dGVD18Q.png"
+            "buttonImageUrl": "http://i.imgur.com/dGVD18Q.png",
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Rolith2-AttackCrushHeavy.png"
           },
           {
             "name": "Attack",
@@ -10102,7 +10675,8 @@
             "cooldown": "0",
             "damageType": "Melee",
             "element": "Metal",
-            "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png"
+            "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png",
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Rolith2-AttackCrushHeavy.png"
           }
         ],
         "guestStats": {
@@ -10203,7 +10777,20 @@
         "cooldown": "0",
         "damageType": "Melee",
         "element": "Evil",
-        "buttonImageUrl": "http://i.imgur.com/MTcDrk1.png"
+        "buttonImageUrl": "http://i.imgur.com/MTcDrk1.png",
+        "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Sepulchure%20Attack%201.bmp",
+        "appearanceUrls": [
+          "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Sepulchure%20Attack%201.bmp",
+          "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Sepulchure%20Attack%202.bmp",
+          "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Sepulchure%20Attack%203.bmp",
+          "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Sepulchure%20Attack%204.bmp"
+        ],
+        "appearanceCaptions": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ]
       }
     ],
     "rarity": "Unknown",
@@ -10282,7 +10869,8 @@
         "cooldown": "4",
         "damageType": "As last attack",
         "element": "As last attack",
-        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/PirateR1-Button05-Quick.png"
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/PirateR1-Button05-Quick.png",
+        "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Serenity%20Okami%20Quick%20Shot%20pic.bmp"
       },
       {
         "name": "Shield",
@@ -10292,7 +10880,8 @@
         "cooldown": "4",
         "damageType": "As last attack",
         "element": "As last attack",
-        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/PirateR1-Button07-Shield.png"
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/PirateR1-Button07-Shield.png",
+        "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Serenity%20Okami%20Shield%20pic.bmp"
       },
       {
         "name": "Attack",
@@ -10301,7 +10890,8 @@
         "cooldown": "0",
         "damageType": "As last attack",
         "element": "As last attack",
-        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png"
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png",
+        "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Serenity%20Okami%20Attack%20pic.bmp"
       },
       {
         "name": "Scurvy",
@@ -10311,7 +10901,8 @@
         "cooldown": "9",
         "damageType": "As last attack",
         "element": "As last attack",
-        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/PirateR1-Button08-Scurvy.png"
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/PirateR1-Button08-Scurvy.png",
+        "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Serenity%20Okami%20Scurvy%20pic.bmp"
       },
       {
         "name": "Sneaky",
@@ -10322,7 +10913,8 @@
         "cooldown": "4",
         "damageType": "As last attack",
         "element": "As last attack",
-        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/PirateR1-Button09-Sneaky.png"
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/PirateR1-Button09-Sneaky.png",
+        "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Serenity%20Okami%20Sneaky%20pic.bmp"
       },
       {
         "name": "1st Mate Aid",
@@ -10333,7 +10925,8 @@
         "cooldown": "9",
         "damageType": "N/A",
         "element": "N/A",
-        "buttonImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/PirateR1-Button10-Aid.png"
+        "buttonImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/PirateR1-Button10-Aid.png",
+        "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/PirateR1-1stMateAid.png"
       },
       {
         "name": "Shout",
@@ -10343,7 +10936,8 @@
         "cooldown": "9",
         "damageType": "N/A",
         "element": "N/A",
-        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/PirateR1-Button11-Shout.png"
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/PirateR1-Button11-Shout.png",
+        "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Serenity%20Okami%20Shout%20pic.bmp"
       },
       {
         "name": "LimeAid",
@@ -10353,7 +10947,8 @@
         "cooldown": "9",
         "damageType": "N/A",
         "element": "N/A",
-        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/PirateR1-Button12-LimeAid.png"
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/PirateR1-Button12-LimeAid.png",
+        "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Serenity%20Okami%20LimeAid%20pic.bmp"
       }
     ],
     "rarity": "Unknown",
@@ -10440,7 +11035,15 @@
         "damageType": "Melee",
         "element": "Metal",
         "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/SirAno-Button01-Sword.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/SirAno-Swordplay1.0.png"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/SirAno-Swordplay1.0.png",
+        "appearanceUrls": [
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/SirAno-Swordplay1.0.png",
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/SirAno-Swordplay1.1.png"
+        ],
+        "appearanceCaptions": [
+          "1",
+          "1.1"
+        ]
       },
       {
         "name": "Attack",
@@ -10451,7 +11054,15 @@
         "damageType": "Melee",
         "element": "Metal",
         "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/SirAno-Attack1.0.png"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/SirAno-Attack1.0.png",
+        "appearanceUrls": [
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/SirAno-Attack1.0.png",
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/SirAno-Attack1.1.png"
+        ],
+        "appearanceCaptions": [
+          "1",
+          "1.1"
+        ]
       }
     ],
     "rarity": "Unknown",
@@ -10459,7 +11070,7 @@
     "releaseDate": "November 21st, 2008",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/SirAno.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=15093277",
-    "notes": "• Sir Ano was previously attainable from the following retired access points: Nose for Trouble, Major Mayhem, There's No Place Like Oaklore, and Victoria's Secret.\n• The following changes were implemented on April 11th, 2025:\n • Tooltips were updated for this guest.\n • Damage from 'Swordplay' was increased from 100% to 200%.\n• Total damage of 'Swordplay' and 'Attack' was lowered from 200% to 140% on August 22nd, 2024.\n• Art was updated on August 29th, 2025.",
+    "notes": "• Sir Ano was previously attainable from the following retired access points:  Nose for Trouble,  Major Mayhem,   There's No Place Like Oaklore, and  Victoria's Secret.\n• The following changes were implemented on  April 11th, 2025:\n  • Tooltips were updated for this guest.\n  • Damage from 'Swordplay' was increased from 100% to 200%.\n• Total damage of 'Swordplay' and 'Attack' was lowered from 200% to 140% on  August 22nd, 2024.\n• Art was updated on  August 29th, 2025.",
     "alsoSee": [],
     "tags": [
       "sir",
@@ -10591,7 +11202,15 @@
             "damageType": "Pierce",
             "element": "Light",
             "buttonImageUrl": "https://i.imgur.com/waAdDYO.png",
-            "appearanceUrl": "https://i.imgur.com/xvCtyM4.png"
+            "appearanceUrl": "https://i.imgur.com/xvCtyM4.png",
+            "appearanceUrls": [
+              "https://i.imgur.com/xvCtyM4.png",
+              "https://i.imgur.com/UPSOiGV.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "1.1"
+            ]
           },
           {
             "name": "Stun",
@@ -10624,7 +11243,15 @@
             "damageType": "Melee",
             "element": "Light",
             "buttonImageUrl": "https://i.imgur.com/ufK0Hzo.png",
-            "appearanceUrl": "https://i.imgur.com/LWus6QM.png"
+            "appearanceUrl": "https://i.imgur.com/LWus6QM.png",
+            "appearanceUrls": [
+              "https://i.imgur.com/LWus6QM.png",
+              "https://i.imgur.com/pbv8YmU.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "1.1"
+            ]
           },
           {
             "name": "Attack",
@@ -10634,7 +11261,15 @@
             "damageType": "Melee",
             "element": "Light",
             "buttonImageUrl": "https://i.imgur.com/CTnLIC6.png",
-            "appearanceUrl": "https://i.imgur.com/pbv8YmU.png"
+            "appearanceUrl": "https://i.imgur.com/pbv8YmU.png",
+            "appearanceUrls": [
+              "https://i.imgur.com/pbv8YmU.png",
+              "https://i.imgur.com/Jw5PXqX.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "2"
+            ]
           },
           {
             "name": "Double Attack",
@@ -10646,7 +11281,15 @@
             "damageType": "Melee",
             "element": "Light",
             "buttonImageUrl": "https://i.imgur.com/jtnIPwq.png",
-            "appearanceUrl": "https://i.imgur.com/u5VU9Hg.png"
+            "appearanceUrl": "https://i.imgur.com/u5VU9Hg.png",
+            "appearanceUrls": [
+              "https://i.imgur.com/u5VU9Hg.png",
+              "https://i.imgur.com/pbv8YmU.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "1.1"
+            ]
           },
           {
             "name": "Triple Attack",
@@ -10658,7 +11301,19 @@
             "damageType": "Melee",
             "element": "Light",
             "buttonImageUrl": "https://i.imgur.com/6GBlzdC.png",
-            "appearanceUrl": "https://i.imgur.com/x6cMvRP.png"
+            "appearanceUrl": "https://i.imgur.com/x6cMvRP.png",
+            "appearanceUrls": [
+              "https://i.imgur.com/x6cMvRP.png",
+              "https://i.imgur.com/kK9tSrw.png",
+              "https://i.imgur.com/ytYij29.png",
+              "https://i.imgur.com/Jw5PXqX.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "1.1",
+              "1.2",
+              "1.3"
+            ]
           },
           {
             "name": "Mana Strike",
@@ -10680,7 +11335,15 @@
             "damageType": "Melee",
             "element": "Light",
             "buttonImageUrl": "https://i.imgur.com/5hjPDCi.png",
-            "appearanceUrl": "https://i.imgur.com/xvCtyM4.png"
+            "appearanceUrl": "https://i.imgur.com/xvCtyM4.png",
+            "appearanceUrls": [
+              "https://i.imgur.com/xvCtyM4.png",
+              "https://i.imgur.com/UPSOiGV.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "1.1"
+            ]
           },
           {
             "name": "Strength Strike",
@@ -10702,7 +11365,15 @@
             "damageType": "Melee",
             "element": "Light",
             "buttonImageUrl": "https://i.imgur.com/37AOMwF.png",
-            "appearanceUrl": "https://i.imgur.com/pbv8YmU.png"
+            "appearanceUrl": "https://i.imgur.com/pbv8YmU.png",
+            "appearanceUrls": [
+              "https://i.imgur.com/pbv8YmU.png",
+              "https://i.imgur.com/95np14U.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "1.1"
+            ]
           },
           {
             "name": "Final Blow",
@@ -10746,7 +11417,7 @@
             "dodge": "0"
           }
         },
-        "notes": "• This version of Sir Leon was released on September 26th, 2014 with the quest Shear Destruction; it was again updated on February 3rd, 2015, altering Defensive Stance's animation and Final Blow's damage.\n• Sir Leon's stun duration was lowered from 3 turns to 1 turn on February 28th, 2020; more information can be found in the February 28th, 2020 Design Notes."
+        "notes": "• This version of Sir Leon was released on September 26th, 2014 with the quest Shear Destruction; it was again updated on February 3rd, 2015, altering Defensive Stance's animation and Final Blow's damage.\n• Sir Leon's stun duration was lowered from 3 turns to 1 turn on February 28th, 2020; more information can be found in the  February 28th, 2020 Design Notes."
       },
       {
         "levelNumber": 2,
@@ -10860,7 +11531,15 @@
             "damageType": "Melee",
             "element": "Light",
             "buttonImageUrl": "https://i.imgur.com/CTnLIC6.png",
-            "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/SirLeon-Attack.png"
+            "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/SirLeon-Attack.png",
+            "appearanceUrls": [
+              "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/SirLeon-Attack.png",
+              "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/SirLeon-TripleAttack1.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "2"
+            ]
           },
           {
             "name": "Double Attack",
@@ -10872,7 +11551,15 @@
             "damageType": "Melee",
             "element": "Light",
             "buttonImageUrl": "https://i.imgur.com/jtnIPwq.png",
-            "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/SirLeon-DoubleAttack1.png"
+            "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/SirLeon-DoubleAttack1.png",
+            "appearanceUrls": [
+              "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/SirLeon-DoubleAttack1.png",
+              "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/SirLeon-DoubleAttack2.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "1.1"
+            ]
           },
           {
             "name": "Triple Attack",
@@ -10884,7 +11571,17 @@
             "damageType": "Melee",
             "element": "Light",
             "buttonImageUrl": "https://i.imgur.com/6GBlzdC.png",
-            "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/SirLeon-TripleAttack1.png"
+            "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/SirLeon-TripleAttack1.png",
+            "appearanceUrls": [
+              "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/SirLeon-TripleAttack1.png",
+              "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/SirLeon-TripleAttack2.png",
+              "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/SirLeon-TripleAttack3.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "1.1",
+              "1.2"
+            ]
           },
           {
             "name": "Mana Strike",
@@ -11048,7 +11745,8 @@
             "cooldown": "2",
             "damageType": "Melee",
             "element": "Metal",
-            "buttonImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/SirStephenMultipic.png"
+            "buttonImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/SirStephenMultipic.png",
+            "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Sir%20Stephan%20Attack%202.bmp"
           },
           {
             "name": "Attack",
@@ -11057,7 +11755,18 @@
             "cooldown": "0",
             "damageType": "Melee",
             "element": "Metal",
-            "buttonImageUrl": "http://i.imgur.com/MTcDrk1.png"
+            "buttonImageUrl": "http://i.imgur.com/MTcDrk1.png",
+            "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Sir%20Stephan%20Attack%202.2.bmp",
+            "appearanceUrls": [
+              "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Sir%20Stephan%20Attack%202.2.bmp",
+              "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Sir%20Stephan%20Attack%202.1.bmp",
+              "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Sir%20Stephan%20Attack%201.bmp"
+            ],
+            "appearanceCaptions": [
+              "(1 time)",
+              "1st hit",
+              "3rd hit"
+            ]
           }
         ],
         "guestStats": {
@@ -11265,7 +11974,17 @@
         "damageType": "Magic",
         "element": "Metal",
         "buttonImageUrl": "https://i.imgur.com/wC69Rla.png",
-        "appearanceUrl": "https://i.imgur.com/jv5PirB.png"
+        "appearanceUrl": "https://i.imgur.com/jv5PirB.png",
+        "appearanceUrls": [
+          "https://i.imgur.com/jv5PirB.png",
+          "https://i.imgur.com/z6eKZBr.png",
+          "https://i.imgur.com/kElLvuV.png"
+        ],
+        "appearanceCaptions": [
+          "1",
+          "1.1",
+          "1.2"
+        ]
       },
       {
         "name": "Attack",
@@ -11363,7 +12082,15 @@
         "damageType": "Magic",
         "element": "Good",
         "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Sirius-Button01-Swords.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Sirius-3ofSwords1.0.png"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Sirius-3ofSwords1.0.png",
+        "appearanceUrls": [
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Sirius-3ofSwords1.0.png",
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Sirius-3ofSwords1.1.png"
+        ],
+        "appearanceCaptions": [
+          "1",
+          "1.1"
+        ]
       },
       {
         "name": "Attack",
@@ -11374,7 +12101,15 @@
         "damageType": "Magic",
         "element": "Good",
         "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Sirius-Attack1.0.png"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Sirius-Attack1.0.png",
+        "appearanceUrls": [
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Sirius-Attack1.0.png",
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Sirius-Attack1.1.png"
+        ],
+        "appearanceCaptions": [
+          "1",
+          "1.1"
+        ]
       },
       {
         "name": "The Fool",
@@ -11416,7 +12151,7 @@
     "releaseDate": "April 9th, 2022",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Sirius.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22402145",
-    "notes": "• The Emperor skill was added with the release of Across the Fearscape, but it was locked until the release of The Aker'varus; Sirius' tooltips were also updated with the release of that quest.",
+    "notes": "• The Emperor skill was added with the release of  Across the Fearscape, but it was locked until the release of  The Aker'varus; Sirius' tooltips were also updated with the release of that quest.",
     "alsoSee": [],
     "tags": [
       "sirius",
@@ -11508,7 +12243,15 @@
         "damageType": "Melee",
         "element": "Metal",
         "buttonImageUrl": "http://i.imgur.com/6TGO13p.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Symone-GunCombo1.0.png"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Symone-GunCombo1.0.png",
+        "appearanceUrls": [
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Symone-GunCombo1.0.png",
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Symone-GunCombo1.1.png"
+        ],
+        "appearanceCaptions": [
+          "1",
+          "1.1"
+        ]
       },
       {
         "name": "Shadow Venom",
@@ -11519,7 +12262,15 @@
         "damageType": "Melee",
         "element": "Metal",
         "buttonImageUrl": "http://i.imgur.com/8us5LYo.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Symone-ShadowVenom1.0.png"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Symone-ShadowVenom1.0.png",
+        "appearanceUrls": [
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Symone-ShadowVenom1.0.png",
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Symone-ShadowVenom1.1.png"
+        ],
+        "appearanceCaptions": [
+          "1",
+          "1.1"
+        ]
       },
       {
         "name": "Shared Will",
@@ -11542,7 +12293,15 @@
         "damageType": "Melee",
         "element": "Metal",
         "buttonImageUrl": "http://i.imgur.com/VOzLNO0.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Symone-SwordCombo1.0.png"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Symone-SwordCombo1.0.png",
+        "appearanceUrls": [
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Symone-SwordCombo1.0.png",
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Symone-SwordCombo1.1.png"
+        ],
+        "appearanceCaptions": [
+          "1",
+          "1.1"
+        ]
       },
       {
         "name": "Attack",
@@ -11552,7 +12311,15 @@
         "damageType": "Melee",
         "element": "Metal",
         "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Symone-Attack1.0.png"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Symone-Attack1.0.png",
+        "appearanceUrls": [
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Symone-Attack1.0.png",
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Symone-Attack1.1.png"
+        ],
+        "appearanceCaptions": [
+          "1",
+          "1.1"
+        ]
       }
     ],
     "rarity": "Unknown",
@@ -11560,7 +12327,7 @@
     "releaseDate": "November 5th, 2013",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Symone.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=21850713",
-    "notes": "• *Symone is only invited with 0 Pierce Avoidance from Forest Hunt and Storming the Castle.\n• A Dragon Amulet is required to invite Symone as a guest at Serenity Before The Storm and Dark Night.\n• Symone has a series of unconventional stats in the quest Calamity; STR: 0, LUK: 0, Bonus: 50, Crit: 5.",
+    "notes": "• *Symone is only invited with 0 Pierce Avoidance from  Forest Hunt and  Storming the Castle.\n• A Dragon Amulet is required to invite Symone as a guest at  Serenity Before The Storm and  Dark Night.\n• Symone has a series of unconventional stats in the quest  Calamity; STR: 0, LUK: 0, Bonus: 50, Crit: 5.",
     "alsoSee": [],
     "tags": [
       "symone",
@@ -11644,7 +12411,8 @@
         "cooldown": "15",
         "damageType": "Melee",
         "element": "Metal",
-        "buttonImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/ThomBoppic.png"
+        "buttonImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/ThomBoppic.png",
+        "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/ThomStrikepic.png"
       },
       {
         "name": "Attack!",
@@ -11653,7 +12421,8 @@
         "cooldown": "0",
         "damageType": "Melee",
         "element": "Metal",
-        "buttonImageUrl": "https://i.imgur.com/MWb3liE.png"
+        "buttonImageUrl": "https://i.imgur.com/MWb3liE.png",
+        "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/ThomAttackpic.png"
       }
     ],
     "rarity": "Unknown",
@@ -11793,7 +12562,7 @@
     "isMultiPost": true,
     "shared": {
       "description": "",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix1-Button01-Circle.png"
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix1.png"
     },
     "familySources": [],
     "levelVariants": [
@@ -11827,7 +12596,15 @@
             "damageType": "Melee",
             "element": "Evil",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix1-Button01-Circle.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix1-Button01-Circle-Old.png",
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix1-CircleofRetribution1.0.png",
+            "appearanceUrls": [
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix1-CircleofRetribution1.0.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix1-CircleofRetribution1.1.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "1.1"
+            ],
             "notes": "• Skill button was updated on April 11th, 2025, replacing its old appearance."
           },
           {
@@ -11840,7 +12617,15 @@
             "damageType": "Melee",
             "element": "Evil",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix1-Button02-Cross.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix1-Button02-Cross-Old.png",
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix1-PurificationCross1.0.png",
+            "appearanceUrls": [
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix1-PurificationCross1.0.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix1-PurificationCross1.1.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "1.1"
+            ],
             "notes": "• Skill button was updated on April 11th, 2025, replacing its old appearance."
           },
           {
@@ -11853,7 +12638,7 @@
             "damageType": "Melee",
             "element": "Evil",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix1-Button03-Thread.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix1-Button03-Thread-Old.png",
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix1-SoulThreadCutter.png",
             "notes": "• Skill button was updated on April 11th, 2025, replacing its old appearance."
           },
           {
@@ -11865,7 +12650,15 @@
             "damageType": "Melee",
             "element": "Evil",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix1-Attack1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix1-Attack1.0.png",
+            "appearanceUrls": [
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix1-Attack1.0.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix1-Attack1.1.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "1.1"
+            ]
           }
         ],
         "guestStats": {
@@ -11909,7 +12702,7 @@
             "crit": "0%"
           }
         },
-        "notes": "• The following changes were implemented on April 11th, 2025:\n • Tomix (1)'s tooltips were updated.\n • 'Circle of Retribution' was increased from 10 hits of 15% damage (150%) to 10 hits of 25% damage (250%).\n • Skill icons were updated."
+        "notes": "• The following changes were implemented on  April 11th, 2025:\n  • Tomix (1)'s tooltips were updated.\n  • 'Circle of Retribution' was increased from 10 hits of 15% damage (150%) to 10 hits of 25% damage (250%).\n  • Skill icons were updated."
       },
       {
         "levelNumber": 2,
@@ -12006,7 +12799,7 @@
             "crit": "0%"
           }
         },
-        "notes": "• Tomix (2) has a series of unconventional stats in the quests Adrift and The Origins of Aspar; DEX: 0, Bonus: 100, Crit: 5"
+        "notes": "• Tomix (2) has a series of unconventional stats in the quests  Adrift and  The Origins of Aspar; DEX: 0, Bonus: 100, Crit: 5"
       },
       {
         "levelNumber": 3,
@@ -12145,7 +12938,15 @@
             "damageType": "Melee",
             "element": "Evil",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix1-Button01-Circle.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix1-Button01-Circle-Old.png",
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix1-CircleofRetribution1.0.png",
+            "appearanceUrls": [
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix1-CircleofRetribution1.0.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix1-CircleofRetribution1.1.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "1.1"
+            ],
             "notes": "• Skill button was updated on April 11th, 2025, replacing its old appearance."
           },
           {
@@ -12158,7 +12959,15 @@
             "damageType": "Melee",
             "element": "Evil",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix1-Button02-Cross.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix1-Button02-Cross-Old.png",
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix1-PurificationCross1.0.png",
+            "appearanceUrls": [
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix1-PurificationCross1.0.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix1-PurificationCross1.1.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "1.1"
+            ],
             "notes": "• Skill button was updated on April 11th, 2025, replacing its old appearance."
           },
           {
@@ -12171,7 +12980,7 @@
             "damageType": "Melee",
             "element": "Evil",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix1-Button03-Thread.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix1-Button03-Thread-Old.png",
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix1-SoulThreadCutter.png",
             "notes": "• Skill button was updated on April 11th, 2025, replacing its old appearance."
           },
           {
@@ -12183,7 +12992,15 @@
             "damageType": "Melee",
             "element": "Evil",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix1-Attack1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix1-Attack1.0.png",
+            "appearanceUrls": [
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix1-Attack1.0.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix1-Attack1.1.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "1.1"
+            ]
           }
         ],
         "guestStats": {
@@ -12227,7 +13044,7 @@
             "crit": "0%"
           }
         },
-        "notes": "• This version of Tomix will still be available on your guest slot if you leave in the middle of the quest.\n• This is the original version of the guest; intended to be completely replaced by a new version, it remains in-game erroneously.\n• The following changes were implemented on April 11th, 2025:\n • Tomix (4)'s tooltips were updated.\n • 'Circle of Retribution' was increased from 10 hits of 15% damage (150%) to 10 hits of 25% damage (250%).\n • Skill icons were updated."
+        "notes": "• This version of Tomix will still be available on your guest slot if you leave in the middle of the quest.\n• This is the original version of the guest; intended to be completely replaced by a new version, it remains in-game erroneously.\n• The following changes were implemented on  April 11th, 2025:\n  • Tomix (4)'s tooltips were updated.\n  • 'Circle of Retribution' was increased from 10 hits of 15% damage (150%) to 10 hits of 25% damage (250%).\n  • Skill icons were updated."
       }
     ],
     "releaseDate": "October 16th, 2009",
@@ -12289,7 +13106,8 @@
         "cooldown": "30",
         "damageType": "Melee",
         "element": "Darkness",
-        "buttonImageUrl": "http://i.imgur.com/Djhcju0.png"
+        "buttonImageUrl": "http://i.imgur.com/Djhcju0.png",
+        "appearanceUrl": "http://i.imgur.com/3FNbfj3.png"
       },
       {
         "name": "Crumble",
@@ -12299,7 +13117,8 @@
         "cooldown": "3",
         "damageType": "Melee",
         "element": "Darkness",
-        "buttonImageUrl": "http://i.imgur.com/2GhW1fB.png"
+        "buttonImageUrl": "http://i.imgur.com/2GhW1fB.png",
+        "appearanceUrl": "http://i.imgur.com/cJA1HBV.png"
       },
       {
         "name": "Decompose",
@@ -12544,7 +13363,7 @@
     "releaseDate": "July 18th, 2018",
     "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/UaantaFayt.png",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22333514",
-    "notes": "• In The Dreamers' Abyss, Uaanta's END stat is instead 100.",
+    "notes": "• In  The Dreamers' Abyss, Uaanta's END stat is instead 100.",
     "alsoSee": [],
     "tags": [
       "uaanta",
@@ -12634,7 +13453,15 @@
             "damageType": "Melee",
             "element": "Metal",
             "buttonImageUrl": "https://i.imgur.com/id73pIM.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Valencia-DualStrike1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Valencia-DualStrike1.0.png",
+            "appearanceUrls": [
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Valencia-DualStrike1.0.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Valencia-Attack.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "1.1"
+            ]
           },
           {
             "name": "Sharpened Blade Toss",
@@ -12645,7 +13472,15 @@
             "damageType": "Pierce",
             "element": "Metal",
             "buttonImageUrl": "https://i.imgur.com/PEuHifz.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Valencia-SharpenedBladeToss1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Valencia-SharpenedBladeToss1.0.png",
+            "appearanceUrls": [
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Valencia-SharpenedBladeToss1.0.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Valencia-SharpenedBladeToss1.1.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "1.1"
+            ]
           },
           {
             "name": "High Kick",
@@ -12723,7 +13558,7 @@
             "crit": "0%"
           }
         },
-        "notes": "• Valencia (2)'s tooltips were updated on April 11th, 2025."
+        "notes": "• Valencia (2)'s tooltips were updated on  April 11th, 2025."
       },
       {
         "levelNumber": 2,
@@ -12754,7 +13589,15 @@
             "damageType": "Pierce",
             "element": "Metal",
             "buttonImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/ValenciaThrow.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Valencia-SharpenedBladeToss1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Valencia-SharpenedBladeToss1.0.png",
+            "appearanceUrls": [
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Valencia-SharpenedBladeToss1.0.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Valencia-SharpenedBladeToss1.1.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "1.1"
+            ]
           }
         ],
         "retired": true,
@@ -12870,7 +13713,15 @@
         "damageType": "Pierce",
         "element": "Good",
         "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Valentidus-Button03-Spread.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Valentidus-SpreadtheLove1.0.png"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Valentidus-SpreadtheLove1.0.png",
+        "appearanceUrls": [
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Valentidus-SpreadtheLove1.0.png",
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Valentidus-SpreadtheLove1.1.png"
+        ],
+        "appearanceCaptions": [
+          "1",
+          "1.1"
+        ]
       },
       {
         "name": "Light of Love",
@@ -12881,7 +13732,15 @@
         "damageType": "Pierce",
         "element": "Good",
         "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Valentidus-Button04-Light.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Valentidus-LightofLove1.0.png"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Valentidus-LightofLove1.0.png",
+        "appearanceUrls": [
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Valentidus-LightofLove1.0.png",
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Valentidus-LightofLove1.1.png"
+        ],
+        "appearanceCaptions": [
+          "1",
+          "1.1"
+        ]
       },
       {
         "name": "Heart Cracker",
@@ -12892,7 +13751,15 @@
         "damageType": "Pierce",
         "element": "Good",
         "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Valentidus-Button05-Heart.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Valentidus-Heart1.0.png"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Valentidus-Heart1.0.png",
+        "appearanceUrls": [
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Valentidus-Heart1.0.png",
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Valentidus-HeartCracker1.1.png"
+        ],
+        "appearanceCaptions": [
+          "1",
+          "1.1"
+        ]
       },
       {
         "name": "Attack",
@@ -12903,7 +13770,15 @@
         "damageType": "Pierce",
         "element": "Good",
         "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Valentidus-Attack1.0.png"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Valentidus-Attack1.0.png",
+        "appearanceUrls": [
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Valentidus-Attack1.0.png",
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Valentidus-Attack1.1.png"
+        ],
+        "appearanceCaptions": [
+          "1",
+          "1.1"
+        ]
       }
     ],
     "rarity": "Unknown",
@@ -13021,6 +13896,14 @@
             "element": "Darkness",
             "buttonImageUrl": "http://i.imgur.com/TaFcqkC.png",
             "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vayle-DarkDrain1.0.png",
+            "appearanceUrls": [
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vayle-DarkDrain1.0.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vayle-DarkCommand1.1.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "1.1"
+            ],
             "notes": "• The Vayle guest in Frostval - Winged Darkness erroneously uses its old tooltip: Drain Health and Mana"
           },
           {
@@ -13033,6 +13916,14 @@
             "element": "Darkness",
             "buttonImageUrl": "http://i.imgur.com/spv6xyu.png",
             "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vayle-DarkCommand1.0.png",
+            "appearanceUrls": [
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vayle-DarkCommand1.0.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vayle-DarkCommand1.1.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "1.1"
+            ],
             "notes": "• The Vayle guest in Frostval - Winged Darkness erroneously uses its old tooltip: Command your foe to halt"
           },
           {
@@ -13057,6 +13948,14 @@
             "element": "Darkness",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png",
             "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vayle-Attack1.png",
+            "appearanceUrls": [
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vayle-Attack1.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vayle-CommandUndead.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "2"
+            ],
             "notes": "• The Vayle guest in Frostval - Winged Darkness does not have a tooltip for this skill."
           }
         ],
@@ -13101,7 +14000,7 @@
             "crit": "0%"
           }
         },
-        "notes": "• Vayle (2) has a series of unconventional stats in the zone Frostval - Winged Darkness; Damage Type: Magic, Melee: 5, Pierce: 0, Magic: 5, Block: 0, Parry: 0, Dodge: 0, Bonus: 100, Crit: 5.\n• Tooltips for this guest was updated on April 11th, 2025."
+        "notes": "• Vayle (2) has a series of unconventional stats in the zone  Frostval - Winged Darkness; Damage Type: Magic, Melee: 5, Pierce: 0, Magic: 5, Block: 0, Parry: 0, Dodge: 0, Bonus: 100, Crit: 5.\n• Tooltips for this guest was updated on  April 11th, 2025."
       },
       {
         "levelNumber": 2,
@@ -13141,7 +14040,15 @@
             "damageType": "Melee",
             "element": "Darkness",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vayle-Attack1.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vayle-Attack1.png",
+            "appearanceUrls": [
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vayle-Attack1.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vayle-CommandUndead.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "2"
+            ]
           }
         ],
         "retired": true,
@@ -13234,7 +14141,8 @@
         "cooldown": "0",
         "damageType": "Melee",
         "element": "???",
-        "buttonImageUrl": "http://i.imgur.com/MTcDrk1.png"
+        "buttonImageUrl": "http://i.imgur.com/MTcDrk1.png",
+        "appearanceUrl": "http://i.imgur.com/GwJxaza.jpg"
       }
     ],
     "rarity": "Unknown",
@@ -13330,7 +14238,15 @@
             "damageType": "Melee",
             "element": "Ice",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vilmor-Button01-Ice.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vilmor-IceLightning1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vilmor-IceLightning1.0.png",
+            "appearanceUrls": [
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vilmor-IceLightning1.0.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vilmor-IceLightning1.1.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "1.1"
+            ]
           },
           {
             "name": "Shard",
@@ -13352,7 +14268,17 @@
             "damageType": "Melee",
             "element": "Ice",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vilmor-Attack1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vilmor-Attack1.0.png",
+            "appearanceUrls": [
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vilmor-Attack1.0.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vilmor-Attack1.1.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vilmor-Attack1.2.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "1.1",
+              "1.2"
+            ]
           }
         ],
         "guestStats": {
@@ -13396,7 +14322,7 @@
             "crit": "0%"
           }
         },
-        "notes": "• The following changes were implemented on April 11th, 2025:\n • Tooltips were updated for this guest.\n • 'Attack' was reduced from 3 hits of 100% damage (300%) to 3 hits of 50% damage (150%).\n• *In the quest Betrayal, Vilmor gains 0 Pierce Avoidance instead of 5."
+        "notes": "• The following changes were implemented on  April 11th, 2025:\n  • Tooltips were updated for this guest.\n  • 'Attack' was reduced from 3 hits of 100% damage (300%) to 3 hits of 50% damage (150%).\n• *In the quest  Betrayal, Vilmor gains 0 Pierce Avoidance instead of 5."
       },
       {
         "levelNumber": 2,
@@ -13426,7 +14352,15 @@
             "damageType": "Melee",
             "element": "???",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vilmor-Button01-Ice.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vilmor2-IceLightning1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vilmor2-IceLightning1.0.png",
+            "appearanceUrls": [
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vilmor2-IceLightning1.0.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vilmor2-IceLightning1.1.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "1.1"
+            ]
           },
           {
             "name": "Shard",
@@ -13448,7 +14382,17 @@
             "damageType": "Melee",
             "element": "???",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vilmor2-Attack1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vilmor2-Attack1.0.png",
+            "appearanceUrls": [
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vilmor2-Attack1.0.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vilmor2-Attack1.1.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vilmor2-Attack1.2.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "1.1",
+              "1.2"
+            ]
           },
           {
             "name": "Charged Frost",
@@ -13459,7 +14403,19 @@
             "damageType": "Melee",
             "element": "???",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vilmor2-Button03-Charge.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vilmor2-ChargedFrost1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vilmor2-ChargedFrost1.0.png",
+            "appearanceUrls": [
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vilmor2-ChargedFrost1.0.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vilmor2-Attack1.0.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vilmor2-Attack1.1.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vilmor2-Attack1.2.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "1.1",
+              "1.2",
+              "1.3"
+            ]
           },
           {
             "name": "Cryozen's Boon",
@@ -13470,7 +14426,17 @@
             "damageType": "Melee",
             "element": "???",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vilmor2-Button04-Cryo.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vilmor2-Cryozen'sBoon1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vilmor2-Cryozen'sBoon1.0.png",
+            "appearanceUrls": [
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vilmor2-Cryozen'sBoon1.0.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vilmor2-IceLightning1.0.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vilmor2-IceLightning1.1.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "1.1",
+              "1.2"
+            ]
           }
         ],
         "guestStats": {
@@ -13514,7 +14480,7 @@
             "crit": "0%"
           }
         },
-        "notes": "• 'Charged Frost' and 'Cryozen's Boon' skills were added on A Heart Gone Colder's release."
+        "notes": "• 'Charged Frost' and 'Cryozen's Boon' skills were added on  A Heart Gone Colder's release."
       }
     ],
     "releaseDate": "September 24th, 2010",
@@ -13583,7 +14549,15 @@
             "damageType": "Magic",
             "element": "Energy",
             "buttonImageUrl": "http://i.imgur.com/wJqtgeB.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Warlic-Zap1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Warlic-Zap1.0.png",
+            "appearanceUrls": [
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Warlic-Zap1.0.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Warlic-Zap1.1.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "1.1"
+            ]
           },
           {
             "name": "Attack",
@@ -13650,7 +14624,7 @@
             "crit": "0%"
           }
         },
-        "notes": "• Tooltips were updated on March 20th, 2026.\n• Warlic (2) was previously attainable in the retired quest Xan's Volcano Fortress."
+        "notes": "• Tooltips were updated on  March 20th, 2026.\n• Warlic (2) was previously attainable in the retired quest  Xan's Volcano Fortress."
       },
       {
         "levelNumber": 2,
@@ -13681,7 +14655,15 @@
             "damageType": "Magic",
             "element": "Energy",
             "buttonImageUrl": "http://i.imgur.com/VGpZuXK.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Warlic-Zap1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Warlic-Zap1.0.png",
+            "appearanceUrls": [
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Warlic-Zap1.0.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Warlic-Zap1.1.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "1.1"
+            ]
           },
           {
             "name": "Attack",
@@ -13798,7 +14780,7 @@
         "title": "Xor Vrailin II (Character Page)"
       }
     ],
-    "notes": "• This guest is linked to a real player's character ID, and as such all variables are subject to change, such as in an Aeris Minor Tournament.",
+    "notes": "• This guest is linked to a real player's character ID, and as such all variables are subject to change, such as in an  Aeris Minor Tournament.",
     "alsoSee": [],
     "tags": [
       "xor",
@@ -13864,7 +14846,15 @@
         "damageType": "Magic",
         "element": "???",
         "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Yashta-Button02-Stun.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Yashta-StunningLeap1.0.png"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Yashta-StunningLeap1.0.png",
+        "appearanceUrls": [
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Yashta-StunningLeap1.0.png",
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Yashta-StunningLeap1.1.png"
+        ],
+        "appearanceCaptions": [
+          "1",
+          "1.1"
+        ]
       },
       {
         "name": "Resilient Flex",
@@ -13898,7 +14888,15 @@
         "damageType": "Magic",
         "element": "???",
         "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Yashta-Button04-Punch.png",
-        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Yashta-Attack.png"
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Yashta-Attack.png",
+        "appearanceUrls": [
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Yashta-Attack.png",
+          "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Yashta-PunchCombo1.1.png"
+        ],
+        "appearanceCaptions": [
+          "1",
+          "1.1"
+        ]
       },
       {
         "name": "Focused Combo",
@@ -14026,7 +15024,15 @@
             "damageType": "Pierce",
             "element": "Fire",
             "buttonImageUrl": "http://i.imgur.com/UfgOeFX.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Zhoom-BombArrow1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Zhoom-BombArrow1.0.png",
+            "appearanceUrls": [
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Zhoom-BombArrow1.0.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Zhoom-BombArrow1.1.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "1.1"
+            ]
           },
           {
             "name": "Fire Arrow",
@@ -14037,7 +15043,15 @@
             "damageType": "Pierce",
             "element": "Fire",
             "buttonImageUrl": "http://i.imgur.com/oMdG2GX.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Zhoom-FireArrow1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Zhoom-FireArrow1.0.png",
+            "appearanceUrls": [
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Zhoom-FireArrow1.0.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Zhoom-FireArrow1.1.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "1.1"
+            ]
           },
           {
             "name": "Double Arrow",
@@ -14070,7 +15084,15 @@
             "damageType": "Pierce",
             "element": "Metal",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Zhoom-Attack1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Zhoom-Attack1.0.png",
+            "appearanceUrls": [
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Zhoom-Attack1.0.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Zhoom1-Attack1.1.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "1.1"
+            ]
           }
         ],
         "guestStats": {
@@ -14156,7 +15178,15 @@
             "damageType": "Pierce",
             "element": "Fire",
             "buttonImageUrl": "http://i.imgur.com/UfgOeFX.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Zhoom-BombArrow1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Zhoom-BombArrow1.0.png",
+            "appearanceUrls": [
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Zhoom-BombArrow1.0.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Zhoom-BombArrow1.1.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "1.1"
+            ]
           },
           {
             "name": "Fire Arrow",
@@ -14167,7 +15197,15 @@
             "damageType": "Pierce",
             "element": "Fire",
             "buttonImageUrl": "http://i.imgur.com/oMdG2GX.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Zhoom-FireArrow1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Zhoom-FireArrow1.0.png",
+            "appearanceUrls": [
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Zhoom-FireArrow1.0.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Zhoom-FireArrow1.1.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "1.1"
+            ]
           },
           {
             "name": "Double Arrow",
@@ -14201,7 +15239,15 @@
             "damageType": "Pierce",
             "element": "Metal",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Zhoom-Attack1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Zhoom-Attack1.0.png",
+            "appearanceUrls": [
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Zhoom-Attack1.0.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Zhoom1-Attack1.1.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "1.1"
+            ]
           }
         ],
         "guestStats": {
@@ -14240,7 +15286,7 @@
             "dodge": "15 + LUK/20"
           }
         },
-        "notes": "• Zhoom (2)'s race was previously 'Human'; this was changed to 'Sand Elf' on May 24th, 2024.\n• Zhoom (2)'s tooltips were updated on April 11th, 2025."
+        "notes": "• Zhoom (2)'s race was previously 'Human'; this was changed to 'Sand Elf' on  May 24th, 2024.\n• Zhoom (2)'s tooltips were updated on  April 11th, 2025."
       },
       {
         "levelNumber": 3,
@@ -14282,7 +15328,15 @@
             "damageType": "Pierce",
             "element": "Fire",
             "buttonImageUrl": "http://i.imgur.com/UfgOeFX.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Zhoom-BombArrow1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Zhoom-BombArrow1.0.png",
+            "appearanceUrls": [
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Zhoom-BombArrow1.0.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Zhoom-BombArrow1.1.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "1.1"
+            ]
           },
           {
             "name": "Fire Arrow",
@@ -14293,7 +15347,15 @@
             "damageType": "Pierce",
             "element": "Fire",
             "buttonImageUrl": "http://i.imgur.com/oMdG2GX.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Zhoom-FireArrow1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Zhoom-FireArrow1.0.png",
+            "appearanceUrls": [
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Zhoom-FireArrow1.0.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Zhoom-FireArrow1.1.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "1.1"
+            ]
           },
           {
             "name": "Double Arrow",
@@ -14327,7 +15389,15 @@
             "damageType": "Pierce",
             "element": "Metal",
             "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Attack.png",
-            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Zhoom-Attack1.0.png"
+            "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Zhoom-Attack1.0.png",
+            "appearanceUrls": [
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Zhoom-Attack1.0.png",
+              "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Zhoom1-Attack1.1.png"
+            ],
+            "appearanceCaptions": [
+              "1",
+              "1.1"
+            ]
           }
         ],
         "guestStats": {
@@ -14371,7 +15441,7 @@
             "crit": "0%"
           }
         },
-        "notes": "• Zhoom (3)'s race was previously 'Human'; this was changed to 'Sand Elf' on May 24th, 2024.\n• Zhoom (3)'s tooltips were updated on April 11th, 2025."
+        "notes": "• Zhoom (3)'s race was previously 'Human'; this was changed to 'Sand Elf' on  May 24th, 2024.\n• Zhoom (3)'s tooltips were updated on  April 11th, 2025."
       }
     ],
     "releaseDate": "March 14th, 2008",

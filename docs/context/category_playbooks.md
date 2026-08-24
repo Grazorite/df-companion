@@ -104,8 +104,13 @@ separate level variants using `buildLevelAccessVariants`:
 - `isRare`: Detected via `<img src="...tags/Rare.jpg">`
 - `isSeasonal`: Detected via `<img src="...tags/Seasonal.jpg">`
 - `isSpecialOffer`: Detected via `<img src="...tags/SpecialOffer.png">`
+- `isWar`: Detected via `<img src="...tags/WarLoot.jpg">` for pets and guests; this tag image is
+  never a main item image candidate.
 - `retired`: Detected via `<img src="...tags/Retired.png">`
 - An entry can have multiple L2 categories (e.g., both Seasonal AND Rare)
+
+Accessories and weapons use the same `isWar` flag when `tags/WarLoot.jpg` appears in a detail post.
+Badges and Housing do not currently use WarLoot category detection.
 
 ### Type Detection (Pet vs Guest)
 
@@ -334,25 +339,39 @@ Housing filters are category-wide for now: Level 1 shows `Multiple Versions` and
 data-driven `Effect`, `Rare`, `Seasonal`, and `Retired`. Do not show `Free` unless a Housing subtype
 later proves to contain genuinely free entries.
 
-The Housing scraper (`npm run scrape:housing -- --subtype=house`, with optional `--limit` for samples
-and `--fresh` for replacing the selected subtype file) parses A-Z listing entries and enriches detail
-posts with description, main/alternative images, obtain methods, price/sellback, rarity, capacity,
-furnishing slot counts, effect text, explicit Also See links, and Other Information. Normal full
-subtype runs are additive by slug and merge into the existing subtype JSON; `--limit` runs stay dry-run
-unless `--fresh` is explicitly passed. This additive-by-default, fresh-by-selected-scope model should
-be the default scraper design for current and future categories, adapted to each category's safe merge
-scope. Same-thread multi-post house entries such as `Gothic Style` / `Gothic Style II` become item
-families with variant-specific images and details; variant labels should use the shared compact form,
-e.g. `(Base)` and `II`, while source links retain full forum titles. Printable forum pages may return
-500 for some duplicate listing links; fall back to the direct forum post before keeping a
-listing-only entry.
+The Housing scraper (`npm run scrape:housing -- --subtype=house`, with optional `--limit` for samples,
+`--names` for scoped refreshes, and `--fresh` for replacing the selected subtype file) parses A-Z
+listing entries and enriches detail posts with description, main/alternative images, obtain methods,
+price/sellback, rarity, capacity, furnishing slot counts, effect text, Housing effect type, explicit
+Also See links, and Other Information. Housing effect types come from the forum's
+`House Items Sorted by Effects` post (`fb.asp?m=21302559`). Only the bold/underlined section heading
+is used as the compact type, such as `Effect Type: Heal`; the larger `Effect` card still renders the
+item-specific effect text scraped from the item's own post. A Housing item may have item-specific
+effect text without an `effectType`; do not infer one from the effect prose. Ignore one-letter A-Z
+anchors in the sorted effects post, since those are navigation headings rather than effect types. Normal
+full subtype runs are additive by slug and merge into the existing subtype JSON; `--limit` runs stay
+dry-run unless `--fresh` is explicitly passed. Scoped `--names` refreshes replace only matching
+names/aliases before adding refreshed entries, so they are safe for narrow repair passes. This
+additive-by-default, fresh-by-selected-scope model should be the default scraper design for current
+and future categories, adapted to each category's safe merge scope. Same-thread multi-post house
+entries such as `Gothic Style` / `Gothic Style II` become item families with
+variant-specific images and details; variant labels should use the shared compact form, e.g. `(Base)`
+and `II`, while source links retain full forum titles. Other Information belongs on the variant whose
+post contains it; only standalone trailing posts with no item title are shared across variants.
+Printable forum pages may return 500 for some duplicate listing links; fall back to the direct forum
+post before keeping a listing-only entry.
 
 Housing furnishings from Rugs onward may have `Effect:` text. Render the effect in its own detail card
 below the image section. Use the label `Effect` consistently for the filter pill, card/list pill,
-detail metadata pill, and detail card heading. Keep Also See below Sources using the shared
+compact effect-type metadata line, and detail card heading. Effect quote blocks must preserve forum
+quote structure instead of flattening into comma-separated prose. Keep Also See below Sources using the shared
 related-card treatment. Housing can infer Also See across subtypes through the shared related-item
 hook when names and obtain methods are close, but must not consolidate entries across different
-housing subtypes. If one forum thread contains different item types (for example
+housing subtypes. Within the same Housing subtype only, exact Left/Right pairs may consolidate into a
+single family when their normalized names match: `X Left` / `X Right`, `Left X` / `Right X`,
+middle-token pairs, `X L` / `X R`, and `Lefthand X` / `Righthand X`. The family name drops the side
+token and variants retain the forum side label (`Left`, `Right`, `L`, `R`, `Lefthand`,
+`Righthand`). If one forum thread contains different item types (for example
 `Inn at the Edge of Time Portal (Indoors)` as Stuff and `(Outside)` as Shrub), split them into
 separate subtype entries and link via Also See. Known forum listing/detail classification mismatches
 should be kept as scoped Housing overrides; current overrides place `Light Bowl` and

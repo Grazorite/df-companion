@@ -170,8 +170,11 @@ export function stripForumHtml(
   )
 }
 
-export function normalizeStructuredText(html: string): string {
-  return decodeHtml(stripForumHtml(html))
+export function normalizeStructuredText(
+  html: string,
+  options: { includeListItemClosers?: boolean; preserveIndentation?: boolean } = {}
+): string {
+  return decodeHtml(stripForumHtml(html, 'normalizeStructuredText', options))
 }
 
 export function slugify(value: string, maxLength?: number): string {

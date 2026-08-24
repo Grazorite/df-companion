@@ -119,7 +119,22 @@ npm run scrape:weapons -- --special-only --missing-special-images-only
 ```bash
 npm run scrape:housing -- --subtype=house           # Scrape one Housing subtype (additive by slug)
 npm run scrape:housing -- --subtype=house --limit=5 # Dry-run parser sample
+npm run scrape:housing -- --subtype=house --names="Villager Style" # Refresh specific housing names
 npm run scrape:housing -- --subtype=house --fresh   # Replace the selected subtype file
+```
+
+Housing effect type metadata (`Effect Type: Heal`, `Effect Type: Utility`, etc.) is sourced from
+the bold/underlined section headings at `https://forums2.battleon.com/f/fb.asp?m=21302559`. This is
+only an add-on category label; the item-specific `effect` text still comes from the item's own detail
+post. Some effect-bearing items are not listed under an effect-type section; leave `effectType`
+unset for those rather than inferring it. The parser must ignore the sorted page's one-letter A-Z
+navigation headings. Refresh only the effect-bearing furnishing subtypes to populate it:
+
+```bash
+npm run scrape:housing -- --subtype=rug
+npm run scrape:housing -- --subtype=shrub
+npm run scrape:housing -- --subtype=stuff
+npm run scrape:housing -- --subtype=wall-item
 ```
 
 ## Scraper Notes
@@ -176,7 +191,7 @@ npm run scrape:pets    # Scrape forum pets (supports --letters, --names, --fresh
 npm run scrape:guests  # Scrape forum guests (supports --letters, --names, --fresh)
 npm run scrape:accessories # Scrape accessories (supports --subtypes, --letters, and --names)
 npm run scrape:weapons # Scrape weapons (supports --subtypes, --letters, --names, and --url/--urls)
-npm run scrape:housing # Scrape housing (supports --subtype, --limit, --fresh)
+npm run scrape:housing # Scrape housing (supports --subtype, --names, --limit, --fresh)
 npm run validate       # Run all dataset validators + cross-post-family verify + script typecheck
 npm run verify         # Cross-post-family invariant checks (dup slugs, alias/AlsoSee integrity)
 npm run typecheck:scripts # Typecheck scripts/ against tsconfig.scripts.json
@@ -213,6 +228,9 @@ Prefer this structure as existing scrapers are touched:
 - `scripts/lib/family-merge-guard.ts`: shared family-safe scoped-refresh guards and family-aware
   same-slug dedupe
 - `scripts/lib/tags.ts`: shared retired-tag detection helper
+- Pet, guest, accessory, and weapon scrapes treat `tags/WarLoot.jpg` as the `isWar` category flag.
+  Image extractors must not treat forum `/tags/` assets as main item images. Badges and Housing do
+  not currently use WarLoot detection.
 - `scripts/lib/cross-post-family.ts`: pet/guest cross-post family promotion only
 - `scripts/lib/accessories/*`: accessory subtype strategies for image rules, family inspection,
   conservative cross-post promotion, and subtype-specific quirks

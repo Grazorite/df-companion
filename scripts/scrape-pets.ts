@@ -117,6 +117,17 @@ function extractOtherInfoBulletLines(html: string): string[] {
   if (!match) return []
 
   const segment = match[1]
+  const structuredLines = decodeHTML(
+    stripForumHtml(segment, 'pet other information', {
+      includeListItemClosers: true,
+      preserveIndentation: true,
+    })
+  )
+    .split('\n')
+    .map((line) => line.replace(/\s+$/, ''))
+    .filter((line) => line.trim().length > 0)
+  if (structuredLines.length > 0) return structuredLines
+
   const bulletMatches = [
     ...segment.matchAll(
       /<li>\s*([\s\S]*?)(?=(?:<br>\s*<li>)|(?:<br>\s*(?:<img|Also\s+See:|<i>\s*Thanks\s+to|Thanks\s+to))|$)/gi
@@ -715,11 +726,13 @@ function buildVariantFamilyFromSinglePost(
       stub.type,
       ...elementCodes.map((code) => code.toLowerCase()),
       ...stub.markers.map((marker) => marker.toLowerCase().replace('/', '-')),
+      ...(data.isWar ? ['war'] : []),
     ],
     ...(data.isTemp ? { isTemp: data.isTemp } : {}),
     ...(data.isRare ? { isRare: data.isRare } : {}),
     ...(data.isSeasonal ? { isSeasonal: data.isSeasonal } : {}),
     ...(data.isSpecialOffer ? { isSpecialOffer: data.isSpecialOffer } : {}),
+    ...(data.isWar ? { isWar: data.isWar } : {}),
     ...(data.retired ? { retired: data.retired } : {}),
     hasDA: false,
     hasDC: false,
@@ -1683,7 +1696,7 @@ function extractImages(
     /\/f\/image\//i, // Forum UI images
     /^image\//i,
     /^micons\//i,
-    /tags\/(DA|DC|DM|Temp|Rare|Seasonal|SpecialOffer|Retired)/i,
+    /tags\/(DA|DC|DM|Temp|Rare|Seasonal|SpecialOffer|WarLoot|Retired)/i,
     /width=["']?\d{1,2}["']?/, // Tiny images
     /forumheader/i,
     /clear\.gif/i,
@@ -3166,6 +3179,7 @@ export async function parsePetThreadMultiVariant(
   const threadIsRare = /<img[^>]+src=["'][^"']*\/tags\/Rare\.jpg["']/i.test(html)
   const threadIsSeasonal = /<img[^>]+src=["'][^"']*\/tags\/Seasonal\.jpg["']/i.test(html)
   const threadIsSpecialOffer = /<img[^>]+src=["'][^"']*\/tags\/SpecialOffer\.png["']/i.test(html)
+  const threadIsWar = /<img[^>]+src=["'][^"']*\/tags\/WarLoot\.jpg["']/i.test(html)
   const threadRetired = hasRetiredTag(html)
 
   // Also check allPosts if multi-page thread
@@ -3173,6 +3187,7 @@ export async function parsePetThreadMultiVariant(
   let isRare = threadIsRare
   let isSeasonal = threadIsSeasonal
   let isSpecialOffer = threadIsSpecialOffer
+  let isWar = threadIsWar
   let retired = threadRetired
 
   if (allPosts.length > 1) {
@@ -3183,6 +3198,7 @@ export async function parsePetThreadMultiVariant(
         isSeasonal = /<img[^>]+src=["'][^"']*\/tags\/Seasonal\.jpg["']/i.test(postHtml)
       if (!isSpecialOffer)
         isSpecialOffer = /<img[^>]+src=["'][^"']*\/tags\/SpecialOffer\.png["']/i.test(postHtml)
+      if (!isWar) isWar = /<img[^>]+src=["'][^"']*\/tags\/WarLoot\.jpg["']/i.test(postHtml)
       if (!retired) retired = hasRetiredTag(postHtml)
     }
   }
@@ -3237,12 +3253,14 @@ export async function parsePetThreadMultiVariant(
       stub.type,
       ...familyElements.map((e) => e.toLowerCase()),
       ...familyTraits.map((m) => m.toLowerCase().replace('/', '-')),
+      ...(isWar ? ['war'] : []),
     ],
     // Category flags from thread-level detection
     ...(isTemp ? { isTemp } : {}),
     ...(isRare ? { isRare } : {}),
     ...(isSeasonal ? { isSeasonal } : {}),
     ...(isSpecialOffer ? { isSpecialOffer } : {}),
+    ...(isWar ? { isWar } : {}),
     ...(retired ? { retired } : {}),
     // Access flags will be computed by computeFamilyFlags
     hasDA: false,
@@ -3307,6 +3325,7 @@ function convertToPet(
     ...(data.isRare ? { isRare: data.isRare } : {}),
     ...(data.isSeasonal ? { isSeasonal: data.isSeasonal } : {}),
     ...(data.isSpecialOffer ? { isSpecialOffer: data.isSpecialOffer } : {}),
+    ...(data.isWar ? { isWar: data.isWar } : {}),
     ...(data.retired ? { retired: data.retired } : {}),
     elements: data.elementCodes.length > 0 ? data.elementCodes : stub.elements,
     traits: stub.markers,
@@ -3335,6 +3354,7 @@ function convertToPet(
         e.toLowerCase()
       ),
       ...stub.markers.map((m) => m.toLowerCase().replace('/', '-')),
+      ...(data.isWar ? ['war'] : []),
     ],
   }
 }
@@ -3353,6 +3373,7 @@ export function parsePetThread(
   isRare: boolean
   isSeasonal: boolean
   isSpecialOffer: boolean
+  isWar: boolean
   retired: boolean
   obtainMethods: ObtainMethod[]
   level: string
@@ -3393,6 +3414,7 @@ export function parsePetThread(
   let isRare = false
   let isSeasonal = false
   let isSpecialOffer = false
+  let isWar = false
   let retired = false
   let obtainMethods: ObtainMethod[] = []
   let currentObtain: Partial<ObtainMethod> | null = null
@@ -3435,6 +3457,9 @@ export function parsePetThread(
   }
   if (/<img[^>]+src=["'][^"']*\/tags\/SpecialOffer\.png["']/i.test(rawBody)) {
     isSpecialOffer = true
+  }
+  if (/<img[^>]+src=["'][^"']*\/tags\/WarLoot\.jpg["']/i.test(rawBody)) {
+    isWar = true
   }
   if (hasRetiredTag(rawBody)) {
     retired = true
@@ -3988,6 +4013,7 @@ export function parsePetThread(
     isRare,
     isSeasonal,
     isSpecialOffer,
+    isWar,
     retired,
     obtainMethods,
     level,

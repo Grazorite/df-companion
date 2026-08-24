@@ -181,6 +181,7 @@ function searchAccessories(
         if (category === 'rare') return item.isRare === true
         if (category === 'seasonal') return item.isSeasonal === true
         if (category === 'special-offer') return item.isSpecialOffer === true
+        if (category === 'war') return item.isWar === true
         if (category === 'retired') return itemRetired
         return false
       }
@@ -212,12 +213,33 @@ function searchAccessories(
         const variantNames = isAccessoryFamily(item)
           ? item.levelVariants.map((level) => level.name)
           : []
+        const variantDescriptions = isAccessoryFamily(item)
+          ? item.levelVariants.map((level) => level.description)
+          : []
+        const variantNotes = isAccessoryFamily(item)
+          ? item.levelVariants.map((level) => level.notes)
+          : []
+        const skillEffectTypes = isAccessoryFamily(item)
+          ? (item.trinketSkillEffectTypes ?? [])
+          : (item.trinketSkillEffectTypes ?? [])
+        const attackText = isAccessoryFamily(item)
+          ? [
+              ...(item.shared.attacks ?? []),
+              ...item.levelVariants.flatMap((level) => level.attacks ?? []),
+            ].flatMap((attack) => [attack.name, attack.description])
+          : (item.attacks ?? []).flatMap((attack) => [attack.name, attack.description])
 
         const searchableText = [
           itemName,
           displayTitle(itemName),
           description,
+          isAccessoryFamily(item) ? item.shared.notes : item.notes,
+          item.releaseDate,
           ...variantNames,
+          ...variantDescriptions,
+          ...variantNotes,
+          ...skillEffectTypes,
+          ...attackText,
           ...tags,
           ...itemElements.map(
             (code) =>
@@ -360,6 +382,7 @@ export function useAccessoryCategoryAvailability(subtype: AccessorySubtype) {
         if (entry.isRare) categories.add('rare')
         if (entry.isSeasonal) categories.add('seasonal')
         if (entry.isSpecialOffer) categories.add('special-offer')
+        if (entry.isWar) categories.add('war')
         if (entry.retired) categories.add('retired')
       }
 

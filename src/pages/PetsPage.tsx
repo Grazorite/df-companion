@@ -29,6 +29,7 @@ const CATEGORY_OPTIONS = [
   { id: 'rare', label: 'Rare' },
   { id: 'seasonal', label: 'Seasonal' },
   { id: 'special-offer', label: 'Special Offer' },
+  { id: 'war', label: 'War' },
   { id: 'retired', label: 'Retired' },
 ] as const
 

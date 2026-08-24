@@ -83,7 +83,19 @@ function searchHousing(items: HousingEntry[], subtype: HousingSubtype, filters: 
           isFamily ? item.familyName : item.name,
           displayTitle(isFamily ? item.familyName : item.name),
           isFamily ? item.shared.description : item.description,
+          isFamily ? item.shared.notes : undefined,
           ...(isFamily ? item.levelVariants.map((variant) => variant.name) : []),
+          ...(isFamily ? item.levelVariants.map((variant) => variant.description) : []),
+          ...(isFamily ? item.levelVariants.map((variant) => variant.effect) : [item.effect]),
+          ...(isFamily
+            ? item.levelVariants.map((variant) => variant.effectType)
+            : [item.effectType]),
+          ...(isFamily ? item.levelVariants.map((variant) => variant.itemType) : [item.itemType]),
+          ...(isFamily ? item.levelVariants.map((variant) => variant.rarity) : [item.rarity]),
+          ...(isFamily ? item.levelVariants.map((variant) => variant.capacity) : [item.capacity]),
+          ...(isFamily
+            ? item.levelVariants.map((variant) => variant.furnishingSlots)
+            : [item.furnishingSlots]),
           ...(isFamily
             ? item.levelVariants.flatMap((variant) =>
                 variant.obtainVariants.map((obtain) => obtain.location)
@@ -124,7 +136,11 @@ export function useHousingBySlug(subtype: HousingSubtype, slug: string) {
   const { housing, loading } = useHousingSubtypeDataset(subtype)
   const item = useMemo(() => {
     if (loading) return undefined
-    return housing.find((entry) => entry.slug === slug) ?? null
+    return (
+      housing.find(
+        (entry) => entry.slug === slug || (isHousingFamily(entry) && entry.aliasSlugs?.includes(slug))
+      ) ?? null
+    )
   }, [housing, loading, slug])
   return { item, loading }
 }
