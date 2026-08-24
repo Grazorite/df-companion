@@ -2012,30 +2012,8 @@ function hasRequiredItemImage(item: Pet | ItemFamily): boolean {
 // ─────────────────────────────────────────────────────────────────────────────
 
 function parsePriceType(price: string, requiredItems?: string): ObtainMethod['priceType'] {
-  const p = price.toLowerCase()
-
-  // Dragon Coins
-  if (p.includes('dragon coin') || p.includes(' dc') || p === '0 dc') return 'dc'
-
-  // Defender's Medals
-  if (p.includes("defender's medal") || p.includes('defender medal') || p.includes(' dm'))
-    return 'dm'
-
-  // Free = no listed price and no required items, explicitly 0 Gold, or "Free"
-  if ((p === 'n/a' || p === '0' || p === '0 gold' || p === 'free') && !requiredItems) {
-    return 'free'
-  }
-
-  // Merge = N/A price WITH required items
-  if ((p === 'n/a' || p === '0') && requiredItems && requiredItems.trim().length > 0) return 'merge'
-
-  // Gold (includes paid gold amounts and N/A without required items)
-  if (p.includes('gold')) return 'gold'
-
-  // Default to merge for anything else with required items
-  if (requiredItems && requiredItems.trim().length > 0) return 'merge'
-
-  return 'gold'
+  const normalizedPrice = price.trim().toLowerCase() === '0' ? 'N/A' : price
+  return computePriceType(normalizedPrice, requiredItems) as ObtainMethod['priceType']
 }
 
 function extractDragonVariantSections(html: string): Array<{ variantName: string; html: string }> {

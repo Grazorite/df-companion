@@ -16,6 +16,9 @@ All list view cards must follow this pattern:
 - **Description**: `line-clamp-2` (two lines with ellipsis)
 - **Layout**: Flex with metadata row, title, description, chevron icon
 - **Interaction**: Hover lift (`hover:-translate-y-0.5`), border highlight, shadow increase
+- **Access/status pills**: card-gallery access pills use compact labels (`DA`, `DC`, `DM`, `Free`).
+  Do not show text pills for `Multiple Versions` or `Merge Required` on cards; use level/range chips
+  or detail-page/obtain-method metadata instead.
 - Examples: `BadgeCard.tsx`, `PetCard.tsx`
 - Cards that navigate to detail pages should carry the current browse URL with the shared
   navigation-context helper. Detail pages should read that `from` context for their top back link,
@@ -167,10 +170,10 @@ treatment and a leading minus icon. URL params keep includes in the existing key
 `excludeElement`). Keep clear-filter controls visible whenever either include or exclude filters are
 active, and echo exclusions in result-count text as "excluding ...".
 
-Dataset selectors are not tri-state filters. Accessory and weapon subtype selectors must remain
-single-select (`type=...`) so the page lazy-loads only one subtype/shard group at a time. Do not
-allow combined accessory or weapon subtype browsing unless the data-loading strategy has been
-explicitly redesigned for it.
+Dataset selectors are not tri-state filters. Accessory, weapon, Housing, and Classes / Abilities
+subtype selectors must remain single-select (`type=...`) so the page lazy-loads only one
+subtype/shard group at a time. Do not allow combined subtype browsing unless the data-loading strategy
+has been explicitly redesigned for it.
 
 Filter visibility should be data-driven at the shared UI level. Show access, category, element, and
 trait filter pills only when the currently loaded dataset, subtype, or active segment contains at
@@ -289,6 +292,30 @@ URL query params supported by `/pets`:
   description, matching the trinket `Effect Type(s):` typography and placement.
 - Housing effect cards use the same typography and panel spacing as other detail cards. Effects with
   forum quote blocks should render quotes as quote blocks, not inline comma-separated text.
+
+### Classes / Abilities Page
+
+- **Subtype segment**: single-select `Classes` / `Consumables`
+- **Classes filter rows**: sub-subtype row, then access filters, then category filters
+- **Consumables filter rows**: access filters, then category filters (`Temp` remains data-driven
+  because Health/Mana Potion are non-Temp), then Dust/Food/Rune kind filters styled like compact
+  Level 3 filters. Dust/Food/Rune pills should keep their kind colour in the neutral state and add
+  the selected gold ring only when included.
+- Every filter row has its own inline `Clear filters` control that only clears that row's include and
+  exclude params.
+- Current Consumables do not show Temp or Effect pills on gallery cards because all current
+  Consumables are Temp and expected to have effects. Gallery cards should show Dust/Food/Rune kind
+  pills when present.
+- Consumable detail pages keep `Also See` below `Sources`, using explicit/reverse forum refs plus the
+  shared inferred related-items matcher within the Consumables subtype.
+- Health Potion and Mana Potion render their effect in the shared attack-style accordion so the skill
+  button image and Appearance image are grouped with the effect instead of shown as a generic main
+  image section. Every other Consumable renders the original plain `Effect` card.
+- Consumables with sorted effect metadata render `Effect Type: <type>` below the description, using
+  the same typography and placement as Housing `Effect Type:` and trinket `Effect Type(s):`.
+- Consumables with parsed dialogue render a separate `Dialogue` card after How to Obtain and before
+  Other Information. Use the shared notes/quote-box styling: prompt/context lines as normal note rows,
+  dialogue text in the quote panel.
 
 ## Detail Page Metadata
 

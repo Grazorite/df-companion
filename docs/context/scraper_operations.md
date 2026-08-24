@@ -71,6 +71,8 @@ npm run images:pets -- --letters=A,B                # Add images for specific le
 ```
 
 Progress saved to `src/data/pets-progress.json` (gitignored).
+Progress files are resumable local caches only. They are not app data, should not be committed, and
+can be deleted safely when starting a deliberately fresh scrape.
 
 ### Guest Scraping
 
@@ -136,6 +138,44 @@ npm run scrape:housing -- --subtype=shrub
 npm run scrape:housing -- --subtype=stuff
 npm run scrape:housing -- --subtype=wall-item
 ```
+
+### Classes / Abilities Scraping
+
+```bash
+npm run scrape:classes -- --subtype=consumable --fresh
+npm run scrape:classes -- --subtype=consumable --limit=5 # Dry-run parser sample
+npm run scrape:classes -- --subtype=consumable --names="Health Potion|Mana Potion"
+npm run scrape:classes -- --subtype=consumable --names="Black Stardust (E: Boost)|Blue Stardust (Bonus)"
+```
+
+The starter Classes / Abilities scraper currently implements Consumables only. It reads the A-Z
+listing at `https://forums2.battleon.com/f/fb.asp?m=22304639`, appends supplemental Health Potion
+(`m=4159197`) and Mana Potion (`m=4159198`) entries that are absent from the index, follows each
+linked forum post, and extracts family/name, description, obtain methods, level, rarity, effect text,
+dialogue snippets, Other Information, and source links. It skips the listing headings
+`Alphabetical Consumables Listing` and `Consumables Sorted by Effects`. Dust/Food/Rune filters come
+from the A-Z `[D]`, `[F]`, and
+`[R]` prefixes, with individual post `Item Type` as a fallback. Seasonal/category tags come from listing tag images,
+listing text such as `Seasonal`, and detail-post tag images such as `/tags/Seasonal.jpg`; normalize
+tag filenames, `alt`, and `title` labels before matching seasonal holiday aliases. Consumable family
+effects are shared by default unless variants have distinct explicit `Effect:` / `Effects:` lines.
+Dialogue snippets between `Level:` and `Effect:` / `Effects:` are stored separately from description
+and Other Information; strip repeated item-name prompt labels and `OK` button lines while keeping
+prompt/context text and quote text.
+Consumable effect type labels are sourced from the sorted effects page
+`https://forums2.battleon.com/f/fb.asp?m=22304644`; only bold/underlined section headings such as
+`STR`, `DEX`, `Boost`, `All Resist`, and `Utility` count. Ignore `Contents`, `Legend`, and A-Z
+navigation headings, and do not infer an effect type for unlisted consumables. Health/Mana Potion
+effect blocks also parse skill button and Appearance images into the shared
+attack-style display shape. The potion button images use fixed DF-Pedia `Skill-HP.png` and
+`Skill-MP.png` assets, and standalone `Appearance` hotlink labels are discarded from Other
+Information. Consumables are Temp by default except Health Potion and Mana Potion; do not require main
+images for ordinary Consumables. Base/`+` duplicate listing links are deduped by slug during write,
+preserving both variants inside the non-`+` family.
+
+All category scrapers should use the shared `computePriceType` / access-flag repair path for
+obtain-method classification. Pure `Required Items: Defender's Medal` methods are DM methods, not
+Merge Required methods; only non-medal required-item recipes should set `priceType: "merge"`.
 
 ## Scraper Notes
 

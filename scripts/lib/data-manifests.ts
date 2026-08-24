@@ -74,3 +74,16 @@ export function writeWeaponManifest(dataDir: string): void {
     'utf-8'
   )
 }
+
+export function writeClassAbilitiesManifest(dataDir: string): void {
+  const manifest = readDataFilesBySubtype(dataDir, [
+    ['class', ['classes.json']],
+    ['consumable', ['class-consumables.json']],
+  ])
+
+  fs.writeFileSync(
+    path.resolve(dataDir, 'class-abilities-manifest.json'),
+    `${JSON.stringify(manifest, null, 2)}\n`,
+    'utf-8'
+  )
+}

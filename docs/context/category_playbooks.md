@@ -379,3 +379,75 @@ should be kept as scoped Housing overrides; current overrides place `Light Bowl`
 
 Housing scraper writes must update `src/data/housing-manifest.json` automatically. Use `--limit` for
 small parser samples before running a full subtype scrape.
+
+---
+
+## Classes / Abilities
+
+Classes / Abilities follows the subtype-page template used by Accessories, Weapons, and Housing. The
+top-level subtype segment is single-select: `Classes` and `Consumables`, in that order. The home-page
+and subtype-page descriptions are sourced from the forum wording: "All the different stats /
+abilities for the different classes in DragonFable. Pirates, Paladins, Chickencow Lords, and more!"
+
+The Classes subtype has an extra multi-select sub-subtype filter level before normal access filters:
+`Armors`, `Regular`, and `Miscellaneous`. `Miscellaneous` can additionally expose a data-driven
+`Special Character` filter when Alexander/Archknight-style special-character tags are present. The
+next levels are the shared access filters (`Multiple Versions`, `DA Required`, `Merge Required`,
+`DC`) and the shared category filters (`Temp`, `Rare`, `Seasonal`, `Special Offer`, `Retired`).
+
+The Consumables subtype uses shared access filters, then shared category filters, then a separate
+data-driven kind filter row: `Dust`, `Food`, and `Rune`. Consumables are Temp by default except
+`Health Potion` and `Mana Potion`; show this as a subtle page-level note, similar to Housing's Dragon
+Amulet note, but do not show a Temp pill on current Consumable gallery cards or detail headers.
+Normal Consumables do not require main images. Health Potion and Mana Potion are supplemental
+non-A-Z entries with potion skill/effect display data, including button and Appearance images. Their
+button images are deterministic DF-Pedia assets (`Skill-HP.png` and `Skill-MP.png`) because the
+forum posts expose a generic inline image before the actual skill button.
+
+Consumable detail pages should reuse the shared item-family/detail order: selector when needed, image
+when present, level/rarity metrics, How to Obtain cards, Dialogue when present, Other Information,
+Sources, then Also See.
+Optional Consumable `Dialogue` snippets are parsed from text between `Level:` and `Effect:` /
+`Effects:` and render in their own card before Other Information. Preserve prompt/context lines as
+normal note bullets and render dialogue text in quote boxes; strip repeated item-title prompt labels
+and `OK` button lines. Do not emit a generic inner `Dialogue` bullet when the card title already
+provides that label. The `Effect` card is item-specific effect text, follows Housing's effect-card
+treatment. Family-level effect text should be stored and rendered as shared unless variants have
+distinct explicit effects. Consumable effect types come from
+the sorted effects page (`fb.asp?m=22304644`); only bold/underlined section headings such as `STR`,
+`DEX`, `Boost`, `All Resist`, and `Utility` are stored as the compact `Effect Type:` label. Ignore
+page-structure headings like `Contents`, `Legend`, and A-Z navigation headings, and leave
+`effectType` unset for consumables not listed under an effect heading. Only Health Potion and Mana
+Potion render their effect in the shared attack-style accordion so their skill image and Appearance
+image can stay with the effect; all other Consumables use the plain `Effect` card even if scraped data
+contains image metadata. Do not duplicate the potion description inside that accordion; the top-level
+description already carries it. Hotlinked `Appearance` labels are media captions and should not be
+retained as Other Information. How to Obtain cards should suppress the
+price/sellback grid when all methods are `N/A` or empty, but must still show real prices when present
+such as `Instant Pierogi`. Consumables are always level `1`; omit level from Consumable detail pages
+and show only the standalone `Rarity` chip before How to Obtain. Consumables also should not show an
+`Effect` pill on gallery cards because effects are expected for the subtype.
+
+The starter scraper is `npm run scrape:classes -- --subtype=consumable --fresh`. It reads the
+Consumables A-Z listing (`fb.asp?m=22304639`), appends the supplemental Health Potion (`m=4159197`)
+and Mana Potion (`m=4159198`) entries under H/M, and follows linked detail posts. It is additive by
+default, `--limit` is a dry-run unless paired with `--fresh`, and successful writes update
+`src/data/class-consumables.json` plus `src/data/class-abilities-manifest.json`. The Classes subtype
+parser is intentionally not implemented yet. The Consumables listing includes non-entry anchors
+`Alphabetical Consumables Listing` and `Consumables Sorted by Effects`; scrapers must skip them. The
+A-Z listing prefixes `[D]`, `[F]`, and `[R]` drive the L3 `Dust`, `Food`, and `Rune` kind filters,
+with individual post `Item Type: Dust/Food/Rune` as the fallback verification source. Effects may be
+labelled `Effect:` or `Effects:` and must be parsed from the item detail block. Seasonal detection
+comes from listing tag images/labels, listing text such as `Seasonal`, and detail-post tag images
+such as `http://media.artix.com/encyc/df/tags/Seasonal.jpg`. Normalize tag filenames, `alt`, and
+`title` text before matching `seasonal`, holiday, Frostval, Mogloween, Hero's Heart, and
+Friday-the-13th tags.
+
+Consumable listing pages can link both the base and `+` entry for the same two-variant family, e.g.
+`Fried Zard Legs` and `Fried Zard Legs+`. Scraper output should dedupe by slug and prefer the
+non-`+` display family while retaining both `(Base)` and `+` variants inside that family. Same-name
+same-level variants that differ by Defender's Medal requirements should label the medal variant with
+`(DM)`; pure Defender's Medal `Required Items` entries are DM methods, not Merge Required methods. If
+both methods are in one forum post, trailing Other Information belongs at the shared family level.
+Consumables use the shared related-items hook for explicit/reverse `Also See` plus conservative
+same-subtype inferred links from matching obtain fingerprints and near-identical names.

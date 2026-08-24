@@ -20,9 +20,27 @@ export function obtainVariantHasDC(variant: ObtainVariant): boolean {
   )
 }
 
+export function isDefenderMedalText(value: string | undefined): boolean {
+  return /defender'?s?\s+medals?|\bdm\b/i.test(value ?? '')
+}
+
+export function isPureDefenderMedalRequirement(value: string | undefined): boolean {
+  if (!isDefenderMedalText(value)) return false
+  const remainder = (value ?? '')
+    .replace(/\b\d+\b/g, '')
+    .replace(/defender'?s?\s+medals?/gi, '')
+    .replace(/\bDM\b/gi, '')
+    .replace(/\b(?:and|or)\b/gi, '')
+    .replace(/[&,+/()\-\s]/g, '')
+  return remainder.length === 0
+}
+
 function variantAccessSortRank(level: LevelVariant): number {
   const hasDC = level.obtainVariants.some(obtainVariantHasDC)
-  if (hasDC) return 2
+  if (hasDC) return 3
+
+  const hasDM = level.obtainVariants.some((variant) => variant.dmRequired || variant.priceType === 'dm')
+  if (hasDM) return 2
 
   const hasDA = level.obtainVariants.some((variant) => variant.daRequired)
   if (hasDA) return 1
@@ -145,9 +163,10 @@ export function stripVersionSuffix(name: string): string {
  *
  * Logic:
  * - free: "N/A", "0 Gold", or "Free" with NO required items
- * - merge: "N/A" but HAS required items (merge shop)
+ * - merge: "N/A" but HAS required items that are not purely Defender's Medals
  * - dc: Contains "Dragon Coin" or forum shorthand like "DC"
- * - dm: Contains "Defender's Medal" or forum shorthand like "DM"
+ * - dm: Contains "Defender's Medal" or forum shorthand like "DM"; pure medal required items also
+ *   count as DM rather than merge
  * - gold: Default (anything else)
  *
  * @param price - Price string from forum post
@@ -157,6 +176,7 @@ export function stripVersionSuffix(name: string): string {
  * @example
  * computePriceType("N/A", undefined) // "free"
  * computePriceType("N/A", "1 Prince Linus") // "merge"
+ * computePriceType("N/A", "1 Defender's Medal") // "dm"
  * computePriceType("150 Dragon Coins", undefined) // "dc"
  * computePriceType("500 Gold", undefined) // "gold"
  */
@@ -169,12 +189,6 @@ export function computePriceType(price: string, requiredItems?: string): PriceTy
     return 'free'
   }
 
-  // Merge: "N/A" but HAS required items
-  // Examples: DM shop pets (price N/A but requires medals), crafted items
-  if (p === 'n/a' && requiredItems) {
-    return 'merge'
-  }
-
   // DC
   // Examples: Goldfish Knight I-VII (DC option: 150 Dragon Coins)
   if (p.includes('dragon coin') || p.includes(' dc')) {
@@ -182,8 +196,14 @@ export function computePriceType(price: string, requiredItems?: string): PriceTy
   }
 
   // DM
-  if (p.includes("defender's medal") || p.includes('defender medal') || p.includes(' dm')) {
+  if (isDefenderMedalText(p) || isPureDefenderMedalRequirement(requiredItems)) {
     return 'dm'
+  }
+
+  // Merge: "N/A" but HAS required items
+  // Examples: crafted items or required-item shops with non-medal recipes
+  if (p === 'n/a' && requiredItems) {
+    return 'merge'
   }
 
   // Default to gold
@@ -501,6 +521,21 @@ export function hasParentheticalVariantFamilyName(familyName: string): boolean {
 function getCondensedTitleVariant(levelName: string, familyName: string): string | undefined {
   const normalizedLevelName = stripAccessVariantSuffix(levelName)
   if (!normalizedLevelName) return undefined
+  const compactTitle = (value: string) =>
+    normalizeDisplayText(value)
+      .replace(/\+/g, ' +')
+      .replace(/[^a-z0-9+]+/gi, '')
+      .toLowerCase()
+  const compactLevelName = compactTitle(normalizedLevelName)
+  const compactFamilyName = compactTitle(familyName)
+
+  if (compactLevelName === compactFamilyName) {
+    return undefined
+  }
+
+  if (compactLevelName === `${compactFamilyName}+`) {
+    return '+'
+  }
 
   const parentheticalBaseName = familyName.replace(/\s*\([^)]*\)\s*$/, '').trim()
   const worldCupFamily = familyName.match(/^(World Cup 2010 Cape):\s*(.+)$/i)
@@ -845,39 +880,61 @@ function shouldAddLevelSuffixForDuplicate(
 }
 
 function getAccessDuplicateSuffix(
+  levels: LevelVariant[],
   labels: LevelVariantLabelInfo[],
   index: number
-): 'DC' | 'DA' | undefined {
+): 'DC' | 'DM' | 'DA' | undefined {
   const label = labels[index]
+  const hasDM = (level: LevelVariant) =>
+    level.obtainVariants.some((variant) => variant.dmRequired || variant.priceType === 'dm')
+  const labelHasDM = hasDM(levels[index])
 
-  const duplicateLabels = labels.filter(
-    (otherLabel, otherIndex) => otherIndex !== index && otherLabel.label === label.label
+  const duplicateIndexes = labels.flatMap((otherLabel, otherIndex) =>
+    otherIndex !== index && otherLabel.label === label.label ? [otherIndex] : []
   )
+  const duplicateLabels = duplicateIndexes.map((otherIndex) => labels[otherIndex])
 
   if (duplicateLabels.length === 0) return undefined
   if (
     !label.hasDC &&
+    !labelHasDM &&
     !label.hasDA &&
-    duplicateLabels.every((otherLabel) => !otherLabel.hasDC && !otherLabel.hasDA)
+    duplicateIndexes.every((otherIndex) => {
+      const otherLabel = labels[otherIndex]
+      return !otherLabel.hasDC && !hasDM(levels[otherIndex]) && !otherLabel.hasDA
+    })
   ) {
     return undefined
   }
 
   if (label.hasDC) return 'DC'
   if (duplicateLabels.some((otherLabel) => otherLabel.hasDC)) return undefined
+  if (labelHasDM) return 'DM'
+  if (duplicateIndexes.some((otherIndex) => hasDM(levels[otherIndex]))) return undefined
   if (label.hasDA) return 'DA'
 
   return undefined
 }
 
-function hasAccessDisambiguatedDuplicate(labels: LevelVariantLabelInfo[], index: number): boolean {
+function hasAccessDisambiguatedDuplicate(
+  levels: LevelVariant[],
+  labels: LevelVariantLabelInfo[],
+  index: number
+): boolean {
   const label = labels[index]
+  const hasDM = (level: LevelVariant) =>
+    level.obtainVariants.some((variant) => variant.dmRequired || variant.priceType === 'dm')
 
   return labels.some(
     (otherLabel, otherIndex) =>
       otherIndex !== index &&
       otherLabel.label === label.label &&
-      (label.hasDC || label.hasDA || otherLabel.hasDC || otherLabel.hasDA)
+      (label.hasDC ||
+        hasDM(levels[index]) ||
+        label.hasDA ||
+        otherLabel.hasDC ||
+        hasDM(levels[otherIndex]) ||
+        otherLabel.hasDA)
   )
 }
 
@@ -976,11 +1033,11 @@ export function getLevelVariantLabels(
   const resolvedLabels = labels.map((label, index) => {
     if (useCompactDcOnlyLabel && label.hasDC) return '(DC)'
     if (useCompactDcOnlyLabel) return '(Base)'
-    const accessDuplicateSuffix = getAccessDuplicateSuffix(labels, index)
+    const accessDuplicateSuffix = getAccessDuplicateSuffix(levels, labels, index)
     if (accessDuplicateSuffix) {
       return `${label.label} (${accessDuplicateSuffix})`
     }
-    if (hasAccessDisambiguatedDuplicate(labels, index)) return label.label
+    if (hasAccessDisambiguatedDuplicate(levels, labels, index)) return label.label
     if (!shouldAddLevelSuffixForDuplicate(levels, labels, index)) return label.label
     return `${label.label} (${label.levelLabel})`
   })

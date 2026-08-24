@@ -30,6 +30,7 @@ interface ObtainVariantCardProps {
   isGuest?: boolean  // If true, hide price/sellback fields (badge-style)
   locationOnly?: boolean
   showCurrencyAccessPills?: boolean
+  showPriceFields?: boolean
 }
 
 function ObtainTextLines({
@@ -61,10 +62,11 @@ export default function ObtainVariantCard({
   isGuest = false,
   locationOnly = false,
   showCurrencyAccessPills = true,
+  showPriceFields = true,
 }: ObtainVariantCardProps) {
   const headingText = label ? `How to Obtain (${label})` : 'How to Obtain'
   
-  const showPriceFields = !isGuest && !locationOnly
+  const shouldShowPriceFields = showPriceFields && !isGuest && !locationOnly
   const showRequirements = Boolean(variant.requirements && variant.requirements.toLowerCase() !== 'none')
   const showRequiredItems = Boolean(variant.requiredItems)
   
@@ -107,7 +109,7 @@ export default function ObtainVariantCard({
         </div>
       </div>
       
-      {!locationOnly && (showRequirements || showRequiredItems || showPriceFields) && (
+      {!locationOnly && (showRequirements || showRequiredItems || shouldShowPriceFields) && (
         <>
           <div className="border-t border-border-default" />
 
@@ -139,7 +141,7 @@ export default function ObtainVariantCard({
           )}
           
           {/* Price and Sellback grid */}
-          {showPriceFields && (
+          {shouldShowPriceFields && (
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {/* Price */}
               <div>

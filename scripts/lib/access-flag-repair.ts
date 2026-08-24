@@ -2,6 +2,7 @@ import type { Accessory } from '../../src/types/accessory.ts'
 import type { Guest, Pet } from '../../src/types/pet.ts'
 import type { ItemFamily, ObtainVariant } from '../../src/types/item.ts'
 import {
+  isPureDefenderMedalRequirement,
   obtainVariantHasDC,
   splitMixedAccessObtainVariantRows,
 } from '../../src/utils/variantHelpers.ts'
@@ -77,6 +78,10 @@ function repairMethodGroup(
       }
     } else if (hasDCMethod && repaired.dcRequired && !hasExplicitDCContext(context)) {
       delete repaired.dcRequired
+    }
+
+    if (repaired.priceType === 'merge' && isPureDefenderMedalRequirement(repaired.requiredItems)) {
+      repaired.priceType = 'dm'
     }
 
     if (repaired.priceType === 'dm') {

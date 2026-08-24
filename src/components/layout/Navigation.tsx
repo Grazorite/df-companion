@@ -17,6 +17,7 @@ import { useTotalPetCount } from '../../hooks/usePets'
 import { useTotalAccessoryCount } from '../../hooks/useAccessories'
 import { useTotalWeaponCount } from '../../hooks/useWeapons'
 import { useTotalHousingCount } from '../../hooks/useHousing'
+import { useTotalClassAbilityCount } from '../../hooks/useClassAbilities'
 
 // Mirrors the DF Encyclopedia forum structure exactly:
 // https://forums2.battleon.com/f/tt.asp?forumid=256
@@ -24,7 +25,7 @@ const NAV_ITEMS = [
   { to: '/', icon: Home, label: 'Home', exact: true, available: true },
   { to: '/accessories', icon: Shirt, label: 'Accessories', exact: false, available: true },
   { to: '/badges', icon: Trophy, label: 'Badges', exact: false, available: true },
-  { to: '/classes', icon: Sparkles, label: 'Classes / Abilities', exact: false, available: false },
+  { to: '/classes', icon: Sparkles, label: 'Classes / Abilities', exact: false, available: true },
   { to: '/housing', icon: House, label: 'Housing', exact: false, available: true },
   { to: '/locations', icon: Map, label: 'Locations / Quests', exact: false, available: false },
   { to: '/monsters', icon: Skull, label: 'Monsters', exact: false, available: false },
@@ -41,6 +42,7 @@ export default function Navigation() {
   const accessoryCount = useTotalAccessoryCount()
   const weaponCount = useTotalWeaponCount()
   const housingCount = useTotalHousingCount()
+  const classAbilityCount = useTotalClassAbilityCount()
 
   const isNavItemActive = (to: string, exact: boolean) => {
     if (to === '/accessories') {
@@ -121,6 +123,9 @@ export default function Navigation() {
                   )}
                   {to === '/pets' && (
                     <span className="text-xs text-text-muted tabular-nums">{petCount}</span>
+                  )}
+                  {to === '/classes' && (
+                    <span className="text-xs text-text-muted tabular-nums">{classAbilityCount}</span>
                   )}
                   {to === '/weapons' && (
                     <span className="text-xs text-text-muted tabular-nums">{weaponCount}</span>

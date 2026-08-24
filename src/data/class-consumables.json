@@ -1,0 +1,3512 @@
+[
+  {
+    "id": "class-ability-baked-basilisk",
+    "name": "Baked Basilisk",
+    "slug": "class-ability-baked-basilisk",
+    "type": "class-ability",
+    "subtype": "consumable",
+    "consumableKind": "food",
+    "description": "This well seasoneed slab of baked basilisk is rock hard, but it boosts INT by 50 for 30 turns during battle! Applies Stuffed for 10 turns.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22325732",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22325732",
+    "location": "Falconreach (Books 3 and 4) ->  Ruby -> Purchase Food -> Baked Basilisk",
+    "price": "N/A",
+    "requiredItems": "1  Defender's Medal",
+    "effect": "Applies INT +50 to player for 30 turns inclusive; applies 'Stuffed' to player for 11 turns.",
+    "effectType": "INT",
+    "attacks": [
+      {
+        "name": "Baked Basilisk",
+        "effect": "Applies INT +50 to player for 30 turns inclusive; applies 'Stuffed' to player for 11 turns.",
+        "manaCost": "—",
+        "cooldown": "—",
+        "damageType": "—",
+        "element": "—",
+        "buttonImageUrl": "image/blank.gif"
+      }
+    ],
+    "obtainMethods": [
+      {
+        "location": "Falconreach (Books 3 and 4) ->  Ruby -> Purchase Food -> Baked Basilisk",
+        "price": "N/A",
+        "priceType": "dm",
+        "daRequired": true,
+        "dmRequired": true,
+        "requiredItems": "1  Defender's Medal",
+        "dcRequired": false
+      }
+    ],
+    "level": "1",
+    "rarity": "2",
+    "notes": "• Previously had the description: This well seasoneed slab of baked basilisk is rock hard, but it boosts INT by 50 for 30 turns during battle!",
+    "alsoSee": [],
+    "tags": [
+      "da",
+      "dm",
+      "temp"
+    ],
+    "daRequired": true,
+    "dcRequired": false,
+    "dmRequired": true,
+    "hasFree": false,
+    "hasMerge": false,
+    "isTemp": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "class-ability-banana-slice",
+    "name": "Banana Slice",
+    "slug": "class-ability-banana-slice",
+    "type": "class-ability",
+    "subtype": "consumable",
+    "consumableKind": "food",
+    "description": "Tasty!",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22112080",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22112080",
+    "location": "Swordhaven (Books 3 and 4) -> Up -> 3 Left ->  Alanni -> Banana Slice",
+    "price": "N/A",
+    "effect": "Stuffed for 6 turns, Dexterity +20 for 3 turns.",
+    "effectType": "DEX",
+    "attacks": [
+      {
+        "name": "Banana Slice",
+        "effect": "Stuffed for 6 turns, Dexterity +20 for 3 turns.",
+        "manaCost": "—",
+        "cooldown": "—",
+        "damageType": "—",
+        "element": "—",
+        "buttonImageUrl": "https://forums2.battleon.com/f/upfiles/390613/FE152B481F0A4350A4B67A0CFE3B041D.jpg"
+      }
+    ],
+    "dialogue": "If you don't have it:\n  quote:\n  ....Mmm! - This tasty fruit will fill you with energy.\n\nIf you already have it:\n  quote:\n  ....Tray - The tray is empty.",
+    "obtainMethods": [
+      {
+        "location": "Swordhaven (Books 3 and 4) -> Up -> 3 Left ->  Alanni -> Banana Slice",
+        "price": "N/A",
+        "priceType": "free",
+        "daRequired": true,
+        "dcRequired": false,
+        "dmRequired": false
+      }
+    ],
+    "level": "1",
+    "rarity": "2",
+    "alsoSee": [],
+    "tags": [
+      "da",
+      "temp"
+    ],
+    "daRequired": true,
+    "dcRequired": false,
+    "dmRequired": false,
+    "hasFree": true,
+    "hasMerge": false,
+    "isTemp": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "class-ability-beef-jerky",
+    "name": "Beef Jerky",
+    "slug": "class-ability-beef-jerky",
+    "type": "class-ability",
+    "subtype": "consumable",
+    "consumableKind": "food",
+    "description": "Spicy and delicious!",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=19813050",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=19813050",
+    "location": "Sewers -> Open Chest,  Master of Puppets -> Open Chest,  Rosewood -> Open Chest",
+    "price": "N/A",
+    "effect": "Applies 'Strength' (+20 STR) to player for next 2 turns; applies 'Stuffed' to player for 6 turns.",
+    "effectType": "STR",
+    "attacks": [
+      {
+        "name": "Beef Jerky",
+        "effect": "Applies 'Strength' (+20 STR) to player for next 2 turns; applies 'Stuffed' to player for 6 turns.",
+        "manaCost": "—",
+        "cooldown": "—",
+        "damageType": "—",
+        "element": "—",
+        "buttonImageUrl": "https://forums2.battleon.com/f/upfiles/187730/1E0BE864AAAF46AEB3756109D2CDB1CB.jpg"
+      }
+    ],
+    "obtainMethods": [
+      {
+        "location": "Sewers -> Open Chest,  Master of Puppets -> Open Chest,  Rosewood -> Open Chest",
+        "price": "N/A",
+        "priceType": "free",
+        "daRequired": true,
+        "dcRequired": false,
+        "dmRequired": false
+      }
+    ],
+    "level": "1",
+    "rarity": "2",
+    "notes": "• Beef Jerky previously appeared in the retired quest  Master of Puppets.",
+    "alsoSee": [],
+    "tags": [
+      "da",
+      "temp"
+    ],
+    "daRequired": true,
+    "dcRequired": false,
+    "dmRequired": false,
+    "hasFree": true,
+    "hasMerge": false,
+    "isTemp": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "class-ability-black-stardust-e-boost",
+    "name": "Black Stardust (E: Boost)",
+    "slug": "class-ability-black-stardust-e-boost",
+    "type": "class-ability",
+    "subtype": "consumable",
+    "consumableKind": "dust",
+    "description": "Dispersing this pinch of stardust inflicts -3 Boost to your target (stacks, max -30) for the rest of the battle.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22417232",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22417232",
+    "location": "The Lost Constellation -> Find a Star Shard (-> Reroll) -> Select 'Black' option",
+    "price": "N/A",
+    "effect": "Permanently applies 'Black Stardust' (-3X% Boost) to target.",
+    "effectType": "Boost",
+    "attacks": [
+      {
+        "name": "Black Stardust (E: Boost)",
+        "effect": "Permanently applies 'Black Stardust' (-3X% Boost) to target.",
+        "manaCost": "—",
+        "cooldown": "—",
+        "damageType": "—",
+        "element": "—",
+        "buttonImageUrl": "image/wide_ak4.jpg"
+      }
+    ],
+    "obtainMethods": [
+      {
+        "location": "The Lost Constellation -> Find a Star Shard (-> Reroll) -> Select 'Black' option",
+        "price": "N/A",
+        "priceType": "free",
+        "daRequired": false,
+        "dcRequired": false,
+        "dmRequired": false
+      }
+    ],
+    "level": "1",
+    "rarity": "2",
+    "notes": "• X is the number of times this item was consumed, capped at 10; this effectively caps 'White Stardust' at -30% Boost.\n\n• Item is randomly found while exploring The Lost Constellation.\n\n• Item's effects can only be applied during a battle on  The Lost Constellation quest; using it while outside of that quest will have no effect.",
+    "alsoSee": [],
+    "tags": [
+      "temp"
+    ],
+    "daRequired": false,
+    "dcRequired": false,
+    "dmRequired": false,
+    "hasFree": true,
+    "hasMerge": false,
+    "isTemp": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "class-ability-blue-stardust-bonus",
+    "name": "Blue Stardust (Bonus)",
+    "slug": "class-ability-blue-stardust-bonus",
+    "type": "class-ability",
+    "subtype": "consumable",
+    "consumableKind": "dust",
+    "description": "Dispersing this pinch of stardust grants you +9 Bonus (stacks, max 90) for the rest of the battle.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22417229",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22417229",
+    "location": "The Lost Constellation -> Find a Star Shard (-> Reroll) -> Select 'Blue' option",
+    "price": "N/A",
+    "effect": "Permanently applies 'Blue Stardust' (+9X Bonus) to player.",
+    "effectType": "Bonus",
+    "attacks": [
+      {
+        "name": "Blue Stardust (Bonus)",
+        "effect": "Permanently applies 'Blue Stardust' (+9X Bonus) to player.",
+        "manaCost": "—",
+        "cooldown": "—",
+        "damageType": "—",
+        "element": "—",
+        "buttonImageUrl": "image/wide_ak4.jpg"
+      }
+    ],
+    "obtainMethods": [
+      {
+        "location": "The Lost Constellation -> Find a Star Shard (-> Reroll) -> Select 'Blue' option",
+        "price": "N/A",
+        "priceType": "free",
+        "daRequired": false,
+        "dcRequired": false,
+        "dmRequired": false
+      }
+    ],
+    "level": "1",
+    "rarity": "2",
+    "notes": "• X is the number of times this item was consumed, capped at 10; this effectively caps 'Blue Stardust' at +90 Bonus.\n\n• Item is randomly found while exploring The Lost Constellation.\n\n• Item's effects can only be applied during a battle on  The Lost Constellation quest; using it while outside of that quest will have no effect.",
+    "alsoSee": [],
+    "tags": [
+      "temp"
+    ],
+    "daRequired": false,
+    "dcRequired": false,
+    "dmRequired": false,
+    "hasFree": true,
+    "hasMerge": false,
+    "isTemp": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "class-ability-bull-fish-rice",
+    "name": "Bull Fish Rice",
+    "slug": "class-ability-bull-fish-rice",
+    "type": "class-ability",
+    "subtype": "consumable",
+    "consumableKind": "food",
+    "description": "Yum.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=16010206",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=16010206",
+    "location": "Cooking (Minigame)",
+    "price": "N/A",
+    "effect": "Stuffed for 6 turns, Strength +10 for 3 turns.",
+    "effectType": "STR",
+    "attacks": [
+      {
+        "name": "Bull Fish Rice",
+        "effect": "Stuffed for 6 turns, Strength +10 for 3 turns.",
+        "manaCost": "—",
+        "cooldown": "—",
+        "damageType": "—",
+        "element": "—",
+        "buttonImageUrl": "https://forums2.battleon.com/f/upfiles/187730/1E0BE864AAAF46AEB3756109D2CDB1CB.jpg"
+      }
+    ],
+    "dialogue": "quote:\n  Made Bull Fish Rice!! Eat while in battle and gain an effect.",
+    "obtainMethods": [
+      {
+        "location": "Cooking (Minigame)",
+        "price": "N/A",
+        "priceType": "free",
+        "daRequired": true,
+        "dcRequired": false,
+        "dmRequired": false
+      }
+    ],
+    "level": "1",
+    "rarity": "2",
+    "alsoSee": [],
+    "tags": [
+      "da",
+      "temp"
+    ],
+    "daRequired": true,
+    "dcRequired": false,
+    "dmRequired": false,
+    "hasFree": true,
+    "hasMerge": false,
+    "isTemp": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "class-ability-cheese-soup",
+    "name": "Cheese Soup",
+    "slug": "class-ability-cheese-soup",
+    "type": "class-ability",
+    "subtype": "consumable",
+    "consumableKind": "food",
+    "description": "Yum.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=16010264",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=16010264",
+    "location": "Cooking (Minigame)",
+    "price": "N/A",
+    "effect": "Stuffed for 6 turns, Strength +3 for 11 turns.",
+    "effectType": "STR",
+    "attacks": [
+      {
+        "name": "Cheese Soup",
+        "effect": "Stuffed for 6 turns, Strength +3 for 11 turns.",
+        "manaCost": "—",
+        "cooldown": "—",
+        "damageType": "—",
+        "element": "—",
+        "buttonImageUrl": "https://forums2.battleon.com/f/upfiles/187730/1E0BE864AAAF46AEB3756109D2CDB1CB.jpg"
+      }
+    ],
+    "dialogue": "quote:\n  Made Cheese Soup!! Eat while in battle and gain an effect.",
+    "obtainMethods": [
+      {
+        "location": "Cooking (Minigame)",
+        "price": "N/A",
+        "priceType": "free",
+        "daRequired": true,
+        "dcRequired": false,
+        "dmRequired": false
+      }
+    ],
+    "level": "1",
+    "rarity": "2",
+    "alsoSee": [],
+    "tags": [
+      "da",
+      "temp"
+    ],
+    "daRequired": true,
+    "dcRequired": false,
+    "dmRequired": false,
+    "hasFree": true,
+    "hasMerge": false,
+    "isTemp": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "class-ability-clean-water",
+    "name": "Clean Water",
+    "slug": "class-ability-clean-water",
+    "type": "class-ability",
+    "subtype": "consumable",
+    "consumableKind": "food",
+    "description": "Refreshing!",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=19813007",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=19813007",
+    "location": "Sewers -> Open Jar,  Master of Puppets -> Open Jar,  Rosewood -> Open Jar",
+    "price": "N/A",
+    "effect": "Applies 'Intellect' (+20 INT) to player for next 2 turns; applies 'Stuffed' to player for 6 turns.",
+    "effectType": "INT",
+    "attacks": [
+      {
+        "name": "Clean Water",
+        "effect": "Applies 'Intellect' (+20 INT) to player for next 2 turns; applies 'Stuffed' to player for 6 turns.",
+        "manaCost": "—",
+        "cooldown": "—",
+        "damageType": "—",
+        "element": "—",
+        "buttonImageUrl": "https://forums2.battleon.com/f/upfiles/187730/1E0BE864AAAF46AEB3756109D2CDB1CB.jpg"
+      }
+    ],
+    "obtainMethods": [
+      {
+        "location": "Sewers -> Open Jar,  Master of Puppets -> Open Jar,  Rosewood -> Open Jar",
+        "price": "N/A",
+        "priceType": "free",
+        "daRequired": true,
+        "dcRequired": false,
+        "dmRequired": false
+      }
+    ],
+    "level": "1",
+    "rarity": "2",
+    "notes": "• Clean Water previously appeared in the retired quest  Master of Puppets.",
+    "alsoSee": [],
+    "tags": [
+      "da",
+      "temp"
+    ],
+    "daRequired": true,
+    "dcRequired": false,
+    "dmRequired": false,
+    "hasFree": true,
+    "hasMerge": false,
+    "isTemp": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "class-ability-cocoaberry-juice",
+    "familyName": "Cocoaberry Juice",
+    "slug": "class-ability-cocoaberry-juice",
+    "aliasSlugs": [],
+    "type": "class-ability",
+    "subtype": "consumable",
+    "consumableKind": "food",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22350192",
+    "familyOrigin": "single-thread",
+    "familySources": [
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22350192",
+        "title": "Cocoaberry Juice"
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22350192",
+        "title": "Cocoaberry Juice"
+      }
+    ],
+    "shared": {
+      "description": "This warm mug of Cocoaberry Juice is sure to heat you up in battle! Heals (3 * Level)/turn for 3 turns. Applies -50 Crit for 10 turns. Stuffed for 15 turns.",
+      "effect": "Recovers (Level * 3) HP to player upon use, unaffected by Health and/or All Resists; applies 'Cocoaberry Juice', a (Level * 3) Constant HP HoT, to player for 3 turns; applies 'Cocoaberry Warmth' (-50 Crit) to player for 10 turns; applies 'Stuffed' to player for 16 turns.",
+      "effectType": "Crit, Recovers HP",
+      "notes": "• Players can carry one Cocoaberry Juice at a time.\n\n• The following changes were implemented on  December 13th, 2024:\n\n  • Previously had the description: This warm mug of Cocoaberry Juice is sure to heat you up in battle! Heals 10%/turn for 10 turns. Applies -50 Crit for 10 turns. Stuffed for 30 turns.\n\n  • Recovers (Level * 3) HP to player (unaffected by Health and/or All Resists), down from 10% of player's max HP upon use.\n\n  • 'Cocoaberry Juice' recovers (Level * 3) HP, down from 10% of player's max HP.\n\n  • The duration of 'Cocoaberry Juice' was reduced from 8 turns to 3.\n\n• The duration of 'Stuffed' was decreased from 32 turns to 16 turns alongside with description modifications on  December 20th, 2024.",
+      "alsoSee": []
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
+        "levelDisplay": "1",
+        "name": "Cocoaberry Juice",
+        "damage": "—",
+        "stats": "—",
+        "obtainVariants": [
+          {
+            "location": "Cocoaberry Supplies!",
+            "price": "N/A",
+            "priceType": "free",
+            "daRequired": true,
+            "dcRequired": false,
+            "dmRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22350192",
+        "description": "This warm mug of Cocoaberry Juice is sure to heat you up in battle! Heals (3 * Level)/turn for 3 turns. Applies -50 Crit for 10 turns. Stuffed for 15 turns.",
+        "classAbilitySubtype": "food",
+        "retired": false
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "1",
+        "actualLevel": 1,
+        "name": "Cocoaberry Juice",
+        "damage": "—",
+        "stats": "—",
+        "obtainVariants": [
+          {
+            "location": "Falconreach (Books 3 and 4) ->  Ruby -> Purchase Food -> Cocoaberry Juice -> Yes",
+            "price": "N/A",
+            "priceType": "dm",
+            "daRequired": true,
+            "dmRequired": true,
+            "requiredItems": "1  Defender's Medal",
+            "dcRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22350192",
+        "description": "This warm mug of Cocoaberry Juice is sure to heat you up in battle! Heals (3 * Level)/turn for 3 turns. Applies -50 Crit for 10 turns. Stuffed for 15 turns.",
+        "rarity": "2",
+        "classAbilitySubtype": "food",
+        "retired": false
+      }
+    ],
+    "tags": [
+      "da",
+      "dm",
+      "seasonal",
+      "temp"
+    ],
+    "hasDA": true,
+    "hasDC": false,
+    "hasDM": true,
+    "hasFree": true,
+    "hasMerge": false,
+    "levelRange": "1-1",
+    "elements": [],
+    "isTemp": true,
+    "isRare": false,
+    "isSeasonal": true,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "class-ability-crab-cake",
+    "name": "Crab Cake",
+    "slug": "class-ability-crab-cake",
+    "type": "class-ability",
+    "subtype": "consumable",
+    "consumableKind": "food",
+    "description": "Buttery and tasty, this very rare shellfish can be dinner AND dessert.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=16080643",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=16080643",
+    "location": "Doomwood Dock",
+    "price": "N/A",
+    "effect": "Stuffed for 6 turns, Strength +3 for 11 turns.",
+    "effectType": "STR",
+    "attacks": [
+      {
+        "name": "Crab Cake",
+        "effect": "Stuffed for 6 turns, Strength +3 for 11 turns.",
+        "manaCost": "—",
+        "cooldown": "—",
+        "damageType": "—",
+        "element": "—",
+        "buttonImageUrl": "https://forums2.battleon.com/f/upfiles/187730/1E0BE864AAAF46AEB3756109D2CDB1CB.jpg"
+      }
+    ],
+    "dialogue": "quote:\n  Made Crab Cake!! Eat while in battle and gain an affect.",
+    "obtainMethods": [
+      {
+        "location": "Doomwood Dock",
+        "price": "N/A",
+        "priceType": "free",
+        "daRequired": true,
+        "dcRequired": false,
+        "dmRequired": false
+      }
+    ],
+    "level": "1",
+    "rarity": "2",
+    "alsoSee": [],
+    "tags": [
+      "da",
+      "temp"
+    ],
+    "daRequired": true,
+    "dcRequired": false,
+    "dmRequired": false,
+    "hasFree": true,
+    "hasMerge": false,
+    "isTemp": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "class-ability-dried-figs",
+    "name": "Dried Figs",
+    "slug": "class-ability-dried-figs",
+    "type": "class-ability",
+    "subtype": "consumable",
+    "consumableKind": "food",
+    "description": "Tough and nutritous!",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22112079",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22112079",
+    "location": "Swordhaven (Books 3 and 4) -> Up -> 3 Left ->  Alanni -> Dried Figs",
+    "price": "N/A",
+    "effect": "Stuffed for 6 turns, Strength +20 for 3 turns.",
+    "effectType": "STR",
+    "attacks": [
+      {
+        "name": "Dried Figs",
+        "effect": "Stuffed for 6 turns, Strength +20 for 3 turns.",
+        "manaCost": "—",
+        "cooldown": "—",
+        "damageType": "—",
+        "element": "—",
+        "buttonImageUrl": "https://forums2.battleon.com/f/upfiles/390613/FE152B481F0A4350A4B67A0CFE3B041D.jpg"
+      }
+    ],
+    "dialogue": "If you don't have it:\n  quote:\n  ....Mmm! - The figs are dried and chewy. They're good for you and for your digestion, too! You'll feel stronger after you eat these.\n\nIf you already have it:\n  quote:\n  ....Bowl - The bowl is empty.",
+    "obtainMethods": [
+      {
+        "location": "Swordhaven (Books 3 and 4) -> Up -> 3 Left ->  Alanni -> Dried Figs",
+        "price": "N/A",
+        "priceType": "free",
+        "daRequired": true,
+        "dcRequired": false,
+        "dmRequired": false
+      }
+    ],
+    "level": "1",
+    "rarity": "2",
+    "alsoSee": [],
+    "tags": [
+      "da",
+      "temp"
+    ],
+    "daRequired": true,
+    "dcRequired": false,
+    "dmRequired": false,
+    "hasFree": true,
+    "hasMerge": false,
+    "isTemp": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "class-ability-fish-fingers",
+    "name": "Fish Fingers",
+    "slug": "class-ability-fish-fingers",
+    "type": "class-ability",
+    "subtype": "consumable",
+    "consumableKind": "food",
+    "description": "You're not sure which fish has fingers but they taste awesome.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22019744",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22019744",
+    "location": "Dracolich Fishing (All Versions)",
+    "price": "N/A",
+    "effect": "Stuffed for 6 turns, Strength +3 for 11 turns.",
+    "effectType": "STR",
+    "attacks": [
+      {
+        "name": "Fish Fingers",
+        "effect": "Stuffed for 6 turns, Strength +3 for 11 turns.",
+        "manaCost": "—",
+        "cooldown": "—",
+        "damageType": "—",
+        "element": "—",
+        "buttonImageUrl": "https://forums2.battleon.com/f/upfiles/390613/FE152B481F0A4350A4B67A0CFE3B041D.jpg"
+      }
+    ],
+    "dialogue": "quote:\n  Made Fish Fingers!! Eat while in battle and gain an effect.",
+    "obtainMethods": [
+      {
+        "location": "Dracolich Fishing (All Versions)",
+        "price": "N/A",
+        "priceType": "free",
+        "daRequired": true,
+        "dcRequired": false,
+        "dmRequired": false
+      }
+    ],
+    "level": "1",
+    "rarity": "2",
+    "alsoSee": [],
+    "tags": [
+      "da",
+      "temp"
+    ],
+    "daRequired": true,
+    "dcRequired": false,
+    "dmRequired": false,
+    "hasFree": true,
+    "hasMerge": false,
+    "isTemp": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "class-ability-fresh-apple",
+    "name": "Fresh Apple",
+    "slug": "class-ability-fresh-apple",
+    "type": "class-ability",
+    "subtype": "consumable",
+    "consumableKind": "food",
+    "description": "Refreshing!",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22112077",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22112077",
+    "location": "Swordhaven (Books 3 and 4) -> Up -> 3 Left ->  Alanni -> Fresh Apple",
+    "price": "N/A",
+    "effect": "Stuffed for 6 turns, Intellect +20 for 3 turns.",
+    "effectType": "INT",
+    "attacks": [
+      {
+        "name": "Fresh Apple",
+        "effect": "Stuffed for 6 turns, Intellect +20 for 3 turns.",
+        "manaCost": "—",
+        "cooldown": "—",
+        "damageType": "—",
+        "element": "—",
+        "buttonImageUrl": "https://forums2.battleon.com/f/upfiles/390613/FE152B481F0A4350A4B67A0CFE3B041D.jpg"
+      }
+    ],
+    "dialogue": "If you don't have it:\n  quote:\n  ....Mmm! - A healthy and refreshing snack! You feel smarter just thinking about eating it!\n\nIf you already have it:\n  quote:\n  ....Plate - The plate is empty.",
+    "obtainMethods": [
+      {
+        "location": "Swordhaven (Books 3 and 4) -> Up -> 3 Left ->  Alanni -> Fresh Apple",
+        "price": "N/A",
+        "priceType": "free",
+        "daRequired": true,
+        "dcRequired": false,
+        "dmRequired": false
+      }
+    ],
+    "level": "1",
+    "rarity": "2",
+    "alsoSee": [],
+    "tags": [
+      "da",
+      "temp"
+    ],
+    "daRequired": true,
+    "dcRequired": false,
+    "dmRequired": false,
+    "hasFree": true,
+    "hasMerge": false,
+    "isTemp": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "class-ability-fried-rice",
+    "name": "Fried Rice",
+    "slug": "class-ability-fried-rice",
+    "type": "class-ability",
+    "subtype": "consumable",
+    "consumableKind": "food",
+    "description": "Yum.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=16014593",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=16014593",
+    "location": "Cooking (Minigame)",
+    "price": "N/A",
+    "effect": "Stuffed for 6 turns, Strength +5 for 6 turns.",
+    "effectType": "STR",
+    "attacks": [
+      {
+        "name": "Fried Rice",
+        "effect": "Stuffed for 6 turns, Strength +5 for 6 turns.",
+        "manaCost": "—",
+        "cooldown": "—",
+        "damageType": "—",
+        "element": "—",
+        "buttonImageUrl": "https://forums2.battleon.com/f/upfiles/187730/1E0BE864AAAF46AEB3756109D2CDB1CB.jpg"
+      }
+    ],
+    "dialogue": "quote:\n  Made Fried Rice!! Eat while in battle and gain an affect.",
+    "obtainMethods": [
+      {
+        "location": "Cooking (Minigame)",
+        "price": "N/A",
+        "priceType": "free",
+        "daRequired": true,
+        "dcRequired": false,
+        "dmRequired": false
+      }
+    ],
+    "level": "1",
+    "rarity": "2",
+    "alsoSee": [],
+    "tags": [
+      "da",
+      "temp"
+    ],
+    "daRequired": true,
+    "dcRequired": false,
+    "dmRequired": false,
+    "hasFree": true,
+    "hasMerge": false,
+    "isTemp": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "class-ability-fried-zard-legs",
+    "familyName": "Fried Zard Legs",
+    "slug": "class-ability-fried-zard-legs",
+    "aliasSlugs": [],
+    "type": "class-ability",
+    "subtype": "consumable",
+    "consumableKind": "food",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=18013869",
+    "familyOrigin": "single-thread",
+    "familySources": [
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=18013869",
+        "title": "Fried Zard Legs"
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=18013869",
+        "title": "Fried Zard Legs+"
+      }
+    ],
+    "shared": {
+      "description": "Delicious and fillin'! These'll boost your crit in battle!",
+      "rarity": "2",
+      "effectType": "Crit",
+      "alsoSee": []
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
+        "levelDisplay": "1",
+        "actualLevel": 1,
+        "name": "Fried Zard Legs",
+        "damage": "—",
+        "stats": "—",
+        "obtainVariants": [
+          {
+            "location": "Resident Sneevil: Uprising ->  Irwin Dundee -> Southern Cuisine -> Fried Zard Legs -> Buy -> Yes",
+            "price": "N/A",
+            "priceType": "dm",
+            "daRequired": true,
+            "dmRequired": true,
+            "requiredItems": "1  Defender's Medal",
+            "dcRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=18013869",
+        "description": "Delicious and fillin'! These'll boost your crit in battle!",
+        "rarity": "2",
+        "effect": "Applies +50 Crit to player for 5 turns inclusive; applies 'Stuffed' to player for 31 turns.",
+        "attacks": [
+          {
+            "name": "Fried Zard Legs",
+            "effect": "Applies +50 Crit to player for 5 turns inclusive; applies 'Stuffed' to player for 31 turns.",
+            "manaCost": "—",
+            "cooldown": "—",
+            "damageType": "—",
+            "element": "—",
+            "buttonImageUrl": "image/blank.gif"
+          }
+        ],
+        "notes": "• Fried Zard Legs was previously accessible on the retired access points:  Friday the 13th Invasion Invasive Species!,  Falconreach (Book 3) ->  Ruby -> Purchase Food -> Zard Legs -> Yes.",
+        "classAbilitySubtype": "food",
+        "retired": false
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "1",
+        "actualLevel": 1,
+        "variantName": "+",
+        "name": "Fried Zard Legs+",
+        "damage": "—",
+        "stats": "—",
+        "obtainVariants": [
+          {
+            "location": "Falconreach (Books 3 and 4) ->  Ruby -> Purchase Food -> Zard Legs+ -> Yes",
+            "price": "N/A",
+            "priceType": "dm",
+            "daRequired": true,
+            "dmRequired": true,
+            "requiredItems": "1  Defender's Medal",
+            "dcRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=18013869",
+        "description": "Delicious and fillin'! These'll boost your crit in battle! Increases Crit by 50 for 5 turns. Applies Stuffed for 10 turns.",
+        "rarity": "2",
+        "effect": "Applies +50 Crit to player for 5 turns inclusive; applies 'Stuffed' to player for 11 turns.",
+        "attacks": [
+          {
+            "name": "Fried Zard Legs+",
+            "effect": "Applies +50 Crit to player for 5 turns inclusive; applies 'Stuffed' to player for 11 turns.",
+            "manaCost": "—",
+            "cooldown": "—",
+            "damageType": "—",
+            "element": "—",
+            "buttonImageUrl": "image/blank.gif"
+          }
+        ],
+        "classAbilitySubtype": "food",
+        "retired": false
+      }
+    ],
+    "tags": [
+      "da",
+      "dm",
+      "seasonal",
+      "temp"
+    ],
+    "hasDA": true,
+    "hasDC": false,
+    "hasDM": true,
+    "hasFree": false,
+    "hasMerge": false,
+    "levelRange": "1-1",
+    "elements": [],
+    "isTemp": true,
+    "isRare": false,
+    "isSeasonal": true,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "class-ability-gorillaphant-knuckles",
+    "name": "Gorillaphant Knuckles",
+    "slug": "class-ability-gorillaphant-knuckles",
+    "type": "class-ability",
+    "subtype": "consumable",
+    "consumableKind": "food",
+    "description": "These large roasted knuckles, ostensibly from a gorillaphant, will boost your STR by 50 for 30 turns during battle! Applies Stuffed for 10 turns.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22325730",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22325730",
+    "location": "Falconreach (Books 3 and 4) ->  Ruby -> Purchase Food -> Gorillaphant Knuckles",
+    "price": "N/A",
+    "requiredItems": "1  Defender's Medal",
+    "effect": "Applies STR +50 to player for 30 turns inclusive; applies 'Stuffed' to player for 11 turns.",
+    "effectType": "STR",
+    "attacks": [
+      {
+        "name": "Gorillaphant Knuckles",
+        "effect": "Applies STR +50 to player for 30 turns inclusive; applies 'Stuffed' to player for 11 turns.",
+        "manaCost": "—",
+        "cooldown": "—",
+        "damageType": "—",
+        "element": "—",
+        "buttonImageUrl": "image/blank.gif"
+      }
+    ],
+    "obtainMethods": [
+      {
+        "location": "Falconreach (Books 3 and 4) ->  Ruby -> Purchase Food -> Gorillaphant Knuckles",
+        "price": "N/A",
+        "priceType": "dm",
+        "daRequired": true,
+        "dmRequired": true,
+        "requiredItems": "1  Defender's Medal",
+        "dcRequired": false
+      }
+    ],
+    "level": "1",
+    "rarity": "2",
+    "notes": "• Previously had the description: These large roasted knuckles, ostensibly from a gorillaphant, will boost your STR by 50 for 30 turns during battle!",
+    "alsoSee": [],
+    "tags": [
+      "da",
+      "dm",
+      "temp"
+    ],
+    "daRequired": true,
+    "dcRequired": false,
+    "dmRequired": true,
+    "hasFree": false,
+    "hasMerge": false,
+    "isTemp": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "class-ability-green-fruit",
+    "name": "Green Fruit",
+    "slug": "class-ability-green-fruit",
+    "type": "class-ability",
+    "subtype": "consumable",
+    "consumableKind": "food",
+    "description": "Delicious Green Fruit! Increases your Health resist by -25 for 1 turn. Applies Stuffed for 20 turns.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22353778",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22353778",
+    "location": "Food Seller -> Green Fruit -> Yes",
+    "price": "N/A",
+    "requiredItems": "1  Defender's Medal",
+    "effect": "Applies -25 Health Resist to player for 1 turn inclusive; applies 'Stuffed' to player for 20 turns.",
+    "effectType": "Health Resist",
+    "attacks": [
+      {
+        "name": "Green Fruit",
+        "effect": "Applies -25 Health Resist to player for 1 turn inclusive; applies 'Stuffed' to player for 20 turns.",
+        "manaCost": "—",
+        "cooldown": "—",
+        "damageType": "—",
+        "element": "—",
+        "buttonImageUrl": "image/blank.gif"
+      }
+    ],
+    "obtainMethods": [
+      {
+        "location": "Food Seller -> Green Fruit -> Yes",
+        "price": "N/A",
+        "priceType": "dm",
+        "daRequired": true,
+        "dmRequired": true,
+        "requiredItems": "1  Defender's Medal",
+        "dcRequired": false
+      }
+    ],
+    "level": "1",
+    "rarity": "2",
+    "notes": "• Food previously applied +200 Parry Defense and -20 Health Resist to player for 2 turns inclusive and applied 'Stuffed' to player for 30 turns; the effects' durations were lowered to 1 turn inclusive on April 15th, 2019.\n\n• The following changes were implemented on  April 16th, 2021:\n\n  • Previously had the description: Delicious Green Fruit! Increases your Parry by 200 and Health resist by -20 for 1 turn. Applies Stuffed for 30 turns.\n\n  • The +200 Parry Defense was removed, while the Health Resist and 'Stuffed' effects were changed to -25 Health Resist and 20 turns respectively.",
+    "alsoSee": [],
+    "tags": [
+      "da",
+      "dm",
+      "temp"
+    ],
+    "daRequired": true,
+    "dcRequired": false,
+    "dmRequired": true,
+    "hasFree": false,
+    "hasMerge": false,
+    "isTemp": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "class-ability-green-stardust-reduction",
+    "name": "Green Stardust (% Reduction)",
+    "slug": "class-ability-green-stardust-reduction",
+    "type": "class-ability",
+    "subtype": "consumable",
+    "consumableKind": "dust",
+    "description": "Dispersing this pinch of stardust grants you +2% damage reduction (stacks, max 20%) for the rest of the battle.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22417230",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22417230",
+    "location": "The Lost Constellation -> Find a Star Shard (-> Reroll) -> Select 'Green' option",
+    "price": "N/A",
+    "effect": "Permanently applies 'Green Stardust' (+2X% Non-Crit/DoT/Crit Damage Reduction) to player.",
+    "attacks": [
+      {
+        "name": "Green Stardust (% Reduction)",
+        "effect": "Permanently applies 'Green Stardust' (+2X% Non-Crit/DoT/Crit Damage Reduction) to player.",
+        "manaCost": "—",
+        "cooldown": "—",
+        "damageType": "—",
+        "element": "—",
+        "buttonImageUrl": "image/wide_ak4.jpg"
+      }
+    ],
+    "obtainMethods": [
+      {
+        "location": "The Lost Constellation -> Find a Star Shard (-> Reroll) -> Select 'Green' option",
+        "price": "N/A",
+        "priceType": "free",
+        "daRequired": false,
+        "dcRequired": false,
+        "dmRequired": false
+      }
+    ],
+    "level": "1",
+    "rarity": "2",
+    "notes": "• X is the number of times this item was consumed, capped at 10; this effectively caps 'Green Stardust' at +20% Non-Crit/DoT/Crit Damage Reduction.\n\n• Item is randomly found while exploring The Lost Constellation.\n\n• Item's effects can only be applied during a battle on  The Lost Constellation quest; using it while outside of that quest will have no effect.",
+    "alsoSee": [],
+    "tags": [
+      "temp"
+    ],
+    "daRequired": false,
+    "dcRequired": false,
+    "dmRequired": false,
+    "hasFree": true,
+    "hasMerge": false,
+    "isTemp": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "class-ability-ham-n-turkey-sammich",
+    "name": "Ham n Turkey sammich",
+    "slug": "class-ability-ham-n-turkey-sammich",
+    "type": "class-ability",
+    "subtype": "consumable",
+    "consumableKind": "food",
+    "description": "Ham + Turkey = Awesome.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=18444159",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=18444159",
+    "location": "Chest in looked room in Caravan at  Verderoche Crossing",
+    "price": "N/A",
+    "effect": "Stuffed for 6 turns, STR +25 for 3 turns.",
+    "effectType": "STR",
+    "attacks": [
+      {
+        "name": "Ham n Turkey sammich",
+        "effect": "Stuffed for 6 turns, STR +25 for 3 turns.",
+        "manaCost": "—",
+        "cooldown": "—",
+        "damageType": "—",
+        "element": "—",
+        "buttonImageUrl": "https://forums2.battleon.com/f/upfiles/187730/1E0BE864AAAF46AEB3756109D2CDB1CB.jpg"
+      }
+    ],
+    "dialogue": "When you first open the chest:\n  quote:\n  ....Mmm! - As you pop open the chest a wonderful smell fills your nostrils. You look down and see a Ham and Turkey sandwich! It's a common dish here in Verteroche. It only has a little mould on it, so you pick off the bad spots and put it in your pack.\n\nWhen you open the chest again:\n  quote:\n  ....Chest - The chest may be empty, but it still smells like dinner.",
+    "obtainMethods": [
+      {
+        "location": "Chest in looked room in Caravan at  Verderoche Crossing",
+        "price": "N/A",
+        "priceType": "free",
+        "daRequired": true,
+        "dcRequired": false,
+        "dmRequired": false
+      }
+    ],
+    "level": "1",
+    "rarity": "2",
+    "alsoSee": [],
+    "tags": [
+      "da",
+      "temp"
+    ],
+    "daRequired": true,
+    "dcRequired": false,
+    "dmRequired": false,
+    "hasFree": true,
+    "hasMerge": false,
+    "isTemp": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "class-ability-health-potion",
+    "name": "Health Potion",
+    "slug": "class-ability-health-potion",
+    "type": "class-ability",
+    "subtype": "consumable",
+    "description": "Drink a Health Potion to heal + <amount of HP depending on Level and Health Alchemy Level> HP. Arachnalchemy Effect: <x> for <x> turns.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=4159197",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=4159197",
+    "price": "N/A",
+    "effect": "Heals its user for 125 + [Level * 8] + [Health Alchemy Level * 5], rounded up. This uses the player's  Health Alchemy Level, including for guests.",
+    "attacks": [
+      {
+        "name": "Health Potion",
+        "effect": "Heals its user for 125 + [Level * 8] + [Health Alchemy Level * 5], rounded up. This uses the player's  Health Alchemy Level, including for guests.",
+        "manaCost": "0",
+        "cooldown": "0",
+        "damageType": "N/A",
+        "element": "N/A",
+        "buttonImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/Skill-HP.png",
+        "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/Potion_Cast.png"
+      }
+    ],
+    "obtainMethods": [],
+    "notes": "• Previously have the tooltip: + <amount of HP depending on Level and Health Alchemy Level> HP.\n\n• Players have access to 2 Health Potions by default, but can stack up to 5.\n\n• When out of battle, Health Potions may be consumed from  Inventory.\n\n• Health Potions became scalable to player's Level on  September 4th, 2017.\n\n• Health Potions previously used the formula 100 + Level * (Health Alchemy Level - 5) * 0.3, rounded up; this was changed to 125 + [Level * 8] + [Health Alchemy Level * 5], rounded up on  December 20th, 2024.\n\n• If the player drinks a Health Potion, they gain effects based on their  Arachnalchemy; refer to this entry for more information.\n\n  • Arachnalchemy Effect tooltip text will only appear if the player have an Arachnalchemy effect imbued (excluding Mutagen U); this was implemented on  October 17th, 2025.",
+    "alsoSee": [
+      {
+        "name": "All Classes - Mana Potion",
+        "slug": "class-ability-mana-potion",
+        "type": "class-ability",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=4159198"
+      }
+    ],
+    "tags": [],
+    "daRequired": false,
+    "dcRequired": false,
+    "dmRequired": false,
+    "hasFree": false,
+    "hasMerge": false,
+    "isTemp": false,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "class-ability-hectopump",
+    "name": "Hectopump",
+    "slug": "class-ability-hectopump",
+    "type": "class-ability",
+    "subtype": "consumable",
+    "consumableKind": "food",
+    "description": "A cross between a pumpkin and an octopus? what does that taste like?!",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=16075432",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=16075432",
+    "location": "Doomwood Dock",
+    "price": "N/A",
+    "effect": "Stuffed for 6 turns, Dodge +1 for 11 turns.",
+    "effectType": "Dodge",
+    "attacks": [
+      {
+        "name": "Hectopump",
+        "effect": "Stuffed for 6 turns, Dodge +1 for 11 turns.",
+        "manaCost": "—",
+        "cooldown": "—",
+        "damageType": "—",
+        "element": "—",
+        "buttonImageUrl": "https://forums2.battleon.com/f/upfiles/187730/1E0BE864AAAF46AEB3756109D2CDB1CB.jpg"
+      }
+    ],
+    "dialogue": "quote:\n  Made Hectopump!! Eat while in battle and gain an affect.",
+    "obtainMethods": [
+      {
+        "location": "Doomwood Dock",
+        "price": "N/A",
+        "priceType": "free",
+        "daRequired": true,
+        "dcRequired": false,
+        "dmRequired": false
+      }
+    ],
+    "level": "1",
+    "rarity": "2",
+    "alsoSee": [],
+    "tags": [
+      "da",
+      "temp"
+    ],
+    "daRequired": true,
+    "dcRequired": false,
+    "dmRequired": false,
+    "hasFree": true,
+    "hasMerge": false,
+    "isTemp": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "class-ability-holy-sandwich",
+    "name": "Holy Sandwich",
+    "slug": "class-ability-holy-sandwich",
+    "type": "class-ability",
+    "subtype": "consumable",
+    "consumableKind": "food",
+    "description": "It's probably best not to ask what's in this sandwich. Have faith in its tastiness, and it will sustain you until next you hunger. When eaten, provides +10 Bonus, +5 Bacon resistance for 5 turns.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22424953",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22424953",
+    "location": "A Fowl Feast -> Watch the first cutscene until you leave  Zeuster's mountain",
+    "price": "N/A",
+    "effect": "Applies 'Holy Sandwich' (+10 Bonus, +5 Bacon Resist) to player for 5 turns inclusive; applies 'Stuffed' to player for 7 turns.",
+    "effectType": "Bonus, Bacon Resist",
+    "attacks": [
+      {
+        "name": "Holy Sandwich",
+        "effect": "Applies 'Holy Sandwich' (+10 Bonus, +5 Bacon Resist) to player for 5 turns inclusive; applies 'Stuffed' to player for 7 turns.",
+        "manaCost": "—",
+        "cooldown": "—",
+        "damageType": "—",
+        "element": "—",
+        "buttonImageUrl": "https://forums2.battleon.com/f/upfiles/342665/46E5F7DA6C104BD1AAF8FB474C3AF425.png"
+      }
+    ],
+    "obtainMethods": [
+      {
+        "location": "A Fowl Feast -> Watch the first cutscene until you leave  Zeuster's mountain",
+        "price": "N/A",
+        "priceType": "free",
+        "daRequired": true,
+        "dcRequired": false,
+        "dmRequired": false
+      }
+    ],
+    "level": "1",
+    "rarity": "2",
+    "notes": "• Players can only carry one Holy Sandwich at a time.",
+    "alsoSee": [],
+    "tags": [
+      "da",
+      "temp"
+    ],
+    "daRequired": true,
+    "dcRequired": false,
+    "dmRequired": false,
+    "hasFree": true,
+    "hasMerge": false,
+    "isTemp": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "class-ability-humapple-stew",
+    "familyName": "Humapple Stew",
+    "slug": "class-ability-humapple-stew",
+    "aliasSlugs": [],
+    "type": "class-ability",
+    "subtype": "consumable",
+    "consumableKind": "food",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22423454",
+    "familyOrigin": "single-thread",
+    "familySources": [
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22423454",
+        "title": "Humapple Stew"
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22423454",
+        "title": "Humapple Stew"
+      }
+    ],
+    "shared": {
+      "description": "This volatile bowl of Humapple Stew bubbles and smokes. It's probably safe to consume, right? Humapple Stew damages you for 20% max HP, but increases your All resistance by 10 for 1 turn (No -Health). Stuffed for 15 turns.",
+      "effect": "Removes 20% of player's max HP upon use; applies 'Humapple Stew' (+10 All Resist) to player for 2 turns inclusive; applies 'Stuffed' to player for 16 turns.",
+      "effectType": "All Resist, Removes HP",
+      "notes": "• Players can only carry one Humapple Stew at a time.\n\n• The duration of 'Humapple Stew' was increased from 1 to 2 turns on  September 19th, 2025.",
+      "alsoSee": []
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
+        "levelDisplay": "1",
+        "name": "Humapple Stew",
+        "damage": "—",
+        "stats": "—",
+        "obtainVariants": [
+          {
+            "location": "The Fragile Fruit -> Humapple Stew",
+            "price": "N/A",
+            "priceType": "free",
+            "daRequired": true,
+            "dcRequired": false,
+            "dmRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22423454",
+        "description": "This volatile bowl of Humapple Stew bubbles and smokes. It's probably safe to consume, right? Humapple Stew damages you for 20% max HP, but increases your All resistance by 10 for 1 turn (No -Health). Stuffed for 15 turns.",
+        "classAbilitySubtype": "food",
+        "retired": false
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "1",
+        "actualLevel": 1,
+        "name": "Humapple Stew",
+        "damage": "—",
+        "stats": "—",
+        "obtainVariants": [
+          {
+            "location": "Falconreach (Books 3 and 4) ->  Ruby -> Purchase Food -> Humapple Stew (requires completion of  The Fragile Fruit)",
+            "price": "N/A",
+            "priceType": "dm",
+            "daRequired": true,
+            "dmRequired": true,
+            "requiredItems": "1  Defender's Medal",
+            "dcRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22423454",
+        "description": "This volatile bowl of Humapple Stew bubbles and smokes. It's probably safe to consume, right? Humapple Stew damages you for 20% max HP, but increases your All resistance by 10 for 1 turn (No -Health). Stuffed for 15 turns.",
+        "rarity": "2",
+        "classAbilitySubtype": "food",
+        "retired": false
+      }
+    ],
+    "tags": [
+      "da",
+      "dm",
+      "temp"
+    ],
+    "hasDA": true,
+    "hasDC": false,
+    "hasDM": true,
+    "hasFree": true,
+    "hasMerge": false,
+    "levelRange": "1-1",
+    "elements": [],
+    "isTemp": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "class-ability-instant-pierogi",
+    "familyName": "Instant Pierogi",
+    "slug": "class-ability-instant-pierogi",
+    "aliasSlugs": [],
+    "type": "class-ability",
+    "subtype": "consumable",
+    "consumableKind": "food",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22371168",
+    "familyOrigin": "single-thread",
+    "familySources": [
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22371168",
+        "title": "Instant Pierogi"
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22371168",
+        "title": "Instant Pierogi"
+      }
+    ],
+    "shared": {
+      "description": "Adding hot water to the Instant Pierogi turns it into a steaming hot, delicious, and nutritious pasta pocket. Recovers (Level + 10) MP/turn for 10 turns. Applies -10 Boost for 10 turns. Stuffed for 5 turns.",
+      "effect": "Recovers (Level + 10) MP upon use; applies 'Instant Pierogi', a Constant (Level + 10) HoT to MP, to player for 3 turns; applies 'Pierogi Overload' (-10% Boost) to player for 10 turns; applies 'Stuffed' to player for 6 turns.",
+      "effectType": "Boost, Recovers MP",
+      "notes": "• Players can carry one Instant Pierogi at a time.\n\n• The following changes were implemented on  December 13th, 2024:\n\n  • Previously had the description: Adding hot water to the Instant Pierogi turns it into a steaming hot, delicious, and nutritious pasta pocket. Recovers 10% MP/turn for 10 turns. Applies -10 Boost for 10 turns. Stuffed for 5 turns.\n\n  • Recovers (Level + 10) MP to player, down from 10% of player's max MP upon use.\n\n  • 'Instant Pierogi' recovers (Level + 10) MP to player, down from 10% of player's max MP.\n\n  • The duration of 'Instant Pierogi' is reduced from 8 turns to 3.",
+      "alsoSee": []
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
+        "levelDisplay": "1",
+        "name": "Instant Pierogi",
+        "damage": "—",
+        "stats": "—",
+        "obtainVariants": [
+          {
+            "location": "The Forum -> 4 Left/Right ->  Pierogi Seller -> Instant Pierogi -> Yes",
+            "price": "250 Gold (150 Gold after completion of  Heroes)",
+            "priceType": "gold",
+            "daRequired": true,
+            "dcRequired": false,
+            "dmRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22371168",
+        "description": "Adding hot water to the Instant Pierogi turns it into a steaming hot, delicious, and nutritious pasta pocket. Recovers (Level + 10) MP/turn for 10 turns. Applies -10 Boost for 10 turns. Stuffed for 5 turns.",
+        "classAbilitySubtype": "food",
+        "retired": false
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "1",
+        "actualLevel": 1,
+        "name": "Instant Pierogi",
+        "damage": "—",
+        "stats": "—",
+        "obtainVariants": [
+          {
+            "location": "Falconreach (Books 3 and 4) ->  Ruby -> Purchase Food -> Instant Pierogi -> Yes",
+            "price": "N/A",
+            "priceType": "dm",
+            "daRequired": true,
+            "dmRequired": true,
+            "requiredItems": "1  Defender's Medal",
+            "dcRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22371168",
+        "description": "Adding hot water to the Instant Pierogi turns it into a steaming hot, delicious, and nutritious pasta pocket. Recovers (Level + 10) MP/turn for 10 turns. Applies -10 Boost for 10 turns. Stuffed for 5 turns.",
+        "rarity": "2",
+        "classAbilitySubtype": "food",
+        "retired": false
+      }
+    ],
+    "tags": [
+      "da",
+      "dm",
+      "temp"
+    ],
+    "hasDA": true,
+    "hasDC": false,
+    "hasDM": true,
+    "hasFree": false,
+    "hasMerge": false,
+    "levelRange": "1-1",
+    "elements": [],
+    "isTemp": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "class-ability-lichen-aid",
+    "name": "Lichen-aid",
+    "slug": "class-ability-lichen-aid",
+    "type": "class-ability",
+    "subtype": "consumable",
+    "consumableKind": "food",
+    "description": "Glowy and.... crunchy?",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=21302140",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21302140",
+    "location": "Ravenloss (Book 3) /  Unvoided Ravenloss (Books 3 and 4) -> 2 Down -> Right -> Enter the inn ->  Oroon -> Lichen-aid",
+    "price": "N/A",
+    "effect": "Applies +20 DEX to player for 3 turns; applies 'Stuffed' to player for 6 turns.",
+    "effectType": "DEX",
+    "attacks": [
+      {
+        "name": "Lichen-aid",
+        "effect": "Applies +20 DEX to player for 3 turns; applies 'Stuffed' to player for 6 turns.",
+        "manaCost": "—",
+        "cooldown": "—",
+        "damageType": "—",
+        "element": "—",
+        "buttonImageUrl": "https://forums2.battleon.com/f/upfiles/187730/1E0BE864AAAF46AEB3756109D2CDB1CB.jpg"
+      }
+    ],
+    "obtainMethods": [
+      {
+        "location": "Ravenloss (Book 3) /  Unvoided Ravenloss (Books 3 and 4) -> 2 Down -> Right -> Enter the inn ->  Oroon -> Lichen-aid",
+        "price": "N/A",
+        "priceType": "free",
+        "daRequired": true,
+        "dcRequired": false,
+        "dmRequired": false
+      }
+    ],
+    "level": "1",
+    "rarity": "2",
+    "alsoSee": [],
+    "tags": [
+      "da",
+      "temp"
+    ],
+    "daRequired": true,
+    "dcRequired": false,
+    "dmRequired": false,
+    "hasFree": true,
+    "hasMerge": false,
+    "isTemp": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "class-ability-lucky-water",
+    "name": "Lucky Water",
+    "slug": "class-ability-lucky-water",
+    "type": "class-ability",
+    "subtype": "consumable",
+    "consumableKind": "food",
+    "description": "A flask of lucky water.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=17985713",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=17985713",
+    "location": "Moonridge -> Right -> Approach the fountain -> Drink?",
+    "price": "N/A",
+    "effect": "Applies 'Lucky Water' (+20 LUK) to player for 3 turns; applies 'Stuffed' to player for 6 turns.",
+    "effectType": "LUK",
+    "attacks": [
+      {
+        "name": "Lucky Water",
+        "effect": "Applies 'Lucky Water' (+20 LUK) to player for 3 turns; applies 'Stuffed' to player for 6 turns.",
+        "manaCost": "—",
+        "cooldown": "—",
+        "damageType": "—",
+        "element": "—",
+        "buttonImageUrl": "https://forums2.battleon.com/f/upfiles/343814/60231205D2054907B6B6AE0C41534A32.jpg"
+      }
+    ],
+    "obtainMethods": [
+      {
+        "location": "Moonridge -> Right -> Approach the fountain -> Drink?",
+        "price": "N/A",
+        "priceType": "free",
+        "daRequired": true,
+        "dcRequired": false,
+        "dmRequired": false
+      }
+    ],
+    "level": "1",
+    "rarity": "2",
+    "notes": "• A period was added to the end of Lucky Water's description on  November 17th, 2023.",
+    "alsoSee": [],
+    "tags": [
+      "da",
+      "temp"
+    ],
+    "daRequired": true,
+    "dcRequired": false,
+    "dmRequired": false,
+    "hasFree": true,
+    "hasMerge": false,
+    "isTemp": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "class-ability-mana-potion",
+    "name": "Mana Potion",
+    "slug": "class-ability-mana-potion",
+    "type": "class-ability",
+    "subtype": "consumable",
+    "description": "Drink a Mana Potion to recover + <amount of MP depending on Level and Mana Alchemy Level> MP.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=4159198",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=4159198",
+    "price": "N/A",
+    "effect": "Heals its user for 115 + [Level * 2] + [Mana Alchemy Level * 3], rounded up. This uses the player's  Mana Alchemy Level, including for guests.",
+    "attacks": [
+      {
+        "name": "Mana Potion",
+        "effect": "Heals its user for 115 + [Level * 2] + [Mana Alchemy Level * 3], rounded up. This uses the player's  Mana Alchemy Level, including for guests.",
+        "manaCost": "0",
+        "cooldown": "0",
+        "damageType": "N/A",
+        "element": "N/A",
+        "buttonImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/Skill-MP.png",
+        "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/Potion_Cast.png"
+      }
+    ],
+    "obtainMethods": [],
+    "notes": "• Previously have the tooltip: + <amount of MP depending on Level and Mana Alchemy Level> MP.\n\n• Players have access to 2 Mana Potions by default, but can stack up to 5.\n\n• When out of battle, Mana Potions may be consumed from  Inventory.\n\n• Mana Potions became scalable to player's Level on  September 4th, 2017.\n\n• Mana Potions previously used the formula 100 + Level * (Mana Alchemy Level - 5) * 0.1; this was changed to 115 + [Level * 2] + [Mana Alchemy Level * 3] on  December 20th, 2024.",
+    "alsoSee": [
+      {
+        "name": "All Classes - Health Potion",
+        "slug": "class-ability-health-potion",
+        "type": "class-ability",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=4159197"
+      }
+    ],
+    "tags": [],
+    "daRequired": false,
+    "dcRequired": false,
+    "dmRequired": false,
+    "hasFree": false,
+    "hasMerge": false,
+    "isTemp": false,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "class-ability-moglinberry-candy",
+    "name": "Moglinberry Candy",
+    "slug": "class-ability-moglinberry-candy",
+    "type": "class-ability",
+    "subtype": "consumable",
+    "consumableKind": "food",
+    "description": "This delicious sweet and sour Moglinberry Candy increases your Immobility resistance by 50 for 2 turns, and applies Stuffed for 10 turns.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22371169",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22371169",
+    "location": "Falconreach (Books 3 and 4) ->  Ruby -> Purchase Food -> Moglinberry Candy -> Yes",
+    "price": "N/A",
+    "requiredItems": "1  Defender's Medal",
+    "effect": "Applies 'Moglinberry Candy' (+50 Immobility) to player for 2 turns; applies 'Stuffed' to player for 10 turns.",
+    "effectType": "Immobility",
+    "attacks": [
+      {
+        "name": "Moglinberry Candy",
+        "effect": "Applies 'Moglinberry Candy' (+50 Immobility) to player for 2 turns; applies 'Stuffed' to player for 10 turns.",
+        "manaCost": "—",
+        "cooldown": "—",
+        "damageType": "—",
+        "element": "—",
+        "buttonImageUrl": "image/blank.gif"
+      }
+    ],
+    "obtainMethods": [
+      {
+        "location": "Falconreach (Books 3 and 4) ->  Ruby -> Purchase Food -> Moglinberry Candy -> Yes",
+        "price": "N/A",
+        "priceType": "dm",
+        "daRequired": true,
+        "dmRequired": true,
+        "requiredItems": "1  Defender's Medal",
+        "dcRequired": false
+      }
+    ],
+    "level": "1",
+    "rarity": "2",
+    "alsoSee": [],
+    "tags": [
+      "da",
+      "dm",
+      "temp"
+    ],
+    "daRequired": true,
+    "dcRequired": false,
+    "dmRequired": true,
+    "hasFree": false,
+    "hasMerge": false,
+    "isTemp": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "class-ability-mushroom-cider",
+    "name": "Mushroom Cider",
+    "slug": "class-ability-mushroom-cider",
+    "type": "class-ability",
+    "subtype": "consumable",
+    "consumableKind": "food",
+    "description": "Dark and... mushroom-y?!",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=21301154",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21301154",
+    "location": "Ravenloss (Book 3) /  Unvoided Ravenloss (Books 3 and 4) -> 2 Down -> Right -> Enter the inn ->  Oroon -> Mushroom Cider",
+    "price": "N/A",
+    "effect": "Applies +20 STR to player for 3 turns; applies 'Stuffed' to player for 6 turns.",
+    "effectType": "STR",
+    "attacks": [
+      {
+        "name": "Mushroom Cider",
+        "effect": "Applies +20 STR to player for 3 turns; applies 'Stuffed' to player for 6 turns.",
+        "manaCost": "—",
+        "cooldown": "—",
+        "damageType": "—",
+        "element": "—",
+        "buttonImageUrl": "https://forums2.battleon.com/f/upfiles/435086/6039BD900B13454CAE6E9DE87D745E76.png"
+      }
+    ],
+    "obtainMethods": [
+      {
+        "location": "Ravenloss (Book 3) /  Unvoided Ravenloss (Books 3 and 4) -> 2 Down -> Right -> Enter the inn ->  Oroon -> Mushroom Cider",
+        "price": "N/A",
+        "priceType": "free",
+        "daRequired": true,
+        "dcRequired": false,
+        "dmRequired": false
+      }
+    ],
+    "level": "1",
+    "rarity": "2",
+    "alsoSee": [],
+    "tags": [
+      "da",
+      "temp"
+    ],
+    "daRequired": true,
+    "dcRequired": false,
+    "dmRequired": false,
+    "hasFree": true,
+    "hasMerge": false,
+    "isTemp": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "class-ability-mysterious-liquid",
+    "name": "Mysterious Liquid",
+    "slug": "class-ability-mysterious-liquid",
+    "type": "class-ability",
+    "subtype": "consumable",
+    "consumableKind": "food",
+    "description": "Refreshing!",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=21404128",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21404128",
+    "location": "The Weaponsmith's Apprentice -> Approach the bottles on the first screen -> 'noisolpxe' button",
+    "price": "N/A",
+    "effect": "Stuffed for 6 turns, Bonus +10 for 3 turns",
+    "effectType": "Bonus",
+    "attacks": [
+      {
+        "name": "Mysterious Liquid",
+        "effect": "Stuffed for 6 turns, Bonus +10 for 3 turns",
+        "manaCost": "—",
+        "cooldown": "—",
+        "damageType": "—",
+        "element": "—",
+        "buttonImageUrl": "https://forums2.battleon.com/f/upfiles/435086/6039BD900B13454CAE6E9DE87D745E76.png"
+      }
+    ],
+    "dialogue": "If you don't have it:\n  quote:\n  ....Mmm! - It's water! You're kinda surprised.\n\nIf you already have it:\n  quote:\n  ....Bottle - The bottle is empty.",
+    "obtainMethods": [
+      {
+        "location": "The Weaponsmith's Apprentice -> Approach the bottles on the first screen -> 'noisolpxe' button",
+        "price": "N/A",
+        "priceType": "free",
+        "daRequired": true,
+        "dcRequired": false,
+        "dmRequired": false
+      }
+    ],
+    "level": "1",
+    "rarity": "2",
+    "alsoSee": [],
+    "tags": [
+      "da",
+      "temp"
+    ],
+    "daRequired": true,
+    "dcRequired": false,
+    "dmRequired": false,
+    "hasFree": true,
+    "hasMerge": false,
+    "isTemp": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "class-ability-ninja-starfish",
+    "name": "Ninja Starfish",
+    "slug": "class-ability-ninja-starfish",
+    "type": "class-ability",
+    "subtype": "consumable",
+    "consumableKind": "food",
+    "description": "One of the most stelthy fish in all of Lore.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=16086584",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=16086584",
+    "location": "Doomwood Dock",
+    "price": "N/A",
+    "effect": "Stuffed for 6 turns, Bonus +5 for 11 turns.",
+    "effectType": "Bonus",
+    "attacks": [
+      {
+        "name": "Ninja Starfish",
+        "effect": "Stuffed for 6 turns, Bonus +5 for 11 turns.",
+        "manaCost": "—",
+        "cooldown": "—",
+        "damageType": "—",
+        "element": "—",
+        "buttonImageUrl": "https://forums2.battleon.com/f/upfiles/187730/1E0BE864AAAF46AEB3756109D2CDB1CB.jpg"
+      }
+    ],
+    "dialogue": "quote:\n  Made Ninja Starfish!! Eat while in battle and gain an affect.",
+    "obtainMethods": [
+      {
+        "location": "Doomwood Dock",
+        "price": "N/A",
+        "priceType": "free",
+        "daRequired": true,
+        "dcRequired": false,
+        "dmRequired": false
+      }
+    ],
+    "level": "1",
+    "rarity": "2",
+    "alsoSee": [],
+    "tags": [
+      "da",
+      "temp"
+    ],
+    "daRequired": true,
+    "dcRequired": false,
+    "dmRequired": false,
+    "hasFree": true,
+    "hasMerge": false,
+    "isTemp": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "class-ability-peculiar-pellets",
+    "familyName": "Peculiar Pellets",
+    "slug": "class-ability-peculiar-pellets",
+    "aliasSlugs": [],
+    "type": "class-ability",
+    "subtype": "consumable",
+    "consumableKind": "food",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22404017",
+    "familyOrigin": "single-thread",
+    "familySources": [
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22404017",
+        "title": "Peculiar Pellets"
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22404017",
+        "title": "Peculiar Pellets"
+      }
+    ],
+    "shared": {
+      "description": "A pair of small pellets. Consuming them might be beneficial! (Removes all DoT effects from yourself)",
+      "effect": "Purges all DoT and HoT effects (excluding permanent DoT and HoT effects) from the player; applies 'Stuffed' to player for 4 turns.",
+      "effectType": "Utility",
+      "notes": "• Players can only carry one Peculiar Pellets at a time.",
+      "alsoSee": []
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
+        "levelDisplay": "1",
+        "name": "Peculiar Pellets",
+        "damage": "—",
+        "stats": "—",
+        "obtainVariants": [
+          {
+            "location": "Into the Abyss -> Down -> Down Right -> Down Left -> 2 Right -> North Right -> North Left -> Left  -> North Right -> Open Sack",
+            "price": "N/A",
+            "priceType": "free",
+            "daRequired": true,
+            "dcRequired": false,
+            "dmRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22404017",
+        "description": "A pair of small pellets. Consuming them might be beneficial! (Removes all DoT effects from yourself)",
+        "classAbilitySubtype": "food",
+        "retired": false
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "1",
+        "actualLevel": 1,
+        "name": "Peculiar Pellets",
+        "damage": "—",
+        "stats": "—",
+        "obtainVariants": [
+          {
+            "location": "Falconreach (Books 3 and 4) ->  Ruby -> Purchase Food -> Peculiar Pellets (requires completion of  Into the Abyss)",
+            "price": "N/A",
+            "priceType": "dm",
+            "daRequired": true,
+            "dmRequired": true,
+            "requiredItems": "1  Defender's Medal",
+            "dcRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22404017",
+        "description": "A pair of small pellets. Consuming them might be beneficial! (Removes all DoT effects from yourself)",
+        "rarity": "2",
+        "classAbilitySubtype": "food",
+        "retired": false
+      }
+    ],
+    "tags": [
+      "da",
+      "dm",
+      "temp"
+    ],
+    "hasDA": true,
+    "hasDC": false,
+    "hasDM": true,
+    "hasFree": true,
+    "hasMerge": false,
+    "levelRange": "1-1",
+    "elements": [],
+    "isTemp": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "class-ability-power-truffle",
+    "name": "Power Truffle",
+    "slug": "class-ability-power-truffle",
+    "type": "class-ability",
+    "subtype": "consumable",
+    "consumableKind": "food",
+    "description": "This truffle generally grows in marshes and swamps, and is a favorite amongst warriors because of its strength-boosting properties.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=20326892",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=20326892",
+    "location": "Aika Village -> Up -> Approach the bags and pots near  Sir Ano -> Search Pots",
+    "price": "N/A",
+    "effect": "Applies 'Strength' (+15 STR) to player for next 3 turns; applies 'Stuffed' to player for 6 turns.",
+    "effectType": "STR",
+    "attacks": [
+      {
+        "name": "Power Truffle",
+        "effect": "Applies 'Strength' (+15 STR) to player for next 3 turns; applies 'Stuffed' to player for 6 turns.",
+        "manaCost": "—",
+        "cooldown": "—",
+        "damageType": "—",
+        "element": "—",
+        "buttonImageUrl": "https://forums2.battleon.com/f/upfiles/435086/6039BD900B13454CAE6E9DE87D745E76.png"
+      }
+    ],
+    "obtainMethods": [
+      {
+        "location": "Aika Village -> Up -> Approach the bags and pots near  Sir Ano -> Search Pots",
+        "price": "N/A",
+        "priceType": "free",
+        "daRequired": true,
+        "dcRequired": false,
+        "dmRequired": false
+      }
+    ],
+    "level": "1",
+    "rarity": "2",
+    "notes": "• Power Truffle previously appeared in the retired zone  Aika Village.",
+    "alsoSee": [],
+    "tags": [
+      "da",
+      "temp"
+    ],
+    "daRequired": true,
+    "dcRequired": false,
+    "dmRequired": false,
+    "hasFree": true,
+    "hasMerge": false,
+    "isTemp": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "class-ability-purple-fruit",
+    "familyName": "Purple Fruit",
+    "slug": "class-ability-purple-fruit",
+    "aliasSlugs": [],
+    "type": "class-ability",
+    "subtype": "consumable",
+    "consumableKind": "food",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22413514",
+    "familyOrigin": "single-thread",
+    "familySources": [
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22413514",
+        "title": "Purple Fruit"
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22413514",
+        "title": "Purple Fruit"
+      }
+    ],
+    "shared": {
+      "description": "A fruit grown from a massive Mana-entangled tree. Increases your END and WIS by (Level/2)+5 for 30 turns. Applies Stuffed for 10 turns.",
+      "effect": "Applies 'Purple Fruit' (+[(Level/2)+5] END/WIS) to player for 30 turns inclusive; applies 'Stuffed' to player for 11 turns.",
+      "effectType": "END, WIS",
+      "notes": "• Players can only carry one Purple Fruit at a time.",
+      "alsoSee": []
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
+        "levelDisplay": "1",
+        "name": "Purple Fruit",
+        "damage": "—",
+        "stats": "—",
+        "obtainVariants": [
+          {
+            "location": "The Mana Tree -> Take a Purple Fruit -> Yes",
+            "price": "N/A",
+            "priceType": "free",
+            "daRequired": true,
+            "dcRequired": false,
+            "dmRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22413514",
+        "description": "A fruit grown from a massive Mana-entangled tree. Increases your END and WIS by (Level/2)+5 for 30 turns. Applies Stuffed for 10 turns.",
+        "classAbilitySubtype": "food",
+        "retired": false
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "1",
+        "actualLevel": 1,
+        "name": "Purple Fruit",
+        "damage": "—",
+        "stats": "—",
+        "obtainVariants": [
+          {
+            "location": "Falconreach (Books 3 and 4) ->  Ruby -> Purchase Food -> Purple Fruit (requires completion of  Threads of Trust)",
+            "price": "N/A",
+            "priceType": "dm",
+            "daRequired": true,
+            "dmRequired": true,
+            "requiredItems": "1  Defender's Medal",
+            "dcRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22413514",
+        "description": "A fruit grown from a massive Mana-entangled tree. Increases your END and WIS by (Level/2)+5 for 30 turns. Applies Stuffed for 10 turns.",
+        "rarity": "2",
+        "classAbilitySubtype": "food",
+        "retired": false
+      }
+    ],
+    "tags": [
+      "da",
+      "dm",
+      "temp"
+    ],
+    "hasDA": true,
+    "hasDC": false,
+    "hasDM": true,
+    "hasFree": true,
+    "hasMerge": false,
+    "levelRange": "1-1",
+    "elements": [],
+    "isTemp": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "class-ability-raven-s-wings",
+    "name": "Raven's Wings",
+    "slug": "class-ability-raven-s-wings",
+    "type": "class-ability",
+    "subtype": "consumable",
+    "consumableKind": "food",
+    "description": "This pile of crispy fried raven wings will increase your DEX by 50 for 30 turns during battle! Applies Stuffed for 10 turns.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22325731",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22325731",
+    "location": "Falconreach (Books 3 and 4) ->  Ruby -> Purchase Food -> Raven's Wings",
+    "price": "N/A",
+    "requiredItems": "1  Defender's Medal",
+    "effect": "Applies DEX +50 to player for 30 turns inclusive; applies 'Stuffed' to player for 11 turns.",
+    "effectType": "DEX",
+    "attacks": [
+      {
+        "name": "Raven's Wings",
+        "effect": "Applies DEX +50 to player for 30 turns inclusive; applies 'Stuffed' to player for 11 turns.",
+        "manaCost": "—",
+        "cooldown": "—",
+        "damageType": "—",
+        "element": "—",
+        "buttonImageUrl": "image/blank.gif"
+      }
+    ],
+    "obtainMethods": [
+      {
+        "location": "Falconreach (Books 3 and 4) ->  Ruby -> Purchase Food -> Raven's Wings",
+        "price": "N/A",
+        "priceType": "dm",
+        "daRequired": true,
+        "dmRequired": true,
+        "requiredItems": "1  Defender's Medal",
+        "dcRequired": false
+      }
+    ],
+    "level": "1",
+    "rarity": "2",
+    "notes": "• Previously had the description: This pile of crispy fried raven wings will boost your DEX by 50 for 30 turns!",
+    "alsoSee": [],
+    "tags": [
+      "da",
+      "dm",
+      "temp"
+    ],
+    "daRequired": true,
+    "dcRequired": false,
+    "dmRequired": true,
+    "hasFree": false,
+    "hasMerge": false,
+    "isTemp": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "class-ability-red-fruit",
+    "name": "Red Fruit",
+    "slug": "class-ability-red-fruit",
+    "type": "class-ability",
+    "subtype": "consumable",
+    "consumableKind": "food",
+    "description": "Delicious Red Fruit! Increases your Crit by 100 for 1 turn. Applies Stuffed for 20 turns.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22353777",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22353777",
+    "location": "Food Seller -> Red Fruit -> Yes",
+    "price": "N/A",
+    "requiredItems": "1  Defender's Medal",
+    "effect": "Applies +100 Crit to player for 1 turn inclusive; applies 'Stuffed' to player for 20 turns.",
+    "effectType": "Crit",
+    "attacks": [
+      {
+        "name": "Red Fruit",
+        "effect": "Applies +100 Crit to player for 1 turn inclusive; applies 'Stuffed' to player for 20 turns.",
+        "manaCost": "—",
+        "cooldown": "—",
+        "damageType": "—",
+        "element": "—",
+        "buttonImageUrl": "image/blank.gif"
+      }
+    ],
+    "obtainMethods": [
+      {
+        "location": "Food Seller -> Red Fruit -> Yes",
+        "price": "N/A",
+        "priceType": "dm",
+        "daRequired": true,
+        "dmRequired": true,
+        "requiredItems": "1  Defender's Medal",
+        "dcRequired": false
+      }
+    ],
+    "level": "1",
+    "rarity": "2",
+    "notes": "• Food previously applied +200 Block Defense and +200 Crit to player for 2 turns inclusive and applied 'Stuffed' to player for 30 turns; the effects' durations were lowered to 1 turn inclusive on April 15th, 2019.\n\n• In mid-2020, the Block Defense and Crit effects were separated into individual status effects, lasting for 2 turns inclusive and 1 turn inclusive respectively.\n\n• The following changes were implemented on  April 16th, 2021:\n\n  • Previously had the description: Delicious Red Fruit! Increases your Block by 200 for 2 turns and Crit by 200 for 1 turn. Applies Stuffed for 30 turns.\n\n  • The +200 Block Defense was removed, while the Crit and 'Stuffed' effects were lowered to +100 Crit and 20 turns respectively.",
+    "alsoSee": [],
+    "tags": [
+      "da",
+      "dm",
+      "temp"
+    ],
+    "daRequired": true,
+    "dcRequired": false,
+    "dmRequired": true,
+    "hasFree": false,
+    "hasMerge": false,
+    "isTemp": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "class-ability-red-stardust-boost",
+    "name": "Red Stardust (Boost)",
+    "slug": "class-ability-red-stardust-boost",
+    "type": "class-ability",
+    "subtype": "consumable",
+    "consumableKind": "dust",
+    "description": "Dispersing this pinch of stardust grants you +5 Boost (stacks, max 50) for the rest of the battle.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22417228",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22417228",
+    "location": "The Lost Constellation -> Find a Star Shard (-> Reroll) -> Select 'Red' option",
+    "price": "N/A",
+    "effect": "Permanently applies 'Red Stardust' (+5X% Boost) to player.",
+    "effectType": "Boost",
+    "attacks": [
+      {
+        "name": "Red Stardust (Boost)",
+        "effect": "Permanently applies 'Red Stardust' (+5X% Boost) to player.",
+        "manaCost": "—",
+        "cooldown": "—",
+        "damageType": "—",
+        "element": "—",
+        "buttonImageUrl": "image/wide_ak4.jpg"
+      }
+    ],
+    "obtainMethods": [
+      {
+        "location": "The Lost Constellation -> Find a Star Shard (-> Reroll) -> Select 'Red' option",
+        "price": "N/A",
+        "priceType": "free",
+        "daRequired": false,
+        "dcRequired": false,
+        "dmRequired": false
+      }
+    ],
+    "level": "1",
+    "rarity": "2",
+    "notes": "• X is the number of times this item was consumed, capped at 10; this effectively caps 'Red Stardust' at +50% Boost.\n\n• Item is randomly found while exploring The Lost Constellation.\n\n• Item's effects can only be applied during a battle on  The Lost Constellation quest; using it while outside of that quest will have no effect.",
+    "alsoSee": [],
+    "tags": [
+      "temp"
+    ],
+    "daRequired": false,
+    "dcRequired": false,
+    "dmRequired": false,
+    "hasFree": true,
+    "hasMerge": false,
+    "isTemp": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "class-ability-rotten-hardtack",
+    "familyName": "Rotten Hardtack",
+    "slug": "class-ability-rotten-hardtack",
+    "aliasSlugs": [],
+    "type": "class-ability",
+    "subtype": "consumable",
+    "consumableKind": "food",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=21980297",
+    "familyOrigin": "single-thread",
+    "familySources": [
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=21980297",
+        "title": "Rotten Hardtack"
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=21980297",
+        "title": "Rotten Hardtack"
+      }
+    ],
+    "shared": {
+      "description": "This... does not look good. Heals you (Level * 10) HP unaffected by Health res, but reduces your bonus to hit. Applies Stuffed for 15 turns.",
+      "effect": "Recovers (Level * 10) to player upon use, unaffected by Health and/or All Resists; applies 'Bonus' (-10 Bonus) to player for next 10 turns; applies 'Stuffed' to player for 32 turns.",
+      "effectType": "Bonus, Recovers HP",
+      "notes": "• Players can only carry one Rotten Hardtack at a time.\n\n• The following changes were implemented on  December 13th, 2024:\n\n  • Previously had the descriptions:\n\n    • This... does not look good. ( The Drowned Fortress)\n\n    • This... does not look good. Heals you, but reduces your bonus to hit. Applies Stuffed for 5 turns. ( Falconreach (Book 3))\n\n  • Recovers (Level * 10) to player (unaffected by Health and/or All Resists), down from 9,999,999 HP.\n\n  • The duration of 'Stuffed' was increased from 6 turns to 32 turns.\n\n• The duration of 'Stuffed' was decreased from 32 turns to 16 turns alongside with description modifications on  December 20th, 2024.",
+      "alsoSee": []
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
+        "levelDisplay": "1",
+        "name": "Rotten Hardtack",
+        "damage": "—",
+        "stats": "—",
+        "obtainVariants": [
+          {
+            "location": "The Drowned Fortress ->  3 Right -> Open Chest",
+            "price": "N/A",
+            "priceType": "free",
+            "daRequired": true,
+            "dcRequired": false,
+            "dmRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21980297",
+        "description": "This... does not look good. Heals you (Level * 10) HP unaffected by Health res, but reduces your bonus to hit. Applies Stuffed for 15 turns.",
+        "classAbilitySubtype": "food",
+        "retired": false
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "1",
+        "actualLevel": 1,
+        "name": "Rotten Hardtack",
+        "damage": "—",
+        "stats": "—",
+        "obtainVariants": [
+          {
+            "location": "Falconreach (Books 3 and 4) ->  Ruby -> Purchase Food -> Rotten Hardtack",
+            "price": "N/A",
+            "priceType": "dm",
+            "daRequired": true,
+            "dmRequired": true,
+            "requiredItems": "1  Defender's Medal",
+            "dcRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21980297",
+        "description": "This... does not look good. Heals you (Level * 10) HP unaffected by Health res, but reduces your bonus to hit. Applies Stuffed for 15 turns.",
+        "rarity": "2",
+        "classAbilitySubtype": "food",
+        "retired": false
+      }
+    ],
+    "tags": [
+      "da",
+      "dm",
+      "temp"
+    ],
+    "hasDA": true,
+    "hasDC": false,
+    "hasDM": true,
+    "hasFree": true,
+    "hasMerge": false,
+    "levelRange": "1-1",
+    "elements": [],
+    "isTemp": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "class-ability-schism-rune",
+    "name": "Schism Rune",
+    "slug": "class-ability-schism-rune",
+    "type": "class-ability",
+    "subtype": "consumable",
+    "consumableKind": "rune",
+    "description": "Counteracts Warbeast Radiance, but increases your Health resistance.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22360708",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22360708",
+    "location": "The Exaltia Tower: The Spiral of Creation -> Select a 'Schism Rune' option -> Yes",
+    "price": "N/A",
+    "effect": "Applies 'Schism Vulnerability' (-325 All Resist, +325 Health Resist) to target for the remaining duration of 'Warbeast Radiance'; applies 'Schism Overload' (+100 Health Resist) to player for 5 turns.",
+    "effectType": "Health Resist",
+    "attacks": [
+      {
+        "name": "Schism Rune",
+        "effect": "Applies 'Schism Vulnerability' (-325 All Resist, +325 Health Resist) to target for the remaining duration of 'Warbeast Radiance'; applies 'Schism Overload' (+100 Health Resist) to player for 5 turns.",
+        "manaCost": "—",
+        "cooldown": "—",
+        "damageType": "—",
+        "element": "—",
+        "buttonImageUrl": "https://forums2.battleon.com/f/upfiles/192467/728B391F4FAB431EBD366C6544DEB4C1.png"
+      }
+    ],
+    "obtainMethods": [
+      {
+        "location": "The Exaltia Tower: The Spiral of Creation -> Select a 'Schism Rune' option -> Yes",
+        "price": "N/A",
+        "priceType": "free",
+        "daRequired": true,
+        "dcRequired": false,
+        "dmRequired": false
+      }
+    ],
+    "level": "1",
+    "rarity": "2",
+    "notes": "• This item will often require a HP or MP sacrifice from the player to obtain, however Schism Runes are not removed via the temporary item consumable sacrifice.\n\n• This item can only be used if  Couerihem applies 'Warbeast Radiance' (+300 All Resist, -300 Health Resist) to itself.\n\n• This item will apply 'Schism Vulnerability' to target for 5 turns initially, but will vanish with 'Warbeast Radiance' when it expires. 'Schism Overload' will remain on the player for all 5 turns.\n\n• This item will vanish upon completion of  The Exaltia Tower: The Spiral of Creation, even if unused.",
+    "alsoSee": [],
+    "tags": [
+      "da",
+      "temp"
+    ],
+    "daRequired": true,
+    "dcRequired": false,
+    "dmRequired": false,
+    "hasFree": true,
+    "hasMerge": false,
+    "isTemp": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "class-ability-seaweed",
+    "familyName": "Seaweed",
+    "slug": "class-ability-seaweed",
+    "aliasSlugs": [],
+    "type": "class-ability",
+    "subtype": "consumable",
+    "consumableKind": "food",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=21980303",
+    "familyOrigin": "single-thread",
+    "familySources": [
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=21980303",
+        "title": "Seaweed"
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=21980303",
+        "title": "Seaweed"
+      }
+    ],
+    "shared": {
+      "description": "It's green and slimy. Heals you (Level * 10) HP unaffected by Health res, increases Bonus by 10 for 2 turns, and applies Stuffed for 15 turns.",
+      "effect": "Recovers (Level * 10) to player upon use, unaffected by Health and/or All Resists; applies 'Healthy Seaweed' (+10 Bonus) to player for next 2 turns; applies 'Stuffed' to player for 16 turns.",
+      "effectType": "Bonus, Recovers HP",
+      "notes": "• Players can only carry one Seaweed at a time.\n\n• The following changes were implemented on  December 13th, 2024:\n\n  • Previously had the descriptions:\n\n    • It's green and slimy. ( The Drowned Fortress)\n\n    • It's green and slimy. Heals you, increases Bonus by 10 for 2 turns. Applies Stuffed for 5 turns. ( Falconreach (Book 3))\n\n  • Recovers (Level * 10) to player (unaffected by Health and/or All Resists), down from 9,999,999 HP.\n\n  • The duration of 'Stuffed' was increased from 6 turns to 32 turns.\n\n• The duration of 'Stuffed' was decreased from 32 turns to 16 turns alongside with description modifications on  December 20th, 2024.",
+      "alsoSee": []
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
+        "levelDisplay": "1",
+        "name": "Seaweed",
+        "damage": "—",
+        "stats": "—",
+        "obtainVariants": [
+          {
+            "location": "The Drowned Fortress -> Left -> 2 Up -> Right -> 2 Left -> Up -> Open chest on the left",
+            "price": "N/A",
+            "priceType": "free",
+            "daRequired": true,
+            "dcRequired": false,
+            "dmRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21980303",
+        "description": "It's green and slimy. Heals you (Level * 10) HP unaffected by Health res, increases Bonus by 10 for 2 turns, and applies Stuffed for 15 turns.",
+        "classAbilitySubtype": "food",
+        "retired": false
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "1",
+        "actualLevel": 1,
+        "name": "Seaweed",
+        "damage": "—",
+        "stats": "—",
+        "obtainVariants": [
+          {
+            "location": "Falconreach (Books 3 and 4) ->  Ruby -> Purchase Food -> Seaweed",
+            "price": "N/A",
+            "priceType": "dm",
+            "daRequired": true,
+            "dmRequired": true,
+            "requiredItems": "1  Defender's Medal",
+            "dcRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21980303",
+        "description": "It's green and slimy. Heals you (Level * 10) HP unaffected by Health res, increases Bonus by 10 for 2 turns, and applies Stuffed for 15 turns.",
+        "rarity": "2",
+        "classAbilitySubtype": "food",
+        "retired": false
+      }
+    ],
+    "tags": [
+      "da",
+      "dm",
+      "temp"
+    ],
+    "hasDA": true,
+    "hasDC": false,
+    "hasDM": true,
+    "hasFree": true,
+    "hasMerge": false,
+    "levelRange": "1-1",
+    "elements": [],
+    "isTemp": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "class-ability-serene-bread",
+    "name": "Serene Bread",
+    "slug": "class-ability-serene-bread",
+    "type": "class-ability",
+    "subtype": "consumable",
+    "consumableKind": "food",
+    "description": "A large portion of yummy bread, which when eaten will calm your mind and temporarily increase your endurance.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=20343624",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=20343624",
+    "location": "Falconreach Inn (Books 1 and 2) -> Up ->  Serenity -> Fresh bread!,  Falconreach Inn (Books 3 and 4) -> Up ->  Serenity /  Spruce /  Gaelan -> Fresh bread!",
+    "price": "N/A",
+    "effect": "Applies 'Endurance' (+25 END) to player for next 3 turns; applies 'Stuffed' to player for 6 turns.",
+    "effectType": "END",
+    "attacks": [
+      {
+        "name": "Serene Bread",
+        "effect": "Applies 'Endurance' (+25 END) to player for next 3 turns; applies 'Stuffed' to player for 6 turns.",
+        "manaCost": "—",
+        "cooldown": "—",
+        "damageType": "—",
+        "element": "—",
+        "buttonImageUrl": "https://forums2.battleon.com/f/upfiles/435086/6039BD900B13454CAE6E9DE87D745E76.png"
+      }
+    ],
+    "obtainMethods": [
+      {
+        "location": "Falconreach Inn (Books 1 and 2) -> Up ->  Serenity -> Fresh bread!,  Falconreach Inn (Books 3 and 4) -> Up ->  Serenity /  Spruce /  Gaelan -> Fresh bread!",
+        "price": "N/A",
+        "priceType": "free",
+        "daRequired": true,
+        "dcRequired": false,
+        "dmRequired": false
+      }
+    ],
+    "level": "1",
+    "rarity": "2",
+    "notes": "• Players can only carry one Serene Bread at a time.",
+    "alsoSee": [],
+    "tags": [
+      "da",
+      "temp"
+    ],
+    "daRequired": true,
+    "dcRequired": false,
+    "dmRequired": false,
+    "hasFree": true,
+    "hasMerge": false,
+    "isTemp": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "class-ability-smallmouth-bass",
+    "name": "Smallmouth Bass",
+    "slug": "class-ability-smallmouth-bass",
+    "type": "class-ability",
+    "subtype": "consumable",
+    "consumableKind": "food",
+    "description": "This fish is a 4-string wonder of the sea!",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=16092714",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=16092714",
+    "location": "Doomwood Dock",
+    "price": "N/A",
+    "effect": "Stuffed for 6 turns, DEX +3 for 11 turns.",
+    "effectType": "DEX",
+    "attacks": [
+      {
+        "name": "Smallmouth Bass",
+        "effect": "Stuffed for 6 turns, DEX +3 for 11 turns.",
+        "manaCost": "—",
+        "cooldown": "—",
+        "damageType": "—",
+        "element": "—",
+        "buttonImageUrl": "https://forums2.battleon.com/f/upfiles/187730/1E0BE864AAAF46AEB3756109D2CDB1CB.jpg"
+      }
+    ],
+    "dialogue": "quote:\n  Made Smallmouth Bass!! Eat while in battle and gain an affect.",
+    "obtainMethods": [
+      {
+        "location": "Doomwood Dock",
+        "price": "N/A",
+        "priceType": "free",
+        "daRequired": true,
+        "dcRequired": false,
+        "dmRequired": false
+      }
+    ],
+    "level": "1",
+    "rarity": "2",
+    "alsoSee": [],
+    "tags": [
+      "da",
+      "temp"
+    ],
+    "daRequired": true,
+    "dcRequired": false,
+    "dmRequired": false,
+    "hasFree": true,
+    "hasMerge": false,
+    "isTemp": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "class-ability-smoked-almonds",
+    "name": "Smoked Almonds",
+    "slug": "class-ability-smoked-almonds",
+    "type": "class-ability",
+    "subtype": "consumable",
+    "consumableKind": "food",
+    "description": "Crunchy and smoky!",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=19813072",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=19813072",
+    "location": "Sewers -> Open Bag,  Master of Puppets -> Open Bag,  Rosewood -> Open Bag",
+    "price": "N/A",
+    "effect": "Applies 'Dexterity' (+20 DEX) to player for next 2 turns; applies 'Stuffed' to player for 6 turns.",
+    "effectType": "DEX",
+    "attacks": [
+      {
+        "name": "Smoked Almonds",
+        "effect": "Applies 'Dexterity' (+20 DEX) to player for next 2 turns; applies 'Stuffed' to player for 6 turns.",
+        "manaCost": "—",
+        "cooldown": "—",
+        "damageType": "—",
+        "element": "—",
+        "buttonImageUrl": "https://forums2.battleon.com/f/upfiles/187730/1E0BE864AAAF46AEB3756109D2CDB1CB.jpg"
+      }
+    ],
+    "obtainMethods": [
+      {
+        "location": "Sewers -> Open Bag,  Master of Puppets -> Open Bag,  Rosewood -> Open Bag",
+        "price": "N/A",
+        "priceType": "free",
+        "daRequired": true,
+        "dcRequired": false,
+        "dmRequired": false
+      }
+    ],
+    "level": "1",
+    "rarity": "2",
+    "notes": "• Smoked Almonds previously appeared in the retired quest  Master of Puppets.",
+    "alsoSee": [],
+    "tags": [
+      "da",
+      "temp"
+    ],
+    "daRequired": true,
+    "dcRequired": false,
+    "dmRequired": false,
+    "hasFree": true,
+    "hasMerge": false,
+    "isTemp": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "class-ability-sparkling-water",
+    "name": "Sparkling Water",
+    "slug": "class-ability-sparkling-water",
+    "type": "class-ability",
+    "subtype": "consumable",
+    "consumableKind": "food",
+    "description": "Refreshing!",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=21301164",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21301164",
+    "location": "Ravenloss (Book 3) /  Unvoided Ravenloss (Books 3 and 4) -> 2 Down -> Right -> Enter the inn ->  Oroon -> Sparkling Water",
+    "price": "N/A",
+    "effect": "Applies +20 INT to player for 3 turns; applies 'Stuffed' to player for 6 turns.",
+    "effectType": "INT",
+    "attacks": [
+      {
+        "name": "Sparkling Water",
+        "effect": "Applies +20 INT to player for 3 turns; applies 'Stuffed' to player for 6 turns.",
+        "manaCost": "—",
+        "cooldown": "—",
+        "damageType": "—",
+        "element": "—",
+        "buttonImageUrl": "https://forums2.battleon.com/f/upfiles/435086/6039BD900B13454CAE6E9DE87D745E76.png"
+      }
+    ],
+    "obtainMethods": [
+      {
+        "location": "Ravenloss (Book 3) /  Unvoided Ravenloss (Books 3 and 4) -> 2 Down -> Right -> Enter the inn ->  Oroon -> Sparkling Water",
+        "price": "N/A",
+        "priceType": "free",
+        "daRequired": true,
+        "dcRequired": false,
+        "dmRequired": false
+      }
+    ],
+    "level": "1",
+    "rarity": "2",
+    "alsoSee": [],
+    "tags": [
+      "da",
+      "temp"
+    ],
+    "daRequired": true,
+    "dcRequired": false,
+    "dmRequired": false,
+    "hasFree": true,
+    "hasMerge": false,
+    "isTemp": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "class-ability-sparky-s-cookie",
+    "name": "Sparky's Cookie",
+    "slug": "class-ability-sparky-s-cookie",
+    "type": "class-ability",
+    "subtype": "consumable",
+    "consumableKind": "food",
+    "description": "A little compensation for the terrible customer service",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=20295440",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=20295440",
+    "location": "The Appointment -> Click the cookie in Voltabolt's plate on Voltabolt's office during the final cutscene",
+    "price": "N/A",
+    "effect": "Applies 'Endurance' (+25 END) to player for next 3 turns; applies 'Stuffed' to player for 6 turns.",
+    "effectType": "END",
+    "attacks": [
+      {
+        "name": "Sparky's Cookie",
+        "effect": "Applies 'Endurance' (+25 END) to player for next 3 turns; applies 'Stuffed' to player for 6 turns.",
+        "manaCost": "—",
+        "cooldown": "—",
+        "damageType": "—",
+        "element": "—",
+        "buttonImageUrl": "https://forums2.battleon.com/f/upfiles/435086/6039BD900B13454CAE6E9DE87D745E76.png"
+      }
+    ],
+    "obtainMethods": [
+      {
+        "location": "The Appointment -> Click the cookie in Voltabolt's plate on Voltabolt's office during the final cutscene",
+        "price": "N/A",
+        "priceType": "free",
+        "daRequired": true,
+        "dcRequired": false,
+        "dmRequired": false
+      }
+    ],
+    "level": "1",
+    "rarity": "2",
+    "notes": "• Sparky's Cookie previously appeared in the retired quest  Appointment.\n\n• Players can only carry one Sparky's Cookie at a time.",
+    "alsoSee": [],
+    "tags": [
+      "da",
+      "temp"
+    ],
+    "daRequired": true,
+    "dcRequired": false,
+    "dmRequired": false,
+    "hasFree": true,
+    "hasMerge": false,
+    "isTemp": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "class-ability-spellberries",
+    "name": "Spellberries",
+    "slug": "class-ability-spellberries",
+    "type": "class-ability",
+    "subtype": "consumable",
+    "consumableKind": "food",
+    "description": "A popular food amongst mages, spellberries boost your magic damage for a while!",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=18821855",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=18821855",
+    "location": "Dented Shield Inn -> 2 Left -> Approach the Sleeping Guardian -> Search table -> Look in bag -> Take it,  Falconreach -> Talk to  Annapurna",
+    "price": "N/A",
+    "effect": "Stuffed for 6 turns, INT +15 for 4 turns.",
+    "effectType": "INT",
+    "attacks": [
+      {
+        "name": "Spellberries",
+        "effect": "Stuffed for 6 turns, INT +15 for 4 turns.",
+        "manaCost": "—",
+        "cooldown": "—",
+        "damageType": "—",
+        "element": "—",
+        "buttonImageUrl": "https://forums2.battleon.com/f/upfiles/390613/FE152B481F0A4350A4B67A0CFE3B041D.jpg"
+      }
+    ],
+    "dialogue": "Upon searching the sleeping Guardian's bag for the first time:\n  quote:\n  You quickly tie up the bag of spellberries and stuff it into your pack before he wakes up.\n\nUpon searching the sleeping Guardian's bag each time thereafter:\n  quote:\n  You already took them, they're in your pack.\n\nUpon accepting Annapurna's Spellberries for the first time:\n  quote:\n  She happily gives you a handful, and you tuck it away in your pack. They can be used in battle, but will spoil eventually.\n\nUpon accepting Annapurna's Spellberries each time thereafter:\n  quote:\n  You already took them, they're in your pack.",
+    "obtainMethods": [
+      {
+        "location": "Dented Shield Inn -> 2 Left -> Approach the Sleeping Guardian -> Search table -> Look in bag -> Take it,  Falconreach -> Talk to  Annapurna",
+        "price": "N/A",
+        "priceType": "free",
+        "daRequired": true,
+        "dcRequired": false,
+        "dmRequired": false
+      }
+    ],
+    "level": "1",
+    "rarity": "2",
+    "alsoSee": [],
+    "tags": [
+      "da",
+      "temp"
+    ],
+    "daRequired": true,
+    "dcRequired": false,
+    "dmRequired": false,
+    "hasFree": true,
+    "hasMerge": false,
+    "isTemp": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "class-ability-syringe-beta",
+    "name": "Syringe Beta",
+    "slug": "class-ability-syringe-beta",
+    "type": "class-ability",
+    "subtype": "consumable",
+    "consumableKind": "food",
+    "description": "Honorable and brave, this fish protects weak fish and defends helpless fish.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=16076263",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=16076263",
+    "location": "Doomwood Dock",
+    "price": "N/A",
+    "effect": "Stuffed for 6 turns. Stuffed effect doesn't add or do anything yet; it only prevents the character from consuming another item from Fishing/Cooking until the effect of the first item has passed.",
+    "attacks": [
+      {
+        "name": "Syringe Beta",
+        "effect": "Stuffed for 6 turns. Stuffed effect doesn't add or do anything yet; it only prevents the character from consuming another item from Fishing/Cooking until the effect of the first item has passed.",
+        "manaCost": "—",
+        "cooldown": "—",
+        "damageType": "—",
+        "element": "—",
+        "buttonImageUrl": "https://forums2.battleon.com/f/upfiles/187730/1E0BE864AAAF46AEB3756109D2CDB1CB.jpg"
+      }
+    ],
+    "obtainMethods": [
+      {
+        "location": "Doomwood Dock",
+        "price": "N/A",
+        "priceType": "free",
+        "daRequired": true,
+        "dcRequired": false,
+        "dmRequired": false
+      }
+    ],
+    "level": "1",
+    "rarity": "2",
+    "alsoSee": [],
+    "tags": [
+      "da",
+      "temp"
+    ],
+    "daRequired": true,
+    "dcRequired": false,
+    "dmRequired": false,
+    "hasFree": true,
+    "hasMerge": false,
+    "isTemp": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "class-ability-white-stardust-e-all",
+    "name": "White Stardust (E: All)",
+    "slug": "class-ability-white-stardust-e-all",
+    "type": "class-ability",
+    "subtype": "consumable",
+    "consumableKind": "dust",
+    "description": "Dispersing this pinch of stardust inflicts -2 All to your target (stacks, max -20) for the rest of the battle.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22417231",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22417231",
+    "location": "The Lost Constellation -> Find a Star Shard (-> Reroll) -> Select 'White' option",
+    "price": "N/A",
+    "effect": "Permanently applies 'White Stardust' (-2X All Resist, +2X Health Resist) to target.",
+    "effectType": "All Resist, Health Resist",
+    "attacks": [
+      {
+        "name": "White Stardust (E: All)",
+        "effect": "Permanently applies 'White Stardust' (-2X All Resist, +2X Health Resist) to target.",
+        "manaCost": "—",
+        "cooldown": "—",
+        "damageType": "—",
+        "element": "—",
+        "buttonImageUrl": "image/wide_ak4.jpg"
+      }
+    ],
+    "obtainMethods": [
+      {
+        "location": "The Lost Constellation -> Find a Star Shard (-> Reroll) -> Select 'White' option",
+        "price": "N/A",
+        "priceType": "free",
+        "daRequired": false,
+        "dcRequired": false,
+        "dmRequired": false
+      }
+    ],
+    "level": "1",
+    "rarity": "2",
+    "notes": "• X is the number of times this item was consumed, capped at 10; this effectively caps 'White Stardust' at -20 All Resist, +20 Health Resist.\n\n• Item is randomly found while exploring The Lost Constellation.\n\n• This item's effects can only be applied during a battle on  The Lost Constellation quest; using it while outside of that quest will have no effect.",
+    "alsoSee": [],
+    "tags": [
+      "temp"
+    ],
+    "daRequired": false,
+    "dcRequired": false,
+    "dmRequired": false,
+    "hasFree": true,
+    "hasMerge": false,
+    "isTemp": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "class-ability-yellow-fruit",
+    "name": "Yellow Fruit",
+    "slug": "class-ability-yellow-fruit",
+    "type": "class-ability",
+    "subtype": "consumable",
+    "consumableKind": "food",
+    "description": "Delicious Yellow Fruit! Increases your All resist by 10 for 1 turn. Applies Stuffed for 20 turns.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22353779",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22353779",
+    "location": "Food Seller -> Yellow Fruit -> Yes",
+    "price": "N/A",
+    "requiredItems": "1  Defender's Medal",
+    "effect": "Applies +10 All Resist to player for 1 turn inclusive; applies 'Stuffed' to player for 20 turns.",
+    "effectType": "All Resist",
+    "attacks": [
+      {
+        "name": "Yellow Fruit",
+        "effect": "Applies +10 All Resist to player for 1 turn inclusive; applies 'Stuffed' to player for 20 turns.",
+        "manaCost": "—",
+        "cooldown": "—",
+        "damageType": "—",
+        "element": "—",
+        "buttonImageUrl": "image/blank.gif"
+      }
+    ],
+    "obtainMethods": [
+      {
+        "location": "Food Seller -> Yellow Fruit -> Yes",
+        "price": "N/A",
+        "priceType": "dm",
+        "daRequired": true,
+        "dmRequired": true,
+        "requiredItems": "1  Defender's Medal",
+        "dcRequired": false
+      }
+    ],
+    "level": "1",
+    "rarity": "2",
+    "notes": "• Food previously applied +200 Dodge Defense and +10 All Resist to player for 2 turns inclusive and applied 'Stuffed' to player for 30 turns; the effects' durations were lowered to 1 turn inclusive on April 15th, 2019.\n\n• The following changes were implemented on  April 16th, 2021:\n\n  • Previously had the description: Delicious Yellow Fruit! Increases your Dodge by 200 and All resist by 10 for 1 turn. Applies Stuffed for 30 turns.\n\n  • The +200 Dodge Defense was removed, while the 'Stuffed' effect was lowered to 20 turns.",
+    "alsoSee": [],
+    "tags": [
+      "da",
+      "dm",
+      "temp"
+    ],
+    "daRequired": true,
+    "dcRequired": false,
+    "dmRequired": true,
+    "hasFree": false,
+    "hasMerge": false,
+    "isTemp": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "class-ability-yellow-stardust-bond",
+    "name": "Yellow Stardust (Bond)",
+    "slug": "class-ability-yellow-stardust-bond",
+    "type": "class-ability",
+    "subtype": "consumable",
+    "consumableKind": "dust",
+    "description": "Dispersing this pinch of stardust suppresses the Bond of Stars on your target for 1 turn.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22417233",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22417233",
+    "location": "The Lost Constellation -> Find a Star Shard (-> Reroll) -> Select 'Yellow' option",
+    "price": "N/A",
+    "effect": "Applies 'Yellow Stardust' to target for 1 turn; while affected by 'Yellow Stardust', the effect of 'Bond of Stars' is disabled from target.",
+    "effectType": "Utility",
+    "attacks": [
+      {
+        "name": "Yellow Stardust (Bond)",
+        "effect": "Applies 'Yellow Stardust' to target for 1 turn; while affected by 'Yellow Stardust', the effect of 'Bond of Stars' is disabled from target.",
+        "manaCost": "—",
+        "cooldown": "—",
+        "damageType": "—",
+        "element": "—",
+        "buttonImageUrl": "image/wide_ak4.jpg"
+      }
+    ],
+    "obtainMethods": [
+      {
+        "location": "The Lost Constellation -> Find a Star Shard (-> Reroll) -> Select 'Yellow' option",
+        "price": "N/A",
+        "priceType": "free",
+        "daRequired": false,
+        "dcRequired": false,
+        "dmRequired": false
+      }
+    ],
+    "level": "1",
+    "rarity": "2",
+    "notes": "• 'Bond of Stars' is an permanent effect from  Dardarayu and  Yahvro bosses; refer to their entries for more information.\n\n• Item is randomly found while exploring The Lost Constellation.\n\n• Item's effects can only be applied during a battle on  The Lost Constellation quest; using it while outside of that quest will have no effect.",
+    "alsoSee": [],
+    "tags": [
+      "temp"
+    ],
+    "daRequired": false,
+    "dcRequired": false,
+    "dmRequired": false,
+    "hasFree": true,
+    "hasMerge": false,
+    "isTemp": true,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "class-ability-zard-burgers",
+    "familyName": "Zard Burgers",
+    "slug": "class-ability-zard-burgers",
+    "aliasSlugs": [],
+    "type": "class-ability",
+    "subtype": "consumable",
+    "consumableKind": "food",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=18013892",
+    "familyOrigin": "single-thread",
+    "familySources": [
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=18013892",
+        "title": "Zard Burgers"
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=18013892",
+        "title": "Zard Burgers+"
+      }
+    ],
+    "shared": {
+      "description": "Delicious and fillin'! These'll boost your crit in battle!",
+      "rarity": "2",
+      "effectType": "Block, Parry, Dodge",
+      "alsoSee": []
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
+        "levelDisplay": "1",
+        "actualLevel": 1,
+        "name": "Zard Burgers",
+        "damage": "—",
+        "stats": "—",
+        "obtainVariants": [
+          {
+            "location": "Resident Sneevil: Uprising ->  Irwin Dundee -> Southern Cuisine -> Zard Burger -> Buy -> Yes",
+            "price": "N/A",
+            "priceType": "dm",
+            "daRequired": true,
+            "dmRequired": true,
+            "requiredItems": "1  Defender's Medal",
+            "dcRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=18013892",
+        "description": "Delicious and fillin'! These'll boost your crit in battle!",
+        "rarity": "2",
+        "effect": "Applies +140 Block/Parry/Dodge Defense to player for 5 turns inclusive; applies 'Stuffed' to player for 31 turns.",
+        "attacks": [
+          {
+            "name": "Zard Burgers",
+            "effect": "Applies +140 Block/Parry/Dodge Defense to player for 5 turns inclusive; applies 'Stuffed' to player for 31 turns.",
+            "manaCost": "—",
+            "cooldown": "—",
+            "damageType": "—",
+            "element": "—",
+            "buttonImageUrl": "image/blank.gif"
+          }
+        ],
+        "notes": "• Zard Burgers was previously accessible on the retired access points:  Friday the 13th Invasion Invasive Species!,  Falconreach (Book 3) ->  Ruby -> Purchase Food -> Zard Burger -> Yes.\n\n• Description is erroneously identical to  Fried Zard Legs, despite buffing player's Defenses, not Crit.",
+        "classAbilitySubtype": "food",
+        "retired": false
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "1",
+        "actualLevel": 1,
+        "variantName": "+",
+        "name": "Zard Burgers+",
+        "damage": "—",
+        "stats": "—",
+        "obtainVariants": [
+          {
+            "location": "Falconreach (Books 3 and 4) ->  Ruby -> Purchase Food -> Zard Burger+ -> Yes",
+            "price": "N/A",
+            "priceType": "dm",
+            "daRequired": true,
+            "dmRequired": true,
+            "requiredItems": "1  Defender's Medal",
+            "dcRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=18013892",
+        "description": "Delicious and fillin'! These'll boost your defenses in battle! Increases defenses by 140 for 3 turns. Applies Stuffed for 30 turns.",
+        "rarity": "2",
+        "effect": "Applies +140 Block/Parry/Dodge Defense to player for 4 turns inclusive; applies 'Stuffed' to player for 31 turns.",
+        "attacks": [
+          {
+            "name": "Zard Burgers+",
+            "effect": "Applies +140 Block/Parry/Dodge Defense to player for 4 turns inclusive; applies 'Stuffed' to player for 31 turns.",
+            "manaCost": "—",
+            "cooldown": "—",
+            "damageType": "—",
+            "element": "—",
+            "buttonImageUrl": "image/blank.gif"
+          }
+        ],
+        "notes": "• Previously had the description: Delicious and fillin'! These'll boost your avoidance in battle! Increases Avoidance by 140 for 5 turns. Applies Stuffed for 30 turns.\n\n• Applies 'Stuffed' to player for 31 turns, despite being a Zard+ Food item intended to reduce 'Stuffed' uptime to 11 turns.",
+        "classAbilitySubtype": "food",
+        "retired": false
+      }
+    ],
+    "tags": [
+      "da",
+      "dm",
+      "seasonal",
+      "temp"
+    ],
+    "hasDA": true,
+    "hasDC": false,
+    "hasDM": true,
+    "hasFree": false,
+    "hasMerge": false,
+    "levelRange": "1-1",
+    "elements": [],
+    "isTemp": true,
+    "isRare": false,
+    "isSeasonal": true,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "class-ability-zard-tartare",
+    "familyName": "Zard Tartare",
+    "slug": "class-ability-zard-tartare",
+    "aliasSlugs": [],
+    "type": "class-ability",
+    "subtype": "consumable",
+    "consumableKind": "food",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=18013793",
+    "familyOrigin": "single-thread",
+    "familySources": [
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=18013793",
+        "title": "Zard Tartare"
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=18013793",
+        "title": "Zard Tartare+"
+      }
+    ],
+    "shared": {
+      "description": "Finely chopped zard meat. It's said to make ya very fierce just like the zard it came from and increase your damage!",
+      "rarity": "2",
+      "effectType": "Boost",
+      "alsoSee": []
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
+        "levelDisplay": "1",
+        "actualLevel": 1,
+        "name": "Zard Tartare",
+        "damage": "—",
+        "stats": "—",
+        "obtainVariants": [
+          {
+            "location": "Resident Sneevil: Uprising ->  Irwin Dundee -> Southern Cuisine -> Zard Tartare -> Buy -> Yes",
+            "price": "N/A",
+            "priceType": "dm",
+            "daRequired": true,
+            "dmRequired": true,
+            "requiredItems": "1  Defender's Medal",
+            "dcRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=18013793",
+        "description": "Finely chopped zard meat. It's said to make ya very fierce just like the zard it came from and increase your damage!",
+        "rarity": "2",
+        "effect": "Applies +20% Boost to player for 5 turns inclusive; applies 'Stuffed' to player for 31 turns.",
+        "attacks": [
+          {
+            "name": "Zard Tartare",
+            "effect": "Applies +20% Boost to player for 5 turns inclusive; applies 'Stuffed' to player for 31 turns.",
+            "manaCost": "—",
+            "cooldown": "—",
+            "damageType": "—",
+            "element": "—",
+            "buttonImageUrl": "image/blank.gif"
+          }
+        ],
+        "notes": "• Zard Tarture was previously accessible on the retired access points:  Friday the 13th Invasion Invasive Species!,  Falconreach (Book 3) ->  Ruby -> Purchase Food -> Zard Tartare -> Yes.",
+        "classAbilitySubtype": "food",
+        "retired": false
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "1",
+        "actualLevel": 1,
+        "variantName": "+",
+        "name": "Zard Tartare+",
+        "damage": "—",
+        "stats": "—",
+        "obtainVariants": [
+          {
+            "location": "Falconreach (Books 3 and 4) ->  Ruby -> Purchase Food -> Zard Tartare+ -> Yes",
+            "price": "N/A",
+            "priceType": "dm",
+            "daRequired": true,
+            "dmRequired": true,
+            "requiredItems": "1  Defender's Medal",
+            "dcRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=18013793",
+        "description": "Finely chopped zard meat. It's said to make ya very fierce just like the zard it came from and increase your damage! Increases Boost by 20 for 5 turns. Applies Stuffed for 10 turns.",
+        "rarity": "2",
+        "effect": "Applies +20% Boost to player for 5 turns inclusive; applies 'Stuffed' to player for 11 turns.",
+        "attacks": [
+          {
+            "name": "Zard Tartare+",
+            "effect": "Applies +20% Boost to player for 5 turns inclusive; applies 'Stuffed' to player for 11 turns.",
+            "manaCost": "—",
+            "cooldown": "—",
+            "damageType": "—",
+            "element": "—",
+            "buttonImageUrl": "image/blank.gif"
+          }
+        ],
+        "classAbilitySubtype": "food",
+        "retired": false
+      }
+    ],
+    "tags": [
+      "da",
+      "dm",
+      "seasonal",
+      "temp"
+    ],
+    "hasDA": true,
+    "hasDC": false,
+    "hasDM": true,
+    "hasFree": false,
+    "hasMerge": false,
+    "levelRange": "1-1",
+    "elements": [],
+    "isTemp": true,
+    "isRare": false,
+    "isSeasonal": true,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "class-ability-zard-kebobs",
+    "familyName": "Zard-Kebobs",
+    "slug": "class-ability-zard-kebobs",
+    "aliasSlugs": [],
+    "type": "class-ability",
+    "subtype": "consumable",
+    "consumableKind": "food",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=18013919",
+    "familyOrigin": "single-thread",
+    "familySources": [
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=18013919",
+        "title": "Zard-Kebobs"
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=18013919",
+        "title": "Zard Kebobs+"
+      }
+    ],
+    "shared": {
+      "description": "For those of ya that want a little extra accuracy. The skewers are said to be deadly!",
+      "rarity": "2",
+      "effectType": "Bonus",
+      "alsoSee": []
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
+        "levelDisplay": "1",
+        "actualLevel": 1,
+        "name": "Zard-Kebobs",
+        "damage": "—",
+        "stats": "—",
+        "obtainVariants": [
+          {
+            "location": "Resident Sneevil: Uprising ->  Irwin Dundee -> Southern Cuisine -> Zard-kebobs -> Buy -> Yes",
+            "price": "N/A",
+            "priceType": "dm",
+            "daRequired": true,
+            "dmRequired": true,
+            "requiredItems": "1  Defender's Medal",
+            "dcRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=18013919",
+        "description": "For those of ya that want a little extra accuracy. The skewers are said to be deadly!",
+        "rarity": "2",
+        "effect": "Applies +100 Bonus to player for 2 turns inclusive; applies 'Stuffed' to player for 31 turns.",
+        "attacks": [
+          {
+            "name": "Zard-Kebobs",
+            "effect": "Applies +100 Bonus to player for 2 turns inclusive; applies 'Stuffed' to player for 31 turns.",
+            "manaCost": "—",
+            "cooldown": "—",
+            "damageType": "—",
+            "element": "—",
+            "buttonImageUrl": "image/blank.gif"
+          }
+        ],
+        "notes": "• Zard Kebobs was previously accessible on the retired access points:  Friday the 13th Invasion Invasive Species!,  Falconreach (Book 3) ->  Ruby -> Purchase Food -> Zard Kebob -> Yes.",
+        "classAbilitySubtype": "food",
+        "retired": false
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "1",
+        "actualLevel": 1,
+        "variantName": "Zard Kebobs+",
+        "name": "Zard Kebobs+",
+        "damage": "—",
+        "stats": "—",
+        "obtainVariants": [
+          {
+            "location": "Falconreach (Books 3 and 4) ->  Ruby -> Purchase Food -> Zard Kebob+ -> Yes",
+            "price": "N/A",
+            "priceType": "dm",
+            "daRequired": true,
+            "dmRequired": true,
+            "requiredItems": "1  Defender's Medal",
+            "dcRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=18013919",
+        "description": "For those of ya that want a little extra accuracy. The skewers are said to be deadly! Increases Bonus by 100 for 2 turns. Applies Stuffed for 10 turns.",
+        "rarity": "2",
+        "effect": "Applies +100 Bonus to player for 2 turns inclusive; applies 'Stuffed' to player for 11 turns.",
+        "attacks": [
+          {
+            "name": "Zard Kebobs+",
+            "effect": "Applies +100 Bonus to player for 2 turns inclusive; applies 'Stuffed' to player for 11 turns.",
+            "manaCost": "—",
+            "cooldown": "—",
+            "damageType": "—",
+            "element": "—",
+            "buttonImageUrl": "image/blank.gif"
+          }
+        ],
+        "classAbilitySubtype": "food",
+        "retired": false
+      }
+    ],
+    "tags": [
+      "da",
+      "dm",
+      "seasonal",
+      "temp"
+    ],
+    "hasDA": true,
+    "hasDC": false,
+    "hasDM": true,
+    "hasFree": false,
+    "hasMerge": false,
+    "levelRange": "1-1",
+    "elements": [],
+    "isTemp": true,
+    "isRare": false,
+    "isSeasonal": true,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "class-ability-zardcakes",
+    "familyName": "Zardcakes",
+    "slug": "class-ability-zardcakes",
+    "aliasSlugs": [],
+    "type": "class-ability",
+    "subtype": "consumable",
+    "consumableKind": "food",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=18013903",
+    "familyOrigin": "single-thread",
+    "familySources": [
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=18013903",
+        "title": "Zardcakes"
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=18013903",
+        "title": "Zardcakes+"
+      }
+    ],
+    "shared": {
+      "description": "A great dish for those who want to roll the dice! They'll increase your Luck!",
+      "rarity": "2",
+      "effectType": "LUK",
+      "alsoSee": []
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
+        "levelDisplay": "1",
+        "actualLevel": 1,
+        "name": "Zardcakes",
+        "damage": "—",
+        "stats": "—",
+        "obtainVariants": [
+          {
+            "location": "Resident Sneevil: Uprising ->  Irwin Dundee -> Southern Cuisine -> Zardcakes -> Buy -> Yes",
+            "price": "N/A",
+            "priceType": "dm",
+            "daRequired": true,
+            "dmRequired": true,
+            "requiredItems": "1  Defender's Medal",
+            "dcRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=18013903",
+        "description": "A great dish for those who want to roll the dice! They'll increase your Luck!",
+        "rarity": "2",
+        "effect": "Applies +40 LUK to player for 30 turns inclusive; applies 'Stuffed' to player for 31 turns.",
+        "attacks": [
+          {
+            "name": "Zardcakes",
+            "effect": "Applies +40 LUK to player for 30 turns inclusive; applies 'Stuffed' to player for 31 turns.",
+            "manaCost": "—",
+            "cooldown": "—",
+            "damageType": "—",
+            "element": "—",
+            "buttonImageUrl": "image/blank.gif"
+          }
+        ],
+        "notes": "• Zardcakes was previously accessible on the retired access points:  Friday the 13th Invasion Invasive Species!,  Falconreach (Book 3) ->  Ruby -> Purchase Food -> Zardcakes -> Yes",
+        "classAbilitySubtype": "food",
+        "retired": false
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "1",
+        "actualLevel": 1,
+        "variantName": "+",
+        "name": "Zardcakes+",
+        "damage": "—",
+        "stats": "—",
+        "obtainVariants": [
+          {
+            "location": "Falconreach (Books 3 and 4) ->  Ruby -> Purchase Food -> Zardcakes+ -> Yes",
+            "price": "N/A",
+            "priceType": "dm",
+            "daRequired": true,
+            "dmRequired": true,
+            "requiredItems": "1  Defender's Medal",
+            "dcRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=18013903",
+        "description": "A great dish for those who want to roll the dice! They'll increase your Luck! Increases LUK by 30 for 5 turns. Applies Stuffed for 10 turns.",
+        "rarity": "2",
+        "effect": "Applies +40 LUK to player for 30 turns inclusive; applies 'Stuffed' to player for 11 turns.",
+        "attacks": [
+          {
+            "name": "Zardcakes+",
+            "effect": "Applies +40 LUK to player for 30 turns inclusive; applies 'Stuffed' to player for 11 turns.",
+            "manaCost": "—",
+            "cooldown": "—",
+            "damageType": "—",
+            "element": "—",
+            "buttonImageUrl": "image/blank.gif"
+          }
+        ],
+        "notes": "• Applies +40 LUK to player for 30 turns, despite claiming to only apply +30 LUK to player for 5 turns in the description.",
+        "classAbilitySubtype": "food",
+        "retired": false
+      }
+    ],
+    "tags": [
+      "da",
+      "dm",
+      "seasonal",
+      "temp"
+    ],
+    "hasDA": true,
+    "hasDC": false,
+    "hasDM": true,
+    "hasFree": false,
+    "hasMerge": false,
+    "levelRange": "1-1",
+    "elements": [],
+    "isTemp": true,
+    "isRare": false,
+    "isSeasonal": true,
+    "isSpecialOffer": false,
+    "retired": false
+  }
+]

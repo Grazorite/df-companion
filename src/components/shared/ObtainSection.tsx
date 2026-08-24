@@ -7,6 +7,7 @@ interface ObtainSectionProps {
   locationOnly?: boolean
   className?: string
   showCurrencyAccessPills?: boolean
+  showPriceFields?: boolean
 }
 
 export default function ObtainSection({
@@ -15,6 +16,7 @@ export default function ObtainSection({
   locationOnly = false,
   className = 'mb-5',
   showCurrencyAccessPills = true,
+  showPriceFields = true,
 }: ObtainSectionProps) {
   if (variants.length === 0) return null
 
@@ -29,6 +31,7 @@ export default function ObtainSection({
             isGuest={isGuest}
             locationOnly={locationOnly}
             showCurrencyAccessPills={showCurrencyAccessPills}
+            showPriceFields={showPriceFields}
           />
         ))}
       </div>

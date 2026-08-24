@@ -29,10 +29,14 @@ export default function TriStateFilterPill({
   disabled = false,
 }: TriStateFilterPillProps) {
   const isExcluded = state === 'exclude'
-  const includeClassName =
-    size === 'access' && label === 'DC' && activeClassName === 'bg-gold-bright text-bg-base'
-      ? 'bg-amber-500/20 text-gold'
-      : activeClassName
+  const includeClassName = (() => {
+    if (size !== 'access' || activeClassName !== 'bg-gold-bright text-bg-base') {
+      return activeClassName
+    }
+    if (label === 'DC') return 'bg-amber-500/20 text-gold'
+    if (label === 'DM') return 'bg-slate-500/20 text-slate-300'
+    return activeClassName
+  })()
   const className =
     state === 'include'
       ? (elementClassName ?? includeClassName)

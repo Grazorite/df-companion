@@ -16,6 +16,7 @@ import { useTotalPetCount } from '../hooks/usePets'
 import { useTotalAccessoryCount } from '../hooks/useAccessories'
 import { useTotalWeaponCount } from '../hooks/useWeapons'
 import { useTotalHousingCount } from '../hooks/useHousing'
+import { useTotalClassAbilityCount } from '../hooks/useClassAbilities'
 
 // All sections in forum order — each as its own card, uniform grid
 const SECTIONS = [
@@ -37,8 +38,8 @@ const SECTIONS = [
     to: '/classes',
     icon: Sparkles,
     label: 'Classes / Abilities',
-    desc: 'All the different stats and abilities for the different classes in DragonFable.',
-    available: false,
+    desc: 'All the different stats / abilities for the different classes in DragonFable. Pirates, Paladins, Chickencow Lords, and more!',
+    available: true,
   },
   {
     to: '/housing',
@@ -97,6 +98,7 @@ export default function HomePage() {
   const petCount = useTotalPetCount()
   const weaponCount = useTotalWeaponCount()
   const housingCount = useTotalHousingCount()
+  const classAbilityCount = useTotalClassAbilityCount()
 
   return (
     <main className="px-4 sm:px-6 py-8 max-w-2xl mx-auto">
@@ -158,6 +160,11 @@ export default function HomePage() {
                   {to === '/housing' && (
                     <span className="ml-1.5 text-xs font-normal text-text-muted">
                       ({housingCount})
+                    </span>
+                  )}
+                  {to === '/classes' && (
+                    <span className="ml-1.5 text-xs font-normal text-text-muted">
+                      ({classAbilityCount})
                     </span>
                   )}
                 </div>

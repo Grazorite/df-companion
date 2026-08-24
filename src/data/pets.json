@@ -18922,7 +18922,7 @@
           {
             "location": "Def. Rares",
             "price": "N/A",
-            "priceType": "merge",
+            "priceType": "dm",
             "sellback": "5 Gold",
             "daRequired": true,
             "dmRequired": true,
@@ -33998,7 +33998,7 @@
           {
             "location": "Def. Rares",
             "price": "N/A",
-            "priceType": "merge",
+            "priceType": "dm",
             "sellback": "0 Gold",
             "daRequired": true,
             "dmRequired": true,
@@ -39831,7 +39831,7 @@
           {
             "location": "War Wolf Shop",
             "price": "N/A",
-            "priceType": "merge",
+            "priceType": "dm",
             "sellback": "0 Gold",
             "daRequired": false,
             "dmRequired": true,

@@ -1,10 +1,11 @@
 import type { AccessoryEntry, AccessorySubtype } from '../types/accessory'
 import type { CategoryMeta, Badge } from '../types/badge'
 import type { ElementsData } from '../types/element'
-import type { ItemFamily } from '../types/item'
+import type { ItemFamily, PriceType } from '../types/item'
 import type { Pet } from '../types/pet'
 import type { WeaponEntry, WeaponSubtype } from '../types/weapon'
 import type { HousingEntry, HousingSubtype } from '../types/housing'
+import type { ClassAbilityEntry, ClassAbilitySubtype } from '../types/classAbility'
 import { normalizeHousingEntries } from './housingNormalization'
 import accessoryManifestUrl from '../data/accessory-manifest.json?url'
 import badgesManifestUrl from '../data/badges-manifest.json?url'
@@ -15,6 +16,9 @@ import bracersUrl from '../data/bracers.json?url'
 import capesWingsALUrl from '../data/capes-wings-a-l.json?url'
 import capesWingsMZUrl from '../data/capes-wings-m-z.json?url'
 import categoriesUrl from '../data/categories.json?url'
+import classAbilitiesManifestUrl from '../data/class-abilities-manifest.json?url'
+import classConsumablesUrl from '../data/class-consumables.json?url'
+import classesUrl from '../data/classes.json?url'
 import elementsUrl from '../data/elements.json?url'
 import guestsUrl from '../data/guests.json?url'
 import housingBackgroundsUrl from '../data/housing-backgrounds.json?url'
@@ -44,7 +48,13 @@ import weaponsStavesWandsOZUrl from '../data/weapons-staves-wands-o-z.json?url'
 import weaponsSwordsAxesMacesAGUrl from '../data/weapons-swords-axes-maces-a-g.json?url'
 import weaponsSwordsAxesMacesHNUrl from '../data/weapons-swords-axes-maces-h-n.json?url'
 import weaponsSwordsAxesMacesOZUrl from '../data/weapons-swords-axes-maces-o-z.json?url'
-import { orderLevelVariantsByAccess, splitMixedAccessObtainVariantRows } from './variantHelpers'
+import {
+  computeFamilyFlags,
+  isDefenderMedalText,
+  isPureDefenderMedalRequirement,
+  orderLevelVariantsByAccess,
+  splitMixedAccessObtainVariantRows,
+} from './variantHelpers'
 
 let badgesCache: Badge[] | null = null
 let badgesPromise: Promise<Badge[]> | null = null
@@ -91,6 +101,11 @@ export interface HousingManifest {
   bySubtype: Record<HousingSubtype, number>
 }
 
+export interface ClassAbilitiesManifest {
+  total: number
+  bySubtype: Record<ClassAbilitySubtype, number>
+}
+
 const accessoryDataUrls: Record<AccessorySubtype, string[]> = {
   artifact: [artifactsUrl],
   belt: [beltsUrl],
@@ -123,6 +138,11 @@ const housingDataUrls: Record<HousingSubtype, string[]> = {
   'wall-item': [housingWallItemsUrl],
 }
 
+const classAbilityDataUrls: Record<ClassAbilitySubtype, string[]> = {
+  class: [classesUrl],
+  consumable: [classConsumablesUrl],
+}
+
 let accessoryManifestCache: AccessoryManifest | null = null
 let accessoryManifestPromise: Promise<AccessoryManifest> | null = null
 const accessorySubtypeCache: Partial<Record<AccessorySubtype, AccessoryEntry[]>> = {}
@@ -141,8 +161,24 @@ const housingSubtypeCache: Partial<Record<HousingSubtype, HousingEntry[]>> = {}
 const housingSubtypePromises: Partial<Record<HousingSubtype, Promise<HousingEntry[]>>> = {}
 let housingPromise: Promise<Record<HousingSubtype, HousingEntry[]>> | null = null
 
+let classAbilitiesManifestCache: ClassAbilitiesManifest | null = null
+let classAbilitiesManifestPromise: Promise<ClassAbilitiesManifest> | null = null
+const classAbilitySubtypeCache: Partial<Record<ClassAbilitySubtype, ClassAbilityEntry[]>> = {}
+const classAbilitySubtypePromises: Partial<
+  Record<ClassAbilitySubtype, Promise<ClassAbilityEntry[]>>
+> = {}
+let classAbilitiesPromise: Promise<Record<ClassAbilitySubtype, ClassAbilityEntry[]>> | null = null
+
+type RepairableObtainMethod = {
+  priceType: PriceType
+  price?: string
+  requiredItems?: string
+  dmRequired?: boolean
+  dcRequired?: boolean
+}
+
 function normalizeLoadedPet<T extends Pet & { specialMarkers?: string[] }>(pet: T): Pet {
-  const normalized = { ...pet } as Pet & { specialMarkers?: string[] }
+  const normalized = repairLoadedSingleObtainMethods({ ...pet }) as Pet & { specialMarkers?: string[] }
   if (!normalized.traits && normalized.specialMarkers) {
     normalized.traits = normalized.specialMarkers
     delete normalized.specialMarkers
@@ -152,16 +188,179 @@ function normalizeLoadedPet<T extends Pet & { specialMarkers?: string[] }>(pet: 
 }
 
 function isLoadedFamily(
-  entry: Pet | ItemFamily | AccessoryEntry | WeaponEntry | HousingEntry
+  entry: Pet | ItemFamily | AccessoryEntry | WeaponEntry | HousingEntry | ClassAbilityEntry
 ): entry is ItemFamily {
   return 'levelVariants' in entry
 }
 
 function normalizeLoadedFamily<T extends ItemFamily>(family: T): T {
-  return splitMixedAccessObtainVariantRows({
+  const repairedFamily = {
     ...family,
-    levelVariants: orderLevelVariantsByAccess(family.levelVariants),
-  })
+    levelVariants: family.levelVariants.map((variant) => ({
+      ...variant,
+      obtainVariants: variant.obtainVariants.map(repairObtainMethodFlags),
+    })),
+  }
+  return computeFamilyFlags(
+    splitMixedAccessObtainVariantRows({
+      ...repairedFamily,
+      levelVariants: orderLevelVariantsByAccess(repairedFamily.levelVariants),
+    })
+  )
+}
+
+function repairObtainMethodFlags<T extends RepairableObtainMethod>(method: T): T {
+  const dmRequired =
+    method.priceType === 'dm' ||
+    isDefenderMedalText(method.price) ||
+    isDefenderMedalText(method.requiredItems)
+  const priceType: PriceType =
+    method.priceType === 'merge' && isPureDefenderMedalRequirement(method.requiredItems)
+      ? 'dm'
+      : method.priceType
+  return {
+    ...method,
+    priceType,
+    ...(dmRequired ? { dmRequired } : { dmRequired: undefined }),
+  } as T
+}
+
+function repairLoadedSingleObtainMethods<T extends { obtainMethods?: RepairableObtainMethod[] }>(
+  entry: T
+): T {
+  if (!entry.obtainMethods) return entry
+  const obtainMethods = entry.obtainMethods.map(repairObtainMethodFlags)
+  return {
+    ...entry,
+    obtainMethods,
+    dmRequired:
+      'dmRequired' in entry
+        ? Boolean(entry.dmRequired) || obtainMethods.some((method) => method.dmRequired)
+        : undefined,
+    dcRequired:
+      'dcRequired' in entry
+        ? Boolean(entry.dcRequired) || obtainMethods.some((method) => method.priceType === 'dc')
+        : undefined,
+  } as T
+}
+
+function cleanLoadedNotes(notes: string | undefined): string | undefined {
+  if (!notes) return undefined
+  const cleaned = notes
+    .replace(/(?:\n\s*)*<\s*Message edited by[\s\S]*$/i, '')
+    .replace(/(?:\n\s*)*•\s*DF\s*$/i, '')
+    .replace(/(?:\n\s*)*DF\s*$/i, '')
+    .trim()
+  return cleaned || undefined
+}
+
+function cleanLoadedEffect(effect: string | undefined): string | undefined {
+  if (!effect || /^(?:none|n\/?a)$/i.test(effect.trim())) return undefined
+  return effect.trim()
+}
+
+function isClassAbilityTag(tag: string): boolean {
+  return (
+    /^(?:da|dc|dm|temp|rare|seasonal|retired|dust|food|rune)$/.test(tag) ||
+    /^(?:specialoffer|specialcharacter|alexandersaga|archknight)$/.test(tag) ||
+    /^(?:holiday|frostval|mogloween|heroheart|friday13)$/.test(tag)
+  )
+}
+
+function cleanLoadedClassAbilityTags(tags: string[]): string[] {
+  return [...new Set(tags.map((tag) => tag.toLowerCase()).filter(isClassAbilityTag))].sort()
+}
+
+function normalizeLoadedClassAbility(entry: ClassAbilityEntry): ClassAbilityEntry {
+  if (isLoadedFamily(entry)) {
+    const normalized = normalizeLoadedFamily(entry)
+    let levelVariants = normalized.levelVariants.map((variant) => ({
+      ...variant,
+      obtainVariants: variant.obtainVariants.map(repairObtainMethodFlags),
+      effect: cleanLoadedEffect(variant.effect),
+      notes: cleanLoadedNotes(variant.notes),
+    }))
+    const allMethods = levelVariants.flatMap((variant) => variant.obtainVariants)
+    let sharedEffect = cleanLoadedEffect(normalized.shared.effect)
+    let sharedNotes = cleanLoadedNotes(normalized.shared.notes)
+    const noteIndexes = levelVariants.flatMap((variant, index) => (variant.notes ? [index] : []))
+    const sourceUrls = new Set(levelVariants.map((variant) => variant.sourceUrl).filter(Boolean))
+    if (
+      !sharedNotes &&
+      normalized.familyOrigin === 'single-thread' &&
+      sourceUrls.size <= 1 &&
+      noteIndexes.length === 1 &&
+      noteIndexes[0] === levelVariants.length - 1
+    ) {
+      sharedNotes = levelVariants[noteIndexes[0]].notes
+      levelVariants = levelVariants.map((variant, index) =>
+        index === noteIndexes[0] ? { ...variant, notes: undefined } : variant
+      )
+    }
+    const effectIndexes = levelVariants.flatMap((variant, index) => (variant.effect ? [index] : []))
+    const uniqueEffects = [...new Set(effectIndexes.map((index) => levelVariants[index].effect))]
+    if (
+      !sharedEffect &&
+      uniqueEffects.length === 1 &&
+      effectIndexes.length > 0 &&
+      (effectIndexes.length === levelVariants.length ||
+        (normalized.familyOrigin === 'single-thread' &&
+          sourceUrls.size <= 1 &&
+          effectIndexes.length === 1 &&
+          effectIndexes[0] === levelVariants.length - 1))
+    ) {
+      sharedEffect = uniqueEffects[0]
+      levelVariants = levelVariants.map((variant, index) =>
+        effectIndexes.includes(index) ? { ...variant, effect: undefined } : variant
+      )
+    }
+    return {
+      ...normalized,
+      tags: cleanLoadedClassAbilityTags(normalized.tags),
+      shared: {
+        ...normalized.shared,
+        effect: sharedEffect,
+        notes: sharedNotes,
+      },
+      levelVariants,
+      hasDM: normalized.hasDM || allMethods.some((method) => method.dmRequired),
+      hasMerge: allMethods.some((method) => method.priceType === 'merge'),
+    } as ClassAbilityEntry
+  }
+
+  const obtainMethods = (entry.obtainMethods ?? []).map(repairObtainMethodFlags)
+  return {
+    ...entry,
+    tags: cleanLoadedClassAbilityTags(entry.tags),
+    obtainMethods,
+    effect: cleanLoadedEffect(entry.effect),
+    notes: cleanLoadedNotes(entry.notes),
+    dmRequired: entry.dmRequired || obtainMethods.some((method) => method.dmRequired),
+    hasMerge: obtainMethods.some((method) => method.priceType === 'merge'),
+  }
+}
+
+function compareClassAbilityDuplicateQuality(
+  first: ClassAbilityEntry,
+  second: ClassAbilityEntry
+): number {
+  const firstName = 'familyName' in first ? first.familyName : first.name
+  const secondName = 'familyName' in second ? second.familyName : second.name
+  const firstPlus = /\+$/.test(firstName.trim())
+  const secondPlus = /\+$/.test(secondName.trim())
+  if (firstPlus !== secondPlus) return firstPlus ? 1 : -1
+  return firstName.length - secondName.length
+}
+
+function dedupeClassAbilityEntries(entries: ClassAbilityEntry[]): ClassAbilityEntry[] {
+  const bySlug = new Map<string, ClassAbilityEntry>()
+  for (const entry of entries) {
+    const existing = bySlug.get(entry.slug)
+    if (!existing || compareClassAbilityDuplicateQuality(entry, existing) < 0) {
+      bySlug.set(entry.slug, entry)
+    }
+  }
+  return [...bySlug.values()]
 }
 
 async function fetchJson<T>(url: string): Promise<T> {
@@ -277,7 +476,9 @@ export async function loadAccessoriesForSubtype(
     ).then((datasets) => {
       const entries = datasets
         .flat()
-        .map((entry) => (isLoadedFamily(entry) ? normalizeLoadedFamily(entry) : entry))
+        .map((entry) =>
+          isLoadedFamily(entry) ? normalizeLoadedFamily(entry) : repairLoadedSingleObtainMethods(entry)
+        )
       accessorySubtypeCache[subtype] = entries
       return entries
     })
@@ -331,7 +532,9 @@ export async function loadWeaponsForSubtype(subtype: WeaponSubtype): Promise<Wea
     ).then((datasets) => {
       const entries = datasets
         .flat()
-        .map((entry) => (isLoadedFamily(entry) ? normalizeLoadedFamily(entry) : entry))
+        .map((entry) =>
+          isLoadedFamily(entry) ? normalizeLoadedFamily(entry) : repairLoadedSingleObtainMethods(entry)
+        )
       weaponSubtypeCache[subtype] = entries
       return entries
     })
@@ -406,4 +609,50 @@ export async function loadHousingBySubtype(): Promise<Record<HousingSubtype, Hou
     }))
   }
   return housingPromise
+}
+
+export async function loadClassAbilitiesManifest(): Promise<ClassAbilitiesManifest> {
+  if (classAbilitiesManifestCache) return classAbilitiesManifestCache
+  if (!classAbilitiesManifestPromise) {
+    classAbilitiesManifestPromise = fetchJson<ClassAbilitiesManifest>(
+      classAbilitiesManifestUrl
+    ).then((data) => {
+      classAbilitiesManifestCache = data
+      return classAbilitiesManifestCache
+    })
+  }
+  return classAbilitiesManifestPromise
+}
+
+export async function loadClassAbilitiesForSubtype(
+  subtype: ClassAbilitySubtype
+): Promise<ClassAbilityEntry[]> {
+  if (classAbilitySubtypeCache[subtype]) return classAbilitySubtypeCache[subtype]
+  if (!classAbilitySubtypePromises[subtype]) {
+    classAbilitySubtypePromises[subtype] = Promise.all(
+      classAbilityDataUrls[subtype].map((url) => fetchJson<ClassAbilityEntry[]>(url))
+    ).then((datasets) => {
+      const entries = dedupeClassAbilityEntries(
+        datasets.flat().map((entry) => normalizeLoadedClassAbility(entry))
+      )
+      classAbilitySubtypeCache[subtype] = entries
+      return entries
+    })
+  }
+  return classAbilitySubtypePromises[subtype]
+}
+
+export async function loadClassAbilitiesBySubtype(): Promise<
+  Record<ClassAbilitySubtype, ClassAbilityEntry[]>
+> {
+  if (!classAbilitiesPromise) {
+    classAbilitiesPromise = Promise.all([
+      loadClassAbilitiesForSubtype('class'),
+      loadClassAbilitiesForSubtype('consumable'),
+    ]).then(([classEntries, consumables]) => ({
+      class: classEntries,
+      consumable: consumables,
+    }))
+  }
+  return classAbilitiesPromise
 }

@@ -17,8 +17,8 @@
  * - free: Price is "N/A"/"0 Gold"/"Free" with NO required items
  *   Example: Quest reward pets, Goldfish Knight I-VII (free option)
  *
- * - merge: Price is "N/A" but HAS required items (merge shop)
- *   Example: DM shop items (requires Defender's Medals), crafted items
+ * - merge: Price is "N/A" but HAS required items that are not purely Defender's Medals
+ *   Example: crafted items
  *
  * - gold: Price is in Gold currency (standard in-game currency)
  *   Example: "500 Gold"
@@ -26,8 +26,8 @@
  * - dc: Price is in Dragon Coins (premium currency purchased with real money)
  *   Example: "150 Dragon Coins", Goldfish Knight I-VII (DC option)
  *
- * - dm: Price is in Defender's Medals (earned currency from wars)
- *   Example: "75 Defender's Medals"
+ * - dm: Price is in Defender's Medals, or required items are purely Defender's Medals
+ *   Example: "75 Defender's Medals", "1 Defender's Medal"
  */
 import type { GuestAttack, GuestStats } from './pet'
 import type { WeaponSpecial } from './weapon'
@@ -48,6 +48,7 @@ export type ItemType =
   | 'trinket'
   | 'accessory'
   | 'housing'
+  | 'class-ability'
 
 /**
  * Attack interface (shared between Pet and ItemFamily)
@@ -208,13 +209,15 @@ export interface LevelVariant {
   rarity?: string // Only if different from shared.rarity
   capacity?: string // Housing-only: total item capacity
   furnishingSlots?: string // Housing-only: Background/Floor/Rug/Shrub/Stuff/Wall Item slot counts
-  effect?: string // Housing-only: special furnishing effect
-  effectType?: string // Housing-only: forum sorted-by-effects category label
+  effect?: string // Housing/Classes-Abilities: special furnishing or consumable effect text
+  effectType?: string // Housing/Classes-Abilities: forum sorted-by-effects category label
+  classAbilitySubtype?: string // Classes/Abilities-only: class sub-subtype or consumable tag
   attacks?: VariantAttack[] // Only if attacks differ at this level
   weaponSpecial?: WeaponSpecial // Weapon-only: preserves parsed specials through family consolidation
   weaponSpecials?: WeaponSpecial[] // Weapon-only: preserves multiple parsed specials through family consolidation
   guestStats?: GuestStats
   itemType?: string // Variant-specific equipment type when a family can differ
+  dialogue?: string // Classes/Abilities-only: variant-specific consumable dialogue snippets
   notes?: string // Level-specific notes
   retired?: boolean // This specific variant/level was retired (guest Retired tag)
 }
@@ -249,8 +252,11 @@ export interface SharedData {
   resists?: string // "None" - when same for all levels
   rarity?: string // "1" - when same for all levels
   attacks?: VariantAttack[] // When attacks are same for all levels
+  dialogue?: string // Classes/Abilities-only: shared consumable dialogue snippets
   notes?: string // Shared notes (bullet-separated with " • ")
   alsoSee?: AlsoSeeRef[] // Related items
+  effect?: string // Housing/Classes-Abilities: shared effect text
+  effectType?: string // Housing/Classes-Abilities: shared sorted-by-effects category label
 }
 
 /**

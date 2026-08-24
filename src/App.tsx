@@ -6,6 +6,7 @@ import ScrollToTop from './components/shared/ScrollToTop'
 import { ACCESSORY_SUBTYPES } from './types/accessory'
 import { WEAPON_SUBTYPES } from './types/weapon'
 import { HOUSING_SUBTYPES } from './types/housing'
+import { CLASS_ABILITY_SUBTYPES } from './types/classAbility'
 
 const HomePage = lazy(() => import('./pages/HomePage'))
 const BadgesPage = lazy(() => import('./pages/BadgesPage'))
@@ -19,6 +20,8 @@ const WeaponListPage = lazy(() => import('./pages/WeaponListPage'))
 const WeaponDetailPage = lazy(() => import('./pages/WeaponDetailPage'))
 const HousingListPage = lazy(() => import('./pages/HousingListPage'))
 const HousingDetailPage = lazy(() => import('./pages/HousingDetailPage'))
+const ClassAbilityListPage = lazy(() => import('./pages/ClassAbilityListPage'))
+const ClassAbilityDetailPage = lazy(() => import('./pages/ClassAbilityDetailPage'))
 const ComingSoonPage = lazy(() => import('./pages/ComingSoonPage'))
 
 function PageLoader() {
@@ -77,7 +80,17 @@ export default function App() {
                 }
               />
             ))}
-            <Route path="/classes" element={<ComingSoonPage />} />
+            <Route path="/classes" element={<ClassAbilityListPage />} />
+            <Route path="/classes/:slug" element={<ClassAbilityDetailPage />} />
+            {CLASS_ABILITY_SUBTYPES.map((meta) => (
+              <Route
+                key={meta.route}
+                path={meta.route}
+                element={
+                  <Navigate to={`/classes?type=${encodeURIComponent(meta.subtype)}`} replace />
+                }
+              />
+            ))}
             <Route path="/locations" element={<ComingSoonPage />} />
             <Route path="/monsters" element={<ComingSoonPage />} />
             <Route path="/npcs" element={<ComingSoonPage />} />

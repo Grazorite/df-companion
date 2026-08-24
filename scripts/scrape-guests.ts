@@ -1530,7 +1530,7 @@ function parseObtainMethods(html: string, guestName: string): ObtainMethod[] {
     if (block.price) {
       priceType = computePriceType(block.price, block.requiredItems)
     } else if (block.requiredItems) {
-      priceType = 'merge'
+      priceType = computePriceType('N/A', block.requiredItems)
     }
 
     const dcRequired = block.hasDC || priceType === 'dc'

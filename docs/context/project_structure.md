@@ -18,11 +18,13 @@ dragonfable-companion/
 │   ├── scrape-accessories.ts # Scrapes accessory subtype data from DF forums
 │   ├── scrape-weapons.ts   # Scrapes weapon subtype data from DF forums
 │   ├── scrape-housing.ts   # Starter scraper for Housing A-Z subtype listings
+│   ├── scrape-classes.ts   # Starter scraper for Classes / Abilities consumables
 │   ├── validate-badges.mjs # Build-time validation for badges dataset
 │   ├── validate-pets.mjs   # Build-time validation for pets/guests datasets
 │   ├── validate-accessories.mjs # Build-time validation for accessory subtype datasets
 │   ├── validate-weapons.mjs # Build-time validation for weapon subtype datasets
 │   ├── validate-housing.mjs # Build-time validation for housing subtype datasets
+│   ├── validate-class-abilities.mjs # Build-time validation for Classes / Abilities datasets
 │   ├── verify-datasets.mjs # Cross-post-family invariant checks
 │   ├── add_images.py       # Adds imageUrl from DF-Pedia GitHub to badges.json
 │   ├── add_subcategories.py # Maps badges to subcategories from forum groupings
@@ -34,6 +36,7 @@ dragonfable-companion/
 │   │   ├── accessories/    # Accessory cards, list, detail, stats table
 │   │   ├── weapons/        # WeaponCard, WeaponDetail, WeaponList, WeaponStatsTable
 │   │   ├── housing/        # Housing cards, list, detail components
+│   │   ├── classAbilities/ # Classes / Abilities cards, list, detail components
 │   │   ├── layout/         # Navigation, Layout
 │   │   └── shared/         # SearchBar, LoadingSkeleton, ObtainSection, ElementPill,
 │   │                       # ExpandableImageList, ItemImage, MetricStrip, NotesList,
@@ -72,6 +75,9 @@ dragonfable-companion/
 │   │   ├── housing-stuff.json # Housing subtype dataset
 │   │   ├── housing-wall-items.json # Housing subtype dataset
 │   │   ├── housing-manifest.json # Housing counts per subtype
+│   │   ├── classes.json # Classes / Abilities class subtype dataset
+│   │   ├── class-consumables.json # Classes / Abilities consumable subtype dataset
+│   │   ├── class-abilities-manifest.json # Classes / Abilities counts per subtype
 │   │   ├── accessory-manifest.json # Accessory counts per subtype/shard
 │   │   ├── badges-manifest.json # Badge counts
 │   │   ├── pets-guests-manifest.json # Pet/guest counts
@@ -83,6 +89,7 @@ dragonfable-companion/
 │   │   ├── useAccessories.ts # Accessory data access and filtering
 │   │   ├── useWeapons.ts   # Weapon data access and filtering
 │   │   ├── useHousing.ts   # Housing data access and filtering
+│   │   ├── useClassAbilities.ts # Classes / Abilities data access and filtering
 │   │   ├── useRelatedItems.ts # Shared explicit/reverse/inferred Also See resolution
 │   │   └── useDebounce.ts
 │   ├── types/
@@ -91,7 +98,8 @@ dragonfable-companion/
 │   │   ├── item.ts         # Shared item-family types (ItemFamily, LevelVariant, traits)
 │   │   ├── accessory.ts    # Accessory subtype and family types
 │   │   ├── weapon.ts       # Weapon, WeaponFamily, WeaponSpecial types
-│   │   └── housing.ts      # Housing subtype and family types
+│   │   ├── housing.ts      # Housing subtype and family types
+│   │   └── classAbility.ts # Classes / Abilities subtype and entry types
 │   ├── pages/
 │   │   ├── HomePage.tsx
 │   │   ├── BadgesPage.tsx       # Two-level filter: category → subcategory
@@ -106,6 +114,8 @@ dragonfable-companion/
 │   │   ├── WeaponDetailPage.tsx # Weapon detail page
 │   │   ├── HousingListPage.tsx  # Housing subtype browse page
 │   │   ├── HousingDetailPage.tsx # Housing detail page
+│   │   ├── ClassAbilityListPage.tsx # Classes / Abilities subtype browse page
+│   │   ├── ClassAbilityDetailPage.tsx # Classes / Abilities detail page
 │   │   └── ComingSoonPage.tsx
 │   ├── utils/
 │   │   ├── search.ts       # Word-prefix search + category/subcategory filtering

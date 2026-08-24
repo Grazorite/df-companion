@@ -31,7 +31,7 @@ Based on the DF Encyclopedia forum structure (<https://forums2.battleon.com/f/tt
 | Accessories | `/accessories`, `/accessories/:slug` | ✅ Active (accessories across 8 subtypes, with split assets for image-heavy subtypes) | Accessories |
 | Weapons | `/weapons`, `/weapons/:slug` | ✅ Active (4 subtypes across 11 shards) | Weapons |
 | Housing | `/housing`, `/housing/:slug` | ✅ Active (Houses, Backgrounds, Floors, Rugs, Shrubs, Stuff, Wall Items) | Housing and House Items |
-| Classes / Abilities | `/classes` | Planned | Classes / Abilities |
+| Classes / Abilities | `/classes`, `/classes/:slug` | 🚧 Starter (Classes shell + Consumables scrape path) | Classes / Abilities |
 | Locations & Quests | `/locations` | Planned | Locations / Quests / Events / Shops |
 | Monsters | `/monsters` | Planned | Monsters |
 | NPCs | `/npcs` | Planned | NPCs |
@@ -77,10 +77,10 @@ Based on the DF Encyclopedia forum structure (<https://forums2.battleon.com/f/tt
 | Type | Condition | Example |
 | ------ | ----------- | --------- |
 | free | Price is "N/A", "0 Gold", or "Free" AND no required items | Quest reward pet |
-| merge | Price is "N/A" AND has required items | DM shop items, crafted items |
+| merge | Price is "N/A" AND has required items that are not purely Defender's Medals | Crafted items |
 | gold | Price contains a Gold amount | "500 Gold" |
 | dc | Price contains Dragon Coins | "150 Dragon Coins" |
-| dm | Price contains Defender's Medals | "75 Defender's Medals" |
+| dm | Price contains Defender's Medals, or Required Items is purely Defender's Medals | "75 Defender's Medals", "1 Defender's Medal" |
 
 ### Access Flag Computation
 
@@ -192,3 +192,13 @@ Housing entries may include `effectType`, a compact category from the `House Ite
 forum post and displayed as `Effect Type: <type>`. This is separate from `effect`, which stores the
 item-specific effect description shown in the larger detail card. `effectType` is optional even when
 `effect` exists; do not force or infer it for items that are absent from the sorted effect-type list.
+
+Classes / Abilities entries use `type: "class-ability"` and currently split into two single-select
+subtypes: `class` and `consumable`. Consumables are stored in `src/data/class-consumables.json`; the
+Classes subtype placeholder is `src/data/classes.json`. Consumables do not require main images by
+default. Health Potion and Mana Potion are supplemental non-A-Z entries, are not Temp by default, and
+store their potion skill/effect display as shared attack-style data with button and Appearance images.
+Consumables may include optional `effectType` metadata from the sorted effects forum page. This is the
+compact heading label displayed as `Effect Type: <type>` and is separate from the full item-specific
+`effect` text. Consumables may also include optional `dialogue` structured text, displayed in a
+separate Dialogue card with shared quote-box rendering.
