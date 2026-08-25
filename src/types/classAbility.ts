@@ -40,6 +40,8 @@ export interface ClassAbilityItem {
   requirements?: string
   effect?: string
   effectType?: string
+  equipsClass?: string
+  equipsClassUrl?: string
   attacks?: GuestAttack[]
   dialogue?: string
   obtainMethods?: ObtainVariant[]
@@ -119,7 +121,7 @@ export const CLASS_ABILITY_SUBTYPES: ClassAbilitySubtypeMeta[] = [
     route: '/classes',
     dataFiles: ['classes.json'],
     shortDescription: CLASS_ABILITY_DESCRIPTION,
-    sourceUrl: 'https://forums2.battleon.com/f/fb.asp?m=22304639',
+    sourceUrl: 'https://forums2.battleon.com/f/fb.asp?m=22303582',
   },
   {
     subtype: 'consumable',

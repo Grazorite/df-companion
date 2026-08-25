@@ -142,13 +142,26 @@ npm run scrape:housing -- --subtype=wall-item
 ### Classes / Abilities Scraping
 
 ```bash
+npm run scrape:classes -- --subtype=class --class-subcategory=armor --letters=A,D --fresh
+npm run scrape:classes -- --subtype=class --class-subcategory=armor --url="https://forums2.battleon.com/f/tm.asp?m=22389742"
+npm run scrape:classes -- --subtype=class --class-subcategory=armor --limit=5 # Dry-run parser sample
 npm run scrape:classes -- --subtype=consumable --fresh
 npm run scrape:classes -- --subtype=consumable --limit=5 # Dry-run parser sample
 npm run scrape:classes -- --subtype=consumable --names="Health Potion|Mana Potion"
 npm run scrape:classes -- --subtype=consumable --names="Black Stardust (E: Boost)|Blue Stardust (Bonus)"
 ```
 
-The starter Classes / Abilities scraper currently implements Consumables only. It reads the A-Z
+The Classes / Abilities scraper currently implements Consumables and the Classes `Armors`
+sub-subtype. Armor entries read the A-Z listing at
+`https://forums2.battleon.com/f/fb.asp?m=22303582`, follow linked detail posts, and extract
+family/variant names, description, DA/DC/tag metadata, `Equips Class` plus its forum link, level,
+rarity, obtain methods, Other Information, source links, and Also See links. Armors do not require
+main images and must not be merged with the class pages they equip. `--url=` / `--urls=` supports
+targeted post refreshes; keep URLs quoted because forum URLs contain `?m=...`. The armor listing
+scope should skip the table-of-contents links and stop before the Regular/Miscellaneous class
+sections. Regular and Miscellaneous class page parsing is still pending.
+
+The Consumables path reads the A-Z
 listing at `https://forums2.battleon.com/f/fb.asp?m=22304639`, appends supplemental Health Potion
 (`m=4159197`) and Mana Potion (`m=4159198`) entries that are absent from the index, follows each
 linked forum post, and extracts family/name, description, obtain methods, level, rarity, effect text,
@@ -176,6 +189,10 @@ preserving both variants inside the non-`+` family.
 All category scrapers should use the shared `computePriceType` / access-flag repair path for
 obtain-method classification. Pure `Required Items: Defender's Medal` methods are DM methods, not
 Merge Required methods; only non-medal required-item recipes should set `priceType: "merge"`.
+For family-capable Accessories and Weapons, parse DA/DC/DM access from each variant title/obtain
+block before applying any page-level tag fallback. If a post contains mixed DC and non-DC obtain
+methods, do not apply whole-post DA/DC tag images to every method; alternating Roman numeral families
+depend on keeping those method-level access flags distinct.
 
 ## Scraper Notes
 
@@ -211,6 +228,10 @@ Merge Required methods; only non-medal required-item recipes should set `priceTy
 - Deleted/moved forum posts (HTTP 500 on `printable.asp`) are handled gracefully via
   `isPostUnavailableError` — the item is skipped with a warning and the run continues. This applies to
   all scrapers (weapons, accessories, badges, pets, guests, housing).
+- L2 status tags (`Temp`, `Rare`, `Seasonal`, `Special Offer`, `War`, `Retired`, etc.) should be
+  driven by forum tag images under `/tags/<TagName>.<ext>` whenever those images are present.
+  Category A-Z listings sometimes use text-only parentheticals such as `(D-Coins/Rare/S-Offer)`
+  instead of rendering tag images; in that case, the listing text is the fallback source for that row.
 - All current and future scrapers should preserve forum note structure in generated note/Other
   Information fields. The shared `OtherInformationSection` / `NotesList` renderer already understands
   newline-delimited bullets with two-space nested indentation (`•`, `•`, etc.), forum quote blocks as
@@ -232,12 +253,18 @@ npm run scrape:guests  # Scrape forum guests (supports --letters, --names, --fre
 npm run scrape:accessories # Scrape accessories (supports --subtypes, --letters, and --names)
 npm run scrape:weapons # Scrape weapons (supports --subtypes, --letters, --names, and --url/--urls)
 npm run scrape:housing # Scrape housing (supports --subtype, --names, --limit, --fresh)
+npm run generate:badge-relations # Refresh cross-category item ↔ badge award links
 npm run validate       # Run all dataset validators + cross-post-family verify + script typecheck
 npm run verify         # Cross-post-family invariant checks (dup slugs, alias/AlsoSee integrity)
 npm run typecheck:scripts # Typecheck scripts/ against tsconfig.scripts.json
 npm run images:guests  # Extract guest character images from forum (auto-uses venv)
 npm run setup:python   # Manually create the Python venv used by image scripts
 ```
+
+Run `npm run generate:badge-relations` after scrapes that change item descriptions or Other
+Information. The generated `src/data/badge-relations.json` index powers reverse Badge detail links for
+explicit award notes such as `Own this armor to obtain the Time Walker badge` without forcing Badge
+pages to lazy-load large category datasets.
 
 ## Dataset Verification
 

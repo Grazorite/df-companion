@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { ChevronRight } from 'lucide-react'
 import type { ClassAbilityEntry } from '../../types/classAbility'
+import { CLASS_SUBCATEGORIES } from '../../types/classAbility'
 import { isClassAbilityFamily } from '../../types/classAbility'
 import { accessPillClass } from '../../utils/accessPillStyles'
 import { CONSUMABLE_KIND_META, consumableKindPillClass } from '../../utils/classAbilityPills'
@@ -30,6 +31,10 @@ export default function ClassAbilityCard({ item, toUrl }: ClassAbilityCardProps)
       ? [item.consumableKind]
       : []
   const visibleConsumableKinds = [...new Set(consumableKinds)]
+  const classSubcategory = item.classSubcategory
+  const classSubcategoryLabel = CLASS_SUBCATEGORIES.find(
+    (subcategory) => subcategory.id === classSubcategory
+  )?.label
 
   return (
     <Link
@@ -41,6 +46,11 @@ export default function ClassAbilityCard({ item, toUrl }: ClassAbilityCardProps)
           {hasDA && <span className={accessPillClass('da', 'card')}>DA</span>}
           {hasDC && <span className={accessPillClass('dc', 'card')}>DC</span>}
           {hasDM && <span className={accessPillClass('dm', 'card')}>DM</span>}
+          {classSubcategoryLabel && (
+            <span className="text-[10px] text-slate-200 bg-slate-500/25 px-1.5 py-0.5 rounded-full font-medium">
+              {classSubcategoryLabel}
+            </span>
+          )}
           {visibleConsumableKinds.map((kind) => (
             <span
               key={kind}
@@ -52,11 +62,6 @@ export default function ClassAbilityCard({ item, toUrl }: ClassAbilityCardProps)
               {CONSUMABLE_KIND_META[kind].label}
             </span>
           ))}
-          {item.isRare && (
-            <span className="text-[10px] text-purple-300 bg-purple-500/20 px-1.5 py-0.5 rounded-full font-medium">
-              Rare
-            </span>
-          )}
         </div>
 
         <h3 className="font-semibold text-text-primary text-sm leading-snug mb-1 line-clamp-1">

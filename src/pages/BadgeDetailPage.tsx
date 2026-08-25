@@ -8,7 +8,10 @@ import AccessPills from '../components/shared/AccessPills'
 import SourceLinksCard from '../components/shared/SourceLinksCard'
 import { DetailPageSkeleton } from '../components/shared/LoadingSkeleton'
 import DetailTypePill from '../components/shared/DetailTypePill'
+import DetailPageLayout from '../components/shared/DetailPageLayout'
 import ItemImage from '../components/shared/ItemImage'
+import RelatedLinkCard from '../components/shared/RelatedLinkCard'
+import { useItemsAwardingBadge } from '../hooks/useBadgeRelations'
 import { backUrlFromSearch, detailUrlWithFrom } from '../utils/navigationContext'
 
 export default function BadgeDetailPage() {
@@ -16,6 +19,7 @@ export default function BadgeDetailPage() {
   const location = useLocation()
   const { badge, loading } = useBadgeBySlug(slug ?? '')
   const relatedBadges = useBadgesByCategory(badge?.category ?? '', badge?.slug, badge?.subcategory)
+  const badgeAwardItems = useItemsAwardingBadge(badge?.slug)
 
   // The URL to return to when pressing "Back to Badges"
   // - If we arrived from the badge list (or via a related badge), the `from` param tracks the original list URL
@@ -35,7 +39,7 @@ export default function BadgeDetailPage() {
 
   if (!badge) {
     return (
-      <main className="px-4 py-8 max-w-3xl mx-auto text-center">
+      <DetailPageLayout className="text-center">
         <p className="text-text-secondary text-lg mb-4">Badge not found.</p>
         <Link
           to={backUrl}
@@ -43,7 +47,7 @@ export default function BadgeDetailPage() {
         >
           ← Back to Badges
         </Link>
-      </main>
+      </DetailPageLayout>
     )
   }
 
@@ -56,7 +60,7 @@ export default function BadgeDetailPage() {
   }
 
   return (
-    <main className="px-4 sm:px-6 py-6 max-w-3xl mx-auto">
+    <DetailPageLayout>
       {/* Back button — always returns to the badge list, not the previous badge */}
       <Link
         to={backUrl}
@@ -160,6 +164,29 @@ export default function BadgeDetailPage() {
         />
       </section>
 
+      {badgeAwardItems.length > 0 && (
+        <section aria-labelledby="badge-item-related-heading" className="border-t border-border-default pt-6 mb-6">
+          <h2
+            id="badge-item-related-heading"
+            className="text-xs font-semibold text-text-muted uppercase tracking-wider mb-3"
+          >
+            Also See
+          </h2>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            {badgeAwardItems.map((relation) => (
+              <li key={`${relation.itemType}-${relation.itemSlug}`}>
+                <RelatedLinkCard
+                  to={relation.route}
+                  title={relation.itemName}
+                  label={relation.categoryLabel}
+                  description={`Own this ${relation.categoryLabel.toLowerCase()} to obtain this badge.`}
+                />
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
       {/* Related badges */}
       {relatedBadges.length > 0 && (
         <section aria-labelledby="related-heading" className="border-t border-border-default pt-6">
@@ -178,6 +205,6 @@ export default function BadgeDetailPage() {
           </ul>
         </section>
       )}
-    </main>
+    </DetailPageLayout>
   )
 }

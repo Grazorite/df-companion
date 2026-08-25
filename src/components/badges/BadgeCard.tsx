@@ -9,6 +9,8 @@ interface BadgeCardProps {
   toUrl?: string
   /** Use replace instead of push so clicking related badges doesn't pollute history */
   replace?: boolean
+  /** Optional type cue for cross-category related cards */
+  badgeLabel?: string
 }
 
 const CATEGORY_COLORS: Record<string, string> = {
@@ -19,7 +21,7 @@ const CATEGORY_COLORS: Record<string, string> = {
   misc: 'bg-bg-overlay text-text-muted',
 }
 
-export default function BadgeCard({ badge, toUrl, replace }: BadgeCardProps) {
+export default function BadgeCard({ badge, toUrl, replace, badgeLabel }: BadgeCardProps) {
   return (
     <Link
       to={toUrl ?? `/badges/${badge.slug}`}
@@ -33,6 +35,11 @@ export default function BadgeCard({ badge, toUrl, replace }: BadgeCardProps) {
           >
             {badge.category.replace(/-/g, ' ')}
           </span>
+          {badgeLabel && (
+            <span className="inline-block text-xs font-medium px-2 py-0.5 rounded-full bg-bg-overlay text-text-muted flex-shrink-0">
+              {badgeLabel}
+            </span>
+          )}
         </div>
         <h3 className="font-semibold text-text-primary text-sm leading-snug mb-1 line-clamp-1">
           {displayTitle(badge.name)}

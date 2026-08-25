@@ -11,6 +11,7 @@
     "preview": "vite preview",
     "validate": "node scripts/validate-badges.mjs && node scripts/validate-pets.mjs && node scripts/validate-accessories.mjs && node scripts/validate-weapons.mjs && node scripts/validate-housing.mjs && node scripts/validate-class-abilities.mjs && npm run verify && npm run typecheck:scripts",
     "verify": "node scripts/verify-datasets.mjs",
+    "generate:badge-relations": "node scripts/generate-badge-relations.mjs",
     "typecheck:scripts": "tsc -p tsconfig.scripts.json",
     "scrape:badges": "tsx scripts/scrape-badges.ts",
     "scrape:pets": "tsx scripts/scrape-pets.ts",

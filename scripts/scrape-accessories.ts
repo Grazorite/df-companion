@@ -942,6 +942,9 @@ function parseObtainMethods(html: string): Accessory['obtainMethods'] {
 
   for (const segment of segments) {
     let current: (typeof blocks)[number] | undefined
+    const segmentHasDA = /<img[^>]+src=["'][^"']*\/tags\/DA\.(?:png|jpg|jpeg|gif)["']/i.test(segment)
+    const segmentHasDC = /<img[^>]+src=["'][^"']*\/tags\/DC\.(?:png|jpg|jpeg|gif)["']/i.test(segment)
+    const segmentHasDM = /<img[^>]+src=["'][^"']*\/tags\/DM\.(?:png|jpg|jpeg|gif)["']/i.test(segment)
     const rawLines = segment
       .split(/<br\s*\/?>/i)
       .map((line) => line.trim())
@@ -966,9 +969,9 @@ function parseObtainMethods(html: string): Accessory['obtainMethods'] {
       if (fieldName === 'location') {
         current = {
           location: value,
-          daRequired: hasDA || /this item requires a dragon amulet/i.test(segment),
-          dcRequired: hasDC,
-          dmRequired: hasDM,
+          daRequired: segmentHasDA || hasDA || /this item requires a dragon amulet/i.test(segment),
+          dcRequired: segmentHasDC || hasDC,
+          dmRequired: segmentHasDM || hasDM,
         }
         blocks.push(current)
         continue
@@ -976,9 +979,9 @@ function parseObtainMethods(html: string): Accessory['obtainMethods'] {
 
       if (!current) {
         current = {
-          daRequired: hasDA,
-          dcRequired: hasDC,
-          dmRequired: hasDM,
+          daRequired: segmentHasDA || hasDA,
+          dcRequired: segmentHasDC || hasDC,
+          dmRequired: segmentHasDM || hasDM,
         }
         blocks.push(current)
       }
@@ -1506,16 +1509,32 @@ function buildAccessoryEntry(
       /this item requires a dragon amulet/i.test(normalizedText) &&
       !/\(no da required\)/i.test(normalizedText),
   }
-  const obtainMethods = parseObtainMethods(html).map((method) => ({
-    ...method,
-    // Apply section-level DA only to non-DC methods. When a post has both a DA
-    // base variant and a DC variant, the DA tag precedes only the base title block
-    // and should not bleed onto the DC method (e.g. Carved Dragon Scale II-V).
-    daRequired:
-      method.daRequired || (method.dcRequired ? false : flags.daRequired || textSignals.daRequired),
-    ...(flags.dcRequired || method.dcRequired ? { dcRequired: true } : {}),
-    ...(flags.dmRequired || method.dmRequired ? { dmRequired: true } : {}),
-  }))
+  const parsedObtainMethods = parseObtainMethods(html)
+  const hasMixedDcMethods =
+    parsedObtainMethods.some(obtainVariantHasDC) &&
+    parsedObtainMethods.some((method) => !obtainVariantHasDC(method))
+  const obtainMethods = parsedObtainMethods.map((method) => {
+    const hasMethodDC = obtainVariantHasDC(method)
+    return {
+      ...method,
+      // Whole-post DA/DC tags are safe for uniform posts only. Mixed DA/DC
+      // posts often alternate title blocks; each method must keep only the
+      // access parsed from its own block/price/required-items context.
+      daRequired:
+        method.daRequired ||
+        (!hasMixedDcMethods && !hasMethodDC && (flags.daRequired || textSignals.daRequired)),
+      ...(!hasMixedDcMethods && (flags.dcRequired || method.dcRequired || hasMethodDC)
+        ? { dcRequired: true }
+        : method.dcRequired || hasMethodDC
+          ? { dcRequired: true }
+          : {}),
+      ...(!hasMixedDcMethods && (flags.dmRequired || method.dmRequired)
+        ? { dmRequired: true }
+        : method.dmRequired
+          ? { dmRequired: true }
+          : {}),
+    }
+  })
   const explicitElement =
     parseHtmlField(html, ['Element']) ?? parseFieldValue(normalizedText, ['Element'])
   const parsedElements = parseElementCodes(explicitElement)
@@ -1602,13 +1621,12 @@ function buildAccessoryEntry(
       ...(flags.isWar ? ['war'] : []),
     ],
     daRequired:
-      flags.daRequired ||
-      textSignals.daRequired ||
+      (!hasMixedDcMethods && (flags.daRequired || textSignals.daRequired)) ||
       obtainMethods.some((method) => method.daRequired),
-    ...(flags.dcRequired || obtainMethods.some((method) => method.dcRequired)
+    ...((!hasMixedDcMethods && flags.dcRequired) || obtainMethods.some((method) => method.dcRequired)
       ? { dcRequired: true }
       : {}),
-    ...(flags.dmRequired || obtainMethods.some((method) => method.dmRequired)
+    ...((!hasMixedDcMethods && flags.dmRequired) || obtainMethods.some((method) => method.dmRequired)
       ? { dmRequired: true }
       : {}),
     ...(flags.isTemp ? { isTemp: true } : {}),

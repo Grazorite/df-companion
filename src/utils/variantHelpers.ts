@@ -655,6 +655,24 @@ function getLevelVariantLabelInfo(
   }
 
   if (familyName && useTitleLabels) {
+    const parentheticalVariant = getParentheticalVariantParts(familyName)
+    if (parentheticalVariant && normalizedAccessVariantName) {
+      const matchingVariant = parentheticalVariant.variants.find(
+        (variant) =>
+          normalizeDisplayText(variant).toLowerCase() ===
+          normalizeDisplayText(normalizedAccessVariantName).toLowerCase()
+      )
+      if (matchingVariant) {
+        return {
+          label: normalizeRomanDisplay(matchingVariant),
+          canAddLevelSuffix: false,
+          levelLabel,
+          hasDC,
+          hasDA,
+        }
+      }
+    }
+
     const condensedVariant =
       normalizedAccessVariantName &&
       !/^\((?:Base|DA|DC)\)(?:\s*\((?:DA|DC)\))?$/i.test(normalizedAccessVariantName)

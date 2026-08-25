@@ -28,7 +28,7 @@ for (const [subtype, file] of files) {
     const isFamily = Array.isArray(entry.levelVariants)
     const requiredKeys = isFamily
       ? ['id', 'familyName', 'slug', 'type', 'subtype', 'forumUrl', 'shared']
-      : ['id', 'name', 'slug', 'type', 'subtype', 'description', 'forumUrl']
+      : ['id', 'name', 'slug', 'type', 'subtype', 'forumUrl']
     for (const key of requiredKeys) {
       if (!entry[key]) throw new Error(`${file}: missing ${key}`)
     }
@@ -43,8 +43,18 @@ for (const [subtype, file] of files) {
       throw new Error(`${file}: ${entryName} has invalid subtype ${entry.subtype}`)
     }
     if (isFamily) {
-      if (!entry.shared.description) throw new Error(`${file}: ${entryName} missing description`)
+      if (subtype === 'consumable' && !entry.shared.description) {
+        throw new Error(`${file}: ${entryName} missing description`)
+      }
       if (entry.levelVariants.length === 0) throw new Error(`${file}: ${entryName} has no variants`)
+      if (
+        subtype === 'class' &&
+        entry.classSubcategory === 'armor' &&
+        !entry.shared.equipsClass &&
+        !entry.levelVariants.some((variant) => variant.equipsClass)
+      ) {
+        throw new Error(`${file}: ${entryName} armor family missing equipsClass`)
+      }
       for (const variant of entry.levelVariants) {
         if (!variant.name) throw new Error(`${file}: ${entryName} variant missing name`)
         if (
@@ -59,13 +69,13 @@ for (const [subtype, file] of files) {
           throw new Error(`${file}: ${entryName} variant ${variant.name} missing obtain methods`)
         }
       }
-    } else if (
-      subtypeHasConsumableKinds &&
-      subtype === 'consumable' &&
-      !entry.consumableKind &&
-      !CONSUMABLE_KIND_EXCEPTIONS.has(entryName)
-    ) {
-      throw new Error(`${file}: ${entryName} missing consumable kind`)
+    } else if (subtype === 'consumable') {
+      if (!entry.description) throw new Error(`${file}: ${entryName} missing description`)
+      if (subtypeHasConsumableKinds && !entry.consumableKind && !CONSUMABLE_KIND_EXCEPTIONS.has(entryName)) {
+        throw new Error(`${file}: ${entryName} missing consumable kind`)
+      }
+    } else if (subtype === 'class' && entry.classSubcategory === 'armor' && !entry.equipsClass) {
+      throw new Error(`${file}: ${entryName} armor missing equipsClass`)
     }
     bySubtype[subtype] += 1
     total += 1

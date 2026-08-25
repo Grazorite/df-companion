@@ -16,6 +16,7 @@ import {
   useAccessoryRelatedItems,
   type AccessoryRelatedItem,
 } from '../../hooks/useAccessories'
+import { useAwardedBadges } from '../../hooks/useBadgeRelations'
 import { displayTitle, normalizeDescriptionText, normalizeDisplayText } from '../../utils/displayText'
 import { buildDisplayImages } from '../../utils/imageLabels'
 import {
@@ -32,6 +33,7 @@ import CollapsibleSection from '../shared/CollapsibleSection'
 import MetadataChipSection from '../shared/MetadataChipSection'
 import OtherInformationSection from '../shared/OtherInformationSection'
 import DetailTypePill from '../shared/DetailTypePill'
+import DetailPageLayout from '../shared/DetailPageLayout'
 import ItemImage from '../shared/ItemImage'
 import { buildFilterLink } from '../../utils/filterLinks'
 import { notesIndicateInvisibleItem } from '../../utils/imageVisibility'
@@ -39,6 +41,7 @@ import { detailUrlWithFrom } from '../../utils/navigationContext'
 import AccessoryStatsTable from './AccessoryStatsTable'
 import AccessoryCard from './AccessoryCard'
 import GuestAttacks from '../guests/GuestAttacks'
+import BadgeCard from '../badges/BadgeCard'
 
 const ACCESSORY_SUBTYPE_LABELS: Record<AccessorySubtype, string> = {
   artifact: 'Artifact',
@@ -418,9 +421,20 @@ export default function AccessoryDetail({ accessory, filterBase, backUrl }: Acce
   const resolvedRelatedAccessories = relatedAccessories.filter(
     (related): related is AccessoryRelatedItem & { entry: AccessoryEntry } => Boolean(related.entry)
   )
+  const badgeRelationTexts = useMemo(
+    () => [
+      singleAccessory?.notes,
+      singleAccessory?.description,
+      family?.shared.notes,
+      family?.shared.description,
+      ...(family?.levelVariants.flatMap((level) => [level.notes, level.description]) ?? []),
+    ],
+    [family, singleAccessory]
+  )
+  const awardedBadges = useAwardedBadges(badgeRelationTexts)
 
   return (
-    <main className="px-4 sm:px-6 py-6 max-w-3xl mx-auto">
+    <DetailPageLayout>
       <Link
         to={backUrl}
         className="flex items-center gap-1.5 text-text-secondary hover:text-text-primary text-sm mb-6 transition-colors duration-150 min-h-[44px] -ml-1 px-1"
@@ -563,7 +577,7 @@ export default function AccessoryDetail({ accessory, filterBase, backUrl }: Acce
         <SourceLinksCard links={sourceLinks} />
       </section>
 
-      {resolvedRelatedAccessories.length > 0 && (
+      {(resolvedRelatedAccessories.length > 0 || awardedBadges.length > 0) && (
         <section aria-labelledby="related-heading" className="border-t border-border-default pt-6">
           <h2
             id="related-heading"
@@ -583,9 +597,14 @@ export default function AccessoryDetail({ accessory, filterBase, backUrl }: Acce
                 />
               </li>
             ))}
+            {awardedBadges.map((badge) => (
+              <li key={`badge-${badge.slug}`}>
+                <BadgeCard badge={badge} toUrl={`/badges/${badge.slug}`} badgeLabel="Badge" />
+              </li>
+            ))}
           </ul>
         </section>
       )}
-    </main>
+    </DetailPageLayout>
   )
 }

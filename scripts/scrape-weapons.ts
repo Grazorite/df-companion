@@ -1304,14 +1304,27 @@ function buildWeaponEntry(
   const normalizedText = normalizeStructuredText(html)
   const flags = parseTagFlags(html)
   const description = parseDescription(html)
-  const obtainMethods = parseObtainMethodBlocks(html).map((method) => ({
-    ...method,
-    daRequired: method.daRequired || flags.daRequired,
-    ...(flags.dcRequired || method.dcRequired || obtainVariantHasDC(method)
-      ? { dcRequired: true }
-      : {}),
-    ...(flags.dmRequired || method.dmRequired ? { dmRequired: true } : {}),
-  }))
+  const parsedObtainMethods = parseObtainMethodBlocks(html)
+  const hasMixedDcMethods =
+    parsedObtainMethods.some(obtainVariantHasDC) &&
+    parsedObtainMethods.some((method) => !obtainVariantHasDC(method))
+  const obtainMethods = parsedObtainMethods.map((method) => {
+    const hasMethodDC = obtainVariantHasDC(method)
+    return {
+      ...method,
+      daRequired: method.daRequired || (!hasMixedDcMethods && !hasMethodDC && flags.daRequired),
+      ...(!hasMixedDcMethods && (flags.dcRequired || method.dcRequired || hasMethodDC)
+        ? { dcRequired: true }
+        : method.dcRequired || hasMethodDC
+          ? { dcRequired: true }
+          : {}),
+      ...(!hasMixedDcMethods && (flags.dmRequired || method.dmRequired)
+        ? { dmRequired: true }
+        : method.dmRequired
+          ? { dmRequired: true }
+          : {}),
+    }
+  })
   const explicitElement =
     parseHtmlField(html, ['Element']) ?? parseFieldValue(normalizedText, ['Element'])
   const elements = parseElementCodes(explicitElement)
@@ -1371,11 +1384,13 @@ function buildWeaponEntry(
       ...(isDefault ? ['default'] : []),
       ...(flags.isWar ? ['war'] : []),
     ],
-    daRequired: flags.daRequired || obtainMethods.some((method) => method.daRequired),
-    ...(flags.dcRequired || obtainMethods.some((method) => method.dcRequired)
+    daRequired:
+      (!hasMixedDcMethods && flags.daRequired) ||
+      obtainMethods.some((method) => method.daRequired),
+    ...((!hasMixedDcMethods && flags.dcRequired) || obtainMethods.some((method) => method.dcRequired)
       ? { dcRequired: true }
       : {}),
-    ...(flags.dmRequired || obtainMethods.some((method) => method.dmRequired)
+    ...((!hasMixedDcMethods && flags.dmRequired) || obtainMethods.some((method) => method.dmRequired)
       ? { dmRequired: true }
       : {}),
     ...(flags.isTemp ? { isTemp: true } : {}),

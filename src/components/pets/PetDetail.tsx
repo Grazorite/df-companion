@@ -22,6 +22,7 @@ import CollapsibleSection from '../shared/CollapsibleSection'
 import MetadataChipSection from '../shared/MetadataChipSection'
 import OtherInformationSection from '../shared/OtherInformationSection'
 import DetailTypePill from '../shared/DetailTypePill'
+import DetailPageLayout from '../shared/DetailPageLayout'
 import ItemImage from '../shared/ItemImage'
 import { buildFilterLink } from '../../utils/filterLinks'
 import PetAttacks from './PetAttacks'
@@ -29,7 +30,9 @@ import GuestAttacks from '../guests/GuestAttacks'
 import GuestStatsSection from '../guests/GuestStatsSection'
 import PetEvolutions from './PetEvolutions'
 import PetCard from './PetCard'
+import BadgeCard from '../badges/BadgeCard'
 import { useRelatedPets } from '../../hooks/usePets'
+import { useAwardedBadges } from '../../hooks/useBadgeRelations'
 import { detailUrlWithFrom } from '../../utils/navigationContext'
 
 interface PetDetailProps {
@@ -296,6 +299,17 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
 
   // Use displayData.alsoSee for related pets (works for both single and multi-variant)
   const relatedPets = useRelatedPets(family ?? pet, displayData.alsoSee ?? [])
+  const badgeRelationTexts = useMemo(
+    () => [
+      pet.notes,
+      pet.description,
+      family?.shared.notes,
+      family?.shared.description,
+      ...(family?.levelVariants.flatMap((variant) => [variant.notes, variant.description]) ?? []),
+    ],
+    [family, pet]
+  )
+  const awardedBadges = useAwardedBadges(badgeRelationTexts)
 
   const allImages = useMemo(() => {
     return buildDisplayImages({
@@ -436,7 +450,7 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
   }, [displayData.sourceUrl, family, pet.name, pet.sourceLinks])
 
   return (
-    <main className="px-4 sm:px-6 py-6 max-w-3xl mx-auto">
+    <DetailPageLayout>
       {/* Header */}
       <div className="mb-6">
         {/* Meta pills — scoped to the selected variant on families, so the
@@ -713,7 +727,7 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
       </section>
 
       {/* Also See — related pets from forum data */}
-      {relatedPets.length > 0 && (
+      {(relatedPets.length > 0 || awardedBadges.length > 0) && (
         <section aria-labelledby="related-heading" className="border-t border-border-default pt-6">
           <h2
             id="related-heading"
@@ -736,9 +750,14 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
                 </li>
               )
             })}
+            {awardedBadges.map((badge) => (
+              <li key={`badge-${badge.slug}`}>
+                <BadgeCard badge={badge} toUrl={`/badges/${badge.slug}`} badgeLabel="Badge" />
+              </li>
+            ))}
           </ul>
         </section>
       )}
-    </main>
+    </DetailPageLayout>
   )
 }

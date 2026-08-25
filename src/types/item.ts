@@ -211,6 +211,8 @@ export interface LevelVariant {
   furnishingSlots?: string // Housing-only: Background/Floor/Rug/Shrub/Stuff/Wall Item slot counts
   effect?: string // Housing/Classes-Abilities: special furnishing or consumable effect text
   effectType?: string // Housing/Classes-Abilities: forum sorted-by-effects category label
+  equipsClass?: string // Classes/Abilities armor-only: class unlocked/equipped by this armor
+  equipsClassUrl?: string
   classAbilitySubtype?: string // Classes/Abilities-only: class sub-subtype or consumable tag
   attacks?: VariantAttack[] // Only if attacks differ at this level
   weaponSpecial?: WeaponSpecial // Weapon-only: preserves parsed specials through family consolidation
@@ -257,6 +259,8 @@ export interface SharedData {
   alsoSee?: AlsoSeeRef[] // Related items
   effect?: string // Housing/Classes-Abilities: shared effect text
   effectType?: string // Housing/Classes-Abilities: shared sorted-by-effects category label
+  equipsClass?: string // Classes/Abilities armor-only: class unlocked/equipped by this armor
+  equipsClassUrl?: string
 }
 
 /**

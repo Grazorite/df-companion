@@ -10,6 +10,7 @@ import {
   getWeaponFamilyDisplayName,
   useWeaponRelatedItems,
 } from '../../hooks/useWeapons'
+import { useAwardedBadges } from '../../hooks/useBadgeRelations'
 import { displayTitle, normalizeDescriptionText, normalizeDisplayText } from '../../utils/displayText'
 import {
   buildDisplayImages,
@@ -34,6 +35,7 @@ import NotesList from '../shared/NotesList'
 import OtherInformationSection from '../shared/OtherInformationSection'
 import PopupText, { PopupQuoteBlocks } from '../shared/PopupText'
 import DetailTypePill from '../shared/DetailTypePill'
+import DetailPageLayout from '../shared/DetailPageLayout'
 import { buildFilterLink } from '../../utils/filterLinks'
 import { extractRateFromEffect } from '../../utils/effectFormatting'
 import { splitPopupText } from '../../utils/popupText'
@@ -44,6 +46,7 @@ import ItemImage from '../shared/ItemImage'
 import MetricStrip from '../shared/MetricStrip'
 import ExpandableImageList from '../shared/ExpandableImageList'
 import WeaponCard from './WeaponCard'
+import BadgeCard from '../badges/BadgeCard'
 import WeaponStatsTable from './WeaponStatsTable'
 
 interface WeaponDetailProps {
@@ -570,9 +573,20 @@ export default function WeaponDetail({ weapon, filterBase, backUrl }: WeaponDeta
   const resolvedRelatedWeapons = relatedWeapons.flatMap((related) =>
     related.entry ? [{ ref: related.ref, entry: related.entry }] : []
   )
+  const badgeRelationTexts = useMemo(
+    () => [
+      singleWeapon?.notes,
+      singleWeapon?.description,
+      family?.shared.notes,
+      family?.shared.description,
+      ...(family?.levelVariants.flatMap((level) => [level.notes, level.description]) ?? []),
+    ],
+    [family, singleWeapon]
+  )
+  const awardedBadges = useAwardedBadges(badgeRelationTexts)
 
   return (
-    <main className="px-4 sm:px-6 py-6 max-w-3xl mx-auto">
+    <DetailPageLayout>
       <Link
         to={backUrl}
         className="flex items-center gap-1.5 text-text-secondary hover:text-text-primary text-sm mb-6 transition-colors duration-150 min-h-[44px] -ml-1 px-1"
@@ -709,7 +723,7 @@ export default function WeaponDetail({ weapon, filterBase, backUrl }: WeaponDeta
         <SourceLinksCard links={sourceLinks} />
       </section>
 
-      {resolvedRelatedWeapons.length > 0 && (
+      {(resolvedRelatedWeapons.length > 0 || awardedBadges.length > 0) && (
         <section aria-labelledby="related-heading" className="border-t border-border-default pt-6">
           <h2
             id="related-heading"
@@ -731,9 +745,14 @@ export default function WeaponDetail({ weapon, filterBase, backUrl }: WeaponDeta
                 />
               </li>
             ))}
+            {awardedBadges.map((badge) => (
+              <li key={`badge-${badge.slug}`}>
+                <BadgeCard badge={badge} toUrl={`/badges/${badge.slug}`} badgeLabel="Badge" />
+              </li>
+            ))}
           </ul>
         </section>
       )}
-    </main>
+    </DetailPageLayout>
   )
 }

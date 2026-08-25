@@ -1,5 +1,6 @@
 import { useLocation, useSearchParams, useParams } from 'react-router-dom'
 import HousingDetail from '../components/housing/HousingDetail'
+import DetailPageLayout from '../components/shared/DetailPageLayout'
 import { useHousingBySlug } from '../hooks/useHousing'
 import { HOUSING_SUBTYPES, type HousingSubtype } from '../types/housing'
 import { backUrlFromSearch } from '../utils/navigationContext'
@@ -21,16 +22,16 @@ export default function HousingDetailPage() {
   )
 
   if (loading) {
-    return <main className="px-4 sm:px-6 py-6 max-w-5xl mx-auto text-text-secondary">Loading...</main>
+    return <DetailPageLayout className="text-text-secondary">Loading...</DetailPageLayout>
   }
 
   if (!item) {
     return (
-      <main className="px-4 sm:px-6 py-6 max-w-5xl mx-auto">
+      <DetailPageLayout>
         <div className="bg-bg-surface border border-border-default rounded-lg p-6 text-text-secondary">
           Housing entry not found.
         </div>
-      </main>
+      </DetailPageLayout>
     )
   }
 

@@ -1,0 +1,236 @@
+[
+  {
+    "badgeName": "Adept",
+    "badgeSlug": "adept",
+    "itemName": "Kathool Adept Armor",
+    "itemSlug": "class-ability-kathool-adept-armor",
+    "itemType": "class-ability",
+    "categoryLabel": "Armor",
+    "route": "/classes/class-ability-kathool-adept-armor?type=class"
+  },
+  {
+    "badgeName": "Ascended ChickenCow",
+    "badgeSlug": "ascended-chickencow",
+    "itemName": "Ascended ChickenCow Armor",
+    "itemSlug": "class-ability-ascended-chickencow-armor",
+    "itemType": "class-ability",
+    "categoryLabel": "Armor",
+    "route": "/classes/class-ability-ascended-chickencow-armor?type=class"
+  },
+  {
+    "badgeName": "Asynchronized",
+    "badgeSlug": "asynchronized",
+    "itemName": "Helm of Aegis",
+    "itemSlug": "accessory-helm-of-aegis",
+    "itemType": "accessory",
+    "categoryLabel": "Helm",
+    "route": "/accessories/accessory-helm-of-aegis?type=helm"
+  },
+  {
+    "badgeName": "Chaos Slayer",
+    "badgeSlug": "chaos-slayer",
+    "itemName": "Parallel Chaos Amulet",
+    "itemSlug": "accessory-parallel-chaos-amulet",
+    "itemType": "accessory",
+    "categoryLabel": "Necklace",
+    "route": "/accessories/accessory-parallel-chaos-amulet?type=necklace"
+  },
+  {
+    "badgeName": "ChaosWeaver",
+    "badgeSlug": "chaosweaver",
+    "itemName": "Chaosweaver Armor",
+    "itemSlug": "class-ability-chaosweaver-armor",
+    "itemType": "class-ability",
+    "categoryLabel": "Armor",
+    "route": "/classes/class-ability-chaosweaver-armor?type=class"
+  },
+  {
+    "badgeName": "DoomKnight",
+    "badgeSlug": "doomknight",
+    "itemName": "DoomKnight (Armor, Variant One)",
+    "itemSlug": "class-ability-doomknight-armor-variant-one",
+    "itemType": "class-ability",
+    "categoryLabel": "Armor",
+    "route": "/classes/class-ability-doomknight-armor-variant-one?type=class"
+  },
+  {
+    "badgeName": "enTropy",
+    "badgeSlug": "entropy",
+    "itemName": "enTropy",
+    "itemSlug": "class-ability-entropy",
+    "itemType": "class-ability",
+    "categoryLabel": "Armor",
+    "route": "/classes/class-ability-entropy?type=class"
+  },
+  {
+    "badgeName": "Evolved ChickenCow",
+    "badgeSlug": "evolved-chickencow",
+    "itemName": "Ascended ChickenCow Armor",
+    "itemSlug": "class-ability-ascended-chickencow-armor",
+    "itemType": "class-ability",
+    "categoryLabel": "Armor",
+    "route": "/classes/class-ability-ascended-chickencow-armor?type=class"
+  },
+  {
+    "badgeName": "Evolved ChickenCow",
+    "badgeSlug": "evolved-chickencow",
+    "itemName": "Evolved ChickenCow Armor",
+    "itemSlug": "class-ability-evolved-chickencow-armor",
+    "itemType": "class-ability",
+    "categoryLabel": "Armor",
+    "route": "/classes/class-ability-evolved-chickencow-armor?type=class"
+  },
+  {
+    "badgeName": "GPS",
+    "badgeSlug": "gps",
+    "itemName": "Gnomish Personal Steamtank (Vr 1.0, Mk II)",
+    "itemSlug": "class-ability-gnomish-personal-steamtank-vr-1-0-mk-ii",
+    "itemType": "class-ability",
+    "categoryLabel": "Armor",
+    "route": "/classes/class-ability-gnomish-personal-steamtank-vr-1-0-mk-ii?type=class"
+  },
+  {
+    "badgeName": "Icebound Revenant",
+    "badgeSlug": "icebound-revenant",
+    "itemName": "Icebound Revenant",
+    "itemSlug": "class-ability-icebound-revenant",
+    "itemType": "class-ability",
+    "categoryLabel": "Armor",
+    "route": "/classes/class-ability-icebound-revenant?type=class"
+  },
+  {
+    "badgeName": "Pyromancer",
+    "badgeSlug": "pyromancer",
+    "itemName": "Pyromancer",
+    "itemSlug": "class-ability-pyromancer",
+    "itemType": "class-ability",
+    "categoryLabel": "Armor",
+    "route": "/classes/class-ability-pyromancer?type=class"
+  },
+  {
+    "badgeName": "Time Walker",
+    "badgeSlug": "time-walker",
+    "itemName": "Archivist",
+    "itemSlug": "class-ability-archivist",
+    "itemType": "class-ability",
+    "categoryLabel": "Armor",
+    "route": "/classes/class-ability-archivist?type=class"
+  },
+  {
+    "badgeName": "Time Walker",
+    "badgeSlug": "time-walker",
+    "itemName": "Avatar of Time",
+    "itemSlug": "class-ability-avatar-of-time",
+    "itemType": "class-ability",
+    "categoryLabel": "Armor",
+    "route": "/classes/class-ability-avatar-of-time?type=class"
+  },
+  {
+    "badgeName": "Time Walker",
+    "badgeSlug": "time-walker",
+    "itemName": "Chronocorruptor",
+    "itemSlug": "class-ability-chronocorruptor",
+    "itemType": "class-ability",
+    "categoryLabel": "Armor",
+    "route": "/classes/class-ability-chronocorruptor?type=class"
+  },
+  {
+    "badgeName": "Time Walker",
+    "badgeSlug": "time-walker",
+    "itemName": "Chronomancer Armor",
+    "itemSlug": "class-ability-chronomancer-armor",
+    "itemType": "class-ability",
+    "categoryLabel": "Armor",
+    "route": "/classes/class-ability-chronomancer-armor?type=class"
+  },
+  {
+    "badgeName": "Time Walker",
+    "badgeSlug": "time-walker",
+    "itemName": "ChronoZ",
+    "itemSlug": "class-ability-chronoz",
+    "itemType": "class-ability",
+    "categoryLabel": "Armor",
+    "route": "/classes/class-ability-chronoz?type=class"
+  },
+  {
+    "badgeName": "Time Walker",
+    "badgeSlug": "time-walker",
+    "itemName": "Epoch",
+    "itemSlug": "class-ability-epoch",
+    "itemType": "class-ability",
+    "categoryLabel": "Armor",
+    "route": "/classes/class-ability-epoch?type=class"
+  },
+  {
+    "badgeName": "Time Walker",
+    "badgeSlug": "time-walker",
+    "itemName": "ShadowWalker of Time",
+    "itemSlug": "class-ability-shadowwalker-of-time",
+    "itemType": "class-ability",
+    "categoryLabel": "Armor",
+    "route": "/classes/class-ability-shadowwalker-of-time?type=class"
+  },
+  {
+    "badgeName": "Time Walker",
+    "badgeSlug": "time-walker",
+    "itemName": "TimeKiller",
+    "itemSlug": "class-ability-timekiller",
+    "itemType": "class-ability",
+    "categoryLabel": "Armor",
+    "route": "/classes/class-ability-timekiller?type=class"
+  },
+  {
+    "badgeName": "Ultimate Destiny",
+    "badgeSlug": "ultimate-destiny",
+    "itemName": "Twin Blades of Destiny",
+    "itemSlug": "weapon-twin-blades-of-destiny",
+    "itemType": "weapon",
+    "categoryLabel": "Dagger",
+    "route": "/weapons/weapon-twin-blades-of-destiny?type=dagger"
+  },
+  {
+    "badgeName": "Ultimate Destiny",
+    "badgeSlug": "ultimate-destiny",
+    "itemName": "Dragonstaff of Destiny",
+    "itemSlug": "weapon-dragonstaff-of-destiny",
+    "itemType": "weapon",
+    "categoryLabel": "Staff / Wand",
+    "route": "/weapons/weapon-dragonstaff-of-destiny?type=staff-wand"
+  },
+  {
+    "badgeName": "Ultimate Destiny",
+    "badgeSlug": "ultimate-destiny",
+    "itemName": "Blinding Light of Destiny",
+    "itemSlug": "weapon-blinding-light-of-destiny",
+    "itemType": "weapon",
+    "categoryLabel": "Sword / Axe / Mace",
+    "route": "/weapons/weapon-blinding-light-of-destiny?type=sword-axe-mace"
+  },
+  {
+    "badgeName": "Unreal Doom",
+    "badgeSlug": "unreal-doom",
+    "itemName": "Twin Blades of Doom",
+    "itemSlug": "weapon-twin-blades-of-doom",
+    "itemType": "weapon",
+    "categoryLabel": "Dagger",
+    "route": "/weapons/weapon-twin-blades-of-doom?type=dagger"
+  },
+  {
+    "badgeName": "Unreal Doom",
+    "badgeSlug": "unreal-doom",
+    "itemName": "Skullstaff of Doom",
+    "itemSlug": "weapon-skullstaff-of-doom",
+    "itemType": "weapon",
+    "categoryLabel": "Staff / Wand",
+    "route": "/weapons/weapon-skullstaff-of-doom?type=staff-wand"
+  },
+  {
+    "badgeName": "Unreal Doom",
+    "badgeSlug": "unreal-doom",
+    "itemName": "Shadowreaper of Doom",
+    "itemSlug": "weapon-shadowreaper-of-doom",
+    "itemType": "weapon",
+    "categoryLabel": "Sword / Axe / Mace",
+    "route": "/weapons/weapon-shadowreaper-of-doom?type=sword-axe-mace"
+  }
+]

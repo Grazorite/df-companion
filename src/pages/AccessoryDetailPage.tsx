@@ -1,5 +1,6 @@
 import { useLocation, useParams, useSearchParams } from 'react-router-dom'
 import AccessoryDetail from '../components/accessories/AccessoryDetail'
+import DetailPageLayout from '../components/shared/DetailPageLayout'
 import { DetailPageSkeleton } from '../components/shared/LoadingSkeleton'
 import { useAccessoryBySlug } from '../hooks/useAccessories'
 import { ACCESSORY_SUBTYPES, type AccessorySubtype } from '../types/accessory'
@@ -23,11 +24,11 @@ export default function AccessoryDetailPage() {
 
   if (!accessory) {
     return (
-      <main className="px-4 sm:px-6 py-8 max-w-3xl mx-auto">
+      <DetailPageLayout>
         <div className="bg-bg-surface border border-border-default rounded-lg p-6 text-text-secondary">
           Accessory entry not found in the current dataset.
         </div>
-      </main>
+      </DetailPageLayout>
     )
   }
 

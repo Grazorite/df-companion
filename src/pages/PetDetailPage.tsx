@@ -6,6 +6,8 @@ import type { Pet } from '../types/pet'
 import type { ItemFamily } from '../types/item'
 import PetDetail from '../components/pets/PetDetail'
 import { DetailPageSkeleton } from '../components/shared/LoadingSkeleton'
+import DetailPageLayout from '../components/shared/DetailPageLayout'
+import { DETAIL_PAGE_TOP_CONTAINER_CLASS } from '../utils/detailPageLayout'
 import { backUrlFromSearch } from '../utils/navigationContext'
 
 function isItemFamily(item: Pet | ItemFamily): item is ItemFamily {
@@ -28,7 +30,7 @@ export default function PetDetailPage() {
 
   if (!result) {
     return (
-      <main className="px-4 py-8 max-w-3xl mx-auto text-center">
+      <DetailPageLayout className="text-center">
         <p className="text-text-secondary text-lg mb-4">Pet not found.</p>
         <Link
           to={backUrl}
@@ -36,7 +38,7 @@ export default function PetDetailPage() {
         >
           ← Back to Pets & Guests
         </Link>
-      </main>
+      </DetailPageLayout>
     )
   }
 
@@ -47,7 +49,7 @@ export default function PetDetailPage() {
 
   return (
     <>
-      <div className="px-4 sm:px-6 pt-6 max-w-3xl mx-auto">
+      <div className={DETAIL_PAGE_TOP_CONTAINER_CLASS}>
         <Link
           to={backUrl}
           className="flex items-center gap-1.5 text-text-secondary hover:text-text-primary text-sm mb-6 transition-colors duration-150 min-h-[44px] -ml-1 px-1"

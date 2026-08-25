@@ -1,5 +1,6 @@
 import { useLocation, useParams, useSearchParams } from 'react-router-dom'
 import WeaponDetail from '../components/weapons/WeaponDetail'
+import DetailPageLayout from '../components/shared/DetailPageLayout'
 import { DetailPageSkeleton } from '../components/shared/LoadingSkeleton'
 import { useWeaponBySlug } from '../hooks/useWeapons'
 import { WEAPON_SUBTYPES, type WeaponSubtype } from '../types/weapon'
@@ -21,11 +22,11 @@ export default function WeaponDetailPage() {
 
   if (!weapon) {
     return (
-      <main className="px-4 sm:px-6 py-8 max-w-3xl mx-auto">
+      <DetailPageLayout>
         <div className="bg-bg-surface border border-border-default rounded-lg p-6 text-text-secondary">
           Weapon entry not found in the current dataset.
         </div>
-      </main>
+      </DetailPageLayout>
     )
   }
 

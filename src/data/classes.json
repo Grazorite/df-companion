@@ -1,1 +1,2343 @@
-[]
+[
+  {
+    "id": "class-ability-ancient-exosuit",
+    "name": "Ancient Exosuit",
+    "slug": "class-ability-ancient-exosuit",
+    "type": "class-ability",
+    "subtype": "class",
+    "classSubcategory": "armor",
+    "description": "This suit was reconfigured by The Reset from a greatly modified Shadowscythe mecha! (Size scaled battles will cause animations to look weird) Best for Players level 40+",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22389720",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389720",
+    "location": "DC Armors",
+    "price": "1,800 Dragon Coins",
+    "sellback": "1,620 DC (<24 hours) / 450 DC (>24 hours)",
+    "equipsClass": "Ancient Exosuit",
+    "equipsClassUrl": "https://forums2.battleon.com/f/fb.asp?m=22014910",
+    "obtainMethods": [
+      {
+        "location": "DC Armors",
+        "price": "1,800 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": false,
+        "dcRequired": true,
+        "sellback": "1,620 DC (<24 hours) / 450 DC (>24 hours)",
+        "dmRequired": false
+      }
+    ],
+    "level": "20",
+    "rarity": "1",
+    "notes": "• Armor was initially available to purchase from  Cysero's Shop until  April 29th, 2022, when it was moved to the  DC Armors shop.\n\n• Armor cannot be destroyed; this was implemented on  August 11th, 2023.",
+    "alsoSee": [],
+    "tags": [
+      "dc"
+    ],
+    "daRequired": false,
+    "dcRequired": true,
+    "dmRequired": false,
+    "hasFree": false,
+    "hasMerge": false,
+    "isTemp": false,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "class-ability-angler",
+    "name": "Angler",
+    "slug": "class-ability-angler",
+    "type": "class-ability",
+    "subtype": "class",
+    "classSubcategory": "armor",
+    "description": "It's a Fisherperson's outfit. Selling or Deleting this item will reset your Fishing rank.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22389725",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389725",
+    "location": "Fishing (Shop)",
+    "price": "1,000 Gold",
+    "sellback": "100 Gold",
+    "equipsClass": "Angler",
+    "equipsClassUrl": "https://forums2.battleon.com/f/fb.asp?m=19577971",
+    "obtainMethods": [
+      {
+        "location": "Fishing (Shop)",
+        "price": "1,000 Gold",
+        "priceType": "gold",
+        "daRequired": false,
+        "sellback": "100 Gold",
+        "dcRequired": false,
+        "dmRequired": false
+      }
+    ],
+    "level": "1",
+    "rarity": "1",
+    "notes": "• Banking, destroying, or selling this armor will reset your Fishing rank.",
+    "alsoSee": [],
+    "tags": [],
+    "daRequired": false,
+    "dcRequired": false,
+    "dmRequired": false,
+    "hasFree": false,
+    "hasMerge": false,
+    "isTemp": false,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "class-ability-archivist",
+    "familyName": "Archivist",
+    "slug": "class-ability-archivist",
+    "aliasSlugs": [
+      "class-ability-archivist",
+      "class-ability-reforged-archivist"
+    ],
+    "type": "class-ability",
+    "subtype": "class",
+    "classSubcategory": "armor",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22389726",
+    "familyOrigin": "cross-post",
+    "familySources": [
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22389726",
+        "title": "Archivist"
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22403078",
+        "title": "Reforged Archivist"
+      }
+    ],
+    "shared": {
+      "description": "Wield the legendary Book of Lore to unleash the legends of the world of DragonFable on your foes! You received this armor for purchasing the 2016 Artix Entertainment calendar!",
+      "rarity": "0",
+      "alsoSee": []
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
+        "levelDisplay": "0",
+        "actualLevel": 0,
+        "variantName": "(Base)",
+        "name": "Archivist",
+        "damage": "—",
+        "stats": "—",
+        "obtainVariants": [
+          {
+            "location": "Redeem the code received from purchasing the 2016 AE Calendar from HeroMart",
+            "price": "$16.95 USD (Standard) / $24.95 USD (Collector's Edition) + Postage",
+            "priceType": "gold",
+            "daRequired": false,
+            "dcRequired": true,
+            "dmRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389726",
+        "description": "Wield the legendary Book of Lore to unleash the legends of the world of DragonFable on your foes! You received this armor for purchasing the 2016 Artix Entertainment calendar!",
+        "rarity": "0",
+        "equipsClass": "Archivist",
+        "equipsClassUrl": "https://forums2.battleon.com/f/fb.asp?m=22116555",
+        "notes": "• Transformed from  Torn Archive Page on  January 29th, 2016.\n\n• Previously had the description: Wield the legendary Book of Lore to unleash the legends of the world of DragonFable on your foes! Note: This armor will gain more skills through the year. You received this armor for purchasing the 2016 Artix Entertainment calendar!\n\n• Armor cannot be destroyed.\n\n• Own this armor to obtain the  Time Walker badge.\n\n• Owners of this armor received  Reforged Archivist (D-Coins/S-Offer) for free when logging in during or after  May 27th, 2022.",
+        "classAbilitySubtype": "armor",
+        "retired": false
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "0",
+        "actualLevel": 0,
+        "variantName": "Reforged",
+        "name": "Reforged Archivist",
+        "damage": "—",
+        "stats": "—",
+        "obtainVariants": [
+          {
+            "location": "Time Classes",
+            "price": "4,000 Dragon Coins",
+            "priceType": "dc",
+            "daRequired": false,
+            "dcRequired": true,
+            "sellback": "3,600 DC (<24 hours) / 1,000 DC (>24 hours)",
+            "dmRequired": false
+          },
+          {
+            "location": "HeroMart Classes",
+            "price": "N/A",
+            "priceType": "merge",
+            "daRequired": false,
+            "sellback": "0 Dragon Coins",
+            "requiredItems": "4 HeroPoint",
+            "dcRequired": true,
+            "dmRequired": false
+          },
+          {
+            "location": "Given to owners of Archivist (Armor) on log in during on or after May 27th, 2022",
+            "price": "N/A",
+            "priceType": "free",
+            "daRequired": false,
+            "sellback": "0 Dragon Coins",
+            "dcRequired": true,
+            "dmRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22403078",
+        "description": "Reforged and ready for adventure! Wield the legendary Book of Lore to unleash the legends of the world of DragonFable on your foes!",
+        "rarity": "0",
+        "equipsClass": "Archivist",
+        "equipsClassUrl": "https://forums2.battleon.com/f/fb.asp?m=22116555",
+        "classAbilitySubtype": "armor",
+        "retired": false
+      }
+    ],
+    "tags": [
+      "dc",
+      "rare",
+      "specialoffer"
+    ],
+    "hasDA": false,
+    "hasDC": true,
+    "hasDM": false,
+    "hasFree": true,
+    "hasMerge": true,
+    "levelRange": "1",
+    "elements": [],
+    "isTemp": false,
+    "isRare": true,
+    "isSeasonal": false,
+    "isSpecialOffer": true,
+    "retired": false
+  },
+  {
+    "id": "class-ability-ascended-chickencow-armor",
+    "familyName": "Ascended ChickenCow Armor",
+    "slug": "class-ability-ascended-chickencow-armor",
+    "type": "class-ability",
+    "subtype": "class",
+    "classSubcategory": "armor",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22389727",
+    "familyOrigin": "single-thread",
+    "familySources": [
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22389727",
+        "title": "Ascended ChickenCow Armor"
+      }
+    ],
+    "shared": {
+      "description": "The next generation of Chickencow Lords... Ascends! This is best used if you are over level 40! This item requires a Dragon Amulet.",
+      "rarity": "900",
+      "notes": "• Own this armor to obtain the  Evolved ChickenCow and  Ascended ChickenCow badges.",
+      "alsoSee": [
+        {
+          "name": "ChickenCow Armor",
+          "slug": "class-ability-chickencow-armor",
+          "type": "class-ability",
+          "url": "https://forums2.battleon.com/f/tm.asp?m=22389731"
+        },
+        {
+          "name": "Evolved ChickenCow Armor",
+          "slug": "class-ability-evolved-chickencow-armor",
+          "type": "class-ability",
+          "url": "https://forums2.battleon.com/f/tm.asp?m=22389741"
+        }
+      ]
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
+        "levelDisplay": "20",
+        "actualLevel": 20,
+        "variantName": "(DA)",
+        "name": "Ascended ChickenCow Armor",
+        "damage": "—",
+        "stats": "—",
+        "obtainVariants": [
+          {
+            "location": "Ascendant CC",
+            "price": "50,000 Gold",
+            "priceType": "gold",
+            "daRequired": true,
+            "sellback": "5,000 Gold",
+            "dmRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389727",
+        "description": "The next generation of Chickencow Lords... Ascends! This is best used if you are over level 40! This item requires a Dragon Amulet.",
+        "rarity": "900",
+        "equipsClass": "Ascended Chickencow",
+        "equipsClassUrl": "https://forums2.battleon.com/f/fb.asp?m=21955648",
+        "classAbilitySubtype": "armor",
+        "retired": false
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "20",
+        "actualLevel": 20,
+        "variantName": "(DC)",
+        "name": "Ascended ChickenCow Armor",
+        "damage": "—",
+        "stats": "—",
+        "obtainVariants": [
+          {
+            "location": "Ascendant CC DC",
+            "price": "1,800 Dragon Coins",
+            "priceType": "dc",
+            "daRequired": false,
+            "dcRequired": true,
+            "sellback": "1,620 DC (<24 hours) / 450 DC (>24 hours)",
+            "dmRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389727",
+        "description": "The next generation of Chickencow Lords... Ascends! This is best used if you are over level 40! This item requires a Dragon Amulet.",
+        "rarity": "900",
+        "equipsClass": "Ascended Chickencow",
+        "equipsClassUrl": "https://forums2.battleon.com/f/fb.asp?m=21955648",
+        "classAbilitySubtype": "armor",
+        "retired": false
+      }
+    ],
+    "tags": [
+      "da",
+      "dc"
+    ],
+    "hasDA": true,
+    "hasDC": true,
+    "hasDM": false,
+    "hasFree": false,
+    "hasMerge": false,
+    "levelRange": "20",
+    "elements": [],
+    "isTemp": false,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "class-ability-aspenvale-academy-uniform",
+    "name": "Aspenvale Academy Uniform",
+    "slug": "class-ability-aspenvale-academy-uniform",
+    "type": "class-ability",
+    "subtype": "class",
+    "classSubcategory": "armor",
+    "description": "After a half-coherent explanation of your dream, Spruce made this uniform for you based off of your description! Equips the Student class, which has some customization options and basic skills.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22389728",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389728",
+    "location": "Aspenvale Uniform, DC Armors",
+    "price": "1,000 Dragon Coins",
+    "sellback": "900 DC (<24 hours) / 250 DC (>24 hours)",
+    "equipsClass": "Student",
+    "equipsClassUrl": "https://forums2.battleon.com/f/fb.asp?m=22389515",
+    "obtainMethods": [
+      {
+        "location": "Aspenvale Uniform, DC Armors",
+        "price": "1,000 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": false,
+        "dcRequired": true,
+        "sellback": "900 DC (<24 hours) / 250 DC (>24 hours)",
+        "dmRequired": false
+      }
+    ],
+    "level": "1",
+    "rarity": "0",
+    "notes": "• Armor cannot be destroyed.\n\n• Armor was initially available to purchase from  Cysero's Shop until  April 29th, 2022, when it was moved to the  DC Armors shop.",
+    "alsoSee": [],
+    "tags": [
+      "dc"
+    ],
+    "daRequired": false,
+    "dcRequired": true,
+    "dmRequired": false,
+    "hasFree": false,
+    "hasMerge": false,
+    "isTemp": false,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "class-ability-avatar-of-time",
+    "familyName": "Avatar of Time",
+    "slug": "class-ability-avatar-of-time",
+    "aliasSlugs": [
+      "class-ability-avatar-of-time",
+      "class-ability-reforged-avatar-of-time"
+    ],
+    "type": "class-ability",
+    "subtype": "class",
+    "classSubcategory": "armor",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22389729",
+    "familyOrigin": "cross-post",
+    "familySources": [
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22389729",
+        "title": "Avatar of Time"
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22398221",
+        "title": "Reforged Avatar of Time"
+      }
+    ],
+    "shared": {
+      "description": "You are now the master of time! You got this for purchasing the 2015 Artix Entertainment Year of Dragon calendar!",
+      "rarity": "9001",
+      "alsoSee": []
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
+        "levelDisplay": "1",
+        "actualLevel": 1,
+        "variantName": "(Base)",
+        "name": "Avatar of Time",
+        "damage": "—",
+        "stats": "—",
+        "obtainVariants": [
+          {
+            "location": "Redeem the code received from purchasing the 2015 AE Calendar from HeroMart",
+            "price": "$14.99 USD (Unsigned) / $24.99 USD (Signed) + Postage",
+            "priceType": "gold",
+            "daRequired": false,
+            "dcRequired": true,
+            "dmRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389729",
+        "description": "You are now the master of time! You got this for purchasing the 2015 Artix Entertainment Year of Dragon calendar!",
+        "rarity": "9001",
+        "equipsClass": "Avatar of Time",
+        "equipsClassUrl": "https://forums2.battleon.com/f/fb.asp?m=21976842",
+        "notes": "• Transformed from  Clockwork Egg on  May 29th, 2015.\n\n• Armor cannot be destroyed.\n\n• Own this armor to obtain the  Time Walker badge.\n\n• Owners of this armor received  Reforged Avatar of Time (D-Coins/S-Offer) for free when logging in during or after  November 26th, 2021.",
+        "classAbilitySubtype": "armor",
+        "retired": false
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "1",
+        "actualLevel": 1,
+        "variantName": "Reforged",
+        "name": "Reforged Avatar of Time",
+        "damage": "—",
+        "stats": "—",
+        "obtainVariants": [
+          {
+            "location": "Time Classes",
+            "price": "4,000 Dragon Coins",
+            "priceType": "dc",
+            "daRequired": false,
+            "dcRequired": true,
+            "dmRequired": false
+          },
+          {
+            "location": "HeroMart Classes",
+            "price": "N/A",
+            "priceType": "merge",
+            "daRequired": false,
+            "requiredItems": "4 HeroPoint",
+            "dcRequired": true,
+            "dmRequired": false
+          },
+          {
+            "location": "Given to owners of Avatar of Time (Armor) on log in during or after November 26th, 2021",
+            "price": "N/A",
+            "priceType": "free",
+            "daRequired": false,
+            "dcRequired": true,
+            "dmRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22398221",
+        "description": "You are now the master of time! Although reforged by unknown means, this version of the Avatar of Time is just as effective as when it was first made.",
+        "rarity": "9001",
+        "equipsClass": "Avatar of Time",
+        "equipsClassUrl": "https://forums2.battleon.com/f/fb.asp?m=21976842",
+        "notes": "• Armor cannot be destroyed.",
+        "classAbilitySubtype": "armor",
+        "retired": false
+      }
+    ],
+    "tags": [
+      "dc",
+      "rare",
+      "specialoffer"
+    ],
+    "hasDA": false,
+    "hasDC": true,
+    "hasDM": false,
+    "hasFree": true,
+    "hasMerge": true,
+    "levelRange": "1",
+    "elements": [],
+    "isTemp": false,
+    "isRare": true,
+    "isSeasonal": false,
+    "isSpecialOffer": true,
+    "retired": false
+  },
+  {
+    "id": "class-ability-chaosweaver-armor",
+    "name": "Chaosweaver Armor",
+    "slug": "class-ability-chaosweaver-armor",
+    "type": "class-ability",
+    "subtype": "class",
+    "classSubcategory": "armor",
+    "description": "The armor given to you by Secundus to channel your Soulweaving potential in a more... ambitious manner.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22389730",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389730",
+    "location": "Chaosweaver (Shop)",
+    "price": "1,800 Dragon Coins",
+    "sellback": "1,620 DC (<24 hours) / 450 DC (>24 hours)",
+    "equipsClass": "Chaosweaver",
+    "equipsClassUrl": "https://forums2.battleon.com/f/fb.asp?m=22369050",
+    "obtainMethods": [
+      {
+        "location": "Chaosweaver (Shop)",
+        "price": "1,800 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": false,
+        "dcRequired": true,
+        "sellback": "1,620 DC (<24 hours) / 450 DC (>24 hours)",
+        "dmRequired": false
+      }
+    ],
+    "level": "1",
+    "rarity": "0",
+    "notes": "• Armor cannot be destroyed.\n\n• Own this armor to obtain the  ChaosWeaver badge.",
+    "alsoSee": [],
+    "tags": [
+      "dc"
+    ],
+    "daRequired": false,
+    "dcRequired": true,
+    "dmRequired": false,
+    "hasFree": false,
+    "hasMerge": false,
+    "isTemp": false,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "class-ability-chickencow-armor",
+    "familyName": "ChickenCow Armor",
+    "slug": "class-ability-chickencow-armor",
+    "type": "class-ability",
+    "subtype": "class",
+    "classSubcategory": "armor",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22389731",
+    "familyOrigin": "single-thread",
+    "familySources": [
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22389731",
+        "title": "ChickenCow Armor"
+      }
+    ],
+    "shared": {
+      "description": "Amazing power of cow combined with super chicken!!",
+      "rarity": "1",
+      "notes": "• Armor has a low drop rate from select quests.\n\n• Normal version of this armor was previously available in the retired quests  Spirits in the Inn,  Sir Koffagus Sarcophagus,  100 Rooms of Fiery Doom!, and  Crystal Clear Lake.\n\n• Combine either version of this armor with  Chickencow Teeth to form  Evolved ChickenCow Armor.\n\n• Giving either version of this armor and  Evolved ChickenCow Armor to  Arester will unlock  Ascendant CC shop after completion of  The Challenge of Moocluckles.\n\n• Dragon Coin version of this armor was initially available to purchase from  Cysero's Shop until  April 29th, 2022, when it was moved to the  DC Armors shop.",
+      "alsoSee": [
+        {
+          "name": "Evolved ChickenCow Armor",
+          "slug": "class-ability-evolved-chickencow-armor",
+          "type": "class-ability",
+          "url": "https://forums2.battleon.com/f/tm.asp?m=22389741"
+        },
+        {
+          "name": "Ascended ChickenCow Armor",
+          "slug": "class-ability-ascended-chickencow-armor",
+          "type": "class-ability",
+          "url": "https://forums2.battleon.com/f/tm.asp?m=22389727"
+        }
+      ]
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
+        "levelDisplay": "1",
+        "actualLevel": 1,
+        "variantName": "1",
+        "name": "ChickenCow Armor",
+        "damage": "—",
+        "stats": "—",
+        "obtainVariants": [
+          {
+            "location": "Save the Mill!, Floating Cave (Books 1 and 2), Race To the KeyGems (All Versions), Spirits in the Inn, Sir Koffagus Sarcophagus, 100 Rooms of Fiery Doom!, Crystal Clear Lake, Yaga Stone Circle, Bringing Home the Bacon, It's A Wash, Don't have a Kow, Triple Threat?, The Secret Revealed",
+            "price": "N/A",
+            "priceType": "free",
+            "daRequired": false,
+            "sellback": "5 Gold",
+            "dmRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389731",
+        "description": "Amazing power of cow combined with super chicken!!",
+        "rarity": "1",
+        "equipsClass": "ChickencowLord",
+        "equipsClassUrl": "https://forums2.battleon.com/f/fb.asp?m=19441863",
+        "classAbilitySubtype": "armor",
+        "retired": false
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "1",
+        "actualLevel": 1,
+        "variantName": "1 (DC)",
+        "name": "ChickenCow Armor",
+        "damage": "—",
+        "stats": "—",
+        "obtainVariants": [
+          {
+            "location": "DC Armors",
+            "price": "45 Dragon Coins",
+            "priceType": "dc",
+            "daRequired": false,
+            "dcRequired": true,
+            "sellback": "41 DC (<24 hours) / 12 DC (>24 hours)",
+            "dmRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389731",
+        "description": "Amazing power of cow combined with super chicken!!",
+        "rarity": "1",
+        "equipsClass": "ChickencowLord",
+        "equipsClassUrl": "https://forums2.battleon.com/f/fb.asp?m=19441863",
+        "classAbilitySubtype": "armor",
+        "retired": false
+      }
+    ],
+    "tags": [
+      "dc"
+    ],
+    "hasDA": false,
+    "hasDC": true,
+    "hasDM": false,
+    "hasFree": true,
+    "hasMerge": false,
+    "levelRange": "1",
+    "elements": [],
+    "isTemp": false,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "class-ability-chronocorruptor",
+    "familyName": "Chronocorruptor",
+    "slug": "class-ability-chronocorruptor",
+    "aliasSlugs": [
+      "class-ability-chronocorruptor",
+      "class-ability-reforged-chronocorruptor"
+    ],
+    "type": "class-ability",
+    "subtype": "class",
+    "classSubcategory": "armor",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22389732",
+    "familyOrigin": "cross-post",
+    "familySources": [
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22389732",
+        "title": "Chronocorruptor"
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22394261",
+        "title": "Reforged Chronocorruptor"
+      }
+    ],
+    "shared": {
+      "description": "You got this for purchasing the 2012 Artix Entertainment Year of Chaos calendar!",
+      "rarity": "99",
+      "alsoSee": []
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
+        "levelDisplay": "1",
+        "actualLevel": 1,
+        "variantName": "(Base)",
+        "name": "Chronocorruptor",
+        "damage": "—",
+        "stats": "—",
+        "obtainVariants": [
+          {
+            "location": "Redeem the code received from purchasing the 2012 AE Calendar from HeroMart",
+            "price": "$12.00 USD + Postage",
+            "priceType": "gold",
+            "daRequired": false,
+            "dcRequired": true,
+            "dmRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389732",
+        "description": "You got this for purchasing the 2012 Artix Entertainment Year of Chaos calendar!",
+        "rarity": "99",
+        "equipsClass": "Chronocorruptor",
+        "equipsClassUrl": "https://forums2.battleon.com/f/fb.asp?m=20072392",
+        "notes": "• Transformed from  Chaorrupted Clock on January 24th, 2012.\n\n• Armor cannot be destroyed.\n\n• Own this armor to obtain the  Time Walker badge.\n\n• Armor's name was changed from 'Chronocorrupter' to 'Chronocorruptor' on May 5th, 2018.\n\n• Owners of this armor received  Reforged Chronocorruptor (D-Coins/S-Offer) for free when logging in during or after  July 30th, 2021.",
+        "classAbilitySubtype": "armor",
+        "retired": false
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "1",
+        "actualLevel": 1,
+        "variantName": "Reforged",
+        "name": "Reforged Chronocorruptor",
+        "damage": "—",
+        "stats": "—",
+        "obtainVariants": [
+          {
+            "location": "Time Classes",
+            "price": "4,000 Dragon Coins",
+            "priceType": "dc",
+            "daRequired": false,
+            "dcRequired": true,
+            "dmRequired": false
+          },
+          {
+            "location": "HeroMart Classes",
+            "price": "N/A",
+            "priceType": "merge",
+            "daRequired": false,
+            "requiredItems": "4 HeroPoint",
+            "dcRequired": true,
+            "dmRequired": false
+          },
+          {
+            "location": "Given to owners of Chronocorruptor (Armor) on log in during or after July 30th, 2021",
+            "price": "N/A",
+            "priceType": "free",
+            "daRequired": false,
+            "dcRequired": true,
+            "dmRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22394261",
+        "description": "The twisted form of one who has messed with time one too many times... Although reforged by unknown means, this version of Chronocorruptor Armor is just as effective as when it was first... corrupted.",
+        "rarity": "99",
+        "equipsClass": "Chronocorruptor",
+        "equipsClassUrl": "https://forums2.battleon.com/f/fb.asp?m=20072392",
+        "notes": "• Armor cannot be destroyed.",
+        "classAbilitySubtype": "armor",
+        "retired": false
+      }
+    ],
+    "tags": [
+      "dc",
+      "rare",
+      "specialoffer"
+    ],
+    "hasDA": false,
+    "hasDC": true,
+    "hasDM": false,
+    "hasFree": true,
+    "hasMerge": true,
+    "levelRange": "1",
+    "elements": [],
+    "isTemp": false,
+    "isRare": true,
+    "isSeasonal": false,
+    "isSpecialOffer": true,
+    "retired": false
+  },
+  {
+    "id": "class-ability-chronomancer-armor",
+    "familyName": "Chronomancer Armor",
+    "slug": "class-ability-chronomancer-armor",
+    "aliasSlugs": [
+      "class-ability-chronomancer-armor",
+      "class-ability-reforged-chronomancer"
+    ],
+    "type": "class-ability",
+    "subtype": "class",
+    "classSubcategory": "armor",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22389733",
+    "familyOrigin": "cross-post",
+    "familySources": [
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22389733",
+        "title": "Chronomancer Armor"
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22394260",
+        "title": "Reforged Chronomancer"
+      }
+    ],
+    "shared": {
+      "description": "Time to manipulate, well, TIME! You received this armor for purchasing the 2011 Artix Entertainment Year of the Moglin calendar!",
+      "rarity": "99",
+      "alsoSee": []
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
+        "levelDisplay": "1",
+        "actualLevel": 1,
+        "variantName": "(Base)",
+        "name": "Chronomancer Armor",
+        "damage": "—",
+        "stats": "—",
+        "obtainVariants": [
+          {
+            "location": "Redeem the code received from purchasing the 2011 AE Calendar from HeroMart",
+            "price": "$11.95 USD + Postage",
+            "priceType": "gold",
+            "daRequired": false,
+            "dcRequired": true,
+            "dmRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389733",
+        "description": "Time to manipulate, well, TIME! You received this armor for purchasing the 2011 Artix Entertainment Year of the Moglin calendar!",
+        "rarity": "99",
+        "equipsClass": "Chronomancer",
+        "equipsClassUrl": "https://forums2.battleon.com/f/fb.asp?m=19740547",
+        "notes": "• Armor cannot be destroyed.\n\n• Own this armor to obtain the  Time Walker badge.\n\n• Owners of this armor would receive  Reforged Chronomancer (D-Coins/S-Offer) for free when logging in during or after  July 30th, 2021.",
+        "classAbilitySubtype": "armor",
+        "retired": false
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "1",
+        "actualLevel": 1,
+        "variantName": "Reforged",
+        "name": "Reforged Chronomancer",
+        "damage": "—",
+        "stats": "—",
+        "obtainVariants": [
+          {
+            "location": "Time Classes",
+            "price": "4,000 Dragon Coins",
+            "priceType": "dc",
+            "daRequired": false,
+            "dcRequired": true,
+            "dmRequired": false
+          },
+          {
+            "location": "HeroMart Classes",
+            "price": "N/A",
+            "priceType": "merge",
+            "daRequired": false,
+            "requiredItems": "4 HeroPoint",
+            "dcRequired": true,
+            "dmRequired": false
+          },
+          {
+            "location": "Given to owners of Chronomancer Armor on log in during or after July 30th, 2021",
+            "price": "N/A",
+            "priceType": "free",
+            "daRequired": false,
+            "dcRequired": true,
+            "dmRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22394260",
+        "description": "Time to manipulate, well, TIME! Although reforged by unknown means, this version of Chronomancer Armor is just as effective as when it was first made.",
+        "rarity": "99",
+        "equipsClass": "Chronomancer",
+        "equipsClassUrl": "https://forums2.battleon.com/f/fb.asp?m=19740547",
+        "notes": "• Armor cannot be destroyed.",
+        "classAbilitySubtype": "armor",
+        "retired": false
+      }
+    ],
+    "tags": [
+      "dc",
+      "rare",
+      "specialoffer"
+    ],
+    "hasDA": false,
+    "hasDC": true,
+    "hasDM": false,
+    "hasFree": true,
+    "hasMerge": true,
+    "levelRange": "1",
+    "elements": [],
+    "isTemp": false,
+    "isRare": true,
+    "isSeasonal": false,
+    "isSpecialOffer": true,
+    "retired": false
+  },
+  {
+    "id": "class-ability-chronoz",
+    "familyName": "ChronoZ",
+    "slug": "class-ability-chronoz",
+    "aliasSlugs": [
+      "class-ability-chronoz",
+      "class-ability-reforged-chronoz"
+    ],
+    "type": "class-ability",
+    "subtype": "class",
+    "classSubcategory": "armor",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22389734",
+    "familyOrigin": "cross-post",
+    "familySources": [
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22389734",
+        "title": "ChronoZ"
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22396298",
+        "title": "Reforged ChronoZ"
+      }
+    ],
+    "shared": {
+      "description": "Harness the power of time data with this 2014 Artix Entertainment Calendar armor!",
+      "rarity": "1",
+      "alsoSee": []
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
+        "levelDisplay": "1",
+        "actualLevel": 1,
+        "variantName": "(Base)",
+        "name": "ChronoZ",
+        "damage": "—",
+        "stats": "—",
+        "obtainVariants": [
+          {
+            "location": "Redeem the code received from purchasing the 2014 AE Calendar from HeroMart",
+            "price": "$12.00 USD (Unsigned) / $22.00 USD (Signed) + Postage",
+            "priceType": "gold",
+            "daRequired": false,
+            "dcRequired": true,
+            "dmRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389734",
+        "description": "Harness the power of time data with this 2014 Artix Entertainment Calendar armor!",
+        "rarity": "1",
+        "equipsClass": "ChronoZ",
+        "equipsClassUrl": "https://forums2.battleon.com/f/fb.asp?m=21732734",
+        "notes": "• Armor cannot be destroyed.\n\n• Own this armor to obtain the  Time Walker badge.\n\n• Owners of this armor received  Reforged ChronoZ (D-Coins/S-Offer) for free when logging in during or after  September 24th, 2021.",
+        "classAbilitySubtype": "armor",
+        "retired": false
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "1",
+        "actualLevel": 1,
+        "variantName": "Reforged",
+        "name": "Reforged ChronoZ",
+        "damage": "—",
+        "stats": "—",
+        "obtainVariants": [
+          {
+            "location": "Time Classes",
+            "price": "4,000 Dragon Coins",
+            "priceType": "dc",
+            "daRequired": false,
+            "dcRequired": true,
+            "dmRequired": false
+          },
+          {
+            "location": "HeroMart Classes",
+            "price": "N/A",
+            "priceType": "merge",
+            "daRequired": false,
+            "requiredItems": "4 HeroPoint",
+            "dcRequired": true,
+            "dmRequired": false
+          },
+          {
+            "location": "Given to owners of ChronoZ (Armor) on log in during or after September 24th, 2021",
+            "price": "N/A",
+            "priceType": "free",
+            "daRequired": false,
+            "dcRequired": true,
+            "dmRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22396298",
+        "description": "Harness the power of time data! Although reforged by unknown means, this version of ChronoZ is just as effective as when it was first made.",
+        "rarity": "99",
+        "equipsClass": "ChronoZ",
+        "equipsClassUrl": "https://forums2.battleon.com/f/fb.asp?m=21732734",
+        "notes": "• Armor cannot be destroyed.\n\n• Item was originally released a Resource; it became an equippable Armor on  October 1st, 2021.\n\n• Previously had the descriptions:\n\n\n  • Harness the power of time data! Although reforged by unknown means, this version of ChronoZ is just as effective as when it was first made. (Currently being forged!) (D-Coins)\n\n  • Harness the power of time data! Although reforged by unknown means, this version of ChronoZ is just as effective as when it was first made. (Still being forged) (D-Coins/S-Offer)",
+        "classAbilitySubtype": "armor",
+        "retired": false
+      }
+    ],
+    "tags": [
+      "dc",
+      "rare",
+      "specialoffer"
+    ],
+    "hasDA": false,
+    "hasDC": true,
+    "hasDM": false,
+    "hasFree": true,
+    "hasMerge": true,
+    "levelRange": "1",
+    "elements": [],
+    "isTemp": false,
+    "isRare": true,
+    "isSeasonal": false,
+    "isSpecialOffer": true,
+    "retired": false
+  },
+  {
+    "id": "class-ability-dimensional-transphaser",
+    "name": "Dimensional Transphaser",
+    "slug": "class-ability-dimensional-transphaser",
+    "type": "class-ability",
+    "subtype": "class",
+    "classSubcategory": "armor",
+    "description": "This peculiar looking stick will let you transfer yourself to the 1st dimension!",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22389735",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389735",
+    "location": "Dimensional Transphaser (Shop), DC Armors",
+    "price": "11 Dragon Coins",
+    "sellback": "10 DC (<24 hours) / 3 DC (>24 hours)",
+    "equipsClass": "|",
+    "equipsClassUrl": "https://forums2.battleon.com/f/fb.asp?m=22123522",
+    "obtainMethods": [
+      {
+        "location": "Dimensional Transphaser (Shop), DC Armors",
+        "price": "11 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": false,
+        "dcRequired": true,
+        "sellback": "10 DC (<24 hours) / 3 DC (>24 hours)",
+        "dmRequired": false
+      }
+    ],
+    "level": "1",
+    "rarity": "1",
+    "notes": "• Armor cannot be destroyed.\n\n• Armor was initially available to purchase from  Cysero's Shop until  April 29th, 2022, when it was moved to the  DC Armors shop.",
+    "alsoSee": [],
+    "tags": [
+      "dc"
+    ],
+    "daRequired": false,
+    "dcRequired": true,
+    "dmRequired": false,
+    "hasFree": false,
+    "hasMerge": false,
+    "isTemp": false,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "class-ability-doomknight-armor-variant-one",
+    "familyName": "DoomKnight (Armor, Variant One)",
+    "slug": "class-ability-doomknight-armor-variant-one",
+    "aliasSlugs": [
+      "class-ability-doomknight-armor",
+      "class-ability-doomknight-variant-one"
+    ],
+    "type": "class-ability",
+    "subtype": "class",
+    "classSubcategory": "armor",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22389736",
+    "familyOrigin": "cross-post",
+    "familySources": [
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22389736",
+        "title": "DoomKnight Armor"
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22389737",
+        "title": "DoomKnight Variant One"
+      }
+    ],
+    "shared": {
+      "description": "Can't you just FEEL the Doom? The armor will be more powerful, the higher your level.",
+      "rarity": "25",
+      "alsoSee": []
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
+        "levelDisplay": "1",
+        "actualLevel": 1,
+        "variantName": "Armor",
+        "name": "DoomKnight Armor",
+        "damage": "—",
+        "stats": "—",
+        "obtainVariants": [
+          {
+            "location": "Purchase a DoomKnight Package",
+            "price": "$65.00 USD as part of \"Master Doom Knight\" package / $79.80 USD as final part of staggered payment",
+            "priceType": "gold",
+            "daRequired": true,
+            "dcRequired": false,
+            "dmRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389736",
+        "description": "Can't you just FEEL the Doom? The armor will be more powerful, the higher your level.",
+        "rarity": "25",
+        "equipsClass": "DoomKnight",
+        "equipsClassUrl": "https://forums2.battleon.com/f/fb.asp?m=19723022",
+        "notes": "• Player must own a Dragon Amulet for 24 months in order to be eligible to purchase this armor.\n\n• If not purchasing the \"Master Doom Knight\" package, player must own the  Necrotic Sword of Doom,  DoomKnight Helm, and  DoomKnight Cloak from previous DoomKnight packages.\n\n• Armor cannot be destroyed.\n\n• Own this armor to obtain the  DoomKnight badge.",
+        "classAbilitySubtype": "armor",
+        "retired": false
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "1",
+        "actualLevel": 1,
+        "variantName": "Variant One",
+        "name": "DoomKnight Variant One",
+        "damage": "—",
+        "stats": "—",
+        "obtainVariants": [
+          {
+            "location": "Purchase a DoomKnight Package before October 14th, 2015",
+            "price": "$65.00 USD as part of \"Master Doom Knight\" package / $79.80 USD as final part of staggered payment",
+            "priceType": "gold",
+            "daRequired": true,
+            "dcRequired": false,
+            "dmRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389737",
+        "description": "Can't you just FEEL the Doom? The armor will be more powerful, the higher your level. (This item loads the original Doom Knight skillset)",
+        "rarity": "9001",
+        "equipsClass": "DoomKnight V1",
+        "equipsClassUrl": "https://forums2.battleon.com/f/fb.asp?m=22066296",
+        "notes": "• This armor was removed from sale due to various bugs and being considered broken, and replaced with a new version on October 14th, 2015.\n\n• Armor was originally renamed from 'DoomKnight Armor' to 'Ruthless DoomKnight Armor', before being again renamed 'DoomKnight Variant One' on  October 28th, 2015.\n\n• Player must have owned a Dragon Amulet for 24 months in order to be eligible to purchase this armor.\n\n• If not purchasing the \"Master Doom Knight\" package, player must have owned the  Necrotic Sword of Doom,  DoomKnight Helm, and  DoomKnight Cloak from previous DoomKnight packages.\n\n• Armor cannot be destroyed.\n\n• Own this armor to obtain the  DoomKnight badge.",
+        "classAbilitySubtype": "armor",
+        "retired": false
+      }
+    ],
+    "tags": [
+      "da",
+      "rare",
+      "specialoffer"
+    ],
+    "hasDA": true,
+    "hasDC": false,
+    "hasDM": false,
+    "hasFree": false,
+    "hasMerge": false,
+    "levelRange": "1",
+    "elements": [],
+    "isTemp": false,
+    "isRare": true,
+    "isSeasonal": false,
+    "isSpecialOffer": true,
+    "retired": false
+  },
+  {
+    "id": "class-ability-dreaming-togslayer-armor",
+    "name": "Dreaming Togslayer Armor",
+    "slug": "class-ability-dreaming-togslayer-armor",
+    "type": "class-ability",
+    "subtype": "class",
+    "classSubcategory": "armor",
+    "description": "Found buried deep within the endless invasion of togs, this armor signifies your endurance and strength in the face of an infinite wave of togs. Also a lack of empathy for togs. The reward for achieving level 1000 in the Endless Invasion challenge.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22389738",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389738",
+    "location": "Togslayer Reward",
+    "price": "0 Dragon Coins",
+    "sellback": "0 Dragon Coins",
+    "equipsClass": "Dreaming Togslayer",
+    "equipsClassUrl": "https://forums2.battleon.com/f/fb.asp?m=22328810",
+    "obtainMethods": [
+      {
+        "location": "Togslayer Reward",
+        "price": "0 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": false,
+        "dcRequired": true,
+        "sellback": "0 Dragon Coins",
+        "dmRequired": false
+      }
+    ],
+    "level": "20",
+    "rarity": "900",
+    "alsoSee": [],
+    "tags": [
+      "dc"
+    ],
+    "daRequired": false,
+    "dcRequired": true,
+    "dmRequired": false,
+    "hasFree": false,
+    "hasMerge": false,
+    "isTemp": false,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "class-ability-entropy",
+    "name": "enTropy",
+    "slug": "class-ability-entropy",
+    "type": "class-ability",
+    "subtype": "class",
+    "classSubcategory": "armor",
+    "description": "Break down your enemies with this wicked armor! Nothing can stand against the force of enTropy! Best for Players level 40+",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22389739",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389739",
+    "location": "DC Armors",
+    "price": "1,800 Dragon Coins",
+    "sellback": "1,620 DC (<24 hours) / 450 DC (>24 hours)",
+    "equipsClass": "Entropy",
+    "equipsClassUrl": "https://forums2.battleon.com/f/fb.asp?m=19682960",
+    "obtainMethods": [
+      {
+        "location": "DC Armors",
+        "price": "1,800 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": false,
+        "dcRequired": true,
+        "sellback": "1,620 DC (<24 hours) / 450 DC (>24 hours)",
+        "dmRequired": false
+      }
+    ],
+    "level": "20",
+    "rarity": "1",
+    "notes": "• Own this armor to obtain the  enTropy badge.\n\n• Armor was initially available to purchase from  Cysero's Shop until  April 29th, 2022, when it was moved to the  DC Armors shop.\n\n• Armor cannot be destroyed; this was implemented on  August 11th, 2023.",
+    "alsoSee": [],
+    "tags": [
+      "dc"
+    ],
+    "daRequired": false,
+    "dcRequired": true,
+    "dmRequired": false,
+    "hasFree": false,
+    "hasMerge": false,
+    "isTemp": false,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "class-ability-epoch",
+    "name": "Epoch",
+    "slug": "class-ability-epoch",
+    "type": "class-ability",
+    "subtype": "class",
+    "classSubcategory": "armor",
+    "description": "The calendar class, Epoch. This class is changed by artifacts available from HeroMart Calendars!",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22389740",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389740",
+    "location": "Redeem the code received from purchasing any AE calendar from 2018 onwards from HeroMart",
+    "price": "$19.95-$24.95 USD (Standard) / $29.95-34.95 USD (Collector's Edition 2019/2020/2021/2022/2023/2024/2025/2026) / $59.95-63.95 (2025 Collector's Edition Bundle - Holiday Promotional Price) / $74.85-78.85 USD (2025 Collector's Edition Bundle - Full Price) / $79.80-113.80 USD (2026 Collector's Edition Bundle)",
+    "equipsClass": "Epoch",
+    "equipsClassUrl": "https://forums2.battleon.com/f/fb.asp?m=22343622",
+    "obtainMethods": [
+      {
+        "location": "Redeem the code received from purchasing any AE calendar from 2018 onwards from HeroMart",
+        "price": "$19.95-$24.95 USD (Standard) / $29.95-34.95 USD (Collector's Edition 2019/2020/2021/2022/2023/2024/2025/2026) / $59.95-63.95 (2025 Collector's Edition Bundle - Holiday Promotional Price) / $74.85-78.85 USD (2025 Collector's Edition Bundle - Full Price) / $79.80-113.80 USD (2026 Collector's Edition Bundle)",
+        "priceType": "gold",
+        "daRequired": false,
+        "dcRequired": true,
+        "dmRequired": false
+      }
+    ],
+    "level": "1",
+    "rarity": "0",
+    "notes": "• Transformed from  Chest of Enduring Time on October 12th, 2018.\n\n• Armor cannot be destroyed.\n\n• Own this armor to obtain the  Time Walker badge.",
+    "alsoSee": [],
+    "tags": [
+      "dc",
+      "specialoffer"
+    ],
+    "daRequired": false,
+    "dcRequired": true,
+    "dmRequired": false,
+    "hasFree": false,
+    "hasMerge": false,
+    "isTemp": false,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": true,
+    "retired": false
+  },
+  {
+    "id": "class-ability-evolved-chickencow-armor",
+    "familyName": "Evolved ChickenCow Armor",
+    "slug": "class-ability-evolved-chickencow-armor",
+    "type": "class-ability",
+    "subtype": "class",
+    "classSubcategory": "armor",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22389741",
+    "familyOrigin": "single-thread",
+    "familySources": [
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22389741",
+        "title": "Evolved ChickenCow Armor"
+      }
+    ],
+    "shared": {
+      "description": "The next generation of Chickencow Lords... unleashed! This item uses the CCA bought with Dragon Coins.",
+      "rarity": "50",
+      "notes": "• Normal merge version of this armor's description erroneously states that it requires the Dragon Coin version.\n\n• Dragon Coin version of this armor's description erroneously states that it requires a Dragon Amulet.\n\n• Giving either version of this armor and  ChickenCow Armor to  Arester will unlock  Ascendant CC shop after completion of  The Challenge of Moocluckles.\n\n• Own this armor to obtain the  Evolved ChickenCow badge.\n\n• Dragon Coin version of this armor was initially available to purchase from  Cysero's Shop until  April 29th, 2022, when it was moved to the  DC Armors shop.",
+      "alsoSee": [
+        {
+          "name": "ChickenCow Armor",
+          "slug": "class-ability-chickencow-armor",
+          "type": "class-ability",
+          "url": "https://forums2.battleon.com/f/tm.asp?m=22389731"
+        },
+        {
+          "name": "Ascended ChickenCow Armor",
+          "slug": "class-ability-ascended-chickencow-armor",
+          "type": "class-ability",
+          "url": "https://forums2.battleon.com/f/tm.asp?m=22389727"
+        }
+      ]
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
+        "levelDisplay": "1",
+        "actualLevel": 1,
+        "variantName": "1 (DA)",
+        "name": "Evolved ChickenCow Armor",
+        "damage": "—",
+        "stats": "—",
+        "obtainVariants": [
+          {
+            "location": "ECCA Merge Shop",
+            "price": "N/A",
+            "priceType": "merge",
+            "daRequired": true,
+            "sellback": "50 Gold",
+            "requiredItems": "1 ChickenCow Armor (Normal) & 1 Chickencow Teeth",
+            "dmRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389741",
+        "description": "The next generation of Chickencow Lords... unleashed! This item uses the CCA bought with Dragon Coins.",
+        "rarity": "50",
+        "equipsClass": "Evolved Chickencow",
+        "equipsClassUrl": "https://forums2.battleon.com/f/fb.asp?m=19868204",
+        "classAbilitySubtype": "armor",
+        "retired": false
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "1",
+        "actualLevel": 1,
+        "variantName": "1 (DA, DC)",
+        "name": "Evolved ChickenCow Armor",
+        "damage": "—",
+        "stats": "—",
+        "obtainVariants": [
+          {
+            "location": "ECCA Merge Shop",
+            "price": "N/A",
+            "priceType": "merge",
+            "daRequired": true,
+            "sellback": "41 DC (<24 hours) / 12 DC (>24 hours)",
+            "requiredItems": "1 ChickenCow Armor (D-Coins) & 1 Chickencow Teeth",
+            "dcRequired": true,
+            "dmRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389741",
+        "description": "The next generation of Chickencow Lords... unleashed! This item uses the CCA bought with Dragon Coins.",
+        "rarity": "50",
+        "equipsClass": "Evolved Chickencow",
+        "equipsClassUrl": "https://forums2.battleon.com/f/fb.asp?m=19868204",
+        "classAbilitySubtype": "armor",
+        "retired": false
+      },
+      {
+        "levelNumber": 3,
+        "levelDisplay": "1",
+        "actualLevel": 1,
+        "variantName": "1 (DC)",
+        "name": "Evolved ChickenCow Armor",
+        "damage": "—",
+        "stats": "—",
+        "obtainVariants": [
+          {
+            "location": "DC Armors",
+            "price": "500 Dragon Coins",
+            "priceType": "dc",
+            "daRequired": false,
+            "dcRequired": true,
+            "sellback": "450 DC (<24 hours) / 125 DC (>24 hours)",
+            "dmRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389741",
+        "description": "The next generation of Chickencow Lords... unleashed! This item uses the CCA bought with Dragon Coins.",
+        "rarity": "50",
+        "equipsClass": "Evolved Chickencow",
+        "equipsClassUrl": "https://forums2.battleon.com/f/fb.asp?m=19868204",
+        "classAbilitySubtype": "armor",
+        "retired": false
+      }
+    ],
+    "tags": [
+      "da",
+      "dc"
+    ],
+    "hasDA": true,
+    "hasDC": true,
+    "hasDM": false,
+    "hasFree": false,
+    "hasMerge": true,
+    "levelRange": "1",
+    "elements": [],
+    "isTemp": false,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "class-ability-gnomish-personal-steamtank-vr-1-0-mk-ii",
+    "familyName": "Gnomish Personal Steamtank (Vr 1.0, Mk II)",
+    "slug": "class-ability-gnomish-personal-steamtank-vr-1-0-mk-ii",
+    "aliasSlugs": [
+      "class-ability-gnomish-personal-steamtank-vr-1-0",
+      "class-ability-gnomish-personal-steamtank-mk-ii"
+    ],
+    "type": "class-ability",
+    "subtype": "class",
+    "classSubcategory": "armor",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22389742",
+    "familyOrigin": "single-thread",
+    "familySources": [
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22389742",
+        "title": "Gnomish Personal Steamtank Vr 1.0"
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22389742",
+        "title": "Gnomish Personal Steamtank Mk II"
+      }
+    ],
+    "shared": {
+      "description": "GPS for short. This personal vehicle armor comes fully stocked with full ordinance, fully pressurized steam tanks and EVEN a full tank of gas.",
+      "rarity": "1",
+      "alsoSee": []
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
+        "levelDisplay": "1",
+        "actualLevel": 1,
+        "variantName": "Vr 1.0",
+        "name": "Gnomish Personal Steamtank Vr 1.0",
+        "damage": "—",
+        "stats": "—",
+        "obtainVariants": [
+          {
+            "location": "Steamtank Shop before August 21st, 2009",
+            "price": "1,500 Dragon Coins",
+            "priceType": "dc",
+            "daRequired": false,
+            "dcRequired": true,
+            "sellback": "1,350 DC (<24 hours) / 375 DC (>24 hours)",
+            "dmRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389742",
+        "description": "GPS for short. This personal vehicle armor comes fully stocked with full ordinance, fully pressurized steam tanks and EVEN a full tank of gas.",
+        "rarity": "1",
+        "equipsClass": "GPS",
+        "equipsClassUrl": "https://forums2.battleon.com/f/fb.asp?m=19843697",
+        "notes": "• Armor was originally intended to cost 2,000 Dragon Coins, but was lowered to 1,500 Dragon Coins on  March 3rd, 2009, prior to its release.\n\n• This armor was removed from sale due to various bugs and being considered broken, and replaced with a new version on  August 21st, 2009.\n\n• Equipped class was later updated to be identical to the new, unbroken version in May 2011.\n\n• Own this armor to obtain the  GPS badge.",
+        "classAbilitySubtype": "armor",
+        "retired": false
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "1",
+        "actualLevel": 1,
+        "variantName": "Mk II",
+        "name": "Gnomish Personal Steamtank Mk II",
+        "damage": "—",
+        "stats": "—",
+        "obtainVariants": [
+          {
+            "location": "Steamtank Shop",
+            "price": "1,500 Dragon Coins",
+            "priceType": "dc",
+            "daRequired": false,
+            "dcRequired": true,
+            "sellback": "1,350 DC (<24 hours) / 375 DC (>24 hours)",
+            "dmRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389742",
+        "description": "GPS for short. This personal vehicle armor comes fully stocked with full ordinance, fully pressurized steam tanks and Even a full tank of gas.",
+        "rarity": "1",
+        "equipsClass": "GPS 2.0",
+        "equipsClassUrl": "https://forums2.battleon.com/f/fb.asp?m=19843697",
+        "notes": "• Own this armor to obtain the  GPS badge.",
+        "classAbilitySubtype": "armor",
+        "retired": false
+      }
+    ],
+    "tags": [
+      "dc",
+      "rare"
+    ],
+    "hasDA": false,
+    "hasDC": true,
+    "hasDM": false,
+    "hasFree": false,
+    "hasMerge": false,
+    "levelRange": "1-1",
+    "elements": [],
+    "isTemp": false,
+    "isRare": true,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "class-ability-icebound-revenant",
+    "name": "Icebound Revenant",
+    "slug": "class-ability-icebound-revenant",
+    "type": "class-ability",
+    "subtype": "class",
+    "classSubcategory": "armor",
+    "description": "This armor was found in a cave in the far north. Who it belonged to is a mystery, but it's freezing to the touch. You hear a faint whisper in your mind as you grow close... Best for Players level 40+",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22389744",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389744",
+    "location": "DC Armors",
+    "price": "1,800 Dragon Coins",
+    "sellback": "1,620 DC (<24 hours) / 450 DC (>24 hours)",
+    "equipsClass": "Icebound Revenant",
+    "equipsClassUrl": "https://forums2.battleon.com/f/fb.asp?m=21757686",
+    "obtainMethods": [
+      {
+        "location": "DC Armors",
+        "price": "1,800 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": false,
+        "dcRequired": true,
+        "sellback": "1,620 DC (<24 hours) / 450 DC (>24 hours)",
+        "dmRequired": false
+      }
+    ],
+    "level": "20",
+    "rarity": "1",
+    "notes": "• Own this armor to obtain the  Icebound Revenant badge.\n\n• Armor was initially available to purchase from  Cysero's Shop until  April 29th, 2022, when it was moved to the  DC Armors shop.\n\n• Armor cannot be destroyed; this was implemented on  August 11th, 2023.",
+    "alsoSee": [],
+    "tags": [
+      "dc"
+    ],
+    "daRequired": false,
+    "dcRequired": true,
+    "dmRequired": false,
+    "hasFree": false,
+    "hasMerge": false,
+    "isTemp": false,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "class-ability-kathool-adept-armor",
+    "name": "Kathool Adept Armor",
+    "slug": "class-ability-kathool-adept-armor",
+    "type": "class-ability",
+    "subtype": "class",
+    "classSubcategory": "armor",
+    "description": "Wearing this armor MAY make you go mad. But before it does, you'll have access to a wide range of Water, Darkness, and Evil skills with which to annihilate your enemies! Best for players level 35+.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22389745",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389745",
+    "location": "DC Armors",
+    "price": "1,800 Dragon Coins",
+    "sellback": "1,620 DC (<24 hours) / 450 DC (>24 hours)",
+    "equipsClass": "Kathool Adept",
+    "equipsClassUrl": "https://forums2.battleon.com/f/fb.asp?m=17643308",
+    "obtainMethods": [
+      {
+        "location": "DC Armors",
+        "price": "1,800 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": false,
+        "dcRequired": true,
+        "sellback": "1,620 DC (<24 hours) / 450 DC (>24 hours)",
+        "dmRequired": false
+      }
+    ],
+    "level": "20",
+    "rarity": "1",
+    "notes": "• Own this armor to obtain the  Adept badge.\n\n• Armor was initially available to purchase from  Cysero's Shop until  April 29th, 2022, when it was moved to the  DC Armors shop.\n\n• Armor cannot be destroyed; this was implemented on  August 11th, 2023.",
+    "alsoSee": [],
+    "tags": [
+      "dc"
+    ],
+    "daRequired": false,
+    "dcRequired": true,
+    "dmRequired": false,
+    "hasFree": false,
+    "hasMerge": false,
+    "isTemp": false,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "class-ability-necro-paragon-armor",
+    "name": "Necro Paragon Armor",
+    "slug": "class-ability-necro-paragon-armor",
+    "type": "class-ability",
+    "subtype": "class",
+    "classSubcategory": "armor",
+    "description": "The exclusive Necro Paragon Armor, Armor of the Legion, reward for completing the Nefarious Challenges!",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22389746",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389746",
+    "location": "Legion Armor",
+    "price": "N/A",
+    "sellback": "0 Dragon Coins",
+    "requiredItems": "1 Otherworldly Amalgamation & 1 Timetorn Sigil",
+    "equipsClass": "Necro Paragon",
+    "equipsClassUrl": "https://forums2.battleon.com/f/fb.asp?m=22303804",
+    "obtainMethods": [
+      {
+        "location": "Legion Armor",
+        "price": "N/A",
+        "priceType": "merge",
+        "daRequired": false,
+        "sellback": "0 Dragon Coins",
+        "requiredItems": "1 Otherworldly Amalgamation & 1 Timetorn Sigil",
+        "dcRequired": true,
+        "dmRequired": false
+      }
+    ],
+    "level": "20",
+    "rarity": "900",
+    "alsoSee": [],
+    "tags": [
+      "dc"
+    ],
+    "daRequired": false,
+    "dcRequired": true,
+    "dmRequired": false,
+    "hasFree": false,
+    "hasMerge": true,
+    "isTemp": false,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "class-ability-pyromancer",
+    "name": "Pyromancer",
+    "slug": "class-ability-pyromancer",
+    "type": "class-ability",
+    "subtype": "class",
+    "classSubcategory": "armor",
+    "description": "The powers of the fire realm are at your command! Best for Players level 40+",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22389747",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389747",
+    "location": "DC Armors",
+    "price": "1,800 Dragon Coins",
+    "sellback": "1,620 DC (<24 hours) / 450 DC (>24 hours)",
+    "equipsClass": "Pyromancer",
+    "equipsClassUrl": "https://forums2.battleon.com/f/fb.asp?m=20859164",
+    "obtainMethods": [
+      {
+        "location": "DC Armors",
+        "price": "1,800 Dragon Coins",
+        "priceType": "dc",
+        "daRequired": false,
+        "dcRequired": true,
+        "sellback": "1,620 DC (<24 hours) / 450 DC (>24 hours)",
+        "dmRequired": false
+      }
+    ],
+    "level": "20",
+    "rarity": "1",
+    "notes": "• Own this armor to obtain the  Pyromancer badge.\n\n• Armor was initially available to purchase from  Cysero's Shop until  April 29th, 2022, when it was moved to the  DC Armors shop.\n\n• Armor cannot be destroyed; this was implemented on  August 11th, 2023.",
+    "alsoSee": [],
+    "tags": [
+      "dc"
+    ],
+    "daRequired": false,
+    "dcRequired": true,
+    "dmRequired": false,
+    "hasFree": false,
+    "hasMerge": false,
+    "isTemp": false,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "class-ability-shadow-mage-armor",
+    "familyName": "Shadow Mage Armor",
+    "slug": "class-ability-shadow-mage-armor",
+    "aliasSlugs": [
+      "class-ability-shadow-mage-armor",
+      "class-ability-ancient-shadow-mage-armor"
+    ],
+    "type": "class-ability",
+    "subtype": "class",
+    "classSubcategory": "armor",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22389748",
+    "familyOrigin": "cross-post",
+    "familySources": [
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22389748",
+        "title": "Shadow Mage Armor"
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22389722",
+        "title": "Ancient Shadow Mage Armor"
+      }
+    ],
+    "shared": {
+      "description": "",
+      "rarity": "1",
+      "alsoSee": []
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
+        "levelDisplay": "1",
+        "actualLevel": 1,
+        "variantName": "(Base)",
+        "name": "Shadow Mage Armor",
+        "damage": "—",
+        "stats": "—",
+        "obtainVariants": [
+          {
+            "location": "HeroMart Classes",
+            "price": "N/A",
+            "priceType": "merge",
+            "daRequired": false,
+            "sellback": "0 Dragon Coins",
+            "requiredItems": "5 HeroPoint",
+            "dcRequired": true,
+            "dmRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389748",
+        "description": "",
+        "rarity": "1",
+        "equipsClass": "Shadow Mage",
+        "equipsClassUrl": "https://forums2.battleon.com/f/fb.asp?m=17317071",
+        "classAbilitySubtype": "armor",
+        "retired": false
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "1",
+        "actualLevel": 1,
+        "variantName": "Ancient",
+        "name": "Ancient Shadow Mage Armor",
+        "damage": "—",
+        "stats": "—",
+        "obtainVariants": [
+          {
+            "location": "Redeem the code received from purchasing the ShadowScythe T-Shirt from JINX",
+            "price": "$21.95 USD (Regular Price) / $14.95 USD (Sale Price) + Postage",
+            "priceType": "gold",
+            "daRequired": false,
+            "sellback": "0 Dragon Coins",
+            "dcRequired": true,
+            "dmRequired": false
+          },
+          {
+            "location": "Shadow Class Merge",
+            "price": "N/A",
+            "priceType": "merge",
+            "daRequired": false,
+            "sellback": "0 Dragon Coins",
+            "requiredItems": "1 Ancient Shadow Warrior Armor & 1 Shadow Token OR 1 Ancient Shadow Rogue Armor & 1 Shadow Token",
+            "dcRequired": true,
+            "dmRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389722",
+        "description": "",
+        "rarity": "1",
+        "equipsClass": "Ancient Shadow Mage",
+        "equipsClassUrl": "https://forums2.battleon.com/f/fb.asp?m=22159524",
+        "notes": "• Item previously have a sellback of 5 Gold.",
+        "classAbilitySubtype": "armor",
+        "retired": false
+      }
+    ],
+    "tags": [
+      "dc",
+      "rare",
+      "specialoffer"
+    ],
+    "hasDA": false,
+    "hasDC": true,
+    "hasDM": false,
+    "hasFree": false,
+    "hasMerge": true,
+    "levelRange": "1",
+    "elements": [],
+    "isTemp": false,
+    "isRare": true,
+    "isSeasonal": false,
+    "isSpecialOffer": true,
+    "retired": false
+  },
+  {
+    "id": "class-ability-shadow-rogue-armor",
+    "familyName": "Shadow Rogue Armor",
+    "slug": "class-ability-shadow-rogue-armor",
+    "aliasSlugs": [
+      "class-ability-shadow-rogue-armor",
+      "class-ability-ancient-shadow-rogue-armor"
+    ],
+    "type": "class-ability",
+    "subtype": "class",
+    "classSubcategory": "armor",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22389749",
+    "familyOrigin": "cross-post",
+    "familySources": [
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22389749",
+        "title": "Shadow Rogue Armor"
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22389723",
+        "title": "Ancient Shadow Rogue Armor"
+      }
+    ],
+    "shared": {
+      "description": "",
+      "rarity": "1",
+      "alsoSee": []
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
+        "levelDisplay": "1",
+        "actualLevel": 1,
+        "variantName": "(Base)",
+        "name": "Shadow Rogue Armor",
+        "damage": "—",
+        "stats": "—",
+        "obtainVariants": [
+          {
+            "location": "HeroMart Classes",
+            "price": "N/A",
+            "priceType": "merge",
+            "daRequired": false,
+            "sellback": "0 Dragon Coins",
+            "requiredItems": "5 HeroPoint",
+            "dcRequired": true,
+            "dmRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389749",
+        "description": "",
+        "rarity": "1",
+        "equipsClass": "Shadow Rogue",
+        "equipsClassUrl": "https://forums2.battleon.com/f/fb.asp?m=17317075",
+        "classAbilitySubtype": "armor",
+        "retired": false
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "1",
+        "actualLevel": 1,
+        "variantName": "Ancient",
+        "name": "Ancient Shadow Rogue Armor",
+        "damage": "—",
+        "stats": "—",
+        "obtainVariants": [
+          {
+            "location": "Redeem the code received from purchasing the ShadowScythe T-Shirt from JINX",
+            "price": "$21.95 USD (Regular Price) / $14.95 USD (Sale Price) + Postage",
+            "priceType": "gold",
+            "daRequired": false,
+            "sellback": "0 Dragon Coins",
+            "dcRequired": true,
+            "dmRequired": false
+          },
+          {
+            "location": "Shadow Class Merge",
+            "price": "N/A",
+            "priceType": "merge",
+            "daRequired": false,
+            "sellback": "0 Dragon Coins",
+            "requiredItems": "1 Ancient Shadow Warrior Armor & 1 Shadow Token OR 1 Ancient Shadow Mage Armor & 1 Shadow Token",
+            "dcRequired": true,
+            "dmRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389723",
+        "description": "",
+        "rarity": "1",
+        "equipsClass": "Ancient Shadow Rogue",
+        "equipsClassUrl": "https://forums2.battleon.com/f/fb.asp?m=22159527",
+        "notes": "• Item previously have a sellback of 5 Gold.",
+        "classAbilitySubtype": "armor",
+        "retired": false
+      }
+    ],
+    "tags": [
+      "dc",
+      "rare",
+      "specialoffer"
+    ],
+    "hasDA": false,
+    "hasDC": true,
+    "hasDM": false,
+    "hasFree": false,
+    "hasMerge": true,
+    "levelRange": "1",
+    "elements": [],
+    "isTemp": false,
+    "isRare": true,
+    "isSeasonal": false,
+    "isSpecialOffer": true,
+    "retired": false
+  },
+  {
+    "id": "class-ability-shadow-warrior-armor",
+    "familyName": "Shadow Warrior Armor",
+    "slug": "class-ability-shadow-warrior-armor",
+    "aliasSlugs": [
+      "class-ability-shadow-warrior-armor",
+      "class-ability-ancient-shadow-warrior-armor"
+    ],
+    "type": "class-ability",
+    "subtype": "class",
+    "classSubcategory": "armor",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22389750",
+    "familyOrigin": "cross-post",
+    "familySources": [
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22389750",
+        "title": "Shadow Warrior Armor"
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22389724",
+        "title": "Ancient Shadow Warrior Armor"
+      }
+    ],
+    "shared": {
+      "description": "",
+      "rarity": "1",
+      "alsoSee": []
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
+        "levelDisplay": "1",
+        "actualLevel": 1,
+        "variantName": "(Base)",
+        "name": "Shadow Warrior Armor",
+        "damage": "—",
+        "stats": "—",
+        "obtainVariants": [
+          {
+            "location": "HeroMart Classes",
+            "price": "N/A",
+            "priceType": "merge",
+            "daRequired": false,
+            "sellback": "0 Dragon Coins",
+            "requiredItems": "5 HeroPoint",
+            "dcRequired": true,
+            "dmRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389750",
+        "description": "",
+        "rarity": "1",
+        "equipsClass": "Shadow Warrior",
+        "equipsClassUrl": "https://forums2.battleon.com/f/fb.asp?m=17317069",
+        "classAbilitySubtype": "armor",
+        "retired": false
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "1",
+        "actualLevel": 1,
+        "variantName": "Ancient",
+        "name": "Ancient Shadow Warrior Armor",
+        "damage": "—",
+        "stats": "—",
+        "obtainVariants": [
+          {
+            "location": "Redeem the code received from purchasing the ShadowScythe T-Shirt from JINX",
+            "price": "$21.95 USD (Regular Price) / $14.95 USD (Sale Price) + Postage",
+            "priceType": "gold",
+            "daRequired": false,
+            "sellback": "0 Dragon Coins",
+            "dcRequired": true,
+            "dmRequired": false
+          },
+          {
+            "location": "Shadow Class Merge",
+            "price": "N/A",
+            "priceType": "merge",
+            "daRequired": false,
+            "sellback": "0 Dragon Coins",
+            "requiredItems": "1 Ancient Shadow Mage Armor & 1 Shadow Token OR 1 Ancient Shadow Rogue Armor & 1 Shadow Token",
+            "dcRequired": true,
+            "dmRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389724",
+        "description": "",
+        "rarity": "1",
+        "equipsClass": "Ancient Shadow Warrior",
+        "equipsClassUrl": "https://forums2.battleon.com/f/fb.asp?m=22159530",
+        "notes": "• Item previously have a sellback of 5 Gold.",
+        "classAbilitySubtype": "armor",
+        "retired": false
+      }
+    ],
+    "tags": [
+      "dc",
+      "rare",
+      "specialoffer"
+    ],
+    "hasDA": false,
+    "hasDC": true,
+    "hasDM": false,
+    "hasFree": false,
+    "hasMerge": true,
+    "levelRange": "1",
+    "elements": [],
+    "isTemp": false,
+    "isRare": true,
+    "isSeasonal": false,
+    "isSpecialOffer": true,
+    "retired": false
+  },
+  {
+    "id": "class-ability-shadowwalker-of-time",
+    "familyName": "ShadowWalker of Time",
+    "slug": "class-ability-shadowwalker-of-time",
+    "aliasSlugs": [
+      "class-ability-shadowwalker-of-time",
+      "class-ability-reforged-shadowwalker-of-time"
+    ],
+    "type": "class-ability",
+    "subtype": "class",
+    "classSubcategory": "armor",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22389751",
+    "familyOrigin": "cross-post",
+    "familySources": [
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22389751",
+        "title": "ShadowWalker of Time"
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22404943",
+        "title": "Reforged ShadowWalker of Time"
+      }
+    ],
+    "shared": {
+      "description": "Confound and annihilate your foes with the powers of time and shadows! The 2017 calendar class!",
+      "rarity": "0",
+      "alsoSee": []
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
+        "levelDisplay": "1",
+        "actualLevel": 1,
+        "variantName": "(Base)",
+        "name": "ShadowWalker of Time",
+        "damage": "—",
+        "stats": "—",
+        "obtainVariants": [
+          {
+            "location": "Redeem the code received from purchasing the 2017 AE Calendar from HeroMart",
+            "price": "$19.95 USD (Standard) / $24.95 USD (Collector's Edition) + Postage",
+            "priceType": "gold",
+            "daRequired": false,
+            "dcRequired": true,
+            "dmRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389751",
+        "description": "Confound and annihilate your foes with the powers of time and shadows! The 2017 calendar class!",
+        "rarity": "0",
+        "equipsClass": "ShadowWalker of Time",
+        "equipsClassUrl": "https://forums2.battleon.com/f/fb.asp?m=22306614",
+        "notes": "• Transformed from  Chest of Time and Shadows on  December 16th, 2017.\n\n• Armor cannot be destroyed.\n\n• Own this armor to obtain the  Time Walker badge.\n\n• Owners of this armor received  Reforged ShadowWalker of Time (D-Coins/S-Offer) for free when logging in during or after  August 26th, 2022.",
+        "classAbilitySubtype": "armor",
+        "retired": false
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "0",
+        "actualLevel": 0,
+        "variantName": "Reforged",
+        "name": "Reforged ShadowWalker of Time",
+        "damage": "—",
+        "stats": "—",
+        "obtainVariants": [
+          {
+            "location": "Time Classes",
+            "price": "4,000 Dragon Coins",
+            "priceType": "dc",
+            "daRequired": false,
+            "dcRequired": true,
+            "sellback": "3,600 DC (<24 hours) / 1,000 DC (>24 hours)",
+            "dmRequired": false
+          },
+          {
+            "location": "HeroMart Classes",
+            "price": "N/A",
+            "priceType": "merge",
+            "daRequired": false,
+            "sellback": "0 Dragon Coins",
+            "requiredItems": "4 HeroPoint",
+            "dcRequired": true,
+            "dmRequired": false
+          },
+          {
+            "location": "Given to owners of ShadowWalker of Time (Armor) on log in during or after August 26th, 2022",
+            "price": "N/A",
+            "priceType": "free",
+            "daRequired": false,
+            "sellback": "0 Dragon Coins",
+            "dcRequired": true,
+            "dmRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22404943",
+        "description": "Walk through the shadows of time with this reforged version of the ShadowWalker of Time!",
+        "rarity": "0",
+        "equipsClass": "ShadowWalker of Time",
+        "equipsClassUrl": "https://forums2.battleon.com/f/fb.asp?m=22306614",
+        "notes": "• Armor cannot be destroyed.",
+        "classAbilitySubtype": "armor",
+        "retired": false
+      }
+    ],
+    "tags": [
+      "dc",
+      "rare",
+      "specialoffer"
+    ],
+    "hasDA": false,
+    "hasDC": true,
+    "hasDM": false,
+    "hasFree": true,
+    "hasMerge": true,
+    "levelRange": "1",
+    "elements": [],
+    "isTemp": false,
+    "isRare": true,
+    "isSeasonal": false,
+    "isSpecialOffer": true,
+    "retired": false
+  },
+  {
+    "id": "class-ability-snugglebear-armor",
+    "name": "SnuggleBear Armor",
+    "slug": "class-ability-snugglebear-armor",
+    "type": "class-ability",
+    "subtype": "class",
+    "classSubcategory": "armor",
+    "description": "This is armor worn by warriors of love everywhere. Happy Hero's Heart Day!",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22425364",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22425364",
+    "location": "Snuggle-Gram Delivery!, Crystal Clear Lake, Love Is In The Air, Pinkonreach, Big D.'s Missing!, Greatest Hug of All",
+    "price": "N/A",
+    "sellback": "5 Gold",
+    "equipsClass": "SnuggleBear",
+    "equipsClassUrl": "https://forums2.battleon.com/f/fb.asp?m=20046211",
+    "obtainMethods": [
+      {
+        "location": "Snuggle-Gram Delivery!, Crystal Clear Lake, Love Is In The Air, Pinkonreach, Big D.'s Missing!, Greatest Hug of All",
+        "price": "N/A",
+        "priceType": "free",
+        "daRequired": false,
+        "sellback": "5 Gold",
+        "dcRequired": false,
+        "dmRequired": false
+      }
+    ],
+    "level": "1",
+    "rarity": "9",
+    "notes": "• Armor has a low drop rate from the quest Crystal Clear Lake and select Hero's Heart Day quests.\n\n• Armor replaced  Snugglebear Helm on  February 13th, 2026.\n\n• Armor was previously stylized as 'Snugglebear Armor'; this was changed on  February 17th, 2026.",
+    "alsoSee": [],
+    "tags": [],
+    "daRequired": false,
+    "dcRequired": false,
+    "dmRequired": false,
+    "hasFree": true,
+    "hasMerge": false,
+    "isTemp": false,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": false,
+    "retired": false
+  },
+  {
+    "id": "class-ability-snugglepanda",
+    "name": "SnugglePanda",
+    "slug": "class-ability-snugglepanda",
+    "type": "class-ability",
+    "subtype": "class",
+    "classSubcategory": "armor",
+    "description": "Equip this armor to become a mighty SnugglePanda! They are known far and wide as the warriors of noms.",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22389752",
+    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389752",
+    "location": "Redeem the code received from purchasing the Panda Hoodie from HeroMart",
+    "price": "$49.99 USD (2014 Release) / $54.95-59.95 USD (2025 Re-release) + Postage",
+    "equipsClass": "SnugglePanda",
+    "equipsClassUrl": "https://forums2.battleon.com/f/fb.asp?m=21766212",
+    "obtainMethods": [
+      {
+        "location": "Redeem the code received from purchasing the Panda Hoodie from HeroMart",
+        "price": "$49.99 USD (2014 Release) / $54.95-59.95 USD (2025 Re-release) + Postage",
+        "priceType": "gold",
+        "daRequired": false,
+        "dcRequired": true,
+        "dmRequired": false
+      }
+    ],
+    "level": "1",
+    "rarity": "42",
+    "notes": "• Armor cannot be destroyed.",
+    "alsoSee": [],
+    "tags": [
+      "dc",
+      "specialoffer"
+    ],
+    "daRequired": false,
+    "dcRequired": true,
+    "dmRequired": false,
+    "hasFree": false,
+    "hasMerge": false,
+    "isTemp": false,
+    "isRare": false,
+    "isSeasonal": false,
+    "isSpecialOffer": true,
+    "retired": false
+  },
+  {
+    "id": "class-ability-timekiller",
+    "familyName": "TimeKiller",
+    "slug": "class-ability-timekiller",
+    "aliasSlugs": [
+      "class-ability-timekiller",
+      "class-ability-reforged-timekiller"
+    ],
+    "type": "class-ability",
+    "subtype": "class",
+    "classSubcategory": "armor",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22389753",
+    "familyOrigin": "cross-post",
+    "familySources": [
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22389753",
+        "title": "TimeKiller"
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22396297",
+        "title": "Reforged TimeKiller"
+      }
+    ],
+    "shared": {
+      "description": "You can kill time and pretty much anything else in this armor! You received this armor for purchasing the 2013 Artix Entertainment calendar!",
+      "rarity": "0",
+      "alsoSee": []
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
+        "levelDisplay": "1",
+        "actualLevel": 1,
+        "variantName": "(Base)",
+        "name": "TimeKiller",
+        "damage": "—",
+        "stats": "—",
+        "obtainVariants": [
+          {
+            "location": "Redeem the code received from purchasing the 2013 AE Calendar from HeroMart",
+            "price": "$12.00 USD (Unsigned) / $22.00 USD (Signed) + Postage",
+            "priceType": "gold",
+            "daRequired": false,
+            "dcRequired": true,
+            "dmRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389753",
+        "description": "You can kill time and pretty much anything else in this armor! You received this armor for purchasing the 2013 Artix Entertainment calendar!",
+        "rarity": "0",
+        "equipsClass": "TimeKiller",
+        "equipsClassUrl": "https://forums2.battleon.com/f/fb.asp?m=21013048",
+        "notes": "• Transformed from  Time Cube on  January 1st, 2013.\n\n• Armor cannot be destroyed.\n\n• Own this armor to obtain the  Time Walker badge.\n\n• Owners of this armor received  Reforged TimeKiller (D-Coins/S-Offer) for free when logging in during or after  September 24th, 2021.",
+        "classAbilitySubtype": "armor",
+        "retired": false
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "1",
+        "actualLevel": 1,
+        "variantName": "Reforged",
+        "name": "Reforged TimeKiller",
+        "damage": "—",
+        "stats": "—",
+        "obtainVariants": [
+          {
+            "location": "Time Classes",
+            "price": "4,000 Dragon Coins",
+            "priceType": "dc",
+            "daRequired": false,
+            "dcRequired": true,
+            "dmRequired": false
+          },
+          {
+            "location": "HeroMart Classes",
+            "price": "N/A",
+            "priceType": "merge",
+            "daRequired": false,
+            "requiredItems": "4 HeroPoint",
+            "dcRequired": true,
+            "dmRequired": false
+          },
+          {
+            "location": "Given to owners of TimeKiller (Armor) on log in during or after September 24th, 2021",
+            "price": "N/A",
+            "priceType": "free",
+            "daRequired": false,
+            "dcRequired": true,
+            "dmRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22396297",
+        "description": "You can kill time and pretty much anything else in this armor! Although reforged by unknown means, this version of TimeKiller is just as effective as when it was first made.",
+        "rarity": "99",
+        "equipsClass": "TimeKiller",
+        "equipsClassUrl": "https://forums2.battleon.com/f/fb.asp?m=21013048",
+        "notes": "• Armor cannot be destroyed.",
+        "classAbilitySubtype": "armor",
+        "retired": false
+      }
+    ],
+    "tags": [
+      "dc",
+      "rare",
+      "specialoffer"
+    ],
+    "hasDA": false,
+    "hasDC": true,
+    "hasDM": false,
+    "hasFree": true,
+    "hasMerge": true,
+    "levelRange": "1",
+    "elements": [],
+    "isTemp": false,
+    "isRare": true,
+    "isSeasonal": false,
+    "isSpecialOffer": true,
+    "retired": false
+  }
+]

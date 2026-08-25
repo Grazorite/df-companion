@@ -1,4 +1,5 @@
 import type { GuestStats } from '../../types/pet'
+import MetricStrip from '../shared/MetricStrip'
 
 interface GuestStatsSectionProps {
   stats: GuestStats
@@ -185,20 +186,7 @@ export default function GuestStatsSection({ stats }: GuestStatsSectionProps) {
     <section className="mb-5">
       {/* Basic Info - Level, Damage, Damage Type */}
       {basicStats.length > 0 && (
-        <div className="bg-bg-surface border border-border-default rounded-lg p-4 mb-3">
-          <div
-            className={`grid gap-4 text-center ${basicStats.length >= 3 ? 'grid-cols-3' : 'grid-cols-2'}`}
-          >
-            {basicStats.map((stat) => (
-              <div key={stat.label}>
-                <p className="text-xs text-text-muted uppercase tracking-wider mb-1">
-                  {stat.label}
-                </p>
-                <p className="text-sm font-medium text-text-primary">{stat.value}</p>
-              </div>
-            ))}
-          </div>
-        </div>
+        <MetricStrip metrics={basicStats} variant="panel" className="mb-3" />
       )}
 
       {/* Stat Categories - 2-column grid */}

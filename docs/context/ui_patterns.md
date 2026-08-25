@@ -18,7 +18,9 @@ All list view cards must follow this pattern:
 - **Interaction**: Hover lift (`hover:-translate-y-0.5`), border highlight, shadow increase
 - **Access/status pills**: card-gallery access pills use compact labels (`DA`, `DC`, `DM`, `Free`).
   Do not show text pills for `Multiple Versions` or `Merge Required` on cards; use level/range chips
-  or detail-page/obtain-method metadata instead.
+  or detail-page/obtain-method metadata instead. Do not show Level 2 status filters such as `Rare`,
+  `Seasonal`, `Special Offer`, `Temp`, or `Retired` on cards or detail-page headers; keep those
+  available in filters and source/obtain/detail prose where relevant.
 - Examples: `BadgeCard.tsx`, `PetCard.tsx`
 - Cards that navigate to detail pages should carry the current browse URL with the shared
   navigation-context helper. Detail pages should read that `from` context for their top back link,
@@ -66,6 +68,14 @@ documented reason to differ:
 Item descriptions should be rendered through the shared description normalizer. Forum/source-only
 access markers such as `(DA required)` and `(DC item)` belong in access pills and obtain-method
 metadata, not in the italic description prose.
+
+### Detail page width
+
+All category detail pages use `src/components/shared/DetailPageLayout.tsx` for the outer page
+container, backed by reusable class constants in `src/utils/detailPageLayout.ts`. The shared
+container is `max-w-5xl` with the standard detail-page horizontal padding and vertical rhythm.
+Loading, not-found, and breadcrumb-only states should use the same shared layout classes so pages do
+not resize when data finishes loading or when moving between categories.
 
 ### Image selector independence
 
@@ -122,6 +132,14 @@ name-similarity threshold (Jaccard + prefix scoring ≥ 0.55) prevents false pos
 Weapons additionally infer exact-name cross-subtype siblings when the displayed name is specific
 enough and at least one obtain price type overlaps. This covers same-named
 sword/scythe/staff/dagger counterparts without merging them into one family.
+
+Explicit badge-award notes create cross-category `Also See` links. When item text says
+`Own this item/armor/weapon ... to obtain ... badge(s)`, item detail pages link to the matching Badge,
+and the Badge detail page links back through the generated `src/data/badge-relations.json` index.
+Badge cards rendered inside another category's `Also See` section should include a compact `Badge`
+type pill alongside the badge category pill; normal badge gallery cards do not need the extra cue.
+This is deliberately phrase-based, not fuzzy, so flavour text such as "badge of honor" is ignored.
+Regenerate the index with `npm run generate:badge-relations` after scrapes that change item notes.
 
 For subtype-heavy datasets, alias/canonical checks must be scoped to the subtype when slugs can
 validly repeat across subtypes. A family alias should never point at another canonical entry in the
@@ -297,6 +315,10 @@ URL query params supported by `/pets`:
 
 - **Subtype segment**: single-select `Classes` / `Consumables`
 - **Classes filter rows**: sub-subtype row, then access filters, then category filters
+- The page header always shows the shared Classes / Abilities description. When one or more Classes
+  sub-subtype filters are included, append their short descriptions below it as smaller muted lines.
+- Armor detail pages display Level, Rarity, and Equips Class in the shared `MetricStrip` panel style.
+  Equips Class is plain text, even when the forum exposes a class link.
 - **Consumables filter rows**: access filters, then category filters (`Temp` remains data-driven
   because Health/Mana Potion are non-Temp), then Dust/Food/Rune kind filters styled like compact
   Level 3 filters. Dust/Food/Rune pills should keep their kind colour in the neutral state and add
@@ -329,6 +351,10 @@ On detail pages, metadata is split into distinct types:
 - **Retired pill** (Badges) → links to `/badges?category=retired`
 - Style: Level 1 filters use gold styling, Level 2 use orange/custom colours, cursor pointer, hover
   opacity
+- Detail-page headers show access/method metadata (`DA Required`, `DC`, `DM`, `Multiple Versions`,
+  `Merge Required`) and type pills only. Level 2 availability/status tags (`Rare`, `Seasonal`,
+  `Special Offer`, `Temp`, `War`, `Retired`) remain list filters and should not be repeated as
+  header pills.
 
 **Access/status pill colour rule:** DA/DC/DM metadata pills must use the shared access pill tones
 from `src/utils/accessPillStyles.ts` wherever they appear as item metadata, detail header tags, or

@@ -1,5 +1,6 @@
 import { useLocation, useParams, useSearchParams } from 'react-router-dom'
 import ClassAbilityDetail from '../components/classAbilities/ClassAbilityDetail'
+import DetailPageLayout from '../components/shared/DetailPageLayout'
 import { useClassAbilityBySlug } from '../hooks/useClassAbilities'
 import { CLASS_ABILITY_SUBTYPES, type ClassAbilitySubtype } from '../types/classAbility'
 import { backUrlFromSearch } from '../utils/navigationContext'
@@ -22,16 +23,16 @@ export default function ClassAbilityDetailPage() {
   )
 
   if (loading) {
-    return <main className="px-4 sm:px-6 py-6 max-w-5xl mx-auto text-text-secondary">Loading...</main>
+    return <DetailPageLayout className="text-text-secondary">Loading...</DetailPageLayout>
   }
 
   if (!item) {
     return (
-      <main className="px-4 sm:px-6 py-6 max-w-5xl mx-auto">
+      <DetailPageLayout>
         <div className="bg-bg-surface border border-border-default rounded-lg p-6 text-text-secondary">
           Class or ability entry not found.
         </div>
-      </main>
+      </DetailPageLayout>
     )
   }
 

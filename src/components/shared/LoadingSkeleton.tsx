@@ -1,3 +1,5 @@
+import DetailPageLayout from './DetailPageLayout'
+
 interface CardSkeletonProps {
   minHeightClass?: string
 }
@@ -47,7 +49,7 @@ export function BadgeGridSkeleton({ count = 6 }: GridSkeletonProps) {
 
 export function DetailPageSkeleton() {
   return (
-    <main className="px-4 sm:px-6 py-8 max-w-3xl mx-auto">
+    <DetailPageLayout>
       <div className="animate-pulse">
         <div className="flex gap-2 mb-4">
           <div className="h-6 bg-bg-overlay rounded-full w-16" />
@@ -75,6 +77,6 @@ export function DetailPageSkeleton() {
           </div>
         </div>
       </div>
-    </main>
+    </DetailPageLayout>
   )
 }

@@ -7,12 +7,16 @@ import type { GuestAttack } from '../../types/pet'
 import { accessPillClass } from '../../utils/accessPillStyles'
 import { normalizeDescriptionText } from '../../utils/displayText'
 import { detailUrlWithFrom } from '../../utils/navigationContext'
+import { useAwardedBadges } from '../../hooks/useBadgeRelations'
 import { useClassAbilityRelatedItems } from '../../hooks/useClassAbilities'
+import BadgeCard from '../badges/BadgeCard'
 import ClassAbilityCard from './ClassAbilityCard'
 import DetailTypePill from '../shared/DetailTypePill'
+import DetailPageLayout from '../shared/DetailPageLayout'
 import ExpandableImageList from '../shared/ExpandableImageList'
 import ItemImage from '../shared/ItemImage'
 import LevelSelector from '../shared/LevelSelector'
+import MetricStrip from '../shared/MetricStrip'
 import MetadataChipSection from '../shared/MetadataChipSection'
 import NotesList from '../shared/NotesList'
 import ObtainSection from '../shared/ObtainSection'
@@ -42,6 +46,8 @@ function singleToVariant(item: ClassAbilityItem): LevelVariant {
     rarity: item.rarity,
     effect: item.effect,
     effectType: item.effectType,
+    equipsClass: item.equipsClass,
+    equipsClassUrl: item.equipsClassUrl,
     attacks: item.attacks,
     dialogue: item.dialogue,
     notes: item.notes,
@@ -114,6 +120,8 @@ export default function ClassAbilityDetail({
   const effect = activeVariant?.effect ?? family?.shared.effect ?? singleItem?.effect
   const effectType =
     activeVariant?.effectType ?? family?.shared.effectType ?? singleItem?.effectType
+  const equipsClass =
+    activeVariant?.equipsClass ?? family?.shared.equipsClass ?? singleItem?.equipsClass
   const dialogue = cleanDialogue(
     activeVariant?.dialogue ?? family?.shared.dialogue ?? singleItem?.dialogue
   )
@@ -123,6 +131,7 @@ export default function ClassAbilityDetail({
     singleItem?.attacks
   const showEffectAccordion = usesEffectAccordion(name)
   const rarity = activeVariant?.rarity ?? family?.shared.rarity ?? singleItem?.rarity
+  const level = activeVariant?.levelDisplay ?? singleItem?.level
   const obtainMethods = getObtainMethods(item, activeVariant)
   const showObtainPriceFields = hasMeaningfulPriceOrSellback(obtainMethods)
   const hasDA = family ? family.hasDA : singleItem?.daRequired
@@ -131,13 +140,32 @@ export default function ClassAbilityDetail({
   const hasMerge = family ? family.hasMerge : singleItem?.hasMerge
   const hasMultiple = family ? family.levelVariants.length > 1 : false
   const showTempPill = item.subtype !== 'consumable' && item.isTemp
+  const isArmor = item.subtype === 'class' && item.classSubcategory === 'armor'
+  const armorMetrics = isArmor
+    ? [
+        { label: 'Level', value: level },
+        { label: 'Rarity', value: rarity },
+        { label: 'Equips Class', value: equipsClass },
+      ]
+    : []
   const { relatedClassAbilities } = useClassAbilityRelatedItems(item)
   const resolvedRelatedClassAbilities = relatedClassAbilities.filter((related) =>
     Boolean(related.entry)
   )
+  const badgeRelationTexts = useMemo(
+    () => [
+      singleItem?.notes,
+      singleItem?.description,
+      family?.shared.notes,
+      family?.shared.description,
+      ...(family?.levelVariants.flatMap((variant) => [variant.notes, variant.description]) ?? []),
+    ],
+    [family, singleItem]
+  )
+  const awardedBadges = useAwardedBadges(badgeRelationTexts)
 
   return (
-    <main className="px-4 sm:px-6 py-6 max-w-5xl mx-auto">
+    <DetailPageLayout>
       <Link
         to={backUrl}
         className="inline-flex items-center text-sm text-text-muted hover:text-text-primary mb-5 transition-colors"
@@ -175,6 +203,8 @@ export default function ClassAbilityDetail({
           <p className="text-xs text-text-muted mt-2">Effect Type: {effectType}</p>
         )}
       </header>
+
+      {isArmor && <MetricStrip metrics={armorMetrics} variant="panel" className="mb-6" />}
 
       {levels.length > 1 && (
         <section className="mb-8">
@@ -217,7 +247,7 @@ export default function ClassAbilityDetail({
         </section>
       )}
 
-      <MetadataChipSection label="Rarity" value={rarity} className="mb-5" />
+      {!isArmor && <MetadataChipSection label="Rarity" value={rarity} className="mb-5" />}
 
       <ObtainSection variants={obtainMethods} showPriceFields={showObtainPriceFields} />
 
@@ -242,7 +272,7 @@ export default function ClassAbilityDetail({
         <SourceLinksCard links={getSourceLinks(item)} />
       </section>
 
-      {resolvedRelatedClassAbilities.length > 0 && (
+      {(resolvedRelatedClassAbilities.length > 0 || awardedBadges.length > 0) && (
         <section aria-labelledby="related-heading" className="border-t border-border-default pt-6">
           <h2
             id="related-heading"
@@ -264,9 +294,14 @@ export default function ClassAbilityDetail({
                 </li>
               ) : null
             )}
+            {awardedBadges.map((badge) => (
+              <li key={`badge-${badge.slug}`}>
+                <BadgeCard badge={badge} toUrl={`/badges/${badge.slug}`} badgeLabel="Badge" />
+              </li>
+            ))}
           </ul>
         </section>
       )}
-    </main>
+    </DetailPageLayout>
   )
 }

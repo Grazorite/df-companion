@@ -60,6 +60,15 @@ The scraper:
 After scraping, run `python3 scripts/add_images.py` to add badge image URLs from DF-Pedia GitHub, and
 `python3 scripts/add_subcategories.py` to re-apply subcategory mappings.
 
+### Cross-Category Award Links
+
+Items in other categories can explicitly award badges through notes such as
+`Own this armor to obtain the Time Walker badge`. These produce bidirectional `Also See` links:
+item detail pages resolve the badge from `badges.json`, and badge detail pages use
+`src/data/badge-relations.json` to link back to the awarding item. Regenerate that lightweight index
+with `npm run generate:badge-relations` after scrapes that change item notes/descriptions. Keep this
+phrase-based rather than fuzzy; do not infer badge links from casual prose like "badge of honor".
+
 ---
 
 ## Pets & Guests
@@ -86,6 +95,10 @@ receive mutual `Also See` links.
 - Access-flag-repair preserves explicitly-scraped `daRequired=true` values and will not clear them.
   Narrow item-specific repairs may override this only where the forum pattern is known; Goldfish
   Knight levels IV-VII are `Normal` DA-only plus `DC` DC-only.
+- Accessories and Weapons follow the same per-title-block rule. Roman numeral families often
+  alternate DA-only and DC-only variants in one thread; when a post has mixed DC and non-DC obtain
+  methods, method-block tags/price/required-items are authoritative and whole-post DA/DC tag images
+  must not be applied to every variant.
 
 ### Multi-Variant Access Branches
 
@@ -395,6 +408,16 @@ The Classes subtype has an extra multi-select sub-subtype filter level before no
 next levels are the shared access filters (`Multiple Versions`, `DA Required`, `Merge Required`,
 `DC`) and the shared category filters (`Temp`, `Rare`, `Seasonal`, `Special Offer`, `Retired`).
 
+`Armors` are obtainable inventory items, not the playable class encyclopedia pages themselves. An
+armor entry should parse and display `Equips Class: <class>` from the forum detail page, with the
+forum link preserved when present. Example: `Chaosweaver Armor` equips the `Chaosweaver` class, while
+`Aspenvale Academy Uniform` equips `Student`. Do not consolidate armor items with their corresponding
+Regular/Miscellaneous class pages. Armors do not require main images, but they still use the shared
+detail order: description, compact `Equips Class:` line, variant selector when needed, rarity, How to
+Obtain, Other Information, Sources, then Also See. `Dimensional Transphaser` is a special case only in
+content, not parser shape: its equipped class link text is literally `|`, and that must remain a
+valid display/search value.
+
 The Consumables subtype uses shared access filters, then shared category filters, then a separate
 data-driven kind filter row: `Dust`, `Food`, and `Rune`. Consumables are Temp by default except
 `Health Potion` and `Mana Potion`; show this as a subtle page-level note, similar to Housing's Dragon
@@ -451,3 +474,30 @@ same-level variants that differ by Defender's Medal requirements should label th
 both methods are in one forum post, trailing Other Information belongs at the shared family level.
 Consumables use the shared related-items hook for explicit/reverse `Also See` plus conservative
 same-subtype inferred links from matching obtain fingerprints and near-identical names.
+
+The initial Classes subtype scraper path implements the `Armors` sub-subtype from
+`fb.asp?m=22303582`. Use `--subtype=class --class-subcategory=armor` for that dataset. `--letters=`
+is supported for user-run letter batches, `--url=` / `--urls=` supports targeted post refreshes, and
+`--limit` remains a parser dry run unless paired with `--fresh`. Armor listing parsing must anchor to
+the actual Armors post body (`Physical armors that can be stored...`) and stop before the Regular
+Classes section; do not scrape Regular or Miscellaneous class detail pages when
+`--class-subcategory=armor` is selected. Direct URL armor scrapes should prefer the forum page title
+for display-family construction so parenthetical-family posts such as
+`Gnomish Personal Steamtank (Vr 1.0, Mk II)` retain that family name while variants render as
+`Vr 1.0` and `Mk II`. `DoomKnight Armor` and `DoomKnight Variant One` are a known armor exception:
+fold them into one `DoomKnight (Armor, Variant One)` family with `Armor` and `Variant One` variants
+while keeping their original source titles. Shadow armor pairs fold the modern and Ancient entries
+into one base display family: `Shadow Mage/Rogue/Warrior Armor` with `(Base)` and `Ancient` variants.
+Reforged time-class armors fold into their base family with `(Base)` and `Reforged` variants, e.g.
+`Chronocorruptor` + `Reforged Chronocorruptor` display as `Chronocorruptor`; `Chronomancer Armor` +
+`Reforged Chronomancer` display as `Chronomancer Armor`. `Epoch` remains standalone unless a Reforged
+armor counterpart appears. ChickenCow armor posts are mixed-access single-post families: `ChickenCow
+Armor` renders `1` and `1 (DC)`; `Evolved ChickenCow Armor` renders `1 (DA)`, `1 (DA, DC)`, and
+`1 (DC)`; `Ascended ChickenCow Armor` renders `(DA)` and `(DC)`. For those posts, method-level
+price/required-item semantics override page-level DA/DC tag bleed. `Epoch` price parsing also repairs
+the forum strikethrough artifact that can drop the closing `)` from `(Standard)`. Consolidated armor
+families may claim legacy/source slugs as aliases; if a stale or duplicate primary entry has a slug
+already claimed by another entry's `aliasSlugs`, drop the stale primary during scraper normalization.
+Regular and Miscellaneous class-page parsing are intentionally still pending. Status tags come from
+forum tag images when present; the Classes A-Z listings also use text parentheticals such as
+`S-Offer`, which should be treated as the row-level fallback for `Special Offer`.
