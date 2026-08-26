@@ -222,11 +222,6 @@ export default function HousingDetail({ item, subtypeLabel, backUrl }: HousingDe
               Free
             </span>
           )}
-          {(family ? family.tags.includes('special-effect') : singleItem?.hasSpecialEffect) && (
-            <span className="text-xs text-sky-300 bg-sky-500/20 px-3 py-1.5 rounded-full font-medium">
-              Effect
-            </span>
-          )}
           <DetailTypePill label={subtypeLabel} />
         </div>
         <h1 className="text-3xl font-bold text-text-primary mb-3">{name}</h1>

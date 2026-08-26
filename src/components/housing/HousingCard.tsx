@@ -17,7 +17,6 @@ export default function HousingCard({ item, toUrl }: HousingCardProps) {
   const route = `/housing/${item.slug}?type=${encodeURIComponent(item.subtype)}`
   const dcRequired = isFamily ? item.hasDC : item.dcRequired
   const hasFree = isFamily ? item.hasFree : item.hasFree
-  const hasSpecialEffect = isFamily ? item.tags.includes('special-effect') : item.hasSpecialEffect
 
   return (
     <Link
@@ -34,21 +33,6 @@ export default function HousingCard({ item, toUrl }: HousingCardProps) {
           {hasFree && (
             <span className="text-[10px] text-green-400 bg-green-500/20 px-1.5 py-0.5 rounded-full font-medium">
               Free
-            </span>
-          )}
-          {hasSpecialEffect && (
-            <span className="text-[10px] text-sky-300 bg-sky-500/20 px-1.5 py-0.5 rounded-full font-medium">
-              Effect
-            </span>
-          )}
-          {item.isRare && (
-            <span className="text-[10px] text-purple-300 bg-purple-500/20 px-1.5 py-0.5 rounded-full font-medium">
-              Rare
-            </span>
-          )}
-          {item.isSeasonal && (
-            <span className="text-[10px] text-teal-300 bg-teal-500/20 px-1.5 py-0.5 rounded-full font-medium">
-              Seasonal
             </span>
           )}
         </div>

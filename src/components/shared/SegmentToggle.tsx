@@ -12,7 +12,7 @@ interface SegmentToggleProps {
 
 export default function SegmentToggle({ segments, onToggle }: SegmentToggleProps) {
   return (
-    <div className="flex gap-2" role="group" aria-label="Filter by type">
+    <div className="flex flex-wrap gap-2" role="group" aria-label="Filter by type">
       {segments.map((seg) => (
         <button
           key={seg.id}

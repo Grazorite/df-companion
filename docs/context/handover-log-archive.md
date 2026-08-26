@@ -11,6 +11,126 @@
 
 ## Entries
 
+### 2026-08-25 — Cross-category badge award links
+
+**Agent:** orchestrator (GPT-5 Codex) · **Commit(s):** `the commit containing this entry`
+**Kanban moved:** no board item moved; cross-category linking follow-up requested by user
+
+**Changed:**
+
+- `scripts/generate-badge-relations.mjs` and `src/data/badge-relations.json`: added a lightweight
+  generated index for explicit `Own this ... to obtain ... badge(s)` notes. The current data produces
+  14 bidirectional item ↔ badge relations.
+- `src/hooks/useBadgeRelations.ts` and `src/utils/badgeAwardText.ts`: item detail pages resolve
+  mentioned badge names from local note/description text, while Badge detail pages use the generated
+  reverse index without loading every large category dataset.
+- Detail pages for pets/guests, accessories, weapons, housing, and Classes / Abilities can now append
+  awarded Badge cards to `Also See`. Badge detail pages append awarding item cards to their `Also See`
+  section.
+- `src/components/shared/RelatedLinkCard.tsx`: added a small generic related card for reverse
+  cross-category item links from Badge pages.
+- `src/components/classAbilities/ClassAbilityCard.tsx` and `src/components/housing/HousingCard.tsx`:
+  removed Level 2 status pills such as Rare/Seasonal/Special Offer from card-gallery cards, matching
+  the shared card rule used by other categories.
+- `docs/context/ui_patterns.md`, `docs/context/category_playbooks.md`, and
+  `docs/context/scraper_operations.md`: documented phrase-based cross-category badge links, the
+  `npm run generate:badge-relations` maintenance command, and the card-gallery L2 status-pill rule.
+
+**Verified:**
+
+- `npm run generate:badge-relations` → wrote 14 relation(s), no missing badge targets.
+- `npx tsc --noEmit -p tsconfig.json` → passed.
+- `npm run typecheck:scripts` → passed.
+- `npm run lint` → passed.
+- `git diff --check` → passed.
+- `npm run build` → passed full validate/typecheck/build gate.
+
+**Not verified / known gaps:**
+
+- No browser visual QA was run for the new cross-category card sections.
+- The relation rule is intentionally strict and only handles explicit `Own this ... to obtain ...
+  badge(s)` wording. Broader badge-related prose remains unlinked by design.
+
+**Next agent should:**
+
+- Visually spot-check one item-to-badge link and the corresponding badge-to-item reverse link before
+  expanding cross-category linking to less explicit patterns.
+
+### 2026-08-25 — Shared detail page width
+
+**Agent:** orchestrator (GPT-5 Codex) · **Commit(s):** `the commit containing this entry`
+**Kanban moved:** no board item moved; shared UI polish requested by user
+
+**Changed:**
+
+- `src/components/shared/DetailPageLayout.tsx`: introduced a shared `max-w-5xl` detail-page wrapper
+  and exported matching container classes for breadcrumb-only strips.
+- Category detail pages/components for badges, pets/guests, accessories, weapons, housing, and
+  Classes / Abilities now use the shared detail width for loaded, loading, and not-found states.
+- `docs/context/ui_patterns.md`: documented the shared detail-width rule so new categories do not add
+  one-off `max-w-*` containers.
+
+**Verified:**
+
+- `npx tsc --noEmit -p tsconfig.json` → passed.
+- `npm run typecheck:scripts` → passed.
+- `npm run build` → passed full validate/typecheck/build gate.
+
+**Not verified / known gaps:**
+
+- No browser screenshot pass was run; verification was static/build-only.
+- Existing uncommitted Classes / Abilities and dataset changes from this session remain part of the
+  same working tree.
+
+**Next agent should:**
+
+- Continue Classes / Abilities work, with detail pages using `DetailPageLayout` by default.
+
+### 2026-08-25 — Armor metric strip and Special Offer tag fallback
+
+**Agent:** orchestrator (GPT-5 Codex) · **Commit(s):** `the commit containing this entry`
+**Kanban moved:** no board item moved; follow-up polish on Classes Armors sample
+
+**Changed:**
+
+- `src/components/shared/MetricStrip.tsx`: added a bordered `panel` variant with one/two/three-column
+  support while preserving the existing compact default used in attack/special accordions.
+- `src/components/guests/GuestStatsSection.tsx`: guest Level / Damage / Type panel now uses the
+  shared `MetricStrip` panel variant.
+- `src/components/classAbilities/ClassAbilityDetail.tsx`: armor detail pages now render Level,
+  Rarity, and Equips Class in the same three-column panel style. `Equips Class` is plain text, not a
+  hotlink.
+- `src/components/classAbilities/ClassAbilityCard.tsx` and detail headers: Classes / Abilities now
+  display Rare, Seasonal, and Special Offer pills when the data flags are present.
+- `scripts/lib/tags.ts` and `scripts/scrape-classes.ts`: added shared forum tag-image helpers and
+  wired Classes to them. The Classes A-Z listing uses text parentheticals such as `S-Offer` instead
+  of tag images for some rows, so the scraper treats `/tags/SpecialOffer.png` as canonical when
+  present and `S-Offer` listing text as the row-level fallback.
+- `src/data/classes.json`: refreshed the A/D Armors sample. `DoomKnight Armor` and
+  `DoomKnight Variant One` now carry `specialoffer` / `isSpecialOffer`.
+- `docs/context/scraper_operations.md`: documented the tag-image-first, listing-text-fallback rule
+  for L2 status tags.
+
+**Verified:**
+
+- Source listing inspection around `DoomKnight Armor` → rows use `(D-Amulet/S-Offer)` and
+  `(D-Amulet/Rare/S-Offer)` text rather than rendered tag images.
+- `npm run scrape:classes -- --subtype=class --class-subcategory=armor --letters=A,D --fresh` →
+  wrote 13 armor entries.
+- A/D tag audit → `DoomKnight Armor` special=true, rare=false, tags=`da,specialoffer`;
+  `DoomKnight Variant One` special=true, rare=true, tags=`da,rare,specialoffer`.
+- `npm run build` → passed.
+
+**Not verified / known gaps:**
+
+- No browser visual QA was run for the new armor/guest `MetricStrip` panel rendering.
+- Older scrapers still contain some local tag regexes; most are already image-based, but only Classes
+  has been moved onto the expanded shared helper in this follow-up.
+
+**Next agent should:**
+
+- Visually spot-check a guest stats block and DoomKnight Armor detail/card in the app.
+
 ### 2026-08-24 — Classes Armors A/D sample parser
 
 **Agent:** orchestrator (GPT-5 Codex) · **Commit(s):** `the commit containing this entry`

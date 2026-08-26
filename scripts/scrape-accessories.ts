@@ -848,6 +848,48 @@ function getTrinketAttackDetailScore(candidate: GuestAttack): number {
   return score
 }
 
+function mergeTrinketAttackDetails(candidate: GuestAttack, fallback: GuestAttack): GuestAttack {
+  return {
+    ...candidate,
+    description: candidate.description || fallback.description,
+    effect:
+      candidate.effect && candidate.effect !== 'Unknown effect'
+        ? candidate.effect
+        : fallback.effect,
+    manaCost:
+      candidate.manaCost && candidate.manaCost !== '—' ? candidate.manaCost : fallback.manaCost,
+    cooldown:
+      candidate.cooldown && candidate.cooldown !== '—' ? candidate.cooldown : fallback.cooldown,
+    damageType:
+      candidate.damageType && candidate.damageType !== '—'
+        ? candidate.damageType
+        : fallback.damageType,
+    element:
+      candidate.element && candidate.element !== '—' ? candidate.element : fallback.element,
+    buttonImageUrl: candidate.buttonImageUrl ?? fallback.buttonImageUrl,
+    appearanceUrl: candidate.appearanceUrl ?? fallback.appearanceUrl,
+    appearanceUrls: candidate.appearanceUrls ?? fallback.appearanceUrls,
+    appearanceCaptions: candidate.appearanceCaptions ?? fallback.appearanceCaptions,
+    notes: candidate.notes ?? fallback.notes,
+  }
+}
+
+function enrichTrinketAttackCandidates(candidates: GuestAttack[]): GuestAttack[] {
+  const richestByName = new Map<string, GuestAttack>()
+  for (const candidate of candidates) {
+    const key = candidate.name.trim().toLowerCase()
+    const current = richestByName.get(key)
+    if (!current || getTrinketAttackDetailScore(candidate) > getTrinketAttackDetailScore(current)) {
+      richestByName.set(key, candidate)
+    }
+  }
+
+  return candidates.map((candidate) => {
+    const fallback = richestByName.get(candidate.name.trim().toLowerCase())
+    return fallback ? mergeTrinketAttackDetails(candidate, fallback) : candidate
+  })
+}
+
 function dedupeTrinketAttacks(candidates: GuestAttack[]): GuestAttack[] {
   const grouped = new Map<string, GuestAttack[]>()
 
@@ -872,9 +914,11 @@ function dedupeTrinketAttacks(candidates: GuestAttack[]): GuestAttack[] {
 
 function parseTrinketAttacks(html: string, fallbackName: string, entryName: string): GuestAttack[] {
   const sections = splitTrinketAttackSections(html)
-  const candidates = sections
-    .map((section) => buildTrinketAttackFromHtml(section, fallbackName))
-    .filter((candidate) => candidate.name || candidate.effect)
+  const candidates = enrichTrinketAttackCandidates(
+    sections
+      .map((section) => buildTrinketAttackFromHtml(section, fallbackName))
+      .filter((candidate) => candidate.name || candidate.effect)
+  )
 
   if (candidates.length <= 1) return candidates
 

@@ -33,9 +33,9 @@ export default function HousingList({ housing, loading = false }: HousingListPro
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3">
-      {housing.map((item) => (
+      {housing.map((item, index) => (
         <HousingCard
-          key={item.slug}
+          key={`${item.subtype}:${item.slug}:${index}`}
           item={item}
           toUrl={detailUrlWithFrom(`/housing/${item.slug}?type=${encodeURIComponent(item.subtype)}`, fromUrl)}
         />

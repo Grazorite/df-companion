@@ -9,7 +9,11 @@ import type {
 } from '../src/types/classAbility'
 import type { LevelVariant, ObtainVariant } from '../src/types/item'
 import type { GuestAttack } from '../src/types/pet'
-import { computePriceType, isDefenderMedalText } from '../src/utils/variantHelpers.ts'
+import {
+  computePriceType,
+  formatVariantNameWithAccess,
+  isDefenderMedalText,
+} from '../src/utils/variantHelpers.ts'
 import { writeClassAbilitiesManifest } from './lib/data-manifests.ts'
 import { directForumPostUrl, fetchForumPage, loadForumCookie, sleep } from './lib/forum.ts'
 import { extractAlsoSeeRefs } from './lib/also-see.ts'
@@ -1481,43 +1485,86 @@ function normalizeChickenCowArmorFamilies(entries: ClassAbilityEntry[]): ClassAb
     const methods = entry.obtainMethods ?? []
     const normalizedName = normalizeName(entry.name).toLowerCase()
     if (normalizedName === 'chickencow armor' && methods.length >= 2) {
+      const levelLabel = entry.level ?? '1'
       return buildSinglePostArmorFamily(entry, [
-        itemToArmorMethodVariant(entry, methods[0], '1', 0, {
-          daRequired: false,
-          dcRequired: false,
-        }),
-        itemToArmorMethodVariant(entry, methods[1], '1 (DC)', 1, {
-          daRequired: false,
-          dcRequired: true,
-        }),
+        itemToArmorMethodVariant(
+          entry,
+          methods[0],
+          formatVariantNameWithAccess(levelLabel, {}),
+          0,
+          {
+            daRequired: false,
+            dcRequired: false,
+          }
+        ),
+        itemToArmorMethodVariant(
+          entry,
+          methods[1],
+          formatVariantNameWithAccess(levelLabel, { dcRequired: true }),
+          1,
+          {
+            daRequired: false,
+            dcRequired: true,
+          }
+        ),
       ])
     }
     if (normalizedName === 'evolved chickencow armor' && methods.length >= 3) {
       return buildSinglePostArmorFamily(entry, [
-        itemToArmorMethodVariant(entry, methods[0], '1 (DA)', 0, {
-          daRequired: true,
-          dcRequired: false,
-        }),
-        itemToArmorMethodVariant(entry, methods[1], '1 (DA, DC)', 1, {
-          daRequired: true,
-          dcRequired: true,
-        }),
-        itemToArmorMethodVariant(entry, methods[2], '1 (DC)', 2, {
-          daRequired: false,
-          dcRequired: true,
-        }),
+        itemToArmorMethodVariant(
+          entry,
+          methods[0],
+          formatVariantNameWithAccess(undefined, { daRequired: true }),
+          0,
+          {
+            daRequired: true,
+            dcRequired: false,
+          }
+        ),
+        itemToArmorMethodVariant(
+          entry,
+          methods[1],
+          formatVariantNameWithAccess(undefined, { daRequired: true, dcRequired: true }),
+          1,
+          {
+            daRequired: true,
+            dcRequired: true,
+          }
+        ),
+        itemToArmorMethodVariant(
+          entry,
+          methods[2],
+          formatVariantNameWithAccess(undefined, { dcRequired: true }),
+          2,
+          {
+            daRequired: false,
+            dcRequired: true,
+          }
+        ),
       ])
     }
     if (normalizedName === 'ascended chickencow armor' && methods.length >= 2) {
       return buildSinglePostArmorFamily(entry, [
-        itemToArmorMethodVariant(entry, methods[0], '(DA)', 0, {
-          daRequired: true,
-          dcRequired: false,
-        }),
-        itemToArmorMethodVariant(entry, methods[1], '(DC)', 1, {
-          daRequired: false,
-          dcRequired: true,
-        }),
+        itemToArmorMethodVariant(
+          entry,
+          methods[0],
+          formatVariantNameWithAccess(undefined, { daRequired: true }),
+          0,
+          {
+            daRequired: true,
+            dcRequired: false,
+          }
+        ),
+        itemToArmorMethodVariant(
+          entry,
+          methods[1],
+          formatVariantNameWithAccess(undefined, { dcRequired: true }),
+          1,
+          {
+            daRequired: false,
+            dcRequired: true,
+          }
+        ),
       ])
     }
     return entry

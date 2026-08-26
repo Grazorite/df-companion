@@ -195,42 +195,13 @@ export default function ClassAbilityListPage() {
   const activeKinds = rawActiveKinds.filter((value) => visibleKindIds.has(value))
   const excludedKinds = rawExcludedKinds.filter((value) => visibleKindIds.has(value))
 
-  const canonicalQueryString = useMemo(() => {
-    const params = new URLSearchParams()
-    params.set('type', activeSubtype)
-    if (debouncedQuery) params.set('q', debouncedQuery)
-    if (rawActiveSubcategories.length > 0) params.set('subcategory', rawActiveSubcategories.join(','))
-    if (rawExcludedSubcategories.length > 0) params.set('excludeSubcategory', rawExcludedSubcategories.join(','))
-    if (rawActiveAccess.length > 0) params.set('access', rawActiveAccess.join(','))
-    if (rawExcludedAccess.length > 0) params.set('excludeAccess', rawExcludedAccess.join(','))
-    if (rawActiveCategories.length > 0) params.set('category', rawActiveCategories.join(','))
-    if (rawExcludedCategories.length > 0) params.set('excludeCategory', rawExcludedCategories.join(','))
-    if (rawActiveMisc.length > 0) params.set('misc', rawActiveMisc.join(','))
-    if (rawExcludedMisc.length > 0) params.set('excludeMisc', rawExcludedMisc.join(','))
-    if (rawActiveKinds.length > 0) params.set('kind', rawActiveKinds.join(','))
-    if (rawExcludedKinds.length > 0) params.set('excludeKind', rawExcludedKinds.join(','))
-    return params.toString()
-  }, [
-    activeSubtype,
-    debouncedQuery,
-    rawActiveAccess,
-    rawActiveCategories,
-    rawActiveKinds,
-    rawActiveMisc,
-    rawActiveSubcategories,
-    rawExcludedAccess,
-    rawExcludedCategories,
-    rawExcludedKinds,
-    rawExcludedMisc,
-    rawExcludedSubcategories,
-  ])
-
   useEffect(() => {
-    if (searchParams.toString() === canonicalQueryString) return
-    setSearchParams(canonicalQueryString ? new URLSearchParams(canonicalQueryString) : {}, {
-      replace: true,
-    })
-  }, [canonicalQueryString, searchParams, setSearchParams])
+    if ((searchParams.get('q') ?? '') === debouncedQuery) return
+    const params = new URLSearchParams(searchParams)
+    if (debouncedQuery) params.set('q', debouncedQuery)
+    else params.delete('q')
+    setSearchParams(params, { replace: true })
+  }, [debouncedQuery, searchParams, setSearchParams])
 
   const filters = useMemo(
     () => ({

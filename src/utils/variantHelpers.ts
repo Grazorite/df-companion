@@ -35,6 +35,40 @@ export function isPureDefenderMedalRequirement(value: string | undefined): boole
   return remainder.length === 0
 }
 
+interface VariantAccessLabelFlags {
+  daRequired?: boolean
+  dcRequired?: boolean
+  dmRequired?: boolean
+  priceType?: PriceType
+}
+
+export function formatVariantAccessLabel(flags: VariantAccessLabelFlags): string {
+  const labels: string[] = []
+  if (flags.daRequired) labels.push('DA')
+  if (flags.dcRequired || flags.priceType === 'dc') labels.push('DC')
+  if (flags.dmRequired || flags.priceType === 'dm') labels.push('DM')
+  return labels.length ? `(${labels.join(', ')})` : ''
+}
+
+export function formatVariantNameWithAccess(
+  baseLabel: string | undefined,
+  flags: VariantAccessLabelFlags
+): string {
+  const accessLabel = formatVariantAccessLabel(flags)
+  const rawBase = normalizeRomanDisplay((baseLabel ?? '').trim())
+
+  if (!rawBase) {
+    return accessLabel || '(Base)'
+  }
+
+  const normalizedBase = normalizeDisplayText(rawBase)
+  const displayBase = /^(?:Normal|Resource|\(?Base\)?)$/i.test(normalizedBase)
+    ? '(Base)'
+    : rawBase
+
+  return accessLabel ? `${displayBase} ${accessLabel}` : displayBase
+}
+
 function variantAccessSortRank(level: LevelVariant): number {
   const hasDC = level.obtainVariants.some(obtainVariantHasDC)
   if (hasDC) return 3

@@ -191,7 +191,8 @@ active, and echo exclusions in result-count text as "excluding ...".
 Dataset selectors are not tri-state filters. Accessory, weapon, Housing, and Classes / Abilities
 subtype selectors must remain single-select (`type=...`) so the page lazy-loads only one
 subtype/shard group at a time. Do not allow combined subtype browsing unless the data-loading strategy
-has been explicitly redesigned for it.
+has been explicitly redesigned for it. On mobile, subtype selectors should wrap like filter pills
+rather than clipping off the viewport.
 
 Filter visibility should be data-driven at the shared UI level. Show access, category, element, and
 trait filter pills only when the currently loaded dataset, subtype, or active segment contains at
@@ -203,6 +204,14 @@ params across pages. Dataset/segment selectors remain visible and category-speci
 still apply, e.g. guest-only browsing hides pet-only purchase filters, and Housing omits
 `DA Required` as a filter because every Housing entry is DA-required. Use the shared
 filter-visibility helpers (`src/utils/filterVisibility.ts`) rather than hardcoding this per page.
+List pages should not run a catch-all URL canonicalization effect after filter toggles. Toggle and
+clear handlers already write their own query params, and an extra `setSearchParams` pass can leave
+React Router showing stale card grids during the transition. Keep effects scoped to debounced search
+text (`q`) only unless a page has a specific one-way sync need.
+
+Mobile navigation should keep the bottom bar to a small primary set plus a `More` tab. As more
+sections ship, add them to the More panel rather than squeezing every category into the fixed bottom
+bar; the panel should include available categories and disabled coming-soon entries.
 
 Element and trait filters must match the full item family, including variant-specific elements and
 traits. Do not rely solely on a family-level summary field when filtering, searching, or deciding
@@ -378,12 +387,22 @@ union. Example: base Linus shows `[ICE]`; Prince/King/Emperor Linus show `[ICE] 
 
 - `variantName: 'Normal'` (and the forum's `(Resource)` label) → displays as `(Base)`
 - `variantName: 'DC'` → displays as `(DC)`
+- Scrapers should build stored variant labels with the shared `formatVariantNameWithAccess` helper
+  whenever a natural label is combined with access flags. The shared grammar is:
+  - no natural label + clear access distinction → `(DA)`, `(DA, DC)`, `(DC)`, `(DM)`
+  - exact duplicate level entries + access distinction → use the level label, e.g. `20`, `20 (DC)`
+    or `I`, `I (DC)`
+  - base sibling among named variants → `(Base)`, `(Base) (DC)`, `Variant`, `Variant (DC)`
+  - Roman numeral labels stay uppercase: `I`, `I (DC)`, `II`, `II (DC)`
 - For "(All Versions)" families where the same labels repeat across levels, prefix each label with
   its level in parentheses to distinguish level from variant name: `(10)`, `(10) (DC)`, `(20)`,
   `(20) (DC)`, …
 - `(DA)` is **not** appended in that multi-level access-split case — the level already disambiguates.
   The `(DA)` marker is reserved for the genuine two-variant DA-vs-DC case (single level, one DA and
   one DC variant, no other variants).
+- `Pirate Monkey` is the reference spot-check for mixed rules: it combines base/named variants,
+  level/access duplicate labels, and access-only labels, and its current stored variant names are
+  considered correct.
 
 ## Stats Tables and Selectors
 

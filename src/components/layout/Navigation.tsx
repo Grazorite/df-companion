@@ -1,4 +1,5 @@
 import { NavLink, useLocation } from 'react-router-dom'
+import { useState } from 'react'
 import {
   Trophy,
   Map,
@@ -11,6 +12,7 @@ import {
   Package,
   PawPrint,
   Sparkles,
+  MoreHorizontal,
 } from 'lucide-react'
 import { useTotalBadgeCount } from '../../hooks/useBadges'
 import { useTotalPetCount } from '../../hooks/usePets'
@@ -37,6 +39,7 @@ const NAV_ITEMS = [
 
 export default function Navigation() {
   const location = useLocation()
+  const [moreOpen, setMoreOpen] = useState(false)
   const badgeCount = useTotalBadgeCount()
   const petCount = useTotalPetCount()
   const accessoryCount = useTotalAccessoryCount()
@@ -64,20 +67,32 @@ export default function Navigation() {
     if (to === '/housing') {
       return (
         location.pathname === '/housing' ||
-        [
-          '/houses',
-          '/backgrounds',
-          '/floors',
-          '/rugs',
-          '/shrubs',
-          '/stuff',
-          '/wall-items',
-        ].some((route) => location.pathname === route || location.pathname.startsWith(`${route}/`))
+        ['/houses', '/backgrounds', '/floors', '/rugs', '/shrubs', '/stuff', '/wall-items'].some(
+          (route) => location.pathname === route || location.pathname.startsWith(`${route}/`)
+        )
       )
     }
 
     if (exact) return location.pathname === to
     return location.pathname === to || location.pathname.startsWith(`${to}/`)
+  }
+
+  const mobilePrimaryItems = NAV_ITEMS.filter((item) =>
+    ['/', '/accessories', '/badges', '/pets'].includes(item.to)
+  )
+  const moreItems = NAV_ITEMS.filter(
+    (item) => !mobilePrimaryItems.some((primary) => primary.to === item.to)
+  )
+  const moreActive = moreItems.some((item) => isNavItemActive(item.to, item.exact))
+
+  function getCountForPath(to: string): number | undefined {
+    if (to === '/accessories') return accessoryCount
+    if (to === '/badges') return badgeCount
+    if (to === '/classes') return classAbilityCount
+    if (to === '/housing') return housingCount
+    if (to === '/pets') return petCount
+    if (to === '/weapons') return weaponCount
+    return undefined
   }
 
   return (
@@ -125,7 +140,9 @@ export default function Navigation() {
                     <span className="text-xs text-text-muted tabular-nums">{petCount}</span>
                   )}
                   {to === '/classes' && (
-                    <span className="text-xs text-text-muted tabular-nums">{classAbilityCount}</span>
+                    <span className="text-xs text-text-muted tabular-nums">
+                      {classAbilityCount}
+                    </span>
                   )}
                   {to === '/weapons' && (
                     <span className="text-xs text-text-muted tabular-nums">{weaponCount}</span>
@@ -166,27 +183,58 @@ export default function Navigation() {
         </div>
       </nav>
 
-      {/* ── Mobile bottom tab bar — shows Home + Badges + key sections ── */}
+      {/* ── Mobile bottom tab bar ── */}
       <nav
         className="lg:hidden fixed bottom-0 inset-x-0 bg-bg-elevated border-t border-border-default z-50"
         style={{ paddingBottom: 'env(safe-area-inset-bottom, 0px)' }}
         aria-label="Main navigation"
       >
+        {moreOpen && (
+          <div className="absolute inset-x-3 bottom-[calc(3.5rem+env(safe-area-inset-bottom,0px)+0.5rem)] rounded-lg border border-border-default bg-bg-elevated shadow-prominent overflow-hidden">
+            <div className="grid grid-cols-2 gap-1 p-2">
+              {moreItems.map(({ to, icon: Icon, label, exact, available }) =>
+                available ? (
+                  <NavLink
+                    key={to}
+                    to={to}
+                    end={exact}
+                    onClick={() => setMoreOpen(false)}
+                    className={`flex items-center gap-2 rounded-md px-3 py-2 text-xs transition-colors ${
+                      isNavItemActive(to, exact)
+                        ? 'bg-gold/10 text-gold font-medium'
+                        : 'text-text-secondary hover:bg-bg-overlay hover:text-text-primary'
+                    }`}
+                  >
+                    <Icon className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
+                    <span className="min-w-0 flex-1 truncate">{label}</span>
+                    {getCountForPath(to) !== undefined && (
+                      <span className="text-[10px] text-text-muted tabular-nums">
+                        {getCountForPath(to)}
+                      </span>
+                    )}
+                  </NavLink>
+                ) : (
+                  <div
+                    key={to}
+                    className="flex items-center gap-2 rounded-md px-3 py-2 text-xs text-text-muted opacity-40"
+                  >
+                    <Icon className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
+                    <span className="min-w-0 flex-1 truncate">{label}</span>
+                    <span className="text-[10px]">Soon</span>
+                  </div>
+                )
+              )}
+            </div>
+          </div>
+        )}
         <ul className="flex h-14" role="list">
-          {NAV_ITEMS.filter(
-            (item) =>
-              item.to === '/' ||
-              item.to === '/accessories' ||
-              item.to === '/badges' ||
-              item.to === '/housing' ||
-              item.to === '/pets' ||
-              item.to === '/weapons'
-          ).map(({ to, icon: Icon, label, exact, available }) => (
+          {mobilePrimaryItems.map(({ to, icon: Icon, label, exact, available }) => (
             <li key={to} className="flex-1">
               {available ? (
                 <NavLink
                   to={to}
                   end={exact}
+                  onClick={() => setMoreOpen(false)}
                   className={() =>
                     `relative flex flex-col items-center justify-center h-full gap-0.5 transition-colors duration-150 ${
                       isNavItemActive(to, exact)
@@ -217,6 +265,23 @@ export default function Navigation() {
               )}
             </li>
           ))}
+          <li className="flex-1">
+            <button
+              type="button"
+              onClick={() => setMoreOpen((open) => !open)}
+              aria-expanded={moreOpen}
+              aria-label="More sections"
+              className={`relative flex h-full w-full flex-col items-center justify-center gap-0.5 transition-colors duration-150 ${
+                moreActive || moreOpen ? 'text-gold' : 'text-text-muted active:text-text-secondary'
+              }`}
+            >
+              {(moreActive || moreOpen) && (
+                <span className="absolute top-0 inset-x-2 h-0.5 bg-gold rounded-b-full" />
+              )}
+              <MoreHorizontal className="w-5 h-5" aria-hidden="true" />
+              <span className="text-[10px] leading-none truncate px-1">More</span>
+            </button>
+          </li>
         </ul>
       </nav>
     </>

@@ -52,6 +52,12 @@ Based on the DF Encyclopedia forum structure (<https://forums2.battleon.com/f/tt
 
 **DA scoping on multi-variant posts:** When a forum post has both a base (DA) variant and a DC variant in the same thread, the DA tag image only applies to the title block it immediately precedes — it does NOT propagate to sibling title blocks. Section-level DA is only applied to non-DC obtain methods; DC methods keep their own per-block detection. The access-flag-repair preserves explicitly-scraped `daRequired=true` (from a DA tag on that specific variant's section) and will not override it.
 
+**Variant label scoping:** Stored `variantName` values should use the shared access-label grammar in
+`src/utils/variantHelpers.ts`. Use access-only labels such as `(DA)` / `(DA, DC)` / `(DC)` when no
+natural forum label exists and access is the clear distinction. Keep a duplicate level prefix only
+when needed to disambiguate otherwise identical level entries, e.g. `20` / `20 (DC)` or `I` /
+`I (DC)`. Use `(Base)` only when a base entry sits beside differently named sibling variants.
+
 ### Guests vs Pets: Key Differences
 
 **Guests** are companions you invite to join your party temporarily. They:

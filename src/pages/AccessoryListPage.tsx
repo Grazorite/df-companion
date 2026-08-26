@@ -168,36 +168,13 @@ export default function AccessoryListPage() {
   )
   const { bySubtype, loading: countsLoading } = useAccessoryCounts()
 
-  const canonicalQueryString = useMemo(() => {
-    const params = new URLSearchParams()
-    params.set('type', activeSubtype)
-    if (debouncedQuery) params.set('q', debouncedQuery)
-    if (rawActiveElements.length > 0) params.set('element', rawActiveElements.join(','))
-    if (rawExcludedElements.length > 0) params.set('excludeElement', rawExcludedElements.join(','))
-    if (rawActiveAccess.length > 0) params.set('access', rawActiveAccess.join(','))
-    if (rawExcludedAccess.length > 0) params.set('excludeAccess', rawExcludedAccess.join(','))
-    if (rawActiveCategories.length > 0) params.set('category', rawActiveCategories.join(','))
-    if (rawExcludedCategories.length > 0) {
-      params.set('excludeCategory', rawExcludedCategories.join(','))
-    }
-    return params.toString()
-  }, [
-    activeSubtype,
-    debouncedQuery,
-    rawActiveElements,
-    rawExcludedElements,
-    rawActiveAccess,
-    rawExcludedAccess,
-    rawActiveCategories,
-    rawExcludedCategories,
-  ])
-
   useEffect(() => {
-    if (searchParams.toString() === canonicalQueryString) return
-    setSearchParams(canonicalQueryString ? new URLSearchParams(canonicalQueryString) : {}, {
-      replace: true,
-    })
-  }, [canonicalQueryString, searchParams, setSearchParams])
+    if ((searchParams.get('q') ?? '') === debouncedQuery) return
+    const params = new URLSearchParams(searchParams)
+    if (debouncedQuery) params.set('q', debouncedQuery)
+    else params.delete('q')
+    setSearchParams(params, { replace: true })
+  }, [debouncedQuery, searchParams, setSearchParams])
 
   const filters = useMemo(
     () => ({

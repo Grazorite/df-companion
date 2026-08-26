@@ -101,24 +101,6 @@
 - [ ] **Audit mixed progression labels across all family-capable datasets** — find Roman/numeric +
       named-sibling mixes, spot-check with user before any broad auto-split
 - [ ] **Introduce a test framework** — deferred by decision; revisit when complexity warrants
-- [ ] **Fix stale card-gallery rendering on L2 filter toggle** — clicking a category filter pill
-      (Effect, Rare, Seasonal, etc.) updates the count correctly but the card grid shows stale
-      unfiltered cards until a navigation round-trip. Affects Housing, Accessories, Weapons, and
-      Classes list pages. Root cause: each page's `canonicalQueryString` `useEffect` calls
-      `setSearchParams` after every filter toggle; React Router 7 wraps that in `startTransition`,
-      which keeps showing the previous committed DOM during the transition. Also: the `Effect` pill
-      should be hidden from Housing cards (L2 filters must not appear on cards per
-      `docs/context/ui_patterns.md`). Fix approach investigated and partially implemented in an
-      earlier session but reverted — notes:
-      - `src/utils/filterVisibility.ts`: change `if (availability.loading) return false` to
-        `return true` so URL-active filters aren't stripped during the availability hook's loading
-        frame.
-      - `src/pages/{Housing,Accessory,Weapon,ClassAbility}ListPage.tsx`: replace the
-        `canonicalQueryString` memo + full-URL-sync `useEffect` with a minimal effect that only syncs
-        the debounced search query (`q` param) into the URL. All other params are already set
-        correctly by their toggle/set functions and don't need canonicalization.
-      - `src/components/housing/HousingCard.tsx`: remove the Effect pill (L2 filter, not card
-        metadata). Also remove from `HousingDetail.tsx` header.
 
 ### 🚧 In Progress
 
@@ -190,6 +172,11 @@
 - [x] Item-family model (`ItemFamily` / `LevelVariant`) with additive elements + per-variant traits
 - [x] Shared obtain cards (`ObtainSection`, `ObtainVariantCard`) with Method 1/2 labelling
 - [x] Tri-state filter pills + data-driven filter visibility + exclusion URL params
+- [x] Stale L2 filter toggle rendering fix — list pages no longer re-canonicalize every URL param
+      after filter clicks; only debounced search text syncs through an effect, while filter buttons
+      write their params directly.
+- [x] Mobile navigation and filter layout polish — subtype selectors wrap on phone widths, and the
+      bottom navigation uses a compact primary set plus a More panel for the expanding category list.
 - [x] Shared related-items hook (`useRelatedItems`) for explicit / reverse / inferred Also See
 - [x] Inferred Also See relaxed obtain fingerprint (location + priceType + normalized recipe)
 - [x] Shared image system: `ItemImage` placeholder, `imageLabels` captions, `ExpandableImageList`
@@ -237,6 +224,9 @@ An incoming agent must be able to resume with **no verbal briefing**. Follow thi
    ```
 
 5. **Data changes require a targeted re-scrape + inspection**, not hand-edited JSON.
+6. **Visual verification is available.** Run `npx tsx scripts/screenshot.ts '/path'` against the
+   dev server (`npm run dev` must be running) to capture a PNG for UI spot-checks. See
+   `docs/context/scraper_operations.md` § Visual Verification for options.
 
 ### On task completion
 
@@ -244,6 +234,11 @@ An incoming agent must be able to resume with **no verbal briefing**. Follow thi
  2. **Prepend a Handover Log entry** (newest first) using the entry template below.
  3. **Update `📊 Active Project Status`** if counts, milestone, or focus changed.
  4. **If a rule changed, update the matching `docs/context/` file in the same commit.**
+ 5. **Auto-archive old log entries.** If the Handover Log in this file exceeds **10 entries**, move
+    the oldest entries to [`docs/context/handover-log-archive.md`](./docs/context/handover-log-archive.md)
+    until only 10 remain here. Prepend the moved entries at the top of the archive file's entry list
+    (below its header), preserving reverse-chronological order in both files. Do this in the same
+    commit as the new log entry.
 
 ### On session close
 
@@ -294,6 +289,210 @@ is being written as part of that same commit
 > goes stale the moment the work lands and was never retro-corrected. Treat `git log` as authoritative
 > for what shipped when. New entries should use `the commit containing this entry` instead, which stays
 > true.
+
+### 2026-08-26 — Shared access-aware variant labels
+
+**Agent:** orchestrator (GPT-5 Codex) · **Commit(s):** `the commit containing this entry`
+**Kanban moved:** no board item moved; shared variant-label follow-up requested by user
+
+**Changed:**
+
+- `src/utils/variantHelpers.ts`: added shared `formatVariantAccessLabel` and
+  `formatVariantNameWithAccess` helpers for scraper-normalized variant labels. The shared grammar now
+  covers access-only labels (`(DA)`, `(DA, DC)`, `(DC)`), duplicate level labels (`20`, `20 (DC)`),
+  base sibling labels (`(Base)`, `(Base) (DC)`), and uppercase Roman numerals.
+- `scripts/scrape-classes.ts`: ChickenCow armor normalization now uses the shared helper. The
+  duplicate `ChickenCow Armor` pair derives its label from the scraped level; `Evolved ChickenCow
+  Armor` renders `(DA)`, `(DA, DC)`, `(DC)` without a redundant `1` prefix.
+- `src/data/classes.json`: targeted ChickenCow armor refresh updated the current data to the shared
+  label policy.
+- `docs/context/ui_patterns.md`, `docs/context/data_reference.md`, and
+  `docs/context/category_playbooks.md`: documented the shared variant-label policy and the corrected
+  ChickenCow armor special case.
+
+**Verified:**
+
+- Targeted scrape `npm run scrape:classes -- --subtype=class --class-subcategory=armor
+  --names='ChickenCow Armor|Evolved ChickenCow Armor|Ascended ChickenCow Armor'` → passed and wrote
+  29 class entries.
+- Data audit → ChickenCow labels are `1`, `1 (DC)`; Evolved labels are `(DA)`, `(DA, DC)`, `(DC)`;
+  Ascended labels are `(DA)`, `(DC)`.
+- `npm run typecheck:scripts` → passed.
+- `npx tsc --noEmit -p tsconfig.json` → passed.
+- `node scripts/validate-class-abilities.mjs` → passed, 83 entries.
+- `node scripts/verify-datasets.mjs` → passed.
+- `npm run lint` → passed.
+- `git diff --check` → passed.
+- `npm run build` → passed production build and all validators.
+
+**Not verified / known gaps:**
+
+- Accessories and weapons still need the already-pending broad re-scrapes to propagate their scraper
+  fixes; no broad scrape was run by the agent.
+- Existing category-specific scrapers still decide the natural forum label. The shared helper only
+  standardizes how that label combines with access flags.
+
+**Next agent should:**
+
+- Continue with the pending accessories/weapons broad scrape handoff or the Regular/Miscellaneous
+  Classes parser work, depending on user priority.
+
+### 2026-08-26 — Desktop/web UI smoke QA
+
+**Agent:** orchestrator (GPT-5 Codex) · **Commit(s):** `the commit containing this entry`
+**Kanban moved:** no board item moved; user-requested desktop/web UI check
+
+**Changed:**
+
+- No code changes were needed from this QA pass. Existing desktop/sidebar/list/detail layouts looked
+  healthy in the sampled routes after the mobile navigation and filter layout changes.
+- `AGENTS.md`: recorded the verification outcome and kept completed UI tasks checked off.
+
+**Verified:**
+
+- `npx tsx scripts/screenshot.ts` desktop screenshots at 1440×900 for Home, Accessories Helms,
+  Weapons Scythes, Housing Stuff with `Effect`, Accessory detail, Housing detail, and Classes /
+  Abilities armor detail → visually checked.
+- Playwright desktop overflow/console audit for `/`, `/accessories?type=helm`,
+  `/weapons?type=scythe`, `/classes?type=class`, `/housing?type=stuff&category=effect`, `/pets`,
+  `/accessories/13th-mask?type=helm`, `/housing/armor-closet?type=stuff`, and
+  `/classes/class-ability-gnomish-personal-steamtank-vr-1-0-mk-ii?type=class` → no console errors
+  and `scrollWidth` matched `innerWidth` at 1440px for every page.
+
+**Not verified / known gaps:**
+
+- This was a focused visual smoke pass, not exhaustive screenshot coverage for every route and
+  viewport.
+- No broad scrapes were run or needed.
+
+**Next agent should:**
+
+- Continue with the pending accessories/weapons full re-scrape handoff or the next Classes /
+  Abilities scraper task.
+
+### 2026-08-26 — Mobile navigation and filter layout polish
+
+**Agent:** orchestrator (GPT-5 Codex) · **Commit(s):** `the commit containing this entry`
+**Kanban moved:** no board item moved; shared mobile UI bug fix requested by user
+
+**Changed:**
+
+- `src/components/shared/SegmentToggle.tsx`: subtype selector pills now wrap on mobile widths instead
+  of clipping off the right edge.
+- `src/components/layout/Navigation.tsx`: mobile bottom navigation now keeps a compact primary set
+  (`Home`, `Accessories`, `Badges`, `Pets`, `More`) and opens a More panel containing Classes /
+  Abilities, Housing, Weapons, and coming-soon sections.
+- `docs/context/ui_patterns.md` and `docs/context/category_playbooks.md`: documented mobile subtype
+  wrapping, the mobile More navigation pattern, and the Housing `Effect` metadata rule.
+
+**Verified:**
+
+- `npx tsx scripts/screenshot.ts` mobile screenshots at 390×844 for Accessories, Weapons, Home, and
+  the opened More menu → visually checked.
+- Playwright mobile overflow audit for `/`, `/accessories?type=helm`, `/weapons?type=scythe`,
+  `/classes?type=class`, `/housing?type=stuff`, and `/pets` → `scrollWidth` matched `innerWidth`
+  at 390px for every page.
+- `npm run typecheck:scripts` → passed.
+- `npx tsc --noEmit -p tsconfig.json` → passed.
+- `npm run lint` → passed.
+- `node scripts/verify-datasets.mjs` → passed.
+- `npm run build` → passed production build and all validators.
+- `git diff --check` → passed.
+
+**Not verified / known gaps:**
+
+- No broad scrapes were run or needed.
+
+**Next agent should:**
+
+- Continue with the pending accessories/weapons full re-scrape handoff or the next Classes /
+  Abilities scraper task.
+
+### 2026-08-26 — Stale L2 filter toggle rendering fix
+
+**Agent:** orchestrator (GPT-5 Codex) · **Commit(s):** `the commit containing this entry`
+**Kanban moved:** `Fix stale card-gallery rendering on L2 filter toggle` → `✅ Done`
+
+**Changed:**
+
+- `src/pages/AccessoryListPage.tsx`, `src/pages/WeaponListPage.tsx`,
+  `src/pages/HousingListPage.tsx`, and `src/pages/ClassAbilityListPage.tsx`: removed the
+  catch-all `canonicalQueryString` URL-sync effect that rewrote every filter param after filter
+  toggles. Each page now only syncs debounced search text (`q`) through an effect; filter toggle and
+  clear handlers remain the source of truth for their own params.
+- `src/components/housing/HousingCard.tsx` and `src/components/housing/HousingDetail.tsx`: removed
+  Housing `Effect`/L2 status metadata pills from cards/detail headers while preserving the actual
+  effect content and Effect filter.
+- `src/components/housing/HousingList.tsx`: made Housing card keys unique even when filtered
+  transition renders contain same-slug entries.
+- `docs/context/ui_patterns.md`: documented that list pages should not re-canonicalize the whole
+  filter URL after toggles.
+
+**Verified:**
+
+- `npm run typecheck:scripts` → passed.
+- `npx tsc --noEmit -p tsconfig.json` → passed.
+- `npm run lint` → passed.
+- `node scripts/verify-datasets.mjs` → passed.
+- `npm run build` → passed production build and all validators.
+- `git diff --check` → passed.
+- Local Playwright smoke test against Vite dev server → Housing `Effect`, Accessories `Rare`,
+  Weapons `Special`, and Classes `Seasonal` L2 toggles all updated URL/count/cards together; no
+  browser console errors; Housing card-level `Effect` pill count was 0.
+
+**Not verified / known gaps:**
+
+- No broad scrapes were run or needed.
+
+**Next agent should:**
+
+- Run the normal verification gate, then continue with the pending accessories/weapons full
+  re-scrape handoff or the next Classes / Abilities scraper task.
+
+### 2026-08-26 — Shared trinket-skill enrichment repair
+
+**Agent:** orchestrator (GPT-5 Codex) · **Commit(s):** `the commit containing this entry`
+**Kanban moved:** no board item moved; targeted trinket parser bug fix requested by user
+
+**Changed:**
+
+- `scripts/scrape-accessories.ts`: trinket skill parsing now enriches same-name skill blocks from
+  the richest sibling block. Requirement-specific rows keep their own `Requirements:` text but inherit
+  missing effect text, mana/cooldown/type/element, button image, appearance image(s), and notes.
+- `src/data/trinkets.json`: targeted refresh for `Beacon of Hope` and `Pillar of Light` populated the
+  complete shared `Beacon of Hope` skill details for both trinkets while preserving each trinket's
+  requirement.
+- `docs/context/category_playbooks.md` and `docs/context/scraper_operations.md`: documented the
+  shared trinket-skill post pattern and the required enrichment behavior for trinkets and
+  ability-bearing artifacts.
+
+**Verified:**
+
+- Targeted scrape `npm run scrape:accessories -- --subtypes=trinket
+  --names="Beacon of Hope,Pillar of Light"` → passed.
+- Data audit → `Pillar of Light` now has the complete Beacon of Hope skill mechanics/media and keeps
+  `Pillar of Light equipped` as its requirement.
+- Current trinket skill audit → only one shared ability URL group exists (`Beacon of Hope` /
+  `Pillar of Light`), and no ability-bearing trinket currently has missing attacks, unknown effects,
+  missing skill button images, or missing appearance images.
+- `npm run typecheck:scripts` → passed.
+- `npx tsc --noEmit -p tsconfig.json` → passed.
+- `npm run lint` → passed.
+- `node scripts/validate-accessories.mjs` → passed, 2,602 entries across 8 subtypes / 10 data files.
+- `node scripts/verify-datasets.mjs` → passed.
+- `npm run build` → passed production build and all validators.
+- `git diff --check` → passed.
+
+**Not verified / known gaps:**
+
+- No broad trinket/accessories scrape was run by the agent. Future full accessories re-scrape remains
+  user-run by rule.
+- Browser visual QA was not run before this handover entry.
+
+**Next agent should:**
+
+- Continue with the pending accessories/weapons full re-scrape handoff or the next Classes /
+  Abilities scraper task.
 
 ### 2026-08-25 — Accessory/weapon mixed DA/DC scraper scoping
 
@@ -502,129 +701,7 @@ is being written as part of that same commit
 - Hand the user the full Armors scrape command, then continue Classes / Abilities breadth work once
   the user has run it.
 
-### 2026-08-25 — Cross-category badge award links
-
-**Agent:** orchestrator (GPT-5 Codex) · **Commit(s):** `the commit containing this entry`
-**Kanban moved:** no board item moved; cross-category linking follow-up requested by user
-
-**Changed:**
-
-- `scripts/generate-badge-relations.mjs` and `src/data/badge-relations.json`: added a lightweight
-  generated index for explicit `Own this ... to obtain ... badge(s)` notes. The current data produces
-  14 bidirectional item ↔ badge relations.
-- `src/hooks/useBadgeRelations.ts` and `src/utils/badgeAwardText.ts`: item detail pages resolve
-  mentioned badge names from local note/description text, while Badge detail pages use the generated
-  reverse index without loading every large category dataset.
-- Detail pages for pets/guests, accessories, weapons, housing, and Classes / Abilities can now append
-  awarded Badge cards to `Also See`. Badge detail pages append awarding item cards to their `Also See`
-  section.
-- `src/components/shared/RelatedLinkCard.tsx`: added a small generic related card for reverse
-  cross-category item links from Badge pages.
-- `src/components/classAbilities/ClassAbilityCard.tsx` and `src/components/housing/HousingCard.tsx`:
-  removed Level 2 status pills such as Rare/Seasonal/Special Offer from card-gallery cards, matching
-  the shared card rule used by other categories.
-- `docs/context/ui_patterns.md`, `docs/context/category_playbooks.md`, and
-  `docs/context/scraper_operations.md`: documented phrase-based cross-category badge links, the
-  `npm run generate:badge-relations` maintenance command, and the card-gallery L2 status-pill rule.
-
-**Verified:**
-
-- `npm run generate:badge-relations` → wrote 14 relation(s), no missing badge targets.
-- `npx tsc --noEmit -p tsconfig.json` → passed.
-- `npm run typecheck:scripts` → passed.
-- `npm run lint` → passed.
-- `git diff --check` → passed.
-- `npm run build` → passed full validate/typecheck/build gate.
-
-**Not verified / known gaps:**
-
-- No browser visual QA was run for the new cross-category card sections.
-- The relation rule is intentionally strict and only handles explicit `Own this ... to obtain ...
-  badge(s)` wording. Broader badge-related prose remains unlinked by design.
-
-**Next agent should:**
-
-- Visually spot-check one item-to-badge link and the corresponding badge-to-item reverse link before
-  expanding cross-category linking to less explicit patterns.
-
-### 2026-08-25 — Shared detail page width
-
-**Agent:** orchestrator (GPT-5 Codex) · **Commit(s):** `the commit containing this entry`
-**Kanban moved:** no board item moved; shared UI polish requested by user
-
-**Changed:**
-
-- `src/components/shared/DetailPageLayout.tsx`: introduced a shared `max-w-5xl` detail-page wrapper
-  and exported matching container classes for breadcrumb-only strips.
-- Category detail pages/components for badges, pets/guests, accessories, weapons, housing, and
-  Classes / Abilities now use the shared detail width for loaded, loading, and not-found states.
-- `docs/context/ui_patterns.md`: documented the shared detail-width rule so new categories do not add
-  one-off `max-w-*` containers.
-
-**Verified:**
-
-- `npx tsc --noEmit -p tsconfig.json` → passed.
-- `npm run typecheck:scripts` → passed.
-- `npm run build` → passed full validate/typecheck/build gate.
-
-**Not verified / known gaps:**
-
-- No browser screenshot pass was run; verification was static/build-only.
-- Existing uncommitted Classes / Abilities and dataset changes from this session remain part of the
-  same working tree.
-
-**Next agent should:**
-
-- Continue Classes / Abilities work, with detail pages using `DetailPageLayout` by default.
-
-### 2026-08-25 — Armor metric strip and Special Offer tag fallback
-
-**Agent:** orchestrator (GPT-5 Codex) · **Commit(s):** `the commit containing this entry`
-**Kanban moved:** no board item moved; follow-up polish on Classes Armors sample
-
-**Changed:**
-
-- `src/components/shared/MetricStrip.tsx`: added a bordered `panel` variant with one/two/three-column
-  support while preserving the existing compact default used in attack/special accordions.
-- `src/components/guests/GuestStatsSection.tsx`: guest Level / Damage / Type panel now uses the
-  shared `MetricStrip` panel variant.
-- `src/components/classAbilities/ClassAbilityDetail.tsx`: armor detail pages now render Level,
-  Rarity, and Equips Class in the same three-column panel style. `Equips Class` is plain text, not a
-  hotlink.
-- `src/components/classAbilities/ClassAbilityCard.tsx` and detail headers: Classes / Abilities now
-  display Rare, Seasonal, and Special Offer pills when the data flags are present.
-- `scripts/lib/tags.ts` and `scripts/scrape-classes.ts`: added shared forum tag-image helpers and
-  wired Classes to them. The Classes A-Z listing uses text parentheticals such as `S-Offer` instead
-  of tag images for some rows, so the scraper treats `/tags/SpecialOffer.png` as canonical when
-  present and `S-Offer` listing text as the row-level fallback.
-- `src/data/classes.json`: refreshed the A/D Armors sample. `DoomKnight Armor` and
-  `DoomKnight Variant One` now carry `specialoffer` / `isSpecialOffer`.
-- `docs/context/scraper_operations.md`: documented the tag-image-first, listing-text-fallback rule
-  for L2 status tags.
-
-**Verified:**
-
-- Source listing inspection around `DoomKnight Armor` → rows use `(D-Amulet/S-Offer)` and
-  `(D-Amulet/Rare/S-Offer)` text rather than rendered tag images.
-- `npm run scrape:classes -- --subtype=class --class-subcategory=armor --letters=A,D --fresh` →
-  wrote 13 armor entries.
-- A/D tag audit → `DoomKnight Armor` special=true, rare=false, tags=`da,specialoffer`;
-  `DoomKnight Variant One` special=true, rare=true, tags=`da,rare,specialoffer`.
-- `npm run build` → passed.
-
-**Not verified / known gaps:**
-
-- No browser visual QA was run for the new armor/guest `MetricStrip` panel rendering.
-- Older scrapers still contain some local tag regexes; most are already image-based, but only Classes
-  has been moved onto the expanded shared helper in this follow-up.
-
-**Next agent should:**
-
-- Visually spot-check a guest stats block and DoomKnight Armor detail/card in the app.
-
----
-
-> **Older entries (33 log entries, 2026-07-27 through 2026-08-24) archived to
+> **Older entries (34 log entries, 2026-07-27 through 2026-08-25) archived to
 > [`docs/context/handover-log-archive.md`](./docs/context/handover-log-archive.md)** to keep this
 > file under 600 lines. Read that file only when investigating historical context — the entries above
 > cover the current working session.

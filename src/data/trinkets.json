@@ -628,7 +628,7 @@
     "obtainMethods": [
       {
         "location": "Def. Rares",
-        "priceType": "merge",
+        "priceType": "dm",
         "price": "N/A",
         "requiredItems": "200 Defender's Medal",
         "sellback": "100 Gold",
@@ -1627,7 +1627,7 @@
           {
             "location": "Def. Rares",
             "price": "N/A",
-            "priceType": "merge",
+            "priceType": "dm",
             "sellback": "200 Gold",
             "requiredItems": "2,000 Defender's Medal",
             "daRequired": true,
@@ -5010,7 +5010,7 @@
     "obtainMethods": [
       {
         "location": "Storm of Stars (Shop)",
-        "priceType": "merge",
+        "priceType": "dm",
         "price": "N/A",
         "requiredItems": "75 Defender's Medal",
         "sellback": "N/A",
@@ -5523,11 +5523,14 @@
         "name": "Beacon of Hope",
         "description": "+80 Defense for 2 turns.",
         "requirements": "Pillar of Light equipped",
-        "effect": "Unknown effect",
-        "manaCost": "—",
-        "cooldown": "—",
-        "damageType": "—",
-        "element": "—"
+        "effect": "Applies 'Morale Boosted' (+80 Block/Parry/Dodge Defense) to player for 2 turns inclusive.",
+        "manaCost": "10",
+        "cooldown": "29 - [(Player LUK/50), rounded down]",
+        "damageType": "N/A",
+        "element": "N/A",
+        "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-BeaconofHope.png",
+        "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-BeaconofHope-Appearance.png",
+        "notes": "• Previously had the description: 2-turn Shield"
       }
     ],
     "trinketSkillEffectTypes": [

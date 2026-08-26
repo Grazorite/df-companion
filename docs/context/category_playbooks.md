@@ -24,9 +24,7 @@
   "requirements": "Completion of Quest Name",
   "daRequired": false,
   "retired": false,
-  "howToObtain": [
-    { "order": 1, "instruction": "Completion of Quest Name" }
-  ],
+  "howToObtain": [{ "order": 1, "instruction": "Completion of Quest Name" }],
   "forumLinks": [
     {
       "url": "https://forums2.battleon.com/f/tm.asp?m=XXXXX",
@@ -138,6 +136,11 @@ Family-level `elements` and `traits` are the UNION across all variants. Example:
 `traits` are stored on each `LevelVariant` to scope element/trait pills on detail pages to the
 selected variant. The card gallery shows the family-level union.
 
+`Pirate Monkey` is the pets reference itemfamily for the shared variant-label policy. Its current
+variant labels are intentionally correct and should be preserved when changing pet family parsing:
+named/base branches, same-level access branches, and access-only branches should all follow the shared
+`formatVariantNameWithAccess` grammar documented in `ui_patterns.md`.
+
 ### Attack Images
 
 Pet attack image links should be retained when the forum hotlinks attack labels (for example Goldfish
@@ -246,6 +249,14 @@ with `trinketSkillEffectTypes` from the forum effect index (`A-Z Trinket Skills`
 `Effect Type(s): ...` on detail pages only, below the description/release-date area. This applies to
 artifact entries that behave like trinkets (for example Dragon's Bulwark-style entries) as well as the
 trinket subtype itself.
+
+Linked trinket-skill posts may contain one rich shared skill block plus thinner requirement-specific
+blocks for multiple trinkets using the same ability. Example: `Beacon of Hope (Trinket Skill)` serves
+both `Beacon of Hope` and `Pillar of Light`; the Pillar-specific block carries the correct
+requirement, while the Beacon block carries the complete mechanics and media. When multiple parsed
+skill blocks share the same skill name, keep the requirement-specific match for the current trinket
+but inherit missing effect text, mana/cooldown/type/element, button image, appearance image(s), and
+notes from the richest sibling block.
 
 ### Multi-post families and supplemental posts
 
@@ -375,16 +386,17 @@ Printable forum pages may return 500 for some duplicate listing links; fall back
 post before keeping a listing-only entry.
 
 Housing furnishings from Rugs onward may have `Effect:` text. Render the effect in its own detail card
-below the image section. Use the label `Effect` consistently for the filter pill, card/list pill,
-compact effect-type metadata line, and detail card heading. Effect quote blocks must preserve forum
-quote structure instead of flattening into comma-separated prose. Keep Also See below Sources using the shared
-related-card treatment. Housing can infer Also See across subtypes through the shared related-item
-hook when names and obtain methods are close, but must not consolidate entries across different
-housing subtypes. Within the same Housing subtype only, exact Left/Right pairs may consolidate into a
-single family when their normalized names match: `X Left` / `X Right`, `Left X` / `Right X`,
-middle-token pairs, `X L` / `X R`, and `Lefthand X` / `Righthand X`. The family name drops the side
-token and variants retain the forum side label (`Left`, `Right`, `L`, `R`, `Lefthand`,
-`Righthand`). If one forum thread contains different item types (for example
+below the image section. Use the label `Effect` for the filter pill, compact effect-type metadata
+line, and detail card heading; do not repeat it as a card-gallery/status pill because it is Level 2
+filter metadata. Effect quote blocks must preserve forum quote structure instead of flattening into
+comma-separated prose. Keep Also See below Sources using the shared related-card treatment. Housing
+can infer Also See across subtypes through the shared related-item hook when names and obtain methods
+are close, but must not consolidate entries across different housing subtypes. Within the same
+Housing subtype only, exact Left/Right pairs may consolidate into a single family when their
+normalized names match: `X Left` / `X Right`, `Left X` / `Right X`, middle-token pairs, `X L` /
+`X R`, and `Lefthand X` / `Righthand X`. The family name drops the side token and variants retain
+the forum side label (`Left`, `Right`, `L`, `R`, `Lefthand`, `Righthand`). If one forum thread
+contains different item types (for example
 `Inn at the Edge of Time Portal (Indoors)` as Stuff and `(Outside)` as Shrub), split them into
 separate subtype entries and link via Also See. Known forum listing/detail classification mismatches
 should be kept as scoped Housing overrides; current overrides place `Light Bowl` and
@@ -492,8 +504,9 @@ Reforged time-class armors fold into their base family with `(Base)` and `Reforg
 `Chronocorruptor` + `Reforged Chronocorruptor` display as `Chronocorruptor`; `Chronomancer Armor` +
 `Reforged Chronomancer` display as `Chronomancer Armor`. `Epoch` remains standalone unless a Reforged
 armor counterpart appears. ChickenCow armor posts are mixed-access single-post families: `ChickenCow
-Armor` renders `1` and `1 (DC)`; `Evolved ChickenCow Armor` renders `1 (DA)`, `1 (DA, DC)`, and
-`1 (DC)`; `Ascended ChickenCow Armor` renders `(DA)` and `(DC)`. For those posts, method-level
+Armor` renders its scraped level and level-plus-DC label (`1` and `1 (DC)` in the current source)
+because the same level entry repeats; `Evolved ChickenCow Armor` renders `(DA)`, `(DA, DC)`, and `(DC)` because access alone distinguishes the variants;
+`Ascended ChickenCow Armor` renders `(DA)` and `(DC)`. For those posts, method-level
 price/required-item semantics override page-level DA/DC tag bleed. `Epoch` price parsing also repairs
 the forum strikethrough artifact that can drop the closing `)` from `(Standard)`. Consolidated armor
 families may claim legacy/source slugs as aliases; if a stale or duplicate primary entry has a slug

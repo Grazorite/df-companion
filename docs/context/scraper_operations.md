@@ -261,6 +261,28 @@ npm run images:guests  # Extract guest character images from forum (auto-uses ve
 npm run setup:python   # Manually create the Python venv used by image scripts
 ```
 
+## Visual Verification (Screenshots)
+
+`scripts/screenshot.ts` lets any AI agent take a screenshot of the running dev server for visual QA.
+Requires `npm run dev` to be running on `localhost:5173`.
+
+```bash
+npx tsx scripts/screenshot.ts '/housing?type=wall-item&category=effect'
+npx tsx scripts/screenshot.ts '/pets/goldfish-knight' --width=1440 --height=900
+npx tsx scripts/screenshot.ts '/classes' --full-page --name=classes-overview
+```
+
+**Options:** `--width=N` (default 1280), `--height=N` (default 720), `--full-page` (capture below
+the fold), `--name=slug` (custom output filename).
+
+**Output:** `.tmp/screenshots/<timestamp>-<slug>.png` — the path is printed to stdout. The `.tmp/`
+directory is gitignored.
+
+**Important:** always quote paths containing `?` or `&` to prevent shell expansion.
+
+Agents should use this after UI changes to verify rendering before marking work done. The output PNG
+can be viewed via `read_file` (Kiro returns base64 for images) or attached to the chat.
+
 Run `npm run generate:badge-relations` after scrapes that change item descriptions or Other
 Information. The generated `src/data/badge-relations.json` index powers reverse Badge detail links for
 explicit award notes such as `Own this armor to obtain the Time Walker badge` without forcing Badge
