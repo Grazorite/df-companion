@@ -1,47 +1,68 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useMemo } from 'react'
 import badgeRelationsData from '../data/badge-relations.json'
-import type { Badge } from '../types/badge'
 import type { BadgeRelation } from '../types/badgeRelation'
-import { extractAwardedBadgeNames, normalizeBadgeLookupKey } from '../utils/badgeAwardText'
-import { loadBadges } from '../utils/dataLoaders'
+import type { InlineTextLink } from '../types/inlineLink'
 
 const badgeRelations = badgeRelationsData as BadgeRelation[]
 
-export function useAwardedBadges(texts: Array<string | undefined | null>) {
-  const [badges, setBadges] = useState<Badge[]>([])
-
-  useEffect(() => {
-    let active = true
-    loadBadges()
-      .then((data) => {
-        if (active) setBadges(data)
-      })
-      .catch(() => {
-        if (active) setBadges([])
-      })
-
-    return () => {
-      active = false
-    }
-  }, [])
-
-  const badgeNames = useMemo(() => extractAwardedBadgeNames(texts), [texts])
-
-  return useMemo(() => {
-    if (badgeNames.length === 0 || badges.length === 0) return []
-    const badgeByKey = new Map(
-      badges.map((badge) => [normalizeBadgeLookupKey(badge.name), badge] as const)
-    )
-    return badgeNames.flatMap((name) => {
-      const badge = badgeByKey.get(normalizeBadgeLookupKey(name))
-      return badge ? [badge] : []
-    })
-  }, [badgeNames, badges])
+function dedupeInlineLinks(links: InlineTextLink[]): InlineTextLink[] {
+  const seen = new Set<string>()
+  return links.filter((link) => {
+    const key = `${link.text.toLowerCase()}|${link.to}`
+    if (seen.has(key)) return false
+    seen.add(key)
+    return true
+  })
 }
 
-export function useItemsAwardingBadge(badgeSlug?: string) {
-  return useMemo(
-    () => badgeRelations.filter((relation) => relation.badgeSlug === badgeSlug),
-    [badgeSlug]
-  )
+function itemLinkAliases(relation: BadgeRelation): string[] {
+  const names = [relation.itemName, ...(relation.itemAliases ?? [])]
+  const parenthetical = relation.itemName.match(/^(.+?)\s*\(([^)]+)\)$/)
+  if (parenthetical) {
+    const baseName = parenthetical[1]?.trim()
+    const variants = parenthetical[2]
+      ?.split(/\s*,\s*/)
+      .map((variant) => variant.trim())
+      .filter(Boolean)
+
+    if (baseName && variants) {
+      names.push(...variants.map((variant) => `${baseName} ${variant}`))
+    }
+  }
+
+  if (relation.categoryLabel === 'Armor' && !/\bArmor$/i.test(relation.itemName)) {
+    names.push(`${relation.itemName} Armor`)
+  }
+
+  return [...new Set(names)]
+}
+
+export function useBadgeInlineLinksForItem(itemSlug?: string): InlineTextLink[] {
+  return useMemo(() => {
+    if (!itemSlug) return []
+    return dedupeInlineLinks(
+      badgeRelations
+        .filter((relation) => relation.itemSlug === itemSlug)
+        .map((relation) => ({
+          text: relation.badgeName,
+          to: `/badges/${relation.badgeSlug}`,
+        }))
+    )
+  }, [itemSlug])
+}
+
+export function useAwardingItemInlineLinksForBadge(badgeSlug?: string): InlineTextLink[] {
+  return useMemo(() => {
+    if (!badgeSlug) return []
+    return dedupeInlineLinks(
+      badgeRelations
+        .filter((relation) => relation.badgeSlug === badgeSlug)
+        .flatMap((relation) =>
+          itemLinkAliases(relation).map((text) => ({
+            text,
+            to: relation.route,
+          }))
+        )
+    )
+  }, [badgeSlug])
 }

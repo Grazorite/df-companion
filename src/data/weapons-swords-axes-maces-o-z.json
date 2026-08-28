@@ -3657,100 +3657,57 @@
   },
   {
     "id": "weapon-pirate-blade-pirate-default",
-    "familyName": "Pirate Blade (Pirate Default)",
+    "name": "Pirate Blade (Pirate Default)",
     "slug": "weapon-pirate-blade-pirate-default",
-    "aliasSlugs": [
-      "weapon-pirate-blade-pirate-default-all-versions",
-      "weapon-blade-pirate-pirate-blade",
-      "weapon-pirate-default-pirate-blade"
-    ],
     "type": "weapon",
     "subtype": "sword-axe-mace",
+    "description": "This weapon is the type of sword used by pirates in all seven out of the eight known seas, but Cysero is still a slacker.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=10961777",
-    "familyOrigin": "cross-post",
-    "familySources": [
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=10961777",
-        "title": "DF Encyclopedia: Pirate Blade (Pirate Default)",
-        "variantLabel": "Pirate Blade (Pirate Default) Pirate Default",
-        "isPrimary": true
-      }
-    ],
-    "itemType": "Sword",
-    "shared": {
-      "description": "This weapon is the type of sword used by pirates in all seven out of the eight known seas, but Cysero is still a slacker.",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Default-PirateBlade.png",
-      "alternativeImages": [
-        {
-          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Default-PirateBlade.png",
-          "caption": "Default"
-        },
-        {
-          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Default-PirateBladeMarauder.png",
-          "caption": "Marauder"
-        }
-      ],
-      "element": "DAR",
-      "resists": "None",
-      "rarity": "0",
-      "notes": "Selecting the Marauder Body Armor Customization option changes this weapon's appearance.\nSelecting the Voidsailor Body Armor Customization option makes this weapon to have no appearance.",
-      "alsoSee": []
-    },
-    "levelVariants": [
-      {
-        "levelNumber": 1,
-        "levelDisplay": "1",
-        "actualLevel": 1,
-        "variantName": "Pirate Default",
-        "name": "Pirate Blade (Pirate Default)",
-        "damage": "5-12",
-        "stats": "Crit +5, Bonus +1",
-        "obtainVariants": [
-          {
-            "location": "Default weapon of Pirate",
-            "price": "N/A",
-            "priceType": "free",
-            "sellback": "N/A",
-            "daRequired": false
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=10961777",
-        "description": "This weapon is the type of sword used by pirates in all seven out of the eight known seas, but Cysero is still a slacker.",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Default-PirateBlade.png",
-        "alternativeImages": [
-          {
-            "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Default-PirateBlade.png",
-            "caption": "Default"
-          },
-          {
-            "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Default-PirateBladeMarauder.png",
-            "caption": "Marauder"
-          }
-        ],
-        "element": "DAR",
-        "resists": "None",
-        "rarity": "0",
-        "itemType": "Sword",
-        "notes": "Selecting the Marauder Body Armor Customization option changes this weapon's appearance.\nSelecting the Voidsailor Body Armor Customization option makes this weapon to have no appearance."
-      }
-    ],
-    "category": "Weapon",
     "releaseDate": "",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Default-PirateBlade.png",
+    "alternativeImages": [
+      {
+        "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Default-PirateBlade.png",
+        "caption": "Default"
+      },
+      {
+        "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Default-PirateBladeMarauder.png",
+        "caption": "Marauder"
+      }
+    ],
+    "elements": [
+      "DAR"
+    ],
+    "level": "1",
+    "damage": "5-12",
+    "stats": "Crit +5, Bonus +1",
+    "resists": "None",
+    "rarity": "0",
+    "itemType": "Sword",
+    "obtainMethods": [
+      {
+        "location": "Default weapon of Pirate",
+        "price": "N/A",
+        "priceType": "free",
+        "sellback": "N/A",
+        "daRequired": false
+      }
+    ],
+    "notes": "Selecting the Marauder Body  Armor Customization option changes this weapon's appearance.\nSelecting the Voidsailor Body  Armor Customization option makes this weapon to have no appearance.",
+    "alsoSee": [
+      {
+        "name": "Dread Pirate Blade (Dread Pirate Default)",
+        "slug": "weapon-dread-pirate-blade-dread-pirate-default",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=11351931"
+      }
+    ],
     "tags": [
       "dar",
       "default",
       "free"
     ],
-    "hasDA": false,
-    "hasDC": false,
-    "hasDM": false,
-    "hasFree": true,
-    "hasMerge": false,
-    "elements": [
-      "DAR"
-    ],
-    "retired": true,
-    "levelRange": "1",
+    "daRequired": false,
     "isDefault": true
   },
   {
@@ -31187,7 +31144,7 @@
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=22366820",
         "title": "DF Encyclopedia: sword (DoomKnight V1 Default)",
-        "variantLabel": "sword (DoomKnight V1 Default) DoomKnight V1 Default",
+        "variantLabel": "sword (DoomKnight V1 Default)",
         "isPrimary": true
       }
     ],
@@ -31374,7 +31331,7 @@
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=15240014",
         "title": "DF Encyclopedia: Sword (Frost Moglin Default)",
-        "variantLabel": "Sword (Frost Moglin Default) Frost Moglin Default",
+        "variantLabel": "Sword (Frost Moglin Default)",
         "isPrimary": true
       }
     ],
@@ -32126,7 +32083,7 @@
     ],
     "itemType": "Sword",
     "shared": {
-      "description": "This sword really suits you! But it's not shaped like a club at all...",
+      "description": "",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/SwordOfClubs.png",
       "element": "STO",
       "rarity": "5",
@@ -32260,7 +32217,7 @@
     ],
     "itemType": "Sword",
     "shared": {
-      "description": "This sword really suits you! But it's not shaped like a diamond at all...",
+      "description": "",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/SwordOfDiamonds.png",
       "element": "WIN",
       "rarity": "5",
@@ -32764,7 +32721,7 @@
     ],
     "itemType": "Sword",
     "shared": {
-      "description": "This sword really suits you! But it's not shaped like a heart at all...",
+      "description": "",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/SwordOfHearts.png",
       "element": "FIR",
       "rarity": "5",
@@ -33208,7 +33165,7 @@
     ],
     "itemType": "Sword",
     "shared": {
-      "description": "This sword really suits you! But it's not shaped like a spade at all...",
+      "description": "",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/SwordOfSpades.png",
       "element": "WAT",
       "rarity": "5",

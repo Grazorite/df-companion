@@ -345,7 +345,7 @@
     "obtainMethods": [
       {
         "location": "Ancient Abyss Loot",
-        "priceType": "merge",
+        "priceType": "dm",
         "price": "N/A",
         "requiredItems": "50 Defender's Medal",
         "sellback": "0 Dragon Coins",
@@ -386,7 +386,7 @@
     "obtainMethods": [
       {
         "location": "Ancient Abyss Loot",
-        "priceType": "merge",
+        "priceType": "dm",
         "price": "N/A",
         "requiredItems": "50 Defender's Medal",
         "sellback": "0 Dragon Coins",
@@ -427,7 +427,7 @@
     "obtainMethods": [
       {
         "location": "Ancient Abyss Loot",
-        "priceType": "merge",
+        "priceType": "dm",
         "price": "N/A",
         "requiredItems": "50 Defender's Medal",
         "sellback": "0 Dragon Coins",
@@ -2635,7 +2635,7 @@
           {
             "location": "Def. Rares",
             "price": "N/A",
-            "priceType": "merge",
+            "priceType": "dm",
             "sellback": "0 Gold",
             "requiredItems": "50 Defender's Medal",
             "daRequired": false,
@@ -7971,86 +7971,6 @@
     "hasFree": false,
     "hasMerge": true,
     "levelRange": "1-50",
-    "elements": [
-      "NON",
-      "LIG"
-    ]
-  },
-  {
-    "id": "accessory-fierce-baron-cat-mask",
-    "familyName": "Fierce Baron Cat Mask",
-    "slug": "accessory-fierce-baron-cat-mask",
-    "type": "accessory",
-    "subtype": "helm",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20827848",
-    "familyOrigin": "cross-post",
-    "familySources": [
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20847532",
-        "title": "DF Encyclopedia: Fierce Baron Cat Mask",
-        "variantLabel": "Fierce Baron Cat Mask",
-        "isPrimary": false
-      }
-    ],
-    "shared": {
-      "description": "Happy Mogloween, 2012!",
-      "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/BaronCatMaskpic.jpg",
-      "resists": "Darkness +15, Light +15, Immobility +3, Health -2",
-      "rarity": "12",
-      "alsoSee": [
-        {
-          "name": "Baron Cat Mask",
-          "slug": "accessory-baron-cat-mask",
-          "type": "accessory",
-          "url": "https://forums2.battleon.com/f/tm.asp?m=20827848"
-        }
-      ]
-    },
-    "levelVariants": [
-      {
-        "levelNumber": 1,
-        "levelDisplay": "79",
-        "actualLevel": 79,
-        "variantName": "Fierce",
-        "name": "Fierce Baron Cat Mask",
-        "damage": "",
-        "stats": "Block +2, Dodge +3, Parry +1, Crit +10, Magic Def +8, Pierce Def +8, Melee Def +8, WIS +6, END +6, CHA +6, INT +10, DEX +10, STR +10, Bonus +9",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20847532",
-        "description": "Happy Mogloween, 2012!",
-        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/BaronCatMaskpic.jpg",
-        "obtainVariants": [
-          {
-            "location": "Cysero's Mask Shop",
-            "price": "395 Dragon Coins",
-            "priceType": "dc",
-            "sellback": "356 DC (<24 hours) / 99 DC (>24 hours)",
-            "daRequired": false,
-            "dcRequired": true
-          }
-        ],
-        "element": "LIG",
-        "resists": "Darkness +15, Light +15, Immobility +3, Health -2",
-        "rarity": "12"
-      }
-    ],
-    "itemType": "Helm",
-    "equipSlot": "Head",
-    "category": "Armor",
-    "releaseDate": "",
-    "tags": [
-      "dc",
-      "lig",
-      "merge",
-      "non"
-    ],
-    "isTemp": true,
-    "isSeasonal": true,
-    "hasDA": false,
-    "hasDC": true,
-    "hasDM": false,
-    "hasFree": false,
-    "hasMerge": false,
-    "levelRange": "79",
     "elements": [
       "NON",
       "LIG"
@@ -18365,7 +18285,7 @@
     "obtainMethods": [
       {
         "location": "EbilTreats Candy Shop",
-        "priceType": "merge",
+        "priceType": "dm",
         "price": "N/A",
         "requiredItems": "50 Defender's Medal",
         "sellback": "0 Dragon Coins",
@@ -26055,7 +25975,7 @@
           {
             "location": "Snowfight DM Merges",
             "price": "N/A",
-            "priceType": "merge",
+            "priceType": "dm",
             "sellback": "0 Gold",
             "requiredItems": "25 Defender's Medal",
             "daRequired": false,
@@ -27001,7 +26921,7 @@
     "obtainMethods": [
       {
         "location": "Storm of Stars (Shop)",
-        "priceType": "merge",
+        "priceType": "dm",
         "price": "N/A",
         "requiredItems": "50 Defender's Medal",
         "sellback": "N/A",
@@ -41116,104 +41036,6 @@
     ]
   },
   {
-    "id": "accessory-radiant-dravir-warhelm",
-    "familyName": "Radiant Dravir Warhelm",
-    "slug": "accessory-radiant-dravir-warhelm",
-    "type": "accessory",
-    "subtype": "helm",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22389622",
-    "familyOrigin": "cross-post",
-    "familySources": [
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=22389631",
-        "title": "DF Encyclopedia: Radiant Dravir Warhelm",
-        "variantLabel": "Radiant Dravir Warhelm",
-        "isPrimary": false
-      }
-    ],
-    "shared": {
-      "description": "Impressed with the bond you share with your dragon, the dravir smiths refitted this helm for you. Kara used some magic to allow it to change color based on your preference! (Cosmetic)",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/RadiantDravirWarhelm.png",
-      "alternativeImages": [
-        {
-          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/RadiantDravirWarhelm-ElementalAttunement.png",
-          "caption": "All Appearances"
-        }
-      ],
-      "rarity": "5",
-      "resists": "None",
-      "alsoSee": [
-        {
-          "name": "Dravir Warhelm",
-          "slug": "accessory-dravir-warhelm",
-          "type": "accessory",
-          "url": "https://forums2.battleon.com/f/tm.asp?m=22389622"
-        }
-      ]
-    },
-    "levelVariants": [
-      {
-        "levelNumber": 1,
-        "levelDisplay": "1",
-        "actualLevel": 1,
-        "variantName": "Radiant",
-        "name": "Radiant Dravir Warhelm",
-        "damage": "",
-        "stats": "None",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=22389631",
-        "description": "Impressed with the bond you share with your dragon, the dravir smiths refitted this helm for you. Kara used some magic to allow it to change color based on your preference! (Cosmetic)",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/RadiantDravirWarhelm.png",
-        "alternativeImages": [
-          {
-            "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/RadiantDravirWarhelm-ElementalAttunement.png",
-            "caption": "All Appearances"
-          }
-        ],
-        "obtainVariants": [
-          {
-            "location": "Caught in a Vise",
-            "price": "N/A",
-            "priceType": "free",
-            "sellback": "0 Dragon Coins",
-            "daRequired": false,
-            "dcRequired": true
-          },
-          {
-            "location": "CiaV Loot for DCs",
-            "price": "200 Dragon Coins",
-            "priceType": "dc",
-            "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
-            "daRequired": false,
-            "dcRequired": true
-          }
-        ],
-        "element": "MET",
-        "resists": "None",
-        "rarity": "5",
-        "notes": "Helm has a low drop rate from the quest Caught in a Vise.\nHelm is color-custom to the player's base and trim colors.\nHelm's eye is attuned to the player's equipped weapon's element; refer to this chart for all appearances.\nWood elemental attunement became accessible upon the release of Spare Chair on January 28th, 2023."
-      }
-    ],
-    "itemType": "Helm",
-    "equipSlot": "Head",
-    "category": "Armor",
-    "releaseDate": "",
-    "tags": [
-      "dc",
-      "free",
-      "met"
-    ],
-    "isCosmetic": true,
-    "hasDA": false,
-    "hasDC": true,
-    "hasDM": false,
-    "hasFree": true,
-    "hasMerge": false,
-    "levelRange": "1",
-    "elements": [
-      "MET"
-    ]
-  },
-  {
     "id": "accessory-dread-pirate-hat",
     "familyName": "Dread Pirate Hat",
     "slug": "accessory-dread-pirate-hat",
@@ -44032,7 +43854,7 @@
     "obtainMethods": [
       {
         "location": "Ebil Replicas",
-        "priceType": "merge",
+        "priceType": "dm",
         "price": "N/A",
         "requiredItems": "50 Defender's Medal",
         "sellback": "0 Dragon Coins",
@@ -44981,7 +44803,7 @@
           {
             "location": "Snowfight DM Merges",
             "price": "N/A",
-            "priceType": "merge",
+            "priceType": "dm",
             "sellback": "0 Gold",
             "requiredItems": "10 Defender's Medal",
             "daRequired": false,
@@ -48440,7 +48262,7 @@
     "obtainMethods": [
       {
         "location": "Ancient Abyss Loot",
-        "priceType": "merge",
+        "priceType": "dm",
         "price": "N/A",
         "requiredItems": "50 Defender's Medal",
         "sellback": "0 Dragon Coins",
@@ -48482,7 +48304,7 @@
     "obtainMethods": [
       {
         "location": "Togsday II Shop",
-        "priceType": "merge",
+        "priceType": "dm",
         "price": "N/A",
         "requiredItems": "50 Defender's Medal",
         "sellback": "N/A",
@@ -52329,6 +52151,86 @@
     ],
     "daRequired": false,
     "isSeasonal": true
+  },
+  {
+    "id": "accessory-fierce-baron-cat-mask",
+    "familyName": "Fierce Baron Cat Mask",
+    "slug": "accessory-fierce-baron-cat-mask",
+    "type": "accessory",
+    "subtype": "helm",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20827848",
+    "familyOrigin": "cross-post",
+    "familySources": [
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20847532",
+        "title": "DF Encyclopedia: Fierce Baron Cat Mask",
+        "variantLabel": "Fierce Baron Cat Mask",
+        "isPrimary": false
+      }
+    ],
+    "shared": {
+      "description": "Happy Mogloween, 2012!",
+      "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/BaronCatMaskpic.jpg",
+      "resists": "Darkness +15, Light +15, Immobility +3, Health -2",
+      "rarity": "12",
+      "alsoSee": [
+        {
+          "name": "Baron Cat Mask",
+          "slug": "accessory-baron-cat-mask",
+          "type": "accessory",
+          "url": "https://forums2.battleon.com/f/tm.asp?m=20827848"
+        }
+      ]
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
+        "levelDisplay": "79",
+        "actualLevel": 79,
+        "variantName": "Fierce",
+        "name": "Fierce Baron Cat Mask",
+        "damage": "",
+        "stats": "Block +2, Dodge +3, Parry +1, Crit +10, Magic Def +8, Pierce Def +8, Melee Def +8, WIS +6, END +6, CHA +6, INT +10, DEX +10, STR +10, Bonus +9",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20847532",
+        "description": "Happy Mogloween, 2012!",
+        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/BaronCatMaskpic.jpg",
+        "obtainVariants": [
+          {
+            "location": "Cysero's Mask Shop",
+            "price": "395 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "356 DC (<24 hours) / 99 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "element": "LIG",
+        "resists": "Darkness +15, Light +15, Immobility +3, Health -2",
+        "rarity": "12"
+      }
+    ],
+    "itemType": "Helm",
+    "equipSlot": "Head",
+    "category": "Armor",
+    "releaseDate": "",
+    "tags": [
+      "dc",
+      "lig",
+      "merge",
+      "non"
+    ],
+    "isTemp": true,
+    "isSeasonal": true,
+    "hasDA": false,
+    "hasDC": true,
+    "hasDM": false,
+    "hasFree": false,
+    "hasMerge": false,
+    "levelRange": "79",
+    "elements": [
+      "NON",
+      "LIG"
+    ]
   },
   {
     "id": "accessory-fierce-dragonlord-helm",
@@ -56198,7 +56100,7 @@
           {
             "location": "Def. Rares",
             "price": "N/A",
-            "priceType": "merge",
+            "priceType": "dm",
             "sellback": "100 Gold",
             "requiredItems": "30 Defender's Medal",
             "daRequired": false,
@@ -60157,82 +60059,6 @@
     "hasFree": true,
     "hasMerge": false,
     "levelRange": "I-III",
-    "elements": [
-      "DAR"
-    ]
-  },
-  {
-    "id": "accessory-super-greedy-greedling-helm",
-    "familyName": "Super Greedy Greedling Helm",
-    "slug": "accessory-super-greedy-greedling-helm",
-    "type": "accessory",
-    "subtype": "helm",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=16872316",
-    "familyOrigin": "cross-post",
-    "familySources": [
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=19166177",
-        "title": "DF Encyclopedia: Super Greedy Greedling Helm",
-        "variantLabel": "Super Greedy Greedling Helm",
-        "isPrimary": false
-      }
-    ],
-    "shared": {
-      "description": "This item requires a Dragon Amulet. A trophy from Mogloween 2009! Wearing it makes you feel slightly stingy...",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/GreedyGreedlingHelm.png",
-      "resists": "Metal +8, Charity -100",
-      "rarity": "25",
-      "alsoSee": [
-        {
-          "name": "Greedy Greedling Helm",
-          "slug": "accessory-greedy-greedling-helm",
-          "type": "accessory",
-          "url": "https://forums2.battleon.com/f/tm.asp?m=16872316"
-        }
-      ]
-    },
-    "levelVariants": [
-      {
-        "levelNumber": 1,
-        "levelDisplay": "50",
-        "actualLevel": 50,
-        "variantName": "Super",
-        "name": "Super Greedy Greedling Helm",
-        "damage": "",
-        "stats": "Crit +4, END +6, CHA -6, LUK +12, INT +6, Bonus +4",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=19166177",
-        "description": "This item requires a Dragon Amulet. A trophy from Mogloween 2009! Wearing it makes you feel slightly stingy...",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/GreedyGreedlingHelm.png",
-        "obtainVariants": [
-          {
-            "location": "Tricks and Treats 09, Share and Share Alike",
-            "price": "N/A",
-            "priceType": "free",
-            "sellback": "0 Gold",
-            "daRequired": true
-          }
-        ],
-        "element": "DAR",
-        "resists": "Metal +8, Charity -100",
-        "rarity": "25",
-        "notes": "Helm has Charity flavor resistance."
-      }
-    ],
-    "itemType": "Helm",
-    "equipSlot": "Head",
-    "category": "Armor",
-    "releaseDate": "",
-    "tags": [
-      "dar",
-      "free"
-    ],
-    "isSeasonal": true,
-    "hasDA": true,
-    "hasDC": false,
-    "hasDM": false,
-    "hasFree": true,
-    "hasMerge": false,
-    "levelRange": "50",
     "elements": [
       "DAR"
     ]
@@ -67674,7 +67500,7 @@
     "obtainMethods": [
       {
         "location": "Dream Recreations",
-        "priceType": "merge",
+        "priceType": "dm",
         "price": "N/A",
         "requiredItems": "200 Defender's Medal",
         "sellback": "0 Dragon Coins",
@@ -72271,7 +72097,7 @@
     "obtainMethods": [
       {
         "location": "Dream Recreations",
-        "priceType": "merge",
+        "priceType": "dm",
         "price": "N/A",
         "requiredItems": "200 Defender's Medal",
         "sellback": "0 Dragon Coins",

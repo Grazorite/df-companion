@@ -7,9 +7,8 @@ import type { GuestAttack } from '../../types/pet'
 import { accessPillClass } from '../../utils/accessPillStyles'
 import { normalizeDescriptionText } from '../../utils/displayText'
 import { detailUrlWithFrom } from '../../utils/navigationContext'
-import { useAwardedBadges } from '../../hooks/useBadgeRelations'
+import { useBadgeInlineLinksForItem } from '../../hooks/useBadgeRelations'
 import { useClassAbilityRelatedItems } from '../../hooks/useClassAbilities'
-import BadgeCard from '../badges/BadgeCard'
 import ClassAbilityCard from './ClassAbilityCard'
 import DetailTypePill from '../shared/DetailTypePill'
 import DetailPageLayout from '../shared/DetailPageLayout'
@@ -152,17 +151,7 @@ export default function ClassAbilityDetail({
   const resolvedRelatedClassAbilities = relatedClassAbilities.filter((related) =>
     Boolean(related.entry)
   )
-  const badgeRelationTexts = useMemo(
-    () => [
-      singleItem?.notes,
-      singleItem?.description,
-      family?.shared.notes,
-      family?.shared.description,
-      ...(family?.levelVariants.flatMap((variant) => [variant.notes, variant.description]) ?? []),
-    ],
-    [family, singleItem]
-  )
-  const awardedBadges = useAwardedBadges(badgeRelationTexts)
+  const badgeInlineLinks = useBadgeInlineLinksForItem(item.slug)
 
   return (
     <DetailPageLayout>
@@ -266,13 +255,14 @@ export default function ClassAbilityDetail({
         activeVariantNotes={activeVariant?.notes}
         allVariantNotes={family?.levelVariants.map((variant) => variant.notes)}
         className="mb-5"
+        links={badgeInlineLinks}
       />
 
       <section className="mb-5">
         <SourceLinksCard links={getSourceLinks(item)} />
       </section>
 
-      {(resolvedRelatedClassAbilities.length > 0 || awardedBadges.length > 0) && (
+      {resolvedRelatedClassAbilities.length > 0 && (
         <section aria-labelledby="related-heading" className="border-t border-border-default pt-6">
           <h2
             id="related-heading"
@@ -294,11 +284,6 @@ export default function ClassAbilityDetail({
                 </li>
               ) : null
             )}
-            {awardedBadges.map((badge) => (
-              <li key={`badge-${badge.slug}`}>
-                <BadgeCard badge={badge} toUrl={`/badges/${badge.slug}`} badgeLabel="Badge" />
-              </li>
-            ))}
           </ul>
         </section>
       )}

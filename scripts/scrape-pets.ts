@@ -355,6 +355,26 @@ function inferAccessVariantLabelFromObtainVariants(methods: ObtainVariant[]): st
   return 'Normal'
 }
 
+type ParsedObtainMethod = ObtainMethod & { description?: string }
+
+function stripParsedObtainMetadata(methods: ParsedObtainMethod[]): ObtainMethod[] {
+  return methods.map(({ description: _description, ...method }) => method)
+}
+
+function getMethodGroupDescription(
+  methods: ObtainMethod[],
+  fallbackDescription?: string
+): string | undefined {
+  const descriptions = uniqueStrings(
+    methods
+      .map((method) => (method as ParsedObtainMethod).description?.trim())
+      .filter((description): description is string => Boolean(description))
+  )
+
+  if (descriptions.length === 1) return descriptions[0]
+  return fallbackDescription?.trim() || undefined
+}
+
 function normalizeObtainPrice(price?: string): string {
   return price?.trim() || 'N/A'
 }
@@ -436,6 +456,41 @@ function includeLeadingAccessTags(
 
   const candidate = Math.max(...imageCandidates)
   return startIndex - candidate <= maxDistance ? candidate : startIndex
+}
+
+function extractObtainBranchDescription(
+  html: string,
+  searchText: string,
+  name: string,
+  fromIndex: number = 0
+): string | undefined {
+  const index = html.indexOf(searchText, Math.max(0, fromIndex))
+  if (index === -1) return undefined
+
+  const titleStartCandidates = [
+    html.lastIndexOf("<font size='3'><b>", index),
+    html.lastIndexOf('<font size="3"><b>', index),
+    html.lastIndexOf("<b><font size='3'>", index),
+    html.lastIndexOf('<b><font size="3">', index),
+  ].filter((candidate) => candidate >= 0)
+  const segmentStart =
+    titleStartCandidates.length > 0 ? Math.max(...titleStartCandidates) : Math.max(0, index - 700)
+  const segmentText = stripHtml(decodeHTML(html.slice(segmentStart, index)))
+  const candidates = segmentText
+    .split('\n')
+    .map((line) => line.trim())
+    .filter(Boolean)
+    .filter((line) => !/^\(.*\)$/.test(line))
+    .filter((line) => !isRepeatedPetHeading(line, name))
+    .filter(
+      (line) =>
+        !/^(location|price|required items?|sellback|level|damage|pet'?s?\s+stats?|bonuses?|pet'?s?\s+resists?|resists?|element|rarity|attack\s+type|other\s+information|also\s+see)\s*:/i.test(
+          line
+        )
+    )
+    .filter((line) => !isInvalidPetDescriptionCandidate(line))
+
+  return candidates.at(-1)
 }
 
 function buildObtainVariantsFromMethods(
@@ -595,6 +650,7 @@ function buildLevelAccessVariants(
       variantName
     )
     if (obtainVariants.length === 0) continue
+    const description = getMethodGroupDescription(group.methods, data.description)
 
     variants.push({
       levelNumber: levelInfo.number,
@@ -608,6 +664,7 @@ function buildLevelAccessVariants(
       stats: data.stats || 'None',
       ...(data.statsType ? { statsType: data.statsType } : {}),
       ...(options.sourceUrl ? { sourceUrl: options.sourceUrl } : {}),
+      ...(description ? { description } : {}),
       obtainVariants,
       ...(data.elementCodes[0] ? { element: data.elementCodes[0] } : {}),
       ...(data.resists && data.resists !== 'None' ? { resists: data.resists } : {}),
@@ -649,6 +706,7 @@ function buildVariantFamilyFromSinglePost(
       group.label ??
       inferAccessVariantLabelFromObtainVariants(obtainVariants) ??
       `Variant ${index + 1}`
+    const description = getMethodGroupDescription(group.methods, data.description)
 
     // Find the source post that contains this group's obtain location so that each
     // variant links back to its own reply post (e.g. Plushie Ghost DC variant).
@@ -671,6 +729,7 @@ function buildVariantFamilyFromSinglePost(
       damage: data.damage || 'Unknown',
       stats: data.stats || 'None',
       ...(data.statsType ? { statsType: data.statsType } : {}),
+      ...(description ? { description } : {}),
       obtainVariants,
       ...(sourceUrl ? { sourceUrl } : {}),
       ...(elementCodes[0] ? { element: elementCodes[0] } : {}),
@@ -701,7 +760,11 @@ function buildVariantFamilyFromSinglePost(
     type: stub.type,
     forumUrl: stub.forumUrl,
     shared: {
-      description: data.description,
+      description: levelVariants.every(
+        (variant) => variant.description === levelVariants[0].description
+      )
+        ? (levelVariants[0].description ?? data.description)
+        : '',
       ...(elementCodes[0] ? { element: elementCodes[0] } : {}),
       ...(data.rarity && data.rarity !== 'Unknown' ? { rarity: data.rarity } : {}),
       ...(data.resists && data.resists !== 'None' ? { resists: data.resists } : {}),
@@ -2734,6 +2797,7 @@ export async function parsePetThreadMultiVariant(
             const displayName = variantName
               ? `${candidate.displayName} (${variantName})`
               : candidate.displayName
+            const variantDescription = getMethodGroupDescription(group.methods, candidate.data.description)
 
             levelVariantsMap.set(variantOrder, {
               levelNumber: variantOrder,
@@ -2745,7 +2809,7 @@ export async function parsePetThreadMultiVariant(
               stats: candidate.data.stats || 'None',
               ...(candidate.data.statsType ? { statsType: candidate.data.statsType } : {}),
               sourceUrl: candidate.sourceUrl,
-              description: candidate.data.description,
+              ...(variantDescription ? { description: variantDescription } : {}),
               ...(candidate.data.imageUrl ? { imageUrl: candidate.data.imageUrl } : {}),
               ...(candidate.data.alternativeImages && candidate.data.alternativeImages.length > 0
                 ? { alternativeImages: candidate.data.alternativeImages }
@@ -3311,7 +3375,7 @@ function convertToPet(
     damage: data.damage || 'Unknown',
     stats: data.stats || 'None',
     resists: data.resists || 'None',
-    obtainMethods: data.obtainMethods,
+    obtainMethods: stripParsedObtainMetadata(data.obtainMethods as ParsedObtainMethod[]),
     attacks: data.attacks,
     rarity: data.rarity || 'Unknown',
     evolutions,
@@ -3536,6 +3600,12 @@ export function parsePetThread(
       500,
       accessSearchOffset
     )
+    const branchDescription = extractObtainBranchDescription(
+      rawBody,
+      currentObtain.location,
+      name,
+      accessSearchOffset
+    )
     if (accessFlags.matchIndex >= 0) {
       accessSearchOffset = accessFlags.matchIndex + currentObtain.location.length
     }
@@ -3550,6 +3620,7 @@ export function parsePetThread(
       ...(accessFlags.daRequired ? { daRequired: accessFlags.daRequired } : {}),
       ...(accessFlags.dcRequired ? { dcRequired: accessFlags.dcRequired } : {}),
       ...(accessFlags.dmRequired ? { dmRequired: accessFlags.dmRequired } : {}),
+      ...(branchDescription ? { description: branchDescription } : {}),
     })
     currentObtain = null
     activeObtainField = null
@@ -3907,6 +3978,12 @@ export function parsePetThread(
         500,
         fallbackAccessOffset
       )
+      const branchDescription = extractObtainBranchDescription(
+        rawBody,
+        fallbackCurrent.location,
+        name,
+        fallbackAccessOffset
+      )
       if (accessFlags.matchIndex >= 0) {
         fallbackAccessOffset = accessFlags.matchIndex + fallbackCurrent.location.length
       }
@@ -3920,6 +3997,7 @@ export function parsePetThread(
         ...(fallbackCurrent.daRequired || accessFlags.daRequired ? { daRequired: true } : {}),
         ...(fallbackCurrent.dcRequired || accessFlags.dcRequired ? { dcRequired: true } : {}),
         ...(fallbackCurrent.dmRequired || accessFlags.dmRequired ? { dmRequired: true } : {}),
+        ...(branchDescription ? { description: branchDescription } : {}),
       })
       fallbackCurrent = null
     }

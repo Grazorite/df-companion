@@ -19,8 +19,11 @@ All list view cards must follow this pattern:
 - **Access/status pills**: card-gallery access pills use compact labels (`DA`, `DC`, `DM`, `Free`).
   Do not show text pills for `Multiple Versions` or `Merge Required` on cards; use level/range chips
   or detail-page/obtain-method metadata instead. Do not show Level 2 status filters such as `Rare`,
-  `Seasonal`, `Special Offer`, `Temp`, or `Retired` on cards or detail-page headers; keep those
+  `Seasonal`, `Special Offer`, `Temp`, `Retired`, or weapon `Default` on cards or detail-page headers; keep those
   available in filters and source/obtain/detail prose where relevant.
+- **Family description preview**: family cards preview the first variant's description via
+  `getFamilyCardDescription`. Variant-specific detail pages still render the selected variant's
+  description first, falling back to shared description only when the selected variant has none.
 - Examples: `BadgeCard.tsx`, `PetCard.tsx`
 - Cards that navigate to detail pages should carry the current browse URL with the shared
   navigation-context helper. Detail pages should read that `from` context for their top back link,
@@ -43,6 +46,9 @@ All "How to Obtain" sections must follow this unified pattern:
 - **Content-specific fields**:
   - **Badges/Guests**: Location/instruction only
   - **Pets**: Location + divider + price/required items/sellback fields
+  - Across all categories, suppress the price/sellback grid when both values are `N/A`, `None`, or
+    empty. Keep Required Items / Requires visible, and still show whichever of price or sellback is
+    meaningful when only one exists.
 - **Access/currency method pills**: shared obtain cards show per-method `DA Required` and `DC` pills
   when the method requires DA or uses Dragon Coins. The label is `DC`, not `DC Required`, because the
   meaning is already scoped to the obtain method.
@@ -133,13 +139,14 @@ Weapons additionally infer exact-name cross-subtype siblings when the displayed 
 enough and at least one obtain price type overlaps. This covers same-named
 sword/scythe/staff/dagger counterparts without merging them into one family.
 
-Explicit badge-award notes create cross-category `Also See` links. When item text says
-`Own this item/armor/weapon ... to obtain ... badge(s)`, item detail pages link to the matching Badge,
-and the Badge detail page links back through the generated `src/data/badge-relations.json` index.
-Badge cards rendered inside another category's `Also See` section should include a compact `Badge`
-type pill alongside the badge category pill; normal badge gallery cards do not need the extra cue.
-This is deliberately phrase-based, not fuzzy, so flavour text such as "badge of honor" is ignored.
-Regenerate the index with `npm run generate:badge-relations` after scrapes that change item notes.
+Explicit badge-award notes create cross-category inline links, not cross-category `Also See` cards.
+When item text says `Own this item/armor/weapon ... to obtain ... badge(s)`, link the badge name
+inside that note to the Badge detail page. On the Badge detail page, link the awarding item name
+inside the obtain instruction or notes back to the item detail page. Same-category `Also See` remains
+card-based. Cross-category matching is deliberately phrase-based, not fuzzy, so flavour text such as
+"badge of honor" is ignored. Regenerate `src/data/badge-relations.json` with
+`npm run generate:badge-relations` after scrapes that change item notes/descriptions or source
+aliases.
 
 For subtype-heavy datasets, alias/canonical checks must be scoped to the subtype when slugs can
 validly repeat across subtypes. A family alias should never point at another canonical entry in the
@@ -261,6 +268,9 @@ URL query params supported by `/badges`:
 
 By default, retired badges are hidden from all categories. They only appear when `category=retired`
 is set.
+
+The same retired-default rule applies to every gallery: retired entries are excluded from normal
+counts, category browsing, and text search unless the Retired filter is explicitly selected.
 
 ### Pets/Guests Page
 
@@ -386,7 +396,13 @@ union. Example: base Linus shows `[ICE]`; Prince/King/Emperor Linus show `[ICE] 
 ### Variant label conventions
 
 - `variantName: 'Normal'` (and the forum's `(Resource)` label) → displays as `(Base)`
+- Explicit access-suffixed variant names such as `1 (DA)`, `1 (DA, DC)`, `1 (DC)`, or
+  `(Base) (DC)` must render exactly as stored when the scraper intentionally stores them. Do not strip
+  the parentheses or re-append access suffixes in the UI formatter.
 - `variantName: 'DC'` → displays as `(DC)`
+- Use `(Base)` / `(DC)` for a simple two-variant base/DC-only family. Use `(Base)` /
+  `(Base) (DC)` only when the base entry is one member of a larger named, numbered, or Roman pattern
+  that also has sibling variants.
 - Scrapers should build stored variant labels with the shared `formatVariantNameWithAccess` helper
   whenever a natural label is combined with access flags. The shared grammar is:
   - no natural label + clear access distinction → `(DA)`, `(DA, DC)`, `(DC)`, `(DM)`

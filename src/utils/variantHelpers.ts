@@ -494,8 +494,8 @@ export function getDisplayFamilyName(family: ItemFamily): string {
 
 export function getFamilyCardDescription(family: ItemFamily): string {
   return (
-    family.shared.description?.trim() ||
     family.levelVariants[0]?.description?.trim() ||
+    family.shared.description?.trim() ||
     ''
   )
 }
@@ -677,6 +677,31 @@ function getLevelVariantLabelInfo(
       : normalizedVariantName && /^(?:DC|D-Coins?|Dragon Coins?)$/i.test(normalizedVariantName)
         ? '(DC)'
         : normalizedVariantName
+  const hasExplicitAccessSuffix =
+    normalizedAccessVariantName &&
+    /^(?:\(?Base\)?|[IVXLCDM]+|\d+|.+?)\s+\((?:DA|DC|DM)(?:,\s*(?:DA|DC|DM))*\)$/i.test(
+      normalizedAccessVariantName
+    )
+
+  if (hasExplicitAccessSuffix) {
+    return {
+      label: normalizeRomanDisplay(normalizedAccessVariantName),
+      canAddLevelSuffix: false,
+      levelLabel,
+      hasDC,
+      hasDA,
+    }
+  }
+
+  if (normalizedAccessVariantName === '(Base)') {
+    return {
+      label: '(Base)',
+      canAddLevelSuffix: false,
+      levelLabel,
+      hasDC,
+      hasDA,
+    }
+  }
 
   if (familyName === 'Harmonized Cowbell' && normalizedAccessVariantName) {
     return {

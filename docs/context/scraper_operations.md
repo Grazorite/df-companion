@@ -28,14 +28,14 @@ dataset entries in ways that are tedious to unpick.
 An agent may run a scrape **only** when it is narrowly scoped to verify a specific fix in the current
 task. The bright line is the CLI scope flags:
 
-| Agent may run directly | Always hand to the user |
-| ------------------------ | ------------------------- |
-| `--names="One Item"` (up to ~3 named entries) | any run with **no** scope flags (whole category) |
-| `--url=` / `--urls=` for one or two forum posts | `--letters=` / `--letter=` |
-| `--limit=N` parser dry-run samples | `--subtypes=` without a narrowing `--names=` |
-| | `--fresh` at category or subtype scope |
-| | `--special-only` |
-| | any `npm run clear:*` followed by a re-scrape |
+| Agent may run directly                          | Always hand to the user                          |
+| ----------------------------------------------- | ------------------------------------------------ |
+| `--names="One Item"` (up to ~3 named entries)   | any run with **no** scope flags (whole category) |
+| `--url=` / `--urls=` for one or two forum posts | `--letters=` / `--letter=`                       |
+| `--limit=N` parser dry-run samples              | `--subtypes=` without a narrowing `--names=`     |
+|                                                 | `--fresh` at category or subtype scope           |
+|                                                 | `--special-only`                                 |
+|                                                 | any `npm run clear:*` followed by a re-scrape    |
 
 When handing over, give the user: the exact command, the prerequisites (valid cookie in `.env`), the
 expected output files, and what to eyeball in the result. Then stop and wait. Do not estimate the
@@ -193,6 +193,12 @@ For family-capable Accessories and Weapons, parse DA/DC/DM access from each vari
 block before applying any page-level tag fallback. If a post contains mixed DC and non-DC obtain
 methods, do not apply whole-post DA/DC tag images to every method; alternating Roman numeral families
 depend on keeping those method-level access flags distinct.
+Variant descriptions are scoped the same way as access flags. A family `shared.description` is valid
+only when all variants have identical description text. When expanding one post into multiple obtain
+branches, including Pets/Guests and Accessories/Weapons, capture the prose immediately above each
+branch's obtain block and keep it on that variant. Do not copy access-specific prose such as
+`This item requires a Dragon Amulet.` onto a non-DA/DC branch. Missing descriptions may only fall back
+to same-level siblings with the same DA/DC/DM access signature.
 
 ## Scraper Notes
 
@@ -253,7 +259,7 @@ npm run scrape:guests  # Scrape forum guests (supports --letters, --names, --fre
 npm run scrape:accessories # Scrape accessories (supports --subtypes, --letters, and --names)
 npm run scrape:weapons # Scrape weapons (supports --subtypes, --letters, --names, and --url/--urls)
 npm run scrape:housing # Scrape housing (supports --subtype, --names, --limit, --fresh)
-npm run generate:badge-relations # Refresh cross-category item ↔ badge award links
+npm run generate:badge-relations # Refresh cross-category item ↔ badge inline links
 npm run validate       # Run all dataset validators + cross-post-family verify + script typecheck
 npm run verify         # Cross-post-family invariant checks (dup slugs, alias/AlsoSee integrity)
 npm run typecheck:scripts # Typecheck scripts/ against tsconfig.scripts.json
@@ -283,10 +289,10 @@ directory is gitignored.
 Agents should use this after UI changes to verify rendering before marking work done. The output PNG
 can be viewed via `read_file` (Kiro returns base64 for images) or attached to the chat.
 
-Run `npm run generate:badge-relations` after scrapes that change item descriptions or Other
-Information. The generated `src/data/badge-relations.json` index powers reverse Badge detail links for
-explicit award notes such as `Own this armor to obtain the Time Walker badge` without forcing Badge
-pages to lazy-load large category datasets.
+Run `npm run generate:badge-relations` after scrapes that change item descriptions, Other
+Information, family source titles, or aliases. The generated `src/data/badge-relations.json` index
+powers cross-category inline links for explicit award notes such as `Own this armor to obtain the
+Time Walker badge` without forcing detail pages to lazy-load large category datasets.
 
 ## Dataset Verification
 

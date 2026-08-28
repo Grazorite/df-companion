@@ -251,7 +251,6 @@ function searchPets(
       const family = isFamily ? (item as ItemFamily) : null
 
       const itemType = isFamily ? family!.type : pet!.type
-      const isGuestEntry = itemType === 'guest'
       const { elements: itemElements, traits: itemTraits } = getPetEntryFilterCodes(item)
       const itemName = isFamily ? family!.familyName : pet!.name
       const itemDescription = isFamily ? getFamilyCardDescription(family!) : pet!.description
@@ -320,20 +319,17 @@ function searchPets(
       if (filters.categories && filters.categories.length > 0) {
         const hasCategory = filters.categories.some((cat) => hasCategoryFlag(cat))
 
-        // Special handling for retired: when selected, ONLY show retired; otherwise exclude retired
+        // Special handling for retired: when selected, ONLY show retired; otherwise exclude retired.
         if (filters.categories.includes('retired')) {
           if (!itemRetired) return false
         } else {
-          // Pets keep the badges-style retired exclusion.
-          // Guests remain visible in "All" and category browsing even if marked retired.
-          if (!isGuestEntry && itemRetired) return false
+          if (itemRetired) return false
           // If other categories selected, must match at least one
           if (!hasCategory) return false
         }
       } else {
-        // No categories selected — exclude retired pets by default.
-        // Guests stay visible so older companion entries don't disappear from "All".
-        if (!isGuestEntry && itemRetired) return false
+        // No categories selected — exclude retired entries by default.
+        if (itemRetired) return false
       }
 
       // Text search — word-prefix matching

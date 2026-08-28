@@ -22,7 +22,7 @@
     "obtainMethods": [
       {
         "location": "Ancient Abyss Loot",
-        "priceType": "merge",
+        "priceType": "dm",
         "price": "N/A",
         "requiredItems": "50 Defender's Medal",
         "sellback": "0 Dragon Coins",
@@ -910,7 +910,7 @@
           {
             "location": "Def. Rares",
             "price": "N/A",
-            "priceType": "merge",
+            "priceType": "dm",
             "sellback": "90 Gold",
             "requiredItems": "50 Defender's Medal",
             "daRequired": false,
@@ -5943,7 +5943,7 @@
     "obtainMethods": [
       {
         "location": "Ebil Finale",
-        "priceType": "merge",
+        "priceType": "dm",
         "price": "N/A",
         "requiredItems": "125 Defender's Medal",
         "sellback": "0 Dragon Coins",
@@ -6753,7 +6753,7 @@
     "obtainMethods": [
       {
         "location": "EbilTreats Candy Shop",
-        "priceType": "merge",
+        "priceType": "dm",
         "price": "N/A",
         "requiredItems": "50 Defender's Medal",
         "sellback": "0 Dragon Coins",
@@ -6835,7 +6835,7 @@
     "obtainMethods": [
       {
         "location": "Storm of Stars (Shop)",
-        "priceType": "merge",
+        "priceType": "dm",
         "price": "N/A",
         "requiredItems": "50 Defender's Medal",
         "sellback": "0 Dragon Coins",
@@ -6924,7 +6924,7 @@
     "obtainMethods": [
       {
         "location": "Dream Recreations",
-        "priceType": "merge",
+        "priceType": "dm",
         "price": "N/A",
         "requiredItems": "200 Defender's Medal",
         "sellback": "0 Dragon Coins",
@@ -10835,6 +10835,7 @@
     ],
     "shared": {
       "description": "The shadows surround you! You may not be able to see them but they're there, trust me!",
+      "notes": "Cape appears invisible when equipped.",
       "alsoSee": [
         {
           "name": "Invisible Cape",
@@ -10854,8 +10855,7 @@
           "type": "accessory",
           "url": "https://forums2.battleon.com/f/tm.asp?m=21926777"
         }
-      ],
-      "notes": "Cape appears invisible when equipped."
+      ]
     },
     "levelVariants": [
       {
@@ -21613,7 +21613,7 @@
     "obtainMethods": [
       {
         "location": "Ebil Finale",
-        "priceType": "merge",
+        "priceType": "dm",
         "price": "N/A",
         "requiredItems": "125 Defender's Medal",
         "sellback": "0 Dragon Coins",
@@ -21655,7 +21655,7 @@
     "obtainMethods": [
       {
         "location": "Ebil Replicas",
-        "priceType": "merge",
+        "priceType": "dm",
         "price": "N/A",
         "requiredItems": "50 Defender's Medal",
         "sellback": "0 Dragon Coins",
@@ -23504,12 +23504,13 @@
       },
       {
         "location": "BDToG Rewards",
-        "priceType": "merge",
+        "priceType": "dm",
         "price": "N/A",
         "requiredItems": "50 Defender's Medal",
         "sellback": "0 Dragon Coins",
         "daRequired": false,
-        "dcRequired": true
+        "dcRequired": true,
+        "dmRequired": true
       }
     ],
     "notes": "Cape has a low drop rate from Artax & Shogun.\nCape is animated; the cape moves up and down continuously.",
@@ -23519,7 +23520,8 @@
     ],
     "daRequired": false,
     "dcRequired": true,
-    "isCosmetic": true
+    "isCosmetic": true,
+    "dmRequired": true
   },
   {
     "id": "accessory-eye-of-the-void-wings",
@@ -27931,7 +27933,7 @@
     "obtainMethods": [
       {
         "location": "Storm of Stars (Shop)",
-        "priceType": "merge",
+        "priceType": "dm",
         "price": "N/A",
         "requiredItems": "50 Defender's Medal",
         "sellback": "0 Dragon Coins",
@@ -28283,7 +28285,7 @@
           {
             "location": "Def. Rares",
             "price": "N/A",
-            "priceType": "merge",
+            "priceType": "dm",
             "sellback": "100 Gold",
             "requiredItems": "30 Defender's Medal",
             "daRequired": false,
@@ -37901,6 +37903,7 @@
     "shared": {
       "description": "All of the stats, none of the art!",
       "rarity": "9",
+      "notes": "Cape appears invisible when equipped.",
       "alsoSee": [
         {
           "name": "Cloak of Shadows",
@@ -37920,8 +37923,7 @@
           "type": "accessory",
           "url": "https://forums2.battleon.com/f/tm.asp?m=21926777"
         }
-      ],
-      "notes": "Cape appears invisible when equipped."
+      ]
     },
     "levelVariants": [
       {
@@ -38295,7 +38297,7 @@
     "obtainMethods": [
       {
         "location": "Ebil Replicas",
-        "priceType": "merge",
+        "priceType": "dm",
         "price": "N/A",
         "requiredItems": "100 Defender's Medal",
         "sellback": "0 Dragon Coins",

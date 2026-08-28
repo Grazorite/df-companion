@@ -125,6 +125,24 @@ function displayName(entry) {
   return entry.familyName ?? entry.name ?? entry.slug
 }
 
+function itemAliases(entry) {
+  const aliases = new Set()
+  for (const source of entry.familySources ?? []) {
+    if (source.title) aliases.add(source.title)
+    if (source.variantLabel) aliases.add(source.variantLabel)
+  }
+  for (const source of entry.sourceLinks ?? []) {
+    if (source.title) aliases.add(source.title)
+    if (source.variantLabel) aliases.add(source.variantLabel)
+  }
+  if (entry.name) aliases.add(entry.name)
+  for (const variant of entry.levelVariants ?? []) {
+    if (variant.name) aliases.add(variant.name)
+  }
+  aliases.delete(displayName(entry))
+  return [...aliases].sort()
+}
+
 function routeFor(entry, sourceType) {
   if (sourceType === 'pet-guest') {
     const type = entry.type === 'guest' ? 'guest' : 'pet'
@@ -183,6 +201,7 @@ for (const { file, type } of dataFiles) {
         badgeName: badge.name,
         badgeSlug: badge.slug,
         itemName: displayName(entry),
+        itemAliases: itemAliases(entry),
         itemSlug: entry.slug,
         itemType: itemTypeFor(entry, type),
         categoryLabel: categoryLabelFor(entry, type),

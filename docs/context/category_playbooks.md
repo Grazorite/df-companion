@@ -61,11 +61,13 @@ After scraping, run `python3 scripts/add_images.py` to add badge image URLs from
 ### Cross-Category Award Links
 
 Items in other categories can explicitly award badges through notes such as
-`Own this armor to obtain the Time Walker badge`. These produce bidirectional `Also See` links:
-item detail pages resolve the badge from `badges.json`, and badge detail pages use
-`src/data/badge-relations.json` to link back to the awarding item. Regenerate that lightweight index
-with `npm run generate:badge-relations` after scrapes that change item notes/descriptions. Keep this
-phrase-based rather than fuzzy; do not infer badge links from casual prose like "badge of honor".
+`Own this armor to obtain the Time Walker badge`. These produce bidirectional inline links in the
+text itself, not cross-category `Also See` cards: item pages link the badge name inside Other
+Information, and Badge pages link the awarding item name inside obtain instructions/notes.
+`src/data/badge-relations.json` stores the lightweight route/index data plus source-title aliases for
+consolidated families. Regenerate it with `npm run generate:badge-relations` after scrapes that
+change item notes/descriptions or source aliases. Keep this phrase-based rather than fuzzy; do not
+infer badge links from casual prose like "badge of honor".
 
 ---
 
@@ -277,6 +279,10 @@ Section-level DA is only applied to non-DC obtain methods. When a post has a DA-
 and a non-DA DC variant (e.g. Carved Dragon Scale II-V, Navigator's Hat II-VI), the DA tag must not
 stamp the DC method. DC methods keep their own per-block detection, and a genuinely DA-required DC
 variant (e.g. Plushie Artix, where the forum places DA before both title blocks) is preserved.
+Descriptions follow the same scope. A DC/non-DA obtain branch must not inherit the italic sentence
+`This item requires a Dragon Amulet.` from a DA sibling. If a same-level variant lacks an explicit
+description, only fall back to a sibling with the same DA/DC/DM access signature. `Navigator's Hat` is
+the reference spot-check for this behavior.
 
 ---
 
@@ -291,14 +297,23 @@ Weapon families follow the same base/DC split pattern as Pets and Accessories:
 - **Multiple non-DC methods** at the same level (e.g. 13th Staff level 13: Undead Slayer Store for
   Gold + The Stakeout for free): consolidated into ONE variant with multiple `obtainVariants`
   (rendered as Method 1/2). Notes are scoped per-level.
-- **Single-level threads with base + DC** (e.g. `|` weapon): become a family with `(Base)` and `(DC)`
-  variant labels.
+- **Single-level default threads with access-only branches** (e.g.
+  `ChickenBlade (ChickenCow Default)`): keep access-specific branches as variants when they affect
+  stats-table access display. Four-way branches render in base, DA, DA+DC, DC order as `1`,
+  `1 (DA)`, `1 (DA, DC)`, `1 (DC)`. Two-way default base/DC branches use `(Base)` and
+  `(DC)` labels, as in `Claws?? (Zardbie Default)`.
 - **Default weapons** are identified by source/forum titles containing a parenthetical default marker
   such as `(Rogue Default)` or `(Shadow Rogue Default)`. They get `isDefault: true`, a `default` tag,
   and must not be consolidated with other default weapons even when names/descriptions are similar.
   Example: `Dagger (Rogue Default)` and `Shadowdagger (Shadow Rogue Default)` stay separate. The
   current hardcoded exception is `Longsword (ArchKnight Default)`, which may consolidate the closely
-  related bare `Longsword` posts into one family.
+  related bare `Longsword` posts into one family. `Pirate Blade (Pirate Default)` and
+  `Dread Pirate Blade (Dread Pirate Default)` remain separate entries, link to each other via Also
+  See, and must not share family-level notes/descriptions.
+
+Variant descriptions follow the shared family-capable category rule: keep description text on the
+variant that owns it, and only populate `shared.description` when every variant agrees. This prevents
+base/DC branches from inheriting a sibling's access-specific prose.
 
 The scraper detects families structurally (multiple title blocks across posts) — no name-based gate
 like `(I-VIII)` or `(All Versions)` is required.
@@ -458,10 +473,11 @@ image can stay with the effect; all other Consumables use the plain `Effect` car
 contains image metadata. Do not duplicate the potion description inside that accordion; the top-level
 description already carries it. Hotlinked `Appearance` labels are media captions and should not be
 retained as Other Information. How to Obtain cards should suppress the
-price/sellback grid when all methods are `N/A` or empty, but must still show real prices when present
-such as `Instant Pierogi`. Consumables are always level `1`; omit level from Consumable detail pages
-and show only the standalone `Rarity` chip before How to Obtain. Consumables also should not show an
-`Effect` pill on gallery cards because effects are expected for the subtype.
+price/sellback grid when all methods are `N/A` or empty through the shared obtain-card component, but
+must still show real prices when present such as `Instant Pierogi`. Consumables are always level `1`;
+omit level from Consumable detail pages and show only the standalone `Rarity` chip before How to
+Obtain. Consumables also should not show an `Effect` pill on gallery cards because effects are
+expected for the subtype.
 
 The starter scraper is `npm run scrape:classes -- --subtype=consumable --fresh`. It reads the
 Consumables A-Z listing (`fb.asp?m=22304639`), appends the supplemental Health Potion (`m=4159197`)

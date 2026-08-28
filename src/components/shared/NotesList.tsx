@@ -9,11 +9,13 @@
  */
 
 import { normalizeDisplayText } from '../../utils/displayText'
+import type { InlineTextLink } from '../../types/inlineLink'
 import PopupText from './PopupText'
 
 interface NotesListProps {
   notes: string
   showPopups?: boolean
+  links?: InlineTextLink[]
 }
 
 interface NoteItem {
@@ -125,7 +127,7 @@ function parseNotes(raw: string): NoteItem[] {
     .map((text) => ({ text: cleanListMarker(text), subItems: [], quoteItems: [] }))
 }
 
-function renderNoteItems(items: NoteItem[], showPopups: boolean) {
+function renderNoteItems(items: NoteItem[], showPopups: boolean, links?: InlineTextLink[]) {
   return (
     <ul className="space-y-1">
       {items.map((item, i) => (
@@ -139,12 +141,13 @@ function renderNoteItems(items: NoteItem[], showPopups: boolean) {
                   as="span"
                   quoteClassName="mt-2"
                   showPopups={showPopups}
+                  links={links}
                 />
               </div>
             </div>
           )}
           {item.subItems.length > 0 && (
-            <div className="ml-5 mt-1">{renderNoteItems(item.subItems, showPopups)}</div>
+            <div className="ml-5 mt-1">{renderNoteItems(item.subItems, showPopups, links)}</div>
           )}
           {item.quoteItems.length > 0 && (
             <div
@@ -165,9 +168,9 @@ function renderNoteItems(items: NoteItem[], showPopups: boolean) {
   )
 }
 
-export default function NotesList({ notes, showPopups = true }: NotesListProps) {
+export default function NotesList({ notes, showPopups = true, links }: NotesListProps) {
   const items = parseNotes(notes)
   if (items.length === 0) return null
 
-  return <div className="[&>ul]:space-y-2">{renderNoteItems(items, showPopups)}</div>
+  return <div className="[&>ul]:space-y-2">{renderNoteItems(items, showPopups, links)}</div>
 }

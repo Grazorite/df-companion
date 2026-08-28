@@ -791,10 +791,7 @@ function buildFamilyFromGroup(entries: AccessoryEntry[]): AccessoryFamily {
     familyOrigin: 'cross-post',
     familySources: buildSources(sorted, familyName),
     shared: {
-      description:
-        descriptions.length > 0 && allSame(descriptions)
-          ? descriptions[0]
-          : (descriptions[0] ?? ''),
+      description: descriptions.length > 0 && allSame(descriptions) ? descriptions[0] : '',
       ...(imageUrls.length > 0 && allSame(imageUrls) ? { imageUrl: imageUrls[0] } : {}),
       ...(alternativeImages.length > 0 && allSame(imageUrls) ? { alternativeImages } : {}),
       ...(abilities.length > 0 && allSame(abilities) ? { ability: abilities[0] } : {}),
@@ -1116,7 +1113,7 @@ function buildNamedSiblingSplitFamily(
       ...sharedWithoutAlsoSee,
       description: allSame(descriptions)
         ? (descriptions[0] ?? sharedWithoutAlsoSee.description)
-        : (descriptions[0] ?? sharedWithoutAlsoSee.description),
+        : '',
       ...(allSame(images) && images[0] ? { imageUrl: images[0] } : {}),
       ...(allSame(alternativeImages) && alternativeImages[0]
         ? { alternativeImages: alternativeImages[0] }

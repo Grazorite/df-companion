@@ -24,29 +24,29 @@
 
 Based on the DF Encyclopedia forum structure (<https://forums2.battleon.com/f/tt.asp?forumid=256>):
 
-| Section | Route | Status | Forum Category |
-| --------- | ------- | -------- | ---------------- |
-| Badges | `/badges` | ✅ Active (161 badges) | Badges |
-| Pets / Guests | `/pets`, `/pets/:slug`, `/guests/:slug` | ✅ Active (221 pets, 83 guests) | Pets / Guests |
-| Accessories | `/accessories`, `/accessories/:slug` | ✅ Active (accessories across 8 subtypes, with split assets for image-heavy subtypes) | Accessories |
-| Weapons | `/weapons`, `/weapons/:slug` | ✅ Active (4 subtypes across 11 shards) | Weapons |
-| Housing | `/housing`, `/housing/:slug` | ✅ Active (Houses, Backgrounds, Floors, Rugs, Shrubs, Stuff, Wall Items) | Housing and House Items |
-| Classes / Abilities | `/classes`, `/classes/:slug` | 🚧 Starter (Classes shell + Consumables scrape path) | Classes / Abilities |
-| Locations & Quests | `/locations` | Planned | Locations / Quests / Events / Shops |
-| Monsters | `/monsters` | Planned | Monsters |
-| NPCs | `/npcs` | Planned | NPCs |
-| Stackable Items | `/items` | Planned | Stackable / Non-Equippable Items |
+| Section             | Route                                   | Status                                                                                | Forum Category                      |
+| ------------------- | --------------------------------------- | ------------------------------------------------------------------------------------- | ----------------------------------- |
+| Badges              | `/badges`                               | ✅ Active (161 badges)                                                                | Badges                              |
+| Pets / Guests       | `/pets`, `/pets/:slug`, `/guests/:slug` | ✅ Active (221 pets, 83 guests)                                                       | Pets / Guests                       |
+| Accessories         | `/accessories`, `/accessories/:slug`    | ✅ Active (accessories across 8 subtypes, with split assets for image-heavy subtypes) | Accessories                         |
+| Weapons             | `/weapons`, `/weapons/:slug`            | ✅ Active (4 subtypes across 11 shards)                                               | Weapons                             |
+| Housing             | `/housing`, `/housing/:slug`            | ✅ Active (Houses, Backgrounds, Floors, Rugs, Shrubs, Stuff, Wall Items)              | Housing and House Items             |
+| Classes / Abilities | `/classes`, `/classes/:slug`            | 🚧 Starter (Classes shell + Consumables scrape path)                                  | Classes / Abilities                 |
+| Locations & Quests  | `/locations`                            | Planned                                                                               | Locations / Quests / Events / Shops |
+| Monsters            | `/monsters`                             | Planned                                                                               | Monsters                            |
+| NPCs                | `/npcs`                                 | Planned                                                                               | NPCs                                |
+| Stackable Items     | `/items`                                | Planned                                                                               | Stackable / Non-Equippable Items    |
 
 ## Glossary
 
 ### Currency & Access Abbreviations
 
-| Abbrev | Full Name | Description |
-| -------- | ----------- | ------------- |
-| DA | Dragon Amulet | Premium account status (one-time purchase). Items marked "DA Required" can only be equipped by players who own a Dragon Amulet. |
-| DC | Dragon Coins | Premium currency purchased with real money. Used to buy exclusive items or bypass DA restrictions. |
-| DM | Defender's Medals | Earned currency from participating in wars. Used at Defender's Medal shops. |
-| Gold | Gold | Standard in-game currency earned from quests and battles. |
+| Abbrev | Full Name         | Description                                                                                                                     |
+| ------ | ----------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| DA     | Dragon Amulet     | Premium account status (one-time purchase). Items marked "DA Required" can only be equipped by players who own a Dragon Amulet. |
+| DC     | Dragon Coins      | Premium currency purchased with real money. Used to buy exclusive items or bypass DA restrictions.                              |
+| DM     | Defender's Medals | Earned currency from participating in wars. Used at Defender's Medal shops.                                                     |
+| Gold   | Gold              | Standard in-game currency earned from quests and battles.                                                                       |
 
 **Important note on DA requirements:** DA is per-obtain-variant, not per-item or per-level. Example: Goldfish Knight has 7 levels (I-VII), each with 2 obtain methods (free quest drop and 150 DC purchase). The free option requires DA at levels IV-VII but NOT at I-III. The DC option does NOT require DA at any level. This means the item should show hasDA, hasDC, AND hasFree tags.
 
@@ -57,6 +57,13 @@ Based on the DF Encyclopedia forum structure (<https://forums2.battleon.com/f/tt
 natural forum label exists and access is the clear distinction. Keep a duplicate level prefix only
 when needed to disambiguate otherwise identical level entries, e.g. `20` / `20 (DC)` or `I` /
 `I (DC)`. Use `(Base)` only when a base entry sits beside differently named sibling variants.
+
+**Variant description scoping:** Item descriptions are variant-level data for all family-capable
+categories. Store `family.shared.description` only when every variant has the same description. If a
+variant is missing a description, scrape/post-processing may fall back to a same-level sibling with the
+same access signature, but must not copy a DA-only description onto a DC/non-DA branch or vice versa.
+Card-gallery previews use the first variant description as preview text; that does not make the text
+shared.
 
 ### Guests vs Pets: Key Differences
 
@@ -80,13 +87,13 @@ when needed to disambiguate otherwise identical level entries, e.g. `20` / `20 (
 
 ### Price Type Definitions
 
-| Type | Condition | Example |
-| ------ | ----------- | --------- |
-| free | Price is "N/A", "0 Gold", or "Free" AND no required items | Quest reward pet |
-| merge | Price is "N/A" AND has required items that are not purely Defender's Medals | Crafted items |
-| gold | Price contains a Gold amount | "500 Gold" |
-| dc | Price contains Dragon Coins | "150 Dragon Coins" |
-| dm | Price contains Defender's Medals, or Required Items is purely Defender's Medals | "75 Defender's Medals", "1 Defender's Medal" |
+| Type  | Condition                                                                       | Example                                      |
+| ----- | ------------------------------------------------------------------------------- | -------------------------------------------- |
+| free  | Price is "N/A", "0 Gold", or "Free" AND no required items                       | Quest reward pet                             |
+| merge | Price is "N/A" AND has required items that are not purely Defender's Medals     | Crafted items                                |
+| gold  | Price contains a Gold amount                                                    | "500 Gold"                                   |
+| dc    | Price contains Dragon Coins                                                     | "150 Dragon Coins"                           |
+| dm    | Price contains Defender's Medals, or Required Items is purely Defender's Medals | "75 Defender's Medals", "1 Defender's Medal" |
 
 ### Access Flag Computation
 
@@ -155,42 +162,42 @@ All pet/guest slugs are **type-prefixed**: `pet-king-linus`, `guest-artix`. This
 
 The app uses 5 top-level categories, matching the forum's "Badges Sorted by Category" grouping:
 
-| Category ID | Display Name | Forum Name | Subcategories |
-| ------------- | -------------- | ------------ | --------------- |
-| `quest-completion` | Quests | Quests Badges | Early Days, Book 1 & 2, Book 3, Side Quests |
-| `collection` | Classes | Classes Badges | Trained Classes, Special Classes |
-| `combat` | Challenges | Challenges Badges | Arena Challenges, Skills |
-| `seasonal` | Seasonal | Other Badges (seasonal) | Hero's Heart Day, Mogloween, Frostval |
-| `misc` | Other | Other Badges (misc) | PvP, Warmonger, Misc, Retired |
+| Category ID        | Display Name | Forum Name              | Subcategories                               |
+| ------------------ | ------------ | ----------------------- | ------------------------------------------- |
+| `quest-completion` | Quests       | Quests Badges           | Early Days, Book 1 & 2, Book 3, Side Quests |
+| `collection`       | Classes      | Classes Badges          | Trained Classes, Special Classes            |
+| `combat`           | Challenges   | Challenges Badges       | Arena Challenges, Skills                    |
+| `seasonal`         | Seasonal     | Other Badges (seasonal) | Hero's Heart Day, Mogloween, Frostval       |
+| `misc`             | Other        | Other Badges (misc)     | PvP, Warmonger, Misc, Retired               |
 
 ### Current badge dataset (last scraped: June 2026)
 
-| Display Name | Category ID | Subcategories | Count |
-| -------------- | ------------- | --------------- | ------- |
-| Quests | `quest-completion` | Early Days, Book 1 & 2, Book 3, Side Quests | 72 |
-| Classes | `collection` | Trained Classes, Special Classes | 31 |
-| Challenges | `combat` | Arena Challenges, Skills | 27 |
-| Seasonal | `seasonal` | Hero's Heart Day, Mogloween, Frostval | 24 |
-| Other | `misc` | PvP, Warmonger, Misc, Retired | 7 |
-| **Total** | | | **161** |
+| Display Name | Category ID        | Subcategories                               | Count   |
+| ------------ | ------------------ | ------------------------------------------- | ------- |
+| Quests       | `quest-completion` | Early Days, Book 1 & 2, Book 3, Side Quests | 72      |
+| Classes      | `collection`       | Trained Classes, Special Classes            | 31      |
+| Challenges   | `combat`           | Arena Challenges, Skills                    | 27      |
+| Seasonal     | `seasonal`         | Hero's Heart Day, Mogloween, Frostval       | 24      |
+| Other        | `misc`             | PvP, Warmonger, Misc, Retired               | 7       |
+| **Total**    |                    |                                             | **161** |
 
 Retired badges (Party On, Olaf!, Idle Heroes, etc.) are included in the dataset but marked `retired: true` and grouped under the "Retired" subcategory.
 
 ## Shared Reusable Components
 
-| Component | Description | Used in |
-| ----------- | ------------- | --------- |
-| `ElementPill` | Colour-coded element/trait chip | Pets, Accessories, Weapons |
-| `ElementLegend` | Expandable element reference panel | Pets, future sections |
-| `StatBar` | Compact stat boxes | Pets, future combat entities |
-| `SegmentToggle` | Multi-select type toggle (Pets/Guests) | Pets |
-| `AccessPills` | DA Required + DC + DM tags | All sections |
-| `ObtainSection` / `ObtainVariantCard` | Shared "How to Obtain" cards | All item-family categories |
-| `ExpandableImageList` | Collapsed attack/ability/effect image toggle | Pets, Guests, Trinkets, Weapons |
-| `MetricStrip` | Shared rate/cooldown/charge metric display | Pets, Guests, Weapons |
-| `NotesList` / `OtherInformationSection` | Nested-bullet/quote/popup note renderer | All sections |
-| `TriStateFilterPill` | Neutral → include → exclude filter pill | All filterable pages |
-| `ItemImage` | Image with shared missing-image placeholder | Badges, Pets, Weapons, image-bearing accessories |
+| Component                               | Description                                  | Used in                                          |
+| --------------------------------------- | -------------------------------------------- | ------------------------------------------------ |
+| `ElementPill`                           | Colour-coded element/trait chip              | Pets, Accessories, Weapons                       |
+| `ElementLegend`                         | Expandable element reference panel           | Pets, future sections                            |
+| `StatBar`                               | Compact stat boxes                           | Pets, future combat entities                     |
+| `SegmentToggle`                         | Multi-select type toggle (Pets/Guests)       | Pets                                             |
+| `AccessPills`                           | DA Required + DC + DM tags                   | All sections                                     |
+| `ObtainSection` / `ObtainVariantCard`   | Shared "How to Obtain" cards                 | All item-family categories                       |
+| `ExpandableImageList`                   | Collapsed attack/ability/effect image toggle | Pets, Guests, Trinkets, Weapons                  |
+| `MetricStrip`                           | Shared rate/cooldown/charge metric display   | Pets, Guests, Weapons                            |
+| `NotesList` / `OtherInformationSection` | Nested-bullet/quote/popup note renderer      | All sections                                     |
+| `TriStateFilterPill`                    | Neutral → include → exclude filter pill      | All filterable pages                             |
+| `ItemImage`                             | Image with shared missing-image placeholder  | Badges, Pets, Weapons, image-bearing accessories |
 
 **Note**: All content types (Badges, Pets, Guests) use unified obtain card styling with gold left border. The heading "How to Obtain" is positioned INSIDE the card. Pets show additional price/sellback fields below a divider; Badges and Guests show location only.
 

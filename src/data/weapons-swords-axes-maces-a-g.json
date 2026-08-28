@@ -10033,7 +10033,7 @@
     ],
     "itemType": "Sword",
     "shared": {
-      "description": "Use this weapon and you'll reap your rewards in spades. This item requires a Dragon Amulet.",
+      "description": "",
       "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/weapons/BladeOfClubs.png",
       "element": "STO",
       "rarity": "8",
@@ -10367,7 +10367,7 @@
     ],
     "itemType": "Sword",
     "shared": {
-      "description": "Use this weapon and you'll reap your rewards in spades. This item requires a Dragon Amulet.",
+      "description": "",
       "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/weapons/BladeOfDiamonds.png",
       "element": "WIN",
       "rarity": "8",
@@ -10961,7 +10961,7 @@
     ],
     "itemType": "Sword",
     "shared": {
-      "description": "Use this weapon and you'll reap your rewards in spades. This item requires a Dragon Amulet.",
+      "description": "",
       "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/weapons/BladeOfHearts.png",
       "element": "FIR",
       "rarity": "8",
@@ -11330,7 +11330,7 @@
     ],
     "itemType": "Sword",
     "shared": {
-      "description": "Use this weapon and you'll reap your rewards in spades. This item requires a Dragon Amulet.",
+      "description": "",
       "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/weapons/BladeOfSpades.png",
       "element": "WAT",
       "rarity": "8",
@@ -23364,8 +23364,10 @@
     "aliasSlugs": [
       "weapon-chickenblade-chickencow-default-all-versions",
       "weapon-chickenblade",
-      "weapon-base-chickenblade",
-      "weapon-dc-chickenblade"
+      "weapon-1-chickenblade",
+      "weapon-1-da-chickenblade",
+      "weapon-1-da-dc-chickenblade",
+      "weapon-1-dc-chickenblade"
     ],
     "type": "weapon",
     "subtype": "sword-axe-mace",
@@ -23374,8 +23376,8 @@
     "familySources": [
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=8617285",
-        "title": "DF Encyclopedia: ChickenBlade",
-        "variantLabel": "ChickenBlade",
+        "title": "DF Encyclopedia: ChickenBlade (ChickenCow Default)",
+        "variantLabel": "ChickenBlade (ChickenCow Default)",
         "isPrimary": true
       }
     ],
@@ -23451,8 +23453,8 @@
           "url": "https://forums2.battleon.com/f/tm.asp?m=22366822"
         },
         {
-          "name": "Longsword Default",
-          "slug": "weapon-longsword-default",
+          "name": "Longsword (Warrior Default)",
+          "slug": "weapon-longsword-warrior-default",
           "type": "weapon",
           "url": "https://forums2.battleon.com/f/tm.asp?m=4351533"
         },
@@ -23481,16 +23483,22 @@
           "url": "https://forums2.battleon.com/f/tm.asp?m=22414837"
         },
         {
-          "name": "Sword Default",
-          "slug": "weapon-sword-default",
+          "name": "sword (DoomKnight V1 Default)",
+          "slug": "weapon-sword-doomknight-v1-default",
           "type": "weapon",
-          "url": "https://forums2.battleon.com/f/tm.asp?m=15240014"
+          "url": "https://forums2.battleon.com/f/tm.asp?m=22366820"
         },
         {
           "name": "Sword (Edd Disguise Default) (All Versions)",
           "slug": "weapon-sword-edd-disguise-default-all-versions",
           "type": "weapon",
           "url": "https://forums2.battleon.com/f/tm.asp?m=22366817"
+        },
+        {
+          "name": "Sword (Frost Moglin Default)",
+          "slug": "weapon-sword-frost-moglin-default",
+          "type": "weapon",
+          "url": "https://forums2.battleon.com/f/tm.asp?m=15240014"
         }
       ]
     },
@@ -23499,7 +23507,7 @@
         "levelNumber": 1,
         "levelDisplay": "1",
         "actualLevel": 1,
-        "variantName": "(Base)",
+        "variantName": "1",
         "name": "ChickenBlade",
         "damage": "5-15",
         "stats": "Bonus +11",
@@ -23510,7 +23518,24 @@
             "priceType": "free",
             "sellback": "N/A",
             "daRequired": false
-          },
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=8617285",
+        "description": "Chicken Blade",
+        "element": "STO",
+        "resists": "None",
+        "rarity": "0",
+        "itemType": "Sword"
+      },
+      {
+        "levelNumber": 1,
+        "levelDisplay": "1",
+        "actualLevel": 1,
+        "variantName": "1 (DA)",
+        "name": "ChickenBlade",
+        "damage": "5-15",
+        "stats": "Bonus +11",
+        "obtainVariants": [
           {
             "location": "Default weapon of Evolved Chickencow (D-Amulet)",
             "price": "N/A",
@@ -23530,7 +23555,7 @@
         "levelNumber": 1,
         "levelDisplay": "1",
         "actualLevel": 1,
-        "variantName": "(DC)",
+        "variantName": "1 (DA, DC)",
         "name": "ChickenBlade",
         "damage": "5-15",
         "stats": "Bonus +11",
@@ -23540,9 +23565,26 @@
             "price": "N/A",
             "priceType": "free",
             "sellback": "N/A",
-            "daRequired": false,
+            "daRequired": true,
             "dcRequired": true
-          },
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=8617285",
+        "description": "Chicken Blade",
+        "element": "STO",
+        "resists": "None",
+        "rarity": "0",
+        "itemType": "Sword"
+      },
+      {
+        "levelNumber": 1,
+        "levelDisplay": "1",
+        "actualLevel": 1,
+        "variantName": "1 (DC)",
+        "name": "ChickenBlade",
+        "damage": "5-15",
+        "stats": "Bonus +11",
+        "obtainVariants": [
           {
             "location": "Default weapon of ChickencowLord (D-Coins), Evolved Chickencow (D-Coins)",
             "price": "N/A",
@@ -23575,8 +23617,8 @@
     "elements": [
       "STO"
     ],
-    "levelRange": "1",
-    "isDefault": true
+    "isDefault": true,
+    "levelRange": "1"
   },
   {
     "id": "weapon-chopper-the",
@@ -24784,8 +24826,8 @@
     "familySources": [
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=18261324",
-        "title": "DF Encyclopedia: Claws??",
-        "variantLabel": "Claws?",
+        "title": "DF Encyclopedia: Claws?? (Zardbie Default)",
+        "variantLabel": "Claws?? (Zardbie Default)",
         "isPrimary": true
       }
     ],
@@ -24841,7 +24883,7 @@
             "price": "N/A",
             "priceType": "free",
             "sellback": "N/A",
-            "daRequired": false,
+            "daRequired": true,
             "dcRequired": true
           }
         ],
@@ -24860,7 +24902,7 @@
       "free",
       "nat"
     ],
-    "hasDA": false,
+    "hasDA": true,
     "hasDC": true,
     "hasDM": false,
     "hasFree": true,
@@ -24869,9 +24911,9 @@
       "NAT"
     ],
     "isTemp": true,
+    "isDefault": true,
     "isSeasonal": true,
-    "levelRange": "1",
-    "isDefault": true
+    "levelRange": "1"
   },
   {
     "id": "weapon-clipper-cutlass",
@@ -34256,7 +34298,7 @@
     ],
     "itemType": "Sword",
     "shared": {
-      "description": "Use this weapon and you'll reap your rewards in spades.",
+      "description": "",
       "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/weapons/BladeOfClubs.png",
       "element": "STO",
       "rarity": "8",
@@ -34599,7 +34641,7 @@
     ],
     "itemType": "Sword",
     "shared": {
-      "description": "Use this weapon and you'll reap your rewards in spades.",
+      "description": "",
       "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/weapons/BladeOfDiamonds.png",
       "element": "WIN",
       "rarity": "8",
@@ -34942,7 +34984,7 @@
     ],
     "itemType": "Sword",
     "shared": {
-      "description": "Use this weapon and you'll reap your rewards in spades.",
+      "description": "",
       "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/weapons/BladeOfHearts.png",
       "element": "FIR",
       "rarity": "8",
@@ -35285,7 +35327,7 @@
     ],
     "itemType": "Sword",
     "shared": {
-      "description": "Use this weapon and you'll reap your rewards in spades.",
+      "description": "",
       "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/weapons/BladeOfSpades.png",
       "element": "WAT",
       "rarity": "8",
@@ -40189,92 +40231,50 @@
   },
   {
     "id": "weapon-dread-pirate-blade-dread-pirate-default",
-    "familyName": "Dread Pirate Blade (Dread Pirate Default)",
+    "name": "Dread Pirate Blade (Dread Pirate Default)",
     "slug": "weapon-dread-pirate-blade-dread-pirate-default",
-    "aliasSlugs": [
-      "weapon-dread-pirate-blade-dread-pirate-default-all-versions",
-      "weapon-dread-pirate-blade-dread",
-      "weapon-dread-pirate-default-dread-pirate-blade"
-    ],
     "type": "weapon",
     "subtype": "sword-axe-mace",
+    "description": "This weapon is the type of sword used by pirates in seven out of the eight known seas.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=11351931",
-    "familyOrigin": "cross-post",
-    "familySources": [
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=11351931",
-        "title": "DF Encyclopedia: Dread Pirate Blade (Dread Pirate Default)",
-        "variantLabel": "Dread Pirate Blade (Dread Pirate Default) Dread Pirate Default",
-        "isPrimary": true
-      }
-    ],
-    "itemType": "Sword",
-    "shared": {
-      "description": "This weapon is the type of sword used by pirates in all seven out of the eight known seas, but Cysero is still a slacker.",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Default-PirateBlade.png",
-      "alternativeImages": [
-        {
-          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Default-PirateBlade.png",
-          "caption": "Default"
-        },
-        {
-          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Default-PirateBladeMarauder.png",
-          "caption": "Marauder"
-        }
-      ],
-      "element": "DAR",
-      "resists": "None",
-      "rarity": "0",
-      "notes": "Selecting the Marauder Body Armor Customization option changes this weapon's appearance.\nSelecting the Voidsailor Body Armor Customization option makes this weapon to have no appearance.",
-      "alsoSee": []
-    },
-    "levelVariants": [
-      {
-        "levelNumber": 1,
-        "levelDisplay": "1",
-        "actualLevel": 1,
-        "variantName": "Dread Pirate Default",
-        "name": "Dread Pirate Blade (Dread Pirate Default)",
-        "damage": "5-12",
-        "stats": "Crit +5, Bonus +1",
-        "obtainVariants": [
-          {
-            "location": "Default weapon of Dread Pirate",
-            "price": "N/A",
-            "priceType": "free",
-            "sellback": "N/A",
-            "daRequired": true,
-            "dcRequired": true
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=11351931",
-        "description": "This weapon is the type of sword used by pirates in seven out of the eight known seas.",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Default-PirateBlade.png",
-        "element": "DAR",
-        "resists": "None",
-        "rarity": "0",
-        "itemType": "Sword",
-        "retired": true
-      }
-    ],
-    "category": "Weapon",
     "releaseDate": "",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Default-PirateBlade.png",
+    "elements": [
+      "DAR"
+    ],
+    "level": "1",
+    "damage": "5-12",
+    "stats": "Crit +5, Bonus +1",
+    "resists": "None",
+    "rarity": "0",
+    "itemType": "Sword",
+    "obtainMethods": [
+      {
+        "location": "Default weapon of Dread Pirate",
+        "price": "N/A",
+        "priceType": "free",
+        "sellback": "N/A",
+        "daRequired": true,
+        "dcRequired": true
+      }
+    ],
+    "alsoSee": [
+      {
+        "name": "Pirate Blade (Pirate Default)",
+        "slug": "weapon-pirate-blade-pirate-default",
+        "type": "weapon",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=10961777"
+      }
+    ],
     "tags": [
       "dar",
       "default",
       "free"
     ],
-    "hasDA": true,
-    "hasDC": true,
-    "hasDM": false,
-    "hasFree": true,
-    "hasMerge": false,
-    "elements": [
-      "DAR"
-    ],
-    "retired": true,
-    "levelRange": "1",
-    "isDefault": true
+    "daRequired": true,
+    "dcRequired": true,
+    "isDefault": true,
+    "retired": true
   },
   {
     "id": "weapon-dread-pirate-cutlass",

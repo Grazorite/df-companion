@@ -30,9 +30,8 @@ import GuestAttacks from '../guests/GuestAttacks'
 import GuestStatsSection from '../guests/GuestStatsSection'
 import PetEvolutions from './PetEvolutions'
 import PetCard from './PetCard'
-import BadgeCard from '../badges/BadgeCard'
 import { useRelatedPets } from '../../hooks/usePets'
-import { useAwardedBadges } from '../../hooks/useBadgeRelations'
+import { useBadgeInlineLinksForItem } from '../../hooks/useBadgeRelations'
 import { detailUrlWithFrom } from '../../utils/navigationContext'
 
 interface PetDetailProps {
@@ -299,17 +298,7 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
 
   // Use displayData.alsoSee for related pets (works for both single and multi-variant)
   const relatedPets = useRelatedPets(family ?? pet, displayData.alsoSee ?? [])
-  const badgeRelationTexts = useMemo(
-    () => [
-      pet.notes,
-      pet.description,
-      family?.shared.notes,
-      family?.shared.description,
-      ...(family?.levelVariants.flatMap((variant) => [variant.notes, variant.description]) ?? []),
-    ],
-    [family, pet]
-  )
-  const awardedBadges = useAwardedBadges(badgeRelationTexts)
+  const badgeInlineLinks = useBadgeInlineLinksForItem(family?.slug ?? pet.slug)
 
   const allImages = useMemo(() => {
     return buildDisplayImages({
@@ -720,6 +709,7 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
         }
         className="bg-bg-surface/60 border border-border-default rounded-lg p-4 mb-5"
         panelClassName=""
+        links={badgeInlineLinks}
       />
 
       <section className="mb-5">
@@ -727,7 +717,7 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
       </section>
 
       {/* Also See — related pets from forum data */}
-      {(relatedPets.length > 0 || awardedBadges.length > 0) && (
+      {relatedPets.length > 0 && (
         <section aria-labelledby="related-heading" className="border-t border-border-default pt-6">
           <h2
             id="related-heading"
@@ -750,11 +740,6 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
                 </li>
               )
             })}
-            {awardedBadges.map((badge) => (
-              <li key={`badge-${badge.slug}`}>
-                <BadgeCard badge={badge} toUrl={`/badges/${badge.slug}`} badgeLabel="Badge" />
-              </li>
-            ))}
           </ul>
         </section>
       )}

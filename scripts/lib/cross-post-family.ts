@@ -504,11 +504,7 @@ function buildFamilyFromGroup(items: Array<Pet | ItemFamily>): ItemFamily {
     .map((level) => level.attacks)
     .filter((value): value is VariantAttack[] => Boolean(value && value.length > 0))
   const baseAlsoSee = gatherAllRefs(sorted, internalSlugs)
-  const baseDescription =
-    descriptions.length > 0 && allSame(descriptions)
-      ? descriptions[0]
-      : (allLevels[0].description ??
-        (isItemFamily(sorted[0]) ? sorted[0].shared.description : sorted[0].description))
+  const baseDescription = descriptions.length > 0 && allSame(descriptions) ? descriptions[0] : ''
   const anchorImageUrl = familyAnchor?.shared.imageUrl
   const anchorAlternativeImages = familyAnchor?.shared.alternativeImages
   const baseImageUrl =

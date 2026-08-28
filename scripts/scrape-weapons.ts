@@ -12,6 +12,7 @@ import type {
 import {
   computeFamilyFlags,
   computePriceType,
+  formatVariantNameWithAccess,
   normalizeLevel,
   normalizeRomanDisplay,
   obtainVariantHasDC,
@@ -455,7 +456,9 @@ function weaponStubMatchesSpecialTargets(
   targets: { messageIds: Set<string>; names: Set<string> }
 ): boolean {
   if (targets.messageIds.has(stub.messageId)) return true
-  const selected = new Set(Array.from(targets.names).flatMap(normalizedSelectedWeaponNameCandidates))
+  const selected = new Set(
+    Array.from(targets.names).flatMap(normalizedSelectedWeaponNameCandidates)
+  )
   return normalizedSelectedWeaponNameCandidates(stub.name).some((candidate) =>
     selected.has(candidate)
   )
@@ -611,7 +614,9 @@ function parseNotes(html: string): string | undefined {
   }
   const noteLines: string[] = []
 
-  const structuredLines = decodeHtml(stripForumHtml(trimmedSection, 'weapon notes', { preserveIndentation: true }))
+  const structuredLines = decodeHtml(
+    stripForumHtml(trimmedSection, 'weapon notes', { preserveIndentation: true })
+  )
     .split('\n')
     .map((line) => line.replace(/\s+$/, ''))
   const bulletIndents = structuredLines
@@ -966,9 +971,7 @@ function parseWeaponSpecialFromSection(
     effect: effect ?? '',
     ...(normalizedImageUrl ? { imageUrl: normalizedImageUrl } : {}),
     ...(specialImages.urls.length > 0 ? { specialImageUrls: specialImages.urls } : {}),
-    ...(specialImages.captions.length > 0
-      ? { specialImageCaptions: specialImages.captions }
-      : {}),
+    ...(specialImages.captions.length > 0 ? { specialImageCaptions: specialImages.captions } : {}),
     ...(cooldown ? { cooldown } : {}),
     ...(chargeTime ? { chargeTime } : {}),
     ...(notes ? { notes } : {}),
@@ -1069,10 +1072,9 @@ function inferOnHitWeaponSpecialFromNotes(notes?: string): WeaponSpecial | undef
   }
 }
 
-function mergeWeaponSpecialImages(specials: WeaponSpecial[]): Pick<
-  WeaponSpecial,
-  'specialImageUrls' | 'specialImageCaptions'
-> {
+function mergeWeaponSpecialImages(
+  specials: WeaponSpecial[]
+): Pick<WeaponSpecial, 'specialImageUrls' | 'specialImageCaptions'> {
   const imageByUrl = new Map<string, string | undefined>()
 
   for (const special of specials) {
@@ -1279,13 +1281,13 @@ function dedupeObtainVariants(methods: ObtainVariant[]): ObtainVariant[] {
  * item's title block once per obtain method (e.g. a gold shop entry and a free
  * quest-drop entry, or a base entry and a Dragon Coins entry). Each title block
  * carries its own Location/Price/Sellback plus preceding DA/DC/DM tag images,
- * so we parse one method per block. Falls back to whole-chunk parsing when the
- * post has a single (or no) title block.
+ * so we parse one method per block. Falls back to whole-chunk parsing only when
+ * the post has no recognizable title block.
  */
 function parseObtainMethodBlocks(html: string): ObtainVariant[] {
   const blocks = extractTitleBlocks(html)
   const methods: ObtainVariant[] = []
-  if (blocks.length > 1) {
+  if (blocks.length > 0) {
     for (const block of blocks) {
       const method = parseVariantMethod(block.html)
       if (method) methods.push(method)
@@ -1385,12 +1387,13 @@ function buildWeaponEntry(
       ...(flags.isWar ? ['war'] : []),
     ],
     daRequired:
-      (!hasMixedDcMethods && flags.daRequired) ||
-      obtainMethods.some((method) => method.daRequired),
-    ...((!hasMixedDcMethods && flags.dcRequired) || obtainMethods.some((method) => method.dcRequired)
+      (!hasMixedDcMethods && flags.daRequired) || obtainMethods.some((method) => method.daRequired),
+    ...((!hasMixedDcMethods && flags.dcRequired) ||
+    obtainMethods.some((method) => method.dcRequired)
       ? { dcRequired: true }
       : {}),
-    ...((!hasMixedDcMethods && flags.dmRequired) || obtainMethods.some((method) => method.dmRequired)
+    ...((!hasMixedDcMethods && flags.dmRequired) ||
+    obtainMethods.some((method) => method.dmRequired)
       ? { dmRequired: true }
       : {}),
     ...(flags.isTemp ? { isTemp: true } : {}),
@@ -1415,7 +1418,7 @@ function parseVariantMethod(blockHtml: string) {
 
   return {
     ...method,
-    daRequired: dcRequired ? false : daRequired,
+    daRequired,
     ...(dcRequired ? { dcRequired: true } : {}),
     ...(dmRequired ? { dmRequired: true } : {}),
   }
@@ -1435,6 +1438,39 @@ function getVariantSpecificNotes(
   if (mentionsDaVersion) return !isDc ? notes : undefined
 
   return undefined
+}
+
+function getMethodAccessSignature(method: ObtainVariant): string {
+  return [
+    method.daRequired ? 'da' : 'no-da',
+    obtainVariantHasDC(method) ? 'dc' : 'no-dc',
+    method.dmRequired || method.priceType === 'dm' ? 'dm' : 'no-dm',
+  ].join('|')
+}
+
+function getMethodAccessSortRank(methods: ObtainVariant[]): number {
+  const hasDA = methods.some((method) => method.daRequired)
+  const hasDC = methods.some(obtainVariantHasDC)
+  const hasDM = methods.some((method) => method.dmRequired || method.priceType === 'dm')
+
+  if (!hasDA && !hasDC && !hasDM) return 0
+  if (hasDA && !hasDC && !hasDM) return 1
+  if (hasDA && hasDC && !hasDM) return 2
+  if (!hasDA && hasDC && !hasDM) return 3
+  if (!hasDA && !hasDC && hasDM) return 4
+  return 5
+}
+
+function groupMethodsByAccessSignature(methods: ObtainVariant[]): ObtainVariant[][] {
+  const grouped = new Map<string, ObtainVariant[]>()
+  for (const method of methods) {
+    const key = getMethodAccessSignature(method)
+    grouped.set(key, [...(grouped.get(key) ?? []), method])
+  }
+
+  return Array.from(grouped.values()).sort(
+    (first, second) => getMethodAccessSortRank(first) - getMethodAccessSortRank(second)
+  )
 }
 
 function buildWeaponFamily(
@@ -1502,9 +1538,8 @@ function buildWeaponFamily(
       .filter((method): method is ObtainVariant => Boolean(method))
     if (methods.length === 0) continue
 
-    const dcMethods = methods.filter((method) => obtainVariantHasDC(method))
-    const nonDcMethods = methods.filter((method) => !obtainVariantHasDC(method))
-    const hasAccessBranches = dcMethods.length > 0 && nonDcMethods.length > 0
+    const accessMethodGroups = groupMethodsByAccessSignature(methods)
+    const hasAccessBranches = accessMethodGroups.length > 1
 
     const buildVariant = (
       variantMethods: ObtainVariant[],
@@ -1529,23 +1564,33 @@ function buildWeaponFamily(
     })
 
     if (hasAccessBranches) {
-      // Keep the base and Dragon Coins entries as distinct same-level variants
-      // (e.g. Abyssal Elf Scepter I / I (DC), or | Base / DC). Notes stay scoped
-      // to the branch they explicitly reference.
-      levelVariants.push(
-        buildVariant(
-          nonDcMethods,
-          familyForm ?? roman ?? '(Base)',
-          getVariantSpecificNotes(postNotes, nonDcMethods[0])
+      // Keep access-distinct entries as separate same-level variants. Some
+      // default weapons have four branches with identical stats but different
+      // obtain access: base, DA, DA+DC, and DC.
+      for (const variantMethods of accessMethodGroups) {
+        const firstMethod = variantMethods[0]
+        const twoBranchDefaultFamily =
+          isDefaultWeaponTitle(stub.name) && accessMethodGroups.length === 2
+        const twoBranchDefaultDc = twoBranchDefaultFamily && obtainVariantHasDC(firstMethod)
+        const branchBaseLabel =
+          twoBranchDefaultFamily
+            ? twoBranchDefaultDc
+              ? undefined
+              : '(Base)'
+            : (familyForm ?? roman ?? normalizedLevel.display)
+        levelVariants.push(
+          buildVariant(
+            variantMethods,
+            formatVariantNameWithAccess(branchBaseLabel, {
+              daRequired: twoBranchDefaultFamily ? false : firstMethod.daRequired,
+              dcRequired: firstMethod.dcRequired,
+              dmRequired: firstMethod.dmRequired,
+              priceType: firstMethod.priceType,
+            }),
+            getVariantSpecificNotes(postNotes, firstMethod)
+          )
         )
-      )
-      levelVariants.push(
-        buildVariant(
-          dcMethods,
-          familyForm ? `${familyForm} (DC)` : roman ? `${roman} (DC)` : '(DC)',
-          getVariantSpecificNotes(postNotes, dcMethods[0])
-        )
-      )
+      }
     } else {
       // A single access tier: collapse every obtain method for this level into
       // one variant rendered as Method 1 / Method 2 (e.g. 13th Staff level 13,
@@ -1574,6 +1619,7 @@ function buildWeaponFamily(
     isDefaultWeaponTitle(finalFamilyName) ||
     isDefaultWeaponTitle(stub.name) ||
     finalLevelVariants.some((level) => isDefaultWeaponTitle(level.name))
+  const defaultSingleVariantFamily = isDefault && finalLevelVariants.length === 1
   const elements = Array.from(
     new Set(
       finalLevelVariants
@@ -1615,16 +1661,22 @@ function buildWeaponFamily(
         : dedupeWeaponFamilySources(
             finalLevelVariants.map((level, index) => ({
               url: level.sourceUrl ?? directForumPostUrl(stub.messageId),
-              title: `DF Encyclopedia: ${level.name}`,
-              variantLabel: level.name,
+              title: `DF Encyclopedia: ${isDefault ? finalFamilyName : level.name}`,
+              variantLabel: isDefault ? finalFamilyName : level.name,
               isPrimary: index === 0,
             }))
           ),
     ...(itemTypes.length === 1 ? { itemType: itemTypes[0] } : {}),
     shared: {
-      description: finalLevelVariants[0].description ?? parseDescription(html),
+      description: defaultSingleVariantFamily
+        ? ''
+        : finalLevelVariants.every(
+              (variant) => variant.description === finalLevelVariants[0].description
+            )
+          ? (finalLevelVariants[0].description ?? parseDescription(html))
+          : '',
       ...images,
-      ...(notes ? { notes } : {}),
+      ...(notes && !defaultSingleVariantFamily ? { notes } : {}),
       ...(alsoSee.length > 0 ? { alsoSee } : {}),
       ...(weaponSpecial ? { weaponSpecial } : {}),
       ...(weaponSpecials.length > 1 ? { weaponSpecials } : {}),
@@ -1674,6 +1726,15 @@ function isWeaponFamilyEntry(entry: WeaponEntry): entry is WeaponFamily {
 
 function getWeaponEntryName(entry: WeaponEntry): string {
   return isWeaponFamilyEntry(entry) ? entry.familyName : entry.name
+}
+
+function weaponRefForEntry(entry: WeaponEntry): AlsoSeeRef {
+  return {
+    name: getWeaponEntryName(entry),
+    slug: entry.slug,
+    type: 'weapon',
+    url: entry.forumUrl,
+  }
 }
 
 function getWeaponEntryRefs(entry: WeaponEntry): AlsoSeeRef[] {
@@ -2081,7 +2142,9 @@ function buildWeaponFamilyAliasSlugs(
         .map((level) => level.variantName)
         .filter((variantName): variantName is string => Boolean(variantName))
         .map((variantName) =>
-          normalizeWeaponComparableTitle(variantName).includes(normalizeWeaponComparableTitle(familyBase))
+          normalizeWeaponComparableTitle(variantName).includes(
+            normalizeWeaponComparableTitle(familyBase)
+          )
             ? weaponSlugForName(variantName)
             : weaponSlugForName(`${variantName} ${familyBase}`)
         ),
@@ -2548,6 +2611,10 @@ function getWeaponFamilySourceVariantLabel(
   familyName: string,
   sourceTitle?: string
 ): string {
+  if (isDefaultWeaponTitle(familyName)) {
+    return getSourceDisplayTitle(sourceTitle) ?? normalizeWeaponSourceVariantLabel(level.name)
+  }
+
   if (familyName === 'Eternal Drumstick') {
     const baseVariant = level.variantName?.replace(/\s+\(DC\)$/i, '').trim()
     if (baseVariant === '(L)' || baseVariant === '(XL)') {
@@ -2755,9 +2822,7 @@ function buildWeaponCrossPostFamily(
     ...(itemTypes.length === 1 ? { itemType: itemTypes[0] } : {}),
     shared: {
       description:
-        descriptions.length > 0 && allWeaponValuesSame(descriptions)
-          ? descriptions[0]
-          : (descriptions[0] ?? ''),
+        descriptions.length > 0 && allWeaponValuesSame(descriptions) ? descriptions[0] : '',
       ...(imageUrls.length > 0 && allWeaponValuesSame(imageUrls) ? { imageUrl: imageUrls[0] } : {}),
       ...(alternativeImages.length > 0 && allWeaponValuesSame(alternativeImages)
         ? { alternativeImages: alternativeImages[0] }
@@ -2851,10 +2916,39 @@ function cloneWeaponFamilyWithLevels(
   levels: LevelVariant[]
 ): WeaponFamily {
   const slug = weaponSlugForName(familyName)
+  const selectedSourceUrls = new Set(
+    levels.map((level) => level.sourceUrl).filter((url): url is string => Boolean(url))
+  )
   const adjustedLevels = levels.map((level) => ({
     ...level,
     variantName: getSpecialWeaponLevelVariantName(level, familyName) ?? level.variantName,
   }))
+  const matchingSources = (family.familySources ?? []).filter((source) =>
+    selectedSourceUrls.has(source.url)
+  )
+  const familySources =
+    matchingSources.length > 0
+      ? orderWeaponFamilySourcesByLevelVariants(
+          dedupeWeaponFamilySources(
+            matchingSources.map((source, index) => ({
+              ...source,
+              variantLabel:
+                source.variantLabel && isDefaultWeaponTitle(familyName)
+                  ? (getSourceDisplayTitle(source.title) ?? familyName)
+                  : source.variantLabel,
+              isPrimary: index === 0,
+            }))
+          ),
+          adjustedLevels
+        )
+      : dedupeWeaponFamilySources(
+          adjustedLevels.map((level, index) => ({
+            url: level.sourceUrl ?? family.forumUrl,
+            title: `DF Encyclopedia: ${familyName}`,
+            variantLabel: familyName,
+            isPrimary: index === 0,
+          }))
+        )
   const elements = Array.from(
     new Set(
       adjustedLevels
@@ -2865,6 +2959,12 @@ function cloneWeaponFamilyWithLevels(
   const refs = (family.shared.alsoSee ?? []).filter(
     (ref) => !adjustedLevels.some((level) => weaponSlugForName(level.name) === ref.slug)
   )
+  const levelDescriptions = adjustedLevels
+    .map((level) => level.description)
+    .filter((value): value is string => Boolean(value))
+  const levelNotes = adjustedLevels
+    .map((level) => level.notes)
+    .filter((value): value is string => Boolean(value))
 
   return computeFamilyFlags({
     ...family,
@@ -2873,14 +2973,15 @@ function cloneWeaponFamilyWithLevels(
     slug,
     aliasSlugs: adjustedLevels.map((level) => weaponSlugForName(level.name)),
     forumUrl: adjustedLevels[0]?.sourceUrl ?? family.forumUrl,
-    familySources: adjustedLevels.map((level, index) => ({
-      url: level.sourceUrl ?? family.forumUrl,
-      title: `DF Encyclopedia: ${level.name}`,
-      variantLabel: level.name,
-      isPrimary: index === 0,
-    })),
+    familySources,
     shared: {
       ...family.shared,
+      description:
+        levelDescriptions.length > 0 && allWeaponValuesSame(levelDescriptions)
+          ? levelDescriptions[0]
+          : '',
+      notes:
+        levelNotes.length > 0 && allWeaponValuesSame(levelNotes) ? levelNotes[0] : undefined,
       ...(refs.length > 0 ? { alsoSee: refs } : { alsoSee: undefined }),
       ...(() => {
         const imageUrls = adjustedLevels
@@ -2967,6 +3068,37 @@ export function splitDefaultWeaponFamilies(entries: WeaponEntry[]): WeaponEntry[
   })
 }
 
+function addRefsToWeaponEntry(entry: WeaponEntry, refsToAdd: AlsoSeeRef[]): WeaponEntry {
+  const refs = refsToAdd.filter((ref) => ref.slug !== entry.slug)
+  if (refs.length === 0) return entry
+
+  if (isWeaponFamilyEntry(entry)) {
+    return {
+      ...entry,
+      shared: {
+        ...entry.shared,
+        alsoSee: mergeAlsoSeeRefs(entry.shared.alsoSee ?? [], refs),
+      },
+    }
+  }
+
+  return {
+    ...entry,
+    alsoSee: mergeAlsoSeeRefs(entry.alsoSee ?? [], refs),
+  }
+}
+
+export function linkPirateDefaultWeapons(entries: WeaponEntry[]): WeaponEntry[] {
+  const slugs = new Set([
+    'weapon-pirate-blade-pirate-default',
+    'weapon-dread-pirate-blade-dread-pirate-default',
+  ])
+  const siblingRefs = entries.filter((entry) => slugs.has(entry.slug)).map(weaponRefForEntry)
+  if (siblingRefs.length < 2) return entries
+
+  return entries.map((entry) => (slugs.has(entry.slug) ? addRefsToWeaponEntry(entry, siblingRefs) : entry))
+}
+
 export function mergeArchKnightDefaultLongsword(entries: WeaponEntry[]): WeaponEntry[] {
   const bareLongsword = entries.find(
     (entry): entry is WeaponFamily =>
@@ -2983,15 +3115,15 @@ export function mergeArchKnightDefaultLongsword(entries: WeaponEntry[]): WeaponE
     ...bareLongsword.levelVariants,
   ])
   const mergedSources = orderWeaponFamilySourcesByLevelVariants(
-    dedupeWeaponFamilySources([...(archKnight.familySources ?? []), ...(bareLongsword.familySources ?? [])]),
+    dedupeWeaponFamilySources([
+      ...(archKnight.familySources ?? []),
+      ...(bareLongsword.familySources ?? []),
+    ]),
     mergedLevels
   )
   const mergedAlsoSee = Array.from(
     new Map(
-      [
-        ...(archKnight.shared.alsoSee ?? []),
-        ...(bareLongsword.shared.alsoSee ?? []),
-      ]
+      [...(archKnight.shared.alsoSee ?? []), ...(bareLongsword.shared.alsoSee ?? [])]
         .filter((ref) => ref.slug !== archKnight.slug && ref.slug !== bareLongsword.slug)
         .map((ref) => [`${ref.type}:${ref.slug}`.toLowerCase(), ref])
     ).values()
@@ -3013,7 +3145,9 @@ export function mergeArchKnightDefaultLongsword(entries: WeaponEntry[]): WeaponE
     },
     levelVariants: mergedLevels,
     isDefault: true,
-    tags: Array.from(new Set([...(archKnight.tags ?? []), ...(bareLongsword.tags ?? []), 'default'])).sort(),
+    tags: Array.from(
+      new Set([...(archKnight.tags ?? []), ...(bareLongsword.tags ?? []), 'default'])
+    ).sort(),
     hasDA: false,
     hasDC: false,
     hasDM: false,
@@ -4647,6 +4781,7 @@ function writeDatasets(
     merged = splitFoamRolithStandaloneEntry(merged)
     merged = splitDefaultWeaponFamilies(merged)
     merged = mergeArchKnightDefaultLongsword(merged)
+    merged = linkPirateDefaultWeapons(merged)
     merged = dedupeWeaponEntriesBySlug(merged)
     merged = removeWeaponAliasStandaloneEntries(merged)
     merged = removeDuplicateWeaponAliasClaims(merged)

@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react'
 import { resolveFamilyNotes, cleanNotes } from '../../utils/notes'
+import type { InlineTextLink } from '../../types/inlineLink'
 import NotesList from './NotesList'
 
 interface OtherInformationSectionProps {
@@ -10,6 +11,7 @@ interface OtherInformationSectionProps {
   showSharedNotes?: boolean
   className?: string
   panelClassName?: string
+  links?: InlineTextLink[]
 }
 
 export default function OtherInformationSection({
@@ -20,6 +22,7 @@ export default function OtherInformationSection({
   showSharedNotes,
   className = 'mb-8',
   panelClassName = 'bg-bg-surface border border-border-default rounded-lg p-5',
+  links,
 }: OtherInformationSectionProps) {
   let content: ReactNode = null
 
@@ -34,17 +37,19 @@ export default function OtherInformationSection({
     if (resolvedNotes.sharedNotes || resolvedNotes.variantNotes) {
       content = (
         <>
-          {resolvedNotes.sharedNotes && <NotesList notes={resolvedNotes.sharedNotes} />}
+          {resolvedNotes.sharedNotes && <NotesList notes={resolvedNotes.sharedNotes} links={links} />}
           {resolvedNotes.sharedNotes && resolvedNotes.variantNotes && (
             <div className="my-3 border-t border-border-default" />
           )}
-          {resolvedNotes.variantNotes && <NotesList notes={resolvedNotes.variantNotes} />}
+          {resolvedNotes.variantNotes && (
+            <NotesList notes={resolvedNotes.variantNotes} links={links} />
+          )}
         </>
       )
     }
   } else {
     const cleanedNotes = cleanNotes(notes)
-    if (cleanedNotes) content = <NotesList notes={cleanedNotes} />
+    if (cleanedNotes) content = <NotesList notes={cleanedNotes} links={links} />
   }
 
   if (!content) return null

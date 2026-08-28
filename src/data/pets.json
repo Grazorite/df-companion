@@ -1255,7 +1255,7 @@
       }
     ],
     "shared": {
-      "description": "This pet has been granted to the ninjas of the Shadow of the Wind Clan by Nago, the boar god. It represents a fierce nature, strong spirit and breath as fresh as a summer ham.",
+      "description": "",
       "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/AncestralBoarSpiritPetpic.png",
       "alternativeImages": [
         {
@@ -1395,7 +1395,7 @@
       }
     ],
     "shared": {
-      "description": "This spiritual serpent has been granted to members of the Shadow of the Wind Clan. It represents the ability to free yourself from any situation, as a snake escapes its own skin.",
+      "description": "",
       "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/AncestralSnakeSpiritPetpic.png",
       "alternativeImages": [
         {
@@ -2878,7 +2878,7 @@
       }
     ],
     "shared": {
-      "description": "Meow meow meooooooow!",
+      "description": "",
       "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/BaronCatPetpic.png",
       "alternativeImages": [
         {
@@ -3125,7 +3125,7 @@
       }
     ],
     "shared": {
-      "description": "It's so sweet and cuddly and totally not a #1 threat!",
+      "description": "",
       "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/BearCubPetpic.png",
       "alternativeImages": [
         {
@@ -3729,7 +3729,7 @@
     "type": "pet",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22302288",
     "shared": {
-      "description": "This special baby dracolich is here to stay! He has a chance to heal you with the legendary power of turkeys stuffed into small places. Requires a Dragon Amulet to use.",
+      "description": "",
       "element": "DAR",
       "rarity": "5",
       "attacks": [
@@ -3786,6 +3786,7 @@
         "damage": "15-15",
         "stats": "Crit +1, Bonus +1",
         "statsType": "petStats",
+        "description": "This special baby dracolich is here to stay! He has a chance to heal you with the legendary power of turkeys stuffed into small places. Requires a Dragon Amulet to use.",
         "obtainVariants": [
           {
             "location": "A Boneheaded Brawl",
@@ -3807,6 +3808,7 @@
         "damage": "15-15",
         "stats": "Crit +1, Bonus +1",
         "statsType": "petStats",
+        "description": "This special baby dracolich is here to stay! He has a chance to heal you with the legendary power of turkeys stuffed into small places. (Has a low chance to drop from A Boneheaded Brawl.)",
         "obtainVariants": [
           {
             "location": "Boneheaded Brawl Loot",
@@ -3844,6 +3846,7 @@
     "type": "pet",
     "description": "The players came together and won the Zard Frenzy Challenge! For totally destroying 5 MILLION zards in LESS the a week enjoy this Boxzar!This item requires a Dragon Amulet.",
     "daRequired": true,
+    "isWar": true,
     "elements": [
       "NAT"
     ],
@@ -3882,7 +3885,8 @@
     "alsoSee": [],
     "tags": [
       "pet",
-      "nat"
+      "nat",
+      "war"
     ]
   },
   {
@@ -3902,7 +3906,7 @@
       }
     ],
     "shared": {
-      "description": "Meow meow meooooooow!",
+      "description": "",
       "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/BraveSirRobinCatPetpic.png",
       "alternativeImages": [
         {
@@ -4963,7 +4967,7 @@
       }
     ],
     "shared": {
-      "description": "Butterbomb the battle turkey was trained by Dr. Voltabolt to be the worlds most deadly turkey and pilot.",
+      "description": "",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Butterbomb.png",
       "element": "NAT",
       "rarity": "3",
@@ -9914,7 +9918,7 @@
       }
     ],
     "shared": {
-      "description": "Meow meow meooooooow!",
+      "description": "",
       "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/DeatharrowsCatPetpic.png",
       "alternativeImages": [
         {
@@ -12374,7 +12378,7 @@
       }
     ],
     "shared": {
-      "description": "Meow meow meooooooow!",
+      "description": "",
       "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/BaronCatPetpic.png",
       "alternativeImages": [
         {
@@ -12496,7 +12500,7 @@
       }
     ],
     "shared": {
-      "description": "Meow meow meooooooow!",
+      "description": "",
       "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/BraveSirRobinCatPetpic.png",
       "alternativeImages": [
         {
@@ -12618,7 +12622,7 @@
       }
     ],
     "shared": {
-      "description": "Meow meow meooooooow!",
+      "description": "",
       "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/DeatharrowsCatPetpic.png",
       "alternativeImages": [
         {
@@ -12740,7 +12744,7 @@
       }
     ],
     "shared": {
-      "description": "Meow meow meooooooow!",
+      "description": "",
       "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/JoshCatPetpic.png",
       "alternativeImages": [
         {
@@ -12862,7 +12866,7 @@
       }
     ],
     "shared": {
-      "description": "Woof woof wooooooooof!",
+      "description": "",
       "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/LFALCatPetpic.png",
       "alternativeImages": [
         {
@@ -12984,7 +12988,7 @@
       }
     ],
     "shared": {
-      "description": "Meow meow meooooooow!",
+      "description": "",
       "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/PriusCatPetpic.png",
       "alternativeImages": [
         {
@@ -13366,7 +13370,7 @@
       }
     ],
     "shared": {
-      "description": "These fireflies from the Creatioux Grove have taken a liking to you. It looks like you've found some new pets, and their presence can buff you!",
+      "description": "",
       "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/FirefliesPetpic.png",
       "element": "LIG",
       "attacks": [
@@ -18990,7 +18994,7 @@
       }
     ],
     "shared": {
-      "description": "Meow meow meooooooow!",
+      "description": "",
       "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/JoshCatPetpic.png",
       "alternativeImages": [
         {
@@ -19249,7 +19253,7 @@
       }
     ],
     "shared": {
-      "description": "Woof woof wooooooooof!",
+      "description": "",
       "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/LFALCatPetpic.png",
       "alternativeImages": [
         {
@@ -19910,7 +19914,7 @@
       }
     ],
     "shared": {
-      "description": "Your tiny penguin pal. He gets confused alot and likes cleaning... but will not do windows!",
+      "description": "",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Linus.png",
       "element": "ICE",
       "notes": "Pet is animated; it sways back and forth continuously."
@@ -22952,7 +22956,7 @@
       }
     ],
     "shared": {
-      "description": "Guaranteed to find shoes and little dogs too!",
+      "description": "",
       "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/MogkeePetpic.png",
       "alternativeImages": [
         {
@@ -25744,7 +25748,7 @@
       }
     ],
     "shared": {
-      "description": "This pet requires a Dragon Amulet. This rare fresh water turtle has, through some magical accident been transformed into a post-adolescent fighting machine, with a bad attitude. He'll probably grow out of that.",
+      "description": "",
       "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/AncientNinjaTerrapinPetpic.png",
       "alternativeImages": [
         {
@@ -33317,7 +33321,7 @@
       }
     ],
     "shared": {
-      "description": "Meow meow meooooooow!",
+      "description": "",
       "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/PriusCatPetpic.png",
       "alternativeImages": [
         {
@@ -34312,7 +34316,7 @@
       }
     ],
     "shared": {
-      "description": "A thank you gift from Dr. Voltabolt for your help in recoloring SureWould forest.",
+      "description": "",
       "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/RummagePetpic.png",
       "element": "MET",
       "rarity": "5",
@@ -35157,7 +35161,7 @@
       }
     ],
     "shared": {
-      "description": "This is one of the ninja monkies trained by the Shadow of the Wind ninja to cause trouble for the Osprey Cove pirates.",
+      "description": "",
       "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/ShadowMonkeyPetpic.png",
       "alternativeImages": [
         {
@@ -35842,7 +35846,7 @@
       }
     ],
     "shared": {
-      "description": "This item requires a Dragon Amulet. This magical pet was made from animated slush that gathers on the side of the paths in Falconreach.",
+      "description": "",
       "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/SnowmanSlushyPetpic.png",
       "element": "ICE",
       "rarity": "7",
@@ -36666,7 +36670,7 @@
       }
     ],
     "shared": {
-      "description": "Sneevil Ninja Buddy... Sneevil Ninja Buddy! Sneevil Ninja Buddy and Me!",
+      "description": "",
       "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/SneevilNinjaBuddyPetpic.png",
       "element": "MET",
       "attacks": [
@@ -37657,7 +37661,7 @@
       }
     ],
     "shared": {
-      "description": "Looks like something tagged along when the shrink-ray wore off!",
+      "description": "",
       "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/CellPetpic.png",
       "element": "NAT",
       "attacks": [
@@ -38626,7 +38630,7 @@
       }
     ],
     "shared": {
-      "description": "So shiny, and a bite like a gold-plated steel trap!",
+      "description": "",
       "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/GoldTogpic.png",
       "element": "STO",
       "rarity": "5",
@@ -39426,7 +39430,7 @@
       }
     ],
     "shared": {
-      "description": "When all four of those big red eyes look up at you, you can't help but want to pet it and pet it! As it gets older, a third head will emerge until it looks like its father. Freaky!",
+      "description": "",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/TwoHeadedPuppy.png",
       "element": "ICE",
       "rarity": "10",
@@ -39927,7 +39931,7 @@
       }
     ],
     "shared": {
-      "description": "This item requires a Dragon Amulet. This magical pet was made from the pure white snow from the rooftops of Falconreach.",
+      "description": "",
       "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/SnowmanWhitePetpic.png",
       "element": "ICE",
       "rarity": "7",
@@ -40104,7 +40108,7 @@
       }
     ],
     "shared": {
-      "description": "This item requires a Dragon Amulet. This magical pet was made from a pile of yellow snow, only found on a small patch in Falconreach!",
+      "description": "",
       "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/SnowmanYellowPetpic.png",
       "element": "ICE",
       "rarity": "5",

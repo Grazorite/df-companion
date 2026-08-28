@@ -4,6 +4,7 @@ import type { HousingEntry } from '../../types/housing'
 import { isHousingFamily } from '../../types/housing'
 import { accessPillClass } from '../../utils/accessPillStyles'
 import { normalizeDescriptionText } from '../../utils/displayText'
+import { getFamilyCardDescription } from '../../utils/variantHelpers'
 
 interface HousingCardProps {
   item: HousingEntry
@@ -13,7 +14,9 @@ interface HousingCardProps {
 export default function HousingCard({ item, toUrl }: HousingCardProps) {
   const isFamily = isHousingFamily(item)
   const name = isFamily ? item.familyName : item.name
-  const description = normalizeDescriptionText(isFamily ? item.shared.description : item.description)
+  const description = normalizeDescriptionText(
+    isFamily ? getFamilyCardDescription(item) : item.description
+  )
   const route = `/housing/${item.slug}?type=${encodeURIComponent(item.subtype)}`
   const dcRequired = isFamily ? item.hasDC : item.dcRequired
   const hasFree = isFamily ? item.hasFree : item.hasFree

@@ -137,7 +137,10 @@ function normalizeSkillEffectLookupName(name: string): string {
   const normalized = normalizeAccessoryFamilyName(name)
     .replace(/[’‘]/g, "'")
     .replace(/\s+\((?:with|lasts|requires)\b[^)]*\)\s*$/i, '')
-    .replace(/\s+\((?:D-Amulet|D-Coins|D-Medal|Normal|Rare|Seasonal|S-Offer|Retired|ArchKnight|Free|Gold|Merge|Temp|Special Offer|DM|DC|DA)(?:[;/,\s-]+(?:D-Amulet|D-Coins|D-Medal|Normal|Rare|Seasonal|S-Offer|Retired|ArchKnight|Free|Gold|Merge|Temp|Special Offer|DM|DC|DA))*\)\s*$/i, '')
+    .replace(
+      /\s+\((?:D-Amulet|D-Coins|D-Medal|Normal|Rare|Seasonal|S-Offer|Retired|ArchKnight|Free|Gold|Merge|Temp|Special Offer|DM|DC|DA)(?:[;/,\s-]+(?:D-Amulet|D-Coins|D-Medal|Normal|Rare|Seasonal|S-Offer|Retired|ArchKnight|Free|Gold|Merge|Temp|Special Offer|DM|DC|DA))*\)\s*$/i,
+      ''
+    )
     .trim()
 
   const articleMatch = normalized.match(/^(.*),\s*The$/i)
@@ -685,7 +688,9 @@ function extractTrinketSkillAppearanceLinks(html: string): {
     const url = normalizeLinkedImageUrl(match[2] ?? '')
     if (!isLikelyLinkedImageUrl(url)) continue
 
-    const label = stripHtml(decodeHtml(match[3] ?? '')).replace(/\s+/g, ' ').trim()
+    const label = stripHtml(decodeHtml(match[3] ?? ''))
+      .replace(/\s+/g, ' ')
+      .trim()
     if (!/^Appearance(?:\s+|$)/i.test(label) && !/^\d+(?:\.\d+)?$/i.test(label)) continue
     if (entries.some((entry) => entry.url === url)) continue
 
@@ -864,8 +869,7 @@ function mergeTrinketAttackDetails(candidate: GuestAttack, fallback: GuestAttack
       candidate.damageType && candidate.damageType !== '—'
         ? candidate.damageType
         : fallback.damageType,
-    element:
-      candidate.element && candidate.element !== '—' ? candidate.element : fallback.element,
+    element: candidate.element && candidate.element !== '—' ? candidate.element : fallback.element,
     buttonImageUrl: candidate.buttonImageUrl ?? fallback.buttonImageUrl,
     appearanceUrl: candidate.appearanceUrl ?? fallback.appearanceUrl,
     appearanceUrls: candidate.appearanceUrls ?? fallback.appearanceUrls,
@@ -986,9 +990,15 @@ function parseObtainMethods(html: string): Accessory['obtainMethods'] {
 
   for (const segment of segments) {
     let current: (typeof blocks)[number] | undefined
-    const segmentHasDA = /<img[^>]+src=["'][^"']*\/tags\/DA\.(?:png|jpg|jpeg|gif)["']/i.test(segment)
-    const segmentHasDC = /<img[^>]+src=["'][^"']*\/tags\/DC\.(?:png|jpg|jpeg|gif)["']/i.test(segment)
-    const segmentHasDM = /<img[^>]+src=["'][^"']*\/tags\/DM\.(?:png|jpg|jpeg|gif)["']/i.test(segment)
+    const segmentHasDA = /<img[^>]+src=["'][^"']*\/tags\/DA\.(?:png|jpg|jpeg|gif)["']/i.test(
+      segment
+    )
+    const segmentHasDC = /<img[^>]+src=["'][^"']*\/tags\/DC\.(?:png|jpg|jpeg|gif)["']/i.test(
+      segment
+    )
+    const segmentHasDM = /<img[^>]+src=["'][^"']*\/tags\/DM\.(?:png|jpg|jpeg|gif)["']/i.test(
+      segment
+    )
     const rawLines = segment
       .split(/<br\s*\/?>/i)
       .map((line) => line.trim())
@@ -1442,6 +1452,48 @@ function getAccessoryVariantCompletenessScore(variant: Accessory): number {
   )
 }
 
+function accessoryVariantAccessSignature(variant: Accessory): string {
+  const methods = variant.obtainMethods ?? []
+  const hasDA = variant.daRequired || methods.some((method) => method.daRequired)
+  const hasDC =
+    variant.dcRequired ||
+    methods.some(
+      (method) => method.dcRequired || method.priceType === 'dc' || obtainVariantHasDC(method)
+    )
+  const hasDM =
+    variant.dmRequired || methods.some((method) => method.dmRequired || method.priceType === 'dm')
+
+  return [hasDA ? 'da' : 'no-da', hasDC ? 'dc' : 'no-dc', hasDM ? 'dm' : 'no-dm'].join('|')
+}
+
+function findSameAccessSiblingDescription(
+  variant: Accessory,
+  group: Accessory[]
+): string | undefined {
+  const signature = accessoryVariantAccessSignature(variant)
+  return group.find(
+    (sibling) =>
+      sibling !== variant &&
+      sibling.description &&
+      accessoryVariantAccessSignature(sibling) === signature
+  )?.description
+}
+
+function normalizeAccessoryDescriptionForMethod(
+  description: string | undefined,
+  method: Accessory['obtainMethods'][number]
+): string | undefined {
+  if (!description) return undefined
+  if (method.daRequired) return description
+
+  const cleaned = description
+    .replace(/\s*This item requires a Dragon Amulet\.\s*/gi, ' ')
+    .replace(/\s*\(No DA Required\)\s*/gi, ' ')
+    .replace(/\s{2,}/g, ' ')
+    .trim()
+  return cleaned || undefined
+}
+
 function enrichAccessorySiblingVariants(variants: Accessory[]): Accessory[] {
   const grouped = new Map<string, Accessory[]>()
 
@@ -1470,48 +1522,53 @@ function enrichAccessorySiblingVariants(variants: Accessory[]): Accessory[] {
     )
     const primary = sorted[0]
 
-    return sorted.map((variant) => ({
-      ...variant,
-      description:
-        getAccessoryVariantCompletenessScore(primary) >
-          getAccessoryVariantCompletenessScore(variant) && primary.description
-          ? primary.description
-          : variant.description || primary.description,
-      forumUrl: variant.forumUrl || primary.forumUrl,
-      imageUrl: variant.imageUrl ?? primary.imageUrl,
-      alternativeImages: mergeAlternativeImages(
-        variant.alternativeImages,
-        primary.alternativeImages
-      ),
-      elements: Array.from(new Set([...variant.elements, ...primary.elements])),
-      level: variant.level ?? primary.level,
-      stats: variant.stats ?? primary.stats,
-      resists: variant.resists ?? primary.resists,
-      ability: variant.ability ?? primary.ability,
-      abilityUrl: variant.abilityUrl ?? primary.abilityUrl,
-      attacks: variant.attacks ?? primary.attacks,
-      rarity: variant.rarity ?? primary.rarity,
-      itemType: variant.itemType ?? primary.itemType,
-      equipSpot: variant.equipSpot ?? primary.equipSpot,
-      modifies: variant.modifies ?? primary.modifies,
-      category: variant.category ?? primary.category,
-      notes:
-        variant.notes && primary.notes && variant.notes !== primary.notes
-          ? `${variant.notes}\n${primary.notes}`
-          : (variant.notes ?? primary.notes),
-      tags: Array.from(new Set([...variant.tags, ...primary.tags])).sort(),
-      daRequired: variant.daRequired || primary.daRequired,
-      ...(variant.dcRequired || primary.dcRequired ? { dcRequired: true } : {}),
-      ...(variant.dmRequired || primary.dmRequired ? { dmRequired: true } : {}),
-      ...(variant.isTemp || primary.isTemp ? { isTemp: true } : {}),
-      ...(variant.isCosmetic || primary.isCosmetic ? { isCosmetic: true } : {}),
-      ...(variant.isRare || primary.isRare ? { isRare: true } : {}),
-      ...(variant.isSeasonal || primary.isSeasonal ? { isSeasonal: true } : {}),
-      ...(variant.isSpecialOffer || primary.isSpecialOffer ? { isSpecialOffer: true } : {}),
-      ...(variant.isWar || primary.isWar ? { isWar: true } : {}),
-      ...(variant.retired || primary.retired ? { retired: true } : {}),
-      obtainMethods: mergeObtainMethods(variant.obtainMethods),
-    }))
+    return sorted.map((variant) => {
+      const sameAccessDescription = findSameAccessSiblingDescription(variant, group)
+
+      return {
+        ...variant,
+        description: variant.description || sameAccessDescription || '',
+        forumUrl: variant.forumUrl || primary.forumUrl,
+        imageUrl: variant.imageUrl ?? primary.imageUrl,
+        alternativeImages: mergeAlternativeImages(
+          variant.alternativeImages,
+          primary.alternativeImages
+        ),
+        elements: Array.from(new Set([...variant.elements, ...primary.elements])),
+        level: variant.level ?? primary.level,
+        stats: variant.stats ?? primary.stats,
+        resists: variant.resists ?? primary.resists,
+        ability: variant.ability ?? primary.ability,
+        abilityUrl: variant.abilityUrl ?? primary.abilityUrl,
+        attacks: variant.attacks ?? primary.attacks,
+        rarity: variant.rarity ?? primary.rarity,
+        itemType: variant.itemType ?? primary.itemType,
+        equipSpot: variant.equipSpot ?? primary.equipSpot,
+        modifies: variant.modifies ?? primary.modifies,
+        category: variant.category ?? primary.category,
+        notes:
+          variant.notes && primary.notes && variant.notes !== primary.notes
+            ? `${variant.notes}\n${primary.notes}`
+            : (variant.notes ?? primary.notes),
+        tags: Array.from(
+          new Set([
+            ...variant.tags,
+            ...primary.tags.filter((tag) => !['free', 'merge', 'gold', 'dc', 'dm'].includes(tag)),
+          ])
+        ).sort(),
+        daRequired: variant.daRequired,
+        ...(variant.dcRequired ? { dcRequired: true } : {}),
+        ...(variant.dmRequired ? { dmRequired: true } : {}),
+        ...(variant.isTemp || primary.isTemp ? { isTemp: true } : {}),
+        ...(variant.isCosmetic || primary.isCosmetic ? { isCosmetic: true } : {}),
+        ...(variant.isRare || primary.isRare ? { isRare: true } : {}),
+        ...(variant.isSeasonal || primary.isSeasonal ? { isSeasonal: true } : {}),
+        ...(variant.isSpecialOffer || primary.isSpecialOffer ? { isSpecialOffer: true } : {}),
+        ...(variant.isWar || primary.isWar ? { isWar: true } : {}),
+        ...(variant.retired || primary.retired ? { retired: true } : {}),
+        obtainMethods: mergeObtainMethods(variant.obtainMethods),
+      }
+    })
   })
 }
 
@@ -1526,6 +1583,7 @@ function expandAccessoryFamilyVariants(variants: Accessory[]): Accessory[] {
         ...baseVariant,
         obtainMethods: [method],
         daRequired: method.daRequired,
+        description: normalizeAccessoryDescriptionForMethod(variant.description, method) ?? '',
         ...(method.dcRequired || method.priceType === 'dc' ? { dcRequired: true } : {}),
         ...(method.dmRequired || method.priceType === 'dm' ? { dmRequired: true } : {}),
         tags: Array.from(
@@ -1667,10 +1725,12 @@ function buildAccessoryEntry(
     daRequired:
       (!hasMixedDcMethods && (flags.daRequired || textSignals.daRequired)) ||
       obtainMethods.some((method) => method.daRequired),
-    ...((!hasMixedDcMethods && flags.dcRequired) || obtainMethods.some((method) => method.dcRequired)
+    ...((!hasMixedDcMethods && flags.dcRequired) ||
+    obtainMethods.some((method) => method.dcRequired)
       ? { dcRequired: true }
       : {}),
-    ...((!hasMixedDcMethods && flags.dmRequired) || obtainMethods.some((method) => method.dmRequired)
+    ...((!hasMixedDcMethods && flags.dmRequired) ||
+    obtainMethods.some((method) => method.dmRequired)
       ? { dmRequired: true }
       : {}),
     ...(flags.isTemp ? { isTemp: true } : {}),
@@ -1852,7 +1912,7 @@ function buildAccessoryFamily(
     familyOrigin: 'same-thread-multi-post',
     familySources,
     shared: {
-      description: allSame(descriptions) ? (descriptions[0] ?? '') : (descriptions[0] ?? ''),
+      description: allSame(descriptions) ? (descriptions[0] ?? '') : '',
       ...(resists.length === 1 ? { resists: resists[0] } : {}),
       ...(abilities.length === 1 ? { ability: abilities[0] } : {}),
       ...(attacks.length > 0 && allSame(attacks) ? { attacks: attacks[0] } : {}),
@@ -1896,12 +1956,6 @@ function buildAccessoryFamily(
   })
 
   family.shared.description = allSame(descriptions) ? (descriptions[0] ?? '') : ''
-  if (!family.shared.description) {
-    const firstDescription = consolidatedVariants.find(
-      (variant) => variant.description
-    )?.description
-    family.shared.description = firstDescription ?? ''
-  }
 
   if (family.familyName === 'Harmonized Cowbell') {
     const binaryVariants = uniqueStrings(

@@ -4,12 +4,184 @@
 > Entries here are **read-only history** — do not prepend new entries here.
 > New entries always go in `AGENTS.md` under `## 📝 Reverse-Chronological Handover Log`.
 >
-> **Reading `Commit(s): uncommitted`:** it means uncommitted *at the time of writing*, not still
+> **Reading `Commit(s): uncommitted`:** it means uncommitted _at the time of writing_, not still
 > uncommitted. Treat `git log` as authoritative for what shipped when.
 
 ---
 
 ## Entries
+
+### 2026-08-25 — ChickenCow armor variants and detail status-pill cleanup
+
+**Agent:** orchestrator (GPT-5 Codex) · **Commit(s):** `the commit containing this entry`
+**Kanban moved:** no board item moved; targeted class-armor follow-up requested by user
+
+**Changed:**
+
+- `src/components/classAbilities/ClassAbilityDetail.tsx`: removed Level 2 availability/status pills
+  (`Rare`, `Seasonal`, `Special Offer`) from Classes / Abilities detail headers. Detail headers now
+  match the shared rule: access/method/type metadata only.
+- `scripts/scrape-classes.ts`: added ChickenCow armor single-post family normalization. `ChickenCow
+  Armor` renders `1` / `1 (DC)`, `Evolved ChickenCow Armor` renders `1 (DA)` / `1 (DA, DC)` /
+  `1 (DC)`, and `Ascended ChickenCow Armor` renders `(DA)` / `(DC)`, with method-level DA/DC flags
+  overriding page-level tag bleed.
+- `scripts/scrape-classes.ts`: repaired the known Epoch price artifact where the forum
+  strikethrough could leave `(Standard` without the closing parenthesis.
+- `src/data/classes.json`: targeted Epoch refresh passed the current armor data through the new
+  normalizer while keeping the class count at 29.
+- `src/data/badge-relations.json`: regenerated after armor data normalization; still 26 relations.
+- `docs/context/category_playbooks.md` and `docs/context/ui_patterns.md`: documented ChickenCow
+  armor method-variant rules, Epoch price cleanup, and the no-L2-status-pills detail-header rule.
+
+**Verified:**
+
+- Targeted scrape `npm run scrape:classes -- --subtype=class --class-subcategory=armor
+  --names='Epoch'` → passed and wrote 29 class entries.
+- Data audit → ChickenCow/Evolved/Ascended variant labels and DA/DC method flags match the requested
+  splits; Epoch price now starts `$19.95-$24.95 USD (Standard)`.
+- `npm run generate:badge-relations` → passed, 26 relations.
+- `npm run typecheck:scripts` → passed.
+- `npx tsc --noEmit -p tsconfig.json` → passed.
+- `npm run lint` → passed.
+- `node scripts/validate-class-abilities.mjs` → passed, 83 entries.
+- `node scripts/verify-datasets.mjs` → passed.
+- `npm run build` → passed production build and all validators.
+
+**Not verified / known gaps:**
+
+- No broad class scrape was run by the agent. Regular and Miscellaneous class-page scraping remain
+  pending.
+- Browser visual QA was not run before this handover entry.
+
+**Next agent should:**
+
+- Continue Classes / Abilities with Regular or Miscellaneous class scraping when the user is ready.
+
+### 2026-08-25 — Armor Shadow and Reforged family cleanup
+
+**Agent:** orchestrator (GPT-5 Codex) · **Commit(s):** `the commit containing this entry`
+**Kanban moved:** no board item moved; targeted class-armor follow-up requested by user
+
+**Changed:**
+
+- `scripts/scrape-classes.ts`: added shared armor-pair consolidation helpers for Shadow/Ancient
+  armors and Reforged time-class armors. Shadow Mage/Rogue/Warrior Armor now render as base display
+  families with `(Base)` and `Ancient` variants. Archivist, Avatar of Time, ChronoZ,
+  Chronocorruptor, Chronomancer Armor, ShadowWalker of Time, and TimeKiller now render with `(Base)`
+  and `Reforged` variants when both source entries exist.
+- `src/data/classes.json`: targeted repair scrape normalized the current Armors data to 29 class
+  entries and removed standalone `Reforged ...` primary rows. Legacy source slugs remain aliases.
+- `src/data/badge-relations.json`: regenerated after the armor family changes; still 26
+  bidirectional badge-award relations.
+- `docs/context/category_playbooks.md` and this file: documented the Shadow/Ancient and Reforged
+  time-class armor consolidation rules and updated Classes / Abilities counts/status.
+
+**Verified:**
+
+- Targeted scrape `npm run scrape:classes -- --subtype=class --class-subcategory=armor
+--names='Chronocorruptor|Reforged Chronocorruptor'` → passed and wrote 29 class entries.
+- Data audit → Shadow armor families have `(Base)`/`Ancient`, time-class armor families have
+  `(Base)`/`Reforged`, `Epoch` remains standalone, 0 standalone `Reforged ...` rows, 0 alias
+  collisions.
+- `npm run generate:badge-relations` → passed, 26 relations.
+
+**Not verified / known gaps:**
+
+- No broad class scrape was run by the agent. The full Armors pass was user-run before these targeted
+  repairs; Regular and Miscellaneous class-page scraping remain pending.
+- Visual browser QA for the newly consolidated armor pages was not run in this follow-up.
+
+**Next agent should:**
+
+- Continue Classes / Abilities by implementing Regular or Miscellaneous class scraping when the user
+  is ready.
+
+### 2026-08-25 — Armor full-scrape parser scope and dedupe repair
+
+**Agent:** orchestrator (GPT-5 Codex) · **Commit(s):** `the commit containing this entry`
+**Kanban moved:** no board item moved; post-full-scrape bug fix requested by user
+
+**Changed:**
+
+- `scripts/scrape-classes.ts`: armor listing parsing now anchors to the actual Armors post body and
+  stops before Regular/Miscellaneous class sections, so `--class-subcategory=armor` no longer
+  encounters `Regular Classes (A-Z)` or `Miscellaneous Classes (A-Z)` links.
+- `scripts/scrape-classes.ts`: class-ability normalization now removes stale primary entries whose
+  slug is already claimed as another consolidated family's alias. This removes duplicate consolidated
+  entries such as `Gnomish Personal Steamtank Mk II`.
+- `src/data/classes.json`: repaired after the user's full armor scrape. Current armor dataset has 39
+  class entries; `Gnomish Personal Steamtank (Vr 1.0, Mk II)` and `DoomKnight (Armor, Variant One)`
+  are each single consolidated families.
+- `src/data/badge-relations.json`: regenerated after the full armor scrape; now 26 relations.
+- `docs/context/category_playbooks.md` and `docs/context/scraper_operations.md`: documented armor-only
+  section scoping and alias-primary duplicate removal.
+
+**Verified:**
+
+- Dry-run sample `npm run scrape:classes -- --subtype=class --class-subcategory=armor --limit=5`
+  starts at `Ancient Exosuit` and parses 5 armor entries.
+- Data audit → 39 armor entries, 0 non-armor class entries, 0 missing armor class/rarity fields,
+  0 alias collisions.
+- `npm run generate:badge-relations` → passed, 26 relations.
+- `npm run typecheck:scripts` → passed.
+- `npx tsc --noEmit -p tsconfig.json` → passed.
+- `npm run lint` → passed.
+- `npm run build` → passed production build and all validators.
+
+**Not verified / known gaps:**
+
+- No second full armor scrape was run after the parser-scope fix, per broad-scrape rule. Current JSON
+  was repaired by targeted Gnomish refresh plus normalization.
+- Regular and Miscellaneous class-page scraping remain pending.
+
+**Next agent should:**
+
+- Continue Classes / Abilities by implementing Regular or Miscellaneous class scraping when the user
+  is ready.
+
+### 2026-08-25 — Class armor targeted family cleanup
+
+**Agent:** orchestrator (GPT-5 Codex) · **Commit(s):** `the commit containing this entry`
+**Kanban moved:** no board item moved; targeted class-armor follow-up requested by user
+
+**Changed:**
+
+- `scripts/scrape-classes.ts`: fixed `--url=` parsing for forum URLs containing `=`, added direct
+  URL page-title family handling, tightened title detection around forum metadata, and added targeted
+  armor-family normalizers for Gnomish Personal Steamtank and DoomKnight.
+- `src/data/classes.json`: targeted refreshes now represent `Gnomish Personal Steamtank (Vr 1.0,
+Mk II)` with `Vr 1.0` / `Mk II` variants and `DoomKnight (Armor, Variant One)` with `Armor` /
+  `Variant One` variants.
+- `src/data/badge-relations.json`: regenerated after armor cleanup. `GPS` and `DoomKnight` badge
+  relations now point to the consolidated armor families.
+- `src/components/badges/BadgeCard.tsx` plus item detail pages: cross-category badge cards in
+  `Also See` now show a compact `Badge` pill, while normal badge gallery cards remain unchanged.
+- `docs/context/category_playbooks.md`, `docs/context/scraper_operations.md`, and
+  `docs/context/ui_patterns.md`: documented direct class-armor URL refreshes, the Gnomish/DoomKnight
+  armor-family rules, and the cross-category badge-card cue.
+
+**Verified:**
+
+- Targeted Gnomish scrape → family `Gnomish Personal Steamtank (Vr 1.0, Mk II)` with variants
+  `Vr 1.0`, `Mk II`.
+- Targeted DoomKnight scrape → family `DoomKnight (Armor, Variant One)` with variants `Armor`,
+  `Variant One`.
+- `npm run generate:badge-relations` → passed, 14 relations.
+- `npm run typecheck:scripts` → passed.
+- `npx tsc --noEmit -p tsconfig.json` → passed.
+- `npm run lint` → passed.
+- `git diff --check` → passed.
+- `npm run build` → passed production build and all validators.
+
+**Not verified / known gaps:**
+
+- Full armor scrape was not run per broad-scrape rule. User should run it manually when ready.
+- Regular and Miscellaneous class-page scraping remain pending.
+
+**Next agent should:**
+
+- Hand the user the full Armors scrape command, then continue Classes / Abilities breadth work once
+  the user has run it.
 
 ### 2026-08-25 — Cross-category badge award links
 
@@ -49,7 +221,7 @@
 
 - No browser visual QA was run for the new cross-category card sections.
 - The relation rule is intentionally strict and only handles explicit `Own this ... to obtain ...
-  badge(s)` wording. Broader badge-related prose remains unlinked by design.
+badge(s)` wording. Broader badge-related prose remains unlinked by design.
 
 **Next agent should:**
 
@@ -691,7 +863,7 @@
   Dust/Food/Rune tones.
 - `src/components/classAbilities/ClassAbilityCard.tsx`: gallery cards now use compact `DA`, show
   `DM` when repaired flags indicate Defender's Medal requirements, and no longer show `Multiple
-  Versions`, `Merge Required`, `Effect`, or current-Consumables `Temp` pills.
+Versions`, `Merge Required`, `Effect`, or current-Consumables `Temp` pills.
 - `src/components/classAbilities/ClassAbilityDetail.tsx`: Consumables omit Level, show standalone
   `Rarity` metadata before How to Obtain, show `DM` in the header, and suppress the ubiquitous Temp
   header pill for Consumables.
@@ -738,7 +910,7 @@
 **Changed:**
 
 - `scripts/scrape-classes.ts`: Consumables listing now skips the non-entry headings `Alphabetical
-  Consumables Listing` and `Consumables Sorted by Effects`, maps A-Z `[D]` / `[F]` / `[R]` prefixes
+Consumables Listing` and `Consumables Sorted by Effects`, maps A-Z `[D]` / `[F]` / `[R]` prefixes
   to Dust/Food/Rune, falls back to detail-page `Item Type`, parses both `Effect:` and `Effects:`,
   and scopes Other Information to the current item block instead of the whole forum page.
 - `src/components/classAbilities/ClassAbilityDetail.tsx`: Consumables effects now render immediately
@@ -1238,7 +1410,7 @@ Re-scrape `Navigator's Hat` → stays in To Do, annotated
 - DA/DC obtain-pill correctness depends on `ObtainVariant.daRequired`, `dcRequired`, and `priceType`
   in JSON. The shared obtain-card display reads those fields correctly; incorrect raw flags require a
   targeted scraper refresh, not UI-only repair.
-- A simple stale-data audit found badge notes with legacy ` • ` flattening; badge scraper output is
+- A simple stale-data audit found badge notes with legacy `•` flattening; badge scraper output is
   fixed for future runs, but `badges.json` was not rewritten.
 
 **Next agent should:**

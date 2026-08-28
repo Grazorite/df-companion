@@ -6,6 +6,7 @@ import { isClassAbilityFamily } from '../../types/classAbility'
 import { accessPillClass } from '../../utils/accessPillStyles'
 import { CONSUMABLE_KIND_META, consumableKindPillClass } from '../../utils/classAbilityPills'
 import { normalizeDescriptionText } from '../../utils/displayText'
+import { getFamilyCardDescription } from '../../utils/variantHelpers'
 
 interface ClassAbilityCardProps {
   item: ClassAbilityEntry
@@ -15,7 +16,9 @@ interface ClassAbilityCardProps {
 export default function ClassAbilityCard({ item, toUrl }: ClassAbilityCardProps) {
   const isFamily = isClassAbilityFamily(item)
   const name = isFamily ? item.familyName : item.name
-  const description = normalizeDescriptionText(isFamily ? item.shared.description : item.description)
+  const description = normalizeDescriptionText(
+    isFamily ? getFamilyCardDescription(item) : item.description
+  )
   const route = `/classes/${item.slug}?type=${encodeURIComponent(item.subtype)}`
   const hasDA = isFamily ? item.hasDA : item.daRequired
   const hasDC = isFamily ? item.hasDC : item.dcRequired

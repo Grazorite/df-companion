@@ -184,7 +184,7 @@ function searchWeapons(
         } else if (!hasCategory || itemRetired) {
           return false
         }
-      } else if (itemRetired && queryWords.length === 0) {
+      } else if (itemRetired) {
         return false
       }
 

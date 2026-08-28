@@ -28,7 +28,7 @@
         "daRequired": false
       }
     ],
-    "notes": "301st Elite Knight Cape previously appeared in the retired quest The Hot Gates.\nAlong with Fire Resist increase from +1 to +10, Pierce Def +1 and Melee Def +1 stats were added on May 16th, 2025.",
+    "notes": "301st Elite Knight Cape previously appeared in the retired quest  The Hot Gates.\nAlong with Fire Resist increase from +1 to +10, Pierce Def +1 and Melee Def +1 stats were added on  May 16th, 2025.",
     "tags": [
       "fir",
       "free"
@@ -2266,6 +2266,7 @@
     ],
     "shared": {
       "description": "The shadows surround you! You may not be able to see them but they're there, trust me! This item requires a Dragon Amulet.",
+      "notes": "Cape appears invisible when equipped.",
       "alsoSee": [
         {
           "name": "Cloak of Shadows",
@@ -2285,8 +2286,7 @@
           "type": "accessory",
           "url": "https://forums2.battleon.com/f/tm.asp?m=21926777"
         }
-      ],
-      "notes": "Cape appears invisible when equipped."
+      ]
     },
     "levelVariants": [
       {
@@ -5342,7 +5342,7 @@
     "obtainMethods": [
       {
         "location": "Dream Recreations",
-        "priceType": "merge",
+        "priceType": "dm",
         "price": "N/A",
         "requiredItems": "200 Defender's Medal",
         "sellback": "0 Dragon Coins",
@@ -5383,7 +5383,7 @@
     "obtainMethods": [
       {
         "location": "Dream Recreations",
-        "priceType": "merge",
+        "priceType": "dm",
         "price": "N/A",
         "requiredItems": "200 Defender's Medal",
         "sellback": "0 Dragon Coins",
@@ -8317,7 +8317,7 @@
     "obtainMethods": [
       {
         "location": "Dream Recreations",
-        "priceType": "merge",
+        "priceType": "dm",
         "price": "N/A",
         "requiredItems": "200 Defender's Medal",
         "sellback": "0 Dragon Coins",
@@ -13452,7 +13452,7 @@
     "obtainMethods": [
       {
         "location": "Dream Recreations",
-        "priceType": "merge",
+        "priceType": "dm",
         "price": "N/A",
         "requiredItems": "200 Defender's Medal",
         "sellback": "0 Dragon Coins",
@@ -13494,7 +13494,7 @@
     "obtainMethods": [
       {
         "location": "Dream Recreations",
-        "priceType": "merge",
+        "priceType": "dm",
         "price": "N/A",
         "requiredItems": "200 Defender's Medal",
         "sellback": "0 Dragon Coins",
@@ -26647,7 +26647,7 @@
     "obtainMethods": [
       {
         "location": "Togsday II Shop",
-        "priceType": "merge",
+        "priceType": "dm",
         "price": "N/A",
         "requiredItems": "50 Defender's Medal",
         "sellback": "N/A",
@@ -26689,7 +26689,7 @@
     "obtainMethods": [
       {
         "location": "Togsday II Shop",
-        "priceType": "merge",
+        "priceType": "dm",
         "price": "N/A",
         "requiredItems": "50 Defender's Medal",
         "sellback": "N/A",
@@ -32618,7 +32618,7 @@
     "obtainMethods": [
       {
         "location": "Dream Recreations",
-        "priceType": "merge",
+        "priceType": "dm",
         "price": "N/A",
         "requiredItems": "250 Defender's Medal",
         "sellback": "0 Dragon Coins",
@@ -35086,7 +35086,7 @@
     "obtainMethods": [
       {
         "location": "Dream Recreations",
-        "priceType": "merge",
+        "priceType": "dm",
         "price": "N/A",
         "requiredItems": "200 Defender's Medal",
         "sellback": "0 Dragon Coins",
@@ -35162,7 +35162,7 @@
     "obtainMethods": [
       {
         "location": "Eclipse of Doom",
-        "priceType": "merge",
+        "priceType": "dm",
         "price": "N/A",
         "requiredItems": "25 Defender's Medal",
         "sellback": "0 Dragon Coins",
@@ -39579,6 +39579,7 @@
     ],
     "shared": {
       "description": "The shadows surround you! You may not be able to see them but they're there, trust me!",
+      "notes": "Cape appears invisible when equipped.",
       "alsoSee": [
         {
           "name": "Cloak of Shadows",
@@ -39598,8 +39599,7 @@
           "type": "accessory",
           "url": "https://forums2.battleon.com/f/tm.asp?m=21920514"
         }
-      ],
-      "notes": "Cape appears invisible when equipped."
+      ]
     },
     "levelVariants": [
       {

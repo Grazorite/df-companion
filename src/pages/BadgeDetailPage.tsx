@@ -1,17 +1,18 @@
+import { useMemo } from 'react'
 import { useParams, useLocation, Link } from 'react-router-dom'
 import { ArrowLeft } from 'lucide-react'
 import { useBadgeBySlug, useBadgesByCategory } from '../hooks/useBadges'
 import BadgeCard from '../components/badges/BadgeCard'
 import NotesList from '../components/shared/NotesList'
-import { displayTitle, normalizeDescriptionText, normalizeDisplayText } from '../utils/displayText'
+import { displayTitle, normalizeDescriptionText } from '../utils/displayText'
 import AccessPills from '../components/shared/AccessPills'
 import SourceLinksCard from '../components/shared/SourceLinksCard'
 import { DetailPageSkeleton } from '../components/shared/LoadingSkeleton'
 import DetailTypePill from '../components/shared/DetailTypePill'
 import DetailPageLayout from '../components/shared/DetailPageLayout'
 import ItemImage from '../components/shared/ItemImage'
-import RelatedLinkCard from '../components/shared/RelatedLinkCard'
-import { useItemsAwardingBadge } from '../hooks/useBadgeRelations'
+import InlineTextLinks from '../components/shared/InlineTextLinks'
+import { useAwardingItemInlineLinksForBadge } from '../hooks/useBadgeRelations'
 import { backUrlFromSearch, detailUrlWithFrom } from '../utils/navigationContext'
 
 export default function BadgeDetailPage() {
@@ -19,7 +20,7 @@ export default function BadgeDetailPage() {
   const location = useLocation()
   const { badge, loading } = useBadgeBySlug(slug ?? '')
   const relatedBadges = useBadgesByCategory(badge?.category ?? '', badge?.slug, badge?.subcategory)
-  const badgeAwardItems = useItemsAwardingBadge(badge?.slug)
+  const rawAwardingItemLinks = useAwardingItemInlineLinksForBadge(badge?.slug)
 
   // The URL to return to when pressing "Back to Badges"
   // - If we arrived from the badge list (or via a related badge), the `from` param tracks the original list URL
@@ -32,6 +33,15 @@ export default function BadgeDetailPage() {
   function relatedBadgeUrl(relatedSlug: string) {
     return detailUrlWithFrom(`/badges/${relatedSlug}`, backUrl)
   }
+
+  const awardingItemLinks = useMemo(
+    () =>
+      rawAwardingItemLinks.map((link) => ({
+        ...link,
+        to: detailUrlWithFrom(link.to, backUrl),
+      })),
+    [backUrl, rawAwardingItemLinks]
+  )
 
   if (loading) {
     return <DetailPageSkeleton />
@@ -139,7 +149,10 @@ export default function BadgeDetailPage() {
               </div>
             </div>
             <p className="text-text-primary text-sm leading-relaxed">
-              {normalizeDisplayText(step.instruction ?? 'See forum link for details.')}
+              <InlineTextLinks
+                text={step.instruction ?? 'See forum link for details.'}
+                links={awardingItemLinks}
+              />
             </p>
           </div>
         ))}
@@ -151,7 +164,7 @@ export default function BadgeDetailPage() {
           <h2 className="text-xs font-semibold text-text-muted uppercase tracking-wider mb-3">
             Other Information
           </h2>
-          <NotesList notes={badge.notes} />
+          <NotesList notes={badge.notes} links={awardingItemLinks} />
         </section>
       )}
 
@@ -163,29 +176,6 @@ export default function BadgeDetailPage() {
           }))}
         />
       </section>
-
-      {badgeAwardItems.length > 0 && (
-        <section aria-labelledby="badge-item-related-heading" className="border-t border-border-default pt-6 mb-6">
-          <h2
-            id="badge-item-related-heading"
-            className="text-xs font-semibold text-text-muted uppercase tracking-wider mb-3"
-          >
-            Also See
-          </h2>
-          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-            {badgeAwardItems.map((relation) => (
-              <li key={`${relation.itemType}-${relation.itemSlug}`}>
-                <RelatedLinkCard
-                  to={relation.route}
-                  title={relation.itemName}
-                  label={relation.categoryLabel}
-                  description={`Own this ${relation.categoryLabel.toLowerCase()} to obtain this badge.`}
-                />
-              </li>
-            ))}
-          </ul>
-        </section>
-      )}
 
       {/* Related badges */}
       {relatedBadges.length > 0 && (

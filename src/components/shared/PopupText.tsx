@@ -1,5 +1,7 @@
 import { normalizeDisplayText } from '../../utils/displayText'
 import { splitPopupText, type PopupGroup } from '../../utils/popupText'
+import type { InlineTextLink } from '../../types/inlineLink'
+import InlineTextLinks from './InlineTextLinks'
 
 interface PopupTextProps {
   text: string
@@ -7,6 +9,7 @@ interface PopupTextProps {
   className?: string
   quoteClassName?: string
   showPopups?: boolean
+  links?: InlineTextLink[]
 }
 
 interface BulletLine {
@@ -54,13 +57,18 @@ export default function PopupText({
   className,
   quoteClassName,
   showPopups = true,
+  links,
 }: PopupTextProps) {
   const { mainText, popupGroups } = splitPopupText(text)
   const { lead, bullets } = splitBulletText(mainText)
 
   return (
     <>
-      {lead && <Component className={className}>{normalizeDisplayText(lead)}</Component>}
+      {lead && (
+        <Component className={className}>
+          <InlineTextLinks text={lead} links={links} />
+        </Component>
+      )}
       {bullets.length > 0 && (
         <ul className="mt-1 space-y-1">
           {bullets.map((bullet, index) => (
@@ -72,7 +80,9 @@ export default function PopupText({
               <span className="text-text-muted mt-0.5 flex-shrink-0">
                 {bullet.depth > 1 ? '◦' : '•'}
               </span>
-              <span className="min-w-0 flex-1">{normalizeDisplayText(bullet.text)}</span>
+              <span className="min-w-0 flex-1">
+                <InlineTextLinks text={bullet.text} links={links} />
+              </span>
             </li>
           ))}
         </ul>

@@ -10,7 +10,7 @@ import {
   getWeaponFamilyDisplayName,
   useWeaponRelatedItems,
 } from '../../hooks/useWeapons'
-import { useAwardedBadges } from '../../hooks/useBadgeRelations'
+import { useBadgeInlineLinksForItem } from '../../hooks/useBadgeRelations'
 import { displayTitle, normalizeDescriptionText, normalizeDisplayText } from '../../utils/displayText'
 import {
   buildDisplayImages,
@@ -46,7 +46,6 @@ import ItemImage from '../shared/ItemImage'
 import MetricStrip from '../shared/MetricStrip'
 import ExpandableImageList from '../shared/ExpandableImageList'
 import WeaponCard from './WeaponCard'
-import BadgeCard from '../badges/BadgeCard'
 import WeaponStatsTable from './WeaponStatsTable'
 
 interface WeaponDetailProps {
@@ -573,17 +572,7 @@ export default function WeaponDetail({ weapon, filterBase, backUrl }: WeaponDeta
   const resolvedRelatedWeapons = relatedWeapons.flatMap((related) =>
     related.entry ? [{ ref: related.ref, entry: related.entry }] : []
   )
-  const badgeRelationTexts = useMemo(
-    () => [
-      singleWeapon?.notes,
-      singleWeapon?.description,
-      family?.shared.notes,
-      family?.shared.description,
-      ...(family?.levelVariants.flatMap((level) => [level.notes, level.description]) ?? []),
-    ],
-    [family, singleWeapon]
-  )
-  const awardedBadges = useAwardedBadges(badgeRelationTexts)
+  const badgeInlineLinks = useBadgeInlineLinksForItem(weapon.slug)
 
   return (
     <DetailPageLayout>
@@ -717,13 +706,14 @@ export default function WeaponDetail({ weapon, filterBase, backUrl }: WeaponDeta
         sharedNotes={family?.shared.notes}
         activeVariantNotes={activeLevel?.notes}
         allVariantNotes={family?.levelVariants.map((level) => level.notes)}
+        links={badgeInlineLinks}
       />
 
       <section className="mb-5">
         <SourceLinksCard links={sourceLinks} />
       </section>
 
-      {(resolvedRelatedWeapons.length > 0 || awardedBadges.length > 0) && (
+      {resolvedRelatedWeapons.length > 0 && (
         <section aria-labelledby="related-heading" className="border-t border-border-default pt-6">
           <h2
             id="related-heading"
@@ -743,11 +733,6 @@ export default function WeaponDetail({ weapon, filterBase, backUrl }: WeaponDeta
                       : undefined
                   }
                 />
-              </li>
-            ))}
-            {awardedBadges.map((badge) => (
-              <li key={`badge-${badge.slug}`}>
-                <BadgeCard badge={badge} toUrl={`/badges/${badge.slug}`} badgeLabel="Badge" />
               </li>
             ))}
           </ul>

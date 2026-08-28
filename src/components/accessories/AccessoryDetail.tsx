@@ -16,7 +16,7 @@ import {
   useAccessoryRelatedItems,
   type AccessoryRelatedItem,
 } from '../../hooks/useAccessories'
-import { useAwardedBadges } from '../../hooks/useBadgeRelations'
+import { useBadgeInlineLinksForItem } from '../../hooks/useBadgeRelations'
 import { displayTitle, normalizeDescriptionText, normalizeDisplayText } from '../../utils/displayText'
 import { buildDisplayImages } from '../../utils/imageLabels'
 import {
@@ -41,7 +41,6 @@ import { detailUrlWithFrom } from '../../utils/navigationContext'
 import AccessoryStatsTable from './AccessoryStatsTable'
 import AccessoryCard from './AccessoryCard'
 import GuestAttacks from '../guests/GuestAttacks'
-import BadgeCard from '../badges/BadgeCard'
 
 const ACCESSORY_SUBTYPE_LABELS: Record<AccessorySubtype, string> = {
   artifact: 'Artifact',
@@ -421,17 +420,7 @@ export default function AccessoryDetail({ accessory, filterBase, backUrl }: Acce
   const resolvedRelatedAccessories = relatedAccessories.filter(
     (related): related is AccessoryRelatedItem & { entry: AccessoryEntry } => Boolean(related.entry)
   )
-  const badgeRelationTexts = useMemo(
-    () => [
-      singleAccessory?.notes,
-      singleAccessory?.description,
-      family?.shared.notes,
-      family?.shared.description,
-      ...(family?.levelVariants.flatMap((level) => [level.notes, level.description]) ?? []),
-    ],
-    [family, singleAccessory]
-  )
-  const awardedBadges = useAwardedBadges(badgeRelationTexts)
+  const badgeInlineLinks = useBadgeInlineLinksForItem(accessory.slug)
 
   return (
     <DetailPageLayout>
@@ -571,13 +560,14 @@ export default function AccessoryDetail({ accessory, filterBase, backUrl }: Acce
         sharedNotes={family?.shared.notes}
         activeVariantNotes={activeLevel?.notes}
         allVariantNotes={family?.levelVariants.map((level) => level.notes)}
+        links={badgeInlineLinks}
       />
 
       <section className="mb-5">
         <SourceLinksCard links={sourceLinks} />
       </section>
 
-      {(resolvedRelatedAccessories.length > 0 || awardedBadges.length > 0) && (
+      {resolvedRelatedAccessories.length > 0 && (
         <section aria-labelledby="related-heading" className="border-t border-border-default pt-6">
           <h2
             id="related-heading"
@@ -595,11 +585,6 @@ export default function AccessoryDetail({ accessory, filterBase, backUrl }: Acce
                     scope === 'cross-subtype' ? ACCESSORY_SUBTYPE_LABELS[entry.subtype] : undefined
                   }
                 />
-              </li>
-            ))}
-            {awardedBadges.map((badge) => (
-              <li key={`badge-${badge.slug}`}>
-                <BadgeCard badge={badge} toUrl={`/badges/${badge.slug}`} badgeLabel="Badge" />
               </li>
             ))}
           </ul>

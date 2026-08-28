@@ -1,19 +1,19 @@
 /**
  * ObtainVariantCard Component
- * 
+ *
  * Displays a single obtain method with location, price, DA/DC/DM requirements,
  * sellback, and required items (for merge shops).
- * 
+ *
  * For guests: Shows location only (badge-style), no price/sellback
  * For pets: Shows full details including price and sellback
- * 
+ *
  * Uses the unified obtain card styling:
  * - Gold left border (border-l-4 border-gold)
  * - Heading INSIDE the card
  * - Amber text for DC prices
  * - Silver text for DM prices
  * - DA Required pill if daRequired=true (non-clickable)
- * 
+ *
  * Example: Goldfish Knight IV
  * - Free variant: Shows DA Required pill
  * - DC variant: Shows amber "150 Dragon Coins" text, no DA pill
@@ -26,11 +26,15 @@ import { getCurrencyTextClass, getSeparatedObtainLines } from '../../utils/obtai
 
 interface ObtainVariantCardProps {
   variant: ObtainVariant
-  label?: string  // "Free Option", "DC Option", "Method 1"
-  isGuest?: boolean  // If true, hide price/sellback fields (badge-style)
+  label?: string // "Free Option", "DC Option", "Method 1"
+  isGuest?: boolean // If true, hide price/sellback fields (badge-style)
   locationOnly?: boolean
   showCurrencyAccessPills?: boolean
   showPriceFields?: boolean
+}
+
+function isMeaningfulObtainValue(value: string | undefined): boolean {
+  return Boolean(value && !/^(?:none|n\/?a)$/i.test(value.trim()))
 }
 
 function ObtainTextLines({
@@ -65,18 +69,22 @@ export default function ObtainVariantCard({
   showPriceFields = true,
 }: ObtainVariantCardProps) {
   const headingText = label ? `How to Obtain (${label})` : 'How to Obtain'
-  
-  const shouldShowPriceFields = showPriceFields && !isGuest && !locationOnly
-  const showRequirements = Boolean(variant.requirements && variant.requirements.toLowerCase() !== 'none')
+  const showPrice = isMeaningfulObtainValue(variant.price)
+  const showSellback = isMeaningfulObtainValue(variant.sellback)
+  const shouldShowPriceFields =
+    showPriceFields && !isGuest && !locationOnly && (showPrice || showSellback)
+  const showRequirements = Boolean(
+    variant.requirements && variant.requirements.toLowerCase() !== 'none'
+  )
   const showRequiredItems = Boolean(variant.requiredItems)
-  
+
   return (
     <div className="bg-bg-surface border-l-4 border-gold rounded-lg p-5 space-y-3">
       {/* Heading */}
       <h3 className="text-xs font-semibold text-text-muted uppercase tracking-wider">
         {headingText}
       </h3>
-      
+
       {/* Location with optional link and DA pill */}
       <div className="grid grid-cols-[minmax(0,1fr)_auto] items-start gap-3">
         <div className="min-w-0">
@@ -90,25 +98,31 @@ export default function ObtainVariantCard({
               {normalizeDisplayText(variant.location)}
             </a>
           ) : (
-            <p className="text-text-primary break-words">{normalizeDisplayText(variant.location)}</p>
+            <p className="text-text-primary break-words">
+              {normalizeDisplayText(variant.location)}
+            </p>
           )}
         </div>
-        
+
         <div className="flex flex-wrap justify-end gap-2">
           {/* Access pills are non-clickable in obtain context. */}
           {variant.daRequired && (
-            <span className={`inline-flex items-center justify-center whitespace-nowrap min-w-[92px] ${accessPillClass('da', 'obtain')}`}>
+            <span
+              className={`inline-flex items-center justify-center whitespace-nowrap min-w-[92px] ${accessPillClass('da', 'obtain')}`}
+            >
               DA Required
             </span>
           )}
           {showCurrencyAccessPills && (variant.dcRequired || variant.priceType === 'dc') && (
-            <span className={`inline-flex items-center justify-center whitespace-nowrap ${accessPillClass('dc', 'obtain')}`}>
+            <span
+              className={`inline-flex items-center justify-center whitespace-nowrap ${accessPillClass('dc', 'obtain')}`}
+            >
               DC
             </span>
           )}
         </div>
       </div>
-      
+
       {!locationOnly && (showRequirements || showRequiredItems || shouldShowPriceFields) && (
         <>
           <div className="border-t border-border-default" />
@@ -116,7 +130,9 @@ export default function ObtainVariantCard({
           {showRequirements && (
             <div>
               <p className="text-xs text-text-muted mb-1">Requires</p>
-              <p className="text-sm text-text-primary break-words">{normalizeDisplayText(variant.requirements)}</p>
+              <p className="text-sm text-text-primary break-words">
+                {normalizeDisplayText(variant.requirements)}
+              </p>
             </div>
           )}
 
@@ -139,35 +155,50 @@ export default function ObtainVariantCard({
               </div>
             </div>
           )}
-          
+
           {/* Price and Sellback grid */}
           {shouldShowPriceFields && (
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {/* Price */}
-              <div>
-                <p className="text-xs text-text-muted mb-1">Price</p>
-                <div
-                  className={`text-sm ${getCurrencyTextClass(
-                    variant.price,
-                    variant.priceType === 'dc' ? 'dc' : variant.priceType === 'dm' ? 'dm' : undefined
-                  )}`}
-                >
-                  <ObtainTextLines lines={getSeparatedObtainLines(variant.price)} markAlternatives />
+              {showPrice && (
+                <div>
+                  <p className="text-xs text-text-muted mb-1">Price</p>
+                  <div
+                    className={`text-sm ${getCurrencyTextClass(
+                      variant.price,
+                      variant.priceType === 'dc'
+                        ? 'dc'
+                        : variant.priceType === 'dm'
+                          ? 'dm'
+                          : undefined
+                    )}`}
+                  >
+                    <ObtainTextLines
+                      lines={getSeparatedObtainLines(variant.price)}
+                      markAlternatives
+                    />
+                  </div>
                 </div>
-              </div>
+              )}
 
               {/* Sellback */}
-              {variant.sellback && (
+              {showSellback && (
                 <div>
                   <p className="text-xs text-text-muted mb-1">Sellback</p>
                   <div
                     className={`text-sm ${getCurrencyTextClass(
                       variant.sellback,
-                      variant.priceType === 'dc' ? 'dc' : variant.priceType === 'dm' ? 'dm' : undefined
+                      variant.priceType === 'dc'
+                        ? 'dc'
+                        : variant.priceType === 'dm'
+                          ? 'dm'
+                          : undefined
                     )}`}
                   >
                     <ObtainTextLines
-                      lines={getSeparatedObtainLines(variant.sellback, { rephraseTimedSellback: true })}
+                      lines={getSeparatedObtainLines(variant.sellback, {
+                        rephraseTimedSellback: true,
+                      })}
                     />
                   </div>
                 </div>

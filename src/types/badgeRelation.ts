@@ -4,6 +4,7 @@ export interface BadgeRelation {
   badgeName: string
   badgeSlug: string
   itemName: string
+  itemAliases?: string[]
   itemSlug: string
   itemType: ItemType
   categoryLabel: string

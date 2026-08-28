@@ -43,26 +43,9 @@ export default function WeaponCard({ weapon, badgeLabel, toUrl }: WeaponCardProp
           {card.hasMultipleVersions && card.levelRange && (
             <LevelRangeBadge levelRange={card.levelRange} />
           )}
-          {card.daRequired && (
-            <span className={accessPillClass('da', 'card')}>
-              DA
-            </span>
-          )}
-          {card.dcRequired && (
-            <span className={accessPillClass('dc', 'card')}>
-              DC
-            </span>
-          )}
-          {card.dmRequired && (
-            <span className={accessPillClass('dm', 'card')}>
-              DM
-            </span>
-          )}
-          {card.isDefault && (
-            <span className="text-[10px] text-sky-300 bg-sky-500/20 px-1.5 py-0.5 rounded-full font-medium">
-              Default
-            </span>
-          )}
+          {card.daRequired && <span className={accessPillClass('da', 'card')}>DA</span>}
+          {card.dcRequired && <span className={accessPillClass('dc', 'card')}>DC</span>}
+          {card.dmRequired && <span className={accessPillClass('dm', 'card')}>DM</span>}
           {card.hasFree && (
             <span className="text-[10px] text-green-400 bg-green-500/20 px-1.5 py-0.5 rounded-full font-medium">
               Free
