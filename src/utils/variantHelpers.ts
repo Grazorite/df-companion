@@ -671,8 +671,18 @@ function getLevelVariantLabelInfo(
   const normalizedVariantName = level.variantName
     ? normalizeDisplayText(level.variantName)
     : undefined
+  const normalizedLevelName = familyName
+    ? normalizeDisplayText(stripAccessVariantSuffix(level.name))
+    : undefined
+  const baseLabelIsPlaceholder =
+    normalizedVariantName &&
+    /^(?:Normal|Resource|\(?Base\)?)$/i.test(normalizedVariantName) &&
+    (!familyName ||
+      normalizedVariantName.startsWith('(') ||
+      /^(?:Normal|Resource)$/i.test(normalizedVariantName) ||
+      normalizedLevelName === normalizeDisplayText(familyName))
   const normalizedAccessVariantName =
-    normalizedVariantName && /^(?:Normal|Base|Resource)$/i.test(normalizedVariantName)
+    normalizedVariantName && baseLabelIsPlaceholder
       ? '(Base)'
       : normalizedVariantName && /^(?:DC|D-Coins?|Dragon Coins?)$/i.test(normalizedVariantName)
         ? '(DC)'
@@ -762,7 +772,6 @@ function getLevelVariantLabelInfo(
         hasDA,
       }
     }
-    const normalizedLevelName = normalizeDisplayText(stripAccessVariantSuffix(level.name))
     if (normalizedLevelName) {
       if (levelLabel.toLowerCase() === 'unknown' || levelLabel.toLowerCase() === 'as player') {
         return {
@@ -960,37 +969,43 @@ function getAccessDuplicateSuffix(
   levels: LevelVariant[],
   labels: LevelVariantLabelInfo[],
   index: number
-): 'DC' | 'DM' | 'DA' | undefined {
+): string | undefined {
   const label = labels[index]
   const hasDM = (level: LevelVariant) =>
     level.obtainVariants.some((variant) => variant.dmRequired || variant.priceType === 'dm')
-  const labelHasDM = hasDM(levels[index])
+  const accessSignature = (
+    level: LevelVariant,
+    labelInfo: LevelVariantLabelInfo,
+    options: { omitDA?: boolean } = {}
+  ): string => {
+    const values: string[] = []
+    if (labelInfo.hasDA && !options.omitDA) values.push('DA')
+    if (labelInfo.hasDC) values.push('DC')
+    if (hasDM(level)) values.push('DM')
+    return values.join(', ')
+  }
 
   const duplicateIndexes = labels.flatMap((otherLabel, otherIndex) =>
     otherIndex !== index && otherLabel.label === label.label ? [otherIndex] : []
   )
-  const duplicateLabels = duplicateIndexes.map((otherIndex) => labels[otherIndex])
+  if (duplicateIndexes.length === 0) return undefined
 
-  if (duplicateLabels.length === 0) return undefined
-  if (
-    !label.hasDC &&
-    !labelHasDM &&
-    !label.hasDA &&
-    duplicateIndexes.every((otherIndex) => {
-      const otherLabel = labels[otherIndex]
-      return !otherLabel.hasDC && !hasDM(levels[otherIndex]) && !otherLabel.hasDA
+  const duplicateGroupIndexes = [index, ...duplicateIndexes]
+  const allDuplicateRowsRequireDA = duplicateGroupIndexes.every(
+    (groupIndex) => labels[groupIndex].hasDA
+  )
+  const currentAccess = accessSignature(levels[index], label, {
+    omitDA: allDuplicateRowsRequireDA,
+  })
+  const duplicateAccessValues = duplicateIndexes.map((otherIndex) =>
+    accessSignature(levels[otherIndex], labels[otherIndex], {
+      omitDA: allDuplicateRowsRequireDA,
     })
-  ) {
-    return undefined
-  }
+  )
+  const distinctAccessValues = new Set([currentAccess, ...duplicateAccessValues])
+  if (distinctAccessValues.size <= 1) return undefined
 
-  if (label.hasDC) return 'DC'
-  if (duplicateLabels.some((otherLabel) => otherLabel.hasDC)) return undefined
-  if (labelHasDM) return 'DM'
-  if (duplicateIndexes.some((otherIndex) => hasDM(levels[otherIndex]))) return undefined
-  if (label.hasDA) return 'DA'
-
-  return undefined
+  return currentAccess || undefined
 }
 
 function hasAccessDisambiguatedDuplicate(

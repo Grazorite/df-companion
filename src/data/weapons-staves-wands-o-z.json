@@ -18326,7 +18326,7 @@
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=22160779",
         "title": "DF Encyclopedia: Shadowstaff (Shadow Mage Default)",
-        "variantLabel": "Shadowstaff (Shadow Mage Default) Shadow Mage Default",
+        "variantLabel": "Shadowstaff (Shadow Mage Default)",
         "isPrimary": true
       }
     ],
@@ -25109,7 +25109,7 @@
         "levelNumber": 10,
         "levelDisplay": "10",
         "actualLevel": 10,
-        "variantName": "Base",
+        "variantName": "(Base)",
         "name": "Base Spectrus Staff",
         "damage": "20-34",
         "stats": "Crit +1, INT +1, Bonus +1",
@@ -26988,7 +26988,7 @@
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=4545731",
         "title": "DF Encyclopedia: Staff (Mage Default)",
-        "variantLabel": "Staff (Mage Default) Mage Default",
+        "variantLabel": "Staff (Mage Default)",
         "isPrimary": true
       }
     ],
@@ -28036,7 +28036,7 @@
     ],
     "itemType": "Staff",
     "shared": {
-      "description": "This staff really suits you! But it's not shaped like a club at all...",
+      "description": "",
       "element": "STO",
       "rarity": "5",
       "alsoSee": [
@@ -28059,16 +28059,16 @@
           "url": "https://forums2.battleon.com/f/tm.asp?m=18526421"
         },
         {
-          "name": "Staff of Clubs",
-          "slug": "weapon-staff-of-clubs-card-shoppe",
-          "type": "weapon",
-          "url": "https://forums2.battleon.com/f/tm.asp?m=21314427"
-        },
-        {
           "name": "High Staff of Clubs (All Versions)",
           "slug": "weapon-high-staff-of-clubs-all-versions",
           "type": "weapon",
           "url": "https://forums2.battleon.com/f/tm.asp?m=17760066"
+        },
+        {
+          "name": "Staff of Clubs",
+          "slug": "weapon-staff-of-clubs-card-shoppe",
+          "type": "weapon",
+          "url": "https://forums2.battleon.com/f/tm.asp?m=21314427"
         },
         {
           "name": "Staff of Clubs (All Versions)",
@@ -28570,7 +28570,7 @@
     ],
     "itemType": "Staff",
     "shared": {
-      "description": "This staff really suits you! But it's not shaped like a diamond at all...",
+      "description": "",
       "element": "WIN",
       "rarity": "5",
       "alsoSee": [
@@ -28593,16 +28593,16 @@
           "url": "https://forums2.battleon.com/f/tm.asp?m=18526492"
         },
         {
-          "name": "Staff of Diamonds",
-          "slug": "weapon-staff-of-diamonds-card-shoppe",
-          "type": "weapon",
-          "url": "https://forums2.battleon.com/f/tm.asp?m=21314428"
-        },
-        {
           "name": "High Staff of Diamonds (All Versions)",
           "slug": "weapon-high-staff-of-diamonds-all-versions",
           "type": "weapon",
           "url": "https://forums2.battleon.com/f/tm.asp?m=17760050"
+        },
+        {
+          "name": "Staff of Diamonds",
+          "slug": "weapon-staff-of-diamonds-card-shoppe",
+          "type": "weapon",
+          "url": "https://forums2.battleon.com/f/tm.asp?m=21314428"
         },
         {
           "name": "Staff of Diamonds (All Versions)",
@@ -30093,16 +30093,16 @@
           "url": "https://forums2.battleon.com/f/tm.asp?m=18526444"
         },
         {
-          "name": "Staff of Hearts",
-          "slug": "weapon-staff-of-hearts-card-shoppe",
-          "type": "weapon",
-          "url": "https://forums2.battleon.com/f/tm.asp?m=21314429"
-        },
-        {
           "name": "High Staff of Hearts (All Versions)",
           "slug": "weapon-high-staff-of-hearts-all-versions",
           "type": "weapon",
           "url": "https://forums2.battleon.com/f/tm.asp?m=17760086"
+        },
+        {
+          "name": "Staff of Hearts",
+          "slug": "weapon-staff-of-hearts-card-shoppe",
+          "type": "weapon",
+          "url": "https://forums2.battleon.com/f/tm.asp?m=21314429"
         },
         {
           "name": "Staff of Hearts (All Versions)",
@@ -30184,7 +30184,6 @@
     "slug": "weapon-staff-of-hearts-card-shoppe",
     "aliasSlugs": [
       "weapon-great-staff-of-hearts",
-      "weapon-greater-staff-of-hearts-2",
       "weapon-king-staff-of-hearts",
       "weapon-knave-staff-of-hearts",
       "weapon-queen-staff-of-hearts"
@@ -30202,7 +30201,7 @@
       },
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=21314359",
-        "title": "DF Encyclopedia: Greater Staff of Hearts (2)",
+        "title": "DF Encyclopedia: Greater Staff of Hearts",
         "variantLabel": "Greater Staff of Hearts",
         "isPrimary": false
       },
@@ -31375,7 +31374,8 @@
       "weapon-base-staff-of-purity",
       "weapon-mighty-staff-of-purity",
       "weapon-strong-staff-of-purity",
-      "weapon-staff-of-purity-all-versions"
+      "weapon-staff-of-purity-all-versions",
+      "weapon-da-staff-of-purity"
     ],
     "type": "weapon",
     "subtype": "staff-wand",
@@ -31414,7 +31414,7 @@
         "levelNumber": 6,
         "levelDisplay": "6",
         "actualLevel": 6,
-        "variantName": "Base",
+        "variantName": "(DA)",
         "name": "Base Staff of Purity",
         "damage": "14-30",
         "stats": "Crit +1, INT +2",
@@ -31572,7 +31572,7 @@
     ],
     "itemType": "Staff",
     "shared": {
-      "description": "This staff really suits you! But it's not shaped like a spade at all...",
+      "description": "",
       "element": "WAT",
       "rarity": "5",
       "alsoSee": [
@@ -31595,16 +31595,16 @@
           "url": "https://forums2.battleon.com/f/tm.asp?m=18526468"
         },
         {
-          "name": "Staff of Spades",
-          "slug": "weapon-staff-of-spades-card-shoppe",
-          "type": "weapon",
-          "url": "https://forums2.battleon.com/f/tm.asp?m=21314430"
-        },
-        {
           "name": "High Staff of Spades (All Versions)",
           "slug": "weapon-high-staff-of-spades-all-versions",
           "type": "weapon",
           "url": "https://forums2.battleon.com/f/tm.asp?m=17760102"
+        },
+        {
+          "name": "Staff of Spades",
+          "slug": "weapon-staff-of-spades-card-shoppe",
+          "type": "weapon",
+          "url": "https://forums2.battleon.com/f/tm.asp?m=21314430"
         },
         {
           "name": "Staff of Spades (All Versions)",
@@ -48340,6 +48340,42 @@
     "alsoSee": []
   },
   {
+    "id": "weapon-vortex-the",
+    "name": "Vortex, The",
+    "slug": "weapon-vortex-the",
+    "type": "weapon",
+    "subtype": "staff-wand",
+    "description": "Swirling with an immense intensity coming from a dimension known only as the Vortex, this staff radiates a mysterious power.",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=5027767",
+    "releaseDate": "",
+    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/TheVortex.png",
+    "elements": [
+      "ICE"
+    ],
+    "level": "15",
+    "damage": "20-56",
+    "stats": "Dodge +2, Crit +2, Magic Def +5, Pierce Def +5",
+    "resists": "None",
+    "rarity": "5",
+    "itemType": "Staff",
+    "obtainMethods": [
+      {
+        "location": "Floating Cave (Books 1 and 2), It's A Dirty Job... (Books 1 and 2), Doomwood Destroyers, Mystery Doors, Undead Assault",
+        "price": "N/A",
+        "priceType": "free",
+        "sellback": "120 Gold",
+        "daRequired": true
+      }
+    ],
+    "notes": "While this weapon's item type is Staff, its damage type is Melee instead of Magic.\nWeapon is animated; a blue glow runs along the stem periodically, while the vortex at the top spins continuously.",
+    "tags": [
+      "ice",
+      "free"
+    ],
+    "daRequired": true,
+    "alsoSee": []
+  },
+  {
     "id": "weapon-vortex-ripper",
     "familyName": "Vortex Ripper",
     "slug": "weapon-vortex-ripper",
@@ -48472,42 +48508,6 @@
       "WIN"
     ],
     "levelRange": "II-III"
-  },
-  {
-    "id": "weapon-vortex-the",
-    "name": "Vortex, The",
-    "slug": "weapon-vortex-the",
-    "type": "weapon",
-    "subtype": "staff-wand",
-    "description": "Swirling with an immense intensity coming from a dimension known only as the Vortex, this staff radiates a mysterious power.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=5027767",
-    "releaseDate": "",
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/TheVortex.png",
-    "elements": [
-      "ICE"
-    ],
-    "level": "15",
-    "damage": "20-56",
-    "stats": "Dodge +2, Crit +2, Magic Def +5, Pierce Def +5",
-    "resists": "None",
-    "rarity": "5",
-    "itemType": "Staff",
-    "obtainMethods": [
-      {
-        "location": "Floating Cave (Books 1 and 2), It's A Dirty Job... (Books 1 and 2), Doomwood Destroyers, Mystery Doors, Undead Assault",
-        "price": "N/A",
-        "priceType": "free",
-        "sellback": "120 Gold",
-        "daRequired": true
-      }
-    ],
-    "notes": "While this weapon's item type is Staff, its damage type is Melee instead of Magic.\nWeapon is animated; a blue glow runs along the stem periodically, while the vortex at the top spins continuously.",
-    "tags": [
-      "ice",
-      "free"
-    ],
-    "daRequired": true,
-    "alsoSee": []
   },
   {
     "id": "weapon-waning-silver",

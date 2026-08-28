@@ -2293,7 +2293,13 @@
     "isMultiPost": true,
     "shared": {
       "description": "",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Aquella1.png"
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Aquella.png",
+      "alternativeImages": [
+        {
+          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Aquella-Book3.png",
+          "caption": "Book 3 Appearance"
+        }
+      ]
     },
     "familySources": [],
     "levelVariants": [
@@ -2815,7 +2821,21 @@
     "isMultiPost": true,
     "shared": {
       "description": "",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Artix1.png"
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Artix1.png",
+      "alternativeImages": [
+        {
+          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Artix1-ArtixVstheUndead.png",
+          "caption": "Appearance with new weapon in Artix Vs. The Undead"
+        },
+        {
+          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Artix3.png",
+          "caption": "Book 3 Appearance"
+        },
+        {
+          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Artix3-TheUndeadVsArtix.png",
+          "caption": "The Undead Vs Artix Appearance"
+        }
+      ]
     },
     "familySources": [],
     "levelVariants": [
@@ -5634,7 +5654,21 @@
     "isMultiPost": true,
     "shared": {
       "description": "",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Galanoth2.png"
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Galanoth.png",
+      "alternativeImages": [
+        {
+          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Galanoth-NotSoGreatEscape.png",
+          "caption": "Not So Great Escape Appearance"
+        },
+        {
+          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Galanoth-Book3.png",
+          "caption": "Book 3 Appearance"
+        },
+        {
+          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Galanoth-FFP1.png",
+          "caption": "Fate's Flow (Part 1) Appearance"
+        }
+      ]
     },
     "familySources": [],
     "levelVariants": [
@@ -7406,7 +7440,13 @@
         "dot": "0%",
         "crit": "0%"
       }
-    }
+    },
+    "alternativeImages": [
+      {
+        "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/MagusHansa-FFP1.png",
+        "caption": "Fate's Flow (Part 1) Appearance"
+      }
+    ]
   },
   {
     "id": "guest-mazurek",
@@ -7422,7 +7462,17 @@
     "isMultiPost": true,
     "shared": {
       "description": "",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mazurek.png"
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mazurek.png",
+      "alternativeImages": [
+        {
+          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mazurek-Pirate'sRevenge.png",
+          "caption": "A Pirate's Revenge Appearance"
+        },
+        {
+          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mazurek-Admiral.png",
+          "caption": "Admiral Appearance"
+        }
+      ]
     },
     "familySources": [],
     "levelVariants": [
@@ -8001,7 +8051,13 @@
     "isMultiPost": true,
     "shared": {
       "description": "",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mritha.png"
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mritha.png",
+      "alternativeImages": [
+        {
+          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Mritha-FFP1.png",
+          "caption": "Fate's Flow (Part 1) Appearance"
+        }
+      ]
     },
     "familySources": [],
     "levelVariants": [
@@ -9028,7 +9084,8 @@
     "familyOrigin": "single-thread",
     "isMultiPost": true,
     "shared": {
-      "description": ""
+      "description": "",
+      "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/Princesspic.png"
     },
     "familySources": [],
     "levelVariants": [
@@ -9392,7 +9449,17 @@
     "isMultiPost": true,
     "shared": {
       "description": "",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Raven2.png"
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Raven.png",
+      "alternativeImages": [
+        {
+          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Raven-Castle.png",
+          "caption": "The Castle in the Woods Appearance"
+        },
+        {
+          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Raven-BlackWinter.png",
+          "caption": "Black Winter/Book of Lore/A Shocking Discovery Appearance"
+        }
+      ]
     },
     "familySources": [],
     "levelVariants": [
@@ -9995,7 +10062,7 @@
     "isMultiPost": true,
     "shared": {
       "description": "",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Riadne2.png"
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Riadne.png"
     },
     "familySources": [],
     "levelVariants": [
@@ -11136,7 +11203,13 @@
     "isMultiPost": true,
     "shared": {
       "description": "",
-      "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/pets_guests/SirLeon.png"
+      "imageUrl": "https://i.imgur.com/sFFV7Le.png",
+      "alternativeImages": [
+        {
+          "url": "https://i.imgur.com/tWfiPVd.png",
+          "caption": "Appearance in Gorillaphant Warfare"
+        }
+      ]
     },
     "familySources": [],
     "levelVariants": [
@@ -12562,7 +12635,17 @@
     "isMultiPost": true,
     "shared": {
       "description": "",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix1.png"
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix.png",
+      "alternativeImages": [
+        {
+          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix-Book3.png",
+          "caption": "Book 3 Appearance"
+        },
+        {
+          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Tomix-Synchronized.png",
+          "caption": "Synchronized Appearance"
+        }
+      ]
     },
     "familySources": [],
     "levelVariants": [
@@ -13850,7 +13933,13 @@
     "isMultiPost": true,
     "shared": {
       "description": "",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vayle.png"
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vayle.png",
+      "alternativeImages": [
+        {
+          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vayle-Book3.png",
+          "caption": "Book 3 (Winged Darkness) Appearance"
+        }
+      ]
     },
     "familySources": [],
     "levelVariants": [
@@ -14199,7 +14288,13 @@
     "isMultiPost": true,
     "shared": {
       "description": "",
-      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vilmor.png"
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vilmor.png",
+      "alternativeImages": [
+        {
+          "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/pets_guests/Vilmor-Book3.png",
+          "caption": "Book 3 Appearance"
+        }
+      ]
     },
     "familySources": [],
     "levelVariants": [

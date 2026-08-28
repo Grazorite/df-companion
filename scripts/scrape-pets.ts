@@ -41,6 +41,7 @@ import type {
 import {
   computePriceType,
   computeFamilyFlags,
+  formatVariantNameWithAccess,
   normalizeLevel,
   normalizeRomanDisplay,
   stripVersionSuffix,
@@ -355,6 +356,70 @@ function inferAccessVariantLabelFromObtainVariants(methods: ObtainVariant[]): st
   return 'Normal'
 }
 
+function isAccessOnlyVariantLabel(label: string | undefined): boolean {
+  return /^(?:Normal|Base|Resource|DA|DC|DA\/DC|D-Amulet|D-Coins?|D-Amulet\/D-Coins?)$/i.test(
+    label?.trim() ?? ''
+  )
+}
+
+function formatStandaloneAccessVariantName(
+  label: string | undefined,
+  obtainVariants: ObtainVariant[]
+): string {
+  if (label && !isAccessOnlyVariantLabel(label)) return normalizeRomanDisplay(label)
+
+  const hasDC = obtainVariants.some((method) => method.priceType === 'dc' || method.dcRequired)
+  const hasDM = obtainVariants.some((method) => method.priceType === 'dm' || method.dmRequired)
+  const hasDA = obtainVariants.some((method) => method.daRequired)
+
+  return formatVariantNameWithAccess(undefined, {
+    daRequired: hasDA && !hasDC,
+    dcRequired: hasDC,
+    dmRequired: hasDM,
+  })
+}
+
+function formatLevelAccessVariantName(
+  levelDisplay: string,
+  obtainVariants: ObtainVariant[],
+  hasAccessBranches: boolean
+): string | undefined {
+  if (!hasAccessBranches) return undefined
+
+  const hasDC = obtainVariants.some((method) => method.priceType === 'dc' || method.dcRequired)
+  const hasDM = obtainVariants.some((method) => method.priceType === 'dm' || method.dmRequired)
+  const hasDA = obtainVariants.some((method) => method.daRequired)
+
+  if (hasDC || hasDM) {
+    return formatVariantNameWithAccess(levelDisplay, {
+      dcRequired: hasDC,
+      dmRequired: hasDM,
+    })
+  }
+
+  if (hasDA) return levelDisplay
+  return normalizeRomanDisplay(levelDisplay)
+}
+
+function derivePetTitleVariantName(displayName: string, familyName: string): string | undefined {
+  const normalizedDisplay = displayTitle(stripVersionSuffix(displayName)).trim()
+  const normalizedFamily = displayTitle(stripVersionSuffix(familyName)).trim()
+
+  if (
+    normalizePetHeadingCandidate(normalizedDisplay) === normalizePetHeadingCandidate(normalizedFamily)
+  ) {
+    return undefined
+  }
+
+  const prefixPattern = new RegExp(
+    `^${normalizedFamily.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\s+(.+)$`,
+    'i'
+  )
+  const prefixMatch = normalizedDisplay.match(prefixPattern)
+  const rawVariant = prefixMatch?.[1]?.trim()
+  return rawVariant ? normalizeRomanDisplay(rawVariant) : undefined
+}
+
 type ParsedObtainMethod = ObtainMethod & { description?: string }
 
 function stripParsedObtainMetadata(methods: ParsedObtainMethod[]): ObtainMethod[] {
@@ -638,18 +703,18 @@ function buildLevelAccessVariants(
   const variants: LevelVariant[] = []
 
   for (const group of methodGroups) {
-    let variantName = group.label
-    if (hasAccessBranches && !variantName) {
-      variantName = inferAccessVariantLabelFromMethods(group.methods)
-    }
-
     const obtainVariants = buildObtainVariantsFromMethods(
       group.methods,
       sectionHtml,
       { daRequired: data.daRequired, dcRequired: data.dcRequired, dmRequired: data.dmRequired },
-      variantName
+      group.label ?? inferAccessVariantLabelFromMethods(group.methods)
     )
     if (obtainVariants.length === 0) continue
+    const variantName = formatLevelAccessVariantName(
+      levelInfo.display,
+      obtainVariants,
+      hasAccessBranches
+    )
     const description = getMethodGroupDescription(group.methods, data.description)
 
     variants.push({
@@ -659,7 +724,7 @@ function buildLevelAccessVariants(
         ? { actualLevel: levelInfo.actualLevel }
         : {}),
       ...(variantName ? { variantName } : {}),
-      name: variantName ? `${levelName} (${variantName})` : levelName,
+      name: levelName,
       damage: data.damage || 'Unknown',
       stats: data.stats || 'None',
       ...(data.statsType ? { statsType: data.statsType } : {}),
@@ -702,10 +767,10 @@ function buildVariantFamilyFromSinglePost(
       { daRequired: data.daRequired, dcRequired: data.dcRequired, dmRequired: data.dmRequired },
       provisionalVariantName
     )
-    const variantName =
-      group.label ??
-      inferAccessVariantLabelFromObtainVariants(obtainVariants) ??
-      `Variant ${index + 1}`
+    const variantName = formatStandaloneAccessVariantName(
+      group.label ?? inferAccessVariantLabelFromObtainVariants(obtainVariants),
+      obtainVariants
+    )
     const description = getMethodGroupDescription(group.methods, data.description)
 
     // Find the source post that contains this group's obtain location so that each
@@ -2781,6 +2846,21 @@ export async function parsePetThreadMultiVariant(
             )
             if (obtainVariants.length === 0) continue
 
+            const hadAccessOnlyVariantLabel = isAccessOnlyVariantLabel(variantName)
+            if (
+              (hasSameLevelSibling || methodGroups.length > 1) &&
+              hadAccessOnlyVariantLabel
+            ) {
+              const naturalTitleVariant =
+                derivePetTitleVariantName(candidate.displayName, baseName) ??
+                String(candidate.actualLevel)
+              variantName = formatLevelAccessVariantName(
+                naturalTitleVariant,
+                obtainVariants,
+                true
+              )
+            }
+
             const variantKey = `${candidate.actualLevel}:${variantName ?? ''}`
             const existingVariant = Array.from(levelVariantsMap.values()).find(
               (levelVariant) =>
@@ -2794,7 +2874,7 @@ export async function parsePetThreadMultiVariant(
             }
 
             const variantDisplay = candidate.actualLevel.toString()
-            const displayName = variantName
+            const displayName = variantName && !hadAccessOnlyVariantLabel
               ? `${candidate.displayName} (${variantName})`
               : candidate.displayName
             const variantDescription = getMethodGroupDescription(group.methods, candidate.data.description)

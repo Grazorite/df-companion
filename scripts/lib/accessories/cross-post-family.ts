@@ -77,6 +77,7 @@ interface SpecialFamilySpec {
   names: string[]
   variantNames: string[]
   notes?: string
+  sortByLevel?: boolean
 }
 
 const SPECIAL_FAMILY_SPECS: SpecialFamilySpec[] = [
@@ -102,6 +103,32 @@ const SPECIAL_FAMILY_SPECS: SpecialFamilySpec[] = [
       'Shockingly Awesome Hair',
     ],
     variantNames: ['(Base)', 'Good', 'Nice', 'Swiped', 'Amazing', 'Fantastic', 'Awesome'],
+  },
+  {
+    familyName: "Orion's Belt",
+    names: [
+      "Orion's Belt",
+      "Orion's Planetary Belt",
+      "Orion's Solar Belt",
+      "Orion's Comet Belt",
+      "Orion's Interstellar Belt",
+      "Orion's Galactic Belt",
+      "Orion's Universal Belt",
+    ],
+    variantNames: ['(Base)', 'Planetary', 'Solar', 'Comet', 'Interstellar', 'Galactic', 'Universal'],
+    sortByLevel: true,
+  },
+  {
+    familyName: "Mazurek's Emerald Ring",
+    names: [
+      "Mazurek's Emerald Ring",
+      "Mazurek's Emerald Pinky Ring",
+      "Mazurek's Emerald Middle Ring",
+      "Mazurek's Emerald Pointer Ring",
+      "Mazurek's Emerald Thumb Ring",
+    ],
+    variantNames: ['(Base)', 'Pinky', 'Middle', 'Pointer', 'Thumb'],
+    sortByLevel: true,
   },
   {
     familyName: "Timid Lion's Head",
@@ -647,6 +674,15 @@ function getFamilyRef(family: AccessoryFamily): AlsoSeeRef {
   }
 }
 
+function getEntryRef(entry: AccessoryEntry): AlsoSeeRef {
+  return {
+    name: getDisplayName(entry),
+    slug: entry.slug,
+    type: 'accessory',
+    url: entry.forumUrl,
+  }
+}
+
 function rewriteRelatedRefsForPromotedFamilies(entries: AccessoryEntry[]): AccessoryEntry[] {
   const aliasToFamily = new Map<string, AccessoryFamily>()
   const knownSlugs = new Set(
@@ -847,7 +883,7 @@ function buildSpecialFamily(
 
   const familySlug = matchedEntries[0].slug
   let variantIndex = 0
-  const sortedVariants = matchedEntries.flatMap((entry) =>
+  let sortedVariants = matchedEntries.flatMap((entry) =>
     flattenSpecialEntry(entry, spec.familyName).map((variant) => {
       const variantName = spec.variantNames[variantIndex] ?? variant.variantName
       variantIndex += 1
@@ -858,6 +894,16 @@ function buildSpecialFamily(
       }
     })
   )
+  if (spec.sortByLevel) {
+    sortedVariants = sortedVariants
+      .slice()
+      .sort((a, b) => {
+        const aLevel = a.actualLevel ?? a.levelNumber
+        const bLevel = b.actualLevel ?? b.levelNumber
+        return aLevel - bLevel || compareTitles(a.name, b.name)
+      })
+      .map((variant, index) => ({ ...variant, levelNumber: index + 1 }))
+  }
   const { sharedNotes: distributedSharedNotes, variants } =
     distributeSharedNoteLines(sortedVariants)
   const imageUrls = variants
@@ -1024,33 +1070,27 @@ function sourceStrictlyMatchesVariant(source: FamilySourceRef, variant: LevelVar
   return sourceLabel === normalizeLookupName(variant.name)
 }
 
+function sourceLabelStrictlyMatchesVariant(source: FamilySourceRef, variant: LevelVariant): boolean {
+  const sourceLabel = normalizeLookupName(
+    (source.variantLabel ?? source.title).replace(/^DF Encyclopedia:\s*/i, '')
+  )
+  return sourceLabel === normalizeLookupName(variant.name)
+}
+
 function buildCiderKegSplitFamily(
   baseFamily: AccessoryFamily,
   familyName: string,
   slug: string,
-  variants: LevelVariant[]
+  variants: LevelVariant[],
+  aliasSlugs: string[]
 ): AccessoryFamily {
   const renumberedVariants = variants.map((variant, index) => ({
     ...variant,
     levelNumber: index + 1,
   }))
   const sources = (baseFamily.familySources ?? []).filter((source) =>
-    renumberedVariants.some((variant) => sourceMatchesVariant(source, variant))
+    renumberedVariants.some((variant) => sourceLabelStrictlyMatchesVariant(source, variant))
   )
-  const aliasSlugs =
-    familyName === 'Cider Keg'
-      ? [
-          'accessory-sweet-cider-keg',
-          'accessory-warm-cider-keg',
-          'accessory-bubbly-cider-keg',
-          'accessory-moglinberry-cider-keg',
-        ]
-      : [
-          'accessory-sweet-void-cider-keg',
-          'accessory-warm-void-cider-keg',
-          'accessory-bubbly-void-cider-keg',
-          'accessory-moglinberry-void-cider-keg',
-        ]
 
   return computeFamilyFlags({
     ...baseFamily,
@@ -1248,9 +1288,6 @@ function splitCiderKegFamilies(entries: AccessoryEntry[]): AccessoryEntry[] {
       'cider keg',
       'sweet cider keg',
       'warm cider keg',
-      'spiced cider keg',
-      'mulled cider keg',
-      'foamy cider keg',
       'bubbly cider keg',
       'moglinberry cider keg',
     ])
@@ -1280,13 +1317,101 @@ function splitCiderKegFamilies(entries: AccessoryEntry[]): AccessoryEntry[] {
       entry,
       'Cider Keg',
       'accessory-cider-keg',
-      nonVoidVariants
+      nonVoidVariants,
+      [
+        'accessory-sweet-cider-keg',
+        'accessory-warm-cider-keg',
+        'accessory-bubbly-cider-keg',
+        'accessory-moglinberry-cider-keg',
+      ]
     )
     const voidFamily = buildCiderKegSplitFamily(
       entry,
       'Void Cider Keg',
       'accessory-void-cider-keg',
-      voidVariants
+      voidVariants,
+      [
+        'accessory-sweet-void-cider-keg',
+        'accessory-warm-void-cider-keg',
+        'accessory-bubbly-void-cider-keg',
+        'accessory-moglinberry-void-cider-keg',
+      ]
+    )
+
+    return [
+      setAlsoSee(nonVoidFamily, [getFamilyRef(voidFamily)]) as AccessoryFamily,
+      setAlsoSee(voidFamily, [getFamilyRef(nonVoidFamily)]) as AccessoryFamily,
+    ]
+  })
+}
+
+function splitCiderMugFamilies(entries: AccessoryEntry[]): AccessoryEntry[] {
+  return entries.flatMap((entry) => {
+    if (
+      !isAccessoryFamily(entry) ||
+      entry.subtype !== 'helm' ||
+      normalizeLookupName(entry.familyName) !== 'cider mug'
+    ) {
+      return [entry]
+    }
+
+    const nonVoidNames = new Set([
+      'cider mug',
+      'sweet cider mug',
+      'warm cider mug',
+      'spiced cider mug',
+      'mulled cider mug',
+      'foamy cider mug',
+      'moglinberry cider mug',
+    ])
+    const voidVariantNames = new Map([
+      ['void cider mug', '(Base)'],
+      ['sweet void cider mug', 'Sweet'],
+      ['warm void cider mug', 'Warm'],
+      ['spiced void cider mug', 'Spiced'],
+      ['mulled void cider mug', 'Mulled'],
+      ['foamy void cider mug', 'Foamy'],
+      ['moglinberry void cider mug', 'Moglinberry'],
+    ])
+    const nonVoidVariants = entry.levelVariants.filter((variant) =>
+      nonVoidNames.has(normalizeLookupName(variant.name))
+    )
+    const voidVariants = entry.levelVariants
+      .filter((variant) => voidVariantNames.has(normalizeLookupName(variant.name)))
+      .map((variant) => ({
+        ...variant,
+        variantName: voidVariantNames.get(normalizeLookupName(variant.name))!,
+      }))
+
+    if (nonVoidVariants.length === 0 || voidVariants.length === 0) return [entry]
+
+    const nonVoidFamily = buildCiderKegSplitFamily(
+      entry,
+      'Cider Mug',
+      'accessory-cider-mug',
+      nonVoidVariants,
+      [
+        'accessory-sweet-cider-mug',
+        'accessory-warm-cider-mug',
+        'accessory-spiced-cider-mug',
+        'accessory-mulled-cider-mug',
+        'accessory-foamy-cider-mug',
+        'accessory-moglinberry-cider-mug',
+      ]
+    )
+    const voidFamily = buildCiderKegSplitFamily(
+      entry,
+      'Void Cider Mug',
+      'accessory-void-cider-mug',
+      voidVariants,
+      [
+        'accessory-sweet-void-cider-mug',
+        'accessory-warm-void-cider-mug',
+        'accessory-spiced-void-cider-mug',
+        'accessory-mulled-void-cider-mug',
+        'accessory-foamy-void-cider-mug',
+        'accessory-moglinberry-void-cider-mug',
+      ]
     )
 
     return [
@@ -1324,33 +1449,237 @@ function linkSiblingFamilies(entries: AccessoryEntry[]): AccessoryEntry[] {
     ['Cider Mug', 'Void Cider Mug'],
     ['Mantle of Shadows', 'Invisible Cape', 'Cloak of Shadows', 'Wrap of Shadows'],
   ]
-  const familyByName = new Map<string, AccessoryFamily>()
+  const entryByName = new Map<string, AccessoryEntry>()
 
   for (const entry of entries) {
-    if (!isAccessoryFamily(entry)) continue
-    familyByName.set(normalizeLookupName(entry.familyName), entry)
+    entryByName.set(normalizeLookupName(getDisplayName(entry)), entry)
   }
 
-  const updatedBySlug = new Map<string, AccessoryFamily>()
+  const updatedBySlug = new Map<string, AccessoryEntry>()
   for (const siblingGroup of siblingGroups) {
     const siblings = siblingGroup
-      .map((name) => familyByName.get(normalizeLookupName(name)))
-      .filter((family): family is AccessoryFamily => Boolean(family))
+      .map((name) => entryByName.get(normalizeLookupName(name)))
+      .filter((entry): entry is AccessoryEntry => Boolean(entry))
     if (siblings.length !== siblingGroup.length) continue
 
-    for (const family of siblings) {
+    for (const entry of siblings) {
       const siblingRefs = siblings
-        .filter((sibling) => sibling.slug !== family.slug)
-        .map(getFamilyRef)
+        .filter((sibling) => sibling.slug !== entry.slug)
+        .map(getEntryRef)
       updatedBySlug.set(
-        family.slug,
-        setAlsoSee(family, [...getAlsoSee(family), ...siblingRefs]) as AccessoryFamily
+        entry.slug,
+        setAlsoSee(entry, [...getAlsoSee(entry), ...siblingRefs])
       )
     }
   }
 
   if (updatedBySlug.size === 0) return entries
   return entries.map((entry) => updatedBySlug.get(entry.slug) ?? entry)
+}
+
+function stripDragonAmuletSentence(text: string | undefined): string | undefined {
+  if (!text) return text
+  return (
+    text
+      .replace(/\s*This item requires a Dragon Amulet\.\s*/gi, ' ')
+      .replace(/\s{2,}/g, ' ')
+      .trim() || undefined
+  )
+}
+
+function withObtainAccess(
+  variant: LevelVariant,
+  access: { da?: boolean; dc?: boolean; price?: string }
+): LevelVariant {
+  const sourceMethod =
+    variant.obtainVariants.find((method) => {
+      const methodHasDC = Boolean(method.dcRequired || method.priceType === 'dc')
+      return methodHasDC === Boolean(access.dc)
+    }) ?? variant.obtainVariants[0]
+  const {
+    dcRequired: _dcRequired,
+    dmRequired: _dmRequired,
+    priceType: sourcePriceType,
+    ...baseMethod
+  } = sourceMethod
+  const priceType = access.dc ? 'dc' : sourcePriceType === 'dc' ? 'free' : sourcePriceType
+
+  return {
+    ...variant,
+    description: access.da ? variant.description : stripDragonAmuletSentence(variant.description),
+    obtainVariants: [
+      {
+        ...baseMethod,
+        priceType,
+        ...(access.price ? { price: access.price } : {}),
+        daRequired: Boolean(access.da),
+        ...(access.dc ? { dcRequired: true } : {}),
+      },
+    ],
+  }
+}
+
+function cloneVariantForAccess(
+  variant: LevelVariant,
+  access: { da?: boolean; dc?: boolean; price?: string; location?: string }
+): LevelVariant {
+  const cloned = withObtainAccess(variant, access)
+  return {
+    ...cloned,
+    obtainVariants: cloned.obtainVariants.map((method) => ({
+      ...method,
+      ...(access.location ? { location: access.location } : {}),
+    })),
+  }
+}
+
+function splitAccessRowsByName(
+  family: AccessoryFamily,
+  plan: Record<string, Array<{ da?: boolean; dc?: boolean; price?: string; location?: string }>>
+): AccessoryFamily {
+  const variantsByKey = new Map<string, LevelVariant[]>()
+  for (const variant of family.levelVariants) {
+    const key = normalizeLookupName(variant.variantName ?? variant.name)
+    variantsByKey.set(key, [...(variantsByKey.get(key) ?? []), variant])
+  }
+
+  const usedKeys = new Set<string>()
+  const rewritten: LevelVariant[] = []
+
+  for (const variant of family.levelVariants) {
+    const key = normalizeLookupName(variant.variantName ?? variant.name)
+    const accesses = plan[key]
+    if (!accesses?.length) {
+      rewritten.push(variant)
+      continue
+    }
+    if (usedKeys.has(key)) continue
+    usedKeys.add(key)
+
+    const matchingVariants = variantsByKey.get(key) ?? [variant]
+    rewritten.push(
+      ...accesses.map((access) => {
+        const template =
+          matchingVariants.find((candidate) => {
+            const hasDA = candidate.obtainVariants.some((method) => method.daRequired)
+            const hasDC = candidate.obtainVariants.some(
+              (method) => method.dcRequired || method.priceType === 'dc'
+            )
+            return hasDA === Boolean(access.da) && hasDC === Boolean(access.dc)
+          }) ??
+          matchingVariants.find((candidate) =>
+            candidate.obtainVariants.some((method) =>
+              access.dc ? method.dcRequired || method.priceType === 'dc' : !method.dcRequired
+            )
+          ) ??
+          matchingVariants[0]
+        return cloneVariantForAccess(template, access)
+      })
+    )
+  }
+
+  return computeFamilyFlags({
+    ...family,
+    levelVariants: rewritten.map((variant, index) => ({
+      ...variant,
+      levelNumber: index + 1,
+    })),
+  })
+}
+
+function applyAccessoryFamilyAccessOverrides(entries: AccessoryEntry[]): AccessoryEntry[] {
+  return entries.map((entry) => {
+    if (!isAccessoryFamily(entry)) return entry
+    const familyName = normalizeLookupName(entry.familyName)
+
+    if (familyName === 'aye pirate scarf') {
+      const nonDcLocation = 'TLaPD 2011, TLaPD Bandanas'
+      return splitAccessRowsByName(entry, {
+        cunning: [
+          { da: false, dc: false, price: 'N/A', location: nonDcLocation },
+          { da: false, dc: true },
+        ],
+        swarthy: [
+          { da: false, dc: false, price: 'N/A', location: nonDcLocation },
+          { da: false, dc: true },
+        ],
+        foxy: [
+          { da: false, dc: false, price: 'N/A', location: nonDcLocation },
+          { da: false, dc: true },
+        ],
+        crafty: [
+          { da: true, dc: false, price: 'N/A', location: nonDcLocation },
+          { da: false, dc: true },
+        ],
+        brave: [
+          { da: true, dc: false, price: 'N/A', location: nonDcLocation },
+          { da: false, dc: true },
+        ],
+      })
+    }
+
+    if (familyName === 'bearded guardian pirate hat') {
+      const nonDcLocation = 'TLaPD 2011, TLaPD Bandanas'
+      return splitAccessRowsByName(entry, {
+        cunning: [
+          { da: true, dc: false, price: 'N/A', location: nonDcLocation },
+          { da: false, dc: true },
+        ],
+        swarthy: [
+          { da: true, dc: false, price: 'N/A', location: nonDcLocation },
+          { da: false, dc: true },
+        ],
+        foxy: [
+          { da: true, dc: false, price: 'N/A', location: nonDcLocation },
+          { da: false, dc: true },
+        ],
+        crafty: [
+          { da: true, dc: false, price: 'N/A', location: nonDcLocation },
+          { da: false, dc: true },
+        ],
+        brave: [
+          { da: true, dc: false, price: 'N/A', location: nonDcLocation },
+          { da: false, dc: true },
+        ],
+      })
+    }
+
+    if (familyName === 'cultist hood') {
+      const nonDcLocation = 'The Summoning'
+      return splitAccessRowsByName(entry, {
+        base: [
+          { da: false, dc: false, price: 'N/A', location: nonDcLocation },
+          { da: false, dc: true },
+        ],
+        dark: [
+          { da: false, dc: false, price: 'N/A', location: nonDcLocation },
+          { da: false, dc: true },
+        ],
+        evil: [
+          { da: false, dc: false, price: 'N/A', location: nonDcLocation },
+          { da: false, dc: true },
+        ],
+        villainous: [
+          { da: false, dc: false, price: 'N/A', location: nonDcLocation },
+          { da: false, dc: true },
+        ],
+        foul: [
+          { da: true, dc: false, price: 'N/A', location: nonDcLocation },
+          { da: true, dc: true },
+        ],
+        doomed: [
+          { da: true, dc: false, price: 'N/A', location: nonDcLocation },
+          { da: true, dc: true },
+        ],
+        brutal: [
+          { da: true, dc: false, price: 'N/A', location: nonDcLocation },
+          { da: true, dc: true },
+        ],
+      })
+    }
+
+    return entry
+  })
 }
 
 /**
@@ -1472,9 +1801,15 @@ export function promoteAccessoryCrossPostFamilies(entries: AccessoryEntry[]): Ac
 
   const consolidated = removeCobaltDragonWingAliasEntries(
     linkSiblingFamilies(
-      splitNamedSiblingFamilies(
-        splitCobaltDragonWingsFamilies(
-          splitCiderKegFamilies(disambiguateDuplicateFamilyNames(applySpecialFamilies(promoted)))
+      applyAccessoryFamilyAccessOverrides(
+        splitNamedSiblingFamilies(
+          splitCobaltDragonWingsFamilies(
+            splitCiderMugFamilies(
+              splitCiderKegFamilies(
+                disambiguateDuplicateFamilyNames(applySpecialFamilies(promoted))
+              )
+            )
+          )
         )
       )
     )

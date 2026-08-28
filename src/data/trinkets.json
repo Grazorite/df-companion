@@ -638,7 +638,7 @@
     ],
     "tags": [
       "ene",
-      "merge"
+      "dm"
     ],
     "daRequired": true,
     "dmRequired": true,
@@ -699,9 +699,9 @@
       }
     ],
     "shared": {
-      "description": "Summon the LSS Booty Sniffer to wash away your foes and leave behind bonus gold! Arr! This trinket be water damage 'n honor o' th' Red Betty!",
+      "description": "",
       "rarity": "5",
-      "notes": "Having this Trinket in the player's inventory doubled the amount of 'Booty Collected' (waves completed) per wave cleared in The Quest for More Booty! event for the Rhubarb side."
+      "notes": "Having this Trinket in the player's inventory doubled the amount of 'Booty Collected' (waves completed) per wave cleared in  The Quest for More Booty! event for the Rhubarb side."
     },
     "levelVariants": [
       {
@@ -799,7 +799,7 @@
         ],
         "rarity": "5",
         "itemType": "Trinket",
-        "notes": "Having this Trinket in the player's inventory doubled the amount of 'Booty Collected' (waves completed) per wave cleared in The Quest for More Booty! event for the Mazurek side."
+        "notes": "Having this Trinket in the player's inventory doubled the amount of 'Booty Collected' (waves completed) per wave cleared in  The Quest for More Booty! event for the Mazurek side."
       }
     ],
     "itemType": "Trinket",
@@ -856,9 +856,11 @@
     ],
     "tags": [
       "win",
-      "free"
+      "free",
+      "war"
     ],
-    "daRequired": true
+    "daRequired": true,
+    "isWar": true
   },
   {
     "id": "accessory-bubble-charm",
@@ -877,9 +879,6 @@
     "resists": "None",
     "ability": "Bubbles",
     "abilityUrl": "https://forums2.battleon.com/f/fb.asp?m=22407724",
-    "trinketSkillEffectTypes": [
-      "Bonus"
-    ],
     "rarity": "0",
     "itemType": "Trinket",
     "equipSpot": "Trinket",
@@ -891,16 +890,16 @@
         "price": "N/A",
         "requiredItems": "1 Dormant Pipe +1 & 1 Essence of Wonder",
         "sellback": "N/A",
-        "daRequired": true,
+        "daRequired": false,
         "dcRequired": true
       }
     ],
-    "notes": "Equipping this trinket displays animated pink bubbles over the player.",
+    "notes": "Equipping this trinket displays  animated pink bubbles over the player.",
     "tags": [
       "poi",
       "merge"
     ],
-    "daRequired": true,
+    "daRequired": false,
     "dcRequired": true,
     "attacks": [
       {
@@ -916,6 +915,9 @@
         "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Bubbles2-Appearance.png",
         "notes": "• Appearance will display as long as the trinket is equipped, regardless if the skill is used or not, including out of combat."
       }
+    ],
+    "trinketSkillEffectTypes": [
+      "Bonus"
     ]
   },
   {
@@ -966,7 +968,7 @@
       }
     ],
     "shared": {
-      "description": "Messimy carved this discarded scale with a blessing of luck and gave it to you as a parting gift."
+      "description": ""
     },
     "levelVariants": [
       {
@@ -1061,7 +1063,7 @@
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22391400",
-        "description": "Messimy carved this discarded scale with a blessing of luck and gave it to you as a parting gift. This item requires a Dragon Amulet.",
+        "description": "Messimy carved this discarded scale with a blessing of luck and gave it to you as a parting gift.",
         "element": "DAR",
         "resists": "None",
         "rarity": "0",
@@ -1110,7 +1112,7 @@
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22391401",
-        "description": "Messimy carved this discarded scale with a blessing of luck and gave it to you as a parting gift. This item requires a Dragon Amulet.",
+        "description": "Messimy carved this discarded scale with a blessing of luck and gave it to you as a parting gift.",
         "element": "DAR",
         "resists": "None",
         "rarity": "0",
@@ -1159,7 +1161,7 @@
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22391402",
-        "description": "Messimy carved this discarded scale with a blessing of luck and gave it to you as a parting gift. This item requires a Dragon Amulet.",
+        "description": "Messimy carved this discarded scale with a blessing of luck and gave it to you as a parting gift.",
         "element": "DAR",
         "resists": "None",
         "rarity": "1",
@@ -1208,7 +1210,7 @@
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22391403",
-        "description": "Messimy carved this discarded scale with a blessing of luck and gave it to you as a parting gift. This item requires a Dragon Amulet.",
+        "description": "Messimy carved this discarded scale with a blessing of luck and gave it to you as a parting gift.",
         "element": "DAR",
         "resists": "Darkness +1, Nature +1",
         "rarity": "0",
@@ -1348,7 +1350,7 @@
       {
         "name": "Chocobunny Storm",
         "description": "125% damage attack!",
-        "requirements": "Chocobunny Storm (D-Amulet/D-Coins) equipped",
+        "requirements": "Chocobunny Storm (D-Amulet) equipped",
         "effect": "5 hits of 25% damage, amounting to 125% damage.",
         "manaCost": "0",
         "cooldown": "19 - [(Player LUK/50), rounded down]",
@@ -1389,7 +1391,7 @@
         "priceType": "free",
         "price": "N/A",
         "sellback": "N/A",
-        "daRequired": true,
+        "daRequired": false,
         "dcRequired": true
       },
       {
@@ -1398,16 +1400,16 @@
         "price": "N/A",
         "requiredItems": "5 Fragment of Ethereal Woe",
         "sellback": "N/A",
-        "daRequired": true,
+        "daRequired": false,
         "dcRequired": true
       }
     ],
-    "notes": "Trinket has an uncommon drop rate from the quest Pandora's Gauntlet.\nTrinket initially required 10 Fragment of Ethereal Woe; this was lowered to 5 on February 14th, 2020.\nTrinket was DC tagged on July 29th, 2022.",
+    "notes": "Trinket has an uncommon drop rate from the quest Pandora's Gauntlet.\nTrinket initially required 10  Fragment of Ethereal Woe; this was lowered to 5 on  February 14th, 2020.\nTrinket was DC tagged on  July 29th, 2022.",
     "tags": [
       "evi",
       "free"
     ],
-    "daRequired": true,
+    "daRequired": false,
     "dcRequired": true,
     "attacks": [
       {
@@ -1540,9 +1542,11 @@
     ],
     "tags": [
       "lig",
-      "free"
+      "free",
+      "war"
     ],
-    "daRequired": true
+    "daRequired": true,
+    "isWar": true
   },
   {
     "id": "accessory-defender-cannon-mk",
@@ -1630,8 +1634,8 @@
             "priceType": "dm",
             "sellback": "200 Gold",
             "requiredItems": "2,000 Defender's Medal",
-            "daRequired": true,
-            "dmRequired": true
+            "dmRequired": true,
+            "daRequired": true
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21910606",
@@ -1681,8 +1685,8 @@
             "priceType": "merge",
             "sellback": "400 Gold",
             "requiredItems": "1 Defender Cannon Mk. I & 3,000 Defender's Medal",
-            "daRequired": true,
-            "dmRequired": true
+            "dmRequired": true,
+            "daRequired": true
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21914409",
@@ -1732,8 +1736,8 @@
             "priceType": "merge",
             "sellback": "600 Gold",
             "requiredItems": "1 Defender Cannon Mk. II & 4,500 Defender's Medal",
-            "daRequired": true,
-            "dmRequired": true
+            "dmRequired": true,
+            "daRequired": true
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21914791",
@@ -1783,8 +1787,8 @@
             "priceType": "merge",
             "sellback": "600 Gold",
             "requiredItems": "1 Defender Cannon Mk. III & 4,500 Defender's Medal",
-            "daRequired": true,
-            "dmRequired": true
+            "dmRequired": true,
+            "daRequired": true
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21914831",
@@ -1828,6 +1832,7 @@
     ],
     "releaseDate": "",
     "tags": [
+      "dm",
       "merge",
       "met"
     ],
@@ -1866,16 +1871,16 @@
         "priceType": "free",
         "price": "N/A",
         "sellback": "N/A",
-        "daRequired": true,
+        "daRequired": false,
         "dcRequired": true
       }
     ],
-    "notes": "(Can be upgraded... coming soon!) excerpt was replaced by (Can be upgraded) on June 27th, 2025.",
+    "notes": "(Can be upgraded... coming soon!) excerpt was replaced by (Can be upgraded) on  June 27th, 2025.",
     "tags": [
       "evi",
       "free"
     ],
-    "daRequired": true,
+    "daRequired": false,
     "dcRequired": true
   },
   {
@@ -1995,9 +2000,11 @@
     ],
     "tags": [
       "sto",
-      "free"
+      "free",
+      "war"
     ],
-    "daRequired": true
+    "daRequired": true,
+    "isWar": true
   },
   {
     "id": "accessory-eggsalted-remnant",
@@ -2105,7 +2112,7 @@
       {
         "name": "Elemental Unity",
         "description": "17 hits of 11.8% Good damage (200%)\n Target: (On hit) -30 Bonus for 3 turns.",
-        "requirements": "Elemental Unity Defender (I-XV) equipped",
+        "requirements": "Elemental Unity equipped",
         "effect": "17 hits of ~11.8% damage, amounting to 200% damage; applies 'Blinded' (-30 Bonus) to target for 3 turns.",
         "manaCost": "10",
         "cooldown": "19 - [(Player LUK/50), rounded down]",
@@ -2255,7 +2262,7 @@
         {
           "name": "Elemental Unity",
           "description": "17 hits of 11.8% Good damage (200%)\n Target: (On hit) -30 Bonus for 3 turns.",
-          "requirements": "Elemental Unity Defender (I-XV) equipped",
+          "requirements": "Elemental Unity equipped",
           "effect": "17 hits of ~11.8% damage, amounting to 200% damage; applies 'Blinded' (-30 Bonus) to target for 3 turns.",
           "manaCost": "10",
           "cooldown": "19 - [(Player LUK/50), rounded down]",
@@ -2277,7 +2284,7 @@
         }
       ],
       "rarity": "77",
-      "notes": "Defender's Medal costs for these items were lowered from 500 to 100 on August 2nd, 2024."
+      "notes": "Defender's Medal costs for these items were lowered from 500 to 100 on  August 2nd, 2024."
     },
     "levelVariants": [
       {
@@ -2295,9 +2302,9 @@
             "priceType": "merge",
             "sellback": "0 Dragon Coins",
             "requiredItems": "1 Elemental Unity & 100 Defender's Medal",
+            "dmRequired": true,
             "daRequired": false,
-            "dcRequired": true,
-            "dmRequired": true
+            "dcRequired": true
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=19769625",
@@ -2308,7 +2315,7 @@
           {
             "name": "Elemental Unity",
             "description": "17 hits of 11.8% Good damage (200%)\n Target: (On hit) -30 Bonus for 3 turns.",
-            "requirements": "Elemental Unity Defender (I-XV) equipped",
+            "requirements": "Elemental Unity equipped",
             "effect": "17 hits of ~11.8% damage, amounting to 200% damage; applies 'Blinded' (-30 Bonus) to target for 3 turns.",
             "manaCost": "10",
             "cooldown": "19 - [(Player LUK/50), rounded down]",
@@ -2347,9 +2354,9 @@
             "priceType": "merge",
             "sellback": "0 Dragon Coins",
             "requiredItems": "1 Elemental Unity Defender I & 100 Defender's Medal",
+            "dmRequired": true,
             "daRequired": false,
-            "dcRequired": true,
-            "dmRequired": true
+            "dcRequired": true
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=19775268",
@@ -2360,7 +2367,7 @@
           {
             "name": "Elemental Unity",
             "description": "17 hits of 11.8% Good damage (200%)\n Target: (On hit) -30 Bonus for 3 turns.",
-            "requirements": "Elemental Unity Defender (I-XV) equipped",
+            "requirements": "Elemental Unity equipped",
             "effect": "17 hits of ~11.8% damage, amounting to 200% damage; applies 'Blinded' (-30 Bonus) to target for 3 turns.",
             "manaCost": "10",
             "cooldown": "19 - [(Player LUK/50), rounded down]",
@@ -2399,9 +2406,9 @@
             "priceType": "merge",
             "sellback": "0 Dragon Coins",
             "requiredItems": "1 Elemental Unity Defender II & 100 Defender's Medal",
+            "dmRequired": true,
             "daRequired": false,
-            "dcRequired": true,
-            "dmRequired": true
+            "dcRequired": true
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=19775269",
@@ -2412,7 +2419,7 @@
           {
             "name": "Elemental Unity",
             "description": "17 hits of 11.8% Good damage (200%)\n Target: (On hit) -30 Bonus for 3 turns.",
-            "requirements": "Elemental Unity Defender (I-XV) equipped",
+            "requirements": "Elemental Unity equipped",
             "effect": "17 hits of ~11.8% damage, amounting to 200% damage; applies 'Blinded' (-30 Bonus) to target for 3 turns.",
             "manaCost": "10",
             "cooldown": "19 - [(Player LUK/50), rounded down]",
@@ -2451,9 +2458,9 @@
             "priceType": "merge",
             "sellback": "0 Dragon Coins",
             "requiredItems": "1 Elemental Unity Defender III & 100 Defender's Medal",
+            "dmRequired": true,
             "daRequired": false,
-            "dcRequired": true,
-            "dmRequired": true
+            "dcRequired": true
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=19775270",
@@ -2464,7 +2471,7 @@
           {
             "name": "Elemental Unity",
             "description": "17 hits of 11.8% Good damage (200%)\n Target: (On hit) -30 Bonus for 3 turns.",
-            "requirements": "Elemental Unity Defender (I-XV) equipped",
+            "requirements": "Elemental Unity equipped",
             "effect": "17 hits of ~11.8% damage, amounting to 200% damage; applies 'Blinded' (-30 Bonus) to target for 3 turns.",
             "manaCost": "10",
             "cooldown": "19 - [(Player LUK/50), rounded down]",
@@ -2503,9 +2510,9 @@
             "priceType": "merge",
             "sellback": "0 Dragon Coins",
             "requiredItems": "1 Elemental Unity Defender IV & 100 Defender's Medal",
+            "dmRequired": true,
             "daRequired": false,
-            "dcRequired": true,
-            "dmRequired": true
+            "dcRequired": true
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=19775273",
@@ -2516,7 +2523,7 @@
           {
             "name": "Elemental Unity",
             "description": "17 hits of 11.8% Good damage (200%)\n Target: (On hit) -30 Bonus for 3 turns.",
-            "requirements": "Elemental Unity Defender (I-XV) equipped",
+            "requirements": "Elemental Unity equipped",
             "effect": "17 hits of ~11.8% damage, amounting to 200% damage; applies 'Blinded' (-30 Bonus) to target for 3 turns.",
             "manaCost": "10",
             "cooldown": "19 - [(Player LUK/50), rounded down]",
@@ -2555,9 +2562,9 @@
             "priceType": "merge",
             "sellback": "0 Dragon Coins",
             "requiredItems": "1 Elemental Unity Defender V & 100 Defender's Medal",
+            "dmRequired": true,
             "daRequired": false,
-            "dcRequired": true,
-            "dmRequired": true
+            "dcRequired": true
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=20008709",
@@ -2568,7 +2575,7 @@
           {
             "name": "Elemental Unity",
             "description": "17 hits of 11.8% Good damage (200%)\n Target: (On hit) -30 Bonus for 3 turns.",
-            "requirements": "Elemental Unity Defender (I-XV) equipped",
+            "requirements": "Elemental Unity equipped",
             "effect": "17 hits of ~11.8% damage, amounting to 200% damage; applies 'Blinded' (-30 Bonus) to target for 3 turns.",
             "manaCost": "10",
             "cooldown": "19 - [(Player LUK/50), rounded down]",
@@ -2607,9 +2614,9 @@
             "priceType": "merge",
             "sellback": "0 Dragon Coins",
             "requiredItems": "1 Elemental Unity Defender VI & 100 Defender's Medal",
+            "dmRequired": true,
             "daRequired": false,
-            "dcRequired": true,
-            "dmRequired": true
+            "dcRequired": true
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=20012098",
@@ -2620,7 +2627,7 @@
           {
             "name": "Elemental Unity",
             "description": "17 hits of 11.8% Good damage (200%)\n Target: (On hit) -30 Bonus for 3 turns.",
-            "requirements": "Elemental Unity Defender (I-XV) equipped",
+            "requirements": "Elemental Unity equipped",
             "effect": "17 hits of ~11.8% damage, amounting to 200% damage; applies 'Blinded' (-30 Bonus) to target for 3 turns.",
             "manaCost": "10",
             "cooldown": "19 - [(Player LUK/50), rounded down]",
@@ -2659,9 +2666,9 @@
             "priceType": "merge",
             "sellback": "0 Dragon Coins",
             "requiredItems": "1 Elemental Unity Defender VII & 100 Defender's Medal",
+            "dmRequired": true,
             "daRequired": false,
-            "dcRequired": true,
-            "dmRequired": true
+            "dcRequired": true
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=20499763",
@@ -2672,7 +2679,7 @@
           {
             "name": "Elemental Unity",
             "description": "17 hits of 11.8% Good damage (200%)\n Target: (On hit) -30 Bonus for 3 turns.",
-            "requirements": "Elemental Unity Defender (I-XV) equipped",
+            "requirements": "Elemental Unity equipped",
             "effect": "17 hits of ~11.8% damage, amounting to 200% damage; applies 'Blinded' (-30 Bonus) to target for 3 turns.",
             "manaCost": "10",
             "cooldown": "19 - [(Player LUK/50), rounded down]",
@@ -2711,9 +2718,9 @@
             "priceType": "merge",
             "sellback": "0 Dragon Coins",
             "requiredItems": "1 Elemental Unity Defender VIII & 100 Defender's Medal",
+            "dmRequired": true,
             "daRequired": false,
-            "dcRequired": true,
-            "dmRequired": true
+            "dcRequired": true
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=20499770",
@@ -2724,7 +2731,7 @@
           {
             "name": "Elemental Unity",
             "description": "17 hits of 11.8% Good damage (200%)\n Target: (On hit) -30 Bonus for 3 turns.",
-            "requirements": "Elemental Unity Defender (I-XV) equipped",
+            "requirements": "Elemental Unity equipped",
             "effect": "17 hits of ~11.8% damage, amounting to 200% damage; applies 'Blinded' (-30 Bonus) to target for 3 turns.",
             "manaCost": "10",
             "cooldown": "19 - [(Player LUK/50), rounded down]",
@@ -2763,9 +2770,9 @@
             "priceType": "merge",
             "sellback": "0 Dragon Coins",
             "requiredItems": "1 Elemental Unity Defender IX & 100 Defender's Medal",
+            "dmRequired": true,
             "daRequired": false,
-            "dcRequired": true,
-            "dmRequired": true
+            "dcRequired": true
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=20499781",
@@ -2776,7 +2783,7 @@
           {
             "name": "Elemental Unity",
             "description": "17 hits of 11.8% Good damage (200%)\n Target: (On hit) -30 Bonus for 3 turns.",
-            "requirements": "Elemental Unity Defender (I-XV) equipped",
+            "requirements": "Elemental Unity equipped",
             "effect": "17 hits of ~11.8% damage, amounting to 200% damage; applies 'Blinded' (-30 Bonus) to target for 3 turns.",
             "manaCost": "10",
             "cooldown": "19 - [(Player LUK/50), rounded down]",
@@ -2815,9 +2822,9 @@
             "priceType": "merge",
             "sellback": "0 Dragon Coins",
             "requiredItems": "1 Elemental Unity Defender X & 100 Defender's Medal",
+            "dmRequired": true,
             "daRequired": false,
-            "dcRequired": true,
-            "dmRequired": true
+            "dcRequired": true
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21348120",
@@ -2828,7 +2835,7 @@
           {
             "name": "Elemental Unity",
             "description": "17 hits of 11.8% Good damage (200%)\n Target: (On hit) -30 Bonus for 3 turns.",
-            "requirements": "Elemental Unity Defender (I-XV) equipped",
+            "requirements": "Elemental Unity equipped",
             "effect": "17 hits of ~11.8% damage, amounting to 200% damage; applies 'Blinded' (-30 Bonus) to target for 3 turns.",
             "manaCost": "10",
             "cooldown": "19 - [(Player LUK/50), rounded down]",
@@ -2867,9 +2874,9 @@
             "priceType": "merge",
             "sellback": "0 Dragon Coins",
             "requiredItems": "1 Elemental Unity Defender XI & 100 Defender's Medal",
+            "dmRequired": true,
             "daRequired": false,
-            "dcRequired": true,
-            "dmRequired": true
+            "dcRequired": true
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21348121",
@@ -2880,7 +2887,7 @@
           {
             "name": "Elemental Unity",
             "description": "17 hits of 11.8% Good damage (200%)\n Target: (On hit) -30 Bonus for 3 turns.",
-            "requirements": "Elemental Unity Defender (I-XV) equipped",
+            "requirements": "Elemental Unity equipped",
             "effect": "17 hits of ~11.8% damage, amounting to 200% damage; applies 'Blinded' (-30 Bonus) to target for 3 turns.",
             "manaCost": "10",
             "cooldown": "19 - [(Player LUK/50), rounded down]",
@@ -2919,9 +2926,9 @@
             "priceType": "merge",
             "sellback": "0 Dragon Coins",
             "requiredItems": "1 Elemental Unity Defender XII & 100 Defender's Medal",
+            "dmRequired": true,
             "daRequired": false,
-            "dcRequired": true,
-            "dmRequired": true
+            "dcRequired": true
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21713727",
@@ -2932,7 +2939,7 @@
           {
             "name": "Elemental Unity",
             "description": "17 hits of 11.8% Good damage (200%)\n Target: (On hit) -30 Bonus for 3 turns.",
-            "requirements": "Elemental Unity Defender (I-XV) equipped",
+            "requirements": "Elemental Unity equipped",
             "effect": "17 hits of ~11.8% damage, amounting to 200% damage; applies 'Blinded' (-30 Bonus) to target for 3 turns.",
             "manaCost": "10",
             "cooldown": "19 - [(Player LUK/50), rounded down]",
@@ -2971,9 +2978,9 @@
             "priceType": "merge",
             "sellback": "0 Dragon Coins",
             "requiredItems": "1 Elemental Unity Defender XIII & 100 Defender's Medal",
+            "dmRequired": true,
             "daRequired": false,
-            "dcRequired": true,
-            "dmRequired": true
+            "dcRequired": true
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21713729",
@@ -2984,7 +2991,7 @@
           {
             "name": "Elemental Unity",
             "description": "17 hits of 11.8% Good damage (200%)\n Target: (On hit) -30 Bonus for 3 turns.",
-            "requirements": "Elemental Unity Defender (I-XV) equipped",
+            "requirements": "Elemental Unity equipped",
             "effect": "17 hits of ~11.8% damage, amounting to 200% damage; applies 'Blinded' (-30 Bonus) to target for 3 turns.",
             "manaCost": "10",
             "cooldown": "19 - [(Player LUK/50), rounded down]",
@@ -3023,9 +3030,9 @@
             "priceType": "merge",
             "sellback": "0 Dragon Coins",
             "requiredItems": "1 Elemental Unity Defender XIV & 100 Defender's Medal",
+            "dmRequired": true,
             "daRequired": false,
-            "dcRequired": true,
-            "dmRequired": true
+            "dcRequired": true
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22058863",
@@ -3036,7 +3043,7 @@
           {
             "name": "Elemental Unity",
             "description": "17 hits of 11.8% Good damage (200%)\n Target: (On hit) -30 Bonus for 3 turns.",
-            "requirements": "Elemental Unity Defender (I-XV) equipped",
+            "requirements": "Elemental Unity equipped",
             "effect": "17 hits of ~11.8% damage, amounting to 200% damage; applies 'Blinded' (-30 Bonus) to target for 3 turns.",
             "manaCost": "10",
             "cooldown": "19 - [(Player LUK/50), rounded down]",
@@ -3152,7 +3159,7 @@
         {
           "name": "Uaanta's Blaster (Amalgam)",
           "description": "5 hits x 25% Fear damage (125%)\n Target: (On hit) +<x> Health resistance for 5 turns.",
-          "requirements": "Exalted Blaster (I, II) (Amalgam) equipped",
+          "requirements": "Uaanta's Blaster (I-IV) (Amalgam) equipped",
           "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Amalgam Scar' (+X* Health Resist) to target for 5 turns inclusive.",
           "manaCost": "0",
           "cooldown": "19 - [(Player LUK/50), rounded down]",
@@ -3200,7 +3207,7 @@
           {
             "name": "Uaanta's Blaster (Amalgam)",
             "description": "5 hits x 25% Fear damage (125%)\n Target: (On hit) +<x> Health resistance for 5 turns.",
-            "requirements": "Exalted Blaster (I, II) (Amalgam) equipped",
+            "requirements": "Uaanta's Blaster (I-IV) (Amalgam) equipped",
             "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Amalgam Scar' (+X* Health Resist) to target for 5 turns inclusive.",
             "manaCost": "0",
             "cooldown": "19 - [(Player LUK/50), rounded down]",
@@ -3248,7 +3255,7 @@
           {
             "name": "Uaanta's Blaster (Amalgam)",
             "description": "5 hits x 25% Fear damage (125%)\n Target: (On hit) +<x> Health resistance for 5 turns.",
-            "requirements": "Exalted Blaster (I, II) (Amalgam) equipped",
+            "requirements": "Uaanta's Blaster (I-IV) (Amalgam) equipped",
             "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Amalgam Scar' (+X* Health Resist) to target for 5 turns inclusive.",
             "manaCost": "0",
             "cooldown": "19 - [(Player LUK/50), rounded down]",
@@ -3326,7 +3333,7 @@
         {
           "name": "Uaanta's Blaster (Destiny)",
           "description": "5 hits x 25% Good damage (125%)\n Target: -<x> Bonus for 5 turns.",
-          "requirements": "Exalted Blaster (I, II) (Destiny) equipped",
+          "requirements": "Uaanta's Blaster (I-IV) (Destiny) equipped",
           "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Destiny's Command' (-X* Bonus) to target for 4 turns.",
           "manaCost": "0",
           "cooldown": "9 - [(Player LUK/50), rounded down]",
@@ -3374,7 +3381,7 @@
           {
             "name": "Uaanta's Blaster (Destiny)",
             "description": "5 hits x 25% Good damage (125%)\n Target: -<x> Bonus for 5 turns.",
-            "requirements": "Exalted Blaster (I, II) (Destiny) equipped",
+            "requirements": "Uaanta's Blaster (I-IV) (Destiny) equipped",
             "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Destiny's Command' (-X* Bonus) to target for 4 turns.",
             "manaCost": "0",
             "cooldown": "9 - [(Player LUK/50), rounded down]",
@@ -3422,7 +3429,7 @@
           {
             "name": "Uaanta's Blaster (Destiny)",
             "description": "5 hits x 25% Good damage (125%)\n Target: -<x> Bonus for 5 turns.",
-            "requirements": "Exalted Blaster (I, II) (Destiny) equipped",
+            "requirements": "Uaanta's Blaster (I-IV) (Destiny) equipped",
             "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Destiny's Command' (-X* Bonus) to target for 4 turns.",
             "manaCost": "0",
             "cooldown": "9 - [(Player LUK/50), rounded down]",
@@ -3500,7 +3507,7 @@
         {
           "name": "Uaanta's Blaster (Doom)",
           "description": "5 hits x 25% Evil damage (125%)\n Target: -<x> Avoidance for 5 turns.",
-          "requirements": "Exalted Blaster (I, II) (Doom) equipped",
+          "requirements": "Uaanta's Blaster (I-IV) (Doom) equipped",
           "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Doom's Ambition' (-X* Melee/Pierce/Magic Avoidance) to target for 5 turns inclusive.",
           "manaCost": "0",
           "cooldown": "9 - [(Player LUK/50), rounded down]",
@@ -3548,7 +3555,7 @@
           {
             "name": "Uaanta's Blaster (Doom)",
             "description": "5 hits x 25% Evil damage (125%)\n Target: -<x> Avoidance for 5 turns.",
-            "requirements": "Exalted Blaster (I, II) (Doom) equipped",
+            "requirements": "Uaanta's Blaster (I-IV) (Doom) equipped",
             "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Doom's Ambition' (-X* Melee/Pierce/Magic Avoidance) to target for 5 turns inclusive.",
             "manaCost": "0",
             "cooldown": "9 - [(Player LUK/50), rounded down]",
@@ -3596,7 +3603,7 @@
           {
             "name": "Uaanta's Blaster (Doom)",
             "description": "5 hits x 25% Evil damage (125%)\n Target: -<x> Avoidance for 5 turns.",
-            "requirements": "Exalted Blaster (I, II) (Doom) equipped",
+            "requirements": "Uaanta's Blaster (I-IV) (Doom) equipped",
             "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Doom's Ambition' (-X* Melee/Pierce/Magic Avoidance) to target for 5 turns inclusive.",
             "manaCost": "0",
             "cooldown": "9 - [(Player LUK/50), rounded down]",
@@ -3672,7 +3679,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "Equipping this trinket displays blue, red, and green fireworks above the player.",
+    "notes": "Equipping this trinket displays  blue,  red, and  green fireworks above the player.",
     "tags": [
       "lig",
       "gold"
@@ -3735,7 +3742,7 @@
         "price": "N/A",
         "requiredItems": "1 Four \"Lucky\" Wishbones & 1 Vertebral Column",
         "sellback": "19 Dragon Coins",
-        "daRequired": true,
+        "daRequired": false,
         "dcRequired": true
       }
     ],
@@ -3743,7 +3750,7 @@
       "dar",
       "merge"
     ],
-    "daRequired": true,
+    "daRequired": false,
     "dcRequired": true,
     "isRare": true
   },
@@ -3844,7 +3851,7 @@
         "price": "N/A",
         "requiredItems": "1 Three \"Lucky\" Wishbones & 1 Vertebral Column",
         "sellback": "19 Dragon Coins",
-        "daRequired": true,
+        "daRequired": false,
         "dcRequired": true
       }
     ],
@@ -3852,7 +3859,7 @@
       "dar",
       "merge"
     ],
-    "daRequired": true,
+    "daRequired": false,
     "dcRequired": true,
     "isRare": true
   },
@@ -4060,7 +4067,7 @@
         "daRequired": true
       }
     ],
-    "notes": "The following changes were implemented on September 1st, 2023:\n  • Previously had the description: The ancient scrolls had a passage on how to summon an illusionary version of the mighty Honda. The illusion is so strong that it will attack and poison your foe! This item requires a Dragon Amulet.\n  • Trinket's name was changed from 'Summon Honda' to 'Honda's Legacy'.\n  • Trinket's Resist was lowered from +25 Poison to +10 Poison.\n  • Trinket's ability was replaced from Summon Honda to Summon Kunai (1).",
+    "notes": "The following changes were implemented on  September 1st, 2023:\n  • Previously had the description: The ancient scrolls had a passage on how to summon an illusionary version of the mighty Honda. The illusion is so strong that it will attack and poison your foe! This item requires a Dragon Amulet.\n  • Trinket's name was changed from 'Summon Honda' to 'Honda's Legacy'.\n  • Trinket's Resist was lowered from +25 Poison to +10 Poison.\n  • Trinket's ability was replaced from  Summon Honda to  Summon Kunai (1).",
     "tags": [
       "poi",
       "gold"
@@ -4094,7 +4101,8 @@
     "trinketSkillEffectTypes": [
       "Damage",
       "DoT",
-      "Utility"
+      "Utility",
+      "Stats"
     ]
   },
   {
@@ -4348,7 +4356,7 @@
       }
     ],
     "shared": {
-      "description": "A mana gem that has had most, if not all, of its mana drained from it. It doesn't have much going for it, but it helps channel your mana a bit better.",
+      "description": "",
       "resists": "None"
     },
     "levelVariants": [
@@ -4440,7 +4448,7 @@
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22257263",
-        "description": "A mana gem that has had most, if not all, of its mana drained from it. It doesn't have much going for it, but it helps channel your mana a bit better. This item requires a Dragon Amulet.",
+        "description": "A mana gem that has had most, if not all, of its mana drained from it. It doesn't have much going for it, but it helps channel your mana a bit better.",
         "element": "NON",
         "resists": "None",
         "rarity": "1",
@@ -4487,7 +4495,7 @@
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22257264",
-        "description": "A mana gem that has had most, if not all, of its mana drained from it. It doesn't have much going for it, but it helps channel your mana a bit better. This item requires a Dragon Amulet.",
+        "description": "A mana gem that has had most, if not all, of its mana drained from it. It doesn't have much going for it, but it helps channel your mana a bit better.",
         "element": "NON",
         "resists": "None",
         "rarity": "1",
@@ -4534,7 +4542,7 @@
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22257266",
-        "description": "A mana gem that has had most, if not all, of its mana drained from it. It doesn't have much going for it, but it helps channel your mana a bit better. This item requires a Dragon Amulet.",
+        "description": "A mana gem that has had most, if not all, of its mana drained from it. It doesn't have much going for it, but it helps channel your mana a bit better.",
         "element": "NON",
         "resists": "None",
         "rarity": "1",
@@ -4581,7 +4589,7 @@
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22257267",
-        "description": "A mana gem that has had most, if not all, of its mana drained from it. It doesn't have much going for it, but it helps channel your mana a bit better. This item requires a Dragon Amulet.",
+        "description": "A mana gem that has had most, if not all, of its mana drained from it. It doesn't have much going for it, but it helps channel your mana a bit better.",
         "element": "NON",
         "resists": "None",
         "rarity": "12",
@@ -4628,7 +4636,7 @@
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22257268",
-        "description": "A mana gem that has had most, if not all, of its mana drained from it. It doesn't have much going for it, but it helps channel your mana a bit better. This item requires a Dragon Amulet.",
+        "description": "A mana gem that has had most, if not all, of its mana drained from it. It doesn't have much going for it, but it helps channel your mana a bit better.",
         "element": "NON",
         "resists": "None",
         "rarity": "1",
@@ -4675,7 +4683,7 @@
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22257269",
-        "description": "A mana gem that has had most, if not all, of its mana drained from it. It doesn't have much going for it, but it helps channel your mana a bit better. This item requires a Dragon Amulet.",
+        "description": "A mana gem that has had most, if not all, of its mana drained from it. It doesn't have much going for it, but it helps channel your mana a bit better.",
         "element": "NON",
         "resists": "None",
         "rarity": "1",
@@ -4727,7 +4735,7 @@
         "price": "N/A",
         "requiredItems": "1 Summon Gem - Illumina & 1 Summon Gem Setting - Illumina",
         "sellback": "0 Dragon Coins",
-        "daRequired": true,
+        "daRequired": false,
         "dcRequired": true
       }
     ],
@@ -4735,7 +4743,7 @@
       "lig",
       "merge"
     ],
-    "daRequired": true,
+    "daRequired": false,
     "dcRequired": true
   },
   {
@@ -4764,16 +4772,16 @@
         "price": "N/A",
         "requiredItems": "1 Summon Gem Setting - Reaver & 1 Summon Gem - Reaver",
         "sellback": "0 Dragon Coins",
-        "daRequired": true,
+        "daRequired": false,
         "dcRequired": true
       }
     ],
-    "notes": "Item was originally a Resource; was upgraded to an equippable Trinket (without an ability) on April 10th, 2020.",
+    "notes": "Item was originally a Resource; was upgraded to an equippable Trinket (without an ability) on  April 10th, 2020.",
     "tags": [
       "dar",
       "merge"
     ],
-    "daRequired": true,
+    "daRequired": false,
     "dcRequired": true
   },
   {
@@ -4802,7 +4810,7 @@
         "price": "N/A",
         "requiredItems": "1 Summon Gem - Ricterild & 1 Summon Gem Setting - Ricterild",
         "sellback": "0 Dragon Coins",
-        "daRequired": true,
+        "daRequired": false,
         "dcRequired": true
       }
     ],
@@ -4810,7 +4818,7 @@
       "lig",
       "merge"
     ],
-    "daRequired": true,
+    "daRequired": false,
     "dcRequired": true
   },
   {
@@ -4839,7 +4847,7 @@
         "price": "N/A",
         "requiredItems": "1 Summon Gem - Roktoru & 1 Summon Gem Setting - Roktoru",
         "sellback": "0 Dragon Coins",
-        "daRequired": true,
+        "daRequired": false,
         "dcRequired": true
       }
     ],
@@ -4847,7 +4855,7 @@
       "sto",
       "merge"
     ],
-    "daRequired": true,
+    "daRequired": false,
     "dcRequired": true
   },
   {
@@ -4984,9 +4992,11 @@
     ],
     "tags": [
       "ene",
-      "free"
+      "free",
+      "war"
     ],
-    "daRequired": true
+    "daRequired": true,
+    "isWar": true
   },
   {
     "id": "accessory-lights-of-the-storm-trinket",
@@ -5019,10 +5029,10 @@
         "dmRequired": true
       }
     ],
-    "notes": "Equipping this trinket displays animated stars over the player, which appear, rise, and disappear with ten different colors.",
+    "notes": "Equipping this trinket displays animated stars over the  player, which appear, rise, and disappear with ten different colors.",
     "tags": [
       "ice",
-      "merge"
+      "dm"
     ],
     "daRequired": false,
     "dcRequired": true,
@@ -5378,9 +5388,6 @@
     "resists": "None",
     "ability": "Bubbles",
     "abilityUrl": "https://forums2.battleon.com/f/tm.asp?m=16671032",
-    "trinketSkillEffectTypes": [
-      "Bonus"
-    ],
     "rarity": "15",
     "itemType": "Trinket",
     "equipSpot": "Trinket",
@@ -5413,6 +5420,9 @@
         "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-Bubbles-Appearance.png",
         "notes": "• Bubbles (1) previously applied -50 Bonus to target for 4 turns, with a cooldown of 5 turns.\n• Bubbles (1)'s skill icon's appearance was updated on November 17th, 2023, replacing its old appearance."
       }
+    ],
+    "trinketSkillEffectTypes": [
+      "Bonus"
     ]
   },
   {
@@ -5690,7 +5700,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "Equipping this trinket displays an animated radiant shimmer over the player, color-custom to the player's trim color.",
+    "notes": "Equipping this trinket displays an animated  radiant shimmer over the  player, color-custom to the player's trim color.",
     "tags": [
       "lig",
       "dc"
@@ -5740,8 +5750,8 @@
     "familySources": [
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=22422527",
-        "title": "DF Encyclopedia: Relic of When - Draconic Growth (EX)",
-        "variantLabel": "Relic of When - Draconic Growth (EX)",
+        "title": "DF Encyclopedia: Relic of When - Draconic Growth",
+        "variantLabel": "Relic of When - Draconic Growth",
         "isPrimary": true
       },
       {
@@ -5752,39 +5762,15 @@
       }
     ],
     "shared": {
-      "description": "This strange translucent sphere contains a whirling array of gears and magic inside. Uses time magic to temporarily transform your dragon into a young dragon form for an attack!",
-      "ability": "Summon Young Dragon",
-      "attacks": [
-        {
-          "name": "Summon Young Dragon",
-          "description": "3 hits x 75% damage (225%)\n Self: 1% max HP HoT for 5 turns. Target: (On hit) 25% DoT for 5 turns.\n This attack has +50 Bonus and +200 Crit. Damage and DoT element based on dragon's element.",
-          "requirements": "Relic of When - Draconic Growth (EX) equipped",
-          "effect": "Applies '<Dragon>'s Boon', a HoT equal to 1% of the player's max HP, to player for 5 turns; 3 hits of 75% damage, amounting to 225% damage, with +50 Bonus and +200 Crit; applies '<Dragon>'s Bane', a 25% Melee DoT effect, to target for 5 turns.",
-          "manaCost": "50",
-          "cooldown": "19 - [(Player LUK/50), rounded down]",
-          "damageType": "As weapon",
-          "element": "As dragon",
-          "buttonImageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-SummonYoungDragon.png",
-          "appearanceUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-SummonYoungDragon-Appearance1.0.png",
-          "appearanceUrls": [
-            "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-SummonYoungDragon-Appearance1.0.png",
-            "https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/TrinketSkill-SummonYoungDragon-Appearance1.1.png"
-          ],
-          "appearanceCaptions": [
-            "1",
-            "1.1"
-          ],
-          "notes": "• Draco is the default name for all status names from this trinket skill; they are linked to the player's dragon's name from Dragon Customization.\n• <Dragon>'s appearance is linked to the player's dragon's Head, Wing, and Tail Styles from Dragon Customization, as well as their current color palette from Dragon Customization / Armor Paint Room.\n• <Dragon>'s attacks (including breath animation and '<Dragon>'s Bane' DoT) and Body (including Primal Tattoos via Dragon Primalization) are color-synchronized to player's dragon's element via Dragon Elementization; this skill can only have 1 out of 10 available elements (Bacon, Darkness, Energy, Fire, Ice, Light, Nature, Stone, Water, and Wind).\n • Array of breath attacks: Bacon, Darkness, Energy, Fire, Ice, Light, Nature, Stone, Water, Wind\n• If <Dragon> was equipped, either as a pet or a guest, <Dragon> will temporarily disappear upon using the trinket skill."
-        }
-      ]
+      "description": "",
+      "ability": "Summon Young Dragon"
     },
     "levelVariants": [
       {
         "levelNumber": 40,
         "levelDisplay": "40",
         "actualLevel": 40,
-        "variantName": "(EX)",
-        "name": "Relic of When - Draconic Growth (EX)",
+        "name": "Relic of When - Draconic Growth",
         "damage": "",
         "stats": "Block +3, Dodge +3, Parry +3, Crit +3, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +3, END +3, CHA +3, LUK +3, INT +3, DEX +3, STR +3, Bonus +3",
         "obtainVariants": [
@@ -5804,7 +5790,7 @@
           {
             "name": "Summon Young Dragon",
             "description": "3 hits x 75% damage (225%)\n Self: 1% max HP HoT for 5 turns. Target: (On hit) 25% DoT for 5 turns.\n This attack has +50 Bonus and +200 Crit. Damage and DoT element based on dragon's element.",
-            "requirements": "Relic of When - Draconic Growth (EX) equipped",
+            "requirements": "Relic of When - Draconic Growth equipped",
             "effect": "Applies '<Dragon>'s Boon', a HoT equal to 1% of the player's max HP, to player for 5 turns; 3 hits of 75% damage, amounting to 225% damage, with +50 Bonus and +200 Crit; applies '<Dragon>'s Bane', a 25% Melee DoT effect, to target for 5 turns.",
             "manaCost": "50",
             "cooldown": "19 - [(Player LUK/50), rounded down]",
@@ -5825,7 +5811,7 @@
         ],
         "rarity": "10",
         "itemType": "Trinket",
-        "notes": "For a short amount of time on June 27th, 2025, Relic of When - Draconic Growth was a guaranteed drop from Artax & Shogun."
+        "notes": "For a short amount of time on  June 27th, 2025, Relic of When - Draconic Growth was a guaranteed drop from  Artax & Shogun."
       },
       {
         "levelNumber": 70,
@@ -5842,7 +5828,7 @@
             "priceType": "merge",
             "sellback": "0 Dragon Coins",
             "requiredItems": "1 Dragon's Ethereal Scale & 1 Relic of When - Draconic Growth",
-            "daRequired": true,
+            "daRequired": false,
             "dcRequired": true
           }
         ],
@@ -6374,7 +6360,7 @@
       }
     ],
     "shared": {
-      "description": "This carved wooden charm was given to you as you prepared to leave Sulen'Eska to fight the amassing Rose forces at the swamp border. May it help you weather the coming storm.",
+      "description": "",
       "resists": "None"
     },
     "levelVariants": [
@@ -6470,7 +6456,7 @@
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22401717",
-        "description": "This carved wooden charm was given to you as you prepared to leave Sulen'Eska to fight the amassing Rose forces at the swamp border. May it help you weather the coming storm. This item requires a Dragon Amulet.",
+        "description": "This carved wooden charm was given to you as you prepared to leave Sulen'Eska to fight the amassing Rose forces at the swamp border. May it help you weather the coming storm.",
         "element": "WIN",
         "resists": "None",
         "rarity": "1",
@@ -6519,7 +6505,7 @@
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22401718",
-        "description": "This carved wooden charm was given to you as you prepared to leave Sulen'Eska to fight the amassing Rose forces at the swamp border. May it help you weather the coming storm. This item requires a Dragon Amulet.",
+        "description": "This carved wooden charm was given to you as you prepared to leave Sulen'Eska to fight the amassing Rose forces at the swamp border. May it help you weather the coming storm.",
         "element": "WIN",
         "resists": "None",
         "rarity": "1",
@@ -6568,7 +6554,7 @@
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22401719",
-        "description": "This carved wooden charm was given to you as you prepared to leave Sulen'Eska to fight the amassing Rose forces at the swamp border. May it help you weather the coming storm. This item requires a Dragon Amulet.",
+        "description": "This carved wooden charm was given to you as you prepared to leave Sulen'Eska to fight the amassing Rose forces at the swamp border. May it help you weather the coming storm.",
         "element": "WIN",
         "resists": "None",
         "rarity": "1",
@@ -6617,7 +6603,7 @@
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22401720",
-        "description": "This carved wooden charm was given to you as you prepared to leave Sulen'Eska to fight the amassing Rose forces at the swamp border. May it help you weather the coming storm. This item requires a Dragon Amulet.",
+        "description": "This carved wooden charm was given to you as you prepared to leave Sulen'Eska to fight the amassing Rose forces at the swamp border. May it help you weather the coming storm.",
         "element": "WIN",
         "resists": "None",
         "rarity": "12",
@@ -6666,7 +6652,7 @@
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22401721",
-        "description": "This carved wooden charm was given to you as you prepared to leave Sulen'Eska to fight the amassing Rose forces at the swamp border. May it help you weather the coming storm. This item requires a Dragon Amulet.",
+        "description": "This carved wooden charm was given to you as you prepared to leave Sulen'Eska to fight the amassing Rose forces at the swamp border. May it help you weather the coming storm.",
         "element": "WIN",
         "resists": "None",
         "rarity": "1",
@@ -6715,7 +6701,7 @@
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22401722",
-        "description": "This carved wooden charm was given to you as you prepared to leave Sulen'Eska to fight the amassing Rose forces at the swamp border. May it help you weather the coming storm. This item requires a Dragon Amulet.",
+        "description": "This carved wooden charm was given to you as you prepared to leave Sulen'Eska to fight the amassing Rose forces at the swamp border. May it help you weather the coming storm.",
         "element": "WIN",
         "resists": "None",
         "rarity": "1",
@@ -6767,7 +6753,7 @@
         "price": "N/A",
         "requiredItems": "1 Six \"Lucky\" Wishbones & 1 Vertebral Column",
         "sellback": "19 Dragon Coins",
-        "daRequired": true,
+        "daRequired": false,
         "dcRequired": true
       }
     ],
@@ -6775,7 +6761,7 @@
       "dar",
       "merge"
     ],
-    "daRequired": true,
+    "daRequired": false,
     "dcRequired": true,
     "isRare": true
   },
@@ -6863,7 +6849,7 @@
       }
     ],
     "shared": {
-      "description": "A small idol carved from golden stone. The eyes and mouths of the four faces of the Shapeless glow faintly with a blue light. Said to bring good luck to the law-abiding.",
+      "description": "",
       "rarity": "0"
     },
     "levelVariants": [
@@ -6959,7 +6945,7 @@
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22346470",
-        "description": "A small idol carved from golden stone. The eyes and mouths of the four faces of the Shapeless glow faintly with a blue light. Said to bring good luck to the law-abiding. This item requires a Dragon Amulet.",
+        "description": "A small idol carved from golden stone. The eyes and mouths of the four faces of the Shapeless glow faintly with a blue light. Said to bring good luck to the law-abiding.",
         "element": "FEA",
         "resists": "None",
         "rarity": "0",
@@ -7008,7 +6994,7 @@
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22346471",
-        "description": "A small idol carved from golden stone. The eyes and mouths of the four faces of the Shapeless glow faintly with a blue light. Said to bring good luck to the law-abiding. This item requires a Dragon Amulet.",
+        "description": "A small idol carved from golden stone. The eyes and mouths of the four faces of the Shapeless glow faintly with a blue light. Said to bring good luck to the law-abiding.",
         "element": "FEA",
         "resists": "None",
         "rarity": "0",
@@ -7057,7 +7043,7 @@
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22346472",
-        "description": "A small idol carved from golden stone. The eyes and mouths of the four faces of the Shapeless glow faintly with a blue light. Said to bring good luck to the law-abiding. This item requires a Dragon Amulet.",
+        "description": "A small idol carved from golden stone. The eyes and mouths of the four faces of the Shapeless glow faintly with a blue light. Said to bring good luck to the law-abiding.",
         "element": "FEA",
         "resists": "None",
         "rarity": "0",
@@ -7106,7 +7092,7 @@
           }
         ],
         "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22346473",
-        "description": "A small idol carved from golden stone. The eyes and mouths of the four faces of the Shapeless glow faintly with a blue light. Said to bring good luck to the law-abiding. This item requires a Dragon Amulet.",
+        "description": "A small idol carved from golden stone. The eyes and mouths of the four faces of the Shapeless glow faintly with a blue light. Said to bring good luck to the law-abiding.",
         "element": "FEA",
         "resists": "Good +1, Evil +1, Fear +1",
         "rarity": "0",
@@ -7157,16 +7143,16 @@
         "priceType": "free",
         "price": "N/A",
         "sellback": "0 Dragon Coins",
-        "daRequired": true,
+        "daRequired": false,
         "dcRequired": true
       }
     ],
-    "notes": "Item was originally a Resource; was upgraded to an equippable Trinket (without an ability) on April 10th, 2020.",
+    "notes": "Item was originally a Resource; was upgraded to an equippable Trinket (without an ability) on  April 10th, 2020.",
     "tags": [
       "ene",
       "free"
     ],
-    "daRequired": true,
+    "daRequired": false,
     "dcRequired": true
   },
   {
@@ -7195,7 +7181,7 @@
         "price": "N/A",
         "requiredItems": "1 Five \"Lucky\" Wishbones & 1 Vertebral Column",
         "sellback": "19 Dragon Coins",
-        "daRequired": true,
+        "daRequired": false,
         "dcRequired": true
       }
     ],
@@ -7203,7 +7189,7 @@
       "dar",
       "merge"
     ],
-    "daRequired": true,
+    "daRequired": false,
     "dcRequired": true,
     "isRare": true
   },
@@ -7540,16 +7526,16 @@
         "price": "N/A",
         "requiredItems": "1 Shattered Summon Gem - Ayauhnqui & 1 Summoner's Conduit: Life and Death",
         "sellback": "0 Dragon Coins",
-        "daRequired": true,
+        "daRequired": false,
         "dcRequired": true
       }
     ],
-    "notes": "Resists were added on June 20th, 2025.",
+    "notes": "Resists were added on  June 20th, 2025.",
     "tags": [
       "ene",
       "merge"
     ],
-    "daRequired": true,
+    "daRequired": false,
     "dcRequired": true,
     "attacks": [
       {
@@ -7682,16 +7668,16 @@
         "price": "N/A",
         "requiredItems": "1 Warped Summon Gem - Intaym & 1 Summoner's Conduit: Duty & Rebellion",
         "sellback": "0 Dragon Coins",
-        "daRequired": true,
+        "daRequired": false,
         "dcRequired": true
       }
     ],
-    "notes": "Resists were added on June 20th, 2025.",
+    "notes": "Resists were added on  June 20th, 2025.",
     "tags": [
       "???",
       "merge"
     ],
-    "daRequired": true,
+    "daRequired": false,
     "dcRequired": true,
     "attacks": [
       {
@@ -7795,7 +7781,8 @@
     ],
     "trinketSkillEffectTypes": [
       "Damage",
-      "Crit"
+      "Crit",
+      "Heal"
     ]
   },
   {
@@ -7934,7 +7921,8 @@
     "trinketSkillEffectTypes": [
       "Damage",
       "Bonus",
-      "Crit"
+      "Crit",
+      "Immobility"
     ]
   },
   {
@@ -8037,7 +8025,7 @@
         "price": "N/A",
         "requiredItems": "1 Two \"Lucky\" Wishbones & 1 Vertebral Column",
         "sellback": "19 Dragon Coins",
-        "daRequired": true,
+        "daRequired": false,
         "dcRequired": true
       }
     ],
@@ -8045,7 +8033,7 @@
       "dar",
       "merge"
     ],
-    "daRequired": true,
+    "daRequired": false,
     "dcRequired": true,
     "isRare": true
   },
@@ -8116,7 +8104,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "Equipping this trinket displays animated gear cogs over the player, color-custom to the player's trim color.",
+    "notes": "Equipping this trinket displays  animated gear cogs over the player, color-custom to the player's trim color.",
     "tags": [
       "???",
       "free"
@@ -8168,7 +8156,7 @@
         "price": "N/A",
         "requiredItems": "1 \"Lucky\" Wishbone & 1 Vertebral Column",
         "sellback": "19 Dragon Coins",
-        "daRequired": true,
+        "daRequired": false,
         "dcRequired": true
       }
     ],
@@ -8176,7 +8164,7 @@
       "dar",
       "merge"
     ],
-    "daRequired": true,
+    "daRequired": false,
     "dcRequired": true,
     "isRare": true
   },
@@ -8257,13 +8245,13 @@
       }
     ],
     "shared": {
-      "description": "Uaanta gifted this emergency back-up wand to you. With the addition of the Twisted Amalgam Core, the complete wand now does Fear damage and increases its target's Health resistance!",
+      "description": "",
       "ability": "Uaanta's Blaster (Amalgam)",
       "attacks": [
         {
           "name": "Uaanta's Blaster (Amalgam)",
           "description": "5 hits x 25% Fear damage (125%)\n Target: (On hit) +<x> Health resistance for 5 turns.",
-          "requirements": "Exalted Blaster (I, II) (Amalgam) equipped",
+          "requirements": "Uaanta's Blaster (I-IV) (Amalgam) equipped",
           "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Amalgam Scar' (+X* Health Resist) to target for 5 turns inclusive.",
           "manaCost": "0",
           "cooldown": "19 - [(Player LUK/50), rounded down]",
@@ -8311,7 +8299,7 @@
           {
             "name": "Uaanta's Blaster (Amalgam)",
             "description": "5 hits x 25% Fear damage (125%)\n Target: (On hit) +<x> Health resistance for 5 turns.",
-            "requirements": "Exalted Blaster (I, II) (Amalgam) equipped",
+            "requirements": "Uaanta's Blaster (I-IV) (Amalgam) equipped",
             "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Amalgam Scar' (+X* Health Resist) to target for 5 turns inclusive.",
             "manaCost": "0",
             "cooldown": "19 - [(Player LUK/50), rounded down]",
@@ -8359,7 +8347,7 @@
           {
             "name": "Uaanta's Blaster (Amalgam)",
             "description": "5 hits x 25% Fear damage (125%)\n Target: (On hit) +<x> Health resistance for 5 turns.",
-            "requirements": "Exalted Blaster (I, II) (Amalgam) equipped",
+            "requirements": "Uaanta's Blaster (I-IV) (Amalgam) equipped",
             "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Amalgam Scar' (+X* Health Resist) to target for 5 turns inclusive.",
             "manaCost": "0",
             "cooldown": "19 - [(Player LUK/50), rounded down]",
@@ -8407,7 +8395,7 @@
           {
             "name": "Uaanta's Blaster (Amalgam)",
             "description": "5 hits x 25% Fear damage (125%)\n Target: (On hit) +<x> Health resistance for 5 turns.",
-            "requirements": "Exalted Blaster (I, II) (Amalgam) equipped",
+            "requirements": "Uaanta's Blaster (I-IV) (Amalgam) equipped",
             "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Amalgam Scar' (+X* Health Resist) to target for 5 turns inclusive.",
             "manaCost": "0",
             "cooldown": "19 - [(Player LUK/50), rounded down]",
@@ -8455,7 +8443,7 @@
           {
             "name": "Uaanta's Blaster (Amalgam)",
             "description": "5 hits x 25% Fear damage (125%)\n Target: (On hit) +<x> Health resistance for 5 turns.",
-            "requirements": "Exalted Blaster (I, II) (Amalgam) equipped",
+            "requirements": "Uaanta's Blaster (I-IV) (Amalgam) equipped",
             "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Amalgam Scar' (+X* Health Resist) to target for 5 turns inclusive.",
             "manaCost": "0",
             "cooldown": "19 - [(Player LUK/50), rounded down]",
@@ -8541,7 +8529,7 @@
       }
     ],
     "shared": {
-      "description": "Uaanta gifted this emergency back-up wand to you. With the attachment of a Capacitor Gem, it's starting to charge, but it feels like there are some pieces missing still.",
+      "description": "",
       "rarity": "15"
     },
     "levelVariants": [
@@ -8805,13 +8793,13 @@
       }
     ],
     "shared": {
-      "description": "Uaanta gifted this emergency back-up wand to you. With the addition of the Firmament Stability Core, the complete wand now does Good damage and decreases its target's bonus!",
+      "description": "",
       "ability": "Uaanta's Blaster (Destiny)",
       "attacks": [
         {
           "name": "Uaanta's Blaster (Destiny)",
           "description": "5 hits x 25% Good damage (125%)\n Target: -<x> Bonus for 5 turns.",
-          "requirements": "Exalted Blaster (I, II) (Destiny) equipped",
+          "requirements": "Uaanta's Blaster (I-IV) (Destiny) equipped",
           "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Destiny's Command' (-X* Bonus) to target for 4 turns.",
           "manaCost": "0",
           "cooldown": "9 - [(Player LUK/50), rounded down]",
@@ -8859,7 +8847,7 @@
           {
             "name": "Uaanta's Blaster (Destiny)",
             "description": "5 hits x 25% Good damage (125%)\n Target: -<x> Bonus for 5 turns.",
-            "requirements": "Exalted Blaster (I, II) (Destiny) equipped",
+            "requirements": "Uaanta's Blaster (I-IV) (Destiny) equipped",
             "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Destiny's Command' (-X* Bonus) to target for 4 turns.",
             "manaCost": "0",
             "cooldown": "9 - [(Player LUK/50), rounded down]",
@@ -8907,7 +8895,7 @@
           {
             "name": "Uaanta's Blaster (Destiny)",
             "description": "5 hits x 25% Good damage (125%)\n Target: -<x> Bonus for 5 turns.",
-            "requirements": "Exalted Blaster (I, II) (Destiny) equipped",
+            "requirements": "Uaanta's Blaster (I-IV) (Destiny) equipped",
             "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Destiny's Command' (-X* Bonus) to target for 4 turns.",
             "manaCost": "0",
             "cooldown": "9 - [(Player LUK/50), rounded down]",
@@ -8955,7 +8943,7 @@
           {
             "name": "Uaanta's Blaster (Destiny)",
             "description": "5 hits x 25% Good damage (125%)\n Target: -<x> Bonus for 5 turns.",
-            "requirements": "Exalted Blaster (I, II) (Destiny) equipped",
+            "requirements": "Uaanta's Blaster (I-IV) (Destiny) equipped",
             "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Destiny's Command' (-X* Bonus) to target for 4 turns.",
             "manaCost": "0",
             "cooldown": "9 - [(Player LUK/50), rounded down]",
@@ -9003,7 +8991,7 @@
           {
             "name": "Uaanta's Blaster (Destiny)",
             "description": "5 hits x 25% Good damage (125%)\n Target: -<x> Bonus for 5 turns.",
-            "requirements": "Exalted Blaster (I, II) (Destiny) equipped",
+            "requirements": "Uaanta's Blaster (I-IV) (Destiny) equipped",
             "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Destiny's Command' (-X* Bonus) to target for 4 turns.",
             "manaCost": "0",
             "cooldown": "9 - [(Player LUK/50), rounded down]",
@@ -9095,7 +9083,7 @@
         {
           "name": "Uaanta's Blaster (Doom)",
           "description": "5 hits x 25% Evil damage (125%)\n Target: -<x> Avoidance for 5 turns.",
-          "requirements": "Exalted Blaster (I, II) (Doom) equipped",
+          "requirements": "Uaanta's Blaster (I-IV) (Doom) equipped",
           "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Doom's Ambition' (-X* Melee/Pierce/Magic Avoidance) to target for 5 turns inclusive.",
           "manaCost": "0",
           "cooldown": "9 - [(Player LUK/50), rounded down]",
@@ -9143,7 +9131,7 @@
           {
             "name": "Uaanta's Blaster (Doom)",
             "description": "5 hits x 25% Evil damage (125%)\n Target: -<x> Avoidance for 5 turns.",
-            "requirements": "Exalted Blaster (I, II) (Doom) equipped",
+            "requirements": "Uaanta's Blaster (I-IV) (Doom) equipped",
             "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Doom's Ambition' (-X* Melee/Pierce/Magic Avoidance) to target for 5 turns inclusive.",
             "manaCost": "0",
             "cooldown": "9 - [(Player LUK/50), rounded down]",
@@ -9191,7 +9179,7 @@
           {
             "name": "Uaanta's Blaster (Doom)",
             "description": "5 hits x 25% Evil damage (125%)\n Target: -<x> Avoidance for 5 turns.",
-            "requirements": "Exalted Blaster (I, II) (Doom) equipped",
+            "requirements": "Uaanta's Blaster (I-IV) (Doom) equipped",
             "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Doom's Ambition' (-X* Melee/Pierce/Magic Avoidance) to target for 5 turns inclusive.",
             "manaCost": "0",
             "cooldown": "9 - [(Player LUK/50), rounded down]",
@@ -9239,7 +9227,7 @@
           {
             "name": "Uaanta's Blaster (Doom)",
             "description": "5 hits x 25% Evil damage (125%)\n Target: -<x> Avoidance for 5 turns.",
-            "requirements": "Exalted Blaster (I, II) (Doom) equipped",
+            "requirements": "Uaanta's Blaster (I-IV) (Doom) equipped",
             "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Doom's Ambition' (-X* Melee/Pierce/Magic Avoidance) to target for 5 turns inclusive.",
             "manaCost": "0",
             "cooldown": "9 - [(Player LUK/50), rounded down]",
@@ -9287,7 +9275,7 @@
           {
             "name": "Uaanta's Blaster (Doom)",
             "description": "5 hits x 25% Evil damage (125%)\n Target: -<x> Avoidance for 5 turns.",
-            "requirements": "Exalted Blaster (I, II) (Doom) equipped",
+            "requirements": "Uaanta's Blaster (I-IV) (Doom) equipped",
             "effect": "5 hits of 25% damage, amounting to 125% damage; applies 'Doom's Ambition' (-X* Melee/Pierce/Magic Avoidance) to target for 5 turns inclusive.",
             "manaCost": "0",
             "cooldown": "9 - [(Player LUK/50), rounded down]",
@@ -9373,7 +9361,7 @@
       }
     ],
     "shared": {
-      "description": "Uaanta gifted this emergency back-up wand to you. Unfortunately it's not charged. Maybe you'll be able to find some way to charge it up in the future!",
+      "description": "",
       "rarity": "15"
     },
     "levelVariants": [
@@ -9529,7 +9517,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "Own this item to unlock the Vaal Armor Customization options for the Chaosweaver class; this functionality was added on December 18th, 2020.\nAs of the changes to the DEX stat on April 16th, 2021, the description's claim that its ability did not affect the DEX damage bonus is outdated, as there is no longer a DEX damage bonus resultant of DoT application. The excerpt Does not affect the DEX damage bonus. would eventually be removed on October 11th, 2024.\nResists were added on June 20th, 2025.",
+    "notes": "Own this item to unlock the Vaal  Armor Customization options for the  Chaosweaver class; this functionality was added on  December 18th, 2020.\nAs of the changes to the DEX stat on  April 16th, 2021, the description's claim that its ability did not affect the DEX damage bonus is outdated, as there is no longer a DEX damage bonus resultant of DoT application. The excerpt Does not affect the DEX damage bonus. would eventually be removed on  October 11th, 2024.\nResists were added on  June 20th, 2025.",
     "tags": [
       "fir",
       "merge"
@@ -9666,7 +9654,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "Equipping this trinket displays an animated Mogbot behind the player.\nClick on the Mogbot to change its light color between green, red, and blue respectively.",
+    "notes": "Equipping this trinket displays an animated Mogbot behind the player.\nClick on the Mogbot to change its light color between  green,  red, and  blue respectively.",
     "tags": [
       "met",
       "merge"
@@ -9699,7 +9687,7 @@
         "priceType": "free",
         "price": "N/A",
         "sellback": "0 Dragon Coins",
-        "daRequired": true,
+        "daRequired": false,
         "dcRequired": true
       }
     ],
@@ -9707,7 +9695,7 @@
       "???",
       "free"
     ],
-    "daRequired": true,
+    "daRequired": false,
     "dcRequired": true
   },
   {
@@ -9744,7 +9732,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "Equipping this trinket displays an animated orange runic circles over the player.\nOwn this item to unlock the Warpfire Armor Customization options for the Pyromancer class.",
+    "notes": "Equipping this trinket displays an animated orange runic circles over the  player.\nOwn this item to unlock the Warpfire  Armor Customization options for the  Pyromancer class.",
     "tags": [
       "fir",
       "dc"
@@ -9790,7 +9778,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "Equipping this trinket displays \"YOU ARE HERE\" text with an animated arrow pointing down to the player.",
+    "notes": "Equipping this trinket displays  \"YOU ARE HERE\" text with an animated arrow pointing down to the  player.",
     "tags": [
       "nat",
       "free"
@@ -9802,7 +9790,7 @@
       {
         "name": "You Are Here",
         "description": "25% damage/5 rnds but easier to hit.",
-        "requirements": "You Are Here (D-Amulet/D-Coins) equipped",
+        "requirements": "You Are Here (D-Amulet) equipped",
         "effect": "Applies +25% Boost and -300 Melee/Pierce/Magic Avoidance to player for 5 turns inclusive.",
         "manaCost": "0",
         "cooldown": "29 - [(Player LUK/50), rounded down]",

@@ -83,6 +83,10 @@ Baron/BraveSirRobin/Deatharrows/Josh/LFAL/Prius `(Kitten, Cat)` pets are separat
 `PowerTog`, and `Extra Fluffy Tog Extreme` is separate from `Extra Fluffy Tog I-III`; split siblings
 receive mutual `Also See` links.
 
+`Goldfish Knight` is the canonical Roman-tier + DC-branch pet. Stored variant labels must be
+`I`, `I (DC)`, `II`, `II (DC)`, through `VII`, `VII (DC)`. Do not store `Normal` / `DC` as the
+variant names for Roman/level branch pairs; the access columns and obtain cards carry DA/DC state.
+
 ### DA/DC Detection
 
 - `daRequired`: Automatically detected if forum post contains `<img src="...tags/DA.png">`
@@ -105,11 +109,13 @@ receive mutual `Also See` links.
 When a pet thread has both a free/base variant and a DC variant, the scraper splits them into
 separate level variants using `buildLevelAccessVariants`:
 
-- `variantName: 'Normal'` → displays as `(Base)` in the UI
-- `variantName: 'DC'` → displays as `(DC)` in the UI
-- Forum label `(Resource)` is mapped to `Normal` (same as base tier)
-- For "(All Versions)" families where the same labels repeat across levels, the UI prefixes with the
-  level in parentheses: `(10)`, `(10) (DC)`, `(20)`, `(20) (DC)`, etc.
+- Raw forum access labels such as `Normal`, `Resource`, `DA`, `DC`, or `DA/DC` must not be stored as
+  final selector/table labels.
+- For Roman or level progressions with access branches, store the natural tier plus access suffix:
+  `I`, `I (DC)`, `20`, `20 (DC)`, etc.
+- For access-only pairs with no natural tier, store the shared compact labels: `(Base)`, `(DA)`,
+  `(DA, DC)`, `(DC)`.
+- Forum label `(Resource)` is treated as the base tier when building these labels.
 
 ### Category Detection (Level 2 filters)
 
@@ -228,6 +234,21 @@ meaningfully different items and the forum relationship should be represented as
 a selector. Example: Necromancer Cape and Necromancer Cloak are separate entries with mutual Also See
 links, while same-name level/DC branches normally remain one family with clear variant labels.
 
+Accessory cross-post promotion is intentionally narrower than pets/guests and weapons. Helms and
+capes/wings may promote automatically from explicit `Also See` plus title/content evidence; other
+subtypes use scoped special-family rules until more examples are vetted. Current non-helm/cape
+special consolidations include `Orion's Belt` (`(Base)`, `Planetary`, `Solar`, `Comet`,
+`Interstellar`, `Galactic`, `Universal`) and `Mazurek's Emerald Ring` (`Pinky`, `(Base)`, `Middle`,
+`Pointer`, `Thumb`), both ordered by level.
+
+Do not promote related accessory siblings into a single itemfamily when they represent different
+equipment forms, have different primary images, or are already consolidated itemfamilies. In those
+cases, keep separate entries/families and link with `Also See` through explicit forum links or shared
+inference. Reference non-consolidation examples: `Swordhaven Cape` / `Swordhaven Cloak`,
+`Crossbones Cap` / `Crossbones Hat`, `Dread Pirate Hat` / `Dread Pirate Mask`,
+`Obsidian Relic Helm` / `Obsidian Relic Visor`, and `Chaotic Cloak` / `Chaotic Robes` /
+`Chaotic Shroud` / `Chaotic Spine`.
+
 ### Helm Split Exceptions
 
 Some helm families are intentionally split even when they are same-thread or explicitly linked,
@@ -278,11 +299,44 @@ over-matching and produces a long garbage `appearance` string. Correct results l
 Section-level DA is only applied to non-DC obtain methods. When a post has a DA-tagged base variant
 and a non-DA DC variant (e.g. Carved Dragon Scale II-V, Navigator's Hat II-VI), the DA tag must not
 stamp the DC method. DC methods keep their own per-block detection, and a genuinely DA-required DC
-variant (e.g. Plushie Artix, where the forum places DA before both title blocks) is preserved.
+variant or method is preserved when its own block says so; examples include Azaveyran Farewell's DC
+branches, Ancient DragonLord Helm I-III, and Ring of Otherworld / Slugwrath Signet Ring II-III.
 Descriptions follow the same scope. A DC/non-DA obtain branch must not inherit the italic sentence
 `This item requires a Dragon Amulet.` from a DA sibling. If a same-level variant lacks an explicit
 description, only fall back to a sibling with the same DA/DC/DM access signature. `Navigator's Hat` is
 the reference spot-check for this behavior.
+
+`Doom Harvester Wings` is an intentional edge case where `Base` is the actual forum item name, not a
+placeholder label. The family variants are `(Base)` for `Doom Harvester Wings`, then `Base`, `Foul`,
+and `Noxious`.
+
+`Cider Keg` and `Void Cider Keg` are hardcoded cape/wing split families because several reused forum
+titles belong to the Void shop branch. `Cider Keg` sources must not include Void Cider Keg posts.
+`Bubbly Cider Keg` and `Moglinberry Cider Keg` each have both DA and DA+DC branches.
+
+`Cider Mug` and `Void Cider Mug` follow the same hardcoded split pattern for Helms. Keep them as
+separate linked families; do not allow same-thread source URLs to bleed Void Cider Mug source labels
+into the non-Void Cider Mug family.
+
+Some accessory threads require scoped access-branch reconstruction because the forum has repeated
+same-name/same-level variants with separate obtain branches that the printable layout does not expose
+as clean independent posts. Current hardcoded cases:
+
+- `Aye Pirate Scarf`: `Cunning`, `Swarthy`, and `Foxy` are normal/DC pairs; `Crafty` and `Brave` are
+  DA-only/DC-only pairs.
+- `Bearded Guardian Pirate Hat`: `Cunning`, `Swarthy`, `Foxy`, `Crafty`, and `Brave` are DA-only /
+  DC-only pairs.
+- `Cultist Hood`: `(Base)`, `Dark`, `Evil`, and `Villainous` are normal/DC pairs; `Foul`, `Doomed`,
+  and `Brutal` are DA-only / DA+DC pairs.
+
+Ordinal sibling names such as `First Golden Ring` through `Fifth Golden Ring` are not hardcoded
+accessory links. They rely on the shared inferred `Also See` matcher: same subtype, matching relaxed
+obtain fingerprint, and high name similarity after non-identifying ordinal words are ignored.
+
+Missing-image placeholders for the following verified accessories are expected: Bright Concealer,
+Floating Chuckles Skull, Paintbender Battlemage Cape, Uthuluc Acolyte Limbs, Uthuluc Acolyte Visage,
+Ancient Ceremonial Helm of Hawks/Ravens/Wolves, and Bright Guard. Forum posts expose no usable item
+image for these; keep the placeholder rather than inventing an asset.
 
 ---
 

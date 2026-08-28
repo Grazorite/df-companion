@@ -393,11 +393,19 @@ function preserveExistingEntriesForScopedRefresh(
       : [entry]
   }
 
+  if (nameMatchesScopedRefresh(entry.familyName, lettersArg, nameFilter)) {
+    if (entry.familyOrigin !== 'cross-post') return []
+
+    return entry.levelVariants
+      .filter((variant) => !nameMatchesScopedRefresh(variant.name, lettersArg, nameFilter))
+      .map((variant) => familyVariantToAccessory(entry, variant))
+  }
+
   const targetedVariants = entry.levelVariants.filter((variant) =>
     nameMatchesScopedRefresh(variant.name, lettersArg, nameFilter)
   )
   if (targetedVariants.length === 0) {
-    return nameMatchesScopedRefresh(entry.familyName, lettersArg, nameFilter) ? [] : [entry]
+    return [entry]
   }
 
   const preservedVariants = entry.levelVariants.filter(
@@ -1080,7 +1088,7 @@ function parseObtainMethods(html: string): Accessory['obtainMethods'] {
       block.dcRequired || obtainVariantHasDC({ ...methodDetails, daRequired: block.daRequired })
     obtainMethods.push({
       ...methodDetails,
-      daRequired: inferredDC ? false : block.daRequired,
+      daRequired: block.daRequired,
       ...(inferredDC ? { dcRequired: true } : {}),
     })
   }
@@ -1624,7 +1632,7 @@ function buildAccessoryEntry(
       // access parsed from its own block/price/required-items context.
       daRequired:
         method.daRequired ||
-        (!hasMixedDcMethods && !hasMethodDC && (flags.daRequired || textSignals.daRequired)),
+        (!hasMixedDcMethods && (flags.daRequired || textSignals.daRequired)),
       ...(!hasMixedDcMethods && (flags.dcRequired || method.dcRequired || hasMethodDC)
         ? { dcRequired: true }
         : method.dcRequired || hasMethodDC
@@ -2240,6 +2248,24 @@ function writeDatasets(
   lettersArg?: string[],
   namesArg?: string[]
 ) {
+  const getRefreshedNameFilter = (entries: AccessoryEntry[]) =>
+    new Set(
+      entries
+        .flatMap((entry) => [
+          getEntryDisplayName(entry),
+          ...(isAccessoryFamily(entry)
+            ? [
+                entry.familyName,
+                ...entry.levelVariants.flatMap((variant) => [
+                  variant.name,
+                  ...(variant.variantName ? [`${entry.familyName} ${variant.variantName}`] : []),
+                ]),
+              ]
+            : []),
+        ])
+        .map(normalizeNameFilterValue)
+    )
+
   for (const meta of ACCESSORY_SUBTYPES) {
     if (!selectedSubtypes.has(meta.subtype)) continue
     let entries = entriesBySubtype.get(meta.subtype) ?? []
@@ -2252,7 +2278,8 @@ function writeDatasets(
           ? (JSON.parse(fs.readFileSync(filePath, 'utf-8')) as AccessoryEntry[])
           : []
       })
-      const scopedNameFilter = new Set((namesArg ?? []).map(normalizeNameFilterValue))
+      const scopedNameFilter =
+        namesArg && namesArg.length > 0 ? getRefreshedNameFilter(entries) : new Set<string>()
       const preservedEntries = existingEntries.flatMap((entry) =>
         preserveExistingEntriesForScopedRefresh(entry, lettersArg, scopedNameFilter)
       )

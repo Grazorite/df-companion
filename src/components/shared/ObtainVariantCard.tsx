@@ -34,7 +34,12 @@ interface ObtainVariantCardProps {
 }
 
 function isMeaningfulObtainValue(value: string | undefined): boolean {
-  return Boolean(value && !/^(?:none|n\/?a)$/i.test(value.trim()))
+  if (!value) return false
+  const normalized = value.trim()
+  if (/^(?:none|n\/?a)$/i.test(normalized)) return false
+  return !/^0\s+(?:gold|dragon\s*coins?|d-?coins?|dc|defender'?s?\s+medals?|dm)$/i.test(
+    normalized
+  )
 }
 
 function ObtainTextLines({

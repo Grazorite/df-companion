@@ -9,6 +9,7 @@ import type {
 } from '../../src/types/item.ts'
 import {
   computeFamilyFlags,
+  formatVariantNameWithAccess,
   normalizeLevel,
   normalizeRomanDisplay,
 } from '../../src/utils/variantHelpers.ts'
@@ -434,6 +435,39 @@ function allSame<T>(values: T[]): boolean {
   return values.every((value) => JSON.stringify(value) === JSON.stringify(values[0]))
 }
 
+function isAccessOnlyVariantLabel(label: string | undefined): boolean {
+  return /^(?:Normal|Base|Resource|DA|DC|DA\/DC|D-Amulet|D-Coins?|D-Amulet\/D-Coins?)$/i.test(
+    label?.trim() ?? ''
+  )
+}
+
+function normalizeAccessOnlyLevelVariant(level: LevelVariant): LevelVariant {
+  if (!isAccessOnlyVariantLabel(level.variantName)) return level
+
+  const label = level.variantName?.trim().toLowerCase() ?? ''
+  const hasDA =
+    /^(?:da|da\/dc|d-amulet|d-amulet\/d-coins?)$/i.test(level.variantName ?? '') ||
+    level.obtainVariants.some((method) => method.daRequired)
+  const hasDC =
+    /^(?:dc|da\/dc|d-coins?|d-amulet\/d-coins?)$/i.test(level.variantName ?? '') ||
+    level.obtainVariants.some((method) => method.dcRequired || method.priceType === 'dc')
+  const hasDM = level.obtainVariants.some((method) => method.dmRequired || method.priceType === 'dm')
+  const baseLabel = String(level.actualLevel ?? level.levelDisplay)
+  const variantName =
+    label === 'normal' || label === 'base' || label === 'resource'
+      ? normalizeRomanDisplay(baseLabel)
+      : formatVariantNameWithAccess(baseLabel, {
+          daRequired: hasDA,
+          dcRequired: hasDC,
+          dmRequired: hasDM,
+        })
+
+  return {
+    ...level,
+    variantName,
+  }
+}
+
 function getTrailingNumericVariant(level: LevelVariant): number | undefined {
   const source = level.variantName ?? level.name
   const match = source.match(/\((\d+)\)\s*$/)
@@ -450,6 +484,17 @@ function shouldSortByTrailingNumericVariant(levels: LevelVariant[]): boolean {
 
 function sortAndRenumberVariants(levels: LevelVariant[]): LevelVariant[] {
   const sortByNumericVariant = shouldSortByTrailingNumericVariant(levels)
+  const accessDuplicateKeys = new Set<string>()
+  const accessKeyCounts = new Map<string, number>()
+
+  for (const level of levels) {
+    const key = String(level.actualLevel ?? level.levelDisplay)
+    accessKeyCounts.set(key, (accessKeyCounts.get(key) ?? 0) + 1)
+  }
+
+  for (const [key, count] of accessKeyCounts) {
+    if (count > 1) accessDuplicateKeys.add(key)
+  }
 
   return levels
     .slice()
@@ -465,10 +510,14 @@ function sortAndRenumberVariants(levels: LevelVariant[]): LevelVariant[] {
       if (aLevel !== bLevel) return aLevel - bLevel
       return compareTitles(a.name, b.name)
     })
-    .map((level, index) => ({
-      ...level,
-      levelNumber: index + 1,
-    }))
+    .map((level, index) => {
+      const key = String(level.actualLevel ?? level.levelDisplay)
+      const normalized = accessDuplicateKeys.has(key) ? normalizeAccessOnlyLevelVariant(level) : level
+      return {
+        ...normalized,
+        levelNumber: index + 1,
+      }
+    })
 }
 
 function buildFamilyFromGroup(items: Array<Pet | ItemFamily>): ItemFamily {

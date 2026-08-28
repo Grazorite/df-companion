@@ -1800,9 +1800,35 @@ function getCommonWeaponSuffix(tokensList: string[][]): string[] {
 
 function titleCaseWeaponTokens(tokens: string[]): string {
   return tokens
+    .map((token) => (/^(?:da|dc|dm)$/i.test(token) ? token.toUpperCase() : token))
     .map((token) => token.replace(/\b\w/g, (char) => char.toUpperCase()).replace(/'S\b/g, "'s"))
     .map(normalizeRomanDisplay)
     .join(' ')
+}
+
+function isAccessOnlyWeaponVariantLabel(label: string | undefined): boolean {
+  return /^(?:Normal|Base|Resource|DA|DC|DA\/DC|D-Amulet|D-Coins?|D-Amulet\/D-Coins?)$/i.test(
+    label?.trim() ?? ''
+  )
+}
+
+function normalizeAccessOnlyWeaponVariantLabel(
+  level: LevelVariant,
+  candidateLabel: string | undefined = level.variantName
+): string | undefined {
+  const label = candidateLabel?.trim()
+  if (!isAccessOnlyWeaponVariantLabel(label)) return undefined
+
+  const obtainVariants = level.obtainVariants ?? []
+  const labelHasDA = /^(?:DA|DA\/DC|D-Amulet|D-Amulet\/D-Coins?)$/i.test(label ?? '')
+  const labelHasDC = /^(?:DC|DA\/DC|D-Coins?|D-Amulet\/D-Coins?)$/i.test(label ?? '')
+  return formatVariantNameWithAccess(undefined, {
+    daRequired: labelHasDA || obtainVariants.some((method) => method.daRequired),
+    dcRequired:
+      labelHasDC ||
+      obtainVariants.some((method) => method.dcRequired || method.priceType === 'dc'),
+    dmRequired: obtainVariants.some((method) => method.dmRequired || method.priceType === 'dm'),
+  })
 }
 
 function normalizeWeaponFamilyName(name: string): string {
@@ -4514,18 +4540,24 @@ export function normalizeWeaponFamilyDisplayLabels(entries: WeaponEntry[]): Weap
       dedupeWeaponLevelVariants(
         entry.levelVariants.map((level) => {
           const name = normalizeWeaponVariantDisplayName(level.name, familyName)
+          const accessOnlyVariantName = normalizeAccessOnlyWeaponVariantLabel(level)
           const explicitBranchVariantName =
             level.variantName && /^(?:\(Base\)|\(DC\)|.+\s\(DC\))$/i.test(level.variantName)
               ? level.variantName
               : undefined
           const explicitVariantName =
-            level.variantName && !/^(?:[ivxlcdm]+|\([^)]+\))$/i.test(level.variantName)
+            level.variantName &&
+            !accessOnlyVariantName &&
+            !/^(?:[ivxlcdm]+|\([^)]+\))$/i.test(level.variantName)
               ? level.variantName
               : undefined
           const parentheticalVariantName = getWeaponParentheticalVariantName(name, familyName)
           const sourceVariantName = level.sourceUrl
             ? sourceVariantByUrl.get(level.sourceUrl)
             : undefined
+          const derivedVariantName = deriveWeaponCrossPostVariantName(name, familyName)
+          const normalizedDerivedVariantName =
+            normalizeAccessOnlyWeaponVariantLabel(level, derivedVariantName) ?? derivedVariantName
           const exactSourceTitle =
             level.sourceUrl && sourceByUrl.has(level.sourceUrl)
               ? stripVersionSuffix(
@@ -4543,12 +4575,13 @@ export function normalizeWeaponFamilyDisplayLabels(entries: WeaponEntry[]): Weap
             name,
             variantName:
               explicitBranchVariantName ??
+              accessOnlyVariantName ??
               parentheticalVariantName ??
               explicitVariantName ??
               sourceVariantName ??
               (hasSourceTitleVariants && isExactSourceFamily ? '(Base)' : undefined) ??
               getSpecialWeaponLevelVariantName({ ...level, name }, familyName) ??
-              deriveWeaponCrossPostVariantName(name, familyName) ??
+              normalizedDerivedVariantName ??
               level.variantName,
           }
         })

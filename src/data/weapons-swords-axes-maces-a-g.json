@@ -3525,9 +3525,9 @@
     ],
     "itemType": "Sword",
     "shared": {
-      "description": "This sword became available to you after reaching the rank of Arena Fighter at the Aeris Battlespire. It proudly displays your abilities in player versus player combat in the arena.",
+      "description": "",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/PitFighterSword.png",
-      "notes": "Weapon was differentiated with a Dragon Amulet indicator on February 28th, 2025.",
+      "notes": "Weapon was differentiated with a Dragon Amulet indicator on  February 28th, 2025.",
       "alsoSee": [
         {
           "name": "Pit Fighter Sword",
@@ -3584,8 +3584,8 @@
         "resists": "Darkness +2, Shrink +20",
         "rarity": "8",
         "itemType": "Sword",
-        "notes": "Weapon was differentiated with a Dragon Amulet indicator on February 28th, 2025.",
-        "variantName": "Da"
+        "notes": "Weapon was differentiated with a Dragon Amulet indicator on  February 28th, 2025.",
+        "variantName": "(DA)"
       }
     ],
     "category": "Weapon",

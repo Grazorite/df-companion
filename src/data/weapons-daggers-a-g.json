@@ -3633,9 +3633,9 @@
     ],
     "itemType": "Dagger",
     "shared": {
-      "description": "This Dagger became available to you after reaching the rank of Arena Fighter at the Aeris Battlespire. It proudly displays your abilities in player versus player combat in the arena.",
+      "description": "",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/PitFighterDagger.png",
-      "notes": "Weapon was differentiated with a Dragon Amulet indicator on February 28th, 2025.",
+      "notes": "Weapon was differentiated with a Dragon Amulet indicator on  February 28th, 2025.",
       "alsoSee": [
         {
           "name": "Pit Fighter Dagger",
@@ -3692,8 +3692,8 @@
         "resists": "Darkness +2, Shrink +20",
         "rarity": "8",
         "itemType": "Dagger",
-        "notes": "Weapon was differentiated with a Dragon Amulet indicator on February 28th, 2025.",
-        "variantName": "Da"
+        "notes": "Weapon was differentiated with a Dragon Amulet indicator on  February 28th, 2025.",
+        "variantName": "(DA)"
       }
     ],
     "category": "Weapon",
@@ -19660,7 +19660,7 @@
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=4623134",
         "title": "DF Encyclopedia: Dagger (Rogue Default)",
-        "variantLabel": "Dagger (Rogue Default) Rogue Default",
+        "variantLabel": "Dagger (Rogue Default)",
         "isPrimary": true
       }
     ],
@@ -20685,7 +20685,7 @@
     ],
     "itemType": "Dagger",
     "shared": {
-      "description": "This dagger really suits you! But it's not shaped like a club at all...",
+      "description": "",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/DaggerOfClubs.png",
       "element": "STO",
       "rarity": "5",
@@ -20819,7 +20819,7 @@
     ],
     "itemType": "Dagger",
     "shared": {
-      "description": "This dagger really suits you! But it's not shaped like a diamond at all...",
+      "description": "",
       "element": "WIN",
       "rarity": "5",
       "alsoSee": []
@@ -21458,7 +21458,7 @@
     ],
     "itemType": "Dagger",
     "shared": {
-      "description": "This dagger really suits you! But it's not shaped like a heart at all...",
+      "description": "",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/DaggerOfHearts.png",
       "element": "FIR",
       "rarity": "5",
@@ -22266,7 +22266,7 @@
     ],
     "itemType": "Dagger",
     "shared": {
-      "description": "This dagger really suits you! But it's not shaped like a spade at all...",
+      "description": "",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/DaggerOfSpades.png",
       "element": "WAT",
       "rarity": "5",
@@ -30055,41 +30055,23 @@
     "familyName": "Dirk of Spades",
     "slug": "weapon-dirk-of-spades",
     "aliasSlugs": [
-      "weapon-dirk-of-spades-2",
-      "weapon-dragon-dirk-of-spades",
       "weapon-elite-dirk-of-spades",
-      "weapon-elite-dragon-dirk-of-spades",
       "weapon-great-dirk-of-spades",
-      "weapon-great-dragon-dirk-of-spades",
-      "weapon-greater-dirk-of-spades-aria-in-wanderland",
-      "weapon-greater-dirk-of-spades-2",
-      "weapon-greater-dragon-dirk-of-spades",
       "weapon-high-dirk-of-spades",
-      "weapon-high-dragon-dirk-of-spades",
       "weapon-king-dirk-of-spades",
-      "weapon-king-dragon-dirk-of-spades",
       "weapon-knave-dirk-of-spades",
-      "weapon-knave-dragon-dirk-of-spades",
-      "weapon-queen-dirk-of-spades",
-      "weapon-queen-dragon-dirk-of-spades",
-      "weapon-ultimate-dirk-of-spades-aria-in-wanderland"
+      "weapon-queen-dirk-of-spades"
     ],
     "type": "weapon",
     "subtype": "dagger",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=16311069",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21314367",
     "familyOrigin": "cross-post",
     "familySources": [
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=21314367",
-        "title": "DF Encyclopedia: Dirk of Spades (2)",
-        "variantLabel": "Dirk of Spades (2)",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21318109",
-        "title": "DF Encyclopedia: Dragon Dirk of Spades",
-        "variantLabel": "Dragon Dirk of Spades",
-        "isPrimary": false
+        "title": "DF Encyclopedia: Dirk of Spades",
+        "variantLabel": "Dirk of Spades",
+        "isPrimary": true
       },
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=21319719",
@@ -30098,21 +30080,9 @@
         "isPrimary": false
       },
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21318947",
-        "title": "DF Encyclopedia: Great Dragon Dirk of Spades",
-        "variantLabel": "Great Dragon Dirk of Spades",
-        "isPrimary": false
-      },
-      {
         "url": "https://forums2.battleon.com/f/tm.asp?m=21319732",
-        "title": "DF Encyclopedia: Greater Dirk of Spades (2)",
+        "title": "DF Encyclopedia: Greater Dirk of Spades",
         "variantLabel": "Greater Dirk of Spades",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21319056",
-        "title": "DF Encyclopedia: Greater Dragon Dirk of Spades",
-        "variantLabel": "Greater Dragon Dirk of Spades",
         "isPrimary": false
       },
       {
@@ -30122,21 +30092,9 @@
         "isPrimary": false
       },
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21319598",
-        "title": "DF Encyclopedia: High Dragon Dirk of Spades",
-        "variantLabel": "High Dragon Dirk of Spades",
-        "isPrimary": false
-      },
-      {
         "url": "https://forums2.battleon.com/f/tm.asp?m=21319774",
         "title": "DF Encyclopedia: Elite Dirk of Spades",
         "variantLabel": "Elite Dirk of Spades",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21319657",
-        "title": "DF Encyclopedia: Elite Dragon Dirk of Spades",
-        "variantLabel": "Elite Dragon Dirk of Spades",
         "isPrimary": false
       },
       {
@@ -30146,21 +30104,9 @@
         "isPrimary": false
       },
       {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21319766",
-        "title": "DF Encyclopedia: Knave Dragon Dirk of Spades",
-        "variantLabel": "Knave Dragon Dirk of Spades",
-        "isPrimary": false
-      },
-      {
         "url": "https://forums2.battleon.com/f/tm.asp?m=21319815",
         "title": "DF Encyclopedia: Queen Dirk of Spades",
         "variantLabel": "Queen Dirk of Spades",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21319893",
-        "title": "DF Encyclopedia: Queen Dragon Dirk of Spades",
-        "variantLabel": "Queen Dragon Dirk of Spades",
         "isPrimary": false
       },
       {
@@ -30168,18 +30114,14 @@
         "title": "DF Encyclopedia: King Dirk of Spades",
         "variantLabel": "King Dirk of Spades",
         "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21314038",
-        "title": "DF Encyclopedia: King Dragon Dirk of Spades",
-        "variantLabel": "King Dragon Dirk of Spades",
-        "isPrimary": false
       }
     ],
     "itemType": "Dagger",
     "shared": {
       "description": "Use this weapon and you'll reap your rewards in spades! This item requires a Dragon Amulet.",
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AceofSpadesDirk.png",
       "element": "WAT",
+      "rarity": "8",
       "alsoSee": [
         {
           "name": "Ace of Spades Dirk",
@@ -30188,14 +30130,20 @@
           "url": "https://forums2.battleon.com/f/tm.asp?m=21311389"
         },
         {
+          "name": "Dirk of Spades",
+          "slug": "weapon-dirk-of-spades-aria-in-wanderland",
+          "type": "weapon",
+          "url": "https://forums2.battleon.com/f/tm.asp?m=17403241"
+        },
+        {
           "name": "Dirk of Spades (1)",
           "slug": "weapon-dirk-of-spades-1",
           "type": "weapon",
           "url": "https://forums2.battleon.com/f/tm.asp?m=16311069"
         },
         {
-          "name": "Dragon Ace of Spades Dirk",
-          "slug": "weapon-dragon-ace-of-spades-dirk",
+          "name": "Dragon Dirk of Spades",
+          "slug": "weapon-dragon-dirk-of-spades",
           "type": "weapon",
           "url": "https://forums2.battleon.com/f/tm.asp?m=21318080"
         },
@@ -30204,12 +30152,6 @@
           "slug": "weapon-greater-dirk-of-spades-1",
           "type": "weapon",
           "url": "https://forums2.battleon.com/f/tm.asp?m=17403239"
-        },
-        {
-          "name": "Dirk of Spades",
-          "slug": "weapon-dirk-of-spades-aria-in-wanderland",
-          "type": "weapon",
-          "url": "https://forums2.battleon.com/f/tm.asp?m=17403241"
         }
       ]
     },
@@ -30240,32 +30182,6 @@
         "itemType": "Dagger"
       },
       {
-        "levelNumber": 20,
-        "levelDisplay": "20",
-        "actualLevel": 20,
-        "variantName": "Dragon",
-        "name": "Dragon Dirk of Spades",
-        "damage": "37-55",
-        "stats": "Dodge +1, Crit +4, WIS +3, END +4, LUK +4, DEX +4, Bonus +2",
-        "obtainVariants": [
-          {
-            "location": "Card Shoppe DC",
-            "price": "200 Dragon Coins",
-            "priceType": "dc",
-            "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
-            "daRequired": false,
-            "dcRequired": true
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21318109",
-        "description": "Use this weapon and you'll reap your rewards in spades.",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AceofSpadesDirk.png",
-        "element": "WAT",
-        "resists": "Stone +4, Wind +4, Fire +4",
-        "rarity": "8",
-        "itemType": "Dagger"
-      },
-      {
         "levelNumber": 30,
         "levelDisplay": "30",
         "actualLevel": 30,
@@ -30287,32 +30203,6 @@
         "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AceofSpadesDirk.png",
         "element": "WAT",
         "resists": "Stone +5, Wind +5, Fire +5",
-        "rarity": "8",
-        "itemType": "Dagger"
-      },
-      {
-        "levelNumber": 30,
-        "levelDisplay": "30",
-        "actualLevel": 30,
-        "variantName": "Great Dragon",
-        "name": "Great Dragon Dirk of Spades",
-        "damage": "46-66",
-        "stats": "Dodge +2, Crit +6, WIS +3, END +6, LUK +5, DEX +5, Bonus +3",
-        "obtainVariants": [
-          {
-            "location": "Card Shoppe DC",
-            "price": "275 Dragon Coins",
-            "priceType": "dc",
-            "sellback": "248 DC (<24 hours) / 69 DC (>24 hours)",
-            "daRequired": false,
-            "dcRequired": true
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21318947",
-        "description": "Use this weapon and you'll reap your rewards in spades.",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AceofSpadesDirk.png",
-        "element": "WAT",
-        "resists": "Stone +6, Wind +6, Fire +6",
         "rarity": "8",
         "itemType": "Dagger"
       },
@@ -30342,32 +30232,6 @@
         "itemType": "Dagger"
       },
       {
-        "levelNumber": 40,
-        "levelDisplay": "40",
-        "actualLevel": 40,
-        "variantName": "Greater Dragon",
-        "name": "Greater Dragon Dirk of Spades",
-        "damage": "56-74",
-        "stats": "Dodge +3, Crit +6, WIS +4, END +7, LUK +6, DEX +6, Bonus +4",
-        "obtainVariants": [
-          {
-            "location": "Card Shoppe DC",
-            "price": "325 Dragon Coins",
-            "priceType": "dc",
-            "sellback": "293 DC (<24 hours) / 82 DC (>24 hours)",
-            "daRequired": false,
-            "dcRequired": true
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21319056",
-        "description": "Use this weapon and you'll reap your rewards in spades.",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AceofSpadesDirk.png",
-        "element": "WAT",
-        "resists": "Stone +7, Wind +7, Fire +7",
-        "rarity": "8",
-        "itemType": "Dagger"
-      },
-      {
         "levelNumber": 50,
         "levelDisplay": "50",
         "actualLevel": 50,
@@ -30389,32 +30253,6 @@
         "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AceofSpadesDirk.png",
         "element": "WAT",
         "resists": "Stone +9, Wind +9, Fire +9",
-        "rarity": "8",
-        "itemType": "Dagger"
-      },
-      {
-        "levelNumber": 50,
-        "levelDisplay": "50",
-        "actualLevel": 50,
-        "variantName": "High Dragon",
-        "name": "High Dragon Dirk of Spades",
-        "damage": "66-78",
-        "stats": "Dodge +3, Crit +8, Magic Def +1, Pierce Def +1, Melee Def +1, WIS +6, END +8, LUK +7, DEX +8, Bonus +5",
-        "obtainVariants": [
-          {
-            "location": "Card Shoppe DC",
-            "price": "350 Dragon Coins",
-            "priceType": "dc",
-            "sellback": "315 DC (<24 hours) / 88 DC (>24 hours)",
-            "daRequired": false,
-            "dcRequired": true
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21319598",
-        "description": "Use this weapon and you'll reap your rewards in spades!",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AceofSpadesDirk.png",
-        "element": "WAT",
-        "resists": "Stone +10, Wind +10, Fire +10",
         "rarity": "8",
         "itemType": "Dagger"
       },
@@ -30444,32 +30282,6 @@
         "itemType": "Dagger"
       },
       {
-        "levelNumber": 60,
-        "levelDisplay": "60",
-        "actualLevel": 60,
-        "variantName": "Elite Dragon",
-        "name": "Elite Dragon Dirk of Spades",
-        "damage": "72-86",
-        "stats": "Dodge +3, Crit +9, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +8, END +9, LUK +9, DEX +10, Bonus +6",
-        "obtainVariants": [
-          {
-            "location": "Card Shoppe DC",
-            "price": "375 Dragon Coins",
-            "priceType": "dc",
-            "sellback": "338 DC (<24 hours) / 94 DC (>24 hours)",
-            "daRequired": false,
-            "dcRequired": true
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21319657",
-        "description": "Use this weapon and you'll reap your rewards in spades!",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AceofSpadesDirk.png",
-        "element": "WAT",
-        "resists": "Stone +10, Wind +10, Fire +10, All +1",
-        "rarity": "8",
-        "itemType": "Dagger"
-      },
-      {
         "levelNumber": 70,
         "levelDisplay": "70",
         "actualLevel": 70,
@@ -30491,32 +30303,6 @@
         "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AceofSpadesDirk.png",
         "element": "WAT",
         "resists": "Stone +12, Wind +12, Fire +12",
-        "rarity": "8",
-        "itemType": "Dagger"
-      },
-      {
-        "levelNumber": 70,
-        "levelDisplay": "70",
-        "actualLevel": 70,
-        "variantName": "Knave Dragon",
-        "name": "Knave Dragon Dirk of Spades",
-        "damage": "79-91",
-        "stats": "Block +1, Dodge +3, Crit +11, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +9, END +10, LUK +11, DEX +11, Bonus +8",
-        "obtainVariants": [
-          {
-            "location": "Card Shoppe DC",
-            "price": "400 Dragon Coins",
-            "priceType": "dc",
-            "sellback": "360 DC (<24 hours) / 100 DC (>24 hours)",
-            "daRequired": false,
-            "dcRequired": true
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21319766",
-        "description": "Use this weapon and you'll reap your rewards in spades!",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AceofSpadesDirk.png",
-        "element": "WAT",
-        "resists": "Stone +12, Wind +12, Fire +12, All +1",
         "rarity": "8",
         "itemType": "Dagger"
       },
@@ -30546,32 +30332,6 @@
         "itemType": "Dagger"
       },
       {
-        "levelNumber": 75,
-        "levelDisplay": "75",
-        "actualLevel": 75,
-        "variantName": "Queen Dragon",
-        "name": "Queen Dragon Dirk of Spades",
-        "damage": "83-93",
-        "stats": "Block +1, Dodge +3, Crit +11, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +10, END +11, LUK +12, DEX +12, Bonus +9",
-        "obtainVariants": [
-          {
-            "location": "Card Shoppe DC",
-            "price": "425 Dragon Coins",
-            "priceType": "dc",
-            "sellback": "383 DC (<24 hours) / 107 DC (>24 hours)",
-            "daRequired": false,
-            "dcRequired": true
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21319893",
-        "description": "Use this weapon and you'll reap your rewards in spades!",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AceofSpadesDirk.png",
-        "element": "WAT",
-        "resists": "Stone +13, Wind +13, Fire +13, All +2",
-        "rarity": "8",
-        "itemType": "Dagger"
-      },
-      {
         "levelNumber": 80,
         "levelDisplay": "80",
         "actualLevel": 80,
@@ -30595,44 +30355,15 @@
         "resists": "Stone +15, Wind +15, Fire +15",
         "rarity": "8",
         "itemType": "Dagger"
-      },
-      {
-        "levelNumber": 80,
-        "levelDisplay": "80",
-        "actualLevel": 80,
-        "variantName": "King Dragon",
-        "name": "King Dragon Dirk of Spades",
-        "damage": "85-97",
-        "stats": "Block +2, Dodge +3, Crit +13, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +11, END +11, LUK +13, DEX +14, Bonus +10",
-        "obtainVariants": [
-          {
-            "location": "Card Shoppe DC",
-            "price": "450 Dragon Coins",
-            "priceType": "dc",
-            "sellback": "405 DC (<24 hours) / 113 DC (>24 hours)",
-            "daRequired": false,
-            "dcRequired": true
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21314038",
-        "description": "Use this weapon and you'll reap your rewards in spades!",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AceofSpadesDirk.png",
-        "element": "WAT",
-        "resists": "Stone +15, Wind +15, Fire +15, All +2",
-        "rarity": "8",
-        "itemType": "Dagger"
       }
     ],
     "category": "Weapon",
     "releaseDate": "",
     "tags": [
-      "dc",
-      "free",
-      "gold",
-      "wat"
+      "gold"
     ],
     "hasDA": true,
-    "hasDC": true,
+    "hasDC": false,
     "hasDM": false,
     "hasFree": false,
     "hasMerge": false,
@@ -30883,56 +30614,6 @@
     "daRequired": false,
     "dcRequired": true,
     "alsoSee": []
-  },
-  {
-    "id": "weapon-dragon-ace-of-spades-dirk",
-    "name": "Dragon Ace of Spades Dirk",
-    "slug": "weapon-dragon-ace-of-spades-dirk",
-    "type": "weapon",
-    "subtype": "dagger",
-    "description": "Use this weapon and you'll reap your rewards in spades.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21318080",
-    "releaseDate": "",
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AceofSpadesDirk.png",
-    "elements": [
-      "WAT"
-    ],
-    "level": "10",
-    "damage": "29-37",
-    "stats": "Dodge +1, Crit +3, WIS +1, END +3, LUK +3, DEX +2, Bonus +1",
-    "resists": "Stone +2, Wind +2, Fire +2",
-    "rarity": "8",
-    "itemType": "Dagger",
-    "obtainMethods": [
-      {
-        "location": "Card Shoppe DC",
-        "price": "130 Dragon Coins",
-        "priceType": "dc",
-        "sellback": "117 DC (<24 hours) / 33 DC (>24 hours)",
-        "daRequired": false,
-        "dcRequired": true
-      }
-    ],
-    "alsoSee": [
-      {
-        "name": "Ace of Spades Dirk",
-        "slug": "weapon-ace-of-spades-dirk",
-        "type": "weapon",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21311389"
-      },
-      {
-        "name": "Dirk of Spades",
-        "slug": "weapon-dirk-of-spades",
-        "type": "weapon",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=21319893"
-      }
-    ],
-    "tags": [
-      "wat",
-      "dc"
-    ],
-    "daRequired": false,
-    "dcRequired": true
   },
   {
     "id": "weapon-dragon-carving-fork",
@@ -31399,7 +31080,7 @@
     ],
     "itemType": "Dagger",
     "shared": {
-      "description": "Use this weapon and you'll reap your rewards in spades.",
+      "description": "",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AceofClubsDirk.png",
       "element": "STO",
       "rarity": "8",
@@ -31748,7 +31429,7 @@
     ],
     "itemType": "Dagger",
     "shared": {
-      "description": "Use this weapon and you'll reap your rewards in spades.",
+      "description": "",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AceofDiamondsDirk.png",
       "element": "WIN",
       "rarity": "8",
@@ -32097,7 +31778,7 @@
     ],
     "itemType": "Dagger",
     "shared": {
-      "description": "Use this weapon and you'll reap your rewards in spades.",
+      "description": "",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AceofHeartsDirk.png",
       "element": "FIR",
       "rarity": "8",
@@ -32364,6 +32045,367 @@
     "hasMerge": false,
     "elements": [
       "FIR"
+    ],
+    "levelRange": "10-80"
+  },
+  {
+    "id": "weapon-dragon-dirk-of-spades",
+    "familyName": "Dragon Dirk of Spades",
+    "slug": "weapon-dragon-dirk-of-spades",
+    "aliasSlugs": [
+      "weapon-dragon-ace-of-spades-dirk",
+      "weapon-elite-dragon-dirk-of-spades",
+      "weapon-great-dragon-dirk-of-spades",
+      "weapon-greater-dragon-dirk-of-spades",
+      "weapon-high-dragon-dirk-of-spades",
+      "weapon-king-dragon-dirk-of-spades",
+      "weapon-knave-dragon-dirk-of-spades",
+      "weapon-queen-dragon-dirk-of-spades",
+      "weapon-dragon-dirk-of-spades-all-versions",
+      "weapon-ace-of-spades-dirk-dragon-dirk-of-spades",
+      "weapon-base-dragon-dirk-of-spades"
+    ],
+    "type": "weapon",
+    "subtype": "dagger",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21318080",
+    "familyOrigin": "cross-post",
+    "familySources": [
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21318080",
+        "title": "DF Encyclopedia: Dragon Ace of Spades Dirk",
+        "variantLabel": "Dragon Ace of Spades Dirk",
+        "isPrimary": true
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21318109",
+        "title": "DF Encyclopedia: Dragon Dirk of Spades",
+        "variantLabel": "Dragon Dirk of Spades",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21318947",
+        "title": "DF Encyclopedia: Great Dragon Dirk of Spades",
+        "variantLabel": "Great Dragon Dirk of Spades",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21319056",
+        "title": "DF Encyclopedia: Greater Dragon Dirk of Spades",
+        "variantLabel": "Greater Dragon Dirk of Spades",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21319598",
+        "title": "DF Encyclopedia: High Dragon Dirk of Spades",
+        "variantLabel": "High Dragon Dirk of Spades",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21319657",
+        "title": "DF Encyclopedia: Elite Dragon Dirk of Spades",
+        "variantLabel": "Elite Dragon Dirk of Spades",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21319766",
+        "title": "DF Encyclopedia: Knave Dragon Dirk of Spades",
+        "variantLabel": "Knave Dragon Dirk of Spades",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21319893",
+        "title": "DF Encyclopedia: Queen Dragon Dirk of Spades",
+        "variantLabel": "Queen Dragon Dirk of Spades",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21314038",
+        "title": "DF Encyclopedia: King Dragon Dirk of Spades",
+        "variantLabel": "King Dragon Dirk of Spades",
+        "isPrimary": false
+      }
+    ],
+    "itemType": "Dagger",
+    "shared": {
+      "description": "",
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AceofSpadesDirk.png",
+      "element": "WAT",
+      "rarity": "8",
+      "alsoSee": [
+        {
+          "name": "Ace of Spades Dirk",
+          "slug": "weapon-ace-of-spades-dirk",
+          "type": "weapon",
+          "url": "https://forums2.battleon.com/f/tm.asp?m=21311389"
+        },
+        {
+          "name": "Dirk of Spades",
+          "slug": "weapon-dirk-of-spades-aria-in-wanderland",
+          "type": "weapon",
+          "url": "https://forums2.battleon.com/f/tm.asp?m=17403241"
+        },
+        {
+          "name": "Dirk of Spades (1)",
+          "slug": "weapon-dirk-of-spades-1",
+          "type": "weapon",
+          "url": "https://forums2.battleon.com/f/tm.asp?m=16311069"
+        },
+        {
+          "name": "Greater Dirk of Spades (1)",
+          "slug": "weapon-greater-dirk-of-spades-1",
+          "type": "weapon",
+          "url": "https://forums2.battleon.com/f/tm.asp?m=17403239"
+        }
+      ]
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 10,
+        "levelDisplay": "10",
+        "actualLevel": 10,
+        "variantName": "Ace Of Spades Dirk",
+        "name": "Dragon Ace of Spades Dirk",
+        "damage": "29-37",
+        "stats": "Dodge +1, Crit +3, WIS +1, END +3, LUK +3, DEX +2, Bonus +1",
+        "obtainVariants": [
+          {
+            "location": "Card Shoppe DC",
+            "price": "130 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "117 DC (<24 hours) / 33 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21318080",
+        "description": "Use this weapon and you'll reap your rewards in spades.",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AceofSpadesDirk.png",
+        "element": "WAT",
+        "resists": "Stone +2, Wind +2, Fire +2",
+        "rarity": "8",
+        "itemType": "Dagger"
+      },
+      {
+        "levelNumber": 20,
+        "levelDisplay": "20",
+        "actualLevel": 20,
+        "variantName": "(Base)",
+        "name": "Dragon Dirk of Spades",
+        "damage": "37-55",
+        "stats": "Dodge +1, Crit +4, WIS +3, END +4, LUK +4, DEX +4, Bonus +2",
+        "obtainVariants": [
+          {
+            "location": "Card Shoppe DC",
+            "price": "200 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21318109",
+        "description": "Use this weapon and you'll reap your rewards in spades.",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AceofSpadesDirk.png",
+        "element": "WAT",
+        "resists": "Stone +4, Wind +4, Fire +4",
+        "rarity": "8",
+        "itemType": "Dagger"
+      },
+      {
+        "levelNumber": 30,
+        "levelDisplay": "30",
+        "actualLevel": 30,
+        "variantName": "Great",
+        "name": "Great Dragon Dirk of Spades",
+        "damage": "46-66",
+        "stats": "Dodge +2, Crit +6, WIS +3, END +6, LUK +5, DEX +5, Bonus +3",
+        "obtainVariants": [
+          {
+            "location": "Card Shoppe DC",
+            "price": "275 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "248 DC (<24 hours) / 69 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21318947",
+        "description": "Use this weapon and you'll reap your rewards in spades.",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AceofSpadesDirk.png",
+        "element": "WAT",
+        "resists": "Stone +6, Wind +6, Fire +6",
+        "rarity": "8",
+        "itemType": "Dagger"
+      },
+      {
+        "levelNumber": 40,
+        "levelDisplay": "40",
+        "actualLevel": 40,
+        "variantName": "Greater",
+        "name": "Greater Dragon Dirk of Spades",
+        "damage": "56-74",
+        "stats": "Dodge +3, Crit +6, WIS +4, END +7, LUK +6, DEX +6, Bonus +4",
+        "obtainVariants": [
+          {
+            "location": "Card Shoppe DC",
+            "price": "325 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "293 DC (<24 hours) / 82 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21319056",
+        "description": "Use this weapon and you'll reap your rewards in spades.",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AceofSpadesDirk.png",
+        "element": "WAT",
+        "resists": "Stone +7, Wind +7, Fire +7",
+        "rarity": "8",
+        "itemType": "Dagger"
+      },
+      {
+        "levelNumber": 50,
+        "levelDisplay": "50",
+        "actualLevel": 50,
+        "variantName": "High",
+        "name": "High Dragon Dirk of Spades",
+        "damage": "66-78",
+        "stats": "Dodge +3, Crit +8, Magic Def +1, Pierce Def +1, Melee Def +1, WIS +6, END +8, LUK +7, DEX +8, Bonus +5",
+        "obtainVariants": [
+          {
+            "location": "Card Shoppe DC",
+            "price": "350 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "315 DC (<24 hours) / 88 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21319598",
+        "description": "Use this weapon and you'll reap your rewards in spades!",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AceofSpadesDirk.png",
+        "element": "WAT",
+        "resists": "Stone +10, Wind +10, Fire +10",
+        "rarity": "8",
+        "itemType": "Dagger"
+      },
+      {
+        "levelNumber": 60,
+        "levelDisplay": "60",
+        "actualLevel": 60,
+        "variantName": "Elite",
+        "name": "Elite Dragon Dirk of Spades",
+        "damage": "72-86",
+        "stats": "Dodge +3, Crit +9, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +8, END +9, LUK +9, DEX +10, Bonus +6",
+        "obtainVariants": [
+          {
+            "location": "Card Shoppe DC",
+            "price": "375 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "338 DC (<24 hours) / 94 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21319657",
+        "description": "Use this weapon and you'll reap your rewards in spades!",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AceofSpadesDirk.png",
+        "element": "WAT",
+        "resists": "Stone +10, Wind +10, Fire +10, All +1",
+        "rarity": "8",
+        "itemType": "Dagger"
+      },
+      {
+        "levelNumber": 70,
+        "levelDisplay": "70",
+        "actualLevel": 70,
+        "variantName": "Knave",
+        "name": "Knave Dragon Dirk of Spades",
+        "damage": "79-91",
+        "stats": "Block +1, Dodge +3, Crit +11, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +9, END +10, LUK +11, DEX +11, Bonus +8",
+        "obtainVariants": [
+          {
+            "location": "Card Shoppe DC",
+            "price": "400 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "360 DC (<24 hours) / 100 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21319766",
+        "description": "Use this weapon and you'll reap your rewards in spades!",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AceofSpadesDirk.png",
+        "element": "WAT",
+        "resists": "Stone +12, Wind +12, Fire +12, All +1",
+        "rarity": "8",
+        "itemType": "Dagger"
+      },
+      {
+        "levelNumber": 75,
+        "levelDisplay": "75",
+        "actualLevel": 75,
+        "variantName": "Queen",
+        "name": "Queen Dragon Dirk of Spades",
+        "damage": "83-93",
+        "stats": "Block +1, Dodge +3, Crit +11, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +10, END +11, LUK +12, DEX +12, Bonus +9",
+        "obtainVariants": [
+          {
+            "location": "Card Shoppe DC",
+            "price": "425 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "383 DC (<24 hours) / 107 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21319893",
+        "description": "Use this weapon and you'll reap your rewards in spades!",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AceofSpadesDirk.png",
+        "element": "WAT",
+        "resists": "Stone +13, Wind +13, Fire +13, All +2",
+        "rarity": "8",
+        "itemType": "Dagger"
+      },
+      {
+        "levelNumber": 80,
+        "levelDisplay": "80",
+        "actualLevel": 80,
+        "variantName": "King",
+        "name": "King Dragon Dirk of Spades",
+        "damage": "85-97",
+        "stats": "Block +2, Dodge +3, Crit +13, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +11, END +11, LUK +13, DEX +14, Bonus +10",
+        "obtainVariants": [
+          {
+            "location": "Card Shoppe DC",
+            "price": "450 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "405 DC (<24 hours) / 113 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21314038",
+        "description": "Use this weapon and you'll reap your rewards in spades!",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AceofSpadesDirk.png",
+        "element": "WAT",
+        "resists": "Stone +15, Wind +15, Fire +15, All +2",
+        "rarity": "8",
+        "itemType": "Dagger"
+      }
+    ],
+    "category": "Weapon",
+    "releaseDate": "",
+    "tags": [
+      "dc"
+    ],
+    "hasDA": false,
+    "hasDC": true,
+    "hasDM": false,
+    "hasFree": false,
+    "hasMerge": false,
+    "elements": [
+      "WAT"
     ],
     "levelRange": "10-80"
   },

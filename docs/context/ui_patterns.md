@@ -46,9 +46,10 @@ All "How to Obtain" sections must follow this unified pattern:
 - **Content-specific fields**:
   - **Badges/Guests**: Location/instruction only
   - **Pets**: Location + divider + price/required items/sellback fields
-  - Across all categories, suppress the price/sellback grid when both values are `N/A`, `None`, or
-    empty. Keep Required Items / Requires visible, and still show whichever of price or sellback is
-    meaningful when only one exists.
+  - Across all categories, suppress the price/sellback grid when both values are `N/A`, `None`,
+    empty, or zero-value currency strings such as `0 Gold`, `0 DC`, or `0 Defender's Medals`. Keep
+    Required Items / Requires visible, and still show whichever of price or sellback is meaningful
+    when only one exists.
 - **Access/currency method pills**: shared obtain cards show per-method `DA Required` and `DC` pills
   when the method requires DA or uses Dragon Coins. The label is `DC`, not `DC Required`, because the
   meaning is already scoped to the obtain method.
@@ -134,6 +135,9 @@ requirements. This lets items from the same shop at the same price type (e.g. al
 items, or merge recipes differing only by variant label) link to each other. The conservative
 name-similarity threshold (Jaccard + prefix scoring ≥ 0.55) prevents false positives. Examples: all
 12 Plushie pets link; Exalted Blaster (Amalgam/Destiny/Doom) trinkets link.
+Ordinal words such as `First`, `Second`, and `Third` are ignored during related-name scoring, so
+same-obtain sibling sets like `First Golden Ring` through `Fifth Golden Ring` can infer links without
+hardcoded `alsoSee` data.
 
 Weapons additionally infer exact-name cross-subtype siblings when the displayed name is specific
 enough and at least one obtain price type overlaps. This covers same-named
@@ -403,6 +407,12 @@ union. Example: base Linus shows `[ICE]`; Prince/King/Emperor Linus show `[ICE] 
 - Use `(Base)` / `(DC)` for a simple two-variant base/DC-only family. Use `(Base)` /
   `(Base) (DC)` only when the base entry is one member of a larger named, numbered, or Roman pattern
   that also has sibling variants.
+- When duplicate stored labels differ only by access flags, the UI appends the current row's full
+  access signature for disambiguation. Examples: `Cunning (DA)` / `Cunning (DC)`, `Bubbly (DA)` /
+  `Bubbly (DA, DC)`, and `I (DA)` / `I (DA, DC)`.
+- If every row in that duplicate-label group is DA-required, omit `DA` from the visible suffix and
+  show only the remaining differentiator. Example: `Bubbly` / `Bubbly (DC)`, not `Bubbly (DA)` /
+  `Bubbly (DA, DC)`.
 - Scrapers should build stored variant labels with the shared `formatVariantNameWithAccess` helper
   whenever a natural label is combined with access flags. The shared grammar is:
   - no natural label + clear access distinction → `(DA)`, `(DA, DC)`, `(DC)`, `(DM)`
@@ -413,9 +423,9 @@ union. Example: base Linus shows `[ICE]`; Prince/King/Emperor Linus show `[ICE] 
 - For "(All Versions)" families where the same labels repeat across levels, prefix each label with
   its level in parentheses to distinguish level from variant name: `(10)`, `(10) (DC)`, `(20)`,
   `(20) (DC)`, …
-- `(DA)` is **not** appended in that multi-level access-split case — the level already disambiguates.
-  The `(DA)` marker is reserved for the genuine two-variant DA-vs-DC case (single level, one DA and
-  one DC variant, no other variants).
+- `(DA)` is **not** appended in the multi-level access-only case where the level already
+  disambiguates repeated unnamed rows. It is appended when duplicate named/Roman labels need an
+  explicit access distinction.
 - `Pirate Monkey` is the reference spot-check for mixed rules: it combines base/named variants,
   level/access duplicate labels, and access-only labels, and its current stored variant names are
   considered correct.

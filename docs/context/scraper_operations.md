@@ -204,7 +204,10 @@ to same-level siblings with the same DA/DC/DM access signature.
 
 - All scraper entry points support `--names="Name One,Name Two"` for scoped refreshes. Pets and guests
   also support `--fresh` to bypass cached progress for the selected names.
-- Scoped name/letter runs preserve out-of-scope data instead of writing a tiny partial dataset.
+- Scoped name/letter runs preserve out-of-scope data instead of writing a tiny partial dataset. When
+  a `--names` run does not find a requested name in a selected subtype, that missing name must not
+  prune existing rows from that subtype. For cross-post families, targeted refreshes must keep
+  unmatched sibling variants in the merge pool so post-processing can rebuild the family.
 - Weapons additionally support `--url=` / `--urls=` for direct forum-post refreshes when the master
   index is missing or misclassifying an item; pass exactly one `--subtypes=` value with direct URLs.
 - Weapon index navigation links such as `(A-G)` and `(A-J)` are ignored before scraping; they are not

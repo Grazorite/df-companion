@@ -103,7 +103,7 @@
       }
     ],
     "shared": {
-      "description": "This helm once belonged to Baltael, the first SoulWeaver. The power it bestows shows you how to fully Synchronize with Aegis, enhancing your Soul Aegis's defensive power, SoulSynch's number of hits, and Retribution's damage.",
+      "description": "",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/Baltael'sAventail.png",
       "rarity": "100",
       "notes": "Items occupy the player's helm slot when equipped.\nArtifact helms are animated; the soul piece crackles with energy periodically in its Energy elemental attunement appearance, and part of the soul piece spirals continuously in its Poison elemental attunement appearance.\nArtifact helms are color-custom; the aventail is linked to the player's base color.\nArtifact helms' soul piece is attuned to the player's equipped weapon's element; refer to  this chart for all appearances.\nDuring  April Fools' Day 2018, the level 60 and 80 versions modified the  Fleshweaver class.\nLevel 60 and 80 versions' names were differentiated with stat indicators and tiered with Roman numerals on  July 1st, 2023.\nThe following changes were implemented on  August 23rd, 2024:\n  • Level 60 and 80 versions previously had the description: This helm once belonged to Baltael, the first SoulWeaver. The power it bestows shows you how to fully Synchronize with Aegis, enhancing your Soul Aegis's defensive power, Valour Impact's number of hits, and SoulSync's damage.\n  • Level 60 and 80 versions' Resists were updated.\n  • Skilled and Master versions were released, balancing the benefits of their precursors, but requiring a Dragon Amulet to equip.\nSynched version was released as a direct upgrade to the Skilled and Master versions, also requiring a Dragon Amulet to equip, on  September 6th, 2024.",
@@ -1054,7 +1054,7 @@
       }
     ],
     "shared": {
-      "description": "The warm and magically infused cloak of the Frost Moglin Knights! Equip this item with the Frost Moglin Knight's Helm to upgrade the Frost Moglin Armor!",
+      "description": "",
       "imageUrl": "https://i.imgur.com/StWTUCm.png",
       "rarity": "0",
       "notes": "Items occupy the player's cape slot when equipped."
@@ -1350,7 +1350,7 @@
       }
     ],
     "shared": {
-      "description": "The helm of the legendary order of Frost Moglin Knights! An artifact for Frost Moglin Armor along with the Frost Moglin Knight's Cape.",
+      "description": "",
       "imageUrl": "https://i.imgur.com/UWUlCbM.png",
       "rarity": "5",
       "notes": "Items occupy the player's helm slot when equipped."
@@ -1653,7 +1653,7 @@
       }
     ],
     "shared": {
-      "description": "This shining gold cowbell smells faintly of fresh bacon. If you wanted, you could wear it around your neck. But... why? An Artifact for the Evolved ChickenCow armor.",
+      "description": "",
       "rarity": "5",
       "notes": "Numerals associated with each Harmonized Cowbell represent the numbers 1-9 in binary.\nItems occupy the player's necklace slot when equipped."
     },

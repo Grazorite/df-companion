@@ -19612,7 +19612,7 @@
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=22161023",
         "title": "DF Encyclopedia: Shadowdagger (Shadow Rogue Default)",
-        "variantLabel": "Shadowdagger (Shadow Rogue Default) Shadow Rogue Default",
+        "variantLabel": "Shadowdagger (Shadow Rogue Default)",
         "isPrimary": true
       }
     ],
@@ -19903,7 +19903,8 @@
       "weapon-base-shardknife",
       "weapon-mighty-shardknife",
       "weapon-strong-shardknife",
-      "weapon-shardknife-all-versions"
+      "weapon-shardknife-all-versions",
+      "weapon-da-shardknife"
     ],
     "type": "weapon",
     "subtype": "dagger",
@@ -19942,7 +19943,7 @@
         "levelNumber": 6,
         "levelDisplay": "6",
         "actualLevel": 6,
-        "variantName": "Base",
+        "variantName": "(DA)",
         "name": "Base Shardknife",
         "damage": "14-30",
         "stats": "Crit +1, DEX +2",
@@ -24161,7 +24162,7 @@
         "levelNumber": 10,
         "levelDisplay": "10",
         "actualLevel": 10,
-        "variantName": "Base",
+        "variantName": "(Base)",
         "name": "Base Spectrus Dagger",
         "damage": "20-34",
         "stats": "Crit +1, STR +1, Bonus +1",

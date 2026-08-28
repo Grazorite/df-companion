@@ -7190,7 +7190,8 @@
       "weapon-base-purebeam",
       "weapon-mighty-purebeam",
       "weapon-strong-purebeam",
-      "weapon-purebeam-all-versions"
+      "weapon-purebeam-all-versions",
+      "weapon-da-purebeam"
     ],
     "type": "weapon",
     "subtype": "sword-axe-mace",
@@ -7229,7 +7230,7 @@
         "levelNumber": 6,
         "levelDisplay": "6",
         "actualLevel": 6,
-        "variantName": "Base",
+        "variantName": "(DA)",
         "name": "Base Purebeam",
         "damage": "20-24",
         "stats": "Dodge +1, Crit +1, STR +2",
@@ -26487,7 +26488,7 @@
         "levelNumber": 10,
         "levelDisplay": "10",
         "actualLevel": 10,
-        "variantName": "Base",
+        "variantName": "(Base)",
         "name": "Base Spectrus Sword",
         "damage": "20-34",
         "stats": "Crit +1, STR +1, Bonus +1",

@@ -3571,9 +3571,9 @@
     ],
     "itemType": "Staff",
     "shared": {
-      "description": "This staff became available to you after reaching the rank of Arena Fighter at the Aeris Battlespire. It proudly displays your abilities in player versus player combat in the arena.",
+      "description": "",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/PitFighterStaff.png",
-      "notes": "Weapon was differentiated with a Dragon Amulet indicator on February 28th, 2025.",
+      "notes": "Weapon was differentiated with a Dragon Amulet indicator on  February 28th, 2025.",
       "alsoSee": [
         {
           "name": "Pit Fighter Staff",
@@ -3630,8 +3630,8 @@
         "resists": "Darkness +2, Shrink +20",
         "rarity": "8",
         "itemType": "Staff",
-        "notes": "Weapon was differentiated with a Dragon Amulet indicator on February 28th, 2025.",
-        "variantName": "Da"
+        "notes": "Weapon was differentiated with a Dragon Amulet indicator on  February 28th, 2025.",
+        "variantName": "(DA)"
       }
     ],
     "category": "Weapon",
@@ -24578,7 +24578,7 @@
     ],
     "itemType": "Staff",
     "shared": {
-      "description": "Use this weapon and you'll reap your rewards in spades.",
+      "description": "",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AceofClubsStaff.png",
       "element": "STO",
       "rarity": "8",
@@ -24596,16 +24596,16 @@
           "url": "https://forums2.battleon.com/f/fb.asp?m=21314400"
         },
         {
-          "name": "Staff of Clubs",
-          "slug": "weapon-staff-of-clubs-card-shoppe",
-          "type": "weapon",
-          "url": "https://forums2.battleon.com/f/tm.asp?m=21314427"
-        },
-        {
           "name": "High Staff of Clubs",
           "slug": "weapon-high-staff-of-clubs",
           "type": "weapon",
           "url": "https://forums2.battleon.com/f/fb.asp?m=21314373"
+        },
+        {
+          "name": "Staff of Clubs",
+          "slug": "weapon-staff-of-clubs-card-shoppe",
+          "type": "weapon",
+          "url": "https://forums2.battleon.com/f/tm.asp?m=21314427"
         },
         {
           "name": "Staff of Clubs",
@@ -24945,7 +24945,7 @@
     ],
     "itemType": "Staff",
     "shared": {
-      "description": "Use this weapon and you'll reap your rewards in spades.",
+      "description": "",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AceofDiamondsStaff.png",
       "element": "WIN",
       "rarity": "8",
@@ -24963,16 +24963,16 @@
           "url": "https://forums2.battleon.com/f/fb.asp?m=21314399"
         },
         {
-          "name": "Staff of Diamonds",
-          "slug": "weapon-staff-of-diamonds-card-shoppe",
-          "type": "weapon",
-          "url": "https://forums2.battleon.com/f/tm.asp?m=21314428"
-        },
-        {
           "name": "High Staff of Diamonds",
           "slug": "weapon-high-staff-of-diamonds",
           "type": "weapon",
           "url": "https://forums2.battleon.com/f/fb.asp?m=21314374"
+        },
+        {
+          "name": "Staff of Diamonds",
+          "slug": "weapon-staff-of-diamonds-card-shoppe",
+          "type": "weapon",
+          "url": "https://forums2.battleon.com/f/tm.asp?m=21314428"
         },
         {
           "name": "Staff of Diamonds",
@@ -25312,7 +25312,7 @@
     ],
     "itemType": "Staff",
     "shared": {
-      "description": "Use this weapon and you'll reap your rewards in spades.",
+      "description": "",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AceofHeartsStaff.png",
       "element": "FIR",
       "rarity": "8",
@@ -25330,16 +25330,16 @@
           "url": "https://forums2.battleon.com/f/fb.asp?m=21314398"
         },
         {
-          "name": "Staff of Hearts",
-          "slug": "weapon-staff-of-hearts-card-shoppe",
-          "type": "weapon",
-          "url": "https://forums2.battleon.com/f/tm.asp?m=21314429"
-        },
-        {
           "name": "High Staff of Hearts",
           "slug": "weapon-high-staff-of-hearts",
           "type": "weapon",
           "url": "https://forums2.battleon.com/f/fb.asp?m=21314375"
+        },
+        {
+          "name": "Staff of Hearts",
+          "slug": "weapon-staff-of-hearts-card-shoppe",
+          "type": "weapon",
+          "url": "https://forums2.battleon.com/f/tm.asp?m=21314429"
         },
         {
           "name": "Staff of Hearts",
@@ -25679,7 +25679,7 @@
     ],
     "itemType": "Staff",
     "shared": {
-      "description": "Use this weapon and you'll reap your rewards in spades.",
+      "description": "",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/AceofSpadesStaff.png",
       "element": "WAT",
       "rarity": "8",
@@ -25697,16 +25697,16 @@
           "url": "https://forums2.battleon.com/f/fb.asp?m=21314397"
         },
         {
-          "name": "Staff of Spades",
-          "slug": "weapon-staff-of-spades-card-shoppe",
-          "type": "weapon",
-          "url": "https://forums2.battleon.com/f/tm.asp?m=21314430"
-        },
-        {
           "name": "High Staff of Spades",
           "slug": "weapon-high-staff-of-spades",
           "type": "weapon",
           "url": "https://forums2.battleon.com/f/fb.asp?m=21314376"
+        },
+        {
+          "name": "Staff of Spades",
+          "slug": "weapon-staff-of-spades-card-shoppe",
+          "type": "weapon",
+          "url": "https://forums2.battleon.com/f/tm.asp?m=21314430"
         },
         {
           "name": "Staff of Spades",

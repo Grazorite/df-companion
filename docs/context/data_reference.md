@@ -50,13 +50,17 @@ Based on the DF Encyclopedia forum structure (<https://forums2.battleon.com/f/tt
 
 **Important note on DA requirements:** DA is per-obtain-variant, not per-item or per-level. Example: Goldfish Knight has 7 levels (I-VII), each with 2 obtain methods (free quest drop and 150 DC purchase). The free option requires DA at levels IV-VII but NOT at I-III. The DC option does NOT require DA at any level. This means the item should show hasDA, hasDC, AND hasFree tags.
 
-**DA scoping on multi-variant posts:** When a forum post has both a base (DA) variant and a DC variant in the same thread, the DA tag image only applies to the title block it immediately precedes — it does NOT propagate to sibling title blocks. Section-level DA is only applied to non-DC obtain methods; DC methods keep their own per-block detection. The access-flag-repair preserves explicitly-scraped `daRequired=true` (from a DA tag on that specific variant's section) and will not override it.
+**DA scoping on multi-variant posts:** When a forum post has both a base (DA) variant and a DC variant in the same thread, the DA tag image only applies to the title block it immediately precedes — it does NOT propagate to sibling title blocks. DC does not imply non-DA: a method or variant may be both DA-required and DC-priced when the forum marks that specific block as requiring both. The access-flag-repair preserves explicitly-scraped `daRequired=true` (from a DA tag or equivalent requirement text on that specific variant/method section) and will not override it.
 
 **Variant label scoping:** Stored `variantName` values should use the shared access-label grammar in
 `src/utils/variantHelpers.ts`. Use access-only labels such as `(DA)` / `(DA, DC)` / `(DC)` when no
 natural forum label exists and access is the clear distinction. Keep a duplicate level prefix only
 when needed to disambiguate otherwise identical level entries, e.g. `20` / `20 (DC)` or `I` /
-`I (DC)`. Use `(Base)` only when a base entry sits beside differently named sibling variants.
+`I (DC)`. Use `(Base)` only when a base entry sits beside differently named sibling variants. For
+Roman/level series that have one base branch and one DC branch per tier, store the tier label itself
+for the base branch (`I`, `II`, `III`), not `Normal`; the DC branch appends `(DC)`. Scrapers must
+also normalize access-only title differences such as `Arena Fighter Sword DA` into `(DA)` rather than
+storing raw `DA` as a variant label.
 
 **Variant description scoping:** Item descriptions are variant-level data for all family-capable
 categories. Store `family.shared.description` only when every variant has the same description. If a
@@ -109,7 +113,7 @@ Note: A single item can have multiple flags simultaneously. Example: Goldfish Kn
 
 ### Shared Variant Ordering
 
-When a family has multiple variants at the same displayed level with the same stripped name, order the rows and selector labels by access branch: base/no special access first, DA-only second, DC last. Examples: `(Base)`, `(DC)` for unnamed access splits; `II`, `II (DC)` for Roman families. This ordering is shared across pets/guests, accessories, and weapons, and current JSON assets are normalized so the displayed table and selector order match the scraper output.
+When a family has multiple variants at the same displayed level with the same stripped name, order the rows and selector labels by access branch: base/no special access first, DA-only second, DA+DC/DA+DM combined branches after that, and DC/DM-only last. Examples: `(Base)`, `(DC)` for unnamed access splits; `II`, `II (DC)` for Roman families; `Cunning`, `Cunning (DC)` for normal/DC named branches; and `Crafty (DA)`, `Crafty (DC)` for DA-only/DC-only named branches. When every duplicate row already requires DA, omit the redundant DA from the visible suffix, so a DA-only branch plus a DA+DC branch displays as `Bubbly` / `Bubbly (DC)` rather than `Bubbly (DA)` / `Bubbly (DA, DC)`. This ordering and label disambiguation are shared across pets/guests, accessories, and weapons.
 
 ## Pets & Guests Data
 

@@ -27,14 +27,30 @@ function hasExplicitDAContext(text: string): boolean {
   return /\b(?:da|d-amulet|dragon\s+amulet)\s*\/\s*(?:dc|d-coins?|dragon\s+coins?)\b/i.test(text)
 }
 
+function hasDARequirementContext(text: string): boolean {
+  return (
+    hasExplicitDAContext(text) ||
+    /\b(?:requires?|required|needs?|must\s+have|must\s+own)\s+(?:a\s+)?(?:dragon\s+amulet|d-?amulet|da)\b/i.test(
+      text
+    ) ||
+    /\bthis\s+item\s+requires\s+a\s+dragon\s+amulet\b/i.test(text)
+  )
+}
+
 function hasExplicitDCContext(text: string): boolean {
   return /\b(?:dc|d-coins?|dragon\s+coins?)\b/i.test(text)
 }
 
-function methodContext(method: ObtainVariant, levelName?: string, variantName?: string): string {
+function methodContext(
+  method: ObtainVariant,
+  levelName?: string,
+  variantName?: string,
+  extraContext?: string
+): string {
   return [
     levelName,
     variantName,
+    extraContext,
     method.location,
     method.requirements,
     method.requiredItems,
@@ -62,18 +78,22 @@ function variantGroupKey(level: ItemFamily['levelVariants'][number]): string {
 function repairMethodGroup(
   methods: ObtainVariant[],
   levelName?: string,
-  variantName?: string
+  variantName?: string,
+  extraContext?: string
 ): ObtainVariant[] {
   const hasDCMethod = methods.some(obtainVariantHasDC)
   const hasNonDCMethod = methods.some((method) => !obtainVariantHasDC(method))
 
   return methods.map((method) => {
-    const context = methodContext(method, levelName, variantName)
+    const context = methodContext(method, levelName, variantName, extraContext)
     const repaired: ObtainVariant = { ...method }
 
     if (obtainVariantHasDC(repaired)) {
       repaired.dcRequired = true
-      if (hasNonDCMethod && !method.daRequired && !hasExplicitDAContext(context)) {
+      if (!repaired.daRequired && hasDARequirementContext(context)) {
+        repaired.daRequired = true
+      }
+      if (hasNonDCMethod && !method.daRequired && !hasDARequirementContext(context)) {
         repaired.daRequired = false
       }
     } else if (hasDCMethod && repaired.dcRequired && !hasExplicitDCContext(context)) {
@@ -97,7 +117,10 @@ function repairFamily(entry: ItemFamily): ItemFamily {
   const levelVariants = entry.levelVariants.map((level) => ({
     ...level,
     sourceUrl: shouldNormalizeForumUrls ? directForumPostUrl(level.sourceUrl) : level.sourceUrl,
-    obtainVariants: repairMethodGroup(level.obtainVariants, level.name, level.variantName),
+    obtainVariants: repairMethodGroup(level.obtainVariants, level.name, level.variantName, [
+      level.description,
+      level.notes,
+    ].filter(Boolean).join(' ')),
   }))
 
   const sameLevelGroups = new Map<string, number[]>()
@@ -123,16 +146,20 @@ function repairFamily(entry: ItemFamily): ItemFamily {
       levelVariants[index] = {
         ...level,
         obtainVariants: level.obtainVariants.map((method) => {
-          const context = methodContext(method, level.name, level.variantName)
+          const context = methodContext(method, level.name, level.variantName, [
+            level.description,
+            level.notes,
+          ].filter(Boolean).join(' '))
           const repaired: ObtainVariant = { ...method }
 
           if (obtainVariantHasDC(repaired)) {
             repaired.dcRequired = true
+            if (!repaired.daRequired && hasDARequirementContext(context)) repaired.daRequired = true
             // Only clear DA if it was NOT explicitly set by the scraper (from a DA
             // tag on this specific variant's section). When the forum tags both the
             // base and DC variants with DA (e.g. Plushie Artix), the scraped value
             // is already true and must be preserved.
-            if (!method.daRequired && !hasExplicitDAContext(context)) repaired.daRequired = false
+            if (!method.daRequired && !hasDARequirementContext(context)) repaired.daRequired = false
           } else if (!hasExplicitDCContext(context)) {
             delete repaired.dcRequired
           }
