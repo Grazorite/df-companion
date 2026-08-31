@@ -34,6 +34,11 @@ All list view cards must follow this pattern:
   effects and furnishing-slot text, trinket effect types, attacks, and weapon special text. Keep
   matching word-prefix based through `getSearchWords` so apostrophes and punctuation remain
   search-friendly.
+- **Detail header filter links**: top-of-detail access/version pills should link back to that
+  category's card gallery with the matching filter applied and the current subtype preserved. For
+  example, clicking `DA Required` on a belt should navigate to
+  `/accessories?type=belt&access=da`; clicking `Multiple Versions` on a staff should preserve
+  `type=staff-wand` and set `access=multi`.
 
 ### Obtain Cards (Detail Pages)
 
@@ -141,7 +146,9 @@ hardcoded `alsoSee` data.
 
 Weapons additionally infer exact-name cross-subtype siblings when the displayed name is specific
 enough and at least one obtain price type overlaps. This covers same-named
-sword/scythe/staff/dagger counterparts without merging them into one family.
+sword/scythe/staff/dagger counterparts without merging them into one family. Weapon related-name
+matching uses the shared `0.55` threshold with a shared obtain fingerprint, so compact sibling sets
+such as `Kaaros Garada` / `Kaaros Xera` / `Kaaros Alleri` can link without a hardcoded Also See list.
 
 Explicit badge-award notes create cross-category inline links, not cross-category `Also See` cards.
 When item text says `Own this item/armor/weapon ... to obtain ... badge(s)`, link the badge name
@@ -165,6 +172,12 @@ spacing between blocks. Avoid mixing per-child top/bottom margins for effect tex
 notes, and attack images; this keeps guest attacks, pet attacks, trinket skills, and weapon specials
 visually aligned.
 
+The attack accordion (`GuestAttacks.tsx`) and the expandable image toggle (`ExpandableImageList.tsx`)
+are built on the shared Radix Collapsible primitive (see `Shared interactive primitives` below), so
+the header is a real button with keyboard operation, `aria-controls` / `aria-expanded`, and an
+animated open/close. Keep the chevron rotation scoped with a named group
+(`group/attack`, `group/img`) so nested collapsibles do not toggle each other's icons.
+
 When attack/skill/special images are hidden behind an expandable image toggle, keep the label
 category-specific and count-aware: guests and pets use `Attack Image` / `Attack Images (x)`, trinket
 abilities use `Ability Image` / `Ability Images (x)`, and weapon specials use `Effect Image` /
@@ -186,7 +199,73 @@ guest attacks and trinket skills (shared via `GuestAttacks.tsx`).
 Accessory Other Information should preserve nested forum bullet indentation. If nested bullets appear
 flattened in JSON, treat it as a parser/stale-data issue and prefer a targeted scraper fix using
 indentation-preserving forum text parsing plus a narrow rescrape/compare, rather than manually
-editing broad JSON output.
+editing broad JSON output. The shared renderer also treats any leading whitespace as a nested level
+so older one-space-indented note rows do not display as top-level bullets.
+
+## Shared interactive primitives (Radix / shadcn)
+
+Interactive widgets that need real keyboard operation, focus management, and ARIA wiring are built on
+headless primitives rather than hand-rolled `useState` toggles. The approach mirrors shadcn/ui but is
+deliberately **not** installed via `shadcn init`: there is no `components.json`, no shadcn token
+layer, and no `clsx` / `cva` / `tailwind-merge`. Instead thin wrappers live in
+`src/components/shared/ui/` and are styled with the existing `@theme` design tokens.
+
+- `ui/collapsible.tsx` — wrappers over `@radix-ui/react-collapsible`. Consumed by `CollapsibleSection`
+  (detail-page "Stats by Level"), the `GuestAttacks` attack accordion, and `ExpandableImageList`.
+  Open/close animates via the `--animate-collapsible-down` / `--animate-collapsible-up` tokens and
+  keyframes in `src/index.css`, which read Radix's `--radix-collapsible-content-height`.
+- `ui/command.tsx` — wrappers over `cmdk` for the global search palette (see below). `cmdk` supplies
+  the accessible listbox semantics and, through its bundled Radix Dialog, the modal focus trap.
+- `ui/toggle-group.tsx` — wrappers over `@radix-ui/react-toggle-group`. Consumed by `SegmentToggle`
+  (subtype/segment pickers). Radix adds group semantics and roving-tabindex keyboard navigation
+  (arrow keys move between segments; the group is a single tab stop). `SegmentToggle` uses
+  `type="multiple"` so its one genuinely multi-select consumer (Pets/Guests) works; single-select
+  subtype pages still enforce one active segment in their own handler. Note that `type="multiple"`
+  makes the Radix root `role="toolbar"` with `aria-pressed` items (single would be
+  `radiogroup`/`radio`).
+- `ui/tooltip.tsx` — wrappers over `@radix-ui/react-tooltip`. Consumed by `AccessPills` (the
+  detail-page DA/DC/DM pills) to spell out those abbreviations accessibly (keyboard focus,
+  Escape-to-dismiss, `aria-describedby`) instead of a non-accessible `title`. Scope
+  `TooltipProvider` close to the usage (`AccessPills` renders its own provider) rather than at the app
+  root, so `@radix-ui/react-tooltip` stays in the lazy detail-page chunks, not the main bundle.
+  `AccessPills` is detail-only (cards use their own inline pills), so the instance count stays small —
+  do not wrap per-card gallery pills in tooltips.
+
+**Tri-state controls stay custom.** `TriStateFilterPill` cycles neutral → include → exclude and is
+**not** built on a Radix primitive: Radix `Toggle`/`ToggleGroup` are binary and Radix has no
+tri-state primitive (a `Checkbox` `indeterminate` would announce "mixed", which misrepresents
+"excluded"). It remains a semantic `<button>` with `aria-pressed` plus a descriptive `aria-label` /
+`title` announcing the next action, and a shared focus-visible ring. Do not convert it to a binary
+primitive — that would add a dependency and worsen the semantics.
+
+When adding a new interactive primitive, prefer this pattern: add the specific Radix/headless package
+(pinned, exact version), write a thin token-styled wrapper in `ui/`, and keep the public component API
+stable so existing consumers are drop-in. Do not run `shadcn init` or add `components.json` — it would
+collide with the hand-built Tailwind v4 `@theme` tokens.
+
+## Global Search (Command palette)
+
+A global palette (`src/components/shared/CommandPalette.tsx`) provides cross-section search. It opens
+with `Cmd/Ctrl+K`, the desktop sidebar `Search…` button, or the mobile `More` panel search action
+(all via `openCommandPalette()` in `src/utils/commandPalette.ts`, which dispatches a window event the
+palette listens for). It is mounted once in `Layout` so it stays available across route changes.
+
+- **Index build (lazy):** the `*-manifest.json` files carry only counts, so they cannot power search.
+  `useGlobalSearch(enabled)` instead builds a flat index (`src/utils/searchIndex.ts`) from the
+  existing cached `loadXBySubtype()` loaders, and only when the palette first opens. The index is
+  cached at module scope, and because it reuses the shared loaders it also warms the caches that
+  list/detail pages use — nothing is double-fetched. This keeps the initial app load untouched at the
+  cost of a one-time fetch of all section datasets on first open.
+- **Matching:** reuse `getSearchWords` for the same word-prefix behavior as in-page search; index the
+  entry's display name only (article-normalized via `displayTitle`), results capped and grouped by
+  section. `cmdk` runs with `shouldFilter={false}` because filtering/ranking is done in
+  `searchHits`.
+- **Hit → route:** build links the same way the per-section card builders do — `/badges/:slug` (no
+  `type`), `/pets|guests/:slug` split by entry `type` (slug is already `pet-`/`guest-` prefixed), and
+  `/<section>/:slug?type=<subtype>` for accessories, weapons, housing, and classes.
+- **Upgrade path (not yet done):** for a larger dataset, replace the on-open full-dataset fetch with a
+  compact build-time search-index JSON (name + slug + subtype + section only) so the palette never
+  needs to load full section data.
 
 ## Filter Pills Pattern (applies to all content sections)
 
@@ -338,10 +417,53 @@ URL query params supported by `/pets`:
 
 - **Subtype segment**: single-select `Classes` / `Consumables`
 - **Classes filter rows**: sub-subtype row, then access filters, then category filters
+- Class sub-subtype filters (`Armors`, `Regular`, `Miscellaneous`) use the `segment`-sized
+  tri-state pill treatment so their height and spacing match the top-level `Classes` /
+  `Consumables` selector while still supporting include/exclude states.
 - The page header always shows the shared Classes / Abilities description. When one or more Classes
   sub-subtype filters are included, append their short descriptions below it as smaller muted lines.
 - Armor detail pages display Level, Rarity, and Equips Class in the shared `MetricStrip` panel style.
   Equips Class is plain text, even when the forum exposes a class link.
+- Regular and Miscellaneous class detail pages follow the guest detail layout, not the Armor layout:
+  header tags/name/description/release date, variant selector when needed, main/alt image selector,
+  guest-style stats, Rarity, obtain card, Default Weapon, optional attack-set selector, optional
+  Class Mechanics, guest-style Attacks, Other Information, Sources, then Also See. They do not render
+  the generic `Effect` card; class skill effects belong inside the attack accordions. Attack
+  requirements render in the same compact position as guest attack requirements.
+- When Regular/Miscellaneous classes have artifact-modified attacks, render a selector immediately
+  before the attack area. `Base` shows the normal class attacks; each artifact option shows only that
+  artifact's attack set so pages such as DragonLord do not render every modified skill at once.
+- Class Mechanics is the home for widget-style class or artifact mechanics: a mechanics image plus
+  explanatory bullets/pop-ups. Mechanics images auto-display, centered with their caption underneath;
+  they do not use the hidden/expandable attack-image control. If a class has artifact attack sets,
+  mechanics are treated as correlated with the selected set: `Base` shows base/shared mechanics,
+  while artifact options show only mechanics parsed for that artifact. When the selected attack set
+  is artifact-backed, render one compact `Artifact: <name>` inline link above the Class Mechanics /
+  Attacks area; do not also render a duplicate mechanics block title when it matches the selected
+  artifact name.
+- Cross-category class artifact relations should render inline text links, not cross-category Also
+  See cards. Class pages link artifact names to Accessories; artifact pages link mentioned class
+  names back to Classes / Abilities, including the Accessory artifact `Modifies` metric strip.
+  Appearance-only modifier relationships still count; the link does not require the class to expose
+  an artifact-specific attack set.
+- Class `Default Weapon` text links to the matching weapon detail route when
+  `class-default-weapon-relations.json` has a source-URL match. Weapon detail pages render the
+  reverse relation as a compact `Default Weapon For` card near the weapon special / obtain details.
+  Unmatched default weapons remain plain text.
+- Regular/Miscellaneous class image selectors should reflect forum captions rather than generated
+  `Main` / `Alternative Image` text. Use nearby forum labels such as `Modern Version`,
+  `Retro Version`, `Original`, and `Reforged`; combine group labels with linked `Male` / `Female`
+  captions when the forum writes `Original Appearance: Male / Female`. Paired duplicate image
+  captions may infer `(Male)` / `(Female)` when the forum exposes two appearance images under one
+  caption. If a page mixes true class portraits with linked weapon/skill appearance images, prefer
+  the image URL family that matches the class name for the portrait selector.
+- Appearance-caption lines consumed for attack image captions, such as
+  `Original / Retro: Appearance` or `DragonKeeper: Appearance 1 / 1.1`, should not also render as
+  attack notes or global Other Information.
+- Multiple inline `(Pop-up: ...)` snippets in one attack/skill effect should render as one shared
+  `Pop-ups:` quote block through `PopupText`.
+- Guest-style stat category cards use a two-column grid when multiple non-empty categories render.
+  If filtering leaves only one visible stat category, that card should span the full detail width.
 - **Consumables filter rows**: access filters, then category filters (`Temp` remains data-driven
   because Health/Mana Potion are non-Temp), then Dust/Food/Rune kind filters styled like compact
   Level 3 filters. Dust/Food/Rune pills should keep their kind colour in the neutral state and add
@@ -436,6 +558,10 @@ Stats tables and selectors should avoid redundant variant columns. A one-row fam
 Variant column. If all variant labels are only access labels like `(Base)` / `(Base) (DC)` and the
 levels are unique, treat the selector/table as level-driven instead of variant-driven; same-level
 access branches can still show variant labels where needed.
+The same level-driven display applies when every row in an itemfamily has the exact same stored
+variant label and unique levels, even if that label is not access-only. Example: `Soulforged Ring
+(Red/Blue/Green)` stores repeated color labels per family, but should render `Select Level` and hide
+the Variant column.
 
 Collapse a stats table to a single row only for a multi-level progression whose stats never change.
 Same-level access branches (e.g. `|` Base / DC) must each keep their own row so DA/DC access stays

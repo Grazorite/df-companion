@@ -55,6 +55,7 @@ function orderStatCategories(categories: StatCategory[]): StatCategory[] {
 }
 
 function getCategoryCardClass(index: number, categoryCount: number): string {
+  if (categoryCount === 1) return 'sm:col-span-2'
   return categoryCount === 3 && index === 2 ? 'sm:col-span-2' : ''
 }
 

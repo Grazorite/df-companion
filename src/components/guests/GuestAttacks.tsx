@@ -4,6 +4,7 @@ import type { GuestAttack } from '../../types/pet'
 import NotesList from '../shared/NotesList'
 import PopupText from '../shared/PopupText'
 import ExpandableImageList from '../shared/ExpandableImageList'
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '../shared/ui/collapsible'
 
 interface GuestAttacksProps {
   attacks: GuestAttack[]
@@ -50,7 +51,6 @@ function AttackCard({
   defaultOpen?: boolean
   imageLabel: string
 }) {
-  const [isOpen, setIsOpen] = useState(defaultOpen)
   // The effect (including its own bullet points) is shown as-is. Only an explicit
   // "Other Information" section (captured separately at scrape time) is split out
   // into its own block below the stats.
@@ -63,13 +63,13 @@ function AttackCard({
       : []
 
   return (
-    <div className="bg-bg-surface border border-border-default rounded-lg overflow-hidden">
-      {/* Header - clickable to expand */}
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center gap-4 p-4 text-left hover:bg-bg-elevated/50 transition-colors"
-        aria-expanded={isOpen}
-      >
+    <Collapsible
+      defaultOpen={defaultOpen}
+      className="bg-bg-surface border border-border-default rounded-lg overflow-hidden"
+    >
+      {/* Header - clickable to expand. Radix supplies keyboard operation,
+          focus management, and aria-controls / aria-expanded. */}
+      <CollapsibleTrigger className="group/attack w-full flex items-center gap-4 p-4 text-left hover:bg-bg-elevated/50 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-gold/60">
         {/* Attack button image */}
         <div className="flex-shrink-0">
           <AttackButton imageUrl={attack.buttonImageUrl} name={attack.name} />
@@ -87,13 +87,13 @@ function AttackCard({
 
         {/* Expand icon */}
         <ChevronDown
-          className={`w-5 h-5 text-text-muted transition-transform flex-shrink-0 ${isOpen ? 'rotate-180' : ''}`}
+          className="w-5 h-5 text-text-muted transition-transform duration-200 flex-shrink-0 group-data-[state=open]/attack:rotate-180"
           aria-hidden="true"
         />
-      </button>
+      </CollapsibleTrigger>
 
       {/* Expanded content */}
-      {isOpen && (
+      <CollapsibleContent className="overflow-hidden data-[state=open]:animate-collapsible-down data-[state=closed]:animate-collapsible-up">
         <div className="border-t border-border-default p-4 sm:p-5 space-y-4">
           {/* Requirements - only show if not "None" */}
           {attack.requirements && attack.requirements.toLowerCase() !== 'none' && (
@@ -148,8 +148,8 @@ function AttackCard({
             />
           )}
         </div>
-      )}
-    </div>
+      </CollapsibleContent>
+    </Collapsible>
   )
 }
 

@@ -38,7 +38,9 @@ const dataFiles = [
   { file: 'housing-shrubs.json', type: 'housing' },
   { file: 'housing-stuff.json', type: 'housing' },
   { file: 'housing-wall-items.json', type: 'housing' },
-  { file: 'classes.json', type: 'class-ability' },
+  { file: 'class-armors.json', type: 'class-ability' },
+  { file: 'class-regular.json', type: 'class-ability' },
+  { file: 'class-miscellaneous.json', type: 'class-ability' },
   { file: 'class-consumables.json', type: 'class-ability' },
 ]
 

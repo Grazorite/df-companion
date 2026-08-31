@@ -3,7 +3,9 @@ import path from 'node:path'
 
 const root = process.cwd()
 const files = [
-  ['class', 'classes.json'],
+  ['class', 'class-armors.json'],
+  ['class', 'class-regular.json'],
+  ['class', 'class-miscellaneous.json'],
   ['consumable', 'class-consumables.json'],
 ]
 
@@ -94,4 +96,4 @@ for (const [subtype, count] of Object.entries(bySubtype)) {
   }
 }
 
-console.log(`✅ class abilities valid: ${total} entries across ${files.length} subtypes`)
+console.log(`✅ class abilities valid: ${total} entries across ${files.length} data files`)

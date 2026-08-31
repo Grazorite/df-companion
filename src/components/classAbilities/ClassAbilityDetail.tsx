@@ -1,15 +1,21 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import type { ClassAbilityEntry, ClassAbilityItem } from '../../types/classAbility'
 import { isClassAbilityFamily } from '../../types/classAbility'
-import type { LevelVariant, ObtainVariant } from '../../types/item'
-import type { GuestAttack } from '../../types/pet'
-import { accessPillClass } from '../../utils/accessPillStyles'
-import { normalizeDescriptionText } from '../../utils/displayText'
+import type { LevelVariant, MechanicsBlock, ObtainVariant } from '../../types/item'
+import type { GuestAttack, GuestAttackSet, GuestStats } from '../../types/pet'
+import { displayTitle, normalizeDescriptionText } from '../../utils/displayText'
+import { buildDisplayImages } from '../../utils/imageLabels'
 import { detailUrlWithFrom } from '../../utils/navigationContext'
 import { useBadgeInlineLinksForItem } from '../../hooks/useBadgeRelations'
+import {
+  useArtifactInlineLinksForClass,
+  useClassArtifactRelationsForClass,
+} from '../../hooks/useClassArtifactRelations'
+import { useClassDefaultWeaponRelationForClass } from '../../hooks/useClassDefaultWeaponRelations'
 import { useClassAbilityRelatedItems } from '../../hooks/useClassAbilities'
 import ClassAbilityCard from './ClassAbilityCard'
+import AccessPills from '../shared/AccessPills'
 import DetailTypePill from '../shared/DetailTypePill'
 import DetailPageLayout from '../shared/DetailPageLayout'
 import ExpandableImageList from '../shared/ExpandableImageList'
@@ -22,12 +28,17 @@ import ObtainSection from '../shared/ObtainSection'
 import OtherInformationSection from '../shared/OtherInformationSection'
 import SourceLinksCard from '../shared/SourceLinksCard'
 import GuestAttacks from '../guests/GuestAttacks'
+import GuestStatsSection from '../guests/GuestStatsSection'
+import { buildFilterLink } from '../../utils/filterLinks'
 
 interface ClassAbilityDetailProps {
   item: ClassAbilityEntry
   subtypeLabel: string
   backUrl: string
+  filterBase: string
 }
+
+const EMPTY_ATTACK_SETS: GuestAttackSet[] = []
 
 function singleToVariant(item: ClassAbilityItem): LevelVariant {
   return {
@@ -47,7 +58,12 @@ function singleToVariant(item: ClassAbilityItem): LevelVariant {
     effectType: item.effectType,
     equipsClass: item.equipsClass,
     equipsClassUrl: item.equipsClassUrl,
+    defaultWeapon: item.defaultWeapon,
+    defaultWeaponUrl: item.defaultWeaponUrl,
+    guestStats: item.guestStats,
     attacks: item.attacks,
+    attackSets: item.attackSets,
+    mechanics: item.mechanics,
     dialogue: item.dialogue,
     notes: item.notes,
   }
@@ -96,13 +112,85 @@ function cleanDialogue(dialogue: string | undefined): string | undefined {
   return cleaned || undefined
 }
 
+function normalizeClassMechanicsTitle(value: string | undefined): string {
+  return (value ?? '')
+    .toLowerCase()
+    .replace(/^artifact:\s*/, '')
+    .replace(/\s+/g, ' ')
+    .trim()
+}
+
+function ClassMechanicsSection({
+  mechanics,
+  hiddenTitle,
+}: {
+  mechanics?: MechanicsBlock[]
+  hiddenTitle?: string
+}) {
+  const blocks = mechanics?.filter((block) => block.notes || block.images?.length)
+  if (!blocks?.length) return null
+  const normalizedHiddenTitle = normalizeClassMechanicsTitle(hiddenTitle)
+
+  return (
+    <section className="bg-bg-surface border border-border-default rounded-lg p-5 mb-5">
+      <h2 className="text-xs font-semibold text-text-muted uppercase tracking-wider mb-3">
+        Class Mechanics
+      </h2>
+      <div className="space-y-5">
+        {blocks.map((block, index) => (
+          <div key={`${block.title ?? 'mechanics'}-${index}`} className="space-y-3">
+            {block.title &&
+              normalizeClassMechanicsTitle(block.title) !== normalizedHiddenTitle && (
+                <h3 className="text-sm font-semibold text-text-primary">{block.title}</h3>
+              )}
+            {block.images && block.images.length > 0 && (
+              <div className="space-y-4">
+                {block.images.map((image, imageIndex) => (
+                  <figure
+                    key={`${image.url}-${imageIndex}`}
+                    className="flex flex-col items-center gap-2"
+                  >
+                    <img
+                      src={image.url}
+                      alt={image.caption}
+                      loading="lazy"
+                      className="max-w-full rounded border border-border-default"
+                    />
+                    <figcaption className="text-xs italic text-text-secondary text-center">
+                      {image.caption}
+                    </figcaption>
+                  </figure>
+                ))}
+              </div>
+            )}
+            {block.notes && <NotesList notes={block.notes} />}
+          </div>
+        ))}
+      </div>
+    </section>
+  )
+}
+
+function classDisplayStats(stats: GuestStats | undefined): GuestStats | undefined {
+  if (!stats) return undefined
+  const rest = { ...stats }
+  delete rest.level
+  delete rest.damage
+  delete rest.damageType
+  delete rest.element
+  return rest
+}
+
 export default function ClassAbilityDetail({
   item,
   subtypeLabel,
   backUrl,
+  filterBase,
 }: ClassAbilityDetailProps) {
   const family = isClassAbilityFamily(item) ? item : undefined
   const singleItem: ClassAbilityItem | undefined = isClassAbilityFamily(item) ? undefined : item
+  const isArmor = item.subtype === 'class' && item.classSubcategory === 'armor'
+  const isConsumable = item.subtype === 'consumable'
   const levels = useMemo(
     () => (family ? family.levelVariants : singleItem ? [singleToVariant(singleItem)] : []),
     [family, singleItem]
@@ -110,6 +198,7 @@ export default function ClassAbilityDetail({
   const [activeIndex, setActiveIndex] = useState(0)
   const activeVariant = levels[activeIndex] ?? levels[0]
   const name = family ? family.familyName : (singleItem?.name ?? 'Class / Ability')
+  const releaseDate = family?.releaseDate ?? singleItem?.releaseDate
   const description = normalizeDescriptionText(
     activeVariant?.description ?? family?.shared.description ?? singleItem?.description
   )
@@ -121,13 +210,57 @@ export default function ClassAbilityDetail({
     activeVariant?.effectType ?? family?.shared.effectType ?? singleItem?.effectType
   const equipsClass =
     activeVariant?.equipsClass ?? family?.shared.equipsClass ?? singleItem?.equipsClass
+  const defaultWeapon =
+    activeVariant?.defaultWeapon ?? family?.shared.defaultWeapon ?? singleItem?.defaultWeapon
+  const defaultWeaponRelation = useClassDefaultWeaponRelationForClass(item.slug, defaultWeapon)
+  const guestStats =
+    activeVariant?.guestStats ?? family?.shared.guestStats ?? singleItem?.guestStats
+  const displayedGuestStats = !isArmor && !isConsumable ? classDisplayStats(guestStats) : guestStats
+  const baseMechanics =
+    activeVariant?.mechanics ?? family?.shared.mechanics ?? singleItem?.mechanics
   const dialogue = cleanDialogue(
     activeVariant?.dialogue ?? family?.shared.dialogue ?? singleItem?.dialogue
   )
-  const effectAttacks =
+  const baseAttacks =
     asGuestAttacks(activeVariant?.attacks) ??
     asGuestAttacks(family?.shared.attacks) ??
     singleItem?.attacks
+  const artifactAttackSets =
+    activeVariant?.attackSets ?? family?.shared.attackSets ?? singleItem?.attackSets ?? EMPTY_ATTACK_SETS
+  const attackOptions = useMemo(() => {
+    if (isArmor || isConsumable) return []
+    const options: Array<GuestAttackSet & { mechanics?: MechanicsBlock[] }> = []
+    if (baseAttacks?.length) {
+      options.push({
+        id: 'base',
+        label: 'Base',
+        attacks: baseAttacks,
+        ...(baseMechanics?.length ? { mechanics: baseMechanics } : {}),
+      })
+    }
+    for (const set of artifactAttackSets) {
+      if (!set.attacks?.length) continue
+      options.push(set)
+    }
+    return options
+  }, [artifactAttackSets, baseAttacks, baseMechanics, isArmor, isConsumable])
+  const effectAttacks = isConsumable ? baseAttacks : undefined
+  const [activeAttackSetId, setActiveAttackSetId] = useState('base')
+  useEffect(() => {
+    setActiveAttackSetId((current) =>
+      attackOptions.some((option) => option.id === current) ? current : (attackOptions[0]?.id ?? 'base')
+    )
+  }, [attackOptions])
+  const selectedAttackOption =
+    attackOptions.find((option) => option.id === activeAttackSetId) ?? attackOptions[0]
+  const selectedAttackSetNotes =
+    selectedAttackOption && selectedAttackOption.id !== 'base'
+      ? selectedAttackOption.notes
+      : undefined
+  const selectedMechanics =
+    selectedAttackOption && selectedAttackOption.id !== 'base'
+      ? selectedAttackOption.mechanics
+      : baseMechanics
   const showEffectAccordion = usesEffectAccordion(name)
   const rarity = activeVariant?.rarity ?? family?.shared.rarity ?? singleItem?.rarity
   const level = activeVariant?.levelDisplay ?? singleItem?.level
@@ -139,7 +272,6 @@ export default function ClassAbilityDetail({
   const hasMerge = family ? family.hasMerge : singleItem?.hasMerge
   const hasMultiple = family ? family.levelVariants.length > 1 : false
   const showTempPill = item.subtype !== 'consumable' && item.isTemp
-  const isArmor = item.subtype === 'class' && item.classSubcategory === 'armor'
   const armorMetrics = isArmor
     ? [
         { label: 'Level', value: level },
@@ -147,11 +279,48 @@ export default function ClassAbilityDetail({
         { label: 'Equips Class', value: equipsClass },
       ]
     : []
+  const allImages = useMemo(
+    () =>
+      buildDisplayImages({
+        imageUrl,
+        alternativeImages,
+        mainCaption: displayTitle(name),
+      }),
+    [alternativeImages, imageUrl, name]
+  )
+  const [activeImageIndex, setActiveImageIndex] = useState(0)
+  const entryKey = item.slug
+  const initializedImageEntryKey = useRef<string | undefined>(undefined)
+
+  useEffect(() => {
+    if (initializedImageEntryKey.current !== entryKey) {
+      initializedImageEntryKey.current = entryKey
+      setActiveImageIndex(0)
+      return
+    }
+    setActiveImageIndex((current) => (current < allImages.length ? current : 0))
+  }, [allImages.length, entryKey])
+
+  const currentImage = allImages[activeImageIndex]
   const { relatedClassAbilities } = useClassAbilityRelatedItems(item)
   const resolvedRelatedClassAbilities = relatedClassAbilities.filter((related) =>
     Boolean(related.entry)
   )
   const badgeInlineLinks = useBadgeInlineLinksForItem(item.slug)
+  const artifactInlineLinks = useArtifactInlineLinksForClass(item.slug)
+  const classArtifactRelations = useClassArtifactRelationsForClass(item.slug)
+  const selectedArtifactRelation =
+    selectedAttackOption && selectedAttackOption.id !== 'base'
+      ? classArtifactRelations.find((relation) =>
+          [relation.artifactName, ...(relation.artifactAliases ?? [])].some(
+            (name) => name.toLowerCase() === selectedAttackOption.label.toLowerCase()
+          )
+        )
+      : undefined
+  const noteLinks = useMemo(
+    () => [...badgeInlineLinks, ...artifactInlineLinks],
+    [artifactInlineLinks, badgeInlineLinks]
+  )
 
   return (
     <DetailPageLayout>
@@ -164,18 +333,27 @@ export default function ClassAbilityDetail({
 
       <header className="mb-6">
         <div className="flex items-center gap-2 flex-wrap mb-3">
-          {hasDA && <span className={accessPillClass('da', 'detail')}>DA Required</span>}
-          {hasDC && <span className={accessPillClass('dc', 'detail')}>DC</span>}
-          {hasDM && <span className={accessPillClass('dm', 'detail')}>DM</span>}
+          <AccessPills
+            daRequired={Boolean(hasDA)}
+            dcRequired={hasDC}
+            dmRequired={hasDM}
+            filterBase={filterBase}
+          />
           {hasMerge && (
-            <span className="text-xs text-amber-200 bg-amber-500/20 px-3 py-1.5 rounded-full font-medium">
+            <Link
+              to={buildFilterLink(filterBase, 'access', 'merge')}
+              className="text-xs text-amber-200 bg-amber-500/20 px-3 py-1.5 rounded-full font-medium transition-opacity hover:opacity-80"
+            >
               Merge Required
-            </span>
+            </Link>
           )}
           {hasMultiple && (
-            <span className="text-xs text-bg-base bg-gold px-3 py-1.5 rounded-full font-medium">
+            <Link
+              to={buildFilterLink(filterBase, 'access', 'multi')}
+              className="text-xs text-bg-base bg-gold px-3 py-1.5 rounded-full font-medium transition-opacity hover:opacity-80"
+            >
               Multiple Versions
-            </span>
+            </Link>
           )}
           {showTempPill && (
             <span className="text-xs text-cyan-300 bg-cyan-500/20 px-3 py-1.5 rounded-full font-medium">
@@ -187,6 +365,9 @@ export default function ClassAbilityDetail({
         <h1 className="text-3xl font-bold text-text-primary mb-3">{name}</h1>
         {description && (
           <p className="text-text-secondary italic leading-relaxed">{description}</p>
+        )}
+        {releaseDate && (
+          <p className="text-sm text-text-muted mt-2">Released: {releaseDate}</p>
         )}
         {effectType && (
           <p className="text-xs text-text-muted mt-2">Effect Type: {effectType}</p>
@@ -207,20 +388,35 @@ export default function ClassAbilityDetail({
         </section>
       )}
 
-      {effect && (!showEffectAccordion || !effectAttacks?.length) && (
-        <section className="bg-bg-surface border border-border-default rounded-lg p-5 mb-5">
-          <h2 className="text-xs font-semibold text-text-muted uppercase tracking-wider mb-3">
-            Effect
-          </h2>
-          <p className="text-sm text-text-secondary whitespace-pre-line leading-relaxed">{effect}</p>
-        </section>
+      {!isArmor && currentImage && (
+        <div className="mb-6">
+          <ItemImage
+            src={currentImage.url}
+            alt={currentImage.caption}
+            showPlaceholder
+          />
+          {allImages.length > 1 && (
+            <div className="mt-4 flex flex-wrap gap-2 justify-center">
+              {allImages.map((image, index) => (
+                <button
+                  key={`${image.url}-${index}`}
+                  type="button"
+                  onClick={() => setActiveImageIndex(index)}
+                  className={`min-h-11 px-4 py-2 rounded-lg text-sm transition-colors ${
+                    index === activeImageIndex
+                      ? 'bg-gold text-bg-base'
+                      : 'bg-bg-surface border border-border-default text-text-secondary hover:text-text-primary hover:border-border-hover'
+                  }`}
+                >
+                  {image.caption}
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
       )}
 
-      {showEffectAccordion && effectAttacks && effectAttacks.length > 0 && (
-        <GuestAttacks attacks={effectAttacks} heading="Effect" imageLabel="Effect Image" />
-      )}
-
-      {imageUrl && (
+      {isArmor && imageUrl && (
         <section className="mb-6">
           <ItemImage src={imageUrl} alt={name} className="max-h-80 mx-auto" />
           {alternativeImages && alternativeImages.length > 0 && (
@@ -236,9 +432,42 @@ export default function ClassAbilityDetail({
         </section>
       )}
 
+      {!isArmor && displayedGuestStats && <GuestStatsSection stats={displayedGuestStats} />}
+
+      {isConsumable && effect && (!showEffectAccordion || !effectAttacks?.length) && (
+        <section className="bg-bg-surface border border-border-default rounded-lg p-5 mb-5">
+          <h2 className="text-xs font-semibold text-text-muted uppercase tracking-wider mb-3">
+            Effect
+          </h2>
+          <p className="text-sm text-text-secondary whitespace-pre-line leading-relaxed">{effect}</p>
+        </section>
+      )}
+
+      {isConsumable && showEffectAccordion && effectAttacks && effectAttacks.length > 0 && (
+        <GuestAttacks attacks={effectAttacks} heading="Effect" imageLabel="Effect Image" />
+      )}
+
       {!isArmor && <MetadataChipSection label="Rarity" value={rarity} className="mb-5" />}
 
       <ObtainSection variants={obtainMethods} showPriceFields={showObtainPriceFields} />
+
+      {defaultWeapon && (
+        <section className="bg-bg-surface border border-border-default rounded-lg p-5 mb-5">
+          <h2 className="text-xs font-semibold text-text-muted uppercase tracking-wider mb-3">
+            Default Weapon
+          </h2>
+          {defaultWeaponRelation ? (
+            <Link
+              to={defaultWeaponRelation.weaponRoute}
+              className="text-sm text-gold hover:text-gold-light transition-colors"
+            >
+              {defaultWeapon}
+            </Link>
+          ) : (
+            <p className="text-sm text-text-secondary">{defaultWeapon}</p>
+          )}
+        </section>
+      )}
 
       {dialogue && (
         <section className="bg-bg-surface border border-border-default rounded-lg p-5 mb-5">
@@ -249,13 +478,62 @@ export default function ClassAbilityDetail({
         </section>
       )}
 
+      {!isArmor && !isConsumable && attackOptions.length > 1 && (
+        <section className="mb-5">
+          <h2 className="text-xs font-semibold text-text-muted uppercase tracking-wider mb-3">
+            Select Attack Set
+          </h2>
+          <div className="flex flex-wrap gap-2">
+            {attackOptions.map((option) => (
+              <button
+                key={option.id}
+                type="button"
+                onClick={() => setActiveAttackSetId(option.id)}
+                className={`min-h-10 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                  option.id === activeAttackSetId
+                    ? 'bg-gold text-bg-base'
+                    : 'bg-bg-surface border border-border-default text-text-secondary hover:text-text-primary hover:border-border-hover'
+                }`}
+              >
+                {option.label}
+              </button>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {!isArmor && !isConsumable && selectedArtifactRelation && (
+        <section className="mb-3 text-sm text-text-secondary">
+          Artifact:{' '}
+          <Link
+            to={selectedArtifactRelation.artifactRoute}
+            className="text-gold hover:text-gold-light transition-colors"
+          >
+            {selectedAttackOption?.label}
+          </Link>
+        </section>
+      )}
+
+      {!isArmor && !isConsumable && selectedMechanics && (
+        <ClassMechanicsSection
+          mechanics={selectedMechanics}
+          hiddenTitle={selectedArtifactRelation?.artifactName}
+        />
+      )}
+
+      {!isArmor && !isConsumable && selectedAttackOption?.attacks.length ? (
+        <GuestAttacks attacks={selectedAttackOption.attacks} />
+      ) : null}
+
       <OtherInformationSection
         notes={singleItem?.notes}
         sharedNotes={family?.shared.notes}
-        activeVariantNotes={activeVariant?.notes}
+        activeVariantNotes={
+          [activeVariant?.notes, selectedAttackSetNotes].filter(Boolean).join('\n\n') || undefined
+        }
         allVariantNotes={family?.levelVariants.map((variant) => variant.notes)}
         className="mb-5"
-        links={badgeInlineLinks}
+        links={noteLinks}
       />
 
       <section className="mb-5">

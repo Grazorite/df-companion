@@ -12,8 +12,10 @@ import {
   Package,
   PawPrint,
   Sparkles,
+  Search,
   MoreHorizontal,
 } from 'lucide-react'
+import { openCommandPalette } from '../../utils/commandPalette'
 import { useTotalBadgeCount } from '../../hooks/useBadges'
 import { useTotalPetCount } from '../../hooks/usePets'
 import { useTotalAccessoryCount } from '../../hooks/useAccessories'
@@ -115,6 +117,19 @@ export default function Navigation() {
           </div>
         </div>
 
+        {/* Command palette trigger (also opens with Cmd/Ctrl+K) */}
+        <button
+          type="button"
+          onClick={openCommandPalette}
+          className="mb-3 flex w-full items-center gap-2 rounded-lg border border-border-default bg-bg-surface px-3 py-2 text-sm text-text-muted transition-colors hover:border-border-hover hover:text-text-primary"
+        >
+          <Search className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
+          <span className="flex-1 text-left">Search…</span>
+          <kbd className="rounded border border-border-default px-1.5 py-0.5 text-[10px] font-medium text-text-muted">
+            ⌘K
+          </kbd>
+        </button>
+
         <ul className="space-y-0.5 flex-1" role="list">
           {NAV_ITEMS.map(({ to, icon: Icon, label, exact, available }) => (
             <li key={to}>
@@ -191,6 +206,17 @@ export default function Navigation() {
       >
         {moreOpen && (
           <div className="absolute inset-x-3 bottom-[calc(3.5rem+env(safe-area-inset-bottom,0px)+0.5rem)] rounded-lg border border-border-default bg-bg-elevated shadow-prominent overflow-hidden">
+            <button
+              type="button"
+              onClick={() => {
+                setMoreOpen(false)
+                openCommandPalette()
+              }}
+              className="flex w-full items-center gap-2 border-b border-border-default px-3 py-2.5 text-sm text-text-secondary transition-colors hover:bg-bg-overlay hover:text-text-primary"
+            >
+              <Search className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
+              <span className="min-w-0 flex-1 text-left">Search…</span>
+            </button>
             <div className="grid grid-cols-2 gap-1 p-2">
               {moreItems.map(({ to, icon: Icon, label, exact, available }) =>
                 available ? (

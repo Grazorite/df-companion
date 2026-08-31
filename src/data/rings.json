@@ -1688,7 +1688,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "Ring previously appeared in the retired quest  Nightmares as a Necklace and had the following stats:\nStats: Crit +1, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +4, LUK +4, INT +4, DEX +4, STR +4, Bonus +3\nResists: Water +6, Nature +4",
+    "notes": "Ring previously appeared in the retired quest  Nightmares as a Necklace and had the following stats:\n  Stats: Crit +1, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +4, LUK +4, INT +4, DEX +4, STR +4, Bonus +3\n  Resists: Water +6, Nature +4",
     "tags": [
       "wat",
       "free"
@@ -8189,40 +8189,6 @@
     "daRequired": false
   },
   {
-    "id": "accessory-fifth-golden-ring",
-    "name": "Fifth Golden Ring",
-    "slug": "accessory-fifth-golden-ring",
-    "type": "accessory",
-    "subtype": "ring",
-    "description": "The moglins have made five golden rings as mementos of this year's Frostval. This one aids your endurance.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15262900",
-    "releaseDate": "",
-    "elements": [
-      "NON"
-    ],
-    "level": "1",
-    "stats": "END +5, Bonus +4",
-    "rarity": "10",
-    "itemType": "Ring",
-    "equipSpot": "Finger",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "5 Gold Rings",
-        "priceType": "free",
-        "price": "0 Gold",
-        "sellback": "0 Gold",
-        "daRequired": false
-      }
-    ],
-    "tags": [
-      "non",
-      "free"
-    ],
-    "daRequired": false,
-    "isSeasonal": true
-  },
-  {
     "id": "accessory-fireproof-ring",
     "name": "Fireproof Ring",
     "slug": "accessory-fireproof-ring",
@@ -8262,40 +8228,6 @@
       "free"
     ],
     "daRequired": false
-  },
-  {
-    "id": "accessory-first-golden-ring",
-    "name": "First Golden Ring",
-    "slug": "accessory-first-golden-ring",
-    "type": "accessory",
-    "subtype": "ring",
-    "description": "The moglins have made five golden rings as mementos of this year's Frostval. This one's luckier than the others.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15262881",
-    "releaseDate": "",
-    "elements": [
-      "NON"
-    ],
-    "level": "1",
-    "stats": "END +2, CHA +2, LUK +2, INT +2, DEX +2, STR +2",
-    "rarity": "10",
-    "itemType": "Ring",
-    "equipSpot": "Finger",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "5 Gold Rings",
-        "priceType": "free",
-        "price": "0 Gold",
-        "sellback": "0 Gold",
-        "daRequired": false
-      }
-    ],
-    "tags": [
-      "non",
-      "free"
-    ],
-    "daRequired": false,
-    "isSeasonal": true
   },
   {
     "id": "accessory-fishy-ring",
@@ -8837,40 +8769,6 @@
       "gold"
     ],
     "daRequired": false
-  },
-  {
-    "id": "accessory-fourth-golden-ring",
-    "name": "Fourth Golden Ring",
-    "slug": "accessory-fourth-golden-ring",
-    "type": "accessory",
-    "subtype": "ring",
-    "description": "The moglins have made five golden rings as mementos of this years Frostval. This one enhances your intelligence.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15262895",
-    "releaseDate": "",
-    "elements": [
-      "NON"
-    ],
-    "level": "1",
-    "stats": "INT +10",
-    "rarity": "10",
-    "itemType": "Ring",
-    "equipSpot": "Finger",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "5 Gold Rings",
-        "priceType": "free",
-        "price": "0 Gold",
-        "sellback": "0 Gold",
-        "daRequired": false
-      }
-    ],
-    "tags": [
-      "non",
-      "free"
-    ],
-    "daRequired": false,
-    "isSeasonal": true
   },
   {
     "id": "accessory-freezing-ring",
@@ -10230,6 +10128,154 @@
     "isSeasonal": true
   },
   {
+    "id": "accessory-first-golden-ring",
+    "familyName": "Golden Rings",
+    "slug": "accessory-first-golden-ring",
+    "aliasSlugs": [
+      "accessory-second-golden-ring",
+      "accessory-third-golden-ring",
+      "accessory-fourth-golden-ring",
+      "accessory-fifth-golden-ring"
+    ],
+    "type": "accessory",
+    "subtype": "ring",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15262881",
+    "familyOrigin": "cross-post",
+    "familySources": [],
+    "shared": {
+      "description": "The moglins have made five golden rings as mementos of this year's Frostval. This one's luckier than the others."
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
+        "levelDisplay": "1",
+        "actualLevel": 1,
+        "variantName": "First",
+        "name": "First Golden Ring",
+        "damage": "",
+        "stats": "END +2, CHA +2, LUK +2, INT +2, DEX +2, STR +2",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=15262881",
+        "description": "The moglins have made five golden rings as mementos of this year's Frostval. This one's luckier than the others.",
+        "obtainVariants": [
+          {
+            "location": "5 Gold Rings",
+            "priceType": "free",
+            "price": "0 Gold",
+            "sellback": "0 Gold",
+            "daRequired": false
+          }
+        ],
+        "element": "NON",
+        "rarity": "10"
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "1",
+        "actualLevel": 1,
+        "variantName": "Second",
+        "name": "Second Golden Ring",
+        "damage": "",
+        "stats": "Crit +5, CHA +2",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=15262862",
+        "description": "The moglins have made five golden rings as mementos of this year's Frostval. This one seems to make others find you more charismatic.",
+        "obtainVariants": [
+          {
+            "location": "5 Gold Rings",
+            "priceType": "free",
+            "price": "0 Gold",
+            "sellback": "0 Gold",
+            "daRequired": false
+          }
+        ],
+        "element": "NON",
+        "rarity": "10"
+      },
+      {
+        "levelNumber": 3,
+        "levelDisplay": "1",
+        "actualLevel": 1,
+        "variantName": "Third",
+        "name": "Third Golden Ring",
+        "damage": "",
+        "stats": "STR +10",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=15262886",
+        "description": "The moglins have made five golden rings as mementos of this year's Frostval. This one lends you strength.",
+        "obtainVariants": [
+          {
+            "location": "5 Gold Rings",
+            "priceType": "free",
+            "price": "0 Gold",
+            "sellback": "0 Gold",
+            "daRequired": false
+          }
+        ],
+        "element": "NON",
+        "rarity": "10"
+      },
+      {
+        "levelNumber": 4,
+        "levelDisplay": "1",
+        "actualLevel": 1,
+        "variantName": "Fourth",
+        "name": "Fourth Golden Ring",
+        "damage": "",
+        "stats": "INT +10",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=15262895",
+        "description": "The moglins have made five golden rings as mementos of this years Frostval. This one enhances your intelligence.",
+        "obtainVariants": [
+          {
+            "location": "5 Gold Rings",
+            "priceType": "free",
+            "price": "0 Gold",
+            "sellback": "0 Gold",
+            "daRequired": false
+          }
+        ],
+        "element": "NON",
+        "rarity": "10"
+      },
+      {
+        "levelNumber": 5,
+        "levelDisplay": "1",
+        "actualLevel": 1,
+        "variantName": "Fifth",
+        "name": "Fifth Golden Ring",
+        "damage": "",
+        "stats": "END +5, Bonus +4",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=15262900",
+        "description": "The moglins have made five golden rings as mementos of this year's Frostval. This one aids your endurance.",
+        "obtainVariants": [
+          {
+            "location": "5 Gold Rings",
+            "priceType": "free",
+            "price": "0 Gold",
+            "sellback": "0 Gold",
+            "daRequired": false
+          }
+        ],
+        "element": "NON",
+        "rarity": "10"
+      }
+    ],
+    "itemType": "Ring",
+    "equipSlot": "Finger",
+    "category": "Armor",
+    "tags": [
+      "free",
+      "non"
+    ],
+    "isSeasonal": true,
+    "hasDA": false,
+    "hasDC": false,
+    "hasDM": false,
+    "hasFree": true,
+    "hasMerge": false,
+    "levelRange": "1",
+    "elements": [
+      "NON"
+    ]
+  },
+  {
     "id": "accessory-golden-wedding-ring",
     "familyName": "Golden Wedding Ring",
     "slug": "accessory-golden-wedding-ring",
@@ -11088,7 +11134,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "Ring previously appeared in the retired quest  Nightmares as a Necklace and had the following stats:\nStats: Crit +2, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +5, END +3, INT +3\nResists: Fire +6\nDropped version previously had the description: I single, small orb is hung from this chain. It is freezing cold.",
+    "notes": "Ring previously appeared in the retired quest  Nightmares as a Necklace and had the following stats:\n  Stats: Crit +2, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +5, END +3, INT +3\n  Resists: Fire +6\nDropped version previously had the description: I single, small orb is hung from this chain. It is freezing cold.",
     "tags": [
       "ice",
       "free"
@@ -18639,7 +18685,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "Ring previously appeared in the retired quest  Nightmares as a Necklace and had the following stats:\nStats: Crit +2, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +2, END +5, INT +6, DEX +6, STR +6, Bonus +5\nResists: Fire +8, Water +4, Immobility +1\nDropped version previously had the description: A vial of cooling salve hangs on this chain.",
+    "notes": "Ring previously appeared in the retired quest  Nightmares as a Necklace and had the following stats:\n  Stats: Crit +2, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +2, END +5, INT +6, DEX +6, STR +6, Bonus +5\n  Resists: Fire +8, Water +4, Immobility +1\nDropped version previously had the description: A vial of cooling salve hangs on this chain.",
     "tags": [
       "win",
       "free"
@@ -18816,40 +18862,6 @@
       "free"
     ],
     "daRequired": false
-  },
-  {
-    "id": "accessory-second-golden-ring",
-    "name": "Second Golden Ring",
-    "slug": "accessory-second-golden-ring",
-    "type": "accessory",
-    "subtype": "ring",
-    "description": "The moglins have made five golden rings as mementos of this year's Frostval. This one seems to make others find you more charismatic.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15262862",
-    "releaseDate": "",
-    "elements": [
-      "NON"
-    ],
-    "level": "1",
-    "stats": "Crit +5, CHA +2",
-    "rarity": "10",
-    "itemType": "Ring",
-    "equipSpot": "Finger",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "5 Gold Rings",
-        "priceType": "free",
-        "price": "0 Gold",
-        "sellback": "0 Gold",
-        "daRequired": false
-      }
-    ],
-    "tags": [
-      "non",
-      "free"
-    ],
-    "daRequired": false,
-    "isSeasonal": true
   },
   {
     "id": "accessory-seer-s-ring",
@@ -21237,40 +21249,6 @@
     ]
   },
   {
-    "id": "accessory-third-golden-ring",
-    "name": "Third Golden Ring",
-    "slug": "accessory-third-golden-ring",
-    "type": "accessory",
-    "subtype": "ring",
-    "description": "The moglins have made five golden rings as mementos of this year's Frostval. This one lends you strength.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15262886",
-    "releaseDate": "",
-    "elements": [
-      "NON"
-    ],
-    "level": "1",
-    "stats": "STR +10",
-    "rarity": "10",
-    "itemType": "Ring",
-    "equipSpot": "Finger",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "5 Gold Rings",
-        "priceType": "free",
-        "price": "0 Gold",
-        "sellback": "0 Gold",
-        "daRequired": false
-      }
-    ],
-    "tags": [
-      "non",
-      "free"
-    ],
-    "daRequired": false,
-    "isSeasonal": true
-  },
-  {
     "id": "accessory-togslayer-x-s-seal",
     "name": "Togslayer X's Seal",
     "slug": "accessory-togslayer-x-s-seal",
@@ -21408,7 +21386,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "Ring previously appeared in the retired quest  Nightmares as a Necklace and had the following stats:\nSellback: 0 Gold\nStats: Parry +1, Crit +8, WIS +7, END +10, DEX +9, Bonus +5\nResists: Metal +8, Fire +8, Nature +8, Immobility +3\nDropped version previously had the description: Twisted and broken gears form a chain.",
+    "notes": "Ring previously appeared in the retired quest  Nightmares as a Necklace and had the following stats:\n  Sellback: 0 Gold\n  Stats: Parry +1, Crit +8, WIS +7, END +10, DEX +9, Bonus +5\n  Resists: Metal +8, Fire +8, Nature +8, Immobility +3\nDropped version previously had the description: Twisted and broken gears form a chain.",
     "tags": [
       "met",
       "free"
@@ -22293,7 +22271,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "Ring previously appeared in the retired quest  Nightmares as a Necklace and had the following stats:\nStats: Parry +2, Crit +7, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +8, END +2, CHA +5, INT +8, DEX +8, STR +8, Bonus +5\nResists: All +5, Immobility +2\nDropped version previously had the description: A splinter of wood hangs off the end of this chain. You feel magic humming within it. This item requires a Dragon Amulet.",
+    "notes": "Ring previously appeared in the retired quest  Nightmares as a Necklace and had the following stats:\n  Stats: Parry +2, Crit +7, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +8, END +2, CHA +5, INT +8, DEX +8, STR +8, Bonus +5\n  Resists: All +5, Immobility +2\nDropped version previously had the description: A splinter of wood hangs off the end of this chain. You feel magic humming within it. This item requires a Dragon Amulet.",
     "tags": [
       "nat",
       "free"

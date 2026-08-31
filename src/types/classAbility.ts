@@ -1,5 +1,5 @@
-import type { AlsoSeeRef, AlternativeImage, ItemFamily, ObtainVariant } from './item'
-import type { GuestAttack } from './pet'
+import type { AlsoSeeRef, AlternativeImage, ItemFamily, MechanicsBlock, ObtainVariant } from './item'
+import type { GuestAttack, GuestAttackSet, GuestStats } from './pet'
 
 export type ClassAbilitySubtype = 'class' | 'consumable'
 export type ClassSubcategory = 'armor' | 'regular' | 'miscellaneous'
@@ -29,6 +29,7 @@ export interface ClassAbilityItem {
   classSubcategory?: ClassSubcategory
   consumableKind?: ConsumableKind
   description: string
+  releaseDate?: string
   forumUrl: string
   sourceUrl: string
   imageUrl?: string
@@ -42,7 +43,12 @@ export interface ClassAbilityItem {
   effectType?: string
   equipsClass?: string
   equipsClassUrl?: string
+  defaultWeapon?: string
+  defaultWeaponUrl?: string
+  guestStats?: GuestStats
   attacks?: GuestAttack[]
+  attackSets?: GuestAttackSet[]
+  mechanics?: MechanicsBlock[]
   dialogue?: string
   obtainMethods?: ObtainVariant[]
   level?: string
@@ -119,7 +125,7 @@ export const CLASS_ABILITY_SUBTYPES: ClassAbilitySubtypeMeta[] = [
     subtype: 'class',
     label: 'Classes',
     route: '/classes',
-    dataFiles: ['classes.json'],
+    dataFiles: ['class-armors.json', 'class-regular.json', 'class-miscellaneous.json'],
     shortDescription: CLASS_ABILITY_DESCRIPTION,
     sourceUrl: 'https://forums2.battleon.com/f/fb.asp?m=22303582',
   },

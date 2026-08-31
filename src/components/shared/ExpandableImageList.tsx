@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { ChevronDown, ImageIcon, ImageOff } from 'lucide-react'
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from './ui/collapsible'
 
 interface ExpandableImageListProps {
   images: string[]
@@ -45,22 +46,17 @@ export default function ExpandableImageList({
     images.length === 1 ? label : `${label.replace(/\bImage$/i, 'Images')} (${images.length})`
 
   return (
-    <div className="space-y-2">
-      <button
-        type="button"
-        onClick={() => setOpen((value) => !value)}
-        className="inline-flex min-h-9 items-center gap-2 rounded-lg border border-border-default bg-bg-elevated px-3 py-1.5 text-xs font-medium text-text-secondary hover:text-text-primary hover:border-border-hover transition-colors"
-        aria-expanded={open}
-      >
+    <Collapsible open={open} onOpenChange={setOpen} className="space-y-2">
+      <CollapsibleTrigger className="group/img inline-flex min-h-9 items-center gap-2 rounded-lg border border-border-default bg-bg-elevated px-3 py-1.5 text-xs font-medium text-text-secondary hover:text-text-primary hover:border-border-hover transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/60">
         <ImageIcon className="h-3.5 w-3.5" aria-hidden="true" />
         <span>{open ? `Hide ${displayLabel}` : `Show ${displayLabel}`}</span>
         <ChevronDown
-          className={`h-3.5 w-3.5 transition-transform ${open ? 'rotate-180' : ''}`}
+          className="h-3.5 w-3.5 transition-transform duration-200 group-data-[state=open]/img:rotate-180"
           aria-hidden="true"
         />
-      </button>
+      </CollapsibleTrigger>
 
-      {open && (
+      <CollapsibleContent className="overflow-hidden data-[state=open]:animate-collapsible-down data-[state=closed]:animate-collapsible-up">
         <div className="space-y-2">
           {images.map((src, index) => (
             <figure key={`${src}-${index}`} className="space-y-1.5">
@@ -73,7 +69,7 @@ export default function ExpandableImageList({
             </figure>
           ))}
         </div>
-      )}
-    </div>
+      </CollapsibleContent>
+    </Collapsible>
   )
 }

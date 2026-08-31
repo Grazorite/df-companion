@@ -7524,13 +7524,14 @@
     "isRare": true
   },
   {
-    "id": "weapon-kaaros-xera-avi",
-    "familyName": "Kaaros Xera (Avi)",
-    "slug": "weapon-kaaros-xera-avi",
+    "id": "weapon-kaaros-xera",
+    "familyName": "Kaaros Xera",
+    "slug": "weapon-kaaros-xera",
     "aliasSlugs": [
       "weapon-kaaros-xera-avi-all-versions",
-      "weapon-kaaros-xera",
-      "weapon-base-kaaros-xera"
+      "weapon-base-kaaros-xera",
+      "weapon-kaaros-xera-avi",
+      "weapon-kaaros-xera-all-versions"
     ],
     "type": "weapon",
     "subtype": "staff-wand",
@@ -7579,13 +7580,13 @@
         "resists": "Water +1, Ice +1",
         "rarity": "5",
         "itemType": "Staff",
-        "variantName": "Kaaros Xera"
+        "variantName": "(Base)"
       },
       {
         "levelNumber": 51,
         "levelDisplay": "51",
         "actualLevel": 51,
-        "variantName": "(Base)",
+        "variantName": "Avi",
         "name": "Kaaros Xera (Avi)",
         "damage": "59-79",
         "stats": "Crit +5, END +6, CHA +3, LUK +3, INT +6, Bonus +3",

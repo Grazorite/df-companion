@@ -249,6 +249,12 @@ inference. Reference non-consolidation examples: `Swordhaven Cape` / `Swordhaven
 `Obsidian Relic Helm` / `Obsidian Relic Visor`, and `Chaotic Cloak` / `Chaotic Robes` /
 `Chaotic Shroud` / `Chaotic Spine`.
 
+Do not mix fundamentally different variant types in one accessory selector. Roman/numeric
+progressions, access-only branches, named cosmetic/form variants, and distinct sibling items should
+only share an itemfamily when they represent one coherent progression. When a forum thread or
+explicit `Also See` relationship mixes those groups, split them into sibling entries and link them
+through `Also See` instead.
+
 ### Helm Split Exceptions
 
 Some helm families are intentionally split even when they are same-thread or explicitly linked,
@@ -329,9 +335,14 @@ as clean independent posts. Current hardcoded cases:
 - `Cultist Hood`: `(Base)`, `Dark`, `Evil`, and `Villainous` are normal/DC pairs; `Foul`, `Doomed`,
   and `Brutal` are DA-only / DA+DC pairs.
 
-Ordinal sibling names such as `First Golden Ring` through `Fifth Golden Ring` are not hardcoded
-accessory links. They rely on the shared inferred `Also See` matcher: same subtype, matching relaxed
-obtain fingerprint, and high name similarity after non-identifying ordinal words are ignored.
+`First Golden Ring` through `Fifth Golden Ring` are a scoped accessory-family exception and
+consolidate into the `Golden Rings` family with `First`, `Second`, `Third`, `Fourth`, and `Fifth`
+variants. The separate item literally named `Golden Ring` remains standalone to avoid display/slug
+collision with the ordinal series.
+
+`Soulforged Ring (Red)`, `Soulforged Ring (Blue)`, and `Soulforged Ring (Green)` are each separate
+color families. Within each color family, the repeated color variant labels are redundant across
+unique levels, so detail pages should use a level selector and hide the Variant stats-table column.
 
 Missing-image placeholders for the following verified accessories are expected: Bright Concealer,
 Floating Chuckles Skull, Paintbender Battlemage Cape, Uthuluc Acolyte Limbs, Uthuluc Acolyte Visage,
@@ -378,6 +389,15 @@ removing the rank prefix leaves the exact same normalized title. Example: `Minor
 loose single-word suffix matches where the base titles differ, such as `Minor Bronze Blade` /
 `Major Bronzed Blade`.
 
+Some older forum family titles use a parenthetical sibling as the family name even though the actual
+series is just base item + named variant. In those explicit cases, display the family as the base
+item and use `(Base)` plus the parenthetical text as selector/table labels. Current hardcoded weapon
+examples include `Charger`/`Lite`, `Harbinger`/`of Sorrow`, `Kaaros Garada`/`Avi`,
+`Nereid Sagaris`/`Aquis`, `Red Scrapper`/`Senior`, `Kaaros Xera`/`Avi`, `Anlace`/
+`of the Resistance`, `Kaaros Alleri`/`Avi`, and `Tupperblade`/`Two`. Do not generalize this to
+years, default disambiguators, subtype codes, color sets, or intentional parenthetical variant-group
+families.
+
 ### Mixed Variant Group Splits (weapon families)
 
 Some weapon threads mix fundamentally different variant groups inside one forum family. In those
@@ -391,10 +411,16 @@ include:
 - Sea's Blessing/Favor/Bounty split into `'09`, `'10`, and modern progressions.
 - Amaterasu/Tsukuyomi progressions split from `Omikami`/`no-Mikoto`; Threadcutter/Time's Harvest split
   `Alpha` from Roman progressions; The Massive Axe splits `XL` from `I-IV`.
+- `Infected Megabytes` splits the standalone `Cosmetic` variant from the `I-III` Roman progression,
+  producing `Infected Megabytes (Cosmetic)` and `Infected Megabytes (I-III)` sibling families.
 - Fidelitas/Decus/Ferocitas split into three sibling families each: the `Fourth of July Rares` `I-V`
   progression, the named `Rufus`/`Albus`/`Azureus`/`Aurus` family, and the `Fourth of July Weapons`
   `I-VIII` progression. Keep these as hardcoded split exceptions because the two Roman groups reuse
   the same source titles and differ by obtain era.
+
+This is the same general rule of thumb as accessories: do not mix cosmetic/form variants with
+Roman/numeric progression variants in one selector unless the forum clearly treats them as one
+coherent progression and the resulting selector remains readable.
 
 Weapon targeted refreshes support `--fresh`; use it when the selected family should replace existing
 local entries and aliases instead of merging into them. The fresh matcher intentionally preserves
@@ -489,6 +515,21 @@ The Classes subtype has an extra multi-select sub-subtype filter level before no
 next levels are the shared access filters (`Multiple Versions`, `DA Required`, `Merge Required`,
 `DC`) and the shared category filters (`Temp`, `Rare`, `Seasonal`, `Special Offer`, `Retired`).
 
+Regular/Miscellaneous classes can have artifact-modified attack sets. Those sets should be linked to
+the corresponding Accessory artifact through `src/data/class-artifact-relations.json`; use inline
+links in mechanics/notes and artifact detail text rather than cross-category Also See cards. The
+relation file is regenerated after Classes and Accessories scrapes, and can be refreshed manually
+with `npm run generate:class-artifact-relations`. The relation generator also reads artifact
+`Modifies` metadata, including armor-customization modifiers, so appearance-only artifacts such as
+`Navigator's Hat` still link to the affected class even when the class has no matching artifact
+attack set.
+
+Regular/Miscellaneous class `Default Weapon` forum links are converted into app-route links through
+`src/data/class-default-weapon-relations.json`. The class detail page links the default weapon when a
+matching weapon source exists, and weapon detail pages render the reverse `Default Weapon For` class
+links from the same relation index. Missing weapon matches stay as plain text rather than broken
+links.
+
 `Armors` are obtainable inventory items, not the playable class encyclopedia pages themselves. An
 armor entry should parse and display `Equips Class: <class>` from the forum detail page, with the
 forum link preserved when present. Example: `Chaosweaver Armor` equips the `Chaosweaver` class, while
@@ -537,8 +578,7 @@ The starter scraper is `npm run scrape:classes -- --subtype=consumable --fresh`.
 Consumables A-Z listing (`fb.asp?m=22304639`), appends the supplemental Health Potion (`m=4159197`)
 and Mana Potion (`m=4159198`) entries under H/M, and follows linked detail posts. It is additive by
 default, `--limit` is a dry-run unless paired with `--fresh`, and successful writes update
-`src/data/class-consumables.json` plus `src/data/class-abilities-manifest.json`. The Classes subtype
-parser is intentionally not implemented yet. The Consumables listing includes non-entry anchors
+`src/data/class-consumables.json` plus `src/data/class-abilities-manifest.json`. The Consumables listing includes non-entry anchors
 `Alphabetical Consumables Listing` and `Consumables Sorted by Effects`; scrapers must skip them. The
 A-Z listing prefixes `[D]`, `[F]`, and `[R]` drive the L3 `Dust`, `Food`, and `Rune` kind filters,
 with individual post `Item Type: Dust/Food/Rune` as the fallback verification source. Effects may be
@@ -581,6 +621,65 @@ price/required-item semantics override page-level DA/DC tag bleed. `Epoch` price
 the forum strikethrough artifact that can drop the closing `)` from `(Standard)`. Consolidated armor
 families may claim legacy/source slugs as aliases; if a stale or duplicate primary entry has a slug
 already claimed by another entry's `aliasSlugs`, drop the stale primary during scraper normalization.
-Regular and Miscellaneous class-page parsing are intentionally still pending. Status tags come from
-forum tag images when present; the Classes A-Z listings also use text parentheticals such as
-`S-Offer`, which should be treated as the row-level fallback for `Special Offer`.
+Regular and Miscellaneous class-page parsing share the Classes A-Z listing with Armors, but use
+separate subcategory-aware slugs such as `class-ability-ancient-exosuit-regular` so playable class
+pages do not collide with armor entries of the same name. Playable class detail fetches parse the
+linked reply plus later replies from the same class thread; later replies are only structured as
+alternate attack views when they contain an explicit `Artifact:` heading. Regular/Miscellaneous class
+details should follow the guest-style presentation, not the armor
+presentation: release date from the class chronology page, main/alt images, guest-style stat panels,
+`Access Point` obtain methods, `Default Weapon`, attacks, Other Information, and status tags. Class
+skill effects must stay inside guest-style attack accordions rather than rendering as the generic
+Consumable/Armor `Effect` card. The Armor sub-subtype keeps its separate armor metric strip and
+no-main-image behavior. Status tags come
+from forum tag images when present; the Classes A-Z listings also use text parentheticals such as
+`S-Offer`, which should be treated as the row-level fallback for `Special Offer`. Miscellaneous
+classes tagged with Alexander/Archknight tag images expose the `Special Character` filter.
+Forum navigation chrome such as `Logged in as: Guest`, breadcrumbs, `Printable Version`, and
+`Forum Login` must never become a class card title or description; reject those rows at scrape time
+and filter stale rows during normalization.
+Some playable class pages use later forum replies or irregular skill separators. The scraper handles
+the common first-post-plus-next-post shape used by the base classes: skill-local Other Information
+stays attached to the relevant attack, while global images and notes can come from the immediate next
+reply. It also handles same-thread non-artifact follow-up posts that are additional playable
+variants, such as `Edd Disguise (Complex Skills)` and `Edd Disguise (Simple Skills)`, while still
+using the final non-skill support post for shared images and notes. It treats textual `* * *` skill
+separators like horizontal rules and can infer attack image captions from same-line prefixes such as
+`Original: Appearance` or `DragonKeeper: Appearance 1 / 1.1`; those consumed appearance-label lines
+must not remain in attack notes or global Other Information. Class main/alt image extraction should
+preserve forum order and prioritize explicit forum captions (`Modern`, `Retro`, `Original`, etc.)
+over generic main/alt labels. When a class page also contains linked weapon or skill appearance
+images inside notes, prefer explicit class-gallery captions such as `Armor Set Appearance`, then the
+URL family that matches the class name, then document order. Be path-aware when filtering forum UI
+images: raw GitHub URLs include `githubusercontent`, which must not be rejected just because the
+hostname contains the substring `icon`. Paired duplicate image captions under one heading may be
+disambiguated as `(Male)` / `(Female)` when the forum provides two images without separate labels.
+Class attack requirements are scraped and displayed like guest attack requirements; redundant
+`Dragon Amulet` requirements are omitted because DA is already represented by tags/pills. Multiple
+inline `(Pop-up: ...)` snippets in one class skill effect render as one shared `Pop-ups:` quote block
+through the common popup renderer.
+Class mechanics are separate from both attacks and Other Information. Widget sections detected from
+captions such as `Chaosweaver's widget displaying Soulthreads.` or `Ranger's widget displaying
+Focus.` become `mechanics` blocks with their image and explanatory notes. Artifact replies can also
+include mechanics before the first skill; those mechanics belong to that artifact attack set. If a
+class has artifact attack sets, the detail UI treats mechanics as correlated with the selected attack
+set rather than always rendering shared mechanics under every artifact view. When an artifact link is
+already rendered above Class Mechanics, suppress a matching mechanics block title so the artifact name
+does not appear twice. If the forum text exposes a widget caption but the image link is not captured,
+the scraper may use the standard DF-Pedia `<ClassName>-Widget.png` fallback; `Pirate-Widget.png` is
+the reference case.
+Artifact replies with a final horizontal-rule-separated `Other information` section attach those
+notes to the selected artifact attack set, and the detail page appends them to the normal Other
+Information when that artifact view is active.
+Remaining missing-image spot
+checks after the first full Regular/Miscellaneous scrape:
+`Alexander`, `Ancient Shadow Rogue`, `Ascendant`, `Cryptic`, `Dread Pirate`, `Dreaming Togslayer`,
+`Icebound Revenant`, `Knight Lite`, `Nythera`, `Riftwalker`, `Shadow Rogue`, and `Unbread`. `Pirate`
+and `Edd Disguise` were targeted-refreshed after parser fixes and no longer belong on the
+missing-image list. Low/no-attack miscellaneous pages `Angler`, `DOOOOOOOOM`,
+`Kid Artix`, `Kid Raven`, `Shadow Hunter`, `Sleepy Hero`, `VIP`, and `Young Vilmor` were
+forum-verified by the user on 2026-08-30 and should not be treated as parser failures solely because
+of low attack counts.
+Default-weapon links are currently stored with the forum URL; the app-route two-way inline relation
+between Classes and Weapons should be implemented as a small relation index, similar in spirit to
+badge award links, before a broad playable-class scrape is considered complete.

@@ -23238,13 +23238,14 @@
     "levelRange": "II-VII"
   },
   {
-    "id": "weapon-charger-lite",
-    "familyName": "Charger (Lite)",
-    "slug": "weapon-charger-lite",
+    "id": "weapon-charger",
+    "familyName": "Charger",
+    "slug": "weapon-charger",
     "aliasSlugs": [
       "weapon-charger-lite-all-versions",
-      "weapon-charger",
-      "weapon-base-charger"
+      "weapon-base-charger",
+      "weapon-charger-lite",
+      "weapon-charger-all-versions"
     ],
     "type": "weapon",
     "subtype": "sword-axe-mace",
@@ -23313,13 +23314,13 @@
         "resists": "None",
         "rarity": "2",
         "itemType": "Sword",
-        "variantName": "Charger"
+        "variantName": "(Base)"
       },
       {
         "levelNumber": 3,
         "levelDisplay": "3",
         "actualLevel": 3,
-        "variantName": "(Base)",
+        "variantName": "Lite",
         "name": "Charger (Lite)",
         "damage": "1-23",
         "stats": "Bonus +1",
@@ -23691,8 +23692,8 @@
         "url": "https://forums2.battleon.com/f/tm.asp?m=4153176"
       },
       {
-        "name": "Harbinger (of Sorrow)",
-        "slug": "weapon-harbinger-of-sorrow",
+        "name": "Harbinger",
+        "slug": "weapon-harbinger",
         "type": "weapon",
         "url": "https://forums2.battleon.com/f/tm.asp?m=4229464"
       },
@@ -56977,8 +56978,8 @@
         "url": "https://forums2.battleon.com/f/tm.asp?m=4153938"
       },
       {
-        "name": "Harbinger (of Sorrow)",
-        "slug": "weapon-harbinger-of-sorrow",
+        "name": "Harbinger",
+        "slug": "weapon-harbinger",
         "type": "weapon",
         "url": "https://forums2.battleon.com/f/tm.asp?m=4229464"
       },

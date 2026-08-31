@@ -12712,9 +12712,9 @@
     ]
   },
   {
-    "id": "accessory-blast-test-dummy-mask",
-    "familyName": "Blast Test Dummy (Mask)",
-    "slug": "accessory-blast-test-dummy-mask",
+    "id": "accessory-blast-test-dummy",
+    "familyName": "Blast Test Dummy",
+    "slug": "accessory-blast-test-dummy",
     "type": "accessory",
     "subtype": "helm",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=16870639",
@@ -12740,6 +12740,31 @@
     "levelVariants": [
       {
         "levelNumber": 1,
+        "levelDisplay": "45",
+        "actualLevel": 45,
+        "variantName": "(Base)",
+        "name": "Blast Test Dummy",
+        "damage": "",
+        "stats": "Dodge +1, Crit +2, Magic Def +4, Pierce Def +4, Melee Def +4, INT +4, DEX +4, STR +4, Bonus +2",
+        "obtainVariants": [
+          {
+            "location": "Cysero's Mask Shop",
+            "price": "300 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "270 DC (<24 hours) / 75 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=16982779",
+        "description": "You aren't a dummy when you're wearing this mask. It makes your defenses awesome!",
+        "element": "NON",
+        "resists": "Fire +5, Ice +5, Stone +5, Wind +5",
+        "rarity": "6",
+        "itemType": "Helm"
+      },
+      {
+        "levelNumber": 2,
         "levelDisplay": "1",
         "actualLevel": 1,
         "name": "Blast Test Dummy Mask",
@@ -12761,32 +12786,8 @@
         "resists": "None",
         "rarity": "1",
         "itemType": "Helm",
-        "notes": "Prevents moglins from becoming Moglinsters and provides a 34% Candy bonus when equipped while Trick or Treating."
-      },
-      {
-        "levelNumber": 45,
-        "levelDisplay": "45",
-        "actualLevel": 45,
-        "variantName": "(Mask)",
-        "name": "Blast Test Dummy (Mask)",
-        "damage": "",
-        "stats": "Dodge +1, Crit +2, Magic Def +4, Pierce Def +4, Melee Def +4, INT +4, DEX +4, STR +4, Bonus +2",
-        "obtainVariants": [
-          {
-            "location": "Cysero's Mask Shop",
-            "price": "300 Dragon Coins",
-            "priceType": "dc",
-            "sellback": "270 DC (<24 hours) / 75 DC (>24 hours)",
-            "daRequired": false,
-            "dcRequired": true
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=16982779",
-        "description": "You aren't a dummy when you're wearing this mask. It makes your defenses awesome!",
-        "element": "NON",
-        "resists": "Fire +5, Ice +5, Stone +5, Wind +5",
-        "rarity": "6",
-        "itemType": "Helm"
+        "notes": "Prevents moglins from becoming Moglinsters and provides a 34% Candy bonus when equipped while Trick or Treating.",
+        "variantName": "Mask"
       }
     ],
     "itemType": "Helm",
@@ -12808,6 +12809,9 @@
     "levelRange": "1-45",
     "elements": [
       "NON"
+    ],
+    "aliasSlugs": [
+      "accessory-blast-test-dummy-mask"
     ]
   },
   {

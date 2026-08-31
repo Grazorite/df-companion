@@ -34,6 +34,7 @@ import {
   WEAPON_SUBTYPES,
 } from '../src/types/weapon.ts'
 import { extractAlsoSeeRefs, type ParsedAlsoSeeRef } from './lib/also-see.ts'
+import { writeClassDefaultWeaponRelations } from './lib/class-default-weapon-relations.ts'
 import { writeWeaponManifest } from './lib/data-manifests.ts'
 import { shouldPreserveFamilyForSameSlugIncoming } from './lib/family-merge-guard.ts'
 import { hasRetiredTag } from './lib/tags.ts'
@@ -646,7 +647,14 @@ function parseNotes(html: string): string | undefined {
     const cleanedText = trimmed.replace(/^[•*-]\s*/, '')
     const indentLength = line.match(/^\s*/)?.[0].length ?? 0
     if (indentLength > 0 && noteLines.length > 0) {
-      noteLines.push(`${' '.repeat(indentLength)}• ${cleanedText}`)
+      const normalizedIndent = '  '.repeat(Math.max(1, Math.ceil(indentLength / 2)))
+      noteLines.push(`${normalizedIndent}• ${cleanedText}`)
+    } else if (
+      noteLines.length > 0 &&
+      /(?:following|initial)\s+stats:\s*$/i.test(noteLines[noteLines.length - 1].trim()) &&
+      /^(?:Stats|Resists|Sellback|Price|Damage|Element|Bonuses|Rarity):/i.test(cleanedText)
+    ) {
+      noteLines.push(`  ${cleanedText}`)
     } else {
       noteLines.push(cleanedText)
     }
@@ -2211,6 +2219,85 @@ function dedupeWeaponFamilyEntry(family: WeaponFamily): WeaponFamily {
   })
 }
 
+const BASE_PLUS_PARENTHETICAL_WEAPON_FAMILIES = new Map<string, { familyName: string; variantName: string }>(
+  (
+    [
+    ['Charger (Lite)', { familyName: 'Charger', variantName: 'Lite' }],
+    ['Harbinger (of Sorrow)', { familyName: 'Harbinger', variantName: 'of Sorrow' }],
+    ['Kaaros Garada (Avi)', { familyName: 'Kaaros Garada', variantName: 'Avi' }],
+    ['Nereid Sagaris (Aquis)', { familyName: 'Nereid Sagaris', variantName: 'Aquis' }],
+    ['Red Scrapper (Senior)', { familyName: 'Red Scrapper', variantName: 'Senior' }],
+    ['Kaaros Xera (Avi)', { familyName: 'Kaaros Xera', variantName: 'Avi' }],
+    ['Anlace (of the Resistance)', { familyName: 'Anlace', variantName: 'of the Resistance' }],
+    ['Kaaros Alleri (Avi)', { familyName: 'Kaaros Alleri', variantName: 'Avi' }],
+    ['Tupperblade (Two)', { familyName: 'Tupperblade', variantName: 'Two' }],
+    ] as const
+  ).map(([sourceFamilyName, config]) => [normalizeWeaponLookupName(sourceFamilyName), config])
+)
+
+function normalizeBasePlusParentheticalWeaponFamilies(entries: WeaponEntry[]): WeaponEntry[] {
+  return entries.map((entry) => {
+    if (!isWeaponFamilyEntry(entry)) return entry
+
+    const config = BASE_PLUS_PARENTHETICAL_WEAPON_FAMILIES.get(
+      normalizeWeaponLookupName(entry.familyName)
+    )
+    if (!config) return entry
+
+    const baseKey = normalizeWeaponLookupName(config.familyName)
+    const variantKey = normalizeWeaponLookupName(`${config.familyName} (${config.variantName})`)
+    const slug = weaponSlugForName(config.familyName)
+    const levelVariants = [...entry.levelVariants]
+      .map((variant) => {
+        const nameKey = normalizeWeaponLookupName(variant.name)
+        return {
+          ...variant,
+          variantName:
+            nameKey === baseKey
+              ? '(Base)'
+              : nameKey === variantKey
+                ? config.variantName
+                : variant.variantName,
+        }
+      })
+      .sort((a, b) => {
+        if (a.variantName === '(Base)' && b.variantName !== '(Base)') return -1
+        if (b.variantName === '(Base)' && a.variantName !== '(Base)') return 1
+        return compareTitles(a.variantName ?? a.name, b.variantName ?? b.name)
+      })
+
+    return computeFamilyFlags({
+      ...entry,
+      id: slug,
+      slug,
+      familyName: config.familyName,
+      aliasSlugs: buildWeaponFamilyAliasSlugs(
+        config.familyName,
+        levelVariants,
+        [entry.slug, ...(entry.aliasSlugs ?? [])],
+        slug
+      ),
+      familySources: entry.familySources
+        ? dedupeWeaponFamilySources(
+            entry.familySources.map((source) => ({
+              ...source,
+              variantLabel:
+                normalizeWeaponLookupName(source.title) === variantKey
+                  ? `${config.familyName} (${config.variantName})`
+                  : source.variantLabel,
+            }))
+          )
+        : entry.familySources,
+      levelVariants,
+      hasDA: false,
+      hasDC: false,
+      hasDM: false,
+      hasFree: false,
+      hasMerge: false,
+    })
+  })
+}
+
 function mergeSameSlugWeaponFamilies(entries: WeaponEntry[]): WeaponEntry[] {
   const groups = new Map<string, WeaponEntry[]>()
   for (const entry of entries) {
@@ -3029,6 +3116,10 @@ function cloneWeaponFamilyWithLevels(
     hasDM: false,
     hasFree: false,
     hasMerge: false,
+    isCosmetic:
+      adjustedLevels.some((level) =>
+        hasCosmeticMarker(`${level.name} ${level.description ?? ''}`)
+      ) || undefined,
   })
 }
 
@@ -3422,6 +3513,20 @@ const MIXED_VARIANT_WEAPON_SPLIT_SPECS: MixedVariantWeaponSplitSpec[] = [
       },
     ],
   },
+  {
+    sourceFamilyNames: ['Infected Megabytes'],
+    groups: [
+      {
+        familyName: 'Infected Megabytes (Cosmetic)',
+        matches: (level) => /\(Cosmetic\)$/i.test(level.name),
+      },
+      {
+        familyName: 'Infected Megabytes (I-III)',
+        matches: (level) => hasRomanVariantInRange(level, 1, 3),
+        getVariantName: getRomanOrExistingVariantName,
+      },
+    ],
+  },
   ...(['Fidelitas', 'Decus', 'Ferocitas'] as const).map((familyName) => ({
     sourceFamilyNames: [familyName],
     groups: [
@@ -3456,6 +3561,13 @@ function getMixedVariantWeaponSplitSpec(
     spec.sourceFamilyNames.some(
       (sourceName) => normalizeWeaponComparableTitle(sourceName) === normalizedName
     )
+  )
+}
+
+function isApprovedMixedVariantSplitFamilyName(familyName: string): boolean {
+  const normalizedName = normalizeWeaponComparableTitle(familyName)
+  return MIXED_VARIANT_WEAPON_SPLIT_SPECS.some((spec) =>
+    spec.groups.some((group) => normalizeWeaponComparableTitle(group.familyName) === normalizedName)
   )
 }
 
@@ -3539,11 +3651,20 @@ export function splitApprovedMixedVariantWeaponFamilies(entries: WeaponEntry[]):
       })
       .filter((family): family is WeaponFamily => Boolean(family))
 
-    if (splitFamilies.length <= 1) return [normalizedEntry]
-
     const unmatchedLevels = normalizedEntry.levelVariants.filter(
       (level) => !matchedLevelNames.has(level.name)
     )
+    if (splitFamilies.length <= 1) {
+      if (
+        splitFamilies.length === 1 &&
+        unmatchedLevels.length === 0 &&
+        splitFamilies[0].familyName !== normalizedEntry.familyName
+      ) {
+        return addWeaponSplitSiblingRefs(splitFamilies)
+      }
+      return [normalizedEntry]
+    }
+
     if (unmatchedLevels.length > 0) {
       splitFamilies.push(
         cloneWeaponFamilyWithLevels(normalizedEntry, normalizedEntry.familyName, unmatchedLevels)
@@ -4524,7 +4645,9 @@ export function normalizeWeaponFamilyDisplayLabels(entries: WeaponEntry[]): Weap
   return entries.map((entry) => {
     if (!isWeaponFamilyEntry(entry)) return entry
 
-    const familyName = normalizeWeaponFamilyName(entry.familyName)
+    const familyName = isApprovedMixedVariantSplitFamilyName(entry.familyName)
+      ? entry.familyName
+      : normalizeWeaponFamilyName(entry.familyName)
     const sourceByUrl = new Map((entry.familySources ?? []).map((source) => [source.url, source]))
     const sourceVariantByUrl = new Map(
       (entry.familySources ?? [])
@@ -4815,6 +4938,7 @@ function writeDatasets(
     merged = splitDefaultWeaponFamilies(merged)
     merged = mergeArchKnightDefaultLongsword(merged)
     merged = linkPirateDefaultWeapons(merged)
+    merged = normalizeBasePlusParentheticalWeaponFamilies(merged)
     merged = dedupeWeaponEntriesBySlug(merged)
     merged = removeWeaponAliasStandaloneEntries(merged)
     merged = removeDuplicateWeaponAliasClaims(merged)
@@ -4840,6 +4964,7 @@ function writeDatasets(
     }
   }
   writeWeaponManifest(OUTPUT_DIR)
+  writeClassDefaultWeaponRelations(OUTPUT_DIR)
 }
 
 async function main() {

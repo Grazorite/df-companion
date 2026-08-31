@@ -16,6 +16,7 @@ import { compareTitles, displayTitle } from '../utils/displayText'
 import { hasRetiredEntry } from '../utils/filterVisibility'
 import { obtainMethodInferenceFingerprint } from '../utils/relatedItems'
 import { getSearchWords } from '../utils/search'
+import { getClassArmorAlsoSeeRefs } from './useClassArmorRelations'
 import { useRelatedItems, type RelatedItemResult } from './useRelatedItems'
 
 function useClassAbilitySubtypeDataset(subtype: ClassAbilitySubtype) {
@@ -214,7 +215,10 @@ function getClassAbilitySlugs(entry: ClassAbilityEntry): string[] {
 }
 
 function getClassAbilityAlsoSeeRefs(entry: ClassAbilityEntry): AlsoSeeRef[] {
-  return isClassAbilityFamily(entry) ? (entry.shared.alsoSee ?? []) : (entry.alsoSee ?? [])
+  return [
+    ...(isClassAbilityFamily(entry) ? (entry.shared.alsoSee ?? []) : (entry.alsoSee ?? [])),
+    ...getClassArmorAlsoSeeRefs(entry.slug),
+  ]
 }
 
 function getClassAbilitySourceUrls(entry: ClassAbilityEntry): string[] {
@@ -281,9 +285,36 @@ function classAbilityMatchesSlug(entry: ClassAbilityEntry, slug: string) {
   return getClassAbilitySlugs(entry).includes(slug)
 }
 
+function normalizeForumSourceUrl(url?: string): string | undefined {
+  const messageId = url?.match(/[?&]m=(\d+)/i)?.[1]
+  return messageId ? `https://forums2.battleon.com/f/fb.asp?m=${messageId}` : url
+}
+
+function classAbilityMatchesRef(entry: ClassAbilityEntry, ref: AlsoSeeRef): boolean {
+  if (classAbilityMatchesSlug(entry, ref.slug)) return true
+  if (!ref.url) return false
+
+  const refUrl = normalizeForumSourceUrl(ref.url)
+  return getClassAbilitySourceUrls(entry).some((url) => normalizeForumSourceUrl(url) === refUrl)
+}
+
+function refTargetsClassAbility(
+  ref: AlsoSeeRef,
+  _item: ClassAbilityEntry,
+  currentSlugs: Set<string>,
+  currentSourceUrls: Set<string>
+): boolean {
+  if (currentSlugs.has(ref.slug)) return true
+  if (!ref.url) return false
+  return currentSourceUrls.has(normalizeForumSourceUrl(ref.url) ?? ref.url)
+}
+
 export type ClassAbilityRelatedItem = RelatedItemResult<ClassAbilityEntry, AlsoSeeRef>
 
 export function useClassAbilityRelatedItems(item: ClassAbilityEntry) {
+  const currentSourceUrls = new Set(
+    getClassAbilitySourceUrls(item).map((url) => normalizeForumSourceUrl(url) ?? url)
+  )
   const { relatedItems, loading } = useRelatedItems({
     item,
     alsoSee: getClassAbilityAlsoSeeRefs(item),
@@ -294,8 +325,9 @@ export function useClassAbilityRelatedItems(item: ClassAbilityEntry) {
     getFingerprints: getClassAbilityObtainFingerprints,
     getScope: (entry) => entry.subtype,
     getSourceUrls: getClassAbilitySourceUrls,
-    matchesRef: (entry, ref) => classAbilityMatchesSlug(entry, ref.slug),
-    refTargetsItem: (ref, _item, currentSlugs) => currentSlugs.has(ref.slug),
+    matchesRef: classAbilityMatchesRef,
+    refTargetsItem: (ref, currentItem, currentSlugs) =>
+      refTargetsClassAbility(ref, currentItem, currentSlugs, currentSourceUrls),
     dedupeKey: (entry, slug) => `${entry.subtype}:${slug}`,
     inferCandidate: (candidate, currentItem) => candidate.subtype === currentItem.subtype,
     limit: 8,

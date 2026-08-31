@@ -26,7 +26,7 @@
 
 ## 📊 Active Project Status
 
-**Last updated:** 2026-08-28
+**Last updated:** 2026-08-31
 **Branch:** `main` · **Deploy:** Vercel auto-deploy on `main` — pushing to `main` ships to production
 
 > Read the live HEAD with `git log --oneline -1` rather than trusting a SHA pinned here; commits that
@@ -38,20 +38,21 @@
 | Metric | Value |
 | -------- | ------- |
 | Shipped content sections | 6 of 10 |
-| Total dataset entries | 7,048 (sum of the six `src/data/*-manifest.json` totals) |
+| Total dataset entries | 7,157 (sum of the six `src/data/*-manifest.json` totals) |
 | Badges | 161 |
 | Pets / Guests | 304 (221 pets · 83 guests) |
-| Accessories | 2,589 across 8 subtypes |
-| Weapons | 3,288 across 4 subtypes / 11 shards |
+| Accessories | 2,585 across 8 subtypes |
+| Weapons | 3,286 across 4 subtypes / 11 shards |
 | Housing | 623 across 7 subtypes |
-| Classes / Abilities | 83 across 2 subtypes (Consumables + Armors populated) |
+| Classes / Abilities | 198 across 2 subtypes (Consumables + Armors + Regular/Misc populated) |
 
 ### Current Focus
 
 1. **Propagate scraper fixes into stale datasets.** Weapons full pass is still outstanding (see
    Kanban). Pets, guests, and accessories have been completed.
-2. **Complete Classes subtype for Classes / Abilities.** Consumables and Armors are populated;
-   Regular / Miscellaneous parsing is still pending.
+2. **Complete Classes subtype for Classes / Abilities.** Consumables, Armors, and first-pass
+   Regular / Miscellaneous data are populated; parser special cases and default-weapon app-route
+   relations are still pending.
 
 ### Agent Assignments
 
@@ -86,7 +87,8 @@
 ### 🚧 In Progress
 
 - [ ] **Complete Classes subtype scraper/data** — Armors populated and cleaned up; Regular /
-      Miscellaneous parsing and Special Character tag detection still pending.
+      Miscellaneous first-pass data populated, with parser special cases and Special Character audit
+      still pending.
 
 ### ✅ Done
 
@@ -94,10 +96,11 @@
 
 - [x] Badges section — `/badges`, 161 entries, 5 categories + subcategories, retired handling
 - [x] Pets / Guests section — `/pets`, `/pets/:slug`, `/guests/:slug`, 304 entries
-- [x] Accessories section — `/accessories`, 8 subtypes, 2,589 entries, A-L/M-Z shards for helms + capes
-- [x] Weapons section — `/weapons`, 4 subtypes, 3,288 entries across 11 shards
+- [x] Accessories section — `/accessories`, 8 subtypes, 2,585 entries, A-L/M-Z shards for helms + capes
+- [x] Weapons section — `/weapons`, 4 subtypes, 3,286 entries across 11 shards
 - [x] Housing section — `/housing`, 7 subtypes, 623 entries
-- [x] Classes / Abilities starter — `/classes`, Consumables + Armors populated, Regular/Misc pending
+- [x] Classes / Abilities starter — `/classes`, Consumables + Armors populated, Regular/Misc
+      first-pass data populated
 
 #### Scrapers & data pipeline
 
@@ -125,7 +128,7 @@
 - [x] **Full guests re-scrape** (2026-08-24, user-run) — `npm run scrape:guests`. Was not previously a
       tracked board item; recorded here because it shipped alongside the pets pass.
 - [x] **Full accessories re-scrape** (2026-08-28, user-run + targeted agent repairs) — propagated
-      variant-level descriptions, DA/DC access scoping, and shared variant-label fixes across 2,589
+      variant-level descriptions, DA/DC access scoping, and shared variant-label fixes across 2,585
       entries. Follow-up targeted repairs covered the Cider Mug split, pirate scarf/hat families,
       Cultist Hood, Artix's Cape, Cysero's Gas-e Tank Mark, Scarred Dravir Wings, Phoenix/Royal Doom,
       Golden Ring related inference, and Orion/Mazurek accessory family consolidation.
@@ -138,6 +141,27 @@
 
 #### Shared UI system
 
+- [x] Radix Tooltip on `AccessPills` — DA/DC/DM detail-page pills now carry accessible tooltips
+      (keyboard focus, Escape, `aria-describedby`) spelling out the abbreviations, replacing the
+      native `title`. New `src/components/shared/ui/tooltip.tsx`; `@radix-ui/react-tooltip@1.2.16`
+      added; `TooltipProvider` scoped inside the component so the dep stays in lazy detail chunks.
+- [x] `SegmentToggle` rebuilt on Radix ToggleGroup (`type="multiple"`) — group semantics + roving
+      tabindex keyboard nav; external API unchanged so all five call sites are drop-in.
+      `TriStateFilterPill` deliberately kept a semantic button (no Radix tri-state primitive) with a
+      focus-visible polish. New `src/components/shared/ui/toggle-group.tsx`;
+      `@radix-ui/react-toggle-group@1.1.19` added.
+- [x] Global Command palette (`cmdk`) — cross-section search opened by `Cmd/Ctrl+K`, the desktop
+      sidebar button, or the mobile `More` action. Lazy-mounted (`CommandPaletteLoader`) so `cmdk`
+      stays out of the main bundle; index built on first open from the cached section loaders
+      (`useGlobalSearch` / `searchIndex`). Token-styled wrapper in `src/components/shared/ui/command.tsx`.
+- [x] Attack/skill accordions on Radix Collapsible — `GuestAttacks` and `ExpandableImageList` now use
+      the shared Radix primitive for keyboard operation, `aria-controls`/`aria-expanded`, and animated
+      open/close (named groups keep nested chevrons independent).
+- [x] `CollapsibleSection` rebuilt on the Radix Collapsible primitive (accessibility spike) —
+      real-button trigger with keyboard operation, focus-visible ring, `aria-controls`/`aria-expanded`,
+      and an animated open/close driven by `--radix-collapsible-content-height`. Same public API;
+      new `src/components/shared/ui/collapsible.tsx` wrapper; `@radix-ui/react-collapsible@1.1.20`
+      added. No `shadcn init` / no `components.json`.
 - [x] Cross-category badge-award inline links — explicit item notes such as
       `Own this armor to obtain the Time Walker badge` now hotlink badge names inline, while Badge
       pages hotlink awarding item names inline through `badge-relations.json`.
@@ -280,573 +304,642 @@ is being written as part of that same commit
 > for what shipped when. New entries should use `the commit containing this entry` instead, which stays
 > true.
 
-### 2026-08-28 — Family card description preview audit
+### 2026-08-31 — Dependency vuln fix + Radix Tooltip on access pills
 
-**Agent:** orchestrator (GPT-5 Codex) · **Commit(s):** `the commit containing this entry`
-**Kanban moved:** no board item moved; user-requested scraper/UI audit
+**Agent:** orchestrator (Claude Opus 4.8) · **Commit(s):** `the commit containing this entry`
+**Kanban moved:** no board item moved; user-requested dependency-audit fix + shadcn/Radix Tooltip
+(Tooltip also ticked under Done → Shared UI system)
+
+> Note: this single entry intentionally covers two small finishes from one session turn (a
+> maintenance dep fix and one new primitive) rather than splitting them, to avoid rotating two long
+> historical entries out of the log for low-value churn. Each finish is delineated below.
 
 **Changed:**
 
-- `src/utils/variantHelpers.ts`: `getFamilyCardDescription` now previews the first variant's
-  description before falling back to `shared.description`, matching the shared card-gallery rule.
-- `src/components/housing/HousingCard.tsx` and `src/components/classAbilities/ClassAbilityCard.tsx`:
-  Housing and Classes / Abilities family cards now use the same shared helper already used by Pets /
-  Guests, Accessories, and Weapons.
-- `docs/context/data_reference.md` and `docs/context/ui_patterns.md`: clarified that family cards
-  preview the first variant description while detail pages render the selected variant description.
-- `scripts/scrape-pets.ts`: Roman/level pet access branches now store the level label plus access
-  suffix directly (`I`, `I (DC)`) instead of `Normal` / `DC`, fixing Goldfish Knight after the fresh
-  pets scrape. The same guard now covers same-thread, all-versions, and access-only family paths.
-- `src/data/pets.json`: targeted refreshes repaired every remaining raw access-label pet family after
-  the user's full pets scrape. Current pet family labels no longer store raw `Normal`, `DA`, `DC`, or
-  `DA/DC` labels.
-- `scripts/scrape-weapons.ts`: derived access-only weapon title differences such as `Arena Fighter
-  Sword DA` are normalized to selector labels like `(DA)` instead of retaining bare `DA`; DA/DC/DM
-  acronym casing is preserved during weapon title-token cleanup.
-- `src/data/weapons-swords-axes-maces-a-g.json`, `src/data/weapons-staves-wands-a-g.json`, and
-  `src/data/weapons-daggers-a-g.json`: targeted Arena Fighter refreshes populated the access-label
-  fix in current weapon JSON.
-- `docs/context/data_reference.md` and `docs/context/category_playbooks.md`: documented Goldfish
-  Knight as the canonical Roman-tier + DC-branch pet label case and clarified that raw access-only
-  labels must not be stored in family variant rows.
-- `scripts/scrape-accessories.ts`: fixed scoped `--names` writes so a missing requested name in a
-  selected subtype no longer prunes existing rows, and cross-post family refreshes keep unmatched
-  siblings in the merge pool. Access parsing now allows DC methods to remain DA-required when the
-  method's own block has a DA tag or DA requirement text.
-- `scripts/lib/accessories/cross-post-family.ts`: tightened the Cider Keg / Void Cider Keg split so
-  reused Void-shop titles do not bleed into the non-Void Cider Keg sources.
-- `scripts/lib/access-flag-repair.ts`: shared access repair now considers variant-scoped
-  descriptions/notes when deciding whether a DC method is also DA-required, fixing cases where the
-  forum expresses DA requirement in the italic description rather than in the obtain line.
-- `scripts/lib/accessories/cross-post-family.ts`: added scoped repairs for `Aye Pirate Scarf`,
-  `Bearded Guardian Pirate Hat`, and `Cultist Hood` access branches; split `Cider Mug` /
-  `Void Cider Mug`; the temporary hardcoded Golden Ring sibling link was removed in favor of shared
-  inferred related-item matching.
-- `src/utils/relatedItems.ts`: ordinal words such as `First`, `Second`, and `Third` are now ignored
-  for related-name scoring, allowing same-obtain sibling sets like `First Golden Ring` through
-  `Fifth Golden Ring` to link through the existing inferred `Also See` path.
-- `scripts/lib/accessories/cross-post-family.ts`: added scoped non-helm/cape accessory
-  consolidations for `Orion's Belt` and `Mazurek's Emerald Ring`, preserving level-ascending variant
-  order while keeping accessory auto-promotion conservative outside helms and capes/wings.
-- `src/components/shared/ObtainVariantCard.tsx`: shared obtain cards now also suppress the
-  price/sellback grid when both values are zero-value currency strings such as `0 Gold`, `0 DC`, or
-  `0 Defender's Medals`.
-- `src/utils/variantHelpers.ts`: duplicate labels with different access flags now append the current
-  row's full access signature, e.g. `Cunning (DA)` / `Cunning (DC)` and `Bubbly (DA)` /
-  `Bubbly (DA, DC)`. Literal title-derived `Base` variants are no longer collapsed to the `(Base)`
-  placeholder, fixing `Doom Harvester Wings` as `(Base)`, `Base`, `Foul`, `Noxious`. If every
-  duplicate-label row is DA-required, the visible label omits redundant `DA`, so DA/DA+DC pairs show
-  as `Bubbly` / `Bubbly (DC)`.
-- `src/data/bracers.json`, `src/data/capes-wings-a-l.json`, `src/data/capes-wings-m-z.json`,
-  `src/data/helms-a-l.json`, `src/data/helms-m-z.json`, and `src/data/rings.json`: targeted
-  accessory refreshes repaired Azaveyran Farewell, Doom Harvester Wings, Cider/Void Cider Keg,
-  Cider/Void Cider Mug, Aye Guardian Pirate Hat, Aye Pirate Scarf, Bearded Guardian Pirate Hat,
-  Cultist Hood, Phoenix Doom, Royal Doom, Artix's Cape, Cysero's Gas-e Tank Mark, Scarred Dravir
-  Wings, Ancient DragonLord Helm, Ring of Otherworld, Slugwrath Signet Ring, and refreshed the
-  Golden Ring ordinal set after moving it to runtime inference. A follow-up targeted refresh
-  consolidated Orion's Belt and Mazurek's Emerald Ring siblings into families.
-- `docs/context/data_reference.md`, `docs/context/category_playbooks.md`,
-  `docs/context/scraper_operations.md`, and `docs/context/ui_patterns.md`: documented DA+DC
-  coexistence, scoped-refresh preservation, Doom Harvester's real `Base` variant, Cider split
-  behavior, duplicate access-label display, the verified accessory missing-image placeholders, and
-  accessory cross-post promotion stop conditions for different-form/different-image siblings such as
-  Swordhaven Cape/Cloak, Crossbones Cap/Hat, Dread Pirate Hat/Mask, Obsidian Relic Helm/Visor, and
-  Chaotic Cloak/Robes/Shroud/Spine.
+- **Dependency vulns:** ran `npm audit fix` (no `--force`; semver-compatible only). `react-router-dom`
+  7.18.0 → 7.18.3 (the RSC-mode CSRF advisory GHSA-qwww-vcr4-c8h2 does not apply to this static SPA —
+  no RSC/server actions — but the patch is harmless), plus build-time `postcss` and `nanoid`
+  patches. `npm audit` now reports 0 vulnerabilities.
+- **Tooltip primitive:** `src/components/shared/ui/tooltip.tsx` — token-styled wrappers over
+  `@radix-ui/react-tooltip` (`Provider` / `Root` / `Trigger` / `Content`), same no-`shadcn init`
+  approach as the other `ui/` primitives.
+- **AccessPills:** `src/components/shared/AccessPills.tsx` rebuilt so each DA/DC/DM pill is a Radix
+  Tooltip trigger explaining the abbreviation (DA = "Requires a Dragon Amulet", DC = "Purchasable
+  with Dragon Coins", DM = "Requires Defender's Medals"), replacing the non-accessible `title`.
+  Gains keyboard focus, Escape-to-dismiss, and `aria-describedby`; added focus-visible rings. The
+  `TooltipProvider` is scoped inside `AccessPills` so `@radix-ui/react-tooltip` stays in the lazy
+  detail-page chunks, not the main bundle. `AccessPills` is detail-only, so instance count is small.
+- `package.json` / `package-lock.json`: added `@radix-ui/react-tooltip@1.2.16` (exact pin, React 19
+  compatible).
+- `docs/context/ui_patterns.md` and `docs/context/engineering_guidelines.md`: documented the Tooltip
+  primitive, the provider-scoping rule, and "don't wrap per-card gallery pills".
 
 **Verified:**
 
-- Scraper audit → Accessories, Weapons, Pets, Guests, Housing, and Classes / Abilities all populate
-  variant-level descriptions for family entries; Badges do not have itemfamily variants.
-- Data audit → existing family JSON already contains variant descriptions across family-capable
-  categories, though some current shared descriptions remain stale until broad user-run scrapes
-  refresh the affected datasets.
-- `npm run typecheck:scripts` → passed.
-- `npx tsc --noEmit -p tsconfig.json` → passed.
-- `npm run lint` → passed.
-- `node scripts/verify-datasets.mjs` → passed.
-- Category validators for pets, weapons, accessories, housing, and class abilities → passed.
-- `npm run build` → passed production build and all validators.
-- Targeted scrape `npm run scrape:pets -- --names='Goldfish Knight' --fresh --concurrency=1` →
-  passed.
-- Data audit → `Goldfish Knight` variants are `I`, `I (DC)`, `II`, `II (DC)`, `III`, `III (DC)`,
-  `IV`, `IV (DC)`, `V`, `V (DC)`, `VI`, `VI (DC)`, `VII`, `VII (DC)`.
-- Targeted pet refresh for all raw access-label families → passed; post-audit found 0 raw
-  `Normal`/`DA`/`DC` labels, 0 bad Roman-case labels, 0 missing variant descriptions, and 0 non-DA
-  pet variants carrying a Dragon Amulet description.
-- Pirate Monkey regression audit → named ranks are preserved in stored labels (`Captain`,
-  `Admiral`, `Fleet Captain`, `Fleet Commander`) while base repeated tiers remain level-labelled
-  (`10`, `10 (DC)`, etc.); UI-level duplicate disambiguation is expected to add level context for
-  repeated named ranks.
-- Targeted weapon refresh for `Arena Fighter Sword`, `Arena Fighter Staff`, and `Arena Fighter
-  Dagger` → passed; post-audit found no raw access labels in those refreshed rows.
-- Targeted accessory refresh for the listed bracer/cape-wing/helm/ring families → passed.
-- Data audit → Doom Harvester Wings variants are `(Base)`, `Base`, `Foul`, `Noxious`.
-- Data audit → Azaveyran Farewell DC branches are DA+DC; Ancient DragonLord Helm I-III are DA+DC;
-  Ring of Otherworld and Slugwrath Signet Ring have I as DC-only and II/III as DA+DC.
-- Data audit → Cider Keg sources contain no Void Cider Keg links; Bubbly/Moglinberry each have DA
-  and DA+DC rows. Void Cider Keg remains a separate linked family.
-- Data audit → `Cider Mug` and `Void Cider Mug` are separate linked families; non-Void Cider Mug
-  sources no longer include Void Cider Mug labels.
-- Data audit → `Artix's Cape` level 70/80 DC branches are DA+DC while lower DC branches are DC-only;
-  `Cysero's Gas-e Tank Mark` VIII-X and `Scarred Dravir Wings` V-VII are DA+DC, with earlier Roman
-  variants DC-only.
-- Runtime formatter audit → `Aye Pirate Scarf` labels resolve to normal/DC rows for
-  Cunning/Swarthy/Foxy and DA/DC rows for Crafty/Brave; `Bearded Guardian Pirate Hat` labels resolve
-  DA/DC rows for Cunning/Swarthy/Foxy/Crafty/Brave.
-- Runtime formatter audit → `Cultist Hood` labels resolve to `(Base)`, `(Base) (DC)`, `Dark`,
-  `Dark (DC)`, `Evil`, `Evil (DC)`, `Villainous`, `Villainous (DC)`, `Malicious`, `Foul`,
-  `Foul (DC)`, `Doomed`, `Doomed (DC)`, `Brutal`, `Brutal (DC)`.
-- Data audit → `Phoenix Doom` and `Royal Doom` variants are all DA+DC.
-- Related inference audit → Golden Ring ordinal entries have no explicit stored `alsoSee`, while
-  `First Golden Ring` infers `Second`, `Third`, `Fourth`, and `Fifth Golden Ring` through the shared
-  same-obtain/name-similarity matcher.
-- Shared related-name scoring now ignores ordinal words (`First` through `Tenth`); targeted ring
-  refresh confirmed the Golden Ring JSON has no hardcoded `alsoSee` while runtime inference links the
-  full ordinal set.
-- Targeted accessory refresh for `Orion's Belt` and `Mazurek's Emerald Ring` family candidates →
-  passed; `Orion's Belt` now has `(Base)`, `Planetary`, `Solar`, `Comet`, `Interstellar`,
-  `Galactic`, `Universal`; `Mazurek's Emerald Ring` now has `Pinky`, `(Base)`, `Middle`, `Pointer`,
-  `Thumb`; standalone siblings were removed as aliases.
-- Runtime formatter audit → Aye Guardian labels resolve to `(Base)`, `Bold`, `Salty`,
-  `Cunning (DA)`, `Cunning (DC)`, `Swarthy (DA)`, `Swarthy (DC)`, `Foxy (DA)`, `Foxy (DC)`,
-  `Crafty (DA)`, `Crafty (DC)`, `Filthy`, `Wily`, `Brave (DA)`, `Brave (DC)`.
-- Runtime formatter audit → Cider labels resolve to `(Base)`, `(Base) (DC)`, `Sweet`, `Sweet (DC)`,
-  `Warm`, `Warm (DC)`, `Bubbly`, `Bubbly (DC)`, `Moglinberry`, `Moglinberry (DC)`.
-- Runtime formatter audit → Azaveyran Farewell labels resolve to `I`, `I (DC)`, `II`, `II (DC)`,
-  `III`, `III (DC)` while the table access columns still show DA on every row.
-- Runtime formatter audit → Doom Harvester Wings labels resolve to `(Base)`, `Base`, `Foul`,
-  `Noxious`.
-- Accessory-wide audit → 1,192 families / 6,888 variant rows had 0 missing variant descriptions,
-  0 raw access-only variant labels, and 0 non-DA variants carrying the Dragon Amulet requirement
-  sentence.
-- `node scripts/validate-accessories.mjs` → passed, 2,589 entries.
+- `npm audit` → 0 vulnerabilities.
+- `npx tsc --noEmit -p tsconfig.json` and `npx tsc -b` → passed (post dep bump).
+- `npm run lint` (oxlint) → passed, 0 warnings.
+- `npm run validate` → passed (all datasets + verify + typecheck:scripts).
+- `npx vite build` → passed. Main bundle 247.82 kB (74.34 kB gzip), unchanged; `@radix-ui/react-tooltip`
+  is in the lazy `AccessPills` chunk (13.27 kB gzip), not the main bundle.
+- Runtime smoke (Playwright vs `vite preview`, 5/5) on `/badges/a-a-r-g-h-mastery` → DA pill renders;
+  native `title` removed; tooltip appears on keyboard focus with the "Dragon Amulet" text; trigger
+  exposes `aria-describedby`; Escape dismisses. Temp smoke script removed.
+- All repo markdown → `mdlint` clean.
 
 **Not verified / known gaps:**
 
-- No broad scrapes were run by the agent. Accessories were user-run and then targeted-repaired by the
-  agent; Weapons still need the pending user-run broad re-scrape for earlier parser fixes to
-  propagate globally.
-- A small number of current weapon scythe family variants still lack descriptions in existing JSON;
-  this appears to be stale/partial scraped data rather than a shared UI issue.
-- Existing weapon JSON may still have stale non-DA/DC variants whose descriptions mention Dragon
-  Amulet requirements; the scraper-side variant-description fix is in place, but weapons need a
-  user-run full re-scrape to propagate it globally.
+- The RSC advisory not applying was reasoned from usage (static SPA, `BrowserRouter`, no server
+  actions), not from a runtime exploit test.
+- Other native `title=` usages remain (stats-table header icons, element pills, nav "Soon" items).
+  Left as-is: element/table-header tooltips would multiply instances on list/detail pages; only the
+  bounded, jargon-heavy AccessPills was converted.
 
 **Next agent should:**
 
-- Continue with the pending Weapons broad scrape handoff, or the Regular / Miscellaneous Classes
-  parser work if the user prioritizes Classes / Abilities.
+- If continuing the Radix track, a Popover (e.g. for the element legend) is the next net-new
+  candidate; otherwise pivot back to content sections from the To Do backlog.
 
-### 2026-08-27 — Default weapon access branches, pet descriptions, and shared obtain N/A suppression
+### 2026-08-31 — SegmentToggle on Radix ToggleGroup
 
-**Agent:** orchestrator (GPT-5 Codex) · **Commit(s):** `the commit containing this entry`
-**Kanban moved:** `Check and fix default-weapon scraping / parsing logic` → `✅ Done`
+**Agent:** orchestrator (Claude Opus 4.8) · **Commit(s):** `the commit containing this entry`
+**Kanban moved:** no board item moved; user-requested shadcn/Radix track continuation (also ticked
+under Done → Shared UI system)
 
 **Changed:**
 
-- `scripts/scrape-weapons.ts`: weapon obtain parsing now preserves full DA/DC/DM access signatures
-  instead of only DC vs non-DC. DA+DC methods retain both flags, including single-title-block posts.
-  Default weapons keep same-level access-specific branches as variants when they affect stats-table
-  access display. `ChickenBlade (ChickenCow Default)` now produces `1`, `1 (DA)`, `1 (DA, DC)`,
-  `1 (DC)`. Two-way default base/DC branches such as `Claws?? (Zardbie Default)` render `(Base)` /
-  `(DC)`.
-- `scripts/scrape-weapons.ts`: default weapon source labels now preserve the disambiguated forum
-  family title without appending a repeated `xxx Default` suffix. `Pirate Blade (Pirate Default)` and
-  `Dread Pirate Blade (Dread Pirate Default)` are kept separate, linked to each other via Also See,
-  and no longer share family-level notes/descriptions.
-- `scripts/scrape-pets.ts`: pet obtain branches now capture the branch-specific description directly
-  above each Location block and store it on the corresponding variant. The parser no longer relies on
-  the first/shared family description for normal/DA/DC pet branches.
-- `src/hooks/usePets.ts` and `src/hooks/useWeapons.ts`: retired entries are now hidden from normal
-  gallery counts/search results unless the Retired filter is explicitly selected, matching the shared
-  all-category rule.
-- `src/components/shared/ObtainVariantCard.tsx`: shared obtain cards suppress the price/sellback grid
-  when both values are empty, `N/A`, or `None`, while still showing Required Items / Requires and any
-  meaningful price or sellback that exists.
-- `src/data/weapons-swords-axes-maces-a-g.json`, `h-n`, and `o-z`: targeted weapon refreshes updated
-  ChickenBlade, Claws??, Pirate Blade, and Dread Pirate Blade.
-- `src/data/pets.json`: targeted pet refresh updated Bonehead and Mr. Mangles after the
-  variant-description parser fix.
+- `src/components/shared/ui/toggle-group.tsx`: new thin wrappers over
+  `@radix-ui/react-toggle-group` (`Root` / `Item`), same token-styled, no-`shadcn init` approach as
+  the other `ui/` primitives.
+- `src/components/shared/SegmentToggle.tsx`: rebuilt on Radix ToggleGroup (`type="multiple"`). Radix
+  supplies group semantics and roving-tabindex keyboard navigation (arrow keys between segments, one
+  tab stop). External API is unchanged (`segments` + `onToggle(id)`), so all five call sites
+  (Accessories, Weapons, Housing, Classes, Pets/Guests) are untouched; `onValueChange` derives the
+  single toggled id. `type="multiple"` makes the root `role="toolbar"` with `aria-pressed` items.
+- `src/components/shared/TriStateFilterPill.tsx`: **not** converted — it is a genuine tri-state
+  control (neutral/include/exclude) and Radix has no tri-state primitive; a binary `Toggle` or a
+  `Checkbox` `indeterminate` would add a dependency and misrepresent "excluded" to assistive tech. It
+  stays a semantic `<button>` (already has `aria-pressed` + descriptive `aria-label`/`title`); only
+  added a shared focus-visible ring for consistency.
+- `package.json` / `package-lock.json`: added `@radix-ui/react-toggle-group@1.1.19` (exact pin,
+  React 19 compatible).
+- `docs/context/ui_patterns.md` and `docs/context/engineering_guidelines.md`: documented the
+  ToggleGroup adoption and the explicit "tri-state controls stay custom" rationale.
+
+**Verified:**
+
+- `npx tsc --noEmit -p tsconfig.json` and `npx tsc -b` → passed.
+- `npm run lint` (oxlint) → passed, 0 warnings.
+- `npm run validate` → passed (all datasets + verify + typecheck:scripts).
+- `npx vite build` → passed. Main bundle 247.77 kB (74.34 kB gzip), unchanged — the primitive lands
+  in the lazy list-page chunks, not the main bundle.
+- Runtime smoke (Playwright vs `vite preview`, 5/5) → 8 segments render on `/accessories`; clicking a
+  segment updates `?type=belt`; roving tabindex is `[-1,0,-1,…]` (one tab stop); ArrowRight moves
+  focus (Artifacts → Belts); items expose `aria-pressed`/`data-state`. Temp smoke script removed.
+- All repo markdown → `mdlint` clean.
+
+**Not verified / known gaps:**
+
+- Subtype pickers are single-select by page policy but now sit in a `type="multiple"` ToggleGroup
+  (`role="toolbar"`); a stricter `radiogroup` would need per-consumer single/multiple config. Deferred
+  as not worth the API churn — behavior is unchanged and correct.
+- No broad multi-viewport visual QA; the smoke covered the accessories segment group only.
+
+**Next agent should:**
+
+- If continuing the Radix track, a Tooltip or Popover primitive (net-new) is the next candidate; the
+  `TriStateFilterPill` should remain custom.
+
+### 2026-08-31 — Radix attack accordions + global Command palette
+
+**Agent:** orchestrator (Claude Opus 4.8) · **Commit(s):** `the commit containing this entry`
+**Kanban moved:** no board item moved; user-approved follow-on to the Radix Collapsible spike (also
+ticked under Done → Shared UI system)
+
+**Changed:**
+
+- `src/components/guests/GuestAttacks.tsx` and `src/components/shared/ExpandableImageList.tsx`: the
+  attack/skill accordion and the expandable image toggle now use the shared Radix Collapsible
+  primitive. Real-button triggers with keyboard operation, `aria-controls` / `aria-expanded`, and
+  animated open/close; chevrons scoped with named groups (`group/attack`, `group/img`) so nested
+  collapsibles do not toggle each other.
+- `src/components/shared/ui/command.tsx`: new token-styled wrappers over `cmdk` (mirrors the
+  shadcn/ui Command pattern; no `shadcn init`, no `components.json`, no clsx/cva).
+- `src/utils/searchIndex.ts`: `buildSearchIndex` flattens all sections into hits with correct detail
+  routes; `searchHits` reuses `getSearchWords` word-prefix matching and groups by section.
+- `src/hooks/useGlobalSearch.ts`: builds the index lazily (module-cached) from the existing cached
+  `loadXBySubtype()` loaders on first open, so initial load is untouched and list/detail caches are
+  warmed rather than double-fetched.
+- `src/components/shared/CommandPalette.tsx` + `CommandPaletteLoader.tsx`: global palette opened by
+  `Cmd/Ctrl+K`, the desktop sidebar `Search…` button, or the mobile `More` panel action. The eager
+  loader owns triggers/open-state and lazy-mounts the palette on first open, keeping `cmdk` out of the
+  main bundle. Helper `openCommandPalette` lives in `src/utils/commandPalette.ts`.
+- `src/components/layout/Layout.tsx` and `src/components/layout/Navigation.tsx`: mount the palette
+  loader and add the two search triggers.
+- `package.json` / `package-lock.json`: added `cmdk@1.1.1` (exact pin; brings a Radix Dialog
+  transitively). `@radix-ui/react-collapsible@1.1.20` was already added in the prior spike.
+- `docs/context/ui_patterns.md` and `docs/context/engineering_guidelines.md`: documented the shared
+  `ui/` primitive approach, the attack-accordion port, and the Command palette (lazy index, matching,
+  hit→route, and the prebuilt-index upgrade path).
+- `docs/context/handover-log-archive.md`: fixed 6 pre-existing MD032 hard-wrap findings and 1
+  LINK001 self-referential link so all repo markdown lints clean. **Deviation:** this edited
+  otherwise-immutable historical archive entries; changes are whitespace/link-path only (no wording
+  changed), made at the user's explicit request to fix lint.
+
+**Verified:**
+
+- `npx tsc --noEmit -p tsconfig.json` and `npx tsc -b` → passed.
+- `npm run lint` (oxlint) → passed, 0 warnings (the initial react-refresh only-export-components
+  warning was resolved by moving `openCommandPalette` to its own module).
+- `npm run validate` → passed (161 badges, 221 pets, 2585 accessories, 3286 weapons, 623 housing,
+  198 class-abilities; plus verify-datasets and typecheck:scripts).
+- `npx vite build` → passed. Main bundle 247.68 kB (74.30 kB gzip), essentially unchanged; palette is
+  a separate lazy chunk 42.42 kB (14.94 kB gzip) loaded only on first open.
+- All repo markdown → `mdlint` clean (11 files).
+- Runtime smoke (Playwright vs `vite preview`) → palette opens on Ctrl+K, returns results for
+  "goldfish", navigates to the selected detail page; the "Stats by Level" collapsible and the attack
+  accordion expose and toggle `aria-expanded`. Temp smoke script removed after use.
+
+**Not verified / known gaps:**
+
+- The palette's on-first-open index fetches all section datasets (~7,157 entries). Fine now and
+  cache-warming, but a compact build-time search-index JSON is the scalable upgrade (noted in
+  `ui_patterns.md`).
+- The smoke run's only console output was external image 404s (forum/GitHub hosts), handled by the
+  existing image placeholders — not app errors. No broad visual/QA pass across every route.
+- Working tree still carries unrelated prior-session class-scraper changes; this entry covers only the
+  Radix-accordion and Command-palette work.
+
+**Next agent should:**
+
+- If the palette is kept, consider the build-time search-index JSON, and evaluate the next Radix
+  candidates (`SegmentToggle` / `TriStateFilterPill`, or a Tooltip/Popover primitive).
+
+### 2026-08-31 — Radix Collapsible accessibility spike
+
+**Agent:** orchestrator (Claude Opus 4.8) · **Commit(s):** `the commit containing this entry`
+**Kanban moved:** no board item moved; user-requested shadcn/Radix accessibility spike (also ticked
+under Done → Shared UI system)
+
+**Changed:**
+
+- `src/components/shared/ui/collapsible.tsx`: new thin wrappers over the Radix Collapsible primitive
+  (`Collapsible` / `CollapsibleTrigger` / `CollapsibleContent`), mirroring the shadcn/ui pattern
+  without running `shadcn init`, without a `components.json`, and without clsx/cva/tailwind-merge.
+- `src/components/shared/CollapsibleSection.tsx`: rebuilt on the Radix primitive. Public API is
+  unchanged (`title`, `children`, `defaultOpen=true`, `className`), so it stays a drop-in for its
+  three consumers (`WeaponDetail`, `AccessoryDetail`, `PetDetail` — all "Stats by Level"). The
+  trigger is now a real button with keyboard operation, managed focus plus a focus-visible ring, and
+  `aria-controls` / `aria-expanded` wiring; the chevron rotates on `data-state=open`.
+- `src/index.css`: added `--animate-collapsible-down` / `--animate-collapsible-up` theme tokens and
+  matching keyframes driven by Radix's `--radix-collapsible-content-height`, so open/close now
+  animates (native `<details>` could not).
+- `package.json` / `package-lock.json`: added `@radix-ui/react-collapsible@1.1.20` (exact pin, React
+  19 compatible).
+
+**Verified:**
+
+- `npm run validate` → passed (161 badges, 221 pets, 2585 accessories, 3286 weapons, 623 housing,
+  198 class-abilities; plus verify-datasets and typecheck:scripts).
+- `npx tsc --noEmit -p tsconfig.json` and `npx tsc -b` → passed.
+- `npm run lint` (oxlint) → passed.
+- `npx vite build` → passed; `CollapsibleSection` lazy chunk is 13.60 kB (4.97 kB gzip); main bundle
+  unchanged at 245.88 kB (73.86 kB gzip).
+
+**Not verified / known gaps:**
+
+- No automated visual/interaction test was run — the screenshot helper hangs on Vite HMR
+  `networkidle`, so the animation, focus ring, and ARIA wiring were confirmed by code and build only,
+  not browsed.
+- This is a scoped spike on one component. Whether to extend Radix to other hand-rolled interactive
+  widgets (expandable attack/skill cards, `SegmentToggle`, `TriStateFilterPill`) or add a global
+  Command palette is still an open decision for the user.
+- Adds a runtime dependency; if the user prefers zero new deps, the native `<details>` version in git
+  history is the fallback.
+
+**Next agent should:**
+
+- Await the user's decision on wider Radix adoption before converting more components; if approved,
+  the expandable attack/skill accordions (`GuestAttacks`) are the next-highest accessibility value.
+
+### 2026-08-31 — Class artifact attack sets and mechanics
+
+**Agent:** orchestrator (GPT-5 Codex) · **Commit(s):** `the commit containing this entry`
+**Kanban moved:** no board item moved; user-requested Regular/Miscellaneous class parser/UI feature
+
+**Changed:**
+
+- `scripts/scrape-classes.ts`: playable class fetches now carry same-thread follow-up replies and
+  parse explicit `Artifact:` sections into named artifact attack sets. Artifact sections can include
+  pre-skill widget mechanics and final horizontal-rule-separated artifact notes.
+- `scripts/scrape-classes.ts`: class output is now split by sub-subtype, so scoped scrapes write to
+  `class-armors.json`, `class-regular.json`, or `class-miscellaneous.json` instead of one shared
+  class file.
+- `scripts/lib/class-artifact-relations.ts`, `scripts/generate-class-artifact-relations.ts`, and
+  `src/data/class-artifact-relations.json`: class artifact attack sets and artifact-side `Modifies`
+  metadata now generate lightweight cross-category inline-link relations to existing Accessory
+  artifacts. Appearance-only modifiers such as `Navigator's Hat` count even when the class has no
+  matching artifact attack set. The relation index refreshes after Classes and Accessories scrapes.
+- `scripts/scrape-classes.ts`: widget-caption blocks such as `Chaosweaver's widget displaying
+  Soulthreads.` and `Ranger's widget displaying Focus.` now populate structured class mechanics
+  instead of being flattened into generic notes.
+- `src/types/item.ts`, `src/types/pet.ts`, and `src/types/classAbility.ts`: added shared mechanics
+  blocks and guest-shaped attack-set metadata for class pages.
+- `src/components/classAbilities/ClassAbilityDetail.tsx`: Regular/Miscellaneous class details now
+  show a `Base` / artifact attack-set selector before attacks, render correlated Class Mechanics for
+  the selected set, auto-display mechanics images centered with captions beneath, and append selected
+  artifact notes to Other Information. Artifact-backed attack sets render one compact `Artifact:
+  <name>` inline link above Class Mechanics / Attacks; matching mechanics block titles are hidden to
+  avoid duplicating the artifact name. Armor and Consumable rendering paths remain scoped away from
+  this feature.
+- `src/components/classAbilities/ClassAbilityDetail.tsx`: class stats passed through the guest stats
+  renderer now omit the basic `Level` / `Damage` / `Type` / `Element` strip, so Regular/Misc pages
+  show only the numerical stat cards.
+- `src/components/housing/HousingDetail.tsx`, `src/pages/HousingDetailPage.tsx`,
+  `src/components/classAbilities/ClassAbilityDetail.tsx`, and
+  `src/pages/ClassAbilityDetailPage.tsx`: Housing and Classes / Abilities detail-header pills now
+  use the shared subtype-preserving filter-link behavior already used by pets/guests, accessories,
+  weapons, and badges.
+- `src/hooks/useClassArtifactRelations.ts` and `src/components/accessories/AccessoryDetail.tsx`:
+  artifact pages can link mentioned class names inline back to the relevant Regular/Miscellaneous
+  class page, including names in the artifact `Modifies` metric strip, without restoring
+  cross-category Also See cards.
+- `src/hooks/useWeapons.ts`: weapon inferred related-item matching now uses the shared 0.55
+  name-score threshold with obtain-fingerprint evidence, allowing compact cross-subtype sibling sets
+  such as `Kaaros Garada` / `Kaaros Xera` / `Kaaros Alleri` to link without hardcoding.
+- `scripts/scrape-classes.ts` and `src/data/class-regular.json`: widget-caption mechanics with a
+  missing captured image now fall back to the standard DF-Pedia `<ClassName>-Widget.png` filename;
+  `Pirate` was targeted-refreshed and now includes `Pirate-Widget.png`.
+- `scripts/scrape-classes.ts`, `src/data/class-regular.json`, and
+  `src/data/class-miscellaneous.json`: targeted parser fixes for playable class follow-up posts.
+  `Edd Disguise` now keeps `Complex Skills` / `Simple Skills` as variants while using the final
+  support post for shared images/notes and the variant posts for attacks/variant-specific notes.
+  Variant-only Also See refs are promoted to shared Also See so cross-post references remain visible.
+  `Pirate` now keeps its widget mechanics and uses the
+  forum's armor-set appearance links for the class image gallery instead of pistol attack frames.
+  The class UI-image filter is path-aware so `githubusercontent` art is not rejected as an `icon`.
+- `scripts/lib/class-default-weapon-relations.ts`,
+  `scripts/generate-class-default-weapon-relations.ts`,
+  `src/data/class-default-weapon-relations.json`,
+  `src/hooks/useClassDefaultWeaponRelations.ts`,
+  `src/components/classAbilities/ClassAbilityDetail.tsx`, and
+  `src/components/weapons/WeaponDetail.tsx`: playable class `Default Weapon` forum links now become
+  app-route links when a matching weapon source exists, and weapon detail pages show the reverse
+  `Default Weapon For` class links.
+- `scripts/lib/class-armor-relations.ts`, `scripts/generate-class-armor-relations.ts`,
+  `src/data/class-armor-relations.json`, and `src/hooks/useClassArmorRelations.ts`: Armor entries now
+  generate related links to the Regular class pages they equip; Miscellaneous classes remain excluded.
+- `src/hooks/useClassAbilities.ts`: class Also See resolution now falls back to source-URL matching,
+  so refs parsed from one subcategory can still resolve to the correct class entry.
+- `scripts/lib/accessories/cross-post-family.ts`, `scripts/scrape-weapons.ts`,
+  `src/data/helms-a-l.json`, and weapon shards: normalized Blast-style base-plus-parenthetical
+  families so source titles like `Blast Test Dummy (Mask)` or `Charger (Lite)` display as the base
+  family with `(Base)` plus the named variant.
+- `src/data/class-armors.json`, `src/data/class-regular.json`, and
+  `src/data/class-miscellaneous.json`: split the local class data into per-sub-subtype datasets.
+  Armors, Regular, and Miscellaneous are populated.
 - `docs/context/category_playbooks.md`, `docs/context/scraper_operations.md`, and
-  `docs/context/ui_patterns.md`: documented access-only default-weapon branch labels, pet/variant
-  description scoping, retired-default filtering, and shared obtain-card N/A suppression.
+  `docs/context/ui_patterns.md`: documented artifact attack sets, widget-based Class Mechanics, and
+  the correlated mechanics/attack selector behavior.
 
 **Verified:**
 
-- Targeted scrape `npm run scrape:weapons -- --subtypes=sword-axe-mace
-  --names='ChickenBlade (ChickenCow Default)|Claws?? (Zardbie Default)|Pirate Blade (Pirate
-  Default)|Dread Pirate Blade (Dread Pirate Default)'` → passed.
-- Targeted scrape `npm run scrape:weapons -- --subtypes=sword-axe-mace
-  --names='Pirate Blade (Pirate Default)|Dread Pirate Blade (Dread Pirate Default)' --fresh` →
-  passed.
-- Targeted scrape `npm run scrape:pets -- --names='Bonehead|Mr. Mangles' --fresh --concurrency=1`
-  → passed.
-- Data audit → `ChickenBlade (ChickenCow Default)` variants are `1`, `1 (DA)`, `1 (DA, DC)`,
-  `1 (DC)`; `Claws?? (Zardbie Default)` variants are `(Base)`, `(DC)`; Pirate/Dread Pirate
-  source labels are clean and cross-linked; Bonehead normal/DC branches carry different descriptions.
-- Runtime variant-label check → `Claws?? (Zardbie Default)` renders `(Base)`, `(DC)` in the shared UI
-  formatter, while `ChickenBlade (ChickenCow Default)` still renders `1`, `1 (DA)`, `1 (DA, DC)`,
-  `1 (DC)`.
-- Default mention audit → current weapons still have 232 text mentions of `default` and 103 tagged
-  default entries; sampled untagged mentions are incidental Also See links, image captions, or names
-  such as `Default Dagger`, not missed `(… Default)` class-weapon markers.
+- Targeted Regular scrape for `Warrior|Mage|Rogue|DragonLord|ChaosWeaver|Ranger` → passed and
+  preserved 144 class entries.
+- Targeted Regular scrape for `DragonLord` after support fallback fix → passed; current class file
+  preserved 91 entries (29 Armor + 62 Regular).
+- Data audit → `Mage`, `Rogue`, and `Warrior` each expose `Cloak Scrap` as one artifact attack set.
+- Data audit → `DragonLord` exposes four artifact attack sets: `Dragon's Patience`,
+  `Dragon's Rage`, `Dragon's Bulwark`, and `Dragon's Wrath`; Bulwark/Wrath include artifact
+  mechanics.
+- `npm run generate:class-artifact-relations` → passed, 37 relation(s).
+- Data audit → `class-artifact-relations.json` links DragonLord's four artifacts, Cloak Scrap base
+  class artifact sets, Epoch artifacts, Shadowheart Bracer, Harmonized Cowbell, and Baltael's
+  Aventail.
+- Data audit → `Cloak Scrap` has reverse class relations for Warrior, Mage, Rogue, Ancient Shadow
+  Warrior/Mage/Rogue, and Shadow Warrior/Mage/Rogue.
+- Data audit → `Navigator's Hat` now links to `Pirate` from artifact-side `Modifies` metadata.
+- Data audit → `Chaosweaver` and `Ranger` expose base/shared widget mechanics.
+- Data audit → `Pirate` exposes a Class Mechanics image at
+  `classes_abilities/Pirate-Widget.png`, and the widget caption no longer renders as a stray notes
+  line.
+- Targeted Miscellaneous scrape for `Edd Disguise` → passed and preserved 53 miscellaneous class
+  entries; Edd is now a two-variant family with shared bottom-post image/notes, 15 Complex Skills
+  attacks, 9 Simple Skills attacks, variant-specific notes, and promoted shared Also See refs.
+- Targeted Regular scrape for `Pirate` → passed and preserved 62 regular class entries; Pirate now
+  has the Swab/Matey/Navigator/Marauder/Voidsailor/Dread/Sunken/Naval class image gallery.
+- `npm run generate:class-default-weapon-relations` → passed, 113 relation(s). Unresolved defaults:
+  `Necromancer` and `Retro Necromancer` both point to `Necrostaff`, which is not currently matched in
+  the weapon source index.
+- `npm run generate:class-armor-relations` → passed, 33 relation(s).
+- Data audit → `Kaaros Garada`, `Kaaros Xera`, and `Kaaros Alleri` all share the Bluestar Weaponry
+  obtain fingerprint and now clear the related-name threshold.
+- Data audit after user full Regular/Miscellaneous class scrape → no forum-wrapper boilerplate found;
+  remaining attention candidate is `Epoch` (Voicecatcher / Mechanical Metronome widget captions
+  without images).
+- Data audit → no remaining base-plus-parenthetical family candidates surfaced across current
+  entry-array datasets after excluding deliberate defaults, years, subtype codes, colors, and grouped
+  parenthetical families.
 - `npm run typecheck:scripts` → passed.
 - `npx tsc --noEmit -p tsconfig.json` → passed.
-- `npm run lint` → passed.
-- `node scripts/validate-pets.mjs` → passed, 221 entries.
-- `node scripts/validate-weapons.mjs` → passed, 3,288 entries across 4 subtypes / 11 data files.
+- `node scripts/validate-class-abilities.mjs` → passed, 198 entries.
 - `node scripts/verify-datasets.mjs` → passed.
-- `git diff --check` → passed.
+- `npm run validate` → passed.
+- `npm run lint` → passed.
 - `npm run build` → passed production build and all validators.
 
 **Not verified / known gaps:**
 
-- Full weapons scrape and full pets scrape were not run by the agent. The user should run broad
-  scrapes manually if they want the parser fixes propagated beyond the targeted refreshed examples.
-- Browser visual QA for the shared obtain-card N/A suppression was not run before this entry.
+- No broad Regular/Miscellaneous class scrape was run by the agent in this relation-link batch.
+- No visual screenshot pass was run after the shared detail-pill or Kaaros related-link changes.
+- `Epoch` artifact widget image capture still needs targeted parser attention.
 
 **Next agent should:**
 
-- Hand the user the full weapons/pets scrape commands if they want the latest parser changes
-  propagated globally, then inspect ChickenBlade, Claws??, Pirate/Dread Pirate, and a normal/DC pet.
+- After the user runs the full Regular/Miscellaneous class scrapes, audit classes with artifact
+  attack sets and mechanics before widening any class-specific parser exceptions.
 
-### 2026-08-27 — Variant-scoped item descriptions
+### 2026-08-30 — Class caption and popup cleanup
 
 **Agent:** orchestrator (GPT-5 Codex) · **Commit(s):** `the commit containing this entry`
-**Kanban moved:** no board item moved; scraper bug fix requested during user-run accessories scrape
+**Kanban moved:** no board item moved; user-requested Regular/Miscellaneous class parser cleanup
 
 **Changed:**
 
-- `scripts/scrape-accessories.ts`: accessory family enrichment now treats descriptions as
-  variant-owned data. Sparse same-level variants may only borrow a description from a sibling with the
-  same DA/DC/DM access signature. Expanding one forum post into multiple obtain branches now strips
-  `This item requires a Dragon Amulet.` from non-DA/DC branches, fixing alternating DA/DC families
-  such as `Navigator's Hat`.
-- `scripts/lib/accessories/cross-post-family.ts`, `scripts/lib/cross-post-family.ts`, and
-  `scripts/scrape-weapons.ts`: family/cross-post mergers now populate `shared.description` only when
-  all variants agree, preventing first-variant description bleed across family-capable categories.
-- `src/data/artifacts.json`: targeted `Navigator's Hat` refresh verified and populated the corrected
-  DA/DC description split in the current accessory data.
-- `docs/context/data_reference.md`, `docs/context/category_playbooks.md`, and
-  `docs/context/scraper_operations.md`: documented variant-description scoping and the Navigator's
-  Hat spot-check.
+- `scripts/scrape-classes.ts`: playable class image extraction now collects linked and inline image
+  candidates in forum order, prioritizes explicit forum captions, combines grouped captions such as
+  `Original Appearance: Male / Female`, and filters class portrait candidates by class-name URL
+  family when note links include weapon/skill appearance images.
+- `scripts/scrape-classes.ts`: appearance-caption lines consumed for attack images are removed from
+  skill-local notes and page-level Other Information, so lines like `Original / Retro: Appearance`
+  do not render twice.
+- `scripts/scrape-classes.ts`: page-level note bleed guard is now line-based, fixing Master
+  SoulWeaver's global Other Information where a real note contains `element:`.
+- `src/utils/popupText.ts`: multiple singular `(Pop-up: ...)` snippets in one effect now render as
+  one shared `Pop-ups:` quote block.
+- `src/components/shared/NotesList.tsx`: indented `quote:` markers now still attach following
+  top-level popup/message bullets to the same quote box, fixing Warrior `War Cry` /
+  `Triple Attack` style notes.
+- `src/components/guests/GuestStatsSection.tsx`: singleton visible guest-style stat category cards
+  span the full detail width, covering class pages such as `VIP` where filtering leaves only
+  `Offense`.
+- `scripts/scrape-classes.ts`: class portrait extraction now skips only the actual attack-skill
+  range while preserving final global Other Information image blocks, fixing `DOOOOOOOOM` so attack
+  button/appearance art does not become the main class image.
+- `src/data/classes.json`: targeted refreshes updated `Mage`, `Rogue`, `Chronomancer`, `Warrior`,
+  `Master SoulWeaver`, and `DOOOOOOOOM`.
+- `docs/context/category_playbooks.md`, `docs/context/scraper_operations.md`, and
+  `docs/context/ui_patterns.md`: documented forum-caption priority, consumed appearance labels,
+  class attack requirements, redundant DA requirement cleanup, shared popup grouping, singleton
+  stat-card width, and the user-verified low/no-attack class list.
 
 **Verified:**
 
-- Targeted scrape `npm run scrape:accessories -- --subtypes=artifact --names="Navigator's Hat"` →
-  passed.
-- Data audit → `Navigator's Hat` DA variants II-VI keep the Dragon Amulet sentence; DC variants II-VI
-  do not; `shared.description` is empty because variant descriptions differ.
+- Targeted Regular scrape for `Mage|Rogue|Chronomancer|Warrior` → passed and preserved 144 class
+  entries.
+- Targeted Miscellaneous scrape for `Master SoulWeaver` → passed and preserved 144 class entries.
+- Targeted Miscellaneous scrape for `DOOOOOOOOM|Master SoulWeaver` → passed and preserved 144 class
+  entries.
+- Targeted Regular scrape for `Warrior` → passed and preserved 144 class entries.
+- Data audit → `Mage` image selector is `Modern`, `Retro (Male)`, `Retro (Female)`.
+- Data audit → `Rogue` image selector is `Modern`, `Retro (Male)`, `Retro (Female)`,
+  `Original (Male)`, `Original (Female)`; `Wild Daggers` keeps attack image captions without
+  rendering those caption lines in notes.
+- Data audit → `Warrior` image selector is `Modern`, `Retro`; `Multi Strike` keeps the
+  `Original / Retro` and `DragonKeeper` attack image captions without note duplication.
+- Data audit → `Chronomancer` image selector is `Original`, `Reforged`; `Blade of Meanwhile`
+  captions remain `Original` / `Reforged`.
+- Data audit → `Master SoulWeaver` uses `MasterSoulWeaver-*` class portraits, strips redundant
+  `Dragon Amulet` from obtain requirements, captures attack requirements, keeps bottom Other
+  Information, and `SoulSynch` popups collapse to one `Pop-ups:` group.
+- Data audit → `DOOOOOOOOM` image selector is `Male`, `Female`.
+- User verification → low/no-attack class pages `Angler`, `DOOOOOOOOM`, `Kid Artix`, `Kid Raven`,
+  `Shadow Hunter`, `Sleepy Hero`, `VIP`, and `Young Vilmor` are legitimately low/no-attack on the
+  forum.
 - `npm run typecheck:scripts` → passed.
 - `npx tsc --noEmit -p tsconfig.json` → passed.
-- `node scripts/validate-accessories.mjs` → passed, 2,602 entries.
+- `node scripts/validate-class-abilities.mjs` → passed, 198 entries.
 - `node scripts/verify-datasets.mjs` → passed.
 - `npm run lint` → passed.
-- `git diff --check` → passed.
 - `npm run build` → passed production build and all validators.
 
 **Not verified / known gaps:**
 
-- No broad accessories or weapons scrape was run by the agent. Any accessory JSON written before this
-  fix may still carry stale variant descriptions until the user reruns the affected scrape(s).
-- The targeted Navigator's Hat refresh ran against an already-dirty accessory JSON worktree from the
-  user's in-progress rescrape; unrelated accessory JSON churn was not audited.
+- No broad Regular/Miscellaneous class scrape was run by the agent. Missing-image class spot-check
+  candidates from the earlier audit still need the user/agent targeted pass.
 
 **Next agent should:**
 
-- Ask the user to rerun the interrupted Accessories scrape from the beginning, then inspect
-  Navigator's Hat and another alternating DA/DC family before moving on to the pending default-weapon
-  audit.
+- Continue the Regular/Miscellaneous class audit with missing-image candidates before handing off
+  another broad scrape.
 
-### 2026-08-27 — Cross-category badge links move inline
+### 2026-08-30 — Base class parser batch one
 
 **Agent:** orchestrator (GPT-5 Codex) · **Commit(s):** `the commit containing this entry`
-**Kanban moved:** no board item moved; user-requested cross-category link behavior change
+**Kanban moved:** no board item moved; user-requested Regular class parser fixes
 
 **Changed:**
 
-- `src/components/shared/InlineTextLinks.tsx`, `NotesList`, `PopupText`, and
-  `OtherInformationSection`: added shared inline-link rendering for note prose while preserving
-  bullet indentation, popups, and quote handling.
-- `src/hooks/useBadgeRelations.ts`, `src/types/badgeRelation.ts`, and
-  `scripts/generate-badge-relations.mjs`: changed badge-award relations from card data into compact
-  inline-link data, including source-title aliases for consolidated itemfamilies.
-- Badge, class-ability, accessory, weapon, and pet/guest detail pages: removed cross-category
-  badge-award cards from `Also See`; same-category related cards remain unchanged. Badge pages now
-  hotlink awarding item names inside obtain text/notes, while item pages hotlink badge names inside
-  Other Information.
-- Deleted the obsolete `RelatedLinkCard` and app-side `badgeAwardText` utility.
-- `docs/context/ui_patterns.md`, `docs/context/category_playbooks.md`, and
-  `docs/context/scraper_operations.md`: documented that cross-category badge-award relationships are
-  inline links rather than `Also See` cards.
-
-**Verified:**
-
-- `npm run generate:badge-relations` → passed, 26 relation(s), now with aliases where available.
-- Data audit → `ChaosWeaver`, `DoomKnight`, `GPS`, and `Time Walker` relation aliases look correct
-  for consolidated armor families.
-- `npm run typecheck:scripts` → passed.
-- `npx tsc --noEmit -p tsconfig.json` → passed.
-- `node scripts/verify-datasets.mjs` → passed.
-- `npm run lint` → passed.
-- `git diff --check` → passed.
-- `npm run build` → passed production build and all validators.
-- Playwright local smoke test → Chaosweaver Armor note links `ChaosWeaver` to `/badges/chaosweaver`;
-  ChaosWeaver badge obtain text links `Chaosweaver Armor` back to the class armor detail page; old
-  cross-category card text is absent; no browser console errors.
-
-**Not verified / known gaps:**
-
-- Visual smoke covered the armor ↔ badge example only. Other badge-award categories use the same
-  inline relation path but were not individually browsed.
-- Existing large accessory JSON changes in the working tree were pre-existing/user-run data changes
-  and were not inspected as part of this UI behavior change.
-
-**Next agent should:**
-
-- Continue with the pending accessories/weapons broad scrape handoff or Regular/Miscellaneous Classes
-  parser work, depending on user priority.
-
-### 2026-08-26 — Shared access-aware variant labels
-
-**Agent:** orchestrator (GPT-5 Codex) · **Commit(s):** `the commit containing this entry`
-**Kanban moved:** no board item moved; shared variant-label follow-up requested by user
-
-**Changed:**
-
-- `src/utils/variantHelpers.ts`: added shared `formatVariantAccessLabel` and
-  `formatVariantNameWithAccess` helpers for scraper-normalized variant labels. The shared grammar now
-  covers access-only labels (`(DA)`, `(DA, DC)`, `(DC)`), duplicate level labels (`20`, `20 (DC)`),
-  base sibling labels (`(Base)`, `(Base) (DC)`), and uppercase Roman numerals.
-- `scripts/scrape-classes.ts`: ChickenCow armor normalization now uses the shared helper. The
-  duplicate `ChickenCow Armor` pair derives its label from the scraped level; `Evolved ChickenCow
-  Armor` renders `(DA)`, `(DA, DC)`, `(DC)` without a redundant `1` prefix.
-- `src/data/classes.json`: targeted ChickenCow armor refresh updated the current data to the shared
-  label policy.
-- `docs/context/ui_patterns.md`, `docs/context/data_reference.md`, and
-  `docs/context/category_playbooks.md`: documented the shared variant-label policy and the corrected
-  ChickenCow armor special case.
-
-**Verified:**
-
-- Targeted scrape `npm run scrape:classes -- --subtype=class --class-subcategory=armor
-  --names='ChickenCow Armor|Evolved ChickenCow Armor|Ascended ChickenCow Armor'` → passed and wrote
-  29 class entries.
-- Data audit → ChickenCow labels are `1`, `1 (DC)`; Evolved labels are `(DA)`, `(DA, DC)`, `(DC)`;
-  Ascended labels are `(DA)`, `(DC)`.
-- `npm run typecheck:scripts` → passed.
-- `npx tsc --noEmit -p tsconfig.json` → passed.
-- `node scripts/validate-class-abilities.mjs` → passed, 83 entries.
-- `node scripts/verify-datasets.mjs` → passed.
-- `npm run lint` → passed.
-- `git diff --check` → passed.
-- `npm run build` → passed production build and all validators.
-
-**Not verified / known gaps:**
-
-- Accessories and weapons still need the already-pending broad re-scrapes to propagate their scraper
-  fixes; no broad scrape was run by the agent.
-- Existing category-specific scrapers still decide the natural forum label. The shared helper only
-  standardizes how that label combines with access flags.
-
-**Next agent should:**
-
-- Continue with the pending accessories/weapons broad scrape handoff or the Regular/Miscellaneous
-  Classes parser work, depending on user priority.
-
-### 2026-08-26 — Desktop/web UI smoke QA
-
-**Agent:** orchestrator (GPT-5 Codex) · **Commit(s):** `the commit containing this entry`
-**Kanban moved:** no board item moved; user-requested desktop/web UI check
-
-**Changed:**
-
-- No code changes were needed from this QA pass. Existing desktop/sidebar/list/detail layouts looked
-  healthy in the sampled routes after the mobile navigation and filter layout changes.
-- `AGENTS.md`: recorded the verification outcome and kept completed UI tasks checked off.
-
-**Verified:**
-
-- `npx tsx scripts/screenshot.ts` desktop screenshots at 1440×900 for Home, Accessories Helms,
-  Weapons Scythes, Housing Stuff with `Effect`, Accessory detail, Housing detail, and Classes /
-  Abilities armor detail → visually checked.
-- Playwright desktop overflow/console audit for `/`, `/accessories?type=helm`,
-  `/weapons?type=scythe`, `/classes?type=class`, `/housing?type=stuff&category=effect`, `/pets`,
-  `/accessories/13th-mask?type=helm`, `/housing/armor-closet?type=stuff`, and
-  `/classes/class-ability-gnomish-personal-steamtank-vr-1-0-mk-ii?type=class` → no console errors
-  and `scrollWidth` matched `innerWidth` at 1440px for every page.
-
-**Not verified / known gaps:**
-
-- This was a focused visual smoke pass, not exhaustive screenshot coverage for every route and
-  viewport.
-- No broad scrapes were run or needed.
-
-**Next agent should:**
-
-- Continue with the pending accessories/weapons full re-scrape handoff or the next Classes /
-  Abilities scraper task.
-
-### 2026-08-26 — Mobile navigation and filter layout polish
-
-**Agent:** orchestrator (GPT-5 Codex) · **Commit(s):** `the commit containing this entry`
-**Kanban moved:** no board item moved; shared mobile UI bug fix requested by user
-
-**Changed:**
-
-- `src/components/shared/SegmentToggle.tsx`: subtype selector pills now wrap on mobile widths instead
-  of clipping off the right edge.
-- `src/components/layout/Navigation.tsx`: mobile bottom navigation now keeps a compact primary set
-  (`Home`, `Accessories`, `Badges`, `Pets`, `More`) and opens a More panel containing Classes /
-  Abilities, Housing, Weapons, and coming-soon sections.
-- `docs/context/ui_patterns.md` and `docs/context/category_playbooks.md`: documented mobile subtype
-  wrapping, the mobile More navigation pattern, and the Housing `Effect` metadata rule.
-
-**Verified:**
-
-- `npx tsx scripts/screenshot.ts` mobile screenshots at 390×844 for Accessories, Weapons, Home, and
-  the opened More menu → visually checked.
-- Playwright mobile overflow audit for `/`, `/accessories?type=helm`, `/weapons?type=scythe`,
-  `/classes?type=class`, `/housing?type=stuff`, and `/pets` → `scrollWidth` matched `innerWidth`
-  at 390px for every page.
-- `npm run typecheck:scripts` → passed.
-- `npx tsc --noEmit -p tsconfig.json` → passed.
-- `npm run lint` → passed.
-- `node scripts/verify-datasets.mjs` → passed.
-- `npm run build` → passed production build and all validators.
-- `git diff --check` → passed.
-
-**Not verified / known gaps:**
-
-- No broad scrapes were run or needed.
-
-**Next agent should:**
-
-- Continue with the pending accessories/weapons full re-scrape handoff or the next Classes /
-  Abilities scraper task.
-
-### 2026-08-26 — Stale L2 filter toggle rendering fix
-
-**Agent:** orchestrator (GPT-5 Codex) · **Commit(s):** `the commit containing this entry`
-**Kanban moved:** `Fix stale card-gallery rendering on L2 filter toggle` → `✅ Done`
-
-**Changed:**
-
-- `src/pages/AccessoryListPage.tsx`, `src/pages/WeaponListPage.tsx`,
-  `src/pages/HousingListPage.tsx`, and `src/pages/ClassAbilityListPage.tsx`: removed the
-  catch-all `canonicalQueryString` URL-sync effect that rewrote every filter param after filter
-  toggles. Each page now only syncs debounced search text (`q`) through an effect; filter toggle and
-  clear handlers remain the source of truth for their own params.
-- `src/components/housing/HousingCard.tsx` and `src/components/housing/HousingDetail.tsx`: removed
-  Housing `Effect`/L2 status metadata pills from cards/detail headers while preserving the actual
-  effect content and Effect filter.
-- `src/components/housing/HousingList.tsx`: made Housing card keys unique even when filtered
-  transition renders contain same-slug entries.
-- `docs/context/ui_patterns.md`: documented that list pages should not re-canonicalize the whole
-  filter URL after toggles.
-
-**Verified:**
-
-- `npm run typecheck:scripts` → passed.
-- `npx tsc --noEmit -p tsconfig.json` → passed.
-- `npm run lint` → passed.
-- `node scripts/verify-datasets.mjs` → passed.
-- `npm run build` → passed production build and all validators.
-- `git diff --check` → passed.
-- Local Playwright smoke test against Vite dev server → Housing `Effect`, Accessories `Rare`,
-  Weapons `Special`, and Classes `Seasonal` L2 toggles all updated URL/count/cards together; no
-  browser console errors; Housing card-level `Effect` pill count was 0.
-
-**Not verified / known gaps:**
-
-- No broad scrapes were run or needed.
-
-**Next agent should:**
-
-- Run the normal verification gate, then continue with the pending accessories/weapons full
-  re-scrape handoff or the next Classes / Abilities scraper task.
-
-### 2026-08-26 — Shared trinket-skill enrichment repair
-
-**Agent:** orchestrator (GPT-5 Codex) · **Commit(s):** `the commit containing this entry`
-**Kanban moved:** no board item moved; targeted trinket parser bug fix requested by user
-
-**Changed:**
-
-- `scripts/scrape-accessories.ts`: trinket skill parsing now enriches same-name skill blocks from
-  the richest sibling block. Requirement-specific rows keep their own `Requirements:` text but inherit
-  missing effect text, mana/cooldown/type/element, button image, appearance image(s), and notes.
-- `src/data/trinkets.json`: targeted refresh for `Beacon of Hope` and `Pillar of Light` populated the
-  complete shared `Beacon of Hope` skill details for both trinkets while preserving each trinket's
-  requirement.
+- `scripts/scrape-classes.ts`: playable class scrapes now fetch the linked reply plus the immediate
+  next reply from the full thread. This lets base-class pages keep skill data from the first reply
+  while taking global images and Other Information from the next reply when the forum uses that
+  layout.
+- `scripts/scrape-classes.ts`: class attack bounds no longer stop at skill-local `Other Information`
+  headings. Textual `* * *` separators and underlined/font-size skill headings are handled as attack
+  boundaries, so later attacks such as Mage `Final Blast`, Rogue `Blind` / `Final Strike`, and
+  Warrior `Strength Strike` / `Wound` / `Final Blow` are not swallowed by notes.
+- `scripts/scrape-classes.ts`: attack image captions now read same-line prefixes outside the anchor,
+  e.g. `Original: Appearance`, `Reforged: Appearance`, and `DragonKeeper: Appearance 1 / 1.1`.
+- `scripts/scrape-classes.ts`: class main image captions can read bold/font labels immediately before
+  image tags, such as Mage `Modern Version` / `Retro Version` and Chronomancer `Original` /
+  `Reforged`.
+- `src/data/classes.json`: targeted refreshes updated `Mage`, `Rogue`, `Chronomancer`, `Warrior`,
+  and `Master SoulWeaver`.
 - `docs/context/category_playbooks.md` and `docs/context/scraper_operations.md`: documented the
-  shared trinket-skill post pattern and the required enrichment behavior for trinkets and
-  ability-bearing artifacts.
+  first-post-plus-next-post class pattern and remaining class spot-check candidates.
 
 **Verified:**
 
-- Targeted scrape `npm run scrape:accessories -- --subtypes=trinket
-  --names="Beacon of Hope,Pillar of Light"` → passed.
-- Data audit → `Pillar of Light` now has the complete Beacon of Hope skill mechanics/media and keeps
-  `Pillar of Light equipped` as its requirement.
-- Current trinket skill audit → only one shared ability URL group exists (`Beacon of Hope` /
-  `Pillar of Light`), and no ability-bearing trinket currently has missing attacks, unknown effects,
-  missing skill button images, or missing appearance images.
+- Targeted Regular scrape for `Mage|Rogue|Chronomancer|Warrior` → passed and preserved 144 class
+  entries.
+- Targeted Miscellaneous scrape for `Master SoulWeaver` → passed and preserved 144 class entries.
+- Data audit → `Mage`, `Rogue`, `Chronomancer`, `Warrior`, and `Master SoulWeaver` no longer leave
+  `Requirements:`, `Mana Cost:`, `Cooldown:`, `Damage Type:`, or `Element:` in page-level notes.
+- Data audit → `Mage` has 15 attacks ending `Overcharge` / `Final Blast`, main image plus two
+  `Retro` alternatives, and global next-post Other Information.
+- Data audit → `Chronomancer` has 15 attacks, `Original` / `Reforged` class images, and
+  `Blade of Meanwhile` attack images captioned `Original` / `Reforged`.
+- Data audit → `Warrior` has 15 attacks, quote-box notes retained on `WarCry` and `Triple Attack`,
+  and `Multi Strike` attack images captioned `Original / Retro 1`, `Original / Retro 1.1`,
+  `DragonKeeper 1`, and `DragonKeeper 1.1`.
 - `npm run typecheck:scripts` → passed.
 - `npx tsc --noEmit -p tsconfig.json` → passed.
-- `npm run lint` → passed.
-- `node scripts/validate-accessories.mjs` → passed, 2,602 entries across 8 subtypes / 10 data files.
+- `node scripts/validate-class-abilities.mjs` → passed, 198 entries.
 - `node scripts/verify-datasets.mjs` → passed.
-- `npm run build` → passed production build and all validators.
-- `git diff --check` → passed.
+- `npm run lint` → passed.
 
 **Not verified / known gaps:**
 
-- No broad trinket/accessories scrape was run by the agent. Future full accessories re-scrape remains
-  user-run by rule.
-- Browser visual QA was not run before this handover entry.
+- Remaining missing-image class spot checks: `Alexander`, `Ancient Shadow Rogue`, `Ascendant`,
+  `Cryptic`, `Dread Pirate`, `Dreaming Togslayer`, `Edd Disguise`, `Icebound Revenant`,
+  `Knight Lite`, `Nythera`, `Pirate`, `Riftwalker`, `Shadow Rogue`, and `Unbread`.
+- Remaining low/no-attack spot checks: `Angler`, `DOOOOOOOOM`, `Kid Artix`, `Kid Raven`,
+  `Shadow Hunter`, `Sleepy Hero`, `VIP`, and `Young Vilmor`.
+- No screenshot pass was run in this batch.
 
 **Next agent should:**
 
-- Continue with the pending accessories/weapons full re-scrape handoff or the next Classes /
-  Abilities scraper task.
+- Continue the class audit with missing-image and low-attack candidates, starting from the smallest
+  targeted forum samples.
 
-### 2026-08-25 — Accessory/weapon mixed DA/DC scraper scoping
+### 2026-08-30 — Regular/Misc class scrape audit and filter polish
 
 **Agent:** orchestrator (GPT-5 Codex) · **Commit(s):** `the commit containing this entry`
-**Kanban moved:** no board item moved; scraper bug fix requested before user-run broad re-scrapes
+**Kanban moved:** no board item moved; user-requested class scrape audit and UI polish
 
 **Changed:**
 
-- `scripts/scrape-accessories.ts`: accessory obtain parsing now carries DA/DC/DM tag images from the
-  variant title segment into that specific obtain method. The later entry-building step no longer
-  applies whole-post DA/DC/DM tag flags to every method when the post contains mixed DC and non-DC
-  obtain methods.
-- `scripts/scrape-weapons.ts`: weapon entry building now follows the same mixed-access rule, so
-  alternating DA/DC title blocks keep method-level access instead of inheriting broad page-level tags.
-- `docs/context/category_playbooks.md` and `docs/context/scraper_operations.md`: documented that
-  Accessories and Weapons must treat method-block tags/price/required-items as authoritative for
-  mixed DC/non-DC posts, especially Roman numeral families.
+- `src/components/shared/TriStateFilterPill.tsx` and `src/pages/ClassAbilityListPage.tsx`: added a
+  `segment` tri-state pill size and applied it to the Classes sub-subtype filters so `Armors`,
+  `Regular`, and `Miscellaneous` match the top-level `Classes` / `Consumables` sizing while keeping
+  include/exclude behavior.
+- `src/utils/imageLabels.ts`: shared image display now infers obvious `Male` / `Female` captions
+  from image filenames, fixing class entries such as `Angler` whose forum page exposes male/female
+  main images but labels the second link generically.
+- `scripts/scrape-classes.ts`: class attack parsing now recognizes underlined skill headings and
+  textual `* * *` separators in addition to `<hr>` blocks. This is a general parser hardening, but
+  it did not fully repair the known Mage/Rogue/Chronomancer/Warrior note bleed.
+- `docs/context/ui_patterns.md`, `docs/context/category_playbooks.md`, and
+  `docs/context/scraper_operations.md`: documented the class filter sizing, image-caption inference,
+  and Regular/Miscellaneous spot-check list after the full scrape.
+- `AGENTS.md`: updated Classes / Abilities count to 198 and total dataset count to 7,157 after the
+  user's full Regular/Miscellaneous class scrape.
 
 **Verified:**
 
+- Data audit → Classes / Abilities manifest now reports 198 total entries: 144 class entries and 54
+  consumables.
+- Data audit → Regular/Miscellaneous class entries contain no forum-wrapper titles/descriptions such
+  as `Logged in as: Guest`, `Printable Version`, `All Forums`, or `Forum Login`.
+- Targeted Regular scrape for `Mage|Rogue|Chronomancer|Warrior|Angler|Archivist|DragonMage|DragonRogue|SnuggleBear`
+  → passed and preserved 144 class entries.
 - `npm run typecheck:scripts` → passed.
 - `npx tsc --noEmit -p tsconfig.json` → passed.
+
+**Not verified / known gaps:**
+
+- `Mage`, `Rogue`, `Chronomancer`, `Warrior`, and `Master SoulWeaver` still have skill-looking text
+  in Other Information after the targeted refresh. Mage still lacks its parsed main/retro images,
+  second-post Other Information, and separate `Final Blast` attack.
+- Missing-image class entries to spot-check first: `Alexander`, `Ancient Shadow Rogue`, `Ascendant`,
+  `Cryptic`, `Dread Pirate`, `Dreaming Togslayer`, `Edd Disguise`, `Icebound Revenant`, `Knight Lite`,
+  `Mage`, `Nythera`, `Pirate`, `Riftwalker`, `Shadow Rogue`, and `Unbread`.
+- Low-attack special/misc entries to spot-check before treating as clean: `Angler`, `DOOOOOOOOM`,
+  `Kid Artix`, `Kid Raven`, `Shadow Hunter`, `Sleepy Hero`, `VIP`, and `Young Vilmor`.
+- No visual screenshot was taken in this pass; filter sizing was verified by code inspection only.
+
+**Next agent should:**
+
+- Implement targeted Regular/Miscellaneous class parser handling for later-post global Other
+  Information and nonstandard skill separators, starting with Mage.
+
+### 2026-08-29 — Regular/Misc class guest-style display tightening
+
+**Agent:** orchestrator (GPT-5 Codex) · **Commit(s):** `the commit containing this entry`
+**Kanban moved:** no board item moved; user-requested targeted class UI/parser correction
+
+**Changed:**
+
+- `src/components/classAbilities/ClassAbilityDetail.tsx`: non-armor Classes now use the guest-style
+  detail ordering: variant selector, image selector, guest stats, Rarity, obtain card, Default
+  Weapon, guest-style attack accordions, Other Information, Sources, and Also See. Armor display
+  remains on its existing armor metric-strip path.
+- `src/components/classAbilities/ClassAbilityDetail.tsx`: Regular/Miscellaneous classes no longer
+  render the generic `Effect` card; parsed class skill effects render only inside the attack
+  accordions.
+- `scripts/scrape-classes.ts`: playable class image extraction now excludes the attack section, so
+  class main/alt images are not polluted by skill button/appearance images.
+- `scripts/scrape-classes.ts`: playable class attack extraction now parses all class skills before
+  the final page-level Other Information heading, keeps skill-specific Other Information on the
+  relevant attack, and accepts both `<b><u>` and `<u><b>` forum heading order.
+- `scripts/scrape-classes.ts`: class `Also See` refs are resolved by forum URL during normalization,
+  allowing Regular/Miscellaneous cross-subcategory links such as Ancient Exosuit ↔ Bone Exoskeleton.
+- `src/data/classes.json` and `src/data/class-abilities-manifest.json`: targeted samples refreshed
+  for Ancient Exosuit regular plus Bone Exoskeleton and Caitiff miscellaneous; Classes / Abilities
+  now has 87 entries.
+- `docs/context/category_playbooks.md` and `docs/context/ui_patterns.md`: documented the guest-style
+  Regular/Misc layout and the no-generic-effect-card rule for playable classes.
+
+**Verified:**
+
+- Targeted scrape `npm run scrape:classes -- --subtype=class --class-subcategory=regular
+  --names="Ancient Exosuit" --concurrency=1` → passed.
+- Targeted scrape `npm run scrape:classes -- --subtype=class --class-subcategory=miscellaneous
+  --names="Bone Exoskeleton|Caitiff" --concurrency=1` → passed.
+- Data audit → Ancient Exosuit regular has DC tag, no description, `August 4th, 2015` release date,
+  `AncientExo.png` as main image, exactly the two requested alt image captions, 15 attacks, clean
+  global Other Information, and an Also See link to `class-ability-bone-exoskeleton-miscellaneous`.
+- Data audit → Bone Exoskeleton links back to `class-ability-ancient-exosuit-regular` and keeps its
+  two global Other Information bullets.
+- `npm run typecheck:scripts` → passed.
+- `npx tsc --noEmit -p tsconfig.json` → passed.
+- `node scripts/validate-class-abilities.mjs` → passed, 87 entries.
+- Screenshot helper `npx tsx scripts/screenshot.ts '/classes/class-ability-ancient-exosuit-regular?type=class'`
+  → captured the updated Ancient Exosuit regular page; visible top-of-page order matches the
+  guest-style header/image selector flow.
 - `npm run lint` → passed.
-- `node scripts/verify-datasets.mjs` → passed.
 - `npm run build` → passed production build and all validators.
 
 **Not verified / known gaps:**
 
-- No broad accessories or weapons scrape was run by the agent. Current JSON remains stale for affected
-  alternating DA/DC families until the user runs the pending full re-scrapes.
-- Targeted forum spot-check scrapes were not run in this pass.
+- No full Regular or Miscellaneous class scrape was run by the agent. Broad playable-class population
+  remains pending until the user explicitly runs it.
 
 **Next agent should:**
 
-- Hand the user the full Accessories and Weapons scrape commands.
+- Continue targeted Regular/Miscellaneous class parser samples before any broad scrape handoff.
 
-> **Older entries (35 log entries, 2026-07-27 through 2026-08-25) archived to
-> [`docs/context/handover-log-archive.md`](./docs/context/handover-log-archive.md)** to keep this
-> file under 600 lines. Read that file only when investigating historical context — the entries above
-> cover the current working session.
+### 2026-08-29 — Class Regular/Misc forum-wrapper cleanup
+
+**Agent:** orchestrator (GPT-5 Codex) · **Commit(s):** `the commit containing this entry`
+**Kanban moved:** no board item moved; user-requested targeted class scraper/UI correction
+
+**Changed:**
+
+- `scripts/scrape-classes.ts`: class listing fetch now uses the shared Classes / Abilities A-Z thread
+  URL with the forum anchors for Armors / Regular / Miscellaneous, while section parsing still scopes
+  to the requested sub-subtype.
+- `scripts/scrape-classes.ts`: linked class detail fetches now isolate the actual forum reply body
+  using quoted or unquoted `name=<messageId>` anchors and reject forum wrapper chrome instead of
+  parsing breadcrumbs / login scaffolding as item content.
+- `scripts/scrape-classes.ts`: class normalization drops stale wrapper-boilerplate entries such as
+  `Logged in as: Guest`, `Printable Version`, and `All Forums >>`.
+- `src/data/classes.json` and `src/data/class-abilities-manifest.json`: targeted Regular and
+  Miscellaneous refreshes removed the two bad wrapper rows; Classes / Abilities now has 85 entries.
+- `docs/context/category_playbooks.md` and `docs/context/scraper_operations.md`: documented that
+  Regular/Miscellaneous classes follow guest-style detail display, Armors remain separate, and forum
+  navigation chrome is invalid class content.
+
+**Verified:**
+
+- Targeted scrapes for `Ancient Exosuit` regular, `Alexander` miscellaneous, and `Ancient Exosuit`
+  armor → passed; Regular/Miscellaneous samples parse guest-style images/stats/attacks/default
+  weapons, while the Armor sample remains armor-shaped.
+- Data audit → 0 class entries containing `Logged in as`, `Printable Version`, `All Forums`,
+  `Forum Login`, or similar forum wrapper text.
+- `npm run typecheck:scripts` → passed.
+- `node scripts/validate-class-abilities.mjs` → passed, 85 entries.
+- `npm run lint` → passed.
+- `npm run build` → passed production build and all validators.
+
+**Not verified / known gaps:**
+
+- No full Regular or Miscellaneous class scrape was run by the agent. Broad class population remains
+  pending until the user explicitly runs it.
+- Default-weapon links for playable classes still preserve forum URLs; app-route inline relation work
+  remains pending.
+
+**Next agent should:**
+
+- Continue the Regular / Miscellaneous Classes parser work with a few more targeted samples before
+  handing the user any broad scrape command.

@@ -1,0 +1,1132 @@
+[
+  {
+    "className": "|",
+    "classSlug": "class-ability--regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability--regular?type=class",
+    "weaponName": "|",
+    "weaponSlug": "weapon-default",
+    "weaponSubtype": "scythe",
+    "weaponRoute": "/weapons/weapon-default?type=scythe"
+  },
+  {
+    "className": "|",
+    "classSlug": "class-ability--miscellaneous",
+    "classSubcategory": "miscellaneous",
+    "classRoute": "/classes/class-ability--miscellaneous?type=class",
+    "weaponName": "|",
+    "weaponSlug": "weapon-default",
+    "weaponSubtype": "scythe",
+    "weaponRoute": "/weapons/weapon-default?type=scythe"
+  },
+  {
+    "className": "Alexander",
+    "classSlug": "class-ability-alexander-miscellaneous",
+    "classSubcategory": "miscellaneous",
+    "classRoute": "/classes/class-ability-alexander-miscellaneous?type=class",
+    "weaponName": "Ice Mage Staff (Alexander Default)",
+    "weaponSlug": "weapon-ice-mage-staff-alexander-default",
+    "weaponSubtype": "staff-wand",
+    "weaponRoute": "/weapons/weapon-ice-mage-staff-alexander-default?type=staff-wand"
+  },
+  {
+    "className": "Ancient Exosuit",
+    "classSlug": "class-ability-ancient-exosuit-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-ancient-exosuit-regular?type=class",
+    "weaponName": "Field Coils (Ancient Exosuit Default)",
+    "weaponSlug": "weapon-field-coils-ancient-exosuit-default",
+    "weaponSubtype": "scythe",
+    "weaponRoute": "/weapons/weapon-field-coils-ancient-exosuit-default?type=scythe"
+  },
+  {
+    "className": "Ancient Shadow Mage",
+    "classSlug": "class-ability-ancient-shadow-mage-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-ancient-shadow-mage-regular?type=class",
+    "weaponName": "Shadowstaff (Ancient Shadow Mage Default)",
+    "weaponSlug": "weapon-shadowstaff-ancient-shadow-mage-default",
+    "weaponSubtype": "staff-wand",
+    "weaponRoute": "/weapons/weapon-shadowstaff-ancient-shadow-mage-default?type=staff-wand"
+  },
+  {
+    "className": "Ancient Shadow Rogue",
+    "classSlug": "class-ability-ancient-shadow-rogue-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-ancient-shadow-rogue-regular?type=class",
+    "weaponName": "Shadowdagger (Ancient Shadow Rogue Default)",
+    "weaponSlug": "weapon-shadowdagger-ancient-shadow-rogue-default",
+    "weaponSubtype": "dagger",
+    "weaponRoute": "/weapons/weapon-shadowdagger-ancient-shadow-rogue-default?type=dagger"
+  },
+  {
+    "className": "Ancient Shadow Warrior",
+    "classSlug": "class-ability-ancient-shadow-warrior-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-ancient-shadow-warrior-regular?type=class",
+    "weaponName": "Shadowsword (Ancient Shadow Warrior Default)",
+    "weaponSlug": "weapon-shadowsword-ancient-shadow-warrior-default",
+    "weaponSubtype": "sword-axe-mace",
+    "weaponRoute": "/weapons/weapon-shadowsword-ancient-shadow-warrior-default?type=sword-axe-mace"
+  },
+  {
+    "className": "Angler",
+    "classSlug": "class-ability-angler-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-angler-regular?type=class",
+    "weaponName": "Rod (Angler Default)",
+    "weaponSlug": "weapon-rod-angler-default",
+    "weaponSubtype": "sword-axe-mace",
+    "weaponRoute": "/weapons/weapon-rod-angler-default?type=sword-axe-mace"
+  },
+  {
+    "className": "Angler",
+    "classSlug": "class-ability-angler-miscellaneous",
+    "classSubcategory": "miscellaneous",
+    "classRoute": "/classes/class-ability-angler-miscellaneous?type=class",
+    "weaponName": "Rod (Angler Default)",
+    "weaponSlug": "weapon-rod-angler-default",
+    "weaponSubtype": "sword-axe-mace",
+    "weaponRoute": "/weapons/weapon-rod-angler-default?type=sword-axe-mace"
+  },
+  {
+    "className": "Apprentice Hero",
+    "classSlug": "class-ability-apprentice-hero-miscellaneous",
+    "classSubcategory": "miscellaneous",
+    "classRoute": "/classes/class-ability-apprentice-hero-miscellaneous?type=class",
+    "weaponName": "Crossbow (Apprentice Hero Default)",
+    "weaponSlug": "weapon-crossbow-apprentice-hero-default",
+    "weaponSubtype": "scythe",
+    "weaponRoute": "/weapons/weapon-crossbow-apprentice-hero-default?type=scythe"
+  },
+  {
+    "className": "Archivist",
+    "classSlug": "class-ability-archivist-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-archivist-regular?type=class",
+    "weaponName": "Literary Focus (Archivist Default)",
+    "weaponSlug": "weapon-literary-focus-archivist-default",
+    "weaponSubtype": "scythe",
+    "weaponRoute": "/weapons/weapon-literary-focus-archivist-default?type=scythe"
+  },
+  {
+    "className": "Artix",
+    "classSlug": "class-ability-artix-miscellaneous",
+    "classSubcategory": "miscellaneous",
+    "classRoute": "/classes/class-ability-artix-miscellaneous?type=class",
+    "weaponName": "Blinding Light of Destiny (Artix Default)",
+    "weaponSlug": "weapon-blinding-light-of-destiny-artix-default",
+    "weaponSubtype": "scythe",
+    "weaponRoute": "/weapons/weapon-blinding-light-of-destiny-artix-default?type=scythe"
+  },
+  {
+    "className": "Ascendant",
+    "classSlug": "class-ability-ascendant-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-ascendant-regular?type=class",
+    "weaponName": "Staff (Ascendant Default)",
+    "weaponSlug": "weapon-staff-ascendant-default",
+    "weaponSubtype": "staff-wand",
+    "weaponRoute": "/weapons/weapon-staff-ascendant-default?type=staff-wand"
+  },
+  {
+    "className": "Ascended Chickencow",
+    "classSlug": "class-ability-ascended-chickencow-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-ascended-chickencow-regular?type=class",
+    "weaponName": "Blade of the Ascended (Ascended Chickencow Default)",
+    "weaponSlug": "weapon-blade-of-the-ascended-ascended-chickencow-default",
+    "weaponSubtype": "scythe",
+    "weaponRoute": "/weapons/weapon-blade-of-the-ascended-ascended-chickencow-default?type=scythe"
+  },
+  {
+    "className": "Avatar of Time",
+    "classSlug": "class-ability-avatar-of-time-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-avatar-of-time-regular?type=class",
+    "weaponName": "Time (Avatar of Time Default)",
+    "weaponSlug": "weapon-time-avatar-of-time-default",
+    "weaponSubtype": "scythe",
+    "weaponRoute": "/weapons/weapon-time-avatar-of-time-default?type=scythe"
+  },
+  {
+    "className": "Baby Dragon",
+    "classSlug": "class-ability-baby-dragon-miscellaneous",
+    "classSubcategory": "miscellaneous",
+    "classRoute": "/classes/class-ability-baby-dragon-miscellaneous?type=class",
+    "weaponName": "Claws (Baby Dragon Default)",
+    "weaponSlug": "weapon-claws-baby-dragon-default",
+    "weaponSubtype": "scythe",
+    "weaponRoute": "/weapons/weapon-claws-baby-dragon-default?type=scythe"
+  },
+  {
+    "className": "Bone Exoskeleton",
+    "classSlug": "class-ability-bone-exoskeleton-miscellaneous",
+    "classSubcategory": "miscellaneous",
+    "classRoute": "/classes/class-ability-bone-exoskeleton-miscellaneous?type=class",
+    "weaponName": "Mobile Controls (Bone Exoskeleton Default)",
+    "weaponSlug": "weapon-mobile-controls-bone-exoskeleton-default",
+    "weaponSubtype": "scythe",
+    "weaponRoute": "/weapons/weapon-mobile-controls-bone-exoskeleton-default?type=scythe"
+  },
+  {
+    "className": "Boy Wonder",
+    "classSlug": "class-ability-boy-wonder-miscellaneous",
+    "classSubcategory": "miscellaneous",
+    "classRoute": "/classes/class-ability-boy-wonder-miscellaneous?type=class",
+    "weaponName": "Longsword (ArchKnight Default)",
+    "weaponSlug": "weapon-longsword-archknight-default",
+    "weaponSubtype": "sword-axe-mace",
+    "weaponRoute": "/weapons/weapon-longsword-archknight-default?type=sword-axe-mace"
+  },
+  {
+    "className": "Caitiff",
+    "classSlug": "class-ability-caitiff-miscellaneous",
+    "classSubcategory": "miscellaneous",
+    "classRoute": "/classes/class-ability-caitiff-miscellaneous?type=class",
+    "weaponName": "Caitiff (Caitiff Default)",
+    "weaponSlug": "weapon-caitiff-caitiff-default",
+    "weaponSubtype": "sword-axe-mace",
+    "weaponRoute": "/weapons/weapon-caitiff-caitiff-default?type=sword-axe-mace"
+  },
+  {
+    "className": "Cat",
+    "classSlug": "class-ability-cat-miscellaneous",
+    "classSubcategory": "miscellaneous",
+    "classRoute": "/classes/class-ability-cat-miscellaneous?type=class",
+    "weaponName": "Claws (Cat Default)",
+    "weaponSlug": "weapon-claws-cat-default",
+    "weaponSubtype": "scythe",
+    "weaponRoute": "/weapons/weapon-claws-cat-default?type=scythe"
+  },
+  {
+    "className": "Chaosweaver",
+    "classSlug": "class-ability-chaosweaver-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-chaosweaver-regular?type=class",
+    "weaponName": "Weaver Blade (Chaosweaver Default)",
+    "weaponSlug": "weapon-weaver-blade-chaosweaver-default",
+    "weaponSubtype": "scythe",
+    "weaponRoute": "/weapons/weapon-weaver-blade-chaosweaver-default?type=scythe"
+  },
+  {
+    "className": "ChickencowLord",
+    "classSlug": "class-ability-chickencowlord-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-chickencowlord-regular?type=class",
+    "weaponName": "ChickenBlade (ChickenCow Default)",
+    "weaponSlug": "weapon-chickenblade-chickencow-default",
+    "weaponSubtype": "sword-axe-mace",
+    "weaponRoute": "/weapons/weapon-chickenblade-chickencow-default?type=sword-axe-mace"
+  },
+  {
+    "className": "ChickencowLord",
+    "classSlug": "class-ability-chickencowlord-miscellaneous",
+    "classSubcategory": "miscellaneous",
+    "classRoute": "/classes/class-ability-chickencowlord-miscellaneous?type=class",
+    "weaponName": "ChickenBlade (ChickenCow Default)",
+    "weaponSlug": "weapon-chickenblade-chickencow-default",
+    "weaponSubtype": "sword-axe-mace",
+    "weaponRoute": "/weapons/weapon-chickenblade-chickencow-default?type=sword-axe-mace"
+  },
+  {
+    "className": "Chronocorruptor",
+    "classSlug": "class-ability-chronocorruptor-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-chronocorruptor-regular?type=class",
+    "weaponName": "Chrono (Chronocorruptor Default)",
+    "weaponSlug": "weapon-chrono-chronocorruptor-default",
+    "weaponSubtype": "staff-wand",
+    "weaponRoute": "/weapons/weapon-chrono-chronocorruptor-default?type=staff-wand"
+  },
+  {
+    "className": "Chronomancer",
+    "classSlug": "class-ability-chronomancer-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-chronomancer-regular?type=class",
+    "weaponName": "Blade of Time (Chronomancer Default)",
+    "weaponSlug": "weapon-blade-of-time-chronomancer-default",
+    "weaponSubtype": "sword-axe-mace",
+    "weaponRoute": "/weapons/weapon-blade-of-time-chronomancer-default?type=sword-axe-mace"
+  },
+  {
+    "className": "ChronoZ",
+    "classSlug": "class-ability-chronoz-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-chronoz-regular?type=class",
+    "weaponName": "LaZer Blade of Time (ChronoZ Default)",
+    "weaponSlug": "weapon-lazer-blade-of-time-chronoz-default",
+    "weaponSubtype": "sword-axe-mace",
+    "weaponRoute": "/weapons/weapon-lazer-blade-of-time-chronoz-default?type=sword-axe-mace"
+  },
+  {
+    "className": "Cryptic",
+    "classSlug": "class-ability-cryptic-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-cryptic-regular?type=class",
+    "weaponName": "Dagger (Cryptic Default)",
+    "weaponSlug": "weapon-dagger-cryptic-default",
+    "weaponSubtype": "dagger",
+    "weaponRoute": "/weapons/weapon-dagger-cryptic-default?type=dagger"
+  },
+  {
+    "className": "Danyel",
+    "classSlug": "class-ability-danyel-miscellaneous",
+    "classSubcategory": "miscellaneous",
+    "classRoute": "/classes/class-ability-danyel-miscellaneous?type=class",
+    "weaponName": "Soul Claws (Danyel Default)",
+    "weaponSlug": "weapon-soul-claws-danyel-default",
+    "weaponSubtype": "scythe",
+    "weaponRoute": "/weapons/weapon-soul-claws-danyel-default?type=scythe"
+  },
+  {
+    "className": "Davey",
+    "classSlug": "class-ability-davey-miscellaneous",
+    "classSubcategory": "miscellaneous",
+    "classRoute": "/classes/class-ability-davey-miscellaneous?type=class",
+    "weaponName": "Longsword (Davey Default)",
+    "weaponSlug": "weapon-longsword-davey-default",
+    "weaponSubtype": "scythe",
+    "weaponRoute": "/weapons/weapon-longsword-davey-default?type=scythe"
+  },
+  {
+    "className": "DeathKnight",
+    "classSlug": "class-ability-deathknight-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-deathknight-regular?type=class",
+    "weaponName": "DeathBlade (DeathKnight Default)",
+    "weaponSlug": "weapon-deathblade-deathknight-default",
+    "weaponSubtype": "sword-axe-mace",
+    "weaponRoute": "/weapons/weapon-deathblade-deathknight-default?type=sword-axe-mace"
+  },
+  {
+    "className": "Defensive Artix",
+    "classSlug": "class-ability-defensive-artix-miscellaneous",
+    "classSubcategory": "miscellaneous",
+    "classRoute": "/classes/class-ability-defensive-artix-miscellaneous?type=class",
+    "weaponName": "Foam Hammer",
+    "weaponSlug": "weapon-foam-hammer",
+    "weaponSubtype": "scythe",
+    "weaponRoute": "/weapons/weapon-foam-hammer?type=scythe"
+  },
+  {
+    "className": "DoomKnight",
+    "classSlug": "class-ability-doomknight-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-doomknight-regular?type=class",
+    "weaponName": "Doom Sword (DoomKnight Default)",
+    "weaponSlug": "weapon-doom-sword-doomknight-default",
+    "weaponSubtype": "scythe",
+    "weaponRoute": "/weapons/weapon-doom-sword-doomknight-default?type=scythe"
+  },
+  {
+    "className": "DoomKnight V1",
+    "classSlug": "class-ability-doomknight-v1-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-doomknight-v1-regular?type=class",
+    "weaponName": "sword (DoomKnight V1 Default)",
+    "weaponSlug": "weapon-sword-doomknight-v1-default",
+    "weaponSubtype": "sword-axe-mace",
+    "weaponRoute": "/weapons/weapon-sword-doomknight-v1-default?type=sword-axe-mace"
+  },
+  {
+    "className": "DOOOOOOOOM",
+    "classSlug": "class-ability-doooooooom-miscellaneous",
+    "classSubcategory": "miscellaneous",
+    "classRoute": "/classes/class-ability-doooooooom-miscellaneous?type=class",
+    "weaponName": "DOOOOOM (DOOOOOOOOM Default)",
+    "weaponSlug": "weapon-dooooom-doooooooom-default",
+    "weaponSubtype": "scythe",
+    "weaponRoute": "/weapons/weapon-dooooom-doooooooom-default?type=scythe"
+  },
+  {
+    "className": "DragonLord",
+    "classSlug": "class-ability-dragonlord-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-dragonlord-regular?type=class",
+    "weaponName": "DragonBlade (DragonLord Default)",
+    "weaponSlug": "weapon-dragonblade-dragonlord-default",
+    "weaponSubtype": "sword-axe-mace",
+    "weaponRoute": "/weapons/weapon-dragonblade-dragonlord-default?type=sword-axe-mace"
+  },
+  {
+    "className": "DragonMage",
+    "classSlug": "class-ability-dragonmage-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-dragonmage-regular?type=class",
+    "weaponName": "Staff (DragonMage Default)",
+    "weaponSlug": "weapon-staff-dragonmage-default",
+    "weaponSubtype": "staff-wand",
+    "weaponRoute": "/weapons/weapon-staff-dragonmage-default?type=staff-wand"
+  },
+  {
+    "className": "DragonRider",
+    "classSlug": "class-ability-dragonrider-miscellaneous",
+    "classSubcategory": "miscellaneous",
+    "classRoute": "/classes/class-ability-dragonrider-miscellaneous?type=class",
+    "weaponName": "Dragon (DragonRider Default)",
+    "weaponSlug": "weapon-dragon-dragonrider-default",
+    "weaponSubtype": "scythe",
+    "weaponRoute": "/weapons/weapon-dragon-dragonrider-default?type=scythe"
+  },
+  {
+    "className": "DragonRider (Odgne)",
+    "classSlug": "class-ability-dragonrider-odgne-miscellaneous",
+    "classSubcategory": "miscellaneous",
+    "classRoute": "/classes/class-ability-dragonrider-odgne-miscellaneous?type=class",
+    "weaponName": "Dragon (DragonRider Default)",
+    "weaponSlug": "weapon-dragon-dragonrider-default",
+    "weaponSubtype": "scythe",
+    "weaponRoute": "/weapons/weapon-dragon-dragonrider-default?type=scythe"
+  },
+  {
+    "className": "DragonRogue",
+    "classSlug": "class-ability-dragonrogue-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-dragonrogue-regular?type=class",
+    "weaponName": "Dagger (DragonRogue Default)",
+    "weaponSlug": "weapon-dagger-dragonrogue-default",
+    "weaponSubtype": "dagger",
+    "weaponRoute": "/weapons/weapon-dagger-dragonrogue-default?type=dagger"
+  },
+  {
+    "className": "DragonSlayer",
+    "classSlug": "class-ability-dragonslayer-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-dragonslayer-regular?type=class",
+    "weaponName": "Baneblade (DragonSlayer Default)",
+    "weaponSlug": "weapon-baneblade-dragonslayer-default",
+    "weaponSubtype": "sword-axe-mace",
+    "weaponRoute": "/weapons/weapon-baneblade-dragonslayer-default?type=sword-axe-mace"
+  },
+  {
+    "className": "DragonWarrior",
+    "classSlug": "class-ability-dragonwarrior-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-dragonwarrior-regular?type=class",
+    "weaponName": "Longsword (DragonWarrior Default)",
+    "weaponSlug": "weapon-longsword-dragonwarrior-default",
+    "weaponSubtype": "sword-axe-mace",
+    "weaponRoute": "/weapons/weapon-longsword-dragonwarrior-default?type=sword-axe-mace"
+  },
+  {
+    "className": "Dread Pirate",
+    "classSlug": "class-ability-dread-pirate-miscellaneous",
+    "classSubcategory": "miscellaneous",
+    "classRoute": "/classes/class-ability-dread-pirate-miscellaneous?type=class",
+    "weaponName": "Dread Pirate Blade (Dread Pirate Default)",
+    "weaponSlug": "weapon-dread-pirate-blade-dread-pirate-default",
+    "weaponSubtype": "sword-axe-mace",
+    "weaponRoute": "/weapons/weapon-dread-pirate-blade-dread-pirate-default?type=sword-axe-mace"
+  },
+  {
+    "className": "Dreaming Togslayer",
+    "classSlug": "class-ability-dreaming-togslayer-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-dreaming-togslayer-regular?type=class",
+    "weaponName": "Tog (Togslayer Default)",
+    "weaponSlug": "weapon-tog-togslayer-default",
+    "weaponSubtype": "staff-wand",
+    "weaponRoute": "/weapons/weapon-tog-togslayer-default?type=staff-wand"
+  },
+  {
+    "className": "Edd Disguise",
+    "classSlug": "class-ability-edd-disguise-miscellaneous",
+    "classSubcategory": "miscellaneous",
+    "classRoute": "/classes/class-ability-edd-disguise-miscellaneous?type=class",
+    "weaponName": "Sword",
+    "weaponSlug": "weapon-sword-edd-disguise-default",
+    "weaponSubtype": "scythe",
+    "weaponRoute": "/weapons/weapon-sword-edd-disguise-default?type=scythe"
+  },
+  {
+    "className": "Elemental Nythera",
+    "classSlug": "class-ability-elemental-nythera-miscellaneous",
+    "classSubcategory": "miscellaneous",
+    "classRoute": "/classes/class-ability-elemental-nythera-miscellaneous?type=class",
+    "weaponName": "Nythera Staff (Elemental Nythera Default)",
+    "weaponSlug": "weapon-nythera-staff-elemental-nythera-default",
+    "weaponSubtype": "sword-axe-mace",
+    "weaponRoute": "/weapons/weapon-nythera-staff-elemental-nythera-default?type=sword-axe-mace"
+  },
+  {
+    "className": "En",
+    "classSlug": "class-ability-en-miscellaneous",
+    "classSubcategory": "miscellaneous",
+    "classRoute": "/classes/class-ability-en-miscellaneous?type=class",
+    "weaponName": "Doom Weapon (En Default)",
+    "weaponSlug": "weapon-doom-weapon-en-default",
+    "weaponSubtype": "scythe",
+    "weaponRoute": "/weapons/weapon-doom-weapon-en-default?type=scythe"
+  },
+  {
+    "className": "Entropy",
+    "classSlug": "class-ability-entropy-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-entropy-regular?type=class",
+    "weaponName": "Claws (Entropy Default)",
+    "weaponSlug": "weapon-claws-entropy-default",
+    "weaponSubtype": "sword-axe-mace",
+    "weaponRoute": "/weapons/weapon-claws-entropy-default?type=sword-axe-mace"
+  },
+  {
+    "className": "Envy",
+    "classSlug": "class-ability-envy-miscellaneous",
+    "classSubcategory": "miscellaneous",
+    "classRoute": "/classes/class-ability-envy-miscellaneous?type=class",
+    "weaponName": "Green Fists (Envy Default)",
+    "weaponSlug": "weapon-green-fists-envy-default",
+    "weaponSubtype": "scythe",
+    "weaponRoute": "/weapons/weapon-green-fists-envy-default?type=scythe"
+  },
+  {
+    "className": "Epoch",
+    "classSlug": "class-ability-epoch-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-epoch-regular?type=class",
+    "weaponName": "Fade (Epoch Default)",
+    "weaponSlug": "weapon-fade-epoch-default",
+    "weaponSubtype": "sword-axe-mace",
+    "weaponRoute": "/weapons/weapon-fade-epoch-default?type=sword-axe-mace"
+  },
+  {
+    "className": "Evolved Chickencow",
+    "classSlug": "class-ability-evolved-chickencow-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-evolved-chickencow-regular?type=class",
+    "weaponName": "ChickenBlade (ChickenCow Default)",
+    "weaponSlug": "weapon-chickenblade-chickencow-default",
+    "weaponSubtype": "sword-axe-mace",
+    "weaponRoute": "/weapons/weapon-chickenblade-chickencow-default?type=sword-axe-mace"
+  },
+  {
+    "className": "Evolved PumpkinLord",
+    "classSlug": "class-ability-evolved-pumpkinlord-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-evolved-pumpkinlord-regular?type=class",
+    "weaponName": "Pumpkin Blade (PumpkinLord Default)",
+    "weaponSlug": "weapon-pumpkin-blade-pumpkinlord-default",
+    "weaponSubtype": "sword-axe-mace",
+    "weaponRoute": "/weapons/weapon-pumpkin-blade-pumpkinlord-default?type=sword-axe-mace"
+  },
+  {
+    "className": "Fae",
+    "classSlug": "class-ability-fae-miscellaneous",
+    "classSubcategory": "miscellaneous",
+    "classRoute": "/classes/class-ability-fae-miscellaneous?type=class",
+    "weaponName": "Claws (Fae Default)",
+    "weaponSlug": "weapon-claws-fae-default",
+    "weaponSubtype": "scythe",
+    "weaponRoute": "/weapons/weapon-claws-fae-default?type=scythe"
+  },
+  {
+    "className": "Faust",
+    "classSlug": "class-ability-faust-miscellaneous",
+    "classSubcategory": "miscellaneous",
+    "classRoute": "/classes/class-ability-faust-miscellaneous?type=class",
+    "weaponName": "Unarmed (Faust Default)",
+    "weaponSlug": "weapon-unarmed-faust-default",
+    "weaponSubtype": "scythe",
+    "weaponRoute": "/weapons/weapon-unarmed-faust-default?type=scythe"
+  },
+  {
+    "className": "Fleshweaver",
+    "classSlug": "class-ability-fleshweaver-miscellaneous",
+    "classSubcategory": "miscellaneous",
+    "classRoute": "/classes/class-ability-fleshweaver-miscellaneous?type=class",
+    "weaponName": "Flesh (Fleshweaver (Retired) Default)",
+    "weaponSlug": "weapon-flesh-fleshweaver-retired-default",
+    "weaponSubtype": "staff-wand",
+    "weaponRoute": "/weapons/weapon-flesh-fleshweaver-retired-default?type=staff-wand"
+  },
+  {
+    "className": "Frost Moglin",
+    "classSlug": "class-ability-frost-moglin-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-frost-moglin-regular?type=class",
+    "weaponName": "Sword (Frost Moglin Default)",
+    "weaponSlug": "weapon-sword-frost-moglin-default",
+    "weaponSubtype": "sword-axe-mace",
+    "weaponRoute": "/weapons/weapon-sword-frost-moglin-default?type=sword-axe-mace"
+  },
+  {
+    "className": "GPS (2.0)",
+    "classSlug": "class-ability-gps-2-0-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-gps-2-0-regular?type=class",
+    "weaponName": "Gun (GPS Default)",
+    "weaponSlug": "weapon-gun-gps-default",
+    "weaponSubtype": "sword-axe-mace",
+    "weaponRoute": "/weapons/weapon-gun-gps-default?type=sword-axe-mace"
+  },
+  {
+    "className": "Guardian",
+    "classSlug": "class-ability-guardian-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-guardian-regular?type=class",
+    "weaponName": "Longsword (Guardian Default)",
+    "weaponSlug": "weapon-longsword-guardian-default",
+    "weaponSubtype": "sword-axe-mace",
+    "weaponRoute": "/weapons/weapon-longsword-guardian-default?type=sword-axe-mace"
+  },
+  {
+    "className": "Icebound Revenant",
+    "classSlug": "class-ability-icebound-revenant-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-icebound-revenant-regular?type=class",
+    "weaponName": "Revenant Blade (Icebound Revenant Default)",
+    "weaponSlug": "weapon-revenant-blade-icebound-revenant-default",
+    "weaponSubtype": "sword-axe-mace",
+    "weaponRoute": "/weapons/weapon-revenant-blade-icebound-revenant-default?type=sword-axe-mace"
+  },
+  {
+    "className": "Kara",
+    "classSlug": "class-ability-kara-miscellaneous",
+    "classSubcategory": "miscellaneous",
+    "classRoute": "/classes/class-ability-kara-miscellaneous?type=class",
+    "weaponName": "Furious Zephyr (Kara Default)",
+    "weaponSlug": "weapon-furious-zephyr-kara-default",
+    "weaponSubtype": "scythe",
+    "weaponRoute": "/weapons/weapon-furious-zephyr-kara-default?type=scythe"
+  },
+  {
+    "className": "Kathool Adept",
+    "classSlug": "class-ability-kathool-adept-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-kathool-adept-regular?type=class",
+    "weaponName": "Adept Blade (Kathool Adept Default)",
+    "weaponSlug": "weapon-adept-blade-kathool-adept-default",
+    "weaponSubtype": "sword-axe-mace",
+    "weaponRoute": "/weapons/weapon-adept-blade-kathool-adept-default?type=sword-axe-mace"
+  },
+  {
+    "className": "Kid",
+    "classSlug": "class-ability-kid-miscellaneous",
+    "classSubcategory": "miscellaneous",
+    "classRoute": "/classes/class-ability-kid-miscellaneous?type=class",
+    "weaponName": "Stick of Honesty (Kid Default)",
+    "weaponSlug": "weapon-stick-of-honesty-kid-default",
+    "weaponSubtype": "scythe",
+    "weaponRoute": "/weapons/weapon-stick-of-honesty-kid-default?type=scythe"
+  },
+  {
+    "className": "Kid Artix",
+    "classSlug": "class-ability-kid-artix-miscellaneous",
+    "classSubcategory": "miscellaneous",
+    "classRoute": "/classes/class-ability-kid-artix-miscellaneous?type=class",
+    "weaponName": "Hatchet (Kid Artix Default)",
+    "weaponSlug": "weapon-hatchet-kid-artix-default",
+    "weaponSubtype": "scythe",
+    "weaponRoute": "/weapons/weapon-hatchet-kid-artix-default?type=scythe"
+  },
+  {
+    "className": "Kid Dragon",
+    "classSlug": "class-ability-kid-dragon-miscellaneous",
+    "classSubcategory": "miscellaneous",
+    "classRoute": "/classes/class-ability-kid-dragon-miscellaneous?type=class",
+    "weaponName": "Razor Sharp Claws (Kid Dragon Default)",
+    "weaponSlug": "weapon-razor-sharp-claws-kid-dragon-default",
+    "weaponSubtype": "scythe",
+    "weaponRoute": "/weapons/weapon-razor-sharp-claws-kid-dragon-default?type=scythe"
+  },
+  {
+    "className": "Kid Nythera",
+    "classSlug": "class-ability-kid-nythera-miscellaneous",
+    "classSubcategory": "miscellaneous",
+    "classRoute": "/classes/class-ability-kid-nythera-miscellaneous?type=class",
+    "weaponName": "Kid Fists of Fury (Kid Nythera Default)",
+    "weaponSlug": "weapon-kid-fists-of-fury-kid-nythera-default",
+    "weaponSubtype": "scythe",
+    "weaponRoute": "/weapons/weapon-kid-fists-of-fury-kid-nythera-default?type=scythe"
+  },
+  {
+    "className": "Kid Raven",
+    "classSlug": "class-ability-kid-raven-miscellaneous",
+    "classSubcategory": "miscellaneous",
+    "classRoute": "/classes/class-ability-kid-raven-miscellaneous?type=class",
+    "weaponName": "Fists (Kid Raven Default)",
+    "weaponSlug": "weapon-fists-kid-raven-default",
+    "weaponSubtype": "scythe",
+    "weaponRoute": "/weapons/weapon-fists-kid-raven-default?type=scythe"
+  },
+  {
+    "className": "Knight Lite",
+    "classSlug": "class-ability-knight-lite-miscellaneous",
+    "classSubcategory": "miscellaneous",
+    "classRoute": "/classes/class-ability-knight-lite-miscellaneous?type=class",
+    "weaponName": "Longsword (ArchKnight Default)",
+    "weaponSlug": "weapon-longsword-archknight-default",
+    "weaponSubtype": "sword-axe-mace",
+    "weaponRoute": "/weapons/weapon-longsword-archknight-default?type=sword-axe-mace"
+  },
+  {
+    "className": "Mage",
+    "classSlug": "class-ability-mage-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-mage-regular?type=class",
+    "weaponName": "Staff (Mage Default)",
+    "weaponSlug": "weapon-staff-mage-default",
+    "weaponSubtype": "staff-wand",
+    "weaponRoute": "/weapons/weapon-staff-mage-default?type=staff-wand"
+  },
+  {
+    "className": "MageKnight",
+    "classSlug": "class-ability-mageknight-miscellaneous",
+    "classSubcategory": "miscellaneous",
+    "classRoute": "/classes/class-ability-mageknight-miscellaneous?type=class",
+    "weaponName": "Long Sword (MageKnight Default)",
+    "weaponSlug": "weapon-long-sword-mageknight-default",
+    "weaponSubtype": "scythe",
+    "weaponRoute": "/weapons/weapon-long-sword-mageknight-default?type=scythe"
+  },
+  {
+    "className": "Master SoulWeaver",
+    "classSlug": "class-ability-master-soulweaver-miscellaneous",
+    "classSubcategory": "miscellaneous",
+    "classRoute": "/classes/class-ability-master-soulweaver-miscellaneous?type=class",
+    "weaponName": "SoulClaws (Master SoulWeaver Default)",
+    "weaponSlug": "weapon-soulclaws-master-soulweaver-default",
+    "weaponSubtype": "sword-axe-mace",
+    "weaponRoute": "/weapons/weapon-soulclaws-master-soulweaver-default?type=sword-axe-mace"
+  },
+  {
+    "className": "Necro Paragon",
+    "classSlug": "class-ability-necro-paragon-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-necro-paragon-regular?type=class",
+    "weaponName": "Necroblade (Necro Paragon Default)",
+    "weaponSlug": "weapon-necroblade-necro-paragon-default",
+    "weaponSubtype": "scythe",
+    "weaponRoute": "/weapons/weapon-necroblade-necro-paragon-default?type=scythe"
+  },
+  {
+    "className": "Ninja",
+    "classSlug": "class-ability-ninja-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-ninja-regular?type=class",
+    "weaponName": "Ninja Blade (Ninja Default)",
+    "weaponSlug": "weapon-ninja-blade-ninja-default",
+    "weaponSubtype": "sword-axe-mace",
+    "weaponRoute": "/weapons/weapon-ninja-blade-ninja-default?type=sword-axe-mace"
+  },
+  {
+    "className": "Ninja Monkey",
+    "classSlug": "class-ability-ninja-monkey-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-ninja-monkey-regular?type=class",
+    "weaponName": "Katana (Ninja Monkey Default)",
+    "weaponSlug": "weapon-katana-ninja-monkey-default",
+    "weaponSubtype": "sword-axe-mace",
+    "weaponRoute": "/weapons/weapon-katana-ninja-monkey-default?type=sword-axe-mace"
+  },
+  {
+    "className": "Nythera",
+    "classSlug": "class-ability-nythera-miscellaneous",
+    "classSubcategory": "miscellaneous",
+    "classRoute": "/classes/class-ability-nythera-miscellaneous?type=class",
+    "weaponName": "Stolen Staff (Nythera Default)",
+    "weaponSlug": "weapon-stolen-staff-nythera-default",
+    "weaponSubtype": "scythe",
+    "weaponRoute": "/weapons/weapon-stolen-staff-nythera-default?type=scythe"
+  },
+  {
+    "className": "Paladin",
+    "classSlug": "class-ability-paladin-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-paladin-regular?type=class",
+    "weaponName": "Long Sword (Paladin Default)",
+    "weaponSlug": "weapon-long-sword-paladin-default",
+    "weaponSubtype": "sword-axe-mace",
+    "weaponRoute": "/weapons/weapon-long-sword-paladin-default?type=sword-axe-mace"
+  },
+  {
+    "className": "Pirate",
+    "classSlug": "class-ability-pirate-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-pirate-regular?type=class",
+    "weaponName": "Pirate Blade (Pirate Default)",
+    "weaponSlug": "weapon-pirate-blade-pirate-default",
+    "weaponSubtype": "sword-axe-mace",
+    "weaponRoute": "/weapons/weapon-pirate-blade-pirate-default?type=sword-axe-mace"
+  },
+  {
+    "className": "Pirate Monkey",
+    "classSlug": "class-ability-pirate-monkey-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-pirate-monkey-regular?type=class",
+    "weaponName": "sword (Pirate Monkey Default)",
+    "weaponSlug": "weapon-sword-pirate-monkey-default",
+    "weaponSubtype": "sword-axe-mace",
+    "weaponRoute": "/weapons/weapon-sword-pirate-monkey-default?type=sword-axe-mace"
+  },
+  {
+    "className": "PumpkinLord",
+    "classSlug": "class-ability-pumpkinlord-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-pumpkinlord-regular?type=class",
+    "weaponName": "Pumpkin Blade (PumpkinLord Default)",
+    "weaponSlug": "weapon-pumpkin-blade-pumpkinlord-default",
+    "weaponSubtype": "sword-axe-mace",
+    "weaponRoute": "/weapons/weapon-pumpkin-blade-pumpkinlord-default?type=sword-axe-mace"
+  },
+  {
+    "className": "Pyromancer",
+    "classSlug": "class-ability-pyromancer-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-pyromancer-regular?type=class",
+    "weaponName": "Firesteel Blade (Pyromancer Default)",
+    "weaponSlug": "weapon-firesteel-blade-pyromancer-default",
+    "weaponSubtype": "sword-axe-mace",
+    "weaponRoute": "/weapons/weapon-firesteel-blade-pyromancer-default?type=sword-axe-mace"
+  },
+  {
+    "className": "Ranger",
+    "classSlug": "class-ability-ranger-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-ranger-regular?type=class",
+    "weaponName": "Longsword (Ranger Default)",
+    "weaponSlug": "weapon-longsword-ranger-default",
+    "weaponSubtype": "sword-axe-mace",
+    "weaponRoute": "/weapons/weapon-longsword-ranger-default?type=sword-axe-mace"
+  },
+  {
+    "className": "Retro Paladin",
+    "classSlug": "class-ability-retro-paladin-miscellaneous",
+    "classSubcategory": "miscellaneous",
+    "classRoute": "/classes/class-ability-retro-paladin-miscellaneous?type=class",
+    "weaponName": "Long Sword (Paladin Default)",
+    "weaponSlug": "weapon-long-sword-paladin-default",
+    "weaponSubtype": "sword-axe-mace",
+    "weaponRoute": "/weapons/weapon-long-sword-paladin-default?type=sword-axe-mace"
+  },
+  {
+    "className": "Riftwalker",
+    "classSlug": "class-ability-riftwalker-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-riftwalker-regular?type=class",
+    "weaponName": "Sword (Riftwalker Default)",
+    "weaponSlug": "weapon-sword-riftwalker-default",
+    "weaponSubtype": "staff-wand",
+    "weaponRoute": "/weapons/weapon-sword-riftwalker-default?type=staff-wand"
+  },
+  {
+    "className": "Rogue",
+    "classSlug": "class-ability-rogue-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-rogue-regular?type=class",
+    "weaponName": "Dagger (Rogue Default)",
+    "weaponSlug": "weapon-dagger-rogue-default",
+    "weaponSubtype": "dagger",
+    "weaponRoute": "/weapons/weapon-dagger-rogue-default?type=dagger"
+  },
+  {
+    "className": "Rolith's Dress Uniform",
+    "classSlug": "class-ability-rolith-s-dress-uniform-miscellaneous",
+    "classSubcategory": "miscellaneous",
+    "classRoute": "/classes/class-ability-rolith-s-dress-uniform-miscellaneous?type=class",
+    "weaponName": "Hammer (Rolith's Dress Uniform Default)",
+    "weaponSlug": "weapon-hammer-rolith-s-dress-uniform-default",
+    "weaponSubtype": "scythe",
+    "weaponRoute": "/weapons/weapon-hammer-rolith-s-dress-uniform-default?type=scythe"
+  },
+  {
+    "className": "Sam",
+    "classSlug": "class-ability-sam-miscellaneous",
+    "classSubcategory": "miscellaneous",
+    "classRoute": "/classes/class-ability-sam-miscellaneous?type=class",
+    "weaponName": "Rose Pillow (Sam Default)",
+    "weaponSlug": "weapon-rose-pillow-sam-default",
+    "weaponSubtype": "scythe",
+    "weaponRoute": "/weapons/weapon-rose-pillow-sam-default?type=scythe"
+  },
+  {
+    "className": "San Robin",
+    "classSlug": "class-ability-san-robin-miscellaneous",
+    "classSubcategory": "miscellaneous",
+    "classRoute": "/classes/class-ability-san-robin-miscellaneous?type=class",
+    "weaponName": "Pun is Mightier Than the (San Robin Default), The",
+    "weaponSlug": "weapon-pun-is-mightier-than-the-san-robin-default-the",
+    "weaponSubtype": "scythe",
+    "weaponRoute": "/weapons/weapon-pun-is-mightier-than-the-san-robin-default-the?type=scythe"
+  },
+  {
+    "className": "Shadow Hunter",
+    "classSlug": "class-ability-shadow-hunter-miscellaneous",
+    "classSubcategory": "miscellaneous",
+    "classRoute": "/classes/class-ability-shadow-hunter-miscellaneous?type=class",
+    "weaponName": "Shadowblade (Shadow Hunter Default)",
+    "weaponSlug": "weapon-shadowblade-shadow-hunter-default",
+    "weaponSubtype": "scythe",
+    "weaponRoute": "/weapons/weapon-shadowblade-shadow-hunter-default?type=scythe"
+  },
+  {
+    "className": "Shadow Mage",
+    "classSlug": "class-ability-shadow-mage-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-shadow-mage-regular?type=class",
+    "weaponName": "Shadowstaff (Shadow Mage Default)",
+    "weaponSlug": "weapon-shadowstaff-shadow-mage-default",
+    "weaponSubtype": "staff-wand",
+    "weaponRoute": "/weapons/weapon-shadowstaff-shadow-mage-default?type=staff-wand"
+  },
+  {
+    "className": "Shadow Rogue",
+    "classSlug": "class-ability-shadow-rogue-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-shadow-rogue-regular?type=class",
+    "weaponName": "Shadowdagger (Shadow Rogue Default)",
+    "weaponSlug": "weapon-shadowdagger-shadow-rogue-default",
+    "weaponSubtype": "dagger",
+    "weaponRoute": "/weapons/weapon-shadowdagger-shadow-rogue-default?type=dagger"
+  },
+  {
+    "className": "Shadow Warrior",
+    "classSlug": "class-ability-shadow-warrior-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-shadow-warrior-regular?type=class",
+    "weaponName": "Shadowsword (Shadow Warrior Default)",
+    "weaponSlug": "weapon-shadowsword-shadow-warrior-default",
+    "weaponSubtype": "sword-axe-mace",
+    "weaponRoute": "/weapons/weapon-shadowsword-shadow-warrior-default?type=sword-axe-mace"
+  },
+  {
+    "className": "ShadowHunter",
+    "classSlug": "class-ability-shadowhunter-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-shadowhunter-regular?type=class",
+    "weaponName": "Shadowsword (ShadowHunter Default)",
+    "weaponSlug": "weapon-shadowsword-shadowhunter-default",
+    "weaponSubtype": "scythe",
+    "weaponRoute": "/weapons/weapon-shadowsword-shadowhunter-default?type=scythe"
+  },
+  {
+    "className": "ShadowWalker of Time",
+    "classSlug": "class-ability-shadowwalker-of-time-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-shadowwalker-of-time-regular?type=class",
+    "weaponName": "Time (ShadowWalker of Time Default)",
+    "weaponSlug": "weapon-time-shadowwalker-of-time-default",
+    "weaponSubtype": "scythe",
+    "weaponRoute": "/weapons/weapon-time-shadowwalker-of-time-default?type=scythe"
+  },
+  {
+    "className": "Sleepy Hero",
+    "classSlug": "class-ability-sleepy-hero-miscellaneous",
+    "classSubcategory": "miscellaneous",
+    "classRoute": "/classes/class-ability-sleepy-hero-miscellaneous?type=class",
+    "weaponName": "Sword (Sleepy Hero Default)",
+    "weaponSlug": "weapon-sword-sleepy-hero-default",
+    "weaponSubtype": "sword-axe-mace",
+    "weaponRoute": "/weapons/weapon-sword-sleepy-hero-default?type=sword-axe-mace"
+  },
+  {
+    "className": "SnuggleBear",
+    "classSlug": "class-ability-snugglebear-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-snugglebear-regular?type=class",
+    "weaponName": "Snuggle Sword (SnuggleBear Default)",
+    "weaponSlug": "weapon-snuggle-sword-snugglebear-default",
+    "weaponSubtype": "sword-axe-mace",
+    "weaponRoute": "/weapons/weapon-snuggle-sword-snugglebear-default?type=sword-axe-mace"
+  },
+  {
+    "className": "Snugglemech",
+    "classSlug": "class-ability-snugglemech-miscellaneous",
+    "classSubcategory": "miscellaneous",
+    "classRoute": "/classes/class-ability-snugglemech-miscellaneous?type=class",
+    "weaponName": "Snuggleblade (Snugglemech Default)",
+    "weaponSlug": "weapon-snuggleblade-snugglemech-default",
+    "weaponSubtype": "sword-axe-mace",
+    "weaponRoute": "/weapons/weapon-snuggleblade-snugglemech-default?type=sword-axe-mace"
+  },
+  {
+    "className": "SnugglePanda",
+    "classSlug": "class-ability-snugglepanda-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-snugglepanda-regular?type=class",
+    "weaponName": "Bamboo (SnugglePanda Default)",
+    "weaponSlug": "weapon-bamboo-snugglepanda-default",
+    "weaponSubtype": "sword-axe-mace",
+    "weaponRoute": "/weapons/weapon-bamboo-snugglepanda-default?type=sword-axe-mace"
+  },
+  {
+    "className": "SoulWeaver",
+    "classSlug": "class-ability-soulweaver-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-soulweaver-regular?type=class",
+    "weaponName": "Soul Claws (SoulWeaver Default)",
+    "weaponSlug": "weapon-soul-claws-soulweaver-default",
+    "weaponSubtype": "sword-axe-mace",
+    "weaponRoute": "/weapons/weapon-soul-claws-soulweaver-default?type=sword-axe-mace"
+  },
+  {
+    "className": "Student",
+    "classSlug": "class-ability-student-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-student-regular?type=class",
+    "weaponName": "Academy Sword (Student Default)",
+    "weaponSlug": "weapon-academy-sword-student-default",
+    "weaponSubtype": "sword-axe-mace",
+    "weaponRoute": "/weapons/weapon-academy-sword-student-default?type=sword-axe-mace"
+  },
+  {
+    "className": "Synchronized",
+    "classSlug": "class-ability-synchronized-miscellaneous",
+    "classSubcategory": "miscellaneous",
+    "classRoute": "/classes/class-ability-synchronized-miscellaneous?type=class",
+    "weaponName": "Soul Claws (Synchronized Default)",
+    "weaponSlug": "weapon-soul-claws-synchronized-default",
+    "weaponSubtype": "scythe",
+    "weaponRoute": "/weapons/weapon-soul-claws-synchronized-default?type=scythe"
+  },
+  {
+    "className": "Technomancer",
+    "classSlug": "class-ability-technomancer-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-technomancer-regular?type=class",
+    "weaponName": "Laser Screwdriver (Technomancer Default)",
+    "weaponSlug": "weapon-laser-screwdriver-technomancer-default",
+    "weaponSubtype": "sword-axe-mace",
+    "weaponRoute": "/weapons/weapon-laser-screwdriver-technomancer-default?type=sword-axe-mace"
+  },
+  {
+    "className": "TimeKiller",
+    "classSlug": "class-ability-timekiller-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-timekiller-regular?type=class",
+    "weaponName": "Ratchet Bow (TimeKiller Default)",
+    "weaponSlug": "weapon-ratchet-bow-timekiller-default",
+    "weaponSubtype": "sword-axe-mace",
+    "weaponRoute": "/weapons/weapon-ratchet-bow-timekiller-default?type=sword-axe-mace"
+  },
+  {
+    "className": "Toddler Dragon",
+    "classSlug": "class-ability-toddler-dragon-miscellaneous",
+    "classSubcategory": "miscellaneous",
+    "classRoute": "/classes/class-ability-toddler-dragon-miscellaneous?type=class",
+    "weaponName": "Sharp Claws (Toddler Dragon Default)",
+    "weaponSlug": "weapon-sharp-claws-toddler-dragon-default",
+    "weaponSubtype": "scythe",
+    "weaponRoute": "/weapons/weapon-sharp-claws-toddler-dragon-default?type=scythe"
+  },
+  {
+    "className": "Togslayer",
+    "classSlug": "class-ability-togslayer-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-togslayer-regular?type=class",
+    "weaponName": "Tog (Togslayer Default)",
+    "weaponSlug": "weapon-tog-togslayer-default",
+    "weaponSubtype": "staff-wand",
+    "weaponRoute": "/weapons/weapon-tog-togslayer-default?type=staff-wand"
+  },
+  {
+    "className": "Unbread",
+    "classSlug": "class-ability-unbread-miscellaneous",
+    "classSubcategory": "miscellaneous",
+    "classRoute": "/classes/class-ability-unbread-miscellaneous?type=class",
+    "weaponName": "Butter Knife (Unbread Default)",
+    "weaponSlug": "weapon-butter-knife-unbread-default",
+    "weaponSubtype": "scythe",
+    "weaponRoute": "/weapons/weapon-butter-knife-unbread-default?type=scythe"
+  },
+  {
+    "className": "Vaal",
+    "classSlug": "class-ability-vaal-miscellaneous",
+    "classSubcategory": "miscellaneous",
+    "classRoute": "/classes/class-ability-vaal-miscellaneous?type=class",
+    "weaponName": "TRANSCENDENCE (Vaal Default)",
+    "weaponSlug": "weapon-transcendence-vaal-default",
+    "weaponSubtype": "scythe",
+    "weaponRoute": "/weapons/weapon-transcendence-vaal-default?type=scythe"
+  },
+  {
+    "className": "VIP",
+    "classSlug": "class-ability-vip-miscellaneous",
+    "classSubcategory": "miscellaneous",
+    "classRoute": "/classes/class-ability-vip-miscellaneous?type=class",
+    "weaponName": "Unarmed (VIP Default)",
+    "weaponSlug": "weapon-unarmed-vip-default",
+    "weaponSubtype": "sword-axe-mace",
+    "weaponRoute": "/weapons/weapon-unarmed-vip-default?type=sword-axe-mace"
+  },
+  {
+    "className": "Warlic",
+    "classSlug": "class-ability-warlic-miscellaneous",
+    "classSubcategory": "miscellaneous",
+    "classRoute": "/classes/class-ability-warlic-miscellaneous?type=class",
+    "weaponName": "Magestaff (Warlic Default)",
+    "weaponSlug": "weapon-magestaff-warlic-default",
+    "weaponSubtype": "scythe",
+    "weaponRoute": "/weapons/weapon-magestaff-warlic-default?type=scythe"
+  },
+  {
+    "className": "Warrior",
+    "classSlug": "class-ability-warrior-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-warrior-regular?type=class",
+    "weaponName": "Longsword (Warrior Default)",
+    "weaponSlug": "weapon-longsword-warrior-default",
+    "weaponSubtype": "sword-axe-mace",
+    "weaponRoute": "/weapons/weapon-longsword-warrior-default?type=sword-axe-mace"
+  },
+  {
+    "className": "Weaver",
+    "classSlug": "class-ability-weaver-miscellaneous",
+    "classSubcategory": "miscellaneous",
+    "classRoute": "/classes/class-ability-weaver-miscellaneous?type=class",
+    "weaponName": "TRANSCENDENCE (Fleshweaver (Temp) Default) (Transcendence Default)",
+    "weaponSlug": "weapon-transcendence-fleshweaver-temp-default-transcendence-default",
+    "weaponSubtype": "scythe",
+    "weaponRoute": "/weapons/weapon-transcendence-fleshweaver-temp-default-transcendence-default?type=scythe"
+  },
+  {
+    "className": "Xan",
+    "classSlug": "class-ability-xan-miscellaneous",
+    "classSubcategory": "miscellaneous",
+    "classRoute": "/classes/class-ability-xan-miscellaneous?type=class",
+    "weaponName": "Fists of fire (Xan Default)",
+    "weaponSlug": "weapon-fists-of-fire-xan-default",
+    "weaponSubtype": "scythe",
+    "weaponRoute": "/weapons/weapon-fists-of-fire-xan-default?type=scythe"
+  },
+  {
+    "className": "Young Hero",
+    "classSlug": "class-ability-young-hero-miscellaneous",
+    "classSubcategory": "miscellaneous",
+    "classRoute": "/classes/class-ability-young-hero-miscellaneous?type=class",
+    "weaponName": "Longsword (ArchKnight Default)",
+    "weaponSlug": "weapon-longsword-archknight-default",
+    "weaponSubtype": "sword-axe-mace",
+    "weaponRoute": "/weapons/weapon-longsword-archknight-default?type=sword-axe-mace"
+  },
+  {
+    "className": "Young Vilmor",
+    "classSlug": "class-ability-young-vilmor-miscellaneous",
+    "classSubcategory": "miscellaneous",
+    "classRoute": "/classes/class-ability-young-vilmor-miscellaneous?type=class",
+    "weaponName": "Stick (Young Vilmor Default)",
+    "weaponSlug": "weapon-stick-young-vilmor-default",
+    "weaponSubtype": "scythe",
+    "weaponRoute": "/weapons/weapon-stick-young-vilmor-default?type=scythe"
+  },
+  {
+    "className": "Zardbie",
+    "classSlug": "class-ability-zardbie-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-zardbie-regular?type=class",
+    "weaponName": "Claws?? (Zardbie Default)",
+    "weaponSlug": "weapon-claws-zardbie-default",
+    "weaponSubtype": "sword-axe-mace",
+    "weaponRoute": "/weapons/weapon-claws-zardbie-default?type=sword-axe-mace"
+  },
+  {
+    "className": "Zardbie",
+    "classSlug": "class-ability-zardbie-miscellaneous",
+    "classSubcategory": "miscellaneous",
+    "classRoute": "/classes/class-ability-zardbie-miscellaneous?type=class",
+    "weaponName": "Claws?? (Zardbie Default)",
+    "weaponSlug": "weapon-claws-zardbie-default",
+    "weaponSubtype": "sword-axe-mace",
+    "weaponRoute": "/weapons/weapon-claws-zardbie-default?type=sword-axe-mace"
+  }
+]

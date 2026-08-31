@@ -1,0 +1,372 @@
+[
+  {
+    "className": "Ancient Shadow Mage",
+    "classSlug": "class-ability-ancient-shadow-mage-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-ancient-shadow-mage-regular?type=class",
+    "artifactName": "Cloak Scrap",
+    "artifactSlug": "accessory-cloak-scrap",
+    "artifactSubtype": "artifact",
+    "artifactRoute": "/accessories/accessory-cloak-scrap?type=artifact"
+  },
+  {
+    "className": "Ancient Shadow Mage",
+    "classSlug": "class-ability-ancient-shadow-mage-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-ancient-shadow-mage-regular?type=class",
+    "artifactName": "Shadowheart Bracer",
+    "artifactSlug": "accessory-shadowheart-bracer",
+    "artifactSubtype": "artifact",
+    "artifactRoute": "/accessories/accessory-shadowheart-bracer?type=artifact"
+  },
+  {
+    "className": "Ancient Shadow Rogue",
+    "classSlug": "class-ability-ancient-shadow-rogue-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-ancient-shadow-rogue-regular?type=class",
+    "artifactName": "Cloak Scrap",
+    "artifactSlug": "accessory-cloak-scrap",
+    "artifactSubtype": "artifact",
+    "artifactRoute": "/accessories/accessory-cloak-scrap?type=artifact"
+  },
+  {
+    "className": "Ancient Shadow Rogue",
+    "classSlug": "class-ability-ancient-shadow-rogue-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-ancient-shadow-rogue-regular?type=class",
+    "artifactName": "Shadowheart Bracer",
+    "artifactSlug": "accessory-shadowheart-bracer",
+    "artifactSubtype": "artifact",
+    "artifactRoute": "/accessories/accessory-shadowheart-bracer?type=artifact"
+  },
+  {
+    "className": "Ancient Shadow Warrior",
+    "classSlug": "class-ability-ancient-shadow-warrior-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-ancient-shadow-warrior-regular?type=class",
+    "artifactName": "Cloak Scrap",
+    "artifactSlug": "accessory-cloak-scrap",
+    "artifactSubtype": "artifact",
+    "artifactRoute": "/accessories/accessory-cloak-scrap?type=artifact"
+  },
+  {
+    "className": "Ancient Shadow Warrior",
+    "classSlug": "class-ability-ancient-shadow-warrior-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-ancient-shadow-warrior-regular?type=class",
+    "artifactName": "Shadowheart Bracer",
+    "artifactSlug": "accessory-shadowheart-bracer",
+    "artifactSubtype": "artifact",
+    "artifactRoute": "/accessories/accessory-shadowheart-bracer?type=artifact"
+  },
+  {
+    "className": "DragonLord",
+    "classSlug": "class-ability-dragonlord-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-dragonlord-regular?type=class",
+    "artifactName": "Dragon's Bulwark",
+    "artifactSlug": "accessory-dragon-s-bulwark",
+    "artifactSubtype": "artifact",
+    "artifactRoute": "/accessories/accessory-dragon-s-bulwark?type=artifact"
+  },
+  {
+    "className": "DragonLord",
+    "classSlug": "class-ability-dragonlord-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-dragonlord-regular?type=class",
+    "artifactName": "Dragon's Patience",
+    "artifactSlug": "accessory-dragon-s-patience",
+    "artifactSubtype": "artifact",
+    "artifactRoute": "/accessories/accessory-dragon-s-patience?type=artifact"
+  },
+  {
+    "className": "DragonLord",
+    "classSlug": "class-ability-dragonlord-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-dragonlord-regular?type=class",
+    "artifactName": "Dragon's Rage",
+    "artifactSlug": "accessory-dragon-s-rage",
+    "artifactSubtype": "artifact",
+    "artifactRoute": "/accessories/accessory-dragon-s-rage?type=artifact"
+  },
+  {
+    "className": "DragonLord",
+    "classSlug": "class-ability-dragonlord-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-dragonlord-regular?type=class",
+    "artifactName": "Dragon's Wrath",
+    "artifactSlug": "accessory-dragon-s-wrath",
+    "artifactSubtype": "artifact",
+    "artifactRoute": "/accessories/accessory-dragon-s-wrath?type=artifact"
+  },
+  {
+    "className": "Epoch",
+    "classSlug": "class-ability-epoch-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-epoch-regular?type=class",
+    "artifactName": "Corrupted Doom Cassette",
+    "artifactSlug": "accessory-corrupted-doom-cassette",
+    "artifactSubtype": "artifact",
+    "artifactRoute": "/accessories/accessory-corrupted-doom-cassette?type=artifact"
+  },
+  {
+    "className": "Epoch",
+    "classSlug": "class-ability-epoch-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-epoch-regular?type=class",
+    "artifactName": "Draconic Glowtooth",
+    "artifactSlug": "accessory-draconic-glowtooth",
+    "artifactSubtype": "artifact",
+    "artifactRoute": "/accessories/accessory-draconic-glowtooth?type=artifact"
+  },
+  {
+    "className": "Epoch",
+    "classSlug": "class-ability-epoch-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-epoch-regular?type=class",
+    "artifactName": "Epocharina",
+    "artifactSlug": "accessory-epocharina",
+    "artifactSubtype": "artifact",
+    "artifactRoute": "/accessories/accessory-epocharina?type=artifact"
+  },
+  {
+    "className": "Epoch",
+    "classSlug": "class-ability-epoch-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-epoch-regular?type=class",
+    "artifactName": "Eternal Locket",
+    "artifactSlug": "accessory-eternal-locket",
+    "artifactSubtype": "artifact",
+    "artifactRoute": "/accessories/accessory-eternal-locket?type=artifact"
+  },
+  {
+    "className": "Epoch",
+    "classSlug": "class-ability-epoch-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-epoch-regular?type=class",
+    "artifactName": "Mechanical Metronome",
+    "artifactSlug": "accessory-mechanical-metronome",
+    "artifactSubtype": "artifact",
+    "artifactRoute": "/accessories/accessory-mechanical-metronome?type=artifact"
+  },
+  {
+    "className": "Epoch",
+    "classSlug": "class-ability-epoch-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-epoch-regular?type=class",
+    "artifactName": "Solo Adagio",
+    "artifactSlug": "accessory-solo-adagio",
+    "artifactSubtype": "artifact",
+    "artifactRoute": "/accessories/accessory-solo-adagio?type=artifact"
+  },
+  {
+    "className": "Epoch",
+    "classSlug": "class-ability-epoch-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-epoch-regular?type=class",
+    "artifactName": "The Eraglass",
+    "artifactSlug": "accessory-the-eraglass",
+    "artifactSubtype": "artifact",
+    "artifactRoute": "/accessories/accessory-the-eraglass?type=artifact"
+  },
+  {
+    "className": "Epoch",
+    "classSlug": "class-ability-epoch-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-epoch-regular?type=class",
+    "artifactName": "Timeless Lightsticks",
+    "artifactSlug": "accessory-timeless-lightsticks",
+    "artifactSubtype": "artifact",
+    "artifactRoute": "/accessories/accessory-timeless-lightsticks?type=artifact"
+  },
+  {
+    "className": "Epoch",
+    "classSlug": "class-ability-epoch-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-epoch-regular?type=class",
+    "artifactName": "Voicecatcher",
+    "artifactSlug": "accessory-voicecatcher",
+    "artifactSubtype": "artifact",
+    "artifactRoute": "/accessories/accessory-voicecatcher?type=artifact"
+  },
+  {
+    "className": "Evolved Chickencow",
+    "classSlug": "class-ability-evolved-chickencow-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-evolved-chickencow-regular?type=class",
+    "artifactName": "Harmonized Cowbell",
+    "artifactSlug": "accessory-harmonized-cowbell",
+    "artifactSubtype": "artifact",
+    "artifactRoute": "/accessories/accessory-harmonized-cowbell?type=artifact"
+  },
+  {
+    "className": "Fleshweaver",
+    "classSlug": "class-ability-fleshweaver-miscellaneous",
+    "classSubcategory": "miscellaneous",
+    "classRoute": "/classes/class-ability-fleshweaver-miscellaneous?type=class",
+    "artifactName": "Baltael's Aventail",
+    "artifactSlug": "accessory-baltael-s-aventail",
+    "artifactSubtype": "artifact",
+    "artifactRoute": "/accessories/accessory-baltael-s-aventail?type=artifact"
+  },
+  {
+    "className": "Frost Moglin",
+    "classSlug": "class-ability-frost-moglin-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-frost-moglin-regular?type=class",
+    "artifactName": "Frost Moglin Knight's Cloak",
+    "artifactSlug": "accessory-frost-moglin-knight-s-cloak",
+    "artifactSubtype": "artifact",
+    "artifactRoute": "/accessories/accessory-frost-moglin-knight-s-cloak?type=artifact"
+  },
+  {
+    "className": "Frost Moglin",
+    "classSlug": "class-ability-frost-moglin-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-frost-moglin-regular?type=class",
+    "artifactName": "Frost Moglin Knight's Helm",
+    "artifactSlug": "accessory-frost-moglin-knight-s-helm",
+    "artifactSubtype": "artifact",
+    "artifactRoute": "/accessories/accessory-frost-moglin-knight-s-helm?type=artifact"
+  },
+  {
+    "className": "Mage",
+    "classSlug": "class-ability-mage-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-mage-regular?type=class",
+    "artifactName": "Cloak Scrap",
+    "artifactSlug": "accessory-cloak-scrap",
+    "artifactSubtype": "artifact",
+    "artifactRoute": "/accessories/accessory-cloak-scrap?type=artifact"
+  },
+  {
+    "className": "Mage",
+    "classSlug": "class-ability-mage-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-mage-regular?type=class",
+    "artifactName": "Shadowheart Bracer",
+    "artifactSlug": "accessory-shadowheart-bracer",
+    "artifactSubtype": "artifact",
+    "artifactRoute": "/accessories/accessory-shadowheart-bracer?type=artifact"
+  },
+  {
+    "className": "Pirate",
+    "classSlug": "class-ability-pirate-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-pirate-regular?type=class",
+    "artifactName": "Navigator's Hat",
+    "artifactSlug": "accessory-navigator-s-hat",
+    "artifactSubtype": "artifact",
+    "artifactRoute": "/accessories/accessory-navigator-s-hat?type=artifact"
+  },
+  {
+    "className": "Rogue",
+    "classSlug": "class-ability-rogue-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-rogue-regular?type=class",
+    "artifactName": "Cloak Scrap",
+    "artifactSlug": "accessory-cloak-scrap",
+    "artifactSubtype": "artifact",
+    "artifactRoute": "/accessories/accessory-cloak-scrap?type=artifact"
+  },
+  {
+    "className": "Rogue",
+    "classSlug": "class-ability-rogue-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-rogue-regular?type=class",
+    "artifactName": "Shadowheart Bracer",
+    "artifactSlug": "accessory-shadowheart-bracer",
+    "artifactSubtype": "artifact",
+    "artifactRoute": "/accessories/accessory-shadowheart-bracer?type=artifact"
+  },
+  {
+    "className": "Shadow Mage",
+    "classSlug": "class-ability-shadow-mage-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-shadow-mage-regular?type=class",
+    "artifactName": "Cloak Scrap",
+    "artifactSlug": "accessory-cloak-scrap",
+    "artifactSubtype": "artifact",
+    "artifactRoute": "/accessories/accessory-cloak-scrap?type=artifact"
+  },
+  {
+    "className": "Shadow Mage",
+    "classSlug": "class-ability-shadow-mage-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-shadow-mage-regular?type=class",
+    "artifactName": "Shadowheart Bracer",
+    "artifactSlug": "accessory-shadowheart-bracer",
+    "artifactSubtype": "artifact",
+    "artifactRoute": "/accessories/accessory-shadowheart-bracer?type=artifact"
+  },
+  {
+    "className": "Shadow Rogue",
+    "classSlug": "class-ability-shadow-rogue-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-shadow-rogue-regular?type=class",
+    "artifactName": "Cloak Scrap",
+    "artifactSlug": "accessory-cloak-scrap",
+    "artifactSubtype": "artifact",
+    "artifactRoute": "/accessories/accessory-cloak-scrap?type=artifact"
+  },
+  {
+    "className": "Shadow Rogue",
+    "classSlug": "class-ability-shadow-rogue-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-shadow-rogue-regular?type=class",
+    "artifactName": "Shadowheart Bracer",
+    "artifactSlug": "accessory-shadowheart-bracer",
+    "artifactSubtype": "artifact",
+    "artifactRoute": "/accessories/accessory-shadowheart-bracer?type=artifact"
+  },
+  {
+    "className": "Shadow Warrior",
+    "classSlug": "class-ability-shadow-warrior-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-shadow-warrior-regular?type=class",
+    "artifactName": "Cloak Scrap",
+    "artifactSlug": "accessory-cloak-scrap",
+    "artifactSubtype": "artifact",
+    "artifactRoute": "/accessories/accessory-cloak-scrap?type=artifact"
+  },
+  {
+    "className": "Shadow Warrior",
+    "classSlug": "class-ability-shadow-warrior-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-shadow-warrior-regular?type=class",
+    "artifactName": "Shadowheart Bracer",
+    "artifactSlug": "accessory-shadowheart-bracer",
+    "artifactSubtype": "artifact",
+    "artifactRoute": "/accessories/accessory-shadowheart-bracer?type=artifact"
+  },
+  {
+    "className": "SoulWeaver",
+    "classSlug": "class-ability-soulweaver-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-soulweaver-regular?type=class",
+    "artifactName": "Baltael's Aventail",
+    "artifactSlug": "accessory-baltael-s-aventail",
+    "artifactSubtype": "artifact",
+    "artifactRoute": "/accessories/accessory-baltael-s-aventail?type=artifact"
+  },
+  {
+    "className": "Warrior",
+    "classSlug": "class-ability-warrior-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-warrior-regular?type=class",
+    "artifactName": "Cloak Scrap",
+    "artifactSlug": "accessory-cloak-scrap",
+    "artifactSubtype": "artifact",
+    "artifactRoute": "/accessories/accessory-cloak-scrap?type=artifact"
+  },
+  {
+    "className": "Warrior",
+    "classSlug": "class-ability-warrior-regular",
+    "classSubcategory": "regular",
+    "classRoute": "/classes/class-ability-warrior-regular?type=class",
+    "artifactName": "Shadowheart Bracer",
+    "artifactSlug": "accessory-shadowheart-bracer",
+    "artifactSubtype": "artifact",
+    "artifactRoute": "/accessories/accessory-shadowheart-bracer?type=artifact"
+  }
+]

@@ -29,7 +29,7 @@
  * - dm: Price is in Defender's Medals, or required items are purely Defender's Medals
  *   Example: "75 Defender's Medals", "1 Defender's Medal"
  */
-import type { GuestAttack, GuestStats } from './pet'
+import type { GuestAttack, GuestAttackSet, GuestStats } from './pet'
 import type { WeaponSpecial } from './weapon'
 
 export type PriceType = 'gold' | 'dc' | 'dm' | 'free' | 'merge'
@@ -213,8 +213,12 @@ export interface LevelVariant {
   effectType?: string // Housing/Classes-Abilities: forum sorted-by-effects category label
   equipsClass?: string // Classes/Abilities armor-only: class unlocked/equipped by this armor
   equipsClassUrl?: string
+  defaultWeapon?: string // Classes/Abilities class-only: default weapon used by the class
+  defaultWeaponUrl?: string
   classAbilitySubtype?: string // Classes/Abilities-only: class sub-subtype or consumable tag
   attacks?: VariantAttack[] // Only if attacks differ at this level
+  attackSets?: GuestAttackSet[] // Classes/Abilities class-only: artifact-modified attack sets
+  mechanics?: MechanicsBlock[] // Classes/Abilities class-only: class/artifact mechanics notes and images
   weaponSpecial?: WeaponSpecial // Weapon-only: preserves parsed specials through family consolidation
   weaponSpecials?: WeaponSpecial[] // Weapon-only: preserves multiple parsed specials through family consolidation
   guestStats?: GuestStats
@@ -254,6 +258,7 @@ export interface SharedData {
   resists?: string // "None" - when same for all levels
   rarity?: string // "1" - when same for all levels
   attacks?: VariantAttack[] // When attacks are same for all levels
+  guestStats?: GuestStats // Guests and Classes/Abilities class entries when stats are shared
   dialogue?: string // Classes/Abilities-only: shared consumable dialogue snippets
   notes?: string // Shared notes (bullet-separated with " • ")
   alsoSee?: AlsoSeeRef[] // Related items
@@ -261,6 +266,16 @@ export interface SharedData {
   effectType?: string // Housing/Classes-Abilities: shared sorted-by-effects category label
   equipsClass?: string // Classes/Abilities armor-only: class unlocked/equipped by this armor
   equipsClassUrl?: string
+  defaultWeapon?: string // Classes/Abilities class-only: default weapon used by the class
+  defaultWeaponUrl?: string
+  attackSets?: GuestAttackSet[] // Classes/Abilities class-only: artifact-modified attack sets
+  mechanics?: MechanicsBlock[] // Classes/Abilities class-only: class/artifact mechanics notes and images
+}
+
+export interface MechanicsBlock {
+  title?: string
+  notes?: string
+  images?: AlternativeImage[]
 }
 
 /**

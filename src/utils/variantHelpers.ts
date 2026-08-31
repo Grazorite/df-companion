@@ -1052,17 +1052,22 @@ function shouldUsePlainLevelLabels(levels: LevelVariant[], familyName?: string):
 
   const familyLabel = displayTitle(normalizeDisplayText(familyName)).toLowerCase()
   const levelLabels = levels.map((level) => String(level.actualLevel ?? level.levelDisplay))
-
-  return (
-    new Set(levelLabels).size === levels.length &&
-    levels.every((level) => {
-      if (level.variantName) return false
-      return (
-        displayTitle(normalizeDisplayText(stripAccessVariantSuffix(level.name))).toLowerCase() ===
-        familyLabel
-      )
-    })
+  const variantLabels = levels.map((level) =>
+    normalizeComparableValue(normalizeRomanDisplay(level.variantName ?? ''))
   )
+  const hasOneRepeatedVariantLabel =
+    variantLabels.every(Boolean) && new Set(variantLabels).size === 1
+
+  if (new Set(levelLabels).size !== levels.length) return false
+  if (hasOneRepeatedVariantLabel) return true
+
+  return levels.every((level) => {
+    if (level.variantName) return false
+    return (
+      displayTitle(normalizeDisplayText(stripAccessVariantSuffix(level.name))).toLowerCase() ===
+      familyLabel
+    )
+  })
 }
 
 function getPirateMonkeyVariantLabels(

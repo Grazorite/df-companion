@@ -47,7 +47,7 @@ function normalizeMainText(text: string): string {
 }
 
 export function splitPopupText(text: string): PopupSegment {
-  const markerPattern = /(?:Message\s+)?Pop[- ]?ups?\s*:/i
+  const markerPattern = /(^|[\n([])\s*((?:Message\s+)?Pop[- ]?ups?\s*:)/i
   const popupGroups: PopupGroup[] = []
   let remaining = text
   let mainText = ''
@@ -59,11 +59,16 @@ export function splitPopupText(text: string): PopupSegment {
       break
     }
 
-    const markerStart = marker.index
-    const markerEnd = markerStart + marker[0].length
+    const label = marker[2] ?? marker[0]
+    const markerStart = marker.index + marker[0].lastIndexOf(label)
+    const markerEnd = markerStart + label.length
+    const prefix = marker[1] ?? ''
+    const wrapperStart = marker.index + prefix.search(/[([]/)
     const openerIndex =
-      markerStart > 0 && ['(', '['].includes(remaining[markerStart - 1])
-        ? markerStart - 1
+      prefix.includes('(') || prefix.includes('[')
+        ? wrapperStart
+        : markerStart > 0 && ['(', '['].includes(remaining[markerStart - 1])
+          ? markerStart - 1
         : markerStart
     const opener = remaining[openerIndex]
     const hasWrapper = opener === '(' || opener === '['
@@ -80,18 +85,28 @@ export function splitPopupText(text: string): PopupSegment {
 
     mainText += remaining.slice(0, openerIndex)
     const rawPopup = remaining.slice(popupStart, popupEnd)
-    const messages = splitPopupMessages(rawPopup, marker[0])
+    const messages = splitPopupMessages(rawPopup, label)
     if (messages.length > 0) {
       popupGroups.push({
-        label: marker[0].trim(),
+        label: label.trim(),
         messages,
       })
     }
     remaining = remaining.slice(popupEnd + (hasWrapper ? 1 : 0))
   }
 
+  const normalizedPopupGroups =
+    popupGroups.length > 1 && popupGroups.every((group) => /^Pop[- ]?up:?$/i.test(group.label))
+      ? [
+          {
+            label: 'Pop-ups:',
+            messages: popupGroups.flatMap((group) => group.messages),
+          },
+        ]
+      : popupGroups
+
   return {
     mainText: normalizeMainText(mainText),
-    popupGroups,
+    popupGroups: normalizedPopupGroups,
   }
 }

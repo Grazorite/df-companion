@@ -1521,13 +1521,14 @@
     "isRare": true
   },
   {
-    "id": "weapon-harbinger-of-sorrow",
-    "familyName": "Harbinger (of Sorrow)",
-    "slug": "weapon-harbinger-of-sorrow",
+    "id": "weapon-harbinger",
+    "familyName": "Harbinger",
+    "slug": "weapon-harbinger",
     "aliasSlugs": [
       "weapon-harbinger-of-sorrow-all-versions",
-      "weapon-harbinger",
-      "weapon-base-harbinger"
+      "weapon-base-harbinger",
+      "weapon-harbinger-of-sorrow",
+      "weapon-harbinger-all-versions"
     ],
     "type": "weapon",
     "subtype": "sword-axe-mace",
@@ -1601,13 +1602,13 @@
         "resists": "None",
         "rarity": "1",
         "itemType": "Sword",
-        "variantName": "Harbinger"
+        "variantName": "(Base)"
       },
       {
         "levelNumber": 3,
         "levelDisplay": "3",
         "actualLevel": 3,
-        "variantName": "(Base)",
+        "variantName": "of Sorrow",
         "name": "Harbinger (of Sorrow)",
         "damage": "9-15",
         "stats": "Block +1",
@@ -7373,13 +7374,14 @@
     "alsoSee": []
   },
   {
-    "id": "weapon-kaaros-garada-avi",
-    "familyName": "Kaaros Garada (Avi)",
-    "slug": "weapon-kaaros-garada-avi",
+    "id": "weapon-kaaros-garada",
+    "familyName": "Kaaros Garada",
+    "slug": "weapon-kaaros-garada",
     "aliasSlugs": [
       "weapon-kaaros-garada-avi-all-versions",
-      "weapon-kaaros-garada",
-      "weapon-base-kaaros-garada"
+      "weapon-base-kaaros-garada",
+      "weapon-kaaros-garada-avi",
+      "weapon-kaaros-garada-all-versions"
     ],
     "type": "weapon",
     "subtype": "sword-axe-mace",
@@ -7428,13 +7430,13 @@
         "resists": "Water +1, Ice +1",
         "rarity": "5",
         "itemType": "Sword",
-        "variantName": "Kaaros Garada"
+        "variantName": "(Base)"
       },
       {
         "levelNumber": 51,
         "levelDisplay": "51",
         "actualLevel": 51,
-        "variantName": "(Base)",
+        "variantName": "Avi",
         "name": "Kaaros Garada (Avi)",
         "damage": "59-79",
         "stats": "Crit +5, END +6, LUK +3, INT +3, STR +6, Bonus +3",
@@ -19863,13 +19865,14 @@
     "levelRange": "I-VI"
   },
   {
-    "id": "weapon-nereid-sagaris-aquis",
-    "familyName": "Nereid Sagaris (Aquis)",
-    "slug": "weapon-nereid-sagaris-aquis",
+    "id": "weapon-nereid-sagaris",
+    "familyName": "Nereid Sagaris",
+    "slug": "weapon-nereid-sagaris",
     "aliasSlugs": [
       "weapon-nereid-sagaris-aquis-all-versions",
-      "weapon-nereid-sagaris",
-      "weapon-base-nereid-sagaris"
+      "weapon-base-nereid-sagaris",
+      "weapon-nereid-sagaris-aquis",
+      "weapon-nereid-sagaris-all-versions"
     ],
     "type": "weapon",
     "subtype": "sword-axe-mace",
@@ -19918,13 +19921,13 @@
         "resists": "None",
         "rarity": "1",
         "itemType": "Axe",
-        "variantName": "Nereid Sagaris"
+        "variantName": "(Base)"
       },
       {
         "levelNumber": 48,
         "levelDisplay": "48",
         "actualLevel": 48,
-        "variantName": "(Base)",
+        "variantName": "Aquis",
         "name": "Nereid Sagaris (Aquis)",
         "damage": "58-74",
         "stats": "Block +1, Crit +1, Magic Def +2, Pierce Def +2, Melee Def +2, END +1, STR +3, Bonus +2",

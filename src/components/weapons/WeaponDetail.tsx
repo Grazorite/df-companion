@@ -11,6 +11,7 @@ import {
   useWeaponRelatedItems,
 } from '../../hooks/useWeapons'
 import { useBadgeInlineLinksForItem } from '../../hooks/useBadgeRelations'
+import { useClassDefaultWeaponRelationsForWeapon } from '../../hooks/useClassDefaultWeaponRelations'
 import { displayTitle, normalizeDescriptionText, normalizeDisplayText } from '../../utils/displayText'
 import {
   buildDisplayImages,
@@ -572,6 +573,7 @@ export default function WeaponDetail({ weapon, filterBase, backUrl }: WeaponDeta
   const resolvedRelatedWeapons = relatedWeapons.flatMap((related) =>
     related.entry ? [{ ref: related.ref, entry: related.entry }] : []
   )
+  const defaultWeaponClassRelations = useClassDefaultWeaponRelationsForWeapon(weapon.slug)
   const badgeInlineLinks = useBadgeInlineLinksForItem(weapon.slug)
 
   return (
@@ -700,6 +702,25 @@ export default function WeaponDetail({ weapon, filterBase, backUrl }: WeaponDeta
       <ObtainSection variants={obtainMethods} className="mb-8" />
 
       <WeaponSpecialsSection specials={weaponSpecials} />
+
+      {defaultWeaponClassRelations.length > 0 && (
+        <section className="bg-bg-surface border border-border-default rounded-lg p-5 mb-5">
+          <h2 className="text-xs font-semibold text-text-muted uppercase tracking-wider mb-3">
+            Default Weapon For
+          </h2>
+          <div className="flex flex-wrap gap-x-3 gap-y-2">
+            {defaultWeaponClassRelations.map((relation) => (
+              <Link
+                key={relation.classSlug}
+                to={relation.classRoute}
+                className="text-sm text-gold hover:text-gold-light transition-colors"
+              >
+                {relation.className}
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
 
       <OtherInformationSection
         notes={singleWeapon?.notes}

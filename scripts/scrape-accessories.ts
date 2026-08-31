@@ -38,6 +38,7 @@ import {
 } from './lib/note-cleaning.ts'
 import { repairAccessFlags } from './lib/access-flag-repair.ts'
 import { getAccessorySubtypeStrategy } from './lib/accessories/index.ts'
+import { writeClassArtifactRelations } from './lib/class-artifact-relations.ts'
 import { promoteAccessoryCrossPostFamilies } from './lib/accessories/cross-post-family.ts'
 import { extractAlsoSeeRefs, type ParsedAlsoSeeRef } from './lib/also-see.ts'
 import { dedupeSameSlugPreferFamily } from './lib/family-merge-guard.ts'
@@ -643,6 +644,22 @@ function parseNotes(html: string): string | undefined {
         } else {
           noteLines.push(cleanedText)
         }
+        continue
+      }
+
+      const leadingWhitespace = line.match(/^\s*/)?.[0] ?? ''
+      if (leadingWhitespace.length > topLevelBulletIndent && noteLines.length > 0) {
+        noteLines.push(`  ${trimmed}`)
+        continue
+      }
+
+      const previousNote = noteLines[noteLines.length - 1]?.trim() ?? ''
+      if (
+        noteLines.length > 0 &&
+        /(?:following|initial)\s+stats:\s*$/i.test(previousNote) &&
+        /^(?:Stats|Resists|Sellback|Price|Damage|Element|Bonuses|Rarity):/i.test(trimmed)
+      ) {
+        noteLines.push(`  ${trimmed}`)
         continue
       }
 
@@ -2307,6 +2324,7 @@ function writeDatasets(
   }
 
   writeAccessoryManifest()
+  writeClassArtifactRelations(OUTPUT_DIR)
 }
 
 function writeAccessoryManifest() {
@@ -2347,6 +2365,36 @@ function loadExistingAccessoryEntry(stub: AccessoryStub): AccessoryEntry | undef
   return undefined
 }
 
+function getMessageIdFromForumUrl(url: string): string {
+  const messageId = url.match(/[?&]m=(\d+)/i)?.[1]
+  if (!messageId) throw new Error(`Could not parse forum message id from URL: ${url}`)
+  return messageId
+}
+
+function loadExistingAccessoryEntryByMessageId(
+  subtype: AccessorySubtype,
+  messageId: string
+): AccessoryEntry | undefined {
+  const meta = ACCESSORY_SUBTYPES.find((item) => item.subtype === subtype)
+  if (!meta) return undefined
+
+  for (const dataFile of getAccessoryDataFiles(meta)) {
+    const filePath = path.resolve(OUTPUT_DIR, dataFile)
+    if (!fs.existsSync(filePath)) continue
+    const entries = JSON.parse(fs.readFileSync(filePath, 'utf-8')) as AccessoryEntry[]
+    const existing = entries.find((entry) => {
+      if (entry.forumUrl?.match(/[?&]m=(\d+)/i)?.[1] === messageId) return true
+      if (!isAccessoryFamily(entry)) return false
+      return entry.levelVariants.some(
+        (variant) => variant.sourceUrl?.match(/[?&]m=(\d+)/i)?.[1] === messageId
+      )
+    })
+    if (existing) return existing
+  }
+
+  return undefined
+}
+
 async function main() {
   const cookie = loadCookie()
 
@@ -2354,6 +2402,10 @@ async function main() {
   const subtypesArg = getArg('subtypes')
   const lettersArg = getArg('letters')?.toUpperCase().split(',').filter(Boolean)
   const namesArg = getArg('names')
+    ?.split(',')
+    .map((value) => value.trim())
+    .filter(Boolean)
+  const urlsArg = getArg('urls')
     ?.split(',')
     .map((value) => value.trim())
     .filter(Boolean)
@@ -2366,6 +2418,9 @@ async function main() {
     : subtypeArg
       ? new Set<AccessorySubtype>([subtypeArg])
       : new Set<AccessorySubtype>(ACCESSORY_SUBTYPES.map((meta) => meta.subtype))
+  if (urlsArg && selectedSubtypes.size !== 1) {
+    throw new Error('--urls requires exactly one selected accessory subtype via --subtype or --subtypes')
+  }
   const shouldLoadTrinketSkillEffects =
     selectedSubtypes.has('trinket') || selectedSubtypes.has('artifact')
   const trinketSkillEffectTypes = shouldLoadTrinketSkillEffects
@@ -2381,19 +2436,36 @@ async function main() {
     await sleep(250)
   }
 
-  const filteredStubs = applyLimit(
-    allStubs.filter((stub) => {
-      if (!selectedSubtypes.has(stub.subtype)) return false
-      if (namesArg && namesArg.length > 0) {
-        return namesArg.some(
-          (name) => normalizeNameFilterValue(stub.name) === normalizeNameFilterValue(name)
-        )
+  const directUrlStubs =
+    urlsArg?.map((url) => {
+      const subtype = [...selectedSubtypes][0]
+      const messageId = getMessageIdFromForumUrl(url)
+      const existing = loadExistingAccessoryEntryByMessageId(subtype, messageId)
+      return {
+        name: existing ? getEntryDisplayName(existing) : `Direct Accessory ${messageId}`,
+        forumUrl: url,
+        messageId,
+        subtype,
       }
-      if (!lettersArg || lettersArg.length === 0) return true
-      return lettersArg.includes(getInitialForName(stub.name))
-    }),
-    limitArg
-  )
+    }) ?? []
+  allStubs.push(...directUrlStubs)
+
+  const filteredStubs =
+    directUrlStubs.length > 0
+      ? applyLimit(directUrlStubs, limitArg)
+      : applyLimit(
+          allStubs.filter((stub) => {
+            if (!selectedSubtypes.has(stub.subtype)) return false
+            if (namesArg && namesArg.length > 0) {
+              return namesArg.some(
+                (name) => normalizeNameFilterValue(stub.name) === normalizeNameFilterValue(name)
+              )
+            }
+            if (!lettersArg || lettersArg.length === 0) return true
+            return lettersArg.includes(getInitialForName(stub.name))
+          }),
+          limitArg
+        )
   const resolveAlsoSee = createAccessoryRefResolver(allStubs)
   const entriesBySubtype = new Map<AccessorySubtype, AccessoryEntry[]>(
     ACCESSORY_SUBTYPES.map((meta) => [meta.subtype, []])
@@ -2444,7 +2516,12 @@ async function main() {
       selectedSubtypes.size === 1 ? ` for ${[...selectedSubtypes][0]}` : ''
     }`
   )
-  writeDatasets(entriesBySubtype, selectedSubtypes, lettersArg, namesArg)
+  writeDatasets(
+    entriesBySubtype,
+    selectedSubtypes,
+    lettersArg,
+    namesArg ?? (urlsArg && urlsArg.length > 0 ? ['__url_refresh__'] : undefined)
+  )
 }
 
 if (import.meta.main) {

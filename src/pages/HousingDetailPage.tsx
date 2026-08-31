@@ -35,5 +35,12 @@ export default function HousingDetailPage() {
     )
   }
 
-  return <HousingDetail item={item} subtypeLabel={subtypeMeta.label} backUrl={backUrl} />
+  return (
+    <HousingDetail
+      item={item}
+      subtypeLabel={subtypeMeta.label}
+      backUrl={backUrl}
+      filterBase={`/housing?type=${encodeURIComponent(activeSubtype)}`}
+    />
+  )
 }

@@ -1,5 +1,5 @@
 {
-  "total": 2589,
+  "total": 2585,
   "bySubtype": {
     "artifact": 20,
     "belt": 279,
@@ -7,7 +7,7 @@
     "cape-wing": 587,
     "helm": 1086,
     "necklace": 253,
-    "ring": 252,
+    "ring": 248,
     "trinket": 104
   }
 }

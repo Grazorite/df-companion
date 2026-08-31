@@ -17,6 +17,7 @@ import {
   type AccessoryRelatedItem,
 } from '../../hooks/useAccessories'
 import { useBadgeInlineLinksForItem } from '../../hooks/useBadgeRelations'
+import { useClassInlineLinksForArtifact } from '../../hooks/useClassArtifactRelations'
 import { displayTitle, normalizeDescriptionText, normalizeDisplayText } from '../../utils/displayText'
 import { buildDisplayImages } from '../../utils/imageLabels'
 import {
@@ -41,6 +42,7 @@ import { detailUrlWithFrom } from '../../utils/navigationContext'
 import AccessoryStatsTable from './AccessoryStatsTable'
 import AccessoryCard from './AccessoryCard'
 import GuestAttacks from '../guests/GuestAttacks'
+import InlineTextLinks from '../shared/InlineTextLinks'
 
 const ACCESSORY_SUBTYPE_LABELS: Record<AccessorySubtype, string> = {
   artifact: 'Artifact',
@@ -165,7 +167,15 @@ function shouldSuppressMissingImagePlaceholder(
   )
 }
 
-function ArtifactMetadataStrip({ modifies, equipSpot }: { modifies?: string; equipSpot?: string }) {
+function ArtifactMetadataStrip({
+  modifies,
+  equipSpot,
+  links = [],
+}: {
+  modifies?: string
+  equipSpot?: string
+  links?: { text: string; to: string }[]
+}) {
   const values = [
     modifies ? { label: 'Modifies', value: modifies } : null,
     equipSpot ? { label: 'Equip Spot', value: equipSpot } : null,
@@ -183,7 +193,11 @@ function ArtifactMetadataStrip({ modifies, equipSpot }: { modifies?: string; equ
             <div key={item.label}>
               <p className="text-xs text-text-muted uppercase tracking-wider mb-1">{item.label}</p>
               <p className="text-sm font-medium text-text-primary">
-                {normalizeDisplayText(item.value)}
+                {item.label === 'Modifies' ? (
+                  <InlineTextLinks text={normalizeDisplayText(item.value)} links={links} />
+                ) : (
+                  normalizeDisplayText(item.value)
+                )}
               </p>
             </div>
           ))}
@@ -196,9 +210,11 @@ function ArtifactMetadataStrip({ modifies, equipSpot }: { modifies?: string; equ
 function ArmorCustomizationMetadataStrip({
   modifies,
   appearance,
+  links = [],
 }: {
   modifies?: string
   appearance?: string
+  links?: { text: string; to: string }[]
 }) {
   const values = [
     modifies ? { label: 'Modifies', value: modifies } : null,
@@ -217,7 +233,11 @@ function ArmorCustomizationMetadataStrip({
             <div key={item.label}>
               <p className="text-xs text-text-muted uppercase tracking-wider mb-1">{item.label}</p>
               <p className="text-sm font-medium text-text-primary">
-                {normalizeDisplayText(item.value)}
+                {item.label === 'Modifies' ? (
+                  <InlineTextLinks text={normalizeDisplayText(item.value)} links={links} />
+                ) : (
+                  normalizeDisplayText(item.value)
+                )}
               </p>
             </div>
           ))}
@@ -421,6 +441,11 @@ export default function AccessoryDetail({ accessory, filterBase, backUrl }: Acce
     (related): related is AccessoryRelatedItem & { entry: AccessoryEntry } => Boolean(related.entry)
   )
   const badgeInlineLinks = useBadgeInlineLinksForItem(accessory.slug)
+  const classArtifactInlineLinks = useClassInlineLinksForArtifact(accessory.slug)
+  const noteLinks = useMemo(
+    () => [...badgeInlineLinks, ...classArtifactInlineLinks],
+    [badgeInlineLinks, classArtifactInlineLinks]
+  )
 
   return (
     <DetailPageLayout>
@@ -512,13 +537,18 @@ export default function AccessoryDetail({ accessory, filterBase, backUrl }: Acce
       )}
 
       {accessory.subtype === 'artifact' && !armorCustomization && (
-        <ArtifactMetadataStrip modifies={artifactModifies} equipSpot={artifactEquipSpot} />
+        <ArtifactMetadataStrip
+          modifies={artifactModifies}
+          equipSpot={artifactEquipSpot}
+          links={classArtifactInlineLinks}
+        />
       )}
 
       {armorCustomization && (
         <ArmorCustomizationMetadataStrip
           modifies={armorCustomization.modifies}
           appearance={armorCustomization.appearance}
+          links={classArtifactInlineLinks}
         />
       )}
 
@@ -539,7 +569,7 @@ export default function AccessoryDetail({ accessory, filterBase, backUrl }: Acce
               Ability
             </h2>
             <p className="text-sm text-text-primary whitespace-pre-line">
-              {normalizeDisplayText(ability)}
+              <InlineTextLinks text={normalizeDisplayText(ability)} links={noteLinks} />
             </p>
           </div>
         </section>
@@ -560,7 +590,7 @@ export default function AccessoryDetail({ accessory, filterBase, backUrl }: Acce
         sharedNotes={family?.shared.notes}
         activeVariantNotes={activeLevel?.notes}
         allVariantNotes={family?.levelVariants.map((level) => level.notes)}
-        links={badgeInlineLinks}
+        links={noteLinks}
       />
 
       <section className="mb-5">

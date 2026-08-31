@@ -33093,13 +33093,14 @@
     "alsoSee": []
   },
   {
-    "id": "weapon-tupperblade-two",
-    "familyName": "Tupperblade (Two)",
-    "slug": "weapon-tupperblade-two",
+    "id": "weapon-tupperblade",
+    "familyName": "Tupperblade",
+    "slug": "weapon-tupperblade",
     "aliasSlugs": [
       "weapon-tupperblade-two-all-versions",
-      "weapon-tupperblade",
-      "weapon-base-tupperblade"
+      "weapon-base-tupperblade",
+      "weapon-tupperblade-two",
+      "weapon-tupperblade-all-versions"
     ],
     "type": "weapon",
     "subtype": "dagger",
@@ -33148,13 +33149,13 @@
         "resists": "None",
         "rarity": "1",
         "itemType": "Dagger",
-        "variantName": "Tupperblade"
+        "variantName": "(Base)"
       },
       {
         "levelNumber": 19,
         "levelDisplay": "19",
         "actualLevel": 19,
-        "variantName": "(Base)",
+        "variantName": "Two",
         "name": "Tupperblade (Two)",
         "damage": "34-44",
         "stats": "Crit +1",

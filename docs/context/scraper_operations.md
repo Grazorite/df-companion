@@ -103,6 +103,7 @@ npm run scrape:accessories                          # Scrape all accessory subty
 npm run scrape:accessories -- --subtypes=trinket    # Scrape a single subtype
 npm run scrape:accessories -- --subtypes=bracer,trinket --letters=A,B
 npm run scrape:accessories -- --subtypes=cape-wing --names="Mantle of Shadows,Invisible Cape"
+npm run scrape:accessories -- --subtypes=ring --urls="https://forums2.battleon.com/f/tm.asp?m=18525479" # Refresh off-list/stale post by URL
 ```
 
 ### Weapon Scraping
@@ -145,21 +146,77 @@ npm run scrape:housing -- --subtype=wall-item
 npm run scrape:classes -- --subtype=class --class-subcategory=armor --letters=A,D --fresh
 npm run scrape:classes -- --subtype=class --class-subcategory=armor --url="https://forums2.battleon.com/f/tm.asp?m=22389742"
 npm run scrape:classes -- --subtype=class --class-subcategory=armor --limit=5 # Dry-run parser sample
+npm run scrape:classes -- --subtype=class --class-subcategory=regular --limit=5 # Dry-run parser sample
+npm run scrape:classes -- --subtype=class --class-subcategory=miscellaneous --limit=5 # Dry-run parser sample
 npm run scrape:classes -- --subtype=consumable --fresh
 npm run scrape:classes -- --subtype=consumable --limit=5 # Dry-run parser sample
 npm run scrape:classes -- --subtype=consumable --names="Health Potion|Mana Potion"
 npm run scrape:classes -- --subtype=consumable --names="Black Stardust (E: Boost)|Blue Stardust (Bonus)"
+npm run generate:class-artifact-relations # Refresh class artifact ↔ Accessory artifact inline links
+npm run generate:class-default-weapon-relations # Refresh class ↔ weapon default-weapon inline links
+npm run generate:class-armor-relations # Refresh armor ↔ Regular class related links
 ```
 
-The Classes / Abilities scraper currently implements Consumables and the Classes `Armors`
-sub-subtype. Armor entries read the A-Z listing at
-`https://forums2.battleon.com/f/fb.asp?m=22303582`, follow linked detail posts, and extract
+The Classes / Abilities scraper currently implements Consumables plus all three Classes
+sub-subtypes: `Armors`, `Regular`, and `Miscellaneous`. Class entries read the shared A-Z listing at
+`https://forums2.battleon.com/f/tm.asp?m=22303573&mpage=1&key=&#22303582`, follow linked detail posts, and extract
 family/variant names, description, DA/DC/tag metadata, `Equips Class` plus its forum link, level,
 rarity, obtain methods, Other Information, source links, and Also See links. Armors do not require
 main images and must not be merged with the class pages they equip. `--url=` / `--urls=` supports
 targeted post refreshes; keep URLs quoted because forum URLs contain `?m=...`. The armor listing
 scope should skip the table-of-contents links and stop before the Regular/Miscellaneous class
-sections. Regular and Miscellaneous class page parsing is still pending.
+sections. Fresh class scrapes scoped with `--class-subcategory=armor|regular|miscellaneous` preserve
+the other class sub-subtypes because each one writes to its own file:
+`class-armors.json`, `class-regular.json`, or `class-miscellaneous.json`. Regular and Miscellaneous
+class entries use subcategory-aware slugs to avoid collisions with Armors of the same display name and extract
+guest-shaped stats, main/alt images, `Access Point` obtain methods, default weapon text/link,
+attacks, status tags, and release dates from `https://forums2.battleon.com/f/tm.asp?m=22391532` when
+listed.
+Class and Accessory scrapes also refresh `src/data/class-artifact-relations.json`, a lightweight
+route index for class ↔ Accessory artifact inline links. It includes both class artifact attack-set
+labels and artifact-side `Modifies` metadata, so artifacts that only change class appearance still
+link back to their classes. Run `npm run generate:class-artifact-relations` manually after
+hand-editing class or artifact JSON.
+Class and Weapon scrapes also refresh `src/data/class-default-weapon-relations.json`, which converts
+forum `Default Weapon` links into app routes in both directions when the matching weapon source URL
+exists. Class scrapes refresh `src/data/class-armor-relations.json`, linking Armors to the Regular
+class pages they equip; Miscellaneous classes are intentionally excluded from this armor relation
+index.
+Playable class detail fetches must isolate the linked reply's message body before parsing; forum
+wrapper text such as `Logged in as: Guest`, breadcrumbs, `Printable Version`, or `Forum Login` is
+invalid item content and should be rejected or filtered during normalization.
+Record classes with important later-post data for case-by-case handling before running a full
+Regular/Miscellaneous scrape.
+After the first full Regular/Miscellaneous scrape, audit for skill blocks that remain in
+`Other Information` by searching notes for `Requirements:`, `Mana Cost:`, `Cooldown:`,
+`Damage Type:`, or `Element:`. Those rows indicate a class page whose skill separators or later
+forum replies need targeted parser handling before the entry is considered complete.
+The base class pattern parses the linked reply plus same-thread follow-up replies. The immediate
+non-artifact follow-up is used for global images and page-level notes because forum threads such as
+Mage/Rogue/Warrior store that material after the main skill post. Later replies are only structured
+as alternate attack sets when they contain an explicit `Artifact:` heading, e.g. Cloak Scrap for the
+base classes or DragonLord's artifact posts. Non-artifact follow-up replies that contain normal
+playable skill blocks are additional variants instead of support posts; `Edd Disguise` is the
+reference case, with `Complex Skills` and `Simple Skills` variants plus a final support reply for
+shared images and notes.
+Playable class image parsing should consume forum captions in document order, including labels near
+plain `<img>` tags and grouped link labels such as `Original Appearance: Male / Female`. If notes
+contain linked skill/weapon appearance images, prefer explicit class-gallery labels such as
+`Armor Set Appearance`, then the image URL family matching the class name for the class portrait
+selector. Do not reject raw GitHub-hosted art because `githubusercontent` contains the letters
+`icon`; only actual `/icon/` or `/icons/` path segments are forum UI images. Appearance caption lines
+consumed for attack image captions must be removed from attack notes and page-level Other
+Information. Class attack requirements should follow the guest attack shape, with redundant
+`Dragon Amulet` text stripped because DA status already appears in tags and obtain-method pills.
+Class mechanics are parsed as their own structured blocks when the forum provides widget-image
+captions such as `<Class>'s widget displaying ...`. For artifact sections, mechanics before the first
+skill belong to that artifact attack set, while a final horizontal-rule-separated `Other information`
+section after the last skill becomes artifact-set notes.
+
+The weapon scraper has a small hardcoded cleanup for base-plus-parenthetical forum family titles
+where the source family title names only one sibling variant. These normalize to a base display
+family with `(Base)` and the parenthetical variant label while retaining source aliases; do not widen
+this pass without checking `docs/context/category_playbooks.md`.
 
 The Consumables path reads the A-Z
 listing at `https://forums2.battleon.com/f/fb.asp?m=22304639`, appends supplemental Health Potion
@@ -243,10 +300,12 @@ to same-level siblings with the same DA/DC/DM access signature.
   instead of rendering tag images; in that case, the listing text is the fallback source for that row.
 - All current and future scrapers should preserve forum note structure in generated note/Other
   Information fields. The shared `OtherInformationSection` / `NotesList` renderer already understands
-  newline-delimited bullets with two-space nested indentation (`•`, `•`, etc.), forum quote blocks as
-  a bare `quote:` line followed by indented quote lines, and popup text markers consumed by
-  `PopupText`; scraper code should emit those structures instead of flattening nested forum
-  `<ul>/<li>`, `<blockquote class="quote">`, or popup content into one plain list.
+  newline-delimited bullets with two-space nested indentation (`•`, `•`, etc.), indented non-bullet
+  continuation lines such as `Stats:` / `Resists:` under a preceding "had the initial/following
+  stats:" note, forum quote blocks as a bare `quote:` line followed by indented quote lines, and
+  popup text markers consumed by `PopupText`; scraper code should emit those structures instead of
+  flattening nested forum `<ul>/<li>`, indented stat continuations, `<blockquote class="quote">`, or
+  popup content into one plain list.
 
 ## Other Commands
 

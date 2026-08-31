@@ -12,6 +12,9 @@
     "validate": "node scripts/validate-badges.mjs && node scripts/validate-pets.mjs && node scripts/validate-accessories.mjs && node scripts/validate-weapons.mjs && node scripts/validate-housing.mjs && node scripts/validate-class-abilities.mjs && npm run verify && npm run typecheck:scripts",
     "verify": "node scripts/verify-datasets.mjs",
     "generate:badge-relations": "node scripts/generate-badge-relations.mjs",
+    "generate:class-artifact-relations": "tsx scripts/generate-class-artifact-relations.ts",
+    "generate:class-armor-relations": "tsx scripts/generate-class-armor-relations.ts",
+    "generate:class-default-weapon-relations": "tsx scripts/generate-class-default-weapon-relations.ts",
     "typecheck:scripts": "tsc -p tsconfig.scripts.json",
     "scrape:badges": "tsx scripts/scrape-badges.ts",
     "scrape:pets": "tsx scripts/scrape-pets.ts",
@@ -25,7 +28,11 @@
     "clear:all": "npm run clear:pets && npm run clear:guests && echo 'All data cleared'"
   },
   "dependencies": {
+    "@radix-ui/react-collapsible": "1.1.20",
+    "@radix-ui/react-toggle-group": "1.1.19",
+    "@radix-ui/react-tooltip": "1.2.16",
     "@vercel/speed-insights": "^2.0.0",
+    "cmdk": "1.1.1",
     "lucide-react": "^1.22.0",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",

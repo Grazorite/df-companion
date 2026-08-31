@@ -3745,7 +3745,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "Necklace previously appeared in the retired quest  Dreamscape and had the initial stats:\nStats: Block +1, Dodge +1, Crit +5, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +5, END +5, INT +8, DEX +8, STR +8, Bonus +7\nResists: All +5, Immobility +2\nNecklace was previously named 'Crystal Necklace'; this was changed on May 17th, 2021.",
+    "notes": "Necklace previously appeared in the retired quest  Dreamscape and had the initial stats:\n  Stats: Block +1, Dodge +1, Crit +5, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +5, END +5, INT +8, DEX +8, STR +8, Bonus +7\n  Resists: All +5, Immobility +2\nNecklace was previously named 'Crystal Necklace'; this was changed on May 17th, 2021.",
     "tags": [
       "ene",
       "free"
@@ -7357,7 +7357,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "Necklace previously appeared in the retired quest  Dreamscape and had the initial stats:\nStats: Block +1, Dodge +1, Crit +5, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +4, END +4, INT +3, DEX +3, STR +3, Bonus +3\nResists: Fire +6, Energy +8, Metal +5",
+    "notes": "Necklace previously appeared in the retired quest  Dreamscape and had the initial stats:\n  Stats: Block +1, Dodge +1, Crit +5, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +4, END +4, INT +3, DEX +3, STR +3, Bonus +3\n  Resists: Fire +6, Energy +8, Metal +5",
     "tags": [
       "ice",
       "free"
@@ -11011,7 +11011,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "Necklace previously appeared in the retired quest  Dreamscape and had the initial stats:\nStats: Crit +5, Magic Def +2, Pierce Def +2, Melee Def +2, END +2, LUK +5\nResists: Ice +4, Darkness +3",
+    "notes": "Necklace previously appeared in the retired quest  Dreamscape and had the initial stats:\n  Stats: Crit +5, Magic Def +2, Pierce Def +2, Melee Def +2, END +2, LUK +5\n  Resists: Ice +4, Darkness +3",
     "tags": [
       "sil",
       "free"
@@ -12316,7 +12316,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "Necklace previously appeared in the retired quest  Dreamscape and had the initial stats:\nStats: Crit +8, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +6, END +4, LUK +6, INT +4, DEX +4, STR +4, Bonus +4\nResists: All +2, Immobility +2\nNecklace's flavor element was previously None; this was changed to Good on  Dreamscape's Reimagined release.",
+    "notes": "Necklace previously appeared in the retired quest  Dreamscape and had the initial stats:\n  Stats: Crit +8, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +6, END +4, LUK +6, INT +4, DEX +4, STR +4, Bonus +4\n  Resists: All +2, Immobility +2\nNecklace's flavor element was previously None; this was changed to Good on  Dreamscape's Reimagined release.",
     "tags": [
       "goo",
       "free"
@@ -19085,7 +19085,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "Necklace previously appeared in the retired quest  Dreamscape and had the initial stats:\nStats: Magic Def +2, WIS +2, INT +2, DEX +2, STR +2, Bonus +2\nResists: Wind +5, Ice +5",
+    "notes": "Necklace previously appeared in the retired quest  Dreamscape and had the initial stats:\n  Stats: Magic Def +2, WIS +2, INT +2, DEX +2, STR +2, Bonus +2\n  Resists: Wind +5, Ice +5",
     "tags": [
       "win",
       "free"

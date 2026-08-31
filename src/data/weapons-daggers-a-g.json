@@ -2417,13 +2417,14 @@
     "levelRange": "I-IX"
   },
   {
-    "id": "weapon-anlace-of-the-resistance",
-    "familyName": "Anlace (of the Resistance)",
-    "slug": "weapon-anlace-of-the-resistance",
+    "id": "weapon-anlace",
+    "familyName": "Anlace",
+    "slug": "weapon-anlace",
     "aliasSlugs": [
       "weapon-anlace-of-the-resistance-all-versions",
-      "weapon-anlace",
-      "weapon-base-anlace"
+      "weapon-base-anlace",
+      "weapon-anlace-of-the-resistance",
+      "weapon-anlace-all-versions"
     ],
     "type": "weapon",
     "subtype": "dagger",
@@ -2472,13 +2473,13 @@
         "resists": "Wind +2",
         "rarity": "0",
         "itemType": "Dagger",
-        "variantName": "Anlace"
+        "variantName": "(Base)"
       },
       {
         "levelNumber": 28,
         "levelDisplay": "28",
         "actualLevel": 28,
-        "variantName": "(Base)",
+        "variantName": "of the Resistance",
         "name": "Anlace (of the Resistance)",
         "damage": "46-56",
         "stats": "Crit +2, Magic Def +3, DEX +2, Bonus +3",

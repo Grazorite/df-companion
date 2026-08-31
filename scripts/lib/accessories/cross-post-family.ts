@@ -131,6 +131,17 @@ const SPECIAL_FAMILY_SPECS: SpecialFamilySpec[] = [
     sortByLevel: true,
   },
   {
+    familyName: 'Golden Rings',
+    names: [
+      'First Golden Ring',
+      'Second Golden Ring',
+      'Third Golden Ring',
+      'Fourth Golden Ring',
+      'Fifth Golden Ring',
+    ],
+    variantNames: ['First', 'Second', 'Third', 'Fourth', 'Fifth'],
+  },
+  {
     familyName: "Timid Lion's Head",
     names: [
       "Timid Lion's Head",
@@ -1197,6 +1208,52 @@ function splitNamedSiblingFamilies(entries: AccessoryEntry[]): AccessoryEntry[] 
   })
 }
 
+function normalizeBlastTestDummyMaskFamily(entries: AccessoryEntry[]): AccessoryEntry[] {
+  return entries.map((entry) => {
+    if (
+      !isAccessoryFamily(entry) ||
+      entry.subtype !== 'helm' ||
+      normalizeLookupName(entry.familyName) !== 'blast test dummy mask'
+    ) {
+      return entry
+    }
+
+    const familyName = 'Blast Test Dummy'
+    const slug = 'accessory-blast-test-dummy'
+    const levelVariants = entry.levelVariants
+      .map((variant) => {
+        const normalizedName = normalizeLookupName(variant.name)
+        const isMask = normalizedName === 'blast test dummy mask'
+        return {
+          ...variant,
+          name: isMask ? 'Blast Test Dummy Mask' : 'Blast Test Dummy',
+          variantName: isMask ? 'Mask' : '(Base)',
+        }
+      })
+      .sort((first, second) => {
+        const firstBase = first.variantName === '(Base)' ? 0 : 1
+        const secondBase = second.variantName === '(Base)' ? 0 : 1
+        return firstBase - secondBase || first.levelNumber - second.levelNumber
+      })
+      .map((variant, index) => ({ ...variant, levelNumber: index + 1 }))
+
+    return computeFamilyFlags({
+      ...entry,
+      id: slug,
+      familyName,
+      slug,
+      aliasSlugs: Array.from(
+        new Set([
+          ...(entry.aliasSlugs ?? []),
+          'accessory-blast-test-dummy-mask',
+          ...levelVariants.map((variant) => `accessory-${slugify(variant.name)}`),
+        ])
+      ).filter((aliasSlug) => aliasSlug !== slug),
+      levelVariants,
+    })
+  })
+}
+
 function buildCobaltDragonWingsFamily(
   baseFamily: AccessoryFamily,
   familyName: string,
@@ -1802,11 +1859,13 @@ export function promoteAccessoryCrossPostFamilies(entries: AccessoryEntry[]): Ac
   const consolidated = removeCobaltDragonWingAliasEntries(
     linkSiblingFamilies(
       applyAccessoryFamilyAccessOverrides(
-        splitNamedSiblingFamilies(
-          splitCobaltDragonWingsFamilies(
-            splitCiderMugFamilies(
-              splitCiderKegFamilies(
-                disambiguateDuplicateFamilyNames(applySpecialFamilies(promoted))
+        normalizeBlastTestDummyMaskFamily(
+          splitNamedSiblingFamilies(
+            splitCobaltDragonWingsFamilies(
+              splitCiderMugFamilies(
+                splitCiderKegFamilies(
+                  disambiguateDuplicateFamilyNames(applySpecialFamilies(promoted))
+                )
               )
             )
           )

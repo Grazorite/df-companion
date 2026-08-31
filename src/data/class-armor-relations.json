@@ -1,0 +1,266 @@
+[
+  {
+    "armorName": "Dimensional Transphaser",
+    "armorSlug": "class-ability-dimensional-transphaser",
+    "armorRoute": "/classes/class-ability-dimensional-transphaser?type=class",
+    "className": "|",
+    "classSlug": "class-ability--regular",
+    "classRoute": "/classes/class-ability--regular?type=class"
+  },
+  {
+    "armorName": "Ancient Exosuit",
+    "armorSlug": "class-ability-ancient-exosuit",
+    "armorRoute": "/classes/class-ability-ancient-exosuit?type=class",
+    "className": "Ancient Exosuit",
+    "classSlug": "class-ability-ancient-exosuit-regular",
+    "classRoute": "/classes/class-ability-ancient-exosuit-regular?type=class"
+  },
+  {
+    "armorName": "Shadow Mage Armor",
+    "armorSlug": "class-ability-shadow-mage-armor",
+    "armorRoute": "/classes/class-ability-shadow-mage-armor?type=class",
+    "className": "Ancient Shadow Mage",
+    "classSlug": "class-ability-ancient-shadow-mage-regular",
+    "classRoute": "/classes/class-ability-ancient-shadow-mage-regular?type=class"
+  },
+  {
+    "armorName": "Shadow Rogue Armor",
+    "armorSlug": "class-ability-shadow-rogue-armor",
+    "armorRoute": "/classes/class-ability-shadow-rogue-armor?type=class",
+    "className": "Ancient Shadow Rogue",
+    "classSlug": "class-ability-ancient-shadow-rogue-regular",
+    "classRoute": "/classes/class-ability-ancient-shadow-rogue-regular?type=class"
+  },
+  {
+    "armorName": "Shadow Warrior Armor",
+    "armorSlug": "class-ability-shadow-warrior-armor",
+    "armorRoute": "/classes/class-ability-shadow-warrior-armor?type=class",
+    "className": "Ancient Shadow Warrior",
+    "classSlug": "class-ability-ancient-shadow-warrior-regular",
+    "classRoute": "/classes/class-ability-ancient-shadow-warrior-regular?type=class"
+  },
+  {
+    "armorName": "Angler",
+    "armorSlug": "class-ability-angler",
+    "armorRoute": "/classes/class-ability-angler?type=class",
+    "className": "Angler",
+    "classSlug": "class-ability-angler-regular",
+    "classRoute": "/classes/class-ability-angler-regular?type=class"
+  },
+  {
+    "armorName": "Archivist",
+    "armorSlug": "class-ability-archivist",
+    "armorRoute": "/classes/class-ability-archivist?type=class",
+    "className": "Archivist",
+    "classSlug": "class-ability-archivist-regular",
+    "classRoute": "/classes/class-ability-archivist-regular?type=class"
+  },
+  {
+    "armorName": "Ascended ChickenCow Armor",
+    "armorSlug": "class-ability-ascended-chickencow-armor",
+    "armorRoute": "/classes/class-ability-ascended-chickencow-armor?type=class",
+    "className": "Ascended Chickencow",
+    "classSlug": "class-ability-ascended-chickencow-regular",
+    "classRoute": "/classes/class-ability-ascended-chickencow-regular?type=class"
+  },
+  {
+    "armorName": "Avatar of Time",
+    "armorSlug": "class-ability-avatar-of-time",
+    "armorRoute": "/classes/class-ability-avatar-of-time?type=class",
+    "className": "Avatar of Time",
+    "classSlug": "class-ability-avatar-of-time-regular",
+    "classRoute": "/classes/class-ability-avatar-of-time-regular?type=class"
+  },
+  {
+    "armorName": "Chaosweaver Armor",
+    "armorSlug": "class-ability-chaosweaver-armor",
+    "armorRoute": "/classes/class-ability-chaosweaver-armor?type=class",
+    "className": "Chaosweaver",
+    "classSlug": "class-ability-chaosweaver-regular",
+    "classRoute": "/classes/class-ability-chaosweaver-regular?type=class"
+  },
+  {
+    "armorName": "ChickenCow Armor",
+    "armorSlug": "class-ability-chickencow-armor",
+    "armorRoute": "/classes/class-ability-chickencow-armor?type=class",
+    "className": "ChickencowLord",
+    "classSlug": "class-ability-chickencowlord-regular",
+    "classRoute": "/classes/class-ability-chickencowlord-regular?type=class"
+  },
+  {
+    "armorName": "Chronocorruptor",
+    "armorSlug": "class-ability-chronocorruptor",
+    "armorRoute": "/classes/class-ability-chronocorruptor?type=class",
+    "className": "Chronocorruptor",
+    "classSlug": "class-ability-chronocorruptor-regular",
+    "classRoute": "/classes/class-ability-chronocorruptor-regular?type=class"
+  },
+  {
+    "armorName": "Chronomancer Armor",
+    "armorSlug": "class-ability-chronomancer-armor",
+    "armorRoute": "/classes/class-ability-chronomancer-armor?type=class",
+    "className": "Chronomancer",
+    "classSlug": "class-ability-chronomancer-regular",
+    "classRoute": "/classes/class-ability-chronomancer-regular?type=class"
+  },
+  {
+    "armorName": "ChronoZ",
+    "armorSlug": "class-ability-chronoz",
+    "armorRoute": "/classes/class-ability-chronoz?type=class",
+    "className": "ChronoZ",
+    "classSlug": "class-ability-chronoz-regular",
+    "classRoute": "/classes/class-ability-chronoz-regular?type=class"
+  },
+  {
+    "armorName": "DoomKnight (Armor, Variant One)",
+    "armorSlug": "class-ability-doomknight-armor-variant-one",
+    "armorRoute": "/classes/class-ability-doomknight-armor-variant-one?type=class",
+    "className": "DoomKnight",
+    "classSlug": "class-ability-doomknight-regular",
+    "classRoute": "/classes/class-ability-doomknight-regular?type=class"
+  },
+  {
+    "armorName": "DoomKnight (Armor, Variant One)",
+    "armorSlug": "class-ability-doomknight-armor-variant-one",
+    "armorRoute": "/classes/class-ability-doomknight-armor-variant-one?type=class",
+    "className": "DoomKnight V1",
+    "classSlug": "class-ability-doomknight-v1-regular",
+    "classRoute": "/classes/class-ability-doomknight-v1-regular?type=class"
+  },
+  {
+    "armorName": "Dreaming Togslayer Armor",
+    "armorSlug": "class-ability-dreaming-togslayer-armor",
+    "armorRoute": "/classes/class-ability-dreaming-togslayer-armor?type=class",
+    "className": "Dreaming Togslayer",
+    "classSlug": "class-ability-dreaming-togslayer-regular",
+    "classRoute": "/classes/class-ability-dreaming-togslayer-regular?type=class"
+  },
+  {
+    "armorName": "enTropy",
+    "armorSlug": "class-ability-entropy",
+    "armorRoute": "/classes/class-ability-entropy?type=class",
+    "className": "Entropy",
+    "classSlug": "class-ability-entropy-regular",
+    "classRoute": "/classes/class-ability-entropy-regular?type=class"
+  },
+  {
+    "armorName": "Epoch",
+    "armorSlug": "class-ability-epoch",
+    "armorRoute": "/classes/class-ability-epoch?type=class",
+    "className": "Epoch",
+    "classSlug": "class-ability-epoch-regular",
+    "classRoute": "/classes/class-ability-epoch-regular?type=class"
+  },
+  {
+    "armorName": "Evolved ChickenCow Armor",
+    "armorSlug": "class-ability-evolved-chickencow-armor",
+    "armorRoute": "/classes/class-ability-evolved-chickencow-armor?type=class",
+    "className": "Evolved Chickencow",
+    "classSlug": "class-ability-evolved-chickencow-regular",
+    "classRoute": "/classes/class-ability-evolved-chickencow-regular?type=class"
+  },
+  {
+    "armorName": "Gnomish Personal Steamtank (Vr 1.0, Mk II)",
+    "armorSlug": "class-ability-gnomish-personal-steamtank-vr-1-0-mk-ii",
+    "armorRoute": "/classes/class-ability-gnomish-personal-steamtank-vr-1-0-mk-ii?type=class",
+    "className": "GPS (2.0)",
+    "classSlug": "class-ability-gps-2-0-regular",
+    "classRoute": "/classes/class-ability-gps-2-0-regular?type=class"
+  },
+  {
+    "armorName": "Icebound Revenant",
+    "armorSlug": "class-ability-icebound-revenant",
+    "armorRoute": "/classes/class-ability-icebound-revenant?type=class",
+    "className": "Icebound Revenant",
+    "classSlug": "class-ability-icebound-revenant-regular",
+    "classRoute": "/classes/class-ability-icebound-revenant-regular?type=class"
+  },
+  {
+    "armorName": "Kathool Adept Armor",
+    "armorSlug": "class-ability-kathool-adept-armor",
+    "armorRoute": "/classes/class-ability-kathool-adept-armor?type=class",
+    "className": "Kathool Adept",
+    "classSlug": "class-ability-kathool-adept-regular",
+    "classRoute": "/classes/class-ability-kathool-adept-regular?type=class"
+  },
+  {
+    "armorName": "Necro Paragon Armor",
+    "armorSlug": "class-ability-necro-paragon-armor",
+    "armorRoute": "/classes/class-ability-necro-paragon-armor?type=class",
+    "className": "Necro Paragon",
+    "classSlug": "class-ability-necro-paragon-regular",
+    "classRoute": "/classes/class-ability-necro-paragon-regular?type=class"
+  },
+  {
+    "armorName": "Pyromancer",
+    "armorSlug": "class-ability-pyromancer",
+    "armorRoute": "/classes/class-ability-pyromancer?type=class",
+    "className": "Pyromancer",
+    "classSlug": "class-ability-pyromancer-regular",
+    "classRoute": "/classes/class-ability-pyromancer-regular?type=class"
+  },
+  {
+    "armorName": "Shadow Mage Armor",
+    "armorSlug": "class-ability-shadow-mage-armor",
+    "armorRoute": "/classes/class-ability-shadow-mage-armor?type=class",
+    "className": "Shadow Mage",
+    "classSlug": "class-ability-shadow-mage-regular",
+    "classRoute": "/classes/class-ability-shadow-mage-regular?type=class"
+  },
+  {
+    "armorName": "Shadow Rogue Armor",
+    "armorSlug": "class-ability-shadow-rogue-armor",
+    "armorRoute": "/classes/class-ability-shadow-rogue-armor?type=class",
+    "className": "Shadow Rogue",
+    "classSlug": "class-ability-shadow-rogue-regular",
+    "classRoute": "/classes/class-ability-shadow-rogue-regular?type=class"
+  },
+  {
+    "armorName": "Shadow Warrior Armor",
+    "armorSlug": "class-ability-shadow-warrior-armor",
+    "armorRoute": "/classes/class-ability-shadow-warrior-armor?type=class",
+    "className": "Shadow Warrior",
+    "classSlug": "class-ability-shadow-warrior-regular",
+    "classRoute": "/classes/class-ability-shadow-warrior-regular?type=class"
+  },
+  {
+    "armorName": "ShadowWalker of Time",
+    "armorSlug": "class-ability-shadowwalker-of-time",
+    "armorRoute": "/classes/class-ability-shadowwalker-of-time?type=class",
+    "className": "ShadowWalker of Time",
+    "classSlug": "class-ability-shadowwalker-of-time-regular",
+    "classRoute": "/classes/class-ability-shadowwalker-of-time-regular?type=class"
+  },
+  {
+    "armorName": "SnuggleBear Armor",
+    "armorSlug": "class-ability-snugglebear-armor",
+    "armorRoute": "/classes/class-ability-snugglebear-armor?type=class",
+    "className": "SnuggleBear",
+    "classSlug": "class-ability-snugglebear-regular",
+    "classRoute": "/classes/class-ability-snugglebear-regular?type=class"
+  },
+  {
+    "armorName": "SnugglePanda",
+    "armorSlug": "class-ability-snugglepanda",
+    "armorRoute": "/classes/class-ability-snugglepanda?type=class",
+    "className": "SnugglePanda",
+    "classSlug": "class-ability-snugglepanda-regular",
+    "classRoute": "/classes/class-ability-snugglepanda-regular?type=class"
+  },
+  {
+    "armorName": "Aspenvale Academy Uniform",
+    "armorSlug": "class-ability-aspenvale-academy-uniform",
+    "armorRoute": "/classes/class-ability-aspenvale-academy-uniform?type=class",
+    "className": "Student",
+    "classSlug": "class-ability-student-regular",
+    "classRoute": "/classes/class-ability-student-regular?type=class"
+  },
+  {
+    "armorName": "TimeKiller",
+    "armorSlug": "class-ability-timekiller",
+    "armorRoute": "/classes/class-ability-timekiller?type=class",
+    "className": "TimeKiller",
+    "classSlug": "class-ability-timekiller-regular",
+    "classRoute": "/classes/class-ability-timekiller-regular?type=class"
+  }
+]

@@ -77,7 +77,7 @@ export function writeWeaponManifest(dataDir: string): void {
 
 export function writeClassAbilitiesManifest(dataDir: string): void {
   const manifest = readDataFilesBySubtype(dataDir, [
-    ['class', ['classes.json']],
+    ['class', ['class-armors.json', 'class-regular.json', 'class-miscellaneous.json']],
     ['consumable', ['class-consumables.json']],
   ])
 

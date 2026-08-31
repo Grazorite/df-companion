@@ -17,8 +17,10 @@ import capesWingsALUrl from '../data/capes-wings-a-l.json?url'
 import capesWingsMZUrl from '../data/capes-wings-m-z.json?url'
 import categoriesUrl from '../data/categories.json?url'
 import classAbilitiesManifestUrl from '../data/class-abilities-manifest.json?url'
+import classArmorsUrl from '../data/class-armors.json?url'
 import classConsumablesUrl from '../data/class-consumables.json?url'
-import classesUrl from '../data/classes.json?url'
+import classMiscellaneousUrl from '../data/class-miscellaneous.json?url'
+import classRegularUrl from '../data/class-regular.json?url'
 import elementsUrl from '../data/elements.json?url'
 import guestsUrl from '../data/guests.json?url'
 import housingBackgroundsUrl from '../data/housing-backgrounds.json?url'
@@ -139,7 +141,7 @@ const housingDataUrls: Record<HousingSubtype, string[]> = {
 }
 
 const classAbilityDataUrls: Record<ClassAbilitySubtype, string[]> = {
-  class: [classesUrl],
+  class: [classArmorsUrl, classRegularUrl, classMiscellaneousUrl],
   consumable: [classConsumablesUrl],
 }
 

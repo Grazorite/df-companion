@@ -7,13 +7,16 @@ import type {
   ClassSubcategory,
   ConsumableKind,
 } from '../src/types/classAbility'
-import type { LevelVariant, ObtainVariant } from '../src/types/item'
-import type { GuestAttack } from '../src/types/pet'
+import type { AlsoSeeRef, LevelVariant, MechanicsBlock, ObtainVariant } from '../src/types/item'
+import type { GuestAttack, GuestAttackSet, GuestStats } from '../src/types/pet'
 import {
   computePriceType,
   formatVariantNameWithAccess,
   isDefenderMedalText,
 } from '../src/utils/variantHelpers.ts'
+import { writeClassArtifactRelations } from './lib/class-artifact-relations.ts'
+import { writeClassArmorRelations } from './lib/class-armor-relations.ts'
+import { writeClassDefaultWeaponRelations } from './lib/class-default-weapon-relations.ts'
 import { writeClassAbilitiesManifest } from './lib/data-manifests.ts'
 import { directForumPostUrl, fetchForumPage, loadForumCookie, sleep } from './lib/forum.ts'
 import { extractAlsoSeeRefs } from './lib/also-see.ts'
@@ -46,7 +49,9 @@ interface ListingEntry {
   isRare?: boolean
   isSeasonal?: boolean
   isSpecialOffer?: boolean
+  isSpecialCharacter?: boolean
   retired?: boolean
+  releaseDate?: string
 }
 
 interface ParsedDetail {
@@ -54,6 +59,7 @@ interface ParsedDetail {
   description: string
   forumUrl: string
   sourceUrl: string
+  releaseDate?: string
   location?: string
   price: string
   sellback?: string
@@ -63,19 +69,35 @@ interface ParsedDetail {
   effectType?: string
   equipsClass?: string
   equipsClassUrl?: string
+  defaultWeapon?: string
+  defaultWeaponUrl?: string
+  guestStats?: GuestStats
+  imageUrl?: string
+  alternativeImages?: Array<{ url: string; caption: string }>
   attacks?: GuestAttack[]
+  attackSets?: GuestAttackSet[]
+  mechanics?: MechanicsBlock[]
   dialogue?: string
   level?: string
   rarity?: string
   itemType?: string
   consumableKind?: ConsumableKind
   notes?: string
+  alsoSee?: AlsoSeeRef[]
   obtainMethods: ObtainVariant[]
+}
+
+interface DetailPostParts {
+  primary: string
+  supplemental?: string
+  followups: Array<{ messageId: string; html: string }>
 }
 
 const CONSUMABLES_URL = 'https://forums2.battleon.com/f/fb.asp?m=22304639'
 const CONSUMABLE_EFFECT_TYPES_URL = 'https://forums2.battleon.com/f/fb.asp?m=22304644'
-const ARMORS_URL = 'https://forums2.battleon.com/f/fb.asp?m=22303582'
+const CLASSES_AZ_URL =
+  'https://forums2.battleon.com/f/tm.asp?m=22303573&mpage=1&key=&#22303582'
+const CLASS_RELEASE_DATES_URL = 'https://forums2.battleon.com/f/tm.asp?m=22391532'
 const DATA_DIR = resolve(import.meta.dirname, '../src/data')
 const SUPPLEMENTAL_CONSUMABLES: ListingEntry[] = [
   {
@@ -176,7 +198,11 @@ function normalizeLinkedImageUrl(url: string): string {
 }
 
 function isLikelyLinkedImageUrl(url: string): boolean {
-  return /\.(?:png|jpg|jpeg|gif|bmp)(?:[?#].*)?$/i.test(url)
+  return (
+    /\.(?:png|jpg|jpeg|gif|bmp)(?:[?#].*)?$/i.test(url) ||
+    /(?:i\.)?imgur\.com\/(?!a\/|gallery\/)/i.test(url) ||
+    /\/f\/upfiles\//i.test(url)
+  )
 }
 
 function stripTags(html: string): string {
@@ -186,6 +212,65 @@ function stripTags(html: string): string {
 function directUrl(url: string): string {
   const messageId = url.match(/[?&]m=(\d+)/i)?.[1]
   return messageId ? directForumPostUrl(messageId) : url
+}
+
+function getMessageIdFromForumUrl(url: string): string | undefined {
+  return url.match(/[?&]m=(\d+)/i)?.[1]
+}
+
+function extractReplyPostContent(html: string, messageId: string): string {
+  const anchorRegex = new RegExp(`<a\\s+name=["']?${messageId}["']?\\b[^>]*>\\s*<\\/a>`, 'i')
+  const anchorMatch = anchorRegex.exec(html)
+  const slice = anchorMatch?.index === undefined ? html : html.slice(anchorMatch.index)
+  const cellMatch =
+    slice.match(/<td\b[^>]*class=["']?msg["']?[^>]*>([\s\S]*?)<\/td>/i) ??
+    slice.match(/<span\b[^>]*class=["']?msg["']?[^>]*>([\s\S]*?)<\/span>/i)
+  if (cellMatch) return cellMatch[1]
+
+  if (/Logged in as:\s*Guest|Printable Version|All Forums\s*>>|Forum Login/i.test(html)) {
+    throw new Error(`Could not isolate forum reply content for message ${messageId}`)
+  }
+
+  return html
+}
+
+async function fetchDetailPostContent(url: string, cookie: string): Promise<string> {
+  const html = await fetchForumPage(url, cookie)
+  const messageId = getMessageIdFromForumUrl(url)
+  return messageId ? extractReplyPostContent(html, messageId) : html
+}
+
+async function fetchDetailPostParts(
+  url: string,
+  cookie: string
+): Promise<DetailPostParts> {
+  const messageId = getMessageIdFromForumUrl(url)
+  if (!messageId) {
+    return { primary: await fetchForumPage(url, cookie), followups: [] }
+  }
+
+  const threadUrl = url.replace(/\/fb\.asp\?/i, '/tm.asp?')
+  const threadHtml = await fetchForumPage(threadUrl, cookie)
+  const anchors = [...threadHtml.matchAll(/<a\s+name=["']?(\d+)["']?\b[^>]*>\s*<\/a>/gi)].map(
+    (match) => match[1]
+  )
+  const anchorIndex = anchors.indexOf(messageId)
+  if (anchorIndex < 0) {
+    return {
+      primary: extractReplyPostContent(await fetchForumPage(url, cookie), messageId),
+      followups: [],
+    }
+  }
+
+  const primary = extractReplyPostContent(threadHtml, messageId)
+  const nextMessageId = anchors[anchorIndex + 1]
+  const followups = anchors.slice(anchorIndex + 1).map((id) => ({
+    messageId: id,
+    html: extractReplyPostContent(threadHtml, id),
+  }))
+  if (!nextMessageId) return { primary, followups }
+
+  return { primary, supplemental: followups[0]?.html, followups }
 }
 
 function normalizeName(name: string): string {
@@ -389,6 +474,9 @@ function classTagsFromListing(
   if (hasSpecialOfferTag(rowHtml) || /\bS-Offer\b/i.test(stripTags(rowHtml))) {
     tags.add('specialoffer')
   }
+  if (tags.has('alexandersaga') || tags.has('archknight') || tags.has('specialcharacter')) {
+    tags.add('special-character')
+  }
   const normalized = normalizeName(name)
   if (subtype === 'consumable' && isDefaultTempConsumable(normalized)) {
     tags.add('temp')
@@ -403,7 +491,59 @@ function classTagsFromDetail(listing: ListingEntry, html: string): string[] {
   for (const tag of tagNamesFromHtml(html)) tags.add(tag)
   if (hasSeasonalAliasTag(tags) || hasSeasonalForumTag(html)) tags.add('seasonal')
   if (hasSpecialOfferTag(html)) tags.add('specialoffer')
+  if (tags.has('alexandersaga') || tags.has('archknight') || tags.has('specialcharacter')) {
+    tags.add('special-character')
+  }
   return [...tags].sort()
+}
+
+function parseClassReleaseDates(html: string): Map<string, string> {
+  const datesByName = new Map<string, string>()
+  const lines = normalizeStructuredText(html, { preserveIndentation: false })
+    .split('\n')
+    .map((line) => line.trim())
+    .filter(Boolean)
+  const datePattern =
+    /((?:January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{1,2}(?:st|nd|rd|th)?,\s+\d{4})/i
+  let currentDate: string | undefined
+  for (const line of lines) {
+    const date = line.match(datePattern)?.[1]
+    if (date && line.replace(date, '').trim().length === 0) {
+      currentDate = date
+      continue
+    }
+    if (date) currentDate = date
+    if (!currentDate) continue
+
+    const candidateText = date ? line.replace(date, '') : line
+    for (const rawName of candidateText.split(/\s*(?:•|\|)\s*/)) {
+      const name = normalizeName(rawName)
+        .replace(/^\[[^\]]+\]\s*/, '')
+        .replace(/\s*\([^)]*\)\s*$/g, '')
+        .trim()
+      if (
+        !name ||
+        /^(?:Classes?|Release Dates?|\d{4}|Contents?|Chronology)$/i.test(name)
+      ) {
+        continue
+      }
+      datesByName.set(normalizeClassLookupName(name), currentDate)
+    }
+  }
+  return datesByName
+}
+
+async function fetchClassReleaseDates(cookie: string): Promise<Map<string, string>> {
+  try {
+    return parseClassReleaseDates(await fetchForumPage(CLASS_RELEASE_DATES_URL, cookie))
+  } catch (error) {
+    console.warn(
+      `Could not fetch class release dates: ${
+        error instanceof Error ? error.message : String(error)
+      }`
+    )
+    return new Map()
+  }
 }
 
 function parseConsumableListing(html: string): ListingEntry[] {
@@ -497,6 +637,66 @@ function parseArmorListing(html: string): ListingEntry[] {
   return entries
 }
 
+function classSectionBounds(
+  html: string,
+  subcategory: Exclude<ClassSubcategory, 'armor'>
+): { start: number; end?: number } {
+  if (subcategory === 'regular') {
+    const start = html.search(/Regular classes that are able to be purchased/i)
+    const end = html.search(/Miscellaneous classes that are offered/i)
+    return { start: start >= 0 ? start : 0, ...(end > start ? { end } : {}) }
+  }
+
+  const start = html.search(/Miscellaneous classes that are offered/i)
+  return { start: start >= 0 ? start : 0 }
+}
+
+function parseClassListing(
+  html: string,
+  subcategory: Exclude<ClassSubcategory, 'armor'>
+): ListingEntry[] {
+  const bounds = classSectionBounds(html, subcategory)
+  const section = html.slice(bounds.start, bounds.end)
+  const entries: ListingEntry[] = []
+  const seen = new Set<string>()
+  const anchorRegex = /<a\b[^>]*href=(["'])([^"']*?(?:tm|fb)\.asp\?m=\d+[^"']*)\1[^>]*>([\s\S]*?)<\/a>/gi
+
+  for (const match of section.matchAll(anchorRegex)) {
+    const rawName = stripTags(match[3])
+    const name = normalizeName(rawName)
+    if (
+      !name ||
+      /^(?:Classes?|Abilities?|Armors?|Regular|Miscellaneous|Regular Classes \(A-Z\)|Miscellaneous Classes \(A-Z\)|Alphabetical Classes Listing)$/i.test(
+        name
+      )
+    ) {
+      continue
+    }
+    const forumUrl = directUrl(decodeHtml(match[2]))
+    const lineStart = section.lastIndexOf('<br', match.index ?? 0)
+    const lineEnd = section.indexOf('<br', (match.index ?? 0) + match[0].length)
+    const rowHtml = section.slice(Math.max(0, lineStart), lineEnd === -1 ? section.length : lineEnd)
+    const tags = classTagsFromListing(name, rowHtml, 'class')
+    const rowText = stripTags(rowHtml)
+    const key = `${name.toLowerCase()}|${forumUrl}`
+    if (seen.has(key)) continue
+    seen.add(key)
+    entries.push({
+      name,
+      forumUrl,
+      tags,
+      subtype: 'class',
+      classSubcategory: subcategory,
+      isRare: isListingRare(rowText, tags),
+      isSeasonal: tags.includes('seasonal'),
+      isSpecialOffer: isListingSpecialOffer(rowHtml, tags),
+      retired: isListingRetired(rowText, tags),
+    })
+  }
+
+  return entries
+}
+
 function htmlToLines(html: string): string[] {
   return normalizeStructuredText(html, { preserveIndentation: true })
     .split('\n')
@@ -520,6 +720,19 @@ function cleanOptionalField(value: string | undefined): string | undefined {
   return /^(?:none|n\/?a)$/i.test(cleaned) ? undefined : cleaned
 }
 
+function cleanRequirementText(value: string | undefined): string | undefined {
+  const cleaned = cleanOptionalField(value)
+  if (!cleaned) return undefined
+  const withoutDa = cleaned
+    .split(/\s*(?:;|,|\band\b)\s*/i)
+    .map((part) => part.trim())
+    .filter(Boolean)
+    .filter((part) => !/^Dragon Amulet$/i.test(part) && !/^A Dragon Amulet$/i.test(part))
+    .join('; ')
+    .trim()
+  return cleanOptionalField(withoutDa)
+}
+
 function cleanInlineText(value: string): string {
   return value
     .replace(/\s+/g, ' ')
@@ -527,6 +740,12 @@ function cleanInlineText(value: string): string {
     .replace(/([([{])\s+/g, '$1')
     .replace(/\s+([)\]}])/g, '$1')
     .trim()
+}
+
+function allSameValues<T>(values: T[]): boolean {
+  if (values.length <= 1) return true
+  const [first] = values.map((value) => JSON.stringify(value))
+  return values.every((value) => JSON.stringify(value) === first)
 }
 
 function extractForumPageTitle(html: string): string | undefined {
@@ -546,11 +765,21 @@ function classAbilityTagsWithInferredFlags(
   return [...output].sort()
 }
 
+function isDisplayOnlyAppearanceLine(line: string): boolean {
+  const trimmed = line.replace(/^\s*(?:[•*-]\s*)+/, '').trim()
+  if (!trimmed) return true
+  if (/^Appearance(?:\s+\S.*)?$/i.test(trimmed)) return true
+  if (/^(?:Modern|Retro|Original|Reforged)(?:\s+Version)?:$/i.test(trimmed)) return true
+  return /^[A-Za-z][A-Za-z /'-]{1,80}:\s*Appearance(?:\s+\d+(?:\.\d+)?)?(?:\s*\/\s*\d+(?:\.\d+)?)*$/i.test(
+    trimmed
+  )
+}
+
 function cleanOtherInfo(notes: string | undefined): string | undefined {
   if (!notes) return undefined
   const cleaned = notes
     .split('\n')
-    .filter((line) => !/^Appearance(?:\s+\S.*)?$/i.test(line.trim()))
+    .filter((line) => !isDisplayOnlyAppearanceLine(line))
     .join('\n')
     .replace(/(?:\n\s*)*<\s*Message edited by[\s\S]*$/i, '')
     .replace(/(?:\n\s*)*•\s*DF\s*$/i, '')
@@ -566,17 +795,19 @@ function cleanKnownPriceArtifacts(price: string): string {
 function parseObtainMethods(lines: string[]): ObtainVariant[] {
   const methods: ObtainVariant[] = []
   const locationIndexes = lines
-    .map((line, index) => (/^Location:/i.test(line) ? index : -1))
+    .map((line, index) => (/^(?:Location|Access Point):/i.test(line) ? index : -1))
     .filter((index) => index >= 0)
 
   for (const [position, index] of locationIndexes.entries()) {
     const end = locationIndexes[position + 1] ?? lines.length
     const block = lines.slice(index, end)
-    const location = cleanInlineText(firstField(block, 'Location') ?? 'N/A')
+    const location = cleanInlineText(
+      firstField(block, 'Location') ?? firstField(block, 'Access Point') ?? 'N/A'
+    )
     const price = cleanKnownPriceArtifacts(cleanInlineText(firstField(block, 'Price') ?? 'N/A'))
     const requiredItems = cleanOptionalField(firstField(block, 'Required Items?'))
     const sellback = cleanOptionalField(firstField(block, 'Sellback'))
-    const requirements = cleanOptionalField(firstField(block, 'Requirements?'))
+    const requirements = cleanRequirementText(firstField(block, 'Requirements?'))
     const priceType = computePriceType(price, requiredItems)
     const dmRequired = priceType === 'dm' || isDefenderMedalText(price) || isDefenderMedalText(requiredItems)
     methods.push({
@@ -596,14 +827,18 @@ function parseObtainMethods(lines: string[]): ObtainVariant[] {
 }
 
 function parseDescription(lines: string[]): string {
-  const stopIndex = lines.findIndex((line) => /^(?:Location|Requirements?|Effects?):/i.test(line))
+  const stopIndex = lines.findIndex((line) =>
+    /^(?:Location|Access Point|Requirements?|Level|Damage|HP|MP|Effects?):/i.test(line)
+  )
+  const itemName = normalizeName(lines[0] ?? '').toLowerCase()
   const descriptionLines = (stopIndex >= 0 ? lines.slice(1, stopIndex) : lines.slice(1))
     .filter((line) => !/^\((?:No DA Required|DA Required|DC Item)\)$/i.test(line))
+    .filter((line) => normalizeName(line).toLowerCase() !== itemName)
   return descriptionLines.join(' ').trim()
 }
 
 function isFieldLine(line: string): boolean {
-  return /^(?:Location|Price|Sellback|Required Items?|Requirements?|Level|Rarity|Item Type|Category|Equips Class|Effect|Effects?|Mana Cost|Cooldown|Damage Type|Element):/i.test(
+  return /^(?:Location|Access Point|Price|Sellback|Required Items?|Requirements?|Level|Rarity|Item Type|Category|Equips Class|Default Weapon|Effect|Effects?|Mana Cost|Cooldown|Damage Type|Element):/i.test(
     line
   )
 }
@@ -685,6 +920,714 @@ function extractAppearanceLinks(html: string): { urls: string[]; captions: strin
   }
 }
 
+function normalizeAppearanceCaption(rawCaption: string): string {
+  const caption = stripTags(rawCaption)
+    .replace(/\s+/g, ' ')
+    .replace(/\s*:\s*$/, '')
+    .trim()
+  return caption.replace(/^Appearance\s*/i, '').trim() || 'Appearance'
+}
+
+function isTableValueAppearanceCaption(caption: string): boolean {
+  return /^[+-]?[xy](?:\s*-\s*[xy])?$/i.test(caption.trim())
+}
+
+function cleanImageCaption(rawCaption: string | undefined, fallback: string): string {
+  const caption = stripTags(rawCaption ?? '')
+    .replace(/\s+/g, ' ')
+    .replace(/\s*:\s*$/, '')
+    .trim()
+  return caption || fallback
+}
+
+function inferCaptionPrefix(rawCaption: string | undefined): string | undefined {
+  const text = stripTags(rawCaption ?? '')
+    .replace(/\s+/g, ' ')
+    .trim()
+  const prefix = text.match(/([A-Za-z][A-Za-z /-]{1,60}):\s*Appearance/i)?.[1]
+  return prefix?.trim()
+}
+
+function inferAppearancePrefixFromContext(html: string, index: number): string | undefined {
+  const lookbackHtml = html.slice(Math.max(0, index - 240), index)
+  const lineStart = Math.max(
+    lookbackHtml.lastIndexOf('<br'),
+    lookbackHtml.lastIndexOf('<hr')
+  )
+  const currentLineHtml = lineStart >= 0 ? lookbackHtml.slice(lineStart) : lookbackHtml
+  const lookback = stripTags(currentLineHtml)
+    .replace(/\s+/g, ' ')
+    .trim()
+  return lookback
+    .match(/([A-Za-z][A-Za-z /-]{1,60}):\s*(?:Appearance(?:\s+\d+(?:\.\d+)?)?\s*(?:\/\s*)?)?$/i)?.[1]
+    ?.trim()
+}
+
+function inferImageCaptionBeforeIndex(html: string, index: number): string | undefined {
+  const lookback = html.slice(Math.max(0, index - 220), index)
+  const matches = [
+    ...lookback.matchAll(/<(?:b|strong)>\s*([^<]+?)\s*<\/(?:b|strong)>/gi),
+    ...lookback.matchAll(/<font\b[^>]*>\s*([^<]+?)\s*<\/font>/gi),
+  ].sort((a, b) => (a.index ?? 0) - (b.index ?? 0))
+  const match = matches.at(-1)
+  const caption = cleanImageCaption(match?.[1], '')
+  if (!caption || /^(?:Appearance|Thanks to)$/i.test(caption)) return undefined
+  return caption.replace(/\s+Version$/i, '').trim()
+}
+
+function inferClassImageAnchorCaption(
+  sourceHtml: string,
+  index: number,
+  rawCaption: string | undefined
+): string {
+  const caption = cleanImageCaption(rawCaption, 'Alternative Image')
+    .replace(/\s+Armor Set Appearance$/i, '')
+    .replace(/\s+Appearance$/i, '')
+    .trim()
+  const lineStart = Math.max(sourceHtml.lastIndexOf('<br', index), sourceHtml.lastIndexOf('<hr', index))
+  const lineHtml = sourceHtml.slice(Math.max(0, lineStart), index)
+  const lineText = stripTags(lineHtml)
+    .replace(/\s+/g, ' ')
+    .trim()
+  const prefix = [...lineText.matchAll(/([A-Za-z][A-Za-z /-]{1,60})\s+Appearance\s*:/gi)]
+    .at(-1)?.[1]
+    ?.trim()
+  if (prefix && /^(?:Male|Female)$/i.test(caption)) {
+    return `${prefix} (${caption})`
+  }
+  return caption
+}
+
+function disambiguatePairedClassCaptions(
+  entries: Array<{ url: string; caption: string; isInlineImage: boolean }>
+): Array<{ url: string; caption: string; isInlineImage: boolean }> {
+  const grouped = new Map<string, number[]>()
+  entries.forEach((entry, index) => {
+    const key = entry.caption.toLowerCase()
+    grouped.set(key, [...(grouped.get(key) ?? []), index])
+  })
+
+  return entries.map((entry, index) => {
+    const indexes = grouped.get(entry.caption.toLowerCase()) ?? []
+    if (indexes.length !== 2) return entry
+    const pairIndex = indexes.indexOf(index)
+    if (pairIndex < 0) return entry
+    if (/^(?:Main|Alternative Image)$/i.test(entry.caption)) {
+      return {
+        ...entry,
+        caption: pairIndex === 0 ? 'Male' : 'Female',
+      }
+    }
+    return {
+      ...entry,
+      caption: `${entry.caption} (${pairIndex === 0 ? 'Male' : 'Female'})`,
+    }
+  })
+}
+
+function isClassUiImage(url: string): boolean {
+  return /\/tags\/|\/icons?\/|quantcast|pm\.gif|profile|\/post(?:[./_-]|$)|\/reply(?:[./_-]|$)|\/delete(?:[./_-]|$)|\/rate(?:[./_-]|$)|\/topic(?:[./_-]|$)|\/folder/i.test(
+    url
+  )
+}
+
+function isAttackOrSkillButtonImage(url: string): boolean {
+  return /(?:Button|button|Attack\.png|Skill-[^/]+\.png)/i.test(url)
+}
+
+function classImageNameKey(value: string): string {
+  return value.toLowerCase().replace(/[^a-z0-9]+/g, '')
+}
+
+function classImageUrlNameKey(url: string): string {
+  const file = decodeURIComponent(url.split('/').pop() ?? url)
+  return classImageNameKey(file.replace(/\.[a-z0-9]+$/i, ''))
+}
+
+function inferClassImageCaptionFromUrl(url: string): string | undefined {
+  const stem = decodeURIComponent(url.split('/').pop() ?? '')
+    .replace(/\.[a-z0-9]+$/i, '')
+    .replace(/[_-]+/g, ' ')
+  const suffix = stem.match(/\b(Modern|Original|Retro|Reforged|DeltaStar|Delta|Arcanist)\b(?:\s+\d+)?$/i)?.[1]
+  return suffix
+    ? suffix.replace(/^Deltastar$/i, 'DeltaStar').replace(/^([a-z])/, (value) => value.toUpperCase())
+    : undefined
+}
+
+function otherInformationHeadingMatches(html: string): RegExpMatchArray[] {
+  return [
+    ...html.matchAll(
+      /(?:(?:<b>\s*<u>)|(?:<u>\s*<b>)|<u>|<b>)\s*Other information\s*(?:(?:<\/u>\s*<\/b>)|(?:<\/b>\s*<\/u>)|<\/u>|<\/b>)/gi
+    ),
+  ]
+}
+
+function classAttackSectionBounds(html: string): { start: number; end: number } | undefined {
+  const sectionStartMatch = html.match(
+    /(?:Default Weapon:|(?:<b>)?<u>Resistances<\/u>(?:<\/b>)?|Resistances:\s*[^<\n]+)(?:[\s\S]*?)<hr\b/i
+  )
+  if (!sectionStartMatch?.index && !/(?:Effect:|Mana Cost:|Cooldown:)/i.test(html)) return undefined
+
+  const start =
+    sectionStartMatch?.index !== undefined
+      ? sectionStartMatch.index + sectionStartMatch[0].length
+      : 0
+  const fallbackEnd = html
+    .slice(start)
+    .search(/Thanks to|<\s*Message edited by|Also See|Post #:|All Forums >>/i)
+  const end = fallbackEnd >= 0 ? start + fallbackEnd : html.length
+
+  return end > start ? { start, end } : undefined
+}
+
+function extractClassImages(html: string, className?: string): {
+  imageUrl?: string
+  alternativeImages?: Array<{ url: string; caption: string }>
+} {
+  const attackBounds = classAttackSectionBounds(html)
+  const attackSkipEnd =
+    attackBounds &&
+    (() => {
+      const section = html.slice(attackBounds.start, attackBounds.end)
+      const globalNotesStart = otherInformationHeadingMatches(section).at(-1)?.index
+      return globalNotesStart === undefined ? attackBounds.end : attackBounds.start + globalNotesStart
+    })()
+  const isInAttackSkillRange = (index: number) =>
+    attackBounds && attackSkipEnd !== undefined && index >= attackBounds.start && index < attackSkipEnd
+  const entries: Array<{
+    url: string
+    caption: string
+    isInlineImage: boolean
+    isArmorSetAppearance?: boolean
+  }> = []
+  const collectEntries = (sourceHtml: string, skipAttackRange = true) => {
+    const candidates: Array<{
+      index: number
+      url: string
+      caption: string
+      isInlineImage: boolean
+      isArmorSetAppearance?: boolean
+    }> = []
+    for (const match of sourceHtml.matchAll(/<a\b[^>]+href=(["'])(.*?)\1[^>]*>([\s\S]*?)<\/a>/gi)) {
+      if (skipAttackRange && isInAttackSkillRange(match.index ?? 0)) continue
+      const url = normalizeLinkedImageUrl(match[2] ?? '')
+      if (!isLikelyLinkedImageUrl(url) || isClassUiImage(url) || isAttackOrSkillButtonImage(url)) {
+        continue
+      }
+      const rawCaption = cleanImageCaption(match[3], '')
+      const caption = inferClassImageAnchorCaption(sourceHtml, match.index ?? 0, match[3])
+      if (/^(?:Appearance(?:\s+\d+(?:\.\d+)?)?|\d+(?:\.\d+)?)$/i.test(caption)) continue
+      if (/^(?:Foe banished!?|this spot|these spots)$/i.test(caption)) continue
+      candidates.push({
+        index: match.index ?? 0,
+        url,
+        caption,
+        isInlineImage: false,
+        isArmorSetAppearance: /Armor Set Appearance/i.test(rawCaption),
+      })
+    }
+    for (const match of sourceHtml.matchAll(/<img\b[^>]+src=(["'])(.*?)\1[^>]*>/gi)) {
+      if (isInAttackSkillRange(match.index ?? 0)) continue
+      const url = normalizeLinkedImageUrl(match[2] ?? '')
+      if (!isLikelyLinkedImageUrl(url) || isClassUiImage(url) || isAttackOrSkillButtonImage(url)) {
+        continue
+      }
+      candidates.push({
+        index: match.index ?? 0,
+        url,
+        caption:
+          inferImageCaptionBeforeIndex(sourceHtml, match.index ?? 0) ??
+          inferClassImageCaptionFromUrl(url) ??
+          cleanImageCaption(match[0], 'Main'),
+        isInlineImage: true,
+      })
+    }
+
+    for (const candidate of candidates.sort((a, b) => a.index - b.index)) {
+      if (entries.some((entry) => entry.url === candidate.url)) continue
+      entries.push({
+        url: candidate.url,
+        caption: candidate.caption,
+        isInlineImage: candidate.isInlineImage,
+        ...(candidate.isArmorSetAppearance
+          ? { isArmorSetAppearance: candidate.isArmorSetAppearance }
+          : {}),
+      })
+    }
+  }
+
+  const finalOtherInfo = otherInformationHeadingMatches(html).at(-1)
+  if (finalOtherInfo?.index !== undefined) {
+    collectEntries(html.slice(finalOtherInfo.index), false)
+  }
+  collectEntries(html)
+
+  const classKey = className ? classImageNameKey(className) : ''
+  const nameMatchedEntries =
+    classKey.length >= 6
+      ? entries.filter((entry) => classImageUrlNameKey(entry.url).includes(classKey))
+      : []
+  const sourceEntries = nameMatchedEntries.length > 0 ? nameMatchedEntries : entries
+  const galleryEntries = sourceEntries.some((entry) => entry.isArmorSetAppearance)
+    ? sourceEntries.filter((entry) => entry.isArmorSetAppearance)
+    : sourceEntries
+  const displayEntries = disambiguatePairedClassCaptions(
+    galleryEntries
+  )
+  const main =
+    displayEntries.find(
+      (entry) =>
+        /^(?:Modern|Original|Main)$/i.test(entry.caption) &&
+        !/Exact spots?|Appearance/i.test(entry.caption)
+    ) ?? displayEntries[0]
+  const rest = main ? displayEntries.filter((entry) => entry.url !== main.url) : []
+  return {
+    ...(main ? { imageUrl: main.url } : {}),
+    ...(main || rest.length
+      ? {
+          alternativeImages: [
+            ...(main ? [{ url: main.url, caption: main.caption }] : []),
+            ...rest.map((entry) => ({ url: entry.url, caption: entry.caption })),
+          ],
+        }
+      : {}),
+  }
+}
+
+function extractAttackAppearanceEntries(block: string): Array<{ url: string; caption: string }> {
+  const entries: Array<{ url: string; caption: string }> = []
+  for (const match of block.matchAll(/<a[^>]+href=(["'])(.*?)\1[^>]*>([\s\S]*?)<\/a>/gi)) {
+    const url = normalizeLinkedImageUrl(match[2] ?? '')
+    if (!isLikelyLinkedImageUrl(url)) continue
+    const rawCaption = match[3] ?? ''
+    const caption = normalizeAppearanceCaption(rawCaption)
+    if (isTableValueAppearanceCaption(caption)) continue
+    if (!/^Appearance|\d+(?:\.\d+)?$/i.test(caption)) continue
+    const prefix = inferCaptionPrefix(rawCaption) ?? inferAppearancePrefixFromContext(block, match.index ?? 0)
+    const displayCaption =
+      prefix && caption !== 'Appearance' ? `${prefix} ${caption}` : prefix ?? caption
+    if (entries.some((entry) => entry.url === url)) continue
+    entries.push({ url, caption: displayCaption })
+  }
+  return entries
+}
+
+function artifactHeadingMatches(html: string): RegExpMatchArray[] {
+  return [
+    ...html.matchAll(
+      /(?:<(?:b|strong)>\s*)?Artifact:\s*(?:<a\b[^>]*>[\s\S]*?<\/a>|[\s\S]{1,220}?)(?=<br\b|<hr\b|<\/div>|$)/gi
+    ),
+  ]
+}
+
+function cleanArtifactLabel(rawHeading: string): string {
+  return normalizeName(stripTags(rawHeading).replace(/^Artifact:\s*/i, ''))
+}
+
+function stripClassArtifactSections(html: string): string {
+  const firstArtifact = artifactHeadingMatches(html)[0]
+  if (!firstArtifact || firstArtifact.index === undefined) return html
+  return html.slice(0, firstArtifact.index)
+}
+
+function hasPlayableSupportContent(html: string | undefined): html is string {
+  if (!html) return false
+  return (
+    otherInformationHeadingMatches(html).length > 0 ||
+    [...html.matchAll(/<img\b[^>]+src=(["'])(.*?)\1[^>]*>/gi)].some((match) => {
+      const url = normalizeLinkedImageUrl(match[2] ?? '')
+      return isLikelyLinkedImageUrl(url) && !isClassUiImage(url) && !isAttackOrSkillButtonImage(url)
+    }) ||
+    [...html.matchAll(/<a\b[^>]+href=(["'])(.*?)\1[^>]*>/gi)].some((match) => {
+      const url = normalizeLinkedImageUrl(match[2] ?? '')
+      return isLikelyLinkedImageUrl(url) && !isClassUiImage(url) && !isAttackOrSkillButtonImage(url)
+    })
+  )
+}
+
+function hasPlayableSkillContent(html: string | undefined): html is string {
+  return Boolean(html && /(?:Effect:|Mana Cost:|Cooldown:)/i.test(html) && parseClassAttacks(html)?.length)
+}
+
+function selectPlayableSupportHtml(parts: DetailPostParts, className?: string): string | undefined {
+  const candidates = parts.followups
+    .map((post) => stripClassArtifactSections(post.html))
+    .filter(
+      (html) =>
+        !artifactHeadingMatches(html).length &&
+        !hasPlayableSkillContent(html) &&
+        hasPlayableSupportContent(html)
+    )
+  if (className) {
+    return (
+      candidates.find((html) => Boolean(extractClassImages(html, className).imageUrl)) ??
+      candidates[0]
+    )
+  }
+  return candidates[0]
+}
+
+function playableDetailPostInputs(
+  primaryHtml: string,
+  primaryUrl: string,
+  fallbackName: string,
+  parts: DetailPostParts
+): Array<{ html: string; sourceUrl: string; fallbackName: string }> {
+  const playablePostTitle = (html: string) => {
+    const fallbackKey = normalizeName(fallbackName).toLowerCase()
+    return titleMatches(html)
+      .map((title) => {
+        const trailingParenthetical = stripTags(html.slice(title.end, title.end + 180))
+          .trim()
+          .match(/^\((?!No DA Required\b)([^)]+)\)/i)?.[1]
+        const displayTitle = trailingParenthetical
+          ? `${title.title} (${normalizeName(trailingParenthetical)})`
+          : title.title
+        return displayTitle.replace(/\s+\(No DA Required\)\s*$/i, '').trim()
+      })
+      .find((title) => normalizeName(title).toLowerCase().startsWith(fallbackKey))
+  }
+  const inputs = [
+    {
+      html: primaryHtml,
+      sourceUrl: primaryUrl,
+      fallbackName: playablePostTitle(primaryHtml) ?? fallbackName,
+    },
+  ]
+  for (const followup of parts.followups) {
+    if (artifactHeadingMatches(followup.html).length > 0) continue
+    if (!hasPlayableSkillContent(followup.html)) continue
+    inputs.push({
+      html: followup.html,
+      sourceUrl: directForumPostUrl(followup.messageId),
+      fallbackName: playablePostTitle(followup.html) ?? extractForumPageTitle(followup.html) ?? fallbackName,
+    })
+  }
+  return inputs
+}
+
+function collectMechanicsImages(html: string): Array<{ url: string; caption: string }> {
+  const entries: Array<{ index: number; url: string; caption: string }> = []
+  for (const match of html.matchAll(/<a\b[^>]+href=(["'])(.*?)\1[^>]*>([\s\S]*?)<\/a>/gi)) {
+    const url = normalizeLinkedImageUrl(match[2] ?? '')
+    if (!isLikelyLinkedImageUrl(url) || isClassUiImage(url) || isAttackOrSkillButtonImage(url)) continue
+    const rawCaption = cleanImageCaption(match[3], '')
+    if (!/widget displaying/i.test(rawCaption)) continue
+    entries.push({
+      index: match.index ?? 0,
+      url,
+      caption: rawCaption,
+    })
+  }
+  for (const match of html.matchAll(/<img\b[^>]+src=(["'])(.*?)\1[^>]*>/gi)) {
+    const url = normalizeLinkedImageUrl(match[2] ?? '')
+    if (!isLikelyLinkedImageUrl(url) || isClassUiImage(url) || isAttackOrSkillButtonImage(url)) continue
+    if (entries.some((entry) => entry.url === url)) continue
+    const caption =
+      html
+        .slice((match.index ?? 0) + match[0].length, (match.index ?? 0) + match[0].length + 500)
+        .match(/<i>\s*([\s\S]*?)\s*<\/i>/i)?.[1] ??
+      inferImageCaptionBeforeIndex(html, match.index ?? 0) ??
+      'Mechanic'
+    const cleanedCaption = cleanImageCaption(caption, 'Mechanic')
+    if (!/widget displaying/i.test(cleanedCaption)) continue
+    entries.push({ index: match.index ?? 0, url, caption: cleanedCaption })
+  }
+  if (entries.length === 0) {
+    const widgetCaption = normalizeStructuredText(html)
+      .split('\n')
+      .map((line) => line.trim())
+      .find((line) => /^[A-Za-z][A-Za-z' -]+['’]s widget displaying\b/i.test(line))
+    const className = widgetCaption?.match(/^([A-Za-z][A-Za-z' -]+)['’]s widget displaying\b/i)?.[1]
+    if (widgetCaption && className) {
+      const fileName = `${className.replace(/[^A-Za-z0-9]+/g, '')}-Widget.png`
+      entries.push({
+        index: 0,
+        url: `https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/${fileName}`,
+        caption: widgetCaption,
+      })
+    }
+  }
+  return entries
+    .sort((a, b) => a.index - b.index)
+    .filter((entry, index, all) => all.findIndex((candidate) => candidate.url === entry.url) === index)
+    .map(({ url, caption }) => ({ url, caption }))
+}
+
+function cleanupMechanicsNotes(html: string, title?: string): string | undefined {
+  const imageCaptions = new Set(
+    collectMechanicsImages(html).map((image) => image.caption.toLowerCase())
+  )
+  const normalizedTitle = title?.toLowerCase()
+  const notes = normalizeStructuredText(html, { preserveIndentation: true })
+    .split('\n')
+    .filter((line) => {
+      const cleaned = line.replace(/^\s*(?:[•*-]\s*)+/, '').trim()
+      if (!cleaned) return false
+      if (/^>+$/.test(cleaned)) return false
+      if (normalizedTitle && cleaned.toLowerCase() === normalizedTitle) return false
+      if (/^Artifact:\s*/i.test(cleaned)) return false
+      if (imageCaptions.has(cleaned.toLowerCase())) return false
+      if (isDisplayOnlyAppearanceLine(cleaned)) return false
+      return true
+    })
+    .join('\n')
+    .trim()
+  return cleanOtherInfo(notes)
+}
+
+function extractMechanicsBlocks(html: string, title?: string): MechanicsBlock[] | undefined {
+  const bounds = classAttackSectionBounds(html)
+  const section = bounds ? html.slice(bounds.start, bounds.end) : html
+  const pieces = section.split(/<hr\b[^>]*>/i)
+  const blocks: MechanicsBlock[] = []
+  for (const piece of pieces) {
+    if (/(?:Effect:|Mana Cost:|Cooldown:)/i.test(piece)) break
+    const images = collectMechanicsImages(piece)
+    const notes = cleanupMechanicsNotes(piece, title)
+    if (!notes && images.length === 0) continue
+    if (!notes && images.length > 0 && images.every((image) => image.caption === 'Mechanic')) continue
+    blocks.push({
+      ...(title ? { title } : {}),
+      ...(notes ? { notes } : {}),
+      ...(images.length > 0 ? { images } : {}),
+    })
+  }
+  return blocks.length > 0 ? blocks : undefined
+}
+
+function extractTrailingClassOtherInfo(html: string): string | undefined {
+  const heading = otherInformationHeadingMatches(html).at(-1)
+  if (!heading || heading.index === undefined) return undefined
+  const before = html.slice(0, heading.index)
+  const previousHr = before.toLowerCase().lastIndexOf('<hr')
+  const sincePreviousHr = previousHr >= 0 ? before.slice(previousHr) : before
+  if (/(?:Effect:|Mana Cost:|Cooldown:)/i.test(sincePreviousHr)) return undefined
+  return extractOtherInfo(html, { useLast: true })
+}
+
+function parseArtifactAttackSets(htmlParts: string[]): GuestAttackSet[] | undefined {
+  const sets: GuestAttackSet[] = []
+  for (const html of htmlParts) {
+    const headings = artifactHeadingMatches(html)
+    for (const [index, heading] of headings.entries()) {
+      if (heading.index === undefined) continue
+      const next = headings[index + 1]
+      const section = html.slice(heading.index, next?.index ?? html.length)
+      const label = cleanArtifactLabel(heading[0])
+      if (!label) continue
+      const attacks = parseClassAttacks(section)
+      if (!attacks?.length) continue
+      const mechanics = extractMechanicsBlocks(section, label)
+      const notes = extractTrailingClassOtherInfo(section)
+      const id = slugify(label)
+      const uniqueId = sets.some((set) => set.id === id) ? `${id}-${sets.length + 1}` : id
+      sets.push({
+        id: uniqueId,
+        label,
+        attacks,
+        ...(notes ? { notes } : {}),
+        ...(mechanics?.length ? { mechanics } : {}),
+      })
+    }
+  }
+  return sets.length > 0 ? sets : undefined
+}
+
+function extractFieldFromHtml(html: string, label: string): string | undefined {
+  const escaped = escapeRegex(label)
+  const match = html.match(new RegExp(`${escaped}:\\s*([\\s\\S]*?)(?=<br\\b|<hr\\b|$)`, 'i'))
+  return match ? cleanInlineText(stripTags(match[1] ?? '')) : undefined
+}
+
+function parseClassStats(html: string): GuestStats | undefined {
+  const stats: GuestStats = {}
+  const level = extractFieldFromHtml(html, 'Level')
+  const damage = extractFieldFromHtml(html, 'Damage')
+  const damageType = extractFieldFromHtml(html, 'Damage Type')
+  const element = extractFieldFromHtml(html, 'Element')
+  const hp = extractFieldFromHtml(html, 'HP')
+  const mp = extractFieldFromHtml(html, 'MP')
+  if (level) stats.level = level
+  if (damage) stats.damage = damage
+  if (/^(?:Melee|Magic|Pierce)$/i.test(damageType ?? '')) {
+    stats.damageType = damageType as 'Melee' | 'Magic' | 'Pierce'
+  }
+  if (element) stats.element = element
+  if (hp) stats.hp = hp
+  if (mp) stats.mp = mp
+
+  const sectionText = (title: string) => {
+    const match = html.match(
+      new RegExp(`(?:<b>)?<u>${escapeRegex(title)}<\\/u>(?:<\\/b>)?([\\s\\S]*?)(?=(?:<b>)?<u>|<hr\\b|$)`, 'i')
+    )
+    return match ? normalizeStructuredText(match[1] ?? '', { preserveIndentation: true }) : ''
+  }
+  const parsePairs = (text: string, labels: string[]) => {
+    const output: Record<string, string> = {}
+    for (const label of labels) {
+      const match = text.match(new RegExp(`\\b${escapeRegex(label)}:?\\s*([^\\n,]+)`, 'i'))
+      if (match?.[1]) output[label.toLowerCase().replace(/[^a-z]+/g, '')] = match[1].trim()
+    }
+    return output
+  }
+  const characterStats = parsePairs(sectionText('Stats'), ['STR', 'DEX', 'INT', 'CHA', 'LUK', 'END', 'WIS'])
+  if (Object.keys(characterStats).length > 0) stats.characterStats = characterStats
+  const offense = parsePairs(sectionText('Offense'), ['Boost', 'Bonus', 'Crit'])
+  if (Object.keys(offense).length > 0) stats.offense = offense
+  const multipliers = parsePairs(sectionText('Damage Multipliers'), ['Non-Crit', 'Dex', 'DoT', 'Crit'])
+  if (Object.keys(multipliers).length > 0) {
+    stats.damageMultipliers = {
+      nonCrit: multipliers.noncrit,
+      dex: multipliers.dex,
+      dot: multipliers.dot,
+      crit: multipliers.crit,
+    }
+  }
+  const defense = parsePairs(sectionText('Defense') || sectionText('Avoidance and Defense'), [
+    'Melee',
+    'Pierce',
+    'Magic',
+    'Block',
+    'Parry',
+    'Dodge',
+  ])
+  if (Object.keys(defense).length > 0) stats.defense = defense
+  const reduction = parsePairs(sectionText('Damage Reduction'), ['Non-Crit', 'DoT', 'Crit'])
+  if (Object.keys(reduction).length > 0) {
+    stats.damageReduction = {
+      nonCrit: reduction.noncrit,
+      dot: reduction.dot,
+      crit: reduction.crit,
+    }
+  }
+  const resistanceText = sectionText('Resistances')
+  if (resistanceText && !/^none$/i.test(resistanceText.trim())) {
+    const resistances: Record<string, string> = {}
+    for (const line of resistanceText.split('\n')) {
+      const match = line.match(/([A-Za-z][A-Za-z ]+):?\s*([+-]?\d+%?)/)
+      if (match?.[1] && match[2]) resistances[match[1].trim()] = match[2].trim()
+    }
+    if (Object.keys(resistances).length > 0) stats.resistances = resistances
+  }
+
+  return Object.keys(stats).length > 0 ? stats : undefined
+}
+
+function extractDefaultWeapon(blockHtml: string): { name?: string; url?: string } {
+  const labelIndex = blockHtml.search(/Default Weapon:/i)
+  if (labelIndex < 0) return {}
+  const segment = blockHtml.slice(labelIndex, labelIndex + 700)
+  const lineEnd = segment.search(/<br\b|<hr\b|(?:<b>)?<u>|Attack Type:|Element:|$/i)
+  const lineHtml = lineEnd >= 0 ? segment.slice(0, lineEnd) : segment
+  const anchor = lineHtml.match(/<a\b[^>]*href=(["'])(.*?)\1[^>]*>([\s\S]*?)<\/a>/i)
+  if (anchor) {
+    const name = normalizeName(anchor[3] ?? '')
+    const url = directUrl(decodeHtml(anchor[2] ?? ''))
+    return {
+      ...(name ? { name } : {}),
+      ...(url ? { url } : {}),
+    }
+  }
+  const fallback = lineHtml.replace(/Default Weapon:/i, '')
+  const name = cleanOptionalField(stripTags(fallback))
+  return name ? { name } : {}
+}
+
+function parseClassAttacks(html: string): GuestAttack[] | undefined {
+  const attacks: GuestAttack[] = []
+  const bounds = classAttackSectionBounds(html)
+  if (!bounds) return undefined
+  const section = html.slice(bounds.start, bounds.end)
+
+  for (const block of splitClassAttackBlocks(section)) {
+    if (!/Effect:|Mana Cost:|Cooldown:/i.test(block)) continue
+    const nameMatch =
+      block.match(/<font\s+size=['"]2['"]>\s*<b>([^<]+)<\/b>\s*<\/font>/i) ??
+      block.match(/<b>\s*<font\s+size=['"]2['"]>([^<]+)<\/font>\s*<\/b>/i) ??
+      block.match(/<b>\s*<u>\s*([^<]+)\s*<\/u>\s*<\/b>/i) ??
+      block.match(/<u>\s*<b>\s*([^<]+)\s*<\/b>\s*<\/u>/i) ??
+      block.match(/<(?:b|strong)>\s*([^<\n:]{2,80})\s*<\/(?:b|strong)>/i)
+    const name = normalizeName(nameMatch?.[1] ?? 'Attack')
+    if (!name || /^skip$/i.test(name)) continue
+    const description = block.match(/<i>([\s\S]*?)<\/i>/i)?.[1]
+    const requirements = cleanRequirementText(extractFieldFromHtml(block, 'Requirements'))
+    const effect = block.match(/Effect:\s*([\s\S]*?)(?=\s*Mana Cost:|$)/i)?.[1]
+    const effectText = effect ? normalizeStructuredText(effect, { preserveIndentation: true }).trim() : ''
+    if (!effectText) continue
+    const notesMatch = block.match(
+      /Other information(?:<\/[^>]+>|\s|:)*([\s\S]*?)(?=<hr\b|$)/i
+    )
+    const notes = notesMatch
+      ? cleanOtherInfo(
+          normalizeStructuredText(notesMatch[1] ?? '', { preserveIndentation: true }).trim()
+        )
+      : undefined
+    const appearanceEntries = extractAttackAppearanceEntries(block)
+    const buttonImageUrl = [...block.matchAll(/<img\b[^>]+src=(["'])(.*?)\1[^>]*>/gi)]
+      .map((match) => normalizeLinkedImageUrl(match[2] ?? ''))
+      .find((url) => isLikelyLinkedImageUrl(url) && !isClassUiImage(url))
+    attacks.push({
+      name,
+      ...(description
+        ? { description: normalizeStructuredText(description, { preserveIndentation: true }).trim() }
+        : {}),
+      ...(requirements ? { requirements } : {}),
+      effect: effectText,
+      manaCost: extractFieldFromHtml(block, 'Mana Cost') ?? '—',
+      cooldown: extractFieldFromHtml(block, 'Cooldown') ?? '—',
+      damageType:
+        extractFieldFromHtml(block, 'Damage Type') ??
+        extractFieldFromHtml(block, 'Attack Type') ??
+        '—',
+      element: extractFieldFromHtml(block, 'Element') ?? '—',
+      ...(buttonImageUrl ? { buttonImageUrl } : {}),
+      ...(appearanceEntries[0] ? { appearanceUrl: appearanceEntries[0].url } : {}),
+      ...(appearanceEntries.length > 1
+        ? { appearanceUrls: appearanceEntries.map((entry) => entry.url) }
+        : {}),
+      ...(appearanceEntries.some((entry) => entry.caption !== 'Appearance')
+        ? { appearanceCaptions: appearanceEntries.map((entry) => entry.caption) }
+        : {}),
+      ...(notes ? { notes } : {}),
+    })
+  }
+
+  return attacks.length > 0 ? attacks : undefined
+}
+
+function classSkillHeadingMatches(html: string): RegExpMatchArray[] {
+  return [
+    ...html.matchAll(
+      /(?:<font\s+size=['"]2['"]>\s*<b>\s*([^<]+?)\s*<\/b>\s*<\/font>|<b>\s*<font\s+size=['"]2['"]>\s*([^<]+?)\s*<\/font>\s*<\/b>|<b>\s*<u>\s*([^<]+?)\s*<\/u>\s*<\/b>|<u>\s*<b>\s*([^<]+?)\s*<\/b>\s*<\/u>)/gi
+    ),
+  ]
+}
+
+function splitClassAttackBlocks(section: string): string[] {
+  const blocks: string[] = []
+  for (const hrBlock of section.split(/(?:<hr\b[^>]*>|\*\s*\*\s*\*)/i)) {
+    const boundaries = [0]
+    for (const match of classSkillHeadingMatches(hrBlock)) {
+      if (!match.index) continue
+      const title = normalizeName(match.slice(1).find(Boolean) ?? '')
+      if (!title || /^(?:Other information|Also See|Thanks to)$/i.test(title)) continue
+      const before = hrBlock.slice(0, match.index)
+      const after = hrBlock.slice(match.index, Math.min(hrBlock.length, match.index + 2500))
+      if (/(?:Effect:|Mana Cost:|Cooldown:)/i.test(before) && /(?:Effect:|Mana Cost:|Cooldown:)/i.test(after)) {
+        boundaries.push(match.index)
+      }
+    }
+    boundaries.push(hrBlock.length)
+    boundaries.sort((a, b) => a - b)
+    for (let index = 0; index < boundaries.length - 1; index += 1) {
+      const block = hrBlock.slice(boundaries[index], boundaries[index + 1]).trim()
+      if (block) blocks.push(block)
+    }
+  }
+  return blocks
+}
+
 function extractButtonImage(html: string): string | undefined {
   return [...html.matchAll(/<img[^>]+src=(["'])(.*?)\1[^>]*>/gi)]
     .map((match) => normalizeLinkedImageUrl(match[2] ?? ''))
@@ -757,13 +1700,33 @@ function extractEquipsClass(blockHtml: string, lines: string[]): { name?: string
   return fallback ? { name: normalizeName(fallback) } : {}
 }
 
-function extractOtherInfo(html: string): string | undefined {
-  const match = html.match(
-    /Other information(?:<\/[^>]+>|\s|:)*([\s\S]*?)(?=Also See|Thanks to|<\s*Message edited by|Post #:|All Forums >>|<\/body>|$)/i
+function extractOtherInfo(html: string, options?: { useLast?: boolean }): string | undefined {
+  const headings = otherInformationHeadingMatches(html)
+  const heading = options?.useLast ? headings.at(-1) : headings[0]
+  if (!heading) return undefined
+  const start = (heading.index ?? 0) + heading[0].length
+  const tail = html.slice(start)
+  const endMatch = tail.search(/Also See|Thanks to|<\s*Message edited by|Post #:|All Forums >>|<\/body>|$/i)
+  const body = endMatch >= 0 ? tail.slice(0, endMatch) : tail
+  const imageCaptions = new Set(
+    [...body.matchAll(/<a\b[^>]+href=(["'])(.*?)\1[^>]*>([\s\S]*?)<\/a>/gi)]
+      .filter((match) => isLikelyLinkedImageUrl(normalizeLinkedImageUrl(match[2] ?? '')))
+      .map((match) => cleanImageCaption(match[3], ''))
+      .filter(Boolean)
+      .map((caption) => caption.toLowerCase())
   )
-  if (!match) return undefined
-  const notes = normalizeStructuredText(match[1], { preserveIndentation: true })
+  const notes = normalizeStructuredText(body, { preserveIndentation: true })
     .replace(/^Other information:?/i, '')
+    .split('\n')
+    .filter((line) => {
+      const cleaned = line.replace(/^\s*(?:[•*-]\s*)+/, '').trim().toLowerCase()
+      if (imageCaptions.has(cleaned)) return false
+      return !(
+        /appearance/i.test(cleaned) &&
+        [...imageCaptions].some((caption) => caption && cleaned.includes(caption))
+      )
+    })
+    .join('\n')
     .trim()
   return cleanOtherInfo(notes)
 }
@@ -793,16 +1756,18 @@ function titleMatches(html: string): Array<{ title: string; index: number; end: 
       title: normalizeName(match[1]),
       index: match.index ?? 0,
       end: (match.index ?? 0) + match[0].length,
+      raw: match[0],
     }))
     .sort((a, b) => a.index - b.index || a.end - b.end)
     .filter(
-      ({ title, index }) =>
+      ({ title, index, raw }) =>
         Boolean(title) &&
+        !/<font\b[^>]*\bsize=(["'])2\1/i.test(raw) &&
         !isDialogueTitleContext(html, index) &&
         !isForumAuthorContext(html, index) &&
         !/^\[\d+\]$/.test(title) &&
         !/^(?:Upon|If)\b.*:$/i.test(title) &&
-        !/^(?:OK|Location|Price|Sellback|Level|Rarity|Effect|Effects|Other information|Also See|Advanced Edition)$/i.test(
+        !/^(?:OK|Location|Access Point|Default Weapon|Appearance|Price|Sellback|Level|Rarity|Effect|Effects|Other information|Also See|Advanced Edition)$/i.test(
           title
         ) &&
         (() => {
@@ -814,24 +1779,75 @@ function titleMatches(html: string): Array<{ title: string; index: number; end: 
     )
 }
 
-function parseDetailBlocks(html: string, sourceUrl: string, fallbackName: string): ParsedDetail[] {
+function parseDetailBlocks(
+  html: string,
+  sourceUrl: string,
+  fallbackName: string,
+  classSubcategory?: ClassSubcategory,
+  supplementalHtml?: string,
+  followupHtmls: string[] = []
+): ParsedDetail[] {
   const titles = titleMatches(html)
-  const usableTitles = titles.length > 0 ? titles : [{ title: fallbackName, index: 0, end: 0 }]
+  const isPlayableClass =
+    classSubcategory === 'regular' || classSubcategory === 'miscellaneous'
+  const usableTitles = isPlayableClass
+    ? [{ title: fallbackName, index: 0, end: 0 }]
+    : titles.length > 0
+      ? titles
+      : [{ title: fallbackName, index: 0, end: 0 }]
 
   return usableTitles
     .map((title, index): ParsedDetail | undefined => {
       const next = usableTitles[index + 1]
       const block = html.slice(title.end, next?.index ?? html.length)
       const blockWithLeadIn = html.slice(Math.max(0, title.index - 600), next?.index ?? html.length)
+      const cleanSupplementalHtml = supplementalHtml
+        ? stripClassArtifactSections(supplementalHtml)
+        : undefined
+      const usesSupplementalSupport = hasPlayableSupportContent(cleanSupplementalHtml)
+      const playableSupportBlock =
+        isPlayableClass && usesSupplementalSupport
+          ? cleanSupplementalHtml
+          : blockWithLeadIn
       const lines = [title.title, ...htmlToLines(block)]
       const obtainMethods = parseObtainMethods(lines)
-      if (obtainMethods.length === 0 && !lines.some((line) => /^Effect:/i.test(line))) return undefined
       const effect = cleanOptionalField(firstFieldMatching(lines, /^Effects?:\s*(.*)$/i))
       const level = cleanOptionalField(firstField(lines, 'Level'))
       const rarity = cleanOptionalField(firstField(lines, 'Rarity'))
       const itemType = cleanOptionalField(firstField(lines, 'Item Type'))
       const consumableKind = consumableKindFromItemType(firstField(lines, 'Item Type'))
       const equipsClass = extractEquipsClass(block, lines)
+      const defaultWeapon = isPlayableClass ? extractDefaultWeapon(block) : {}
+      const classImages = isPlayableClass ? extractClassImages(playableSupportBlock, title.title) : {}
+      const guestStats = isPlayableClass ? parseClassStats(blockWithLeadIn) : undefined
+      const classAttacks = isPlayableClass ? parseClassAttacks(blockWithLeadIn) : undefined
+      const mechanics = isPlayableClass ? extractMechanicsBlocks(blockWithLeadIn) : undefined
+      if (
+        obtainMethods.length === 0 &&
+        !effect &&
+        !(isPlayableClass && classAttacks?.length)
+      ) {
+        return undefined
+      }
+      const attackSets = isPlayableClass
+        ? parseArtifactAttackSets([blockWithLeadIn, ...followupHtmls].filter(
+            (part): part is string => Boolean(part)
+          ))
+        : undefined
+      const notes =
+        isPlayableClass && usesSupplementalSupport
+          ? extractTrailingClassOtherInfo(blockWithLeadIn)
+          : extractOtherInfo(isPlayableClass ? playableSupportBlock : block, {
+              useLast: isPlayableClass && !usesSupplementalSupport,
+            })
+      const scopedNotes =
+        isPlayableClass &&
+        !supplementalHtml &&
+        /^\s*(?:[•*-]\s*)?(?:Requirements|Mana Cost|Cooldown|Damage Type|Element):/im.test(
+          notes ?? ''
+        )
+          ? undefined
+          : notes
       return {
         name: title.title,
         description: parseDescription(lines),
@@ -845,13 +1861,26 @@ function parseDetailBlocks(html: string, sourceUrl: string, fallbackName: string
         effect,
         equipsClass: equipsClass.name,
         equipsClassUrl: equipsClass.url,
-        attacks: parseConsumableEffectAttack(blockWithLeadIn, title.title, effect),
+        defaultWeapon: defaultWeapon.name,
+        defaultWeaponUrl: defaultWeapon.url,
+        guestStats,
+        imageUrl: classImages.imageUrl,
+        alternativeImages: classImages.alternativeImages,
+        attacks: classAttacks ?? parseConsumableEffectAttack(blockWithLeadIn, title.title, effect),
+        attackSets,
+        mechanics,
         dialogue: extractDialogue(lines, title.title),
         level,
         rarity,
         itemType,
         consumableKind,
-        notes: extractOtherInfo(block),
+        notes: scopedNotes,
+        alsoSee: extractAlsoSeeRefs(blockWithLeadIn).map((ref) => ({
+          name: ref.name,
+          slug: entrySlugForClass(ref.name, classSubcategory),
+          type: 'class-ability',
+          url: ref.url,
+        })),
         obtainMethods,
       }
     })
@@ -884,7 +1913,14 @@ function mergeParsedDetails(details: ParsedDetail[]): ParsedDetail[] {
     existing.effectType ||= detail.effectType
     existing.equipsClass ||= detail.equipsClass
     existing.equipsClassUrl ||= detail.equipsClassUrl
+    existing.defaultWeapon ||= detail.defaultWeapon
+    existing.defaultWeaponUrl ||= detail.defaultWeaponUrl
+    existing.guestStats ||= detail.guestStats
+    existing.imageUrl ||= detail.imageUrl
+    existing.alternativeImages ||= detail.alternativeImages
     existing.attacks ||= detail.attacks
+    existing.attackSets ||= detail.attackSets
+    existing.mechanics ||= detail.mechanics
     existing.dialogue ||= detail.dialogue
     existing.level ||= detail.level
     existing.rarity ||= detail.rarity
@@ -910,6 +1946,12 @@ function applyConsumableEffectTypes(
 
 function entrySlug(name: string): string {
   return `class-ability-${slugify(normalizeName(name))}`
+}
+
+function entrySlugForClass(name: string, subcategory?: ClassSubcategory): string {
+  const baseSlug = entrySlug(name)
+  if (!subcategory || subcategory === 'armor') return baseSlug
+  return `${baseSlug}-${subcategory}`
 }
 
 function escapeRegex(value: string): string {
@@ -975,14 +2017,15 @@ function detailToItem(detail: ParsedDetail, listing: ListingEntry, html: string)
   const resolvedTags = classAbilityTagsWithInferredFlags(tags, listing)
   const priceTypes = obtainMethods.map((method) => method.priceType)
   return {
-    id: entrySlug(detail.name),
+    id: entrySlugForClass(detail.name, listing.classSubcategory),
     name: detail.name,
-    slug: entrySlug(detail.name),
+    slug: entrySlugForClass(detail.name, listing.classSubcategory),
     type: 'class-ability',
     subtype: listing.subtype,
     classSubcategory: listing.classSubcategory,
     consumableKind: detail.consumableKind ?? listing.consumableKind,
     description: detail.description,
+    releaseDate: detail.releaseDate ?? listing.releaseDate,
     forumUrl: detail.forumUrl,
     sourceUrl: detail.sourceUrl,
     location: detail.location,
@@ -994,13 +2037,20 @@ function detailToItem(detail: ParsedDetail, listing: ListingEntry, html: string)
     effectType: detail.effectType,
     equipsClass: detail.equipsClass,
     equipsClassUrl: detail.equipsClassUrl,
+    defaultWeapon: detail.defaultWeapon,
+    defaultWeaponUrl: detail.defaultWeaponUrl,
+    guestStats: detail.guestStats,
+    imageUrl: detail.imageUrl,
+    alternativeImages: detail.alternativeImages,
     attacks: detail.attacks,
+    attackSets: detail.attackSets,
+    mechanics: detail.mechanics,
     dialogue: detail.dialogue,
     obtainMethods,
     level: detail.level,
     rarity: detail.rarity,
     notes: detail.notes,
-    alsoSee: [],
+    alsoSee: detail.alsoSee ?? [],
     tags: resolvedTags,
     daRequired: obtainMethods.some((method) => method.daRequired),
     dcRequired: priceTypes.includes('dc') || resolvedTags.includes('dc'),
@@ -1013,25 +2063,50 @@ function detailToItem(detail: ParsedDetail, listing: ListingEntry, html: string)
     isRare: listing.isRare,
     isSeasonal: resolvedTags.includes('seasonal'),
     isSpecialOffer: listing.isSpecialOffer || resolvedTags.includes('specialoffer'),
+    isSpecialCharacter:
+      listing.isSpecialCharacter || resolvedTags.includes('special-character') || undefined,
     retired: listing.retired,
   }
 }
 
 function detailsToEntry(details: ParsedDetail[], listing: ListingEntry, html: string): ClassAbilityEntry {
   const tags = classTagsFromDetail(listing, html)
+  const normalizedDetails =
+    listing.subtype === 'class' && listing.classSubcategory !== 'armor' && details.length > 1
+      ? details.map((detail, index) => {
+          if (index === 0) return detail
+          const base = details[0]
+          return {
+            ...detail,
+            description: detail.description || base.description,
+            location: detail.location || base.location,
+            price: detail.price && detail.price !== 'N/A' ? detail.price : base.price,
+            sellback: detail.sellback || base.sellback,
+            requiredItems: detail.requiredItems || base.requiredItems,
+            requirements: detail.requirements || base.requirements,
+            obtainMethods: detail.obtainMethods.length > 0 ? detail.obtainMethods : base.obtainMethods,
+            defaultWeapon: detail.defaultWeapon || base.defaultWeapon,
+            defaultWeaponUrl: detail.defaultWeaponUrl || base.defaultWeaponUrl,
+            guestStats: detail.guestStats || base.guestStats,
+            level: detail.level || base.level,
+            rarity: detail.rarity || base.rarity,
+            itemType: detail.itemType || base.itemType,
+          }
+        })
+      : details
   const sourceRefs = dedupeSourceRefs(
-    details.map((detail) => ({
+    normalizedDetails.map((detail) => ({
       url: detail.sourceUrl,
       title: detail.name,
     }))
   )
-  if (details.length === 1) {
-    const item = detailToItem(details[0], listing, html)
+  if (normalizedDetails.length === 1) {
+    const item = detailToItem(normalizedDetails[0], listing, html)
     return {
       ...item,
       alsoSee: extractAlsoSeeRefs(html).map((ref) => ({
         name: ref.name,
-        slug: entrySlug(ref.name),
+        slug: entrySlugForClass(ref.name, listing.classSubcategory),
         type: 'class-ability',
         url: ref.url,
       })),
@@ -1039,7 +2114,7 @@ function detailsToEntry(details: ParsedDetail[], listing: ListingEntry, html: st
     }
   }
 
-  let variants: LevelVariant[] = details.map((detail, index) => {
+  let variants: LevelVariant[] = normalizedDetails.map((detail, index) => {
     const obtainMethods = applyAccessFlags(detail.obtainMethods, listing, html)
     return {
       levelNumber: index + 1,
@@ -1057,11 +2132,22 @@ function detailsToEntry(details: ParsedDetail[], listing: ListingEntry, html: st
       sourceUrl: detail.sourceUrl,
       description: detail.description,
       rarity: detail.rarity,
-      effect: detail.effect,
-      effectType: detail.effectType,
+      ...(listing.subtype === 'class' && listing.classSubcategory !== 'armor'
+        ? {}
+        : {
+            effect: detail.effect,
+            effectType: detail.effectType,
+          }),
       equipsClass: detail.equipsClass,
       equipsClassUrl: detail.equipsClassUrl,
+      defaultWeapon: detail.defaultWeapon,
+      defaultWeaponUrl: detail.defaultWeaponUrl,
+      guestStats: detail.guestStats,
+      imageUrl: detail.imageUrl,
+      alternativeImages: detail.alternativeImages,
       attacks: detail.attacks,
+      attackSets: detail.attackSets,
+      mechanics: detail.mechanics,
       dialogue: detail.dialogue,
       notes: detail.notes,
       classAbilitySubtype: listing.classSubcategory ?? detail.consumableKind ?? listing.consumableKind,
@@ -1069,8 +2155,15 @@ function detailsToEntry(details: ParsedDetail[], listing: ListingEntry, html: st
     }
   })
   const noteIndexes = variants.flatMap((variant, index) => (variant.notes ? [index] : []))
+  const supportSharedNotes =
+    listing.subtype === 'class' && listing.classSubcategory !== 'armor'
+      ? extractOtherInfo(html, { useLast: true })
+      : undefined
   let sharedNotes =
-    details.every((detail) => detail.notes === details[0]?.notes) ? details[0]?.notes : undefined
+    supportSharedNotes ??
+    (normalizedDetails.every((detail) => detail.notes === normalizedDetails[0]?.notes)
+      ? normalizedDetails[0]?.notes
+      : undefined)
   if (
     !sharedNotes &&
     noteIndexes.length === 1 &&
@@ -1089,22 +2182,56 @@ function detailsToEntry(details: ParsedDetail[], listing: ListingEntry, html: st
     ...new Set(effectTypeIndexes.map((index) => variants[index].effectType)),
   ]
   const attackIndexes = variants.flatMap((variant, index) => (variant.attacks?.length ? [index] : []))
+  const attackSetIndexes = variants.flatMap((variant, index) =>
+    variant.attackSets?.length ? [index] : []
+  )
+  const mechanicsIndexes = variants.flatMap((variant, index) =>
+    variant.mechanics?.length ? [index] : []
+  )
   const dialogueIndexes = variants.flatMap((variant, index) => (variant.dialogue ? [index] : []))
   const uniqueDialogues = [...new Set(dialogueIndexes.map((index) => variants[index].dialogue))]
   const equipsClassIndexes = variants.flatMap((variant, index) => (variant.equipsClass ? [index] : []))
   const uniqueEquipsClasses = [
     ...new Set(equipsClassIndexes.map((index) => variants[index].equipsClass)),
   ]
-  let sharedEffect = details.length === 1 ? details[0]?.effect : undefined
-  let sharedEffectType = details.length === 1 ? details[0]?.effectType : undefined
-  let sharedEquipsClass = details.length === 1 ? details[0]?.equipsClass : undefined
-  let sharedEquipsClassUrl = details.length === 1 ? details[0]?.equipsClassUrl : undefined
-  let sharedAttacks = details.length === 1 ? details[0]?.attacks : undefined
-  let sharedDialogue = details.length === 1 ? details[0]?.dialogue : undefined
+  const defaultWeaponIndexes = variants.flatMap((variant, index) =>
+    variant.defaultWeapon ? [index] : []
+  )
+  const uniqueDefaultWeapons = [
+    ...new Set(defaultWeaponIndexes.map((index) => variants[index].defaultWeapon)),
+  ]
+  const imageIndexes = variants.flatMap((variant, index) => (variant.imageUrl ? [index] : []))
+  const guestStatsIndexes = variants.flatMap((variant, index) =>
+    variant.guestStats ? [index] : []
+  )
+  let sharedEffect = normalizedDetails.length === 1 ? normalizedDetails[0]?.effect : undefined
+  let sharedEffectType =
+    normalizedDetails.length === 1 ? normalizedDetails[0]?.effectType : undefined
+  let sharedEquipsClass =
+    normalizedDetails.length === 1 ? normalizedDetails[0]?.equipsClass : undefined
+  let sharedEquipsClassUrl =
+    normalizedDetails.length === 1 ? normalizedDetails[0]?.equipsClassUrl : undefined
+  let sharedDefaultWeapon =
+    normalizedDetails.length === 1 ? normalizedDetails[0]?.defaultWeapon : undefined
+  let sharedDefaultWeaponUrl =
+    normalizedDetails.length === 1 ? normalizedDetails[0]?.defaultWeaponUrl : undefined
+  let sharedImageUrl = normalizedDetails.length === 1 ? normalizedDetails[0]?.imageUrl : undefined
+  let sharedAlternativeImages =
+    normalizedDetails.length === 1 ? normalizedDetails[0]?.alternativeImages : undefined
+  let sharedGuestStats =
+    normalizedDetails.length === 1 ? normalizedDetails[0]?.guestStats : undefined
+  let sharedAttacks = normalizedDetails.length === 1 ? normalizedDetails[0]?.attacks : undefined
+  let sharedAttackSets =
+    normalizedDetails.length === 1 ? normalizedDetails[0]?.attackSets : undefined
+  let sharedMechanics =
+    normalizedDetails.length === 1 ? normalizedDetails[0]?.mechanics : undefined
+  let sharedDialogue =
+    normalizedDetails.length === 1 ? normalizedDetails[0]?.dialogue : undefined
   if (
     !sharedEffect &&
     uniqueEffects.length === 1 &&
     effectIndexes.length > 0 &&
+    !(listing.subtype === 'class' && listing.classSubcategory !== 'armor') &&
     (effectIndexes.length === variants.length ||
       (sourceUrls.size <= 1 &&
         effectIndexes.length === 1 &&
@@ -1160,41 +2287,125 @@ function detailsToEntry(details: ParsedDetail[], listing: ListingEntry, html: st
     variants = variants.map((variant, index) =>
       equipsClassIndexes.includes(index)
         ? { ...variant, equipsClass: undefined, equipsClassUrl: undefined }
+      : variant
+    )
+  }
+  if (
+    !sharedDefaultWeapon &&
+    uniqueDefaultWeapons.length === 1 &&
+    defaultWeaponIndexes.length > 0 &&
+    defaultWeaponIndexes.length === variants.length
+  ) {
+    sharedDefaultWeapon = uniqueDefaultWeapons[0]
+    const urlIndex =
+      defaultWeaponIndexes.find((index) => variants[index].defaultWeaponUrl) ??
+      defaultWeaponIndexes[0]
+    sharedDefaultWeaponUrl =
+      urlIndex === undefined ? undefined : variants[urlIndex].defaultWeaponUrl
+    variants = variants.map((variant, index) =>
+      defaultWeaponIndexes.includes(index)
+        ? { ...variant, defaultWeapon: undefined, defaultWeaponUrl: undefined }
         : variant
+    )
+  }
+  if (
+    !sharedImageUrl &&
+    imageIndexes.length > 0 &&
+    imageIndexes.length === variants.length &&
+    allSameValues(imageIndexes.map((index) => variants[index].imageUrl))
+  ) {
+    sharedImageUrl = variants[imageIndexes[0]].imageUrl
+    if (
+      allSameValues(imageIndexes.map((index) => variants[index].alternativeImages ?? []))
+    ) {
+      sharedAlternativeImages = variants[imageIndexes[0]].alternativeImages
+    }
+    variants = variants.map((variant, index) =>
+      imageIndexes.includes(index)
+        ? { ...variant, imageUrl: undefined, alternativeImages: undefined }
+        : variant
+    )
+  }
+  if (
+    !sharedGuestStats &&
+    guestStatsIndexes.length > 0 &&
+    guestStatsIndexes.length === variants.length &&
+    allSameValues(guestStatsIndexes.map((index) => variants[index].guestStats))
+  ) {
+    sharedGuestStats = variants[guestStatsIndexes[0]].guestStats
+    variants = variants.map((variant, index) =>
+      guestStatsIndexes.includes(index) ? { ...variant, guestStats: undefined } : variant
+    )
+  }
+  if (
+    !sharedAttackSets &&
+    attackSetIndexes.length > 0 &&
+    attackSetIndexes.length === variants.length &&
+    allSameValues(attackSetIndexes.map((index) => variants[index].attackSets))
+  ) {
+    sharedAttackSets = variants[attackSetIndexes[0]].attackSets
+    variants = variants.map((variant, index) =>
+      attackSetIndexes.includes(index) ? { ...variant, attackSets: undefined } : variant
+    )
+  }
+  if (
+    !sharedMechanics &&
+    mechanicsIndexes.length > 0 &&
+    mechanicsIndexes.length === variants.length &&
+    allSameValues(mechanicsIndexes.map((index) => variants[index].mechanics))
+  ) {
+    sharedMechanics = variants[mechanicsIndexes[0]].mechanics
+    variants = variants.map((variant, index) =>
+      mechanicsIndexes.includes(index) ? { ...variant, mechanics: undefined } : variant
     )
   }
   const allMethods = variants.flatMap((variant) => variant.obtainVariants)
   const resolvedTags = classAbilityTagsWithInferredFlags(tags, listing)
   return {
-    id: entrySlug(listing.name),
+    id: entrySlugForClass(listing.name, listing.classSubcategory),
     familyName: normalizeName(listing.name),
-    slug: entrySlug(listing.name),
+    slug: entrySlugForClass(listing.name, listing.classSubcategory),
     aliasSlugs: details
-      .map((detail) => entrySlug(detail.name))
-      .filter((slug) => slug !== entrySlug(listing.name)),
+      .map((detail) => entrySlugForClass(detail.name, listing.classSubcategory))
+      .filter((slug) => slug !== entrySlugForClass(listing.name, listing.classSubcategory)),
     type: 'class-ability',
     subtype: listing.subtype,
     classSubcategory: listing.classSubcategory,
-    consumableKind: details[0]?.consumableKind ?? listing.consumableKind,
+    consumableKind: normalizedDetails[0]?.consumableKind ?? listing.consumableKind,
     forumUrl: directUrl(listing.forumUrl),
+    releaseDate: listing.releaseDate,
     familyOrigin: 'single-thread',
     familySources: sourceRefs,
     shared: {
-      description: details[0]?.description ?? '',
-      rarity: details[0]?.rarity,
+      description: normalizedDetails[0]?.description ?? '',
+      rarity: normalizedDetails[0]?.rarity,
+      ...(sharedImageUrl ? { imageUrl: sharedImageUrl } : {}),
+      ...(sharedAlternativeImages ? { alternativeImages: sharedAlternativeImages } : {}),
       effect: sharedEffect,
       effectType: sharedEffectType,
       equipsClass: sharedEquipsClass,
       equipsClassUrl: sharedEquipsClassUrl,
+      defaultWeapon: sharedDefaultWeapon,
+      defaultWeaponUrl: sharedDefaultWeaponUrl,
+      guestStats: sharedGuestStats,
       ...(sharedAttacks?.length ? { attacks: sharedAttacks } : {}),
+      ...(sharedAttackSets?.length ? { attackSets: sharedAttackSets } : {}),
+      ...(sharedMechanics?.length ? { mechanics: sharedMechanics } : {}),
       dialogue: sharedDialogue,
       notes: sharedNotes,
-      alsoSee: extractAlsoSeeRefs(html).map((ref) => ({
-        name: ref.name,
-        slug: entrySlug(ref.name),
-        type: 'class-ability',
-        url: ref.url,
-      })),
+      alsoSee: Array.from(
+        new Map(
+          [
+            ...normalizedDetails.flatMap((detail) => detail.alsoSee ?? []),
+            ...extractAlsoSeeRefs(html).map((ref) => ({
+              name: ref.name,
+              slug: entrySlugForClass(ref.name, listing.classSubcategory),
+              type: 'class-ability' as const,
+              url: ref.url,
+            })),
+          ].map((ref) => [ref.slug, ref])
+        ).values()
+      ),
     },
     levelVariants: variants,
     tags: resolvedTags,
@@ -1214,18 +2425,28 @@ function detailsToEntry(details: ParsedDetail[], listing: ListingEntry, html: st
     isRare: listing.isRare,
     isSeasonal: resolvedTags.includes('seasonal'),
     isSpecialOffer: listing.isSpecialOffer || resolvedTags.includes('specialoffer'),
+    isSpecialCharacter:
+      listing.isSpecialCharacter || resolvedTags.includes('special-character') || undefined,
     retired: listing.retired || hasRetiredTag(html),
   }
 }
 
-function dataFileForSubtype(subtype: ClassAbilitySubtype): string {
-  return subtype === 'class' ? 'classes.json' : 'class-consumables.json'
+function dataFileForOptions(options: Pick<ScrapeOptions, 'subtype' | 'classSubcategory'>): string {
+  if (options.subtype === 'consumable') return 'class-consumables.json'
+  switch (options.classSubcategory ?? 'regular') {
+    case 'armor':
+      return 'class-armors.json'
+    case 'miscellaneous':
+      return 'class-miscellaneous.json'
+    case 'regular':
+      return 'class-regular.json'
+  }
 }
 
-async function readExisting(subtype: ClassAbilitySubtype): Promise<ClassAbilityEntry[]> {
+async function readExisting(options: Pick<ScrapeOptions, 'subtype' | 'classSubcategory'>): Promise<ClassAbilityEntry[]> {
   try {
     return JSON.parse(
-      await readFile(resolve(DATA_DIR, dataFileForSubtype(subtype)), 'utf8')
+      await readFile(resolve(DATA_DIR, dataFileForOptions(options)), 'utf8')
     ) as ClassAbilityEntry[]
   } catch {
     return []
@@ -1710,18 +2931,83 @@ function normalizeKnownClassAbilityTextArtifacts(entries: ClassAbilityEntry[]): 
   })
 }
 
-function normalizeClassAbilityEntries(entries: ClassAbilityEntry[]): ClassAbilityEntry[] {
-  const normalized = normalizeGnomishPersonalSteamtankFamily(
-    normalizeChickenCowArmorFamilies(
-      mergeReforgedTimeArmorFamilies(mergeShadowArmorFamilies(mergeDoomKnightArmorFamily(entries)))
+function isForumBoilerplateClassEntry(entry: ClassAbilityEntry): boolean {
+  const name = entryDisplayName(entry)
+  const description = 'levelVariants' in entry ? entry.shared.description : entry.description
+  const text = `${name}\n${description}`
+  return (
+    /^(?:Logged in as:\s*Guest|Printable Version|Forum Login)$/i.test(name.trim()) ||
+    /(?:Logged in as:\s*Guest|Printable Version|All Forums\s*>>|Forum Login|Javascript is currently disabled|google_ad_client|keepalive\()/i.test(
+      text
     )
-  )
-  return removeAliasPrimaryDuplicates(
-    dedupeEntriesBySlug(normalizeKnownClassAbilityTextArtifacts(normalized))
   )
 }
 
-function mergeEntries(existing: ClassAbilityEntry[], incoming: ClassAbilityEntry[], fresh: boolean) {
+function resolveClassAbilityAlsoSeeSlugs(entries: ClassAbilityEntry[]): ClassAbilityEntry[] {
+  const byUrl = new Map<string, ClassAbilityEntry>()
+  for (const entry of entries) {
+    const urls = new Set<string>([
+      entry.forumUrl,
+      ...('sourceUrl' in entry ? [entry.sourceUrl] : []),
+      ...('familySources' in entry ? (entry.familySources ?? []).map((source) => source.url) : []),
+      ...('levelVariants' in entry
+        ? entry.levelVariants
+            .map((variant) => variant.sourceUrl)
+            .filter((url): url is string => Boolean(url))
+        : []),
+    ])
+    for (const url of urls) byUrl.set(directUrl(url), entry)
+  }
+
+  const resolveRef = (ref: AlsoSeeRef): AlsoSeeRef => {
+    const target = ref.url ? byUrl.get(directUrl(ref.url)) : undefined
+    if (!target) return ref
+    return {
+      ...ref,
+      name: entryDisplayName(target),
+      slug: target.slug,
+      type: 'class-ability',
+    }
+  }
+
+  return entries.map((entry) => {
+    if ('levelVariants' in entry) {
+      return {
+        ...entry,
+        shared: {
+          ...entry.shared,
+          alsoSee: entry.shared.alsoSee?.map(resolveRef),
+        },
+      }
+    }
+    return {
+      ...entry,
+      alsoSee: entry.alsoSee?.map(resolveRef),
+    }
+  })
+}
+
+function normalizeClassAbilityEntries(entries: ClassAbilityEntry[]): ClassAbilityEntry[] {
+  const contentEntries = entries.filter((entry) => !isForumBoilerplateClassEntry(entry))
+  const normalized = normalizeGnomishPersonalSteamtankFamily(
+    normalizeChickenCowArmorFamilies(
+      mergeReforgedTimeArmorFamilies(
+        mergeShadowArmorFamilies(mergeDoomKnightArmorFamily(contentEntries))
+      )
+    )
+  )
+  return removeAliasPrimaryDuplicates(
+    resolveClassAbilityAlsoSeeSlugs(
+      dedupeEntriesBySlug(normalizeKnownClassAbilityTextArtifacts(normalized))
+    )
+  )
+}
+
+function mergeEntries(
+  existing: ClassAbilityEntry[],
+  incoming: ClassAbilityEntry[],
+  fresh: boolean
+) {
   if (fresh) return normalizeClassAbilityEntries(dedupeEntriesBySlug(incoming))
   const bySlug = new Map(existing.map((entry) => [entry.slug, entry]))
   for (const entry of incoming) bySlug.set(entry.slug, entry)
@@ -1766,21 +3052,30 @@ function removeAliasPrimaryDuplicates(entries: ClassAbilityEntry[]): ClassAbilit
 
 async function main() {
   const options = parseArgs()
-  if (options.subtype === 'class' && options.classSubcategory !== 'armor') {
-    throw new Error('Only --class-subcategory=armor is implemented for the Classes subtype.')
-  }
 
   const cookie = loadForumCookie('classes/abilities scraper')
   const effectTypesByItem =
     options.subtype === 'consumable'
       ? await fetchConsumableEffectTypes(cookie)
       : new Map<string, string>()
+  const classReleaseDates =
+    options.subtype === 'class' ? await fetchClassReleaseDates(cookie) : new Map<string, string>()
   const listingHtml = await fetchForumPage(
-    options.subtype === 'class' ? ARMORS_URL : CONSUMABLES_URL,
+    options.subtype === 'class' ? CLASSES_AZ_URL : CONSUMABLES_URL,
     cookie
   )
   let listings =
-    options.subtype === 'class' ? parseArmorListing(listingHtml) : parseConsumableListing(listingHtml)
+    options.subtype === 'class'
+      ? options.classSubcategory === 'armor'
+        ? parseArmorListing(listingHtml)
+        : parseClassListing(listingHtml, options.classSubcategory ?? 'regular')
+      : parseConsumableListing(listingHtml)
+  if (options.subtype === 'class' && classReleaseDates.size > 0) {
+    listings = listings.map((listing) => {
+      const releaseDate = classReleaseDates.get(normalizeClassLookupName(listing.name))
+      return releaseDate ? { ...listing, releaseDate } : listing
+    })
+  }
   if (options.subtype === 'consumable') {
     const seenListingNames = new Set(listings.map((entry) => normalizeName(entry.name).toLowerCase()))
     for (const supplemental of SUPPLEMENTAL_CONSUMABLES) {
@@ -1803,22 +3098,49 @@ async function main() {
   }
   if (options.urls && options.urls.length > 0 && listings.length === 0) {
     for (const url of options.urls) {
-      const html = await fetchForumPage(url, cookie)
-      const details = mergeParsedDetails(parseDetailBlocks(html, url, 'Targeted Class Armor')).filter(
-        (detail) => /^Armor$/i.test(detail.itemType ?? '')
+      const isPlayableTarget =
+        options.subtype === 'class' &&
+        options.classSubcategory !== undefined &&
+        options.classSubcategory !== 'armor'
+      const postParts = isPlayableTarget
+        ? await fetchDetailPostParts(url, cookie)
+        : { primary: await fetchDetailPostContent(url, cookie), followups: [] }
+      const html = postParts.primary
+      const supportHtml = isPlayableTarget
+        ? selectPlayableSupportHtml(postParts, 'Targeted Class')
+        : postParts.supplemental
+      const detailInputs = isPlayableTarget
+        ? playableDetailPostInputs(html, directUrl(url), 'Targeted Class', postParts)
+        : [{ html, sourceUrl: url, fallbackName: 'Targeted Class' }]
+      const details = mergeParsedDetails(
+        detailInputs.flatMap((input) =>
+          parseDetailBlocks(
+            input.html,
+            input.sourceUrl,
+            input.fallbackName,
+            options.classSubcategory ?? 'armor',
+            supportHtml,
+            postParts.followups.map((post) => post.html)
+          )
+        )
+      ).filter((detail) =>
+        options.classSubcategory === 'armor' ? /^Armor$/i.test(detail.itemType ?? '') : true
       )
       const name = extractForumPageTitle(html) ?? details[0]?.name
       if (!name) continue
       const tags = classTagsFromListing(name, html, 'class')
+      const releaseDate = classReleaseDates.get(normalizeClassLookupName(name))
       listings.push({
         name,
         forumUrl: url,
         tags,
         subtype: 'class',
-        classSubcategory: 'armor',
+        classSubcategory: options.classSubcategory ?? 'armor',
+        ...(releaseDate ? { releaseDate } : {}),
         isRare: isListingRare(stripTags(html), tags),
         isSeasonal: hasSeasonalForumTag(html),
         isSpecialOffer: hasSpecialOfferTag(html) || /\bS-Offer\b/i.test(stripTags(html)),
+        isSpecialCharacter: tags.includes('special-character'),
         retired: hasRetiredTag(html),
       })
     }
@@ -1828,13 +3150,34 @@ async function main() {
   const scraped: ClassAbilityEntry[] = []
   for (const [index, listing] of listings.entries()) {
     console.log(`[${index + 1}/${listings.length}] ${listing.name}`)
-    const html = await fetchForumPage(listing.forumUrl, cookie)
+    const isPlayableClass =
+      listing.subtype === 'class' &&
+      (listing.classSubcategory === 'regular' || listing.classSubcategory === 'miscellaneous')
+    const postParts = isPlayableClass
+      ? await fetchDetailPostParts(listing.forumUrl, cookie)
+      : { primary: await fetchDetailPostContent(listing.forumUrl, cookie), followups: [] }
+    const html = postParts.primary
+    const supportHtml = isPlayableClass
+      ? selectPlayableSupportHtml(postParts, listing.name)
+      : postParts.supplemental
+    const detailInputs = isPlayableClass
+      ? playableDetailPostInputs(html, directUrl(listing.forumUrl), listing.name, postParts)
+      : [{ html, sourceUrl: directUrl(listing.forumUrl), fallbackName: listing.name }]
     const scopedListing =
       options.urls && options.urls.length > 0
         ? { ...listing, name: extractForumPageTitle(html) ?? listing.name }
         : listing
     const parsedDetails = mergeParsedDetails(
-      parseDetailBlocks(html, directUrl(listing.forumUrl), listing.name)
+      detailInputs.flatMap((input) =>
+        parseDetailBlocks(
+          input.html,
+          input.sourceUrl,
+          input.fallbackName,
+          listing.classSubcategory,
+          supportHtml,
+          postParts.followups.map((post) => post.html)
+        )
+      )
     )
     const scopedDetails =
       listing.subtype === 'class' && listing.classSubcategory === 'armor'
@@ -1852,11 +3195,11 @@ async function main() {
       }
       continue
     }
-    scraped.push(detailsToEntry(details, scopedListing, html))
+    scraped.push(detailsToEntry(details, scopedListing, supportHtml ?? postParts.supplemental ?? html))
     await sleep(250)
   }
 
-  const existing = await readExisting(options.subtype)
+  const existing = await readExisting(options)
   const output = mergeEntries(existing, scraped, options.fresh)
   output.sort((a, b) =>
     normalizeName('familyName' in a ? a.familyName : a.name).localeCompare(
@@ -1869,10 +3212,13 @@ async function main() {
   }
 
   await writeFile(
-    resolve(DATA_DIR, dataFileForSubtype(options.subtype)),
+    resolve(DATA_DIR, dataFileForOptions(options)),
     `${JSON.stringify(output, null, 2)}\n`
   )
   writeClassAbilitiesManifest(DATA_DIR)
+  writeClassArtifactRelations(DATA_DIR)
+  writeClassArmorRelations(DATA_DIR)
+  writeClassDefaultWeaponRelations(DATA_DIR)
   console.log(`Wrote ${output.length} ${options.subtype} entries`)
 }
 

@@ -8198,7 +8198,7 @@
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=22366821",
         "title": "DF Encyclopedia: Longsword (DragonRider Default)",
-        "variantLabel": "Longsword (DragonRider Default) DragonRider Default",
+        "variantLabel": "Longsword (DragonRider Default)",
         "isPrimary": true
       }
     ],
@@ -11563,14 +11563,14 @@
   },
   {
     "id": "weapon-the-massive-axe-i-iv",
-    "familyName": "The Massive Axe",
+    "familyName": "The Massive Axe (I-IV)",
     "slug": "weapon-the-massive-axe-i-iv",
     "aliasSlugs": [
       "weapon-the-massive-axe-i",
       "weapon-the-massive-axe-ii",
       "weapon-the-massive-axe-iii",
       "weapon-the-massive-axe-iv",
-      "weapon-the-massive-axe-all-versions",
+      "weapon-the-massive-axe-i-iv-all-versions",
       "weapon-i-the-massive-axe",
       "weapon-ii-the-massive-axe",
       "weapon-iii-the-massive-axe",
@@ -11608,9 +11608,8 @@
     ],
     "itemType": "Scythe",
     "shared": {
-      "description": "It goes to 11. Metal.",
+      "description": "",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/TheMassiveAxe.png",
-      "notes": "Weapon is automatically upgraded to the highest level a player can use; once a new level threshold has been reached, players must relog to obtain the new version.\nThe Massive Axe IV and XL were DC-tagged on December 30th, 2020.",
       "alsoSee": [
         {
           "name": "The Massive Axe XL",
@@ -11833,7 +11832,7 @@
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=21917769",
         "title": "DF Encyclopedia: Melee (DragonRider Default)",
-        "variantLabel": "Melee (DragonRider Default) DragonRider Default",
+        "variantLabel": "Melee (DragonRider Default)",
         "isPrimary": true
       }
     ],
@@ -13971,7 +13970,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "Weapon's stats were updated on June 12th, 2026; weapon previously had the initial stats:\nDamage: 97-105\n • Stats: Block +6, Dodge +6, Parry +6, Crit +13, Magic Def +6, Pierce Def +6, Melee Def +6, WIS -13, END -13, CHA -13, LUK -13, INT +30, DEX +30, STR +30, Bonus +13\n • Resists: All +10, Health +13",
+    "notes": "Weapon's stats were updated on  June 12th, 2026; weapon previously had the initial stats:\n  Damage: 97-105\n  • Stats: Block +6, Dodge +6, Parry +6, Crit +13, Magic Def +6, Pierce Def +6, Melee Def +6, WIS -13, END -13, CHA -13, LUK -13, INT +30, DEX +30, STR +30, Bonus +13\n  • Resists: All +10, Health +13",
     "tags": [
       "dar",
       "merge"
@@ -16340,6 +16339,9 @@
     "familyName": "Orchidea",
     "slug": "weapon-orchidea",
     "aliasSlugs": [
+      "weapon-aware-orchidea",
+      "weapon-crafty-orchidea",
+      "weapon-detailed-orchidea",
       "weapon-orchidea-all-versions",
       "weapon-learned-orchidea",
       "weapon-proficient-orchidea"
@@ -16350,9 +16352,27 @@
     "familyOrigin": "cross-post",
     "familySources": [
       {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20685930",
+        "title": "DF Encyclopedia: Crafty Orchidea",
+        "variantLabel": "Crafty Orchidea",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20685937",
+        "title": "DF Encyclopedia: Detailed Orchidea",
+        "variantLabel": "Detailed Orchidea",
+        "isPrimary": false
+      },
+      {
         "url": "https://forums2.battleon.com/f/tm.asp?m=20685940",
         "title": "DF Encyclopedia: Learned Orchidea",
         "variantLabel": "Learned Orchidea",
+        "isPrimary": true
+      },
+      {
+        "url": "https://forums2.battleon.com/f/tm.asp?m=20685950",
+        "title": "DF Encyclopedia: Aware Orchidea",
+        "variantLabel": "Aware Orchidea",
         "isPrimary": true
       },
       {
@@ -16369,24 +16389,6 @@
       "element": "GOO",
       "alsoSee": [
         {
-          "name": "Aware Orchidea",
-          "slug": "weapon-aware-orchidea",
-          "type": "weapon",
-          "url": "https://forums2.battleon.com/f/tm.asp?m=20685950"
-        },
-        {
-          "name": "Crafty Orchidea",
-          "slug": "weapon-crafty-orchidea",
-          "type": "weapon",
-          "url": "https://forums2.battleon.com/f/tm.asp?m=20685930"
-        },
-        {
-          "name": "Detailed Orchidea",
-          "slug": "weapon-detailed-orchidea",
-          "type": "weapon",
-          "url": "https://forums2.battleon.com/f/tm.asp?m=20685937"
-        },
-        {
           "name": "Half Orchidea",
           "slug": "weapon-half-orchidea",
           "type": "weapon",
@@ -16395,6 +16397,58 @@
       ]
     },
     "levelVariants": [
+      {
+        "levelNumber": 10,
+        "levelDisplay": "10",
+        "actualLevel": 10,
+        "variantName": "Crafty",
+        "name": "Crafty Orchidea",
+        "damage": "27-39",
+        "stats": "Parry +1, Crit +1, Magic Def +1, Pierce Def +1, Melee Def +1, WIS +1, END +1, CHA +2, LUK +1, INT +2, DEX +2, STR +2, Bonus +1",
+        "obtainVariants": [
+          {
+            "location": "Back to School Shop",
+            "price": "150 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "135 DC (<24 hours) / 38 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20685930",
+        "description": "This gorgeous scythe was woven by the SoulWeaver, Tomix, in celebration of knowledge and learning.",
+        "imageUrl": "https://i.imgur.com/z4dxAbw.png",
+        "element": "GOO",
+        "resists": "All +2, Health -3",
+        "rarity": "8",
+        "itemType": "Scythe"
+      },
+      {
+        "levelNumber": 30,
+        "levelDisplay": "30",
+        "actualLevel": 30,
+        "variantName": "Detailed",
+        "name": "Detailed Orchidea",
+        "damage": "48-64",
+        "stats": "Parry +1, Crit +4, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +4, END +4, CHA +3, LUK +2, INT +4, DEX +4, STR +4, Bonus +3",
+        "obtainVariants": [
+          {
+            "location": "Back to School Shop",
+            "price": "225 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "203 DC (<24 hours) / 57 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20685937",
+        "description": "This gorgeous scythe was woven by the SoulWeaver, Tomix, in celebration of knowledge and learning.",
+        "imageUrl": "https://i.imgur.com/z4dxAbw.png",
+        "element": "GOO",
+        "resists": "All +3, Health -5",
+        "rarity": "8",
+        "itemType": "Scythe"
+      },
       {
         "levelNumber": 50,
         "levelDisplay": "50",
@@ -16419,6 +16473,32 @@
         "element": "GOO",
         "resists": "All +4, Health -7",
         "rarity": "10",
+        "itemType": "Scythe"
+      },
+      {
+        "levelNumber": 70,
+        "levelDisplay": "70",
+        "actualLevel": 70,
+        "variantName": "Aware",
+        "name": "Aware Orchidea",
+        "damage": "78-94",
+        "stats": "Block +1, Dodge +1, Parry +2, Crit +9, Magic Def +7, Pierce Def +7, Melee Def +7, WIS +8, END +6, CHA +6, LUK +5, INT +10, DEX +10, STR +10, Bonus +7",
+        "obtainVariants": [
+          {
+            "location": "Back to School Shop",
+            "price": "375 Dragon Coins",
+            "priceType": "dc",
+            "sellback": "338 DC (<24 hours) / 94 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20685950",
+        "description": "This gorgeous scythe was woven by the SoulWeaver, Tomix, in celebration of knowledge and learning.",
+        "imageUrl": "https://i.imgur.com/z4dxAbw.png",
+        "element": "GOO",
+        "resists": "All +5, Health -8",
+        "rarity": "15",
         "itemType": "Scythe"
       },
       {
@@ -16463,7 +16543,7 @@
       "GOO"
     ],
     "isRare": true,
-    "levelRange": "50-80"
+    "levelRange": "10-80"
   },
   {
     "id": "weapon-ornate-guardian-blade",
@@ -26777,7 +26857,7 @@
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=21910692",
         "title": "DF Encyclopedia: Razor Sharp Claws (Kid Dragon Default)",
-        "variantLabel": "Razor Sharp Claws (Kid Dragon Default) Kid Dragon Default",
+        "variantLabel": "Razor Sharp Claws (Kid Dragon Default)",
         "isPrimary": true
       }
     ],
@@ -29446,7 +29526,7 @@
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=22380234",
         "title": "DF Encyclopedia: Rose Pillow (Sam Default)",
-        "variantLabel": "Rose Pillow (Sam Default) Sam Default",
+        "variantLabel": "Rose Pillow (Sam Default)",
         "isPrimary": true
       }
     ],
@@ -41630,14 +41710,14 @@
   },
   {
     "id": "weapon-shadowwalker-s-chakram-i-iv",
-    "familyName": "ShadowWalker's Chakram",
+    "familyName": "ShadowWalker's Chakram (I-IV)",
     "slug": "weapon-shadowwalker-s-chakram-i-iv",
     "aliasSlugs": [
       "weapon-shadowwalker-s-chakram-i",
       "weapon-shadowwalker-s-chakram-ii",
       "weapon-shadowwalker-s-chakram-iii",
       "weapon-shadowwalker-s-chakram-iv",
-      "weapon-shadowwalker-s-chakram-all-versions",
+      "weapon-shadowwalker-s-chakram-i-iv-all-versions",
       "weapon-i-shadowwalker-s-chakram",
       "weapon-ii-shadowwalker-s-chakram",
       "weapon-iii-shadowwalker-s-chakram",
@@ -41675,11 +41755,10 @@
     ],
     "itemType": "Scythe",
     "shared": {
-      "description": "The weapon preferred by defensive ShadowWalkers, this weapon is only crafted- and reforged- over long periods of time in the depths of pure shadow. (Cosmetic)",
+      "description": "The weapon preferred by defensive ShadowWalkers, this weapon is only crafted over long periods of time in the depths of pure shadow.",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/ReforgedShadowWalker'sChakram.png",
       "element": "???",
       "rarity": "0",
-      "notes": "Weapon is animated; its hands and gear rotate continuously.",
       "alsoSee": [
         {
           "name": "Time (ShadowWalker of Time Default)",
@@ -41811,7 +41890,6 @@
     "elements": [
       "???"
     ],
-    "isCosmetic": true,
     "levelRange": "I-IV"
   },
   {
@@ -42039,7 +42117,7 @@
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=21910690",
         "title": "DF Encyclopedia: Sharp Claws (Toddler Dragon Default)",
-        "variantLabel": "Sharp Claws (Toddler Dragon Default) Toddler Dragon Default",
+        "variantLabel": "Sharp Claws (Toddler Dragon Default)",
         "isPrimary": true
       }
     ],
@@ -49937,7 +50015,7 @@
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=18261318",
         "title": "DF Encyclopedia: Stick (Young Vilmor Default)",
-        "variantLabel": "Stick (Young Vilmor Default) Young Vilmor Default",
+        "variantLabel": "Stick (Young Vilmor Default)",
         "isPrimary": true
       }
     ],
@@ -50014,7 +50092,7 @@
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=21970869",
         "title": "DF Encyclopedia: Stick of Honesty (Kid Default)",
-        "variantLabel": "Stick of Honesty (Kid Default) Kid Default",
+        "variantLabel": "Stick of Honesty (Kid Default)",
         "isPrimary": true
       }
     ],
@@ -55087,7 +55165,7 @@
   },
   {
     "id": "weapon-the-threadcutter-i-ix",
-    "familyName": "The Threadcutter",
+    "familyName": "The Threadcutter (I-IX)",
     "slug": "weapon-the-threadcutter-i-ix",
     "aliasSlugs": [
       "weapon-the-threadcutter-i",
@@ -55099,7 +55177,7 @@
       "weapon-the-threadcutter-vii",
       "weapon-the-threadcutter-viii",
       "weapon-the-threadcutter-ix",
-      "weapon-the-threadcutter-all-versions",
+      "weapon-the-threadcutter-i-ix-all-versions",
       "weapon-i-the-threadcutter",
       "weapon-ii-the-threadcutter",
       "weapon-iii-the-threadcutter",
@@ -55172,9 +55250,8 @@
     ],
     "itemType": "Scythe",
     "shared": {
-      "description": "Secundus says this weapon is for your hands alone. Use it to carve out your place in Lore's history. This weapon has color custom features. Can be upgraded at Secundus, but will lose all resale value. Also available from the Chaosweaver DC package.",
+      "description": "Secundus says this weapon is for your hands alone. Use it to carve out your place in Lore's history. This weapon has color custom features. Can be upgraded at Secundus.",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/Threadcutter.png",
-      "notes": "Weapons cannot be destroyed.\nWeapons are color-custom to the player's trim color.",
       "alsoSee": [
         {
           "name": "The Threadcutter Alpha",
@@ -56340,7 +56417,7 @@
   },
   {
     "id": "weapon-time-s-harvest-i-ix",
-    "familyName": "Time's Harvest",
+    "familyName": "Time's Harvest (I-IX)",
     "slug": "weapon-time-s-harvest-i-ix",
     "aliasSlugs": [
       "weapon-time-s-harvest-i",
@@ -56352,7 +56429,7 @@
       "weapon-time-s-harvest-vii",
       "weapon-time-s-harvest-viii",
       "weapon-time-s-harvest-ix",
-      "weapon-time-s-harvest-all-versions",
+      "weapon-time-s-harvest-i-ix-all-versions",
       "weapon-i-time-s-harvest",
       "weapon-ii-time-s-harvest",
       "weapon-iii-time-s-harvest",
@@ -56427,7 +56504,6 @@
     "shared": {
       "description": "This scythe is much, much lighter than it seems. Take care when swinging it. Who knows what such an eldritch item is capable of beyond the normal? Can be upgraded at Cysero.",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/TimesHarvest.png",
-      "notes": "Weapons cannot be destroyed.\nWeapons are animated; the hourglass teeters, and the blade periodically crackles with energy.",
       "alsoSee": [
         {
           "name": "Time's Harvest Alpha",
@@ -58112,7 +58188,7 @@
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=21772875",
         "title": "DF Encyclopedia: TRANSCENDENCE (Vaal Default)",
-        "variantLabel": "TRANSCENDENCE (Vaal Default) Vaal Default",
+        "variantLabel": "TRANSCENDENCE (Vaal Default)",
         "isPrimary": true
       }
     ],
@@ -58508,12 +58584,12 @@
   },
   {
     "id": "weapon-tsukuyomi-i-ii",
-    "familyName": "Tsukuyomi",
+    "familyName": "Tsukuyomi (I-II)",
     "slug": "weapon-tsukuyomi-i-ii",
     "aliasSlugs": [
       "weapon-tsukuyomi-i",
       "weapon-tsukuyomi-ii",
-      "weapon-tsukuyomi-all-versions",
+      "weapon-tsukuyomi-i-ii-all-versions",
       "weapon-i-tsukuyomi",
       "weapon-ii-tsukuyomi"
     ],
@@ -58549,7 +58625,6 @@
           "caption": "Element: Energy / Darkness"
         }
       ],
-      "notes": "Weapons are animated; wisps of energy or darkness (dependant on selected weapon element) spark along the blade of the scythe continuously.\nClick anywhere on the weapon to change between its available elements; this will also change its appearance.",
       "alsoSee": [
         {
           "name": "Tsukuyomi-no-Mikoto",

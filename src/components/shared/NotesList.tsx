@@ -26,7 +26,8 @@ interface NoteItem {
 
 function getIndentLevel(line: string): number {
   const spaces = line.match(/^\s*/)?.[0].length ?? 0
-  return Math.floor(spaces / 2)
+  if (spaces === 0) return 0
+  return Math.max(1, Math.ceil(spaces / 2))
 }
 
 function cleanListMarker(text: string): string {
@@ -103,10 +104,15 @@ function parseNotes(raw: string): NoteItem[] {
 
       if (activeQuoteItem) {
         const startsTopLevelListItem = level === 0 && /^(?:[•\-*]\s*)+/.test(trimmed)
+        const quoteLikeTopLevelListItem =
+          startsTopLevelListItem &&
+          /\b(?:pop[- ]?up|headline|message)s?\b/i.test(activeQuoteItem.text) &&
+          !isLikelyNewTopLevelNoteAfterQuote(cleanListMarker(trimmed))
         const continuesQuote =
-          !startsTopLevelListItem &&
+          (!startsTopLevelListItem || quoteLikeTopLevelListItem) &&
           (activeQuoteItem.quoteItems.length === 0 ||
             level > 0 ||
+            quoteLikeTopLevelListItem ||
             isLikelyQuoteContinuation(trimmed, activeQuoteItem.text))
         if (continuesQuote) {
           activeQuoteItem.quoteItems.push(cleanListMarker(trimmed))

@@ -1,4 +1,4 @@
-import type { FamilySourceRef } from './item'
+import type { FamilySourceRef, MechanicsBlock } from './item'
 
 export type EntryType = 'pet' | 'guest'
 
@@ -100,6 +100,14 @@ export interface GuestAttack {
   appearanceUrls?: string[] // Multiple appearance/animation images when a skill links variants
   appearanceCaptions?: string[] // Captions from the forum's hotlinked appearance labels
   notes?: string           // Explicit "Other Information" for the skill (only when the forum labels it as such, separate from the effect's own bullet points)
+}
+
+export interface GuestAttackSet {
+  id: string
+  label: string
+  attacks: GuestAttack[]
+  notes?: string
+  mechanics?: MechanicsBlock[]
 }
 
 export interface Evolution {

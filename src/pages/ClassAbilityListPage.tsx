@@ -331,7 +331,7 @@ export default function ClassAbilityListPage() {
                   rawExcludedSubcategories
                 )
               }
-              size="category"
+              size="segment"
             />
           ))}
           {(activeSubcategories.length > 0 || excludedSubcategories.length > 0) && (

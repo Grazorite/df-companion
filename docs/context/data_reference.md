@@ -212,10 +212,18 @@ item-specific effect description shown in the larger detail card. `effectType` i
 
 Classes / Abilities entries use `type: "class-ability"` and currently split into two single-select
 subtypes: `class` and `consumable`. Consumables are stored in `src/data/class-consumables.json`; the
-Classes subtype placeholder is `src/data/classes.json`. Consumables do not require main images by
+Classes subtype is split by sub-subtype into `src/data/class-armors.json`,
+`src/data/class-regular.json`, and `src/data/class-miscellaneous.json`. Consumables do not require main images by
 default. Health Potion and Mana Potion are supplemental non-A-Z entries, are not Temp by default, and
 store their potion skill/effect display as shared attack-style data with button and Appearance images.
 Consumables may include optional `effectType` metadata from the sorted effects forum page. This is the
 compact heading label displayed as `Effect Type: <type>` and is separate from the full item-specific
 `effect` text. Consumables may also include optional `dialogue` structured text, displayed in a
 separate Dialogue card with shared quote-box rendering.
+`src/data/class-artifact-relations.json` is generated metadata for inline cross-category links
+between Regular/Miscellaneous classes and Accessory artifacts. It is sourced from class artifact
+attack-set labels and artifact-side `Modifies` text, including appearance-only modifiers.
+`src/data/class-default-weapon-relations.json` is generated metadata for two-way app-route links
+between playable classes and weapon entries named in `Default Weapon` forum fields.
+`src/data/class-armor-relations.json` is generated metadata for Armor entries and the Regular class
+pages they equip.

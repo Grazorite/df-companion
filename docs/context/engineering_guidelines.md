@@ -40,6 +40,29 @@ preserving full project context on demand.
 - React.lazy for page-level code splitting
 - Props interfaces defined above component
 
+## UI Primitives (Radix / shadcn)
+
+- Accessibility-sensitive interactive widgets (disclosures, command menu, and future dialogs /
+  popovers / tooltips) are built on headless primitives — never hand-rolled `useState` toggles when a
+  primitive gives correct keyboard/focus/ARIA behavior.
+- Follow the shadcn/ui pattern **without** running `shadcn init`: no `components.json`, no shadcn
+  token layer, and no `clsx` / `cva` / `tailwind-merge`. Write thin token-styled wrappers in
+  `src/components/shared/ui/` and style with the `@theme` tokens. `shadcn init` would collide with the
+  hand-built Tailwind v4 tokens.
+- Add the specific primitive package (pinned, exact version) rather than an umbrella. Current
+  additions: `@radix-ui/react-collapsible` (disclosures), `@radix-ui/react-toggle-group` (segment
+  pickers), `@radix-ui/react-tooltip` (access-pill tooltips), and `cmdk` (search palette; brings a
+  Radix Dialog transitively).
+- Scope a primitive's provider (e.g. `TooltipProvider`) close to its usage rather than at the app
+  root when the primitive is only used on lazy pages — that keeps the dependency in the lazy chunk
+  instead of the main bundle. Only wrap a bounded number of instances (tooltips belong on detail-page
+  pills, not on every card-gallery pill).
+- Keep a wrapper's public API stable so existing consumers stay drop-in.
+- Only adopt a primitive when it actually models the control. A binary primitive is the wrong home
+  for a genuinely tri-state control — `TriStateFilterPill` (neutral/include/exclude) stays a semantic
+  `<button>` because Radix has no tri-state primitive; forcing `Toggle`/`Checkbox` would add a
+  dependency and degrade the ARIA semantics.
+
 ## Styling (Tailwind CSS)
 
 - Mobile-first: write mobile styles first, then add `sm:`, `md:`, `lg:` for larger breakpoints

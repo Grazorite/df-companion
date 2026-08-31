@@ -7155,13 +7155,14 @@
     "levelRange": "5-21"
   },
   {
-    "id": "weapon-kaaros-alleri-avi",
-    "familyName": "Kaaros Alleri (Avi)",
-    "slug": "weapon-kaaros-alleri-avi",
+    "id": "weapon-kaaros-alleri",
+    "familyName": "Kaaros Alleri",
+    "slug": "weapon-kaaros-alleri",
     "aliasSlugs": [
       "weapon-kaaros-alleri-avi-all-versions",
-      "weapon-kaaros-alleri",
-      "weapon-base-kaaros-alleri"
+      "weapon-base-kaaros-alleri",
+      "weapon-kaaros-alleri-avi",
+      "weapon-kaaros-alleri-all-versions"
     ],
     "type": "weapon",
     "subtype": "dagger",
@@ -7210,13 +7211,13 @@
         "resists": "Water +1, Ice +1",
         "rarity": "5",
         "itemType": "Dagger",
-        "variantName": "Kaaros Alleri"
+        "variantName": "(Base)"
       },
       {
         "levelNumber": 51,
         "levelDisplay": "51",
         "actualLevel": 51,
-        "variantName": "(Base)",
+        "variantName": "Avi",
         "name": "Kaaros Alleri (Avi)",
         "damage": "59-79",
         "stats": "Crit +5, END +6, LUK +3, INT +3, DEX +6, Bonus +3",

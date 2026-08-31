@@ -36,5 +36,12 @@ export default function ClassAbilityDetailPage() {
     )
   }
 
-  return <ClassAbilityDetail item={item} subtypeLabel={subtypeMeta.label} backUrl={backUrl} />
+  return (
+    <ClassAbilityDetail
+      item={item}
+      subtypeLabel={subtypeMeta.label}
+      backUrl={backUrl}
+      filterBase={`/classes?type=${encodeURIComponent(activeSubtype)}`}
+    />
+  )
 }

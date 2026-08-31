@@ -5,7 +5,7 @@ interface TriStateFilterPillProps {
   label: string
   state: FilterState
   onClick: () => void
-  size?: 'access' | 'category' | 'element'
+  size?: 'segment' | 'access' | 'category' | 'element'
   activeClassName?: string
   inactiveClassName?: string
   elementClassName?: string
@@ -13,6 +13,7 @@ interface TriStateFilterPillProps {
 }
 
 const SIZE_CLASSES = {
+  segment: 'px-3 py-1.5 text-xs min-h-[36px]',
   access: 'px-3 py-1.5 text-xs min-h-[36px]',
   category: 'px-2.5 py-1 text-[11px]',
   element: 'px-1.5 py-0.5 text-[10px]',
@@ -64,7 +65,7 @@ export default function TriStateFilterPill({
             ? 'Excluded; click to clear'
             : 'Click to include'
       }
-      className={`inline-flex items-center gap-1 rounded-full font-medium transition-colors duration-150 ${
+      className={`inline-flex items-center gap-1 rounded-full font-medium transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/60 ${
         SIZE_CLASSES[size]
       } ${className} ${state === 'include' ? 'font-semibold' : ''} ${
         disabled ? 'opacity-40 cursor-not-allowed' : ''

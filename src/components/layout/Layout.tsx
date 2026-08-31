@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react'
 import Navigation from './Navigation'
 import BackToTop from '../shared/BackToTop'
+import CommandPaletteLoader from '../shared/CommandPaletteLoader'
 
 interface LayoutProps {
   children: ReactNode
@@ -18,6 +19,8 @@ export default function Layout({ children }: LayoutProps) {
         {children}
       </div>
       <BackToTop />
+      {/* Global search palette — Cmd/Ctrl+K or the nav search button */}
+      <CommandPaletteLoader />
     </div>
   )
 }

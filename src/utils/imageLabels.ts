@@ -64,6 +64,11 @@ export function expandSlashCaptionFromText(caption?: string, text?: string): str
 export function inferImageCaptionFromUrl(url: string): string | undefined {
   const fileName = decodeURIComponent(url.split('/').at(-1) ?? '').replace(/\?.*$/, '')
   const stem = fileName.replace(/\.(?:png|jpg|jpeg|gif|bmp)$/i, '')
+  const genderSuffix = stem.match(/(Female|Male)$/i)?.[1]
+  if (genderSuffix) {
+    return genderSuffix.toLowerCase() === 'female' ? 'Female' : 'Male'
+  }
+
   const suffix = stem.match(/-([^-]+)$/)?.[1]
   if (!suffix || /^\d+$/.test(suffix)) return undefined
 
@@ -96,18 +101,26 @@ export function buildDisplayImages({
     const mainMatchCaption = mainMatch
       ? (normalizeImageCaption(mainMatch.caption) ?? inferImageCaptionFromUrl(mainMatch.url))
       : undefined
+    const mainUrlCaption = inferImageCaptionFromUrl(imageUrl)
     images.push({
       url: imageUrl,
-      caption: mainMatchCaption ?? (otherAlternatives.length > 0 ? 'Main' : mainCaption),
+      caption:
+        mainMatchCaption ??
+        (/^(?:Male|Female)$/.test(mainUrlCaption ?? '') ? mainUrlCaption : undefined) ??
+        (otherAlternatives.length > 0 ? 'Main' : mainCaption),
     })
   }
 
   otherAlternatives.forEach((image, index) => {
+    const normalizedCaption = normalizeImageCaption(image.caption)
+    const inferredCaption = inferImageCaptionFromUrl(image.url)
     images.push({
       url: image.url,
       caption:
-        normalizeImageCaption(image.caption) ??
-        inferImageCaptionFromUrl(image.url) ??
+        (normalizedCaption === 'Main' && /^(?:Male|Female)$/.test(inferredCaption ?? '')
+          ? inferredCaption
+          : normalizedCaption) ??
+        inferredCaption ??
         `Alternative ${index + 1}`,
     })
   })

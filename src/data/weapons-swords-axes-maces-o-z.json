@@ -9204,13 +9204,14 @@
     "alsoSee": []
   },
   {
-    "id": "weapon-red-scrapper-senior",
-    "familyName": "Red Scrapper (Senior)",
-    "slug": "weapon-red-scrapper-senior",
+    "id": "weapon-red-scrapper",
+    "familyName": "Red Scrapper",
+    "slug": "weapon-red-scrapper",
     "aliasSlugs": [
       "weapon-red-scrapper-senior-all-versions",
-      "weapon-red-scrapper",
-      "weapon-base-red-scrapper"
+      "weapon-base-red-scrapper",
+      "weapon-red-scrapper-senior",
+      "weapon-red-scrapper-all-versions"
     ],
     "type": "weapon",
     "subtype": "sword-axe-mace",
@@ -9266,13 +9267,13 @@
         "resists": "None",
         "rarity": "1",
         "itemType": "Sword",
-        "variantName": "Red Scrapper"
+        "variantName": "(Base)"
       },
       {
         "levelNumber": 42,
         "levelDisplay": "42",
         "actualLevel": 42,
-        "variantName": "(Base)",
+        "variantName": "Senior",
         "name": "Red Scrapper (Senior)",
         "damage": "59-67",
         "stats": "Crit +2, END +2, STR +2, Bonus +1",
@@ -27558,8 +27559,8 @@
         "url": "https://forums2.battleon.com/f/tm.asp?m=4153176"
       },
       {
-        "name": "Harbinger (of Sorrow)",
-        "slug": "weapon-harbinger-of-sorrow",
+        "name": "Harbinger",
+        "slug": "weapon-harbinger",
         "type": "weapon",
         "url": "https://forums2.battleon.com/f/tm.asp?m=4229464"
       },
@@ -29112,8 +29113,8 @@
     "notes": "Weapon was previously available in the retired quest Sneevil Box Fort.\nWeapon is animated; the static in the center of the weapon crackles continuously.",
     "alsoSee": [
       {
-        "name": "Charger (Lite)",
-        "slug": "weapon-charger-lite",
+        "name": "Charger",
+        "slug": "weapon-charger",
         "type": "weapon",
         "url": "https://forums2.battleon.com/f/tm.asp?m=4744716"
       },
@@ -29197,8 +29198,8 @@
       "notes": "Weapons are animated; the static in the center of the weapon crackles continuously, while energy causes the weapon to glow and pulse periodically.",
       "alsoSee": [
         {
-          "name": "Charger (Lite)",
-          "slug": "weapon-charger-lite",
+          "name": "Charger",
+          "slug": "weapon-charger",
           "type": "weapon",
           "url": "https://forums2.battleon.com/f/tm.asp?m=4744716"
         },
@@ -38969,8 +38970,8 @@
         "url": "https://forums2.battleon.com/f/tm.asp?m=4153176"
       },
       {
-        "name": "Harbinger (of Sorrow)",
-        "slug": "weapon-harbinger-of-sorrow",
+        "name": "Harbinger",
+        "slug": "weapon-harbinger",
         "type": "weapon",
         "url": "https://forums2.battleon.com/f/tm.asp?m=4229464"
       },
@@ -44994,8 +44995,8 @@
     "notes": "Weapon is animated; the static in the center of the weapon crackles continuously.",
     "alsoSee": [
       {
-        "name": "Charger (Lite)",
-        "slug": "weapon-charger-lite",
+        "name": "Charger",
+        "slug": "weapon-charger",
         "type": "weapon",
         "url": "https://forums2.battleon.com/f/tm.asp?m=4744716"
       },

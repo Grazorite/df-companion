@@ -2068,12 +2068,12 @@
   },
   {
     "id": "weapon-amaterasu-i-ii",
-    "familyName": "Amaterasu",
+    "familyName": "Amaterasu (I-II)",
     "slug": "weapon-amaterasu-i-ii",
     "aliasSlugs": [
       "weapon-amaterasu-i",
       "weapon-amaterasu-ii",
-      "weapon-amaterasu-all-versions",
+      "weapon-amaterasu-i-ii-all-versions",
       "weapon-i-amaterasu",
       "weapon-ii-amaterasu"
     ],
@@ -2109,7 +2109,6 @@
           "caption": "Element: Light / Fire"
         }
       ],
-      "notes": "Weapons are animated; an orb of light or fire (dependant on selected weapon element) spirals around the blade of the scythe continuously.\nClick anywhere on the weapon to change between its available elements; this will also change its appearance.",
       "alsoSee": [
         {
           "name": "Amaterasu-Omikami",
@@ -7585,69 +7584,6 @@
     ],
     "isRare": true,
     "levelRange": "10-80"
-  },
-  {
-    "id": "weapon-aware-orchidea",
-    "name": "Aware Orchidea",
-    "slug": "weapon-aware-orchidea",
-    "type": "weapon",
-    "subtype": "scythe",
-    "description": "This gorgeous scythe was woven by the SoulWeaver, Tomix, in celebration of knowledge and learning.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20685950",
-    "releaseDate": "",
-    "imageUrl": "https://i.imgur.com/z4dxAbw.png",
-    "elements": [
-      "GOO"
-    ],
-    "level": "70",
-    "damage": "78-94",
-    "stats": "Block +1, Dodge +1, Parry +2, Crit +9, Magic Def +7, Pierce Def +7, Melee Def +7, WIS +8, END +6, CHA +6, LUK +5, INT +10, DEX +10, STR +10, Bonus +7",
-    "resists": "All +5, Health -8",
-    "rarity": "15",
-    "itemType": "Scythe",
-    "obtainMethods": [
-      {
-        "location": "Back to School Shop",
-        "price": "375 Dragon Coins",
-        "priceType": "dc",
-        "sellback": "338 DC (<24 hours) / 94 DC (>24 hours)",
-        "daRequired": false,
-        "dcRequired": true
-      }
-    ],
-    "alsoSee": [
-      {
-        "name": "Crafty Orchidea",
-        "slug": "weapon-crafty-orchidea",
-        "type": "weapon",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20685930"
-      },
-      {
-        "name": "Detailed Orchidea",
-        "slug": "weapon-detailed-orchidea",
-        "type": "weapon",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20685937"
-      },
-      {
-        "name": "Half Orchidea",
-        "slug": "weapon-half-orchidea",
-        "type": "weapon",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20884933"
-      },
-      {
-        "name": "Orchidea",
-        "slug": "weapon-orchidea",
-        "type": "weapon",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20685955"
-      }
-    ],
-    "tags": [
-      "goo",
-      "dc"
-    ],
-    "daRequired": false,
-    "dcRequired": true,
-    "isRare": true
   },
   {
     "id": "weapon-azure-gleam",
@@ -19013,7 +18949,7 @@
       {
         "url": "https://forums2.battleon.com/f/tm.asp?m=21910688",
         "title": "DF Encyclopedia: Claws (Baby Dragon Default)",
-        "variantLabel": "Claws (Baby Dragon Default) Baby Dragon Default",
+        "variantLabel": "Claws (Baby Dragon Default)",
         "isPrimary": true
       }
     ],
@@ -19814,69 +19750,6 @@
     ],
     "isSeasonal": true,
     "levelRange": "20-80"
-  },
-  {
-    "id": "weapon-crafty-orchidea",
-    "name": "Crafty Orchidea",
-    "slug": "weapon-crafty-orchidea",
-    "type": "weapon",
-    "subtype": "scythe",
-    "description": "This gorgeous scythe was woven by the SoulWeaver, Tomix, in celebration of knowledge and learning.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20685930",
-    "releaseDate": "",
-    "imageUrl": "https://i.imgur.com/z4dxAbw.png",
-    "elements": [
-      "GOO"
-    ],
-    "level": "10",
-    "damage": "27-39",
-    "stats": "Parry +1, Crit +1, Magic Def +1, Pierce Def +1, Melee Def +1, WIS +1, END +1, CHA +2, LUK +1, INT +2, DEX +2, STR +2, Bonus +1",
-    "resists": "All +2, Health -3",
-    "rarity": "8",
-    "itemType": "Scythe",
-    "obtainMethods": [
-      {
-        "location": "Back to School Shop",
-        "price": "150 Dragon Coins",
-        "priceType": "dc",
-        "sellback": "135 DC (<24 hours) / 38 DC (>24 hours)",
-        "daRequired": false,
-        "dcRequired": true
-      }
-    ],
-    "alsoSee": [
-      {
-        "name": "Aware Orchidea",
-        "slug": "weapon-aware-orchidea",
-        "type": "weapon",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20685950"
-      },
-      {
-        "name": "Detailed Orchidea",
-        "slug": "weapon-detailed-orchidea",
-        "type": "weapon",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20685937"
-      },
-      {
-        "name": "Half Orchidea",
-        "slug": "weapon-half-orchidea",
-        "type": "weapon",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20884933"
-      },
-      {
-        "name": "Orchidea",
-        "slug": "weapon-orchidea",
-        "type": "weapon",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20685955"
-      }
-    ],
-    "tags": [
-      "goo",
-      "dc"
-    ],
-    "daRequired": false,
-    "dcRequired": true,
-    "isRare": true
   },
   {
     "id": "weapon-creatioux-claw",
@@ -27989,69 +27862,6 @@
     "levelRange": "I-IX"
   },
   {
-    "id": "weapon-detailed-orchidea",
-    "name": "Detailed Orchidea",
-    "slug": "weapon-detailed-orchidea",
-    "type": "weapon",
-    "subtype": "scythe",
-    "description": "This gorgeous scythe was woven by the SoulWeaver, Tomix, in celebration of knowledge and learning.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20685937",
-    "releaseDate": "",
-    "imageUrl": "https://i.imgur.com/z4dxAbw.png",
-    "elements": [
-      "GOO"
-    ],
-    "level": "30",
-    "damage": "48-64",
-    "stats": "Parry +1, Crit +4, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +4, END +4, CHA +3, LUK +2, INT +4, DEX +4, STR +4, Bonus +3",
-    "resists": "All +3, Health -5",
-    "rarity": "8",
-    "itemType": "Scythe",
-    "obtainMethods": [
-      {
-        "location": "Back to School Shop",
-        "price": "225 Dragon Coins",
-        "priceType": "dc",
-        "sellback": "203 DC (<24 hours) / 57 DC (>24 hours)",
-        "daRequired": false,
-        "dcRequired": true
-      }
-    ],
-    "alsoSee": [
-      {
-        "name": "Aware Orchidea",
-        "slug": "weapon-aware-orchidea",
-        "type": "weapon",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20685950"
-      },
-      {
-        "name": "Crafty Orchidea",
-        "slug": "weapon-crafty-orchidea",
-        "type": "weapon",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20685930"
-      },
-      {
-        "name": "Half Orchidea",
-        "slug": "weapon-half-orchidea",
-        "type": "weapon",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20884933"
-      },
-      {
-        "name": "Orchidea",
-        "slug": "weapon-orchidea",
-        "type": "weapon",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20685955"
-      }
-    ],
-    "tags": [
-      "goo",
-      "dc"
-    ],
-    "daRequired": false,
-    "dcRequired": true,
-    "isRare": true
-  },
-  {
     "id": "weapon-dimensionally-shifted-blade",
     "familyName": "Dimensionally Shifted Blade",
     "slug": "weapon-dimensionally-shifted-blade",
@@ -32535,7 +32345,11 @@
     ],
     "isTemp": true,
     "levelRange": "1",
-    "isDefault": true
+    "isDefault": true,
+    "aliasSlugs": [
+      "weapon-dragon-dragonrider-default-all-versions",
+      "weapon-dragon"
+    ]
   },
   {
     "id": "weapon-dragon-amulet-cleaver-of-the-elements",
@@ -65385,61 +65199,41 @@
     "alsoSee": []
   },
   {
-    "id": "weapon-infected-megabytes",
-    "familyName": "Infected Megabytes",
-    "slug": "weapon-infected-megabytes",
+    "id": "weapon-infected-megabytes-cosmetic",
+    "familyName": "Infected Megabytes (Cosmetic)",
+    "slug": "weapon-infected-megabytes-cosmetic",
     "aliasSlugs": [
-      "weapon-infected-megabytes-all-versions",
-      "weapon-infected-megabytes-cosmetic",
-      "weapon-infected-megabytes-i",
-      "weapon-infected-megabytes-ii",
-      "weapon-infected-megabytes-iii",
-      "weapon-cosmetic-infected-megabytes",
-      "weapon-i-infected-megabytes",
-      "weapon-ii-infected-megabytes",
-      "weapon-iii-infected-megabytes"
+      "weapon-infected-megabytes-cosmetic-all-versions",
+      "weapon-cosmetic-infected-megabytes"
     ],
     "type": "weapon",
     "subtype": "scythe",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=22425871",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22425871",
     "familyOrigin": "same-thread-multi-post",
     "familySources": [
       {
         "url": "https://forums2.battleon.com/f/fb.asp?m=22425871",
         "title": "DF Encyclopedia: Infected Megabytes (Cosmetic)",
-        "variantLabel": "Infected Megabytes (Cosmetic)",
+        "variantLabel": "Infected Megabytes (Cosmetic) Cosmetic",
         "isPrimary": true
-      },
-      {
-        "url": "https://forums2.battleon.com/f/fb.asp?m=22425872",
-        "title": "DF Encyclopedia: Infected Megabytes I",
-        "variantLabel": "Infected Megabytes I",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/fb.asp?m=22425873",
-        "title": "DF Encyclopedia: Infected Megabytes II",
-        "variantLabel": "Infected Megabytes II",
-        "isPrimary": false
-      },
-      {
-        "url": "https://forums2.battleon.com/f/fb.asp?m=22425874",
-        "title": "DF Encyclopedia: Infected Megabytes III",
-        "variantLabel": "Infected Megabytes III",
-        "isPrimary": false
       }
     ],
     "itemType": "Scythe",
     "shared": {
       "description": "This strange stick is huge, but not particularly swift. (Cosmetic)",
       "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/InfectedMegabytes.png",
-      "notes": "Weapon had the initial stats:\nStats: Block +7, Dodge +7, Parry +7, Crit +13, Magic Def +3, Pierce Def +3, Melee Def +3, WIS -40, END +25, CHA -35, LUK -20, INT +16, DEX +16, STR +16, Bonus +13\n • Resists: All +8, Health -12, Immobility +3\nWeapon had the initial stats:\nStats: Block +8, Dodge +8, Parry +8, Crit +12, Magic Def +4, Pierce Def +4, Melee Def +4, WIS -40, END +35, CHA -35, LUK -20, INT +20, DEX +20, STR +20, Bonus +12\n • Resists: All +8, Health -12, Immobility +3\nWeapon had the initial stats:\nStats: Block +10, Dodge +10, Parry +10, Crit +15, Magic Def +5, Pierce Def +5, Melee Def +5, WIS -40, END +40, CHA -35, LUK -20, INT +26, DEX +26, STR +26, Bonus +15\n • Resists: All +10, Health -15, Immobility +4\nI-III versions of these weapons were significantly buffed on April 6th, 2026.",
       "alsoSee": [
         {
           "name": "Infected Megabits",
           "slug": "weapon-infected-megabits",
           "type": "weapon",
           "url": "https://forums2.battleon.com/f/tm.asp?m=22425865"
+        },
+        {
+          "name": "Infected Megabytes (I-III)",
+          "slug": "weapon-infected-megabytes-i-iii",
+          "type": "weapon",
+          "url": "https://forums2.battleon.com/f/fb.asp?m=22425872"
         }
       ]
     },
@@ -65448,7 +65242,7 @@
         "levelNumber": 1,
         "levelDisplay": "1",
         "actualLevel": 1,
-        "variantName": "(Cosmetic)",
+        "variantName": "Cosmetic",
         "name": "Infected Megabytes (Cosmetic)",
         "damage": "0-0",
         "stats": "None",
@@ -65469,7 +65263,82 @@
         "resists": "None",
         "rarity": "0",
         "itemType": "Scythe"
+      }
+    ],
+    "category": "Weapon",
+    "releaseDate": "",
+    "tags": [
+      "dis",
+      "merge"
+    ],
+    "hasDA": false,
+    "hasDC": true,
+    "hasDM": false,
+    "hasFree": false,
+    "hasMerge": true,
+    "elements": [
+      "DIS"
+    ],
+    "isCosmetic": true,
+    "levelRange": "1"
+  },
+  {
+    "id": "weapon-infected-megabytes-i-iii",
+    "familyName": "Infected Megabytes (I-III)",
+    "slug": "weapon-infected-megabytes-i-iii",
+    "aliasSlugs": [
+      "weapon-infected-megabytes-i",
+      "weapon-infected-megabytes-ii",
+      "weapon-infected-megabytes-iii",
+      "weapon-infected-megabytes-i-iii-all-versions",
+      "weapon-i-infected-megabytes",
+      "weapon-ii-infected-megabytes",
+      "weapon-iii-infected-megabytes"
+    ],
+    "type": "weapon",
+    "subtype": "scythe",
+    "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=22425872",
+    "familyOrigin": "same-thread-multi-post",
+    "familySources": [
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22425872",
+        "title": "DF Encyclopedia: Infected Megabytes I",
+        "variantLabel": "Infected Megabytes I",
+        "isPrimary": true
       },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22425873",
+        "title": "DF Encyclopedia: Infected Megabytes II",
+        "variantLabel": "Infected Megabytes II",
+        "isPrimary": false
+      },
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22425874",
+        "title": "DF Encyclopedia: Infected Megabytes III",
+        "variantLabel": "Infected Megabytes III",
+        "isPrimary": false
+      }
+    ],
+    "itemType": "Scythe",
+    "shared": {
+      "description": "This strange stick is huge, but not particularly swift. Proof of victory over the DracoLich SuperSavior (Extreme).",
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/weapons/InfectedMegabytes.png",
+      "alsoSee": [
+        {
+          "name": "Infected Megabits",
+          "slug": "weapon-infected-megabits",
+          "type": "weapon",
+          "url": "https://forums2.battleon.com/f/tm.asp?m=22425865"
+        },
+        {
+          "name": "Infected Megabytes (Cosmetic)",
+          "slug": "weapon-infected-megabytes-cosmetic",
+          "type": "weapon",
+          "url": "https://forums2.battleon.com/f/fb.asp?m=22425871"
+        }
+      ]
+    },
+    "levelVariants": [
       {
         "levelNumber": 1,
         "levelDisplay": "I",
@@ -65495,7 +65364,7 @@
         "resists": "All +8, Health -16, Immobility +7",
         "rarity": "0",
         "itemType": "Scythe",
-        "notes": "Weapon had the initial stats:\nStats: Block +7, Dodge +7, Parry +7, Crit +13, Magic Def +3, Pierce Def +3, Melee Def +3, WIS -40, END +25, CHA -35, LUK -20, INT +16, DEX +16, STR +16, Bonus +13\n • Resists: All +8, Health -12, Immobility +3"
+        "notes": "Weapon had the initial stats:\n  Stats: Block +7, Dodge +7, Parry +7, Crit +13, Magic Def +3, Pierce Def +3, Melee Def +3, WIS -40, END +25, CHA -35, LUK -20, INT +16, DEX +16, STR +16, Bonus +13\n  • Resists: All +8, Health -12, Immobility +3"
       },
       {
         "levelNumber": 2,
@@ -65522,7 +65391,7 @@
         "resists": "All +8, Health -16, Immobility +7",
         "rarity": "0",
         "itemType": "Scythe",
-        "notes": "Weapon had the initial stats:\nStats: Block +8, Dodge +8, Parry +8, Crit +12, Magic Def +4, Pierce Def +4, Melee Def +4, WIS -40, END +35, CHA -35, LUK -20, INT +20, DEX +20, STR +20, Bonus +12\n • Resists: All +8, Health -12, Immobility +3"
+        "notes": "Weapon had the initial stats:\n  Stats: Block +8, Dodge +8, Parry +8, Crit +12, Magic Def +4, Pierce Def +4, Melee Def +4, WIS -40, END +35, CHA -35, LUK -20, INT +20, DEX +20, STR +20, Bonus +12\n  • Resists: All +8, Health -12, Immobility +3"
       },
       {
         "levelNumber": 3,
@@ -65549,7 +65418,7 @@
         "resists": "All +10, Health -20, Immobility +7",
         "rarity": "0",
         "itemType": "Scythe",
-        "notes": "Weapon had the initial stats:\nStats: Block +10, Dodge +10, Parry +10, Crit +15, Magic Def +5, Pierce Def +5, Melee Def +5, WIS -40, END +40, CHA -35, LUK -20, INT +26, DEX +26, STR +26, Bonus +15\n • Resists: All +10, Health -15, Immobility +4"
+        "notes": "Weapon had the initial stats:\n  Stats: Block +10, Dodge +10, Parry +10, Crit +15, Magic Def +5, Pierce Def +5, Melee Def +5, WIS -40, END +40, CHA -35, LUK -20, INT +26, DEX +26, STR +26, Bonus +15\n  • Resists: All +10, Health -15, Immobility +4"
       }
     ],
     "category": "Weapon",
@@ -65566,7 +65435,6 @@
     "elements": [
       "DIS"
     ],
-    "isCosmetic": true,
     "levelRange": "I-III"
   },
   {

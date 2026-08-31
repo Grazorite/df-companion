@@ -393,7 +393,7 @@ export function useWeaponBySlug(subtype: WeaponSubtype, slug?: string) {
 export type WeaponRelatedItem = RelatedItemResult<WeaponEntry, AlsoSeeRef>
 
 const INFERRED_WEAPON_RELATED_LIMIT = 8
-const INFERRED_WEAPON_RELATED_NAME_THRESHOLD = 0.7
+const INFERRED_WEAPON_RELATED_NAME_THRESHOLD = 0.55
 
 export function useWeaponRelatedItems(weapon: WeaponEntry, alsoSee: AlsoSeeRef[] = []) {
   const filteredAlsoSee = alsoSee.filter((ref) => {

@@ -75,8 +75,13 @@ dragonfable-companion/
 │   │   ├── housing-stuff.json # Housing subtype dataset
 │   │   ├── housing-wall-items.json # Housing subtype dataset
 │   │   ├── housing-manifest.json # Housing counts per subtype
-│   │   ├── classes.json # Classes / Abilities class subtype dataset
+│   │   ├── class-armors.json # Classes / Abilities armor sub-subtype dataset
+│   │   ├── class-regular.json # Classes / Abilities regular class sub-subtype dataset
+│   │   ├── class-miscellaneous.json # Classes / Abilities miscellaneous class sub-subtype dataset
 │   │   ├── class-consumables.json # Classes / Abilities consumable subtype dataset
+│   │   ├── class-artifact-relations.json # Generated class artifact ↔ Accessory inline-link index
+│   │   ├── class-default-weapon-relations.json # Generated class ↔ weapon default-weapon link index
+│   │   ├── class-armor-relations.json # Generated armor ↔ Regular class relation index
 │   │   ├── class-abilities-manifest.json # Classes / Abilities counts per subtype
 │   │   ├── accessory-manifest.json # Accessory counts per subtype/shard
 │   │   ├── badges-manifest.json # Badge counts

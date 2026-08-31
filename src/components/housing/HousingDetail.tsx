@@ -10,10 +10,11 @@ import SourceLinksCard from '../shared/SourceLinksCard'
 import OtherInformationSection from '../shared/OtherInformationSection'
 import LevelSelector from '../shared/LevelSelector'
 import ObtainSection from '../shared/ObtainSection'
+import AccessPills from '../shared/AccessPills'
 import { buildDisplayImages } from '../../utils/imageLabels'
 import { useHousingRelatedItems } from '../../hooks/useHousing'
 import { detailUrlWithFrom } from '../../utils/navigationContext'
-import { accessPillClass } from '../../utils/accessPillStyles'
+import { buildFilterLink } from '../../utils/filterLinks'
 import { normalizeDescriptionText, normalizeDisplayText } from '../../utils/displayText'
 import HousingCard from './HousingCard'
 
@@ -21,6 +22,7 @@ interface HousingDetailProps {
   item: HousingEntry
   subtypeLabel: string
   backUrl: string
+  filterBase: string
 }
 
 function parseFurnishingSlots(value?: string): Array<{ label: string; value: string }> {
@@ -147,7 +149,12 @@ function splitEffectQuote(effect: string): { intro: string; quotes: string[] } |
   }
 }
 
-export default function HousingDetail({ item, subtypeLabel, backUrl }: HousingDetailProps) {
+export default function HousingDetail({
+  item,
+  subtypeLabel,
+  backUrl,
+  filterBase,
+}: HousingDetailProps) {
   const [activeIndex, setActiveIndex] = useState(0)
   const [activeImageIndex, setActiveImageIndex] = useState(0)
   const family = isHousingFamily(item) ? item : undefined
@@ -209,18 +216,23 @@ export default function HousingDetail({ item, subtypeLabel, backUrl }: HousingDe
 
       <header className="mb-8">
         <div className="flex items-start gap-2 flex-wrap mb-3">
-          <span className={accessPillClass('da', 'housingHeader')}>
-            DA Required
-          </span>
-          {(family ? family.hasDC : singleItem?.dcRequired) && (
-            <span className={accessPillClass('dc', 'housingHeader')}>
-              DC
-            </span>
-          )}
+          <AccessPills
+            daRequired
+            dcRequired={family ? family.hasDC : singleItem?.dcRequired}
+            filterBase={filterBase}
+          />
           {(family ? family.hasFree : singleItem?.hasFree) && (
             <span className="text-xs text-green-400 bg-green-500/20 px-3 py-1.5 rounded-full font-medium">
               Free
             </span>
+          )}
+          {family && family.levelVariants.length > 1 && (
+            <Link
+              to={buildFilterLink(filterBase, 'access', 'multi')}
+              className="inline-block text-xs font-semibold px-3 py-1.5 rounded-full bg-gold-bright text-bg-base transition-opacity hover:opacity-80"
+            >
+              Multiple Versions
+            </Link>
           )}
           <DetailTypePill label={subtypeLabel} />
         </div>
