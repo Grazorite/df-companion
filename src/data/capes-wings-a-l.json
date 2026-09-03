@@ -525,31 +525,31 @@
     "alternativeImages": [
       {
         "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/AlloyedKabutoPack-Pack-Orange.png",
-        "caption": "Orange"
+        "caption": "Pack (Orange)"
       },
       {
         "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/AlloyedKabutoPack-Pack-Red.png",
-        "caption": "Red"
+        "caption": "Pack (Red)"
       },
       {
         "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/AlloyedKabutoPack-Pack-NoColor.png",
-        "caption": "No Color"
+        "caption": "Pack (No Color)"
       },
       {
         "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/AlloyedKabutoPack-Wings-Cyan.png",
-        "caption": "Cyan"
+        "caption": "Wings (Cyan)"
       },
       {
         "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/AlloyedKabutoPack-Wings-Orange.png",
-        "caption": "Orange"
+        "caption": "Wings (Orange)"
       },
       {
         "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/AlloyedKabutoPack-Wings-Red.png",
-        "caption": "Red"
+        "caption": "Wings (Red)"
       },
       {
         "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/AlloyedKabutoPack-Wings-NoColor.png",
-        "caption": "No Color"
+        "caption": "Wings (No Color)"
       }
     ],
     "elements": [
@@ -572,7 +572,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "Cape is animated;\n  • In pack appearance, while any color is toggled, data scrolls downward continuously.\n  • In wings appearance, while any color is toggled, data scrolls rightward continuously and sonar waves appear from the pack continuously.\nCape is color-custom; pack is custom to player's base color.\nClick the pack to toggle between default and wings appearances; while in wings appearance, click the wings to toggle between cyan, orange, red, and no colors, affecting all appearances of the item.\nPack Appearances:  Orange /  Red /  No Color\nWings Appearances:  Cyan /  Orange /  Red /  No Color",
+    "notes": "Cape is animated;\n  • In pack appearance, while any color is toggled, data scrolls downward continuously.\n  • In wings appearance, while any color is toggled, data scrolls rightward continuously and sonar waves appear from the pack continuously.\nCape is color-custom; pack is custom to player's base color.\nClick the pack to toggle between default and wings appearances; while in wings appearance, click the wings to toggle between cyan, orange, red, and no colors, affecting all appearances of the item.",
     "tags": [
       "met",
       "dc"
@@ -1305,7 +1305,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 10,
+        "levelNumber": 1,
         "levelDisplay": "10",
         "actualLevel": 10,
         "name": "Artix's Cape",
@@ -1328,7 +1328,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 10,
+        "levelNumber": 1,
         "levelDisplay": "10",
         "actualLevel": 10,
         "name": "Artix's Cape",
@@ -1352,7 +1352,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 20,
+        "levelNumber": 2,
         "levelDisplay": "20",
         "actualLevel": 20,
         "name": "Artix's Cape",
@@ -1375,7 +1375,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 20,
+        "levelNumber": 2,
         "levelDisplay": "20",
         "actualLevel": 20,
         "name": "Artix's Cape",
@@ -1399,7 +1399,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 3,
         "levelDisplay": "30",
         "actualLevel": 30,
         "name": "Artix's Cape",
@@ -1422,7 +1422,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 3,
         "levelDisplay": "30",
         "actualLevel": 30,
         "name": "Artix's Cape",
@@ -1446,7 +1446,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 4,
         "levelDisplay": "40",
         "actualLevel": 40,
         "name": "Artix's Cape",
@@ -1469,7 +1469,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 4,
         "levelDisplay": "40",
         "actualLevel": 40,
         "name": "Artix's Cape",
@@ -1493,7 +1493,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 5,
         "levelDisplay": "50",
         "actualLevel": 50,
         "name": "Artix's Cape",
@@ -1516,7 +1516,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 5,
         "levelDisplay": "50",
         "actualLevel": 50,
         "name": "Artix's Cape",
@@ -1540,7 +1540,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 6,
         "levelDisplay": "60",
         "actualLevel": 60,
         "name": "Artix's Cape",
@@ -1563,7 +1563,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 6,
         "levelDisplay": "60",
         "actualLevel": 60,
         "name": "Artix's Cape",
@@ -1587,7 +1587,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 7,
         "levelDisplay": "70",
         "actualLevel": 70,
         "name": "Artix's Cape",
@@ -1610,7 +1610,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 7,
         "levelDisplay": "70",
         "actualLevel": 70,
         "name": "Artix's Cape",
@@ -1634,7 +1634,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 8,
         "levelDisplay": "80",
         "actualLevel": 80,
         "name": "Artix's Cape",
@@ -1657,7 +1657,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 8,
         "levelDisplay": "80",
         "actualLevel": 80,
         "name": "Artix's Cape",
@@ -2208,15 +2208,15 @@
     "alternativeImages": [
       {
         "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/Ascension-Cyan.png",
-        "caption": "Appearance 2"
+        "caption": "Cyan"
       },
       {
         "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/Ascension-Pink.png",
-        "caption": "3"
+        "caption": "Pink"
       },
       {
         "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/Ascension-Yellow.png",
-        "caption": "4"
+        "caption": "Yellow"
       }
     ],
     "elements": [
@@ -2375,11 +2375,11 @@
       "alternativeImages": [
         {
           "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/AspenvaleBackpack-Full.png",
-          "caption": "Full Appearance"
+          "caption": "Full"
         },
         {
           "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/AspenvaleBackpack-Students.png",
-          "caption": "Student Version Appearances"
+          "caption": "Students"
         }
       ],
       "rarity": "1"
@@ -2618,6 +2618,91 @@
     "levelRange": "1",
     "elements": [
       "NON"
+    ]
+  },
+  {
+    "id": "accessory-blue-astral-avenger",
+    "familyName": "Astral Avenger",
+    "slug": "accessory-blue-astral-avenger",
+    "aliasSlugs": [
+      "accessory-red-astral-avenger"
+    ],
+    "type": "accessory",
+    "subtype": "cape-wing",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=16032677",
+    "familyOrigin": "cross-post",
+    "familySources": [],
+    "shared": {
+      "description": "Avengers assemble!"
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
+        "levelDisplay": "10",
+        "actualLevel": 10,
+        "variantName": "Blue",
+        "name": "Blue Astral Avenger",
+        "damage": "",
+        "stats": "INT +2, STR +2",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=16032677",
+        "description": "Avengers assemble!",
+        "imageUrl": "http://i.imgur.com/PcfZCVk.jpg",
+        "obtainVariants": [
+          {
+            "location": "Memorial Day '09",
+            "priceType": "gold",
+            "price": "200 Gold",
+            "sellback": "20 Gold",
+            "daRequired": true
+          }
+        ],
+        "element": "WAT",
+        "resists": "Fire +3",
+        "rarity": "9"
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "10",
+        "actualLevel": 10,
+        "variantName": "Red",
+        "name": "Red Astral Avenger",
+        "damage": "",
+        "stats": "INT +2, STR +2",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=16032636",
+        "description": "Avengers assemble!",
+        "imageUrl": "http://i.imgur.com/YYx4VYW.png",
+        "obtainVariants": [
+          {
+            "location": "Memorial Day '09",
+            "priceType": "gold",
+            "price": "200 Gold",
+            "sellback": "20 Gold",
+            "daRequired": false
+          }
+        ],
+        "element": "FIR",
+        "resists": "Water +3",
+        "rarity": "9"
+      }
+    ],
+    "itemType": "Cape",
+    "equipSlot": "Back",
+    "category": "Armor",
+    "tags": [
+      "fir",
+      "gold",
+      "wat"
+    ],
+    "isRare": true,
+    "hasDA": true,
+    "hasDC": false,
+    "hasDM": false,
+    "hasFree": false,
+    "hasMerge": false,
+    "levelRange": "10",
+    "elements": [
+      "WAT",
+      "FIR"
     ]
   },
   {
@@ -4978,42 +5063,6 @@
     ]
   },
   {
-    "id": "accessory-blue-astral-avenger",
-    "name": "Blue Astral Avenger",
-    "slug": "accessory-blue-astral-avenger",
-    "type": "accessory",
-    "subtype": "cape-wing",
-    "description": "Avengers assemble!",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=16032677",
-    "releaseDate": "",
-    "imageUrl": "http://i.imgur.com/PcfZCVk.jpg",
-    "elements": [
-      "WAT"
-    ],
-    "level": "10",
-    "stats": "INT +2, STR +2",
-    "resists": "Fire +3",
-    "rarity": "9",
-    "itemType": "Cape",
-    "equipSpot": "Back",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "Memorial Day '09",
-        "priceType": "gold",
-        "price": "200 Gold",
-        "sellback": "20 Gold",
-        "daRequired": true
-      }
-    ],
-    "tags": [
-      "wat",
-      "gold"
-    ],
-    "daRequired": true,
-    "isRare": true
-  },
-  {
     "id": "accessory-blue-carnaval-cape",
     "familyName": "Blue Carnaval Cape",
     "slug": "accessory-blue-carnaval-cape",
@@ -6606,7 +6655,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 10,
+        "levelNumber": 1,
         "levelDisplay": "10",
         "actualLevel": 10,
         "name": "Candy Pail",
@@ -6628,7 +6677,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 10,
+        "levelNumber": 1,
         "levelDisplay": "10",
         "actualLevel": 10,
         "name": "Candy Pail",
@@ -6651,7 +6700,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 20,
+        "levelNumber": 2,
         "levelDisplay": "20",
         "actualLevel": 20,
         "name": "Candy Pail",
@@ -6673,7 +6722,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 20,
+        "levelNumber": 2,
         "levelDisplay": "20",
         "actualLevel": 20,
         "name": "Candy Pail",
@@ -6696,7 +6745,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 3,
         "levelDisplay": "30",
         "actualLevel": 30,
         "name": "Candy Pail",
@@ -6718,7 +6767,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 3,
         "levelDisplay": "30",
         "actualLevel": 30,
         "name": "Candy Pail",
@@ -6741,7 +6790,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 4,
         "levelDisplay": "40",
         "actualLevel": 40,
         "name": "Candy Pail",
@@ -6763,7 +6812,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 4,
         "levelDisplay": "40",
         "actualLevel": 40,
         "name": "Candy Pail",
@@ -6786,7 +6835,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 5,
         "levelDisplay": "50",
         "actualLevel": 50,
         "name": "Candy Pail",
@@ -6808,7 +6857,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 5,
         "levelDisplay": "50",
         "actualLevel": 50,
         "name": "Candy Pail",
@@ -6831,7 +6880,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 6,
         "levelDisplay": "60",
         "actualLevel": 60,
         "name": "Candy Pail",
@@ -6853,7 +6902,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 6,
         "levelDisplay": "60",
         "actualLevel": 60,
         "name": "Candy Pail",
@@ -6876,7 +6925,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 7,
         "levelDisplay": "70",
         "actualLevel": 70,
         "name": "Candy Pail",
@@ -6898,7 +6947,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 8,
         "levelDisplay": "70",
         "actualLevel": 70,
         "name": "Candy Pail",
@@ -6921,7 +6970,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 9,
         "levelDisplay": "80",
         "actualLevel": 80,
         "name": "Candy Pail",
@@ -6943,7 +6992,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 10,
         "levelDisplay": "80",
         "actualLevel": 80,
         "name": "Candy Pail",
@@ -7549,7 +7598,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 70,
+        "levelNumber": 1,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "I",
@@ -7564,24 +7613,7 @@
             "sellback": "0 Dragon Coins",
             "daRequired": false,
             "dcRequired": true
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22421609",
-        "description": "These wings are imbued with the uncontrollable power of Chaos. Gifted to a certain champion by a mysterious entity, these wings fill you with a desire not your own... Proof of victory over Drakath, Champion of Chaos.",
-        "element": "???",
-        "resists": "All +13, Health +13",
-        "rarity": "1",
-        "itemType": "Wings"
-      },
-      {
-        "levelNumber": 70,
-        "levelDisplay": "70",
-        "actualLevel": 70,
-        "variantName": "I",
-        "name": "Chaos Champion's Wings I",
-        "damage": "",
-        "stats": "Block +8, Dodge +8, Parry +8, Crit +8, Magic Def +1, Pierce Def +1, Melee Def +1, WIS +8, END +8, CHA -8, LUK -8, INT +8, DEX +8, STR +8, Bonus +8",
-        "obtainVariants": [
+          },
           {
             "location": "Chaos Champion Rewards",
             "price": "N/A",
@@ -7600,7 +7632,7 @@
         "itemType": "Wings"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 2,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "II",
@@ -7626,7 +7658,7 @@
         "itemType": "Wings"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 3,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "III",
@@ -10222,24 +10254,7 @@
             "priceType": "free",
             "sellback": "0 Gold",
             "daRequired": false
-          }
-        ],
-        "element": "WAT",
-        "resists": "Fire +1",
-        "rarity": "7"
-      },
-      {
-        "levelNumber": 1,
-        "levelDisplay": "20",
-        "actualLevel": 20,
-        "variantName": "(Base)",
-        "name": "Cider Keg",
-        "damage": "",
-        "stats": "END +3, CHA +2, LUK +2, Bonus +1",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21577970",
-        "description": "From Vaal's personal stash, this'll protect you while you still get a nice cider-y scent!",
-        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/CiderKegpic.png",
-        "obtainVariants": [
+          },
           {
             "location": "Cider Loot Shop",
             "price": "20 Dragon Coins",
@@ -10271,24 +10286,7 @@
             "priceType": "free",
             "sellback": "0 Gold",
             "daRequired": false
-          }
-        ],
-        "element": "WAT",
-        "resists": "Fire +2",
-        "rarity": "5"
-      },
-      {
-        "levelNumber": 2,
-        "levelDisplay": "30",
-        "actualLevel": 30,
-        "variantName": "Sweet",
-        "name": "Sweet Cider Keg",
-        "damage": "",
-        "stats": "Crit +1, Magic Def +1, Pierce Def +1, Melee Def +1, WIS +2, END +4, CHA +2, LUK +2, Bonus +2",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21577973",
-        "description": "From Vaal's personal stash, this'll protect you while you still get a nice cider-y scent!",
-        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/CiderKegpic.png",
-        "obtainVariants": [
+          },
           {
             "location": "Cider Loot Shop",
             "price": "25 Dragon Coins",
@@ -10320,24 +10318,7 @@
             "priceType": "free",
             "sellback": "0 Gold",
             "daRequired": false
-          }
-        ],
-        "element": "WAT",
-        "resists": "Fire +3, Darkness +2",
-        "rarity": "25"
-      },
-      {
-        "levelNumber": 3,
-        "levelDisplay": "40",
-        "actualLevel": 40,
-        "variantName": "Warm",
-        "name": "Warm Cider Keg",
-        "damage": "",
-        "stats": "Crit +2, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +2, END +4, CHA +3, LUK +3, INT +1, DEX +1, STR +1, Bonus +4",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21575794",
-        "description": "From Vaal's personal stash, this'll protect you while you still get a nice cider-y scent!",
-        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/CiderKegpic.png",
-        "obtainVariants": [
+          },
           {
             "location": "Cider Loot Shop",
             "price": "30 Dragon Coins",
@@ -10369,24 +10350,7 @@
             "priceType": "free",
             "sellback": "0 Gold",
             "daRequired": true
-          }
-        ],
-        "element": "WAT",
-        "resists": "Fire +7, Darkness +6, Immobility +3",
-        "rarity": "10"
-      },
-      {
-        "levelNumber": 4,
-        "levelDisplay": "75",
-        "actualLevel": 75,
-        "variantName": "Bubbly",
-        "name": "Bubbly Cider Keg",
-        "damage": "",
-        "stats": "Block +1, Dodge +1, Parry +1, Crit +6, Magic Def +7, Pierce Def +7, Melee Def +7, WIS +7, END +9, CHA +7, LUK +7, INT +6, DEX +6, STR +6, Bonus +9",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21575801",
-        "description": "From Vaal's personal stash, this'll protect you while you still get a nice cider-y scent! This item requires a Dragon Amulet.",
-        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/CiderKegpic.png",
-        "obtainVariants": [
+          },
           {
             "location": "Cider Loot Shop",
             "price": "50 Dragon Coins",
@@ -10418,24 +10382,7 @@
             "priceType": "free",
             "sellback": "0 Gold",
             "daRequired": true
-          }
-        ],
-        "element": "WAT",
-        "resists": "Fire +8, Darkness +8, Immobility +4",
-        "rarity": "10"
-      },
-      {
-        "levelNumber": 5,
-        "levelDisplay": "80",
-        "actualLevel": 80,
-        "variantName": "Moglinberry",
-        "name": "Moglinberry Cider Keg",
-        "damage": "",
-        "stats": "Block +1, Dodge +1, Parry +1, Crit +7, Magic Def +7, Pierce Def +7, Melee Def +7, WIS +7, END +10, CHA +7, LUK +7, INT +6, DEX +6, STR +6, Bonus +9",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21575803",
-        "description": "From Vaal's personal stash, this'll protect you while you still get a nice cider-y scent! This item requires a Dragon Amulet.",
-        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/CiderKegpic.png",
-        "obtainVariants": [
+          },
           {
             "location": "Cider Loot Shop",
             "price": "55 Dragon Coins",
@@ -10483,7 +10430,7 @@
     "alternativeImages": [
       {
         "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/CircadaWings-Opened.png",
-        "caption": "Clicked Appearance"
+        "caption": "Opened"
       }
     ],
     "elements": [
@@ -11516,7 +11463,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 40,
+        "levelNumber": 1,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "I",
@@ -11540,7 +11487,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 1,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "I",
@@ -11565,7 +11512,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 2,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "II",
@@ -11589,7 +11536,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 2,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "II",
@@ -11614,7 +11561,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 3,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "III",
@@ -11638,7 +11585,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 3,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "III",
@@ -11663,7 +11610,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 4,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "IV",
@@ -11687,7 +11634,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 5,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "IV",
@@ -11712,7 +11659,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 6,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "V",
@@ -11736,7 +11683,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 7,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "V",
@@ -11761,7 +11708,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 8,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "VI",
@@ -11785,7 +11732,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 9,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "VI",
@@ -12627,7 +12574,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 20,
+        "levelNumber": 1,
         "levelDisplay": "20",
         "actualLevel": 20,
         "name": "Comedy Cloak",
@@ -12650,7 +12597,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 20,
+        "levelNumber": 1,
         "levelDisplay": "20",
         "actualLevel": 20,
         "name": "Comedy Cloak",
@@ -12674,7 +12621,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 2,
         "levelDisplay": "30",
         "actualLevel": 30,
         "name": "Comedy Cloak",
@@ -12697,7 +12644,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 2,
         "levelDisplay": "30",
         "actualLevel": 30,
         "name": "Comedy Cloak",
@@ -12721,7 +12668,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 3,
         "levelDisplay": "40",
         "actualLevel": 40,
         "name": "Comedy Cloak",
@@ -12744,7 +12691,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 3,
         "levelDisplay": "40",
         "actualLevel": 40,
         "name": "Comedy Cloak",
@@ -12768,7 +12715,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 4,
         "levelDisplay": "50",
         "actualLevel": 50,
         "name": "Comedy Cloak",
@@ -12791,7 +12738,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 4,
         "levelDisplay": "50",
         "actualLevel": 50,
         "name": "Comedy Cloak",
@@ -12815,7 +12762,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 5,
         "levelDisplay": "60",
         "actualLevel": 60,
         "name": "Comedy Cloak",
@@ -12838,7 +12785,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 5,
         "levelDisplay": "60",
         "actualLevel": 60,
         "name": "Comedy Cloak",
@@ -12862,7 +12809,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 6,
         "levelDisplay": "70",
         "actualLevel": 70,
         "name": "Comedy Cloak",
@@ -12885,7 +12832,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 6,
         "levelDisplay": "70",
         "actualLevel": 70,
         "name": "Comedy Cloak",
@@ -12909,7 +12856,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 75,
+        "levelNumber": 7,
         "levelDisplay": "75",
         "actualLevel": 75,
         "name": "Comedy Cloak",
@@ -12932,7 +12879,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 75,
+        "levelNumber": 8,
         "levelDisplay": "75",
         "actualLevel": 75,
         "name": "Comedy Cloak",
@@ -12956,7 +12903,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 9,
         "levelDisplay": "80",
         "actualLevel": 80,
         "name": "Comedy Cloak",
@@ -12979,7 +12926,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 10,
         "levelDisplay": "80",
         "actualLevel": 80,
         "name": "Comedy Cloak",
@@ -14226,7 +14173,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 35,
+        "levelNumber": 1,
         "levelDisplay": "35",
         "actualLevel": 35,
         "variantName": "I",
@@ -14250,7 +14197,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 35,
+        "levelNumber": 1,
         "levelDisplay": "35",
         "actualLevel": 35,
         "variantName": "I",
@@ -14275,7 +14222,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 45,
+        "levelNumber": 2,
         "levelDisplay": "45",
         "actualLevel": 45,
         "variantName": "II",
@@ -14299,7 +14246,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 45,
+        "levelNumber": 2,
         "levelDisplay": "45",
         "actualLevel": 45,
         "variantName": "II",
@@ -14324,7 +14271,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 55,
+        "levelNumber": 3,
         "levelDisplay": "55",
         "actualLevel": 55,
         "variantName": "III",
@@ -14348,7 +14295,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 55,
+        "levelNumber": 3,
         "levelDisplay": "55",
         "actualLevel": 55,
         "variantName": "III",
@@ -14373,7 +14320,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 65,
+        "levelNumber": 4,
         "levelDisplay": "65",
         "actualLevel": 65,
         "variantName": "IV",
@@ -14397,7 +14344,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 65,
+        "levelNumber": 4,
         "levelDisplay": "65",
         "actualLevel": 65,
         "variantName": "IV",
@@ -14422,7 +14369,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 75,
+        "levelNumber": 5,
         "levelDisplay": "75",
         "actualLevel": 75,
         "variantName": "V",
@@ -14446,7 +14393,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 75,
+        "levelNumber": 6,
         "levelDisplay": "75",
         "actualLevel": 75,
         "variantName": "V",
@@ -14471,7 +14418,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 85,
+        "levelNumber": 7,
         "levelDisplay": "85",
         "actualLevel": 85,
         "variantName": "VI",
@@ -14495,7 +14442,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 85,
+        "levelNumber": 8,
         "levelDisplay": "85",
         "actualLevel": 85,
         "variantName": "VI",
@@ -14966,46 +14913,139 @@
   },
   {
     "id": "accessory-custom-harlequape-2010",
-    "name": "Custom HarleQuape (2010)",
+    "familyName": "Custom HarleQuape (2010)",
     "slug": "accessory-custom-harlequape-2010",
+    "aliasSlugs": [
+      "accessory-elite-custom-harlequape-2010",
+      "accessory-ultra-custom-harlequape-2010"
+    ],
     "type": "accessory",
     "subtype": "cape-wing",
-    "description": "Be the harlequin queen or (king) you've always wanted to be, and then be even more colorful! With a customizable cape, you can pull off pranks in style!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17445315",
-    "releaseDate": "",
+    "familyOrigin": "cross-post",
+    "familySources": [],
+    "shared": {
+      "description": "Be the harlequin queen or (king) you've always wanted to be, and then be even more colorful! With a customizable cape, you can pull off pranks in style!",
+      "imageUrl": "http://i.imgur.com/vk7jG.png",
+      "alternativeImages": [
+        {
+          "url": "http://i.imgur.com/xEkQWNn.jpg",
+          "caption": "Alternative Image"
+        }
+      ]
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
+        "levelDisplay": "20",
+        "actualLevel": 20,
+        "variantName": "(Base)",
+        "name": "Custom HarleQuape (2010)",
+        "damage": "",
+        "stats": "Crit +3, Magic Def +1, Melee Def +1, END +2, CHA +2, INT +3, STR +3, Bonus +2",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=17445315",
+        "description": "Be the harlequin queen or (king) you've always wanted to be, and then be even more colorful! With a customizable cape, you can pull off pranks in style!",
+        "imageUrl": "http://i.imgur.com/vk7jG.png",
+        "alternativeImages": [
+          {
+            "url": "http://i.imgur.com/xEkQWNn.jpg",
+            "caption": "Alternative Image"
+          }
+        ],
+        "obtainVariants": [
+          {
+            "location": "Motley Holiday Shop",
+            "priceType": "dc",
+            "price": "100 Dragon Coins",
+            "sellback": "90 DC (<24 hours) / 25 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "element": "LIG",
+        "resists": "Fire +3, Darkness +3",
+        "rarity": "25"
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "35",
+        "actualLevel": 35,
+        "variantName": "Elite",
+        "name": "Elite Custom HarleQuape (2010)",
+        "damage": "",
+        "stats": "Dodge +2, Crit +3, Magic Def +2, Melee Def +2, END +3, CHA +3, INT +4, STR +4, Bonus +2",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=15768139",
+        "description": "Be the harlequin queen or (king) you've always wanted to be, and then be even more colorful! With a customizable cape, you can pull off pranks in style!",
+        "imageUrl": "http://i.imgur.com/vk7jG.png",
+        "alternativeImages": [
+          {
+            "url": "http://i.imgur.com/xEkQWNn.jpg",
+            "caption": "Alternative Image"
+          }
+        ],
+        "obtainVariants": [
+          {
+            "location": "Motley Holiday Shop",
+            "priceType": "dc",
+            "price": "150 Dragon Coins",
+            "sellback": "135 DC (<24 hours) / 38 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "element": "LIG",
+        "resists": "Fire +3, Darkness +3",
+        "rarity": "25"
+      },
+      {
+        "levelNumber": 3,
+        "levelDisplay": "50",
+        "actualLevel": 50,
+        "variantName": "Ultra",
+        "name": "Ultra Custom HarleQuape 2010",
+        "damage": "",
+        "stats": "Dodge +2, Crit +3, Magic Def +2, Melee Def +2, END +4, CHA +4, INT +5, DEX +5, STR +5, Bonus +3",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=17445377",
+        "description": "Be the harlequin queen or (king) you've always wanted to be, and then be even more colorful! With a customizable cape, you can pull off pranks in style!",
+        "imageUrl": "http://i.imgur.com/vk7jG.png",
+        "alternativeImages": [
+          {
+            "url": "http://i.imgur.com/xEkQWNn.jpg",
+            "caption": "Alternative Image"
+          }
+        ],
+        "obtainVariants": [
+          {
+            "location": "Motley 2010 Shop",
+            "priceType": "dc",
+            "price": "150 Dragon Coins",
+            "sellback": "135 DC (<24 hours) / 38 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "element": "LIG",
+        "resists": "Darkness +7, Fire +7",
+        "rarity": "25",
+        "notes": "Cape is color custom."
+      }
+    ],
+    "itemType": "Cape",
+    "equipSlot": "Back",
+    "category": "Armor",
+    "tags": [
+      "dc",
+      "lig"
+    ],
+    "isRare": true,
+    "hasDA": false,
+    "hasDC": true,
+    "hasDM": false,
+    "hasFree": false,
+    "hasMerge": false,
+    "levelRange": "20-50",
     "elements": [
       "LIG"
-    ],
-    "level": "20",
-    "stats": "Crit +3, Magic Def +1, Melee Def +1, END +2, CHA +2, INT +3, STR +3, Bonus +2",
-    "resists": "Fire +3, Darkness +3",
-    "rarity": "25",
-    "itemType": "Cape",
-    "equipSpot": "Back",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "Motley Holiday Shop",
-        "priceType": "dc",
-        "price": "100 Dragon Coins",
-        "sellback": "90 DC (<24 hours) / 25 DC (>24 hours)",
-        "daRequired": false,
-        "dcRequired": true
-      }
-    ],
-    "tags": [
-      "lig",
-      "dc"
-    ],
-    "daRequired": false,
-    "dcRequired": true,
-    "isRare": true,
-    "imageUrl": "http://i.imgur.com/vk7jG.png",
-    "alternativeImages": [
-      {
-        "url": "http://i.imgur.com/xEkQWNn.jpg",
-        "caption": "Alternative Image"
-      }
     ]
   },
   {
@@ -17129,11 +17169,11 @@
     "alternativeImages": [
       {
         "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/DebrisAppendages-ElementalAttunement.png",
-        "caption": "All Appearances"
+        "caption": "Elemental Attunement"
       },
       {
         "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/DebrisAppendages-OtherOld.png",
-        "caption": "'Other' elemental attunement appearance"
+        "caption": "Other Old"
       }
     ],
     "elements": [
@@ -20692,7 +20732,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 35,
+        "levelNumber": 1,
         "levelDisplay": "35",
         "actualLevel": 35,
         "variantName": "I",
@@ -20717,7 +20757,7 @@
         "notes": "spoiler:\nDescription for free version of this item contains a Caesar cipher, which when decoded reads:\nI have begun creating the new monsters! My research has led me to create rare, never-before-seen creatures! Perhaps the answers lie in their genetic makeup!"
       },
       {
-        "levelNumber": 35,
+        "levelNumber": 1,
         "levelDisplay": "35",
         "actualLevel": 35,
         "variantName": "I",
@@ -20743,7 +20783,7 @@
         "notes": "spoiler:\nDescription for free version of this item contains a Caesar cipher, which when decoded reads:\nI have begun creating the new monsters! My research has led me to create rare, never-before-seen creatures! Perhaps the answers lie in their genetic makeup!"
       },
       {
-        "levelNumber": 45,
+        "levelNumber": 2,
         "levelDisplay": "45",
         "actualLevel": 45,
         "variantName": "II",
@@ -20767,7 +20807,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 45,
+        "levelNumber": 2,
         "levelDisplay": "45",
         "actualLevel": 45,
         "variantName": "II",
@@ -20792,7 +20832,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 55,
+        "levelNumber": 3,
         "levelDisplay": "55",
         "actualLevel": 55,
         "variantName": "III",
@@ -20816,7 +20856,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 55,
+        "levelNumber": 3,
         "levelDisplay": "55",
         "actualLevel": 55,
         "variantName": "III",
@@ -20841,7 +20881,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 65,
+        "levelNumber": 4,
         "levelDisplay": "65",
         "actualLevel": 65,
         "variantName": "IV",
@@ -20865,7 +20905,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 65,
+        "levelNumber": 4,
         "levelDisplay": "65",
         "actualLevel": 65,
         "variantName": "IV",
@@ -20890,7 +20930,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 75,
+        "levelNumber": 5,
         "levelDisplay": "75",
         "actualLevel": 75,
         "variantName": "V",
@@ -20914,7 +20954,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 75,
+        "levelNumber": 6,
         "levelDisplay": "75",
         "actualLevel": 75,
         "variantName": "V",
@@ -20939,7 +20979,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 85,
+        "levelNumber": 7,
         "levelDisplay": "85",
         "actualLevel": 85,
         "variantName": "VI",
@@ -20963,7 +21003,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 85,
+        "levelNumber": 8,
         "levelDisplay": "85",
         "actualLevel": 85,
         "variantName": "VI",
@@ -21036,6 +21076,12 @@
       "rarity": "100",
       "alsoSee": [
         {
+          "name": "Half Dread Wings",
+          "slug": "accessory-half-dread-wings",
+          "type": "accessory",
+          "url": "https://forums2.battleon.com/f/tm.asp?m=20885200"
+        },
+        {
           "name": "Mighty Dread Wings",
           "slug": "accessory-mighty-dread-wings",
           "type": "accessory",
@@ -21045,7 +21091,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 20,
+        "levelNumber": 1,
         "levelDisplay": "20",
         "actualLevel": 20,
         "name": "Dread Wings",
@@ -21069,7 +21115,7 @@
         "itemType": "Wings"
       },
       {
-        "levelNumber": 20,
+        "levelNumber": 1,
         "levelDisplay": "20",
         "actualLevel": 20,
         "name": "Dread Wings",
@@ -21085,7 +21131,7 @@
             "dcRequired": true
           }
         ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21984907",
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=18326899",
         "description": "With these on, you'll be able to strike fear into the hearts of your opponents while staying stylish to the max! This grew out of the Platinum Pumpkin in Fall 2010!",
         "alternativeImages": [],
         "element": "FIR",
@@ -21480,7 +21526,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 10,
+        "levelNumber": 1,
         "levelDisplay": "10",
         "actualLevel": 10,
         "variantName": "I",
@@ -21504,7 +21550,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 10,
+        "levelNumber": 1,
         "levelDisplay": "10",
         "actualLevel": 10,
         "variantName": "I",
@@ -21529,7 +21575,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 20,
+        "levelNumber": 2,
         "levelDisplay": "20",
         "actualLevel": 20,
         "variantName": "II",
@@ -21553,7 +21599,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 20,
+        "levelNumber": 2,
         "levelDisplay": "20",
         "actualLevel": 20,
         "variantName": "II",
@@ -21578,7 +21624,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 3,
         "levelDisplay": "30",
         "actualLevel": 30,
         "variantName": "III",
@@ -21602,7 +21648,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 3,
         "levelDisplay": "30",
         "actualLevel": 30,
         "variantName": "III",
@@ -21627,7 +21673,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 4,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "IV",
@@ -21651,7 +21697,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 4,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "IV",
@@ -21676,7 +21722,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 5,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "V",
@@ -21700,7 +21746,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 5,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "V",
@@ -21725,7 +21771,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 6,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "VI",
@@ -21749,7 +21795,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 6,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "VI",
@@ -21774,7 +21820,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 7,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "VII",
@@ -21798,7 +21844,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 7,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "VII",
@@ -21823,7 +21869,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 8,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "VIII",
@@ -21847,7 +21893,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 9,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "VIII",
@@ -21872,7 +21918,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 10,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "IX",
@@ -21896,7 +21942,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 11,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "IX",
@@ -22480,11 +22526,11 @@
     "alternativeImages": [
       {
         "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/EdelianBackpack-ElementalAttunement.png",
-        "caption": "All Appearances"
+        "caption": "Elemental Attunement"
       },
       {
         "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/EdelianBackpack-Full.png",
-        "caption": "Full Appearance"
+        "caption": "Full"
       }
     ],
     "elements": [
@@ -22516,50 +22562,6 @@
     "dcRequired": true,
     "isCosmetic": true,
     "isSeasonal": true
-  },
-  {
-    "id": "accessory-elite-custom-harlequape-2010",
-    "name": "Elite Custom HarleQuape (2010)",
-    "slug": "accessory-elite-custom-harlequape-2010",
-    "type": "accessory",
-    "subtype": "cape-wing",
-    "description": "Be the harlequin queen or (king) you've always wanted to be, and then be even more colorful! With a customizable cape, you can pull off pranks in style!",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=15768139",
-    "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
-    "level": "35",
-    "stats": "Dodge +2, Crit +3, Magic Def +2, Melee Def +2, END +3, CHA +3, INT +4, STR +4, Bonus +2",
-    "resists": "Fire +3, Darkness +3",
-    "rarity": "25",
-    "itemType": "Cape",
-    "equipSpot": "Back",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "Motley Holiday Shop",
-        "priceType": "dc",
-        "price": "150 Dragon Coins",
-        "sellback": "135 DC (<24 hours) / 38 DC (>24 hours)",
-        "daRequired": false,
-        "dcRequired": true
-      }
-    ],
-    "tags": [
-      "lig",
-      "dc"
-    ],
-    "daRequired": false,
-    "dcRequired": true,
-    "isRare": true,
-    "imageUrl": "http://i.imgur.com/vk7jG.png",
-    "alternativeImages": [
-      {
-        "url": "http://i.imgur.com/xEkQWNn.jpg",
-        "caption": "Alternative Image"
-      }
-    ]
   },
   {
     "id": "accessory-elite-pactogonal-cape",
@@ -22989,7 +22991,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 23,
+        "levelNumber": 1,
         "levelDisplay": "23",
         "actualLevel": 23,
         "variantName": "I",
@@ -23005,24 +23007,7 @@
             "requiredItems": "100 Defender's Medal & 10 Ateala Armament",
             "dmRequired": true,
             "daRequired": false
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=20503981",
-        "description": "Crafted from Ateala Armaments obtained from fighting off Wargoth's legions of possessed minions.",
-        "element": "WAT",
-        "resists": "Energy +3, Fire +3",
-        "rarity": "10",
-        "itemType": "Cape"
-      },
-      {
-        "levelNumber": 23,
-        "levelDisplay": "23",
-        "actualLevel": 23,
-        "variantName": "I",
-        "name": "Escelense Defender Cape I",
-        "damage": "",
-        "stats": "Crit +2, Magic Def +1, Pierce Def +1, Melee Def +1, WIS +1, CHA +1, INT +1, DEX +1, STR +1, Bonus +2",
-        "obtainVariants": [
+          },
           {
             "location": "Escelense Swap",
             "price": "N/A",
@@ -23041,7 +23026,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 33,
+        "levelNumber": 2,
         "levelDisplay": "33",
         "actualLevel": 33,
         "variantName": "II",
@@ -23057,24 +23042,7 @@
             "requiredItems": "1 Escelense Defender Cape I & 10 Ateala Armament",
             "dmRequired": true,
             "daRequired": false
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=20503998",
-        "description": "Crafted from Ateala Armaments obtained from fighting off Wargoth's legions of possessed minions.",
-        "element": "WAT",
-        "resists": "Energy +4, Fire +4",
-        "rarity": "10",
-        "itemType": "Cape"
-      },
-      {
-        "levelNumber": 33,
-        "levelDisplay": "33",
-        "actualLevel": 33,
-        "variantName": "II",
-        "name": "Escelense Defender Cape II",
-        "damage": "",
-        "stats": "Crit +3, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +2, CHA +2, INT +2, DEX +2, STR +2, Bonus +3",
-        "obtainVariants": [
+          },
           {
             "location": "Escelense Swap",
             "price": "N/A",
@@ -23093,7 +23061,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 43,
+        "levelNumber": 3,
         "levelDisplay": "43",
         "actualLevel": 43,
         "variantName": "III",
@@ -23109,24 +23077,7 @@
             "requiredItems": "1 Escelense Defender Cape II & 10 Ateala Armament",
             "dmRequired": true,
             "daRequired": false
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=20504008",
-        "description": "Crafted from Ateala Armaments obtained from fighting off Wargoth's legions of possessed minions.",
-        "element": "WAT",
-        "resists": "Energy + 5, Fire +5",
-        "rarity": "10",
-        "itemType": "Cape"
-      },
-      {
-        "levelNumber": 43,
-        "levelDisplay": "43",
-        "actualLevel": 43,
-        "variantName": "III",
-        "name": "Escelense Defender Cape III",
-        "damage": "",
-        "stats": "Crit +4, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +3, CHA +3, INT +3, DEX +3, STR +3, Bonus +3",
-        "obtainVariants": [
+          },
           {
             "location": "Escelense Swap",
             "price": "N/A",
@@ -23145,7 +23096,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 53,
+        "levelNumber": 4,
         "levelDisplay": "53",
         "actualLevel": 53,
         "variantName": "IV",
@@ -23161,24 +23112,7 @@
             "requiredItems": "1 Escelense Defender Cape III & 10 Ateala Armament",
             "dmRequired": true,
             "daRequired": false
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=20504036",
-        "description": "Crafted from Ateala Armaments obtained from fighting off Wargoth's legions of possessed minions.",
-        "element": "WAT",
-        "resists": "Energy +6, Fire +6, Immobility +1",
-        "rarity": "10",
-        "itemType": "Cape"
-      },
-      {
-        "levelNumber": 53,
-        "levelDisplay": "53",
-        "actualLevel": 53,
-        "variantName": "IV",
-        "name": "Escelense Defender Cape IV",
-        "damage": "",
-        "stats": "Crit +5, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +4, CHA +4, INT +4, DEX +4, STR +4, Bonus +4",
-        "obtainVariants": [
+          },
           {
             "location": "Escelense Swap",
             "price": "N/A",
@@ -23197,7 +23131,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 63,
+        "levelNumber": 5,
         "levelDisplay": "63",
         "actualLevel": 63,
         "variantName": "V",
@@ -23213,24 +23147,7 @@
             "requiredItems": "1 Escelense Defender Cape IV & 10 Ateala Armament",
             "dmRequired": true,
             "daRequired": false
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=20504052",
-        "description": "Crafted from Ateala Armaments obtained from fighting off Wargoth's legions of possessed minions.",
-        "element": "WAT",
-        "resists": "Energy +7, Fire +7, Immobility +2",
-        "rarity": "10",
-        "itemType": "Cape"
-      },
-      {
-        "levelNumber": 63,
-        "levelDisplay": "63",
-        "actualLevel": 63,
-        "variantName": "V",
-        "name": "Escelense Defender Cape V",
-        "damage": "",
-        "stats": "Crit +6, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +5, CHA +5, INT +4, DEX +4, STR +4, Bonus +5",
-        "obtainVariants": [
+          },
           {
             "location": "Escelense Swap",
             "price": "N/A",
@@ -23337,7 +23254,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 23,
+        "levelNumber": 1,
         "levelDisplay": "23",
         "actualLevel": 23,
         "variantName": "I",
@@ -23353,24 +23270,7 @@
             "requiredItems": "100 Defender's Medal & 10 Ateala Armament",
             "dmRequired": true,
             "daRequired": true
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=20504065",
-        "description": "Crafted from Ateala Armaments obtained from fighting off Wargoth's legions of possessed minions. This item requires a Dragon Amulet.",
-        "element": "WAT",
-        "resists": "Energy +4, Fire +4",
-        "rarity": "10",
-        "itemType": "Cape"
-      },
-      {
-        "levelNumber": 23,
-        "levelDisplay": "23",
-        "actualLevel": 23,
-        "variantName": "I",
-        "name": "Escelense Dragon Defender Cape I",
-        "damage": "",
-        "stats": "Crit +3, Magic Def +1, Pierce Def +1, Melee Def +1, WIS +1, CHA +1, INT +1, DEX +1, STR +1, Bonus +2",
-        "obtainVariants": [
+          },
           {
             "location": "Escelense Swap",
             "price": "N/A",
@@ -23389,7 +23289,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 33,
+        "levelNumber": 2,
         "levelDisplay": "33",
         "actualLevel": 33,
         "variantName": "II",
@@ -23405,24 +23305,7 @@
             "requiredItems": "1 Escelense Dragon Defender Cape I & 10 Ateala Armament",
             "dmRequired": true,
             "daRequired": true
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=20504084",
-        "description": "Crafted from Ateala Armaments obtained from fighting off Wargoth's legions of possessed minions. This item requires a Dragon Amulet.",
-        "element": "WAT",
-        "resists": "Energy +5, Fire +5, Health -1",
-        "rarity": "10",
-        "itemType": "Cape"
-      },
-      {
-        "levelNumber": 33,
-        "levelDisplay": "33",
-        "actualLevel": 33,
-        "variantName": "II",
-        "name": "Escelense Dragon Defender Cape II",
-        "damage": "",
-        "stats": "Crit +4, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +2, CHA +2, INT +2, DEX +2, STR +2, Bonus +3",
-        "obtainVariants": [
+          },
           {
             "location": "Escelense Swap",
             "price": "N/A",
@@ -23441,7 +23324,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 43,
+        "levelNumber": 3,
         "levelDisplay": "43",
         "actualLevel": 43,
         "variantName": "III",
@@ -23457,24 +23340,7 @@
             "requiredItems": "1 Escelense Dragon Defender Cape II & 10 Ateala Armament",
             "dmRequired": true,
             "daRequired": true
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=20504098",
-        "description": "Crafted from Ateala Armaments obtained from fighting off Wargoth's legions of possessed minions. This item requires a Dragon Amulet.",
-        "element": "WAT",
-        "resists": "Energy +6, Fire +6, Immobility +1, Health -1",
-        "rarity": "10",
-        "itemType": "Cape"
-      },
-      {
-        "levelNumber": 43,
-        "levelDisplay": "43",
-        "actualLevel": 43,
-        "variantName": "III",
-        "name": "Escelense Dragon Defender Cape III",
-        "damage": "",
-        "stats": "Crit +5, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +3, CHA +3, INT +3, DEX +3, STR +3, Bonus +4",
-        "obtainVariants": [
+          },
           {
             "location": "Escelense Swap",
             "price": "N/A",
@@ -23493,7 +23359,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 53,
+        "levelNumber": 4,
         "levelDisplay": "53",
         "actualLevel": 53,
         "variantName": "IV",
@@ -23509,24 +23375,7 @@
             "requiredItems": "1 Escelense Dragon Defender Cape III & 10 Ateala Armament",
             "dmRequired": true,
             "daRequired": true
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=20504112",
-        "description": "Crafted from Ateala Armaments obtained from fighting off Wargoth's legions of possessed minions. This item requires a Dragon Amulet.",
-        "element": "WAT",
-        "resists": "Energy +7, Fire +7, Immobility +2, Health -1",
-        "rarity": "10",
-        "itemType": "Cape"
-      },
-      {
-        "levelNumber": 53,
-        "levelDisplay": "53",
-        "actualLevel": 53,
-        "variantName": "IV",
-        "name": "Escelense Dragon Defender Cape IV",
-        "damage": "",
-        "stats": "Crit +6, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +4, CHA +4, INT +4, DEX +4, STR +4, Bonus +5",
-        "obtainVariants": [
+          },
           {
             "location": "Escelense Swap",
             "price": "N/A",
@@ -23545,7 +23394,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 63,
+        "levelNumber": 5,
         "levelDisplay": "63",
         "actualLevel": 63,
         "variantName": "V",
@@ -23561,24 +23410,7 @@
             "requiredItems": "1 Escelense Dragon Defender Cape IV & 10 Ateala Armament",
             "dmRequired": true,
             "daRequired": true
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=20504120",
-        "description": "Crafted from Ateala Armaments obtained from fighting off Wargoth's legions of possessed minions. This item requires a Dragon Amulet.",
-        "element": "WAT",
-        "resists": "Energy +8, Fire +8, Immobility +3, Health -2",
-        "rarity": "10",
-        "itemType": "Cape"
-      },
-      {
-        "levelNumber": 63,
-        "levelDisplay": "63",
-        "actualLevel": 63,
-        "variantName": "V",
-        "name": "Escelense Dragon Defender Cape V",
-        "damage": "",
-        "stats": "Crit +7, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +5, CHA +5, INT +5, DEX +5, STR +5, Bonus +6",
-        "obtainVariants": [
+          },
           {
             "location": "Escelense Swap",
             "price": "N/A",
@@ -23597,7 +23429,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 73,
+        "levelNumber": 6,
         "levelDisplay": "73",
         "actualLevel": 73,
         "variantName": "VI",
@@ -25159,7 +24991,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 40,
+        "levelNumber": 1,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "I",
@@ -25184,7 +25016,7 @@
         "itemType": "Wings"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 2,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "II",
@@ -25199,24 +25031,7 @@
             "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=19487305",
-        "description": "These Sidhe tend to busy themselves with practical joking, generally practical jokes of a rather gruesome nature.",
-        "element": "FIR",
-        "resists": "Metal +2, Fire +5",
-        "rarity": "15",
-        "itemType": "Wings"
-      },
-      {
-        "levelNumber": 50,
-        "levelDisplay": "50",
-        "actualLevel": 50,
-        "variantName": "II",
-        "name": "Far Darrig II",
-        "damage": "",
-        "stats": "Crit +9, WIS +9, END +5, CHA +3, LUK +3, INT +7, DEX +7, STR +7, Bonus +4",
-        "obtainVariants": [
+          },
           {
             "location": "Wing Merge",
             "price": "N/A",
@@ -25235,7 +25050,7 @@
         "itemType": "Wings"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 3,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "III",
@@ -25250,24 +25065,7 @@
             "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=19487308",
-        "description": "These Sidhe tend to busy themselves with practical joking, generally practical jokes of a rather gruesome nature.",
-        "element": "FIR",
-        "resists": "Metal +3, Fire +6",
-        "rarity": "15",
-        "itemType": "Wings"
-      },
-      {
-        "levelNumber": 60,
-        "levelDisplay": "60",
-        "actualLevel": 60,
-        "variantName": "III",
-        "name": "Far Darrig III",
-        "damage": "",
-        "stats": "Crit +10, WIS +10, END +6, CHA +4, LUK +4, INT +8, DEX +8, STR +8, Bonus +5",
-        "obtainVariants": [
+          },
           {
             "location": "Wing Merge",
             "price": "N/A",
@@ -25286,7 +25084,7 @@
         "itemType": "Wings"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 4,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "IV",
@@ -25301,24 +25099,7 @@
             "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=19487340",
-        "description": "These Sidhe tend to busy themselves with practical joking, generally practical jokes of a rather gruesome nature.",
-        "element": "FIR",
-        "resists": "Metal +4, Fire +7",
-        "rarity": "25",
-        "itemType": "Wings"
-      },
-      {
-        "levelNumber": 70,
-        "levelDisplay": "70",
-        "actualLevel": 70,
-        "variantName": "IV",
-        "name": "Far Darrig IV",
-        "damage": "",
-        "stats": "Crit +11, WIS +11, END +7, CHA +5, LUK +5, INT +9, DEX +9, STR +9, Bonus +6",
-        "obtainVariants": [
+          },
           {
             "location": "Wing Merge",
             "price": "N/A",
@@ -26677,7 +26458,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 10,
+        "levelNumber": 1,
         "levelDisplay": "10",
         "actualLevel": 10,
         "variantName": "I",
@@ -26701,7 +26482,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 10,
+        "levelNumber": 1,
         "levelDisplay": "10",
         "actualLevel": 10,
         "variantName": "I",
@@ -26726,7 +26507,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 20,
+        "levelNumber": 2,
         "levelDisplay": "20",
         "actualLevel": 20,
         "variantName": "II",
@@ -26750,7 +26531,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 20,
+        "levelNumber": 2,
         "levelDisplay": "20",
         "actualLevel": 20,
         "variantName": "II",
@@ -26775,7 +26556,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 3,
         "levelDisplay": "30",
         "actualLevel": 30,
         "variantName": "III",
@@ -26799,7 +26580,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 3,
         "levelDisplay": "30",
         "actualLevel": 30,
         "variantName": "III",
@@ -26824,7 +26605,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 4,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "IV",
@@ -26848,7 +26629,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 4,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "IV",
@@ -26873,7 +26654,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 5,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "V",
@@ -26897,7 +26678,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 5,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "V",
@@ -26922,7 +26703,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 6,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "VI",
@@ -26946,7 +26727,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 6,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "VI",
@@ -26971,7 +26752,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 7,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "VII",
@@ -26995,7 +26776,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 8,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "VII",
@@ -27020,7 +26801,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 9,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "VIII",
@@ -27044,7 +26825,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 10,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "VIII",
@@ -27069,7 +26850,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 11,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "IX",
@@ -27093,7 +26874,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 12,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "IX",
@@ -27740,7 +27521,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 15,
+        "levelNumber": 1,
         "levelDisplay": "15",
         "actualLevel": 15,
         "variantName": "I",
@@ -27764,7 +27545,7 @@
         "itemType": "Wings"
       },
       {
-        "levelNumber": 15,
+        "levelNumber": 1,
         "levelDisplay": "15",
         "actualLevel": 15,
         "variantName": "I",
@@ -27789,7 +27570,7 @@
         "itemType": "Wings"
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 2,
         "levelDisplay": "30",
         "actualLevel": 30,
         "variantName": "II",
@@ -27813,7 +27594,7 @@
         "itemType": "Wings"
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 2,
         "levelDisplay": "30",
         "actualLevel": 30,
         "variantName": "II",
@@ -27838,7 +27619,7 @@
         "itemType": "Wings"
       },
       {
-        "levelNumber": 45,
+        "levelNumber": 3,
         "levelDisplay": "45",
         "actualLevel": 45,
         "variantName": "III",
@@ -27862,7 +27643,7 @@
         "itemType": "Wings"
       },
       {
-        "levelNumber": 45,
+        "levelNumber": 3,
         "levelDisplay": "45",
         "actualLevel": 45,
         "variantName": "III",
@@ -27887,7 +27668,7 @@
         "itemType": "Wings"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 4,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "IV",
@@ -27911,7 +27692,7 @@
         "itemType": "Wings"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 4,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "IV",
@@ -27936,7 +27717,7 @@
         "itemType": "Wings"
       },
       {
-        "levelNumber": 75,
+        "levelNumber": 5,
         "levelDisplay": "75",
         "actualLevel": 75,
         "variantName": "V",
@@ -27960,7 +27741,7 @@
         "itemType": "Wings"
       },
       {
-        "levelNumber": 75,
+        "levelNumber": 6,
         "levelDisplay": "75",
         "actualLevel": 75,
         "variantName": "V",
@@ -27985,7 +27766,7 @@
         "itemType": "Wings"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 7,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "VI",
@@ -28009,7 +27790,7 @@
         "itemType": "Wings"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 8,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "VI",
@@ -30067,7 +29848,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 40,
+        "levelNumber": 1,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "I",
@@ -30092,7 +29873,7 @@
         "itemType": "Wings"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 2,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "II",
@@ -30107,24 +29888,7 @@
             "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=19487436",
-        "description": "These wings made it easier for the Gean Canach to attract the women that they would speak with.",
-        "element": "WAT",
-        "resists": "Ice +2, Water +5",
-        "rarity": "15",
-        "itemType": "Wings"
-      },
-      {
-        "levelNumber": 50,
-        "levelDisplay": "50",
-        "actualLevel": 50,
-        "variantName": "II",
-        "name": "Gean Canach II",
-        "damage": "",
-        "stats": "Crit +9, WIS +9, END +5, CHA +3, LUK +3, INT +7, DEX +7, STR +7, Bonus +4",
-        "obtainVariants": [
+          },
           {
             "location": "Wing Merge",
             "price": "N/A",
@@ -30143,7 +29907,7 @@
         "itemType": "Wings"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 3,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "III",
@@ -30158,24 +29922,7 @@
             "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=19487442",
-        "description": "These wings made it easier for the Gean Canach to attract the women that they would speak with.",
-        "element": "WAT",
-        "resists": "Ice +3, Water +6",
-        "rarity": "15",
-        "itemType": "Wings"
-      },
-      {
-        "levelNumber": 60,
-        "levelDisplay": "60",
-        "actualLevel": 60,
-        "variantName": "III",
-        "name": "Gean Canach III",
-        "damage": "",
-        "stats": "Crit +10, WIS +10, END +6, CHA +4, LUK +4, INT +8, DEX +8, STR +8, Bonus +5",
-        "obtainVariants": [
+          },
           {
             "location": "Wing Merge",
             "price": "N/A",
@@ -30194,7 +29941,7 @@
         "itemType": "Wings"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 4,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "IV",
@@ -30209,24 +29956,7 @@
             "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=19487445",
-        "description": "These wings made it easier for the Gean Canach to attract the women that they would speak with.",
-        "element": "WAT",
-        "resists": "Ice +4, Water +7",
-        "rarity": "25",
-        "itemType": "Wings"
-      },
-      {
-        "levelNumber": 70,
-        "levelDisplay": "70",
-        "actualLevel": 70,
-        "variantName": "IV",
-        "name": "Gean Canach IV",
-        "damage": "",
-        "stats": "Crit +11, WIS +11, END +7, CHA +5, LUK +5, INT +9, DEX +9, STR +9, Bonus +6",
-        "obtainVariants": [
+          },
           {
             "location": "Wing Merge",
             "price": "N/A",
@@ -30519,7 +30249,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 15,
+        "levelNumber": 1,
         "levelDisplay": "15",
         "actualLevel": 15,
         "name": "Giant Bat Wings",
@@ -30541,7 +30271,7 @@
         "itemType": "Wings"
       },
       {
-        "levelNumber": 15,
+        "levelNumber": 1,
         "levelDisplay": "15",
         "actualLevel": 15,
         "name": "Giant Bat Wings",
@@ -30564,7 +30294,7 @@
         "itemType": "Wings"
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 2,
         "levelDisplay": "30",
         "actualLevel": 30,
         "name": "Giant Bat Wings",
@@ -30586,7 +30316,7 @@
         "itemType": "Wings"
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 2,
         "levelDisplay": "30",
         "actualLevel": 30,
         "name": "Giant Bat Wings",
@@ -30609,7 +30339,7 @@
         "itemType": "Wings"
       },
       {
-        "levelNumber": 45,
+        "levelNumber": 3,
         "levelDisplay": "45",
         "actualLevel": 45,
         "name": "Giant Bat Wings",
@@ -30631,7 +30361,7 @@
         "itemType": "Wings"
       },
       {
-        "levelNumber": 45,
+        "levelNumber": 3,
         "levelDisplay": "45",
         "actualLevel": 45,
         "name": "Giant Bat Wings",
@@ -30654,7 +30384,7 @@
         "itemType": "Wings"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 4,
         "levelDisplay": "60",
         "actualLevel": 60,
         "name": "Giant Bat Wings",
@@ -30676,7 +30406,7 @@
         "itemType": "Wings"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 4,
         "levelDisplay": "60",
         "actualLevel": 60,
         "name": "Giant Bat Wings",
@@ -30699,7 +30429,7 @@
         "itemType": "Wings"
       },
       {
-        "levelNumber": 75,
+        "levelNumber": 5,
         "levelDisplay": "75",
         "actualLevel": 75,
         "name": "Giant Bat Wings",
@@ -30721,7 +30451,7 @@
         "itemType": "Wings"
       },
       {
-        "levelNumber": 75,
+        "levelNumber": 6,
         "levelDisplay": "75",
         "actualLevel": 75,
         "name": "Giant Bat Wings",
@@ -30744,7 +30474,7 @@
         "itemType": "Wings"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 7,
         "levelDisplay": "80",
         "actualLevel": 80,
         "name": "Giant Bat Wings",
@@ -30766,7 +30496,7 @@
         "itemType": "Wings"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 8,
         "levelDisplay": "80",
         "actualLevel": 80,
         "name": "Giant Bat Wings",
@@ -31941,7 +31671,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 15,
+        "levelNumber": 1,
         "levelDisplay": "15",
         "actualLevel": 15,
         "name": "Golden Bat Wings",
@@ -31963,7 +31693,7 @@
         "itemType": "Wings"
       },
       {
-        "levelNumber": 15,
+        "levelNumber": 1,
         "levelDisplay": "15",
         "actualLevel": 15,
         "name": "Golden Bat Wings",
@@ -31986,7 +31716,7 @@
         "itemType": "Wings"
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 2,
         "levelDisplay": "30",
         "actualLevel": 30,
         "name": "Golden Bat Wings",
@@ -32008,7 +31738,7 @@
         "itemType": "Wings"
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 2,
         "levelDisplay": "30",
         "actualLevel": 30,
         "name": "Golden Bat Wings",
@@ -32031,7 +31761,7 @@
         "itemType": "Wings"
       },
       {
-        "levelNumber": 45,
+        "levelNumber": 3,
         "levelDisplay": "45",
         "actualLevel": 45,
         "name": "Golden Bat Wings",
@@ -32053,7 +31783,7 @@
         "itemType": "Wings"
       },
       {
-        "levelNumber": 45,
+        "levelNumber": 3,
         "levelDisplay": "45",
         "actualLevel": 45,
         "name": "Golden Bat Wings",
@@ -32076,7 +31806,7 @@
         "itemType": "Wings"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 4,
         "levelDisplay": "60",
         "actualLevel": 60,
         "name": "Golden Bat Wings",
@@ -32098,7 +31828,7 @@
         "itemType": "Wings"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 4,
         "levelDisplay": "60",
         "actualLevel": 60,
         "name": "Golden Bat Wings",
@@ -32121,7 +31851,7 @@
         "itemType": "Wings"
       },
       {
-        "levelNumber": 75,
+        "levelNumber": 5,
         "levelDisplay": "75",
         "actualLevel": 75,
         "name": "Golden Bat Wings",
@@ -32143,7 +31873,7 @@
         "itemType": "Wings"
       },
       {
-        "levelNumber": 75,
+        "levelNumber": 6,
         "levelDisplay": "75",
         "actualLevel": 75,
         "name": "Golden Bat Wings",
@@ -32166,7 +31896,7 @@
         "itemType": "Wings"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 7,
         "levelDisplay": "80",
         "actualLevel": 80,
         "name": "Golden Bat Wings",
@@ -32188,7 +31918,7 @@
         "itemType": "Wings"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 8,
         "levelDisplay": "80",
         "actualLevel": 80,
         "name": "Golden Bat Wings",
@@ -32552,7 +32282,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 3,
+        "levelNumber": 1,
         "levelDisplay": "3",
         "actualLevel": 3,
         "name": "Golden Condor Wings",
@@ -32576,7 +32306,7 @@
         "itemType": "Wings"
       },
       {
-        "levelNumber": 3,
+        "levelNumber": 1,
         "levelDisplay": "3",
         "actualLevel": 3,
         "name": "Golden Condor Wings",
@@ -32592,7 +32322,7 @@
             "dcRequired": true
           }
         ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21984461",
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=9475621",
         "description": "These wings are feathered with the molten feathers of the giant Golden Condor. They transfer a small portion of the bird's natural healing ability to the wearer, causing an additional 3% healing from EVERY healing effect.",
         "alternativeImages": [],
         "element": "NON",
@@ -34235,11 +33965,11 @@
       "alternativeImages": [
         {
           "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/GreydawnsAnniversaryCloak-Alt.png",
-          "caption": "Alternative Image"
+          "caption": "Alt"
         },
         {
           "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/GreydawnsAnniversaryCloak-CC.png",
-          "caption": "Color Custom Sample Image"
+          "caption": "CC"
         }
       ],
       "notes": "Capes are color-custom to the player's base and trim colors."
@@ -35066,7 +34796,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 60,
+        "levelNumber": 1,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "I",
@@ -35090,7 +34820,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 1,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "I",
@@ -35115,7 +34845,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 2,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "II",
@@ -35139,7 +34869,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 2,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "II",
@@ -35164,7 +34894,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 3,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "III",
@@ -35188,7 +34918,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 3,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "III",
@@ -35213,7 +34943,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 4,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "IV",
@@ -35237,7 +34967,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 4,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "IV",
@@ -35319,60 +35049,102 @@
   },
   {
     "id": "accessory-half-dread-wings",
-    "name": "Half Dread Wings",
+    "familyName": "Half Dread Wings",
     "slug": "accessory-half-dread-wings",
+    "aliasSlugs": [
+      "accessory-mighty-half-dread-wings"
+    ],
     "type": "accessory",
     "subtype": "cape-wing",
-    "description": "With these on, you'll be able to strike fear into the hearts of your opponents while staying stylish to the max! Twig took one wing away though!",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20885200",
-    "releaseDate": "",
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/HalfDreadWings.png",
+    "familyOrigin": "cross-post",
+    "familySources": [],
+    "shared": {
+      "description": "With these on, you'll be able to strike fear into the hearts of your opponents while staying stylish to the max! Twig took one wing away though!",
+      "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/HalfDreadWings.png",
+      "alsoSee": [
+        {
+          "name": "Dread Wings",
+          "slug": "accessory-dread-wings",
+          "type": "accessory",
+          "url": "https://forums2.battleon.com/f/tm.asp?m=18326899"
+        },
+        {
+          "name": "Mighty Dread Wings",
+          "slug": "accessory-mighty-dread-wings",
+          "type": "accessory",
+          "url": "https://forums2.battleon.com/f/tm.asp?m=18326956"
+        }
+      ]
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
+        "levelDisplay": "20",
+        "actualLevel": 20,
+        "variantName": "(Base)",
+        "name": "Half Dread Wings",
+        "damage": "",
+        "stats": "Crit +3, WIS +2, END +2, INT +2, DEX +2, STR +2, Bonus +1",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20885200",
+        "description": "With these on, you'll be able to strike fear into the hearts of your opponents while staying stylish to the max! Twig took one wing away though!",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/HalfDreadWings.png",
+        "obtainVariants": [
+          {
+            "location": "Half Off Shop",
+            "priceType": "dc",
+            "price": "50 Dragon Coins",
+            "sellback": "45 DC (<24 hours) / 13 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "element": "FIR",
+        "resists": "Water +1, Ice +1",
+        "rarity": "100"
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "50",
+        "actualLevel": 50,
+        "variantName": "Mighty",
+        "name": "Mighty Half Dread Wings",
+        "damage": "",
+        "stats": "Crit +5, WIS +4, END +4, INT +4, DEX +4, STR +4, Bonus +4",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20885244",
+        "description": "With these on, you'll be able to strike fear into the hearts of your opponents while staying stylish to the max! Twig took one wing away though!",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/HalfDreadWings.png",
+        "obtainVariants": [
+          {
+            "location": "Half Off Shop",
+            "priceType": "dc",
+            "price": "88 Dragon Coins",
+            "sellback": "80 DC (<24 hours) / 22 DC (>24 hours)",
+            "daRequired": false,
+            "dcRequired": true
+          }
+        ],
+        "element": "FIR",
+        "resists": "Water +8, Ice +8",
+        "rarity": "100"
+      }
+    ],
+    "itemType": "Wings",
+    "equipSlot": "Back",
+    "category": "Armor",
+    "tags": [
+      "dc",
+      "fir"
+    ],
+    "isRare": true,
+    "hasDA": false,
+    "hasDC": true,
+    "hasDM": false,
+    "hasFree": false,
+    "hasMerge": false,
+    "levelRange": "20-50",
     "elements": [
       "FIR"
-    ],
-    "level": "20",
-    "stats": "Crit +3, WIS +2, END +2, INT +2, DEX +2, STR +2, Bonus +1",
-    "resists": "Water +1, Ice +1",
-    "rarity": "100",
-    "itemType": "Wings",
-    "equipSpot": "Back",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "Half Off Shop",
-        "priceType": "dc",
-        "price": "50 Dragon Coins",
-        "sellback": "45 DC (<24 hours) / 13 DC (>24 hours)",
-        "daRequired": false,
-        "dcRequired": true
-      }
-    ],
-    "tags": [
-      "fir",
-      "dc"
-    ],
-    "daRequired": false,
-    "dcRequired": true,
-    "isRare": true,
-    "alsoSee": [
-      {
-        "name": "Dread Wings",
-        "slug": "accessory-dread-wings",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=18326899"
-      },
-      {
-        "name": "Mighty Dread Wings",
-        "slug": "accessory-mighty-dread-wings",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=18326956"
-      },
-      {
-        "name": "Mighty Half Dread Wings",
-        "slug": "accessory-mighty-half-dread-wings",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=20885244"
-      }
     ]
   },
   {
@@ -37152,7 +36924,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 45,
+        "levelNumber": 1,
         "levelDisplay": "45",
         "actualLevel": 45,
         "variantName": "I",
@@ -37176,7 +36948,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 45,
+        "levelNumber": 1,
         "levelDisplay": "45",
         "actualLevel": 45,
         "variantName": "I",
@@ -37201,7 +36973,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 55,
+        "levelNumber": 2,
         "levelDisplay": "55",
         "actualLevel": 55,
         "variantName": "II",
@@ -37225,7 +36997,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 55,
+        "levelNumber": 2,
         "levelDisplay": "55",
         "actualLevel": 55,
         "variantName": "II",
@@ -37250,7 +37022,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 65,
+        "levelNumber": 3,
         "levelDisplay": "65",
         "actualLevel": 65,
         "variantName": "III",
@@ -37274,7 +37046,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 65,
+        "levelNumber": 3,
         "levelDisplay": "65",
         "actualLevel": 65,
         "variantName": "III",
@@ -37299,7 +37071,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 75,
+        "levelNumber": 4,
         "levelDisplay": "75",
         "actualLevel": 75,
         "variantName": "IV",
@@ -37323,7 +37095,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 75,
+        "levelNumber": 5,
         "levelDisplay": "75",
         "actualLevel": 75,
         "variantName": "IV",
@@ -37348,7 +37120,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 85,
+        "levelNumber": 6,
         "levelDisplay": "85",
         "actualLevel": 85,
         "variantName": "V",
@@ -37372,7 +37144,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 85,
+        "levelNumber": 7,
         "levelDisplay": "85",
         "actualLevel": 85,
         "variantName": "V",
@@ -37503,7 +37275,7 @@
     "alternativeImages": [
       {
         "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/HourglassofTimelessDestiny-ElementalAttunement.png",
-        "caption": "All Appearances"
+        "caption": "Elemental Attunement"
       }
     ],
     "elements": [
@@ -38464,7 +38236,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 10,
+        "levelNumber": 1,
         "levelDisplay": "10",
         "actualLevel": 10,
         "variantName": "I",
@@ -38488,7 +38260,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 10,
+        "levelNumber": 1,
         "levelDisplay": "10",
         "actualLevel": 10,
         "variantName": "I",
@@ -38513,7 +38285,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 20,
+        "levelNumber": 2,
         "levelDisplay": "20",
         "actualLevel": 20,
         "variantName": "II",
@@ -38537,7 +38309,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 20,
+        "levelNumber": 2,
         "levelDisplay": "20",
         "actualLevel": 20,
         "variantName": "II",
@@ -38562,7 +38334,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 3,
         "levelDisplay": "30",
         "actualLevel": 30,
         "variantName": "III",
@@ -38586,7 +38358,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 3,
         "levelDisplay": "30",
         "actualLevel": 30,
         "variantName": "III",
@@ -38611,7 +38383,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 4,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "IV",
@@ -38635,7 +38407,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 4,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "IV",
@@ -38660,7 +38432,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 5,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "V",
@@ -38684,7 +38456,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 5,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "V",
@@ -38709,7 +38481,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 6,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "VI",
@@ -38733,7 +38505,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 6,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "VI",
@@ -38758,7 +38530,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 7,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "VII",
@@ -38782,7 +38554,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 8,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "VII",
@@ -38807,7 +38579,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 9,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "VIII",
@@ -38831,7 +38603,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 10,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "VIII",
@@ -38856,7 +38628,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 11,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "IX",
@@ -38880,7 +38652,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 12,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "IX",
@@ -39098,7 +38870,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 17,
+        "levelNumber": 1,
         "levelDisplay": "17",
         "actualLevel": 17,
         "name": "Infused Sheathed Rose Blade",
@@ -39121,7 +38893,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 17,
+        "levelNumber": 1,
         "levelDisplay": "17",
         "actualLevel": 17,
         "name": "Infused Sheathed Rose Blade",
@@ -39145,7 +38917,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 32,
+        "levelNumber": 2,
         "levelDisplay": "32",
         "actualLevel": 32,
         "name": "Infused Sheathed Rose Blade",
@@ -39168,7 +38940,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 32,
+        "levelNumber": 2,
         "levelDisplay": "32",
         "actualLevel": 32,
         "name": "Infused Sheathed Rose Blade",
@@ -39192,7 +38964,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 47,
+        "levelNumber": 3,
         "levelDisplay": "47",
         "actualLevel": 47,
         "name": "Infused Sheathed Rose Blade",
@@ -39215,7 +38987,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 47,
+        "levelNumber": 3,
         "levelDisplay": "47",
         "actualLevel": 47,
         "name": "Infused Sheathed Rose Blade",
@@ -39239,7 +39011,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 62,
+        "levelNumber": 4,
         "levelDisplay": "62",
         "actualLevel": 62,
         "name": "Infused Sheathed Rose Blade",
@@ -39262,7 +39034,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 62,
+        "levelNumber": 4,
         "levelDisplay": "62",
         "actualLevel": 62,
         "name": "Infused Sheathed Rose Blade",
@@ -39286,7 +39058,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 76,
+        "levelNumber": 5,
         "levelDisplay": "76",
         "actualLevel": 76,
         "name": "Infused Sheathed Rose Blade",
@@ -39309,7 +39081,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 76,
+        "levelNumber": 5,
         "levelDisplay": "76",
         "actualLevel": 76,
         "name": "Infused Sheathed Rose Blade",
@@ -39333,7 +39105,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 6,
         "levelDisplay": "80",
         "actualLevel": 80,
         "name": "Infused Sheathed Rose Blade",
@@ -39356,7 +39128,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 7,
         "levelDisplay": "80",
         "actualLevel": 80,
         "name": "Infused Sheathed Rose Blade",
@@ -39380,7 +39152,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 85,
+        "levelNumber": 8,
         "levelDisplay": "85",
         "actualLevel": 85,
         "name": "Infused Sheathed Rose Blade",
@@ -39403,7 +39175,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 85,
+        "levelNumber": 9,
         "levelDisplay": "85",
         "actualLevel": 85,
         "name": "Infused Sheathed Rose Blade",
@@ -41622,7 +41394,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 40,
+        "levelNumber": 1,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "I",
@@ -41647,7 +41419,7 @@
         "itemType": "Wings"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 2,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "II",
@@ -41662,24 +41434,7 @@
             "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=19486392",
-        "description": "This beautiful female Sidhe is considered the muse, who offers inspiration to an artist in exchange for their love and devotion. This unfortunately tends to result in madness or death for the artist.",
-        "element": "WIN",
-        "resists": "Nature +2, Wind +5",
-        "rarity": "15",
-        "itemType": "Wings"
-      },
-      {
-        "levelNumber": 50,
-        "levelDisplay": "50",
-        "actualLevel": 50,
-        "variantName": "II",
-        "name": "Leanan Sidhe II",
-        "damage": "",
-        "stats": "Crit +9, WIS +9, END +5, CHA +3, LUK +3, INT +7, DEX +7, STR +7, Bonus +4",
-        "obtainVariants": [
+          },
           {
             "location": "Sidhe Wings, Wing Merge",
             "price": "N/A",
@@ -41698,7 +41453,7 @@
         "itemType": "Wings"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 3,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "III",
@@ -41713,24 +41468,7 @@
             "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=19486401",
-        "description": "This beautiful female Sidhe is considered the muse, who offers inspiration to an artist in exchange for their love and devotion. This unfortunately tends to result in madness or death for the artist.",
-        "element": "WIN",
-        "resists": "Nature +3, Wind +6",
-        "rarity": "15",
-        "itemType": "Wings"
-      },
-      {
-        "levelNumber": 60,
-        "levelDisplay": "60",
-        "actualLevel": 60,
-        "variantName": "III",
-        "name": "Leanan Sidhe III",
-        "damage": "",
-        "stats": "Crit +10, WIS +10, END +6, CHA +4, LUK +4, INT +8, DEX +8, STR +8, Bonus +5",
-        "obtainVariants": [
+          },
           {
             "location": "Wing Merge",
             "price": "N/A",
@@ -41749,7 +41487,7 @@
         "itemType": "Wings"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 4,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "IV",
@@ -41764,24 +41502,7 @@
             "sellback": "180 DC (<24 hours) / 50 DC (>24 hours)",
             "daRequired": false,
             "dcRequired": true
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=19486408",
-        "description": "This beautiful female Sidhe is considered the muse, who offers inspiration to an artist in exchange for their love and devotion. This unfortunately tends to result in madness or death for the artist.",
-        "element": "WIN",
-        "resists": "Nature +4, Wind +7",
-        "rarity": "25",
-        "itemType": "Wings"
-      },
-      {
-        "levelNumber": 70,
-        "levelDisplay": "70",
-        "actualLevel": 70,
-        "variantName": "IV",
-        "name": "Leanan Sidhe IV",
-        "damage": "",
-        "stats": "Crit +11, WIS +11, END +7, CHA +5, LUK +5, INT +9, DEX +9, STR +9, Bonus +6",
-        "obtainVariants": [
+          },
           {
             "location": "Wing Merge",
             "price": "N/A",
@@ -43279,7 +43000,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 20,
+        "levelNumber": 1,
         "levelDisplay": "20",
         "actualLevel": 20,
         "variantName": "I",
@@ -43303,7 +43024,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 20,
+        "levelNumber": 1,
         "levelDisplay": "20",
         "actualLevel": 20,
         "variantName": "I",
@@ -43328,7 +43049,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 2,
         "levelDisplay": "30",
         "actualLevel": 30,
         "variantName": "II",
@@ -43352,7 +43073,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 2,
         "levelDisplay": "30",
         "actualLevel": 30,
         "variantName": "II",
@@ -43377,7 +43098,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 3,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "III",
@@ -43401,7 +43122,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 3,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "III",
@@ -43426,7 +43147,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 4,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "IV",
@@ -43450,7 +43171,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 4,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "IV",
@@ -43475,7 +43196,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 5,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "V",
@@ -43499,7 +43220,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 5,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "V",
@@ -43524,7 +43245,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 6,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "VI",
@@ -43548,7 +43269,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 6,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "VI",
@@ -43573,7 +43294,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 75,
+        "levelNumber": 7,
         "levelDisplay": "75",
         "actualLevel": 75,
         "variantName": "VII",
@@ -43597,7 +43318,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 75,
+        "levelNumber": 8,
         "levelDisplay": "75",
         "actualLevel": 75,
         "variantName": "VII",
@@ -43622,7 +43343,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 9,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "VIII",
@@ -43646,7 +43367,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 10,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "VIII",
@@ -43671,7 +43392,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 11,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "IX",
@@ -43695,7 +43416,7 @@
         "itemType": "Cape"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 12,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "IX",

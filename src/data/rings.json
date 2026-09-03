@@ -166,7 +166,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 50,
+        "levelNumber": 1,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "I",
@@ -190,7 +190,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 1,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "I",
@@ -215,7 +215,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 2,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "II",
@@ -239,7 +239,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 2,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "II",
@@ -264,7 +264,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 3,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "III",
@@ -288,7 +288,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 4,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "III",
@@ -313,7 +313,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 5,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "IV",
@@ -337,7 +337,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 6,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "IV",
@@ -362,7 +362,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 7,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "V",
@@ -386,7 +386,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 8,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "V",
@@ -545,7 +545,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 10,
+        "levelNumber": 1,
         "levelDisplay": "10",
         "actualLevel": 10,
         "variantName": "I",
@@ -569,7 +569,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 10,
+        "levelNumber": 1,
         "levelDisplay": "10",
         "actualLevel": 10,
         "variantName": "I",
@@ -594,7 +594,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 20,
+        "levelNumber": 2,
         "levelDisplay": "20",
         "actualLevel": 20,
         "variantName": "II",
@@ -618,7 +618,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 20,
+        "levelNumber": 2,
         "levelDisplay": "20",
         "actualLevel": 20,
         "variantName": "II",
@@ -643,7 +643,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 3,
         "levelDisplay": "30",
         "actualLevel": 30,
         "variantName": "III",
@@ -667,7 +667,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 3,
         "levelDisplay": "30",
         "actualLevel": 30,
         "variantName": "III",
@@ -692,7 +692,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 4,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "IV",
@@ -716,7 +716,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 4,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "IV",
@@ -741,7 +741,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 5,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "V",
@@ -765,7 +765,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 5,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "V",
@@ -790,7 +790,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 6,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "VI",
@@ -814,7 +814,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 6,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "VI",
@@ -839,7 +839,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 7,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "VII",
@@ -863,7 +863,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 8,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "VII",
@@ -888,7 +888,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 9,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "VIII",
@@ -912,7 +912,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 10,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "VIII",
@@ -937,7 +937,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 11,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "IX",
@@ -961,7 +961,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 12,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "IX",
@@ -1066,7 +1066,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 15,
+        "levelNumber": 1,
         "levelDisplay": "15",
         "actualLevel": 15,
         "variantName": "I",
@@ -1090,7 +1090,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 15,
+        "levelNumber": 1,
         "levelDisplay": "15",
         "actualLevel": 15,
         "variantName": "I",
@@ -1115,7 +1115,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 2,
         "levelDisplay": "30",
         "actualLevel": 30,
         "variantName": "II",
@@ -1139,7 +1139,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 2,
         "levelDisplay": "30",
         "actualLevel": 30,
         "variantName": "II",
@@ -1164,7 +1164,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 45,
+        "levelNumber": 3,
         "levelDisplay": "45",
         "actualLevel": 45,
         "variantName": "III",
@@ -1188,7 +1188,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 45,
+        "levelNumber": 3,
         "levelDisplay": "45",
         "actualLevel": 45,
         "variantName": "III",
@@ -1213,7 +1213,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 4,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "IV",
@@ -1237,7 +1237,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 4,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "IV",
@@ -1262,7 +1262,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 75,
+        "levelNumber": 5,
         "levelDisplay": "75",
         "actualLevel": 75,
         "variantName": "V",
@@ -1286,7 +1286,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 75,
+        "levelNumber": 6,
         "levelDisplay": "75",
         "actualLevel": 75,
         "variantName": "V",
@@ -1311,7 +1311,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 7,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "VI",
@@ -1335,7 +1335,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 8,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "VI",
@@ -1415,142 +1415,6 @@
     "daRequired": true
   },
   {
-    "id": "accessory-amber-ring-of-the-emperor",
-    "name": "Amber Ring of the Emperor",
-    "slug": "accessory-amber-ring-of-the-emperor",
-    "type": "accessory",
-    "subtype": "ring",
-    "description": "The ring of Emperor Kuron, an ancient ruler in the city of Sil.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19794956",
-    "releaseDate": "",
-    "elements": [
-      "ICE"
-    ],
-    "level": "27",
-    "stats": "Magic Def +2, Pierce Def +2, Melee Def +2, WIS +2, INT +3, DEX +3, STR +3, Bonus +1",
-    "resists": "Light +2",
-    "rarity": "0",
-    "itemType": "Ring",
-    "equipSpot": "Finger",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "Sil Ruins (Shop)",
-        "priceType": "free",
-        "price": "0 Gold",
-        "sellback": "0 Gold",
-        "daRequired": false
-      }
-    ],
-    "tags": [
-      "ice",
-      "free"
-    ],
-    "daRequired": false
-  },
-  {
-    "id": "accessory-amethyst-ring-of-the-emperor",
-    "name": "Amethyst Ring of the Emperor",
-    "slug": "accessory-amethyst-ring-of-the-emperor",
-    "type": "accessory",
-    "subtype": "ring",
-    "description": "The ring of Emperor Kuron, an ancient ruler in the city of Sil.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19794970",
-    "releaseDate": "",
-    "elements": [
-      "ICE"
-    ],
-    "level": "36",
-    "stats": "Crit +1, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +3, CHA +1, LUK +1, INT +3, DEX +3, STR +3, Bonus +2",
-    "resists": "Light +4, Ice +2",
-    "rarity": "0",
-    "itemType": "Ring",
-    "equipSpot": "Finger",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "Sil Ruins (Shop)",
-        "priceType": "free",
-        "price": "0 Gold",
-        "sellback": "0 Gold",
-        "daRequired": false
-      }
-    ],
-    "tags": [
-      "ice",
-      "free"
-    ],
-    "daRequired": false
-  },
-  {
-    "id": "accessory-ancient-captain-s-ring",
-    "name": "Ancient Captain's Ring",
-    "slug": "accessory-ancient-captain-s-ring",
-    "type": "accessory",
-    "subtype": "ring",
-    "description": "You're pretty sure that skeleton won't miss this...",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18136114",
-    "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
-    "level": "34",
-    "stats": "Dodge +1, Magic Def +3, WIS +3, END +5",
-    "resists": "Darkness +5, Wind +5, Fire +5, Stone +3",
-    "rarity": "0",
-    "itemType": "Ring",
-    "equipSpot": "Finger",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "A Rock and A Dark Place",
-        "priceType": "free",
-        "price": "N/A",
-        "sellback": "150 Gold",
-        "daRequired": false
-      }
-    ],
-    "tags": [
-      "dar",
-      "free"
-    ],
-    "daRequired": false
-  },
-  {
-    "id": "accessory-ancient-commander-s-ring",
-    "name": "Ancient Commander's Ring",
-    "slug": "accessory-ancient-commander-s-ring",
-    "type": "accessory",
-    "subtype": "ring",
-    "description": "You're pretty sure that skeleton won't miss this... This item requires a Dragon Amulet.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18138533",
-    "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
-    "level": "44",
-    "stats": "Dodge +1, Crit +2, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +7, END +7, INT +2, DEX +2, STR +2, Bonus +2",
-    "resists": "Darkness +7, Wind +7, Stone +7, Fire +7, Immobility +4",
-    "rarity": "0",
-    "itemType": "Ring",
-    "equipSpot": "Finger",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "A Rock and A Dark Place",
-        "priceType": "free",
-        "price": "N/A",
-        "sellback": "200 Gold",
-        "daRequired": true
-      }
-    ],
-    "tags": [
-      "dar",
-      "free"
-    ],
-    "daRequired": true
-  },
-  {
     "id": "accessory-ancient-guardian-ring",
     "name": "Ancient Guardian Ring",
     "slug": "accessory-ancient-guardian-ring",
@@ -1586,71 +1450,131 @@
   },
   {
     "id": "accessory-ancient-ring",
-    "name": "Ancient Ring",
+    "familyName": "Ancient Ring",
     "slug": "accessory-ancient-ring",
+    "aliasSlugs": [
+      "accessory-ancient-soldier-s-ring",
+      "accessory-ancient-captain-s-ring",
+      "accessory-ancient-commander-s-ring"
+    ],
     "type": "accessory",
     "subtype": "ring",
-    "description": "You're pretty sure that skeleton won't miss this...",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18136081",
-    "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
-    "level": "9",
-    "stats": "Magic Def +2, END +2",
-    "resists": "Wind +5, Darkness +2",
-    "rarity": "5",
-    "itemType": "Ring",
-    "equipSpot": "Finger",
-    "category": "Armor",
-    "obtainMethods": [
+    "familyOrigin": "cross-post",
+    "familySources": [],
+    "shared": {
+      "description": "You're pretty sure that skeleton won't miss this..."
+    },
+    "levelVariants": [
       {
-        "location": "A Rock and A Dark Place",
-        "priceType": "free",
-        "price": "N/A",
-        "sellback": "15 Gold",
-        "daRequired": false
+        "levelNumber": 1,
+        "levelDisplay": "9",
+        "actualLevel": 9,
+        "variantName": "(Base)",
+        "name": "Ancient Ring",
+        "damage": "",
+        "stats": "Magic Def +2, END +2",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=18136081",
+        "description": "You're pretty sure that skeleton won't miss this...",
+        "obtainVariants": [
+          {
+            "location": "A Rock and A Dark Place",
+            "priceType": "free",
+            "price": "N/A",
+            "sellback": "15 Gold",
+            "daRequired": false
+          }
+        ],
+        "element": "DAR",
+        "resists": "Wind +5, Darkness +2",
+        "rarity": "5"
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "24",
+        "actualLevel": 24,
+        "variantName": "Soldier",
+        "name": "Ancient Soldier's Ring",
+        "damage": "",
+        "stats": "Magic Def +2, WIS +2, END +4",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=18136096",
+        "description": "You're pretty sure that skeleton won't miss this...",
+        "obtainVariants": [
+          {
+            "location": "A Rock and A Dark Place",
+            "priceType": "free",
+            "price": "N/A",
+            "sellback": "100 Gold",
+            "daRequired": false
+          }
+        ],
+        "element": "DAR",
+        "resists": "Wind +5, Darkness +5, Fire +3",
+        "rarity": "0"
+      },
+      {
+        "levelNumber": 3,
+        "levelDisplay": "34",
+        "actualLevel": 34,
+        "variantName": "Captain",
+        "name": "Ancient Captain's Ring",
+        "damage": "",
+        "stats": "Dodge +1, Magic Def +3, WIS +3, END +5",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=18136114",
+        "description": "You're pretty sure that skeleton won't miss this...",
+        "obtainVariants": [
+          {
+            "location": "A Rock and A Dark Place",
+            "priceType": "free",
+            "price": "N/A",
+            "sellback": "150 Gold",
+            "daRequired": false
+          }
+        ],
+        "element": "DAR",
+        "resists": "Darkness +5, Wind +5, Fire +5, Stone +3",
+        "rarity": "0"
+      },
+      {
+        "levelNumber": 4,
+        "levelDisplay": "44",
+        "actualLevel": 44,
+        "variantName": "Commander",
+        "name": "Ancient Commander's Ring",
+        "damage": "",
+        "stats": "Dodge +1, Crit +2, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +7, END +7, INT +2, DEX +2, STR +2, Bonus +2",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=18138533",
+        "description": "You're pretty sure that skeleton won't miss this... This item requires a Dragon Amulet.",
+        "obtainVariants": [
+          {
+            "location": "A Rock and A Dark Place",
+            "priceType": "free",
+            "price": "N/A",
+            "sellback": "200 Gold",
+            "daRequired": true
+          }
+        ],
+        "element": "DAR",
+        "resists": "Darkness +7, Wind +7, Stone +7, Fire +7, Immobility +4",
+        "rarity": "0"
       }
     ],
+    "itemType": "Ring",
+    "equipSlot": "Finger",
+    "category": "Armor",
     "tags": [
       "dar",
       "free"
     ],
-    "daRequired": false
-  },
-  {
-    "id": "accessory-ancient-soldier-s-ring",
-    "name": "Ancient Soldier's Ring",
-    "slug": "accessory-ancient-soldier-s-ring",
-    "type": "accessory",
-    "subtype": "ring",
-    "description": "You're pretty sure that skeleton won't miss this...",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=18136096",
-    "releaseDate": "",
+    "hasDA": true,
+    "hasDC": false,
+    "hasDM": false,
+    "hasFree": true,
+    "hasMerge": false,
+    "levelRange": "9-44",
     "elements": [
       "DAR"
-    ],
-    "level": "24",
-    "stats": "Magic Def +2, WIS +2, END +4",
-    "resists": "Wind +5, Darkness +5, Fire +3",
-    "rarity": "0",
-    "itemType": "Ring",
-    "equipSpot": "Finger",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "A Rock and A Dark Place",
-        "priceType": "free",
-        "price": "N/A",
-        "sellback": "100 Gold",
-        "daRequired": false
-      }
-    ],
-    "tags": [
-      "dar",
-      "free"
-    ],
-    "daRequired": false
+    ]
   },
   {
     "id": "accessory-the-answer",
@@ -1974,37 +1898,203 @@
   },
   {
     "id": "accessory-bloodstone-ring",
-    "name": "Bloodstone Ring",
+    "familyName": "Bloodstone Ring",
     "slug": "accessory-bloodstone-ring",
+    "aliasSlugs": [
+      "accessory-glimmering-bloodstone-ring",
+      "accessory-glittering-bloodstone-ring",
+      "accessory-gleaming-bloodstone-ring",
+      "accessory-shining-bloodstone-ring",
+      "accessory-vibrant-bloodstone-ring",
+      "accessory-brilliant-bloodstone-ring"
+    ],
     "type": "accessory",
     "subtype": "ring",
-    "description": "This stone holds a single drop of an ancient vampire's blood.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21859764",
-    "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
-    "level": "18",
-    "stats": "Block +1, Crit +1, Pierce Def +1, Melee Def +1, WIS +2, END +2, CHA +2, LUK +2, Bonus +1",
-    "resists": "Darkness +4, Fire +3",
-    "rarity": "0",
-    "itemType": "Ring",
-    "equipSpot": "Finger",
-    "category": "Armor",
-    "obtainMethods": [
+    "familyOrigin": "cross-post",
+    "familySources": [],
+    "shared": {
+      "description": "This stone holds a single drop of an ancient vampire's blood."
+    },
+    "levelVariants": [
       {
-        "location": "The Dark Tower",
-        "priceType": "free",
-        "price": "N/A",
-        "sellback": "50 Gold",
-        "daRequired": false
+        "levelNumber": 1,
+        "levelDisplay": "18",
+        "actualLevel": 18,
+        "variantName": "(Base)",
+        "name": "Bloodstone Ring",
+        "damage": "",
+        "stats": "Block +1, Crit +1, Pierce Def +1, Melee Def +1, WIS +2, END +2, CHA +2, LUK +2, Bonus +1",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21859764",
+        "description": "This stone holds a single drop of an ancient vampire's blood.",
+        "obtainVariants": [
+          {
+            "location": "The Dark Tower",
+            "priceType": "free",
+            "price": "N/A",
+            "sellback": "50 Gold",
+            "daRequired": false
+          }
+        ],
+        "element": "DAR",
+        "resists": "Darkness +4, Fire +3",
+        "rarity": "0"
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "28",
+        "actualLevel": 28,
+        "variantName": "Glimmering",
+        "name": "Glimmering Bloodstone Ring",
+        "damage": "",
+        "stats": "Block +1, Parry +1, Crit +1, Magic Def +1, Pierce Def +1, Melee Def +1, WIS +4, END +4, CHA +3, LUK +3, Bonus +2",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21859769",
+        "description": "This stone holds a single drop of an ancient vampire's blood.",
+        "obtainVariants": [
+          {
+            "location": "The Dark Tower",
+            "priceType": "free",
+            "price": "N/A",
+            "sellback": "120 Gold",
+            "daRequired": false
+          }
+        ],
+        "element": "DAR",
+        "resists": "Darkness +5, Fire +4",
+        "rarity": "0"
+      },
+      {
+        "levelNumber": 3,
+        "levelDisplay": "38",
+        "actualLevel": 38,
+        "variantName": "Glittering",
+        "name": "Glittering Bloodstone Ring",
+        "damage": "",
+        "stats": "Block +1, Dodge +1, Parry +1, Crit +3, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +5, END +5, CHA +4, LUK +4, INT +2, DEX +2, STR +2, Bonus +4",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21859770",
+        "description": "This stone holds a single drop of an ancient vampire's blood.",
+        "obtainVariants": [
+          {
+            "location": "The Dark Tower",
+            "priceType": "free",
+            "price": "N/A",
+            "sellback": "150 Gold",
+            "daRequired": false
+          }
+        ],
+        "element": "DAR",
+        "resists": "Darkness +6, Fire +5, Health -2",
+        "rarity": "0"
+      },
+      {
+        "levelNumber": 4,
+        "levelDisplay": "48",
+        "actualLevel": 48,
+        "variantName": "Gleaming",
+        "name": "Gleaming Bloodstone Ring",
+        "damage": "",
+        "stats": "Block +1, Dodge +1, Parry +1, Crit +4, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +6, END +6, CHA +5, LUK +5, INT +2, DEX +2, STR +2, Bonus +5",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21859774",
+        "description": "This stone holds a single drop of an ancient vampire's blood.",
+        "obtainVariants": [
+          {
+            "location": "The Dark Tower",
+            "priceType": "free",
+            "price": "N/A",
+            "sellback": "180 Gold",
+            "daRequired": false
+          }
+        ],
+        "element": "DAR",
+        "resists": "Darkness +6, Fire +5, Health -4",
+        "rarity": "0"
+      },
+      {
+        "levelNumber": 5,
+        "levelDisplay": "58",
+        "actualLevel": 58,
+        "variantName": "Shining",
+        "name": "Shining Bloodstone Ring",
+        "damage": "",
+        "stats": "Block +1, Dodge +1, Parry +1, Crit +4, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +7, END +7, CHA +5, LUK +5, INT +3, DEX +3, STR +3, Bonus +6",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21859981",
+        "description": "This stone holds a single drop of an ancient vampire's blood.",
+        "obtainVariants": [
+          {
+            "location": "The Dark Tower",
+            "priceType": "free",
+            "price": "N/A",
+            "sellback": "200 Gold",
+            "daRequired": false
+          }
+        ],
+        "element": "DAR",
+        "resists": "Darkness +6, Fire +5, Health -6",
+        "rarity": "0"
+      },
+      {
+        "levelNumber": 6,
+        "levelDisplay": "68",
+        "actualLevel": 68,
+        "variantName": "Vibrant",
+        "name": "Vibrant Bloodstone Ring",
+        "damage": "",
+        "stats": "Block +2, Dodge +2, Parry +1, Crit +5, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +8, END +8, CHA +7, LUK +7, INT +4, DEX +4, STR +4, Bonus +8",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21859781",
+        "description": "This stone holds a single drop of an ancient vampire's blood.",
+        "obtainVariants": [
+          {
+            "location": "The Dark Tower",
+            "priceType": "free",
+            "price": "N/A",
+            "sellback": "230 Gold",
+            "daRequired": false
+          }
+        ],
+        "element": "DAR",
+        "resists": "Darkness +7, Fire +6, Health -8, Immobility +2",
+        "rarity": "0"
+      },
+      {
+        "levelNumber": 7,
+        "levelDisplay": "78",
+        "actualLevel": 78,
+        "variantName": "Brilliant",
+        "name": "Brilliant Bloodstone Ring",
+        "damage": "",
+        "stats": "Block +2, Dodge +2, Parry +2, Crit +6, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +9, END +9, CHA +8, LUK +8, INT +5, DEX +5, STR +5, Bonus +8",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21859783",
+        "description": "This stone holds a single drop of an ancient vampire's blood. This item requires a Dragon Amulet.",
+        "obtainVariants": [
+          {
+            "location": "The Dark Tower",
+            "priceType": "free",
+            "price": "N/A",
+            "sellback": "290 Gold",
+            "daRequired": true
+          }
+        ],
+        "element": "DAR",
+        "resists": "Darkness +8, Fire +7, Health -10, Immobility +4",
+        "rarity": "6"
       }
     ],
+    "itemType": "Ring",
+    "equipSlot": "Finger",
+    "category": "Armor",
     "tags": [
       "dar",
       "free"
     ],
-    "daRequired": false
+    "hasDA": true,
+    "hasDC": false,
+    "hasDM": false,
+    "hasFree": true,
+    "hasMerge": false,
+    "levelRange": "18-78",
+    "elements": [
+      "DAR"
+    ]
   },
   {
     "id": "accessory-bluefin-swisher",
@@ -2114,40 +2204,6 @@
       "free"
     ],
     "daRequired": false
-  },
-  {
-    "id": "accessory-brilliant-bloodstone-ring",
-    "name": "Brilliant Bloodstone Ring",
-    "slug": "accessory-brilliant-bloodstone-ring",
-    "type": "accessory",
-    "subtype": "ring",
-    "description": "This stone holds a single drop of an ancient vampire's blood. This item requires a Dragon Amulet.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21859783",
-    "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
-    "level": "78",
-    "stats": "Block +2, Dodge +2, Parry +2, Crit +6, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +9, END +9, CHA +8, LUK +8, INT +5, DEX +5, STR +5, Bonus +8",
-    "resists": "Darkness +8, Fire +7, Health -10, Immobility +4",
-    "rarity": "6",
-    "itemType": "Ring",
-    "equipSpot": "Finger",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "The Dark Tower",
-        "priceType": "free",
-        "price": "N/A",
-        "sellback": "290 Gold",
-        "daRequired": true
-      }
-    ],
-    "tags": [
-      "dar",
-      "free"
-    ],
-    "daRequired": true
   },
   {
     "id": "accessory-brunost-ring",
@@ -2589,40 +2645,6 @@
     "dcRequired": true
   },
   {
-    "id": "accessory-cold-moonstone-ring",
-    "name": "Cold Moonstone Ring",
-    "slug": "accessory-cold-moonstone-ring",
-    "type": "accessory",
-    "subtype": "ring",
-    "description": "A soft, white stone that seems to almost be made of trapped moonlight sits atop this ring.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21844136",
-    "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
-    "level": "27",
-    "stats": "Block +1, Parry +1, Crit +1, Magic Def +1, Pierce Def +1, Melee Def +1, WIS +4, END +4, CHA +3, LUK +3, Bonus +2",
-    "resists": "Fire +5, Light +4",
-    "rarity": "0",
-    "itemType": "Ring",
-    "equipSpot": "Finger",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "The Locket",
-        "priceType": "free",
-        "price": "N/A",
-        "sellback": "120 Gold",
-        "daRequired": false
-      }
-    ],
-    "tags": [
-      "sto",
-      "free"
-    ],
-    "daRequired": false
-  },
-  {
     "id": "accessory-coquina-s-revenge",
     "name": "Coquina's Revenge",
     "slug": "accessory-coquina-s-revenge",
@@ -2721,40 +2743,6 @@
     ],
     "tags": [
       "dar",
-      "free"
-    ],
-    "daRequired": false
-  },
-  {
-    "id": "accessory-cut-moonstone-ring",
-    "name": "Cut Moonstone Ring",
-    "slug": "accessory-cut-moonstone-ring",
-    "type": "accessory",
-    "subtype": "ring",
-    "description": "A soft, white stone that seems to almost be made of trapped moonlight sits atop this ring.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21844226",
-    "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
-    "level": "57",
-    "stats": "Block +1, Dodge +1, Parry +1, Crit +4, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +7, END +7, CHA +5, LUK +5, INT +3, DEX +3, STR +3, Bonus +6",
-    "resists": "Fire +6, Light +5, Water +5, Darkness +3",
-    "rarity": "0",
-    "itemType": "Ring",
-    "equipSpot": "Finger",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "The Locket",
-        "priceType": "free",
-        "price": "N/A",
-        "sellback": "200 Gold",
-        "daRequired": false
-      }
-    ],
-    "tags": [
-      "sto",
       "free"
     ],
     "daRequired": false
@@ -3233,7 +3221,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 5,
+        "levelNumber": 2,
         "levelDisplay": "5",
         "actualLevel": 5,
         "variantName": "II",
@@ -3259,7 +3247,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 8,
+        "levelNumber": 3,
         "levelDisplay": "8",
         "actualLevel": 8,
         "variantName": "III",
@@ -3285,7 +3273,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 12,
+        "levelNumber": 4,
         "levelDisplay": "12",
         "actualLevel": 12,
         "variantName": "IV",
@@ -3311,7 +3299,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 15,
+        "levelNumber": 5,
         "levelDisplay": "15",
         "actualLevel": 15,
         "variantName": "V",
@@ -3327,24 +3315,7 @@
             "requiredItems": "1 Defender's Dragon Ring IV & 25 Defender's Medal",
             "dmRequired": true,
             "daRequired": true
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=7541951",
-        "description": "This ring can only be worn by one who bears the DragonAmulet. It was awarded to you by the town of Falconreach for defending it against a terrible threat.",
-        "element": "NON",
-        "resists": "None",
-        "rarity": "0",
-        "itemType": "Ring"
-      },
-      {
-        "levelNumber": 15,
-        "levelDisplay": "15",
-        "actualLevel": 15,
-        "variantName": "V",
-        "name": "Defender's Dragon Ring V",
-        "damage": "",
-        "stats": "Magic Def +1, Pierce Def +1, Melee Def +1, END +3, DEX +4, Bonus +2",
-        "obtainVariants": [
+          },
           {
             "location": "Defender Item Swap",
             "price": "N/A",
@@ -3363,7 +3334,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 18,
+        "levelNumber": 6,
         "levelDisplay": "18",
         "actualLevel": 18,
         "variantName": "VI",
@@ -3389,7 +3360,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 19,
+        "levelNumber": 7,
         "levelDisplay": "19",
         "actualLevel": 19,
         "variantName": "VII",
@@ -3415,7 +3386,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 21,
+        "levelNumber": 8,
         "levelDisplay": "21",
         "actualLevel": 21,
         "variantName": "VIII",
@@ -3441,7 +3412,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 23,
+        "levelNumber": 9,
         "levelDisplay": "23",
         "actualLevel": 23,
         "variantName": "IX",
@@ -3467,7 +3438,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 25,
+        "levelNumber": 10,
         "levelDisplay": "25",
         "actualLevel": 25,
         "variantName": "X",
@@ -3483,24 +3454,7 @@
             "requiredItems": "1 Defender's Dragon Ring IX & 25 Defender's Medal",
             "dmRequired": true,
             "daRequired": true
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=13325783",
-        "description": "This item requires a Dragon Amulet. It was awarded to you by the town of Falconreach for defending it against a terrible threat.",
-        "element": "NON",
-        "resists": "Fire +2, Water +1",
-        "rarity": "0",
-        "itemType": "Ring"
-      },
-      {
-        "levelNumber": 25,
-        "levelDisplay": "25",
-        "actualLevel": 25,
-        "variantName": "X",
-        "name": "Defender's Dragon Ring X",
-        "damage": "",
-        "stats": "Magic Def +4, Pierce Def +4, Melee Def +4, END +5, INT +3, DEX +4, Bonus +4",
-        "obtainVariants": [
+          },
           {
             "location": "Defender Item Swap",
             "price": "N/A",
@@ -3519,7 +3473,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 27,
+        "levelNumber": 11,
         "levelDisplay": "27",
         "actualLevel": 27,
         "variantName": "XI",
@@ -3545,7 +3499,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 31,
+        "levelNumber": 12,
         "levelDisplay": "31",
         "actualLevel": 31,
         "variantName": "XII",
@@ -3571,7 +3525,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 35,
+        "levelNumber": 13,
         "levelDisplay": "35",
         "actualLevel": 35,
         "variantName": "XIII",
@@ -3597,7 +3551,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 37,
+        "levelNumber": 14,
         "levelDisplay": "37",
         "actualLevel": 37,
         "variantName": "XIV",
@@ -3623,7 +3577,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 15,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "XV",
@@ -3639,24 +3593,7 @@
             "requiredItems": "1 Defender's Dragon Ring XIV & 25 Defender's Medal",
             "dmRequired": true,
             "daRequired": true
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=16515135",
-        "description": "This item requires a Dragon Amulet. It was awarded to you by the town of Falconreach for defending it against a terrible threat.",
-        "element": "NON",
-        "resists": "Water +5, Fire +5",
-        "rarity": "0",
-        "itemType": "Ring"
-      },
-      {
-        "levelNumber": 40,
-        "levelDisplay": "40",
-        "actualLevel": 40,
-        "variantName": "XV",
-        "name": "Defender's Dragon Ring XV",
-        "damage": "",
-        "stats": "Crit +2, Magic Def +5, Pierce Def +5, Melee Def +5, END +7, INT +6, DEX +6, Bonus +6",
-        "obtainVariants": [
+          },
           {
             "location": "Defender Item Swap",
             "price": "N/A",
@@ -3675,7 +3612,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 45,
+        "levelNumber": 16,
         "levelDisplay": "45",
         "actualLevel": 45,
         "variantName": "XVI",
@@ -3701,7 +3638,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 17,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "XVII",
@@ -3727,7 +3664,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 55,
+        "levelNumber": 18,
         "levelDisplay": "55",
         "actualLevel": 55,
         "variantName": "XVIII",
@@ -3753,7 +3690,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 19,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "XIX",
@@ -3779,7 +3716,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 65,
+        "levelNumber": 20,
         "levelDisplay": "65",
         "actualLevel": 65,
         "variantName": "XX",
@@ -3795,24 +3732,7 @@
             "requiredItems": "1 Defender's Dragon Ring XIX & 25 Defender's Medal",
             "dmRequired": true,
             "daRequired": true
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=18986581",
-        "description": "This item requires a Dragon Amulet. It was awarded to you by the town of Falconreach for defending it against a terrible threat.",
-        "element": "NON",
-        "resists": "Fire +8, Water +8, Poison +8, Silver +8",
-        "rarity": "0",
-        "itemType": "Ring"
-      },
-      {
-        "levelNumber": 65,
-        "levelDisplay": "65",
-        "actualLevel": 65,
-        "variantName": "XX",
-        "name": "Defender's Dragon Ring XX",
-        "damage": "",
-        "stats": "Dodge +2, Crit +5, Magic Def +8, Pierce Def +8, Melee Def +8, END +12, CHA +5, INT +10, DEX +10, Bonus +9",
-        "obtainVariants": [
+          },
           {
             "location": "Defender Item Swap",
             "price": "N/A",
@@ -3831,7 +3751,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 68,
+        "levelNumber": 21,
         "levelDisplay": "68",
         "actualLevel": 68,
         "variantName": "XXI",
@@ -3857,7 +3777,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 71,
+        "levelNumber": 22,
         "levelDisplay": "71",
         "actualLevel": 71,
         "variantName": "XXII",
@@ -3883,7 +3803,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 73,
+        "levelNumber": 23,
         "levelDisplay": "73",
         "actualLevel": 73,
         "variantName": "XXIII",
@@ -3909,7 +3829,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 75,
+        "levelNumber": 24,
         "levelDisplay": "75",
         "actualLevel": 75,
         "variantName": "XXIV",
@@ -3935,7 +3855,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 75,
+        "levelNumber": 25,
         "levelDisplay": "75",
         "actualLevel": 75,
         "variantName": "XXIX",
@@ -3961,7 +3881,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 75,
+        "levelNumber": 26,
         "levelDisplay": "75",
         "actualLevel": 75,
         "variantName": "XXV",
@@ -3977,24 +3897,7 @@
             "requiredItems": "1 Defender's Dragon Ring XXIV & 25 Defender's Medal",
             "dmRequired": true,
             "daRequired": true
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21348189",
-        "description": "This item requires a Dragon Amulet. It was awarded to you by the town of Falconreach for defending it against a terrible threat.",
-        "element": "NON",
-        "resists": "Fire +8, Water +8, Poison +8, Silver +8, Immobility +2",
-        "rarity": "0",
-        "itemType": "Ring"
-      },
-      {
-        "levelNumber": 75,
-        "levelDisplay": "75",
-        "actualLevel": 75,
-        "variantName": "XXV",
-        "name": "Defender's Dragon Ring XXV",
-        "damage": "",
-        "stats": "Block +1, Dodge +2, Crit +6, Magic Def +9, Pierce Def +9, Melee Def +9, END +13, CHA +7, LUK +3, INT +11, DEX +11, STR +3, Bonus +11",
-        "obtainVariants": [
+          },
           {
             "location": "Defender Item Swap",
             "price": "N/A",
@@ -4013,7 +3916,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 75,
+        "levelNumber": 27,
         "levelDisplay": "75",
         "actualLevel": 75,
         "variantName": "XXVI",
@@ -4039,7 +3942,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 75,
+        "levelNumber": 28,
         "levelDisplay": "75",
         "actualLevel": 75,
         "variantName": "XXVII",
@@ -4065,7 +3968,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 75,
+        "levelNumber": 29,
         "levelDisplay": "75",
         "actualLevel": 75,
         "variantName": "XXVIII",
@@ -4091,7 +3994,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 30,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "XXX",
@@ -4107,24 +4010,7 @@
             "requiredItems": "1 Defender's Dragon Ring XXIX & 25 Defender's Medal",
             "dmRequired": true,
             "daRequired": true
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21732699",
-        "description": "This item requires a Dragon Amulet. It was awarded to you by the town of Falconreach for defending it against a terrible threat.",
-        "element": "NON",
-        "resists": "Fire +8, Water +8, Poison +8, Silver +8, Immobility +2",
-        "rarity": "0",
-        "itemType": "Ring"
-      },
-      {
-        "levelNumber": 80,
-        "levelDisplay": "80",
-        "actualLevel": 80,
-        "variantName": "XXX",
-        "name": "Defender's Dragon Ring XXX",
-        "damage": "",
-        "stats": "Block +2, Dodge +2, Parry +2, Crit +6, Magic Def +9, Pierce Def +9, Melee Def +9, END +15, CHA +7, LUK +5, INT +12, DEX +12, STR +12, Bonus +12",
-        "obtainVariants": [
+          },
           {
             "location": "Defender Item Swap",
             "price": "N/A",
@@ -4143,7 +4029,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 85,
+        "levelNumber": 31,
         "levelDisplay": "85",
         "actualLevel": 85,
         "variantName": "XXXI",
@@ -4169,7 +4055,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 32,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "XXXII",
@@ -4185,24 +4071,7 @@
             "requiredItems": "1 Defender's Dragon Ring XXXI & 25 Defender's Medal",
             "dmRequired": true,
             "daRequired": true
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22344904",
-        "description": "This item requires a Dragon Amulet. It was awarded to you by the town of Falconreach for defending it against a terrible threat.",
-        "element": "NON",
-        "resists": "All +5, Immobility -5",
-        "rarity": "0",
-        "itemType": "Ring"
-      },
-      {
-        "levelNumber": 90,
-        "levelDisplay": "90",
-        "actualLevel": 90,
-        "variantName": "XXXII",
-        "name": "Defender's Dragon Ring XXXII",
-        "damage": "",
-        "stats": "Block +2, Dodge +2, Parry +2, Crit +6, Magic Def +9, Pierce Def +9, Melee Def +9, END +16, CHA +9, LUK +7, INT +14, DEX +14, STR +14, Bonus +12",
-        "obtainVariants": [
+          },
           {
             "location": "Defender Item Swap",
             "price": "N/A",
@@ -5374,40 +5243,6 @@
     "dcRequired": true
   },
   {
-    "id": "accessory-diamond-ring-of-the-emperor",
-    "name": "Diamond Ring of the Emperor",
-    "slug": "accessory-diamond-ring-of-the-emperor",
-    "type": "accessory",
-    "subtype": "ring",
-    "description": "The ring of Emperor Kuron, an ancient ruler in the city of Sil. This item requires a Dragon Amulet.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19795045",
-    "releaseDate": "",
-    "elements": [
-      "ICE"
-    ],
-    "level": "68",
-    "stats": "Dodge +1, Crit +5, Magic Def +7, Pierce Def +7, Melee Def +7, WIS +7, END +3, CHA +3, LUK +3, INT +6, DEX +6, STR +6, Bonus +6",
-    "resists": "Light +10, Ice +8, Silver +6, Water +4, Immobility +2, Health -2",
-    "rarity": "0",
-    "itemType": "Ring",
-    "equipSpot": "Finger",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "Sil Ruins (Shop)",
-        "priceType": "free",
-        "price": "0 Gold",
-        "sellback": "0 Gold",
-        "daRequired": true
-      }
-    ],
-    "tags": [
-      "ice",
-      "free"
-    ],
-    "daRequired": true
-  },
-  {
     "id": "accessory-distant-comet-ring",
     "familyName": "Distant Comet Ring",
     "slug": "accessory-distant-comet-ring",
@@ -5467,7 +5302,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 40,
+        "levelNumber": 1,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "I",
@@ -5491,7 +5326,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 1,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "I",
@@ -5516,7 +5351,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 2,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "II",
@@ -5540,7 +5375,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 2,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "II",
@@ -5565,7 +5400,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 3,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "III",
@@ -5589,7 +5424,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 3,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "III",
@@ -5614,7 +5449,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 4,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "IV",
@@ -5638,7 +5473,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 5,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "IV",
@@ -5663,7 +5498,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 6,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "V",
@@ -5687,7 +5522,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 7,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "V",
@@ -5712,7 +5547,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 8,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "VI",
@@ -5736,7 +5571,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 9,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "VI",
@@ -6165,7 +6000,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 30,
+        "levelNumber": 1,
         "levelDisplay": "30",
         "actualLevel": 30,
         "variantName": "I",
@@ -6189,7 +6024,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 1,
         "levelDisplay": "30",
         "actualLevel": 30,
         "variantName": "I",
@@ -6214,7 +6049,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 2,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "II",
@@ -6238,7 +6073,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 2,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "II",
@@ -6263,7 +6098,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 3,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "III",
@@ -6287,7 +6122,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 3,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "III",
@@ -6312,7 +6147,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 4,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "IV",
@@ -6336,7 +6171,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 4,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "IV",
@@ -6361,7 +6196,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 5,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "V",
@@ -6385,7 +6220,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 6,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "V",
@@ -6410,7 +6245,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 7,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "VI",
@@ -6434,7 +6269,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 8,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "VI",
@@ -6459,7 +6294,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 9,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "VII",
@@ -6483,7 +6318,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 10,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "VII",
@@ -6642,7 +6477,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 10,
+        "levelNumber": 1,
         "levelDisplay": "10",
         "actualLevel": 10,
         "variantName": "I",
@@ -6666,7 +6501,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 10,
+        "levelNumber": 1,
         "levelDisplay": "10",
         "actualLevel": 10,
         "variantName": "I",
@@ -6691,7 +6526,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 20,
+        "levelNumber": 2,
         "levelDisplay": "20",
         "actualLevel": 20,
         "variantName": "II",
@@ -6715,7 +6550,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 20,
+        "levelNumber": 2,
         "levelDisplay": "20",
         "actualLevel": 20,
         "variantName": "II",
@@ -6740,7 +6575,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 3,
         "levelDisplay": "30",
         "actualLevel": 30,
         "variantName": "III",
@@ -6764,7 +6599,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 3,
         "levelDisplay": "30",
         "actualLevel": 30,
         "variantName": "III",
@@ -6789,7 +6624,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 4,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "IV",
@@ -6813,7 +6648,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 4,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "IV",
@@ -6838,7 +6673,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 5,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "V",
@@ -6862,7 +6697,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 5,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "V",
@@ -6887,7 +6722,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 6,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "VI",
@@ -6911,7 +6746,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 6,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "VI",
@@ -6936,7 +6771,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 7,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "VII",
@@ -6960,7 +6795,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 8,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "VII",
@@ -6985,7 +6820,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 9,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "VIII",
@@ -7009,7 +6844,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 10,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "VIII",
@@ -7034,7 +6869,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 11,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "IX",
@@ -7058,7 +6893,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 12,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "IX",
@@ -7234,9 +7069,57 @@
     ],
     "tags": [
       "???",
-      "free"
+      "free",
+      "goo",
+      "met",
+      "sil",
+      "sto"
     ],
-    "daRequired": true
+    "daRequired": true,
+    "alsoSee": [
+      {
+        "name": "Enchanted Seal Ring",
+        "slug": "accessory-enchanted-seal-ring",
+        "type": "accessory",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21667890"
+      },
+      {
+        "name": "Exquisite Seal Ring",
+        "slug": "accessory-exquisite-seal-ring",
+        "type": "accessory",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21666410"
+      },
+      {
+        "name": "Jeweled Seal Ring of Wall",
+        "slug": "accessory-jeweled-seal-ring-of-wall",
+        "type": "accessory",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21666800"
+      },
+      {
+        "name": "Ornamented Seal Ring of the Papermancers",
+        "slug": "accessory-ornamented-seal-ring-of-the-papermancers",
+        "type": "accessory",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21666408"
+      },
+      {
+        "name": "Plain Seal Ring",
+        "slug": "accessory-plain-seal-ring",
+        "type": "accessory",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21666415"
+      },
+      {
+        "name": "Runed Seal Ring",
+        "slug": "accessory-runed-seal-ring",
+        "type": "accessory",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21666796"
+      },
+      {
+        "name": "Seal Ring",
+        "slug": "accessory-seal-ring",
+        "type": "accessory",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21666806"
+      }
+    ]
   },
   {
     "id": "accessory-enchanted-seal-ring",
@@ -7267,10 +7150,58 @@
       }
     ],
     "tags": [
+      "???",
+      "free",
+      "goo",
+      "met",
       "sil",
-      "free"
+      "sto"
     ],
-    "daRequired": false
+    "daRequired": false,
+    "alsoSee": [
+      {
+        "name": "Elemental Seal Ring",
+        "slug": "accessory-elemental-seal-ring",
+        "type": "accessory",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21667897"
+      },
+      {
+        "name": "Exquisite Seal Ring",
+        "slug": "accessory-exquisite-seal-ring",
+        "type": "accessory",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21666410"
+      },
+      {
+        "name": "Jeweled Seal Ring of Wall",
+        "slug": "accessory-jeweled-seal-ring-of-wall",
+        "type": "accessory",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21666800"
+      },
+      {
+        "name": "Ornamented Seal Ring of the Papermancers",
+        "slug": "accessory-ornamented-seal-ring-of-the-papermancers",
+        "type": "accessory",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21666408"
+      },
+      {
+        "name": "Plain Seal Ring",
+        "slug": "accessory-plain-seal-ring",
+        "type": "accessory",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21666415"
+      },
+      {
+        "name": "Runed Seal Ring",
+        "slug": "accessory-runed-seal-ring",
+        "type": "accessory",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21666796"
+      },
+      {
+        "name": "Seal Ring",
+        "slug": "accessory-seal-ring",
+        "type": "accessory",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21666806"
+      }
+    ]
   },
   {
     "id": "accessory-energizer-s-azure-band",
@@ -7387,7 +7318,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 10,
+        "levelNumber": 1,
         "levelDisplay": "10",
         "actualLevel": 10,
         "variantName": "I",
@@ -7411,7 +7342,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 10,
+        "levelNumber": 1,
         "levelDisplay": "10",
         "actualLevel": 10,
         "variantName": "I",
@@ -7436,7 +7367,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 20,
+        "levelNumber": 2,
         "levelDisplay": "20",
         "actualLevel": 20,
         "variantName": "II",
@@ -7460,7 +7391,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 20,
+        "levelNumber": 2,
         "levelDisplay": "20",
         "actualLevel": 20,
         "variantName": "II",
@@ -7485,7 +7416,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 3,
         "levelDisplay": "30",
         "actualLevel": 30,
         "variantName": "III",
@@ -7509,7 +7440,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 3,
         "levelDisplay": "30",
         "actualLevel": 30,
         "variantName": "III",
@@ -7534,7 +7465,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 4,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "IV",
@@ -7558,7 +7489,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 4,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "IV",
@@ -7583,7 +7514,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 5,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "V",
@@ -7607,7 +7538,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 5,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "V",
@@ -7632,7 +7563,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 6,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "VI",
@@ -7656,7 +7587,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 6,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "VI",
@@ -7681,7 +7612,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 7,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "VII",
@@ -7705,7 +7636,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 8,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "VII",
@@ -7730,7 +7661,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 9,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "VIII",
@@ -7754,7 +7685,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 10,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "VIII",
@@ -7779,7 +7710,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 11,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "IX",
@@ -7803,7 +7734,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 12,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "IX",
@@ -8115,10 +8046,58 @@
       }
     ],
     "tags": [
+      "???",
+      "free",
+      "goo",
+      "met",
       "sil",
-      "free"
+      "sto"
     ],
-    "daRequired": false
+    "daRequired": false,
+    "alsoSee": [
+      {
+        "name": "Elemental Seal Ring",
+        "slug": "accessory-elemental-seal-ring",
+        "type": "accessory",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21667897"
+      },
+      {
+        "name": "Enchanted Seal Ring",
+        "slug": "accessory-enchanted-seal-ring",
+        "type": "accessory",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21667890"
+      },
+      {
+        "name": "Jeweled Seal Ring of Wall",
+        "slug": "accessory-jeweled-seal-ring-of-wall",
+        "type": "accessory",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21666800"
+      },
+      {
+        "name": "Ornamented Seal Ring of the Papermancers",
+        "slug": "accessory-ornamented-seal-ring-of-the-papermancers",
+        "type": "accessory",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21666408"
+      },
+      {
+        "name": "Plain Seal Ring",
+        "slug": "accessory-plain-seal-ring",
+        "type": "accessory",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21666415"
+      },
+      {
+        "name": "Runed Seal Ring",
+        "slug": "accessory-runed-seal-ring",
+        "type": "accessory",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21666796"
+      },
+      {
+        "name": "Seal Ring",
+        "slug": "accessory-seal-ring",
+        "type": "accessory",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21666806"
+      }
+    ]
   },
   {
     "id": "accessory-fake-wedding-ring",
@@ -8372,7 +8351,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 30,
+        "levelNumber": 1,
         "levelDisplay": "30",
         "actualLevel": 30,
         "variantName": "I",
@@ -8396,7 +8375,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 1,
         "levelDisplay": "30",
         "actualLevel": 30,
         "variantName": "I",
@@ -8421,7 +8400,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 2,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "II",
@@ -8445,7 +8424,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 2,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "II",
@@ -8470,7 +8449,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 3,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "III",
@@ -8495,7 +8474,7 @@
         "notes": "While Ice Resist is listed in all lower case on this item, it still functions as intended."
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 3,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "III",
@@ -8521,7 +8500,7 @@
         "notes": "While Ice Resist is listed in all lower case on this item, it still functions as intended."
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 4,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "IV",
@@ -8545,7 +8524,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 4,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "IV",
@@ -8570,7 +8549,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 5,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "V",
@@ -8594,7 +8573,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 6,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "V",
@@ -8619,7 +8598,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 7,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "VI",
@@ -8643,7 +8622,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 8,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "VI",
@@ -8668,7 +8647,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 9,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "VII",
@@ -8692,7 +8671,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 10,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "VII",
@@ -8856,7 +8835,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 50,
+        "levelNumber": 1,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "I",
@@ -8880,7 +8859,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 1,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "I",
@@ -8905,7 +8884,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 2,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "II",
@@ -8929,7 +8908,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 2,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "II",
@@ -8954,7 +8933,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 3,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "III",
@@ -8978,7 +8957,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 4,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "III",
@@ -9003,7 +8982,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 5,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "IV",
@@ -9027,7 +9006,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 6,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "IV",
@@ -9052,7 +9031,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 7,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "V",
@@ -9076,7 +9055,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 8,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "V",
@@ -9288,7 +9267,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 30,
+        "levelNumber": 1,
         "levelDisplay": "30",
         "actualLevel": 30,
         "variantName": "I",
@@ -9312,7 +9291,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 1,
         "levelDisplay": "30",
         "actualLevel": 30,
         "variantName": "I",
@@ -9337,7 +9316,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 2,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "II",
@@ -9361,7 +9340,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 2,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "II",
@@ -9386,7 +9365,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 3,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "III",
@@ -9410,7 +9389,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 3,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "III",
@@ -9435,7 +9414,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 4,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "IV",
@@ -9459,7 +9438,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 4,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "IV",
@@ -9484,7 +9463,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 5,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "V",
@@ -9508,7 +9487,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 6,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "V",
@@ -9533,7 +9512,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 7,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "VI",
@@ -9557,7 +9536,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 8,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "VI",
@@ -9582,7 +9561,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 9,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "VII",
@@ -9606,7 +9585,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 10,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "VII",
@@ -9925,108 +9904,6 @@
     "daRequired": false
   },
   {
-    "id": "accessory-gleaming-bloodstone-ring",
-    "name": "Gleaming Bloodstone Ring",
-    "slug": "accessory-gleaming-bloodstone-ring",
-    "type": "accessory",
-    "subtype": "ring",
-    "description": "This stone holds a single drop of an ancient vampire's blood.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21859774",
-    "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
-    "level": "48",
-    "stats": "Block +1, Dodge +1, Parry +1, Crit +4, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +6, END +6, CHA +5, LUK +5, INT +2, DEX +2, STR +2, Bonus +5",
-    "resists": "Darkness +6, Fire +5, Health -4",
-    "rarity": "0",
-    "itemType": "Ring",
-    "equipSpot": "Finger",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "The Dark Tower",
-        "priceType": "free",
-        "price": "N/A",
-        "sellback": "180 Gold",
-        "daRequired": false
-      }
-    ],
-    "tags": [
-      "dar",
-      "free"
-    ],
-    "daRequired": false
-  },
-  {
-    "id": "accessory-glimmering-bloodstone-ring",
-    "name": "Glimmering Bloodstone Ring",
-    "slug": "accessory-glimmering-bloodstone-ring",
-    "type": "accessory",
-    "subtype": "ring",
-    "description": "This stone holds a single drop of an ancient vampire's blood.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21859769",
-    "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
-    "level": "28",
-    "stats": "Block +1, Parry +1, Crit +1, Magic Def +1, Pierce Def +1, Melee Def +1, WIS +4, END +4, CHA +3, LUK +3, Bonus +2",
-    "resists": "Darkness +5, Fire +4",
-    "rarity": "0",
-    "itemType": "Ring",
-    "equipSpot": "Finger",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "The Dark Tower",
-        "priceType": "free",
-        "price": "N/A",
-        "sellback": "120 Gold",
-        "daRequired": false
-      }
-    ],
-    "tags": [
-      "dar",
-      "free"
-    ],
-    "daRequired": false
-  },
-  {
-    "id": "accessory-glittering-bloodstone-ring",
-    "name": "Glittering Bloodstone Ring",
-    "slug": "accessory-glittering-bloodstone-ring",
-    "type": "accessory",
-    "subtype": "ring",
-    "description": "This stone holds a single drop of an ancient vampire's blood.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21859770",
-    "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
-    "level": "38",
-    "stats": "Block +1, Dodge +1, Parry +1, Crit +3, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +5, END +5, CHA +4, LUK +4, INT +2, DEX +2, STR +2, Bonus +4",
-    "resists": "Darkness +6, Fire +5, Health -2",
-    "rarity": "0",
-    "itemType": "Ring",
-    "equipSpot": "Finger",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "The Dark Tower",
-        "priceType": "free",
-        "price": "N/A",
-        "sellback": "150 Gold",
-        "daRequired": false
-      }
-    ],
-    "tags": [
-      "dar",
-      "free"
-    ],
-    "daRequired": false
-  },
-  {
     "id": "accessory-glittering-yaga-band",
     "name": "Glittering Yaga Band",
     "slug": "accessory-glittering-yaga-band",
@@ -10058,40 +9935,6 @@
       "free"
     ],
     "daRequired": true
-  },
-  {
-    "id": "accessory-glowing-moonstone-ring",
-    "name": "Glowing Moonstone Ring",
-    "slug": "accessory-glowing-moonstone-ring",
-    "type": "accessory",
-    "subtype": "ring",
-    "description": "A soft, white stone that seems to almost be made of trapped moonlight sits atop this ring.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21853668",
-    "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
-    "level": "17",
-    "stats": "Block +1, Crit +1, Pierce Def +1, Melee Def +1, WIS +2, END +2, CHA +2, LUK +2, Bonus +1",
-    "resists": "Fire +4, Light +3",
-    "rarity": "0",
-    "itemType": "Ring",
-    "equipSpot": "Finger",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "The Locket",
-        "priceType": "free",
-        "price": "N/A",
-        "sellback": "50 Gold",
-        "daRequired": false
-      }
-    ],
-    "tags": [
-      "sto",
-      "free"
-    ],
-    "daRequired": false
   },
   {
     "id": "accessory-golden-ring",
@@ -10578,7 +10421,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 15,
+        "levelNumber": 1,
         "levelDisplay": "15",
         "actualLevel": 15,
         "variantName": "I",
@@ -10602,7 +10445,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 15,
+        "levelNumber": 1,
         "levelDisplay": "15",
         "actualLevel": 15,
         "variantName": "I",
@@ -10627,7 +10470,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 25,
+        "levelNumber": 2,
         "levelDisplay": "25",
         "actualLevel": 25,
         "variantName": "II",
@@ -10651,7 +10494,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 25,
+        "levelNumber": 2,
         "levelDisplay": "25",
         "actualLevel": 25,
         "variantName": "II",
@@ -10676,7 +10519,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 35,
+        "levelNumber": 3,
         "levelDisplay": "35",
         "actualLevel": 35,
         "variantName": "III",
@@ -10700,7 +10543,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 35,
+        "levelNumber": 3,
         "levelDisplay": "35",
         "actualLevel": 35,
         "variantName": "III",
@@ -10725,7 +10568,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 45,
+        "levelNumber": 4,
         "levelDisplay": "45",
         "actualLevel": 45,
         "variantName": "IV",
@@ -10749,7 +10592,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 45,
+        "levelNumber": 4,
         "levelDisplay": "45",
         "actualLevel": 45,
         "variantName": "IV",
@@ -10774,7 +10617,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 55,
+        "levelNumber": 5,
         "levelDisplay": "55",
         "actualLevel": 55,
         "variantName": "V",
@@ -10798,7 +10641,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 55,
+        "levelNumber": 5,
         "levelDisplay": "55",
         "actualLevel": 55,
         "variantName": "V",
@@ -10823,7 +10666,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 65,
+        "levelNumber": 6,
         "levelDisplay": "65",
         "actualLevel": 65,
         "variantName": "VI",
@@ -10847,7 +10690,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 65,
+        "levelNumber": 6,
         "levelDisplay": "65",
         "actualLevel": 65,
         "variantName": "VI",
@@ -10872,7 +10715,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 75,
+        "levelNumber": 7,
         "levelDisplay": "75",
         "actualLevel": 75,
         "variantName": "VII",
@@ -10896,7 +10739,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 75,
+        "levelNumber": 8,
         "levelDisplay": "75",
         "actualLevel": 75,
         "variantName": "VII",
@@ -10921,7 +10764,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 85,
+        "levelNumber": 9,
         "levelDisplay": "85",
         "actualLevel": 85,
         "variantName": "VIII",
@@ -10945,7 +10788,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 85,
+        "levelNumber": 10,
         "levelDisplay": "85",
         "actualLevel": 85,
         "variantName": "VIII",
@@ -11274,10 +11117,58 @@
       }
     ],
     "tags": [
-      "sto",
-      "free"
+      "???",
+      "free",
+      "goo",
+      "met",
+      "sil",
+      "sto"
     ],
-    "daRequired": true
+    "daRequired": true,
+    "alsoSee": [
+      {
+        "name": "Elemental Seal Ring",
+        "slug": "accessory-elemental-seal-ring",
+        "type": "accessory",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21667897"
+      },
+      {
+        "name": "Enchanted Seal Ring",
+        "slug": "accessory-enchanted-seal-ring",
+        "type": "accessory",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21667890"
+      },
+      {
+        "name": "Exquisite Seal Ring",
+        "slug": "accessory-exquisite-seal-ring",
+        "type": "accessory",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21666410"
+      },
+      {
+        "name": "Ornamented Seal Ring of the Papermancers",
+        "slug": "accessory-ornamented-seal-ring-of-the-papermancers",
+        "type": "accessory",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21666408"
+      },
+      {
+        "name": "Plain Seal Ring",
+        "slug": "accessory-plain-seal-ring",
+        "type": "accessory",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21666415"
+      },
+      {
+        "name": "Runed Seal Ring",
+        "slug": "accessory-runed-seal-ring",
+        "type": "accessory",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21666796"
+      },
+      {
+        "name": "Seal Ring",
+        "slug": "accessory-seal-ring",
+        "type": "accessory",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21666806"
+      }
+    ]
   },
   {
     "id": "accessory-kasseri-ring",
@@ -11384,40 +11275,6 @@
     "daRequired": false
   },
   {
-    "id": "accessory-lambent-moonstone-ring",
-    "name": "Lambent Moonstone Ring",
-    "slug": "accessory-lambent-moonstone-ring",
-    "type": "accessory",
-    "subtype": "ring",
-    "description": "A soft, white stone that seems to almost be made of trapped moonlight sits atop this ring. This item requires a Dragon Amulet.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21844166",
-    "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
-    "level": "77",
-    "stats": "Block +2, Dodge +2, Parry +2, Crit +6, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +9, END +9, CHA +8, LUK +8, INT +5, DEX +5, STR +5, Bonus +8",
-    "resists": "Fire +8, Light +7, Water +6, Darkness +6, Immobility +3",
-    "rarity": "6",
-    "itemType": "Ring",
-    "equipSpot": "Finger",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "The Locket",
-        "priceType": "free",
-        "price": "N/A",
-        "sellback": "290 Gold",
-        "daRequired": true
-      }
-    ],
-    "tags": [
-      "sto",
-      "free"
-    ],
-    "daRequired": true
-  },
-  {
     "id": "accessory-lantern-ring",
     "name": "Lantern Ring",
     "slug": "accessory-lantern-ring",
@@ -11515,7 +11372,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 10,
+        "levelNumber": 1,
         "levelDisplay": "10",
         "actualLevel": 10,
         "name": "Layla's Ring",
@@ -11537,7 +11394,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 10,
+        "levelNumber": 1,
         "levelDisplay": "10",
         "actualLevel": 10,
         "name": "Layla's Ring",
@@ -11560,7 +11417,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 20,
+        "levelNumber": 2,
         "levelDisplay": "20",
         "actualLevel": 20,
         "name": "Layla's Ring",
@@ -11582,7 +11439,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 20,
+        "levelNumber": 2,
         "levelDisplay": "20",
         "actualLevel": 20,
         "name": "Layla's Ring",
@@ -11605,7 +11462,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 3,
         "levelDisplay": "30",
         "actualLevel": 30,
         "name": "Layla's Ring",
@@ -11627,7 +11484,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 3,
         "levelDisplay": "30",
         "actualLevel": 30,
         "name": "Layla's Ring",
@@ -11650,7 +11507,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 4,
         "levelDisplay": "40",
         "actualLevel": 40,
         "name": "Layla's Ring",
@@ -11672,7 +11529,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 4,
         "levelDisplay": "40",
         "actualLevel": 40,
         "name": "Layla's Ring",
@@ -11695,7 +11552,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 5,
         "levelDisplay": "50",
         "actualLevel": 50,
         "name": "Layla's Ring",
@@ -11717,7 +11574,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 5,
         "levelDisplay": "50",
         "actualLevel": 50,
         "name": "Layla's Ring",
@@ -11740,7 +11597,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 6,
         "levelDisplay": "60",
         "actualLevel": 60,
         "name": "Layla's Ring",
@@ -11762,7 +11619,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 6,
         "levelDisplay": "60",
         "actualLevel": 60,
         "name": "Layla's Ring",
@@ -11785,7 +11642,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 7,
         "levelDisplay": "70",
         "actualLevel": 70,
         "name": "Layla's Ring",
@@ -11807,7 +11664,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 8,
         "levelDisplay": "70",
         "actualLevel": 70,
         "name": "Layla's Ring",
@@ -11830,7 +11687,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 9,
         "levelDisplay": "80",
         "actualLevel": 80,
         "name": "Layla's Ring",
@@ -11852,7 +11709,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 10,
         "levelDisplay": "80",
         "actualLevel": 80,
         "name": "Layla's Ring",
@@ -12009,7 +11866,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 10,
+        "levelNumber": 1,
         "levelDisplay": "10",
         "actualLevel": 10,
         "variantName": "I",
@@ -12033,7 +11890,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 10,
+        "levelNumber": 1,
         "levelDisplay": "10",
         "actualLevel": 10,
         "variantName": "I",
@@ -12058,7 +11915,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 20,
+        "levelNumber": 2,
         "levelDisplay": "20",
         "actualLevel": 20,
         "variantName": "II",
@@ -12082,7 +11939,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 20,
+        "levelNumber": 2,
         "levelDisplay": "20",
         "actualLevel": 20,
         "variantName": "II",
@@ -12107,7 +11964,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 3,
         "levelDisplay": "30",
         "actualLevel": 30,
         "variantName": "III",
@@ -12131,7 +11988,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 3,
         "levelDisplay": "30",
         "actualLevel": 30,
         "variantName": "III",
@@ -12156,7 +12013,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 4,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "IV",
@@ -12180,7 +12037,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 4,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "IV",
@@ -12205,7 +12062,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 5,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "V",
@@ -12229,7 +12086,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 5,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "V",
@@ -12254,7 +12111,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 6,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "VI",
@@ -12278,7 +12135,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 6,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "VI",
@@ -12303,7 +12160,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 7,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "VII",
@@ -12327,7 +12184,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 8,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "VII",
@@ -12352,7 +12209,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 9,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "VIII",
@@ -12376,7 +12233,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 10,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "VIII",
@@ -12401,7 +12258,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 11,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "IX",
@@ -12425,7 +12282,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 12,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "IX",
@@ -13048,7 +12905,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 30,
+        "levelNumber": 1,
         "levelDisplay": "30",
         "actualLevel": 30,
         "variantName": "I",
@@ -13072,7 +12929,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 1,
         "levelDisplay": "30",
         "actualLevel": 30,
         "variantName": "I",
@@ -13097,7 +12954,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 2,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "II",
@@ -13121,7 +12978,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 2,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "II",
@@ -13146,7 +13003,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 3,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "III",
@@ -13170,7 +13027,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 3,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "III",
@@ -13195,7 +13052,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 4,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "IV",
@@ -13219,7 +13076,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 4,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "IV",
@@ -13244,7 +13101,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 5,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "V",
@@ -13268,7 +13125,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 6,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "V",
@@ -13293,7 +13150,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 7,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "VI",
@@ -13317,7 +13174,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 8,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "VI",
@@ -13342,7 +13199,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 9,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "VII",
@@ -13366,7 +13223,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 10,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "VII",
@@ -13589,7 +13446,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 15,
+        "levelNumber": 1,
         "levelDisplay": "15",
         "actualLevel": 15,
         "variantName": "I",
@@ -13613,7 +13470,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 15,
+        "levelNumber": 1,
         "levelDisplay": "15",
         "actualLevel": 15,
         "variantName": "I",
@@ -13638,7 +13495,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 25,
+        "levelNumber": 2,
         "levelDisplay": "25",
         "actualLevel": 25,
         "variantName": "II",
@@ -13662,7 +13519,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 25,
+        "levelNumber": 2,
         "levelDisplay": "25",
         "actualLevel": 25,
         "variantName": "II",
@@ -13687,7 +13544,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 35,
+        "levelNumber": 3,
         "levelDisplay": "35",
         "actualLevel": 35,
         "variantName": "III",
@@ -13711,7 +13568,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 35,
+        "levelNumber": 3,
         "levelDisplay": "35",
         "actualLevel": 35,
         "variantName": "III",
@@ -13736,7 +13593,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 45,
+        "levelNumber": 4,
         "levelDisplay": "45",
         "actualLevel": 45,
         "variantName": "IV",
@@ -13760,7 +13617,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 45,
+        "levelNumber": 4,
         "levelDisplay": "45",
         "actualLevel": 45,
         "variantName": "IV",
@@ -13785,7 +13642,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 55,
+        "levelNumber": 5,
         "levelDisplay": "55",
         "actualLevel": 55,
         "variantName": "V",
@@ -13809,7 +13666,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 55,
+        "levelNumber": 5,
         "levelDisplay": "55",
         "actualLevel": 55,
         "variantName": "V",
@@ -13834,7 +13691,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 65,
+        "levelNumber": 6,
         "levelDisplay": "65",
         "actualLevel": 65,
         "variantName": "VI",
@@ -13858,7 +13715,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 65,
+        "levelNumber": 6,
         "levelDisplay": "65",
         "actualLevel": 65,
         "variantName": "VI",
@@ -13883,7 +13740,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 75,
+        "levelNumber": 7,
         "levelDisplay": "75",
         "actualLevel": 75,
         "variantName": "VII",
@@ -13907,7 +13764,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 75,
+        "levelNumber": 8,
         "levelDisplay": "75",
         "actualLevel": 75,
         "variantName": "VII",
@@ -13932,7 +13789,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 85,
+        "levelNumber": 9,
         "levelDisplay": "85",
         "actualLevel": 85,
         "variantName": "VIII",
@@ -13956,7 +13813,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 85,
+        "levelNumber": 10,
         "levelDisplay": "85",
         "actualLevel": 85,
         "variantName": "VIII",
@@ -14134,71 +13991,227 @@
   },
   {
     "id": "accessory-moonstone-ring",
-    "name": "Moonstone Ring",
+    "familyName": "Moonstone Ring",
     "slug": "accessory-moonstone-ring",
+    "aliasSlugs": [
+      "accessory-glowing-moonstone-ring",
+      "accessory-cold-moonstone-ring",
+      "accessory-shining-moonstone-ring",
+      "accessory-sparkling-moonstone-ring",
+      "accessory-cut-moonstone-ring",
+      "accessory-vibrant-moonstone-ring",
+      "accessory-lambent-moonstone-ring"
+    ],
     "type": "accessory",
     "subtype": "ring",
-    "description": "A soft, white stone that seems to almost be made of trapped moonlight sits atop this ring.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21844193",
-    "releaseDate": "",
+    "familyOrigin": "cross-post",
+    "familySources": [],
+    "shared": {
+      "description": "A soft, white stone that seems to almost be made of trapped moonlight sits atop this ring."
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
+        "levelDisplay": "7",
+        "actualLevel": 7,
+        "variantName": "(Base)",
+        "name": "Moonstone Ring",
+        "damage": "",
+        "stats": "Block +1, Melee Def +1, WIS +1, END +1, CHA +1, LUK +1, Bonus +1",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21844193",
+        "description": "A soft, white stone that seems to almost be made of trapped moonlight sits atop this ring.",
+        "obtainVariants": [
+          {
+            "location": "The Locket",
+            "priceType": "free",
+            "price": "N/A",
+            "sellback": "15 Gold",
+            "daRequired": false
+          }
+        ],
+        "element": "STO",
+        "resists": "Fire +2, Light +2",
+        "rarity": "5"
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "17",
+        "actualLevel": 17,
+        "variantName": "Glowing",
+        "name": "Glowing Moonstone Ring",
+        "damage": "",
+        "stats": "Block +1, Crit +1, Pierce Def +1, Melee Def +1, WIS +2, END +2, CHA +2, LUK +2, Bonus +1",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21853668",
+        "description": "A soft, white stone that seems to almost be made of trapped moonlight sits atop this ring.",
+        "obtainVariants": [
+          {
+            "location": "The Locket",
+            "priceType": "free",
+            "price": "N/A",
+            "sellback": "50 Gold",
+            "daRequired": false
+          }
+        ],
+        "element": "STO",
+        "resists": "Fire +4, Light +3",
+        "rarity": "0"
+      },
+      {
+        "levelNumber": 3,
+        "levelDisplay": "27",
+        "actualLevel": 27,
+        "variantName": "Cold",
+        "name": "Cold Moonstone Ring",
+        "damage": "",
+        "stats": "Block +1, Parry +1, Crit +1, Magic Def +1, Pierce Def +1, Melee Def +1, WIS +4, END +4, CHA +3, LUK +3, Bonus +2",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21844136",
+        "description": "A soft, white stone that seems to almost be made of trapped moonlight sits atop this ring.",
+        "obtainVariants": [
+          {
+            "location": "The Locket",
+            "priceType": "free",
+            "price": "N/A",
+            "sellback": "120 Gold",
+            "daRequired": false
+          }
+        ],
+        "element": "STO",
+        "resists": "Fire +5, Light +4",
+        "rarity": "0"
+      },
+      {
+        "levelNumber": 4,
+        "levelDisplay": "37",
+        "actualLevel": 37,
+        "variantName": "Shining",
+        "name": "Shining Moonstone Ring",
+        "damage": "",
+        "stats": "Block +2, Dodge +1, Parry +1, Crit +4, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +6, END +6, CHA +5, LUK +5, INT +2, DEX +2, STR +2, Bonus +5",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21844192",
+        "description": "A soft, white stone that seems to almost be made of trapped moonlight sits atop this ring. This item requires a Dragon Amulet.",
+        "obtainVariants": [
+          {
+            "location": "The Locket",
+            "priceType": "free",
+            "price": "N/A",
+            "sellback": "150 Gold",
+            "daRequired": true
+          }
+        ],
+        "element": "STO",
+        "resists": "Fire +6, Light +5, Water +4, Darkness +4",
+        "rarity": "0"
+      },
+      {
+        "levelNumber": 5,
+        "levelDisplay": "47",
+        "actualLevel": 47,
+        "variantName": "Sparkling",
+        "name": "Sparkling Moonstone Ring",
+        "damage": "",
+        "stats": "Block +1, Dodge +1, Parry +1, Crit +3, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +5, END +5, CHA +4, LUK +4, INT +2, DEX +2, STR +2, Bonus +4",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21844205",
+        "description": "A soft, white stone that seems to almost be made of trapped moonlight sits atop this ring.",
+        "obtainVariants": [
+          {
+            "location": "The Locket",
+            "priceType": "free",
+            "price": "N/A",
+            "sellback": "180 Gold",
+            "daRequired": false
+          }
+        ],
+        "element": "STO",
+        "resists": "Fire +6, Light +5, Water +4",
+        "rarity": "0"
+      },
+      {
+        "levelNumber": 6,
+        "levelDisplay": "57",
+        "actualLevel": 57,
+        "variantName": "Cut",
+        "name": "Cut Moonstone Ring",
+        "damage": "",
+        "stats": "Block +1, Dodge +1, Parry +1, Crit +4, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +7, END +7, CHA +5, LUK +5, INT +3, DEX +3, STR +3, Bonus +6",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21844226",
+        "description": "A soft, white stone that seems to almost be made of trapped moonlight sits atop this ring.",
+        "obtainVariants": [
+          {
+            "location": "The Locket",
+            "priceType": "free",
+            "price": "N/A",
+            "sellback": "200 Gold",
+            "daRequired": false
+          }
+        ],
+        "element": "STO",
+        "resists": "Fire +6, Light +5, Water +5, Darkness +3",
+        "rarity": "0"
+      },
+      {
+        "levelNumber": 7,
+        "levelDisplay": "67",
+        "actualLevel": 67,
+        "variantName": "Vibrant",
+        "name": "Vibrant Moonstone Ring",
+        "damage": "",
+        "stats": "Block +2, Dodge +2, Parry +1, Crit +5, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +8, END +8, CHA +7, LUK +7, INT +4, DEX +4, STR +4, Bonus +8",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21844288",
+        "description": "A soft, white stone that seems to almost be made of trapped moonlight sits atop this ring. This item requires a Dragon Amulet.",
+        "obtainVariants": [
+          {
+            "location": "The Locket",
+            "priceType": "free",
+            "price": "N/A",
+            "sellback": "230 Gold",
+            "daRequired": true
+          }
+        ],
+        "element": "STO",
+        "resists": "Fire +7, Light +6, Water +5, Darkness +5, Immobility +2",
+        "rarity": "0"
+      },
+      {
+        "levelNumber": 8,
+        "levelDisplay": "77",
+        "actualLevel": 77,
+        "variantName": "Lambent",
+        "name": "Lambent Moonstone Ring",
+        "damage": "",
+        "stats": "Block +2, Dodge +2, Parry +2, Crit +6, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +9, END +9, CHA +8, LUK +8, INT +5, DEX +5, STR +5, Bonus +8",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21844166",
+        "description": "A soft, white stone that seems to almost be made of trapped moonlight sits atop this ring. This item requires a Dragon Amulet.",
+        "obtainVariants": [
+          {
+            "location": "The Locket",
+            "priceType": "free",
+            "price": "N/A",
+            "sellback": "290 Gold",
+            "daRequired": true
+          }
+        ],
+        "element": "STO",
+        "resists": "Fire +8, Light +7, Water +6, Darkness +6, Immobility +3",
+        "rarity": "6"
+      }
+    ],
+    "itemType": "Ring",
+    "equipSlot": "Finger",
+    "category": "Armor",
+    "tags": [
+      "free",
+      "sto"
+    ],
+    "hasDA": true,
+    "hasDC": false,
+    "hasDM": false,
+    "hasFree": true,
+    "hasMerge": false,
+    "levelRange": "7-77",
     "elements": [
       "STO"
-    ],
-    "level": "7",
-    "stats": "Block +1, Melee Def +1, WIS +1, END +1, CHA +1, LUK +1, Bonus +1",
-    "resists": "Fire +2, Light +2",
-    "rarity": "5",
-    "itemType": "Ring",
-    "equipSpot": "Finger",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "The Locket",
-        "priceType": "free",
-        "price": "N/A",
-        "sellback": "15 Gold",
-        "daRequired": false
-      }
-    ],
-    "tags": [
-      "sto",
-      "free"
-    ],
-    "daRequired": false
-  },
-  {
-    "id": "accessory-moonstone-ring-of-the-emperor",
-    "name": "Moonstone Ring of the Emperor",
-    "slug": "accessory-moonstone-ring-of-the-emperor",
-    "type": "accessory",
-    "subtype": "ring",
-    "description": "The ring of Emperor Kuron, an ancient ruler in the city of Sil.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19794948",
-    "releaseDate": "",
-    "elements": [
-      "ICE"
-    ],
-    "level": "19",
-    "stats": "Magic Def +1, Pierce Def +1, Melee Def +1, INT +2, DEX +2, STR +2",
-    "resists": "Light +1",
-    "rarity": "0",
-    "itemType": "Ring",
-    "equipSpot": "Finger",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "Sil Ruins (Shop)",
-        "priceType": "free",
-        "price": "0 Gold",
-        "sellback": "0 Gold",
-        "daRequired": false
-      }
-    ],
-    "tags": [
-      "ice",
-      "free"
-    ],
-    "daRequired": false
+    ]
   },
   {
     "id": "accessory-nether-ring",
@@ -14868,40 +14881,6 @@
     "daRequired": false
   },
   {
-    "id": "accessory-opal-ring-of-the-emperor",
-    "name": "Opal Ring of the Emperor",
-    "slug": "accessory-opal-ring-of-the-emperor",
-    "type": "accessory",
-    "subtype": "ring",
-    "description": "The ring of Emperor Kuron, an ancient ruler in the city of Sil.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19795005",
-    "releaseDate": "",
-    "elements": [
-      "ICE"
-    ],
-    "level": "46",
-    "stats": "Crit +2, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +4, CHA +2, LUK +2, INT +4, DEX +4, STR +4, Bonus +3",
-    "resists": "Light +6, Ice +4, Silver +2",
-    "rarity": "0",
-    "itemType": "Ring",
-    "equipSpot": "Finger",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "Sil Ruins (Shop)",
-        "priceType": "free",
-        "price": "0 Gold",
-        "sellback": "0 Gold",
-        "daRequired": false
-      }
-    ],
-    "tags": [
-      "ice",
-      "free"
-    ],
-    "daRequired": false
-  },
-  {
     "id": "accessory-orda-ring",
     "name": "Orda Ring",
     "slug": "accessory-orda-ring",
@@ -14964,10 +14943,58 @@
       }
     ],
     "tags": [
+      "???",
+      "free",
       "goo",
-      "free"
+      "met",
+      "sil",
+      "sto"
     ],
-    "daRequired": true
+    "daRequired": true,
+    "alsoSee": [
+      {
+        "name": "Elemental Seal Ring",
+        "slug": "accessory-elemental-seal-ring",
+        "type": "accessory",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21667897"
+      },
+      {
+        "name": "Enchanted Seal Ring",
+        "slug": "accessory-enchanted-seal-ring",
+        "type": "accessory",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21667890"
+      },
+      {
+        "name": "Exquisite Seal Ring",
+        "slug": "accessory-exquisite-seal-ring",
+        "type": "accessory",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21666410"
+      },
+      {
+        "name": "Jeweled Seal Ring of Wall",
+        "slug": "accessory-jeweled-seal-ring-of-wall",
+        "type": "accessory",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21666800"
+      },
+      {
+        "name": "Plain Seal Ring",
+        "slug": "accessory-plain-seal-ring",
+        "type": "accessory",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21666415"
+      },
+      {
+        "name": "Runed Seal Ring",
+        "slug": "accessory-runed-seal-ring",
+        "type": "accessory",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21666796"
+      },
+      {
+        "name": "Seal Ring",
+        "slug": "accessory-seal-ring",
+        "type": "accessory",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21666806"
+      }
+    ]
   },
   {
     "id": "accessory-overgrown-signet",
@@ -15035,7 +15062,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 30,
+        "levelNumber": 1,
         "levelDisplay": "30",
         "actualLevel": 30,
         "variantName": "I",
@@ -15059,7 +15086,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 1,
         "levelDisplay": "30",
         "actualLevel": 30,
         "variantName": "I",
@@ -15084,7 +15111,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 2,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "II",
@@ -15108,7 +15135,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 2,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "II",
@@ -15133,7 +15160,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 3,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "III",
@@ -15157,7 +15184,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 3,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "III",
@@ -15182,7 +15209,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 4,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "IV",
@@ -15206,7 +15233,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 4,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "IV",
@@ -15231,7 +15258,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 5,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "V",
@@ -15255,7 +15282,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 6,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "V",
@@ -15280,7 +15307,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 7,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "VI",
@@ -15304,7 +15331,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 8,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "VI",
@@ -15329,7 +15356,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 9,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "VII",
@@ -15353,7 +15380,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 10,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "VII",
@@ -15864,10 +15891,58 @@
       }
     ],
     "tags": [
+      "???",
+      "free",
+      "goo",
+      "met",
       "sil",
-      "free"
+      "sto"
     ],
-    "daRequired": false
+    "daRequired": false,
+    "alsoSee": [
+      {
+        "name": "Elemental Seal Ring",
+        "slug": "accessory-elemental-seal-ring",
+        "type": "accessory",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21667897"
+      },
+      {
+        "name": "Enchanted Seal Ring",
+        "slug": "accessory-enchanted-seal-ring",
+        "type": "accessory",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21667890"
+      },
+      {
+        "name": "Exquisite Seal Ring",
+        "slug": "accessory-exquisite-seal-ring",
+        "type": "accessory",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21666410"
+      },
+      {
+        "name": "Jeweled Seal Ring of Wall",
+        "slug": "accessory-jeweled-seal-ring-of-wall",
+        "type": "accessory",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21666800"
+      },
+      {
+        "name": "Ornamented Seal Ring of the Papermancers",
+        "slug": "accessory-ornamented-seal-ring-of-the-papermancers",
+        "type": "accessory",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21666408"
+      },
+      {
+        "name": "Runed Seal Ring",
+        "slug": "accessory-runed-seal-ring",
+        "type": "accessory",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21666796"
+      },
+      {
+        "name": "Seal Ring",
+        "slug": "accessory-seal-ring",
+        "type": "accessory",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21666806"
+      }
+    ]
   },
   {
     "id": "accessory-pointy-ring",
@@ -16691,6 +16766,182 @@
     "daRequired": true
   },
   {
+    "id": "accessory-moonstone-ring-of-the-emperor",
+    "familyName": "Ring of the Emperor",
+    "slug": "accessory-moonstone-ring-of-the-emperor",
+    "aliasSlugs": [
+      "accessory-amber-ring-of-the-emperor",
+      "accessory-amethyst-ring-of-the-emperor",
+      "accessory-opal-ring-of-the-emperor",
+      "accessory-sapphire-ring-of-the-emperor",
+      "accessory-diamond-ring-of-the-emperor"
+    ],
+    "type": "accessory",
+    "subtype": "ring",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19794948",
+    "familyOrigin": "cross-post",
+    "familySources": [],
+    "shared": {
+      "description": "The ring of Emperor Kuron, an ancient ruler in the city of Sil."
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
+        "levelDisplay": "19",
+        "actualLevel": 19,
+        "variantName": "Moonstone",
+        "name": "Moonstone Ring of the Emperor",
+        "damage": "",
+        "stats": "Magic Def +1, Pierce Def +1, Melee Def +1, INT +2, DEX +2, STR +2",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=19794948",
+        "description": "The ring of Emperor Kuron, an ancient ruler in the city of Sil.",
+        "obtainVariants": [
+          {
+            "location": "Sil Ruins (Shop)",
+            "priceType": "free",
+            "price": "0 Gold",
+            "sellback": "0 Gold",
+            "daRequired": false
+          }
+        ],
+        "element": "ICE",
+        "resists": "Light +1",
+        "rarity": "0"
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "27",
+        "actualLevel": 27,
+        "variantName": "Amber",
+        "name": "Amber Ring of the Emperor",
+        "damage": "",
+        "stats": "Magic Def +2, Pierce Def +2, Melee Def +2, WIS +2, INT +3, DEX +3, STR +3, Bonus +1",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=19794956",
+        "description": "The ring of Emperor Kuron, an ancient ruler in the city of Sil.",
+        "obtainVariants": [
+          {
+            "location": "Sil Ruins (Shop)",
+            "priceType": "free",
+            "price": "0 Gold",
+            "sellback": "0 Gold",
+            "daRequired": false
+          }
+        ],
+        "element": "ICE",
+        "resists": "Light +2",
+        "rarity": "0"
+      },
+      {
+        "levelNumber": 3,
+        "levelDisplay": "36",
+        "actualLevel": 36,
+        "variantName": "Amethyst",
+        "name": "Amethyst Ring of the Emperor",
+        "damage": "",
+        "stats": "Crit +1, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +3, CHA +1, LUK +1, INT +3, DEX +3, STR +3, Bonus +2",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=19794970",
+        "description": "The ring of Emperor Kuron, an ancient ruler in the city of Sil.",
+        "obtainVariants": [
+          {
+            "location": "Sil Ruins (Shop)",
+            "priceType": "free",
+            "price": "0 Gold",
+            "sellback": "0 Gold",
+            "daRequired": false
+          }
+        ],
+        "element": "ICE",
+        "resists": "Light +4, Ice +2",
+        "rarity": "0"
+      },
+      {
+        "levelNumber": 4,
+        "levelDisplay": "46",
+        "actualLevel": 46,
+        "variantName": "Opal",
+        "name": "Opal Ring of the Emperor",
+        "damage": "",
+        "stats": "Crit +2, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +4, CHA +2, LUK +2, INT +4, DEX +4, STR +4, Bonus +3",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=19795005",
+        "description": "The ring of Emperor Kuron, an ancient ruler in the city of Sil.",
+        "obtainVariants": [
+          {
+            "location": "Sil Ruins (Shop)",
+            "priceType": "free",
+            "price": "0 Gold",
+            "sellback": "0 Gold",
+            "daRequired": false
+          }
+        ],
+        "element": "ICE",
+        "resists": "Light +6, Ice +4, Silver +2",
+        "rarity": "0"
+      },
+      {
+        "levelNumber": 5,
+        "levelDisplay": "59",
+        "actualLevel": 59,
+        "variantName": "Sapphire",
+        "name": "Sapphire Ring of the Emperor",
+        "damage": "",
+        "stats": "Crit +3, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +5, CHA +3, LUK +3, INT +5, DEX +5, STR +5, Bonus +4",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=19795015",
+        "description": "The ring of Emperor Kuron, an ancient ruler in the city of Sil.",
+        "obtainVariants": [
+          {
+            "location": "Sil Ruins (Shop)",
+            "priceType": "free",
+            "price": "0 Gold",
+            "sellback": "0 Gold",
+            "daRequired": false
+          }
+        ],
+        "element": "ICE",
+        "resists": "Light +8, Ice +6, Silver +4, Water +2",
+        "rarity": "0"
+      },
+      {
+        "levelNumber": 6,
+        "levelDisplay": "68",
+        "actualLevel": 68,
+        "variantName": "Diamond",
+        "name": "Diamond Ring of the Emperor",
+        "damage": "",
+        "stats": "Dodge +1, Crit +5, Magic Def +7, Pierce Def +7, Melee Def +7, WIS +7, END +3, CHA +3, LUK +3, INT +6, DEX +6, STR +6, Bonus +6",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=19795045",
+        "description": "The ring of Emperor Kuron, an ancient ruler in the city of Sil. This item requires a Dragon Amulet.",
+        "obtainVariants": [
+          {
+            "location": "Sil Ruins (Shop)",
+            "priceType": "free",
+            "price": "0 Gold",
+            "sellback": "0 Gold",
+            "daRequired": true
+          }
+        ],
+        "element": "ICE",
+        "resists": "Light +10, Ice +8, Silver +6, Water +4, Immobility +2, Health -2",
+        "rarity": "0"
+      }
+    ],
+    "itemType": "Ring",
+    "equipSlot": "Finger",
+    "category": "Armor",
+    "tags": [
+      "free",
+      "ice"
+    ],
+    "hasDA": true,
+    "hasDC": false,
+    "hasDM": false,
+    "hasFree": true,
+    "hasMerge": false,
+    "levelRange": "19-68",
+    "elements": [
+      "ICE"
+    ]
+  },
+  {
     "id": "accessory-ring-of-the-four-winds",
     "familyName": "Ring of the Four Winds",
     "slug": "accessory-ring-of-the-four-winds",
@@ -16764,7 +17015,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 20,
+        "levelNumber": 1,
         "levelDisplay": "20",
         "actualLevel": 20,
         "variantName": "I",
@@ -16788,7 +17039,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 20,
+        "levelNumber": 1,
         "levelDisplay": "20",
         "actualLevel": 20,
         "variantName": "I",
@@ -16813,7 +17064,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 2,
         "levelDisplay": "30",
         "actualLevel": 30,
         "variantName": "II",
@@ -16837,7 +17088,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 2,
         "levelDisplay": "30",
         "actualLevel": 30,
         "variantName": "II",
@@ -16862,7 +17113,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 3,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "III",
@@ -16886,7 +17137,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 3,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "III",
@@ -16911,7 +17162,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 4,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "IV",
@@ -16935,7 +17186,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 4,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "IV",
@@ -16960,7 +17211,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 5,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "V",
@@ -16984,7 +17235,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 5,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "V",
@@ -17009,7 +17260,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 6,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "VI",
@@ -17033,7 +17284,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 7,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "VI",
@@ -17058,7 +17309,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 8,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "VII",
@@ -17082,7 +17333,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 9,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "VII",
@@ -17107,7 +17358,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 10,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "VIII",
@@ -17131,7 +17382,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 11,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "VIII",
@@ -17497,7 +17748,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 10,
+        "levelNumber": 1,
         "levelDisplay": "10",
         "actualLevel": 10,
         "variantName": "I",
@@ -17521,7 +17772,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 10,
+        "levelNumber": 1,
         "levelDisplay": "10",
         "actualLevel": 10,
         "variantName": "I",
@@ -17546,7 +17797,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 20,
+        "levelNumber": 2,
         "levelDisplay": "20",
         "actualLevel": 20,
         "variantName": "II",
@@ -17570,7 +17821,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 20,
+        "levelNumber": 2,
         "levelDisplay": "20",
         "actualLevel": 20,
         "variantName": "II",
@@ -17595,7 +17846,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 3,
         "levelDisplay": "30",
         "actualLevel": 30,
         "variantName": "III",
@@ -17619,7 +17870,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 3,
         "levelDisplay": "30",
         "actualLevel": 30,
         "variantName": "III",
@@ -17644,7 +17895,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 4,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "IV",
@@ -17668,7 +17919,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 4,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "IV",
@@ -17693,7 +17944,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 5,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "V",
@@ -17717,7 +17968,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 5,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "V",
@@ -17742,7 +17993,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 6,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "VI",
@@ -17766,7 +18017,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 6,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "VI",
@@ -17791,7 +18042,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 7,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "VII",
@@ -17815,7 +18066,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 7,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "VII",
@@ -17840,7 +18091,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 8,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "VIII",
@@ -17864,7 +18115,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 9,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "VIII",
@@ -17889,7 +18140,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 85,
+        "levelNumber": 10,
         "levelDisplay": "85",
         "actualLevel": 85,
         "variantName": "IX",
@@ -17913,7 +18164,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 85,
+        "levelNumber": 11,
         "levelDisplay": "85",
         "actualLevel": 85,
         "variantName": "IX",
@@ -18045,7 +18296,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 20,
+        "levelNumber": 1,
         "levelDisplay": "20",
         "actualLevel": 20,
         "variantName": "I",
@@ -18069,7 +18320,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 20,
+        "levelNumber": 1,
         "levelDisplay": "20",
         "actualLevel": 20,
         "variantName": "I",
@@ -18094,7 +18345,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 2,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "II",
@@ -18118,7 +18369,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 2,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "II",
@@ -18143,7 +18394,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 3,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "III",
@@ -18167,7 +18418,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 3,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "III",
@@ -18192,7 +18443,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 4,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "IV",
@@ -18216,7 +18467,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 5,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "IV",
@@ -18241,7 +18492,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 6,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "V",
@@ -18265,7 +18516,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 7,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "V",
@@ -18644,10 +18895,58 @@
       }
     ],
     "tags": [
+      "???",
+      "free",
+      "goo",
       "met",
-      "free"
+      "sil",
+      "sto"
     ],
-    "daRequired": false
+    "daRequired": false,
+    "alsoSee": [
+      {
+        "name": "Elemental Seal Ring",
+        "slug": "accessory-elemental-seal-ring",
+        "type": "accessory",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21667897"
+      },
+      {
+        "name": "Enchanted Seal Ring",
+        "slug": "accessory-enchanted-seal-ring",
+        "type": "accessory",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21667890"
+      },
+      {
+        "name": "Exquisite Seal Ring",
+        "slug": "accessory-exquisite-seal-ring",
+        "type": "accessory",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21666410"
+      },
+      {
+        "name": "Jeweled Seal Ring of Wall",
+        "slug": "accessory-jeweled-seal-ring-of-wall",
+        "type": "accessory",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21666800"
+      },
+      {
+        "name": "Ornamented Seal Ring of the Papermancers",
+        "slug": "accessory-ornamented-seal-ring-of-the-papermancers",
+        "type": "accessory",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21666408"
+      },
+      {
+        "name": "Plain Seal Ring",
+        "slug": "accessory-plain-seal-ring",
+        "type": "accessory",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21666415"
+      },
+      {
+        "name": "Seal Ring",
+        "slug": "accessory-seal-ring",
+        "type": "accessory",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21666806"
+      }
+    ]
   },
   {
     "id": "accessory-salve-vial",
@@ -18726,40 +19025,6 @@
       "gold"
     ],
     "daRequired": true
-  },
-  {
-    "id": "accessory-sapphire-ring-of-the-emperor",
-    "name": "Sapphire Ring of the Emperor",
-    "slug": "accessory-sapphire-ring-of-the-emperor",
-    "type": "accessory",
-    "subtype": "ring",
-    "description": "The ring of Emperor Kuron, an ancient ruler in the city of Sil.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19795015",
-    "releaseDate": "",
-    "elements": [
-      "ICE"
-    ],
-    "level": "59",
-    "stats": "Crit +3, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +5, CHA +3, LUK +3, INT +5, DEX +5, STR +5, Bonus +4",
-    "resists": "Light +8, Ice +6, Silver +4, Water +2",
-    "rarity": "0",
-    "itemType": "Ring",
-    "equipSpot": "Finger",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "Sil Ruins (Shop)",
-        "priceType": "free",
-        "price": "0 Gold",
-        "sellback": "0 Gold",
-        "daRequired": false
-      }
-    ],
-    "tags": [
-      "ice",
-      "free"
-    ],
-    "daRequired": false
   },
   {
     "id": "accessory-scarab-shell",
@@ -18858,10 +19123,58 @@
       }
     ],
     "tags": [
+      "???",
+      "free",
+      "goo",
+      "met",
       "sil",
-      "free"
+      "sto"
     ],
-    "daRequired": false
+    "daRequired": false,
+    "alsoSee": [
+      {
+        "name": "Elemental Seal Ring",
+        "slug": "accessory-elemental-seal-ring",
+        "type": "accessory",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21667897"
+      },
+      {
+        "name": "Enchanted Seal Ring",
+        "slug": "accessory-enchanted-seal-ring",
+        "type": "accessory",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21667890"
+      },
+      {
+        "name": "Exquisite Seal Ring",
+        "slug": "accessory-exquisite-seal-ring",
+        "type": "accessory",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21666410"
+      },
+      {
+        "name": "Jeweled Seal Ring of Wall",
+        "slug": "accessory-jeweled-seal-ring-of-wall",
+        "type": "accessory",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21666800"
+      },
+      {
+        "name": "Ornamented Seal Ring of the Papermancers",
+        "slug": "accessory-ornamented-seal-ring-of-the-papermancers",
+        "type": "accessory",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21666408"
+      },
+      {
+        "name": "Plain Seal Ring",
+        "slug": "accessory-plain-seal-ring",
+        "type": "accessory",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21666415"
+      },
+      {
+        "name": "Runed Seal Ring",
+        "slug": "accessory-runed-seal-ring",
+        "type": "accessory",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21666796"
+      }
+    ]
   },
   {
     "id": "accessory-seer-s-ring",
@@ -18944,7 +19257,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 10,
+        "levelNumber": 1,
         "levelDisplay": "10",
         "actualLevel": 10,
         "variantName": "I",
@@ -18968,7 +19281,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 10,
+        "levelNumber": 1,
         "levelDisplay": "10",
         "actualLevel": 10,
         "variantName": "I",
@@ -18993,7 +19306,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 20,
+        "levelNumber": 2,
         "levelDisplay": "20",
         "actualLevel": 20,
         "variantName": "II",
@@ -19017,7 +19330,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 20,
+        "levelNumber": 2,
         "levelDisplay": "20",
         "actualLevel": 20,
         "variantName": "II",
@@ -19042,7 +19355,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 3,
         "levelDisplay": "30",
         "actualLevel": 30,
         "variantName": "III",
@@ -19066,7 +19379,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 3,
         "levelDisplay": "30",
         "actualLevel": 30,
         "variantName": "III",
@@ -19091,7 +19404,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 4,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "IV",
@@ -19115,7 +19428,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 4,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "IV",
@@ -19140,7 +19453,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 5,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "V",
@@ -19164,7 +19477,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 5,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "V",
@@ -19189,7 +19502,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 6,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "VI",
@@ -19213,7 +19526,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 6,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "VI",
@@ -19238,7 +19551,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 7,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "VII",
@@ -19262,7 +19575,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 8,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "VII",
@@ -19287,7 +19600,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 9,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "VIII",
@@ -19311,7 +19624,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 10,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "VIII",
@@ -19336,7 +19649,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 11,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "IX",
@@ -19360,7 +19673,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 12,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "IX",
@@ -19706,74 +20019,6 @@
       "merge"
     ],
     "daRequired": false
-  },
-  {
-    "id": "accessory-shining-bloodstone-ring",
-    "name": "Shining Bloodstone Ring",
-    "slug": "accessory-shining-bloodstone-ring",
-    "type": "accessory",
-    "subtype": "ring",
-    "description": "This stone holds a single drop of an ancient vampire's blood.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21859981",
-    "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
-    "level": "58",
-    "stats": "Block +1, Dodge +1, Parry +1, Crit +4, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +7, END +7, CHA +5, LUK +5, INT +3, DEX +3, STR +3, Bonus +6",
-    "resists": "Darkness +6, Fire +5, Health -6",
-    "rarity": "0",
-    "itemType": "Ring",
-    "equipSpot": "Finger",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "The Dark Tower",
-        "priceType": "free",
-        "price": "N/A",
-        "sellback": "200 Gold",
-        "daRequired": false
-      }
-    ],
-    "tags": [
-      "dar",
-      "free"
-    ],
-    "daRequired": false
-  },
-  {
-    "id": "accessory-shining-moonstone-ring",
-    "name": "Shining Moonstone Ring",
-    "slug": "accessory-shining-moonstone-ring",
-    "type": "accessory",
-    "subtype": "ring",
-    "description": "A soft, white stone that seems to almost be made of trapped moonlight sits atop this ring. This item requires a Dragon Amulet.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21844192",
-    "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
-    "level": "37",
-    "stats": "Block +2, Dodge +1, Parry +1, Crit +4, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +6, END +6, CHA +5, LUK +5, INT +2, DEX +2, STR +2, Bonus +5",
-    "resists": "Fire +6, Light +5, Water +4, Darkness +4",
-    "rarity": "0",
-    "itemType": "Ring",
-    "equipSpot": "Finger",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "The Locket",
-        "priceType": "free",
-        "price": "N/A",
-        "sellback": "150 Gold",
-        "daRequired": true
-      }
-    ],
-    "tags": [
-      "sto",
-      "free"
-    ],
-    "daRequired": true
   },
   {
     "id": "accessory-shiny-ring",
@@ -20353,40 +20598,6 @@
     ]
   },
   {
-    "id": "accessory-sparkling-moonstone-ring",
-    "name": "Sparkling Moonstone Ring",
-    "slug": "accessory-sparkling-moonstone-ring",
-    "type": "accessory",
-    "subtype": "ring",
-    "description": "A soft, white stone that seems to almost be made of trapped moonlight sits atop this ring.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21844205",
-    "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
-    "level": "47",
-    "stats": "Block +1, Dodge +1, Parry +1, Crit +3, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +5, END +5, CHA +4, LUK +4, INT +2, DEX +2, STR +2, Bonus +4",
-    "resists": "Fire +6, Light +5, Water +4",
-    "rarity": "0",
-    "itemType": "Ring",
-    "equipSpot": "Finger",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "The Locket",
-        "priceType": "free",
-        "price": "N/A",
-        "sellback": "180 Gold",
-        "daRequired": false
-      }
-    ],
-    "tags": [
-      "sto",
-      "free"
-    ],
-    "daRequired": false
-  },
-  {
     "id": "accessory-spiked-ring",
     "name": "Spiked Ring",
     "slug": "accessory-spiked-ring",
@@ -20452,7 +20663,21 @@
       "ene",
       "free"
     ],
-    "daRequired": false
+    "daRequired": false,
+    "alsoSee": [
+      {
+        "name": "Starlight Ring",
+        "slug": "accessory-starlight-ring",
+        "type": "accessory",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21904333"
+      },
+      {
+        "name": "Starry Ring",
+        "slug": "accessory-starry-ring",
+        "type": "accessory",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21904331"
+      }
+    ]
   },
   {
     "id": "accessory-starlight-ring",
@@ -20486,7 +20711,21 @@
       "ene",
       "free"
     ],
-    "daRequired": false
+    "daRequired": false,
+    "alsoSee": [
+      {
+        "name": "Star Ring",
+        "slug": "accessory-star-ring",
+        "type": "accessory",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=12037227"
+      },
+      {
+        "name": "Starry Ring",
+        "slug": "accessory-starry-ring",
+        "type": "accessory",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21904331"
+      }
+    ]
   },
   {
     "id": "accessory-starlit-band",
@@ -20562,7 +20801,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 20,
+        "levelNumber": 1,
         "levelDisplay": "20",
         "actualLevel": 20,
         "variantName": "I",
@@ -20586,7 +20825,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 20,
+        "levelNumber": 1,
         "levelDisplay": "20",
         "actualLevel": 20,
         "variantName": "I",
@@ -20611,7 +20850,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 2,
         "levelDisplay": "30",
         "actualLevel": 30,
         "variantName": "II",
@@ -20635,7 +20874,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 2,
         "levelDisplay": "30",
         "actualLevel": 30,
         "variantName": "II",
@@ -20660,7 +20899,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 3,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "III",
@@ -20684,7 +20923,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 3,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "III",
@@ -20709,7 +20948,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 4,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "IV",
@@ -20733,7 +20972,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 4,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "IV",
@@ -20758,7 +20997,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 5,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "V",
@@ -20782,7 +21021,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 5,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "V",
@@ -20807,7 +21046,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 6,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "VI",
@@ -20831,7 +21070,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 7,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "VI",
@@ -20856,7 +21095,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 8,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "VII",
@@ -20880,7 +21119,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 9,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "VII",
@@ -20905,7 +21144,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 10,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "VIII",
@@ -20929,7 +21168,7 @@
         "itemType": "Ring"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 11,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "VIII",
@@ -21005,7 +21244,21 @@
       "ene",
       "free"
     ],
-    "daRequired": false
+    "daRequired": false,
+    "alsoSee": [
+      {
+        "name": "Star Ring",
+        "slug": "accessory-star-ring",
+        "type": "accessory",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=12037227"
+      },
+      {
+        "name": "Starlight Ring",
+        "slug": "accessory-starlight-ring",
+        "type": "accessory",
+        "url": "https://forums2.battleon.com/f/tm.asp?m=21904333"
+      }
+    ]
   },
   {
     "id": "accessory-strong-ring",
@@ -21856,74 +22109,6 @@
       "free"
     ],
     "daRequired": false
-  },
-  {
-    "id": "accessory-vibrant-bloodstone-ring",
-    "name": "Vibrant Bloodstone Ring",
-    "slug": "accessory-vibrant-bloodstone-ring",
-    "type": "accessory",
-    "subtype": "ring",
-    "description": "This stone holds a single drop of an ancient vampire's blood.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21859781",
-    "releaseDate": "",
-    "elements": [
-      "DAR"
-    ],
-    "level": "68",
-    "stats": "Block +2, Dodge +2, Parry +1, Crit +5, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +8, END +8, CHA +7, LUK +7, INT +4, DEX +4, STR +4, Bonus +8",
-    "resists": "Darkness +7, Fire +6, Health -8, Immobility +2",
-    "rarity": "0",
-    "itemType": "Ring",
-    "equipSpot": "Finger",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "The Dark Tower",
-        "priceType": "free",
-        "price": "N/A",
-        "sellback": "230 Gold",
-        "daRequired": false
-      }
-    ],
-    "tags": [
-      "dar",
-      "free"
-    ],
-    "daRequired": false
-  },
-  {
-    "id": "accessory-vibrant-moonstone-ring",
-    "name": "Vibrant Moonstone Ring",
-    "slug": "accessory-vibrant-moonstone-ring",
-    "type": "accessory",
-    "subtype": "ring",
-    "description": "A soft, white stone that seems to almost be made of trapped moonlight sits atop this ring. This item requires a Dragon Amulet.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21844288",
-    "releaseDate": "",
-    "elements": [
-      "STO"
-    ],
-    "level": "67",
-    "stats": "Block +2, Dodge +2, Parry +1, Crit +5, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +8, END +8, CHA +7, LUK +7, INT +4, DEX +4, STR +4, Bonus +8",
-    "resists": "Fire +7, Light +6, Water +5, Darkness +5, Immobility +2",
-    "rarity": "0",
-    "itemType": "Ring",
-    "equipSpot": "Finger",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "The Locket",
-        "priceType": "free",
-        "price": "N/A",
-        "sellback": "230 Gold",
-        "daRequired": true
-      }
-    ],
-    "tags": [
-      "sto",
-      "free"
-    ],
-    "daRequired": true
   },
   {
     "id": "accessory-void-chitin-band",

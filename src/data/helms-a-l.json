@@ -2004,15 +2004,15 @@
     "alternativeImages": [
       {
         "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/AlloyedKabutoGuard-OrangeHorn.png",
-        "caption": "Orange"
+        "caption": "Horn (Orange)"
       },
       {
         "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/AlloyedKabutoPack-RedHorn.png",
-        "caption": "Red"
+        "caption": "Horn (Red)"
       },
       {
         "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/AlloyedKabutoPack-NoHorn.png",
-        "caption": "No Color"
+        "caption": "Horn (No Color)"
       },
       {
         "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/AlloyedKabutoGuard-Clicked.png",
@@ -2039,7 +2039,7 @@
         "dcRequired": true
       }
     ],
-    "notes": "Helm is color-custom; visor is custom to player's base color.\nClick the visor's lens to change between two appearances; click the bottommost button to toggle the horn's colors between cyan, orange, red, and no colors.\nHorn Appearances:  Orange /  Red /  No Color",
+    "notes": "Helm is color-custom; visor is custom to player's base color.\nClick the visor's lens to change between two appearances; click the bottommost button to toggle the horn's colors between cyan, orange, red, and no colors.",
     "tags": [
       "met",
       "dc"
@@ -5378,7 +5378,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 15,
+        "levelNumber": 1,
         "levelDisplay": "15",
         "actualLevel": 15,
         "name": "Atgno Infused Rose Helm",
@@ -5401,7 +5401,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 15,
+        "levelNumber": 1,
         "levelDisplay": "15",
         "actualLevel": 15,
         "name": "Atgno Infused Rose Helm",
@@ -5425,7 +5425,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 25,
+        "levelNumber": 2,
         "levelDisplay": "25",
         "actualLevel": 25,
         "name": "Atgno Infused Rose Helm",
@@ -5448,7 +5448,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 25,
+        "levelNumber": 2,
         "levelDisplay": "25",
         "actualLevel": 25,
         "name": "Atgno Infused Rose Helm",
@@ -5472,7 +5472,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 35,
+        "levelNumber": 3,
         "levelDisplay": "35",
         "actualLevel": 35,
         "name": "Atgno Infused Rose Helm",
@@ -5495,7 +5495,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 35,
+        "levelNumber": 3,
         "levelDisplay": "35",
         "actualLevel": 35,
         "name": "Atgno Infused Rose Helm",
@@ -5519,7 +5519,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 45,
+        "levelNumber": 4,
         "levelDisplay": "45",
         "actualLevel": 45,
         "name": "Atgno Infused Rose Helm",
@@ -5542,7 +5542,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 45,
+        "levelNumber": 4,
         "levelDisplay": "45",
         "actualLevel": 45,
         "name": "Atgno Infused Rose Helm",
@@ -5566,7 +5566,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 55,
+        "levelNumber": 5,
         "levelDisplay": "55",
         "actualLevel": 55,
         "name": "Atgno Infused Rose Helm",
@@ -5589,7 +5589,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 55,
+        "levelNumber": 5,
         "levelDisplay": "55",
         "actualLevel": 55,
         "name": "Atgno Infused Rose Helm",
@@ -5613,7 +5613,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 65,
+        "levelNumber": 6,
         "levelDisplay": "65",
         "actualLevel": 65,
         "name": "Atgno Infused Rose Helm",
@@ -5636,7 +5636,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 65,
+        "levelNumber": 6,
         "levelDisplay": "65",
         "actualLevel": 65,
         "name": "Atgno Infused Rose Helm",
@@ -5660,7 +5660,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 75,
+        "levelNumber": 7,
         "levelDisplay": "75",
         "actualLevel": 75,
         "name": "Atgno Infused Rose Helm",
@@ -5683,7 +5683,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 75,
+        "levelNumber": 8,
         "levelDisplay": "75",
         "actualLevel": 75,
         "name": "Atgno Infused Rose Helm",
@@ -5707,7 +5707,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 85,
+        "levelNumber": 9,
         "levelDisplay": "85",
         "actualLevel": 85,
         "name": "Atgno Infused Rose Helm",
@@ -5730,7 +5730,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 85,
+        "levelNumber": 10,
         "levelDisplay": "85",
         "actualLevel": 85,
         "name": "Atgno Infused Rose Helm",
@@ -6934,30 +6934,7 @@
             "priceType": "gold",
             "sellback": "500 Gold",
             "daRequired": true
-          }
-        ],
-        "element": "SIL",
-        "resists": "Poison +5, Water +5, Immobility +1",
-        "rarity": "2"
-      },
-      {
-        "levelNumber": 4,
-        "levelDisplay": "35",
-        "actualLevel": 35,
-        "variantName": "Cunning",
-        "name": "Cunning Aye Guardian Pirate Hat",
-        "damage": "",
-        "stats": "Crit +4, Magic Def +5, Pierce Def +5, Melee Def +3, WIS +3, END +3, CHA +7, LUK +5, INT +2, DEX +2, STR +2, Bonus +6",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=19634564",
-        "description": "Ye'll be ready t' sail o'er t' seas o' Lore with this handsome hat. This item requires a Dragon Amulet.",
-        "imageUrl": "http://i.imgur.com/CLUyCdv.png",
-        "alternativeImages": [
-          {
-            "url": "http://i.imgur.com/QYJhi.png",
-            "caption": "Alternative Image"
-          }
-        ],
-        "obtainVariants": [
+          },
           {
             "location": "TLaPD DC Bandanas",
             "price": "120 Dragon Coins",
@@ -6995,30 +6972,7 @@
             "priceType": "gold",
             "sellback": "600 Gold",
             "daRequired": true
-          }
-        ],
-        "element": "SIL",
-        "resists": "Poison +5, Water +5, Nature +5, Immobility +1",
-        "rarity": "2"
-      },
-      {
-        "levelNumber": 5,
-        "levelDisplay": "45",
-        "actualLevel": 45,
-        "variantName": "Swarthy",
-        "name": "Swarthy Aye Guardian Pirate Hat",
-        "damage": "",
-        "stats": "Crit +5, Magic Def +6, Pierce Def +6, Melee Def +4, WIS +4, END +4, CHA +7, LUK +6, INT +3, DEX +3, STR +3, Bonus +6",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=19634566",
-        "description": "Ye'll be ready t' sail o'er t' seas o' Lore with this handsome hat. This item requires a Dragon Amulet.",
-        "imageUrl": "http://i.imgur.com/CLUyCdv.png",
-        "alternativeImages": [
-          {
-            "url": "http://i.imgur.com/QYJhi.png",
-            "caption": "Alternative Image"
-          }
-        ],
-        "obtainVariants": [
+          },
           {
             "location": "TLaPD DC Bandanas",
             "price": "140 Dragon Coins",
@@ -7056,30 +7010,7 @@
             "priceType": "gold",
             "sellback": "750 Gold",
             "daRequired": true
-          }
-        ],
-        "element": "SIL",
-        "resists": "Poison +5, Water +5, Nature +5, Wind +5, Immobility +1",
-        "rarity": "2"
-      },
-      {
-        "levelNumber": 6,
-        "levelDisplay": "55",
-        "actualLevel": 55,
-        "variantName": "Foxy",
-        "name": "Foxy Aye Guardian Pirate Hat",
-        "damage": "",
-        "stats": "Parry +1, Crit +6, Magic Def +6, Pierce Def +6, Melee Def +5, WIS +4, END +4, CHA +7, LUK +7, INT +4, DEX +4, STR +4, Bonus +6",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=19634569",
-        "description": "Ye'll be ready t' sail o'er t' seas o' Lore with this handsome hat. This item requires a Dragon Amulet.",
-        "imageUrl": "http://i.imgur.com/CLUyCdv.png",
-        "alternativeImages": [
-          {
-            "url": "http://i.imgur.com/QYJhi.png",
-            "caption": "Alternative Image"
-          }
-        ],
-        "obtainVariants": [
+          },
           {
             "location": "TLaPD DC Bandanas",
             "price": "160 Dragon Coins",
@@ -7117,30 +7048,7 @@
             "priceType": "gold",
             "sellback": "900 Gold",
             "daRequired": true
-          }
-        ],
-        "element": "SIL",
-        "resists": "Poison +7, Water +7, Nature +7, Wind +7, Immobility +3",
-        "rarity": "2"
-      },
-      {
-        "levelNumber": 7,
-        "levelDisplay": "65",
-        "actualLevel": 65,
-        "variantName": "Crafty",
-        "name": "Crafty Aye Guardian Pirate Hat",
-        "damage": "",
-        "stats": "Parry +2, Crit +6, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +5, END +4, CHA +8, LUK +8, INT +4, DEX +4, STR +4, Bonus +6",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=19634572",
-        "description": "Ye'll be ready t' sail o'er t' seas o' Lore with this handsome hat. This item requires a Dragon Amulet.",
-        "imageUrl": "http://i.imgur.com/CLUyCdv.png",
-        "alternativeImages": [
-          {
-            "url": "http://i.imgur.com/QYJhi.png",
-            "caption": "Alternative Image"
-          }
-        ],
-        "obtainVariants": [
+          },
           {
             "location": "TLaPD DC Bandanas",
             "price": "180 Dragon Coins",
@@ -7233,30 +7141,7 @@
             "priceType": "gold",
             "sellback": "1,150 Gold",
             "daRequired": true
-          }
-        ],
-        "element": "SIL",
-        "resists": "Poison +10, Water +10, Nature +10, Wind +10, Immobility +6",
-        "rarity": "2"
-      },
-      {
-        "levelNumber": 10,
-        "levelDisplay": "80",
-        "actualLevel": 80,
-        "variantName": "Brave",
-        "name": "Brave Aye Guardian Pirate Hat",
-        "damage": "",
-        "stats": "Dodge +1, Parry +2, Crit +7, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +6, END +5, CHA +8, LUK +8, INT +7, DEX +7, STR +7, Bonus +7",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20709790",
-        "description": "Ye'll be ready t' sail o'er t' seas o' Lore with this handsome hat. This item requires a Dragon Amulet.",
-        "imageUrl": "http://i.imgur.com/CLUyCdv.png",
-        "alternativeImages": [
-          {
-            "url": "http://i.imgur.com/QYJhi.png",
-            "caption": "Alternative Image"
-          }
-        ],
-        "obtainVariants": [
+          },
           {
             "location": "TLaPD DC, TLaPD DC Bandanas",
             "price": "220 Dragon Coins",
@@ -7490,30 +7375,7 @@
             "sellback": "108 DC (<24 hours) / 30 DC (>24 hours)",
             "daRequired": false,
             "priceType": "free"
-          }
-        ],
-        "element": "SIL",
-        "resists": "Poison +4, Water +4",
-        "rarity": "2"
-      },
-      {
-        "levelNumber": 5,
-        "levelDisplay": "35",
-        "actualLevel": 35,
-        "variantName": "Cunning",
-        "name": "Cunning Aye Pirate Scarf",
-        "damage": "",
-        "stats": "Crit +3, Magic Def +3, Pierce Def +3, Melee Def +2, WIS +2, END +2, CHA +5, LUK +4, INT +1, DEX +1, STR +1, Bonus +5",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=19628995",
-        "description": "Ye'll be ready t' sail o'er t' seas o' Lore with this handsome scarf.",
-        "imageUrl": "http://i.imgur.com/wVmBVCd.png",
-        "alternativeImages": [
-          {
-            "url": "http://i.imgur.com/MTl96zd.png",
-            "caption": "Alternative Image"
-          }
-        ],
-        "obtainVariants": [
+          },
           {
             "location": "TLaPD DC Bandanas",
             "price": "120 Dragon Coins",
@@ -7528,7 +7390,7 @@
         "rarity": "2"
       },
       {
-        "levelNumber": 6,
+        "levelNumber": 5,
         "levelDisplay": "45",
         "actualLevel": 45,
         "variantName": "Swarthy",
@@ -7551,30 +7413,7 @@
             "sellback": "126 DC (<24 hours) / 35 DC (>24 hours)",
             "daRequired": false,
             "priceType": "free"
-          }
-        ],
-        "element": "SIL",
-        "resists": "Poison +4, Water +4, Nature +4",
-        "rarity": "2"
-      },
-      {
-        "levelNumber": 7,
-        "levelDisplay": "45",
-        "actualLevel": 45,
-        "variantName": "Swarthy",
-        "name": "Swarthy Aye Pirate Scarf",
-        "damage": "",
-        "stats": "Crit +4, Magic Def +4, Pierce Def +4, Melee Def +3, WIS +2, END +2, CHA +6, LUK +5, INT +2, DEX +2, STR +2, Bonus +5",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=19628985",
-        "description": "Ye'll be ready t' sail o'er t' seas o' Lore with this handsome scarf.",
-        "imageUrl": "http://i.imgur.com/wVmBVCd.png",
-        "alternativeImages": [
-          {
-            "url": "http://i.imgur.com/MTl96zd.png",
-            "caption": "Alternative Image"
-          }
-        ],
-        "obtainVariants": [
+          },
           {
             "location": "TLaPD DC Bandanas",
             "price": "140 Dragon Coins",
@@ -7589,7 +7428,7 @@
         "rarity": "2"
       },
       {
-        "levelNumber": 8,
+        "levelNumber": 6,
         "levelDisplay": "55",
         "actualLevel": 55,
         "variantName": "Foxy",
@@ -7612,30 +7451,7 @@
             "sellback": "144 DC (<24 hours) / 40 DC (>24 hours)",
             "daRequired": false,
             "priceType": "free"
-          }
-        ],
-        "element": "SIL",
-        "resists": "Poison +4, Water +4, Nature +4, Wind +4",
-        "rarity": "2"
-      },
-      {
-        "levelNumber": 9,
-        "levelDisplay": "55",
-        "actualLevel": 55,
-        "variantName": "Foxy",
-        "name": "Foxy Aye Pirate Scarf",
-        "damage": "",
-        "stats": "Crit +5, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +2, END +2, CHA +6, LUK +6, INT +2, DEX +2, STR +2, Bonus +5",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=19628980",
-        "description": "Ye'll be ready t' sail o'er t' seas o' Lore with this handsome scarf.",
-        "imageUrl": "http://i.imgur.com/wVmBVCd.png",
-        "alternativeImages": [
-          {
-            "url": "http://i.imgur.com/MTl96zd.png",
-            "caption": "Alternative Image"
-          }
-        ],
-        "obtainVariants": [
+          },
           {
             "location": "TLaPD DC Bandanas",
             "price": "160 Dragon Coins",
@@ -7650,7 +7466,7 @@
         "rarity": "2"
       },
       {
-        "levelNumber": 10,
+        "levelNumber": 7,
         "levelDisplay": "65",
         "actualLevel": 65,
         "variantName": "Crafty",
@@ -7673,30 +7489,7 @@
             "sellback": "162 DC (<24 hours) / 45 DC (>24 hours)",
             "daRequired": true,
             "priceType": "free"
-          }
-        ],
-        "element": "SIL",
-        "resists": "Poison +7, Water +7, Nature +7, Wind +7, Immobility +3",
-        "rarity": "2"
-      },
-      {
-        "levelNumber": 11,
-        "levelDisplay": "65",
-        "actualLevel": 65,
-        "variantName": "Crafty",
-        "name": "Crafty Aye Pirate Scarf",
-        "damage": "",
-        "stats": "Parry +2, Crit +6, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +5, END +4, CHA +8, LUK +8, INT +4, DEX +4, STR +4, Bonus +6",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=19628976",
-        "description": "Ye'll be ready t' sail o'er t' seas o' Lore with this handsome scarf.",
-        "imageUrl": "http://i.imgur.com/wVmBVCd.png",
-        "alternativeImages": [
-          {
-            "url": "http://i.imgur.com/MTl96zd.png",
-            "caption": "Alternative Image"
-          }
-        ],
-        "obtainVariants": [
+          },
           {
             "location": "TLaPD DC Bandanas",
             "price": "180 Dragon Coins",
@@ -7711,7 +7504,7 @@
         "rarity": "2"
       },
       {
-        "levelNumber": 12,
+        "levelNumber": 8,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "Filthy",
@@ -7742,7 +7535,7 @@
         "rarity": "2"
       },
       {
-        "levelNumber": 13,
+        "levelNumber": 9,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "Wily",
@@ -7772,7 +7565,7 @@
         "rarity": "2"
       },
       {
-        "levelNumber": 14,
+        "levelNumber": 10,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "Brave",
@@ -7795,30 +7588,7 @@
             "sellback": "198 DC (<24 hours) / 55 DC (>24 hours)",
             "daRequired": true,
             "priceType": "free"
-          }
-        ],
-        "element": "SIL",
-        "resists": "Poison +10, Water +10, Nature +10, Wind +10, Immobility +6",
-        "rarity": "2"
-      },
-      {
-        "levelNumber": 15,
-        "levelDisplay": "80",
-        "actualLevel": 80,
-        "variantName": "Brave",
-        "name": "Brave Aye Pirate Scarf",
-        "damage": "",
-        "stats": "Dodge +1, Parry +2, Crit +7, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +6, END +5, CHA +8, LUK +8, INT +7, DEX +7, STR +7, Bonus +7",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20709784",
-        "description": "Ye'll be ready t' sail o'er t' seas o' Lore with this handsome scarf.",
-        "imageUrl": "http://i.imgur.com/wVmBVCd.png",
-        "alternativeImages": [
-          {
-            "url": "http://i.imgur.com/MTl96zd.png",
-            "caption": "Alternative Image"
-          }
-        ],
-        "obtainVariants": [
+          },
           {
             "location": "TLaPD DC, TLaPD DC Bandanas",
             "price": "220 Dragon Coins",
@@ -8630,41 +8400,6 @@
         "url": "https://forums2.battleon.com/f/tm.asp?m=22413357"
       }
     ]
-  },
-  {
-    "id": "accessory-baradaa-s-skullhelm",
-    "name": "Baradaa's Skullhelm",
-    "slug": "accessory-baradaa-s-skullhelm",
-    "type": "accessory",
-    "subtype": "helm",
-    "description": "This was one of three skull helms worn by the three necromancer brothers who founded Necromancy University. This was worn by Baradaa, the middle brother.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=13562161",
-    "releaseDate": "",
-    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/Baradaa's%20Skullhelm%20pic.bmp",
-    "elements": [
-      "DAR"
-    ],
-    "level": "12",
-    "stats": "Magic Def +2, Pierce Def +2, Melee Def +2, CHA +2, DEX +2, Bonus +2",
-    "resists": "Darkness +5",
-    "rarity": "6",
-    "itemType": "Helm",
-    "equipSpot": "Head",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "The T.A.'s Challenge",
-        "priceType": "free",
-        "price": "N/A",
-        "sellback": "12 Gold",
-        "daRequired": false
-      }
-    ],
-    "tags": [
-      "dar",
-      "free"
-    ],
-    "daRequired": false
   },
   {
     "id": "accessory-baron-cat-mask",
@@ -10268,30 +10003,7 @@
             "sellback": "108 DC (<24 hours) / 30 DC (>24 hours)",
             "daRequired": true,
             "priceType": "free"
-          }
-        ],
-        "element": "SIL",
-        "resists": "Poison +5, Water +5, Immobility +1",
-        "rarity": "2"
-      },
-      {
-        "levelNumber": 5,
-        "levelDisplay": "35",
-        "actualLevel": 35,
-        "variantName": "Cunning",
-        "name": "Cunning Bearded Guardian Pirate Hat",
-        "damage": "",
-        "stats": "Crit +4, Magic Def +5, Pierce Def +5, Melee Def +3, WIS +3, END +3, CHA +7, LUK +5, INT +2, DEX +2, STR +2, Bonus +6",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=19634595",
-        "description": "Ye'll be ready t' sail o'er t' seas o' Lore with this handsome hat.",
-        "imageUrl": "http://i.imgur.com/x8Tak.png",
-        "alternativeImages": [
-          {
-            "url": "http://i.imgur.com/XboRN5Y.png",
-            "caption": "Alternative Image"
-          }
-        ],
-        "obtainVariants": [
+          },
           {
             "location": "TLaPD DC Bandanas",
             "price": "120 Dragon Coins",
@@ -10306,7 +10018,7 @@
         "rarity": "2"
       },
       {
-        "levelNumber": 6,
+        "levelNumber": 5,
         "levelDisplay": "45",
         "actualLevel": 45,
         "variantName": "Swarthy",
@@ -10329,30 +10041,7 @@
             "sellback": "126 DC (<24 hours) / 35 DC (>24 hours)",
             "daRequired": true,
             "priceType": "free"
-          }
-        ],
-        "element": "SIL",
-        "resists": "Poison +5, Water +5, Nature +5, Immobility +1",
-        "rarity": "2"
-      },
-      {
-        "levelNumber": 7,
-        "levelDisplay": "45",
-        "actualLevel": 45,
-        "variantName": "Swarthy",
-        "name": "Swarthy Bearded Guardian Pirate Hat",
-        "damage": "",
-        "stats": "Crit +5, Magic Def +6, Pierce Def +6, Melee Def +4, WIS +4, END +4, CHA +7, LUK +6, INT +3, DEX +3, STR +3, Bonus +6",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=19634599",
-        "description": "Ye'll be ready t' sail o'er t' seas o' Lore with this handsome hat.",
-        "imageUrl": "http://i.imgur.com/x8Tak.png",
-        "alternativeImages": [
-          {
-            "url": "http://i.imgur.com/XboRN5Y.png",
-            "caption": "Alternative Image"
-          }
-        ],
-        "obtainVariants": [
+          },
           {
             "location": "TLaPD DC Bandanas",
             "price": "140 Dragon Coins",
@@ -10367,7 +10056,7 @@
         "rarity": "2"
       },
       {
-        "levelNumber": 8,
+        "levelNumber": 6,
         "levelDisplay": "55",
         "actualLevel": 55,
         "variantName": "Foxy",
@@ -10390,30 +10079,7 @@
             "sellback": "144 DC (<24 hours) / 40 DC (>24 hours)",
             "daRequired": true,
             "priceType": "free"
-          }
-        ],
-        "element": "SIL",
-        "resists": "Poison +5, Water +5, Nature +5, Wind +5, Immobility +1",
-        "rarity": "2"
-      },
-      {
-        "levelNumber": 9,
-        "levelDisplay": "55",
-        "actualLevel": 55,
-        "variantName": "Foxy",
-        "name": "Foxy Bearded Guardian Pirate Hat",
-        "damage": "",
-        "stats": "Parry +1, Crit +6, Magic Def +6, Pierce Def +6, Melee Def +5, WIS +4, END +4, CHA +7, LUK +7, INT +4, DEX +4, STR +4, Bonus +6",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=19634601",
-        "description": "Ye'll be ready t' sail o'er t' seas o' Lore with this handsome hat.",
-        "imageUrl": "http://i.imgur.com/x8Tak.png",
-        "alternativeImages": [
-          {
-            "url": "http://i.imgur.com/XboRN5Y.png",
-            "caption": "Alternative Image"
-          }
-        ],
-        "obtainVariants": [
+          },
           {
             "location": "TLaPD DC Bandanas",
             "price": "160 Dragon Coins",
@@ -10428,7 +10094,7 @@
         "rarity": "2"
       },
       {
-        "levelNumber": 10,
+        "levelNumber": 7,
         "levelDisplay": "65",
         "actualLevel": 65,
         "variantName": "Crafty",
@@ -10451,30 +10117,7 @@
             "sellback": "162 DC (<24 hours) / 45 DC (>24 hours)",
             "daRequired": true,
             "priceType": "free"
-          }
-        ],
-        "element": "SIL",
-        "resists": "Poison +7, Water +7, Nature +7, Wind +7, Immobility +3",
-        "rarity": "2"
-      },
-      {
-        "levelNumber": 11,
-        "levelDisplay": "65",
-        "actualLevel": 65,
-        "variantName": "Crafty",
-        "name": "Crafty Bearded Guardian Pirate Hat",
-        "damage": "",
-        "stats": "Parry +2, Crit +6, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +5, END +4, CHA +8, LUK +8, INT +4, DEX +4, STR +4, Bonus +6",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=19634605",
-        "description": "Ye'll be ready t' sail o'er t' seas o' Lore with this handsome hat.",
-        "imageUrl": "http://i.imgur.com/x8Tak.png",
-        "alternativeImages": [
-          {
-            "url": "http://i.imgur.com/XboRN5Y.png",
-            "caption": "Alternative Image"
-          }
-        ],
-        "obtainVariants": [
+          },
           {
             "location": "TLaPD DC Bandanas",
             "price": "180 Dragon Coins",
@@ -10489,7 +10132,7 @@
         "rarity": "2"
       },
       {
-        "levelNumber": 12,
+        "levelNumber": 8,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "Filthy",
@@ -10520,7 +10163,7 @@
         "rarity": "2"
       },
       {
-        "levelNumber": 13,
+        "levelNumber": 9,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "Wily",
@@ -10550,7 +10193,7 @@
         "rarity": "2"
       },
       {
-        "levelNumber": 14,
+        "levelNumber": 10,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "Brave",
@@ -10573,30 +10216,7 @@
             "sellback": "198 DC (<24 hours) / 55 DC (>24 hours)",
             "daRequired": true,
             "priceType": "free"
-          }
-        ],
-        "element": "SIL",
-        "resists": "Poison +10, Water +10, Nature +10, Wind +10, Immobility +6",
-        "rarity": "2"
-      },
-      {
-        "levelNumber": 15,
-        "levelDisplay": "80",
-        "actualLevel": 80,
-        "variantName": "Brave",
-        "name": "Brave Bearded Guardian Pirate Hat",
-        "damage": "",
-        "stats": "Dodge +1, Parry +2, Crit +7, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +6, END +5, CHA +8, LUK +8, INT +7, DEX +7, STR +7, Bonus +7",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20709787",
-        "description": "Ye'll be ready t' sail o'er t' seas o' Lore with this handsome hat.",
-        "imageUrl": "http://i.imgur.com/x8Tak.png",
-        "alternativeImages": [
-          {
-            "url": "http://i.imgur.com/XboRN5Y.png",
-            "caption": "Alternative Image"
-          }
-        ],
-        "obtainVariants": [
+          },
           {
             "location": "TLaPD DC, TLaPD DC Bandanas",
             "price": "220 Dragon Coins",
@@ -12130,7 +11750,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 30,
+        "levelNumber": 1,
         "levelDisplay": "30",
         "actualLevel": 30,
         "variantName": "I",
@@ -12154,7 +11774,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 1,
         "levelDisplay": "30",
         "actualLevel": 30,
         "variantName": "I",
@@ -12179,7 +11799,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 2,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "II",
@@ -12203,7 +11823,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 2,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "II",
@@ -12228,7 +11848,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 3,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "III",
@@ -12252,7 +11872,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 3,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "III",
@@ -12277,7 +11897,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 4,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "IV",
@@ -12301,7 +11921,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 4,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "IV",
@@ -12326,7 +11946,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 5,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "V",
@@ -12350,7 +11970,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 5,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "V",
@@ -12375,7 +11995,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 6,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "VI",
@@ -12399,7 +12019,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 7,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "VI",
@@ -12424,7 +12044,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 8,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "VII",
@@ -12448,7 +12068,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 9,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "VII",
@@ -14675,7 +14295,7 @@
     "alternativeImages": [
       {
         "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/BlueNinjaMask-Old.png",
-        "caption": "Old Appearance"
+        "caption": "Old"
       }
     ],
     "elements": [
@@ -18484,7 +18104,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 30,
+        "levelNumber": 1,
         "levelDisplay": "30",
         "actualLevel": 30,
         "variantName": "I",
@@ -18508,7 +18128,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 1,
         "levelDisplay": "30",
         "actualLevel": 30,
         "variantName": "I",
@@ -18533,7 +18153,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 2,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "II",
@@ -18557,7 +18177,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 2,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "II",
@@ -18582,7 +18202,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 3,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "III",
@@ -18606,7 +18226,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 3,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "III",
@@ -18631,7 +18251,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 4,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "IV",
@@ -18655,7 +18275,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 4,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "IV",
@@ -18680,7 +18300,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 5,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "V",
@@ -18704,7 +18324,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 6,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "V",
@@ -18729,7 +18349,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 7,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "VI",
@@ -18753,7 +18373,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 8,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "VI",
@@ -18778,7 +18398,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 9,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "VII",
@@ -18802,7 +18422,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 10,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "VII",
@@ -21473,7 +21093,7 @@
     "alternativeImages": [
       {
         "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/ChaoticThreadGuard-ElementalAttunement.png",
-        "caption": "All Appearances"
+        "caption": "Elemental Attunement"
       }
     ],
     "elements": [
@@ -22037,7 +21657,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 10,
+        "levelNumber": 1,
         "levelDisplay": "10",
         "actualLevel": 10,
         "name": "Chilly's Glorious Visage",
@@ -22060,7 +21680,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 10,
+        "levelNumber": 1,
         "levelDisplay": "10",
         "actualLevel": 10,
         "name": "Chilly's Glorious Visage",
@@ -22084,7 +21704,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 20,
+        "levelNumber": 2,
         "levelDisplay": "20",
         "actualLevel": 20,
         "name": "Chilly's Glorious Visage",
@@ -22107,7 +21727,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 20,
+        "levelNumber": 2,
         "levelDisplay": "20",
         "actualLevel": 20,
         "name": "Chilly's Glorious Visage",
@@ -22131,7 +21751,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 3,
         "levelDisplay": "30",
         "actualLevel": 30,
         "name": "Chilly's Glorious Visage",
@@ -22154,7 +21774,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 3,
         "levelDisplay": "30",
         "actualLevel": 30,
         "name": "Chilly's Glorious Visage",
@@ -22178,7 +21798,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 4,
         "levelDisplay": "40",
         "actualLevel": 40,
         "name": "Chilly's Glorious Visage",
@@ -22201,7 +21821,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 4,
         "levelDisplay": "40",
         "actualLevel": 40,
         "name": "Chilly's Glorious Visage",
@@ -22225,7 +21845,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 5,
         "levelDisplay": "50",
         "actualLevel": 50,
         "name": "Chilly's Glorious Visage",
@@ -22248,7 +21868,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 5,
         "levelDisplay": "50",
         "actualLevel": 50,
         "name": "Chilly's Glorious Visage",
@@ -22272,7 +21892,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 6,
         "levelDisplay": "60",
         "actualLevel": 60,
         "name": "Chilly's Glorious Visage",
@@ -22295,7 +21915,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 6,
         "levelDisplay": "60",
         "actualLevel": 60,
         "name": "Chilly's Glorious Visage",
@@ -22319,7 +21939,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 7,
         "levelDisplay": "70",
         "actualLevel": 70,
         "name": "Chilly's Glorious Visage",
@@ -22342,7 +21962,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 8,
         "levelDisplay": "70",
         "actualLevel": 70,
         "name": "Chilly's Glorious Visage",
@@ -22366,7 +21986,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 9,
         "levelDisplay": "80",
         "actualLevel": 80,
         "name": "Chilly's Glorious Visage",
@@ -22389,7 +22009,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 10,
         "levelDisplay": "80",
         "actualLevel": 80,
         "name": "Chilly's Glorious Visage",
@@ -22552,7 +22172,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 10,
+        "levelNumber": 1,
         "levelDisplay": "10",
         "actualLevel": 10,
         "name": "Chocolate Chip Cookiehelm",
@@ -22575,7 +22195,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 10,
+        "levelNumber": 1,
         "levelDisplay": "10",
         "actualLevel": 10,
         "name": "Chocolate Chip Cookiehelm",
@@ -22599,7 +22219,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 20,
+        "levelNumber": 2,
         "levelDisplay": "20",
         "actualLevel": 20,
         "name": "Chocolate Chip Cookiehelm",
@@ -22622,7 +22242,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 20,
+        "levelNumber": 2,
         "levelDisplay": "20",
         "actualLevel": 20,
         "name": "Chocolate Chip Cookiehelm",
@@ -22646,7 +22266,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 3,
         "levelDisplay": "30",
         "actualLevel": 30,
         "name": "Chocolate Chip Cookiehelm",
@@ -22669,7 +22289,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 3,
         "levelDisplay": "30",
         "actualLevel": 30,
         "name": "Chocolate Chip Cookiehelm",
@@ -22693,7 +22313,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 4,
         "levelDisplay": "40",
         "actualLevel": 40,
         "name": "Chocolate Chip Cookiehelm",
@@ -22716,7 +22336,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 4,
         "levelDisplay": "40",
         "actualLevel": 40,
         "name": "Chocolate Chip Cookiehelm",
@@ -22740,7 +22360,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 5,
         "levelDisplay": "50",
         "actualLevel": 50,
         "name": "Chocolate Chip Cookiehelm",
@@ -22763,7 +22383,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 5,
         "levelDisplay": "50",
         "actualLevel": 50,
         "name": "Chocolate Chip Cookiehelm",
@@ -22787,7 +22407,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 6,
         "levelDisplay": "60",
         "actualLevel": 60,
         "name": "Chocolate Chip Cookiehelm",
@@ -22810,7 +22430,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 6,
         "levelDisplay": "60",
         "actualLevel": 60,
         "name": "Chocolate Chip Cookiehelm",
@@ -22834,7 +22454,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 7,
         "levelDisplay": "70",
         "actualLevel": 70,
         "name": "Chocolate Chip Cookiehelm",
@@ -22857,7 +22477,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 8,
         "levelDisplay": "70",
         "actualLevel": 70,
         "name": "Chocolate Chip Cookiehelm",
@@ -22881,7 +22501,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 9,
         "levelDisplay": "80",
         "actualLevel": 80,
         "name": "Chocolate Chip Cookiehelm",
@@ -22904,7 +22524,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 10,
         "levelDisplay": "80",
         "actualLevel": 80,
         "name": "Chocolate Chip Cookiehelm",
@@ -25252,24 +24872,7 @@
             "priceType": "free",
             "sellback": "0 Gold",
             "daRequired": false
-          }
-        ],
-        "element": "WAT",
-        "resists": "Energy +3, Fire +3",
-        "rarity": "10"
-      },
-      {
-        "levelNumber": 1,
-        "levelDisplay": "25",
-        "actualLevel": 25,
-        "variantName": "(Base)",
-        "name": "Cider Mug",
-        "damage": "",
-        "stats": "Crit +3, Magic Def +3, Pierce Def +2, Melee Def +2, WIS +2, END +2, CHA +1, Bonus +2",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21577935",
-        "description": "From Vaal's personal stash, this'll protect you while you still get a nice cider-y scent!",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/CiderMug.png",
-        "obtainVariants": [
+          },
           {
             "location": "Cider Loot Shop",
             "price": "20 Dragon Coins",
@@ -27103,7 +26706,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 25,
+        "levelNumber": 1,
         "levelDisplay": "25",
         "actualLevel": 25,
         "name": "Comedy Mask",
@@ -27126,7 +26729,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 25,
+        "levelNumber": 1,
         "levelDisplay": "25",
         "actualLevel": 25,
         "name": "Comedy Mask",
@@ -27150,7 +26753,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 35,
+        "levelNumber": 2,
         "levelDisplay": "35",
         "actualLevel": 35,
         "name": "Comedy Mask",
@@ -27173,7 +26776,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 35,
+        "levelNumber": 2,
         "levelDisplay": "35",
         "actualLevel": 35,
         "name": "Comedy Mask",
@@ -27197,7 +26800,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 45,
+        "levelNumber": 3,
         "levelDisplay": "45",
         "actualLevel": 45,
         "name": "Comedy Mask",
@@ -27220,7 +26823,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 45,
+        "levelNumber": 3,
         "levelDisplay": "45",
         "actualLevel": 45,
         "name": "Comedy Mask",
@@ -27244,7 +26847,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 55,
+        "levelNumber": 4,
         "levelDisplay": "55",
         "actualLevel": 55,
         "name": "Comedy Mask",
@@ -27267,7 +26870,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 55,
+        "levelNumber": 4,
         "levelDisplay": "55",
         "actualLevel": 55,
         "name": "Comedy Mask",
@@ -27291,7 +26894,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 65,
+        "levelNumber": 5,
         "levelDisplay": "65",
         "actualLevel": 65,
         "name": "Comedy Mask",
@@ -27314,7 +26917,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 65,
+        "levelNumber": 6,
         "levelDisplay": "65",
         "actualLevel": 65,
         "name": "Comedy Mask",
@@ -27338,7 +26941,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 75,
+        "levelNumber": 7,
         "levelDisplay": "75",
         "actualLevel": 75,
         "name": "Comedy Mask",
@@ -27361,7 +26964,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 75,
+        "levelNumber": 8,
         "levelDisplay": "75",
         "actualLevel": 75,
         "name": "Comedy Mask",
@@ -27385,7 +26988,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 9,
         "levelDisplay": "80",
         "actualLevel": 80,
         "name": "Comedy Mask",
@@ -27408,7 +27011,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 10,
         "levelDisplay": "80",
         "actualLevel": 80,
         "name": "Comedy Mask",
@@ -29803,7 +29406,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 50,
+        "levelNumber": 1,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "I",
@@ -29828,7 +29431,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 1,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "I",
@@ -29854,7 +29457,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 2,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "II",
@@ -29879,7 +29482,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 2,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "II",
@@ -29905,7 +29508,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 3,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "III",
@@ -29930,7 +29533,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 4,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "III",
@@ -29956,7 +29559,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 5,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "IV",
@@ -29981,7 +29584,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 6,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "IV",
@@ -30007,7 +29610,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 7,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "V",
@@ -30032,7 +29635,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 8,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "V",
@@ -30152,7 +29755,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 40,
+        "levelNumber": 1,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "I",
@@ -30176,7 +29779,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 1,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "I",
@@ -30201,7 +29804,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 2,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "II",
@@ -30225,7 +29828,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 2,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "II",
@@ -30250,7 +29853,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 3,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "III",
@@ -30274,7 +29877,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 3,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "III",
@@ -30299,7 +29902,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 4,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "IV",
@@ -30323,7 +29926,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 5,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "IV",
@@ -30348,7 +29951,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 6,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "V",
@@ -30372,7 +29975,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 7,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "V",
@@ -30397,7 +30000,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 8,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "VI",
@@ -30421,7 +30024,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 9,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "VI",
@@ -30693,24 +30296,7 @@
             "sellback": "60 Gold",
             "daRequired": false,
             "priceType": "free"
-          }
-        ],
-        "element": "EVI",
-        "resists": "Darkness +2, Ice +2",
-        "rarity": "10"
-      },
-      {
-        "levelNumber": 2,
-        "levelDisplay": "15",
-        "actualLevel": 15,
-        "variantName": "(Base)",
-        "name": "Cultist Hood",
-        "damage": "",
-        "stats": "Crit +2, Magic Def +2, Pierce Def +1, Melee Def +1, WIS +1, END +1, CHA +1, Bonus +1",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21453414",
-        "description": "Dark magic and strange murmurs flow through your head.",
-        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/CultistHoodpic.png",
-        "obtainVariants": [
+          },
           {
             "location": "Cultist Hood (Shop)",
             "price": "25 Dragon Coins",
@@ -30725,7 +30311,7 @@
         "rarity": "10"
       },
       {
-        "levelNumber": 3,
+        "levelNumber": 2,
         "levelDisplay": "25",
         "actualLevel": 25,
         "variantName": "Dark",
@@ -30742,24 +30328,7 @@
             "sellback": "27 DC (<24 hours) / 8 DC (>24 hours)",
             "daRequired": false,
             "priceType": "free"
-          }
-        ],
-        "element": "EVI",
-        "resists": "Darkness +3, Ice +3",
-        "rarity": "10"
-      },
-      {
-        "levelNumber": 4,
-        "levelDisplay": "25",
-        "actualLevel": 25,
-        "variantName": "Dark",
-        "name": "Dark Cultist Hood",
-        "damage": "",
-        "stats": "Crit +3, Magic Def +3, Pierce Def +2, Melee Def +2, WIS +2, END +2, CHA +1, Bonus +2",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21453419",
-        "description": "Dark magic and strange murmurs flow through your head.",
-        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/CultistHoodpic.png",
-        "obtainVariants": [
+          },
           {
             "location": "Cultist Hood (Shop)",
             "price": "30 Dragon Coins",
@@ -30774,7 +30343,7 @@
         "rarity": "10"
       },
       {
-        "levelNumber": 5,
+        "levelNumber": 3,
         "levelDisplay": "35",
         "actualLevel": 35,
         "variantName": "Evil",
@@ -30791,24 +30360,7 @@
             "sellback": "32 DC (<24 hours) / 9 DC (>24 hours)",
             "daRequired": false,
             "priceType": "free"
-          }
-        ],
-        "element": "EVI",
-        "resists": "Darkness +4, Ice +4",
-        "rarity": "10"
-      },
-      {
-        "levelNumber": 6,
-        "levelDisplay": "35",
-        "actualLevel": 35,
-        "variantName": "Evil",
-        "name": "Evil Cultist Hood",
-        "damage": "",
-        "stats": "Crit +4, Magic Def +4, Pierce Def +3, Melee Def +3, WIS +4, END +4, CHA +3, Bonus +3",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21453420",
-        "description": "Dark magic and strange murmurs flow through your head.",
-        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/CultistHoodpic.png",
-        "obtainVariants": [
+          },
           {
             "location": "Cultist Hood (Shop)",
             "price": "35 Dragon Coins",
@@ -30823,7 +30375,7 @@
         "rarity": "10"
       },
       {
-        "levelNumber": 7,
+        "levelNumber": 4,
         "levelDisplay": "45",
         "actualLevel": 45,
         "variantName": "Villainous",
@@ -30840,24 +30392,7 @@
             "sellback": "36 DC (<24 hours) / 10 DC (>24 hours)",
             "daRequired": false,
             "priceType": "free"
-          }
-        ],
-        "element": "EVI",
-        "resists": "Darkness +6, Ice +6",
-        "rarity": "10"
-      },
-      {
-        "levelNumber": 8,
-        "levelDisplay": "45",
-        "actualLevel": 45,
-        "variantName": "Villainous",
-        "name": "Villainous Cultist Hood",
-        "damage": "",
-        "stats": "Crit +5, Magic Def +5, Pierce Def +4, Melee Def +4, WIS +5, END +5, CHA +4, Bonus +4",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21453423",
-        "description": "Dark magic and strange murmurs flow through your head.",
-        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/CultistHoodpic.png",
-        "obtainVariants": [
+          },
           {
             "location": "Cultist Hood (Shop)",
             "price": "40 Dragon Coins",
@@ -30872,7 +30407,7 @@
         "rarity": "10"
       },
       {
-        "levelNumber": 9,
+        "levelNumber": 5,
         "levelDisplay": "55",
         "actualLevel": 55,
         "variantName": "Malicious",
@@ -30897,7 +30432,7 @@
         "rarity": "10"
       },
       {
-        "levelNumber": 10,
+        "levelNumber": 6,
         "levelDisplay": "65",
         "actualLevel": 65,
         "variantName": "Foul",
@@ -30914,24 +30449,7 @@
             "sellback": "45 DC (<24 hours) / 13 DC (>24 hours)",
             "daRequired": true,
             "priceType": "free"
-          }
-        ],
-        "element": "EVI",
-        "resists": "Darkness +10, Ice +10, Disease +3, Immobility +1",
-        "rarity": "10"
-      },
-      {
-        "levelNumber": 11,
-        "levelDisplay": "65",
-        "actualLevel": 65,
-        "variantName": "Foul",
-        "name": "Foul Cultist Hood",
-        "damage": "",
-        "stats": "Dodge +1, Parry +1, Crit +7, Magic Def +7, Pierce Def +6, Melee Def +6, WIS +7, END +7, CHA +6, Bonus +6",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21453425",
-        "description": "Dark magic and strange murmurs flow through your head. This item requires a Dragon Amulet.",
-        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/CultistHoodpic.png",
-        "obtainVariants": [
+          },
           {
             "location": "Cultist Hood (Shop)",
             "price": "50 Dragon Coins",
@@ -30946,7 +30464,7 @@
         "rarity": "10"
       },
       {
-        "levelNumber": 12,
+        "levelNumber": 7,
         "levelDisplay": "75",
         "actualLevel": 75,
         "variantName": "Doomed",
@@ -30963,24 +30481,7 @@
             "sellback": "50 DC (<24 hours) / 14 DC (>24 hours)",
             "daRequired": true,
             "priceType": "free"
-          }
-        ],
-        "element": "EVI",
-        "resists": "Darkness +12, Ice +12, Disease +5, Immobility +5, Health -2",
-        "rarity": "10"
-      },
-      {
-        "levelNumber": 13,
-        "levelDisplay": "75",
-        "actualLevel": 75,
-        "variantName": "Doomed",
-        "name": "Doomed Cultist Hood",
-        "damage": "",
-        "stats": "Dodge +1, Parry +1, Crit +9, Magic Def +9, Pierce Def +8, Melee Def +8, WIS +10, END +10, CHA +8, Bonus +7",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21453428",
-        "description": "Dark magic and strange murmurs flow through your head. This item requires a Dragon Amulet.",
-        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/CultistHoodpic.png",
-        "obtainVariants": [
+          },
           {
             "location": "Cultist Hood (Shop)",
             "price": "55 Dragon Coins",
@@ -30995,7 +30496,7 @@
         "rarity": "10"
       },
       {
-        "levelNumber": 14,
+        "levelNumber": 8,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "Brutal",
@@ -31012,24 +30513,7 @@
             "sellback": "54 DC (<24 hours) / 15 DC (>24 hours)",
             "daRequired": true,
             "priceType": "free"
-          }
-        ],
-        "element": "EVI",
-        "resists": "Darkness +12, Ice +12, Disease +8, Immobility +6, Health -3",
-        "rarity": "10"
-      },
-      {
-        "levelNumber": 15,
-        "levelDisplay": "80",
-        "actualLevel": 80,
-        "variantName": "Brutal",
-        "name": "Brutal Cultist Hood",
-        "damage": "",
-        "stats": "Dodge +1, Parry +2, Crit +10, Magic Def +10, Pierce Def +8, Melee Def +8, WIS +10, END +10, CHA +8, Bonus +7",
-        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21453430",
-        "description": "Dark magic and strange murmurs flow through your head. This item requires a Dragon Amulet.",
-        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/CultistHoodpic.png",
-        "obtainVariants": [
+          },
           {
             "location": "Cultist Hood (Shop)",
             "price": "60 Dragon Coins",
@@ -35092,7 +34576,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 10,
+        "levelNumber": 1,
         "levelDisplay": "10",
         "actualLevel": 10,
         "variantName": "I",
@@ -35116,7 +34600,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 10,
+        "levelNumber": 1,
         "levelDisplay": "10",
         "actualLevel": 10,
         "variantName": "I",
@@ -35141,7 +34625,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 20,
+        "levelNumber": 2,
         "levelDisplay": "20",
         "actualLevel": 20,
         "variantName": "II",
@@ -35165,7 +34649,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 20,
+        "levelNumber": 2,
         "levelDisplay": "20",
         "actualLevel": 20,
         "variantName": "II",
@@ -35190,7 +34674,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 3,
         "levelDisplay": "30",
         "actualLevel": 30,
         "variantName": "III",
@@ -35215,7 +34699,7 @@
         "notes": "spoiler:\nDescription for the free drop version of this item contains an Atbash cipher, which when decoded reads:\nI see you."
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 3,
         "levelDisplay": "30",
         "actualLevel": 30,
         "variantName": "III",
@@ -35241,7 +34725,7 @@
         "notes": "spoiler:\nDescription for the free drop version of this item contains an Atbash cipher, which when decoded reads:\nI see you."
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 4,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "IV",
@@ -35265,7 +34749,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 4,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "IV",
@@ -35290,7 +34774,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 5,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "V",
@@ -35314,7 +34798,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 5,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "V",
@@ -35339,7 +34823,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 6,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "VI",
@@ -35363,7 +34847,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 6,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "VI",
@@ -35388,7 +34872,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 7,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "VII",
@@ -35412,7 +34896,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 7,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "VII",
@@ -35437,7 +34921,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 8,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "VIII",
@@ -35461,7 +34945,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 9,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "VIII",
@@ -35486,7 +34970,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 10,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "IX",
@@ -35510,7 +34994,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 11,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "IX",
@@ -36650,7 +36134,7 @@
     "alternativeImages": [
       {
         "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/DeltaSoulVisor-ElementalAttunement.png",
-        "caption": "All Appearances"
+        "caption": "Elemental Attunement"
       }
     ],
     "elements": [
@@ -36708,7 +36192,7 @@
     "alternativeImages": [
       {
         "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/DeltaStarVisor-ElementalAttunement.png",
-        "caption": "All Appearances"
+        "caption": "Elemental Attunement"
       }
     ],
     "elements": [
@@ -41533,7 +41017,7 @@
       "alternativeImages": [
         {
           "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/DragonLordHelm-Old.png",
-          "caption": "Old Appearance"
+          "caption": "Old"
         }
       ],
       "rarity": "12"
@@ -41553,7 +41037,7 @@
         "alternativeImages": [
           {
             "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/DragonLordHelm-Old.png",
-            "caption": "Old Appearance"
+            "caption": "Old"
           }
         ],
         "obtainVariants": [
@@ -42338,41 +41822,6 @@
     ]
   },
   {
-    "id": "accessory-drakonnan-s-armored-helm",
-    "name": "Drakonnan's Armored Helm",
-    "slug": "accessory-drakonnan-s-armored-helm",
-    "type": "accessory",
-    "subtype": "helm",
-    "description": "The helm of the once mighty Drakonnan. This version is reinforced with steel. This item requires a Dragon Amulet.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=16609529",
-    "releaseDate": "",
-    "imageUrl": "http://i.imgur.com/BbAph.png",
-    "elements": [
-      "DAR"
-    ],
-    "level": "40",
-    "stats": "Magic Def +3, Pierce Def +3, Melee Def +3, END +3, INT +4, STR +4, Bonus +3",
-    "resists": "Ice +5, Fire +5",
-    "rarity": "25",
-    "itemType": "Helm",
-    "equipSpot": "Head",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "Final Battle!",
-        "priceType": "free",
-        "price": "N/A",
-        "sellback": "55 Gold",
-        "daRequired": true
-      }
-    ],
-    "tags": [
-      "dar",
-      "free"
-    ],
-    "daRequired": true
-  },
-  {
     "id": "accessory-drakonnan-s-doom",
     "familyName": "Drakonnan's Doom",
     "slug": "accessory-drakonnan-s-doom",
@@ -42678,75 +42127,112 @@
     ]
   },
   {
-    "id": "accessory-drakonnan-s-fiery-helm",
-    "name": "Drakonnan's Fiery Helm",
-    "slug": "accessory-drakonnan-s-fiery-helm",
-    "type": "accessory",
-    "subtype": "helm",
-    "description": "The helm of the once mighty Drakonnan. This version imbued with fire! This item requires a Dragon Amulet.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=16608677",
-    "releaseDate": "",
-    "imageUrl": "http://i.imgur.com/BvHBr.png",
-    "elements": [
-      "DAR"
-    ],
-    "level": "50",
-    "stats": "Crit +2, Magic Def +3, Pierce Def +3, Melee Def +3, END +4, INT +4, STR +4, Bonus +4",
-    "resists": "Ice +6, Fire +6",
-    "rarity": "25",
-    "itemType": "Helm",
-    "equipSpot": "Head",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "Final Battle!",
-        "priceType": "free",
-        "price": "N/A",
-        "sellback": "65 Gold",
-        "daRequired": true
-      }
-    ],
-    "notes": "Flames on the helm flicker continuously.",
-    "tags": [
-      "dar",
-      "free"
-    ],
-    "daRequired": true
-  },
-  {
     "id": "accessory-drakonnan-s-helm",
-    "name": "Drakonnan's Helm",
+    "familyName": "Drakonnan's Helm",
     "slug": "accessory-drakonnan-s-helm",
+    "aliasSlugs": [
+      "accessory-drakonnan-s-armored-helm",
+      "accessory-drakonnan-s-fiery-helm"
+    ],
     "type": "accessory",
     "subtype": "helm",
-    "description": "The helm of the once mighty Drakonnan. This item requires a Dragon Amulet.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=16608357",
-    "releaseDate": "",
-    "imageUrl": "http://i.imgur.com/UZGf5.png",
-    "elements": [
-      "DAR"
-    ],
-    "level": "30",
-    "stats": "Magic Def +2, Pierce Def +2, Melee Def +2, END +2, INT +3, STR +3, Bonus +3",
-    "resists": "Ice +4, Fire +4",
-    "rarity": "25",
-    "itemType": "Helm",
-    "equipSpot": "Head",
-    "category": "Armor",
-    "obtainMethods": [
+    "familyOrigin": "cross-post",
+    "familySources": [],
+    "shared": {
+      "description": "The helm of the once mighty Drakonnan. This item requires a Dragon Amulet."
+    },
+    "levelVariants": [
       {
-        "location": "Final Battle!",
-        "priceType": "free",
-        "price": "N/A",
-        "sellback": "45 Gold",
-        "daRequired": true
+        "levelNumber": 1,
+        "levelDisplay": "30",
+        "actualLevel": 30,
+        "variantName": "(Base)",
+        "name": "Drakonnan's Helm",
+        "damage": "",
+        "stats": "Magic Def +2, Pierce Def +2, Melee Def +2, END +2, INT +3, STR +3, Bonus +3",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=16608357",
+        "description": "The helm of the once mighty Drakonnan. This item requires a Dragon Amulet.",
+        "imageUrl": "http://i.imgur.com/UZGf5.png",
+        "obtainVariants": [
+          {
+            "location": "Final Battle!",
+            "priceType": "free",
+            "price": "N/A",
+            "sellback": "45 Gold",
+            "daRequired": true
+          }
+        ],
+        "element": "DAR",
+        "resists": "Ice +4, Fire +4",
+        "rarity": "25"
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "40",
+        "actualLevel": 40,
+        "variantName": "Armored",
+        "name": "Drakonnan's Armored Helm",
+        "damage": "",
+        "stats": "Magic Def +3, Pierce Def +3, Melee Def +3, END +3, INT +4, STR +4, Bonus +3",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=16609529",
+        "description": "The helm of the once mighty Drakonnan. This version is reinforced with steel. This item requires a Dragon Amulet.",
+        "imageUrl": "http://i.imgur.com/BbAph.png",
+        "obtainVariants": [
+          {
+            "location": "Final Battle!",
+            "priceType": "free",
+            "price": "N/A",
+            "sellback": "55 Gold",
+            "daRequired": true
+          }
+        ],
+        "element": "DAR",
+        "resists": "Ice +5, Fire +5",
+        "rarity": "25"
+      },
+      {
+        "levelNumber": 3,
+        "levelDisplay": "50",
+        "actualLevel": 50,
+        "variantName": "Fiery",
+        "name": "Drakonnan's Fiery Helm",
+        "damage": "",
+        "stats": "Crit +2, Magic Def +3, Pierce Def +3, Melee Def +3, END +4, INT +4, STR +4, Bonus +4",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=16608677",
+        "description": "The helm of the once mighty Drakonnan. This version imbued with fire! This item requires a Dragon Amulet.",
+        "imageUrl": "http://i.imgur.com/BvHBr.png",
+        "obtainVariants": [
+          {
+            "location": "Final Battle!",
+            "priceType": "free",
+            "price": "N/A",
+            "sellback": "65 Gold",
+            "daRequired": true
+          }
+        ],
+        "element": "DAR",
+        "resists": "Ice +6, Fire +6",
+        "rarity": "25",
+        "notes": "Flames on the helm flicker continuously."
       }
     ],
+    "itemType": "Helm",
+    "equipSlot": "Head",
+    "category": "Armor",
     "tags": [
       "dar",
       "free"
     ],
-    "daRequired": true
+    "hasDA": true,
+    "hasDC": false,
+    "hasDM": false,
+    "hasFree": true,
+    "hasMerge": false,
+    "levelRange": "30-50",
+    "elements": [
+      "DAR"
+    ]
   },
   {
     "id": "accessory-drakonnan-s-warhelm",
@@ -43192,7 +42678,7 @@
       "alternativeImages": [
         {
           "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/RadiantDravirWarhelm-ElementalAttunement.png",
-          "caption": "All Appearances"
+          "caption": "Elemental Attunement"
         }
       ],
       "rarity": "5",
@@ -43221,24 +42707,7 @@
             "priceType": "free",
             "sellback": "5 Gold",
             "daRequired": false
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389622",
-        "description": "Impressed with the bond you share with your dragon, the dravir smiths refitted this helm for you. It's a little uncomfortable, but very functional!",
-        "element": "MET",
-        "resists": "Fire +5",
-        "rarity": "5",
-        "itemType": "Helm"
-      },
-      {
-        "levelNumber": 2,
-        "levelDisplay": "15",
-        "actualLevel": 15,
-        "variantName": "I",
-        "name": "Dravir Warhelm I",
-        "damage": "",
-        "stats": "END +2, CHA +2, INT +1, DEX +1, STR +1",
-        "obtainVariants": [
+          },
           {
             "location": "CiaV Loot for DCs",
             "price": "100 Dragon Coins",
@@ -43256,7 +42725,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 3,
+        "levelNumber": 2,
         "levelDisplay": "25",
         "actualLevel": 25,
         "variantName": "II",
@@ -43270,24 +42739,7 @@
             "priceType": "free",
             "sellback": "7 Gold",
             "daRequired": false
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389623",
-        "description": "Impressed with the bond you share with your dragon, the dravir smiths refitted this helm for you. It's a little uncomfortable, but very functional!",
-        "element": "MET",
-        "resists": "Fire +6",
-        "rarity": "5",
-        "itemType": "Helm"
-      },
-      {
-        "levelNumber": 4,
-        "levelDisplay": "25",
-        "actualLevel": 25,
-        "variantName": "II",
-        "name": "Dravir Warhelm II",
-        "damage": "",
-        "stats": "END +2, CHA +2, INT +2, DEX +2, STR +2",
-        "obtainVariants": [
+          },
           {
             "location": "CiaV Loot for DCs",
             "price": "100 Dragon Coins",
@@ -43305,7 +42757,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 5,
+        "levelNumber": 3,
         "levelDisplay": "35",
         "actualLevel": 35,
         "variantName": "III",
@@ -43319,24 +42771,7 @@
             "priceType": "free",
             "sellback": "9 Gold",
             "daRequired": false
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389624",
-        "description": "Impressed with the bond you share with your dragon, the dravir smiths refitted this helm for you. It's a little uncomfortable, but very functional!",
-        "element": "MET",
-        "resists": "Fire +7",
-        "rarity": "5",
-        "itemType": "Helm"
-      },
-      {
-        "levelNumber": 6,
-        "levelDisplay": "35",
-        "actualLevel": 35,
-        "variantName": "III",
-        "name": "Dravir Warhelm III",
-        "damage": "",
-        "stats": "Block +1, Dodge +1, Parry +1, END +3, CHA +3, INT +4, DEX +4, STR +4",
-        "obtainVariants": [
+          },
           {
             "location": "CiaV Loot for DCs",
             "price": "100 Dragon Coins",
@@ -43354,7 +42789,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 7,
+        "levelNumber": 4,
         "levelDisplay": "45",
         "actualLevel": 45,
         "variantName": "IV",
@@ -43368,24 +42803,7 @@
             "priceType": "free",
             "sellback": "11 Gold",
             "daRequired": false
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389625",
-        "description": "Impressed with the bond you share with your dragon, the dravir smiths refitted this helm for you. It's a little uncomfortable, but very functional!",
-        "element": "MET",
-        "resists": "Fire +8",
-        "rarity": "5",
-        "itemType": "Helm"
-      },
-      {
-        "levelNumber": 8,
-        "levelDisplay": "45",
-        "actualLevel": 45,
-        "variantName": "IV",
-        "name": "Dravir Warhelm IV",
-        "damage": "",
-        "stats": "Block +2, Dodge +2, Parry +2, Crit +1, END +3, CHA +3, INT +5, DEX +5, STR +5, Bonus +1",
-        "obtainVariants": [
+          },
           {
             "location": "CiaV Loot for DCs",
             "price": "100 Dragon Coins",
@@ -43403,7 +42821,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 9,
+        "levelNumber": 5,
         "levelDisplay": "55",
         "actualLevel": 55,
         "variantName": "V",
@@ -43417,24 +42835,7 @@
             "priceType": "free",
             "sellback": "12 Gold",
             "daRequired": false
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389626",
-        "description": "Impressed with the bond you share with your dragon, the dravir smiths refitted this helm for you. It's a little uncomfortable, but very functional!",
-        "element": "MET",
-        "resists": "Fire +9",
-        "rarity": "5",
-        "itemType": "Helm"
-      },
-      {
-        "levelNumber": 10,
-        "levelDisplay": "55",
-        "actualLevel": 55,
-        "variantName": "V",
-        "name": "Dravir Warhelm V",
-        "damage": "",
-        "stats": "Block +3, Dodge +3, Parry +3, Crit +2, END +4, CHA +4, INT +8, DEX +8, STR +8, Bonus +2",
-        "obtainVariants": [
+          },
           {
             "location": "CiaV Loot for DCs",
             "price": "100 Dragon Coins",
@@ -43452,7 +42853,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 11,
+        "levelNumber": 6,
         "levelDisplay": "65",
         "actualLevel": 65,
         "variantName": "VI",
@@ -43466,24 +42867,7 @@
             "priceType": "free",
             "sellback": "14 Gold",
             "daRequired": false
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22389627",
-        "description": "Impressed with the bond you share with your dragon, the dravir smiths refitted this helm for you. It's a little uncomfortable, but very functional!",
-        "element": "MET",
-        "resists": "Fire +10",
-        "rarity": "5",
-        "itemType": "Helm"
-      },
-      {
-        "levelNumber": 12,
-        "levelDisplay": "65",
-        "actualLevel": 65,
-        "variantName": "VI",
-        "name": "Dravir Warhelm VI",
-        "damage": "",
-        "stats": "Block +4, Dodge +4, Parry +4, Crit +3, END +6, CHA +6, INT +10, DEX +10, STR +10, Bonus +3",
-        "obtainVariants": [
+          },
           {
             "location": "CiaV Loot for DCs",
             "price": "100 Dragon Coins",
@@ -43501,7 +42885,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 13,
+        "levelNumber": 7,
         "levelDisplay": "75",
         "actualLevel": 75,
         "variantName": "VII",
@@ -43525,7 +42909,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 14,
+        "levelNumber": 8,
         "levelDisplay": "75",
         "actualLevel": 75,
         "variantName": "VII",
@@ -43550,7 +42934,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 15,
+        "levelNumber": 9,
         "levelDisplay": "85",
         "actualLevel": 85,
         "variantName": "VIII",
@@ -43574,7 +42958,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 16,
+        "levelNumber": 10,
         "levelDisplay": "85",
         "actualLevel": 85,
         "variantName": "VIII",
@@ -43993,7 +43377,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 10,
+        "levelNumber": 1,
         "levelDisplay": "10",
         "actualLevel": 10,
         "name": "Dread Pirate Helm",
@@ -44017,7 +43401,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 10,
+        "levelNumber": 1,
         "levelDisplay": "10",
         "actualLevel": 10,
         "name": "Dread Pirate Helm",
@@ -44033,7 +43417,7 @@
             "dcRequired": true
           }
         ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21984909",
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=18326867",
         "description": "All aboard the Dread Ship SS Skullbones! Wear this Dread Pirate helm while you loot, pillage, and make people walk the plank! This grew out of the Shiny Gourd in Fall 2010!",
         "alternativeImages": [],
         "element": "DAR",
@@ -44788,7 +44172,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 20,
+        "levelNumber": 1,
         "levelDisplay": "20",
         "actualLevel": 20,
         "variantName": "I",
@@ -44812,7 +44196,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 20,
+        "levelNumber": 1,
         "levelDisplay": "20",
         "actualLevel": 20,
         "variantName": "I",
@@ -44837,7 +44221,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 2,
         "levelDisplay": "30",
         "actualLevel": 30,
         "variantName": "II",
@@ -44861,7 +44245,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 2,
         "levelDisplay": "30",
         "actualLevel": 30,
         "variantName": "II",
@@ -44886,7 +44270,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 3,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "III",
@@ -44910,7 +44294,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 3,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "III",
@@ -44935,7 +44319,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 4,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "IV",
@@ -44959,7 +44343,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 4,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "IV",
@@ -44984,7 +44368,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 5,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "V",
@@ -45008,7 +44392,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 5,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "V",
@@ -45033,7 +44417,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 6,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "VI",
@@ -45057,7 +44441,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 7,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "VI",
@@ -45082,7 +44466,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 8,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "VII",
@@ -45106,7 +44490,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 9,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "VII",
@@ -45131,7 +44515,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 10,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "VIII",
@@ -45155,7 +44539,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 11,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "VIII",
@@ -45289,7 +44673,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 10,
+        "levelNumber": 1,
         "levelDisplay": "10",
         "actualLevel": 10,
         "variantName": "I",
@@ -45313,7 +44697,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 10,
+        "levelNumber": 1,
         "levelDisplay": "10",
         "actualLevel": 10,
         "variantName": "I",
@@ -45338,7 +44722,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 20,
+        "levelNumber": 2,
         "levelDisplay": "20",
         "actualLevel": 20,
         "variantName": "II",
@@ -45362,7 +44746,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 20,
+        "levelNumber": 2,
         "levelDisplay": "20",
         "actualLevel": 20,
         "variantName": "II",
@@ -45387,7 +44771,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 3,
         "levelDisplay": "30",
         "actualLevel": 30,
         "variantName": "III",
@@ -45412,7 +44796,7 @@
         "notes": "spoiler:\nDescription for the free drop version of this item contains an Atbash cipher, which when decoded reads:\nThere are more monsters than I remember creating. Concerning. However, they seem to be able to cross species communicate..."
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 3,
         "levelDisplay": "30",
         "actualLevel": 30,
         "variantName": "III",
@@ -45438,7 +44822,7 @@
         "notes": "spoiler:\nDescription for the free drop version of this item contains an Atbash cipher, which when decoded reads:\nThere are more monsters than I remember creating. Concerning. However, they seem to be able to cross species communicate..."
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 4,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "IV",
@@ -45462,7 +44846,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 4,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "IV",
@@ -45487,7 +44871,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 5,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "V",
@@ -45511,7 +44895,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 5,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "V",
@@ -45536,7 +44920,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 6,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "VI",
@@ -45560,7 +44944,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 6,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "VI",
@@ -45585,7 +44969,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 7,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "VII",
@@ -45609,7 +44993,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 7,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "VII",
@@ -45634,7 +45018,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 8,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "VIII",
@@ -45658,7 +45042,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 9,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "VIII",
@@ -45683,7 +45067,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 10,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "IX",
@@ -45707,7 +45091,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 11,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "IX",
@@ -48772,7 +48156,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 23,
+        "levelNumber": 1,
         "levelDisplay": "23",
         "actualLevel": 23,
         "variantName": "I",
@@ -48788,24 +48172,7 @@
             "requiredItems": "100 Defender's Medal & 10 Ateala Armament",
             "dmRequired": true,
             "daRequired": false
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=20503791",
-        "description": "Crafted from Ateala Armaments obtained from fighting off Wargoth's legions of possessed minions.",
-        "element": "WAT",
-        "resists": "Light +3, Fire +3",
-        "rarity": "10",
-        "itemType": "Helm"
-      },
-      {
-        "levelNumber": 23,
-        "levelDisplay": "23",
-        "actualLevel": 23,
-        "variantName": "I",
-        "name": "Escelense Defender Helm I",
-        "damage": "",
-        "stats": "Magic Def +2, Pierce Def +2, Melee Def +2, WIS +1, END +1, CHA +2, LUK +2, Bonus +2",
-        "obtainVariants": [
+          },
           {
             "location": "Escelense Swap",
             "price": "N/A",
@@ -48824,7 +48191,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 33,
+        "levelNumber": 2,
         "levelDisplay": "33",
         "actualLevel": 33,
         "variantName": "II",
@@ -48840,24 +48207,7 @@
             "requiredItems": "1 Escelense Defender Helm I & 10 Ateala Armament",
             "dmRequired": true,
             "daRequired": false
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=20503800",
-        "description": "Crafted from Ateala Armaments obtained from fighting off Wargoth's legions of possessed minions.",
-        "element": "WAT",
-        "resists": "Light +4, Fire +4",
-        "rarity": "10",
-        "itemType": "Helm"
-      },
-      {
-        "levelNumber": 33,
-        "levelDisplay": "33",
-        "actualLevel": 33,
-        "variantName": "II",
-        "name": "Escelense Defender Helm II",
-        "damage": "",
-        "stats": "Magic Def +3, Pierce Def +3, Melee Def +3, WIS +2, END +2, CHA +4, LUK +4, Bonus +3",
-        "obtainVariants": [
+          },
           {
             "location": "Escelense Swap",
             "price": "N/A",
@@ -48876,7 +48226,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 43,
+        "levelNumber": 3,
         "levelDisplay": "43",
         "actualLevel": 43,
         "variantName": "III",
@@ -48892,25 +48242,7 @@
             "requiredItems": "1 Escelense Defender Helm II & 10 Ateala Armament",
             "dmRequired": true,
             "daRequired": false
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=20503810",
-        "description": "Crafted from Ateala Armaments obtained from fighting off Wargoth's legions of possessed minions.",
-        "element": "WAT",
-        "resists": "Light +5, Fire +5",
-        "rarity": "10",
-        "itemType": "Helm",
-        "notes": "In  Escelense merge shop, this helm erroneously appears twice."
-      },
-      {
-        "levelNumber": 43,
-        "levelDisplay": "43",
-        "actualLevel": 43,
-        "variantName": "III",
-        "name": "Escelense Defender Helm III",
-        "damage": "",
-        "stats": "Crit +1, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +3, END +3, CHA +5, LUK +5, Bonus +4",
-        "obtainVariants": [
+          },
           {
             "location": "Escelense Swap",
             "price": "N/A",
@@ -48930,7 +48262,7 @@
         "notes": "In  Escelense merge shop, this helm erroneously appears twice."
       },
       {
-        "levelNumber": 53,
+        "levelNumber": 4,
         "levelDisplay": "53",
         "actualLevel": 53,
         "variantName": "IV",
@@ -48946,24 +48278,7 @@
             "requiredItems": "1 Escelense Defender Helm III & 10 Ateala Armament",
             "dmRequired": true,
             "daRequired": false
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=20503821",
-        "description": "Crafted from Ateala Armaments obtained from fighting off Wargoth's legions of possessed minions.",
-        "element": "WAT",
-        "resists": "Light +6, Fire +6",
-        "rarity": "10",
-        "itemType": "Helm"
-      },
-      {
-        "levelNumber": 53,
-        "levelDisplay": "53",
-        "actualLevel": 53,
-        "variantName": "IV",
-        "name": "Escelense Defender Helm IV",
-        "damage": "",
-        "stats": "Crit +2, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +4, END +4, CHA +6, LUK +6, Bonus +5",
-        "obtainVariants": [
+          },
           {
             "location": "Escelense Swap",
             "price": "N/A",
@@ -48982,7 +48297,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 63,
+        "levelNumber": 5,
         "levelDisplay": "63",
         "actualLevel": 63,
         "variantName": "V",
@@ -48998,24 +48313,7 @@
             "requiredItems": "1 Escelense Defender Helm IV & 10 Ateala Armament",
             "dmRequired": true,
             "daRequired": false
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=20503827",
-        "description": "Crafted from Ateala Armaments obtained from fighting off Wargoth's legions of possessed minions.",
-        "element": "WAT",
-        "resists": "Light +7, Fire +7, Immobility +1",
-        "rarity": "10",
-        "itemType": "Helm"
-      },
-      {
-        "levelNumber": 63,
-        "levelDisplay": "63",
-        "actualLevel": 63,
-        "variantName": "V",
-        "name": "Escelense Defender Helm V",
-        "damage": "",
-        "stats": "Dodge +1, Crit +3, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +5, END +5, CHA +7, LUK +7, Bonus +6",
-        "obtainVariants": [
+          },
           {
             "location": "Escelense Swap",
             "price": "N/A",
@@ -49128,7 +48426,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 23,
+        "levelNumber": 1,
         "levelDisplay": "23",
         "actualLevel": 23,
         "variantName": "I",
@@ -49144,24 +48442,7 @@
             "requiredItems": "100 Defender's Medal & 10 Ateala Armament",
             "dmRequired": true,
             "daRequired": true
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=20503850",
-        "description": "Crafted from Ateala Armaments obtained from fighting off Wargoth's legions of possessed minions. This item requires a Dragon Amulet.",
-        "element": "WAT",
-        "resists": "Light +4, Fire +4, Nature +2",
-        "rarity": "10",
-        "itemType": "Helm"
-      },
-      {
-        "levelNumber": 23,
-        "levelDisplay": "23",
-        "actualLevel": 23,
-        "variantName": "I",
-        "name": "Escelense Dragon Defender Helm I",
-        "damage": "",
-        "stats": "Crit +1, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +2, END +2, CHA +4, LUK +4, Bonus +3",
-        "obtainVariants": [
+          },
           {
             "location": "Escelense Swap",
             "price": "N/A",
@@ -49180,7 +48461,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 33,
+        "levelNumber": 2,
         "levelDisplay": "33",
         "actualLevel": 33,
         "variantName": "II",
@@ -49196,24 +48477,7 @@
             "requiredItems": "1 Escelense Dragon Defender Helm I & 10 Ateala Armament",
             "dmRequired": true,
             "daRequired": true
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=20503859",
-        "description": "Crafted from Ateala Armaments obtained from fighting off Wargoth's legions of possessed minions. This item requires a Dragon Amulet.",
-        "element": "WAT",
-        "resists": "Light +5, Fire +5, Nature +3, Immobility +1",
-        "rarity": "10",
-        "itemType": "Helm"
-      },
-      {
-        "levelNumber": 33,
-        "levelDisplay": "33",
-        "actualLevel": 33,
-        "variantName": "II",
-        "name": "Escelense Dragon Defender Helm II",
-        "damage": "",
-        "stats": "Crit +2, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +3, END +3, CHA +5, LUK +5, Bonus +4",
-        "obtainVariants": [
+          },
           {
             "location": "Escelense Swap",
             "price": "N/A",
@@ -49232,7 +48496,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 43,
+        "levelNumber": 3,
         "levelDisplay": "43",
         "actualLevel": 43,
         "variantName": "III",
@@ -49248,24 +48512,7 @@
             "requiredItems": "1 Escelense Dragon Defender Helm II & 10 Ateala Armament",
             "dmRequired": true,
             "daRequired": true
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=20503872",
-        "description": "Crafted from Ateala Armaments obtained from fighting off Wargoth's legions of possessed minions. This item requires a Dragon Amulet.",
-        "element": "WAT",
-        "resists": "Light +6, Fire +6, Nature +4, Immobility +1, Health -1",
-        "rarity": "10",
-        "itemType": "Helm"
-      },
-      {
-        "levelNumber": 43,
-        "levelDisplay": "43",
-        "actualLevel": 43,
-        "variantName": "III",
-        "name": "Escelense Dragon Defender Helm III",
-        "damage": "",
-        "stats": "Crit +3, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +4, END +4, CHA +6, LUK +6, Bonus +5",
-        "obtainVariants": [
+          },
           {
             "location": "Escelense Swap",
             "price": "N/A",
@@ -49284,7 +48531,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 53,
+        "levelNumber": 4,
         "levelDisplay": "53",
         "actualLevel": 53,
         "variantName": "IV",
@@ -49300,24 +48547,7 @@
             "requiredItems": "1 Escelense Dragon Defender Helm III & 10 Ateala Armament",
             "dmRequired": true,
             "daRequired": true
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=20503881",
-        "description": "Crafted from Ateala Armaments obtained from fighting off Wargoth's legions of possessed minions. This item requires a Dragon Amulet.",
-        "element": "WAT",
-        "resists": "Light +7, Fire +7, Nature +5, Immobility +3, Health -1",
-        "rarity": "10",
-        "itemType": "Helm"
-      },
-      {
-        "levelNumber": 53,
-        "levelDisplay": "53",
-        "actualLevel": 53,
-        "variantName": "IV",
-        "name": "Escelense Dragon Defender Helm IV",
-        "damage": "",
-        "stats": "Crit +4, Magic Def +5, Pierce Def +5, Melee Def +5, WIS +5, END +5, CHA +7, LUK +7, Bonus +6",
-        "obtainVariants": [
+          },
           {
             "location": "Escelense Swap",
             "price": "N/A",
@@ -49336,7 +48566,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 63,
+        "levelNumber": 5,
         "levelDisplay": "63",
         "actualLevel": 63,
         "variantName": "V",
@@ -49352,24 +48582,7 @@
             "requiredItems": "1 Escelense Dragon Defender Helm IV & 10 Ateala Armament",
             "dmRequired": true,
             "daRequired": true
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=20503892",
-        "description": "Crafted from Ateala Armaments obtained from fighting off Wargoth's legions of possessed minions. This item requires a Dragon Amulet.",
-        "element": "WAT",
-        "resists": "Light +8, Fire +8, Nature +6, Immobility +4, Health -2",
-        "rarity": "10",
-        "itemType": "Helm"
-      },
-      {
-        "levelNumber": 63,
-        "levelDisplay": "63",
-        "actualLevel": 63,
-        "variantName": "V",
-        "name": "Escelense Dragon Defender Helm V",
-        "damage": "",
-        "stats": "Dodge +1, Crit +5, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +6, END +6, CHA +8, LUK +8, Bonus +7",
-        "obtainVariants": [
+          },
           {
             "location": "Escelense Swap",
             "price": "N/A",
@@ -49388,7 +48601,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 73,
+        "levelNumber": 6,
         "levelDisplay": "73",
         "actualLevel": 73,
         "variantName": "VI",
@@ -51436,45 +50649,85 @@
   },
   {
     "id": "accessory-eyeball-helm",
-    "name": "Eyeball Helm",
+    "familyName": "Eyeball Helm",
     "slug": "accessory-eyeball-helm",
+    "aliasSlugs": [
+      "accessory-shiny-eyeball-helm"
+    ],
     "type": "accessory",
     "subtype": "helm",
-    "description": "Do you like what you see?",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17674603",
-    "releaseDate": "",
-    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/EyeballHelmpic.png",
-    "elements": [
-      "DAR"
-    ],
-    "level": "30",
-    "stats": "Block +3, Crit +3, INT +5, DEX +5, STR +5, Bonus +2",
-    "resists": "Fire +3, Water +3, Stone +3, Wind +3",
-    "rarity": "15",
-    "itemType": "Helm",
-    "equipSpot": "Head",
-    "category": "Armor[",
-    "obtainMethods": [
+    "familyOrigin": "cross-post",
+    "familySources": [],
+    "shared": {
+      "description": "Do you like what you see?",
+      "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/EyeballHelmpic.png"
+    },
+    "levelVariants": [
       {
-        "location": "Zoo Shop",
-        "priceType": "gold",
-        "price": "800 Gold",
-        "sellback": "80 Gold",
-        "daRequired": false
+        "levelNumber": 1,
+        "levelDisplay": "30",
+        "actualLevel": 30,
+        "variantName": "(Base)",
+        "name": "Eyeball Helm",
+        "damage": "",
+        "stats": "Block +3, Crit +3, INT +5, DEX +5, STR +5, Bonus +2",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=17674603",
+        "description": "Do you like what you see?",
+        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/EyeballHelmpic.png",
+        "obtainVariants": [
+          {
+            "location": "Zoo Shop",
+            "priceType": "gold",
+            "price": "800 Gold",
+            "sellback": "80 Gold",
+            "daRequired": false
+          }
+        ],
+        "element": "DAR",
+        "resists": "Fire +3, Water +3, Stone +3, Wind +3",
+        "rarity": "15"
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "45",
+        "actualLevel": 45,
+        "variantName": "Shiny",
+        "name": "Shiny Eyeball Helm",
+        "damage": "",
+        "stats": "Crit +4, END +5, INT +6, DEX +6, STR +6, Bonus +3",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=17674641",
+        "description": "Do you like what you see?",
+        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/EyeballHelmpic.png",
+        "obtainVariants": [
+          {
+            "location": "Zoo Shop",
+            "priceType": "gold",
+            "price": "1,750 Gold",
+            "sellback": "175 Gold",
+            "daRequired": false
+          }
+        ],
+        "element": "DAR",
+        "resists": "Fire +6, Ice +6, Water +6, Immobility +6",
+        "rarity": "10"
       }
     ],
+    "itemType": "Helm",
+    "equipSlot": "Head",
+    "category": "Armor[",
     "tags": [
       "dar",
       "gold"
     ],
-    "daRequired": false,
-    "alsoSee": [
-      {
-        "name": "Shiny Eyeball Helm",
-        "slug": "accessory-shiny-eyeball-helm",
-        "type": "accessory",
-        "url": "https://forums2.battleon.com/f/tm.asp?m=17674641"
-      }
+    "hasDA": false,
+    "hasDC": false,
+    "hasDM": false,
+    "hasFree": false,
+    "hasMerge": false,
+    "levelRange": "30-45",
+    "elements": [
+      "DAR"
     ]
   },
   {
@@ -51526,25 +50779,7 @@
             "sellback": "0 Dragon Coins",
             "daRequired": false,
             "dcRequired": true
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22424727",
-        "description": "Magical horns fashioned for heroes who sought shelter in the far north, among great hunters and former enemies. (Cosmetic)",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/EyesoftheNorthD.png",
-        "element": "ICE",
-        "resists": "None",
-        "rarity": "0",
-        "itemType": "Helm"
-      },
-      {
-        "levelNumber": 1,
-        "levelDisplay": "1",
-        "actualLevel": 1,
-        "variantName": "(D)",
-        "name": "Eyes of the North (D)",
-        "damage": "",
-        "stats": "None",
-        "obtainVariants": [
+          },
           {
             "location": "LitS Loot for DCs",
             "price": "90 Dragon Coins",
@@ -51563,7 +50798,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 1,
+        "levelNumber": 2,
         "levelDisplay": "1",
         "actualLevel": 1,
         "variantName": "(S)",
@@ -51578,25 +50813,7 @@
             "sellback": "0 Dragon Coins",
             "daRequired": false,
             "dcRequired": true
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22424726",
-        "description": "Magical horns fashioned for heroes who sought shelter in the far north, among great hunters and former enemies. (Cosmetic)",
-        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/EyesoftheNorthS.png",
-        "element": "ICE",
-        "resists": "None",
-        "rarity": "0",
-        "itemType": "Helm"
-      },
-      {
-        "levelNumber": 1,
-        "levelDisplay": "1",
-        "actualLevel": 1,
-        "variantName": "(S)",
-        "name": "Eyes of the North (S)",
-        "damage": "",
-        "stats": "None",
-        "obtainVariants": [
+          },
           {
             "location": "LitS Loot for DCs",
             "price": "90 Dragon Coins",
@@ -54248,76 +53465,6 @@
     ]
   },
   {
-    "id": "accessory-female-gnome-wig",
-    "name": "Female Gnome Wig",
-    "slug": "accessory-female-gnome-wig",
-    "type": "accessory",
-    "subtype": "helm",
-    "description": "Love everything Gnomish but can't quite bring yourself to copy their outrageous hairstyles permanently? Now, for the low, low price of free, you too can own a stylish Gnome-inspired wig! This item requires a Dragon Amulet.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17284696",
-    "releaseDate": "",
-    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/FemaleGnomeWigpic.png",
-    "elements": [
-      "NON"
-    ],
-    "level": "1",
-    "stats": "CHA +4",
-    "resists": "None",
-    "rarity": "5",
-    "itemType": "Helm",
-    "equipSpot": "Head",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "To the Orb!",
-        "priceType": "free",
-        "price": "N/A",
-        "sellback": "0 Gold",
-        "daRequired": true
-      }
-    ],
-    "tags": [
-      "non",
-      "free"
-    ],
-    "daRequired": true
-  },
-  {
-    "id": "accessory-female-goggle-wig",
-    "name": "Female Goggle Wig",
-    "slug": "accessory-female-goggle-wig",
-    "type": "accessory",
-    "subtype": "helm",
-    "description": "Love everything Gnomish but can't quite bring yourself to copy their outrageous hairstyles permanently? Now, for the low, low price of free, you too can own a stylish Gnome-inspired wig! This item requires a Dragon Amulet.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=16233138",
-    "releaseDate": "",
-    "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/FemaleGoggleWig.png",
-    "elements": [
-      "NON"
-    ],
-    "level": "1",
-    "stats": "CHA +4",
-    "resists": "None",
-    "rarity": "5",
-    "itemType": "Helm",
-    "equipSpot": "Head",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "The City Fights Back!",
-        "priceType": "free",
-        "price": "N/A",
-        "sellback": "0 Gold",
-        "daRequired": true
-      }
-    ],
-    "tags": [
-      "non",
-      "free"
-    ],
-    "daRequired": true
-  },
-  {
     "id": "accessory-female-hard-battlehelm",
     "name": "Female Hard Battlehelm",
     "slug": "accessory-female-hard-battlehelm",
@@ -56898,7 +56045,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 25,
+        "levelNumber": 1,
         "levelDisplay": "25",
         "actualLevel": 25,
         "variantName": "I",
@@ -56922,7 +56069,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 25,
+        "levelNumber": 1,
         "levelDisplay": "25",
         "actualLevel": 25,
         "variantName": "I",
@@ -56947,7 +56094,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 45,
+        "levelNumber": 2,
         "levelDisplay": "45",
         "actualLevel": 45,
         "variantName": "II",
@@ -56971,7 +56118,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 45,
+        "levelNumber": 2,
         "levelDisplay": "45",
         "actualLevel": 45,
         "variantName": "II",
@@ -56996,7 +56143,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 65,
+        "levelNumber": 3,
         "levelDisplay": "65",
         "actualLevel": 65,
         "variantName": "III",
@@ -57020,7 +56167,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 65,
+        "levelNumber": 4,
         "levelDisplay": "65",
         "actualLevel": 65,
         "variantName": "III",
@@ -57045,7 +56192,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 75,
+        "levelNumber": 5,
         "levelDisplay": "75",
         "actualLevel": 75,
         "variantName": "IV",
@@ -57069,7 +56216,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 75,
+        "levelNumber": 6,
         "levelDisplay": "75",
         "actualLevel": 75,
         "variantName": "IV",
@@ -57094,7 +56241,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 7,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "V",
@@ -57118,7 +56265,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 8,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "V",
@@ -61161,6 +60308,88 @@
     ]
   },
   {
+    "id": "accessory-female-gnome-wig",
+    "familyName": "Gnome Wig",
+    "slug": "accessory-female-gnome-wig",
+    "aliasSlugs": [
+      "accessory-male-gnome-wig"
+    ],
+    "type": "accessory",
+    "subtype": "helm",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=17284696",
+    "familyOrigin": "cross-post",
+    "familySources": [],
+    "shared": {
+      "description": "Love everything Gnomish but can't quite bring yourself to copy their outrageous hairstyles permanently? Now, for the low, low price of free, you too can own a stylish Gnome-inspired wig! This item requires a Dragon Amulet."
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
+        "levelDisplay": "1",
+        "actualLevel": 1,
+        "variantName": "Female",
+        "name": "Female Gnome Wig",
+        "damage": "",
+        "stats": "CHA +4",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=17284696",
+        "description": "Love everything Gnomish but can't quite bring yourself to copy their outrageous hairstyles permanently? Now, for the low, low price of free, you too can own a stylish Gnome-inspired wig! This item requires a Dragon Amulet.",
+        "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/FemaleGnomeWigpic.png",
+        "obtainVariants": [
+          {
+            "location": "To the Orb!",
+            "priceType": "free",
+            "price": "N/A",
+            "sellback": "0 Gold",
+            "daRequired": true
+          }
+        ],
+        "element": "NON",
+        "resists": "None",
+        "rarity": "5"
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "1",
+        "actualLevel": 1,
+        "variantName": "Male",
+        "name": "Male Gnome Wig",
+        "damage": "",
+        "stats": "CHA +4",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=17284695",
+        "description": "Love everything Gnomish but can't quite bring yourself to copy their outrageous hairstyles permanently? Now, for the low, low price of free, you too can own a stylish Gnome-inspired wig! This item requires a Dragon Amulet.",
+        "imageUrl": "http://i.imgur.com/2y7Xxpt.png",
+        "obtainVariants": [
+          {
+            "location": "To the Orb!",
+            "priceType": "free",
+            "price": "N/A",
+            "sellback": "0 Gold",
+            "daRequired": true
+          }
+        ],
+        "element": "NON",
+        "resists": "None",
+        "rarity": "5"
+      }
+    ],
+    "itemType": "Helm",
+    "equipSlot": "Head",
+    "category": "Armor",
+    "tags": [
+      "free",
+      "non"
+    ],
+    "hasDA": true,
+    "hasDC": false,
+    "hasDM": false,
+    "hasFree": true,
+    "hasMerge": false,
+    "levelRange": "1",
+    "elements": [
+      "NON"
+    ]
+  },
+  {
     "id": "accessory-gnomish-prime",
     "familyName": "Gnomish Prime",
     "slug": "accessory-gnomish-prime",
@@ -61352,6 +60581,88 @@
     "hasDM": false,
     "hasFree": false,
     "hasMerge": true,
+    "levelRange": "1",
+    "elements": [
+      "NON"
+    ]
+  },
+  {
+    "id": "accessory-female-goggle-wig",
+    "familyName": "Goggle Wig",
+    "slug": "accessory-female-goggle-wig",
+    "aliasSlugs": [
+      "accessory-male-goggle-wig"
+    ],
+    "type": "accessory",
+    "subtype": "helm",
+    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=16233138",
+    "familyOrigin": "cross-post",
+    "familySources": [],
+    "shared": {
+      "description": "Love everything Gnomish but can't quite bring yourself to copy their outrageous hairstyles permanently? Now, for the low, low price of free, you too can own a stylish Gnome-inspired wig! This item requires a Dragon Amulet."
+    },
+    "levelVariants": [
+      {
+        "levelNumber": 1,
+        "levelDisplay": "1",
+        "actualLevel": 1,
+        "variantName": "Female",
+        "name": "Female Goggle Wig",
+        "damage": "",
+        "stats": "CHA +4",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=16233138",
+        "description": "Love everything Gnomish but can't quite bring yourself to copy their outrageous hairstyles permanently? Now, for the low, low price of free, you too can own a stylish Gnome-inspired wig! This item requires a Dragon Amulet.",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/FemaleGoggleWig.png",
+        "obtainVariants": [
+          {
+            "location": "The City Fights Back!",
+            "priceType": "free",
+            "price": "N/A",
+            "sellback": "0 Gold",
+            "daRequired": true
+          }
+        ],
+        "element": "NON",
+        "resists": "None",
+        "rarity": "5"
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "1",
+        "actualLevel": 1,
+        "variantName": "Male",
+        "name": "Male Goggle Wig",
+        "damage": "",
+        "stats": "CHA +4",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=16234244",
+        "description": "Love everything Gnomish but can't quite bring yourself to copy their outrageous hairstyles permanently? Now, for the low, low price of free, you too can own a stylish Gnome-inspired wig! This item requires a Dragon Amulet.",
+        "imageUrl": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/MaleGoggleWig.png",
+        "obtainVariants": [
+          {
+            "location": "The City Fights Back!",
+            "priceType": "free",
+            "price": "N/A",
+            "sellback": "0 Gold",
+            "daRequired": true
+          }
+        ],
+        "element": "NON",
+        "resists": "None",
+        "rarity": "5"
+      }
+    ],
+    "itemType": "Helm",
+    "equipSlot": "Head",
+    "category": "Armor",
+    "tags": [
+      "free",
+      "non"
+    ],
+    "hasDA": true,
+    "hasDC": false,
+    "hasDM": false,
+    "hasFree": true,
+    "hasMerge": false,
     "levelRange": "1",
     "elements": [
       "NON"
@@ -62544,7 +61855,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 3,
+        "levelNumber": 1,
         "levelDisplay": "3",
         "actualLevel": 3,
         "name": "Golden Helm of Nobility",
@@ -62568,7 +61879,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 3,
+        "levelNumber": 1,
         "levelDisplay": "3",
         "actualLevel": 3,
         "name": "Golden Helm of Nobility",
@@ -62584,7 +61895,7 @@
             "dcRequired": true
           }
         ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21984480",
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=9475528",
         "description": "This is one of the helms worn by the ancient order of Palis Duetorum, a sect of Paladins sworn with the protection and healing of the innocent. It allows the one who wears it an additional 3% healing from EVERY healing effect.",
         "alternativeImages": [],
         "element": "NON",
@@ -63326,7 +62637,7 @@
     "alternativeImages": [
       {
         "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/GreenNinjaMask-Old.png",
-        "caption": "Old Appearance"
+        "caption": "Old"
       }
     ],
     "elements": [
@@ -66572,7 +65883,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 20,
+        "levelNumber": 1,
         "levelDisplay": "20",
         "actualLevel": 20,
         "variantName": "I",
@@ -66596,7 +65907,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 20,
+        "levelNumber": 1,
         "levelDisplay": "20",
         "actualLevel": 20,
         "variantName": "I",
@@ -66621,7 +65932,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 2,
         "levelDisplay": "30",
         "actualLevel": 30,
         "variantName": "II",
@@ -66645,7 +65956,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 2,
         "levelDisplay": "30",
         "actualLevel": 30,
         "variantName": "II",
@@ -66670,7 +65981,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 3,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "III",
@@ -66694,7 +66005,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 3,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "III",
@@ -66719,7 +66030,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 4,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "IV",
@@ -66743,7 +66054,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 4,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "IV",
@@ -66768,7 +66079,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 5,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "V",
@@ -66792,7 +66103,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 5,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "V",
@@ -66817,7 +66128,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 6,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "VI",
@@ -66841,7 +66152,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 7,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "VI",
@@ -66866,7 +66177,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 8,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "VII",
@@ -66890,7 +66201,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 9,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "VII",
@@ -66915,7 +66226,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 10,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "VIII",
@@ -66939,7 +66250,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 11,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "VIII",
@@ -67052,7 +66363,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 50,
+        "levelNumber": 1,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "I",
@@ -67077,7 +66388,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 1,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "I",
@@ -67103,7 +66414,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 2,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "II",
@@ -67128,7 +66439,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 2,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "II",
@@ -67154,7 +66465,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 3,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "III",
@@ -67179,7 +66490,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 4,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "III",
@@ -67205,7 +66516,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 5,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "IV",
@@ -67230,7 +66541,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 6,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "IV",
@@ -67256,7 +66567,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 7,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "V",
@@ -67281,7 +66592,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 8,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "V",
@@ -68768,15 +68079,15 @@
     "alternativeImages": [
       {
         "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/HelmofLunaris-MaskOff.png",
-        "caption": "Clicked Appearance (Mask Off)"
+        "caption": "Mask Off"
       },
       {
         "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/HelmofLunaris-ShadesOff.png",
-        "caption": "Clicked Appearance (Shades Off)"
+        "caption": "Shades Off"
       },
       {
         "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/HelmofLunaris-MaskShadesOff.png",
-        "caption": "Clicked Appearance (Mask and Shades Off)"
+        "caption": "Mask Shades Off"
       }
     ],
     "elements": [
@@ -69199,24 +68510,7 @@
             "priceType": "free",
             "sellback": "30 Gold",
             "daRequired": false
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22404808",
-        "description": "Unfortunately, wearing this helmet does not allow you to control togs. Fortunately, you're not a tog, so is should be relatively safe to wear! \"Property of the Mayor\" is etched on the back.",
-        "element": "MET",
-        "resists": "Metal +3, Health -3",
-        "rarity": "5",
-        "itemType": "Helm"
-      },
-      {
-        "levelNumber": 3,
-        "levelDisplay": "30",
-        "actualLevel": 30,
-        "variantName": "I",
-        "name": "Helmet of Tog-Control I",
-        "damage": "",
-        "stats": "Crit -3, CHA +2, INT -10, DEX +2, STR +15, Bonus +3",
-        "obtainVariants": [
+          },
           {
             "location": "TMM Loot for DCs",
             "price": "120 Dragon Coins",
@@ -69234,7 +68528,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 4,
+        "levelNumber": 3,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "II",
@@ -69248,24 +68542,7 @@
             "priceType": "free",
             "sellback": "40 Gold",
             "daRequired": false
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22404809",
-        "description": "Unfortunately, wearing this helmet does not allow you to control togs. Fortunately, you're not a tog, so is should be relatively safe to wear! \"Property of the Mayor\" is etched on the back.",
-        "element": "MET",
-        "resists": "Metal +4, Health -4",
-        "rarity": "5",
-        "itemType": "Helm"
-      },
-      {
-        "levelNumber": 5,
-        "levelDisplay": "40",
-        "actualLevel": 40,
-        "variantName": "II",
-        "name": "Helmet of Tog-Control II",
-        "damage": "",
-        "stats": "Crit -5, CHA +4, INT -10, DEX +4, STR +15, Bonus +5",
-        "obtainVariants": [
+          },
           {
             "location": "TMM Loot for DCs",
             "price": "120 Dragon Coins",
@@ -69283,7 +68560,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 6,
+        "levelNumber": 4,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "III",
@@ -69297,24 +68574,7 @@
             "priceType": "free",
             "sellback": "50 Gold",
             "daRequired": false
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22404810",
-        "description": "Unfortunately, wearing this helmet does not allow you to control togs. Fortunately, you're not a tog, so is should be relatively safe to wear! \"Property of the Mayor\" is etched on the back.",
-        "element": "MET",
-        "resists": "Metal +5, Health -5",
-        "rarity": "5",
-        "itemType": "Helm"
-      },
-      {
-        "levelNumber": 7,
-        "levelDisplay": "50",
-        "actualLevel": 50,
-        "variantName": "III",
-        "name": "Helmet of Tog-Control III",
-        "damage": "",
-        "stats": "Block +1, Dodge +1, Parry +1, Crit -7, CHA +6, INT -10, DEX +6, STR +20, Bonus +7",
-        "obtainVariants": [
+          },
           {
             "location": "TMM Loot for DCs",
             "price": "120 Dragon Coins",
@@ -69332,7 +68592,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 8,
+        "levelNumber": 5,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "IV",
@@ -69346,24 +68606,7 @@
             "priceType": "free",
             "sellback": "60 Gold",
             "daRequired": false
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22404812",
-        "description": "Unfortunately, wearing this helmet does not allow you to control togs. Fortunately, you're not a tog, so is should be relatively safe to wear! \"Property of the Mayor\" is etched on the back.",
-        "element": "MET",
-        "resists": "Metal +6, Health -5",
-        "rarity": "5",
-        "itemType": "Helm"
-      },
-      {
-        "levelNumber": 9,
-        "levelDisplay": "60",
-        "actualLevel": 60,
-        "variantName": "IV",
-        "name": "Helmet of Tog-Control IV",
-        "damage": "",
-        "stats": "Block +2, Dodge +2, Parry +2, Crit -9, CHA +7, INT -15, DEX +7, STR +25, Bonus +9",
-        "obtainVariants": [
+          },
           {
             "location": "TMM Loot for DCs",
             "price": "120 Dragon Coins",
@@ -69381,7 +68624,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 10,
+        "levelNumber": 6,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "V",
@@ -69395,24 +68638,7 @@
             "priceType": "free",
             "sellback": "70 Gold",
             "daRequired": false
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22404813",
-        "description": "Unfortunately, wearing this helmet does not allow you to control togs. Fortunately, you're not a tog, so is should be relatively safe to wear! \"Property of the Mayor\" is etched on the back.",
-        "element": "MET",
-        "resists": "Metal +7, Health -5",
-        "rarity": "5",
-        "itemType": "Helm"
-      },
-      {
-        "levelNumber": 11,
-        "levelDisplay": "70",
-        "actualLevel": 70,
-        "variantName": "V",
-        "name": "Helmet of Tog-Control V",
-        "damage": "",
-        "stats": "Block +3, Dodge +3, Parry +3, Crit -13, CHA +8, INT -15, DEX +8, STR +30, Bonus +13",
-        "obtainVariants": [
+          },
           {
             "location": "TMM Loot for DCs",
             "price": "120 Dragon Coins",
@@ -69430,7 +68656,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 12,
+        "levelNumber": 7,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "VI",
@@ -69454,7 +68680,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 13,
+        "levelNumber": 8,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "VI",
@@ -69479,7 +68705,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 14,
+        "levelNumber": 9,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "VII",
@@ -69503,7 +68729,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 15,
+        "levelNumber": 10,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "VII",
@@ -70157,7 +69383,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 28,
+        "levelNumber": 1,
         "levelDisplay": "28",
         "actualLevel": 28,
         "name": "High Commander Helm",
@@ -70180,7 +69406,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 28,
+        "levelNumber": 1,
         "levelDisplay": "28",
         "actualLevel": 28,
         "name": "High Commander Helm",
@@ -70204,7 +69430,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 48,
+        "levelNumber": 2,
         "levelDisplay": "48",
         "actualLevel": 48,
         "name": "High Commander Helm",
@@ -70227,7 +69453,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 48,
+        "levelNumber": 2,
         "levelDisplay": "48",
         "actualLevel": 48,
         "name": "High Commander Helm",
@@ -70251,7 +69477,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 68,
+        "levelNumber": 3,
         "levelDisplay": "68",
         "actualLevel": 68,
         "name": "High Commander Helm",
@@ -70274,7 +69500,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 68,
+        "levelNumber": 3,
         "levelDisplay": "68",
         "actualLevel": 68,
         "name": "High Commander Helm",
@@ -70298,7 +69524,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 78,
+        "levelNumber": 4,
         "levelDisplay": "78",
         "actualLevel": 78,
         "name": "High Commander Helm",
@@ -70321,7 +69547,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 78,
+        "levelNumber": 5,
         "levelDisplay": "78",
         "actualLevel": 78,
         "name": "High Commander Helm",
@@ -70345,7 +69571,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 6,
         "levelDisplay": "80",
         "actualLevel": 80,
         "name": "High Commander Helm",
@@ -70368,7 +69594,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 7,
         "levelDisplay": "80",
         "actualLevel": 80,
         "name": "High Commander Helm",
@@ -70918,7 +70144,7 @@
     "alternativeImages": [
       {
         "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/HotPinkNinjaMask-Old.png",
-        "caption": "Old Appearance"
+        "caption": "Old"
       }
     ],
     "elements": [
@@ -71057,7 +70283,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 15,
+        "levelNumber": 1,
         "levelDisplay": "15",
         "actualLevel": 15,
         "variantName": "I",
@@ -71081,7 +70307,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 15,
+        "levelNumber": 1,
         "levelDisplay": "15",
         "actualLevel": 15,
         "variantName": "I",
@@ -71106,7 +70332,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 25,
+        "levelNumber": 2,
         "levelDisplay": "25",
         "actualLevel": 25,
         "variantName": "II",
@@ -71130,7 +70356,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 25,
+        "levelNumber": 2,
         "levelDisplay": "25",
         "actualLevel": 25,
         "variantName": "II",
@@ -71155,7 +70381,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 35,
+        "levelNumber": 3,
         "levelDisplay": "35",
         "actualLevel": 35,
         "variantName": "III",
@@ -71179,7 +70405,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 35,
+        "levelNumber": 3,
         "levelDisplay": "35",
         "actualLevel": 35,
         "variantName": "III",
@@ -71204,7 +70430,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 45,
+        "levelNumber": 4,
         "levelDisplay": "45",
         "actualLevel": 45,
         "variantName": "IV",
@@ -71228,7 +70454,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 45,
+        "levelNumber": 4,
         "levelDisplay": "45",
         "actualLevel": 45,
         "variantName": "IV",
@@ -71253,7 +70479,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 55,
+        "levelNumber": 5,
         "levelDisplay": "55",
         "actualLevel": 55,
         "variantName": "V",
@@ -71277,7 +70503,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 55,
+        "levelNumber": 5,
         "levelDisplay": "55",
         "actualLevel": 55,
         "variantName": "V",
@@ -71302,7 +70528,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 65,
+        "levelNumber": 6,
         "levelDisplay": "65",
         "actualLevel": 65,
         "variantName": "VI",
@@ -71326,7 +70552,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 65,
+        "levelNumber": 6,
         "levelDisplay": "65",
         "actualLevel": 65,
         "variantName": "VI",
@@ -71351,7 +70577,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 75,
+        "levelNumber": 7,
         "levelDisplay": "75",
         "actualLevel": 75,
         "variantName": "VII",
@@ -71375,7 +70601,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 75,
+        "levelNumber": 8,
         "levelDisplay": "75",
         "actualLevel": 75,
         "variantName": "VII",
@@ -71400,7 +70626,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 85,
+        "levelNumber": 9,
         "levelDisplay": "85",
         "actualLevel": 85,
         "variantName": "VIII",
@@ -71424,7 +70650,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 85,
+        "levelNumber": 10,
         "levelDisplay": "85",
         "actualLevel": 85,
         "variantName": "VIII",
@@ -73134,7 +72360,7 @@
       "alternativeImages": [
         {
           "url": "https://github.com/DF-Pedia/DF-Pedia/raw/master/accessories/IllustriousHelm-Old.png",
-          "caption": "Old Appearance"
+          "caption": "Old"
         }
       ],
       "rarity": "4",
@@ -73142,7 +72368,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 10,
+        "levelNumber": 1,
         "levelDisplay": "10",
         "actualLevel": 10,
         "variantName": "I",
@@ -73166,7 +72392,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 10,
+        "levelNumber": 1,
         "levelDisplay": "10",
         "actualLevel": 10,
         "variantName": "I",
@@ -73191,7 +72417,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 20,
+        "levelNumber": 2,
         "levelDisplay": "20",
         "actualLevel": 20,
         "variantName": "II",
@@ -73215,7 +72441,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 20,
+        "levelNumber": 2,
         "levelDisplay": "20",
         "actualLevel": 20,
         "variantName": "II",
@@ -73240,7 +72466,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 3,
         "levelDisplay": "30",
         "actualLevel": 30,
         "variantName": "III",
@@ -73264,7 +72490,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 3,
         "levelDisplay": "30",
         "actualLevel": 30,
         "variantName": "III",
@@ -73289,7 +72515,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 4,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "IV",
@@ -73313,7 +72539,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 4,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "IV",
@@ -73338,7 +72564,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 5,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "V",
@@ -73362,7 +72588,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 5,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "V",
@@ -73387,7 +72613,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 6,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "VI",
@@ -73411,7 +72637,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 6,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "VI",
@@ -73436,7 +72662,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 7,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "VII",
@@ -73460,7 +72686,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 8,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "VII",
@@ -73485,7 +72711,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 9,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "VIII",
@@ -73509,7 +72735,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 10,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "VIII",
@@ -73534,7 +72760,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 11,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "IX",
@@ -73558,7 +72784,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 12,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "IX",
@@ -74411,7 +73637,7 @@
         "resists": "Stone +3, Immobility +3",
         "rarity": "4",
         "itemType": "Helm",
-        "notes": "  • Level's requirement was increased from 5 to 15.\n  • Avoidance stats (Melee/Pierce/Magic) were increased from +1 to +3.\n  • STR +3 and DEX +3 stats were added.\n  • Bonus was increased from +1 to +5.\n  • Immobility Resist +3 was added."
+        "notes": "• Level's requirement was increased from 5 to 15.\n  • Avoidance stats (Melee/Pierce/Magic) were increased from +1 to +3.\n  • STR +3 and DEX +3 stats were added.\n  • Bonus was increased from +1 to +5.\n  • Immobility Resist +3 was added."
       },
       {
         "levelNumber": 25,
@@ -74436,7 +73662,7 @@
         "resists": "Stone +4, Immobility +4",
         "rarity": "4",
         "itemType": "Helm",
-        "notes": "  • Avoidance stats (Melee/Pierce/Magic) were increased from +2 to +3.\n  • STR +5 and DEX +5 stats were added.\n  • Bonus was increased from +1 to +6.\n  • Immobility Resist +4 was added."
+        "notes": "• Avoidance stats (Melee/Pierce/Magic) were increased from +2 to +3.\n  • STR +5 and DEX +5 stats were added.\n  • Bonus was increased from +1 to +6.\n  • Immobility Resist +4 was added."
       },
       {
         "levelNumber": 37,
@@ -74461,7 +73687,7 @@
         "resists": "Stone +6, Immobility +5",
         "rarity": "4",
         "itemType": "Helm",
-        "notes": "  • Avoidance stats (Melee/Pierce/Magic) were increased from +3 to +4.\n  • STR +6 and DEX +6 stats were added.\n  • Bonus was increased from +1 to +7.\n  • Immobility Resist was increased from +1 to +5."
+        "notes": "• Avoidance stats (Melee/Pierce/Magic) were increased from +3 to +4.\n  • STR +6 and DEX +6 stats were added.\n  • Bonus was increased from +1 to +7.\n  • Immobility Resist was increased from +1 to +5."
       },
       {
         "levelNumber": 50,
@@ -74486,7 +73712,7 @@
         "resists": "Stone +7, Immobility +7",
         "rarity": "4",
         "itemType": "Helm",
-        "notes": "  • Crit was lowered from +4 to 2.\n  • Avoidance stats (Melee/Pierce/Magic) were increased from +3 to +5.\n  • END +4 was removed.\n  • INT was increased from +7 to +8\n  • STR +8 and DEX +8 stats were added.\n  • Bonus was increased from +4 to +6.\n  • Immobility Resist was increased from +3 to +7."
+        "notes": "• Crit was lowered from +4 to 2.\n  • Avoidance stats (Melee/Pierce/Magic) were increased from +3 to +5.\n  • END +4 was removed.\n  • INT was increased from +7 to +8\n  • STR +8 and DEX +8 stats were added.\n  • Bonus was increased from +4 to +6.\n  • Immobility Resist was increased from +3 to +7."
       }
     ],
     "itemType": "Helm",
@@ -74584,7 +73810,7 @@
         "resists": "Immobility +3",
         "rarity": "4",
         "itemType": "Helm",
-        "notes": "  • Level's requirement was increased from 5 to 15.\n  • Avoidance stats (Melee/Pierce/Magic) were increased from +1 to +2.\n  • STR +2, DEX +2, and Bonus +4 stats were added.\n  • Immobility Resist +3 was added."
+        "notes": "• Level's requirement was increased from 5 to 15.\n  • Avoidance stats (Melee/Pierce/Magic) were increased from +1 to +2.\n  • STR +2, DEX +2, and Bonus +4 stats were added.\n  • Immobility Resist +3 was added."
       },
       {
         "levelNumber": 25,
@@ -74609,7 +73835,7 @@
         "resists": "Immobility +4",
         "rarity": "4",
         "itemType": "Helm",
-        "notes": "  • STR +4, DEX +4, and Bonus +5 stats were added.\n  • Immobility Resist +4 was added."
+        "notes": "• STR +4, DEX +4, and Bonus +5 stats were added.\n  • Immobility Resist +4 was added."
       },
       {
         "levelNumber": 37,
@@ -74634,7 +73860,7 @@
         "resists": "Immobility +5",
         "rarity": "4",
         "itemType": "Helm",
-        "notes": "  • STR +5 and DEX +5 stats were added.\n  • Bonus was increased from +2 to +6.\n  • Immobility Resist +5 was added."
+        "notes": "• STR +5 and DEX +5 stats were added.\n  • Bonus was increased from +2 to +6.\n  • Immobility Resist +5 was added."
       }
     ],
     "itemType": "Helm",
@@ -77107,41 +76333,6 @@
     ]
   },
   {
-    "id": "accessory-klatu-s-skullhelm",
-    "name": "Klatu's Skullhelm",
-    "slug": "accessory-klatu-s-skullhelm",
-    "type": "accessory",
-    "subtype": "helm",
-    "description": "This was one of the three skull helms worn by the three necromancer brothers who founded Necromancer University. This was worn by Klatu, the youngest brother.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=13560627",
-    "releaseDate": "",
-    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/accessories/Klatu's%20Skullhelm%20pic.bmp",
-    "elements": [
-      "DAR"
-    ],
-    "level": "8",
-    "stats": "Crit +1, Magic Def +1, Pierce Def +1, Melee Def +1, CHA +1, DEX +2",
-    "resists": "Darkness +3",
-    "rarity": "2",
-    "itemType": "Helm",
-    "equipSpot": "Head",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "The T.A.'s Challenge",
-        "priceType": "free",
-        "price": "N/A",
-        "sellback": "6 Gold",
-        "daRequired": false
-      }
-    ],
-    "tags": [
-      "dar",
-      "free"
-    ],
-    "daRequired": false
-  },
-  {
     "id": "accessory-klaus-cap",
     "name": "Klaus Cap",
     "slug": "accessory-klaus-cap",
@@ -77359,7 +76550,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 30,
+        "levelNumber": 1,
         "levelDisplay": "30",
         "actualLevel": 30,
         "variantName": "I",
@@ -77383,7 +76574,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 1,
         "levelDisplay": "30",
         "actualLevel": 30,
         "variantName": "I",
@@ -77408,7 +76599,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 2,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "II",
@@ -77432,7 +76623,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 2,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "II",
@@ -77457,7 +76648,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 3,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "III",
@@ -77481,7 +76672,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 3,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "III",
@@ -77506,7 +76697,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 4,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "IV",
@@ -77530,7 +76721,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 4,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "IV",
@@ -77555,7 +76746,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 5,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "V",
@@ -77579,7 +76770,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 5,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "V",
@@ -77604,7 +76795,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 6,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "VI",
@@ -77628,7 +76819,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 7,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "VI",
@@ -77653,7 +76844,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 8,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "VII",
@@ -77677,7 +76868,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 9,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "VII",
@@ -80347,7 +79538,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 15,
+        "levelNumber": 1,
         "levelDisplay": "15",
         "actualLevel": 15,
         "variantName": "I",
@@ -80371,7 +79562,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 15,
+        "levelNumber": 1,
         "levelDisplay": "15",
         "actualLevel": 15,
         "variantName": "I",
@@ -80396,7 +79587,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 25,
+        "levelNumber": 2,
         "levelDisplay": "25",
         "actualLevel": 25,
         "variantName": "II",
@@ -80420,7 +79611,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 25,
+        "levelNumber": 2,
         "levelDisplay": "25",
         "actualLevel": 25,
         "variantName": "II",
@@ -80445,7 +79636,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 35,
+        "levelNumber": 3,
         "levelDisplay": "35",
         "actualLevel": 35,
         "variantName": "III",
@@ -80469,7 +79660,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 35,
+        "levelNumber": 3,
         "levelDisplay": "35",
         "actualLevel": 35,
         "variantName": "III",
@@ -80494,7 +79685,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 45,
+        "levelNumber": 4,
         "levelDisplay": "45",
         "actualLevel": 45,
         "variantName": "IV",
@@ -80518,7 +79709,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 45,
+        "levelNumber": 4,
         "levelDisplay": "45",
         "actualLevel": 45,
         "variantName": "IV",
@@ -80543,7 +79734,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 55,
+        "levelNumber": 5,
         "levelDisplay": "55",
         "actualLevel": 55,
         "variantName": "V",
@@ -80567,7 +79758,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 55,
+        "levelNumber": 5,
         "levelDisplay": "55",
         "actualLevel": 55,
         "variantName": "V",
@@ -80592,7 +79783,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 65,
+        "levelNumber": 6,
         "levelDisplay": "65",
         "actualLevel": 65,
         "variantName": "VI",
@@ -80616,7 +79807,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 65,
+        "levelNumber": 6,
         "levelDisplay": "65",
         "actualLevel": 65,
         "variantName": "VI",
@@ -80641,7 +79832,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 75,
+        "levelNumber": 7,
         "levelDisplay": "75",
         "actualLevel": 75,
         "variantName": "VII",
@@ -80665,7 +79856,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 75,
+        "levelNumber": 8,
         "levelDisplay": "75",
         "actualLevel": 75,
         "variantName": "VII",
@@ -80690,7 +79881,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 85,
+        "levelNumber": 9,
         "levelDisplay": "85",
         "actualLevel": 85,
         "variantName": "VIII",
@@ -80714,7 +79905,7 @@
         "itemType": "Helm"
       },
       {
-        "levelNumber": 85,
+        "levelNumber": 10,
         "levelDisplay": "85",
         "actualLevel": 85,
         "variantName": "VIII",

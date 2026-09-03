@@ -170,10 +170,14 @@ function repairFamily(entry: ItemFamily): ItemFamily {
     }
   }
 
-  const splitFamily = splitMixedAccessObtainVariantRows({
-    ...entry,
-    levelVariants,
-  })
+  const shouldKeepCrossPostMethodsTogether =
+    entry.type === 'accessory' && entry.familyOrigin === 'cross-post'
+  const splitFamily = shouldKeepCrossPostMethodsTogether
+    ? { ...entry, levelVariants }
+    : splitMixedAccessObtainVariantRows({
+        ...entry,
+        levelVariants,
+      })
   const allMethods = splitFamily.levelVariants.flatMap((level) => level.obtainVariants)
   const hasDA = allMethods.some((method) => method.daRequired)
   const hasDC = allMethods.some(obtainVariantHasDC)

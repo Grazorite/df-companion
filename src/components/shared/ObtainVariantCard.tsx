@@ -20,9 +20,11 @@
  */
 
 import type { ObtainVariant } from '../../types/item'
+import type { InlineTextLink } from '../../types/inlineLink'
 import { accessPillClass } from '../../utils/accessPillStyles'
 import { normalizeDisplayText } from '../../utils/displayText'
 import { getCurrencyTextClass, getSeparatedObtainLines } from '../../utils/obtainFormatting'
+import InlineTextLinks from './InlineTextLinks'
 
 interface ObtainVariantCardProps {
   variant: ObtainVariant
@@ -31,6 +33,7 @@ interface ObtainVariantCardProps {
   locationOnly?: boolean
   showCurrencyAccessPills?: boolean
   showPriceFields?: boolean
+  links?: InlineTextLink[]
 }
 
 function isMeaningfulObtainValue(value: string | undefined): boolean {
@@ -72,6 +75,7 @@ export default function ObtainVariantCard({
   locationOnly = false,
   showCurrencyAccessPills = true,
   showPriceFields = true,
+  links = [],
 }: ObtainVariantCardProps) {
   const headingText = label ? `How to Obtain (${label})` : 'How to Obtain'
   const showPrice = isMeaningfulObtainValue(variant.price)
@@ -104,7 +108,7 @@ export default function ObtainVariantCard({
             </a>
           ) : (
             <p className="text-text-primary break-words">
-              {normalizeDisplayText(variant.location)}
+              <InlineTextLinks text={normalizeDisplayText(variant.location)} links={links} />
             </p>
           )}
         </div>

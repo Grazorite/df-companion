@@ -448,7 +448,7 @@ URL query params supported by `/pets`:
   an artifact-specific attack set.
 - Class `Default Weapon` text links to the matching weapon detail route when
   `class-default-weapon-relations.json` has a source-URL match. Weapon detail pages render the
-  reverse relation as a compact `Default Weapon For` card near the weapon special / obtain details.
+  reverse relation by hotlinking the class name inline in the default weapon's How to Obtain text.
   Unmatched default weapons remain plain text.
 - Regular/Miscellaneous class image selectors should reflect forum captions rather than generated
   `Main` / `Alternative Image` text. Use nearby forum labels such as `Modern Version`,

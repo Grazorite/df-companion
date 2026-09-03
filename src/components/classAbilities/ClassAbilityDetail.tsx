@@ -239,7 +239,6 @@ export default function ClassAbilityDetail({
       })
     }
     for (const set of artifactAttackSets) {
-      if (!set.attacks?.length) continue
       options.push(set)
     }
     return options
@@ -271,7 +270,6 @@ export default function ClassAbilityDetail({
   const hasDM = family ? family.hasDM : singleItem?.dmRequired
   const hasMerge = family ? family.hasMerge : singleItem?.hasMerge
   const hasMultiple = family ? family.levelVariants.length > 1 : false
-  const showTempPill = item.subtype !== 'consumable' && item.isTemp
   const armorMetrics = isArmor
     ? [
         { label: 'Level', value: level },
@@ -354,11 +352,6 @@ export default function ClassAbilityDetail({
             >
               Multiple Versions
             </Link>
-          )}
-          {showTempPill && (
-            <span className="text-xs text-cyan-300 bg-cyan-500/20 px-3 py-1.5 rounded-full font-medium">
-              Temp
-            </span>
           )}
           <DetailTypePill label={subtypeLabel} />
         </div>

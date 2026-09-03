@@ -5,7 +5,7 @@ import type { ItemFamily, PriceType } from '../types/item'
 import type { Pet } from '../types/pet'
 import type { WeaponEntry, WeaponSubtype } from '../types/weapon'
 import type { HousingEntry, HousingSubtype } from '../types/housing'
-import type { ClassAbilityEntry, ClassAbilitySubtype } from '../types/classAbility'
+import type { ClassAbilityEntry, ClassAbilitySubtype, ClassSubcategory } from '../types/classAbility'
 import { normalizeHousingEntries } from './housingNormalization'
 import accessoryManifestUrl from '../data/accessory-manifest.json?url'
 import badgesManifestUrl from '../data/badges-manifest.json?url'
@@ -354,12 +354,98 @@ function compareClassAbilityDuplicateQuality(
   return firstName.length - secondName.length
 }
 
+function classSubcategoriesForEntry(entry: ClassAbilityEntry): ClassSubcategory[] {
+  return [
+    ...new Set(
+      [entry.classSubcategory, ...(entry.classSubcategories ?? [])].filter(
+        (subcategory): subcategory is ClassSubcategory => Boolean(subcategory)
+      )
+    ),
+  ]
+}
+
+function classAbilitySourceDedupeKey(entry: ClassAbilityEntry): string | undefined {
+  if (entry.subtype !== 'class' || entry.classSubcategory === 'armor') return undefined
+  const sourceUrl = isLoadedFamily(entry)
+    ? entry.forumUrl || entry.familySources?.[0]?.url || entry.levelVariants[0]?.sourceUrl
+    : entry.sourceUrl || entry.forumUrl
+  const messageId = sourceUrl?.match(/[?&]m=(\d+)/i)?.[1]
+  return messageId ? `source:${messageId}` : sourceUrl ? `source:${sourceUrl}` : undefined
+}
+
+function mergeClassAbilityDuplicates(
+  primary: ClassAbilityEntry,
+  duplicate: ClassAbilityEntry
+): ClassAbilityEntry {
+  const classSubcategories = [
+    ...new Set([...classSubcategoriesForEntry(primary), ...classSubcategoriesForEntry(duplicate)]),
+  ]
+  const tags = [...new Set([...primary.tags, ...duplicate.tags])].sort()
+  const aliasSlugs = [
+    ...new Set([
+      ...(isLoadedFamily(primary) ? (primary.aliasSlugs ?? []) : (primary.aliasSlugs ?? [])),
+      ...(isLoadedFamily(duplicate) ? (duplicate.aliasSlugs ?? []) : (duplicate.aliasSlugs ?? [])),
+      ...(primary.slug !== duplicate.slug ? [duplicate.slug] : []),
+    ]),
+  ]
+  return {
+    ...primary,
+    ...(aliasSlugs.length > 0 ? { aliasSlugs } : {}),
+    classSubcategories,
+    tags,
+    daRequired:
+      'daRequired' in primary || 'daRequired' in duplicate
+        ? Boolean(primary.daRequired) || Boolean(duplicate.daRequired)
+        : undefined,
+    dcRequired:
+      'dcRequired' in primary || 'dcRequired' in duplicate
+        ? Boolean(primary.dcRequired) || Boolean(duplicate.dcRequired)
+        : undefined,
+    dmRequired:
+      'dmRequired' in primary || 'dmRequired' in duplicate
+        ? Boolean(primary.dmRequired) || Boolean(duplicate.dmRequired)
+        : undefined,
+    hasFree: Boolean(primary.hasFree) || Boolean(duplicate.hasFree),
+    hasMerge: Boolean(primary.hasMerge) || Boolean(duplicate.hasMerge),
+    hasDA:
+      'hasDA' in primary || 'hasDA' in duplicate
+        ? Boolean(primary.hasDA) || Boolean(duplicate.hasDA)
+        : undefined,
+    hasDC:
+      'hasDC' in primary || 'hasDC' in duplicate
+        ? Boolean(primary.hasDC) || Boolean(duplicate.hasDC)
+        : undefined,
+    hasDM:
+      'hasDM' in primary || 'hasDM' in duplicate
+        ? Boolean(primary.hasDM) || Boolean(duplicate.hasDM)
+        : undefined,
+    isTemp: Boolean(primary.isTemp) || Boolean(duplicate.isTemp),
+    isRare: Boolean(primary.isRare) || Boolean(duplicate.isRare),
+    isSeasonal: Boolean(primary.isSeasonal) || Boolean(duplicate.isSeasonal),
+    isSpecialOffer: Boolean(primary.isSpecialOffer) || Boolean(duplicate.isSpecialOffer),
+    isSpecialCharacter: Boolean(primary.isSpecialCharacter) || Boolean(duplicate.isSpecialCharacter),
+    retired: Boolean(primary.retired) || Boolean(duplicate.retired),
+  } as ClassAbilityEntry
+}
+
 function dedupeClassAbilityEntries(entries: ClassAbilityEntry[]): ClassAbilityEntry[] {
   const bySlug = new Map<string, ClassAbilityEntry>()
+  const bySource = new Map<string, string>()
   for (const entry of entries) {
-    const existing = bySlug.get(entry.slug)
+    const sourceKey = classAbilitySourceDedupeKey(entry)
+    const existingSlug = sourceKey ? bySource.get(sourceKey) : undefined
+    const existing = existingSlug ? bySlug.get(existingSlug) : bySlug.get(entry.slug)
     if (!existing || compareClassAbilityDuplicateQuality(entry, existing) < 0) {
+      const merged = existing ? mergeClassAbilityDuplicates(entry, existing) : entry
+      bySlug.set(entry.slug, merged)
+      if (sourceKey) bySource.set(sourceKey, entry.slug)
+      if (existing && existing.slug !== entry.slug) bySlug.delete(existing.slug)
+    } else if (existing) {
+      bySlug.set(existing.slug, mergeClassAbilityDuplicates(existing, entry))
+      if (sourceKey) bySource.set(sourceKey, existing.slug)
+    } else {
       bySlug.set(entry.slug, entry)
+      if (sourceKey) bySource.set(sourceKey, entry.slug)
     }
   }
   return [...bySlug.values()]

@@ -24,9 +24,11 @@ export interface ClassAbilityItem {
   id: string
   name: string
   slug: string
+  aliasSlugs?: string[]
   type: 'class-ability'
   subtype: ClassAbilitySubtype
   classSubcategory?: ClassSubcategory
+  classSubcategories?: ClassSubcategory[]
   consumableKind?: ConsumableKind
   description: string
   releaseDate?: string
@@ -73,6 +75,7 @@ export type ClassAbilityFamily = ItemFamily & {
   type: 'class-ability'
   subtype: ClassAbilitySubtype
   classSubcategory?: ClassSubcategory
+  classSubcategories?: ClassSubcategory[]
   consumableKind?: ConsumableKind
 }
 

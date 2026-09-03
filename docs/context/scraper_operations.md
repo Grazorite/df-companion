@@ -171,7 +171,16 @@ the other class sub-subtypes because each one writes to its own file:
 class entries use subcategory-aware slugs to avoid collisions with Armors of the same display name and extract
 guest-shaped stats, main/alt images, `Access Point` obtain methods, default weapon text/link,
 attacks, status tags, and release dates from `https://forums2.battleon.com/f/tm.asp?m=22391532` when
-listed.
+listed. Some playable class posts are intentionally listed under both Regular and Miscellaneous; keep
+the files split, and let the app loader dedupe by forum source while preserving both subcategory
+memberships. Class stat parsing must accept both underlined stat sections and compact one-line
+sections such as `Defenses: Melee: 5, ...`. Playable class pages must not use the Consumables
+dialogue extractor. Class obtain methods should parse both `Requirements:` and
+`Level/Quest/Items required:` labels, dropping redundant `Dragon Amulet` text after capture. The
+Alexander/Archknight special-character filter is driven by the `AlexanderSaga.jpg` and
+`Archknight.png` tag images. Page-level DA/DC/DM tags may mark the class entry as filterable, but
+must not be copied onto every obtain method; method-level access is determined from that method's tag
+block, price, required items, requirements, or D-Amulet/D-Coins/Defender's Medal text.
 Class and Accessory scrapes also refresh `src/data/class-artifact-relations.json`, a lightweight
 route index for class ↔ Accessory artifact inline links. It includes both class artifact attack-set
 labels and artifact-side `Modifies` metadata, so artifacts that only change class appearance still
@@ -208,10 +217,24 @@ selector. Do not reject raw GitHub-hosted art because `githubusercontent` contai
 consumed for attack image captions must be removed from attack notes and page-level Other
 Information. Class attack requirements should follow the guest attack shape, with redundant
 `Dragon Amulet` text stripped because DA status already appears in tags and obtain-method pills.
+Class attack-image captions can come from long same-line prefixes before several hotlinks, including
+SoulWeaver-style labels such as `Book 1 Aegis: Appearance 1 / 1.1` and
+`Original / Color Custom / Soulforged / ... / Delta: Appearance 1 / 1.1`. Keep duplicate image URLs
+when their captions differ. Artifact sections with no real skill fields should contribute notes only;
+do not turn an artifact `Other information` block into a fake attack. They may still produce an
+artifact attack-set option with zero attacks so the detail page can show artifact-specific
+notes/mechanics only when that option is selected.
+Some class pages use named parenthetical appearance labels instead of numbered labels, such as
+`Appearance (Charging)`, `Appearance (Attacking)`, `Appearance (Kick)`, or the forum typo
+`Apperance (Hit)`. Normalize these to short UI captions (`Charging`, `Attacking`, `Kick`, `Hit`) and
+strip the display-only caption text from attack notes.
 Class mechanics are parsed as their own structured blocks when the forum provides widget-image
 captions such as `<Class>'s widget displaying ...`. For artifact sections, mechanics before the first
 skill belong to that artifact attack set, while a final horizontal-rule-separated `Other information`
 section after the last skill becomes artifact-set notes.
+`ChronoZ` is a Regular-class single-post exception: ignore later same-thread posts because they
+contain combo listings that are too specific for the app. Keep `CZ-Widget.gif` in the mechanics block
+only; do not include it as a class-gallery `Main` image.
 
 The weapon scraper has a small hardcoded cleanup for base-plus-parenthetical forum family titles
 where the source family title names only one sibling variant. These normalize to a base display

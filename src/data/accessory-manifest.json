@@ -1,13 +1,13 @@
 {
-  "total": 2585,
+  "total": 2520,
   "bySubtype": {
     "artifact": 20,
-    "belt": 279,
+    "belt": 259,
     "bracer": 8,
-    "cape-wing": 587,
-    "helm": 1086,
-    "necklace": 253,
-    "ring": 248,
+    "cape-wing": 581,
+    "helm": 1079,
+    "necklace": 242,
+    "ring": 227,
     "trinket": 104
   }
 }

@@ -131,6 +131,36 @@ const POTION_BUTTON_IMAGES = new Map([
     'https://github.com/DF-Pedia/DF-Pedia/raw/master/classes_abilities/Skill-MP.png',
   ],
 ])
+const FIXED_CLASS_IMAGE_URLS = new Map([
+  ['ancient shadow warrior', 'http://i.imgur.com/O3T4qdj.jpg'],
+  ['ancient shadow mage', 'http://i.imgur.com/jDjwPZQ.jpg'],
+  ['ancient shadow rogue', 'http://i.imgur.com/z7wPyhW.jpg'],
+  ['icebound revenant', 'https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/IceboundRevMale.png'],
+  ['dreaming togslayer', 'https://i.imgur.com/av1NsT5.png'],
+])
+
+const FIXED_CLASS_ALTERNATIVE_IMAGES = new Map([
+  [
+    'icebound revenant',
+    [
+      {
+        url: 'https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/IceboundRevMale.png',
+        caption: 'Male',
+      },
+      {
+        url: 'https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/IceboundRevFemale.png',
+        caption: 'Female',
+      },
+    ],
+  ],
+  [
+    'dreaming togslayer',
+    [
+      { url: 'https://i.imgur.com/av1NsT5.png', caption: 'Male' },
+      { url: 'https://i.imgur.com/FQRVWK9.png', caption: 'Female' },
+    ],
+  ],
+])
 
 function parseArgs(): ScrapeOptions {
   const args = process.argv.slice(2)
@@ -284,6 +314,10 @@ function normalizeName(name: string): string {
 
 function isDefaultTempConsumable(name: string): boolean {
   return !/^(?:Health Potion|Mana Potion)$/i.test(normalizeName(name))
+}
+
+function isSinglePostOnlyPlayableClass(name: string): boolean {
+  return /^ChronoZ$/i.test(normalizeName(name))
 }
 
 function tagNamesFromHtml(html: string): string[] {
@@ -770,7 +804,7 @@ function isDisplayOnlyAppearanceLine(line: string): boolean {
   if (!trimmed) return true
   if (/^Appearance(?:\s+\S.*)?$/i.test(trimmed)) return true
   if (/^(?:Modern|Retro|Original|Reforged)(?:\s+Version)?:$/i.test(trimmed)) return true
-  return /^[A-Za-z][A-Za-z /'-]{1,80}:\s*Appearance(?:\s+\d+(?:\.\d+)?)?(?:\s*\/\s*\d+(?:\.\d+)?)*$/i.test(
+  return /^[A-Za-z0-9][A-Za-z0-9 /'().-]{1,140}:\s*Appearance(?:\s+\d+(?:\.\d+)?)?(?:\s*\/\s*\d+(?:\.\d+)?)*$/i.test(
     trimmed
   )
 }
@@ -792,30 +826,143 @@ function cleanKnownPriceArtifacts(price: string): string {
   return price.replace(/\((Standard)(?=\s*\/\s*\$)/i, '($1)')
 }
 
-function parseObtainMethods(lines: string[]): ObtainVariant[] {
+function parseObtainMethods(html: string): ObtainVariant[] {
   const methods: ObtainVariant[] = []
-  const locationIndexes = lines
-    .map((line, index) => (/^(?:Location|Access Point):/i.test(line) ? index : -1))
+  const firstDetailFieldIndex = [
+    /(?:<b>)?Level:(?:<\/b>)?/i,
+    /(?:<b>)?Rarity:(?:<\/b>)?/i,
+    /(?:<b>)?Item Type:(?:<\/b>)?/i,
+    /(?:<b>)?Category:(?:<\/b>)?/i,
+    /(?:<b>)?Equips Class:(?:<\/b>)?/i,
+    /(?:<b>)?Default Weapon:(?:<\/b>)?/i,
+    /(?:<b>)?<u>Stats<\/u>(?:<\/b>)?/i,
+    /(?:<b>)?<u>Offenses?<\/u>(?:<\/b>)?/i,
+    /(?:<b>)?<u>Defenses?<\/u>(?:<\/b>)?/i,
+    /(?:<b>)?<u>Avoidance and Defense<\/u>(?:<\/b>)?/i,
+    /(?:<b>)?<u>Damage Multipliers<\/u>(?:<\/b>)?/i,
+    /(?:<b>)?<u>Damage Reduction<\/u>(?:<\/b>)?/i,
+    /(?:<b>)?<u>Resistances<\/u>(?:<\/b>)?/i,
+    /(?:<b>)?<u>Other information<\/u>(?:<\/b>)?/i,
+  ]
+    .map((pattern) => html.search(pattern))
     .filter((index) => index >= 0)
+    .sort((a, b) => a - b)[0] ?? html.length
 
-  for (const [position, index] of locationIndexes.entries()) {
-    const end = locationIndexes[position + 1] ?? lines.length
-    const block = lines.slice(index, end)
-    const location = cleanInlineText(
-      firstField(block, 'Location') ?? firstField(block, 'Access Point') ?? 'N/A'
+  const introHtml = html
+    .slice(0, firstDetailFieldIndex)
+    .replace(
+      /<b>\s*<font[^>]*>\s*(Location|Access Point|Requirements?|Level\/Quest\/Items required|Price|Sellback|Required Items?|Required|Requires):\s*<\/font>\s*<\/b>/gi,
+      '<b>$1:</b>'
     )
-    const price = cleanKnownPriceArtifacts(cleanInlineText(firstField(block, 'Price') ?? 'N/A'))
-    const requiredItems = cleanOptionalField(firstField(block, 'Required Items?'))
-    const sellback = cleanOptionalField(firstField(block, 'Sellback'))
-    const requirements = cleanRequirementText(firstField(block, 'Requirements?'))
+    .replace(
+      /(?:^|\s)(Location|Access Point|Requirements?|Level\/Quest\/Items required|Price|Sellback|Required Items?|Required|Requires):/gi,
+      ' <b>$1:</b>'
+    )
+
+  const blocks: Array<{
+    location?: string
+    price?: string
+    sellback?: string
+    requiredItems?: string
+    requirements?: string
+    daRequired: boolean
+    dcRequired: boolean
+    dmRequired: boolean
+  }> = []
+  let current: (typeof blocks)[number] | undefined
+  let pendingDA = false
+  let pendingDC = false
+  let pendingDM = false
+
+  for (const rawLine of introHtml.split(/<br\s*\/?>/i).map((line) => line.trim()).filter(Boolean)) {
+    const lineHasDA = /<img[^>]+src=["'][^"']*\/tags\/DA\.(?:png|jpg|jpeg|gif)["']/i.test(rawLine)
+    const lineHasDC = /<img[^>]+src=["'][^"']*\/tags\/DC\.(?:png|jpg|jpeg|gif)["']/i.test(rawLine)
+    const lineHasDM = /<img[^>]+src=["'][^"']*\/tags\/DM\.(?:png|jpg|jpeg|gif)["']/i.test(rawLine)
+    pendingDA ||= lineHasDA
+    pendingDC ||= lineHasDC
+    pendingDM ||= lineHasDM
+    const fieldMatch = rawLine.match(
+      /<b>(Location|Access Point|Requirements?|Level\/Quest\/Items required|Price|Sellback|Required Items?|Required|Requires):<\/b>\s*([\s\S]*)/i
+    )
+    if (!fieldMatch) continue
+
+    const fieldName = fieldMatch[1].toLowerCase()
+    const value = normalizeStructuredText(fieldMatch[2], { preserveIndentation: false })
+      .replace(/\n+/g, ' ')
+      .replace(/\s{2,}/g, ' ')
+      .trim()
+    if (!value) continue
+
+    if (fieldName === 'location' || fieldName === 'access point') {
+      current = {
+        location: cleanInlineText(value),
+        daRequired: pendingDA || /this item requires a dragon amulet/i.test(rawLine),
+        dcRequired: pendingDC,
+        dmRequired: pendingDM,
+      }
+      blocks.push(current)
+      pendingDA = false
+      pendingDC = false
+      pendingDM = false
+      continue
+    }
+
+    if (!current) {
+      current = {
+        daRequired: pendingDA,
+        dcRequired: pendingDC,
+        dmRequired: pendingDM,
+      }
+      blocks.push(current)
+      pendingDA = false
+      pendingDC = false
+      pendingDM = false
+    }
+
+    current.daRequired ||= lineHasDA
+    current.dcRequired ||= lineHasDC
+    current.dmRequired ||= lineHasDM
+
+    if (fieldName === 'requirements' || fieldName === 'requirement' || fieldName === 'level/quest/items required') {
+      current.requirements = value
+    } else if (fieldName === 'price') {
+      current.price = value
+    } else if (fieldName === 'sellback') {
+      current.sellback = value
+    } else if (
+      fieldName === 'required item' ||
+      fieldName === 'required items' ||
+      fieldName === 'required' ||
+      fieldName === 'requires'
+    ) {
+      current.requiredItems = value
+    }
+  }
+
+  for (const block of blocks) {
+    if (!block.location) continue
+    const price = cleanKnownPriceArtifacts(cleanInlineText(block.price ?? 'N/A'))
+    const requiredItems = cleanOptionalField(block.requiredItems)
+    const sellback = cleanOptionalField(block.sellback)
+    const requirements = cleanRequirementText(block.requirements)
     const priceType = computePriceType(price, requiredItems)
-    const dmRequired = priceType === 'dm' || isDefenderMedalText(price) || isDefenderMedalText(requiredItems)
+    const dcRequired =
+      block.dcRequired ||
+      priceType === 'dc' ||
+      /\b(?:D-Coins?|Dragon Coins?)\b/i.test(
+        [block.location, price, requiredItems].filter(Boolean).join(' ')
+      )
+    const dmRequired =
+      block.dmRequired ||
+      priceType === 'dm' ||
+      isDefenderMedalText(price) ||
+      isDefenderMedalText(requiredItems)
     methods.push({
-      location,
+      location: block.location,
       price,
       priceType,
-      daRequired: false,
-      ...(priceType === 'dc' ? { dcRequired: true } : {}),
+      daRequired: block.daRequired,
+      ...(dcRequired ? { dcRequired: true } : {}),
       ...(dmRequired ? { dmRequired: true } : {}),
       ...(sellback ? { sellback: rephraseTimedSellback(sellback) } : {}),
       ...(requiredItems ? { requiredItems } : {}),
@@ -828,7 +975,7 @@ function parseObtainMethods(lines: string[]): ObtainVariant[] {
 
 function parseDescription(lines: string[]): string {
   const stopIndex = lines.findIndex((line) =>
-    /^(?:Location|Access Point|Requirements?|Level|Damage|HP|MP|Effects?):/i.test(line)
+    /^(?:Location|Access Point|Requirements?|Level\/Quest\/Items required|Level|Damage|HP|MP|Effects?):/i.test(line)
   )
   const itemName = normalizeName(lines[0] ?? '').toLowerCase()
   const descriptionLines = (stopIndex >= 0 ? lines.slice(1, stopIndex) : lines.slice(1))
@@ -838,7 +985,7 @@ function parseDescription(lines: string[]): string {
 }
 
 function isFieldLine(line: string): boolean {
-  return /^(?:Location|Access Point|Price|Sellback|Required Items?|Requirements?|Level|Rarity|Item Type|Category|Equips Class|Default Weapon|Effect|Effects?|Mana Cost|Cooldown|Damage Type|Element):/i.test(
+  return /^(?:Location|Access Point|Price|Sellback|Required Items?|Requirements?|Level\/Quest\/Items required|Level|Rarity|Item Type|Category|Equips Class|Default Weapon|Effect|Effects?|Mana Cost|Cooldown|Damage Type|Element):/i.test(
     line
   )
 }
@@ -925,7 +1072,11 @@ function normalizeAppearanceCaption(rawCaption: string): string {
     .replace(/\s+/g, ' ')
     .replace(/\s*:\s*$/, '')
     .trim()
-  return caption.replace(/^Appearance\s*/i, '').trim() || 'Appearance'
+  const normalized = caption
+    .replace(/^Appe?a?rance\s*/i, '')
+    .replace(/\s+Appe?a?rance$/i, '')
+    .trim()
+  return normalized.match(/^\(([^)]+)\)$/)?.[1]?.trim() || normalized || 'Appearance'
 }
 
 function isTableValueAppearanceCaption(caption: string): boolean {
@@ -944,12 +1095,12 @@ function inferCaptionPrefix(rawCaption: string | undefined): string | undefined 
   const text = stripTags(rawCaption ?? '')
     .replace(/\s+/g, ' ')
     .trim()
-  const prefix = text.match(/([A-Za-z][A-Za-z /-]{1,60}):\s*Appearance/i)?.[1]
+  const prefix = text.match(/([A-Za-z0-9][A-Za-z0-9 /'().-]{1,120}):\s*Appearance/i)?.[1]
   return prefix?.trim()
 }
 
 function inferAppearancePrefixFromContext(html: string, index: number): string | undefined {
-  const lookbackHtml = html.slice(Math.max(0, index - 240), index)
+  const lookbackHtml = html.slice(Math.max(0, index - 1200), index)
   const lineStart = Math.max(
     lookbackHtml.lastIndexOf('<br'),
     lookbackHtml.lastIndexOf('<hr')
@@ -959,7 +1110,7 @@ function inferAppearancePrefixFromContext(html: string, index: number): string |
     .replace(/\s+/g, ' ')
     .trim()
   return lookback
-    .match(/([A-Za-z][A-Za-z /-]{1,60}):\s*(?:Appearance(?:\s+\d+(?:\.\d+)?)?\s*(?:\/\s*)?)?$/i)?.[1]
+    .match(/([A-Za-z0-9][A-Za-z0-9 /'().-]{1,120}):\s*(?:Appearance(?:\s+\d+(?:\.\d+)?)?\s*(?:\/\s*)?)?$/i)?.[1]
     ?.trim()
 }
 
@@ -1054,6 +1205,12 @@ function inferClassImageCaptionFromUrl(url: string): string | undefined {
     : undefined
 }
 
+function isExplicitClassGalleryCaption(caption: string): boolean {
+  return /^(?:Main|Alternative Image|Male|Female|Modern|Original|Retro|Reforged)(?:\s+\([^)]+\))?$/i.test(
+    normalizeName(caption)
+  )
+}
+
 function otherInformationHeadingMatches(html: string): RegExpMatchArray[] {
   return [
     ...html.matchAll(
@@ -1084,6 +1241,16 @@ function extractClassImages(html: string, className?: string): {
   imageUrl?: string
   alternativeImages?: Array<{ url: string; caption: string }>
 } {
+  const fixedClassImageUrl = className
+    ? FIXED_CLASS_IMAGE_URLS.get(normalizeName(className).toLowerCase())
+    : undefined
+  const fixedAlternativeImages = className
+    ? FIXED_CLASS_ALTERNATIVE_IMAGES.get(normalizeName(className).toLowerCase())
+    : undefined
+  const shouldSkipClassGalleryImage = (url: string) =>
+    className !== undefined &&
+    isSinglePostOnlyPlayableClass(className) &&
+    /(?:^|[/-])CZ-Widget\.(?:gif|png|jpg|jpeg)$/i.test(decodeURIComponent(url))
   const attackBounds = classAttackSectionBounds(html)
   const attackSkipEnd =
     attackBounds &&
@@ -1111,7 +1278,12 @@ function extractClassImages(html: string, className?: string): {
     for (const match of sourceHtml.matchAll(/<a\b[^>]+href=(["'])(.*?)\1[^>]*>([\s\S]*?)<\/a>/gi)) {
       if (skipAttackRange && isInAttackSkillRange(match.index ?? 0)) continue
       const url = normalizeLinkedImageUrl(match[2] ?? '')
-      if (!isLikelyLinkedImageUrl(url) || isClassUiImage(url) || isAttackOrSkillButtonImage(url)) {
+      if (
+        !isLikelyLinkedImageUrl(url) ||
+        isClassUiImage(url) ||
+        isAttackOrSkillButtonImage(url) ||
+        shouldSkipClassGalleryImage(url)
+      ) {
         continue
       }
       const rawCaption = cleanImageCaption(match[3], '')
@@ -1129,7 +1301,12 @@ function extractClassImages(html: string, className?: string): {
     for (const match of sourceHtml.matchAll(/<img\b[^>]+src=(["'])(.*?)\1[^>]*>/gi)) {
       if (isInAttackSkillRange(match.index ?? 0)) continue
       const url = normalizeLinkedImageUrl(match[2] ?? '')
-      if (!isLikelyLinkedImageUrl(url) || isClassUiImage(url) || isAttackOrSkillButtonImage(url)) {
+      if (
+        !isLikelyLinkedImageUrl(url) ||
+        isClassUiImage(url) ||
+        isAttackOrSkillButtonImage(url) ||
+        shouldSkipClassGalleryImage(url)
+      ) {
         continue
       }
       candidates.push({
@@ -1156,6 +1333,15 @@ function extractClassImages(html: string, className?: string): {
     }
   }
 
+  if (attackBounds) {
+    const attackTail = html.slice(attackBounds.start, attackBounds.end)
+    for (const segment of attackTail.split(/<hr\b[^>]*>/i)) {
+      if (/(?:Effect:|Mana Cost:|Cooldown:)/i.test(segment)) continue
+      if (!/<(?:a|img)\b/i.test(segment)) continue
+      collectEntries(segment, false)
+    }
+  }
+
   const finalOtherInfo = otherInformationHeadingMatches(html).at(-1)
   if (finalOtherInfo?.index !== undefined) {
     collectEntries(html.slice(finalOtherInfo.index), false)
@@ -1168,9 +1354,19 @@ function extractClassImages(html: string, className?: string): {
       ? entries.filter((entry) => classImageUrlNameKey(entry.url).includes(classKey))
       : []
   const sourceEntries = nameMatchedEntries.length > 0 ? nameMatchedEntries : entries
-  const galleryEntries = sourceEntries.some((entry) => entry.isArmorSetAppearance)
-    ? sourceEntries.filter((entry) => entry.isArmorSetAppearance)
-    : sourceEntries
+  const explicitGalleryEntries =
+    nameMatchedEntries.length > 0
+      ? entries.filter((entry) => isExplicitClassGalleryCaption(entry.caption))
+      : []
+  const mergedSourceEntries = [
+    ...sourceEntries,
+    ...explicitGalleryEntries.filter(
+      (entry) => !sourceEntries.some((sourceEntry) => sourceEntry.url === entry.url)
+    ),
+  ]
+  const galleryEntries = mergedSourceEntries.some((entry) => entry.isArmorSetAppearance)
+    ? mergedSourceEntries.filter((entry) => entry.isArmorSetAppearance)
+    : mergedSourceEntries
   const displayEntries = disambiguatePairedClassCaptions(
     galleryEntries
   )
@@ -1181,6 +1377,12 @@ function extractClassImages(html: string, className?: string): {
         !/Exact spots?|Appearance/i.test(entry.caption)
     ) ?? displayEntries[0]
   const rest = main ? displayEntries.filter((entry) => entry.url !== main.url) : []
+  if (!main && fixedClassImageUrl) {
+    return {
+      imageUrl: fixedClassImageUrl,
+      alternativeImages: fixedAlternativeImages ?? [{ url: fixedClassImageUrl, caption: 'Main' }],
+    }
+  }
   return {
     ...(main ? { imageUrl: main.url } : {}),
     ...(main || rest.length
@@ -1196,20 +1398,56 @@ function extractClassImages(html: string, className?: string): {
 
 function extractAttackAppearanceEntries(block: string): Array<{ url: string; caption: string }> {
   const entries: Array<{ url: string; caption: string }> = []
-  for (const match of block.matchAll(/<a[^>]+href=(["'])(.*?)\1[^>]*>([\s\S]*?)<\/a>/gi)) {
-    const url = normalizeLinkedImageUrl(match[2] ?? '')
-    if (!isLikelyLinkedImageUrl(url)) continue
-    const rawCaption = match[3] ?? ''
+  const addEntry = (url: string, rawCaption: string, index: number) => {
+    if (!isLikelyLinkedImageUrl(url)) return
     const caption = normalizeAppearanceCaption(rawCaption)
-    if (isTableValueAppearanceCaption(caption)) continue
-    if (!/^Appearance|\d+(?:\.\d+)?$/i.test(caption)) continue
-    const prefix = inferCaptionPrefix(rawCaption) ?? inferAppearancePrefixFromContext(block, match.index ?? 0)
+    if (isTableValueAppearanceCaption(caption)) return
+    if (
+      !/^(?:Appearance|\d+(?:\.\d+)?)$/i.test(caption) &&
+      !/^[A-Za-z][A-Za-z0-9 /'().-]{1,80}$/.test(caption)
+    ) {
+      return
+    }
+    const prefix = inferCaptionPrefix(rawCaption) ?? inferAppearancePrefixFromContext(block, index)
     const displayCaption =
-      prefix && caption !== 'Appearance' ? `${prefix} ${caption}` : prefix ?? caption
-    if (entries.some((entry) => entry.url === url)) continue
+      prefix && /^(?:Appearance|\d+(?:\.\d+)?)$/i.test(caption)
+        ? caption === 'Appearance'
+          ? prefix
+          : `${prefix} ${caption}`
+        : caption
+    const key = `${url}|${displayCaption}`.toLowerCase()
+    if (entries.some((entry) => `${entry.url}|${entry.caption}`.toLowerCase() === key)) return
     entries.push({ url, caption: displayCaption })
   }
+  for (const match of block.matchAll(/<a[^>]+href=(["'])(.*?)\1[^>]*>([\s\S]*?)<\/a>/gi)) {
+    const url = normalizeLinkedImageUrl(match[2] ?? '')
+    addEntry(url, match[3] ?? '', match.index ?? 0)
+  }
+  for (const match of block.matchAll(/\[link=([^\]]+)\]([\s\S]*?)\[\/link\]/gi)) {
+    const url = normalizeLinkedImageUrl(match[1] ?? '')
+    addEntry(url, match[2] ?? '', match.index ?? 0)
+  }
   return entries
+}
+
+function fallbackClassAttackName(block: string): string | undefined {
+  const normalized = normalizeStructuredText(block, { preserveIndentation: true })
+  const lines = normalized
+    .split('\n')
+    .map((line) => line.replace(/^\s*(?:[•*-]\s*)+/, '').trim())
+    .filter(Boolean)
+  const stopIndex = lines.findIndex((line) => /^(?:Requirements|Effect|Mana Cost|Cooldown):/i.test(line))
+  const candidates = (stopIndex >= 0 ? lines.slice(0, stopIndex) : lines)
+    .filter(
+      (line) =>
+        !/^Artifact:/i.test(line) &&
+        !/^Image$/i.test(line) &&
+        !/^Other information$/i.test(line) &&
+        !/^Appearance/i.test(line) &&
+        !/^\d+\s+hits?\b/i.test(line) &&
+        !/^(?:Self|Target|Recover|This attack|Unlocks|As a)\b/i.test(line)
+    )
+  return candidates.at(-1)
 }
 
 function artifactHeadingMatches(html: string): RegExpMatchArray[] {
@@ -1273,17 +1511,21 @@ function playableDetailPostInputs(
   fallbackName: string,
   parts: DetailPostParts
 ): Array<{ html: string; sourceUrl: string; fallbackName: string }> {
+  const isAccessOnlyParenthetical = (value: string) =>
+    /^(?:No DA Required|DA Required|DC Item)$/i.test(normalizeName(value))
   const playablePostTitle = (html: string) => {
     const fallbackKey = normalizeName(fallbackName).toLowerCase()
     return titleMatches(html)
       .map((title) => {
         const trailingParenthetical = stripTags(html.slice(title.end, title.end + 180))
           .trim()
-          .match(/^\((?!No DA Required\b)([^)]+)\)/i)?.[1]
-        const displayTitle = trailingParenthetical
+          .match(/^\(([^)]+)\)/i)?.[1]
+        const displayTitle = trailingParenthetical && !isAccessOnlyParenthetical(trailingParenthetical)
           ? `${title.title} (${normalizeName(trailingParenthetical)})`
           : title.title
-        return displayTitle.replace(/\s+\(No DA Required\)\s*$/i, '').trim()
+        return displayTitle
+          .replace(/\s+\((?:No DA Required|DA Required|DC Item)\)\s*$/i, '')
+          .trim()
       })
       .find((title) => normalizeName(title).toLowerCase().startsWith(fallbackKey))
   }
@@ -1417,15 +1659,21 @@ function parseArtifactAttackSets(htmlParts: string[]): GuestAttackSet[] | undefi
       const label = cleanArtifactLabel(heading[0])
       if (!label) continue
       const attacks = parseClassAttacks(section)
-      if (!attacks?.length) continue
       const mechanics = extractMechanicsBlocks(section, label)
-      const notes = extractTrailingClassOtherInfo(section)
+      const notes =
+        attacks?.length
+          ? extractTrailingClassOtherInfo(section)
+          : cleanOtherInfo(
+              extractOtherInfo(section, { useLast: true }) ??
+                normalizeStructuredText(section, { preserveIndentation: true })
+            )
+      if (!attacks?.length && !notes && !mechanics?.length) continue
       const id = slugify(label)
       const uniqueId = sets.some((set) => set.id === id) ? `${id}-${sets.length + 1}` : id
       sets.push({
         id: uniqueId,
         label,
-        attacks,
+        attacks: attacks ?? [],
         ...(notes ? { notes } : {}),
         ...(mechanics?.length ? { mechanics } : {}),
       })
@@ -1463,6 +1711,21 @@ function parseClassStats(html: string): GuestStats | undefined {
     )
     return match ? normalizeStructuredText(match[1] ?? '', { preserveIndentation: true }) : ''
   }
+  const fullText = normalizeStructuredText(html, { preserveIndentation: true })
+  const inlineSectionText = (titles: string[]) => {
+    const labelPattern = titles.map(escapeRegex).join('|')
+    const stopPattern =
+      '(?:Stats|Offense|Offenses|Defense|Defenses|Avoidance and Defense|Damage Multipliers|Damage Reduction|Resistances|Location|Access Point|Requirements|Release Date|Default Weapon|Effect|Effects|Mana Cost|Cooldown|Damage Type|Element|Rarity|Item Type|Category)'
+    const match = fullText.match(
+      new RegExp(
+        `(?:^|\\n)\\s*(?:${labelPattern}):\\s*([\\s\\S]*?)(?=\\n\\s*${stopPattern}:|$)`,
+        'i'
+      )
+    )
+    return match ? match[1].trim() : ''
+  }
+  const statSection = (...titles: string[]) =>
+    titles.map(sectionText).find((text) => Boolean(text.trim())) ?? inlineSectionText(titles)
   const parsePairs = (text: string, labels: string[]) => {
     const output: Record<string, string> = {}
     for (const label of labels) {
@@ -1471,11 +1734,11 @@ function parseClassStats(html: string): GuestStats | undefined {
     }
     return output
   }
-  const characterStats = parsePairs(sectionText('Stats'), ['STR', 'DEX', 'INT', 'CHA', 'LUK', 'END', 'WIS'])
+  const characterStats = parsePairs(statSection('Stats'), ['STR', 'DEX', 'INT', 'CHA', 'LUK', 'END', 'WIS'])
   if (Object.keys(characterStats).length > 0) stats.characterStats = characterStats
-  const offense = parsePairs(sectionText('Offense'), ['Boost', 'Bonus', 'Crit'])
+  const offense = parsePairs(statSection('Offense', 'Offenses'), ['Boost', 'Bonus', 'Crit'])
   if (Object.keys(offense).length > 0) stats.offense = offense
-  const multipliers = parsePairs(sectionText('Damage Multipliers'), ['Non-Crit', 'Dex', 'DoT', 'Crit'])
+  const multipliers = parsePairs(statSection('Damage Multipliers'), ['Non-Crit', 'Dex', 'DoT', 'Crit'])
   if (Object.keys(multipliers).length > 0) {
     stats.damageMultipliers = {
       nonCrit: multipliers.noncrit,
@@ -1484,7 +1747,7 @@ function parseClassStats(html: string): GuestStats | undefined {
       crit: multipliers.crit,
     }
   }
-  const defense = parsePairs(sectionText('Defense') || sectionText('Avoidance and Defense'), [
+  const defense = parsePairs(statSection('Defense', 'Defenses', 'Avoidance and Defense'), [
     'Melee',
     'Pierce',
     'Magic',
@@ -1493,7 +1756,7 @@ function parseClassStats(html: string): GuestStats | undefined {
     'Dodge',
   ])
   if (Object.keys(defense).length > 0) stats.defense = defense
-  const reduction = parsePairs(sectionText('Damage Reduction'), ['Non-Crit', 'DoT', 'Crit'])
+  const reduction = parsePairs(statSection('Damage Reduction'), ['Non-Crit', 'DoT', 'Crit'])
   if (Object.keys(reduction).length > 0) {
     stats.damageReduction = {
       nonCrit: reduction.noncrit,
@@ -1501,7 +1764,7 @@ function parseClassStats(html: string): GuestStats | undefined {
       crit: reduction.crit,
     }
   }
-  const resistanceText = sectionText('Resistances')
+  const resistanceText = statSection('Resistances')
   if (resistanceText && !/^none$/i.test(resistanceText.trim())) {
     const resistances: Record<string, string> = {}
     for (const line of resistanceText.split('\n')) {
@@ -1548,8 +1811,12 @@ function parseClassAttacks(html: string): GuestAttack[] | undefined {
       block.match(/<b>\s*<u>\s*([^<]+)\s*<\/u>\s*<\/b>/i) ??
       block.match(/<u>\s*<b>\s*([^<]+)\s*<\/b>\s*<\/u>/i) ??
       block.match(/<(?:b|strong)>\s*([^<\n:]{2,80})\s*<\/(?:b|strong)>/i)
-    const name = normalizeName(nameMatch?.[1] ?? 'Attack')
-    if (!name || /^skip$/i.test(name)) continue
+    const matchedName = normalizeName(nameMatch?.[1] ?? '')
+    const name =
+      !matchedName || /^Other information$/i.test(matchedName)
+        ? normalizeName(fallbackClassAttackName(block) ?? matchedName ?? 'Attack')
+        : matchedName
+    if (!name || /^(?:skip|Other information)$/i.test(name)) continue
     const description = block.match(/<i>([\s\S]*?)<\/i>/i)?.[1]
     const requirements = cleanRequirementText(extractFieldFromHtml(block, 'Requirements'))
     const effect = block.match(/Effect:\s*([\s\S]*?)(?=\s*Mana Cost:|$)/i)?.[1]
@@ -1810,7 +2077,7 @@ function parseDetailBlocks(
           ? cleanSupplementalHtml
           : blockWithLeadIn
       const lines = [title.title, ...htmlToLines(block)]
-      const obtainMethods = parseObtainMethods(lines)
+      const obtainMethods = parseObtainMethods(block)
       const effect = cleanOptionalField(firstFieldMatching(lines, /^Effects?:\s*(.*)$/i))
       const level = cleanOptionalField(firstField(lines, 'Level'))
       const rarity = cleanOptionalField(firstField(lines, 'Rarity'))
@@ -1834,12 +2101,13 @@ function parseDetailBlocks(
             (part): part is string => Boolean(part)
           ))
         : undefined
-      const notes =
+      const baseNotes =
         isPlayableClass && usesSupplementalSupport
           ? extractTrailingClassOtherInfo(blockWithLeadIn)
           : extractOtherInfo(isPlayableClass ? playableSupportBlock : block, {
               useLast: isPlayableClass && !usesSupplementalSupport,
             })
+      const notes = baseNotes
       const scopedNotes =
         isPlayableClass &&
         !supplementalHtml &&
@@ -1992,17 +2260,44 @@ function getParentheticalFamilyVariantName(
   return undefined
 }
 
-function applyAccessFlags(
-  methods: ObtainVariant[],
+function playableClassVariantName(
+  detail: ParsedDetail,
   listing: ListingEntry,
-  html: string
+  index: number
+): string | undefined {
+  if (
+    listing.subtype === 'class' &&
+    listing.classSubcategory === 'miscellaneous' &&
+    /^Nythera$/i.test(normalizeName(listing.name))
+  ) {
+    return index === 0 ? '(Base)' : '(Rare)'
+  }
+  return (
+    getParentheticalFamilyVariantName(detail.name, listing.name) ??
+    (normalizeName(detail.name)
+      .replace(new RegExp(`^${escapeRegex(normalizeName(listing.name))}\\s*`, 'i'), '')
+      .trim() || undefined)
+  )
+}
+
+function applyAccessFlags(
+  methods: ObtainVariant[]
 ): ObtainVariant[] {
-  const tags = classTagsFromDetail(listing, html)
-  const daRequired = tags.includes('da') || /\/tags\/DA\.(?:png|jpg|jpeg|gif)/i.test(html)
   return methods.map((method) => ({
     ...method,
-    daRequired,
-    dcRequired: method.dcRequired || tags.includes('dc') || method.priceType === 'dc',
+    // Access flags are method-scoped. A method can legitimately be DA+DC;
+    // only add DA here when this method's own text or tag block says so.
+    daRequired:
+      method.daRequired ||
+      /\b(?:D-Amulet|Dragon Amulet)\b/i.test(
+        [method.location, method.requiredItems, method.requirements].filter(Boolean).join(' ')
+      ),
+    dcRequired:
+      method.dcRequired ||
+      method.priceType === 'dc' ||
+      /\b(?:D-Coins?|Dragon Coins?)\b/i.test(
+        [method.location, method.price, method.requiredItems].filter(Boolean).join(' ')
+      ),
     dmRequired:
       method.dmRequired ||
       method.priceType === 'dm' ||
@@ -2013,7 +2308,7 @@ function applyAccessFlags(
 
 function detailToItem(detail: ParsedDetail, listing: ListingEntry, html: string): ClassAbilityItem {
   const tags = classTagsFromDetail(listing, html)
-  const obtainMethods = applyAccessFlags(detail.obtainMethods, listing, html)
+  const obtainMethods = applyAccessFlags(detail.obtainMethods)
   const resolvedTags = classAbilityTagsWithInferredFlags(tags, listing)
   const priceTypes = obtainMethods.map((method) => method.priceType)
   return {
@@ -2045,7 +2340,7 @@ function detailToItem(detail: ParsedDetail, listing: ListingEntry, html: string)
     attacks: detail.attacks,
     attackSets: detail.attackSets,
     mechanics: detail.mechanics,
-    dialogue: detail.dialogue,
+    dialogue: listing.subtype === 'class' && listing.classSubcategory !== 'armor' ? undefined : detail.dialogue,
     obtainMethods,
     level: detail.level,
     rarity: detail.rarity,
@@ -2115,16 +2410,12 @@ function detailsToEntry(details: ParsedDetail[], listing: ListingEntry, html: st
   }
 
   let variants: LevelVariant[] = normalizedDetails.map((detail, index) => {
-    const obtainMethods = applyAccessFlags(detail.obtainMethods, listing, html)
+    const obtainMethods = applyAccessFlags(detail.obtainMethods)
     return {
       levelNumber: index + 1,
       levelDisplay: detail.level ?? String(index + 1),
       actualLevel: detail.level ? Number.parseInt(detail.level, 10) : undefined,
-      variantName:
-        getParentheticalFamilyVariantName(detail.name, listing.name) ??
-        (normalizeName(detail.name)
-          .replace(new RegExp(`^${escapeRegex(normalizeName(listing.name))}\\s*`, 'i'), '')
-          .trim() || undefined),
+      variantName: playableClassVariantName(detail, listing, index),
       name: detail.name,
       damage: '—',
       stats: '—',
@@ -2148,7 +2439,7 @@ function detailsToEntry(details: ParsedDetail[], listing: ListingEntry, html: st
       attacks: detail.attacks,
       attackSets: detail.attackSets,
       mechanics: detail.mechanics,
-      dialogue: detail.dialogue,
+      dialogue: listing.subtype === 'class' && listing.classSubcategory !== 'armor' ? undefined : detail.dialogue,
       notes: detail.notes,
       classAbilitySubtype: listing.classSubcategory ?? detail.consumableKind ?? listing.consumableKind,
       retired: listing.retired || hasRetiredTag(html),
@@ -2943,6 +3234,23 @@ function isForumBoilerplateClassEntry(entry: ClassAbilityEntry): boolean {
   )
 }
 
+function isAccessOnlyTitleDuplicate(
+  entry: ClassAbilityEntry,
+  entries: ClassAbilityEntry[]
+): boolean {
+  const name = entryDisplayName(entry)
+  const baseName = name.replace(/\s+\((?:No DA Required|DA Required|DC Item)\)\s*$/i, '').trim()
+  if (baseName === name) return false
+  const entryUrl = directUrl(entry.forumUrl)
+  return entries.some(
+    (candidate) =>
+      candidate.slug !== entry.slug &&
+      normalizeName(entryDisplayName(candidate)).toLowerCase() ===
+        normalizeName(baseName).toLowerCase() &&
+      directUrl(candidate.forumUrl) === entryUrl
+  )
+}
+
 function resolveClassAbilityAlsoSeeSlugs(entries: ClassAbilityEntry[]): ClassAbilityEntry[] {
   const byUrl = new Map<string, ClassAbilityEntry>()
   for (const entry of entries) {
@@ -2988,7 +3296,9 @@ function resolveClassAbilityAlsoSeeSlugs(entries: ClassAbilityEntry[]): ClassAbi
 }
 
 function normalizeClassAbilityEntries(entries: ClassAbilityEntry[]): ClassAbilityEntry[] {
-  const contentEntries = entries.filter((entry) => !isForumBoilerplateClassEntry(entry))
+  const contentEntries = entries.filter(
+    (entry) => !isForumBoilerplateClassEntry(entry) && !isAccessOnlyTitleDuplicate(entry, entries)
+  )
   const normalized = normalizeGnomishPersonalSteamtankFamily(
     normalizeChickenCowArmorFamilies(
       mergeReforgedTimeArmorFamilies(
@@ -3102,7 +3412,9 @@ async function main() {
         options.subtype === 'class' &&
         options.classSubcategory !== undefined &&
         options.classSubcategory !== 'armor'
-      const postParts = isPlayableTarget
+      const targetTitle = extractForumPageTitle(await fetchForumPage(url, cookie)) ?? 'Targeted Class'
+      const singlePostOnly = isPlayableTarget && isSinglePostOnlyPlayableClass(targetTitle)
+      const postParts = isPlayableTarget && !singlePostOnly
         ? await fetchDetailPostParts(url, cookie)
         : { primary: await fetchDetailPostContent(url, cookie), followups: [] }
       const html = postParts.primary
@@ -3153,7 +3465,8 @@ async function main() {
     const isPlayableClass =
       listing.subtype === 'class' &&
       (listing.classSubcategory === 'regular' || listing.classSubcategory === 'miscellaneous')
-    const postParts = isPlayableClass
+    const singlePostOnly = isPlayableClass && isSinglePostOnlyPlayableClass(listing.name)
+    const postParts = isPlayableClass && !singlePostOnly
       ? await fetchDetailPostParts(listing.forumUrl, cookie)
       : { primary: await fetchDetailPostContent(listing.forumUrl, cookie), followups: [] }
     const html = postParts.primary

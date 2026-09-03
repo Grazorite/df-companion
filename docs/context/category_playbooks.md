@@ -238,8 +238,26 @@ Accessory cross-post promotion is intentionally narrower than pets/guests and we
 capes/wings may promote automatically from explicit `Also See` plus title/content evidence; other
 subtypes use scoped special-family rules until more examples are vetted. Current non-helm/cape
 special consolidations include `Orion's Belt` (`(Base)`, `Planetary`, `Solar`, `Comet`,
-`Interstellar`, `Galactic`, `Universal`) and `Mazurek's Emerald Ring` (`Pinky`, `(Base)`, `Middle`,
-`Pointer`, `Thumb`), both ordered by level.
+`Interstellar`, `Galactic`, `Universal`), `Necro U Sash` (`Alumni`, `Salutorian`,
+`Valedictorian`), `Mazurek's Emerald Ring` (`Pinky`, `(Base)`, `Middle`, `Pointer`, `Thumb`),
+`Hunter's Wrap`, `Soulthread Loop`, `Star Captain's Belt`, `Bloodstone Ring`, `Moonstone Ring`,
+`Ancient Ring`, `Ring of the Emperor`, `Bear Tooth Necklace`, `Wild Necklace`, and
+`Thursday's Necklace`, all ordered by level when the source has a clear level progression.
+Additional reviewed helm/cape examples include `Drakonnan's Helm`, `Skullhelm`,
+`Gnome Wig`, `Goggle Wig`, `Eyeball Helm`, `Custom HarleQuape (2010)`, `Astral Avenger`,
+`Half Dread Wings`, `Thursday's Cape`, and `Wings of The Flames`.
+
+Future accessory consolidation candidates may extend the `Necro U Sash` pattern only after review:
+the entries must be singular items, share the same obtain fingerprint, have closely related names and
+descriptions, already be connected by explicit or inferred Also See logic, and segment into clear
+variant labels. Do not consolidate loose name gradients where the variant names are awkward or
+inconsistent, such as `Star Ring` / `Starry Ring` / `Starlight Ring`, or partially irregular series
+such as `Seal Ring` where late entries do not follow the same naming grammar. Never merge an existing
+itemfamily into a broader family during this pass. Preserve possessives in variant names when they
+are part of the differentiator, such as `Skullhelm` variants `Klatu's`, `Baradaa's`, and `Nickto's`.
+Pets/Guests, Weapons, Housing, and Artifacts are intentionally excluded from this reviewed
+singular-sibling pass. Reviewed-but-not-consolidated sibling groups should still receive mutual Also
+See links; `Star Ring` and the `Seal Ring` singles are the reference cases.
 
 Do not promote related accessory siblings into a single itemfamily when they represent different
 equipment forms, have different primary images, or are already consolidated itemfamilies. In those
@@ -526,9 +544,9 @@ attack set.
 
 Regular/Miscellaneous class `Default Weapon` forum links are converted into app-route links through
 `src/data/class-default-weapon-relations.json`. The class detail page links the default weapon when a
-matching weapon source exists, and weapon detail pages render the reverse `Default Weapon For` class
-links from the same relation index. Missing weapon matches stay as plain text rather than broken
-links.
+matching weapon source exists, and weapon detail pages use the same relation index to hotlink the
+class name inline inside the default weapon's How to Obtain text. Missing weapon matches stay as
+plain text rather than broken links.
 
 `Armors` are obtainable inventory items, not the playable class encyclopedia pages themselves. An
 armor entry should parse and display `Equips Class: <class>` from the forum detail page, with the
@@ -623,7 +641,11 @@ families may claim legacy/source slugs as aliases; if a stale or duplicate prima
 already claimed by another entry's `aliasSlugs`, drop the stale primary during scraper normalization.
 Regular and Miscellaneous class-page parsing share the Classes A-Z listing with Armors, but use
 separate subcategory-aware slugs such as `class-ability-ancient-exosuit-regular` so playable class
-pages do not collide with armor entries of the same name. Playable class detail fetches parse the
+pages do not collide with armor entries of the same name. Some playable classes are legitimately
+listed in both Regular and Miscellaneous with the same forum source, such as `Zardbie`, `Angler`,
+`ChickencowLord`, and `|`; the app loader dedupes those by source URL, preserves both
+`classSubcategories`, and keeps the duplicate slug as an alias so both filters and stale routes still
+resolve to one card. Playable class detail fetches parse the
 linked reply plus later replies from the same class thread; later replies are only structured as
 alternate attack views when they contain an explicit `Artifact:` heading. Regular/Miscellaneous class
 details should follow the guest-style presentation, not the armor
@@ -634,7 +656,8 @@ Consumable/Armor `Effect` card. The Armor sub-subtype keeps its separate armor m
 no-main-image behavior. Status tags come
 from forum tag images when present; the Classes A-Z listings also use text parentheticals such as
 `S-Offer`, which should be treated as the row-level fallback for `Special Offer`. Miscellaneous
-classes tagged with Alexander/Archknight tag images expose the `Special Character` filter.
+classes tagged with the `AlexanderSaga.jpg` or `Archknight.png` tag images expose the
+`Special Character` filter.
 Forum navigation chrome such as `Logged in as: Guest`, breadcrumbs, `Printable Version`, and
 `Forum Login` must never become a class card title or description; reject those rows at scrape time
 and filter stale rows during normalization.
@@ -645,19 +668,36 @@ reply. It also handles same-thread non-artifact follow-up posts that are additio
 variants, such as `Edd Disguise (Complex Skills)` and `Edd Disguise (Simple Skills)`, while still
 using the final non-skill support post for shared images and notes. It treats textual `* * *` skill
 separators like horizontal rules and can infer attack image captions from same-line prefixes such as
-`Original: Appearance` or `DragonKeeper: Appearance 1 / 1.1`; those consumed appearance-label lines
-must not remain in attack notes or global Other Information. Class main/alt image extraction should
-preserve forum order and prioritize explicit forum captions (`Modern`, `Retro`, `Original`, etc.)
-over generic main/alt labels. When a class page also contains linked weapon or skill appearance
-images inside notes, prefer explicit class-gallery captions such as `Armor Set Appearance`, then the
-URL family that matches the class name, then document order. Be path-aware when filtering forum UI
-images: raw GitHub URLs include `githubusercontent`, which must not be rejected just because the
-hostname contains the substring `icon`. Paired duplicate image captions under one heading may be
-disambiguated as `(Male)` / `(Female)` when the forum provides two images without separate labels.
+`Original: Appearance`, `DragonKeeper: Appearance 1 / 1.1`, or grouped SoulWeaver-style labels like
+`Original / Color Custom / ... / Delta: Appearance 1 / 1.1`. Prefixes may contain digits,
+apostrophes, parentheses, slashes, and hyphens, and the same image URL may legitimately appear under
+multiple captions. Those consumed appearance-label lines must not remain in attack notes or global
+Other Information. Class main/alt image extraction should preserve forum order and prioritize
+explicit forum captions (`Modern`, `Retro`, `Original`, etc.) over generic main/alt labels. When a
+class page also contains linked weapon or skill appearance images inside notes, prefer explicit
+class-gallery captions such as `Armor Set Appearance`, then the URL family that matches the class
+name, then explicitly captioned gallery links such as `Alternative Image`, then document order. Do
+not discard an explicit `Alternative Image` only because its URL does not include the class name;
+`Nythera` and `Kid Nythera` are reference cases. Be path-aware when filtering forum UI images: raw GitHub URLs include
+`githubusercontent`, which must not be rejected just because the hostname contains the substring
+`icon`. Paired duplicate image captions under one heading may be disambiguated as `(Male)` /
+`(Female)` when the forum provides two images without separate labels.
+Class stats may appear either as underlined sections (`Offense`, `Defense`, `Resistances`) or compact
+single-line sections such as `Defenses: Melee: 5, ...`; parse both forms into guest-style stat cards.
+Playable class pages should not use the Consumables dialogue extractor; compact stat/meta lines
+between fields must not render as `Dialogue`. `Nythera` is a special Miscellaneous class family whose
+two forum posts have no useful level/variant names. Label the selector/table variants `(Base)` and
+`(Rare)` instead of `1` and `Scaled`.
 Class attack requirements are scraped and displayed like guest attack requirements; redundant
 `Dragon Amulet` requirements are omitted because DA is already represented by tags/pills. Multiple
 inline `(Pop-up: ...)` snippets in one class skill effect render as one shared `Pop-ups:` quote block
 through the common popup renderer.
+Class obtain methods may use the label `Level/Quest/Items required:` instead of `Requirements:`;
+parse it into the method requirements and drop only redundant Dragon Amulet text. Page-level DA/DC/DM
+tags can make the class entry filterable, but obtain-card access pills must be scoped to the
+individual obtain method's own tag block, price, required items, requirements, or D-Amulet/D-Coins
+text. Do not copy a whole-page DA or DC tag onto every method; `Ascended Chickencow` is the
+reference case where the first method is DA-only and the second method is DC-only.
 Class mechanics are separate from both attacks and Other Information. Widget sections detected from
 captions such as `Chaosweaver's widget displaying Soulthreads.` or `Ranger's widget displaying
 Focus.` become `mechanics` blocks with their image and explanatory notes. Artifact replies can also
@@ -668,15 +708,30 @@ already rendered above Class Mechanics, suppress a matching mechanics block titl
 does not appear twice. If the forum text exposes a widget caption but the image link is not captured,
 the scraper may use the standard DF-Pedia `<ClassName>-Widget.png` fallback; `Pirate-Widget.png` is
 the reference case.
+Attack appearance captions are not always numeric. Some class pages use hotlinked labels such as
+`Appearance (Charging)`, `Appearance (Attacking)`, `Appearance (Kick)`, or typoed `Apperance (Hit)`;
+normalize these to the short captions (`Charging`, `Attacking`, `Kick`, `Hit`) and omit the word
+`Appearance` from display.
 Artifact replies with a final horizontal-rule-separated `Other information` section attach those
 notes to the selected artifact attack set, and the detail page appends them to the normal Other
 Information when that artifact view is active.
-Remaining missing-image spot
-checks after the first full Regular/Miscellaneous scrape:
-`Alexander`, `Ancient Shadow Rogue`, `Ascendant`, `Cryptic`, `Dread Pirate`, `Dreaming Togslayer`,
-`Icebound Revenant`, `Knight Lite`, `Nythera`, `Riftwalker`, `Shadow Rogue`, and `Unbread`. `Pirate`
-and `Edd Disguise` were targeted-refreshed after parser fixes and no longer belong on the
-missing-image list. Low/no-attack miscellaneous pages `Angler`, `DOOOOOOOOM`,
+Artifact replies that do not contain real playable skill blocks, such as Shadowheart Bracer on the
+Ancient Shadow classes, should still create artifact selector options when they contain meaningful
+notes or mechanics. Selecting that option shows the artifact-specific notes/mechanics and simply
+omits the attacks accordion.
+`ChronoZ` is a Regular-class single-post exception: scrape only the first forum post because later
+posts document highly specific combo listings that should not become variants, levels, or artifact
+attack sets. Its `CZ-Widget.gif` image belongs only to Class Mechanics and must not appear as a
+`Main` class-gallery image.
+Future Classes / Abilities work may add a dedicated renderer for extra images embedded in Other
+Information, such as class-specific weapon appearance examples for each element on Master
+SoulWeaver. Keep those images separate from the main/alt class gallery and from attack images.
+After the 2026-09-01 targeted refresh, Regular and Miscellaneous class entries have no missing
+main/shared image fields. `Icebound Revenant` and `Dreaming Togslayer` use explicit Male/Female image
+fallbacks because the forum layout exposes paired portraits in a way the generic gallery inference
+cannot always recover. Final-gallery class images that appear after the last skill, such as
+`Shadow Rogue`, must still be parsed even though they sit inside the broad skill-region bounds.
+Low/no-attack miscellaneous pages `Angler`, `DOOOOOOOOM`,
 `Kid Artix`, `Kid Raven`, `Shadow Hunter`, `Sleepy Hero`, `VIP`, and `Young Vilmor` were
 forum-verified by the user on 2026-08-30 and should not be treated as parser failures solely because
 of low attack counts.

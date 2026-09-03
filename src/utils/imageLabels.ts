@@ -69,6 +69,15 @@ export function inferImageCaptionFromUrl(url: string): string | undefined {
     return genderSuffix.toLowerCase() === 'female' ? 'Female' : 'Male'
   }
 
+  const hornSuffix = stem.match(/(?:-|_)(Orange|Red|No)(?:Horn)$/i)?.[1]
+  if (hornSuffix) return `Horn (${hornSuffix.toLowerCase() === 'no' ? 'No Color' : hornSuffix})`
+
+  const partColorMatch = stem.match(/(?:-|_)(Pack|Wings)(?:-|_)(Cyan|Orange|Red|NoColor)$/i)
+  if (partColorMatch) {
+    const [, part, color] = partColorMatch
+    return `${part} (${color === 'NoColor' ? 'No Color' : color})`
+  }
+
   const suffix = stem.match(/-([^-]+)$/)?.[1]
   if (!suffix || /^\d+$/.test(suffix)) return undefined
 

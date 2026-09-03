@@ -626,6 +626,9 @@ function parseNotes(html: string): string | undefined {
       if (/\w+\s+--\s+\d+\/\d+\/\d+\s+\d+:\d+:\d+/.test(trimmed)) continue
       if (/^[\s/|\\-]+$/.test(trimmed)) continue
       if (isImageCaptionNoiseLine(trimmed, imageCaptionNoise)) continue
+      if (/^[A-Z][A-Za-z\s-]+ Appearances?:\s+[^.?!]+(?:\s+\/\s+[^.?!]+)+$/i.test(trimmed)) {
+        continue
+      }
       if (
         /^(?:clicked appearance|alternative image|alt(?:ernative)? appearance|appearance(?:\s+\d.*)?|2nd appearance|default|patience\s*\/\s*bulwark|rage\s*\/\s*wrath)$/i.test(
           trimmed

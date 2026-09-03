@@ -99,7 +99,7 @@
         "price": "N/A",
         "priceType": "free",
         "daRequired": false,
-        "dcRequired": true,
+        "dcRequired": false,
         "dmRequired": false
       },
       {
@@ -107,8 +107,8 @@
         "price": "N/A",
         "priceType": "free",
         "daRequired": false,
-        "requirements": "Armor in inventory or bank",
         "dcRequired": true,
+        "requirements": "Armor in inventory or bank",
         "dmRequired": false
       }
     ],
@@ -141,13 +141,34 @@
     "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=19876823",
     "location": "Playing as Alexander in Swordhaven Past",
     "price": "N/A",
+    "requiredItems": "Unlock Special Character Slot in Burnt House, Dragon Amulet",
     "effect": "Summons an ice-like structure that stretches out, then strikes all enemies for 1 hit of 100% damage each",
     "defaultWeapon": "Ice Mage Staff",
     "defaultWeaponUrl": "https://forums2.battleon.com/f/fb.asp?m=19876791",
     "guestStats": {
       "damageType": "Pierce",
-      "element": "As weapon"
+      "element": "As weapon",
+      "offense": {
+        "boost": "0%",
+        "bonus": "0",
+        "crit": "5"
+      },
+      "defense": {
+        "melee": "5",
+        "pierce": "5",
+        "magic": "5",
+        "block": "0",
+        "parry": "0",
+        "dodge": "0"
+      }
     },
+    "imageUrl": "https://i.imgur.com/Ge6OyrY.png",
+    "alternativeImages": [
+      {
+        "url": "https://i.imgur.com/Ge6OyrY.png",
+        "caption": "Main"
+      }
+    ],
     "attacks": [
       {
         "name": "MultiShot",
@@ -219,8 +240,9 @@
       {
         "location": "Playing as Alexander in Swordhaven Past",
         "price": "N/A",
-        "priceType": "free",
+        "priceType": "merge",
         "daRequired": true,
+        "requiredItems": "Unlock Special Character Slot in Burnt House, Dragon Amulet",
         "dcRequired": false,
         "dmRequired": false
       }
@@ -234,8 +256,8 @@
     "daRequired": true,
     "dcRequired": false,
     "dmRequired": false,
-    "hasFree": true,
-    "hasMerge": false,
+    "hasFree": false,
+    "hasMerge": true,
     "isTemp": false,
     "isRare": false,
     "isSeasonal": false,
@@ -1018,11 +1040,25 @@
     "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=19925384",
     "location": "A New Beginning, Playing as Ash in ArchKnight Falconreach",
     "price": "N/A",
+    "requiredItems": "Unlock Special Character Slot via Ash in Falconreach (Books 1 and 2), Dragon Amulet",
     "effect": "One hit of 100% weapon damage; -10 Boost to enemy for 2 turns",
     "defaultWeapon": "Longsword",
     "defaultWeaponUrl": "https://forums2.battleon.com/f/fb.asp?m=22366822",
     "guestStats": {
       "element": "As weapon",
+      "offense": {
+        "boost": "0%",
+        "bonus": "0",
+        "crit": "5"
+      },
+      "defense": {
+        "melee": "5",
+        "pierce": "5",
+        "magic": "5",
+        "block": "0",
+        "parry": "0",
+        "dodge": "0"
+      },
       "resistances": {
         "Light": "5",
         "Darkness": "5"
@@ -1115,8 +1151,9 @@
       {
         "location": "A New Beginning, Playing as Ash in ArchKnight Falconreach",
         "price": "N/A",
-        "priceType": "free",
+        "priceType": "merge",
         "daRequired": true,
+        "requiredItems": "Unlock Special Character Slot via Ash in Falconreach (Books 1 and 2), Dragon Amulet",
         "dcRequired": false,
         "dmRequired": false
       }
@@ -1144,8 +1181,8 @@
     "daRequired": true,
     "dcRequired": false,
     "dmRequired": false,
-    "hasFree": true,
-    "hasMerge": false,
+    "hasFree": false,
+    "hasMerge": true,
     "isTemp": false,
     "isRare": false,
     "isSeasonal": false,
@@ -1458,6 +1495,10 @@
       {
         "url": "https://i.imgur.com/jUffR2e.png",
         "caption": "Female"
+      },
+      {
+        "url": "https://i.imgur.com/W0nehPt.png",
+        "caption": "Original Appearance (Male)"
       }
     ],
     "attacks": [
@@ -1590,7 +1631,7 @@
         "priceType": "free",
         "daRequired": false,
         "requirements": "Armor in inventory or bank",
-        "dcRequired": true,
+        "dcRequired": false,
         "dmRequired": false
       },
       {
@@ -1598,8 +1639,8 @@
         "price": "N/A",
         "priceType": "free",
         "daRequired": false,
-        "requirements": "Armor in inventory or bank",
         "dcRequired": true,
+        "requirements": "Armor in inventory or bank",
         "dmRequired": false
       },
       {
@@ -1608,7 +1649,7 @@
         "priceType": "free",
         "daRequired": false,
         "requirements": "Give The Perfect Slice of Bacon to Arester",
-        "dcRequired": true,
+        "dcRequired": false,
         "dmRequired": false
       }
     ],
@@ -2041,7 +2082,20 @@
     "defaultWeapon": "DOOOOOM",
     "defaultWeaponUrl": "https://forums2.battleon.com/f/fb.asp?m=21952592",
     "guestStats": {
-      "element": "As weapon"
+      "element": "As weapon",
+      "offense": {
+        "boost": "0%",
+        "bonus": "0",
+        "crit": "2"
+      },
+      "defense": {
+        "melee": "5",
+        "pierce": "5",
+        "magic": "5",
+        "block": "5",
+        "parry": "5",
+        "dodge": "5"
+      }
     },
     "imageUrl": "http://i.imgur.com/Rgnny1u.png",
     "alternativeImages": [
@@ -2194,7 +2248,15 @@
         "damageType": "As weapon",
         "element": "As dragon",
         "buttonImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/DR-Button03-Siphon.png",
-        "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/DR-Siphon.png",
+        "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/DR-Button03-Siphon-Old.png",
+        "appearanceUrls": [
+          "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/DR-Button03-Siphon-Old.png",
+          "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/DR-Siphon.png"
+        ],
+        "appearanceCaptions": [
+          "old",
+          "Appearance"
+        ],
         "notes": "• Skill icon was modified on  November 24th, 2023, replacing its  old appearance."
       },
       {
@@ -2349,7 +2411,32 @@
         "cooldown": "5",
         "damageType": "As weapon",
         "element": "As dragon",
-        "buttonImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/DR-Button15-PRIMAL.png"
+        "buttonImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/DR-Button15-PRIMAL.png",
+        "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/DR-Primal-Bacon.png",
+        "appearanceUrls": [
+          "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/DR-Primal-Bacon.png",
+          "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/DR-Primal-Darkness.png",
+          "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/DR-Primal-Energy.png",
+          "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/DR-Primal-Fire.png",
+          "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/DR-Primal-Ice.png",
+          "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/DR-Primal-Light.png",
+          "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/DR-Primal-Nature.png",
+          "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/DR-Primal-Stone.png",
+          "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/DR-Primal-Water.png",
+          "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/DR-Primal-Wind.png"
+        ],
+        "appearanceCaptions": [
+          "Bacon",
+          "Darkness",
+          "Energy",
+          "Fire",
+          "Ice",
+          "Light",
+          "Nature",
+          "Stone",
+          "Water",
+          "Wind"
+        ]
       }
     ],
     "obtainMethods": [
@@ -2556,6 +2643,13 @@
         "dodge": "0"
       }
     },
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/DreadPirate-Retired.png",
+    "alternativeImages": [
+      {
+        "url": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/DreadPirate-Retired.png",
+        "caption": "Main"
+      }
+    ],
     "attacks": [
       {
         "name": "You Killed My Father!",
@@ -2566,6 +2660,7 @@
         "cooldown": "9",
         "damageType": "As weapon",
         "element": "As weapon",
+        "buttonImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/DPirate-Button01-Fury.png",
         "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/DPirate-YouKilledMyLooseChange1.0.png",
         "appearanceUrls": [
           "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/DPirate-YouKilledMyLooseChange1.0.png",
@@ -2585,6 +2680,7 @@
         "cooldown": "8",
         "damageType": "N/A",
         "element": "N/A",
+        "buttonImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/DPirate-Button02-Iocane.png",
         "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/DPirate-IocaneDrink1.0.png",
         "appearanceUrls": [
           "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/DPirate-IocaneDrink1.0.png",
@@ -2604,6 +2700,7 @@
         "cooldown": "5",
         "damageType": "As weapon",
         "element": "As weapon",
+        "buttonImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/DPirate-Button03-Wing.png",
         "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/DPirate-WingBeawer1.0.png",
         "appearanceUrls": [
           "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/DPirate-WingBeawer1.0.png",
@@ -2623,6 +2720,7 @@
         "cooldown": "15",
         "damageType": "As weapon",
         "element": "As weapon",
+        "buttonImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/DPirate-Button04-Brutes.png",
         "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/DPirate-CalltheBruteGroup1.0.png",
         "appearanceUrls": [
           "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/DPirate-CalltheBruteGroup1.0.png",
@@ -2644,6 +2742,7 @@
         "cooldown": "1",
         "damageType": "As weapon",
         "element": "As weapon",
+        "buttonImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/DPirate-Button05-Quick.png",
         "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/DPirate-Pistol.png"
       },
       {
@@ -2655,6 +2754,7 @@
         "cooldown": "12",
         "damageType": "As weapon",
         "element": "As weapon",
+        "buttonImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/DPirate-Button06-Ankles.png",
         "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/DPirate-BelowtheAnkles1.0.png",
         "appearanceUrls": [
           "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/DPirate-BelowtheAnkles1.0.png",
@@ -2674,6 +2774,7 @@
         "cooldown": "5",
         "damageType": "N/A",
         "element": "N/A",
+        "buttonImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/DPirate-Button07-Dread.png",
         "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/DPirate-TheRealDread.png"
       },
       {
@@ -2695,6 +2796,7 @@
         "cooldown": "8",
         "damageType": "N/A",
         "element": "N/A",
+        "buttonImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/DPirate-Button08-Smarts.png",
         "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/DPirate-SicilianSmarts.png"
       },
       {
@@ -2706,6 +2808,7 @@
         "cooldown": "7",
         "damageType": "As weapon",
         "element": "As weapon",
+        "buttonImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/DPirate-Button09-Left.png",
         "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/DPirate-NotLeftHanded1.0.png",
         "appearanceUrls": [
           "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/DPirate-NotLeftHanded1.0.png",
@@ -2725,6 +2828,7 @@
         "cooldown": "7",
         "damageType": "As weapon",
         "element": "As weapon",
+        "buttonImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/DPirate-Button10-Decent.png",
         "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/DPirate-Attack.png"
       },
       {
@@ -2736,6 +2840,7 @@
         "cooldown": "6",
         "damageType": "As weapon",
         "element": "As weapon",
+        "buttonImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/DPirate-Button11-Mostly.png",
         "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/DPirate-Pistol.png"
       },
       {
@@ -2747,6 +2852,7 @@
         "cooldown": "1",
         "damageType": "As weapon",
         "element": "As weapon",
+        "buttonImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/DPirate-Button12-Repel.png",
         "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/DPirate-Pistol.png"
       },
       {
@@ -2758,6 +2864,7 @@
         "cooldown": "16",
         "damageType": "As weapon",
         "element": "As weapon",
+        "buttonImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/DPirate-Button13-Cannon.png",
         "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/DPirate-GiantCannon.png"
       },
       {
@@ -2769,6 +2876,7 @@
         "cooldown": "15",
         "damageType": "As weapon",
         "element": "As weapon",
+        "buttonImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/DPirate-Button14-Change.png",
         "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/DPirate-YouKilledMyLooseChange1.0.png",
         "appearanceUrls": [
           "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/DPirate-YouKilledMyLooseChange1.0.png",
@@ -2786,8 +2894,8 @@
         "price": "N/A",
         "priceType": "free",
         "daRequired": true,
-        "requirements": "Pirate; Ninja unlocked",
         "dcRequired": true,
+        "requirements": "Pirate; Ninja unlocked",
         "dmRequired": false
       }
     ],
@@ -4299,7 +4407,15 @@
         "damageType": "As weapon",
         "element": "As weapon",
         "buttonImageUrl": "https://i.imgur.com/qKSUUQp.jpg",
-        "appearanceUrl": "https://i.imgur.com/YcAN8WU.jpg"
+        "appearanceUrl": "https://i.imgur.com/aOh8lnQ.png",
+        "appearanceUrls": [
+          "https://i.imgur.com/aOh8lnQ.png",
+          "https://i.imgur.com/YcAN8WU.jpg"
+        ],
+        "appearanceCaptions": [
+          "Your spirit is calmed and focused.",
+          "Appearance"
+        ]
       }
     ],
     "attackSets": [
@@ -4568,7 +4684,16 @@
         "cooldown": "1",
         "damageType": "As weapon",
         "element": "As weapon",
-        "buttonImageUrl": "http://i.imgur.com/FINpPMI.png"
+        "buttonImageUrl": "http://i.imgur.com/FINpPMI.png",
+        "appearanceUrl": "http://i.imgur.com/NjAqwYz.png",
+        "appearanceUrls": [
+          "http://i.imgur.com/NjAqwYz.png",
+          "http://i.imgur.com/qV28zQz.png"
+        ],
+        "appearanceCaptions": [
+          "First Hit",
+          "Second Hit"
+        ]
       },
       {
         "name": "Mana Burst! (Mage)",
@@ -5065,6 +5190,10 @@
       {
         "url": "http://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/KidNythera.png",
         "caption": "Main"
+      },
+      {
+        "url": "http://i.imgur.com/7dYwR9O.png",
+        "caption": "Alternative Image"
       }
     ],
     "attacks": [
@@ -5264,17 +5393,38 @@
     "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=17308958",
     "location": "The End?",
     "price": "N/A",
+    "requiredItems": "Dragon Amulet",
     "effect": "One hit of 100% Weapon Damage. Converts Melee and Pierce to Magic",
     "defaultWeapon": "Longsword",
     "defaultWeaponUrl": "https://forums2.battleon.com/f/fb.asp?m=22366823",
     "guestStats": {
       "damageType": "Magic",
       "element": "Fire",
+      "offense": {
+        "boost": "0%",
+        "bonus": "0",
+        "crit": "5"
+      },
+      "defense": {
+        "melee": "6",
+        "pierce": "6",
+        "magic": "6",
+        "block": "0",
+        "parry": "0",
+        "dodge": "0"
+      },
       "resistances": {
         "Light": "5",
         "Darkness": "5"
       }
     },
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/KnightLite.png",
+    "alternativeImages": [
+      {
+        "url": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/KnightLite.png",
+        "caption": "Main"
+      }
+    ],
     "attacks": [
       {
         "name": "BBQ",
@@ -5403,7 +5553,15 @@
         "damageType": "Pierce",
         "element": "As weapon",
         "buttonImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/KnightLite_DestinyStrike.png",
-        "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/KnightLite_DestinyStrike_Cast.png"
+        "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/KnightLite_DestinyStrike_Cast.png",
+        "appearanceUrls": [
+          "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/KnightLite_DestinyStrike_Cast.png",
+          "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/KnightLite_DestinyStrike_CastOld.png"
+        ],
+        "appearanceCaptions": [
+          "Appearance",
+          "Old"
+        ]
       },
       {
         "name": "BurstArc",
@@ -5453,8 +5611,9 @@
       {
         "location": "The End?",
         "price": "N/A",
-        "priceType": "free",
+        "priceType": "merge",
         "daRequired": true,
+        "requiredItems": "Dragon Amulet",
         "dcRequired": false,
         "dmRequired": false
       }
@@ -5482,8 +5641,8 @@
     "daRequired": true,
     "dcRequired": false,
     "dmRequired": false,
-    "hasFree": true,
-    "hasMerge": false,
+    "hasFree": false,
+    "hasMerge": true,
     "isTemp": true,
     "isRare": false,
     "isSeasonal": false,
@@ -5835,12 +5994,8 @@
         "crit": "0%"
       }
     },
-    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/MasterSoulWeaver-Original.png",
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/MasterSoulWeaver-Arcanist.png",
     "alternativeImages": [
-      {
-        "url": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/MasterSoulWeaver-Original.png",
-        "caption": "Original"
-      },
       {
         "url": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/MasterSoulWeaver-Arcanist.png",
         "caption": "Arcanist"
@@ -5885,14 +6040,16 @@
         "appearanceUrls": [
           "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/MSW-SoulSeal1.0.-Original.png",
           "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/MSW-SoulSeal1.1.png",
-          "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/MSW-SoulSeal1.0-DeltaStar.png"
+          "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/MSW-SoulSeal1.0-DeltaStar.png",
+          "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/MSW-SoulSeal1.1.png"
         ],
         "appearanceCaptions": [
-          "Delta 1",
-          "Delta 1.1",
-          "DeltaStar 1"
+          "Original / Arcanist / Arcanist (Cloaked) / Delta 1",
+          "Original / Arcanist / Arcanist (Cloaked) / Delta 1.1",
+          "DeltaStar 1",
+          "DeltaStar 1.1"
         ],
-        "notes": "• Selecting certain Arms  Armor Customization modifies the skill's appearance.\n Original  / Arcanist / Arcanist (Cloaked) / Delta:  Appearance 1 /  1.1"
+        "notes": "• Selecting certain Arms  Armor Customization modifies the skill's appearance."
       },
       {
         "name": "Soul Lock",
@@ -5987,7 +6144,15 @@
         "damageType": "N/A",
         "element": "N/A",
         "buttonImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/MSW-Button09-Purge.png",
-        "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/MSW-MediationPurge.png",
+        "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/MSW-Button09-Purge-Old.png",
+        "appearanceUrls": [
+          "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/MSW-Button09-Purge-Old.png",
+          "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/MSW-MediationPurge.png"
+        ],
+        "appearanceCaptions": [
+          "old",
+          "Appearance"
+        ],
         "notes": "• Skill button was updated on  November 24th, 2023, replacing its  old appearance."
       },
       {
@@ -6105,159 +6270,325 @@
   },
   {
     "id": "class-ability-nythera-miscellaneous",
-    "name": "Nythera",
+    "familyName": "Nythera",
     "slug": "class-ability-nythera-miscellaneous",
+    "aliasSlugs": [],
     "type": "class-ability",
     "subtype": "class",
     "classSubcategory": "miscellaneous",
-    "description": "",
     "forumUrl": "https://forums2.battleon.com/f/fb.asp?m=19999353",
-    "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=19999353",
-    "location": "The Final Showdown",
-    "price": "N/A",
-    "effect": "Nythera tosses Warlic's staff and a purple laser comes from underground towards the enemy for two hits of 100% Wind damage",
-    "defaultWeapon": "Stolen Staff",
-    "defaultWeaponUrl": "https://forums2.battleon.com/f/fb.asp?m=15469151",
-    "guestStats": {
-      "element": "Wind",
-      "offense": {
-        "boost": "0%",
-        "bonus": "0",
-        "crit": "5"
+    "familyOrigin": "single-thread",
+    "familySources": [
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=19999353",
+        "title": "Nythera"
       },
-      "damageMultipliers": {
-        "nonCrit": "100%",
-        "dex": "100%",
-        "dot": "100%",
-        "crit": "100%"
-      },
-      "defense": {
-        "melee": "5",
-        "pierce": "5",
-        "magic": "5",
-        "block": "0",
-        "parry": "0",
-        "dodge": "0"
-      },
-      "damageReduction": {
-        "nonCrit": "0%",
-        "dot": "0%",
-        "crit": "0%"
-      },
-      "resistances": {
-        "Darkness": "5"
+      {
+        "url": "https://forums2.battleon.com/f/fb.asp?m=22065703",
+        "title": "Nythera"
       }
+    ],
+    "shared": {
+      "description": "",
+      "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/Nythera.png",
+      "alternativeImages": [
+        {
+          "url": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/Nythera.png",
+          "caption": "Main"
+        },
+        {
+          "url": "http://i.imgur.com/2yIIwkB.jpg",
+          "caption": "Alternative Image"
+        }
+      ],
+      "defaultWeapon": "Stolen Staff",
+      "defaultWeaponUrl": "https://forums2.battleon.com/f/fb.asp?m=15469151",
+      "alsoSee": []
     },
-    "attacks": [
+    "levelVariants": [
       {
-        "name": "Hurricane",
-        "description": "Helms, It has him.",
-        "effect": "Nythera tosses Warlic's staff and a purple laser comes from underground towards the enemy for two hits of 100% Wind damage",
-        "manaCost": "-450",
-        "cooldown": "0",
-        "damageType": "As weapon",
-        "element": "Wind",
-        "buttonImageUrl": "http://i.imgur.com/1NerM1H.png",
-        "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/Nythera_Hurricane_Cast.png"
+        "levelNumber": 1,
+        "levelDisplay": "1",
+        "variantName": "(Base)",
+        "name": "Nythera",
+        "damage": "—",
+        "stats": "—",
+        "obtainVariants": [
+          {
+            "location": "The Final Showdown",
+            "price": "N/A",
+            "priceType": "free",
+            "daRequired": false,
+            "dcRequired": false,
+            "dmRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=19999353",
+        "description": "",
+        "guestStats": {
+          "element": "Wind",
+          "offense": {
+            "boost": "0%",
+            "bonus": "0",
+            "crit": "5"
+          },
+          "damageMultipliers": {
+            "nonCrit": "100%",
+            "dex": "100%",
+            "dot": "100%",
+            "crit": "100%"
+          },
+          "defense": {
+            "melee": "5",
+            "pierce": "5",
+            "magic": "5",
+            "block": "0",
+            "parry": "0",
+            "dodge": "0"
+          },
+          "damageReduction": {
+            "nonCrit": "0%",
+            "dot": "0%",
+            "crit": "0%"
+          },
+          "resistances": {
+            "Darkness": "5"
+          }
+        },
+        "attacks": [
+          {
+            "name": "Hurricane",
+            "description": "Helms, It has him.",
+            "effect": "Nythera tosses Warlic's staff and a purple laser comes from underground towards the enemy for two hits of 100% Wind damage",
+            "manaCost": "-450",
+            "cooldown": "0",
+            "damageType": "As weapon",
+            "element": "Wind",
+            "buttonImageUrl": "http://i.imgur.com/1NerM1H.png",
+            "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/Nythera_Hurricane_Cast.png"
+          },
+          {
+            "name": "IceShot",
+            "description": "A shot of icy pain.",
+            "effect": "Nythera tosses Warlic's staff and a purple laser comes from underground towards the enemy for two hits of 100% Ice damage",
+            "manaCost": "-400",
+            "cooldown": "0",
+            "damageType": "As weapon",
+            "element": "Ice",
+            "buttonImageUrl": "http://i.imgur.com/xjzH2Sr.png",
+            "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/Nythera_IceShot_Cast.png"
+          },
+          {
+            "name": "Earth Beam",
+            "description": "Blast the enemy. With earth.",
+            "effect": "Nythera tosses Warlic's staff and a purple laser comes from underground towards the enemy dealing two hits of 100% Earth damage each. Applies \"Rocked\", a 7-14 damage DoT for 5 turns",
+            "manaCost": "-200",
+            "cooldown": "1",
+            "damageType": "As weapon",
+            "element": "Earth",
+            "buttonImageUrl": "http://i.imgur.com/6Gs1kkq.png",
+            "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/Nythera_EarthBeam_Cast.png"
+          },
+          {
+            "name": "Absorb Energy",
+            "description": "20% Heal.",
+            "effect": "Nythera raises the orb, recovering 20% of her max HP",
+            "manaCost": "-350",
+            "cooldown": "3",
+            "damageType": "N/A",
+            "element": "N/A",
+            "buttonImageUrl": "http://i.imgur.com/zE6UEto.png",
+            "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/Nythera_Absorb_Cast.png"
+          },
+          {
+            "name": "Elemental Boost",
+            "description": "+15% Dmg: 5 turns",
+            "effect": "Nythera raises the orb, increasing her Boost by +15% for 5 turns",
+            "manaCost": "-150",
+            "cooldown": "5",
+            "damageType": "N/A",
+            "element": "N/A",
+            "buttonImageUrl": "http://i.imgur.com/b2V8KaQ.png",
+            "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/Nythera_EleBoost_Cast.png"
+          },
+          {
+            "name": "PurpleBeam",
+            "description": "A shot of glowy hurtfulness.",
+            "effect": "Fires a purple laser for two hits of 100% damage",
+            "manaCost": "-150",
+            "cooldown": "0",
+            "damageType": "As weapon",
+            "element": "Evil",
+            "buttonImageUrl": "http://i.imgur.com/7kVFexx.png",
+            "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/Nythera_PurpleBeam_Cast.png"
+          },
+          {
+            "name": "PurpleStrike",
+            "description": "A column of purple fury.",
+            "effect": "Nythera rises in a column of purple magic and fires three attacks each with 100% damage",
+            "manaCost": "-100",
+            "cooldown": "0",
+            "damageType": "As weapon",
+            "element": "Evil",
+            "buttonImageUrl": "http://i.imgur.com/fNV7lVJ.png",
+            "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/Nythera_PurpleStrike_Cast.png"
+          },
+          {
+            "name": "Attack",
+            "effect": "Rises up and mentally throws Warlic's staff at the enemy for five hits of 20% damage each",
+            "manaCost": "0",
+            "cooldown": "0",
+            "damageType": "As weapon",
+            "element": "Evil",
+            "buttonImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/Attack.png",
+            "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/Nythera_Attack_Cast.png"
+          }
+        ],
+        "classAbilitySubtype": "miscellaneous",
+        "retired": false
       },
       {
-        "name": "IceShot",
-        "description": "A shot of icy pain.",
-        "effect": "Nythera tosses Warlic's staff and a purple laser comes from underground towards the enemy for two hits of 100% Ice damage",
-        "manaCost": "-400",
-        "cooldown": "0",
-        "damageType": "As weapon",
-        "element": "Ice",
-        "buttonImageUrl": "http://i.imgur.com/xjzH2Sr.png",
-        "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/Nythera_IceShot_Cast.png"
-      },
-      {
-        "name": "Earth Beam",
-        "description": "Blast the enemy. With earth.",
-        "effect": "Nythera tosses Warlic's staff and a purple laser comes from underground towards the enemy dealing two hits of 100% Earth damage each. Applies \"Rocked\", a 7-14 damage DoT for 5 turns",
-        "manaCost": "-200",
-        "cooldown": "1",
-        "damageType": "As weapon",
-        "element": "Earth",
-        "buttonImageUrl": "http://i.imgur.com/6Gs1kkq.png",
-        "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/Nythera_EarthBeam_Cast.png"
-      },
-      {
-        "name": "Absorb Energy",
-        "description": "20% Heal.",
-        "effect": "Nythera raises the orb, recovering 20% of her max HP",
-        "manaCost": "-350",
-        "cooldown": "3",
-        "damageType": "N/A",
-        "element": "N/A",
-        "buttonImageUrl": "http://i.imgur.com/zE6UEto.png",
-        "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/Nythera_Absorb_Cast.png"
-      },
-      {
-        "name": "Elemental Boost",
-        "description": "+15% Dmg: 5 turns",
-        "effect": "Nythera raises the orb, increasing her Boost by +15% for 5 turns",
-        "manaCost": "-150",
-        "cooldown": "5",
-        "damageType": "N/A",
-        "element": "N/A",
-        "buttonImageUrl": "http://i.imgur.com/b2V8KaQ.png",
-        "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/Nythera_EleBoost_Cast.png"
-      },
-      {
-        "name": "PurpleBeam",
-        "description": "A shot of glowy hurtfulness.",
-        "effect": "Fires a purple laser for two hits of 100% damage",
-        "manaCost": "-150",
-        "cooldown": "0",
-        "damageType": "As weapon",
-        "element": "Evil",
-        "buttonImageUrl": "http://i.imgur.com/7kVFexx.png",
-        "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/Nythera_PurpleBeam_Cast.png"
-      },
-      {
-        "name": "PurpleStrike",
-        "description": "A column of purple fury.",
-        "effect": "Nythera rises in a column of purple magic and fires three attacks each with 100% damage",
-        "manaCost": "-100",
-        "cooldown": "0",
-        "damageType": "As weapon",
-        "element": "Evil",
-        "buttonImageUrl": "http://i.imgur.com/fNV7lVJ.png",
-        "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/Nythera_PurpleStrike_Cast.png"
-      },
-      {
-        "name": "Attack",
-        "effect": "Rises up and mentally throws Warlic's staff at the enemy for five hits of 20% damage each",
-        "manaCost": "0",
-        "cooldown": "0",
-        "damageType": "As weapon",
-        "element": "Evil",
-        "buttonImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/Attack.png",
-        "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/Nythera_Attack_Cast.png"
+        "levelNumber": 2,
+        "levelDisplay": "Scaled",
+        "actualLevel": null,
+        "variantName": "(Rare)",
+        "name": "Nythera",
+        "damage": "—",
+        "stats": "—",
+        "obtainVariants": [
+          {
+            "location": "The Final Showdown",
+            "price": "N/A",
+            "priceType": "free",
+            "daRequired": false,
+            "dcRequired": false,
+            "dmRequired": false
+          }
+        ],
+        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22065703",
+        "description": "",
+        "guestStats": {
+          "level": "Scaled",
+          "element": "Wind",
+          "offense": {
+            "boost": "0",
+            "bonus": "0",
+            "crit": "5"
+          },
+          "defense": {
+            "melee": "5",
+            "pierce": "5",
+            "magic": "5",
+            "block": "0",
+            "parry": "0",
+            "dodge": "0"
+          },
+          "resistances": {
+            "Darkness": "5"
+          }
+        },
+        "attacks": [
+          {
+            "name": "Hurricane",
+            "description": "Helms, It has him.",
+            "effect": "Nythera tosses Warlic's staff and a purple laser come from underground towards the enemy for two hits of 100% Wind damage",
+            "manaCost": "-450",
+            "cooldown": "0",
+            "damageType": "As weapon",
+            "element": "Wind",
+            "buttonImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/Nythera_Hurricane.png",
+            "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/Nythera_Hurricane_Cast.png"
+          },
+          {
+            "name": "IceShot",
+            "description": "A shot of icy pain.",
+            "effect": "Nythera tosses Warlic's staff and a purple laser come from underground towards the enemy for two hits of 100% Ice damage",
+            "manaCost": "-400",
+            "cooldown": "0",
+            "damageType": "As weapon",
+            "element": "Ice",
+            "buttonImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/Nythera_IceShot.png",
+            "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/Nythera_IceShot_Cast.png"
+          },
+          {
+            "name": "Earth Beam",
+            "description": "Blast the enemy. With earth.",
+            "effect": "Nythera tosses Warlic's staff and a purple laser come from underground towards the enemy dealing one hit of 100% Earth damage",
+            "manaCost": "-200",
+            "cooldown": "1",
+            "damageType": "As weapon",
+            "element": "Earth",
+            "buttonImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/Nythera_EarthBeam.png",
+            "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/Nythera_EarthBeam_Cast.png"
+          },
+          {
+            "name": "Absorb Energy",
+            "description": "20% Heal.",
+            "effect": "Nythera raises the orb recovering 20% of her max HP",
+            "manaCost": "-350",
+            "cooldown": "3",
+            "damageType": "N/A",
+            "element": "N/A",
+            "buttonImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/Nythera_Absorb.png",
+            "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/Nythera_Absorb_Cast.png"
+          },
+          {
+            "name": "Elemental Boost",
+            "description": "+15% Dmg: 5 turns",
+            "effect": "Nythera raises the orb boosting her +15% damage for 5 turns",
+            "manaCost": "-150",
+            "cooldown": "5",
+            "damageType": "N/A",
+            "element": "N/A",
+            "buttonImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/Nythera_EleBoost.png",
+            "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/Nythera_EleBoost_Cast.png"
+          },
+          {
+            "name": "PurpleBeam",
+            "description": "A shot of glowy hurtfulness.",
+            "effect": "Fires a purple laser dealing 100% twice",
+            "manaCost": "-150",
+            "cooldown": "0",
+            "damageType": "As weapon",
+            "element": "Evil",
+            "buttonImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/Nythera_PurpleBeam.png",
+            "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/Nythera_PurpleBeam_Cast.png"
+          },
+          {
+            "name": "PurpleStrike",
+            "description": "A column of purple fury.",
+            "effect": "Rises in a column of purple magic and fires 3 attacks each with 100% damage",
+            "manaCost": "-100",
+            "cooldown": "0",
+            "damageType": "As weapon",
+            "element": "Evil",
+            "buttonImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/Nythera_PurpleStrike.png",
+            "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/Nythera_PurpleStrike_Cast.png"
+          },
+          {
+            "name": "Attack",
+            "effect": "Rises up and mentally throws Warlic's staff at the enemy 5 times for 100% evil damage each.",
+            "manaCost": "0",
+            "cooldown": "0",
+            "damageType": "As weapon",
+            "element": "Evil",
+            "buttonImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/Attack.png",
+            "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/Nythera_Attack_Cast.png"
+          }
+        ],
+        "classAbilitySubtype": "miscellaneous",
+        "retired": false
       }
     ],
-    "obtainMethods": [
-      {
-        "location": "The Final Showdown",
-        "price": "N/A",
-        "priceType": "free",
-        "daRequired": false,
-        "dcRequired": false,
-        "dmRequired": false
-      }
-    ],
-    "alsoSee": [],
-    "tags": [
-      "rare",
-      "temp"
-    ],
-    "daRequired": false,
-    "dcRequired": false,
-    "dmRequired": false,
+    "tags": [],
+    "hasDA": false,
+    "hasDC": false,
+    "hasDM": false,
     "hasFree": true,
     "hasMerge": false,
-    "isTemp": true,
+    "levelRange": "1-Scaled",
+    "elements": [],
+    "isTemp": false,
     "isRare": false,
     "isSeasonal": false,
     "isSpecialOffer": false,
@@ -6415,7 +6746,15 @@
         "damageType": "N/A",
         "element": "N/A",
         "buttonImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/Paladin-Button08-Heal.png",
-        "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/RetroPal-GreaterHeal.png",
+        "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/Paladin-Button08-Heal-Old.png",
+        "appearanceUrls": [
+          "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/Paladin-Button08-Heal-Old.png",
+          "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/RetroPal-GreaterHeal.png"
+        ],
+        "appearanceCaptions": [
+          "old",
+          "Appearance"
+        ],
         "notes": "• Skill icon was modified on  November 24th, 2023, replacing its  old appearance."
       },
       {
@@ -7408,6 +7747,11 @@
     "defaultWeaponUrl": "https://forums2.battleon.com/f/fb.asp?m=21800410",
     "guestStats": {
       "element": "N/A",
+      "offense": {
+        "boost": "0%",
+        "bonus": "0",
+        "crit": "5"
+      },
       "damageMultipliers": {
         "nonCrit": "100%",
         "dex": "100%",
@@ -7818,6 +8162,13 @@
         "Mold": "-5"
       }
     },
+    "imageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/Unbread.png",
+    "alternativeImages": [
+      {
+        "url": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/Unbread.png",
+        "caption": "Main"
+      }
+    ],
     "attacks": [
       {
         "name": "Feast",
@@ -8035,6 +8386,11 @@
     "defaultWeaponUrl": "https://forums2.battleon.com/f/fb.asp?m=21772875",
     "guestStats": {
       "element": "As weapon",
+      "offense": {
+        "boost": "0%",
+        "bonus": "0",
+        "crit": "5"
+      },
       "damageMultipliers": {
         "nonCrit": "100%",
         "dex": "100%",
@@ -8125,6 +8481,7 @@
         "cooldown": "0",
         "damageType": "As weapon",
         "element": "As weapon",
+        "buttonImageUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/Vaal_Exhilarate.jpg",
         "appearanceUrl": "https://raw.githubusercontent.com/DF-Pedia/DF-Pedia/master/classes_abilities/Vaal_Exhilarate_Cast.jpg"
       },
       {
@@ -8795,12 +9152,26 @@
     "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=16069502",
     "location": "Playing as Ash in ArchKnight Falconreach",
     "price": "N/A",
+    "requiredItems": "Completion of Slushroom Princess, Dragon Amulet",
     "effect": "One hit of 100% Magic Fire damage",
     "defaultWeapon": "Longsword",
     "defaultWeaponUrl": "https://forums2.battleon.com/f/fb.asp?m=22366822",
     "guestStats": {
       "damageType": "Magic",
       "element": "Fire",
+      "offense": {
+        "boost": "0%",
+        "bonus": "0",
+        "crit": "5"
+      },
+      "defense": {
+        "melee": "5",
+        "pierce": "5",
+        "magic": "5",
+        "block": "0",
+        "parry": "0",
+        "dodge": "0"
+      },
       "resistances": {
         "Light": "5",
         "Darkness": "5"
@@ -8937,8 +9308,9 @@
       {
         "location": "Playing as Ash in ArchKnight Falconreach",
         "price": "N/A",
-        "priceType": "free",
+        "priceType": "merge",
         "daRequired": true,
+        "requiredItems": "Completion of Slushroom Princess, Dragon Amulet",
         "dcRequired": false,
         "dmRequired": false
       }
@@ -8966,8 +9338,8 @@
     "daRequired": true,
     "dcRequired": false,
     "dmRequired": false,
-    "hasFree": true,
-    "hasMerge": false,
+    "hasFree": false,
+    "hasMerge": true,
     "isTemp": false,
     "isRare": false,
     "isSeasonal": false,
@@ -9304,9 +9676,9 @@
         "location": "Resident Sneevil: Uprising",
         "price": "N/A",
         "priceType": "free",
-        "daRequired": true,
+        "daRequired": false,
         "requirements": "Be infected by the Z-Virus while fighting in the war",
-        "dcRequired": true,
+        "dcRequired": false,
         "dmRequired": false
       },
       {

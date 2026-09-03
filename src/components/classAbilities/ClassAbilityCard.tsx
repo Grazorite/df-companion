@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { ChevronRight } from 'lucide-react'
-import type { ClassAbilityEntry } from '../../types/classAbility'
+import type { ClassAbilityEntry, ClassSubcategory } from '../../types/classAbility'
 import { CLASS_SUBCATEGORIES } from '../../types/classAbility'
 import { isClassAbilityFamily } from '../../types/classAbility'
 import { accessPillClass } from '../../utils/accessPillStyles'
@@ -34,10 +34,19 @@ export default function ClassAbilityCard({ item, toUrl }: ClassAbilityCardProps)
       ? [item.consumableKind]
       : []
   const visibleConsumableKinds = [...new Set(consumableKinds)]
-  const classSubcategory = item.classSubcategory
-  const classSubcategoryLabel = CLASS_SUBCATEGORIES.find(
-    (subcategory) => subcategory.id === classSubcategory
-  )?.label
+  const classSubcategories = [
+    ...new Set(
+      [item.classSubcategory, ...(item.classSubcategories ?? [])].filter(
+        (subcategory): subcategory is ClassSubcategory => Boolean(subcategory)
+      )
+    ),
+  ]
+  const classSubcategoryLabels = classSubcategories
+    .map(
+      (classSubcategory) =>
+        CLASS_SUBCATEGORIES.find((subcategory) => subcategory.id === classSubcategory)?.label
+    )
+    .filter((label): label is string => Boolean(label))
 
   return (
     <Link
@@ -49,11 +58,14 @@ export default function ClassAbilityCard({ item, toUrl }: ClassAbilityCardProps)
           {hasDA && <span className={accessPillClass('da', 'card')}>DA</span>}
           {hasDC && <span className={accessPillClass('dc', 'card')}>DC</span>}
           {hasDM && <span className={accessPillClass('dm', 'card')}>DM</span>}
-          {classSubcategoryLabel && (
-            <span className="text-[10px] text-slate-200 bg-slate-500/25 px-1.5 py-0.5 rounded-full font-medium">
-              {classSubcategoryLabel}
+          {classSubcategoryLabels.map((label) => (
+            <span
+              key={label}
+              className="text-[10px] text-slate-200 bg-slate-500/25 px-1.5 py-0.5 rounded-full font-medium"
+            >
+              {label}
             </span>
-          )}
+          ))}
           {visibleConsumableKinds.map((kind) => (
             <span
               key={kind}

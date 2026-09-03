@@ -643,37 +643,227 @@
   },
   {
     "id": "accessory-bear-tooth-necklace",
-    "name": "Bear Tooth Necklace",
+    "familyName": "Bear Tooth Necklace",
     "slug": "accessory-bear-tooth-necklace",
+    "aliasSlugs": [
+      "accessory-grizzly-bear-tooth-necklace",
+      "accessory-sharp-bear-tooth-necklace",
+      "accessory-bloody-bear-tooth-necklace",
+      "accessory-jagged-bear-tooth-necklace",
+      "accessory-bleached-bear-tooth-necklace",
+      "accessory-serrated-bear-tooth-necklace",
+      "accessory-broken-bear-tooth-necklace"
+    ],
     "type": "accessory",
     "subtype": "necklace",
-    "description": "A rather large incisor from an angry bear.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21971363",
-    "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
-    "level": "11",
-    "stats": "Crit +1, WIS -1, END +3, INT +1, DEX +1, STR +1",
-    "resists": "Water +1, Nature +2, Fire +2",
-    "rarity": "0",
-    "itemType": "Necklace",
-    "equipSpot": "Neck",
-    "category": "Armor",
-    "obtainMethods": [
+    "familyOrigin": "cross-post",
+    "familySources": [],
+    "shared": {
+      "description": "A rather large incisor from an angry bear."
+    },
+    "levelVariants": [
       {
-        "location": "Yulgar's First Date",
-        "priceType": "free",
-        "price": "N/A",
-        "sellback": "30 Gold",
-        "daRequired": false
+        "levelNumber": 1,
+        "levelDisplay": "11",
+        "actualLevel": 11,
+        "variantName": "(Base)",
+        "name": "Bear Tooth Necklace",
+        "damage": "",
+        "stats": "Crit +1, WIS -1, END +3, INT +1, DEX +1, STR +1",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21971363",
+        "description": "A rather large incisor from an angry bear.",
+        "obtainVariants": [
+          {
+            "location": "Yulgar's First Date",
+            "priceType": "free",
+            "price": "N/A",
+            "sellback": "30 Gold",
+            "daRequired": false
+          }
+        ],
+        "element": "NAT",
+        "resists": "Water +1, Nature +2, Fire +2",
+        "rarity": "0"
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "21",
+        "actualLevel": 21,
+        "variantName": "Grizzly",
+        "name": "Grizzly Bear Tooth Necklace",
+        "damage": "",
+        "stats": "Crit +2, Magic Def +2, WIS -1, END +4, INT +2, DEX +2, STR +2",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21970750",
+        "description": "A rather large incisor from an angry bear.",
+        "obtainVariants": [
+          {
+            "location": "Yulgar's First Date",
+            "priceType": "free",
+            "price": "N/A",
+            "sellback": "50 Gold",
+            "daRequired": false
+          }
+        ],
+        "element": "NAT",
+        "resists": "Water +2, Nature +2, Fire +3",
+        "rarity": "0"
+      },
+      {
+        "levelNumber": 3,
+        "levelDisplay": "31",
+        "actualLevel": 31,
+        "variantName": "Sharp",
+        "name": "Sharp Bear Tooth Necklace",
+        "damage": "",
+        "stats": "Crit +3, WIS -1, END +5, INT +3, DEX +3, STR +3, Bonus +1",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21970846",
+        "description": "A rather large incisor from an angry bear.",
+        "obtainVariants": [
+          {
+            "location": "Yulgar's First Date",
+            "priceType": "free",
+            "price": "N/A",
+            "sellback": "80 Gold",
+            "daRequired": false
+          }
+        ],
+        "element": "NAT",
+        "resists": "Water +3, Nature +4, Fire +4",
+        "rarity": "0"
+      },
+      {
+        "levelNumber": 4,
+        "levelDisplay": "41",
+        "actualLevel": 41,
+        "variantName": "Bloody",
+        "name": "Bloody Bear Tooth Necklace",
+        "damage": "",
+        "stats": "Crit +4, Magic Def +1, Pierce Def +1, Melee Def +1, WIS -1, END +6, INT +4, DEX +4, STR +4, Bonus +2",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21970784",
+        "description": "A rather large incisor from an angry bear.",
+        "obtainVariants": [
+          {
+            "location": "Yulgar's First Date",
+            "priceType": "free",
+            "price": "N/A",
+            "sellback": "100 Gold",
+            "daRequired": false
+          }
+        ],
+        "element": "NAT",
+        "resists": "Water +4, Nature +5, Fire +5",
+        "rarity": "0"
+      },
+      {
+        "levelNumber": 5,
+        "levelDisplay": "51",
+        "actualLevel": 51,
+        "variantName": "Jagged",
+        "name": "Jagged Bear Tooth Necklace",
+        "damage": "",
+        "stats": "Parry +1, Crit +5, Magic Def +1, Pierce Def +1, Melee Def +1, WIS -1, END +8, INT +5, DEX +5, STR +5, Bonus +3",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21970848",
+        "description": "A rather large incisor from an angry bear. This item requires a Dragon Amulet.",
+        "obtainVariants": [
+          {
+            "location": "Yulgar's First Date",
+            "priceType": "free",
+            "price": "N/A",
+            "sellback": "120 Gold",
+            "daRequired": true
+          }
+        ],
+        "element": "NAT",
+        "resists": "Water +6, Nature +7, Fire +7",
+        "rarity": "0"
+      },
+      {
+        "levelNumber": 6,
+        "levelDisplay": "61",
+        "actualLevel": 61,
+        "variantName": "Bleached",
+        "name": "Bleached Bear Tooth Necklace",
+        "damage": "",
+        "stats": "Crit +5, Magic Def +2, Pierce Def +2, Melee Def +2, WIS -1, END +8, INT +5, DEX +5, STR +5, Bonus +3",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21970849",
+        "description": "A rather large incisor from an angry bear.",
+        "obtainVariants": [
+          {
+            "location": "Yulgar's First Date",
+            "priceType": "free",
+            "price": "N/A",
+            "sellback": "150 Gold",
+            "daRequired": false
+          }
+        ],
+        "element": "NAT",
+        "resists": "Water +6, Nature +7, Fire +7",
+        "rarity": "0"
+      },
+      {
+        "levelNumber": 7,
+        "levelDisplay": "71",
+        "actualLevel": 71,
+        "variantName": "Serrated",
+        "name": "Serrated Bear Tooth Necklace",
+        "damage": "",
+        "stats": "Parry +1, Crit +5, Magic Def +2, Pierce Def +2, Melee Def +2, WIS -1, END +9, CHA +1, LUK +1, INT +6, DEX +6, STR +6, Bonus +4",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21970853",
+        "description": "A rather large incisor from an angry bear.",
+        "obtainVariants": [
+          {
+            "location": "Yulgar's First Date",
+            "priceType": "free",
+            "price": "N/A",
+            "sellback": "190 Gold",
+            "daRequired": false
+          }
+        ],
+        "element": "NAT",
+        "resists": "Water +6, Nature +8, Fire +8",
+        "rarity": "0"
+      },
+      {
+        "levelNumber": 8,
+        "levelDisplay": "76",
+        "actualLevel": 76,
+        "variantName": "Broken",
+        "name": "Broken Bear Tooth Necklace",
+        "damage": "",
+        "stats": "Dodge +1, Parry +1, Crit +7, Magic Def +3, Pierce Def +3, Melee Def +3, WIS -1, END +10, CHA +2, LUK +2, INT +8, DEX +8, STR +8, Bonus +5",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=21970773",
+        "description": "A rather large incisor from an angry bear. This item requires a Dragon Amulet.",
+        "obtainVariants": [
+          {
+            "location": "Yulgar's First Date",
+            "priceType": "free",
+            "price": "N/A",
+            "sellback": "250 Gold",
+            "daRequired": true
+          }
+        ],
+        "element": "NAT",
+        "resists": "Water +9, Nature +10, Fire +10",
+        "rarity": "0"
       }
     ],
+    "itemType": "Necklace",
+    "equipSlot": "Neck",
+    "category": "Armor",
     "tags": [
-      "nat",
-      "free"
+      "free",
+      "nat"
     ],
-    "daRequired": false
+    "hasDA": true,
+    "hasDC": false,
+    "hasDM": false,
+    "hasFree": true,
+    "hasMerge": false,
+    "levelRange": "11-76",
+    "elements": [
+      "NAT"
+    ]
   },
   {
     "id": "accessory-beryl-necklace",
@@ -778,40 +968,6 @@
     ],
     "daRequired": false,
     "isRare": true
-  },
-  {
-    "id": "accessory-bleached-bear-tooth-necklace",
-    "name": "Bleached Bear Tooth Necklace",
-    "slug": "accessory-bleached-bear-tooth-necklace",
-    "type": "accessory",
-    "subtype": "necklace",
-    "description": "A rather large incisor from an angry bear.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21970849",
-    "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
-    "level": "61",
-    "stats": "Crit +5, Magic Def +2, Pierce Def +2, Melee Def +2, WIS -1, END +8, INT +5, DEX +5, STR +5, Bonus +3",
-    "resists": "Water +6, Nature +7, Fire +7",
-    "rarity": "0",
-    "itemType": "Necklace",
-    "equipSpot": "Neck",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "Yulgar's First Date",
-        "priceType": "free",
-        "price": "N/A",
-        "sellback": "150 Gold",
-        "daRequired": false
-      }
-    ],
-    "tags": [
-      "nat",
-      "free"
-    ],
-    "daRequired": false
   },
   {
     "id": "accessory-blizzard-s-breath",
@@ -932,40 +1088,6 @@
     ],
     "daRequired": false,
     "dcRequired": true
-  },
-  {
-    "id": "accessory-bloody-bear-tooth-necklace",
-    "name": "Bloody Bear Tooth Necklace",
-    "slug": "accessory-bloody-bear-tooth-necklace",
-    "type": "accessory",
-    "subtype": "necklace",
-    "description": "A rather large incisor from an angry bear.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21970784",
-    "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
-    "level": "41",
-    "stats": "Crit +4, Magic Def +1, Pierce Def +1, Melee Def +1, WIS -1, END +6, INT +4, DEX +4, STR +4, Bonus +2",
-    "resists": "Water +4, Nature +5, Fire +5",
-    "rarity": "0",
-    "itemType": "Necklace",
-    "equipSpot": "Neck",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "Yulgar's First Date",
-        "priceType": "free",
-        "price": "N/A",
-        "sellback": "100 Gold",
-        "daRequired": false
-      }
-    ],
-    "tags": [
-      "nat",
-      "free"
-    ],
-    "daRequired": false
   },
   {
     "id": "accessory-blue-ribbon",
@@ -1199,40 +1321,6 @@
     ],
     "daRequired": false,
     "isSeasonal": true
-  },
-  {
-    "id": "accessory-broken-bear-tooth-necklace",
-    "name": "Broken Bear Tooth Necklace",
-    "slug": "accessory-broken-bear-tooth-necklace",
-    "type": "accessory",
-    "subtype": "necklace",
-    "description": "A rather large incisor from an angry bear. This item requires a Dragon Amulet.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21970773",
-    "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
-    "level": "76",
-    "stats": "Dodge +1, Parry +1, Crit +7, Magic Def +3, Pierce Def +3, Melee Def +3, WIS -1, END +10, CHA +2, LUK +2, INT +8, DEX +8, STR +8, Bonus +5",
-    "resists": "Water +9, Nature +10, Fire +10",
-    "rarity": "0",
-    "itemType": "Necklace",
-    "equipSpot": "Neck",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "Yulgar's First Date",
-        "priceType": "free",
-        "price": "N/A",
-        "sellback": "250 Gold",
-        "daRequired": true
-      }
-    ],
-    "tags": [
-      "nat",
-      "free"
-    ],
-    "daRequired": true
   },
   {
     "id": "accessory-broken-charm",
@@ -1888,7 +1976,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 40,
+        "levelNumber": 1,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "I",
@@ -1912,7 +2000,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 1,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "I",
@@ -1937,7 +2025,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 2,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "II",
@@ -1961,7 +2049,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 2,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "II",
@@ -1986,7 +2074,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 3,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "III",
@@ -2010,7 +2098,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 3,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "III",
@@ -2035,7 +2123,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 4,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "IV",
@@ -2059,7 +2147,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 5,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "IV",
@@ -2084,7 +2172,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 6,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "V",
@@ -2108,7 +2196,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 7,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "V",
@@ -2133,7 +2221,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 8,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "VI",
@@ -2157,7 +2245,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 9,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "VI",
@@ -2265,7 +2353,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 15,
+        "levelNumber": 1,
         "levelDisplay": "15",
         "actualLevel": 15,
         "name": "Cheesemonger's Gratitude",
@@ -2288,7 +2376,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 15,
+        "levelNumber": 1,
         "levelDisplay": "15",
         "actualLevel": 15,
         "name": "Cheesemonger's Gratitude",
@@ -2312,7 +2400,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 25,
+        "levelNumber": 2,
         "levelDisplay": "25",
         "actualLevel": 25,
         "name": "Cheesemonger's Gratitude",
@@ -2335,7 +2423,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 25,
+        "levelNumber": 2,
         "levelDisplay": "25",
         "actualLevel": 25,
         "name": "Cheesemonger's Gratitude",
@@ -2359,7 +2447,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 35,
+        "levelNumber": 3,
         "levelDisplay": "35",
         "actualLevel": 35,
         "name": "Cheesemonger's Gratitude",
@@ -2382,7 +2470,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 35,
+        "levelNumber": 3,
         "levelDisplay": "35",
         "actualLevel": 35,
         "name": "Cheesemonger's Gratitude",
@@ -2406,7 +2494,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 45,
+        "levelNumber": 4,
         "levelDisplay": "45",
         "actualLevel": 45,
         "name": "Cheesemonger's Gratitude",
@@ -2429,7 +2517,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 45,
+        "levelNumber": 4,
         "levelDisplay": "45",
         "actualLevel": 45,
         "name": "Cheesemonger's Gratitude",
@@ -2453,7 +2541,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 55,
+        "levelNumber": 5,
         "levelDisplay": "55",
         "actualLevel": 55,
         "name": "Cheesemonger's Gratitude",
@@ -2476,7 +2564,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 55,
+        "levelNumber": 5,
         "levelDisplay": "55",
         "actualLevel": 55,
         "name": "Cheesemonger's Gratitude",
@@ -2500,7 +2588,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 65,
+        "levelNumber": 6,
         "levelDisplay": "65",
         "actualLevel": 65,
         "name": "Cheesemonger's Gratitude",
@@ -2523,7 +2611,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 65,
+        "levelNumber": 6,
         "levelDisplay": "65",
         "actualLevel": 65,
         "name": "Cheesemonger's Gratitude",
@@ -2547,7 +2635,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 75,
+        "levelNumber": 7,
         "levelDisplay": "75",
         "actualLevel": 75,
         "name": "Cheesemonger's Gratitude",
@@ -2570,7 +2658,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 75,
+        "levelNumber": 8,
         "levelDisplay": "75",
         "actualLevel": 75,
         "name": "Cheesemonger's Gratitude",
@@ -2594,7 +2682,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 85,
+        "levelNumber": 9,
         "levelDisplay": "85",
         "actualLevel": 85,
         "name": "Cheesemonger's Gratitude",
@@ -2617,7 +2705,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 85,
+        "levelNumber": 10,
         "levelDisplay": "85",
         "actualLevel": 85,
         "name": "Cheesemonger's Gratitude",
@@ -3189,7 +3277,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 30,
+        "levelNumber": 1,
         "levelDisplay": "30",
         "actualLevel": 30,
         "variantName": "I",
@@ -3213,7 +3301,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 1,
         "levelDisplay": "30",
         "actualLevel": 30,
         "variantName": "I",
@@ -3238,7 +3326,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 2,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "II",
@@ -3262,7 +3350,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 2,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "II",
@@ -3287,7 +3375,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 3,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "III",
@@ -3311,7 +3399,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 3,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "III",
@@ -3336,7 +3424,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 4,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "IV",
@@ -3360,7 +3448,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 4,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "IV",
@@ -3385,7 +3473,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 5,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "V",
@@ -3409,7 +3497,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 6,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "V",
@@ -3434,7 +3522,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 7,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "VI",
@@ -3458,7 +3546,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 8,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "VI",
@@ -3483,7 +3571,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 9,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "VII",
@@ -3507,7 +3595,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 10,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "VII",
@@ -4247,7 +4335,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 5,
+        "levelNumber": 2,
         "levelDisplay": "5",
         "actualLevel": 5,
         "variantName": "II",
@@ -4273,7 +4361,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 8,
+        "levelNumber": 3,
         "levelDisplay": "8",
         "actualLevel": 8,
         "variantName": "III",
@@ -4299,7 +4387,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 12,
+        "levelNumber": 4,
         "levelDisplay": "12",
         "actualLevel": 12,
         "variantName": "IV",
@@ -4325,7 +4413,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 15,
+        "levelNumber": 5,
         "levelDisplay": "15",
         "actualLevel": 15,
         "variantName": "V",
@@ -4341,24 +4429,7 @@
             "requiredItems": "1 Defender's Dragon Necklace IV & 25 Defender's Medal",
             "dmRequired": true,
             "daRequired": true
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=7541705",
-        "description": "This necklace can only be worn by a DragonAmulet holder. It was awarded to you by the town of Falconreach for your help defending it against an invading force.",
-        "element": "NON",
-        "resists": "Darkness +5, Ice +4",
-        "rarity": "7",
-        "itemType": "Necklace"
-      },
-      {
-        "levelNumber": 15,
-        "levelDisplay": "15",
-        "actualLevel": 15,
-        "variantName": "V",
-        "name": "Defender's Dragon Necklace V",
-        "damage": "",
-        "stats": "Crit +1, LUK +4, STR +2",
-        "obtainVariants": [
+          },
           {
             "location": "Defender Item Swap",
             "price": "N/A",
@@ -4377,7 +4448,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 18,
+        "levelNumber": 6,
         "levelDisplay": "18",
         "actualLevel": 18,
         "variantName": "VI",
@@ -4403,7 +4474,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 19,
+        "levelNumber": 7,
         "levelDisplay": "19",
         "actualLevel": 19,
         "variantName": "VII",
@@ -4429,7 +4500,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 21,
+        "levelNumber": 8,
         "levelDisplay": "21",
         "actualLevel": 21,
         "variantName": "VIII",
@@ -4455,7 +4526,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 23,
+        "levelNumber": 9,
         "levelDisplay": "23",
         "actualLevel": 23,
         "variantName": "IX",
@@ -4481,7 +4552,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 25,
+        "levelNumber": 10,
         "levelDisplay": "25",
         "actualLevel": 25,
         "variantName": "X",
@@ -4497,24 +4568,7 @@
             "requiredItems": "1 Defender's Dragon Necklace IX & 25 Defender's Medal",
             "dmRequired": true,
             "daRequired": true
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=13328829",
-        "description": "This item requires a Dragon Amulet. It was awarded to you by the town of Falconreach for your help defending it against an invading force.",
-        "element": "NON",
-        "resists": "Darkness +6, Ice +5, Wind +2",
-        "rarity": "7",
-        "itemType": "Necklace"
-      },
-      {
-        "levelNumber": 25,
-        "levelDisplay": "25",
-        "actualLevel": 25,
-        "variantName": "X",
-        "name": "Defender's Dragon Necklace X",
-        "damage": "",
-        "stats": "Crit +4, CHA +3, LUK +5, STR +5",
-        "obtainVariants": [
+          },
           {
             "location": "Defender Item Swap",
             "price": "N/A",
@@ -4533,7 +4587,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 27,
+        "levelNumber": 11,
         "levelDisplay": "27",
         "actualLevel": 27,
         "variantName": "XI",
@@ -4559,7 +4613,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 31,
+        "levelNumber": 12,
         "levelDisplay": "31",
         "actualLevel": 31,
         "variantName": "XII",
@@ -4585,7 +4639,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 35,
+        "levelNumber": 13,
         "levelDisplay": "35",
         "actualLevel": 35,
         "variantName": "XIII",
@@ -4611,7 +4665,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 37,
+        "levelNumber": 14,
         "levelDisplay": "37",
         "actualLevel": 37,
         "variantName": "XIV",
@@ -4637,7 +4691,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 15,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "XV",
@@ -4653,24 +4707,7 @@
             "requiredItems": "Defender's Dragon Necklace XIV & 25 Defender's Medal",
             "dmRequired": true,
             "daRequired": true
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=16515085",
-        "description": "This item requires a Dragon Amulet. It was awarded to you by the town of Falconreach for your help defending it against an invading force.",
-        "element": "NON",
-        "resists": "Darkness +7, Ice +7, Wind +5",
-        "rarity": "7",
-        "itemType": "Necklace"
-      },
-      {
-        "levelNumber": 40,
-        "levelDisplay": "40",
-        "actualLevel": 40,
-        "variantName": "XV",
-        "name": "Defender's Dragon Necklace XV",
-        "damage": "",
-        "stats": "Crit +6, CHA +6, LUK +6, STR +7, Bonus +2",
-        "obtainVariants": [
+          },
           {
             "location": "Defender Item Swap",
             "price": "N/A",
@@ -4689,7 +4726,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 45,
+        "levelNumber": 16,
         "levelDisplay": "45",
         "actualLevel": 45,
         "variantName": "XVI",
@@ -4715,7 +4752,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 17,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "XVII",
@@ -4741,7 +4778,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 55,
+        "levelNumber": 18,
         "levelDisplay": "55",
         "actualLevel": 55,
         "variantName": "XVIII",
@@ -4767,7 +4804,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 19,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "XIX",
@@ -4793,7 +4830,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 65,
+        "levelNumber": 20,
         "levelDisplay": "65",
         "actualLevel": 65,
         "variantName": "XX",
@@ -4809,24 +4846,7 @@
             "requiredItems": "1 Defender's Dragon Necklace XIX & 25 Defender's Medal",
             "dmRequired": true,
             "daRequired": true
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=18986755",
-        "description": "This item requires a Dragon Amulet. This necklace was awarded to you by the town of Falconreach for your help defending it against an invading force.",
-        "element": "NON",
-        "resists": "Darkness +10, Ice +10, Wind +10, Immobility +5, Health -3",
-        "rarity": "7",
-        "itemType": "Necklace"
-      },
-      {
-        "levelNumber": 65,
-        "levelDisplay": "65",
-        "actualLevel": 65,
-        "variantName": "XX",
-        "name": "Defender's Dragon Necklace XX",
-        "damage": "",
-        "stats": "Block +1, Parry +1, Crit +10, WIS +7, END +7, CHA +10, LUK +8, STR +11, Bonus +6",
-        "obtainVariants": [
+          },
           {
             "location": "Defender Item Swap",
             "price": "N/A",
@@ -4845,7 +4865,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 68,
+        "levelNumber": 21,
         "levelDisplay": "68",
         "actualLevel": 68,
         "variantName": "XXI",
@@ -4871,7 +4891,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 22,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "XXII",
@@ -4897,7 +4917,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 72,
+        "levelNumber": 23,
         "levelDisplay": "72",
         "actualLevel": 72,
         "variantName": "XXIII",
@@ -4923,7 +4943,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 72,
+        "levelNumber": 24,
         "levelDisplay": "72",
         "actualLevel": 72,
         "variantName": "XXIV",
@@ -4949,7 +4969,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 74,
+        "levelNumber": 25,
         "levelDisplay": "74",
         "actualLevel": 74,
         "variantName": "XXV",
@@ -4965,24 +4985,7 @@
             "requiredItems": "1 Defender's Dragon Necklace XXIV & 25 Defender's Medal",
             "dmRequired": true,
             "daRequired": true
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=20499836",
-        "description": "This item requires a Dragon Amulet. This necklace was awarded to you by the town of Falconreach for your help defending it against an invading force.",
-        "element": "NON",
-        "resists": "Darkness +11, Ice +11, Wind +11, Immobility +5, Health -3",
-        "rarity": "7",
-        "itemType": "Necklace"
-      },
-      {
-        "levelNumber": 74,
-        "levelDisplay": "74",
-        "actualLevel": 74,
-        "variantName": "XXV",
-        "name": "Defender's Dragon Necklace XXV",
-        "damage": "",
-        "stats": "Block +1, Parry +1, Crit +10, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +9, END +9, CHA +11, LUK +10, STR +12, Bonus +8",
-        "obtainVariants": [
+          },
           {
             "location": "Defender Item Swap",
             "price": "N/A",
@@ -5001,7 +5004,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 75,
+        "levelNumber": 26,
         "levelDisplay": "75",
         "actualLevel": 75,
         "variantName": "XXVI",
@@ -5027,7 +5030,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 76,
+        "levelNumber": 27,
         "levelDisplay": "76",
         "actualLevel": 76,
         "variantName": "XXIX",
@@ -5053,7 +5056,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 76,
+        "levelNumber": 28,
         "levelDisplay": "76",
         "actualLevel": 76,
         "variantName": "XXVII",
@@ -5079,7 +5082,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 76,
+        "levelNumber": 29,
         "levelDisplay": "76",
         "actualLevel": 76,
         "variantName": "XXVIII",
@@ -5105,7 +5108,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 76,
+        "levelNumber": 30,
         "levelDisplay": "76",
         "actualLevel": 76,
         "variantName": "XXX",
@@ -5121,24 +5124,7 @@
             "requiredItems": "1 Defender's Dragon Necklace XXIX & 25 Defender's Medal",
             "dmRequired": true,
             "daRequired": true
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=21732313",
-        "description": "This item requires a Dragon Amulet. This necklace was awarded to you by the town of Falconreach for your help defending it against an invading force.",
-        "element": "NON",
-        "resists": "Darkness +11, Ice +11, Wind +11, Poison +2, Immobility +5, Health -4",
-        "rarity": "7",
-        "itemType": "Necklace"
-      },
-      {
-        "levelNumber": 76,
-        "levelDisplay": "76",
-        "actualLevel": 76,
-        "variantName": "XXX",
-        "name": "Defender's Dragon Necklace XXX",
-        "damage": "",
-        "stats": "Block +1, Parry +1, Crit +10, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +10, END +11, CHA +11, LUK +10, INT +6, DEX +6, STR +12, Bonus +9",
-        "obtainVariants": [
+          },
           {
             "location": "Defender Item Swap",
             "price": "N/A",
@@ -5157,7 +5143,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 76,
+        "levelNumber": 31,
         "levelDisplay": "76",
         "actualLevel": 76,
         "variantName": "XXXI",
@@ -5183,7 +5169,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 76,
+        "levelNumber": 32,
         "levelDisplay": "76",
         "actualLevel": 76,
         "variantName": "XXXII",
@@ -5209,7 +5195,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 33,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "XXXIII",
@@ -5235,7 +5221,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 85,
+        "levelNumber": 34,
         "levelDisplay": "85",
         "actualLevel": 85,
         "variantName": "XXXIV",
@@ -5261,7 +5247,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 35,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "XXXV",
@@ -5277,24 +5263,7 @@
             "requiredItems": "1 Defender's Dragon Necklace XXXIV & 25 Defender's Medal",
             "dmRequired": true,
             "daRequired": true
-          }
-        ],
-        "sourceUrl": "https://forums2.battleon.com/f/fb.asp?m=22344907",
-        "description": "This item requires a Dragon Amulet. This necklace was awarded to you by the town of Falconreach for your help defending it against an invading force.",
-        "element": "NON",
-        "resists": "All +10, Immobility -10",
-        "rarity": "7",
-        "itemType": "Necklace"
-      },
-      {
-        "levelNumber": 90,
-        "levelDisplay": "90",
-        "actualLevel": 90,
-        "variantName": "XXXV",
-        "name": "Defender's Dragon Necklace XXXV",
-        "damage": "",
-        "stats": "Block +1, Dodge +1, Parry +1, Crit +10, Magic Def +2, Pierce Def +2, Melee Def +2, WIS +13, END +13, CHA +13, LUK +13, INT +15, DEX +15, STR +15, Bonus +10",
-        "obtainVariants": [
+          },
           {
             "location": "Defender Item Swap",
             "price": "N/A",
@@ -7812,7 +7781,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 60,
+        "levelNumber": 1,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "I",
@@ -7836,7 +7805,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 1,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "I",
@@ -7861,7 +7830,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 2,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "II",
@@ -7885,7 +7854,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 3,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "II",
@@ -7910,7 +7879,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 4,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "III",
@@ -7934,7 +7903,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 5,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "III",
@@ -7959,7 +7928,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 6,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "IV",
@@ -7983,7 +7952,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 7,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "IV",
@@ -8095,40 +8064,6 @@
       "merge"
     ],
     "daRequired": true
-  },
-  {
-    "id": "accessory-grizzly-bear-tooth-necklace",
-    "name": "Grizzly Bear Tooth Necklace",
-    "slug": "accessory-grizzly-bear-tooth-necklace",
-    "type": "accessory",
-    "subtype": "necklace",
-    "description": "A rather large incisor from an angry bear.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21970750",
-    "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
-    "level": "21",
-    "stats": "Crit +2, Magic Def +2, WIS -1, END +4, INT +2, DEX +2, STR +2",
-    "resists": "Water +2, Nature +2, Fire +3",
-    "rarity": "0",
-    "itemType": "Necklace",
-    "equipSpot": "Neck",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "Yulgar's First Date",
-        "priceType": "free",
-        "price": "N/A",
-        "sellback": "50 Gold",
-        "daRequired": false
-      }
-    ],
-    "tags": [
-      "nat",
-      "free"
-    ],
-    "daRequired": false
   },
   {
     "id": "accessory-groundhog-amulet",
@@ -9697,40 +9632,6 @@
     "isRare": true
   },
   {
-    "id": "accessory-jagged-bear-tooth-necklace",
-    "name": "Jagged Bear Tooth Necklace",
-    "slug": "accessory-jagged-bear-tooth-necklace",
-    "type": "accessory",
-    "subtype": "necklace",
-    "description": "A rather large incisor from an angry bear. This item requires a Dragon Amulet.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21970848",
-    "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
-    "level": "51",
-    "stats": "Parry +1, Crit +5, Magic Def +1, Pierce Def +1, Melee Def +1, WIS -1, END +8, INT +5, DEX +5, STR +5, Bonus +3",
-    "resists": "Water +6, Nature +7, Fire +7",
-    "rarity": "0",
-    "itemType": "Necklace",
-    "equipSpot": "Neck",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "Yulgar's First Date",
-        "priceType": "free",
-        "price": "N/A",
-        "sellback": "120 Gold",
-        "daRequired": true
-      }
-    ],
-    "tags": [
-      "nat",
-      "free"
-    ],
-    "daRequired": true
-  },
-  {
     "id": "accessory-jewel-of-the-tyrant-s-legacy",
     "name": "Jewel of the Tyrant's Legacy",
     "slug": "accessory-jewel-of-the-tyrant-s-legacy",
@@ -10138,7 +10039,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 30,
+        "levelNumber": 1,
         "levelDisplay": "30",
         "actualLevel": 30,
         "variantName": "I",
@@ -10162,7 +10063,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 1,
         "levelDisplay": "30",
         "actualLevel": 30,
         "variantName": "I",
@@ -10187,7 +10088,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 2,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "II",
@@ -10211,7 +10112,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 2,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "II",
@@ -10236,7 +10137,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 3,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "III",
@@ -10260,7 +10161,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 3,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "III",
@@ -10285,7 +10186,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 4,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "IV",
@@ -10309,7 +10210,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 4,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "IV",
@@ -10334,7 +10235,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 5,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "V",
@@ -10358,7 +10259,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 6,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "V",
@@ -10383,7 +10284,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 7,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "VI",
@@ -10407,7 +10308,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 8,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "VI",
@@ -10432,7 +10333,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 9,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "VII",
@@ -10456,7 +10357,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 10,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "VII",
@@ -11439,7 +11340,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 40,
+        "levelNumber": 1,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "I",
@@ -11463,7 +11364,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 1,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "I",
@@ -11488,7 +11389,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 2,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "II",
@@ -11512,7 +11413,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 2,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "II",
@@ -11537,7 +11438,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 3,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "III",
@@ -11561,7 +11462,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 3,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "III",
@@ -11586,7 +11487,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 4,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "IV",
@@ -11610,7 +11511,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 5,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "IV",
@@ -11635,7 +11536,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 6,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "V",
@@ -11659,7 +11560,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 7,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "V",
@@ -11684,7 +11585,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 8,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "VI",
@@ -11708,7 +11609,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 9,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "VI",
@@ -13137,7 +13038,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 30,
+        "levelNumber": 1,
         "levelDisplay": "30",
         "actualLevel": 30,
         "variantName": "I",
@@ -13161,7 +13062,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 1,
         "levelDisplay": "30",
         "actualLevel": 30,
         "variantName": "I",
@@ -13186,7 +13087,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 2,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "II",
@@ -13210,7 +13111,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 2,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "II",
@@ -13235,7 +13136,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 3,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "III",
@@ -13259,7 +13160,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 3,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "III",
@@ -13284,7 +13185,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 4,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "IV",
@@ -13308,7 +13209,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 4,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "IV",
@@ -13333,7 +13234,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 5,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "V",
@@ -13357,7 +13258,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 6,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "V",
@@ -13382,7 +13283,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 7,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "VI",
@@ -13406,7 +13307,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 8,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "VI",
@@ -13431,7 +13332,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 9,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "VII",
@@ -13455,7 +13356,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 10,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "VII",
@@ -13777,7 +13678,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 30,
+        "levelNumber": 1,
         "levelDisplay": "30",
         "actualLevel": 30,
         "variantName": "I",
@@ -13801,7 +13702,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 1,
         "levelDisplay": "30",
         "actualLevel": 30,
         "variantName": "I",
@@ -13826,7 +13727,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 2,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "II",
@@ -13850,7 +13751,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 2,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "II",
@@ -13875,7 +13776,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 3,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "III",
@@ -13899,7 +13800,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 3,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "III",
@@ -13924,7 +13825,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 4,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "IV",
@@ -13948,7 +13849,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 4,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "IV",
@@ -13973,7 +13874,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 5,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "V",
@@ -13997,7 +13898,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 6,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "V",
@@ -14022,7 +13923,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 7,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "VI",
@@ -14046,7 +13947,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 8,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "VI",
@@ -14071,7 +13972,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 9,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "VII",
@@ -14095,7 +13996,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 10,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "VII",
@@ -14397,40 +14298,6 @@
     "daRequired": false
   },
   {
-    "id": "accessory-serrated-bear-tooth-necklace",
-    "name": "Serrated Bear Tooth Necklace",
-    "slug": "accessory-serrated-bear-tooth-necklace",
-    "type": "accessory",
-    "subtype": "necklace",
-    "description": "A rather large incisor from an angry bear.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21970853",
-    "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
-    "level": "71",
-    "stats": "Parry +1, Crit +5, Magic Def +2, Pierce Def +2, Melee Def +2, WIS -1, END +9, CHA +1, LUK +1, INT +6, DEX +6, STR +6, Bonus +4",
-    "resists": "Water +6, Nature +8, Fire +8",
-    "rarity": "0",
-    "itemType": "Necklace",
-    "equipSpot": "Neck",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "Yulgar's First Date",
-        "priceType": "free",
-        "price": "N/A",
-        "sellback": "190 Gold",
-        "daRequired": false
-      }
-    ],
-    "tags": [
-      "nat",
-      "free"
-    ],
-    "daRequired": false
-  },
-  {
     "id": "accessory-shadowed-deathknight-amulet",
     "familyName": "Shadowed DeathKnight Amulet",
     "slug": "accessory-shadowed-deathknight-amulet",
@@ -14596,40 +14463,6 @@
     ]
   },
   {
-    "id": "accessory-sharp-bear-tooth-necklace",
-    "name": "Sharp Bear Tooth Necklace",
-    "slug": "accessory-sharp-bear-tooth-necklace",
-    "type": "accessory",
-    "subtype": "necklace",
-    "description": "A rather large incisor from an angry bear.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=21970846",
-    "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
-    "level": "31",
-    "stats": "Crit +3, WIS -1, END +5, INT +3, DEX +3, STR +3, Bonus +1",
-    "resists": "Water +3, Nature +4, Fire +4",
-    "rarity": "0",
-    "itemType": "Necklace",
-    "equipSpot": "Neck",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "Yulgar's First Date",
-        "priceType": "free",
-        "price": "N/A",
-        "sellback": "80 Gold",
-        "daRequired": false
-      }
-    ],
-    "tags": [
-      "nat",
-      "free"
-    ],
-    "daRequired": false
-  },
-  {
     "id": "accessory-shattered-amulet",
     "familyName": "Shattered Amulet",
     "slug": "accessory-shattered-amulet",
@@ -14696,7 +14529,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 30,
+        "levelNumber": 1,
         "levelDisplay": "30",
         "actualLevel": 30,
         "variantName": "I",
@@ -14720,7 +14553,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 1,
         "levelDisplay": "30",
         "actualLevel": 30,
         "variantName": "I",
@@ -14745,7 +14578,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 2,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "II",
@@ -14769,7 +14602,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 2,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "II",
@@ -14794,7 +14627,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 3,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "III",
@@ -14818,7 +14651,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 3,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "III",
@@ -14843,7 +14676,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 4,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "IV",
@@ -14867,7 +14700,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 4,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "IV",
@@ -14892,7 +14725,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 5,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "V",
@@ -14916,7 +14749,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 6,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "V",
@@ -14941,7 +14774,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 7,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "VI",
@@ -14965,7 +14798,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 8,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "VI",
@@ -14990,7 +14823,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 9,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "VII",
@@ -15014,7 +14847,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 10,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "VII",
@@ -15879,7 +15712,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 50,
+        "levelNumber": 1,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "I",
@@ -15903,7 +15736,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 1,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "I",
@@ -15928,7 +15761,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 2,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "II",
@@ -15952,7 +15785,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 2,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "II",
@@ -15977,7 +15810,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 3,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "III",
@@ -16001,7 +15834,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 3,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "III",
@@ -16026,7 +15859,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 4,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "IV",
@@ -16050,7 +15883,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 5,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "IV",
@@ -16075,7 +15908,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 6,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "V",
@@ -16099,7 +15932,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 7,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "V",
@@ -16602,7 +16435,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 15,
+        "levelNumber": 1,
         "levelDisplay": "15",
         "actualLevel": 15,
         "variantName": "I",
@@ -16626,7 +16459,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 15,
+        "levelNumber": 1,
         "levelDisplay": "15",
         "actualLevel": 15,
         "variantName": "I",
@@ -16651,7 +16484,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 25,
+        "levelNumber": 2,
         "levelDisplay": "25",
         "actualLevel": 25,
         "variantName": "II",
@@ -16675,7 +16508,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 25,
+        "levelNumber": 2,
         "levelDisplay": "25",
         "actualLevel": 25,
         "variantName": "II",
@@ -16700,7 +16533,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 35,
+        "levelNumber": 3,
         "levelDisplay": "35",
         "actualLevel": 35,
         "variantName": "III",
@@ -16724,7 +16557,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 35,
+        "levelNumber": 3,
         "levelDisplay": "35",
         "actualLevel": 35,
         "variantName": "III",
@@ -16749,7 +16582,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 45,
+        "levelNumber": 4,
         "levelDisplay": "45",
         "actualLevel": 45,
         "variantName": "IV",
@@ -16773,7 +16606,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 45,
+        "levelNumber": 4,
         "levelDisplay": "45",
         "actualLevel": 45,
         "variantName": "IV",
@@ -16798,7 +16631,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 55,
+        "levelNumber": 5,
         "levelDisplay": "55",
         "actualLevel": 55,
         "variantName": "V",
@@ -16822,7 +16655,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 55,
+        "levelNumber": 5,
         "levelDisplay": "55",
         "actualLevel": 55,
         "variantName": "V",
@@ -16847,7 +16680,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 65,
+        "levelNumber": 6,
         "levelDisplay": "65",
         "actualLevel": 65,
         "variantName": "VI",
@@ -16871,7 +16704,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 65,
+        "levelNumber": 6,
         "levelDisplay": "65",
         "actualLevel": 65,
         "variantName": "VI",
@@ -16896,7 +16729,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 75,
+        "levelNumber": 7,
         "levelDisplay": "75",
         "actualLevel": 75,
         "variantName": "VII",
@@ -16920,7 +16753,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 75,
+        "levelNumber": 8,
         "levelDisplay": "75",
         "actualLevel": 75,
         "variantName": "VII",
@@ -16945,7 +16778,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 85,
+        "levelNumber": 9,
         "levelDisplay": "85",
         "actualLevel": 85,
         "variantName": "VIII",
@@ -16969,7 +16802,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 85,
+        "levelNumber": 10,
         "levelDisplay": "85",
         "actualLevel": 85,
         "variantName": "VIII",
@@ -17239,7 +17072,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 10,
+        "levelNumber": 1,
         "levelDisplay": "10",
         "actualLevel": 10,
         "variantName": "I",
@@ -17263,7 +17096,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 10,
+        "levelNumber": 1,
         "levelDisplay": "10",
         "actualLevel": 10,
         "variantName": "I",
@@ -17288,7 +17121,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 20,
+        "levelNumber": 2,
         "levelDisplay": "20",
         "actualLevel": 20,
         "variantName": "II",
@@ -17312,7 +17145,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 20,
+        "levelNumber": 2,
         "levelDisplay": "20",
         "actualLevel": 20,
         "variantName": "II",
@@ -17337,7 +17170,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 3,
         "levelDisplay": "30",
         "actualLevel": 30,
         "variantName": "III",
@@ -17361,7 +17194,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 3,
         "levelDisplay": "30",
         "actualLevel": 30,
         "variantName": "III",
@@ -17386,7 +17219,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 4,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "IV",
@@ -17410,7 +17243,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 4,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "IV",
@@ -17435,7 +17268,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 5,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "V",
@@ -17459,7 +17292,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 5,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "V",
@@ -17484,7 +17317,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 6,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "VI",
@@ -17508,7 +17341,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 6,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "VI",
@@ -17533,7 +17366,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 7,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "VII",
@@ -17557,7 +17390,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 8,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "VII",
@@ -17582,7 +17415,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 9,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "VIII",
@@ -17606,7 +17439,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 10,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "VIII",
@@ -17631,7 +17464,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 11,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "IX",
@@ -17655,7 +17488,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 12,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "IX",
@@ -17908,72 +17741,84 @@
     "daRequired": false
   },
   {
-    "id": "accessory-thursday-s-dragon-necklace",
-    "name": "Thursday's Dragon Necklace",
-    "slug": "accessory-thursday-s-dragon-necklace",
-    "type": "accessory",
-    "subtype": "necklace",
-    "description": "This necklace requires a Dragon Amulet. It was handmade by Thursday. It provides defence against darkness, a +1 to Luck, and a +1 to Dodge.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=19810779",
-    "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
-    "level": "5",
-    "stats": "Dodge +1, LUK +1, Darkness +2",
-    "rarity": "5",
-    "itemType": "Necklace",
-    "equipSpot": "Neck",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "Thursday Necklaces",
-        "priceType": "merge",
-        "price": "N/A",
-        "requiredItems": "Thursday's Pendant",
-        "sellback": "100 Gold",
-        "daRequired": true
-      }
-    ],
-    "tags": [
-      "lig",
-      "merge"
-    ],
-    "daRequired": true
-  },
-  {
     "id": "accessory-thursday-s-necklace",
-    "name": "Thursday's Necklace",
+    "familyName": "Thursday's Necklace",
     "slug": "accessory-thursday-s-necklace",
+    "aliasSlugs": [
+      "accessory-thursday-s-dragon-necklace"
+    ],
     "type": "accessory",
     "subtype": "necklace",
-    "description": "This necklace was handmade by Thursday. It provides defence against darkness and a +1 to Luck.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=7631531",
-    "releaseDate": "",
-    "elements": [
-      "LIG"
-    ],
-    "level": "5",
-    "stats": "LUK +1, Darkness +2",
-    "rarity": "5",
-    "itemType": "Necklace",
-    "equipSpot": "Neck",
-    "category": "Armor",
-    "obtainMethods": [
+    "familyOrigin": "cross-post",
+    "familySources": [],
+    "shared": {
+      "description": "This necklace was handmade by Thursday. It provides defence against darkness and a +1 to Luck."
+    },
+    "levelVariants": [
       {
-        "location": "Thursday Necklaces",
-        "priceType": "merge",
-        "price": "N/A",
-        "requiredItems": "Thursday's Pendant",
-        "sellback": "100 Gold",
-        "daRequired": false
+        "levelNumber": 1,
+        "levelDisplay": "5",
+        "actualLevel": 5,
+        "variantName": "(Base)",
+        "name": "Thursday's Necklace",
+        "damage": "",
+        "stats": "LUK +1, Darkness +2",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=7631531",
+        "description": "This necklace was handmade by Thursday. It provides defence against darkness and a +1 to Luck.",
+        "obtainVariants": [
+          {
+            "location": "Thursday Necklaces",
+            "priceType": "merge",
+            "price": "N/A",
+            "requiredItems": "Thursday's Pendant",
+            "sellback": "100 Gold",
+            "daRequired": false
+          }
+        ],
+        "element": "LIG",
+        "rarity": "5"
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "5",
+        "actualLevel": 5,
+        "variantName": "Dragon",
+        "name": "Thursday's Dragon Necklace",
+        "damage": "",
+        "stats": "Dodge +1, LUK +1, Darkness +2",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=19810779",
+        "description": "This necklace requires a Dragon Amulet. It was handmade by Thursday. It provides defence against darkness, a +1 to Luck, and a +1 to Dodge.",
+        "obtainVariants": [
+          {
+            "location": "Thursday Necklaces",
+            "priceType": "merge",
+            "price": "N/A",
+            "requiredItems": "Thursday's Pendant",
+            "sellback": "100 Gold",
+            "daRequired": true
+          }
+        ],
+        "element": "LIG",
+        "rarity": "5"
       }
     ],
+    "itemType": "Necklace",
+    "equipSlot": "Neck",
+    "category": "Armor",
     "tags": [
       "lig",
       "merge"
     ],
-    "daRequired": false
+    "hasDA": true,
+    "hasDC": false,
+    "hasDM": false,
+    "hasFree": false,
+    "hasMerge": true,
+    "levelRange": "5",
+    "elements": [
+      "LIG"
+    ]
   },
   {
     "id": "accessory-tiger-necklace",
@@ -18090,7 +17935,7 @@
     },
     "levelVariants": [
       {
-        "levelNumber": 10,
+        "levelNumber": 1,
         "levelDisplay": "10",
         "actualLevel": 10,
         "variantName": "I",
@@ -18114,7 +17959,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 10,
+        "levelNumber": 1,
         "levelDisplay": "10",
         "actualLevel": 10,
         "variantName": "I",
@@ -18139,7 +17984,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 20,
+        "levelNumber": 2,
         "levelDisplay": "20",
         "actualLevel": 20,
         "variantName": "II",
@@ -18163,7 +18008,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 20,
+        "levelNumber": 2,
         "levelDisplay": "20",
         "actualLevel": 20,
         "variantName": "II",
@@ -18188,7 +18033,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 3,
         "levelDisplay": "30",
         "actualLevel": 30,
         "variantName": "III",
@@ -18212,7 +18057,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 30,
+        "levelNumber": 3,
         "levelDisplay": "30",
         "actualLevel": 30,
         "variantName": "III",
@@ -18237,7 +18082,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 4,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "IV",
@@ -18262,7 +18107,7 @@
         "notes": "spoiler:\nDescription for both versions of this item contains an Atbash cipher, which when decoded reads:\nI think the artifact is having some effect on my mind. My thoughts, no, my fears are stronger. I should lock it away, but I can't."
       },
       {
-        "levelNumber": 40,
+        "levelNumber": 4,
         "levelDisplay": "40",
         "actualLevel": 40,
         "variantName": "IV",
@@ -18288,7 +18133,7 @@
         "notes": "spoiler:\nDescription for both versions of this item contains an Atbash cipher, which when decoded reads:\nI think the artifact is having some effect on my mind. My thoughts, no, my fears are stronger. I should lock it away, but I can't."
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 5,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "V",
@@ -18312,7 +18157,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 50,
+        "levelNumber": 5,
         "levelDisplay": "50",
         "actualLevel": 50,
         "variantName": "V",
@@ -18337,7 +18182,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 6,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "VI",
@@ -18361,7 +18206,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 60,
+        "levelNumber": 6,
         "levelDisplay": "60",
         "actualLevel": 60,
         "variantName": "VI",
@@ -18386,7 +18231,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 7,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "VII",
@@ -18410,7 +18255,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 70,
+        "levelNumber": 8,
         "levelDisplay": "70",
         "actualLevel": 70,
         "variantName": "VII",
@@ -18435,7 +18280,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 9,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "VIII",
@@ -18459,7 +18304,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 80,
+        "levelNumber": 10,
         "levelDisplay": "80",
         "actualLevel": 80,
         "variantName": "VIII",
@@ -18484,7 +18329,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 11,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "IX",
@@ -18508,7 +18353,7 @@
         "itemType": "Necklace"
       },
       {
-        "levelNumber": 90,
+        "levelNumber": 12,
         "levelDisplay": "90",
         "actualLevel": 90,
         "variantName": "IX",
@@ -19243,136 +19088,128 @@
     ]
   },
   {
-    "id": "accessory-wild-beast-necklace",
-    "name": "Wild Beast Necklace",
-    "slug": "accessory-wild-beast-necklace",
-    "type": "accessory",
-    "subtype": "necklace",
-    "description": "A braided length of supple tree bark, the necklace brings you comfort in the darkness of the thickest wood.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20105967",
-    "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
-    "level": "57",
-    "stats": "Crit +2, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +3, END +3, INT +6, DEX +6, STR +6, Bonus +5, Immobility +1, Nature +4, Water +4, Fire +6",
-    "rarity": "6",
-    "itemType": "Necklace",
-    "equipSpot": "Neck",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "Wolf and Bear",
-        "priceType": "free",
-        "price": "N/A",
-        "sellback": "180 Gold",
-        "daRequired": false
-      }
-    ],
-    "tags": [
-      "nat",
-      "free"
-    ],
-    "daRequired": false
-  },
-  {
-    "id": "accessory-wild-heart-necklace",
-    "name": "Wild Heart Necklace",
-    "slug": "accessory-wild-heart-necklace",
-    "type": "accessory",
-    "subtype": "necklace",
-    "description": "A braided length of supple tree bark, the necklace brings you comfort in the darkness of the thickest wood. This item requires a Dragon Amulet.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20105855",
-    "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
-    "level": "71",
-    "stats": "Block +1, Crit +5, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +5, END +5, INT +8, DEX +8, STR +8, Bonus +7, Immobility +2, Nature +5, Water +7, Fire +8",
-    "rarity": "6",
-    "itemType": "Necklace",
-    "equipSpot": "Neck",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "Wolf and Bear",
-        "priceType": "free",
-        "price": "N/A",
-        "sellback": "220 Gold",
-        "daRequired": true
-      }
-    ],
-    "tags": [
-      "nat",
-      "free"
-    ],
-    "daRequired": true
-  },
-  {
     "id": "accessory-wild-necklace",
-    "name": "Wild Necklace",
+    "familyName": "Wild Necklace",
     "slug": "accessory-wild-necklace",
+    "aliasSlugs": [
+      "accessory-wild-wood-necklace",
+      "accessory-wild-beast-necklace",
+      "accessory-wild-heart-necklace"
+    ],
     "type": "accessory",
     "subtype": "necklace",
-    "description": "A braided length of supple tree bark, the necklace brings you comfort in the darkness of the thickest wood.",
     "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20105979",
-    "releaseDate": "",
-    "elements": [
-      "NAT"
-    ],
-    "level": "27",
-    "stats": "Magic Def +2, Pierce Def +2, Melee Def +2, WIS +1, END +1, INT +3, DEX +3, STR +3, Nature +1, Fire +1",
-    "rarity": "6",
-    "itemType": "Necklace",
-    "equipSpot": "Neck",
-    "category": "Armor",
-    "obtainMethods": [
+    "familyOrigin": "cross-post",
+    "familySources": [],
+    "shared": {
+      "description": "A braided length of supple tree bark, the necklace brings you comfort in the darkness of the thickest wood."
+    },
+    "levelVariants": [
       {
-        "location": "Wolf and Bear",
-        "priceType": "free",
-        "price": "N/A",
-        "sellback": "80 Gold",
-        "daRequired": false
+        "levelNumber": 1,
+        "levelDisplay": "27",
+        "actualLevel": 27,
+        "variantName": "(Base)",
+        "name": "Wild Necklace",
+        "damage": "",
+        "stats": "Magic Def +2, Pierce Def +2, Melee Def +2, WIS +1, END +1, INT +3, DEX +3, STR +3, Nature +1, Fire +1",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20105979",
+        "description": "A braided length of supple tree bark, the necklace brings you comfort in the darkness of the thickest wood.",
+        "obtainVariants": [
+          {
+            "location": "Wolf and Bear",
+            "priceType": "free",
+            "price": "N/A",
+            "sellback": "80 Gold",
+            "daRequired": false
+          }
+        ],
+        "element": "NAT",
+        "rarity": "6"
+      },
+      {
+        "levelNumber": 2,
+        "levelDisplay": "42",
+        "actualLevel": 42,
+        "variantName": "Wood",
+        "name": "Wild Wood Necklace",
+        "damage": "",
+        "stats": "Crit +1, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +2, END +2, INT +4, DEX +4, STR +4, Bonus +3, Nature +3, Water +3, Fire +4",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20105958",
+        "description": "A braided length of supple tree bark, the necklace brings you comfort in the darkness of the thickest wood.",
+        "obtainVariants": [
+          {
+            "location": "Wolf and Bear",
+            "priceType": "free",
+            "price": "N/A",
+            "sellback": "120 Gold",
+            "daRequired": false
+          }
+        ],
+        "element": "NAT",
+        "rarity": "6"
+      },
+      {
+        "levelNumber": 3,
+        "levelDisplay": "57",
+        "actualLevel": 57,
+        "variantName": "Beast",
+        "name": "Wild Beast Necklace",
+        "damage": "",
+        "stats": "Crit +2, Magic Def +4, Pierce Def +4, Melee Def +4, WIS +3, END +3, INT +6, DEX +6, STR +6, Bonus +5, Immobility +1, Nature +4, Water +4, Fire +6",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20105967",
+        "description": "A braided length of supple tree bark, the necklace brings you comfort in the darkness of the thickest wood.",
+        "obtainVariants": [
+          {
+            "location": "Wolf and Bear",
+            "priceType": "free",
+            "price": "N/A",
+            "sellback": "180 Gold",
+            "daRequired": false
+          }
+        ],
+        "element": "NAT",
+        "rarity": "6"
+      },
+      {
+        "levelNumber": 4,
+        "levelDisplay": "71",
+        "actualLevel": 71,
+        "variantName": "Heart",
+        "name": "Wild Heart Necklace",
+        "damage": "",
+        "stats": "Block +1, Crit +5, Magic Def +6, Pierce Def +6, Melee Def +6, WIS +5, END +5, INT +8, DEX +8, STR +8, Bonus +7, Immobility +2, Nature +5, Water +7, Fire +8",
+        "sourceUrl": "https://forums2.battleon.com/f/tm.asp?m=20105855",
+        "description": "A braided length of supple tree bark, the necklace brings you comfort in the darkness of the thickest wood. This item requires a Dragon Amulet.",
+        "obtainVariants": [
+          {
+            "location": "Wolf and Bear",
+            "priceType": "free",
+            "price": "N/A",
+            "sellback": "220 Gold",
+            "daRequired": true
+          }
+        ],
+        "element": "NAT",
+        "rarity": "6"
       }
     ],
+    "itemType": "Necklace",
+    "equipSlot": "Neck",
+    "category": "Armor",
     "tags": [
-      "nat",
-      "free"
+      "free",
+      "nat"
     ],
-    "daRequired": false
-  },
-  {
-    "id": "accessory-wild-wood-necklace",
-    "name": "Wild Wood Necklace",
-    "slug": "accessory-wild-wood-necklace",
-    "type": "accessory",
-    "subtype": "necklace",
-    "description": "A braided length of supple tree bark, the necklace brings you comfort in the darkness of the thickest wood.",
-    "forumUrl": "https://forums2.battleon.com/f/tm.asp?m=20105958",
-    "releaseDate": "",
+    "hasDA": true,
+    "hasDC": false,
+    "hasDM": false,
+    "hasFree": true,
+    "hasMerge": false,
+    "levelRange": "27-71",
     "elements": [
       "NAT"
-    ],
-    "level": "42",
-    "stats": "Crit +1, Magic Def +3, Pierce Def +3, Melee Def +3, WIS +2, END +2, INT +4, DEX +4, STR +4, Bonus +3, Nature +3, Water +3, Fire +4",
-    "rarity": "6",
-    "itemType": "Necklace",
-    "equipSpot": "Neck",
-    "category": "Armor",
-    "obtainMethods": [
-      {
-        "location": "Wolf and Bear",
-        "priceType": "free",
-        "price": "N/A",
-        "sellback": "120 Gold",
-        "daRequired": false
-      }
-    ],
-    "tags": [
-      "nat",
-      "free"
-    ],
-    "daRequired": false
+    ]
   },
   {
     "id": "accessory-windwhisper-pendant",

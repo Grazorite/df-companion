@@ -71,7 +71,8 @@ function searchClassAbilities(
 
       const hasClassSubcategory = (subcategory: NonNullable<
         ClassAbilityFilters['classSubcategories']
-      >[number]) => (isFamily ? entry.classSubcategory === subcategory : entry.classSubcategory === subcategory)
+      >[number]) =>
+        entry.classSubcategory === subcategory || entry.classSubcategories?.includes(subcategory)
       if (
         filters.classSubcategories &&
         filters.classSubcategories.length > 0 &&
@@ -201,7 +202,7 @@ export function useClassAbilityBySlug(subtype: ClassAbilitySubtype, slug: string
       entries.find(
         (entry) =>
           entry.slug === slug ||
-          (isClassAbilityFamily(entry) && entry.aliasSlugs?.includes(slug))
+          entry.aliasSlugs?.includes(slug)
       ) ?? null
     )
   }, [entries, loading, slug])
@@ -209,9 +210,7 @@ export function useClassAbilityBySlug(subtype: ClassAbilitySubtype, slug: string
 }
 
 function getClassAbilitySlugs(entry: ClassAbilityEntry): string[] {
-  return isClassAbilityFamily(entry)
-    ? [entry.slug, ...(entry.aliasSlugs ?? [])]
-    : [entry.slug]
+  return [entry.slug, ...(entry.aliasSlugs ?? [])]
 }
 
 function getClassAbilityAlsoSeeRefs(entry: ClassAbilityEntry): AlsoSeeRef[] {
@@ -382,6 +381,7 @@ export function useClassAbilityAvailability(subtype: ClassAbilitySubtype) {
       for (const entry of entries) {
         if (isClassAbilityFamily(entry)) {
           if (entry.classSubcategory) classSubcategories.add(entry.classSubcategory)
+          entry.classSubcategories?.forEach((subcategory) => classSubcategories.add(subcategory))
           if (entry.consumableKind) consumableKinds.add(entry.consumableKind)
           if (entry.levelVariants.length > 1) access.add('multiple')
           if (entry.hasDA) access.add('da')
@@ -395,6 +395,7 @@ export function useClassAbilityAvailability(subtype: ClassAbilitySubtype) {
           }
         } else {
           if (entry.classSubcategory) classSubcategories.add(entry.classSubcategory)
+          entry.classSubcategories?.forEach((subcategory) => classSubcategories.add(subcategory))
           if (entry.consumableKind) consumableKinds.add(entry.consumableKind)
           if (entry.daRequired) access.add('da')
           if (entry.dcRequired) access.add('dc')

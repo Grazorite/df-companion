@@ -574,6 +574,14 @@ export default function WeaponDetail({ weapon, filterBase, backUrl }: WeaponDeta
     related.entry ? [{ ref: related.ref, entry: related.entry }] : []
   )
   const defaultWeaponClassRelations = useClassDefaultWeaponRelationsForWeapon(weapon.slug)
+  const defaultWeaponClassLinks = useMemo(
+    () =>
+      defaultWeaponClassRelations.map((relation) => ({
+        text: relation.className,
+        to: relation.classRoute,
+      })),
+    [defaultWeaponClassRelations]
+  )
   const badgeInlineLinks = useBadgeInlineLinksForItem(weapon.slug)
 
   return (
@@ -699,28 +707,9 @@ export default function WeaponDetail({ weapon, filterBase, backUrl }: WeaponDeta
         </section>
       )}
 
-      <ObtainSection variants={obtainMethods} className="mb-8" />
+      <ObtainSection variants={obtainMethods} className="mb-8" links={defaultWeaponClassLinks} />
 
       <WeaponSpecialsSection specials={weaponSpecials} />
-
-      {defaultWeaponClassRelations.length > 0 && (
-        <section className="bg-bg-surface border border-border-default rounded-lg p-5 mb-5">
-          <h2 className="text-xs font-semibold text-text-muted uppercase tracking-wider mb-3">
-            Default Weapon For
-          </h2>
-          <div className="flex flex-wrap gap-x-3 gap-y-2">
-            {defaultWeaponClassRelations.map((relation) => (
-              <Link
-                key={relation.classSlug}
-                to={relation.classRoute}
-                className="text-sm text-gold hover:text-gold-light transition-colors"
-              >
-                {relation.className}
-              </Link>
-            ))}
-          </div>
-        </section>
-      )}
 
       <OtherInformationSection
         notes={singleWeapon?.notes}

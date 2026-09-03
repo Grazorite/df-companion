@@ -77,6 +77,7 @@ interface SpecialFamilySpec {
   names: string[]
   variantNames: string[]
   notes?: string
+  singularOnly?: boolean
   sortByLevel?: boolean
 }
 
@@ -119,6 +120,57 @@ const SPECIAL_FAMILY_SPECS: SpecialFamilySpec[] = [
     sortByLevel: true,
   },
   {
+    familyName: "Hunter's Wrap",
+    names: [
+      "Hunter's Wrap",
+      "Hunter's Worn Wrap",
+      "Hunter's Crimped Wrap",
+      "Hunter's Wandering Wrap",
+      "Hunter's Wiggly Wrap",
+      "Hunter's Prickly Wrap",
+      "Hunter's Flexible Wrap",
+    ],
+    variantNames: ['(Base)', 'Worn', 'Crimped', 'Wandering', 'Wiggly', 'Prickly', 'Flexible'],
+    singularOnly: true,
+    sortByLevel: true,
+  },
+  {
+    familyName: 'Soulthread Loop',
+    names: [
+      'Beginner Soulthread Loop',
+      'Novice Soulthread Loop',
+      'Freshman Soulthread Loop',
+      'Sophomore Soulthread Loop',
+      'Junior Soulthread Loop',
+      'Senior Soulthread Loop',
+    ],
+    variantNames: ['Beginner', 'Novice', 'Freshman', 'Sophomore', 'Junior', 'Senior'],
+    singularOnly: true,
+    sortByLevel: true,
+  },
+  {
+    familyName: "Star Captain's Belt",
+    names: [
+      "Star Captain's Plain Belt",
+      "Star Captain's Extended Belt",
+      "Star Captain's Worn Belt",
+      "Star Captain's Stretched Belt",
+      "Star Captain's Folded Belt",
+      "Star Captain's Fancy Belt",
+      "Star Captain's Ornate Belt",
+      "Star Captain's Formal Belt",
+    ],
+    variantNames: ['Plain', 'Extended', 'Worn', 'Stretched', 'Folded', 'Fancy', 'Ornate', 'Formal'],
+    singularOnly: true,
+    sortByLevel: true,
+  },
+  {
+    familyName: 'Necro U Sash',
+    names: ['Necro U Alumni Sash', 'Necro U Salutorian Sash', 'Necro U Valedictorian Sash'],
+    variantNames: ['Alumni', 'Salutorian', 'Valedictorian'],
+    sortByLevel: true,
+  },
+  {
     familyName: "Mazurek's Emerald Ring",
     names: [
       "Mazurek's Emerald Ring",
@@ -131,6 +183,63 @@ const SPECIAL_FAMILY_SPECS: SpecialFamilySpec[] = [
     sortByLevel: true,
   },
   {
+    familyName: 'Bloodstone Ring',
+    names: [
+      'Bloodstone Ring',
+      'Glimmering Bloodstone Ring',
+      'Glittering Bloodstone Ring',
+      'Gleaming Bloodstone Ring',
+      'Shining Bloodstone Ring',
+      'Vibrant Bloodstone Ring',
+      'Brilliant Bloodstone Ring',
+    ],
+    variantNames: ['(Base)', 'Glimmering', 'Glittering', 'Gleaming', 'Shining', 'Vibrant', 'Brilliant'],
+    singularOnly: true,
+    sortByLevel: true,
+  },
+  {
+    familyName: 'Moonstone Ring',
+    names: [
+      'Moonstone Ring',
+      'Glowing Moonstone Ring',
+      'Cold Moonstone Ring',
+      'Shining Moonstone Ring',
+      'Sparkling Moonstone Ring',
+      'Cut Moonstone Ring',
+      'Vibrant Moonstone Ring',
+      'Lambent Moonstone Ring',
+    ],
+    variantNames: ['(Base)', 'Glowing', 'Cold', 'Shining', 'Sparkling', 'Cut', 'Vibrant', 'Lambent'],
+    singularOnly: true,
+    sortByLevel: true,
+  },
+  {
+    familyName: 'Ancient Ring',
+    names: [
+      'Ancient Ring',
+      "Ancient Soldier's Ring",
+      "Ancient Captain's Ring",
+      "Ancient Commander's Ring",
+    ],
+    variantNames: ['(Base)', 'Soldier', 'Captain', 'Commander'],
+    singularOnly: true,
+    sortByLevel: true,
+  },
+  {
+    familyName: 'Ring of the Emperor',
+    names: [
+      'Moonstone Ring of the Emperor',
+      'Amber Ring of the Emperor',
+      'Amethyst Ring of the Emperor',
+      'Opal Ring of the Emperor',
+      'Sapphire Ring of the Emperor',
+      'Diamond Ring of the Emperor',
+    ],
+    variantNames: ['Moonstone', 'Amber', 'Amethyst', 'Opal', 'Sapphire', 'Diamond'],
+    singularOnly: true,
+    sortByLevel: true,
+  },
+  {
     familyName: 'Golden Rings',
     names: [
       'First Golden Ring',
@@ -140,6 +249,113 @@ const SPECIAL_FAMILY_SPECS: SpecialFamilySpec[] = [
       'Fifth Golden Ring',
     ],
     variantNames: ['First', 'Second', 'Third', 'Fourth', 'Fifth'],
+  },
+  {
+    familyName: 'Bear Tooth Necklace',
+    names: [
+      'Bear Tooth Necklace',
+      'Grizzly Bear Tooth Necklace',
+      'Sharp Bear Tooth Necklace',
+      'Bloody Bear Tooth Necklace',
+      'Jagged Bear Tooth Necklace',
+      'Bleached Bear Tooth Necklace',
+      'Serrated Bear Tooth Necklace',
+      'Broken Bear Tooth Necklace',
+    ],
+    variantNames: [
+      '(Base)',
+      'Grizzly',
+      'Sharp',
+      'Bloody',
+      'Jagged',
+      'Bleached',
+      'Serrated',
+      'Broken',
+    ],
+    singularOnly: true,
+    sortByLevel: true,
+  },
+  {
+    familyName: 'Wild Necklace',
+    names: ['Wild Necklace', 'Wild Wood Necklace', 'Wild Beast Necklace', 'Wild Heart Necklace'],
+    variantNames: ['(Base)', 'Wood', 'Beast', 'Heart'],
+    singularOnly: true,
+    sortByLevel: true,
+  },
+  {
+    familyName: "Thursday's Necklace",
+    names: ["Thursday's Necklace", "Thursday's Dragon Necklace"],
+    variantNames: ['(Base)', 'Dragon'],
+    singularOnly: true,
+  },
+  {
+    familyName: "Drakonnan's Helm",
+    names: ["Drakonnan's Helm", "Drakonnan's Armored Helm", "Drakonnan's Fiery Helm"],
+    variantNames: ['(Base)', 'Armored', 'Fiery'],
+    singularOnly: true,
+    sortByLevel: true,
+  },
+  {
+    familyName: 'Skullhelm',
+    names: ["Klatu's Skullhelm", "Baradaa's Skullhelm", "Nickto's Skullhelm"],
+    variantNames: ["Klatu's", "Baradaa's", "Nickto's"],
+    singularOnly: true,
+    sortByLevel: true,
+  },
+  {
+    familyName: 'Gnome Wig',
+    names: ['Female Gnome Wig', 'Male Gnome Wig'],
+    variantNames: ['Female', 'Male'],
+    singularOnly: true,
+  },
+  {
+    familyName: 'Goggle Wig',
+    names: ['Female Goggle Wig', 'Male Goggle Wig'],
+    variantNames: ['Female', 'Male'],
+    singularOnly: true,
+  },
+  {
+    familyName: 'Eyeball Helm',
+    names: ['Eyeball Helm', 'Shiny Eyeball Helm'],
+    variantNames: ['(Base)', 'Shiny'],
+    singularOnly: true,
+    sortByLevel: true,
+  },
+  {
+    familyName: 'Custom HarleQuape (2010)',
+    names: [
+      'Custom HarleQuape (2010)',
+      'Elite Custom HarleQuape (2010)',
+      'Ultra Custom HarleQuape 2010',
+    ],
+    variantNames: ['(Base)', 'Elite', 'Ultra'],
+    singularOnly: true,
+    sortByLevel: true,
+  },
+  {
+    familyName: 'Astral Avenger',
+    names: ['Blue Astral Avenger', 'Red Astral Avenger'],
+    variantNames: ['Blue', 'Red'],
+    singularOnly: true,
+  },
+  {
+    familyName: 'Half Dread Wings',
+    names: ['Half Dread Wings', 'Mighty Half Dread Wings'],
+    variantNames: ['(Base)', 'Mighty'],
+    singularOnly: true,
+    sortByLevel: true,
+  },
+  {
+    familyName: "Thursday's Cape",
+    names: ["Thursday's Cape", "Thursday's Dragon Cape"],
+    variantNames: ['(Base)', 'Dragon'],
+    singularOnly: true,
+  },
+  {
+    familyName: 'Wings of The Flames',
+    names: ['Wings of The Hundred Flames', 'Wings of The Thousand Flames'],
+    variantNames: ['Hundred', 'Thousand'],
+    singularOnly: true,
   },
   {
     familyName: "Timid Lion's Head",
@@ -605,6 +821,76 @@ function buildVariantFromAccessory(
   }
 }
 
+const STALE_REVIEWED_FAMILIES_TO_UNWIND = new Set(['seal ring', 'star ring'])
+const LINK_ONLY_SIBLING_GROUPS = [
+  ['Star Ring', 'Starry Ring', 'Starlight Ring'],
+  [
+    'Plain Seal Ring',
+    'Seal Ring',
+    'Enchanted Seal Ring',
+    'Elemental Seal Ring',
+    'Runed Seal Ring',
+    'Exquisite Seal Ring',
+    'Jeweled Seal Ring of Wall',
+    'Ornamented Seal Ring of the Papermancers',
+  ],
+]
+
+function buildAccessoryFromVariant(family: AccessoryFamily, variant: LevelVariant): Accessory {
+  const name = variant.name
+  return {
+    id: `accessory-${slugify(name)}`,
+    name,
+    slug: `accessory-${slugify(name)}`,
+    type: 'accessory',
+    subtype: family.subtype,
+    description: variant.description ?? family.shared.description ?? '',
+    forumUrl: variant.sourceUrl ?? family.forumUrl,
+    releaseDate: family.releaseDate ?? '',
+    ...(variant.imageUrl ?? family.shared.imageUrl
+      ? { imageUrl: variant.imageUrl ?? family.shared.imageUrl }
+      : {}),
+    ...(variant.alternativeImages ?? family.shared.alternativeImages
+      ? { alternativeImages: variant.alternativeImages ?? family.shared.alternativeImages }
+      : {}),
+    elements: variant.element ? [variant.element] : family.elements,
+    level: variant.levelDisplay,
+    stats: variant.stats,
+    ...(variant.resists ? { resists: variant.resists } : {}),
+    ...(variant.rarity ? { rarity: variant.rarity } : {}),
+    ...(variant.itemType ?? family.itemType ? { itemType: variant.itemType ?? family.itemType } : {}),
+    ...(family.equipSlot ? { equipSpot: family.equipSlot } : {}),
+    ...(family.modifies ? { modifies: family.modifies } : {}),
+    ...(family.armorCustomization ? { armorCustomization: family.armorCustomization } : {}),
+    ...(family.hasArmorCustomization ? { hasArmorCustomization: true } : {}),
+    ...(family.category ? { category: family.category } : {}),
+    obtainMethods: variant.obtainVariants,
+    ...(variant.notes ?? family.shared.notes ? { notes: variant.notes ?? family.shared.notes } : {}),
+    ...(family.shared.alsoSee ? { alsoSee: family.shared.alsoSee } : {}),
+    tags: family.tags,
+    daRequired: variant.obtainVariants.some((method) => method.daRequired),
+    dcRequired: variant.obtainVariants.some((method) => method.dcRequired || method.priceType === 'dc') || undefined,
+    dmRequired: variant.obtainVariants.some((method) => method.dmRequired || method.priceType === 'dm') || undefined,
+    isTemp: family.isTemp,
+    isCosmetic: family.isCosmetic,
+    isRare: family.isRare,
+    isSeasonal: family.isSeasonal,
+    isSpecialOffer: family.isSpecialOffer,
+    isWar: family.isWar,
+    retired: family.retired,
+  }
+}
+
+function unwindStaleReviewedFamilies(entries: AccessoryEntry[]): AccessoryEntry[] {
+  return entries.flatMap((entry): AccessoryEntry[] => {
+    if (!isAccessoryFamily(entry)) return [entry]
+    if (!STALE_REVIEWED_FAMILIES_TO_UNWIND.has(normalizeLookupName(entry.familyName))) {
+      return [entry]
+    }
+    return entry.levelVariants.map((variant) => buildAccessoryFromVariant(entry, variant))
+  })
+}
+
 function flattenFamilyVariants(family: AccessoryFamily): LevelVariant[] {
   return family.levelVariants.map((variant) => ({
     ...variant,
@@ -891,6 +1177,7 @@ function buildSpecialFamily(
     .map((name) => findEntryByName(entries, name))
     .filter((entry): entry is AccessoryEntry => Boolean(entry))
   if (matchedEntries.length !== spec.names.length) return undefined
+  if (spec.singularOnly && matchedEntries.some(isAccessoryFamily)) return undefined
 
   const familySlug = matchedEntries[0].slug
   let variantIndex = 0
@@ -1739,6 +2026,105 @@ function applyAccessoryFamilyAccessOverrides(entries: AccessoryEntry[]): Accesso
   })
 }
 
+function variantMergeKey(variant: LevelVariant): string {
+  return [
+    variant.variantName ?? '',
+    variant.levelDisplay ?? '',
+    variant.actualLevel ?? '',
+    variant.name,
+    variant.damage,
+    variant.stats,
+    variant.resists ?? '',
+    variant.rarity ?? '',
+    variant.element ?? '',
+    variant.description ?? '',
+  ].join('|')
+}
+
+function mergeDuplicateMethodOnlyVariants(family: AccessoryFamily): AccessoryFamily {
+  const variantsByKey = new Map<string, LevelVariant>()
+  const mergedVariants: LevelVariant[] = []
+
+  for (const variant of family.levelVariants) {
+    const key = variantMergeKey(variant)
+    const existing = variantsByKey.get(key)
+    if (!existing) {
+      const clone = {
+        ...variant,
+        obtainVariants: [...variant.obtainVariants],
+      }
+      variantsByKey.set(key, clone)
+      mergedVariants.push(clone)
+      continue
+    }
+
+    const seenMethods = new Set(
+      existing.obtainVariants.map((method) => JSON.stringify(method))
+    )
+    for (const method of variant.obtainVariants) {
+      const methodKey = JSON.stringify(method)
+      if (seenMethods.has(methodKey)) continue
+      seenMethods.add(methodKey)
+      existing.obtainVariants.push(method)
+    }
+  }
+
+  if (mergedVariants.length === family.levelVariants.length) return family
+
+  return computeFamilyFlags({
+    ...family,
+    levelVariants: mergedVariants.map((variant, index) => ({
+      ...variant,
+      levelNumber: index + 1,
+    })),
+  })
+}
+
+function mergeDuplicateMethodOnlyFamilyVariants(entries: AccessoryEntry[]): AccessoryEntry[] {
+  return entries.map((entry) =>
+    isAccessoryFamily(entry) ? mergeDuplicateMethodOnlyVariants(entry) : entry
+  )
+}
+
+function normalizePossessiveSkullhelmFamily(entries: AccessoryEntry[]): AccessoryEntry[] {
+  return entries.map((entry) => {
+    if (!isAccessoryFamily(entry)) return entry
+    if (normalizeLookupName(entry.familyName) !== 'skullhelm') return entry
+
+    return {
+      ...entry,
+      levelVariants: entry.levelVariants.map((variant) => {
+        const match = variant.name.match(/^(.+?'s)\s+Skullhelm$/i)
+        return match ? { ...variant, variantName: match[1] } : variant
+      }),
+    }
+  })
+}
+
+function linkReviewedSiblingGroups(entries: AccessoryEntry[]): AccessoryEntry[] {
+  const entryByName = new Map(entries.map((entry) => [normalizeLookupName(getDisplayName(entry)), entry]))
+  let updatedEntries = entries
+
+  for (const group of LINK_ONLY_SIBLING_GROUPS) {
+    const siblings = group
+      .map((name) => entryByName.get(normalizeLookupName(name)))
+      .filter((entry): entry is AccessoryEntry => Boolean(entry))
+    if (siblings.length < 2) continue
+
+    const siblingBySlug = new Map(siblings.map((entry) => [entry.slug, entry]))
+    updatedEntries = updatedEntries.map((entry) => {
+      const current = siblingBySlug.get(entry.slug)
+      if (!current) return entry
+      const siblingRefs = siblings
+        .filter((sibling) => sibling.slug !== current.slug)
+        .map(getEntryRef)
+      return setAlsoSee(entry, [...getAlsoSee(entry), ...siblingRefs])
+    })
+  }
+
+  return updatedEntries
+}
+
 /**
  * Drop standalone (non-family) entries whose slug is already claimed as an
  * alias of a promoted family. When a family declares slug X as an alias it is
@@ -1823,6 +2209,7 @@ export function linkSharedAliasSiblingFamilies(entries: AccessoryEntry[]): Acces
 }
 
 export function promoteAccessoryCrossPostFamilies(entries: AccessoryEntry[]): AccessoryEntry[] {
+  entries = unwindStaleReviewedFamilies(entries)
   const visited = new Set<string>()
   const groups: AccessoryEntry[][] = []
 
@@ -1873,7 +2260,9 @@ export function promoteAccessoryCrossPostFamilies(entries: AccessoryEntry[]): Ac
       )
     )
   )
-  const linked = linkSharedAliasSiblingFamilies(consolidated)
-  const deduped = removeStandalonesClaimedByFamilies(dedupeEntriesBySlug(linked))
+  const linked = normalizePossessiveSkullhelmFamily(
+    mergeDuplicateMethodOnlyFamilyVariants(linkSharedAliasSiblingFamilies(consolidated))
+  )
+  const deduped = removeStandalonesClaimedByFamilies(dedupeEntriesBySlug(linkReviewedSiblingGroups(linked)))
   return rewriteRelatedRefsForPromotedFamilies(deduped)
 }
