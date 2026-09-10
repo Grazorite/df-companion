@@ -373,6 +373,25 @@ function classAbilitySourceDedupeKey(entry: ClassAbilityEntry): string | undefin
   return messageId ? `source:${messageId}` : sourceUrl ? `source:${sourceUrl}` : undefined
 }
 
+function classEntryHasDA(entry: ClassAbilityEntry): boolean {
+  return isLoadedFamily(entry) ? entry.hasDA : Boolean(entry.daRequired)
+}
+
+function classEntryHasDC(entry: ClassAbilityEntry): boolean {
+  return isLoadedFamily(entry) ? entry.hasDC : Boolean(entry.dcRequired)
+}
+
+function classEntryHasDM(entry: ClassAbilityEntry): boolean {
+  return isLoadedFamily(entry) ? entry.hasDM : Boolean(entry.dmRequired)
+}
+
+function classEntryIsSpecialCharacter(entry: ClassAbilityEntry): boolean {
+  return (
+    (!isLoadedFamily(entry) && Boolean(entry.isSpecialCharacter)) ||
+    entry.tags.includes('special-character')
+  )
+}
+
 function mergeClassAbilityDuplicates(
   primary: ClassAbilityEntry,
   duplicate: ClassAbilityEntry
@@ -393,37 +412,20 @@ function mergeClassAbilityDuplicates(
     ...(aliasSlugs.length > 0 ? { aliasSlugs } : {}),
     classSubcategories,
     tags,
-    daRequired:
-      'daRequired' in primary || 'daRequired' in duplicate
-        ? Boolean(primary.daRequired) || Boolean(duplicate.daRequired)
-        : undefined,
-    dcRequired:
-      'dcRequired' in primary || 'dcRequired' in duplicate
-        ? Boolean(primary.dcRequired) || Boolean(duplicate.dcRequired)
-        : undefined,
-    dmRequired:
-      'dmRequired' in primary || 'dmRequired' in duplicate
-        ? Boolean(primary.dmRequired) || Boolean(duplicate.dmRequired)
-        : undefined,
+    daRequired: classEntryHasDA(primary) || classEntryHasDA(duplicate) || undefined,
+    dcRequired: classEntryHasDC(primary) || classEntryHasDC(duplicate) || undefined,
+    dmRequired: classEntryHasDM(primary) || classEntryHasDM(duplicate) || undefined,
     hasFree: Boolean(primary.hasFree) || Boolean(duplicate.hasFree),
     hasMerge: Boolean(primary.hasMerge) || Boolean(duplicate.hasMerge),
-    hasDA:
-      'hasDA' in primary || 'hasDA' in duplicate
-        ? Boolean(primary.hasDA) || Boolean(duplicate.hasDA)
-        : undefined,
-    hasDC:
-      'hasDC' in primary || 'hasDC' in duplicate
-        ? Boolean(primary.hasDC) || Boolean(duplicate.hasDC)
-        : undefined,
-    hasDM:
-      'hasDM' in primary || 'hasDM' in duplicate
-        ? Boolean(primary.hasDM) || Boolean(duplicate.hasDM)
-        : undefined,
+    hasDA: classEntryHasDA(primary) || classEntryHasDA(duplicate),
+    hasDC: classEntryHasDC(primary) || classEntryHasDC(duplicate),
+    hasDM: classEntryHasDM(primary) || classEntryHasDM(duplicate),
     isTemp: Boolean(primary.isTemp) || Boolean(duplicate.isTemp),
     isRare: Boolean(primary.isRare) || Boolean(duplicate.isRare),
     isSeasonal: Boolean(primary.isSeasonal) || Boolean(duplicate.isSeasonal),
     isSpecialOffer: Boolean(primary.isSpecialOffer) || Boolean(duplicate.isSpecialOffer),
-    isSpecialCharacter: Boolean(primary.isSpecialCharacter) || Boolean(duplicate.isSpecialCharacter),
+    isSpecialCharacter:
+      classEntryIsSpecialCharacter(primary) || classEntryIsSpecialCharacter(duplicate) || undefined,
     retired: Boolean(primary.retired) || Boolean(duplicate.retired),
   } as ClassAbilityEntry
 }

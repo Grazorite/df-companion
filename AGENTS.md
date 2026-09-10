@@ -91,6 +91,8 @@
 [`docs/context/done-task-archive.md`](./docs/context/done-task-archive.md). Rotate at session
 close, not after each individual task.*
 
+- [x] **Class access flag merge repair** — verified the pending `dataLoaders.ts` change that
+      preserves DA/DC/DM and special-character flags when same-source Class entries are merged.
 - [x] **Lean live handover policy** — shortened `AGENTS.md` to five live log entries and five live
       Done items, with older material archived under `docs/context/`.
 - [x] **Introduce a test framework** — lean Node test harness for public behavior and shared utility
@@ -104,9 +106,6 @@ close, not after each individual task.*
       Necklace, Thursday's Necklace, Drakonnan's Helm, Skullhelm, Gnome Wig, Goggle Wig, Eyeball
       Helm, Custom HarleQuape (2010), Astral Avenger, Half Dread Wings, Thursday's Cape, and Wings
       of The Flames.
-- [x] Radix Tooltip on `AccessPills` — DA/DC/DM detail-page pills now carry accessible tooltips
-      (keyboard focus, Escape, `aria-describedby`) spelling out the abbreviations, replacing the
-      native `title`.
 
 ---
 
@@ -214,6 +213,38 @@ is being written as part of that same commit
 > goes stale the moment the work lands and was never retro-corrected. Treat `git log` as authoritative
 > for what shipped when. New entries should use `the commit containing this entry` instead, which stays
 > true.
+
+### 2026-09-10 — Class access flag merge repair
+
+**Agent:** orchestrator (GPT-5 Codex) · **Commit(s):** `the commit containing this entry`
+**Kanban moved:** no board item moved; verified and committed pre-existing `dataLoaders.ts` change
+
+**Changed:**
+
+- `src/utils/dataLoaders.ts`: same-source Class duplicate merging now reads DA/DC/DM access from
+  family-level `hasDA` / `hasDC` / `hasDM` flags when the merged entry is an item family, instead
+  of only checking single-entry `daRequired` / `dcRequired` / `dmRequired` fields.
+- `src/utils/dataLoaders.ts`: merged Class entries now preserve the special-character flag when it is
+  represented by the `special-character` tag, which keeps list/card filters aligned with loaded data.
+- `AGENTS.md` and `docs/context/handover-log-archive.md`: recorded this verified repair and kept the
+  live handover log at five entries for session close.
+
+**Verified:**
+
+- `npm test` → passed 10 tests.
+- `npm run build` → passed all validators, dataset verification, script typecheck, TypeScript build,
+  and Vite production build.
+- `npm run lint` → passed.
+
+**Not verified / known gaps:**
+
+- No browser screenshot pass was run; this was loader/filter flag behavior rather than a visual layout
+  change.
+
+**Next agent should:**
+
+- Add a focused loader test if the class merge path changes again; current verification is full-gate
+  build/test/lint rather than a dedicated fixture for this private merge helper.
 
 ### 2026-09-10 — Leaner live handover policy
 
@@ -373,97 +404,3 @@ is being written as part of that same commit
 **Next agent should:**
 
 - Have the user spot-check the new family selectors and Method 1/2 obtain cards.
-
-### 2026-09-01 — Class Regular/Misc overlap and Nythera cleanup
-
-**Agent:** orchestrator (GPT-5 Codex) · **Commit(s):** `the commit containing this entry`
-**Kanban moved:** no board item moved; user-requested targeted class scraper/UI/data correction
-
-**Changed:**
-
-- `src/utils/dataLoaders.ts`, `src/hooks/useClassAbilities.ts`, and
-  `src/components/classAbilities/ClassAbilityCard.tsx`: Regular/Miscellaneous class entries with
-  the same forum source now load as one card while preserving both subcategory memberships and alias
-  slugs. Current duplicate-source groups are `|`, `Angler`, `ChickencowLord`, and `Zardbie`.
-- `scripts/scrape-classes.ts`: class image extraction now keeps explicit gallery captions such as
-  `Alternative Image` even when a name-matched main image exists; `Nythera` and `Kid Nythera`
-  are the reference cases.
-- `scripts/scrape-classes.ts`: playable class stat parsing now accepts compact rows such as
-  `Defenses: Melee: 5, ...`, and playable classes no longer use the Consumables dialogue extractor.
-- `scripts/scrape-classes.ts`: class obtain methods now parse `Level/Quest/Items required:` as
-  requirements, drop redundant `Dragon Amulet`, and keep DC flags scoped to the individual obtain
-  method instead of inheriting a page-level DC tag.
-- `scripts/scrape-classes.ts`: class obtain parsing now reads the raw forum HTML intro block so
-  DA/DC/DM tag images are scoped to the obtain method they precede, matching the pattern already used
-  by guests, accessories, and weapons.
-- `scripts/scrape-classes.ts`: obtain-method DA now stays method-scoped as well; whole-page DA tags
-  only contribute to item/filter metadata and are no longer copied onto every class access point.
-  `Ascended Chickencow` is the reference case.
-- `scripts/scrape-classes.ts`: `Nythera` Miscellaneous class variants are labelled `(Base)` and
-  `(Rare)` instead of generic `1` / `Scaled`.
-- `scripts/scrape-classes.ts` and `src/data/class-regular.json`: `ChronoZ` is now a Regular-class
-  single-post exception, so later same-thread combo posts no longer become variants or attack sets.
-  Its `CZ-Widget.gif` image remains in Class Mechanics and no longer appears as a `Main`
-  class-gallery image.
-- `src/components/classAbilities/ClassAbilityDetail.tsx`: removed the detail-header `Temp` pill for
-  Classes / Abilities; `Temp` remains a list-level filter only.
-- `scripts/lib/accessories/cross-post-family.ts` and `src/data/belts.json`: consolidated
-  `Necro U Alumni Sash`, `Necro U Salutorian Sash`, and `Necro U Valedictorian Sash` into the
-  explicit `Necro U Sash` belt family with `Alumni`, `Salutorian`, and `Valedictorian` variants.
-- `src/data/class-miscellaneous.json`: targeted refresh updated `Nythera` and `Kid Nythera` with
-  alt images, fixed `Nythera` variant labels, parsed rare stats, and removed the bogus rare dialogue.
-- `src/data/class-miscellaneous.json`: targeted refresh updated `Alexander` requirements and
-  corrected method-level DC scoping on `Dread Pirate`.
-- `docs/context/category_playbooks.md` and `docs/context/scraper_operations.md`: documented the
-  same-source Regular/Misc dedupe, explicit class alt-image retention, compact stat parsing, no class
-  dialogue extraction, special-character tag image rule, method-level DC scoping, and `Nythera`
-  labels.
-
-**Verified:**
-
-- Targeted Miscellaneous scrape for `Nythera|Kid Nythera` → passed and preserved 53 Miscellaneous
-  entries.
-- Targeted Miscellaneous scrape for `Alexander|Dread Pirate` → passed and preserved 53 Miscellaneous
-  entries.
-- Targeted Regular and Miscellaneous scrape by URL for `|` (`fb.asp?m=22123522`) → passed. Both files
-  now store `New Dimension` as non-DC and `Dimensional Transphaser, Armor Closet` as DC.
-- Targeted Regular scrape for `Ascended Chickencow` → passed. Its first method is DA-only and its
-  second method is DC-only.
-- Targeted Regular scrape for `ChronoZ` → passed. Data audit shows it is a single item with 15
-  attacks, no level/variant selector, `Original`/`Reforged` class images, and the widget image only
-  in Class Mechanics.
-- Targeted Regular scrape for `Ninja Monkey|Pirate Monkey|Zardbie`, plus targeted Miscellaneous
-  scrape for `Zardbie` → passed. Data audit found zero remaining Regular/Miscellaneous class entries
-  where every obtain method is DA while one method is DC.
-- Data audit → `Necro U Sash` is one belt family; the former standalone `Necro U Alumni Sash`,
-  `Necro U Salutorian Sash`, and `Necro U Valedictorian Sash` entries are gone and retained as
-  family/source aliases where needed.
-- Data audit → `Alexander` keeps `alexandersaga` / `special-character`, stores
-  `Unlock Special Character Slot in Burnt House`, and omits redundant `Dragon Amulet`.
-- Data audit → `Dread Pirate` remains page-level DC-bearing, but its `Armor Closet` obtain method is
-  no longer incorrectly flagged DC.
-- Data audit → `Nythera` has `(Base)` / `(Rare)`, the rare variant has defense/offense/resistance
-  stats, and no dialogue fields remain on Regular/Miscellaneous class data.
-- Data audit → `Nythera` has the forum `Alternative Image` `http://i.imgur.com/2yIIwkB.jpg`;
-  `Kid Nythera` has `http://i.imgur.com/7dYwR9O.png`.
-- Data audit → same-source Regular/Misc duplicates are limited to the four known overlap groups above,
-  which are now handled by the loader.
-- `npm run typecheck:scripts` → passed.
-- `npx tsc --noEmit -p tsconfig.json` → passed.
-- `node scripts/validate-class-abilities.mjs` → passed, 198 entries.
-- `node scripts/verify-datasets.mjs` → passed.
-- `npm run validate` → passed across all dataset validators, shared dataset verification, and script
-  typecheck.
-- `npm run lint` → passed.
-- `npx vite build` → passed.
-
-**Not verified / known gaps:**
-
-- No screenshot/browser visual pass was run for the card-gallery dedupe; validation covered data and
-  type behavior only.
-- The manifest total remains the raw sum of split class files, not the deduped gallery count.
-
-**Next agent should:**
-
-- Continue the broader Regular/Miscellaneous class cleanup only from fresh user spot checks; avoid broad
-  scrapes unless the user runs them manually.
