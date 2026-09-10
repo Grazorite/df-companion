@@ -11,7 +11,8 @@
 1. **`AGENTS.md`** (root) — Dynamic handover orchestrator only: active status, live Kanban board,
    handover protocol, and reverse-chronological handover log. No static reference content.
 2. **`docs/context/*.md`** — Static project reference: architecture, structure, data reference,
-   engineering guidelines, UI patterns, category playbooks, scraper operations.
+   engineering guidelines, UI patterns, category playbooks, scraper operations, plus handover/task
+   archives.
 3. **Spec folders** (`.kiro/specs/{feature}/`) — Feature-specific living documentation.
 
 **Rules:**
@@ -39,6 +40,32 @@ preserving full project context on demand.
 - Custom hooks for shared logic (prefix with `use`)
 - React.lazy for page-level code splitting
 - Props interfaces defined above component
+
+## Testing
+
+- `npm test` runs Node's built-in test runner through `tsx`; no separate framework dependency is
+  required.
+- Prefer tests around public behavior and stable boundaries: filtering semantics, display
+  normalization, related-item matching, data loaders, URL/state helpers, and shared UI contracts that
+  can be exercised without brittle DOM assertions.
+- Do not chase arbitrary coverage percentages or add tests for every private helper. Test private
+  implementation details only when that detail is the safest boundary for a real user-facing rule.
+- Add a narrow regression test when fixing a bug in a shared utility, scraper output normalizer, or
+  filter/data-loading path.
+
+### Test Cadence
+
+- During iteration, run the narrowest useful check: one focused test file, one affected validator, a
+  targeted typecheck, or a small smoke path.
+- Before committing or pushing substantial code or public-behavior changes, run `npm test`,
+  `npm run build`, and `npm run lint`.
+- For docs-only changes, do not run the full gate by default. Run a relevant command only when the
+  docs change executable commands, release/deploy expectations, or code contracts.
+- For UI layout or interaction changes, run the relevant test/build path and add a visual smoke check
+  when the change affects navigation, responsive layout, image presentation, accessibility, or a
+  critical user flow.
+- For scraper or data changes, run the affected validator and `node scripts/verify-datasets.mjs`.
+  Use targeted scrapes/audits when needed; broad scrapes remain human-run.
 
 ## UI Primitives (Radix / shadcn)
 

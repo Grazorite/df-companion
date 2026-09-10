@@ -138,6 +138,11 @@ dragonfable-companion/
 │   │   └── itemMigration.ts # Legacy single-entry → ItemFamily migration
 │   ├── App.tsx
 │   └── main.tsx
+├── tests/
+│   ├── displayText.test.ts # User-visible display normalization behavior
+│   ├── relatedItems.test.ts # Related-item matching fingerprints and scoring
+│   ├── search.test.ts      # Public badge search/filter behavior
+│   └── triStateFilters.test.ts # URL filter state helpers
 ├── .env.example            # Template for forum cookie (for scraper)
 ├── AGENTS.md               # Dynamic handover orchestrator (status, Kanban, handover log)
 ├── package.json

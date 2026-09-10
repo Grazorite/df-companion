@@ -66,7 +66,7 @@ pushing.
 | Mobile-first | Players likely use companion during gameplay (phone beside computer) |
 | Forum hotlinks first | Provides value immediately without needing to reproduce all forum content |
 | Tailwind CSS | Rapid responsive development, consistent design tokens, small bundle |
-| No testing framework yet | Added when complexity warrants it; manual QA sufficient for MVP static site |
+| Lean Node test harness | `npm test` uses Node's test runner through `tsx`; tests should target system behavior and public utility/data APIs rather than private helper coverage |
 
 ## Performance Targets
 

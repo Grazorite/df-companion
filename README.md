@@ -6,12 +6,25 @@ A DragonFable companion app for browsing badges, pets, guests, accessories, and 
 
 ```sh
 npm run dev
+npm test
 npm run build
 npm run validate
 npm run verify
 npm run lint
 npm run typecheck:scripts
 ```
+
+## Testing
+
+`npm test` runs a lean Node test suite through `tsx`. Tests should protect public behavior and stable
+utility boundaries, especially filtering, display normalization, related-item matching, and data
+loading behavior. Avoid adding tests only to chase coverage numbers or lock down private helper
+implementation details.
+
+Use focused tests while iterating. Run the full `npm test` / `npm run build` / `npm run lint` gate
+before committing or pushing substantial code or public-behavior changes. Docs-only changes usually
+do not need the full gate unless they alter documented commands, release expectations, or code
+contracts.
 
 ## Data Validation
 

@@ -14,10 +14,14 @@ handover protocol, handover log). It intentionally contains no static reference 
 | [`ui_patterns.md`](./ui_patterns.md) | Building or changing any UI surface | Card Components, Obtain Cards, Detail Page Section Order, image rules, Also See, Expandable attack/skill cards, Filter Pills Pattern, per-page filters + URL params, detail metadata pills, Stats tables, Future sections |
 | [`category_playbooks.md`](./category_playbooks.md) | Category-specific consolidation/split rules | Weapons Section, Housing Section, Pets Section, accessory consolidation + helm splits, badge curation, all documented special cases |
 | [`scraper_operations.md`](./scraper_operations.md) | Running or modifying a scraper | Development Commands, Scraping Workflows, scraper notes, Other Commands, Dataset verification, Scraper Structure Guidelines, Python Environment |
+| [`handover-log-archive.md`](./handover-log-archive.md) | Older handover log entries moved out of live `AGENTS.md` | Historical task/session log |
+| [`done-task-archive.md`](./done-task-archive.md) | Older completed-task bullets moved out of live `AGENTS.md` | Historical completed-task board |
 
 ## Conventions for these files
 
 - These files are **durable knowledge**. Update them when a rule changes, not when a task progresses.
 - Task/session state belongs in root `AGENTS.md` only.
+- Archived handover log entries and completed-task history belong in the archive files listed above,
+  not in the live `AGENTS.md` dashboard.
 - Feature-scoped working docs belong in `.kiro/specs/{feature}/STATUS.md`.
 - Do not create new markdown files in the repo root.
