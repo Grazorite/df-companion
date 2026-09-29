@@ -49,7 +49,7 @@ export default function SegmentToggle({ segments, onToggle }: SegmentToggleProps
         <ToggleGroupItem
           key={seg.id}
           value={seg.id}
-          className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium transition-colors duration-150 min-h-[36px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/60 ${
+          className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium transition-colors duration-150 min-h-11 sm:min-h-9 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/60 ${
             seg.active
               ? 'bg-gold-bright text-bg-base font-semibold'
               : 'bg-bg-overlay text-text-secondary hover:bg-border-hover hover:text-text-primary'

@@ -63,6 +63,11 @@ main {
   animation: fadeIn 200ms ease-out;
 }
 
+/* Route focus is announced by assistive tech; headings are not interactive controls. */
+main h1[tabindex="-1"]:focus {
+  outline: none;
+}
+
 /* Image fade-in utility */
 .img-fade {
   animation: fadeIn 250ms ease-out;

@@ -45,6 +45,9 @@ preserving full project context on demand.
 
 - `npm test` runs Node's built-in test runner through `tsx`; no separate framework dependency is
   required.
+- `npm run test:ui:smoke` runs representative route, responsive-overflow, and reduced-motion checks
+  in Chromium. `npm run test:ui` adds broader browser behavior and structural performance budgets.
+  Both use the existing Playwright library with Node's test runner rather than a second UI framework.
 - Prefer tests around public behavior and stable boundaries: filtering semantics, display
   normalization, related-item matching, data loaders, URL/state helpers, and shared UI contracts that
   can be exercised without brittle DOM assertions.
@@ -57,13 +60,15 @@ preserving full project context on demand.
 
 - During iteration, run the narrowest useful check: one focused test file, one affected validator, a
   targeted typecheck, or a small smoke path.
-- Before committing or pushing substantial code or public-behavior changes, run `npm test`,
-  `npm run build`, and `npm run lint`.
+- Before committing or pushing substantial UI/public-behavior changes, run `npm test`,
+  `npm run test:ui`, `npm run build`, and `npm run lint`. Substantial non-UI changes retain the
+  `npm test` / build / lint gate unless they affect a browser contract.
 - For docs-only changes, do not run the full gate by default. Run a relevant command only when the
   docs change executable commands, release/deploy expectations, or code contracts.
-- For UI layout or interaction changes, run the relevant test/build path and add a visual smoke check
-  when the change affects navigation, responsive layout, image presentation, accessibility, or a
-  critical user flow.
+- For UI layout or interaction changes, run the focused browser test while iterating and add a visual
+  smoke check when the change affects navigation, responsive layout, image presentation,
+  accessibility, or a critical user flow. Browser tests assert behavior and structural budgets;
+  screenshots are diagnostic artifacts, not brittle pixel-perfect snapshots.
 - For scraper or data changes, run the affected validator and `node scripts/verify-datasets.mjs`.
   Use targeted scrapes/audits when needed; broad scrapes remain human-run.
 
@@ -77,9 +82,9 @@ preserving full project context on demand.
   `src/components/shared/ui/` and style with the `@theme` tokens. `shadcn init` would collide with the
   hand-built Tailwind v4 tokens.
 - Add the specific primitive package (pinned, exact version) rather than an umbrella. Current
-  additions: `@radix-ui/react-collapsible` (disclosures), `@radix-ui/react-toggle-group` (segment
-  pickers), `@radix-ui/react-tooltip` (access-pill tooltips), and `cmdk` (search palette; brings a
-  Radix Dialog transitively).
+  additions: `@radix-ui/react-collapsible` (disclosures), `@radix-ui/react-dialog` (mobile sheets),
+  `@radix-ui/react-toggle-group` (segment pickers), `@radix-ui/react-tooltip` (access-pill tooltips),
+  and `cmdk` (search palette).
 - Scope a primitive's provider (e.g. `TooltipProvider`) close to its usage rather than at the app
   root when the primitive is only used on lazy pages — that keeps the dependency in the lazy chunk
   instead of the main bundle. Only wrap a bounded number of instances (tooltips belong on detail-page
@@ -103,21 +108,21 @@ preserving full project context on demand.
 All colours are defined in `src/index.css` as a Tailwind CSS 4 `@theme` block. Use the
 corresponding utility classes:
 
-| Token | Hex | Usage |
-| ------- | ----- | ------- |
-| `bg-bg-base` | `#111315` | Page background |
-| `bg-bg-surface` | `#1a1a1a` | Cards, content panels |
-| `bg-bg-elevated` | `#212529` | Navigation, overlays |
-| `bg-bg-overlay` | `#343a40` | Hover states, chips |
-| `border-border-default` | `#343a40` | Default borders |
-| `border-border-hover` | `#495057` | Hover border colour |
-| `text-gold` | `#f69a07` | Headings, active nav, accents |
-| `text-gold-bright` | `#ffc107` | CTAs, active filter chips |
-| `text-text-primary` | `#f8f9fa` | Body text, headings |
-| `text-text-secondary` | `#9ca3af` | Supporting text |
-| `text-text-muted` | `#6c757d` | Timestamps, labels, placeholders |
-| `shadow-subtle` | — | Cards resting state |
-| `shadow-medium` | — | Cards hovered state |
+| Token                   | Hex       | Usage                            |
+| ----------------------- | --------- | -------------------------------- |
+| `bg-bg-base`            | `#111315` | Page background                  |
+| `bg-bg-surface`         | `#1a1a1a` | Cards, content panels            |
+| `bg-bg-elevated`        | `#212529` | Navigation, overlays             |
+| `bg-bg-overlay`         | `#343a40` | Hover states, chips              |
+| `border-border-default` | `#343a40` | Default borders                  |
+| `border-border-hover`   | `#495057` | Hover border colour              |
+| `text-gold`             | `#f69a07` | Headings, active nav, accents    |
+| `text-gold-bright`      | `#ffc107` | CTAs, active filter chips        |
+| `text-text-primary`     | `#f8f9fa` | Body text, headings              |
+| `text-text-secondary`   | `#9ca3af` | Supporting text                  |
+| `text-text-muted`       | `#6c757d` | Timestamps, labels, placeholders |
+| `shadow-subtle`         | —         | Cards resting state              |
+| `shadow-medium`         | —         | Cards hovered state              |
 
 ## Responsive Breakpoints
 

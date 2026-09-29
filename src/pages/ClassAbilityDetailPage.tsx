@@ -1,6 +1,7 @@
 import { useLocation, useParams, useSearchParams } from 'react-router-dom'
 import ClassAbilityDetail from '../components/classAbilities/ClassAbilityDetail'
 import DetailPageLayout from '../components/shared/DetailPageLayout'
+import { DetailPageSkeleton } from '../components/shared/LoadingSkeleton'
 import { useClassAbilityBySlug } from '../hooks/useClassAbilities'
 import { CLASS_ABILITY_SUBTYPES, type ClassAbilitySubtype } from '../types/classAbility'
 import { backUrlFromSearch } from '../utils/navigationContext'
@@ -23,7 +24,7 @@ export default function ClassAbilityDetailPage() {
   )
 
   if (loading) {
-    return <DetailPageLayout className="text-text-secondary">Loading...</DetailPageLayout>
+    return <DetailPageSkeleton />
   }
 
   if (!item) {

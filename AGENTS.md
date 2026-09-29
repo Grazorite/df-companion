@@ -27,7 +27,7 @@
 
 ## 📊 Active Project Status
 
-**Last updated:** 2026-09-10
+**Last updated:** 2026-09-29
 **Branch:** `main` · **Deploy:** Vercel auto-deploy on `main` — pushing to `main` ships to production
 
 > Read the live HEAD with `git log --oneline -1` rather than trusting a SHA pinned here; commits that
@@ -49,7 +49,11 @@
 
 ### Current Focus
 
-1. **Propagate scraper fixes into stale datasets.** Weapons full pass is still outstanding (see
+1. **Deliver the test-driven UI/UX fluidity program.** Start with the browser behavior harness and
+   gallery rendering budgets, then progress through navigation continuity, mobile controls, motion,
+   media stability, global search, and reliability. Working plan:
+   `.kiro/specs/ui-ux-fluidity/STATUS.md`.
+2. **Propagate scraper fixes into stale datasets.** Weapons full pass is still outstanding (see
    Kanban). Pets, guests, accessories, and Classes / Abilities have been completed.
 
 ### Agent Assignments
@@ -59,7 +63,7 @@
 | `orchestrator` (primary session agent) | AGENTS.md upkeep, task sequencing, handover | Keep Kanban + log current every task completion |
 | `context-gatherer` (sub-agent) | Codebase investigation before edits | Dispatch before touching unfamiliar scraper/UI paths |
 | `scraper-owner` (role) | `scripts/**`, dataset JSON, validators | Full-category re-scrape backlog |
-| `ui-owner` (role) | `src/components/**`, `src/pages/**`, `src/hooks/**` | Shared-component consolidation follow-ups |
+| `ui-owner` (role) | `src/components/**`, `src/pages/**`, `src/hooks/**` | UI/UX fluidity program, beginning with behavior tests and progressive galleries |
 | `human` (user) | **All broad/full scrapes**, forum cookie, deploy approval | Run full-category scrapes locally |
 
 > Broad scrapes are human-run **by rule, not by convention**: the agent supplies the exact command,
@@ -83,7 +87,9 @@
 
 ### 🚧 In Progress
 
-*(nothing in progress)*
+- [ ] **Test-driven UI/UX fluidity program** — execute the phased delivery and verification plan in
+      `.kiro/specs/ui-ux-fluidity/STATUS.md`; Phases 0–3 are verified, current phase: motion system
+      and interaction polish.
 
 ### ✅ Done
 
@@ -214,6 +220,50 @@ is being written as part of that same commit
 > for what shipped when. New entries should use `the commit containing this entry` instead, which stays
 > true.
 
+### 2026-09-29 — UI fluidity phases 0–3
+
+**Agent:** ui-owner / orchestrator (GPT-5 Codex) · **Commit(s):** `the commit containing this entry`
+**Kanban moved:** UI/UX fluidity program remains `In Progress`; current phase advanced to motion
+system and interaction polish
+
+**Changed:**
+
+- `tests/ui/`, `package.json`, and shared gallery/list code: added the Playwright/Node behavior
+  harness, bounded progressive galleries, and deferred result filtering with debounced URL sync.
+- `NavigationContinuity`, `browseRestoration`, and route loading: preserve the originating card,
+  expanded gallery depth, scroll, and focus across detail returns; query-only changes no longer
+  reset scroll; detail navigation focuses and announces its heading; detail routes use detail-shaped
+  loading UI.
+- `MobileFilterPanel`, `Navigation`, and shared Radix Dialog wrapper: keep subtype/search visible,
+  move secondary filters into a mobile sheet with URL-derived active counts and subtype-preserving
+  clear-all, enforce 44px mobile controls, and give the More panel complete dismissal/focus behavior.
+- `.kiro/specs/ui-ux-fluidity/STATUS.md` and `docs/context/`: recorded measured budgets, phased
+  acceptance criteria, and the reusable UI contracts.
+
+**Verified:**
+
+- `npm test` → passed 12 public-behavior tests.
+- `npm run test:ui` → passed all 16 behavior, structural-budget, responsive, reduced-motion, focus,
+  URL round-trip, and fixed-navigation tests with no skips.
+- `npm run build` → all dataset validators, cross-dataset verification, script typecheck, TypeScript,
+  and Vite production build passed.
+- `npm run lint` → passed without warnings.
+- Phase 1 browser measurements → initial galleries mount 48 mobile / 72 desktop cards and stay under
+  2,500 DOM nodes on representative high-volume routes.
+- Visual smoke → mobile filter sheet and desktop inline filters inspected at 390×844 and 1440×900;
+  no clipping, overlap, or hierarchy regressions found.
+
+**Not verified / known gaps:**
+
+- No data or scraper behavior changed; broad scrape verification was not applicable.
+- Motion tokens, query-stable page entry, and restrained interaction animation are the active Phase 4
+  work.
+
+**Next agent should:**
+
+- Continue Phase 4 test-first, beginning with pathname-only page entry and rapid-filter settling
+  before replacing broad `transition-all` usage.
+
 ### 2026-09-10 — Class access flag merge repair
 
 **Agent:** orchestrator (GPT-5 Codex) · **Commit(s):** `the commit containing this entry`
@@ -338,69 +388,3 @@ is being written as part of that same commit
 
 - Pick a To Do item — the Weapons full re-scrape or the next content section (Locations / Monsters /
   NPCs / Stackable Items).
-
-### 2026-09-03 — Reviewed accessory singular-sibling consolidation
-
-**Agent:** orchestrator (GPT-5 Codex) · **Commit(s):** `the commit containing this entry`
-**Kanban moved:** no board item moved; user-requested accessory consolidation expansion
-
-**Changed:**
-
-- `scripts/lib/accessories/cross-post-family.ts`: added reviewed special-family specs for 20
-  non-artifact accessory groups where singular sibling entries share obtain context, related names,
-  descriptions, explicit/inferred Also See relationships, and clear variant-label segmentation. The
-  new specs intentionally exclude Pets/Guests, Weapons, Housing, and Artifacts.
-- `scripts/lib/accessories/cross-post-family.ts`: added a `singularOnly` guard for the new reviewed
-  specs so existing itemfamilies are not folded into broader families.
-- `scripts/lib/accessories/cross-post-family.ts`: removed the unclear `Star Ring` and `Seal Ring`
-  singular-sibling specs and added stale-data unwind handling so those entries remain linked singles
-  instead of awkward itemfamilies.
-- `scripts/lib/accessories/cross-post-family.ts` and `src/data/rings.json`: added explicit mutual
-  Also See link-only groups for `Star Ring` / `Starry Ring` / `Starlight Ring` and the reviewed
-  non-consolidated `Seal Ring` singles.
-- `scripts/lib/accessories/cross-post-family.ts`: preserve possessive variant names for the
-  `Skullhelm` family (`Klatu's`, `Baradaa's`, `Nickto's`).
-- `scripts/lib/accessories/cross-post-family.ts` and `scripts/lib/access-flag-repair.ts`: kept
-  accessory cross-post family methods together as Method 1/2 rows instead of splitting gold/free and
-  DC obtain methods into duplicate selector variants.
-- `src/utils/imageLabels.ts`, `scripts/scrape-accessories.ts`, `src/data/helms-a-l.json`, and
-  `src/data/capes-wings-a-l.json`: normalized `Alloyed KabutoGuard` / `Alloyed KabutoPack` captions
-  (`Horn (...)`, `Pack (...)`, `Wings (...)`) and removed consumed appearance-summary lines from
-  Other Information.
-- `src/data/accessory-manifest.json` and non-artifact accessory JSON shards: mechanically reshaped
-  existing data through the accessory promotion pipeline. Accessories now report 2,520 entries.
-- `docs/context/category_playbooks.md`: documented the approved singular-sibling consolidation rule,
-  clear-variant-label requirement, possessive variant preservation, the exclusion of Artifacts from
-  this pass, and the future Classes / Abilities gap for rendering extra images embedded in Other
-  Information.
-- `AGENTS.md`: updated project counts and recorded this handover entry.
-
-**Verified:**
-
-- Data audit → all 20 reviewed family names exist with expected variant counts; `Soulthread Loop`
-  and `Star Captain's Belt` render one variant per named sibling with two obtain methods each.
-- Data audit → `Star Ring` / `Starry Ring` / `Starlight Ring` and the eight `Seal Ring` entries are
-  singles again.
-- Data audit → every `Star Ring` sibling and sampled `Seal Ring` siblings now have mutual Also See
-  refs.
-- Data audit → `Skullhelm` variants are `Klatu's`, `Baradaa's`, and `Nickto's`.
-- Data audit → `Alloyed KabutoGuard` captions are `Main`, `Horn (Orange)`, `Horn (Red)`,
-  `Horn (No Color)`, `Clicked Appearance`; `Alloyed KabutoPack` captions are `Main`,
-  `Pack (Orange)`, `Pack (Red)`, `Pack (No Color)`, `Wings (Cyan)`, `Wings (Orange)`,
-  `Wings (Red)`, `Wings (No Color)`, with grouped appearance-summary note lines removed.
-- Data audit → `artifacts.json` remains 20 entries and was not included in the new reviewed
-  consolidation specs.
-- `node scripts/validate-accessories.mjs` → passed, 2,520 entries across 8 subtypes / 10 data files.
-- `npx tsc --noEmit -p tsconfig.json` → passed.
-- `npm run validate` → passed across all dataset validators, shared dataset verification, and script
-  typecheck.
-- `npm run lint` → passed.
-- `npx vite build` → passed.
-
-**Not verified / known gaps:**
-
-- No browser screenshot pass was run for the new accessory families.
-
-**Next agent should:**
-
-- Have the user spot-check the new family selectors and Method 1/2 obtain cards.

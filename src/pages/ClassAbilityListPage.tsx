@@ -1,10 +1,15 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useDeferredValue, useEffect, useMemo, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import ClassAbilityList from '../components/classAbilities/ClassAbilityList'
 import SearchBar from '../components/shared/SearchBar'
 import SegmentToggle from '../components/shared/SegmentToggle'
 import TriStateFilterPill from '../components/shared/TriStateFilterPill'
-import { useClassAbilities, useClassAbilityAvailability, useClassAbilityCounts } from '../hooks/useClassAbilities'
+import MobileFilterPanel from '../components/shared/MobileFilterPanel'
+import {
+  useClassAbilities,
+  useClassAbilityAvailability,
+  useClassAbilityCounts,
+} from '../hooks/useClassAbilities'
 import { useDebounce } from '../hooks/useDebounce'
 import {
   CLASS_ABILITY_SUBTYPES,
@@ -53,6 +58,7 @@ export default function ClassAbilityListPage() {
     CLASS_ABILITY_SUBTYPES.find((meta) => meta.subtype === activeSubtype) ??
     CLASS_ABILITY_SUBTYPES[0]
   const [inputValue, setInputValue] = useState(searchParams.get('q') ?? '')
+  const deferredQuery = useDeferredValue(inputValue)
   const debouncedQuery = useDebounce(inputValue, 300)
   const availability = useClassAbilityAvailability(activeSubtype)
   const accessParam = searchParams.get('access')
@@ -151,36 +157,48 @@ export default function ClassAbilityListPage() {
   )
   const rawActiveSubcategories = useMemo(
     () =>
-      parseFilterParam(
-        subcategoryParam,
-        (value): value is ClassSubcategory =>
-          CLASS_SUBCATEGORIES.some((option) => option.id === value)
+      parseFilterParam(subcategoryParam, (value): value is ClassSubcategory =>
+        CLASS_SUBCATEGORIES.some((option) => option.id === value)
       ),
     [subcategoryParam]
   )
   const rawExcludedSubcategories = useMemo(
     () =>
-      parseFilterParam(
-        excludeSubcategoryParam,
-        (value): value is ClassSubcategory =>
-          CLASS_SUBCATEGORIES.some((option) => option.id === value)
+      parseFilterParam(excludeSubcategoryParam, (value): value is ClassSubcategory =>
+        CLASS_SUBCATEGORIES.some((option) => option.id === value)
       ),
     [excludeSubcategoryParam]
   )
   const rawActiveMisc = useMemo(
-    () => parseFilterParam(miscParam, (value): value is (typeof MISC_OPTIONS)[number]['id'] => MISC_OPTIONS.some((option) => option.id === value)),
+    () =>
+      parseFilterParam(miscParam, (value): value is (typeof MISC_OPTIONS)[number]['id'] =>
+        MISC_OPTIONS.some((option) => option.id === value)
+      ),
     [miscParam]
   )
   const rawExcludedMisc = useMemo(
-    () => parseFilterParam(excludeMiscParam, (value): value is (typeof MISC_OPTIONS)[number]['id'] => MISC_OPTIONS.some((option) => option.id === value)),
+    () =>
+      parseFilterParam(excludeMiscParam, (value): value is (typeof MISC_OPTIONS)[number]['id'] =>
+        MISC_OPTIONS.some((option) => option.id === value)
+      ),
     [excludeMiscParam]
   )
   const rawActiveKinds = useMemo(
-    () => parseFilterParam(kindParam, (value): value is (typeof CONSUMABLE_KIND_OPTIONS)[number]['id'] => CONSUMABLE_KIND_OPTIONS.some((option) => option.id === value)),
+    () =>
+      parseFilterParam(
+        kindParam,
+        (value): value is (typeof CONSUMABLE_KIND_OPTIONS)[number]['id'] =>
+          CONSUMABLE_KIND_OPTIONS.some((option) => option.id === value)
+      ),
     [kindParam]
   )
   const rawExcludedKinds = useMemo(
-    () => parseFilterParam(excludeKindParam, (value): value is (typeof CONSUMABLE_KIND_OPTIONS)[number]['id'] => CONSUMABLE_KIND_OPTIONS.some((option) => option.id === value)),
+    () =>
+      parseFilterParam(
+        excludeKindParam,
+        (value): value is (typeof CONSUMABLE_KIND_OPTIONS)[number]['id'] =>
+          CONSUMABLE_KIND_OPTIONS.some((option) => option.id === value)
+      ),
     [excludeKindParam]
   )
 
@@ -188,8 +206,12 @@ export default function ClassAbilityListPage() {
   const excludedAccess = rawExcludedAccess.filter((value) => visibleAccessIds.has(value))
   const activeCategories = rawActiveCategories.filter((value) => visibleCategoryIds.has(value))
   const excludedCategories = rawExcludedCategories.filter((value) => visibleCategoryIds.has(value))
-  const activeSubcategories = rawActiveSubcategories.filter((value) => visibleSubcategoryIds.has(value))
-  const excludedSubcategories = rawExcludedSubcategories.filter((value) => visibleSubcategoryIds.has(value))
+  const activeSubcategories = rawActiveSubcategories.filter((value) =>
+    visibleSubcategoryIds.has(value)
+  )
+  const excludedSubcategories = rawExcludedSubcategories.filter((value) =>
+    visibleSubcategoryIds.has(value)
+  )
   const activeMisc = rawActiveMisc.filter((value) => visibleMiscIds.has(value))
   const excludedMisc = rawExcludedMisc.filter((value) => visibleMiscIds.has(value))
   const activeKinds = rawActiveKinds.filter((value) => visibleKindIds.has(value))
@@ -205,7 +227,7 @@ export default function ClassAbilityListPage() {
 
   const filters = useMemo(
     () => ({
-      query: debouncedQuery || undefined,
+      query: deferredQuery || undefined,
       classSubcategories: activeSubcategories.length > 0 ? activeSubcategories : undefined,
       excludeClassSubcategories:
         excludedSubcategories.length > 0 ? excludedSubcategories : undefined,
@@ -224,7 +246,7 @@ export default function ClassAbilityListPage() {
       activeKinds,
       activeMisc,
       activeSubcategories,
-      debouncedQuery,
+      deferredQuery,
       excludedAccess,
       excludedCategories,
       excludedKinds,
@@ -263,7 +285,13 @@ export default function ClassAbilityListPage() {
     setParams(params)
   }
 
-  function toggleListParam(key: string, excludeKey: string, id: string, include: string[], exclude: string[]) {
+  function toggleListParam(
+    key: string,
+    excludeKey: string,
+    id: string,
+    include: string[],
+    exclude: string[]
+  ) {
     const next = cycleTriState(id, { include, exclude })
     const params = baseParams()
     delete params[key]
@@ -312,151 +340,169 @@ export default function ClassAbilityListPage() {
         />
       </div>
 
-      {visibleSubcategoryOptions.length > 0 && (
-        <div className="flex gap-2 flex-wrap mb-3" role="group" aria-label="Filter by class type">
-          {visibleSubcategoryOptions.map((option) => (
-            <TriStateFilterPill
-              key={option.id}
-              label={option.label}
-              state={getTriState(option.id, {
-                include: activeSubcategories,
-                exclude: excludedSubcategories,
-              })}
-              onClick={() =>
-                toggleListParam(
-                  'subcategory',
-                  'excludeSubcategory',
-                  option.id,
-                  rawActiveSubcategories,
-                  rawExcludedSubcategories
-                )
-              }
-              size="segment"
-            />
-          ))}
-          {(activeSubcategories.length > 0 || excludedSubcategories.length > 0) && (
-            <button
-              onClick={() => clearListParam('subcategory', 'excludeSubcategory')}
-              className="text-[11px] text-text-muted hover:text-text-primary underline underline-offset-2 ml-1"
-            >
-              Clear filters
-            </button>
-          )}
-        </div>
-      )}
-
-      <div className="flex gap-2 flex-wrap mb-3" role="group" aria-label="Filter by access">
-        {visibleAccessOptions.map((option) => (
-          <TriStateFilterPill
-            key={option.id}
-            label={option.label}
-            state={getTriState(option.id, { include: activeAccess, exclude: excludedAccess })}
-            onClick={() =>
-              toggleListParam(
-                'access',
-                'excludeAccess',
-                option.id,
-                rawActiveAccess,
-                rawExcludedAccess
-              )
-            }
-            size="access"
-          />
-        ))}
-        {(activeAccess.length > 0 || excludedAccess.length > 0) && (
-          <button
-            onClick={() => clearListParam('access', 'excludeAccess')}
-            className="text-[11px] text-text-muted hover:text-text-primary underline underline-offset-2 ml-1"
-          >
-            Clear filters
-          </button>
-        )}
-      </div>
-
-      {(visibleCategoryOptions.length > 0 || visibleMiscOptions.length > 0) && (
-        <div className="mb-3">
-          <div className="flex flex-wrap gap-2" role="group" aria-label="Filter by category">
-            {visibleCategoryOptions.map((option) => (
+      <MobileFilterPanel>
+        {visibleSubcategoryOptions.length > 0 && (
+          <div className="flex gap-2 flex-wrap mb-3" role="group" aria-label="Filter by class type">
+            {visibleSubcategoryOptions.map((option) => (
               <TriStateFilterPill
                 key={option.id}
                 label={option.label}
                 state={getTriState(option.id, {
-                  include: activeCategories,
-                  exclude: excludedCategories,
+                  include: activeSubcategories,
+                  exclude: excludedSubcategories,
                 })}
                 onClick={() =>
                   toggleListParam(
-                    'category',
-                    'excludeCategory',
+                    'subcategory',
+                    'excludeSubcategory',
                     option.id,
-                    rawActiveCategories,
-                    rawExcludedCategories
+                    rawActiveSubcategories,
+                    rawExcludedSubcategories
                   )
                 }
-                size="category"
-                activeClassName="bg-orange-500/80 text-white"
+                size="segment"
               />
             ))}
-            {visibleMiscOptions.map((option) => (
-              <TriStateFilterPill
-                key={option.id}
-                label={option.label}
-                state={getTriState(option.id, { include: activeMisc, exclude: excludedMisc })}
-                onClick={() =>
-                  toggleListParam('misc', 'excludeMisc', option.id, rawActiveMisc, rawExcludedMisc)
-                }
-                size="category"
-              />
-            ))}
-            {(activeCategories.length > 0 ||
-              excludedCategories.length > 0 ||
-              activeMisc.length > 0 ||
-              excludedMisc.length > 0) && (
+            {(activeSubcategories.length > 0 || excludedSubcategories.length > 0) && (
               <button
-                onClick={() => {
-                  const params = baseParams()
-                  delete params.category
-                  delete params.excludeCategory
-                  delete params.misc
-                  delete params.excludeMisc
-                  setParams(params)
-                }}
+                onClick={() => clearListParam('subcategory', 'excludeSubcategory')}
                 className="text-[11px] text-text-muted hover:text-text-primary underline underline-offset-2 ml-1"
               >
                 Clear filters
               </button>
             )}
           </div>
-        </div>
-      )}
+        )}
 
-      {visibleKindOptions.length > 0 && (
-        <div className="mb-3">
-          <div className="flex flex-wrap gap-2" role="group" aria-label="Filter by consumable kind">
-            {visibleKindOptions.map((option) => (
-              <TriStateFilterPill
-                key={option.id}
-                label={option.label}
-                state={getTriState(option.id, { include: activeKinds, exclude: excludedKinds })}
-                onClick={() =>
-                  toggleListParam('kind', 'excludeKind', option.id, rawActiveKinds, rawExcludedKinds)
-                }
-                size="element"
-                elementClassName={`${consumableKindPillClass(option.id)} ring-2 ring-gold`}
-                inactiveClassName={`${consumableKindPillClass(option.id)} opacity-60 hover:opacity-100`}
-              />
-            ))}
-            {(activeKinds.length > 0 || excludedKinds.length > 0) && (
-              <button
-                onClick={() => clearListParam('kind', 'excludeKind')}
-                className="text-[10px] text-text-muted hover:text-text-primary underline underline-offset-2 ml-1"
-              >
-                Clear filters
-              </button>
-            )}
-          </div>
+        <div className="flex gap-2 flex-wrap mb-3" role="group" aria-label="Filter by access">
+          {visibleAccessOptions.map((option) => (
+            <TriStateFilterPill
+              key={option.id}
+              label={option.label}
+              state={getTriState(option.id, { include: activeAccess, exclude: excludedAccess })}
+              onClick={() =>
+                toggleListParam(
+                  'access',
+                  'excludeAccess',
+                  option.id,
+                  rawActiveAccess,
+                  rawExcludedAccess
+                )
+              }
+              size="access"
+            />
+          ))}
+          {(activeAccess.length > 0 || excludedAccess.length > 0) && (
+            <button
+              onClick={() => clearListParam('access', 'excludeAccess')}
+              className="text-[11px] text-text-muted hover:text-text-primary underline underline-offset-2 ml-1"
+            >
+              Clear filters
+            </button>
+          )}
         </div>
-      )}
+
+        {(visibleCategoryOptions.length > 0 || visibleMiscOptions.length > 0) && (
+          <div className="mb-3">
+            <div className="flex flex-wrap gap-2" role="group" aria-label="Filter by category">
+              {visibleCategoryOptions.map((option) => (
+                <TriStateFilterPill
+                  key={option.id}
+                  label={option.label}
+                  state={getTriState(option.id, {
+                    include: activeCategories,
+                    exclude: excludedCategories,
+                  })}
+                  onClick={() =>
+                    toggleListParam(
+                      'category',
+                      'excludeCategory',
+                      option.id,
+                      rawActiveCategories,
+                      rawExcludedCategories
+                    )
+                  }
+                  size="category"
+                  activeClassName="bg-orange-500/80 text-white"
+                />
+              ))}
+              {visibleMiscOptions.map((option) => (
+                <TriStateFilterPill
+                  key={option.id}
+                  label={option.label}
+                  state={getTriState(option.id, { include: activeMisc, exclude: excludedMisc })}
+                  onClick={() =>
+                    toggleListParam(
+                      'misc',
+                      'excludeMisc',
+                      option.id,
+                      rawActiveMisc,
+                      rawExcludedMisc
+                    )
+                  }
+                  size="category"
+                />
+              ))}
+              {(activeCategories.length > 0 ||
+                excludedCategories.length > 0 ||
+                activeMisc.length > 0 ||
+                excludedMisc.length > 0) && (
+                <button
+                  onClick={() => {
+                    const params = baseParams()
+                    delete params.category
+                    delete params.excludeCategory
+                    delete params.misc
+                    delete params.excludeMisc
+                    setParams(params)
+                  }}
+                  className="text-[11px] text-text-muted hover:text-text-primary underline underline-offset-2 ml-1"
+                >
+                  Clear filters
+                </button>
+              )}
+            </div>
+          </div>
+        )}
+
+        {visibleKindOptions.length > 0 && (
+          <div className="mb-3">
+            <div
+              className="flex flex-wrap gap-2"
+              role="group"
+              aria-label="Filter by consumable kind"
+            >
+              {visibleKindOptions.map((option) => (
+                <TriStateFilterPill
+                  key={option.id}
+                  label={option.label}
+                  state={getTriState(option.id, { include: activeKinds, exclude: excludedKinds })}
+                  onClick={() =>
+                    toggleListParam(
+                      'kind',
+                      'excludeKind',
+                      option.id,
+                      rawActiveKinds,
+                      rawExcludedKinds
+                    )
+                  }
+                  size="element"
+                  elementClassName={`${consumableKindPillClass(option.id)} ring-2 ring-gold`}
+                  inactiveClassName={`${consumableKindPillClass(option.id)} opacity-60 hover:opacity-100`}
+                />
+              ))}
+              {(activeKinds.length > 0 || excludedKinds.length > 0) && (
+                <button
+                  onClick={() => clearListParam('kind', 'excludeKind')}
+                  className="text-[10px] text-text-muted hover:text-text-primary underline underline-offset-2 ml-1"
+                >
+                  Clear filters
+                </button>
+              )}
+            </div>
+          </div>
+        )}
+      </MobileFilterPanel>
 
       <p className="text-text-muted text-xs mb-4" aria-live="polite" aria-atomic="true">
         {loading ? 'Loading entries...' : `${total} ${total === 1 ? 'entry' : 'entries'} found`}

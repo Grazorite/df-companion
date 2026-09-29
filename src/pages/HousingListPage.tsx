@@ -1,8 +1,9 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useDeferredValue, useEffect, useMemo, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import SearchBar from '../components/shared/SearchBar'
 import SegmentToggle from '../components/shared/SegmentToggle'
 import TriStateFilterPill from '../components/shared/TriStateFilterPill'
+import MobileFilterPanel from '../components/shared/MobileFilterPanel'
 import HousingList from '../components/housing/HousingList'
 import { useDebounce } from '../hooks/useDebounce'
 import { useHousing, useHousingCategoryAvailability, useHousingCounts } from '../hooks/useHousing'
@@ -34,6 +35,7 @@ export default function HousingListPage() {
   const subtypeMeta =
     HOUSING_SUBTYPES.find((meta) => meta.subtype === activeSubtype) ?? HOUSING_SUBTYPES[0]
   const [inputValue, setInputValue] = useState(searchParams.get('q') ?? '')
+  const deferredQuery = useDeferredValue(inputValue)
   const debouncedQuery = useDebounce(inputValue, 300)
   const accessParam = searchParams.get('access')
   const excludeAccessParam = searchParams.get('excludeAccess')
@@ -116,13 +118,13 @@ export default function HousingListPage() {
 
   const filters = useMemo(
     () => ({
-      query: debouncedQuery || undefined,
+      query: deferredQuery || undefined,
       access: activeAccess.length > 0 ? activeAccess : undefined,
       excludeAccess: excludedAccess.length > 0 ? excludedAccess : undefined,
       categories: activeCategories.length > 0 ? activeCategories : undefined,
       excludeCategories: excludedCategories.length > 0 ? excludedCategories : undefined,
     }),
-    [activeAccess, excludedAccess, activeCategories, excludedCategories, debouncedQuery]
+    [activeAccess, excludedAccess, activeCategories, excludedCategories, deferredQuery]
   )
   const { housing, total, loading } = useHousing(activeSubtype, filters)
 
@@ -182,9 +184,7 @@ export default function HousingListPage() {
       <div className="mb-5">
         <h1 className="text-2xl font-bold text-gold mb-1">Housing & House Items</h1>
         <p className="text-text-secondary text-sm">{subtypeMeta.shortDescription}</p>
-        <p className="mt-2 text-xs text-text-muted">
-          All housing entries require a Dragon Amulet.
-        </p>
+        <p className="mt-2 text-xs text-text-muted">All housing entries require a Dragon Amulet.</p>
       </div>
 
       <div className="mb-4">
@@ -200,61 +200,63 @@ export default function HousingListPage() {
         />
       </div>
 
-      <div className="flex gap-2 flex-wrap mb-3" role="group" aria-label="Filter by access">
-        {visibleAccessOptions.map((option) => (
-          <TriStateFilterPill
-            key={option.id}
-            label={option.label}
-            state={getTriState(option.id, { include: activeAccess, exclude: excludedAccess })}
-            onClick={() => toggleAccess(option.id)}
-            size="access"
-          />
-        ))}
-        {(activeAccess.length > 0 || excludedAccess.length > 0) && (
-          <button
-            onClick={() => {
-              const params = baseParams()
-              delete params.access
-              delete params.excludeAccess
-              setParams(params)
-            }}
-            className="text-xs text-text-muted hover:text-text-primary underline underline-offset-2 ml-1"
-          >
-            Clear filters
-          </button>
-        )}
-      </div>
-
-      <div className="mb-3">
-        <div className="flex flex-wrap gap-2" role="group" aria-label="Filter by category">
-          {visibleCategoryOptions.map((option) => (
+      <MobileFilterPanel>
+        <div className="flex gap-2 flex-wrap mb-3" role="group" aria-label="Filter by access">
+          {visibleAccessOptions.map((option) => (
             <TriStateFilterPill
               key={option.id}
               label={option.label}
-              state={getTriState(option.id, {
-                include: activeCategories,
-                exclude: excludedCategories,
-              })}
-              onClick={() => toggleCategory(option.id)}
-              size="category"
-              activeClassName="bg-orange-500/80 text-white"
+              state={getTriState(option.id, { include: activeAccess, exclude: excludedAccess })}
+              onClick={() => toggleAccess(option.id)}
+              size="access"
             />
           ))}
-          {(activeCategories.length > 0 || excludedCategories.length > 0) && (
+          {(activeAccess.length > 0 || excludedAccess.length > 0) && (
             <button
               onClick={() => {
                 const params = baseParams()
-                delete params.category
-                delete params.excludeCategory
+                delete params.access
+                delete params.excludeAccess
                 setParams(params)
               }}
-              className="text-[11px] text-text-muted hover:text-text-primary underline underline-offset-2 ml-1"
+              className="text-xs text-text-muted hover:text-text-primary underline underline-offset-2 ml-1"
             >
               Clear filters
             </button>
           )}
         </div>
-      </div>
+
+        <div className="mb-3">
+          <div className="flex flex-wrap gap-2" role="group" aria-label="Filter by category">
+            {visibleCategoryOptions.map((option) => (
+              <TriStateFilterPill
+                key={option.id}
+                label={option.label}
+                state={getTriState(option.id, {
+                  include: activeCategories,
+                  exclude: excludedCategories,
+                })}
+                onClick={() => toggleCategory(option.id)}
+                size="category"
+                activeClassName="bg-orange-500/80 text-white"
+              />
+            ))}
+            {(activeCategories.length > 0 || excludedCategories.length > 0) && (
+              <button
+                onClick={() => {
+                  const params = baseParams()
+                  delete params.category
+                  delete params.excludeCategory
+                  setParams(params)
+                }}
+                className="text-[11px] text-text-muted hover:text-text-primary underline underline-offset-2 ml-1"
+              >
+                Clear filters
+              </button>
+            )}
+          </div>
+        </div>
+      </MobileFilterPanel>
 
       <p className="text-text-muted text-xs mb-4" aria-live="polite" aria-atomic="true">
         {loading ? 'Loading entries...' : `${total} ${total === 1 ? 'entry' : 'entries'} found`}

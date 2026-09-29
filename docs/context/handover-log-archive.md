@@ -1,8 +1,9 @@
 # Handover Log Archive
 
 > Older log entries moved from `AGENTS.md` to keep the orchestrator file under ~600 lines.
-> Entries here are **read-only history** — do not prepend new entries here.
-> New entries always go in `AGENTS.md` under `## 📝 Reverse-Chronological Handover Log`.
+> Entries here are **read-only history** after archival. New session entries always go in `AGENTS.md`
+> under `## 📝 Reverse-Chronological Handover Log`; at session close, prepend entries rotated out of
+> that live log here without rewriting their content.
 >
 > **Reading `Commit(s): uncommitted`:** it means uncommitted _at the time of writing_, not still
 > uncommitted. Treat `git log` as authoritative for what shipped when.
@@ -10,6 +11,72 @@
 ---
 
 ## Entries
+
+### 2026-09-03 — Reviewed accessory singular-sibling consolidation
+
+**Agent:** orchestrator (GPT-5 Codex) · **Commit(s):** `the commit containing this entry`
+**Kanban moved:** no board item moved; user-requested accessory consolidation expansion
+
+**Changed:**
+
+- `scripts/lib/accessories/cross-post-family.ts`: added reviewed special-family specs for 20
+  non-artifact accessory groups where singular sibling entries share obtain context, related names,
+  descriptions, explicit/inferred Also See relationships, and clear variant-label segmentation. The
+  new specs intentionally exclude Pets/Guests, Weapons, Housing, and Artifacts.
+- `scripts/lib/accessories/cross-post-family.ts`: added a `singularOnly` guard for the new reviewed
+  specs so existing itemfamilies are not folded into broader families.
+- `scripts/lib/accessories/cross-post-family.ts`: removed the unclear `Star Ring` and `Seal Ring`
+  singular-sibling specs and added stale-data unwind handling so those entries remain linked singles
+  instead of awkward itemfamilies.
+- `scripts/lib/accessories/cross-post-family.ts` and `src/data/rings.json`: added explicit mutual
+  Also See link-only groups for `Star Ring` / `Starry Ring` / `Starlight Ring` and the reviewed
+  non-consolidated `Seal Ring` singles.
+- `scripts/lib/accessories/cross-post-family.ts`: preserve possessive variant names for the
+  `Skullhelm` family (`Klatu's`, `Baradaa's`, `Nickto's`).
+- `scripts/lib/accessories/cross-post-family.ts` and `scripts/lib/access-flag-repair.ts`: kept
+  accessory cross-post family methods together as Method 1/2 rows instead of splitting gold/free and
+  DC obtain methods into duplicate selector variants.
+- `src/utils/imageLabels.ts`, `scripts/scrape-accessories.ts`, `src/data/helms-a-l.json`, and
+  `src/data/capes-wings-a-l.json`: normalized `Alloyed KabutoGuard` / `Alloyed KabutoPack` captions
+  (`Horn (...)`, `Pack (...)`, `Wings (...)`) and removed consumed appearance-summary lines from
+  Other Information.
+- `src/data/accessory-manifest.json` and non-artifact accessory JSON shards: mechanically reshaped
+  existing data through the accessory promotion pipeline. Accessories now report 2,520 entries.
+- `docs/context/category_playbooks.md`: documented the approved singular-sibling consolidation rule,
+  clear-variant-label requirement, possessive variant preservation, the exclusion of Artifacts from
+  this pass, and the future Classes / Abilities gap for rendering extra images embedded in Other
+  Information.
+- `AGENTS.md`: updated project counts and recorded this handover entry.
+
+**Verified:**
+
+- Data audit → all 20 reviewed family names exist with expected variant counts; `Soulthread Loop`
+  and `Star Captain's Belt` render one variant per named sibling with two obtain methods each.
+- Data audit → `Star Ring` / `Starry Ring` / `Starlight Ring` and the eight `Seal Ring` entries are
+  singles again.
+- Data audit → every `Star Ring` sibling and sampled `Seal Ring` siblings now have mutual Also See
+  refs.
+- Data audit → `Skullhelm` variants are `Klatu's`, `Baradaa's`, and `Nickto's`.
+- Data audit → `Alloyed KabutoGuard` captions are `Main`, `Horn (Orange)`, `Horn (Red)`,
+  `Horn (No Color)`, `Clicked Appearance`; `Alloyed KabutoPack` captions are `Main`,
+  `Pack (Orange)`, `Pack (Red)`, `Pack (No Color)`, `Wings (Cyan)`, `Wings (Orange)`,
+  `Wings (Red)`, `Wings (No Color)`, with grouped appearance-summary note lines removed.
+- Data audit → `artifacts.json` remains 20 entries and was not included in the new reviewed
+  consolidation specs.
+- `node scripts/validate-accessories.mjs` → passed, 2,520 entries across 8 subtypes / 10 data files.
+- `npx tsc --noEmit -p tsconfig.json` → passed.
+- `npm run validate` → passed across all dataset validators, shared dataset verification, and script
+  typecheck.
+- `npm run lint` → passed.
+- `npx vite build` → passed.
+
+**Not verified / known gaps:**
+
+- No browser screenshot pass was run for the new accessory families.
+
+**Next agent should:**
+
+- Have the user spot-check the new family selectors and Method 1/2 obtain cards.
 
 ### 2026-09-01 — Class Regular/Misc overlap and Nythera cleanup
 
@@ -157,7 +224,6 @@
 - Continue Regular/Miscellaneous class special-case cleanup from the current user spot checks, then
   run the class validator and shared dataset checks before claiming the class scrape clean.
 
-
 ### 2026-08-31 — Dependency vuln fix + Radix Tooltip on access pills
 
 **Agent:** orchestrator (Claude Opus 4.8) · **Commit(s):** `the commit containing this entry`
@@ -214,7 +280,6 @@
 - If continuing the Radix track, a Popover (e.g. for the element legend) is the next net-new
   candidate; otherwise pivot back to content sections from the To Do backlog.
 
-
 ### 2026-08-31 — SegmentToggle on Radix ToggleGroup
 
 **Agent:** orchestrator (Claude Opus 4.8) · **Commit(s):** `the commit containing this entry`
@@ -264,7 +329,6 @@ under Done → Shared UI system)
 
 - If continuing the Radix track, a Tooltip or Popover primitive (net-new) is the next candidate; the
   `TriStateFilterPill` should remain custom.
-
 
 ### 2026-08-31 — Radix attack accordions + global Command palette
 
@@ -331,7 +395,6 @@ ticked under Done → Shared UI system)
 - If the palette is kept, consider the build-time search-index JSON, and evaluate the next Radix
   candidates (`SegmentToggle` / `TriStateFilterPill`, or a Tooltip/Popover primitive).
 
-
 ### 2026-08-31 — Radix Collapsible accessibility spike
 
 **Agent:** orchestrator (Claude Opus 4.8) · **Commit(s):** `the commit containing this entry`
@@ -379,7 +442,6 @@ under Done → Shared UI system)
 - Await the user's decision on wider Radix adoption before converting more components; if approved,
   the expandable attack/skill accordions (`GuestAttacks`) are the next-highest accessibility value.
 
-
 ### 2026-08-31 — Class artifact attack sets and mechanics
 
 **Agent:** orchestrator (GPT-5 Codex) · **Commit(s):** `the commit containing this entry`
@@ -399,7 +461,7 @@ under Done → Shared UI system)
   artifacts. Appearance-only modifiers such as `Navigator's Hat` count even when the class has no
   matching artifact attack set. The relation index refreshes after Classes and Accessories scrapes.
 - `scripts/scrape-classes.ts`: widget-caption blocks such as `Chaosweaver's widget displaying
-  Soulthreads.` and `Ranger's widget displaying Focus.` now populate structured class mechanics
+Soulthreads.` and `Ranger's widget displaying Focus.` now populate structured class mechanics
   instead of being flattened into generic notes.
 - `src/types/item.ts`, `src/types/pet.ts`, and `src/types/classAbility.ts`: added shared mechanics
   blocks and guest-shaped attack-set metadata for class pages.
@@ -407,7 +469,7 @@ under Done → Shared UI system)
   show a `Base` / artifact attack-set selector before attacks, render correlated Class Mechanics for
   the selected set, auto-display mechanics images centered with captions beneath, and append selected
   artifact notes to Other Information. Artifact-backed attack sets render one compact `Artifact:
-  <name>` inline link above Class Mechanics / Attacks; matching mechanics block titles are hidden to
+<name>` inline link above Class Mechanics / Attacks; matching mechanics block titles are hidden to
   avoid duplicating the artifact name. Armor and Consumable rendering paths remain scoped away from
   this feature.
 - `src/components/classAbilities/ClassAbilityDetail.tsx`: class stats passed through the guest stats
@@ -496,7 +558,7 @@ under Done → Shared UI system)
 - Targeted Regular scrape for `Pirate` → passed and preserved 62 regular class entries; Pirate now
   has the Swab/Matey/Navigator/Marauder/Voidsailor/Dread/Sunken/Naval class image gallery.
 - Targeted Regular scrape for `SoulWeaver|Ancient Shadow Warrior|Ancient Shadow Mage|Ancient Shadow
-  Rogue` → passed and preserved 62 regular class entries. `SoulWeaver` Base `Unleash SoulSynch` has
+Rogue` → passed and preserved 62 regular class entries. `SoulWeaver` Base `Unleash SoulSynch` has
   4 captioned images; both Sealing Slash variants have 6 captioned images; `Attack` has 3 captioned
   images; Baltael's `Unleash SoulSynch` has the same 4 captioned images. Shadowheart Bracer no
   longer creates fake `Other information` attacks on the refreshed Ancient Shadow entries and now
@@ -749,9 +811,9 @@ under Done → Shared UI system)
 **Verified:**
 
 - Targeted scrape `npm run scrape:classes -- --subtype=class --class-subcategory=regular
-  --names="Ancient Exosuit" --concurrency=1` → passed.
+--names="Ancient Exosuit" --concurrency=1` → passed.
 - Targeted scrape `npm run scrape:classes -- --subtype=class --class-subcategory=miscellaneous
-  --names="Bone Exoskeleton|Caitiff" --concurrency=1` → passed.
+--names="Bone Exoskeleton|Caitiff" --concurrency=1` → passed.
 - Data audit → Ancient Exosuit regular has DC tag, no description, `August 4th, 2015` release date,
   `AncientExo.png` as main image, exactly the two requested alt image captions, 15 attacks, clean
   global Other Information, and an Also See link to `class-ability-bone-exoskeleton-miscellaneous`.
@@ -841,7 +903,7 @@ under Done → Shared UI system)
   the user's full pets scrape. Current pet family labels no longer store raw `Normal`, `DA`, `DC`, or
   `DA/DC` labels.
 - `scripts/scrape-weapons.ts`: derived access-only weapon title differences such as `Arena Fighter
-  Sword DA` are normalized to selector labels like `(DA)` instead of retaining bare `DA`; DA/DC/DM
+Sword DA` are normalized to selector labels like `(DA)` instead of retaining bare `DA`; DA/DC/DM
   acronym casing is preserved during weapon title-token cleanup.
 - `src/data/weapons-swords-axes-maces-a-g.json`, `src/data/weapons-staves-wands-a-g.json`, and
   `src/data/weapons-daggers-a-g.json`: targeted Arena Fighter refreshes populated the access-label
@@ -899,7 +961,7 @@ under Done → Shared UI system)
   least one nested level, so one-space legacy note rows do not render flat.
 - `src/utils/variantHelpers.ts`: repeated identical variant labels across unique levels now use
   level-driven display and hide the Variant stats-table column. This fixes `Soulforged Ring
-  (Red/Blue/Green)` families, where each color family stores the same color label on every level row.
+(Red/Blue/Green)` families, where each color family stores the same color label on every level row.
 - `scripts/lib/accessories/cross-post-family.ts` and `src/data/rings.json`: `First Golden Ring`
   through `Fifth Golden Ring` now consolidate into one scoped `Golden Rings` itemfamily with
   `First`, `Second`, `Third`, `Fourth`, and `Fifth` variants. The separate `Golden Ring` entry stays
@@ -951,7 +1013,7 @@ under Done → Shared UI system)
 - Data audit → `Golden Rings` has variants `First`, `Second`, `Third`, `Fourth`, `Fifth`; standalone
   `Golden Ring` remains separate.
 - Data audit → `Infected Megabytes (Cosmetic)` is a single cosmetic variant; `Infected Megabytes
-  (I-III)` has variants `I`, `II`, `III`, is not cosmetic-tagged, and links back to the cosmetic
+(I-III)` has variants `I`, `II`, `III`, is not cosmetic-tagged, and links back to the cosmetic
   sibling.
 - Targeted class scrapes for `Ancient Exosuit` armor, `Ancient Exosuit` regular, and `Alexander`
   miscellaneous → passed. Armor stayed image/stat-free; regular and miscellaneous rows use
@@ -969,7 +1031,7 @@ under Done → Shared UI system)
   (`10`, `10 (DC)`, etc.); UI-level duplicate disambiguation is expected to add level context for
   repeated named ranks.
 - Targeted weapon refresh for `Arena Fighter Sword`, `Arena Fighter Staff`, and `Arena Fighter
-  Dagger` → passed; post-audit found no raw access labels in those refreshed rows.
+Dagger` → passed; post-audit found no raw access labels in those refreshed rows.
 - Targeted accessory refresh for the listed bracer/cape-wing/helm/ring families → passed.
 - Data audit → Doom Harvester Wings variants are `(Base)`, `Base`, `Foul`, `Noxious`.
 - Data audit → Azaveyran Farewell DC branches are DA+DC; Ancient DragonLord Helm I-III are DA+DC;
@@ -1070,10 +1132,10 @@ under Done → Shared UI system)
 **Verified:**
 
 - Targeted scrape `npm run scrape:weapons -- --subtypes=sword-axe-mace
-  --names='ChickenBlade (ChickenCow Default)|Claws?? (Zardbie Default)|Pirate Blade (Pirate
-  Default)|Dread Pirate Blade (Dread Pirate Default)'` → passed.
+--names='ChickenBlade (ChickenCow Default)|Claws?? (Zardbie Default)|Pirate Blade (Pirate
+Default)|Dread Pirate Blade (Dread Pirate Default)'` → passed.
 - Targeted scrape `npm run scrape:weapons -- --subtypes=sword-axe-mace
-  --names='Pirate Blade (Pirate Default)|Dread Pirate Blade (Dread Pirate Default)' --fresh` →
+--names='Pirate Blade (Pirate Default)|Dread Pirate Blade (Dread Pirate Default)' --fresh` →
   passed.
 - Targeted scrape `npm run scrape:pets -- --names='Bonehead|Mr. Mangles' --fresh --concurrency=1`
   → passed.
@@ -1216,7 +1278,7 @@ under Done → Shared UI system)
   base sibling labels (`(Base)`, `(Base) (DC)`), and uppercase Roman numerals.
 - `scripts/scrape-classes.ts`: ChickenCow armor normalization now uses the shared helper. The
   duplicate `ChickenCow Armor` pair derives its label from the scraped level; `Evolved ChickenCow
-  Armor` renders `(DA)`, `(DA, DC)`, `(DC)` without a redundant `1` prefix.
+Armor` renders `(DA)`, `(DA, DC)`, `(DC)` without a redundant `1` prefix.
 - `src/data/classes.json`: targeted ChickenCow armor refresh updated the current data to the shared
   label policy.
 - `docs/context/ui_patterns.md`, `docs/context/data_reference.md`, and
@@ -1226,7 +1288,7 @@ under Done → Shared UI system)
 **Verified:**
 
 - Targeted scrape `npm run scrape:classes -- --subtype=class --class-subcategory=armor
-  --names='ChickenCow Armor|Evolved ChickenCow Armor|Ascended ChickenCow Armor'` → passed and wrote
+--names='ChickenCow Armor|Evolved ChickenCow Armor|Ascended ChickenCow Armor'` → passed and wrote
   29 class entries.
 - Data audit → ChickenCow labels are `1`, `1 (DC)`; Evolved labels are `(DA)`, `(DA, DC)`, `(DC)`;
   Ascended labels are `(DA)`, `(DC)`.
@@ -1382,7 +1444,7 @@ under Done → Shared UI system)
 **Verified:**
 
 - Targeted scrape `npm run scrape:accessories -- --subtypes=trinket
-  --names="Beacon of Hope,Pillar of Light"` → passed.
+--names="Beacon of Hope,Pillar of Light"` → passed.
 - Data audit → `Pillar of Light` now has the complete Beacon of Hope skill mechanics/media and keeps
   `Pillar of Light equipped` as its requirement.
 - Current trinket skill audit → only one shared ability URL group exists (`Beacon of Hope` /
@@ -1458,7 +1520,7 @@ under Done → Shared UI system)
   (`Rare`, `Seasonal`, `Special Offer`) from Classes / Abilities detail headers. Detail headers now
   match the shared rule: access/method/type metadata only.
 - `scripts/scrape-classes.ts`: added ChickenCow armor single-post family normalization. `ChickenCow
-  Armor` renders `1` / `1 (DC)`, `Evolved ChickenCow Armor` renders `1 (DA)` / `1 (DA, DC)` /
+Armor` renders `1` / `1 (DC)`, `Evolved ChickenCow Armor` renders `1 (DA)` / `1 (DA, DC)` /
   `1 (DC)`, and `Ascended ChickenCow Armor` renders `(DA)` / `(DC)`, with method-level DA/DC flags
   overriding page-level tag bleed.
 - `scripts/scrape-classes.ts`: repaired the known Epoch price artifact where the forum
@@ -1472,7 +1534,7 @@ under Done → Shared UI system)
 **Verified:**
 
 - Targeted scrape `npm run scrape:classes -- --subtype=class --class-subcategory=armor
-  --names='Epoch'` → passed and wrote 29 class entries.
+--names='Epoch'` → passed and wrote 29 class entries.
 - Data audit → ChickenCow/Evolved/Ascended variant labels and DA/DC method flags match the requested
   splits; Epoch price now starts `$19.95-$24.95 USD (Standard)`.
 - `npm run generate:badge-relations` → passed, 26 relations.
@@ -1515,7 +1577,7 @@ under Done → Shared UI system)
 **Verified:**
 
 - Targeted scrape `npm run scrape:classes -- --subtype=class --class-subcategory=armor
-  --names='Chronocorruptor|Reforged Chronocorruptor'` → passed and wrote 29 class entries.
+--names='Chronocorruptor|Reforged Chronocorruptor'` → passed and wrote 29 class entries.
 - Data audit → Shadow armor families have `(Base)`/`Ancient`, time-class armor families have
   `(Base)`/`Reforged`, `Epoch` remains standalone, 0 standalone `Reforged ...` rows, 0 alias
   collisions.
@@ -1586,7 +1648,7 @@ under Done → Shared UI system)
   URL page-title family handling, tightened title detection around forum metadata, and added targeted
   armor-family normalizers for Gnomish Personal Steamtank and DoomKnight.
 - `src/data/classes.json`: targeted refreshes now represent `Gnomish Personal Steamtank (Vr 1.0,
-  Mk II)` with `Vr 1.0` / `Mk II` variants and `DoomKnight (Armor, Variant One)` with `Armor` /
+Mk II)` with `Vr 1.0` / `Mk II` variants and `DoomKnight (Armor, Variant One)` with `Armor` /
   `Variant One` variants.
 - `src/data/badge-relations.json`: regenerated after armor cleanup. `GPS` and `DoomKnight` badge
   relations now point to the consolidated armor families.
@@ -1657,7 +1719,7 @@ under Done → Shared UI system)
 
 - No browser visual QA was run for the new cross-category card sections.
 - The relation rule is intentionally strict and only handles explicit `Own this ... to obtain ...
-  badge(s)` wording. Broader badge-related prose remains unlinked by design.
+badge(s)` wording. Broader badge-related prose remains unlinked by design.
 
 **Next agent should:**
 
@@ -2299,7 +2361,7 @@ under Done → Shared UI system)
   Dust/Food/Rune tones.
 - `src/components/classAbilities/ClassAbilityCard.tsx`: gallery cards now use compact `DA`, show
   `DM` when repaired flags indicate Defender's Medal requirements, and no longer show `Multiple
-  Versions`, `Merge Required`, `Effect`, or current-Consumables `Temp` pills.
+Versions`, `Merge Required`, `Effect`, or current-Consumables `Temp` pills.
 - `src/components/classAbilities/ClassAbilityDetail.tsx`: Consumables omit Level, show standalone
   `Rarity` metadata before How to Obtain, show `DM` in the header, and suppress the ubiquitous Temp
   header pill for Consumables.
@@ -2346,7 +2408,7 @@ under Done → Shared UI system)
 **Changed:**
 
 - `scripts/scrape-classes.ts`: Consumables listing now skips the non-entry headings `Alphabetical
-  Consumables Listing` and `Consumables Sorted by Effects`, maps A-Z `[D]` / `[F]` / `[R]` prefixes
+Consumables Listing` and `Consumables Sorted by Effects`, maps A-Z `[D]` / `[F]` / `[R]` prefixes
   to Dust/Food/Rune, falls back to detail-page `Item Type`, parses both `Effect:` and `Effects:`,
   and scopes Other Information to the current item block instead of the whole forum page.
 - `src/components/classAbilities/ClassAbilityDetail.tsx`: Consumables effects now render immediately

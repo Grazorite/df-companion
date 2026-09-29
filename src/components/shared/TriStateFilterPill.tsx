@@ -13,10 +13,10 @@ interface TriStateFilterPillProps {
 }
 
 const SIZE_CLASSES = {
-  segment: 'px-3 py-1.5 text-xs min-h-[36px]',
-  access: 'px-3 py-1.5 text-xs min-h-[36px]',
-  category: 'px-2.5 py-1 text-[11px]',
-  element: 'px-1.5 py-0.5 text-[10px]',
+  segment: 'px-3 py-1.5 text-xs min-h-11 sm:min-h-9',
+  access: 'px-3 py-1.5 text-xs min-h-11 sm:min-h-9',
+  category: 'px-2.5 py-1 text-[11px] min-h-11 sm:min-h-0',
+  element: 'px-1.5 py-0.5 text-[10px] min-h-11 sm:min-h-0',
 }
 
 export default function TriStateFilterPill({

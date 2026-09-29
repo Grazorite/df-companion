@@ -3,6 +3,7 @@ import type { Badge } from '../../types/badge'
 import BadgeCard from './BadgeCard'
 import { BadgeGridSkeleton } from '../shared/LoadingSkeleton'
 import { currentListUrl, detailUrlWithFrom } from '../../utils/navigationContext'
+import ProgressiveCardGrid from '../shared/ProgressiveCardGrid'
 
 interface BadgeListProps {
   badges: Badge[]
@@ -28,18 +29,15 @@ export default function BadgeList({ badges, loading = false }: BadgeListProps) {
   }
 
   return (
-    <ul
+    <ProgressiveCardGrid
+      ariaLabel="Badge results"
       className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3"
-      aria-label="Badge results"
-    >
-      {badges.map((badge) => (
-        <li key={badge.id}>
-          <BadgeCard
-            badge={badge}
-            toUrl={detailUrlWithFrom(`/badges/${badge.slug}`, fromUrl)}
-          />
-        </li>
-      ))}
-    </ul>
+      items={badges}
+      getKey={(badge) => badge.id}
+      resetKey={fromUrl}
+      renderItem={(badge) => (
+        <BadgeCard badge={badge} toUrl={detailUrlWithFrom(`/badges/${badge.slug}`, fromUrl)} />
+      )}
+    />
   )
 }

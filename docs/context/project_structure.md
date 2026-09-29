@@ -38,7 +38,8 @@ dragonfable-companion/
 │   │   ├── housing/        # Housing cards, list, detail components
 │   │   ├── classAbilities/ # Classes / Abilities cards, list, detail components
 │   │   ├── layout/         # Navigation, Layout
-│   │   └── shared/         # SearchBar, LoadingSkeleton, ObtainSection, ElementPill,
+│   │   └── shared/         # SearchBar, LoadingSkeleton, ProgressiveCardGrid, NavigationContinuity,
+│   │                       # MobileFilterPanel and token-styled ui/ primitive wrappers,
 │   │                       # ExpandableImageList, ItemImage, MetricStrip, NotesList,
 │   │                       # TriStateFilterPill, LevelSelector, SourceLinksCard, etc.
 │   ├── data/
@@ -131,6 +132,7 @@ dragonfable-companion/
 │   │   ├── armorCustomization.ts # Armor customization appearance/modifies parser
 │   │   ├── accessPillStyles.ts # Shared DA/DC/DM access pill tones
 │   │   ├── filterVisibility.ts # Data-driven filter pill visibility helpers
+│   │   ├── browseRestoration.ts # In-memory gallery depth/scroll/card restoration state
 │   │   ├── navigationContext.ts # Browse-URL `from` context for back links
 │   │   ├── displayText.ts  # Title normalization, article-insensitive sorting
 │   │   ├── effectFormatting.ts # Effect/metric strip text normalization
@@ -142,7 +144,8 @@ dragonfable-companion/
 │   ├── displayText.test.ts # User-visible display normalization behavior
 │   ├── relatedItems.test.ts # Related-item matching fingerprints and scoring
 │   ├── search.test.ts      # Public badge search/filter behavior
-│   └── triStateFilters.test.ts # URL filter state helpers
+│   ├── triStateFilters.test.ts # URL filter state helpers
+│   └── ui/                  # Playwright + Node browser behavior harness and route regressions
 ├── .env.example            # Template for forum cookie (for scraper)
 ├── AGENTS.md               # Dynamic handover orchestrator (status, Kanban, handover log)
 ├── package.json

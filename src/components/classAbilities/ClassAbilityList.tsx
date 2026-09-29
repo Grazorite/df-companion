@@ -3,6 +3,7 @@ import { CardGridSkeleton } from '../shared/LoadingSkeleton'
 import type { ClassAbilityEntry } from '../../types/classAbility'
 import ClassAbilityCard from './ClassAbilityCard'
 import { currentListUrl, detailUrlWithFrom } from '../../utils/navigationContext'
+import ProgressiveCardGrid from '../shared/ProgressiveCardGrid'
 
 interface ClassAbilityListProps {
   items: ClassAbilityEntry[]
@@ -32,17 +33,21 @@ export default function ClassAbilityList({ items, loading = false }: ClassAbilit
   }
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3">
-      {items.map((item) => (
+    <ProgressiveCardGrid
+      ariaLabel="Class and ability results"
+      className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3"
+      items={items}
+      getKey={(item) => item.slug}
+      resetKey={fromUrl}
+      renderItem={(item) => (
         <ClassAbilityCard
-          key={item.slug}
           item={item}
           toUrl={detailUrlWithFrom(
             `/classes/${item.slug}?type=${encodeURIComponent(item.subtype)}`,
             fromUrl
           )}
         />
-      ))}
-    </div>
+      )}
+    />
   )
 }

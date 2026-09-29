@@ -1,5 +1,5 @@
 import { NavLink, useLocation } from 'react-router-dom'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import {
   Trophy,
   Map,
@@ -14,6 +14,7 @@ import {
   Sparkles,
   Search,
   MoreHorizontal,
+  X,
 } from 'lucide-react'
 import { openCommandPalette } from '../../utils/commandPalette'
 import { useTotalBadgeCount } from '../../hooks/useBadges'
@@ -22,6 +23,14 @@ import { useTotalAccessoryCount } from '../../hooks/useAccessories'
 import { useTotalWeaponCount } from '../../hooks/useWeapons'
 import { useTotalHousingCount } from '../../hooks/useHousing'
 import { useTotalClassAbilityCount } from '../../hooks/useClassAbilities'
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogTitle,
+  DialogTrigger,
+} from '../shared/ui/dialog'
 
 // Mirrors the DF Encyclopedia forum structure exactly:
 // https://forums2.battleon.com/f/tt.asp?forumid=256
@@ -86,6 +95,10 @@ export default function Navigation() {
     (item) => !mobilePrimaryItems.some((primary) => primary.to === item.to)
   )
   const moreActive = moreItems.some((item) => isNavItemActive(item.to, item.exact))
+
+  useEffect(() => {
+    setMoreOpen(false)
+  }, [location.pathname, location.search])
 
   function getCountForPath(to: string): number | undefined {
     if (to === '/accessories') return accessoryCount
@@ -204,19 +217,33 @@ export default function Navigation() {
         style={{ paddingBottom: 'env(safe-area-inset-bottom, 0px)' }}
         aria-label="Main navigation"
       >
-        {moreOpen && (
-          <div className="absolute inset-x-3 bottom-[calc(3.5rem+env(safe-area-inset-bottom,0px)+0.5rem)] rounded-lg border border-border-default bg-bg-elevated shadow-prominent overflow-hidden">
+        <Dialog open={moreOpen} onOpenChange={setMoreOpen}>
+          <DialogContent
+            className="inset-x-3 bottom-[calc(3.5rem+env(safe-area-inset-bottom,0px)+0.5rem)] overflow-hidden rounded-lg"
+            aria-describedby="mobile-more-description"
+          >
+            <DialogTitle className="sr-only">More sections</DialogTitle>
+            <DialogDescription id="mobile-more-description" className="sr-only">
+              Search or navigate to additional DragonFable Companion sections.
+            </DialogDescription>
             <button
               type="button"
               onClick={() => {
                 setMoreOpen(false)
                 openCommandPalette()
               }}
-              className="flex w-full items-center gap-2 border-b border-border-default px-3 py-2.5 text-sm text-text-secondary transition-colors hover:bg-bg-overlay hover:text-text-primary"
+              aria-label="Search"
+              className="flex min-h-11 w-full items-center gap-2 border-b border-border-default px-3 py-2.5 pr-12 text-sm text-text-secondary transition-colors hover:bg-bg-overlay hover:text-text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-gold/60"
             >
               <Search className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
               <span className="min-w-0 flex-1 text-left">Search…</span>
             </button>
+            <DialogClose
+              aria-label="Close more sections"
+              className="absolute right-2 top-1.5 flex min-h-11 min-w-11 items-center justify-center rounded-md text-text-muted transition-colors hover:bg-bg-overlay hover:text-text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/60"
+            >
+              <X className="h-4 w-4" aria-hidden="true" />
+            </DialogClose>
             <div className="grid grid-cols-2 gap-1 p-2">
               {moreItems.map(({ to, icon: Icon, label, exact, available }) =>
                 available ? (
@@ -225,7 +252,7 @@ export default function Navigation() {
                     to={to}
                     end={exact}
                     onClick={() => setMoreOpen(false)}
-                    className={`flex items-center gap-2 rounded-md px-3 py-2 text-xs transition-colors ${
+                    className={`flex min-h-11 items-center gap-2 rounded-md px-3 py-2 text-xs transition-colors ${
                       isNavItemActive(to, exact)
                         ? 'bg-gold/10 text-gold font-medium'
                         : 'text-text-secondary hover:bg-bg-overlay hover:text-text-primary'
@@ -242,7 +269,7 @@ export default function Navigation() {
                 ) : (
                   <div
                     key={to}
-                    className="flex items-center gap-2 rounded-md px-3 py-2 text-xs text-text-muted opacity-40"
+                    className="flex min-h-11 items-center gap-2 rounded-md px-3 py-2 text-xs text-text-muted opacity-40"
                   >
                     <Icon className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
                     <span className="min-w-0 flex-1 truncate">{label}</span>
@@ -251,64 +278,66 @@ export default function Navigation() {
                 )
               )}
             </div>
-          </div>
-        )}
-        <ul className="flex h-14" role="list">
-          {mobilePrimaryItems.map(({ to, icon: Icon, label, exact, available }) => (
-            <li key={to} className="flex-1">
-              {available ? (
-                <NavLink
-                  to={to}
-                  end={exact}
-                  onClick={() => setMoreOpen(false)}
-                  className={() =>
-                    `relative flex flex-col items-center justify-center h-full gap-0.5 transition-colors duration-150 ${
-                      isNavItemActive(to, exact)
-                        ? 'text-gold'
-                        : 'text-text-muted active:text-text-secondary'
-                    }`
-                  }
+          </DialogContent>
+          <ul className="flex h-14" role="list">
+            {mobilePrimaryItems.map(({ to, icon: Icon, label, exact, available }) => (
+              <li key={to} className="flex-1">
+                {available ? (
+                  <NavLink
+                    to={to}
+                    end={exact}
+                    onClick={() => setMoreOpen(false)}
+                    className={() =>
+                      `relative flex flex-col items-center justify-center h-full gap-0.5 transition-colors duration-150 ${
+                        isNavItemActive(to, exact)
+                          ? 'text-gold'
+                          : 'text-text-muted active:text-text-secondary'
+                      }`
+                    }
+                  >
+                    {() => (
+                      <>
+                        {isNavItemActive(to, exact) && (
+                          <span className="absolute top-0 inset-x-2 h-0.5 bg-gold rounded-b-full" />
+                        )}
+                        <Icon className="w-5 h-5" aria-hidden="true" />
+                        <span className="text-[10px] leading-none truncate px-1">
+                          {label.split(' /')[0]}
+                        </span>
+                      </>
+                    )}
+                  </NavLink>
+                ) : (
+                  <div className="flex flex-col items-center justify-center h-full gap-0.5 text-text-muted opacity-40 cursor-not-allowed">
+                    <Icon className="w-5 h-5" aria-hidden="true" />
+                    <span className="text-[10px] leading-none truncate px-1">
+                      {label.split(' /')[0]}
+                    </span>
+                  </div>
+                )}
+              </li>
+            ))}
+            <li className="flex-1">
+              <DialogTrigger asChild>
+                <button
+                  type="button"
+                  aria-label="More sections"
+                  className={`relative flex h-full w-full flex-col items-center justify-center gap-0.5 transition-colors duration-150 ${
+                    moreActive || moreOpen
+                      ? 'text-gold'
+                      : 'text-text-muted active:text-text-secondary'
+                  }`}
                 >
-                  {() => (
-                    <>
-                      {isNavItemActive(to, exact) && (
-                        <span className="absolute top-0 inset-x-2 h-0.5 bg-gold rounded-b-full" />
-                      )}
-                      <Icon className="w-5 h-5" aria-hidden="true" />
-                      <span className="text-[10px] leading-none truncate px-1">
-                        {label.split(' /')[0]}
-                      </span>
-                    </>
+                  {(moreActive || moreOpen) && (
+                    <span className="absolute top-0 inset-x-2 h-0.5 bg-gold rounded-b-full" />
                   )}
-                </NavLink>
-              ) : (
-                <div className="flex flex-col items-center justify-center h-full gap-0.5 text-text-muted opacity-40 cursor-not-allowed">
-                  <Icon className="w-5 h-5" aria-hidden="true" />
-                  <span className="text-[10px] leading-none truncate px-1">
-                    {label.split(' /')[0]}
-                  </span>
-                </div>
-              )}
+                  <MoreHorizontal className="w-5 h-5" aria-hidden="true" />
+                  <span className="text-[10px] leading-none truncate px-1">More</span>
+                </button>
+              </DialogTrigger>
             </li>
-          ))}
-          <li className="flex-1">
-            <button
-              type="button"
-              onClick={() => setMoreOpen((open) => !open)}
-              aria-expanded={moreOpen}
-              aria-label="More sections"
-              className={`relative flex h-full w-full flex-col items-center justify-center gap-0.5 transition-colors duration-150 ${
-                moreActive || moreOpen ? 'text-gold' : 'text-text-muted active:text-text-secondary'
-              }`}
-            >
-              {(moreActive || moreOpen) && (
-                <span className="absolute top-0 inset-x-2 h-0.5 bg-gold rounded-b-full" />
-              )}
-              <MoreHorizontal className="w-5 h-5" aria-hidden="true" />
-              <span className="text-[10px] leading-none truncate px-1">More</span>
-            </button>
-          </li>
-        </ul>
+          </ul>
+        </Dialog>
       </nav>
     </>
   )

@@ -1,9 +1,10 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useDeferredValue, useEffect, useMemo, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import SearchBar from '../components/shared/SearchBar'
 import ElementLegend from '../components/shared/ElementLegend'
 import SegmentToggle from '../components/shared/SegmentToggle'
 import TriStateFilterPill from '../components/shared/TriStateFilterPill'
+import MobileFilterPanel from '../components/shared/MobileFilterPanel'
 import WeaponList from '../components/weapons/WeaponList'
 import { useDebounce } from '../hooks/useDebounce'
 import { useWeaponCategoryAvailability, useWeaponCounts, useWeapons } from '../hooks/useWeapons'
@@ -48,6 +49,7 @@ export default function WeaponListPage() {
   const subtypeMeta =
     WEAPON_SUBTYPES.find((meta) => meta.subtype === activeSubtype) ?? WEAPON_SUBTYPES[0]
   const [inputValue, setInputValue] = useState(searchParams.get('q') ?? '')
+  const deferredQuery = useDeferredValue(inputValue)
   const debouncedQuery = useDebounce(inputValue, 300)
   const elementParam = searchParams.get('element')
   const excludeElementParam = searchParams.get('excludeElement')
@@ -189,7 +191,7 @@ export default function WeaponListPage() {
 
   const filters = useMemo(
     () => ({
-      query: debouncedQuery || undefined,
+      query: deferredQuery || undefined,
       elements: activeElements.length > 0 ? activeElements : undefined,
       excludeElements: excludedElements.length > 0 ? excludedElements : undefined,
       access: activeAccess.length > 0 ? activeAccess : undefined,
@@ -204,7 +206,7 @@ export default function WeaponListPage() {
       excludedCategories,
       activeElements,
       excludedElements,
-      debouncedQuery,
+      deferredQuery,
     ]
   )
   const { weapons, total, loading } = useWeapons(activeSubtype, filters)
@@ -292,102 +294,104 @@ export default function WeaponListPage() {
         />
       </div>
 
-      <div className="flex gap-2 flex-wrap mb-3" role="group" aria-label="Filter by access">
-        {visibleAccessOptions.map((option) => {
-          return (
-            <TriStateFilterPill
-              key={option.id}
-              label={option.label}
-              state={getTriState(option.id, { include: activeAccess, exclude: excludedAccess })}
-              onClick={() => toggleAccess(option.id)}
-              size="access"
-            />
-          )
-        })}
-        {(activeAccess.length > 0 || excludedAccess.length > 0) && (
-          <button
-            onClick={() => {
-              const params = baseParams()
-              delete params.access
-              delete params.excludeAccess
-              setParams(params)
-            }}
-            className="text-xs text-text-muted hover:text-text-primary underline underline-offset-2 ml-1"
-          >
-            Clear filters
-          </button>
-        )}
-      </div>
-
-      <div className="mb-3">
-        <div className="flex flex-wrap gap-2" role="group" aria-label="Filter by category">
-          {visibleCategoryOptions.map((option) => {
+      <MobileFilterPanel>
+        <div className="flex gap-2 flex-wrap mb-3" role="group" aria-label="Filter by access">
+          {visibleAccessOptions.map((option) => {
             return (
               <TriStateFilterPill
                 key={option.id}
                 label={option.label}
-                state={getTriState(option.id, {
-                  include: activeCategories,
-                  exclude: excludedCategories,
-                })}
-                onClick={() => toggleCategory(option.id)}
-                size="category"
-                activeClassName="bg-orange-500/80 text-white"
+                state={getTriState(option.id, { include: activeAccess, exclude: excludedAccess })}
+                onClick={() => toggleAccess(option.id)}
+                size="access"
               />
             )
           })}
-          {(activeCategories.length > 0 || excludedCategories.length > 0) && (
+          {(activeAccess.length > 0 || excludedAccess.length > 0) && (
             <button
               onClick={() => {
                 const params = baseParams()
-                delete params.category
-                delete params.excludeCategory
+                delete params.access
+                delete params.excludeAccess
                 setParams(params)
               }}
-              className="text-[11px] text-text-muted hover:text-text-primary underline underline-offset-2 ml-1"
+              className="text-xs text-text-muted hover:text-text-primary underline underline-offset-2 ml-1"
             >
               Clear filters
             </button>
           )}
         </div>
-      </div>
 
-      <div className="mb-2">
-        <div className="flex flex-wrap gap-1.5">
-          {visibleElements.map((element) => {
-            const state = getTriState(element.code, {
-              include: activeElements,
-              exclude: excludedElements,
-            })
-            return (
-              <TriStateFilterPill
-                key={element.code}
-                label={element.code}
-                state={state}
-                onClick={() => toggleElement(element.code)}
-                size="element"
-                activeClassName={`${element.colour} ring-2 ring-gold`}
-                inactiveClassName={`${element.colour} opacity-60 hover:opacity-100`}
-              />
-            )
-          })}
-          {(activeElements.length > 0 || excludedElements.length > 0) && (
-            <button
-              onClick={() => {
-                const params = baseParams()
-                delete params.element
-                delete params.excludeElement
-                setParams(params)
-              }}
-              className="text-[10px] text-text-muted hover:text-text-primary underline underline-offset-2 ml-1"
-            >
-              Clear filters
-            </button>
-          )}
+        <div className="mb-3">
+          <div className="flex flex-wrap gap-2" role="group" aria-label="Filter by category">
+            {visibleCategoryOptions.map((option) => {
+              return (
+                <TriStateFilterPill
+                  key={option.id}
+                  label={option.label}
+                  state={getTriState(option.id, {
+                    include: activeCategories,
+                    exclude: excludedCategories,
+                  })}
+                  onClick={() => toggleCategory(option.id)}
+                  size="category"
+                  activeClassName="bg-orange-500/80 text-white"
+                />
+              )
+            })}
+            {(activeCategories.length > 0 || excludedCategories.length > 0) && (
+              <button
+                onClick={() => {
+                  const params = baseParams()
+                  delete params.category
+                  delete params.excludeCategory
+                  setParams(params)
+                }}
+                className="text-[11px] text-text-muted hover:text-text-primary underline underline-offset-2 ml-1"
+              >
+                Clear filters
+              </button>
+            )}
+          </div>
         </div>
-      </div>
 
-      <ElementLegend includeTraits={false} />
+        <div className="mb-2">
+          <div className="flex flex-wrap gap-1.5">
+            {visibleElements.map((element) => {
+              const state = getTriState(element.code, {
+                include: activeElements,
+                exclude: excludedElements,
+              })
+              return (
+                <TriStateFilterPill
+                  key={element.code}
+                  label={element.code}
+                  state={state}
+                  onClick={() => toggleElement(element.code)}
+                  size="element"
+                  activeClassName={`${element.colour} ring-2 ring-gold`}
+                  inactiveClassName={`${element.colour} opacity-60 hover:opacity-100`}
+                />
+              )
+            })}
+            {(activeElements.length > 0 || excludedElements.length > 0) && (
+              <button
+                onClick={() => {
+                  const params = baseParams()
+                  delete params.element
+                  delete params.excludeElement
+                  setParams(params)
+                }}
+                className="text-[10px] text-text-muted hover:text-text-primary underline underline-offset-2 ml-1"
+              >
+                Clear filters
+              </button>
+            )}
+          </div>
+        </div>
+
+        <ElementLegend includeTraits={false} />
+      </MobileFilterPanel>
 
       <p className="text-text-muted text-xs mb-4" aria-live="polite" aria-atomic="true">
         {loading ? 'Loading entries...' : `${total} ${total === 1 ? 'entry' : 'entries'} found`}

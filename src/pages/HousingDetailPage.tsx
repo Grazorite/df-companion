@@ -1,6 +1,7 @@
 import { useLocation, useSearchParams, useParams } from 'react-router-dom'
 import HousingDetail from '../components/housing/HousingDetail'
 import DetailPageLayout from '../components/shared/DetailPageLayout'
+import { DetailPageSkeleton } from '../components/shared/LoadingSkeleton'
 import { useHousingBySlug } from '../hooks/useHousing'
 import { HOUSING_SUBTYPES, type HousingSubtype } from '../types/housing'
 import { backUrlFromSearch } from '../utils/navigationContext'
@@ -22,7 +23,7 @@ export default function HousingDetailPage() {
   )
 
   if (loading) {
-    return <DetailPageLayout className="text-text-secondary">Loading...</DetailPageLayout>
+    return <DetailPageSkeleton />
   }
 
   if (!item) {

@@ -3,6 +3,7 @@ import { CardGridSkeleton } from '../shared/LoadingSkeleton'
 import type { HousingEntry } from '../../types/housing'
 import HousingCard from './HousingCard'
 import { currentListUrl, detailUrlWithFrom } from '../../utils/navigationContext'
+import ProgressiveCardGrid from '../shared/ProgressiveCardGrid'
 
 interface HousingListProps {
   housing: HousingEntry[]
@@ -32,14 +33,21 @@ export default function HousingList({ housing, loading = false }: HousingListPro
   }
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3">
-      {housing.map((item, index) => (
+    <ProgressiveCardGrid
+      ariaLabel="Housing results"
+      className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3"
+      items={housing}
+      getKey={(item, index) => `${item.subtype}:${item.slug}:${index}`}
+      resetKey={fromUrl}
+      renderItem={(item) => (
         <HousingCard
-          key={`${item.subtype}:${item.slug}:${index}`}
           item={item}
-          toUrl={detailUrlWithFrom(`/housing/${item.slug}?type=${encodeURIComponent(item.subtype)}`, fromUrl)}
+          toUrl={detailUrlWithFrom(
+            `/housing/${item.slug}?type=${encodeURIComponent(item.subtype)}`,
+            fromUrl
+          )}
         />
-      ))}
-    </div>
+      )}
+    />
   )
 }

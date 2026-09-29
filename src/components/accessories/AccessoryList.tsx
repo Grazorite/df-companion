@@ -4,6 +4,7 @@ import AccessoryCard from './AccessoryCard'
 import { CardGridSkeleton } from '../shared/LoadingSkeleton'
 import { buildAccessoryCardData } from '../../hooks/useAccessories'
 import { currentListUrl, detailUrlWithFrom } from '../../utils/navigationContext'
+import ProgressiveCardGrid from '../shared/ProgressiveCardGrid'
 
 interface AccessoryListProps {
   accessories: AccessoryEntry[]
@@ -33,14 +34,18 @@ export default function AccessoryList({ accessories, loading = false }: Accessor
   }
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3">
-      {accessories.map((accessory) => (
+    <ProgressiveCardGrid
+      ariaLabel="Accessory results"
+      className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3"
+      items={accessories}
+      getKey={(accessory) => accessory.slug}
+      resetKey={fromUrl}
+      renderItem={(accessory) => (
         <AccessoryCard
-          key={accessory.slug}
           accessory={accessory}
           toUrl={detailUrlWithFrom(buildAccessoryCardData(accessory).route, fromUrl)}
         />
-      ))}
-    </div>
+      )}
+    />
   )
 }

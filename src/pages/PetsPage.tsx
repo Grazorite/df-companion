@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from 'react'
+import { useDeferredValue, useEffect, useMemo, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { usePets, usePetCategoryAvailability, usePetCounts, useElements } from '../hooks/usePets'
 import { useDebounce } from '../hooks/useDebounce'
@@ -6,6 +6,7 @@ import SearchBar from '../components/shared/SearchBar'
 import SegmentToggle from '../components/shared/SegmentToggle'
 import ElementLegend from '../components/shared/ElementLegend'
 import TriStateFilterPill from '../components/shared/TriStateFilterPill'
+import MobileFilterPanel from '../components/shared/MobileFilterPanel'
 import PetList from '../components/pets/PetList'
 import type { EntryType } from '../types/pet'
 import {
@@ -39,6 +40,7 @@ type CategoryFilterId = (typeof CATEGORY_OPTIONS)[number]['id']
 export default function PetsPage() {
   const [searchParams, setSearchParams] = useSearchParams()
   const [inputValue, setInputValue] = useState(searchParams.get('q') ?? '')
+  const deferredQuery = useDeferredValue(inputValue)
   const debouncedQuery = useDebounce(inputValue, 300)
 
   // Parse URL params
@@ -200,7 +202,7 @@ export default function PetsPage() {
   ])
 
   const filters = {
-    query: debouncedQuery,
+    query: deferredQuery,
     type: activeTypes.length > 0 ? activeTypes : undefined,
     elements: activeElements.length > 0 ? activeElements : undefined,
     excludeElements: excludedElements.length > 0 ? excludedElements : undefined,
@@ -212,7 +214,7 @@ export default function PetsPage() {
 
   const { pets, total } = usePets(filters)
   const counts = usePetCounts({
-    query: debouncedQuery,
+    query: deferredQuery,
     elements: filters.elements,
     excludeElements: filters.excludeElements,
     access: filters.access,
@@ -332,122 +334,130 @@ export default function PetsPage() {
         />
       </div>
 
-      {/* Level 1: Access filter */}
-      <div className="flex gap-2 flex-wrap mb-3" role="group" aria-label="Filter by access">
-        {visibleAccessOptions.map((opt) => {
-          const state = getTriState(opt.id, { include: activeAccess, exclude: excludedAccess })
+      <MobileFilterPanel>
+        {/* Level 1: Access filter */}
+        <div className="flex gap-2 flex-wrap mb-3" role="group" aria-label="Filter by access">
+          {visibleAccessOptions.map((opt) => {
+            const state = getTriState(opt.id, { include: activeAccess, exclude: excludedAccess })
 
-          return (
-            <TriStateFilterPill
-              key={opt.id}
-              label={opt.label}
-              state={state}
-              onClick={() => toggleAccess(opt.id)}
-              size="access"
-            />
-          )
-        })}
-        {(activeAccess.length > 0 || excludedAccess.length > 0) && (
-          <button
-            onClick={() => {
-              const params: Record<string, string> = {}
-              if (debouncedQuery) params.q = debouncedQuery
-              if (activeTypes.length > 0) params.type = activeTypes.join(',')
-              if (rawActiveElements.length > 0) params.element = rawActiveElements.join(',')
-              if (rawExcludedElements.length > 0) params.excludeElement = rawExcludedElements.join(',')
-              if (activeCategories.length > 0) params.category = activeCategories.join(',')
-              if (excludedCategories.length > 0) params.excludeCategory = excludedCategories.join(',')
-              setSearchParams(params, { replace: true })
-            }}
-            className="text-xs text-text-muted hover:text-text-primary underline underline-offset-2 ml-1"
-          >
-            Clear filters
-          </button>
-        )}
-      </div>
-
-      {/* Level 2: Category filter (multi-select) */}
-      <div className="mb-3">
-        <div className="flex flex-wrap gap-2">
-          {visibleCategoryOptions.map((opt) => {
             return (
               <TriStateFilterPill
                 key={opt.id}
                 label={opt.label}
-                state={getTriState(opt.id, {
-                  include: visibleActiveCategories,
-                  exclude: visibleExcludedCategories,
-                })}
-                onClick={() => toggleCategory(opt.id)}
-                size="category"
-                activeClassName="bg-orange-500/80 text-white"
+                state={state}
+                onClick={() => toggleAccess(opt.id)}
+                size="access"
               />
             )
           })}
-          {(visibleActiveCategories.length > 0 || visibleExcludedCategories.length > 0) && (
+          {(activeAccess.length > 0 || excludedAccess.length > 0) && (
             <button
               onClick={() => {
                 const params: Record<string, string> = {}
                 if (debouncedQuery) params.q = debouncedQuery
                 if (activeTypes.length > 0) params.type = activeTypes.join(',')
                 if (rawActiveElements.length > 0) params.element = rawActiveElements.join(',')
-                if (rawExcludedElements.length > 0) params.excludeElement = rawExcludedElements.join(',')
-                if (rawActiveAccess.length > 0) params.access = rawActiveAccess.join(',')
-                if (rawExcludedAccess.length > 0) params.excludeAccess = rawExcludedAccess.join(',')
-                setSearchParams(params, { replace: true })
-              }}
-              className="text-[11px] text-text-muted hover:text-text-primary underline underline-offset-2 ml-1"
-            >
-              Clear filters
-            </button>
-          )}
-        </div>
-      </div>
-
-      {/* Level 3: Element/Trait filter — select/deselect element pills */}
-      <div className="mb-2">
-        <div className="flex flex-wrap gap-1.5">
-          {visibleFilterEntries.map((entry) => {
-            const code = entry.code
-            const state = getTriState(code, {
-              include: activeElements,
-              exclude: excludedElements,
-            })
-            const colour = entry.colour ?? 'bg-bg-overlay text-text-muted'
-            return (
-              <TriStateFilterPill
-                key={code}
-                label={code}
-                state={state}
-                onClick={() => toggleElement(code)}
-                size="element"
-                activeClassName={`${colour} ring-2 ring-gold`}
-                inactiveClassName={`${colour} opacity-60 hover:opacity-100`}
-              />
-            )
-          })}
-          {(activeElements.length > 0 || excludedElements.length > 0) && (
-            <button
-              onClick={() => {
-                const params: Record<string, string> = {}
-                if (debouncedQuery) params.q = debouncedQuery
-                if (activeTypes.length > 0) params.type = activeTypes.join(',')
-                if (rawActiveAccess.length > 0) params.access = rawActiveAccess.join(',')
-                if (rawExcludedAccess.length > 0) params.excludeAccess = rawExcludedAccess.join(',')
+                if (rawExcludedElements.length > 0)
+                  params.excludeElement = rawExcludedElements.join(',')
                 if (activeCategories.length > 0) params.category = activeCategories.join(',')
-                if (excludedCategories.length > 0) params.excludeCategory = excludedCategories.join(',')
+                if (excludedCategories.length > 0)
+                  params.excludeCategory = excludedCategories.join(',')
                 setSearchParams(params, { replace: true })
               }}
-              className="text-[10px] text-text-muted hover:text-text-primary underline underline-offset-2 ml-1"
+              className="text-xs text-text-muted hover:text-text-primary underline underline-offset-2 ml-1"
             >
               Clear filters
             </button>
           )}
         </div>
-      </div>
 
-      {/* Legend */}
-      <ElementLegend />
+        {/* Level 2: Category filter (multi-select) */}
+        <div className="mb-3">
+          <div className="flex flex-wrap gap-2">
+            {visibleCategoryOptions.map((opt) => {
+              return (
+                <TriStateFilterPill
+                  key={opt.id}
+                  label={opt.label}
+                  state={getTriState(opt.id, {
+                    include: visibleActiveCategories,
+                    exclude: visibleExcludedCategories,
+                  })}
+                  onClick={() => toggleCategory(opt.id)}
+                  size="category"
+                  activeClassName="bg-orange-500/80 text-white"
+                />
+              )
+            })}
+            {(visibleActiveCategories.length > 0 || visibleExcludedCategories.length > 0) && (
+              <button
+                onClick={() => {
+                  const params: Record<string, string> = {}
+                  if (debouncedQuery) params.q = debouncedQuery
+                  if (activeTypes.length > 0) params.type = activeTypes.join(',')
+                  if (rawActiveElements.length > 0) params.element = rawActiveElements.join(',')
+                  if (rawExcludedElements.length > 0)
+                    params.excludeElement = rawExcludedElements.join(',')
+                  if (rawActiveAccess.length > 0) params.access = rawActiveAccess.join(',')
+                  if (rawExcludedAccess.length > 0)
+                    params.excludeAccess = rawExcludedAccess.join(',')
+                  setSearchParams(params, { replace: true })
+                }}
+                className="text-[11px] text-text-muted hover:text-text-primary underline underline-offset-2 ml-1"
+              >
+                Clear filters
+              </button>
+            )}
+          </div>
+        </div>
+
+        {/* Level 3: Element/Trait filter — select/deselect element pills */}
+        <div className="mb-2">
+          <div className="flex flex-wrap gap-1.5">
+            {visibleFilterEntries.map((entry) => {
+              const code = entry.code
+              const state = getTriState(code, {
+                include: activeElements,
+                exclude: excludedElements,
+              })
+              const colour = entry.colour ?? 'bg-bg-overlay text-text-muted'
+              return (
+                <TriStateFilterPill
+                  key={code}
+                  label={code}
+                  state={state}
+                  onClick={() => toggleElement(code)}
+                  size="element"
+                  activeClassName={`${colour} ring-2 ring-gold`}
+                  inactiveClassName={`${colour} opacity-60 hover:opacity-100`}
+                />
+              )
+            })}
+            {(activeElements.length > 0 || excludedElements.length > 0) && (
+              <button
+                onClick={() => {
+                  const params: Record<string, string> = {}
+                  if (debouncedQuery) params.q = debouncedQuery
+                  if (activeTypes.length > 0) params.type = activeTypes.join(',')
+                  if (rawActiveAccess.length > 0) params.access = rawActiveAccess.join(',')
+                  if (rawExcludedAccess.length > 0)
+                    params.excludeAccess = rawExcludedAccess.join(',')
+                  if (activeCategories.length > 0) params.category = activeCategories.join(',')
+                  if (excludedCategories.length > 0)
+                    params.excludeCategory = excludedCategories.join(',')
+                  setSearchParams(params, { replace: true })
+                }}
+                className="text-[10px] text-text-muted hover:text-text-primary underline underline-offset-2 ml-1"
+              >
+                Clear filters
+              </button>
+            )}
+          </div>
+        </div>
+
+        {/* Legend */}
+        <ElementLegend />
+      </MobileFilterPanel>
 
       {/* Results count */}
       <p className="text-text-muted text-xs mb-4" aria-live="polite" aria-atomic="true">

@@ -50,7 +50,8 @@ export function BadgeGridSkeleton({ count = 6 }: GridSkeletonProps) {
 export function DetailPageSkeleton() {
   return (
     <DetailPageLayout>
-      <div className="animate-pulse">
+      <span className="sr-only">Loading entry details</span>
+      <div className="animate-pulse" data-testid="detail-page-skeleton">
         <div className="flex gap-2 mb-4">
           <div className="h-6 bg-bg-overlay rounded-full w-16" />
           <div className="h-6 bg-bg-overlay rounded-full w-24" />

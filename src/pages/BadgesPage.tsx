@@ -1,31 +1,29 @@
-import { useState, useEffect } from 'react'
+import { useDeferredValue, useEffect, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { useBadges, useCategories, useSubcategories } from '../hooks/useBadges'
 import { useDebounce } from '../hooks/useDebounce'
 import SearchBar from '../components/shared/SearchBar'
 import TriStateFilterPill from '../components/shared/TriStateFilterPill'
+import MobileFilterPanel from '../components/shared/MobileFilterPanel'
 import BadgeList from '../components/badges/BadgeList'
 import type { BadgeCategory } from '../types/badge'
-import {
-  cycleSingleTriState,
-  getTriState,
-  type TriStateFilterSet,
-} from '../utils/triStateFilters'
+import { cycleSingleTriState, getTriState, type TriStateFilterSet } from '../utils/triStateFilters'
 
 export default function BadgesPage() {
   const [searchParams, setSearchParams] = useSearchParams()
   const [inputValue, setInputValue] = useState(searchParams.get('q') ?? '')
+  const deferredQuery = useDeferredValue(inputValue)
   const debouncedQuery = useDebounce(inputValue, 300)
-  
+
   // Level 1: Access filter (all, da)
   const accessParam = searchParams.get('access') ?? 'all'
   const excludeAccessParam = searchParams.get('excludeAccess')
-  
+
   // Level 2: Category filter (includes "retired" as mutually exclusive option)
   const activeCategory = (searchParams.get('category') as BadgeCategory | 'retired') ?? undefined
   const excludedCategory =
     (searchParams.get('excludeCategory') as BadgeCategory | 'retired') ?? undefined
-  
+
   // Level 3: Subcategory filter
   const activeSubcategory = searchParams.get('sub') ?? undefined
   const excludedSubcategory = searchParams.get('excludeSub') ?? undefined
@@ -57,7 +55,7 @@ export default function BadgesPage() {
   ])
 
   const { badges, total } = useBadges({
-    query: debouncedQuery,
+    query: deferredQuery,
     category: activeCategory !== 'retired' ? activeCategory : undefined,
     excludeCategory: excludedCategory,
     subcategory: activeSubcategory,
@@ -188,108 +186,110 @@ export default function BadgesPage() {
         />
       </div>
 
-      {/* Level 1: Access filters (highest level) */}
-      <div className="flex gap-2 flex-wrap mb-3" role="group" aria-label="Filter by access">
-        <button
-          onClick={() => setAccess('all')}
-          className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors duration-150 min-h-[36px] ${
-            accessParam === 'all' && excludeAccessParam !== 'da'
-              ? 'bg-gold-bright text-bg-base font-semibold'
-              : 'bg-bg-overlay text-text-secondary hover:bg-border-hover hover:text-text-primary'
-          }`}
-          aria-pressed={accessParam === 'all' && excludeAccessParam !== 'da'}
-        >
-          All
-        </button>
-        <TriStateFilterPill
-          label="DA Required"
-          state={getTriState('da', accessFilterSet)}
-          onClick={() => cycleAccess('da')}
-          size="access"
-        />
-        {(accessParam !== 'all' || excludeAccessParam === 'da') && (
+      <MobileFilterPanel>
+        {/* Level 1: Access filters (highest level) */}
+        <div className="flex gap-2 flex-wrap mb-3" role="group" aria-label="Filter by access">
           <button
-            onClick={clearAccessFilters}
-            className="text-xs text-text-muted hover:text-text-primary underline underline-offset-2 ml-1"
+            onClick={() => setAccess('all')}
+            className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors duration-150 min-h-11 sm:min-h-9 ${
+              accessParam === 'all' && excludeAccessParam !== 'da'
+                ? 'bg-gold-bright text-bg-base font-semibold'
+                : 'bg-bg-overlay text-text-secondary hover:bg-border-hover hover:text-text-primary'
+            }`}
+            aria-pressed={accessParam === 'all' && excludeAccessParam !== 'da'}
           >
-            Clear filters
+            All
           </button>
-        )}
-      </div>
-
-      {/* Level 2: Category filters */}
-      <div className="flex gap-2 flex-wrap mb-2" role="group" aria-label="Filter by category">
-        <button
-          onClick={() => selectCategory(undefined)}
-          className={`px-2.5 py-1 rounded-full text-[11px] font-medium transition-colors duration-150 ${
-            !activeCategory && !excludedCategory
-              ? 'bg-orange-500/80 text-white font-semibold'
-              : 'bg-bg-overlay text-text-secondary hover:bg-border-hover hover:text-text-primary'
-          }`}
-          aria-pressed={!activeCategory && !excludedCategory}
-        >
-          All
-        </button>
-        {categories.map((cat) => (
           <TriStateFilterPill
-            key={cat.id}
-            label={cat.displayName}
-            state={getTriState(cat.id, categoryFilterSet)}
-            onClick={() => cycleCategory(cat.id)}
-            size="category"
-            activeClassName="bg-orange-500/80 text-white"
+            label="DA Required"
+            state={getTriState('da', accessFilterSet)}
+            onClick={() => cycleAccess('da')}
+            size="access"
           />
-        ))}
-        <TriStateFilterPill
-          label="Retired"
-          state={getTriState('retired', categoryFilterSet)}
-          onClick={() => cycleCategory('retired')}
-          size="category"
-          activeClassName="bg-orange-500/80 text-white"
-        />
-        {(activeCategory || excludedCategory) && (
-          <button
-            onClick={clearCategoryFilters}
-            className="text-[11px] text-text-muted hover:text-text-primary underline underline-offset-2 ml-1"
-          >
-            Clear filters
-          </button>
-        )}
-      </div>
-
-      {/* Level 3: Subcategory filters */}
-      {activeCategory && activeCategory !== 'retired' && subcategories.length > 0 && (
-        <div
-          className="flex gap-1.5 flex-wrap mb-4 ml-1 pl-3 border-l-2 border-border-default"
-          role="group"
-          aria-label="Filter by subcategory"
-        >
-          {subcategories.map((sub) => (
+          {(accessParam !== 'all' || excludeAccessParam === 'da') && (
             <button
-              key={sub}
-              onClick={() => cycleSubcategory(sub)}
-              className={`px-2 py-0.5 rounded-full text-[10px] transition-all duration-150 border ${
-                activeSubcategory === sub
-                  ? 'bg-gold/20 text-gold border-gold/50'
-                  : excludedSubcategory === sub
-                    ? 'bg-red-950/70 text-red-200 border-red-700/70'
-                  : 'bg-bg-surface text-text-muted border-border-default hover:text-text-primary hover:border-border-hover'
-              }`}
-              aria-pressed={activeSubcategory === sub || excludedSubcategory === sub}
-            >
-              {excludedSubcategory === sub ? `− ${sub}` : sub}
-            </button>
-          ))}
-          {(activeSubcategory || excludedSubcategory) && (
-            <button
-              onClick={clearSubcategoryFilters}
-              className="text-[10px] text-text-muted hover:text-text-primary underline underline-offset-2 ml-1"
+              onClick={clearAccessFilters}
+              className="inline-flex min-h-11 items-center text-xs text-text-muted hover:text-text-primary underline underline-offset-2 ml-1 sm:min-h-0"
             >
               Clear filters
             </button>
           )}
         </div>
-      )}
+
+        {/* Level 2: Category filters */}
+        <div className="flex gap-2 flex-wrap mb-2" role="group" aria-label="Filter by category">
+          <button
+            onClick={() => selectCategory(undefined)}
+            className={`px-2.5 py-1 rounded-full text-[11px] font-medium transition-colors duration-150 min-h-11 sm:min-h-0 ${
+              !activeCategory && !excludedCategory
+                ? 'bg-orange-500/80 text-white font-semibold'
+                : 'bg-bg-overlay text-text-secondary hover:bg-border-hover hover:text-text-primary'
+            }`}
+            aria-pressed={!activeCategory && !excludedCategory}
+          >
+            All
+          </button>
+          {categories.map((cat) => (
+            <TriStateFilterPill
+              key={cat.id}
+              label={cat.displayName}
+              state={getTriState(cat.id, categoryFilterSet)}
+              onClick={() => cycleCategory(cat.id)}
+              size="category"
+              activeClassName="bg-orange-500/80 text-white"
+            />
+          ))}
+          <TriStateFilterPill
+            label="Retired"
+            state={getTriState('retired', categoryFilterSet)}
+            onClick={() => cycleCategory('retired')}
+            size="category"
+            activeClassName="bg-orange-500/80 text-white"
+          />
+          {(activeCategory || excludedCategory) && (
+            <button
+              onClick={clearCategoryFilters}
+              className="inline-flex min-h-11 items-center text-[11px] text-text-muted hover:text-text-primary underline underline-offset-2 ml-1 sm:min-h-0"
+            >
+              Clear filters
+            </button>
+          )}
+        </div>
+
+        {/* Level 3: Subcategory filters */}
+        {activeCategory && activeCategory !== 'retired' && subcategories.length > 0 && (
+          <div
+            className="flex gap-1.5 flex-wrap mb-4 ml-1 pl-3 border-l-2 border-border-default"
+            role="group"
+            aria-label="Filter by subcategory"
+          >
+            {subcategories.map((sub) => (
+              <button
+                key={sub}
+                onClick={() => cycleSubcategory(sub)}
+                className={`px-2 py-0.5 rounded-full text-[10px] transition-all duration-150 border min-h-11 sm:min-h-0 ${
+                  activeSubcategory === sub
+                    ? 'bg-gold/20 text-gold border-gold/50'
+                    : excludedSubcategory === sub
+                      ? 'bg-red-950/70 text-red-200 border-red-700/70'
+                      : 'bg-bg-surface text-text-muted border-border-default hover:text-text-primary hover:border-border-hover'
+                }`}
+                aria-pressed={activeSubcategory === sub || excludedSubcategory === sub}
+              >
+                {excludedSubcategory === sub ? `− ${sub}` : sub}
+              </button>
+            ))}
+            {(activeSubcategory || excludedSubcategory) && (
+              <button
+                onClick={clearSubcategoryFilters}
+                className="inline-flex min-h-11 items-center text-[10px] text-text-muted hover:text-text-primary underline underline-offset-2 ml-1 sm:min-h-0"
+              >
+                Clear filters
+              </button>
+            )}
+          </div>
+        )}
+      </MobileFilterPanel>
 
       {/* Results count */}
       <p className="text-text-muted text-xs mb-4" aria-live="polite" aria-atomic="true">
@@ -299,10 +299,15 @@ export default function BadgesPage() {
         ) : activeCategory === 'retired' ? (
           <span className="text-text-secondary"> in Retired</span>
         ) : activeCategory ? (
-          <span className="text-text-secondary"> in {categories.find(c => c.id === activeCategory)?.displayName ?? activeCategory}</span>
+          <span className="text-text-secondary">
+            {' '}
+            in {categories.find((c) => c.id === activeCategory)?.displayName ?? activeCategory}
+          </span>
         ) : null}
         {accessParam === 'da' && <span className="text-orange-400"> · DA Required</span>}
-        {excludeAccessParam === 'da' && <span className="text-red-300"> · excluding DA Required</span>}
+        {excludeAccessParam === 'da' && (
+          <span className="text-red-300"> · excluding DA Required</span>
+        )}
         {excludedCategory && (
           <span className="text-red-300">
             {' '}

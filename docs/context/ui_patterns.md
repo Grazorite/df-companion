@@ -25,10 +25,28 @@ All list view cards must follow this pattern:
   `getFamilyCardDescription`. Variant-specific detail pages still render the selected variant's
   description first, falling back to shared description only when the selected variant has none.
 - Examples: `BadgeCard.tsx`, `PetCard.tsx`
+- **Progressive rendering:** gallery filtering and result counts always operate on the complete
+  loaded subtype/dataset, but `ProgressiveCardGrid` mounts a bounded result window: 48 cards below
+  `sm`, 72 cards at `sm` and above. `Show more results` appends another responsive batch and enables
+  observer-driven continuation for users who keep scrolling. Changing the browse URL resets the
+  window. Keep the explicit button as the accessible fallback; do not replace this with mandatory
+  virtualization or an inaccessible infinite list.
+- **Search responsiveness:** list search uses the immediate input value for the field, a deferred
+  value for result computation, and the existing 300ms debounce only for `q` URL synchronization.
+  Do not make visible results wait for the URL debounce.
 - Cards that navigate to detail pages should carry the current browse URL with the shared
   navigation-context helper. Detail pages should read that `from` context for their top back link,
   so filters/search/subtype state are preserved when returning to the category list. Related/Also
   See cards should preserve the same original `from` context when chaining between detail pages.
+- **Navigation continuity:** `ProgressiveCardGrid` records the originating card, mounted batch depth,
+  and scroll position when a card is activated. `NavigationContinuity` restores that state only when
+  returning from a detail route to the exact browse URL, then focuses the originating card. A new
+  pathname scrolls to the top, focuses its eventual `h1`, and announces the heading; query-only
+  filter changes preserve scroll and focus. Keep this state in memory rather than adding private UI
+  state to public URLs.
+- **Route loading shape:** route-level Suspense uses `DetailPageSkeleton` for recognized detail
+  routes and a gallery skeleton for list/landing routes. Category detail hooks should also use the
+  shared detail skeleton so lazy-module and lazy-data loading do not change page geometry.
 - Card-gallery search should index the detail-page text users naturally expect: base and variant
   descriptions, notes/Other Information, obtain locations, release dates where present, housing
   effects and furnishing-slot text, trinket effect types, attacks, and weapon special text. Keep
@@ -216,6 +234,8 @@ layer, and no `clsx` / `cva` / `tailwind-merge`. Instead thin wrappers live in
   keyframes in `src/index.css`, which read Radix's `--radix-collapsible-content-height`.
 - `ui/command.tsx` — wrappers over `cmdk` for the global search palette (see below). `cmdk` supplies
   the accessible listbox semantics and, through its bundled Radix Dialog, the modal focus trap.
+- `ui/dialog.tsx` — wrappers over `@radix-ui/react-dialog`. Consumed by the mobile navigation More
+  panel and `MobileFilterPanel`; Radix owns Escape/outside dismissal, focus trapping, and focus return.
 - `ui/toggle-group.tsx` — wrappers over `@radix-ui/react-toggle-group`. Consumed by `SegmentToggle`
   (subtype/segment pickers). Radix adds group semantics and roving-tabindex keyboard navigation
   (arrow keys move between segments; the group is a single tab stop). `SegmentToggle` uses
@@ -301,7 +321,15 @@ text (`q`) only unless a page has a specific one-way sync need.
 
 Mobile navigation should keep the bottom bar to a small primary set plus a `More` tab. As more
 sections ship, add them to the More panel rather than squeezing every category into the fixed bottom
-bar; the panel should include available categories and disabled coming-soon entries.
+bar; the panel should include available categories and disabled coming-soon entries. Keep it on the
+shared Dialog primitive so Escape, outside interaction, explicit close, route navigation, focus
+entry, and focus return remain consistent.
+
+On mobile browse pages, keep subtype selection and search visible, then place access/category/
+element/trait controls in `MobileFilterPanel`. Its active count is derived from public URL params,
+and Clear all removes only secondary filters while preserving `q` and `type`. Desktop retains the
+inline filter hierarchy. Visible mobile segment and tri-state controls must be at least 44px high;
+the filter sheet must scroll internally and leave the fixed bottom navigation unobscured.
 
 Element and trait filters must match the full item family, including variant-specific elements and
 traits. Do not rely solely on a family-level summary field when filtering, searching, or deciding

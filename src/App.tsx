@@ -1,12 +1,13 @@
 import { lazy, Suspense } from 'react'
-import { BrowserRouter, Navigate, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Navigate, Routes, Route, useLocation } from 'react-router-dom'
 import Layout from './components/layout/Layout'
-import { BadgeGridSkeleton } from './components/shared/LoadingSkeleton'
-import ScrollToTop from './components/shared/ScrollToTop'
+import { BadgeGridSkeleton, DetailPageSkeleton } from './components/shared/LoadingSkeleton'
+import NavigationContinuity from './components/shared/NavigationContinuity'
 import { ACCESSORY_SUBTYPES } from './types/accessory'
 import { WEAPON_SUBTYPES } from './types/weapon'
 import { HOUSING_SUBTYPES } from './types/housing'
 import { CLASS_ABILITY_SUBTYPES } from './types/classAbility'
+import { isDetailRoutePath } from './utils/navigationContext'
 
 const HomePage = lazy(() => import('./pages/HomePage'))
 const BadgesPage = lazy(() => import('./pages/BadgesPage'))
@@ -25,19 +26,25 @@ const ClassAbilityDetailPage = lazy(() => import('./pages/ClassAbilityDetailPage
 const ComingSoonPage = lazy(() => import('./pages/ComingSoonPage'))
 
 function PageLoader() {
+  const { pathname } = useLocation()
+
+  if (isDetailRoutePath(pathname)) {
+    return <DetailPageSkeleton />
+  }
+
   return (
-    <div className="px-4 py-6 max-w-5xl mx-auto">
+    <main className="px-4 py-6 max-w-5xl mx-auto">
       <div className="h-8 bg-bg-surface rounded w-32 mb-2 animate-pulse" />
       <div className="h-4 bg-bg-surface rounded w-64 mb-6 animate-pulse" />
       <BadgeGridSkeleton count={6} />
-    </div>
+    </main>
   )
 }
 
 export default function App() {
   return (
     <BrowserRouter>
-      <ScrollToTop />
+      <NavigationContinuity />
       <Layout>
         <Suspense fallback={<PageLoader />}>
           <Routes>

@@ -7,6 +7,8 @@ A DragonFable companion app for browsing badges, pets, guests, accessories, and 
 ```sh
 npm run dev
 npm test
+npm run test:ui:smoke
+npm run test:ui
 npm run build
 npm run validate
 npm run verify
@@ -16,15 +18,20 @@ npm run typecheck:scripts
 
 ## Testing
 
-`npm test` runs a lean Node test suite through `tsx`. Tests should protect public behavior and stable
-utility boundaries, especially filtering, display normalization, related-item matching, and data
-loading behavior. Avoid adding tests only to chase coverage numbers or lock down private helper
-implementation details.
+`npm test` runs the lean Node utility/public-API suite through `tsx`. `npm run test:ui:smoke` runs
+the representative Chromium route checks, while `npm run test:ui` includes the broader browser
+regression contracts and budgets. The UI suite uses the existing Playwright package with Node's test
+runner rather than adding a second test framework.
 
-Use focused tests while iterating. Run the full `npm test` / `npm run build` / `npm run lint` gate
-before committing or pushing substantial code or public-behavior changes. Docs-only changes usually
-do not need the full gate unless they alter documented commands, release expectations, or code
-contracts.
+Tests should protect public behavior and stable boundaries, especially filtering, display
+normalization, related-item matching, navigation continuity, responsive overflow, reduced-motion
+behavior, and data loading. Avoid tests added only to chase coverage numbers or lock down private
+helper implementation details.
+
+Use focused tests while iterating. For substantial UI work, run `npm test`, `npm run test:ui`,
+`npm run build`, and `npm run lint` before committing or pushing. Non-UI code changes do not need to
+launch Chromium unless they affect a covered browser behavior. Docs-only changes usually do not need
+the full gate unless they alter documented commands, release expectations, or code contracts.
 
 ## Data Validation
 

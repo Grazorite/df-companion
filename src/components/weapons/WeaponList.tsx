@@ -3,6 +3,7 @@ import type { WeaponEntry } from '../../types/weapon'
 import { CardGridSkeleton } from '../shared/LoadingSkeleton'
 import { buildWeaponCardData } from '../../hooks/useWeapons'
 import { currentListUrl, detailUrlWithFrom } from '../../utils/navigationContext'
+import ProgressiveCardGrid from '../shared/ProgressiveCardGrid'
 import WeaponCard from './WeaponCard'
 
 interface WeaponListProps {
@@ -33,14 +34,18 @@ export default function WeaponList({ weapons, loading = false }: WeaponListProps
   }
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3">
-      {weapons.map((weapon) => (
+    <ProgressiveCardGrid
+      ariaLabel="Weapon results"
+      className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3"
+      items={weapons}
+      getKey={(weapon) => weapon.slug}
+      resetKey={fromUrl}
+      renderItem={(weapon) => (
         <WeaponCard
-          key={weapon.slug}
           weapon={weapon}
           toUrl={detailUrlWithFrom(buildWeaponCardData(weapon).route, fromUrl)}
         />
-      ))}
-    </div>
+      )}
+    />
   )
 }
