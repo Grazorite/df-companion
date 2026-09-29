@@ -510,6 +510,7 @@ export default function PetDetail({ pet, backUrl, family }: PetDetailProps) {
           src={currentImage?.url}
           alt={currentImage?.caption ?? displayTitle(pet.name)}
           showPlaceholder
+          priority
         />
         {/* Image toggle - only show if multiple images exist */}
         {allImages.length > 1 && (

@@ -258,7 +258,12 @@ export default function HousingDetail({
       )}
 
       <div className="mb-8">
-        <ItemImage src={currentImage?.url} alt={currentImage?.caption ?? name} showPlaceholder />
+        <ItemImage
+          src={currentImage?.url}
+          alt={currentImage?.caption ?? name}
+          showPlaceholder
+          priority
+        />
         {currentImage && allImages.length > 1 && (
           <div className="mt-4 flex flex-wrap gap-2 justify-center">
             {allImages.map((image, index) => (

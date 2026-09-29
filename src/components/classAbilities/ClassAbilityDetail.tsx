@@ -387,6 +387,7 @@ export default function ClassAbilityDetail({
             src={currentImage.url}
             alt={currentImage.caption}
             showPlaceholder
+            priority
           />
           {allImages.length > 1 && (
             <div className="mt-4 flex flex-wrap gap-2 justify-center">
@@ -411,7 +412,7 @@ export default function ClassAbilityDetail({
 
       {isArmor && imageUrl && (
         <section className="mb-6">
-          <ItemImage src={imageUrl} alt={name} className="max-h-80 mx-auto" />
+          <ItemImage src={imageUrl} alt={name} priority className="max-h-80 mx-auto" />
           {alternativeImages && alternativeImages.length > 0 && (
             <div className="mt-3">
               <ExpandableImageList

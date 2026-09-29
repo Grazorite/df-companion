@@ -88,8 +88,8 @@
 ### 🚧 In Progress
 
 - [ ] **Test-driven UI/UX fluidity program** — execute the phased delivery and verification plan in
-      `.kiro/specs/ui-ux-fluidity/STATUS.md`; Phases 0–4 are verified, current phase: image loading
-      and layout stability (Phase 5).
+      `.kiro/specs/ui-ux-fluidity/STATUS.md`; Phases 0–5 are verified, current phase: compact global
+      search index (Phase 6).
 
 ### ✅ Done
 
@@ -220,9 +220,57 @@ is being written as part of that same commit
 > for what shipped when. New entries should use `the commit containing this entry` instead, which stays
 > true.
 
+### 2026-09-29 — UI fluidity phase 5 (image loading and layout stability)
+
+**Agent:** ui-owner / orchestrator (Claude Opus 4.5) · **Commit(s):** `the commit containing this entry`
+**Kanban moved:** UI/UX fluidity program remains `In Progress`; current phase advanced to compact
+global search index (Phase 6)
+
+**Changed:**
+
+- `tests/ui/imageStability.test.ts` (new, 8 tests): primary image eager + `fetchpriority=high` +
+  `decoding=async`; primary media reserves space before load (stalled-bytes probe); secondary/alt
+  images stay lazy; failed expected image shows the placeholder; invisible items stay suppressed;
+  mobile detail pages do not overflow; stats tables scroll internally; representative detail CLS within
+  the 0.1 ceiling. Written test-first (baseline 6/8, the two new-behavior tests red).
+- `src/components/shared/ItemImage.tsx`: added explicit loaded/failed state and a `priority` prop.
+  Priority images load eagerly with high fetch priority and async decode, sit in a
+  `data-primary-media` reserved-height wrapper, and fade in only after decode; non-priority images
+  stay lazy and simply gain the decode-gated fade. Reduced-motion honored. The placeholder branch and
+  `showPlaceholder` gate are unchanged.
+- Detail surfaces (`PetDetail`, `HousingDetail`, `WeaponDetail`, `AccessoryDetail`, `BadgeDetailPage`,
+  `ClassAbilityDetail` non-armor + armor): pass `priority` to the primary image only. Dropped the now
+  redundant `img-fade` from BadgeDetailPage's custom className; `img-fade` now remains only on the
+  command palette and tooltip.
+- `.kiro/specs/ui-ux-fluidity/STATUS.md`: Phase 5 marked complete with observed results; current phase
+  set to 6.
+
+**Verified:**
+
+- `npm test` → 12/12. `npm run test:ui` → 30/30 (motion + regressions + smoke + imageStability).
+  `npx tsc --noEmit -p tsconfig.json` → clean. `npm run build` → all validators, dataset verification,
+  script typecheck, TypeScript, and Vite production build pass. `npm run lint` → clean.
+- Visual smoke at 1440×900 and 390×844 (pet detail desktop + mobile, weapon detail mobile): primary
+  image renders in its reserved bordered box with no layout jump; toggles/selectors/tables intact; no
+  overflow.
+
+**Not verified / known gaps:**
+
+- Reserved media height is a fixed `min-height`, not a per-image intrinsic aspect box (source images
+  have no known dimensions); this removes the growth shift but does not reserve exact aspect.
+- CLS asserted on one representative pet detail within the 0.1 ceiling; sub-0.05 target met there but
+  not measured per-category across every detail surface.
+- No data or scraper behavior changed.
+
+**Next agent should:**
+
+- Begin Phase 6 (compact global search index) test-first per `.kiro/specs/ui-ux-fluidity/STATUS.md`:
+  generate/validate a compact search-index JSON, load full datasets only after navigating to a result,
+  and keep the first palette open from requesting full category data.
+
 ### 2026-09-29 — UI fluidity phase 4 (motion system and interaction polish)
 
-**Agent:** ui-owner / orchestrator (Claude Opus 4.5) · **Commit(s):** `uncommitted` (no commit requested)
+**Agent:** ui-owner / orchestrator (Claude Opus 4.5) · **Commit(s):** `38d502e`
 **Kanban moved:** UI/UX fluidity program remains `In Progress`; current phase advanced to image
 loading and layout stability (Phase 5)
 

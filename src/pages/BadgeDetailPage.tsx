@@ -125,7 +125,8 @@ export default function BadgeDetailPage() {
             src={badge.imageUrl}
             alt={`${displayTitle(badge.name)} badge icon`}
             showPlaceholder
-            className="max-w-xs w-full mx-auto rounded-xl object-contain bg-bg-elevated border border-border-default p-6 shadow-medium img-fade"
+            priority
+            className="max-w-xs w-full mx-auto rounded-xl object-contain bg-bg-elevated border border-border-default p-6 shadow-medium"
           />
         )}
       </div>

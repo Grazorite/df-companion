@@ -515,6 +515,7 @@ export default function AccessoryDetail({ accessory, filterBase, backUrl }: Acce
             src={currentImage?.url}
             alt={currentImage?.caption ?? title}
             showPlaceholder={showMissingImagePlaceholder}
+            priority
           />
           {allImages.length > 1 && (
             <div className="mt-4 flex flex-wrap gap-2 justify-center">
