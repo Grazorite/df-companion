@@ -10,13 +10,14 @@ import ProgressiveCardGrid from '../shared/ProgressiveCardGrid'
 interface PetListProps {
   pets: (Pet | ItemFamily)[]
   loading?: boolean
+  pending?: boolean
 }
 
 function isItemFamily(item: Pet | ItemFamily): item is ItemFamily {
   return 'levelVariants' in item && 'familyName' in item
 }
 
-export default function PetList({ pets, loading = false }: PetListProps) {
+export default function PetList({ pets, loading = false, pending = false }: PetListProps) {
   const location = useLocation()
   const fromUrl = currentListUrl(location)
 
@@ -38,6 +39,7 @@ export default function PetList({ pets, loading = false }: PetListProps) {
       items={pets}
       getKey={(item) => item.id}
       resetKey={fromUrl}
+      pending={pending}
       renderItem={(item) => {
         const isFamily = isItemFamily(item)
         const pet = isFamily ? null : (item as Pet)

@@ -88,7 +88,7 @@ export default function LevelSelector({
                 className={`
                   min-h-11 min-w-11 rounded-lg whitespace-nowrap
                   ${compactButtons ? 'px-3 py-2 text-xs' : 'px-4 py-2 text-sm'}
-                  font-medium transition-all duration-200
+                  font-medium transition-[color,background-color,border-color,box-shadow] duration-[160ms] ease-[cubic-bezier(0.2,0,0,1)]
                   ${
                     index === activeIndex
                       ? 'bg-gold text-bg-base shadow-medium'

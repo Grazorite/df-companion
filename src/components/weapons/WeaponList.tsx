@@ -9,9 +9,10 @@ import WeaponCard from './WeaponCard'
 interface WeaponListProps {
   weapons: WeaponEntry[]
   loading?: boolean
+  pending?: boolean
 }
 
-export default function WeaponList({ weapons, loading = false }: WeaponListProps) {
+export default function WeaponList({ weapons, loading = false, pending = false }: WeaponListProps) {
   const location = useLocation()
   const fromUrl = currentListUrl(location)
 
@@ -40,6 +41,7 @@ export default function WeaponList({ weapons, loading = false }: WeaponListProps
       items={weapons}
       getKey={(weapon) => weapon.slug}
       resetKey={fromUrl}
+      pending={pending}
       renderItem={(weapon) => (
         <WeaponCard
           weapon={weapon}

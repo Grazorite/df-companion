@@ -131,9 +131,9 @@ export default function HomePage() {
             <Link
               key={to}
               to={to}
-              className="flex items-start gap-3 bg-bg-surface border border-gold/30 rounded-lg p-4 hover:bg-bg-elevated hover:border-gold/60 transition-all duration-200 group shadow-subtle hover:shadow-medium"
+              className="flex items-start gap-3 bg-bg-surface border border-gold/30 rounded-lg p-4 hover:bg-bg-elevated hover:border-gold/60 hover:shadow-medium active:scale-[0.99] active:duration-[90ms] motion-reduce:active:scale-100 transition-[transform,box-shadow,background-color,border-color] duration-[160ms] ease-[cubic-bezier(0.2,0,0,1)] group shadow-subtle"
             >
-              <div className="bg-gold/15 rounded-lg p-2.5 flex-shrink-0 mt-0.5 group-hover:bg-gold/25 transition-colors duration-200">
+              <div className="bg-gold/15 rounded-lg p-2.5 flex-shrink-0 mt-0.5 group-hover:bg-gold/25 transition-colors duration-[160ms] ease-[cubic-bezier(0.2,0,0,1)]">
                 <Icon className="w-5 h-5 text-gold" />
               </div>
               <div className="min-w-0">

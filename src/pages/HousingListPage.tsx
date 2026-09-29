@@ -262,7 +262,7 @@ export default function HousingListPage() {
         {loading ? 'Loading entries...' : `${total} ${total === 1 ? 'entry' : 'entries'} found`}
       </p>
 
-      <HousingList housing={housing} loading={loading} />
+      <HousingList housing={housing} loading={loading} pending={inputValue !== deferredQuery} />
     </main>
   )
 }

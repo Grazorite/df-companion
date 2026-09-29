@@ -88,8 +88,8 @@
 ### 🚧 In Progress
 
 - [ ] **Test-driven UI/UX fluidity program** — execute the phased delivery and verification plan in
-      `.kiro/specs/ui-ux-fluidity/STATUS.md`; Phases 0–3 are verified, current phase: motion system
-      and interaction polish.
+      `.kiro/specs/ui-ux-fluidity/STATUS.md`; Phases 0–4 are verified, current phase: image loading
+      and layout stability (Phase 5).
 
 ### ✅ Done
 
@@ -219,6 +219,61 @@ is being written as part of that same commit
 > goes stale the moment the work lands and was never retro-corrected. Treat `git log` as authoritative
 > for what shipped when. New entries should use `the commit containing this entry` instead, which stays
 > true.
+
+### 2026-09-29 — UI fluidity phase 4 (motion system and interaction polish)
+
+**Agent:** ui-owner / orchestrator (Claude Opus 4.5) · **Commit(s):** `uncommitted` (no commit requested)
+**Kanban moved:** UI/UX fluidity program remains `In Progress`; current phase advanced to image
+loading and layout stability (Phase 5)
+
+**Changed:**
+
+- `tests/ui/motion.test.ts` (new, 6 tests): reduced-motion removal, pathname-once page entry,
+  query-only stability (tagged-probe proves `main` is not remounted), rapid-filter settling, and
+  Back-to-top reachability. Written test-first; they encode the Phase 4 behavior contract as a
+  regression guard.
+- `src/index.css`: shared motion tokens (`--ease-standard` / `--ease-in`; durations
+  instant/fast/control/panel/entry); page entry uses the entry token; added a capped `cardReveal`
+  keyframe and a `back-to-top` data-attribute transition; the `prefers-reduced-motion` block now also
+  zeroes `animation-delay`.
+- Property-specific transitions replace all `transition-all` in `src/` (now 0): six card components,
+  HomePage + Accessories landing cards, `LevelSelector`, BadgesPage subcategory pill, desktop nav link.
+- Restrained feedback: card `active:scale-[0.99]` press and chevron `group-hover:translate-x-0.5`,
+  each `motion-reduce`-guarded.
+- `src/components/shared/ProgressiveCardGrid.tsx`: capped first-batch reveal (only the initial
+  base-size batch is tagged `data-reveal`; appended/restored windows are never animated) and a new
+  `pending` prop (`aria-busy` + subtle `opacity-60`). Threaded `pending` through all six `*List`
+  components and their pages, derived from `inputValue !== deferredQuery`.
+- `src/components/shared/BackToTop.tsx`: stays mounted; animates via `data-motion`/`data-visible`
+  with `aria-hidden`/`tabIndex` gating instead of conditional unmount.
+- `.kiro/specs/ui-ux-fluidity/STATUS.md`: Phase 4 marked complete with observed results; current phase
+  set to 5.
+
+**Verified:**
+
+- `npm test` → 12/12. `npm run test:ui` → 22/22 (stable across four full-suite runs + three isolated
+  regression runs). `npx tsc --noEmit -p tsconfig.json` → clean. `npm run build` → all validators,
+  dataset verification, script typecheck, TypeScript, and Vite production build pass. `npm run lint`
+  → clean.
+- Visual smoke at 1440×900 and 390×844 (pets/weapons galleries, pet detail, mobile pets/weapons): no
+  clipping, overlap, or hierarchy regressions.
+
+**Not verified / known gaps:**
+
+- **Dialog entry motion was evaluated and deliberately not shipped.** A content animation and an
+  overlay-only fade each intermittently raced with Radix's synchronous close/focus-return under
+  full-suite load (the pre-existing mobile More-menu dismissal test flaked ~1 run in 3, deterministic
+  in isolation, never flaked at baseline). Per Phase 4's "motion never required for correctness", all
+  dialog motion was removed; dialogs open/close instantly. Revisit only with forceMount + presence
+  handling that provably preserves focus return and Escape/outside-click dismissal (rationale in an
+  `src/index.css` comment).
+- No data or scraper behavior changed. Nothing committed this session (no commit requested); the
+  working tree holds the Phase 4 changes.
+
+**Next agent should:**
+
+- Begin Phase 5 (image loading and layout stability) test-first per `.kiro/specs/ui-ux-fluidity/STATUS.md`:
+  `ItemImage` loading/loaded/failed states, reserved media space, and representative detail CLS budget.
 
 ### 2026-09-29 — UI fluidity phases 0–3
 

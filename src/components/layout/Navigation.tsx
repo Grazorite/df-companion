@@ -150,7 +150,7 @@ export default function Navigation() {
                 <NavLink
                   to={to}
                   end={exact}
-                  className={`flex items-center gap-3 pl-2 pr-3 py-2.5 rounded-lg text-sm transition-all duration-150 ${
+                  className={`flex items-center gap-3 pl-2 pr-3 py-2.5 rounded-lg text-sm transition-[color,background-color,border-color] duration-[160ms] ease-[cubic-bezier(0.2,0,0,1)] ${
                     isNavItemActive(to, exact)
                       ? 'border-l-[3px] border-gold bg-gold/10 text-gold font-medium pl-[5px]'
                       : 'border-l-[3px] border-transparent text-text-secondary hover:text-text-primary hover:bg-bg-overlay/60 pl-[5px]'

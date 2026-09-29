@@ -508,7 +508,7 @@ export default function PetsPage() {
       </p>
 
       {/* List */}
-      <PetList pets={pets} />
+      <PetList pets={pets} pending={inputValue !== deferredQuery} />
     </main>
   )
 }

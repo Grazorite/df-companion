@@ -37,6 +37,21 @@
   --radius-lg: 12px;
   --radius-xl: 16px;
 
+  /* ── Motion tokens ──
+     Shared duration + easing scale so feedback, controls, panels, and route entry stay coherent.
+     Durations are deliberately short; every value is neutralized under prefers-reduced-motion below.
+     - instant/fast: direct pointer feedback (card press, chevron nudge, pill state)
+     - control:      hover/active on controls and nav
+     - panel:        dialog/sheet entry-exit and route entry
+     Easings: standard for enter, in for exit/leave. */
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --duration-instant: 90ms;
+  --duration-fast: 130ms;
+  --duration-control: 160ms;
+  --duration-panel: 200ms;
+  --duration-entry: 240ms;
+
   /* ── Animations ── */
   /* Radix Collapsible open/close; driven by --radix-collapsible-content-height */
   --animate-collapsible-down: collapsible-down 200ms ease-out;
@@ -53,14 +68,17 @@
   }
 }
 
-/* Page transition */
+/* Page transition.
+   Each route page renders its own <main>, so a fresh pathname mounts a new <main> element and this
+   animation plays once on entry. Query-only navigations (filters/search) reuse the same <main>
+   element, so page entry does not replay — that behavior is covered by tests/ui/motion.test.ts. */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(6px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
 main {
-  animation: fadeIn 200ms ease-out;
+  animation: fadeIn var(--duration-entry) var(--ease-standard);
 }
 
 /* Route focus is announced by assistive tech; headings are not interactive controls. */
@@ -73,12 +91,56 @@ main h1[tabindex="-1"]:focus {
   animation: fadeIn 250ms ease-out;
 }
 
-/* Prefers-reduced-motion: disable all animations */
+/* Capped first-batch card reveal.
+   ProgressiveCardGrid tags only the initial batch of <li> items with data-reveal and a per-item
+   --reveal-index; appended batches are not tagged, so large galleries are never animated in full.
+   The reveal is a short, restrained fade/rise staggered by a small capped delay. */
+@keyframes cardReveal {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+li[data-reveal='true'] {
+  animation: cardReveal var(--duration-entry) var(--ease-standard) both;
+  animation-delay: calc(min(var(--reveal-index, 0), 11) * 22ms);
+}
+
+/* Dialog (mobile More panel + filter sheet) entry motion was evaluated and deliberately NOT shipped.
+   Both a content transform and an overlay-only backdrop fade were observed to intermittently race
+   with Radix's synchronous close/focus-return under full-suite load, risking the dismissal and focus
+   correctness contract in tests/ui/regressions.test.ts. Phase 4 requires that motion is never needed
+   for state correctness, so the dialogs open and close instantly. Revisit only with forceMount +
+   presence handling that provably preserves focus return and Escape/outside-click dismissal. */
+
+/* Back-to-top enter/exit. The control stays mounted and toggles this data attribute so it can
+   fade/scale in and out instead of popping via conditional unmount. */
+[data-motion='back-to-top'] {
+  transition:
+    opacity var(--duration-control) var(--ease-standard),
+    transform var(--duration-control) var(--ease-standard),
+    color var(--duration-control) var(--ease-standard),
+    border-color var(--duration-control) var(--ease-standard);
+}
+[data-motion='back-to-top'][data-visible='false'] {
+  opacity: 0;
+  transform: translateY(8px) scale(0.95);
+  pointer-events: none;
+}
+[data-motion='back-to-top'][data-visible='true'] {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+/* Prefers-reduced-motion: disable all animations and transitions.
+   This global kill-switch means every motion token above is automatically neutralized; new motion
+   is reduced-motion-safe by default. Covered by tests/ui/motion.test.ts and smoke.test.ts. */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
   *::after {
     animation-duration: 0ms !important;
+    animation-delay: 0ms !important;
     transition-duration: 0ms !important;
   }
 }

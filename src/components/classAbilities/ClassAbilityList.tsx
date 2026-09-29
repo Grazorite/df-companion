@@ -8,9 +8,10 @@ import ProgressiveCardGrid from '../shared/ProgressiveCardGrid'
 interface ClassAbilityListProps {
   items: ClassAbilityEntry[]
   loading?: boolean
+  pending?: boolean
 }
 
-export default function ClassAbilityList({ items, loading = false }: ClassAbilityListProps) {
+export default function ClassAbilityList({ items, loading = false, pending = false }: ClassAbilityListProps) {
   const location = useLocation()
   const fromUrl = currentListUrl(location)
 
@@ -39,6 +40,7 @@ export default function ClassAbilityList({ items, loading = false }: ClassAbilit
       items={items}
       getKey={(item) => item.slug}
       resetKey={fromUrl}
+      pending={pending}
       renderItem={(item) => (
         <ClassAbilityCard
           item={item}

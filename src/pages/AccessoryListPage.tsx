@@ -430,7 +430,11 @@ export default function AccessoryListPage() {
         )}
       </p>
 
-      <AccessoryList accessories={accessories} loading={loading} />
+      <AccessoryList
+        accessories={accessories}
+        loading={loading}
+        pending={inputValue !== deferredQuery}
+      />
     </main>
   )
 }

@@ -9,9 +9,10 @@ import ProgressiveCardGrid from '../shared/ProgressiveCardGrid'
 interface AccessoryListProps {
   accessories: AccessoryEntry[]
   loading?: boolean
+  pending?: boolean
 }
 
-export default function AccessoryList({ accessories, loading = false }: AccessoryListProps) {
+export default function AccessoryList({ accessories, loading = false, pending = false }: AccessoryListProps) {
   const location = useLocation()
   const fromUrl = currentListUrl(location)
 
@@ -40,6 +41,7 @@ export default function AccessoryList({ accessories, loading = false }: Accessor
       items={accessories}
       getKey={(accessory) => accessory.slug}
       resetKey={fromUrl}
+      pending={pending}
       renderItem={(accessory) => (
         <AccessoryCard
           accessory={accessory}

@@ -8,9 +8,10 @@ import ProgressiveCardGrid from '../shared/ProgressiveCardGrid'
 interface BadgeListProps {
   badges: Badge[]
   loading?: boolean
+  pending?: boolean
 }
 
-export default function BadgeList({ badges, loading = false }: BadgeListProps) {
+export default function BadgeList({ badges, loading = false, pending = false }: BadgeListProps) {
   // Capture the current list URL so badge detail pages can link back to it exactly
   const location = useLocation()
   const fromUrl = currentListUrl(location)
@@ -35,6 +36,7 @@ export default function BadgeList({ badges, loading = false }: BadgeListProps) {
       items={badges}
       getKey={(badge) => badge.id}
       resetKey={fromUrl}
+      pending={pending}
       renderItem={(badge) => (
         <BadgeCard badge={badge} toUrl={detailUrlWithFrom(`/badges/${badge.slug}`, fromUrl)} />
       )}

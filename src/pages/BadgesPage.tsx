@@ -267,7 +267,7 @@ export default function BadgesPage() {
               <button
                 key={sub}
                 onClick={() => cycleSubcategory(sub)}
-                className={`px-2 py-0.5 rounded-full text-[10px] transition-all duration-150 border min-h-11 sm:min-h-0 ${
+                className={`px-2 py-0.5 rounded-full text-[10px] transition-[color,background-color,border-color] duration-[130ms] ease-[cubic-bezier(0.2,0,0,1)] border min-h-11 sm:min-h-0 ${
                   activeSubcategory === sub
                     ? 'bg-gold/20 text-gold border-gold/50'
                     : excludedSubcategory === sub
@@ -324,7 +324,7 @@ export default function BadgesPage() {
       </p>
 
       {/* Badge grid */}
-      <BadgeList badges={badges} />
+      <BadgeList badges={badges} pending={inputValue !== deferredQuery} />
     </main>
   )
 }

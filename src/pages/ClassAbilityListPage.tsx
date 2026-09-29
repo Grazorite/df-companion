@@ -508,7 +508,7 @@ export default function ClassAbilityListPage() {
         {loading ? 'Loading entries...' : `${total} ${total === 1 ? 'entry' : 'entries'} found`}
       </p>
 
-      <ClassAbilityList items={entries} loading={loading} />
+      <ClassAbilityList items={entries} loading={loading} pending={inputValue !== deferredQuery} />
     </main>
   )
 }

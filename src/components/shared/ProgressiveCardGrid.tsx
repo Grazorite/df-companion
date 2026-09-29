@@ -1,4 +1,12 @@
-import { useEffect, useRef, useState, type Key, type MouseEvent, type ReactNode } from 'react'
+import {
+  useEffect,
+  useRef,
+  useState,
+  type CSSProperties,
+  type Key,
+  type MouseEvent,
+  type ReactNode,
+} from 'react'
 import { getBrowseRestoration, saveBrowseRestoration } from '../../utils/browseRestoration'
 
 const MOBILE_QUERY = '(min-width: 640px)'
@@ -10,6 +18,9 @@ interface ProgressiveCardGridProps<T> {
   items: readonly T[]
   renderItem: (item: T, index: number) => ReactNode
   resetKey: string
+  /** When true, results are being recomputed (e.g. search input is ahead of the deferred value).
+   *  Surfaces a subtle, reduced-motion-safe pending affordance without blocking interaction. */
+  pending?: boolean
 }
 
 function isDesktopViewport(): boolean {
@@ -27,6 +38,7 @@ export default function ProgressiveCardGrid<T>({
   items,
   renderItem,
   resetKey,
+  pending = false,
 }: ProgressiveCardGridProps<T>) {
   const [desktop, setDesktop] = useState(isDesktopViewport)
   const batchSize = desktop ? 72 : 48
@@ -48,6 +60,17 @@ export default function ProgressiveCardGrid<T>({
 
   const renderedCount = Math.min(visibleCount, items.length)
   const hasMore = renderedCount < items.length
+
+  // Capped first-batch reveal: only the very first mounted batch of a fresh window animates in, and
+  // only when the window opened at the base batch size (a restored large window is not staggered).
+  // Appended items (index >= revealCap) never carry the reveal attribute, so large galleries are
+  // never animated in full. CSS keyframes run on element mount, so persisted <li> never replay.
+  const revealCap = useRef(0)
+  const lastResetKey = useRef<string | null>(null)
+  if (lastResetKey.current !== resetKey) {
+    lastResetKey.current = resetKey
+    revealCap.current = renderedCount <= batchSize ? renderedCount : 0
+  }
 
   useEffect(() => {
     const target = loadMoreRef.current
@@ -92,10 +115,27 @@ export default function ProgressiveCardGrid<T>({
 
   return (
     <>
-      <ul className={className} aria-label={ariaLabel} onClickCapture={captureCardNavigation}>
-        {items.slice(0, renderedCount).map((item, index) => (
-          <li key={getKey(item, index)}>{renderItem(item, index)}</li>
-        ))}
+      <ul
+        className={`${className} transition-opacity duration-[130ms] ease-[cubic-bezier(0.2,0,0,1)] ${
+          pending ? 'opacity-60' : 'opacity-100'
+        }`}
+        aria-label={ariaLabel}
+        aria-busy={pending || undefined}
+        onClickCapture={captureCardNavigation}
+      >
+        {items.slice(0, renderedCount).map((item, index) => {
+          const revealing = index < revealCap.current
+          return (
+            <li
+              key={getKey(item, index)}
+              {...(revealing
+                ? { 'data-reveal': 'true', style: { '--reveal-index': index } as CSSProperties }
+                : {})}
+            >
+              {renderItem(item, index)}
+            </li>
+          )
+        })}
       </ul>
 
       <p className="sr-only" aria-live="polite" aria-atomic="true">

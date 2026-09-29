@@ -439,7 +439,7 @@ export default function WeaponListPage() {
         )}
       </p>
 
-      <WeaponList weapons={weapons} loading={loading} />
+      <WeaponList weapons={weapons} loading={loading} pending={inputValue !== deferredQuery} />
     </main>
   )
 }

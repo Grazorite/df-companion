@@ -8,9 +8,10 @@ import ProgressiveCardGrid from '../shared/ProgressiveCardGrid'
 interface HousingListProps {
   housing: HousingEntry[]
   loading?: boolean
+  pending?: boolean
 }
 
-export default function HousingList({ housing, loading = false }: HousingListProps) {
+export default function HousingList({ housing, loading = false, pending = false }: HousingListProps) {
   const location = useLocation()
   const fromUrl = currentListUrl(location)
 
@@ -39,6 +40,7 @@ export default function HousingList({ housing, loading = false }: HousingListPro
       items={housing}
       getKey={(item, index) => `${item.subtype}:${item.slug}:${index}`}
       resetKey={fromUrl}
+      pending={pending}
       renderItem={(item) => (
         <HousingCard
           item={item}
