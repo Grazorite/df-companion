@@ -270,22 +270,37 @@ with `Cmd/Ctrl+K`, the desktop sidebar `Search…` button, or the mobile `More` 
 (all via `openCommandPalette()` in `src/utils/commandPalette.ts`, which dispatches a window event the
 palette listens for). It is mounted once in `Layout` so it stays available across route changes.
 
-- **Index build (lazy):** the `*-manifest.json` files carry only counts, so they cannot power search.
-  `useGlobalSearch(enabled)` instead builds a flat index (`src/utils/searchIndex.ts`) from the
-  existing cached `loadXBySubtype()` loaders, and only when the palette first opens. The index is
-  cached at module scope, and because it reuses the shared loaders it also warms the caches that
-  list/detail pages use — nothing is double-fetched. This keeps the initial app load untouched at the
-  cost of a one-time fetch of all section datasets on first open.
-- **Matching:** reuse `getSearchWords` for the same word-prefix behavior as in-page search; index the
-  entry's display name only (article-normalized via `displayTitle`), results capped and grouped by
-  section. `cmdk` runs with `shouldFilter={false}` because filtering/ranking is done in
-  `searchHits`.
+- **Compact index (build-time):** the `*-manifest.json` files carry only counts, so they cannot power
+  search. The palette instead loads one compact, build-time-generated `src/data/search-index.json`
+  (via `useGlobalSearch(enabled)`) on first open — **not** the full section datasets. Full datasets
+  load only when the user navigates to a result's detail page. The index is cached at module scope,
+  so reopening is instant.
+- **Generation + drift safety:** `scripts/generate-search-index.ts` (`npm run generate:search-index`)
+  reads the raw `src/data/*.json`, applies the exact same normalization the runtime loaders apply
+  (via the shared fetch-free `src/utils/dataNormalization.ts` — `normalizeLoadedFamily`,
+  `normalizeHousingEntries`, `dedupeClassAbilityEntries`, etc.), then calls the same
+  `buildSearchIndex` (`src/utils/searchIndex.ts`) the app uses, emitting compact records via
+  `toCompactIndex`. Because the generator and runtime share that normalization, the index reflects
+  post-normalization entries (e.g. Housing family merges, Class dedupe) rather than raw file counts —
+  do **not** regenerate it from raw JSON counts. Regenerate after any scrape that changes entry names,
+  slugs, subtypes, or class dedupe.
+- **Validation (build gate):** `scripts/validate-search-index.mjs` runs in `npm run validate` and
+  fails the build if the committed index (a) drifts from a fresh regeneration (byte compare against
+  the generator's `--check` output), (b) contains a route whose slug does not resolve to a real
+  canonical/alias entry, or (c) exceeds the 1.5 MiB decoded budget. Current index: ~7,076 records,
+  ~897 KiB (~105 KiB gzipped).
+- **Compact record shape:** each record stores only `label`, `section`, `url`, and optional
+  `sublabel`; `rehydrateSearchIndex` recomputes the tokenized `words` and the `id` at load so the JSON
+  stays small. `rawName` is stored only when article-normalization diverges from the label (rare).
+- **Matching:** reuse `getSearchWords` for the same word-prefix behavior as in-page search; match the
+  entry's display name (article-normalized via `displayTitle`), results capped and grouped by section.
+  `cmdk` runs with `shouldFilter={false}` because filtering/ranking is done in `searchHits`.
 - **Hit → route:** build links the same way the per-section card builders do — `/badges/:slug` (no
   `type`), `/pets|guests/:slug` split by entry `type` (slug is already `pet-`/`guest-` prefixed), and
   `/<section>/:slug?type=<subtype>` for accessories, weapons, housing, and classes.
-- **Upgrade path (not yet done):** for a larger dataset, replace the on-open full-dataset fetch with a
-  compact build-time search-index JSON (name + slug + subtype + section only) so the palette never
-  needs to load full section data.
+- **Failure handling:** if the index fetch fails, `useGlobalSearch` exposes `error` + `retry()` and the
+  palette shows a distinct Retry control (not the loading/empty state); a failed fetch is not cached,
+  so retry starts fresh.
 
 ## Filter Pills Pattern (applies to all content sections)
 

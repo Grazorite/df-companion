@@ -88,8 +88,8 @@
 ### 🚧 In Progress
 
 - [ ] **Test-driven UI/UX fluidity program** — execute the phased delivery and verification plan in
-      `.kiro/specs/ui-ux-fluidity/STATUS.md`; Phases 0–5 are verified, current phase: compact global
-      search index (Phase 6).
+      `.kiro/specs/ui-ux-fluidity/STATUS.md`; Phases 0–6 are verified, current phase: failure states
+      and accessibility finish (Phase 7).
 
 ### ✅ Done
 
@@ -220,9 +220,65 @@ is being written as part of that same commit
 > for what shipped when. New entries should use `the commit containing this entry` instead, which stays
 > true.
 
-### 2026-09-29 — UI fluidity phase 5 (image loading and layout stability)
+### 2026-09-30 — UI fluidity phase 6 (compact global search index)
 
 **Agent:** ui-owner / orchestrator (Claude Opus 4.5) · **Commit(s):** `the commit containing this entry`
+**Kanban moved:** UI/UX fluidity program remains `In Progress`; current phase advanced to failure
+states and accessibility finish (Phase 7)
+
+**Changed:**
+
+- `tests/searchIndex.test.ts` (new) + `tests/ui/commandPalette.test.ts` (new): index size/route/
+  round-trip unit tests and palette behavior tests (first open fetches only the compact index; a
+  result navigates to a real route; index-load failure shows retry). Written test-first.
+- `src/utils/dataNormalization.ts` (new): extracted the fetch-free normalization/dedup out of
+  `dataLoaders.ts` so the build-time generator and the runtime share one code path (no index drift).
+  `dataLoaders.ts` now imports it.
+- `src/utils/searchIndex.ts`: added `CompactSearchRecord`, `toCompactIndex`, and
+  `rehydrateSearchIndex` (a shared `hitFromParts` derives `id` + tokenized `words` identically on both
+  paths; `words` recomputed at load to keep the JSON small).
+- `scripts/generate-search-index.ts` (new) + `npm run generate:search-index`: reads raw `src/data`,
+  applies the shared normalization, runs `buildSearchIndex`, writes compact `src/data/search-index.json`.
+- `scripts/validate-search-index.mjs` (new, wired into `npm run validate`): drift check (byte-compare
+  vs a fresh regeneration), every route slug resolves to a real canonical/alias entry, and size stays
+  within 1.5 MiB.
+- `src/hooks/useGlobalSearch.ts`: now fetches + rehydrates the compact index instead of loading all
+  six full section datasets; exposes `error` + `retry()`. `src/components/shared/CommandPalette.tsx`:
+  distinct retry affordance on index-load failure.
+- `.kiro/specs/ui-ux-fluidity/STATUS.md`, `docs/context/ui_patterns.md`, and
+  `docs/context/scraper_operations.md`: documented the compact index, the drift-safe generation +
+  validation, the failure/retry behavior, and the "regenerate after name/slug/subtype/dedupe changes"
+  rule.
+
+**Verified:**
+
+- `npm test` → 17/17 (+5 index unit tests). `npm run test:ui` → 33/33 (motion, regressions, smoke,
+  imageStability, commandPalette). `npx tsc --noEmit -p tsconfig.json` and `npm run typecheck:scripts`
+  → clean. `npm run build` → all validators incl. the new `validate-search-index.mjs`, dataset
+  verification, TypeScript, and Vite build pass (index ships as a hashed asset, ~105 KiB gzipped).
+  `npm run lint` → clean.
+- Generated index: 7,076 records, 897 KiB (58.4% of the 1.5 MiB budget). Counts are
+  post-normalization (Housing 611 vs manifest 623; Classes 194 vs manifest 198), matching runtime.
+- Visual smoke at 1440×900 and 390×844: palette shows section-grouped, article-normalized results with
+  subtype sublabels, all from the compact index.
+
+**Not verified / known gaps:**
+
+- The no-full-dataset-on-open contract is verified in the Vite dev server after filtering Vite's
+  dev-only `?import` module-graph meta-requests (URL strings, not content; build-time constants in
+  prod). Not separately measured against a production `dist` server, where the guarantee is stronger.
+- Prefetch-on-intent/idle was not added; the index loads on first open only, which already meets the
+  acceptance criteria. Deferred as a non-blocking enhancement.
+
+**Next agent should:**
+
+- Begin Phase 7 (failure states + accessibility finish) test-first per
+  `.kiro/specs/ui-ux-fluidity/STATUS.md`: distinguish dataset failure from a valid empty result with
+  retry, keyboard-operability of critical flows, and non-spammy status announcements.
+
+### 2026-09-29 — UI fluidity phase 5 (image loading and layout stability)
+
+**Agent:** ui-owner / orchestrator (Claude Opus 4.5) · **Commit(s):** `214f626`
 **Kanban moved:** UI/UX fluidity program remains `In Progress`; current phase advanced to compact
 global search index (Phase 6)
 

@@ -36,7 +36,7 @@ interface CommandPaletteProps {
 export default function CommandPalette({ open, onOpenChange }: CommandPaletteProps) {
   const [query, setQuery] = useState('')
   const navigate = useNavigate()
-  const { hits, loading } = useGlobalSearch(open)
+  const { hits, loading, error, retry } = useGlobalSearch(open)
 
   // Clear the query whenever the palette closes so it reopens fresh.
   useEffect(() => {
@@ -74,7 +74,18 @@ export default function CommandPalette({ open, onOpenChange }: CommandPalettePro
         placeholder="Search badges, pets, weapons, and more…"
       />
       <CommandList>
-        {trimmed.length < MIN_QUERY_LENGTH ? (
+        {error ? (
+          <div className="flex flex-col items-center gap-3 px-4 py-8 text-center">
+            <p className="text-sm text-text-secondary">Couldn’t load the search index.</p>
+            <button
+              type="button"
+              onClick={retry}
+              className="min-h-9 rounded-lg border border-border-default bg-bg-surface px-4 py-1.5 text-sm font-medium text-text-secondary transition-colors hover:border-border-hover hover:text-text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/60"
+            >
+              Retry
+            </button>
+          </div>
+        ) : trimmed.length < MIN_QUERY_LENGTH ? (
           <CommandEmpty>Type at least {MIN_QUERY_LENGTH} characters to search.</CommandEmpty>
         ) : loading ? (
           <CommandEmpty>Loading search index…</CommandEmpty>

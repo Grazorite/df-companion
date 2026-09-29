@@ -345,6 +345,7 @@ npm run scrape:accessories # Scrape accessories (supports --subtypes, --letters,
 npm run scrape:weapons # Scrape weapons (supports --subtypes, --letters, --names, and --url/--urls)
 npm run scrape:housing # Scrape housing (supports --subtype, --names, --limit, --fresh)
 npm run generate:badge-relations # Refresh cross-category item ↔ badge inline links
+npm run generate:search-index # Regenerate the compact global-search index (src/data/search-index.json)
 npm run validate       # Run all dataset validators + cross-post-family verify + script typecheck
 npm run verify         # Cross-post-family invariant checks (dup slugs, alias/AlsoSee integrity)
 npm run typecheck:scripts # Typecheck scripts/ against tsconfig.scripts.json
@@ -373,6 +374,13 @@ directory is gitignored.
 
 Agents should use this after UI changes to verify rendering before marking work done. The output PNG
 can be viewed via `read_file` (Kiro returns base64 for images) or attached to the chat.
+
+Run `npm run generate:search-index` after any scrape that changes entry names, slugs, subtypes, or
+class dedupe. It regenerates the compact `src/data/search-index.json` that powers the command palette
+from the same normalization the runtime loaders apply (via `src/utils/dataNormalization.ts`), so its
+counts are post-normalization (e.g. Housing family merges, Class dedupe), not raw file counts. The
+build gate runs `scripts/validate-search-index.mjs`, which **fails on drift** — if you forget to
+regenerate, `npm run build` will tell you. See `docs/context/ui_patterns.md` § Global Search.
 
 Run `npm run generate:badge-relations` after scrapes that change item descriptions, Other
 Information, family source titles, or aliases. The generated `src/data/badge-relations.json` index
