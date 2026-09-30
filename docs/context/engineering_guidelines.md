@@ -69,6 +69,10 @@ preserving full project context on demand.
   smoke check when the change affects navigation, responsive layout, image presentation,
   accessibility, or a critical user flow. Browser tests assert behavior and structural budgets;
   screenshots are diagnostic artifacts, not brittle pixel-perfect snapshots.
+- For accessibility-sensitive work, keep deterministic browser assertions for landmarks, heading
+  order, accessible names, keyboard behavior, focus, and announcement timing. Use Lighthouse as a
+  representative audit at phase/release boundaries; it supplements rather than replaces the stable
+  behavior tests.
 - For scraper or data changes, run the affected validator and `node scripts/verify-datasets.mjs`.
   Use targeted scrapes/audits when needed; broad scrapes remain human-run.
 

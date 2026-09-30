@@ -26,36 +26,20 @@ import {
   hasSameLevelVariants,
 } from '../utils/variantHelpers'
 import { useRelatedItems, type RelatedItemResult } from './useRelatedItems'
+import { useDatasetResource } from './useDatasetResource'
 
 const EMPTY_ACCESSORY_COUNTS = Object.fromEntries(
   ACCESSORY_SUBTYPES.map((meta) => [meta.subtype, 0])
 ) as Record<AccessorySubtype, number>
+const EMPTY_ACCESSORIES: AccessoryEntry[] = []
 
 function useAccessorySubtypeDataset(subtype: AccessorySubtype) {
-  const [accessories, setAccessories] = useState<AccessoryEntry[]>([])
-  const [loading, setLoading] = useState(true)
-
-  useEffect(() => {
-    let active = true
-    setLoading(true)
-    loadAccessoriesForSubtype(subtype)
-      .then((data) => {
-        if (!active) return
-        setAccessories(data)
-        setLoading(false)
-      })
-      .catch(() => {
-        if (!active) return
-        setAccessories([])
-        setLoading(false)
-      })
-
-    return () => {
-      active = false
-    }
-  }, [subtype])
-
-  return { accessories, loading }
+  const resource = useDatasetResource(
+    () => loadAccessoriesForSubtype(subtype),
+    EMPTY_ACCESSORIES,
+    subtype
+  )
+  return { accessories: resource.data, ...resource }
 }
 
 function useElementDataset() {
@@ -266,7 +250,12 @@ function searchAccessories(
 }
 
 export function useAccessories(subtype: AccessorySubtype, filters: AccessoryFilters = {}) {
-  const { accessories: subtypeAccessories, loading } = useAccessorySubtypeDataset(subtype)
+  const {
+    accessories: subtypeAccessories,
+    loading,
+    error,
+    retry,
+  } = useAccessorySubtypeDataset(subtype)
   const elementMeta = useElementDataset()
   const accessories = useMemo(
     () => searchAccessories(subtypeAccessories, subtype, filters, elementMeta),
@@ -277,6 +266,8 @@ export function useAccessories(subtype: AccessorySubtype, filters: AccessoryFilt
     accessories,
     total: accessories.length,
     loading,
+    error,
+    retry,
   }
 }
 
@@ -313,13 +304,13 @@ function loadAllAccessories() {
 }
 
 export function useAccessoryBySlug(subtype: AccessorySubtype, slug?: string) {
-  const { accessories, loading } = useAccessorySubtypeDataset(subtype)
+  const { accessories, loading, error, retry } = useAccessorySubtypeDataset(subtype)
   const accessory = useMemo(() => {
     if (loading) return undefined
     return accessories.find((entry) => accessoryMatchesSlug(entry, slug)) ?? null
   }, [accessories, loading, slug])
 
-  return { accessory, loading }
+  return { accessory, loading, error, retry }
 }
 
 export type AccessoryRelatedItem = RelatedItemResult<AccessoryEntry, AlsoSeeRef>
@@ -352,52 +343,49 @@ export function useAccessoryCounts() {
 export function useAccessoryCategoryAvailability(subtype: AccessorySubtype) {
   const { accessories, loading } = useAccessorySubtypeDataset(subtype)
 
-  return useMemo(
-    () => {
-      const access = new Set<string>()
-      const categories = new Set<string>()
-      const elements = new Set<string>()
+  return useMemo(() => {
+    const access = new Set<string>()
+    const categories = new Set<string>()
+    const elements = new Set<string>()
 
-      for (const entry of accessories) {
-        if (isAccessoryFamily(entry)) {
-          if (entry.levelVariants.length > 1) access.add('multi')
-          if (entry.hasDA) access.add('da')
-          if (entry.hasDC) access.add('dc')
-          if (entry.hasDM) access.add('dm')
-          if (entry.hasFree) access.add('free')
-          if (entry.hasMerge) access.add('merge')
-        } else {
-          if (hasMultipleVersionHint(entry.name)) access.add('multi')
-          if (entry.daRequired) access.add('da')
-          if (entry.dcRequired) access.add('dc')
-          if (entry.dmRequired) access.add('dm')
-          if (entry.obtainMethods.some((method) => method.priceType === 'free')) access.add('free')
-          if (entry.obtainMethods.some((method) => method.priceType === 'merge')) access.add('merge')
-        }
-
-        for (const element of getAccessoryEntryElements(entry)) elements.add(element)
-        if (hasAccessoryArmorCustomization(entry)) categories.add('armor-customization')
-        if (entry.isCosmetic) categories.add('cosmetic')
-        if (entry.isTemp) categories.add('temp')
-        if (entry.isRare) categories.add('rare')
-        if (entry.isSeasonal) categories.add('seasonal')
-        if (entry.isSpecialOffer) categories.add('special-offer')
-        if (entry.isWar) categories.add('war')
-        if (entry.retired) categories.add('retired')
+    for (const entry of accessories) {
+      if (isAccessoryFamily(entry)) {
+        if (entry.levelVariants.length > 1) access.add('multi')
+        if (entry.hasDA) access.add('da')
+        if (entry.hasDC) access.add('dc')
+        if (entry.hasDM) access.add('dm')
+        if (entry.hasFree) access.add('free')
+        if (entry.hasMerge) access.add('merge')
+      } else {
+        if (hasMultipleVersionHint(entry.name)) access.add('multi')
+        if (entry.daRequired) access.add('da')
+        if (entry.dcRequired) access.add('dc')
+        if (entry.dmRequired) access.add('dm')
+        if (entry.obtainMethods.some((method) => method.priceType === 'free')) access.add('free')
+        if (entry.obtainMethods.some((method) => method.priceType === 'merge')) access.add('merge')
       }
 
-      return {
-        loading,
-        access,
-        categories,
-        elements,
-        hasArmorCustomization: categories.has('armor-customization'),
-        hasCosmetic: categories.has('cosmetic'),
-        hasRetired: hasRetiredEntry(accessories),
-      }
-    },
-    [accessories, loading]
-  )
+      for (const element of getAccessoryEntryElements(entry)) elements.add(element)
+      if (hasAccessoryArmorCustomization(entry)) categories.add('armor-customization')
+      if (entry.isCosmetic) categories.add('cosmetic')
+      if (entry.isTemp) categories.add('temp')
+      if (entry.isRare) categories.add('rare')
+      if (entry.isSeasonal) categories.add('seasonal')
+      if (entry.isSpecialOffer) categories.add('special-offer')
+      if (entry.isWar) categories.add('war')
+      if (entry.retired) categories.add('retired')
+    }
+
+    return {
+      loading,
+      access,
+      categories,
+      elements,
+      hasArmorCustomization: categories.has('armor-customization'),
+      hasCosmetic: categories.has('cosmetic'),
+      hasRetired: hasRetiredEntry(accessories),
+    }
+  }, [accessories, loading])
 }
 
 export function getAccessoryArmorCustomization(entry: AccessoryEntry) {

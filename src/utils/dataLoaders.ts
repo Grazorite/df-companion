@@ -173,7 +173,6 @@ import {
   repairLoadedSingleObtainMethods,
 } from './dataNormalization'
 
-
 async function fetchJson<T>(url: string): Promise<T> {
   const response = await fetch(url)
   if (!response.ok) {
@@ -182,19 +181,32 @@ async function fetchJson<T>(url: string): Promise<T> {
   return response.json() as Promise<T>
 }
 
+function retryableLoad<T>(load: () => Promise<T>, reset: () => void): Promise<T> {
+  return load().catch((error: unknown) => {
+    reset()
+    throw error
+  })
+}
+
 export async function loadBadges(): Promise<Badge[]> {
   if (badgesCache) return badgesCache
   if (!badgesPromise) {
-    badgesPromise = fetchJson<Badge[]>(badgesUrl).then((data) => {
-      badgesCache = data.map((badge) => ({
-        ...badge,
-        // Retired is fully determined at scrape time (tag + listing + note phrase);
-        // the client reads the flag only, consistent with the other categories.
-        retired: badge.retired,
-        imageUrl: badge.imageUrl ?? badge.forumImageUrl,
-      }))
-      return badgesCache
-    })
+    badgesPromise = retryableLoad(
+      () =>
+        fetchJson<Badge[]>(badgesUrl).then((data) => {
+          badgesCache = data.map((badge) => ({
+            ...badge,
+            // Retired is fully determined at scrape time (tag + listing + note phrase);
+            // the client reads the flag only, consistent with the other categories.
+            retired: badge.retired,
+            imageUrl: badge.imageUrl ?? badge.forumImageUrl,
+          }))
+          return badgesCache
+        }),
+      () => {
+        badgesPromise = null
+      }
+    )
   }
   return badgesPromise
 }
@@ -202,10 +214,16 @@ export async function loadBadges(): Promise<Badge[]> {
 export async function loadCategories(): Promise<CategoryMeta[]> {
   if (categoriesCache) return categoriesCache
   if (!categoriesPromise) {
-    categoriesPromise = fetchJson<CategoryMeta[]>(categoriesUrl).then((data) => {
-      categoriesCache = data
-      return categoriesCache
-    })
+    categoriesPromise = retryableLoad(
+      () =>
+        fetchJson<CategoryMeta[]>(categoriesUrl).then((data) => {
+          categoriesCache = data
+          return categoriesCache
+        }),
+      () => {
+        categoriesPromise = null
+      }
+    )
   }
   return categoriesPromise
 }
@@ -213,10 +231,16 @@ export async function loadCategories(): Promise<CategoryMeta[]> {
 export async function loadBadgeManifest(): Promise<BadgeManifest> {
   if (badgesManifestCache) return badgesManifestCache
   if (!badgesManifestPromise) {
-    badgesManifestPromise = fetchJson<BadgeManifest>(badgesManifestUrl).then((data) => {
-      badgesManifestCache = data
-      return badgesManifestCache
-    })
+    badgesManifestPromise = retryableLoad(
+      () =>
+        fetchJson<BadgeManifest>(badgesManifestUrl).then((data) => {
+          badgesManifestCache = data
+          return badgesManifestCache
+        }),
+      () => {
+        badgesManifestPromise = null
+      }
+    )
   }
   return badgesManifestPromise
 }
@@ -225,19 +249,25 @@ export async function loadPetsAndGuests(): Promise<Array<Pet | ItemFamily>> {
   if (petsCache) return petsCache
   if (!petsPromise) {
     type LoadedPetEntry = (Pet & { specialMarkers?: string[] }) | ItemFamily
-    petsPromise = Promise.all([
-      fetchJson<LoadedPetEntry[]>(petsUrl),
-      fetchJson<LoadedPetEntry[]>(guestsUrl),
-    ]).then(([petsData, guestsData]) => {
-      const pets = petsData.map((entry) =>
-        isLoadedFamily(entry) ? normalizeLoadedFamily(entry) : normalizeLoadedPet(entry)
-      )
-      const guests = guestsData.map((entry) =>
-        isLoadedFamily(entry) ? normalizeLoadedFamily(entry) : normalizeLoadedPet(entry)
-      )
-      petsCache = [...pets, ...guests] as Array<Pet | ItemFamily>
-      return petsCache
-    })
+    petsPromise = retryableLoad(
+      () =>
+        Promise.all([
+          fetchJson<LoadedPetEntry[]>(petsUrl),
+          fetchJson<LoadedPetEntry[]>(guestsUrl),
+        ]).then(([petsData, guestsData]) => {
+          const pets = petsData.map((entry) =>
+            isLoadedFamily(entry) ? normalizeLoadedFamily(entry) : normalizeLoadedPet(entry)
+          )
+          const guests = guestsData.map((entry) =>
+            isLoadedFamily(entry) ? normalizeLoadedFamily(entry) : normalizeLoadedPet(entry)
+          )
+          petsCache = [...pets, ...guests] as Array<Pet | ItemFamily>
+          return petsCache
+        }),
+      () => {
+        petsPromise = null
+      }
+    )
   }
   return petsPromise
 }
@@ -245,10 +275,14 @@ export async function loadPetsAndGuests(): Promise<Array<Pet | ItemFamily>> {
 export async function loadPetsGuestsManifest(): Promise<PetsGuestsManifest> {
   if (petsGuestsManifestCache) return petsGuestsManifestCache
   if (!petsGuestsManifestPromise) {
-    petsGuestsManifestPromise = fetchJson<PetsGuestsManifest>(petsGuestsManifestUrl).then(
-      (data) => {
-        petsGuestsManifestCache = data
-        return petsGuestsManifestCache
+    petsGuestsManifestPromise = retryableLoad(
+      () =>
+        fetchJson<PetsGuestsManifest>(petsGuestsManifestUrl).then((data) => {
+          petsGuestsManifestCache = data
+          return petsGuestsManifestCache
+        }),
+      () => {
+        petsGuestsManifestPromise = null
       }
     )
   }
@@ -258,10 +292,16 @@ export async function loadPetsGuestsManifest(): Promise<PetsGuestsManifest> {
 export async function loadElements(): Promise<ElementsData> {
   if (elementsCache) return elementsCache
   if (!elementsPromise) {
-    elementsPromise = fetchJson<ElementsData>(elementsUrl).then((data) => {
-      elementsCache = data
-      return elementsCache
-    })
+    elementsPromise = retryableLoad(
+      () =>
+        fetchJson<ElementsData>(elementsUrl).then((data) => {
+          elementsCache = data
+          return elementsCache
+        }),
+      () => {
+        elementsPromise = null
+      }
+    )
   }
   return elementsPromise
 }
@@ -269,10 +309,16 @@ export async function loadElements(): Promise<ElementsData> {
 export async function loadAccessoryManifest(): Promise<AccessoryManifest> {
   if (accessoryManifestCache) return accessoryManifestCache
   if (!accessoryManifestPromise) {
-    accessoryManifestPromise = fetchJson<AccessoryManifest>(accessoryManifestUrl).then((data) => {
-      accessoryManifestCache = data
-      return accessoryManifestCache
-    })
+    accessoryManifestPromise = retryableLoad(
+      () =>
+        fetchJson<AccessoryManifest>(accessoryManifestUrl).then((data) => {
+          accessoryManifestCache = data
+          return accessoryManifestCache
+        }),
+      () => {
+        accessoryManifestPromise = null
+      }
+    )
   }
   return accessoryManifestPromise
 }
@@ -282,17 +328,25 @@ export async function loadAccessoriesForSubtype(
 ): Promise<AccessoryEntry[]> {
   if (accessorySubtypeCache[subtype]) return accessorySubtypeCache[subtype]
   if (!accessorySubtypePromises[subtype]) {
-    accessorySubtypePromises[subtype] = Promise.all(
-      accessoryDataUrls[subtype].map((url) => fetchJson<AccessoryEntry[]>(url))
-    ).then((datasets) => {
-      const entries = datasets
-        .flat()
-        .map((entry) =>
-          isLoadedFamily(entry) ? normalizeLoadedFamily(entry) : repairLoadedSingleObtainMethods(entry)
-        )
-      accessorySubtypeCache[subtype] = entries
-      return entries
-    })
+    accessorySubtypePromises[subtype] = retryableLoad(
+      () =>
+        Promise.all(accessoryDataUrls[subtype].map((url) => fetchJson<AccessoryEntry[]>(url))).then(
+          (datasets) => {
+            const entries = datasets
+              .flat()
+              .map((entry) =>
+                isLoadedFamily(entry)
+                  ? normalizeLoadedFamily(entry)
+                  : repairLoadedSingleObtainMethods(entry)
+              )
+            accessorySubtypeCache[subtype] = entries
+            return entries
+          }
+        ),
+      () => {
+        delete accessorySubtypePromises[subtype]
+      }
+    )
   }
   return accessorySubtypePromises[subtype]
 }
@@ -301,25 +355,31 @@ export async function loadAccessoriesBySubtype(): Promise<
   Record<AccessorySubtype, AccessoryEntry[]>
 > {
   if (!accessoriesPromise) {
-    accessoriesPromise = Promise.all([
-      loadAccessoriesForSubtype('artifact'),
-      loadAccessoriesForSubtype('belt'),
-      loadAccessoriesForSubtype('bracer'),
-      loadAccessoriesForSubtype('cape-wing'),
-      loadAccessoriesForSubtype('helm'),
-      loadAccessoriesForSubtype('necklace'),
-      loadAccessoriesForSubtype('ring'),
-      loadAccessoriesForSubtype('trinket'),
-    ]).then(([artifact, belt, bracer, capeWing, helm, necklace, ring, trinket]) => ({
-      artifact,
-      belt,
-      bracer,
-      'cape-wing': capeWing,
-      helm,
-      necklace,
-      ring,
-      trinket,
-    }))
+    accessoriesPromise = retryableLoad(
+      () =>
+        Promise.all([
+          loadAccessoriesForSubtype('artifact'),
+          loadAccessoriesForSubtype('belt'),
+          loadAccessoriesForSubtype('bracer'),
+          loadAccessoriesForSubtype('cape-wing'),
+          loadAccessoriesForSubtype('helm'),
+          loadAccessoriesForSubtype('necklace'),
+          loadAccessoriesForSubtype('ring'),
+          loadAccessoriesForSubtype('trinket'),
+        ]).then(([artifact, belt, bracer, capeWing, helm, necklace, ring, trinket]) => ({
+          artifact,
+          belt,
+          bracer,
+          'cape-wing': capeWing,
+          helm,
+          necklace,
+          ring,
+          trinket,
+        })),
+      () => {
+        accessoriesPromise = null
+      }
+    )
   }
   return accessoriesPromise
 }
@@ -327,10 +387,16 @@ export async function loadAccessoriesBySubtype(): Promise<
 export async function loadWeaponManifest(): Promise<WeaponManifest> {
   if (weaponManifestCache) return weaponManifestCache
   if (!weaponManifestPromise) {
-    weaponManifestPromise = fetchJson<WeaponManifest>(weaponManifestUrl).then((data) => {
-      weaponManifestCache = data
-      return weaponManifestCache
-    })
+    weaponManifestPromise = retryableLoad(
+      () =>
+        fetchJson<WeaponManifest>(weaponManifestUrl).then((data) => {
+          weaponManifestCache = data
+          return weaponManifestCache
+        }),
+      () => {
+        weaponManifestPromise = null
+      }
+    )
   }
   return weaponManifestPromise
 }
@@ -338,34 +404,48 @@ export async function loadWeaponManifest(): Promise<WeaponManifest> {
 export async function loadWeaponsForSubtype(subtype: WeaponSubtype): Promise<WeaponEntry[]> {
   if (weaponSubtypeCache[subtype]) return weaponSubtypeCache[subtype]
   if (!weaponSubtypePromises[subtype]) {
-    weaponSubtypePromises[subtype] = Promise.all(
-      weaponDataUrls[subtype].map((url) => fetchJson<WeaponEntry[]>(url))
-    ).then((datasets) => {
-      const entries = datasets
-        .flat()
-        .map((entry) =>
-          isLoadedFamily(entry) ? normalizeLoadedFamily(entry) : repairLoadedSingleObtainMethods(entry)
-        )
-      weaponSubtypeCache[subtype] = entries
-      return entries
-    })
+    weaponSubtypePromises[subtype] = retryableLoad(
+      () =>
+        Promise.all(weaponDataUrls[subtype].map((url) => fetchJson<WeaponEntry[]>(url))).then(
+          (datasets) => {
+            const entries = datasets
+              .flat()
+              .map((entry) =>
+                isLoadedFamily(entry)
+                  ? normalizeLoadedFamily(entry)
+                  : repairLoadedSingleObtainMethods(entry)
+              )
+            weaponSubtypeCache[subtype] = entries
+            return entries
+          }
+        ),
+      () => {
+        delete weaponSubtypePromises[subtype]
+      }
+    )
   }
   return weaponSubtypePromises[subtype]
 }
 
 export async function loadWeaponsBySubtype(): Promise<Record<WeaponSubtype, WeaponEntry[]>> {
   if (!weaponsPromise) {
-    weaponsPromise = Promise.all([
-      loadWeaponsForSubtype('sword-axe-mace'),
-      loadWeaponsForSubtype('staff-wand'),
-      loadWeaponsForSubtype('dagger'),
-      loadWeaponsForSubtype('scythe'),
-    ]).then(([swordAxeMace, staffWand, dagger, scythe]) => ({
-      'sword-axe-mace': swordAxeMace,
-      'staff-wand': staffWand,
-      dagger,
-      scythe,
-    }))
+    weaponsPromise = retryableLoad(
+      () =>
+        Promise.all([
+          loadWeaponsForSubtype('sword-axe-mace'),
+          loadWeaponsForSubtype('staff-wand'),
+          loadWeaponsForSubtype('dagger'),
+          loadWeaponsForSubtype('scythe'),
+        ]).then(([swordAxeMace, staffWand, dagger, scythe]) => ({
+          'sword-axe-mace': swordAxeMace,
+          'staff-wand': staffWand,
+          dagger,
+          scythe,
+        })),
+      () => {
+        weaponsPromise = null
+      }
+    )
   }
   return weaponsPromise
 }
@@ -373,10 +453,16 @@ export async function loadWeaponsBySubtype(): Promise<Record<WeaponSubtype, Weap
 export async function loadHousingManifest(): Promise<HousingManifest> {
   if (housingManifestCache) return housingManifestCache
   if (!housingManifestPromise) {
-    housingManifestPromise = fetchJson<HousingManifest>(housingManifestUrl).then((data) => {
-      housingManifestCache = data
-      return housingManifestCache
-    })
+    housingManifestPromise = retryableLoad(
+      () =>
+        fetchJson<HousingManifest>(housingManifestUrl).then((data) => {
+          housingManifestCache = data
+          return housingManifestCache
+        }),
+      () => {
+        housingManifestPromise = null
+      }
+    )
   }
   return housingManifestPromise
 }
@@ -384,40 +470,52 @@ export async function loadHousingManifest(): Promise<HousingManifest> {
 export async function loadHousingForSubtype(subtype: HousingSubtype): Promise<HousingEntry[]> {
   if (housingSubtypeCache[subtype]) return housingSubtypeCache[subtype]
   if (!housingSubtypePromises[subtype]) {
-    housingSubtypePromises[subtype] = Promise.all(
-      housingDataUrls[subtype].map((url) => fetchJson<HousingEntry[]>(url))
-    ).then((datasets) => {
-      const entries = normalizeHousingEntries(
-        datasets
-          .flat()
-          .map((entry) => (isLoadedFamily(entry) ? normalizeLoadedFamily(entry) : entry))
-      )
-      housingSubtypeCache[subtype] = entries
-      return entries
-    })
+    housingSubtypePromises[subtype] = retryableLoad(
+      () =>
+        Promise.all(housingDataUrls[subtype].map((url) => fetchJson<HousingEntry[]>(url))).then(
+          (datasets) => {
+            const entries = normalizeHousingEntries(
+              datasets
+                .flat()
+                .map((entry) => (isLoadedFamily(entry) ? normalizeLoadedFamily(entry) : entry))
+            )
+            housingSubtypeCache[subtype] = entries
+            return entries
+          }
+        ),
+      () => {
+        delete housingSubtypePromises[subtype]
+      }
+    )
   }
   return housingSubtypePromises[subtype]
 }
 
 export async function loadHousingBySubtype(): Promise<Record<HousingSubtype, HousingEntry[]>> {
   if (!housingPromise) {
-    housingPromise = Promise.all([
-      loadHousingForSubtype('house'),
-      loadHousingForSubtype('background'),
-      loadHousingForSubtype('floor'),
-      loadHousingForSubtype('rug'),
-      loadHousingForSubtype('shrub'),
-      loadHousingForSubtype('stuff'),
-      loadHousingForSubtype('wall-item'),
-    ]).then(([house, background, floor, rug, shrub, stuff, wallItem]) => ({
-      house,
-      background,
-      floor,
-      rug,
-      shrub,
-      stuff,
-      'wall-item': wallItem,
-    }))
+    housingPromise = retryableLoad(
+      () =>
+        Promise.all([
+          loadHousingForSubtype('house'),
+          loadHousingForSubtype('background'),
+          loadHousingForSubtype('floor'),
+          loadHousingForSubtype('rug'),
+          loadHousingForSubtype('shrub'),
+          loadHousingForSubtype('stuff'),
+          loadHousingForSubtype('wall-item'),
+        ]).then(([house, background, floor, rug, shrub, stuff, wallItem]) => ({
+          house,
+          background,
+          floor,
+          rug,
+          shrub,
+          stuff,
+          'wall-item': wallItem,
+        })),
+      () => {
+        housingPromise = null
+      }
+    )
   }
   return housingPromise
 }
@@ -425,12 +523,16 @@ export async function loadHousingBySubtype(): Promise<Record<HousingSubtype, Hou
 export async function loadClassAbilitiesManifest(): Promise<ClassAbilitiesManifest> {
   if (classAbilitiesManifestCache) return classAbilitiesManifestCache
   if (!classAbilitiesManifestPromise) {
-    classAbilitiesManifestPromise = fetchJson<ClassAbilitiesManifest>(
-      classAbilitiesManifestUrl
-    ).then((data) => {
-      classAbilitiesManifestCache = data
-      return classAbilitiesManifestCache
-    })
+    classAbilitiesManifestPromise = retryableLoad(
+      () =>
+        fetchJson<ClassAbilitiesManifest>(classAbilitiesManifestUrl).then((data) => {
+          classAbilitiesManifestCache = data
+          return classAbilitiesManifestCache
+        }),
+      () => {
+        classAbilitiesManifestPromise = null
+      }
+    )
   }
   return classAbilitiesManifestPromise
 }
@@ -440,15 +542,21 @@ export async function loadClassAbilitiesForSubtype(
 ): Promise<ClassAbilityEntry[]> {
   if (classAbilitySubtypeCache[subtype]) return classAbilitySubtypeCache[subtype]
   if (!classAbilitySubtypePromises[subtype]) {
-    classAbilitySubtypePromises[subtype] = Promise.all(
-      classAbilityDataUrls[subtype].map((url) => fetchJson<ClassAbilityEntry[]>(url))
-    ).then((datasets) => {
-      const entries = dedupeClassAbilityEntries(
-        datasets.flat().map((entry) => normalizeLoadedClassAbility(entry))
-      )
-      classAbilitySubtypeCache[subtype] = entries
-      return entries
-    })
+    classAbilitySubtypePromises[subtype] = retryableLoad(
+      () =>
+        Promise.all(
+          classAbilityDataUrls[subtype].map((url) => fetchJson<ClassAbilityEntry[]>(url))
+        ).then((datasets) => {
+          const entries = dedupeClassAbilityEntries(
+            datasets.flat().map((entry) => normalizeLoadedClassAbility(entry))
+          )
+          classAbilitySubtypeCache[subtype] = entries
+          return entries
+        }),
+      () => {
+        delete classAbilitySubtypePromises[subtype]
+      }
+    )
   }
   return classAbilitySubtypePromises[subtype]
 }
@@ -457,13 +565,19 @@ export async function loadClassAbilitiesBySubtype(): Promise<
   Record<ClassAbilitySubtype, ClassAbilityEntry[]>
 > {
   if (!classAbilitiesPromise) {
-    classAbilitiesPromise = Promise.all([
-      loadClassAbilitiesForSubtype('class'),
-      loadClassAbilitiesForSubtype('consumable'),
-    ]).then(([classEntries, consumables]) => ({
-      class: classEntries,
-      consumable: consumables,
-    }))
+    classAbilitiesPromise = retryableLoad(
+      () =>
+        Promise.all([
+          loadClassAbilitiesForSubtype('class'),
+          loadClassAbilitiesForSubtype('consumable'),
+        ]).then(([classEntries, consumables]) => ({
+          class: classEntries,
+          consumable: consumables,
+        })),
+      () => {
+        classAbilitiesPromise = null
+      }
+    )
   }
   return classAbilitiesPromise
 }

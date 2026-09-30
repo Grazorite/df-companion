@@ -7,6 +7,7 @@ import SegmentToggle from '../components/shared/SegmentToggle'
 import ElementLegend from '../components/shared/ElementLegend'
 import TriStateFilterPill from '../components/shared/TriStateFilterPill'
 import MobileFilterPanel from '../components/shared/MobileFilterPanel'
+import ResultsStatus from '../components/shared/ResultsStatus'
 import PetList from '../components/pets/PetList'
 import type { EntryType } from '../types/pet'
 import {
@@ -212,7 +213,7 @@ export default function PetsPage() {
     excludeCategories: visibleExcludedCategories.length > 0 ? visibleExcludedCategories : undefined,
   }
 
-  const { pets, total } = usePets(filters)
+  const { pets, total, loading, error, retry } = usePets(filters)
   const counts = usePetCounts({
     query: deferredQuery,
     elements: filters.elements,
@@ -460,7 +461,15 @@ export default function PetsPage() {
       </MobileFilterPanel>
 
       {/* Results count */}
-      <p className="text-text-muted text-xs mb-4" aria-live="polite" aria-atomic="true">
+      <ResultsStatus
+        announcement={
+          error
+            ? 'Results unavailable'
+            : loading
+              ? 'Loading entries...'
+              : `${total} ${total === 1 ? 'entry' : 'entries'} found`
+        }
+      >
         {total} {total === 1 ? 'entry' : 'entries'} found
         {activeTypeLabel && <span className="text-text-secondary"> in {activeTypeLabel}</span>}
         {activeElements.length > 0 && (
@@ -505,10 +514,16 @@ export default function PetsPage() {
               .join(', ')}
           </span>
         )}
-      </p>
+      </ResultsStatus>
 
       {/* List */}
-      <PetList pets={pets} pending={inputValue !== deferredQuery} />
+      <PetList
+        pets={pets}
+        loading={loading}
+        error={error}
+        onRetry={retry}
+        pending={inputValue !== deferredQuery}
+      />
     </main>
   )
 }

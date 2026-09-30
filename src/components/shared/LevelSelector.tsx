@@ -69,7 +69,7 @@ export default function LevelSelector({
         <select
           value={String(activeIndex)}
           onChange={(event) => onChange(Number.parseInt(event.target.value, 10))}
-          className="w-full sm:max-w-sm min-h-11 rounded-lg bg-bg-surface border border-border-default px-3 py-2 text-sm font-medium text-text-primary focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 focus:ring-offset-bg-base"
+          className="w-full sm:max-w-sm min-h-11 rounded-lg bg-bg-surface border border-border-default px-3 py-2 text-sm font-medium text-text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-bg-base"
           aria-label={`Select ${usesVariantLabels ? 'variant' : 'level'}`}
         >
           {levels.map((level, index) => (

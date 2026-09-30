@@ -291,7 +291,7 @@ export default function Navigation() {
                       `relative flex flex-col items-center justify-center h-full gap-0.5 transition-colors duration-150 ${
                         isNavItemActive(to, exact)
                           ? 'text-gold'
-                          : 'text-text-muted active:text-text-secondary'
+                          : 'text-text-secondary active:text-text-primary'
                       }`
                     }
                   >
@@ -325,7 +325,7 @@ export default function Navigation() {
                   className={`relative flex h-full w-full flex-col items-center justify-center gap-0.5 transition-colors duration-150 ${
                     moreActive || moreOpen
                       ? 'text-gold'
-                      : 'text-text-muted active:text-text-secondary'
+                      : 'text-text-secondary active:text-text-primary'
                   }`}
                 >
                   {(moreActive || moreOpen) && (

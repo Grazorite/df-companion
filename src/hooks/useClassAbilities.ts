@@ -18,32 +18,17 @@ import { obtainMethodInferenceFingerprint } from '../utils/relatedItems'
 import { getSearchWords } from '../utils/search'
 import { getClassArmorAlsoSeeRefs } from './useClassArmorRelations'
 import { useRelatedItems, type RelatedItemResult } from './useRelatedItems'
+import { useDatasetResource } from './useDatasetResource'
+
+const EMPTY_CLASS_ABILITIES: ClassAbilityEntry[] = []
 
 function useClassAbilitySubtypeDataset(subtype: ClassAbilitySubtype) {
-  const [entries, setEntries] = useState<ClassAbilityEntry[]>([])
-  const [loading, setLoading] = useState(true)
-
-  useEffect(() => {
-    let active = true
-    setLoading(true)
-    loadClassAbilitiesForSubtype(subtype)
-      .then((data) => {
-        if (!active) return
-        setEntries(data)
-        setLoading(false)
-      })
-      .catch(() => {
-        if (!active) return
-        setEntries([])
-        setLoading(false)
-      })
-
-    return () => {
-      active = false
-    }
-  }, [subtype])
-
-  return { entries, loading }
+  const resource = useDatasetResource(
+    () => loadClassAbilitiesForSubtype(subtype),
+    EMPTY_CLASS_ABILITIES,
+    subtype
+  )
+  return { entries: resource.data, ...resource }
 }
 
 function hasMeaningfulEffect(effect: string | undefined): boolean {
@@ -69,10 +54,9 @@ function searchClassAbilities(
       if (entry.subtype !== subtype) return false
       const isFamily = isClassAbilityFamily(entry)
 
-      const hasClassSubcategory = (subcategory: NonNullable<
-        ClassAbilityFilters['classSubcategories']
-      >[number]) =>
-        entry.classSubcategory === subcategory || entry.classSubcategories?.includes(subcategory)
+      const hasClassSubcategory = (
+        subcategory: NonNullable<ClassAbilityFilters['classSubcategories']>[number]
+      ) => entry.classSubcategory === subcategory || entry.classSubcategories?.includes(subcategory)
       if (
         filters.classSubcategories &&
         filters.classSubcategories.length > 0 &&
@@ -81,9 +65,7 @@ function searchClassAbilities(
         return false
       }
       if (
-        filters.excludeClassSubcategories?.some((subcategory) =>
-          hasClassSubcategory(subcategory)
-        )
+        filters.excludeClassSubcategories?.some((subcategory) => hasClassSubcategory(subcategory))
       ) {
         return false
       }
@@ -122,7 +104,9 @@ function searchClassAbilities(
 
       const hasMisc = (flag: NonNullable<ClassAbilityFilters['misc']>[number]) => {
         if (flag === 'special-character') {
-          return isFamily ? entry.tags.includes('special-character') : entry.isSpecialCharacter === true
+          return isFamily
+            ? entry.tags.includes('special-character')
+            : entry.isSpecialCharacter === true
         }
         return false
       }
@@ -182,31 +166,22 @@ function searchClassAbilities(
     )
 }
 
-export function useClassAbilities(
-  subtype: ClassAbilitySubtype,
-  filters: ClassAbilityFilters = {}
-) {
-  const { entries: subtypeEntries, loading } = useClassAbilitySubtypeDataset(subtype)
+export function useClassAbilities(subtype: ClassAbilitySubtype, filters: ClassAbilityFilters = {}) {
+  const { entries: subtypeEntries, loading, error, retry } = useClassAbilitySubtypeDataset(subtype)
   const entries = useMemo(
     () => searchClassAbilities(subtypeEntries, subtype, filters),
     [filters, subtype, subtypeEntries]
   )
-  return { entries, total: entries.length, loading }
+  return { entries, total: entries.length, loading, error, retry }
 }
 
 export function useClassAbilityBySlug(subtype: ClassAbilitySubtype, slug: string) {
-  const { entries, loading } = useClassAbilitySubtypeDataset(subtype)
+  const { entries, loading, error, retry } = useClassAbilitySubtypeDataset(subtype)
   const item = useMemo(() => {
     if (loading) return undefined
-    return (
-      entries.find(
-        (entry) =>
-          entry.slug === slug ||
-          entry.aliasSlugs?.includes(slug)
-      ) ?? null
-    )
+    return entries.find((entry) => entry.slug === slug || entry.aliasSlugs?.includes(slug)) ?? null
   }, [entries, loading, slug])
-  return { item, loading }
+  return { item, loading, error, retry }
 }
 
 function getClassAbilitySlugs(entry: ClassAbilityEntry): string[] {
@@ -320,7 +295,8 @@ export function useClassAbilityRelatedItems(item: ClassAbilityEntry) {
     loadAll: loadAllClassAbilities,
     getSlugs: getClassAbilitySlugs,
     getRefs: getClassAbilityAlsoSeeRefs,
-    getDisplayName: (entry) => displayTitle(isClassAbilityFamily(entry) ? entry.familyName : entry.name),
+    getDisplayName: (entry) =>
+      displayTitle(isClassAbilityFamily(entry) ? entry.familyName : entry.name),
     getFingerprints: getClassAbilityObtainFingerprints,
     getScope: (entry) => entry.subtype,
     getSourceUrls: getClassAbilitySourceUrls,
@@ -370,60 +346,57 @@ export function useClassAbilityCounts() {
 export function useClassAbilityAvailability(subtype: ClassAbilitySubtype) {
   const { entries, loading } = useClassAbilitySubtypeDataset(subtype)
 
-  return useMemo(
-    () => {
-      const classSubcategories = new Set<string>()
-      const access = new Set<string>()
-      const categories = new Set<string>()
-      const misc = new Set<string>()
-      const consumableKinds = new Set<string>()
+  return useMemo(() => {
+    const classSubcategories = new Set<string>()
+    const access = new Set<string>()
+    const categories = new Set<string>()
+    const misc = new Set<string>()
+    const consumableKinds = new Set<string>()
 
-      for (const entry of entries) {
-        if (isClassAbilityFamily(entry)) {
-          if (entry.classSubcategory) classSubcategories.add(entry.classSubcategory)
-          entry.classSubcategories?.forEach((subcategory) => classSubcategories.add(subcategory))
-          if (entry.consumableKind) consumableKinds.add(entry.consumableKind)
-          if (entry.levelVariants.length > 1) access.add('multiple')
-          if (entry.hasDA) access.add('da')
-          if (entry.hasDC) access.add('dc')
-          if (entry.hasDM) access.add('dm')
-          if (entry.hasMerge) access.add('merge')
-          if (entry.tags.includes('special-character')) misc.add('special-character')
-          for (const variant of entry.levelVariants) {
-            if (variant.classAbilitySubtype) consumableKinds.add(variant.classAbilitySubtype)
-            if (hasMeaningfulEffect(variant.effect)) categories.add('effect')
-          }
-        } else {
-          if (entry.classSubcategory) classSubcategories.add(entry.classSubcategory)
-          entry.classSubcategories?.forEach((subcategory) => classSubcategories.add(subcategory))
-          if (entry.consumableKind) consumableKinds.add(entry.consumableKind)
-          if (entry.daRequired) access.add('da')
-          if (entry.dcRequired) access.add('dc')
-          if (entry.dmRequired) access.add('dm')
-          if (entry.hasMerge) access.add('merge')
-          if (entry.isSpecialCharacter) misc.add('special-character')
-          if (hasMeaningfulEffect(entry.effect)) categories.add('effect')
+    for (const entry of entries) {
+      if (isClassAbilityFamily(entry)) {
+        if (entry.classSubcategory) classSubcategories.add(entry.classSubcategory)
+        entry.classSubcategories?.forEach((subcategory) => classSubcategories.add(subcategory))
+        if (entry.consumableKind) consumableKinds.add(entry.consumableKind)
+        if (entry.levelVariants.length > 1) access.add('multiple')
+        if (entry.hasDA) access.add('da')
+        if (entry.hasDC) access.add('dc')
+        if (entry.hasDM) access.add('dm')
+        if (entry.hasMerge) access.add('merge')
+        if (entry.tags.includes('special-character')) misc.add('special-character')
+        for (const variant of entry.levelVariants) {
+          if (variant.classAbilitySubtype) consumableKinds.add(variant.classAbilitySubtype)
+          if (hasMeaningfulEffect(variant.effect)) categories.add('effect')
         }
-
-        if (entry.isTemp) categories.add('temp')
-        if (entry.isRare) categories.add('rare')
-        if (entry.isSeasonal) categories.add('seasonal')
-        if (entry.isSpecialOffer) categories.add('special-offer')
-        if (entry.retired) categories.add('retired')
+      } else {
+        if (entry.classSubcategory) classSubcategories.add(entry.classSubcategory)
+        entry.classSubcategories?.forEach((subcategory) => classSubcategories.add(subcategory))
+        if (entry.consumableKind) consumableKinds.add(entry.consumableKind)
+        if (entry.daRequired) access.add('da')
+        if (entry.dcRequired) access.add('dc')
+        if (entry.dmRequired) access.add('dm')
+        if (entry.hasMerge) access.add('merge')
+        if (entry.isSpecialCharacter) misc.add('special-character')
+        if (hasMeaningfulEffect(entry.effect)) categories.add('effect')
       }
 
-      return {
-        loading,
-        classSubcategories,
-        access,
-        categories,
-        misc,
-        consumableKinds,
-        hasRetired: hasRetiredEntry(entries),
-      }
-    },
-    [entries, loading]
-  )
+      if (entry.isTemp) categories.add('temp')
+      if (entry.isRare) categories.add('rare')
+      if (entry.isSeasonal) categories.add('seasonal')
+      if (entry.isSpecialOffer) categories.add('special-offer')
+      if (entry.retired) categories.add('retired')
+    }
+
+    return {
+      loading,
+      classSubcategories,
+      access,
+      categories,
+      misc,
+      consumableKinds,
+      hasRetired: hasRetiredEntry(entries),
+    }
+  }, [entries, loading])
 }
 
 export function useTotalClassAbilityCount(): number {

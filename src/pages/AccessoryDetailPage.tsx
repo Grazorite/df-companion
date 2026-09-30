@@ -5,6 +5,7 @@ import { DetailPageSkeleton } from '../components/shared/LoadingSkeleton'
 import { useAccessoryBySlug } from '../hooks/useAccessories'
 import { ACCESSORY_SUBTYPES, type AccessorySubtype } from '../types/accessory'
 import { backUrlFromSearch } from '../utils/navigationContext'
+import { DatasetErrorState } from '../components/shared/DatasetStateBoundary'
 
 export default function AccessoryDetailPage() {
   const { slug } = useParams()
@@ -14,12 +15,20 @@ export default function AccessoryDetailPage() {
   const activeSubtype = ACCESSORY_SUBTYPES.some((meta) => meta.subtype === typeParam)
     ? (typeParam as AccessorySubtype)
     : 'artifact'
-  const { accessory, loading } = useAccessoryBySlug(activeSubtype, slug)
+  const { accessory, loading, error, retry } = useAccessoryBySlug(activeSubtype, slug)
   const filterBase = `/accessories?type=${activeSubtype}`
   const backUrl = backUrlFromSearch(location.search, filterBase)
 
   if (loading) {
     return <DetailPageSkeleton />
+  }
+
+  if (error) {
+    return (
+      <DetailPageLayout>
+        <DatasetErrorState onRetry={retry} title="We couldn't load this accessory" />
+      </DetailPageLayout>
+    )
   }
 
   if (!accessory) {

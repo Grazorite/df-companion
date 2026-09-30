@@ -5,6 +5,7 @@ import { useDebounce } from '../hooks/useDebounce'
 import SearchBar from '../components/shared/SearchBar'
 import TriStateFilterPill from '../components/shared/TriStateFilterPill'
 import MobileFilterPanel from '../components/shared/MobileFilterPanel'
+import ResultsStatus from '../components/shared/ResultsStatus'
 import BadgeList from '../components/badges/BadgeList'
 import type { BadgeCategory } from '../types/badge'
 import { cycleSingleTriState, getTriState, type TriStateFilterSet } from '../utils/triStateFilters'
@@ -54,7 +55,7 @@ export default function BadgesPage() {
     setSearchParams,
   ])
 
-  const { badges, total } = useBadges({
+  const { badges, total, loading, error, retry } = useBadges({
     query: deferredQuery,
     category: activeCategory !== 'retired' ? activeCategory : undefined,
     excludeCategory: excludedCategory,
@@ -292,7 +293,15 @@ export default function BadgesPage() {
       </MobileFilterPanel>
 
       {/* Results count */}
-      <p className="text-text-muted text-xs mb-4" aria-live="polite" aria-atomic="true">
+      <ResultsStatus
+        announcement={
+          error
+            ? 'Results unavailable'
+            : loading
+              ? 'Loading badges...'
+              : `${total} ${total === 1 ? 'badge' : 'badges'} found`
+        }
+      >
         {total} {total === 1 ? 'badge' : 'badges'} found
         {activeSubcategory ? (
           <span className="text-text-secondary"> in {activeSubcategory}</span>
@@ -321,10 +330,16 @@ export default function BadgesPage() {
         {excludedSubcategory && (
           <span className="text-red-300"> · excluding {excludedSubcategory}</span>
         )}
-      </p>
+      </ResultsStatus>
 
       {/* Badge grid */}
-      <BadgeList badges={badges} pending={inputValue !== deferredQuery} />
+      <BadgeList
+        badges={badges}
+        loading={loading}
+        error={error}
+        onRetry={retry}
+        pending={inputValue !== deferredQuery}
+      />
     </main>
   )
 }

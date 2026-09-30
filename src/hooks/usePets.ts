@@ -9,6 +9,9 @@ import { obtainMethodInferenceFingerprint } from '../utils/relatedItems'
 import { getSearchWords } from '../utils/search'
 import { getDisplayFamilyName, getFamilyCardDescription } from '../utils/variantHelpers'
 import { useRelatedItems, type RelatedItemRef } from './useRelatedItems'
+import { useDatasetResource } from './useDatasetResource'
+
+const EMPTY_PETS: Array<Pet | ItemFamily> = []
 
 function isItemFamily(item: Pet | ItemFamily): item is ItemFamily {
   return 'levelVariants' in item && 'familyName' in item
@@ -154,33 +157,16 @@ function dedupeVariantEntries(items: Array<Pet | ItemFamily>) {
 }
 
 function usePetDataset() {
-  const [allPets, setAllPets] = useState<Array<Pet | ItemFamily>>([])
-  const [petSlugAliases, setPetSlugAliases] = useState<Map<string, string>>(new Map())
-  const [loading, setLoading] = useState(true)
+  const resource = useDatasetResource(loadPetsAndGuests, EMPTY_PETS, 'pets-guests')
+  const deduped = useMemo(() => dedupeVariantEntries(resource.data), [resource.data])
 
-  useEffect(() => {
-    let active = true
-    loadPetsAndGuests()
-      .then((items) => {
-        if (!active) return
-        const dedupedEntries = dedupeVariantEntries(items)
-        setAllPets(dedupedEntries.items)
-        setPetSlugAliases(dedupedEntries.aliasToCanonicalSlug)
-        setLoading(false)
-      })
-      .catch(() => {
-        if (!active) return
-        setAllPets([])
-        setPetSlugAliases(new Map())
-        setLoading(false)
-      })
-
-    return () => {
-      active = false
-    }
-  }, [])
-
-  return { allPets, petSlugAliases, loading }
+  return {
+    allPets: deduped.items,
+    petSlugAliases: deduped.aliasToCanonicalSlug,
+    error: resource.error,
+    loading: resource.loading,
+    retry: resource.retry,
+  }
 }
 
 function useElementsDataset() {
@@ -275,9 +261,7 @@ function searchPets(
         if (filters.excludeElements.some((e) => itemCodes.includes(e))) return false
       }
 
-      const hasAccess = (
-        accessType: NonNullable<PetFilters['access']>[number]
-      ): boolean => {
+      const hasAccess = (accessType: NonNullable<PetFilters['access']>[number]): boolean => {
         if (accessType === 'multi') return isFamily && family!.levelVariants.length > 1
         if (accessType === 'da') return isFamily ? family!.hasDA : pet!.daRequired
 
@@ -302,9 +286,7 @@ function searchPets(
       if (filters.excludeAccess?.some((accessType) => hasAccess(accessType))) return false
 
       // Category filter (Level 2) — multi-select with OR logic
-      const hasCategoryFlag = (
-        cat: NonNullable<PetFilters['categories']>[number]
-      ): boolean => {
+      const hasCategoryFlag = (cat: NonNullable<PetFilters['categories']>[number]): boolean => {
         if (cat === 'temp') return isFamily ? family!.isTemp === true : pet!.isTemp === true
         if (cat === 'rare') return isFamily ? family!.isRare === true : pet!.isRare === true
         if (cat === 'seasonal')
@@ -396,22 +378,24 @@ function searchPets(
 // ─── Hooks ────────────────────────────────────────────────────────────────────
 
 export function usePets(filters: PetFilters = {}) {
-  const { allPets, loading } = usePetDataset()
+  const { allPets, loading, error, retry } = usePetDataset()
   const elementMeta = useElementsDataset()
   const results = useMemo(
     () => searchPets(allPets, filters, elementMeta),
     [allPets, filters, elementMeta]
   )
-  return { pets: results, total: results.length, loading }
+  return { pets: results, total: results.length, loading, error, retry }
 }
 
-export function usePetBySlug(slug: string): Pet | ItemFamily | null | undefined {
-  const { allPets, petSlugAliases, loading } = usePetDataset()
-  return useMemo(() => {
+export function usePetBySlug(slug: string) {
+  const { allPets, petSlugAliases, loading, error, retry } = usePetDataset()
+  const pet = useMemo(() => {
     if (loading) return undefined
     const canonicalSlug = petSlugAliases.get(slug) ?? slug
     return allPets.find((p) => p.slug === canonicalSlug) ?? null
   }, [allPets, loading, petSlugAliases, slug])
+
+  return { pet, loading, error, retry }
 }
 
 /** Counts per type for the segment toggle — applies search/filter but ignores type filter */

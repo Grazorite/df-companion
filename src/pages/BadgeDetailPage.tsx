@@ -14,11 +14,12 @@ import ItemImage from '../components/shared/ItemImage'
 import InlineTextLinks from '../components/shared/InlineTextLinks'
 import { useAwardingItemInlineLinksForBadge } from '../hooks/useBadgeRelations'
 import { backUrlFromSearch, detailUrlWithFrom } from '../utils/navigationContext'
+import { DatasetErrorState } from '../components/shared/DatasetStateBoundary'
 
 export default function BadgeDetailPage() {
   const { slug } = useParams<{ slug: string }>()
   const location = useLocation()
-  const { badge, loading } = useBadgeBySlug(slug ?? '')
+  const { badge, loading, error, retry } = useBadgeBySlug(slug ?? '')
   const relatedBadges = useBadgesByCategory(badge?.category ?? '', badge?.slug, badge?.subcategory)
   const rawAwardingItemLinks = useAwardingItemInlineLinksForBadge(badge?.slug)
 
@@ -45,6 +46,14 @@ export default function BadgeDetailPage() {
 
   if (loading) {
     return <DetailPageSkeleton />
+  }
+
+  if (error) {
+    return (
+      <DetailPageLayout>
+        <DatasetErrorState onRetry={retry} title="We couldn't load this badge" />
+      </DetailPageLayout>
+    )
   }
 
   if (!badge) {

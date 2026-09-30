@@ -47,6 +47,18 @@ All list view cards must follow this pattern:
 - **Route loading shape:** route-level Suspense uses `DetailPageSkeleton` for recognized detail
   routes and a gallery skeleton for list/landing routes. Category detail hooks should also use the
   shared detail skeleton so lazy-module and lazy-data loading do not change page geometry.
+- **Dataset state contract:** category loaders must not convert request failures into empty arrays at
+  the public hook boundary. Use `useDatasetResource` so loading, failure, retry, valid empty data, and
+  loaded results remain distinct. Gallery lists render those states through
+  `DatasetStateBoundary`; detail pages show the shared retry state before their not-found state.
+  Cached loader promises must reset after rejection so Retry performs a real request.
+- **Result announcements:** visible result counts update with deferred filtering before the 300ms URL
+  debounce, but assistive announcements use `ResultsStatus` and settle for 400ms. Do not attach the
+  live region directly to text that changes on every keystroke.
+- **Page accessibility:** successful routes expose one `main` and one `h1`; list cards use `h2` below
+  that page heading. `NavigationContinuity` derives `document.title` from the eventual `h1` and keeps
+  query-only updates from replaying route behavior. Interactive controls use `focus-visible` rings,
+  and disclosure widgets use the shared Radix Collapsible wrapper rather than hand-rolled state.
 - Card-gallery search should index the detail-page text users naturally expect: base and variant
   descriptions, notes/Other Information, obtain locations, release dates where present, housing
   effects and furnishing-slot text, trinket effect types, attacks, and weapon special text. Keep

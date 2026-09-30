@@ -66,7 +66,7 @@ export async function createTestPage(
 export async function waitForResultCount(page: Page): Promise<void> {
   await page
     .locator('main')
-    .getByText(/\d+ (?:badges?|entries) found/i)
+    .getByText(/[1-9]\d* (?:badges?|entries) found/i)
     .first()
     .waitFor({ state: 'visible', timeout: 30_000 })
 }

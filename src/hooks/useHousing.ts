@@ -1,42 +1,27 @@
 import { useEffect, useMemo, useState } from 'react'
 import type { HousingEntry, HousingFilters, HousingSubtype } from '../types/housing'
 import { isHousingFamily } from '../types/housing'
-import { loadHousingBySubtype, loadHousingForSubtype, loadHousingManifest } from '../utils/dataLoaders'
+import {
+  loadHousingBySubtype,
+  loadHousingForSubtype,
+  loadHousingManifest,
+} from '../utils/dataLoaders'
 import { compareTitles, displayTitle } from '../utils/displayText'
 import { hasRetiredEntry } from '../utils/filterVisibility'
 import { obtainMethodInferenceFingerprint } from '../utils/relatedItems'
 import { getSearchWords } from '../utils/search'
 import { useRelatedItems } from './useRelatedItems'
+import { useDatasetResource } from './useDatasetResource'
+
+const EMPTY_HOUSING: HousingEntry[] = []
 
 function hasMeaningfulEffect(effect: string | undefined): boolean {
   return Boolean(effect && !/^(?:none|n\/?a)$/i.test(effect.trim()))
 }
 
 function useHousingSubtypeDataset(subtype: HousingSubtype) {
-  const [housing, setHousing] = useState<HousingEntry[]>([])
-  const [loading, setLoading] = useState(true)
-
-  useEffect(() => {
-    let active = true
-    setLoading(true)
-    loadHousingForSubtype(subtype)
-      .then((data) => {
-        if (!active) return
-        setHousing(data)
-        setLoading(false)
-      })
-      .catch(() => {
-        if (!active) return
-        setHousing([])
-        setLoading(false)
-      })
-
-    return () => {
-      active = false
-    }
-  }, [subtype])
-
-  return { housing, loading }
+  const resource = useDatasetResource(() => loadHousingForSubtype(subtype), EMPTY_HOUSING, subtype)
+  return { housing: resource.data, ...resource }
 }
 
 function searchHousing(items: HousingEntry[], subtype: HousingSubtype, filters: HousingFilters) {
@@ -124,31 +109,30 @@ function searchHousing(items: HousingEntry[], subtype: HousingSubtype, filters: 
 }
 
 export function useHousing(subtype: HousingSubtype, filters: HousingFilters = {}) {
-  const { housing: subtypeHousing, loading } = useHousingSubtypeDataset(subtype)
+  const { housing: subtypeHousing, loading, error, retry } = useHousingSubtypeDataset(subtype)
   const housing = useMemo(
     () => searchHousing(subtypeHousing, subtype, filters),
     [filters, subtype, subtypeHousing]
   )
-  return { housing, total: housing.length, loading }
+  return { housing, total: housing.length, loading, error, retry }
 }
 
 export function useHousingBySlug(subtype: HousingSubtype, slug: string) {
-  const { housing, loading } = useHousingSubtypeDataset(subtype)
+  const { housing, loading, error, retry } = useHousingSubtypeDataset(subtype)
   const item = useMemo(() => {
     if (loading) return undefined
     return (
       housing.find(
-        (entry) => entry.slug === slug || (isHousingFamily(entry) && entry.aliasSlugs?.includes(slug))
+        (entry) =>
+          entry.slug === slug || (isHousingFamily(entry) && entry.aliasSlugs?.includes(slug))
       ) ?? null
     )
   }, [housing, loading, slug])
-  return { item, loading }
+  return { item, loading, error, retry }
 }
 
 function getHousingSlugs(entry: HousingEntry): string[] {
-  return isHousingFamily(entry)
-    ? [entry.slug, ...(entry.aliasSlugs ?? [])]
-    : [entry.slug]
+  return isHousingFamily(entry) ? [entry.slug, ...(entry.aliasSlugs ?? [])] : [entry.slug]
 }
 
 function getHousingAlsoSeeRefs(entry: HousingEntry) {
@@ -245,40 +229,37 @@ export function useHousingCounts() {
 export function useHousingCategoryAvailability(subtype: HousingSubtype) {
   const { housing, loading } = useHousingSubtypeDataset(subtype)
 
-  return useMemo(
-    () => {
-      const access = new Set<string>()
-      const categories = new Set<string>()
+  return useMemo(() => {
+    const access = new Set<string>()
+    const categories = new Set<string>()
 
-      for (const entry of housing) {
-        if (isHousingFamily(entry)) {
-          if (entry.levelVariants.length > 1) access.add('multiple')
-          if (entry.hasDC) access.add('dc')
-        } else if (entry.dcRequired) {
-          access.add('dc')
-        }
-
-        if (entry.isRare) categories.add('rare')
-        if (entry.isSeasonal) categories.add('seasonal')
-        if (entry.retired) categories.add('retired')
-        if (
-          isHousingFamily(entry)
-            ? entry.levelVariants.some((variant) => hasMeaningfulEffect(variant.effect))
-            : entry.hasSpecialEffect
-        ) {
-          categories.add('effect')
-        }
+    for (const entry of housing) {
+      if (isHousingFamily(entry)) {
+        if (entry.levelVariants.length > 1) access.add('multiple')
+        if (entry.hasDC) access.add('dc')
+      } else if (entry.dcRequired) {
+        access.add('dc')
       }
 
-      return {
-        loading,
-        access,
-        categories,
-        hasRetired: hasRetiredEntry(housing),
+      if (entry.isRare) categories.add('rare')
+      if (entry.isSeasonal) categories.add('seasonal')
+      if (entry.retired) categories.add('retired')
+      if (
+        isHousingFamily(entry)
+          ? entry.levelVariants.some((variant) => hasMeaningfulEffect(variant.effect))
+          : entry.hasSpecialEffect
+      ) {
+        categories.add('effect')
       }
-    },
-    [housing, loading]
-  )
+    }
+
+    return {
+      loading,
+      access,
+      categories,
+      hasRetired: hasRetiredEntry(housing),
+    }
+  }, [housing, loading])
 }
 
 export function useTotalHousingCount(): number {

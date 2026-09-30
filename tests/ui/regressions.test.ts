@@ -37,7 +37,10 @@ test(
         const metrics = await page.evaluate(() => ({
           cards: document.querySelectorAll('main a.group').length,
           nodes: document.querySelectorAll('*').length,
-          resultText: document.querySelector('main [aria-live="polite"]')?.textContent ?? '',
+          resultText:
+            Array.from(document.querySelectorAll('main p:not(.sr-only)')).find((element) =>
+              /\d+ (?:badges?|entries) found/i.test(element.textContent ?? '')
+            )?.textContent ?? '',
         }))
         const totalResults = Number(metrics.resultText.match(/\d+/)?.[0] ?? 0)
 
@@ -122,7 +125,7 @@ test(
       const search = page.getByRole('searchbox')
       await search.fill('abyssal')
       await page
-        .locator('main [aria-live="polite"]')
+        .locator('main p:not(.sr-only)')
         .filter({ hasText: /^4 entries found/ })
         .waitFor({ state: 'visible', timeout: 280 })
       assert.doesNotMatch(page.url(), /[?&]q=abyssal(?:&|$)/)
@@ -283,14 +286,29 @@ test('mobile More menu manages dismissal and focus', { timeout: 45_000 }, async 
     await trigger.click()
     const panel = page.getByRole('dialog', { name: 'More sections' })
     await panel.waitFor()
-    assert.equal(
-      await panel
-        .getByRole('button', { name: 'Search' })
-        .evaluate((el) => el === document.activeElement),
-      true
-    )
+    // Radix moves focus asynchronously after open; poll for it settling rather than reading it in
+    // the same tick (which is load-sensitive and flakes under full-suite concurrency).
+    await panel
+      .getByRole('button', { name: 'Search' })
+      .evaluate((el) => el === document.activeElement)
+      .then(async (focused) => {
+        if (focused) return
+        await page.waitForFunction(
+          () => document.activeElement?.textContent?.trim() === 'Search'
+        )
+      })
 
     await page.keyboard.press('Escape')
+    await page.waitForFunction(
+      () =>
+        document
+          .querySelector('button[aria-label="More sections"]')
+          ?.getAttribute('aria-expanded') === 'false'
+    )
+    // Focus returns to the trigger; poll for the async focus restoration to settle.
+    await page.waitForFunction(
+      () => document.activeElement === document.querySelector('button[aria-label="More sections"]')
+    )
     assert.equal(await trigger.getAttribute('aria-expanded'), 'false')
     assert.equal(await trigger.evaluate((el) => el === document.activeElement), true)
 

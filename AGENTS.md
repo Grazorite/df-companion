@@ -27,7 +27,7 @@
 
 ## 📊 Active Project Status
 
-**Last updated:** 2026-09-29
+**Last updated:** 2026-09-30
 **Branch:** `main` · **Deploy:** Vercel auto-deploy on `main` — pushing to `main` ships to production
 
 > Read the live HEAD with `git log --oneline -1` rather than trusting a SHA pinned here; commits that
@@ -49,12 +49,10 @@
 
 ### Current Focus
 
-1. **Deliver the test-driven UI/UX fluidity program.** Start with the browser behavior harness and
-   gallery rendering budgets, then progress through navigation continuity, mobile controls, motion,
-   media stability, global search, and reliability. Working plan:
-   `.kiro/specs/ui-ux-fluidity/STATUS.md`.
-2. **Propagate scraper fixes into stale datasets.** Weapons full pass is still outstanding (see
-   Kanban). Pets, guests, accessories, and Classes / Abilities have been completed.
+1. **Propagate scraper fixes into stale datasets.** Weapons full pass is still outstanding and must
+   be run by the user (see Kanban). Pets, guests, accessories, and Classes / Abilities are complete.
+2. **Choose the next content section after the weapons pass.** Locations & Quests is the first
+   unblocked section in the board.
 
 ### Agent Assignments
 
@@ -63,7 +61,7 @@
 | `orchestrator` (primary session agent) | AGENTS.md upkeep, task sequencing, handover | Keep Kanban + log current every task completion |
 | `context-gatherer` (sub-agent) | Codebase investigation before edits | Dispatch before touching unfamiliar scraper/UI paths |
 | `scraper-owner` (role) | `scripts/**`, dataset JSON, validators | Full-category re-scrape backlog |
-| `ui-owner` (role) | `src/components/**`, `src/pages/**`, `src/hooks/**` | UI/UX fluidity program, beginning with behavior tests and progressive galleries |
+| `ui-owner` (role) | `src/components/**`, `src/pages/**`, `src/hooks/**` | Preserve the completed UI/UX fluidity contracts when extending shipped sections |
 | `human` (user) | **All broad/full scrapes**, forum cookie, deploy approval | Run full-category scrapes locally |
 
 > Broad scrapes are human-run **by rule, not by convention**: the agent supplies the exact command,
@@ -87,16 +85,17 @@
 
 ### 🚧 In Progress
 
-- [ ] **Test-driven UI/UX fluidity program** — execute the phased delivery and verification plan in
-      `.kiro/specs/ui-ux-fluidity/STATUS.md`; Phases 0–6 are verified, current phase: failure states
-      and accessibility finish (Phase 7).
+_None._
 
 ### ✅ Done
 
-*Latest five only. Older completed-task history lives in
+_Latest five only. Older completed-task history lives in
 [`docs/context/done-task-archive.md`](./docs/context/done-task-archive.md). Rotate at session
-close, not after each individual task.*
+close, not after each individual task._
 
+- [x] **Complete the test-driven UI/UX fluidity program** — all eight phases (0–7) are implemented
+      and verified: bounded galleries, navigation continuity, mobile controls, motion, stable media,
+      compact global search, recoverable failure states, and the accessibility finish.
 - [x] **Class access flag merge repair** — verified the pending `dataLoaders.ts` change that
       preserves DA/DC/DM and special-character flags when same-source Class entries are merged.
 - [x] **Lean live handover policy** — shortened `AGENTS.md` to five live log entries and five live
@@ -106,12 +105,6 @@ close, not after each individual task.*
 - [x] **Complete Classes subtype scraper/data** — Armors, Regular, and Miscellaneous class parsing,
       relation indexes (artifact / armor / default-weapon), and split datasets all populated and
       validated (manifest 198 = 144 class + 54 consumable).
-- [x] **Reviewed accessory singular-sibling consolidation** — promoted 20 non-artifact accessory
-      groups into itemfamilies after user review: Hunter's Wrap, Soulthread Loop, Star Captain's Belt,
-      Bloodstone Ring, Moonstone Ring, Ancient Ring, Ring of the Emperor, Bear Tooth Necklace, Wild
-      Necklace, Thursday's Necklace, Drakonnan's Helm, Skullhelm, Gnome Wig, Goggle Wig, Eyeball
-      Helm, Custom HarleQuape (2010), Astral Avenger, Half Dread Wings, Thursday's Cape, and Wings
-      of The Flames.
 
 ---
 
@@ -123,7 +116,7 @@ An incoming agent must be able to resume with **no verbal briefing**. Follow thi
 
 1. **Read this file top to bottom.** It is the single source of current truth.
 2. **Read the newest Handover Log entry** — it states what changed, what is verified, and what is
-   explicitly *not* verified.
+   explicitly _not_ verified.
 3. **Pick the top unblocked `In Progress` item**, else the top `To Do` item. Do not invent work.
 4. **Load only the context files you need** from the Context Map. Do not bulk-read `docs/context/`.
 5. **Confirm the working tree is clean** (`git status --porcelain`) before starting. If dirty,
@@ -212,13 +205,60 @@ is being written as part of that same commit
 
 ## 📝 Reverse-Chronological Handover Log
 
-*Newest first. Prepend new entries directly below this line. Keep only the five latest entries live; rotate older entries at session close.*
+_Newest first. Prepend new entries directly below this line. Keep only the five latest entries live; rotate older entries at session close._
 
 > **Reading `Commit(s): uncommitted` in older entries:** it means uncommitted *at the time of writing*,
 > not still uncommitted. Entries are written before the commit that carries them exists, so the marker
 > goes stale the moment the work lands and was never retro-corrected. Treat `git log` as authoritative
 > for what shipped when. New entries should use `the commit containing this entry` instead, which stays
 > true.
+
+### 2026-09-30 — UI fluidity phase 7 (failure states and accessibility)
+
+**Agent:** ui-owner / orchestrator (GPT-5 Codex; audited + committed by Claude Opus 4.5) ·
+**Commit(s):** `the commit containing this entry`
+**Kanban moved:** `Test-driven UI/UX fluidity program` → `✅ Done`
+
+**Changed:**
+
+- `useDatasetResource`, `DatasetStateBoundary`, category hooks/lists, detail pages, and
+  `dataLoaders.ts`: separated loading, request failure, retry, valid empty, and loaded states across
+  all six shipped sections; rejected cached promises reset so retry performs a real request.
+- `ResultsStatus`, `NavigationContinuity`, and page wiring: kept visible filtering immediate while
+  debouncing polite announcements, and derived useful route titles from eventual page headings.
+- `ElementLegend`, card/search/select focus styles, card headings, and small-label contrast: moved
+  disclosure behavior to Radix Collapsible, standardized keyboard focus, repaired heading order, and
+  cleared the Lighthouse findings.
+- `tests/ui/reliabilityAccessibility.test.ts`, the UI/UX status spec, and `docs/context/`: recorded
+  the public behavior contracts and completion evidence for Phase 7 and the full eight-phase program.
+- `tests/ui/regressions.test.ts` (audit follow-up): hardened the pre-existing "mobile More menu
+  manages dismissal and focus" test — the Radix focus-return assertions now poll for the async focus
+  transition to settle instead of reading it in the same tick. That test is load-sensitive and flaked
+  once under full-suite concurrency (240ms fast-fail); it passed in isolation. Not a Phase 7
+  regression — the fix is in the test only, no app behavior changed.
+
+**Verified:**
+
+- Independently re-run before commit. `npm test` → 17/17. `npm run test:ui` → 39/39, confirmed stable
+  across two consecutive full-suite runs after the flake hardening.
+- `npm run build` → all validators, search-index drift check, cross-dataset verification, script
+  typecheck, TypeScript, and Vite production build pass. `npm run lint` → clean.
+  `npx tsc --noEmit -p tsconfig.json` → clean.
+- Codex's transient Lighthouse accessibility audit on `/pets` → 100/100 (not re-run this session).
+
+**Not verified / known gaps:**
+
+- Lighthouse was run on the representative Pets route only (Codex), not every detail/list combination;
+  the deterministic route audit covers landmarks, headings, titles, and accessible names on all six
+  shipped lists.
+- The Phase 7 application code was authored by Codex and committed on the strength of the re-run gate
+  and its documented evidence, not a line-by-line review of every one of the 48 changed files.
+- No scraper or dataset content changed.
+
+**Next agent should:**
+
+- The eight-phase UI/UX fluidity program is complete. Next board item is the user-run full weapons
+  re-scrape; otherwise begin Locations & Quests only when the user selects it.
 
 ### 2026-09-30 — UI fluidity phase 6 (compact global search index)
 
@@ -422,128 +462,3 @@ system and interaction polish
 
 - Continue Phase 4 test-first, beginning with pathname-only page entry and rapid-filter settling
   before replacing broad `transition-all` usage.
-
-### 2026-09-10 — Class access flag merge repair
-
-**Agent:** orchestrator (GPT-5 Codex) · **Commit(s):** `the commit containing this entry`
-**Kanban moved:** no board item moved; verified and committed pre-existing `dataLoaders.ts` change
-
-**Changed:**
-
-- `src/utils/dataLoaders.ts`: same-source Class duplicate merging now reads DA/DC/DM access from
-  family-level `hasDA` / `hasDC` / `hasDM` flags when the merged entry is an item family, instead
-  of only checking single-entry `daRequired` / `dcRequired` / `dmRequired` fields.
-- `src/utils/dataLoaders.ts`: merged Class entries now preserve the special-character flag when it is
-  represented by the `special-character` tag, which keeps list/card filters aligned with loaded data.
-- `AGENTS.md` and `docs/context/handover-log-archive.md`: recorded this verified repair and kept the
-  live handover log at five entries for session close.
-
-**Verified:**
-
-- `npm test` → passed 10 tests.
-- `npm run build` → passed all validators, dataset verification, script typecheck, TypeScript build,
-  and Vite production build.
-- `npm run lint` → passed.
-
-**Not verified / known gaps:**
-
-- No browser screenshot pass was run; this was loader/filter flag behavior rather than a visual layout
-  change.
-
-**Next agent should:**
-
-- Add a focused loader test if the class merge path changes again; current verification is full-gate
-  build/test/lint rather than a dedicated fixture for this private merge helper.
-
-### 2026-09-10 — Leaner live handover policy
-
-**Agent:** orchestrator (GPT-5 Codex) · **Commit(s):** `the commit containing this entry`
-**Kanban moved:** no board item moved; user-requested handover compaction policy
-
-**Changed:**
-
-- `AGENTS.md`: shortened the live handover surface to five Handover Log entries and five Done items,
-  clarified that archive rotation happens only at session close, and pointed older Done history to a
-  dedicated archive.
-- `docs/context/done-task-archive.md`: added an archive home for older completed-task history so
-  `AGENTS.md` stays operational instead of encyclopedic.
-- `docs/context/README.md` and `docs/context/engineering_guidelines.md`: documented the new archive
-  and practical test cadence.
-
-**Verified:**
-
-- Documentation-only policy update; inspected the resulting live log and Done counts.
-
-**Not verified / known gaps:**
-
-- No build/test rerun was needed for this docs-only compaction beyond the test/build/lint checks
-  already run for the test harness in this same session.
-
-**Next agent should:**
-
-- Keep `AGENTS.md` short during task work and rotate archives only at session close.
-
-### 2026-09-10 — Lean public-behavior test harness
-
-**Agent:** orchestrator (GPT-5 Codex) · **Commit(s):** `the commit containing this entry`
-**Kanban moved:** `Introduce a test framework` → `✅ Done`
-
-**Changed:**
-
-- `package.json`: added `npm test`, backed by Node's built-in test runner through the existing `tsx`
-  dependency.
-- `tests/`: added starter public-behavior tests for display text normalization, badge filtering,
-  tri-state filter state transitions / URL parsing, and related-item matching fingerprints.
-- `README.md`, `docs/context/architecture.md`, `docs/context/engineering_guidelines.md`, and
-  `docs/context/project_structure.md`: documented the test command, directory placement, and the
-  testing philosophy: behavior and public APIs first, no coverage-padding.
-- `AGENTS.md`: moved the deferred test-framework board item to Done and recorded this handover.
-
-**Verified:**
-
-- `npm test` → passed 10 tests. The sandbox blocked `tsx` IPC with `EPERM`; the same command passed
-  when rerun with elevated permissions.
-
-**Not verified / known gaps:**
-
-- No browser/visual test runner was added. The first suite intentionally focuses on fast utility and
-  public data-behavior checks.
-
-**Next agent should:**
-
-- Add narrow regression tests when changing shared filters, display normalization, related-item
-  inference, or data-loading behavior.
-
-### 2026-09-03 — Classes subtype marked complete on the board
-
-**Agent:** orchestrator (Claude Opus 4.8) · **Commit(s):** `the commit containing this entry`
-**Kanban moved:** `Complete Classes subtype scraper/data` → `✅ Done` (In Progress column now empty)
-
-**Changed:**
-
-- `AGENTS.md`: per the user's report that the Classes subtype is complete, moved the In Progress
-  Classes item to Done, updated the milestone metric line (198 = 144 Classes + 54 Consumables;
-  Armors + Regular + Miscellaneous all complete), refreshed Current Focus (Classes / Abilities now
-  listed as completed alongside pets/guests/accessories), and updated the shipped-sections Done
-  bullet from "starter" to the full section.
-- `docs/context/handover-log-archive.md`: rotated the oldest log entry (2026-08-30 — Base class
-  parser batch one) to keep the live log at 10.
-
-**Verified:**
-
-- Board-status reconciliation reflecting completed class work; the underlying completion is the
-  other agent's, already documented in the 2026-08-30/09-01 class log entries.
-- `node scripts/validate-class-abilities.mjs` / `npm run validate` → passed; manifest reports 198
-  (144 class + 54 consumable).
-- `tsc -b`, `oxlint`, `vite build` → all green (verified this session before the board edit).
-
-**Not verified / known gaps:**
-
-- Completion of the class data/parsing was reported by the user (the other agent's context is held
-  in its own session); this entry records the board state, not an independent audit of every class
-  entry's correctness.
-
-**Next agent should:**
-
-- Pick a To Do item — the Weapons full re-scrape or the next content section (Locations / Monsters /
-  NPCs / Stackable Items).

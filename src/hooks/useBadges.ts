@@ -2,31 +2,13 @@ import { useEffect, useMemo, useState } from 'react'
 import { searchBadges } from '../utils/search'
 import { loadBadgeManifest, loadBadges, loadCategories } from '../utils/dataLoaders'
 import type { Badge, BadgeFilters, CategoryMeta } from '../types/badge'
+import { useDatasetResource } from './useDatasetResource'
+
+const EMPTY_BADGES: Badge[] = []
 
 function useBadgeDataset() {
-  const [badges, setBadges] = useState<Badge[]>([])
-  const [loading, setLoading] = useState(true)
-
-  useEffect(() => {
-    let active = true
-    loadBadges()
-      .then((data) => {
-        if (!active) return
-        setBadges(data)
-        setLoading(false)
-      })
-      .catch(() => {
-        if (!active) return
-        setBadges([])
-        setLoading(false)
-      })
-
-    return () => {
-      active = false
-    }
-  }, [])
-
-  return { badges, loading }
+  const resource = useDatasetResource(loadBadges, EMPTY_BADGES, 'badges')
+  return { badges: resource.data, ...resource }
 }
 
 function useCategoryDataset() {
@@ -77,19 +59,19 @@ function useBadgeManifestDataset() {
 }
 
 export function useBadges(filters: BadgeFilters = {}) {
-  const { badges, loading } = useBadgeDataset()
+  const { badges, loading, error, retry } = useBadgeDataset()
   const results = useMemo(() => searchBadges(badges, filters), [badges, filters])
-  return { badges: results, total: results.length, loading }
+  return { badges: results, total: results.length, loading, error, retry }
 }
 
 export function useBadgeBySlug(slug: string) {
-  const { badges, loading } = useBadgeDataset()
+  const { badges, loading, error, retry } = useBadgeDataset()
   const badge = useMemo(() => {
     if (loading) return undefined
     return badges.find((b) => b.slug === slug) ?? null
   }, [badges, loading, slug])
 
-  return { badge, loading }
+  return { badge, loading, error, retry }
 }
 
 export function useCategories() {

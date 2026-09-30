@@ -5,6 +5,7 @@ import { DetailPageSkeleton } from '../components/shared/LoadingSkeleton'
 import { useHousingBySlug } from '../hooks/useHousing'
 import { HOUSING_SUBTYPES, type HousingSubtype } from '../types/housing'
 import { backUrlFromSearch } from '../utils/navigationContext'
+import { DatasetErrorState } from '../components/shared/DatasetStateBoundary'
 
 export default function HousingDetailPage() {
   const { slug } = useParams<{ slug: string }>()
@@ -16,7 +17,7 @@ export default function HousingDetailPage() {
     : 'house'
   const subtypeMeta =
     HOUSING_SUBTYPES.find((meta) => meta.subtype === activeSubtype) ?? HOUSING_SUBTYPES[0]
-  const { item, loading } = useHousingBySlug(activeSubtype, slug ?? '')
+  const { item, loading, error, retry } = useHousingBySlug(activeSubtype, slug ?? '')
   const backUrl = backUrlFromSearch(
     location.search,
     `/housing?type=${encodeURIComponent(activeSubtype)}`
@@ -24,6 +25,14 @@ export default function HousingDetailPage() {
 
   if (loading) {
     return <DetailPageSkeleton />
+  }
+
+  if (error) {
+    return (
+      <DetailPageLayout>
+        <DatasetErrorState onRetry={retry} title="We couldn't load this housing entry" />
+      </DetailPageLayout>
+    )
   }
 
   if (!item) {

@@ -5,6 +5,7 @@ import { DetailPageSkeleton } from '../components/shared/LoadingSkeleton'
 import { useClassAbilityBySlug } from '../hooks/useClassAbilities'
 import { CLASS_ABILITY_SUBTYPES, type ClassAbilitySubtype } from '../types/classAbility'
 import { backUrlFromSearch } from '../utils/navigationContext'
+import { DatasetErrorState } from '../components/shared/DatasetStateBoundary'
 
 export default function ClassAbilityDetailPage() {
   const { slug } = useParams<{ slug: string }>()
@@ -17,7 +18,7 @@ export default function ClassAbilityDetailPage() {
   const subtypeMeta =
     CLASS_ABILITY_SUBTYPES.find((meta) => meta.subtype === activeSubtype) ??
     CLASS_ABILITY_SUBTYPES[0]
-  const { item, loading } = useClassAbilityBySlug(activeSubtype, slug ?? '')
+  const { item, loading, error, retry } = useClassAbilityBySlug(activeSubtype, slug ?? '')
   const backUrl = backUrlFromSearch(
     location.search,
     `/classes?type=${encodeURIComponent(activeSubtype)}`
@@ -25,6 +26,14 @@ export default function ClassAbilityDetailPage() {
 
   if (loading) {
     return <DetailPageSkeleton />
+  }
+
+  if (error) {
+    return (
+      <DetailPageLayout>
+        <DatasetErrorState onRetry={retry} title="We couldn't load this entry" />
+      </DetailPageLayout>
+    )
   }
 
   if (!item) {

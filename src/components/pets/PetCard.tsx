@@ -95,7 +95,7 @@ export default function PetCard({ pet, toUrl, replace, family }: PetCardProps) {
     <Link
       to={route}
       replace={replace}
-      className="group flex items-start gap-3 bg-bg-surface border border-border-default rounded-lg p-4 h-[120px] transition-[transform,box-shadow,background-color,border-color] duration-[160ms] ease-[cubic-bezier(0.2,0,0,1)] hover:bg-bg-elevated hover:border-border-hover hover:-translate-y-0.5 hover:shadow-medium active:translate-y-0 active:scale-[0.99] active:duration-[90ms] motion-reduce:hover:translate-y-0 motion-reduce:active:scale-100 focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 focus:ring-offset-bg-base"
+      className="group flex items-start gap-3 bg-bg-surface border border-border-default rounded-lg p-4 h-[120px] transition-[transform,box-shadow,background-color,border-color] duration-[160ms] ease-[cubic-bezier(0.2,0,0,1)] hover:bg-bg-elevated hover:border-border-hover hover:-translate-y-0.5 hover:shadow-medium active:translate-y-0 active:scale-[0.99] active:duration-[90ms] motion-reduce:hover:translate-y-0 motion-reduce:active:scale-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-bg-base"
     >
       <div className="flex-1 min-w-0">
         {/* Element pills + access pills + level range + type badge */}
@@ -105,7 +105,7 @@ export default function PetCard({ pet, toUrl, replace, family }: PetCardProps) {
               <ElementPill key={code} code={code} size="sm" />
             ))}
             {overflow > 0 && (
-              <span className="text-[10px] text-text-muted bg-bg-overlay px-1.5 py-0.5 rounded-full">
+              <span className="text-[10px] text-text-secondary bg-bg-overlay px-1.5 py-0.5 rounded-full">
                 +{overflow}
               </span>
             )}
@@ -119,14 +119,14 @@ export default function PetCard({ pet, toUrl, replace, family }: PetCardProps) {
             ))}
           </div>
 
-          <span className="text-[10px] text-text-muted bg-bg-overlay px-1.5 py-0.5 rounded-full capitalize flex-shrink-0">
+          <span className="text-[10px] text-text-secondary bg-bg-overlay px-1.5 py-0.5 rounded-full capitalize flex-shrink-0">
             {pet.type}
           </span>
         </div>
 
-        <h3 className="font-semibold text-text-primary text-sm leading-snug mb-1 line-clamp-1">
+        <h2 className="font-semibold text-text-primary text-sm leading-snug mb-1 line-clamp-1">
           {displayName}
-        </h3>
+        </h2>
         <p className="text-text-secondary text-xs leading-relaxed line-clamp-2">
           {displayDescription}
         </p>

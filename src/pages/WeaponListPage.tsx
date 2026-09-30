@@ -2,6 +2,7 @@ import { useDeferredValue, useEffect, useMemo, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import SearchBar from '../components/shared/SearchBar'
 import ElementLegend from '../components/shared/ElementLegend'
+import ResultsStatus from '../components/shared/ResultsStatus'
 import SegmentToggle from '../components/shared/SegmentToggle'
 import TriStateFilterPill from '../components/shared/TriStateFilterPill'
 import MobileFilterPanel from '../components/shared/MobileFilterPanel'
@@ -209,7 +210,7 @@ export default function WeaponListPage() {
       deferredQuery,
     ]
   )
-  const { weapons, total, loading } = useWeapons(activeSubtype, filters)
+  const { weapons, total, loading, error, retry } = useWeapons(activeSubtype, filters)
 
   function setParams(next: Record<string, string>) {
     setSearchParams(next, { replace: true })
@@ -393,7 +394,15 @@ export default function WeaponListPage() {
         <ElementLegend includeTraits={false} />
       </MobileFilterPanel>
 
-      <p className="text-text-muted text-xs mb-4" aria-live="polite" aria-atomic="true">
+      <ResultsStatus
+        announcement={
+          error
+            ? 'Results unavailable'
+            : loading
+              ? 'Loading entries...'
+              : `${total} ${total === 1 ? 'entry' : 'entries'} found`
+        }
+      >
         {loading ? 'Loading entries...' : `${total} ${total === 1 ? 'entry' : 'entries'} found`}
         {activeElements.length > 0 && (
           <span className="text-gold"> · {activeElements.join(', ')}</span>
@@ -437,9 +446,15 @@ export default function WeaponListPage() {
               .join(', ')}
           </span>
         )}
-      </p>
+      </ResultsStatus>
 
-      <WeaponList weapons={weapons} loading={loading} pending={inputValue !== deferredQuery} />
+      <WeaponList
+        weapons={weapons}
+        loading={loading}
+        error={error}
+        onRetry={retry}
+        pending={inputValue !== deferredQuery}
+      />
     </main>
   )
 }

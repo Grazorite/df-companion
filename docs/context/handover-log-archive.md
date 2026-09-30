@@ -12,6 +12,131 @@
 
 ## Entries
 
+### 2026-09-10 — Class access flag merge repair
+
+**Agent:** orchestrator (GPT-5 Codex) · **Commit(s):** `the commit containing this entry`
+**Kanban moved:** no board item moved; verified and committed pre-existing `dataLoaders.ts` change
+
+**Changed:**
+
+- `src/utils/dataLoaders.ts`: same-source Class duplicate merging now reads DA/DC/DM access from
+  family-level `hasDA` / `hasDC` / `hasDM` flags when the merged entry is an item family, instead
+  of only checking single-entry `daRequired` / `dcRequired` / `dmRequired` fields.
+- `src/utils/dataLoaders.ts`: merged Class entries now preserve the special-character flag when it is
+  represented by the `special-character` tag, which keeps list/card filters aligned with loaded data.
+- `AGENTS.md` and `docs/context/handover-log-archive.md`: recorded this verified repair and kept the
+  live handover log at five entries for session close.
+
+**Verified:**
+
+- `npm test` → passed 10 tests.
+- `npm run build` → passed all validators, dataset verification, script typecheck, TypeScript build,
+  and Vite production build.
+- `npm run lint` → passed.
+
+**Not verified / known gaps:**
+
+- No browser screenshot pass was run; this was loader/filter flag behavior rather than a visual layout
+  change.
+
+**Next agent should:**
+
+- Add a focused loader test if the class merge path changes again; current verification is full-gate
+  build/test/lint rather than a dedicated fixture for this private merge helper.
+
+### 2026-09-10 — Leaner live handover policy
+
+**Agent:** orchestrator (GPT-5 Codex) · **Commit(s):** `the commit containing this entry`
+**Kanban moved:** no board item moved; user-requested handover compaction policy
+
+**Changed:**
+
+- `AGENTS.md`: shortened the live handover surface to five Handover Log entries and five Done items,
+  clarified that archive rotation happens only at session close, and pointed older Done history to a
+  dedicated archive.
+- `docs/context/done-task-archive.md`: added an archive home for older completed-task history so
+  `AGENTS.md` stays operational instead of encyclopedic.
+- `docs/context/README.md` and `docs/context/engineering_guidelines.md`: documented the new archive
+  and practical test cadence.
+
+**Verified:**
+
+- Documentation-only policy update; inspected the resulting live log and Done counts.
+
+**Not verified / known gaps:**
+
+- No build/test rerun was needed for this docs-only compaction beyond the test/build/lint checks
+  already run for the test harness in this same session.
+
+**Next agent should:**
+
+- Keep `AGENTS.md` short during task work and rotate archives only at session close.
+
+### 2026-09-10 — Lean public-behavior test harness
+
+**Agent:** orchestrator (GPT-5 Codex) · **Commit(s):** `the commit containing this entry`
+**Kanban moved:** `Introduce a test framework` → `✅ Done`
+
+**Changed:**
+
+- `package.json`: added `npm test`, backed by Node's built-in test runner through the existing `tsx`
+  dependency.
+- `tests/`: added starter public-behavior tests for display text normalization, badge filtering,
+  tri-state filter state transitions / URL parsing, and related-item matching fingerprints.
+- `README.md`, `docs/context/architecture.md`, `docs/context/engineering_guidelines.md`, and
+  `docs/context/project_structure.md`: documented the test command, directory placement, and the
+  testing philosophy: behavior and public APIs first, no coverage-padding.
+- `AGENTS.md`: moved the deferred test-framework board item to Done and recorded this handover.
+
+**Verified:**
+
+- `npm test` → passed 10 tests. The sandbox blocked `tsx` IPC with `EPERM`; the same command passed
+  when rerun with elevated permissions.
+
+**Not verified / known gaps:**
+
+- No browser/visual test runner was added. The first suite intentionally focuses on fast utility and
+  public data-behavior checks.
+
+**Next agent should:**
+
+- Add narrow regression tests when changing shared filters, display normalization, related-item
+  inference, or data-loading behavior.
+
+### 2026-09-03 — Classes subtype marked complete on the board
+
+**Agent:** orchestrator (Claude Opus 4.8) · **Commit(s):** `the commit containing this entry`
+**Kanban moved:** `Complete Classes subtype scraper/data` → `✅ Done` (In Progress column now empty)
+
+**Changed:**
+
+- `AGENTS.md`: per the user's report that the Classes subtype is complete, moved the In Progress
+  Classes item to Done, updated the milestone metric line (198 = 144 Classes + 54 Consumables;
+  Armors + Regular + Miscellaneous all complete), refreshed Current Focus (Classes / Abilities now
+  listed as completed alongside pets/guests/accessories), and updated the shipped-sections Done
+  bullet from "starter" to the full section.
+- `docs/context/handover-log-archive.md`: rotated the oldest log entry (2026-08-30 — Base class
+  parser batch one) to keep the live log at 10.
+
+**Verified:**
+
+- Board-status reconciliation reflecting completed class work; the underlying completion is the
+  other agent's, already documented in the 2026-08-30/09-01 class log entries.
+- `node scripts/validate-class-abilities.mjs` / `npm run validate` → passed; manifest reports 198
+  (144 class + 54 consumable).
+- `tsc -b`, `oxlint`, `vite build` → all green (verified this session before the board edit).
+
+**Not verified / known gaps:**
+
+- Completion of the class data/parsing was reported by the user (the other agent's context is held
+  in its own session); this entry records the board state, not an independent audit of every class
+  entry's correctness.
+
+**Next agent should:**
+
+- Pick a To Do item — the Weapons full re-scrape or the next content section (Locations / Monsters /
+  NPCs / Stackable Items).
+
 ### 2026-09-03 — Reviewed accessory singular-sibling consolidation
 
 **Agent:** orchestrator (GPT-5 Codex) · **Commit(s):** `the commit containing this entry`

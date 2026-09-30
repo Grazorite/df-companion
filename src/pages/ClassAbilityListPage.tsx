@@ -5,6 +5,7 @@ import SearchBar from '../components/shared/SearchBar'
 import SegmentToggle from '../components/shared/SegmentToggle'
 import TriStateFilterPill from '../components/shared/TriStateFilterPill'
 import MobileFilterPanel from '../components/shared/MobileFilterPanel'
+import ResultsStatus from '../components/shared/ResultsStatus'
 import {
   useClassAbilities,
   useClassAbilityAvailability,
@@ -254,7 +255,7 @@ export default function ClassAbilityListPage() {
       excludedSubcategories,
     ]
   )
-  const { entries, total, loading } = useClassAbilities(activeSubtype, filters)
+  const { entries, total, loading, error, retry } = useClassAbilities(activeSubtype, filters)
 
   function baseParams(): Record<string, string> {
     const params: Record<string, string> = { type: activeSubtype }
@@ -504,11 +505,23 @@ export default function ClassAbilityListPage() {
         )}
       </MobileFilterPanel>
 
-      <p className="text-text-muted text-xs mb-4" aria-live="polite" aria-atomic="true">
-        {loading ? 'Loading entries...' : `${total} ${total === 1 ? 'entry' : 'entries'} found`}
-      </p>
+      <ResultsStatus
+        announcement={
+          error
+            ? 'Results unavailable'
+            : loading
+              ? 'Loading entries...'
+              : `${total} ${total === 1 ? 'entry' : 'entries'} found`
+        }
+      />
 
-      <ClassAbilityList items={entries} loading={loading} pending={inputValue !== deferredQuery} />
+      <ClassAbilityList
+        items={entries}
+        loading={loading}
+        error={error}
+        onRetry={retry}
+        pending={inputValue !== deferredQuery}
+      />
     </main>
   )
 }

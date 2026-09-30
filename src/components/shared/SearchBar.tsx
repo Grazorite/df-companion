@@ -25,7 +25,7 @@ export default function SearchBar({
         value={value}
         onChange={(e) => onChange(e.target.value)}
         aria-label={placeholder}
-        className="w-full bg-bg-surface border border-border-default rounded-lg pl-9 pr-9 py-2.5 text-text-primary placeholder-text-muted text-sm focus:outline-none focus:border-gold transition-colors duration-150"
+        className="w-full bg-bg-surface border border-border-default rounded-lg pl-9 pr-9 py-2.5 text-text-primary placeholder-text-muted text-sm focus-visible:outline-none focus-visible:border-gold focus-visible:ring-2 focus-visible:ring-gold/60 transition-colors duration-150"
       />
       {value && (
         <button

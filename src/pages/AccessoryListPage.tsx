@@ -2,6 +2,7 @@ import { useDeferredValue, useEffect, useMemo, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import SearchBar from '../components/shared/SearchBar'
 import ElementLegend from '../components/shared/ElementLegend'
+import ResultsStatus from '../components/shared/ResultsStatus'
 import SegmentToggle from '../components/shared/SegmentToggle'
 import TriStateFilterPill from '../components/shared/TriStateFilterPill'
 import MobileFilterPanel from '../components/shared/MobileFilterPanel'
@@ -200,7 +201,7 @@ export default function AccessoryListPage() {
     ]
   )
 
-  const { accessories, total, loading } = useAccessories(activeSubtype, filters)
+  const { accessories, total, loading, error, retry } = useAccessories(activeSubtype, filters)
 
   function setParams(next: Record<string, string>) {
     setSearchParams(next, { replace: true })
@@ -384,7 +385,15 @@ export default function AccessoryListPage() {
         <ElementLegend includeTraits={false} />
       </MobileFilterPanel>
 
-      <p className="text-text-muted text-xs mb-4" aria-live="polite" aria-atomic="true">
+      <ResultsStatus
+        announcement={
+          error
+            ? 'Results unavailable'
+            : loading
+              ? 'Loading entries...'
+              : `${total} ${total === 1 ? 'entry' : 'entries'} found`
+        }
+      >
         {loading ? 'Loading entries...' : `${total} ${total === 1 ? 'entry' : 'entries'} found`}
         {activeElements.length > 0 && (
           <span className="text-gold"> · {activeElements.join(', ')}</span>
@@ -428,11 +437,13 @@ export default function AccessoryListPage() {
               .join(', ')}
           </span>
         )}
-      </p>
+      </ResultsStatus>
 
       <AccessoryList
         accessories={accessories}
         loading={loading}
+        error={error}
+        onRetry={retry}
         pending={inputValue !== deferredQuery}
       />
     </main>

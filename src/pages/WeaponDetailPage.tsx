@@ -5,6 +5,7 @@ import { DetailPageSkeleton } from '../components/shared/LoadingSkeleton'
 import { useWeaponBySlug } from '../hooks/useWeapons'
 import { WEAPON_SUBTYPES, type WeaponSubtype } from '../types/weapon'
 import { backUrlFromSearch } from '../utils/navigationContext'
+import { DatasetErrorState } from '../components/shared/DatasetStateBoundary'
 
 export default function WeaponDetailPage() {
   const { slug } = useParams()
@@ -14,11 +15,19 @@ export default function WeaponDetailPage() {
   const activeSubtype = WEAPON_SUBTYPES.some((meta) => meta.subtype === typeParam)
     ? (typeParam as WeaponSubtype)
     : 'sword-axe-mace'
-  const { weapon, loading } = useWeaponBySlug(activeSubtype, slug)
+  const { weapon, loading, error, retry } = useWeaponBySlug(activeSubtype, slug)
   const filterBase = `/weapons?type=${activeSubtype}`
   const backUrl = backUrlFromSearch(location.search, filterBase)
 
   if (loading) return <DetailPageSkeleton />
+
+  if (error) {
+    return (
+      <DetailPageLayout>
+        <DatasetErrorState onRetry={retry} title="We couldn't load this weapon" />
+      </DetailPageLayout>
+    )
+  }
 
   if (!weapon) {
     return (

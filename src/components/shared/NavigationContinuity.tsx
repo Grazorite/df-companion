@@ -4,6 +4,12 @@ import { getBrowseRestoration } from '../../utils/browseRestoration'
 import { currentListUrl, isBrowseListPath, isDetailRoutePath } from '../../utils/navigationContext'
 
 const CONTENT_WAIT_TIMEOUT_MS = 10_000
+const APP_TITLE = 'DragonFable Companion'
+
+function updateDocumentTitle(heading: HTMLElement | null) {
+  const pageTitle = heading?.textContent?.trim()
+  document.title = !pageTitle || pageTitle === APP_TITLE ? APP_TITLE : `${pageTitle} | ${APP_TITLE}`
+}
 
 function waitForContent(
   findTarget: () => HTMLElement | null,
@@ -78,7 +84,9 @@ export default function NavigationContinuity() {
         (card) => {
           window.scrollTo({ top: restoration.scrollY, left: 0, behavior: 'auto' })
           card.focus({ preventScroll: true })
-          setAnnouncement(document.querySelector('main h1')?.textContent?.trim() ?? 'Results')
+          const heading = document.querySelector<HTMLElement>('main h1')
+          updateDocumentTitle(heading)
+          setAnnouncement(heading?.textContent?.trim() ?? 'Results')
         }
       )
     }
@@ -88,6 +96,7 @@ export default function NavigationContinuity() {
     return waitForContent(
       () => document.querySelector<HTMLElement>('main h1'),
       (heading) => {
+        updateDocumentTitle(heading)
         heading.tabIndex = -1
         heading.focus({ preventScroll: true })
         setAnnouncement(heading.textContent?.trim() ?? 'Page loaded')

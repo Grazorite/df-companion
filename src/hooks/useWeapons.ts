@@ -22,36 +22,16 @@ import {
   stripVersionSuffix,
 } from '../utils/variantHelpers'
 import { useRelatedItems, type RelatedItemResult } from './useRelatedItems'
+import { useDatasetResource } from './useDatasetResource'
 
 const EMPTY_WEAPON_COUNTS = Object.fromEntries(
   WEAPON_SUBTYPES.map((meta) => [meta.subtype, 0])
 ) as Record<WeaponSubtype, number>
+const EMPTY_WEAPONS: WeaponEntry[] = []
 
 function useWeaponSubtypeDataset(subtype: WeaponSubtype) {
-  const [weapons, setWeapons] = useState<WeaponEntry[]>([])
-  const [loading, setLoading] = useState(true)
-
-  useEffect(() => {
-    let active = true
-    setLoading(true)
-    loadWeaponsForSubtype(subtype)
-      .then((data) => {
-        if (!active) return
-        setWeapons(data)
-        setLoading(false)
-      })
-      .catch(() => {
-        if (!active) return
-        setWeapons([])
-        setLoading(false)
-      })
-
-    return () => {
-      active = false
-    }
-  }, [subtype])
-
-  return { weapons, loading }
+  const resource = useDatasetResource(() => loadWeaponsForSubtype(subtype), EMPTY_WEAPONS, subtype)
+  return { weapons: resource.data, ...resource }
 }
 
 function useElementDataset() {
@@ -216,10 +196,26 @@ function searchWeapons(
                 ...(level.weaponSpecials ?? []),
               ]),
             ].flatMap((special) =>
-              special ? [special.trigger, special.effect, special.cooldown, special.chargeTime, special.notes] : []
+              special
+                ? [
+                    special.trigger,
+                    special.effect,
+                    special.cooldown,
+                    special.chargeTime,
+                    special.notes,
+                  ]
+                : []
             )
           : [item.weaponSpecial, ...(item.weaponSpecials ?? [])].flatMap((special) =>
-              special ? [special.trigger, special.effect, special.cooldown, special.chargeTime, special.notes] : []
+              special
+                ? [
+                    special.trigger,
+                    special.effect,
+                    special.cooldown,
+                    special.chargeTime,
+                    special.notes,
+                  ]
+                : []
             )
         const aliases = isWeaponFamily(item) ? (item.aliasSlugs ?? []) : []
         const searchableText = [
@@ -257,14 +253,14 @@ function searchWeapons(
 }
 
 export function useWeapons(subtype: WeaponSubtype, filters: WeaponFilters = {}) {
-  const { weapons: subtypeWeapons, loading } = useWeaponSubtypeDataset(subtype)
+  const { weapons: subtypeWeapons, loading, error, retry } = useWeaponSubtypeDataset(subtype)
   const elementMeta = useElementDataset()
   const weapons = useMemo(
     () => searchWeapons(subtypeWeapons, subtype, filters, elementMeta),
     [subtypeWeapons, subtype, filters, elementMeta]
   )
 
-  return { weapons, total: weapons.length, loading }
+  return { weapons, total: weapons.length, loading, error, retry }
 }
 
 function weaponMatchesSlug(entry: WeaponEntry, slug?: string): boolean {
@@ -381,13 +377,13 @@ function loadAllWeapons() {
 }
 
 export function useWeaponBySlug(subtype: WeaponSubtype, slug?: string) {
-  const { weapons, loading } = useWeaponSubtypeDataset(subtype)
+  const { weapons, loading, error, retry } = useWeaponSubtypeDataset(subtype)
   const weapon = useMemo(() => {
     if (loading) return undefined
     return weapons.find((entry) => weaponMatchesSlug(entry, slug)) ?? null
   }, [weapons, loading, slug])
 
-  return { weapon, loading }
+  return { weapon, loading, error, retry }
 }
 
 export type WeaponRelatedItem = RelatedItemResult<WeaponEntry, AlsoSeeRef>
@@ -438,55 +434,52 @@ export function useWeaponRelatedItems(weapon: WeaponEntry, alsoSee: AlsoSeeRef[]
 export function useWeaponCategoryAvailability(subtype: WeaponSubtype) {
   const { weapons, loading } = useWeaponSubtypeDataset(subtype)
 
-  return useMemo(
-    () => {
-      const access = new Set<string>()
-      const categories = new Set<string>()
-      const elements = new Set<string>()
+  return useMemo(() => {
+    const access = new Set<string>()
+    const categories = new Set<string>()
+    const elements = new Set<string>()
 
-      for (const entry of weapons) {
-        if (isWeaponFamily(entry)) {
-          if (entry.levelVariants.length > 1) access.add('multi')
-          if (entry.hasDA) access.add('da')
-          if (entry.hasDC) access.add('dc')
-          if (entry.hasDM) access.add('dm')
-          if (entry.hasFree) access.add('free')
-          if (entry.hasMerge) access.add('merge')
-        } else {
-          if (hasVersionSuffix(entry.name)) access.add('multi')
-          if (entry.daRequired) access.add('da')
-          if (entry.dcRequired) access.add('dc')
-          if (entry.dmRequired) access.add('dm')
-          if (entry.obtainMethods.some((method) => method.priceType === 'free')) access.add('free')
-          if (entry.obtainMethods.some((method) => method.priceType === 'merge')) access.add('merge')
-        }
-        if (entry.isDefault) access.add('default')
-
-        for (const element of getWeaponEntryElements(entry)) elements.add(element)
-        if (entry.hasArmorCustomization) categories.add('armor-customization')
-        if (entry.hasSpecial) categories.add('special')
-        if (entry.isCosmetic) categories.add('cosmetic')
-        if (entry.isTemp) categories.add('temp')
-        if (entry.isRare) categories.add('rare')
-        if (entry.isSeasonal) categories.add('seasonal')
-        if (entry.isSpecialOffer) categories.add('special-offer')
-        if (entry.isWar) categories.add('war')
-        if (entry.retired) categories.add('retired')
+    for (const entry of weapons) {
+      if (isWeaponFamily(entry)) {
+        if (entry.levelVariants.length > 1) access.add('multi')
+        if (entry.hasDA) access.add('da')
+        if (entry.hasDC) access.add('dc')
+        if (entry.hasDM) access.add('dm')
+        if (entry.hasFree) access.add('free')
+        if (entry.hasMerge) access.add('merge')
+      } else {
+        if (hasVersionSuffix(entry.name)) access.add('multi')
+        if (entry.daRequired) access.add('da')
+        if (entry.dcRequired) access.add('dc')
+        if (entry.dmRequired) access.add('dm')
+        if (entry.obtainMethods.some((method) => method.priceType === 'free')) access.add('free')
+        if (entry.obtainMethods.some((method) => method.priceType === 'merge')) access.add('merge')
       }
+      if (entry.isDefault) access.add('default')
 
-      return {
-        loading,
-        access,
-        categories,
-        elements,
-        hasArmorCustomization: categories.has('armor-customization'),
-        hasSpecial: categories.has('special'),
-        hasCosmetic: categories.has('cosmetic'),
-        hasRetired: hasRetiredEntry(weapons),
-      }
-    },
-    [weapons, loading]
-  )
+      for (const element of getWeaponEntryElements(entry)) elements.add(element)
+      if (entry.hasArmorCustomization) categories.add('armor-customization')
+      if (entry.hasSpecial) categories.add('special')
+      if (entry.isCosmetic) categories.add('cosmetic')
+      if (entry.isTemp) categories.add('temp')
+      if (entry.isRare) categories.add('rare')
+      if (entry.isSeasonal) categories.add('seasonal')
+      if (entry.isSpecialOffer) categories.add('special-offer')
+      if (entry.isWar) categories.add('war')
+      if (entry.retired) categories.add('retired')
+    }
+
+    return {
+      loading,
+      access,
+      categories,
+      elements,
+      hasArmorCustomization: categories.has('armor-customization'),
+      hasSpecial: categories.has('special'),
+      hasCosmetic: categories.has('cosmetic'),
+      hasRetired: hasRetiredEntry(weapons),
+    }
+  }, [weapons, loading])
 }
 
 export function useWeaponCounts() {

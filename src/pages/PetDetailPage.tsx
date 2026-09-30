@@ -9,6 +9,7 @@ import { DetailPageSkeleton } from '../components/shared/LoadingSkeleton'
 import DetailPageLayout from '../components/shared/DetailPageLayout'
 import { DETAIL_PAGE_TOP_CONTAINER_CLASS } from '../utils/detailPageLayout'
 import { backUrlFromSearch } from '../utils/navigationContext'
+import { DatasetErrorState } from '../components/shared/DatasetStateBoundary'
 
 function isItemFamily(item: Pet | ItemFamily): item is ItemFamily {
   return 'levelVariants' in item && 'familyName' in item
@@ -22,10 +23,18 @@ export default function PetDetailPage() {
 
   // Slugs are type-prefixed — ensure we look up "pet-{slug}"
   const fullSlug = slug?.startsWith('pet-') ? slug : `pet-${slug ?? ''}`
-  const result = usePetBySlug(fullSlug)
+  const { pet: result, loading, error, retry } = usePetBySlug(fullSlug)
 
-  if (result === undefined) {
+  if (loading) {
     return <DetailPageSkeleton />
+  }
+
+  if (error) {
+    return (
+      <DetailPageLayout>
+        <DatasetErrorState onRetry={retry} title="We couldn't load this pet" />
+      </DetailPageLayout>
+    )
   }
 
   if (!result) {
