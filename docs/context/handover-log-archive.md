@@ -12,6 +12,50 @@
 
 ## Entries
 
+### 2026-09-29 — UI fluidity phases 0–3
+
+**Agent:** ui-owner / orchestrator (GPT-5 Codex) · **Commit(s):** `the commit containing this entry`
+**Kanban moved:** UI/UX fluidity program remains `In Progress`; current phase advanced to motion
+system and interaction polish
+
+**Changed:**
+
+- `tests/ui/`, `package.json`, and shared gallery/list code: added the Playwright/Node behavior
+  harness, bounded progressive galleries, and deferred result filtering with debounced URL sync.
+- `NavigationContinuity`, `browseRestoration`, and route loading: preserve the originating card,
+  expanded gallery depth, scroll, and focus across detail returns; query-only changes no longer
+  reset scroll; detail navigation focuses and announces its heading; detail routes use detail-shaped
+  loading UI.
+- `MobileFilterPanel`, `Navigation`, and shared Radix Dialog wrapper: keep subtype/search visible,
+  move secondary filters into a mobile sheet with URL-derived active counts and subtype-preserving
+  clear-all, enforce 44px mobile controls, and give the More panel complete dismissal/focus behavior.
+- `.kiro/specs/ui-ux-fluidity/STATUS.md` and `docs/context/`: recorded measured budgets, phased
+  acceptance criteria, and the reusable UI contracts.
+
+**Verified:**
+
+- `npm test` → passed 12 public-behavior tests.
+- `npm run test:ui` → passed all 16 behavior, structural-budget, responsive, reduced-motion, focus,
+  URL round-trip, and fixed-navigation tests with no skips.
+- `npm run build` → all dataset validators, cross-dataset verification, script typecheck, TypeScript,
+  and Vite production build passed.
+- `npm run lint` → passed without warnings.
+- Phase 1 browser measurements → initial galleries mount 48 mobile / 72 desktop cards and stay under
+  2,500 DOM nodes on representative high-volume routes.
+- Visual smoke → mobile filter sheet and desktop inline filters inspected at 390×844 and 1440×900;
+  no clipping, overlap, or hierarchy regressions found.
+
+**Not verified / known gaps:**
+
+- No data or scraper behavior changed; broad scrape verification was not applicable.
+- Motion tokens, query-stable page entry, and restrained interaction animation are the active Phase 4
+  work.
+
+**Next agent should:**
+
+- Continue Phase 4 test-first, beginning with pathname-only page entry and rapid-filter settling
+  before replacing broad `transition-all` usage.
+
 ### 2026-09-10 — Class access flag merge repair
 
 **Agent:** orchestrator (GPT-5 Codex) · **Commit(s):** `the commit containing this entry`

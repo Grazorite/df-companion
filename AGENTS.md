@@ -49,10 +49,10 @@
 
 ### Current Focus
 
-1. **Propagate scraper fixes into stale datasets.** Weapons full pass is still outstanding and must
-   be run by the user (see Kanban). Pets, guests, accessories, and Classes / Abilities are complete.
-2. **Choose the next content section after the weapons pass.** Locations & Quests is the first
-   unblocked section in the board.
+1. **All planned scraper full passes are complete.** Pets, guests, accessories, Classes / Abilities,
+   and now Weapons have all had their user-run full passes; no stale-dataset backlog remains.
+2. **Choose the next content section.** Locations & Quests is the first unblocked section in the
+   board.
 
 ### Agent Assignments
 
@@ -74,8 +74,6 @@
 
 ### 🔜 To Do
 
-- [ ] **Full weapons re-scrape** — propagate base/DC variant consolidation and Method 1/2 grouping
-      beyond letter `#`. `npm run scrape:weapons`.
 - [ ] **Ship Locations & Quests section** (`/locations`) — forum category: Locations / Quests / Events / Shops
 - [ ] **Ship Monsters section** (`/monsters`)
 - [ ] **Ship NPCs section** (`/npcs`)
@@ -93,6 +91,9 @@ _Latest five only. Older completed-task history lives in
 [`docs/context/done-task-archive.md`](./docs/context/done-task-archive.md). Rotate at session
 close, not after each individual task._
 
+- [x] **Full weapons re-scrape** (user-run) — user ran the full pass; the regenerated dataset was
+      byte-identical to what already shipped (no working-tree diff). Validated at 3,286 entries across
+      4 subtypes / 11 files, cross-dataset invariants pass. Closes the last outstanding full-pass item.
 - [x] **Complete the test-driven UI/UX fluidity program** — all eight phases (0–7) are implemented
       and verified: bounded galleries, navigation continuity, mobile controls, motion, stable media,
       compact global search, recoverable failure states, and the accessibility finish.
@@ -100,8 +101,6 @@ close, not after each individual task._
       preserves DA/DC/DM and special-character flags when same-source Class entries are merged.
 - [x] **Lean live handover policy** — shortened `AGENTS.md` to five live log entries and five live
       Done items, with older material archived under `docs/context/`.
-- [x] **Introduce a test framework** — lean Node test harness for public behavior and shared utility
-      APIs; avoids arbitrary coverage goals.
 - [x] **Complete Classes subtype scraper/data** — Armors, Regular, and Miscellaneous class parsing,
       relation indexes (artifact / armor / default-weapon), and split datasets all populated and
       validated (manifest 198 = 144 class + 54 consumable).
@@ -212,6 +211,39 @@ _Newest first. Prepend new entries directly below this line. Keep only the five 
 > goes stale the moment the work lands and was never retro-corrected. Treat `git log` as authoritative
 > for what shipped when. New entries should use `the commit containing this entry` instead, which stays
 > true.
+
+### 2026-09-30 — Full weapons re-scrape closed; UI/UX fluidity session close
+
+**Agent:** orchestrator (Claude Opus 4.5) · **Commit(s):** `the commit containing this entry`
+**Kanban moved:** `Full weapons re-scrape` → `✅ Done`
+
+**Changed:**
+
+- `AGENTS.md`: recorded the user-run full weapons re-scrape as complete, moved it out of To Do into
+  Done, updated Current Focus (no stale-dataset backlog remains), and performed session-close archive
+  rotation — the UI/UX fluidity phases 0–3 log entry rotated to
+  `docs/context/handover-log-archive.md` (live log back to 5), and the oldest Done bullet ("Introduce
+  a test framework", already in the Done archive snapshot) dropped to keep the live Done list at 5.
+
+**Verified:**
+
+- Working tree was clean before this docs edit (`git status --porcelain` empty); the user's re-scrape
+  produced no diff against the committed weapons data, so the on-disk dataset already reflects the
+  full pass.
+- `node scripts/validate-weapons.mjs` → 3,286 entries across 4 subtypes / 11 data files.
+- `node scripts/verify-datasets.mjs` → all family-capable datasets pass cross-post-family invariants
+  (accessories 2,520 · weapons 3,286 · pets/guests 304).
+
+**Not verified / known gaps:**
+
+- The re-scrape itself was user-run in a separate session; this entry records that its output matched
+  the committed data (zero diff) and that the dataset validates, not an independent forum re-fetch.
+- No application or scraper code changed this turn — docs/board only.
+
+**Next agent should:**
+
+- Begin the next content section when the user selects one; Locations & Quests is the first unblocked
+  board item. All planned full scrapes are now complete.
 
 ### 2026-09-30 — UI fluidity phase 7 (failure states and accessibility)
 
@@ -418,47 +450,3 @@ loading and layout stability (Phase 5)
 
 - Begin Phase 5 (image loading and layout stability) test-first per `.kiro/specs/ui-ux-fluidity/STATUS.md`:
   `ItemImage` loading/loaded/failed states, reserved media space, and representative detail CLS budget.
-
-### 2026-09-29 — UI fluidity phases 0–3
-
-**Agent:** ui-owner / orchestrator (GPT-5 Codex) · **Commit(s):** `the commit containing this entry`
-**Kanban moved:** UI/UX fluidity program remains `In Progress`; current phase advanced to motion
-system and interaction polish
-
-**Changed:**
-
-- `tests/ui/`, `package.json`, and shared gallery/list code: added the Playwright/Node behavior
-  harness, bounded progressive galleries, and deferred result filtering with debounced URL sync.
-- `NavigationContinuity`, `browseRestoration`, and route loading: preserve the originating card,
-  expanded gallery depth, scroll, and focus across detail returns; query-only changes no longer
-  reset scroll; detail navigation focuses and announces its heading; detail routes use detail-shaped
-  loading UI.
-- `MobileFilterPanel`, `Navigation`, and shared Radix Dialog wrapper: keep subtype/search visible,
-  move secondary filters into a mobile sheet with URL-derived active counts and subtype-preserving
-  clear-all, enforce 44px mobile controls, and give the More panel complete dismissal/focus behavior.
-- `.kiro/specs/ui-ux-fluidity/STATUS.md` and `docs/context/`: recorded measured budgets, phased
-  acceptance criteria, and the reusable UI contracts.
-
-**Verified:**
-
-- `npm test` → passed 12 public-behavior tests.
-- `npm run test:ui` → passed all 16 behavior, structural-budget, responsive, reduced-motion, focus,
-  URL round-trip, and fixed-navigation tests with no skips.
-- `npm run build` → all dataset validators, cross-dataset verification, script typecheck, TypeScript,
-  and Vite production build passed.
-- `npm run lint` → passed without warnings.
-- Phase 1 browser measurements → initial galleries mount 48 mobile / 72 desktop cards and stay under
-  2,500 DOM nodes on representative high-volume routes.
-- Visual smoke → mobile filter sheet and desktop inline filters inspected at 390×844 and 1440×900;
-  no clipping, overlap, or hierarchy regressions found.
-
-**Not verified / known gaps:**
-
-- No data or scraper behavior changed; broad scrape verification was not applicable.
-- Motion tokens, query-stable page entry, and restrained interaction animation are the active Phase 4
-  work.
-
-**Next agent should:**
-
-- Continue Phase 4 test-first, beginning with pathname-only page entry and rapid-filter settling
-  before replacing broad `transition-all` usage.
