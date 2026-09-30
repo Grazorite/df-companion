@@ -206,11 +206,51 @@ is being written as part of that same commit
 
 _Newest first. Prepend new entries directly below this line. Keep only the five latest entries live; rotate older entries at session close._
 
-> **Reading `Commit(s): uncommitted` in older entries:** it means uncommitted *at the time of writing*,
+> **Reading `Commit(s): uncommitted` in older entries:** it means uncommitted _at the time of writing_,
 > not still uncommitted. Entries are written before the commit that carries them exists, so the marker
 > goes stale the moment the work lands and was never retro-corrected. Treat `git log` as authoritative
 > for what shipped when. New entries should use `the commit containing this entry` instead, which stays
 > true.
+
+### 2026-09-30 — Repo cleanup: dead Python-image pipeline docs + stray gitignore
+
+**Agent:** orchestrator (Claude Opus 4.5) · **Commit(s):** `the commit containing this entry`
+**Kanban moved:** none (housekeeping pass, not a board item)
+
+**Changed:**
+
+- `docs/context/scraper_operations.md` and `docs/context/category_playbooks.md`: removed references
+  to the retired Python image pipeline — `npm run images:pets` / `images:guests` / `setup:python`
+  and the "Python Environment" section. Those npm scripts and their `.py`/venv helpers no longer
+  exist; pet/guest images are now harvested inline by `scrape:pets` / `scrape:guests`, and A/C guest
+  CharPage capture is the TS `--capture-charpages` path (`guest-character-capture.ts`). Historical
+  mentions in `done-task-archive.md` were left intact as read-only history.
+- `.gitignore`: removed the stray `AGENTS.md` entry. AGENTS.md is the tracked handover board; the
+  ignore line was inert (tracked files win) but contradictory and risky if the file were ever
+  untracked.
+- Local-only cruft cleared (all gitignored, no repo impact): `.venv/` (16M, orphaned image-pipeline
+  venv), `.tmp/` (35M of dated QA screenshots), `src/data/*-progress.json` (~2M scraper
+  intermediates), and stray `.DS_Store` files.
+
+**Verified:**
+
+- Dependency audit: every `package.json` dependency is imported in `src`/`scripts`/`tests` — no
+  unused packages to remove.
+- `npm run validate` → all dataset validators, search-index (7,076 records, no drift), cross-dataset
+  verify, and `typecheck:scripts` pass.
+- `mdlint` clean on both edited docs and on `AGENTS.md`; contract checker → 0 errors.
+- No live doc references to `images:pets` / `images:guests` / `setup:python` remain.
+
+**Not verified / known gaps:**
+
+- Docs/gitignore + local-file cleanup only; no application or scraper code changed. Full
+  `npm run build` (tsc -b + vite) not re-run — `validate` and the markdown/contract gates cover the
+  edited surface.
+
+**Next agent should:**
+
+- Begin the next content section when the user selects one; Locations & Quests is the first unblocked
+  board item.
 
 ### 2026-09-30 — Full weapons re-scrape closed; UI/UX fluidity session close
 

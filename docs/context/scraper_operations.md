@@ -66,9 +66,10 @@ npm run scrape:pets -- --start=C                    # Resume from letter C onwar
 npm run scrape:pets -- --letters=A,B                # Scrape multiple letters
 npm run scrape:pets -- --names="Goldfish Knight"    # Refresh specific pet names
 npm run scrape:pets -- --names="Goldfish Knight" --fresh  # Ignore matching cached entries
-npm run images:pets                                 # Add DF-Pedia GitHub images to pets.json
-npm run images:pets -- --letters=A,B                # Add images for specific letters only
 ```
+
+Pet images are now harvested inline by `scrape:pets` (the pet objects carry their DF-Pedia image
+URLs); there is no separate image step.
 
 Progress saved to `src/data/pets-progress.json` (gitignored).
 Progress files are resumable local caches only. They are not app data, should not be committed, and
@@ -85,9 +86,11 @@ npm run scrape:guests -- --names=Aegis              # Refresh specific guest nam
 npm run scrape:guests -- --names=Aegis --fresh      # Ignore matching cached entries
 npm run scrape:guests -- --fresh --concurrency=1    # Local full refresh; reuses generated CharPage PNGs without running Ruffle
 npm run scrape:guests -- --names="Cranix|Dain Lorilann|Elgert|Mennace|Xor Vrailin II" --fresh --concurrency=1 --capture-charpages  # Slow local A/C CharPage capture
-npm run images:guests                               # Extract guest images from forum to guests.json
-npm run images:guests -- --force                    # Force refresh all guest images
 ```
+
+Guest images are harvested inline by `scrape:guests`, and A/C guest CharPage portraits are captured
+by the TypeScript `--capture-charpages` path above (`scripts/lib/guest-character-capture.ts`,
+Playwright/Ruffle) — no Python image step.
 
 ### Badge Scraping
 
@@ -349,8 +352,6 @@ npm run generate:search-index # Regenerate the compact global-search index (src/
 npm run validate       # Run all dataset validators + cross-post-family verify + script typecheck
 npm run verify         # Cross-post-family invariant checks (dup slugs, alias/AlsoSee integrity)
 npm run typecheck:scripts # Typecheck scripts/ against tsconfig.scripts.json
-npm run images:guests  # Extract guest character images from forum (auto-uses venv)
-npm run setup:python   # Manually create the Python venv used by image scripts
 ```
 
 ## Visual Verification (Screenshots)
@@ -431,10 +432,3 @@ category-specific: pets/guests may promote safe `Also See` relationships into it
 accessories may promote configured subtypes when the relationship has explicit `Also See` links plus
 title/content evidence, while unresolved accessory `Also See` refs should not render as source-link
 cards.
-
-## Python Environment
-
-- Image scripts automatically create and use a Python virtual environment (`.venv/`)
-- First run will setup the venv and install `requests` library
-- To manually setup: `npm run setup:python`
-- Venv is gitignored and local to your machine

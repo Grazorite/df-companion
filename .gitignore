@@ -25,7 +25,6 @@ dist-ssr
 
 # Environment variables (contains session cookies)
 .env
-AGENTS.md
 
 # Python virtual environment
 .venv/

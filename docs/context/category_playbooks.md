@@ -175,11 +175,9 @@ appearance label cannot be split into normal hotlinks.
 ### Guest Workflow
 
 1. `npm run scrape:guests` — scrapes forum data (descriptions, attacks, DA/DC/DM/categories, source
-   URLs from direct reply posts, release dates from Chronology)
-2. `npm run images:guests` — adds DF-Pedia GitHub image URLs for guests (auto-uses Python venv)
-   - Searches for images BEFORE "Appearance" section
-   - Skips button/attack images (anything with "Button", "Attack.png" in URL)
-   - Not all guests have images on forum — broken images show fallback UI
+   URLs from direct reply posts, release dates from Chronology) and harvests DF-Pedia guest image
+   URLs inline (searches before the "Appearance" section, skips button/attack images such as
+   "Button" or "Attack.png"; not all guests have forum images, so broken images show fallback UI)
 
 Guest portrait matching allows `pic`/`Petpic` suffixes (e.g. `Princesspic.png`). Attack-appearance
 hyperlinks in the image fallback branch are NOT harvested as character alternative images.
